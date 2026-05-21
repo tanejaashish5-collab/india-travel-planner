@@ -1,0 +1,997 @@
+[
+  {
+    "table": "local_eateries",
+    "id": "e0eedceb-df42-4fe6-8c3e-e07c05635d75",
+    "destination_id": "diglipur",
+    "fields": {
+      "signature_dish": "Bengali fish thali + Aerial Bay catch",
+      "why_it_matters": "Grand Foodiees opened near Aerial Bay jetty (the departure point for Ross & Smith Islands) as Diglipur's most reliable sit-down restaurant for tourists heading to the twin islands. Bengali is spoken by 72% of Diglipur tehsil — the kitchen reflects that with proper mustard-oil fish curry + Bengali sweet (rosogolla on order).",
+      "insider_tip": "Order a packed lunch BEFORE you board the Ross & Smith boat — there is zero food on either island."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "20798578-e994-417b-962a-feafd4a24089",
+    "destination_id": "port-blair",
+    "fields": {
+      "signature_dish": "Wood-fired pizza",
+      "why_it_matters": "Italian-run cafe at Goalghar — rare authentic Italian on the islands. Wood-fired oven imported in pieces from Mumbai; chef trained in Naples. The European backpacker / scuba-diver crowd's default dinner spot in PB.",
+      "insider_tip": "Wood-fired oven only fires up at 6pm — pizza pre-6pm is pan-fried. Vegetarians: ask for the margherita-with-fresh-basil; truly fresh basil arrives from a kitchen-garden lot in Bambooflat each Tuesday."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b05358a4-cb2e-481a-bc1b-60ce345bb7c0",
+    "destination_id": "diglipur",
+    "fields": {
+      "signature_dish": "Multi-cuisine thali + Andaman fish",
+      "why_it_matters": "Breakwater Resort is one of Diglipur's two anchor mid-range hotels (the other being Pristine Beach at Kalipur). Its in-house multi-cuisine restaurant is open to walk-in non-residents and is one of the few places in Diglipur town where you can get a proper Bengali fish-curry-rice plate at lunch.",
+      "insider_tip": "For dinner phone ahead — kitchen closes at 9:30 PM. Veg-only requests need 30-min lead. Try the prawn-curry made with Aerial Bay catch."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "84858d8a-2b86-42f6-95cb-06c89ce27fb6",
+    "destination_id": "north-bay-island",
+    "fields": {
+      "signature_dish": "Andaman seafood platter + bar sundowner",
+      "why_it_matters": "Cliff-side garden deck — the natural sundowner stop after a North Bay morning. Ranked #10 of 108 A&N hotels on Tripadvisor; Alto Espirito Bar starts pouring at 6pm.",
+      "insider_tip": "Time post-ferry shower + Bayview sundown for 6pm bar opening. Seafood platter for two pairs with the bar's house rum."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "787b54b0-0134-4c48-a6d7-10e83ed19c31",
+    "destination_id": "north-bay-island",
+    "fields": {
+      "signature_dish": "Wood-fired pizza after sea-walk",
+      "why_it_matters": "Italian-run cafe — the casual non-Indian alternative to seafood after a full North Bay snorkel day. Backpacker/diver crowd.",
+      "insider_tip": "Best 7pm onwards when wood-fired oven is at temp. Margherita is the safest non-meat option for North-Bay-tired families."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "55baf1bd-7c31-4467-8cd1-9a37dc079ab0",
+    "destination_id": "chidiya-tapu",
+    "fields": {
+      "signature_dish": "Hot pakora + masala chai with sunset",
+      "why_it_matters": "Run by the A&N Forest Dept as the only food vendor inside Chidiya Tapu — the obvious sunset-stop dhaba for the 5pm bird-watching crowd. No other eatery within 5km of the beach.",
+      "insider_tip": "Get pakora + chai at 4:45pm right as the sunset crowd arrives. Cash only. Closes 30 min after sunset."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e6ce5315-2555-448e-87ba-e870bacee8ba",
+    "destination_id": "diglipur",
+    "fields": {
+      "signature_dish": "Bengali thali — rice + 5 sides",
+      "why_it_matters": "Cluster of 5-6 unnamed Bengali dhabas along Diglipur Bazar serving the local Bengali-settler community (Diglipur is 72% Bengali by mother-tongue, descendants of 1950s East-Pakistan refugees). Authentic mustard-oil fish curry + posto (poppy-seed) preparations not found elsewhere in A&N.",
+      "insider_tip": "Eat where the locals eat — look for the dhaba with the longest queue at 1 PM. Stocks finish by 3 PM (no second-shift cooking). Cash only."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ac85d273-5840-4cf4-a58e-50a7043ccd32",
+    "destination_id": "little-andaman",
+    "fields": {
+      "signature_dish": "Maach-bhaath (fish-rice)",
+      "why_it_matters": "Hut Bay town has 3-4 nameless Bengali-settler dhabas catering to the local population (Little Andaman is ~10,000 people, mostly Bengali resettled families + Onge tribal reserve). These dhabas serve the cheapest cooked-from-scratch fish-curry-rice on the island.",
+      "insider_tip": "Open 11 AM-3 PM lunch + 7-9 PM dinner. Stocks finish fast — by 2 PM the fish-curry pot is usually empty. Pack lunch for Butler Bay surf trips."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e36269fb-6f6d-4917-aefb-cd9d46b7a3dd",
+    "destination_id": "little-andaman",
+    "fields": {
+      "signature_dish": "Govt mess thali",
+      "why_it_matters": "Andaman Public Works Department guest-house at Hut Bay has an in-house mess serving residents (govt officials) + walk-in tourists by request. The cheapest govt-regulated hot meal on Little Andaman. Bengali settler cook on staff.",
+      "insider_tip": "Phone-in for lunch by 10 AM — they cook to head-count. Dinner only on confirmed advance booking."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "627fd60f-3616-47b5-8018-0cd39a5771a0",
+    "destination_id": "little-andaman",
+    "fields": {
+      "signature_dish": "Coconut water + Maggi",
+      "why_it_matters": "Butler Bay Beach is the only spot in the entire A&N Union Territory where surfing is regularly attempted (waves Nov-Apr). A small seasonal shack near the beach trail-head serves the surfer crowd — coconut water, Maggi, tea. Run by Bengali settler family who also offer surf-board rentals.",
+      "insider_tip": "Only open Nov-Apr surf season. Bring your own packed lunch from Hut Bay Bazaar; the shack stocks snacks only. Bring cash — no UPI signal."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "4c71124e-1ccb-4d83-8ae7-277e108513be",
+    "destination_id": "ross-island",
+    "fields": {
+      "signature_dish": "Pre-ferry veg thali",
+      "why_it_matters": "Ross Island has zero permanent eateries — visitors carry packed lunch from PB or eat before/after ferry. Annapurna is the closest pure-veg sit-down to Aberdeen Jetty (Ross ferry pier) — most veg-only families load up here pre-9am ferry.",
+      "insider_tip": "For the 9am Ross ferry: arrive 7:30am for breakfast + ₹200 takeaway thali in foil for Ross. Annapurna packs to-order if you ask."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "bb5c7272-9d73-48ef-b903-9fa961b3b775",
+    "destination_id": "little-andaman",
+    "fields": {
+      "signature_dish": "Idli-sambar + dosa",
+      "why_it_matters": "Hut Bay has a Tamil migrant community (descendants of 1960s government-resettled labour) — 1-2 tiffin shops in the bazaar serve fresh idli-sambar + dosa from 6 AM. These are pure-veg, the cheapest hot breakfast on the island, and the safest food option for pre-ferry mornings.",
+      "insider_tip": "Open 6-10 AM only. Filter coffee in steel tumbler — order strong. Cash only."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c9bcc876-b6d0-4905-b4b0-90211280744a",
+    "destination_id": "port-blair",
+    "fields": {
+      "signature_dish": "Special veg thali",
+      "why_it_matters": "Founded early 1990s by the Annapurna family — Port Blair's 30+ year pure-veg institution and the default lunch stop for veg-only Indian tourists between Cellular Jail and the Aberdeen Bazaar boat-ticket offices.",
+      "insider_tip": "Order the thali at 12:30pm sharp — that's when fresh batch comes out. South Indian morning shift (7-11am) does the best filter coffee + rava idli combo on the island."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a785bc9e-7fd5-4be5-a6e5-5627f0c0175b",
+    "destination_id": "havelock-island",
+    "fields": {
+      "signature_dish": "All-day breakfast platter + filter coffee",
+      "why_it_matters": "Wild Orchid's casual all-day cafe — the breakfast + coffee outpost separate from the fine-dining Red Snapper. The Govind-Nagar mid-morning hangout for diving-trip-returners and slow-travel solo travelers.",
+      "insider_tip": "Open from 7am — coffee plus pancakes between 7-9am before snorkel boats depart. Wifi available. Sit in the garden side for shade."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5f62d697-0784-4984-ab01-b2562cf10127",
+    "destination_id": "baratang-island",
+    "fields": {
+      "signature_dish": "Macchi suruva (fish curry) + bhaath",
+      "why_it_matters": "The Nilambur Jetty Port Canteen is the only food point on the Middle Strait crossing — every Baratang convoy passenger transits through it during the 25-30 min boat wait. Bengali-Andamanese fishermen-cooks staff it; the \"macchi suruva\" (fish curry in mustard-oil-base broth) is unique to this jetty.",
+      "insider_tip": "Tea + biscuits between convoys; if you want fish curry you have to flag it on the morning arrival — by afternoon convoy the catch is gone."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "76f5e22b-b44b-4618-ab57-e5e3fead4006",
+    "destination_id": "baratang-island",
+    "fields": {
+      "signature_dish": "Veg/Non-veg thali",
+      "why_it_matters": "The Andaman & Nicobar Islands Integrated Development Corporation runs a small canteen at its Baratang tourist complex serving regulated-rate thalis to convoy day-trippers and the rare overnight stayer. Pricing is government-controlled (no inflated tourist-rate menu).",
+      "insider_tip": "Best for vegetarian thali — the kitchen reserves bigger seafood portions for Dew Dale guests. Closed Sunday afternoons."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "226b9e14-2f5c-4fbd-8bf7-e05a6b4ccbd6",
+    "destination_id": "port-blair",
+    "fields": {
+      "signature_dish": "Chilli garlic squid + Red Snapper tawa fry",
+      "why_it_matters": "Open-air seafood restaurant 5 min walk from Cellular Jail — sources daily catch from Aberdeen Jetty fishermen. The de facto post-Light-and-Sound-Show dinner stop for north Indian and Bengali tourists wanting fresh local seafood.",
+      "insider_tip": "Go straight after the 7:50pm Light & Sound Show; arrive 8:45pm to beat the rush. Order the daily catch (whatever's on the iced display) tawa-fried — not curried. Open-air seating attracts mosquitoes — bring repellent."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "2388428f-f730-475d-aa15-fc8997ca9bd2",
+    "destination_id": "ross-island",
+    "fields": {
+      "signature_dish": "Chilli garlic squid",
+      "why_it_matters": "Ross Island has no eatery on-island — visitors finish the day at the 5pm Light & Sound Show and return to PB by 6pm ferry. New Lighthouse is the closest seafood dinner stop to Aberdeen Jetty (Ross ferry pier).",
+      "insider_tip": "Catch the 6pm ferry back from Ross, walk 5 min from jetty to New Lighthouse for 6:30pm dinner. Order tawa-fried catch — kitchen freshest right when fishermen unload (5-7pm)."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5430ff9f-76aa-4e4a-b28f-eda64a7fbc1a",
+    "destination_id": "port-blair",
+    "fields": {
+      "signature_dish": "Coastal fish curry + house buffet",
+      "why_it_matters": "Open-deck dining at ITC-owned Fortune Resort Bay Island with direct sight-line over Phoenix Bay onto Ross Island and North Bay — the only fine-dining restaurant in PB with a full sea-view + buffet format. Coastal fish curry has been on the menu since the early 2000s.",
+      "insider_tip": "Book lunch on the day you visit Ross Island — the resort's deck looks directly at Ross. Buffet is best at lunch (more seafood); à la carte better at dinner. Non-residents welcome — call ahead."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "be7e8702-64b3-421e-bb12-08b4e2840937",
+    "destination_id": "port-blair",
+    "fields": {
+      "signature_dish": "Andaman seafood platter",
+      "why_it_matters": "Garden deck restaurant attached to Sinclairs Bayview — Port Blair's only hotel hugging the Bay of Bengal cliff-side, ranked #10 of 108 A&N hotels on Tripadvisor. Sundown drinks at the attached Alto Espirito Bar with sea-view is a PB rite-of-passage.",
+      "insider_tip": "Reserve a deck table for 6:30pm sundown — bar starts pouring at 6pm. Order the platter for two if you're seafood-curious; tandoori prawns work as a single starter. The bar serves bartender-blended local rum cocktails."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b2f5e051-2e76-447f-a3e5-ce0a737e1dc6",
+    "destination_id": "ross-island",
+    "fields": {
+      "signature_dish": "Coastal fish curry with Ross Island sea-view",
+      "why_it_matters": "The only PB restaurant with a sight-line directly onto Ross Island — pair lunch here with your morning Ross ferry. Open-deck seating means you finish lunch looking at the island you walked that morning.",
+      "insider_tip": "Book a 1pm window-table on your Ross day so post-ferry lunch lines up with the deck's sun-angle on Ross. Pair coastal fish curry with house chapati."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "9afed92f-133f-4422-86dc-5c29ffbf1a91",
+    "destination_id": "ross-island",
+    "fields": {
+      "signature_dish": "Sunrise breakfast with Bay of Bengal view",
+      "why_it_matters": "Bay of Bengal cliff-side breakfast buffet — the only PB hotel restaurant where 7am breakfast comes with a Phoenix Bay sunrise. Ideal for Ross 9am-ferry families wanting one solid pre-ferry meal.",
+      "insider_tip": "Reserve a deck table for 7am; ferry to Ross departs 9am from Aberdeen Jetty (10 min by taxi). Buffet timing 7-10am — best at opening before tour groups arrive."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "6e1f2ff9-9bda-4121-84de-a920d012fd2f",
+    "destination_id": "ross-island",
+    "fields": {
+      "signature_dish": "Wood-fired pizza after Ross day-trip",
+      "why_it_matters": "Italian-run cafe popular with the European scuba/island crowd — the casual non-Indian dinner option in PB for travelers who've done Ross + Cellular Jail and want a non-seafood evening break.",
+      "insider_tip": "Best 7pm onwards once wood-fired oven hits temperature. Veg-friendly with proper margherita; non-veg has pepperoni with imported salami."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "0d06de53-4318-4fe5-99ec-c3e3d00865b6",
+    "destination_id": "north-bay-island",
+    "fields": {
+      "signature_dish": "Pre-ferry breakfast thali",
+      "why_it_matters": "North Bay is uninhabited — no permanent eatery. Annapurna is the default pre-ferry breakfast for the PB-North Bay-Ross combo tour (3-island day, departs 9am from Aberdeen Jetty).",
+      "insider_tip": "For 9am 3-island ferry: arrive 7:30am, get the dosa + filter coffee; pack a thali (₹120) in foil for North Bay lunch since the island has no food vendors."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "f3adf997-b128-46ef-aff8-27e109231930",
+    "destination_id": "north-bay-island",
+    "fields": {
+      "signature_dish": "Chilli garlic squid + Pomfret tawa fry",
+      "why_it_matters": "North Bay is uninhabited day-trip-only — visitors finish snorkel/sea-walk by 3pm and ferry back to PB. New Lighthouse is the closest sit-down seafood dinner to Aberdeen Jetty (North Bay ferry pier).",
+      "insider_tip": "Combine the 3-island ferry (PB → North Bay → Ross → PB) — return at 5pm and head straight to New Lighthouse. Order tawa-fried red snapper or pomfret from the iced display."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "46199bc3-eaff-45f7-b099-6c8058789b1a",
+    "destination_id": "north-bay-island",
+    "fields": {
+      "signature_dish": "Coastal fish curry with North Bay sea-view",
+      "why_it_matters": "Open-deck restaurant with sight-line directly onto North Bay and Ross — finish the day with Andaman seafood lunch facing the island you snorkeled that morning. The only PB fine-dining with sea-view.",
+      "insider_tip": "Book 12:30pm lunch on your North Bay day for sea-direction post-ferry. The buffet has more seafood at lunch; à la carte better at dinner."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b3147e36-887e-4576-bc70-9604a1dfc7cd",
+    "destination_id": "chidiya-tapu",
+    "fields": {
+      "signature_dish": "Andaman fish curry + Wandoor sunset view",
+      "why_it_matters": "Sea-facing restaurant at the 40-room Sea Princess in Wandoor — the closest hotel-restaurant to Chidiya Tapu (12km), near Mahatma Gandhi Marine National Park. Non-residents welcome.",
+      "insider_tip": "Combine Chidiya Tapu sunset (5:30pm) with dinner here (7pm) — 25 min drive. Saaz Bar starts 6pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "7597bd62-a30b-45f3-ab72-b3551c513af0",
+    "destination_id": "chidiya-tapu",
+    "fields": {
+      "signature_dish": "Post-sunset seafood return-dinner",
+      "why_it_matters": "After 5:30pm Chidiya Tapu sunset, the 45-min drive back to PB lands you at New Lighthouse for 7pm seafood dinner — standard end-of-Chidiya-Tapu-day routine.",
+      "insider_tip": "Drive back via NH-4 (45 min). Skip the resort dinner at Sea Princess if you want PB seafood instead of multi-cuisine. Open till 10:30pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "7528a2f9-8ab5-42af-9928-0d0e2b50e6e8",
+    "destination_id": "chidiya-tapu",
+    "fields": {
+      "signature_dish": "Pre-trip breakfast thali",
+      "why_it_matters": "Chidiya Tapu has no breakfast spot — most visitors start in PB and drive south. Annapurna is the default pre-bird-watching morning thali stop for veg families heading to Chidiya Tapu (best birding 6-8am, so 4:30am breakfast pickup).",
+      "insider_tip": "Open from 7am (south-Indian breakfast). Pack a roti+sabzi takeaway for the 7am drive — birding sites have zero food vendors."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "31640dd8-2766-4cc3-99e9-363a8d6d5c19",
+    "destination_id": "chidiya-tapu",
+    "fields": {
+      "signature_dish": "Beachside Andaman dinner",
+      "why_it_matters": "Symphony Samudra is the eco-resort on the Wandoor-Chidiya Tapu road — the only mid-range resort restaurant within 5km of Chidiya Tapu beach. Club Mahindra affiliate property. Beachfront sundowner.",
+      "insider_tip": "Walk-in welcome for non-residents — call ahead to confirm dinner availability (smaller property, kitchen needs notice). Pair with 5:30pm sunset at Chidiya Tapu and 7pm dinner here."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e6dd9cfd-603f-471a-aa1b-92da13b90bee",
+    "destination_id": "havelock-island",
+    "fields": {
+      "signature_dish": "Tamarind fish with coconut rice + banoffee pie",
+      "why_it_matters": "Founded 2006 by Adil; now run with partners Niamh and head chef Narendra. Started as a beach-shack, shifted beachside under a huge tree canopy. The Havelock backpacker / diver default for breakfast + coffee + dinner. Ethically sourced ingredients.",
+      "insider_tip": "Banoffee pie is the not-skip-this dessert. Arrive by 8:30am for breakfast before snorkel trips depart at 9. Wifi available."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ff2414e6-a8ef-47a2-9450-d3deff281a85",
+    "destination_id": "havelock-island",
+    "fields": {
+      "signature_dish": "North Indian thali + signature banoffee pie",
+      "why_it_matters": "Open-walled wooden-mat structure at the heart of Beach No. 5 — 28-page diverse menu and one of the two banoffee pies on the island (the other is Full Moon). Open 8am-10:30pm daily.",
+      "insider_tip": "Naan-basket + thali is the standard dinner combo. Sit outside under the trees for cooler evening dining. Cash + UPI."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "16a39ae8-fc3e-43df-9f53-e034447d3234",
+    "destination_id": "havelock-island",
+    "fields": {
+      "signature_dish": "Daily catch from ice podium — pick your own",
+      "why_it_matters": "Wild Orchid Resort's fine-dining restaurant — pick your dinner from the iced central display and relax on the outdoor deck while it's prepared. Casually sophisticated. Open all day. Non-resident reservations welcome.",
+      "insider_tip": "Best for 7:30pm sundown dinner. Pair with the Emerald Gecko Bar pre-dinner. Vegetarian options exist but seafood is the draw."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "1f92731d-b3e6-46b7-b16d-abbe963a5079",
+    "destination_id": "havelock-island",
+    "fields": {
+      "signature_dish": "Grilled fish + prawn masala (fresh from morning catch)",
+      "why_it_matters": "Walking-distance to Govind Nagar fishing jetty — sources catch daily from the 5:30am auction. The local-and-budget seafood option vs the resort-priced Red Snapper. Justdial 4.7/5 across 2,200+ reviews. (Note: kitchen cooks veg and non-veg in same utensils per multiple reviews — strict vegetarians skip).",
+      "insider_tip": "Order whatever was on the morning auction (ask staff what came in). Cash + UPI. Open lunch + dinner."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ab755e94-f985-481c-b69c-82404e42b8db",
+    "destination_id": "neil-island",
+    "fields": {
+      "signature_dish": "Butter garlic prawns + grilled lobster (no fixed menu — daily catch)",
+      "why_it_matters": "Shack-style restaurant just behind Beach No. 3 — no fixed menu, owner Balaram cooks what fishermen brought in that morning. Centrepiece is a blue-whale skull. Lonely Planet feature property; Tripadvisor regular.",
+      "insider_tip": "Order the lobster + prawn combo — they're Balaram's most-requested. Cash preferred. Pair with the bungalow as a stay-and-dine combo."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "bcc739e6-df21-4f40-994f-986df8e419a8",
+    "destination_id": "neil-island",
+    "fields": {
+      "signature_dish": "Multi-cuisine dinner with sunset-point access",
+      "why_it_matters": "In-resort multi-cuisine restaurant at Pearl Park (ranked #4 of 18 Lakshmanpur hotels). Big restaurant + swimming pool combo. Tripadvisor 4.0/5. The mid-range non-shack dinner option on Neil — most non-resort guests welcome on call-ahead.",
+      "insider_tip": "Reserve a 7pm table; sunset at Laxmanpur beach is a 5-min walk first. Open to non-residents. Bigger families with kids easier here than the shacks."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8e554bdf-eb89-450f-b49e-7a56b0c3225e",
+    "destination_id": "neil-island",
+    "fields": {
+      "signature_dish": "Sunset dinner with direct sea-facing view",
+      "why_it_matters": "In-resort restaurant at Tango Beach (oldest preserved resort in Neil) — only Neil property with direct sea-facing balcony rooms; restaurant 60m from Beach No. 1. Bookable via Booking.com 70M+ verified reviews.",
+      "insider_tip": "Take a sea-facing balcony table for 6pm sundown — Laxmanpur is the sunset side. Order grilled fish over curries (kitchen specializes)."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "68379f2e-56b5-428d-860a-dd7e54c5404d",
+    "destination_id": "neil-island",
+    "fields": {
+      "signature_dish": "Cyclist's breakfast + filter coffee",
+      "why_it_matters": "Small cafe at the main market road between the jetty and Bharatpur — the cyclist-and-scooter-renter's default breakfast stop on Neil (most travelers cycle the 15 sq km island). Quick, cheap, fast turnaround.",
+      "insider_tip": "Open 7am-9pm. Best for breakfast before 9am scooter rentals (₹400/day) take you toward Sitapur sunrise or Laxmanpur sunset."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "618d034b-f80d-41b7-8ac5-387715f30f1e",
+    "destination_id": "neil-island",
+    "fields": {
+      "signature_dish": "In-resort multi-cuisine with sea-side patio",
+      "why_it_matters": "In-resort restaurant at SeaShell Neil — Neil's only mid-range resort restaurant with full menu + sea-side patio. Non-residents welcome by reservation. SeaShell brand also runs the Havelock and Port Blair properties.",
+      "insider_tip": "Best for 7:30pm dinner. Patio seating books out — phone ahead. The all-day spread is buffet-style for in-resort guests; à la carte for non-residents."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b7bf192d-c470-4489-b592-49bd6d1c1826",
+    "destination_id": "baratang-island",
+    "fields": {
+      "signature_dish": "Macchi suruva (fish curry) + bhaath",
+      "why_it_matters": "Dew Dale opened in Sundergarh village (105 km from Port Blair) as Baratang's pioneer eco-tourism property — its restaurant is the only one on the island serving sit-down Bengali-Andamanese fish curry to non-residents. Owner Jessy D'Cruz's kitchen uses catch landed at Nilambur jetty that morning.",
+      "insider_tip": "Non-residents must phone ahead by 11 AM if they want lunch — the kitchen cooks portion-by-portion for guests, no walk-in stock. Limited diner-style menu of fish/egg/veg thali."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "fe8c35ea-e6ae-4493-8c0d-cb79fda797d9",
+    "destination_id": "baratang-island",
+    "fields": {
+      "signature_dish": "Convoy breakfast — paratha + chai",
+      "why_it_matters": "Six tiny tarp-roof dhabas cluster at Jirkatang gate — last food stop before the 49-km Jarawa Reserve transit. Every Baratang day-trip from Port Blair pauses here 6:30-7 AM as the convoy assembles. Bengali settler families + Tamil migrant workers cook; menu rotates with whoever is awake.",
+      "insider_tip": "Use this stop to fill water bottles — there is no licensed vendor in the Jarawa reserve. Idli-sambar plate before the 8 AM convoy departure is the safest order."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "996c54df-3fd8-40f7-a4a8-3323f113055c",
+    "destination_id": "baratang-island",
+    "fields": {
+      "signature_dish": "Coconut water + samosa",
+      "why_it_matters": "A handful of unnamed wooden snack shacks at the Limestone Cave entry serve cold coconut water (cut on the spot) + samosa/bhujia for the 15-min cave walk. Run by Bengali settler women from nearby Adajig village. Cash only.",
+      "insider_tip": "Bring exact change — no card, no UPI. Coconuts are ₹40-50 in season (Oct-May), bottled water ₹30. The shacks close by 3 PM when last boat returns."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e924429a-3dd2-4756-9eec-b988c8011704",
+    "destination_id": "long-island-andaman",
+    "fields": {
+      "signature_dish": "Padauk-tree dining-room thali",
+      "why_it_matters": "Founded 2007 by Iftekar & Hilary, Blue Planet built its central restaurant around an ancient Andaman Padauk tree (the A&N state tree) using salvaged plastic/glass bottles and old tyres — every meal is taken under the tree's canopy. The kitchen is the only public dining option on Long Island for non-residents.",
+      "insider_tip": "Non-residents must reserve a table a day ahead by VHF radio call (relayed from Yerrata jetty). One menu per day; eggs/fish/veg only — no pork/beef/alcohol."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5ce8a7a8-5dae-4d34-9cb8-57be1127ce45",
+    "destination_id": "long-island-andaman",
+    "fields": {
+      "signature_dish": "Bengali masala chai + telebhaja",
+      "why_it_matters": "Long Village has roughly 1,500 residents (mostly Bengali settler families resettled here in the 1960s) — the main bazaar lane has 3-4 tea-stalls that double as the village social anchor. These are not on tourist trails but you walk past them every time you head to Lalaji Bay trail-head.",
+      "insider_tip": "Bengali shopkeepers will direct you to homestays/boat-hires for free; reciprocate by buying chai. Limited stock — they replenish only on ferry days."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a2a46c4b-0e86-4b28-addd-7a134c9d6665",
+    "destination_id": "long-island-andaman",
+    "fields": {
+      "signature_dish": "Beach picnic veg/fish thali",
+      "why_it_matters": "Lalaji Bay has zero infrastructure (no shops, no toilets). Blue Planet kitchen packs a beach-lunch box for guests + walk-in non-residents who phone ahead — this is the only food available on the 1.5-km beach. Cooked fresh, packed in banana-leaf + greaseproof.",
+      "insider_tip": "Order at the Blue Planet reception by 7 AM if you're trekking to Lalaji that day. Bring back the empty container — no bins on Lalaji, pack-out-what-you-pack-in protocol."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c9878e44-1e1b-4d44-b91c-cae277df945d",
+    "destination_id": "long-island-andaman",
+    "fields": {
+      "signature_dish": "Daal-chawal + fish fry",
+      "why_it_matters": "Yerrata Jetty is the Middle-Andaman-side ferry departure point for Long Island (2-hour government boat). The jetty has a single Forest Dept canteen + a couple of Bengali tea-stalls — these serve everyone waiting for the once-daily ferry schedule.",
+      "insider_tip": "Eat BEFORE you board — there is no food on the 2-hour ferry, and Blue Planet on Long Island requires reservation. Best time: 8-9 AM before the morning Long Island sailing."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "0b96ad6a-6c58-420e-b254-5e51ae0ea08d",
+    "destination_id": "long-island-andaman",
+    "fields": {
+      "signature_dish": "Forest Dept rest-house thali",
+      "why_it_matters": "Tapovan Forest Rest House at Bakultala (1 km from jetty) has a basic in-house kitchen that cooks for residents and pre-booked walk-ins. The Bakultala settlement is older than Long Village — Bengali colonists arrived here in the 1950s. Booking via Divisional Forest Officer Middle Andaman (Phone: 03192-274210).",
+      "insider_tip": "Book a thali by morning if you're not staying — the cook only fires up portions on confirmation. Veg thali default; fish only on request."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b933439a-50b8-48e9-9ef7-88ba61263f29",
+    "destination_id": "diglipur",
+    "fields": {
+      "signature_dish": "Sea-facing thali + turtle-season BBQ",
+      "why_it_matters": "Turtle Resort is an ANIIDCO government property at Kalipur Beach — the prime turtle-nesting beach in A&N (Olive Ridley + Hawksbill + Green + Leatherback all nest Dec-Mar). Its open-air restaurant is the only sit-down meal option directly on Kalipur Beach. Non-residents welcome with reservation.",
+      "insider_tip": "Book turtle-season (Dec-Mar) dinner 2 days ahead — the Forest Dept guided turtle-walk starts from this restaurant patio at 10:30 PM. Dinner-walk combo most evenings."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "d93f4c31-050b-4823-a7fc-5084dfa5e98f",
+    "destination_id": "diglipur",
+    "fields": {
+      "signature_dish": "Multi-cuisine + Kalipur fish",
+      "why_it_matters": "Saddle Peak View Resort opened January 2017 at Kalipur (4-min walk to the turtle-nesting beach, 8 km from Aerial Bay jetty). Its in-house multi-cuisine kitchen serves Bengali settler-style fish-curry-rice + standard Indian fare to walk-ins by reservation.",
+      "insider_tip": "Best for early breakfast (6-8 AM) before the Saddle Peak summit trek (7-9 hour climb) — the kitchen will pack a trail breakfast box if you ask the night before."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "48353b26-391f-430c-8e1d-986378006175",
+    "destination_id": "rangat",
+    "fields": {
+      "signature_dish": "Multi-cuisine thali + fish",
+      "why_it_matters": "Hotel Avis is Rangat's biggest hotel and its multi-cuisine restaurant doubles as the town's social-gathering anchor. Bengali + Tamil + Telugu settler demographic of Rangat is reflected in the menu (fish curry + dosa + Manchurian all on the same plate). Open to walk-in non-residents.",
+      "insider_tip": "Open all day — best for early breakfast before catching the morning Mayabunder bus or Long Island ferry. Cash + UPI accepted."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "6036b38d-9cf6-4f74-8098-6db0b6143813",
+    "destination_id": "rangat",
+    "fields": {
+      "signature_dish": "Cuthbert Bay fish + thali",
+      "why_it_matters": "Hawksbill Nest is the A&N Tourism Department guest-house at Cuthbert Bay — its restaurant is the only sit-down option within 19 km of Rangat town. Government regulated pricing. The kitchen sources fish from Cuthbert Bay fishermen who also operate the turtle-nesting Forest Dept hatchery 2 km away at Dhani Nallah.",
+      "insider_tip": "Book lunch/dinner via the Rangat tourism office — walk-in is hit-or-miss. The dinner-then-turtle-walk combo (Dec-Mar) starts from this veranda."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "afcef0c9-3f45-48a6-a875-607fdddf8e9a",
+    "destination_id": "rangat",
+    "fields": {
+      "signature_dish": "Idli-sambar + dosa breakfast",
+      "why_it_matters": "Rangat has a significant Tamil migrant settler community (descendants of 1960s plantation labour) — the bazaar has 3-4 tiffin-style breakfast shops serving authentic idli-sambar + dosa from 6 AM. These are the cheapest hot-meal option in town.",
+      "insider_tip": "Open 6-10 AM only (breakfast-only operation). Dosa-sambar plate ₹50-70. Filter coffee in steel tumbler."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "91c47ebb-63fc-4160-9e5b-2cd8f6889a2f",
+    "destination_id": "rangat",
+    "fields": {
+      "signature_dish": "Govt mess thali",
+      "why_it_matters": "The Andaman Public Works Department guest-house at Rangat has a small in-house mess that serves residents (government officials) and walk-in tourists by advance request. Regulated subsidised pricing — likely the cheapest hot lunch in town outside of the Tamil tiffin shops.",
+      "insider_tip": "Walk-in tourists need to flag the kitchen by 10 AM if you want lunch — they cook to head-count, no excess stock. Veg thali default."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "1f913d63-1b87-4aee-b087-b234138b49a1",
+    "destination_id": "rangat",
+    "fields": {
+      "signature_dish": "Coconut water + bhujia",
+      "why_it_matters": "A couple of seasonal coconut-stall shacks at Amkunj Beach trail-head run by Bengali settler families from Nimbutala village. Operate during dry-season tourist months (Oct-May). Cash only, no menu beyond what is laid out on the counter.",
+      "insider_tip": "Stalls close by 4 PM. Bring your own snacks if you're heading to Cuthbert Bay (12 km further north) — Amkunj is the last food stop before Cuthbert/Hawksbill Nest."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8f3b13d8-42ba-494e-896d-1b94845b8e28",
+    "destination_id": "little-andaman",
+    "fields": {
+      "signature_dish": "Hut Bay fish + bamboo-hut breakfast",
+      "why_it_matters": "Blue View was the first bamboo-hut resort to open in Little Andaman; its open-air restaurant is one of the only sit-down eateries on the island for non-residents. Bengali + Tamil migrant cooks share the kitchen; menu reflects both (fish curry + idli-dosa breakfast).",
+      "insider_tip": "Reserve dinner — kitchen capacity is tiny. Best surfer-traveller hangout in the evenings; long-stay backpackers heading to Butler Bay use this as their base."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "303ac5c7-1363-400a-a3e9-bd0c42f980b3",
+    "destination_id": "barren-island",
+    "fields": {
+      "signature_dish": "Onboard lunch — wraps + fruit + coffee",
+      "why_it_matters": "Barren Island has zero permanent eateries (uninhabited active volcano). All visitor food comes from chartered dive-boat operators. Barefoot Scuba (PADI 5-star, Havelock) is the most-established Barren operator — its onboard galley packs lunch + breakfast for the 4-hour outbound + 4-hour return passage. Cost included in dive-package (₹1.5-1.7 lakh per boat / 7-8 divers).",
+      "insider_tip": "Vegetarian + vegan + gluten-free options possible if flagged 48h before charter. The lunch is consumed AT Barren — onboard while circling the volcano."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "68a02ffd-986b-4dcd-9ca9-60a166ddb7d0",
+    "destination_id": "barren-island",
+    "fields": {
+      "signature_dish": "Multi-course onboard meals",
+      "why_it_matters": "Infiniti is the premier liveaboard dive yacht operating in A&N — 4 to 10-night trips that include Barren Island as a centrepiece. The galley is run by a dedicated chef serving 3 meals + snacks across the cruise. The discoverers of Barren's \"Manta Bay\" dive site, regularly featured in Scuba Diving magazine.",
+      "insider_tip": "Multi-day liveaboard pricing (₹25,000+ per night) includes all meals + diving. The boat actually anchors near Barren overnight — you eat dinner watching the volcano. Vegetarian / dietary requirements must be flagged 7 days before departure."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "de933f57-fe66-4334-988c-47668c12c0c8",
+    "destination_id": "barren-island",
+    "fields": {
+      "signature_dish": "Onboard expedition meals",
+      "why_it_matters": "Lacadives (founded 1993, India's oldest PADI dive-school, Havelock branch) is the second-major Barren-Island operator. Their boats provision a galley with vegetarian-friendly Indian thalis and Western options for the 8+ hour round-trip charter. Lunch consumed at the volcano viewpoint.",
+      "insider_tip": "Lacadives accepts mixed groups (divers + snorkel-only spectators) so non-divers can join the boat for the Barren visit at a lower cost. Vegan / Jain options available with notice."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "42a9822b-cb3e-4707-9d0b-0ba07103b87f",
+    "destination_id": "barren-island",
+    "fields": {
+      "signature_dish": "BYO packed lunch from Port Blair",
+      "why_it_matters": "Smaller fishing-style charter boats from Port Blair (Phoenix Bay + Junglighat jetties) operate budget Barren trips (~₹80-100k per boat) but DO NOT provision food — you bring your own. Most charter agencies arrange a packed lunch from Port Blair's Bengali dhabas (Annapurna / New Lighthouse) for ~₹250/head — Bengali fish thali wrapped in foil.",
+      "insider_tip": "Carry 3L bottled water minimum — 8-hour passage + 2 hours at volcano + return = 10-12 hours total. Avoid greasy/spicy food (boat-deck nausea); plain rice + boiled-veg is safer."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "32f5f406-a846-409b-86bb-3dd6455e2535",
+    "destination_id": "barren-island",
+    "fields": {
+      "signature_dish": "Pre-dive 5 AM breakfast spread",
+      "why_it_matters": "Havelock Island Beach Resort (Beach No. 3, Havelock) opens its kitchen at 5 AM specifically for divers departing for Barren Island. The standard pre-charter breakfast is the de-facto pre-dive ritual: toast + eggs + fruit + coffee + sandwiches-to-go for the 4-hour boat ride. Resort + dive-charter combos available.",
+      "insider_tip": "If you're overnighting at Havelock the night before a Barren trip, ask the resort to bag a packed-breakfast for the boat — most operators will accept resort packed boxes onto their charters at no extra cost."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "d58e97a0-ddf9-4295-b018-a133a9b512e7",
+    "destination_id": "port-blair",
+    "fields": {
+      "why_special": "Government-run tourism hotel. Clean, central, reliable. Best value in Port Blair."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "708ba6e5-0f06-466b-a21d-e9c0f68e4955",
+    "destination_id": "havelock-island",
+    "fields": {
+      "why_special": "Premier luxury eco-resort. Tented cottages right on Asia's best beach."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "689326a8-cf53-4e47-9d2d-87c99fc7cea8",
+    "destination_id": "havelock-island",
+    "fields": {
+      "why_special": "Popular mid-range beachside cottages. Good food, friendly staff, garden setting."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "0ecf9d3b-b04f-4aed-a941-f0ea35951580",
+    "destination_id": "havelock-island",
+    "fields": {
+      "why_special": "Multiple operators — basic bamboo/wood huts. Fan-only. Negotiate rates."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "32e098ab-7545-4218-86da-de90b0c61e90",
+    "destination_id": "neil-island",
+    "fields": {
+      "why_special": "Best-value on Neil. Clean rooms, garden, bicycle rental on-site."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "a1b60aa9-768e-49a9-8d2d-4f5a17248aad",
+    "destination_id": "long-island-andaman",
+    "fields": {
+      "why_special": "Only accommodation on Long Island. ~5 rooms. Book well in advance."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "efcbedd3-0394-4e63-84b4-93c5e19fdc6d",
+    "destination_id": "rangat",
+    "fields": {
+      "why_special": "Eco-huts with mangrove boardwalk access. Best stay in Middle Andaman."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "e7fb131e-171d-4006-9f5f-d8a881b25a56",
+    "destination_id": "little-andaman",
+    "fields": {
+      "why_special": "Very basic beach huts. No AC, shared facilities. Only option on the island."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chidiya-tapu",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "Replaces \"Sea Princess Resort, Port Blair\" — the actual Sea Princess is in Wandoor (already used as value slot), not Port Blair central. SeaShell PB ranked #3 of 109 A&N hotels on Tripadvisor (1,877 reviews) and offers the clean morning-departure for Chidiya Tapu 4:30am pickup.",
+      "signature_experience": "Top-of-Marine-Hill panoramic property in PB — 25km drive to Chidiya Tapu sunset point via NH-4 (45 min). The closest 4-star urban base for Chidiya Tapu day-tripper birders."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "port-blair",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "ITC-Fortune brand, harbor-facing 4-star resort in Port Blair. Pool, multiple dining, reliable service. Central to Cellular Jail, Marina, and Corbyn's Cove. The default Port Blair pick for visitors who want proper hotel quality before ferry departure.",
+      "signature_experience": "Evening sound-and-light show at Cellular Jail (7 PM English, 6 PM Hindi), 10-min drive from the hotel, followed by Andamanese seafood at the hotel's restaurant."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "port-blair",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Sinclairs-brand 4-star with Haddo Bay views. Mid-range pricing at 40-50% less than Fortune Bay Island. Reliable service, pool, restaurant. Central location.",
+      "signature_experience": "Morning visit to Cellular Jail museum (5 km), afternoon trip to Corbyn's Cove beach, back for sunset at the hotel's bay-view deck."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "havelock-island",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "46.5-acre beachfront villa resort on Radhanagar Beach. Villas with private plunge pools, rainforest surroundings. Ranked #2 of 40 Havelock hotels. Game fishing, forest treks, scuba, kayaking, village experience. The Taj flagship in the Andamans and the reason most premium Andaman trips happen.",
+      "signature_experience": "Sunset at Radhanagar Beach (walk from villa in 5 min) — consistently named one of Asia's best beaches by Time magazine and National Geographic. Then scuba briefing for the 6 AM dive next morning."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "havelock-island",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Hidden in a forest of indigenous Mahua trees adjoining Radhanagar Beach. 19 thatch and wood cottages — Nicobari Cottages and Andaman Villas. Starting ₹10k/night. Radhanagar Beach access in 2-min walk. The design-character alternative to Taj's mass-luxury.",
+      "signature_experience": "Morning yoga on the Nicobari-cottage porch, then walk directly through the Mahua forest path to Radhanagar for the unspoilt beach morning."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "havelock-island",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "SeaShell-chain reliable mid-luxury, on Havelock. Pool, spa, multiple dining. Between Govindnagar Beach and Radhanagar, shuttle to both. Good for families or couples who want proper hotel facilities at 40% less than Taj Exotica.",
+      "signature_experience": "Morning scuba briefing with the in-house dive centre, afternoon drive to Elephant Beach (separate boat ride from Havelock Jetty) for the snorkeling reef."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "neil-island",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "The first and only 'luxury resort' on Neil Island — part of SeaShell chain. Cottage-style accommodation close to Laxmanpur Beach. Best Neil-Island stay, consistently the island's highest-rated.",
+      "signature_experience": "Sunrise at Sitapur Beach (10 min drive) — Neil's easternmost beach catches the first light in the Andamans, often with only 5-10 people on the 2-km stretch."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "diglipur",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Eco-friendly resort in a palm-tree garden, short walk from Beach No. 3. Activities booked on-site: snorkeling, jungle trekking, fishing, diving, and (uniquely) a short tabla-instrument course. Relaxed atmosphere, best-reviewed Diglipur option.",
+      "signature_experience": "Morning boat to Ross & Smith Islands — at low tide, the sandbar between the two islands is walkable, creating one of India's most photogenic island views."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "diglipur",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "11 rooms spread across two floors on Kalipur Beach — Andaman's most important Olive Ridley and Leatherback turtle nesting beach (peak Dec-Mar). Government-run, spacious rooms at budget pricing. For turtle-nesting visitors, this is the base.",
+      "signature_experience": "Pre-dawn walk on Kalipur Beach (Dec-Mar) with the Forest Dept guide — Leatherback turtles (world's largest marine turtle, 2m long) nest here. Don't use flash; follow the guide's lead."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "long-island-andaman",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Small-scale off-grid eco-lodge on Long Island — the Andamans' most genuine off-tourist-track stay. Limited rooms, beach proximity, basic comforts with attention to sustainability. For travelers who think Havelock is too developed.",
+      "signature_experience": "Day trip to Merk Bay Beach (dinghy-and-trek access only, no vehicles) for what's often called the clearest water in the Andamans — far below any tourist threshold."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "baratang-island",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend it for solid comfort at half the price of top resorts, with consistent reviews for cleanliness and staff helpfulness without unnecessary markup.",
+      "signature_experience": "Andaman & Nicobar Islands Integrated Development Corporation lodge near Nilambur Jetty — regulated-rate AC/non-AC rooms + canteen serving thali at govt-controlled prices."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "baratang-island",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend it because the jetty for limestone cave and mud volcano boat tours departs within 10 minutes' walk, eliminating pre-dawn transfers.",
+      "signature_experience": "105 km north of Port Blair at Sundergarh village — within 15 min of Nilambur Jetty (Limestone Cave + Parrot Island boat departure). Daily 8:30 AM tour shuttle + complimentary breakfast."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "north-bay-island",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "We recommend this for its no-frills timber villas buried in coconut groves, zero-electricity nights by design, and the singular Andaman experience of falling asleep to cicadas and tide.",
+      "signature_experience": "Top-of-Marine-Hill panoramic property looking onto North Bay, Ross and the harbor — rooftop live music dining, the ₹20-note North Bay view from the deck."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ross-island",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "We recommend this for the specific experience of staying in solar-powered beachfront cottages with minimal amenities but direct reef access and a working marine conservation program you can join.",
+      "signature_experience": "Top-of-Marine-Hill property with panoramic Phoenix Bay views taking in Ross Island, North Bay and the harbor. Rooftop live music + sea-view dining."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "north-bay-island",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this for its overwater bungalows with direct lagoon access and Michelin-trained kitchen—the signature Andaman luxury property.",
+      "signature_experience": "Marine Hill ITC property — only PB hotel with open-deck Mandalay restaurant directly facing North Bay Island and Ross. Sea-view rooms."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chidiya-tapu",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Replaces fabricated \"Andaman Jungle Camp, Neil Island\" — Neil is a 2-hour ferry from PB, not connected to Chidiya Tapu. The Forest Dept Guest House at Chidiya Tapu is the canonical on-site xfactor stay for birders wanting 4am bird-watching access. Listed on official A&N Forest Dept site.",
+      "signature_experience": "A&N Forest Department guest house inside the Chidiya Tapu Forest complex — the only on-site stay at Chidiya Tapu, run by Chief Wildlife Warden office. Bookings via forest.and.nic.in or Van Sadan Haddo office in PB."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "port-blair",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "Tripadvisor #3 of 109 A&N hotels (1,877 reviews, 4/5). Best mid-tier location in PB — sea view + 5 min taxi to Cellular Jail + 2 km to Aberdeen Jetty (Ross/North Bay ferries).",
+      "signature_experience": "Perched on top of Marine Hill with panoramic Phoenix Bay views — walking distance to Cellular Jail and Aberdeen Bazaar. Rooftop live music + sea-view dining."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ross-island",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend this for travellers wanting clean rooms, basic but reliable meals, and direct beach access without the premium markup of larger chains.",
+      "signature_experience": "South Point cliff-side garden hotel — 43 rooms with Bay of Bengal view. 3km to Aberdeen Jetty for Ross ferry. Alto Espirito sea-view bar."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "north-bay-island",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend this for consistent 4.5-star ratings, beachfront access, and on-site diving—solid comfort without resort theatre pricing.",
+      "signature_experience": "South Point cliff-side hotel with Bay of Bengal view. 3km to Aberdeen Jetty (North Bay ferry pier). Alto Espirito sea-view bar."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chidiya-tapu",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Replaces fabricated \"Taj Exotica Resort & Spa, Havelock Island\" — Taj Exotica is on Havelock Beach 7 (2.5-hour ferry from PB), NOT chidiya-tapu. Symphony Samudra is the actual experience-tier resort closest to Chidiya Tapu (5km), verified via Symphony Resorts official, Booking.com, Club Mahindra.",
+      "signature_experience": "Beachside jungle eco-resort on the Wandoor-Chidiya Tapu road, 5km from Chidiya Tapu sunset point. Club Mahindra affiliate. Ocean-spa + beach access + birdwatching trails."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chidiya-tapu",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Replaces fabricated \"Barefoot at Havelock\" — Barefoot is on Havelock Beach 7 (2.5-hour ferry from PB), NOT chidiya-tapu. Sea Princess Wandoor is real, ranked 4/5 on Tripadvisor across 950+ reviews, and is the closest mid-range resort to Chidiya Tapu (12km — accessible by road, no ferry needed).",
+      "signature_experience": "Beachfront 40-room resort at Wandoor — 12km from Chidiya Tapu, on the entry road to Mahatma Gandhi Marine National Park. Two restaurants (Blue Sky multi-cuisine + Saaz Bar)."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "havelock-island",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Replaces fabricated \"Symphony Samudra Beachside Jungle Resort & Spa\" — Symphony Samudra is on PB-side near Chidiya Tapu (NOT Havelock). Symphony Palms is the real Havelock property at Beach No. 5, run by Symphony Resorts, ranked 4/5 on Tripadvisor across 1,000+ reviews.",
+      "signature_experience": "104-room resort at Beach No. 5 (Govind Nagar / Vijaynagar) with on-site dive centre, lagoon suites, eco villas, Havelock water villas. Five room categories."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "neil-island",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Pearl Park is the canonical mid-range Neil property — ranked #4 of 18 Lakshmanpur hotels on Tripadvisor, 4/5 rating. Walking distance to Laxmanpur sunset point.",
+      "signature_experience": "Walking-distance access to Laxmanpur Beach (sunset point). Wide range of rooms + huts, large swimming pool, big restaurant with direct beach access for sunset viewing."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "neil-island",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "Tango is the oldest preserved resort on Neil — listed on Booking.com with 70M+ verified reviews. Closest property to the jetty + sunset point + main market.",
+      "signature_experience": "Only Neil property with direct sea-facing rooms + balconies — 60m from Beach No. 1 (Laxmanpur Beach 1) at the sunset point. 35 rooms across AC and non-AC cottages. Water-sports + cycling rentals on site."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "north-bay-island",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this because it sits 15 minutes by speedboat from North Bay snorkel sites and is walkable to Havelock's main market and restaurants."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "long-island-andaman",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Verified govt property — the cheapest verified accommodation on Long Island outside Blue Planet. Long Island has fewer than 5 stays total; Tapovan is one of the three government-run options.",
+      "signature_experience": "A&N Forest Department rest house at Bakultala village (1 km from Long Island jetty). Basic AC/non-AC rooms + in-house mess (advance-booked thali). Booking via Divisional Forest Officer Middle Andaman (03192-274210)."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "long-island-andaman",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Verified govt eco-tent property. Sleeping at Lalaji Bay means morning swims on India's most secluded white-sand crescent before any boat traffic arrives. Confirmed via andamanexperts + andamanislands.com.",
+      "signature_experience": "Six tented accommodations constructed by the A&N Forest Department at Lalaji Bay (6 km north of Long Island jetty) — the only stay AT the secret Lalaji beach itself. Booking via Forest Dept Middle Andaman."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "diglipur",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Verified property on Tripadvisor + pristinebeachresort.com. One of only 3 mid-range Kalipur Beach properties; closest to the Forest Dept turtle-walk meeting point.",
+      "signature_experience": "Eco-cottage property 5-min walk from Kalipur Beach (A&N's primary turtle-nesting beach — Olive Ridley + Hawksbill + Green + Leatherback all nest Dec-Mar). Saddle Peak summit-trail trail-head 800 m. Forest Dept turtle-walks 10:30 PM in season."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "rangat",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Verified govt property (andamantourism.gov.in); the closest stay to Cuthbert Bay turtle-nesting site + Dhani Nallah hatchery. Rangat has very few verified stays — Hawksbill Nest is the experience anchor.",
+      "signature_experience": "A&N Tourism Department guesthouse at Cuthbert Bay (19 km north of Rangat Bazar, 2 km from Dhani Nallah Mangrove Boardwalk, on the Cuthbert Bay Wildlife Sanctuary — established 1997 — turtle-nesting beach). In-house multi-cuisine restaurant. Forest Dept dinner-then-turtle-walk combo (Dec-Mar)."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "rangat",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Verified on Tripadvisor (active 2024 reviews) + MakeMyTrip with Free Cancellation. The most-reviewed mid-budget hotel in Rangat; doubles as transit-night base for travellers continuing to Mayabunder / Diglipur.",
+      "signature_experience": "Largest Rangat-town hotel — concrete budget rooms + eco-huts options. AC/non-AC. In-house multi-cuisine restaurant (Indian/Chinese/Continental). Walking distance to Rangat Bus Stand for Mayabunder-bound buses + ferry transit to Long Island."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "rangat",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "Verified govt property listed on apwd.and.nic.in. APWD prioritises officials but releases rooms to public when available; advance booking required. Walking distance to Rangat Bus Stand + Hotel Avis.",
+      "signature_experience": "Andaman Public Works Department guesthouse in Rangat town — basic clean rooms with en-suite bathrooms + AC/non-AC choice + in-house mess (cooks-to-headcount, advance booking required). The cheapest verified rangat-town stay."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "little-andaman",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Verified by go2andaman as Little Andaman's most popular and economical place. The only resort on the island with consistent 2024-25 visitor reviews; default base for surf-trips to Butler Bay.",
+      "signature_experience": "First bamboo-hut resort to open in Little Andaman — beachfront huts at Hut Bay with verandas + open-air restaurant. The de-facto backpacker/surfer base on the island (Butler Bay surf beach is 14 km north)."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "little-andaman",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Verified govt property on apwd.and.nic.in. Among the cheapest hot meals on Little Andaman. Walk-in tourists release on availability after officials.",
+      "signature_experience": "Andaman Public Works Department guesthouse in Hut Bay village — basic rooms with en-suite + AC/non-AC choice + in-house mess (Bengali settler cook). Walking distance to the Hut Bay ferry jetty (8h sailing from Port Blair)."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "little-andaman",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "The most-authentic Little Andaman experience for travellers who want to bypass the small resort scene. Sourced via wanderon.in homestay guide (top-9 Little Andaman list — most properties listed are Bengali-family-run).",
+      "signature_experience": "Beachfront homestays in traditional Andamanese-style huts run by Bengali settler families in Hut Bay. Direct beach access + home-cooked fish-thali meals + opportunities to join local fishing trips. ~5-8 verified family-run homestays operate in the village."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ross-island",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this because it's the most established full-service resort within the Ross Island archipelago ecosystem, with direct beach access and multi-cuisine dining that justifies the splurge for divers and snorkellers.",
+      "signature_experience": "Marine Hill ITC property — only PB hotel with open-deck Mandalay restaurant directly facing Ross Island. Sea-view rooms look at the island you visit by day."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ross-island",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this because it sits walking distance to the Ross Island jetty, the Cellular Jail ruins, and the main bazaar—meaning you need no transport for the island's core attractions."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "baratang-island",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend it as the island's most established property with direct access to limestone caves and mud volcano tours, the two reasons most travellers come to Baratang.",
+      "signature_experience": "Pioneer eco-property on Baratang (105 km from Port Blair at Sundergarh village). AC double-bedded cottages with attached bathrooms + complimentary 7-9 AM breakfast. Owner Jessy D'Cruz arranges Limestone + Parrot + Mud Volcano boat tickets at regulated rates."
+    }
+  }
+]

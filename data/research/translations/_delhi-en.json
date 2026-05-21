@@ -1,0 +1,774 @@
+[
+  {
+    "table": "local_eateries",
+    "id": "80192cd2-52e2-4b19-a282-d4fc1ce0808d",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "mutton korma with rumali roti",
+      "why_it_matters": "Karim's quieter neighbour, run by the same family lineage; locals send first-timers here when the queue across the lane gets ridiculous.",
+      "insider_tip": "First-floor seating overlooks the Jama Masjid steps — best in winter evenings around 7pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a101f31b-8045-4f3e-839a-cea76a862b35",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "deep-fried stuffed paratha",
+      "why_it_matters": "Last surviving paratha shop on the gali that once had a dozen — frying parathas in ghee in iron kadhais since the 1870s, served with pickled chilli and tamarind chutney.",
+      "insider_tip": "Order one mewa paratha to share at the end — most regulars treat it as dessert, not a main."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e04703ec-2bbc-4ac4-8862-77b276d837b8",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "dahi bhalla with sweet-sour chutney",
+      "why_it_matters": "A two-item menu — dahi bhalla and aloo tikki — held since 1940 on a corner near Central Bank; consistency is the whole point.",
+      "insider_tip": "Go before 1pm; they sell out by mid-afternoon and don't refill."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ce8f93d8-a2c5-4576-a931-ddf148ea43f2",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "desi ghee jalebi",
+      "why_it_matters": "Thick, knotted jalebis fried in pure desi ghee at the Dariba Kalan corner since 1884 — heavier and chewier than the standard Indian version.",
+      "insider_tip": "Eat the jalebi standing at the counter while it's still dripping; carry-home boxes lose the snap within 20 minutes."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "bfc40bfd-3a4f-4114-be74-9ac8caca010d",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "bedmi puri with aloo sabzi",
+      "why_it_matters": "Old Delhi's classic breakfast stop — bedmi puri, nagori halwa, and a glass of lassi by 9am, served the same way for four generations.",
+      "insider_tip": "The nagori halwa combo is a morning-only thing; by 12 noon the kadhai is empty."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b9463741-92a3-4d82-a0d3-50fbc3f92bda",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "stuffed fruit kulfi (mango, pomegranate)",
+      "why_it_matters": "Hollows out whole fruits — mango, pomegranate, jamun — refills them with kulfi and refreezes; the slicing happens in front of you.",
+      "insider_tip": "Sitaram Bazar is a maze; pin the location before you arrive and follow the kulfi-walas, they all know it."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "04de4878-ee79-40f2-9edd-98f8ae69d50e",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "kulfi falooda",
+      "why_it_matters": "The Fatehpuri original — thick rabri-laced kulfi falooda has been the post-dinner walk-around-the-corner ritual since the 1950s.",
+      "insider_tip": "Stick to the Fatehpuri outlet; the Karol Bagh and other branches don't taste the same."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b43d6506-445b-4b8d-87e9-f5b9a3f02ff7",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "fruit chaat with jaljeera",
+      "why_it_matters": "Aloo kulle — hollowed potatoes filled with pomegranate, chickpeas and tangy masala — a Chandni Chowk specific you won't find outside this lane.",
+      "insider_tip": "Stand on the kerb and eat off the leaf bowl; there's no seating and the queue moves fast."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "1c5ee1b5-7f16-4b66-9df1-700225bd61af",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "urad dal kachori with aloo sabzi",
+      "why_it_matters": "Crisp urad-dal kachoris fried fresh through the morning, paired with a thin runny aloo sabzi — Chandni Chowk's other classic breakfast besides bedmi.",
+      "insider_tip": "They run out by 11am on weekends; weekday mornings are calmer if you want a seat on the bench outside."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "57d0147d-0070-4880-854e-17a698ed563e",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "tomato fish",
+      "why_it_matters": "Connaught Place's oldest surviving restaurant — high ceilings, leather banquettes, and the same tomato fish recipe from 1962. Where Delhi conducted business lunches before there was business.",
+      "insider_tip": "Order the cona coffee — brewed glass-on-glass in a vacuum siphon, table-side. They've made it the same way since opening."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3bea3980-66c0-43a5-97e9-f38e850624cc",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "chicken patty",
+      "why_it_matters": "Designed by Robert Tor Russell, the architect of Connaught Place itself — the first Delhi bakery to bring Swiss chocolates and continental pastry. Now Tandon-family run; the queue at the counter is part of the experience.",
+      "insider_tip": "It's takeaway-only — there's no seating. Order the chicken patty fresh from the morning trays; afternoon batches lose the flake."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ab0d8447-c146-4e0c-b09a-9ca669b83cc8",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "tandoori chicken (1948 recipe)",
+      "why_it_matters": "Set up in 1948 by two Karachi-restaurant exiles a year after Partition. The tandoori chicken recipe came with them and hasn't changed. Often credited with introducing chana bhatura to Delhi.",
+      "insider_tip": "The dal meat is the dish locals order; the menu emphasises tandoori but the slow-cooked mutton dal is the kitchen's quiet legend."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "2d3a01a8-f432-445a-bfe0-5ea4b2674110",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "rava onion dosa",
+      "why_it_matters": "Chennai's Saravanaa Bhavan brought to CP — pure-veg, hyper-consistent, the dosas land in three minutes flat. The Janpath outlet is where North Indians come to learn what real sambar tastes like.",
+      "insider_tip": "Leave your name at the entrance and wait — the system feels chaotic but moves fast. Filter coffee at the end is non-negotiable."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ef08b0e7-c0b5-4821-a027-6f1575bb9ee3",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "butter chicken",
+      "why_it_matters": "A 1931 dhaba that refused to dhaba-up — same charcoal-cooked butter chicken, same crowded bench seating, same families running it. The CP institution that locals correct tourists about.",
+      "insider_tip": "Their butter chicken is gravy-thin compared to the global cream-bomb version; ask for an extra tandoori roti to mop the corners of the karahi."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5a24ed32-3fc4-4cf2-8aab-9c56da47a150",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "filter coffee with mutton dosa",
+      "why_it_matters": "Delhi outpost of India's worker-owned coffee co-operative since 1957. Closed during the Emergency (1975-77), reopened at Mohan Singh Place where it's been ever since. White-uniformed waiters with starched turbans, prices frozen in another decade.",
+      "insider_tip": "Take the lift to the second floor and grab a window table — the rooftop view of CP's inner circle is the unannounced reason to come."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8775660f-13c6-4f01-8c07-beb3808780d7",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "Andhra unlimited thali",
+      "why_it_matters": "The state government's canteen for visiting officers — opened to the public, became a Delhi institution. Unlimited Andhra thali for ₹200 with kandi podi, gongura pickle, and rasam — nothing in the city compares for value.",
+      "insider_tip": "Lunch goes from 12-3pm; arrive by 12:30 or you'll wait 45 minutes in the corridor. Non-veg is in a separate room — order chicken or mutton fry à la carte alongside the veg thali."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ef41d6a8-da67-43dc-88f7-df81dc407a18",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "chilli chicken with hakka noodles",
+      "why_it_matters": "Where Delhi went for its first proper Indo-Chinese in the 80s. Now 50+ branches but the CP original still defines the comfort dish — chilli chicken slick enough to coat hakka noodles.",
+      "insider_tip": "The dimsum platter is hit-or-miss; stick to the wok dishes which is what made the brand. Lunch buffet runs noon-3pm if you want quantity."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "10a746dd-2a09-4d83-8317-50ea646ec032",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "chole bhature",
+      "why_it_matters": "Started as Pishori Lal Lamba's ice-cream counter in 1940; American GIs in WWII shaped its dessert side (cassata, tutti frutti). Reopened in 2019 with green awnings and red velvet curtains, channelling its Raj-era looks.",
+      "insider_tip": "Yes the chole bhature is the Delhi staple, but the original draw was the ice-cream — finish with a sicilian cassata and you'll understand why CP families came here for Sunday outings since 1940."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "34b67265-06dd-478c-9af7-d06ebf4ea5dc",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "gol gappa with imli paani",
+      "why_it_matters": "One of the first shops in Delhi to bring rasgulla north from Bengal — the namesake of the entire Bengali Market. Crisp pani puris, cham cham, kachori; a clean canteen-style chaat experience that families in central Delhi grew up on.",
+      "insider_tip": "There's also Bhimsain's Bengali Sweet House nearby with the same name — locals call this one 'the original' to distinguish. Stand in the chaat queue, not the sweet counter, if you only have ten minutes."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ff414bac-fb6e-41b9-9c2b-442b0161948d",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "blue cheese naan with sundried tomato chutney",
+      "why_it_matters": "Chef Manish Mehrotra's modern-Indian flagship and the country's most consistently Asia's-50-Best ranked Indian restaurant. Moved to The Lodhi from The Manor in 2017; the tasting menu defines what 'inventive Indian' means in 2026.",
+      "insider_tip": "Book the chef's table 4-6 weeks ahead for the off-menu seasonal degustation; à la carte is fine but the prix fixe at ₹5500 is where the kitchen actually shows off."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "f9d9d010-6fb4-4b6d-ad8e-bd271c3fc337",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "chicken tikka roll in roomali roti",
+      "why_it_matters": "Haji Banda Hasan's original kebab stall — Khan Market's first food landmark, and the place that taught Delhi to wrap kebabs in roomali roti. The chain expanded but the Khan Market flagship still has the queue.",
+      "insider_tip": "Order at the counter on the first floor and stand to eat — there's no real seating. The chicken tikka roll is the lunchtime default; mutton seekh holds up better for take-away."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a6fd97fc-8e90-4d12-9539-061615a62696",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "mississippi mud pie",
+      "why_it_matters": "Where two generations of South Delhi kids spent their 18ths, dates and break-ups. Music-poster walls, cheesecake by the slab, and a pasta menu thicker than the average Italian's.",
+      "insider_tip": "Two outlets in Khan Market — the original (68A) is the one with the original chaos and the better cheesecake fridge. Skip the burger menu; it's a pasta-and-dessert place."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "96f2d788-244a-422d-8ac9-8bf5be6111bc",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "berry pulao with mutton",
+      "why_it_matters": "AD Singh's tribute to Bombay's Irani cafés — chequered tiles, soda bottles, plastic flowers, and the most reliable berry pulao in Delhi. Khan Market outlet opened 2014, the city's main Parsi address.",
+      "insider_tip": "The dhansak is Sunday-only at most Parsi homes — here it's daily, ask for the brown rice and a side of salli. Don't leave without a bun maska and chai — they nail it."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "aa16e9e9-c1b2-4c98-8f73-b9b2cb30b250",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "hot basil chicken cups",
+      "why_it_matters": "Pan-Asian comfort food on Khan Market's middle lane — bowls of ramen, sushi rolls, and Thai curries that South Delhi 30-somethings keep coming back to. Lighter than Berco's, less performative than Indian Accent.",
+      "insider_tip": "The lunch menu is well-priced for Khan Market — a noodle bowl plus dimsum runs ₹700-900 versus ₹1500 dinner for two; book a window table for the courtyard view."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "fe03beb3-b177-4598-b14e-ce2a8432bce0",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "sushi platter",
+      "why_it_matters": "Navneet Kalra's premium Khan Market fixture — multi-cuisine done seriously, with a sushi bar, wood-fired pizza oven, and a patio that fills up on weekends. Where Delhi's media and corporate crowd lunch.",
+      "insider_tip": "The sushi bar runs longer hours than the kitchen on slow nights — if you arrive past 10pm midweek, sushi + cocktails is the safer order than mains."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e2a7874a-33bf-4e99-b590-aace40e2fa25",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "pesto pasta with garlic bread",
+      "why_it_matters": "Ritu Dalmia's all-day café on top of Good Earth — natural light, sage-green walls, and a comforting Italian-leaning menu. Where Khan Market shoppers retreat for unhurried lunches that end with cake.",
+      "insider_tip": "Sit by the windows on the Good Earth side; it's the lightest spot in Khan Market for a 1pm leisurely lunch. The tiramisu is the dessert to order."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "69e263c6-78d8-4f7a-af61-9c3a3f5b69b7",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "small plates with wine flight",
+      "why_it_matters": "Khan Market's only proper wine bar — by-the-glass list runs deeper than most Delhi five-stars, and the espresso is genuinely good. Day-coffee, evening-wine; same room shifts mood after 6pm.",
+      "insider_tip": "Pre-7pm the room is half-empty and the wines are already poured — perfect time for the wine flight without the dinner crowd. Past 9pm it gets loud."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "2ca1b151-4108-4914-a5fd-78b4a7333aed",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "sikandari raan with dal bukhara",
+      "why_it_matters": "The single most-honoured Indian restaurant — Clinton, Putin, Tendulkar all eat here. Rustic-luxe room, no cutlery, just kebabs off the tandoor and dal that's been simmering 24 hours.",
+      "insider_tip": "Walk-in only, despite the prices — they've refused reservations for 45 years. Aim for 7pm sharp or expect a 90-minute wait. The dal alone is worth the queue."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8363e9ee-7e30-4fcb-bb6e-c5bd54be1cad",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "kakori kebab and biryani",
+      "why_it_matters": "Padma Shri Imtiaz Qureshi's revival of Awadhi dum cooking — sealed handis cooked over charcoal for hours. The biryani arrives sealed at the table, the dough cracked off in front of you. Kebabs are the original galouti recipe.",
+      "insider_tip": "The Sunday brunch is the best-value way in (₹4500 with unlimited kebabs); à la carte dinner can run ₹8000pp. Order the kakori — it dissolves on touch."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c0dfa75c-da52-4a3f-a8da-e59bfce45782",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "modernist tasting menu",
+      "why_it_matters": "Hemant Oberoi's love letter to modern Indian cuisine — Anjolie Ela Menon murals on the walls, dishes plated like art. One of Delhi's top picks for guests who already know Indian food and want to see it bent.",
+      "insider_tip": "The vegetarian tasting menu is genuinely better-conceived than the non-veg one — tell them you're open to the chef's call and you'll get the room's best plates."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3d276ab2-043e-4925-ab27-3d3aa259bce5",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "five-course degustation menu",
+      "why_it_matters": "The NYC original's only Indian outpost. Reopened April 2026 with a redesigned room and new five/seven-course degustation menus — Delhi's most polished European fine-dining experience.",
+      "insider_tip": "The new lunch service (also from April 2026) lets you do the full à la carte at half the dinner cost. The Queens of the Sea seasonal seafood menu is the best window into the kitchen's range."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "f54c5e47-1869-44d2-be5b-0a0c86857b9c",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "rendang with malabari paratha",
+      "why_it_matters": "Walls hand-painted by Guruvayur temple muralists — nine sections walking through the Spice Route from Kerala to Vietnam. The room is the headline; the kitchen tracks the same journey through cuisines.",
+      "insider_tip": "Sit in the central courtyard section under the moonlit ceiling — the lighting is best there for photos and the acoustics are calmer than the bay rooms."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3d250817-791f-4051-83af-dbea9d485552",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "omakase tasting menu",
+      "why_it_matters": "Asia's 50 Best 2022, World's 50 Best Discovery 2024. Fish flown in from Tsukiji, suspended crystal Buddha, kimono-fabric private rooms. The most theatrical Japanese setting in Delhi.",
+      "insider_tip": "The omakase at the chef's counter is where the kitchen actually shows what it can do; the dining-room à la carte is fine but conventional. Book the chef's bar 2-3 weeks ahead."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "47405779-8f4e-4296-8c4d-bdc24716f3fd",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "gosht ki nihari",
+      "why_it_matters": "Named after Kashmiri brocades — the Leela's pan-Indian flagship. Maharaja-table seating, paisley walls. The South Indian section quietly outshines the North on the menu.",
+      "insider_tip": "Don't sleep on the South Indian thali — the Karaikudi-style chicken Chettinad is the kitchen's quiet pride. Pair with the saffron lassi."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "7dbada9b-69d6-4f3a-bec7-e3ea893c5fd0",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "peking duck",
+      "why_it_matters": "Three expat Chinese chefs, dining-in-the-kitchen format, the city's best Peking duck (order 24 hours ahead). Genuine Sichuan heat — not the dumbed-down Indo-Chinese you get elsewhere.",
+      "insider_tip": "Pre-order the Peking duck — it's not a walk-in dish. The Sichuan dim sum lunch is half the cost of dinner and arguably better technique."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8657aa29-f2d6-4d95-a08d-bff3ad5efd77",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "truffle dim sum",
+      "why_it_matters": "Delhi's longest-running Chinese fine-dining room — reopened post-renovation in 2024 with a refreshed menu using truffle, caviar, brussels sprouts. Old loyalists still come for the dim sum.",
+      "insider_tip": "The Sunday dim sum brunch is the best-value entry point — unlimited dim sum + main + dessert at ~₹2500. À la carte dinner doubles that."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ac3f79e4-d94b-4225-8170-f853ccd5e54e",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "verandah breakfast spread",
+      "why_it_matters": "The Imperial's all-day brasserie — a verandah and palm-treed terrace that double as Delhi's most photographed colonial-era dining room. Named for the year the hotel was conceived; menu spans Indian, European, Asian comfort.",
+      "insider_tip": "Skip lunch and book the high tea (3-6pm, ~₹2500pp) — scones, finger sandwiches, sublime cake stand on the verandah. The breakfast spread is also famously generous."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b8fa1a47-0071-4501-9351-2069d8d7396d",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "truffle mushroom risotto",
+      "why_it_matters": "A converted Mughal-era mansion at Qutub — banyan-shaded courtyard, whitewashed walls, candlelit alfresco. The Mediterranean flagship that taught Delhi what alfresco fine dining looks like.",
+      "insider_tip": "Sunday brunch is the right way in (₹3500 with bottomless prosecco) — the courtyard is full but the energy is the actual draw. Book the banyan-tree table 2 weeks ahead."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "688c7ef9-627a-4253-874c-ebc9b204807e",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "homemade pasta",
+      "why_it_matters": "Ritu Dalmia's flagship — Delhi's most consistent serious Italian, opened in 2000 and still drawing the same regulars. Where the city learned that pasta wasn't just penne arrabiata.",
+      "insider_tip": "The pasta is hand-rolled daily; ask for the ravioli of the day if it's on the specials board. Sister cafés (Diva Café GK1, Diva Piccola HKV) are simpler — this is the original."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e777a869-9103-4e21-98b8-e0420e7dd163",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "mysore masala dosa",
+      "why_it_matters": "Carved-wood interiors, brass lamps, soft Carnatic music — Hauz Khas Village's quiet South Indian institution since 1992. A pure-veg Karnataka home in the middle of the city's noisiest bohemian quarter.",
+      "insider_tip": "The thali is the smartest order — bisi bele bath, sambar, rasam, four curries, papad, curd, pickle, rice, sweet — for under ₹350. Go midweek; weekends queue out the door."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "257be8b5-798f-4990-b259-1d79534d9699",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "butter chicken biryani",
+      "why_it_matters": "Three floors of upcycled industrial chic with a rooftop overlooking the Hauz Khas reservoir — Delhi's most reliable resto-bar after 7pm. Coffee/co-working by day, packed bar by night.",
+      "insider_tip": "Skip the regular menu and order off the LIIT-brunch combo on weekends — bottomless cocktail-and-bar-snacks rate is the smartest deal in HKV. Rooftop fills first; book."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "d841e1e4-4af7-4625-8ce9-0c1335b17445",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "malabar parotta with beef fry",
+      "why_it_matters": "Three steep flights of stairs above HKV, a balcony over the Hauz Khas reservoir at sunset, and a hand-written menu of Kerala/Andhra coastal cooking that tastes like someone's home kitchen. Run by Satish Warrier and Kiran Bhushi since 2009.",
+      "insider_tip": "Book the balcony at 5:45pm for sunset over the lake — it's the best free view in South Delhi. The beef fry + malabar parotta is the dish; nothing else matches it."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "78c5811e-88fe-4036-bc60-6b465f1631a7",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "nepali thali with momos",
+      "why_it_matters": "Tibetan prayer flags, exposed brick, smell of bamboo shoots — the Himalayan room in HKV. Nepali thalis, Tibetan thukpa, and the city's most authentic Bhutanese phaksha paa.",
+      "insider_tip": "The Bhutanese ema datshi (chilli-cheese stew) isn't on the front menu — ask for it. The thalis are the volume play; momos at most other Delhi places taste like memory after these."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "9ecaea7e-f636-427f-af12-6a80bf9441e9",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "appam with kerala fish curry",
+      "why_it_matters": "Above the Ogaan boutique — coastal-colonial in tone, with wicker chairs, soft pastel walls, and a Kerala-rooted menu of fish curries, appams, and meen pollichathu. Best alternative to Gunpowder when its queue is too long.",
+      "insider_tip": "Order the appam-and-stew breakfast on weekends — it's the only place in HKV doing it properly. Veggies should ask for the avial; it's not on the front menu."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "d1524baa-6e80-4d16-ad71-5ded70e12c23",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "spicy miso black cod",
+      "why_it_matters": "Delhi's only proper jazz club — twice-nightly live sets (1:30pm and 9pm), a serious fusion menu, and cocktails the bar takes pride in. Where music people in the city actually go.",
+      "insider_tip": "Book a table 2-3 weeks ahead for headliner nights — there's an additional cover charge per person but the production quality is better than any concert in Delhi at the price. Skip dinner before; eat here."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "42d1aaf2-de58-4faa-b803-4a7dde6153be",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "all-day breakfast platter",
+      "why_it_matters": "Delhi's all-day deli + brunch staple. The Vasant Kunj outlet at DLF Promenade is the most Saturday-morning of any in the city — long communal tables, outdoor patio, parents-with-kids energy.",
+      "insider_tip": "All-day breakfast is the actual order — don't bother with the lunch menu. Coffee is solid, and the chalkboard specials change weekly; check before ordering off the printed menu."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3a93140c-eb53-4795-b1df-2a06e5d5d8b5",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "butter chicken (5-time award winner)",
+      "why_it_matters": "From a 1959 dhaba into Pandara Road's most-decorated kitchen — 175 dishes, 5 awards on the butter chicken, and the sit-down buffet that other Delhi restaurants imitate. Family-run for three generations.",
+      "insider_tip": "Order the butter chicken with rumali roti, not naan — the recipe was built for the thinner bread. The lunch buffet at ₹975 is the value entry; à la carte dinner runs double."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a26e4db2-43a1-4514-a7d6-c050ce967498",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "tandoori chicken with mutton seekh",
+      "why_it_matters": "Gulati's quieter rival across the Pandara Market arch — the same family lineage split into separate restaurants in the 1960s. Strong tandoor section; some Delhi loyalists insist the kebabs are better here than at Gulati.",
+      "insider_tip": "If Gulati's queue is too long, walk 50 metres to Pindi — same neighbourhood, similar prices, often a free table. Order the mutton seekh; locals prefer it over Gulati's."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "d3a97cbc-dc0c-471d-ad20-b54618f601af",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "butter chicken with dal makhani",
+      "why_it_matters": "The third Pandara Road brother — opened the same year as Gulati, served by the founding family's third generation. Tourists wandering Pandara Market sometimes can't tell the three (Gulati/Pindi/Have More) apart; locals know the rivalry by name.",
+      "insider_tip": "The kakori kebab here is properly soft — order it as a starter rather than something heavier. The dal makhani is the ₹50-cheaper-than-Gulati equivalent and arguably as good."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "146eed43-6fe9-41d9-be3c-5e3f72de5efd",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "masala dosa with sambar",
+      "why_it_matters": "Where Jayaram Banan started — 4 December 1986, ₹408 in revenue on day one. Now 100+ outlets nationwide but the Defence Colony original is the one Delhi families still go to for Sunday dosa-and-coffee.",
+      "insider_tip": "Stick to the original (Defence Colony Main Market) — the chain branches don't taste the same. Filter coffee is non-negotiable as the closing course."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "eaeea530-bbcb-4bc1-8fbb-8872ee0c7ee3",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "mangalorean fish gassi",
+      "why_it_matters": "South Delhi's most consistent coastal-seafood kitchen — Mangalorean fish gassi, neer dosas, appams with stew. Three floors of dining; the menu doesn't dabble in North Indian comforts the way Defence Colony's other restaurants do.",
+      "insider_tip": "Pair the surmai gassi with appams (not rice) — the bread soaks the gravy properly. Crab is the splurge; pre-order if you're going on a weekend evening."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a122c961-134b-4075-9c8d-87eba968ff47",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "cheese paratha with butter and pickle",
+      "why_it_matters": "Late-night paratha stop at the Moolchand Flyover — opens 9:30am, closes after 11:30pm. Generations of South Delhi college students grew up here; SRK reportedly ate here in his Delhi years.",
+      "insider_tip": "The cheese paratha is the dish locals send first-timers to — overflowing molten cheese in flaky paratha, ₹150 with pickle and butter. Take-away is faster than the queue at the bench."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "97489cf1-6183-443e-a63b-1f4c85e3b539",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "buttermilk pancakes with maple syrup",
+      "why_it_matters": "Faux leather red booths, a Wurlitzer jukebox, and a 7am-to-midnight breakfast clock — Delhi's only properly American diner inside India Habitat Centre. The pancakes are the order; everything else is comfort.",
+      "insider_tip": "Open from 7am — best Sunday breakfast spot in central Delhi for under ₹500/head if you stick to coffee + pancakes. Avoid the Indian-food section of the menu; it's not the strength."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "1808f0c3-8103-4b2e-82cd-da046db2c1e2",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "kesar pista falooda kulfi",
+      "why_it_matters": "Started by 19-year-old Roshan Lal Soni who arrived from Lahore at Partition. Karol Bagh's oldest shop — kulfi falooda by day, chhole bhature for breakfast, run by the third generation now.",
+      "insider_tip": "Order both — the kulfi falooda is the headline but locals rate the chhole bhature equally. Skip the ground-floor counter and walk to the open seating at the back; it's faster."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "734119d8-1dd5-40b0-b1e8-c588c85ea67e",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "lahori paneer-stuffed bhature with chhole",
+      "why_it_matters": "A one-dish restaurant since 1947 — Lahori chhole with paneer-stuffed bhature, served the same way three generations later. Started as a cycle-cart in Jhula Mandi; the original Paharganj stall is the only one that matters.",
+      "insider_tip": "Goes morning to mid-afternoon — show up before 1pm or you'll miss the day's bhature. Take the chhole on the side rather than poured over; the bread crisps better."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "f655d030-f124-485c-9d6b-f590a7b5d8d3",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "steamed chicken momos with chilli garlic chutney",
+      "why_it_matters": "Where Delhi's momo culture started. Dolma Tsering, a Tibetan refugee from Bylakuppe, set up a stall in Lajpat Nagar in 1994 and democratised momos for the city. The brand now turns ₹60 lakh a month.",
+      "insider_tip": "Stand at the original Central Market thela, not the chain branches — the difference is the chutney, made fresh on-site. Arrive after 4pm; mornings are spotty."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3a8594c3-50ca-467f-ab55-51f84c31c460",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "shami kebab with rumali roti",
+      "why_it_matters": "Tucked into Nizamuddin Basti by the Markazi Masjid — open till 3am, named after the 19th-century poet Ghalib whose tomb is two lanes away. Shami kebabs ground from minced goat meat, the recipe unchanged for 67 years.",
+      "insider_tip": "Walk through the dargah lanes after the qawwali on Thursday/Sunday evenings and arrive here past 10pm; the basti energy is the dish, the kebabs are the side. ₹450 feeds two."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "dc735752-cfae-40cb-90b7-289bc4a58749",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "mutton korma with sheermal",
+      "why_it_matters": "The 1990s Nizamuddin extension of the Jama Masjid original — same family, slightly tamer spice for the South Delhi expat crowd. Regulars consider it the best sit-down version of Karim's if the Old Delhi traffic is too much.",
+      "insider_tip": "The Nizamuddin branch is air-conditioned with proper tables (unlike Old Delhi's plastic stools). Spices are noticeably milder — ask for 'Old Delhi style' and the kitchen will adjust."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "00ae476c-89f2-43a1-92ec-f65994fa74d7",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "lahori murgh with frontier dal",
+      "why_it_matters": "Nationwide Punjabi/frontier chain born in Delhi — folk-village interiors, swings instead of chairs at some tables, and a 100-dish menu. Karol Bagh outlet is the local family go-to for Sunday dinner.",
+      "insider_tip": "Skip the Chinese section on the menu — it's not the strength. Order the gilafi seekh and fish amritsari for a kebab-led meal that doesn't repeat what every Pandara Road kitchen does."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "66790a90-83e2-4bf4-a4c2-89004115696c",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "aloo chhole bhature",
+      "why_it_matters": "Delhi University students' breakfast canteen for half a century — aloo-stuffed bhature ₹80, gone by 2pm. Closes the kitchen as soon as the dough runs out.",
+      "insider_tip": "Open 9:30am-2pm only; arrive by 11am or settle for plain. The aloo bhatura is the variant locals queue for; plain is for tourists."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "7fb8e74d-6c71-4cc9-911e-d80ce0b6da2a",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "vodka golgappa with butter chicken",
+      "why_it_matters": "The vodka-golgappa shooter started here before going viral nationwide. Mid-range Punjabi chain born in Delhi, still anchored by the Priya Complex flagship in Vasant Vihar.",
+      "insider_tip": "The vodka golgappa is what tourists order; locals come for the raan-e-mughlai (24-hour-marinated whole leg of lamb). Order it 2 hours ahead if going for dinner."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e90d679e-bb69-4156-8f15-0b065a5559b8",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "rasgulla and chaat",
+      "why_it_matters": "Founded in Bikaner 1937 by Ganga Bishen Agarwal, Delhi's flagship at NSP Pitampura is the city's most-visited pure-veg restaurant chain. Sweets, namkeen, and a 100-dish thali under one roof — Delhi's default safe-bet for families who want everything.",
+      "insider_tip": "The thali is the volume play (₹450 unlimited). The chaat counter is what locals queue at — the raj kachori is genuinely better here than at most street stalls."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "035cd93a-08ee-48a6-8d76-8f70f770c755",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "rasmalai and bhujia",
+      "why_it_matters": "Started in 1950 by Aggarwal brothers from Bikaner who set up the original Paranthe Wali Gali stall as Bikaner Bhujia Bhandar. Now headquartered at ITL Twin Tower NSP — 150 outlets globally but the Delhi flagship is where the family still oversees production.",
+      "insider_tip": "Buy the namkeens fresh-fried at the counter (visible from the dining area) rather than packed; the difference in crunch is half the reason locals shop here. Sweets stay fresh 5-7 days at room temp."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "d7e185aa-e529-4e9a-96be-e7c7df3ee8ce",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "channa bhature",
+      "why_it_matters": "Started in 1939 in Bengali Market — the Sundar Nagar branch occupies an entire restaurant floor above the sweet counter. Famous specifically for channa bhature; Delhi families have been ordering it since the 1950s.",
+      "insider_tip": "First-floor restaurant is calmer than the ground-floor sweet counter chaos. Pao bhaji is the unsung order — closer to a Bombay rendition than most North Indian places."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "7afa75cf-6400-4743-9fbe-03f2ff9465e1",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "rasgulla and gol gappa",
+      "why_it_matters": "South Delhi's longest-running pure-veg sweet-and-chaat shop, opened 1963 next to the Green Park Metro. Halwais hand-rolling boondi laddoos visible through the front glass; same family for three generations.",
+      "insider_tip": "Get there before 8pm or the chaat counter winds down. The boondi laddu is the take-away that locals send out-of-towners home with."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c2e2e4bd-cc99-4fc9-95ec-5ec31c96f195",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "papari chaat with chhole bhature",
+      "why_it_matters": "Started 1936 by Lala Bhim Sain — the Bengali Market predecessor that gave the area its identity. Still family-run, sat next to its better-known namesake (Bengali Sweet House) but with its own loyal regulars.",
+      "insider_tip": "Two Bengali Sweet Houses on the same block — Bhimsain's (this one) is at 27-29, the other at 30-33. Locals split: chaat-lovers go here, sweet-buyers go next door."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "0ac5ae6d-14c3-4527-9614-e3dc19160afe",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "darjeeling first flush tea",
+      "why_it_matters": "India's oldest gourmet tea boutique, opposite Golcha Cinema since 1981. Master Tea Taster Sanjay Kapur's free tea-tasting sessions at a wooden gallery counter — Darjeeling, Assam, Nilgiri, Kangra, Munnar.",
+      "insider_tip": "The free tasting is limited to 4-5 teas; ask for the seasonal first-flush Darjeeling. Buy by 100g rather than 250g — premium teas don't keep past 6 weeks once opened."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "4bafe392-4a33-4a85-acc9-4648ff472e86",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "regional state thalis (rotational)",
+      "why_it_matters": "25 state-government food stalls under one roof — the only place in Delhi where you can taste Nagaland's bamboo-shoot chicken, Manipur's chamthong, Goa's fish curry, and Hyderabad's biryani in a single sitting. Allotments rotate so the line-up changes.",
+      "insider_tip": "Go on a weekend afternoon when all 25 stalls are open. Skip the central food court and head to the rim stalls — Nagaland and Manipur stalls are usually the freshest and least-discovered."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "1bf9db10-7b07-4f2c-8644-462646949069",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "rawalpindi-style chhole bhature",
+      "why_it_matters": "Banshi migrated from Rawalpindi at Partition, ran a stall outside Mall Road for years before settling in Malka Ganj in 1954. Three generations later, the chhole are still slow-boiled overnight in home masalas.",
+      "insider_tip": "Open 8am till the dough runs out (usually noon). The aloo bhatura is the variant DU North Campus students rate highest — paneer is for the visitors."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "efa43899-bfba-4e27-ba1d-e5de291e16c0",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "mutton burra kebab",
+      "why_it_matters": "Founded by Haji Karimuddin, descendant of Mughal royal cooks, this Jama Masjid courtyard still pulls queues for mutton korma cooked the same way for 110+ years.",
+      "insider_tip": "Skip the AC annexe and sit in the open courtyard near gali kababian; the burra goes off the fire fastest there."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "efd5e7c2-4c48-4689-bcf1-cf56f5068e40",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "butter chicken (charcoal-grilled, butter-drenched)",
+      "why_it_matters": "Chicken charred over coal, drowned in molten butter and cream off the heat — a different beast from the gravy-based butter chicken anywhere else.",
+      "insider_tip": "Open till past midnight; post-11pm queues thin out and you can actually find a plastic stool."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "02366521-35c1-4139-bd4a-8ba629cace21",
+    "destination_id": "delhi",
+    "fields": {
+      "signature_dish": "chole kulche with dry chickpea masala",
+      "why_it_matters": "A single dish — dry-spiced chickpeas with two soft kulchas — sold off a wooden cart from morning till sold out, usually before noon.",
+      "insider_tip": "No seating, no plates — eat it standing in the lane off a leaf bowl. Get there before 11am or it's gone."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "a089141c-3227-4827-974c-d323086c3468",
+    "destination_id": "delhi",
+    "fields": {
+      "why_special": "The best walking tours in Old Delhi — Chandni Chowk, Jama Masjid area, spice markets. Small groups, knowledgeable historians as guides. They navigate the chaos so you can absorb it. The food walk version includes tastings at 6 legendary spots."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "89b9f463-6f30-4f57-8f49-b1a2caee1ebe",
+    "destination_id": "delhi",
+    "fields": {
+      "why_special": "Clean oasis in Paharganj chaos. The rooftop common area is great for meeting travelers. Good WiFi, AC dorms (essential in Delhi), and a travel desk. Perfect for one night before catching a train to the hills. Don't judge by the neighborhood."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "delhi",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We pick this over The Imperial because Dhilli by Vineet Bhatia is the only Michelin-credentialed kitchen in a Delhi hotel right now, and the Humayun's Tomb view from the upper floors is unobstructed. The Khari Baoli cooking excursion—spice market at dawn, four-course meal back at the hotel—is the one program in Delhi that doesn't feel like a desk activity. Cirrus9 rooftop at 7pm before the April heat fully breaks is where we'd end the day.",
+      "signature_experience": "Private cooking lesson at Khari Baoli spice market with four-course dinner prepared by chef"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "delhi",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Defence Colony is a functional base—upscale, quiet by Delhi standards, and a straightforward cab ride to Lodhi Gardens (4.5 km) or Humayun's Tomb (4.2 km). The Pio Coffrant interiors mean you're not staring at beige walls. No spa, no pool, no room service theatre—but the 4.7+ review scores hold because the basics work. If you're in Delhi to move around and sleep well, this covers it at roughly half the Oberoi rate.",
+      "signature_experience": "Design-forward serviced apartments with home-away-from-home aesthetic in Defence Colony; communal spaces for guest interaction"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "delhi",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We pick this for the location alone: Humayun's Tomb is visible from guest rooms, the Arab Serai Mughal gate is a 2-minute walk, and Sunder Nursery—Delhi's best morning walk in April before 8am—is next door. The Nizamuddin dargah qawwali on Thursday evenings is a 10-minute walk. No other property in this dossier puts you this close to three UNESCO-adjacent sites at once. The Indian breakfast is specifically called out in multiple 2024–2025 guides.",
+      "signature_experience": "Views of UNESCO Humayun's Tomb from guest rooms; historic Islamic heritage district (Nizamuddin East) location near 800-year-old Sufi shrine"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "delhi",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "A 200-year-old Mughal haveli inside Chandni Chowk's heritage zone, UNESCO-awarded for its six-year restoration—this is the one property in Delhi where the building itself is the reason you're there. Intricate woodwork, Hindu deity carvings, internal balconies, a rooftop pool, and Lakhori downstairs serving the kind of thali you can't replicate outside Old Delhi. The rooftop at night over the old city's lights is the specific reason we'd choose this over any contemporary hotel at a similar rate.",
+      "signature_experience": "Rooftop terrace overlooking Old Delhi's glittering lights; traditional Mughal architecture in Chandni Chowk heritage zone"
+    }
+  }
+]

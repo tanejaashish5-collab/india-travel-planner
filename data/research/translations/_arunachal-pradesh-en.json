@@ -1,0 +1,838 @@
+[
+  {
+    "table": "local_eateries",
+    "id": "e70ed067-88d4-4ac0-bf07-6c0f695bba7e",
+    "destination_id": "bomdila",
+    "fields": {
+      "signature_dish": "thukpa",
+      "why_it_matters": "Local hotel restaurant listed on TripAdvisor's Bomdila restaurant page (rated 5/5 with limited reviews — small sample). Indian-leaning menu with Tibetan basics; the kind of unflashy local kitchen that survives on residents not tourists.",
+      "insider_tip": "Tiny operation — call ahead if you're a group of 4+ as kitchen capacity is limited. Reviewer base is thin so quality verify on day of visit."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5846020d-857b-47e4-a0f1-2566ba8f7284",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "signature_dish": "Apatani-style smoked pork",
+      "why_it_matters": "Resort kitchen in Siiro village (one of the seven Apatani villages) cooking proper Apatani-style smoked pork and bamboo-smoked chicken — not the tourist-softened version most hotel kitchens default to. Sticky rice with house-made chutneys is the pairing locals approve of.",
+      "insider_tip": "Pre-book the Apatani-style pork at least 4 hours ahead — the smoking is done fresh, not pre-cooked from a hot box. Vegetarians have limited options here; this is a meat-forward Apatani kitchen by design."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8be0211a-89ae-45e7-a644-eddf41ba90dc",
+    "destination_id": "dirang",
+    "fields": {
+      "signature_dish": "fresh kiwi-orchard salad",
+      "why_it_matters": "Multi-cuisine in-house restaurant at Norphel Retreat — set inside a 7-hectare orange and kiwi orchard at ~5,000ft. Indian, continental, and pan-Asian on one menu; the fruit on the dessert plate is grown on the property.",
+      "insider_tip": "Outside guests (not just hotel residents) can book a meal — call ahead. The kiwi season runs October-November; if you're visiting then, ask whether the kiwi crumble is on the dessert list."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "479a52b2-7818-4315-a011-18a28fd447f0",
+    "destination_id": "mechuka",
+    "fields": {
+      "signature_dish": "yak butter tea",
+      "why_it_matters": "One of the few standalone restaurants in Mechuka's tiny main market — Tibetan-Memba kitchen serving momos, thukpa, and proper hot yak butter tea (not the diluted hotel version). Mechuka is largely homestay-fed; standalone restaurants here are the exception.",
+      "insider_tip": "Mechuka is at 1,829m and remote — phone signal patchy, opening hours owner-set. Eat early; most kitchens here close by 8pm. Carry cash, ATMs unreliable."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "cc88908f-657f-4906-a157-61166d4859a9",
+    "destination_id": "namdapha",
+    "fields": {
+      "signature_dish": "river-side jungle thali",
+      "why_it_matters": "Wood-and-cane jungle camp on the Noa-Dihing river bank in Miao (Namdapha's gateway town, 25km before Deban entry). Owner Mr Phoopla Singpoh runs the kitchen + park trips. There is no permanent settlement inside Namdapha National Park itself; this is the closest sit-down option for park visitors.",
+      "insider_tip": "Meals are for residents in practice — call ahead if you're not staying overnight. Carry cash; this far into Changlang district network and UPI both fail. The on-park alternative is the Forest Department rest house at Deban, also reservation-only."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "803309a5-252a-4d03-a738-06828fa38ac5",
+    "destination_id": "pasighat",
+    "fields": {
+      "signature_dish": "chilli chicken with hakka noodles",
+      "why_it_matters": "Ranked #1 of Pasighat's TripAdvisor restaurants (4.7) — the Chinese/pan-Asian kitchen that East Siang residents and visitors converge on. 3.7 across 315 Justdial reviews. Located near Punjab National Bank in the main market.",
+      "insider_tip": "Cosy place, fills up fast for dinner — call ahead after 7pm. The Chinese end of the menu is what built the reputation; the Tibetan section is competent but unremarkable."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5387a7e1-83de-47ae-9825-0bde85501bcb",
+    "destination_id": "tawang",
+    "fields": {
+      "signature_dish": "chicken thukpa",
+      "why_it_matters": "Ranked #1 of 15 restaurants in Tawang on TripAdvisor (4.1, 44 reviews). First-floor seating in the main market, everything cooked to order from scratch — wait times 30-60 minutes are part of the contract. Churpi (yak cheese) with black mushrooms is the dish locals send tourists for.",
+      "insider_tip": "Order before sightseeing, not after — kitchen turnaround is slow because nothing is pre-cooked. The fried momos hold heat better than steamed if you're carrying food back to the hotel."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "4195aaca-cc68-4a1e-9ceb-84eca322dd28",
+    "destination_id": "tawang",
+    "fields": {
+      "signature_dish": "boiled chicken with bamboo shoot",
+      "why_it_matters": "Upstairs in Nehru Market, ranked #5 on TripAdvisor among Tawang restaurants. The ashum thukpa (Monpa-style noodle soup) and bamboo shoot chicken are the orders that distinguish it from the generic Indian-Chinese joints around it.",
+      "insider_tip": "It's first-floor — easy to walk past. Look for the staircase between shops in the central row of Nehru Market. Service slows during army leave windows when groups of 8+ come in."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3de37705-a772-4320-ba6e-ce6e49410e8d",
+    "destination_id": "tawang",
+    "fields": {
+      "signature_dish": "Shirkyong-pa with Tingmo (Monpa stew with steamed bread)",
+      "why_it_matters": "Run by a group of sisters cooking actual Monpa home recipes — zan, churpi, shirkyong-pa — not the generic Tibetan-Chinese menu every other Tawang kitchen prints.",
+      "insider_tip": "Order the chilli paneer with their red chilli chutney — even the meat-eaters take it home. Cash only, signal patchy for UPI."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "4f07c9f0-319e-49a3-b452-18324465fa5b",
+    "destination_id": "aalo",
+    "fields": {
+      "signature_dish": "Pika Pila",
+      "why_it_matters": "One of the few places in Aalo serving genuine Galo tribal cuisine to outsiders. Pika Pila is a fermented bamboo-shoot and pork-fat preparation that defines Galo home kitchens — most restaurants in Arunachal soften it for tourists, Galong's does not. Located on the Aalo–Mechukha road, popular with local govt staff and overland convoys heading deeper into West Siang.",
+      "insider_tip": "Order Pika Pila with steamed rice, not roti. They run out of pork by 2pm on most days — go for early lunch. Apong (rice beer) is served in bamboo cups, ask politely as it is not always on the table."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "315cf4e3-d0ea-4d8f-ad43-08ea26d33f79",
+    "destination_id": "aalo",
+    "fields": {
+      "signature_dish": "Traditional Arunachal thali",
+      "why_it_matters": "Aalo's most accessible introduction to a full Adi-Galo thali — rice steamed in bamboo (Dung Po), pasa fish soup with the local ooriam leaf juice, fermented bamboo, and a small portion of smoked meat. Customisable to vegetarian on request, which most other tribal-cuisine places do not offer.",
+      "insider_tip": "Ask for the thali to be served with apong if you want the full experience — they don't bring it by default to outside tourists. Lunch is more reliable than dinner; dinner kitchen sometimes shuts by 8pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "6eb92c15-d50a-43ff-b1e6-5655db835d4b",
+    "destination_id": "aalo",
+    "fields": {
+      "signature_dish": "Thukpa",
+      "why_it_matters": "The reliable pan-Indian-plus-Tibetan fallback for travelers who have hit Galo-cuisine fatigue or are travelling with vegetarians. Standard thukpa, veg momos, chicken curry — predictable and clean. Govt staff lunch crowd 1-2pm, traveller crowd 7-9pm.",
+      "insider_tip": "Their thukpa is the better order than the chowmein — broth is richer than the noodles deserve. Cash works better than UPI; Aalo signal can drop in the evening."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ee7dcdbf-5ee2-4d54-98b8-df63fa05a1a1",
+    "destination_id": "dambuk",
+    "fields": {
+      "signature_dish": "Smoked pork with bamboo shoot",
+      "why_it_matters": "Off Orange Festival season (Dec) Dambuk has effectively no standalone restaurants — all hot meals run through the homestay network. Hosts cook traditional Idu Mishmi: smoked pork from above-the-hearth racks, bamboo-shoot curry with mustard leaf, apong (millet beer) in bamboo cups, sticky rice steamed in leaves. Booked through the homestay, not a la carte.",
+      "insider_tip": "Ask your homestay host the previous evening if you want a full Idu Mishmi spread — most cook simpler day-to-day fare unless you flag it. December festival pricing doubles; Jan-Nov stays at the ₹200-300 per meal mark."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "182bd427-325b-4203-b337-9b822c8102ea",
+    "destination_id": "bomdila",
+    "fields": {
+      "signature_dish": "all-day breakfast",
+      "why_it_matters": "Small highway-side cafe on the Bomdila-Tawang stretch — one of the few places in town doing proper coffee + all-day breakfast for travellers crossing Sela Pass. Listed on TripAdvisor's Bomdila restaurant page; year inferred from the @CafeLungta2016 Facebook handle (verify on visit).",
+      "insider_tip": "Best as a pit-stop before or after Sela Pass crossing — it's right on the highway. Carry cash; UPI/cards can fail at this altitude when network drops."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "086ec5a4-bd9f-4afa-b409-a934a5bfe80c",
+    "destination_id": "aalo",
+    "fields": {
+      "signature_dish": "rooftop bar-grill",
+      "why_it_matters": "Three-floor 14-room hotel opposite the State Transport Station with an in-house multi-cuisine restaurant (7am-9pm) and a rooftop bar that locals use — rare combination in Aalo. Default sit-down option for both visitors and West Siang residents.",
+      "insider_tip": "Rooftop is the room to ask for — the State Transport Station crowd makes the ground floor noisy in the morning. Apong (rice beer) availability depends on the week; ask on entry."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "61dd7f2d-65b9-40a3-9723-4cbfb47507b4",
+    "destination_id": "anini",
+    "fields": {
+      "signature_dish": "smoked pork with bamboo shoot",
+      "why_it_matters": "Newly opened resort with on-site bar and restaurant — one of the very few non-homestay dining options in Anini, India's least-densely-populated district HQ (~3,000 people). Idu Mishmi cuisine is otherwise family-cooked here, not restaurant-cooked.",
+      "insider_tip": "Anini at 1,968m is genuinely remote — confirm with the resort directly before counting on a meal walk-in. For Idu Mishmi food the better option is often a homestay where the family cooks; ask your stay host about smoked pork at home rather than ordering it cold from a restaurant."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "11b074b2-6eec-4b8d-90a7-c49fc4e1baf4",
+    "destination_id": "bomdila",
+    "fields": {
+      "signature_dish": "Monpa thali",
+      "why_it_matters": "Three-star hotel restaurant on Bomdila's main bazar line — multi-cuisine kitchen with an in-house chef who switches between Indian, Chinese, and Monpa local dishes. Default sit-down dining for tour groups passing Bomdila on the Tezpur-Tawang corridor.",
+      "insider_tip": "Ask whether yak is on the menu before ordering — supply is irregular and depends on the West Kameng farmer rotation, not a daily fixture. Lunch service slows when tour-bus arrivals stack at 1pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3366ad15-28d2-4f78-9ffe-bd14947d4caf",
+    "destination_id": "dirang",
+    "fields": {
+      "signature_dish": "multi-cuisine thali",
+      "why_it_matters": "Multi-cuisine restaurant inside Pemaling Lords Inn — Dirang's most listed mid-range hotel-attached dining option. Reliable rather than distinctive: the place a tour group eats when the homestay isn't doing dinner.",
+      "insider_tip": "It's a hotel restaurant, not a destination kitchen — order Indian basics, not the continental section. Open to outside diners on a walk-in basis but call after 8pm to confirm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5d8d3c5e-2839-4802-ab25-fea0206f48c6",
+    "destination_id": "pasighat",
+    "fields": {
+      "signature_dish": "Adi tribal thali",
+      "why_it_matters": "One of the few Pasighat kitchens serving a proper Adi tribal thali alongside Naga and Manipuri dishes — pork curry, king chilli chutney, fermented bamboo (eromba). Located near the Rural Bank in Ering complex. Home delivery available.",
+      "insider_tip": "King chilli chutney is no joke — ask for a smaller portion if you haven't built tolerance. The Adi thali is the order to make; the Naga side of the menu is for repeat visits."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "cb6325c0-2813-41e2-9f1c-7ce5ecd84c10",
+    "destination_id": "pasighat",
+    "fields": {
+      "signature_dish": "chilli prawns",
+      "why_it_matters": "Multi-cuisine sit-down + lounge above Punjab National Bank in Pasighat's main market — broader menu and bar make it the default group-dining choice when the table mixes vegetarians and meat-eaters. Rare in Pasighat to have a lounge format.",
+      "insider_tip": "Stick to the chilli prawns and Indo-Chinese — the Continental section is ambitious but inconsistent. Lounge stays open later than the kitchen on most nights."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "dbb7f4bc-4820-468e-9165-0fa0768c652d",
+    "destination_id": "pasighat",
+    "fields": {
+      "signature_dish": "Arunachali fresh-ingredient thali",
+      "why_it_matters": "Local Pasighat kitchen cited for cooking real Arunachal food with fresh local ingredients — starters, mains, and Adi favourites. Listed on Justdial Pasighat restaurant index. Smaller and quieter than Naga Kitchen, but in the same Adi-cuisine bracket.",
+      "insider_tip": "Operating hours are owner-set and can shift — call before going. Cash preferred; UPI works when network is up."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "254dcc54-4310-4db1-9cdf-7b2181702fa4",
+    "destination_id": "tawang",
+    "fields": {
+      "signature_dish": "zan (Monpa millet porridge)",
+      "why_it_matters": "Hotel restaurant opposite the post office in Nehru Market that locals consistently flag as Tawang's strongest Monpa kitchen. Zan and kargyong are cooked the home-recipe way, not tourist-softened. 4.3 rating across 690 Justdial reviews.",
+      "insider_tip": "If you've never had zan before, ask the kitchen for a half-portion — it's a heavy millet porridge meant for high-altitude work, not a starter. Pair with the chilli-bamboo accompaniment they bring out for free."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b44e5bfd-1967-4cff-9060-3433cf75a356",
+    "destination_id": "aalo",
+    "fields": {
+      "signature_dish": "coffee + snacks",
+      "why_it_matters": "Aalo's standalone cafe-format venue listed on TripAdvisor's Arunachal Pradesh restaurant page (rated 4.0). Small, independent — the rare option in West Siang HQ with a cafe menu rather than a hotel-attached multi-cuisine kitchen.",
+      "insider_tip": "Verify hours on visit — small-town independent cafes in Arunachal often run owner-set timings rather than published ones. Cash preferred."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "47f42489-2535-489e-8044-d85d00935d01",
+    "destination_id": "dirang",
+    "fields": {
+      "signature_dish": "Kameng River-view thukpa",
+      "why_it_matters": "Resort restaurant on the Kameng River bank in Bushtangkha — the dining room with the best river view in Dirang. Standard Indian-Tibetan-Chinese menu but the setting (deck open to the river in summer) is the draw.",
+      "insider_tip": "The river-side deck is open weather-permitting from April to October; outside that window the indoor seating loses what makes the place worth the drive from Dirang Bazaar (~2km)."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5fc35b69-8eef-4d2c-9ef1-c44961a7c7d0",
+    "destination_id": "tawang",
+    "fields": {
+      "signature_dish": "thenthuk",
+      "why_it_matters": "Tawang HO sit-down with a bar and TV — the rare Tawang option with a proper alcohol licence. Diverse menu makes it the default pick when a mixed-veg/non-veg group can't agree elsewhere. Open noon to 10:30pm.",
+      "insider_tip": "The sha phaley (pan-fried meat-stuffed bread) is the dish to order; the broader Indian-Chinese menu is ordinary by comparison. Bar shuts ~10pm, before the kitchen."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "fd10327e-95de-4f89-9c9b-7f90215375a7",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "signature_dish": "cafe-style snack platter",
+      "why_it_matters": "Casual cafe at the Tri-Junction in Hapoli's Centre Point Complex — one of the few year-round cafe-format options in Ziro outside the Ziro Festival of Music week. Listed on Restaurant Guru and Justdial; cafe menu with small meals.",
+      "insider_tip": "Hapoli is the upper town (district HQ) — Ziro proper is a 6km drive down. If you're staying in Old Ziro, time your meal for when you're in Hapoli for groceries or permits."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "012b887d-a5a2-46e6-8adc-6a2920beefa6",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "signature_dish": "filter coffee",
+      "why_it_matters": "First-floor cafe opposite Best Bakers on MG Road, Hapoli — one of Ziro's few standalone coffee-shop format venues. Rated 3.8 across 51 Justdial reviews. Casual fast-food + coffee, popular with returning Ziro Festival regulars.",
+      "insider_tip": "Wi-Fi is the unannounced reason locals come — for a digital nomad doing email between Ziro sightseeing, it's the most reliable connection in Hapoli outside government offices."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5e575ef8-040e-4fb8-abab-ff5c3ce90557",
+    "destination_id": "bhalukpong",
+    "fields": {
+      "why_it_matters": "Bhalukpongs only Tripadvisor-ranked eatery (5.0/5, #1 in town) sits on the Assam side of the NH-13 bazaar just before the orange-and-white Arunachal entry gate.",
+      "insider_tip": "Time your stop here either at the AR Check-Post ILP queue or on the return leg."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c26ecfe2-71f9-40c7-93bd-bd51c7920c4f",
+    "destination_id": "bomdila",
+    "fields": {
+      "signature_dish": "pork with bamboo shoot + Monpa thali",
+      "why_it_matters": "Top-rated restaurant in Bomdila (4.3/81 reviews on Tripadvisor) with panoramic mountain views. Mix of authentic Monpa and pan-Indian dishes — one of the few places that does Monpa thali properly on request.",
+      "insider_tip": "Phone ahead for groups; small kitchen. Closed early in winter (sundown ~5pm)."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "0c3bf6e8-5cba-4d43-a896-012fba072504",
+    "destination_id": "bomdila",
+    "fields": {
+      "signature_dish": "pork momos with ema-datshi-style chilli cheese",
+      "why_it_matters": "Local-favourite Monpa-Tibetan kitchen in the main market. Cheap, authentic, busy with locals at lunch — a good barometer that the food is real, not tourist-curated.",
+      "insider_tip": "Pork momos sell out by 2pm. Veg thukpa is honest and warming on cold afternoons."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "91560610-25a0-49d1-a516-f3af11eb6349",
+    "destination_id": "dirang",
+    "fields": {
+      "signature_dish": "churra-gombu (corn pie with yak cheese) + millet momo platter",
+      "why_it_matters": "Eight Monpa women run this community kitchen inside a 300-year-old Chug home — opened March 2024, won the International Responsible Tourism Award the same year. Set lunch reviving forgotten Monpa millet recipes, plus a guided Living Museum tour before the meal.",
+      "insider_tip": "Reserve at least 1 day ahead (only 11 seats). Lunch lasts ~1 hr, ₹1,500 pp. Contact guide Leike +91 97745 15569 or Instagram @damusheritagedine. Chug is 15km from Dirang town."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "3b7875fa-586f-4d8a-806a-15ea7f1d25ea",
+    "destination_id": "dirang",
+    "fields": {
+      "signature_dish": "pork thukpa + steamed momo",
+      "why_it_matters": "Tiny family-run bazaar joint that has built a quiet TripAdvisor following on warmth and consistency rather than scale. Owner's hospitality routinely called out in reviews; staple for Tawang-bound drivers.",
+      "insider_tip": "Open early (~7am), warm thukpa before the Sela Pass drive is the move. Cash only."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "35786280-ee91-4a9b-8adc-d393a4a9d989",
+    "destination_id": "bhalukpong",
+    "fields": {
+      "signature_dish": "thukpa + chicken curry rice plate",
+      "why_it_matters": "Padma is the workhorse market eatery in Bhalukpong — driver-and-trader crowd, fast turnover, honest prices. One of the few sit-downs in town that isn't a hotel-attached restaurant.",
+      "insider_tip": "Bhalukpong proper has very few standalone eateries — most \"Bhalukpong\" restaurant listings are actually in Tezpur (Assam) or Tipi. Verify district before driving."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "bcd9567c-6a00-4c2a-93e7-d4f05b9e2991",
+    "destination_id": "bhalukpong",
+    "fields": {
+      "signature_dish": "fish curry rice (Bhareli river fish)",
+      "why_it_matters": "Highway-side family kitchen near the Assam-Arunachal border check post — popular with Tawang-bound convoys for hot fish-curry-rice. Local Bhareli river catch when in season.",
+      "insider_tip": "Better evidence than most \"Bhalukpong\" listicle entries. Skip Continental items; stick to the rice plate."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "d612bc69-d110-4400-ae93-808c313308fe",
+    "destination_id": "mechuka",
+    "fields": {
+      "signature_dish": "pah (Memba sticky millet cakes) + spicy country-pork strips with red chilli chutney",
+      "why_it_matters": "Family-run 20-seater perched on a hillside opposite Samten Yongcha Monastery — the kitchen opens into the restaurant and everything comes out fresh. Profiled by Outlook Traveller as Mechuka's cosy dining anchor.",
+      "insider_tip": "Mechuka has very few standalone restaurants — most meals happen at homestays. Call ahead to confirm hours; small town, owner-led service."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "33b658e3-73b5-432c-bb2e-b0e02ded85e5",
+    "destination_id": "pasighat",
+    "fields": {
+      "signature_dish": "wood-fired pizza and coffee with Siang valley sunset views",
+      "why_it_matters": "The single highest-rated cafe in Pasighat by review volume (148+ Restaurant Guru votes, 177+ Sluurpy ratings) — and the only one with consistent 4.8/5 from non-locals. Opened 2019, it changed Pasighat's coffee scene from instant-Nescafe to actual espresso.",
+      "insider_tip": "Closed Mondays. Rooftop seating fills up fast after 6pm — go for late lunch instead. Cash and UPI both accepted."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "93fdc501-4ae2-40e0-879e-ce05388cb235",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "signature_dish": "chicken and egg cooked inside a bamboo tube over open fire",
+      "why_it_matters": "Run by Kago Kampu and Kago Habung as an organic farmstay 2.5km from Hapoli; the kitchen serves food next to the central traditional fireplace. Bamboo-tube chicken here is one of the few places non-Apatani guests can taste an actual Apatani household preparation rather than a restaurant reinterpretation. ₹1500 per person per day includes breakfast + dinner.",
+      "insider_tip": "Dinner must be arranged at booking — they cook to headcount, no walk-in. Vegan options available from the garden in summer. No alcohol served except house apong (rice beer)."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "86b331f8-35ab-4c28-9ea9-250795e6c695",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "signature_dish": "pike pila fermented bamboo shoot with smoked pork",
+      "why_it_matters": "Punyo Chada runs this homestay in Hong (largest Apatani village, ~10,000 residents) as a sustainable-tourism anchor — meals come from his own organic plot plus neighbours' fish-rice fields. The pike pila preparation here uses a 6-month-fermented bamboo paste, the technique that earned the Apatani agricultural landscape its UNESCO tentative listing in 2014.",
+      "insider_tip": "Ngunu means \"home\" in Apatani. Punyo organises village walks to explain the rice-fish-millet system — combine the walk with a meal to get the most out of either."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ae653d45-0805-4765-bedf-f963987c7807",
+    "destination_id": "bhalukpong",
+    "fields": {
+      "why_it_matters": "Prashaanti Cottages — the IORA group property at the Jia Bhoroli (Kameng on the AR side) river bank — runs Golden Masheer as its in-house multi-cuisine kitchen. Authentic Assamese plates anchor the menu (named after the rivers flagship golden mahseer game-fish).",
+      "insider_tip": "Call ahead — they run a fixed lunch buffet during peak Pakke/Nameri season (Oct–Apr)."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a7bcb52b-0158-406e-983c-91d994c43bb1",
+    "destination_id": "bhalukpong",
+    "fields": {
+      "why_it_matters": "Hotel Eagle Nest sits on the AR side of the Bhalukpong main road, a few hundred metres past the ILP checkpost. Its kitchen is the standard truck-stop format for the NH-13 corridor.",
+      "insider_tip": "No reservation; the dining hall fills up with cross-border drivers between 1–2pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ab8dd4aa-b89f-4656-abc9-70699494ea57",
+    "destination_id": "namdapha",
+    "fields": {
+      "why_it_matters": "Zupra is the riverside restaurant-and-bar built into the left bank of the Noa Dehing in Miao — the closest sit-down dining to Namdaphas Deban gate that is not in-park lodge. Rated 3.9/5 on Tripadvisor and 128+ Justdial reviews.",
+      "insider_tip": "Sit on the river-facing deck for golden-hour. The kitchen will pack tiffins for early-morning Namdapha forest drives."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "e35c5b26-17fc-4712-82c0-7111e3c39b0e",
+    "destination_id": "namdapha",
+    "fields": {
+      "why_it_matters": "River Cafe is Miaos standalone coffee-and-light-meals stop, set near Zupra on the Noa Dehing left bank. Rated 4.1/5 across 66+ Justdial reviews — currently the highest-rated café in Changlang District.",
+      "insider_tip": "Open early enough for pre-dawn Namdapha birders."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "cc0f5bb9-3572-40f6-ad80-3a2971b705b3",
+    "destination_id": "namdapha",
+    "fields": {
+      "why_it_matters": "Pisis Miao describes itself as a soothing escape at the foothill of Dapha Bum — the 4,571m peak that anchors Namdapha. The kitchen runs a traditional-Asian small-plates menu paired with classic cocktails.",
+      "insider_tip": "Newest of the Miao trio — call ahead because hours flex with NP visitor flow."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "35c4d337-1892-4508-9c80-2b70a4f0ff23",
+    "destination_id": "tawang",
+    "fields": {
+      "why_special": "Best hotel in remote Tawang — heated rooms (non-negotiable at 3,000m+), hot water, and a restaurant with Monpa and North Indian food. The owner arranges monastery visits and Bumla Pass permits."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "43c2fc51-abe9-4913-b76a-8436a18d818a",
+    "destination_id": "tawang",
+    "fields": {
+      "why_special": "Stay inside India's largest monastery. Basic rooms but the 4 AM prayer chanting wakes you — and you'll be grateful. The spiritual immersion is something no hotel can offer."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "776c1a40-d6d5-4eb1-a30e-4df9ead4a903",
+    "destination_id": "tawang",
+    "fields": {
+      "why_special": "Best-located hotel in Tawang — walking distance to the monastery and Old Market. Heated rooms with mountain views, a restaurant serving momos and thukpa, and a helpful travel desk for Bumla Pass permits. The rooftop is perfect for stargazing."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "a79b293e-1763-46af-a624-ece0501b84f1",
+    "destination_id": "tawang",
+    "fields": {
+      "why_special": "Clean mid-range hotel with the closest access to the monastery. Rooms are warm and the restaurant serves decent Monpa and North Indian food. The owner is Monpa and shares fascinating local history. Essential to book heating in winter — it drops to -10°C."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "01223c0b-d9d1-4f23-b206-ee462731fd47",
+    "destination_id": "tawang",
+    "fields": {
+      "why_special": "Budget guesthouse run by a Monpa family who treat guests like relatives. Simple rooms but blankets are thick and the home-cooked Monpa meals (yak butter tea, zan) are incredible. The grandmother tells stories of old Tawang. Book through Tawang tourism office."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "7dd6e283-a1b4-4172-8e13-09d2fdafdab6",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "why_special": "Comfortable resort surrounded by rice paddies with views of the Apatani tribal villages. The in-house restaurant serves Apatani cuisine including smoked pork and bamboo shoot dishes. They arrange village walks with local Apatani guides."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "65fd37e8-e33f-43c3-b34c-5248d81c4146",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "why_special": "Boutique eco-homestay built in traditional Apatani style with modern comforts. The owner is an Apatani cultural ambassador who leads immersive village tours. Organic meals cooked on a wood fire. During Ziro Music Festival, this is the most coveted stay in town."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "ea7e18e2-b3b2-43a2-abce-b4a7a6a95852",
+    "destination_id": "ziro-valley",
+    "fields": {
+      "why_special": "Community-run eco-lodge that channels profits into Apatani heritage preservation. Bamboo-and-wood architecture, locally sourced meals, and a genuine connection to the valley's indigenous culture. Evening storytelling sessions around the firepit are unforgettable."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "93e74ead-5531-4dce-915b-dfa894a4f780",
+    "destination_id": "bomdila",
+    "fields": {
+      "why_special": "Family-run hotel with the warmest hospitality in Bomdila. Rooms are simple but heated, and the restaurant serves excellent momos and thukpa. The owner arranges early morning visits to the Bomdila Monastery and knows the best apple orchard walks."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "c25d1b54-e1fe-4e65-9cbb-a77aacdd33a6",
+    "destination_id": "dirang",
+    "fields": {
+      "why_special": "Best hotel on the Tawang highway — hot water that actually works, clean rooms, and a restaurant that's a lifesaver on the long drive. The hot stone bath (local tradition) is available on request. Views of the Dirang Dzong and the Kameng River from upper floors."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "2c319dc4-8b50-4cd5-a639-d40dbac7dce9",
+    "destination_id": "pasighat",
+    "fields": {
+      "why_special": "Adventure eco-camp on the banks of the mighty Siang (Brahmaputra). Tented cottages with river views, white-water rafting, and fishing expeditions. Run by a local Adi tribal team who share stories of the river. The campfire dinners with fresh river fish are outstanding."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "86ddbfc1-0971-4f01-9cd1-2405d88b43c9",
+    "destination_id": "pasighat",
+    "fields": {
+      "why_special": "Clean, modern hotel in Pasighat town with reliable amenities. The rooftop restaurant has panoramic views of the Siang River valley. Good base for exploring the Daying Ering Wildlife Sanctuary and Adi tribal villages nearby."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "48639664-902a-4281-8344-cf9abb19e8f8",
+    "destination_id": "dambuk",
+    "fields": {
+      "why_special": "Festival-only tented accommodation on the event grounds (December). Basic camp with community toilets and a shared dining tent — this is why you come for the festival, not the stay itself. Book via the festival site."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bomdila",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend this family-run homestay near the Bomdila Gompa for authentic local meals, genuinely warm hosts, and direct access to monastery culture without resort markup."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bomdila",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "We recommend staying in or near the functional monastery guesthouses accessible from Bomdila—where guests sleep inside active Buddhist monastic grounds and join early morning prayers."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhalukpong",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Iora Hotels' Bhalukpong property — riverside boutique cottages on the Jia-Bhoroli, the exact river frontage Bhalukpong is known for. 4.0/5 Tripadvisor across 1,131 reviews. Multi-cuisine restaurant + organised rafting/angling/birding partnered with the local fisheries community. The closest you'll get to a \"signature\" experience stay in a destination where Arunachal's commercial accommodation is thin.",
+      "signature_experience": "Dawn raft-and-angle on Jia-Bhoroli with Mishing community oarsmen; the river is one of only 3 in India where mahseer angling is still permitted on a tagged-release basis."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "anini",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend it for its position in the centre of Anini town, within walking distance of the market, local eateries, and the starting point for treks into the surrounding hills."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "namdapha",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this property because it sits at the Deban entry checkpoint—the literal gateway to all treks, with the Noa Dihing river and park office within walking distance."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dambuk",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this for sitting directly on the main village approach with walking access to the weaving centers, market, and river viewpoints—no need for transport to see daily Dambuk life."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pasighat",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend this centrally located hotel for clean rooms, reliable service, and fair pricing that lets you spend more on local exploration than accommodation."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pasighat",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend staying in a family-run homestay in central Pasighat for walking distance to the market, river ghats, and local eateries without needing transport."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pasighat",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "We recommend this for sleeping in organized tent setups near the river with campfire evenings and forest walks that most Pasighat visitors skip."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhalukpong",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "On the Kameng riverbank between 4 reserves (Pakke, Eaglenest, Sessa Orchid, Nameri across the AP-Assam border) — adjacent to the Tipi Orchid Research Centre (one of Arunachal's 2 ORCs, 600+ species). Bookable via homestay.com listing #136948. The de-facto location stay for travellers using Bhalukpong as a 4-reserves base.",
+      "signature_experience": "Pre-breakfast walk into the Tipi Orchid Research Centre — peak orchid bloom Mar-May covering 600+ documented species."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhalukpong",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Arunachal Pradesh Tourism Development Corp's lodge on the AP-Assam border at Bhalukpong — the budget-end of the verified accommodation stack, listed officially by arunachaltourism.com. Basic rooms, on-site canteen, useful for ILP-permit travellers needing a registered government property at entry."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhalukpong",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Kaati Trust's tented birding camps on the Eaglenest Wildlife Sanctuary edge — ~45km from Bhalukpong on the Tenga-Lama Camp axis. The xfactor pick: this is where Bugun Liocichla was discovered in 2006 by Ramana Athreya (only post-1948 bird species new to science from India). Full-board with Bompu-Lama birder routes guided by local Bugun community.",
+      "signature_experience": "Morning birder transect from Lama Camp to Bompu — chance encounters with Bugun Liocichla (population <14, only known from this 3km stretch) + Ward's Trogon + Beautiful Nuthatch."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "namdapha",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Phupla Singpho's 6-cottage Singpho-style lodge in Miao — the only organised non-govt accommodation gateway to Namdapha National Park. Naturalist-led tracking of the \"4 cats\" (Namdapha is the only park globally with tiger + leopard + clouded leopard + snow leopard) and direct access to primary lowland-rainforest trails on Noa-Dihing. Real-life basis for sources from Changlang Govt + Outlook Traveller.",
+      "signature_experience": "Multi-day trek with Lisu trackers to Hornbill Camp + Embeyong; the \"4-cats\" attribution makes Namdapha unique globally — though snow leopards are only seen at the 4,500m altitude bands above Daphabum."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "namdapha",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Bella Tikhak Namshum's women-led homestay in Miao at the Namdapha NP gate — Outlook Traveller-reviewed Mar 2024. Authentic Tangsa-Lisu meals (bamboo-shoot curry, hornbill-festival rice cakes, local mishmi-teeta tea), useful as a Miao base before entering Deban. Cheaper than the Jungle Camp; supports a women-run community enterprise."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "aalo",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this as the most established colonial-era property in Aalo, offering authentic administrative heritage and river views that define the town's character."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "aalo",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend this for honest value—clean rooms, helpful staff, and proximity to Aalo town centre without premium markup."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "aalo",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this for its direct riverside location on the Subansiri, placing you within walking distance of the town's main markets and boat launch points."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dambuk",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this for its direct access to the Siang River and trained guides who lead birding and tribal village walks—the closest Dambuk has to a signature property with serious naturalist credentials."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dambuk",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend staying with local Idu Mishmi families who cook regional food and share knowledge of traditional weaving—authentic experience at a third of resort cost."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ziro-valley",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this for its position in Hapoli town center, walkable to Apatani markets, tribal museum, and the weekly Sunday market without needing transport."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ziro-valley",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "We recommend this for its elevated timber design that actually reflects Apatani pile-house architecture, offering a stay that teaches you something about the valley's building tradition."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "mechuka",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this as the most established full-service property in Mechuka, with organized treks, local guide networks, and the only property offering multi-day valley exploration packages."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "anini",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend it because rates are honest and transparent, rooms are basic but clean, and it's often the only reliable option for independent travellers on tight budgets."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bomdila",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this for its commanding views of the Eastern Himalayas, on-site monastery visits, and multi-cuisine dining—the closest Bomdila has to a signature property."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dirang",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Sprawling resort near Bushtangkha with breathtaking Kameng river views, lawn space for kids and seniors alike — the modern alternative to Pemaling for a Dirang stay that prioritises grounds and walks over highway access. Address: Near Bushtangkha, Dirang, West Kameng District, Arunachal Pradesh."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dirang",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Hilltop cottage resort on Nimas Road with spectacular Kameng valley views, bonfire lawn, and a kiwi-and-persimmon garden — Dirang's most-photographed ridge stay, increasingly popular with Tawang-route travellers wanting more than a roadside hotel. Address: Nimas Road, Dirang, Arunachal Pradesh 790101."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bomdila",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this heritage government property for its central position overlooking the main bazaar and walking distance to the Bomdila Gompa and market."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dirang",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "23-room Lords chain property on Dirang's main highway strip overlooking the valley — TripAdvisor #1 of 4 Dirang hotels, walk to Dirang Dzong and Khastung Gompa without needing transport."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dirang",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Family-run retreat on 7 hectares of working kiwi and orange orchards at ~5,000 ft in Rungkhung — celebrated on TripAdvisor for its tour-planning help, cottage stay, and the orchard walks that no Dirang hotel can match. Address: Rungkhung, Dirang, West Kameng District, Arunachal Pradesh 790101."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pasighat",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this for its riverside location on the Siang and on-site adventure activities (rafting, fishing) that define Pasighat's outdoor character."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "mechuka",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "We recommend this for travellers who want to sleep beside the Siyom River in traditional canvas tents with bonfire evenings—it operates April–October and offers the only immersive river-valley camping in the region."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tawang",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Seven-room resort in New Lebrang surrounded by snow-capped peaks — 17 minutes to Tawang Monastery, 14 to Nuranang Falls, with 24-hr room service, private parking and rooms from ₹2,710 on EaseMyTrip. The mid-range alternative when Vivanta is full or above budget. Address: New Lebrang, Post Office/Police Station, Tawang, Arunachal Pradesh 790104."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tawang",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "IHCL's first Arunachal property — 80 rooms on 10 acres at 10,000 ft with central atrium, heated wood floors and walnut walls, a short drive from Tawang Monastery (the world's second-largest gompa). The undisputed showpiece stay in Arunachal east of Bomdila."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tawang",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "Family-run Monpa guest house a literal stone's throw from Tawang Monastery's main gate — terrace-view rooms with geyser and heater, momo-and-thukpa kitchen, the closest 'walk to morning prayer' option in a town where most hotels need a transfer."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ziro-valley",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend this for honest homestay comfort, working fish ponds you can visit, and owners who actually cook from their garden—experience-to-rupee ratio wins here."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ziro-valley",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "We recommend this for its commitment to organic farming, Apatani cultural immersion, and design that sits genuinely within the valley's rice-terrace landscape rather than imposing on it."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "mechuka",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "We recommend staying with local families in the village core—you'll eat home-cooked Adi tribal meals, learn about terrace farming directly, and support the community at half the resort rate."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "mechuka",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "We recommend this property because it sits within walking distance of the main village market, the Mechuka Monastery, and trailheads to Siyom River—the only stay that requires zero vehicle transfers for day exploration."
+    }
+  }
+]

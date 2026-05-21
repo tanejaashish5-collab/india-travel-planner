@@ -1,0 +1,635 @@
+[
+  {
+    "table": "local_eateries",
+    "id": "be668568-58e3-45a9-aaeb-bb224d28002e",
+    "destination_id": "nalanda",
+    "fields": {
+      "signature_dish": "veg thali",
+      "why_it_matters": "The closest sit-down restaurant to Nalanda Ruins — a Bihar Tourism (BSTDC) Ashok-brand property whose buffet-breakfast and a-la-carte kitchen handles most of the academic and pilgrimage circuit between Bihar Sharif and Rajgir. Nalanda has almost no standalone tourist eateries, so the hotel restaurants do the heavy lifting.",
+      "insider_tip": "Order the buffet breakfast slot if you arrive before 10am — it's the cleanest meal in the area. Lunch service can lag during tour-bus rushes; come at 12:30 sharp or after 2:30pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "0b45e939-1b70-4d0e-8b4e-24021d0d14c0",
+    "destination_id": "nalanda",
+    "fields": {
+      "signature_dish": "north indian thali",
+      "why_it_matters": "Bihar Sharif's quiet workhorse — when you've finished the Nalanda ruins and need lunch on the drive back to Patna or Rajgir, this is the picked-by-locals option in the district headquarters town. Standard North Indian menu, but the kitchen turns out reliably hot food.",
+      "insider_tip": "Bihar Sharif is the administrative capital of Nalanda district, not Nalanda village itself. Plan a 20-25 minute drive from the ruins. Cash works; UPI is accepted but flaky on weekends."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "4f56ae9c-d9c1-40dc-b457-aa4ed63d0016",
+    "destination_id": "nalanda",
+    "fields": {
+      "signature_dish": "indo-chinese chowmein",
+      "why_it_matters": "A Bihar Sharif cafe with the only ambience-led seating in a town that mostly does roadside dhabas — useful if you've finished the ruins and want a quiet hour with coffee before driving on. Indo-Chinese menu, a rarity in this stretch.",
+      "insider_tip": "Sit upstairs if it's open — the ground-level seating gets noisy during evening student rushes from the nearby colleges."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "fdfe6501-9c01-4ff3-8bcd-8a7e5503bce4",
+    "destination_id": "pawapuri",
+    "fields": {
+      "signature_dish": "veg thali",
+      "why_it_matters": "One of the very few sit-down options near Pawapuri's Jal Mandir — the village runs almost entirely on Jain pilgrim infrastructure (bhojanshalas inside trust complexes), so a non-trust restaurant matters for non-Jain visitors and tour groups. Pure-veg menu by default given the Jain-dominant clientele.",
+      "insider_tip": "If the Jal Mandir bhojanshala (Shri Jain Shwetamber Bhandar Tirth) sittings have closed, this is the fallback. Pawapuri is a 35km drive from Rajgir on a slow rural road — plan eating before, not after, the temple darshan."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "f02b87f1-827d-47dc-ac9c-e4326b7cc23a",
+    "destination_id": "vaishali",
+    "fields": {
+      "signature_dish": "litti chokha",
+      "why_it_matters": "A working dhaba on the Hajipur side of the Vaishali approach — the practical lunch stop for travellers driving from Patna to the Lichchhavi ruins. Vaishali itself has barely any sit-down food; Hajipur is the closest urban centre with reliable dhaba kitchens.",
+      "insider_tip": "Hajipur sits ~20km from Vaishali's archaeological core (Coronation Tank / Ashoka Pillar). Plan to eat in Hajipur on the way in, then push through Vaishali sites without lunch detours — restaurants thin out completely past Hajipur."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "65842bb9-188a-43e8-b7f1-7f65a24dd146",
+    "destination_id": "vaishali",
+    "fields": {
+      "signature_dish": "veg thali",
+      "why_it_matters": "A second sit-down option in Vaishali town beyond Talko Bell — useful when Talko Bell is full or closed for an event. Standard North Indian kitchen serving the trickle of Buddhist pilgrim traffic between the Relic Stupa and Coronation Tank.",
+      "insider_tip": "Vaishali essentially has two options: Talko Bell and Muskan. If both are unavailable, the next reliable kitchen is in Hajipur ~20km back toward Patna. Don't drive in hungry past 8pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "78e8de3d-c77d-445c-b050-503482fdf166",
+    "destination_id": "vaishali",
+    "fields": {
+      "signature_dish": "veg thali",
+      "why_it_matters": "The Bihar State Tourism Development Corporation (BSTDC) tourist lodge runs a basic restaurant — useful as the official-tourism fallback when private dhabas are shut. Located near the main archaeological complex.",
+      "insider_tip": "BSTDC kitchens run on government schedules — check timings (typically 8am-10am, 12:30pm-3pm, 7:30pm-10pm). Menu is small and pure-veg leaning. If you need certainty, this is the most predictable kitchen in the village."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "fd72112d-9a37-4f7a-a1f4-d3899736bd5e",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "signature_dish": "thai green chicken curry",
+      "why_it_matters": "Built around the Thai pilgrim flow — the green curry uses imported Thai paste and the menu reads closer to a Bangkok soi than to a typical Indian Thai-fusion room.",
+      "insider_tip": "The seafood section depends on Gaya supply; if the prawns are on the day's chalkboard, order them — otherwise stick to chicken and tofu preparations."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "eb3f02fc-6c95-4389-ac1b-7ef26e64aeab",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "signature_dish": "tingmo with thukpa",
+      "why_it_matters": "Run by Tibetan refugees from the 1959 exile community settled in Bodh Gaya since the 1980s. Operating since 1986, the cafe serves only vegetarian Tibetan food — handmade momos, hand-pulled thenthuk noodles, butter tea — alongside a small souvenir counter.",
+      "insider_tip": "Tiny — only 6-7 tables. During Tibetan pilgrim season (October-March, around the Dalai Lama's teachings) you'll wait. The Rs 150 Tibetan breakfast set (bread, butter tea, eggs) is the best-value entry."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "415a253c-720a-43fa-8851-d311df67cf88",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "balushahi",
+      "why_it_matters": "Founded in 1996 by brothers Amit and Sandeep Mankani, Harilal's built a chain around no-preservative, palm-oil-free Bihari sweets. The Bailey Road flagship is the family stop for balushahi and motichoor laddoo before train journeys.",
+      "insider_tip": "The savoury kachori-sabzi counter at the back gets crowded between 9 and 11am — most regulars come for breakfast and the namkeen tin to take home, not the sit-down restaurant."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "452c7309-d3cb-486f-a664-c99b488957f3",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "masala dosa",
+      "why_it_matters": "A pure-veg South Indian room on Frazer Road that opened in 1994 and became the default family lunch spot for travellers walking out of Patna Junction. Ranked top-10 on Patna's TripAdvisor list for over a decade.",
+      "insider_tip": "Avoid weekend lunch (1-3pm) — the queue outside the lift can run twenty minutes. The filter coffee is genuinely brewed, not pre-mixed; ask for it after the meal."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "d1cabe15-0748-428f-9c41-65491ec7293a",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "breakfast buffet",
+      "why_it_matters": "The 24-hour coffee shop at Hotel Maurya — Bihar's first luxury hotel, opened 1978 next to Gandhi Maidan. The breakfast buffet is where Patna does its Saturday family meal; the rest of the day it works as a calm meeting room with consistent food.",
+      "insider_tip": "The buffet runs 7-10am and includes a Bihari section (litti, chokha, sattu paratha) most weekday mornings — a faster way to sample the regional spread than chasing individual stalls."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b71cd95e-d19b-45ab-b55b-01c74dfe15d1",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "takshila ae raan",
+      "why_it_matters": "Hotel Chanakya's signature restaurant — the hotel itself opened in 1981, and Takshila has been the city's go-to Awadhi-Frontier room for over thirty years. Slow-cooked kebabs and the house ae raan are what regulars order.",
+      "insider_tip": "The ae raan needs an hour's notice — call ahead or order it as you sit down. The biryani is dum-cooked and the rice doesn't reheat well; avoid the lunch leftover round at 3pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c91c4515-bcb1-4fcc-8e6a-e2774906506d",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "kesar peda",
+      "why_it_matters": "Founded in 1981 in the old Patna University belt, Tandon's built a four-decade reputation on a tight, traditional menu. The kesar peda uses real saffron rather than colour, and the chandrakala (khoya pastry in syrup) is the shop's signature.",
+      "insider_tip": "The chandrakala is fragile — eat in-store the same day rather than packing for travel. Laung latika sells out by mid-evening on weekends."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "81610a3a-4bda-4779-b326-2f0e018b043e",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "ghee-dipped sattu litti",
+      "why_it_matters": "Established 1956 opposite the masjid at Pillar 6 on Station Road, this is among the oldest continuously running litti carts in central Patna. Ghee-dipped sattu litti with mustard oil chokha — the rustic version locals push tourists toward when correcting them about restaurant litti.",
+      "insider_tip": "Open 11am-7pm. Cash only. The cart sets up against the wall — there is no seating; eat standing or take to the parked car."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a3693044-c666-47d5-9cb2-4a0e3c11da57",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "signature_dish": "carrot cake",
+      "why_it_matters": "The international backpacker base camp opposite the Vietnamese temple — wifi, outdoor seating, Lavazza coffee and a baked-goods counter that's the closest Bodh Gaya gets to a Western cafe. Ranked Bodh Gaya's #1 dessert spot on TripAdvisor.",
+      "insider_tip": "Pricier than the rest of town (₹400-700 for two) but the carrot cake is the order regulars defend. Vegan and vegetarian-only kitchen."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c0c0c907-9df9-4f98-94cd-8e772ff06c35",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "signature_dish": "mutton curry with butter naan",
+      "why_it_matters": "One of the few Bodh Gaya restaurants that serves slow-cooked Bihari-style mutton curry alongside the standard pilgrim Tibetan-Thai-Chinese sweep. Owner-chef Mohammed runs the kitchen; momos are handmade, not frozen-and-steamed. Three seating zones — indoor, tent, outdoor.",
+      "insider_tip": "The alley off Miya Bigha is hard to find — call ahead and they'll guide you in (the address sits about 3 minutes' walk from Mahabodhi Temple). Avoid the dessert section; the savoury kitchen is what's worth coming for."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "bb2b1cde-2bd6-49f7-b9dd-e9cabe70b8fe",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "signature_dish": "south indian thali",
+      "why_it_matters": "The in-house cafe at Hotel Maya Heritage in Mastipur — pure-veg, with a South Indian section that fills the gap for Indian pilgrim families looking past the Tibetan/Thai mainstream. Currently ranked Bodh Gaya's #1 restaurant on TripAdvisor.",
+      "insider_tip": "Outsiders can dine without staying — the cafe sits off the main lobby. Order the South Indian section over the Indo-Chinese; the dosa kitchen is what got the rating."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "70ec461c-d15d-41a8-9fd3-3c5ba4c60e8f",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "signature_dish": "tandoori chicken",
+      "why_it_matters": "The 140-cover dining room of Hotel Niranjana, opposite the Archaeological Museum. Multi-cuisine kitchen built around the Buddhist pilgrim mix — Thai, Korean, Vietnamese on the menu alongside Indian — and locally rated as the best tandoori chicken in Gaya district.",
+      "insider_tip": "Coach groups arrive 1-2pm and 7-8:30pm; eat outside those windows. The Vietnamese and Korean sections are limited compared to the Thai and Indian; manage expectations on the East Asian menu."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "accfe752-58ba-49d7-847c-f251a85d34ec",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "signature_dish": "veg thali",
+      "why_it_matters": "A 200-metre walk from the Mahabodhi Temple — the closest sit-down option for pilgrims who want a meal between visits. Pure-veg, with both Indian and limited continental options, and one of the most-mentioned cafes in pilgrim guides.",
+      "insider_tip": "The footfall doubles around Buddha Purnima and during Tibetan teachings. Order the banana lassi cold — a leftover from the 1990s backpacker era when this was the budget pilgrim circuit."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "1c7c72a9-b87e-427e-8a63-ab5ed2e2d16f",
+    "destination_id": "nalanda",
+    "fields": {
+      "signature_dish": "samosa with masala chai",
+      "why_it_matters": "The small canteen on the Archaeological Survey of India site at the Nalanda Ruins — limited menu of snacks, tea and bottled water. Practical rather than scenic; the only food option inside the protected zone.",
+      "insider_tip": "Open during ruin visiting hours (9am-5pm). For a full meal, head 11 km to Rajgir or 9 km to Bihar Sharif — Nalanda village itself has only roadside dhabas."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "6be47df2-24ae-4293-83dc-28e1008fe3de",
+    "destination_id": "nalanda",
+    "fields": {
+      "signature_dish": "litti chokha with sattu paratha",
+      "why_it_matters": "The cluster of small dhabas on the Nalanda-Rajgir road opposite the ruins entrance — about 3 km from the protected site. Sattu paratha, litti chokha and a working tea-stall format; the default lunch stop for tour buses.",
+      "insider_tip": "Multiple competing carts — pick one with steam visibly rising from the litti coals. Cash only at most stalls; the chai is fresher than the food after the lunch rush."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "dfe18dc1-28f9-4b98-857a-8c5cd50cde37",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "dahi ke kebab",
+      "why_it_matters": "The Boring Road outlet of the Pind Balluchi chain — a Punjabi-village themed dining room that brought the brand's signature dahi ke kebab and dhaba meat to Patna's modern restaurant strip.",
+      "insider_tip": "Lunch is calmer than dinner; the family seating fills by 8:30pm on weekends. The branch is separate from the Biscomaun-Tower revolving outlet near Gandhi Maidan — confirm address before booking."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "95bf87ac-8d62-4fb5-81f9-d91772e90642",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "chicken litti",
+      "why_it_matters": "A roadside coal-fire litti stall opposite Harilal's that has run on Boring Road for around four decades, credited locally with popularising chicken-stuffed litti as an evening street snack rather than a strictly veg dish.",
+      "insider_tip": "Open evenings only (1pm-9pm). The chicken gravy goes faster than the littis; arrive before 7pm or you'll get sattu by default."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "58492655-0d4a-44ca-a5d9-deaaad099f08",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "ghee litti with three chokhas",
+      "why_it_matters": "An indoor sit-down litti room in Sri Krishnapuri that takes the cart format and adds tables, AC and printed menus. Useful if you want the state dish without the roadside dust — same coal-fired litti, served on a steel plate with three chokhas.",
+      "insider_tip": "Order the litti 'ghee se' — the dunked-in-ghee version is a separate menu line and what locals correct first-timers about. Lunch crowd thins after 2:30pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "4c987773-2836-4262-9acc-ff6aca9b8d97",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "doda burfi",
+      "why_it_matters": "The Patna outpost of the Bikaner sweet-and-namkeen format on the Boring Road circuit. Doda burfi and kesariya cham cham are the consistent picks; the savoury counter doubles as a chaat stop.",
+      "insider_tip": "Order the samosa with jalebi as a single combo at the takeaway counter — the in-house version is hotter than what gets boxed for delivery."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b861c5a4-18e1-47f4-bdde-4a95478354a7",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "paneer litti",
+      "why_it_matters": "Run from a small storefront in Bhikhana Pahari, this place pushed the litti format beyond sattu — paneer, pyaz and seasonal veg fillings are now copied across the city. Indoor seating only.",
+      "insider_tip": "Hours run 8:30am-9:45pm so it doubles as a breakfast spot; the morning litti batches are softer than the evening ones, when the dough rests longer."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "89f67d3c-15b9-4b13-96c1-2a35c1241001",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "biryani",
+      "why_it_matters": "Patna's only revolving restaurant, on the 18th floor of Biscomaun Tower opposite Gandhi Maidan. The full rotation gives a 360-degree view of the Ganga, Golghar and the maidan; food is supporting cast for the view.",
+      "insider_tip": "Book a window table for a sunset slot (around 6pm in winter) — the Golghar sits in line with the river behind it. The menu skews North Indian-Chinese; stick to biryani and tikka rather than the continental side."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b1176fa3-df7f-4cce-9245-fb110a243d6f",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "coal-fired litti chokha",
+      "why_it_matters": "Multi-outlet litti takeaway run for around 16 years across Hariniwas Complex, Mithapur and Kankarbagh. Coal-cooked litti and three chokhas served in foil — closest you get to a Frazer Road street version with a printed bill.",
+      "insider_tip": "Takeaway-first; the seating is minimal. Skip the 'fried litti' on the menu — it's the roasted version that holds up over the ride home."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b06c80ed-5920-4fb7-8c70-35ca1704b805",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "khaja",
+      "why_it_matters": "Brings the syrupy layered khaja from Silao village (40 km out) into Patna proper. The maner laddoo got national-stage attention after PM Modi referenced it in a Bihar election speech, but the khaja is the older draw.",
+      "insider_tip": "Khaja loses crunch within 24 hours; buy what you'll eat that night. The shop tins khaja for travel but it goes chewy by day three — the laddoo version travels better."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8748cced-4175-4a0a-a0e2-1f2627d91e19",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "chicken biryani",
+      "why_it_matters": "A Frazer Road biryani counter that has built its reputation on the meat-to-rice ratio rather than ambiance — small dining room, takeaway-heavy, listed on every Patna biryani round-up.",
+      "insider_tip": "Order the mutton biryani over chicken — the slow-cooked shanks are what regulars come for. Friday dinner sells out by 10pm."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "78e5302d-f47d-4a6c-9caa-db77cd186ee4",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "ahuna mutton",
+      "why_it_matters": "Hotel Maurya's poolside fine-dining room and Patna's #1 TripAdvisor restaurant for several years running. Built its reputation on a serious Bihari menu — ahuna mutton sealed in a mud pot, Bihari kebab, regional fish curry — alongside the standard hotel multi-cuisine.",
+      "insider_tip": "Order from the Bihari section, not the continental — it's the kitchen's distinctive work. Lunch service runs 7:30am-4pm and dinner 7:30-11pm with a closed window in between; the gap traps walk-in tourists."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "7536f144-1e91-40c6-bfde-fc7d58da1f28",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "tandoori platter",
+      "why_it_matters": "A Rajbansi Nagar tandoor-centric room that built its name on a fixed-style Punjabi menu — daal makhani, kulcha, charcoal kebabs — without rotating dishes for trends.",
+      "insider_tip": "The Patna outlet is a separate operation from the larger Sanjha Chulha chains in Kolkata or Mumbai — confirm address before booking via search engines that conflate them."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "4dba17ee-e517-4ab0-abba-64646d036bff",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "vegetable hyderabadi biryani",
+      "why_it_matters": "A neighbourhood family restaurant on Bailey Road in Khajpura — separate couple-only and family seating, ₹300 for two and a menu that mixes North Indian, Chinese, biryani and Bihari without specialising.",
+      "insider_tip": "Couples seating is upstairs; family floor downstairs gets noisy on weekends. Stick to the biryani-and-litti combo; the Chinese section is functional rather than memorable."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "db5dcce0-53e1-4639-bfb8-015f5d64d0d4",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "khaja",
+      "why_it_matters": "A Jakkanpur sweet-and-namkeen institution near Dayanand Girls School — modernised packaging and clean storefront, but the khaja and balushahi recipes are unchanged. Now also handles catering and a small restaurant arm.",
+      "insider_tip": "The rabdi rasgulla is sold from a separate counter at the back — order early in the day; the rabdi runs out before evening rush."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "a03515e5-c7cc-41e3-a8f4-cf878f75f33e",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "naivedyam laddoo",
+      "why_it_matters": "The temple-run prasad counter at Mahavir Mandir, opposite Patna Junction. The boondi-based naivedyam laddoo is made on temple premises by trained sevayats and sold in standard tin packs — a fixed-price, fixed-recipe sweet that doubles as a Patna takeaway gift.",
+      "insider_tip": "Counter is busiest Tuesday-Saturday around the morning aarti. Buy the smaller tin if you're flying — the larger one crumbles in cabin luggage."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "b634bc32-9c70-417e-9857-218f79f1f645",
+    "destination_id": "patna",
+    "fields": {
+      "signature_dish": "coal-roasted sattu litti",
+      "why_it_matters": "Operates inside Maurya Lok complex — the central market arcade off Dak Bungalow Road that locals treat as Patna's old food court. The litti rounds are coal-charred and served in a paper plate with three chokhas; the queue is the menu.",
+      "insider_tip": "Lunch only (11am-8pm). Maurya Lok parking is street-side and chaotic; auto-rickshaw is faster than driving in."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "003eee1a-1988-430a-9c40-9d12d8b294be",
+    "destination_id": "pawapuri",
+    "fields": {
+      "signature_dish": "jain thali",
+      "why_it_matters": "The dining hall (bhojanshala) inside the Shri Jain Shwetamber Bhandar Tirth at Pawapuri — the site of Mahavira's nirvana around 500 BCE. Strictly Jain pure-veg by religious bylaw, fixed sittings (Navkarshi-9:30am breakfast, 11:30am-1:30pm lunch, 5pm-before-sunset dinner), no onion/garlic/root vegetables. Open to pilgrims and walk-in visitors.",
+      "insider_tip": "Sittings are fixed by Jain dietary timing — arrive 10 minutes early or eat at the next slot. The complex enforces no leather inside; remove belts and watches at the entrance. Manager: Mr. Mishra."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "c2f5ce08-ca76-4088-a48b-05b02373a362",
+    "destination_id": "rajgir",
+    "fields": {
+      "signature_dish": "miso soup with japanese omelette",
+      "why_it_matters": "The on-property restaurant of Indo Hokke — a Japanese-funded 44-room hotel built to host Buddhist pilgrims from Japan, blending Japanese and Indian architecture. The kitchen is the only place in Rajgir serving genuine Japanese set menus (miso, omelette sets) alongside Indian and Thai food.",
+      "insider_tip": "Outside guests can dine — the restaurant accepts walk-ins from the main entrance. Confirm Japanese menu availability the same day; supply chain for Japanese ingredients runs from Patna and a few items rotate in and out."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "8d75b551-e9f2-4822-a72d-4803f96141ce",
+    "destination_id": "rajgir",
+    "fields": {
+      "signature_dish": "paneer tikka with butter naan",
+      "why_it_matters": "Currently Rajgir's top-ranked restaurant on TripAdvisor. Multi-cuisine kitchen built around the pilgrim-and-tourist flow with attached banquet space — locally cited for consistency rather than specialisation.",
+      "insider_tip": "Weekend dinner requires a booking. The dining room sits separate from the banquet side; ask for the restaurant entrance or you'll end up routed through a wedding setup."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "f9ca0353-6b77-4f66-bd09-0ba54f556775",
+    "destination_id": "rajgir",
+    "fields": {
+      "signature_dish": "punjabi thali",
+      "why_it_matters": "The in-house multi-cuisine restaurant of Hotel Anand Lok near the Rajgir bus stand — useful entry point for travellers arriving by road who want a sit-down meal before the ropeway/Vishwa Shanti Stupa run.",
+      "insider_tip": "Walk-ins welcome from non-guests. Lunch buffet some days — call ahead. Cash and UPI both work; card terminals can be intermittent."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "753fc999-dab2-40f6-9a11-a2c9dc728620",
+    "destination_id": "rajgir",
+    "fields": {
+      "signature_dish": "veg thali",
+      "why_it_matters": "The in-house restaurant of the Bihar government-aligned Tathagat Vihar Hotel in Dangi Tola — pilgrim-circuit basics done at AC restaurant standard. Useful anchor for groups doing the Buddhist circuit.",
+      "insider_tip": "Booking through Justdial or direct call works better than walk-in for groups over six. Staff can arrange Jain or no-onion-no-garlic preparations with notice."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "87bfae6a-1c75-4d75-86d0-74212ef8f04e",
+    "destination_id": "vaishali",
+    "fields": {
+      "signature_dish": "veg thali",
+      "why_it_matters": "Currently Vaishali's top-ranked restaurant on TripAdvisor — set in landscaped grounds with a pond, ducks and on-site livestock that doubles as the dining-room view. Multi-cuisine kitchen built around the Buddhist-Jain pilgrim circuit traffic (Lichchhavi capital, Mahavira's birthplace).",
+      "insider_tip": "Vaishali is a thin restaurant town — outside Talko Bell, options drop to roadside dhabas. For a sit-down meal, stop here on the way in or out from Hajipur."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "5e49196c-9458-4505-a939-96e6631ec8af",
+    "destination_id": "rajgir",
+    "fields": {
+      "signature_dish": "paneer-tikka-thali",
+      "why_it_matters": "Walking distance from Brahma Kund hot springs, the in-house restaurant at Green Hotel runs the most consistent mid-range North Indian and Chinese kitchen in town and is the default lunch stop for pilgrim circuits between Vishwa Shanti Stupa and Saptaparni Cave. The South Indian section is a useful break from the wheat-heavy Bihari template most Rajgir kitchens lean on.",
+      "insider_tip": "Lunch buffet 12-3 pm fills with tour groups returning from the ropeway; the kitchen is faster at 11:30 am or post-3 pm. Cash works; UPI is hit-or-miss in the Kund area."
+    }
+  },
+  {
+    "table": "local_eateries",
+    "id": "ffef0a45-77e6-4d4e-a4d7-eb4cceda525f",
+    "destination_id": "vaishali",
+    "fields": {
+      "signature_dish": "litti-chokha",
+      "why_it_matters": "Sits at the south-eastern corner of the Abhishek Pushkarni ceremonial tank, the only standalone restaurant within walking distance of the Ashokan Pillar at Kolhua and Vishwa Shanti Stupa. Most Vaishali pilgrims have to fall back on Patna or Hajipur kitchens 50-70 km away; this is the rare lunch option that lets you stay on the Buddhist-Jain circuit between the two cores.",
+      "insider_tip": "Open 6 am to 10 pm so it works for early Stupa darshan and late returns from Kolhua. The thali is honest pilgrim-grade rather than refined — order the litti-chokha and skip the Chinese."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "0fa21027-4286-40a4-ac59-fdbcaea76d53",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "why_special": "Walking distance to the Bodhi Tree. Budget-friendly for meditation visitors."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "50561caa-e7cd-43f2-8dcb-903795332724",
+    "destination_id": "bodh-gaya",
+    "fields": {
+      "why_special": "Tibetan Buddhist meditation retreat center. Courses and accommodation."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "6be38d62-4fb0-40d0-8b5b-cb1576cc94f1",
+    "destination_id": "patna",
+    "fields": {
+      "why_special": "Best mid-range option in Patna. Good base for Nalanda/Rajgir day trips."
+    }
+  },
+  {
+    "table": "local_stays",
+    "id": "1e54788d-a25a-43fa-9420-cffbbda97879",
+    "destination_id": "rajgir",
+    "fields": {
+      "why_special": "Bihar Tourism hotel with hot springs access nearby."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "patna",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Well-maintained rooms, reliable service, and central location near Gandhi Maidan deliver genuine comfort without the Maurya premium."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bodh-gaya",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Clean huge rooms with good AC, tasty restaurant food, attentive and trustworthy staff consistently cited in reviews. Near Mahabodhi Temple with Nigma Temple Road location. Solid alternative to Taj Darbar at moderately lower pricing.",
+      "signature_experience": "Morning darshan at Mahabodhi Temple (walk from the hotel), afternoon visit to Sujata Village (where Buddha broke his long fast, 8 km)."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "nalanda",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Built by an Indo-Japanese consortium for the Buddhist pilgrimage circuit — 44 rooms, a meditation hall with a Buddha image next to the restaurant, Western and Japanese-style prayer rooms, and a Japanese hot-spring bath house. The architecture is the cleanest fusion of Buddhist stupa motif and Indian sandstone you will find this side of Bodh Gaya. 12 km from the Nalanda Mahavihara ruins on Virayatan Road, Rajgir; the hotel arranges car transfers and Buddhist-circuit guides. Restaurant serves both Japanese vegetarian and Indian thali. Best for: Buddhist pilgrims, history-minded travellers pairing Nalanda with Rajgir's Vulture Peak and Venuvana, couples who want quiet over flash.",
+      "signature_experience": "Located at Virayatan Road, Near Viraytan, Rajgir 803116, Nalanda District, Bihar."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "nalanda",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Located at Mohanpur in Nalanda village, this is the closest tourism-grade property to the Nalanda Mahavihara ruins (a 1 km walk to the archaeological gate). 3-star inventory with shared lounge, terrace and on-site restaurant serving Asian and local Bihari cuisine. The owners arrange guided tours of the ruins, Rajgir hills and Bodh Gaya day trips.",
+      "signature_experience": "Pre-opening 8 AM walk to the Nalanda Mahavihara archaeological complex before the tour-bus crowds — the morning side-light on the brick stupas of Sariputta is the photographer's window."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "patna",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "70-room property on Exhibition Road in central Patna — 500 m from Buddha Smriti Park, 1 km from Patna Museum and 1.3 km from Golghar, putting the city's main heritage anchors inside a single auto-ride radius. Banquet rooms make it a common business-traveller default."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pawapuri",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Sits 66 metres from the Shri Mahavirswami Jal Mandir gate — the closest tourism-grade walk-in option for Jain pilgrims arriving for Mahavira Nirvana darshan. Two-bed non-AC rooms, community hall, parking, hot water. No frills, but the proximity to the lake-temple is the entire pitch."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pawapuri",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Run by the Digambar Jain trust, 300 metres from the Jal Mandir. Three-bed non-AC rooms with sattvic vegetarian meals included and dedicated parking — the standard pilgrim base for Jain families on the Mahavira nirvana yatra. Walk-in friendly; advance booking via the trust's listing recommended on festival dates."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "rajgir",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "45-room Rajgir mid-tier property a short auto from the ropeway base and Venuvana. Multi-cuisine restaurant, banquet hall, lawn and free parking — the dependable mid-budget pick for pilgrim families who want AC rooms without the Indo-Hokke premium."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "rajgir",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "62-room 3-star sitting beside the Rajgir bus stand and 800 m from the railway station — the walk-in option for travellers arriving by public transport. On-site Annapurna restaurant, indoor and outdoor pools, and a complimentary breakfast. Closest mid-tier inventory to the Rajgir Hot Springs (Brahmakund) and Ajatshatru Fort."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "vaishali",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "BSTDC (Bihar State Tourism Development Corporation) tourist bungalow at Vaishali-844128 — single rooms, double rooms and dormitory beds with restaurant and coach parking. The default base for Buddhist circuit travellers visiting the Ashokan Lion Pillar at Kolhua and the Coronation Tank where the Buddha delivered his last sermon. Vaishali has very limited private hotel inventory; this is effectively the only tourism-grade option in town."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bodh-gaya",
+    "slot": "xfactor",
+    "fields": {
+      "why_nakshiq": "Japanese-funded sister to Lotus Nikko Kushinagar and Sravasti — 62 rooms 710 metres from the Mahabodhi Temple, the closest mid-luxury inventory to the Bodhi Tree on foot. Restaurant carries Japanese-influenced vegetarian menus catering to East Asian Buddhist pilgrim groups, and the 24-hour front desk handles temple-time wake-up calls.",
+      "signature_experience": "5 AM walk in monastic silence to the Mahabodhi Temple's east gate for the Tibetan Vajrayana morning chanting under the Bodhi Tree — return for a Japanese vegetarian breakfast at the hotel."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bodh-gaya",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Within the UNESCO heritage city precincts of Bodh Gaya. Minutes from Mahabodhi Temple. Free breakfast, WiFi, parking. Long-established Bodh Gaya pilgrim hotel. The default pick for Buddhist tourists and heritage visitors.",
+      "signature_experience": "Pre-dawn 5 AM walk to Mahabodhi Temple for the morning butter-lamp chanting — meditating under the Bodhi Tree before the daylight crowds arrive."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "patna",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "Iconic landmark of Bihar — state's first 5-star hotel, consistently ranked Patna's best. 77 rooms, 2 coffee shops, garden playground, seasonal outdoor pool, 2 bars. Business district location. The default choice for visitors to Bihar who want the state's signature hospitality.",
+      "signature_experience": "Morning drive to Bihar Museum (12 min) for the 2,000-year-old Didarganj Yakshi statue, lunch back at Maurya, afternoon at Golghar (historic British-era granary with harbour views from top)."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "rajgir",
+    "slot": "experience",
+    "fields": {
+      "why_nakshiq": "44-room Japanese-style hotel operated by The Royal Residency Hotels group — Rajgir's distinctive anchor for the international Buddhist pilgrim circuit. Tatami rooms, attached Japanese-Indian restaurant Aradhya at Anand Lok, and a property layout designed around Japanese garden aesthetics. Walking distance to the Rajgir ropeway and Vishwa Shanti Stupa. The most-cited Rajgir stay in Buddhist-circuit tour itineraries from Tokyo and Osaka.",
+      "signature_experience": "Aradhya restaurant Japanese-Indian set menu — the only place in Bihar serving udon and miso alongside Awadhi-style mutton korma."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "nalanda",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "40 rooms on the Bihar Sharif–Rajgir Road in Nalanda 803111, listed by Tripadvisor at 2.2 km from the ASI ruins and 5 km from the Hiuen Tsang Memorial. Goroomgo runs the property as a budget chain — clean, predictable, AC, free Wi-Fi, on-site restaurant. The honest budget pick if you want to overnight in Nalanda proper instead of pulling back to Rajgir."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pawapuri",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "200 metres from the Jal Mandir gate, on AH-20 (Patna–Ranchi Road) at Pawapuri More. The closest commercial bookable inventory to the lotus-tank temple — AC rooms, in-house restaurant doing tandoori chicken and South Indian breakfast, 24-hour front desk. The dharamshalas are closer; this is the closest hotel a non-Jain pilgrim can comfortably book."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "vaishali",
+    "slot": "location",
+    "fields": {
+      "why_nakshiq": "80 rooms on Vishwa Shanti Stupa Road in Basarh — 300 metres from the Buddha Samyak Darshan Museum + Relic Stupa and a 6-minute drive from the Ashokan Pillar at Kolhua. Department of Tourism Bihar–recognised, three floors, AC, hot water (when the power holds), and a multi-cuisine restaurant. The closest mid-tier hotel to Vaishali's two anchor monuments."
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "vaishali",
+    "slot": "value",
+    "fields": {
+      "why_nakshiq": "Private guesthouse on the Main Road in Chakramdas, near the Vaishali Museum and the Vishwa Shanti Stupa — running for over a decade with 3.8/5 across 63 Justdial reviews. AC and non-AC rooms, Indian-Chinese kitchen, transport on order. The straightforward budget alternative if BSTDC's Ambapali Vihar is full or its tariff feels stiff."
+    }
+  }
+]
