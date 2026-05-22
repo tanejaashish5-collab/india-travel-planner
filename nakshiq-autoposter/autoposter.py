@@ -179,6 +179,12 @@ FORMAT_PILLARS = {
     "elevation_face_off":   "moment",
     "state_showdown":       "moment",
     "difficulty_spectrum":  "moment",
+    # VISUAL DELEGATES — heavyweight pipelines rotated through the evening slot
+    # (2026-05-22). Pillars keep compute_weekly_pillar_share() from seeing a
+    # None key when these post.
+    "infographic":          "verification",
+    "tourist_map":          "discovery",
+    "reel_map":             "discovery",
 }
 
 # 2026-05-20 — fold in CSV-loaded v2/v3/v4 pillars so pick_morning_format's
@@ -1837,6 +1843,83 @@ def pick_format(weekday: int, traps: list) -> str:
     return fmt
 
 
+def asset_backed_csv_dests(content: dict) -> list:
+    """Full-catalog dest rows that have a purpose-built Phase-2 CSV asset on disk.
+
+    CSV eligibility + the render dispatcher normally iterate only the ~20-dest
+    current-month scored pool, so a format-specific asset named
+    {format_id}-{dest_slug}.{ext} for a dest OUTSIDE that slice is never seen —
+    the format stays dormant however many assets exist. This pulls every such
+    dest from the full ~505-catalog so the asset opts its format in regardless
+    of whether the dest landed in today's scored slice.
+
+    Only format-specific assets count. State-keyed assets
+    ({format_id}-{state_slug}) resolve to no dest here and are skipped — they
+    already match any in-pool dest of that state via the loader's state-slug
+    fallback. Generic {dest_slug}.{ext} images are skipped too (no format id).
+    """
+    specs = get_csv_specs()
+    if not specs or not SOCIAL_IMAGE_LIBRARY_DIR.exists():
+        return []
+    full = content.get("destinations_full", {}).get("data", []) or []
+    by_slug = {(d.get("id") or "").lower(): d for d in full if d.get("id")}
+    seen: dict = {}
+    for f in SOCIAL_IMAGE_LIBRARY_DIR.iterdir():
+        if f.suffix.lower() not in (".jpg", ".png", ".mp4"):
+            continue
+        stem = f.stem
+        if "-" not in stem:
+            continue
+        # Format-ids contain underscores only — never hyphens — so the first
+        # hyphen is the format_id <-> dest_slug boundary.
+        fid, slug = stem.split("-", 1)
+        if fid not in specs:
+            continue
+        for suf in ("-feed", "-story"):
+            if slug.endswith(suf):
+                slug = slug[: -len(suf)]
+        d = by_slug.get(slug)
+        if d and d["id"] not in seen:
+            seen[d["id"]] = d
+    return list(seen.values())
+
+
+def eligible_csv_formats(content: dict, dests: list) -> list:
+    """Feed-eligible CSV (v2/v3/v4) format-ids that can post this run.
+
+    A format is eligible when at least one candidate dest passes
+    _csv_fmt.is_eligible (caption placeholders resolve + a matching asset is
+    on disk). Candidate dests = the current scored pool (score>=4) PLUS the
+    asset-backed dests from asset_backed_csv_dests() — an asset on disk is an
+    explicit editorial opt-in, so asset-backed dests skip the score gate.
+    """
+    specs = get_csv_specs()
+    if not specs:
+        return []
+    backed = asset_backed_csv_dests(content)
+    out = []
+    for fid, spec in specs.items():
+        if not spec.is_feed_format:
+            continue
+        hit = False
+        for d in dests:
+            if (d.get("score") or 0) < 4:
+                continue
+            ok, _r = _csv_fmt.is_eligible(spec, d, SOCIAL_IMAGE_LIBRARY_DIR)
+            if ok:
+                hit = True
+                break
+        if not hit:
+            for d in backed:
+                ok, _r = _csv_fmt.is_eligible(spec, d, SOCIAL_IMAGE_LIBRARY_DIR)
+                if ok:
+                    hit = True
+                    break
+        if hit:
+            out.append(fid)
+    return out
+
+
 def pick_morning_format(state: dict, content: dict) -> str:
     """
     Pick the oldest-never-used morning format via strict round-robin.
@@ -1984,28 +2067,11 @@ def pick_morning_format(state: dict, content: dict) -> str:
         # automatically — no env var, no manual gate.
         csv_specs = get_csv_specs()
         if csv_specs:
-            csv_eligible_count = 0
-            for fid, spec in csv_specs.items():
-                if not spec.is_feed_format:
-                    continue
-                # Find any dest in the current scored pool that passes
-                # eligibility. Cheap to short-circuit on first match.
-                ok = False
-                for d in dests:
-                    if (d.get("score") or 0) < 4:
-                        continue
-                    eligible_now, _reason = _csv_fmt.is_eligible(
-                        spec, d, SOCIAL_IMAGE_LIBRARY_DIR
-                    )
-                    if eligible_now:
-                        ok = True
-                        break
-                if ok:
-                    eligible.append(fid)
-                    csv_eligible_count += 1
-            if csv_eligible_count:
+            csv_eligible = eligible_csv_formats(content, dests)
+            eligible.extend(csv_eligible)
+            if csv_eligible:
                 log.info(
-                    f"[csv_formats] {csv_eligible_count}/{len(csv_specs)} "
+                    f"[csv_formats] {len(csv_eligible)}/{len(csv_specs)} "
                     f"CSV formats eligible this run "
                     f"(asset present + data resolves)"
                 )
@@ -4947,9 +5013,18 @@ def generate_post(fmt: str, content: dict, platform: str,
         # autoposter-state branch. Closes the chopta ×2 race — arrival_intel
         # then v2_pov_slow_morning, both falling back to the same {slug}.mp4.
         _today_dests, _today_media = destinations_posted_today_jsonl()
-        # Try every high-scored dest until one is eligible. Cheap; pool is
-        # already filtered to current month + score>=4 by the picker.
-        for cand in pool:
+        # 2026-05-22 — augment the scored pool with asset-backed dests from the
+        # full catalog (dests outside today's 20-dest slice that carry a
+        # purpose-built CSV asset). Asset-backed go FIRST so a format-specific
+        # asset always wins over a pool dest's generic image; both are 14-day
+        # `used`-filtered so the few asset-dests rotate instead of spamming one.
+        _pool_ids = {p.get("id") for p in pool}
+        _csv_pool = [
+            d for d in asset_backed_csv_dests(content)
+            if d.get("id") not in _pool_ids and d.get("id") not in used
+        ] + pool
+        # Try every candidate until one is eligible. Cheap; short-circuits.
+        for cand in _csv_pool:
             cid = cand.get("id") or cand.get("slug") or ""
             if cid in _today_dests:
                 log.info(
@@ -5865,6 +5940,23 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         # Evening uses the entertainment-pillar rotation; both platforms run
         # the same format (simpler — Reels are platform-agnostic).
         base_fmt       = EVENING_FORMAT_SCHEDULE.get(weekday, "score_card")
+        # 2026-05-22 — evening is the variety valve: rotate v2/v3/v4 CSV
+        # formats AND the heavyweight visual pipelines (infographic /
+        # tourist_map / reel_map) through the evening slot. No themed-week
+        # pillar lock — the morning run owns the pillar arc. Shares the
+        # `morning_formats` usage bucket so morning + evening jointly rotate
+        # and never repeat the same format across one day.
+        _eve_pool = (eligible_csv_formats(content, dests)
+                     + list(VISUAL_DELEGATE_FORMATS))
+        if _eve_pool:
+            base_fmt = pick_oldest_unused(
+                state, "morning_formats", _eve_pool, key=None
+            )[0]
+            _n_vis = len(VISUAL_DELEGATE_FORMATS)
+            log.info(
+                f"[evening] variety pick: {base_fmt} "
+                f"({len(_eve_pool) - _n_vis} CSV + {_n_vis} visual candidates)"
+            )
         ig_fmt         = base_fmt
         fb_fmt         = base_fmt
         story_fmt      = EVENING_STORY_SCHEDULE.get(weekday, "score_card")
@@ -5881,6 +5973,38 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     log.info(f"Formats — IG: {ig_fmt}  ·  FB: {fb_fmt}  ·  Story: {story_fmt}"
              + (f"  ·  Audience: {audience_tag}" if audience_tag else ""))
     log.info(f"Used destinations (14d rolling ∪ current-month ∪ manual-skip): {len(used)}")
+
+    # 2026-05-22 — visual-format delegation. infographic / tourist_map /
+    # reel_map are heavyweight pipelines with their own generation + posting
+    # code. When the evening picker lands on one, hand the whole slot to that
+    # pipeline (reused wholesale) instead of the standard caption+dest flow.
+    # bypass_schedule=True: the picker rotation is the scheduler now, so the
+    # pipeline's own Mon/Wed/Fri / Tue/Thu/Sat DOW gate is obsolete; each
+    # pipeline keeps its own per-account posted-today guard.
+    if ig_fmt in VISUAL_DELEGATE_FORMATS:
+        # Persist the round-robin mark BEFORE delegating — the delegate runs
+        # its own load_state()/save_state(), so the mark must already be on
+        # disk or its save would drop it (→ format re-picked every evening).
+        mark_theme_used(state, "morning_formats", ig_fmt)
+        save_state(state)
+        log.info(f"Delegating evening slot → {ig_fmt} visual pipeline")
+        try:
+            _visual_posted = VISUAL_DELEGATE_FORMATS[ig_fmt](
+                bypass_schedule=True, dry_run=dry_run
+            )
+        except Exception as e:
+            import traceback
+            log.error(f"{ig_fmt} delegate crashed: {e}")
+            log.error(traceback.format_exc())
+            _visual_posted = False
+        if _visual_posted:
+            return
+        # Visual produced nothing — fall back to a standard format so the
+        # evening slot is never left dark.
+        log.warning(
+            f"{ig_fmt} delegate posted nothing — falling back to score_card"
+        )
+        ig_fmt = fb_fmt = "score_card"
 
     # If an evening audience filter is set, pre-filter the pool for all
     # destination-driven picks (score_card, reality_check, infrastructure_truth,
@@ -6692,8 +6816,10 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             # Moat tracker: the angle itself, so it rotates through all of MOAT_ANGLES
             if moat and fmt:
                 mark_theme_used(state, "moat_angles", fmt)
-            # Morning format tracker: strict round-robin across all MORNING_FORMATS
-            if not moat and not evening and fmt:
+            # Format round-robin tracker. Records BOTH morning and evening
+            # picks (2026-05-22) so the two runs jointly cycle through formats
+            # and never repeat the same one across a single day.
+            if not moat and fmt:
                 mark_theme_used(state, "morning_formats", fmt)
 
             # For carousels, stamp every featured destination so the 14-day
@@ -6824,10 +6950,15 @@ def _tourist_map_caption(state_name: str, tagline: str, landmarks: list,
     return caption
 
 
-def _run_tourist_map(force: bool = False, dry_run: bool = False):
+def _run_tourist_map(force: bool = False, dry_run: bool = False,
+                     bypass_schedule: bool = False) -> bool:
     """
     Tourist Map mode — generates and posts an illustrated state tourist map.
     Rotates through states (oldest-unused first) and cycles variant+theme combos.
+
+    bypass_schedule: skip the Tue/Thu/Sat day-of-week gate (set True when
+    invoked from the evening picker rotation — the picker is the scheduler).
+    Returns True if at least one account was posted to.
     """
     import json
     import tempfile
@@ -6843,9 +6974,9 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
     log.info("═" * 60)
 
     # Only runs on Tue/Thu/Sat
-    if weekday not in TOURIST_MAP_DAYS and not force:
+    if weekday not in TOURIST_MAP_DAYS and not force and not bypass_schedule:
         log.info(f"Tourist Map mode runs Tue/Thu/Sat only (today weekday={weekday}) — exiting.")
-        return
+        return False
 
     # Load map data
     map_data_path = _Path(__file__).parent / "map_data.json"
@@ -6987,6 +7118,7 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
     save_state(state)
     log.info("State saved. Tourist Map run complete.")
     log.info("═" * 60)
+    return posted_any
 
 
 def run_tourist_map(force: bool = False, dry_run: bool = False):
@@ -9080,11 +9212,15 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
         )
 
 
-def _run_reel_map(force: bool = False, dry_run: bool = False):
+def _run_reel_map(force: bool = False, dry_run: bool = False,
+                  bypass_schedule: bool = False) -> bool:
     """
     Reel-Map mode v3 — campaign-driven, no text overlays.
     Picks a Pomelli campaign → animates its images → derives caption from
     the campaign name. Guarantees caption ↔ visual alignment.
+
+    bypass_schedule: accepted for a uniform delegate signature (reel-map has
+    no day-of-week gate of its own). Returns True if an account was posted to.
     """
     import tempfile
     from reel_map_gen import render_reel_map
@@ -9236,6 +9372,7 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
     save_state(st)
     log.info("State saved. Reel-map run complete.")
     log.info("═" * 60)
+    return posted_any
 
 
 def run_reel_map(force: bool = False, dry_run: bool = False):
@@ -9464,12 +9601,17 @@ def run_ugc(force: bool = False, dry_run: bool = False):
 INFOGRAPHIC_LOCK_FILE = Path(__file__).parent / ".autoposter-infographic.lock"
 
 
-def _run_infographic(force: bool = False, dry_run: bool = False):
+def _run_infographic(force: bool = False, dry_run: bool = False,
+                     bypass_schedule: bool = False) -> bool:
     """
     Infographic mode — generates branded infographic carousels and posts
     as carousel feed posts. Rotates topics (treks, festivals, hidden_gems,
     camping) and themes (magazine, topo, datacard, noir).
     Mon/Wed/Fri schedule.
+
+    bypass_schedule: skip the Mon/Wed/Fri day-of-week gate (set True when
+    invoked from the evening picker rotation — the picker is the scheduler).
+    Returns True if at least one account was posted to.
     """
     today   = date.today().isoformat()
     weekday = date.today().weekday()
@@ -9480,9 +9622,9 @@ def _run_infographic(force: bool = False, dry_run: bool = False):
     log.info("═" * 60)
 
     # Only run Mon/Wed/Fri (0, 2, 4) — silently exit on other days
-    if weekday not in (0, 2, 4) and not force:
+    if weekday not in (0, 2, 4) and not force and not bypass_schedule:
         log.info("Infographic mode only runs Mon/Wed/Fri. Exiting.")
-        return
+        return False
 
     # Generate infographic carousel
     try:
@@ -9595,6 +9737,7 @@ def _run_infographic(force: bool = False, dry_run: bool = False):
     save_state(st)
     log.info("State saved. Infographic run complete.")
     log.info("═" * 60)
+    return posted_any
 
 
 def run_infographic(force: bool = False, dry_run: bool = False):
@@ -9617,6 +9760,22 @@ def run_infographic(force: bool = False, dry_run: bool = False):
                 _release_lock()
     finally:
         LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# VISUAL-FORMAT DELEGATES — heavyweight pipelines the evening picker can rotate
+# -----------------------------------------------------------------------------
+# 2026-05-22 — infographic / tourist_map / reel_map were paused in the
+# 2026-05-16 cadence cut (their crons commented out). Rather than re-add crons
+# (which would breach the 2-posts/day ceiling), they are now rotated INTO the
+# evening slot: pick_oldest_unused surfaces one of these keys, and _run_inner
+# hands the whole slot to the matching pipeline via bypass_schedule=True.
+# ─────────────────────────────────────────────────────────────────────────────
+VISUAL_DELEGATE_FORMATS = {
+    "infographic": _run_infographic,
+    "tourist_map": _run_tourist_map,
+    "reel_map":    _run_reel_map,
+}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
