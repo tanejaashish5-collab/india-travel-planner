@@ -18,24 +18,40 @@ export default function ConfirmSubscription({ confirmUrl }: Props) {
   return (
     <Html>
       <Head />
-      <Preview>Confirm your subscription to The Window</Preview>
+      <Preview>
+        You&apos;re not subscribed yet — one tap confirms it. The Window
+        won&apos;t arrive until you do.
+      </Preview>
       <Body style={body}>
         <Container style={container}>
-          <Heading style={h1}>One more click.</Heading>
+          <Heading style={h1}>One tap to finish.</Heading>
           <Text style={text}>
-            Tap below to confirm your subscription to <strong>The Window</strong> —
-            NakshIQ&apos;s weekly travel intelligence, every Sunday morning.
+            You&apos;re <strong>not subscribed to The Window yet</strong> — one
+            tap confirms it. Then, every Sunday morning: the one place in India
+            worth your trip that week, the tourist trap to skip, and what
+            changed on the ground.
           </Text>
-          <Section style={{ textAlign: "center", margin: "32px 0" }}>
+          <Section style={{ textAlign: "center", margin: "36px 0 24px" }}>
             <Link href={confirmUrl} style={button}>
               Confirm my subscription
             </Link>
           </Section>
+          <Text style={textFallback}>
+            Button not working? Paste this link into your browser:
+            <br />
+            <Link href={confirmUrl} style={fallbackLink}>
+              {confirmUrl}
+            </Link>
+          </Text>
           <Text style={textMuted}>
-            If you didn&apos;t sign up, ignore this email — you won&apos;t hear from us again.
+            If you didn&apos;t sign up, ignore this email — you won&apos;t hear
+            from us again.
           </Text>
           <Text style={footer}>
-            NakshIQ · Travel intelligence for India · <Link href="https://www.nakshiq.com" style={footerLink}>nakshiq.com</Link>
+            NakshIQ · Honest travel guidance for India ·{" "}
+            <Link href="https://www.nakshiq.com" style={footerLink}>
+              nakshiq.com
+            </Link>
           </Text>
         </Container>
       </Body>
@@ -74,6 +90,15 @@ const text: React.CSSProperties = {
   margin: "0 0 16px",
 };
 
+const textFallback: React.CSSProperties = {
+  fontSize: "13px",
+  lineHeight: 1.6,
+  color: "#9a9a9a",
+  margin: "0 0 8px",
+  textAlign: "center",
+  wordBreak: "break-all",
+};
+
 const textMuted: React.CSSProperties = {
   fontSize: "14px",
   lineHeight: 1.5,
@@ -84,12 +109,17 @@ const textMuted: React.CSSProperties = {
 const button: React.CSSProperties = {
   backgroundColor: "#E55642",
   color: "#ffffff",
-  padding: "14px 32px",
+  padding: "18px 44px",
   borderRadius: "999px",
   textDecoration: "none",
-  fontWeight: 600,
-  fontSize: "15px",
+  fontWeight: 700,
+  fontSize: "16px",
   display: "inline-block",
+};
+
+const fallbackLink: React.CSSProperties = {
+  color: "#E5765a",
+  textDecoration: "underline",
 };
 
 const footer: React.CSSProperties = {

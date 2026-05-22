@@ -131,14 +131,14 @@ export async function POST(req: NextRequest) {
 
   const confirmUrl = `${SITE_URL}/api/newsletter/confirm?token=${confirmationToken}`;
   const html = await render(ConfirmSubscription({ confirmUrl }));
-  const text = `Confirm your subscription to The Window: ${confirmUrl}\n\nIf you didn't sign up, ignore this email.`;
+  const text = `You're almost subscribed to The Window — one tap finishes it.\n\nConfirm: ${confirmUrl}\n\nThe Window won't arrive until you click. If you didn't sign up, ignore this email.`;
 
   try {
     await resend.emails.send({
       from: FROM_ADDRESS,
       to: rawEmail,
       replyTo: REPLY_TO,
-      subject: "Confirm your subscription to The Window",
+      subject: "Confirm your email to start The Window",
       html,
       text,
     });

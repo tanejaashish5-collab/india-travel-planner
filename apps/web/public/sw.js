@@ -45,8 +45,13 @@
 // v38: 2026-05-22 BookingHandoff gained a "Tours and experiences" block and an
 //      affiliate disclosure line. Changes destination-page + month-page markup,
 //      so the bump purges nakshiq-v37-data for returning PWA users.
+// v39: 2026-05-22 Newsletter conversion pass — fixed the false "you're on the
+//      list" success message (subscribers must still confirm via email),
+//      reworked the sticky tray (mobile parity, slide-in, suppression), and
+//      sharpened the offer copy. Changes landing-coda + destination-page +
+//      /newsletter markup, so the bump purges nakshiq-v38-data.
 
-const CACHE_VERSION = "nakshiq-v38";
+const CACHE_VERSION = "nakshiq-v39";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

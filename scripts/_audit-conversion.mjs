@@ -65,6 +65,14 @@ const { count: peakAlertsTagged } = await supabase
   .select("*", { count: "exact", head: true })
   .contains("tags", ["peak_alerts"]);
 
+// Confirm rate — the bot-proof health metric for the double-opt-in step.
+// (windowConfirmed / windowSubs). Bots can't click a confirm link, so a
+// rising confirm-rate is the signal the W2 leak fixes are working.
+const confirmRate =
+  windowSubs > 0
+    ? `${((windowConfirmed / windowSubs) * 100).toFixed(0)}%`
+    : "—";
+
 log("## Newsletter subscribers\n");
 log(`| Metric | Count |`);
 log(`|---|---:|`);
@@ -72,6 +80,7 @@ log(`| Total rows | ${totalSubs ?? 0} |`);
 log(`| Active confirmed | ${confirmedSubs ?? 0} |`);
 log(`| New (last ${WINDOW_DAYS}d) | ${windowSubs ?? 0} |`);
 log(`| New + confirmed (last ${WINDOW_DAYS}d) | ${windowConfirmed ?? 0} |`);
+log(`| **Confirm rate (last ${WINDOW_DAYS}d)** | **${confirmRate}** |`);
 log(`| Tagged 'savelist' (lifetime) | ${savelistSubs ?? 0} |`);
 log(`| Tagged 'peak_alerts' (lifetime) | ${peakAlertsTagged ?? 0} |`);
 log();

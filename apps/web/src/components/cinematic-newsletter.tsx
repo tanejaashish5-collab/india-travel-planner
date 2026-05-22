@@ -17,6 +17,14 @@ export function CinematicNewsletter({
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [hint, setHint] = useState("");
+  const [btnHover, setBtnHover] = useState(false);
+  // Hover arrow-nudge is gated on the reduced-motion preference.
+  const [reduceMotion] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
+  );
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -43,6 +51,13 @@ export function CinematicNewsletter({
         return;
       }
       track(KEY_EVENTS.EMAIL_SIGNUP, { source });
+      // Suppress the sticky tray for the rest of the session — this reader
+      // has already been asked and answered.
+      try {
+        window.sessionStorage?.setItem("nq_newsletter_submitted", "1");
+      } catch {
+        /* ignore */
+      }
       setStatus("success");
       setEmail("");
     } catch {
@@ -73,7 +88,8 @@ export function CinematicNewsletter({
           padding: "22px 30px",
         }}
       >
-        ✓ You&apos;re on the list. Next issue lands in your inbox.
+        ✓ Almost there — open the email we just sent and tap confirm. The
+        Window won&apos;t arrive until you do.
       </p>
     );
   }

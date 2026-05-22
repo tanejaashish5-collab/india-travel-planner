@@ -38,7 +38,8 @@ const COPY = {
     placeholder: "your.email@example.com",
     submit: "Remind me →",
     submitting: "Sending…",
-    success: (d: string) => `✓ Done. We'll email you before ${d} peaks.`,
+    success: (d: string) =>
+      `✓ Almost there — open the email we just sent and tap confirm. We'll alert you before ${d} peaks once you do.`,
     errorInvalid: "Enter a valid email.",
     errorLimit: "You're at the 10-alert limit. Manage your alerts.",
     errorGeneric: "Something went wrong. Try again.",
@@ -49,7 +50,8 @@ const COPY = {
     placeholder: "your.email@example.com",
     submit: "याद दिलाएँ →",
     submitting: "भेजा जा रहा है…",
-    success: (d: string) => `✓ हो गया। ${d} पीक से पहले हम आपको ईमेल करेंगे।`,
+    success: (d: string) =>
+      `✓ बस एक कदम बाकी — हमने जो ईमेल भेजा है उसे खोलें और पुष्टि करें। पुष्टि के बाद ही हम ${d} के पीक से पहले आपको सूचित करेंगे।`,
     errorInvalid: "वैध ईमेल दर्ज करें।",
     errorLimit: "आप 10-अलर्ट सीमा पर हैं। अपने अलर्ट प्रबंधित करें।",
     errorGeneric: "कुछ गलत हुआ। फिर कोशिश करें।",

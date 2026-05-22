@@ -10,6 +10,8 @@ const DISMISS_DAYS = 14;
 // SSR-safe initial-dismissed compute. Returns true (= hidden) when:
 //   - localStorage DISMISS_KEY timestamp is still within DISMISS_DAYS
 //   - sessionStorage nq_alert_submitted set (peak-alert hook succeeded this session)
+//   - sessionStorage nq_newsletter_submitted set (an inline newsletter form
+//     succeeded this session — never ask the same reader twice)
 //   - nakshiq_savelist_subscribed cookie set (save-list prompt already converted)
 function computeInitialDismissed(): boolean {
   if (typeof window === "undefined") return true;
@@ -21,7 +23,9 @@ function computeInitialDismissed(): boolean {
     }
   } catch { /* localStorage unavailable */ }
   try {
-    if (window.sessionStorage?.getItem("nq_alert_submitted")) return true;
+    const ss = window.sessionStorage;
+    if (ss?.getItem("nq_alert_submitted")) return true;
+    if (ss?.getItem("nq_newsletter_submitted")) return true;
   } catch { /* ignore */ }
   try {
     if (typeof document !== "undefined" && /(?:^|; )nakshiq_savelist_subscribed=1(?:;|$)/.test(document.cookie)) return true;
@@ -70,9 +74,16 @@ export function NewsletterStickyTray() {
 
   return (
     <div
-      // Sits above the floating Ask NakshIQ chat bubble (which lives at
-      // bottom-6 right-6) so the two don't collide on desktop (BUG-020).
-      className="hidden md:block fixed bottom-24 right-6 max-w-sm z-40 rounded-2xl border border-primary/30 bg-card/95 backdrop-blur-xl shadow-2xl shadow-black/40 p-4 pr-10"
+      // Mobile: full-width card pinned above the floating Ask NakshIQ bubble
+      // (bottom-20 clears it). Desktop: bottom-right card, also clearing the
+      // bubble at bottom-6/right-6 (BUG-020). Slides in once the reader is
+      // ~40% down the page — the evidence-led "while reading" prompt.
+      className={
+        "fixed z-40 rounded-2xl border border-primary/30 bg-card/95 backdrop-blur-xl " +
+        "shadow-2xl shadow-black/40 p-4 pr-10 " +
+        "bottom-20 left-4 right-4 md:bottom-24 md:left-auto md:right-6 md:max-w-sm " +
+        "animate-in fade-in slide-in-from-bottom-3 duration-500 ease-out motion-reduce:animate-none"
+      }
       role="complementary"
       aria-label="Newsletter signup"
     >
@@ -86,21 +97,27 @@ export function NewsletterStickyTray() {
           <path d="M18 6 6 18M6 6l12 12" />
         </svg>
       </button>
-      <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary">
+      <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-primary">
         The Window · Sundays
       </p>
       <h3 className="mt-1 text-sm font-bold leading-tight">
         One score. One skip. Four minutes.
       </h3>
       <p className="mt-1 text-xs text-muted-foreground leading-snug">
-        Weekly travel intelligence. Free.
+        One short email, every Sunday. Free.
       </p>
       <Link
-        href={`/${locale}/newsletter`}
+        href={`/${locale}/newsletter?src=sticky-tray`}
         onClick={dismiss}
-        className="mt-3 inline-flex items-center gap-1 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+        className="group mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
       >
-        Subscribe →
+        Subscribe
+        <span
+          aria-hidden
+          className="transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none"
+        >
+          →
+        </span>
       </Link>
     </div>
   );
