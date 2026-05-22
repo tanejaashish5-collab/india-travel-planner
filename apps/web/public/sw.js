@@ -57,8 +57,12 @@
 // v41: 2026-05-22 Hindi UI copy rewrite — messages/hi.json reworked into natural,
 //      idiomatic Hindi (brand name, de-Hinglished, calques + formality fixed).
 //      Changes /hi/ text site-wide, so the bump purges nakshiq-v40-data.
+// v42: 2026-05-22 Director's Cut month token now drives a real verdict — the
+//      verdict card, score, editor's note and attribution all react to the
+//      selected month (was wired to the current month only). Changes
+//      landing-page Act V markup, so the bump purges nakshiq-v41-data.
 
-const CACHE_VERSION = "nakshiq-v41";
+const CACHE_VERSION = "nakshiq-v42";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

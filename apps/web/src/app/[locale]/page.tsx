@@ -235,47 +235,36 @@ async function getFeaturedData() {
   })();
   const atlasPins: AtlasPin[] = avoidPin ? [...peakPins, avoidPin] : peakPins;
 
-  // ACT V Director's Cut — 5 vibe lookups for the current month. For each
-  // vibe, find the top-scored destination whose `type[]` array contains the
-  // mapped tag. Done in parallel; skipped if env-less.
-  const VIBE_TO_TYPE: Record<VibeKey, string> = {
-    mountains: "hill-station",
-    beaches: "beach",
-    cities: "city",
-    wildlife: "wildlife",
-    heritage: "heritage",
-  };
-  const verdictBuckets = await Promise.all(
-    (Object.keys(VIBE_TO_TYPE) as VibeKey[]).map(async (vibe) => {
-      const tag = VIBE_TO_TYPE[vibe];
-      const r = await supabase
-        .from("destination_months")
-        .select(
-          "score, why_go, destinations!inner(id, name, tagline, type, state:states(name))",
-        )
-        .eq("month", currentMonth)
-        .gte("score", 3)
-        .contains("destinations.type", [tag])
-        .order("score", { ascending: false })
-        .limit(1);
-      return [vibe, r.data?.[0] as any] as const;
-    }),
-  );
+  // ACT V Director's Cut — top-scored destination for every (vibe, month)
+  // pair, from the directors_cut_verdicts view (migration 064). This backs
+  // the month token in the intake sentence: it drives a real verdict card
+  // for any of the 12 months, not just the current one.
+  const verdictRowsR = await supabase
+    .from("directors_cut_verdicts")
+    .select(
+      "vibe, month, score, why_go, destination_id, destination_name, tagline, state_name",
+    );
   const verdictMap: VerdictMap = {};
-  for (const [vibe, row] of verdictBuckets) {
-    if (!row?.destinations) continue;
-    const d = row.destinations;
-    const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+  for (const row of (verdictRowsR.data ?? []) as Array<{
+    vibe: VibeKey;
+    month: number;
+    score: number | null;
+    why_go: string | null;
+    destination_id: string | null;
+    destination_name: string | null;
+    tagline: string | null;
+    state_name: string | null;
+  }>) {
     const displayScore = Math.min(10, (row.score ?? 0) * 2);
-    const verdictLabel = verdictFor(displayScore);
-    verdictMap[vibe] = {
-      id: d.id ?? "",
-      name: d.name ?? "",
-      state: stateName ?? "",
+    if (displayScore < 6) continue; // honour the "scoring above 6.0" promise
+    (verdictMap[row.vibe] ??= {})[row.month] = {
+      id: row.destination_id ?? "",
+      name: row.destination_name ?? "",
+      state: row.state_name ?? "",
       score: displayScore,
-      tagline: d.tagline ?? null,
+      tagline: row.tagline ?? null,
       why: row.why_go ?? null,
-      verdictLabel,
+      verdictLabel: verdictFor(displayScore),
     };
   }
 

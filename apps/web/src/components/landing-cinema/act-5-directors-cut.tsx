@@ -34,7 +34,9 @@ export type VerdictCard = {
   verdictLabel: "PEAK" | "EXCELLENT" | "DOABLE" | "MARGINAL" | "AVOID";
 };
 
-export type VerdictMap = Partial<Record<VibeKey, VerdictCard>>;
+// Keyed by vibe, then by month number (1-12). Every cell is the
+// top-scored destination for that vibe in that month.
+export type VerdictMap = Partial<Record<VibeKey, Partial<Record<number, VerdictCard>>>>;
 
 export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
   const t = useTranslations("cinema");
@@ -46,13 +48,17 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
   const vibeOptions: VibeKey[] = ["mountains", "beaches", "cities", "wildlife", "heritage"];
 
   const [who, setWho] = useState<(typeof whoOptions)[number]>("solo");
-  // Default vibe: pick the first one that has a verdict in the map.
-  const initialVibe = (vibeOptions.find((v) => verdictMap[v]) ?? "mountains") as VibeKey;
-  const [vibe, setVibe] = useState<VibeKey>(initialVibe);
   const [month, setMonth] = useState<string>(monthLong);
   const isCurrentMonth = month === monthLong;
+  const monthNum = (MONTH_LONG_NAMES as readonly string[]).indexOf(month) + 1;
+  const currentMonthNum = (MONTH_LONG_NAMES as readonly string[]).indexOf(monthLong) + 1;
 
-  const verdict = useMemo(() => verdictMap[vibe], [verdictMap, vibe]);
+  // Default vibe: first one with a verdict for the current month.
+  const initialVibe = (vibeOptions.find((v) => verdictMap[v]?.[currentMonthNum]) ??
+    "mountains") as VibeKey;
+  const [vibe, setVibe] = useState<VibeKey>(initialVibe);
+
+  const verdict = useMemo(() => verdictMap[vibe]?.[monthNum], [verdictMap, vibe, monthNum]);
 
   const verdictColor = verdict ? VERDICT_COLOR[verdictTier(verdict.score)] : "var(--bone)";
 
@@ -168,7 +174,7 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
                 }}
               >
                 <span className="nq-meta" style={{ color: "var(--bone)" }}>
-                  {t("verdictLive")}
+                  {isCurrentMonth ? t("verdictLive") : t("verdictDated", { month })}
                 </span>
                 <span className="nq-meta" style={{ color: "var(--bone)" }}>
                   {verdict.state.toUpperCase()}
@@ -262,17 +268,6 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
             }}
           >
             <span className="nq-meta">{t("editorsNote")}</span>
-            {!isCurrentMonth && (
-              <span
-                className="nq-meta"
-                style={{
-                  color: "var(--vermillion)",
-                  letterSpacing: "0.18em",
-                }}
-              >
-                Preview · live verdict drops {month} 1
-              </span>
-            )}
             {verdict?.why ? (
               <p
                 style={{
@@ -300,7 +295,7 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
               </p>
             )}
             <span className="nq-meta" style={{ color: "var(--bone-faint)" }}>
-              {t("editorsAttribution", { month: monthLong })}
+              {t("editorsAttribution", { month })}
             </span>
             <div style={{ flex: 1 }} />
             {verdict && (
