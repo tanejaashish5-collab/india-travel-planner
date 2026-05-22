@@ -90,8 +90,24 @@ Examples:
 ## Hindi parity
 
 Every new user-facing string wraps in `next-intl` i18n keys with a
-Hindi translation. Literal translations are fine (`"Known for"` →
-`"के लिए प्रसिद्ध"`). No raw English strings in Hindi locale.
+Hindi translation. Translate the **meaning**, not the words — the Hindi
+should read as if written in Hindi, not ported from English. Same
+register as the voice above: crisp, confident, editorial.
+
+- **No calque grammar.** "against six tests" is not "के विरुद्ध" — it's
+  "छह कसौटियों पर". Read the Hindi alone; if it only makes sense once
+  you back-translate it, rewrite it.
+- **Don't transliterate when natural Hindi exists.** *itinerary* →
+  "यात्रा योजना" (not "इटिनरेरी"), *safety* → "सुरक्षा", *verdict* →
+  "फ़ैसला", *sponsored* → "प्रायोजित", *section* → "हिस्सा". Keep only
+  loanwords Hindi speakers genuinely use unprompted: स्कोर, ट्रिप, रूट,
+  होमस्टे, ब्लॉग, परमिट, AI, SOS.
+- **"NakshIQ" stays in Latin.** Never transliterate the brand.
+- **One register:** formal आप throughout — करें, जाएँ, कीजिए. Never
+  drop to करो / जाओ, even in punchy CTAs.
+- **Punctuation:** end sentences with the danda "।", not ".".
+- When in doubt, read the Hindi aloud. If it sounds translated, it is —
+  rewrite it.
 
 ## Years in copy
 

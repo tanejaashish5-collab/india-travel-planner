@@ -54,8 +54,11 @@
 //      sub-destination cards now render translations.hi on /hi/ pages. Changes
 //      /hi/ destination-page text content, so the bump purges nakshiq-v39-data
 //      for returning PWA users.
+// v41: 2026-05-22 Hindi UI copy rewrite — messages/hi.json reworked into natural,
+//      idiomatic Hindi (brand name, de-Hinglished, calques + formality fixed).
+//      Changes /hi/ text site-wide, so the bump purges nakshiq-v40-data.
 
-const CACHE_VERSION = "nakshiq-v40";
+const CACHE_VERSION = "nakshiq-v41";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
