@@ -10,6 +10,7 @@ export const KEY_EVENTS = {
   SAVE_DESTINATION: "save_destination",
   SHARE_CLICK: "share_click",
   OUTBOUND_BOOKING_CLICK: "outbound_booking_click",
+  OUTBOUND_EXPERIENCE_CLICK: "outbound_experience_click",
   SCROLL_75_DESTINATION: "scroll_75_destination",
   DESTINATION_ALERT_VIEW: "destination_alert_view",
   DESTINATION_ALERT_ATTEMPT: "destination_alert_attempt",

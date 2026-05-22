@@ -42,8 +42,11 @@
 // v37: 2026-05-21 Kinetic hero title now wraps by word, not by character —
 //      the per-character inline-block spans let the browser break mid-word
 //      ("Bandipur Nationa / l Park"). Changes landing-page hero markup.
+// v38: 2026-05-22 BookingHandoff gained a "Tours and experiences" block and an
+//      affiliate disclosure line. Changes destination-page + month-page markup,
+//      so the bump purges nakshiq-v37-data for returning PWA users.
 
-const CACHE_VERSION = "nakshiq-v37";
+const CACHE_VERSION = "nakshiq-v38";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

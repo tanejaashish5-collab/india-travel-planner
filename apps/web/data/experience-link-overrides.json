@@ -1,0 +1,3 @@
+{
+  "_doc": "Per-destination outbound experience-link overrides, keyed by destination id. Each value is a partial map of platform -> exact verified URL, overriding the formula in src/lib/experience-links.ts. Viator + GetYourGuide use graceful search formulas — pin an override only to correct a mis-resolved destination. Thrillophilia has NO formula: it renders ONLY where a hand-verified URL is pinned here. Platforms: viator | getyourguide | thrillophilia."
+}
