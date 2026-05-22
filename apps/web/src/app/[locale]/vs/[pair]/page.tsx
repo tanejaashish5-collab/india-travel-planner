@@ -27,6 +27,15 @@ function resolveState(state: unknown): string | null {
   return (state as { name?: string }).name ?? null;
 }
 
+// Display name in the active locale — Hindi pages read translations.hi.name,
+// falling back to the English name when a Hindi name is missing.
+function localizedName(d: { name?: string; translations?: unknown }, locale: string): string {
+  const fallback = d.name ?? "";
+  if (locale !== "hi") return fallback;
+  const hi = (d.translations as { hi?: { name?: string } } | null | undefined)?.hi?.name;
+  return hi || fallback;
+}
+
 async function getVsData(id1: string, id2: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -38,7 +47,7 @@ async function getVsData(id1: string, id2: string) {
     supabase
       .from("destinations")
       .select(`
-        id, name, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress,
+        id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress,
         state:states(name),
         destination_months(month, score),
         kids_friendly(suitable, rating),
@@ -49,7 +58,7 @@ async function getVsData(id1: string, id2: string) {
     supabase
       .from("destinations")
       .select(`
-        id, name, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress,
+        id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress,
         state:states(name),
         destination_months(month, score),
         kids_friendly(suitable, rating),
@@ -76,10 +85,14 @@ export async function generateMetadata({
   const data = await getVsData(parts[0], parts[1]);
   if (!data) return {};
 
-  const name1 = data.dest1.name;
-  const name2 = data.dest2.name;
-  const title = `${name1} vs ${name2}: Which Is Better? Weather, Cost & Kid-Friendliness Compared`;
-  const description = `${name1} vs ${name2} — side-by-side data on monthly weather scores, budget, difficulty, kids safety, and infrastructure. Make the right choice, no sponsored spin.`.slice(0, 160);
+  const name1 = localizedName(data.dest1, locale);
+  const name2 = localizedName(data.dest2, locale);
+  const title = locale === "hi"
+    ? `${name1} बनाम ${name2}: कौन बेहतर? मौसम, खर्च और परिवार के लिहाज़ से तुलना`
+    : `${name1} vs ${name2}: Which Is Better? Weather, Cost & Kid-Friendliness Compared`;
+  const description = (locale === "hi"
+    ? `${name1} बनाम ${name2} — महीने-दर-महीने मौसम स्कोर, बजट, कठिनाई, बच्चों की सुरक्षा और सुविधाओं की आमने-सामने तुलना। सही चुनाव करें।`
+    : `${name1} vs ${name2} — side-by-side data on monthly weather scores, budget, difficulty, kids safety, and infrastructure. Make the right choice, no sponsored spin.`).slice(0, 160);
   const canonicalUrl = `${SITE}/${locale}/vs/${pair}`;
 
   return {
@@ -127,6 +140,8 @@ export default async function VsPairPage({
 
   const { dest1, dest2 } = data;
 
+  const name1 = localizedName(dest1, locale);
+  const name2 = localizedName(dest2, locale);
   const state1 = resolveState(dest1.state);
   const state2 = resolveState(dest2.state);
 
@@ -134,15 +149,15 @@ export default async function VsPairPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/${locale}` },
-      { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE}/${locale}/vs` },
-      { "@type": "ListItem", position: 3, name: `${dest1.name} vs ${dest2.name}`, item: `${SITE}/${locale}/vs/${pair}` },
+      { "@type": "ListItem", position: 1, name: locale === "hi" ? "होम" : "Home", item: `${SITE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: locale === "hi" ? "तुलना" : "Compare", item: `${SITE}/${locale}/vs` },
+      { "@type": "ListItem", position: 3, name: `${name1} ${locale === "hi" ? "बनाम" : "vs"} ${name2}`, item: `${SITE}/${locale}/vs/${pair}` },
     ],
   };
 
-  const serialize = (d: Record<string, unknown>) => ({
+  const serialize = (d: Record<string, unknown>, displayName: string) => ({
     id: d.id as string,
-    name: d.name as string,
+    name: displayName,
     tagline: d.tagline as string,
     difficulty: d.difficulty as string,
     elevation_m: d.elevation_m as number | null,
@@ -181,7 +196,7 @@ export default async function VsPairPage({
               letterSpacing: "0.22em",
             }}
           >
-            COMPARISONS · {state1 ? state1.toUpperCase() : "INDIA"} {state2 && state2 !== state1 ? `× ${state2.toUpperCase()}` : ""}
+            {locale === "hi" ? "तुलना" : "COMPARISONS"} · {state1 ? state1.toUpperCase() : "INDIA"} {state2 && state2 !== state1 ? `× ${state2.toUpperCase()}` : ""}
           </p>
           <Title
             as="h1"
@@ -197,7 +212,7 @@ export default async function VsPairPage({
               textWrap: "balance",
             }}
           >
-            {dest1.name}{" "}
+            {name1}{" "}
             <span
               style={{
                 fontFamily: "var(--cinema-mono)",
@@ -213,7 +228,7 @@ export default async function VsPairPage({
             >
               vs
             </span>{" "}
-            {dest2.name}.
+            {name2}.
           </Title>
           <p
             style={{
@@ -225,15 +240,16 @@ export default async function VsPairPage({
               maxWidth: 720,
             }}
           >
-            Side-by-side data — monthly weather, daily cost, difficulty, kids-friendliness, network.
-            Pick the one that fits your trip.
+            {locale === "hi"
+              ? "आमने-सामने का डेटा — महीने-दर-महीने मौसम, रोज़ का खर्च, कठिनाई, बच्चों के लिहाज़ और नेटवर्क। वही चुनें जो आपकी यात्रा में सही बैठे।"
+              : "Side-by-side data — monthly weather, daily cost, difficulty, kids-friendliness, network. Pick the one that fits your trip."}
           </p>
         </header>
       </main>
 
       <VsComparison
-        dest1={serialize(dest1 as unknown as Record<string, unknown>)}
-        dest2={serialize(dest2 as unknown as Record<string, unknown>)}
+        dest1={serialize(dest1 as unknown as Record<string, unknown>, name1)}
+        dest2={serialize(dest2 as unknown as Record<string, unknown>, name2)}
         locale={locale}
       />
 

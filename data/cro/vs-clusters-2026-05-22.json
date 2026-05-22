@@ -1,0 +1,2900 @@
+{
+  "generated": "2026-05-22T03:59:13.498Z",
+  "target": 320,
+  "degree_cap": 6,
+  "tier_caps": {
+    "same-state": 200,
+    "same-region": 110,
+    "cross-region": 60
+  },
+  "eligible_destinations": 368,
+  "candidate_pairs": 3829,
+  "picked": 320,
+  "geo_breakdown": {
+    "same-state": 200,
+    "same-region": 110,
+    "cross-region": 10
+  },
+  "candidates": [
+    {
+      "id1": "yercaud",
+      "id2": "kodaikanal",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 486977
+      }
+    },
+    {
+      "id1": "yercaud",
+      "id2": "valparai",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 461565
+      }
+    },
+    {
+      "id1": "coonoor",
+      "id2": "yercaud",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 354166
+      }
+    },
+    {
+      "id1": "chakrata",
+      "id2": "dhanaulti",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 350470
+      }
+    },
+    {
+      "id1": "munnar",
+      "id2": "idukki",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 338377
+      }
+    },
+    {
+      "id1": "ponmudi",
+      "id2": "munnar",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 332677
+      }
+    },
+    {
+      "id1": "yercaud",
+      "id2": "ooty",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 332177
+      }
+    },
+    {
+      "id1": "chakrata",
+      "id2": "kausani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 317772
+      }
+    },
+    {
+      "id1": "gokarna",
+      "id2": "udupi",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 307687
+      }
+    },
+    {
+      "id1": "chakrata",
+      "id2": "ranikhet",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 307560
+      }
+    },
+    {
+      "id1": "gokarna",
+      "id2": "mangalore",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 305388
+      }
+    },
+    {
+      "id1": "gokarna",
+      "id2": "dharmasthala",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 305167
+      }
+    },
+    {
+      "id1": "kasauli",
+      "id2": "manali",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 301485
+      }
+    },
+    {
+      "id1": "kasauli",
+      "id2": "palampur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 301270
+      }
+    },
+    {
+      "id1": "eravikulam",
+      "id2": "munnar",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 297177
+      }
+    },
+    {
+      "id1": "lambasingi",
+      "id2": "araku-valley",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 294554
+      }
+    },
+    {
+      "id1": "gokarna",
+      "id2": "kukke-subramanya",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 289966
+      }
+    },
+    {
+      "id1": "gokarna",
+      "id2": "murudeshwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 265287
+      }
+    },
+    {
+      "id1": "lansdowne",
+      "id2": "chakrata",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 265170
+      }
+    },
+    {
+      "id1": "alibaug",
+      "id2": "mahabaleshwar",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 263468
+      }
+    },
+    {
+      "id1": "srisailam",
+      "id2": "tirupati",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 262348
+      }
+    },
+    {
+      "id1": "malvan",
+      "id2": "mahabaleshwar",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 258368
+      }
+    },
+    {
+      "id1": "kollam",
+      "id2": "kochi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 257759
+      }
+    },
+    {
+      "id1": "lambasingi",
+      "id2": "horsley-hills",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 256754
+      }
+    },
+    {
+      "id1": "kochi",
+      "id2": "wayanad",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 252668
+      }
+    },
+    {
+      "id1": "kozhikode",
+      "id2": "kochi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 250660
+      }
+    },
+    {
+      "id1": "panchgani",
+      "id2": "mahabaleshwar",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 248488
+      }
+    },
+    {
+      "id1": "mahabaleshwar",
+      "id2": "tarkarli",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 246767
+      }
+    },
+    {
+      "id1": "kedarnath",
+      "id2": "yamunotri",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 240551
+      }
+    },
+    {
+      "id1": "kannur",
+      "id2": "kochi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 237469
+      }
+    },
+    {
+      "id1": "kochi",
+      "id2": "thrissur",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 236660
+      }
+    },
+    {
+      "id1": "bekal",
+      "id2": "kochi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 234059
+      }
+    },
+    {
+      "id1": "gokarna",
+      "id2": "badami",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 229966
+      }
+    },
+    {
+      "id1": "murud-janjira",
+      "id2": "mahabaleshwar",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 215567
+      }
+    },
+    {
+      "id1": "khandala",
+      "id2": "mahabaleshwar",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 215488
+      }
+    },
+    {
+      "id1": "mangalore",
+      "id2": "udupi",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 212589
+      }
+    },
+    {
+      "id1": "dharmasthala",
+      "id2": "udupi",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 212368
+      }
+    },
+    {
+      "id1": "vijayawada",
+      "id2": "tirupati",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 211800
+      }
+    },
+    {
+      "id1": "coonoor",
+      "id2": "kodaikanal",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 205677
+      }
+    },
+    {
+      "id1": "kedarnath",
+      "id2": "uttarkashi",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 198451
+      }
+    },
+    {
+      "id1": "udupi",
+      "id2": "kukke-subramanya",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 197167
+      }
+    },
+    {
+      "id1": "dharmasthala",
+      "id2": "kukke-subramanya",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 194667
+      }
+    },
+    {
+      "id1": "dhanaulti",
+      "id2": "kausani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 191582
+      }
+    },
+    {
+      "id1": "horsley-hills",
+      "id2": "araku-valley",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 190956
+      }
+    },
+    {
+      "id1": "ahobilam",
+      "id2": "tirupati",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 189947
+      }
+    },
+    {
+      "id1": "kedarnath",
+      "id2": "haridwar",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 184561
+      }
+    },
+    {
+      "id1": "dhanaulti",
+      "id2": "ranikhet",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 181370
+      }
+    },
+    {
+      "id1": "coonoor",
+      "id2": "valparai",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 180265
+      }
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "madurai",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 174368
+      }
+    },
+    {
+      "id1": "udupi",
+      "id2": "murudeshwar",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 172488
+      }
+    },
+    {
+      "id1": "mangalore",
+      "id2": "murudeshwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 170189
+      }
+    },
+    {
+      "id1": "dharmasthala",
+      "id2": "murudeshwar",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 169968
+      }
+    },
+    {
+      "id1": "ajmer",
+      "id2": "jaipur",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 168760
+      }
+    },
+    {
+      "id1": "trichy",
+      "id2": "rameswaram",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 167658
+      }
+    },
+    {
+      "id1": "spiti-valley",
+      "id2": "tirthan-valley",
+      "cluster_reason": {
+        "shared_type": "valley",
+        "geo": "same-state",
+        "score": 167363
+      }
+    },
+    {
+      "id1": "lepakshi",
+      "id2": "tirupati",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 164648
+      }
+    },
+    {
+      "id1": "srikalahasti",
+      "id2": "tirupati",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 162549
+      }
+    },
+    {
+      "id1": "alibaug",
+      "id2": "lonavala",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 159868
+      }
+    },
+    {
+      "id1": "srisailam",
+      "id2": "vijayawada",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 159388
+      }
+    },
+    {
+      "id1": "valparai",
+      "id2": "mudumalai",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 158365
+      }
+    },
+    {
+      "id1": "valparai",
+      "id2": "ooty",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 158276
+      }
+    },
+    {
+      "id1": "anamalai",
+      "id2": "valparai",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 157564
+      }
+    },
+    {
+      "id1": "malvan",
+      "id2": "lonavala",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 154768
+      }
+    },
+    {
+      "id1": "murudeshwar",
+      "id2": "kukke-subramanya",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 154767
+      }
+    },
+    {
+      "id1": "thanjavur",
+      "id2": "rameswaram",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 153657
+      }
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "kumbakonam",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 150957
+      }
+    },
+    {
+      "id1": "kanchipuram",
+      "id2": "rameswaram",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 148957
+      }
+    },
+    {
+      "id1": "ranikhet",
+      "id2": "kausani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 148672
+      }
+    },
+    {
+      "id1": "jaisalmer",
+      "id2": "jaipur",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 145260
+      }
+    },
+    {
+      "id1": "panchgani",
+      "id2": "lonavala",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 144888
+      }
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "mahabalipuram",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 144567
+      }
+    },
+    {
+      "id1": "lonavala",
+      "id2": "tarkarli",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 143167
+      }
+    },
+    {
+      "id1": "tirthan-valley",
+      "id2": "sangla",
+      "cluster_reason": {
+        "shared_type": "valley",
+        "geo": "same-state",
+        "score": 141764
+      }
+    },
+    {
+      "id1": "neemrana",
+      "id2": "jaipur",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 139060
+      }
+    },
+    {
+      "id1": "lansdowne",
+      "id2": "dhanaulti",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 138980
+      }
+    },
+    {
+      "id1": "srisailam",
+      "id2": "ahobilam",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 137535
+      }
+    },
+    {
+      "id1": "badami",
+      "id2": "udupi",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 137167
+      }
+    },
+    {
+      "id1": "chitkul",
+      "id2": "tirthan-valley",
+      "cluster_reason": {
+        "shared_type": "valley",
+        "geo": "same-state",
+        "score": 136763
+      }
+    },
+    {
+      "id1": "dharmasthala",
+      "id2": "badami",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 134667
+      }
+    },
+    {
+      "id1": "chitrakoot",
+      "id2": "prayagraj",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 133060
+      }
+    },
+    {
+      "id1": "mangalore",
+      "id2": "mysore",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 132170
+      }
+    },
+    {
+      "id1": "horsley-hills",
+      "id2": "vijayawada",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 130988
+      }
+    },
+    {
+      "id1": "mysore",
+      "id2": "hampi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 130468
+      }
+    },
+    {
+      "id1": "kabini",
+      "id2": "bandipur",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 128985
+      }
+    },
+    {
+      "id1": "alibaug",
+      "id2": "ganpatipule",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 126687
+      }
+    },
+    {
+      "id1": "visakhapatnam",
+      "id2": "vijayawada",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 125900
+      }
+    },
+    {
+      "id1": "hampi",
+      "id2": "gulbarga",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 125467
+      }
+    },
+    {
+      "id1": "alibaug",
+      "id2": "malvan",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 124988
+      }
+    },
+    {
+      "id1": "jabalpur",
+      "id2": "orchha",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 124260
+      }
+    },
+    {
+      "id1": "mangalore",
+      "id2": "karwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 121889
+      }
+    },
+    {
+      "id1": "ganpatipule",
+      "id2": "malvan",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 121587
+      }
+    },
+    {
+      "id1": "bikaner",
+      "id2": "jaipur",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 121560
+      }
+    },
+    {
+      "id1": "amboli",
+      "id2": "lonavala",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 121187
+      }
+    },
+    {
+      "id1": "badami",
+      "id2": "kukke-subramanya",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 119466
+      }
+    },
+    {
+      "id1": "hogenakkal",
+      "id2": "madurai",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 119258
+      }
+    },
+    {
+      "id1": "jabalpur",
+      "id2": "khajuraho",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 118760
+      }
+    },
+    {
+      "id1": "mangalore",
+      "id2": "bengaluru",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 118670
+      }
+    },
+    {
+      "id1": "ranthambore",
+      "id2": "jaipur",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 117860
+      }
+    },
+    {
+      "id1": "bhimbetka",
+      "id2": "jabalpur",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 117660
+      }
+    },
+    {
+      "id1": "agra",
+      "id2": "prayagraj",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 117260
+      }
+    },
+    {
+      "id1": "shirdi",
+      "id2": "ganpatipule",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 117168
+      }
+    },
+    {
+      "id1": "bidar",
+      "id2": "hampi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 116367
+      }
+    },
+    {
+      "id1": "gurez-valley",
+      "id2": "pahalgam",
+      "cluster_reason": {
+        "shared_type": "valley",
+        "geo": "same-state",
+        "score": 116364
+      }
+    },
+    {
+      "id1": "bijapur",
+      "id2": "hampi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 114467
+      }
+    },
+    {
+      "id1": "alibaug",
+      "id2": "tarkarli",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 113387
+      }
+    },
+    {
+      "id1": "trichy",
+      "id2": "hogenakkal",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 112548
+      }
+    },
+    {
+      "id1": "lucknow",
+      "id2": "prayagraj",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 112060
+      }
+    },
+    {
+      "id1": "murud-janjira",
+      "id2": "lonavala",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 111967
+      }
+    },
+    {
+      "id1": "nandi-hills",
+      "id2": "coorg",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 111888
+      }
+    },
+    {
+      "id1": "dharmasthala",
+      "id2": "shravanabelagola",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 111868
+      }
+    },
+    {
+      "id1": "hampi",
+      "id2": "shravanabelagola",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 110367
+      }
+    },
+    {
+      "id1": "srikalahasti",
+      "id2": "srisailam",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 110137
+      }
+    },
+    {
+      "id1": "ganpatipule",
+      "id2": "tarkarli",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 109986
+      }
+    },
+    {
+      "id1": "dungarpur",
+      "id2": "jaipur",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 109960
+      }
+    },
+    {
+      "id1": "chitradurga",
+      "id2": "hampi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 109567
+      }
+    },
+    {
+      "id1": "nandi-hills",
+      "id2": "sakleshpur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 109287
+      }
+    },
+    {
+      "id1": "nagarjuna-sagar",
+      "id2": "srisailam",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 109006
+      }
+    },
+    {
+      "id1": "sarnath",
+      "id2": "prayagraj",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 108560
+      }
+    },
+    {
+      "id1": "malvan",
+      "id2": "tarkarli",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 108287
+      }
+    },
+    {
+      "id1": "bhimashankar",
+      "id2": "trimbakeshwar",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 108267
+      }
+    },
+    {
+      "id1": "hogenakkal",
+      "id2": "kanyakumari",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 106957
+      }
+    },
+    {
+      "id1": "lansdowne",
+      "id2": "kausani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 106282
+      }
+    },
+    {
+      "id1": "alibaug",
+      "id2": "harihareshwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 105987
+      }
+    },
+    {
+      "id1": "fatehpur-sikri",
+      "id2": "prayagraj",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 103860
+      }
+    },
+    {
+      "id1": "kushinagar",
+      "id2": "prayagraj",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 103460
+      }
+    },
+    {
+      "id1": "hogenakkal",
+      "id2": "dhanushkodi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 102944
+      }
+    },
+    {
+      "id1": "ganpatipule",
+      "id2": "harihareshwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 102586
+      }
+    },
+    {
+      "id1": "barot-valley",
+      "id2": "spiti-valley",
+      "cluster_reason": {
+        "shared_type": "valley",
+        "geo": "same-state",
+        "score": 102262
+      }
+    },
+    {
+      "id1": "kabini",
+      "id2": "dandeli",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 101285
+      }
+    },
+    {
+      "id1": "malvan",
+      "id2": "harihareshwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 100887
+      }
+    },
+    {
+      "id1": "kozhikode",
+      "id2": "varkala",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 100879
+      }
+    },
+    {
+      "id1": "shirdi",
+      "id2": "bhimashankar",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 100368
+      }
+    },
+    {
+      "id1": "hogenakkal",
+      "id2": "thanjavur",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 98547
+      }
+    },
+    {
+      "id1": "yamunotri",
+      "id2": "uttarkashi",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 98140
+      }
+    },
+    {
+      "id1": "shirdi",
+      "id2": "nashik",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 96969
+      }
+    },
+    {
+      "id1": "shravanabelagola",
+      "id2": "kukke-subramanya",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 96667
+      }
+    },
+    {
+      "id1": "horsley-hills",
+      "id2": "rajahmundry",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 96487
+      }
+    },
+    {
+      "id1": "shirdi",
+      "id2": "harihareshwar",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 96468
+      }
+    },
+    {
+      "id1": "lansdowne",
+      "id2": "ranikhet",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 96070
+      }
+    },
+    {
+      "id1": "ponmudi",
+      "id2": "vagamon",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 96066
+      }
+    },
+    {
+      "id1": "hogenakkal",
+      "id2": "kumbakonam",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 95847
+      }
+    },
+    {
+      "id1": "badami",
+      "id2": "murudeshwar",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 94767
+      }
+    },
+    {
+      "id1": "nandi-hills",
+      "id2": "chikmagalur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 94588
+      }
+    },
+    {
+      "id1": "nagarhole",
+      "id2": "kabini",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 92185
+      }
+    },
+    {
+      "id1": "kolhapur",
+      "id2": "ganpatipule",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 91667
+      }
+    },
+    {
+      "id1": "rajahmundry",
+      "id2": "visakhapatnam",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 91399
+      }
+    },
+    {
+      "id1": "bhandardara",
+      "id2": "lonar-crater",
+      "cluster_reason": {
+        "shared_type": "lake",
+        "geo": "same-state",
+        "score": 90865
+      }
+    },
+    {
+      "id1": "ajmer",
+      "id2": "neemrana",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 90360
+      }
+    },
+    {
+      "id1": "horsley-hills",
+      "id2": "undavalli-caves",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 89387
+      }
+    },
+    {
+      "id1": "marari",
+      "id2": "varkala",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 89377
+      }
+    },
+    {
+      "id1": "tarkarli",
+      "id2": "harihareshwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 89286
+      }
+    },
+    {
+      "id1": "nandi-hills",
+      "id2": "gulbarga",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 88568
+      }
+    },
+    {
+      "id1": "matheran",
+      "id2": "panchgani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 88487
+      }
+    },
+    {
+      "id1": "ajmer",
+      "id2": "udaipur",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 88460
+      }
+    },
+    {
+      "id1": "kannur",
+      "id2": "varkala",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 87688
+      }
+    },
+    {
+      "id1": "ahobilam",
+      "id2": "vijayawada",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 86987
+      }
+    },
+    {
+      "id1": "vagamon",
+      "id2": "wayanad",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 86676
+      }
+    },
+    {
+      "id1": "nashik",
+      "id2": "bhimashankar",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 86267
+      }
+    },
+    {
+      "id1": "shirdi",
+      "id2": "kolhapur",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 85569
+      }
+    },
+    {
+      "id1": "bekal",
+      "id2": "varkala",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 84278
+      }
+    },
+    {
+      "id1": "yamunotri",
+      "id2": "haridwar",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 84250
+      }
+    },
+    {
+      "id1": "horsley-hills",
+      "id2": "lepakshi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 83786
+      }
+    },
+    {
+      "id1": "agra",
+      "id2": "varanasi",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 83260
+      }
+    },
+    {
+      "id1": "poovar",
+      "id2": "varkala",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 83077
+      }
+    },
+    {
+      "id1": "matheran",
+      "id2": "nashik",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 79867
+      }
+    },
+    {
+      "id1": "bidar",
+      "id2": "nandi-hills",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 79468
+      }
+    },
+    {
+      "id1": "cherai",
+      "id2": "varkala",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 79278
+      }
+    },
+    {
+      "id1": "lucknow",
+      "id2": "varanasi",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 78060
+      }
+    },
+    {
+      "id1": "shirdi",
+      "id2": "ellora-caves",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 77469
+      }
+    },
+    {
+      "id1": "barot-valley",
+      "id2": "sangla",
+      "cluster_reason": {
+        "shared_type": "valley",
+        "geo": "same-state",
+        "score": 76663
+      }
+    },
+    {
+      "id1": "amboli",
+      "id2": "panchgani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 76387
+      }
+    },
+    {
+      "id1": "yamunotri",
+      "id2": "badrinath",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 76250
+      }
+    },
+    {
+      "id1": "trichy",
+      "id2": "madurai",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 75560
+      }
+    },
+    {
+      "id1": "kanyakumari",
+      "id2": "pondicherry",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 74989
+      }
+    },
+    {
+      "id1": "sarnath",
+      "id2": "varanasi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 74560
+      }
+    },
+    {
+      "id1": "rajahmundry",
+      "id2": "vijayawada",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 74439
+      }
+    },
+    {
+      "id1": "pench-maharashtra",
+      "id2": "bhimashankar",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 73386
+      }
+    },
+    {
+      "id1": "wayanad",
+      "id2": "idukki",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 73176
+      }
+    },
+    {
+      "id1": "nandi-hills",
+      "id2": "chitradurga",
+      "cluster_reason": {
+        "shared_type": "fort",
+        "geo": "same-state",
+        "score": 72668
+      }
+    },
+    {
+      "id1": "chitkul",
+      "id2": "barot-valley",
+      "cluster_reason": {
+        "shared_type": "valley",
+        "geo": "same-state",
+        "score": 71662
+      }
+    },
+    {
+      "id1": "kolhapur",
+      "id2": "nashik",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 71468
+      }
+    },
+    {
+      "id1": "dhanushkodi",
+      "id2": "pondicherry",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-state",
+        "score": 70976
+      }
+    },
+    {
+      "id1": "kolhapur",
+      "id2": "harihareshwar",
+      "cluster_reason": {
+        "shared_type": "temple",
+        "geo": "same-state",
+        "score": 70967
+      }
+    },
+    {
+      "id1": "nashik",
+      "id2": "pune",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 70869
+      }
+    },
+    {
+      "id1": "chikmagalur",
+      "id2": "sakleshpur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 70787
+      }
+    },
+    {
+      "id1": "ajmer",
+      "id2": "alwar",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 70760
+      }
+    },
+    {
+      "id1": "madurai",
+      "id2": "kanyakumari",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 69969
+      }
+    },
+    {
+      "id1": "fatehpur-sikri",
+      "id2": "varanasi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 69860
+      }
+    },
+    {
+      "id1": "kushinagar",
+      "id2": "varanasi",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 69460
+      }
+    },
+    {
+      "id1": "nrusinghanath-harishankar",
+      "id2": "puri",
+      "cluster_reason": {
+        "shared_type": "pilgrimage",
+        "geo": "same-state",
+        "score": 69097
+      }
+    },
+    {
+      "id1": "kolhapur",
+      "id2": "matheran",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 68467
+      }
+    },
+    {
+      "id1": "matheran",
+      "id2": "pune",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 67868
+      }
+    },
+    {
+      "id1": "puri",
+      "id2": "bhubaneswar",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 67860
+      }
+    },
+    {
+      "id1": "ponmudi",
+      "id2": "wayanad",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 67476
+      }
+    },
+    {
+      "id1": "lachung",
+      "id2": "gangtok",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 67280
+      }
+    },
+    {
+      "id1": "bandipur",
+      "id2": "dandeli",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 67186
+      }
+    },
+    {
+      "id1": "khandala",
+      "id2": "panchgani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-state",
+        "score": 67088
+      }
+    },
+    {
+      "id1": "madurai",
+      "id2": "coimbatore",
+      "cluster_reason": {
+        "shared_type": "city",
+        "geo": "same-state",
+        "score": 66060
+      }
+    },
+    {
+      "id1": "dhanushkodi",
+      "id2": "madurai",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-state",
+        "score": 65956
+      }
+    },
+    {
+      "id1": "bhimashankar",
+      "id2": "tadoba",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-state",
+        "score": 65486
+      }
+    },
+    {
+      "id1": "yercaud",
+      "id2": "munnar",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 611977
+      }
+    },
+    {
+      "id1": "darjeeling",
+      "id2": "daringbadi",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 515092
+      }
+    },
+    {
+      "id1": "chakrata",
+      "id2": "kasauli",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 511770
+      }
+    },
+    {
+      "id1": "lambasingi",
+      "id2": "yercaud",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 497884
+      }
+    },
+    {
+      "id1": "lambasingi",
+      "id2": "munnar",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 474395
+      }
+    },
+    {
+      "id1": "valparai",
+      "id2": "munnar",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 438076
+      }
+    },
+    {
+      "id1": "dhanaulti",
+      "id2": "kasauli",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 385580
+      }
+    },
+    {
+      "id1": "patnitop",
+      "id2": "kasauli",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 372783
+      }
+    },
+    {
+      "id1": "kasauli",
+      "id2": "kausani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 352882
+      }
+    },
+    {
+      "id1": "lambasingi",
+      "id2": "kodaikanal",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 349395
+      }
+    },
+    {
+      "id1": "chakrata",
+      "id2": "patnitop",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 337673
+      }
+    },
+    {
+      "id1": "araku-valley",
+      "id2": "kodaikanal",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 283597
+      }
+    },
+    {
+      "id1": "lambasingi",
+      "id2": "vagamon",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 237784
+      }
+    },
+    {
+      "id1": "vagamon",
+      "id2": "kodaikanal",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 226877
+      }
+    },
+    {
+      "id1": "aizawl",
+      "id2": "shillong",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 216280
+      }
+    },
+    {
+      "id1": "coorg",
+      "id2": "kodaikanal",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 214588
+      }
+    },
+    {
+      "id1": "patnitop",
+      "id2": "dhanaulti",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 211483
+      }
+    },
+    {
+      "id1": "shillong",
+      "id2": "gangtok",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 203480
+      }
+    },
+    {
+      "id1": "shillong",
+      "id2": "lachung",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 187880
+      }
+    },
+    {
+      "id1": "srisailam",
+      "id2": "kabini",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 186495
+      }
+    },
+    {
+      "id1": "patnitop",
+      "id2": "kausani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 178785
+      }
+    },
+    {
+      "id1": "shillong",
+      "id2": "pelling",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 172870
+      }
+    },
+    {
+      "id1": "shillong",
+      "id2": "ravangla",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 172780
+      }
+    },
+    {
+      "id1": "araku-valley",
+      "id2": "vagamon",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 171986
+      }
+    },
+    {
+      "id1": "patnitop",
+      "id2": "ranikhet",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 168573
+      }
+    },
+    {
+      "id1": "namchi",
+      "id2": "shillong",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 167580
+      }
+    },
+    {
+      "id1": "araku-valley",
+      "id2": "coorg",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 159697
+      }
+    },
+    {
+      "id1": "araku-valley",
+      "id2": "sakleshpur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 157096
+      }
+    },
+    {
+      "id1": "shimla",
+      "id2": "patnitop",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 128488
+      }
+    },
+    {
+      "id1": "kabini",
+      "id2": "idukki",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 125675
+      }
+    },
+    {
+      "id1": "visakhapatnam",
+      "id2": "pondicherry",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 117610
+      }
+    },
+    {
+      "id1": "kabini",
+      "id2": "wayanad",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 110585
+      }
+    },
+    {
+      "id1": "vagamon",
+      "id2": "coorg",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 102977
+      }
+    },
+    {
+      "id1": "kanyakumari",
+      "id2": "visakhapatnam",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 100309
+      }
+    },
+    {
+      "id1": "kozhikode",
+      "id2": "visakhapatnam",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 98500
+      }
+    },
+    {
+      "id1": "shimla",
+      "id2": "ranikhet",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 98375
+      }
+    },
+    {
+      "id1": "kovalam",
+      "id2": "visakhapatnam",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 98310
+      }
+    },
+    {
+      "id1": "aizawl",
+      "id2": "gangtok",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 95680
+      }
+    },
+    {
+      "id1": "idukki",
+      "id2": "bandipur",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 91576
+      }
+    },
+    {
+      "id1": "ponmudi",
+      "id2": "coorg",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 83777
+      }
+    },
+    {
+      "id1": "coonoor",
+      "id2": "coorg",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 81777
+      }
+    },
+    {
+      "id1": "ponmudi",
+      "id2": "sakleshpur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 81176
+      }
+    },
+    {
+      "id1": "aizawl",
+      "id2": "lachung",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 80080
+      }
+    },
+    {
+      "id1": "coonoor",
+      "id2": "sakleshpur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 79176
+      }
+    },
+    {
+      "id1": "ananthagiri-hills",
+      "id2": "sakleshpur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 77996
+      }
+    },
+    {
+      "id1": "wayanad",
+      "id2": "bandipur",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 76486
+      }
+    },
+    {
+      "id1": "agatti",
+      "id2": "havelock-island",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 75480
+      }
+    },
+    {
+      "id1": "coonoor",
+      "id2": "ponmudi",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 74866
+      }
+    },
+    {
+      "id1": "kozhikode",
+      "id2": "pondicherry",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 73180
+      }
+    },
+    {
+      "id1": "aizawl",
+      "id2": "pelling",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 65070
+      }
+    },
+    {
+      "id1": "aizawl",
+      "id2": "ravangla",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 64980
+      }
+    },
+    {
+      "id1": "idukki",
+      "id2": "dandeli",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 63876
+      }
+    },
+    {
+      "id1": "ananthagiri-hills",
+      "id2": "chikmagalur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 63297
+      }
+    },
+    {
+      "id1": "karwar",
+      "id2": "pondicherry",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 62889
+      }
+    },
+    {
+      "id1": "mudumalai",
+      "id2": "bandipur",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 61976
+      }
+    },
+    {
+      "id1": "marari",
+      "id2": "pondicherry",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 61678
+      }
+    },
+    {
+      "id1": "anamalai",
+      "id2": "bandipur",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 61175
+      }
+    },
+    {
+      "id1": "aizawl",
+      "id2": "namchi",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 59780
+      }
+    },
+    {
+      "id1": "mudumalai",
+      "id2": "idukki",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 58666
+      }
+    },
+    {
+      "id1": "lansdowne",
+      "id2": "shimla",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 55985
+      }
+    },
+    {
+      "id1": "kozhikode",
+      "id2": "kanyakumari",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-region",
+        "score": 55879
+      }
+    },
+    {
+      "id1": "kovalam",
+      "id2": "kanyakumari",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 55689
+      }
+    },
+    {
+      "id1": "lansdowne",
+      "id2": "manali",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 54885
+      }
+    },
+    {
+      "id1": "morni-hills",
+      "id2": "shimla",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 52985
+      }
+    },
+    {
+      "id1": "morni-hills",
+      "id2": "manali",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 51885
+      }
+    },
+    {
+      "id1": "dhanushkodi",
+      "id2": "kozhikode",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 51866
+      }
+    },
+    {
+      "id1": "kovalam",
+      "id2": "dhanushkodi",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 51676
+      }
+    },
+    {
+      "id1": "morni-hills",
+      "id2": "palampur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 51670
+      }
+    },
+    {
+      "id1": "ananthagiri-hills",
+      "id2": "ooty",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 49697
+      }
+    },
+    {
+      "id1": "agatti",
+      "id2": "port-blair",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 48480
+      }
+    },
+    {
+      "id1": "agatti",
+      "id2": "neil-island",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 45480
+      }
+    },
+    {
+      "id1": "mollem",
+      "id2": "bhimashankar",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 45385
+      }
+    },
+    {
+      "id1": "bangaram",
+      "id2": "havelock-island",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 45380
+      }
+    },
+    {
+      "id1": "agatti",
+      "id2": "little-andaman",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 44380
+      }
+    },
+    {
+      "id1": "kovalam",
+      "id2": "karwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 43589
+      }
+    },
+    {
+      "id1": "shimla",
+      "id2": "mount-abu",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 43085
+      }
+    },
+    {
+      "id1": "ooty",
+      "id2": "chikmagalur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 42488
+      }
+    },
+    {
+      "id1": "mount-abu",
+      "id2": "manali",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 41985
+      }
+    },
+    {
+      "id1": "mount-abu",
+      "id2": "palampur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 41770
+      }
+    },
+    {
+      "id1": "dhanushkodi",
+      "id2": "karwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 41575
+      }
+    },
+    {
+      "id1": "agatti",
+      "id2": "diglipur",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 41380
+      }
+    },
+    {
+      "id1": "agatti",
+      "id2": "long-island-andaman",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 41080
+      }
+    },
+    {
+      "id1": "kovalam",
+      "id2": "chennai",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 40590
+      }
+    },
+    {
+      "id1": "minicoy",
+      "id2": "havelock-island",
+      "cluster_reason": {
+        "shared_type": "island",
+        "geo": "same-region",
+        "score": 38980
+      }
+    },
+    {
+      "id1": "havelock-island",
+      "id2": "kadmat",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 38980
+      }
+    },
+    {
+      "id1": "loktak-lake",
+      "id2": "khangchendzonga-np",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 38580
+      }
+    },
+    {
+      "id1": "kovalam",
+      "id2": "mahabalipuram",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 38189
+      }
+    },
+    {
+      "id1": "morni-hills",
+      "id2": "mount-abu",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 37780
+      }
+    },
+    {
+      "id1": "morni-hills",
+      "id2": "chail",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 37280
+      }
+    },
+    {
+      "id1": "kaziranga",
+      "id2": "loktak-lake",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 36880
+      }
+    },
+    {
+      "id1": "mudumalai",
+      "id2": "dandeli",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 34276
+      }
+    },
+    {
+      "id1": "anamalai",
+      "id2": "dandeli",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 33475
+      }
+    },
+    {
+      "id1": "karwar",
+      "id2": "marari",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 32277
+      }
+    },
+    {
+      "id1": "kannur",
+      "id2": "karwar",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 30588
+      }
+    },
+    {
+      "id1": "chennai",
+      "id2": "marari",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 29278
+      }
+    },
+    {
+      "id1": "mollem",
+      "id2": "pench-maharashtra",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 29085
+      }
+    },
+    {
+      "id1": "thekkady",
+      "id2": "dandeli",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 28087
+      }
+    },
+    {
+      "id1": "kannur",
+      "id2": "chennai",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-region",
+        "score": 27589
+      }
+    },
+    {
+      "id1": "mount-abu",
+      "id2": "chail",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "same-region",
+        "score": 27380
+      }
+    },
+    {
+      "id1": "mahabalipuram",
+      "id2": "marari",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 26877
+      }
+    },
+    {
+      "id1": "palolem",
+      "id2": "murud-janjira",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 25687
+      }
+    },
+    {
+      "id1": "kannur",
+      "id2": "mahabalipuram",
+      "cluster_reason": {
+        "shared_type": "heritage",
+        "geo": "same-region",
+        "score": 25188
+      }
+    },
+    {
+      "id1": "nagarhole",
+      "id2": "mudumalai",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 25176
+      }
+    },
+    {
+      "id1": "anamalai",
+      "id2": "nagarhole",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 24375
+      }
+    },
+    {
+      "id1": "bekal",
+      "id2": "chennai",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 24179
+      }
+    },
+    {
+      "id1": "candolim",
+      "id2": "murud-janjira",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 24087
+      }
+    },
+    {
+      "id1": "poovar",
+      "id2": "chennai",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 22978
+      }
+    },
+    {
+      "id1": "mudumalai",
+      "id2": "thekkady",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 22877
+      }
+    },
+    {
+      "id1": "anamalai",
+      "id2": "thekkady",
+      "cluster_reason": {
+        "shared_type": "wildlife",
+        "geo": "same-region",
+        "score": 22076
+      }
+    },
+    {
+      "id1": "arambol",
+      "id2": "murud-janjira",
+      "cluster_reason": {
+        "shared_type": "beach",
+        "geo": "same-region",
+        "score": 21986
+      }
+    },
+    {
+      "id1": "darjeeling",
+      "id2": "panchgani",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 487084
+      }
+    },
+    {
+      "id1": "darjeeling",
+      "id2": "matheran",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 475483
+      }
+    },
+    {
+      "id1": "darjeeling",
+      "id2": "ananthagiri-hills",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 472293
+      }
+    },
+    {
+      "id1": "shimla",
+      "id2": "darjeeling",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 466185
+      }
+    },
+    {
+      "id1": "darjeeling",
+      "id2": "manali",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 465085
+      }
+    },
+    {
+      "id1": "daringbadi",
+      "id2": "gangtok",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 119492
+      }
+    },
+    {
+      "id1": "daringbadi",
+      "id2": "matheran",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 116495
+      }
+    },
+    {
+      "id1": "ananthagiri-hills",
+      "id2": "daringbadi",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 113305
+      }
+    },
+    {
+      "id1": "daringbadi",
+      "id2": "manali",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 106097
+      }
+    },
+    {
+      "id1": "daringbadi",
+      "id2": "chikmagalur",
+      "cluster_reason": {
+        "shared_type": "hill-station",
+        "geo": "cross-region",
+        "score": 106096
+      }
+    }
+  ]
+}

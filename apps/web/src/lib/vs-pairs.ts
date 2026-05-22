@@ -1,10 +1,16 @@
-// Curated destination comparison pairs for /vs/[pair] pages.
-// Each pair gets its own page. Pairs are chosen based on:
-// - Real search intent (people actually compare these)
-// - Similar category (hill stations, beaches, heritage, etc.)
-// - Same region or common "which should I visit" scenarios
+// Destination comparison pairs for /vs/[pair] pages. Each pair gets its own page.
+//
+// VS_PAIRS_CURATED   — hand-picked pairs (real search intent, similar category,
+//                      same region / common "which should I visit" scenarios).
+// VS_PAIRS_GENERATED — machine-written pairs from the demand-mine + cluster-fill
+//                      pipeline (scripts/_mine-vs-queries.mjs → … →
+//                      _emit-vs-pairs-block.mjs). Regenerate, don't hand-edit.
+// VS_PAIRS           — the two merged; consumed by the route, the sitemap and
+//                      the /vs index page.
 
-export const VS_PAIRS: { id1: string; id2: string; theme: string }[] = [
+import { VS_PAIRS_GENERATED } from "./vs-pairs.generated";
+
+export const VS_PAIRS_CURATED: { id1: string; id2: string; theme: string }[] = [
   // ─── Hill Stations: North ──────────────────────────────────────
   { id1: "manali", id2: "shimla", theme: "hill-stations" },
   { id1: "manali", id2: "dharamshala", theme: "hill-stations" },
@@ -180,6 +186,11 @@ export const VS_PAIRS: { id1: string; id2: string; theme: string }[] = [
   { id1: "kanha", id2: "ranthambore", theme: "wildlife" },
 ];
 
+// Curated + machine-generated pairs, merged. Reversed-pair dedupe is handled
+// upstream (the pipeline's canonical key) and downstream (the sitemap builder's
+// seenPairs Set), so the two lists never collide on a slug.
+export const VS_PAIRS = [...VS_PAIRS_CURATED, ...VS_PAIRS_GENERATED];
+
 // Human-readable theme labels for the /vs index page
 export const VS_THEME_LABELS: Record<string, string> = {
   "hill-stations": "Hill Stations",
@@ -193,6 +204,7 @@ export const VS_THEME_LABELS: Record<string, string> = {
   northeast: "Northeast India",
   "south-hills": "South India Hill Stations",
   kerala: "Kerala",
+  "lakes-valleys": "Lakes & Valleys",
   beaches: "Beaches & Islands",
   heritage: "Heritage & Historical",
   "west-hills": "Western Ghats",

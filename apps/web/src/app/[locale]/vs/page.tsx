@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
-import { VS_PAIRS, VS_THEME_LABELS, VS_DESTINATION_IDS } from "@/lib/vs-pairs";
+import { VS_PAIRS, VS_THEME_LABELS } from "@/lib/vs-pairs";
 import { localeAlternates } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
@@ -31,10 +31,12 @@ async function getDestinationNames() {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return {};
   const supabase = createClient(url, key);
+  // Fetch the full destination set (505 rows, one page) rather than an
+  // .in(VS_DESTINATION_IDS) filter — the id list now runs to a few hundred
+  // entries and a long query string risks a 414.
   const { data } = await supabase
     .from("destinations")
-    .select("id, name, state:states(name)")
-    .in("id", VS_DESTINATION_IDS);
+    .select("id, name, state:states(name)");
   const map: Record<string, { name: string; state: string }> = {};
   (data ?? []).forEach((d: Record<string, unknown>) => {
     const stateField = d.state as { name: string } | { name: string }[] | null | undefined;

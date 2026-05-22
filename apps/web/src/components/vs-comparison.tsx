@@ -2,6 +2,57 @@ import Link from "next/link";
 import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MONTH_SHORT_HI = ["", "जन", "फ़र", "मार्च", "अप्रैल", "मई", "जून", "जुल", "अग", "सित", "अक्तू", "नव", "दिस"];
+
+// Bilingual display copy for the comparison surface. Devanagari follows the
+// same inline-Hindi-map pattern as STATE_NAME_HI in lib/seo-maps.ts.
+function vsCopy(locale: string) {
+  const hi = locale === "hi";
+  return {
+    quickVerdict: hi ? "त्वरित फ़ैसला" : "Quick verdict",
+    sideBySide: (n: number) => (hi ? `आमने-सामने · ${n} पहलू` : `Side-by-side · ${n} factors`),
+    monthByMonth: hi ? "महीने-दर-महीने स्कोर" : "Month-by-month score",
+    month: hi ? "महीना" : "Month",
+    now: hi ? "अभी" : "Now",
+    monthScore: (m: string) => (hi ? `${m} स्कोर` : `${m} score`),
+    difficulty: hi ? "कठिनाई" : "Difficulty",
+    elevation: hi ? "ऊँचाई" : "Elevation",
+    plains: hi ? "मैदानी" : "Plains",
+    budgetTier: hi ? "बजट श्रेणी" : "Budget tier",
+    kidsRating: hi ? "बच्चों के लिए रेटिंग" : "Kids rating",
+    safety: hi ? "सुरक्षा" : "Safety",
+    network: hi ? "नेटवर्क" : "Network",
+    chooseIf: (name: string) => (hi ? `${name} चुनें अगर` : `Choose ${name} if`),
+    explore: (name: string) => (hi ? `${name} को जानें →` : `Explore ${name} →`),
+    edgesAhead: (name: string, a: string, b: string) =>
+      hi
+        ? `${name} इस महीने ${a} बनाम ${b} के स्कोर के साथ थोड़ा आगे है।`
+        : `${name} edges ahead this month with a score of ${a} vs ${b}.`,
+    bothEqual: (s: string) =>
+      hi
+        ? `दोनों जगहें इस समय बराबरी पर हैं (${s})।`
+        : `Both destinations score equally right now (${s}).`,
+    overallBetter: (name: string) =>
+      hi
+        ? `कुल मिलाकर, साल भर में ${name} के ज़्यादा महीने घूमने के अनुकूल रहते हैं।`
+        : `Overall, ${name} has more favourable months across the year.`,
+    overallSimilar: hi
+      ? "पूरे साल दोनों का कुल स्कोर लगभग एक जैसा रहता है।"
+      : "Year-round, they're remarkably similar in overall score.",
+    reasonEasy: hi ? "आप आसान, इत्मीनान वाली यात्रा चाहते हैं" : "You prefer an easier, more relaxed trip",
+    reasonAdventure: hi ? "आप चुनौती भरा रोमांच चाहते हैं" : "You want a challenging adventure",
+    reasonKids: hi ? "आप बच्चों के साथ यात्रा कर रहे हैं" : "You're travelling with kids",
+    reasonNow: (m: string) => (hi ? `अभी (${m}) बेहतर मौसम` : `Better conditions right now (${m})`),
+    reasonAltitude: hi ? "आपको ऊँचाई वाली जगहें पसंद हैं" : "You love high-altitude destinations",
+    reasonMoreMonths: hi
+      ? "आप साल में ज़्यादा अनुकूल महीने चाहते हैं"
+      : "You want more months with great conditions",
+    reasonFallback: (name: string) =>
+      hi
+        ? `${name} अपने अनोखे अंदाज़ के लिए एक बढ़िया विकल्प है`
+        : `${name} is a solid choice for its unique character`,
+  };
+}
 
 interface MonthScore {
   month: number;
@@ -110,6 +161,8 @@ const tableValueCell = (isWinner: boolean): React.CSSProperties => ({
 });
 
 export function VsComparison({ dest1, dest2, locale }: Props) {
+  const t = vsCopy(locale);
+  const monthNames = locale === "hi" ? MONTH_SHORT_HI : MONTH_SHORT;
   const currentMonth = currentMonthIST();
   const score1 = getMonthScore(dest1.months, currentMonth);
   const score2 = getMonthScore(dest2.months, currentMonth);
@@ -117,43 +170,43 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
   // Comparison rows
   const rows = [
     {
-      label: `${MONTH_SHORT[currentMonth]} score`,
+      label: t.monthScore(monthNames[currentMonth]),
       v1: score1 !== null ? formatScoreInline(score1) : "—",
       v2: score2 !== null ? formatScoreInline(score2) : "—",
       win: winner(score1, score2),
     },
     {
-      label: "Difficulty",
+      label: t.difficulty,
       v1: dest1.difficulty || "—",
       v2: dest2.difficulty || "—",
       win: "tie" as const,
     },
     {
-      label: "Elevation",
-      v1: dest1.elevation_m ? `${dest1.elevation_m.toLocaleString()} m` : "Plains",
-      v2: dest2.elevation_m ? `${dest2.elevation_m.toLocaleString()} m` : "Plains",
+      label: t.elevation,
+      v1: dest1.elevation_m ? `${dest1.elevation_m.toLocaleString()} m` : t.plains,
+      v2: dest2.elevation_m ? `${dest2.elevation_m.toLocaleString()} m` : t.plains,
       win: "tie" as const,
     },
     {
-      label: "Budget tier",
+      label: t.budgetTier,
       v1: dest1.budget_tier || "—",
       v2: dest2.budget_tier || "—",
       win: "tie" as const,
     },
     {
-      label: "Kids rating",
+      label: t.kidsRating,
       v1: dest1.kids?.rating != null ? formatScoreInline(dest1.kids.rating) : "—",
       v2: dest2.kids?.rating != null ? formatScoreInline(dest2.kids.rating) : "—",
       win: winner(dest1.kids?.rating ?? null, dest2.kids?.rating ?? null),
     },
     {
-      label: "Safety",
+      label: t.safety,
       v1: formatSafety(dest1.confidence?.safety_rating),
       v2: formatSafety(dest2.confidence?.safety_rating),
       win: "tie" as const,
     },
     {
-      label: "Network",
+      label: t.network,
       v1: formatNetwork(dest1.confidence?.network),
       v2: formatNetwork(dest2.confidence?.network),
       win: "tie" as const,
@@ -169,22 +222,22 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
   const choose1: string[] = [];
   const choose2: string[] = [];
 
-  if (dest1.difficulty === "easy") choose1.push("You prefer an easier, more relaxed trip");
-  if (dest2.difficulty === "easy") choose2.push("You prefer an easier, more relaxed trip");
-  if (dest1.difficulty === "hard" || dest1.difficulty === "extreme") choose1.push("You want a challenging adventure");
-  if (dest2.difficulty === "hard" || dest2.difficulty === "extreme") choose2.push("You want a challenging adventure");
-  if ((dest1.kids?.rating ?? 0) > (dest2.kids?.rating ?? 0)) choose1.push("You're travelling with kids");
-  if ((dest2.kids?.rating ?? 0) > (dest1.kids?.rating ?? 0)) choose2.push("You're travelling with kids");
-  if ((score1 ?? 0) > (score2 ?? 0)) choose1.push(`Better conditions right now (${MONTH_SHORT[currentMonth]})`);
-  if ((score2 ?? 0) > (score1 ?? 0)) choose2.push(`Better conditions right now (${MONTH_SHORT[currentMonth]})`);
-  if (dest1.elevation_m && (!dest2.elevation_m || dest1.elevation_m > dest2.elevation_m)) choose1.push("You love high-altitude destinations");
-  if (dest2.elevation_m && (!dest1.elevation_m || dest2.elevation_m > dest1.elevation_m)) choose2.push("You love high-altitude destinations");
-  if (totalScore1 > totalScore2) choose1.push("You want more months with great conditions");
-  if (totalScore2 > totalScore1) choose2.push("You want more months with great conditions");
+  if (dest1.difficulty === "easy") choose1.push(t.reasonEasy);
+  if (dest2.difficulty === "easy") choose2.push(t.reasonEasy);
+  if (dest1.difficulty === "hard" || dest1.difficulty === "extreme") choose1.push(t.reasonAdventure);
+  if (dest2.difficulty === "hard" || dest2.difficulty === "extreme") choose2.push(t.reasonAdventure);
+  if ((dest1.kids?.rating ?? 0) > (dest2.kids?.rating ?? 0)) choose1.push(t.reasonKids);
+  if ((dest2.kids?.rating ?? 0) > (dest1.kids?.rating ?? 0)) choose2.push(t.reasonKids);
+  if ((score1 ?? 0) > (score2 ?? 0)) choose1.push(t.reasonNow(monthNames[currentMonth]));
+  if ((score2 ?? 0) > (score1 ?? 0)) choose2.push(t.reasonNow(monthNames[currentMonth]));
+  if (dest1.elevation_m && (!dest2.elevation_m || dest1.elevation_m > dest2.elevation_m)) choose1.push(t.reasonAltitude);
+  if (dest2.elevation_m && (!dest1.elevation_m || dest2.elevation_m > dest1.elevation_m)) choose2.push(t.reasonAltitude);
+  if (totalScore1 > totalScore2) choose1.push(t.reasonMoreMonths);
+  if (totalScore2 > totalScore1) choose2.push(t.reasonMoreMonths);
 
   // Fallbacks
-  if (choose1.length === 0) choose1.push(`${dest1.name} is a solid choice for its unique character`);
-  if (choose2.length === 0) choose2.push(`${dest2.name} is a solid choice for its unique character`);
+  if (choose1.length === 0) choose1.push(t.reasonFallback(dest1.name));
+  if (choose2.length === 0) choose2.push(t.reasonFallback(dest2.name));
 
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px 64px" }}>
@@ -207,7 +260,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
             margin: "0 0 12px",
           }}
         >
-          Quick verdict
+          {t.quickVerdict}
         </p>
         <p
           style={{
@@ -221,15 +274,15 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
           }}
         >
           {currentWin === "left"
-            ? `${dest1.name} edges ahead this month with a score of ${formatScoreInline(score1!)} vs ${score2 != null ? formatScoreInline(score2) : "—"}.`
+            ? t.edgesAhead(dest1.name, formatScoreInline(score1!), score2 != null ? formatScoreInline(score2) : "—")
             : currentWin === "right"
-              ? `${dest2.name} edges ahead this month with a score of ${formatScoreInline(score2!)} vs ${score1 != null ? formatScoreInline(score1) : "—"}.`
-              : `Both destinations score equally right now (${score1 != null ? formatScoreInline(score1) : "—"}).`}{" "}
+              ? t.edgesAhead(dest2.name, formatScoreInline(score2!), score1 != null ? formatScoreInline(score1) : "—")
+              : t.bothEqual(score1 != null ? formatScoreInline(score1) : "—")}{" "}
           {totalScore1 > totalScore2
-            ? `Overall, ${dest1.name} has more favourable months across the year.`
+            ? t.overallBetter(dest1.name)
             : totalScore2 > totalScore1
-              ? `Overall, ${dest2.name} has more favourable months across the year.`
-              : "Year-round, they're remarkably similar in overall score."}
+              ? t.overallBetter(dest2.name)
+              : t.overallSimilar}
         </p>
       </section>
 
@@ -244,7 +297,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
             textTransform: "uppercase",
           }}
         >
-          Side-by-side · {rows.length} factors
+          {t.sideBySide(rows.length)}
         </p>
         <div
           style={{
@@ -292,7 +345,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
             textTransform: "uppercase",
           }}
         >
-          Month-by-month score
+          {t.monthByMonth}
         </p>
         <div
           style={{
@@ -304,7 +357,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
           }}
         >
           {/* Header */}
-          <div style={tableHeadCell}>Month</div>
+          <div style={tableHeadCell}>{t.month}</div>
           <div style={{ ...tableNameCell, borderLeft: "1px solid var(--hair)" }}>{dest1.name}</div>
           <div style={{ ...tableNameCell, borderLeft: "1px solid var(--hair)" }}>{dest2.name}</div>
 
@@ -321,7 +374,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
                     background: isCurrent ? "rgba(229, 86, 66, 0.04)" : "var(--paper)",
                   }}
                 >
-                  <span style={{ color: isCurrent ? "var(--bone)" : "var(--bone-dim)" }}>{MONTH_SHORT[month]}</span>
+                  <span style={{ color: isCurrent ? "var(--bone)" : "var(--bone-dim)" }}>{monthNames[month]}</span>
                   {isCurrent && (
                     <span
                       style={{
@@ -334,7 +387,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
                         border: "1px solid var(--vermillion)",
                       }}
                     >
-                      Now
+                      {t.now}
                     </span>
                   )}
                 </div>
@@ -385,7 +438,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
                 margin: "0 0 10px",
               }}
             >
-              Choose {dest.name} if
+              {t.chooseIf(dest.name)}
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 18px", display: "flex", flexDirection: "column", gap: 10 }}>
               {reasons.map((r, i) => (
@@ -419,7 +472,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
                 paddingBottom: 2,
               }}
             >
-              Explore {dest.name} →
+              {t.explore(dest.name)}
             </Link>
           </div>
         ))}
