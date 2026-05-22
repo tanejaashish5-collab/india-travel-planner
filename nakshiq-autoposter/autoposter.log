@@ -1,30 +1,51 @@
-2026-05-22 14:03:49  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-22 14:03:49  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 14:03:49  INFO      Nakshiq Autoposter · EVENING · 2026-05-22 · weekday=4
-2026-05-22 14:03:49  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 14:03:49  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-22 14:04:35  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-22 14:04:36  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-22 14:04:36  INFO      [evening] variety pick: tourist_map (8 CSV + 3 visual candidates)
-2026-05-22 14:04:36  INFO      Formats — IG: tourist_map  ·  FB: tourist_map  ·  Story: reality_check  ·  Audience: adventurers
-2026-05-22 14:04:36  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-22 14:04:36  INFO      Delegating evening slot → tourist_map visual pipeline
-2026-05-22 14:04:36  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 14:04:36  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-05-22 · weekday=4
-2026-05-22 14:04:36  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 14:04:36  INFO      Tourist Map target: Tamil Nadu (TN) · cartographic · dark (28/28 states never featured)
-2026-05-22 14:04:36  INFO      Map rendered: tourist_map_TN_dark_cartographic.jpg (75 KB)
-2026-05-22 14:04:36  INFO          Requesting upload URL for tourist_map_TN_dark_cartographic.jpg (76,832 bytes, image/jpeg)
-2026-05-22 14:04:37  INFO          Uploading to R2 (timeout=120s)...
-2026-05-22 14:04:38  INFO          R2 PUT OK. Confirming...
-2026-05-22 14:04:39  INFO          Media ready: RFfPH (76,832 bytes · tourist_map_TN_dark_cartographic.jpg)
-2026-05-22 14:04:39  INFO      Map image uploaded: tourist_map_TN_dark_cartographic.jpg
-2026-05-22 14:04:40  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-22 14:04:40  INFO      [youtube/@naksh-iq] Skipping tourist map (YouTube only accepts video/reels).
-2026-05-22 14:04:40  INFO      [instagram/nakshiq] Publishing tourist map for Tamil Nadu...
-2026-05-22 14:04:43  INFO      [instagram/nakshiq] Tourist map posted successfully!
-2026-05-22 14:04:43  INFO      [facebook/Nakshiq] Publishing tourist map for Tamil Nadu...
-2026-05-22 14:04:46  INFO      [facebook/Nakshiq] Tourist map posted successfully!
-2026-05-22 14:04:46  INFO      Theme tracker updated: TN / TN_cartographic_dark
-2026-05-22 14:04:46  INFO      State saved. Tourist Map run complete.
-2026-05-22 14:04:46  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 16:41:04  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 16:41:04  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-22
+2026-05-22 16:41:04  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 16:41:11  INFO      Synced 50 new posts (total: 280)
+2026-05-22 16:41:11  INFO      ── Analytics Summary ──
+2026-05-22 16:41:11  INFO      Total posts tracked: 280
+2026-05-22 16:41:11  INFO      Successfully published: 225 | Failed: 46
+2026-05-22 16:41:11  INFO      
+2026-05-22 16:41:11  INFO      By content type:
+2026-05-22 16:41:11  INFO        feed_post: 107
+2026-05-22 16:41:11  INFO        yt_short: 68
+2026-05-22 16:41:11  INFO        reel: 67
+2026-05-22 16:41:11  INFO        canva_visual: 12
+2026-05-22 16:41:11  INFO        tourist_map: 12
+2026-05-22 16:41:11  INFO        infographic: 8
+2026-05-22 16:41:11  INFO        pomelli_visual: 6
+2026-05-22 16:41:11  INFO      
+2026-05-22 16:41:11  INFO      By format:
+2026-05-22 16:41:11  INFO        feed_post:unknown: 107
+2026-05-22 16:41:11  INFO        reel:destination: 24
+2026-05-22 16:41:11  INFO        reel:seasonal: 22
+2026-05-22 16:41:11  INFO        yt_short:listicle: 17
+2026-05-22 16:41:11  INFO        reel:map: 15
+2026-05-22 16:41:11  INFO        yt_short:did: 14
+2026-05-22 16:41:11  INFO        canva_visual:unknown: 12
+2026-05-22 16:41:11  INFO        tourist_map:unknown: 12
+2026-05-22 16:41:11  INFO        yt_short:before: 11
+2026-05-22 16:41:11  INFO        yt_short:mini: 11
+2026-05-22 16:41:11  INFO        infographic:unknown: 8
+2026-05-22 16:41:11  INFO        yt_short:this: 8
+2026-05-22 16:41:11  INFO        reel:score: 6
+2026-05-22 16:41:11  INFO        pomelli_visual:unknown: 6
+2026-05-22 16:41:11  INFO        yt_short:dont: 5
+2026-05-22 16:41:11  INFO        yt_short:v2: 2
+2026-05-22 16:41:11  INFO      
+2026-05-22 16:41:11  INFO      By platform:
+2026-05-22 16:41:11  INFO        instagram: 132
+2026-05-22 16:41:11  INFO        facebook: 81
+2026-05-22 16:41:11  INFO        youtube: 58
+2026-05-22 16:41:11  INFO      
+2026-05-22 16:41:11  INFO      YT Short format distribution:
+2026-05-22 16:41:11  INFO        listicle: 17 (25%)
+2026-05-22 16:41:11  INFO        did: 14 (21%)
+2026-05-22 16:41:11  INFO        before: 11 (16%)
+2026-05-22 16:41:11  INFO        mini: 11 (16%)
+2026-05-22 16:41:11  INFO        this: 8 (12%)
+2026-05-22 16:41:11  INFO        dont: 5 (7%)
+2026-05-22 16:41:11  INFO        v2: 2 (3%)
+2026-05-22 16:41:11  INFO      
+Date range: 2026-04-15 → 2026-05-22
+2026-05-22 16:41:11  INFO      ════════════════════════════════════════════════════════════
