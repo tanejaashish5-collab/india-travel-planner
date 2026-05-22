@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { m as motion, AnimatePresence } from "framer-motion";
+import { localizeRow, type Locale, type Translations } from "@itp/shared";
 
 interface POI {
   id: string;
@@ -12,6 +13,7 @@ interface POI {
   entry_fee: string | null;
   kids_suitable: boolean;
   tags: string[];
+  translations?: Translations<{ description?: string }> | null;
 }
 
 const TYPE_ICONS: Record<string, string> = {
@@ -33,8 +35,22 @@ const TYPE_LABELS: Record<string, string> = {
   monument: "Monuments", ruins: "Ruins", other: "Other",
 };
 
-export function POISection({ pois, destName }: { pois: POI[]; destName: string }) {
+export function POISection({
+  pois,
+  destName,
+  locale,
+}: {
+  pois: POI[];
+  destName: string;
+  locale: Locale;
+}) {
   const [activeType, setActiveType] = useState<string | null>(null);
+
+  // Swap in Hindi `description` from translations.hi on /hi/ — English untouched.
+  const localized = useMemo(
+    () => pois.map((p) => localizeRow(p, locale, ["description"])),
+    [pois, locale],
+  );
 
   // Get unique types present in this destination's POIs
   const types = useMemo(() => {
@@ -44,9 +60,9 @@ export function POISection({ pois, destName }: { pois: POI[]; destName: string }
   }, [pois]);
 
   const filtered = useMemo(() => {
-    if (!activeType) return pois;
-    return pois.filter((p) => p.type === activeType);
-  }, [pois, activeType]);
+    if (!activeType) return localized;
+    return localized.filter((p) => p.type === activeType);
+  }, [localized, activeType]);
 
   if (pois.length === 0) return null;
 

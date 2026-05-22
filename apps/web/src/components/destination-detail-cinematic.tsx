@@ -187,7 +187,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
   // Section TOC — same gates as production. Drives the in-guide jump nav so
   // readers can skip straight to The Window / The Risks / The Stay etc.
-  const subs = dest.sub_destinations ?? [];
+  const subs = (dest.sub_destinations ?? []).map((s: any) =>
+    localizeRow(s, locale, ["tagline", "why_visit", "kids_note", "highlights"]),
+  );
   const gems = dest.hidden_gems ?? [];
   const sections = [
     { id: "dest-act-2", label: "Verdict", show: true },
@@ -1366,7 +1368,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 destinations only have one or the other). */}
             {pois.length > 0 && (
               <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
-                <POISection pois={pois} destName={displayName} />
+                <POISection pois={pois} destName={displayName} locale={locale} />
               </div>
             )}
 

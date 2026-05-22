@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
 // Apply Hindi translations to translations.hi on local_eateries / local_stays
-// / destination_stay_picks. No translation API — reads an agent-produced JSON
-// file and writes it to the DB.
+// / destination_stay_picks / points_of_interest / sub_destinations. No
+// translation API — reads an agent-produced JSON file and writes it to the DB.
 //
 // Usage:
 //   node scripts/apply-translations.mjs --file data/research/translations/<state>-hi.json --dry-run
@@ -33,7 +33,11 @@ if (fi === -1 || !args[fi + 1]) {
 const FILE = path.resolve(args[fi + 1]);
 const DRY_RUN = !args.includes("--commit");
 
-const VALID_TABLES = new Set(["local_eateries", "local_stays", "destination_stay_picks"]);
+// All id-keyed except destination_stay_picks (destination_id + slot).
+const VALID_TABLES = new Set([
+  "local_eateries", "local_stays", "destination_stay_picks",
+  "points_of_interest", "sub_destinations",
+]);
 
 const entries = JSON.parse(readFileSync(FILE, "utf-8"));
 if (!Array.isArray(entries)) throw new Error("translation file must be a JSON array");

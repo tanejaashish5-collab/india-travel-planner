@@ -50,8 +50,12 @@
 //      reworked the sticky tray (mobile parity, slide-in, suppression), and
 //      sharpened the offer copy. Changes landing-coda + destination-page +
 //      /newsletter markup, so the bump purges nakshiq-v38-data.
+// v40: 2026-05-22 Hindi parity for POI + sub-destinations — POISection and the
+//      sub-destination cards now render translations.hi on /hi/ pages. Changes
+//      /hi/ destination-page text content, so the bump purges nakshiq-v39-data
+//      for returning PWA users.
 
-const CACHE_VERSION = "nakshiq-v39";
+const CACHE_VERSION = "nakshiq-v40";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

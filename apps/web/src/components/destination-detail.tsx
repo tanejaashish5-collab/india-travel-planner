@@ -122,7 +122,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
   // translations column). Falls back to English when slug missing from map.
   const stateName = (locale === "hi" && dest.state_id ? getStateName(dest.state_id, "hi") : enStateName) ?? enStateName;
   const months = (dest.destination_months ?? []).sort((a: any, b: any) => a.month - b.month);
-  const subs = dest.sub_destinations ?? [];
+  const subs = (dest.sub_destinations ?? []).map((s: any) =>
+    localizeRow(s, locale, ["tagline", "why_visit", "kids_note", "highlights"]),
+  );
   const gems = dest.hidden_gems ?? [];
   const legends = dest.local_legends ?? [];
   const eats = dest.viral_eats ?? [];
@@ -1353,7 +1355,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               )}
 
               {pois.length > 0 && (
-                <POISection pois={pois} destName={displayName} />
+                <POISection pois={pois} destName={displayName} locale={locale} />
               )}
             </section>
           )}

@@ -330,7 +330,7 @@ async function getDestination(id: string) {
     supabase.from("routes").select("id, name, days, difficulty").contains("stops", [id]).limit(5),
     fetchNearby(),
     supabase.from("emergency_sos").select("*").eq("destination_id", id).single(),
-    supabase.from("points_of_interest").select("id, name, type, description, time_needed, entry_fee, kids_suitable, tags").eq("destination_id", id).order("type"),
+    supabase.from("points_of_interest").select("id, name, type, description, time_needed, entry_fee, kids_suitable, tags, translations").eq("destination_id", id).order("type"),
     supabase.from("destination_stay_picks")
       .select("slot, name, property_type, price_band, why_nakshiq, signature_experience, sources, contact_only, contact_info, published, confidence, translations")
       .eq("destination_id", id)
