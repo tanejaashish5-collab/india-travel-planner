@@ -2,10 +2,10 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd": "2026-05-22",
-    "PdMu0": "2026-05-22"
+    "PdMu0": "2026-05-22",
+    "m8EAd": "2026-05-22"
   },
-  "last_sync": "2026-05-22T07:02:37.941651+00:00",
+  "last_sync": "2026-05-22T07:57:50.160826+00:00",
   "posted_destinations": [
     {
       "destination_id": "dwarka",
@@ -26,8 +26,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "hidden_gem_reveal"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +46,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "hidden_gem_reveal"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -441,42 +439,12 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-22T07:03:29.591056+00:00",
-      "date": "2026-05-22",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "Qc1my",
-      "destination": "dwarka",
-      "format": "hidden_gem_reveal",
-      "has_media": true,
-      "media_id": "dwarka.mp4"
-    },
-    {
-      "timestamp": "2026-05-22T07:04:13.300942+00:00",
-      "date": "2026-05-22",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "l5atK",
-      "destination": "dwarka",
-      "format": "hidden_gem_reveal",
-      "has_media": true,
-      "media_id": "dwarka.mp4"
     }
   ],
   "theme_usage": {
-    "morning_formats": {
-      "hidden_gem_reveal": [
-        "2026-05-22"
-      ]
-    },
-    "hidden_gem_reveal": {},
-    "destinations": {
-      "dwarka": [
-        "2026-05-22"
-      ]
-    }
+    "morning_formats": {},
+    "route_spotlight_short": {},
+    "destinations": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -490,7 +458,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "munsiyari"
+    "shared_best": "uttarkashi"
   },
   "manual_skip_dests": {}
 }

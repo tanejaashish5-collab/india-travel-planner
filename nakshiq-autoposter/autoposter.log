@@ -1,38 +1,21 @@
-2026-05-22 07:02:12  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-22 07:02:12  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 07:02:12  INFO      Nakshiq Autoposter · MORNING · 2026-05-22 · weekday=4
-2026-05-22 07:02:12  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 07:02:12  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-22 07:02:37  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-22 07:02:38  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-22 07:02:40  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-22 07:02:40  INFO      [csv_formats] 8/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-22 07:02:40  INFO      Morning format (themed-week-4→discovery): hidden_gem_reveal [0% vs target 20%] (14/14 never featured)
-2026-05-22 07:02:40  INFO      Formats — IG: hidden_gem_reveal  ·  FB: hidden_gem_reveal  ·  Story: infrastructure_truth
-2026-05-22 07:02:40  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-22 07:02:40  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 21 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-22 07:02:40  INFO      Hidden gem locked: Bet Dwarka Island (near Dwarka) (48/48 never featured)
-2026-05-22 07:02:43  INFO      Shared best destination locked: Munsiyari
-2026-05-22 07:02:43  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-22 07:02:43  INFO      [instagram/nakshiq] Generating hidden_gem_reveal post...
-2026-05-22 07:02:43  INFO      [instagram/nakshiq] Caption ready (362 chars, dest=dwarka)
-2026-05-22 07:02:44  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-22 07:02:44  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/dwarka.mp4?v=20260512
-2026-05-22 07:02:45  INFO          Requesting upload URL for dwarka.mp4 (6,615,508 bytes, video/mp4)
-2026-05-22 07:02:46  INFO          Uploading to R2 (timeout=300s)...
-2026-05-22 07:02:47  INFO          R2 PUT OK. Confirming...
-2026-05-22 07:02:47  INFO          Media ready: SVC6J (6,615,508 bytes · dwarka.mp4)
-2026-05-22 07:02:48  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-22 07:03:29  INFO      [instagram/nakshiq] ✅ Published · Outstand=Qc1my · Platform=18085133603409927
-2026-05-22 07:03:29  INFO      [facebook/Nakshiq] Generating hidden_gem_reveal post...
-2026-05-22 07:03:29  INFO      [facebook/Nakshiq] Caption ready (647 chars, dest=dwarka)
-2026-05-22 07:03:29  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-22 07:03:29  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/dwarka.mp4?v=20260512
-2026-05-22 07:03:30  INFO          Requesting upload URL for dwarka.mp4 (6,615,508 bytes, video/mp4)
-2026-05-22 07:03:30  INFO          Uploading to R2 (timeout=300s)...
-2026-05-22 07:03:32  INFO          R2 PUT OK. Confirming...
-2026-05-22 07:03:33  INFO          Media ready: BYVJn (6,615,508 bytes · dwarka.mp4)
-2026-05-22 07:03:33  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-22 07:04:13  INFO      [facebook/Nakshiq] ✅ Published · Outstand=l5atK · Platform=1564546448362220
-2026-05-22 07:04:13  INFO      State saved. Run complete.
-2026-05-22 07:04:13  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 07:57:15  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-22 07:57:15  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 07:57:15  INFO      Nakshiq Autoposter · MORNING · 2026-05-22 · weekday=4
+2026-05-22 07:57:15  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 07:57:15  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-22 07:57:50  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-22 07:57:51  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-22 07:57:52  INFO      Outstand dedup guard: merged 2 remote posts into state.
+2026-05-22 07:57:52  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-22 07:57:52  INFO      [csv_formats] 8/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-22 07:57:52  INFO      Morning format (themed-week-4→discovery): route_spotlight_short [0% vs target 20%] (14/14 never featured)
+2026-05-22 07:57:52  INFO      Formats — IG: route_spotlight_short  ·  FB: route_spotlight_short  ·  Story: infrastructure_truth
+2026-05-22 07:57:52  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
+2026-05-22 07:57:52  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 21 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-22 07:57:52  INFO      Route short locked: Ladakh Express (7 days, fly-in/fly-out) (23/23 never featured)
+2026-05-22 07:57:56  INFO      Shared best destination locked: Uttarkashi
+2026-05-22 07:57:56  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-22 07:57:56  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-05-22 07:57:56  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-05-22 07:57:56  INFO      State saved. Run complete.
+2026-05-22 07:57:56  INFO      ════════════════════════════════════════════════════════════
