@@ -2,16 +2,11 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "PdMu0": "2026-05-22",
-    "m8EAd": "2026-05-22"
+    "m8EAd_tourist_map": "2026-05-22",
+    "PdMu0_tourist_map": "2026-05-22"
   },
-  "last_sync": "2026-05-22T07:57:50.160826+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "dwarka",
-      "date": "2026-05-22"
-    }
-  ],
+  "last_sync": "2026-05-22T14:04:35.684595+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -439,12 +434,42 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-22T14:04:43.839413+00:00",
+      "date": "2026-05-22",
+      "platform": "instagram",
+      "post_id": "4YaFi",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "TN_cartographic_dark"
+    },
+    {
+      "timestamp": "2026-05-22T14:04:46.908200+00:00",
+      "date": "2026-05-22",
+      "platform": "facebook",
+      "post_id": "74S6W",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "TN_cartographic_dark"
     }
   ],
   "theme_usage": {
-    "morning_formats": {},
-    "route_spotlight_short": {},
-    "destinations": {}
+    "morning_formats": {
+      "tourist_map": [
+        "2026-05-22"
+      ]
+    },
+    "tourist_map_states": {
+      "TN": [
+        "2026-05-22"
+      ]
+    },
+    "tourist_map_combos": {
+      "TN_cartographic_dark": [
+        "2026-05-22"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -457,8 +482,6 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "uttarkashi"
-  },
+  "last_picked": {},
   "manual_skip_dests": {}
 }

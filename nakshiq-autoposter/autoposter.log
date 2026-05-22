@@ -1,21 +1,30 @@
-2026-05-22 07:57:15  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-22 07:57:15  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 07:57:15  INFO      Nakshiq Autoposter · MORNING · 2026-05-22 · weekday=4
-2026-05-22 07:57:15  INFO      ════════════════════════════════════════════════════════════
-2026-05-22 07:57:15  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-22 07:57:50  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-22 07:57:51  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-22 07:57:52  INFO      Outstand dedup guard: merged 2 remote posts into state.
-2026-05-22 07:57:52  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-22 07:57:52  INFO      [csv_formats] 8/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-22 07:57:52  INFO      Morning format (themed-week-4→discovery): route_spotlight_short [0% vs target 20%] (14/14 never featured)
-2026-05-22 07:57:52  INFO      Formats — IG: route_spotlight_short  ·  FB: route_spotlight_short  ·  Story: infrastructure_truth
-2026-05-22 07:57:52  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
-2026-05-22 07:57:52  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 21 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-22 07:57:52  INFO      Route short locked: Ladakh Express (7 days, fly-in/fly-out) (23/23 never featured)
-2026-05-22 07:57:56  INFO      Shared best destination locked: Uttarkashi
-2026-05-22 07:57:56  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-22 07:57:56  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
-2026-05-22 07:57:56  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
-2026-05-22 07:57:56  INFO      State saved. Run complete.
-2026-05-22 07:57:56  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 14:03:49  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-22 14:03:49  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 14:03:49  INFO      Nakshiq Autoposter · EVENING · 2026-05-22 · weekday=4
+2026-05-22 14:03:49  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 14:03:49  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-22 14:04:35  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-22 14:04:36  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-22 14:04:36  INFO      [evening] variety pick: tourist_map (8 CSV + 3 visual candidates)
+2026-05-22 14:04:36  INFO      Formats — IG: tourist_map  ·  FB: tourist_map  ·  Story: reality_check  ·  Audience: adventurers
+2026-05-22 14:04:36  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-22 14:04:36  INFO      Delegating evening slot → tourist_map visual pipeline
+2026-05-22 14:04:36  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 14:04:36  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-05-22 · weekday=4
+2026-05-22 14:04:36  INFO      ════════════════════════════════════════════════════════════
+2026-05-22 14:04:36  INFO      Tourist Map target: Tamil Nadu (TN) · cartographic · dark (28/28 states never featured)
+2026-05-22 14:04:36  INFO      Map rendered: tourist_map_TN_dark_cartographic.jpg (75 KB)
+2026-05-22 14:04:36  INFO          Requesting upload URL for tourist_map_TN_dark_cartographic.jpg (76,832 bytes, image/jpeg)
+2026-05-22 14:04:37  INFO          Uploading to R2 (timeout=120s)...
+2026-05-22 14:04:38  INFO          R2 PUT OK. Confirming...
+2026-05-22 14:04:39  INFO          Media ready: RFfPH (76,832 bytes · tourist_map_TN_dark_cartographic.jpg)
+2026-05-22 14:04:39  INFO      Map image uploaded: tourist_map_TN_dark_cartographic.jpg
+2026-05-22 14:04:40  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-22 14:04:40  INFO      [youtube/@naksh-iq] Skipping tourist map (YouTube only accepts video/reels).
+2026-05-22 14:04:40  INFO      [instagram/nakshiq] Publishing tourist map for Tamil Nadu...
+2026-05-22 14:04:43  INFO      [instagram/nakshiq] Tourist map posted successfully!
+2026-05-22 14:04:43  INFO      [facebook/Nakshiq] Publishing tourist map for Tamil Nadu...
+2026-05-22 14:04:46  INFO      [facebook/Nakshiq] Tourist map posted successfully!
+2026-05-22 14:04:46  INFO      Theme tracker updated: TN / TN_cartographic_dark
+2026-05-22 14:04:46  INFO      State saved. Tourist Map run complete.
+2026-05-22 14:04:46  INFO      ════════════════════════════════════════════════════════════
