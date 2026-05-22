@@ -73,6 +73,32 @@ function parseWindow(w) {
   return parseInt(m[1], 10);
 }
 
+// ─── Destination/month page helpers ───────────────────────────────────────
+// Used by the `dest-month-ctr` GSC query and the `cohort` command to isolate
+// /destination/<slug>/<month> pages and key them by the DB tuple.
+const MONTH_SLUGS = [
+  "january", "february", "march", "april", "may", "june",
+  "july", "august", "september", "october", "november", "december",
+];
+const DEST_MONTH_RE = new RegExp(
+  `/(?:(en|hi)/)?destination/([^/]+)/(${MONTH_SLUGS.join("|")})/?$`, "i",
+);
+
+// Parse a GSC page URL into { locale, destination_id, month } or null.
+// destinations.id IS the slug, so the slug segment is the DB key directly.
+// A non-prefixed /destination/... URL (pre-canonical-consolidation) maps to en.
+function parseDestMonthUrl(url) {
+  let p;
+  try { p = new URL(url).pathname; } catch { p = String(url); }
+  const m = p.match(DEST_MONTH_RE);
+  if (!m) return null;
+  return {
+    locale: (m[1] || "en").toLowerCase(),
+    destination_id: m[2].toLowerCase(),
+    month: m[3].toLowerCase(),
+  };
+}
+
 // ─── Output formatting ────────────────────────────────────────────────────
 function pad(s, n) { return String(s).padEnd(n).slice(0, n); }
 function lpad(s, n) { return String(s).padStart(n).slice(0, n); }
@@ -159,6 +185,40 @@ async function gscQuery({ startDate, endDate, dimensions = ["query"], rowLimit =
     },
   });
   return data.rows ?? [];
+}
+
+// Fetch every /destination/<slug>/<month> page from GSC, aggregated by
+// (locale, destination_id, month) — so a non-prefixed /destination/... URL and
+// its /en/ canonical merge into one row with an impression-weighted position.
+async function fetchDestMonthPages(startDate, endDate) {
+  const raw = await gscQuery({ startDate, endDate, dimensions: ["page"], rowLimit: 5000 });
+  const byKey = new Map();
+  for (const r of raw) {
+    const parsed = parseDestMonthUrl(r.keys?.[0] ?? "");
+    if (!parsed) continue;
+    const key = `${parsed.locale}/${parsed.destination_id}/${parsed.month}`;
+    const prev = byKey.get(key) ?? {
+      page: `/${parsed.locale}/destination/${parsed.destination_id}/${parsed.month}`,
+      locale: parsed.locale,
+      destination_id: parsed.destination_id,
+      month: parsed.month,
+      impressions: 0, clicks: 0, _posWeight: 0,
+    };
+    prev.impressions += r.impressions ?? 0;
+    prev.clicks += r.clicks ?? 0;
+    prev._posWeight += (r.position ?? 0) * (r.impressions ?? 0);
+    byKey.set(key, prev);
+  }
+  return Array.from(byKey.values()).map((r) => ({
+    page: r.page,
+    locale: r.locale,
+    destination_id: r.destination_id,
+    month: r.month,
+    impressions: r.impressions,
+    clicks: r.clicks,
+    ctr: r.impressions ? r.clicks / r.impressions : 0,
+    position: r.impressions ? r._posWeight / r.impressions : 0,
+  }));
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -394,6 +454,32 @@ const GSC_QUERIES = {
     ],
   },
 
+  "dest-month-ctr": {
+    title: "Destination/month pages — per-page CTR (title-override CRO cohort)",
+    why: "Per-PAGE (not per-query) CTR for every /destination/<slug>/<month> page. Feeds the title_override pipeline. Tier A = avg position ≤10 AND impressions ≥300 AND CTR <2% — see `cohort` command.",
+    days: 28,
+    async run(days) {
+      const rows = await fetchDestMonthPages(daysAgo(days), today());
+      return rows
+        .sort((a, b) => b.impressions - a.impressions)
+        .slice(0, 60)
+        .map((r) => ({
+          page: r.page.length > 50 ? r.page.slice(0, 47) + "..." : r.page,
+          impressions: r.impressions,
+          clicks: r.clicks,
+          ctr: (r.ctr * 100).toFixed(2) + "%",
+          position: r.position.toFixed(1),
+        }));
+    },
+    cols: [
+      { key: "page", label: "Page", align: "left" },
+      { key: "impressions", label: "Impr.", align: "right" },
+      { key: "clicks", label: "Clicks", align: "right" },
+      { key: "ctr", label: "CTR", align: "right" },
+      { key: "position", label: "Avg pos", align: "right" },
+    ],
+  },
+
   "almost-page1": {
     title: "Queries ranking 4-15 — almost-on-page-1, highest-leverage SEO",
     why: "One position move from 11→9 doubles clicks. From 6→3 quadruples them. These queries are the closest revenue from existing content.",
@@ -541,7 +627,8 @@ function listAll() {
   console.log("\nUsage:");
   console.log("  node scripts/data-pull.mjs ga4 <query> [window]    e.g. ga4 human-pages 28d");
   console.log("  node scripts/data-pull.mjs gsc <query> [window]    e.g. gsc low-ctr 28d");
-  console.log("  node scripts/data-pull.mjs baseline                run all + write report\n");
+  console.log("  node scripts/data-pull.mjs baseline                run all + write report");
+  console.log("  node scripts/data-pull.mjs cohort [window]         write data/cro/cohort-<date>.json (title-override CRO)\n");
 }
 
 async function runOne(kind, name, win) {
@@ -638,6 +725,65 @@ async function runBaseline() {
   console.log(`  ${totalRows} rows of actionable signal\n`);
 }
 
+// ─── Title-override cohort ────────────────────────────────────────────────
+// Produces data/cro/cohort-<date>.json — the Tier-A list of destination/month
+// pages where a hand-written SERP title (title_override) is the lever.
+async function runCohort() {
+  const days = parseWindow(window);
+  const start = daysAgo(days), end = today();
+  const stamp = today();
+  console.log(`\n━━━ Title-override cohort — destination/month pages ━━━`);
+  console.log(`window: last ${days}d (${start} → ${end})`);
+  console.log(`Tier A: avg position ≤10 AND impressions ≥300 AND CTR <2%\n`);
+
+  const all = await fetchDestMonthPages(start, end);
+  const tierA = all
+    .filter((r) => r.position > 0 && r.position <= 10 && r.impressions >= 300 && r.ctr < 0.02)
+    .sort((a, b) => b.impressions - a.impressions)
+    .slice(0, 40);
+
+  console.log(table(
+    tierA.map((r) => ({
+      page: r.page.length > 50 ? r.page.slice(0, 47) + "..." : r.page,
+      impressions: r.impressions,
+      clicks: r.clicks,
+      ctr: (r.ctr * 100).toFixed(2) + "%",
+      position: r.position.toFixed(1),
+    })),
+    [
+      { key: "page", label: "Page", align: "left" },
+      { key: "impressions", label: "Impr.", align: "right" },
+      { key: "clicks", label: "Clicks", align: "right" },
+      { key: "ctr", label: "CTR", align: "right" },
+      { key: "position", label: "Avg pos", align: "right" },
+    ],
+  ));
+
+  const payload = {
+    generated: new Date().toISOString(),
+    window_days: days,
+    window: { start, end },
+    criteria: "position>0 AND position<=10 AND impressions>=300 AND ctr<0.02 (top 40 by impressions)",
+    total_dest_month_pages: all.length,
+    cohort_size: tierA.length,
+    cohort: tierA.map((r) => ({
+      page: r.page,
+      locale: r.locale,
+      destination_id: r.destination_id,
+      month: r.month,
+      impressions: r.impressions,
+      clicks: r.clicks,
+      ctr: Number(r.ctr.toFixed(5)),
+      position: Number(r.position.toFixed(1)),
+    })),
+  };
+  const outPath = path.join(ROOT, "data", "cro", `cohort-${stamp}.json`);
+  mkdirSync(path.dirname(outPath), { recursive: true });
+  writeFileSync(outPath, JSON.stringify(payload, null, 2) + "\n");
+  console.log(`\n  ${all.length} destination/month pages scanned → ${tierA.length} in Tier-A cohort`);
+  console.log(`→ wrote ${outPath}\n`);
+}
+
 // ─── Dispatch ────────────────────────────────────────────────────────────
 try {
   if (cmd === "list" || cmd === "--help" || cmd === "-h") {
@@ -647,6 +793,8 @@ try {
     await runOne(cmd, sub, window);
   } else if (cmd === "baseline") {
     await runBaseline();
+  } else if (cmd === "cohort") {
+    await runCohort();
   } else {
     console.error(`Unknown command: ${cmd}`);
     listAll();

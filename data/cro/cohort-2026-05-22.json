@@ -1,0 +1,413 @@
+{
+  "generated": "2026-05-22T00:12:33.392Z",
+  "window_days": 28,
+  "window": {
+    "start": "2026-04-24",
+    "end": "2026-05-22"
+  },
+  "criteria": "position>0 AND position<=10 AND impressions>=300 AND ctr<0.02 (top 40 by impressions)",
+  "total_dest_month_pages": 3315,
+  "cohort_size": 40,
+  "cohort": [
+    {
+      "page": "/en/destination/tungnath/may",
+      "locale": "en",
+      "destination_id": "tungnath",
+      "month": "may",
+      "impressions": 3315,
+      "clicks": 16,
+      "ctr": 0.00483,
+      "position": 7.3
+    },
+    {
+      "page": "/en/destination/nainital/may",
+      "locale": "en",
+      "destination_id": "nainital",
+      "month": "may",
+      "impressions": 2787,
+      "clicks": 3,
+      "ctr": 0.00108,
+      "position": 8.7
+    },
+    {
+      "page": "/hi/destination/darjeeling/may",
+      "locale": "hi",
+      "destination_id": "darjeeling",
+      "month": "may",
+      "impressions": 2762,
+      "clicks": 6,
+      "ctr": 0.00217,
+      "position": 9.2
+    },
+    {
+      "page": "/en/destination/vrindavan/june",
+      "locale": "en",
+      "destination_id": "vrindavan",
+      "month": "june",
+      "impressions": 2741,
+      "clicks": 4,
+      "ctr": 0.00146,
+      "position": 9.9
+    },
+    {
+      "page": "/en/destination/kasauli/may",
+      "locale": "en",
+      "destination_id": "kasauli",
+      "month": "may",
+      "impressions": 2480,
+      "clicks": 4,
+      "ctr": 0.00161,
+      "position": 9
+    },
+    {
+      "page": "/en/destination/kochi/may",
+      "locale": "en",
+      "destination_id": "kochi",
+      "month": "may",
+      "impressions": 1956,
+      "clicks": 3,
+      "ctr": 0.00153,
+      "position": 9.7
+    },
+    {
+      "page": "/hi/destination/tungnath/june",
+      "locale": "hi",
+      "destination_id": "tungnath",
+      "month": "june",
+      "impressions": 1858,
+      "clicks": 8,
+      "ctr": 0.00431,
+      "position": 6.3
+    },
+    {
+      "page": "/en/destination/munnar/june",
+      "locale": "en",
+      "destination_id": "munnar",
+      "month": "june",
+      "impressions": 1819,
+      "clicks": 10,
+      "ctr": 0.0055,
+      "position": 8.1
+    },
+    {
+      "page": "/en/destination/kasol/may",
+      "locale": "en",
+      "destination_id": "kasol",
+      "month": "may",
+      "impressions": 1770,
+      "clicks": 6,
+      "ctr": 0.00339,
+      "position": 7.9
+    },
+    {
+      "page": "/en/destination/yercaud/may",
+      "locale": "en",
+      "destination_id": "yercaud",
+      "month": "may",
+      "impressions": 1655,
+      "clicks": 4,
+      "ctr": 0.00242,
+      "position": 8.9
+    },
+    {
+      "page": "/en/destination/vrindavan/may",
+      "locale": "en",
+      "destination_id": "vrindavan",
+      "month": "may",
+      "impressions": 1335,
+      "clicks": 6,
+      "ctr": 0.00449,
+      "position": 9.9
+    },
+    {
+      "page": "/en/destination/mahabaleshwar/june",
+      "locale": "en",
+      "destination_id": "mahabaleshwar",
+      "month": "june",
+      "impressions": 1161,
+      "clicks": 4,
+      "ctr": 0.00345,
+      "position": 8
+    },
+    {
+      "page": "/en/destination/bhopal/june",
+      "locale": "en",
+      "destination_id": "bhopal",
+      "month": "june",
+      "impressions": 1128,
+      "clicks": 3,
+      "ctr": 0.00266,
+      "position": 8.8
+    },
+    {
+      "page": "/en/destination/dhanaulti/may",
+      "locale": "en",
+      "destination_id": "dhanaulti",
+      "month": "may",
+      "impressions": 1078,
+      "clicks": 7,
+      "ctr": 0.00649,
+      "position": 7.7
+    },
+    {
+      "page": "/en/destination/valparai/may",
+      "locale": "en",
+      "destination_id": "valparai",
+      "month": "may",
+      "impressions": 1071,
+      "clicks": 1,
+      "ctr": 0.00093,
+      "position": 8.8
+    },
+    {
+      "page": "/hi/destination/bhopal/june",
+      "locale": "hi",
+      "destination_id": "bhopal",
+      "month": "june",
+      "impressions": 977,
+      "clicks": 4,
+      "ctr": 0.00409,
+      "position": 8.3
+    },
+    {
+      "page": "/en/destination/kalpa/june",
+      "locale": "en",
+      "destination_id": "kalpa",
+      "month": "june",
+      "impressions": 948,
+      "clicks": 2,
+      "ctr": 0.00211,
+      "position": 9.2
+    },
+    {
+      "page": "/hi/destination/jabalpur/june",
+      "locale": "hi",
+      "destination_id": "jabalpur",
+      "month": "june",
+      "impressions": 922,
+      "clicks": 6,
+      "ctr": 0.00651,
+      "position": 8.2
+    },
+    {
+      "page": "/hi/destination/rameswaram/june",
+      "locale": "hi",
+      "destination_id": "rameswaram",
+      "month": "june",
+      "impressions": 907,
+      "clicks": 6,
+      "ctr": 0.00662,
+      "position": 8.9
+    },
+    {
+      "page": "/en/destination/jaipur/july",
+      "locale": "en",
+      "destination_id": "jaipur",
+      "month": "july",
+      "impressions": 896,
+      "clicks": 3,
+      "ctr": 0.00335,
+      "position": 9
+    },
+    {
+      "page": "/en/destination/chakrata/may",
+      "locale": "en",
+      "destination_id": "chakrata",
+      "month": "may",
+      "impressions": 881,
+      "clicks": 3,
+      "ctr": 0.00341,
+      "position": 5.9
+    },
+    {
+      "page": "/en/destination/somnath/june",
+      "locale": "en",
+      "destination_id": "somnath",
+      "month": "june",
+      "impressions": 865,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 7.6
+    },
+    {
+      "page": "/en/destination/yercaud/june",
+      "locale": "en",
+      "destination_id": "yercaud",
+      "month": "june",
+      "impressions": 824,
+      "clicks": 1,
+      "ctr": 0.00121,
+      "position": 9.5
+    },
+    {
+      "page": "/en/destination/pachmarhi/may",
+      "locale": "en",
+      "destination_id": "pachmarhi",
+      "month": "may",
+      "impressions": 808,
+      "clicks": 3,
+      "ctr": 0.00371,
+      "position": 9.9
+    },
+    {
+      "page": "/en/destination/udupi/may",
+      "locale": "en",
+      "destination_id": "udupi",
+      "month": "may",
+      "impressions": 785,
+      "clicks": 1,
+      "ctr": 0.00127,
+      "position": 9
+    },
+    {
+      "page": "/en/destination/lambasingi/may",
+      "locale": "en",
+      "destination_id": "lambasingi",
+      "month": "may",
+      "impressions": 784,
+      "clicks": 4,
+      "ctr": 0.0051,
+      "position": 9.7
+    },
+    {
+      "page": "/en/destination/gokarna/may",
+      "locale": "en",
+      "destination_id": "gokarna",
+      "month": "may",
+      "impressions": 735,
+      "clicks": 2,
+      "ctr": 0.00272,
+      "position": 9.3
+    },
+    {
+      "page": "/en/destination/dharamshala/june",
+      "locale": "en",
+      "destination_id": "dharamshala",
+      "month": "june",
+      "impressions": 721,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.6
+    },
+    {
+      "page": "/en/destination/kanatal/may",
+      "locale": "en",
+      "destination_id": "kanatal",
+      "month": "may",
+      "impressions": 704,
+      "clicks": 6,
+      "ctr": 0.00852,
+      "position": 8.6
+    },
+    {
+      "page": "/hi/destination/gwalior/may",
+      "locale": "hi",
+      "destination_id": "gwalior",
+      "month": "may",
+      "impressions": 695,
+      "clicks": 2,
+      "ctr": 0.00288,
+      "position": 7.9
+    },
+    {
+      "page": "/en/destination/chakrata/june",
+      "locale": "en",
+      "destination_id": "chakrata",
+      "month": "june",
+      "impressions": 685,
+      "clicks": 3,
+      "ctr": 0.00438,
+      "position": 9.4
+    },
+    {
+      "page": "/en/destination/kukke-subramanya/may",
+      "locale": "en",
+      "destination_id": "kukke-subramanya",
+      "month": "may",
+      "impressions": 629,
+      "clicks": 2,
+      "ctr": 0.00318,
+      "position": 8.9
+    },
+    {
+      "page": "/hi/destination/yamunotri/may",
+      "locale": "hi",
+      "destination_id": "yamunotri",
+      "month": "may",
+      "impressions": 625,
+      "clicks": 2,
+      "ctr": 0.0032,
+      "position": 9
+    },
+    {
+      "page": "/hi/destination/lonavala/june",
+      "locale": "hi",
+      "destination_id": "lonavala",
+      "month": "june",
+      "impressions": 610,
+      "clicks": 3,
+      "ctr": 0.00492,
+      "position": 8.1
+    },
+    {
+      "page": "/en/destination/kabini/may",
+      "locale": "en",
+      "destination_id": "kabini",
+      "month": "may",
+      "impressions": 559,
+      "clicks": 2,
+      "ctr": 0.00358,
+      "position": 9.1
+    },
+    {
+      "page": "/en/destination/gurez-valley/june",
+      "locale": "en",
+      "destination_id": "gurez-valley",
+      "month": "june",
+      "impressions": 547,
+      "clicks": 3,
+      "ctr": 0.00548,
+      "position": 6.9
+    },
+    {
+      "page": "/en/destination/dharmasthala/may",
+      "locale": "en",
+      "destination_id": "dharmasthala",
+      "month": "may",
+      "impressions": 541,
+      "clicks": 1,
+      "ctr": 0.00185,
+      "position": 8.5
+    },
+    {
+      "page": "/en/destination/mangalore/may",
+      "locale": "en",
+      "destination_id": "mangalore",
+      "month": "may",
+      "impressions": 525,
+      "clicks": 2,
+      "ctr": 0.00381,
+      "position": 9.5
+    },
+    {
+      "page": "/en/destination/barot-valley/june",
+      "locale": "en",
+      "destination_id": "barot-valley",
+      "month": "june",
+      "impressions": 513,
+      "clicks": 4,
+      "ctr": 0.0078,
+      "position": 6.1
+    },
+    {
+      "page": "/en/destination/tirthan-valley/june",
+      "locale": "en",
+      "destination_id": "tirthan-valley",
+      "month": "june",
+      "impressions": 507,
+      "clicks": 2,
+      "ctr": 0.00394,
+      "position": 8.3
+    }
+  ]
+}

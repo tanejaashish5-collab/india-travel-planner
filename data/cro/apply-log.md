@@ -1,0 +1,3 @@
+# Title-override apply log
+
+- 2026-05-22T00:25:28.249Z — applied 32 override(s): tungnath/may[en], nainital/may[en], kasauli/may[en], kochi/may[en], mahabaleshwar/june[en], bhopal/june[en], dhanaulti/may[en], valparai/may[en], kalpa/june[en], jaipur/july[en], chakrata/may[en], somnath/june[en], yercaud/june[en], pachmarhi/may[en], udupi/may[en], lambasingi/may[en], gokarna/may[en], dharamshala/june[en], chakrata/june[en], kukke-subramanya/may[en], kabini/may[en], gurez-valley/june[en], dharmasthala/may[en], mangalore/may[en], barot-valley/june[en], tirthan-valley/june[en], tungnath/june[hi], jabalpur/june[hi], rameswaram/june[hi], gwalior/may[hi], yamunotri/may[hi], lonavala/june[hi]
