@@ -1,0 +1,21 @@
+-- 060_enable_rls_destination_alerts.sql
+--
+-- Fixes Supabase Security Advisor error: "RLS Disabled in Public" on
+-- public.destination_alerts.
+--
+-- destination_alerts holds email addresses (PII) plus confirmation and
+-- unsubscribe tokens. Every access path is a server-side API route
+-- (subscribe / confirm / unsubscribe / cron-send) using
+-- SUPABASE_SERVICE_ROLE_KEY, and the service_role bypasses RLS. There is
+-- no legitimate anon / authenticated access to this table.
+--
+-- Enabling RLS with ZERO policies is therefore the correct posture: the
+-- service-role API routes keep full access, while the public anon key and
+-- signed-in users are denied entirely. (Same pattern as membership_waitlist.)
+--
+-- Apply with:
+--   npm run db:migrate
+--
+-- Applied to prod project dudzsdzfvikjjhurxrgc on 2026-05-20.
+
+ALTER TABLE public.destination_alerts ENABLE ROW LEVEL SECURITY;
