@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
@@ -6,6 +7,7 @@ import { notFound } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
 import { festivalsItemListJsonLd } from "@/lib/festival-schema";
+import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
@@ -54,6 +56,13 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
     .select("*, destinations!inner(name, state_id, state:states(name))")
     .eq("destinations.state_id", stateSlug)
     .order("month");
+
+  // Full slug map (across all 331 rows) so each card can link to its
+  // per-festival page. Collision-aware: 11 names dup across destinations.
+  const { data: allRows } = await supabase
+    .from("festivals")
+    .select("id, name, destination_id");
+  const slugMap = buildFestivalSlugMap((allRows ?? []) as FestivalSlugRow[]);
 
   const grouped = (festivals ?? []).reduce((acc: Record<number, FestivalRow[]>, f: FestivalRow) => {
     const m = f.month || 0;
@@ -169,7 +178,9 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
                   border: "1px solid var(--hair)",
                 }}
               >
-                {(fests as FestivalRow[]).map((f) => (
+                {(fests as FestivalRow[]).map((f) => {
+                  const fSlug = slugMap.get(f.id);
+                  return (
                   <div
                     key={f.id}
                     style={{
@@ -188,7 +199,16 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
                         margin: "0 0 4px",
                       }}
                     >
-                      {f.name}
+                      {fSlug ? (
+                        <Link
+                          href={`/${locale}/festivals/${fSlug}`}
+                          style={{ color: "inherit", textDecoration: "none" }}
+                        >
+                          {f.name}
+                        </Link>
+                      ) : (
+                        f.name
+                      )}
                     </h3>
                     <p
                       style={{
@@ -220,7 +240,8 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
                       </p>
                     )}
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           ))}

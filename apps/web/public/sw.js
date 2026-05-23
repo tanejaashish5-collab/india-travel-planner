@@ -65,8 +65,13 @@
 //      (sapta-puris etc.) 404'd because the raw <img> bypassed Next/Image's
 //      r2Loader. Now uses imageUrl() to resolve R2 WebP directly. Landing-
 //      page markup change → bump purges nakshiq-v42-data.
+// v44: 2026-05-23 Per-festival detail pages — /festivals/[slug] new route
+//      (331 rows × 2 locales ≈ 662 indexed URLs). Festival cards on the
+//      index, month, state, and state+month list views now link to the
+//      detail page instead of the host destination. Fixed a pre-existing
+//      bug where list views read f.dates (DB column is approximate_date).
 
-const CACHE_VERSION = "nakshiq-v43";
+const CACHE_VERSION = "nakshiq-v44";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

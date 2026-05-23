@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { festivalsItemListJsonLd } from "@/lib/festival-schema";
+import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
@@ -44,7 +45,8 @@ type FestivalRow = {
   id: string;
   name: string;
   description?: string | null;
-  dates?: string | null;
+  approximate_date?: string | null;
+  destination_id?: string | null;
   destinations?: { name?: string; state?: { name?: string } | null } | null;
 };
 
@@ -61,6 +63,13 @@ export default async function FestivalsByMonthPage({ params }: { params: Promise
     .select("*, destinations(name, state:states(name))")
     .eq("month", m.num)
     .order("name");
+
+  // Full slug map (across all 331 rows) so each card can link to its
+  // per-festival page. Collision-aware: 11 names dup across destinations.
+  const { data: allRows } = await supabase
+    .from("festivals")
+    .select("id, name, destination_id");
+  const slugMap = buildFestivalSlugMap((allRows ?? []) as FestivalSlugRow[]);
 
   const MONTH_SLUGS = Object.keys(MONTH_MAP);
   const pageUrl = `https://www.nakshiq.com/${locale}/festivals/month/${monthSlug}`;
@@ -186,7 +195,9 @@ export default async function FestivalsByMonthPage({ params }: { params: Promise
                 border: "1px solid var(--hair)",
               }}
             >
-              {(festivals ?? []).map((f: FestivalRow) => (
+              {(festivals ?? []).map((f: FestivalRow) => {
+                const fSlug = slugMap.get(f.id);
+                return (
                 <div
                   key={f.id}
                   style={{
@@ -208,7 +219,16 @@ export default async function FestivalsByMonthPage({ params }: { params: Promise
                       margin: 0,
                     }}
                   >
-                    {f.name}
+                    {fSlug ? (
+                      <Link
+                        href={`/${locale}/festivals/${fSlug}`}
+                        style={{ color: "inherit", textDecoration: "none" }}
+                      >
+                        {f.name}
+                      </Link>
+                    ) : (
+                      f.name
+                    )}
                   </h3>
                   <div
                     style={{
@@ -239,7 +259,7 @@ export default async function FestivalsByMonthPage({ params }: { params: Promise
                       {f.description}
                     </p>
                   )}
-                  {f.dates && (
+                  {f.approximate_date && (
                     <p
                       style={{
                         fontFamily: "var(--cinema-mono)",
@@ -249,11 +269,12 @@ export default async function FestivalsByMonthPage({ params }: { params: Promise
                         margin: 0,
                       }}
                     >
-                      {f.dates}
+                      {f.approximate_date}
                     </p>
                   )}
                 </div>
-              ))}
+                );
+              })}
             </div>
           ) : (
             <div

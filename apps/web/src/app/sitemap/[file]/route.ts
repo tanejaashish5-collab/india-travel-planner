@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
+import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
 
 // Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
 // generateSitemaps() convention because its auto-generated /sitemap.xml
@@ -252,7 +253,17 @@ async function buildChunk(id: string): Promise<Entry[]> {
       MONTH_SLUGS.flatMap((month) => entry(`region/${r.id}/${month}`, "monthly", 0.7)),
     );
 
-    return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries];
+    // Per-festival pages — 331 rows × 2 locales ≈ 662 URLs. Collision-aware
+    // slugs (11 duplicates carry a -{destination_id} suffix).
+    const { data: festivalRows } = await supabase
+      .from("festivals")
+      .select("id, name, destination_id");
+    const festivalSlugMap = buildFestivalSlugMap((festivalRows ?? []) as FestivalSlugRow[]);
+    const festivalEntries = Array.from(festivalSlugMap.values()).flatMap((slug) =>
+      entry(`festivals/${slug}`, "monthly", 0.75),
+    );
+
+    return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries, ...festivalEntries];
   }
 
   if (id === "5") {

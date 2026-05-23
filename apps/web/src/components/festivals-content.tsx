@@ -7,6 +7,7 @@ import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard, ScrollReveal, PulseGlow } from "./animated-hero";
 import { RegionFilterBar, RegionKey, getStateId, stateInRegion } from "./region-filter";
 import { currentMonthIST } from "@itp/shared";
+import { buildFestivalSlugMap } from "@/lib/festival-slug";
 
 const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -33,6 +34,8 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
   const [selectedMonth, setSelectedMonth] = useState(0); // 0 = all
   const [search, setSearch] = useState("");
   const [activeRegion, setActiveRegion] = useState<RegionKey>(null);
+
+  const slugMap = useMemo(() => buildFestivalSlugMap(festivals as { id: string; name: string; destination_id: string | null }[]), [festivals]);
 
   const filtered = useMemo(() => {
     return festivals.filter((f) => {
@@ -145,7 +148,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
                 <StaggerItem key={festival.id}>
                   <HoverCard>
                     <Link
-                      href={`/${locale}/destination/${festival.destination_id}`}
+                      href={`/${locale}/festivals/${slugMap.get(festival.id) ?? ""}`}
                       className={`group block rounded-xl border border-l-4 ${getSeasonBorder(festival.month)} border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all duration-200`}
                     >
                       {/* Destination hero image */}
