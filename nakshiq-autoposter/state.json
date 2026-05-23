@@ -2,11 +2,17 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd_canva": "2026-05-23",
-    "PdMu0_canva": "2026-05-23"
+    "m8EAd": "2026-05-23",
+    "m8EAd_evening": "2026-05-23",
+    "m8EAd_evening_story": "2026-05-23"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [],
+  "last_sync": "2026-05-23T12:45:55.374884+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "munsiyari",
+      "date": "2026-05-23"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -21,7 +27,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "v2_budget_receipt"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -436,32 +443,50 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-23T09:22:49.627083+00:00",
+      "timestamp": "2026-05-23T12:46:23.314922+00:00",
       "date": "2026-05-23",
       "platform": "instagram",
-      "post_id": "yL0oj",
-      "destination": null,
-      "format": "canva_visual",
-      "media_id": "activities/surfing_01.jpg"
+      "account_id": "m8EAd",
+      "post_id": "Ee6hA",
+      "destination": "munsiyari",
+      "format": "v2_budget_receipt",
+      "has_media": true,
+      "media_id": "v2_budget_receipt-munsiyari.png"
     },
     {
-      "timestamp": "2026-05-23T09:22:51.804030+00:00",
+      "timestamp": "2026-05-23T12:46:47.500325+00:00",
       "date": "2026-05-23",
-      "platform": "facebook",
-      "post_id": "gJTSx",
-      "destination": null,
-      "format": "canva_visual",
-      "media_id": "activities/surfing_01.jpg"
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "GO32p",
+      "destination": "chopta",
+      "format": "route_spotlight",
+      "has_media": true,
+      "mode": "evening"
     }
   ],
   "theme_usage": {
-    "canva_categories": {
-      "activities": [
+    "morning_formats": {
+      "v2_budget_receipt": [
         "2026-05-23"
       ]
     },
-    "canva_images": {
-      "activities/surfing_01.jpg": [
+    "routes": {},
+    "destinations": {
+      "munsiyari": [
+        "2026-05-23"
+      ],
+      "chopta": [
+        "2026-05-23"
+      ]
+    },
+    "reels": {
+      "munsiyari": [
+        "2026-05-23"
+      ]
+    },
+    "audience_tags": {
+      "families": [
         "2026-05-23"
       ]
     }
@@ -477,6 +502,8 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {},
+  "last_picked": {
+    "shared_best": "manikaran"
+  },
   "manual_skip_dests": {}
 }

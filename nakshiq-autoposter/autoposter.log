@@ -1,20 +1,37 @@
-2026-05-23 09:22:45  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-23 09:22:45  INFO      ════════════════════════════════════════════════════════════
-2026-05-23 09:22:45  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-05-23 · weekday=5
-2026-05-23 09:22:45  INFO      ════════════════════════════════════════════════════════════
-2026-05-23 09:22:45  INFO      Library: 88 images across 8 categories
-2026-05-23 09:22:45  INFO      Selected: [activities] Surfing in India → activities/surfing_01.jpg
-2026-05-23 09:22:45  INFO          Requesting upload URL for canva_activities_surfing_01.jpg (220,212 bytes, image/jpeg)
-2026-05-23 09:22:46  INFO          Uploading to R2 (timeout=120s)...
-2026-05-23 09:22:46  INFO          R2 PUT OK. Confirming...
-2026-05-23 09:22:47  INFO          Media ready: c74YL (220,212 bytes · canva_activities_surfing_01.jpg)
-2026-05-23 09:22:47  INFO      Image uploaded: canva_activities_surfing_01.jpg (215 KB)
-2026-05-23 09:22:47  INFO      [youtube/@naksh-iq] Skipping canva visual (YouTube only accepts video/reels).
-2026-05-23 09:22:47  INFO      [instagram/nakshiq] Publishing canva visual: Surfing in India...
-2026-05-23 09:22:49  INFO      [instagram/nakshiq] Canva visual posted successfully!
-2026-05-23 09:22:49  INFO      [facebook/Nakshiq] Publishing canva visual: Surfing in India...
-2026-05-23 09:22:49  INFO          Caption sanitizer: stripped 1 banned tags: ['#india']
-2026-05-23 09:22:51  INFO      [facebook/Nakshiq] Canva visual posted successfully!
-2026-05-23 09:22:51  INFO      Theme tracker updated: cat=activities / img=activities/surfing_01.jpg
-2026-05-23 09:22:51  INFO      State saved. Canva Visual run complete.
-2026-05-23 09:22:51  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 12:45:16  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-23 12:45:16  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 12:45:16  INFO      Nakshiq Autoposter · EVENING · 2026-05-23 · weekday=5
+2026-05-23 12:45:16  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 12:45:16  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-23 12:45:55  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-23 12:45:56  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-23 12:45:56  INFO      [evening] variety pick: v2_budget_receipt (8 CSV + 3 visual candidates)
+2026-05-23 12:45:56  INFO      Formats — IG: v2_budget_receipt  ·  FB: v2_budget_receipt  ·  Story: route_spotlight  ·  Audience: families
+2026-05-23 12:45:56  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-23 12:45:56  INFO      Audience filter 'families' → 10 destinations match.
+2026-05-23 12:45:56  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 18 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-23 12:45:56  INFO      Route locked: Uttarakhand High Passes Motorcycle Run
+2026-05-23 12:45:58  INFO      Shared best destination locked: Manikaran
+2026-05-23 12:45:58  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-23 12:45:58  INFO      [instagram/nakshiq] Generating v2_budget_receipt post...
+2026-05-23 12:45:58  INFO      [instagram/nakshiq] Caption ready (489 chars, dest=munsiyari)
+2026-05-23 12:45:58  INFO          Requesting upload URL for v2_budget_receipt-munsiyari.png (1,646,301 bytes, image/png)
+2026-05-23 12:45:59  INFO          Uploading to R2 (timeout=120s)...
+2026-05-23 12:46:00  INFO          R2 PUT OK. Confirming...
+2026-05-23 12:46:01  INFO          Media ready: 8J1qI (1,646,301 bytes · v2_budget_receipt-munsiyari.png)
+2026-05-23 12:46:01  INFO      [instagram/nakshiq] Phase-2 asset → image: v2_budget_receipt-munsiyari.png
+2026-05-23 12:46:01  INFO      [instagram/nakshiq] Publishing feed post...
+2026-05-23 12:46:23  INFO      [instagram/nakshiq] ✅ Published · Outstand=Ee6hA · Platform=18100225118119180
+2026-05-23 12:46:23  INFO      [instagram/nakshiq] Uploading Story image (chopta.jpg)...
+2026-05-23 12:46:23  INFO          Using branded image: chopta_story_minimal-elegant_footer-bar.jpg (369,740 bytes)
+2026-05-23 12:46:23  INFO          Requesting upload URL for chopta.jpg (369,740 bytes, image/jpeg)
+2026-05-23 12:46:23  INFO          Uploading to R2 (timeout=120s)...
+2026-05-23 12:46:25  INFO          R2 PUT OK. Confirming...
+2026-05-23 12:46:26  INFO          Media ready: I3GmX (369,740 bytes · chopta.jpg)
+2026-05-23 12:46:26  INFO      [instagram/nakshiq] Publishing Story · format=route_spotlight · dest=chopta
+2026-05-23 12:46:47  INFO      [instagram/nakshiq] ✅ Story live · ID=18126214378721627
+2026-05-23 12:46:47  INFO      [facebook/Nakshiq] Generating v2_budget_receipt post...
+2026-05-23 12:46:47  INFO      v2_budget_receipt: no eligible dest at render time — SKIPPING
+2026-05-23 12:46:47  WARNING   [facebook/Nakshiq] No content generated — skipping.
+2026-05-23 12:46:47  INFO      State saved. Run complete.
+2026-05-23 12:46:47  INFO      ════════════════════════════════════════════════════════════
