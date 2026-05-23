@@ -6,10 +6,10 @@
     "m8EAd_evening": "2026-05-23",
     "m8EAd_evening_story": "2026-05-23"
   },
-  "last_sync": "2026-05-23T12:45:55.374884+00:00",
+  "last_sync": "2026-05-23T15:23:27.805867+00:00",
   "posted_destinations": [
     {
-      "destination_id": "munsiyari",
+      "destination_id": "madurai",
       "date": "2026-05-23"
     }
   ],
@@ -28,7 +28,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v2_budget_receipt"
+      "v2_thali_close_up"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -443,23 +443,23 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-23T12:46:23.314922+00:00",
+      "timestamp": "2026-05-23T15:23:47.185160+00:00",
       "date": "2026-05-23",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "Ee6hA",
-      "destination": "munsiyari",
-      "format": "v2_budget_receipt",
+      "post_id": "HEBU5",
+      "destination": "madurai",
+      "format": "v2_thali_close_up",
       "has_media": true,
-      "media_id": "v2_budget_receipt-munsiyari.png"
+      "media_id": "v2_thali_close_up-madurai.png"
     },
     {
-      "timestamp": "2026-05-23T12:46:47.500325+00:00",
+      "timestamp": "2026-05-23T15:24:09.459641+00:00",
       "date": "2026-05-23",
       "platform": "instagram_story",
       "account_id": "m8EAd",
-      "post_id": "GO32p",
-      "destination": "chopta",
+      "post_id": "IhFOX",
+      "destination": "srinagar",
       "format": "route_spotlight",
       "has_media": true,
       "mode": "evening"
@@ -467,21 +467,21 @@
   ],
   "theme_usage": {
     "morning_formats": {
-      "v2_budget_receipt": [
+      "v2_thali_close_up": [
         "2026-05-23"
       ]
     },
     "routes": {},
     "destinations": {
-      "munsiyari": [
+      "madurai": [
         "2026-05-23"
       ],
-      "chopta": [
+      "srinagar": [
         "2026-05-23"
       ]
     },
     "reels": {
-      "munsiyari": [
+      "madurai": [
         "2026-05-23"
       ]
     },
@@ -503,7 +503,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "manikaran"
+    "shared_best": "kokernag"
   },
   "manual_skip_dests": {}
 }
