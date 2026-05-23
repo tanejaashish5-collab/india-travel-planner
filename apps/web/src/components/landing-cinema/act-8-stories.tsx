@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { resolveCover } from "@/lib/collection-covers";
+import { imageUrl } from "@/lib/image-url";
 import { useInView } from "./use-in-view";
 import { SectionLabel } from "./helpers";
 
@@ -69,7 +70,11 @@ export function Act8Stories({ collections }: { collections: StoryCollection[] })
           }}
         >
           {items.map((c, i) => {
-            const coverUrl = resolveCover(c as never);
+            // Raw <img> below bypasses Next/Image's r2Loader, so we must
+            // resolve to the R2 WebP variant explicitly. Without this,
+            // post-mig-047 collections (sapta-puris etc.) 404 because their
+            // JPGs live only on R2, not in public/images/collections/.
+            const coverUrl = imageUrl(resolveCover(c as never), 800);
             return (
               <Link
                 key={c.id}

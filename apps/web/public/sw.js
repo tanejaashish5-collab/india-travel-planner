@@ -61,8 +61,12 @@
 //      verdict card, score, editor's note and attribution all react to the
 //      selected month (was wired to the current month only). Changes
 //      landing-page Act V markup, so the bump purges nakshiq-v41-data.
+// v43: 2026-05-23 Act 8 collection covers fix — post-mig-047 collections
+//      (sapta-puris etc.) 404'd because the raw <img> bypassed Next/Image's
+//      r2Loader. Now uses imageUrl() to resolve R2 WebP directly. Landing-
+//      page markup change → bump purges nakshiq-v42-data.
 
-const CACHE_VERSION = "nakshiq-v42";
+const CACHE_VERSION = "nakshiq-v43";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

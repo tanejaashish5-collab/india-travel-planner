@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { resolveCover } from "@/lib/collection-covers";
+import { imageUrl } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
 import { currentMonthIST } from "@itp/shared";
 import { ARRIVAL } from "@/lib/arrival-data";
@@ -252,7 +253,7 @@ export async function GET(req: NextRequest) {
         ...c,
         itemCount: (c.items ?? []).length,
         url: `${baseUrl}/en/collections/${c.id}`,
-        image: `${baseUrl}${resolveCover(c)}`,
+        image: imageUrl(resolveCover(c)),
       }));
 
       return NextResponse.json({ type: "collections", count: items.length, data: items });
