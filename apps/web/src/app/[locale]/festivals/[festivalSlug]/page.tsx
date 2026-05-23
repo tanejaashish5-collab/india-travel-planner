@@ -9,21 +9,80 @@ import { Footer } from "@/components/footer";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
 import { singleFestivalEventJsonLd, type FestivalRow } from "@/lib/festival-schema";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
 
 // Per-festival detail page. 331 festivals × 2 locales ≈ 662 indexed URLs.
-// Slugs collision-aware (11 names duplicate across destinations — those get
-// a `-{destination_id}` suffix; see lib/festival-slug.ts).
+// Path A enrichment (2026-05-23): each page is a festival LENS on the host
+// destination — pulls month-score, stays, eateries, POIs, other festivals,
+// travel facts, live weather. Zero fabrication: every joined field is
+// already verified data. Slugs collision-aware (lib/festival-slug.ts).
 
-export const revalidate = 86400; // 24h — festival data is mostly static
+export const revalidate = 86400;
 export const dynamicParams = true;
 
 const MONTHS_LONG = [
   "", "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December",
 ];
+
+type DestinationRow = {
+  id: string;
+  name: string;
+  elevation_m: number | null;
+  nearest_airport: string | null;
+  nearest_railhead: string | null;
+  tagline: string | null;
+  why_special: string | null;
+  hero_image_url: string | null;
+};
+
+type MonthRow = {
+  month: number;
+  score: number | null;
+  verdict: string | null;
+  why_go: string | null;
+  why_not: string | null;
+  prose_lead: string | null;
+};
+
+type StayRow = {
+  id: string;
+  name: string;
+  type: string | null;
+  location: string | null;
+  why_special: string | null;
+  price_range: string | null;
+  best_for: string | null;
+};
+
+type EateryRow = {
+  id: string;
+  name: string;
+  area: string | null;
+  signature_dish: string | null;
+  why_it_matters: string | null;
+  insider_tip: string | null;
+  is_legendary: boolean | null;
+  price_range: string | null;
+};
+
+type PoiRow = {
+  id: string;
+  name: string;
+  type: string | null;
+  description: string | null;
+  time_needed: string | null;
+};
+
+type OtherFestivalRow = {
+  id: string;
+  name: string;
+  month: number | null;
+  approximate_date: string | null;
+};
 
 type FestivalDetailRow = FestivalRow & FestivalSlugRow & {
   destination_id: string | null;
@@ -63,6 +122,82 @@ async function loadFestivalBySlug(slug: string): Promise<FestivalDetailRow | nul
   return data ? (data as unknown as FestivalDetailRow) : null;
 }
 
+type EnrichedData = {
+  destination: DestinationRow | null;
+  month: MonthRow | null;
+  stays: StayRow[];
+  eateries: EateryRow[];
+  pois: PoiRow[];
+  otherFestivalsHere: OtherFestivalRow[];
+  relatedSameMonth: OtherFestivalRow[];
+};
+
+async function loadEnriched(
+  festivalId: string,
+  destinationId: string | null,
+  month: number,
+): Promise<EnrichedData> {
+  const supabase = getSupabase();
+  if (!supabase || !destinationId) {
+    return { destination: null, month: null, stays: [], eateries: [], pois: [], otherFestivalsHere: [], relatedSameMonth: [] };
+  }
+
+  const [destRes, monthRes, staysRes, eateriesRes, poisRes, otherHereRes, relatedMonthRes] = await Promise.all([
+    supabase
+      .from("destinations")
+      .select("id, name, elevation_m, nearest_airport, nearest_railhead, tagline, why_special, hero_image_url")
+      .eq("id", destinationId)
+      .single(),
+    supabase
+      .from("destination_months")
+      .select("month, score, verdict, why_go, why_not, prose_lead")
+      .eq("destination_id", destinationId)
+      .eq("month", month)
+      .single(),
+    supabase
+      .from("local_stays")
+      .select("id, name, type, location, why_special, price_range, best_for")
+      .eq("destination_id", destinationId)
+      .limit(3),
+    supabase
+      .from("local_eateries")
+      .select("id, name, area, signature_dish, why_it_matters, insider_tip, is_legendary, price_range")
+      .eq("destination_id", destinationId)
+      .eq("is_active", true)
+      .order("is_legendary", { ascending: false })
+      .limit(4),
+    supabase
+      .from("points_of_interest")
+      .select("id, name, type, description, time_needed")
+      .eq("destination_id", destinationId)
+      .limit(5),
+    supabase
+      .from("festivals")
+      .select("id, name, month, approximate_date")
+      .eq("destination_id", destinationId)
+      .neq("id", festivalId)
+      .order("month")
+      .limit(6),
+    supabase
+      .from("festivals")
+      .select("id, name, month, approximate_date, destination_id")
+      .eq("month", month)
+      .neq("id", festivalId)
+      .neq("destination_id", destinationId)
+      .limit(6),
+  ]);
+
+  return {
+    destination: (destRes.data as DestinationRow | null) ?? null,
+    month: (monthRes.data as MonthRow | null) ?? null,
+    stays: (staysRes.data ?? []) as StayRow[],
+    eateries: (eateriesRes.data ?? []) as EateryRow[],
+    pois: (poisRes.data ?? []) as PoiRow[],
+    otherFestivalsHere: (otherHereRes.data ?? []) as OtherFestivalRow[],
+    relatedSameMonth: (relatedMonthRes.data ?? []) as OtherFestivalRow[],
+  };
+}
+
 export async function generateStaticParams() {
   const rows = await loadAllSlugs();
   const slugMap = buildFestivalSlugMap(rows);
@@ -88,10 +223,32 @@ export async function generateMetadata({
       ? f.description.length > 160
         ? `${f.description.slice(0, 157)}...`
         : f.description
-      : `${f.name}, celebrated${where} during ${dateLabel}. Dates, location, and host destination.`,
+      : `${f.name}, celebrated${where} during ${dateLabel}. Dates, location, where to stay, where to eat — everything for the trip.`,
     ...localeAlternates(locale, `/festivals/${festivalSlug}`),
   };
 }
+
+function clamp(s: string | null | undefined, max: number): string | null {
+  if (!s) return null;
+  if (s.length <= max) return s;
+  return `${s.slice(0, max - 1).trimEnd()}…`;
+}
+
+const SECTION_HEADING_STYLE: React.CSSProperties = {
+  fontFamily: "var(--cinema-mono)",
+  fontSize: 12,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "var(--bone-dim)",
+  marginBottom: 20,
+  paddingBottom: 16,
+  borderBottom: "1px solid var(--hair)",
+};
+
+const SECTION_WRAP_STYLE: React.CSSProperties = {
+  maxWidth: 980,
+  margin: "0 auto 56px",
+};
 
 export default async function FestivalDetailPage({
   params,
@@ -118,6 +275,13 @@ export default async function FestivalDetailPage({
   const pageUrl = `https://www.nakshiq.com/${locale}/festivals/${festivalSlug}`;
   const eventLd = singleFestivalEventJsonLd(f as FestivalRow, pageUrl);
 
+  const enriched = await loadEnriched(f.id, f.destination_id, f.month);
+  const dest = enriched.destination;
+
+  // Slug map (for related-festival links)
+  const allSlugs = await loadAllSlugs();
+  const slugMap = buildFestivalSlugMap(allSlugs);
+
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -128,43 +292,6 @@ export default async function FestivalDetailPage({
       { "@type": "ListItem", position: 4, name: f.name, item: pageUrl },
     ],
   };
-
-  // Related festivals: same month, same state if known, otherwise same month.
-  let related: Array<{ id: string; name: string; destination_id: string | null; approximate_date: string | null }> = [];
-  const supabase = getSupabase();
-  if (supabase) {
-    if (stateName && f.destination_id) {
-      const { data: destState } = await supabase
-        .from("destinations")
-        .select("state_id")
-        .eq("id", f.destination_id)
-        .single();
-      const sId = (destState as { state_id?: string } | null)?.state_id;
-      if (sId) {
-        const { data } = await supabase
-          .from("festivals")
-          .select("id, name, destination_id, approximate_date, destinations!inner(state_id)")
-          .eq("month", f.month)
-          .eq("destinations.state_id", sId)
-          .neq("id", f.id)
-          .limit(6);
-        related = (data ?? []) as typeof related;
-      }
-    }
-    if (related.length < 3) {
-      const { data } = await supabase
-        .from("festivals")
-        .select("id, name, destination_id, approximate_date")
-        .eq("month", f.month)
-        .neq("id", f.id)
-        .limit(6 - related.length);
-      related = [...related, ...((data ?? []) as typeof related)].slice(0, 6);
-    }
-  }
-
-  // Slug map for related-festival links
-  const allSlugs = await loadAllSlugs();
-  const slugMap = buildFestivalSlugMap(allSlugs);
 
   return (
     <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
@@ -179,11 +306,37 @@ export default async function FestivalDetailPage({
       />
       <Nav />
 
-      <main
-        id="main-content"
-        className="nq-grain"
-        style={{ position: "relative", padding: "140px 24px 64px" }}
-      >
+      {/* Destination hero image */}
+      {f.destination_id && (
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "clamp(280px, 40vh, 480px)",
+            background: "var(--paper-2)",
+            overflow: "hidden",
+            marginTop: 88,
+          }}
+        >
+          <Image
+            src={`/images/destinations/${f.destination_id}.jpg`}
+            alt={`${destName ?? f.destination_id} — host of ${f.name}`}
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: "cover", filter: "saturate(0.88) brightness(0.72)" }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(180deg, rgba(10,10,8,0.20) 0%, transparent 40%, rgba(10,10,8,0.85) 100%)",
+            }}
+          />
+        </div>
+      )}
+
+      <main id="main-content" className="nq-grain" style={{ position: "relative", padding: "56px 24px 64px" }}>
         <header style={{ maxWidth: 980, margin: "0 auto 48px" }}>
           <p
             className="nq-kicker"
@@ -226,6 +379,7 @@ export default async function FestivalDetailPage({
           </p>
         </header>
 
+        {/* Festival prose */}
         <article style={{ maxWidth: 720, margin: "0 auto 64px" }}>
           {f.description && (
             <p
@@ -263,93 +417,360 @@ export default async function FestivalDetailPage({
           )}
         </article>
 
-        {f.destination_id && destName && (
-          <aside style={{ maxWidth: 980, margin: "0 auto 64px" }}>
-            <Link
-              href={`/${locale}/destination/${f.destination_id}`}
+        {/* Going for this festival? Month context + score */}
+        {enriched.month && dest && (
+          <section style={SECTION_WRAP_STYLE}>
+            <h2 style={SECTION_HEADING_STYLE}>{t("monthContextHeading", { destination: dest.name, month: monthName })}</h2>
+            <div
               style={{
-                display: "block",
-                position: "relative",
-                overflow: "hidden",
-                border: "1px solid var(--hair)",
-                textDecoration: "none",
-                color: "inherit",
+                display: "flex",
+                gap: 24,
+                alignItems: "flex-start",
+                flexWrap: "wrap",
               }}
             >
-              <div style={{ position: "relative", aspectRatio: "16 / 6", background: "var(--paper-2)" }}>
-                <Image
-                  src={`/images/destinations/${f.destination_id}.jpg`}
-                  alt={`${destName} — host of ${f.name}`}
-                  fill
-                  sizes="(max-width: 980px) 100vw, 980px"
-                  style={{ objectFit: "cover", filter: "saturate(0.92) brightness(0.78)" }}
-                />
+              {enriched.month.score !== null && (
                 <div
                   style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "linear-gradient(180deg, transparent 40%, rgba(10,10,8,0.78) 100%)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    left: 24,
-                    right: 24,
-                    bottom: 24,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 8,
+                    flexShrink: 0,
+                    border: "1px solid var(--hair)",
+                    padding: "16px 20px",
+                    minWidth: 140,
                   }}
                 >
-                  <span
-                    className="nq-mono"
+                  <div
                     style={{
+                      fontFamily: "var(--cinema-mono)",
                       fontSize: 11,
                       letterSpacing: "0.22em",
                       textTransform: "uppercase",
-                      color: "var(--vermillion)",
+                      color: "var(--bone-faint)",
                     }}
                   >
-                    {t("hostDestination")}
-                  </span>
-                  <span
+                    {t("nakshiqScore")}
+                  </div>
+                  <div
                     style={{
                       fontFamily: "var(--cinema-display)",
                       fontStyle: "italic",
-                      fontSize: "clamp(22px, 3vw, 32px)",
-                      lineHeight: 1.1,
-                      color: "var(--paper)",
+                      fontSize: 36,
+                      lineHeight: 1,
+                      color: "var(--bone)",
+                      marginTop: 6,
                     }}
                   >
-                    {destName} →
-                  </span>
+                    {enriched.month.score}/10
+                  </div>
+                  {enriched.month.verdict && (
+                    <div
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 10,
+                        letterSpacing: "0.22em",
+                        textTransform: "uppercase",
+                        color: enriched.month.verdict === "go" ? "var(--vermillion)" : "var(--bone-dim)",
+                        marginTop: 8,
+                      }}
+                    >
+                      {enriched.month.verdict === "go" ? t("verdictGo") : enriched.month.verdict === "skip" ? t("verdictSkip") : t("verdictWait")}
+                    </div>
+                  )}
                 </div>
+              )}
+              <div style={{ flex: 1, minWidth: 260 }}>
+                {(enriched.month.prose_lead || enriched.month.why_go) && (
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 15,
+                      lineHeight: 1.65,
+                      color: "var(--bone-dim)",
+                      margin: 0,
+                    }}
+                  >
+                    {clamp(enriched.month.prose_lead ?? enriched.month.why_go, 420)}
+                  </p>
+                )}
+                <p
+                  style={{
+                    marginTop: 16,
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 12,
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  <Link
+                    href={`/${locale}/destination/${dest.id}/${monthName.toLowerCase()}`}
+                    style={{ color: "var(--vermillion)", textDecoration: "none" }}
+                  >
+                    {t("seeMonthGuide", { destination: dest.name, month: monthName })} →
+                  </Link>
+                </p>
               </div>
-            </Link>
-          </aside>
+            </div>
+          </section>
         )}
 
-        {related.length > 0 && (
-          <section style={{ maxWidth: 980, margin: "0 auto" }}>
-            <h2
-              className="nq-mono"
+        {/* Travel facts + live weather */}
+        {dest && (
+          <section style={SECTION_WRAP_STYLE}>
+            <h2 style={SECTION_HEADING_STYLE}>{t("travelFactsHeading")}</h2>
+            <div
               style={{
-                fontFamily: "var(--cinema-mono)",
-                fontSize: 12,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "var(--bone-dim)",
-                marginBottom: 20,
-                paddingBottom: 16,
-                borderBottom: "1px solid var(--hair)",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+                marginBottom: 16,
               }}
             >
-              {t("relatedHeading", { month: monthName })}
-            </h2>
+              {dest.elevation_m !== null && (
+                <FactCell label={t("factElevation")} value={`${dest.elevation_m} m`} />
+              )}
+              {dest.nearest_airport && (
+                <FactCell label={t("factAirport")} value={dest.nearest_airport} />
+              )}
+              {dest.nearest_railhead && (
+                <FactCell label={t("factRailhead")} value={dest.nearest_railhead} />
+              )}
+            </div>
+            {f.destination_id && (
+              <div style={{ maxWidth: 360 }}>
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase",
+                    color: "var(--bone-faint)",
+                    margin: "0 0 8px",
+                  }}
+                >
+                  {t("liveWeather", { destination: dest.name })}
+                </p>
+                <WeatherWidget destinationId={f.destination_id} />
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Where to stay */}
+        {enriched.stays.length > 0 && dest && (
+          <section style={SECTION_WRAP_STYLE}>
+            <h2 style={SECTION_HEADING_STYLE}>{t("staysHeading", { destination: dest.name })}</h2>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 16 }}>
+              {enriched.stays.map((s) => (
+                <li
+                  key={s.id}
+                  style={{
+                    border: "1px solid var(--hair)",
+                    padding: 20,
+                    background: "var(--paper)",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16, marginBottom: 6 }}>
+                    <h3
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 19,
+                        lineHeight: 1.3,
+                        margin: 0,
+                        color: "var(--bone)",
+                      }}
+                    >
+                      {s.name}
+                    </h3>
+                    {s.price_range && (
+                      <span
+                        className="nq-mono"
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "var(--vermillion)",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {s.price_range}
+                      </span>
+                    )}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      marginBottom: 10,
+                    }}
+                  >
+                    {s.type}
+                    {s.location && ` · ${s.location}`}
+                  </div>
+                  {s.why_special && (
+                    <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 14, lineHeight: 1.55, color: "var(--bone-dim)", margin: 0 }}>
+                      {s.why_special}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <p style={{ marginTop: 16, fontFamily: "var(--cinema-mono)", fontSize: 12 }}>
+              <Link
+                href={`/${locale}/destination/${dest.id}#stays`}
+                style={{ color: "var(--vermillion)", textDecoration: "none" }}
+              >
+                {t("seeAllStays", { destination: dest.name })} →
+              </Link>
+            </p>
+          </section>
+        )}
+
+        {/* Where to eat */}
+        {enriched.eateries.length > 0 && dest && (
+          <section style={SECTION_WRAP_STYLE}>
+            <h2 style={SECTION_HEADING_STYLE}>{t("eateriesHeading", { destination: dest.name })}</h2>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 1, background: "var(--hair)", border: "1px solid var(--hair)" }}>
+              {enriched.eateries.map((e) => (
+                <li key={e.id} style={{ padding: 18, background: "var(--paper)" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8, marginBottom: 4 }}>
+                    <h3
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 17,
+                        lineHeight: 1.3,
+                        margin: 0,
+                        color: "var(--bone)",
+                      }}
+                    >
+                      {e.name}
+                    </h3>
+                    {e.is_legendary && (
+                      <span
+                        className="nq-mono"
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 9,
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                          color: "var(--vermillion)",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {t("legendary")}
+                      </span>
+                    )}
+                  </div>
+                  {(e.area || e.price_range) && (
+                    <div
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 10,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        color: "var(--bone-faint)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      {[e.area, e.price_range].filter(Boolean).join(" · ")}
+                    </div>
+                  )}
+                  {e.signature_dish && (
+                    <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 13, lineHeight: 1.5, color: "var(--bone-dim)", margin: "0 0 6px" }}>
+                      <span style={{ color: "var(--vermillion)", textTransform: "uppercase", letterSpacing: "0.16em", fontSize: 10, marginRight: 6 }}>{t("signature")}</span>
+                      {e.signature_dish}
+                    </p>
+                  )}
+                  {e.insider_tip && (
+                    <p style={{ fontFamily: "var(--cinema-ui)", fontStyle: "italic", fontSize: 13, lineHeight: 1.5, color: "var(--bone-faint)", margin: 0 }}>
+                      {e.insider_tip}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <p style={{ marginTop: 16, fontFamily: "var(--cinema-mono)", fontSize: 12 }}>
+              <Link
+                href={`/${locale}/destination/${dest.id}#eateries`}
+                style={{ color: "var(--vermillion)", textDecoration: "none" }}
+              >
+                {t("seeAllEateries", { destination: dest.name })} →
+              </Link>
+            </p>
+          </section>
+        )}
+
+        {/* Other things to see */}
+        {enriched.pois.length > 0 && dest && (
+          <section style={SECTION_WRAP_STYLE}>
+            <h2 style={SECTION_HEADING_STYLE}>{t("poisHeading", { destination: dest.name })}</h2>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 12 }}>
-              {related.map((r) => {
+              {enriched.pois.map((p) => (
+                <li
+                  key={p.id}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto",
+                    gap: 16,
+                    padding: "14px 0",
+                    borderBottom: "1px solid var(--hair)",
+                  }}
+                >
+                  <div>
+                    <h3
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 17,
+                        lineHeight: 1.3,
+                        margin: "0 0 6px",
+                        color: "var(--bone)",
+                      }}
+                    >
+                      {p.name}
+                    </h3>
+                    {p.description && (
+                      <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 13, lineHeight: 1.55, color: "var(--bone-dim)", margin: 0 }}>
+                        {clamp(p.description, 180)}
+                      </p>
+                    )}
+                  </div>
+                  <div
+                    style={{
+                      textAlign: "right",
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {p.type}
+                    {p.time_needed && (
+                      <div style={{ color: "var(--vermillion)", marginTop: 4 }}>{p.time_needed}</div>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Other festivals at the same destination */}
+        {enriched.otherFestivalsHere.length > 0 && dest && (
+          <section style={SECTION_WRAP_STYLE}>
+            <h2 style={SECTION_HEADING_STYLE}>{t("otherFestivalsHere", { destination: dest.name })}</h2>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 12 }}>
+              {enriched.otherFestivalsHere.map((r) => {
                 const rSlug = slugMap.get(r.id);
                 if (!rSlug) return null;
                 return (
@@ -367,14 +788,54 @@ export default async function FestivalDetailPage({
                         color: "var(--bone)",
                       }}
                     >
+                      <span style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontSize: 18, lineHeight: 1.3 }}>
+                        {r.name}
+                      </span>
                       <span
+                        className="nq-mono"
                         style={{
-                          fontFamily: "var(--cinema-display)",
-                          fontStyle: "italic",
-                          fontSize: 18,
-                          lineHeight: 1.3,
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 11,
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "var(--bone-faint)",
+                          flexShrink: 0,
                         }}
                       >
+                        {r.approximate_date ?? (r.month ? MONTHS_LONG[r.month] : "")}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
+
+        {/* Related festivals same month, other destinations */}
+        {enriched.relatedSameMonth.length > 0 && (
+          <section style={SECTION_WRAP_STYLE}>
+            <h2 style={SECTION_HEADING_STYLE}>{t("relatedHeading", { month: monthName })}</h2>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 12 }}>
+              {enriched.relatedSameMonth.map((r) => {
+                const rSlug = slugMap.get(r.id);
+                if (!rSlug) return null;
+                return (
+                  <li key={r.id}>
+                    <Link
+                      href={`/${locale}/festivals/${rSlug}`}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "baseline",
+                        gap: 16,
+                        padding: "14px 0",
+                        borderBottom: "1px solid var(--hair)",
+                        textDecoration: "none",
+                        color: "var(--bone)",
+                      }}
+                    >
+                      <span style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontSize: 18, lineHeight: 1.3 }}>
                         {r.name}
                       </span>
                       <span
@@ -397,7 +858,7 @@ export default async function FestivalDetailPage({
             </ul>
             <p
               style={{
-                marginTop: 24,
+                marginTop: 16,
                 fontFamily: "var(--cinema-mono)",
                 fontSize: 12,
                 letterSpacing: "0.04em",
@@ -413,10 +874,95 @@ export default async function FestivalDetailPage({
             </p>
           </section>
         )}
+
+        {/* CTA to full destination guide */}
+        {dest && (
+          <aside style={{ maxWidth: 980, margin: "0 auto" }}>
+            <Link
+              href={`/${locale}/destination/${dest.id}`}
+              style={{
+                display: "block",
+                position: "relative",
+                overflow: "hidden",
+                border: "1px solid var(--hair)",
+                textDecoration: "none",
+                color: "inherit",
+                aspectRatio: "16 / 5",
+                background: "var(--paper-2)",
+              }}
+            >
+              <Image
+                src={`/images/destinations/${dest.id}.jpg`}
+                alt={`${dest.name} guide`}
+                fill
+                sizes="(max-width: 980px) 100vw, 980px"
+                style={{ objectFit: "cover", filter: "saturate(0.92) brightness(0.7)" }}
+              />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 40%, rgba(10,10,8,0.85) 100%)" }} />
+              <div style={{ position: "absolute", left: 24, right: 24, bottom: 24 }}>
+                <span
+                  className="nq-mono"
+                  style={{
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase",
+                    color: "var(--vermillion)",
+                  }}
+                >
+                  {t("fullGuideKicker")}
+                </span>
+                <div
+                  style={{
+                    fontFamily: "var(--cinema-display)",
+                    fontStyle: "italic",
+                    fontSize: "clamp(22px, 3vw, 32px)",
+                    lineHeight: 1.1,
+                    color: "var(--paper)",
+                    marginTop: 6,
+                  }}
+                >
+                  {t("fullGuideTitle", { destination: dest.name })} →
+                </div>
+              </div>
+            </Link>
+          </aside>
+        )}
       </main>
 
       <CinematicRelatedRail />
       <Footer />
+    </div>
+  );
+}
+
+function FactCell({ label, value }: { label: string; value: string }) {
+  return (
+    <div style={{ padding: 16, background: "var(--paper)" }}>
+      <div
+        style={{
+          fontFamily: "var(--cinema-mono)",
+          fontSize: 10,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          color: "var(--bone-faint)",
+          marginBottom: 6,
+        }}
+      >
+        {label}
+      </div>
+      <div
+        style={{
+          fontFamily: "var(--cinema-display)",
+          fontStyle: "italic",
+          fontWeight: 500,
+          fontSize: 18,
+          lineHeight: 1.2,
+          color: "var(--bone)",
+        }}
+      >
+        {value}
+      </div>
     </div>
   );
 }

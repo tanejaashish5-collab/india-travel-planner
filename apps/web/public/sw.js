@@ -70,8 +70,13 @@
 //      index, month, state, and state+month list views now link to the
 //      detail page instead of the host destination. Fixed a pre-existing
 //      bug where list views read f.dates (DB column is approximate_date).
+// v45: 2026-05-23 Festival detail Path A enrichment — each /festivals/[slug]
+//      page now pulls month-score, stays, eateries, POIs, travel facts,
+//      live weather, and related festivals from the host destination.
+//      Festival page becomes a planning lens on the destination instead
+//      of a 320-char prose stub.
 
-const CACHE_VERSION = "nakshiq-v44";
+const CACHE_VERSION = "nakshiq-v45";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
