@@ -1,21 +1,20 @@
-2026-05-23 06:49:27  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-23 06:49:27  INFO      ════════════════════════════════════════════════════════════
-2026-05-23 06:49:27  INFO      Nakshiq Autoposter · MORNING · 2026-05-23 · weekday=5
-2026-05-23 06:49:27  INFO      ════════════════════════════════════════════════════════════
-2026-05-23 06:49:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-23 06:49:55  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-23 06:49:55  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-23 06:49:56  INFO      Outstand dedup guard: merged 3 remote posts into state.
-2026-05-23 06:49:56  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-23 06:49:56  INFO      [csv_formats] 8/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-23 06:49:56  INFO      Morning format (themed-week-4→discovery): v3_tl_editorial_listicle [0% vs target 20%] (14/14 never featured)
-2026-05-23 06:49:56  INFO      Formats — IG: v3_tl_editorial_listicle  ·  FB: v3_tl_editorial_listicle  ·  Story: kids_intel
-2026-05-23 06:49:56  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
-2026-05-23 06:49:56  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 18 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-23 06:49:56  INFO      Kids destination locked: Kabini
-2026-05-23 06:49:59  INFO      Shared best destination locked: Chopta
-2026-05-23 06:49:59  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-23 06:49:59  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
-2026-05-23 06:49:59  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
-2026-05-23 06:49:59  INFO      State saved. Run complete.
-2026-05-23 06:49:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 09:22:45  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-23 09:22:45  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 09:22:45  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-05-23 · weekday=5
+2026-05-23 09:22:45  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 09:22:45  INFO      Library: 88 images across 8 categories
+2026-05-23 09:22:45  INFO      Selected: [activities] Surfing in India → activities/surfing_01.jpg
+2026-05-23 09:22:45  INFO          Requesting upload URL for canva_activities_surfing_01.jpg (220,212 bytes, image/jpeg)
+2026-05-23 09:22:46  INFO          Uploading to R2 (timeout=120s)...
+2026-05-23 09:22:46  INFO          R2 PUT OK. Confirming...
+2026-05-23 09:22:47  INFO          Media ready: c74YL (220,212 bytes · canva_activities_surfing_01.jpg)
+2026-05-23 09:22:47  INFO      Image uploaded: canva_activities_surfing_01.jpg (215 KB)
+2026-05-23 09:22:47  INFO      [youtube/@naksh-iq] Skipping canva visual (YouTube only accepts video/reels).
+2026-05-23 09:22:47  INFO      [instagram/nakshiq] Publishing canva visual: Surfing in India...
+2026-05-23 09:22:49  INFO      [instagram/nakshiq] Canva visual posted successfully!
+2026-05-23 09:22:49  INFO      [facebook/Nakshiq] Publishing canva visual: Surfing in India...
+2026-05-23 09:22:49  INFO          Caption sanitizer: stripped 1 banned tags: ['#india']
+2026-05-23 09:22:51  INFO      [facebook/Nakshiq] Canva visual posted successfully!
+2026-05-23 09:22:51  INFO      Theme tracker updated: cat=activities / img=activities/surfing_01.jpg
+2026-05-23 09:22:51  INFO      State saved. Canva Visual run complete.
+2026-05-23 09:22:51  INFO      ════════════════════════════════════════════════════════════

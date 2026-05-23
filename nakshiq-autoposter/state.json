@@ -2,17 +2,11 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "PdMu0": "2026-05-23",
-    "m8EAd": "2026-05-23",
-    "GAh5p": "2026-05-23"
+    "m8EAd_canva": "2026-05-23",
+    "PdMu0_canva": "2026-05-23"
   },
-  "last_sync": "2026-05-23T06:49:55.029751+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai",
-      "date": "2026-05-23"
-    }
-  ],
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -440,11 +434,37 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-23T09:22:49.627083+00:00",
+      "date": "2026-05-23",
+      "platform": "instagram",
+      "post_id": "yL0oj",
+      "destination": null,
+      "format": "canva_visual",
+      "media_id": "activities/surfing_01.jpg"
+    },
+    {
+      "timestamp": "2026-05-23T09:22:51.804030+00:00",
+      "date": "2026-05-23",
+      "platform": "facebook",
+      "post_id": "gJTSx",
+      "destination": null,
+      "format": "canva_visual",
+      "media_id": "activities/surfing_01.jpg"
     }
   ],
   "theme_usage": {
-    "morning_formats": {},
-    "destinations": {}
+    "canva_categories": {
+      "activities": [
+        "2026-05-23"
+      ]
+    },
+    "canva_images": {
+      "activities/surfing_01.jpg": [
+        "2026-05-23"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -457,8 +477,6 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "chopta"
-  },
+  "last_picked": {},
   "manual_skip_dests": {}
 }
