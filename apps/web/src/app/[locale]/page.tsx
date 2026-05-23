@@ -16,7 +16,13 @@ import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
 import { currentMonthIST, verdictFor, dailyRotation } from "@itp/shared";
 
-export const revalidate = 3600;
+// 6h ISR — landing fires the heaviest query set on the site (10+ Promise.all
+// against destination_months/destinations/etc). 2026-05-23 incident: the
+// 1h tick re-rendered during a Supabase egress freeze and cached an empty
+// page. Wider window = fewer re-renders = lower egress + smaller chance of
+// catching another freeze. Data on this page (destination scores, verdicts)
+// changes monthly at most — 6h staleness is acceptable.
+export const revalidate = 21600;
 
 export async function generateMetadata({
   params,

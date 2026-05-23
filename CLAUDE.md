@@ -86,6 +86,16 @@ The previous session ran 79 sub-agents in one day and burned 50% of weekly Claud
 - Avoid Playwright screenshots unless visual debugging is critical (each is base64 image data, very expensive)
 - **Run research/scraping sub-agents on Haiku, not Opus.** Pass `model: haiku` to the `Agent` tool (or pick Haiku for `Explore`/`general-purpose`) whenever the task is web research, scraping, log-reading, or data extraction — the heavy token cost is reading sources, and Haiku reads them just as well before returning a short summary. Reserve Opus/Sonnet sub-agents for genuine synthesis/judgement. This is separate from the `curate-stays.mjs` ban (that bans the metered Anthropic API; this is about in-session sub-agent model choice).
 
+## Supabase egress rules (added 2026-05-23 after the free-tier freeze)
+
+The 2026-05-22 Hindi DB re-pass dumped ~5,800 rows through the REST API and pushed the org past the 5.5 GB free-tier egress cap. The API 402'd for hours, poisoned Vercel's landing-page ISR cache, and cost a $25 Pro upgrade to recover. Rules to keep egress sane (incident memory: `session_2026_05_23_supabase_egress_freeze_and_isr_recovery.md`):
+
+- **Bulk dumps (>500 rows) MUST go over the direct Postgres connection (port 5432), not the REST API.** Use `pg_dump`, `psql`, or the `pg` npm package. REST API egress counts toward the billing cap; direct Postgres does not (different metering).
+- **In-place transforms beat dump-and-apply.** Prefer `UPDATE … SET col = …` over "dump rows out, transform, apply back" — the round-trip doubles egress.
+- **Watch egress weekly during downgrade-evaluation months.** Run `node scripts/check-supabase-egress.mjs` (needs `SUPABASE_ACCESS_TOKEN` env — a Personal Access Token from supabase.com/dashboard/account/tokens). Free-tier safe zone is < 4 GB/mo (leaves 1.5 GB headroom on the 5.5 GB cap).
+- **After any Supabase outage / 402 / freeze, force-rebuild Vercel.** ISR caches survive the recovery — landing page especially. Pattern: empty commit on main, e.g. commits `0e0ba3e7`, `14aad82d`, `1ee1fb0c`. Alternative: `POST /api/admin/revalidate?path=/en` with `Authorization: Bearer $NEWSLETTER_SEND_SECRET` (founder runs this; secret is Vercel-only).
+- **Scripts directory bias**: 226 of ~230 scripts use the REST client (`@supabase/supabase-js`), only 4 use direct Postgres (`_apply-telangana-widget-s44.mjs`, `backfill-honest-scarcity.mjs`, `_apply-migration-038.mjs`, `_apply-assam-widget-s40.mjs`). The pattern to copy when writing a new bulk script is in those 4.
+
 ## Pending user-action items (Claude can't do these)
 
 - IMD/CPCB env keys (Sprint 9)
