@@ -1,18 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-23",
-    "m8EAd_evening": "2026-05-23",
-    "m8EAd_evening_story": "2026-05-23"
-  },
-  "last_sync": "2026-05-23T15:23:27.805867+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "madurai",
-      "date": "2026-05-23"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -27,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "v2_thali_close_up"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -52,18 +42,6 @@
     ]
   },
   "post_log": [
-    {
-      "account_id": "m8EAd",
-      "platform": "instagram",
-      "date": "2026-04-28",
-      "mode": "evening",
-      "destination_id": "shimla",
-      "format": "reality_check",
-      "outstand_post_id": "LEE0V",
-      "platform_post_id": "18067665245654147",
-      "collection": "After Dark — Night Experiences Worth Staying Up For",
-      "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
-    },
     {
       "timestamp": "2026-04-19T10:12:14.002758+00:00",
       "date": "2026-04-19",
@@ -362,6 +340,18 @@
       "has_media": true
     },
     {
+      "account_id": "m8EAd",
+      "platform": "instagram",
+      "date": "2026-04-28",
+      "mode": "evening",
+      "destination_id": "shimla",
+      "format": "reality_check",
+      "outstand_post_id": "LEE0V",
+      "platform_post_id": "18067665245654147",
+      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
+      "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
+    },
+    {
       "timestamp": "2026-04-28T10:28:42.637644+00:00",
       "date": "2026-04-28",
       "platform": "facebook",
@@ -441,56 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-23T15:23:47.185160+00:00",
-      "date": "2026-05-23",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "HEBU5",
-      "destination": "madurai",
-      "format": "v2_thali_close_up",
-      "has_media": true,
-      "media_id": "v2_thali_close_up-madurai.png"
-    },
-    {
-      "timestamp": "2026-05-23T15:24:09.459641+00:00",
-      "date": "2026-05-23",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "IhFOX",
-      "destination": "srinagar",
-      "format": "route_spotlight",
-      "has_media": true,
-      "mode": "evening"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "v2_thali_close_up": [
-        "2026-05-23"
-      ]
-    },
-    "routes": {},
-    "destinations": {
-      "madurai": [
-        "2026-05-23"
-      ],
-      "srinagar": [
-        "2026-05-23"
-      ]
-    },
-    "reels": {
-      "madurai": [
-        "2026-05-23"
-      ]
-    },
-    "audience_tags": {
-      "families": [
-        "2026-05-23"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -502,8 +445,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "kokernag"
-  },
-  "manual_skip_dests": {}
+  "last_picked": {}
 }
