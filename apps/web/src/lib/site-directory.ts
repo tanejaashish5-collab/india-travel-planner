@@ -46,6 +46,7 @@ export const FOOTER_GROUPS: DirectoryGroup[] = [
       { href: (l) => `/${l}/routes`, labelKey: "routes" },
       { href: (l) => `/${l}/treks`, labelKey: "treks" },
       { href: (l) => `/${l}/festivals`, labelKey: "festivals" },
+      { href: (l) => `/${l}/luxury`, labelKey: "luxury" },
       { href: (l) => `/${l}/camping`, labelKey: "camping" },
       { href: (l) => `/${l}/stays`, labelKey: "stays" },
       { href: (l) => `/${l}/states`, labelKey: "states" },
