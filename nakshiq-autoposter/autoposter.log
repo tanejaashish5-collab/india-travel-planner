@@ -1,25 +1,21 @@
-2026-05-23 06:24:24  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-23 06:24:24  INFO      ════════════════════════════════════════════════════════════
-2026-05-23 06:24:24  INFO      Nakshiq Autoposter · REEL · 2026-05-23 · weekday=5
-2026-05-23 06:24:24  INFO      ════════════════════════════════════════════════════════════
-2026-05-23 06:24:24  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-23 06:24:57  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-23 06:24:57  INFO      Format: seasonal_shift | Data: {'dest_name': 'Mudumalai National Park', 'dest_slug': 'mudumalai', 'now_month': 'May', 'now_score': 5, 'future_month': 'August', 'future_score': 2}
-2026-05-23 06:25:12  INFO      Reel rendered: reel_seasonal_shift_mudumalai.mp4 (6107 KB)
-2026-05-23 06:25:12  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4 (6,254,104 bytes, video/mp4)
-2026-05-23 06:25:13  INFO          Uploading to R2 (timeout=300s)...
-2026-05-23 06:25:15  INFO          R2 PUT OK. Confirming...
-2026-05-23 06:25:16  INFO          Media ready: SVPNJ (6,254,104 bytes · reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4)
-2026-05-23 06:25:16  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4
-2026-05-23 06:25:17  INFO      [youtube/@naksh-iq] Publishing reel (seasonal_shift)...
-2026-05-23 06:25:20  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=GOj9p), confirming...
-2026-05-23 06:25:26  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=GOj9p · Platform=8CsdWPcvYo0
-2026-05-23 06:25:26  INFO      [instagram/nakshiq] Publishing reel (seasonal_shift)...
-2026-05-23 06:25:28  INFO      [instagram/nakshiq] Outstand accepted (post_id=rsMG4), confirming...
-2026-05-23 06:26:04  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=rsMG4 · Platform=18174089683409069
-2026-05-23 06:26:04  INFO      [facebook/Nakshiq] Publishing reel (seasonal_shift)...
-2026-05-23 06:26:06  INFO      [facebook/Nakshiq] Outstand accepted (post_id=uXhkE), confirming...
-2026-05-23 06:26:18  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=uXhkE · Platform=1958955364743914
-2026-05-23 06:26:18  INFO      Theme tracker updated: format=seasonal_shift
-2026-05-23 06:26:18  INFO      State saved. Reel run complete.
-2026-05-23 06:26:18  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 06:49:27  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-23 06:49:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 06:49:27  INFO      Nakshiq Autoposter · MORNING · 2026-05-23 · weekday=5
+2026-05-23 06:49:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-23 06:49:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-23 06:49:55  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-23 06:49:55  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-23 06:49:56  INFO      Outstand dedup guard: merged 3 remote posts into state.
+2026-05-23 06:49:56  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-23 06:49:56  INFO      [csv_formats] 8/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-23 06:49:56  INFO      Morning format (themed-week-4→discovery): v3_tl_editorial_listicle [0% vs target 20%] (14/14 never featured)
+2026-05-23 06:49:56  INFO      Formats — IG: v3_tl_editorial_listicle  ·  FB: v3_tl_editorial_listicle  ·  Story: kids_intel
+2026-05-23 06:49:56  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
+2026-05-23 06:49:56  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 18 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-23 06:49:56  INFO      Kids destination locked: Kabini
+2026-05-23 06:49:59  INFO      Shared best destination locked: Chopta
+2026-05-23 06:49:59  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-23 06:49:59  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-05-23 06:49:59  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-05-23 06:49:59  INFO      State saved. Run complete.
+2026-05-23 06:49:59  INFO      ════════════════════════════════════════════════════════════

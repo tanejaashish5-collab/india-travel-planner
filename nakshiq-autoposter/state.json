@@ -2,14 +2,14 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_reel": "2026-05-23",
-    "m8EAd_reel": "2026-05-23",
-    "PdMu0_reel": "2026-05-23"
+    "PdMu0": "2026-05-23",
+    "m8EAd": "2026-05-23",
+    "GAh5p": "2026-05-23"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-23T06:49:55.029751+00:00",
   "posted_destinations": [
     {
-      "destination_id": "mudumalai",
+      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai",
       "date": "2026-05-23"
     }
   ],
@@ -440,46 +440,11 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-23T06:25:26.439987+00:00",
-      "date": "2026-05-23",
-      "platform": "youtube",
-      "post_id": "GOj9p",
-      "destination": "mudumalai",
-      "format": "reel.seasonal_shift",
-      "media_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4"
-    },
-    {
-      "timestamp": "2026-05-23T06:26:04.200743+00:00",
-      "date": "2026-05-23",
-      "platform": "instagram",
-      "post_id": "rsMG4",
-      "destination": "mudumalai",
-      "format": "reel.seasonal_shift",
-      "media_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4"
-    },
-    {
-      "timestamp": "2026-05-23T06:26:18.321340+00:00",
-      "date": "2026-05-23",
-      "platform": "facebook",
-      "post_id": "uXhkE",
-      "destination": "mudumalai",
-      "format": "reel.seasonal_shift",
-      "media_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4"
     }
   ],
   "theme_usage": {
-    "reel_formats": {
-      "seasonal_shift": [
-        "2026-05-23"
-      ]
-    },
-    "reel_seasonal_dests": {
-      "mudumalai": [
-        "2026-05-23"
-      ]
-    }
+    "morning_formats": {},
+    "destinations": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -492,6 +457,8 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {},
+  "last_picked": {
+    "shared_best": "chopta"
+  },
   "manual_skip_dests": {}
 }
