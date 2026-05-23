@@ -75,8 +75,14 @@
 //      live weather, and related festivals from the host destination.
 //      Festival page becomes a planning lens on the destination instead
 //      of a 320-char prose stub.
+// v46: 2026-05-23 /luxury surface launched — new hub + per-experience detail
+//      pages for India's royal trains, iconic palace stays, and curated
+//      multi-property itineraries. ~30 rows × 2 locales ≈ 60 indexed URLs.
+//      Destination pages gain an "iconic luxury here" rail when a property
+//      is anchored to the dest. Bump purges nakshiq-v45-data so the rail
+//      ships to returning PWA users.
 
-const CACHE_VERSION = "nakshiq-v45";
+const CACHE_VERSION = "nakshiq-v46";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

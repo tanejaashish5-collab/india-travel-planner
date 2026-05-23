@@ -301,6 +301,7 @@ function ExplorePanel({ locale, onNavigate }: { locale: string; onNavigate: () =
             <MenuItem href={`/${locale}/camping`} icon={TentIcon} label={t("camping")} desc="Camp sites" onNavigate={onNavigate} />
             <MenuItem href={`/${locale}/festivals`} icon={SparkleIcon} label={t("festivals")} desc="Celebrations" count={String(FALLBACK.festivals)} onNavigate={onNavigate} />
             <MenuItem href={`/${locale}/stays`} icon={HouseIcon} label={t("stays")} desc="Verified places" onNavigate={onNavigate} />
+            <MenuItem href={`/${locale}/luxury`} icon={SparkleIcon} label={t("luxury")} desc="Royal trains, palace stays" onNavigate={onNavigate} />
           </div>
         </div>
 

@@ -96,7 +96,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const staticPages = [
       "", "explore", "states", "collections", "routes", "treks", "plan",
       "camping", "permits", "road-conditions", "superlatives",
-      "stays", "festivals", "tourist-traps",
+      "stays", "festivals", "luxury", "tourist-traps",
       "saved", "about", "methodology", "blog", "more",
       "terms", "privacy", "cookies", "editorial-policy",
       "india-travel", "data-deletion", "newsletter", "the-window",
@@ -263,7 +263,17 @@ async function buildChunk(id: string): Promise<Entry[]> {
       entry(`festivals/${slug}`, "monthly", 0.75),
     );
 
-    return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries, ...festivalEntries];
+    // Per-luxury-experience pages — ~30 rows × 2 locales ≈ 60 URLs.
+    const { data: luxuryRows } = await supabase
+      .from("luxury_experiences")
+      .select("id")
+      .eq("published", true)
+      .order("id");
+    const luxuryEntries = (luxuryRows ?? []).flatMap((r: { id: string }) =>
+      entry(`luxury/${r.id}`, "monthly", 0.75),
+    );
+
+    return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries, ...festivalEntries, ...luxuryEntries];
   }
 
   if (id === "5") {
