@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Title } from "./landing-cinema/editorial";
+import { videoSrc } from "@/lib/video-url";
 import type { LuxuryRow } from "@/lib/luxury-schema";
 
 const MONTH_LONG = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -67,6 +68,44 @@ export function LuxuryDetail({ row, locale, primaryDestName, labels }: Props) {
 
   return (
     <>
+      {row.hero_video_slug && (
+        <div
+          aria-hidden="true"
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "clamp(320px, 56vh, 640px)",
+            background: "var(--paper-2)",
+            overflow: "hidden",
+            marginBottom: 48,
+          }}
+        >
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            disablePictureInPicture
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          >
+            <source src={videoSrc(row.hero_video_slug)} type="video/mp4" />
+          </video>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(180deg, rgba(10,10,8,0.10) 0%, transparent 35%, rgba(10,10,8,0.78) 100%)",
+            }}
+          />
+        </div>
+      )}
       <header style={{ maxWidth: 980, margin: "0 auto 48px" }}>
         <p className="nq-kicker" style={{ color: "var(--vermillion)", marginBottom: 20, letterSpacing: "0.22em" }}>
           {labels.kicker} · {categoryLabel} · {tierLabel}

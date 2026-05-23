@@ -7,6 +7,7 @@ import { Title } from "@/components/landing-cinema/editorial";
 import { LuxuryContent } from "@/components/luxury-content";
 import { localeAlternates, breadcrumbSchema, collectionPageSchema } from "@/lib/seo-utils";
 import { luxuryItemListJsonLd, type LuxuryRow } from "@/lib/luxury-schema";
+import { videoSrc } from "@/lib/video-url";
 
 // /luxury hub. Lists every published luxury_experiences row — trains,
 // iconic stays, curated itineraries. Mirrors the /festivals hub.
@@ -29,7 +30,7 @@ async function loadLuxury(): Promise<LuxuryRow[]> {
   const supabase = createClient(url, key);
   const { data } = await supabase
     .from("luxury_experiences")
-    .select("id, name, category, tier, state_id, primary_destination_id, operator, tagline, hero_image_url, price_band_inr, duration, best_months, translations")
+    .select("id, name, category, tier, state_id, primary_destination_id, operator, tagline, hero_image_url, hero_video_slug, price_band_inr, duration, best_months, translations")
     .eq("published", true)
     .order("category")
     .order("tier")
@@ -57,7 +58,37 @@ export default async function LuxuryHubPage({ params }: { params: Promise<{ loca
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main id="main-content" className="nq-grain" style={{ position: "relative", padding: "140px 24px 64px" }}>
+      <div
+        aria-hidden="true"
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "clamp(360px, 64vh, 720px)",
+          background: "var(--paper-2)",
+          overflow: "hidden",
+          marginTop: 88,
+        }}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+        >
+          <source src={videoSrc("hub-master-montage")} type="video/mp4" />
+        </video>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(10,10,8,0.15) 0%, transparent 35%, rgba(10,10,8,0.82) 100%)",
+          }}
+        />
+      </div>
+      <main id="main-content" className="nq-grain" style={{ position: "relative", padding: "72px 24px 64px" }}>
         <header style={{ maxWidth: 1100, margin: "0 auto 56px" }}>
           <p className="nq-kicker" style={{ color: "var(--vermillion)", marginBottom: 24, letterSpacing: "0.22em" }}>
             ULTRA-LUXURY · {String(rows.length).padStart(2, "0")} TRIPS

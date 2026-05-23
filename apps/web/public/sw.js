@@ -81,8 +81,13 @@
 //      Destination pages gain an "iconic luxury here" rail when a property
 //      is anchored to the dest. Bump purges nakshiq-v45-data so the rail
 //      ships to returning PWA users.
+// v47: 2026-05-23 /luxury detail-page hero videos wired — every
+//      published luxury_experiences row now ships with an autoplaying
+//      muted-loop <video> hero (R2-hosted, 33 properties live). Detail-
+//      page markup changes (new <video> block above the title), so the
+//      bump purges nakshiq-v46-html for returning PWA users.
 
-const CACHE_VERSION = "nakshiq-v46";
+const CACHE_VERSION = "nakshiq-v47";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

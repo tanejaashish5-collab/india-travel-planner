@@ -23,6 +23,7 @@ export type LuxuryRow = {
   operator?: string | null;
   official_url?: string | null;
   hero_image_url?: string | null;
+  hero_video_slug?: string | null;
   tagline?: string | null;
   editorial?: string | null;
   signature_experience?: string | null;
