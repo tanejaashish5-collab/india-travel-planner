@@ -8,49 +8,49 @@
 # folder at the bucket root.
 #
 # The workflow fetches each entry on cron startup. Missing entries are skipped
-# silently. The autoposter's is_eligible() gates which formats actually POST —
-# an asset being present does not guarantee a post; the caption data must resolve.
+# silently so a slow / failed sync never blocks posting. Lines starting with #
+# and blank lines are ignored.
 #
-# Format: one bare filename per line. Lines starting with # are comments.
+# Regenerated 2026-05-24 — all 21 PNG covers rebuilt via slide_gen with
+# brand-locked overlay text + correct dest hero photos. 13 MP4 video assets
+# kept as-is (Reels carry their message via motion + caption, not overlay).
+#
+# Refresh procedure when adding/removing assets:
+#   1. Drop files into social_image_library/ (and upload to R2).
+#   2. Run scripts/_refresh_phase2_manifest.py (or edit by hand).
+#   3. Commit. Next cron run will sync from R2.
 
-# === FIRES (10 combos — format uses existing Supabase data, revised 2026-05-20) ===
-v2_hindi_score_card-achabal.png
-v2_hindi_score_card-manali.png
-v2_score_card_pov-achabal.mp4
-v2_pov_slow_morning-spiti.png
-v2_budget_receipt-ladakh.png
-v2_thali_close_up-old-delhi.png
-v2_local_knows-goa.png
-v2_yt_silent_pov-tungnath.mp4
-v3_tl_poll_reel-manali.png
-v3_tl_editorial_listicle-rajasthan.png
-
-# === ELIGIBLE-BUT-SKIPS (4 — need new content tables, Phase 3) ===
-# v3_tl_news_announcement — needs a news feed / news_announcements table
-# v3_tl_first_person_essay — needs authored essay copy (essays table)
-# v4_dw_archival_modern_carousel — needs archival photo metadata
-# v4_dw_counter_narrative_myth_bust — needs researched myth registry
-v3_tl_first_person_essay-hampi.png
-v3_tl_news_announcement-rohtang-pass.png
-v4_dw_archival_modern_carousel-mehrauli.png
-v4_dw_counter_narrative_myth_bust-mumbai.png
-v2_hindi_score_card-shimla.png
-v2_hindi_score_card-pahalgam.png
-v2_yt_silent_pov-tawang.mp4
-v2_score_card_pov-kalimpong.mp4
-v2_score_card_pov-coorg.mp4
-v2_pov_slow_morning-munnar.mp4
-v2_pov_slow_morning-chopta.mp4
-v2_hindi_score_card-gangtok.png
-v3_tl_editorial_listicle-uttarakhand.png
-v3_tl_editorial_listicle-himachal-pradesh.png
-v2_local_knows-darjeeling.png
-v2_local_knows-ooty.png
-v2_thali_close_up-madurai.png
-v2_thali_close_up-amritsar.png
-v3_tl_poll_reel-nainital.mp4
 v2_budget_receipt-kasol.png
-v3_tl_poll_reel-mussoorie.mp4
-v2_yt_silent_pov-ziro.mp4
-v2_yt_silent_pov-gurez-valley.mp4
+v2_budget_receipt-leh.png
 v2_budget_receipt-munsiyari.png
+v2_hindi_score_card-achabal.png
+v2_hindi_score_card-gangtok.png
+v2_hindi_score_card-manali.png
+v2_hindi_score_card-pahalgam.png
+v2_hindi_score_card-shimla.png
+v2_local_knows-darjeeling.png
+v2_local_knows-old-goa.png
+v2_local_knows-ooty.png
+v2_pov_slow_morning-chopta.mp4
+v2_pov_slow_morning-munnar.mp4
+v2_pov_slow_morning-spiti.mp4
+v2_score_card_pov-achabal.mp4
+v2_score_card_pov-coorg.mp4
+v2_score_card_pov-kalimpong.mp4
+v2_thali_close_up-anandpur-sahib.png
+v2_thali_close_up-madurai.png
+v2_thali_close_up-mathura.png
+v2_yt_silent_pov-gurez-valley.mp4
+v2_yt_silent_pov-tawang.mp4
+v2_yt_silent_pov-tungnath.mp4
+v2_yt_silent_pov-ziro.mp4
+v3_tl_editorial_listicle-himachal-pradesh.png
+v3_tl_editorial_listicle-rajasthan.png
+v3_tl_editorial_listicle-uttarakhand.png
+v3_tl_first_person_essay-hampi.png
+v3_tl_news_announcement-manali.png
+v3_tl_poll_reel-manali.mp4
+v3_tl_poll_reel-mussoorie.mp4
+v3_tl_poll_reel-nainital.mp4
+v4_dw_archival_modern_carousel-mathura.png
+v4_dw_counter_narrative_myth_bust-mumbai.png

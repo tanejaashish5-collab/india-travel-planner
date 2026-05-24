@@ -5098,18 +5098,38 @@ def generate_post(fmt: str, content: dict, platform: str,
                     for i, d in enumerate(in_state, 1)
                 )
                 extras["listicle_count"] = len(in_state)
+                # slide_gen.build_csv_carousel uses items + state_name to
+                # render the listicle slide visually (not from listicle_body).
+                extras["items"] = [
+                    {"name": d.get("name",""), "score": d.get("score") or 0,
+                     "id": d.get("id","")}
+                    for d in in_state
+                ]
+                extras["state_name"] = state_name
             caption = _csv_fmt.render_caption(spec, cand, extra_context=extras)
             if caption:
                 # Surface the purpose-built asset the eligibility check matched
                 # so the posting loop attaches THAT file — not the dest's
                 # generic Ken Burns clip. Shallow-copy so the `_csv_asset` key
                 # never leaks onto the shared pool object.
-                asset = _csv_fmt._find_matching_asset(
+                #
+                # find_asset_or_dynamic() returns either:
+                #   - a real Path  → static asset on disk, upload it as-is
+                #   - DYNAMIC_ASSET sentinel → slide_gen renders at post time
+                #   - None         → only for reel/yt_short without an asset
+                asset = _csv_fmt.find_asset_or_dynamic(
                     spec, cand, SOCIAL_IMAGE_LIBRARY_DIR
                 )
                 out_dest = dict(cand)
-                if asset:
+                if asset is _csv_fmt.DYNAMIC_ASSET:
+                    out_dest["_csv_asset"] = "__DYNAMIC__"
+                    out_dest["_csv_spec_id"] = spec.format_id
+                    # Stash anything render-time needs for slide_gen
+                    if extras:
+                        out_dest["_csv_extras"] = dict(extras)
+                elif asset:
                     out_dest["_csv_asset"] = str(asset)
+                    out_dest["_csv_spec_id"] = spec.format_id
                 return caption, out_dest
         # No dest passed eligibility — skip this format silently so picker
         # falls through to v1 next time. (Picker shouldn't have surfaced
@@ -5278,6 +5298,62 @@ def _upload_csv_asset(path: str, label: str) -> tuple[dict | None, bool]:
     return m, False
 
 
+def _render_csv_dynamic(spec_id: str, dest: dict, extras: dict | None,
+                        label: str) -> tuple[dict | None, list[dict]]:
+    """Render a CSV format's slides at post time via slide_gen and upload
+    each to Outstand.
+
+    Returns (single_media_obj, media_list). For `post_type=single` exactly one
+    of those is populated (single_media_obj); for `post_type=carousel` it's
+    media_list. On failure returns (None, []).
+
+    This is the dynamic-render path for v2/v3/v4 single+carousel formats —
+    no pre-rendered asset on disk required. slide_gen pulls the dest hero
+    from R2 and composites brand-locked text overlays.
+    """
+    try:
+        import tempfile
+        from pathlib import Path as _Path
+        import slide_gen
+    except Exception as e:
+        log.warning(f"[{label}] slide_gen unavailable for dynamic render ({e}).")
+        return None, []
+    specs = get_csv_specs() or {}
+    spec = specs.get(spec_id)
+    if not spec:
+        log.warning(f"[{label}] dynamic render: unknown spec_id={spec_id}")
+        return None, []
+    try:
+        with tempfile.TemporaryDirectory(prefix="nakshiq_csv_slides_") as td:
+            out_dir = _Path(td)
+            paths = slide_gen.build_csv_slides(spec, dest, extras or {}, out_dir)
+            if not paths:
+                log.warning(f"[{label}] dynamic render: 0 slides produced "
+                            f"for {spec_id}")
+                return None, []
+            log.info(f"[{label}] dynamic render: {len(paths)} slide(s) for "
+                     f"{spec_id} → uploading...")
+            uploaded: list[dict] = []
+            for p in paths:
+                try:
+                    with open(p, "rb") as f:
+                        data = f.read()
+                except OSError as e:
+                    log.warning(f"[{label}] dynamic slide read failed ({e})")
+                    continue
+                m = upload_media_bytes(data, p.name, "image/png")
+                if m:
+                    uploaded.append(m)
+            if not uploaded:
+                return None, []
+            if spec.post_type == "single":
+                return uploaded[0], []
+            return None, uploaded
+    except Exception as e:
+        log.warning(f"[{label}] dynamic render crashed ({e}).")
+        return None, []
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # PUBLISHERS
 # ─────────────────────────────────────────────────────────────────────────────
@@ -5288,7 +5364,27 @@ def build_media_item(m: dict) -> dict:
 
 # Instagram allows 2-10 media items per carousel. Cap at 10 for both platforms.
 CAROUSEL_MAX_SLIDES = 10
+# Legacy carousels — rendered by slide_gen.build_carousel_slides (the 3
+# format_ids it knows). CSV carousels (v2_*/v3_*/v4_* with post_type=carousel)
+# are added dynamically below from the loaded specs.
 CAROUSEL_FORMATS    = {"data_carousel", "monthly_forecast", "collection_spotlight"}
+
+
+def _csv_carousel_format_ids() -> set[str]:
+    """v2/v3/v4 format_ids with post_type=carousel. Computed once from the
+    loaded specs so the autoposter routes them through the multi-slide path
+    instead of treating them as single-image posts. If the spec cache hasn't
+    loaded yet (rare — module import order), returns empty."""
+    try:
+        specs = get_csv_specs() or {}
+        return {fid for fid, s in specs.items() if s.post_type == "carousel"}
+    except Exception:
+        return set()
+
+
+# Extend at import time so the rest of the file's `fmt in CAROUSEL_FORMATS`
+# checks pick up CSV carousels too.
+CAROUSEL_FORMATS |= _csv_carousel_format_ids()
 
 
 def _build_branded_carousel(fmt: str, content: dict, destinations: list,
@@ -6663,13 +6759,32 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         use_video   = False
 
         # ── Phase-2 / CSV-format asset (highest priority) ─────────────────────
-        # CSV formats (v2_*/v3_*/v4_*) ship a purpose-built asset at
-        # social_image_library/{format_id}-{slug}.{mp4,png}. When the dispatcher
-        # matched one it rides on dest_obj["_csv_asset"] — post THAT, not the
-        # dest's generic Ken Burns clip. Without this v2_pov_slow_morning
-        # silently reused {slug}.mp4 (chopta posted it twice, 2026-05-20).
+        # CSV formats (v2_*/v3_*/v4_*) ship one of two asset paths:
+        #   1. Static asset on disk: social_image_library/{format_id}-{slug}.{mp4,png}
+        #      → upload it as-is. (Used for reel/yt_short + pre-rendered overrides.)
+        #   2. DYNAMIC render: slide_gen.build_csv_slides composites the slides
+        #      from the FormatSpec + dest hero at post time. Used for all
+        #      single/carousel formats without a static asset on disk — which
+        #      after the 2026-05-24 rewrite is most of them. Removes the
+        #      bare-photo / wrong-dest problem and unblocks the 25 CSV
+        #      formats that previously had zero assets.
         csv_asset_path = dest_obj.get("_csv_asset")
-        if csv_asset_path and os.path.exists(csv_asset_path):
+        csv_spec_id    = dest_obj.get("_csv_spec_id")
+        if csv_asset_path == "__DYNAMIC__" and csv_spec_id:
+            single_media, slide_list = _render_csv_dynamic(
+                csv_spec_id, dest_obj,
+                dest_obj.get("_csv_extras") or {}, label,
+            )
+            if slide_list:
+                media_list  = slide_list
+                is_carousel = True
+            elif single_media:
+                media_obj   = single_media
+                is_carousel = False
+            else:
+                log.warning(f"[{label}] dynamic CSV render produced nothing — "
+                            f"falling back to generic dest media.")
+        elif csv_asset_path and os.path.exists(csv_asset_path):
             media_obj, use_video = _upload_csv_asset(csv_asset_path, label)
             if media_obj:
                 is_carousel = False
@@ -6690,7 +6805,11 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 log.warning(f"[{label}] Video upload failed — falling back to image.")
                 use_video = False
 
-        if is_carousel and not use_video:
+        if is_carousel and not use_video and not media_list:
+            # CSV carousels are already handled above via the dynamic CSV
+            # render path (which populates media_list). Only the legacy 3
+            # carousel formats reach this block.
+            #
             # Use the run-scoped destination list that was pre-picked before the
             # per-account loop. This guarantees IG and FB show the SAME carousel
             # (same destinations, same order) when they both run a carousel format

@@ -268,6 +268,14 @@ def _expand_aliases(dest: dict) -> dict:
     return ctx
 
 
+# post_types that slide_gen can render at post time from FormatSpec + dest.
+# When a format with one of these post_types has no static asset on disk, the
+# autoposter routes it through slide_gen.build_csv_slides instead of skipping.
+# Reel / yt_short still require a static video asset — slide_gen can't make
+# video.
+DYNAMIC_RENDER_POST_TYPES = frozenset({"single", "carousel"})
+
+
 def is_eligible(spec: FormatSpec,
                 candidate_dest: dict,
                 asset_dir: Path) -> tuple[bool, str]:
@@ -279,11 +287,13 @@ def is_eligible(spec: FormatSpec,
       1. Every placeholder used in caption_template MUST either resolve to a
          non-empty field on candidate_dest OR be in _NON_DEST_DATA_FIELDS
          (injected at render time).
-      2. At least one matching asset must exist in `asset_dir`. We accept
-         either format-scoped naming `{format_id}-{dest_slug}.{ext}` OR the
-         generic dest naming `{dest_slug}.{ext}` (existing convention). This
-         lets a Co-work-generated asset opt a format in without forcing
-         per-format file duplication.
+      2. For reel/yt_short formats, a static video asset must exist in
+         `asset_dir`. For single/carousel formats, a static asset is OPTIONAL
+         — if missing, slide_gen.build_csv_slides renders the slides at post
+         time from the FormatSpec + dest hero. This keeps reels/shorts gated
+         on a pre-rendered clip (slide_gen can't make video) while letting
+         every single/carousel format become eligible as soon as its caption
+         placeholders resolve.
     """
     if not candidate_dest:
         return False, "no candidate dest"
@@ -299,8 +309,12 @@ def is_eligible(spec: FormatSpec,
     if missing:
         return False, f"missing dest fields: {missing[:5]}"
 
+    if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
+        # Eligible — slide_gen will render at post time if no static asset.
+        return True, "ok"
+
     if not _find_matching_asset(spec, candidate_dest, asset_dir):
-        return False, "no matching asset in social_image_library/"
+        return False, "no matching video asset in social_image_library/"
 
     return True, "ok"
 
@@ -353,6 +367,28 @@ def _find_matching_asset(spec: FormatSpec,
         p = asset_dir / name
         if p.exists() and p.stat().st_size > 0:
             return p
+    return None
+
+
+# Sentinel returned by find_asset_or_dynamic() when no static asset exists
+# but slide_gen can render the format dynamically. Compare with `is`, not `==`.
+DYNAMIC_ASSET = Path("__DYNAMIC_RENDER__")
+
+
+def find_asset_or_dynamic(spec: FormatSpec, dest: dict, asset_dir: Path) -> Path | None:
+    """Like _find_matching_asset, but returns DYNAMIC_ASSET (a sentinel) when
+    no static file exists AND the spec.post_type is renderable by slide_gen.
+
+    The autoposter uses this to decide between:
+      - static asset upload (real path returned)
+      - dynamic slide_gen render at post time (DYNAMIC_ASSET returned)
+      - skip the format (None returned — only for reel/yt_short without asset)
+    """
+    p = _find_matching_asset(spec, dest, asset_dir)
+    if p is not None:
+        return p
+    if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
+        return DYNAMIC_ASSET
     return None
 
 
