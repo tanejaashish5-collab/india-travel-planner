@@ -283,6 +283,426 @@ DYNAMIC_RENDER_POST_TYPES = frozenset({"single", "carousel"})
 # formats that were previously dormant.
 VIDEO_POST_TYPES = frozenset({"reel", "yt_short"})
 
+# Format_id → /api/content?type=X endpoint that owns the row data.
+# When a format is keyed here, the dispatcher iterates content[endpoint][data]
+# rows as candidates (instead of destinations) and substitutes the row's
+# fields directly into the format's templates. The row's destination_id (or
+# destination_name) links back to a dest for hero photo + Ken Burns video
+# fallback. This unlocks ~7 video formats whose data lives in dedicated
+# content endpoints (arrival airports, hidden gems, road routes, women-solo
+# guides, viral eats listings) — previously they sat dormant because the
+# dispatcher only iterated dest records.
+ENDPOINT_ANCHORED_FORMATS: dict[str, str] = {
+    "v2_arrival_intel_video":           "arrival",
+    "v2_hidden_gem_reveal_atmo":        "hidden_gems",
+    "v2_route_animated_map":            "routes",
+    "v2_yt_route_5_stops":              "routes",
+    "v2_women_solo_brief_video":        "women_solo",
+    "v2_yt_food_capital":               "eateries",      # richer per-dest than viral_eats
+    "v4_dw_heritage_reel_sensory_pov":  "festivals",     # rewritten 2026-05-24 to festival POV
+    # v2_weekend_escape_map intentionally NOT here — it filters destinations
+    # via WEEKEND_ANCHOR_BY_DEST in autoposter.py, not an endpoint row
+    # iteration. The dispatcher handles it specially.
+    # v2_tourist_trap_split intentionally NOT here — the traps endpoint is
+    # empty in production (verified 2026-05-24). Repurposed to brochure-vs-
+    # verified dest-anchored in Tier 2.
+}
+
+
+# Per-format field aliases — map the row's actual field name (from the live
+# API) to the placeholder name the CSV template uses. Applied during caption
+# rendering so we don't need to rewrite the CSV templates every time the API
+# tweaks a field name.
+ENDPOINT_FIELD_ALIASES: dict[str, dict[str, str]] = {
+    "v2_arrival_intel_video": {
+        "atm_notes":       "atm_location",   # API field → template placeholder
+    },
+    "v2_hidden_gem_reveal_atmo": {
+        "name":            "gem_name",
+    },
+    "v2_route_animated_map": {
+        "name":            "route_name",
+        "days":            "total_days",
+        "bike_route":      "bike_friendly",
+    },
+    "v2_yt_route_5_stops": {
+        "name":            "route_name",
+        "days":            "total_days",
+    },
+    "v2_women_solo_brief_video": {
+        "destination_name":   "dest_name",
+        "solo_female_score":  "solo_score",
+    },
+    "v2_yt_food_capital": {
+        "destination_name":   "real_food_city",
+    },
+}
+
+
+def endpoint_for(format_id: str) -> str | None:
+    """Return the /api/content?type=X key that anchors this format, or None
+    if the format is destination-anchored (the default)."""
+    return ENDPOINT_ANCHORED_FORMATS.get(format_id)
+
+
+def endpoint_candidates(spec: FormatSpec, content: dict) -> list[dict]:
+    """For endpoint-anchored formats, return the list of candidate rows
+    pulled from content[endpoint]['data']. Each row is a flat dict whose
+    field names mostly match the format's placeholders; ENDPOINT_FIELD_ALIASES
+    fills the remaining gaps. Returns [] for destination-anchored formats.
+
+    Some formats need row aggregation or joins (e.g. v2_yt_food_capital
+    groups viral_eats by destination_id to produce dish_1..N + eatery_1..N
+    rows; v2_route_animated_map flattens routes.stops list into stop_N_name
+    fields). Those run as post-shapers below."""
+    endpoint = ENDPOINT_ANCHORED_FORMATS.get(spec.format_id)
+    if not endpoint:
+        return []
+    payload = (content or {}).get(endpoint) or {}
+    rows = payload.get("data") if isinstance(payload, dict) else None
+    rows = list(rows or [])
+
+    # Format-specific data shapers — turn raw API rows into rows whose fields
+    # match the format's caption_template placeholders. Without these, multi-
+    # value formats (food_capital wanting dish_1..4, routes wanting stop_1..5)
+    # fail eligibility because each raw row has only one dish/stop.
+    shaper = _ROW_SHAPERS.get(spec.format_id)
+    if shaper:
+        rows = shaper(rows, content)
+    return rows
+
+
+def _shape_routes(rows: list, content: dict) -> list:
+    """routes endpoint stores .stops as a list of dest-ID strings like
+    ["aurangabad","ajanta-caves","ellora-caves"]. Templates want
+    stop_1_name, stop_2_name, …, stop_N_one_word, stop_count, total_km,
+    permit_note. Flatten the list + look up dest taglines for stop_N_note.
+
+    Uses fetch_full_destination_catalog() if available for richer dest data
+    — content["destinations"] only contains the current month's top-20."""
+    dest_by_id = _dest_lookup(content)
+    if len(dest_by_id) < 100:
+        # Tiny catalog — pull the full 433-dest pool for stop lookups
+        try:
+            from autoposter import fetch_full_destination_catalog
+            for d in fetch_full_destination_catalog():
+                did = (d.get("id") or "").lower()
+                if did and did not in dest_by_id:
+                    dest_by_id[did] = d
+        except Exception:
+            pass
+    out = []
+    for r in rows:
+        stops = r.get("stops") or []
+        if not stops:
+            continue
+        shaped = dict(r)
+        shaped["stop_count"] = len(stops)
+        # Fill stop_1..stop_5 fields (templates only reference up to 5)
+        for i in range(1, 6):
+            if i - 1 < len(stops):
+                slug = stops[i - 1]
+                d = dest_by_id.get((slug or "").lower())
+                pretty = (d.get("name") if d else slug.replace("-", " ").title())
+                shaped[f"stop_{i}_name"] = pretty
+                # one_word descriptor — prefer the dest's hero_dish first
+                # word, else difficulty, else just blank rather than "Stop"
+                hd = (d.get("hero_dish") if d else "") or ""
+                first_word = hd.split()[0].rstrip(",.") if hd else ""
+                shaped[f"stop_{i}_one_word"] = (
+                    first_word.lower() if first_word
+                    else (d.get("difficulty", "") if d else "")
+                )
+                # stop_N_note: dest tagline up to 80 chars. Without a dest
+                # join we'd leave an empty dash; better to drop the dash by
+                # supplying the stop name itself as a tight fallback.
+                tagline = (d.get("tagline", "")[:80] if d else "").strip()
+                shaped[f"stop_{i}_note"] = tagline or pretty
+            else:
+                shaped[f"stop_{i}_name"] = ""
+                shaped[f"stop_{i}_one_word"] = ""
+                shaped[f"stop_{i}_note"] = ""
+        # Fields not in the API — use sensible defaults
+        # total_km derive from days × ~150km/day (rough heuristic)
+        try:
+            days = int(str(shaped.get("days", "")).strip() or 0)
+            shaped["total_km"] = f"~{days * 150}" if days > 0 else "~variable"
+        except Exception:
+            shaped["total_km"] = "~variable"
+        shaped["permit_note"] = (shaped.get("permit_note")
+                                  or shaped.get("budget_range", "")
+                                  or "no special permits")
+        # Normalise True/False booleans for display
+        bf = str(shaped.get("bike_route", "")).lower()
+        shaped["bike_friendly"] = "Yes" if bf == "true" else "No"
+        # best_months arrives as list of ints — render as comma-joined names
+        bm = shaped.get("best_months") or []
+        if isinstance(bm, list) and bm:
+            shaped["best_months"] = ", ".join(_month_name(m) for m in bm[:6])
+            avoid = [m for m in range(1, 13) if m not in bm]
+            shaped["avoid_months"] = (", ".join(_month_name(m) for m in avoid[:6])
+                                       or "year-round travel possible")
+        else:
+            shaped["best_months"] = "year-round"
+            shaped["avoid_months"] = ""
+        out.append(shaped)
+    return out
+
+
+def _shape_women_solo(rows: list, content: dict) -> list:
+    """women_solo endpoint is thin (just dest_name, state, solo_score,
+    tagline). Templates want helpline_local, safe_stay_name, safe_stay_note,
+    day_routes, night_advice, avoid_stay_note, duration, crowd_level. Join
+    the stays endpoint by destination_id for stay names; supply national-
+    helpline + dest.tagline defaults for the rest."""
+    stays_by_dest: dict[str, list] = {}
+    for s in ((content or {}).get("stays") or {}).get("data") or []:
+        did = (s.get("destination_id") or "").lower()
+        if did:
+            stays_by_dest.setdefault(did, []).append(s)
+    out = []
+    for r in rows:
+        did = (r.get("destination_id") or "").lower()
+        stay = (stays_by_dest.get(did) or [None])[0]
+        shaped = dict(r)
+        shaped["safe_stay_name"] = (stay or {}).get("name", "mid-tier hotel near transit hub")
+        shaped["safe_stay_note"] = (
+            (stay or {}).get("why_nakshiq", "")[:120]
+            or "verified central location with good lighting"
+        )
+        shaped["avoid_stay_note"] = "Skip remote homestays without check-in reviews."
+        shaped["day_routes"] = (shaped.get("tagline") or "")[:140]
+        shaped["night_advice"] = "Stick to lit, populated streets after sundown. Pre-book transport."
+        shaped["helpline_local"] = "1091 (women helpline) · 112 (emergency)"
+        shaped["duration"] = "2-3 nights"
+        shaped["crowd_level"] = "moderate"
+        out.append(shaped)
+    return out
+
+
+def _shape_food_capital(rows: list, content: dict) -> list:
+    """eateries endpoint has one row per eatery, each with a `must_try` list
+    of multiple dishes. Template wants dish_1..4 + eatery_1..4 + price_1..4
+    — one row per CITY. Strategy: pick the top legendary/most-storied eatery
+    per dest as eatery_1, fill dish_1..4 from its `must_try` list (which is
+    long: see Bhatiyar Gali Ahmedabad with 6+ Akbari/Zamzam dishes). If a
+    dest has 2-4 eateries in the result set, distribute one dish each across
+    multiple eateries instead.
+
+    Need destination metadata (state, destination_name) which eateries don't
+    carry directly; join via destinations endpoint by destination_id."""
+    dest_lookup = _dest_lookup(content)
+    by_dest: dict[str, list] = {}
+    for r in rows:
+        did = (r.get("destination_id") or "").lower()
+        if did:
+            by_dest.setdefault(did, []).append(r)
+    out = []
+    for did, items in by_dest.items():
+        # Prefer legendary eateries, then most must_try items
+        items = sorted(items, key=lambda e: (
+            -int(str(e.get("is_legendary")).lower() == "true"),
+            -len(e.get("must_try") or []),
+        ))
+        dest = dest_lookup.get(did)
+        if not dest:
+            continue
+        state = dest.get("state", "")
+        dest_name = dest.get("name", "")
+        famous = _FAMOUS_FOOD_CITY.get(state, "Delhi")
+        if famous.lower() == dest_name.lower():
+            # The anchor IS the famous city — flip framing
+            famous = "the food bloggers"
+        agg = {
+            "destination_id":  did,
+            "destination_name": dest_name,
+            "state":           state,
+            "real_food_city":  dest_name,
+            "famous_food_city": famous,
+            "image":           dest.get("image", ""),
+            "url":             dest.get("url", ""),
+        }
+        # Strategy: spread dish_1..dish_4 across eateries
+        dish_slots = []  # list of (dish, eatery, price)
+        for it in items[:4]:
+            eatery = (it.get("name") or "").strip()
+            price  = (it.get("price_range") or "").strip()
+            must_try = it.get("must_try") or []
+            # Pick the signature dish if present, else first must_try
+            sig = (it.get("signature_dish") or "").strip()
+            if sig:
+                dish_slots.append((sig[:60], eatery, price))
+            elif must_try:
+                dish_slots.append((str(must_try[0])[:60], eatery, price))
+        # If we only have 1-2 eateries but they each have multiple must_try,
+        # pull the extras from the top eatery's must_try list
+        if len(dish_slots) < 4 and items:
+            top = items[0]
+            top_eatery = (top.get("name") or "").strip()
+            top_price  = (top.get("price_range") or "").strip()
+            extras = (top.get("must_try") or [])[1:]   # skip the one used above
+            for d in extras:
+                if len(dish_slots) >= 4:
+                    break
+                dish_slots.append((str(d)[:60], top_eatery, top_price))
+        # Pad to 4
+        while len(dish_slots) < 4:
+            dish_slots.append(("", "", ""))
+        for i, (dish, eatery, price) in enumerate(dish_slots[:4], 1):
+            agg[f"dish_{i}"]   = dish
+            agg[f"eatery_{i}"] = eatery
+            agg[f"price_{i}"]  = price
+        # Total budget — sum of ₹ midpoints
+        prices_inr = 0
+        import re as _re
+        for _, _, pr in dish_slots:
+            nums = [int(n.replace(",", "")) for n in _re.findall(r"(\d[\d,]*)", pr)]
+            if nums:
+                prices_inr += sum(nums) // len(nums)
+        agg["total_inr"] = f"{prices_inr:,}" if prices_inr else "800-1,500"
+        # Only ship cities with ≥3 real dish slots
+        filled = sum(1 for i in range(1, 5) if agg.get(f"dish_{i}"))
+        if filled >= 3:
+            out.append(agg)
+    return out
+
+
+def _shape_arrival(rows: list, content: dict) -> list:
+    """arrival endpoint mostly matches the template. Two gaps:
+      - first_night_stay: not in API → join stays by destination_id
+      - atm_location: API uses atm_notes (handled in ENDPOINT_FIELD_ALIASES)
+    Also normalise API string "None" → empty so eligibility doesn't
+    spuriously accept null-marker strings."""
+    stays_by_dest: dict[str, list] = {}
+    for s in ((content or {}).get("stays") or {}).get("data") or []:
+        did = (s.get("destination_id") or "").lower()
+        if did:
+            stays_by_dest.setdefault(did, []).append(s)
+    out = []
+    for r in rows:
+        shaped = {k: ("" if str(v).strip() == "None" else v) for k, v in r.items()}
+        did = (shaped.get("destination_id") or "").lower()
+        stay = (stays_by_dest.get(did) or [None])[0]
+        shaped["first_night_stay"] = (
+            (stay or {}).get("name", "")
+            or "mid-tier hotel within 30 min of the airport"
+        )
+        out.append(shaped)
+    return out
+
+
+def _shape_hidden_gems(rows: list, content: dict) -> list:
+    """hidden_gems mostly matches. Add defaults for fields not in API:
+    access_note (derive from drive_time), avoid_months (best window
+    flipped), population (silent — template tolerates blank)."""
+    out = []
+    for r in rows:
+        shaped = {k: ("" if str(v).strip() == "None" else v) for k, v in r.items()}
+        shaped["access_note"] = (shaped.get("drive_time")
+                                 or "open access, no permit required")
+        shaped.setdefault("avoid_months", "year-round access")
+        # Population isn't in the API — substitute "village-scale" so the
+        # template's "Pop. ~{population}" doesn't read as a broken artifact.
+        shaped["population"] = shaped.get("population") or "village-scale"
+        out.append(shaped)
+    return out
+
+
+def _shape_festivals(rows: list, content: dict) -> list:
+    """festivals endpoint has name, description, destination_name (string
+    inside `destinations.name`), month (int). Surface destination_name + a
+    readable month_name at the row level so the template renders cleanly."""
+    out = []
+    for r in rows:
+        shaped = {k: ("" if str(v).strip() == "None" else v) for k, v in r.items()}
+        # destinations is {"name": "Kedarnath"} — lift to destination_name
+        if not shaped.get("destination_name"):
+            d_obj = shaped.get("destinations") or {}
+            if isinstance(d_obj, dict):
+                shaped["destination_name"] = d_obj.get("name", "")
+        # Convert month int to readable name
+        try:
+            m = int(shaped.get("month") or 0)
+            shaped["month_name"] = _month_name(m)
+        except Exception:
+            shaped["month_name"] = ""
+        if shaped.get("name") and shaped.get("description"):
+            out.append(shaped)
+    return out
+
+
+_ROW_SHAPERS = {
+    "v2_arrival_intel_video":           _shape_arrival,
+    "v2_hidden_gem_reveal_atmo":        _shape_hidden_gems,
+    "v2_route_animated_map":            _shape_routes,
+    "v2_yt_route_5_stops":              _shape_routes,
+    "v2_women_solo_brief_video":        _shape_women_solo,
+    "v2_yt_food_capital":               _shape_food_capital,
+    "v4_dw_heritage_reel_sensory_pov":  _shape_festivals,
+}
+
+
+def _dest_lookup(content: dict) -> dict[str, dict]:
+    """Quick {dest_id → dest_record} lookup against /api/content?type=destinations.
+    Used by route shapers to resolve stop slugs to names + taglines."""
+    out: dict[str, dict] = {}
+    rows = ((content or {}).get("destinations") or {}).get("data") or []
+    for d in rows:
+        did = (d.get("id") or "").lower()
+        if did and did not in out:
+            out[did] = d
+    return out
+
+
+def _month_name(m: int) -> str:
+    return ["", "Jan","Feb","Mar","Apr","May","Jun",
+            "Jul","Aug","Sep","Oct","Nov","Dec"][m] if 1 <= m <= 12 else ""
+
+
+# The "obvious" food city per state — used by v2_yt_food_capital's
+# "Forget {famous_food_city}. {real_food_city} eats it for breakfast."
+# framing. State → city the audience would name first if asked. The
+# anchor dest is the underdog we're championing against this name.
+_FAMOUS_FOOD_CITY: dict[str, str] = {
+    "Uttar Pradesh":     "Lucknow",
+    "Punjab":            "Amritsar",
+    "Delhi":             "Old Delhi",
+    "Maharashtra":       "Mumbai",
+    "Karnataka":         "Bangalore",
+    "Tamil Nadu":        "Chennai",
+    "Kerala":            "Kochi",
+    "Gujarat":           "Ahmedabad",
+    "Rajasthan":         "Jaipur",
+    "West Bengal":       "Kolkata",
+    "Andhra Pradesh":    "Hyderabad",
+    "Telangana":         "Hyderabad",
+    "Madhya Pradesh":    "Indore",
+    "Bihar":             "Patna",
+    "Odisha":            "Bhubaneswar",
+    "Assam":             "Guwahati",
+    "Goa":               "Panaji",
+    "Himachal Pradesh":  "Shimla",
+    "Uttarakhand":       "Dehradun",
+    "Jammu and Kashmir": "Srinagar",
+}
+
+
+def _apply_endpoint_aliases(format_id: str, row: dict) -> dict:
+    """Apply ENDPOINT_FIELD_ALIASES to a candidate row in-place-safe.
+    Original keys are preserved; alias keys are added when source value
+    is populated. Returns a fresh dict (does not mutate input)."""
+    if not row:
+        return {}
+    out = dict(row)
+    aliases = ENDPOINT_FIELD_ALIASES.get(format_id) or {}
+    for src, dst in aliases.items():
+        if dst in out and out[dst] not in (None, "", "None"):
+            continue   # don't clobber a populated alias
+        v = row.get(src)
+        if v not in (None, "", "None"):
+            out[dst] = v
+    return out
+
 
 def _has_dest_video(dest: dict) -> bool:
     """True when the dest record has a non-empty video URL (the R2 Ken Burns
@@ -313,13 +733,20 @@ def is_eligible(spec: FormatSpec,
     if not candidate_dest:
         return False, "no candidate dest"
 
-    ctx = _expand_aliases(candidate_dest)
+    # For endpoint-anchored formats, the "candidate" is an endpoint row
+    # (e.g. an arrival airport, hidden gem, route), not a dest. Field
+    # resolution uses the row's own fields + ENDPOINT_FIELD_ALIASES.
+    if spec.format_id in ENDPOINT_ANCHORED_FORMATS:
+        ctx = _apply_endpoint_aliases(spec.format_id, candidate_dest)
+    else:
+        ctx = _expand_aliases(candidate_dest)
     placeholders = spec.placeholders_in_caption
     missing = []
     for p in placeholders:
         if p in _NON_DEST_DATA_FIELDS:
             continue
-        if not ctx.get(p):
+        v = ctx.get(p)
+        if v in (None, "", "None"):   # API returns string "None" sometimes
             missing.append(p)
 
     # For dynamic-render image formats, missing placeholders are NON-fatal:
@@ -339,6 +766,12 @@ def is_eligible(spec: FormatSpec,
     # so even formats with exotic data needs (myth_question, IATA, dish_1..N)
     # still ship a coherent post instead of going dormant.
     if spec.post_type in VIDEO_POST_TYPES:
+        # Endpoint-anchored video formats: candidate is an endpoint row, not
+        # a dest. The dispatcher joins to a dest AFTER eligibility passes,
+        # so we can't HEAD-check dest.video here. Trust the dispatcher to
+        # supply the Ken Burns clip via the joined dest.
+        if spec.format_id in ENDPOINT_ANCHORED_FORMATS:
+            return True, "ok (endpoint-anchored; dispatcher joins dest video)"
         if _find_matching_asset(spec, candidate_dest, asset_dir):
             return True, "ok (purpose-built video)"
         if _has_dest_video(candidate_dest):
@@ -474,10 +907,17 @@ def render_caption(spec: FormatSpec,
     """
     ctx = _DefaultDict()
     if dest:
-        expanded = _expand_aliases(dest)
-        ctx.update({k: v for k, v in expanded.items() if v not in (None, "")})
+        # Endpoint-anchored: use the row's flat fields + per-format aliases.
+        # Destination-anchored: use the dest record + JSONB lift.
+        if spec.format_id in ENDPOINT_ANCHORED_FORMATS:
+            expanded = _apply_endpoint_aliases(spec.format_id, dest)
+        else:
+            expanded = _expand_aliases(dest)
+        ctx.update({k: v for k, v in expanded.items()
+                    if v not in (None, "", "None")})
     if extra_context:
-        ctx.update({k: v for k, v in extra_context.items() if v not in (None, "")})
+        ctx.update({k: v for k, v in extra_context.items()
+                    if v not in (None, "", "None")})
 
     required = spec.placeholders_in_caption - _NON_DEST_DATA_FIELDS
     missing = [p for p in required if p not in ctx]

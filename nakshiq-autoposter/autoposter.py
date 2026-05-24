@@ -1887,11 +1887,12 @@ def asset_backed_csv_dests(content: dict) -> list:
 def eligible_csv_formats(content: dict, dests: list) -> list:
     """Feed-eligible CSV (v2/v3/v4) format-ids that can post this run.
 
-    A format is eligible when at least one candidate dest passes
-    _csv_fmt.is_eligible (caption placeholders resolve + a matching asset is
-    on disk). Candidate dests = the current scored pool (score>=4) PLUS the
-    asset-backed dests from asset_backed_csv_dests() — an asset on disk is an
-    explicit editorial opt-in, so asset-backed dests skip the score gate.
+    A format is eligible when at least one candidate passes
+    _csv_fmt.is_eligible. Candidate sources depend on the format:
+      - Endpoint-anchored formats (arrival/hidden_gems/routes/women_solo/
+        eateries): iterate that endpoint's rows from content[<endpoint>][data]
+      - Destination-anchored formats (the default): iterate the current
+        scored pool (score>=4) + asset_backed_csv_dests().
     """
     specs = get_csv_specs()
     if not specs:
@@ -1902,6 +1903,17 @@ def eligible_csv_formats(content: dict, dests: list) -> list:
         if not spec.is_feed_format:
             continue
         hit = False
+        # Endpoint-anchored: iterate the configured endpoint's rows
+        if fid in _csv_fmt.ENDPOINT_ANCHORED_FORMATS:
+            for row in _csv_fmt.endpoint_candidates(spec, content):
+                ok, _r = _csv_fmt.is_eligible(spec, row, SOCIAL_IMAGE_LIBRARY_DIR)
+                if ok:
+                    hit = True
+                    break
+            if hit:
+                out.append(fid)
+            continue
+        # Destination-anchored (existing path)
         for d in dests:
             if (d.get("score") or 0) < 4:
                 continue
@@ -5013,6 +5025,56 @@ def generate_post(fmt: str, content: dict, platform: str,
         # autoposter-state branch. Closes the chopta ×2 race — arrival_intel
         # then v2_pov_slow_morning, both falling back to the same {slug}.mp4.
         _today_dests, _today_media = destinations_posted_today_jsonl()
+        # 2026-05-24 — endpoint-anchored CSV formats iterate /api/content
+        # endpoint rows (arrival, hidden_gems, routes, women_solo, eateries)
+        # as candidates instead of destinations. Each row carries the data
+        # the format needs; we join back to a dest only for the hero photo +
+        # Ken Burns video. The join is keyed on row["destination_id"] →
+        # full-catalog lookup.
+        if fmt in _csv_fmt.ENDPOINT_ANCHORED_FORMATS:
+            ep_rows = _csv_fmt.endpoint_candidates(spec, content)
+            full = content.get("destinations_full", {}).get("data", []) or []
+            dest_by_id = {(d.get("id") or "").lower(): d for d in full}
+            log.info(
+                f"[csv_formats] endpoint-anchored: {fmt} → "
+                f"{_csv_fmt.ENDPOINT_ANCHORED_FORMATS[fmt]} ({len(ep_rows)} candidates)"
+            )
+            from datetime import date as _date
+            for row in ep_rows:
+                did = (row.get("destination_id") or "").lower()
+                if did in _today_dests:
+                    continue
+                joined_dest = dest_by_id.get(did) or {}
+                # Without a joined dest we lose hero + Ken Burns — skip
+                if not joined_dest:
+                    continue
+                ok, _reason = _csv_fmt.is_eligible(
+                    spec, row, SOCIAL_IMAGE_LIBRARY_DIR
+                )
+                if not ok:
+                    continue
+                extras = {
+                    "month_name":        _date.today().strftime("%B"),
+                    "verification_date": _date.today().isoformat(),
+                }
+                caption = _csv_fmt.render_caption(spec, row, extra_context=extras)
+                if not caption:
+                    continue
+                # Compose out_dest from the joined dest (so the upload path
+                # has hero + dest["video"]) AND surface the endpoint row so
+                # _render_csv_dynamic can read its fields if needed.
+                out_dest = dict(joined_dest)
+                out_dest["_csv_spec_id"]    = spec.format_id
+                out_dest["_csv_endpoint"]   = _csv_fmt.ENDPOINT_ANCHORED_FORMATS[fmt]
+                out_dest["_csv_endpoint_row"] = row
+                out_dest["_csv_extras"]     = extras
+                # All endpoint-anchored formats today are video (reel/yt_short).
+                # Use the dest's Ken Burns clip as the asset.
+                out_dest["_csv_asset"] = "__DEST_VIDEO__"
+                return caption, out_dest
+            log.info(f"{fmt}: no endpoint candidate passed eligibility — SKIPPING")
+            return "", None
+
         # 2026-05-22 — augment the scored pool with asset-backed dests from the
         # full catalog (dests outside today's 20-dest slice that carry a
         # purpose-built CSV asset). Asset-backed go FIRST so a format-specific
@@ -5059,6 +5121,45 @@ def generate_post(fmt: str, content: dict, platform: str,
                 "state_list":        cand.get("state", ""),
                 "state_list_first":  cand.get("state", ""),
             }
+            # v2_wildlife_moment — filter pool to dests where note/why_special
+            # mentions wildlife terms. Otherwise the format fires on random
+            # urban dests and the "wildlife at the edge of the trail" framing
+            # rings hollow.
+            if fmt == "v2_wildlife_moment":
+                import re as _re_wl
+                wl_re = _re_wl.compile(
+                    r"\b(sanctuary|national park|tiger|leopard|elephant|"
+                    r"rhino|safari|wildlife|birding|forest|jungle|"
+                    r"big cat|panther|gaur|deer)\b", _re_wl.IGNORECASE
+                )
+                blob = " ".join(str(cand.get(k, "")) for k in
+                                ("note","why_special","tagline","name"))
+                if not wl_re.search(blob):
+                    continue   # not a wildlife dest, try next candidate
+
+            # v2_weekend_escape_map needs anchor_city + drive_hours +
+            # weekend_itinerary fields the dest record doesn't carry.
+            # Hand-curated lookup of which anchor metro each weekend dest is
+            # within ~6 drive hours of. Skips formats where the cand isn't a
+            # known weekender (round-robin moves to the next candidate).
+            if fmt == "v2_weekend_escape_map":
+                from typing import cast as _cast
+                anchor = WEEKEND_ANCHOR_BY_DEST.get(cand.get("id", "").lower())
+                if not anchor:
+                    continue
+                anchor_city, drive_hours = anchor
+                extras.update({
+                    "anchor_city":  anchor_city.title(),
+                    "drive_hours":  drive_hours,
+                    "best_window":  f"{_date.today().strftime('%B')} (current month)",
+                    "drive_route_note": (cand.get("note") or "")[:100] or
+                                        f"NH highway, {drive_hours}h with one tea stop",
+                    "stay_pick_name": cand.get("eatery_name") or
+                                      f"mid-tier stay near {cand.get('name','town')} centre",
+                    "weekend_itinerary": (cand.get("why_special") or
+                                          cand.get("tagline") or "")[:160],
+                    "crowd_level":  "moderate" if (cand.get("score") or 0) >= 4 else "low",
+                })
             # v3_tl_poll_reel is a head-to-head — inject a second destination
             # from the pool. cand is dest_a (its asset matched); dest_b is the
             # next distinct pool dest. Winner = higher score (tie → dest_a).
@@ -5389,6 +5490,57 @@ def _csv_carousel_format_ids() -> set[str]:
 # Extend at import time so the rest of the file's `fmt in CAROUSEL_FORMATS`
 # checks pick up CSV carousels too.
 CAROUSEL_FORMATS |= _csv_carousel_format_ids()
+
+
+# Per-dest anchor city + drive-hours lookup used by v2_weekend_escape_map.
+# Format: dest_id → (anchor_metro, drive_hours). Hand-curated against the
+# NakshIQ catalog — covers the obvious 4-6hr weekend bands around Delhi/
+# Mumbai/Bangalore/Chennai. A dest not in this table is skipped by the
+# format's dispatcher (round-robin moves to the next candidate). Add more
+# entries as new high-traffic weekend dests get scored.
+WEEKEND_ANCHOR_BY_DEST: dict[str, tuple[str, float]] = {
+    # Delhi NCR (≤ 6h)
+    "agra":          ("delhi", 3.5),
+    "jaipur":        ("delhi", 5.0),
+    "rishikesh":     ("delhi", 5.5),
+    "haridwar":      ("delhi", 5.0),
+    "nainital":      ("delhi", 6.0),
+    "mussoorie":     ("delhi", 6.0),
+    "neemrana":      ("delhi", 2.5),
+    "alwar":         ("delhi", 3.5),
+    "mathura":       ("delhi", 3.0),
+    "vrindavan":     ("delhi", 3.5),
+    "bharatpur":     ("delhi", 4.0),
+    "corbett-national-park": ("delhi", 5.5),
+    # Mumbai (≤ 6h)
+    "lonavala":      ("mumbai", 2.0),
+    "matheran":      ("mumbai", 2.5),
+    "mahabaleshwar": ("mumbai", 5.0),
+    "panchgani":     ("mumbai", 5.0),
+    "alibaug":       ("mumbai", 2.5),
+    "nashik":        ("mumbai", 3.5),
+    "tarkarli":      ("mumbai", 5.5),
+    "bhandardara":   ("mumbai", 4.5),
+    "igatpuri":      ("mumbai", 3.0),
+    "kashid":        ("mumbai", 3.5),
+    "diveagar":      ("mumbai", 4.0),
+    # Bangalore (≤ 6h)
+    "coorg":         ("bangalore", 5.5),
+    "mysore":        ("bangalore", 3.0),
+    "ooty":          ("bangalore", 6.0),
+    "chikmagalur":   ("bangalore", 5.0),
+    "wayanad":       ("bangalore", 6.0),
+    "kabini":        ("bangalore", 5.0),
+    "bandipur":      ("bangalore", 5.5),
+    "hampi":         ("bangalore", 6.0),
+    # Chennai (≤ 4h)
+    "pondicherry":   ("chennai", 3.0),
+    "mahabalipuram": ("chennai", 1.5),
+    "tirupati":      ("chennai", 3.0),
+    "yelagiri":      ("chennai", 4.0),
+    "vellore":       ("chennai", 2.5),
+    "kanchipuram":   ("chennai", 2.0),
+}
 
 
 def _build_branded_carousel(fmt: str, content: dict, destinations: list,
