@@ -1,43 +1,39 @@
-2026-05-24 12:49:21  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-24 12:49:21  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 12:49:21  INFO      Nakshiq Autoposter · EVENING · 2026-05-24 · weekday=6
-2026-05-24 12:49:21  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 12:49:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-24 12:49:49  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-24 12:49:50  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-24 12:49:50  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-24 12:50:02  INFO      [evening] variety pick: v2_ugc_spotlight (33 CSV + 3 visual candidates)
-2026-05-24 12:50:02  INFO      Formats — IG: v2_ugc_spotlight  ·  FB: v2_ugc_spotlight  ·  Story: kids_intel
-2026-05-24 12:50:02  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-24 12:50:02  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 15 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-24 12:50:02  INFO      Kids destination locked: Kabini
-2026-05-24 12:50:05  INFO      Shared best destination locked: Gopeshwar
-2026-05-24 12:50:05  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-24 12:50:05  INFO      [instagram/nakshiq] Generating v2_ugc_spotlight post...
-2026-05-24 12:50:05  INFO      [instagram/nakshiq] Caption ready (256 chars, dest=kalimpong)
-2026-05-24 12:50:07  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_ugc_spotlight → uploading...
-2026-05-24 12:50:07  INFO          Requesting upload URL for v2_ugc_spotlight-kalimpong.png (2,104,089 bytes, image/png)
-2026-05-24 12:50:08  INFO          Uploading to R2 (timeout=120s)...
-2026-05-24 12:50:09  INFO          R2 PUT OK. Confirming...
-2026-05-24 12:50:09  INFO          Media ready: PiCa0 (2,104,089 bytes · v2_ugc_spotlight-kalimpong.png)
-2026-05-24 12:50:09  INFO      [instagram/nakshiq] Publishing feed post...
-2026-05-24 12:50:29  INFO      [instagram/nakshiq] ✅ Published · Outstand=CxTOF · Platform=18049669370751650
-2026-05-24 12:50:29  INFO      [instagram/nakshiq] Uploading Story image (kabini.jpg)...
-2026-05-24 12:50:29  INFO          Using branded image: kabini_story_minimal-elegant_footer-bar.jpg (247,051 bytes)
-2026-05-24 12:50:29  INFO          Requesting upload URL for kabini.jpg (247,051 bytes, image/jpeg)
-2026-05-24 12:50:30  INFO          Uploading to R2 (timeout=120s)...
-2026-05-24 12:50:30  INFO          R2 PUT OK. Confirming...
-2026-05-24 12:50:31  INFO          Media ready: AX1L7 (247,051 bytes · kabini.jpg)
-2026-05-24 12:50:31  INFO      [instagram/nakshiq] Publishing Story · format=kids_intel · dest=kabini
-2026-05-24 12:50:45  INFO      [instagram/nakshiq] ✅ Story live · ID=18442293628139484
-2026-05-24 12:50:45  INFO      [facebook/Nakshiq] Generating v2_ugc_spotlight post...
-2026-05-24 12:50:45  INFO      [facebook/Nakshiq] Caption ready (254 chars, dest=mathura)
-2026-05-24 12:50:47  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_ugc_spotlight → uploading...
-2026-05-24 12:50:47  INFO          Requesting upload URL for v2_ugc_spotlight-mathura.png (1,873,449 bytes, image/png)
-2026-05-24 12:50:47  INFO          Uploading to R2 (timeout=120s)...
-2026-05-24 12:50:49  INFO          R2 PUT OK. Confirming...
-2026-05-24 12:50:50  INFO          Media ready: xS0A8 (1,873,449 bytes · v2_ugc_spotlight-mathura.png)
-2026-05-24 12:50:50  INFO      [facebook/Nakshiq] Publishing feed post...
-2026-05-24 12:51:03  INFO      [facebook/Nakshiq] ✅ Published · Outstand=rsxw4 · Platform=1040562729145369_122109469118700092
-2026-05-24 12:51:03  INFO      State saved. Run complete.
-2026-05-24 12:51:03  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 15:38:14  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-24 15:38:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 15:38:14  INFO      Nakshiq Autoposter · EVENING · 2026-05-24 · weekday=6
+2026-05-24 15:38:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 15:38:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-24 15:38:45  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-24 15:38:46  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-24 15:38:46  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-24 15:38:57  INFO      [evening] variety pick: v4_dw_heritage_reel_sensory_pov (33 CSV + 3 visual candidates)
+2026-05-24 15:38:57  INFO      Formats — IG: v4_dw_heritage_reel_sensory_pov  ·  FB: v4_dw_heritage_reel_sensory_pov  ·  Story: kids_intel
+2026-05-24 15:38:57  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-24 15:38:57  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 15 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-24 15:38:57  INFO      Kids destination locked: Kabini
+2026-05-24 15:38:58  INFO      Shared best destination locked: Kokernag
+2026-05-24 15:38:58  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-24 15:38:58  INFO      [instagram/nakshiq] Generating v4_dw_heritage_reel_sensory_pov post...
+2026-05-24 15:38:58  INFO      [csv_formats] endpoint-anchored: v4_dw_heritage_reel_sensory_pov → festivals (18 candidates)
+2026-05-24 15:38:58  INFO      [instagram/nakshiq] Caption ready (258 chars, dest=kedarnath)
+2026-05-24 15:38:59  INFO      [instagram/nakshiq] CSV video format (v4_dw_heritage_reel_sensory_pov) — using dest Ken Burns clip as fallback
+2026-05-24 15:38:59  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kedarnath.mp4?v=20260524
+2026-05-24 15:38:59  INFO          Requesting upload URL for kedarnath.mp4 (8,334,050 bytes, video/mp4)
+2026-05-24 15:39:00  INFO          Uploading to R2 (timeout=300s)...
+2026-05-24 15:39:02  INFO          R2 PUT OK. Confirming...
+2026-05-24 15:39:03  INFO          Media ready: yoi7j (8,334,050 bytes · kedarnath.mp4)
+2026-05-24 15:39:03  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-24 15:39:43  INFO      [instagram/nakshiq] ✅ Published · Outstand=ew8hr · Platform=18068616437355457
+2026-05-24 15:39:43  INFO      [facebook/Nakshiq] Generating v4_dw_heritage_reel_sensory_pov post...
+2026-05-24 15:39:43  INFO      [csv_formats] endpoint-anchored: v4_dw_heritage_reel_sensory_pov → festivals (18 candidates)
+2026-05-24 15:39:43  INFO      [facebook/Nakshiq] Caption ready (234 chars, dest=shimla)
+2026-05-24 15:39:43  INFO      [facebook/Nakshiq] CSV video format (v4_dw_heritage_reel_sensory_pov) — using dest Ken Burns clip as fallback
+2026-05-24 15:39:43  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/shimla.mp4?v=20260524
+2026-05-24 15:39:44  INFO          Requesting upload URL for shimla.mp4 (6,759,827 bytes, video/mp4)
+2026-05-24 15:39:45  INFO          Uploading to R2 (timeout=300s)...
+2026-05-24 15:39:46  INFO          R2 PUT OK. Confirming...
+2026-05-24 15:39:47  INFO          Media ready: g2qNx (6,759,827 bytes · shimla.mp4)
+2026-05-24 15:39:47  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-24 15:40:02  INFO      [facebook/Nakshiq] ✅ Published · Outstand=CxGgF · Platform=1721565492204476
+2026-05-24 15:40:02  INFO      State saved. Run complete.
+2026-05-24 15:40:02  INFO      ════════════════════════════════════════════════════════════

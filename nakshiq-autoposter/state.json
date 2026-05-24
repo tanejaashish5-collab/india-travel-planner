@@ -4,18 +4,17 @@
   "posted_today": {
     "m8EAd": "2026-05-24",
     "m8EAd_evening": "2026-05-24",
-    "m8EAd_evening_story": "2026-05-24",
     "PdMu0": "2026-05-24",
     "PdMu0_evening": "2026-05-24"
   },
-  "last_sync": "2026-05-24T12:49:49.997065+00:00",
+  "last_sync": "2026-05-24T15:38:45.202274+00:00",
   "posted_destinations": [
     {
-      "destination_id": "kalimpong",
+      "destination_id": "kedarnath",
       "date": "2026-05-24"
     },
     {
-      "destination_id": "mathura",
+      "destination_id": "shimla",
       "date": "2026-05-24"
     }
   ],
@@ -34,7 +33,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v2_ugc_spotlight"
+      "v4_dw_heritage_reel_sensory_pov"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -55,7 +54,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v2_ugc_spotlight"
+      "v4_dw_heritage_reel_sensory_pov"
     ]
   },
   "post_log": [
@@ -450,61 +449,47 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-24T12:50:29.584639+00:00",
+      "timestamp": "2026-05-24T15:39:43.761736+00:00",
       "date": "2026-05-24",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "CxTOF",
-      "destination": "kalimpong",
-      "format": "v2_ugc_spotlight",
+      "post_id": "ew8hr",
+      "destination": "kedarnath",
+      "format": "v4_dw_heritage_reel_sensory_pov",
       "has_media": true,
-      "media_id": "v2_ugc_spotlight-kalimpong.png"
+      "media_id": "kedarnath.mp4"
     },
     {
-      "timestamp": "2026-05-24T12:50:45.396582+00:00",
-      "date": "2026-05-24",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "V05zN",
-      "destination": "kabini",
-      "format": "kids_intel",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
-      "timestamp": "2026-05-24T12:51:03.977807+00:00",
+      "timestamp": "2026-05-24T15:40:02.833572+00:00",
       "date": "2026-05-24",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "rsxw4",
-      "destination": "mathura",
-      "format": "v2_ugc_spotlight",
+      "post_id": "CxGgF",
+      "destination": "shimla",
+      "format": "v4_dw_heritage_reel_sensory_pov",
       "has_media": true,
-      "media_id": "v2_ugc_spotlight-mathura.png"
+      "media_id": "shimla.mp4"
     }
   ],
   "theme_usage": {
     "morning_formats": {
-      "v2_ugc_spotlight": [
+      "v4_dw_heritage_reel_sensory_pov": [
         "2026-05-24"
       ]
     },
     "destinations": {
-      "kalimpong": [
+      "kedarnath": [
         "2026-05-24"
       ],
-      "kabini": [
-        "2026-05-24"
-      ],
-      "mathura": [
+      "shimla": [
         "2026-05-24"
       ]
     },
     "reels": {
-      "kalimpong": [
+      "kedarnath": [
         "2026-05-24"
       ],
-      "mathura": [
+      "shimla": [
         "2026-05-24"
       ]
     }
@@ -521,7 +506,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gopeshwar"
+    "shared_best": "kokernag"
   },
   "manual_skip_dests": {}
 }
