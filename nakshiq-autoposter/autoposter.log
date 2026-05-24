@@ -1,38 +1,21 @@
-2026-05-24 06:51:57  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-24 06:51:57  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 06:51:57  INFO      Nakshiq Autoposter · MORNING · 2026-05-24 · weekday=6
-2026-05-24 06:51:57  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 06:51:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-24 06:52:43  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-24 06:52:44  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-24 06:52:46  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-24 06:52:46  INFO      [csv_formats] 8/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-24 06:52:46  INFO      Morning format (themed-week-4→discovery): collection_series [0% vs target 20%] (14/14 never featured)
-2026-05-24 06:52:46  INFO      Formats — IG: collection_series  ·  FB: collection_series  ·  Story: score_card
-2026-05-24 06:52:46  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-24 06:52:46  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 15 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-24 06:52:46  INFO      Collection series locked: Astavinayak Yatra — The 8 Ganesha Temples of Maharashtra (19/19 never featured)
-2026-05-24 06:52:51  INFO      Shared best destination locked: Yamunotri
-2026-05-24 06:52:51  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-24 06:52:51  INFO      [instagram/nakshiq] Generating collection_series post...
-2026-05-24 06:52:51  INFO      [instagram/nakshiq] Caption ready (424 chars, dest=morgaon)
-2026-05-24 06:52:52  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-24 06:52:52  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/morgaon.mp4?v=20260524
-2026-05-24 06:52:52  INFO          Requesting upload URL for morgaon.mp4 (5,740,016 bytes, video/mp4)
-2026-05-24 06:52:53  INFO          Uploading to R2 (timeout=300s)...
-2026-05-24 06:52:55  INFO          R2 PUT OK. Confirming...
-2026-05-24 06:52:56  INFO          Media ready: lROJK (5,740,016 bytes · morgaon.mp4)
-2026-05-24 06:52:56  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-24 06:53:34  INFO      [instagram/nakshiq] ✅ Published · Outstand=i6ORB · Platform=17901672456436600
-2026-05-24 06:53:34  INFO      [facebook/Nakshiq] Generating collection_series post...
-2026-05-24 06:53:34  INFO      [facebook/Nakshiq] Caption ready (730 chars, dest=morgaon)
-2026-05-24 06:53:35  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-24 06:53:35  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/morgaon.mp4?v=20260524
-2026-05-24 06:53:35  INFO          Requesting upload URL for morgaon.mp4 (5,740,016 bytes, video/mp4)
-2026-05-24 06:53:36  INFO          Uploading to R2 (timeout=300s)...
-2026-05-24 06:53:38  INFO          R2 PUT OK. Confirming...
-2026-05-24 06:53:39  INFO          Media ready: eh0Qr (5,740,016 bytes · morgaon.mp4)
-2026-05-24 06:53:39  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-24 06:53:54  INFO      [facebook/Nakshiq] ✅ Published · Outstand=zBplP · Platform=994836473014997
-2026-05-24 06:53:54  INFO      State saved. Run complete.
-2026-05-24 06:53:54  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 07:33:53  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-24 07:33:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 07:33:53  INFO      Nakshiq Autoposter · MORNING · 2026-05-24 · weekday=6
+2026-05-24 07:33:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 07:33:53  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-24 07:34:20  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-24 07:34:20  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-24 07:34:22  INFO      Outstand dedup guard: merged 2 remote posts into state.
+2026-05-24 07:34:22  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-24 07:34:22  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-24 07:34:22  INFO      Morning format (themed-week-4→discovery): women_solo_brief [0% vs target 20%] (14/14 never featured)
+2026-05-24 07:34:22  INFO      Formats — IG: women_solo_brief  ·  FB: women_solo_brief  ·  Story: score_card
+2026-05-24 07:34:22  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
+2026-05-24 07:34:22  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 15 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-24 07:34:22  INFO      Women-solo dest locked: Almora (29/29 never featured)
+2026-05-24 07:34:25  INFO      Shared best destination locked: Chopta
+2026-05-24 07:34:25  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-24 07:34:25  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-05-24 07:34:25  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-05-24 07:34:25  INFO      State saved. Run complete.
+2026-05-24 07:34:25  INFO      ════════════════════════════════════════════════════════════

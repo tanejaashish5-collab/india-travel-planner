@@ -2,10 +2,10 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd": "2026-05-24",
-    "PdMu0": "2026-05-24"
+    "PdMu0": "2026-05-24",
+    "m8EAd": "2026-05-24"
   },
-  "last_sync": "2026-05-24T06:52:43.862578+00:00",
+  "last_sync": "2026-05-24T07:34:20.342483+00:00",
   "posted_destinations": [
     {
       "destination_id": "morgaon",
@@ -26,8 +26,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "collection_series"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +46,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "collection_series"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -441,46 +439,12 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-24T06:53:34.713791+00:00",
-      "date": "2026-05-24",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "i6ORB",
-      "destination": "morgaon",
-      "format": "collection_series",
-      "has_media": true,
-      "media_id": "morgaon.mp4"
-    },
-    {
-      "timestamp": "2026-05-24T06:53:54.295734+00:00",
-      "date": "2026-05-24",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "zBplP",
-      "destination": "morgaon",
-      "format": "collection_series",
-      "has_media": true,
-      "media_id": "morgaon.mp4"
     }
   ],
   "theme_usage": {
-    "morning_formats": {
-      "collection_series": [
-        "2026-05-24"
-      ]
-    },
-    "collection_series": {
-      "astavinayak-yatra": [
-        "2026-05-24"
-      ]
-    },
-    "destinations": {
-      "morgaon": [
-        "2026-05-24"
-      ]
-    }
+    "morning_formats": {},
+    "women_solo_brief": {},
+    "destinations": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -494,7 +458,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "yamunotri"
+    "shared_best": "chopta"
   },
   "manual_skip_dests": {}
 }
