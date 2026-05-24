@@ -5114,9 +5114,10 @@ def generate_post(fmt: str, content: dict, platform: str,
                 # never leaks onto the shared pool object.
                 #
                 # find_asset_or_dynamic() returns either:
-                #   - a real Path  → static asset on disk, upload it as-is
-                #   - DYNAMIC_ASSET sentinel → slide_gen renders at post time
-                #   - None         → only for reel/yt_short without an asset
+                #   - a real Path        → static asset, upload as-is
+                #   - DYNAMIC_ASSET      → slide_gen renders image slides
+                #   - DEST_VIDEO_ASSET   → use dest["video"] R2 Ken Burns clip
+                #   - None               → no path forward, skip
                 asset = _csv_fmt.find_asset_or_dynamic(
                     spec, cand, SOCIAL_IMAGE_LIBRARY_DIR
                 )
@@ -5127,6 +5128,9 @@ def generate_post(fmt: str, content: dict, platform: str,
                     # Stash anything render-time needs for slide_gen
                     if extras:
                         out_dest["_csv_extras"] = dict(extras)
+                elif asset is _csv_fmt.DEST_VIDEO_ASSET:
+                    out_dest["_csv_asset"] = "__DEST_VIDEO__"
+                    out_dest["_csv_spec_id"] = spec.format_id
                 elif asset:
                     out_dest["_csv_asset"] = str(asset)
                     out_dest["_csv_spec_id"] = spec.format_id
@@ -6784,6 +6788,25 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             else:
                 log.warning(f"[{label}] dynamic CSV render produced nothing — "
                             f"falling back to generic dest media.")
+        elif csv_asset_path == "__DEST_VIDEO__" and csv_spec_id:
+            # CSV reel/yt_short with no purpose-built clip — use the dest's
+            # R2 Ken Burns video so the format fires (the caption + cover
+            # frame still differentiates it; the motion is generic ambient).
+            # Unlocks ~14 video formats that were previously dormant.
+            video_url = check_video_available(dest_obj)
+            if video_url:
+                log.info(f"[{label}] CSV video format ({csv_spec_id}) — "
+                         f"using dest Ken Burns clip as fallback")
+                media_obj = upload_media(video_url, f"{dest_id}.mp4", "video/mp4")
+                if media_obj:
+                    use_video   = True
+                    is_carousel = False
+                else:
+                    log.warning(f"[{label}] Ken Burns upload failed — "
+                                f"falling back to generic dest media.")
+            else:
+                log.warning(f"[{label}] Ken Burns HEAD-check failed for "
+                            f"dest={dest_id} — falling back to generic media.")
         elif csv_asset_path and os.path.exists(csv_asset_path):
             media_obj, use_video = _upload_csv_asset(csv_asset_path, label)
             if media_obj:

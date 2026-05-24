@@ -271,9 +271,24 @@ def _expand_aliases(dest: dict) -> dict:
 # post_types that slide_gen can render at post time from FormatSpec + dest.
 # When a format with one of these post_types has no static asset on disk, the
 # autoposter routes it through slide_gen.build_csv_slides instead of skipping.
-# Reel / yt_short still require a static video asset — slide_gen can't make
-# video.
+# Reel / yt_short need video — slide_gen can't generate it, but the dispatcher
+# can fall back to the dest's Ken Burns clip when no purpose-built clip exists
+# (see VIDEO_POST_TYPES below).
 DYNAMIC_RENDER_POST_TYPES = frozenset({"single", "carousel"})
+
+# Video post_types — eligible when EITHER a purpose-built asset exists OR
+# the candidate dest has a Ken Burns clip in R2 (dest["video"] populated).
+# The dispatcher uses the format's caption with the dest's generic video
+# when no purpose-built clip is available. This unlocks ~14 CSV video
+# formats that were previously dormant.
+VIDEO_POST_TYPES = frozenset({"reel", "yt_short"})
+
+
+def _has_dest_video(dest: dict) -> bool:
+    """True when the dest record has a non-empty video URL (the R2 Ken Burns
+    clip). Note: this is a presence check, not a HEAD probe — the dispatcher
+    does the actual reachability test via check_video_available()."""
+    return bool((dest or {}).get("video"))
 
 
 def is_eligible(spec: FormatSpec,
@@ -287,13 +302,13 @@ def is_eligible(spec: FormatSpec,
       1. Every placeholder used in caption_template MUST either resolve to a
          non-empty field on candidate_dest OR be in _NON_DEST_DATA_FIELDS
          (injected at render time).
-      2. For reel/yt_short formats, a static video asset must exist in
-         `asset_dir`. For single/carousel formats, a static asset is OPTIONAL
-         — if missing, slide_gen.build_csv_slides renders the slides at post
-         time from the FormatSpec + dest hero. This keeps reels/shorts gated
-         on a pre-rendered clip (slide_gen can't make video) while letting
-         every single/carousel format become eligible as soon as its caption
-         placeholders resolve.
+      2. Asset gating depends on post_type:
+         - single / carousel — slide_gen renders dynamically; no asset
+           required. Eligible if placeholders resolve.
+         - reel / yt_short — needs video. Eligible if EITHER a purpose-built
+           clip exists in asset_dir OR the dest has a Ken Burns clip on R2
+           (`dest["video"]` populated). The dispatcher prefers purpose-built
+           when present and falls back to the Ken Burns clip otherwise.
     """
     if not candidate_dest:
         return False, "no candidate dest"
@@ -306,15 +321,38 @@ def is_eligible(spec: FormatSpec,
             continue
         if not ctx.get(p):
             missing.append(p)
+
+    # For dynamic-render image formats, missing placeholders are NON-fatal:
+    # slide_gen has _looks_broken() + _fallback_headline() that substitute a
+    # pillar-aware editorial line when the template collapses. Letting these
+    # through unlocks ~14 formats whose data fields (sunrise_time, myth_*,
+    # transport_total_inr etc.) aren't yet populated in phase2_fields. The
+    # image still ships with a real dest hero + score chip + brand chrome.
+    if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
+        return True, ("ok" if not missing
+                      else f"ok (will use fallback for {len(missing)} unresolved fields)")
+
+    # For video formats: eligibility is gated on having a usable video clip
+    # (purpose-built or Ken Burns), NOT on placeholder resolution.
+    # render_caption() has _fallback_video_caption() that produces a
+    # dest-driven editorial caption when too many placeholders are missing —
+    # so even formats with exotic data needs (myth_question, IATA, dish_1..N)
+    # still ship a coherent post instead of going dormant.
+    if spec.post_type in VIDEO_POST_TYPES:
+        if _find_matching_asset(spec, candidate_dest, asset_dir):
+            return True, "ok (purpose-built video)"
+        if _has_dest_video(candidate_dest):
+            note = "" if not missing else f" [caption fallback: {len(missing)} unresolved]"
+            return True, f"ok (dest Ken Burns){note}"
+        return False, "no video asset (purpose-built or Ken Burns)"
+
+    # Non-video, non-dynamic formats — keep the strict gate.
     if missing:
         return False, f"missing dest fields: {missing[:5]}"
 
-    if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
-        # Eligible — slide_gen will render at post time if no static asset.
-        return True, "ok"
-
+    # Unknown post_type — fall through to the legacy strict-asset check.
     if not _find_matching_asset(spec, candidate_dest, asset_dir):
-        return False, "no matching video asset in social_image_library/"
+        return False, "no matching asset in social_image_library/"
 
     return True, "ok"
 
@@ -370,25 +408,29 @@ def _find_matching_asset(spec: FormatSpec,
     return None
 
 
-# Sentinel returned by find_asset_or_dynamic() when no static asset exists
-# but slide_gen can render the format dynamically. Compare with `is`, not `==`.
-DYNAMIC_ASSET = Path("__DYNAMIC_RENDER__")
+# Sentinels returned by find_asset_or_dynamic() when no static asset exists
+# but the dispatcher can still post the format. Compare with `is`, not `==`.
+DYNAMIC_ASSET    = Path("__DYNAMIC_RENDER__")    # slide_gen renders at post time
+DEST_VIDEO_ASSET = Path("__DEST_KEN_BURNS__")    # use dest["video"] as the clip
 
 
 def find_asset_or_dynamic(spec: FormatSpec, dest: dict, asset_dir: Path) -> Path | None:
-    """Like _find_matching_asset, but returns DYNAMIC_ASSET (a sentinel) when
-    no static file exists AND the spec.post_type is renderable by slide_gen.
+    """Like _find_matching_asset, but returns a sentinel when no static file
+    exists and the dispatcher has a fallback path for this format.
 
-    The autoposter uses this to decide between:
-      - static asset upload (real path returned)
-      - dynamic slide_gen render at post time (DYNAMIC_ASSET returned)
-      - skip the format (None returned — only for reel/yt_short without asset)
+    The autoposter compares the return value to the module sentinels:
+      - real Path           → static asset on disk, upload as-is
+      - DYNAMIC_ASSET       → slide_gen renders image slides at post time
+      - DEST_VIDEO_ASSET    → use dest["video"] (R2 Ken Burns clip) as the reel
+      - None                → skip; no path forward for this format×dest
     """
     p = _find_matching_asset(spec, dest, asset_dir)
     if p is not None:
         return p
     if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
         return DYNAMIC_ASSET
+    if spec.post_type in VIDEO_POST_TYPES and _has_dest_video(dest):
+        return DEST_VIDEO_ASSET
     return None
 
 
@@ -420,9 +462,15 @@ def render_caption(spec: FormatSpec,
     injects (month_name, verification_date, fort_1_name, …) can drop in
     without polluting the dest object.
 
-    Returns "" if any required placeholder is unresolvable AFTER applying
-    extra_context. This matches the existing autoposter SKIP-on-null
-    discipline — never render a half-broken caption.
+    Behavior on missing placeholders:
+      - single/carousel (dynamic-render formats): always renders — _DefaultDict
+        returns "" for missing keys, slide_gen's _looks_broken() + fallback
+        headline cover the rest.
+      - reel/yt_short: if more than 50% of placeholders are missing, returns
+        a dest-driven fallback caption (so the post still ships coherent
+        text instead of being skipped). If fewer are missing, renders
+        normally — partial substitution reads naturally for templates
+        whose required fields ARE populated.
     """
     ctx = _DefaultDict()
     if dest:
@@ -431,16 +479,23 @@ def render_caption(spec: FormatSpec,
     if extra_context:
         ctx.update({k: v for k, v in extra_context.items() if v not in (None, "")})
 
-    # Required placeholders = anything referenced in any of the 3 templates
-    # AND not in the non-dest allowlist AND not in extra_context.
     required = spec.placeholders_in_caption - _NON_DEST_DATA_FIELDS
     missing = [p for p in required if p not in ctx]
-    if missing:
-        log.info(
-            f"[csv_formats] {spec.format_id}: missing placeholders "
-            f"{missing[:5]} — SKIPPING render"
-        )
-        return ""
+
+    # Heavy-template-collapse path: when most placeholders are unfilled, the
+    # rendered output would be mostly punctuation ("Myth: . Reality: ."). For
+    # video formats where the caption IS the content, substitute a
+    # destination-driven fallback so we ship a coherent post instead of
+    # nothing. For image formats, slide_gen handles the visual fallback.
+    if missing and len(missing) > max(2, len(required) // 2):
+        if spec.post_type in VIDEO_POST_TYPES:
+            return _fallback_video_caption(spec, dest, extra_context or {})
+        if spec.post_type not in DYNAMIC_RENDER_POST_TYPES:
+            log.info(
+                f"[csv_formats] {spec.format_id}: missing placeholders "
+                f"{missing[:5]} — SKIPPING render"
+            )
+            return ""
 
     try:
         hook = spec.hook_template.format_map(ctx)
@@ -448,11 +503,48 @@ def render_caption(spec: FormatSpec,
         cta = spec.cta_template.format_map(ctx)
     except (KeyError, ValueError, IndexError) as e:
         log.warning(f"[csv_formats] {spec.format_id}: render failed ({e})")
+        if spec.post_type in VIDEO_POST_TYPES:
+            return _fallback_video_caption(spec, dest, extra_context or {})
         return ""
 
     # Glue them — hook on its own line, body, then CTA on a new line.
     parts = [p.strip() for p in (hook, body, cta) if p.strip()]
     return "\n\n".join(parts)
+
+
+def _fallback_video_caption(spec: FormatSpec, dest: dict,
+                            extras: dict) -> str:
+    """Coherent dest-driven caption for video formats whose template
+    placeholders can't resolve. Same idea as slide_gen._fallback_headline
+    but for caption text (multi-line, with a CTA)."""
+    name   = dest.get("name") or dest.get("id") or "this place"
+    state  = dest.get("state") or ""
+    tagline = dest.get("tagline") or dest.get("why_special") or ""
+    month  = extras.get("month_name", "")
+    pillar = (spec.pillar or "").lower()
+    place  = f"{name}, {state}" if state else name
+
+    if pillar == "transparency":
+        hook = f"What {name} actually looks like this {month or 'month'}."
+        body = tagline or f"Verified, not vibes. Real footage from {place}."
+    elif pillar == "discovery":
+        hook = f"{name} — beyond the brochure."
+        body = tagline or f"{place}. The version Tripadvisor missed."
+    elif pillar == "intelligence":
+        hook = f"{name}, by the numbers."
+        body = tagline or f"Field-audited intel on {place}."
+    elif pillar == "entertainment":
+        hook = f"{name}. Just press play."
+        body = tagline or f"60 seconds in {place} — no narration, no filter."
+    elif pillar == "advocacy":
+        hook = f"The {name} story worth knowing."
+        body = tagline or f"Voices from {place}."
+    else:
+        hook = f"{place} — verified."
+        body = tagline or f"Field notes from {place}."
+
+    cta = "Full intel at nakshiq.com"
+    return "\n\n".join([hook, body, cta])
 
 
 # ─────────────────────────────────────────────────────────────────────────────
