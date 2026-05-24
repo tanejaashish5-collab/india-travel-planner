@@ -9,6 +9,7 @@ import { LuxuryHeroCarousel } from "@/components/luxury-hero-carousel";
 import { LuxuryFeatures } from "@/components/luxury-features";
 import { localeAlternates, breadcrumbSchema, collectionPageSchema } from "@/lib/seo-utils";
 import { luxuryItemListJsonLd, type LuxuryRow } from "@/lib/luxury-schema";
+import { currentMonthIST, currentDayIST, currentMonthLocalisedIST } from "@itp/shared";
 
 // /luxury hub. Lists every published luxury_experiences row — trains,
 // iconic stays, curated itineraries. Mirrors the /festivals hub.
@@ -39,6 +40,42 @@ async function loadLuxury(): Promise<LuxuryRow[]> {
   return (data ?? []) as LuxuryRow[];
 }
 
+// Features picker — surfaces 5 properties relevant to the current IST
+// month, rotating weekly within the month so return visitors see fresh
+// picks. Aims for category variety: 3 stays + 1 train + 1 itinerary.
+// Falls back to out-of-season rows from each category if the in-season
+// pool is empty for that category (most palaces/trains/itineraries are
+// operationally year-round; best_months is editorial guidance, not a
+// hard close).
+function pickMonthFeatures(rows: LuxuryRow[], month: number, day: number): LuxuryRow[] {
+  const inSeason = (r: LuxuryRow) => r.best_months?.includes(month) ?? false;
+  const tierRank = (r: LuxuryRow) =>
+    r.tier === "iconic" ? 0 : r.tier === "ultra_luxury" ? 1 : 2;
+  const rank = (a: LuxuryRow, b: LuxuryRow) => {
+    const seasonDiff = (inSeason(b) ? 1 : 0) - (inSeason(a) ? 1 : 0);
+    if (seasonDiff) return seasonDiff;
+    return tierRank(a) - tierRank(b);
+  };
+  const byCat = (cat: LuxuryRow["category"]) =>
+    rows.filter((r) => r.category === cat).sort(rank);
+
+  const stays = byCat("stay");
+  const trains = byCat("train");
+  const itineraries = byCat("itinerary");
+
+  const weekOffset = Math.floor(day / 7);
+  const pick = <T,>(arr: T[], n: number): T[] =>
+    arr.length === 0
+      ? []
+      : Array.from({ length: Math.min(n, arr.length) }, (_, i) => arr[(weekOffset + i) % arr.length]);
+
+  const [s1, s2, s3] = pick(stays, 3);
+  const [t1] = pick(trains, 1);
+  const [i1] = pick(itineraries, 1);
+  // Display order zigzags via the alternating-side layout in LuxuryFeatures.
+  return [s1, t1, s2, i1, s3].filter((r): r is LuxuryRow => Boolean(r));
+}
+
 // Hero carousel picks rows with the strongest visual draw — prefers
 // iconic-tier with a hero_video_slug, then falls back to ultra_luxury
 // stays with video. Caps at 5 to keep the carousel snappy.
@@ -60,7 +97,8 @@ export default async function LuxuryHubPage({ params }: { params: Promise<{ loca
   const { locale } = await params;
   const rows = await loadLuxury();
   const heroes = pickHeroes(rows);
-  const iconicRows = rows.filter((r) => r.tier === "iconic");
+  const featureRows = pickMonthFeatures(rows, currentMonthIST(), currentDayIST());
+  const monthLabel = currentMonthLocalisedIST(locale === "hi" ? "hi-IN" : "en-US");
   const pageUrl = `https://www.nakshiq.com/${locale}/luxury`;
   const itemListLd = luxuryItemListJsonLd(rows, pageUrl, locale);
   const breadcrumbLd = breadcrumbSchema(locale, [{ name: "Luxury", path: "/luxury" }]);
@@ -107,7 +145,7 @@ export default async function LuxuryHubPage({ params }: { params: Promise<{ loca
             invented. Book Oct–Mar where possible, six months out, and read each page before you wire money.
           </p>
         </header>
-        <LuxuryFeatures rows={iconicRows} locale={locale} />
+        <LuxuryFeatures rows={featureRows} locale={locale} monthLabel={monthLabel} />
         <div style={{ maxWidth: 1280, margin: "0 auto", paddingTop: 32 }}>
           <LuxuryContent rows={rows} locale={locale} />
         </div>

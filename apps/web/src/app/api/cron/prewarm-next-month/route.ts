@@ -111,6 +111,10 @@ export async function GET(req: NextRequest) {
     try { revalidatePath(`/${loc}/guide`); revalidated++; } catch {}
     try { revalidatePath(`/${loc}/where-to-go`); revalidated++; } catch {}
     try { revalidatePath(`/${loc}/states`); revalidated++; } catch {}
+    // /luxury hub picks Features by current IST month (pickMonthFeatures
+    // in apps/web/src/app/[locale]/luxury/page.tsx) — flush so the new
+    // month's picks surface immediately on rollover, not after ISR's 1h TTL.
+    try { revalidatePath(`/${loc}/luxury`); revalidated++; } catch {}
   }
 
   // 4) Actually warm top-N highest-traffic destination pages so the first

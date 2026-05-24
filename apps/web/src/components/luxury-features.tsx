@@ -6,13 +6,18 @@ import { videoSrc } from "@/lib/video-url";
 import { destinationImage } from "@/lib/image-url";
 import type { LuxuryRow } from "@/lib/luxury-schema";
 
-// Editorial features section — iconic-tier rows in alternating image-left
+// Editorial features section — month-aware picks in alternating image-left
 // / image-right zigzag. Each row: 16:9 video well + caption stack. Sits
-// between the cinematic hero carousel and the magazine grid.
+// between the cinematic hero carousel and the magazine grid. The 5 rows
+// rotate weekly within an IST month (see pickMonthFeatures in the hub
+// page), so the section title takes the current month.
 
 type Props = {
   rows: LuxuryRow[];
   locale: string;
+  /** Server-rendered IST month name (e.g. "May" or "मई"). Passed in to
+   *  avoid client/server hydration drift around month rollover. */
+  monthLabel: string;
 };
 
 function localized(row: LuxuryRow, locale: string, field: "name" | "tagline" | "editorial"): string | null {
@@ -23,13 +28,13 @@ function localized(row: LuxuryRow, locale: string, field: "name" | "tagline" | "
   return ((row as Record<string, unknown>)[field] as string) ?? null;
 }
 
-export function LuxuryFeatures({ rows, locale }: Props) {
+export function LuxuryFeatures({ rows, locale, monthLabel }: Props) {
   const t = useTranslations("luxury");
   if (rows.length === 0) return null;
 
   return (
     <section
-      aria-label="Iconic luxury features"
+      aria-label="Luxury features in season"
       style={{
         maxWidth: 1200,
         margin: "96px auto 32px",
@@ -60,7 +65,7 @@ export function LuxuryFeatures({ rows, locale }: Props) {
             margin: 0,
           }}
         >
-          {t("featuresTitle")}
+          {t("featuresTitle", { month: monthLabel })}
         </h2>
       </header>
 

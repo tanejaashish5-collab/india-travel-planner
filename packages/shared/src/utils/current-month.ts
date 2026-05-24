@@ -42,3 +42,10 @@ export function currentMonthLongIST(): string {
 export function currentMonthLocalisedIST(locale: string): string {
   return new Date().toLocaleString(locale, { timeZone: "Asia/Kolkata", month: "long" });
 }
+
+/** 1-31 day-of-month for the current IST date. */
+export function currentDayIST(): number {
+  return Number(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", day: "numeric" }),
+  );
+}
