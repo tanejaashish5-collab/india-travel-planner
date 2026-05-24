@@ -1,21 +1,43 @@
-2026-05-24 07:33:53  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-24 07:33:53  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 07:33:53  INFO      Nakshiq Autoposter · MORNING · 2026-05-24 · weekday=6
-2026-05-24 07:33:53  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 07:33:53  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-24 07:34:20  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-24 07:34:20  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-24 07:34:22  INFO      Outstand dedup guard: merged 2 remote posts into state.
-2026-05-24 07:34:22  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-24 07:34:22  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-24 07:34:22  INFO      Morning format (themed-week-4→discovery): women_solo_brief [0% vs target 20%] (14/14 never featured)
-2026-05-24 07:34:22  INFO      Formats — IG: women_solo_brief  ·  FB: women_solo_brief  ·  Story: score_card
-2026-05-24 07:34:22  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
-2026-05-24 07:34:22  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 15 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-24 07:34:22  INFO      Women-solo dest locked: Almora (29/29 never featured)
-2026-05-24 07:34:25  INFO      Shared best destination locked: Chopta
-2026-05-24 07:34:25  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-24 07:34:25  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
-2026-05-24 07:34:25  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
-2026-05-24 07:34:25  INFO      State saved. Run complete.
-2026-05-24 07:34:25  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 12:49:21  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-24 12:49:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 12:49:21  INFO      Nakshiq Autoposter · EVENING · 2026-05-24 · weekday=6
+2026-05-24 12:49:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 12:49:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-24 12:49:49  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-24 12:49:50  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-24 12:49:50  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-24 12:50:02  INFO      [evening] variety pick: v2_ugc_spotlight (33 CSV + 3 visual candidates)
+2026-05-24 12:50:02  INFO      Formats — IG: v2_ugc_spotlight  ·  FB: v2_ugc_spotlight  ·  Story: kids_intel
+2026-05-24 12:50:02  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-24 12:50:02  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 15 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-24 12:50:02  INFO      Kids destination locked: Kabini
+2026-05-24 12:50:05  INFO      Shared best destination locked: Gopeshwar
+2026-05-24 12:50:05  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-24 12:50:05  INFO      [instagram/nakshiq] Generating v2_ugc_spotlight post...
+2026-05-24 12:50:05  INFO      [instagram/nakshiq] Caption ready (256 chars, dest=kalimpong)
+2026-05-24 12:50:07  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_ugc_spotlight → uploading...
+2026-05-24 12:50:07  INFO          Requesting upload URL for v2_ugc_spotlight-kalimpong.png (2,104,089 bytes, image/png)
+2026-05-24 12:50:08  INFO          Uploading to R2 (timeout=120s)...
+2026-05-24 12:50:09  INFO          R2 PUT OK. Confirming...
+2026-05-24 12:50:09  INFO          Media ready: PiCa0 (2,104,089 bytes · v2_ugc_spotlight-kalimpong.png)
+2026-05-24 12:50:09  INFO      [instagram/nakshiq] Publishing feed post...
+2026-05-24 12:50:29  INFO      [instagram/nakshiq] ✅ Published · Outstand=CxTOF · Platform=18049669370751650
+2026-05-24 12:50:29  INFO      [instagram/nakshiq] Uploading Story image (kabini.jpg)...
+2026-05-24 12:50:29  INFO          Using branded image: kabini_story_minimal-elegant_footer-bar.jpg (247,051 bytes)
+2026-05-24 12:50:29  INFO          Requesting upload URL for kabini.jpg (247,051 bytes, image/jpeg)
+2026-05-24 12:50:30  INFO          Uploading to R2 (timeout=120s)...
+2026-05-24 12:50:30  INFO          R2 PUT OK. Confirming...
+2026-05-24 12:50:31  INFO          Media ready: AX1L7 (247,051 bytes · kabini.jpg)
+2026-05-24 12:50:31  INFO      [instagram/nakshiq] Publishing Story · format=kids_intel · dest=kabini
+2026-05-24 12:50:45  INFO      [instagram/nakshiq] ✅ Story live · ID=18442293628139484
+2026-05-24 12:50:45  INFO      [facebook/Nakshiq] Generating v2_ugc_spotlight post...
+2026-05-24 12:50:45  INFO      [facebook/Nakshiq] Caption ready (254 chars, dest=mathura)
+2026-05-24 12:50:47  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_ugc_spotlight → uploading...
+2026-05-24 12:50:47  INFO          Requesting upload URL for v2_ugc_spotlight-mathura.png (1,873,449 bytes, image/png)
+2026-05-24 12:50:47  INFO          Uploading to R2 (timeout=120s)...
+2026-05-24 12:50:49  INFO          R2 PUT OK. Confirming...
+2026-05-24 12:50:50  INFO          Media ready: xS0A8 (1,873,449 bytes · v2_ugc_spotlight-mathura.png)
+2026-05-24 12:50:50  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-05-24 12:51:03  INFO      [facebook/Nakshiq] ✅ Published · Outstand=rsxw4 · Platform=1040562729145369_122109469118700092
+2026-05-24 12:51:03  INFO      State saved. Run complete.
+2026-05-24 12:51:03  INFO      ════════════════════════════════════════════════════════════
