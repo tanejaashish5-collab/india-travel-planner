@@ -1,39 +1,51 @@
-2026-05-24 15:38:14  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-24 15:38:14  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 15:38:14  INFO      Nakshiq Autoposter · EVENING · 2026-05-24 · weekday=6
-2026-05-24 15:38:14  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 15:38:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-24 15:38:45  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-24 15:38:46  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-24 15:38:46  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-24 15:38:57  INFO      [evening] variety pick: v4_dw_heritage_reel_sensory_pov (33 CSV + 3 visual candidates)
-2026-05-24 15:38:57  INFO      Formats — IG: v4_dw_heritage_reel_sensory_pov  ·  FB: v4_dw_heritage_reel_sensory_pov  ·  Story: kids_intel
-2026-05-24 15:38:57  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-24 15:38:57  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 15 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-24 15:38:57  INFO      Kids destination locked: Kabini
-2026-05-24 15:38:58  INFO      Shared best destination locked: Kokernag
-2026-05-24 15:38:58  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-24 15:38:58  INFO      [instagram/nakshiq] Generating v4_dw_heritage_reel_sensory_pov post...
-2026-05-24 15:38:58  INFO      [csv_formats] endpoint-anchored: v4_dw_heritage_reel_sensory_pov → festivals (18 candidates)
-2026-05-24 15:38:58  INFO      [instagram/nakshiq] Caption ready (258 chars, dest=kedarnath)
-2026-05-24 15:38:59  INFO      [instagram/nakshiq] CSV video format (v4_dw_heritage_reel_sensory_pov) — using dest Ken Burns clip as fallback
-2026-05-24 15:38:59  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kedarnath.mp4?v=20260524
-2026-05-24 15:38:59  INFO          Requesting upload URL for kedarnath.mp4 (8,334,050 bytes, video/mp4)
-2026-05-24 15:39:00  INFO          Uploading to R2 (timeout=300s)...
-2026-05-24 15:39:02  INFO          R2 PUT OK. Confirming...
-2026-05-24 15:39:03  INFO          Media ready: yoi7j (8,334,050 bytes · kedarnath.mp4)
-2026-05-24 15:39:03  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-24 15:39:43  INFO      [instagram/nakshiq] ✅ Published · Outstand=ew8hr · Platform=18068616437355457
-2026-05-24 15:39:43  INFO      [facebook/Nakshiq] Generating v4_dw_heritage_reel_sensory_pov post...
-2026-05-24 15:39:43  INFO      [csv_formats] endpoint-anchored: v4_dw_heritage_reel_sensory_pov → festivals (18 candidates)
-2026-05-24 15:39:43  INFO      [facebook/Nakshiq] Caption ready (234 chars, dest=shimla)
-2026-05-24 15:39:43  INFO      [facebook/Nakshiq] CSV video format (v4_dw_heritage_reel_sensory_pov) — using dest Ken Burns clip as fallback
-2026-05-24 15:39:43  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/shimla.mp4?v=20260524
-2026-05-24 15:39:44  INFO          Requesting upload URL for shimla.mp4 (6,759,827 bytes, video/mp4)
-2026-05-24 15:39:45  INFO          Uploading to R2 (timeout=300s)...
-2026-05-24 15:39:46  INFO          R2 PUT OK. Confirming...
-2026-05-24 15:39:47  INFO          Media ready: g2qNx (6,759,827 bytes · shimla.mp4)
-2026-05-24 15:39:47  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-24 15:40:02  INFO      [facebook/Nakshiq] ✅ Published · Outstand=CxGgF · Platform=1721565492204476
-2026-05-24 15:40:02  INFO      State saved. Run complete.
-2026-05-24 15:40:02  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 19:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 19:44:11  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-24
+2026-05-24 19:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-05-24 19:44:19  INFO      Synced 50 new posts (total: 280)
+2026-05-24 19:44:19  INFO      ── Analytics Summary ──
+2026-05-24 19:44:19  INFO      Total posts tracked: 280
+2026-05-24 19:44:19  INFO      Successfully published: 225 | Failed: 46
+2026-05-24 19:44:19  INFO      
+2026-05-24 19:44:19  INFO      By content type:
+2026-05-24 19:44:19  INFO        feed_post: 105
+2026-05-24 19:44:19  INFO        yt_short: 68
+2026-05-24 19:44:19  INFO        reel: 67
+2026-05-24 19:44:19  INFO        canva_visual: 14
+2026-05-24 19:44:19  INFO        tourist_map: 12
+2026-05-24 19:44:19  INFO        infographic: 8
+2026-05-24 19:44:19  INFO        pomelli_visual: 6
+2026-05-24 19:44:19  INFO      
+2026-05-24 19:44:19  INFO      By format:
+2026-05-24 19:44:19  INFO        feed_post:unknown: 105
+2026-05-24 19:44:19  INFO        reel:seasonal: 25
+2026-05-24 19:44:19  INFO        reel:destination: 21
+2026-05-24 19:44:19  INFO        yt_short:listicle: 17
+2026-05-24 19:44:19  INFO        reel:map: 15
+2026-05-24 19:44:19  INFO        canva_visual:unknown: 14
+2026-05-24 19:44:19  INFO        yt_short:did: 14
+2026-05-24 19:44:19  INFO        tourist_map:unknown: 12
+2026-05-24 19:44:19  INFO        yt_short:before: 11
+2026-05-24 19:44:19  INFO        yt_short:mini: 11
+2026-05-24 19:44:19  INFO        infographic:unknown: 8
+2026-05-24 19:44:19  INFO        yt_short:this: 8
+2026-05-24 19:44:19  INFO        reel:score: 6
+2026-05-24 19:44:19  INFO        pomelli_visual:unknown: 6
+2026-05-24 19:44:19  INFO        yt_short:dont: 5
+2026-05-24 19:44:19  INFO        yt_short:v2: 2
+2026-05-24 19:44:19  INFO      
+2026-05-24 19:44:19  INFO      By platform:
+2026-05-24 19:44:19  INFO        instagram: 133
+2026-05-24 19:44:19  INFO        facebook: 80
+2026-05-24 19:44:19  INFO        youtube: 58
+2026-05-24 19:44:19  INFO      
+2026-05-24 19:44:19  INFO      YT Short format distribution:
+2026-05-24 19:44:19  INFO        listicle: 17 (25%)
+2026-05-24 19:44:19  INFO        did: 14 (21%)
+2026-05-24 19:44:19  INFO        before: 11 (16%)
+2026-05-24 19:44:19  INFO        mini: 11 (16%)
+2026-05-24 19:44:19  INFO        this: 8 (12%)
+2026-05-24 19:44:19  INFO        dont: 5 (7%)
+2026-05-24 19:44:19  INFO        v2: 2 (3%)
+2026-05-24 19:44:19  INFO      
+Date range: 2026-04-15 → 2026-05-24
+2026-05-24 19:44:19  INFO      ════════════════════════════════════════════════════════════
