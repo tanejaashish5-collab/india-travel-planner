@@ -7,9 +7,9 @@
 // Run: node scripts/_link-luxury-videos.mjs            # dry-run
 //      node scripts/_link-luxury-videos.mjs --commit   # write to prod
 //
-// The 2 'Pending' brief rows still get a fallback assignment:
-//   umaid-bhawan exterior pending → use umaid-bhawan-dining as hero
-//   royal-rajasthan-by-car master pending → leave hero_video_slug NULL
+// All 40 brief rows are now rendered (Veo 3.1 Lite, ~8s each — source beats
+// for the editor) and live on R2. Itinerary master cuts (rows 35-40) wire
+// straight into the 6 itinerary entries.
 
 import { createClient } from "@supabase/supabase-js";
 import { config } from "dotenv";
@@ -41,7 +41,7 @@ const MAPPING = {
 
   // Iconic stays (5)
   "taj-lake-palace-udaipur":         "taj-lake-palace-arrival",
-  "taj-umaid-bhawan-palace-jodhpur": "umaid-bhawan-dining",  // exterior pending — dining as fallback
+  "taj-umaid-bhawan-palace-jodhpur": "umaid-bhawan-exterior",
   "rambagh-palace-jaipur":           "rambagh-driveway",
   "taj-falaknuma-palace-hyderabad":  "falaknuma-driveway",
   "the-taj-mahal-palace-mumbai":     "taj-mahal-palace-mumbai-facade",
@@ -63,8 +63,13 @@ const MAPPING = {
   "mahua-kothi-bandhavgarh":         "mahua-kothi-kutiya",
   "sujan-sher-bagh-ranthambore":     "sujan-sher-bagh-tent",
 
-  // Itineraries — only Royal Rajasthan was briefed and it's PENDING, so
-  // leave its hero NULL until the master cut is generated.
+  // Itineraries (6) — master cuts produced 2026-05-24 (Veo 3.1 Lite beats).
+  "royal-rajasthan-by-car":          "royal-rajasthan-by-car-master",
+  "heritage-triangle-luxury":        "heritage-triangle-luxury-master",
+  "himalayan-wellness-triangle":     "himalayan-wellness-triangle-master",
+  "kerala-backwater-royalty":        "kerala-backwater-royalty-master",
+  "south-india-luxury-train-loop":   "south-india-luxury-train-loop-master",
+  "wildlife-luxury-circuit":         "wildlife-luxury-circuit-master",
 };
 
 const updates = Object.entries(MAPPING);
