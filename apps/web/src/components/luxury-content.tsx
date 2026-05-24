@@ -80,7 +80,7 @@ export function LuxuryContent({ rows, locale }: Props) {
                 display: "block",
                 borderTop: "1px solid var(--hair)",
                 padding: "20px 0 24px",
-                color: "var(--ink)",
+                color: "var(--bone)",
                 textDecoration: "none",
               }}
             >
@@ -132,8 +132,8 @@ function FilterPill({ active, onClick, label }: { active: boolean; onClick: () =
       type="button"
       onClick={onClick}
       style={{
-        background: active ? "var(--ink)" : "transparent",
-        color: active ? "var(--paper)" : "var(--ink)",
+        background: active ? "var(--bone)" : "transparent",
+        color: active ? "var(--paper)" : "var(--bone)",
         border: "1px solid var(--hair)",
         padding: "8px 16px",
         fontSize: 13,
