@@ -1,9 +1,21 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-05-25T13:52:04.245455+00:00",
-  "posted_destinations": [],
+  "yt_short_formats_used": [
+    "mini_guide"
+  ],
+  "yt_short_music_used": [
+    "px_kornevmusic-sport-rock-epic-electro-remix-517602"
+  ],
+  "posted_today": {
+    "GAh5p_yt_short": "2026-05-25",
+    "GAh5p_yt_short_count": 1
+  },
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "ziro-valley",
+      "date": "2026-05-25"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -431,13 +443,27 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-25T14:26:47.480726+00:00",
+      "date": "2026-05-25",
+      "platform": "youtube",
+      "post_id": "WB8dz",
+      "destination": "ziro-valley",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T14:27:34.928077+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "post_id": "Gv07p",
+      "destination": "ziro-valley",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {},
-    "festivals": {},
-    "destinations": {}
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -449,8 +475,6 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "kokernag"
-  },
+  "last_picked": {},
   "manual_skip_dests": {}
 }

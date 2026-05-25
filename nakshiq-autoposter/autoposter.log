@@ -1,28 +1,23 @@
-2026-05-25 13:51:38  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-25 13:51:38  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 13:51:38  INFO      Nakshiq Autoposter · MORNING · 2026-05-25 · weekday=0
-2026-05-25 13:51:38  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 13:51:38  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-25 13:52:04  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-25 13:52:05  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-25 13:52:05  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-25 13:52:05  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-25 13:52:16  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-25 13:52:16  INFO      Morning format (themed-week-4→discovery): v2_route_animated_map [0% vs target 20%] (14/14 never featured)
-2026-05-25 13:52:16  INFO      Formats — IG: v2_route_animated_map  ·  FB: v2_route_animated_map  ·  Story: festival_alert
-2026-05-25 13:52:16  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-25 13:52:16  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 11 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-25 13:52:16  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-25 13:52:16  INFO      Festival locked: Bhaderwah Mela (20/20 active festivals never featured)
-2026-05-25 13:52:17  INFO      Shared best destination locked: Kokernag
-2026-05-25 13:52:17  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-25 13:52:17  INFO      [instagram/nakshiq] Generating v2_route_animated_map post...
-2026-05-25 13:52:28  INFO      [csv_formats] endpoint-anchored: v2_route_animated_map → routes (23 candidates)
-2026-05-25 13:52:28  INFO      v2_route_animated_map: no endpoint candidate passed eligibility — SKIPPING
-2026-05-25 13:52:28  WARNING   [instagram/nakshiq] No content generated — skipping.
-2026-05-25 13:52:28  INFO      [facebook/Nakshiq] Generating v2_route_animated_map post...
-2026-05-25 13:52:39  INFO      [csv_formats] endpoint-anchored: v2_route_animated_map → routes (23 candidates)
-2026-05-25 13:52:39  INFO      v2_route_animated_map: no endpoint candidate passed eligibility — SKIPPING
-2026-05-25 13:52:39  WARNING   [facebook/Nakshiq] No content generated — skipping.
-2026-05-25 13:52:39  INFO      State saved. Run complete.
-2026-05-25 13:52:39  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 14:25:30  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-25 14:25:30  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 14:25:30  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-25
+2026-05-25 14:25:30  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 14:25:30  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-25 14:25:30  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-25 14:26:30  INFO      Short rendered: yt_short_mini_guide_2026-05-25.mp4 (14486 KB, 28.0s, fmt=mini_guide, music=px_kornevmusic-sport-rock-epic-electro-remix-517602)
+2026-05-25 14:26:30  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4 (14,834,481 bytes, video/mp4)
+2026-05-25 14:26:30  INFO          Uploading to R2 (timeout=300s)...
+2026-05-25 14:26:32  INFO          R2 PUT OK. Confirming...
+2026-05-25 14:26:33  INFO          Media ready: rwQb4 (14,834,481 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4)
+2026-05-25 14:26:33  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4
+2026-05-25 14:26:33  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-05-25 14:26:35  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=WB8dz), waiting for platform confirmation...
+2026-05-25 14:26:47  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=WB8dz · Platform=ByjX_viL60I
+2026-05-25 14:26:47  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-05-25 14:26:49  INFO      [instagram/nakshiq] Outstand accepted (post_id=Gv07p), waiting for platform confirmation...
+2026-05-25 14:27:34  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=Gv07p). May have silently failed.
+2026-05-25 14:27:34  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 130-131: surrogates not allowed
+2026-05-25 14:27:34  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-25 14:27:34  INFO      YT Short posted: format=mini_guide, music=px_kornevmusic-sport-rock-epic-electro-remix-517602
+2026-05-25 14:27:34  INFO      State saved. YT Short run complete.
+2026-05-25 14:27:34  INFO      ════════════════════════════════════════════════════════════
