@@ -184,6 +184,19 @@ export const VS_PAIRS_CURATED: { id1: string; id2: string; theme: string }[] = [
 
   // ─── Wildlife splits (Batch 2) ─────────────────────────────────
   { id1: "kanha", id2: "ranthambore", theme: "wildlife" },
+
+  // ─── GSC 404 cleanup 2026-05-25 — pairs with confirmed demand
+  // (URLs were 404ing in GSC but both destination IDs exist; adding
+  // converts the 404s to live comparison pages).
+  { id1: "lonavala", id2: "bhandardara", theme: "west-hills" },
+  { id1: "manali", id2: "barot-valley", theme: "hill-stations" },
+  { id1: "ooty", id2: "lambasingi", theme: "south-hills" },
+  { id1: "leh", id2: "lamayuru", theme: "high-altitude" },
+  { id1: "ranthambore", id2: "corbett-national-park", theme: "wildlife" },
+  { id1: "delhi", id2: "chandigarh", theme: "metros" },
+  { id1: "gulmarg", id2: "doodhpathri", theme: "kashmir" },
+  { id1: "hampi", id2: "warangal", theme: "heritage" },
+  { id1: "dharamshala", id2: "bir-billing", theme: "hill-stations" },
 ];
 
 // Curated + machine-generated pairs, merged. Reversed-pair dedupe is handled

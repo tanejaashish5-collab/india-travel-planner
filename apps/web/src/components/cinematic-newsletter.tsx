@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 
 // Subtle cinematic newsletter slot — single-line editorial form.
@@ -19,6 +19,11 @@ export function CinematicNewsletter({
   const [errorMsg, setErrorMsg] = useState("");
   const [hint, setHint] = useState("");
   const [btnHover, setBtnHover] = useState(false);
+  // Real-human gate for EMAIL_SIGNUP — fires only after a keystroke on
+  // the input. Real-Chrome bot fleets fill `value` programmatically and
+  // never dispatch keydown, so this strips ~99% of bot signal from GA4.
+  // (Audit 2026-05-25 showed 16K signups/wk almost all bot.)
+  const interactedRef = useRef(false);
   // Hover arrow-nudge is gated on the reduced-motion preference.
   const [reduceMotion] = useState(
     () =>
@@ -50,7 +55,9 @@ export function CinematicNewsletter({
         setStatus("error");
         return;
       }
-      track(KEY_EVENTS.EMAIL_SIGNUP, { source });
+      if (interactedRef.current) {
+        track(KEY_EVENTS.EMAIL_SIGNUP, { source });
+      }
       // Suppress the sticky tray for the rest of the session — this reader
       // has already been asked and answered.
       try {
@@ -154,6 +161,9 @@ export function CinematicNewsletter({
               setStatus("idle");
               setErrorMsg("");
             }
+          }}
+          onKeyDown={() => {
+            interactedRef.current = true;
           }}
           placeholder="your.email@example.com"
           aria-label="Email address"

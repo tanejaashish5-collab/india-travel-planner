@@ -216,6 +216,35 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/vs/kasol-vs-manikaran`, request.url), 301);
   }
 
+  // GSC 404 cleanup 2026-05-25 — /(en|hi)/region/<state>/<month> URLs
+  // never had a route (state/month combos render at /state/<state> only,
+  // there's no /state/[id]/[month] route). Drop the month and redirect.
+  // The bare /region/<state> case is already covered by the rule above.
+  const regionMonthMatch = request.nextUrl.pathname.match(
+    /^\/(en|hi)\/region\/([^/]+)\/(january|february|march|april|may|june|july|august|september|october|november|december)\/?$/,
+  );
+  if (regionMonthMatch && STATE_MAP[regionMonthMatch[2]]) {
+    const [, locale, stateSlug] = regionMonthMatch;
+    return NextResponse.redirect(
+      new URL(`/${locale}/state/${stateSlug}`, request.url),
+      301,
+    );
+  }
+
+  // GSC 404 cleanup 2026-05-25 — legacy /where-to-go/<state>-in-<month>
+  // URLs (the current route is /where-to-go/<month> only). 301 to the
+  // month-only page; state intent is preserved via the listings on that page.
+  const whereToGoMatch = request.nextUrl.pathname.match(
+    /^\/(en|hi)\/where-to-go\/[a-z-]+-in-(january|february|march|april|may|june|july|august|september|october|november|december)\/?$/,
+  );
+  if (whereToGoMatch) {
+    const [, locale, month] = whereToGoMatch;
+    return NextResponse.redirect(
+      new URL(`/${locale}/where-to-go/${month}`, request.url),
+      301,
+    );
+  }
+
   const response = intlMiddleware(request);
 
   // Convert temporary redirects (307) to permanent (301) for SEO

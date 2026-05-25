@@ -87,7 +87,7 @@
 //      page markup changes (new <video> block above the title), so the
 //      bump purges nakshiq-v46-html for returning PWA users.
 
-const CACHE_VERSION = "nakshiq-v47";
+const CACHE_VERSION = "nakshiq-v48";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

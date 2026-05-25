@@ -795,7 +795,7 @@ export function DestinationMonth({
           <section id="section-why" className="scroll-mt-28">
             <WhyThisScore />
           </section>
-          {peakMonth && (
+          {peakMonth && score >= 4 && (
             <section id="section-alert" className="scroll-mt-28">
               <PeakAlertHook
                 destinationId={destination.id}

@@ -36,6 +36,11 @@ export function NewsletterSignup({
   // vs "form visible but ignored". Caught 2026-05-06 (data audit
   // showed 0 organic signups despite ~280 engaged sessions / 28d).
   const viewTrackedRef = useRef(false);
+  // Real-human gate for EMAIL_SIGNUP — fires only after a keystroke on
+  // the input. Real-Chrome bot fleets fill `value` programmatically and
+  // never dispatch keydown, so this strips ~99% of bot signal from GA4.
+  // (Audit 2026-05-25 showed 16K signups/wk almost all bot.)
+  const interactedRef = useRef(false);
   useEffect(() => {
     if (viewTrackedRef.current) return;
     viewTrackedRef.current = true;
@@ -70,7 +75,9 @@ export function NewsletterSignup({
         return;
       }
 
-      track(KEY_EVENTS.EMAIL_SIGNUP, { source });
+      if (interactedRef.current) {
+        track(KEY_EVENTS.EMAIL_SIGNUP, { source });
+      }
       // Suppress the sticky tray for the rest of the session — this reader
       // has already been asked and answered.
       try {
@@ -118,6 +125,9 @@ export function NewsletterSignup({
                 setEmail(e.target.value);
                 if (hint) setHint("");
                 if (status === "error") setStatus("idle");
+              }}
+              onKeyDown={() => {
+                interactedRef.current = true;
               }}
               onBlur={(e) => {
                 const v = e.target.value.trim();
