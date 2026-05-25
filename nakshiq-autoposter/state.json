@@ -3,12 +3,17 @@
   "yt_short_music_used": [],
   "posted_today": {
     "m8EAd": "2026-05-25",
+    "m8EAd_story": "2026-05-25",
     "PdMu0": "2026-05-25"
   },
-  "last_sync": "2026-05-25T17:32:19.823689+00:00",
+  "last_sync": "2026-05-25T18:13:32.600884+00:00",
   "posted_destinations": [
     {
-      "destination_id": "jibhi",
+      "destination_id": "kalimpong",
+      "date": "2026-05-25"
+    },
+    {
+      "destination_id": "mathura",
       "date": "2026-05-25"
     }
   ],
@@ -27,7 +32,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "women_solo_brief"
+      "v4_dw_archival_modern_carousel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -48,7 +53,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "women_solo_brief"
+      "v4_dw_archival_modern_carousel"
     ]
   },
   "post_log": [
@@ -443,38 +448,61 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-25T17:33:35.295024+00:00",
+      "timestamp": "2026-05-25T18:15:00.122219+00:00",
       "date": "2026-05-25",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "rYU34",
-      "destination": "jibhi",
-      "format": "women_solo_brief",
+      "post_id": "xkk98",
+      "destination": "kalimpong",
+      "format": "v4_dw_archival_modern_carousel",
       "has_media": true,
-      "media_id": "jibhi.mp4"
+      "media_id": "v4_dw_archival_modern_carousel-kalimpong_01_cover.png"
     },
     {
-      "timestamp": "2026-05-25T17:33:55.247695+00:00",
+      "timestamp": "2026-05-25T18:15:17.966553+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "REEGH",
+      "destination": "leh",
+      "format": "festival_alert",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-05-25T18:15:35.854407+00:00",
       "date": "2026-05-25",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "46wUi",
-      "destination": "jibhi",
-      "format": "women_solo_brief",
+      "post_id": "ErrgA",
+      "destination": "mathura",
+      "format": "v4_dw_archival_modern_carousel",
       "has_media": true,
-      "media_id": "jibhi.mp4"
+      "media_id": "v4_dw_archival_modern_carousel-mathura.png"
     }
   ],
   "theme_usage": {
     "morning_formats": {
-      "women_solo_brief": [
+      "v4_dw_archival_modern_carousel": [
         "2026-05-25"
       ]
     },
-    "festivals": {},
-    "women_solo_brief": {},
+    "festivals": {
+      "2270012b-525c-4049-a0da-83694dec4f3b": [
+        "2026-05-25"
+      ]
+    },
     "destinations": {
-      "jibhi": [
+      "mudumalai": [
+        "2026-05-25"
+      ],
+      "kalimpong": [
+        "2026-05-25"
+      ],
+      "leh": [
+        "2026-05-25"
+      ],
+      "mathura": [
         "2026-05-25"
       ]
     }
@@ -491,7 +519,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kabini"
+    "shared_best": "mudumalai"
   },
   "manual_skip_dests": {}
 }
