@@ -1,79 +1,27 @@
-2026-05-25 15:44:11  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-25 15:44:11  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 15:44:11  INFO      Nakshiq Autoposter · MORNING · 2026-05-25 · weekday=0
-2026-05-25 15:44:11  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 15:44:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-25 15:45:07  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-25 15:45:08  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-25 15:45:08  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-25 15:45:08  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-25 15:45:21  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-25 15:45:21  INFO      Morning format (themed-week-4→discovery): v4_dw_walk_itinerary_day_by_day [0% vs target 20%] (14/14 never featured)
-2026-05-25 15:45:21  INFO      Formats — IG: v4_dw_walk_itinerary_day_by_day  ·  FB: v4_dw_walk_itinerary_day_by_day  ·  Story: festival_alert
-2026-05-25 15:45:21  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-25 15:45:21  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 11 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-25 15:45:21  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-25 15:45:21  INFO      Festival locked: Snana Yatra (20/20 active festivals never featured)
-2026-05-25 15:45:23  INFO      Shared best destination locked: Pithoragarh
-2026-05-25 15:45:23  INFO      Carousel locked (v4_dw_walk_itinerary_day_by_day): pithoragarh
-2026-05-25 15:45:23  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-25 15:45:23  INFO      [instagram/nakshiq] Generating v4_dw_walk_itinerary_day_by_day post...
-2026-05-25 15:45:23  INFO      [instagram/nakshiq] Caption ready (546 chars, dest=kalimpong)
-2026-05-25 15:45:30  INFO      [instagram/nakshiq] dynamic render: 5 slide(s) for v4_dw_walk_itinerary_day_by_day → uploading...
-2026-05-25 15:45:30  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-kalimpong_01_cover.png (2,030,519 bytes, image/png)
-2026-05-25 15:45:31  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:45:31  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:45:32  INFO          Media ready: 83lsI (2,030,519 bytes · v4_dw_walk_itinerary_day_by_day-kalimpong_01_cover.png)
-2026-05-25 15:45:32  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-kalimpong_02.png (2,095,591 bytes, image/png)
-2026-05-25 15:45:33  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:45:33  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:45:35  INFO          Media ready: HubP5 (2,095,591 bytes · v4_dw_walk_itinerary_day_by_day-kalimpong_02.png)
-2026-05-25 15:45:35  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-kalimpong_03.png (2,090,382 bytes, image/png)
-2026-05-25 15:45:36  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:45:36  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:45:37  INFO          Media ready: IkKRX (2,090,382 bytes · v4_dw_walk_itinerary_day_by_day-kalimpong_03.png)
-2026-05-25 15:45:37  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-kalimpong_04.png (2,084,479 bytes, image/png)
-2026-05-25 15:45:38  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:45:38  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:45:39  INFO          Media ready: v2isg (2,084,479 bytes · v4_dw_walk_itinerary_day_by_day-kalimpong_04.png)
-2026-05-25 15:45:39  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-kalimpong_05_cta.png (51,774 bytes, image/png)
-2026-05-25 15:45:39  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:45:40  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:45:41  INFO          Media ready: cWpOL (51,774 bytes · v4_dw_walk_itinerary_day_by_day-kalimpong_05_cta.png)
-2026-05-25 15:45:41  INFO      [instagram/nakshiq] Publishing 5-slide carousel...
-2026-05-25 15:46:29  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=31LVk)
-2026-05-25 15:46:29  INFO      [instagram/nakshiq] Uploading Story image (puri.jpg)...
-2026-05-25 15:46:29  INFO          Using branded image: puri_story_minimal-elegant_badge.jpg (45,003 bytes)
-2026-05-25 15:46:29  INFO          Requesting upload URL for puri.jpg (45,003 bytes, image/jpeg)
-2026-05-25 15:46:30  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:46:30  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:46:31  INFO          Media ready: QoUpy (45,003 bytes · puri.jpg)
-2026-05-25 15:46:31  INFO      [instagram/nakshiq] Publishing Story · format=festival_alert · dest=puri
-2026-05-25 15:46:55  INFO      [instagram/nakshiq] ✅ Story live · ID=18117398470806599
-2026-05-25 15:46:55  INFO      [facebook/Nakshiq] Generating v4_dw_walk_itinerary_day_by_day post...
-2026-05-25 15:46:55  INFO      [facebook/Nakshiq] Caption ready (482 chars, dest=mathura)
-2026-05-25 15:47:02  INFO      [facebook/Nakshiq] dynamic render: 5 slide(s) for v4_dw_walk_itinerary_day_by_day → uploading...
-2026-05-25 15:47:02  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-mathura_01_cover.png (1,819,649 bytes, image/png)
-2026-05-25 15:47:03  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:47:04  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:47:04  INFO          Media ready: lH31K (1,819,649 bytes · v4_dw_walk_itinerary_day_by_day-mathura_01_cover.png)
-2026-05-25 15:47:04  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-mathura_02.png (1,870,659 bytes, image/png)
-2026-05-25 15:47:05  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:47:05  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:47:06  INFO          Media ready: eUQVr (1,870,659 bytes · v4_dw_walk_itinerary_day_by_day-mathura_02.png)
-2026-05-25 15:47:06  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-mathura_03.png (1,871,525 bytes, image/png)
-2026-05-25 15:47:07  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:47:07  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:47:08  INFO          Media ready: CgP9F (1,871,525 bytes · v4_dw_walk_itinerary_day_by_day-mathura_03.png)
-2026-05-25 15:47:08  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-mathura_04.png (1,840,707 bytes, image/png)
-2026-05-25 15:47:08  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:47:09  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:47:10  INFO          Media ready: VPCeN (1,840,707 bytes · v4_dw_walk_itinerary_day_by_day-mathura_04.png)
-2026-05-25 15:47:10  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-mathura_05_cta.png (51,774 bytes, image/png)
-2026-05-25 15:47:10  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 15:47:10  INFO          R2 PUT OK. Confirming...
-2026-05-25 15:47:11  INFO          Media ready: rwyT4 (51,774 bytes · v4_dw_walk_itinerary_day_by_day-mathura_05_cta.png)
-2026-05-25 15:47:11  INFO      [facebook/Nakshiq] Publishing 5-slide carousel...
-2026-05-25 15:47:30  INFO      [facebook/Nakshiq] ✅ Published · Outstand=1O0fG · Platform=1040562729145369_122109690530700092
-2026-05-25 15:47:30  INFO      State saved. Run complete.
-2026-05-25 15:47:30  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 16:36:12  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-25 16:36:12  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 16:36:12  INFO      Nakshiq Autoposter · EVENING · 2026-05-25 · weekday=0
+2026-05-25 16:36:12  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 16:36:12  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-25 16:36:38  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-25 16:36:38  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-25 16:36:39  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-25 16:36:50  INFO      [evening] variety pick: v2_hidden_gem_reveal_atmo (33 CSV + 3 visual candidates)
+2026-05-25 16:36:50  INFO      Formats — IG: v2_hidden_gem_reveal_atmo  ·  FB: v2_hidden_gem_reveal_atmo  ·  Story: festival_alert  ·  Audience: backpackers
+2026-05-25 16:36:50  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-25 16:36:50  WARNING   Audience filter 'backpackers' → only 1 match (floor=3). Dropping filter to avoid same-dest spam.
+2026-05-25 16:36:50  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 11 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-25 16:36:50  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-25 16:36:50  INFO      Festival locked: Kanatal Surkanda Devi Mela (20/20 active festivals never featured)
+2026-05-25 16:36:50  INFO      Shared best destination locked: Har Ki Doon
+2026-05-25 16:36:50  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-25 16:36:50  INFO      [instagram/nakshiq] Generating v2_hidden_gem_reveal_atmo post...
+2026-05-25 16:36:50  INFO      [csv_formats] endpoint-anchored: v2_hidden_gem_reveal_atmo → hidden_gems (50 candidates)
+2026-05-25 16:36:50  INFO      v2_hidden_gem_reveal_atmo: no endpoint candidate passed eligibility — SKIPPING
+2026-05-25 16:36:50  WARNING   [instagram/nakshiq] No content generated — skipping.
+2026-05-25 16:36:50  INFO      [facebook/Nakshiq] Generating v2_hidden_gem_reveal_atmo post...
+2026-05-25 16:36:50  INFO      [csv_formats] endpoint-anchored: v2_hidden_gem_reveal_atmo → hidden_gems (50 candidates)
+2026-05-25 16:36:50  INFO      v2_hidden_gem_reveal_atmo: no endpoint candidate passed eligibility — SKIPPING
+2026-05-25 16:36:50  WARNING   [facebook/Nakshiq] No content generated — skipping.
+2026-05-25 16:36:50  INFO      State saved. Run complete.
+2026-05-25 16:36:50  INFO      ════════════════════════════════════════════════════════════
