@@ -3,17 +3,12 @@
   "yt_short_music_used": [],
   "posted_today": {
     "m8EAd": "2026-05-25",
-    "m8EAd_story": "2026-05-25",
     "PdMu0": "2026-05-25"
   },
-  "last_sync": "2026-05-25T16:44:24.506162+00:00",
+  "last_sync": "2026-05-25T17:32:19.823689+00:00",
   "posted_destinations": [
     {
-      "destination_id": "nainital",
-      "date": "2026-05-25"
-    },
-    {
-      "destination_id": "mussoorie",
+      "destination_id": "jibhi",
       "date": "2026-05-25"
     }
   ],
@@ -32,7 +27,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v3_tl_editorial_listicle"
+      "women_solo_brief"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -53,7 +48,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v3_tl_editorial_listicle"
+      "women_solo_brief"
     ]
   },
   "post_log": [
@@ -448,61 +443,38 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-25T16:45:00.840925+00:00",
+      "timestamp": "2026-05-25T17:33:35.295024+00:00",
       "date": "2026-05-25",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "JTVG3",
-      "destination": "nainital",
-      "format": "v3_tl_editorial_listicle",
+      "post_id": "rYU34",
+      "destination": "jibhi",
+      "format": "women_solo_brief",
       "has_media": true,
-      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+      "media_id": "jibhi.mp4"
     },
     {
-      "timestamp": "2026-05-25T16:45:22.098426+00:00",
-      "date": "2026-05-25",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "7iXKW",
-      "destination": "puri",
-      "format": "festival_alert",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
-      "timestamp": "2026-05-25T16:45:32.538977+00:00",
+      "timestamp": "2026-05-25T17:33:55.247695+00:00",
       "date": "2026-05-25",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "IUJRX",
-      "destination": "mussoorie",
-      "format": "v3_tl_editorial_listicle",
+      "post_id": "46wUi",
+      "destination": "jibhi",
+      "format": "women_solo_brief",
       "has_media": true,
-      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+      "media_id": "jibhi.mp4"
     }
   ],
   "theme_usage": {
     "morning_formats": {
-      "v3_tl_editorial_listicle": [
+      "women_solo_brief": [
         "2026-05-25"
       ]
     },
-    "festivals": {
-      "243d2208-c7b0-4474-a5d0-ca7d0385aaa4": [
-        "2026-05-25"
-      ]
-    },
+    "festivals": {},
+    "women_solo_brief": {},
     "destinations": {
-      "manikaran": [
-        "2026-05-25"
-      ],
-      "nainital": [
-        "2026-05-25"
-      ],
-      "puri": [
-        "2026-05-25"
-      ],
-      "mussoorie": [
+      "jibhi": [
         "2026-05-25"
       ]
     }
@@ -519,7 +491,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "manikaran"
+    "shared_best": "kabini"
   },
   "manual_skip_dests": {}
 }
