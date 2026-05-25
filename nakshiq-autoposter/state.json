@@ -3,17 +3,12 @@
   "yt_short_music_used": [],
   "posted_today": {
     "m8EAd": "2026-05-25",
-    "m8EAd_story": "2026-05-25",
     "PdMu0": "2026-05-25"
   },
-  "last_sync": "2026-05-25T11:39:43.894835+00:00",
+  "last_sync": "2026-05-25T12:11:21.795177+00:00",
   "posted_destinations": [
     {
-      "destination_id": "nainital",
-      "date": "2026-05-25"
-    },
-    {
-      "destination_id": "mussoorie",
+      "destination_id": "lolab-valley",
       "date": "2026-05-25"
     }
   ],
@@ -32,7 +27,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v3_tl_editorial_listicle"
+      "route_spotlight_short"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -53,7 +48,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v3_tl_editorial_listicle"
+      "route_spotlight_short"
     ]
   },
   "post_log": [
@@ -448,58 +443,38 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-25T11:40:19.977590+00:00",
+      "timestamp": "2026-05-25T12:12:32.282635+00:00",
       "date": "2026-05-25",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "n53El",
-      "destination": "nainital",
-      "format": "v3_tl_editorial_listicle",
+      "post_id": "mjrqd",
+      "destination": "lolab-valley",
+      "format": "route_spotlight_short",
       "has_media": true,
-      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+      "media_id": "lolab-valley.mp4"
     },
     {
-      "timestamp": "2026-05-25T11:40:37.677218+00:00",
-      "date": "2026-05-25",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "iRSuB",
-      "destination": "sissu",
-      "format": "festival_alert",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
-      "timestamp": "2026-05-25T11:40:55.545381+00:00",
+      "timestamp": "2026-05-25T12:12:46.785666+00:00",
       "date": "2026-05-25",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "zng5P",
-      "destination": "mussoorie",
-      "format": "v3_tl_editorial_listicle",
+      "post_id": "DWGHo",
+      "destination": "lolab-valley",
+      "format": "route_spotlight_short",
       "has_media": true,
-      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+      "media_id": "lolab-valley.mp4"
     }
   ],
   "theme_usage": {
     "morning_formats": {
-      "v3_tl_editorial_listicle": [
+      "route_spotlight_short": [
         "2026-05-25"
       ]
     },
-    "festivals": {
-      "7c1c885d-2a0e-473b-9454-ecd690126f80": [
-        "2026-05-25"
-      ]
-    },
+    "festivals": {},
+    "route_spotlight_short": {},
     "destinations": {
-      "sissu": [
-        "2026-05-25"
-      ],
-      "nainital": [
-        "2026-05-25"
-      ],
-      "mussoorie": [
+      "lolab-valley": [
         "2026-05-25"
       ]
     }
@@ -516,7 +491,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sissu"
+    "shared_best": "lolab-valley"
   },
   "manual_skip_dests": {}
 }
