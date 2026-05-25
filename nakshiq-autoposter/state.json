@@ -1,17 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-25",
-    "PdMu0": "2026-05-25"
-  },
-  "last_sync": "2026-05-25T12:11:21.795177+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "lolab-valley",
-      "date": "2026-05-25"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-05-25T12:53:31.061293+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -26,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "route_spotlight_short"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +38,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "route_spotlight_short"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -441,43 +431,12 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-25T12:12:32.282635+00:00",
-      "date": "2026-05-25",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "mjrqd",
-      "destination": "lolab-valley",
-      "format": "route_spotlight_short",
-      "has_media": true,
-      "media_id": "lolab-valley.mp4"
-    },
-    {
-      "timestamp": "2026-05-25T12:12:46.785666+00:00",
-      "date": "2026-05-25",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "DWGHo",
-      "destination": "lolab-valley",
-      "format": "route_spotlight_short",
-      "has_media": true,
-      "media_id": "lolab-valley.mp4"
     }
   ],
   "theme_usage": {
-    "morning_formats": {
-      "route_spotlight_short": [
-        "2026-05-25"
-      ]
-    },
+    "morning_formats": {},
     "festivals": {},
-    "route_spotlight_short": {},
-    "destinations": {
-      "lolab-valley": [
-        "2026-05-25"
-      ]
-    }
+    "destinations": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -491,7 +450,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lolab-valley"
+    "shared_best": "munsiyari"
   },
   "manual_skip_dests": {}
 }
