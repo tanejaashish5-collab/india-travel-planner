@@ -1,27 +1,47 @@
-2026-05-25 16:36:12  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-25 16:36:12  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 16:36:12  INFO      Nakshiq Autoposter · EVENING · 2026-05-25 · weekday=0
-2026-05-25 16:36:12  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 16:36:12  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-25 16:36:38  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-25 16:36:38  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-25 16:36:39  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-25 16:36:50  INFO      [evening] variety pick: v2_hidden_gem_reveal_atmo (33 CSV + 3 visual candidates)
-2026-05-25 16:36:50  INFO      Formats — IG: v2_hidden_gem_reveal_atmo  ·  FB: v2_hidden_gem_reveal_atmo  ·  Story: festival_alert  ·  Audience: backpackers
-2026-05-25 16:36:50  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-25 16:36:50  WARNING   Audience filter 'backpackers' → only 1 match (floor=3). Dropping filter to avoid same-dest spam.
-2026-05-25 16:36:50  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 11 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-25 16:36:50  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-25 16:36:50  INFO      Festival locked: Kanatal Surkanda Devi Mela (20/20 active festivals never featured)
-2026-05-25 16:36:50  INFO      Shared best destination locked: Har Ki Doon
-2026-05-25 16:36:50  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-25 16:36:50  INFO      [instagram/nakshiq] Generating v2_hidden_gem_reveal_atmo post...
-2026-05-25 16:36:50  INFO      [csv_formats] endpoint-anchored: v2_hidden_gem_reveal_atmo → hidden_gems (50 candidates)
-2026-05-25 16:36:50  INFO      v2_hidden_gem_reveal_atmo: no endpoint candidate passed eligibility — SKIPPING
-2026-05-25 16:36:50  WARNING   [instagram/nakshiq] No content generated — skipping.
-2026-05-25 16:36:50  INFO      [facebook/Nakshiq] Generating v2_hidden_gem_reveal_atmo post...
-2026-05-25 16:36:50  INFO      [csv_formats] endpoint-anchored: v2_hidden_gem_reveal_atmo → hidden_gems (50 candidates)
-2026-05-25 16:36:50  INFO      v2_hidden_gem_reveal_atmo: no endpoint candidate passed eligibility — SKIPPING
-2026-05-25 16:36:50  WARNING   [facebook/Nakshiq] No content generated — skipping.
-2026-05-25 16:36:50  INFO      State saved. Run complete.
-2026-05-25 16:36:50  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 16:43:58  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-25 16:43:58  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 16:43:58  INFO      Nakshiq Autoposter · MORNING · 2026-05-25 · weekday=0
+2026-05-25 16:43:58  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 16:43:58  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-25 16:44:24  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-25 16:44:25  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-25 16:44:25  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-25 16:44:25  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-25 16:44:36  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-25 16:44:36  INFO      Morning format (themed-week-4→discovery): v3_tl_editorial_listicle [0% vs target 20%] (14/14 never featured)
+2026-05-25 16:44:36  INFO      Formats — IG: v3_tl_editorial_listicle  ·  FB: v3_tl_editorial_listicle  ·  Story: festival_alert
+2026-05-25 16:44:36  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-25 16:44:36  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 11 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-25 16:44:36  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-25 16:44:36  INFO      Festival locked: Snana Yatra (20/20 active festivals never featured)
+2026-05-25 16:44:38  INFO      Shared best destination locked: Manikaran
+2026-05-25 16:44:38  INFO      Carousel locked (v3_tl_editorial_listicle): manikaran
+2026-05-25 16:44:38  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-25 16:44:38  INFO      [instagram/nakshiq] Generating v3_tl_editorial_listicle post...
+2026-05-25 16:44:38  INFO      [instagram/nakshiq] Caption ready (373 chars, dest=nainital)
+2026-05-25 16:44:38  INFO          Requesting upload URL for v3_tl_editorial_listicle-uttarakhand.png (110,562 bytes, image/png)
+2026-05-25 16:44:38  INFO          Uploading to R2 (timeout=120s)...
+2026-05-25 16:44:39  INFO          R2 PUT OK. Confirming...
+2026-05-25 16:44:40  INFO          Media ready: QowMy (110,562 bytes · v3_tl_editorial_listicle-uttarakhand.png)
+2026-05-25 16:44:40  INFO      [instagram/nakshiq] Phase-2 asset → image: v3_tl_editorial_listicle-uttarakhand.png
+2026-05-25 16:44:40  INFO      [instagram/nakshiq] Publishing feed post...
+2026-05-25 16:45:00  INFO      [instagram/nakshiq] ✅ Published · Outstand=JTVG3 · Platform=18093815219519756
+2026-05-25 16:45:00  INFO      [instagram/nakshiq] Uploading Story image (puri.jpg)...
+2026-05-25 16:45:00  INFO          Using branded image: puri_story_minimal-elegant_badge.jpg (45,003 bytes)
+2026-05-25 16:45:00  INFO          Requesting upload URL for puri.jpg (45,003 bytes, image/jpeg)
+2026-05-25 16:45:01  INFO          Uploading to R2 (timeout=120s)...
+2026-05-25 16:45:02  INFO          R2 PUT OK. Confirming...
+2026-05-25 16:45:03  INFO          Media ready: lHkGK (45,003 bytes · puri.jpg)
+2026-05-25 16:45:03  INFO      [instagram/nakshiq] Publishing Story · format=festival_alert · dest=puri
+2026-05-25 16:45:22  INFO      [instagram/nakshiq] ✅ Story live · ID=17945698641016172
+2026-05-25 16:45:22  INFO      [facebook/Nakshiq] Generating v3_tl_editorial_listicle post...
+2026-05-25 16:45:22  INFO      [facebook/Nakshiq] Caption ready (373 chars, dest=mussoorie)
+2026-05-25 16:45:22  INFO          Requesting upload URL for v3_tl_editorial_listicle-uttarakhand.png (110,562 bytes, image/png)
+2026-05-25 16:45:22  INFO          Uploading to R2 (timeout=120s)...
+2026-05-25 16:45:23  INFO          R2 PUT OK. Confirming...
+2026-05-25 16:45:24  INFO          Media ready: eUyNr (110,562 bytes · v3_tl_editorial_listicle-uttarakhand.png)
+2026-05-25 16:45:24  INFO      [facebook/Nakshiq] Phase-2 asset → image: v3_tl_editorial_listicle-uttarakhand.png
+2026-05-25 16:45:24  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-05-25 16:45:32  INFO      [facebook/Nakshiq] ✅ Published · Outstand=IUJRX · Platform=1040562729145369_122109698204700092
+2026-05-25 16:45:32  INFO      State saved. Run complete.
+2026-05-25 16:45:32  INFO      ════════════════════════════════════════════════════════════
