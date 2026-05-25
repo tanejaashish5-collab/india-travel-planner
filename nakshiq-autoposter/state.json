@@ -3,17 +3,12 @@
   "yt_short_music_used": [],
   "posted_today": {
     "m8EAd": "2026-05-25",
-    "m8EAd_story": "2026-05-25",
     "PdMu0": "2026-05-25"
   },
-  "last_sync": "2026-05-25T08:54:41.559691+00:00",
+  "last_sync": "2026-05-25T11:00:31.907765+00:00",
   "posted_destinations": [
     {
-      "destination_id": "nainital",
-      "date": "2026-05-25"
-    },
-    {
-      "destination_id": "mussoorie",
+      "destination_id": "kokernag",
       "date": "2026-05-25"
     }
   ],
@@ -32,7 +27,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v3_tl_editorial_listicle"
+      "route_spotlight_short"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -53,7 +48,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "v3_tl_editorial_listicle"
+      "route_spotlight_short"
     ]
   },
   "post_log": [
@@ -448,61 +443,38 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-25T08:55:19.402101+00:00",
+      "timestamp": "2026-05-25T11:01:48.004486+00:00",
       "date": "2026-05-25",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "xkBx8",
-      "destination": "nainital",
-      "format": "v3_tl_editorial_listicle",
+      "post_id": "cPMdL",
+      "destination": "kokernag",
+      "format": "route_spotlight_short",
       "has_media": true,
-      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+      "media_id": "kokernag.mp4"
     },
     {
-      "timestamp": "2026-05-25T08:55:42.598772+00:00",
-      "date": "2026-05-25",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "ErfWA",
-      "destination": "sonamarg",
-      "format": "festival_alert",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
-      "timestamp": "2026-05-25T08:56:06.632036+00:00",
+      "timestamp": "2026-05-25T11:02:14.723599+00:00",
       "date": "2026-05-25",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "WBOqz",
-      "destination": "mussoorie",
-      "format": "v3_tl_editorial_listicle",
+      "post_id": "lDkTK",
+      "destination": "kokernag",
+      "format": "route_spotlight_short",
       "has_media": true,
-      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+      "media_id": "kokernag.mp4"
     }
   ],
   "theme_usage": {
     "morning_formats": {
-      "v3_tl_editorial_listicle": [
+      "route_spotlight_short": [
         "2026-05-25"
       ]
     },
-    "festivals": {
-      "5d32b61b-1a92-4869-a212-6a71b7394138": [
-        "2026-05-25"
-      ]
-    },
+    "festivals": {},
+    "route_spotlight_short": {},
     "destinations": {
-      "sissu": [
-        "2026-05-25"
-      ],
-      "nainital": [
-        "2026-05-25"
-      ],
-      "sonamarg": [
-        "2026-05-25"
-      ],
-      "mussoorie": [
+      "kokernag": [
         "2026-05-25"
       ]
     }
@@ -519,7 +491,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sissu"
+    "shared_best": "kokernag"
   },
   "manual_skip_dests": {}
 }

@@ -1,47 +1,41 @@
-2026-05-25 08:54:01  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-25 08:54:01  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 08:54:01  INFO      Nakshiq Autoposter · MORNING · 2026-05-25 · weekday=0
-2026-05-25 08:54:01  INFO      ════════════════════════════════════════════════════════════
-2026-05-25 08:54:01  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-25 08:54:41  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-25 08:54:42  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-25 08:54:42  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-25 08:54:42  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-25 08:54:54  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-25 08:54:54  INFO      Morning format (themed-week-4→discovery): v3_tl_editorial_listicle [0% vs target 20%] (14/14 never featured)
-2026-05-25 08:54:54  INFO      Formats — IG: v3_tl_editorial_listicle  ·  FB: v3_tl_editorial_listicle  ·  Story: festival_alert
-2026-05-25 08:54:54  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-25 08:54:54  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 11 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-25 08:54:54  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-25 08:54:54  INFO      Festival locked: Sonamarg Thajiwas Glacier Festival (20/20 active festivals never featured)
-2026-05-25 08:54:55  INFO      Shared best destination locked: Sissu
-2026-05-25 08:54:55  INFO      Carousel locked (v3_tl_editorial_listicle): sissu
-2026-05-25 08:54:55  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-25 08:54:55  INFO      [instagram/nakshiq] Generating v3_tl_editorial_listicle post...
-2026-05-25 08:54:55  INFO      [instagram/nakshiq] Caption ready (373 chars, dest=nainital)
-2026-05-25 08:54:55  INFO          Requesting upload URL for v3_tl_editorial_listicle-uttarakhand.png (110,562 bytes, image/png)
-2026-05-25 08:54:56  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 08:54:56  INFO          R2 PUT OK. Confirming...
-2026-05-25 08:54:58  INFO          Media ready: ycJOj (110,562 bytes · v3_tl_editorial_listicle-uttarakhand.png)
-2026-05-25 08:54:58  INFO      [instagram/nakshiq] Phase-2 asset → image: v3_tl_editorial_listicle-uttarakhand.png
-2026-05-25 08:54:58  INFO      [instagram/nakshiq] Publishing feed post...
-2026-05-25 08:55:19  INFO      [instagram/nakshiq] ✅ Published · Outstand=xkBx8 · Platform=18075489989299890
-2026-05-25 08:55:19  INFO      [instagram/nakshiq] Uploading Story image (sonamarg.jpg)...
-2026-05-25 08:55:19  INFO          Using branded image: sonamarg_story_typographic-art_badge.jpg (409,513 bytes)
-2026-05-25 08:55:19  INFO          Requesting upload URL for sonamarg.jpg (409,513 bytes, image/jpeg)
-2026-05-25 08:55:20  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 08:55:20  INFO          R2 PUT OK. Confirming...
-2026-05-25 08:55:21  INFO          Media ready: gSXZx (409,513 bytes · sonamarg.jpg)
-2026-05-25 08:55:21  INFO      [instagram/nakshiq] Publishing Story · format=festival_alert · dest=sonamarg
-2026-05-25 08:55:42  INFO      [instagram/nakshiq] ✅ Story live · ID=17897562915310967
-2026-05-25 08:55:42  INFO      [facebook/Nakshiq] Generating v3_tl_editorial_listicle post...
-2026-05-25 08:55:42  INFO      [facebook/Nakshiq] Caption ready (373 chars, dest=mussoorie)
-2026-05-25 08:55:42  INFO          Requesting upload URL for v3_tl_editorial_listicle-uttarakhand.png (110,562 bytes, image/png)
-2026-05-25 08:55:43  INFO          Uploading to R2 (timeout=120s)...
-2026-05-25 08:55:43  INFO          R2 PUT OK. Confirming...
-2026-05-25 08:55:45  INFO          Media ready: TfMw1 (110,562 bytes · v3_tl_editorial_listicle-uttarakhand.png)
-2026-05-25 08:55:45  INFO      [facebook/Nakshiq] Phase-2 asset → image: v3_tl_editorial_listicle-uttarakhand.png
-2026-05-25 08:55:45  INFO      [facebook/Nakshiq] Publishing feed post...
-2026-05-25 08:56:06  INFO      [facebook/Nakshiq] ✅ Published · Outstand=WBOqz · Platform=1040562729145369_122109630674700092
-2026-05-25 08:56:06  INFO      State saved. Run complete.
-2026-05-25 08:56:06  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 10:59:52  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-25 10:59:52  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 10:59:52  INFO      Nakshiq Autoposter · MORNING · 2026-05-25 · weekday=0
+2026-05-25 10:59:52  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 10:59:52  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-25 11:00:31  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-25 11:00:32  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-25 11:00:32  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-25 11:00:33  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-25 11:00:47  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-25 11:00:47  INFO      Morning format (themed-week-4→discovery): route_spotlight_short [0% vs target 20%] (14/14 never featured)
+2026-05-25 11:00:47  INFO      Formats — IG: route_spotlight_short  ·  FB: route_spotlight_short  ·  Story: festival_alert
+2026-05-25 11:00:47  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-25 11:00:47  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 11 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-25 11:00:47  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-25 11:00:47  INFO      Festival locked: Devprayag Ganga Dussehra (20/20 active festivals never featured)
+2026-05-25 11:00:47  INFO      Route short locked: Kashmir Classic (23/23 never featured)
+2026-05-25 11:00:52  INFO      Shared best destination locked: Kokernag
+2026-05-25 11:00:52  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-25 11:00:52  INFO      [instagram/nakshiq] Generating route_spotlight_short post...
+2026-05-25 11:00:52  INFO      [instagram/nakshiq] Caption ready (306 chars, dest=kokernag)
+2026-05-25 11:00:52  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-25 11:00:52  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kokernag.mp4?v=20260524
+2026-05-25 11:00:53  INFO          Requesting upload URL for kokernag.mp4 (14,504,684 bytes, video/mp4)
+2026-05-25 11:00:54  INFO          Uploading to R2 (timeout=300s)...
+2026-05-25 11:00:56  INFO          R2 PUT OK. Confirming...
+2026-05-25 11:00:57  INFO          Media ready: RZcRH (14,504,684 bytes · kokernag.mp4)
+2026-05-25 11:00:57  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-25 11:01:48  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=cPMdL)
+2026-05-25 11:01:48  INFO      [facebook/Nakshiq] Generating route_spotlight_short post...
+2026-05-25 11:01:48  INFO      [facebook/Nakshiq] Caption ready (542 chars, dest=kokernag)
+2026-05-25 11:01:48  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-25 11:01:48  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kokernag.mp4?v=20260524
+2026-05-25 11:01:49  INFO          Requesting upload URL for kokernag.mp4 (14,504,684 bytes, video/mp4)
+2026-05-25 11:01:50  INFO          Uploading to R2 (timeout=300s)...
+2026-05-25 11:01:51  INFO          R2 PUT OK. Confirming...
+2026-05-25 11:01:52  INFO          Media ready: W4f0z (14,504,684 bytes · kokernag.mp4)
+2026-05-25 11:01:52  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-25 11:02:14  INFO      [facebook/Nakshiq] ✅ Published · Outstand=lDkTK · Platform=1776894966607698
+2026-05-25 11:02:14  INFO      State saved. Run complete.
+2026-05-25 11:02:14  INFO      ════════════════════════════════════════════════════════════
