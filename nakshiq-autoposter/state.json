@@ -1,18 +1,19 @@
 {
-  "yt_short_formats_used": [
-    "mini_guide"
-  ],
-  "yt_short_music_used": [
-    "px_kornevmusic-sport-rock-epic-electro-remix-517602"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-25",
-    "GAh5p_yt_short_count": 1
+    "m8EAd": "2026-05-25",
+    "m8EAd_story": "2026-05-25",
+    "PdMu0": "2026-05-25"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-25T15:45:07.699070+00:00",
   "posted_destinations": [
     {
-      "destination_id": "ziro-valley",
+      "destination_id": "kalimpong",
+      "date": "2026-05-25"
+    },
+    {
+      "destination_id": "mathura",
       "date": "2026-05-25"
     }
   ],
@@ -30,7 +31,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "v4_dw_walk_itinerary_day_by_day"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -50,7 +52,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "v4_dw_walk_itinerary_day_by_day"
     ]
   },
   "post_log": [
@@ -445,25 +448,65 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-25T14:26:47.480726+00:00",
-      "date": "2026-05-25",
-      "platform": "youtube",
-      "post_id": "WB8dz",
-      "destination": "ziro-valley",
-      "format": "yt_short.mini_guide",
-      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4"
-    },
-    {
-      "timestamp": "2026-05-25T14:27:34.928077+00:00",
+      "timestamp": "2026-05-25T15:46:29.632698+00:00",
       "date": "2026-05-25",
       "platform": "instagram",
-      "post_id": "Gv07p",
-      "destination": "ziro-valley",
-      "format": "yt_short.mini_guide",
-      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4"
+      "account_id": "m8EAd",
+      "post_id": "31LVk",
+      "destination": "kalimpong",
+      "format": "v4_dw_walk_itinerary_day_by_day",
+      "has_media": true,
+      "media_id": "v4_dw_walk_itinerary_day_by_day-kalimpong_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-25T15:46:55.750516+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "kGVah",
+      "destination": "puri",
+      "format": "festival_alert",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-05-25T15:47:30.941097+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "1O0fG",
+      "destination": "mathura",
+      "format": "v4_dw_walk_itinerary_day_by_day",
+      "has_media": true,
+      "media_id": "v4_dw_walk_itinerary_day_by_day-mathura_01_cover.png"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "morning_formats": {
+      "v4_dw_walk_itinerary_day_by_day": [
+        "2026-05-25"
+      ]
+    },
+    "festivals": {
+      "243d2208-c7b0-4474-a5d0-ca7d0385aaa4": [
+        "2026-05-25"
+      ]
+    },
+    "destinations": {
+      "pithoragarh": [
+        "2026-05-25"
+      ],
+      "kalimpong": [
+        "2026-05-25"
+      ],
+      "puri": [
+        "2026-05-25"
+      ],
+      "mathura": [
+        "2026-05-25"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -475,6 +518,8 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {},
+  "last_picked": {
+    "shared_best": "pithoragarh"
+  },
   "manual_skip_dests": {}
 }
