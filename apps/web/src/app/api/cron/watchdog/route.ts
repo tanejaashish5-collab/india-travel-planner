@@ -155,7 +155,19 @@ export async function GET(req: NextRequest) {
   }
 
   const alertable = health.filter((h) => ALERT_STATUSES.has(h.status));
+  const reviewable = health.filter((h) => h.status === "needs_review");
+  // Digest tiers: degraded (red) > review (yellow) > ok (green). The Monday
+  // subject must reflect the body — claiming "ALL GREEN" while needs_review
+  // rows render in orange teaches the founder to ignore the digest.
   const overall: "ok" | "degraded" = alertable.length === 0 ? "ok" : "degraded";
+  const digestTier: "ok" | "review" | "degraded" =
+    alertable.length > 0 ? "degraded" : reviewable.length > 0 ? "review" : "ok";
+  const digestSubjectLabel =
+    digestTier === "ok"
+      ? "ALL GREEN"
+      : digestTier === "review"
+        ? `REVIEW NEEDED — ${reviewable.length} job(s) flagged items`
+        : "DEGRADED";
 
   // Asset-coverage snapshot — informational, never alertable. Surfaces the
   // gap of collections without a cover_video URL until Cowork's queue drains.
@@ -197,9 +209,9 @@ export async function GET(req: NextRequest) {
         from: OPS_FROM_ADDRESS,
         to: ALERT_TO,
         replyTo: REPLY_TO,
-        subject: `[NakshIQ ops] weekly cron health digest — ${overall === "ok" ? "ALL GREEN" : "DEGRADED"}`,
-        html: renderDigestHtml(overall, health, assetCoverage),
-        text: renderDigestText(overall, health, assetCoverage),
+        subject: `[NakshIQ ops] weekly cron health digest — ${digestSubjectLabel}`,
+        html: renderDigestHtml(digestTier, health, assetCoverage),
+        text: renderDigestText(digestTier, health, assetCoverage),
       });
       digestEmailed = true;
     } catch (err: any) {
@@ -300,12 +312,13 @@ function renderAlertHtml(alertable: JobHealth[], all: JobHealth[]): string {
 }
 
 function renderDigestText(
-  overall: "ok" | "degraded",
+  tier: "ok" | "review" | "degraded",
   all: JobHealth[],
   coverage: AssetCoverage | null
 ): string {
+  const label = tier === "ok" ? "ALL GREEN" : tier === "review" ? "REVIEW NEEDED" : "DEGRADED";
   const lines: string[] = [];
-  lines.push(`NakshIQ weekly cron health — ${overall.toUpperCase()}\n`);
+  lines.push(`NakshIQ weekly cron health — ${label}\n`);
   all.forEach((h) => lines.push(`  • ${fmtRow(h)}`));
   if (coverage) {
     lines.push(`\nAsset coverage:`);
@@ -321,11 +334,12 @@ function renderDigestText(
 }
 
 function renderDigestHtml(
-  overall: "ok" | "degraded",
+  tier: "ok" | "review" | "degraded",
   all: JobHealth[],
   coverage: AssetCoverage | null
 ): string {
-  const colour = overall === "ok" ? "#16a34a" : "#dc2626";
+  const colour = tier === "ok" ? "#16a34a" : tier === "review" ? "#d97706" : "#dc2626";
+  const label = tier === "ok" ? "OK" : tier === "review" ? "REVIEW NEEDED" : "DEGRADED";
   const rows = all
     .map((h) => {
       const c = statusColour(h.status);
@@ -351,7 +365,7 @@ function renderDigestHtml(
        ${coverage.unlinked_examples.length > 0 ? `<p style="color:#525252;font-size:12px;margin:8px 0 0">Sample unlinked: ${coverage.unlinked_examples.join(", ")}</p>` : ""}`
     : "";
   return `<!doctype html><html><body style="font-family:ui-sans-serif,system-ui,sans-serif;color:#171717;max-width:640px;margin:0 auto;padding:24px">
-    <h1 style="font-size:20px;margin:0 0 8px">Weekly cron health: <span style="color:${colour}">${overall.toUpperCase()}</span></h1>
+    <h1 style="font-size:20px;margin:0 0 8px">Weekly cron health: <span style="color:${colour}">${label}</span></h1>
     <p style="color:#525252;margin:0 0 24px">All four scheduled jobs and their last-known-good runs.</p>
     <table style="width:100%;border-collapse:collapse;border:1px solid #e5e5e5">
       <thead><tr style="background:#fafafa">
