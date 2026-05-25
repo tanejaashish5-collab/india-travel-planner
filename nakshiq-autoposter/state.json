@@ -1,22 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-25",
-    "m8EAd_story": "2026-05-25",
-    "PdMu0": "2026-05-25"
-  },
-  "last_sync": "2026-05-25T18:13:32.600884+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "kalimpong",
-      "date": "2026-05-25"
-    },
-    {
-      "destination_id": "mathura",
-      "date": "2026-05-25"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -31,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "v4_dw_archival_modern_carousel"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -52,23 +38,10 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "v4_dw_archival_modern_carousel"
+      "kids_intel"
     ]
   },
   "post_log": [
-    {
-      "account_id": "m8EAd",
-      "platform": "instagram",
-      "date": "2026-04-28",
-      "mode": "evening",
-      "destination_id": "shimla",
-      "format": "reality_check",
-      "outstand_post_id": "LEE0V",
-      "platform_post_id": "18067665245654147",
-      "collection": "After Dark — Night Experiences Worth Staying Up For",
-      "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
-    },
     {
       "timestamp": "2026-04-19T10:12:14.002758+00:00",
       "date": "2026-04-19",
@@ -367,6 +340,18 @@
       "has_media": true
     },
     {
+      "account_id": "m8EAd",
+      "platform": "instagram",
+      "date": "2026-04-28",
+      "mode": "evening",
+      "destination_id": "shimla",
+      "format": "reality_check",
+      "outstand_post_id": "LEE0V",
+      "platform_post_id": "18067665245654147",
+      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
+      "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
+    },
+    {
       "timestamp": "2026-04-28T10:28:42.637644+00:00",
       "date": "2026-04-28",
       "platform": "facebook",
@@ -446,67 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-25T18:15:00.122219+00:00",
-      "date": "2026-05-25",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "xkk98",
-      "destination": "kalimpong",
-      "format": "v4_dw_archival_modern_carousel",
-      "has_media": true,
-      "media_id": "v4_dw_archival_modern_carousel-kalimpong_01_cover.png"
-    },
-    {
-      "timestamp": "2026-05-25T18:15:17.966553+00:00",
-      "date": "2026-05-25",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "REEGH",
-      "destination": "leh",
-      "format": "festival_alert",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
-      "timestamp": "2026-05-25T18:15:35.854407+00:00",
-      "date": "2026-05-25",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "ErrgA",
-      "destination": "mathura",
-      "format": "v4_dw_archival_modern_carousel",
-      "has_media": true,
-      "media_id": "v4_dw_archival_modern_carousel-mathura.png"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "v4_dw_archival_modern_carousel": [
-        "2026-05-25"
-      ]
-    },
-    "festivals": {
-      "2270012b-525c-4049-a0da-83694dec4f3b": [
-        "2026-05-25"
-      ]
-    },
-    "destinations": {
-      "mudumalai": [
-        "2026-05-25"
-      ],
-      "kalimpong": [
-        "2026-05-25"
-      ],
-      "leh": [
-        "2026-05-25"
-      ],
-      "mathura": [
-        "2026-05-25"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -518,8 +445,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "mudumalai"
-  },
-  "manual_skip_dests": {}
+  "last_picked": {}
 }
