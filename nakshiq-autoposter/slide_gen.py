@@ -877,6 +877,8 @@ def _looks_broken(text: str) -> bool:
       "Myth: . Reality: ."        ← placeholders collapsed to empty
       "Just announced: "          ← trailing label with empty value
       ". . ."                     ← only punctuation
+      ", then and now.  → today." ← leading-comma + double-space + arrow
+                                    artifact (kalimpong v4_dw 2026-05-25)
     Used by build_csv_single to fall back to a generic headline rather than
     publish a slide that screams 'broken template'.
     """
@@ -894,7 +896,40 @@ def _looks_broken(text: str) -> bool:
     # value slots emptied out).
     if len(_BROKEN_TEMPLATE_RE.findall(stripped)) >= 2:
         return True
+    # Leading punctuation (comma/period/colon/etc.) — strong signal that an
+    # opening placeholder collapsed. e.g. "{landmark_name}, then and now."
+    # rendered to ", then and now." when landmark_name was empty.
+    if stripped[0] in ",.:;!?":
+        return True
+    # Double-space mid-sentence — indicates a placeholder collapsed between
+    # two words. e.g. "Built {year_built} by {patron}." → "Built  by ."
+    if "  " in stripped:
+        return True
+    # Arrow / em-dash with leading-empty side. e.g. " → today." or " — today."
+    import re as _r
+    if _r.search(r"^\s*[→—–-]\s+", stripped) or _r.search(r"[^A-Za-z0-9)]\s+[→—–]\s+\S", stripped):
+        return True
     return False
+
+
+def _fallback_body_segments(dest: dict) -> list[str]:
+    """Body slide segments when the carousel falls back to dest-driven mode.
+    Returns 1-2 short editorial lines built from dest.tagline + dest.why_special
+    + score, suitable as standalone slide headlines."""
+    segs: list[str] = []
+    tagline = (dest.get("tagline") or "").strip()
+    why     = (dest.get("why_special") or "").strip()
+    state   = (dest.get("state") or "").strip()
+    score   = dest.get("score")
+    if tagline:
+        segs.append(_truncate(tagline, 90))
+    if why and why != tagline:
+        segs.append(_truncate(why, 90))
+    if score not in (None, "") and state:
+        segs.append(f"NakshIQ verified: {score}/5 · {state}")
+    elif score not in (None, ""):
+        segs.append(f"NakshIQ verified: {score}/5")
+    return segs[:3]
 
 
 def _fallback_headline(spec, dest: dict) -> str:
@@ -987,7 +1022,8 @@ def build_csv_carousel(spec, dest: dict, extras: dict | None = None,
 
     eyebrow = _format_pillar(spec)
     hook = _safe_format(spec.hook_template, ctx) or dest.get("name", "")
-    if _looks_broken(hook):
+    use_fallback_carousel = _looks_broken(hook)
+    if use_fallback_carousel:
         hook = _fallback_headline(spec, dest)
     title_text = _truncate(hook, 90)
 
@@ -1000,16 +1036,25 @@ def build_csv_carousel(spec, dest: dict, extras: dict | None = None,
     cover.save(pc, "PNG", optimize=True)
     paths.append(pc)
 
-    # Body slides — split caption_template on blank lines + use each segment
-    body_text = _safe_format(spec.caption_template, ctx)
-    segments = [s.strip() for s in body_text.split("\n") if s.strip()]
-    # Filter out template-leftover lines (still have {placeholders}) AND
-    # segments that look broken (label-with-no-value, mostly punctuation).
-    segments = [s for s in segments
-                if "{" not in s and "}" not in s and not _looks_broken(s)]
-    # Pick up to N-2 segments for body slides
-    n_body = max(0, slide_count - 2)
-    body_segments = segments[:n_body] if segments else []
+    # Body slides — split caption_template on blank lines + use each segment.
+    # If the hook already triggered the fallback (orphan-data format like
+    # v4_dw_archival_modern_carousel that has no NakshIQ-side data), skip
+    # the per-segment body iteration entirely — those segments are guaranteed
+    # to be broken artifacts. Substitute 1-2 dest-driven body slides so the
+    # carousel is cover + dest-tagline + CTA instead of cover + 3 broken
+    # segments + CTA.
+    if use_fallback_carousel:
+        body_segments = _fallback_body_segments(dest)
+    else:
+        body_text = _safe_format(spec.caption_template, ctx)
+        segments = [s.strip() for s in body_text.split("\n") if s.strip()]
+        # Filter template-leftover lines (still have {placeholders}) AND
+        # segments that look broken (label-with-no-value, mostly punctuation,
+        # leading-comma).
+        segments = [s for s in segments
+                    if "{" not in s and "}" not in s and not _looks_broken(s)]
+        n_body = max(0, slide_count - 2)
+        body_segments = segments[:n_body] if segments else []
 
     for i, seg in enumerate(body_segments, start=2):
         # If the segment looks like "Label: value" — render as fact slide.

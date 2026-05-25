@@ -6912,6 +6912,12 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         is_carousel = fmt in CAROUSEL_FORMATS
         media_obj   = None        # set below in whichever branch runs
         media_list  = []          # used for carousels only
+        slide_dests = []          # populated only by the legacy raw-photo
+                                   # carousel branch; CSV carousels skip it
+                                   # but the post-publish dest-cooldown loop
+                                   # still references it (must be defined
+                                   # to avoid UnboundLocalError on the FB
+                                   # iteration after IG carousel publish).
         use_video   = False
 
         # ── Phase-2 / CSV-format asset (highest priority) ─────────────────────

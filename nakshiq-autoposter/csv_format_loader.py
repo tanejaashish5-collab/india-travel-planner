@@ -923,19 +923,24 @@ def render_caption(spec: FormatSpec,
     missing = [p for p in required if p not in ctx]
 
     # Heavy-template-collapse path: when most placeholders are unfilled, the
-    # rendered output would be mostly punctuation ("Myth: . Reality: ."). For
-    # video formats where the caption IS the content, substitute a
-    # destination-driven fallback so we ship a coherent post instead of
-    # nothing. For image formats, slide_gen handles the visual fallback.
+    # rendered output would be mostly punctuation (", then and now. → today.",
+    # ", West Bengal. Built by ."). All post_types now fall back to a coherent
+    # dest-driven caption — image formats included (the slide_gen visual
+    # fallback covers the slide overlay, but IG/FB also show the caption text
+    # underneath the image which used to ship with raw empty placeholders).
+    # 2026-05-25: caught live on the kalimpong v4_dw_archival_modern_carousel
+    # post which shipped a caption that read literally `, then and now.  →
+    # today.\n\n, West Bengal. Built  by .`
     if missing and len(missing) > max(2, len(required) // 2):
         if spec.post_type in VIDEO_POST_TYPES:
             return _fallback_video_caption(spec, dest, extra_context or {})
-        if spec.post_type not in DYNAMIC_RENDER_POST_TYPES:
-            log.info(
-                f"[csv_formats] {spec.format_id}: missing placeholders "
-                f"{missing[:5]} — SKIPPING render"
-            )
-            return ""
+        if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
+            return _fallback_image_caption(spec, dest, extra_context or {})
+        log.info(
+            f"[csv_formats] {spec.format_id}: missing placeholders "
+            f"{missing[:5]} — SKIPPING render"
+        )
+        return ""
 
     try:
         hook = spec.hook_template.format_map(ctx)
@@ -945,11 +950,94 @@ def render_caption(spec: FormatSpec,
         log.warning(f"[csv_formats] {spec.format_id}: render failed ({e})")
         if spec.post_type in VIDEO_POST_TYPES:
             return _fallback_video_caption(spec, dest, extra_context or {})
+        if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
+            return _fallback_image_caption(spec, dest, extra_context or {})
         return ""
 
     # Glue them — hook on its own line, body, then CTA on a new line.
     parts = [p.strip() for p in (hook, body, cta) if p.strip()]
-    return "\n\n".join(parts)
+    rendered = "\n\n".join(parts)
+
+    # Last-line defence — even when only ≤50% placeholders are missing the
+    # caption can still come out looking broken (e.g. multiple ". ." or ": ."
+    # patterns). If the rendered output trips _looks_caption_broken, swap to
+    # the dest-driven fallback. Only applies to single/carousel where the
+    # caption supports a fallback path.
+    if (spec.post_type in DYNAMIC_RENDER_POST_TYPES
+            and _looks_caption_broken(rendered)):
+        log.info(
+            f"[csv_formats] {spec.format_id}: rendered caption looks broken "
+            f"after substitution — using dest-driven fallback"
+        )
+        return _fallback_image_caption(spec, dest, extra_context or {})
+    return rendered
+
+
+def _looks_caption_broken(text: str) -> bool:
+    """Detect captions that survived rendering but still read as broken —
+    e.g. ", West Bengal. Built by ." has only ~50% of placeholders missing
+    so the heavy-collapse gate doesn't catch it, but the leading comma +
+    "Built by ." artifacts are obvious. Tighter version of slide_gen's
+    _looks_broken (which is per-line); this one looks at the full caption."""
+    if not text:
+        return True
+    import re as _r
+    stripped = text.strip()
+    # Leading-punctuation lines (", then and now.  → today.")
+    leading_punct = sum(1 for line in stripped.split("\n")
+                        if line.strip() and line.strip()[0] in ",.:;!?")
+    if leading_punct >= 2:
+        return True
+    # Lines ending with "by ." or ": ." (empty value slots after a label)
+    bad_endings = len(_r.findall(r"\b(by|from|at|with|of|in|per)\s+\.", stripped, _r.IGNORECASE))
+    if bad_endings >= 2:
+        return True
+    # Lines containing "$LABEL: " followed by nothing (collapsed colon-value)
+    empty_labels = len(_r.findall(r"[A-Za-z][A-Za-z _-]+:\s*$", stripped, _r.MULTILINE))
+    if empty_labels >= 2:
+        return True
+    return False
+
+
+def _fallback_image_caption(spec: FormatSpec, dest: dict,
+                            extras: dict) -> str:
+    """Coherent dest-driven caption for image (single/carousel) formats when
+    the template can't resolve. Same shape as _fallback_video_caption but
+    written for the IG/FB feed-post voice. The slide visual is already
+    handled by slide_gen's fallback headline path; this fills the caption
+    that shows below the image in feed."""
+    name    = dest.get("name") or dest.get("id") or "this place"
+    state   = dest.get("state") or ""
+    tagline = dest.get("tagline") or ""
+    why     = dest.get("why_special") or ""
+    score   = dest.get("score")
+    month   = extras.get("month_name", "")
+    place   = f"{name}, {state}" if state else name
+    pillar  = (spec.pillar or "").lower()
+
+    # Lead line — pillar-appropriate
+    if pillar == "discovery":
+        hook = f"{name} — beyond the brochure."
+    elif pillar == "intelligence":
+        hook = f"{name}, by the numbers."
+    elif pillar == "transparency":
+        hook = f"What {name} actually looks like this {month or 'month'}."
+    elif pillar == "advocacy":
+        hook = f"The {name} story worth knowing."
+    else:
+        hook = f"{place} — verified."
+
+    body_lines = []
+    if tagline:
+        body_lines.append(tagline)
+    if why and why != tagline:
+        body_lines.append(why)
+    if score not in (None, ""):
+        body_lines.append(f"NakshIQ score: {score}/5"
+                          + (f" · {month}" if month else ""))
+
+    cta = "Full intel at nakshiq.com"
+    return "\n\n".join([hook] + body_lines + [cta])
 
 
 def _fallback_video_caption(spec: FormatSpec, dest: dict,
