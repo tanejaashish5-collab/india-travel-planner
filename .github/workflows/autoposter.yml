@@ -232,6 +232,59 @@ jobs:
           TOTAL_MINS=$((10#$HOUR * 60 + 10#$MINUTE))
           DOW=$(date -u +%u)  # 1=Mon .. 7=Sun
           INPUT="${{ github.event.inputs.mode }}"
+          SCHED="${{ github.event.schedule }}"
+
+          # ── Schedule-expression dispatch (fixes GHA cron drift) ──────────
+          # When GHA fires a cron 30-150min late, wall-clock-based dispatch
+          # below can land in the WRONG window (e.g. 2026-05-24: the 04:17
+          # YT-short cron fired at 06:47 → "drift to MORNING POST" branch,
+          # silently dropping the YT short slot). github.event.schedule
+          # carries the EXACT cron expression that triggered this run, so we
+          # can map cron → mode deterministically regardless of fire delay.
+          # Falls through to the wall-clock branch only for workflow_dispatch
+          # or if a new cron is added without a mapping here.
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -n "$SCHED" ]; then
+            case "$SCHED" in
+              "17 3 * * *")
+                echo "args=" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: morning post (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
+                exit 0
+                ;;
+              "17 4 * * *")
+                echo "args=--yt-short" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: --yt-short slot 1 (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
+                exit 0
+                ;;
+              "47 11 * * *")
+                echo "args=--yt-short" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: --yt-short slot 2 (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
+                exit 0
+                ;;
+              "17 14 * * *")
+                echo "args=--evening" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: --evening (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
+                exit 0
+                ;;
+              "17 18 * * *")
+                echo "args=--analytics" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: --analytics (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
+                exit 0
+                ;;
+              "17 21 * * *")
+                echo "args=--engagement-pull" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: --engagement-pull (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
+                exit 0
+                ;;
+              "17 22 * * 0")
+                echo "args=--digest-weekly" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: --digest-weekly (UTC ${HOUR}:${MINUTE}, Sunday-only)"
+                exit 0
+                ;;
+              *)
+                echo "::warning::Unrecognised cron schedule '$SCHED' — falling through to wall-clock dispatch. Add a case branch above for this cron."
+                ;;
+            esac
+          fi
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             if [ "$INPUT" = "evening-force" ]; then
