@@ -1,7 +1,23 @@
-2026-05-24 23:19:40  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-24 23:19:40  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 23:19:40  INFO      Nakshiq Autoposter · MORNING · 2026-05-24 · weekday=6
-2026-05-24 23:19:40  INFO      ════════════════════════════════════════════════════════════
-2026-05-24 23:19:40  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-24 23:20:10  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-24 23:20:10  INFO      Sync-only mode. Done.
+2026-05-25 08:44:02  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-25 08:44:02  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 08:44:02  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-25
+2026-05-25 08:44:02  INFO      ════════════════════════════════════════════════════════════
+2026-05-25 08:44:02  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-25 08:44:02  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-25 08:44:43  INFO      Short rendered: yt_short_did_you_know_2026-05-25.mp4 (19889 KB, 20.0s, fmt=did_you_know, music=29_night_trap)
+2026-05-25 08:44:43  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_2026-05-25.mp4 (20,366,521 bytes, video/mp4)
+2026-05-25 08:44:44  INFO          Uploading to R2 (timeout=300s)...
+2026-05-25 08:44:46  INFO          R2 PUT OK. Confirming...
+2026-05-25 08:44:48  INFO          Media ready: 2VkfS (20,366,521 bytes · yt_short_did_you_know_yt_short_did_you_know_2026-05-25.mp4)
+2026-05-25 08:44:48  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_2026-05-25.mp4
+2026-05-25 08:44:49  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-05-25 08:44:52  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=iRjxB), waiting for platform confirmation...
+2026-05-25 08:45:04  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=iRjxB · Platform=TNB9bzH3ZKA
+2026-05-25 08:45:04  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-05-25 08:45:07  INFO      [instagram/nakshiq] Outstand accepted (post_id=bmZoT), waiting for platform confirmation...
+2026-05-25 08:45:44  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=bmZoT · Platform=17865538545562271
+2026-05-25 08:45:44  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 94-95: surrogates not allowed
+2026-05-25 08:45:44  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-25 08:45:44  INFO      YT Short posted: format=did_you_know, music=29_night_trap
+2026-05-25 08:45:44  INFO      State saved. YT Short run complete.
+2026-05-25 08:45:44  INFO      ════════════════════════════════════════════════════════════

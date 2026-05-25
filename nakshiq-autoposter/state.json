@@ -1,9 +1,23 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-05-24T23:20:10.918529+00:00",
-  "posted_destinations": [],
+  "yt_short_formats_used": [
+    "did_you_know"
+  ],
+  "yt_short_music_used": [
+    "29_night_trap"
+  ],
+  "posted_today": {
+    "GAh5p_yt_short": "2026-05-25",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-25",
+    "m8EAd_yt_short_count": 1
+  },
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "coonoor",
+      "date": "2026-05-25"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -431,6 +445,24 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-25T08:45:04.982741+00:00",
+      "date": "2026-05-25",
+      "platform": "youtube",
+      "post_id": "iRjxB",
+      "destination": "coonoor",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-25.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T08:45:44.513244+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "post_id": "bmZoT",
+      "destination": "coonoor",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-25.mp4"
     }
   ],
   "theme_usage": {},
