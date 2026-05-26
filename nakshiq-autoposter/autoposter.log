@@ -121,3 +121,23 @@
 2026-05-26 13:36:05  INFO      YT Short posted: format=dont_go_here, music=08_desert_caravan
 2026-05-26 13:36:05  INFO      State saved. YT Short run complete.
 2026-05-26 13:36:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 14:22:31  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 14:22:31  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-26
+2026-05-26 14:22:31  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 14:22:31  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-26 14:22:31  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-26 14:23:34  INFO      Short rendered: yt_short_mini_guide_2026-05-26.mp4 (13526 KB, 28.0s, fmt=mini_guide, music=px_indian_bg)
+2026-05-26 14:23:34  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-05-26.mp4 (13,850,946 bytes, video/mp4)
+2026-05-26 14:23:35  INFO          Uploading to R2 (timeout=300s)...
+2026-05-26 14:23:38  INFO          R2 PUT OK. Confirming...
+2026-05-26 14:23:39  INFO          Media ready: cWxJL (13,850,946 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-05-26.mp4)
+2026-05-26 14:23:39  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-05-26.mp4
+2026-05-26 14:23:40  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-05-26 14:23:40  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-05-26 14:23:42  INFO      [instagram/nakshiq] Outstand accepted (post_id=JTOX3), waiting for platform confirmation...
+2026-05-26 14:24:19  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=JTOX3 · Platform=17910101289409194
+2026-05-26 14:24:19  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 123-124: surrogates not allowed
+2026-05-26 14:24:19  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-26 14:24:19  INFO      YT Short posted: format=mini_guide, music=px_indian_bg
+2026-05-26 14:24:19  INFO      State saved. YT Short run complete.
+2026-05-26 14:24:19  INFO      ════════════════════════════════════════════════════════════

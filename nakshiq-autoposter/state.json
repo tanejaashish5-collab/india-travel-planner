@@ -1,11 +1,13 @@
 {
   "yt_short_formats_used": [
     "did_you_know",
-    "dont_go_here"
+    "dont_go_here",
+    "mini_guide"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
-    "08_desert_caravan"
+    "08_desert_caravan",
+    "px_indian_bg"
   ],
   "posted_today": {
     "m8EAd": "2026-05-26",
@@ -14,7 +16,7 @@
     "GAh5p_yt_short": "2026-05-26",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short": "2026-05-26",
-    "m8EAd_yt_short_count": 1
+    "m8EAd_yt_short_count": 2
   },
   "last_sync": "2026-05-26T07:06:06.505378+00:00",
   "posted_destinations": [
@@ -28,6 +30,10 @@
     },
     {
       "destination_id": "doodhpathri",
+      "date": "2026-05-26"
+    },
+    {
+      "destination_id": "auli",
       "date": "2026-05-26"
     }
   ],
@@ -1210,6 +1216,15 @@
       "destination": null,
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-26.mp4"
+    },
+    {
+      "timestamp": "2026-05-26T14:24:19.610589+00:00",
+      "date": "2026-05-26",
+      "platform": "instagram",
+      "post_id": "JTOX3",
+      "destination": "auli",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-26.mp4"
     }
   ],
   "theme_usage": {
