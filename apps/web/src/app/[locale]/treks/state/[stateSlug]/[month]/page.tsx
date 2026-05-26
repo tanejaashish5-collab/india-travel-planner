@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const m = MONTH_MAP[month];
   if (!stateName || !m) return {};
   return {
-    title: `Treks in ${stateName} in ${m.name} — Best Trails This Month | NakshIQ`,
+    title: `Treks in ${stateName} in ${m.name} — Best Trails This Month`,
     description: `Best treks in ${stateName} for ${m.name}. Trail conditions, weather, difficulty, and whether the route is open. Honest assessments.`,
     ...localeAlternates(locale, `/treks/state/${stateSlug}/${month}`),
   };

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {};
   return {
-    title: `Camping in ${stateName} — Scored Spots & Sites | NakshIQ`,
+    title: `Camping in ${stateName} — Scored Spots & Sites`,
     description: `Every camping spot in ${stateName} with honest reviews, facilities, water access, permit requirements, and best months. No sponsored content.`,
     ...localeAlternates(locale, `/camping/state/${stateSlug}`),
   };

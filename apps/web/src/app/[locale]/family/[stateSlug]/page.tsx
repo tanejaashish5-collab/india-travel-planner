@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {};
   return {
-    title: `Family-Friendly Destinations in ${stateName} — Kids Ratings | NakshIQ`,
+    title: `Family-Friendly Destinations in ${stateName} — Kids Ratings`,
     description: `Every family-friendly destination in ${stateName} with kids ratings, age suitability, medical access, altitude warnings, and honest assessments. Written by parents.`,
     ...localeAlternates(locale, `/family/${stateSlug}`),
   };

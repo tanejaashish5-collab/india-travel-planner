@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {};
   return {
-    title: `Treks in ${stateName} — Scored Trails & Routes | NakshIQ`,
+    title: `Treks in ${stateName} — Scored Trails & Routes`,
     description: `Every trek in ${stateName} scored by difficulty, altitude, best months, and fitness level. Gear checklists, route maps, and honest assessments.`,
     ...localeAlternates(locale, `/treks/state/${stateSlug}`),
   };

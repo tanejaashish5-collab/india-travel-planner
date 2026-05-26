@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!stateName || !m) return {
   };
   return {
-    title: `Places to Visit in ${stateName} in ${m.name} — Scored & Ranked | NakshIQ`,
+    title: `Places to Visit in ${stateName} in ${m.name} — Scored & Ranked`,
     description: `Best destinations in ${stateName} for ${m.name}, scored 1-5 based on weather, crowds, and accessibility. See which score 5/5 and which to avoid.`,
     ...localeAlternates(locale, `/explore/state/${stateSlug}/${month}`),
   };

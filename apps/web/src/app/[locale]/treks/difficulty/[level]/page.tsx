@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const name = DIFFICULTY_MAP[level];
   if (!name) return {};
   return {
-    title: `${name} Treks in India — Scored Trails | NakshIQ`,
+    title: `${name} Treks in India — Scored Trails`,
     description: `All ${name.toLowerCase()} treks across India with altitude, duration, best months, gear requirements, and fitness level needed.`,
     ...localeAlternates(locale, `/treks/difficulty/${level}`),
   };

@@ -26,7 +26,7 @@ export async function generateMetadata({
   const info = ARRIVAL[iata];
   if (!info) return {};
   return {
-    title: `Arriving at ${info.iata} (${info.city}) — Prepaid Taxi, SIM, ATM, Scams | NakshIQ`,
+    title: `Arriving at ${info.iata} (${info.city}) — Prepaid Taxi, SIM, ATM, Scams`,
     description: `Step-by-step arrival guide for ${info.name}, ${info.city}. Prepaid taxi counter, Uber zone, SIM activation, ATM guidance, and the one scam to watch for. Updated 2026.`,
     ...localeAlternates(locale, `/arrival/${iata}`),
   };

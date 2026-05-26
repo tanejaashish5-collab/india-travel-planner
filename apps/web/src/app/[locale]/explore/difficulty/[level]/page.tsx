@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!name) return {
   };
   return {
-    title: `${name} Destinations in India — Scored & Ranked | NakshIQ`,
+    title: `${name} Destinations in India — Scored & Ranked`,
     description: `All ${name.toLowerCase()} destinations in India. ${DIFF_DESC[level]} Scored for every month with kids ratings and safety data.`,
     ...localeAlternates(locale, `/explore/difficulty/${level}`),
   };

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const m = MONTH_MAP[monthSlug];
   if (!stateName || !m) return {};
   return {
-    title: `Festivals in ${stateName} in ${m.name} | NakshIQ`,
+    title: `Festivals in ${stateName} in ${m.name}`,
     description: `Festivals happening in ${stateName} during ${m.name} — dates, locations, and travel tips. Plan your trip around these celebrations.`,
     ...localeAlternates(locale, `/festivals/state/${stateSlug}/${monthSlug}`),
   };

@@ -218,7 +218,7 @@ export async function generateMetadata({
   const dateLabel = f.approximate_date ?? MONTHS_LONG[f.month];
   const where = destName ? ` in ${destName}` : "";
   return {
-    title: `${f.name} — ${dateLabel}${where} | NakshIQ`,
+    title: `${f.name} — ${dateLabel}${where}`,
     description: f.description
       ? f.description.length > 160
         ? `${f.description.slice(0, 157)}...`

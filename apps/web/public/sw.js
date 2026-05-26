@@ -86,8 +86,17 @@
 //      muted-loop <video> hero (R2-hosted, 33 properties live). Detail-
 //      page markup changes (new <video> block above the title), so the
 //      bump purges nakshiq-v46-html for returning PWA users.
+// v49: 2026-05-26 Closes NEW-2026-05-24-001 title-stutter on /luxury +
+//      /festivals/[slug] + 15 other surfaces (one main metadata.title
+//      string was including " | NakshIQ" on top of the layout template's
+//      "%s | NakshIQ" suffix — fixed by stripping the duplicated suffix
+//      from each page's own title). Also closes E2E-2026-05-04-B1: the
+//      /hi destination/[month] H1 now renders Hindi name + month +
+//      "में" (Devanagari) instead of "Old Goa in May." in English. Bump
+//      purges nakshiq-v48-html so returning PWA users get the fixed H1
+//      + clean titles.
 
-const CACHE_VERSION = "nakshiq-v48";
+const CACHE_VERSION = "nakshiq-v49";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

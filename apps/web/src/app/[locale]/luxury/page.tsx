@@ -19,7 +19,7 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Ultra-luxury India trips — royal trains, palace hotels, iconic stays | NakshIQ",
+    title: "Ultra-luxury India trips — royal trains, palace hotels, iconic stays",
     description: "Palace on Wheels, Maharajas' Express, Taj Lake Palace, Umaid Bhawan, Aman-i-Khas. The trips you save for once in a lifetime — verified rates, real itineraries, no hype.",
     ...localeAlternates(locale, "/luxury"),
   };

@@ -72,7 +72,7 @@ export async function generateMetadata({
   const name = locale === "hi" ? row.translations?.hi?.name ?? row.name : row.name;
   const categoryWord = row.category === "train" ? "luxury train" : row.category === "itinerary" ? "luxury itinerary" : "iconic stay";
   return {
-    title: `${name} — ${categoryWord} | NakshIQ`,
+    title: `${name} — ${categoryWord}`,
     description: tagline ?? (row.editorial ? row.editorial.slice(0, 157) + "…" : `${name}: rates, route, sources, verified by NakshIQ.`),
     ...localeAlternates(locale, `/luxury/${slug}`),
   };

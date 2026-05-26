@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, tag } = await params;
   const info = TAG_DISPLAY[tag];
   if (!info) return {
-    title: `${tag} Destinations | NakshIQ`,
+    title: `${tag} Destinations`,
     alternates: {
       canonical: `https://www.nakshiq.com/${locale}/explore/tag/${tag}`,
       languages: {
@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   };
   return {
-    title: `${info.title} in India — Scored & Ranked | NakshIQ`,
+    title: `${info.title} in India — Scored & Ranked`,
     description: info.desc + " Every destination scored monthly with kids ratings and safety data.",
     alternates: {
       canonical: `https://www.nakshiq.com/${locale}/explore/tag/${tag}`,

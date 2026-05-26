@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { data: region } = await supabase.from("regions").select("id, name").eq("id", id).single();
   if (!region) return {};
   return {
-    title: `${region.name} — Travel Guide & Destinations | NakshIQ`,
+    title: `${region.name} — Travel Guide & Destinations`,
     description: `Explore destinations in ${region.name}. Monthly scores, kids ratings, safety data, and infrastructure reality for every place.`,
     alternates: {
       canonical: `https://www.nakshiq.com/${locale}/region/${id}`,

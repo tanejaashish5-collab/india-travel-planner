@@ -82,7 +82,7 @@ export async function generateMetadata({
   if (!q) return {};
   const destName = q.destination?.name ?? id;
   return {
-    title: `${q.question.slice(0, 80)} — ${destName} | NakshIQ`,
+    title: `${q.question.slice(0, 80)} — ${destName}`,
     description: q.answer.slice(0, 160),
     ...localeAlternates(locale, `/destination/${id}/q/${slug}`),
   };

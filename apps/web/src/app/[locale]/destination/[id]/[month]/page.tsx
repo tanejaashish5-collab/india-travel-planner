@@ -387,7 +387,7 @@ async function getMonthData(id: string, month: string) {
     supabase
       .from("destinations")
       .select(`
-        id, name, tagline, difficulty, elevation_m, budget_tier, best_months, content_reviewed_at,
+        id, name, tagline, translations, difficulty, elevation_m, budget_tier, best_months, content_reviewed_at,
         state:states(id, name),
         kids_friendly(*),
         confidence_cards(*),
@@ -696,7 +696,16 @@ export default async function DestinationMonthPage({
     score >= 4 ? "GOOD" :
     score >= 3 ? "MIXED" :
     score >= 1 ? "CAUTION" : "GUIDE";
-  const masthHead = `${destination.name} in ${monthName}.`;
+  const isHiRender = locale === "hi";
+  const MONTH_NAMES_HI: Record<string, string> = {
+    jan: "जनवरी", feb: "फ़रवरी", mar: "मार्च", apr: "अप्रैल", may: "मई", jun: "जून",
+    jul: "जुलाई", aug: "अगस्त", sep: "सितंबर", oct: "अक्टूबर", nov: "नवंबर", dec: "दिसंबर",
+  };
+  const renderMonthName = isHiRender ? (MONTH_NAMES_HI[month] ?? monthName) : monthName;
+  const renderDestName = (isHiRender && (destination as any).translations?.hi?.name) || destination.name;
+  const masthHead = isHiRender
+    ? `${renderMonthName} में ${renderDestName}.`
+    : `${renderDestName} in ${renderMonthName}.`;
 
   return (
     <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>

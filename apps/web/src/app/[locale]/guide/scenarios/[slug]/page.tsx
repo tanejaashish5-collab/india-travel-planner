@@ -40,7 +40,7 @@ export async function generateMetadata({
   const s = await getScenario(slug);
   if (!s) return {};
   return {
-    title: `${s.title} — Scenario Playbook | NakshIQ`,
+    title: `${s.title} — Scenario Playbook`,
     description: `${s.if_clause} — ${s.then_clause}`.slice(0, 160),
     ...localeAlternates(locale, `/guide/scenarios/${slug}`),
   };
