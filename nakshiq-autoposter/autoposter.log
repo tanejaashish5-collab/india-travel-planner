@@ -76,3 +76,25 @@
 2026-05-26 07:08:44  INFO      [facebook/Nakshiq] ✅ Published · Outstand=bmnmT · Platform=1040562729145369_122109783914700092
 2026-05-26 07:08:44  INFO      State saved. Run complete.
 2026-05-26 07:08:44  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 08:04:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 08:04:14  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-26
+2026-05-26 08:04:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 08:04:14  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-26 08:04:14  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-26 08:04:58  INFO      Short rendered: yt_short_did_you_know_2026-05-26.mp4 (9492 KB, 20.0s, fmt=did_you_know, music=px_amapiano_afrobeat)
+2026-05-26 08:04:58  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_2026-05-26.mp4 (9,720,196 bytes, video/mp4)
+2026-05-26 08:04:59  INFO          Uploading to R2 (timeout=300s)...
+2026-05-26 08:05:00  INFO          R2 PUT OK. Confirming...
+2026-05-26 08:05:01  INFO          Media ready: kTFAh (9,720,196 bytes · yt_short_did_you_know_yt_short_did_you_know_2026-05-26.mp4)
+2026-05-26 08:05:01  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_2026-05-26.mp4
+2026-05-26 08:05:02  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-05-26 08:05:05  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=9cASQ), waiting for platform confirmation...
+2026-05-26 08:05:17  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=9cASQ · Platform=ivCsXhtP4C0
+2026-05-26 08:05:17  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-05-26 08:05:20  INFO      [instagram/nakshiq] Outstand accepted (post_id=Xw1ne), waiting for platform confirmation...
+2026-05-26 08:05:55  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=Xw1ne · Platform=18587741689012745
+2026-05-26 08:05:55  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 99-100: surrogates not allowed
+2026-05-26 08:05:55  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-26 08:05:55  INFO      YT Short posted: format=did_you_know, music=px_amapiano_afrobeat
+2026-05-26 08:05:55  INFO      State saved. YT Short run complete.
+2026-05-26 08:05:55  INFO      ════════════════════════════════════════════════════════════

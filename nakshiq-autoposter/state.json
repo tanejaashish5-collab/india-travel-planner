@@ -1,10 +1,18 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
+  "yt_short_formats_used": [
+    "did_you_know"
+  ],
+  "yt_short_music_used": [
+    "px_amapiano_afrobeat"
+  ],
   "posted_today": {
     "m8EAd": "2026-05-26",
     "m8EAd_story": "2026-05-26",
-    "PdMu0": "2026-05-26"
+    "PdMu0": "2026-05-26",
+    "GAh5p_yt_short": "2026-05-26",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-26",
+    "m8EAd_yt_short_count": 1
   },
   "last_sync": "2026-05-26T07:06:06.505378+00:00",
   "posted_destinations": [
@@ -14,6 +22,10 @@
     },
     {
       "destination_id": "mathura",
+      "date": "2026-05-26"
+    },
+    {
+      "destination_id": "doodhpathri",
       "date": "2026-05-26"
     }
   ],
@@ -1151,17 +1163,6 @@
       "media_id": "v3_tl_city_neighborhood-kalimpong_01_cover.png"
     },
     {
-      "timestamp": "2026-05-26T07:08:00.047468+00:00",
-      "date": "2026-05-26",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "esTUr",
-      "destination": "gopeshwar",
-      "format": "blog_promo",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
       "timestamp": "2026-05-26T07:08:44.777801+00:00",
       "date": "2026-05-26",
       "platform": "facebook",
@@ -1171,6 +1172,24 @@
       "format": "v3_tl_city_neighborhood",
       "has_media": true,
       "media_id": "v3_tl_city_neighborhood-mathura_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-26T08:05:17.829747+00:00",
+      "date": "2026-05-26",
+      "platform": "youtube",
+      "post_id": "9cASQ",
+      "destination": "doodhpathri",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-26.mp4"
+    },
+    {
+      "timestamp": "2026-05-26T08:05:55.223075+00:00",
+      "date": "2026-05-26",
+      "platform": "instagram",
+      "post_id": "Xw1ne",
+      "destination": "doodhpathri",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-26.mp4"
     }
   ],
   "theme_usage": {
