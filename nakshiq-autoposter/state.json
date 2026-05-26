@@ -1,9 +1,22 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [],
+  "posted_today": {
+    "m8EAd": "2026-05-26",
+    "m8EAd_story": "2026-05-26",
+    "PdMu0": "2026-05-26"
+  },
+  "last_sync": "2026-05-26T07:06:06.505378+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "kalimpong",
+      "date": "2026-05-26"
+    },
+    {
+      "destination_id": "mathura",
+      "date": "2026-05-26"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -18,7 +31,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "v3_tl_city_neighborhood"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -38,10 +52,23 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "v3_tl_city_neighborhood"
     ]
   },
   "post_log": [
+    {
+      "account_id": "m8EAd",
+      "platform": "instagram",
+      "date": "2026-04-28",
+      "mode": "evening",
+      "destination_id": "shimla",
+      "format": "reality_check",
+      "outstand_post_id": "LEE0V",
+      "platform_post_id": "18067665245654147",
+      "collection": "After Dark — Night Experiences Worth Staying Up For",
+      "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
+    },
     {
       "timestamp": "2026-04-19T10:12:14.002758+00:00",
       "date": "2026-04-19",
@@ -340,18 +367,6 @@
       "has_media": true
     },
     {
-      "account_id": "m8EAd",
-      "platform": "instagram",
-      "date": "2026-04-28",
-      "mode": "evening",
-      "destination_id": "shimla",
-      "format": "reality_check",
-      "outstand_post_id": "LEE0V",
-      "platform_post_id": "18067665245654147",
-      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
-      "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
-    },
-    {
       "timestamp": "2026-04-28T10:28:42.637644+00:00",
       "date": "2026-04-28",
       "platform": "facebook",
@@ -431,9 +446,1016 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-18T07:12:13.475827+00:00",
+      "date": "2026-05-18",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "7rHTW",
+      "destination": "hyderabad",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "hyderabad.mp4"
+    },
+    {
+      "timestamp": "2026-05-18T07:12:32.578613+00:00",
+      "date": "2026-05-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "IkCqX",
+      "destination": "hyderabad",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "hyderabad.mp4"
+    },
+    {
+      "timestamp": "2026-05-18T14:13:25.553077+00:00",
+      "date": "2026-05-18",
+      "platform": "youtube",
+      "post_id": "rwzW4",
+      "destination": "uttarkashi",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-18.mp4"
+    },
+    {
+      "timestamp": "2026-05-18T14:14:01.523504+00:00",
+      "date": "2026-05-18",
+      "platform": "instagram",
+      "post_id": "uIDDE",
+      "destination": "uttarkashi",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-18.mp4"
+    },
+    {
+      "timestamp": "2026-05-18T14:49:27.959304+00:00",
+      "date": "2026-05-18",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "QovSy",
+      "destination": "bir-billing",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bir-billing.mp4"
+    },
+    {
+      "timestamp": "2026-05-18T14:49:53.023966+00:00",
+      "date": "2026-05-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "lHmjK",
+      "destination": "bir-billing",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bir-billing.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T07:03:25.799022+00:00",
+      "date": "2026-05-19",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "4sgBi",
+      "destination": "hemkund-sahib",
+      "format": "cost_index_card",
+      "has_media": true,
+      "media_id": "hemkund-sahib.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T07:03:44.928252+00:00",
+      "date": "2026-05-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "Ikm4X",
+      "destination": "hemkund-sahib",
+      "format": "cost_index_card",
+      "has_media": true,
+      "media_id": "hemkund-sahib.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T13:49:49.403424+00:00",
+      "date": "2026-05-19",
+      "platform": "youtube",
+      "post_id": "Qol5y",
+      "destination": "parvati-valley",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-19.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T13:50:25.520760+00:00",
+      "date": "2026-05-19",
+      "platform": "instagram",
+      "post_id": "lHiRK",
+      "destination": "parvati-valley",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-19.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T14:23:24.206325+00:00",
+      "date": "2026-05-19",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "5E68D",
+      "destination": "achabal",
+      "format": "reality_check",
+      "has_media": true,
+      "media_id": "achabal.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T14:23:46.360337+00:00",
+      "date": "2026-05-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "gSdNx",
+      "destination": "achabal",
+      "format": "reality_check",
+      "has_media": true,
+      "media_id": "achabal.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T08:00:47.503982+00:00",
+      "date": "2026-05-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Mgu9C",
+      "destination": "mumbai",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "mumbai.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T08:01:15.341424+00:00",
+      "date": "2026-05-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "i6KpB",
+      "destination": "mumbai",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "mumbai.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T10:05:51.394691+00:00",
+      "date": "2026-05-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "D7Nso",
+      "destination": "chennai",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "chennai.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T10:06:16.162914+00:00",
+      "date": "2026-05-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "x3rm8",
+      "destination": "chennai",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "chennai.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T12:49:53.294294+00:00",
+      "date": "2026-05-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "IhnsX",
+      "destination": "havelock-island",
+      "format": "cost_index_card",
+      "has_media": true,
+      "media_id": "havelock-island.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T12:50:23.551672+00:00",
+      "date": "2026-05-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "vSrhg",
+      "destination": "havelock-island",
+      "format": "cost_index_card",
+      "has_media": true,
+      "media_id": "havelock-island.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T17:47:36.824980+00:00",
+      "date": "2026-05-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Ih9RX",
+      "destination": "chopta",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "chopta.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T17:47:55.205871+00:00",
+      "date": "2026-05-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "vSBsg",
+      "destination": "chopta",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "chopta.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T18:15:14.318147+00:00",
+      "date": "2026-05-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "l5k1K",
+      "destination": "chopta",
+      "format": "v2_pov_slow_morning",
+      "has_media": true,
+      "media_id": "chopta.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T18:46:16.772211+00:00",
+      "date": "2026-05-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "MgPJC",
+      "destination": "bhandardara",
+      "format": "cost_index_card",
+      "has_media": true,
+      "media_id": "bhandardara.mp4"
+    },
+    {
+      "timestamp": "2026-05-20T18:46:33.771136+00:00",
+      "date": "2026-05-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "nH3Al",
+      "destination": "bhandardara",
+      "format": "cost_index_card",
+      "has_media": true,
+      "media_id": "bhandardara.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T07:07:52.564909+00:00",
+      "date": "2026-05-21",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "k1Lah",
+      "destination": "chopta",
+      "format": "v2_pov_slow_morning",
+      "has_media": true,
+      "media_id": "v2_pov_slow_morning-chopta.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T08:09:20.061429+00:00",
+      "date": "2026-05-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "WiIvz",
+      "destination": "chopta",
+      "format": "v2_pov_slow_morning",
+      "has_media": true,
+      "media_id": "v2_pov_slow_morning-chopta.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T13:51:58.597899+00:00",
+      "date": "2026-05-21",
+      "platform": "youtube",
+      "post_id": "ZI89u",
+      "destination": "tungnath",
+      "format": "yt_short.v2_yt_silent_pov",
+      "media_id": "yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T13:52:39.670931+00:00",
+      "date": "2026-05-21",
+      "platform": "instagram",
+      "post_id": "8k3cI",
+      "destination": "tungnath",
+      "format": "yt_short.v2_yt_silent_pov",
+      "media_id": "yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T14:28:53.067573+00:00",
+      "date": "2026-05-21",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "gJStx",
+      "destination": "sissu",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "sissu.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T14:29:11.717705+00:00",
+      "date": "2026-05-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "O2jqv",
+      "destination": "sissu",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "sissu.mp4"
+    },
+    {
+      "timestamp": "2026-05-22T07:03:29.591056+00:00",
+      "date": "2026-05-22",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Qc1my",
+      "destination": "dwarka",
+      "format": "hidden_gem_reveal",
+      "has_media": true,
+      "media_id": "dwarka.mp4"
+    },
+    {
+      "timestamp": "2026-05-22T07:04:13.300942+00:00",
+      "date": "2026-05-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "l5atK",
+      "destination": "dwarka",
+      "format": "hidden_gem_reveal",
+      "has_media": true,
+      "media_id": "dwarka.mp4"
+    },
+    {
+      "timestamp": "2026-05-22T14:04:43.839413+00:00",
+      "date": "2026-05-22",
+      "platform": "instagram",
+      "post_id": "4YaFi",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "TN_cartographic_dark"
+    },
+    {
+      "timestamp": "2026-05-22T14:04:46.908200+00:00",
+      "date": "2026-05-22",
+      "platform": "facebook",
+      "post_id": "74S6W",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "TN_cartographic_dark"
+    },
+    {
+      "timestamp": "2026-05-23T06:25:26.439987+00:00",
+      "date": "2026-05-23",
+      "platform": "youtube",
+      "post_id": "GOj9p",
+      "destination": "mudumalai",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4"
+    },
+    {
+      "timestamp": "2026-05-23T06:26:04.200743+00:00",
+      "date": "2026-05-23",
+      "platform": "instagram",
+      "post_id": "rsMG4",
+      "destination": "mudumalai",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4"
+    },
+    {
+      "timestamp": "2026-05-23T06:26:18.321340+00:00",
+      "date": "2026-05-23",
+      "platform": "facebook",
+      "post_id": "uXhkE",
+      "destination": "mudumalai",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_mudumalai.mp4"
+    },
+    {
+      "timestamp": "2026-05-23T09:22:49.627083+00:00",
+      "date": "2026-05-23",
+      "platform": "instagram",
+      "post_id": "yL0oj",
+      "destination": null,
+      "format": "canva_visual",
+      "media_id": "activities/surfing_01.jpg"
+    },
+    {
+      "timestamp": "2026-05-23T09:22:51.804030+00:00",
+      "date": "2026-05-23",
+      "platform": "facebook",
+      "post_id": "gJTSx",
+      "destination": null,
+      "format": "canva_visual",
+      "media_id": "activities/surfing_01.jpg"
+    },
+    {
+      "timestamp": "2026-05-23T12:46:23.314922+00:00",
+      "date": "2026-05-23",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Ee6hA",
+      "destination": "munsiyari",
+      "format": "v2_budget_receipt",
+      "has_media": true,
+      "media_id": "v2_budget_receipt-munsiyari.png"
+    },
+    {
+      "timestamp": "2026-05-23T15:23:47.185160+00:00",
+      "date": "2026-05-23",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "HEBU5",
+      "destination": "madurai",
+      "format": "v2_thali_close_up",
+      "has_media": true,
+      "media_id": "v2_thali_close_up-madurai.png"
+    },
+    {
+      "timestamp": "2026-05-24T06:53:34.713791+00:00",
+      "date": "2026-05-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "i6ORB",
+      "destination": "morgaon",
+      "format": "collection_series",
+      "has_media": true,
+      "media_id": "morgaon.mp4"
+    },
+    {
+      "timestamp": "2026-05-24T06:53:54.295734+00:00",
+      "date": "2026-05-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "zBplP",
+      "destination": "morgaon",
+      "format": "collection_series",
+      "has_media": true,
+      "media_id": "morgaon.mp4"
+    },
+    {
+      "timestamp": "2026-05-24T12:50:29.584639+00:00",
+      "date": "2026-05-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "CxTOF",
+      "destination": "kalimpong",
+      "format": "v2_ugc_spotlight",
+      "has_media": true,
+      "media_id": "v2_ugc_spotlight-kalimpong.png"
+    },
+    {
+      "timestamp": "2026-05-24T12:51:03.977807+00:00",
+      "date": "2026-05-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "rsxw4",
+      "destination": "mathura",
+      "format": "v2_ugc_spotlight",
+      "has_media": true,
+      "media_id": "v2_ugc_spotlight-mathura.png"
+    },
+    {
+      "timestamp": "2026-05-24T15:39:43.761736+00:00",
+      "date": "2026-05-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "ew8hr",
+      "destination": "kedarnath",
+      "format": "v4_dw_heritage_reel_sensory_pov",
+      "has_media": true,
+      "media_id": "kedarnath.mp4"
+    },
+    {
+      "timestamp": "2026-05-24T15:40:02.833572+00:00",
+      "date": "2026-05-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "CxGgF",
+      "destination": "shimla",
+      "format": "v4_dw_heritage_reel_sensory_pov",
+      "has_media": true,
+      "media_id": "shimla.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T08:45:04.982741+00:00",
+      "date": "2026-05-25",
+      "platform": "youtube",
+      "post_id": "iRjxB",
+      "destination": "coonoor",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-25.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T08:45:44.513244+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "post_id": "bmZoT",
+      "destination": "coonoor",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-25.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T08:55:19.402101+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "xkBx8",
+      "destination": "nainital",
+      "format": "v3_tl_editorial_listicle",
+      "has_media": true,
+      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+    },
+    {
+      "timestamp": "2026-05-25T08:56:06.632036+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "WBOqz",
+      "destination": "mussoorie",
+      "format": "v3_tl_editorial_listicle",
+      "has_media": true,
+      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+    },
+    {
+      "timestamp": "2026-05-25T11:01:48.004486+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "cPMdL",
+      "destination": "kokernag",
+      "format": "route_spotlight_short",
+      "has_media": true,
+      "media_id": "kokernag.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T11:02:14.723599+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "lDkTK",
+      "destination": "kokernag",
+      "format": "route_spotlight_short",
+      "has_media": true,
+      "media_id": "kokernag.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T11:40:19.977590+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "n53El",
+      "destination": "nainital",
+      "format": "v3_tl_editorial_listicle",
+      "has_media": true,
+      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+    },
+    {
+      "timestamp": "2026-05-25T11:40:55.545381+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "zng5P",
+      "destination": "mussoorie",
+      "format": "v3_tl_editorial_listicle",
+      "has_media": true,
+      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+    },
+    {
+      "timestamp": "2026-05-25T12:12:32.282635+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "mjrqd",
+      "destination": "lolab-valley",
+      "format": "route_spotlight_short",
+      "has_media": true,
+      "media_id": "lolab-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T12:12:46.785666+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "DWGHo",
+      "destination": "lolab-valley",
+      "format": "route_spotlight_short",
+      "has_media": true,
+      "media_id": "lolab-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T14:26:47.480726+00:00",
+      "date": "2026-05-25",
+      "platform": "youtube",
+      "post_id": "WB8dz",
+      "destination": "ziro-valley",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T14:27:34.928077+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "post_id": "Gv07p",
+      "destination": "ziro-valley",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-25.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T15:46:29.632698+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "31LVk",
+      "destination": "kalimpong",
+      "format": "v4_dw_walk_itinerary_day_by_day",
+      "has_media": true,
+      "media_id": "v4_dw_walk_itinerary_day_by_day-kalimpong_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-25T15:47:30.941097+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "1O0fG",
+      "destination": "mathura",
+      "format": "v4_dw_walk_itinerary_day_by_day",
+      "has_media": true,
+      "media_id": "v4_dw_walk_itinerary_day_by_day-mathura_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-25T16:45:00.840925+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "JTVG3",
+      "destination": "nainital",
+      "format": "v3_tl_editorial_listicle",
+      "has_media": true,
+      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+    },
+    {
+      "timestamp": "2026-05-25T16:45:32.538977+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "IUJRX",
+      "destination": "mussoorie",
+      "format": "v3_tl_editorial_listicle",
+      "has_media": true,
+      "media_id": "v3_tl_editorial_listicle-uttarakhand.png"
+    },
+    {
+      "timestamp": "2026-05-25T17:33:35.295024+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "rYU34",
+      "destination": "jibhi",
+      "format": "women_solo_brief",
+      "has_media": true,
+      "media_id": "jibhi.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T17:33:55.247695+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "46wUi",
+      "destination": "jibhi",
+      "format": "women_solo_brief",
+      "has_media": true,
+      "media_id": "jibhi.mp4"
+    },
+    {
+      "timestamp": "2026-05-25T18:15:00.122219+00:00",
+      "date": "2026-05-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "xkk98",
+      "destination": "kalimpong",
+      "format": "v4_dw_archival_modern_carousel",
+      "has_media": true,
+      "media_id": "v4_dw_archival_modern_carousel-kalimpong_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-25T18:15:35.854407+00:00",
+      "date": "2026-05-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ErrgA",
+      "destination": "mathura",
+      "format": "v4_dw_archival_modern_carousel",
+      "has_media": true,
+      "media_id": "v4_dw_archival_modern_carousel-mathura.png"
+    },
+    {
+      "timestamp": "2026-05-26T07:07:41.407265+00:00",
+      "date": "2026-05-26",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "8hNJI",
+      "destination": "kalimpong",
+      "format": "v3_tl_city_neighborhood",
+      "has_media": true,
+      "media_id": "v3_tl_city_neighborhood-kalimpong_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-26T07:08:00.047468+00:00",
+      "date": "2026-05-26",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "esTUr",
+      "destination": "gopeshwar",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-05-26T07:08:44.777801+00:00",
+      "date": "2026-05-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "bmnmT",
+      "destination": "mathura",
+      "format": "v3_tl_city_neighborhood",
+      "has_media": true,
+      "media_id": "v3_tl_city_neighborhood-mathura_01_cover.png"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "destinations": {
+      "hyderabad": [
+        "2026-05-18"
+      ],
+      "bir-billing": [
+        "2026-05-18"
+      ],
+      "hemkund-sahib": [
+        "2026-05-19"
+      ],
+      "chopta": [
+        "2026-05-19",
+        "2026-05-20",
+        "2026-05-21",
+        "2026-05-23"
+      ],
+      "achabal": [
+        "2026-05-19"
+      ],
+      "mumbai": [
+        "2026-05-20"
+      ],
+      "chennai": [
+        "2026-05-20"
+      ],
+      "pahalgam": [
+        "2026-05-20"
+      ],
+      "havelock-island": [
+        "2026-05-20"
+      ],
+      "bhandardara": [
+        "2026-05-20"
+      ],
+      "sissu": [
+        "2026-05-21",
+        "2026-05-25"
+      ],
+      "dwarka": [
+        "2026-05-22"
+      ],
+      "munsiyari": [
+        "2026-05-23"
+      ],
+      "madurai": [
+        "2026-05-23"
+      ],
+      "srinagar": [
+        "2026-05-23"
+      ],
+      "morgaon": [
+        "2026-05-24"
+      ],
+      "kalimpong": [
+        "2026-05-24",
+        "2026-05-25",
+        "2026-05-26"
+      ],
+      "kabini": [
+        "2026-05-24"
+      ],
+      "mathura": [
+        "2026-05-24",
+        "2026-05-25",
+        "2026-05-26"
+      ],
+      "kedarnath": [
+        "2026-05-24"
+      ],
+      "shimla": [
+        "2026-05-24"
+      ],
+      "nainital": [
+        "2026-05-25"
+      ],
+      "sonamarg": [
+        "2026-05-25"
+      ],
+      "mussoorie": [
+        "2026-05-25"
+      ],
+      "kokernag": [
+        "2026-05-25"
+      ],
+      "lolab-valley": [
+        "2026-05-25"
+      ],
+      "pithoragarh": [
+        "2026-05-25"
+      ],
+      "puri": [
+        "2026-05-25"
+      ],
+      "manikaran": [
+        "2026-05-25"
+      ],
+      "jibhi": [
+        "2026-05-25"
+      ],
+      "mudumalai": [
+        "2026-05-25"
+      ],
+      "leh": [
+        "2026-05-25"
+      ],
+      "gopeshwar": [
+        "2026-05-26"
+      ]
+    },
+    "morning_formats": {
+      "arrival_intel": [
+        "2026-05-18",
+        "2026-05-20"
+      ],
+      "cost_index_card": [
+        "2026-05-19",
+        "2026-05-20"
+      ],
+      "v2_pov_slow_morning": [
+        "2026-05-20",
+        "2026-05-21"
+      ],
+      "hidden_gem_reveal": [
+        "2026-05-22"
+      ],
+      "tourist_map": [
+        "2026-05-22"
+      ],
+      "v2_budget_receipt": [
+        "2026-05-23"
+      ],
+      "v2_thali_close_up": [
+        "2026-05-23"
+      ],
+      "collection_series": [
+        "2026-05-24"
+      ],
+      "v2_ugc_spotlight": [
+        "2026-05-24"
+      ],
+      "v4_dw_heritage_reel_sensory_pov": [
+        "2026-05-24"
+      ],
+      "v3_tl_editorial_listicle": [
+        "2026-05-25"
+      ],
+      "route_spotlight_short": [
+        "2026-05-25"
+      ],
+      "v4_dw_walk_itinerary_day_by_day": [
+        "2026-05-25"
+      ],
+      "women_solo_brief": [
+        "2026-05-25"
+      ],
+      "v4_dw_archival_modern_carousel": [
+        "2026-05-25"
+      ],
+      "v3_tl_city_neighborhood": [
+        "2026-05-26"
+      ]
+    },
+    "reels": {
+      "bir-billing": [
+        "2026-05-18"
+      ],
+      "achabal": [
+        "2026-05-19"
+      ],
+      "sissu": [
+        "2026-05-21"
+      ],
+      "munsiyari": [
+        "2026-05-23"
+      ],
+      "madurai": [
+        "2026-05-23"
+      ],
+      "kalimpong": [
+        "2026-05-24"
+      ],
+      "mathura": [
+        "2026-05-24"
+      ],
+      "kedarnath": [
+        "2026-05-24"
+      ],
+      "shimla": [
+        "2026-05-24"
+      ]
+    },
+    "audience_tags": {
+      "backpackers": [
+        "2026-05-18"
+      ],
+      "families": [
+        "2026-05-23"
+      ]
+    },
+    "collections": {
+      "birding-hotspots": [
+        "2026-05-19",
+        "2026-05-20"
+      ],
+      "best-winter": [
+        "2026-05-20",
+        "2026-05-21"
+      ],
+      "best-honeymoon": [
+        "2026-05-20"
+      ],
+      "borders-worth-visiting": [
+        "2026-05-20"
+      ],
+      "andaman-diving-snorkeling": [
+        "2026-05-20"
+      ]
+    },
+    "collection_carousel_dests:birding-hotspots": {
+      "chopta": [
+        "2026-05-19",
+        "2026-05-20"
+      ]
+    },
+    "collection_carousel_dests:best-honeymoon": {
+      "pahalgam": [
+        "2026-05-20"
+      ]
+    },
+    "festivals": {
+      "0f01501a-f637-4999-9537-bca5db2d6947": [
+        "2026-05-21"
+      ],
+      "5d32b61b-1a92-4869-a212-6a71b7394138": [
+        "2026-05-25"
+      ],
+      "7c1c885d-2a0e-473b-9454-ecd690126f80": [
+        "2026-05-25"
+      ],
+      "243d2208-c7b0-4474-a5d0-ca7d0385aaa4": [
+        "2026-05-25"
+      ],
+      "2270012b-525c-4049-a0da-83694dec4f3b": [
+        "2026-05-25"
+      ]
+    },
+    "tourist_map_states": {
+      "TN": [
+        "2026-05-22"
+      ]
+    },
+    "tourist_map_combos": {
+      "TN_cartographic_dark": [
+        "2026-05-22"
+      ]
+    },
+    "reel_formats": {
+      "seasonal_shift": [
+        "2026-05-23"
+      ]
+    },
+    "reel_seasonal_dests": {
+      "mudumalai": [
+        "2026-05-23"
+      ]
+    },
+    "canva_categories": {
+      "activities": [
+        "2026-05-23"
+      ]
+    },
+    "canva_images": {
+      "activities/surfing_01.jpg": [
+        "2026-05-23"
+      ]
+    },
+    "collection_series": {
+      "astavinayak-yatra": [
+        "2026-05-24"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -445,5 +1467,8 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "shared_best": "gopeshwar"
+  },
+  "manual_skip_dests": {}
 }
