@@ -60,36 +60,42 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Run mode (leave blank for normal)"
+        description: "Run mode (leave blank for normal). --force variants removed 2026-05-26 (Phase C) — they bypass dedup and caused the 2026-05-25 triple-publish. For emergency override, run locally with --force."
         required: false
         default: ""
         type: choice
         options:
+          # Phase C 2026-05-26: ALL `*-force` variants and the bare `force`
+          # option removed. They bypassed every dedup gate (per-account
+          # posted_today + Outstand-side remote_today) and caused the
+          # Uttarakhand triple-publish incident when the watchdog dispatched
+          # them after a drifted slot. Emergency override is now intentional
+          # friction: run nakshiq-autoposter/autoposter.py --force from a
+          # local checkout where the operator has to consciously type --force.
           - ""
-          - force
           - sync-only
           - dry-run
           - evening
-          - evening-force
           - moat
-          - moat-force
           - tourist-map
-          - tourist-map-force
           - canva-visual
-          - canva-visual-force
           - reel
-          - reel-force
           - infographic
-          - infographic-force
           - pomelli-visual
-          - pomelli-visual-force
           - flow-story
-          - flow-story-force
           - reel-map
-          - reel-map-force
           - yt-short
-          - yt-short-force
           - analytics
+          # Phase C 2026-05-26: dry-run variants for dark/paused formats.
+          # Routes to `--dry-run --<format>` so the full pipeline runs up
+          # to publish_* but never calls Outstand. Use to validate that
+          # infographic/tourist-map/reel-map/pomelli-visual/flow-story
+          # pipelines still work before re-enabling their crons.
+          - dry-run-infographic
+          - dry-run-tourist-map
+          - dry-run-reel-map
+          - dry-run-pomelli-visual
+          - dry-run-flow-story
 
 concurrency:
   group: autoposter
@@ -164,15 +170,35 @@ jobs:
         run: |
           if git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
             git fetch origin autoposter-state --depth=1
+            # Phase C 2026-05-26: hard-fail when a file that EXISTS on the
+            # remote fails to check out (vs. the old `|| true` that silently
+            # masked both "file absent on remote" AND "checkout itself failed"
+            # — the latter is the Uttarakhand triple-publish root cause).
+            # Now: cat-file -e probes existence first; if present, the
+            # checkout must succeed; if absent, we log + continue (first-run
+            # / pre-engagement-pull cases).
+            sync_failed=0
             for f in nakshiq-autoposter/state.json \
                      nakshiq-autoposter/autoposter.log \
                      nakshiq-autoposter/analytics.json \
                      nakshiq-autoposter/data/post_engagement.json \
                      nakshiq-autoposter/data/post_outcomes.jsonl \
                      nakshiq-autoposter/data/post_log.jsonl \
+                     nakshiq-autoposter/data/posted_today.jsonl \
                      nakshiq-autoposter/data/theme_usage.jsonl; do
-              git checkout origin/autoposter-state -- "$f" 2>/dev/null || true
+              if git cat-file -e "origin/autoposter-state:$f" 2>/dev/null; then
+                if ! git checkout origin/autoposter-state -- "$f"; then
+                  echo "::error::sync: file exists on remote but checkout FAILED: $f"
+                  sync_failed=1
+                fi
+              else
+                echo "  [sync] $f not on remote yet (first-run / not-yet-created — OK)"
+              fi
             done
+            if [ "$sync_failed" -ne 0 ]; then
+              echo "::error::One or more state files failed to sync — refusing to proceed. Dedup would run on stale data."
+              exit 1
+            fi
             echo "Synced state from autoposter-state branch"
           else
             echo "autoposter-state branch not on origin yet — using state from main checkout (first run)"
@@ -306,39 +332,31 @@ jobs:
           fi
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            if [ "$INPUT" = "evening-force" ]; then
-              echo "args=--evening --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --evening --force"
-            elif [ "$INPUT" = "moat-force" ]; then
-              echo "args=--moat --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --moat --force"
-            elif [ "$INPUT" = "tourist-map-force" ]; then
-              echo "args=--tourist-map --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --tourist-map --force"
-            elif [ "$INPUT" = "canva-visual-force" ]; then
-              echo "args=--canva-visual --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --canva-visual --force"
-            elif [ "$INPUT" = "pomelli-visual-force" ]; then
-              echo "args=--pomelli-visual --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --pomelli-visual --force"
-            elif [ "$INPUT" = "flow-story-force" ]; then
-              echo "args=--flow-story --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --flow-story --force"
-            elif [ "$INPUT" = "reel-force" ]; then
-              echo "args=--reel --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --reel --force"
-            elif [ "$INPUT" = "reel-map-force" ]; then
-              echo "args=--reel-map --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --reel-map --force"
-            elif [ "$INPUT" = "infographic-force" ]; then
-              echo "args=--infographic --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --infographic --force"
-            elif [ "$INPUT" = "yt-short-force" ]; then
-              echo "args=--yt-short --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --yt-short --force"
-            elif [ "$INPUT" = "ugc-force" ]; then
-              echo "args=--ugc --force" >> $GITHUB_OUTPUT
-              echo "Manual mode: --ugc --force"
+            # Phase C 2026-05-26: all `*-force` branches removed. The choice list
+            # no longer exposes them, but we still hard-block any operator who
+            # paste-types the old strings via the API — there is no path through
+            # this routing that emits --force.
+            case "$INPUT" in
+              *-force|force)
+                echo "::error::--force dispatch has been disabled (Phase C). Run autoposter.py --force locally if emergency override is needed."
+                exit 1
+                ;;
+            esac
+            if [ "$INPUT" = "dry-run-infographic" ]; then
+              echo "args=--dry-run --infographic" >> $GITHUB_OUTPUT
+              echo "Manual mode: --dry-run --infographic (no Outstand POST)"
+            elif [ "$INPUT" = "dry-run-tourist-map" ]; then
+              echo "args=--dry-run --tourist-map" >> $GITHUB_OUTPUT
+              echo "Manual mode: --dry-run --tourist-map (no Outstand POST)"
+            elif [ "$INPUT" = "dry-run-reel-map" ]; then
+              echo "args=--dry-run --reel-map" >> $GITHUB_OUTPUT
+              echo "Manual mode: --dry-run --reel-map (no Outstand POST)"
+            elif [ "$INPUT" = "dry-run-pomelli-visual" ]; then
+              echo "args=--dry-run --pomelli-visual" >> $GITHUB_OUTPUT
+              echo "Manual mode: --dry-run --pomelli-visual (no Outstand POST)"
+            elif [ "$INPUT" = "dry-run-flow-story" ]; then
+              echo "args=--dry-run --flow-story" >> $GITHUB_OUTPUT
+              echo "Manual mode: --dry-run --flow-story (no Outstand POST)"
             elif [ -n "$INPUT" ]; then
               echo "args=--${INPUT}" >> $GITHUB_OUTPUT
               echo "Manual mode: --${INPUT}"
@@ -483,8 +501,12 @@ jobs:
           # 2026-05-18: append-only JSONL files for post_log + theme_usage.
           # Snapshot them too so the worktree can MERGE (not overwrite) with
           # any newer remote entries that landed from a concurrent cron run.
+          # 2026-05-26 (Phase C): added posted_today.jsonl — was local-only,
+          # which meant the durable mirror of the same-account-today gate
+          # vanished on each new runner, making cross-run dedup brittle.
           [ -f nakshiq-autoposter/data/post_log.jsonl ]         && cp nakshiq-autoposter/data/post_log.jsonl         /tmp/autoposter-snap/post_log.jsonl              || true
           [ -f nakshiq-autoposter/data/theme_usage.jsonl ]      && cp nakshiq-autoposter/data/theme_usage.jsonl      /tmp/autoposter-snap/theme_usage.jsonl           || true
+          [ -f nakshiq-autoposter/data/posted_today.jsonl ]     && cp nakshiq-autoposter/data/posted_today.jsonl     /tmp/autoposter-snap/posted_today.jsonl          || true
 
           # 2. Ensure autoposter-state branch exists on origin (bootstrap on first run)
           if ! git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
@@ -504,6 +526,10 @@ jobs:
           cp /tmp/autoposter-snap/analytics.json        /tmp/autoposter-state-worktree/nakshiq-autoposter/analytics.json             2>/dev/null || true
           cp /tmp/autoposter-snap/post_engagement.json  /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_engagement.json  2>/dev/null || true
           cp /tmp/autoposter-snap/post_outcomes.jsonl   /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_outcomes.jsonl   2>/dev/null || true
+          # Phase C 2026-05-26: posted_today.jsonl is append-only like
+          # post_log.jsonl; copy it last-write-wins here since merge_jsonl.py
+          # below will dedupe (account_id+date keys).
+          cp /tmp/autoposter-snap/posted_today.jsonl    /tmp/autoposter-state-worktree/nakshiq-autoposter/data/posted_today.jsonl    2>/dev/null || true
 
           # 4b. MERGE JSONL files (don't overwrite — preserve concurrent-run
           #     entries already on the remote). Worktree contents come from
@@ -529,6 +555,7 @@ jobs:
                    nakshiq-autoposter/data/post_engagement.json \
                    nakshiq-autoposter/data/post_outcomes.jsonl \
                    nakshiq-autoposter/data/post_log.jsonl \
+                   nakshiq-autoposter/data/posted_today.jsonl \
                    nakshiq-autoposter/data/theme_usage.jsonl; do
             [ -f "$f" ] && git add "$f"
           done
@@ -536,9 +563,14 @@ jobs:
             echo "No state changes to commit"
           else
             git commit -m "chore: autoposter state $(date -u +'%Y-%m-%d %H:%M UTC')"
+            # Phase C 2026-05-26: track push success so we can hard-fail the
+            # workflow when all 3 attempts fail. The legacy form fell through
+            # silently → next run synced stale state → repeat-publish risk.
+            push_ok=false
             for attempt in 1 2 3; do
               if git push origin autoposter-state; then
                 echo "Push succeeded (attempt $attempt)"
+                push_ok=true
                 break
               fi
               echo "Push failed (attempt $attempt). Hard-resetting to remote + re-merging JSONLs..."
@@ -568,6 +600,7 @@ jobs:
                        nakshiq-autoposter/data/post_engagement.json \
                        nakshiq-autoposter/data/post_outcomes.jsonl \
                        nakshiq-autoposter/data/post_log.jsonl \
+                       nakshiq-autoposter/data/posted_today.jsonl \
                        nakshiq-autoposter/data/theme_usage.jsonl; do
                 [ -f "$f" ] && git add "$f"
               done
@@ -576,6 +609,10 @@ jobs:
               fi
               sleep $((attempt * 2))
             done
+            if [ "$push_ok" != "true" ]; then
+              echo "::error::Failed to push state to autoposter-state after 3 attempts. State is now divergent from origin — next run will see stale dedup data. Fail the workflow so this surfaces in the watchdog."
+              exit 1
+            fi
           fi
           popd
 

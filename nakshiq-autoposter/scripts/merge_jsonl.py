@@ -77,6 +77,18 @@ def main() -> int:
             "key":    lambda e: (e.get("dimension"), e.get("item_id"), (e.get("ts") or "")[:10]),
             "sort":   lambda e: e.get("ts") or "",
         },
+        # 2026-05-26 (Phase C): posted_today.jsonl — durable mirror of the
+        # per-account same-day gate. Key is (account_key, date) so each
+        # account's "already posted today" stamp survives concurrent runs
+        # without one overwriting the other's entry.
+        {
+            "name": "posted_today.jsonl",
+            "remote": worktree / "posted_today.jsonl",
+            "local":  snap / "posted_today.jsonl",
+            "key":    lambda e: (e.get("key") or e.get("account_id"),
+                                 e.get("date") or (e.get("ts") or "")[:10]),
+            "sort":   lambda e: e.get("ts") or "",
+        },
     ]
 
     for p in plans:

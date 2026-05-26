@@ -38,6 +38,8 @@ def _load_manifest() -> dict:
 
 
 def _slugify(name: str) -> str:
+    """Legacy slugifier — kept for has_social_image() backwards compatibility.
+    New code should use _slug.normalize_dest_slug instead."""
     return name.lower().replace(" ", "-").replace("'", "").replace(",", "")
 
 
@@ -58,24 +60,55 @@ def pick_social_image(
 
     Returns:
         Path to the JPEG image, or None if not found.
+
+    Phase B 2026-05-26: replaced startswith() prefix match with exact-canonical-slug
+    match. The old code's d.name.startswith("puri") would have matched a hypothetical
+    "puripuri-foo_XX" directory and shipped the wrong destination's image. Library
+    dir convention is `<dest-slug>_<STATE>` — we split + exact-match on the slug.
     """
     if not LIBRARY_DIR.exists():
         return None
 
-    slug = _slugify(dest_name)
+    try:
+        from _slug import normalize_dest_slug, split_dir_slug  # type: ignore
+    except ImportError:
+        # Fallback to the legacy normaliser if _slug isn't on path. The
+        # exact-match behaviour still applies, just with the older normalisation.
+        def normalize_dest_slug(s: str) -> str:  # type: ignore[no-redef]
+            return _slugify(s or "")
 
-    # Search by directory name prefix
+        def split_dir_slug(d: str) -> tuple[str, str]:  # type: ignore[no-redef]
+            if not d or "_" not in d:
+                return "", ""
+            base, _, state = d.rpartition("_")
+            if not (2 <= len(state) <= 4 and state.isalpha()):
+                return "", ""
+            return base.lower(), state.upper()
+
+    slug = normalize_dest_slug(dest_name)
+    if not slug:
+        return None
+
     candidates = []
     try:
         for d in LIBRARY_DIR.iterdir():
-            if d.is_dir() and d.name.startswith(slug):
-                for f in d.glob(f"*_{fmt}_*.jpg"):
-                    fname = f.name
-                    if style and style not in fname:
-                        continue
-                    if branding and branding not in fname:
-                        continue
-                    candidates.append(f)
+            if not d.is_dir():
+                continue
+            dir_slug, _state = split_dir_slug(d.name)
+            if not dir_slug:
+                # Non-conforming dir name (no _STATE suffix) — fall back to
+                # comparing the normalised whole name. Still exact match,
+                # never startswith().
+                dir_slug = normalize_dest_slug(d.name)
+            if dir_slug != slug:
+                continue
+            for f in d.glob(f"*_{fmt}_*.jpg"):
+                fname = f.name
+                if style and style not in fname:
+                    continue
+                if branding and branding not in fname:
+                    continue
+                candidates.append(f)
     except OSError:
         return None
 

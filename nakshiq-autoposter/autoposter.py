@@ -1288,7 +1288,21 @@ def post_fingerprints(state: dict, *, dest_days: int = 7,
     fmt_cut   = (today - timedelta(days=fmt_days)).isoformat()
     media_cut = (today - timedelta(days=media_days)).isoformat()
 
-    log_entries = state.get("post_log", []) or []
+    # Phase B 2026-05-26: read fresh from post_log.jsonl FIRST so a sibling
+    # autoposter run that pushed minutes earlier is seen, even before its
+    # state propagates through the autoposter-state branch. Then merge with
+    # the in-memory state["post_log"] for older entries the JSONL might not
+    # have (state has up to 2000 historical entries from state.json; JSONL is
+    # the canonical real-time mirror but a freshly-cloned runner can have an
+    # empty JSONL).
+    jsonl_entries = load_post_log_jsonl()
+    seen_keys = {(e.get("post_id"), e.get("platform"), e.get("timestamp"))
+                 for e in jsonl_entries}
+    log_entries = list(jsonl_entries)
+    for e in (state.get("post_log") or []):
+        key = (e.get("post_id"), e.get("platform"), e.get("timestamp"))
+        if key not in seen_keys:
+            log_entries.append(e)
 
     used_dests:    set = set()
     used_dest_fmt: set = set()  # tuples of (dest_id, fmt)
@@ -5258,12 +5272,53 @@ def outstand_get(path: str) -> dict:
     return r.json()
 
 def outstand_post_req(path: str, payload: dict, timeout: int = 30) -> dict:
-    r = requests.post(f"{OUTSTAND_BASE}{path}", headers=_headers(), json=payload, timeout=timeout)
+    """POST to Outstand. Always returns a dict — never raises on HTTP errors.
+
+    Phase B 2026-05-26: check status code BEFORE parsing JSON, and surface
+    `http_status` + `error` in the returned dict. The legacy path returned
+    `success=False` on non-JSON 5xx but callers couldn't tell that apart from
+    a normal Outstand 200 with `success=False` — now downstream code can see
+    `result.get("http_status")` to route platform-level errors distinctly from
+    business-logic rejections.
+    """
+    try:
+        r = requests.post(f"{OUTSTAND_BASE}{path}", headers=_headers(), json=payload, timeout=timeout)
+    except requests.RequestException as e:
+        log.warning(f"    outstand_post_req {path} network error: {type(e).__name__}: {e}")
+        return {"success": False, "http_status": 0, "error": f"network: {type(e).__name__}: {e}"}
+
+    # 4xx/5xx: log + try to parse a structured error body, fall back to text.
+    if r.status_code >= 400:
+        body_preview = r.text[:300] if r.text else ""
+        log.warning(
+            f"    outstand_post_req {path} HTTP {r.status_code}: {body_preview}"
+        )
+        try:
+            j = r.json()
+            if isinstance(j, dict):
+                j.setdefault("success", False)
+                j.setdefault("http_status", r.status_code)
+                return j
+        except Exception:
+            pass
+        return {
+            "success": False,
+            "http_status": r.status_code,
+            "error": f"HTTP {r.status_code}: {body_preview[:200]}",
+        }
+
+    # 2xx/3xx: parse JSON normally.
     try:
         return r.json()
     except Exception:
-        log.warning(f"    outstand_post_req {path} returned non-JSON: status={r.status_code} body={r.text[:300]}")
-        return {"success": False, "error": f"HTTP {r.status_code}: {r.text[:200]}"}
+        log.warning(
+            f"    outstand_post_req {path} returned non-JSON: status={r.status_code} body={r.text[:300]}"
+        )
+        return {
+            "success": False,
+            "http_status": r.status_code,
+            "error": f"HTTP {r.status_code} non-JSON: {r.text[:200]}",
+        }
 
 def get_connected_accounts() -> list:
     try:
@@ -5324,7 +5379,16 @@ def upload_media(url: str, filename: str, content_type: str = "image/jpeg",
         if "image/jpeg" in content_type:
             branded = _try_branded_image(url, filename, fmt=fmt)
             if branded:
-                return upload_media_bytes(branded, filename, content_type)
+                m = upload_media_bytes(branded, filename, content_type)
+                if m:
+                    return m
+                # publish_guard rejected the branded variant (blank / corrupt /
+                # too-small). Falling back to the remote dest hero preserves
+                # the post instead of failing the slot. Phase A — 2026-05-26.
+                log.warning(
+                    f"    Branded image rejected by publish_guard — "
+                    f"falling back to remote URL ({url})"
+                )
 
         # Original behavior: download from remote URL
         log.info(f"    Downloading: {url}")
@@ -5341,6 +5405,25 @@ def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jp
     Upload raw bytes (from a local file / generated image) to Outstand R2.
     Returns the media object, or None on failure.
     """
+    # ── Phase A pre-flight guard ────────────────────────────────────────────
+    # Reject empty / truncated / solid-color / unrecognized media BEFORE the
+    # R2 upload. This is the single chokepoint every publish path funnels
+    # through, so one check here covers feed posts, stories, reels, carousels
+    # and v2/v3/v4 CSV assets. Added 2026-05-26 after the Puri blank-Story +
+    # 36-dest blank-badge incidents.
+    try:
+        from publish_guard import validate_media_bytes
+        ok, reason = validate_media_bytes(data, filename, content_type)
+        if not ok:
+            log.error(
+                f"    publish_guard REJECTED upload: {filename} "
+                f"({content_type}, {len(data) if data else 0:,} bytes) — {reason}"
+            )
+            return None
+    except ImportError:
+        # publish_guard not on path — proceed with legacy (no validation) path.
+        # We log once so the missing module is visible in run output.
+        log.warning("    publish_guard import failed — skipping pre-flight validation")
     try:
         size = len(data)
         upload_timeout = 300 if "video" in content_type else 120
@@ -5788,6 +5871,33 @@ def publish_feed_post(caption: str, account: dict, media,
         else:
             log.debug(f"[{platform}/{username}] CTA healthcheck ok (status={status}, url={cta_url})")
 
+    # ── Phase A pre-flight media guard ───────────────────────────────────────
+    # publish_guard.validate_publish_payload runs the structural checks
+    # (None / missing id|url|filename / non-http url) on the dict OR each
+    # carousel slot before we burn an Outstand POST on a payload IG/FB will
+    # reject anyway. Bytes-level validation already happened at
+    # upload_media_bytes. Skipped on dry_run.
+    if not dry_run:
+        try:
+            from publish_guard import validate_publish_payload
+            mok, mreason = validate_publish_payload(
+                media, format_id=fmt, dest_id=dest_id, label=f"{platform}/{username}",
+            )
+            if not mok:
+                log.error(
+                    f"[{platform}/{username}] BLOCKED pre-publish (feed): {mreason} "
+                    f"· dest={dest_id} · fmt={fmt}"
+                )
+                _log_post_outcome(
+                    post_id=None, dest_id=dest_id, fmt=fmt, media_id=media_id,
+                    account=account, caption=caption, cta_url=cta_url,
+                    utm_content=utm_content,
+                    status=f"blocked_pre_publish:{mreason}",
+                )
+                return None
+        except ImportError:
+            log.warning(f"[{platform}/{username}] publish_guard import failed — skipping payload validation")
+
     # Normalise to a list for uniform handling.
     if media is None:
         media_list = []
@@ -5890,6 +6000,22 @@ def publish_story(account: dict, media: dict, dry_run: bool = False) -> dict | N
     """Post an Instagram Story (image only — no caption, no stickers via API)."""
     username = account.get("username", account["id"])
 
+    # ── Phase A pre-flight media guard ───────────────────────────────────────
+    # Stories are the surface where the Puri blank-green-image shipped on
+    # 2026-05-26 — validate the dict structure before the Outstand POST.
+    # Bytes-level validation already ran at upload_media_bytes.
+    if not dry_run:
+        try:
+            from publish_guard import validate_media_dict
+            mok, mreason = validate_media_dict(media)
+            if not mok:
+                log.error(
+                    f"[{username}] BLOCKED pre-publish (story): {mreason}"
+                )
+                return None
+        except ImportError:
+            log.warning(f"[{username}] publish_guard import failed — skipping story validation")
+
     if dry_run:
         log.info(f"    [DRY RUN] Story → {media['filename']}")
         return {"post": {"id": "DRY_RUN_STORY"}}
@@ -5928,6 +6054,22 @@ def publish_reel(caption: str, account: dict, video_media: dict,
             )
             _log_bad_url(cta_url, status, caption, account)
             return None
+
+    # ── Phase A pre-flight media guard ───────────────────────────────────────
+    # Validate the video_media dict structure (id / url / filename) before
+    # the Outstand POST. Bytes-level video validation already ran in
+    # upload_media_bytes (magic-byte check rejects non-MP4/webm payloads).
+    if not dry_run:
+        try:
+            from publish_guard import validate_media_dict
+            mok, mreason = validate_media_dict(video_media)
+            if not mok:
+                log.error(
+                    f"[{platform}/{username}] BLOCKED pre-publish (reel): {mreason}"
+                )
+                return None
+        except ImportError:
+            log.warning(f"[{platform}/{username}] publish_guard import failed — skipping reel validation")
 
     if dry_run:
         log.info(f"    [DRY RUN] Reel → {video_media['filename']}")
@@ -5968,18 +6110,48 @@ def publish_reel(caption: str, account: dict, video_media: dict,
 
 
 def wait_for_publish(post_id: str, timeout: int = 40) -> dict | None:
-    for _ in range(timeout // 5):
+    """Poll Outstand /v1/posts/{post_id} until the platform confirms or rejects.
+
+    Returns:
+      - dict  → platform confirmed `status="published"`
+      - None  → either a platform-side reject (acc.error present) OR the polls
+                exhausted without a definitive answer.
+
+    Phase B 2026-05-26: replaced the original blanket `except: pass` that
+    silently swallowed network errors with categorized logging. Callers that
+    treat None as "queued/unconfirmed" should also write a structured
+    `_log_post_outcome(status="queued_unconfirmed")` so the watchdog/digest
+    can see which posts went unconfirmed vs. confirmed.
+    """
+    last_exception: Exception | None = None
+    polls_done = 0
+    for _ in range(max(1, timeout // 5)):
         time.sleep(5)
+        polls_done += 1
         try:
             post = outstand_get(f"/v1/posts/{post_id}").get("post", {})
             for acc in post.get("socialAccounts", []):
                 if acc.get("status") == "published":
                     return acc
                 if acc.get("error"):
-                    log.warning(f"    Platform error: {acc['error']}")
+                    log.warning(f"    Platform error for post={post_id}: {acc['error']}")
                     return None
-        except Exception:
-            pass
+        except Exception as e:
+            last_exception = e
+            log.warning(
+                f"    wait_for_publish poll #{polls_done} for post={post_id} "
+                f"errored: {type(e).__name__}: {e}"
+            )
+    if last_exception is not None:
+        log.warning(
+            f"    wait_for_publish exhausted {polls_done} polls for post={post_id} "
+            f"(last error: {type(last_exception).__name__}) — caller will log as queued_unconfirmed"
+        )
+    else:
+        log.info(
+            f"    wait_for_publish exhausted {polls_done} polls for post={post_id} "
+            f"(no platform confirmation in {timeout}s) — caller will log as queued_unconfirmed"
+        )
     return None
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -7063,7 +7235,23 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 fb_id = confirmed.get("platformPostId", "—")
                 log.info(f"[{label}] ✅ Published · Outstand={post_id} · Platform={fb_id}")
             else:
-                log.warning(f"[{label}] ⚠️  Queued (ID={post_id})")
+                # Phase B 2026-05-26: write a structured outcome row so the
+                # watchdog and weekly engagement digest can audit posts that
+                # went unconfirmed (Outstand accepted, platform never sent a
+                # status=published). Without this, ghost posts only show up
+                # in post_log.jsonl with no signal that they may not have
+                # actually shipped.
+                log.warning(f"[{label}] ⚠️  Queued unconfirmed (ID={post_id})")
+                try:
+                    _qu_cta = _extract_caption_url(caption)
+                    _log_post_outcome(
+                        post_id=post_id, dest_id=dest_id, fmt=fmt, media_id=None,
+                        account=account, caption=caption, cta_url=_qu_cta,
+                        utm_content=run_utm_content,
+                        status="queued_unconfirmed",
+                    )
+                except Exception as _e:
+                    log.warning(f"[{label}] Could not log queued_unconfirmed outcome: {_e}")
         else:
             log.info(f"[{label}] ✅ Submitted (post_id={post_id})")
 

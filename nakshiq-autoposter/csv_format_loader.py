@@ -811,10 +811,18 @@ def _find_matching_asset(spec: FormatSpec,
     """
     if not asset_dir.exists():
         return None
-    slug = (dest.get("id") or dest.get("slug") or dest.get("name") or "").lower().replace(" ", "-")
+    # Phase B 2026-05-26: centralise slug normalisation via _slug.normalize_dest_slug.
+    # The legacy `.lower().replace(" ", "-")` left punctuation and underscores in
+    # place, causing misses like "Mt. Abu" → "mt.-abu" never matching "mt-abu.png".
+    try:
+        from _slug import normalize_dest_slug  # type: ignore
+    except ImportError:
+        def normalize_dest_slug(s):  # type: ignore[no-redef]
+            return (s or "").lower().replace(" ", "-")
+    slug = normalize_dest_slug(dest.get("id") or dest.get("slug") or dest.get("name") or "")
     if not slug:
         return None
-    state_slug = (dest.get("state_slug") or "").lower().replace(" ", "-")
+    state_slug = normalize_dest_slug(dest.get("state_slug") or "")
     candidates = [
         f"{spec.format_id}-{slug}.jpg",
         f"{spec.format_id}-{slug}.png",
