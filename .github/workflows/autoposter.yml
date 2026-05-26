@@ -150,17 +150,29 @@ jobs:
         # `autoposter-state` side branch so they don't trigger Vercel rebuilds
         # on main. Pull the latest state into the main worktree before the
         # autoposter runs so it sees yesterday's already-posted content.
+        #
+        # 2026-05-26: per-file loop instead of one multi-pathspec checkout.
+        # The previous form failed entirely when ANY listed file was absent
+        # from the branch (e.g. post_engagement.json — only created when
+        # the engagement-pull cron writes it) — `2>/dev/null || true` then
+        # swallowed the error and the runner started with NO synced state.
+        # That made post_log.jsonl empty → destinations_posted_today_jsonl()
+        # returned an empty set → same-day-dest guard never fired → repeat
+        # publishes (Uttarakhand triple-post 2026-05-25). Iterating per-file
+        # mirrors the commit step further down: one missing file no longer
+        # blocks the others.
         run: |
           if git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
             git fetch origin autoposter-state --depth=1
-            git checkout origin/autoposter-state -- \
-              nakshiq-autoposter/state.json \
-              nakshiq-autoposter/autoposter.log \
-              nakshiq-autoposter/analytics.json \
-              nakshiq-autoposter/data/post_engagement.json \
-              nakshiq-autoposter/data/post_outcomes.jsonl \
-              nakshiq-autoposter/data/post_log.jsonl \
-              nakshiq-autoposter/data/theme_usage.jsonl 2>/dev/null || true
+            for f in nakshiq-autoposter/state.json \
+                     nakshiq-autoposter/autoposter.log \
+                     nakshiq-autoposter/analytics.json \
+                     nakshiq-autoposter/data/post_engagement.json \
+                     nakshiq-autoposter/data/post_outcomes.jsonl \
+                     nakshiq-autoposter/data/post_log.jsonl \
+                     nakshiq-autoposter/data/theme_usage.jsonl; do
+              git checkout origin/autoposter-state -- "$f" 2>/dev/null || true
+            done
             echo "Synced state from autoposter-state branch"
           else
             echo "autoposter-state branch not on origin yet — using state from main checkout (first run)"

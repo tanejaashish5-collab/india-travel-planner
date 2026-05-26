@@ -41,29 +41,42 @@ if not GH_TOKEN:
 # Posting slots. Each tuple: (label, expected_utc_hour, expected_utc_min, dispatch_mode, dow_filter)
 # dow_filter: None = daily, or a set of weekday ints (Mon=0..Sun=6).
 # Times match the Tier 3 cadence schedule in .github/workflows/autoposter.yml.
+#
+# 2026-05-26: dispatch modes dropped the "-force" suffix. --force bypasses
+# every dedup gate (per-account posted_today + Outstand-side remote_today
+# merge), which caused the 2026-05-25 Uttarakhand triple-publish: when
+# slot_covered() kept firing for a slot that had actually posted late, each
+# new watchdog dispatch re-ran with --force and re-published the same dest.
+# The non-force variants still attach the correct slot flag (--evening etc.)
+# but leave the dedup gates active so a successful late fire blocks repeats.
 DAILY_SLOTS = [
-    ("morning",     3, 17, "force",           None),  # 08:47 IST · IG+FB
-    ("yt-short-1",  4, 17, "yt-short-force",  None),  # 09:47 IST · YT
-    ("reel",        5, 47, "reel-force",      None),  # 11:17 IST · IG+FB
-    ("yt-short-2", 11, 47, "yt-short-force",  None),  # 17:17 IST · YT
-    ("evening",    14, 17, "evening-force",   None),  # 19:47 IST · IG+FB (shifted +1h on 2026-05-15)
+    ("morning",     3, 17, "",          None),  # 08:47 IST · IG+FB
+    ("yt-short-1",  4, 17, "yt-short",  None),  # 09:47 IST · YT
+    ("reel",        5, 47, "reel",      None),  # 11:17 IST · IG+FB
+    ("yt-short-2", 11, 47, "yt-short",  None),  # 17:17 IST · YT
+    ("evening",    14, 17, "evening",   None),  # 19:47 IST · IG+FB (shifted +1h on 2026-05-15)
 ]
 
 # 13:17 IST = 07:47 UTC — visual rotation by weekday (see autoposter.yml mode-detection)
 WEEKDAY_VISUAL_MODE = {
-    0: "moat-force",            # Mon
-    1: "tourist-map-force",     # Tue
-    2: "moat-force",            # Wed
-    3: "tourist-map-force",     # Thu
-    4: "infographic-force",     # Fri
-    5: "canva-visual-force",    # Sat
-    6: "pomelli-visual-force",  # Sun
+    0: "moat",            # Mon
+    1: "tourist-map",     # Tue
+    2: "moat",            # Wed
+    3: "tourist-map",     # Thu
+    4: "infographic",     # Fri
+    5: "canva-visual",    # Sat
+    6: "pomelli-visual",  # Sun
 }
 
 # Time windows in minutes
 GRACE_MINUTES = 90       # only force after expected_time + 90min
 COVERAGE_WINDOW_BEFORE = 30
-COVERAGE_WINDOW_AFTER = 240  # accept any run within ~4h after expected as "covered"
+# 2026-05-26: widened from 240 (4h) to 1440 (24h). The 4h ceiling meant a
+# slot whose cron drifted >4h late never registered as "covered" — watchdog
+# kept dispatching catch-ups all day, multiplying every drifted fire into
+# 3-6 duplicates (Uttarakhand listicle 2026-05-25). Any late-but-successful
+# run today now blocks further catch-ups for the same slot.
+COVERAGE_WINDOW_AFTER = 1440  # accept any run within 24h after expected as "covered"
 
 
 def now_utc() -> datetime:
