@@ -5402,7 +5402,9 @@ def upload_media(url: str, filename: str, content_type: str = "image/jpeg",
     IG Story uploads so the 1080x1920 variant is selected instead of the
     1:1 feed asset (which IG crops and chops off side text)."""
     try:
-        # Try branded local image first (safe — falls back on any failure)
+        # Try branded local image first (safe — falls back on any failure).
+        # The library variants are PRE-branded by dest_image_gen, so we DON'T
+        # opt them into brand_stamp (default apply_brand_stamp=False).
         if "image/jpeg" in content_type:
             branded = _try_branded_image(url, filename, fmt=fmt)
             if branded:
@@ -5417,20 +5419,36 @@ def upload_media(url: str, filename: str, content_type: str = "image/jpeg",
                     f"falling back to remote URL ({url})"
                 )
 
-        # Original behavior: download from remote URL
+        # Raw R2 fetch path — this is the ONE place we opt into brand_stamp.
+        # IG audit 2026-05-26: 12 of 12 reels + 9 of 12 image posts had no
+        # headline. They all came through this path. apply_brand_stamp=True
+        # burns the "Achabal." headline + chrome onto the raw dest hero so
+        # viewers see WHAT it is even without reading the caption.
         log.info(f"    Downloading: {url}")
         resp = requests.get(url, timeout=30)
         resp.raise_for_status()
-        return upload_media_bytes(resp.content, filename, content_type)
+        return upload_media_bytes(resp.content, filename, content_type,
+                                  apply_brand_stamp=True)
     except Exception as e:
         log.warning(f"    Media upload exception: {e}")
         return None
 
 
-def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jpeg") -> dict | None:
+def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jpeg",
+                       apply_brand_stamp: bool = False) -> dict | None:
     """
     Upload raw bytes (from a local file / generated image) to Outstand R2.
     Returns the media object, or None on failure.
+
+    apply_brand_stamp: opt-IN flag (default False). When True, runs the
+    brand_stamp overlay (Achabal. headline + chrome) on the bytes before the
+    R2 PUT. The ONLY callsite that should opt in is the raw R2 dest-hero
+    fetch path in upload_media() — that's where bare unbranded photos enter
+    the publish pipeline. Every other path (social_image_library variants,
+    CSV slides, slide_gen carousels, tourist_map, pomelli, canva, flow_story,
+    reel_gen, ugc, yt_shorts) produces pre-composited media with text + chrome
+    already baked in, and would double-stamp if brand_stamp ran. Added
+    2026-05-26 with Issue 2.
     """
     # ── Phase A pre-flight guard ────────────────────────────────────────────
     # Reject empty / truncated / solid-color / unrecognized media BEFORE the
@@ -5451,6 +5469,44 @@ def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jp
         # publish_guard not on path — proceed with legacy (no validation) path.
         # We log once so the missing module is visible in run output.
         log.warning("    publish_guard import failed — skipping pre-flight validation")
+
+    # ── Brand-stamp overlay (Issue 2 2026-05-26) ─────────────────────────────
+    # Burn "Achabal." style cinematic headline + brand chrome into every
+    # image and video BEFORE the R2 PUT, so viewers learn what dest it is
+    # without reading the caption. Image: PIL composite (~<1s). Video: ffmpeg
+    # drawtext (~3-8s). On any failure the raw bytes pass through unchanged —
+    # post still ships, just unbranded. Skipped when:
+    #   - apply_brand_stamp=False (bytes are already pre-branded — e.g.
+    #     social_image_library variants, CSV-rendered slides)
+    #   - catalog hasn't been registered yet (e.g. sync-only runs)
+    if not apply_brand_stamp:
+        log.debug(f"    Brand-stamp skipped (apply_brand_stamp=False): {filename}")
+    else:
+      try:
+        from brand_stamp import apply_overlay
+        stamped = apply_overlay(data, filename, content_type)
+        if stamped is not None and stamped is not data and len(stamped) > 0:
+            log.info(
+                f"    Brand-stamp applied: {filename} "
+                f"({len(data):,} → {len(stamped):,} bytes)"
+            )
+            data = stamped
+            # Re-validate the stamped output — catches an overlay that
+            # accidentally rendered solid-color or zero-bytes.
+            try:
+                from publish_guard import validate_media_bytes as _revalidate
+                ok2, reason2 = _revalidate(data, filename, content_type)
+                if not ok2:
+                    log.error(
+                        f"    Brand-stamp output failed re-validation: {reason2} — "
+                        f"aborting upload to avoid shipping a broken overlay"
+                    )
+                    return None
+            except ImportError:
+                pass
+      except ImportError:
+        log.warning("    brand_stamp import failed — skipping pre-publish overlay")
+
     try:
         size = len(data)
         upload_timeout = 300 if "video" in content_type else 120
@@ -5501,6 +5557,9 @@ def _upload_csv_asset(path: str, label: str) -> tuple[dict | None, bool]:
         log.warning(f"[{label}] Phase-2 asset is empty — falling back.")
         return None, False
     name = os.path.basename(path)
+    # CSV / Phase-2 assets are pre-composited by their build pipeline (slide_gen
+    # / reel_gen / pomelli) — they already carry format-specific text/chrome.
+    # brand_stamp default is opt-in (False) so we don't double-stamp.
     if ext == ".mp4":
         m = upload_media_bytes(data, name, "video/mp4")
         if m:
@@ -6328,6 +6387,14 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     # ── 1. Sync content ───────────────────────────────────────────────────────
     content = sync_all_content()
     state["last_sync"] = datetime.now(timezone.utc).isoformat()
+    # Issue 2 2026-05-26: seed the brand_stamp module's dest lookup so every
+    # subsequent upload_media_bytes call can resolve the dest from the
+    # filename slug and burn in the "Achabal." headline + brand chrome.
+    try:
+        import brand_stamp
+        brand_stamp.register_dest_catalog(content)
+    except Exception as _bs_e:
+        log.warning(f"brand_stamp registration failed: {_bs_e}")
 
     if sync_only:
         log.info("Sync-only mode. Done.")
@@ -9430,6 +9497,12 @@ def _run_reel(force: bool = False, dry_run: bool = False):
 
     # Sync content for reel data
     content = sync_all_content()
+    # Issue 2 2026-05-26: brand_stamp catalog register for reel-only paths
+    try:
+        import brand_stamp
+        brand_stamp.register_dest_catalog(content)
+    except Exception as _bs_e:
+        log.warning(f"brand_stamp registration failed: {_bs_e}")
 
     # ── Pick reel format (oldest-unused rotation) ──────────────────────────
     fmt_items = [{"id": f} for f in REEL_FORMATS]
