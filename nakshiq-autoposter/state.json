@@ -1,16 +1,18 @@
 {
   "yt_short_formats_used": [
-    "did_you_know"
+    "did_you_know",
+    "dont_go_here"
   ],
   "yt_short_music_used": [
-    "px_amapiano_afrobeat"
+    "px_amapiano_afrobeat",
+    "08_desert_caravan"
   ],
   "posted_today": {
     "m8EAd": "2026-05-26",
     "m8EAd_story": "2026-05-26",
     "PdMu0": "2026-05-26",
     "GAh5p_yt_short": "2026-05-26",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short": "2026-05-26",
     "m8EAd_yt_short_count": 1
   },
@@ -1190,6 +1192,24 @@
       "destination": "doodhpathri",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-26.mp4"
+    },
+    {
+      "timestamp": "2026-05-26T13:35:16.943647+00:00",
+      "date": "2026-05-26",
+      "platform": "youtube",
+      "post_id": "vJT0g",
+      "destination": null,
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-26.mp4"
+    },
+    {
+      "timestamp": "2026-05-26T13:36:05.210323+00:00",
+      "date": "2026-05-26",
+      "platform": "instagram",
+      "post_id": "cPl6L",
+      "destination": null,
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-26.mp4"
     }
   ],
   "theme_usage": {
