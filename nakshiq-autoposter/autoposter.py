@@ -1272,16 +1272,23 @@ def record_publish(state: dict, *, dest_id: str | None, fmt: str,
     state["post_log"] = state["post_log"][-2000:]
 
 
-def post_fingerprints(state: dict, *, dest_days: int = 7,
+def post_fingerprints(state: dict, *, dest_days: int = 14,
                       fmt_days: int = 30, media_days: int = 60) -> dict:
     """Tier-2 fingerprint dedup. Returns three sets of recently-used identifiers
     so callers can reject candidate `(dest_id, fmt, media_id)` triples and
     structurally guarantee no repeat within the rolling windows.
 
-    Why three windows: a destination can legitimately reappear in 7 days under
+    Why three windows: a destination can legitimately reappear in 14 days under
     a different format (score_card → eateries_pick), the same `(dest, fmt)`
     pair should not, and the exact media_id (image/video file) should not
     repeat for 60 days. Tunable per the cost-aware operating rules.
+
+    2026-05-26: dest_days raised 7→14 per user directive — same dest can
+    appear multiple times per month but with at least a 14-day gap and in a
+    DIFFERENT format each time. Once-per-calendar-month block now applies
+    ONLY when the prior post was a video (.mp4 media_id) — see
+    current_month_posted_destinations() docstring. Image/carousel/Pomelli
+    posts no longer lock a dest out for the whole month.
     """
     today = date.today()
     dest_cut  = (today - timedelta(days=dest_days)).isoformat()
@@ -1314,8 +1321,15 @@ def post_fingerprints(state: dict, *, dest_days: int = 7,
         d = e.get("date") or ""
         did   = e.get("destination") or e.get("dest_id")
         fmt   = e.get("format")
-        media = e.get("media_id") or e.get("media")
-        if did and (d >= dest_cut or d.startswith(month_prefix)):
+        media = e.get("media_id") or e.get("media") or ""
+        # 2026-05-26 user directive: only VIDEO posts (.mp4 media_id) keep a
+        # dest in the once-per-month block. Image / carousel / Pomelli /
+        # tourist-map posts honour the 14-day rolling cooldown but don't lock
+        # the dest out for the rest of the calendar month.
+        was_video = isinstance(media, str) and media.lower().endswith(".mp4")
+        in_window = d >= dest_cut
+        in_month_as_video = bool(was_video and d.startswith(month_prefix))
+        if did and (in_window or in_month_as_video):
             used_dests.add(did)
         if did and fmt and d >= fmt_cut:
             used_dest_fmt.add((did, fmt))
@@ -1372,16 +1386,24 @@ def hardcoded_block_dests() -> set:
 
 
 def current_month_posted_destinations(state: dict) -> set:
-    """Destinations posted at least once in the current calendar month.
+    """Destinations whose VIDEO post this calendar month should block another video.
 
-    Enforces the **once-per-month rule** (user directive 2026-05-16):
-        "If we have 50 locations in May, we should only post one location
-         once, not repeat it. We are posting it multiple times."
+    2026-05-26 user directive (supersedes the 2026-05-16 once-per-month rule):
+        "If we have Achabal, we are rotating it through different formats. If
+         it comes and pops up once in two weeks in a different format, that's
+         okay, but at least it's not duplicating the same video."
 
-    Sources `post_log` (capped at 500 entries ≈ 2-3 months retention) rather
-    than `posted_destinations` (14-day GC) so May-1 posts are still gated on
-    May-30. Includes BOTH `destination` (main loop) and `dest_id` (record_publish)
-    field names — they exist in different writer paths.
+    Implementation: only entries whose media_id ends in .mp4 (i.e. the post
+    was a Reel / YT Short / IG video) keep the dest in this set for the rest
+    of the calendar month. Image / carousel / Pomelli / tourist-map posts
+    don't lock the dest out — they only contribute to the 14-day rolling gap
+    enforced by post_fingerprints + recently_used_destinations.
+
+    Sources `post_log` (capped at 2000 entries ≈ 90 days retention) so a May-1
+    video post is still gated on May-30. Includes BOTH `destination` (main
+    loop) and `dest_id` (record_publish) field names — they exist in
+    different writer paths. Manual + hardcoded blocks still apply
+    irrespective of media type.
     """
     month_prefix = date.today().strftime("%Y-%m")
     used: set = set()
@@ -1389,10 +1411,15 @@ def current_month_posted_destinations(state: dict) -> set:
         d = e.get("date") or ""
         if not d.startswith(month_prefix):
             continue
+        media_id = e.get("media_id") or e.get("media") or ""
+        if not (isinstance(media_id, str) and media_id.lower().endswith(".mp4")):
+            # Non-video posts don't block the dest from re-appearing in
+            # other formats this month.
+            continue
         did = e.get("destination") or e.get("dest_id")
         if did:
             used.add(did)
-    # Also include manual blocks (operator-curated skip-list with ISO expiry)
+    # Manual blocks (operator-curated skip-list with ISO expiry) ALWAYS apply.
     for did, expiry in (state.get("manual_skip_dests") or {}).items():
         if not expiry or expiry >= date.today().isoformat():
             used.add(did)
