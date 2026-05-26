@@ -141,3 +141,43 @@
 2026-05-26 14:24:19  INFO      YT Short posted: format=mini_guide, music=px_indian_bg
 2026-05-26 14:24:19  INFO      State saved. YT Short run complete.
 2026-05-26 14:24:19  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 17:39:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 17:39:05  INFO      Nakshiq Autoposter · EVENING · 2026-05-26 · weekday=1
+2026-05-26 17:39:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-26 17:39:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-26 17:39:37  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-26 17:39:37  INFO      brand_stamp: registered 20 destinations for overlay lookup
+2026-05-26 17:39:38  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-26 17:39:38  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-26 17:39:53  INFO      [evening] variety pick: v2_arrival_intel_video (33 CSV + 3 visual candidates)
+2026-05-26 17:39:53  INFO      Formats — IG: v2_arrival_intel_video  ·  FB: v2_arrival_intel_video  ·  Story: collection_spotlight
+2026-05-26 17:39:53  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 34
+2026-05-26 17:39:53  INFO      Fingerprint dedup snapshot — 38 dests in 7d · 48 (dest,fmt) pairs in 30d · 40 media in 60d
+2026-05-26 17:39:53  INFO      Collection locked: Adrenaline Rush — Adventure Destinations (14/20 never featured)
+2026-05-26 17:39:55  INFO      Shared best destination locked: Gurudongmar Lake
+2026-05-26 17:39:56  INFO      Carousel locked (collection_spotlight): chopta, tehri, bir-billing
+2026-05-26 17:39:56  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-26 17:39:56  INFO      [instagram/nakshiq] Generating v2_arrival_intel_video post...
+2026-05-26 17:39:56  INFO      [csv_formats] endpoint-anchored: v2_arrival_intel_video → arrival (9 candidates)
+2026-05-26 17:39:56  INFO      [instagram/nakshiq] Caption ready (722 chars, dest=mumbai)
+2026-05-26 17:39:56  INFO      [instagram/nakshiq] CSV video format (v2_arrival_intel_video) — using dest Ken Burns clip as fallback
+2026-05-26 17:39:56  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mumbai.mp4?v=20260524
+2026-05-26 17:39:57  INFO          Requesting upload URL for mumbai.mp4 (3,075,226 bytes, video/mp4)
+2026-05-26 17:39:58  INFO          Uploading to R2 (timeout=300s)...
+2026-05-26 17:39:59  INFO          R2 PUT OK. Confirming...
+2026-05-26 17:40:00  INFO          Media ready: pO93M (3,075,226 bytes · mumbai.mp4)
+2026-05-26 17:40:00  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-26 17:40:37  INFO      [instagram/nakshiq] ✅ Published · Outstand=HAlw5 · Platform=18155077279463886
+2026-05-26 17:40:37  INFO      [facebook/Nakshiq] Generating v2_arrival_intel_video post...
+2026-05-26 17:40:37  INFO      [csv_formats] endpoint-anchored: v2_arrival_intel_video → arrival (9 candidates)
+2026-05-26 17:40:37  INFO      [facebook/Nakshiq] Caption ready (602 chars, dest=chennai)
+2026-05-26 17:40:37  INFO      [facebook/Nakshiq] CSV video format (v2_arrival_intel_video) — using dest Ken Burns clip as fallback
+2026-05-26 17:40:37  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/chennai.mp4?v=20260524
+2026-05-26 17:40:38  INFO          Requesting upload URL for chennai.mp4 (9,034,062 bytes, video/mp4)
+2026-05-26 17:40:38  INFO          Uploading to R2 (timeout=300s)...
+2026-05-26 17:40:39  INFO          R2 PUT OK. Confirming...
+2026-05-26 17:40:40  INFO          Media ready: JazO3 (9,034,062 bytes · chennai.mp4)
+2026-05-26 17:40:40  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-26 17:40:59  INFO      [facebook/Nakshiq] ✅ Published · Outstand=IUuvX · Platform=1004140552340565
+2026-05-26 17:40:59  INFO      State saved. Run complete.
+2026-05-26 17:40:59  INFO      ════════════════════════════════════════════════════════════
