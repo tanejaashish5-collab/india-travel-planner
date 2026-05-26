@@ -182,7 +182,14 @@ jobs:
         uses: actions/cache@v4
         with:
           path: nakshiq-autoposter/social_image_library
-          key: social-image-library-v1
+          # 2026-05-26: bumped v1 → v2 to invalidate cached blank/no-photo
+          # branded badges for 36 dests across OD/AN/LA/PU/DA (Puri Story
+          # incident — the asset-gen pipeline silently skipped photo
+          # compositing for these regions and shipped text-only overlays
+          # that IG rendered as blank-green stories). Local files are
+          # deleted; this bump forces the runner to drop its cached copies
+          # so the autoposter falls back to the real R2 destination photo.
+          key: social-image-library-v2
 
       - name: Generate social image library (if not cached)
         run: |
