@@ -111,16 +111,27 @@ _CATALOG: dict = {}
 
 def register_dest_catalog(content: dict) -> None:
     """Seed the dest lookup. Called once per autoposter run from _run_inner
-    so we don't refetch the 12-month catalog on every upload."""
+    so we don't refetch the 12-month catalog on every upload.
+
+    Reads `destinations_full` (the unioned 505-dest catalog) FIRST, then
+    overlays `destinations` (current-month scored slice). The full catalog
+    is required because CSV-asset formats (e.g. v2_arrival_intel_video) pull
+    Ken Burns clips for dests that aren't in this month's top scorers — e.g.
+    Mumbai + Chennai on 2026-05-26 fell through unbranded because the narrow
+    scored slice didn't have them. See the post-mortem in MEMORY.md.
+    """
     global _CATALOG
     _CATALOG = {}
     try:
-        dests = (content or {}).get("destinations", {}) or {}
-        data = dests.get("data") or []
-        for d in data:
-            did = (d or {}).get("id")
-            if did:
-                _CATALOG[did] = d
+        merged: dict = {}
+        for key in ("destinations_full", "destinations"):
+            section = (content or {}).get(key, {}) or {}
+            data = section.get("data") or []
+            for d in data:
+                did = (d or {}).get("id")
+                if did and did not in merged:
+                    merged[did] = d
+        _CATALOG = merged
         log.info(f"brand_stamp: registered {len(_CATALOG)} destinations for overlay lookup")
     except Exception as e:
         log.warning(f"brand_stamp.register_dest_catalog failed ({type(e).__name__}: {e}) — overlays will pass-through")
@@ -458,6 +469,14 @@ def apply_overlay(
         return data
     resolved = _resolve_dest(filename, dest)
     if not resolved:
+        # 2026-05-27 Bombay regression: silent pass-through here hid the
+        # catalog-too-narrow bug for a full day. Log every miss so future
+        # catalog drift surfaces immediately in run output.
+        slug = _slug_from_filename(filename)
+        log.warning(
+            f"brand_stamp: no dest match for {filename} "
+            f"(slug={slug or '?'}, catalog={len(_CATALOG)}) — overlay skipped"
+        )
         return data
     if (content_type or "").startswith("video/"):
         return apply_video_overlay(data, resolved)
