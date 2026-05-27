@@ -23,10 +23,11 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short": "2026-05-27",
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-05-26",
-    "PdMu0_evening": "2026-05-26"
+    "m8EAd_evening": "2026-05-27",
+    "PdMu0_evening": "2026-05-27",
+    "m8EAd_evening_story": "2026-05-27"
   },
-  "last_sync": "2026-05-27T07:20:58.808360+00:00",
+  "last_sync": "2026-05-27T17:39:43.041014+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -67,6 +68,14 @@
     {
       "destination_id": "chamba",
       "date": "2026-05-27"
+    },
+    {
+      "destination_id": "leh",
+      "date": "2026-05-27"
+    },
+    {
+      "destination_id": "gangtok",
+      "date": "2026-05-27"
     }
   ],
   "posted_formats": {
@@ -86,10 +95,10 @@
       "kids_intel",
       "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
-      "v2_women_solo_brief_video"
+      "v2_women_solo_brief_video",
+      "v4_dw_local_historian_spotlight"
     ],
     "PdMu0": [
-      "monthly_forecast",
       "methodology_roads",
       "score_card",
       "methodology_family",
@@ -109,7 +118,8 @@
       "kids_intel",
       "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
-      "v2_women_solo_brief_video"
+      "v2_women_solo_brief_video",
+      "v4_dw_local_historian_spotlight"
     ]
   },
   "post_log": [
@@ -1341,6 +1351,39 @@
       "destination": "chamba",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_2026-05-27.mp4"
+    },
+    {
+      "timestamp": "2026-05-27T17:41:07.508926+00:00",
+      "date": "2026-05-27",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "pgpuM",
+      "destination": "leh",
+      "format": "v4_dw_local_historian_spotlight",
+      "has_media": true,
+      "media_id": "v4_dw_local_historian_spotlight-leh_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-27T17:41:35.736567+00:00",
+      "date": "2026-05-27",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "ZXZtu",
+      "destination": "yamunotri",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-05-27T17:42:16.878516+00:00",
+      "date": "2026-05-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "esewr",
+      "destination": "gangtok",
+      "format": "v4_dw_local_historian_spotlight",
+      "has_media": true,
+      "media_id": "v4_dw_local_historian_spotlight-gangtok_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -1453,13 +1496,20 @@
         "2026-05-25"
       ],
       "leh": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-27"
       ],
       "gopeshwar": [
         "2026-05-26"
       ],
       "tehri": [
         "2026-05-26"
+      ],
+      "yamunotri": [
+        "2026-05-27"
+      ],
+      "gangtok": [
+        "2026-05-27"
       ]
     },
     "morning_formats": {
@@ -1519,6 +1569,9 @@
       ],
       "v2_women_solo_brief_video": [
         "2026-05-27"
+      ],
+      "v4_dw_local_historian_spotlight": [
+        "2026-05-27"
       ]
     },
     "reels": {
@@ -1554,6 +1607,12 @@
       ],
       "chennai": [
         "2026-05-26"
+      ],
+      "leh": [
+        "2026-05-27"
+      ],
+      "gangtok": [
+        "2026-05-27"
       ]
     },
     "audience_tags": {
@@ -1676,7 +1735,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
+    "shared_best": "yamunotri",
     "collection": "ayurveda-wellness"
   },
   "manual_skip_dests": {}
