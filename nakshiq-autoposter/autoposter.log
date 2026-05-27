@@ -275,3 +275,25 @@ Date range: 2026-04-15 → 2026-05-26
 2026-05-27 07:22:34  INFO      [facebook/Nakshiq] ✅ Published · Outstand=yV4Zj · Platform=1003678095572879
 2026-05-27 07:22:34  INFO      State saved. Run complete.
 2026-05-27 07:22:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-27 08:16:07  INFO      ════════════════════════════════════════════════════════════
+2026-05-27 08:16:07  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-27
+2026-05-27 08:16:07  INFO      ════════════════════════════════════════════════════════════
+2026-05-27 08:16:07  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-27 08:16:07  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-27 08:17:11  INFO      Short rendered: yt_short_this_vs_that_2026-05-27.mp4 (14167 KB, 24.0s, fmt=this_vs_that, music=px_bollywood_pop)
+2026-05-27 08:17:11  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-05-27.mp4 (14,507,639 bytes, video/mp4)
+2026-05-27 08:17:12  INFO          Uploading to R2 (timeout=300s)...
+2026-05-27 08:17:13  INFO          R2 PUT OK. Confirming...
+2026-05-27 08:17:14  INFO          Media ready: v2Gmg (14,507,639 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-05-27.mp4)
+2026-05-27 08:17:14  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-05-27.mp4
+2026-05-27 08:17:15  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-05-27 08:17:17  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=esO2r), waiting for platform confirmation...
+2026-05-27 08:17:28  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=esO2r · Platform=6hpoBn0h8qs
+2026-05-27 08:17:28  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-05-27 08:17:30  INFO      [instagram/nakshiq] Outstand accepted (post_id=C8afF), waiting for platform confirmation...
+2026-05-27 08:18:15  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=C8afF · Platform=18102238267840545
+2026-05-27 08:18:15  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 110-111: surrogates not allowed
+2026-05-27 08:18:15  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-27 08:18:15  INFO      YT Short posted: format=this_vs_that, music=px_bollywood_pop
+2026-05-27 08:18:15  INFO      State saved. YT Short run complete.
+2026-05-27 08:18:15  INFO      ════════════════════════════════════════════════════════════
