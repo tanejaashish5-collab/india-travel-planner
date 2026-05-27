@@ -229,6 +229,45 @@ export function TrekDetail({ trek }: { trek: any }) {
       {/* Day by Day itinerary */}
       {activeSection === "itinerary" && days.length > 0 && (
         <div className="space-y-4">
+          {/* Elevation profile — only renders if we have ≥2 altitude points and they vary */}
+          {(() => {
+            const pts = elevationPoints.filter((p: any) => typeof p.altitude === "number" && p.altitude > 0);
+            if (pts.length < 2) return null;
+            const minA = Math.min(...pts.map((p: any) => p.altitude));
+            const maxA = Math.max(...pts.map((p: any) => p.altitude));
+            if (maxA - minA < 100) return null; // flat treks — no chart
+            const W = 600, H = 120, PAD = 20;
+            const xStep = (W - PAD * 2) / Math.max(1, pts.length - 1);
+            const yRange = maxA - minA || 1;
+            const coords = pts.map((p: any, i: number) => ({
+              x: PAD + i * xStep,
+              y: PAD + (H - PAD * 2) * (1 - (p.altitude - minA) / yRange),
+              day: p.day,
+              alt: p.altitude,
+            }));
+            const path = coords.map((c: { x: number; y: number }, i: number) => `${i === 0 ? "M" : "L"}${c.x.toFixed(1)},${c.y.toFixed(1)}`).join(" ");
+            const area = `${path} L${coords[coords.length - 1].x.toFixed(1)},${H - PAD} L${PAD},${H - PAD} Z`;
+            return (
+              <div className="rounded-xl border border-border bg-card/50 p-4 mb-2">
+                <h3 className="text-sm font-semibold mb-2">Elevation profile</h3>
+                <svg viewBox={`0 0 ${W} ${H}`} className="w-full" preserveAspectRatio="none">
+                  <path d={area} fill="hsl(var(--primary) / 0.12)" />
+                  <path d={path} stroke="hsl(var(--primary))" strokeWidth="2" fill="none" />
+                  {coords.map((c: { x: number; y: number; alt: number; day: number }, i: number) => (
+                    <g key={i}>
+                      <circle cx={c.x} cy={c.y} r="3" fill="hsl(var(--primary))" />
+                      <text x={c.x} y={c.y - 8} textAnchor="middle" className="fill-muted-foreground text-[9px]">{c.alt.toLocaleString()}m</text>
+                      <text x={c.x} y={H - 4} textAnchor="middle" className="fill-muted-foreground text-[9px]">D{c.day}</text>
+                    </g>
+                  ))}
+                </svg>
+                <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                  <span>Min {minA.toLocaleString()}m</span>
+                  <span>Max {maxA.toLocaleString()}m</span>
+                </div>
+              </div>
+            );
+          })()}
           {days.map((day: any, idx: number) => (
             <motion.div
               key={day.day}
@@ -317,6 +356,14 @@ export function TrekDetail({ trek }: { trek: any }) {
               <h3 className="text-sm font-semibold text-orange-300 mb-2">🆘 Emergency</h3>
               <p className="text-sm text-orange-200/80">{trek.emergency_contacts}</p>
             </div>
+          )}
+          {trek.last_reviewed_at && (
+            <p className="text-xs text-muted-foreground italic pt-1">
+              Last verified: {new Date(trek.last_reviewed_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+              {trek.source_url && (
+                <> · <a href={trek.source_url} target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">primary source</a></>
+              )}
+            </p>
           )}
         </div>
       )}

@@ -205,6 +205,15 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/tourist-traps`, request.url), 301);
   }
 
+  // Trek dedupe 2026-05-27 — `hampta-pass-trek` was a duplicate of `hampta-pass`
+  // (same trek, slug variant). Canonical retained: hampta-pass (longer description,
+  // 4-day duration, shorter slug — better for "hampta pass" searches).
+  const hamptaMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/treks\/hampta-pass-trek\/?$/);
+  if (hamptaMatch) {
+    const [, locale] = hamptaMatch;
+    return NextResponse.redirect(new URL(`/${locale}/treks/hampta-pass`, request.url), 301);
+  }
+
   // /(en|hi)/vs/kasol-parvati-valley-vs-manikaran → /(en|hi)/vs/kasol-vs-manikaran.
   // Legacy URL refers to a non-existent "kasol-parvati-valley" destination ID;
   // the actual destinations are kasol + parvati-valley + manikaran (separate
