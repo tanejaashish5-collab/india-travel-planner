@@ -47,3 +47,26 @@ jobs:
         run: node scripts/audit-hreflang.mjs
         env:
           BASE: ${{ env.BASE }}
+
+  render-mode:
+    name: Render-mode regression check (M5)
+    runs-on: ubuntu-latest
+    # Only runs on push to main, not on schedule — needs a build artefact,
+    # and Vercel produces the canonical one. Local builds would diverge
+    # because they don't include the same env config.
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build apps/web
+        run: cd apps/web && npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      - name: Audit render modes vs baseline
+        run: node scripts/audit-render-modes.mjs

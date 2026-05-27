@@ -28,6 +28,11 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   "freshness-drift": 8,       // weekly cron Mon 01:00 UTC
   "news-sweep": 32,           // monthly cron 1st 01:00 UTC
   "prewarm-next-month": 32,   // monthly cron 28th 01:00 UTC
+  "audit-cache-headers": 0.1, // hourly cron — 2h max gap before suspicious
+  "audit-gsc-alerts": 2,      // daily cron 03:30 UTC
+  "audit-gsc-ga4-correlation": 2, // daily cron 03:45 UTC
+  "audit-supabase-advisors": 0.5, // every 6h
+  "audit-bot-crawl-rate": 2,  // daily cron 03:00 UTC
 };
 
 // Earliest expected first run per job. Monthly crons deployed mid-cycle may
@@ -40,6 +45,13 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
   "freshness-drift": null,
   "news-sweep": null,
   "prewarm-next-month": "2026-05-28T01:00:00Z", // first 28th after Apr 30 deploy
+  // M1-M7 monitors — first-run grace until 2026-05-28 03:00 UTC, after which
+  // they should have all fired at least once.
+  "audit-cache-headers": "2026-05-27T17:17:00Z",
+  "audit-gsc-alerts": "2026-05-28T03:30:00Z",
+  "audit-gsc-ga4-correlation": "2026-05-28T03:45:00Z",
+  "audit-supabase-advisors": "2026-05-27T18:23:00Z",
+  "audit-bot-crawl-rate": "2026-05-28T03:00:00Z",
 };
 
 // Statuses that should trigger the daily alert email. needs_review (cron ran

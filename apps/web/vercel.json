@@ -49,6 +49,26 @@
     {
       "path": "/api/cron/send-destination-alerts",
       "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/audit-cache-headers",
+      "schedule": "17 * * * *"
+    },
+    {
+      "path": "/api/cron/audit-gsc-alerts",
+      "schedule": "30 3 * * *"
+    },
+    {
+      "path": "/api/cron/audit-gsc-ga4-correlation",
+      "schedule": "45 3 * * *"
+    },
+    {
+      "path": "/api/cron/audit-supabase-advisors",
+      "schedule": "23 */6 * * *"
+    },
+    {
+      "path": "/api/cron/audit-bot-crawl-rate",
+      "schedule": "0 3 * * *"
     }
   ]
 }
