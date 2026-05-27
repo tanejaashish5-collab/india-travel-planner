@@ -18,9 +18,16 @@ import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 export const revalidate = 86400; // 24h — 5,856 month pages × bots = function-invocation tax. Monthly content doesn't need 6h freshness.
 export const dynamicParams = true;
 
-// No generateStaticParams — 6,840 month pages render on-demand via ISR
-// instead of at build time. Cuts build from 20min to ~2min.
-// First visit: 1-2s server render, then cached for 24h (revalidate=86400).
+// 6,060 month pages render on-demand via ISR instead of at build time —
+// build stays ~2min instead of ~20min. First visit: 1-2s server render, then
+// served from Vercel's data cache for 24h (revalidate=86400). The empty []
+// return is REQUIRED — without generateStaticParams entirely, Next 16 treats
+// the route as fully dynamic (Cache-Control: private/no-cache/no-store,
+// x-vercel-cache: MISS) regardless of `revalidate`. That regression hid this
+// page family from the SERP for ~3 weeks until the 2026-05-27 fix.
+export async function generateStaticParams() {
+  return [];
+}
 
 const VALID_MONTHS = [
   "january","february","march","april","may","june",

@@ -14,6 +14,13 @@ import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
+// Next 16: a dynamic-segment route without generateStaticParams is treated as
+// fully dynamic (Cache-Control: private/no-cache/no-store) regardless of the
+// `revalidate` value. Return [] to opt into ISR-on-demand without pre-building.
+export async function generateStaticParams() {
+  return [];
+}
+
 const MONTH_MAP: Record<string, { num: number; name: string }> = {
   january: { num: 1, name: "January" }, february: { num: 2, name: "February" },
   march: { num: 3, name: "March" }, april: { num: 4, name: "April" },

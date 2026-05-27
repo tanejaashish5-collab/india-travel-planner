@@ -10,6 +10,13 @@ import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
+// Next 16: a dynamic-segment route without generateStaticParams is treated as
+// fully dynamic (Cache-Control: private/no-cache/no-store) regardless of the
+// `revalidate` value. Return [] to opt into ISR-on-demand without pre-building.
+export async function generateStaticParams() {
+  return [];
+}
+
 const SITE = "https://www.nakshiq.com";
 
 interface TrapAlternative {

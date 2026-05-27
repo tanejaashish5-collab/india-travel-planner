@@ -14,6 +14,13 @@ import { videoSrc } from "@/lib/video-url";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
+// Next 16: a dynamic-segment route without generateStaticParams is treated as
+// fully dynamic (Cache-Control: private/no-cache/no-store) regardless of the
+// `revalidate` value. Return [] to opt into ISR-on-demand without pre-building.
+export async function generateStaticParams() {
+  return [];
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; id: string}> }): Promise<Metadata> {
   const { locale, id } = await params;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

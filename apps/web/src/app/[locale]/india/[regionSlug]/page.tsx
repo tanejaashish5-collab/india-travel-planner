@@ -16,6 +16,13 @@ import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
+// Next 16: a dynamic-segment route without generateStaticParams is treated as
+// fully dynamic (Cache-Control: private/no-cache/no-store) regardless of the
+// `revalidate` value. Return [] to opt into ISR-on-demand without pre-building.
+export async function generateStaticParams() {
+  return [];
+}
+
 const REGION_DESCRIPTIONS: Record<string, string> = {
   north: "From Himalayan passes to Thar desert dunes. Ten states spanning Jammu & Kashmir, Ladakh, Himachal, Uttarakhand, Punjab, Haryana, Delhi, Rajasthan, Uttar Pradesh and Chandigarh — India's highest mountains, its grandest palaces, and the Gangetic heartland.",
   south: "Beaches, backwaters, temple towns, hill stations. Karnataka, Kerala, Tamil Nadu, Andhra Pradesh, Telangana and Puducherry — the Dravidian south, where the monsoon arrives first and the coffee is brewed strongest.",
