@@ -96,7 +96,13 @@
 //      purges nakshiq-v48-html so returning PWA users get the fixed H1
 //      + clean titles.
 
-const CACHE_VERSION = "nakshiq-v49";
+// v50 (2026-05-27): trek-content fill — 25 new destinations (5 Kailashes,
+//      5 Prayags, Sabarimala, Tirumala, Palani + Arupadai Veedu temples,
+//      Shikharji, Ziro, Kiphire, Betla, Chitrakote, Bhoramdeo, Jampui Hills),
+//      31 new treks, 3 new collections (Panch Kailash, Panch Prayag,
+//      Arupadai Veedu). Also fixes /treks region filter (state_id was
+//      missing from the query → every region returned 0 treks).
+const CACHE_VERSION = "nakshiq-v50";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

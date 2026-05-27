@@ -27,10 +27,10 @@ async function getTrekData() {
   const supabase = createClient(url, key);
 
   const [treksResult, destsResult, gearResult] = await Promise.all([
-    supabase.from("treks").select("*, destinations(name, state:states(name))").order("difficulty"),
+    supabase.from("treks").select("*, destinations(name, state_id, state:states(id, name))").order("difficulty"),
     supabase
       .from("destinations")
-      .select("id, name, tagline, difficulty, elevation_m, tags, state:states(name)")
+      .select("id, name, tagline, difficulty, elevation_m, tags, state_id, state:states(id, name)")
       .contains("tags", ["trek"])
       .order("name"),
     supabase.from("gear_checklists").select("*").order("name"),
