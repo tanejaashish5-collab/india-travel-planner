@@ -3,22 +3,24 @@
     "did_you_know",
     "dont_go_here",
     "mini_guide",
-    "this_vs_that"
+    "this_vs_that",
+    "listicle"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
     "08_desert_caravan",
     "px_indian_bg",
-    "px_bollywood_pop"
+    "px_bollywood_pop",
+    "15_coastal_vibes"
   ],
   "posted_today": {
     "m8EAd": "2026-05-27",
     "m8EAd_story": "2026-05-26",
     "PdMu0": "2026-05-27",
     "GAh5p_yt_short": "2026-05-27",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short": "2026-05-27",
-    "m8EAd_yt_short_count": 1,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-26",
     "PdMu0_evening": "2026-05-26"
   },
@@ -58,6 +60,10 @@
     },
     {
       "destination_id": "kasauli",
+      "date": "2026-05-27"
+    },
+    {
+      "destination_id": "chamba",
       "date": "2026-05-27"
     }
   ],
@@ -1315,6 +1321,24 @@
       "destination": "kasauli",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-05-27.mp4"
+    },
+    {
+      "timestamp": "2026-05-27T14:06:48.622078+00:00",
+      "date": "2026-05-27",
+      "platform": "youtube",
+      "post_id": "8hOMI",
+      "destination": "chamba",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-27.mp4"
+    },
+    {
+      "timestamp": "2026-05-27T14:07:27.065215+00:00",
+      "date": "2026-05-27",
+      "platform": "instagram",
+      "post_id": "esxur",
+      "destination": "chamba",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-27.mp4"
     }
   ],
   "theme_usage": {
