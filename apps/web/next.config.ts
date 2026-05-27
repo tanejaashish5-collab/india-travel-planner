@@ -5,6 +5,31 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   transpilePackages: ["@itp/shared"],
+  // Audit cron routes (audit-gsc-alerts, audit-gsc-ga4-correlation, etc.) use
+  // path.join(process.cwd(), "..", "..", dir) to read gsc-audits/ at the repo
+  // root. Turbopack's file-tracer can't statically scope that pattern, so it
+  // bundles the entire repo into the function — pushing audit-gsc-alerts past
+  // the 300 MB function limit on 2026-05-27 (data/ alone is 835 MB). These
+  // exclusions keep only what the routes actually read (gsc-audits/,
+  // ga4-audits/, ops-reports/) and drop the rest of the monorepo root.
+  outputFileTracingExcludes: {
+    "*": [
+      "../../data/**",
+      "../../scripts/**",
+      "../../supabase/migrations/**",
+      "../../.scrapes/**",
+      "../../GSC non indexing/**",
+      "../../Web Res reports/**",
+      "../../nakshiq-autoposter/**",
+      "../../docs/**",
+      "../../*.pdf",
+      "../../*.docx",
+      "../../*.png",
+      "../../*.jpg",
+      "../../*.md",
+      "../../*.csv",
+    ],
+  },
   experimental: {
     optimizePackageImports: [
       "framer-motion",
