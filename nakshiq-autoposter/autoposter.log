@@ -230,3 +230,48 @@
 2026-05-26 20:29:09  INFO      
 Date range: 2026-04-15 → 2026-05-26
 2026-05-26 20:29:09  INFO      ════════════════════════════════════════════════════════════
+2026-05-27 07:20:29  INFO      ════════════════════════════════════════════════════════════
+2026-05-27 07:20:29  INFO      Nakshiq Autoposter · MORNING · 2026-05-27 · weekday=2
+2026-05-27 07:20:29  INFO      ════════════════════════════════════════════════════════════
+2026-05-27 07:20:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-27 07:20:58  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=526
+2026-05-27 07:20:58  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-27 07:21:00  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-27 07:21:02  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+10 more)
+2026-05-27 07:21:02  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-27 07:21:14  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-27 07:21:14  INFO      Morning format (themed-week-4→discovery): v2_women_solo_brief_video [55% vs target 20%] (0/14 never featured)
+2026-05-27 07:21:14  INFO      Formats — IG: v2_women_solo_brief_video  ·  FB: v2_women_solo_brief_video  ·  Story: collection_spotlight
+2026-05-27 07:21:14  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 34
+2026-05-27 07:21:14  INFO      Fingerprint dedup snapshot — 38 dests in 7d · 50 (dest,fmt) pairs in 30d · 40 media in 60d
+2026-05-27 07:21:14  INFO      Collection locked: Ayurveda & Wellness Trail — Kerala's Healing Heritage (13/20 never featured)
+2026-05-27 07:21:16  INFO      Shared best destination locked: Sangla Valley
+2026-05-27 07:21:16  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-05-27 07:21:16  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-27 07:21:16  INFO      [instagram/nakshiq] Generating v2_women_solo_brief_video post...
+2026-05-27 07:21:16  INFO      [csv_formats] endpoint-anchored: v2_women_solo_brief_video → women_solo (31 candidates)
+2026-05-27 07:21:16  INFO      [instagram/nakshiq] Caption ready (596 chars, dest=kabini)
+2026-05-27 07:21:16  INFO      [instagram/nakshiq] CSV video format (v2_women_solo_brief_video) — using dest Ken Burns clip as fallback
+2026-05-27 07:21:16  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kabini.mp4?v=20260524
+2026-05-27 07:21:19  INFO          Brand-stamp applied: kabini.mp4 (5,945,247 → 3,377,784 bytes)
+2026-05-27 07:21:19  INFO          Requesting upload URL for kabini.mp4 (3,377,784 bytes, video/mp4)
+2026-05-27 07:21:20  INFO          Uploading to R2 (timeout=300s)...
+2026-05-27 07:21:21  INFO          R2 PUT OK. Confirming...
+2026-05-27 07:21:22  INFO          Media ready: FxsxZ (3,377,784 bytes · kabini.mp4)
+2026-05-27 07:21:22  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-27 07:22:14  INFO          wait_for_publish exhausted 8 polls for post=OSzRv (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-05-27 07:22:14  WARNING   [instagram/nakshiq] ⚠️  Queued unconfirmed (ID=OSzRv)
+2026-05-27 07:22:14  INFO      [facebook/Nakshiq] Generating v2_women_solo_brief_video post...
+2026-05-27 07:22:14  INFO      [csv_formats] endpoint-anchored: v2_women_solo_brief_video → women_solo (31 candidates)
+2026-05-27 07:22:14  INFO      [facebook/Nakshiq] Caption ready (617 chars, dest=pahalgam)
+2026-05-27 07:22:14  INFO      [facebook/Nakshiq] CSV video format (v2_women_solo_brief_video) — using dest Ken Burns clip as fallback
+2026-05-27 07:22:14  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260524
+2026-05-27 07:22:17  INFO          Brand-stamp applied: pahalgam.mp4 (11,691,764 → 5,895,696 bytes)
+2026-05-27 07:22:17  INFO          Requesting upload URL for pahalgam.mp4 (5,895,696 bytes, video/mp4)
+2026-05-27 07:22:17  INFO          Uploading to R2 (timeout=300s)...
+2026-05-27 07:22:18  INFO          R2 PUT OK. Confirming...
+2026-05-27 07:22:19  INFO          Media ready: gSpJx (5,895,696 bytes · pahalgam.mp4)
+2026-05-27 07:22:19  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-27 07:22:34  INFO      [facebook/Nakshiq] ✅ Published · Outstand=yV4Zj · Platform=1003678095572879
+2026-05-27 07:22:34  INFO      State saved. Run complete.
+2026-05-27 07:22:34  INFO      ════════════════════════════════════════════════════════════

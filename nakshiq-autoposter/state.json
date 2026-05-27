@@ -10,9 +10,9 @@
     "px_indian_bg"
   ],
   "posted_today": {
-    "m8EAd": "2026-05-26",
+    "m8EAd": "2026-05-27",
     "m8EAd_story": "2026-05-26",
-    "PdMu0": "2026-05-26",
+    "PdMu0": "2026-05-27",
     "GAh5p_yt_short": "2026-05-26",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short": "2026-05-26",
@@ -20,7 +20,7 @@
     "m8EAd_evening": "2026-05-26",
     "PdMu0_evening": "2026-05-26"
   },
-  "last_sync": "2026-05-26T17:39:37.590078+00:00",
+  "last_sync": "2026-05-27T07:20:58.808360+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -45,6 +45,14 @@
     {
       "destination_id": "chennai",
       "date": "2026-05-26"
+    },
+    {
+      "destination_id": "kabini",
+      "date": "2026-05-27"
+    },
+    {
+      "destination_id": "pahalgam",
+      "date": "2026-05-27"
     }
   ],
   "posted_formats": {
@@ -63,7 +71,8 @@
       "festival_alert",
       "kids_intel",
       "v3_tl_city_neighborhood",
-      "v2_arrival_intel_video"
+      "v2_arrival_intel_video",
+      "v2_women_solo_brief_video"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -85,7 +94,8 @@
       "festival_alert",
       "kids_intel",
       "v3_tl_city_neighborhood",
-      "v2_arrival_intel_video"
+      "v2_arrival_intel_video",
+      "v2_women_solo_brief_video"
     ]
   },
   "post_log": [
@@ -1259,6 +1269,28 @@
       "format": "v2_arrival_intel_video",
       "has_media": true,
       "media_id": "chennai.mp4"
+    },
+    {
+      "timestamp": "2026-05-27T07:22:14.285171+00:00",
+      "date": "2026-05-27",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "OSzRv",
+      "destination": "kabini",
+      "format": "v2_women_solo_brief_video",
+      "has_media": true,
+      "media_id": "kabini.mp4"
+    },
+    {
+      "timestamp": "2026-05-27T07:22:34.773408+00:00",
+      "date": "2026-05-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "yV4Zj",
+      "destination": "pahalgam",
+      "format": "v2_women_solo_brief_video",
+      "has_media": true,
+      "media_id": "pahalgam.mp4"
     }
   ],
   "theme_usage": {
@@ -1292,7 +1324,8 @@
         "2026-05-26"
       ],
       "pahalgam": [
-        "2026-05-20"
+        "2026-05-20",
+        "2026-05-27"
       ],
       "havelock-island": [
         "2026-05-20"
@@ -1325,7 +1358,8 @@
         "2026-05-26"
       ],
       "kabini": [
-        "2026-05-24"
+        "2026-05-24",
+        "2026-05-27"
       ],
       "mathura": [
         "2026-05-24",
@@ -1432,6 +1466,9 @@
       ],
       "v2_arrival_intel_video": [
         "2026-05-26"
+      ],
+      "v2_women_solo_brief_video": [
+        "2026-05-27"
       ]
     },
     "reels": {
@@ -1497,6 +1534,9 @@
       ],
       "adrenaline-rush": [
         "2026-05-26"
+      ],
+      "ayurveda-wellness": [
+        "2026-05-27"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -1572,7 +1612,8 @@
       "bir-billing": [
         "2026-05-26"
       ]
-    }
+    },
+    "collection_carousel_dests:ayurveda-wellness": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -1586,8 +1627,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurudongmar-lake",
-    "collection": "adrenaline-rush"
+    "shared_best": "sangla",
+    "collection": "ayurveda-wellness"
   },
   "manual_skip_dests": {}
 }
