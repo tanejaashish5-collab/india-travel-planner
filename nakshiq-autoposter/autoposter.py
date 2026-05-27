@@ -5435,7 +5435,8 @@ def upload_media(url: str, filename: str, content_type: str = "image/jpeg",
 
 
 def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jpeg",
-                       apply_brand_stamp: bool = False) -> dict | None:
+                       apply_brand_stamp: bool = False,
+                       dest_hint: dict | None = None) -> dict | None:
     """
     Upload raw bytes (from a local file / generated image) to Outstand R2.
     Returns the media object, or None on failure.
@@ -5484,7 +5485,7 @@ def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jp
     else:
       try:
         from brand_stamp import apply_overlay
-        stamped = apply_overlay(data, filename, content_type)
+        stamped = apply_overlay(data, filename, content_type, dest=dest_hint)
         if stamped is not None and stamped is not data and len(stamped) > 0:
             log.info(
                 f"    Brand-stamp applied: {filename} "
@@ -10415,13 +10416,28 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
     duration    = result.get("duration", 0)
     music       = result.get("music", "unknown")
     primary_dest_id = result.get("primary_dest_id")  # may be None for multi-dest formats
+    # 2026-05-27: CSV-static formats (v2_yt_silent_pov etc.) upload pre-rendered
+    # bytes as-is, so brand_stamp is the ONLY place that can burn in the dest
+    # headline. Dynamic builders already bake name.upper() and leave this False.
+    is_csv_static = bool(result.get("is_csv_static", False))
 
     video_size_kb = len(video_bytes) // 1024
     log.info(f"Short rendered: {video_fname} ({video_size_kb} KB, {duration:.1f}s, fmt={fmt}, music={music})")
 
     # ── Upload video ──────────────────────────────────────────────────────
     media_filename = f"yt_short_{fmt}_{video_fname}"
-    media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4")
+    # Resolve dest hint for brand_stamp lookup (filename slug parser falls
+    # back to the catalog, but a direct hint is cheaper + slug-collision-free).
+    bs_dest_hint = None
+    if is_csv_static and primary_dest_id:
+        try:
+            import brand_stamp as _bs
+            bs_dest_hint = _bs._CATALOG.get(primary_dest_id)
+        except Exception:
+            bs_dest_hint = None
+    media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4",
+                                   apply_brand_stamp=is_csv_static,
+                                   dest_hint=bs_dest_hint)
     if not media_obj:
         log.error("YT Short video upload failed.")
         return

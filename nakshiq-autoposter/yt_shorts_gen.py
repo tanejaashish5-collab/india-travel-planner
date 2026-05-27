@@ -1747,6 +1747,13 @@ def _build_csv_yt_short(fmt: str, destinations: list[dict], st: dict,
             "duration":        0,                  # pre-rendered — duration unknown
             "music":           "(pre-rendered asset)",
             "primary_dest_id": dest.get("id"),
+            # 2026-05-27: CSV-static yt_shorts upload pre-rendered files as-is
+            # (no in-builder text overlay). Flip brand_stamp ON for these so
+            # the dest name + brand bar burn in at upload time. Dynamic
+            # builders (mini_guide / did_you_know / dont_go_here / listicle /
+            # before_after / this_vs_that) already bake `name.upper()` and
+            # do NOT set this flag — keeps brand_stamp opt-in everywhere else.
+            "is_csv_static":   True,
         }
     print(f"[csv_yt] {fmt}: no eligible dest with a .mp4 asset — SKIPPING")
     return None

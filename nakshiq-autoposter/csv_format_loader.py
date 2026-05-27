@@ -845,8 +845,27 @@ def _find_matching_asset(spec: FormatSpec,
     for name in candidates:
         p = asset_dir / name
         if p.exists() and p.stat().st_size > 0:
+            if name in _ASSET_DENYLIST:
+                # 2026-05-27: assets audited for the Veo AI-generation watermark
+                # are skipped here instead of being deleted on disk (reversible).
+                # Format degrades gracefully to its dynamic fallback or, if none,
+                # is held off until a real captured asset replaces the entry.
+                continue
             return p
     return None
+
+
+# Assets quarantined by visual audit — bottom-right "Veo" watermark on
+# Google Veo AI-generated clips. The strategy_engine v2_yt_silent_pov gate
+# already says "needs real captured ambient (editorial)"; these stand-in
+# Veo clips were posting in violation of the gate. To restore an entry,
+# remove it from the set after re-shooting a real-footage replacement.
+_ASSET_DENYLIST: frozenset[str] = frozenset({
+    "v2_yt_silent_pov-tungnath.mp4",
+    "v2_yt_silent_pov-ziro.mp4",
+    "v2_yt_silent_pov-tawang.mp4",
+    "v2_yt_silent_pov-gurez-valley.mp4",
+})
 
 
 # Sentinels returned by find_asset_or_dynamic() when no static asset exists
