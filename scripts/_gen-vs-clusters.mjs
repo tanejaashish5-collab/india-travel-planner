@@ -24,11 +24,11 @@ import {
 
 await loadEnv();
 
-const TARGET = parseInt(process.argv[2] ?? "320", 10);
-const DEGREE_CAP = 6;  // max cluster-fill pairs a single destination may appear in
-const SS_CAP = 200;    // same-state pairs    (highest comparison value)
-const SR_CAP = 110;    // same-region pairs
-const CR_CAP = 60;     // cross-region pairs  (deliberate minority)
+const TARGET = parseInt(process.argv[2] ?? "1200", 10);
+const DEGREE_CAP = 14;  // max cluster-fill pairs a single destination may appear in
+const SS_CAP = 700;    // same-state pairs    (highest comparison value)
+const SR_CAP = 400;    // same-region pairs
+const CR_CAP = 150;     // cross-region pairs  (deliberate minority)
 
 // A pair needs at least one shared COMPARABLE type to be worth comparing.
 const COMPARABLE = new Set([

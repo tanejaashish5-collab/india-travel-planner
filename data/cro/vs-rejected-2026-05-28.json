@@ -1,0 +1,288 @@
+{
+  "generated": "2026-05-28T00:12:20.673Z",
+  "count": 47,
+  "rejected": [
+    {
+      "id1": "kedarnath",
+      "id2": "adi-kailash",
+      "source": "cluster",
+      "reason": "adi-kailash: only 0/12 month rows"
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "palani",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "tiruchendur",
+      "source": "cluster",
+      "reason": "tiruchendur: only 0/12 month rows"
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "swamimalai",
+      "source": "cluster",
+      "reason": "swamimalai: only 0/12 month rows"
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "pazhamudircholai",
+      "source": "cluster",
+      "reason": "pazhamudircholai: only 0/12 month rows"
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "tiruparankundram",
+      "source": "cluster",
+      "reason": "tiruparankundram: only 0/12 month rows"
+    },
+    {
+      "id1": "rameswaram",
+      "id2": "tiruttani",
+      "source": "cluster",
+      "reason": "tiruttani: only 0/12 month rows"
+    },
+    {
+      "id1": "tirumala",
+      "id2": "tirupati",
+      "source": "cluster",
+      "reason": "tirumala: only 0/12 month rows"
+    },
+    {
+      "id1": "srisailam",
+      "id2": "tirumala",
+      "source": "cluster",
+      "reason": "tirumala: only 0/12 month rows"
+    },
+    {
+      "id1": "yamunotri",
+      "id2": "adi-kailash",
+      "source": "cluster",
+      "reason": "adi-kailash: only 0/12 month rows"
+    },
+    {
+      "id1": "tirumala",
+      "id2": "vijayawada",
+      "source": "cluster",
+      "reason": "tirumala: only 0/12 month rows"
+    },
+    {
+      "id1": "madurai",
+      "id2": "palani",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "madurai",
+      "id2": "tiruchendur",
+      "source": "cluster",
+      "reason": "tiruchendur: only 0/12 month rows"
+    },
+    {
+      "id1": "madurai",
+      "id2": "swamimalai",
+      "source": "cluster",
+      "reason": "swamimalai: only 0/12 month rows"
+    },
+    {
+      "id1": "madurai",
+      "id2": "pazhamudircholai",
+      "source": "cluster",
+      "reason": "pazhamudircholai: only 0/12 month rows"
+    },
+    {
+      "id1": "madurai",
+      "id2": "tiruparankundram",
+      "source": "cluster",
+      "reason": "tiruparankundram: only 0/12 month rows"
+    },
+    {
+      "id1": "madurai",
+      "id2": "tiruttani",
+      "source": "cluster",
+      "reason": "tiruttani: only 0/12 month rows"
+    },
+    {
+      "id1": "tirumala",
+      "id2": "ahobilam",
+      "source": "cluster",
+      "reason": "tirumala: only 0/12 month rows"
+    },
+    {
+      "id1": "trichy",
+      "id2": "palani",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "trichy",
+      "id2": "tiruchendur",
+      "source": "cluster",
+      "reason": "tiruchendur: only 0/12 month rows"
+    },
+    {
+      "id1": "trichy",
+      "id2": "swamimalai",
+      "source": "cluster",
+      "reason": "swamimalai: only 0/12 month rows"
+    },
+    {
+      "id1": "adi-kailash",
+      "id2": "uttarkashi",
+      "source": "cluster",
+      "reason": "adi-kailash: only 0/12 month rows"
+    },
+    {
+      "id1": "thanjavur",
+      "id2": "palani",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "thanjavur",
+      "id2": "tiruchendur",
+      "source": "cluster",
+      "reason": "tiruchendur: only 0/12 month rows"
+    },
+    {
+      "id1": "thanjavur",
+      "id2": "swamimalai",
+      "source": "cluster",
+      "reason": "swamimalai: only 0/12 month rows"
+    },
+    {
+      "id1": "palani",
+      "id2": "kumbakonam",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "tiruchendur",
+      "id2": "kumbakonam",
+      "source": "cluster",
+      "reason": "tiruchendur: only 0/12 month rows"
+    },
+    {
+      "id1": "swamimalai",
+      "id2": "kumbakonam",
+      "source": "cluster",
+      "reason": "swamimalai: only 0/12 month rows"
+    },
+    {
+      "id1": "kanchipuram",
+      "id2": "palani",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "kanchipuram",
+      "id2": "tiruchendur",
+      "source": "cluster",
+      "reason": "tiruchendur: only 0/12 month rows"
+    },
+    {
+      "id1": "adi-kailash",
+      "id2": "haridwar",
+      "source": "cluster",
+      "reason": "adi-kailash: only 0/12 month rows"
+    },
+    {
+      "id1": "palani",
+      "id2": "mahabalipuram",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "tiruchendur",
+      "id2": "mahabalipuram",
+      "source": "cluster",
+      "reason": "tiruchendur: only 0/12 month rows"
+    },
+    {
+      "id1": "swamimalai",
+      "id2": "mahabalipuram",
+      "source": "cluster",
+      "reason": "swamimalai: only 0/12 month rows"
+    },
+    {
+      "id1": "srirangam",
+      "id2": "palani",
+      "source": "cluster",
+      "reason": "palani: only 0/12 month rows"
+    },
+    {
+      "id1": "shillong",
+      "id2": "jampui-hills",
+      "source": "cluster",
+      "reason": "jampui-hills: only 0/12 month rows"
+    },
+    {
+      "id1": "aizawl",
+      "id2": "jampui-hills",
+      "source": "cluster",
+      "reason": "jampui-hills: only 0/12 month rows"
+    },
+    {
+      "id1": "jampui-hills",
+      "id2": "gangtok",
+      "source": "cluster",
+      "reason": "jampui-hills: only 0/12 month rows"
+    },
+    {
+      "id1": "lachung",
+      "id2": "jampui-hills",
+      "source": "cluster",
+      "reason": "jampui-hills: only 0/12 month rows"
+    },
+    {
+      "id1": "betla",
+      "id2": "chilika-lake",
+      "source": "cluster",
+      "reason": "betla: only 0/12 month rows"
+    },
+    {
+      "id1": "pelling",
+      "id2": "jampui-hills",
+      "source": "cluster",
+      "reason": "jampui-hills: only 0/12 month rows"
+    },
+    {
+      "id1": "ravangla",
+      "id2": "jampui-hills",
+      "source": "cluster",
+      "reason": "jampui-hills: only 0/12 month rows"
+    },
+    {
+      "id1": "betla",
+      "id2": "simlipal",
+      "source": "cluster",
+      "reason": "betla: only 0/12 month rows"
+    },
+    {
+      "id1": "namchi",
+      "id2": "jampui-hills",
+      "source": "cluster",
+      "reason": "jampui-hills: only 0/12 month rows"
+    },
+    {
+      "id1": "gahirmatha",
+      "id2": "betla",
+      "source": "cluster",
+      "reason": "betla: only 0/12 month rows"
+    },
+    {
+      "id1": "betla",
+      "id2": "bhitarkanika",
+      "source": "cluster",
+      "reason": "betla: only 0/12 month rows"
+    },
+    {
+      "id1": "satkosia",
+      "id2": "betla",
+      "source": "cluster",
+      "reason": "betla: only 0/12 month rows"
+    }
+  ]
+}
