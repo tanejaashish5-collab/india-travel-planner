@@ -20,6 +20,9 @@ export const COVER_FALLBACK: Record<string, string> = {
   // The 11 new pilgrimage/heritage circuits (mig 047/048/049) now have their
   // own COLLECTION_<id>.jpg covers on R2 — fallbacks removed; resolveCover()
   // picks them up via the canonical naming convention.
+  "panch-kailash-circuit": "/images/destinations/manimahesh-kailash.jpg",
+  "panch-prayag-circuit": "/images/destinations/devprayag.jpg",
+  "arupadai-veedu": "/images/destinations/palani.jpg",
 };
 
 export function resolveCover(c: { id: string; cover_image_url?: string | null }): string {
