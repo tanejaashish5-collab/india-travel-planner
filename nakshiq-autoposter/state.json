@@ -16,17 +16,17 @@
     "px_landlady_chill"
   ],
   "posted_today": {
-    "m8EAd": "2026-05-27",
-    "PdMu0": "2026-05-27",
+    "m8EAd": "2026-05-28",
+    "PdMu0": "2026-05-28",
     "GAh5p_yt_short": "2026-05-27",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short": "2026-05-27",
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-05-27",
-    "PdMu0_evening": "2026-05-27",
-    "m8EAd_evening_story": "2026-05-27"
+    "m8EAd_evening": "2026-05-28",
+    "PdMu0_evening": "2026-05-28",
+    "m8EAd_evening_story": "2026-05-28"
   },
-  "last_sync": "2026-05-28T07:08:23.929139+00:00",
+  "last_sync": "2026-05-28T17:48:51.929932+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -75,6 +75,14 @@
     {
       "destination_id": "gangtok",
       "date": "2026-05-27"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-05-28"
+    },
+    {
+      "destination_id": "hampi",
+      "date": "2026-05-28"
     }
   ],
   "posted_formats": {
@@ -95,10 +103,10 @@
       "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
-      "v4_dw_local_historian_spotlight"
+      "v4_dw_local_historian_spotlight",
+      "v4_dw_architecture_detail_deep_dive"
     ],
     "PdMu0": [
-      "methodology_roads",
       "score_card",
       "methodology_family",
       "collection_spotlight",
@@ -118,7 +126,8 @@
       "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
-      "v4_dw_local_historian_spotlight"
+      "v4_dw_local_historian_spotlight",
+      "v4_dw_architecture_detail_deep_dive"
     ]
   },
   "post_log": [
@@ -1372,6 +1381,39 @@
       "format": "v4_dw_local_historian_spotlight",
       "has_media": true,
       "media_id": "v4_dw_local_historian_spotlight-gangtok_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-28T17:50:19.963384+00:00",
+      "date": "2026-05-28",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "J1ap3",
+      "destination": "nainital",
+      "format": "v4_dw_architecture_detail_deep_dive",
+      "has_media": true,
+      "media_id": "v4_dw_architecture_detail_deep_dive-nainital_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-28T17:50:42.204215+00:00",
+      "date": "2026-05-28",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "4RsDi",
+      "destination": "somnath",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-05-28T17:51:32.608320+00:00",
+      "date": "2026-05-28",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "IwkHX",
+      "destination": "hampi",
+      "format": "v4_dw_architecture_detail_deep_dive",
+      "has_media": true,
+      "media_id": "v4_dw_architecture_detail_deep_dive-hampi_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -1454,7 +1496,8 @@
         "2026-05-24"
       ],
       "nainital": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-28"
       ],
       "sonamarg": [
         "2026-05-25"
@@ -1498,6 +1541,15 @@
       ],
       "gangtok": [
         "2026-05-27"
+      ],
+      "sangla": [
+        "2026-05-28"
+      ],
+      "somnath": [
+        "2026-05-28"
+      ],
+      "hampi": [
+        "2026-05-28"
       ]
     },
     "morning_formats": {
@@ -1560,6 +1612,9 @@
       ],
       "v4_dw_local_historian_spotlight": [
         "2026-05-27"
+      ],
+      "v4_dw_architecture_detail_deep_dive": [
+        "2026-05-28"
       ]
     },
     "reels": {
@@ -1601,6 +1656,12 @@
       ],
       "gangtok": [
         "2026-05-27"
+      ],
+      "nainital": [
+        "2026-05-28"
+      ],
+      "hampi": [
+        "2026-05-28"
       ]
     },
     "audience_tags": {
@@ -1634,6 +1695,9 @@
       ],
       "ayurveda-wellness": [
         "2026-05-27"
+      ],
+      "dwadasa-jyotirlinga": [
+        "2026-05-28"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -1709,7 +1773,8 @@
       "bir-billing": [
         "2026-05-26"
       ]
-    }
+    },
+    "collection_carousel_dests:dwadasa-jyotirlinga": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -1723,8 +1788,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "har-ki-doon",
-    "collection": "ayurveda-wellness"
+    "shared_best": "sangla",
+    "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}
 }
