@@ -9,7 +9,7 @@
  * one checked the build output.
  *
  * This script:
- *   1. Reads the route table from `apps/web/.next/app-paths-manifest.json`
+ *   1. Reads the route table from `apps/web/.next/server/app-paths-manifest.json`
  *      + `apps/web/.next/routes-manifest.json` + `apps/web/.next/server/`
  *      to classify every page route.
  *   2. Compares the classification against `apps/web/data/render-mode-baseline.json`
@@ -46,7 +46,7 @@ const isUpdate = process.argv.includes("--update");
 //     revalidate header in the body OR no entry in prerender-manifest.
 //   - ISR: route appears in `.next/prerender-manifest.json` `dynamicRoutes`
 //     with `initialRevalidateSeconds > 0`.
-//   - Dynamic: route is in `app-paths-manifest.json` but NOT in
+//   - Dynamic: route is in `server/app-paths-manifest.json` but NOT in
 //     `prerender-manifest.json` (neither as a static or dynamic route),
 //     OR has `initialRevalidateSeconds === false`.
 
@@ -60,10 +60,10 @@ async function readJson(p) {
 }
 
 async function classifyRoutes() {
-  const appPaths = await readJson(join(NEXT_DIR, "app-paths-manifest.json"));
+  const appPaths = await readJson(join(NEXT_DIR, "server/app-paths-manifest.json"));
   const prerender = await readJson(join(NEXT_DIR, "prerender-manifest.json"));
   if (!appPaths) {
-    console.error(`✗ Could not read ${NEXT_DIR}/app-paths-manifest.json — run \`next build\` first.`);
+    console.error(`✗ Could not read ${NEXT_DIR}/server/app-paths-manifest.json — run \`next build\` first.`);
     process.exit(2);
   }
   if (!prerender) {
@@ -71,7 +71,7 @@ async function classifyRoutes() {
     process.exit(2);
   }
 
-  // app-paths-manifest.json shape: { "/path/route": "app/path/page.js", ... }
+  // server/app-paths-manifest.json shape: { "/path/route": "app/path/page.js", ... }
   // prerender-manifest.json shape: { routes: {...}, dynamicRoutes: {...} }
   const out = {};
   const allRoutes = Object.keys(appPaths)

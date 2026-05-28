@@ -13,6 +13,12 @@ on:
       - "scripts/audit-thin-content.mjs"
       - "scripts/audit-hreflang.mjs"
       - "supabase/migrations/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/web/**"
+      - "packages/**"
+      - "scripts/audit-render-modes.mjs"
 
 env:
   BASE: https://www.nakshiq.com
@@ -51,10 +57,11 @@ jobs:
   render-mode:
     name: Render-mode regression check (M5)
     runs-on: ubuntu-latest
-    # Only runs on push to main, not on schedule — needs a build artefact,
-    # and Vercel produces the canonical one. Local builds would diverge
-    # because they don't include the same env config.
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    # Runs on PR + push to main + manual dispatch. Skipped on the daily
+    # schedule — no fresh build artefact, and re-running against stale
+    # `.next/` gives a false-pass. PR trigger catches the regression
+    # BEFORE merge, which the 2026-05-05 ISR incident needed.
+    if: github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

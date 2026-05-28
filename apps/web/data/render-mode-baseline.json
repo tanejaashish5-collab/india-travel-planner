@@ -1,0 +1,8694 @@
+{
+  "/_global-error": {
+    "mode": "static",
+    "revalidate": null
+  },
+  "/_not-found": {
+    "mode": "static",
+    "revalidate": null
+  },
+  "/en": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/about": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/about/team": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/amd": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/blr": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/bom": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/ccu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/cok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/del": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/goi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/hyd": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/arrival/maa": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/ask": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/blog": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/build-route": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/camping": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/collections": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/compare": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/contact": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/cookies": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/corrections": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/cost-index": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/cost-index/methodology": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/data-deletion": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/agra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/ahmedabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/ajanta-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/auli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/bomdila": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/cherrapunji": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/dzukou-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/ellora-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/gokarna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/gulmarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/gurez-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/jaisalmer": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/kaza": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/konark": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/leh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/mussoorie": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/nainital": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/neil-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/nubra-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/palolem": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/panaji": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/pangong-lake": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/puducherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/pushkar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/rann-of-kutch": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/srinagar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/tawang": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/valley-of-flowers": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/destination/ziro-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/editorial-policy": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/adventure": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/family": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/heritage": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/offbeat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/spiritual": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/trek": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/wildlife": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore/tag/winter": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/explore-by-persona": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/aadi-festival-at-the-falls": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/adivasi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/alleppey-houseboat-onam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/amarnath-yatra-start": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ambubachi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/aoling-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/aranmula-boat-race": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ashtamudi-craft-coir-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/attukal-pongala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/auli-winter-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/auroville-anniversary": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/badri-kedar-festival-badrinath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/badri-kedar-festival-joshimath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/badrinath-temple-opening-kapaat-kholna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bahuda-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/baisakhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/baisakhi-at-dukh-niwaran-sahib": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bali-jatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/banashankari-temple-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/baneshwar-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bangus-spring-bloom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/barmer-thar-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/barot-trout-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bastar-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bastar-tribal-haat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bastille-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bastille-day-celebration": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bathukamma": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bathukamma-at-bhadrakali-lake": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/beach-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bekal-fort-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bhaderwah-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bhimakali-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bihu-rongalibohag": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bikaner-camel-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/binsar-makar-sankranti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bissu-mela-jaunsar-bawar-new-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bonalu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bonderam-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/brihadeeswara-temple-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/brij-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/buddha-mahaparinirvana-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/buddha-purnima": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/buddha-purnima-vesak": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/bundi-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/cauvery-sankriti-tula-sankramana": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chail-cricket-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chaiti-ghoda": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chaitra-parva-chhau-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chalakudy-river-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chamba-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chamba-minjar-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/champaner-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/champawat-nanda-devi-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chandigarh-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chapchar-kut": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chaukori-tea-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/cherry-blossom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chettinad-heritage-walk-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chhath-puja": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chhath-puja-at-netarhat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chilika-bird-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chithirai-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chitkul-pahari-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/chitrakoot-deepotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/christmas-at-medak-cathedral": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/christmas-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/cochin-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/coffee-blossom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/corbett-holi-with-elephants": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/dandari-gusadi-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/darjeeling-tea-tourism-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/deepotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/desert-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/dev-deepawali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/devprayag-ganga-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/dhauli-shanti-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/diwali-beach-celebration": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/doodhpathri-meadow-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/dosmoche-festival-diskit": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/dudhwa-tharu-cultural-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/durga-puja-cuttack-silver-edition": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/eid-ul-fitr-at-buland-darwaza": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/eid-ul-fitr-celebration": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ekta-diwas-unity-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/elephant-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/elephanta-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/fagli-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/feast-of-st-francis-xavier": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/flamingo-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/float-festival-teppam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/full-moon-rann-walk": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gandhi-jayanti-heritage-walk": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ganesh-chaturthi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ganesh-chaturthi-at-trinetra-ganesh-temple": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ganesh-chaturthi-ganeshotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ganga-aarti-at-har-ki-pauri-kumbh-legacy": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ganga-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gangaur-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gangotri-diwali-temple-closing": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gangotri-temple-opening-akshaya-tritiya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ghepan-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gir-jungle-trail-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gita-jayanti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/goa-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/godavari-pushkaralu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gopeshwar-shivratri-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gulmarg-winter-games": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/guptkashi-vishwanath-temple-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/gurez-cultural-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/guru-shikhar-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/guruvayur-ekadashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hampi-utsav-vijaya-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hanle-stargazing-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/harela-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hemis-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hemkund-sahib-prakash-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hogenakkal-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hola-mohalla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hornbill-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/hyderabadi-haleem-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/independence-day-at-cellular-jail": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/international-kite-festival-uttarayan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/international-yoga-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/island-tourism-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/jageshwar-monsoon-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/jaipur-literature-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/janmashtami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/janmashtami-at-dwarkadhish": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/jauhar-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kaas-plateau-wildflower-bloom": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kadalekai-parishe-groundnut-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kajli-teej": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kakatiya-utsavam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kalamkari-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kambala-buffalo-race": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kanatal-surkanda-devi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kanwar-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/karaga-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kargil-vijay-diwas": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/karsha-gustor": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kartik-purnima-at-somnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kasauli-rhythm-and-blues-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kedarnath-opening": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/khajuraho-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kharchi-puja": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kinnaur-dussehra-fulaich": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kishtwar-saffron-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kochi-muziris-biennale": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/konark-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/korzok-gustor": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kovalam-literary-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kufri-winter-sports-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kullu-dussehra-kullu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kullu-dussehra-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kullu-winter-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kumbh-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/kutch-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ladakh-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ladarcha-fair-kaza": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ladarcha-fair-keylong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/laksha-deepotsava": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/lamayuru-yuru-kabgyat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/lansdowne-autumn-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/lathmar-holi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/lava-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/losar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/losar-monpa-new-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/losar-tibetan-new-year-darjeeling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/losar-tibetan-new-year-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/losar-tibetansikkimese-new-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/lucknow-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/lucknow-muharram-processions": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/magh-mela-jaunsar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/magh-mela-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/magh-mela-uttarkashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivaratri-at-kandariya-mahadeva": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivaratri-at-mallikarjuna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivaratri-at-somnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivaratri-at-tungnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivaratri-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivaratri-srikalahasti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivaratri-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/maha-shivratri-at-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mahamaham-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mahamastakabhisheka": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mahavir-jayanti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/malabar-mahotsavam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/malana-village-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mallinath-cattle-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mamallapuram-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mandi-nalwari-cattle-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mandi-shivaratri-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/manikaran-guru-nanak-birthday": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/margazhi-music-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/marine-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/marwar-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mata-murti-ka-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/matsya-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/me-dam-me-phi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/meditation-retreat-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/meera-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mewar-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/moatsu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/monsoon-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mopin-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/morni-mango-blossom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/munshi-aziz-bhat-memorial-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mussoorie-winterline-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mysore-dasara": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/mysore-dasara-exhibition": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nag-panchami-battis-shirala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nainital-autumn-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nako-lake-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nanda-ashtami-trek-gathering": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nanda-devi-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nanda-devi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nanda-devi-raj-jat-yatra-munsiyari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nanda-devi-raj-jat-yatra-roopkund": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/natyanjali-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/navratri-at-mahalaxmi-temple": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/navratri-garba": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nawalgarh-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/neelakurinji-bloom": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/neemrana-music-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nehru-trophy-boat-race": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nongkrem-dance": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/nubra-valley-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/olive-ridley-turtle-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ooty-flower-show": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/orange-festival-of-adventure-music-ofam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/orchha-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/osian-camel-safari-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pahalgam-spring-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pandharpur-wari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pang-lhabsol-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pang-lhabsol-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pangong-nomad-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/parab-tribal-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/paragliding-world-cup": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/paryaya-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/patiala-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/patnitop-winter-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pattadakal-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/periyar-flower-show": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/phool-dei": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/phulech-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pinjore-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pithoragarh-hilljatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pongal-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pongal-puducherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/prayagraj-rasa-leela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/pushkar-camel-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/raghurajpur-art-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/rajgir-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ram-raja-temple-festival-ram-navami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/rann-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/rath-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/republic-day-parade": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/rose-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/rudraprayag-kartik-purnima-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/saga-dawa-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/saga-dawa-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sammakka-saralamma-jatara": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sangai-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sankranti-pongal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sao-joao-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sarnath-light-sound-show-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sauji-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sekrenyi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/shatrunjaya-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/shigmo-goan-holi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/shivratri-at-mahabaleshwar-temple": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/shravani-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/shringa-rishi-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/siddheshwara-jatre": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/simlipal-flower-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sinthan-top-snow-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sital-sasthi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/snana-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/solan-shoolini-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/solung-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sonamarg-thajiwas-glacier-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sravasti-international-buddhist-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sri-rama-navami-bhadrachalam-kalyanam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/srivari-brahmotsavam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/subhash-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sulafest": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/summer-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/sunburn-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/taj-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tea-festival-kangra-tea": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tehri-lake-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/theyyam-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/thrissur-pooram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tihar-deepawali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tirthan-trout-season-opening": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/toda-tribal-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/torgya-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tosamaidan-wildflower-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tsheshu-chaam-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tulip-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tungnath-temple-opening-chopta": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/tungnath-temple-opening-tungnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/urs-of-khwaja-moinuddin-chishti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/urs-of-sheikh-salim-chishti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/uttarayani-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/uttarayani-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/uttarkashi-mahadev-temple-festival-maha-shivaratri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vaikunta-ekadashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vaikuntha-ekadasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vaikuntha-ekadasi-at-bhadrachalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vairamudi-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/valley-of-flowers-opening-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/varkala-sivagiri-pilgrimage": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vasant-panchami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/verinag-spring-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vijayawada-dussehra-durga-navaratri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vivekananda-jayanti-national-youth-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/vizag-utsav-deccan-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/wangala-100-drums-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/warli-art-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/wayanad-food-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/wildlife-week": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/winter-festival-mount-abu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/yamuna-chhath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/yamunotri-temple-opening-akshaya-tritiya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/yusmarg-shepherd-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/zanskar-chadar-trek-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/festivals/ziro-music-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/bikers": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/culinary": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/elderly": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/families": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/honeymooners": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/nomads": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/nri-parents-visit": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/photographers": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/pilgrims": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/solo-female": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/for/wellness": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/gap-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/book-indian-trains": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/currency": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/etiquette": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/first-trip-india": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/food-safety": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/packing": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/permits": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/scams": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/sim-card": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/transport-overview": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/guide/visa": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-travel": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/bhutan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/egypt": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/indonesia": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/iran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/japan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/morocco": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/nepal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/peru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/singapore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/sri-lanka": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/thailand": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/tibet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/uae": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/india-vs/vietnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/aman-i-khas-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/amanbagh-alwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/ananda-in-the-himalayas-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/banjaar-tola-kanha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/brunton-boatyard-fort-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/deccan-odyssey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/glenburn-tea-estate-darjeeling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/golden-chariot": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/heritage-triangle-luxury": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/himalayan-wellness-triangle": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/itc-grand-bharat-manesar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/kerala-backwater-royalty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/maharajas-express": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/mahua-kothi-bandhavgarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/oberoi-amarvilas-agra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/oberoi-rajvilas-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/oberoi-udaivilas-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/palace-on-wheels": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/rambagh-palace-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/royal-rajasthan-by-car": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/six-senses-vana-dehradun": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/south-india-luxury-train-loop": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/sujan-sher-bagh-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/taj-falaknuma-palace-hyderabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/taj-lake-palace-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/taj-umaid-bhawan-palace-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/the-leela-palace-new-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/the-taj-mahal-palace-mumbai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/wildflower-hall-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/luxury/wildlife-luxury-circuit": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/membership": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/methodology": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/methodology/freshness": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/more": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/nakshiq-100": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/newsletter": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/offline": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/permits": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/plan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/press": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/privacy": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/risk-quiz": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/road-conditions": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/routes": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/saved": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/social": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/sos": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/states": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/stays": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/superlatives": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/terms": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/the-window": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/tourist-traps": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/transparency": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/treks": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/trip": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agatti-vs-diglipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agatti-vs-havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agatti-vs-little-andaman": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agatti-vs-long-island-andaman": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agatti-vs-neil-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agatti-vs-port-blair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agra-vs-fatehpur-sikri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agra-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agra-vs-khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agra-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/agra-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ahobilam-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ahobilam-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/aizawl-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/aizawl-vs-lachung": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/aizawl-vs-namchi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/aizawl-vs-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/aizawl-vs-ravangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/aizawl-vs-shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ajmer-vs-alwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ajmer-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ajmer-vs-neemrana": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ajmer-vs-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alibaug-vs-ganpatipule": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alibaug-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alibaug-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alibaug-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alibaug-vs-malvan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alibaug-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alleppey-vs-kovalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/alleppey-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/amboli-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/amboli-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/amritsar-vs-anandpur-sahib": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/amritsar-vs-mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/amritsar-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/anamalai-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/anamalai-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/anamalai-vs-nagarhole": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/anamalai-vs-thekkady": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/anamalai-vs-valparai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ananthagiri-hills-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ananthagiri-hills-vs-daringbadi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ananthagiri-hills-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ananthagiri-hills-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/araku-valley-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/araku-valley-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/araku-valley-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/araku-valley-vs-vagamon": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/arambol-vs-murud-janjira": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/auli-vs-chopta": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ayodhya-vs-mathura": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/badami-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/badami-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/badami-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bandhavgarh-vs-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bandipur-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bangaram-vs-havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/barot-valley-vs-sangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/barot-valley-vs-spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bekal-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bekal-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bekal-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bengaluru-vs-hyderabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bhandardara-vs-lonar-crater": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bhimashankar-vs-tadoba": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bhimashankar-vs-trimbakeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bhimbetka-vs-jabalpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bidar-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bidar-vs-nandi-hills": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bijapur-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bikaner-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bodh-gaya-vs-rajgir": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bodh-gaya-vs-sarnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bodh-gaya-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/bundi-vs-pushkar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/candolim-vs-murud-janjira": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chail-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chakrata-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chakrata-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chakrata-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chakrata-vs-patnitop": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chakrata-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chennai-vs-bengaluru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chennai-vs-marari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/cherai-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chikmagalur-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chitkul-vs-barot-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chitkul-vs-sangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chitkul-vs-tirthan-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chitradurga-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/chitrakoot-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coonoor-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coonoor-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coonoor-vs-ponmudi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coonoor-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coonoor-vs-valparai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coonoor-vs-yercaud": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coorg-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coorg-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/coorg-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dalhousie-vs-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/daman-vs-diu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/daringbadi-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/daringbadi-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/daringbadi-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/daringbadi-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/darjeeling-vs-ananthagiri-hills": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/darjeeling-vs-daringbadi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/darjeeling-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/darjeeling-vs-kalimpong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/darjeeling-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/darjeeling-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/darjeeling-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/delhi-vs-chandigarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanaulti-vs-kanatal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanaulti-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanaulti-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanaulti-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanushkodi-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanushkodi-vs-kozhikode": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanushkodi-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dhanushkodi-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dharamshala-vs-bir-billing": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dharamshala-vs-mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dharmasthala-vs-badami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dharmasthala-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dharmasthala-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dharmasthala-vs-shravanabelagola": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dharmasthala-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/doodhpathri-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/dungarpur-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/eravikulam-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/fatehpur-sikri-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/fatehpur-sikri-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gangotri-vs-kedarnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gangotri-vs-yamunotri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gangtok-vs-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ganpatipule-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ganpatipule-vs-malvan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ganpatipule-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-badami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-dharmasthala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-mangalore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-palolem": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gokarna-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gulmarg-vs-doodhpathri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gulmarg-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gurez-valley-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/gurez-valley-vs-sonamarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hampi-vs-badami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hampi-vs-gulbarga": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hampi-vs-orchha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hampi-vs-shravanabelagola": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hampi-vs-warangal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/havelock-island-vs-alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/havelock-island-vs-kadmat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/havelock-island-vs-kavaratti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/havelock-island-vs-neil-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/havelock-island-vs-port-blair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hogenakkal-vs-dhanushkodi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hogenakkal-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hogenakkal-vs-kumbakonam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hogenakkal-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/hogenakkal-vs-thanjavur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/horsley-hills-vs-araku-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/horsley-hills-vs-lepakshi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/horsley-hills-vs-rajahmundry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/horsley-hills-vs-undavalli-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/horsley-hills-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/idukki-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/idukki-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jabalpur-vs-khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jabalpur-vs-orchha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jaipur-vs-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jaipur-vs-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jaisalmer-vs-bikaner": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jaisalmer-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jaisalmer-vs-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jibhi-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/jibhi-vs-tirthan-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kabini-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kabini-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kabini-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kabini-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kalpa-vs-kinnaur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kanchipuram-vs-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kanha-vs-bandhavgarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kanha-vs-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kannur-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kannur-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kannur-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kannur-vs-mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kannur-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kanyakumari-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kanyakumari-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/karwar-vs-marari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/karwar-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kasauli-vs-dalhousie": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kasauli-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kasauli-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kasauli-vs-palampur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kasol-vs-manikaran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kaziranga-vs-corbett-national-park": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kaziranga-vs-loktak-lake": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kedarnath-vs-badrinath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kedarnath-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kedarnath-vs-uttarkashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kedarnath-vs-yamunotri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/khajuraho-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/khajuraho-vs-orchha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/khandala-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/khandala-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kochi-vs-thrissur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kochi-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kodaikanal-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kohima-vs-shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kokernag-vs-verinag": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kolhapur-vs-ganpatipule": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kolhapur-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kolhapur-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kolhapur-vs-nashik": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kolkata-vs-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kollam-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kovalam-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kovalam-vs-dhanushkodi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kovalam-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kovalam-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kovalam-vs-mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kovalam-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kozhikode-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kozhikode-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kozhikode-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kozhikode-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kozhikode-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kumbhalgarh-vs-chittorgarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kushinagar-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kushinagar-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/kutch-vs-jaisalmer": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lachung-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lambasingi-vs-araku-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lambasingi-vs-horsley-hills": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lambasingi-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lambasingi-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lambasingi-vs-vagamon": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lambasingi-vs-yercaud": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lansdowne-vs-chakrata": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lansdowne-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lansdowne-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lansdowne-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lansdowne-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lansdowne-vs-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/leh-vs-lamayuru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/leh-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/leh-vs-nubra-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lepakshi-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/loktak-lake-vs-khangchendzonga-np": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lonavala-vs-bhandardara": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lonavala-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lonavala-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lucknow-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/lucknow-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/madurai-vs-coimbatore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/madurai-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mahabaleshwar-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mahabaleshwar-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mahabaleshwar-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mahabalipuram-vs-marari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/malvan-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/malvan-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/malvan-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/malvan-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/manali-vs-barot-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/manali-vs-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/manali-vs-kasol": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/manali-vs-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/manali-vs-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mangalore-vs-bengaluru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mangalore-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mangalore-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mangalore-vs-mysore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mangalore-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/manikaran-vs-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/marari-vs-alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/marari-vs-cherai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/marari-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/marari-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/matheran-vs-nashik": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/matheran-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/matheran-vs-pune": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mathura-vs-vrindavan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/minicoy-vs-havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mollem-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mollem-vs-pench-maharashtra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/morni-hills-vs-chail": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/morni-hills-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/morni-hills-vs-mount-abu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/morni-hills-vs-palampur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/morni-hills-vs-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mount-abu-vs-chail": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mount-abu-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mount-abu-vs-palampur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mudumalai-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mudumalai-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mudumalai-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mudumalai-vs-thekkady": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mumbai-vs-bengaluru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mumbai-vs-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/munnar-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/munnar-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/munnar-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/munnar-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/munnar-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/murud-janjira-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/murud-janjira-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/murudeshwar-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mussoorie-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mussoorie-vs-nainital": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/mysore-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nagarhole-vs-kabini": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nagarhole-vs-mudumalai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nagarjuna-sagar-vs-srisailam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nainital-vs-mukteshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/namchi-vs-shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nandi-hills-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nandi-hills-vs-chitradurga": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nandi-hills-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nandi-hills-vs-gulbarga": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nandi-hills-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nashik-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nashik-vs-pune": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nashik-vs-trimbakeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/neemrana-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/nrusinghanath-harishankar-vs-puri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ooty-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ooty-vs-coonoor": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ooty-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ooty-vs-lambasingi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/orchha-vs-khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pahalgam-vs-sonamarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/palampur-vs-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/palolem-vs-murud-janjira": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/panchgani-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/panchgani-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pangong-lake-vs-nubra-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/parvati-valley-vs-spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/patnitop-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/patnitop-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/patnitop-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/patnitop-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pench-maharashtra-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pondicherry-vs-auroville": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pondicherry-vs-kovalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pondicherry-vs-palolem": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ponmudi-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ponmudi-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ponmudi-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ponmudi-vs-vagamon": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ponmudi-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/poovar-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/poovar-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/puri-vs-bhubaneswar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pushkar-vs-jaisalmer": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/pushkar-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rajahmundry-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rajahmundry-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rajgir-vs-nalanda": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rameswaram-vs-kumbakonam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rameswaram-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rameswaram-vs-mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ranikhet-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ranthambore-vs-bharatpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ranthambore-vs-corbett-national-park": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ranthambore-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rishikesh-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/rishikesh-vs-mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/sangla-vs-chitkul": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/sarnath-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/sarnath-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shillong-vs-cherrapunji": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shillong-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shillong-vs-lachung": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shillong-vs-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shillong-vs-ravangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shimla-vs-darjeeling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shimla-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shimla-vs-mount-abu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shimla-vs-mussoorie": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shimla-vs-nainital": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shimla-vs-patnitop": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shimla-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shirdi-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shirdi-vs-ellora-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shirdi-vs-ganpatipule": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shirdi-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shirdi-vs-kolhapur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shirdi-vs-nashik": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/shravanabelagola-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/somnath-vs-dwarka": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/spiti-valley-vs-kinnaur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/spiti-valley-vs-leh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/spiti-valley-vs-tirthan-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srikalahasti-vs-srisailam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srikalahasti-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srinagar-vs-gulmarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srinagar-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srisailam-vs-ahobilam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srisailam-vs-kabini": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srisailam-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/srisailam-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/tarkarli-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/tawang-vs-spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/tawang-vs-ziro-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/thanjavur-vs-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/thekkady-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/thekkady-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/tirthan-valley-vs-barot-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/tirthan-valley-vs-sangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/trichy-vs-hogenakkal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/trichy-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/trichy-vs-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/udaipur-vs-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/udupi-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/udupi-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/ujjain-vs-omkareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/vagamon-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/vagamon-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/vagamon-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/valparai-vs-mudumalai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/valparai-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/valparai-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/varanasi-vs-ayodhya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/varanasi-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/varanasi-vs-mathura": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/varanasi-vs-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/varkala-vs-gokarna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/varkala-vs-kovalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/vijayawada-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/visakhapatnam-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/visakhapatnam-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/wayanad-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/wayanad-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/wayanad-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/yamunotri-vs-badrinath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/yamunotri-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/yamunotri-vs-uttarkashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/yercaud-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/yercaud-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/yercaud-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/vs/yercaud-vs-valparai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-agra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-ahmedabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-bangalore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-bhopal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-chandigarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-coimbatore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-dehradun": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-hyderabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-indore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-kolkata": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-lucknow": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-mumbai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-pune": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/weekend-from-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/where-to-go": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/en/why-we-say-no-data": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/favicon.ico": {
+    "mode": "static",
+    "revalidate": null
+  },
+  "/hi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/about": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/about/team": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/amd": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/blr": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/bom": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/ccu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/cok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/del": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/goi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/hyd": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/arrival/maa": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/ask": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/blog": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/build-route": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/camping": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/collections": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/compare": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/contact": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/cookies": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/corrections": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/cost-index": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/cost-index/methodology": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/data-deletion": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/agra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/ahmedabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/ajanta-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/auli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/bomdila": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/cherrapunji": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/dzukou-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/ellora-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/gokarna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/gulmarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/gurez-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/jaisalmer": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/kaza": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/konark": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/leh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/mussoorie": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/nainital": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/neil-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/nubra-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/palolem": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/panaji": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/pangong-lake": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/puducherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/pushkar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/rann-of-kutch": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/srinagar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/tawang": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/valley-of-flowers": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/destination/ziro-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/editorial-policy": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/adventure": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/family": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/heritage": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/offbeat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/spiritual": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/trek": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/wildlife": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore/tag/winter": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/explore-by-persona": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/aadi-festival-at-the-falls": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/adivasi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/alleppey-houseboat-onam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/amarnath-yatra-start": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ambubachi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/aoling-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/aranmula-boat-race": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ashtamudi-craft-coir-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/attukal-pongala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/auli-winter-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/auroville-anniversary": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/badri-kedar-festival-badrinath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/badri-kedar-festival-joshimath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/badrinath-temple-opening-kapaat-kholna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bahuda-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/baisakhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/baisakhi-at-dukh-niwaran-sahib": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bali-jatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/banashankari-temple-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/baneshwar-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bangus-spring-bloom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/barmer-thar-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/barot-trout-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bastar-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bastar-tribal-haat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bastille-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bastille-day-celebration": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bathukamma": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bathukamma-at-bhadrakali-lake": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/beach-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bekal-fort-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bhaderwah-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bhimakali-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bihu-rongalibohag": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bikaner-camel-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/binsar-makar-sankranti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bissu-mela-jaunsar-bawar-new-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bonalu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bonderam-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/brihadeeswara-temple-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/brij-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/buddha-mahaparinirvana-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/buddha-purnima": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/buddha-purnima-vesak": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/bundi-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/cauvery-sankriti-tula-sankramana": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chail-cricket-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chaiti-ghoda": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chaitra-parva-chhau-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chalakudy-river-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chamba-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chamba-minjar-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/champaner-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/champawat-nanda-devi-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chandigarh-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chapchar-kut": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chaukori-tea-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/cherry-blossom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chettinad-heritage-walk-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chhath-puja": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chhath-puja-at-netarhat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chilika-bird-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chithirai-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chitkul-pahari-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/chitrakoot-deepotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/christmas-at-medak-cathedral": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/christmas-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/cochin-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/coffee-blossom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/corbett-holi-with-elephants": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/dandari-gusadi-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/darjeeling-tea-tourism-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/deepotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/desert-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/dev-deepawali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/devprayag-ganga-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/dhauli-shanti-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/diwali-beach-celebration": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/doodhpathri-meadow-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/dosmoche-festival-diskit": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/dudhwa-tharu-cultural-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/durga-puja-cuttack-silver-edition": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/eid-ul-fitr-at-buland-darwaza": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/eid-ul-fitr-celebration": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ekta-diwas-unity-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/elephant-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/elephanta-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/fagli-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/feast-of-st-francis-xavier": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/flamingo-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/float-festival-teppam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/full-moon-rann-walk": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gandhi-jayanti-heritage-walk": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ganesh-chaturthi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ganesh-chaturthi-at-trinetra-ganesh-temple": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ganesh-chaturthi-ganeshotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ganga-aarti-at-har-ki-pauri-kumbh-legacy": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ganga-dussehra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gangaur-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gangotri-diwali-temple-closing": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gangotri-temple-opening-akshaya-tritiya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ghepan-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gir-jungle-trail-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gita-jayanti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/goa-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/godavari-pushkaralu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gopeshwar-shivratri-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gulmarg-winter-games": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/guptkashi-vishwanath-temple-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/gurez-cultural-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/guru-shikhar-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/guruvayur-ekadashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hampi-utsav-vijaya-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hanle-stargazing-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/harela-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hemis-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hemkund-sahib-prakash-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hogenakkal-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hola-mohalla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hornbill-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/hyderabadi-haleem-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/independence-day-at-cellular-jail": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/international-kite-festival-uttarayan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/international-yoga-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/island-tourism-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/jageshwar-monsoon-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/jaipur-literature-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/janmashtami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/janmashtami-at-dwarkadhish": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/jauhar-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kaas-plateau-wildflower-bloom": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kadalekai-parishe-groundnut-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kajli-teej": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kakatiya-utsavam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kalamkari-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kambala-buffalo-race": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kanatal-surkanda-devi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kanwar-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/karaga-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kargil-vijay-diwas": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/karsha-gustor": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kartik-purnima-at-somnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kasauli-rhythm-and-blues-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kedarnath-opening": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/khajuraho-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kharchi-puja": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kinnaur-dussehra-fulaich": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kishtwar-saffron-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kochi-muziris-biennale": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/konark-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/korzok-gustor": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kovalam-literary-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kufri-winter-sports-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kullu-dussehra-kullu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kullu-dussehra-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kullu-winter-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kumbh-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/kutch-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ladakh-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ladarcha-fair-kaza": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ladarcha-fair-keylong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/laksha-deepotsava": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/lamayuru-yuru-kabgyat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/lansdowne-autumn-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/lathmar-holi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/lava-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/losar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/losar-monpa-new-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/losar-tibetan-new-year-darjeeling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/losar-tibetan-new-year-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/losar-tibetansikkimese-new-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/lucknow-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/lucknow-muharram-processions": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/magh-mela-jaunsar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/magh-mela-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/magh-mela-uttarkashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivaratri-at-kandariya-mahadeva": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivaratri-at-mallikarjuna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivaratri-at-somnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivaratri-at-tungnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivaratri-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivaratri-srikalahasti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivaratri-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/maha-shivratri-at-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mahamaham-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mahamastakabhisheka": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mahavir-jayanti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/malabar-mahotsavam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/malana-village-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mallinath-cattle-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mamallapuram-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mandi-nalwari-cattle-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mandi-shivaratri-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/manikaran-guru-nanak-birthday": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/margazhi-music-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/marine-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/marwar-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mata-murti-ka-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/matsya-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/me-dam-me-phi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/meditation-retreat-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/meera-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mewar-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/moatsu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/monsoon-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mopin-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/morni-mango-blossom-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/munshi-aziz-bhat-memorial-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mussoorie-winterline-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mysore-dasara": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/mysore-dasara-exhibition": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nag-panchami-battis-shirala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nainital-autumn-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nako-lake-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nanda-ashtami-trek-gathering": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nanda-devi-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nanda-devi-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nanda-devi-raj-jat-yatra-munsiyari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nanda-devi-raj-jat-yatra-roopkund": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/natyanjali-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/navratri-at-mahalaxmi-temple": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/navratri-garba": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nawalgarh-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/neelakurinji-bloom": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/neemrana-music-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nehru-trophy-boat-race": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nongkrem-dance": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/nubra-valley-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/olive-ridley-turtle-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ooty-flower-show": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/orange-festival-of-adventure-music-ofam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/orchha-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/osian-camel-safari-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pahalgam-spring-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pandharpur-wari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pang-lhabsol-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pang-lhabsol-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pangong-nomad-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/parab-tribal-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/paragliding-world-cup": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/paryaya-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/patiala-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/patnitop-winter-carnival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pattadakal-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/periyar-flower-show": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/phool-dei": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/phulech-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pinjore-heritage-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pithoragarh-hilljatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pongal-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pongal-puducherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/prayagraj-rasa-leela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/pushkar-camel-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/raghurajpur-art-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/rajgir-dance-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ram-raja-temple-festival-ram-navami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/rann-utsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/rath-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/republic-day-parade": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/rose-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/rudraprayag-kartik-purnima-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/saga-dawa-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/saga-dawa-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sammakka-saralamma-jatara": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sangai-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sankranti-pongal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sao-joao-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sarnath-light-sound-show-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sauji-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sekrenyi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/shatrunjaya-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/shigmo-goan-holi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/shivratri-at-mahabaleshwar-temple": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/shravani-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/shringa-rishi-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/siddheshwara-jatre": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/simlipal-flower-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sinthan-top-snow-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sital-sasthi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/snana-yatra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/solan-shoolini-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/solung-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sonamarg-thajiwas-glacier-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sravasti-international-buddhist-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sri-rama-navami-bhadrachalam-kalyanam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/srivari-brahmotsavam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/subhash-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sulafest": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/summer-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/sunburn-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/taj-mahotsav": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tea-festival-kangra-tea": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tehri-lake-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/theyyam-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/thrissur-pooram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tihar-deepawali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tirthan-trout-season-opening": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/toda-tribal-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/torgya-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tosamaidan-wildflower-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tsheshu-chaam-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tulip-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tungnath-temple-opening-chopta": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/tungnath-temple-opening-tungnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/urs-of-khwaja-moinuddin-chishti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/urs-of-sheikh-salim-chishti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/uttarayani-fair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/uttarayani-mela": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/uttarkashi-mahadev-temple-festival-maha-shivaratri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vaikunta-ekadashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vaikuntha-ekadasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vaikuntha-ekadasi-at-bhadrachalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vairamudi-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/valley-of-flowers-opening-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/varkala-sivagiri-pilgrimage": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vasant-panchami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/verinag-spring-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vijayawada-dussehra-durga-navaratri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vivekananda-jayanti-national-youth-day": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/vizag-utsav-deccan-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/wangala-100-drums-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/warli-art-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/wayanad-food-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/wildlife-week": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/winter-festival-mount-abu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/yamuna-chhath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/yamunotri-temple-opening-akshaya-tritiya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/yusmarg-shepherd-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/zanskar-chadar-trek-season": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/festivals/ziro-music-festival": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/bikers": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/culinary": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/elderly": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/families": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/honeymooners": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/nomads": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/nri-parents-visit": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/photographers": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/pilgrims": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/solo-female": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/for/wellness": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/gap-year": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/book-indian-trains": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/currency": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/etiquette": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/first-trip-india": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/food-safety": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/packing": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/permits": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/scams": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/sim-card": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/transport-overview": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/guide/visa": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-travel": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/bhutan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/egypt": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/indonesia": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/iran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/japan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/morocco": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/nepal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/peru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/singapore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/sri-lanka": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/thailand": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/tibet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/uae": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/india-vs/vietnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/aman-i-khas-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/amanbagh-alwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/ananda-in-the-himalayas-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/banjaar-tola-kanha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/brunton-boatyard-fort-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/deccan-odyssey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/glenburn-tea-estate-darjeeling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/golden-chariot": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/heritage-triangle-luxury": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/himalayan-wellness-triangle": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/itc-grand-bharat-manesar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/kerala-backwater-royalty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/maharajas-express": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/mahua-kothi-bandhavgarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/oberoi-amarvilas-agra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/oberoi-rajvilas-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/oberoi-udaivilas-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/palace-on-wheels": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/rambagh-palace-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/royal-rajasthan-by-car": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/six-senses-vana-dehradun": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/south-india-luxury-train-loop": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/sujan-sher-bagh-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/taj-falaknuma-palace-hyderabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/taj-lake-palace-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/taj-umaid-bhawan-palace-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/the-leela-palace-new-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/the-taj-mahal-palace-mumbai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/wildflower-hall-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/luxury/wildlife-luxury-circuit": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/membership": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/methodology": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/methodology/freshness": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/more": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/nakshiq-100": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/newsletter": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/offline": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/permits": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/plan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/press": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/privacy": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/risk-quiz": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/road-conditions": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/routes": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/saved": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/social": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/sos": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/states": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/stays": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/superlatives": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/terms": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/the-window": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/tourist-traps": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/transparency": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/treks": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/trip": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agatti-vs-diglipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agatti-vs-havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agatti-vs-little-andaman": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agatti-vs-long-island-andaman": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agatti-vs-neil-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agatti-vs-port-blair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agra-vs-fatehpur-sikri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agra-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agra-vs-khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agra-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/agra-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ahobilam-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ahobilam-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/aizawl-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/aizawl-vs-lachung": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/aizawl-vs-namchi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/aizawl-vs-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/aizawl-vs-ravangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/aizawl-vs-shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ajmer-vs-alwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ajmer-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ajmer-vs-neemrana": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ajmer-vs-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alibaug-vs-ganpatipule": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alibaug-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alibaug-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alibaug-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alibaug-vs-malvan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alibaug-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alleppey-vs-kovalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/alleppey-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/amboli-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/amboli-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/amritsar-vs-anandpur-sahib": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/amritsar-vs-mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/amritsar-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/anamalai-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/anamalai-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/anamalai-vs-nagarhole": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/anamalai-vs-thekkady": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/anamalai-vs-valparai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ananthagiri-hills-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ananthagiri-hills-vs-daringbadi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ananthagiri-hills-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ananthagiri-hills-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/araku-valley-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/araku-valley-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/araku-valley-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/araku-valley-vs-vagamon": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/arambol-vs-murud-janjira": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/auli-vs-chopta": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ayodhya-vs-mathura": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/badami-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/badami-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/badami-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bandhavgarh-vs-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bandipur-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bangaram-vs-havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/barot-valley-vs-sangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/barot-valley-vs-spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bekal-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bekal-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bekal-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bengaluru-vs-hyderabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bhandardara-vs-lonar-crater": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bhimashankar-vs-tadoba": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bhimashankar-vs-trimbakeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bhimbetka-vs-jabalpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bidar-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bidar-vs-nandi-hills": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bijapur-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bikaner-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bodh-gaya-vs-rajgir": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bodh-gaya-vs-sarnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bodh-gaya-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/bundi-vs-pushkar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/candolim-vs-murud-janjira": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chail-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chakrata-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chakrata-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chakrata-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chakrata-vs-patnitop": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chakrata-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chennai-vs-bengaluru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chennai-vs-marari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/cherai-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chikmagalur-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chitkul-vs-barot-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chitkul-vs-sangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chitkul-vs-tirthan-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chitradurga-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/chitrakoot-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coonoor-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coonoor-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coonoor-vs-ponmudi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coonoor-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coonoor-vs-valparai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coonoor-vs-yercaud": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coorg-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coorg-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/coorg-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dalhousie-vs-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/daman-vs-diu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/daringbadi-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/daringbadi-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/daringbadi-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/daringbadi-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/darjeeling-vs-ananthagiri-hills": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/darjeeling-vs-daringbadi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/darjeeling-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/darjeeling-vs-kalimpong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/darjeeling-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/darjeeling-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/darjeeling-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/delhi-vs-chandigarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanaulti-vs-kanatal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanaulti-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanaulti-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanaulti-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanushkodi-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanushkodi-vs-kozhikode": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanushkodi-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dhanushkodi-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dharamshala-vs-bir-billing": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dharamshala-vs-mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dharmasthala-vs-badami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dharmasthala-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dharmasthala-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dharmasthala-vs-shravanabelagola": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dharmasthala-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/doodhpathri-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/dungarpur-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/eravikulam-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/fatehpur-sikri-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/fatehpur-sikri-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gangotri-vs-kedarnath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gangotri-vs-yamunotri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gangtok-vs-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ganpatipule-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ganpatipule-vs-malvan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ganpatipule-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-badami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-dharmasthala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-mangalore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-palolem": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gokarna-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gulmarg-vs-doodhpathri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gulmarg-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gurez-valley-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/gurez-valley-vs-sonamarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hampi-vs-badami": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hampi-vs-gulbarga": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hampi-vs-orchha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hampi-vs-shravanabelagola": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hampi-vs-warangal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/havelock-island-vs-alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/havelock-island-vs-kadmat": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/havelock-island-vs-kavaratti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/havelock-island-vs-neil-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/havelock-island-vs-port-blair": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hogenakkal-vs-dhanushkodi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hogenakkal-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hogenakkal-vs-kumbakonam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hogenakkal-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/hogenakkal-vs-thanjavur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/horsley-hills-vs-araku-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/horsley-hills-vs-lepakshi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/horsley-hills-vs-rajahmundry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/horsley-hills-vs-undavalli-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/horsley-hills-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/idukki-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/idukki-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jabalpur-vs-khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jabalpur-vs-orchha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jaipur-vs-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jaipur-vs-udaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jaisalmer-vs-bikaner": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jaisalmer-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jaisalmer-vs-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jibhi-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/jibhi-vs-tirthan-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kabini-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kabini-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kabini-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kabini-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kalpa-vs-kinnaur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kanchipuram-vs-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kanha-vs-bandhavgarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kanha-vs-ranthambore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kannur-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kannur-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kannur-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kannur-vs-mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kannur-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kanyakumari-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kanyakumari-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/karwar-vs-marari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/karwar-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kasauli-vs-dalhousie": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kasauli-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kasauli-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kasauli-vs-palampur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kasol-vs-manikaran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kaziranga-vs-corbett-national-park": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kaziranga-vs-loktak-lake": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kedarnath-vs-badrinath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kedarnath-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kedarnath-vs-uttarkashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kedarnath-vs-yamunotri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/khajuraho-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/khajuraho-vs-orchha": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/khandala-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/khandala-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kochi-vs-thrissur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kochi-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kodaikanal-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kohima-vs-shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kokernag-vs-verinag": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kolhapur-vs-ganpatipule": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kolhapur-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kolhapur-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kolhapur-vs-nashik": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kolkata-vs-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kollam-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kovalam-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kovalam-vs-dhanushkodi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kovalam-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kovalam-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kovalam-vs-mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kovalam-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kozhikode-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kozhikode-vs-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kozhikode-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kozhikode-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kozhikode-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kumbhalgarh-vs-chittorgarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kushinagar-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kushinagar-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/kutch-vs-jaisalmer": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lachung-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lambasingi-vs-araku-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lambasingi-vs-horsley-hills": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lambasingi-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lambasingi-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lambasingi-vs-vagamon": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lambasingi-vs-yercaud": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lansdowne-vs-chakrata": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lansdowne-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lansdowne-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lansdowne-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lansdowne-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lansdowne-vs-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/leh-vs-lamayuru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/leh-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/leh-vs-nubra-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lepakshi-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/loktak-lake-vs-khangchendzonga-np": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lonavala-vs-bhandardara": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lonavala-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lonavala-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lucknow-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/lucknow-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/madurai-vs-coimbatore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/madurai-vs-kanyakumari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mahabaleshwar-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mahabaleshwar-vs-matheran": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mahabaleshwar-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mahabalipuram-vs-marari": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/malvan-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/malvan-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/malvan-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/malvan-vs-tarkarli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/manali-vs-barot-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/manali-vs-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/manali-vs-kasol": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/manali-vs-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/manali-vs-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mangalore-vs-bengaluru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mangalore-vs-karwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mangalore-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mangalore-vs-mysore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mangalore-vs-udupi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/manikaran-vs-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/marari-vs-alleppey": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/marari-vs-cherai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/marari-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/marari-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/matheran-vs-nashik": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/matheran-vs-panchgani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/matheran-vs-pune": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mathura-vs-vrindavan": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/minicoy-vs-havelock-island": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mollem-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mollem-vs-pench-maharashtra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/morni-hills-vs-chail": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/morni-hills-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/morni-hills-vs-mount-abu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/morni-hills-vs-palampur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/morni-hills-vs-shimla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mount-abu-vs-chail": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mount-abu-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mount-abu-vs-palampur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mudumalai-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mudumalai-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mudumalai-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mudumalai-vs-thekkady": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mumbai-vs-bengaluru": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mumbai-vs-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/munnar-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/munnar-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/munnar-vs-manali": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/munnar-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/munnar-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/murud-janjira-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/murud-janjira-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/murudeshwar-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mussoorie-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mussoorie-vs-nainital": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/mysore-vs-hampi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nagarhole-vs-kabini": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nagarhole-vs-mudumalai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nagarjuna-sagar-vs-srisailam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nainital-vs-mukteshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/namchi-vs-shillong": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nandi-hills-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nandi-hills-vs-chitradurga": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nandi-hills-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nandi-hills-vs-gulbarga": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nandi-hills-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nashik-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nashik-vs-pune": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nashik-vs-trimbakeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/neemrana-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/nrusinghanath-harishankar-vs-puri": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ooty-vs-chikmagalur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ooty-vs-coonoor": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ooty-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ooty-vs-lambasingi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/orchha-vs-khajuraho": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pahalgam-vs-sonamarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/palampur-vs-dharamshala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/palolem-vs-murud-janjira": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/panchgani-vs-lonavala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/panchgani-vs-mahabaleshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pangong-lake-vs-nubra-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/parvati-valley-vs-spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/patnitop-vs-dhanaulti": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/patnitop-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/patnitop-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/patnitop-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pench-maharashtra-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pondicherry-vs-auroville": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pondicherry-vs-kovalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pondicherry-vs-palolem": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ponmudi-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ponmudi-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ponmudi-vs-sakleshpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ponmudi-vs-vagamon": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ponmudi-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/poovar-vs-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/poovar-vs-varkala": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/puri-vs-bhubaneswar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pushkar-vs-jaisalmer": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/pushkar-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rajahmundry-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rajahmundry-vs-visakhapatnam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rajgir-vs-nalanda": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rameswaram-vs-kumbakonam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rameswaram-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rameswaram-vs-mahabalipuram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ranikhet-vs-kausani": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ranthambore-vs-bharatpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ranthambore-vs-corbett-national-park": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ranthambore-vs-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rishikesh-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/rishikesh-vs-mcleodganj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/sangla-vs-chitkul": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/sarnath-vs-prayagraj": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/sarnath-vs-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shillong-vs-cherrapunji": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shillong-vs-gangtok": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shillong-vs-lachung": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shillong-vs-pelling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shillong-vs-ravangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shimla-vs-darjeeling": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shimla-vs-kasauli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shimla-vs-mount-abu": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shimla-vs-mussoorie": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shimla-vs-nainital": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shimla-vs-patnitop": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shimla-vs-ranikhet": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shirdi-vs-bhimashankar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shirdi-vs-ellora-caves": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shirdi-vs-ganpatipule": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shirdi-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shirdi-vs-kolhapur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shirdi-vs-nashik": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/shravanabelagola-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/somnath-vs-dwarka": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/spiti-valley-vs-kinnaur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/spiti-valley-vs-leh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/spiti-valley-vs-tirthan-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srikalahasti-vs-srisailam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srikalahasti-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srinagar-vs-gulmarg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srinagar-vs-pahalgam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srisailam-vs-ahobilam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srisailam-vs-kabini": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srisailam-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/srisailam-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/tarkarli-vs-harihareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/tawang-vs-spiti-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/tawang-vs-ziro-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/thanjavur-vs-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/thekkady-vs-dandeli": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/thekkady-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/tirthan-valley-vs-barot-valley": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/tirthan-valley-vs-sangla": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/trichy-vs-hogenakkal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/trichy-vs-madurai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/trichy-vs-rameswaram": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/udaipur-vs-jodhpur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/udupi-vs-kukke-subramanya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/udupi-vs-murudeshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/ujjain-vs-omkareshwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/vagamon-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/vagamon-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/vagamon-vs-wayanad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/valparai-vs-mudumalai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/valparai-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/valparai-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/varanasi-vs-ayodhya": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/varanasi-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/varanasi-vs-mathura": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/varanasi-vs-rishikesh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/varkala-vs-gokarna": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/varkala-vs-kovalam": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/vijayawada-vs-tirupati": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/visakhapatnam-vs-pondicherry": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/visakhapatnam-vs-vijayawada": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/wayanad-vs-bandipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/wayanad-vs-coorg": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/wayanad-vs-idukki": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/yamunotri-vs-badrinath": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/yamunotri-vs-haridwar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/yamunotri-vs-uttarkashi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/yercaud-vs-kodaikanal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/yercaud-vs-munnar": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/yercaud-vs-ooty": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/vs/yercaud-vs-valparai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-agra": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-ahmedabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-bangalore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-bhopal": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-chandigarh": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-chennai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-coimbatore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-dehradun": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-delhi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-hyderabad": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-indore": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-jaipur": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-kochi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-kolkata": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-lucknow": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-mumbai": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-pune": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/weekend-from-varanasi": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/where-to-go": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/hi/why-we-say-no-data": {
+    "mode": "isr",
+    "revalidate": 3600
+  },
+  "/[locale]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/about": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/about/team": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/arrival": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/arrival/[iata]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/ask": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/blog": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/blog/[slug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/build-route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/camping": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/camping/state/[stateSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/collections": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/collections/[id]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/compare": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/contact": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/cookies": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/corrections": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/cost-index": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/cost-index/methodology": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/data-deletion": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/destination/[id]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/destination/[id]/q/[slug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/destination/[id]/[month]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/editorial-policy": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/explore": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/explore/difficulty/[level]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/explore/state/[stateSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/explore/state/[stateSlug]/[month]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/explore/tag/[tag]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/explore-by-persona": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/family/[stateSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/festivals": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/festivals/month/[monthSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/festivals/state/[stateSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/festivals/state/[stateSlug]/[monthSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/festivals/[festivalSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/for/[persona]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/gap-year": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/book-indian-trains": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/currency": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/etiquette": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/first-trip-india": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/food-safety": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/packing": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/permits": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/scams": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/scenarios/[slug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/sim-card": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/transport-overview": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/guide/visa": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/india/[regionSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/india-travel": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/india-vs": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/india-vs/[country]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/luxury": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/luxury/[slug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/membership": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/methodology": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/methodology/freshness": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/more": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/nakshiq-100": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/newsletter": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/offline": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/permits": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/plan": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/press": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/privacy": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/region/[id]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/region/[id]/[month]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/risk-quiz": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/road-conditions": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/routes": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/routes/[id]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/saved": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/skip-list/[slug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/social": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/sos": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/state/[stateSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/states": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/stays": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/stays/state/[stateSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/superlatives": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/terms": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/the-window": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/the-window/[slug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/tourist-traps": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/transparency": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/treks": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/treks/difficulty/[level]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/treks/state/[stateSlug]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/treks/state/[stateSlug]/[month]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/treks/[id]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/trip": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/vs": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/vs/[pair]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-agra": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-ahmedabad": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-bangalore": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-bhopal": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-chandigarh": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-chennai": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-coimbatore": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-dehradun": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-delhi": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-hyderabad": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-indore": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-jaipur": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-kochi": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-kolkata": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-lucknow": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-mumbai": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-pune": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/weekend-from-varanasi": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/where-to-go": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/where-to-go/[month]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/why-we-say-no-data": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/with-kids/[id]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/bot-traffic": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/citations": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/newsletter": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/questions": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/reviews": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/sos": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/stay-picks": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/admin/trip-reports": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/auth/callback/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/destination/[id]/share": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/gap-year/[token]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/[locale]/trip/share/[token]": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/admin/citations/log/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/admin/questions/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/admin/revalidate/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/admin/reviews/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/admin/sos/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/admin/stay-picks/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/admin/trip-reports/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/alerts/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/chat/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/content/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/audit-bot-crawl-rate/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/audit-cache-headers/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/audit-gsc-alerts/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/audit-gsc-ga4-correlation/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/audit-supabase-advisors/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/data-baseline/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/freshness-drift/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/news-sweep/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/prewarm-next-month/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/refresh-stay-picks/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/road-conditions-sweep/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/send-destination-alerts/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/sos-verify-reminder/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/cron/watchdog/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/destination-alerts/confirm/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/destination-alerts/subscribe/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/destination-alerts/unsubscribe/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/embed/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/export-trip/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/gap-year/generate/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/gap-year/regenerate-month/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/gap-year/stays/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/indexnow/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/itinerary/ical/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/itinerary/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/log-bot-visit/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/membership/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/newsletter/confirm/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/newsletter/send/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/newsletter/subscribe/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/newsletter/unsubscribe/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/og/destination/[id]/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/og/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/questions/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/quiz-match/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/reviews/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/suggestions/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/trip-reports/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/weather-advisory/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/weather/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/api/weekly-picks/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/favicon.ico/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/sitemap.xml/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  },
+  "/sitemap/[file]/route": {
+    "mode": "dynamic",
+    "revalidate": null
+  }
+}

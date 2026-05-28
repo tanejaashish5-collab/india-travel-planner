@@ -43,24 +43,28 @@ const OUT_PATH = join(ROOT, "apps/web/src/data/audit-snapshots.json");
 // ─────────────────────────────────────────────────────────────────────
 
 /**
- * Extract indexed-pages count from prose. Audits format inconsistently;
- * try several patterns and take the first credible reading (4K-80K range).
+ * Extract indexed-pages count from the audit's Indexing/Performance table.
+ *
+ * Anchored on rows that START with "| Indexed" (rejects "Not indexed",
+ * "Discovered – currently not indexed", and arbitrary impressions cells
+ * that happen to be bold and 4-80K). Picks the FIRST bold N or N.NK in
+ * the row so it works across both column orders seen in history:
+ *   - [Metric | Today | Prior | Δ]        → current in col 2
+ *   - [Metric | Apr 20 | **Today** | Δ]   → current in col 3
+ *
+ * Previously a loose pattern caught any bold pipe-cell number in 4-80K,
+ * which poisoned the M2 monitor when an audit lacked an Indexed row but
+ * had a bold impressions cell (e.g. 2026-05-28 = 50,926 misread as
+ * indexed_pages). Anchor the row, drop the fallback.
  */
 function parseIndexedPages(raw) {
-  const candidates = [];
-  // Pattern 1: bold pipe-cell — "**15.9K**" or "**14,100**"
-  for (const m of raw.matchAll(/(?:^|\|\s*)\*\*([\d,.]+)K?\*\*/g)) {
+  const re = /^\|\s*\*?\*?\s*indexed(?:\s+pages)?\s*\*?\*?\s*\|[^\n]*?\*\*([\d,.]+)(K)?\*\*/gim;
+  for (const m of raw.matchAll(re)) {
     const v = parseFloat(m[1].replace(/,/g, ""));
-    const final = m[0].includes("K") ? v * 1000 : v;
-    if (final >= 4000 && final <= 80000) candidates.push(final);
+    const final = m[2] === "K" ? v * 1000 : v;
+    if (final >= 4000 && final <= 80000) return final;
   }
-  // Pattern 2: prose — "indexed pages | **N** |"
-  for (const m of raw.matchAll(/indexed[^\n|]*\|\s*\*\*([\d,.]+)K?\*\*/gi)) {
-    const v = parseFloat(m[1].replace(/,/g, ""));
-    const final = /K\*\*$/.test(m[0]) ? v * 1000 : v;
-    if (final >= 4000 && final <= 80000) candidates.push(final);
-  }
-  return candidates.length > 0 ? candidates[0] : null;
+  return null;
 }
 
 /**

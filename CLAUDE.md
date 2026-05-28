@@ -96,6 +96,10 @@ The 2026-05-22 Hindi DB re-pass dumped ~5,800 rows through the REST API and push
 - **After any Supabase outage / 402 / freeze, force-rebuild Vercel.** ISR caches survive the recovery — landing page especially. Pattern: empty commit on main, e.g. commits `0e0ba3e7`, `14aad82d`, `1ee1fb0c`. Alternative: `POST /api/admin/revalidate?path=/en` with `Authorization: Bearer $NEWSLETTER_SEND_SECRET` (founder runs this; secret is Vercel-only).
 - **Scripts directory bias**: 226 of ~230 scripts use the REST client (`@supabase/supabase-js`), only 4 use direct Postgres (`_apply-telangana-widget-s44.mjs`, `backfill-honest-scarcity.mjs`, `_apply-migration-038.mjs`, `_apply-assam-widget-s40.mjs`). The pattern to copy when writing a new bulk script is in those 4.
 
+## Scrape storage convention (added 2026-05-28)
+
+**ALL YouTube scrapes go in `.scrapes/youtube/yt-<videoId>/` at the project root.** This holds yt-dlp output (info.json, .vtt, .description, thumbnail) + derived files (`metadata.json`, `transcript-timestamped.txt`, `transcript-prose.txt`, `by-chapter/`). Whenever you (or any sub-agent you dispatch) scrape a YouTube URL, write under this path — never to a one-off folder. Other source types (web pages, PDFs, social) get sibling folders under `.scrapes/` (`.scrapes/web/`, `.scrapes/social/`, etc.). The `.scrapes/` directory is gitignored. Pipeline reference: `session_2026_05_28_yt_scrape_pipeline_and_storage_convention.md` in project memory.
+
 ## Pending user-action items (Claude can't do these)
 
 - IMD/CPCB env keys (Sprint 9)
@@ -105,3 +109,7 @@ The 2026-05-22 Hindi DB re-pass dumped ~5,800 rows through the REST API and push
 - Sprint 7b: run `node scripts/log-citation-baseline-2026-04-24.mjs`; click "Run now" on the 3 Cowork scheduled tasks
 - Wikidata COI: add independent press references via P248/P1343 statements as press pickups land
 - GSC URL Inspection for top 5 non-prefixed URLs (e.g., `nakshiq.com/destination/kumbhalgarh/may`) to accelerate /en/ canonical consolidation
+- 🚨 **GSC URL Inspection on `nakshiq.com/destination/hemkund-sahib/june` — 6 weeks running** (verified 2026-05-28: 301 + canonical + hreflang all correct, Google still won't consolidate). Open https://search.google.com/search-console/inspect?resource_id=https://www.nakshiq.com/&id=https://www.nakshiq.com/destination/hemkund-sahib/june → "Request Indexing" on BOTH the un-prefixed and the `/en/` variant. Costs 14 clicks/week to wrong canonical until resolved. 2 min of work.
+- **Peak-alert hook conversion (check on 2026-05-29 GA4 audit)**: 2026-05-27=192/0, 2026-05-28=176/0. Tomorrow's audit confirms the 3rd consecutive 0%-conversion day. Component verified bug-free 2026-05-28 ([peak-alert-hook.tsx](apps/web/src/components/peak-alert-hook.tsx)). The 2026-05-22 rewrite (off-month-aware headline) was already attempt #2 — another copy A/B won't fix it. Structural fix needed: the offer "email for one future reminder" is too lopsided when the headline already pre-answers the month question. Ship one of: (1) "save this destination" localStorage toggle, prompt email at 3 saves; (2) remove email field, replace with browser notification opt-in; (3) move hook lower on the page where engagement-time signals real interest.
+- **Title-override tranche 2 ready for review (2026-05-28)**: 10 new entries appended to `data/cro/title-overrides.csv` as pending. Review draft: `data/cro/title-overrides-review-2026-05-28.md`. Apply with `node scripts/apply-title-overrides.mjs --commit --revalidate`.
+- **GSC Coverage/Indexing weekly paste**: open GSC Coverage dashboard, run `node scripts/patch-gsc-indexing.mjs --indexed N --not-indexed N` after today's GSC audit so the M2 indexed-pages monitor has fresh data. Without this, M2 silently skips.
