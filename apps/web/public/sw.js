@@ -102,7 +102,21 @@
 //      31 new treks, 3 new collections (Panch Kailash, Panch Prayag,
 //      Arupadai Veedu). Also fixes /treks region filter (state_id was
 //      missing from the query → every region returned 0 treks).
-const CACHE_VERSION = "nakshiq-v50";
+// v51 (2026-05-28): scale + crowd + CRO parity bump. Today's web ships changed
+//      page markup, so v50-cached HTML (and the SWR destination cache) held the
+//      old versions for returning/offline PWA users. Bumping purges nakshiq-v50-*.
+//      (1) Score display standardized to the 0–10 scale across ~14 surfaces
+//          (where-to-go, region/month, explore, best/[slug], festivals, nav,
+//          skip-list, guide) + fixed festivals/[slug] printing raw 0–5 as /10.
+//      (2) New PEAK CROWDS caveat on the destination hub + month verdict
+//          (crowd_calendar.peak_months backfilled for all 525 destinations).
+//      (3) peak-alert-hook converted from a 0%-converting email form to a
+//          one-tap Save CTA that feeds the save→email funnel.
+//      (4) ziro → ziro-valley duplicate merge (301).
+//      Also adds the where-to-go / explore / treks / festivals / states /
+//      collections / luxury / guide hubs to precache (drift catch-up — these
+//      shipped after the list was last curated at v33).
+const CACHE_VERSION = "nakshiq-v51";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -143,6 +157,14 @@ const PRECACHE_ROUTES = [
   "/en/vs",
   "/en/membership",
   "/en/transparency",
+  "/en/where-to-go",
+  "/en/explore",
+  "/en/treks",
+  "/en/festivals",
+  "/en/states",
+  "/en/collections",
+  "/en/luxury",
+  "/en/guide",
   "/hi",
   "/hi/sos",
   "/hi/saved",
@@ -150,6 +172,13 @@ const PRECACHE_ROUTES = [
   "/hi/trip",
   "/hi/tourist-traps",
   "/hi/ask",
+  "/hi/where-to-go",
+  "/hi/explore",
+  "/hi/treks",
+  "/hi/festivals",
+  "/hi/states",
+  "/hi/collections",
+  "/hi/luxury",
 ];
 
 // Install — pre-cache essentials + critical routes.
