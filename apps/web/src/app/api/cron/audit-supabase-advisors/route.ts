@@ -64,8 +64,37 @@ export async function GET(req: NextRequest) {
   if (!secret) return NextResponse.json({ error: "CRON_SECRET not configured" }, { status: 500 });
   if (header !== `Bearer ${secret}`) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
+  const supabaseUrlEarly = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceKeyEarly = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  // Failure-path heartbeat. Without this, a missing PAT or Management-API
+  // outage produces ZERO ops_reports rows — and the watchdog can't tell that
+  // apart from "the cron never fired". The 2026-05-28 DEGRADED email
+  // (audit-supabase-advisors = missing) was caused by SUPABASE_PAT being
+  // unset on Vercel after the M1-M7 deploy; surface that as errored with a
+  // clear summary, not as missing.
+  async function logFailure(reason: string, detail: string): Promise<void> {
+    if (!supabaseUrlEarly || !serviceKeyEarly) return;
+    try {
+      const supa = createClient(supabaseUrlEarly, serviceKeyEarly);
+      await supa.from("ops_reports").insert({
+        job: "audit-supabase-advisors",
+        summary: { reason, detail },
+        alerts_count: 0,
+        ok: false,
+      });
+    } catch {
+      // Best-effort. If logging itself fails, the watchdog will still see
+      // "missing" — same state we'd be in without this hook.
+    }
+  }
+
   const pat = process.env.SUPABASE_PAT;
   if (!pat) {
+    await logFailure(
+      "config_missing",
+      "SUPABASE_PAT env var not set — cannot reach Management API. Create a PAT at https://supabase.com/dashboard/account/tokens and add as Vercel env var."
+    );
     return NextResponse.json({
       ok: false,
       error: "SUPABASE_PAT env var not set — cannot reach Management API. Create a PAT at https://supabase.com/dashboard/account/tokens and add as Vercel env var.",
@@ -79,7 +108,9 @@ export async function GET(req: NextRequest) {
       fetchAdvisors(pat, "performance"),
     ]);
   } catch (e: unknown) {
-    return NextResponse.json({ ok: false, error: (e as Error)?.message }, { status: 503 });
+    const detail = (e as Error)?.message ?? "unknown error";
+    await logFailure("management_api_failed", detail);
+    return NextResponse.json({ ok: false, error: detail }, { status: 503 });
   }
 
   const all = [...security, ...performance];
@@ -89,13 +120,11 @@ export async function GET(req: NextRequest) {
   const errors = active.filter((l) => l.level === "ERROR");
   const warns = active.filter((l) => l.level === "WARN");
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   let newErrors: Lint[] = [];
   let resolvedErrors: string[] = [];
 
-  if (supabaseUrl && serviceKey) {
-    const supabase = createClient(supabaseUrl, serviceKey);
+  if (supabaseUrlEarly && serviceKeyEarly) {
+    const supabase = createClient(supabaseUrlEarly, serviceKeyEarly);
 
     // Read the most recent snapshot to compute the diff. We compare by
     // cache_key — that's Supabase's stable identifier for each lint.
