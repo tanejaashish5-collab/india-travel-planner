@@ -1,0 +1,50 @@
+[
+  {
+    "id": "verinag",
+    "peak_months": [4, 5, 10, 11],
+    "quiet_months": [6, 7, 8],
+    "note": "Spring bloom (Apr–May) and autumn clear skies (Oct–Nov) draw peak crowds; monsoon June–August is quietest."
+  },
+  {
+    "id": "vijayawada",
+    "peak_months": [10, 11, 12, 1, 2],
+    "quiet_months": [5, 6, 7],
+    "note": "Winter months Oct–Feb are coolest and busiest for temple visits and city tourism; monsoon May–July is quietest."
+  },
+  {
+    "id": "visakhapatnam",
+    "peak_months": [10, 11, 12, 1, 2],
+    "quiet_months": [6, 7, 8],
+    "note": "Beach city peaks Oct–Feb when weather is dry and cool; monsoon June–Aug is quietest."
+  },
+  {
+    "id": "vishnuprayag",
+    "peak_months": [4, 5, 10],
+    "quiet_months": [7, 8],
+    "note": "Pilgrimage site sees crowds in spring (Apr–May) and autumn (Oct); monsoon July–Aug is quietest."
+  },
+  {
+    "id": "warangal",
+    "peak_months": [10, 11, 12, 1, 2],
+    "quiet_months": [5, 6, 7],
+    "note": "Heritage site busiest Oct–Feb when weather permits fort and temple touring; monsoon May–Jul is quiet."
+  },
+  {
+    "id": "wayanad",
+    "peak_months": [11, 12, 1, 2, 3],
+    "quiet_months": [6, 7, 8, 9],
+    "note": "Hill-station peaks Nov–Mar for clear skies and school holidays; monsoon June–September is quiet."
+  },
+  {
+    "id": "yercaud",
+    "peak_months": [11, 12, 1, 2, 3],
+    "quiet_months": [7, 8],
+    "note": "Hill-station peaks Nov–Mar for cool weather and holidays; monsoon July–Aug is quietest."
+  },
+  {
+    "id": "yuksom",
+    "peak_months": [4, 5, 10, 11],
+    "quiet_months": [6, 7, 8, 12, 1],
+    "note": "Trek gateway busiest in spring (Apr–May) and autumn (Oct–Nov); monsoon June–Aug and winter snow (Dec–Jan) are quietest."
+  }
+]
