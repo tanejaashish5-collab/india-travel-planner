@@ -702,6 +702,46 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
+            {/* Peak-crowd caveat — the score rates conditions (weather, access,
+                value), NOT how many people share them. When the current month is
+                in the destination's verified peak_months, say so out loud right
+                at the verdict so a high score never reads as "empty and perfect".
+                Only fires when we actually hold crowd data — honest scarcity over
+                fabrication. */}
+            {crowdLevel === "peak" && (
+              <div
+                style={{
+                  maxWidth: 720,
+                  margin: "20px auto 0",
+                  border: "1px solid var(--vermillion)",
+                  borderLeft: "3px solid var(--vermillion)",
+                  padding: "16px 20px",
+                  background: "rgba(229,86,66,0.06)",
+                }}
+              >
+                <p
+                  className="nq-kicker"
+                  style={{ color: "var(--vermillion)", marginBottom: 8 }}
+                >
+                  PEAK CROWDS
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 15,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
+                    margin: 0,
+                  }}
+                >
+                  {currentMonthName} is {displayName}&apos;s busiest window. The
+                  score rates conditions — weather, access, value — not how many
+                  people you&apos;ll share them with.
+                  {dest.crowd_calendar?.note ? ` ${dest.crowd_calendar.note}` : ""}
+                </p>
+              </div>
+            )}
+
             {/* 5-cell scorecard — quiet roll-up of the dimensions production
                 scatters across confidence-card / kids-badge / solo-female.
                 Sits flush under the GO/WAIT/SKIP rail so the reader sees
