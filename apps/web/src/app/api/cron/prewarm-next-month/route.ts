@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { revalidatePath } from "next/cache";
 import { currentMonthIST } from "@itp/shared";
+import { BEST_PERSONA_ORDER, buildMonthPersonaSlug } from "@/lib/best-pages";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
@@ -115,6 +116,14 @@ export async function GET(req: NextRequest) {
     // in apps/web/src/app/[locale]/luxury/page.tsx) — flush so the new
     // month's picks surface immediately on rollover, not after ISR's 1h TTL.
     try { revalidatePath(`/${loc}/luxury`); revalidated++; } catch {}
+  }
+
+  // /best/[month]-with-[persona]-in-india — Move C surface. 5 personas × 2 locales = 10 paths/month.
+  for (const persona of BEST_PERSONA_ORDER) {
+    const slug = buildMonthPersonaSlug(month as Parameters<typeof buildMonthPersonaSlug>[0], persona);
+    for (const loc of locales) {
+      try { revalidatePath(`/${loc}/best/${slug}`); revalidated++; } catch {}
+    }
   }
 
   // 4) Actually warm top-N highest-traffic destination pages so the first

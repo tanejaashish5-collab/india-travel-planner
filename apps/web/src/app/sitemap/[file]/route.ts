@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
+import { allBestSlugs } from "@/lib/best-pages";
 
 // Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
 // generateSitemaps() convention because its auto-generated /sitemap.xml
@@ -127,7 +128,14 @@ async function buildChunk(id: string): Promise<Entry[]> {
       entry(`where-to-go/${month}`, "weekly", 0.85),
     );
 
-    return [...staticEntries, ...whereToGoEntries];
+    // /best/[slug] — persona × month + evergreen persona pages.
+    // Scope locked by Move A validation (persona+month bucket = YELLOW; n-days
+    // / weekend / generic-month buckets RED + dropped). 65 slugs × 2 locales.
+    const bestEntries = allBestSlugs().flatMap((slug) =>
+      entry(`best/${slug}`, "monthly", 0.7),
+    );
+
+    return [...staticEntries, ...whereToGoEntries, ...bestEntries];
   }
 
   if (id === "1") {
