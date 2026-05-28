@@ -13,6 +13,7 @@ import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
 import { singleFestivalEventJsonLd, type FestivalRow } from "@/lib/festival-schema";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
+import { formatScoreInline } from "@itp/shared";
 
 // Per-festival detail page. 331 festivals × 2 locales ≈ 662 indexed URLs.
 // Path A enrichment (2026-05-23): each page is a festival LENS on the host
@@ -459,7 +460,7 @@ export default async function FestivalDetailPage({
                       marginTop: 6,
                     }}
                   >
-                    {enriched.month.score}/10
+                    {formatScoreInline(enriched.month.score)}
                   </div>
                   {enriched.month.verdict && (
                     <div

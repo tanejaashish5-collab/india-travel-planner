@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
   return {
     title: `Places to Visit in ${stateName} in ${m.name} — Scored & Ranked`,
-    description: `Best destinations in ${stateName} for ${m.name}, scored 1-5 based on weather, crowds, and accessibility. See which score 5/5 and which to avoid.`,
+    description: `Best destinations in ${stateName} for ${m.name}, scored 0-10 based on weather, crowds, and accessibility. See which score 10/10 and which to avoid.`,
     ...localeAlternates(locale, `/explore/state/${stateSlug}/${month}`),
   };
 }
@@ -112,7 +112,7 @@ export default async function ExploreStateMonthPage({ params }: { params: Promis
               maxWidth: 720,
             }}
           >
-            {sorted.length} destinations — {score5} score 5/5 this month. Sorted by {m.name}{" "}
+            {sorted.length} destinations — {score5} score 10/10 this month. Sorted by {m.name}{" "}
             suitability.
           </p>
           <div style={{ marginTop: 20 }}>

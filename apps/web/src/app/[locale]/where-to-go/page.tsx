@@ -35,7 +35,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const title = "Where to Go in India — by Month";
-  const description = "Pick a month and see India's 5/5 destinations for that window. Honest verdicts, weather windows, and skip-list flags. 460+ destinations scored.";
+  const description = "Pick a month and see India's 10/10 destinations for that window. Honest verdicts, weather windows, and skip-list flags. 460+ destinations scored.";
   const canonical = `${SITE}/${locale}/where-to-go`;
   return {
     title,
@@ -152,7 +152,7 @@ export default async function WhereToGoIndex({
               maxWidth: 720,
             }}
           >
-            Pick a month. See the destinations that score 4+ out of 5 for that
+            Pick a month. See the destinations that score 8+ out of 10 for that
             window — and the ones to skip. Verdicts come from weather, crowds,
             road conditions, and on-the-ground notes; not from sponsored picks.
           </p>
@@ -195,7 +195,7 @@ export default async function WhereToGoIndex({
                   margin: 0,
                 }}
               >
-                See the {counts[currentMonth]?.go ?? 0} 5/5 destinations for {currentLong}
+                See the {counts[currentMonth]?.go ?? 0} 10/10 destinations for {currentLong}
               </p>
             </div>
             <span style={{ fontSize: 22, color: "var(--vermillion)" }} aria-hidden>→</span>
@@ -284,7 +284,7 @@ export default async function WhereToGoIndex({
                           color: "var(--bone-faint)",
                         }}
                       >
-                        5/5 picks
+                        10/10 picks
                       </span>
                     </div>
                     {c.skip > 0 && (

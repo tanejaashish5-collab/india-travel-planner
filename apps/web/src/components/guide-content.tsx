@@ -178,7 +178,7 @@ export function GuideContent({
           <h2 className="text-2xl font-semibold sm:text-3xl">Best time to visit — {currentMonthName}</h2>
           <p className="text-muted-foreground mt-1">
             {bestTimeCount > 0
-              ? `${bestTimeCount} destinations scoring 4-5/5 for ${currentMonthName} — sorted by monthly score`
+              ? `${bestTimeCount} destinations scoring 8-10/10 for ${currentMonthName} — sorted by monthly score`
               : `Monthly suitability scores, crowd levels, and weather reality`}
           </p>
         </div>

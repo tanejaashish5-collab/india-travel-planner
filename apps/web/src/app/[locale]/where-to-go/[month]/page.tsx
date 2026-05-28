@@ -158,20 +158,20 @@ export async function generateMetadata({
   const pickWord = score5Count === 1 ? "pick" : "picks";
 
   const titleLong = score5Count > 0
-    ? `Where to go in ${regionLabel} in ${monthName} ${year} — ${score5Count} 5/5 ${pickWord}`
+    ? `Where to go in ${regionLabel} in ${monthName} ${year} — ${score5Count} 10/10 ${pickWord}`
     : `Where to go in ${regionLabel} in ${monthName} ${year} — ranked by month`;
   const titleShort = score5Count > 0
-    ? `${regionLabel} in ${monthName} ${year}: ${score5Count} 5/5 ${pickWord}`
+    ? `${regionLabel} in ${monthName} ${year}: ${score5Count} 10/10 ${pickWord}`
     : `${regionLabel} in ${monthName} ${year}: ranked picks`;
   const title = titleLong.length <= 50 ? titleLong : titleShort;
 
   const description = regionInfo
     ? (score5Count > 0
-        ? `${score5Count} ${destWord} in ${regionInfo.displayName} scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
+        ? `${score5Count} ${destWord} in ${regionInfo.displayName} scored 10/10 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
         : `Every destination in ${regionInfo.displayName} scored for ${monthName} ${year} on weather, crowds, road conditions. The honest pick if anywhere works this month — and what to skip.`)
     : (score5Count > 0
-        ? `${score5Count} ${destWord} across India scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — not generic listicles. See where to go and what to skip.`
-        : `Every destination in India scored for ${monthName} ${year} on weather, crowds, road conditions. No 5/5 picks this month — see what's the closest, and what to skip.`);
+        ? `${score5Count} ${destWord} across India scored 10/10 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — not generic listicles. See where to go and what to skip.`
+        : `Every destination in India scored for ${monthName} ${year} on weather, crowds, road conditions. No 10/10 picks this month — see what's the closest, and what to skip.`);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/where-to-go/${slug}`;
   const ogImage = `https://www.nakshiq.com/og-image.jpg`;
 

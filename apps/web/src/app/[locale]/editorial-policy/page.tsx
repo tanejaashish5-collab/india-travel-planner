@@ -140,7 +140,7 @@ export default async function EditorialPolicyPage({ params }: { params: Promise<
           <section>
             <h2 style={h2Style}>How scores work.</h2>
             <p style={proseStyle}>
-              400+ destinations. Each one scored 1 to 5 for every month of the year. Scores are based on five
+              400+ destinations. Each one scored 0 to 10 for every month of the year. Scores are based on five
               factors: weather conditions, road access and connectivity, crowd levels, infrastructure quality,
               and safety considerations.
             </p>
@@ -201,7 +201,7 @@ export default async function EditorialPolicyPage({ params }: { params: Promise<
               identically — same criteria, same weights, same data sources.
             </p>
             <p style={{ ...proseStyle, marginTop: 16 }}>
-              A destination can score 1/5 for a given month and still have booking links on its page. The
+              A destination can score 2.0/10 for a given month and still have booking links on its page. The
               link is there because hotels exist there. The score is there because conditions are poor. These
               are independent facts and we treat them independently.
             </p>

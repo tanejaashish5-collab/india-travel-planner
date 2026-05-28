@@ -311,7 +311,7 @@ function ExplorePanel({ locale, onNavigate }: { locale: string; onNavigate: () =
             <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary/60 mb-2">This month</p>
             <h4 className="text-sm font-semibold text-foreground">Best destinations right now</h4>
             <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
-              5/5 scored — weather, crowds, and accessibility aligned for {currentMonthLongIST()}.
+              10/10 scored — weather, crowds, and accessibility aligned for {currentMonthLongIST()}.
             </p>
           </div>
           <a

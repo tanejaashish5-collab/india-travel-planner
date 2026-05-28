@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const currentMonth = currentMonthLongIST();
   return {
     title: `Places to Visit in ${stateName} — Every Destination Scored`,
-    description: `All destinations in ${stateName} scored 1-5 for ${currentMonth}. Kids ratings, safety data, infrastructure reality, and honest assessments. No sponsored content.`,
+    description: `All destinations in ${stateName} scored 0-10 for ${currentMonth}. Kids ratings, safety data, infrastructure reality, and honest assessments. No sponsored content.`,
     ...localeAlternates(locale, `/explore/state/${stateSlug}`),
   };
 }

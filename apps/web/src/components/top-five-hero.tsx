@@ -120,7 +120,7 @@ export function TopFiveHero({
               <>
                 <span className="text-white/25"> · </span>
                 <span className="text-white/55">{peakCount} scoring </span>
-                <span style={{ color: VERMILLION }}>5/5</span>
+                <span style={{ color: VERMILLION }}>10/10</span>
               </>
             )}
           </span>
@@ -138,7 +138,7 @@ export function TopFiveHero({
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-y border-white/10 py-3 text-[11px] font-medium uppercase tracking-[0.08em] text-white/45">
         <span>{dateRange ?? `As of ${asOfDate}`}</span>
         <span className="hidden sm:inline">Verified by editors</span>
-        <span>Scores out of 5</span>
+        <span>Scores out of 10</span>
       </div>
 
       {/* ── Bento grid ──────────────────────────────────────

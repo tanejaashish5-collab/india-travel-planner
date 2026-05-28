@@ -98,14 +98,14 @@ function computeHeroStat(
       const highConfidence = all.filter(
         (d) => (d.solo_female_score?.annual_score ?? 0) >= 4,
       ).length;
-      return `${matchedCount} of ${totalCorpus} destinations currently match — ${highConfidence} score 4/5 or higher on NakshIQ's annual solo-female safety index. The index is rebuilt each season, not curated once.`;
+      return `${matchedCount} of ${totalCorpus} destinations currently match — ${highConfidence} score 8/10 or higher on NakshIQ's annual solo-female safety index. The index is rebuilt each season, not curated once.`;
     }
     case "families": {
       const suitableHigh = all.filter(
         (d) => d.kids_friendly?.suitable === true && (d.kids_friendly?.rating ?? 0) >= 4,
       ).length;
       const underAlt = matched.filter((d) => (d.elevation_m ?? 0) < 2500).length;
-      return `${matchedCount} family-suitable destinations in the corpus, ${suitableHigh} of them at 4/5 or higher for kids. ${underAlt} sit under 2,500 m — the altitude ceiling we recommend for children under ten.`;
+      return `${matchedCount} family-suitable destinations in the corpus, ${suitableHigh} of them at 8/10 or higher for kids. ${underAlt} sit under 2,500 m — the altitude ceiling we recommend for children under ten.`;
     }
     case "elderly": {
       const lowAlt = matched.filter((d) => (d.elevation_m ?? 0) < 2000).length;

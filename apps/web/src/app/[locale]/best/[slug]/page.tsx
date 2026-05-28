@@ -377,8 +377,8 @@ export default async function BestPage({
           >
             {resolved.kind === "month-persona"
               ? (isHindi
-                  ? `${monthVerdictCount} स्थल — ${totalMatched} में से जो ${PERSONA_COPY[resolved.persona].labelHindi} के लिए सटीक हैं — ${resolved.monthHi} में 4/5 या उससे ऊपर का स्कोर रखते हैं।`
-                  : `${monthVerdictCount} destinations — out of ${totalMatched} that fit ${PERSONA_COPY[resolved.persona].nounPhrase} — score 4/5 or higher for ${resolved.monthEn}.`)
+                  ? `${monthVerdictCount} स्थल — ${totalMatched} में से जो ${PERSONA_COPY[resolved.persona].labelHindi} के लिए सटीक हैं — ${resolved.monthHi} में 8/10 या उससे ऊपर का स्कोर रखते हैं।`
+                  : `${monthVerdictCount} destinations — out of ${totalMatched} that fit ${PERSONA_COPY[resolved.persona].nounPhrase} — score 8/10 or higher for ${resolved.monthEn}.`)
               : (isHindi
                   ? `${totalMatched} स्थल भारत भर में हमारी सत्यापित सूची से ${PERSONA_COPY[resolved.persona].labelHindi} के लिए मेल खाते हैं।`
                   : `${totalMatched} destinations across India match ${PERSONA_COPY[resolved.persona].nounPhrase} from NakshIQ's verified corpus.`)}
@@ -451,8 +451,8 @@ function MonthPersonaBody({
         <h2 style={sectionTitleStyle}>{isHindi ? "इस महीने कोई सीधा सुझाव नहीं" : `Nothing we'd send you for ${PERSONA_COPY[persona].nounPhrase} in ${monthEn}`}</h2>
         <p style={pStyle}>
           {isHindi
-            ? `${monthHi} में ${PERSONA_COPY[persona].labelHindi} के लिए कोई स्थल 3/5 या उससे ऊपर का स्कोर नहीं रखता। यह ईमानदार चेतावनी है — ब्रोशर के विपरीत।`
-            : `No destination scored 3/5 or higher in ${monthEn} for ${PERSONA_COPY[persona].nounPhrase}. That's the honest call — listicles will tell you otherwise.`}
+            ? `${monthHi} में ${PERSONA_COPY[persona].labelHindi} के लिए कोई स्थल 6/10 या उससे ऊपर का स्कोर नहीं रखता। यह ईमानदार चेतावनी है — ब्रोशर के विपरीत।`
+            : `No destination scored 6/10 or higher in ${monthEn} for ${PERSONA_COPY[persona].nounPhrase}. That's the honest call — listicles will tell you otherwise.`}
         </p>
         <p style={{ ...pStyle, marginTop: 12 }}>
           {isHindi ? "बेहतर महीने देखें:" : "Try a different month:"}{" "}
@@ -468,8 +468,8 @@ function MonthPersonaBody({
     <>
       {tier5.length > 0 && (
         <ScoreTier
-          tier="5/5"
-          label={isHindi ? `${tier5.length} सीधा हाँ — 5/5 स्कोर` : `${tier5.length} clear yes — 5/5`}
+          tier="10/10"
+          label={isHindi ? `${tier5.length} सीधा हाँ — 10/10 स्कोर` : `${tier5.length} clear yes — 10/10`}
           items={tier5}
           locale={locale}
           monthSlug={monthSlug}
@@ -477,8 +477,8 @@ function MonthPersonaBody({
       )}
       {tier4.length > 0 && (
         <ScoreTier
-          tier="4/5"
-          label={isHindi ? `${tier4.length} योग्य — 4/5 स्कोर` : `${tier4.length} works with caveats — 4/5`}
+          tier="8/10"
+          label={isHindi ? `${tier4.length} योग्य — 8/10 स्कोर` : `${tier4.length} works with caveats — 8/10`}
           items={tier4}
           locale={locale}
           monthSlug={monthSlug}
@@ -486,8 +486,8 @@ function MonthPersonaBody({
       )}
       {tier3.length > 0 && (
         <ScoreTier
-          tier="3/5"
-          label={isHindi ? `${tier3.length} सीमित विकल्प — 3/5` : `${tier3.length} thin pick — 3/5`}
+          tier="6/10"
+          label={isHindi ? `${tier3.length} सीमित विकल्प — 6/10` : `${tier3.length} thin pick — 6/10`}
           items={tier3}
           locale={locale}
           monthSlug={monthSlug}

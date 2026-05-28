@@ -64,15 +64,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const pickWord = count === 1 ? "pick" : "picks";
 
   const titleLong = count > 0
-    ? `Where to go in ${region.name} in ${monthName} ${year} — ${count} 5/5 ${pickWord}`
+    ? `Where to go in ${region.name} in ${monthName} ${year} — ${count} 10/10 ${pickWord}`
     : `Where to go in ${region.name} in ${monthName} ${year} — ranked by month`;
   const titleShort = count > 0
-    ? `${region.name} in ${monthName} ${year}: ${count} 5/5 ${pickWord}`
+    ? `${region.name} in ${monthName} ${year}: ${count} 10/10 ${pickWord}`
     : `${region.name} in ${monthName} ${year}: ranked picks`;
   const title = titleLong.length <= 50 ? titleLong : titleShort;
 
   const description = count > 0
-    ? `${count} ${destWord} in ${region.name} scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
+    ? `${count} ${destWord} in ${region.name} scored 10/10 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
     : `Every destination in ${region.name} scored for ${monthName} ${year} on weather, crowds, road conditions. The honest pick if anywhere works this month — and what to skip.`;
 
   return {

@@ -195,7 +195,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth,
             {goodMonths.length > 0 ? (
               <>
                 <p className="text-muted-foreground mb-4 text-sm">
-                  {trapDest.name} scores 4+ out of 5 in these months — if you must go, this is when:
+                  {trapDest.name} scores 8+ out of 10 in these months — if you must go, this is when:
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {goodMonths.map((m) => (

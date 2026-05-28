@@ -413,9 +413,9 @@ export function WhereToGoContent({
             </h1>
             <p className="mt-3 max-w-prose text-base sm:text-lg leading-relaxed text-white/80">
               {goCount > 0
-                ? `${goCount} destination${goCount === 1 ? "" : "s"} score 4 or 5 out of 5 this month. ${skipCount > 0 ? `${skipCount} to skip.` : "None to skip."} ${data[0]?.name ? `Start with ${data[0].name}.` : ""}`
+                ? `${goCount} destination${goCount === 1 ? "" : "s"} score 8 or higher out of 10 this month. ${skipCount > 0 ? `${skipCount} to skip.` : "None to skip."} ${data[0]?.name ? `Start with ${data[0].name}.` : ""}`
                 : skipCount > 0
-                  ? `No destinations score 4+ this month. ${skipCount} are best avoided; ${waitCount} are borderline.`
+                  ? `No destinations score 8+ out of 10 this month. ${skipCount} are best avoided; ${waitCount} are borderline.`
                   : `All ${totalListed} destinations are borderline this month — check the monthly detail before booking.`}
             </p>
 
@@ -476,8 +476,8 @@ export function WhereToGoContent({
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-base text-zinc-400">
               {regionName
-                ? `Every destination in ${regionName} scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`
-                : `Every destination scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`}
+                ? `Every destination in ${regionName} scored 0-10 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`
+                : `Every destination scored 0-10 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`}
             </p>
           </div>
         </FadeIn>
@@ -560,7 +560,7 @@ export function WhereToGoContent({
             type="button"
             onClick={() => setSoloFemaleOnly((v) => !v)}
             aria-pressed={soloFemaleOnly}
-            title="Filter to solo-female-friendly destinations (4–5/5 this month)"
+            title="Filter to solo-female-friendly destinations (8–10/10 this month)"
             className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.15em] transition-all ${
               soloFemaleOnly
                 ? "border-rose-400/50 bg-rose-500/10 text-rose-200"
@@ -578,11 +578,11 @@ export function WhereToGoContent({
       {/* ───── Score Summary Bar ───── */}
       <FadeIn delay={0.15}>
         <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900/40 px-4 py-3">
-          <SummaryBadge count={scoreCounts[5] ?? 0} label="scoring 5/5" score={5} />
+          <SummaryBadge count={scoreCounts[5] ?? 0} label="scoring 10/10" score={5} />
           <span className="text-zinc-600">·</span>
-          <SummaryBadge count={scoreCounts[4] ?? 0} label="scoring 4/5" score={4} />
+          <SummaryBadge count={scoreCounts[4] ?? 0} label="scoring 8/10" score={4} />
           <span className="text-zinc-600">·</span>
-          <SummaryBadge count={scoreCounts[3] ?? 0} label="scoring 3/5" score={3} />
+          <SummaryBadge count={scoreCounts[3] ?? 0} label="scoring 6/10" score={3} />
           <span className="text-zinc-600">·</span>
           <SummaryBadge
             count={(scoreCounts[2] ?? 0) + (scoreCounts[1] ?? 0) + (scoreCounts[0] ?? 0)}
@@ -603,8 +603,8 @@ export function WhereToGoContent({
         <section id="section-go5" className="scroll-mt-28">
           <ScrollReveal>
             <SectionHeader
-              title={excluded.size > 0 ? "The other scoring 5/5" : "Go Now"}
-              subtitle="5/5"
+              title={excluded.size > 0 ? "The other scoring 10/10" : "Go Now"}
+              subtitle="10/10"
               accent="emerald"
               count={score5.length}
             />
@@ -631,7 +631,7 @@ export function WhereToGoContent({
           <ScrollReveal>
             <SectionHeader
               title="A good time"
-              subtitle="4/5"
+              subtitle="8/10"
               accent="blue"
               count={score4.length}
             />
@@ -658,7 +658,7 @@ export function WhereToGoContent({
           <ScrollReveal>
             <SectionHeader
               title="Fair"
-              subtitle="3/5"
+              subtitle="6/10"
               accent="yellow"
               count={score3.length}
             />
