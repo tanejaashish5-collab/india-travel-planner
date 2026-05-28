@@ -14,7 +14,7 @@ import { currentMonthIST, currentDayIST, currentMonthLocalisedIST } from "@itp/s
 // /luxury hub. Lists every published luxury_experiences row — trains,
 // iconic stays, curated itineraries. Mirrors the /festivals hub.
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

@@ -15,7 +15,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 
-export const revalidate = 86400; // 24h — 5,856 month pages × bots = function-invocation tax. Monthly content doesn't need 6h freshness.
+export const revalidate = 604800; // 7d — month-segment URL is rollover-safe; prewarm cron warms next month + /api/admin/revalidate flushes edits. Was 24h.
 export const dynamicParams = true;
 
 // 6,060 month pages render on-demand via ISR instead of at build time —

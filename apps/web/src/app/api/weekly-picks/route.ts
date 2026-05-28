@@ -6,7 +6,7 @@ import {
 } from "@/lib/weekly-picks/weight";
 import { computeWeeklyPicks } from "@/lib/weekly-picks/compute";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 /**
  * GET /api/weekly-picks?month=&week=&year=

@@ -9,7 +9,7 @@ import { TripReportForm } from "@/components/trip-report-form";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 async function getDest(id: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

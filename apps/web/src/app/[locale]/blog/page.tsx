@@ -9,7 +9,7 @@ import {
   localeAlternates,
 } from "@/lib/seo-utils";
 
-export const revalidate = 21600;
+export const revalidate = 86400; // 24h — blog posts are static editorial
 
 export async function generateMetadata({
   params,

@@ -9,7 +9,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
-export const revalidate = 86400;
+export const revalidate = 2592000; // 30d — comparison content is static; on-demand revalidate for rare edits. Was 24h.
 export const dynamicParams = true;
 
 const SITE = "https://www.nakshiq.com";

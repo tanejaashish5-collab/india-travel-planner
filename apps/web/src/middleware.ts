@@ -31,10 +31,8 @@ const BOT_PATTERNS: Array<{ name: string; pattern: RegExp }> = [
   { name: "Claude-Web", pattern: /Claude-Web/i },
   { name: "Google-Extended", pattern: /Google-Extended/i },
   { name: "Applebot-Extended", pattern: /Applebot-Extended/i },
-  { name: "CCBot", pattern: /CCBot/i },
-  { name: "Amazonbot", pattern: /Amazonbot/i },
-  { name: "YouBot", pattern: /YouBot/i },
-  { name: "PhindBot", pattern: /PhindBot/i },
+  // CCBot / Amazonbot / YouBot / PhindBot removed 2026-05-28 — now Disallowed
+  // in robots.txt (no-value scrapers). No point spending log-invocations on them.
   { name: "Googlebot", pattern: /Googlebot\/|Googlebot$/i },
   { name: "Bingbot", pattern: /bingbot/i },
   { name: "DuckDuckBot", pattern: /DuckDuckBot/i },

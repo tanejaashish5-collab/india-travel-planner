@@ -16,7 +16,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 export function generateStaticParams() {
   return PERSONA_ORDER.flatMap((persona) =>

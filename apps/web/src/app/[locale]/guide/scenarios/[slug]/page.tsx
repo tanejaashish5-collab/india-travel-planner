@@ -9,7 +9,7 @@ import {
   GuideSteps,
 } from "@/components/cinematic-guide-helpers";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 export const dynamicParams = true;
 
 // Next 16: a dynamic-segment route without generateStaticParams is treated as

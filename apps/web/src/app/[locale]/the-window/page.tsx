@@ -8,7 +8,7 @@ import { localeAlternates } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

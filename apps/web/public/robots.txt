@@ -6,23 +6,27 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
-Crawl-delay: 10
+Crawl-delay: 20
 
 # Explicit AI-answer bot allowlist (R2 §12 Tier-1 — these bots deliver citations).
-# Crawl-delay added 2026-05-06 after PerplexityBot blitz (~60K hits / 13d) blew
-# Supabase free-tier egress (5 GB → 32 GB). Bots that respect Crawl-delay get
-# 10s between requests → ~8,600 hits/day cap. GPTBot and Googlebot ignore the
-# directive (self-regulated via their consoles).
+# Crawl-delay raised 2026-05-28 (10→20s) as part of the Vercel-cost reduction:
+# bot crawls drive observability events, function invocations, ISR reads and
+# Supabase egress. We keep the citation-delivering bots (GPTBot, Perplexity,
+# Claude, Google, Bing) but slow them down, and fully disallow the no-value
+# scrapers (CCBot, Amazonbot, YouBot, PhindBot — see disallow block below).
+# Original note: Crawl-delay added 2026-05-06 after PerplexityBot blitz
+# (~60K hits / 13d) blew Supabase free-tier egress (5 GB → 32 GB). GPTBot and
+# Googlebot ignore the directive (self-regulated via their consoles).
 User-agent: GPTBot
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 20
 
 User-agent: ChatGPT-User
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 20
 
 User-agent: PerplexityBot
 Allow: /
@@ -30,42 +34,38 @@ Crawl-delay: 30
 
 User-agent: ClaudeBot
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 20
 
 User-agent: anthropic-ai
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 20
 
 User-agent: Claude-Web
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 20
 
 User-agent: Google-Extended
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 20
 
 User-agent: CCBot
-Allow: /
-Crawl-delay: 30
+Disallow: /
 
 User-agent: Amazonbot
-Allow: /
-Crawl-delay: 10
+Disallow: /
 
 User-agent: YouBot
-Allow: /
-Crawl-delay: 30
+Disallow: /
 
 User-agent: PhindBot
-Allow: /
-Crawl-delay: 10
+Disallow: /
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 5
+Crawl-delay: 10
 
 # Bulk scrapers without attribution — disallowed
 User-agent: Bytespider

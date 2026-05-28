@@ -12,7 +12,7 @@ import { currentMonthIST, currentMonthLongIST } from "@itp/shared";
 // 1-hour ISR window so the month rollover flips within ~1h after IST
 // midnight instead of up to ~24h. Combined with IST-aware currentMonth
 // below, May 1 visitors see May content within the first hour.
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

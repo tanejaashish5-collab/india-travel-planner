@@ -7,7 +7,7 @@ import { currentMonthLongIST } from "@itp/shared";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 const SITE = "https://www.nakshiq.com";
 
