@@ -2,19 +2,23 @@
 
 import { useEffect, useRef, useState } from "react";
 import { KEY_EVENTS, track } from "@/lib/analytics";
+import { addSaved, isSaved } from "@/lib/saved-destinations";
 
 // Mid-page conversion hook for /destination/[id]/[month] and /destination/[id].
 // Renders nothing if no peak month is supplied (parent decides — peak month
 // resolution happens server-side via getPeakMonth() to avoid client lying).
-// Pattern mirrors CinematicNewsletter — single-line editorial form, vermillion
-// kicker, Fraunces italic headline, monospace caption — but adds a vermillion
-// outline card so it reads as a distinct interactive moment, not a coda.
+//
+// 2026-05-28 rewrite: was an email-capture form that drew 0 conversions on
+// 190+/day views for a week. Root cause was structural, not copy — the page
+// already answers "when do I go", so an email ask for a redundant future
+// reminder had no value. AND the high-traffic month pages had no save button
+// at all, starving the existing save→email funnel (SaveListEmailPrompt fires
+// at 2 saves but nobody could save from these pages). This now offers the
+// natural one-tap action — SAVE the destination — which feeds that funnel.
 //
 // Fires:
 //   - destination_alert_view  (once per session, on IntersectionObserver hit)
-//   - destination_alert_attempt (on submit)
-//   - destination_alert_success (on 200 response)
-// All gated by isLikelyBot() inside track() — no contribution to bot inflation.
+//   - save_destination        (on save tap; surface="peak-alert-hook")
 
 export type PeakAlertHookLocale = "en" | "hi";
 
@@ -35,35 +39,24 @@ interface Props {
 const COPY = {
   en: {
     kicker: (m: string) => `PEAK ALERT · ${m.toUpperCase()}`,
-    placeholder: "your.email@example.com",
-    submit: "Remind me →",
-    submitting: "Sending…",
-    success: (d: string) =>
-      `✓ Almost there — open the email we just sent and tap confirm. We'll alert you before ${d} peaks once you do.`,
-    errorInvalid: "Enter a valid email.",
-    errorLimit: "You're at the 10-alert limit. Manage your alerts.",
-    errorGeneric: "Something went wrong. Try again.",
-    errorNetwork: "Network error. Try again.",
+    save: (d: string) => `Save ${d}`,
+    saved: "✓ Saved to your shortlist",
+    savedHint:
+      "Save a couple and we'll offer to email you the list — with a heads-up before each place peaks.",
   },
   hi: {
     kicker: (m: string) => `पीक अलर्ट · ${m.toUpperCase()}`,
-    placeholder: "your.email@example.com",
-    submit: "याद दिलाएँ →",
-    submitting: "भेजा जा रहा है…",
-    success: (d: string) =>
-      `✓ बस एक कदम बाकी — हमने जो ईमेल भेजा है उसे खोलें और पुष्टि करें। पुष्टि के बाद ही हम ${d} के पीक से पहले आपको सूचित करेंगे।`,
-    errorInvalid: "वैध ईमेल दर्ज करें।",
-    errorLimit: "आप 10-अलर्ट सीमा पर हैं। अपने अलर्ट प्रबंधित करें।",
-    errorGeneric: "कुछ गलत हुआ। फिर कोशिश करें।",
-    errorNetwork: "नेटवर्क त्रुटि। फिर कोशिश करें।",
+    save: (d: string) => `${d} सहेजें`,
+    saved: "✓ आपकी सूची में सहेजा गया",
+    savedHint:
+      "कुछ जगहें सहेजें और हम आपकी सूची ईमेल करने की पेशकश करेंगे — हर जगह के पीक से पहले हेड्स-अप के साथ।",
   },
 } as const;
 
-// Contextual headline + subhead. 2026-05-22 rewrite — the prior generic
-// copy ("We'll tell you when X is actually worth it") drew 0 conversions
-// on 94 views. New logic: when the reader is on an off-month page (score
-// ≤ 3), lead with the month-gap — that's the exact moment the offer answers
-// a question the page just raised ("ok, so WHEN should I go?").
+// Contextual headline + subhead. When the reader is on an off-month page
+// (score ≤ 3), lead with the month-gap — the exact moment the offer answers
+// the question the page just raised ("ok, so WHEN should I go?"). Both
+// variants now point at the SAVE action, not an email.
 function buildPitch(
   locale: PeakAlertHookLocale,
   dest: string,
@@ -82,23 +75,23 @@ function buildPitch(
     if (isOffMonth) {
       return {
         headline: `${currentMonthName} ${dest} का सही महीना नहीं है। ${peakMonth} है।`,
-        subhead: `${dest} के पीक से क़रीब तीन हफ़्ते पहले एक ईमेल — ताकि आप सही समय पर जाएँ, इस महीने नहीं।`,
+        subhead: `इसे अपनी सूची में सहेजें ताकि आप सही समय पर जाएँ — ${peakMonth} में, इस महीने नहीं।`,
       };
     }
     return {
-      headline: `${dest} किस महीने जाने लायक है, हम बताएंगे।`,
-      subhead: `${peakMonth} में ${dest} के पीक से क़रीब तीन हफ़्ते पहले एक ईमेल। बिना स्पैम, आसान अनसब्सक्राइब।`,
+      headline: `${dest} ${peakMonth} में सबसे अच्छा होता है।`,
+      subhead: `इसे अपनी सूची में सहेजें — हम ${peakMonth} के पीक से पहले आपकी मदद करेंगे।`,
     };
   }
   if (isOffMonth) {
     return {
       headline: `${currentMonthName} isn't the month for ${dest}. ${peakMonth} is.`,
-      subhead: `We'll send one email about three weeks before ${dest} peaks — so you book the right window, not this one.`,
+      subhead: `Save it to your shortlist so you plan the right window — ${peakMonth}, not ${currentMonthName}.`,
     };
   }
   return {
-    headline: `We'll tell you the month ${dest} is worth the trip.`,
-    subhead: `One email, about three weeks before ${dest} peaks in ${peakMonth}. No spam, easy unsubscribe.`,
+    headline: `${dest} is at its best in ${peakMonth}.`,
+    subhead: `Save it to your shortlist and we'll help you catch ${peakMonth} before it fills up.`,
   };
 }
 
@@ -112,14 +105,18 @@ export function PeakAlertHook({
   currentMonthName,
   currentScore,
 }: Props) {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [saved, setSaved] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const viewedRef = useRef(false);
   const t = COPY[locale];
   const pitch = buildPitch(locale, destinationName, peakMonthName, currentMonthName, currentScore);
   const analyticsSource = source ?? `dest-alert-${destinationId}-${peakMonthNum}`;
+
+  // Reflect existing saved state after mount (avoids SSR hydration mismatch —
+  // server + first client render both show the idle button).
+  useEffect(() => {
+    if (isSaved(destinationId)) setSaved(true);
+  }, [destinationId]);
 
   // Fire impression once per session when scrolled into view
   useEffect(() => {
@@ -152,50 +149,18 @@ export function PeakAlertHook({
     return () => io.disconnect();
   }, [destinationId, peakMonthNum, analyticsSource]);
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email || !email.includes("@")) {
-      setErrorMsg(t.errorInvalid);
-      setStatus("error");
-      return;
-    }
-    setStatus("loading");
-    setErrorMsg("");
-    track(KEY_EVENTS.DESTINATION_ALERT_ATTEMPT, {
-      source: analyticsSource,
+  function handleSave() {
+    if (saved) return;
+    addSaved(destinationId);
+    setSaved(true);
+    track(KEY_EVENTS.SAVE_DESTINATION, {
       destination: destinationId,
+      action: "add",
+      surface: "peak-alert-hook",
+      peak_month: peakMonthNum,
     });
-    try {
-      const res = await fetch("/api/destination-alerts/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: email.trim().toLowerCase(),
-          destination_id: destinationId,
-          source: analyticsSource,
-        }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        if (data?.error === "alert_limit_reached") setErrorMsg(t.errorLimit);
-        else setErrorMsg(data?.error || t.errorGeneric);
-        setStatus("error");
-        return;
-      }
-      track(KEY_EVENTS.DESTINATION_ALERT_SUCCESS, {
-        source: analyticsSource,
-        destination: destinationId,
-        already_subscribed: Boolean(data?.alreadySubscribed),
-      });
-      // Session flag suppresses the NewsletterStickyTray on same page-view
-      // (avoid double-asking back-to-back CTAs).
-      try { window.sessionStorage?.setItem("nq_alert_submitted", "1"); } catch { /* ignore */ }
-      setStatus("success");
-      setEmail("");
-    } catch {
-      setErrorMsg(t.errorNetwork);
-      setStatus("error");
-    }
+    // Note: deliberately NOT setting nq_alert_submitted — once the saved count
+    // crosses the threshold, SaveListEmailPrompt SHOULD fire to capture email.
   }
 
   return (
@@ -247,90 +212,52 @@ export function PeakAlertHook({
         {pitch.subhead}
       </p>
 
-      {status === "success" ? (
+      {saved ? (
         <p
           className="nq-mono"
           style={{
             fontSize: 11,
-            letterSpacing: "0.18em",
+            letterSpacing: "0.16em",
             textTransform: "uppercase",
             color: "var(--vermillion, #E55642)",
             margin: 0,
+            lineHeight: 1.6,
           }}
         >
-          {t.success(destinationName)}
-        </p>
-      ) : (
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 0,
-            borderBottom: "1px solid var(--hair, rgba(14, 14, 14, 0.2))",
-            transition: "border-color 200ms ease",
-          }}
-        >
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(ev) => {
-              setEmail(ev.target.value);
-              if (status === "error") {
-                setStatus("idle");
-                setErrorMsg("");
-              }
-            }}
-            placeholder={t.placeholder}
-            aria-label="Email address"
+          {t.saved}
+          <span
             style={{
-              flex: 1,
-              background: "transparent",
-              border: "none",
-              outline: "none",
-              color: "var(--ink, #0e0e0e)",
-              fontFamily: "var(--cinema-mono, ui-monospace, monospace)",
-              fontSize: 13,
-              letterSpacing: "0.04em",
-              padding: "12px 0",
-              minWidth: 0,
-            }}
-          />
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="nq-mono"
-            style={{
-              background: "transparent",
-              border: "none",
-              color: "var(--vermillion, #E55642)",
-              fontSize: 11,
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              padding: "12px 4px 12px 14px",
-              cursor: status === "loading" ? "wait" : "pointer",
-              opacity: status === "loading" ? 0.6 : 1,
-              fontWeight: 600,
+              display: "block",
+              marginTop: 6,
+              letterSpacing: "0.02em",
+              textTransform: "none",
+              color: "var(--ink-soft, #555)",
+              fontSize: 12,
             }}
           >
-            {status === "loading" ? t.submitting : t.submit}
-          </button>
-        </form>
-      )}
-      {status === "error" && errorMsg && (
-        <p
+            {t.savedHint}
+          </span>
+        </p>
+      ) : (
+        <button
+          type="button"
+          onClick={handleSave}
           className="nq-mono"
           style={{
-            marginTop: 8,
-            fontSize: 10,
+            background: "var(--vermillion, #E55642)",
+            border: "1px solid var(--vermillion, #E55642)",
+            color: "#fff",
+            fontSize: 12,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "var(--vermillion, #E55642)",
+            fontWeight: 600,
+            padding: "12px 22px",
+            borderRadius: 2,
+            cursor: "pointer",
           }}
         >
-          {errorMsg}
-        </p>
+          {t.save(destinationName)}
+        </button>
       )}
     </div>
   );
