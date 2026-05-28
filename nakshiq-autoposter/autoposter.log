@@ -460,3 +460,29 @@ Date range: 2026-04-15 → 2026-05-26
 2026-05-27 20:35:03  INFO      
 Date range: 2026-04-15 → 2026-05-27
 2026-05-27 20:35:03  INFO      ════════════════════════════════════════════════════════════
+2026-05-28 07:07:55  INFO      ════════════════════════════════════════════════════════════
+2026-05-28 07:07:55  INFO      Nakshiq Autoposter · MORNING · 2026-05-28 · weekday=3
+2026-05-28 07:07:55  INFO      ════════════════════════════════════════════════════════════
+2026-05-28 07:07:55  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-28 07:08:23  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=525
+2026-05-28 07:08:23  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-28 07:08:24  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-28 07:08:26  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+10 more)
+2026-05-28 07:08:26  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-28 07:08:38  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-28 07:08:38  INFO      Morning format (themed-week-4→discovery): v2_route_animated_map [70% vs target 20%] (0/14 never featured)
+2026-05-28 07:08:38  INFO      Formats — IG: v2_route_animated_map  ·  FB: v2_route_animated_map  ·  Story: score_card
+2026-05-28 07:08:38  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 39
+2026-05-28 07:08:38  INFO      Fingerprint dedup snapshot — 43 dests in 7d · 52 (dest,fmt) pairs in 30d · 46 media in 60d
+2026-05-28 07:08:40  INFO      Shared best destination locked: Har Ki Doon
+2026-05-28 07:08:40  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-28 07:08:40  INFO      [instagram/nakshiq] Generating v2_route_animated_map post...
+2026-05-28 07:08:53  INFO      [csv_formats] endpoint-anchored: v2_route_animated_map → routes (23 candidates)
+2026-05-28 07:08:53  INFO      v2_route_animated_map: no endpoint candidate passed eligibility — SKIPPING
+2026-05-28 07:08:53  WARNING   [instagram/nakshiq] No content generated — skipping.
+2026-05-28 07:08:53  INFO      [facebook/Nakshiq] Generating v2_route_animated_map post...
+2026-05-28 07:09:06  INFO      [csv_formats] endpoint-anchored: v2_route_animated_map → routes (23 candidates)
+2026-05-28 07:09:06  INFO      v2_route_animated_map: no endpoint candidate passed eligibility — SKIPPING
+2026-05-28 07:09:06  WARNING   [facebook/Nakshiq] No content generated — skipping.
+2026-05-28 07:09:06  INFO      State saved. Run complete.
+2026-05-28 07:09:06  INFO      ════════════════════════════════════════════════════════════
