@@ -394,7 +394,7 @@ async function getMonthData(id: string, month: string) {
     supabase
       .from("destinations")
       .select(`
-        id, name, tagline, translations, difficulty, elevation_m, budget_tier, best_months, content_reviewed_at,
+        id, name, tagline, translations, difficulty, elevation_m, budget_tier, best_months, crowd_calendar, content_reviewed_at,
         state:states(id, name),
         kids_friendly(*),
         confidence_cards(*),

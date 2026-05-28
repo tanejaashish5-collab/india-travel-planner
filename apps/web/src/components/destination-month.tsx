@@ -215,6 +215,28 @@ export function DestinationMonth({
             </p>
           )}
 
+          {/* Peak-crowd caveat — the score rates conditions, not crowd. When THIS
+              month is in the destination's verified peak_months, flag it so a high
+              score never reads as "empty and perfect". Mirrors the cinematic hub
+              caveat; shows nothing when we lack crowd data (honest scarcity). */}
+          {(() => {
+            const cal = (destination as any).crowd_calendar;
+            const isPeak =
+              cal && typeof cal === "object" && Array.isArray(cal.peak_months) &&
+              cal.peak_months.includes(monthNum);
+            if (!isPeak) return null;
+            return (
+              <div className="mt-6 max-w-prose rounded-xl border border-[#E55642]/40 bg-[#E55642]/10 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#E55642]">
+                  Peak crowds
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-white/85">
+                  {`${monthName} is one of ${destination.name}'s busiest months. The score rates conditions — weather, access, value — not how many people you'll share them with.${cal.note ? ` ${cal.note}` : ""}`}
+                </p>
+              </div>
+            );
+          })()}
+
           {/* Meta chips */}
           <div className="mt-6 flex flex-wrap gap-2">
             {destination.elevation_m && (
