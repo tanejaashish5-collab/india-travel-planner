@@ -89,6 +89,25 @@ export default function middleware(request: NextRequest) {
     logBotVisit(request, bot);
   }
 
+  // Destination dedupe 2026-05-28 — `ziro` was a thin duplicate of `ziro-valley`
+  // (same Apatani valley, Arunachal). `ziro` had zero destination_months rows so
+  // its month pages rendered empty; canonical retained is ziro-valley (tier A,
+  // full 12-month scoring, music-festival + paddy POIs). Trek + unique POI were
+  // repointed; this 301s every ziro URL (bare or month sub-route) → ziro-valley.
+  // Must run BEFORE the known-slug 404 check below, since `ziro` is no longer in
+  // the allowlist. `ziro-valley` is safe — the regex stops at `ziro` + `/` or end.
+  const ziroMatch = request.nextUrl.pathname.match(
+    /^(?:\/(en|hi))?\/destination\/ziro(?:\/([^/]+))?\/?$/,
+  );
+  if (ziroMatch) {
+    const locale = ziroMatch[1] ?? "en";
+    const month = ziroMatch[2] ? `/${ziroMatch[2]}` : "";
+    return NextResponse.redirect(
+      new URL(`/${locale}/destination/ziro-valley${month}`, request.url),
+      301,
+    );
+  }
+
   // Closes NEW-2026-05-04-004 + NEW-2026-05-04-006 — soft-404 family.
   //
   // /(en|hi)/destination/<slug> with an unknown slug previously hit the
