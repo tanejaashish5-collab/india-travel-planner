@@ -4550,7 +4550,55 @@
           "posted_url": ""
         }
       ]
+    },
+    {
+      "post_id": "IwkHX",
+      "created_at": "2026-05-28T17:51:01.880Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "failed",
+          "error": "Error publishing post to Facebook: Failed to publish Facebook multi-photo post: 500 - Please reduce the amount of data you're asking for, then retry your request",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "4RsDi",
+      "created_at": "2026-05-28T17:50:22.637Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "J1ap3",
+      "created_at": "2026-05-28T17:49:32.169Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
     }
   ],
-  "last_sync": "2026-05-27T20:35:03.393074"
+  "last_sync": "2026-05-28T20:41:04.133195"
 }
