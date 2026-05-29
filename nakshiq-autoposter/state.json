@@ -1,11 +1,6 @@
 {
   "yt_short_formats_used": [
-    "did_you_know",
-    "dont_go_here",
-    "mini_guide",
-    "this_vs_that",
-    "listicle",
-    "before_after"
+    "dont_go_here"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -13,17 +8,19 @@
     "px_indian_bg",
     "px_bollywood_pop",
     "15_coastal_vibes",
-    "px_landlady_chill"
+    "px_landlady_chill",
+    "px_ambient_bg"
   ],
   "posted_today": {
     "m8EAd": "2026-05-29",
     "PdMu0": "2026-05-29",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-28",
     "PdMu0_evening": "2026-05-28",
     "m8EAd_evening_story": "2026-05-28",
-    "m8EAd_story": "2026-05-29"
+    "m8EAd_story": "2026-05-29",
+    "GAh5p_yt_short": "2026-05-29"
   },
   "last_sync": "2026-05-29T07:09:47.023858+00:00",
   "posted_destinations": [
@@ -1424,17 +1421,6 @@
       "media_id": "v3_tl_world_best_india-ooty.png"
     },
     {
-      "timestamp": "2026-05-29T07:10:50.051639+00:00",
-      "date": "2026-05-29",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "Ai9I7",
-      "destination": "har-ki-doon",
-      "format": "infrastructure_truth",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
       "timestamp": "2026-05-29T07:11:10.081611+00:00",
       "date": "2026-05-29",
       "platform": "facebook",
@@ -1444,6 +1430,24 @@
       "format": "v3_tl_world_best_india",
       "has_media": true,
       "media_id": "v3_tl_world_best_india-munsiyari.png"
+    },
+    {
+      "timestamp": "2026-05-29T08:15:45.065435+00:00",
+      "date": "2026-05-29",
+      "platform": "youtube",
+      "post_id": "gkYgx",
+      "destination": null,
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-29.mp4"
+    },
+    {
+      "timestamp": "2026-05-29T08:16:35.951582+00:00",
+      "date": "2026-05-29",
+      "platform": "instagram",
+      "post_id": "OJsgv",
+      "destination": null,
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-29.mp4"
     }
   ],
   "theme_usage": {
