@@ -1,7 +1,8 @@
 {
   "yt_short_formats_used": [
     "dont_go_here",
-    "mini_guide"
+    "mini_guide",
+    "listicle"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -11,13 +12,14 @@
     "15_coastal_vibes",
     "px_landlady_chill",
     "px_ambient_bg",
-    "px_soulful_soft"
+    "px_soulful_soft",
+    "20_retro_drive"
   ],
   "posted_today": {
     "m8EAd": "2026-05-29",
     "PdMu0": "2026-05-29",
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 1,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-28",
     "PdMu0_evening": "2026-05-28",
     "m8EAd_evening_story": "2026-05-28",
@@ -93,6 +95,10 @@
     },
     {
       "destination_id": "khangchendzonga-np",
+      "date": "2026-05-29"
+    },
+    {
+      "destination_id": "tirthan-valley",
       "date": "2026-05-29"
     }
   ],
@@ -1473,6 +1479,15 @@
       "destination": "khangchendzonga-np",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-29.mp4"
+    },
+    {
+      "timestamp": "2026-05-29T14:27:01.680847+00:00",
+      "date": "2026-05-29",
+      "platform": "instagram",
+      "post_id": "H7dB5",
+      "destination": "tirthan-valley",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-29.mp4"
     }
   ],
   "theme_usage": {

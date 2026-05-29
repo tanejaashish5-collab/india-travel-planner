@@ -740,3 +740,23 @@ Date range: 2026-04-15 → 2026-05-28
 2026-05-29 13:50:49  INFO      YT Short posted: format=mini_guide, music=px_soulful_soft
 2026-05-29 13:50:49  INFO      State saved. YT Short run complete.
 2026-05-29 13:50:49  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 14:24:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 14:24:37  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-29
+2026-05-29 14:24:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 14:24:37  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-29 14:24:37  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-29 14:26:25  INFO      Short rendered: yt_short_listicle_2026-05-29.mp4 (28118 KB, 35.0s, fmt=listicle, music=20_retro_drive)
+2026-05-29 14:26:25  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-29.mp4 (28,793,769 bytes, video/mp4)
+2026-05-29 14:26:26  INFO          Uploading to R2 (timeout=300s)...
+2026-05-29 14:26:28  INFO          R2 PUT OK. Confirming...
+2026-05-29 14:26:29  INFO          Media ready: djKaO (28,793,769 bytes · yt_short_listicle_yt_short_listicle_2026-05-29.mp4)
+2026-05-29 14:26:29  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-29.mp4
+2026-05-29 14:26:30  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-05-29 14:26:30  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-05-29 14:26:32  INFO      [instagram/nakshiq] Outstand accepted (post_id=H7dB5), waiting for platform confirmation...
+2026-05-29 14:27:01  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=H7dB5 · Platform=18216853354323521
+2026-05-29 14:27:01  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 147-148: surrogates not allowed
+2026-05-29 14:27:01  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-29 14:27:01  INFO      YT Short posted: format=listicle, music=20_retro_drive
+2026-05-29 14:27:01  INFO      State saved. YT Short run complete.
+2026-05-29 14:27:01  INFO      ════════════════════════════════════════════════════════════
