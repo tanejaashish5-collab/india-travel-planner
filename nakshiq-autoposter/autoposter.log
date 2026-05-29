@@ -760,3 +760,46 @@ Date range: 2026-04-15 → 2026-05-28
 2026-05-29 14:27:01  INFO      YT Short posted: format=listicle, music=20_retro_drive
 2026-05-29 14:27:01  INFO      State saved. YT Short run complete.
 2026-05-29 14:27:01  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 17:48:26  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 17:48:26  INFO      Nakshiq Autoposter · EVENING · 2026-05-29 · weekday=4
+2026-05-29 17:48:26  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 17:48:26  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-29 17:49:03  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=525
+2026-05-29 17:49:03  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-29 17:49:04  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-29 17:49:05  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-29 17:49:18  INFO      [evening] variety pick: v2_route_animated_map (33 CSV + 3 visual candidates)
+2026-05-29 17:49:18  INFO      Formats — IG: v2_route_animated_map  ·  FB: v2_route_animated_map  ·  Story: reality_check  ·  Audience: adventurers
+2026-05-29 17:49:18  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 44
+2026-05-29 17:49:18  INFO      Audience filter 'adventurers' → 12 destinations match.
+2026-05-29 17:49:18  INFO      Fingerprint dedup snapshot — 46 dests in 7d · 56 (dest,fmt) pairs in 30d · 53 media in 60d
+2026-05-29 17:49:19  INFO      Shared best destination locked: Gurudongmar Lake
+2026-05-29 17:49:19  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-29 17:49:19  INFO      [instagram/nakshiq] Generating v2_route_animated_map post...
+2026-05-29 17:49:32  INFO      [csv_formats] endpoint-anchored: v2_route_animated_map → routes (23 candidates)
+2026-05-29 17:49:32  WARNING   v2_route_animated_map: no endpoint candidate passed eligibility — falling back to safe format 'score_card'
+2026-05-29 17:49:32  INFO      [instagram/nakshiq] Caption ready (254 chars, dest=gurudongmar-lake)
+2026-05-29 17:49:32  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-29 17:49:32  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/gurudongmar-lake.mp4?v=20260524
+2026-05-29 17:49:35  INFO          Brand-stamp applied: gurudongmar-lake.mp4 (5,059,190 → 2,705,843 bytes)
+2026-05-29 17:49:35  INFO          Requesting upload URL for gurudongmar-lake.mp4 (2,705,843 bytes, video/mp4)
+2026-05-29 17:49:36  INFO          Uploading to R2 (timeout=300s)...
+2026-05-29 17:49:37  INFO          R2 PUT OK. Confirming...
+2026-05-29 17:49:38  INFO          Media ready: gJj0x (2,705,843 bytes · gurudongmar-lake.mp4)
+2026-05-29 17:49:38  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-29 17:50:17  INFO      [instagram/nakshiq] ✅ Published · Outstand=8ULjI · Platform=18068311268359344
+2026-05-29 17:50:17  INFO      [facebook/Nakshiq] Generating v2_route_animated_map post...
+2026-05-29 17:50:32  INFO      [csv_formats] endpoint-anchored: v2_route_animated_map → routes (23 candidates)
+2026-05-29 17:50:32  WARNING   v2_route_animated_map: no endpoint candidate passed eligibility — falling back to safe format 'score_card'
+2026-05-29 17:50:32  INFO      [facebook/Nakshiq] Caption ready (424 chars, dest=gurudongmar-lake)
+2026-05-29 17:50:32  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-29 17:50:32  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/gurudongmar-lake.mp4?v=20260524
+2026-05-29 17:50:34  INFO          Brand-stamp applied: gurudongmar-lake.mp4 (5,059,190 → 2,705,843 bytes)
+2026-05-29 17:50:34  INFO          Requesting upload URL for gurudongmar-lake.mp4 (2,705,843 bytes, video/mp4)
+2026-05-29 17:50:35  INFO          Uploading to R2 (timeout=300s)...
+2026-05-29 17:50:37  INFO          R2 PUT OK. Confirming...
+2026-05-29 17:50:38  INFO          Media ready: bfqpT (2,705,843 bytes · gurudongmar-lake.mp4)
+2026-05-29 17:50:38  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-29 17:50:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=E4SlA · Platform=27368697086079848
+2026-05-29 17:50:52  INFO      State saved. Run complete.
+2026-05-29 17:50:52  INFO      ════════════════════════════════════════════════════════════
