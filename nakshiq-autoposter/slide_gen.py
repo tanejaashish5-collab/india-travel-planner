@@ -949,6 +949,34 @@ def _looks_like_stat(value: str) -> bool:
     return len(v.split()) <= 3
 
 
+def _lead(text: str, max_chars: int = 150) -> str:
+    """First 1-2 complete sentences of `text`, up to ~max_chars, always broken
+    at a sentence boundary so a carousel body slide stays punchy instead of a
+    6-line wall (2026-05-29). The full text still lives in the post caption, so
+    nothing is lost — the slide is the hook, the caption is the read-more.
+    Returns text unchanged when it's already short; if there's no early sentence
+    break, returns the whole thing and lets the renderer shrink-fit it."""
+    import re
+    t = " ".join((text or "").split())
+    if len(t) <= max_chars:
+        return t
+    sentences = re.findall(r"[^.!?]*[.!?]", t)
+    if not sentences:
+        return t
+    out = ""
+    for s in sentences:
+        s = s.strip()
+        if not s:
+            continue
+        if not out:
+            out = s                      # always keep at least the first sentence
+        elif len(out) + 1 + len(s) <= max_chars:
+            out = f"{out} {s}"
+        else:
+            break
+    return out or t
+
+
 def _format_pillar(spec) -> str:
     pillar_map = {
         "intelligence": "INTELLIGENCE",
@@ -1181,9 +1209,10 @@ def build_csv_carousel(spec, dest: dict, extras: dict | None = None,
         if sep and value and _looks_like_stat(value):
             img = render_overlay_fact_slide(eyebrow, label.strip(), value, "", dest)
         elif sep and value:
-            img = render_overlay_editorial_slide(eyebrow, label.strip(), value, dest)
+            # Slide shows a punchy lead; the full prose stays in the caption.
+            img = render_overlay_editorial_slide(eyebrow, label.strip(), _lead(value), dest)
         else:
-            img = render_overlay_editorial_slide(eyebrow, "", seg.strip(), dest)
+            img = render_overlay_editorial_slide(eyebrow, "", _lead(seg.strip()), dest)
         p = out_dir / f"{fid}-{slug}_{i:02d}.png"
         img.save(p, "PNG", optimize=True)
         paths.append(p)
