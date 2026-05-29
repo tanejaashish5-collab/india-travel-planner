@@ -1680,12 +1680,20 @@ def _available_csv_yt_formats() -> list[str]:
     """CSV-defined yt_short formats (v2_yt_*, etc.) that have at least one
     .mp4 asset in social_image_library/. Asset presence is the opt-in — a
     format with no rendered video stays out of the rotation automatically.
+
+    2026-05-29: denylisted assets (e.g. the 4 Veo-watermarked v2_yt_silent_pov
+    clips) do NOT count toward opt-in. A format whose every .mp4 is quarantined
+    is a zombie — it would enter rotation but _build_csv_yt_short can never
+    materialise it, returning None and (since None doesn't mark the format used)
+    re-picking it every run. That caused the 3× "returned None" failures on
+    2026-05-28. Mirror the denylist filter from csv_format_loader._find_matching_asset.
     """
     if not SOCIAL_IMAGE_LIBRARY.exists():
         return []
     try:
         import csv_format_loader as _cfl
         specs = _cfl.load_all_formats()
+        denylist = getattr(_cfl, "_ASSET_DENYLIST", frozenset())
     except Exception as e:
         print(f"[csv_yt] loader unavailable: {e}")
         return []
@@ -1693,8 +1701,12 @@ def _available_csv_yt_formats() -> list[str]:
     for fid, spec in specs.items():
         if not getattr(spec, "is_yt_short", False):
             continue
-        if list(SOCIAL_IMAGE_LIBRARY.glob(f"{fid}-*.mp4")):
+        live_mp4s = [p for p in SOCIAL_IMAGE_LIBRARY.glob(f"{fid}-*.mp4")
+                     if p.name not in denylist and p.stat().st_size > 0]
+        if live_mp4s:
             out.append(fid)
+        elif list(SOCIAL_IMAGE_LIBRARY.glob(f"{fid}-*.mp4")):
+            print(f"[csv_yt] {fid}: all .mp4 assets denylisted/empty — excluded from rotation")
     return out
 
 
@@ -1836,7 +1848,15 @@ def build_yt_short(
     # social_image_library/ — no music, no segment building. Branch out
     # before the native build pipeline.
     if fmt not in YT_SHORT_FORMATS:
-        return _build_csv_yt_short(fmt, destinations, st, dry_run, preview)
+        csv_result = _build_csv_yt_short(fmt, destinations, st, dry_run, preview)
+        if csv_result:
+            return csv_result
+        # 2026-05-29: a CSV format that can't materialise (every eligible dest
+        # deduped out this month, or assets quarantined) must NOT abort the whole
+        # YT-Short slot. Fall through to the native listicle pipeline so the slot
+        # still publishes a video rather than logging "returned None" and skipping.
+        print(f"[csv_yt] {fmt} produced nothing — falling back to native 'listicle'")
+        fmt = "listicle"
 
     # Pick music
     music = _pick_music(st)

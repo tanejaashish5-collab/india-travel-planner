@@ -4664,8 +4664,14 @@ def _article_image_dest(article: dict, dest_map: dict,
 # ─────────────────────────────────────────────────────────────────────────────
 
 def generate_post(fmt: str, content: dict, platform: str,
-                  used: set) -> tuple[str, dict | None]:
-    """Returns (caption, dest_obj | None). dest_obj carries image + video URLs."""
+                  used: set, *, _fallback_from: str | None = None) -> tuple[str, dict | None]:
+    """Returns (caption, dest_obj | None). dest_obj carries image + video URLs.
+
+    _fallback_from: set internally when an endpoint-anchored format wipes all its
+    candidates and we recurse into the safe destination-anchored format. Guards
+    against infinite recursion — a fallback that itself yields nothing returns
+    ("", None) rather than recursing again.
+    """
     destinations = content["destinations"].get("data", [])
     traps        = content["traps"].get("data", [])
     collections  = content.get("collections", {}).get("data", []) or []
@@ -5113,6 +5119,20 @@ def generate_post(fmt: str, content: dict, platform: str,
                 # Use the dest's Ken Burns clip as the asset.
                 out_dest["_csv_asset"] = "__DEST_VIDEO__"
                 return caption, out_dest
+            # 2026-05-29: an endpoint-anchored format (e.g. v2_route_animated_map)
+            # that wipes EVERY candidate must NOT silently skip both platforms —
+            # that cost the entire morning slot on 2026-05-28. Fall through to the
+            # safe destination-anchored 'score_card' (always eligible, full pool)
+            # so the slot still publishes. Guard prevents recursion if score_card
+            # itself somehow yields nothing.
+            if _fallback_from is None and fmt != "score_card":
+                log.warning(
+                    f"{fmt}: no endpoint candidate passed eligibility — "
+                    f"falling back to safe format 'score_card'"
+                )
+                return generate_post(
+                    "score_card", content, platform, used, _fallback_from=fmt
+                )
             log.info(f"{fmt}: no endpoint candidate passed eligibility — SKIPPING")
             return "", None
 
@@ -5277,9 +5297,17 @@ def generate_post(fmt: str, content: dict, platform: str,
                     out_dest["_csv_asset"] = str(asset)
                     out_dest["_csv_spec_id"] = spec.format_id
                 return caption, out_dest
-        # No dest passed eligibility — skip this format silently so picker
-        # falls through to v1 next time. (Picker shouldn't have surfaced
-        # this fmt if no dest was eligible, but defensive fallback.)
+        # No dest passed eligibility. 2026-05-29: same failure class as the
+        # endpoint-anchored wipe above — don't kill the whole slot. Fall through
+        # to the safe destination-anchored 'score_card' so the post still ships.
+        if _fallback_from is None and fmt != "score_card":
+            log.warning(
+                f"{fmt}: no eligible dest at render time — "
+                f"falling back to safe format 'score_card'"
+            )
+            return generate_post(
+                "score_card", content, platform, used, _fallback_from=fmt
+            )
         log.info(f"{fmt}: no eligible dest at render time — SKIPPING")
         return "", None
 
@@ -6196,13 +6224,17 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     return result
 
 
-def wait_for_publish(post_id: str, timeout: int = 40) -> dict | None:
+def wait_for_publish(post_id: str, timeout: int = 40, *, detail: bool = False):
     """Poll Outstand /v1/posts/{post_id} until the platform confirms or rejects.
 
-    Returns:
-      - dict  → platform confirmed `status="published"`
+    detail=False (default — back-compat for all legacy callers):
+      - dict  → platform confirmed `status="published"` (the acc dict)
       - None  → either a platform-side reject (acc.error present) OR the polls
                 exhausted without a definitive answer.
+
+    detail=True (carousel path — needs to distinguish reject from timeout so it
+    can retry FB multi-photo failures): always returns a dict with a `status`
+    key in {"published", "rejected", "timeout"}, plus `acc` and `error`.
 
     Phase B 2026-05-26: replaced the original blanket `except: pass` that
     silently swallowed network errors with categorized logging. Callers that
@@ -6219,10 +6251,10 @@ def wait_for_publish(post_id: str, timeout: int = 40) -> dict | None:
             post = outstand_get(f"/v1/posts/{post_id}").get("post", {})
             for acc in post.get("socialAccounts", []):
                 if acc.get("status") == "published":
-                    return acc
+                    return {"status": "published", "acc": acc, "error": None} if detail else acc
                 if acc.get("error"):
                     log.warning(f"    Platform error for post={post_id}: {acc['error']}")
-                    return None
+                    return {"status": "rejected", "acc": acc, "error": acc["error"]} if detail else None
         except Exception as e:
             last_exception = e
             log.warning(
@@ -6239,7 +6271,22 @@ def wait_for_publish(post_id: str, timeout: int = 40) -> dict | None:
             f"    wait_for_publish exhausted {polls_done} polls for post={post_id} "
             f"(no platform confirmation in {timeout}s) — caller will log as queued_unconfirmed"
         )
-    return None
+    return {"status": "timeout", "acc": None, "error": None} if detail else None
+
+
+def _is_fb_payload_overload_error(err) -> bool:
+    """True when a Facebook platform error is the multi-photo / request-size
+    rejection ('Please reduce the amount of data you're asking for') seen
+    2026-05-28 on a 5-slide v4_dw carousel. Used to trigger a single-image retry.
+    """
+    if not err:
+        return False
+    s = str(err).lower()
+    return (
+        "reduce the amount of data" in s
+        or "multi-photo" in s
+        or "multi photo" in s
+    )
 
 # ─────────────────────────────────────────────────────────────────────────────
 # MAIN RUN LOOP
@@ -7325,9 +7372,34 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         post_id = result.get("post", {}).get("id", "unknown")
 
         if not dry_run and post_id != "unknown":
-            confirmed = wait_for_publish(post_id)
-            if confirmed:
-                fb_id = confirmed.get("platformPostId", "—")
+            outcome = wait_for_publish(post_id, detail=True)
+            status  = outcome["status"]
+
+            # 2026-05-29: Facebook intermittently rejects multi-photo feed posts
+            # with Graph API 500 "Please reduce the amount of data you're asking
+            # for" (hit a 5-slide v4_dw carousel on 2026-05-28). Salvage the slot
+            # by re-posting to FB as a single cover image (slide 1) — FB reliably
+            # accepts single-image feed posts. IG keeps the full carousel.
+            if (status == "rejected" and is_carousel
+                    and platform == "facebook"
+                    and _is_fb_payload_overload_error(outcome.get("error"))
+                    and media_list):
+                log.warning(
+                    f"[{label}] FB rejected {len(media_list)}-slide carousel "
+                    f"({outcome.get('error')}) — retrying as single cover image."
+                )
+                retry = publish_feed_post(
+                    caption, account, media_list[0], dry_run=dry_run,
+                    dest_id=dest_id, fmt=fmt, utm_content=run_utm_content,
+                )
+                retry_id = (retry or {}).get("post", {}).get("id") if retry else None
+                if retry_id:
+                    post_id = retry_id
+                    outcome = wait_for_publish(post_id, detail=True)
+                    status  = outcome["status"]
+
+            if status == "published":
+                fb_id = (outcome.get("acc") or {}).get("platformPostId", "—")
                 log.info(f"[{label}] ✅ Published · Outstand={post_id} · Platform={fb_id}")
             else:
                 # Phase B 2026-05-26: write a structured outcome row so the
@@ -7336,17 +7408,18 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 # status=published). Without this, ghost posts only show up
                 # in post_log.jsonl with no signal that they may not have
                 # actually shipped.
-                log.warning(f"[{label}] ⚠️  Queued unconfirmed (ID={post_id})")
+                _qu_status = "rejected" if status == "rejected" else "queued_unconfirmed"
+                log.warning(f"[{label}] ⚠️  {_qu_status.replace('_', ' ').title()} (ID={post_id})")
                 try:
                     _qu_cta = _extract_caption_url(caption)
                     _log_post_outcome(
                         post_id=post_id, dest_id=dest_id, fmt=fmt, media_id=None,
                         account=account, caption=caption, cta_url=_qu_cta,
                         utm_content=run_utm_content,
-                        status="queued_unconfirmed",
+                        status=_qu_status,
                     )
                 except Exception as _e:
-                    log.warning(f"[{label}] Could not log queued_unconfirmed outcome: {_e}")
+                    log.warning(f"[{label}] Could not log {_qu_status} outcome: {_e}")
         else:
             log.info(f"[{label}] ✅ Submitted (post_id={post_id})")
 

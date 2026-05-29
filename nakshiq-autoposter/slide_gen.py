@@ -488,9 +488,28 @@ def _bottom_gradient(im: Image.Image, height_pct: float = 0.55,
     im.paste(dark, (0, h - band_h), grad)
 
 
+def _top_gradient(im: Image.Image, height_pct: float = 0.22,
+                  alpha_max: int = 150) -> None:
+    """Paint a top-down dark scrim so the top-left wordmark/eyebrow reads on
+    bright skies (the bottom gradient only covers the lower portion). 2026-05-29:
+    added after the Leh carousel showed the NAKSHIQ wordmark washed out against
+    a bright cloud sky. In-place mutate."""
+    w, h = im.size
+    band_h = int(h * height_pct)
+    grad = Image.new("L", (1, band_h))
+    for y in range(band_h):
+        pct = y / max(1, band_h - 1)         # 0 at very top, 1 at band bottom
+        grad.putpixel((0, y), int(alpha_max * ((1 - pct) ** 1.4)))  # darkest at top
+    grad = grad.resize((w, band_h))
+    dark = Image.new("RGB", (w, band_h), INK_DEEP)
+    im.paste(dark, (0, 0), grad)
+
+
 def _wrap_to_width(text: str, font: ImageFont.FreeTypeFont,
                    max_w: int, max_lines: int = 3) -> list[str]:
-    """Greedy word-wrap. Truncates to max_lines (last line ends with '…')."""
+    """Greedy word-wrap. Truncates to max_lines (last line ends with '…').
+    Truncation drops whole words first (word-safe); only chops mid-word as a
+    last resort when a single word alone overflows the line."""
     words = text.split()
     lines, cur = [], ""
     for w in words:
@@ -507,10 +526,40 @@ def _wrap_to_width(text: str, font: ImageFont.FreeTypeFont,
         lines.append(cur)
     if len(lines) >= max_lines:
         last = lines[-1]
+        # Word-safe: drop whole trailing words until "<words>…" fits. Only fall
+        # back to a mid-word character chop when a single word is itself too wide
+        # — that avoids the "feels lik…" mid-word cut seen on the Leh carousel.
+        parts = last.split()
+        while len(parts) > 1 and _text_width(" ".join(parts) + "…", font) > max_w:
+            parts.pop()
+        last = " ".join(parts)
         while last and _text_width(last + "…", font) > max_w:
             last = last[:-1]
         lines[-1] = (last or "").rstrip() + "…"
     return lines
+
+
+def _fit_wrapped(text: str, make_font, max_w: int, max_lines: int,
+                 start: int, floor: int, step: int = 6):
+    """Shrink the font from `start`pt down to `floor`pt until the FULL text
+    wraps within `max_lines` lines of width ≤ max_w, and return (font, lines).
+
+    2026-05-29: the old shrink loops only checked per-line width, but
+    _wrap_to_width always makes its '…' fit the width — so an over-long hook/
+    body never triggered a shrink, it just got truncated mid-thought (the
+    'the detail…' / 'Mall…' cuts). This fits-by-shrinking instead, and only
+    falls back to a word-safe ellipsis at the floor when the text genuinely
+    can't fit even at the smallest size."""
+    size = start
+    while size > floor:
+        font = make_font(size)
+        full = _wrap_to_width(text, font, max_w, max_lines=999)  # no truncation
+        widest = max((_text_width(l, font) for l in full), default=0)
+        if len(full) <= max_lines and widest <= max_w:
+            return font, full
+        size -= step
+    font = make_font(floor)
+    return font, _wrap_to_width(text, font, max_w, max_lines=max_lines)
 
 
 def _draw_wrapped(draw: ImageDraw.ImageDraw, lines: list[str],
@@ -571,6 +620,7 @@ def render_overlay_single(eyebrow: str, headline: str, body: str,
     w, h = CSV_PORTRAIT_W, CSV_PORTRAIT_H
     img = _fetch_hero(dest, w, h)
     _bottom_gradient(img, height_pct=0.62, alpha_max=215)
+    _top_gradient(img)
     draw = ImageDraw.Draw(img)
 
     # EYEBROW at top-left (Instrument tracked, Bone)
@@ -624,6 +674,7 @@ def render_overlay_title_slide(eyebrow: str, title: str, kicker: str = "",
     w, h = CSV_PORTRAIT_W, CSV_PORTRAIT_H
     img = _fetch_hero(dest or {}, w, h)
     _bottom_gradient(img, height_pct=0.70, alpha_max=210)
+    _top_gradient(img)
     draw = ImageDraw.Draw(img)
 
     # EYEBROW
@@ -631,16 +682,14 @@ def render_overlay_title_slide(eyebrow: str, title: str, kicker: str = "",
     _draw_tracked(draw, (60, 60), eyebrow.upper(), eye_font, BONE_DIM, 0.30)
     _hairline(draw, 60, 60 + 40, 60 + 64, VERMILLION_BRIGHT, 2)
 
-    # TITLE — auto-shrink, max 3 lines (script-aware font picker)
-    title_size = 124
-    title_font = _display_font(title_size, title, bold=True)
+    # TITLE — shrink-to-fit the FULL hook (up to 4 lines, 124→56pt) so short
+    # editorial hooks like "…the detail brochures skip." render in full instead
+    # of being truncated to "the detail…". (script-aware font picker)
     max_w = w - 120
-    lines = _wrap_to_width(title, title_font, max_w, max_lines=3)
-    while (max((_text_width(l, title_font) for l in lines), default=0) > max_w
-           and title_size > 64):
-        title_size -= 8
-        title_font = _display_font(title_size, title, bold=True)
-        lines = _wrap_to_width(title, title_font, max_w, max_lines=3)
+    title_font, lines = _fit_wrapped(
+        title, lambda s: _display_font(s, title, bold=True),
+        max_w, max_lines=4, start=124, floor=56,
+    )
     block_h = int(title_font.size * 1.10) * len(lines)
     top_y = h - 280 - block_h
     y = _draw_wrapped(draw, lines, 60, top_y, title_font, BONE, 1.10)
@@ -666,6 +715,7 @@ def render_overlay_fact_slide(eyebrow: str, fact_label: str, fact_value: str,
     w, h = CSV_PORTRAIT_W, CSV_PORTRAIT_H
     img = _fetch_hero(dest, w, h)
     _bottom_gradient(img, height_pct=0.65, alpha_max=215)
+    _top_gradient(img)
     draw = ImageDraw.Draw(img)
 
     eye_font = _instrument(20)
@@ -694,6 +744,54 @@ def render_overlay_fact_slide(eyebrow: str, fact_label: str, fact_value: str,
     _draw_wrapped(draw, body_lines, 60,
                   val_y + int(val_font.size * 1.05) + 60,
                   body_font, BONE, 1.20)
+
+    _footer_band(img, dest)
+    return img
+
+
+def render_overlay_editorial_slide(eyebrow: str, label: str, value: str,
+                                   dest: dict) -> Image.Image:
+    """1080×1350 carousel body slide for PROSE (not a stat). Small tracked label
+    on top + the full value as readable, shrink-to-fit editorial text. No hard
+    truncation — added 2026-05-29 so caption paragraphs like "The detail you'd
+    miss: …" render in full instead of being chopped to "…The…" or jammed into
+    the big-number fact renderer."""
+    w, h = CSV_PORTRAIT_W, CSV_PORTRAIT_H
+    img = _fetch_hero(dest, w, h)
+    _bottom_gradient(img, height_pct=0.72, alpha_max=220)
+    _top_gradient(img)
+    draw = ImageDraw.Draw(img)
+
+    # EYEBROW top-left
+    eye_font = _instrument(22)
+    _draw_tracked(draw, (60, 56), eyebrow.upper(), eye_font, BONE_DIM, 0.30)
+    _hairline(draw, 60, 56 + 38, 60 + 60, VERMILLION_BRIGHT, 2)
+
+    max_w = w - 120
+    footer_buffer = 130
+
+    # VALUE — shrink-to-fit the full prose (up to 7 lines, 54→30pt).
+    value_font, value_lines = _fit_wrapped(
+        value, lambda s: _display_font(s, value, bold=True),
+        max_w, max_lines=7, start=54, floor=30,
+    )
+    value_block_h = int(value_font.size * 1.28) * len(value_lines)
+
+    # LABEL — small tracked kicker above the value (e.g. "THE DETAIL YOU'D MISS")
+    label_h = 0
+    label_font = _instrument(24)
+    if label:
+        label_h = 36 + 18   # label line + gap
+
+    total_block = label_h + value_block_h
+    top_y = h - footer_buffer - total_block
+
+    y = top_y
+    if label:
+        _draw_tracked(draw, (60, y), label.upper(), label_font,
+                      VERMILLION_BRIGHT, 0.22)
+        y += label_h
+    _draw_wrapped(draw, value_lines, 60, y, value_font, BONE, 1.28)
 
     _footer_band(img, dest)
     return img
@@ -834,6 +932,21 @@ def _truncate(text: str, n: int) -> str:
         return ""
     text = " ".join(text.split())   # collapse whitespace
     return text if len(text) <= n else (text[:n - 1].rsplit(" ", 1)[0] + "…")
+
+
+def _looks_like_stat(value: str) -> bool:
+    """True when a 'Label: value' value is a genuine short stat that belongs on
+    the big-number (JetBrains Mono) fact slide — a number/score/measure, e.g.
+    '4/5', '₹500–800', '3200 m', '6 hrs'. Prose sentences (e.g. 'pretty visuals
+    only') return False so they go to the readable editorial slide instead.
+    Added 2026-05-29 after the Leh carousel rendered 'pretty visuals…' as a
+    giant truncated mono fragment."""
+    v = " ".join((value or "").split())
+    if not v or len(v) > 24:
+        return False
+    if not any(c.isdigit() for c in v):
+        return False
+    return len(v.split()) <= 3
 
 
 def _format_pillar(spec) -> str:
@@ -1057,23 +1170,20 @@ def build_csv_carousel(spec, dest: dict, extras: dict | None = None,
         body_segments = segments[:n_body] if segments else []
 
     for i, seg in enumerate(body_segments, start=2):
-        # If the segment looks like "Label: value" — render as fact slide.
-        if ":" in seg and len(seg) < 80:
-            label, _, value = seg.partition(":")
-            value = value.strip().rstrip(".")
-            if value:
-                img = render_overlay_fact_slide(
-                    eyebrow, label.strip(), _truncate(value, 18),
-                    "", dest,
-                )
-            else:
-                img = render_overlay_single(
-                    eyebrow, _truncate(seg, 90), "", dest, footer_meta="",
-                )
+        # Split "Label: value" segments. A genuine short stat (number/score/
+        # measure) goes to the big-number fact slide; prose goes to the readable
+        # editorial slide (full text, shrink-to-fit, no truncation). A line with
+        # no "Label:" prefix renders as label-less editorial prose. 2026-05-29:
+        # replaced the old `":" in seg and len<80` heuristic that mis-sent prose
+        # like "Most reels: pretty visuals only." to the mono fact renderer.
+        label, sep, value = seg.partition(":")
+        value = value.strip().rstrip(".") if sep else ""
+        if sep and value and _looks_like_stat(value):
+            img = render_overlay_fact_slide(eyebrow, label.strip(), value, "", dest)
+        elif sep and value:
+            img = render_overlay_editorial_slide(eyebrow, label.strip(), value, dest)
         else:
-            img = render_overlay_single(
-                eyebrow, _truncate(seg, 90), "", dest, footer_meta="",
-            )
+            img = render_overlay_editorial_slide(eyebrow, "", seg.strip(), dest)
         p = out_dir / f"{fid}-{slug}_{i:02d}.png"
         img.save(p, "PNG", optimize=True)
         paths.append(p)
