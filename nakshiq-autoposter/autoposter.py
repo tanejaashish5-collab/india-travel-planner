@@ -5146,9 +5146,45 @@ def generate_post(fmt: str, content: dict, platform: str,
             d for d in asset_backed_csv_dests(content)
             if d.get("id") not in _pool_ids and d.get("id") not in used
         ] + pool
+
+        # 2026-05-29 (P5 integrity gate): never render a stale or low-month
+        # score/note. asset_backed dests come from the first-month-bucket union
+        # catalog, so their score/note can be the WRONG month — e.g. Nainital
+        # carrying April's 5/5 into a May post when May's verified verdict is
+        # 2/5 "summer rush, go elsewhere". Build the current-month source of
+        # truth; for formats that make a current-month claim (template renders
+        # {score} or {note}) require a verified current-month row, and for
+        # celebratory pillars also require a current-month score >= 4 (a
+        # "decoded / why it works" format must not run on a dest we rate avoid).
+        _cur_by_id = {}
+        for _d in (content.get("destinations_low", {}).get("data", []) or []):
+            if _d.get("id"):
+                _cur_by_id[str(_d["id"]).lower()] = _d
+        for _d in pool:  # current-month min_score>=4 slice — richest copy wins
+            if _d.get("id"):
+                _cur_by_id[str(_d["id"]).lower()] = _d
+        _tmpl = (spec.caption_template or "") + " " + (spec.hook_template or "")
+        _month_claim = ("{score}" in _tmpl) or ("{note}" in _tmpl)
+        _celebratory = (getattr(spec, "pillar", "") or "").lower() in (
+            "verification", "discovery", "moment")
+        _month_label = datetime.now().strftime("%B")
+
         # Try every candidate until one is eligible. Cheap; short-circuits.
         for cand in _csv_pool:
             cid = cand.get("id") or cand.get("slug") or ""
+            if _month_claim:
+                _fresh = _cur_by_id.get(str(cid).lower())
+                if not _fresh:
+                    log.info(f"{fmt}: {cid} has no current-month row — SKIPPING "
+                             f"(won't render a stale {_month_label} score/note)")
+                    continue
+                cand = dict(cand)
+                cand["score"] = _fresh.get("score")
+                cand["note"]  = _fresh.get("note")
+                if _celebratory and (cand.get("score") or 0) < 4:
+                    log.info(f"{fmt}: {cid} scores {cand.get('score')}/5 in "
+                             f"{_month_label} (<4) — SKIPPING celebratory format")
+                    continue
             if cid in _today_dests:
                 log.info(
                     f"{fmt}: {cid} already posted today — SKIPPING dest "
