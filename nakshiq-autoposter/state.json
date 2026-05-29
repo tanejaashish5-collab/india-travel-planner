@@ -1,6 +1,7 @@
 {
   "yt_short_formats_used": [
-    "dont_go_here"
+    "dont_go_here",
+    "mini_guide"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -9,18 +10,20 @@
     "px_bollywood_pop",
     "15_coastal_vibes",
     "px_landlady_chill",
-    "px_ambient_bg"
+    "px_ambient_bg",
+    "px_soulful_soft"
   ],
   "posted_today": {
     "m8EAd": "2026-05-29",
     "PdMu0": "2026-05-29",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-05-28",
     "PdMu0_evening": "2026-05-28",
     "m8EAd_evening_story": "2026-05-28",
     "m8EAd_story": "2026-05-29",
-    "GAh5p_yt_short": "2026-05-29"
+    "GAh5p_yt_short": "2026-05-29",
+    "m8EAd_yt_short": "2026-05-29"
   },
   "last_sync": "2026-05-29T07:09:47.023858+00:00",
   "posted_destinations": [
@@ -86,6 +89,10 @@
     },
     {
       "destination_id": "munsiyari",
+      "date": "2026-05-29"
+    },
+    {
+      "destination_id": "khangchendzonga-np",
       "date": "2026-05-29"
     }
   ],
@@ -1448,6 +1455,24 @@
       "destination": null,
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-29.mp4"
+    },
+    {
+      "timestamp": "2026-05-29T13:50:06.624325+00:00",
+      "date": "2026-05-29",
+      "platform": "youtube",
+      "post_id": "uryKE",
+      "destination": "khangchendzonga-np",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-29.mp4"
+    },
+    {
+      "timestamp": "2026-05-29T13:50:49.886956+00:00",
+      "date": "2026-05-29",
+      "platform": "instagram",
+      "post_id": "4RaVi",
+      "destination": "khangchendzonga-np",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-29.mp4"
     }
   ],
   "theme_usage": {
