@@ -16,17 +16,16 @@
     "px_landlady_chill"
   ],
   "posted_today": {
-    "m8EAd": "2026-05-28",
-    "PdMu0": "2026-05-28",
-    "GAh5p_yt_short": "2026-05-27",
+    "m8EAd": "2026-05-29",
+    "PdMu0": "2026-05-29",
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-05-27",
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-28",
     "PdMu0_evening": "2026-05-28",
-    "m8EAd_evening_story": "2026-05-28"
+    "m8EAd_evening_story": "2026-05-28",
+    "m8EAd_story": "2026-05-29"
   },
-  "last_sync": "2026-05-28T17:48:51.929932+00:00",
+  "last_sync": "2026-05-29T07:09:47.023858+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -83,6 +82,14 @@
     {
       "destination_id": "hampi",
       "date": "2026-05-28"
+    },
+    {
+      "destination_id": "ooty",
+      "date": "2026-05-29"
+    },
+    {
+      "destination_id": "munsiyari",
+      "date": "2026-05-29"
     }
   ],
   "posted_formats": {
@@ -104,10 +111,10 @@
       "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
-      "v4_dw_architecture_detail_deep_dive"
+      "v4_dw_architecture_detail_deep_dive",
+      "v3_tl_world_best_india"
     ],
     "PdMu0": [
-      "score_card",
       "methodology_family",
       "collection_spotlight",
       "score_card",
@@ -127,7 +134,8 @@
       "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
-      "v4_dw_architecture_detail_deep_dive"
+      "v4_dw_architecture_detail_deep_dive",
+      "v3_tl_world_best_india"
     ]
   },
   "post_log": [
@@ -1394,17 +1402,6 @@
       "media_id": "v4_dw_architecture_detail_deep_dive-nainital_01_cover.png"
     },
     {
-      "timestamp": "2026-05-28T17:50:42.204215+00:00",
-      "date": "2026-05-28",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "4RsDi",
-      "destination": "somnath",
-      "format": "collection_spotlight",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-05-28T17:51:32.608320+00:00",
       "date": "2026-05-28",
       "platform": "facebook",
@@ -1414,6 +1411,39 @@
       "format": "v4_dw_architecture_detail_deep_dive",
       "has_media": true,
       "media_id": "v4_dw_architecture_detail_deep_dive-hampi_01_cover.png"
+    },
+    {
+      "timestamp": "2026-05-29T07:10:32.767870+00:00",
+      "date": "2026-05-29",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "PK2r0",
+      "destination": "ooty",
+      "format": "v3_tl_world_best_india",
+      "has_media": true,
+      "media_id": "v3_tl_world_best_india-ooty.png"
+    },
+    {
+      "timestamp": "2026-05-29T07:10:50.051639+00:00",
+      "date": "2026-05-29",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "Ai9I7",
+      "destination": "har-ki-doon",
+      "format": "infrastructure_truth",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-05-29T07:11:10.081611+00:00",
+      "date": "2026-05-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "RA0ZH",
+      "destination": "munsiyari",
+      "format": "v3_tl_world_best_india",
+      "has_media": true,
+      "media_id": "v3_tl_world_best_india-munsiyari.png"
     }
   ],
   "theme_usage": {
@@ -1464,7 +1494,8 @@
         "2026-05-22"
       ],
       "munsiyari": [
-        "2026-05-23"
+        "2026-05-23",
+        "2026-05-29"
       ],
       "madurai": [
         "2026-05-23"
@@ -1550,6 +1581,12 @@
       ],
       "hampi": [
         "2026-05-28"
+      ],
+      "ooty": [
+        "2026-05-29"
+      ],
+      "har-ki-doon": [
+        "2026-05-29"
       ]
     },
     "morning_formats": {
@@ -1615,6 +1652,9 @@
       ],
       "v4_dw_architecture_detail_deep_dive": [
         "2026-05-28"
+      ],
+      "v3_tl_world_best_india": [
+        "2026-05-29"
       ]
     },
     "reels": {
@@ -1773,8 +1813,7 @@
       "bir-billing": [
         "2026-05-26"
       ]
-    },
-    "collection_carousel_dests:dwadasa-jyotirlinga": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -1788,7 +1827,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
+    "shared_best": "har-ki-doon",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}

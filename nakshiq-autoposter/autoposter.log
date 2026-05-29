@@ -635,3 +635,63 @@ Date range: 2026-04-15 → 2026-05-27
 2026-05-28 20:41:04  INFO      
 Date range: 2026-04-15 → 2026-05-28
 2026-05-28 20:41:04  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 07:09:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 07:09:10  INFO      Nakshiq Autoposter · MORNING · 2026-05-29 · weekday=4
+2026-05-29 07:09:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-29 07:09:10  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-29 07:09:47  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=525
+2026-05-29 07:09:47  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-29 07:09:48  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-29 07:09:50  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+10 more)
+2026-05-29 07:09:50  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-29 07:10:04  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-29 07:10:04  INFO      Morning format (deficit→verdict): v3_tl_world_best_india [0% vs target 40%] (0/14 never featured)
+2026-05-29 07:10:04  INFO      Formats — IG: v3_tl_world_best_india  ·  FB: v3_tl_world_best_india  ·  Story: infrastructure_truth
+2026-05-29 07:10:04  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 41
+2026-05-29 07:10:04  INFO      Fingerprint dedup snapshot — 44 dests in 7d · 52 (dest,fmt) pairs in 30d · 48 media in 60d
+2026-05-29 07:10:06  INFO      Shared best destination locked: Har Ki Doon
+2026-05-29 07:10:06  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-29 07:10:06  INFO      [instagram/nakshiq] Generating v3_tl_world_best_india post...
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: madurai has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: coorg has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: mussoorie has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: darjeeling has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: manali has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: gurez-valley has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: old-goa has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      v3_tl_world_best_india: anandpur-sahib has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:06  INFO      [instagram/nakshiq] Caption ready (449 chars, dest=ooty)
+2026-05-29 07:10:08  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v3_tl_world_best_india → uploading...
+2026-05-29 07:10:08  INFO          Requesting upload URL for v3_tl_world_best_india-ooty.png (1,687,842 bytes, image/png)
+2026-05-29 07:10:09  INFO          Uploading to R2 (timeout=120s)...
+2026-05-29 07:10:10  INFO          R2 PUT OK. Confirming...
+2026-05-29 07:10:11  INFO          Media ready: SaHnJ (1,687,842 bytes · v3_tl_world_best_india-ooty.png)
+2026-05-29 07:10:11  INFO      [instagram/nakshiq] Publishing feed post...
+2026-05-29 07:10:32  INFO      [instagram/nakshiq] ✅ Published · Outstand=PK2r0 · Platform=18465302875104837
+2026-05-29 07:10:32  INFO      [instagram/nakshiq] Uploading Story image (har-ki-doon.jpg)...
+2026-05-29 07:10:32  INFO          Using branded image: har-ki-doon_story_typographic-art_badge.jpg (465,725 bytes)
+2026-05-29 07:10:32  INFO          Requesting upload URL for har-ki-doon.jpg (465,725 bytes, image/jpeg)
+2026-05-29 07:10:33  INFO          Uploading to R2 (timeout=120s)...
+2026-05-29 07:10:34  INFO          R2 PUT OK. Confirming...
+2026-05-29 07:10:35  INFO          Media ready: BR38n (465,725 bytes · har-ki-doon.jpg)
+2026-05-29 07:10:35  INFO      [instagram/nakshiq] Publishing Story · format=infrastructure_truth · dest=har-ki-doon
+2026-05-29 07:10:50  INFO      [instagram/nakshiq] ✅ Story live · ID=18443565232136409
+2026-05-29 07:10:50  INFO      [facebook/Nakshiq] Generating v3_tl_world_best_india post...
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: madurai has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: coorg has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: mussoorie has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: darjeeling has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: manali has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: gurez-valley has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: old-goa has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      v3_tl_world_best_india: anandpur-sahib has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-29 07:10:50  INFO      [facebook/Nakshiq] Caption ready (382 chars, dest=munsiyari)
+2026-05-29 07:10:53  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v3_tl_world_best_india → uploading...
+2026-05-29 07:10:53  INFO          Requesting upload URL for v3_tl_world_best_india-munsiyari.png (1,373,357 bytes, image/png)
+2026-05-29 07:10:54  INFO          Uploading to R2 (timeout=120s)...
+2026-05-29 07:10:55  INFO          R2 PUT OK. Confirming...
+2026-05-29 07:10:56  INFO          Media ready: 8k9dI (1,373,357 bytes · v3_tl_world_best_india-munsiyari.png)
+2026-05-29 07:10:56  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-05-29 07:11:10  INFO      [facebook/Nakshiq] ✅ Published · Outstand=RA0ZH · Platform=1040562729145369_122110167014700092
+2026-05-29 07:11:10  INFO      State saved. Run complete.
+2026-05-29 07:11:10  INFO      ════════════════════════════════════════════════════════════
