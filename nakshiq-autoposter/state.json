@@ -3,7 +3,8 @@
     "dont_go_here",
     "mini_guide",
     "listicle",
-    "before_after"
+    "before_after",
+    "did_you_know"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -15,13 +16,14 @@
     "px_ambient_bg",
     "px_soulful_soft",
     "20_retro_drive",
-    "px_openmindaudio-rave-trance-music-fractured-daylight-521013"
+    "px_openmindaudio-rave-trance-music-fractured-daylight-521013",
+    "32_cinematic_pulse"
   ],
   "posted_today": {
     "m8EAd": "2026-05-30",
     "PdMu0": "2026-05-30",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-29",
     "PdMu0_evening": "2026-05-29",
     "m8EAd_story": "2026-05-29",
@@ -112,6 +114,10 @@
     },
     {
       "destination_id": "sangla",
+      "date": "2026-05-30"
+    },
+    {
+      "destination_id": "kannur",
       "date": "2026-05-30"
     }
   ],
@@ -1565,6 +1571,24 @@
       "destination": "sangla",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_2026-05-30.mp4"
+    },
+    {
+      "timestamp": "2026-05-30T12:53:29.534702+00:00",
+      "date": "2026-05-30",
+      "platform": "youtube",
+      "post_id": "B5ERn",
+      "destination": "kannur",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-30.mp4"
+    },
+    {
+      "timestamp": "2026-05-30T12:54:17.293607+00:00",
+      "date": "2026-05-30",
+      "platform": "instagram",
+      "post_id": "m2Vkd",
+      "destination": "kannur",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-30.mp4"
     }
   ],
   "theme_usage": {
