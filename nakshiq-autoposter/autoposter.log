@@ -852,3 +852,45 @@ Date range: 2026-04-15 → 2026-05-28
 2026-05-29 20:42:26  INFO      
 Date range: 2026-04-15 → 2026-05-29
 2026-05-29 20:42:26  INFO      ════════════════════════════════════════════════════════════
+2026-05-30 06:35:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-30 06:35:34  INFO      Nakshiq Autoposter · MORNING · 2026-05-30 · weekday=5
+2026-05-30 06:35:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-30 06:35:34  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-30 06:36:20  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=525
+2026-05-30 06:36:20  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-30 06:36:30  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-30 06:36:34  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+10 more)
+2026-05-30 06:36:34  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-30 06:36:47  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-30 06:36:47  INFO      Morning format (deficit→verdict): weekend_escape [5% vs target 40%] (0/14 never featured)
+2026-05-30 06:36:47  INFO      Formats — IG: weekend_escape  ·  FB: weekend_escape  ·  Story: kids_intel
+2026-05-30 06:36:47  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 45
+2026-05-30 06:36:47  INFO      Fingerprint dedup snapshot — 47 dests in 7d · 57 (dest,fmt) pairs in 30d · 54 media in 60d
+2026-05-30 06:36:47  INFO      Kids destination locked: Gopeshwar
+2026-05-30 06:36:47  INFO      Weekend Escape: Manikaran
+2026-05-30 06:36:49  INFO      Shared best destination locked: Pithoragarh
+2026-05-30 06:36:49  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-30 06:36:49  INFO      [instagram/nakshiq] Generating weekend_escape post...
+2026-05-30 06:36:49  INFO      [instagram/nakshiq] Caption ready (415 chars, dest=manikaran)
+2026-05-30 06:36:49  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-30 06:36:49  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/manikaran.mp4?v=20260524
+2026-05-30 06:36:52  INFO          Brand-stamp applied: manikaran.mp4 (8,602,141 → 4,323,227 bytes)
+2026-05-30 06:36:52  INFO          Requesting upload URL for manikaran.mp4 (4,323,227 bytes, video/mp4)
+2026-05-30 06:36:57  INFO          Uploading to R2 (timeout=300s)...
+2026-05-30 06:37:00  INFO          R2 PUT OK. Confirming...
+2026-05-30 06:37:06  INFO          Media ready: XUUfe (4,323,227 bytes · manikaran.mp4)
+2026-05-30 06:37:06  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-30 06:37:54  INFO      [instagram/nakshiq] ✅ Published · Outstand=kptfh · Platform=18126935641533772
+2026-05-30 06:37:54  INFO      [facebook/Nakshiq] Generating weekend_escape post...
+2026-05-30 06:37:54  INFO      [facebook/Nakshiq] Caption ready (544 chars, dest=manikaran)
+2026-05-30 06:37:55  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-30 06:37:55  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/manikaran.mp4?v=20260524
+2026-05-30 06:37:57  INFO          Brand-stamp applied: manikaran.mp4 (8,602,141 → 4,323,227 bytes)
+2026-05-30 06:37:57  INFO          Requesting upload URL for manikaran.mp4 (4,323,227 bytes, video/mp4)
+2026-05-30 06:38:01  INFO          Uploading to R2 (timeout=300s)...
+2026-05-30 06:38:03  INFO          R2 PUT OK. Confirming...
+2026-05-30 06:38:06  INFO          Media ready: 2NNBS (4,323,227 bytes · manikaran.mp4)
+2026-05-30 06:38:06  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-30 06:38:21  INFO      [facebook/Nakshiq] ✅ Published · Outstand=1v9yG · Platform=1689083738956036
+2026-05-30 06:38:21  INFO      State saved. Run complete.
+2026-05-30 06:38:21  INFO      ════════════════════════════════════════════════════════════

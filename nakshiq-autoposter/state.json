@@ -16,18 +16,17 @@
     "20_retro_drive"
   ],
   "posted_today": {
-    "m8EAd": "2026-05-29",
-    "PdMu0": "2026-05-29",
+    "m8EAd": "2026-05-30",
+    "PdMu0": "2026-05-30",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-29",
     "PdMu0_evening": "2026-05-29",
-    "m8EAd_evening_story": "2026-05-28",
     "m8EAd_story": "2026-05-29",
     "GAh5p_yt_short": "2026-05-29",
     "m8EAd_yt_short": "2026-05-29"
   },
-  "last_sync": "2026-05-29T17:49:03.735919+00:00",
+  "last_sync": "2026-05-30T06:36:20.675555+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -104,6 +103,10 @@
     {
       "destination_id": "gurudongmar-lake",
       "date": "2026-05-29"
+    },
+    {
+      "destination_id": "manikaran",
+      "date": "2026-05-30"
     }
   ],
   "posted_formats": {
@@ -127,10 +130,10 @@
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
-      "v2_route_animated_map"
+      "v2_route_animated_map",
+      "weekend_escape"
     ],
     "PdMu0": [
-      "collection_spotlight",
       "score_card",
       "festival_alert",
       "reality_check",
@@ -150,7 +153,8 @@
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
-      "v2_route_animated_map"
+      "v2_route_animated_map",
+      "weekend_escape"
     ]
   },
   "post_log": [
@@ -1515,6 +1519,28 @@
       "format": "v2_route_animated_map",
       "has_media": true,
       "media_id": "gurudongmar-lake.mp4"
+    },
+    {
+      "timestamp": "2026-05-30T06:37:54.714500+00:00",
+      "date": "2026-05-30",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "kptfh",
+      "destination": "manikaran",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "manikaran.mp4"
+    },
+    {
+      "timestamp": "2026-05-30T06:38:21.955209+00:00",
+      "date": "2026-05-30",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "1v9yG",
+      "destination": "manikaran",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "manikaran.mp4"
     }
   ],
   "theme_usage": {
@@ -1620,7 +1646,8 @@
         "2026-05-25"
       ],
       "manikaran": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-30"
       ],
       "jibhi": [
         "2026-05-25"
@@ -1732,6 +1759,9 @@
       ],
       "v2_route_animated_map": [
         "2026-05-29"
+      ],
+      "weekend_escape": [
+        "2026-05-30"
       ]
     },
     "reels": {
@@ -1910,7 +1940,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurudongmar-lake",
+    "shared_best": "pithoragarh",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}
