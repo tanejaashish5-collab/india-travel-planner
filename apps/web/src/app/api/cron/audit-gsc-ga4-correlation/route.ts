@@ -138,7 +138,12 @@ export async function GET(req: NextRequest) {
       job: "audit-gsc-ga4-correlation",
       summary: { gsc_date: latestGsc.date, ga4_date: latestGa4.date, findings, full_summary: summary },
       alerts_count: findings.length,
-      ok: findings.length === 0,
+      // The job ran fine — a cohort mismatch is a *flagged item*, not a crash.
+      // `ok: true` lets the watchdog classify findings as `needs_review`
+      // (yellow) via alerts_count, instead of short-circuiting to `errored`
+      // (red, daily DEGRADED email). A low ratio here is often a GSC clicks
+      // spike against a stable GA4 denominator, not a render regression.
+      ok: true,
     });
   }
 

@@ -82,12 +82,22 @@ export async function GET(req: NextRequest) {
   // for our scale — easily in-memory.
   const { data, error } = await supabase
     .from("bot_visits")
-    .select("bot_name, path, created_at")
+    .select("bot_name, path, hit_at")
     .in("bot_name", KNOWN_BOTS)
-    .gte("created_at", cutoff_prior)
-    .order("created_at", { ascending: false });
+    .gte("hit_at", cutoff_prior)
+    .order("hit_at", { ascending: false });
 
   if (error) {
+    // Write a failure row so the watchdog surfaces this as `errored` with a
+    // cause, not a silent `missing` forever (cf. audit-supabase-advisors fix
+    // caa9dae8 — a 500 with no ops_reports row is indistinguishable from
+    // never-ran).
+    await supabase.from("ops_reports").insert({
+      job: "audit-bot-crawl-rate",
+      summary: { reason: "bot_visits query failed", detail: error.message },
+      alerts_count: 0,
+      ok: false,
+    });
     return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
 
@@ -100,7 +110,7 @@ export async function GET(req: NextRequest) {
     const famMap = bucket.get(row.bot_name)!;
     if (!famMap.has(fam)) famMap.set(fam, { current: 0, prior: 0 });
     const cell = famMap.get(fam)!;
-    if (row.created_at >= cutoff_now) cell.current++;
+    if (row.hit_at >= cutoff_now) cell.current++;
     else cell.prior++;
   }
 
