@@ -938,3 +938,63 @@ Date range: 2026-04-15 → 2026-05-29
 2026-05-30 12:54:17  INFO      YT Short posted: format=did_you_know, music=32_cinematic_pulse
 2026-05-30 12:54:17  INFO      State saved. YT Short run complete.
 2026-05-30 12:54:17  INFO      ════════════════════════════════════════════════════════════
+2026-05-30 15:40:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-30 15:40:14  INFO      Nakshiq Autoposter · EVENING · 2026-05-30 · weekday=5
+2026-05-30 15:40:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-30 15:40:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-30 15:40:53  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=525
+2026-05-30 15:40:53  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-30 15:40:54  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-30 15:40:54  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-30 15:41:10  INFO      [evening] variety pick: v2_hindi_score_card (33 CSV + 3 visual candidates)
+2026-05-30 15:41:10  INFO      Formats — IG: v2_hindi_score_card  ·  FB: v2_hindi_score_card  ·  Story: route_spotlight  ·  Audience: families
+2026-05-30 15:41:10  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 48
+2026-05-30 15:41:10  INFO      Audience filter 'families' → 10 destinations match.
+2026-05-30 15:41:10  INFO      Fingerprint dedup snapshot — 50 dests in 7d · 60 (dest,fmt) pairs in 30d · 57 media in 60d
+2026-05-30 15:41:10  INFO      Route locked: HP Offbeat Villages
+2026-05-30 15:41:10  INFO      Shared best destination locked: Gopeshwar
+2026-05-30 15:41:10  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-30 15:41:10  INFO      [instagram/nakshiq] Generating v2_hindi_score_card post...
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: madurai has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: coorg has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: mussoorie has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: darjeeling has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: manali has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: gurez-valley has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: old-goa has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      v2_hindi_score_card: anandpur-sahib has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:10  INFO      [instagram/nakshiq] Caption ready (558 chars, dest=yamunotri)
+2026-05-30 15:41:12  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_hindi_score_card → uploading...
+2026-05-30 15:41:12  INFO          Requesting upload URL for v2_hindi_score_card-yamunotri.png (2,119,634 bytes, image/png)
+2026-05-30 15:41:13  INFO          Uploading to R2 (timeout=120s)...
+2026-05-30 15:41:13  INFO          R2 PUT OK. Confirming...
+2026-05-30 15:41:14  INFO          Media ready: D7tFo (2,119,634 bytes · v2_hindi_score_card-yamunotri.png)
+2026-05-30 15:41:14  INFO      [instagram/nakshiq] Publishing feed post...
+2026-05-30 15:41:35  INFO      [instagram/nakshiq] ✅ Published · Outstand=XsFye · Platform=18469105273101934
+2026-05-30 15:41:35  INFO      [instagram/nakshiq] Uploading Story image (tirthan-valley.jpg)...
+2026-05-30 15:41:35  INFO          Using branded image: tirthan-valley_story_typographic-art_footer-bar.jpg (373,319 bytes)
+2026-05-30 15:41:35  INFO          Requesting upload URL for tirthan-valley.jpg (373,319 bytes, image/jpeg)
+2026-05-30 15:41:35  INFO          Uploading to R2 (timeout=120s)...
+2026-05-30 15:41:36  INFO          R2 PUT OK. Confirming...
+2026-05-30 15:41:37  INFO          Media ready: x3Yj8 (373,319 bytes · tirthan-valley.jpg)
+2026-05-30 15:41:37  INFO      [instagram/nakshiq] Publishing Story · format=route_spotlight · dest=tirthan-valley
+2026-05-30 15:41:50  INFO      [instagram/nakshiq] ✅ Story live · ID=18106870027978568
+2026-05-30 15:41:50  INFO      [facebook/Nakshiq] Generating v2_hindi_score_card post...
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: madurai has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: coorg has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: mussoorie has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: darjeeling has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: manali has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: gurez-valley has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: old-goa has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      v2_hindi_score_card: anandpur-sahib has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-30 15:41:50  INFO      [facebook/Nakshiq] Caption ready (473 chars, dest=gopeshwar)
+2026-05-30 15:41:52  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_hindi_score_card → uploading...
+2026-05-30 15:41:52  INFO          Requesting upload URL for v2_hindi_score_card-gopeshwar.png (1,842,600 bytes, image/png)
+2026-05-30 15:41:52  INFO          Uploading to R2 (timeout=120s)...
+2026-05-30 15:41:53  INFO          R2 PUT OK. Confirming...
+2026-05-30 15:41:54  INFO          Media ready: Pnj40 (1,842,600 bytes · v2_hindi_score_card-gopeshwar.png)
+2026-05-30 15:41:54  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-05-30 15:42:08  INFO      [facebook/Nakshiq] ✅ Published · Outstand=5WBMD · Platform=1040562729145369_122110333502700092
+2026-05-30 15:42:08  INFO      State saved. Run complete.
+2026-05-30 15:42:08  INFO      ════════════════════════════════════════════════════════════

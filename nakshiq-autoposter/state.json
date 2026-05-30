@@ -24,13 +24,14 @@
     "PdMu0": "2026-05-30",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-05-29",
-    "PdMu0_evening": "2026-05-29",
+    "m8EAd_evening": "2026-05-30",
+    "PdMu0_evening": "2026-05-30",
     "m8EAd_story": "2026-05-29",
     "GAh5p_yt_short": "2026-05-30",
-    "m8EAd_yt_short": "2026-05-30"
+    "m8EAd_yt_short": "2026-05-30",
+    "m8EAd_evening_story": "2026-05-30"
   },
-  "last_sync": "2026-05-30T06:36:20.675555+00:00",
+  "last_sync": "2026-05-30T15:40:53.654977+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -119,11 +120,18 @@
     {
       "destination_id": "kannur",
       "date": "2026-05-30"
+    },
+    {
+      "destination_id": "yamunotri",
+      "date": "2026-05-30"
+    },
+    {
+      "destination_id": "gopeshwar",
+      "date": "2026-05-30"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "monthly_forecast",
       "methodology_roads",
       "score_card",
       "methodology_family",
@@ -143,10 +151,10 @@
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
       "v2_route_animated_map",
-      "weekend_escape"
+      "weekend_escape",
+      "v2_hindi_score_card"
     ],
     "PdMu0": [
-      "score_card",
       "festival_alert",
       "reality_check",
       "methodology_altitude",
@@ -166,7 +174,8 @@
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
       "v2_route_animated_map",
-      "weekend_escape"
+      "weekend_escape",
+      "v2_hindi_score_card"
     ]
   },
   "post_log": [
@@ -1589,6 +1598,39 @@
       "destination": "kannur",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-30.mp4"
+    },
+    {
+      "timestamp": "2026-05-30T15:41:35.341327+00:00",
+      "date": "2026-05-30",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XsFye",
+      "destination": "yamunotri",
+      "format": "v2_hindi_score_card",
+      "has_media": true,
+      "media_id": "v2_hindi_score_card-yamunotri.png"
+    },
+    {
+      "timestamp": "2026-05-30T15:41:50.756265+00:00",
+      "date": "2026-05-30",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "2bmHS",
+      "destination": "tirthan-valley",
+      "format": "route_spotlight",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-05-30T15:42:08.098047+00:00",
+      "date": "2026-05-30",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "5WBMD",
+      "destination": "gopeshwar",
+      "format": "v2_hindi_score_card",
+      "has_media": true,
+      "media_id": "v2_hindi_score_card-gopeshwar.png"
     }
   ],
   "theme_usage": {
@@ -1708,13 +1750,15 @@
         "2026-05-27"
       ],
       "gopeshwar": [
-        "2026-05-26"
+        "2026-05-26",
+        "2026-05-30"
       ],
       "tehri": [
         "2026-05-26"
       ],
       "yamunotri": [
-        "2026-05-27"
+        "2026-05-27",
+        "2026-05-30"
       ],
       "gangtok": [
         "2026-05-27"
@@ -1736,6 +1780,9 @@
       ],
       "gurudongmar-lake": [
         "2026-05-29"
+      ],
+      "tirthan-valley": [
+        "2026-05-30"
       ]
     },
     "morning_formats": {
@@ -1810,6 +1857,9 @@
       ],
       "weekend_escape": [
         "2026-05-30"
+      ],
+      "v2_hindi_score_card": [
+        "2026-05-30"
       ]
     },
     "reels": {
@@ -1860,6 +1910,12 @@
       ],
       "gurudongmar-lake": [
         "2026-05-29"
+      ],
+      "yamunotri": [
+        "2026-05-30"
+      ],
+      "gopeshwar": [
+        "2026-05-30"
       ]
     },
     "audience_tags": {
@@ -1867,7 +1923,8 @@
         "2026-05-18"
       ],
       "families": [
-        "2026-05-23"
+        "2026-05-23",
+        "2026-05-30"
       ],
       "adventurers": [
         "2026-05-29"
@@ -1974,7 +2031,8 @@
       "bir-billing": [
         "2026-05-26"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -1988,7 +2046,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "pithoragarh",
+    "shared_best": "gopeshwar",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}
