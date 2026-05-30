@@ -2,7 +2,8 @@
   "yt_short_formats_used": [
     "dont_go_here",
     "mini_guide",
-    "listicle"
+    "listicle",
+    "before_after"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -13,18 +14,19 @@
     "px_landlady_chill",
     "px_ambient_bg",
     "px_soulful_soft",
-    "20_retro_drive"
+    "20_retro_drive",
+    "px_openmindaudio-rave-trance-music-fractured-daylight-521013"
   ],
   "posted_today": {
     "m8EAd": "2026-05-30",
     "PdMu0": "2026-05-30",
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-05-29",
     "PdMu0_evening": "2026-05-29",
     "m8EAd_story": "2026-05-29",
-    "GAh5p_yt_short": "2026-05-29",
-    "m8EAd_yt_short": "2026-05-29"
+    "GAh5p_yt_short": "2026-05-30",
+    "m8EAd_yt_short": "2026-05-30"
   },
   "last_sync": "2026-05-30T06:36:20.675555+00:00",
   "posted_destinations": [
@@ -106,6 +108,10 @@
     },
     {
       "destination_id": "manikaran",
+      "date": "2026-05-30"
+    },
+    {
+      "destination_id": "sangla",
       "date": "2026-05-30"
     }
   ],
@@ -1541,6 +1547,24 @@
       "format": "weekend_escape",
       "has_media": true,
       "media_id": "manikaran.mp4"
+    },
+    {
+      "timestamp": "2026-05-30T07:23:47.531992+00:00",
+      "date": "2026-05-30",
+      "platform": "youtube",
+      "post_id": "r6Gg4",
+      "destination": "sangla",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-30.mp4"
+    },
+    {
+      "timestamp": "2026-05-30T07:24:23.495740+00:00",
+      "date": "2026-05-30",
+      "platform": "instagram",
+      "post_id": "Kcu49",
+      "destination": "sangla",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-30.mp4"
     }
   ],
   "theme_usage": {
