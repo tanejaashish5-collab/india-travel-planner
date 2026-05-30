@@ -12,14 +12,32 @@ export const maxDuration = 60;
 // Reads audit metrics from apps/web/data/audit-snapshots.json (built at
 // build time from gsc-audits/*.md + ga4-audits/*.md). Bucketed by URL
 // family. Alerts when GA4 engaged-sessions / GSC clicks ratio falls
-// outside 0.3-3.0 on any cohort with ≥20 clicks/week — same shape as
-// the destination/month family bouncing during the ISR regression.
+// outside 0.3-3.0 on a cohort with ≥20 clicks/week.
+//
+// IMPORTANT: both snapshots are TRUNCATED top-N exports (~10 pages each),
+// and the two lists barely overlap — GSC surfaces the pages that *rank*,
+// GA4 surfaces the pages that get *traffic*, which are usually different
+// URLs. Summing a family's clicks from one list and its engaged-sessions
+// from the other compares disjoint URL sets and mechanically produces a
+// low ratio whenever a page is in GSC's top-N but below GA4's floor (and
+// vice-versa). That misfired on destination/month three times (2026-05-28
+// to -30) — 86 clicks vs 23 sessions where only ONE shared URL existed.
+//
+// Fix (2026-05-30): compute the ratio ONLY over URLs present in BOTH
+// snapshots (apples-to-apples), and require the shared clicks to clear the
+// floor. A family with too little overlap is skipped, not alerted. This
+// under-alerts on thin snapshots rather than crying wolf on truncation
+// noise. Deeper improvement (capture more rows per audit) tracked separately.
 
 const ALERT_TO = "taneja.ashish5@gmail.com";
 
 const RATIO_LOW_THRESHOLD = 0.3;
 const RATIO_HIGH_THRESHOLD = 3.0;
 const MIN_CLICKS_PER_COHORT = 20;
+
+function normUrl(u: string): string {
+  return u.toLowerCase().replace(/\/+$/, "") || "/";
+}
 
 function urlPrefix(url: string): string {
   const u = url.toLowerCase();
@@ -45,22 +63,28 @@ function urlPrefix(url: string): string {
 type GscAudit = { date: string; top_pages: Array<{ url: string; clicks: number; impressions: number }> };
 type Ga4Audit = { date: string; top_pages: Array<{ url: string; engaged: number }> };
 
-function bucketGsc(audit: GscAudit | undefined): Map<string, number> {
-  const out = new Map<string, number>();
+// family -> (normalised url -> metric). Per-URL so we can intersect the two
+// sides instead of summing across disjoint truncated lists.
+function bucketGscByUrl(audit: GscAudit | undefined): Map<string, Map<string, number>> {
+  const out = new Map<string, Map<string, number>>();
   if (!audit) return out;
   for (const p of audit.top_pages) {
     const fam = urlPrefix(p.url);
-    out.set(fam, (out.get(fam) ?? 0) + p.clicks);
+    const m = out.get(fam) ?? new Map<string, number>();
+    m.set(normUrl(p.url), (m.get(normUrl(p.url)) ?? 0) + p.clicks);
+    out.set(fam, m);
   }
   return out;
 }
 
-function bucketGa4(audit: Ga4Audit | undefined): Map<string, number> {
-  const out = new Map<string, number>();
+function bucketGa4ByUrl(audit: Ga4Audit | undefined): Map<string, Map<string, number>> {
+  const out = new Map<string, Map<string, number>>();
   if (!audit) return out;
   for (const p of audit.top_pages) {
     const fam = urlPrefix(p.url);
-    out.set(fam, (out.get(fam) ?? 0) + p.engaged);
+    const m = out.get(fam) ?? new Map<string, number>();
+    m.set(normUrl(p.url), (m.get(normUrl(p.url)) ?? 0) + p.engaged);
+    out.set(fam, m);
   }
   return out;
 }
@@ -70,6 +94,7 @@ type Finding = {
   gsc_clicks: number;
   ga4_sessions: number;
   ratio: number;
+  shared_urls: number;
   flag: "low" | "high";
   detail: string;
 };
@@ -95,18 +120,36 @@ export async function GET(req: NextRequest) {
   const latestGsc = gsc[gsc.length - 1];
   const latestGa4 = ga4[ga4.length - 1];
 
-  const gscBucket = bucketGsc(latestGsc);
-  const ga4Bucket = bucketGa4(latestGa4);
+  const gscBucket = bucketGscByUrl(latestGsc);
+  const ga4Bucket = bucketGa4ByUrl(latestGa4);
 
   const allFamilies = new Set<string>([...gscBucket.keys(), ...ga4Bucket.keys()]);
   const findings: Finding[] = [];
-  const summary: Array<{ family: string; gsc_clicks: number; ga4_sessions: number; ratio: number | null }> = [];
+  const summary: Array<{ family: string; gsc_clicks: number; ga4_sessions: number; ratio: number | null; shared_urls: number }> = [];
 
   for (const fam of allFamilies) {
-    const clicks = gscBucket.get(fam) ?? 0;
-    const sessions = ga4Bucket.get(fam) ?? 0;
+    const gscUrls = gscBucket.get(fam) ?? new Map<string, number>();
+    const ga4Urls = ga4Bucket.get(fam) ?? new Map<string, number>();
+
+    // Intersect: only count URLs present in BOTH audits, so the numerator
+    // and denominator describe the same pages. A page in GSC's top-N but
+    // below GA4's floor (or vice-versa) is excluded, not silently dragging
+    // the ratio down.
+    let clicks = 0;
+    let sessions = 0;
+    let shared = 0;
+    for (const [url, c] of gscUrls) {
+      const s = ga4Urls.get(url);
+      if (s !== undefined) {
+        clicks += c;
+        sessions += s;
+        shared += 1;
+      }
+    }
     const ratio = clicks > 0 ? sessions / clicks : null;
-    summary.push({ family: fam, gsc_clicks: clicks, ga4_sessions: sessions, ratio });
+    summary.push({ family: fam, gsc_clicks: clicks, ga4_sessions: sessions, ratio, shared_urls: shared });
+
+    // Skip thin cohorts: too few shared clicks to be a reliable signal.
     if (clicks < MIN_CLICKS_PER_COHORT) continue;
     if (ratio === null) continue;
     if (ratio < RATIO_LOW_THRESHOLD) {
@@ -115,8 +158,9 @@ export async function GET(req: NextRequest) {
         gsc_clicks: clicks,
         ga4_sessions: sessions,
         ratio,
+        shared_urls: shared,
         flag: "low",
-        detail: `GSC reports ${clicks} clicks landing on /${fam} but GA4 sees only ${sessions} engaged sessions (ratio ${ratio.toFixed(2)}). Users likely bouncing before GA4 fires — same shape as the ISR regression's slow-render symptom.`,
+        detail: `Across ${shared} URL(s) present in both audits, /${fam} drew ${clicks} GSC clicks but only ${sessions} GA4 engaged sessions (ratio ${ratio.toFixed(2)}). Same-URL underperformance — check render health / TTFB for this family before treating as real.`,
       });
     } else if (ratio > RATIO_HIGH_THRESHOLD) {
       findings.push({
@@ -124,8 +168,9 @@ export async function GET(req: NextRequest) {
         gsc_clicks: clicks,
         ga4_sessions: sessions,
         ratio,
+        shared_urls: shared,
         flag: "high",
-        detail: `GA4 reports ${sessions} engaged sessions on /${fam} but GSC sees only ${clicks} clicks (ratio ${ratio.toFixed(2)}). Engagement inflated — bot traffic, internal-link routing skipping GSC, or session-attribution drift.`,
+        detail: `Across ${shared} URL(s) present in both audits, /${fam} drew ${sessions} GA4 engaged sessions but only ${clicks} GSC clicks (ratio ${ratio.toFixed(2)}). Engagement inflated — bot traffic, internal-link routing skipping GSC, or session-attribution drift.`,
       });
     }
   }
