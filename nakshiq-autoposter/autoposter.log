@@ -1112,3 +1112,26 @@ Date range: 2026-04-15 → 2026-05-30
 2026-05-31 07:58:07  INFO      YT Short posted: format=this_vs_that, music=px_bollywood_hindi
 2026-05-31 07:58:07  INFO      State saved. YT Short run complete.
 2026-05-31 07:58:07  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 13:05:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 13:05:10  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-31
+2026-05-31 13:05:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 13:05:10  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-31 13:05:10  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-31 13:06:53  INFO      Short rendered: yt_short_listicle_2026-05-31.mp4 (25080 KB, 35.0s, fmt=listicle, music=px_cinematic_bg)
+2026-05-31 13:06:53  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-31.mp4 (25,681,987 bytes, video/mp4)
+2026-05-31 13:06:54  INFO          Uploading to R2 (timeout=300s)...
+2026-05-31 13:06:56  INFO          R2 PUT OK. Confirming...
+2026-05-31 13:06:57  INFO          Media ready: czn6L (25,681,987 bytes · yt_short_listicle_yt_short_listicle_2026-05-31.mp4)
+2026-05-31 13:06:57  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-31.mp4
+2026-05-31 13:06:58  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-05-31 13:07:01  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=AiMc7), waiting for platform confirmation...
+2026-05-31 13:07:19  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=AiMc7 · Platform=M_cZYvyhalU
+2026-05-31 13:07:19  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-05-31 13:07:22  INFO      [instagram/nakshiq] Outstand accepted (post_id=xhfE8), waiting for platform confirmation...
+2026-05-31 13:08:09  INFO          wait_for_publish exhausted 8 polls for post=xhfE8 (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-05-31 13:08:09  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=xhfE8). May have silently failed.
+2026-05-31 13:08:09  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 147-148: surrogates not allowed
+2026-05-31 13:08:09  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-31 13:08:09  INFO      YT Short posted: format=listicle, music=px_cinematic_bg
+2026-05-31 13:08:09  INFO      State saved. YT Short run complete.
+2026-05-31 13:08:09  INFO      ════════════════════════════════════════════════════════════
