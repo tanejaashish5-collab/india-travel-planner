@@ -1047,3 +1047,45 @@ Date range: 2026-04-15 → 2026-05-29
 2026-05-30 19:44:57  INFO      
 Date range: 2026-04-15 → 2026-05-30
 2026-05-30 19:44:57  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 07:11:29  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 07:11:29  INFO      Nakshiq Autoposter · MORNING · 2026-05-31 · weekday=6
+2026-05-31 07:11:29  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 07:11:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-31 07:11:59  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=525
+2026-05-31 07:11:59  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-31 07:12:01  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-31 07:12:03  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+10 more)
+2026-05-31 07:12:03  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-31 07:12:15  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-31 07:12:15  INFO      Morning format (deficit→verdict): festival_alert [15% vs target 40%] (0/14 never featured)
+2026-05-31 07:12:15  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: score_card
+2026-05-31 07:12:15  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 50
+2026-05-31 07:12:15  INFO      Fingerprint dedup snapshot — 52 dests in 7d · 58 (dest,fmt) pairs in 30d · 59 media in 60d
+2026-05-31 07:12:15  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+10 more)
+2026-05-31 07:12:15  INFO      Festival locked: Devprayag Ganga Dussehra (9/14 active festivals never featured)
+2026-05-31 07:12:16  INFO      Shared best destination locked: Pithoragarh
+2026-05-31 07:12:16  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-31 07:12:16  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-05-31 07:12:16  INFO      [instagram/nakshiq] Caption ready (386 chars, dest=devprayag)
+2026-05-31 07:12:16  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-31 07:12:16  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/devprayag.mp4?v=20260524
+2026-05-31 07:12:18  INFO          Brand-stamp applied: devprayag.mp4 (9,415,677 → 4,109,981 bytes)
+2026-05-31 07:12:18  INFO          Requesting upload URL for devprayag.mp4 (4,109,981 bytes, video/mp4)
+2026-05-31 07:12:19  INFO          Uploading to R2 (timeout=300s)...
+2026-05-31 07:12:20  INFO          R2 PUT OK. Confirming...
+2026-05-31 07:12:21  INFO          Media ready: IhLAX (4,109,981 bytes · devprayag.mp4)
+2026-05-31 07:12:21  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-31 07:13:07  INFO      [instagram/nakshiq] ✅ Published · Outstand=nDmUl · Platform=17963147814085261
+2026-05-31 07:13:07  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-05-31 07:13:07  INFO      [facebook/Nakshiq] Caption ready (515 chars, dest=devprayag)
+2026-05-31 07:13:07  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-31 07:13:07  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/devprayag.mp4?v=20260524
+2026-05-31 07:13:09  INFO          Brand-stamp applied: devprayag.mp4 (9,415,677 → 4,109,981 bytes)
+2026-05-31 07:13:09  INFO          Requesting upload URL for devprayag.mp4 (4,109,981 bytes, video/mp4)
+2026-05-31 07:13:10  INFO          Uploading to R2 (timeout=300s)...
+2026-05-31 07:13:11  INFO          R2 PUT OK. Confirming...
+2026-05-31 07:13:12  INFO          Media ready: cz8JL (4,109,981 bytes · devprayag.mp4)
+2026-05-31 07:13:12  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-31 07:13:27  INFO      [facebook/Nakshiq] ✅ Published · Outstand=zlbeP · Platform=1728247134997177
+2026-05-31 07:13:27  INFO      State saved. Run complete.
+2026-05-31 07:13:27  INFO      ════════════════════════════════════════════════════════════
