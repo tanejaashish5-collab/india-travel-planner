@@ -1135,3 +1135,59 @@ Date range: 2026-04-15 → 2026-05-30
 2026-05-31 13:08:09  INFO      YT Short posted: format=listicle, music=px_cinematic_bg
 2026-05-31 13:08:09  INFO      State saved. YT Short run complete.
 2026-05-31 13:08:09  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 15:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 15:44:11  INFO      Nakshiq Autoposter · EVENING · 2026-05-31 · weekday=6
+2026-05-31 15:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 15:44:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-31 15:44:41  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=525
+2026-05-31 15:44:41  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-05-31 15:44:42  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-31 15:44:42  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-31 15:44:55  INFO      [evening] variety pick: v2_tourist_trap_split (33 CSV + 3 visual candidates)
+2026-05-31 15:44:55  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: kids_intel
+2026-05-31 15:44:55  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 52
+2026-05-31 15:44:55  INFO      Fingerprint dedup snapshot — 54 dests in 7d · 60 (dest,fmt) pairs in 30d · 62 media in 60d
+2026-05-31 15:44:55  INFO      Kids destination locked: Pithoragarh
+2026-05-31 15:44:55  INFO      Shared best destination locked: Har Ki Doon
+2026-05-31 15:44:55  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-31 15:44:55  INFO      [instagram/nakshiq] Generating v2_tourist_trap_split post...
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: madurai has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: coorg has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: darjeeling has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: manali has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: gurez-valley has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:44:55  INFO      [instagram/nakshiq] Caption ready (373 chars, dest=har-ki-doon)
+2026-05-31 15:44:56  INFO      [instagram/nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-05-31 15:44:56  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/har-ki-doon.mp4?v=20260524
+2026-05-31 15:44:59  INFO          Brand-stamp applied: har-ki-doon.mp4 (11,538,809 → 5,866,877 bytes)
+2026-05-31 15:44:59  INFO          Requesting upload URL for har-ki-doon.mp4 (5,866,877 bytes, video/mp4)
+2026-05-31 15:45:00  INFO          Uploading to R2 (timeout=300s)...
+2026-05-31 15:45:02  INFO          R2 PUT OK. Confirming...
+2026-05-31 15:45:03  INFO          Media ready: Wi5Yz (5,866,877 bytes · har-ki-doon.mp4)
+2026-05-31 15:45:03  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-31 15:45:54  INFO          wait_for_publish exhausted 8 polls for post=gkmox (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-05-31 15:45:54  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=gkmox)
+2026-05-31 15:45:54  INFO      [facebook/Nakshiq] Generating v2_tourist_trap_split post...
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: madurai has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: coorg has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: darjeeling has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: manali has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: gurez-valley has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale May score/note)
+2026-05-31 15:45:54  INFO      [facebook/Nakshiq] Caption ready (381 chars, dest=pithoragarh)
+2026-05-31 15:45:55  INFO      [facebook/Nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-05-31 15:45:55  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pithoragarh.mp4?v=20260524
+2026-05-31 15:45:57  INFO          Brand-stamp applied: pithoragarh.mp4 (7,974,692 → 3,424,259 bytes)
+2026-05-31 15:45:57  INFO          Requesting upload URL for pithoragarh.mp4 (3,424,259 bytes, video/mp4)
+2026-05-31 15:45:58  INFO          Uploading to R2 (timeout=300s)...
+2026-05-31 15:45:59  INFO          R2 PUT OK. Confirming...
+2026-05-31 15:46:00  INFO          Media ready: GO32p (3,424,259 bytes · pithoragarh.mp4)
+2026-05-31 15:46:00  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-31 15:46:21  INFO      [facebook/Nakshiq] ✅ Published · Outstand=OJtDv · Platform=1007625474959325
+2026-05-31 15:46:21  INFO      State saved. Run complete.
+2026-05-31 15:46:21  INFO      ════════════════════════════════════════════════════════════

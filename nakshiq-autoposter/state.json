@@ -22,13 +22,13 @@
     "PdMu0": "2026-05-31",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-05-30",
-    "PdMu0_evening": "2026-05-30",
+    "m8EAd_evening": "2026-05-31",
+    "PdMu0_evening": "2026-05-31",
     "GAh5p_yt_short": "2026-05-31",
     "m8EAd_yt_short": "2026-05-30",
     "m8EAd_evening_story": "2026-05-30"
   },
-  "last_sync": "2026-05-31T07:11:59.990723+00:00",
+  "last_sync": "2026-05-31T15:44:41.918440+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -137,11 +137,18 @@
     {
       "destination_id": "tirthan-valley",
       "date": "2026-05-31"
+    },
+    {
+      "destination_id": "har-ki-doon",
+      "date": "2026-05-31"
+    },
+    {
+      "destination_id": "pithoragarh",
+      "date": "2026-05-31"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "methodology_family",
       "collection_spotlight",
       "methodology_altitude",
@@ -161,10 +168,10 @@
       "v2_route_animated_map",
       "weekend_escape",
       "v2_hindi_score_card",
-      "festival_alert"
+      "festival_alert",
+      "v2_tourist_trap_split"
     ],
     "PdMu0": [
-      "reality_check",
       "methodology_altitude",
       "score_card",
       "score_card",
@@ -184,7 +191,8 @@
       "v2_route_animated_map",
       "weekend_escape",
       "v2_hindi_score_card",
-      "festival_alert"
+      "festival_alert",
+      "v2_tourist_trap_split"
     ]
   },
   "post_log": [
@@ -1687,6 +1695,28 @@
       "destination": "tirthan-valley",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_2026-05-31.mp4"
+    },
+    {
+      "timestamp": "2026-05-31T15:45:54.995494+00:00",
+      "date": "2026-05-31",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "gkmox",
+      "destination": "har-ki-doon",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "har-ki-doon.mp4"
+    },
+    {
+      "timestamp": "2026-05-31T15:46:21.523381+00:00",
+      "date": "2026-05-31",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "OJtDv",
+      "destination": "pithoragarh",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "pithoragarh.mp4"
     }
   ],
   "theme_usage": {
@@ -1786,7 +1816,8 @@
         "2026-05-25"
       ],
       "pithoragarh": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-05-31"
       ],
       "puri": [
         "2026-05-25"
@@ -1832,7 +1863,8 @@
         "2026-05-29"
       ],
       "har-ki-doon": [
-        "2026-05-29"
+        "2026-05-29",
+        "2026-05-31"
       ],
       "gurudongmar-lake": [
         "2026-05-29"
@@ -1922,6 +1954,9 @@
       ],
       "festival_alert": [
         "2026-05-31"
+      ],
+      "v2_tourist_trap_split": [
+        "2026-05-31"
       ]
     },
     "reels": {
@@ -1978,6 +2013,12 @@
       ],
       "gopeshwar": [
         "2026-05-30"
+      ],
+      "har-ki-doon": [
+        "2026-05-31"
+      ],
+      "pithoragarh": [
+        "2026-05-31"
       ]
     },
     "audience_tags": {
@@ -2110,7 +2151,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "pithoragarh",
+    "shared_best": "har-ki-doon",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}
