@@ -71,17 +71,24 @@ export async function GET(req: NextRequest) {
   // outage produces ZERO ops_reports rows — and the watchdog can't tell that
   // apart from "the cron never fired". The 2026-05-28 DEGRADED email
   // (audit-supabase-advisors = missing) was caused by SUPABASE_PAT being
-  // unset on Vercel after the M1-M7 deploy; surface that as errored with a
-  // clear summary, not as missing.
+  // unset on Vercel after the M1-M7 deploy; surface that with a clear summary
+  // (needs_review for a config gap, errored for a real API failure), not as
+  // missing — see logFailure's severity split below.
   async function logFailure(reason: string, detail: string): Promise<void> {
     if (!supabaseUrlEarly || !serviceKeyEarly) return;
+    // config_missing (SUPABASE_PAT not yet on Vercel) is a known setup gap,
+    // NOT a live degradation — surface it as needs_review (yellow, Monday-
+    // digest only) so it stops firing the daily DEGRADED alert. A genuine
+    // Management-API failure stays ok:false → errored (red, daily alert).
+    // Watchdog: ok:false → errored; ok:true + alerts_count>0 → needs_review.
+    const isConfigMissing = reason === "config_missing";
     try {
       const supa = createClient(supabaseUrlEarly, serviceKeyEarly);
       await supa.from("ops_reports").insert({
         job: "audit-supabase-advisors",
         summary: { reason, detail },
-        alerts_count: 0,
-        ok: false,
+        alerts_count: isConfigMissing ? 1 : 0,
+        ok: isConfigMissing ? true : false,
       });
     } catch {
       // Best-effort. If logging itself fails, the watchdog will still see
