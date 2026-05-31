@@ -4,7 +4,8 @@
     "mini_guide",
     "listicle",
     "before_after",
-    "did_you_know"
+    "did_you_know",
+    "this_vs_that"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -17,16 +18,17 @@
     "px_soulful_soft",
     "20_retro_drive",
     "px_openmindaudio-rave-trance-music-fractured-daylight-521013",
-    "32_cinematic_pulse"
+    "32_cinematic_pulse",
+    "px_bollywood_hindi"
   ],
   "posted_today": {
     "m8EAd": "2026-05-31",
     "PdMu0": "2026-05-31",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-30",
     "PdMu0_evening": "2026-05-30",
-    "GAh5p_yt_short": "2026-05-30",
+    "GAh5p_yt_short": "2026-05-31",
     "m8EAd_yt_short": "2026-05-30",
     "m8EAd_evening_story": "2026-05-30"
   },
@@ -130,6 +132,10 @@
     },
     {
       "destination_id": "devprayag",
+      "date": "2026-05-31"
+    },
+    {
+      "destination_id": "joshimath",
       "date": "2026-05-31"
     }
   ],
@@ -1645,6 +1651,24 @@
       "format": "festival_alert",
       "has_media": true,
       "media_id": "devprayag.mp4"
+    },
+    {
+      "timestamp": "2026-05-31T07:57:20.012223+00:00",
+      "date": "2026-05-31",
+      "platform": "youtube",
+      "post_id": "E4L6A",
+      "destination": "joshimath",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-05-31.mp4"
+    },
+    {
+      "timestamp": "2026-05-31T07:58:07.241504+00:00",
+      "date": "2026-05-31",
+      "platform": "instagram",
+      "post_id": "WnaDz",
+      "destination": "joshimath",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-05-31.mp4"
     }
   ],
   "theme_usage": {

@@ -1089,3 +1089,26 @@ Date range: 2026-04-15 → 2026-05-30
 2026-05-31 07:13:27  INFO      [facebook/Nakshiq] ✅ Published · Outstand=zlbeP · Platform=1728247134997177
 2026-05-31 07:13:27  INFO      State saved. Run complete.
 2026-05-31 07:13:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 07:55:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 07:55:53  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-31
+2026-05-31 07:55:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-31 07:55:53  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-31 07:55:54  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-31 07:57:02  INFO      Short rendered: yt_short_this_vs_that_2026-05-31.mp4 (16143 KB, 24.0s, fmt=this_vs_that, music=px_bollywood_hindi)
+2026-05-31 07:57:02  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-05-31.mp4 (16,530,953 bytes, video/mp4)
+2026-05-31 07:57:03  INFO          Uploading to R2 (timeout=300s)...
+2026-05-31 07:57:05  INFO          R2 PUT OK. Confirming...
+2026-05-31 07:57:06  INFO          Media ready: TmBW1 (16,530,953 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-05-31.mp4)
+2026-05-31 07:57:06  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-05-31.mp4
+2026-05-31 07:57:06  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-05-31 07:57:08  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=E4L6A), waiting for platform confirmation...
+2026-05-31 07:57:20  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=E4L6A · Platform=SP9n1ZY92M0
+2026-05-31 07:57:20  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-05-31 07:57:21  INFO      [instagram/nakshiq] Outstand accepted (post_id=WnaDz), waiting for platform confirmation...
+2026-05-31 07:58:07  INFO          wait_for_publish exhausted 8 polls for post=WnaDz (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-05-31 07:58:07  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=WnaDz). May have silently failed.
+2026-05-31 07:58:07  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 114-115: surrogates not allowed
+2026-05-31 07:58:07  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-31 07:58:07  INFO      YT Short posted: format=this_vs_that, music=px_bollywood_hindi
+2026-05-31 07:58:07  INFO      State saved. YT Short run complete.
+2026-05-31 07:58:07  INFO      ════════════════════════════════════════════════════════════
