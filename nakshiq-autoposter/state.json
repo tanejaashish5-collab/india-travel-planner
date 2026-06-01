@@ -1,6 +1,7 @@
 {
   "yt_short_formats_used": [
-    "listicle"
+    "listicle",
+    "before_after"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -15,16 +16,17 @@
     "px_openmindaudio-rave-trance-music-fractured-daylight-521013",
     "32_cinematic_pulse",
     "px_bollywood_hindi",
-    "px_cinematic_bg"
+    "px_cinematic_bg",
+    "px_moodmode_chill"
   ],
   "posted_today": {
     "m8EAd": "2026-06-01",
     "PdMu0": "2026-06-01",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-31",
     "PdMu0_evening": "2026-05-31",
-    "GAh5p_yt_short": "2026-05-31"
+    "GAh5p_yt_short": "2026-06-01"
   },
   "last_sync": "2026-06-01T08:50:58.205901+00:00",
   "posted_destinations": [
@@ -146,6 +148,10 @@
     },
     {
       "destination_id": "yusmarg",
+      "date": "2026-06-01"
+    },
+    {
+      "destination_id": "sissu",
       "date": "2026-06-01"
     }
   ],
@@ -1741,6 +1747,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "yusmarg.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T09:41:49.577691+00:00",
+      "date": "2026-06-01",
+      "platform": "youtube",
+      "post_id": "R7oUH",
+      "destination": "sissu",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-06-01.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T09:42:40.629672+00:00",
+      "date": "2026-06-01",
+      "platform": "instagram",
+      "post_id": "EizCA",
+      "destination": "sissu",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-06-01.mp4"
     }
   ],
   "theme_usage": {
