@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
   const [{ count: dmCount, error: dmErr }, { count: destCount }, { count: festCount }] = await Promise.all([
     supabase.from("destination_months").select("*", { count: "exact", head: true }).eq("month", monthNum),
     supabase.from("destinations").select("*", { count: "exact", head: true }),
-    supabase.from("festivals").select("*", { count: "exact", head: true }).contains("months", [monthNum]),
+    supabase.from("festivals").select("*", { count: "exact", head: true }).eq("month", monthNum),
   ]);
   if (dmErr) return NextResponse.json({ error: dmErr.message }, { status: 500 });
 
