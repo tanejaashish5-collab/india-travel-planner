@@ -18,17 +18,15 @@
     "px_cinematic_bg"
   ],
   "posted_today": {
-    "m8EAd": "2026-05-31",
-    "PdMu0": "2026-05-31",
+    "m8EAd": "2026-06-01",
+    "PdMu0": "2026-06-01",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-31",
     "PdMu0_evening": "2026-05-31",
-    "GAh5p_yt_short": "2026-05-31",
-    "m8EAd_yt_short": "2026-05-30",
-    "m8EAd_evening_story": "2026-05-30"
+    "GAh5p_yt_short": "2026-05-31"
   },
-  "last_sync": "2026-05-31T15:44:41.918440+00:00",
+  "last_sync": "2026-06-01T08:50:58.205901+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -145,11 +143,14 @@
     {
       "destination_id": "pithoragarh",
       "date": "2026-05-31"
+    },
+    {
+      "destination_id": "yusmarg",
+      "date": "2026-06-01"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "methodology_family",
       "collection_spotlight",
       "methodology_altitude",
       "score_card",
@@ -169,10 +170,10 @@
       "weekend_escape",
       "v2_hindi_score_card",
       "festival_alert",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "score_card"
     ],
     "PdMu0": [
-      "methodology_altitude",
       "score_card",
       "score_card",
       "data_carousel",
@@ -192,7 +193,8 @@
       "weekend_escape",
       "v2_hindi_score_card",
       "festival_alert",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "score_card"
     ]
   },
   "post_log": [
@@ -1717,6 +1719,28 @@
       "format": "v2_tourist_trap_split",
       "has_media": true,
       "media_id": "pithoragarh.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T08:52:24.089610+00:00",
+      "date": "2026-06-01",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "lcyDK",
+      "destination": "yusmarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "yusmarg.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T08:52:46.941403+00:00",
+      "date": "2026-06-01",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "e6BYr",
+      "destination": "yusmarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "yusmarg.mp4"
     }
   ],
   "theme_usage": {
@@ -1874,6 +1898,9 @@
       ],
       "devprayag": [
         "2026-05-31"
+      ],
+      "yusmarg": [
+        "2026-06-01"
       ]
     },
     "morning_formats": {
@@ -1957,6 +1984,9 @@
       ],
       "v2_tourist_trap_split": [
         "2026-05-31"
+      ],
+      "score_card": [
+        "2026-06-01"
       ]
     },
     "reels": {
@@ -2151,7 +2181,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "har-ki-doon",
+    "shared_best": "yusmarg",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}
