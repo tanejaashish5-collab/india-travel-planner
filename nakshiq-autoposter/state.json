@@ -2,7 +2,8 @@
   "yt_short_formats_used": [
     "listicle",
     "before_after",
-    "mini_guide"
+    "mini_guide",
+    "dont_go_here"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -19,13 +20,14 @@
     "px_bollywood_hindi",
     "px_cinematic_bg",
     "px_moodmode_chill",
-    "06_sunset_gaze"
+    "06_sunset_gaze",
+    "29_night_trap"
   ],
   "posted_today": {
     "m8EAd": "2026-06-01",
     "PdMu0": "2026-06-01",
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 1,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-05-31",
     "PdMu0_evening": "2026-05-31",
     "GAh5p_yt_short": "2026-06-01",
@@ -1790,6 +1792,15 @@
       "destination": "rudraprayag",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-06-01.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T17:10:08.294616+00:00",
+      "date": "2026-06-01",
+      "platform": "instagram",
+      "post_id": "2TROS",
+      "destination": null,
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-06-01.mp4"
     }
   ],
   "theme_usage": {
