@@ -28,12 +28,13 @@
     "PdMu0": "2026-06-01",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-05-31",
-    "PdMu0_evening": "2026-05-31",
+    "m8EAd_evening": "2026-06-01",
+    "PdMu0_evening": "2026-06-01",
     "GAh5p_yt_short": "2026-06-01",
-    "m8EAd_yt_short": "2026-06-01"
+    "m8EAd_yt_short": "2026-06-01",
+    "m8EAd_evening_story": "2026-06-01"
   },
-  "last_sync": "2026-06-01T08:50:58.205901+00:00",
+  "last_sync": "2026-06-01T19:30:12.185826+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -162,11 +163,18 @@
     {
       "destination_id": "rudraprayag",
       "date": "2026-06-01"
+    },
+    {
+      "destination_id": "kasol",
+      "date": "2026-06-01"
+    },
+    {
+      "destination_id": "achabal",
+      "date": "2026-06-01"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "collection_spotlight",
       "methodology_altitude",
       "score_card",
       "score_card",
@@ -186,10 +194,10 @@
       "v2_hindi_score_card",
       "festival_alert",
       "v2_tourist_trap_split",
-      "score_card"
+      "score_card",
+      "v2_festival_alert_sensory"
     ],
     "PdMu0": [
-      "score_card",
       "score_card",
       "data_carousel",
       "score_card",
@@ -209,7 +217,8 @@
       "v2_hindi_score_card",
       "festival_alert",
       "v2_tourist_trap_split",
-      "score_card"
+      "score_card",
+      "v2_festival_alert_sensory"
     ]
   },
   "post_log": [
@@ -1801,6 +1810,39 @@
       "destination": null,
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-06-01.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T19:30:46.679626+00:00",
+      "date": "2026-06-01",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "ghKux",
+      "destination": "kasol",
+      "format": "v2_festival_alert_sensory",
+      "has_media": true,
+      "media_id": "v2_festival_alert_sensory-kasol.png"
+    },
+    {
+      "timestamp": "2026-06-01T19:31:05.025966+00:00",
+      "date": "2026-06-01",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "O3nZv",
+      "destination": "nubra-valley",
+      "format": "festival_alert",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-06-01T19:31:30.128752+00:00",
+      "date": "2026-06-01",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ya68j",
+      "destination": "achabal",
+      "format": "v2_festival_alert_sensory",
+      "has_media": true,
+      "media_id": "v2_festival_alert_sensory-achabal.png"
     }
   ],
   "theme_usage": {
@@ -1823,7 +1865,8 @@
         "2026-05-26"
       ],
       "achabal": [
-        "2026-05-19"
+        "2026-05-19",
+        "2026-06-01"
       ],
       "mumbai": [
         "2026-05-20",
@@ -1961,6 +2004,12 @@
       ],
       "yusmarg": [
         "2026-06-01"
+      ],
+      "kasol": [
+        "2026-06-01"
+      ],
+      "nubra-valley": [
+        "2026-06-01"
       ]
     },
     "morning_formats": {
@@ -2047,6 +2096,9 @@
       ],
       "score_card": [
         "2026-06-01"
+      ],
+      "v2_festival_alert_sensory": [
+        "2026-06-01"
       ]
     },
     "reels": {
@@ -2054,7 +2106,8 @@
         "2026-05-18"
       ],
       "achabal": [
-        "2026-05-19"
+        "2026-05-19",
+        "2026-06-01"
       ],
       "sissu": [
         "2026-05-21"
@@ -2109,11 +2162,15 @@
       ],
       "pithoragarh": [
         "2026-05-31"
+      ],
+      "kasol": [
+        "2026-06-01"
       ]
     },
     "audience_tags": {
       "backpackers": [
-        "2026-05-18"
+        "2026-05-18",
+        "2026-06-01"
       ],
       "families": [
         "2026-05-23",
@@ -2180,6 +2237,9 @@
       ],
       "0bc01854-4a77-46c6-b967-044b067071f0": [
         "2026-05-31"
+      ],
+      "7a46a2ee-37e3-49c5-97d1-465da0861dd9": [
+        "2026-06-01"
       ]
     },
     "tourist_map_states": {
@@ -2241,7 +2301,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "yusmarg",
+    "shared_best": "nubra-valley",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}

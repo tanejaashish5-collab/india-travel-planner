@@ -1346,3 +1346,48 @@ Date range: 2026-04-15 → 2026-05-31
 2026-06-01 17:10:08  INFO      YT Short posted: format=dont_go_here, music=29_night_trap
 2026-06-01 17:10:08  INFO      State saved. YT Short run complete.
 2026-06-01 17:10:08  INFO      ════════════════════════════════════════════════════════════
+2026-06-01 19:29:40  INFO      ════════════════════════════════════════════════════════════
+2026-06-01 19:29:40  INFO      Nakshiq Autoposter · EVENING · 2026-06-01 · weekday=0
+2026-06-01 19:29:40  INFO      ════════════════════════════════════════════════════════════
+2026-06-01 19:29:40  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-01 19:30:12  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-01 19:30:12  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-06-01 19:30:13  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-01 19:30:13  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-01 19:30:25  INFO      [evening] variety pick: v2_festival_alert_sensory (33 CSV + 3 visual candidates)
+2026-06-01 19:30:25  INFO      Formats — IG: v2_festival_alert_sensory  ·  FB: v2_festival_alert_sensory  ·  Story: festival_alert  ·  Audience: backpackers
+2026-06-01 19:30:25  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 31
+2026-06-01 19:30:25  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-06-01 19:30:25  INFO      Fingerprint dedup snapshot — 53 dests in 7d · 65 (dest,fmt) pairs in 30d · 68 media in 60d
+2026-06-01 19:30:25  INFO      Festival locked: Solan Shoolini Fair (25/31 active festivals never featured)
+2026-06-01 19:30:26  INFO      Shared best destination locked: Nubra Valley
+2026-06-01 19:30:26  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-01 19:30:26  INFO      [instagram/nakshiq] Generating v2_festival_alert_sensory post...
+2026-06-01 19:30:26  INFO      [instagram/nakshiq] Caption ready (295 chars, dest=kasol)
+2026-06-01 19:30:27  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_festival_alert_sensory → uploading...
+2026-06-01 19:30:27  INFO          Requesting upload URL for v2_festival_alert_sensory-kasol.png (2,037,108 bytes, image/png)
+2026-06-01 19:30:28  INFO          Uploading to R2 (timeout=120s)...
+2026-06-01 19:30:29  INFO          R2 PUT OK. Confirming...
+2026-06-01 19:30:31  INFO          Media ready: PnZa0 (2,037,108 bytes · v2_festival_alert_sensory-kasol.png)
+2026-06-01 19:30:31  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-01 19:30:46  INFO      [instagram/nakshiq] ✅ Published · Outstand=ghKux · Platform=18123501025729889
+2026-06-01 19:30:46  WARNING   festival_alert: home destination 'solan' for festival 'Solan Shoolini Fair' not found in catalog — falling back to score_card to avoid caption/video mismatch.
+2026-06-01 19:30:46  INFO      [instagram/nakshiq] Uploading Story image (nubra-valley.jpg)...
+2026-06-01 19:30:46  INFO          Using branded image: nubra-valley_story_minimal-elegant_watermark.jpg (313,338 bytes)
+2026-06-01 19:30:46  INFO          Requesting upload URL for nubra-valley.jpg (313,338 bytes, image/jpeg)
+2026-06-01 19:30:47  INFO          Uploading to R2 (timeout=120s)...
+2026-06-01 19:30:49  INFO          R2 PUT OK. Confirming...
+2026-06-01 19:30:49  INFO          Media ready: ArpL7 (313,338 bytes · nubra-valley.jpg)
+2026-06-01 19:30:49  INFO      [instagram/nakshiq] Publishing Story · format=festival_alert · dest=nubra-valley
+2026-06-01 19:31:05  INFO      [instagram/nakshiq] ✅ Story live · ID=17886413331564429
+2026-06-01 19:31:05  INFO      [facebook/Nakshiq] Generating v2_festival_alert_sensory post...
+2026-06-01 19:31:05  INFO      [facebook/Nakshiq] Caption ready (289 chars, dest=achabal)
+2026-06-01 19:31:06  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_festival_alert_sensory → uploading...
+2026-06-01 19:31:06  INFO          Requesting upload URL for v2_festival_alert_sensory-achabal.png (2,077,160 bytes, image/png)
+2026-06-01 19:31:07  INFO          Uploading to R2 (timeout=120s)...
+2026-06-01 19:31:08  INFO          R2 PUT OK. Confirming...
+2026-06-01 19:31:09  INFO          Media ready: x3tA8 (2,077,160 bytes · v2_festival_alert_sensory-achabal.png)
+2026-06-01 19:31:09  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-01 19:31:30  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ya68j · Platform=1040562729145369_122110591442700092
+2026-06-01 19:31:30  INFO      State saved. Run complete.
+2026-06-01 19:31:30  INFO      ════════════════════════════════════════════════════════════
