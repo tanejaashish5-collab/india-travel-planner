@@ -1,7 +1,8 @@
 {
   "yt_short_formats_used": [
     "listicle",
-    "before_after"
+    "before_after",
+    "mini_guide"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -17,16 +18,18 @@
     "32_cinematic_pulse",
     "px_bollywood_hindi",
     "px_cinematic_bg",
-    "px_moodmode_chill"
+    "px_moodmode_chill",
+    "06_sunset_gaze"
   ],
   "posted_today": {
     "m8EAd": "2026-06-01",
     "PdMu0": "2026-06-01",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-05-31",
     "PdMu0_evening": "2026-05-31",
-    "GAh5p_yt_short": "2026-06-01"
+    "GAh5p_yt_short": "2026-06-01",
+    "m8EAd_yt_short": "2026-06-01"
   },
   "last_sync": "2026-06-01T08:50:58.205901+00:00",
   "posted_destinations": [
@@ -152,6 +155,10 @@
     },
     {
       "destination_id": "sissu",
+      "date": "2026-06-01"
+    },
+    {
+      "destination_id": "rudraprayag",
       "date": "2026-06-01"
     }
   ],
@@ -1765,6 +1772,24 @@
       "destination": "sissu",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_2026-06-01.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T14:46:13.800246+00:00",
+      "date": "2026-06-01",
+      "platform": "youtube",
+      "post_id": "O3rpv",
+      "destination": "rudraprayag",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-06-01.mp4"
+    },
+    {
+      "timestamp": "2026-06-01T14:46:45.929305+00:00",
+      "date": "2026-06-01",
+      "platform": "instagram",
+      "post_id": "ghiZx",
+      "destination": "rudraprayag",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-06-01.mp4"
     }
   ],
   "theme_usage": {

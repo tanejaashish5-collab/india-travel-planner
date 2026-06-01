@@ -1304,3 +1304,25 @@ Date range: 2026-04-15 → 2026-05-31
 2026-06-01 09:42:40  INFO      YT Short posted: format=before_after, music=px_moodmode_chill
 2026-06-01 09:42:40  INFO      State saved. YT Short run complete.
 2026-06-01 09:42:40  INFO      ════════════════════════════════════════════════════════════
+2026-06-01 14:44:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-01 14:44:50  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-01
+2026-06-01 14:44:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-01 14:44:50  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-01 14:44:50  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-01 14:45:55  INFO      Short rendered: yt_short_mini_guide_2026-06-01.mp4 (15708 KB, 28.0s, fmt=mini_guide, music=06_sunset_gaze)
+2026-06-01 14:45:55  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-06-01.mp4 (16,085,433 bytes, video/mp4)
+2026-06-01 14:45:56  INFO          Uploading to R2 (timeout=300s)...
+2026-06-01 14:45:58  INFO          R2 PUT OK. Confirming...
+2026-06-01 14:45:59  INFO          Media ready: 74TEW (16,085,433 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-06-01.mp4)
+2026-06-01 14:45:59  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-06-01.mp4
+2026-06-01 14:45:59  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-06-01 14:46:02  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=O3rpv), waiting for platform confirmation...
+2026-06-01 14:46:13  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=O3rpv · Platform=BlbiGXlcRag
+2026-06-01 14:46:13  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-06-01 14:46:15  INFO      [instagram/nakshiq] Outstand accepted (post_id=ghiZx), waiting for platform confirmation...
+2026-06-01 14:46:45  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=ghiZx · Platform=18119066104689998
+2026-06-01 14:46:45  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 130-131: surrogates not allowed
+2026-06-01 14:46:45  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-01 14:46:45  INFO      YT Short posted: format=mini_guide, music=06_sunset_gaze
+2026-06-01 14:46:45  INFO      State saved. YT Short run complete.
+2026-06-01 14:46:45  INFO      ════════════════════════════════════════════════════════════
