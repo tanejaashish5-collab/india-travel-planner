@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { syncSavedDestinationAlerts } from "@/lib/newsletter/sync-saved-alerts";
 
 export const runtime = "nodejs";
 
@@ -60,7 +61,7 @@ export async function GET(req: NextRequest) {
 
   const { data: existing } = await supabase
     .from("newsletter_subscribers")
-    .select("id, confirmed_at")
+    .select("id, email, confirmed_at, saved_destination_ids")
     .eq("confirmation_token", token)
     .maybeSingle();
 
@@ -76,6 +77,17 @@ export async function GET(req: NextRequest) {
       .from("newsletter_subscribers")
       .update({ confirmed_at: new Date().toISOString() })
       .eq("id", existing.id);
+
+    // First confirmation: now that double opt-in is satisfied, turn the
+    // saved-list promise into reality — fan their saved destinations into
+    // confirmed destination_alerts rows so the send-destination-alerts cron
+    // delivers the peak-month heads-up the welcome email promised. Best-effort.
+    await syncSavedDestinationAlerts(
+      supabase,
+      existing.email as string,
+      existing.saved_destination_ids,
+      "savelist-confirm",
+    );
   }
 
   return new NextResponse(

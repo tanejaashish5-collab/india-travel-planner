@@ -12,6 +12,7 @@ import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
 import { KEY_EVENTS, track } from "@/lib/analytics";
+import { isSaved, toggleSaved } from "@/lib/saved-destinations";
 import { WhatsAppShare } from "./whatsapp-share";
 import { CompareButton } from "./compare-tray";
 import { formatScoreInline } from "@itp/shared";
@@ -94,25 +95,20 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const displayTagline = (locale !== "en" && dest.translations?.[locale]?.tagline) || dest.tagline;
   const displayWhySpecial = (locale !== "en" && dest.translations?.[locale]?.why_special) || dest.why_special;
 
-  // Check localStorage for saved state
+  // Check saved state on mount (after hydration to avoid SSR mismatch).
   useEffect(() => {
-    const savedDests = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
-    setSaved(savedDests.includes(dest.id));
+    setSaved(isSaved(dest.id));
   }, [dest.id]);
 
   function toggleSave() {
-    const savedDests = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
-    if (saved) {
-      const filtered = savedDests.filter((id: string) => id !== dest.id);
-      localStorage.setItem("savedDestinations", JSON.stringify(filtered));
-      setSaved(false);
-      track(KEY_EVENTS.SAVE_DESTINATION, { destination: dest.id, action: "remove", surface: "detail" });
-    } else {
-      savedDests.push(dest.id);
-      localStorage.setItem("savedDestinations", JSON.stringify(savedDests));
-      setSaved(true);
-      track(KEY_EVENTS.SAVE_DESTINATION, { destination: dest.id, action: "add", surface: "detail" });
-    }
+    // Shared util dispatches the change-event → SaveListEmailPrompt reacts.
+    const { isSaved: nowSaved } = toggleSaved(dest.id);
+    setSaved(nowSaved);
+    track(KEY_EVENTS.SAVE_DESTINATION, {
+      destination: dest.id,
+      action: nowSaved ? "add" : "remove",
+      surface: "detail",
+    });
   }
 
   const kf = Array.isArray(dest.kids_friendly) ? dest.kids_friendly[0] : dest.kids_friendly;

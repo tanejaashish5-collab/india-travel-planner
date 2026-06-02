@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { currentMonthIST, formatScoreInline } from "@itp/shared";
 import { getSavedIds, removeSaved as removeSavedId } from "@/lib/saved-destinations";
+import { SavedListCapture } from "@/components/saved-list-capture";
 
 const MONTH_NAMES = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -107,6 +108,10 @@ export function SavedContent({ destinations }: { destinations: DestRow[] }) {
 
   return (
     <>
+      {/* Primary email capture — the hottest-intent surface in the funnel.
+          Renders only once at least one destination is saved. */}
+      <SavedListCapture locale={locale === "hi" ? "hi" : "en"} savedIds={savedIds} />
+
       <div style={{ marginBottom: 24, display: "flex", flexWrap: "wrap", alignItems: "baseline", justifyContent: "space-between", gap: 16 }}>
         <p style={META}>
           {String(savedDestinations.length).padStart(2, "0")} SAVED ·{" "}

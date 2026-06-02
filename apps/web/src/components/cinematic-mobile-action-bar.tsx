@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { KEY_EVENTS, track } from "@/lib/analytics";
+import { isSaved, toggleSaved } from "@/lib/saved-destinations";
 
 // Mobile bottom-action bar — three buttons pinned to the bottom edge on
 // phones only. Replaces the desktop floating Plan-AI pill on mobile so we
@@ -27,10 +28,7 @@ export function CinematicMobileActionBar({
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const stored = JSON.parse(
-      localStorage.getItem("savedDestinations") || "[]",
-    );
-    setSaved(stored.includes(destinationId));
+    setSaved(isSaved(destinationId));
   }, [destinationId]);
 
   useEffect(() => {
@@ -49,28 +47,15 @@ export function CinematicMobileActionBar({
   }, []);
 
   function toggleSave() {
-    const stored = JSON.parse(
-      localStorage.getItem("savedDestinations") || "[]",
-    );
-    if (saved) {
-      const next = stored.filter((id: string) => id !== destinationId);
-      localStorage.setItem("savedDestinations", JSON.stringify(next));
-      setSaved(false);
-      track(KEY_EVENTS.SAVE_DESTINATION, {
-        destination: destinationId,
-        action: "remove",
-        surface: "cinematic_mobile_bar",
-      });
-    } else {
-      stored.push(destinationId);
-      localStorage.setItem("savedDestinations", JSON.stringify(stored));
-      setSaved(true);
-      track(KEY_EVENTS.SAVE_DESTINATION, {
-        destination: destinationId,
-        action: "add",
-        surface: "cinematic_mobile_bar",
-      });
-    }
+    // Route through the shared util so the change-event fires and the
+    // SaveListEmailPrompt can react in the same tab (critical on mobile).
+    const { isSaved: nowSaved } = toggleSaved(destinationId);
+    setSaved(nowSaved);
+    track(KEY_EVENTS.SAVE_DESTINATION, {
+      destination: destinationId,
+      action: nowSaved ? "add" : "remove",
+      surface: "cinematic_mobile_bar",
+    });
   }
 
   function handleWhatsApp() {

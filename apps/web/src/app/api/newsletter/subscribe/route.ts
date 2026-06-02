@@ -4,6 +4,7 @@ import { render } from "@react-email/render";
 import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
 import ConfirmSubscription from "@/emails/confirm-subscription";
 import SavedListWelcome from "@/emails/saved-list-welcome";
+import { syncSavedDestinationAlerts } from "@/lib/newsletter/sync-saved-alerts";
 
 export const runtime = "nodejs";
 
@@ -81,6 +82,12 @@ export async function POST(req: NextRequest) {
           .from("newsletter_subscribers")
           .update({ tags: nextTags, saved_destination_ids: nextSaved })
           .eq("id", existing.id);
+      }
+      // Already confirmed (double opt-in satisfied) + on the savelist: if they
+      // just saved new destinations, fan them into confirmed destination_alerts
+      // so the cron alerts them before each peaks. Idempotent + best-effort.
+      if (savedChanged && nextTags.includes("savelist")) {
+        await syncSavedDestinationAlerts(supabase, rawEmail, nextSaved, "savelist-resave");
       }
       return NextResponse.json({ ok: true, alreadySubscribed: true });
     }

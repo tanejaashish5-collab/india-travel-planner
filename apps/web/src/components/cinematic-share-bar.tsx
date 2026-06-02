@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { KEY_EVENTS, track } from "@/lib/analytics";
+import { isSaved, toggleSaved } from "@/lib/saved-destinations";
 import { useCompare } from "./compare-tray";
 
 type Position = "hero" | "sticky";
@@ -29,10 +30,7 @@ export function CinematicShareBar({
   const comparing = isInCompare(destinationId);
 
   useEffect(() => {
-    const stored = JSON.parse(
-      localStorage.getItem("savedDestinations") || "[]",
-    );
-    setSaved(stored.includes(destinationId));
+    setSaved(isSaved(destinationId));
   }, [destinationId]);
 
   useEffect(() => {
@@ -53,28 +51,14 @@ export function CinematicShareBar({
   }, [position]);
 
   function toggleSave() {
-    const stored = JSON.parse(
-      localStorage.getItem("savedDestinations") || "[]",
-    );
-    if (saved) {
-      const next = stored.filter((id: string) => id !== destinationId);
-      localStorage.setItem("savedDestinations", JSON.stringify(next));
-      setSaved(false);
-      track(KEY_EVENTS.SAVE_DESTINATION, {
-        destination: destinationId,
-        action: "remove",
-        surface: "cinematic",
-      });
-    } else {
-      stored.push(destinationId);
-      localStorage.setItem("savedDestinations", JSON.stringify(stored));
-      setSaved(true);
-      track(KEY_EVENTS.SAVE_DESTINATION, {
-        destination: destinationId,
-        action: "add",
-        surface: "cinematic",
-      });
-    }
+    // Shared util dispatches the change-event → SaveListEmailPrompt reacts.
+    const { isSaved: nowSaved } = toggleSaved(destinationId);
+    setSaved(nowSaved);
+    track(KEY_EVENTS.SAVE_DESTINATION, {
+      destination: destinationId,
+      action: nowSaved ? "add" : "remove",
+      surface: "cinematic",
+    });
   }
 
   async function handleShare() {

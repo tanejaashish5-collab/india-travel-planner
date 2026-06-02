@@ -17,7 +17,11 @@ import { useSavedIds, getSavedIds } from "@/lib/saved-destinations";
 // 2026-05-22: lowered 3 → 2 — the prompt drew 0 views at threshold 3
 // (nobody was saving 3 destinations in a session). 2 saves is still a
 // genuine intent signal and a far larger eligible pool.
-const THRESHOLD = 2;
+// 2026-06-02: lowered 2 → 1 — same reasoning extends. On a melting,
+// mostly single-page-visit funnel, even one save is real intent, and the
+// value exchange is now the (delivered) peak-month alert, not "email a
+// list you can already see". /saved page carries the primary capture.
+const THRESHOLD = 1;
 const COOKIE_KEY = "nakshiq_savelist_prompted";
 const COOKIE_TTL_DAYS = 7;
 const SUCCESS_KEY = "nakshiq_savelist_subscribed";   // persists forever
@@ -32,8 +36,8 @@ interface Props {
 const COPY = {
   en: {
     kicker: (n: number) => `WISHLIST · ${n} SAVED`,
-    headline: "Email yourself the list?",
-    subhead: "We'll send your saved destinations plus a heads-up before each one peaks. No spam, easy unsubscribe.",
+    headline: "Know before they peak.",
+    subhead: "We'll email your saved list, then nudge you about 3 weeks before each place hits its best month — before crowds and prices climb. No spam, unsubscribe anytime.",
     placeholder: "your.email@example.com",
     submit: "Send →",
     submitting: "Sending…",
@@ -45,8 +49,8 @@ const COPY = {
   },
   hi: {
     kicker: (n: number) => `विशलिस्ट · ${n} सहेजे`,
-    headline: "अपनी सूची ईमेल करवाएँ?",
-    subhead: "हम आपकी सहेजी जगहें भेजेंगे, साथ ही पीक से पहले हेड्स-अप। बिना स्पैम, आसान अनसब्सक्राइब।",
+    headline: "पीक से पहले जान लें।",
+    subhead: "हम आपकी सहेजी सूची ईमेल करेंगे, फिर हर जगह के सबसे अच्छे महीने से करीब 3 हफ़्ते पहले याद दिलाएँगे — भीड़ और दाम बढ़ने से पहले। बिना स्पैम, कभी भी अनसब्सक्राइब।",
     placeholder: "your.email@example.com",
     submit: "भेजें →",
     submitting: "भेजा जा रहा है…",
