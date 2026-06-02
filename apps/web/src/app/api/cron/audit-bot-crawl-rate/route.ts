@@ -140,7 +140,16 @@ export async function GET(req: NextRequest) {
     job: "audit-bot-crawl-rate",
     summary: { window_days: 7, findings, full_summary: summary },
     alerts_count: findings.length,
-    ok: findings.length === 0,
+    // The job ran fine — a crawl-rate drop is a *flagged item*, not a crash.
+    // `ok: true` lets the watchdog classify findings as `needs_review` (yellow)
+    // via alerts_count, instead of short-circuiting to `errored` (red, daily
+    // DEGRADED email). Parity with the audit-gsc-ga4-correlation fix (d0c1ea93):
+    // a single-family WoW drop is usually a post-launch crawl-burst decay (e.g.
+    // /festivals 8→77→15 after the 2026-05-23 launch) while the real ISR canary
+    // (destination/month) and every other family stay healthy or rise — not a
+    // render regression. Only the query-failure path above (ok: false) is a real
+    // `errored`. The finding still emails + shows yellow in the Monday digest.
+    ok: true,
   });
 
   let emailed = false;
