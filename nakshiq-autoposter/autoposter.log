@@ -1535,3 +1535,19 @@ Date range: 2026-04-15 → 2026-06-01
 2026-06-02 14:44:58  INFO      YT Short posted: format=this_vs_that, music=13_monsoon_pulse
 2026-06-02 14:44:58  INFO      State saved. YT Short run complete.
 2026-06-02 14:44:58  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 15:49:56  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 15:49:56  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-02
+2026-06-02 15:49:56  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 15:49:56  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-02 15:49:56  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-02 15:51:02  INFO      Short rendered: yt_short_this_vs_that_2026-06-02.mp4 (10809 KB, 24.0s, fmt=this_vs_that, music=23_dark_trap_soul)
+2026-06-02 15:51:02  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-06-02.mp4 (11,068,807 bytes, video/mp4)
+2026-06-02 15:51:04  INFO          Uploading to R2 (timeout=300s)...
+2026-06-02 15:51:05  INFO          R2 PUT OK. Confirming...
+2026-06-02 15:51:06  INFO          Media ready: 9cyZQ (11,068,807 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-06-02.mp4)
+2026-06-02 15:51:06  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-06-02.mp4
+2026-06-02 15:51:08  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-06-02 15:51:08  INFO      [instagram/nakshiq] Already posted 2 YT Shorts today — skipping.
+2026-06-02 15:51:08  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-02 15:51:08  INFO      State saved. YT Short run complete.
+2026-06-02 15:51:08  INFO      ════════════════════════════════════════════════════════════
