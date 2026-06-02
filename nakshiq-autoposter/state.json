@@ -24,8 +24,8 @@
     "29_night_trap"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-01",
-    "PdMu0": "2026-06-01",
+    "m8EAd": "2026-06-02",
+    "PdMu0": "2026-06-02",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-01",
@@ -34,7 +34,7 @@
     "m8EAd_yt_short": "2026-06-01",
     "m8EAd_evening_story": "2026-06-01"
   },
-  "last_sync": "2026-06-01T19:30:12.185826+00:00",
+  "last_sync": "2026-06-02T08:13:11.677735+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -171,11 +171,18 @@
     {
       "destination_id": "achabal",
       "date": "2026-06-01"
+    },
+    {
+      "destination_id": "tungnath",
+      "date": "2026-06-02"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-06-02"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "methodology_altitude",
       "score_card",
       "score_card",
       "data_carousel",
@@ -195,10 +202,10 @@
       "festival_alert",
       "v2_tourist_trap_split",
       "score_card",
-      "v2_festival_alert_sensory"
+      "v2_festival_alert_sensory",
+      "v2_score_card_pov"
     ],
     "PdMu0": [
-      "score_card",
       "data_carousel",
       "score_card",
       "infrastructure_truth",
@@ -218,7 +225,8 @@
       "festival_alert",
       "v2_tourist_trap_split",
       "score_card",
-      "v2_festival_alert_sensory"
+      "v2_festival_alert_sensory",
+      "v2_score_card_pov"
     ]
   },
   "post_log": [
@@ -1823,17 +1831,6 @@
       "media_id": "v2_festival_alert_sensory-kasol.png"
     },
     {
-      "timestamp": "2026-06-01T19:31:05.025966+00:00",
-      "date": "2026-06-01",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "O3nZv",
-      "destination": "nubra-valley",
-      "format": "festival_alert",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-06-01T19:31:30.128752+00:00",
       "date": "2026-06-01",
       "platform": "facebook",
@@ -1843,6 +1840,28 @@
       "format": "v2_festival_alert_sensory",
       "has_media": true,
       "media_id": "v2_festival_alert_sensory-achabal.png"
+    },
+    {
+      "timestamp": "2026-06-02T08:14:24.682368+00:00",
+      "date": "2026-06-02",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "KLRA9",
+      "destination": "tungnath",
+      "format": "v2_score_card_pov",
+      "has_media": true,
+      "media_id": "tungnath.mp4"
+    },
+    {
+      "timestamp": "2026-06-02T08:14:48.884579+00:00",
+      "date": "2026-06-02",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "dJ9VO",
+      "destination": "chopta",
+      "format": "v2_score_card_pov",
+      "has_media": true,
+      "media_id": "chopta.mp4"
     }
   ],
   "theme_usage": {
@@ -1862,7 +1881,8 @@
         "2026-05-20",
         "2026-05-21",
         "2026-05-23",
-        "2026-05-26"
+        "2026-05-26",
+        "2026-06-02"
       ],
       "achabal": [
         "2026-05-19",
@@ -2010,6 +2030,9 @@
       ],
       "nubra-valley": [
         "2026-06-01"
+      ],
+      "tungnath": [
+        "2026-06-02"
       ]
     },
     "morning_formats": {
@@ -2099,6 +2122,9 @@
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
+      ],
+      "v2_score_card_pov": [
+        "2026-06-02"
       ]
     },
     "reels": {
@@ -2301,7 +2327,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nubra-valley",
+    "shared_best": "roopkund",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {}

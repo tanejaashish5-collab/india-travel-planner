@@ -1440,3 +1440,54 @@ Date range: 2026-04-15 → 2026-05-31
 2026-06-01 21:47:19  INFO      
 Date range: 2026-04-15 → 2026-06-01
 2026-06-01 21:47:19  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 08:12:36  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 08:12:36  INFO      Nakshiq Autoposter · MORNING · 2026-06-02 · weekday=1
+2026-06-02 08:12:36  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 08:12:36  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-02 08:13:11  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-02 08:13:11  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-06-02 08:13:12  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-02 08:13:14  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-02 08:13:27  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-02 08:13:27  INFO      Morning format (themed-week-1→verdict): v2_score_card_pov [38% vs target 50%] (0/14 never featured)
+2026-06-02 08:13:27  INFO      Formats — IG: v2_score_card_pov  ·  FB: v2_score_card_pov  ·  Story: blog_promo
+2026-06-02 08:13:27  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 33
+2026-06-02 08:13:27  INFO      Fingerprint dedup snapshot — 51 dests in 7d · 67 (dest,fmt) pairs in 30d · 70 media in 60d
+2026-06-02 08:13:31  INFO      Shared best destination locked: Roopkund
+2026-06-02 08:13:31  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-02 08:13:31  INFO      [instagram/nakshiq] Generating v2_score_card_pov post...
+2026-06-02 08:13:31  INFO      v2_score_card_pov: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:13:31  INFO      v2_score_card_pov: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:13:31  INFO      [instagram/nakshiq] Caption ready (520 chars, dest=tungnath)
+2026-06-02 08:13:31  INFO      [instagram/nakshiq] CSV video format (v2_score_card_pov) — using dest Ken Burns clip as fallback
+2026-06-02 08:13:31  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tungnath.mp4?v=20260524
+2026-06-02 08:13:34  INFO          Brand-stamp applied: tungnath.mp4 (13,896,452 → 7,499,362 bytes)
+2026-06-02 08:13:34  INFO          Requesting upload URL for tungnath.mp4 (7,499,362 bytes, video/mp4)
+2026-06-02 08:13:35  INFO          Uploading to R2 (timeout=300s)...
+2026-06-02 08:13:36  INFO          R2 PUT OK. Confirming...
+2026-06-02 08:13:36  INFO          Media ready: WiuMz (7,499,362 bytes · tungnath.mp4)
+2026-06-02 08:13:36  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-02 08:14:24  INFO          wait_for_publish exhausted 8 polls for post=KLRA9 (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-02 08:14:24  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=KLRA9)
+2026-06-02 08:14:24  INFO      [facebook/Nakshiq] Generating v2_score_card_pov post...
+2026-06-02 08:14:24  INFO      v2_score_card_pov: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      v2_score_card_pov: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      v2_score_card_pov: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      v2_score_card_pov: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      v2_score_card_pov: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      v2_score_card_pov: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      v2_score_card_pov: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      v2_score_card_pov: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 08:14:24  INFO      [facebook/Nakshiq] Caption ready (337 chars, dest=chopta)
+2026-06-02 08:14:24  INFO      [facebook/Nakshiq] CSV video format (v2_score_card_pov) — using dest Ken Burns clip as fallback
+2026-06-02 08:14:24  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/chopta.mp4?v=20260524
+2026-06-02 08:14:27  INFO          Brand-stamp applied: chopta.mp4 (4,144,210 → 2,588,118 bytes)
+2026-06-02 08:14:27  INFO          Requesting upload URL for chopta.mp4 (2,588,118 bytes, video/mp4)
+2026-06-02 08:14:27  INFO          Uploading to R2 (timeout=300s)...
+2026-06-02 08:14:28  INFO          R2 PUT OK. Confirming...
+2026-06-02 08:14:29  INFO          Media ready: GOaLp (2,588,118 bytes · chopta.mp4)
+2026-06-02 08:14:29  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-02 08:14:48  WARNING       Platform error for post=dJ9VO: Error publishing post to Facebook: Failed to upload Facebook video: 500 - Please reduce the amount of data you're asking for, then retry your request
+2026-06-02 08:14:48  WARNING   [facebook/Nakshiq] ⚠️  Rejected (ID=dJ9VO)
+2026-06-02 08:14:48  INFO      State saved. Run complete.
+2026-06-02 08:14:48  INFO      ════════════════════════════════════════════════════════════
