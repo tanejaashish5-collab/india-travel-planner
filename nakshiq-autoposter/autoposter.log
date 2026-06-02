@@ -1551,3 +1551,63 @@ Date range: 2026-04-15 → 2026-06-01
 2026-06-02 15:51:08  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-06-02 15:51:08  INFO      State saved. YT Short run complete.
 2026-06-02 15:51:08  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 18:15:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 18:15:21  INFO      Nakshiq Autoposter · EVENING · 2026-06-02 · weekday=1
+2026-06-02 18:15:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 18:15:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-02 18:15:58  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-02 18:15:58  INFO      brand_stamp: registered 433 destinations for overlay lookup
+2026-06-02 18:15:59  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-02 18:15:59  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-02 18:16:13  INFO      [evening] variety pick: v2_local_knows (33 CSV + 3 visual candidates)
+2026-06-02 18:16:13  INFO      Formats — IG: v2_local_knows  ·  FB: v2_local_knows  ·  Story: collection_spotlight
+2026-06-02 18:16:13  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 37
+2026-06-02 18:16:13  INFO      Fingerprint dedup snapshot — 53 dests in 7d · 71 (dest,fmt) pairs in 30d · 73 media in 60d
+2026-06-02 18:16:13  INFO      Collection locked: Best on ₹1000/Day (11/20 never featured)
+2026-06-02 18:16:15  INFO      Shared best destination locked: Pangong Tso
+2026-06-02 18:16:15  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-06-02 18:16:15  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-02 18:16:15  INFO      [instagram/nakshiq] Generating v2_local_knows post...
+2026-06-02 18:16:15  INFO      v2_local_knows: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      v2_local_knows: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      v2_local_knows: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      v2_local_knows: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      v2_local_knows: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      v2_local_knows: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:16:15  INFO      [instagram/nakshiq] Caption ready (620 chars, dest=pangong-lake)
+2026-06-02 18:16:17  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-06-02 18:16:17  INFO          Requesting upload URL for v2_local_knows-pangong-lake.png (1,700,269 bytes, image/png)
+2026-06-02 18:16:18  INFO          Uploading to R2 (timeout=120s)...
+2026-06-02 18:16:20  INFO          R2 PUT OK. Confirming...
+2026-06-02 18:16:21  INFO          Media ready: TdMh1 (1,700,269 bytes · v2_local_knows-pangong-lake.png)
+2026-06-02 18:16:21  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-02 18:16:41  INFO      [instagram/nakshiq] ✅ Published · Outstand=QNbPy · Platform=18100450843893766
+2026-06-02 18:16:41  INFO      [instagram/nakshiq] Uploading Story image (kasol.jpg)...
+2026-06-02 18:16:41  INFO          Using branded image: kasol_story_info-card_footer-bar.jpg (415,991 bytes)
+2026-06-02 18:16:41  INFO          Requesting upload URL for kasol.jpg (415,991 bytes, image/jpeg)
+2026-06-02 18:16:42  INFO          Uploading to R2 (timeout=120s)...
+2026-06-02 18:16:43  INFO          R2 PUT OK. Confirming...
+2026-06-02 18:16:43  INFO          Media ready: Sbh8J (415,991 bytes · kasol.jpg)
+2026-06-02 18:16:43  INFO      [instagram/nakshiq] Publishing Story · format=collection_spotlight · dest=kasol
+2026-06-02 18:17:03  INFO      [instagram/nakshiq] ✅ Story live · ID=18111362803924377
+2026-06-02 18:17:03  INFO      [facebook/Nakshiq] Generating v2_local_knows post...
+2026-06-02 18:17:03  INFO      v2_local_knows: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      v2_local_knows: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      v2_local_knows: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      v2_local_knows: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      v2_local_knows: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      v2_local_knows: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-02 18:17:03  INFO      [facebook/Nakshiq] Caption ready (599 chars, dest=nubra-valley)
+2026-06-02 18:17:05  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-06-02 18:17:05  INFO          Requesting upload URL for v2_local_knows-nubra-valley.png (1,497,830 bytes, image/png)
+2026-06-02 18:17:06  INFO          Uploading to R2 (timeout=120s)...
+2026-06-02 18:17:06  INFO          R2 PUT OK. Confirming...
+2026-06-02 18:17:07  INFO          Media ready: BH9tn (1,497,830 bytes · v2_local_knows-nubra-valley.png)
+2026-06-02 18:17:07  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-02 18:17:33  INFO      [facebook/Nakshiq] ✅ Published · Outstand=e6HZr · Platform=1040562729145369_122110709660700092
+2026-06-02 18:17:33  INFO      State saved. Run complete.
+2026-06-02 18:17:33  INFO      ════════════════════════════════════════════════════════════

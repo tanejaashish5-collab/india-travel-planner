@@ -28,13 +28,13 @@
     "PdMu0": "2026-06-02",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-06-01",
-    "PdMu0_evening": "2026-06-01",
+    "m8EAd_evening": "2026-06-02",
+    "PdMu0_evening": "2026-06-02",
     "GAh5p_yt_short": "2026-06-02",
     "m8EAd_yt_short": "2026-06-02",
-    "m8EAd_evening_story": "2026-06-01"
+    "m8EAd_evening_story": "2026-06-02"
   },
-  "last_sync": "2026-06-02T08:13:11.677735+00:00",
+  "last_sync": "2026-06-02T18:15:58.949306+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -187,11 +187,18 @@
     {
       "destination_id": "turtuk",
       "date": "2026-06-02"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-06-02"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-06-02"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "data_carousel",
       "score_card",
@@ -211,10 +218,10 @@
       "v2_tourist_trap_split",
       "score_card",
       "v2_festival_alert_sensory",
-      "v2_score_card_pov"
+      "v2_score_card_pov",
+      "v2_local_knows"
     ],
     "PdMu0": [
-      "data_carousel",
       "score_card",
       "infrastructure_truth",
       "reality_check",
@@ -234,7 +241,8 @@
       "v2_tourist_trap_split",
       "score_card",
       "v2_festival_alert_sensory",
-      "v2_score_card_pov"
+      "v2_score_card_pov",
+      "v2_local_knows"
     ]
   },
   "post_log": [
@@ -1906,6 +1914,39 @@
       "destination": "turtuk",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-06-02.mp4"
+    },
+    {
+      "timestamp": "2026-06-02T18:16:41.939128+00:00",
+      "date": "2026-06-02",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "QNbPy",
+      "destination": "pangong-lake",
+      "format": "v2_local_knows",
+      "has_media": true,
+      "media_id": "v2_local_knows-pangong-lake.png"
+    },
+    {
+      "timestamp": "2026-06-02T18:17:03.175873+00:00",
+      "date": "2026-06-02",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "lcVWK",
+      "destination": "kasol",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-06-02T18:17:33.040175+00:00",
+      "date": "2026-06-02",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "e6HZr",
+      "destination": "nubra-valley",
+      "format": "v2_local_knows",
+      "has_media": true,
+      "media_id": "v2_local_knows-nubra-valley.png"
     }
   ],
   "theme_usage": {
@@ -2070,12 +2111,17 @@
         "2026-06-01"
       ],
       "kasol": [
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "nubra-valley": [
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-02"
       ],
       "tungnath": [
+        "2026-06-02"
+      ],
+      "pangong-lake": [
         "2026-06-02"
       ]
     },
@@ -2169,6 +2215,9 @@
       ],
       "v2_score_card_pov": [
         "2026-06-02"
+      ],
+      "v2_local_knows": [
+        "2026-06-02"
       ]
     },
     "reels": {
@@ -2235,6 +2284,12 @@
       ],
       "kasol": [
         "2026-06-01"
+      ],
+      "pangong-lake": [
+        "2026-06-02"
+      ],
+      "nubra-valley": [
+        "2026-06-02"
       ]
     },
     "audience_tags": {
@@ -2276,6 +2331,9 @@
       ],
       "dwadasa-jyotirlinga": [
         "2026-05-28"
+      ],
+      "budget-under-1000": [
+        "2026-06-02"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -2357,7 +2415,8 @@
       "bir-billing": [
         "2026-05-26"
       ]
-    }
+    },
+    "collection_carousel_dests:budget-under-1000": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -2371,8 +2430,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "roopkund",
-    "collection": "dwadasa-jyotirlinga"
+    "shared_best": "pangong-lake",
+    "collection": "budget-under-1000"
   },
   "manual_skip_dests": {}
 }
