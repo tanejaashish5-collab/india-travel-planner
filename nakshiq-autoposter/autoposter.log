@@ -1491,3 +1491,25 @@ Date range: 2026-04-15 → 2026-06-01
 2026-06-02 08:14:48  WARNING   [facebook/Nakshiq] ⚠️  Rejected (ID=dJ9VO)
 2026-06-02 08:14:48  INFO      State saved. Run complete.
 2026-06-02 08:14:48  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 08:50:04  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 08:50:04  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-02
+2026-06-02 08:50:04  INFO      ════════════════════════════════════════════════════════════
+2026-06-02 08:50:04  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-02 08:50:04  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-02 08:51:05  INFO      Short rendered: yt_short_did_you_know_2026-06-02.mp4 (12191 KB, 20.0s, fmt=did_you_know, music=30_rajasthan_groove)
+2026-06-02 08:51:05  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_2026-06-02.mp4 (12,484,219 bytes, video/mp4)
+2026-06-02 08:51:06  INFO          Uploading to R2 (timeout=300s)...
+2026-06-02 08:51:08  INFO          R2 PUT OK. Confirming...
+2026-06-02 08:51:09  INFO          Media ready: 4YXKi (12,484,219 bytes · yt_short_did_you_know_yt_short_did_you_know_2026-06-02.mp4)
+2026-06-02 08:51:09  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_2026-06-02.mp4
+2026-06-02 08:51:10  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-06-02 08:51:14  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=yaDrj), waiting for platform confirmation...
+2026-06-02 08:51:27  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=yaDrj · Platform=v3fh4yllgSc
+2026-06-02 08:51:27  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-06-02 08:51:30  INFO      [instagram/nakshiq] Outstand accepted (post_id=ghj0x), waiting for platform confirmation...
+2026-06-02 08:52:12  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=ghj0x · Platform=17883165801591789
+2026-06-02 08:52:12  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 99-100: surrogates not allowed
+2026-06-02 08:52:12  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-02 08:52:12  INFO      YT Short posted: format=did_you_know, music=30_rajasthan_groove
+2026-06-02 08:52:12  INFO      State saved. YT Short run complete.
+2026-06-02 08:52:12  INFO      ════════════════════════════════════════════════════════════
