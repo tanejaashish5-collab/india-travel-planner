@@ -4,7 +4,8 @@
     "before_after",
     "mini_guide",
     "dont_go_here",
-    "did_you_know"
+    "did_you_know",
+    "this_vs_that"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -23,13 +24,14 @@
     "px_moodmode_chill",
     "06_sunset_gaze",
     "29_night_trap",
-    "30_rajasthan_groove"
+    "30_rajasthan_groove",
+    "13_monsoon_pulse"
   ],
   "posted_today": {
     "m8EAd": "2026-06-02",
     "PdMu0": "2026-06-02",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-01",
     "PdMu0_evening": "2026-06-01",
     "GAh5p_yt_short": "2026-06-02",
@@ -184,6 +186,10 @@
     },
     {
       "destination_id": "bir-billing",
+      "date": "2026-06-02"
+    },
+    {
+      "destination_id": "turtuk",
       "date": "2026-06-02"
     }
   ],
@@ -1886,6 +1892,24 @@
       "destination": "bir-billing",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-06-02.mp4"
+    },
+    {
+      "timestamp": "2026-06-02T14:44:16.853827+00:00",
+      "date": "2026-06-02",
+      "platform": "youtube",
+      "post_id": "XYwqe",
+      "destination": "turtuk",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-06-02.mp4"
+    },
+    {
+      "timestamp": "2026-06-02T14:44:58.878172+00:00",
+      "date": "2026-06-02",
+      "platform": "instagram",
+      "post_id": "2Ta4S",
+      "destination": "turtuk",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-06-02.mp4"
     }
   ],
   "theme_usage": {
