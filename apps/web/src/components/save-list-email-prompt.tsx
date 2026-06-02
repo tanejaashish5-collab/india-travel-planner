@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 import { useSavedIds, getSavedIds } from "@/lib/saved-destinations";
 
@@ -90,14 +91,19 @@ export function SaveListEmailPrompt({ locale }: Props) {
   );
   const viewedFiredRef = useRef(false);
   const t = COPY[locale];
+  // The /saved page carries its own inline primary capture (SavedListCapture);
+  // suppress this global toast there so the two identical asks don't stack.
+  const pathname = usePathname();
+  const onSavedPage = pathname?.endsWith("/saved") ?? false;
 
   // Derive visibility from inputs — no setState-in-effect needed
   const visible = useMemo(() => {
+    if (onSavedPage) return false;
     if (status === "success") return false;
     if (cookieSubscribed) return false;
     if (cookieDismissed) return false;
     return savedIds.length >= THRESHOLD;
-  }, [status, cookieSubscribed, cookieDismissed, savedIds.length]);
+  }, [onSavedPage, status, cookieSubscribed, cookieDismissed, savedIds.length]);
 
   // Fire impression once per session when first becoming visible
   useEffect(() => {
