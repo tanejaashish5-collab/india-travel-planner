@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "shantiniketan",
+    "name": "Poush Mela",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": 12,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Poush_Mela",
+    "note": "Annual fair at Shantiniketan on 7th Poush (mid-December, ~Dec 23-28)."
+  },
+  {
+    "destination_id": "shantiniketan",
+    "name": "Basanta Utsav (Spring Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 3,
+    "correct_month": 3,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Basanta_Utsav",
+    "note": "Held at Shantiniketan, first day of Bengali Falgun month (mid-March)."
+  },
+  {
+    "destination_id": "nandaprayag",
+    "name": "Baisakhi and Janmashtami Fair",
+    "verdict": "UNVERIFIABLE",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "low",
+    "source_url": "https://www.tirthayatra.org/nandaprayag/",
+    "note": "Baisakhi confirmed at Nandaprayag; Janmashtami fair NOT found in credible sources."
+  },
+  {
+    "destination_id": "bhimtal",
+    "name": "Harela Mela (Monsoon Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 7,
+    "correct_month": 7,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Harela_Mela",
+    "note": "Held at RamLeela Ground, Bhimtal annually July 16-21."
+  },
+  {
+    "destination_id": "kalimpong",
+    "name": "Losar (Tibetan New Year)",
+    "verdict": "WRONG_MONTH",
+    "db_month": 2,
+    "correct_month": 2,
+    "confidence": "med",
+    "source_url": "https://en.wikipedia.org/wiki/Losar",
+    "note": "Losar typically Feb-March (lunisolar). Feb correct for most years; 2025 started Feb 28."
+  },
+  {
+    "destination_id": "sundarbans",
+    "name": "Bonbibi Mela (Forest Goddess Festival)",
+    "verdict": "WRONG_MONTH",
+    "db_month": 4,
+    "correct_month": 1,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Bonbibi",
+    "note": "Major annual celebration is Jatal Puja in Bengali Magh (Jan-Feb), not April."
+  }
+]
