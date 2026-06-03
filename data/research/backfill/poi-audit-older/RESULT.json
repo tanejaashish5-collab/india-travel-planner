@@ -1,0 +1,28 @@
+{
+  "checked": 831,
+  "chunks": 18,
+  "method": "find (18 Haiku verifiers) -> independent skeptic verify (per chunk, re-checks flag AND proposed fix)",
+  "flags_surfaced": 52,
+  "confirmed_real": 44,
+  "rejected": 8,
+  "applied_after_my_review": 43,
+  "my_adjustments": {
+    "dropped": ["manimahesh-lake (3,950m within source variance of govt 3,962m — not a clear error)"],
+    "softened": [
+      "gulmarg-golf-course (kept 'one of the world's highest' instead of asserting 'second-highest')",
+      "bhu-campus (avoided blog-sourced 'tallest temple tower in the world')",
+      "samdruptse (dropped 'world's largest Padmasambhava statue' ranking, kept facts)",
+      "umlingla-pass (dropped the specific 'Mig La' competitor name, kept 'held record 2017-2025')"
+    ]
+  },
+  "rejected_items": [
+    "tosh-village (altitude correct; the real error is in Bijli Mahadev, a different POI)",
+    "sivasagar-tank (Sivadol IS tallest Shiva temple tower in India — claim accurate)",
+    "hanle-observatory (verifier caught its own finder's '2nd highest' fix as WRONG)",
+    "indroda-nature-park ('only dinosaur park in India' is accurate)",
+    "tiger-falls-chakrata (India's highest direct waterfall — verified)",
+    "ima-keithel (world's largest all-women market — verified across CNN/Wikipedia)",
+    "snow-view-point (7,450 ft confirmed accurate)",
+    "prashar-camping (8,900 ft is acceptable rounding of 8,960 ft)"
+  ]
+}

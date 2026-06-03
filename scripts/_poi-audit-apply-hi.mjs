@@ -16,10 +16,10 @@ import process from "node:process";
 const ROOT = path.resolve(import.meta.dirname, "..");
 config({ path: path.join(ROOT, "apps", "web", ".env.local") });
 const COMMIT = process.argv.includes("--commit");
+const fi = process.argv.indexOf("--file");
+const FILE = fi !== -1 && process.argv[fi + 1] ? process.argv[fi + 1] : "data/research/backfill/poi-audit/HI-CORRECTIONS.json";
 
-const corrections = JSON.parse(
-  readFileSync(path.join(ROOT, "data/research/backfill/poi-audit/HI-CORRECTIONS.json"), "utf-8")
-);
+const corrections = JSON.parse(readFileSync(path.join(ROOT, FILE), "utf-8"));
 const s = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {
   auth: { persistSession: false },
 });

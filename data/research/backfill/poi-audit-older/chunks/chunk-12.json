@@ -1,0 +1,370 @@
+[
+  {
+    "id": "adalaj-stepwell",
+    "destination_id": "ahmedabad",
+    "name": "Adalaj Vav",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Five-storey ornate stepwell from 1499. Indo-Islamic architecture with intricate carvings on every surface."
+  },
+  {
+    "id": "calico-museum",
+    "destination_id": "ahmedabad",
+    "name": "Calico Museum of Textiles",
+    "type": "museum",
+    "entry_fee": "Free (booking required)",
+    "description": "One of the world's finest textile museums. Mughal court fabrics, temple hangings, and regional weaving traditions."
+  },
+  {
+    "id": "ahmedabad-old-city-pols",
+    "destination_id": "ahmedabad",
+    "name": "Heritage Pol Walk (Old City)",
+    "type": "bazaar",
+    "entry_fee": "₹200 (guided)",
+    "description": "Walking tour through 600-year-old pol houses with carved wooden facades, hidden temples, and shared courtyards."
+  },
+  {
+    "id": "kankaria-lake",
+    "destination_id": "ahmedabad",
+    "name": "Kankaria Lake",
+    "type": "lake",
+    "entry_fee": "₹25",
+    "description": "15th-century polygonal lake with lakefront park, zoo, kids city, balloon ride, and toy train. Evening light show."
+  },
+  {
+    "id": "manek-chowk",
+    "destination_id": "ahmedabad",
+    "name": "Manek Chowk Night Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Daytime jewelry market transforms into a legendary street food bazaar at night. Pav bhaji, kulfi, dosas, and more."
+  },
+  {
+    "id": "sabarmati-ashram",
+    "destination_id": "ahmedabad",
+    "name": "Sabarmati Ashram",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Gandhi's home from 1917-1930. The Dandi March started here. Museum with letters, spinning wheel, and personal items."
+  },
+  {
+    "id": "science-city-ahmedabad",
+    "destination_id": "ahmedabad",
+    "name": "Science City",
+    "type": "museum",
+    "entry_fee": "₹25-250",
+    "description": "Interactive science museum with IMAX 3D, earthquake simulator, energy park, and robotics gallery."
+  },
+  {
+    "id": "sidi-saiyyed-mosque",
+    "destination_id": "ahmedabad",
+    "name": "Sidi Saiyyed Mosque (Tree of Life)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Famous for the stone jali (lattice) window depicting an intricate tree of life. IIM Ahmedabad logo inspiration."
+  },
+  {
+    "id": "don-bosco-museum",
+    "destination_id": "shillong",
+    "name": "Don Bosco Museum",
+    "type": "museum",
+    "entry_fee": "₹100",
+    "description": "Seven-story museum of indigenous cultures of Northeast India. 17 galleries with 14,000+ artifacts."
+  },
+  {
+    "id": "elephant-falls",
+    "destination_id": "shillong",
+    "name": "Elephant Falls",
+    "type": "waterfall",
+    "entry_fee": "₹20",
+    "description": "Three-tiered waterfall near Shillong. Named by British for an elephant-shaped rock (now destroyed)."
+  },
+  {
+    "id": "laitlum-canyons",
+    "destination_id": "shillong",
+    "name": "Laitlum Canyons",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dramatic canyon meaning \"End of Hills\". Steep grassy slopes dropping into deep valleys with misty views."
+  },
+  {
+    "id": "police-bazaar",
+    "destination_id": "shillong",
+    "name": "Police Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Main shopping area of Shillong. Local handicrafts, traditional Khasi jewelry, and street food."
+  },
+  {
+    "id": "shillong-peak",
+    "destination_id": "shillong",
+    "name": "Shillong Peak",
+    "type": "viewpoint",
+    "entry_fee": "₹20",
+    "description": "Highest point in Shillong at 6,449 ft. IAF radar station with panoramic views of the city and hills."
+  },
+  {
+    "id": "umiam-lake",
+    "destination_id": "shillong",
+    "name": "Umiam Lake (Barapani)",
+    "type": "lake",
+    "entry_fee": "₹100-500",
+    "description": "Large reservoir surrounded by East Khasi Hills. Water sports including kayaking, speed boating, and paddle boarding."
+  },
+  {
+    "id": "ward-lake",
+    "destination_id": "shillong",
+    "name": "Ward's Lake",
+    "type": "garden",
+    "entry_fee": "₹20",
+    "description": "Horseshoe-shaped artificial lake in the heart of Shillong. Beautiful garden with wooden bridge."
+  },
+  {
+    "id": "junagarh-fort",
+    "destination_id": "bikaner",
+    "name": "Junagarh Fort",
+    "type": "fort",
+    "entry_fee": "₹150",
+    "description": "Unbreached fort built in 1593 by Raja Rai Singh. 37 palaces, pavilions, and temples inside."
+  },
+  {
+    "id": "karni-mata-temple",
+    "destination_id": "bikaner",
+    "name": "Karni Mata Temple (Rat Temple)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Famous temple where thousands of rats (kabbas) are worshipped. One of India's most unusual temples."
+  },
+  {
+    "id": "bikaner-camel-farm",
+    "destination_id": "bikaner",
+    "name": "National Camel Research Centre",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Government camel breeding farm with hundreds of camels. Camel milk ice cream and lassi available."
+  },
+  {
+    "id": "rampuria-havelis",
+    "destination_id": "bikaner",
+    "name": "Rampuria Havelis",
+    "type": "palace",
+    "entry_fee": "Free",
+    "description": "Cluster of ornate merchant havelis with red sandstone and jharokha windows. Walking tour through old city."
+  },
+  {
+    "id": "aru-valley",
+    "destination_id": "pahalgam",
+    "name": "Aru Valley",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Alpine meadow at 7,500 ft. Base camp for Kolahoi Glacier and Tarsar-Marsar trek. Horse riding available."
+  },
+  {
+    "id": "baisaran-pahalgam",
+    "destination_id": "pahalgam",
+    "name": "Baisaran (Mini Switzerland)",
+    "type": "viewpoint",
+    "entry_fee": "₹500 (horse)",
+    "description": "Pine-covered meadow surrounded by forests and snow peaks. Horse ride or trek from Pahalgam town."
+  },
+  {
+    "id": "betaab-valley",
+    "destination_id": "pahalgam",
+    "name": "Betaab Valley",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Named after Bollywood film \"Betaab\" (1983). Lush green valley with Lidder River and snow-capped peaks."
+  },
+  {
+    "id": "chandanwari",
+    "destination_id": "pahalgam",
+    "name": "Chandanwari",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Starting point of Amarnath Yatra. Snow-capped slopes where you can toboggan even in summer."
+  },
+  {
+    "id": "buland-darwaza",
+    "destination_id": "fatehpur-sikri",
+    "name": "Buland Darwaza",
+    "type": "monument",
+    "entry_fee": "Included in entry",
+    "description": "World's tallest gateway at 54 meters. Built by Akbar to commemorate victory in Gujarat."
+  },
+  {
+    "id": "panch-mahal-fatehpur",
+    "destination_id": "fatehpur-sikri",
+    "name": "Panch Mahal",
+    "type": "palace",
+    "entry_fee": "Included in entry",
+    "description": "Five-story palatial structure with 176 columns, no two alike. Wind-catcher design for Mughal queens."
+  },
+  {
+    "id": "tomb-of-salim-chishti",
+    "destination_id": "fatehpur-sikri",
+    "name": "Tomb of Salim Chishti",
+    "type": "monument",
+    "entry_fee": "Included in entry",
+    "description": "Exquisite white marble tomb with finest jali (lattice) screens in India. Wish-fulfilling shrine."
+  },
+  {
+    "id": "majuli-island-walk",
+    "destination_id": "majuli",
+    "name": "Majuli Island Walk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "World's largest river island. Cycle through paddy fields, wetlands, and traditional Mising tribal villages."
+  },
+  {
+    "id": "majuli-mask-making",
+    "destination_id": "majuli",
+    "name": "Mask Making at Samaguri Satra",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Traditional Assamese mask-making workshop. Watch artisans create elaborate ritual masks from bamboo and clay."
+  },
+  {
+    "id": "majuli-satras",
+    "destination_id": "majuli",
+    "name": "Vaishnavite Satras (Monasteries)",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Neo-Vaishnavite monasteries founded by Srimanta Sankaradeva. Kamalabari, Auniati, and Dakhinpat satras."
+  },
+  {
+    "id": "sonamarg-river-rafting",
+    "destination_id": "sonamarg",
+    "name": "Sindh River Rafting",
+    "type": "viewpoint",
+    "entry_fee": "₹1,000-2,000",
+    "description": "White-water rafting on the Sindh River through stunning valley with Class II-III rapids."
+  },
+  {
+    "id": "thajiwas-glacier",
+    "destination_id": "sonamarg",
+    "name": "Thajiwas Glacier",
+    "type": "viewpoint",
+    "entry_fee": "₹500-1,000 (pony)",
+    "description": "Easily accessible glacier at 9,186 ft. Pony ride through alpine meadows to the glacier face."
+  },
+  {
+    "id": "zoji-la-viewpoint",
+    "destination_id": "sonamarg",
+    "name": "Zoji La Pass View",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dramatic mountain pass at 11,575 ft connecting Kashmir to Ladakh. Gateway to Drass and Kargil."
+  },
+  {
+    "id": "barton-museum",
+    "destination_id": "bhavnagar",
+    "name": "Barton Museum",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Collection of Harappan artifacts, coins, and manuscripts from the princely state era."
+  },
+  {
+    "id": "takhteshwar-temple",
+    "destination_id": "bhavnagar",
+    "name": "Takhteshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop Shiva temple with panoramic views of Gulf of Cambay and Bhavnagar city."
+  },
+  {
+    "id": "gibbon-wildlife-sanctuary",
+    "destination_id": "jorhat",
+    "name": "Hoollongapar Gibbon Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Only gibbon sanctuary in India. Home to the endangered hoolock gibbon — India's only ape species."
+  },
+  {
+    "id": "tocklai-tea-estate",
+    "destination_id": "jorhat",
+    "name": "Tocklai Tea Research Institute",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "World's oldest and largest tea research station. Heritage tea gardens and processing unit tours."
+  },
+  {
+    "id": "lothal-museum",
+    "destination_id": "lothal",
+    "name": "Lothal Archaeological Museum",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Artifacts from the Harappan era — seals, pottery, bead-making tools, and terracotta figures."
+  },
+  {
+    "id": "lothal-archaeological-site",
+    "destination_id": "lothal",
+    "name": "Lothal Archaeological Site",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "4,500-year-old Indus Valley port with the world's oldest known dock. Bead factory, warehouse, and drainage system ruins."
+  },
+  {
+    "id": "qila-mubarak-patiala",
+    "destination_id": "patiala",
+    "name": "Qila Mubarak",
+    "type": "fort",
+    "entry_fee": "₹20",
+    "description": "Heart of Patiala city. Fortified palace complex with Darbar Hall, Sheesh Mahal, and a clock tower."
+  },
+  {
+    "id": "sheesh-mahal-patiala",
+    "destination_id": "patiala",
+    "name": "Sheesh Mahal",
+    "type": "palace",
+    "entry_fee": "₹20",
+    "description": "Mirror palace housing a museum with miniature paintings, medals, and the famous Patiala necklace replica."
+  },
+  {
+    "id": "mohan-shakti-heritage",
+    "destination_id": "solan",
+    "name": "Mohan Shakti National Heritage Park",
+    "type": "temple",
+    "entry_fee": "₹100",
+    "description": "Modern heritage park with temples, Vedic library, and beautiful architecture set in pine forests."
+  },
+  {
+    "id": "solan-brewery",
+    "destination_id": "solan",
+    "name": "Old Solan Brewery (Mohan Meakin)",
+    "type": "monument",
+    "entry_fee": "Free (external view)",
+    "description": "Asia's oldest brewery established in 1855. Heritage building producing Old Monk rum and beer."
+  },
+  {
+    "id": "bhoramdeo-main-temple",
+    "destination_id": "bhoramdeo",
+    "name": "Bhoramdeo Main Temple",
+    "type": "temple",
+    "entry_fee": "free",
+    "description": "11th-century Shiva temple in Maikal Hills. Intricate erotic sculptures and Gurur-style architecture."
+  },
+  {
+    "id": "dzukou-valley-trek",
+    "destination_id": "dzukou-valley",
+    "name": "Dzukou Valley Trek",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Valley of flowers at 8,000 ft on the Nagaland-Manipur border. Carpet of lilies in July-September."
+  },
+  {
+    "id": "namdapha-trek",
+    "destination_id": "namdapha",
+    "name": "Namdapha National Park Trek",
+    "type": "viewpoint",
+    "entry_fee": "₹500",
+    "description": "India's only park with four big cats (tiger, leopard, snow leopard, clouded leopard). Pristine eastern Himalayan biodiversity."
+  },
+  {
+    "id": "tehri-lake-water-sports",
+    "destination_id": "tehri",
+    "name": "Tehri Lake Water Sports",
+    "type": "lake",
+    "entry_fee": "₹200-2,000",
+    "description": "Asia's largest man-made lake offering jet skiing, kayaking, banana rides, and speed boating."
+  }
+]

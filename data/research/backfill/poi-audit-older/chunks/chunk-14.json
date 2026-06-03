@@ -1,0 +1,370 @@
+[
+  {
+    "id": "blue-city-walk",
+    "destination_id": "jodhpur",
+    "name": "Blue City Walking Tour",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walk through the warren of blue-painted houses in the old city at the foot of Mehrangarh Fort."
+  },
+  {
+    "id": "clock-tower-jodhpur",
+    "destination_id": "jodhpur",
+    "name": "Clock Tower & Sardar Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Iconic clock tower in the heart of the old city. Bustling market selling spices, textiles, and handicrafts."
+  },
+  {
+    "id": "jaswant-thada",
+    "destination_id": "jodhpur",
+    "name": "Jaswant Thada",
+    "type": "monument",
+    "entry_fee": "₹30",
+    "description": "Intricately carved white marble cenotaph built in 1899. Called \"Taj Mahal of Marwar\" with beautiful lake views."
+  },
+  {
+    "id": "mandore-gardens",
+    "destination_id": "jodhpur",
+    "name": "Mandore Gardens",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Former Rathore capital with royal cenotaphs in red sandstone. Hall of Heroes with carved figures of deities."
+  },
+  {
+    "id": "mehrangarh-fort",
+    "destination_id": "jodhpur",
+    "name": "Mehrangarh Fort",
+    "type": "fort",
+    "entry_fee": "₹200",
+    "description": "One of India's largest forts, towering 400 ft above the Blue City. Magnificent museum, courtyards, and zip-lining."
+  },
+  {
+    "id": "rao-jodha-desert-park",
+    "destination_id": "jodhpur",
+    "name": "Rao Jodha Desert Rock Park",
+    "type": "garden",
+    "entry_fee": "₹100",
+    "description": "Ecologically restored desert park below Mehrangarh Fort. 70+ acres with 300+ species of desert plants."
+  },
+  {
+    "id": "toorji-ka-jhalra",
+    "destination_id": "jodhpur",
+    "name": "Toorji Ka Jhalra Stepwell",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Beautifully restored 18th-century stepwell in the old city. Geometric water architecture."
+  },
+  {
+    "id": "umaid-bhawan-palace",
+    "destination_id": "jodhpur",
+    "name": "Umaid Bhawan Palace",
+    "type": "palace",
+    "entry_fee": "₹100 (museum)",
+    "description": "Art Deco masterpiece and world's largest private residence. Part museum, part Taj hotel, part royal residence."
+  },
+  {
+    "id": "gobindgarh-fort",
+    "destination_id": "amritsar",
+    "name": "Gobindgarh Fort",
+    "type": "fort",
+    "entry_fee": "₹100-450",
+    "description": "Restored 18th-century fort with 7D theatre, live shows, and Sikh heritage galleries. Night experience excellent."
+  },
+  {
+    "id": "golden-temple",
+    "destination_id": "amritsar",
+    "name": "Golden Temple",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "Holiest shrine in Sikhism. Free langar feeds 100,000+ daily."
+  },
+  {
+    "id": "hall-bazaar-amritsar",
+    "destination_id": "amritsar",
+    "name": "Hall Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Bustling market street leading to the Golden Temple. Phulkari dupattas, juttis, and street food."
+  },
+  {
+    "id": "jallianwala-bagh",
+    "destination_id": "amritsar",
+    "name": "Jallianwala Bagh",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Memorial at the site of the 1919 British massacre. Bullet marks visible."
+  },
+  {
+    "id": "partition-museum",
+    "destination_id": "amritsar",
+    "name": "Partition Museum",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "India's first museum dedicated to the 1947 Partition. Personal stories, artifacts, and multimedia displays."
+  },
+  {
+    "id": "wagah-border",
+    "destination_id": "amritsar",
+    "name": "Wagah Border Ceremony",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Daily flag-lowering ceremony at the India-Pakistan border."
+  },
+  {
+    "id": "gwalior-fort",
+    "destination_id": "gwalior",
+    "name": "Gwalior Fort",
+    "type": "fort",
+    "entry_fee": "₹75",
+    "description": "One of India's most impregnable forts. Man Singh Palace with blue tilework, Sas Bahu temples, Teli Ka Mandir."
+  },
+  {
+    "id": "jai-vilas-palace",
+    "destination_id": "gwalior",
+    "name": "Jai Vilas Palace & Museum",
+    "type": "palace",
+    "entry_fee": "₹100",
+    "description": "Opulent palace with world's largest pair of chandeliers (3.5 tons each) and a silver toy train serving dinner."
+  },
+  {
+    "id": "man-singh-palace",
+    "destination_id": "gwalior",
+    "name": "Man Singh Palace",
+    "type": "palace",
+    "entry_fee": "Included in fort entry",
+    "description": "Masterpiece inside Gwalior Fort with vibrant blue and yellow tilework. Architectural marvel of the 15th century."
+  },
+  {
+    "id": "sun-temple-gwalior",
+    "destination_id": "gwalior",
+    "name": "Sun Temple (Saas Bahu Temple)",
+    "type": "temple",
+    "entry_fee": "Included in fort",
+    "description": "Twin 11th-century temples inside Gwalior Fort with intricate carvings. Wrongly called Saas Bahu (mother-in-law, daughter-in-law)."
+  },
+  {
+    "id": "tansen-tomb",
+    "destination_id": "gwalior",
+    "name": "Tomb of Tansen",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Memorial of the legendary Mughal court musician. People chew leaves of the tamarind tree here believing it improves voice."
+  },
+  {
+    "id": "griddhakuta-peak",
+    "destination_id": "rajgir",
+    "name": "Griddhakuta (Vulture Peak)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Hill where Buddha delivered many sermons including the Lotus Sutra. Sacred Buddhist pilgrimage site."
+  },
+  {
+    "id": "rajgir-hot-springs",
+    "destination_id": "rajgir",
+    "name": "Rajgir Hot Springs (Brahmakund)",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Ancient hot springs mentioned in Buddhist and Jain texts. Temperature 45°C. Separate bathing areas."
+  },
+  {
+    "id": "venuvana-vihar",
+    "destination_id": "rajgir",
+    "name": "Venuvana Vihar (Bamboo Grove)",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "First Buddhist monastery — bamboo grove gifted to Buddha by King Bimbisara. Sacred pilgrimage garden."
+  },
+  {
+    "id": "rajgir-ropeway",
+    "destination_id": "rajgir",
+    "name": "Vishwa Shanti Stupa (Rajgir)",
+    "type": "monument",
+    "entry_fee": "₹100 (ropeway)",
+    "description": "Peace pagoda atop Ratnagiri Hill reached by aerial chairlift. Panoramic views of Rajgir valley."
+  },
+  {
+    "id": "devalia-safari-park",
+    "destination_id": "gir-national-park",
+    "name": "Devalia Safari Park",
+    "type": "viewpoint",
+    "entry_fee": "₹250",
+    "description": "Fenced interpretation zone with guaranteed lion sightings. 45-min bus safari. Perfect for families wanting certainty."
+  },
+  {
+    "id": "gir-safari",
+    "destination_id": "gir-national-park",
+    "name": "Gir Lion Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹800-4,500",
+    "description": "Jeep safari through dry deciduous forest. 700+ Asiatic lions, leopards, crocodiles, and 300+ bird species."
+  },
+  {
+    "id": "kamleshwar-dam",
+    "destination_id": "gir-national-park",
+    "name": "Kamleshwar Dam",
+    "type": "viewpoint",
+    "entry_fee": "Included in safari",
+    "description": "Dam inside the park with resident marsh crocodiles. Bird watching hub — painted storks, flamingos, eagles."
+  },
+  {
+    "id": "mandvi-shipyard",
+    "destination_id": "mandvi",
+    "name": "Mandvi Shipbuilding Yard",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Traditional wooden dhow-building yard still operational. Craftsmen build ships by hand using centuries-old techniques."
+  },
+  {
+    "id": "vijay-vilas-palace",
+    "destination_id": "mandvi",
+    "name": "Vijay Vilas Palace",
+    "type": "palace",
+    "entry_fee": "₹100",
+    "description": "400-year-old palace with private beach. Used in Bollywood's Hum Dil De Chuke Sanam. Ornate Rajput architecture."
+  },
+  {
+    "id": "windmill-beach",
+    "destination_id": "mandvi",
+    "name": "Wind Farm Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine beach with windmills dotting the coastline. Less crowded than the main beach. Golden sunsets."
+  },
+  {
+    "id": "ghnp-tirthan-entrance",
+    "destination_id": "tirthan-valley",
+    "name": "GHNP Tirthan Entrance",
+    "type": "viewpoint",
+    "entry_fee": "₹50-200",
+    "description": "Main gateway to UNESCO Great Himalayan National Park. Permits and guides available."
+  },
+  {
+    "id": "serloskar-lake",
+    "destination_id": "tirthan-valley",
+    "name": "Serolsar Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Sacred high-altitude lake reached via trek from Jalori Pass. Budhi Nagin temple on its banks."
+  },
+  {
+    "id": "tirthan-river-fishing",
+    "destination_id": "tirthan-valley",
+    "name": "Tirthan River Trout Fishing",
+    "type": "viewpoint",
+    "entry_fee": "₹500-1,500",
+    "description": "Catch-and-release trout fishing in crystal-clear waters. Guided fishing trips available."
+  },
+  {
+    "id": "bomdila-monastery",
+    "destination_id": "bomdila",
+    "name": "Bomdila Monastery (Lower Gompa)",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Tibetan Buddhist monastery with views of the Arunachal ranges. Replica of Tsona Gontse in Tibet."
+  },
+  {
+    "id": "bomdila-viewpoint",
+    "destination_id": "bomdila",
+    "name": "Bomdila View Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Panoramic views of the eastern Himalayan range and Tawang road. Clear sunrise views of snow peaks."
+  },
+  {
+    "id": "kanha-museum",
+    "destination_id": "kanha",
+    "name": "Kanha Museum & Interpretation Centre",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Interactive displays about the park's ecosystem, tiger conservation, and the barasingha rescue story."
+  },
+  {
+    "id": "kanha-safari",
+    "destination_id": "kanha",
+    "name": "Kanha Tiger Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹1,500-3,000",
+    "description": "Inspiration for Kipling's \"The Jungle Book\". Vast sal and bamboo forests. Best for barasingha (swamp deer)."
+  },
+  {
+    "id": "manimahesh-gauri-kund",
+    "destination_id": "manimahesh-kailash",
+    "name": "Gauri Kund",
+    "type": "lake",
+    "entry_fee": null,
+    "description": "A smaller sacred pool ~1km before the main Manimahesh Lake, where women pilgrims traditionally bathe before darshan."
+  },
+  {
+    "id": "manimahesh-lake",
+    "destination_id": "manimahesh-kailash",
+    "name": "Manimahesh Lake (Dal Lake)",
+    "type": "lake",
+    "entry_fee": null,
+    "description": "The glacial lake at 3,950m below Manimahesh Kailash peak, the destination of the annual Manimahesh Yatra. Pilgrims circumambulate the lake before darshan."
+  },
+  {
+    "id": "kapileshwar-mahadev",
+    "destination_id": "pithoragarh",
+    "name": "Kapileshwar Mahadev Cave Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Cave temple 3 km from town with geological rock formations and Shiva shrine inside."
+  },
+  {
+    "id": "pithoragarh-fort",
+    "destination_id": "pithoragarh",
+    "name": "Pithoragarh Fort (London Fort)",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Gorkha-era fort at the edge of town with views of snow-capped Panchachuli peaks."
+  },
+  {
+    "id": "barak-waterfall",
+    "destination_id": "tamenglong",
+    "name": "Barak Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Towering 230-ft waterfall in the Tamenglong district. Accessible via a moderate forest trek."
+  },
+  {
+    "id": "zeilad-lake",
+    "destination_id": "tamenglong",
+    "name": "Zeilad Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Sacred natural lake surrounded by hills. Important cultural site for the Zeliangrong Naga people."
+  },
+  {
+    "id": "baleshwar-temple",
+    "destination_id": "champawat",
+    "name": "Baleshwar Temple Complex",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Cluster of beautifully carved stone temples from the Chand dynasty era with intricate Nagara architecture."
+  },
+  {
+    "id": "gopinath-temple",
+    "destination_id": "gopeshwar",
+    "name": "Gopinath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple with a trident embedded in stone that no one has been able to remove. Legends abound."
+  },
+  {
+    "id": "neermahal-palace",
+    "destination_id": "neermahal",
+    "name": "Neermahal Water Palace",
+    "type": "palace",
+    "entry_fee": "₹25 + boat",
+    "description": "India's largest water palace in the middle of Rudrasagar Lake. Mughal and Hindu architecture blend."
+  },
+  {
+    "id": "tungnath-temple",
+    "destination_id": "tungnath",
+    "name": "Tungnath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "World's highest Shiva temple (Panch Kedar) at 12,073 ft. Over 1,000 years old with stunning architecture."
+  }
+]

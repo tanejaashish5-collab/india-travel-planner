@@ -1,0 +1,370 @@
+[
+  {
+    "id": "banjhakri-falls",
+    "destination_id": "gangtok",
+    "name": "Banjhakri Falls & Energy Park",
+    "type": "waterfall",
+    "entry_fee": "₹50",
+    "description": "Theme park with waterfalls, caves, and bamboo bridges. Named after traditional Lepcha shamans."
+  },
+  {
+    "id": "do-drul-chorten",
+    "destination_id": "gangtok",
+    "name": "Do Drul Chorten",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Giant stupa built in 1945 with 108 prayer wheels around it. One of the most important stupas in Sikkim."
+  },
+  {
+    "id": "enchey-monastery",
+    "destination_id": "gangtok",
+    "name": "Enchey Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "200-year-old monastery on a hilltop with views of Kanchenjunga. Hosts the Chaam dance festival."
+  },
+  {
+    "id": "hanuman-tok",
+    "destination_id": "gangtok",
+    "name": "Hanuman Tok",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop Hanuman temple maintained by the Indian Army. Closest viewpoint for Kanchenjunga from Gangtok."
+  },
+  {
+    "id": "mg-marg-gangtok",
+    "destination_id": "gangtok",
+    "name": "MG Marg",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Pedestrian-only shopping street with local eateries, boutiques, and mountain views. Heart of Gangtok."
+  },
+  {
+    "id": "namgyal-institute",
+    "destination_id": "gangtok",
+    "name": "Namgyal Institute of Tibetology",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Rich collection of Tibetan Buddhist manuscripts, statues, thangkas, and tapestries. Research library."
+  },
+  {
+    "id": "nathula-pass",
+    "destination_id": "gangtok",
+    "name": "Nathula Pass",
+    "type": "viewpoint",
+    "entry_fee": "₹200 (permit)",
+    "description": "Indo-China border pass at 14,140 ft. Open to Indian tourists on Wed-Sun with permit. Historic Silk Route trade post."
+  },
+  {
+    "id": "rumtek-monastery",
+    "destination_id": "gangtok",
+    "name": "Rumtek Monastery",
+    "type": "monastery",
+    "entry_fee": "₹10",
+    "description": "Seat of the Karmapa, largest monastery in Sikkim. Stunning Tibetan architecture with golden stupa inside."
+  },
+  {
+    "id": "tashi-viewpoint-gangtok",
+    "destination_id": "gangtok",
+    "name": "Tashi Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "₹10",
+    "description": "Panoramic viewpoint for Kanchenjunga sunrise. On clear days, the entire eastern Himalayan range is visible."
+  },
+  {
+    "id": "chandi-devi-temple",
+    "destination_id": "haridwar",
+    "name": "Chandi Devi Temple",
+    "type": "temple",
+    "entry_fee": "₹157 (cable car)",
+    "description": "Ancient hilltop Shakti temple built by King Suchat. Cable car ride with panoramic Haridwar views."
+  },
+  {
+    "id": "haridwar-ganga-aarti",
+    "destination_id": "haridwar",
+    "name": "Ganga Aarti Ceremony",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Spectacular fire ceremony at sunset at Har Ki Pauri with chanting, bells, and thousands of oil lamps."
+  },
+  {
+    "id": "har-ki-pauri",
+    "destination_id": "haridwar",
+    "name": "Har Ki Pauri",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Most sacred ghat in Haridwar where the Ganges leaves the mountains. Daily evening Ganga Aarti with thousands of floating lamps."
+  },
+  {
+    "id": "mansa-devi-temple",
+    "destination_id": "haridwar",
+    "name": "Mansa Devi Temple",
+    "type": "temple",
+    "entry_fee": "₹118 (cable car)",
+    "description": "Hilltop temple reached by cable car. Wish-fulfilling temple where devotees tie threads for blessings."
+  },
+  {
+    "id": "patanjali-yogpeeth",
+    "destination_id": "haridwar",
+    "name": "Patanjali Yogpeeth",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Largest yoga institute in the world run by Baba Ramdev. Ayurvedic hospital and meditation halls."
+  },
+  {
+    "id": "shantikunj-ashram",
+    "destination_id": "haridwar",
+    "name": "Shantikunj Ashram",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Headquarters of All World Gayatri Pariwar. Massive spiritual complex with meditation halls and yagna shala."
+  },
+  {
+    "id": "dassam-falls",
+    "destination_id": "ranchi",
+    "name": "Dassam Falls",
+    "type": "waterfall",
+    "entry_fee": "₹20",
+    "description": "44-meter waterfall meaning \"ten streams\". Kanchi River drops dramatically into a gorge."
+  },
+  {
+    "id": "hundru-falls",
+    "destination_id": "ranchi",
+    "name": "Hundru Falls",
+    "type": "waterfall",
+    "entry_fee": "₹25",
+    "description": "98-meter waterfall on the Subarnarekha River. 34th highest in India. Steps lead to the base pool."
+  },
+  {
+    "id": "jonha-falls",
+    "destination_id": "ranchi",
+    "name": "Jonha Falls (Gautamdhara)",
+    "type": "waterfall",
+    "entry_fee": "₹20",
+    "description": "43-meter waterfall with a Buddhist meditation center at the top. 722 steps down to the base."
+  },
+  {
+    "id": "rock-garden-ranchi",
+    "destination_id": "ranchi",
+    "name": "Rock Garden Ranchi",
+    "type": "garden",
+    "entry_fee": "₹20",
+    "description": "Garden built from industrial waste and rocks along the Kanke Dam. Similar to Chandigarh's Rock Garden."
+  },
+  {
+    "id": "tagore-hill",
+    "destination_id": "ranchi",
+    "name": "Tagore Hill",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Hill where Rabindranath Tagore's brother lived. Panoramic views of Ranchi city. Small museum."
+  },
+  {
+    "id": "badrinath-temple",
+    "destination_id": "badrinath",
+    "name": "Badrinath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred Char Dham temple at 10,279 ft dedicated to Lord Vishnu. Colorful facade against Neelkanth peak backdrop."
+  },
+  {
+    "id": "mana-village",
+    "destination_id": "badrinath",
+    "name": "Mana Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Last Indian village before the Tibet border. Vyas Gufa (cave where Vedas were written) and Bhim Pul."
+  },
+  {
+    "id": "tapt-kund-badrinath",
+    "destination_id": "badrinath",
+    "name": "Tapt Kund",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Natural hot water spring near the temple. Pilgrims bathe here before temple darshan. Water at 45°C."
+  },
+  {
+    "id": "diu-fort",
+    "destination_id": "diu",
+    "name": "Diu Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Massive Portuguese fortress on the southern tip. Cannons, lighthouse, and Arabian Sea views from the ramparts."
+  },
+  {
+    "id": "nagoa-beach",
+    "destination_id": "diu",
+    "name": "Nagoa Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Horseshoe-shaped beach with calm, shallow waters perfect for swimming. Hoka trees line the shore."
+  },
+  {
+    "id": "st-pauls-church-diu",
+    "destination_id": "diu",
+    "name": "St. Paul's Church",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "One of the finest baroque churches in India. Ornate woodwork, shell windows, and Jesuit architecture."
+  },
+  {
+    "id": "bhulla-lake-lansdowne",
+    "destination_id": "lansdowne",
+    "name": "Bhulla Lake",
+    "type": "lake",
+    "entry_fee": "₹50",
+    "description": "Man-made lake created by the Army. Paddle boating surrounded by dense oak and pine forests."
+  },
+  {
+    "id": "garhwal-rifles-museum",
+    "destination_id": "lansdowne",
+    "name": "Garhwal Rifles Regimental Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Museum showcasing the valor of Garhwal Rifles regiment with weapons, uniforms, and gallantry awards."
+  },
+  {
+    "id": "tip-n-top-lansdowne",
+    "destination_id": "lansdowne",
+    "name": "Tip-N-Top (Tiffin Top)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest point in Lansdowne with views of Shivalik ranges and snow-capped peaks on clear days."
+  },
+  {
+    "id": "rang-ghar",
+    "destination_id": "sivasagar",
+    "name": "Rang Ghar",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "Asia's oldest surviving amphitheatre built by the Ahom dynasty for watching buffalo fights and other sports."
+  },
+  {
+    "id": "sivasagar-tank",
+    "destination_id": "sivasagar",
+    "name": "Sivasagar Tank (Borpukhuri)",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Massive Ahom-era tank with Sivadol (tallest Shiva temple in India), Vishnudol, and Devidol on its banks."
+  },
+  {
+    "id": "talatal-ghar",
+    "destination_id": "sivasagar",
+    "name": "Talatal Ghar",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "Ahom palace with 3 underground floors and 2 secret tunnel escape routes. Largest Ahom monument."
+  },
+  {
+    "id": "bhaderwah-valley",
+    "destination_id": "bhaderwah",
+    "name": "Bhaderwah Meadow",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Called \"Mini Kashmir\". Lush valley at 5,300 ft with Jai Valley views and the Neelkanth river."
+  },
+  {
+    "id": "chinta-valley-bhaderwah",
+    "destination_id": "bhaderwah",
+    "name": "Chinta Valley",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine meadow 12 km from Bhaderwah with thick forest cover and snow-capped peaks."
+  },
+  {
+    "id": "hanle-monastery",
+    "destination_id": "hanle",
+    "name": "Hanle Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Remote 17th-century Drukpa Kagyu monastery on a hillock overlooking the Hanle plains and observatory."
+  },
+  {
+    "id": "hanle-observatory",
+    "destination_id": "hanle",
+    "name": "Indian Astronomical Observatory",
+    "type": "viewpoint",
+    "entry_fee": "₹50 (permit)",
+    "description": "One of the world's highest optical observatories at 14,764 ft. Night sky among the clearest on Earth."
+  },
+  {
+    "id": "lamayuru-monastery",
+    "destination_id": "lamayuru",
+    "name": "Lamayuru Monastery",
+    "type": "monastery",
+    "entry_fee": "₹50",
+    "description": "Oldest monastery in Ladakh dating to the 10th century. Famous for annual mask dance festival. Lunar landscape."
+  },
+  {
+    "id": "moonland-lamayuru",
+    "destination_id": "lamayuru",
+    "name": "Moonland",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Surreal lunar landscape of eroded clay formations. Once an ancient lakebed, now resembling the moon surface."
+  },
+  {
+    "id": "osian-dunes",
+    "destination_id": "osian",
+    "name": "Osian Sand Dunes",
+    "type": "viewpoint",
+    "entry_fee": "₹500-2,000",
+    "description": "Desert dunes near the temples. Camel safari and desert camping with clear night skies."
+  },
+  {
+    "id": "osian-temples",
+    "destination_id": "osian",
+    "name": "Osian Temple Complex",
+    "type": "temple",
+    "entry_fee": "₹25",
+    "description": "Group of Jain and Hindu temples from 8th-12th century. Called \"Khajuraho of Rajasthan\" for erotic carvings."
+  },
+  {
+    "id": "laxman-temple-sirpur",
+    "destination_id": "sirpur",
+    "name": "Laxman Temple",
+    "type": "temple",
+    "entry_fee": "Included in entry",
+    "description": "Exquisitely carved 7th-century brick temple. One of the finest examples of early Indian temple architecture."
+  },
+  {
+    "id": "sirpur-ruins",
+    "destination_id": "sirpur",
+    "name": "Sirpur Archaeological Site",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "Ruins of the 5th-8th century Buddhist-Hindu-Jain complex. Laxman Temple — one of the oldest brick temples in India."
+  },
+  {
+    "id": "pakhui-tiger-reserve",
+    "destination_id": "bhalukpong",
+    "name": "Pakhui Tiger Reserve",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "Important tiger corridor connecting Nameri NP in Assam. Elephant safari and river rafting on Jia-Bharali."
+  },
+  {
+    "id": "dudhwa-tiger-safari",
+    "destination_id": "dudhwa-national-park",
+    "name": "Dudhwa Tiger Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹500-1,500",
+    "description": "Terai ecosystem park with Bengal tigers, one-horned rhinos (reintroduced), and swamp deer. Elephant safari available."
+  },
+  {
+    "id": "moreh-border-market",
+    "destination_id": "moreh",
+    "name": "Moreh Border Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "India-Myanmar border town with a bustling cross-border market. Burmese goods, fabrics, and electronics."
+  },
+  {
+    "id": "sinthan-pass",
+    "destination_id": "sinthan-top",
+    "name": "Sinthan Top Pass",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Mountain pass at 12,297 ft connecting Kashmir to Kishtwar. Snow-covered meadows and panoramic views."
+  }
+]

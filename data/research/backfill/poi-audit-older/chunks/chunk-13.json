@@ -1,0 +1,370 @@
+[
+  {
+    "id": "chamera-lake-dalhousie",
+    "destination_id": "dalhousie",
+    "name": "Chamera Lake",
+    "type": "lake",
+    "entry_fee": "₹200-500",
+    "description": "Reservoir lake 25 km from Dalhousie. Boating, kayaking, and surrounding forested hills."
+  },
+  {
+    "id": "dainkund-peak",
+    "destination_id": "dalhousie",
+    "name": "Dainkund Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest point in Dalhousie at 2,755 meters. Trek through forests to Pholani Devi Temple at the summit."
+  },
+  {
+    "id": "kalatop-sanctuary",
+    "destination_id": "dalhousie",
+    "name": "Kalatop Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Dense deodar forest sanctuary with trekking trails. Home to Himalayan black bear, barking deer, and goral."
+  },
+  {
+    "id": "khajjiar",
+    "destination_id": "dalhousie",
+    "name": "Khajjiar (Mini Switzerland)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Saucer-shaped plateau at 6,500 ft with dense forests and a small lake. Called Mini Switzerland of India."
+  },
+  {
+    "id": "dalhousie-mall-road",
+    "destination_id": "dalhousie",
+    "name": "Mall Road & Gandhi Chowk",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Colonial-era main street with shops, eateries, and views of Dhauladhar and Pir Panjal ranges."
+  },
+  {
+    "id": "panchpula",
+    "destination_id": "dalhousie",
+    "name": "Panchpula",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Five bridges area with a waterfall. Memorial of freedom fighter Sardar Ajit Singh. Forest walk."
+  },
+  {
+    "id": "satdhara-falls",
+    "destination_id": "dalhousie",
+    "name": "Satdhara Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Seven streams of water falling from a height surrounded by pine forests. Believed to have medicinal properties."
+  },
+  {
+    "id": "st-john-church-dalhousie",
+    "destination_id": "dalhousie",
+    "name": "St. John's Church",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Victorian-era church built in 1863 with beautiful stained glass windows and stone architecture."
+  },
+  {
+    "id": "tawang-alpine-meadows",
+    "destination_id": "tawang",
+    "name": "Alpine Meadows & Prayer Flags",
+    "type": "viewpoint",
+    "entry_fee": "free",
+    "description": "Open meadows at 2,800–3,000m with prayer flags and panoramic views of eastern Himalayas."
+  },
+  {
+    "id": "madhuri-lake",
+    "destination_id": "tawang",
+    "name": "Madhuri Lake (Sangetsar Tso)",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Beautiful lake formed by the 1950 earthquake. Named after Bollywood actress who shot a song here."
+  },
+  {
+    "id": "nuranang-falls",
+    "destination_id": "tawang",
+    "name": "Nuranang Falls (Bong Bong Falls)",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "100-meter waterfall near Tawang. Featured in the Bollywood movie \"Koyla\". Hydroelectric project at base."
+  },
+  {
+    "id": "sela-pass",
+    "destination_id": "tawang",
+    "name": "Sela Pass",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Mountain pass at 13,700 ft with Sela Lake. Snow-covered for most of the year with stunning views."
+  },
+  {
+    "id": "tawang-monastery",
+    "destination_id": "tawang",
+    "name": "Tawang Monastery",
+    "type": "monastery",
+    "entry_fee": "₹50",
+    "description": "Largest monastery in India and second-largest in the world after Lhasa. 400-year-old Gelug sect gompa at 10,000 ft."
+  },
+  {
+    "id": "tawang-war-memorial",
+    "destination_id": "tawang",
+    "name": "Tawang War Memorial",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Memorial honoring soldiers who died in the 1962 Sino-Indian War. Museum with war artifacts and gallery."
+  },
+  {
+    "id": "urgelling-gompa",
+    "destination_id": "tawang",
+    "name": "Urgelling Gompa",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Birthplace of the 6th Dalai Lama, Tsangyang Gyatso. Small but historically significant monastery."
+  },
+  {
+    "id": "billing-takeoff",
+    "destination_id": "bir-billing",
+    "name": "Billing Takeoff Site",
+    "type": "viewpoint",
+    "entry_fee": "₹2,000-3,500",
+    "description": "World's second-highest paragliding site at 8,000 ft. Used for Paragliding World Cup events."
+  },
+  {
+    "id": "bir-tea-factory",
+    "destination_id": "bir-billing",
+    "name": "Bir Tea Garden & Factory",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Organic tea gardens where you can see tea processing and buy fresh Kangra tea directly."
+  },
+  {
+    "id": "chokling-monastery-bir",
+    "destination_id": "bir-billing",
+    "name": "Chokling Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Beautiful Tibetan Buddhist monastery with ornate architecture and a meditation center."
+  },
+  {
+    "id": "sherabling-monastery",
+    "destination_id": "bir-billing",
+    "name": "Sherabling Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "One of the most important Kagyu monasteries in India. Peaceful campus with resident monks."
+  },
+  {
+    "id": "khecheopalri-lake",
+    "destination_id": "pelling",
+    "name": "Khecheopalri Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Sacred \"Wish-Fulfilling Lake\" revered by Buddhists and Hindus. No leaves are allowed to float on the surface."
+  },
+  {
+    "id": "skywalk-pelling",
+    "destination_id": "pelling",
+    "name": "Pelling Skywalk",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Glass-floor skywalk at 7,200 ft with 360-degree views of Kanchenjunga and surrounding peaks."
+  },
+  {
+    "id": "pemayangtse-monastery",
+    "destination_id": "pelling",
+    "name": "Pemayangtse Monastery",
+    "type": "monastery",
+    "entry_fee": "₹20",
+    "description": "One of Sikkim's oldest monasteries (1705). Houses an extraordinary 7-tier wooden sculpture of heaven."
+  },
+  {
+    "id": "rabdentse-ruins",
+    "destination_id": "pelling",
+    "name": "Rabdentse Ruins",
+    "type": "monument",
+    "entry_fee": "₹10",
+    "description": "Ruins of the second capital of Sikkim (1670-1814). Short forest trek to the ruins with Kanchenjunga views."
+  },
+  {
+    "id": "adalaj-vav-gandhinagar",
+    "destination_id": "gandhinagar",
+    "name": "Adalaj Stepwell",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Five-storey ornamental stepwell from 1499 with over 500 carved figures. Stays cool even in Gujarat's scorching summers."
+  },
+  {
+    "id": "akshardham-gandhinagar",
+    "destination_id": "gandhinagar",
+    "name": "Akshardham Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Grand pink sandstone temple complex with boat ride depicting 10,000 years of Indian culture, water show, and exhibitions."
+  },
+  {
+    "id": "indroda-nature-park",
+    "destination_id": "gandhinagar",
+    "name": "Indroda Nature Park",
+    "type": "garden",
+    "entry_fee": "₹50",
+    "description": "India's only dinosaur and fossil park. Dinosaur egg fossils, giant whale skeleton, botanical garden, and zoo."
+  },
+  {
+    "id": "hindola-mahal-mandu",
+    "destination_id": "mandu",
+    "name": "Hindola Mahal (Swing Palace)",
+    "type": "palace",
+    "entry_fee": "Included in entry",
+    "description": "T-shaped walls that slope inward giving it a swinging appearance. Unique medieval architecture."
+  },
+  {
+    "id": "jahaz-mahal-mandu",
+    "destination_id": "mandu",
+    "name": "Jahaz Mahal",
+    "type": "palace",
+    "entry_fee": "₹25",
+    "description": "Ship-like palace between two lakes built by Ghiyasuddin Khalji. 120 meters long, appears to float on water."
+  },
+  {
+    "id": "rani-roopmati-pavilion",
+    "destination_id": "mandu",
+    "name": "Rani Roopmati Pavilion",
+    "type": "viewpoint",
+    "entry_fee": "Included in entry",
+    "description": "Hilltop pavilion with panoramic views of the Narmada Valley. Love story of Baz Bahadur and Roopmati."
+  },
+  {
+    "id": "dumas-beach",
+    "destination_id": "surat",
+    "name": "Dumas Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Black sand beach on the Arabian Sea. Famous for ghost legends. Popular evening hangout with street food stalls."
+  },
+  {
+    "id": "dutch-cemetery-surat",
+    "destination_id": "surat",
+    "name": "Dutch & English Cemetery",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Ornate colonial tombs from the 17th-18th century when Surat was India's biggest trading port."
+  },
+  {
+    "id": "surat-food-street",
+    "destination_id": "surat",
+    "name": "Surat Street Food Trail",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Legendary food culture — locho, undhiyu, ghari, surti sev khamani. Night market near Chowk Bazaar."
+  },
+  {
+    "id": "bhimtal-aquarium",
+    "destination_id": "bhimtal",
+    "name": "Bhimtal Aquarium",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "India's only freshwater aquarium built on an island in the middle of Bhimtal Lake."
+  },
+  {
+    "id": "bhimtal-lake",
+    "destination_id": "bhimtal",
+    "name": "Bhimtal Lake",
+    "type": "lake",
+    "entry_fee": "₹160",
+    "description": "Largest lake in Nainital district with an island aquarium in the center. Boating and kayaking available."
+  },
+  {
+    "id": "narsimha-temple-joshimath",
+    "destination_id": "joshimath",
+    "name": "Narsingh Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred Badrinath winter seat temple. One of the four cardinal math established by Adi Shankaracharya."
+  },
+  {
+    "id": "tapovan-joshimath",
+    "destination_id": "joshimath",
+    "name": "Tapovan Hot Springs",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Natural hot springs at the confluence of Dhauli Ganga and Rishi Ganga. Believed to have healing properties."
+  },
+  {
+    "id": "prashar-lake-from-mandi",
+    "destination_id": "mandi",
+    "name": "Bhootnath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple at the heart of Mandi town built by Ajber Sen dynasty. Ornate stone carvings."
+  },
+  {
+    "id": "rewalsar-lake",
+    "destination_id": "mandi",
+    "name": "Rewalsar Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Sacred floating reed lake revered by Hindus, Buddhists, and Sikhs. Padmasambhava meditated here before going to Tibet."
+  },
+  {
+    "id": "natha-top",
+    "destination_id": "patnitop",
+    "name": "Natha Top",
+    "type": "viewpoint",
+    "entry_fee": "₹500-2,000",
+    "description": "Meadow at 6,633 ft with panoramic views of Pir Panjal range. Paragliding and skiing destination."
+  },
+  {
+    "id": "sanasar-lake",
+    "destination_id": "patnitop",
+    "name": "Sanasar Lake & Meadow",
+    "type": "lake",
+    "entry_fee": "₹200-1,000",
+    "description": "Cup-shaped meadow with a small lake surrounded by conifers. Adventure sports hub with zip-lining."
+  },
+  {
+    "id": "sundarbans-watchtowers",
+    "destination_id": "sundarbans",
+    "name": "Sajnekhali Watchtower",
+    "type": "viewpoint",
+    "entry_fee": "Included in park entry",
+    "description": "Watchtower and interpretation center in the Sundarbans. Spot crocodiles, deer, and water monitors."
+  },
+  {
+    "id": "sundarbans-boat-safari",
+    "destination_id": "sundarbans",
+    "name": "Sundarbans Boat Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹200-1,000",
+    "description": "UNESCO World Heritage mangrove delta. Boat safari to spot Royal Bengal tigers, crocodiles, and Gangetic dolphins."
+  },
+  {
+    "id": "binsar-sanctuary",
+    "destination_id": "binsar",
+    "name": "Binsar Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹150",
+    "description": "Dense oak and rhododendron forest sanctuary with 200+ bird species. Zero Point offers 300 km Himalayan panorama."
+  },
+  {
+    "id": "gagron-fort-site",
+    "destination_id": "gagron-fort",
+    "name": "Gagron Fort",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "UNESCO World Heritage hill and water fort at the confluence of Ahu and Kali Sindh rivers. Rare water fort."
+  },
+  {
+    "id": "neemrana-fort-palace",
+    "destination_id": "neemrana",
+    "name": "Neemrana Fort Palace",
+    "type": "fort",
+    "entry_fee": "₹1,500 (day visit)",
+    "description": "15th-century heritage fort hotel with zip-lining across ramparts. 6 palace levels built on Aravalli hills."
+  },
+  {
+    "id": "trichy-rockfort",
+    "destination_id": "trichy",
+    "name": "Rockfort Ucchi Pillayar Temple",
+    "type": "temple",
+    "entry_fee": "Free (donations)",
+    "description": "Ancient Ganesh temple atop a 273-foot rock fortress in central Trichy. 437 carved steps wind through the rock to the summit. Panoramic views of the Kaveri River and city below. Open 6 AM–8 PM."
+  }
+]
