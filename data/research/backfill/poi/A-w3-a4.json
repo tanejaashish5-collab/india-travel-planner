@@ -1,0 +1,386 @@
+[
+  {
+    "id": "ajanta-caves-cave-1",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 1 — Padmapani Murals",
+    "type": "monument",
+    "description": "The oldest cave in the complex, featuring the iconic Bodhisattva Padmapani painting in his hand and royal ornaments. Exemplary fresco-secco technique.",
+    "tags": ["painting", "buddhist", "bodhisattva", "murals"],
+    "time_needed": "45 mins",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "सबसे पुराना गुफा, जिसमें प्रसिद्ध बोधिसत्व पद्मपाणि चित्रकारी है जो अपने हाथ में कमल धारण करते हैं। प्राचीन भारतीय कला का उत्तम नमूना।",
+    "source_urls": [
+      "https://indianculture.gov.in/ajanta/caves",
+      "https://en.wikipedia.org/wiki/Ajanta_Caves"
+    ]
+  },
+  {
+    "id": "ajanta-caves-cave-2",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 2 — Jataka Tales Ceiling",
+    "type": "monument",
+    "description": "Famous for ornate ceiling decorated with flowering patterns and vivid Jataka tales, mythical animals, and lotus medallions representing Mahayana Buddhist cosmology.",
+    "tags": ["painting", "jataka-tales", "ceiling", "buddhist"],
+    "time_needed": "45 mins",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "जातक कथाओं के जीवंत चित्रण वाली छत के लिए प्रसिद्ध। महायान बौद्ध धर्म की जटिल कलाकारी दिखती है।",
+    "source_urls": [
+      "https://indianculture.gov.in/ajanta/caves",
+      "https://en.wikipedia.org/wiki/Ajanta_Caves"
+    ]
+  },
+  {
+    "id": "ajanta-caves-cave-16",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 16 — The Dying Princess",
+    "type": "monument",
+    "description": "Masterpiece depicting grief and tranquility in the scene of a dying princess. One of the finest paintings in the complex, showcasing Vakataka period artistry.",
+    "tags": ["painting", "mural", "narrative", "ancient-art"],
+    "time_needed": "30 mins",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "राजकुमारी की मृत्यु का दृश्य दर्शाता विख्यात चित्र। वाकाटक कालीन कला का शीर्षस्थ नमूना।",
+    "source_urls": [
+      "https://indianculture.gov.in/ajanta/caves",
+      "https://artincontext.org/ajanta-caves/"
+    ]
+  },
+  {
+    "id": "ajanta-caves-cave-26",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 26 — Reclining Buddha",
+    "type": "monument",
+    "description": "One of two chaityas (prayer halls), featuring a massive reclining Buddha sculpture. Exemplifies the devotional architecture of the Vakataka period.",
+    "tags": ["sculpture", "buddha", "prayer-hall", "monument"],
+    "time_needed": "35 mins",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बुद्ध की विशाल लेटी हुई मूर्ति वाली प्रार्थना हॉल। भारतीय धार्मिक वास्तुकला का उत्कृष्ट उदाहरण।",
+    "source_urls": [
+      "https://indianculture.gov.in/ajanta/caves",
+      "https://en.wikipedia.org/wiki/Ajanta_Caves"
+    ]
+  },
+  {
+    "id": "ajanta-caves-viewpoint",
+    "destination_id": "ajanta-caves",
+    "name": "Ajanta Viewpoint",
+    "type": "viewpoint",
+    "description": "Overlooks the horseshoe-shaped cliff and Waghora River canyon. Views span the entire cave complex carved into the 75-metre rock wall. Best light at dawn.",
+    "tags": ["vista", "canyon", "photography", "geology"],
+    "time_needed": "20 mins",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "अजंता की पूरी गुफा परिसर के मनोरम दृश्य। वाघोरा नदी की घाटी का विहंगम दृश्य सूर्योदय के समय सर्वश्रेष्ठ।",
+    "source_urls": [
+      "https://indianculture.gov.in/ajanta/caves",
+      "https://www.thewondertravel.com/2025/07/ajanta-caves-travel-guide-ancient.html"
+    ]
+  },
+  {
+    "id": "ajanta-caves-mtdc-center",
+    "destination_id": "ajanta-caves",
+    "name": "MTDC Visitor Center",
+    "type": "museum",
+    "description": "Official visitor center with interpretive displays on Buddhist art, architecture, and history. Restaurant available. Shuttle service to caves departs from here.",
+    "tags": ["museum", "information", "restaurant", "shuttle"],
+    "time_needed": "30 mins",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "गुफाओं का इतिहास और बौद्ध कला के बारे में जानकारी। रेस्तरां और शटल सेवा उपलब्ध।",
+    "source_urls": [
+      "https://www.thewondertravel.com/2025/07/ajanta-caves-travel-guide-ancient.html",
+      "https://kirtankar.com/india-ajanta-caves-guide/"
+    ]
+  },
+  {
+    "id": "alibaug-kolaba-fort",
+    "destination_id": "alibaug",
+    "name": "Kolaba Fort",
+    "type": "fort",
+    "description": "17th-century Maratha fort built as an island fortress. Accessible by wading through water at low tide, or short boat ride at high tide. Ruins of the fort visible from Alibaug Beach.",
+    "tags": ["fort", "maratha", "history", "tidal-walk"],
+    "time_needed": "2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "17वीं शताब्दी का मराठा किला, समुद्र में स्थित। उच्च ज्वार में नाव और निम्न ज्वार में पैदल जाया जा सकता है।",
+    "source_urls": [
+      "https://seawatersports.com/places/maharashtra/alibaug",
+      "https://www.captureatrip.com/blog/places-to-visit-in-alibaug"
+    ]
+  },
+  {
+    "id": "alibaug-kashid-beach",
+    "destination_id": "alibaug",
+    "name": "Kashid Beach",
+    "type": "viewpoint",
+    "description": "Pristine white sand beach with turquoise waters. About 30 km from Alibaug town. Known for calm waters and excellent for families and swimming.",
+    "tags": ["beach", "white-sand", "swimming", "family-friendly"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "सफेद रेत वाला प्राकृतिक समुद्र तट, नीले पानी के साथ। परिवारों के लिए आदर्श स्थान।",
+    "source_urls": [
+      "https://www.thrillophilia.com/attractions/kihim-beach",
+      "https://www.captureatrip.com/blog/places-to-visit-in-alibaug"
+    ]
+  },
+  {
+    "id": "alibaug-kihim-beach",
+    "destination_id": "alibaug",
+    "name": "Kihim Beach",
+    "type": "viewpoint",
+    "description": "Untouched, peaceful beach bordered by coconut trees and wildflowers. Sanctuary for nature enthusiasts and photographers. Quieter alternative to Alibaug Beach.",
+    "tags": ["beach", "nature", "photography", "quiet"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "शांत समुद्र तट, नारियल के पेड़ों से घिरा हुआ। प्रकृति प्रेमियों के लिए अलिबाग का सबसे अच्छा विकल्प।",
+    "source_urls": [
+      "https://www.thrillophilia.com/attractions/kihim-beach",
+      "https://www.tripoto.com/maharashtra/places-to-visit/kihim-beach"
+    ]
+  },
+  {
+    "id": "alibaug-kanakeshwar-temple",
+    "destination_id": "alibaug",
+    "name": "Kanakeshwar Temple",
+    "type": "temple",
+    "description": "Hoysala-style Shiva temple built in 1764, located on a hilltop 900 feet above sea level, 13 km from Alibaug. Offers views of surrounding hills and valleys.",
+    "tags": ["temple", "shiva", "hoysala", "hilltop"],
+    "time_needed": "1.5 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "1764 में बना हुआ होयसल शैली का मंदिर, 900 फीट की ऊंचाई पर स्थित। पहाड़ों का खूबसूरत दृश्य।",
+    "source_urls": [
+      "https://www.captureatrip.com/blog/places-to-visit-in-alibaug",
+      "https://www.fabhotels.com/blog/places-to-visit-in-alibaug/"
+    ]
+  },
+  {
+    "id": "alibaug-nagaon-beach",
+    "type": "viewpoint",
+    "destination_id": "alibaug",
+    "name": "Nagaon Beach",
+    "description": "Silky sand beach stretching 3 km along the Arabian Sea. Known for water sports and adventure activities at reasonable prices. Popular for beach volleyball and kayaking.",
+    "tags": ["beach", "water-sports", "adventure", "family-friendly"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "3 किमी लंबा समुद्र तट, जल खेल के लिए प्रसिद्ध। सस्ती दरों पर साहसिक गतिविधियां उपलब्ध।",
+    "source_urls": [
+      "https://www.captureatrip.com/blog/places-to-visit-in-alibaug",
+      "https://www.fabhotels.com/blog/places-to-visit-in-alibaug/"
+    ]
+  },
+  {
+    "id": "kavaratti-ujra-mosque",
+    "destination_id": "kavaratti",
+    "name": "Ujra Mosque",
+    "type": "mosque",
+    "description": "Oldest and most beautiful mosque in Lakshadweep, built in the 17th century by Sheikh Mohammad Kasim. Features ornate ceiling and intricately carved pillars. Sacred well with reportedly curative water on premises.",
+    "tags": ["mosque", "historic", "islamic", "17th-century"],
+    "time_needed": "45 mins",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "लक्षद्वीप का सबसे प्राचीन और सुंदर मस्जिद, 17वीं शताब्दी में निर्मित। उत्कृष्ट वास्तुकला वाली संरचना।",
+    "source_urls": [
+      "https://www.incredibleindia.gov.in/en/lakshadweep/kavaratti/ujra-mosque",
+      "https://lakshadweep.gov.in/tourist-place/kavaratti/"
+    ]
+  },
+  {
+    "id": "kavaratti-marine-aquarium",
+    "destination_id": "kavaratti",
+    "name": "Kavaratti Marine Aquarium",
+    "type": "museum",
+    "description": "Showcases diverse marine species of Lakshadweep including colorful fish, sea cucumbers, octopuses, corals, and anemones. Located near Ujra Mosque and Marine Museum.",
+    "tags": ["aquarium", "marine-life", "museum", "education"],
+    "time_needed": "1 hour",
+    "entry_fee": "Varies",
+    "kids_suitable": true,
+    "hi_description": "लक्षद्वीप के समुद्री जीवन को प्रदर्शित करने वाला संग्रहालय। रंगीन मछलियां, प्रवाल, और समुद्री जीव देख सकते हैं।",
+    "source_urls": [
+      "https://tripxl.com/blog/marine-museum-lakshadweep/",
+      "https://seawatersports.com/places/lakshadweep/marine-museum-in-lakshadweep"
+    ]
+  },
+  {
+    "id": "kavaratti-lagoon",
+    "destination_id": "kavaratti",
+    "name": "Kavaratti Lagoon",
+    "type": "viewpoint",
+    "description": "Turquoise shallow lagoon with glass-bottom boat tours available. The administrative capital offers the best infrastructure for lagoon exploration in Lakshadweep.",
+    "tags": ["lagoon", "glass-bottom-boats", "snorkeling", "turquoise-waters"],
+    "time_needed": "1.5-2 hours",
+    "entry_fee": "Varies",
+    "kids_suitable": true,
+    "hi_description": "नीले पानी की खूबसूरत लैगून, समुद्र तल के दृश्य के लिए नाव उपलब्ध। परिवारों के लिए सुरक्षित।",
+    "source_urls": [
+      "https://lakshadweep.gov.in/tourist-place/kavaratti/",
+      "https://www.incredibleindia.gov.in/en/trips/trip-listing/jewel-of-the-arabian-sea-a-kavaratti-getaway"
+    ]
+  },
+  {
+    "id": "agatti-airport-viewpoint",
+    "destination_id": "agatti",
+    "name": "Agatti Aerodrome Approach",
+    "type": "viewpoint",
+    "description": "Only airport in Lakshadweep, offering a breathtaking aerial view over turquoise lagoon during landing. One of India's most dramatic approaches.",
+    "tags": ["airport", "lagoon", "scenic-view", "unique"],
+    "time_needed": "N/A",
+    "entry_fee": "N/A",
+    "kids_suitable": true,
+    "hi_description": "लक्षद्वीप का एकमात्र हवाई अड्डा। उतरते समय नीली लैगून का दृश्य अद्भुत होता है।",
+    "source_urls": [
+      "https://www.hectindia.com/guide/agatti-aerodrome-agx",
+      "https://lakshadweep.gov.in/tourist-place/agatti/"
+    ]
+  },
+  {
+    "id": "agatti-lagoon",
+    "destination_id": "agatti",
+    "name": "Agatti Lagoon",
+    "type": "viewpoint",
+    "description": "Sprawling turquoise lagoon covering 24.84 sq km with shallow, crystal-clear waters and thriving marine ecosystem. Ideal for snorkeling, kayaking, and water sports.",
+    "tags": ["lagoon", "snorkeling", "kayaking", "marine-life"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "विशाल नीली लैगून, 24.84 वर्ग किमी क्षेत्र में फैली हुई। स्नॉर्केलिंग के लिए आदर्श।",
+    "source_urls": [
+      "https://www.lakshadweeptravelguru.com/agatti-island/",
+      "https://lakshadweep.gov.in/tourist-place/agatti/"
+    ]
+  },
+  {
+    "id": "bangaram-coral-reef",
+    "destination_id": "bangaram",
+    "name": "Bangaram Coral Gardens",
+    "type": "viewpoint",
+    "description": "Vibrant coral reefs home to brain coral, staghorn coral, and table coral formations. Excellent snorkeling right from the beach to explore colorful tropical fish, rays, sharks, and sea turtles.",
+    "tags": ["coral", "snorkeling", "marine-life", "reef"],
+    "time_needed": "2-4 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "रंगीन प्रवाल की खूबसूरत बागें। समुद्री जीवन की विविधता देखने के लिए आदर्श स्थान।",
+    "source_urls": [
+      "https://www.tripoto.com/lakshadweep/places-to-visit/bangaram-island",
+      "https://www.tripoto.com/trip/its-time-we-make-it-to-the-coral-paradise-of-india-the-lakshadweep-60be5e1bf3a09"
+    ]
+  },
+  {
+    "id": "bangaram-lagoon",
+    "destination_id": "bangaram",
+    "name": "Bangaram Lagoon",
+    "type": "viewpoint",
+    "description": "Enclosed by coral reef with shallow, pristine turquoise waters. Uninhabited atoll with only one resort. Dolphin spotting possible at sunset. Closest equivalent to Maldives in India.",
+    "tags": ["lagoon", "dolphins", "secluded", "turquoise-waters"],
+    "time_needed": "2-4 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "प्रवाल से घिरी लैगून, पूरी तरह प्राकृतिक और शांत। डॉल्फिन देखने का अच्छा मौका।",
+    "source_urls": [
+      "https://www.tripoto.com/lakshadweep/places-to-visit/bangaram-island",
+      "https://lakshadweep.gov.in/islands/bangaram/"
+    ]
+  },
+  {
+    "id": "kadmat-the-wall",
+    "destination_id": "kadmat",
+    "name": "The Wall — Dive Site",
+    "type": "viewpoint",
+    "description": "Dramatic underwater cliff face. Premier scuba diving spot offering wall-like coral reefs and encounters with pelagic fish and sea turtles. Only CMAS-certified dive school in India based here.",
+    "tags": ["scuba-diving", "coral-wall", "pelagic-fish", "sea-turtles"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Varies",
+    "kids_suitable": false,
+    "hi_description": "पानी के अंदर की नाटकीय चट्टान। गहरे पानी की डाइविंग के लिए भारत में सर्वश्रेष्ठ स्थान।",
+    "source_urls": [
+      "https://www.godigit.com/explore/scuba-diving-in-india/kadmat",
+      "https://www.tripoto.com/lakshadweep/places-to-visit/scuba-diving-in-lakshadweep"
+    ]
+  },
+  {
+    "id": "kadmat-reef-walking",
+    "destination_id": "kadmat",
+    "name": "Kadmat Reef Walking",
+    "type": "viewpoint",
+    "description": "Walk across exposed coral reefs at low tide. Longest sandbank in Lakshadweep. Safe exploration of coral formations, clownfish, and parrotfish habitats.",
+    "tags": ["reef-walking", "low-tide", "coral", "marine-life"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "निम्न ज्वार के समय प्रवाल पर चलना। सबसे लंबी रेत की पट्टी, समुद्री जीवन देखने का अच्छा तरीका।",
+    "source_urls": [
+      "https://wanderon.in/blogs/adventure-activities-in-kadmat-island-lakshadweep",
+      "https://www.theindia.co.in/places/kadmat-island"
+    ]
+  },
+  {
+    "id": "kadmat-lagoon",
+    "destination_id": "kadmat",
+    "name": "Kadmat Lagoon",
+    "type": "viewpoint",
+    "description": "Pristine shallow lagoon ideal for snorkeling, kayaking, and water sports. Glass-bottom boats, pedal boats, and sailing boats available for hire.",
+    "tags": ["lagoon", "kayaking", "snorkeling", "water-sports"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "साफ लैगून, कयाकिंग और स्नॉर्केलिंग के लिए आदर्श। विभिन्न नाव किराए पर उपलब्ध।",
+    "source_urls": [
+      "https://seawatersports.com/places/lakshadweep/kadmat-island-in-lakshadweep",
+      "https://lakshadweep.gov.in/tourist-place/kadmath/"
+    ]
+  },
+  {
+    "id": "minicoy-lighthouse",
+    "destination_id": "minicoy",
+    "name": "Minicoy Lighthouse",
+    "type": "monument",
+    "description": "300-foot tall historic lighthouse built in 1885 by the British. Standing 49.5 meters high with ornate lantern and gallery offering spectacular 360-degree views of the entire island.",
+    "tags": ["lighthouse", "historic", "viewpoint", "1885"],
+    "time_needed": "1.5 hours",
+    "entry_fee": "Varies",
+    "kids_suitable": true,
+    "hi_description": "1885 में बना ऐतिहासिक प्रकाश स्तंभ। 49.5 मीटर ऊंचा, पूरे द्वीप का दृश्य प्रदान करता है।",
+    "source_urls": [
+      "https://lakshadweep.gov.in/tourist-place/minicoy/",
+      "https://seawatersports.com/places/lakshadweep/minicoy-island-lighthouse-in-lakshadweep"
+    ]
+  },
+  {
+    "id": "minicoy-tuna-canning",
+    "destination_id": "minicoy",
+    "name": "Minicoy Tuna Canning Factory",
+    "type": "museum",
+    "description": "Active working plant showcasing the island's tuna fishing and canning industry. Visitors can observe the processing of the daily catch. Insight into Lakshadweep's export economy.",
+    "tags": ["industry", "tuna", "processing", "economic-heritage"],
+    "time_needed": "1 hour",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "सक्रिय कारखाना जहां टूना की प्रोसेसिंग होती है। द्वीप की मुख्य आजीविका का प्रदर्शन।",
+    "source_urls": [
+      "https://lakshadweep.gov.in/tourist-place/minicoy/",
+      "https://www.incredibleindia.gov.in/en/lakshadweep/kavaratti/minicoy"
+    ]
+  },
+  {
+    "id": "minicoy-lagoon",
+    "destination_id": "minicoy",
+    "name": "Minicoy Lagoon",
+    "type": "viewpoint",
+    "description": "One of the largest lagoons with half-moon shaped island outline. Colorful corals and small uninhabited islet Viringili on the southern side. Calm turquoise waters for snorkeling.",
+    "tags": ["lagoon", "lagoon", "corals", "snorkeling"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "लक्षद्वीप की सबसे बड़ी लैगून। रंगीन प्रवाल और शांत नीले पानी वाली।",
+    "source_urls": [
+      "https://lakshadweep.gov.in/tourist-place/minicoy/",
+      "https://www.incredibleindia.gov.in/en/lakshadweep/kavaratti/minicoy"
+    ]
+  }
+]
