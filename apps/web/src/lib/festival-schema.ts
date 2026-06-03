@@ -79,16 +79,22 @@ export function festivalsItemListJsonLd(
     })();
 
     const rowMonth = monthNum ?? f.month;
+    const validMonth = rowMonth >= 1 && rowMonth <= 12;
     const dl = dateLabel(f);
-    const dateRange = dl ? tryExtractIsoRange(dl, year, rowMonth) : null;
-    const monthOnly = `${year}-${pad2(rowMonth)}`;
-    const endMonth = `${year}-${pad2(rowMonth)}-${pad2(lastDayOfMonth(year, rowMonth))}`;
+    const dateRange = dl && validMonth ? tryExtractIsoRange(dl, year, rowMonth) : null;
+    // Festivals with an unconfirmed/movable month (null in the DB) carry no
+    // schema.org date — better to omit than emit an invalid "2026-null".
+    const dates = validMonth
+      ? {
+          startDate: dateRange?.startDate ?? `${year}-${pad2(rowMonth)}`,
+          endDate: dateRange?.endDate ?? `${year}-${pad2(rowMonth)}-${pad2(lastDayOfMonth(year, rowMonth))}`,
+        }
+      : {};
 
     const event: Record<string, unknown> = {
       "@type": "Event",
       name: f.name,
-      startDate: dateRange?.startDate ?? monthOnly,
-      endDate: dateRange?.endDate ?? endMonth,
+      ...dates,
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       eventStatus: "https://schema.org/EventScheduled",
       location: {
@@ -135,18 +141,22 @@ export function singleFestivalEventJsonLd(
     if (Array.isArray(st)) return st[0]?.name ?? "India";
     return st?.name ?? "India";
   })();
+  const validMonth = f.month >= 1 && f.month <= 12;
   const dl = dateLabel(f);
-  const dateRange = dl ? tryExtractIsoRange(dl, year, f.month) : null;
-  const monthOnly = `${year}-${pad2(f.month)}`;
-  const endMonth = `${year}-${pad2(f.month)}-${pad2(lastDayOfMonth(year, f.month))}`;
+  const dateRange = dl && validMonth ? tryExtractIsoRange(dl, year, f.month) : null;
+  const dates = validMonth
+    ? {
+        startDate: dateRange?.startDate ?? `${year}-${pad2(f.month)}`,
+        endDate: dateRange?.endDate ?? `${year}-${pad2(f.month)}-${pad2(lastDayOfMonth(year, f.month))}`,
+      }
+    : {};
 
   return {
     "@context": "https://schema.org",
     "@type": "Event",
     "@id": `${pageUrl}#event`,
     name: f.name,
-    startDate: dateRange?.startDate ?? monthOnly,
-    endDate: dateRange?.endDate ?? endMonth,
+    ...dates,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     location: {

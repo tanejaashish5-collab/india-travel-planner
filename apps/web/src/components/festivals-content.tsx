@@ -13,6 +13,7 @@ const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June",
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function getSeasonBorder(month: number): string {
+  if (!(month >= 1 && month <= 12)) return "border-l-border";
   if (month >= 11 || month <= 2) return "border-l-blue-400";
   if (month >= 3 && month <= 5) return "border-l-emerald-400";
   if (month >= 6 && month <= 7) return "border-l-orange-400";
@@ -57,23 +58,27 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
     });
   }, [festivals, selectedMonth, search, activeRegion]);
 
-  // Group by month
+  // Group by month. Festivals with an unconfirmed/movable month (null in the
+  // DB — e.g. Kumbh Mela cycles, Saturn-transit jatras) bucket under key 0 so
+  // a non-numeric month can never become a NaN group key.
   const grouped = useMemo(() => {
     const groups: Record<number, typeof festivals> = {};
     filtered.forEach((f) => {
-      if (!groups[f.month]) groups[f.month] = [];
-      groups[f.month].push(f);
+      const m = typeof f.month === "number" && f.month >= 1 && f.month <= 12 ? f.month : 0;
+      if (!groups[m]) groups[m] = [];
+      groups[m].push(f);
     });
     return groups;
   }, [filtered]);
 
-  // Sort months starting from current
+  // Sort months starting from current; the "dates vary" bucket (0) always last
   const sortedMonths = useMemo(() => {
-    const months = Object.keys(grouped).map(Number).sort((a, b) => a - b);
+    const months = Object.keys(grouped).map(Number).filter((m) => m >= 1 && m <= 12).sort((a, b) => a - b);
     // Rotate so current month is first
     const idx = months.findIndex((m) => m >= currentMonth);
-    if (idx > 0) return [...months.slice(idx), ...months.slice(0, idx)];
-    return months;
+    const rotated = idx > 0 ? [...months.slice(idx), ...months.slice(0, idx)] : months;
+    if (grouped[0]?.length) rotated.push(0);
+    return rotated;
   }, [grouped, currentMonth]);
 
   return (
@@ -129,19 +134,19 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
         <div key={month} className="space-y-3">
           <ScrollReveal>
             <h2 className="text-xl font-semibold sticky top-[64px] bg-background/95 backdrop-blur-md py-2 z-20 border-b border-border/30">
-              {MONTH_NAMES[month]}
+              {month === 0 ? "Dates vary" : MONTH_NAMES[month]}
               <span className="text-sm font-normal text-muted-foreground ml-2">
-                {grouped[month].length} festival{grouped[month].length !== 1 ? "s" : ""}
+                {(grouped[month]?.length ?? 0)} festival{(grouped[month]?.length ?? 0) !== 1 ? "s" : ""}
               </span>
-              <span className="ml-2 text-xs font-normal text-muted-foreground/60">{getSeasonLabel(month)}</span>
-              {month === currentMonth && (
+              <span className="ml-2 text-xs font-normal text-muted-foreground/60">{month === 0 ? "Movable / annual" : getSeasonLabel(month)}</span>
+              {month !== 0 && month === currentMonth && (
                 <span className="ml-2 rounded-full bg-primary/10 text-primary px-2 py-1 text-xs font-medium">This month</span>
               )}
             </h2>
           </ScrollReveal>
 
           <StaggerContainer className="grid gap-3 sm:grid-cols-2" staggerDelay={0.06}>
-            {grouped[month].map((festival: any) => {
+            {(grouped[month] ?? []).map((festival: any) => {
               const destName = Array.isArray(festival.destinations) ? festival.destinations[0]?.name : festival.destinations?.name;
 
               return (
@@ -168,7 +173,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
                         <div className="flex items-start justify-between mb-2">
                           <h3 className="font-semibold text-[15px] group-hover:text-primary transition-colors">{festival.name}</h3>
                           <span className="shrink-0 rounded-full bg-primary/10 text-primary px-2.5 py-1 text-xs font-medium">
-                            {MONTH_SHORT[festival.month]}
+                            {festival.month >= 1 && festival.month <= 12 ? MONTH_SHORT[festival.month] : "Varies"}
                           </span>
                         </div>
                         {festival.approximate_date && (

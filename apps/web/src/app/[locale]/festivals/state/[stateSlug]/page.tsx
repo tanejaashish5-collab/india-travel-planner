@@ -174,7 +174,7 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
                   borderBottom: "1px solid var(--hair)",
                 }}
               >
-                {MONTH_NAMES[Number(month)] || "Unknown"}
+                {MONTH_NAMES[Number(month)] || "Dates vary"}
               </h2>
               <div
                 style={{
