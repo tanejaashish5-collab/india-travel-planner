@@ -348,6 +348,14 @@ export async function generateMetadata({
   const descOverride = (isHi ? monthData?.meta_description_override_hi : monthData?.meta_description_override) as string | null | undefined;
   const finalTitle = (titleOverride && titleOverride.trim()) || title;
   const finalDescription = (descOverride && descOverride.trim()) || description;
+  // og:title / twitter:title should mirror the hand-tuned SERP title when a
+  // per-page override exists — otherwise social cards + AI scrapers show the
+  // stale templated "X in June — Is It Worth Visiting?" while the SERP shows
+  // the override. The <title> template adds " | NakshIQ"; ogTitle carries it
+  // inline, so append it here for the override case to match.
+  const finalOgTitle = (titleOverride && titleOverride.trim())
+    ? `${titleOverride.trim()} | NakshIQ`
+    : ogTitle;
 
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
   const imageUrl = `https://www.nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
@@ -364,7 +372,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: ogTitle,
+      title: finalOgTitle,
       description: finalDescription,
       type: "article",
       url: canonicalUrl,
@@ -374,7 +382,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: ogTitle,
+      title: finalOgTitle,
       description: finalDescription,
       images: [imageUrl],
     },

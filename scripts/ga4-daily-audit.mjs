@@ -160,7 +160,7 @@ const eventRows = await runReport({
       fieldName: "eventName",
       inListFilter: {
         values: [
-          "destination_alert_view", "destination_alert_attempt", "destination_alert_success",
+          "destination_alert_view", "save_destination",
           "save_prompt_view", "save_prompt_attempt", "save_prompt_success",
           "email_signup",
         ],
@@ -213,9 +213,10 @@ const cur = {
   botPct,
   directSessions: direct.sessions,
   alertView: ev("destination_alert_view"),
-  alertAttempt: ev("destination_alert_attempt"),
-  alertSuccess: ev("destination_alert_success"),
+  saveDestination: ev("save_destination"),
   savePromptView: ev("save_prompt_view"),
+  savePromptAttempt: ev("save_prompt_attempt"),
+  savePromptSuccess: ev("save_prompt_success"),
   emailSignup: ev("email_signup"),
 };
 const p = prev?.data ?? {};
@@ -240,15 +241,22 @@ if (dAi.pct != null && dAi.pct <= -20) concerns.push(`AI-search referrals down $
 
 if (cur.botPct >= 90) concerns.push(`Bot mass at ${cur.botPct.toFixed(0)}% of sessions (Direct channel). Reporting needs the "Real Humans" GA4 audience filter.`);
 
-// Conversion suite health
-if (cur.alertSuccess > 0) {
-  wins.push(`Peak-alert hook converting — ${cur.alertSuccess} confirmed signups in window.`);
-} else if (cur.alertView >= 30 && cur.alertAttempt === 0) {
-  concerns.push(`Peak-alert hook: ${cur.alertView} views, 0 attempts. Seen but not converting — offer/placement needs iteration if this holds 3+ days.`);
-  actions.push(`Peak-alert hook is at 0% view→attempt on ${cur.alertView} views. If still 0 after 3 days, A/B the headline or move the hook higher.`);
+// Owned-audience funnel health. The peak-alert hook was converted from an email
+// form to a one-tap Save CTA on 2026-05-28 (commit 87f5118e) — it now fires
+// `save_destination`, NOT `destination_alert_attempt`. So measure view→save, then
+// the downstream save→email prompt. (alert_attempt/alert_success are dead events,
+// no longer pulled — measuring them produced a daily false "0% conversion" alarm.)
+const saveRate = cur.alertView > 0 ? (cur.saveDestination / cur.alertView) * 100 : 0;
+if (cur.saveDestination > 0) {
+  wins.push(`Save CTA converting — ${cur.saveDestination} destination saves in window${cur.alertView > 0 ? ` (${saveRate.toFixed(0)}% of ${cur.alertView} peak-alert views)` : ""}.`);
+} else if (cur.alertView >= 50 && cur.saveDestination === 0) {
+  concerns.push(`Peak-alert Save CTA: ${cur.alertView} views, 0 saves. The one-tap save isn't converting — verify the button renders on the money pages if this holds 3+ days.`);
+  actions.push(`Peak-alert Save CTA at 0 saves on ${cur.alertView} views. Confirm the save button + contextual headline render; if still 0 after 3 days, iterate the save pitch — not another email A/B.`);
 }
-if (cur.savePromptView === 0 && (p.savePromptView === 0 || p.savePromptView == null)) {
-  concerns.push(`Save-list prompt: 0 views — nobody is reaching the 3-save threshold. Verify the trigger fires, or lower the threshold to 2.`);
+if (cur.savePromptSuccess > 0) {
+  wins.push(`Owned-audience capture live — ${cur.savePromptSuccess} email(s) from the save-list prompt.`);
+} else if (cur.saveDestination >= 10 && cur.savePromptView === 0) {
+  concerns.push(`${cur.saveDestination} saves but 0 save-list prompts shown — the save→email prompt (fires at 2 saves) may not be triggering. Verify SaveListEmailPrompt.`);
 }
 if (cur.emailSignup > 1000) {
   concerns.push(`email_signup at ${cur.emailSignup.toLocaleString()} events — still bot-inflated (UA bot-guard doesn't stop real-Chrome bots). Needs a scroll/interaction gate or a GA4 data filter.`);
@@ -313,13 +321,15 @@ L("");
 
 L(`## Conversion suite (key events, ${WINDOW_DAYS}-day)`);
 L("");
+L(`> Peak-alert hook is a one-tap **Save** CTA since 2026-05-28 — it fires \`save_destination\`, not \`_attempt\`. Funnel: alert_view → save_destination → (at 2 saves) save_prompt → email.`);
+L("");
 L(`| Event | Today | ${prevLabel} | Δ |`);
 L(`|---|---:|---:|---|`);
-L(`| destination_alert_view | ${cur.alertView} | ${p.alertView ?? "—"} | ${delta(cur.alertView, p.alertView).txt} |`);
-L(`| destination_alert_attempt | ${cur.alertAttempt} | ${p.alertAttempt ?? "—"} | ${delta(cur.alertAttempt, p.alertAttempt).txt} |`);
-L(`| destination_alert_success | ${cur.alertSuccess} | ${p.alertSuccess ?? "—"} | ${delta(cur.alertSuccess, p.alertSuccess).txt} |`);
+L(`| destination_alert_view (hook impressions) | ${cur.alertView} | ${p.alertView ?? "—"} | ${delta(cur.alertView, p.alertView).txt} |`);
+L(`| save_destination (hook conversion) | ${cur.saveDestination} | ${p.saveDestination ?? "—"} | ${delta(cur.saveDestination, p.saveDestination).txt} |`);
 L(`| save_prompt_view | ${cur.savePromptView} | ${p.savePromptView ?? "—"} | ${delta(cur.savePromptView, p.savePromptView).txt} |`);
-L(`| email_signup (bot-inflated) | ${cur.emailSignup.toLocaleString()} | ${p.emailSignup != null ? p.emailSignup.toLocaleString() : "—"} | ${delta(cur.emailSignup, p.emailSignup).txt} |`);
+L(`| save_prompt_success (email captured) | ${cur.savePromptSuccess} | ${p.savePromptSuccess ?? "—"} | ${delta(cur.savePromptSuccess, p.savePromptSuccess).txt} |`);
+L(`| email_signup (legacy, bot-prone) | ${cur.emailSignup.toLocaleString()} | ${p.emailSignup != null ? p.emailSignup.toLocaleString() : "—"} | ${delta(cur.emailSignup, p.emailSignup).txt} |`);
 L("");
 
 L(`## Wins`);
@@ -364,9 +374,9 @@ const auditData = {
   botPct: Number(cur.botPct.toFixed(1)),
   directSessions: cur.directSessions,
   alertView: cur.alertView,
-  alertAttempt: cur.alertAttempt,
-  alertSuccess: cur.alertSuccess,
+  saveDestination: cur.saveDestination,
   savePromptView: cur.savePromptView,
+  savePromptSuccess: cur.savePromptSuccess,
   emailSignup: cur.emailSignup,
 };
 L(`<!-- AUDIT_DATA ${JSON.stringify(auditData)} -->`);
