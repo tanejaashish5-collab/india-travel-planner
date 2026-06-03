@@ -1755,3 +1755,25 @@ Date range: 2026-04-15 → 2026-06-02
 2026-06-03 14:20:35  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-06-03.mp4
 2026-06-03 14:20:35  ERROR     Could not fetch accounts: 500 Server Error: Internal Server Error for url: https://api.outstand.so/v1/social-accounts
 2026-06-03 14:20:35  WARNING   No active connected accounts.
+2026-06-03 16:10:13  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 16:10:13  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-03
+2026-06-03 16:10:13  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 16:10:13  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-03 16:10:13  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-03 16:11:01  INFO      Short rendered: yt_short_did_you_know_2026-06-03.mp4 (9126 KB, 20.0s, fmt=did_you_know, music=v2_amapiano_deep)
+2026-06-03 16:11:01  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_2026-06-03.mp4 (9,345,278 bytes, video/mp4)
+2026-06-03 16:11:02  INFO          Uploading to R2 (timeout=300s)...
+2026-06-03 16:11:05  INFO          R2 PUT OK. Confirming...
+2026-06-03 16:11:06  INFO          Media ready: cPzrL (9,345,278 bytes · yt_short_did_you_know_yt_short_did_you_know_2026-06-03.mp4)
+2026-06-03 16:11:06  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_2026-06-03.mp4
+2026-06-03 16:11:07  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-06-03 16:11:12  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=4HEFi), waiting for platform confirmation...
+2026-06-03 16:11:43  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=4HEFi · Platform=CFRoo0UYMwQ
+2026-06-03 16:11:43  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-06-03 16:11:46  INFO      [instagram/nakshiq] Outstand accepted (post_id=Lt9lV), waiting for platform confirmation...
+2026-06-03 16:12:22  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=Lt9lV · Platform=18046760321790301
+2026-06-03 16:12:22  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 102-103: surrogates not allowed
+2026-06-03 16:12:22  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-03 16:12:22  INFO      YT Short posted: format=did_you_know, music=v2_amapiano_deep
+2026-06-03 16:12:22  INFO      State saved. YT Short run complete.
+2026-06-03 16:12:22  INFO      ════════════════════════════════════════════════════════════

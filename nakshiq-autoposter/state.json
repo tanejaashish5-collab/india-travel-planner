@@ -2,7 +2,8 @@
   "yt_short_formats_used": [
     "this_vs_that",
     "before_after",
-    "mini_guide"
+    "mini_guide",
+    "did_you_know"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -25,13 +26,14 @@
     "13_monsoon_pulse",
     "23_dark_trap_soul",
     "px_indian_hits",
-    "31_future_garage"
+    "31_future_garage",
+    "v2_amapiano_deep"
   ],
   "posted_today": {
     "m8EAd": "2026-06-03",
     "PdMu0": "2026-06-03",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-02",
     "PdMu0_evening": "2026-06-02",
     "GAh5p_yt_short": "2026-06-03",
@@ -211,6 +213,10 @@
     {
       "destination_id": "sonamarg",
       "date": "2026-06-03"
+    },
+    {
+      "destination_id": "bangus-valley",
+      "date": "2026-06-03"
     }
   ],
   "posted_formats": {
@@ -271,7 +277,7 @@
       "format": "reality_check",
       "outstand_post_id": "LEE0V",
       "platform_post_id": "18067665245654147",
-      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
+      "collection": "After Dark — Night Experiences Worth Staying Up For",
       "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
     },
     {
@@ -1992,6 +1998,24 @@
       "destination": "sonamarg",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_2026-06-03.mp4"
+    },
+    {
+      "timestamp": "2026-06-03T16:11:43.504640+00:00",
+      "date": "2026-06-03",
+      "platform": "youtube",
+      "post_id": "4HEFi",
+      "destination": "bangus-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-06-03.mp4"
+    },
+    {
+      "timestamp": "2026-06-03T16:12:22.665113+00:00",
+      "date": "2026-06-03",
+      "platform": "instagram",
+      "post_id": "Lt9lV",
+      "destination": "bangus-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-06-03.mp4"
     }
   ],
   "theme_usage": {
