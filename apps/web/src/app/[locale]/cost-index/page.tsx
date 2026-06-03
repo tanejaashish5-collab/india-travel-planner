@@ -214,6 +214,40 @@ export default async function CostIndexPage({ params }: { params: Promise<{ loca
             the numbers travel blogs dodge, tied to the actual season you&apos;d
             travel in.
           </p>
+          <p
+            style={{
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 13,
+              lineHeight: 1.8,
+              color: "var(--bone-dim)",
+              marginTop: 20,
+            }}
+          >
+            {locale === "hi"
+              ? "किसी एक जगह का पूरा ट्रिप-खर्च जोड़ना है? कैलकुलेटर: "
+              : "Want a full per-trip estimate for one place? Try the calculator for "}
+            {[
+              ["manali", "Manali", "मनाली"],
+              ["leh", "Leh", "लेह"],
+              ["jaipur", "Jaipur", "जयपुर"],
+              ["rishikesh", "Rishikesh", "ऋषिकेश"],
+            ].map(([id, en, hi], i, arr) => (
+              <span key={id}>
+                <Link
+                  href={`/${locale}/cost/${id}`}
+                  style={{
+                    color: "var(--vermillion)",
+                    textDecoration: "underline",
+                    textUnderlineOffset: "3px",
+                  }}
+                >
+                  {locale === "hi" ? hi : en}
+                </Link>
+                {i < arr.length - 1 ? ", " : ""}
+              </span>
+            ))}
+            {locale === "hi" ? " — दिन, यात्री और महीने के हिसाब से।" : " — by days, travellers and month."}
+          </p>
         </header>
 
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>

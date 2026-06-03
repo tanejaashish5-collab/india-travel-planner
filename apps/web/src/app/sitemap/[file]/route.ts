@@ -75,6 +75,27 @@ async function getDestinationIds(): Promise<string[]> {
   return (data ?? []).map((d: any) => d.id);
 }
 
+// Destinations that carry destination_costs rows — only these get a /cost/[slug]
+// page (the rest notFound()), so we never sitemap a 404. Paginated dedupe.
+async function getCostDestinationIds(): Promise<string[]> {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const ids = new Set<string>();
+  const page = 1000;
+  let from = 0;
+  while (true) {
+    const { data, error } = await supabase
+      .from("destination_costs")
+      .select("destination_id")
+      .range(from, from + page - 1);
+    if (error || !data) break;
+    for (const r of data as { destination_id: string }[]) ids.add(r.destination_id);
+    if (data.length < page) break;
+    from += page;
+  }
+  return Array.from(ids).sort();
+}
+
 function escapeXml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -150,7 +171,12 @@ async function buildChunk(id: string): Promise<Entry[]> {
       MONTH_SLUGS.flatMap((month) => entry(`destination/${dId}/${month}`, "monthly", 0.7)),
     );
 
-    return [...destEntries, ...destMonthEntries];
+    // /cost/[slug] — per-destination trip-cost calculator (only dests that
+    // carry destination_costs rows; count varies as coverage grows).
+    const costIds = await getCostDestinationIds();
+    const costEntries = costIds.flatMap((dId) => entry(`cost/${dId}`, "monthly", 0.7));
+
+    return [...destEntries, ...destMonthEntries, ...costEntries];
   }
 
   if (id === "2") {
