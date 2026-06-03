@@ -1,0 +1,456 @@
+[
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "raghurajpur",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "यह ठहराव कलाकार कॉलोनी और ओडिशा शिल्प संग्रहालय के पैदल दूरी में है — परिवहन की न्यूनतम ज़रूरत।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "raghurajpur",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "कार्यरत कलाकार के मिट्टी के घर में ठहराव, पॉटरी बनाने में सीधी भागीदारी, और वह जगह जहाँ रोज़ परंपरागत ओडिशा शिल्प ज़िंदा होता है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "koraput",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "यह होटल कोरापुट बाज़ार, मुख्य मार्केट, और ओडिशा ट्राइबल संग्रहालय के पैदल दूरी में है — ऑटो-रिक्शा बिना मुख्य दर्शनीय स्थल।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "koraput",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "सामुदायिक होमस्टे मॉडल — आप खोंड आदिवासी घरों में सोते हैं, रोज़मर्रा के काम जैसे धान कूटने में शामिल होते हैं, और पैसा सीधे परिवारों को जाता है। पर्यटक-स्थानीय दूरी को ख़त्म करने वाला एकमात्र ठहराव।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "barren-island",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "Barren Island पर एकमात्र परिचालित रिसॉर्ट — ज्वालामुखी गड्ढे की ट्रेकिंग और समुद्री जैव विविधता तक सीधी पहुँच, जो इस सक्रिय ज्वालामुखी परिदृश्य के लिए अद्वितीय है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "barren-island",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "Barren Island में आवास का बेहद सीमित ढाँचा है — ज़्यादातर आगंतुक Port Blair में रहते हैं और दिन की यात्रा करते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "barren-island",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "Barren Island का पर्यटन प्रतिबंधित और परमिट-निर्भर है — कोई चलने-फिरने वाला शहर केंद्र या सत्यापित उपलब्धता के साथ समुद्र के किनारे आवास नहीं है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "barren-island",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Barren Island की अलगथलग स्थिति और संरक्षित दर्जा मतलब आवास बहुत सीमित है — कोई हाउसबोट, ट्रीहाउस, या अलग ठहराव विश्वसनीय रूप से बुक नहीं है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "deeg",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "यह होटल मुख्य महल प्रवेश द्वार और रेलवे स्टेशन से 400 मीटर की दूरी पर है — सुबह की यात्रा और आगे की यात्रा बिना परेशानी के।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "deeg",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Deeg शहर से 12 किमी दूर ग्रामीण संपत्ति — साइकिल यात्रा, पॉटरी क्लास, शाम की कहानियाँ। महल पर्यटन का जानबूझकर विकल्प।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chopta",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "Chopta के मुख्य रोड पर — ट्रेकिंग ट्रेलहेड और बाज़ार तक सीधी पहुँच, परिवहन बिना।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "shantiniketan",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "शहर से 8 किमी दूर कार्यरत ग्रामीण बस्ती — आप फसल चक्र में शामिल होते हैं, खेत-से-टेबल भोजन करते हैं, और निवासी संगीतकारों के साथ शाम की Baul संगीत सुनते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "konark",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Chandrabhaga नदी के किनारे कैनवास और लकड़ी के ठहराव — अलाव की शाम और सूर्योदय की कैनोइंग। Konark को मंदिर से परे देखने का दुर्लभ तरीका।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "katra",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "सेब और अखरोट के बागों के बीच घाटी के किनारे पर ठहराव, घर का बनाया हिमाचली भोजन — मंदिर-शहर की भीड़ से शांत विकल्प।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dhauli",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "यह संपत्ति पहाड़ी पर ही है — आप स्तूप को देखते हुए जागते हैं और 10 मिनट में मुख्य स्मारक तक पैदल जा सकते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dhauli",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Dhauli गाँव के पास कृषि भूमि पर ग्रामीण फार्मस्टे — आप धान-खेत की दिनचर्या में शामिल होते हैं और आध्यात्मिक स्थलों के पास रहते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "nalsarovar",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "पारिवारिक संपत्ति — साफ़ कमरे, घर का बनाया गुजराती भोजन, और अभयारण्य के लिए नाव की यात्रा रिज़ॉर्ट मार्क-अप बिना।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "namdapha",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Namdapha के अंदर कानूनी रूप से सुलभ एकमात्र कैंप — Embeyong Camp, buffer-to-core ट्रांज़िशन ज़ोन में, Deban से ~25 किमी ट्रेक। Forest Department द्वारा प्रबंधित, बेसिक बंक, जंगल की धारा से पानी। Namdapha Tiger Reserve के बहु-दिवसीय ट्रेक पैकेज के ज़रिए Miao के Field Director के कार्यालय से विशेष रूप से बुक किया जाता है। yatra को जायज़ ठहराने वाली xfactor — ज़्यादातर यात्री Deban पर वापस जाते हैं; Embeyong वह जगह है जहाँ असली वर्षावन शुरू होता है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "namdapha",
+    "slot": "xfactor",
+    "signature_experience": "Lisu ट्रैकरों के साथ रात की transect से Embeyong में — clouded leopard या Asian golden cat देखने की सबसे अच्छी संभावना (Namdapha के 4 বিশ्व की 7 cat प्रजातियाँ कैंप से नियमित रूप से देखी जाती हैं); सूर्योदय से पहले White-bellied Heron की कॉल (~250 बाकी रहे विश्वभर)।"
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "sambalpur",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "रेलवे स्टेशन, Sambhaleshwar मंदिर, और मुख्य बाज़ार के पैदल दूरी — किसी भी Sambalpur यात्रा का केंद्रीय त्रिभुज।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "sambalpur",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Hirakud जलाशय के पूर्वी किनारे पर कैंप — बेसिक पर सुचिंतित कैंप आवास, मगरमच्छ और प्रवासी पक्षियों को देखने का मौका शहर के बजाय।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "manikaran",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "मुख्य Manikaran मंदिर और गरम पानी के बाज़ार से 50 मीटर की दूरी — सभी दर्शनीय स्थल 5 मिनट में चलकर और कमरे से मंदिर की घंटियाँ सुनाई देती हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kasol",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "दियोदार जंगल से घिरे ऊँचे लकड़ी के फ्रेम में सोते हैं, साझा अलाव, कोई बनावट नहीं — यह वह ठहराव है जिसे लोग वर्षों तक फ़ोटो करते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ramappa-temple",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "कार्यरत आम और कपास के खेत — कृषि भूमि से मंदिर की सूर्योदय यात्रा, ग्रामीण शिल्प कार्यशाला, और स्थानीय कृषक परिवारों को सीधे धन।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "gangotri",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Bhagirathi के सीधी पहुँच के साथ स्वतंत्र नदी-किनारे की झोपड़ियाँ, शाम की चाय पानी के पास — वह ठहराव जहाँ आप वाकई अकेले हैं नदी के साथ।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "mount-abu",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "Shikhar मुख्य बाज़ार के ठीक ऊपर, Nakki Lake तक पाँच मिनट की पैदल दूरी, Dilwara मंदिर और Guru Shikhar दृश्यबिंदु के पास।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tsomgo-lake",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "Elgin अपनी औपनिवेशिक वास्तुकला, सेवा मानकों, और Sikkim की सबसे स्थापित upscale संपत्ति के रूप में, Tsomgo Lake सहित क्षेत्रीय excursions तक सीधी पहुँच के लिए।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tsomgo-lake",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "Siniolchu निरंतर 4-star रेटिंग, साफ़ कमरे, और mark-up बिना Tsomgo Lake दिन यात्रा की व्यवस्था के लिए।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tsomgo-lake",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "Kangmi सीधे Gangtok–Tsomgo राजमार्ग पर है, जलाशय से 40 मिनट की ड्राइव सुबह के प्रस्थान के साथ।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tsomgo-lake",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Teak Roof मालिक-संचालित मॉडल — Sikkimese पारिवारिक भोजन, स्थानीय भाषा की पाठ, और पड़ोसी alpine मीडोज़ के गाँव मार्गों तक unscripted पहुँच।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "neemrana",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "क़िले से 12 किमी दूर कार्यरत खेत संपत्ति — सुबह की गाँव यात्रा, डेयरी संपर्क, प्रामाणिक Rajasthani पारिवारिक-संचालित अनुभव होटल औपचारिकता से दूर।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "nongriat",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "बाँस की संरचना में घाटी के ऊपर सोते हैं — ठहराव स्वयं yatra को कहानी देता है, सिर्फ़ बिस्तर नहीं, परिदृश्य का हिस्सा।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "mawsynram",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "परंपरागत बाँस की संरचनाओं में कार्यरत कृषि भूमि पर — monsoon बारिश में डूबना और सीढ़ीदार खेती में हाथ आजमाना।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tirthan-valley",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "पत्थर की वास्तुकला, ट्राउट मछली पकड़ने की पहुँच, और kitchen garden-से-टेबल भोजन जो आपको घाटी की सीढ़ीदार परिदृश्य में रखता है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chitrakoot",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Mandakini नदी के किनारे जंगल के मैदानों में कैनवास तंबू — अलाव की शाम और प्रकृति में डूबना जो मंदिर-शहर की भीड़ से तीव्र विपरीत।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "khangchendzonga-np",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Pelling (Khangchendzonga दृश्यबिंदु) के पास Rangeet नदी की सेटिंग वाला कैंप — कैनवास में सोते हैं, नदी सुनते हैं, montane कोहरे में जागते हैं। इस क्षेत्र के लिए असामान्य आवास शैली।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "vaishali",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "शहर से 8 किमी दूर कार्यरत खेत संपत्ति — आप मौसमी कृषि में भागीदारी करते हैं और restored गाँव की झोपड़ियों में सोते हैं — तीर्थ-केंद्रित ठहराव से गुणात्मक बदलाव।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chinnar",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "कार्यरत मसाला बागान जो Chinnar के मूल से सटा हुआ अभयारण्य से 300 एकड़ में औपनिवेशिक-युग की झोपड़ियों और guided वन्यजीव ट्रेल के साथ — इस क्षेत्र का सबसे क़रीबी luxury विकल्प।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tawang",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "कार्यरत खेत संपत्ति — स्थानीय कृषि के साथ hands-on engagement और परिदृश्य दृश्य जो शहर की भीड़ से दूर लगते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dawki",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "नदी को देखते हुए हाथ से बनी बाँस की संरचनाओं में ठहराव, स्थानीय craftspeople द्वारा designed, zero-waste जीवन बिना किसी affectation के।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "charaideo",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "Charaideo Moidams (25 किमी दूर) के पास और प्रामाणिक Assamese आर्किटेक्चर detailing जो आपकी moidam यात्रा को क्षेत्रीय इतिहास के संदर्भ में रखता है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "charaideo",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "साफ़ कमरे, विश्वसनीय सेवा, और Sivasagar टैंक तक सीधी पैदल दूरी — Charaideo Moidams अन्वेषण के प्रवेश द्वार।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "charaideo",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "Jorhat (40 किमी दूर) निकटतम परिवहन hub है नियमित taxis के साथ Charaideo तक; यह संपत्ति मुख्य सड़क पर उसी दिन की आगे यात्रा के साथ।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "charaideo",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "स्थानीयों द्वारा पकाया गया भोजन और moidam लोककथा के बारे में शाम की कहानियाँ — वह immersion जो tour buses नहीं देते।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kausani",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "Barettj Kausani शहर की मुख्य पट्टी पर सीधे है — चाय के बागों, बाज़ार, और दृश्यबिंदु तक एक ही मिनट की पैदल दूरी परिवहन बिना।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pattadakal",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Tungabhadra नदी के किनारे तंबू ठहराव — मंदिर की spires को नदी में परावर्तित देखना और सुबह की coracle यात्रा। किसी भी पारंपरिक होटल में उपलब्ध नहीं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pillalamarri",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "आसपास के गाँवों में स्थानीय कृषि होमस्टे के साथ संपर्क (Tandur, Tandwala क्षेत्र) — आप गाँव के जीवन और स्थानीय धान की खेती में शामिल होते हैं, पेड़ के आगे बनावट।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "adi-kailash",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "1920 की औपनिवेशिक संपत्ति व्यापक Himalayan दृश्यों और Adi Kailash trailheads के पास — तीर्थ route का सबसे क़रीबी luxury आधार।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "adi-kailash",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "Munsiyari गाँव की पारिवारिक-संचालित होमस्टे — गरम भोजन, ट्रेकिंग सहायता, और स्थानीय संस्कृति में immersion mid-tier resorts की आधी लागत पर।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "adi-kailash",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "यह guesthouse अक्षरशः trailhead पर है — checkout के 20 मिनट में Adi Kailash trek शुरू कर सकते हैं, summit दिन पर vehicle transfers को ख़त्म करते हुए।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "adi-kailash",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "10,000 फ़ीट पर high-altitude कैंप — आप तीर्थ-पथ पर सोते हैं और unobstructed Himalayan ridgelines में जागते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kinner-kailash",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "पत्थर की वास्तुकला जो स्थानीय vernacular को प्रतिबिंबित करती है, wood-fired हीटिंग, और संपत्ति से Kinner Kailash peak के सीधे दृश्य।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kinner-kailash",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "निरंतर 4.5+ रेटिंग, घर का बनाया Himachali भोजन शामिल, और Rampur के बाज़ार और Sutlej नदी trail के पैदल दूरी।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kinner-kailash",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "Kinner Kailash मंदिर trailhead से 2 किमी दूर — ट्रेकिंग सुबह में यात्रा की रगड़ को कम करते हुए और तीर्थ circuit के भीतर तीर्थयात्री को रखते हुए।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kinner-kailash",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "मेहमान शहद की कटाई में भागीदारी करते हैं, पारिवारिक-संचालित बाग़ के घर में ठहरते हैं, और सेब तथा खुबानी के पेड़ों से घिरे होते हैं — असली कार्यरत ग्रामीण ठहराव, प्रदर्शन नहीं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "shrikhand-mahadev",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "यह lodge trailhead पहुँच के लिए और curated स्थानीय-guide partnership जो Shrikhand Mahadev ट्रेकिंग अनुभव को आकार देता है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "shrikhand-mahadev",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "निचली Tirthan Valley trek route पर यह homestay — घर का बनाया Himachali भोजन लॉज कीमत का एक अंश।"
+    }
+  }
+]
