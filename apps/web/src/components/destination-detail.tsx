@@ -64,6 +64,7 @@ import { Footer } from "./footer";
 import { StickyDestinationHeader } from "./sticky-destination-header";
 import { POISection } from "./poi-section";
 import { DIFFICULTY_BG } from "@/lib/design-tokens";
+import { hasSafariGuide } from "@/lib/safari-guide";
 
 export function DestinationDetail({ dest }: { dest: any }) {
   const locale = useLocale() as Locale;
@@ -970,6 +971,28 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </span>
                   <span aria-hidden className="shrink-0 text-muted-foreground">&rarr;</span>
                 </a>
+
+                {/* Safari booking guide — inbound link to /safari/[slug] for the
+                    ~20 tiger reserves / national parks that carry a published
+                    park_safaris row (permits, zones, fees, booking pitfalls). */}
+                {hasSafariGuide(dest.id) && (
+                  <a
+                    href={`/${locale}/safari/${dest.id}`}
+                    className="mt-3 flex items-center justify-between gap-3 rounded-xl border border-border bg-muted/20 px-4 py-3 transition-colors hover:border-foreground/40 hover:bg-muted/40"
+                  >
+                    <span>
+                      <span className="text-sm font-semibold">
+                        {locale === "hi" ? `${dest.name} सफ़ारी कैसे बुक करें` : `Book a ${dest.name} safari`}
+                      </span>
+                      <span className="mt-0.5 block text-xs text-muted-foreground">
+                        {locale === "hi"
+                          ? "परमिट, ज़ोन, जीप शुल्क और बुकिंग की दिक्कतें — स्रोत-सहित।"
+                          : "Permits, zones, jeep fees & the real booking pitfalls — source-cited."}
+                      </span>
+                    </span>
+                    <span aria-hidden className="shrink-0 text-muted-foreground">&rarr;</span>
+                  </a>
+                )}
 
                 {/* Crowd Calendar — handles both rich shape (peak_months /
                     quiet_months int[]) and thin shape ({peak, off, shoulder}

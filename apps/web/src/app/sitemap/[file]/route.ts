@@ -96,6 +96,18 @@ async function getCostDestinationIds(): Promise<string[]> {
   return Array.from(ids).sort();
 }
 
+// Destinations that carry a published park_safaris row — only these get a
+// /safari/[slug] page (the rest notFound()), so we never sitemap a 404.
+async function getSafariDestinationIds(): Promise<string[]> {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const { data } = await supabase
+    .from("park_safaris")
+    .select("destination_id")
+    .eq("published", true);
+  return (data ?? []).map((r: { destination_id: string }) => r.destination_id).sort();
+}
+
 function escapeXml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -176,7 +188,12 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const costIds = await getCostDestinationIds();
     const costEntries = costIds.flatMap((dId) => entry(`cost/${dId}`, "monthly", 0.7));
 
-    return [...destEntries, ...destMonthEntries, ...costEntries];
+    // /safari/[slug] — per-park safari-booking guide (only dests with a
+    // published park_safaris row).
+    const safariIds = await getSafariDestinationIds();
+    const safariEntries = safariIds.flatMap((dId) => entry(`safari/${dId}`, "monthly", 0.7));
+
+    return [...destEntries, ...destMonthEntries, ...costEntries, ...safariEntries];
   }
 
   if (id === "2") {

@@ -1,0 +1,2723 @@
+[
+  {
+    "destination_id": "ranthambore",
+    "park_full_name": "Ranthambore National Park",
+    "booking_authority": "Rajasthan Forest Department (FMDSS)",
+    "official_booking_url": "https://fmdss.forest.rajasthan.gov.in/",
+    "advance_booking_days": 90,
+    "has_tatkal": false,
+    "booking_opens_note": "Online quota opens 90 days in advance. 75% of vehicles available in advance quota; advance quota stops 2 days before safari. No same-day online current booking quota exists; gate counter may issue jeeps on first-come-first-serve basis.",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: any govt photo ID (Aadhaar/PAN/Voter/DL/Passport)",
+      "Foreigners: passport number (required at booking and carry original at gate)"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep (Gypsy)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 2000,
+        "price_inr_foreigner": 4000,
+        "notes": "6 seats; books out fastest; govt tariff rates (2026)"
+      },
+      {
+        "type": "Canter (open bus)",
+        "capacity": 20,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 1200,
+        "price_inr_foreigner": 2700,
+        "notes": "20 seats; shared; budget option; govt tariff rates (2026)"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Zones 1-5 (Core)",
+        "best_for": "Zone 2: waterholes + Machli territory; Zone 3: Padam Talao + Raj Bagh ruins; Zone 4: frequent tiger sightings",
+        "premium": true,
+        "notes": "Highest tiger density; book 90 days ahead; randomly allotted"
+      },
+      {
+        "name": "Zones 6-10 (Buffer)",
+        "best_for": "Zone 6 (Kundal), Zone 10 (Aantri): open grasslands, seasonal streams, quieter",
+        "premium": false,
+        "notes": "Lower sighting odds but easier to book; fewer vehicles per zone"
+      }
+    ],
+    "booking_steps": [
+      "Register/login on FMDSS portal (use Rajasthan SSO credentials)",
+      "Select date, choose shift (morning/afternoon), select vehicle type (Jeep/Canter)",
+      "System assigns zone randomly from available pool",
+      "Enter valid ID proof details (same ID required at gate)",
+      "Pay online via available payment gateway",
+      "Download permit confirmation; carry ID and confirmation to gate"
+    ],
+    "pitfalls": [
+      {
+        "title": "Foreign payment cards rejected",
+        "detail": "International cards (Visa/Mastercard) frequently fail; workaround: book via hotel/licensed agent or use AMEX if available. Do NOT rely on online payment if you're a foreigner."
+      },
+      {
+        "title": "Zone is allotted, not guaranteed",
+        "detail": "You cannot choose Zone 1-5; system assigns randomly from available zones. Prime zones (1-4) sell out 90 days ahead; must book on opening day."
+      },
+      {
+        "title": "No refunds to foreign credit cards",
+        "detail": "Refunds processed only to Indian bank accounts; foreign card refunds often denied. Spelling errors in ID details cause gate rejection."
+      },
+      {
+        "title": "Zones 1-5 closed July-September",
+        "detail": "Only Zones 6-10 open during monsoon; core tiger habitat closed for breeding season."
+      }
+    ],
+    "fees_note": "Govt permit fee shown; vehicle hire, guide, driver, camera fees (₹200-300), and GST collected separately at gate. Peak season (March-May) rates rise 10% on average.",
+    "core_buffer_note": "Zones 1-5 are core tiger habitat with ~70% higher sighting odds; Zones 6-10 are buffer with lower sighting odds but less competition.",
+    "sources": [
+      {
+        "label": "Rajasthan Forest FMDSS official portal",
+        "url": "https://fmdss.forest.rajasthan.gov.in/"
+      },
+      {
+        "label": "Ranthambore zones & sightings guide",
+        "url": "https://bookranthamboresafari.in/zones"
+      },
+      {
+        "label": "Ranthambore permit tips & booking challenges",
+        "url": "https://www.ranthamborenationalpark.in/ranthambore-permit-tips.html"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "sariska",
+    "park_full_name": "Sariska Tiger Reserve",
+    "booking_authority": "Rajasthan Forest Department (FMDSS)",
+    "official_booking_url": "https://fmdss.forest.rajasthan.gov.in/",
+    "advance_booking_days": 365,
+    "has_tatkal": false,
+    "booking_opens_note": "Online quota opens 365 days in advance. 75% of vehicles open in advance quota; advance quota closes 2 days before safari. No online same-day current quota; gate counter may issue jeeps on first-come-first-serve basis, arrive 90 minutes early.",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "id_required": [
+      "Indians: any govt photo ID (Aadhaar/PAN/Voter/DL/Passport)",
+      "Foreigners: passport number (required at booking; carry original)"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep (Gypsy)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "evening"
+        ],
+        "price_inr_indian": 3000,
+        "price_inr_foreigner": 5500,
+        "notes": "6 seats; includes permit + guide + driver; peak season rates higher"
+      },
+      {
+        "type": "Canter (open bus)",
+        "capacity": 20,
+        "shifts": [
+          "morning",
+          "evening"
+        ],
+        "price_inr_indian": 700,
+        "price_inr_foreigner": 1200,
+        "notes": "20 seats; per-person tariff; cheapest option; shared experience"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Zones 1-3 (Core via Sariska Gate)",
+        "best_for": "Zone 1 & 3: prime tiger territory; highest sighting odds",
+        "premium": true,
+        "notes": "Core habitat; accessed via main Sariska Gate; book 365 days ahead; randomly allotted"
+      },
+      {
+        "name": "Zones 4-5 (Buffer/Telha & Baraliwari gates)",
+        "best_for": "Bird watching, leopards, diverse deer species, photography",
+        "premium": false,
+        "notes": "Scenic landscapes; lower tiger odds; easier to book; open throughout year including monsoon"
+      }
+    ],
+    "booking_steps": [
+      "Visit fmdss.forest.rajasthan.gov.in",
+      "Register with Rajasthan SSO ID (same system as Ranthambore)",
+      "Choose date (365 days ahead, any date)",
+      "Select shift (morning 06:00 or evening 14:30)",
+      "Choose vehicle (Jeep or Canter) and zone preference (randomly allotted)",
+      "Enter passport details (for foreigners) or ID details (Indians)",
+      "Pay online",
+      "Download permit; carry original ID and permit to gate"
+    ],
+    "pitfalls": [
+      {
+        "title": "Zone preference ignored",
+        "detail": "You select a zone preference but Forest Dept randomly allots Zones 1-5; cannot guarantee core or buffer."
+      },
+      {
+        "title": "Non-refundable, non-transferable",
+        "detail": "Bookings are strictly non-refundable and non-transferable once confirmed. Fee changes after booking = pay difference at gate."
+      },
+      {
+        "title": "Park may close without notice",
+        "detail": "Forest Dept may close park for emergency reasons without prior notification to booked visitors. No compensation."
+      },
+      {
+        "title": "Wednesday closure",
+        "detail": "Sariska is closed to tourism every Wednesday; plan bookings accordingly."
+      }
+    ],
+    "fees_note": "Permit + vehicle + guide + driver fee shown. Camera charges (₹200+) collected at gate. GST additional. Peak season (Oct-Mar) rates 10-15% higher.",
+    "core_buffer_note": "Core zones (1-3) accessed via Sariska Gate hold the prime tiger habitat; Buffer zones (4-5) have better scenery and bird diversity but lower tiger sightings. No guarantee which zone you'll get.",
+    "sources": [
+      {
+        "label": "Rajasthan Forest FMDSS official",
+        "url": "https://fmdss.forest.rajasthan.gov.in/"
+      },
+      {
+        "label": "Sariska booking guide and zones",
+        "url": "https://www.thebeehad.com/blog/sariska-safari-booking-complete-guide-with-prices-and-timings.html"
+      },
+      {
+        "label": "Sariska Tiger Reserve FAQ",
+        "url": "https://sariskasafari.in/faq/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "corbett-national-park",
+    "park_full_name": "Jim Corbett National Park",
+    "booking_authority": "Uttarakhand Forest Department / Corbett Tiger Reserve",
+    "official_booking_url": "https://corbettonline.uk.gov.in/",
+    "advance_booking_days": 45,
+    "has_tatkal": false,
+    "booking_opens_note": "Online booking opens 45 days in advance for Indian nationals; foreign nationals may request 90-day advance booking. No same-day or premium tatkal quota; limited last-minute gate bookings depend on availability.",
+    "open_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "id_required": [
+      "Indians: any govt photo ID (Aadhaar/DL/Passport/PAN)",
+      "Foreigners: passport (number required at booking; carry original)"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep (Gypsy)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 7000,
+        "price_inr_foreigner": 7000,
+        "notes": "Per-jeep pricing (max 6 Indians or 2 foreigners); permit + jeep + driver + guide; 2026 rates"
+      },
+      {
+        "type": "Canter (Dhikala zone)",
+        "capacity": 20,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 2600,
+        "price_inr_foreigner": 3000,
+        "notes": "Per-person; shared open-bus; budget option; Dhikala zone best for comfort"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Dhikala (core, seasonal)",
+        "best_for": "Highest tiger density; grasslands + river + strong prey base; Nov 15-Jun 15 (core zone)",
+        "premium": true,
+        "notes": "Best sighting odds; most expensive; book 45 days ahead; highest crowds"
+      },
+      {
+        "name": "Bijrani (seasonal)",
+        "best_for": "High tiger sightings especially April-May; more convenient access than Dhikala",
+        "premium": true,
+        "notes": "Second-best zone; strong alternative; easier logistics"
+      },
+      {
+        "name": "Garjia (year-round)",
+        "best_for": "Newer zone; gaining tiger sighting reputation; less crowded",
+        "premium": false,
+        "notes": "Emerging as prime zone; moderate pricing"
+      },
+      {
+        "name": "Jhirna (year-round)",
+        "best_for": "Open year-round; reliable but lower sighting frequency; decent in summer",
+        "premium": false,
+        "notes": "Always available; good backup option"
+      }
+    ],
+    "booking_steps": [
+      "Use the official portal (linked above) (official only; 19+ unauthorized sites exist)",
+      "Register or login with email/phone",
+      "Select zone (Dhikala, Bijrani, Garjia, Jhirna, Dhela, Sonanadi, Durgadevi, Pakhro)",
+      "Choose date (45 days in advance) and shift (morning/afternoon)",
+      "Select jeep or canter",
+      "Enter valid ID proof (same ID required at gate)",
+      "Pay online (rupee-only portal; no foreign card issues reported)",
+      "Download permit immediately; carry original ID and permit to gate"
+    ],
+    "pitfalls": [
+      {
+        "title": "Unauthorized booking websites",
+        "detail": "19+ fake Corbett websites exist (corbettnationalpark.in, onlinecorbettbooking.com, etc.). Use ONLY corbettgov.org. Permits booked via bots or other sites are invalidated at gate with no refund."
+      },
+      {
+        "title": "45-day advance window is strict",
+        "detail": "Cannot book closer than 45 days; slots at 45-day mark sell out in minutes for prime zones."
+      },
+      {
+        "title": "No mobile phones in core zones",
+        "detail": "Supreme Court order bans mobile use in core tourism zones; penalties enforced by rangers."
+      },
+      {
+        "title": "Vehicles >15 years old banned",
+        "detail": "If renting a jeep locally, ensure it's <15 years old or entry will be denied at gate."
+      }
+    ],
+    "fees_note": "Permit + vehicle + driver + guide + fuel tariff shown. Photography fee (₹200-500) may be charged at gate. GST applicable. No camera fee if you pay online permit in advance.",
+    "core_buffer_note": "Dhikala and Bijrani are core zones (Nov 15-Jun 15) with highest tiger density. Jhirna and Dhela are open year-round but with lower sighting odds. Book 45 days ahead for core zones; they sell out within minutes.",
+    "sources": [
+      {
+        "label": "Corbett Tiger Reserve official",
+        "url": "https://corbettgov.org/"
+      },
+      {
+        "label": "Corbett zones & tiger sightings",
+        "url": "https://www.corbett-national-park.com/safari-zones.html"
+      },
+      {
+        "label": "Jim Corbett permit booking info",
+        "url": "https://www.corbetttourism.com/online_permit_for_jim_corbett_national_park.html"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "dudhwa-national-park",
+    "park_full_name": "Dudhwa National Park / Tiger Reserve",
+    "booking_authority": "Uttar Pradesh Forest Department",
+    "official_booking_url": null,
+    "advance_booking_days": 90,
+    "has_tatkal": false,
+    "booking_opens_note": "Indian nationals can book 30 days in advance; foreign nationals can book 90 days in advance. No same-day quota online; gate counter issues jeeps on first-come-first-serve basis if available.",
+    "open_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "id_required": [
+      "Indians: Aadhaar, PAN, Voter ID, Driving License, or Passport",
+      "Foreigners: passport (number required at booking; carry original)"
+    ],
+    "safari_types": [
+      {
+        "type": "Gypsy Jeep (4x4)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Standard safari vehicle; open-top; trained guides; multiple zones available; exact rates not published online; phone/gate rates apply"
+      },
+      {
+        "type": "Elephant Safari",
+        "capacity": 1,
+        "shifts": [
+          "morning"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Specialty safari; limited availability; book in advance via phone"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Dudhwa zone",
+        "best_for": "Open grasslands; excellent tiger and Asian elephant sightings; core habitat",
+        "premium": true,
+        "notes": "Prime zone; most tiger sightings"
+      },
+      {
+        "name": "Kishanpur zone",
+        "best_for": "Grasslands and forests; tiger sightings; good density",
+        "premium": true,
+        "notes": "Strong alternative to Dudhwa"
+      },
+      {
+        "name": "Sonaripur zone",
+        "best_for": "Tiger-rich forests; also famous for one-horned rhino sightings (rare in India)",
+        "premium": true,
+        "notes": "Unique species diversity"
+      },
+      {
+        "name": "Katarniaghat zone",
+        "best_for": "Tigers, crocodiles, dolphins; boating available; wild grasslands",
+        "premium": false,
+        "notes": "Unique water-based wildlife view; lower tiger odds than Dudhwa/Kishanpur"
+      }
+    ],
+    "booking_steps": [
+      "Arrive at the park's forest reception counter early — 30–60 minutes before the safari shift.",
+      "Buy your ticket at the counter; seats are first-come, first-served.",
+      "Carry the original photo ID for every traveller (passport for foreign nationals).",
+      "Book only at the counter or the state forest department — avoid private sites posing as the official portal."
+    ],
+    "pitfalls": [
+      {
+        "title": "Non-refundable, non-transferable bookings",
+        "detail": "Confirmed bookings cannot be cancelled or refunded. Cannot transfer permit to another person."
+      },
+      {
+        "title": "Park closure without notice",
+        "detail": "Forest Dept may close park for emergency reasons; bookings not compensated."
+      },
+      {
+        "title": "Tariffs not transparent online",
+        "detail": "Exact fees not published on website; must call or visit gate to get current rates. Rates may change per season."
+      },
+      {
+        "title": "Provisional bookings subject to change",
+        "detail": "All bookings are provisional; Forest Dept may alter or cancel without prior notice."
+      },
+      {
+        "title": "Zone allotment not guaranteed",
+        "detail": "You request a zone but allotment is subject to availability; cannot guarantee prime zones like Dudhwa."
+      }
+    ],
+    "fees_note": "Exact permit + guide + driver + vehicle tariff not listed online. Call park directly: +91-8920707042 (9 AM-7 PM). Peak season (Nov-Feb) rates higher. Camera/photography fees may apply at gate.",
+    "core_buffer_note": "Dudhwa and Kishanpur zones have highest tiger density. Sonaripur is famous for one-horned rhino (rare in India). Katarniaghat offers unique boating + tiger + crocodile + dolphin combo. First three are prime zones.",
+    "sources": [
+      {
+        "label": "Dudhwa National Park official booking",
+        "url": "https://dudhwa-national-park.in/dudhwa-national-park-online-booking.php"
+      },
+      {
+        "label": "Dudhwa booking & zones guide",
+        "url": "https://dudhwa-national-park.in/blog/complete-guide-to-dudhwa-national-park-safari-booking-zones-timing-fees-tips/"
+      },
+      {
+        "label": "Dudhwa tiger sightings by zone",
+        "url": "https://www.tigersafariindia.com/dudhwa-national-park/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "kanha",
+    "park_full_name": "Kanha National Park",
+    "booking_authority": "MP Forest (MP Online)",
+    "official_booking_url": "https://forest.mponline.gov.in/",
+    "advance_booking_days": 120,
+    "has_tatkal": true,
+    "booking_opens_note": "Online quota opens 120 days in advance at 11:00 AM. Tatkal bookings open daily at 5:00 PM for next day. Indian nationals can book with 30 days notice; foreigners 90 days.",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: Aadhar, Passport, Driving License, Voter ID",
+      "Foreigners: Passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep (Gypsy)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 1800,
+        "price_inr_foreigner": 1800,
+        "notes": "Vehicle + Guide + Entry approx INR 3600 additional; total ~INR 5400"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Mukki",
+        "best_for": "Highest tiger density; lush vegetation",
+        "premium": true,
+        "notes": "Best sighting probability; dense forest with water bodies"
+      },
+      {
+        "name": "Kanha",
+        "best_for": "High tiger sighting probability",
+        "premium": true,
+        "notes": "Core zone, excellent for wildlife"
+      },
+      {
+        "name": "Kisli",
+        "best_for": "Sal forest views; first-time visitors",
+        "premium": false,
+        "notes": "Ideal mix of forest and grasslands; fewer crowds than Kanha/Mukki"
+      },
+      {
+        "name": "Sarhi",
+        "best_for": "Dry deciduous forest; meadows",
+        "premium": false,
+        "notes": "Open grassland areas"
+      },
+      {
+        "name": "Khatia Zone",
+        "best_for": "buffer zone",
+        "premium": false,
+        "notes": ""
+      },
+      {
+        "name": "Khapa Zone",
+        "best_for": "buffer zone",
+        "premium": false,
+        "notes": ""
+      },
+      {
+        "name": "Phen Zone",
+        "best_for": "buffer zone",
+        "premium": false,
+        "notes": ""
+      },
+      {
+        "name": "Sijora Zone",
+        "best_for": "buffer zone",
+        "premium": false,
+        "notes": ""
+      }
+    ],
+    "booking_steps": [
+      "Register on forest.mponline.gov.in",
+      "Go to Wildlife section",
+      "Fill name, age, gender, nationality, photo ID",
+      "Select zone and dates",
+      "Complete payment",
+      "Receive booking confirmation via SMS/email"
+    ],
+    "pitfalls": [
+      {
+        "title": "Core vs Buffer Zone Confusion",
+        "detail": "Core zones offer vastly better wildlife experience. Buffer zones are less reliable for sightings. Distance between Kanha/Kisli and Mukki requires 2-hour travel through forest roads — not easy to switch zones same-day."
+      },
+      {
+        "title": "Monsoon Core Zone Closure",
+        "detail": "All core zones closed July–September. Only buffer zones available; far fewer tigers. Book during Oct–Jun for core zone access."
+      },
+      {
+        "title": "Heat in Peak Sighting Months",
+        "detail": "March–May bring best sightings but temperatures exceed 40°C, making physically demanding conditions."
+      },
+      {
+        "title": "Advance Booking Essential",
+        "detail": "120-day advance quota fills quickly; same-day tatkal slots extremely limited. Book early for peak season (Dec–Mar)."
+      },
+      {
+        "title": "Vehicle/Guide Fees Often Overlooked",
+        "detail": "Entry fee ~1800 is only part of cost. Add ~3600 for vehicle + guide + permit. Total per jeep ~5400 before fuel/tips."
+      }
+    ],
+    "fees_note": "Jeep entry 1800 INR per person (shared jeep, max 6). Additional vehicle+guide+permit ~3600 INR per jeep. 10% fee increase effective July 1, 2025 (next season). Cancellation: 0% ≥30 days, 50% 15–29 days, 75% 1–14 days.",
+    "core_buffer_note": "CRITICAL: Core zones (Mukki, Kanha, Kisli, Sarhi) are tiger-rich, protected habitats open Oct 1–Jun 30. Buffer zones (Khatia, Khapa, Phen, Sijora) are transition areas with very sparse wildlife; only option Jul–Sep. Many tourists mistakenly book buffer expecting core experience.",
+    "sources": [
+      {
+        "label": "MP Forest Department Official Portal",
+        "url": "https://forest.mponline.gov.in/"
+      },
+      {
+        "label": "Kanha Online Booking Guide",
+        "url": "https://www.kanhanationalparkonline.in/online-kanha-safari-booking.html"
+      },
+      {
+        "label": "Best Time to Visit Kanha",
+        "url": "https://www.kanha-national-park.com/best_time_to_visit.html"
+      },
+      {
+        "label": "Safari Zones & Gates at Kanha",
+        "url": "https://jungletrail.in/safari-zones-and-gates-at-kanha/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "bandhavgarh",
+    "park_full_name": "Bandhavgarh National Park",
+    "booking_authority": "MP Forest (MP Online)",
+    "official_booking_url": "https://forest.mponline.gov.in/",
+    "advance_booking_days": 120,
+    "has_tatkal": false,
+    "booking_opens_note": "Online booking opens 120 days in advance. Tatkal details not confirmed; assume standard MP tatkal at 5 PM daily.",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "id_required": [
+      "Indians: Aadhar, Passport, Driving License, Voter ID",
+      "Foreigners: Passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep (Gypsy)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 3500,
+        "price_inr_foreigner": 3500,
+        "notes": "Per jeep for 6 persons; shared among passengers. Additional professional guide ~2000 INR optional."
+      },
+      {
+        "type": "Canter",
+        "capacity": 20,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Open-air group vehicle; pricing varies by operator"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Tala",
+        "best_for": "Highest tiger density in India (1 tiger per 3 sq km); guaranteed sightings",
+        "premium": true,
+        "notes": "Oldest zone; densest wildlife concentration. Murdhawa, Dabhadhole, Sukhi Patiha, Charkpwaha waterholes frequent tiger sites."
+      },
+      {
+        "name": "Magdol (Magadhi)",
+        "best_for": "Popular zone; good for sambar, spotted deer, tiger sightings",
+        "premium": true,
+        "notes": "Multiple waterholes; frequently reported sightings"
+      },
+      {
+        "name": "Khitauli",
+        "best_for": "Core zone with diverse wildlife",
+        "premium": false,
+        "notes": "Covers central reserve areas"
+      },
+      {
+        "name": "Panpatha",
+        "best_for": "Newer zone; nilgai, wild dogs, chinkara; developing tiger population",
+        "premium": false,
+        "notes": "~25 km from Tala; fewer tourists; developing habitat"
+      }
+    ],
+    "booking_steps": [
+      "Register on forest.mponline.gov.in",
+      "Go to Wildlife section for Bandhavgarh Tiger Reserve",
+      "Select zone (cannot be changed after booking; must rebook if want different zone)",
+      "Fill tourist details: name, age, gender, nationality, ID proof",
+      "Select date and time slot",
+      "Complete payment",
+      "Receive booking confirmation"
+    ],
+    "pitfalls": [
+      {
+        "title": "Zone Selection is Final",
+        "detail": "Cannot change zones after booking. If you select Tala then want Panpatha, must rebook entirely. Choose carefully before confirming."
+      },
+      {
+        "title": "Monsoon Core Zone Closure",
+        "detail": "All core zones closed Jul–Sep. Only buffer zones available with minimal wildlife. Book Oct–Jun for core access."
+      },
+      {
+        "title": "Heat Challenge During Peak Sightings",
+        "detail": "April–June: best tiger sightings but extreme heat (40°C+). Physically demanding for some tourists."
+      },
+      {
+        "title": "Tala Zone High Demand",
+        "detail": "Due to near-guaranteed sightings and highest tiger density, Tala permits sell out quickly. Book earliest available slot (120 days out)."
+      },
+      {
+        "title": "Guide Confusion",
+        "detail": "Local safari guides sometimes refer to zones by number rather than name, causing tourist confusion. Always clarify zone name explicitly."
+      }
+    ],
+    "fees_note": "Jeep entry 3500–4500 INR per safari (vehicle shared by 6). Professional guide optional ~2000 INR. Base rate + vehicle + guide + permit typically ~5000–6000 INR total. 10% fee increase effective Jul 1, 2025. Cancellation: 0% ≥30 days, 50% 15–29 days, 75% 1–14 days.",
+    "core_buffer_note": "Bandhavgarh has 4 core zones (Tala, Magdol, Khitauli, Panpatha) open Oct 1–Jun 30 with world-class tiger density. Tala is premium with ~1 tiger per 3 sq km — highest in India. Buffer zones available Jul–Sep but with sparse wildlife and minimal tiger probability.",
+    "sources": [
+      {
+        "label": "MP Forest Department Official Portal",
+        "url": "https://forest.mponline.gov.in/"
+      },
+      {
+        "label": "Bandhavgarh Safari Zones",
+        "url": "https://www.bandhavgarh-national-park.com/safari-zones.html"
+      },
+      {
+        "label": "Best Tiger Sighting Zones at Bandhavgarh",
+        "url": "https://wildtrails.in/best-tiger-sighting-zones-kanha-national-park/"
+      },
+      {
+        "label": "Bandhavgarh Tiger Reserve Facts",
+        "url": "https://www.pugdundeesafaris.com/blog/zones-in-bandhavgarh-national-park/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "tadoba",
+    "park_full_name": "Tadoba-Andhari Tiger Reserve",
+    "booking_authority": "Maharashtra Forest Department",
+    "official_booking_url": "https://safaribooking.mahaforest.gov.in/",
+    "advance_booking_days": 120,
+    "has_tatkal": true,
+    "booking_opens_note": "Core zone online quota opens 120 days in advance. Recommend booking 60–90 days ahead for peak season. Buffer zone spot bookings available subject to availability.",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "closed_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      4,
+      5,
+      6
+    ],
+    "id_required": [
+      "Indians: Aadhar, Passport, Driving License, Voter ID",
+      "Foreigners: Passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Gypsy (Jeep)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 5600,
+        "price_inr_foreigner": 5600,
+        "notes": "Weekday 0–60 days advance. Includes entry (1800–2800), guide (700), gypsy fee (3300). Weekend rates higher; 61–120 days advance INR 9500 weekday, INR 14000 weekend."
+      },
+      {
+        "type": "Buffer Zone Full-Day Safari",
+        "capacity": 6,
+        "shifts": [
+          "full day"
+        ],
+        "price_inr_indian": 6000,
+        "price_inr_foreigner": 6000,
+        "notes": "Weekday rate; weekend INR 7000"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Kolara",
+        "best_for": "Diverse terrain; meadows, bamboo, teak; quieter feel; Nagpur side entry",
+        "premium": false,
+        "notes": "Historic gateway; good for wildlife diversity"
+      },
+      {
+        "name": "Moharli",
+        "best_for": "Iconic lakes; lively lodge cluster; Chandrapur side entry",
+        "premium": false,
+        "notes": "Historic gateway; popular with tourists"
+      },
+      {
+        "name": "Navegaon",
+        "best_for": "Core zone access",
+        "premium": false,
+        "notes": ""
+      },
+      {
+        "name": "Khutwanda",
+        "best_for": "Core zone access",
+        "premium": false,
+        "notes": ""
+      },
+      {
+        "name": "Zari",
+        "best_for": "Core zone access",
+        "premium": false,
+        "notes": ""
+      },
+      {
+        "name": "Pangdi",
+        "best_for": "Core zone access",
+        "premium": false,
+        "notes": ""
+      }
+    ],
+    "booking_steps": [
+      "Go to the official portal (linked above)",
+      "Click User Login > Sign Up",
+      "Fill registration form with name, email, mobile, CAPTCHA",
+      "Verify OTP sent to mobile",
+      "Complete KYC (mandatory; safari option disabled without it)",
+      "Log in and select 'Safari Booking'",
+      "Choose Regular Booking or Tatkal; select Tadoba; choose Core or Buffer",
+      "Select zone, gypsy vehicle, date, lock it",
+      "Enter names, ages, ID type, ID numbers for all tourists",
+      "Proceed to payment; confirm booking",
+      "Receive booking number via SMS"
+    ],
+    "pitfalls": [
+      {
+        "title": "Core Zone Online-Only; Buffer Spot Booking",
+        "detail": "Core zone permits MUST be booked online in advance (60–120 days ideal). Buffer zone can be booked on-the-spot but subject to availability. Don't assume spot booking will work for core."
+      },
+      {
+        "title": "KYC Mandatory; Blocks Entire Booking",
+        "detail": "If KYC not completed after registration, the Safari Booking option remains hidden/disabled. Must complete before booking. Many tourists register but skip KYC, then can't book."
+      },
+      {
+        "title": "Peak Season Sellout (April–May)",
+        "detail": "Best sighting months; highly competitive. Book at 120-day mark (January for April dates) or risk unavailability."
+      },
+      {
+        "title": "Early Closure 2026 (Jun 15 vs Jul 1)",
+        "detail": "2026 core closure advanced to Jun 15 (instead of usual Jul 1) for road maintenance + breeding season. Check annual dates before booking June trips."
+      },
+      {
+        "title": "Camera Charge Often Missed",
+        "detail": "INR 250–300 per camera charged at entry; add to budget. Easy to overlook in online quote."
+      },
+      {
+        "title": "Full-Day Safari Expensive",
+        "detail": "Full-day special permit (photography) can cost INR 50,000 (Indians) to INR 70,000 (foreigners) — not obvious from standard quotes."
+      }
+    ],
+    "fees_note": "Core Gypsy: 0–60 days advance INR 5600 weekday / 6500 weekend. 61–120 days advance INR 9500 weekday / 14000 weekend. All-inclusive vehicle + entry + guide. Buffer full-day: 6000 INR weekday / 7000 weekend. Camera surcharge INR 250–300. Flat fee structure for all nationalities; special photography permits much higher.",
+    "core_buffer_note": "Core zone (~625 sq km, 6 gates) open Oct 1–May 31 (2026: closes Jun 15 early). Tourism only via advance online booking at safaribooking.mahaforest.gov.in. Buffer zone (~1102 sq km, 16 gates) is transition landscape; spot bookings at gates. Core has better tiger density and sighting probability.",
+    "sources": [
+      {
+        "label": "Tadoba Safari Booking Official",
+        "url": "https://safaribooking.mahaforest.gov.in/"
+      },
+      {
+        "label": "Tadoba Ecotourism Hub",
+        "url": "https://mytadoba.mahaforest.gov.in/wildlife-safaris/"
+      },
+      {
+        "label": "Tadoba Core & Buffer Zone Explanation",
+        "url": "https://tadoba.in/understanding-tadoba-core-buffer-zone/"
+      },
+      {
+        "label": "Step-by-Step Booking Guide",
+        "url": "https://bulbulonthewing.com/step-by-step-guide-to-booking-a-safari-in-tadoba/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "pench-maharashtra",
+    "park_full_name": "Pench National Park (Maharashtra side)",
+    "booking_authority": "Maharashtra Forest Department (Pench Tiger Reserve)",
+    "official_booking_url": "https://safaribooking.mahaforest.gov.in/",
+    "advance_booking_days": 90,
+    "has_tatkal": true,
+    "booking_opens_note": "Maharashtra side: advance booking opens 90 days prior (90% of quota). Current quota opens 1 hour before each shift at booking centre. Tatkal permits available against cancellations, confirmed 5 days prior via SMS.",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: Aadhar, Passport, Driving License, Voter ID",
+      "Foreigners: Passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep (Gypsy)",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": 9500,
+        "price_inr_foreigner": 9500,
+        "notes": "Jeep entry + permit + guide included; per vehicle for 6 persons"
+      },
+      {
+        "type": "Canter (Sillari Zone only)",
+        "capacity": 20,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Walk-in/spot bookings only; cannot be booked in advance"
+      },
+      {
+        "type": "Elephant Safari",
+        "capacity": 2,
+        "shifts": [
+          "morning"
+        ],
+        "price_inr_indian": 1000,
+        "price_inr_foreigner": 1000,
+        "notes": "Only available on Maharashtra side; INR 1000 per person"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Sillari",
+        "best_for": "Premium zone; dense bamboo, teak, waterfalls; wild dogs, sloth bear",
+        "premium": true,
+        "notes": "Dense forest; excellent scenery; premium status"
+      },
+      {
+        "name": "Khursapar",
+        "best_for": "Most popular; high wildcat/predator sighting probability",
+        "premium": true,
+        "notes": "Day-tourist favorite; excellent sighting track record"
+      },
+      {
+        "name": "Chorbahuli",
+        "best_for": "Core zone safari experience",
+        "premium": false,
+        "notes": "Located near Chorbahuli village, Ramtek, Nagpur district"
+      },
+      {
+        "name": "Saleghat",
+        "best_for": "Buffer zone access",
+        "premium": false,
+        "notes": "Alternative gate"
+      },
+      {
+        "name": "Kolitmara",
+        "best_for": "Buffer zone access",
+        "premium": false,
+        "notes": "Alternative gate"
+      },
+      {
+        "name": "Surewani",
+        "best_for": "Monsoon buffer zone access (Nagalwadi area)",
+        "premium": false,
+        "notes": "Accessible during monsoon closure of core zones"
+      }
+    ],
+    "booking_steps": [
+      "Register on www.the official portal (linked above) (Maharashtra state site)",
+      "Go to Wildlife section",
+      "Fill name, age, gender, nationality, photo ID proof",
+      "Select zone (Sillari, Khursapar, Chorbahuli for core Maharashtra)",
+      "Choose date 90+ days in advance for best availability",
+      "Select jeep or vehicle type",
+      "Complete payment",
+      "Receive booking confirmation and permit number"
+    ],
+    "pitfalls": [
+      {
+        "title": "Maharashtra vs MP Different Systems",
+        "detail": "Pench straddles MP and Maharashtra. MP side books via MP Online (120 days), Maharashtra side via maharashtraecotourismonline.com (90 days). Different authorities, portals, prices, rules — verify which side your gates are on."
+      },
+      {
+        "title": "Monsoon Core Closure (Jul–Sep)",
+        "detail": "All Maharashtra core zones (Sillari, Khursapar, Chorbahuli) closed Jul–Sep. Only Nagalwadi (Surewani gate) and Paoni (Sillari gate) buffer zones open. Core zone wildlife experience not available in monsoon."
+      },
+      {
+        "title": "Canter Spot-Booking Only",
+        "detail": "Canter safaris (20-seater group vehicle) at Sillari zone CANNOT be booked in advance. Walk-in/spot booking only. Don't expect advance availability for group rates."
+      },
+      {
+        "title": "Tatkal Waitlist Gamble",
+        "detail": "Tatkal slots only materialize from cancellations 5 days before trip. Confirmation comes via SMS; until then, status unclear. Risky for fixed travel dates."
+      },
+      {
+        "title": "Peak Season Competitive",
+        "detail": "December–March (peak wildlife season + tourist season) books out quickly. Even with 90-day window, book day 1 for mid-Feb to mid-Mar dates."
+      },
+      {
+        "title": "Mobile Phones Prohibited",
+        "detail": "Use and possession of mobile phones explicitly banned during safaris. Plan offline communication; no emergency calls during drives."
+      }
+    ],
+    "fees_note": "Jeep entry Maharashtra core: INR 9500 per vehicle (6 persons). Elephant safari: INR 1000 per person. Canter (spot-booking): pricing varies. 90% of permits available in advance quota opening 90 days out. Current quota releases 1 hour before each shift. Tatkal against cancellations confirmed 5 days prior.",
+    "core_buffer_note": "Maharashtra side has 2 main core zones: Sillari (premium dense forest) and Khursapar (most popular, best sightings). Chorbahuli is additional core access. All 3 core zones open Oct 1–Jun 30; fully closed Jul–Sep. Buffer zones (Nagalwadi via Surewani, Paoni via Sillari) accessible during monsoon closure but with minimal tiger probability.",
+    "sources": [
+      {
+        "label": "Maharashtra Ecotourism Online Booking",
+        "url": "https://safaribooking.mahaforest.gov.in/"
+      },
+      {
+        "label": "Pench Tiger Reserve Gates & Zones",
+        "url": "https://www.pugdundeesafaris.com/blog/gates-in-pench/"
+      },
+      {
+        "label": "Pench Safari Guide 2026",
+        "url": "https://www.travelertalez.com/post/pench-national-park-safari-guide"
+      },
+      {
+        "label": "Buffer Zone Monsoon Safaris",
+        "url": "https://www.penchnationalpark.com/blog/pench-maharashtra-monsoon-safari/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "bandipur",
+    "park_full_name": "Bandipur National Park / Tiger Reserve",
+    "booking_authority": "Karnataka Forest Department",
+    "official_booking_url": null,
+    "advance_booking_days": 90,
+    "has_tatkal": false,
+    "booking_opens_note": "Advance booking online via official portal or same-day spot booking at reception. Foreigners book 90 days ahead; Indians flexible.",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: government photo ID",
+      "Foreigners: passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Government mini-bus",
+        "capacity": 25,
+        "shifts": [
+          "morning (6:30-8:30 am)",
+          "afternoon (3:30-5:30 pm)"
+        ],
+        "price_inr_indian": 600,
+        "price_inr_foreigner": 2500,
+        "notes": "Most common option; ~2.5 hour duration"
+      },
+      {
+        "type": "Canter/Van",
+        "capacity": 20,
+        "shifts": [
+          "morning (6:30-8:30 am)",
+          "afternoon (3:30-5:30 pm)"
+        ],
+        "price_inr_indian": 850,
+        "price_inr_foreigner": null,
+        "notes": "Alternative to bus"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Tamarind Tree area",
+        "best_for": "Tiger and leopard sightings",
+        "premium": false,
+        "notes": "Primary wildlife corridor"
+      }
+    ],
+    "booking_steps": [
+      "Arrive at the park's forest reception counter early — 30–60 minutes before the safari shift.",
+      "Buy your ticket at the counter; seats are first-come, first-served.",
+      "Carry the original photo ID for every traveller (passport for foreign nationals).",
+      "Book only at the counter or the state forest department — avoid private sites posing as the official portal."
+    ],
+    "pitfalls": [
+      {
+        "title": "Park closed June-September",
+        "detail": "Monsoon closure is strict; no safaris during heavy rains"
+      },
+      {
+        "title": "No private jeeps allowed in core zones",
+        "detail": "Only govt vehicles and Jungle Lodges-authorized jeeps at periphery"
+      },
+      {
+        "title": "High demand on weekends/holidays",
+        "detail": "Book 1-2 weeks in advance for guaranteed seats"
+      }
+    ],
+    "fees_note": "Entry fee ~₹250 adults / ₹125 children (separate from safari). Camera fee ₹450. Prices subject to Forest Dept revision.",
+    "core_buffer_note": "Bandipur core zone accessible only via government or Jungle Lodges vehicles; private vehicles restricted.",
+    "sources": [
+      {
+        "label": "Travel Triangle — Bandipur entry fees updated 2025",
+        "url": "https://traveltriangle.com/karnataka-tourism/mysore/places-to-visit/bandipur-national-park/entry-fees"
+      },
+      {
+        "label": "TuskTravel — Bandipur safari fees & timings",
+        "url": "https://www.tusktravel.com/blog/bandipur-national-park-karnataka-safari-fees-timings-tips/"
+      },
+      {
+        "label": "Best Time To Visit Bandipur",
+        "url": "https://www.bandipurnationalparkonline.in/best-time-to-visit-bandipur.php"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "nagarhole",
+    "park_full_name": "Nagarhole (Rajiv Gandhi) National Park / Tiger Reserve",
+    "booking_authority": "Karnataka Forest Department",
+    "official_booking_url": null,
+    "advance_booking_days": 45,
+    "has_tatkal": true,
+    "booking_opens_note": "Advance online booking 45 days ahead (Indians) / 90 days (Foreigners). Same-day spot booking at gates if available.",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: government photo ID",
+      "Foreigners: passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep (Gypsy/Canter)",
+        "capacity": 6,
+        "shifts": [
+          "morning (6:00-8:00 am)",
+          "afternoon (3:00-5:00 pm)"
+        ],
+        "price_inr_indian": 9500,
+        "price_inr_foreigner": 10000,
+        "notes": "Private jeep for up to 6 persons"
+      },
+      {
+        "type": "Government bus (Nanachi Gate)",
+        "capacity": 25,
+        "shifts": [
+          "morning (6:00-8:00 am)",
+          "afternoon (3:00-5:00 pm)"
+        ],
+        "price_inr_indian": 750,
+        "price_inr_foreigner": 1400,
+        "notes": "Shared vehicle; economy option"
+      },
+      {
+        "type": "Government bus (Kakanakote Gate)",
+        "capacity": 25,
+        "shifts": [
+          "morning (6:00-8:00 am)",
+          "afternoon (3:00-5:00 pm)"
+        ],
+        "price_inr_indian": 1400,
+        "price_inr_foreigner": 2000,
+        "notes": "Alternative gate entry; longer route"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Veeranahosahalli gate",
+        "best_for": "Tiger and elephant sightings",
+        "premium": false,
+        "notes": "Primary entry point; best wildlife corridor"
+      },
+      {
+        "name": "Nanachi gate",
+        "best_for": "Mixed wildlife",
+        "premium": false,
+        "notes": "Economy option; good for birdwatching"
+      },
+      {
+        "name": "Kakanakote gate",
+        "best_for": "Scenic routes",
+        "premium": false,
+        "notes": "Longer safari; scenic landscape"
+      }
+    ],
+    "booking_steps": [
+      "Arrive at the park's forest reception counter early — 30–60 minutes before the safari shift.",
+      "Buy your ticket at the counter; seats are first-come, first-served.",
+      "Carry the original photo ID for every traveller (passport for foreign nationals).",
+      "Book only at the counter or the state forest department — avoid private sites posing as the official portal."
+    ],
+    "pitfalls": [
+      {
+        "title": "Park may close during peak monsoon (June-September)",
+        "detail": "Unlike some Karnataka parks, closure status depends on rainfall; check ahead"
+      },
+      {
+        "title": "Gate assignments random",
+        "detail": "Forest Dept assigns which gate/time slot; no choice after booking confirmation"
+      },
+      {
+        "title": "Jeep availability limited",
+        "detail": "Higher demand than available jeep slots; book early"
+      }
+    ],
+    "fees_note": "Entry fee ~₹150-250 (Indians) / ₹1000-1500 (Foreigners) additional to safari fare. Camera fee ₹450. Prices revised periodically.",
+    "core_buffer_note": "Full core-zone access via govt jeeps/buses only. Private vehicles restricted to periphery/tourist routes.",
+    "sources": [
+      {
+        "label": "Travel Triangle — Nagarhole entry fees 2025",
+        "url": "https://traveltriangle.com/karnataka-tourism/coorg/places-to-visit/nagarhole-national-park/entry-fees"
+      },
+      {
+        "label": "MakeMy Trip — Nagarhole safari fees & timings",
+        "url": "https://www.makemytrip.com/tripideas/attractions/nagarhole-national-park"
+      },
+      {
+        "label": "Outlook Traveller — Nagarhole fees revision 2026",
+        "url": "https://www.outlooktraveller.com/News/nagarahole-tiger-reserve-revises-safari-timings-and-entry-fees"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "kabini",
+    "park_full_name": "Kabini (Nagarhole Kabini-zone Reservoir)",
+    "booking_authority": "Jungle Lodges & Resorts Ltd (JLR) — Gov of Karnataka joint venture",
+    "official_booking_url": "https://www.jlrexplore.com/",
+    "advance_booking_days": null,
+    "has_tatkal": false,
+    "booking_opens_note": "Bookings via Jungle Lodges & Resorts website or direct call (080-40554055, 9449597897). Stay packages include safaris; day-visitor safaris not standard.",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: government photo ID",
+      "Foreigners: passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep safari (included with stay)",
+        "capacity": 6,
+        "shifts": [
+          "morning (6:30-9:15 am)",
+          "afternoon (3:30-6:15 pm)"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Two safaris included in overnight package; ₹12,136+/person/night twin-share"
+      },
+      {
+        "type": "Boat safari (coracle ride on Kabini reservoir)",
+        "capacity": 8,
+        "shifts": [
+          "morning (6:30-9:15 am)",
+          "afternoon (3:30-6:15 pm)"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Included in stay package; scenic water-view wildlife"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Kabini Reservoir / Backwater zone",
+        "best_for": "Elephant herds, water birds, crocodiles",
+        "premium": false,
+        "notes": "Unique water-based safari experience; high elephant sightings"
+      }
+    ],
+    "booking_steps": [
+      "Use the official portal (linked above) or call JLR directly",
+      "Select dates and room type (dormitory, twin, deluxe, etc.)",
+      "Book minimum 1-night package (includes meals, 2 safaris, boat ride)",
+      "Provide guest details and ID proof",
+      "Pay deposit / full amount via online gateway",
+      "Receive booking confirmation; travel to lodge"
+    ],
+    "pitfalls": [
+      {
+        "title": "Stay-mandatory booking model",
+        "detail": "Cannot book safaris alone without overnight stay; minimum 1 night required"
+      },
+      {
+        "title": "Monsoon safaris may be cancelled",
+        "detail": "June-September: jeeps may not operate during heavy downpours; boat safaris may continue"
+      },
+      {
+        "title": "Premium pricing",
+        "detail": "Significantly more expensive than govt forest-dept parks; ₹12,000+ per person/night baseline"
+      }
+    ],
+    "fees_note": "Package price ₹12,136+/person/night (twin-share) inclusive of accommodation, meals (lunch, dinner, breakfast), 2 jeep safaris, boat ride (coracle), forest entry, 18% GST. Camera charges extra.",
+    "core_buffer_note": "JLR is authorized private eco-resort on Nagarhole periphery; safaris in Nagarhole core zones under JLR-Forest Dept agreement.",
+    "sources": [
+      {
+        "label": "Kabini Wildlife — online booking & safari packages",
+        "url": "https://www.kabiniwildlife.com/book-kabini-safari-online.html"
+      },
+      {
+        "label": "Kabini River Lodge (JLR) — official reservation",
+        "url": "https://www.kabiniriverlodge.com/"
+      },
+      {
+        "label": "TripAdvisor — Kabini River Lodge prices & reviews",
+        "url": "https://www.tripadvisor.com/Hotel_Review-g1152766-d501500-Reviews-Kabini_River_Lodge-Nagarhole_National_Park_Kodagu_Coorg_Karnataka.html"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "dandeli",
+    "park_full_name": "Dandeli / Dandeli-Anshi (Kali) Tiger Reserve",
+    "booking_authority": "Karnataka Forest Department",
+    "official_booking_url": null,
+    "advance_booking_days": null,
+    "has_tatkal": false,
+    "booking_opens_note": "NO online advance booking. Spot-only at Phansoli / Kulgi reception counter on safari day. Arrive early (30-45 min before safari) for ticket issuance on first-come-first-served basis.",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: government photo ID / Aadhaar",
+      "Foreigners: passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep safari (KTR vehicles)",
+        "capacity": 6,
+        "shifts": [
+          "morning (6:00-8:00 am)",
+          "afternoon (4:00-6:00 pm)"
+        ],
+        "price_inr_indian": 625,
+        "price_inr_foreigner": 1000,
+        "notes": "~2-hour safari; approximately 14 km route; spot-only booking"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Kulgi Nature Education Camp",
+        "best_for": "Trekking, wildlife safari base",
+        "premium": false,
+        "notes": "11 km from Dandeli town; accommodation available"
+      },
+      {
+        "name": "Phansoli / Veerabhadra zone",
+        "best_for": "Wildlife safari primary entry",
+        "premium": false,
+        "notes": "Main safari reporting point; jeep departures"
+      },
+      {
+        "name": "Anshi Evergreen Camp",
+        "best_for": "Scenic trekking, wildlife",
+        "premium": false,
+        "notes": "55 km from Dandeli; full-service eco-camp"
+      },
+      {
+        "name": "Castlerock Adventure Camp",
+        "best_for": "Adventure activities",
+        "premium": false,
+        "notes": "75 km from Dandeli; rock climbing, camping"
+      }
+    ],
+    "booking_steps": [
+      "Arrive at the park's forest reception counter early — 30–60 minutes before the safari shift.",
+      "Buy your ticket at the counter; seats are first-come, first-served.",
+      "Carry the original photo ID for every traveller (passport for foreign nationals).",
+      "Book only at the counter or the state forest department — avoid private sites posing as the official portal."
+    ],
+    "pitfalls": [
+      {
+        "title": "NO online pre-booking possible",
+        "detail": "100% spot-only via counter; no advance seat reservation. Tourist guides and agents cannot pre-book."
+      },
+      {
+        "title": "Queue risk during peak season",
+        "detail": "Oct-Dec & March-May: arrive 45-60 min early or risk missing slot if limited seats"
+      },
+      {
+        "title": "Jeep availability unpredictable",
+        "detail": "Limited fleet; if all jeeps full, may wait for next slot or next day"
+      },
+      {
+        "title": "No private jeep option",
+        "detail": "Only forest-dept jeeps allowed; cannot hire private vehicle for core zone safari"
+      }
+    ],
+    "fees_note": "Safari fee ₹600-650 (Indians) / ₹1000+ (Foreigners). 2-hour safari covers ~14 km. Accommodation at camps varies: dormitory ₹840, tents ₹1400, cottages ₹1960+/person. Trekking ₹550, special activities ₹250+.",
+    "core_buffer_note": "Only KTR forest-dept jeeps allowed inside core reserve. Private vehicles barred. Coracle / river-based safaris possible on Kali River periphery (separate booking).",
+    "sources": [
+      {
+        "label": "Dandeli Hub — jungle safari booking truth 2026",
+        "url": "https://dandelihub.com/dandeli-jungle-safari/"
+      },
+      {
+        "label": "Kali Tiger Reserve (KTR) — official camp & safari info",
+        "url": "https://kalitigerreserve.org/"
+      },
+      {
+        "label": "Holidays DNA — Dandeli-Anshi safari timings & fees",
+        "url": "https://holidaysdna.com/dandeli-anshi-tiger-reserve/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "mudumalai",
+    "park_full_name": "Mudumalai National Park / Tiger Reserve",
+    "booking_authority": "Tamil Nadu Forest Department",
+    "official_booking_url": null,
+    "advance_booking_days": null,
+    "has_tatkal": false,
+    "booking_opens_note": "Advance online booking available but limited slots. Most seats filled via online; same-day counter booking subject to availability. Arrive at Theppakadu reception 1+ hour before safari for spot booking.",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "id_required": [
+      "Indians: government photo ID / Aadhaar",
+      "Foreigners: passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Government bus safari",
+        "capacity": 25,
+        "shifts": [
+          "morning (6:30, 8:00, 9:30 am)",
+          "afternoon (2:00, 3:30, 5:00 pm)"
+        ],
+        "price_inr_indian": 340,
+        "price_inr_foreigner": null,
+        "notes": "Govt-run shared bus; TN Forest Dept vehicle. Multiple time slots daily."
+      },
+      {
+        "type": "Gypsy/Jeep safari",
+        "capacity": 6,
+        "shifts": [
+          "morning (6:30-9:00 am)",
+          "afternoon (3:00-6:00 pm)"
+        ],
+        "price_inr_indian": 4200,
+        "price_inr_foreigner": 4200,
+        "notes": "Private gypsy for small groups; per-trip pricing"
+      },
+      {
+        "type": "Elephant safari",
+        "capacity": 2,
+        "shifts": [
+          "early morning (8:30-9:00 am)",
+          "evening (5:30-6:00 pm)"
+        ],
+        "price_inr_indian": 30,
+        "price_inr_foreigner": 300,
+        "notes": "30-minute elephant ride at elephant camp; tourist favorite"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Theppakadu reception / buffer zone",
+        "best_for": "Deer, sambar, visitor center",
+        "premium": false,
+        "notes": "Main entry point via Theppakadu gate; easier access"
+      }
+    ],
+    "booking_steps": [
+      "Arrive at the park's forest reception counter early — 30–60 minutes before the safari shift.",
+      "Buy your ticket at the counter; seats are first-come, first-served.",
+      "Carry the original photo ID for every traveller (passport for foreign nationals).",
+      "Book only at the counter or the state forest department — avoid private sites posing as the official portal."
+    ],
+    "pitfalls": [
+      {
+        "title": "NO private jeeps allowed in core zone",
+        "detail": "Only govt bus/gypsy allowed inside protected area. Private operators confined to buffer zone."
+      },
+      {
+        "title": "Limited online booking slots",
+        "detail": "Most seats reserved online; same-day availability unpredictable. Peak season (Oct-March): arrive very early"
+      },
+      {
+        "title": "Vehicle & guide assignment random",
+        "detail": "TN Forest Dept assigns which vehicle, guide, time slot after payment — no choice"
+      },
+      {
+        "title": "Park closed Tuesdays",
+        "detail": "Theppakadu reception closed every Tuesday; no safaris"
+      },
+      {
+        "title": "Monsoon closure June-August strict",
+        "detail": "Heavy rains make roads impassable; safaris suspended"
+      }
+    ],
+    "fees_note": "Bus safari ₹340 (Indians). Gypsy ₹4200 per trip (both nationalities). Elephant safari ₹30 (Indians) / ₹300 (Foreigners). Entry ₹30, Still camera ₹53, Video camera ₹315. Foreigner gypsy pricing not available; typically quoted on inquiry.",
+    "core_buffer_note": "CRITICAL: Private jeeps NOT allowed inside core protected zone. Only TN Forest Dept govt buses/gypsies permitted. Private vehicle operators offer peripheral buffer-zone 'safaris' which do not enter actual forest.",
+    "sources": [
+      {
+        "label": "Mudumalai Tiger Reserve — official website & bookings",
+        "url": "https://www.mudumalaitigerreserve.com/"
+      },
+      {
+        "label": "Travel2Ooty — Mudumalai safari guide & fees",
+        "url": "https://www.travel2ooty.com/mudumalai-safari-ooty.aspx"
+      },
+      {
+        "label": "TripAdvisor — Mudumalai reviews & private jeep caution",
+        "url": "https://www.tripadvisor.in/Attraction_Review-g297679-d325365-Reviews-Mudumalai_National_Park-Ooty_Udhagamandalam_The_Nilgiris_District_Tamil_Nadu.html"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "thekkady",
+    "park_full_name": "Periyar Tiger Reserve, Thekkady",
+    "booking_authority": "Kerala Forest Department / KTDC (Kerala Tourism Development Corporation)",
+    "official_booking_url": "https://periyartigerreserve.org/",
+    "advance_booking_days": 30,
+    "has_tatkal": false,
+    "booking_opens_note": "Online booking permitted up to 30 days in advance. Tickets once confirmed are non-refundable and non-transferable. Booking closes 2 hours before departure.",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "id_required": [
+      "Indians: any government photo ID (Aadhar/PAN/DL/Voter ID) at boat landing or gov't ID not required for ticket but present at boat entry",
+      "Foreigners: passport (not separately required for boating but standard Indian ID rules apply for national park entry)"
+    ],
+    "safari_types": [
+      {
+        "type": "Government Boat Safari (Forest Dept or KTDC)",
+        "capacity": "variable per boat, typically 20-40 persons per vessel",
+        "shifts": [
+          "7:30-9:00 AM",
+          "9:30-11:00 AM",
+          "11:15 AM-12:45 PM",
+          "1:45-3:15 PM",
+          "3:30-5:00 PM"
+        ],
+        "price_inr_indian": 255,
+        "price_inr_foreigner": 255,
+        "notes": "1.5-hour boat safari on Periyar Lake; all shifts run daily; same price for Indians and foreigners via official Periyar website. KTDC alternate pricing Rs. 450 incl. 18% GST."
+      },
+      {
+        "type": "Bamboo Rafting + Trekking (Full-day eco-tourism)",
+        "capacity": 10,
+        "shifts": [
+          "8:00 AM start, returns by 5:00 PM"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "8 AM to 5 PM; includes armed guard + 4 guides, tea/snacks/packed lunch; children 12+ only; advance booking via phone +91 486 9224571; rafting ~3 hours on bamboo rafts"
+      },
+      {
+        "type": "Nature walks & guided treks",
+        "capacity": "varies by program",
+        "shifts": [
+          "various eco-tourism timings"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Available via official Periyar website; no advance days specified"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Periyar Lake sanctuary zone",
+        "best_for": "tiger/elephant/gaur sightings from boat",
+        "premium": false,
+        "notes": "Main boating zone; year-round operations except temporary monsoon suspensions during heavy rainfall June-September"
+      }
+    ],
+    "booking_steps": [
+      "Use the official portal (linked above) or KTDC boating portal (boating.ktdcbooking.com)",
+      "Select date, time slot, and number of adults/children",
+      "Confirm reservation (non-refundable)",
+      "Report to Anavachal Parking ticket counter 1 hour before departure",
+      "Board at Boat Landing 30 minutes before scheduled departure"
+    ],
+    "pitfalls": [
+      {
+        "title": "Non-refundable tickets",
+        "detail": "Once confirmed, tickets cannot be cancelled, refunded, or amended; not transferable to other dates or times"
+      },
+      {
+        "title": "Monsoon service suspension",
+        "detail": "Boating may be temporarily suspended during heavy rainfall (June-September); confirm status before booking during monsoon months"
+      },
+      {
+        "title": "Queue at boat landing",
+        "detail": "High-season (Oct-Mar) attracts large crowds; Periyar govt boat has limited capacity; arrive early; KTDC alternative boats also available"
+      },
+      {
+        "title": "30-day booking window closure",
+        "detail": "Cannot book beyond 30 days in advance; advance closure 2 hours before departure means same-day bookings may sell out"
+      },
+      {
+        "title": "Separate entry fee from boating",
+        "detail": "National park entry Rs. 45 (Indians) / Rs. 500 (foreigners) is separate from boating ticket (Rs. 255 all); pay both"
+      }
+    ],
+    "fees_note": "Boating ticket Rs. 255/adult (all visitors) via official Periyar site; Rs. 85/child (5-11 yrs); no separate charge 5 yrs; separate park entry Rs. 45 Indians / Rs. 500 foreigners. KTDC portal: Rs. 450 incl. 18% GST (same for all). Bamboo rafting pricing not published; call ahead.",
+    "core_buffer_note": "Book via official Periyar website (periyartigerreserve.org) or KTDC portal; non-cancellable; monsoon temporary closures possible; separate park entry required.",
+    "sources": [
+      {
+        "label": "Periyar Tiger Reserve official",
+        "url": "https://periyartigerreserve.org/"
+      },
+      {
+        "label": "KTDC Boating portal",
+        "url": "https://boating.ktdcbooking.com/"
+      },
+      {
+        "label": "Kerala Tourism — Periyar boating",
+        "url": "https://www.keralatourism.org/periyar/boating-periyar.php"
+      },
+      {
+        "label": "Bamboo rafting details",
+        "url": "https://thekkady.org/bamboo-rafting/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "wayanad",
+    "park_full_name": "Wayanad Wildlife Sanctuary",
+    "booking_authority": "Kerala Forest Department (Wildlife Warden, Mananthody)",
+    "official_booking_url": null,
+    "advance_booking_days": 0,
+    "has_tatkal": true,
+    "booking_opens_note": "No advance booking; first-come-first-served basis. Arrive 30 minutes before safari. Muthanga: spot booking only. Tholpetty: online booking available (confirm status before visiting).",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [
+      6,
+      7,
+      8
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "id_required": [
+      "Indians: any government photo ID (Aadhar/DL/Voter ID)",
+      "Foreigners: passport"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep safari (Muthanga range)",
+        "capacity": 7,
+        "shifts": [
+          "7:00-10:00 AM",
+          "3:00-5:00 PM"
+        ],
+        "price_inr_indian": 600,
+        "price_inr_foreigner": null,
+        "notes": "~2-hour jeep safari; entry fee Rs. 110 (Indians), Rs. 300 (foreigners) separate; jeep Rs. 600 per safari (max 7); spot booking only, no advance"
+      },
+      {
+        "type": "Jeep safari (Tholpetty range)",
+        "capacity": 6,
+        "shifts": [
+          "morning and afternoon (confirm times)"
+        ],
+        "price_inr_indian": "2100-2725 (varies 4-6 pax)",
+        "price_inr_foreigner": "4200-4800 (varies 4-6 pax)",
+        "notes": "Variable jeep charge by pax: Rs. 2100 (4 pax Indians) to Rs. 2725 (6 pax Indians); foreigners double. Separate entry fees apply."
+      },
+      {
+        "type": "Bus safari (Muthanga & Ambardi)",
+        "capacity": "varies per bus",
+        "shifts": [
+          "morning and afternoon"
+        ],
+        "price_inr_indian": null,
+        "price_inr_foreigner": null,
+        "notes": "Limited info; ask Wildlife Warden for current rates and routes"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Muthanga range",
+        "best_for": "elephants, deer, bison, langurs",
+        "premium": false,
+        "notes": "South zone; 18 km from Sulthan Bathery; spot booking only; 30-min early arrival recommended"
+      },
+      {
+        "name": "Tholpetty range",
+        "best_for": "elephants, tigers, sambar, sloth bears",
+        "premium": true,
+        "notes": "North zone near Thirunelli & Karnataka border; online booking available; higher-priced than Muthanga"
+      }
+    ],
+    "booking_steps": [
+      "Arrive at the park's forest reception counter early — 30–60 minutes before the safari shift.",
+      "Buy your ticket at the counter; seats are first-come, first-served.",
+      "Carry the original photo ID for every traveller (passport for foreign nationals).",
+      "Book only at the counter or the state forest department — avoid private sites posing as the official portal."
+    ],
+    "pitfalls": [
+      {
+        "title": "Monsoon closures",
+        "detail": "Sanctuary closed June-August; heavy rains (June-September) make tracks slushy, low visibility, flooding of Muthanga river; confirm open status before visiting"
+      },
+      {
+        "title": "No advance booking for Muthanga",
+        "detail": "Only spot booking; first-come-first-served; arrive early; high season (Oct-Mar) may have queues or limited slots"
+      },
+      {
+        "title": "Limited permit availability",
+        "detail": "Fixed number of jeeps/buses per shift; slots can sell out, especially weekends Oct-Feb"
+      },
+      {
+        "title": "Separate entry vs safari fees",
+        "detail": "Entry fee (Rs. 110 Indian / Rs. 300 foreign) separate from jeep charge (Rs. 600-2725 depending on range/pax); total cost can be surprising"
+      },
+      {
+        "title": "Tholpetty higher cost",
+        "detail": "Tholpetty jeep rates nearly 2x Muthanga; foreign visitors pay 2x Indian rates; book Muthanga for budget option"
+      },
+      {
+        "title": "Road access disruption",
+        "detail": "Muthanga river overflows monsoon; highway flooding may block access entirely during heavy rains"
+      }
+    ],
+    "fees_note": "Muthanga: entry Rs. 110 (Indians) / Rs. 300 (foreigners) + jeep Rs. 600 per safari max 7 pax. Tholpetty: entry fee unstated + jeep Rs. 2100-2725 Indians (4-6 pax), Rs. 4200-4800 foreigners (4-6 pax). Children rates unknown; ask at counter.",
+    "core_buffer_note": "Muthanga = walk-in spot booking (high-season queues likely); Tholpetty = online preferred but confirm availability. Closed June-August. Confirm road access during monsoon before visiting.",
+    "sources": [
+      {
+        "label": "Wayanad Wildlife Sanctuary official",
+        "url": "https://www.wayanadwildlifesanctuary.com/"
+      },
+      {
+        "label": "Kerala Tourism — Muthanga jeep safari",
+        "url": "https://www.keralatourism.org/ecotourism/trekking-programs/muthanga-jeep-safari/28"
+      },
+      {
+        "label": "Wildlife Sanctuary info (Incredible India)",
+        "url": "https://www.incredibleindia.gov.in/en/kerala/wayanad/wayanad-wildlife-sanctuary"
+      },
+      {
+        "label": "Travel guide Muthanga & Tholpetty",
+        "url": "https://travelbugindia.com/wayanad-wildlife-sanctuary-muthanga-tholpetty/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "gir-national-park",
+    "park_full_name": "Gir National Park (Sasan Gir)",
+    "booking_authority": "Gujarat Forest Department",
+    "official_booking_url": "https://girlion.gujarat.gov.in/",
+    "advance_booking_days": 90,
+    "has_tatkal": false,
+    "booking_opens_note": "Online booking opens exactly 3 months (90 days) before travel date. Closes 2 hours before safari. No tatkal or urgent bookings allowed; advance-only system.",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "closed_months": [
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "id_required": [
+      "Indians: original government photo ID (Aadhar/PAN/Driving Licence/Voter ID) mandatory at permit counter",
+      "Foreigners: passport mandatory; passport number entered at booking"
+    ],
+    "safari_types": [
+      {
+        "type": "Gir Jungle Safari (Gypsy/Jeep permit — main routes 1-9)",
+        "capacity": 6,
+        "shifts": [
+          "6:00-9:00 AM (summer)",
+          "6:45-9:45 AM (winter)",
+          "3:00-6:00 PM"
+        ],
+        "price_inr_indian": "800 weekday, 1000 weekend",
+        "price_inr_foreigner": "5600 weekday, 7000 weekend",
+        "notes": "Per-vehicle permit for up to 6 adults + 1 child (3-12 yrs); max 6 adult seats. Permit only, vehicle + guide arranged separately. Routes 1-9 randomly assigned at booking. Morning shift best for lion sighting."
+      },
+      {
+        "type": "Devalia Safari Park Gypsy Safari",
+        "capacity": 6,
+        "shifts": [
+          "7:00-10:55 AM",
+          "3:00-6:00 PM"
+        ],
+        "price_inr_indian": "800 weekday, 1000 weekend",
+        "price_inr_foreigner": "5600 weekday, 7000 weekend",
+        "notes": "Semi-enclosed park interpretation zone; easier for beginners; same pricing as Gir jungle permit"
+      },
+      {
+        "type": "Devalia Safari Park Bus Safari",
+        "capacity": "30+ per bus",
+        "shifts": [
+          "7:30-11:00 AM",
+          "3:00-5:00 PM"
+        ],
+        "price_inr_indian": "150 weekday, 190 weekend",
+        "price_inr_foreigner": "2800 weekday, 3500 weekend",
+        "notes": "Budget option; non-AC bus; interpretation zone; lower sighting probability than gypsy"
+      },
+      {
+        "type": "Girnar Nature Safari (Gypsy)",
+        "capacity": 6,
+        "shifts": [
+          "6:45-9:45 AM (winter)",
+          "6:00-9:00 AM (summer)",
+          "3:00-6:00 PM"
+        ],
+        "price_inr_indian": "800 weekday, 1000 weekend",
+        "price_inr_foreigner": "5600 weekday, 7000 weekend",
+        "notes": "Sacred mountain + nature focus; same pricing; winter-only operating (closed June-Oct plus Girnar Parikrama/Mahashivratri)"
+      },
+      {
+        "type": "Ambardi Safari Park (Non-AC Bus)",
+        "capacity": "varies",
+        "shifts": [
+          "8:00-11:00 AM",
+          "3:00-6:00 PM"
+        ],
+        "price_inr_indian": "150 weekday, 190 weekend",
+        "price_inr_foreigner": "2800 weekday, 3500 weekend",
+        "notes": "Least crowded; non-AC bus; lower sighting probability"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Gir Jungle Safari routes 1-9",
+        "best_for": "Asiatic lion territory; all large fauna",
+        "premium": true,
+        "notes": "9 designated routes through Sasan & Dedakadi ranges; 35 km avg per route; artificial waterholes increase sighting odds; route randomly assigned at permit counter"
+      },
+      {
+        "name": "Devalia Safari Park / Interpretation Zone",
+        "best_for": "lion introduction for beginners; safer",
+        "premium": false,
+        "notes": "Semi-enclosed park; lower sighting variability; gypsy or bus options"
+      },
+      {
+        "name": "Girnar Nature Safari",
+        "best_for": "sacred mountain + nature walks",
+        "premium": false,
+        "notes": "Winter only; cultural + nature experience; closed June-Oct + religious periods"
+      },
+      {
+        "name": "Ambardi Safari Park",
+        "best_for": "budget option, fewer crowds",
+        "premium": false,
+        "notes": "Off-main-circuit; lowest fees; lowest sighting probability"
+      }
+    ],
+    "booking_steps": [
+      "Use the official portal (linked above) exactly 90 days before intended travel date (booking opens at midnight IST)",
+      "Register/login with email, select permit type (Gir Jungle / Devalia Gypsy / Devalia Bus / Girnar / Ambardi)",
+      "Choose date, time slot (limited slots, sell out fast for popular routes/dates)",
+      "Enter Indian ID or foreigner passport number (mandatory at booking, verified at permit counter)",
+      "Complete payment (online transaction required; non-refundable)",
+      "Print confirmation e-ticket",
+      "Report to Sinh Sadan reception 1 hour before safari (show permit + original ID/passport)",
+      "Permit issued; arrange vehicle + eco-guide separately if Gir Jungle (not incl. in permit price)"
+    ],
+    "pitfalls": [
+      {
+        "title": "Permit sells out fast",
+        "detail": "Popular weekends (Dec-Feb) and morning slots booked within minutes of opening. Set phone reminder for 90-day mark; login early."
+      },
+      {
+        "title": "No tatkal/same-day bookings",
+        "detail": "Advance-only system; cannot walk in and book; must plan 3 months ahead"
+      },
+      {
+        "title": "Permit-only pricing; separate vehicle costs",
+        "detail": "E-permit (Rs. 800-7000 depending on type/visitor/day) does NOT include safari vehicle or eco-guide. Arrange gypsy + guide separately; typical additional cost Rs. 2000-3000/vehicle + Rs. 400+ guide."
+      },
+      {
+        "title": "Foreigners pay 7× Indian rate",
+        "detail": "Gir Jungle gypsy Rs. 5600 (weekday) vs Rs. 800 (Indian), 7× markup. Total cost for foreigner: permit + vehicle + guide easily Rs. 10K+."
+      },
+      {
+        "title": "Monsoon closure long (16 Jun – 15 Oct)",
+        "detail": "4-month shutdown; book well ahead for peak months (Nov-Mar). February-March still slots tight; January best availability."
+      },
+      {
+        "title": "ID mandatory; without it, no entry",
+        "detail": "Original photo ID (Indian) or passport (foreigner) REQUIRED. Missing ID = no permit issued on the day, no refund. Verify passport is valid."
+      },
+      {
+        "title": "Route randomized; no choice",
+        "detail": "Cannot request specific route 1-9; assigned at permit counter. Some routes historically better for lions, but no guarantee."
+      },
+      {
+        "title": "Beware fraudulent booking sites",
+        "detail": "Only use https://girlion.gujarat.gov.in/ (official). Other sites claim 'confirmed' permits at premium rates; scams."
+      }
+    ],
+    "fees_note": "Gir Jungle/Devalia Gypsy: Rs. 800 (Indian weekday), Rs. 1000 (weekend); Rs. 5600 (foreign weekday), Rs. 7000 (weekend). Devalia/Ambardi Bus: Rs. 150/190 (Indian); Rs. 2800/3500 (foreign). Extra child (3-12): Rs. 100/125 (Indian); Rs. 1900/2375 (foreign). DOES NOT include vehicle rental (Rs. 2000+/safari) or eco-guide (Rs. 400+). Arranged separately with local operators.",
+    "core_buffer_note": "ADVANCE-ONLY: book 90 days ahead via https://girlion.gujarat.gov.in/; no tatkal. Permit ≠ vehicle/guide; arrange separately. ID mandatory. Closed 16 Jun – 15 Oct. Gypsy seats cap 6. Foreigner premiums 7×. Devalia is beginner-friendly alternative.",
+    "sources": [
+      {
+        "label": "Gir Online Permit Booking System (official)",
+        "url": "https://girlion.gujarat.gov.in/"
+      },
+      {
+        "label": "Gir Terms & Conditions",
+        "url": "https://girlion.gujarat.gov.in/TermsConditions.aspx"
+      },
+      {
+        "label": "Devalia Safari Park info",
+        "url": "https://girlion.gujarat.gov.in/AboutDevalia.aspx"
+      },
+      {
+        "label": "Gir National Park (Gujarat Tourism)",
+        "url": "https://www.gujarattourism.com/saurashtra/gir-somnath/gir-national-park.html"
+      },
+      {
+        "label": "Devalia Park (Big Cats India)",
+        "url": "https://bigcatsindia.com/devaliya-safari-park/"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "kaziranga",
+    "park_full_name": "Kaziranga National Park",
+    "booking_authority": "Assam Forest Department",
+    "official_booking_url": "https://sewasetu.assam.gov.in/",
+    "advance_booking_days": null,
+    "has_tatkal": false,
+    "booking_opens_note": "Advance booking recommended, especially peak season (Nov–Mar); elephant safari slots very limited and must be booked well ahead; jeep booking typically opens online with no fixed days-in-advance gate (varies seasonally)",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "closed_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "id_required": [
+      "Indians: govt photo ID (Aadhaar/Passport/Voter ID)",
+      "Foreigners: passport + visa"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep safari",
+        "capacity": 6,
+        "shifts": [
+          "morning",
+          "afternoon"
+        ],
+        "price_inr_indian": "4500–6000 per jeep",
+        "price_inr_foreigner": "8500–9000 per jeep",
+        "notes": "per range; 3-hour duration typically; includes driver, permit, road tax, entry"
+      },
+      {
+        "type": "Elephant safari",
+        "capacity": 4,
+        "shifts": [
+          "morning"
+        ],
+        "price_inr_indian": "1800–2500 per person",
+        "price_inr_foreigner": null,
+        "notes": "very limited availability; advance booking essential; timing confirmed 1 day before; Oct–Apr only"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Kohora (Central Range)",
+        "best_for": "rhino sightings; one-horned rhino stronghold; most popular zone",
+        "premium": false,
+        "notes": "Jeep + Elephant safaris available; highest foot traffic"
+      },
+      {
+        "name": "Bagori (Western Range)",
+        "best_for": "elephant safari (most preferred zone for this); rhino; wildlife variety",
+        "premium": false,
+        "notes": "Jeep + Elephant safaris; landscape favours close rhino sightings"
+      },
+      {
+        "name": "Agaratoli (Eastern Range)",
+        "best_for": "jeep safari with boat option; less crowded; water bodies",
+        "premium": false,
+        "notes": "Jeep + Boat safari; on National Highway; quieter alternative to Kohora"
+      },
+      {
+        "name": "Burapahar (4th Range)",
+        "best_for": "hilly terrain; different ecosystem from floodplain zones; sandy/dense forest",
+        "premium": false,
+        "notes": "Jeep safari only; fewer crowds; proximity to Brahmaputra riverbed; unique landscape"
+      }
+    ],
+    "booking_steps": [
+      "Use the official portal (linked above) or official Sewa Setu portal (sewasetu.assam.gov.in)",
+      "Select zone (Kohora/Bagori/Agaratoli/Burapahar), date, safari type (jeep or elephant)",
+      "Pay full fee online",
+      "Receive booking confirmation",
+      "Arrive 30 min early at chosen range office with ID proof",
+      "For elephant safari: timing confirmed day before; very strict spot availability (book ≥4 weeks ahead)"
+    ],
+    "pitfalls": [
+      {
+        "title": "Elephant safari extreme scarcity",
+        "detail": "Only 2 zones (Kohora, Bagori) offer elephant safaris with very limited seats/day; must book 4+ weeks ahead; cancellations rare, so timings confirmed only 1 day before"
+      },
+      {
+        "title": "Monsoon closure (May–Sep)",
+        "detail": "Park completely closed; flooding from Brahmaputra overflow; zero safaris during this window"
+      },
+      {
+        "title": "Zone confusion costs time",
+        "detail": "Each zone has its own tourism office + departure time; booking wrong zone = lost half-day; always verify zone name (spelling: Kohora, Bagori, Agaratoli, Burapahar) at booking"
+      },
+      {
+        "title": "October partially open",
+        "detail": "Jeep safaris run from Oct 1, but Elephant safaris only Nov 1 onwards; peak Oct crowds but fewer elephant slots = longer waits"
+      },
+      {
+        "title": "Foreigner fee premium",
+        "detail": "Same per-jeep rate as Indians, but jeeps rarely accommodate single foreigners; expect operator markup for solo bookings"
+      }
+    ],
+    "fees_note": "Jeep fees include driver, permit, entry, road tax (all-in); Elephant fees per-person; Foreigners pay same official rates but markups common via tour operators. Oct–Nov rates may differ from Dec–Mar peak.",
+    "core_buffer_note": "Book elephant 4+ weeks prior; arrive park 1 day before to confirm timings; travel to zone office ≥30 min early; Kohora/Bagori most popular (book soonest if targeting these); Agaratoli/Burapahar less crowded but jeep-only for latter.",
+    "sources": [
+      {
+        "label": "Official Kaziranga NPTR portal — Rate & Timing",
+        "url": "https://kaziranga.nptr.in/rateandtiming"
+      },
+      {
+        "label": "Official Kaziranga Safari Booking Portal",
+        "url": "https://kazirangasafari.in/booking/user/index"
+      },
+      {
+        "label": "Assam Government Sewa Setu — Online Safari Booking",
+        "url": "https://sewasetu.assam.gov.in/site/service-apply/online-safari-booking-kaziranga-national-park"
+      },
+      {
+        "label": "Kaziranga Safari Zones guide",
+        "url": "https://www.kaziranganationalpark-india.com/safari-zones-in-kaziranga.html"
+      },
+      {
+        "label": "Best Time to Visit Kaziranga",
+        "url": "https://www.kaziranganationalpark-india.com/info/Best-Time-to-Visit.html"
+      },
+      {
+        "label": "Elephant Safari details",
+        "url": "https://www.kaziranganationalpark-india.com/info/Elephant-Safari.html"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "manas-national-park",
+    "park_full_name": "Manas National Park",
+    "booking_authority": "Assam Forest Department",
+    "official_booking_url": "https://sewasetu.assam.gov.in/",
+    "advance_booking_days": null,
+    "has_tatkal": false,
+    "booking_opens_note": "Advance booking recommended, especially Nov–Apr peak season; first-come-first-serve basis; Elephant safari subject to availability; Bansbari closed Tuesdays, Bhuyanpara closed Thursdays",
+    "open_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "closed_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "id_required": [
+      "Indians: govt photo ID",
+      "Foreigners: passport + visa"
+    ],
+    "safari_types": [
+      {
+        "type": "Jeep safari — Bansbari Zone",
+        "capacity": 5,
+        "shifts": [
+          "6:30–9:30 AM",
+          "10:00 AM–1:00 PM",
+          "2:00–5:00 PM"
+        ],
+        "price_inr_indian": "4500 per jeep",
+        "price_inr_foreigner": "8500 per jeep",
+        "notes": "~3 hour; includes jeep, driver, permit, online charges, taxes"
+      },
+      {
+        "type": "Jeep safari — Bhuyanpara Zone",
+        "capacity": 5,
+        "shifts": [
+          "6:30–9:30 AM",
+          "10:00 AM–1:00 PM",
+          "2:00–5:00 PM"
+        ],
+        "price_inr_indian": "5900 per jeep",
+        "price_inr_foreigner": "9000 per jeep",
+        "notes": "Eastern zone, grassland; tiger sightings strong in Makibana; ~3 hour"
+      },
+      {
+        "type": "Elephant safari — Bansbari Zone",
+        "capacity": 1,
+        "shifts": [
+          "6:00–7:00 AM",
+          "7:00–8:00 AM"
+        ],
+        "price_inr_indian": "1400 per person",
+        "price_inr_foreigner": "3200 per person",
+        "notes": "1 hour; subject to availability; first-come-first-serve; advance booking required"
+      }
+    ],
+    "zones": [
+      {
+        "name": "Bansbari (Central)",
+        "best_for": "tiger, one-horned rhino, elephant, buffalo spotting; prime entry location; high wildlife density",
+        "premium": false,
+        "notes": "Jeep + Elephant safaris; Closed Tuesdays; most visited zone"
+      },
+      {
+        "name": "Bhuyanpara (Eastern)",
+        "best_for": "tiger sightings (Makibana area particularly); grassland habitat; good elephant presence",
+        "premium": false,
+        "notes": "Jeep safari only; Closed Thursdays; considered excellent for tiger sightings"
+      }
+    ],
+    "booking_steps": [
+      "Use the official portal (linked above) (or contact directly for gov channel)",
+      "Select zone (Bansbari or Bhuyanpara), date, safari type",
+      "Note: Bansbari closed Tuesdays, Bhuyanpara closed Thursdays",
+      "Pay full fee online (non-refundable)",
+      "Receive booking confirmation",
+      "Arrive at zone office before shift start",
+      "Elephant safari: limited seats, first-come-first-serve, confirm availability before traveling"
+    ],
+    "pitfalls": [
+      {
+        "title": "Zone closure days (Tue/Thu)",
+        "detail": "Bansbari zone shuts Tuesdays, Bhuyanpara Thursdays; plan around these. Checking booking portal first avoids wasted travel."
+      },
+      {
+        "title": "Elephant safari extreme scarcity",
+        "detail": "Subject to real-time availability; first-come-first-serve; small number of mahouts; advance booking strongly recommended but not guaranteed"
+      },
+      {
+        "title": "Monsoon closure (Jun–Sep)",
+        "detail": "Park completely closed; poor safari conditions; 100% unavailable"
+      },
+      {
+        "title": "Non-refundable fees",
+        "detail": "Once paid, no refunds even if safari cancelled or weather impacts experience"
+      },
+      {
+        "title": "Peak season booking delays",
+        "detail": "Nov–Apr peak = queues; book 2–4 weeks ahead for Elephant safaris; Jeep booking easier but still book in advance"
+      }
+    ],
+    "fees_note": "Jeep fees per-jeep all-in (5-person capacity, so per-person cost ≈₹900–1800). Elephant per-person. Foreigners pay higher official rates (approx 1.9× Indian jeep rate, 2.3× Indian elephant rate).",
+    "core_buffer_note": "Avoid Tue/Thu for zone-specific booking. Book elephant 2–4 weeks prior. Arrive early. Peak season (Nov–Mar) books fastest. Confirm via phone before traveling to zone office, especially for Elephant safari (availability changes daily).",
+    "sources": [
+      {
+        "label": "Manas National Park Online Booking",
+        "url": "https://www.manasnationalparkonline.in"
+      },
+      {
+        "label": "Assam Tourism — Manas National Park",
+        "url": "https://assamtourism.gov.in/Manas-National-Park1.php"
+      },
+      {
+        "label": "Bansbari Zone details",
+        "url": "https://www.manasnationalparkonline.in/bansbari-zone-in-manas.php"
+      },
+      {
+        "label": "Bhuyanpara Zone details",
+        "url": "https://www.manasnationalparkonline.in/bhuyanpara-zone-in-manas.php"
+      },
+      {
+        "label": "Manas Safari zones guide",
+        "url": "https://www.manasnationalparkonline.in/safari-zones-in-manas.php"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "sundarbans",
+    "park_full_name": "Sundarbans National Park & Tiger Reserve",
+    "booking_authority": "West Bengal Forest Department (Field Director, Sundarbans Tiger Reserve)",
+    "official_booking_url": null,
+    "advance_booking_days": null,
+    "has_tatkal": false,
+    "booking_opens_note": "Entry permits for foreigners require 24–48 hour processing via Sajnekhali Range Office or West Bengal Tourism Office (Writers Building, Kolkata); Indians can often book faster (same-day possible with on-spot applications). Boat availability is continuous year-round but tide/monsoon affects safety. No fixed 'booking opens' date—permits arranged per booking request.",
+    "open_months": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "closed_months": [],
+    "best_months": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "id_required": [
+      "Indians: valid govt photo ID (Aadhaar/Passport/Voter ID/Driving License)",
+      "Foreigners: ORIGINAL passport + valid visa MANDATORY; digital copies insufficient for entry; special permit required from Joint Secretary Forest Dept (Writers Building, Kolkata) OR Field Director office"
+    ],
+    "safari_types": [
+      {
+        "type": "Boat/Launch safari",
+        "capacity": "8–15 (varies by boat type)",
+        "shifts": [
+          "full day",
+          "multi-day (2–7 day packages)"
+        ],
+        "price_inr_indian": "Boat ≈₹3000–5000/day; entry permit ₹20/day (Indians); guide ₹100; camera ₹50",
+        "price_inr_foreigner": "Boat ≈₹3000–5000/day; entry permit ₹1000/day (updated Sep 2024); guide ₹2000/day; camera ₹100",
+        "notes": "Only transport inside park is launch/boat (no jeeps). Mangrove boat safaris with tiger/crocodile spotting. Multi-day packages include stays on boats/islands. Foreigners must arrange permits well ahead (24–48 hrs minimum)."
+      }
+    ],
+    "zones": [
+      {
+        "name": "Sajnekhali Range (Primary Entry)",
+        "best_for": "boat safari; tiger reserves; mangrove biodiversity; crocodile spotting; most accessible for tourists",
+        "premium": false,
+        "notes": "Main tourist entry point; Sajnekhali Forest Range Office handles permits; Field Director office also issues permits"
+      },
+      {
+        "name": "Gosaba Entry Point",
+        "best_for": "south Sundarbans access; alternative entry; some boat operators here",
+        "premium": false,
+        "notes": "Secondary entry; less crowded than Sajnekhali; Forest Dept permits issued on-spot for Indians"
+      },
+      {
+        "name": "Sonakhali Range",
+        "best_for": "mangrove ecosystem exploration; boat routes from this range",
+        "premium": false,
+        "notes": "Field Director office branch; permits issued"
+      }
+    ],
+    "booking_steps": [
+      "Arrive at the park's forest reception counter early — 30–60 minutes before the safari shift.",
+      "Buy your ticket at the counter; seats are first-come, first-served.",
+      "Carry the original photo ID for every traveller (passport for foreign nationals).",
+      "Book only at the counter or the state forest department — avoid private sites posing as the official portal."
+    ],
+    "pitfalls": [
+      {
+        "title": "Foreigner permit mandatory + time-consuming",
+        "detail": "Special permit REQUIRED (not optional). Costs 24–48 hours minimum to obtain. Cannot be same-day. Original passport + valid visa are required at entry (no digital copies accepted). MUST plan 2+ days ahead."
+      },
+      {
+        "title": "Boat safari only — no other transport",
+        "detail": "Unlike Kaziranga/Manas (jeeps), Sundarbans is 100% mangrove-boat-only. No jeep alternative. Waterways are primary route. Weather/tide can delay safaris."
+      },
+      {
+        "title": "Tiger spotting unreliable",
+        "detail": "Sundarbans is tiger reserve (900+ tigers) but sightings remain unpredictable in mangrove density. Longer (2–7 day) packages increase odds vs 1-day trips."
+      },
+      {
+        "title": "Foreigner permit fee jump (Sep 2024)",
+        "detail": "Entry fee for foreigners jumped from ₹300 → ₹1000/day. Guide charge ₹2000/day (vs ₹100 for Indians). Total cost for foreigner 5-day trip ≈₹18,000+; for Indian ≈₹1500. Markup via tour operators possible."
+      },
+      {
+        "title": "Monsoon/monsoon-transition risk (Jun–Sep)",
+        "detail": "Heavy rain, rough water, reduced visibility. Parks often quiet but safaris riskier. Best avoided; Jan–Mar is peak (cool, clear water, tiger activity)."
+      },
+      {
+        "title": "Tide schedules affect safari timing",
+        "detail": "Boats tied to high/low tide windows. Early morning or evening departures optimal. Afternoon boats often skip due to shallow creeks."
+      }
+    ],
+    "fees_note": "Indians: ₹20 entry/day + boat ~₹3000–5000/day + guide ₹100 = ≈₹3100–5100/day per person (group boats divide cost). Foreigners: ₹1000 entry/day + boat same (≈₹3000–5000) + guide ₹2000/day = ≈₹6000–8000/day (or more via tour operator markups). Camera fee ₹50 (Indians), ₹100 (Foreigners) extra.",
+    "core_buffer_note": "Foreigners: Apply for permit 2–3 days before travel (24–48 hr minimum). Book boat operator 3–7 days ahead (peak season Jan–Mar: 1–2 weeks prior). Request tide-aware departure times (early morning best). Hire licensed guide (mandatory). Bring original passport. Use authorized tour operators if permit hassle is concern (they front processing but charge commission).",
+    "sources": [
+      {
+        "label": "Official Sundarban Tiger Reserve Booking",
+        "url": "https://sundarbantigerreserve.org/?tab=Bbook"
+      },
+      {
+        "label": "Sundarban Tiger Reserve main site",
+        "url": "https://sundarbantigerreserve.org/"
+      },
+      {
+        "label": "Foreigner permit & travel info",
+        "url": "https://sundarbanpackages.com/travel-information-for-foreigners-while-visiting-sundarbans/"
+      },
+      {
+        "label": "Sundarbans forest permit rules",
+        "url": "https://sundarbanmondaltravels.com/sundarban-forest-permit-rules/"
+      },
+      {
+        "label": "Boat safari booking info",
+        "url": "https://www.sunderbans-national-park.com/online-safari-booking-sunderbans.html"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  },
+  {
+    "destination_id": "bhitarkanika",
+    "park_full_name": "Bhitarkanika National Park",
+    "booking_authority": "Odisha Forest Department / Odisha Ecotourism",
+    "official_booking_url": "https://www.ecotourodisha.com/",
+    "advance_booking_days": null,
+    "has_tatkal": false,
+    "booking_opens_note": "Booking available year-round (except May 1–Jul 31 crocodile nesting closure). No fixed 'advance booking opens' date, but booking is handled on-the-spot at Khola/Gupti forest offices OR via ecotourodisha.com. Pre-booking recommended for peak season (Nov–Feb).",
+    "open_months": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "closed_months": [
+      5,
+      6,
+      7
+    ],
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "id_required": [
+      "Indians: govt photo ID (Aadhaar/Passport/Voter ID/Driving License)",
+      "Foreigners: passport + valid visa"
+    ],
+    "safari_types": [
+      {
+        "type": "Boat safari (motorboat/launch)",
+        "capacity": "8–12 (varies)",
+        "shifts": [
+          "morning (7 AM–12 PM)",
+          "afternoon (12–5 PM)",
+          "multi-hour options"
+        ],
+        "price_inr_indian": "Full boat hire ≈₹3000/day; per-person ₹25–40 (groups <10 pay ₹40/person, ≥10 pay ₹25/person); entry permit ₹20; guide ₹100–200",
+        "price_inr_foreigner": "Full boat hire ≈₹3000/day (same structure as Indians); entry permit ₹100 (vs ₹20 Indians); guide likely ₹200+; camera ₹50",
+        "notes": "Only transport is motorboat (no jeep). Mangrove forest, saltwater crocodile spotting, bird watching. Crocodile breeding season closure (May–Jul) = zero access. Best sightings Nov–Feb (cool season)."
+      }
+    ],
+    "zones": [
+      {
+        "name": "Khola (Primary Entry)",
+        "best_for": "main access point; Dangmal core zone; most developed facilities; direct rhino/croc/bird habitat access",
+        "premium": false,
+        "notes": "Khola Gate is primary entrance (~120 km from Cuttack); best for first-time visitors; facilities developed; boats & permits issued here"
+      },
+      {
+        "name": "Gupti (Secondary Entry)",
+        "best_for": "Habalikhati Beach access; Eco-camp base; quieter alternative to Khola",
+        "premium": false,
+        "notes": "Secondary entry point; popular for Habalikhati Beach; Eco-camps operate from here; boats available"
+      }
+    ],
+    "booking_steps": [
+      "STEP 1: Visit Khola or Gupti forest office (entry gates); alternative: book via ecotourodisha.com pre-arrival",
+      "STEP 2: Obtain entry permit (issued on-spot at forest office; bring ID proof)",
+      "STEP 3: Hire motorboat (government-approved operators at Khola/Gupti/Chandbali/Dhamara); full-day boat ~₹3000 or per-person ₹25–40",
+      "STEP 4: Hire guide (mandatory; licensed guides available; ₹100–200)",
+      "STEP 5: Arrange safari timing (manager books based on boat availability + tide windows)",
+      "STEP 6: Conduct boat safari"
+    ],
+    "pitfalls": [
+      {
+        "title": "Crocodile breeding closure (May 1–Jul 31)",
+        "detail": "Park COMPLETELY CLOSED during crocodile nesting season. Zero entry, zero boat hiring. All permits halted. Plan safaris only Aug–Apr. This is non-negotiable and strictly enforced."
+      },
+      {
+        "title": "Saltwater crocodile risk",
+        "detail": "Bhitarkanika is salt-water croc reserve (~1700 crocs); boat safaris expose you to them at water level. Stay in boat, follow guide instructions strictly. Croc attacks are rare but real."
+      },
+      {
+        "title": "Boat-dependent operations",
+        "detail": "No jeep option. Entire safari depends on boat + fuel availability + tide. Bad weather/high tide can cancel departures. Early morning departures (with rising tide) are most reliable."
+      },
+      {
+        "title": "Sparse online booking",
+        "detail": "Unlike Kaziranga/Manas, online pre-booking is NOT primary (ecotourodisha.com exists but slow/unreliable). On-the-spot booking at forest office is norm. Peak season (Nov–Feb) still books same-day but lines form early; advance booking is safest."
+      },
+      {
+        "title": "Foreigner fees spike (entry permit + guide)",
+        "detail": "Entry permit ₹20 (Indians) vs ₹100 (Foreigners); guide charges often double for foreigners. No official published foreigner rate for guide, so negotiate or use ecotourism operators (who charge commission but handle it)."
+      },
+      {
+        "title": "August–September monsoon risk",
+        "detail": "Park officially open Aug–Sep, but monsoon rains + rough water + poor visibility make safaris less reliable. Best to avoid; Oct onwards is clearer."
+      }
+    ],
+    "fees_note": "Indians: entry permit ₹20 + boat full-day ₹3000 (shared ÷ group) OR ₹25–40/person (group-dependent) + guide ₹100–200 = total ≈₹150–450/person for group, ₹3100–3200 solo. Foreigners: entry ₹100 + boat ~₹3000 (same as Indians) + guide ₹200+ (often 2× Indians) = ≈₹3300–3500/person solo or in group. Boat hire structure: <10 people pay ₹40/person, ≥10 people pay ₹25/person.",
+    "core_buffer_note": "Avoid May–Jul entirely (closure). Book Nov–Feb in advance (1–2 weeks peak season). Arrive at Khola/Gupti early morning (tide favors early departures). Hire licensed guide at forest office (mandatory, ₹100–200). Pre-book via ecotourodisha.com if uncertain (provides printed permit + boat confirmation, though slower). Bring original ID. Camera fee ₹50.",
+    "sources": [
+      {
+        "label": "Odisha Ecotourism Bhitarkanika",
+        "url": "https://www.ecotourodisha.com/destination/bhitarkanika-destination"
+      },
+      {
+        "label": "Odisha Ecotourism boat booking",
+        "url": "https://www.ecotourodisha.com/Bookboat.php"
+      },
+      {
+        "label": "Bhitarkanika Tourist Boat Service",
+        "url": "https://bhitarkanikatour.in/"
+      },
+      {
+        "label": "Bhitarkanika boat service details",
+        "url": "https://bhitarkanikatour.in/boat-service/"
+      },
+      {
+        "label": "Best time to visit Bhitarkanika",
+        "url": "https://jungleavengers.com/best-time-to-visit-bhitarkanika/"
+      },
+      {
+        "label": "Odisha Tourism Bhitarkanika Nature Camps",
+        "url": "https://odishatourism.gov.in/content/tourism/en/discover/attractions/forest-wildlife/bhitarkanika-nature-camps.html"
+      }
+    ],
+    "translations": {},
+    "last_verified": "2026-06-03",
+    "published": true
+  }
+]
