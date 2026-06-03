@@ -24,8 +24,8 @@
     "23_dark_trap_soul"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-02",
-    "PdMu0": "2026-06-02",
+    "m8EAd": "2026-06-03",
+    "PdMu0": "2026-06-03",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-02",
@@ -34,7 +34,7 @@
     "m8EAd_yt_short": "2026-06-02",
     "m8EAd_evening_story": "2026-06-02"
   },
-  "last_sync": "2026-06-02T18:15:58.949306+00:00",
+  "last_sync": "2026-06-03T08:34:46.336627+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -195,11 +195,18 @@
     {
       "destination_id": "nubra-valley",
       "date": "2026-06-02"
+    },
+    {
+      "destination_id": "bhandardara",
+      "date": "2026-06-03"
+    },
+    {
+      "destination_id": "ukhrul",
+      "date": "2026-06-03"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "data_carousel",
       "score_card",
       "collection_spotlight",
@@ -219,10 +226,10 @@
       "score_card",
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
-      "v2_local_knows"
+      "v2_local_knows",
+      "v2_weekend_escape_map"
     ],
     "PdMu0": [
-      "score_card",
       "infrastructure_truth",
       "reality_check",
       "collection_spotlight",
@@ -242,7 +249,8 @@
       "score_card",
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
-      "v2_local_knows"
+      "v2_local_knows",
+      "v2_weekend_escape_map"
     ]
   },
   "post_log": [
@@ -1927,17 +1935,6 @@
       "media_id": "v2_local_knows-pangong-lake.png"
     },
     {
-      "timestamp": "2026-06-02T18:17:03.175873+00:00",
-      "date": "2026-06-02",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "lcVWK",
-      "destination": "kasol",
-      "format": "collection_spotlight",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-06-02T18:17:33.040175+00:00",
       "date": "2026-06-02",
       "platform": "facebook",
@@ -1947,6 +1944,28 @@
       "format": "v2_local_knows",
       "has_media": true,
       "media_id": "v2_local_knows-nubra-valley.png"
+    },
+    {
+      "timestamp": "2026-06-03T08:36:03.772833+00:00",
+      "date": "2026-06-03",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "vkLmg",
+      "destination": "bhandardara",
+      "format": "v2_weekend_escape_map",
+      "has_media": true,
+      "media_id": "bhandardara.mp4"
+    },
+    {
+      "timestamp": "2026-06-03T08:36:23.922504+00:00",
+      "date": "2026-06-03",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "MIjGC",
+      "destination": "ukhrul",
+      "format": "v2_weekend_escape_map",
+      "has_media": true,
+      "media_id": "ukhrul.mp4"
     }
   ],
   "theme_usage": {
@@ -1989,7 +2008,8 @@
         "2026-05-20"
       ],
       "bhandardara": [
-        "2026-05-20"
+        "2026-05-20",
+        "2026-06-03"
       ],
       "sissu": [
         "2026-05-21",
@@ -2066,7 +2086,8 @@
       ],
       "leh": [
         "2026-05-25",
-        "2026-05-27"
+        "2026-05-27",
+        "2026-06-03"
       ],
       "gopeshwar": [
         "2026-05-26",
@@ -2123,6 +2144,9 @@
       ],
       "pangong-lake": [
         "2026-06-02"
+      ],
+      "ukhrul": [
+        "2026-06-03"
       ]
     },
     "morning_formats": {
@@ -2218,6 +2242,9 @@
       ],
       "v2_local_knows": [
         "2026-06-02"
+      ],
+      "v2_weekend_escape_map": [
+        "2026-06-03"
       ]
     },
     "reels": {
@@ -2334,6 +2361,9 @@
       ],
       "budget-under-1000": [
         "2026-06-02"
+      ],
+      "best-motorcycle-routes": [
+        "2026-06-03"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -2416,7 +2446,11 @@
         "2026-05-26"
       ]
     },
-    "collection_carousel_dests:budget-under-1000": {}
+    "collection_carousel_dests:best-motorcycle-routes": {
+      "leh": [
+        "2026-06-03"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -2430,8 +2464,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "pangong-lake",
-    "collection": "budget-under-1000"
+    "shared_best": "ukhrul",
+    "collection": "best-motorcycle-routes"
   },
   "manual_skip_dests": {}
 }

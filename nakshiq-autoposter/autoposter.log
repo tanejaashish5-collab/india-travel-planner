@@ -1660,3 +1660,63 @@ Date range: 2026-04-15 → 2026-06-01
 2026-06-02 21:27:36  INFO      
 Date range: 2026-04-15 → 2026-06-02
 2026-06-02 21:27:36  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 08:34:09  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 08:34:09  INFO      Nakshiq Autoposter · MORNING · 2026-06-03 · weekday=2
+2026-06-03 08:34:09  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 08:34:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-03 08:34:46  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-03 08:34:46  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-03 08:34:47  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-03 08:34:49  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-03 08:35:03  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-03 08:35:03  INFO      Morning format (themed-week-1→verdict): v2_weekend_escape_map [46% vs target 50%] (0/14 never featured)
+2026-06-03 08:35:03  INFO      Formats — IG: v2_weekend_escape_map  ·  FB: v2_weekend_escape_map  ·  Story: collection_spotlight
+2026-06-03 08:35:03  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 39
+2026-06-03 08:35:03  INFO      Fingerprint dedup snapshot — 53 dests in 7d · 73 (dest,fmt) pairs in 30d · 75 media in 60d
+2026-06-03 08:35:03  INFO      Collection locked: Best Motorcycle Routes in India (10/20 never featured)
+2026-06-03 08:35:07  INFO      Shared best destination locked: Ukhrul
+2026-06-03 08:35:07  INFO      Carousel locked (collection_spotlight): leh
+2026-06-03 08:35:07  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-03 08:35:07  INFO      [instagram/nakshiq] Generating v2_weekend_escape_map post...
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:35:07  INFO      [instagram/nakshiq] Caption ready (537 chars, dest=bhandardara)
+2026-06-03 08:35:08  INFO      [instagram/nakshiq] CSV video format (v2_weekend_escape_map) — using dest Ken Burns clip as fallback
+2026-06-03 08:35:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhandardara.mp4?v=20260524
+2026-06-03 08:35:10  INFO          Brand-stamp applied: bhandardara.mp4 (3,086,211 → 1,651,453 bytes)
+2026-06-03 08:35:10  INFO          Requesting upload URL for bhandardara.mp4 (1,651,453 bytes, video/mp4)
+2026-06-03 08:35:11  INFO          Uploading to R2 (timeout=300s)...
+2026-06-03 08:35:12  INFO          R2 PUT OK. Confirming...
+2026-06-03 08:35:13  INFO          Media ready: TdPo1 (1,651,453 bytes · bhandardara.mp4)
+2026-06-03 08:35:13  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-03 08:36:03  INFO      [instagram/nakshiq] ✅ Published · Outstand=vkLmg · Platform=17976980121040357
+2026-06-03 08:36:03  INFO      [facebook/Nakshiq] Generating v2_weekend_escape_map post...
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-03 08:36:03  WARNING   v2_weekend_escape_map: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-03 08:36:03  INFO      [facebook/Nakshiq] Caption ready (372 chars, dest=ukhrul)
+2026-06-03 08:36:04  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-06-03 08:36:04  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/ukhrul.mp4?v=20260524
+2026-06-03 08:36:06  INFO          Brand-stamp applied: ukhrul.mp4 (7,426,058 → 3,583,158 bytes)
+2026-06-03 08:36:06  INFO          Requesting upload URL for ukhrul.mp4 (3,583,158 bytes, video/mp4)
+2026-06-03 08:36:07  INFO          Uploading to R2 (timeout=300s)...
+2026-06-03 08:36:08  INFO          R2 PUT OK. Confirming...
+2026-06-03 08:36:09  INFO          Media ready: SboKJ (3,583,158 bytes · ukhrul.mp4)
+2026-06-03 08:36:09  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-03 08:36:23  INFO      [facebook/Nakshiq] ✅ Published · Outstand=MIjGC · Platform=962265556608886
+2026-06-03 08:36:23  INFO      State saved. Run complete.
+2026-06-03 08:36:23  INFO      ════════════════════════════════════════════════════════════
