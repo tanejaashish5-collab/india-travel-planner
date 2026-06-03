@@ -104,6 +104,7 @@ import { CinematicHiddenGems } from "./cinematic-hidden-gems";
 import { CinematicRelatedRail } from "./cinematic-related-rail";
 import { HonestScarcityPanel } from "./honest-scarcity-panel";
 import { isHonestScarcityConfirmed } from "@/lib/honest-scarcity";
+import { hasSafariGuide } from "@/lib/safari-guide";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale() as Locale;
@@ -1613,6 +1614,56 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 &rarr;
               </span>
             </a>
+
+            {/* Inbound link to the safari-booking guide (/safari/[slug]) — only
+                for the ~20 tiger reserves / national parks that carry a published
+                park_safaris row. Feeds hub authority to the safari surface. */}
+            {hasSafariGuide(dest.id) && (
+              <a
+                href={`/${locale}/safari/${dest.id}`}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 16,
+                  marginTop: 16,
+                  padding: "20px 24px",
+                  border: "1px solid var(--hair)",
+                  background: "rgba(245, 241, 232, 0.02)",
+                  textDecoration: "none",
+                }}
+              >
+                <span>
+                  <span
+                    style={{
+                      display: "block",
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontSize: 22,
+                      color: "var(--bone)",
+                    }}
+                  >
+                    {locale === "hi" ? `${displayName} सफ़ारी कैसे बुक करें` : `Book a ${displayName} safari`}
+                  </span>
+                  <span
+                    style={{
+                      display: "block",
+                      marginTop: 6,
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      color: "var(--bone-dim)",
+                    }}
+                  >
+                    {locale === "hi"
+                      ? "परमिट, ज़ोन, जीप शुल्क और बुकिंग की दिक्कतें — स्रोत-सहित।"
+                      : "Permits, zones, jeep fees & the real booking pitfalls — source-cited."}
+                  </span>
+                </span>
+                <span aria-hidden style={{ color: "var(--vermillion)", fontSize: 20 }}>
+                  &rarr;
+                </span>
+              </a>
+            )}
 
             {/* Cost grid — three tiers (budget / midrange / luxury), each a
                 line-item breakdown of the daily spend. Note rendered above
