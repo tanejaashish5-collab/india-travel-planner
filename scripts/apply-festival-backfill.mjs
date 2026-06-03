@@ -26,17 +26,40 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 config({ path: path.join(ROOT, "apps", "web", ".env.local") });
 
 const args = process.argv.slice(2);
-const fi = args.indexOf("--file");
-if (fi === -1 || !args[fi + 1]) {
-  console.error("Usage: node scripts/apply-festival-backfill.mjs --file <path> [--commit]");
-  process.exit(1);
-}
-const FILE = path.resolve(args[fi + 1]);
 const DRY_RUN = !args.includes("--commit");
 const COLS = ["destination_id", "name", "month", "approximate_date", "description", "significance"];
 
-const entries = JSON.parse(readFileSync(FILE, "utf-8"));
-if (!Array.isArray(entries)) throw new Error("festival file must be a JSON array");
+// Accept multiple input files: any positional .json arg, plus --file <path>.
+// (Shell-glob a drop folder, e.g. `data/research/backfill/festival/*.json`.)
+const files = [];
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === "--file" && args[i + 1]) { files.push(args[++i]); }
+  else if (args[i].endsWith(".json")) files.push(args[i]);
+}
+if (!files.length) {
+  console.error("Usage: node scripts/apply-festival-backfill.mjs <file.json> [more.json ...] [--commit]");
+  process.exit(1);
+}
+
+// Merge all files, dedupe by destination_id + normalized name (festivals have no
+// natural key, so two batches naming the same festival would otherwise double-insert).
+let raw = [];
+for (const f of files) {
+  const arr = JSON.parse(readFileSync(path.resolve(f), "utf-8"));
+  if (!Array.isArray(arr)) throw new Error(`${f}: not a JSON array`);
+  raw = raw.concat(arr);
+}
+const norm = (s) => String(s ?? "").trim().toLowerCase().replace(/\s+/g, " ");
+const seen = new Set();
+const entries = [];
+let dupes = 0;
+for (const e of raw) {
+  const key = `${e?.destination_id}|${norm(e?.name)}`;
+  if (seen.has(key)) { dupes++; continue; }
+  seen.add(key);
+  entries.push(e);
+}
+console.log(`Merged ${files.length} file(s): ${raw.length} raw → ${entries.length} unique · dropped ${dupes} dupes`);
 
 const errs = [];
 for (const [i, e] of entries.entries()) {
@@ -44,7 +67,6 @@ for (const [i, e] of entries.entries()) {
   if (e.month != null && (!Number.isInteger(e.month) || e.month < 1 || e.month > 12)) errs.push(`[${i}] ${e.destination_id}: month must be int 1-12`);
 }
 const byDest = entries.reduce((a, e) => ((a[e?.destination_id] = (a[e?.destination_id] ?? 0) + 1), a), {});
-console.log(`File: ${FILE}`);
 console.log(`Festivals: ${entries.length} across ${Object.keys(byDest).length} dests · errors: ${errs.length}`);
 if (errs.length) { for (const x of errs.slice(0, 25)) console.error(`  ✗ ${x}`); process.exit(1); }
 
