@@ -28,6 +28,10 @@ const args = process.argv.slice(2);
 const SAMPLE = args.includes("--sample");
 const DEST_FILTER = (() => { const i = args.indexOf("--dest"); return i >= 0 ? args[i + 1] : null; })();
 const WIPE = args.includes("--wipe");
+// --missing: seed only destinations that have NO destination_costs rows yet.
+// Backfills coverage gaps (new dests added after the last full seed) without
+// duplicating the catalog — the table is insert-only, not upsert.
+const MISSING_ONLY = args.includes("--missing");
 
 // ─── Base rates (2026 INR, observed realistic) ───────────────────────
 // These are the mid-point values for a typical mid-range traveler in
@@ -107,10 +111,16 @@ function difficultyMult(d) {
 }
 
 function budgetTierMult(t) {
+  // Legacy numeric schema (1-4).
   if (t === 1) return 0.75;
   if (t === 2) return 1.00;
   if (t === 3) return 1.25;
   if (t === 4) return 1.60;
+  // Current string-enum schema (budget | mid-range | splurge | mixed).
+  if (t === "budget") return 0.85;
+  if (t === "mid-range") return 1.00;
+  if (t === "splurge") return 1.25;
+  if (t === "mixed") return 1.00;
   return 1.00;
 }
 
@@ -324,6 +334,26 @@ let dests;
 }
 console.log(`Fetched ${dests.length} destinations\n`);
 
+if (MISSING_ONLY) {
+  // Filter to destinations with zero existing destination_costs rows.
+  const existing = new Set();
+  const pageSize = 1000;
+  let from = 0;
+  while (true) {
+    const { data, error } = await supabase
+      .from("destination_costs")
+      .select("destination_id")
+      .range(from, from + pageSize - 1);
+    if (error) throw error;
+    for (const r of data ?? []) existing.add(r.destination_id);
+    if (!data || data.length < pageSize) break;
+    from += pageSize;
+  }
+  const before = dests.length;
+  dests = dests.filter((d) => !existing.has(d.id));
+  console.log(`--missing: ${before - dests.length} already covered · ${dests.length} to backfill\n`);
+}
+
 // Category + season coverage strategy:
 // - Every dest: homestay, hotel-mid, food-per-day, transport-taxi-day,
 //   activity-sample, permit-fees (if applicable)
@@ -389,7 +419,12 @@ function needsPermit(dest) {
 
 const rows = [];
 for (const dest of dests) {
-  const includePremium = (dest.budget_tier ?? 2) >= 2;
+  // Premium categories (hostel-dorm, hotel-splurge, transport-intercity) ship
+  // for every destination: the whole catalog carries them (491/491) and the
+  // cost calculator's budget (dorm) and luxury (splurge) tiers depend on them.
+  // The old numeric `(budget_tier ?? 2) >= 2` gate silently dropped them once
+  // budget_tier became a string enum.
+  const includePremium = true;
   const includePermit = needsPermit(dest);
   const categories = [
     ...CORE_CATEGORIES,
@@ -408,6 +443,16 @@ if (SAMPLE) {
     console.log(`  ${r.destination_id.padEnd(20)} ${r.category.padEnd(22)} ${r.season.padEnd(8)} ${String(r.typical_inr).padStart(6)} INR  (${r.range_low_inr}-${r.range_high_inr}) ${r.unit}`);
   }
   process.exit(0);
+}
+
+// Guard: the table is insert-only (no upsert), so a bare full run on a
+// populated table would duplicate every row. Require an explicit mode.
+if (!WIPE && !MISSING_ONLY && !DEST_FILTER) {
+  console.error(
+    "Refusing a full insert — destination_costs is insert-only and this would duplicate existing rows.\n" +
+    "Use one of: --missing (backfill gaps · safe), --dest <slug> (one dest), or --wipe (reseed all).",
+  );
+  process.exit(1);
 }
 
 if (WIPE) {

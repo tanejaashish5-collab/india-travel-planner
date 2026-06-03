@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? "NakshIQ यात्रा लागत सूचकांक 2026"
       : "NakshIQ India Travel Cost Index 2026",
     description: isHindi
-      ? "भारत के 491 स्थलों के लिए मौसम-अनुसार होमस्टे, होटल, भोजन, टैक्सी और परमिट की लागत। हर आंकड़ा स्रोत-संदर्भ के साथ।"
-      : "Season-tagged, source-cited travel costs for 491 Indian destinations across homestay, hotel, food, taxi, permit, and activity categories. The open, citation-ready cost reference that generic blog posts don't give you.",
+      ? "भारत के 525 स्थलों के लिए मौसम-अनुसार होमस्टे, होटल, भोजन, टैक्सी और परमिट की लागत। हर आंकड़ा स्रोत-संदर्भ के साथ।"
+      : "Season-tagged, source-cited travel costs for 525 Indian destinations across homestay, hotel, food, taxi, permit, and activity categories. The open, citation-ready cost reference that generic blog posts don't give you.",
     ...localeAlternates(locale, "/cost-index"),
   };
 }

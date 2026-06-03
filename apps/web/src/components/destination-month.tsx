@@ -853,6 +853,24 @@ export function DestinationMonth({
               destinationId={destination.id}
             />
           </section>
+          <section id="section-cost" className="scroll-mt-28">
+            <Link
+              href={`/${locale}/cost/${destination.id}`}
+              className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-muted/30 p-5 transition-colors hover:border-foreground/40 hover:bg-muted/50 sm:p-6"
+            >
+              <span>
+                <span className="text-base font-bold sm:text-lg">
+                  {locale === "hi" ? `${destination.name} की यात्रा का खर्च` : `What ${destination.name} costs`}
+                </span>
+                <span className="mt-1 block text-xs text-muted-foreground sm:text-sm">
+                  {locale === "hi"
+                    ? `${monthName} के लिए दिन, यात्री और शैली के हिसाब से बजट — मौसम-अनुसार अनुमान।`
+                    : `Budget for ${monthName} by days, travellers and style — a season-adjusted estimate.`}
+                </span>
+              </span>
+              <span aria-hidden className="shrink-0 text-muted-foreground">&rarr;</span>
+            </Link>
+          </section>
           <section id="section-guide" className="scroll-mt-28">
             <FullGuideLink />
           </section>

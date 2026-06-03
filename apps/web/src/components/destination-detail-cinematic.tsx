@@ -1565,6 +1565,55 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <SectionLabel num="VII" name="THE COST · THE CROWDS · THE GROUND" />
 
+            {/* Inbound link to the full per-trip cost calculator (/cost/[slug]).
+                Always rendered — every destination carries cost data — so this
+                feeds SEO authority from the hub to the cost surface regardless
+                of whether the inline daily_cost grid below exists. */}
+            <a
+              href={`/${locale}/cost/${dest.id}`}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 16,
+                marginTop: 40,
+                padding: "20px 24px",
+                border: "1px solid var(--hair)",
+                background: "rgba(245, 241, 232, 0.02)",
+                textDecoration: "none",
+              }}
+            >
+              <span>
+                <span
+                  style={{
+                    display: "block",
+                    fontFamily: "var(--cinema-display)",
+                    fontStyle: "italic",
+                    fontSize: 22,
+                    color: "var(--bone)",
+                  }}
+                >
+                  {locale === "hi" ? `${displayName} की यात्रा का खर्च जोड़ें` : `Plan your ${displayName} budget`}
+                </span>
+                <span
+                  style={{
+                    display: "block",
+                    marginTop: 6,
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 13,
+                    color: "var(--bone-dim)",
+                  }}
+                >
+                  {locale === "hi"
+                    ? "दिन, यात्री, महीना और शैली के हिसाब से — मौसम-अनुसार अनुमान।"
+                    : "Trip cost by days, travellers, month & style — a season-adjusted estimate."}
+                </span>
+              </span>
+              <span aria-hidden style={{ color: "var(--vermillion)", fontSize: 20 }}>
+                &rarr;
+              </span>
+            </a>
+
             {/* Cost grid — three tiers (budget / midrange / luxury), each a
                 line-item breakdown of the daily spend. Note rendered above
                 as a caption; non-tier keys (e.g. `note`) skipped from the

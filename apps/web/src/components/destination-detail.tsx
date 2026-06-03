@@ -951,6 +951,26 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   );
                 })()}
 
+                {/* Full per-trip cost calculator — inbound link to /cost/[slug]
+                    (days × travellers × month × style, season-adjusted). Feeds
+                    SEO authority from the dest hub to the cost surface. */}
+                <a
+                  href={`/${locale}/cost/${dest.id}`}
+                  className="flex items-center justify-between gap-3 rounded-xl border border-border bg-muted/20 px-4 py-3 transition-colors hover:border-foreground/40 hover:bg-muted/40"
+                >
+                  <span>
+                    <span className="text-sm font-semibold">
+                      {locale === "hi" ? `${dest.name} की यात्रा का खर्च जोड़ें` : `Plan your ${dest.name} budget`}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-muted-foreground">
+                      {locale === "hi"
+                        ? "दिन, यात्री, महीना और शैली के हिसाब से — मौसम-अनुसार।"
+                        : "Trip cost by days, travellers, month & style — season-adjusted."}
+                    </span>
+                  </span>
+                  <span aria-hidden className="shrink-0 text-muted-foreground">&rarr;</span>
+                </a>
+
                 {/* Crowd Calendar — handles both rich shape (peak_months /
                     quiet_months int[]) and thin shape ({peak, off, shoulder}
                     string month ranges like "Oct-Feb"). Falls back to a
