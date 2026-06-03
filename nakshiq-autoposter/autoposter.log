@@ -1777,3 +1777,45 @@ Date range: 2026-04-15 → 2026-06-02
 2026-06-03 16:12:22  INFO      YT Short posted: format=did_you_know, music=v2_amapiano_deep
 2026-06-03 16:12:22  INFO      State saved. YT Short run complete.
 2026-06-03 16:12:22  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 18:37:15  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 18:37:15  INFO      Nakshiq Autoposter · EVENING · 2026-06-03 · weekday=2
+2026-06-03 18:37:15  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 18:37:15  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-03 18:37:49  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-03 18:37:49  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-03 18:37:50  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-03 18:37:50  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-03 18:38:01  INFO      [evening] variety pick: v2_texture_macro (33 CSV + 3 visual candidates)
+2026-06-03 18:38:01  INFO      Formats — IG: v2_texture_macro  ·  FB: v2_texture_macro  ·  Story: blog_promo
+2026-06-03 18:38:01  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 43
+2026-06-03 18:38:01  INFO      Fingerprint dedup snapshot — 56 dests in 7d · 77 (dest,fmt) pairs in 30d · 78 media in 60d
+2026-06-03 18:38:04  INFO      Shared best destination locked: Keylong
+2026-06-03 18:38:04  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-03 18:38:04  INFO      [instagram/nakshiq] Generating v2_texture_macro post...
+2026-06-03 18:38:04  INFO      [instagram/nakshiq] Caption ready (688 chars, dest=tawang)
+2026-06-03 18:38:06  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_texture_macro → uploading...
+2026-06-03 18:38:06  INFO          Requesting upload URL for v2_texture_macro-tawang.png (1,509,280 bytes, image/png)
+2026-06-03 18:38:07  INFO          Uploading to R2 (timeout=120s)...
+2026-06-03 18:38:08  INFO          R2 PUT OK. Confirming...
+2026-06-03 18:38:10  INFO          Media ready: L0ttV (1,509,280 bytes · v2_texture_macro-tawang.png)
+2026-06-03 18:38:10  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-03 18:38:32  INFO      [instagram/nakshiq] ✅ Published · Outstand=4HWEi · Platform=17908026093242485
+2026-06-03 18:38:32  INFO      [instagram/nakshiq] Uploading Story image (keylong.jpg)...
+2026-06-03 18:38:32  INFO          Using branded image: keylong_story_info-card_badge.jpg (363,350 bytes)
+2026-06-03 18:38:32  INFO          Requesting upload URL for keylong.jpg (363,350 bytes, image/jpeg)
+2026-06-03 18:38:34  INFO          Uploading to R2 (timeout=120s)...
+2026-06-03 18:38:35  INFO          R2 PUT OK. Confirming...
+2026-06-03 18:38:37  INFO          Media ready: oz0mc (363,350 bytes · keylong.jpg)
+2026-06-03 18:38:37  INFO      [instagram/nakshiq] Publishing Story · format=blog_promo · dest=keylong
+2026-06-03 18:38:59  INFO      [instagram/nakshiq] ✅ Story live · ID=17932218711292896
+2026-06-03 18:38:59  INFO      [facebook/Nakshiq] Generating v2_texture_macro post...
+2026-06-03 18:38:59  INFO      [facebook/Nakshiq] Caption ready (486 chars, dest=shimla)
+2026-06-03 18:39:01  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_texture_macro → uploading...
+2026-06-03 18:39:01  INFO          Requesting upload URL for v2_texture_macro-shimla.png (1,621,796 bytes, image/png)
+2026-06-03 18:39:02  INFO          Uploading to R2 (timeout=120s)...
+2026-06-03 18:39:03  INFO          R2 PUT OK. Confirming...
+2026-06-03 18:39:05  INFO          Media ready: pg84M (1,621,796 bytes · v2_texture_macro-shimla.png)
+2026-06-03 18:39:05  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-03 18:39:20  INFO      [facebook/Nakshiq] ✅ Published · Outstand=1ghUG · Platform=1040562729145369_122110827146700092
+2026-06-03 18:39:20  INFO      State saved. Run complete.
+2026-06-03 18:39:20  INFO      ════════════════════════════════════════════════════════════

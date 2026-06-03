@@ -34,13 +34,13 @@
     "PdMu0": "2026-06-03",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-06-02",
-    "PdMu0_evening": "2026-06-02",
+    "m8EAd_evening": "2026-06-03",
+    "PdMu0_evening": "2026-06-03",
     "GAh5p_yt_short": "2026-06-03",
     "m8EAd_yt_short": "2026-06-03",
-    "m8EAd_evening_story": "2026-06-02"
+    "m8EAd_evening_story": "2026-06-03"
   },
-  "last_sync": "2026-06-03T08:34:46.336627+00:00",
+  "last_sync": "2026-06-03T18:37:49.211364+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -217,11 +217,18 @@
     {
       "destination_id": "bangus-valley",
       "date": "2026-06-03"
+    },
+    {
+      "destination_id": "tawang",
+      "date": "2026-06-03"
+    },
+    {
+      "destination_id": "shimla",
+      "date": "2026-06-03"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "data_carousel",
       "score_card",
       "collection_spotlight",
       "festival_alert",
@@ -241,10 +248,10 @@
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
       "v2_local_knows",
-      "v2_weekend_escape_map"
+      "v2_weekend_escape_map",
+      "v2_texture_macro"
     ],
     "PdMu0": [
-      "infrastructure_truth",
       "reality_check",
       "collection_spotlight",
       "festival_alert",
@@ -264,7 +271,8 @@
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
       "v2_local_knows",
-      "v2_weekend_escape_map"
+      "v2_weekend_escape_map",
+      "v2_texture_macro"
     ]
   },
   "post_log": [
@@ -2016,6 +2024,39 @@
       "destination": "bangus-valley",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-06-03.mp4"
+    },
+    {
+      "timestamp": "2026-06-03T18:38:32.894962+00:00",
+      "date": "2026-06-03",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "4HWEi",
+      "destination": "tawang",
+      "format": "v2_texture_macro",
+      "has_media": true,
+      "media_id": "v2_texture_macro-tawang.png"
+    },
+    {
+      "timestamp": "2026-06-03T18:38:59.948176+00:00",
+      "date": "2026-06-03",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "kMIIh",
+      "destination": "keylong",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-06-03T18:39:20.619030+00:00",
+      "date": "2026-06-03",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "1ghUG",
+      "destination": "shimla",
+      "format": "v2_texture_macro",
+      "has_media": true,
+      "media_id": "v2_texture_macro-shimla.png"
     }
   ],
   "theme_usage": {
@@ -2099,7 +2140,8 @@
         "2026-05-24"
       ],
       "shimla": [
-        "2026-05-24"
+        "2026-05-24",
+        "2026-06-03"
       ],
       "nainital": [
         "2026-05-25",
@@ -2196,6 +2238,12 @@
         "2026-06-02"
       ],
       "ukhrul": [
+        "2026-06-03"
+      ],
+      "tawang": [
+        "2026-06-03"
+      ],
+      "keylong": [
         "2026-06-03"
       ]
     },
@@ -2295,6 +2343,9 @@
       ],
       "v2_weekend_escape_map": [
         "2026-06-03"
+      ],
+      "v2_texture_macro": [
+        "2026-06-03"
       ]
     },
     "reels": {
@@ -2324,7 +2375,8 @@
         "2026-05-24"
       ],
       "shimla": [
-        "2026-05-24"
+        "2026-05-24",
+        "2026-06-03"
       ],
       "mumbai": [
         "2026-05-26"
@@ -2367,6 +2419,9 @@
       ],
       "nubra-valley": [
         "2026-06-02"
+      ],
+      "tawang": [
+        "2026-06-03"
       ]
     },
     "audience_tags": {
@@ -2514,7 +2569,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "ukhrul",
+    "shared_best": "keylong",
     "collection": "best-motorcycle-routes"
   },
   "manual_skip_dests": {}
