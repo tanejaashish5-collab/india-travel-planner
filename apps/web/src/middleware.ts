@@ -281,6 +281,27 @@ export default function middleware(request: NextRequest) {
     }
   }
 
+  // Hindi-duplicate consolidation 2026-06-03 — these /hi page types render
+  // ENGLISH content (no Hindi translation), so Google was correctly folding
+  // them into their /en twins. The GSC coverage export flagged ~150 of them
+  // under "Duplicate, Google chose different canonical than user" while we kept
+  // declaring /hi self-canonical — a conflicting signal. Resolve it: noindex
+  // the English /hi duplicates so /en is the single indexed version; `follow`
+  // keeps link equity flowing through. Pages stay reachable for users.
+  // Each prefix was verified to serve English on /hi (title + H1) before
+  // inclusion. Translated /hi types are DELIBERATELY excluded: `vs` (dest-vs-
+  // dest, Hindi) and `destination/*` (Hindi). festivals is scoped to the
+  // /state listing pages only; individual /festivals/[slug] pages are left
+  // alone in case they carry Hindi editorial.
+  if (
+    response.status === 200 &&
+    /^\/hi\/(?:where-to-go|state|with-kids|india-vs|the-window|guide|arrival|skip-list|blog|festivals\/state)(?:\/|$)/.test(
+      request.nextUrl.pathname,
+    )
+  ) {
+    response.headers.set("X-Robots-Tag", "noindex, follow");
+  }
+
   return response;
 }
 
