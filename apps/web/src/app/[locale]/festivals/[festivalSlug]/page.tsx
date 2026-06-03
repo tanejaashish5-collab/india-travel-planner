@@ -13,6 +13,9 @@ import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
 import { singleFestivalEventJsonLd, type FestivalRow } from "@/lib/festival-schema";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
+import { festivalHeroSrc } from "@/lib/festival-heroes";
+import { destinationImage } from "@/lib/image-url";
+import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
 
 // Per-festival detail page. 331 festivals × 2 locales ≈ 662 indexed URLs.
@@ -279,6 +282,25 @@ export default async function FestivalDetailPage({
   const enriched = await loadEnriched(f.id, f.destination_id, f.month);
   const dest = enriched.destination;
 
+  // Festival B-roll hero clip (location footage of the host destination at
+  // this time of year), if one was uploaded to R2 for this slug. Empty string
+  // when none exists → the static destination image is used instead.
+  const heroVideo = festivalHeroSrc(festivalSlug);
+
+  // VideoObject schema only when a clip exists. Description stays honest: the
+  // clips are location B-roll of the host destination at festival time, not
+  // footage of the festival/ritual itself (the prompt guardrail forbids that).
+  const festivalVideoLd =
+    heroVideo && f.destination_id
+      ? videoObjectJsonLd({
+          id: festivalSlug,
+          name: `${f.name} — ${destName ?? "India"} B-roll`,
+          description: `Location footage of ${destName ?? f.destination_id} around ${dateLabel}, when ${f.name} is celebrated.`,
+          thumbnailUrl: destinationImage(f.destination_id, 1600),
+          embedUrl: pageUrl,
+        })
+      : null;
+
   // Slug map (for related-festival links)
   const allSlugs = await loadAllSlugs();
   const slugMap = buildFestivalSlugMap(allSlugs);
@@ -305,6 +327,12 @@ export default async function FestivalDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+      {festivalVideoLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(festivalVideoLd) }}
+        />
+      )}
       <Nav />
 
       {/* Destination hero image */}
@@ -319,14 +347,39 @@ export default async function FestivalDetailPage({
             marginTop: 88,
           }}
         >
-          <Image
-            src={`/images/destinations/${f.destination_id}.jpg`}
-            alt={`${destName ?? f.destination_id} — host of ${f.name}`}
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: "cover", filter: "saturate(0.88) brightness(0.72)" }}
-          />
+          {heroVideo ? (
+            // LCP-safe: poster is an R2 webp that paints immediately; the
+            // clip preloads metadata-only and autoplays muted over it. If the
+            // video fails the poster frame stays — no broken-media state.
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+              poster={destinationImage(f.destination_id, 1600)}
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "saturate(0.88) brightness(0.72)",
+              }}
+            >
+              <source src={heroVideo} type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src={`/images/destinations/${f.destination_id}.jpg`}
+              alt={`${destName ?? f.destination_id} — host of ${f.name}`}
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectFit: "cover", filter: "saturate(0.88) brightness(0.72)" }}
+            />
+          )}
           <div
             style={{
               position: "absolute",
