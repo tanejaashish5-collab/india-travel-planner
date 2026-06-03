@@ -1,6 +1,7 @@
 {
   "yt_short_formats_used": [
-    "this_vs_that"
+    "this_vs_that",
+    "before_after"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -21,17 +22,18 @@
     "29_night_trap",
     "30_rajasthan_groove",
     "13_monsoon_pulse",
-    "23_dark_trap_soul"
+    "23_dark_trap_soul",
+    "px_indian_hits"
   ],
   "posted_today": {
     "m8EAd": "2026-06-03",
     "PdMu0": "2026-06-03",
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-02",
     "PdMu0_evening": "2026-06-02",
-    "GAh5p_yt_short": "2026-06-02",
-    "m8EAd_yt_short": "2026-06-02",
+    "GAh5p_yt_short": "2026-06-03",
+    "m8EAd_yt_short": "2026-06-03",
     "m8EAd_evening_story": "2026-06-02"
   },
   "last_sync": "2026-06-03T08:34:46.336627+00:00",
@@ -202,6 +204,10 @@
     },
     {
       "destination_id": "ukhrul",
+      "date": "2026-06-03"
+    },
+    {
+      "destination_id": "sonamarg",
       "date": "2026-06-03"
     }
   ],
@@ -1966,6 +1972,24 @@
       "format": "v2_weekend_escape_map",
       "has_media": true,
       "media_id": "ukhrul.mp4"
+    },
+    {
+      "timestamp": "2026-06-03T09:09:43.078079+00:00",
+      "date": "2026-06-03",
+      "platform": "youtube",
+      "post_id": "yaWYj",
+      "destination": "sonamarg",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-06-03.mp4"
+    },
+    {
+      "timestamp": "2026-06-03T09:10:20.266046+00:00",
+      "date": "2026-06-03",
+      "platform": "instagram",
+      "post_id": "ghNKx",
+      "destination": "sonamarg",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-06-03.mp4"
     }
   ],
   "theme_usage": {

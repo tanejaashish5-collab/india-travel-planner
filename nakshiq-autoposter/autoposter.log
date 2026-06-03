@@ -1720,3 +1720,25 @@ Date range: 2026-04-15 → 2026-06-02
 2026-06-03 08:36:23  INFO      [facebook/Nakshiq] ✅ Published · Outstand=MIjGC · Platform=962265556608886
 2026-06-03 08:36:23  INFO      State saved. Run complete.
 2026-06-03 08:36:23  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 09:08:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 09:08:00  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-03
+2026-06-03 09:08:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-03 09:08:00  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-03 09:08:00  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-03 09:09:24  INFO      Short rendered: yt_short_before_after_2026-06-03.mp4 (15897 KB, 31.0s, fmt=before_after, music=px_indian_hits)
+2026-06-03 09:09:24  INFO          Requesting upload URL for yt_short_before_after_yt_short_before_after_2026-06-03.mp4 (16,279,054 bytes, video/mp4)
+2026-06-03 09:09:25  INFO          Uploading to R2 (timeout=300s)...
+2026-06-03 09:09:26  INFO          R2 PUT OK. Confirming...
+2026-06-03 09:09:27  INFO          Media ready: A48q7 (16,279,054 bytes · yt_short_before_after_yt_short_before_after_2026-06-03.mp4)
+2026-06-03 09:09:27  INFO      Video uploaded: yt_short_before_after_yt_short_before_after_2026-06-03.mp4
+2026-06-03 09:09:27  INFO      [youtube/@naksh-iq] Publishing YT Short (before_after)...
+2026-06-03 09:09:30  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=yaWYj), waiting for platform confirmation...
+2026-06-03 09:09:43  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=yaWYj · Platform=E6lrHkVgUjw
+2026-06-03 09:09:43  INFO      [instagram/nakshiq] Publishing YT Short (before_after)...
+2026-06-03 09:09:44  INFO      [instagram/nakshiq] Outstand accepted (post_id=ghNKx), waiting for platform confirmation...
+2026-06-03 09:10:20  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=ghNKx · Platform=17883462285590655
+2026-06-03 09:10:20  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 101-102: surrogates not allowed
+2026-06-03 09:10:20  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-03 09:10:20  INFO      YT Short posted: format=before_after, music=px_indian_hits
+2026-06-03 09:10:20  INFO      State saved. YT Short run complete.
+2026-06-03 09:10:20  INFO      ════════════════════════════════════════════════════════════
