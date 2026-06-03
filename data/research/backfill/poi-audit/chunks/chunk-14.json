@@ -1,0 +1,386 @@
+[
+  {
+    "id": "cubbon-park-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "Cubbon Park",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Central 300-acre green space in Bangalore's city center. Tree-lined walking paths, fountains, and adjacent Vidhana Soudha. Pleasant 920m elevation provides year-round mild weather."
+  },
+  {
+    "id": "iskcon-temple-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "ISKCON Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Modern Krishna consciousness temple with ornate sanctum sanctorum, multi-level structure, and restaurant serving vegetarian cuisine. Active community worship and festivals year-round."
+  },
+  {
+    "id": "kr-market-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "KR Market (Krishnarajendra City Market)",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Historic spice and produce market since 1928. Chaotic, authentic bazaar selling flowers, spices, vegetables, and dry fruits. Strong sensory experience of old Bangalore commerce."
+  },
+  {
+    "id": "lalbagh-botanical-garden-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "Lalbagh Botanical Garden",
+    "type": "garden",
+    "entry_fee": "₹50-100",
+    "description": "240-year-old botanical garden with glass house modelled on London's Crystal Palace. Over 1,000 species of plants, seasonal flower shows, and lake. One of India's finest horticultural spaces."
+  },
+  {
+    "id": "tipu-sultan-palace-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "Tipu Sultan Summer Palace",
+    "type": "palace",
+    "entry_fee": "₹5",
+    "description": "18th-century Indo-Islamic palace built by Tipu Sultan in 1791. Features ornate wooden pillars, arched windows, and heritage exhibitions. Located in the old city near KR Market."
+  },
+  {
+    "id": "abbey-falls-coorg",
+    "destination_id": "coorg",
+    "name": "Abbey Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "A picturesque waterfall cascading through coffee plantations 8km from Madikeri. The surrounding landscape of pepper vines and coffee plants creates a quintessential Coorg scene. Best visited during monsoon when water flow is heavy."
+  },
+  {
+    "id": "dubare-elephant-camp-coorg",
+    "destination_id": "coorg",
+    "name": "Dubare Elephant Camp",
+    "type": "viewpoint",
+    "entry_fee": "₹150",
+    "description": "A rehabilitation centre for working elephants on the banks of the Cauvery River. Visitors can observe elephant bathing and care routines. The camp offers insights into elephant welfare and river ecology."
+  },
+  {
+    "id": "namdroling-monastery-coorg",
+    "destination_id": "coorg",
+    "name": "Namdroling Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "India's largest Tibetan settlement at Bylakuppe, 34km from Madikeri. The stunning Golden Temple houses Buddhist statues and serves as the spiritual centre for the Tibetan Buddhist community. The complex includes schools and prayer halls."
+  },
+  {
+    "id": "rajas-seat-coorg",
+    "destination_id": "coorg",
+    "name": "Raja's Seat",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A manicured garden with panoramic sunset views over the Western Ghats from Madikeri. Named for the 18th-century Kodava ruler, the garden features flower beds, fountains, and lookout points."
+  },
+  {
+    "id": "talakaveri-coorg",
+    "destination_id": "coorg",
+    "name": "Talakaveri",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The sacred origin point of the Cauvery River, located 48km from Madikeri atop the Brahmagiri range. A small spring emerges from the ground at a cave shrine. Historically significant as a pilgrimage site and geologically unique as a river source."
+  },
+  {
+    "id": "arulmigu-subramaniya-swamy-temple-tiruchendur",
+    "destination_id": "tiruchendur",
+    "name": "Arulmigu Subramaniya Swamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The only Murugan temple on India's coastline, with a 42m seven-tier gopuram on the Gulf of Mannar. Devotees circumambulate the temple, believed to be where Murugan performed a victory dance after defeating the demon Surapadma."
+  },
+  {
+    "id": "manapad-beach-tiruchendur",
+    "destination_id": "tiruchendur",
+    "name": "Manapad Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A serene coastal village 8km from Tiruchendur with Portuguese-era Christian heritage. The church ruins and peaceful fishing village offer a quieter alternative to the main temple beach."
+  },
+  {
+    "id": "mundanthurai-tiger-reserve-tiruchendur",
+    "destination_id": "tiruchendur",
+    "name": "Mundanthurai Tiger Reserve",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "A wildlife sanctuary 30km inland from Tiruchendur within the Kalakad Tiger Reserve. Home to lions-tailed macaques, great hornbills, leopards, and dusky eagles. Guided treks available; permit required."
+  },
+  {
+    "id": "panchalamkurichi-fort-tiruchendur",
+    "destination_id": "tiruchendur",
+    "name": "Panchalamkurichi Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "A 19th-century British fort ruin at Salikulam, 10km inland from Tiruchendur. Built as a military outpost, now weathered but visible against the landscape. Local guides available."
+  },
+  {
+    "id": "tiruchendur-beach-tiruchendur",
+    "destination_id": "tiruchendur",
+    "name": "Tiruchendur Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A crescent of sand along the Bay of Bengal, accessible from the main temple. Pilgrims wade in for ritual ablutions; vendors line the shore. Strong currents; swimming not recommended."
+  },
+  {
+    "id": "arjunas-penance-mahabalipuram",
+    "destination_id": "mahabalipuram",
+    "name": "Arjuna's Penance",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "World's largest bas-relief, 27m high × 90m wide. 7th–8th century Pallava carved tableau depicting Hindu mythology scenes."
+  },
+  {
+    "id": "five-rathas-mahabalipuram",
+    "destination_id": "mahabalipuram",
+    "name": "Five Rathas (Pancha Rathas)",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "Five monolithic chariots carved from single granite rock, 7th century. Named after Pandava brothers and Draupadi; UNESCO World Heritage."
+  },
+  {
+    "id": "krishnas-butterball-mahabalipuram",
+    "destination_id": "mahabalipuram",
+    "name": "Krishna's Butterball",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "6m-high, 250-ton granite boulder balancing on slope, seemingly about to roll. Local legend: Krishna's dropped butter ball."
+  },
+  {
+    "id": "shore-temple-mahabalipuram",
+    "destination_id": "mahabalipuram",
+    "name": "Shore Temple",
+    "type": "temple",
+    "entry_fee": "₹40",
+    "description": "7th-century Dravidian temple built by Pallava dynasty. One of oldest South Indian rock-cut temples; overlooks Bay of Bengal."
+  },
+  {
+    "id": "arulmigu-thiruthani-murugan-temple-tiruttani",
+    "destination_id": "tiruttani",
+    "name": "Arulmigu Thiruthani Murugan Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the six Murugan abodes, perched on a rock 700 feet above sea level. Reached by climbing 365 steps (representing the 365 days of the year). The temple houses shrines to Murugan, Valli, Devasena, and Vinayaka."
+  },
+  {
+    "id": "arumuga-swami-temple-tiruttani",
+    "destination_id": "tiruttani",
+    "name": "Arumuga Swami Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A sister temple to Veerateeswarar on the Nandi River, also over 1000 years old. Another less-visited shrine offering solitude for meditation and reflection."
+  },
+  {
+    "id": "mahendravadi-rock-cut-temple-tiruttani",
+    "destination_id": "tiruttani",
+    "name": "Mahendravadi Rock Cut Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A small rock-cut shrine carved into a natural formation outside Tiruttani town. Historically significant but less developed, it offers an authentic archaeological experience."
+  },
+  {
+    "id": "veerateeswarar-temple-tiruttani",
+    "destination_id": "tiruttani",
+    "name": "Veerateeswarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "An over-1000-year-old Shiva temple on the Nandi River's banks. Ancient stone carvings and gopurams remain intact. Less crowded than the main Murugan temple, offering quiet prayer space."
+  },
+  {
+    "id": "limestone-caves-baratang-island",
+    "destination_id": "baratang-island",
+    "name": "Limestone Caves",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "Underground formations with stalactites and stalagmites shaped over centuries. Accessed by scenic boat ride through mangrove creeks from Nilambur Jetty. 15-20 minute journey through dense tropical forest."
+  },
+  {
+    "id": "mud-volcanoes-baratang-island",
+    "destination_id": "baratang-island",
+    "name": "Mud Volcanoes",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Natural phenomena releasing mud and gases from decaying organic matter underground. Small bubbling mounds located 7km from Baratang Jetty. These are cool-water mud cones, not volcanic eruptions."
+  },
+  {
+    "id": "parrot-island-baratang-island",
+    "destination_id": "baratang-island",
+    "name": "Parrot Island",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Small uninhabited island near Baratang where thousands of parrots and parakeets roost at dusk. Best seen during sunset for this spectacle of swarming birds returning to roost."
+  },
+  {
+    "id": "five-falls-aintharuvi-courtallam",
+    "destination_id": "courtallam",
+    "name": "Five Falls (Aintharuvi)",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Waterfall with five separate cascades spreading out in different directions, located 4 km from Main Falls deep in the Western Ghats mountains."
+  },
+  {
+    "id": "honey-falls-thenaruvi-courtallam",
+    "destination_id": "courtallam",
+    "name": "Honey Falls (Thenaruvi)",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "One of 9 named waterfalls in Courtallam, Honey Falls is fed by mountain streams and offers a refreshing bathing experience among the herb-infused waters of the Western Ghats."
+  },
+  {
+    "id": "main-falls-peraruvi-courtallam",
+    "destination_id": "courtallam",
+    "name": "Main Falls (Peraruvi)",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Largest waterfall in Courtallam at 60 meters high, fed by River Chittra. Water flow interrupted by 19m deep crater makes bathing safe year-round."
+  },
+  {
+    "id": "jog-falls-trek-base",
+    "destination_id": "jog-falls",
+    "name": "Jog Falls Base Trek",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "A moderately difficult trek down 1,400 steps to the base of the falls, taking around 45 minutes. Experience mist from the falls and get close-up views of the water's power."
+  },
+  {
+    "id": "sharavathi-valley-sanctuary-jog",
+    "destination_id": "jog-falls",
+    "name": "Sharavathi Valley Wildlife Sanctuary",
+    "type": "lake",
+    "entry_fee": "Varies",
+    "description": "Located a short distance from Jog Falls, this sanctuary protects diverse flora and fauna. Offers trekking and nature walks through pristine forest habitat along the Sharavathi River."
+  },
+  {
+    "id": "jog-falls-main-viewpoint",
+    "destination_id": "jog-falls",
+    "name": "Watkins Platform Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The main viewpoint opposite the falls offering a panoramic view of the 253-meter plunge split into four cascades: Raja, Rani, Roarer, and Rocket. Best viewed in monsoon when water flow peaks."
+  },
+  {
+    "id": "dutch-cemetery-machilipatnam",
+    "destination_id": "machilipatnam",
+    "name": "Dutch Cemetery",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "17th-century burial ground preserving gravestones of Dutch traders and families from the colonial trading post (est. 1611). Weathered stone markers document the Machilipatnam's mercantile history under Dutch control."
+  },
+  {
+    "id": "machilipatnam-museum-machilipatnam",
+    "destination_id": "machilipatnam",
+    "name": "Machilipatnam Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Displays historical artifacts, sculptures, and paintings spanning the port city's trading era. Collections cover pottery, coins, textiles, and colonial-period objects from Dutch, British, and French occupation."
+  },
+  {
+    "id": "manginapudi-beach-machilipatnam",
+    "destination_id": "machilipatnam",
+    "name": "Manginapudi Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "11km stretch of sandy beach on the Bay of Bengal with year-round calm waters. Offers swimming, jet skiing, speed boating, and fishing community walks. Manginapudi Lighthouse (1611) stands nearby."
+  },
+  {
+    "id": "basilica-bom-jesus-old-goa",
+    "destination_id": "old-goa",
+    "name": "Basilica of Bom Jesus",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "UNESCO World Heritage church (1605) holding the remains of St Francis Xavier. The ornate gilded altar and baroque interiors contrast with the plain classical layout. Open 9am–5pm weekdays, 11am–5pm Sundays."
+  },
+  {
+    "id": "church-francis-assisi-old-goa",
+    "destination_id": "old-goa",
+    "name": "Church of St Francis of Assisi",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "16th-century church with an attached museum displaying Portuguese colonial artifacts, religious sculptures, and historical documents. Intricate wooden carvings and tile panels."
+  },
+  {
+    "id": "se-cathedral-old-goa",
+    "destination_id": "old-goa",
+    "name": "Sé Cathedral",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Asia's largest church, built over 90 years (1562–1652). Features a giant bell and ornate golden altar. The vaulted interiors showcase Portuguese baroque architecture and intricate tile work."
+  },
+  {
+    "id": "moharli-gate-tadoba",
+    "destination_id": "tadoba",
+    "name": "Moharli Gate",
+    "type": "viewpoint",
+    "entry_fee": "₹5000-7000 per safari",
+    "description": "The most popular and busiest entry gate to Tadoba Tiger Reserve. Safaris depart early morning (5:30am) and afternoon (2pm). Gate is within walking distance of major resorts. Online permit booking is essential during peak season."
+  },
+  {
+    "id": "navegaon-gate-tadoba",
+    "destination_id": "tadoba",
+    "name": "Navegaon Gate",
+    "type": "viewpoint",
+    "entry_fee": "₹5000-7000 per safari",
+    "description": "An alternative entry gate to Tadoba providing access to less-crowded safari routes. Suitable for visitors seeking solitude and a different wildlife viewing experience. Morning safaris offer excellent tiger and bird-watching opportunities."
+  },
+  {
+    "id": "tadoba-lake-tadoba",
+    "destination_id": "tadoba",
+    "name": "Tadoba Lake",
+    "type": "lake",
+    "entry_fee": "₹5000-7000 per safari (gypsy permit)",
+    "description": "The lifeline of Tadoba-Andhari Tiger Reserve, where most wildlife congregates. Morning and evening safaris circle the lake for tiger, leopard, and wild dog sightings. The lake's shoreline is the most productive viewing area in the reserve."
+  },
+  {
+    "id": "belum-caves-belum-caves",
+    "destination_id": "belum-caves",
+    "name": "Belum Caves",
+    "type": "monument",
+    "entry_fee": "₹80",
+    "description": "Second largest cave system in Indian subcontinent with 3,229m total length. Features stalactite and stalagmite formations. Pataalaganga chamber reaches 46m depth."
+  },
+  {
+    "id": "saptasvarala-guha-musical-chamber-belum-caves",
+    "destination_id": "belum-caves",
+    "name": "Saptasvarala Guha (Musical Chamber)",
+    "type": "monument",
+    "entry_fee": "₹80",
+    "description": "Chamber within Belum Caves where limestone stalactite formations produce musical sounds when struck with wooden stick. Notable for geological acoustics."
+  },
+  {
+    "id": "konark-archaeological-museum",
+    "destination_id": "konark",
+    "name": "Konark Archaeological Museum",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Museum adjacent to the temple displaying excavated artifacts, stone sculptures, and architectural fragments from the site. Provides context on Kalinga temple construction techniques."
+  },
+  {
+    "id": "konark-sun-temple",
+    "destination_id": "konark",
+    "name": "Konark Sun Temple",
+    "type": "monument",
+    "entry_fee": "₹35",
+    "description": "UNESCO World Heritage site (1984) exemplifying 13th-century Kalinga architecture. Features 24 elaborately carved wheels (12 feet each) that function as sundials to track time."
+  },
+  {
+    "id": "puri-golden-beach",
+    "destination_id": "puri",
+    "name": "Golden Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Miles-long sandy beach in Puri town center with calm waters and pristine shoreline. Adjacent to Jagannath Temple, popular for both swimming and spiritual reflection."
+  },
+  {
+    "id": "jagannath-temple-puri",
+    "destination_id": "puri",
+    "name": "Jagannath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of four Char Dham pilgrimage sites hosting the annual Rath Yatra festival drawing 1+ million devotees. Temple kitchen (Rosha Ghara) serves 56 sacred vegetarian dishes daily to 20,000+ visitors."
+  },
+  {
+    "id": "swaminathaswamy-temple-swamimalai",
+    "destination_id": "swamimalai",
+    "name": "Swaminathaswamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A hilltop temple dating back to the 2nd century BC where Murugan is depicted preaching the Pranava Mantra to Shiva. Houses a five-storey gopuram and three concentric enclosures."
+  }
+]

@@ -1,0 +1,386 @@
+[
+  {
+    "id": "jyotiba-temple-kolhapur",
+    "destination_id": "kolhapur",
+    "name": "Jyotiba Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple 20km from Kolhapur dedicated to Shiva. Sits on a hill with panoramic valley views. The temple has significant religious importance in the region and hosts pilgrim traffic."
+  },
+  {
+    "id": "kolhapuri-chappal-bazaar-kolhapur",
+    "destination_id": "kolhapur",
+    "name": "Kolhapuri Chappal Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Traditional leather sandal crafting marketplace in Kolhapur. Local artisans handcraft the famous Kolhapuri chappals using traditional methods. Shops sell finished sandals and custom orders."
+  },
+  {
+    "id": "mahalaxmi-temple-kolhapur",
+    "destination_id": "kolhapur",
+    "name": "Mahalaxmi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of India's 51 Shakti Peethas, the main spiritual center of Kolhapur. Pilgrims come from across India to worship the goddess Mahalaxmi. The temple hosts evening aartis. Peak crowds during Navratri festival."
+  },
+  {
+    "id": "new-palace-kolhapur",
+    "destination_id": "kolhapur",
+    "name": "New Palace Museum",
+    "type": "palace",
+    "entry_fee": "Varies",
+    "description": "Former residence of the Kolhapur Maharaja, now a museum displaying royal artifacts, furniture, weaponry, and historical collections. The Indo-Islamic architecture reflects colonial-era maharaja lifestyle."
+  },
+  {
+    "id": "panhala-fort-kolhapur",
+    "destination_id": "kolhapur",
+    "name": "Panhala Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historical Maratha fort 20km from Kolhapur, built on elevated terrain. Fortress complex with walls, bastions, and historic structures. Associated with Shivaji and Maratha military history."
+  },
+  {
+    "id": "rankala-lake-kolhapur",
+    "destination_id": "kolhapur",
+    "name": "Rankala Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Man-made lake in central Kolhapur, popular for evening walks and boating. The lake is surrounded by a garden and walking paths. Local gathering spot during cooler evening hours."
+  },
+  {
+    "id": "amruteshwar-temple-igatpuri",
+    "destination_id": "igatpuri",
+    "name": "Amruteshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A 1,200-year-old Shiva temple in Hemadpanthi architectural style located in Ratanwadi village. Features beautiful rock carvings and intricate stone work representing ancient Hindu temple design."
+  },
+  {
+    "id": "arthurs-lake-igatpuri",
+    "destination_id": "igatpuri",
+    "name": "Arthur Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "A serene mountain lake surrounded by the Sahyadri hills, offering views of nearby forts like Harishchandragad and Ratangad from the elevated shoreline. Best visited during monsoon when water levels are high."
+  },
+  {
+    "id": "kalsubai-peak-igatpuri",
+    "destination_id": "igatpuri",
+    "name": "Kalsubai Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Maharashtra's highest peak at 1,646m with a 3-hour trek from Baari village via rocky outcrops and three iron ladders on vertical slopes. Best visited September-February for clear summit views and sunrise treks."
+  },
+  {
+    "id": "randha-falls-igatpuri",
+    "destination_id": "igatpuri",
+    "name": "Randha Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "A cascading waterfall on the Rajur-Bhandardara road where the Pravara River drops in white streams from cliff edges. Most dramatic during monsoon season when water volume is highest."
+  },
+  {
+    "id": "vipassana-international-academy-igatpuri",
+    "destination_id": "igatpuri",
+    "name": "Vipassana International Academy",
+    "type": "monastery",
+    "entry_fee": "Donation-based",
+    "description": "Global meditation center offering 10-day silent vipassana retreats. The Golden Pagoda is a striking architectural landmark visible from town, representing an important Buddhist practice center."
+  },
+  {
+    "id": "amboli-waterfall-amboli",
+    "destination_id": "amboli",
+    "name": "Amboli Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Seasonal waterfall that flows during monsoon from June to September. Located in the Western Ghats with surrounding teak forests."
+  },
+  {
+    "id": "hiranyakeshi-temple-amboli",
+    "destination_id": "amboli",
+    "name": "Hiranyakeshi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple located within walking distance of Amboli. The temple is part of the Ashtavinayak circuit pilgrimage route."
+  },
+  {
+    "id": "sawantwadi-palace-amboli",
+    "destination_id": "amboli",
+    "name": "Sawantwadi Palace",
+    "type": "palace",
+    "entry_fee": "₹50",
+    "description": "Historic palace of the Sawantwadi royal family, now serving as a museum displaying traditional Malwa art and local history artifacts."
+  },
+  {
+    "id": "vasota-lake-amboli",
+    "destination_id": "amboli",
+    "name": "Vasota Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Man-made lake in the forests near Amboli, created by a dam. Popular for picnics and bird watching during monsoon."
+  },
+  {
+    "id": "bahubali-monolith-dharmasthala",
+    "destination_id": "dharmasthala",
+    "name": "Bahubali Monolith",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "A 39-foot monolith of Lord Bahubali installed on Ratnagiri Hill in 1973. The statue commemorates the Jain tirthankara and offers panoramic views of Dharmasthala town from the hilltop. Reachable by a short walk."
+  },
+  {
+    "id": "car-museum-dharmasthala",
+    "destination_id": "dharmasthala",
+    "name": "Car Museum",
+    "type": "museum",
+    "entry_fee": "₹100",
+    "description": "A unique automobile museum housing over 100 vintage and classic cars collected by Manjunatha Dharma Veerendra Heggade. The collection spans multiple decades and includes rare models, offering insight into automotive history."
+  },
+  {
+    "id": "free-annadana-dharmasthala",
+    "destination_id": "dharmasthala",
+    "name": "Free Annadana (Temple Kitchen)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The temple's famous annadana serves 30,000+ free meals daily, one of the largest free kitchens in the world. Visitors receive traditional South Indian meals including rice, sambar, dal, and buttermilk. A model of community service and pilgrimage hospitality."
+  },
+  {
+    "id": "manjunatha-temple-dharmasthala",
+    "destination_id": "dharmasthala",
+    "name": "Manjunatha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The principal Shiva temple administered by Jains, housing a Shiva linga. Unique in Indian religion for its syncretic Hindu-Jain tradition. The temple complex is spotlessly maintained and free accommodation is available for pilgrims."
+  },
+  {
+    "id": "church-immaculate-conception-panaji",
+    "destination_id": "panaji",
+    "name": "Church of Our Lady of the Immaculate Conception",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Iconic baroque church (originally 1541, rebuilt 1600s) perched on a hill above Panaji's main square. White facade with symmetrical staircase and bell tower. Feast celebrations on December 8."
+  },
+  {
+    "id": "fontainhas-quarter-panaji",
+    "destination_id": "panaji",
+    "name": "Fontainhas (Latin Quarter)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Heritage neighborhood with narrow lanes lined by color-washed Portuguese houses with azulejo tiles and wrought-iron balconies. Centuries-old Catholic families still reside here. Best explored on foot."
+  },
+  {
+    "id": "mandovi-river-cruise-panaji",
+    "destination_id": "panaji",
+    "name": "Mandovi River Sunset Cruise",
+    "type": "viewpoint",
+    "entry_fee": "₹300–₹500",
+    "description": "Evening boat cruises depart from the waterfront, offering views of Panaji's skyline, the Kala Academy, and the river estuary. Some boats serve refreshments. Booking required during peak season."
+  },
+  {
+    "id": "miramar-beach-panaji",
+    "destination_id": "panaji",
+    "name": "Miramar Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "City beach on the Mandovi River with evening strolls and sunset views. Less dramatic than coastal Goa beaches but good for walks and people-watching. Promenade shops and food stalls."
+  },
+  {
+    "id": "birla-waterfalls-valparai",
+    "destination_id": "valparai",
+    "name": "Birla Waterfalls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "A cascade in the Sholayar Estate tea plantation, formed by the Vellamalai Tunnel River. Accessible via estate roads; surrounded by tea gardens and forest cover. Swimming possible in deeper pools."
+  },
+  {
+    "id": "nallamudi-poonjolai-viewpoint-valparai",
+    "destination_id": "valparai",
+    "name": "Nallamudi Poonjolai Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A panoramic overlook 15km from Valparai in the Nallamudi Tea Estate. Views of Anamudi Peak (2695m, South India's highest), vast tea gardens, waterfalls, and valleys. Best visited at sunset."
+  },
+  {
+    "id": "nirar-dam-valparai",
+    "destination_id": "valparai",
+    "name": "Nirar Dam",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "An irrigation dam 9km from Valparai built on the Nirar River. The 8km tunnel connecting Nirar to Solaiyar Dam is an engineering feat. Reservoir views and surrounding forest landscape."
+  },
+  {
+    "id": "tea-estate-walk-valparai",
+    "destination_id": "valparai",
+    "name": "Tea Estate Trek & Sampling",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walking tours through working tea gardens, managed by estate staff. Learn about tea cultivation, plucking, and processing. Estate bungalows offer stops for fresh-brewed tea. Best in mornings."
+  },
+  {
+    "id": "lalitgiri-stupa-diamond-triangle",
+    "destination_id": "diamond-triangle",
+    "name": "Lalitgiri Sacred Stupa",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Holiest site of the Diamond Triangle complex. Giant stupa housing a casket with presumed bone relic of Buddha. Surrounded by votive stupas, U-shaped Chaityagriha, and four monasteries. Site museum displays sacred relics."
+  },
+  {
+    "id": "ratnagiri-monastery-diamond-triangle",
+    "destination_id": "diamond-triangle",
+    "name": "Ratnagiri Monastery Complex",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Largest monastery complex of the three Buddhist sites, spanning 5th-13th centuries. Contains three monasteries with over 700 votive stupas arranged in circular patterns, a giant stupa, and a museum with 238 artifacts."
+  },
+  {
+    "id": "udayagiri-monastery-diamond-triangle",
+    "destination_id": "diamond-triangle",
+    "name": "Udayagiri Monastery Complex",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Major Vajrayana Buddhist center operational from 7th-12th centuries. Features two stupa complexes with giant stupas housing Buddha statues in cardinal directions, intricately carved shrines, and an open-air sculpture museum."
+  },
+  {
+    "id": "muzhappilangad-drive-in-beach-kannur",
+    "destination_id": "kannur",
+    "name": "Muzhappilangad Drive-in Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free (parking varies)",
+    "description": "India's longest drive-in beach stretching 4 km where vehicles can be driven directly on sand. Water sports include power boating, parasailing, and paragliding. Sandy expanse ideal for families."
+  },
+  {
+    "id": "st-angelo-fort-kannur",
+    "destination_id": "kannur",
+    "name": "St. Angelo Fort",
+    "type": "fort",
+    "entry_fee": "₹20 (adult), ₹10 (child)",
+    "description": "Portuguese fort built in 1505 by Dom Francisco de Almeida, first Viceroy of India. Massive laterite walls and sea-facing bastions overlook the Arabian Sea. Later controlled by Dutch and British."
+  },
+  {
+    "id": "theyyam-ritual-kannur",
+    "destination_id": "kannur",
+    "name": "Theyyam Ritual Performance",
+    "type": "temple",
+    "entry_fee": "Varies (typically ₹200–500 per person)",
+    "description": "Ancient ritualistic art form where performers embody deities through elaborate costumes, dance, and music, entering a trance state. Performances occur December–May during harvest season."
+  },
+  {
+    "id": "amruthadhara-waterfall-maredumilli",
+    "destination_id": "maredumilli",
+    "name": "Amruthadhara Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Nestled 15km into dense forest, this remote waterfall has a reputation for perennial flow. The name means 'stream of nectar' reflecting its cool, clean waters. Trail passes through undisturbed Eastern Ghats forest."
+  },
+  {
+    "id": "jalatharangini-waterfall-maredumilli",
+    "destination_id": "maredumilli",
+    "name": "Jalatharangini Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Multi-tier waterfall 7km from Maredumilli village. Light trekking through semi-evergreen forest. Most voluminous during monsoon (July–January), with a natural pool suitable for swimming."
+  },
+  {
+    "id": "rampa-waterfalls-maredumilli",
+    "destination_id": "maredumilli",
+    "name": "Rampa Waterfalls",
+    "type": "waterfall",
+    "entry_fee": "Rs 10",
+    "description": "50-foot cascade in a dense forest ravine 29km from Maredumilli. A 20-minute trek through tribal-managed trails leads to the base. Year-round flow with natural pool for wading."
+  },
+  {
+    "id": "butterfly-beach-palolem",
+    "destination_id": "palolem",
+    "name": "Butterfly Beach",
+    "type": "viewpoint",
+    "entry_fee": "Boat fee ₹500–₹800",
+    "description": "Secluded cove inaccessible by road, reachable only by boat or trekking. Named for the butterflies that gather on the sand. Popular with kayakers and day-trippers seeking tranquility."
+  },
+  {
+    "id": "palolem-beach-palolem",
+    "destination_id": "palolem",
+    "name": "Palolem Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Crescent-shaped beach with calm, shallow water tucked between two headlands. Beach huts line the sand (seasonal, June–October dismantled for monsoon). Kayak rentals ₹200–₹300/hour."
+  },
+  {
+    "id": "patnem-beach-palolem",
+    "destination_id": "palolem",
+    "name": "Patnem Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Quieter crescent beach 1km south of Palolem, a 30-minute walk away. Fewer crowds, cozy shacks, and bamboo huts. Clean sand and calm water suitable for families."
+  },
+  {
+    "id": "koothambalam-theatre",
+    "destination_id": "thrissur",
+    "name": "Koothambalam (Temple Theatre)",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "Ancient temple theatre within Vadakkunnathan complex where Kathakali and Koodiyattam classical performances are staged. Evening performances during festival season."
+  },
+  {
+    "id": "thrissur-round-city",
+    "destination_id": "thrissur",
+    "name": "Thrissur Round City Layout",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Unique concentric circular city design with Vadakkunnathan Temple at the centre. Walk through old bazaars, temples, and colonial-era streets forming the rings."
+  },
+  {
+    "id": "vadakkunnathan-temple",
+    "destination_id": "thrissur",
+    "name": "Vadakkunnathan Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of Kerala's oldest Shiva temples, dating over 1,000 years. Covers 9 acres with four ornate gopurams. Famous for intricate mural paintings depicting Mahabharata and Ramayana scenes."
+  },
+  {
+    "id": "nataraja-temple-chidambaram",
+    "destination_id": "chidambaram",
+    "name": "Nataraja Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 5 Pancha Bhuta Stalas representing space (Akasha). Features 1000-pillar Raja Sabha, 4 towering gopurams with 108 Bharatanatyam poses carved in stone, and serves as the center of the city."
+  },
+  {
+    "id": "nritta-sabha-chidambaram",
+    "destination_id": "chidambaram",
+    "name": "Nritta Sabha (Dance Hall)",
+    "type": "temple",
+    "entry_fee": "Included with temple entry",
+    "description": "13th century dance hall shaped like a chariot with 56 finely carved pillars. Located in the southern part of the temple complex showcasing classical dance architecture."
+  },
+  {
+    "id": "laknavaram-lake-boating-laknavaram",
+    "destination_id": "laknavaram",
+    "name": "Laknavaram Lake Boating",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Kakatiya-era lake spanning 10,000 acres with 13 forested islands. Multiple boat types available including pedal boats, motorboats, and speedboats. Rich birdlife and scenic shorelines."
+  },
+  {
+    "id": "laknavaram-suspension-bridge-laknavaram",
+    "destination_id": "laknavaram",
+    "name": "Laknavaram Suspension Bridge",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "160-meter-long steel cable suspension bridge spanning the lake, connecting three forested islands. Built for scenic walks with views of the lake and islands below."
+  },
+  {
+    "id": "bhima-river-siddhatek",
+    "destination_id": "siddhatek",
+    "name": "Bhima River Island Crossing",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The Bhima River crossing provides scenic views of the river valley. The bridge approach offers photography opportunities and natural landscape views. A peaceful spot for brief respite during temple visits."
+  },
+  {
+    "id": "siddhivinayak-temple-siddhatek",
+    "destination_id": "siddhatek",
+    "name": "Siddhivinayak Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of eight Ashtavinayak temples, uniquely situated on a Bhima River island. Only Ashtavinayak with trunk turning right (considered harder to please). The only east-facing temple in the series. Reached via bridge from the riverbank."
+  }
+]

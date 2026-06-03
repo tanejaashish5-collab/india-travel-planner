@@ -1,0 +1,386 @@
+[
+  {
+    "id": "mahad-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Mahad Ashtavinayak",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Fourth Ashtavinayak temple dedicated to Vighneshwara (Ganesha the remover of obstacles). Built on a small island in the Ulhas river."
+  },
+  {
+    "id": "morgaon-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Morgaon Ashtavinayak",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the eight Ashtavinayak temples. Dedicated to Mayureshwar (Ganesha riding peacock). Located in Pune district."
+  },
+  {
+    "id": "pali-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Pali Ashtavinayak",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Third Ashtavinayak temple dedicated to Girijatmaja (Ganesha son of Parvati). Located in Raigad district near Mahad."
+  },
+  {
+    "id": "siddhatek-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Siddhatek Ashtavinayak",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Second of the eight Ashtavinayak temples. Dedicated to Siddhivinayak (the Ganesha of prosperity). Situated on a hilltop in Ahmednagar district."
+  },
+  {
+    "id": "theur-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Theur Ashtavinayak",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Fifth Ashtavinayak temple dedicated to Chintamani (the wish-fulfilling Ganesha). Located in Pune district on the banks of Indrayani river."
+  },
+  {
+    "id": "ancestral-goa-museum-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Ancestral Goa",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "An open-air museum in Loutolim showcasing Goan rural life through art and traditional artifacts. Also known as Big Foot. Features displays of old Goan architecture and lifestyle."
+  },
+  {
+    "id": "benaulim-beach-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Benaulim Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A quieter beach 2 km south of Colva with pristine white sand and fewer crowds. Popular with families seeking a more peaceful beach experience."
+  },
+  {
+    "id": "betalbatim-sunset-beach-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Betalbatim Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Known as the Sunset Beach of South Goa, located between Colva and Benaulim. Offers romantic sunset views with less crowding than Colva."
+  },
+  {
+    "id": "colva-beach-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Colva Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A 2.4 km stretch of white sand beach, mostly empty on weekdays. The main beach in South Goa with calm waters suitable for swimming. Local families prefer this over the northern beaches."
+  },
+  {
+    "id": "margao-market-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Margao Municipal Market",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "South Goa's primary market selling fresh fish, Goan sausages, spices, and produce. Best visited early morning (6 am - noon). A sensory introduction to local Goan commerce."
+  },
+  {
+    "id": "colonel-baileys-dungeon-srirangapatna",
+    "destination_id": "srirangapatna",
+    "name": "Colonel Bailey's Dungeon",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Underground prison where Tipu Sultan held British officers during the Anglo-Mysore Wars. Dark stone chamber beneath the fort grounds. Memorial to captives."
+  },
+  {
+    "id": "daria-daulat-bagh-srirangapatna",
+    "destination_id": "srirangapatna",
+    "name": "Daria Daulat Bagh",
+    "type": "palace",
+    "entry_fee": "Known",
+    "description": "Tipu Sultan's summer palace with stunning 18th-century wall paintings depicting his military victories. Single-storey wooden structure in a cypress garden. Closed Fridays."
+  },
+  {
+    "id": "gumbaz-mausoleum-srirangapatna",
+    "destination_id": "srirangapatna",
+    "name": "Gumbaz Mausoleum",
+    "type": "monument",
+    "entry_fee": "Known",
+    "description": "Domed structure housing tombs of Tipu Sultan, his father Hyder Ali, and Hyder Ali's wife. Built in Indo-Islamic style with cypress-lined grounds."
+  },
+  {
+    "id": "ranganathaswamy-temple-srirangapatna",
+    "destination_id": "srirangapatna",
+    "name": "Ranganathaswamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "9th-century Vaishnavite shrine, one of the five most important temples dedicated to Lord Vishnu in South India. Reclining form of Ranganatha (Vishnu). Dravidian architecture."
+  },
+  {
+    "id": "srirangapatna-fort-walls",
+    "destination_id": "srirangapatna",
+    "name": "Srirangapatna Fort Walls",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Still-standing stone walls of the 16th-century fort. The Bangalore Gate and Water Gate remain intact. British forces breached the wall during the Fourth Anglo-Mysore War (1799)."
+  },
+  {
+    "id": "beypore-shipyard-kozhikode",
+    "destination_id": "kozhikode",
+    "name": "Beypore Shipyard",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Traditional shipbuilding yard at the mouth of Chaliyar River with 1,500-year-old heritage. Watch artisans craft Uru boats using age-old techniques passed through generations."
+  },
+  {
+    "id": "kadalundi-bird-sanctuary-kozhikode",
+    "destination_id": "kozhikode",
+    "name": "Kadalundi Bird Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sanctuary where Kadalundi River meets the Arabian Sea. Haven for migratory birds like terns and sandpipers, especially during Oct-May season."
+  },
+  {
+    "id": "kappad-beach-kozhikode",
+    "destination_id": "kozhikode",
+    "name": "Kappad Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Historic beach where Vasco da Gama landed in 1498. Golden sands, calm waters ideal for swimming, and an 800-year-old temple nearby mark this significant site."
+  },
+  {
+    "id": "kozhikode-beach-kozhikode",
+    "destination_id": "kozhikode",
+    "name": "Kozhikode Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "28-kilometre stretch along the Malabar Coast with historic lighthouse, dolphin viewpoint, and Lions Park. A relaxed beach with cultural significance from independence-era speeches."
+  },
+  {
+    "id": "kambathadi-mandapam-tiruparankundram",
+    "destination_id": "tiruparankundram",
+    "name": "Kambathadi Mandapam",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "An intricately carved hall within the temple complex featuring ornamental pillars and reliefs. Part of the main shrine structure, it demonstrates Dravidian architectural craftsmanship."
+  },
+  {
+    "id": "lakshmi-theertham-tiruparankundram",
+    "destination_id": "tiruparankundram",
+    "name": "Lakshmi Theertham",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A small shrine dedicated to Goddess Lakshmi within the temple grounds. Theerthams (sacred water bodies) are dispersed across the complex, each with ritual significance."
+  },
+  {
+    "id": "sanyasi-kinaru-tiruparankundram",
+    "destination_id": "tiruparankundram",
+    "name": "Sanyasi Kinaru (Sacred Well)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A sacred water tank within the temple complex believed to have healing properties. Pilgrims perform ritual ablutions here before entering the main shrine."
+  },
+  {
+    "id": "thirupparankundram-temple-tiruparankundram",
+    "destination_id": "tiruparankundram",
+    "name": "Thirupparankundram Murugan Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The oldest of the six Murugan abodes, carved into a mountain near Madurai. Inside, idols of Shiva and Vishnu face each other—a rare architectural feature. Aasthaana Mandapam features exquisitely carved pillars."
+  },
+  {
+    "id": "botanical-gardens-auroville",
+    "destination_id": "auroville",
+    "name": "Auroville Botanical Gardens",
+    "type": "garden",
+    "entry_fee": "Varies",
+    "description": "50-acre botanical preserve with 1,300+ plant species focused on conservation of South Indian Tropical Dry Evergreen Forest. Established 2000 with 12 themed gardens, amphitheater, visitor center, and art gallery."
+  },
+  {
+    "id": "matrimandir-auroville",
+    "destination_id": "auroville",
+    "name": "Matrimandir",
+    "type": "monument",
+    "entry_fee": "Free (outside), varies (meditation inside)",
+    "description": "36-meter golden geodesic dome surrounded by red lotus petals. Inner chamber lined with white marble houses a large glass crystal orb. Free viewing from outside; meditation inside requires advance booking (1-6 days)."
+  },
+  {
+    "id": "sound-garden-svaram-auroville",
+    "destination_id": "auroville",
+    "name": "Sound Garden (SVARAM)",
+    "type": "garden",
+    "entry_fee": "Varies",
+    "description": "Outdoor musical garden with stone, glass, wood, and metal instruments designed to stimulate auditory experience. Visitors can interact with the instruments to create resonant sounds."
+  },
+  {
+    "id": "adiyogi-shiva-statue-coimbatore",
+    "destination_id": "coimbatore",
+    "name": "Adiyogi Shiva Statue",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "World's largest bust sculpture of Lord Shiva at 112 feet, unveiled in 2017 at Isha Yoga Center. Features evening light show narrating yoga philosophy."
+  },
+  {
+    "id": "isha-yoga-center-coimbatore",
+    "destination_id": "coimbatore",
+    "name": "Isha Yoga Center",
+    "type": "temple",
+    "entry_fee": "Free (programs have fees)",
+    "description": "Spiritual retreat with Dhyanalinga meditative temple, yoga programs, and Linga Bhairavi temple. Offers meditation spaces and spiritual practices in a serene setting."
+  },
+  {
+    "id": "perur-pateeswarar-temple-coimbatore",
+    "destination_id": "coimbatore",
+    "name": "Perur Pateeswarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Chola-era temple dedicated to Lord Shiva, 26 km from Coimbatore city center. Features intricate sculptures and vibrant rituals in a serene setting."
+  },
+  {
+    "id": "chinnar-wildlife-sanctuary-idukki",
+    "destination_id": "idukki",
+    "name": "Chinnar Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹50 (adult), ₹25 (child)",
+    "description": "Semi-arid sanctuary unlike Kerala's other wetland reserves. Home to endemic flora and fauna adapted to low rainfall. Under consideration for UNESCO World Heritage status."
+  },
+  {
+    "id": "idukki-arch-dam-viewpoint-idukki",
+    "destination_id": "idukki",
+    "name": "Idukki Arch Dam Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "₹30 (adult), ₹15 (child)",
+    "description": "Asia's first arch dam (168.91m tall) spanning the Periyar River between Kuravan and Kurathi granite hills. Hill View Park offers unobstructed vistas of the dam, reservoir, and evergreen valleys. Boating available."
+  },
+  {
+    "id": "periyar-reservoir-boating-idukki",
+    "destination_id": "idukki",
+    "name": "Periyar Reservoir Boating",
+    "type": "viewpoint",
+    "entry_fee": "₹100–200 (boat rental)",
+    "description": "Scenic boat rides on the reservoir created by the Idukki dam. Wildlife like elephants and bison may be spotted along the shores amid mist-covered forests and rolling hills."
+  },
+  {
+    "id": "butler-bay-beach-little-andaman",
+    "destination_id": "little-andaman",
+    "name": "Butler Bay Surfing Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "India's only true surfing destination. Crescent-shaped beach with impressive swells April-June. Best suited for experienced surfers. Clear waters and pristine sandy beach away from crowds."
+  },
+  {
+    "id": "whisper-wave-waterfall-little-andaman",
+    "destination_id": "little-andaman",
+    "name": "Whisper Wave Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Serene jungle cascade accessible via scenic trek through evergreen rainforest starting from Hut Bay. Trail winds past creeks and giant ferns. Natural pool at base perfect for swimming. More remote than White Surf."
+  },
+  {
+    "id": "white-surf-waterfall-little-andaman",
+    "destination_id": "little-andaman",
+    "name": "White Surf Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Easily accessible waterfall reached via short guided trek through rainforest. Cool cascade perfect for a refreshing dip and mid-hike break. 2km forest walk. Early mornings best for fresh mist and bird activity."
+  },
+  {
+    "id": "gandhamardan-plateau-nrusinghanath-harishankar",
+    "destination_id": "nrusinghanath-harishankar",
+    "name": "Gandhamardan Plateau Buddhist Ruins",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "16km plateau between Harishankar and Nrusinghanath temples scattered with 1500-year-old Buddhist ruins. Scholars identify the site as Parimalagiri University, mentioned by 7th-century Chinese traveler Hiuen Tsang."
+  },
+  {
+    "id": "harishankar-temple-nrusinghanath-harishankar",
+    "destination_id": "nrusinghanath-harishankar",
+    "name": "Harishankar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "14th-century shrine on Gandhamardan Hills' southern slope devoted to Hari (Vishnu) and Shankar (Shiva). Stone carvings and architectural details reflect medieval Hindu temple design. 16km plateau trek to Nrusinghanath temple on opposite slope."
+  },
+  {
+    "id": "nrusinghanath-temple-nrusinghanath-harishankar",
+    "destination_id": "nrusinghanath-harishankar",
+    "name": "Nrusinghanath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple on Gandhamardan Hills' northern slope dedicated to Narasimha (half-man, half-lion avatar of Vishnu). 14th-century structure rebuilt on older foundations at the source of the Papaharini stream."
+  },
+  {
+    "id": "chapora-river-sunset-siolim",
+    "destination_id": "siolim",
+    "name": "Chapora River Sunset Boat Cruise",
+    "type": "viewpoint",
+    "entry_fee": "₹400–₹600",
+    "description": "Evening boat cruises depart from Siolim Jetty along the Chapora estuary. Views of river backwaters, fishing boats, and surrounding villages. Operational November–May. Dolphin spotting possible."
+  },
+  {
+    "id": "siolim-chopdem-bridge-siolim",
+    "destination_id": "siolim",
+    "name": "Siolim-Chopdem Bridge",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "499-meter bridge (opened 2002) connecting Siolim to Pernem taluka. Gateway to northern beaches (Morjim, Ashwem, Arambol). Stunning estuary views at sunset. Walking and cycling paths available."
+  },
+  {
+    "id": "st-anthony-church-siolim",
+    "destination_id": "siolim",
+    "name": "St. Anthony's Church",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Twin-steeple church (1630) in the heart of Siolim village. Unique altar statue of St. Anthony holding a serpent tied with cord, commemorating a shipwreck legend. White facade overlooking paddy fields."
+  },
+  {
+    "id": "bekal-fort",
+    "destination_id": "bekal",
+    "name": "Bekal Fort",
+    "type": "fort",
+    "entry_fee": "Known",
+    "description": "Kerala's largest and best-preserved fort built in 1650 CE. 12-acre stronghold on a headland overlooking the Arabian Sea. Famous keyhole-shaped opening in watchtower frames sea view."
+  },
+  {
+    "id": "bekal-fort-beach",
+    "destination_id": "bekal",
+    "name": "Bekal Fort Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Clean, photogenic beach stretching from the fort. Golden sand, clear water. Sunset viewing point. Less crowded than other Kerala beaches. Water sports available."
+  },
+  {
+    "id": "bhira-dam-kolad",
+    "destination_id": "kolad",
+    "name": "Bhira Dam",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Dam across the Kundalika River that creates a reservoir. Dam releases provide the water flow for rafting in the gorge below. Viewpoint offers views of the reservoir and surrounding forested hills."
+  },
+  {
+    "id": "kundalika-rafting-kolad",
+    "destination_id": "kolad",
+    "name": "Kundalika River Rafting",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "10km white-water rafting stretch through scenic gorge. Grade II-III rapids during monsoon release season (July-February). Multiple operators offer guided rafting trips with safety gear."
+  },
+  {
+    "id": "rock-beach-puducherry",
+    "destination_id": "puducherry",
+    "name": "Rock Beach (Promenade Beach)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic seafront promenade lined with colonial architecture. Accessed via French Quarter streets. Features waterfront cafes, sunset views, and calm waters suitable for wading. Center point of Puducherry's beachfront attractions."
+  },
+  {
+    "id": "white-town-puducherry",
+    "destination_id": "puducherry",
+    "name": "White Town (French Quarter)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Historic colonial neighborhood with well-preserved 18th-19th century French architecture. Bougainvillea-covered colonial villas, cobbled streets, artisan cafes, and independent boutiques. Pedestrian-friendly for leisurely exploration."
+  },
+  {
+    "id": "pazhamudircholai-temple-pazhamudircholai",
+    "destination_id": "pazhamudircholai",
+    "name": "Pazhamudircholai Murugan Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "An ancient hilltop temple dedicated to Murugan, one of the six abodes of Murugan. Mentioned in Sangam literature. The sthala vriksha (sacred tree) is a rose apple tree."
+  }
+]

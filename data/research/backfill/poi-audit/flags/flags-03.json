@@ -1,0 +1,12 @@
+[
+  {
+    "id": "cave-1-badami",
+    "destination_id": "badami",
+    "name": "Cave 1 (Shiva Cave)",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Description incorrectly dates Cave 1 to '1st-2nd century BCE' when it was actually excavated around 550 CE during the Early Chalukya period (~500-year error).",
+    "evidence": "Badami cave temples were carved 550-750 CE under Early Chalukya patronage. Cave 1 specifically dates to approximately 550 CE under Pulakeshin I (543-566 CE). Source: https://en.wikipedia.org/wiki/Badami_cave_temples",
+    "suggested_fix": "Change '1st-2nd century BCE' to '6th century CE' or '550 CE (Chalukya period)' to align with Early Chalukya dating"
+  }
+]

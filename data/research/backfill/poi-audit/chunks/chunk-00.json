@@ -1,0 +1,386 @@
+[
+  {
+    "id": "ajanta-caves-viewpoint",
+    "destination_id": "ajanta-caves",
+    "name": "Ajanta Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Overlooks the horseshoe-shaped cliff and Waghora River canyon. Views span the entire cave complex carved into the 75-metre rock wall. Best light at dawn."
+  },
+  {
+    "id": "ajanta-caves-cave-1",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 1 — Padmapani Murals",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "The oldest cave in the complex, featuring the iconic Bodhisattva Padmapani painting in his hand and royal ornaments. Exemplary fresco-secco technique."
+  },
+  {
+    "id": "ajanta-caves-cave-16",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 16 — The Dying Princess",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Masterpiece depicting grief and tranquility in the scene of a dying princess. One of the finest paintings in the complex, showcasing Vakataka period artistry."
+  },
+  {
+    "id": "ajanta-caves-cave-2",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 2 — Jataka Tales Ceiling",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Famous for ornate ceiling decorated with flowering patterns and vivid Jataka tales, mythical animals, and lotus medallions representing Mahayana Buddhist cosmology."
+  },
+  {
+    "id": "ajanta-caves-cave-26",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 26 — Reclining Buddha",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "One of two chaityas (prayer halls), featuring a massive reclining Buddha sculpture. Exemplifies the devotional architecture of the Vakataka period."
+  },
+  {
+    "id": "ajanta-caves-mtdc-center",
+    "destination_id": "ajanta-caves",
+    "name": "MTDC Visitor Center",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Official visitor center with interpretive displays on Buddhist art, architecture, and history. Restaurant available. Shuttle service to caves departs from here."
+  },
+  {
+    "id": "buddha-vihar-gulbarga",
+    "destination_id": "gulbarga",
+    "name": "Buddha Vihar",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Built within Gulbarga University, this Buddhist shrine was inaugurated by the 14th Dalai Lama. Houses traditional Buddhist forms and symbolizes non-violence and world peace."
+  },
+  {
+    "id": "gulbarga-fort-gulbarga",
+    "destination_id": "gulbarga",
+    "name": "Gulbarga Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Built in the 12th century by the Kakatiya ruler Raja Gulchand, this fort showcases fusion of Islamic and Persian architectural styles. It was the capital of the Bahmani Sultanate and houses mosques, tombs, and historical structures."
+  },
+  {
+    "id": "haft-gumbaz-gulbarga",
+    "destination_id": "gulbarga",
+    "name": "Haft Gumbaz (Seven Domes)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "A series of seven tombs of Bahmani military leaders built side-by-side, with sprawling gardens. The outer structure is open to visitors, showcasing 14th-century Islamic funerary architecture."
+  },
+  {
+    "id": "jama-masjid-gulbarga",
+    "destination_id": "gulbarga",
+    "name": "Jama Masjid",
+    "type": "mosque",
+    "entry_fee": "Free",
+    "description": "Built by the Bahmani Sultanate, this mosque features 68 domes and is completely roofed — a unique design in India. Modelled on the Great Mosque of Cordoba in Spain, it showcases Islamic architecture from the 14th century."
+  },
+  {
+    "id": "khwaja-bande-nawaz-dargah-gulbarga",
+    "destination_id": "gulbarga",
+    "name": "Khwaja Bande Nawaz Dargah",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "A major pilgrimage site attracting devotees of all faiths, this mausoleum houses a vast library with over 10,000 books in Urdu, Arabic, and Persian. Symbol of unity and brotherhood, drawing both Muslim and Hindu pilgrims."
+  },
+  {
+    "id": "buddhist-cave-aihole",
+    "destination_id": "aihole",
+    "name": "Buddhist Cave Temple",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Carved cave with Buddhist iconography and sculptures. Part of the diverse religious heritage of Aihole from the 6th-7th centuries."
+  },
+  {
+    "id": "durga-temple-aihole",
+    "destination_id": "aihole",
+    "name": "Durga Temple",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "5th-century temple with an apsidal (curved) architectural plan unique in India. Carved from stone with intricate decorative panels depicting Hindu mythological scenes."
+  },
+  {
+    "id": "lad-khan-temple-aihole",
+    "destination_id": "aihole",
+    "name": "Lad Khan Temple",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Possibly the 5th-century earliest structural Hindu temple in India. Two-storied square structure with ornate columns and relief carvings of celestial figures and dancers."
+  },
+  {
+    "id": "meguti-temple-aihole",
+    "destination_id": "aihole",
+    "name": "Meguti Temple",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Hilltop temple with an inscription dated 634 CE, one of India's earliest dated temples. Two-storied structure with ornamental doorways and views of surrounding Chalukya landscape."
+  },
+  {
+    "id": "dolphins-nose-coonoor",
+    "destination_id": "coonoor",
+    "name": "Dolphin's Nose",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Natural rock formation offering spectacular views of surrounding valleys and Catherine Falls below. Popular photography spot with panoramic vistas of Nilgiri landscape."
+  },
+  {
+    "id": "lambs-rock-coonoor",
+    "destination_id": "coonoor",
+    "name": "Lamb's Rock",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Natural rock formation with stunning panoramic views of tea plantations, valleys, and distant mountain ranges. Favorite spot for photographers and scenic viewpoints."
+  },
+  {
+    "id": "nilgiri-mountain-railway-coonoor",
+    "destination_id": "coonoor",
+    "name": "Nilgiri Mountain Railway",
+    "type": "viewpoint",
+    "entry_fee": "₹250-400",
+    "description": "UNESCO World Heritage 'Toy Train' built in 1908, running 46 km to Ooty in 4.5-5 hours. Traverses 250 bridges, 16 tunnels, and steep mountain inclines with scenic valley views."
+  },
+  {
+    "id": "sims-park-coonoor",
+    "destination_id": "coonoor",
+    "name": "Sim's Park",
+    "type": "garden",
+    "entry_fee": "₹50",
+    "description": "30-acre botanical garden established in 1874 featuring native and exotic plant species unique to the Nilgiris. Highlights include Japanese garden, rose garden, and annual fruit and vegetable show."
+  },
+  {
+    "id": "deekshabhoomi-nagpur",
+    "destination_id": "nagpur",
+    "name": "Deekshabhoomi",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "White marble stupa marking Dr. Ambedkar's mass conversion to Buddhism (1956) with 600,000 followers. Significant modern pilgrimage site for Buddhists. Serene gardens."
+  },
+  {
+    "id": "futala-lake-nagpur",
+    "destination_id": "nagpur",
+    "name": "Futala Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Central Nagpur's recreational lake with walking paths, gardens, and evening atmosphere. Popular sunset spot."
+  },
+  {
+    "id": "sitabuldi-fort-nagpur",
+    "destination_id": "nagpur",
+    "name": "Sitabuldi Fort",
+    "type": "fort",
+    "entry_fee": "Limited/Restricted",
+    "description": "18th-century fort overlooking Nagpur city. Now under military control with limited public access. Scenic views from surrounding area."
+  },
+  {
+    "id": "zero-mile-stone-nagpur",
+    "destination_id": "nagpur",
+    "name": "Zero Mile Stone",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Geographic center of India marked by a stone pillar at Sitabuldi. Historical reference point from pre-independence surveys."
+  },
+  {
+    "id": "ashta-mathas-udupi",
+    "destination_id": "udupi",
+    "name": "Ashta Mathas (Eight Monasteries)",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Eight Hindu monasteries founded by Madhvacharya. Take turns administering the Krishna Temple on a 2-year rotation (paryaya). Each matha has a distinct role and history."
+  },
+  {
+    "id": "malpe-beach-udupi",
+    "destination_id": "udupi",
+    "name": "Malpe Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Clean, well-maintained beach 5km from Udupi town. Water sports available. Launch point for boat trips to St Mary's Island (hexagonal basalt columns)."
+  },
+  {
+    "id": "sri-krishna-temple-udupi",
+    "destination_id": "udupi",
+    "name": "Sri Krishna Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "13th-century temple founded by Madhvacharya. Sacred window (kanakana kindi) created by saint Kanakadasa through which devotees view the Krishna idol. One of 12 Vaishnavite pilgrimage sites."
+  },
+  {
+    "id": "st-marys-island-udupi",
+    "destination_id": "udupi",
+    "name": "St Mary's Island",
+    "type": "viewpoint",
+    "entry_fee": "Known",
+    "description": "Island 6km from Malpe reached by boat. Distinctive hexagonal basalt columns (40 feet high) formed by volcanic activity. Sandy beaches, monsoon closure (Jun-Sep)."
+  },
+  {
+    "id": "arichal-munai-dhanushkodi",
+    "destination_id": "dhanushkodi",
+    "name": "Arichal Munai (Land's End)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Southernmost tip of Tamil Nadu where the Indian Ocean and Bay of Bengal visibly meet with contrasting water colors. Sri Lanka visible on clear days, 29 km away."
+  },
+  {
+    "id": "dhanushkodi-ruins-dhanushkodi",
+    "destination_id": "dhanushkodi",
+    "name": "Dhanushkodi Ruins",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Abandoned town's remnants from 1964 cyclone including ruined church with coral growth, railway station, post office, and temples. Stretches across 15 km of beach."
+  },
+  {
+    "id": "ram-setu-viewpoint-dhanushkodi",
+    "destination_id": "dhanushkodi",
+    "name": "Ram Setu Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Viewpoint offering glimpses of the underwater formation believed to be the mythical bridge connecting India to Sri Lanka, visible as surface features and shallow reef structures."
+  },
+  {
+    "id": "ekambareswarar-kanchipuram",
+    "destination_id": "kanchipuram",
+    "name": "Ekambareswarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of India's largest temple complexes, 40 acres. 1000-pillar hall (Aayiram Kaal Mandapam); sacred 3500-year-old mango tree."
+  },
+  {
+    "id": "kailasanathar-kanchipuram",
+    "destination_id": "kanchipuram",
+    "name": "Kailasanathar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Oldest temple structure in Kanchipuram, built 700 CE by Pallava king Narasimhavarman II. 10-foot Shiva lingam; earliest Hindu mural art specimens."
+  },
+  {
+    "id": "silk-weavers-kanchipuram",
+    "destination_id": "kanchipuram",
+    "name": "Silk Weaving Centers",
+    "type": "market",
+    "entry_fee": "Free (shopping optional)",
+    "description": "Traditional hand-loom workshops producing Kanchipuram silk sarees. Watch artisans transform silk and gold zari threads into masterpieces."
+  },
+  {
+    "id": "devbaag-beach-malvan",
+    "destination_id": "malvan",
+    "name": "Devbaag Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Clean sandy beach south of Malvan, quieter than Tarkarli. Good for swimming, long walks, and dolphin spotting boats depart from here."
+  },
+  {
+    "id": "sindhudurg-fort-malvan",
+    "destination_id": "malvan",
+    "name": "Sindhudurg Fort",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "16th-century island sea fortress built by Shivaji, 500m offshore from Rajapuri jetty. 22 bastions, 40-foot walls, never conquered. Boat tour includes ruined palace, mosque, and freshwater tanks."
+  },
+  {
+    "id": "tarkarli-beach-malvan",
+    "destination_id": "malvan",
+    "name": "Tarkarli Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Long sandy beach in Malvan taluka, India's clearest west coast waters for snorkelling and scuba diving. Calm reef formations offshore."
+  },
+  {
+    "id": "junnar-taluka-fortress-ozar",
+    "destination_id": "ozar",
+    "name": "Junnar Taluka Region",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "Historic taluka region hosting several archaeological sites and ancient hill forts. Known for cave temples and carved rock monuments from the Satavahana and later periods."
+  },
+  {
+    "id": "kukadi-river-ozar",
+    "destination_id": "ozar",
+    "name": "Kukadi River",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "River flowing through Junnar taluka, forming the spiritual backdrop of Vighnahar Temple. Popular for morning walks and ritual bathing by pilgrims."
+  },
+  {
+    "id": "vighnahar-temple-ozar",
+    "destination_id": "ozar",
+    "name": "Vighnahar (Vighneshwar) Ganesha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple on the bank of the Kukadi River with a gold-plated shikhara visible from distance. Dedicated to Vighnahar Ganesha; the idol's eyes are inlaid with rubies and forehead has a diamond."
+  },
+  {
+    "id": "devbaag-confluence-tarkarli",
+    "destination_id": "tarkarli",
+    "name": "Devbaag Confluence",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Where the Karli River meets the Arabian Sea. Beautiful spot for kayaking, sunrise viewing, and photography. The confluence creates a unique landscape where river and ocean waters meet. Quiet and peaceful environment."
+  },
+  {
+    "id": "sindhudurg-fort-tarkarli",
+    "destination_id": "tarkarli",
+    "name": "Sindhudurg Fort",
+    "type": "fort",
+    "entry_fee": "Free (boat ₹100-200 per person)",
+    "description": "17th-century fort built by Maratha king Shivaji, located on an island 300m offshore. Accessible by boat from Tarkarli beach. The fort has temple ruins, cannons, and panoramic sea views. Boat rides depart regularly."
+  },
+  {
+    "id": "tarkarli-beach-tarkarli",
+    "destination_id": "tarkarli",
+    "name": "Tarkarli Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Long, clean stretch of sand with clear water ideal for swimming, snorkelling, and scuba diving. Water clarity reaches 20 feet, among India's best. Uncrowded compared to other Konkan beaches. Perfect for water sports and sunset viewing."
+  },
+  {
+    "id": "borra-caves-viewpoint-andhra-pradesh",
+    "destination_id": "borra-caves",
+    "name": "Borra Caves Hilltop Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Included with cave entry",
+    "description": "Scenic overlook of Ananthagiri Hills from cave entrance. 705-metre elevation. Views of the Eastern Ghats landscape and surrounding forest."
+  },
+  {
+    "id": "borra-caves-chamber-andhra-pradesh",
+    "destination_id": "borra-caves",
+    "name": "Borra Caves Main Chamber",
+    "type": "monument",
+    "entry_fee": "₹50–100 (varies by season)",
+    "description": "150-metre-deep limestone cave system, India's deepest. Illuminated chambers display stalactites and stalagmites with natural formations resembling Shiva-lingam. Elevations 0.3–11.5 m."
+  },
+  {
+    "id": "kumarakom-bird-sanctuary-kumarakom",
+    "destination_id": "kumarakom",
+    "name": "Kumarakom Bird Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "14-acre sanctuary on Vembanad Lake's eastern shore protecting over 60 migratory bird species from Siberia and Himalayas. Best visited at sunrise for peak bird activity."
+  },
+  {
+    "id": "vembanad-lake-kumarakom",
+    "destination_id": "kumarakom",
+    "name": "Vembanad Lake",
+    "type": "lake",
+    "entry_fee": "Varies",
+    "description": "India's largest lake spanning three districts. Take houseboat cruises or canoe rides through mangrove-lined backwaters. Pathiramanal Island within the lake offers peaceful birdwatching."
+  },
+  {
+    "id": "church-three-kings-reis-magos",
+    "destination_id": "reis-magos",
+    "name": "Church of the Three Kings (Reis Magos Church)",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Adjacent to the fort, built in 1555 by Franciscan friars. Named for the Three Wise Men, with a whitewashed gabled facade visible from across the river. Feast celebrations on January 6."
+  },
+  {
+    "id": "reis-magos-fort-reis-magos",
+    "destination_id": "reis-magos",
+    "name": "Reis Magos Fort",
+    "type": "fort",
+    "entry_fee": "₹50–₹100",
+    "description": "Historic fort (1551) overlooking the Mandovi River, Portugal's oldest in Goa. Beautifully restored with exhibitions, ramparts for river views, chapel with Portuguese tiles, and dungeons open to visitors."
+  }
+]

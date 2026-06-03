@@ -1,0 +1,386 @@
+[
+  {
+    "id": "dhauli-peace-pagoda-bhubaneswar",
+    "destination_id": "bhubaneswar",
+    "name": "Dhauli Peace Pagoda",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "White pagoda built in 1972 on the site of the 261 BCE Kalinga War that transformed Emperor Ashoka toward Buddhism. Represents peace and non-violence philosophy."
+  },
+  {
+    "id": "khandagiri-udayagiri-caves-bhubaneswar",
+    "destination_id": "bhubaneswar",
+    "name": "Khandagiri and Udayagiri Caves",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "Jain rock-cut caves dating to 2nd century BCE, carved under King Kharavela. Originally 117 caves; 33 remain, including the famous Rani Gumpha (Queen Cave) with intricate double-storey architecture."
+  },
+  {
+    "id": "lingaraj-temple-bhubaneswar",
+    "destination_id": "bhubaneswar",
+    "name": "Lingaraj Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "11th-century shrine dedicated to Harihara (Shiva-Vishnu combined form) standing 180 feet high. Exemplifies Kalinga temple architecture with over 150 smaller shrines in the complex."
+  },
+  {
+    "id": "nandankanan-zoo-bhubaneswar",
+    "destination_id": "bhubaneswar",
+    "name": "Nandankanan Zoological Park",
+    "type": "garden",
+    "entry_fee": "₹60",
+    "description": "437-hectare zoo and botanical garden established in 1960, first Indian zoo in WAZA. Notable for white and melanistic tigers, home to conservation breeding center for Indian pangolins."
+  },
+  {
+    "id": "rajarani-temple-bhubaneswar",
+    "destination_id": "bhubaneswar",
+    "name": "Rajarani Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "11th-century Kalinga architecture masterpiece 2.5 km from Lingaraj, renowned for intricate erotic sculptures rivaling Khajuraho. Unusually, not dedicated to any specific deity."
+  },
+  {
+    "id": "grishneshwar-temple-ellora-caves",
+    "destination_id": "ellora-caves",
+    "name": "Grishneshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "An active Jyotirlinga shrine located adjacent to the Ellora complex, dedicated to Shiva. One of the 12 revered Jyotirlinga temples in India, built in traditional Hindu temple architecture."
+  },
+  {
+    "id": "indra-sabha-cave-32-ellora-caves",
+    "destination_id": "ellora-caves",
+    "name": "Indra Sabha (Cave 32)",
+    "type": "monument",
+    "entry_fee": "₹600",
+    "description": "A Jain temple complex among the last structures built at Ellora, featuring multi-storey carved architecture with intricate carvings and detailed sculptural work representing Jain religious beliefs."
+  },
+  {
+    "id": "kailasa-temple-ellora-caves",
+    "destination_id": "ellora-caves",
+    "name": "Kailasa Temple (Cave 16)",
+    "type": "monument",
+    "entry_fee": "₹600",
+    "description": "The largest single monolithic rock excavation in the world, carved from top-down from a single basalt cliff representing Mount Kailash. This 8th-century Hindu temple stands 32m tall and took over 100 years to complete, with an estimated 200,000 tonnes of rock removed."
+  },
+  {
+    "id": "rameshvara-cave-21-ellora-caves",
+    "destination_id": "ellora-caves",
+    "name": "Rameshvara Cave (Cave 21)",
+    "type": "monument",
+    "entry_fee": "₹600",
+    "description": "Possibly the oldest Hindu cave at Ellora from the late 500s, containing some of the most beautiful carvings on its pillars and walls dedicated to Shiva and Hindu deities."
+  },
+  {
+    "id": "vishvakarma-cave-10-ellora-caves",
+    "destination_id": "ellora-caves",
+    "name": "Vishvakarma Cave (Cave 10)",
+    "type": "monument",
+    "entry_fee": "₹600",
+    "description": "A large Buddhist chaitya hall carved during the 6th century with intricate sculptural details. Features stone pillars and a stupa representing Buddhist architectural mastery."
+  },
+  {
+    "id": "banasura-dam",
+    "destination_id": "wayanad",
+    "name": "Banasura Sagar Dam",
+    "type": "lake",
+    "entry_fee": "Varies",
+    "description": "India's largest earthen dam with sprawling clear-water reservoir surrounded by lush green hills and dotted with tiny islands. Located 20 km from Wayanad."
+  },
+  {
+    "id": "chembra-peak",
+    "destination_id": "wayanad",
+    "name": "Chembra Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Wayanad's highest peak at 2,100 m. Viral heart-shaped lake at summit. Trek passes through waterfalls and lush vegetation with panoramic Western Ghats views."
+  },
+  {
+    "id": "edakkal-caves",
+    "destination_id": "wayanad",
+    "name": "Edakkal Caves",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "Two caves with 8,000-year-old Neolithic petroglyphs carved into stone. Located at 1,200 m elevation near Kalpetta. Name means 'a stone in between' referencing the dramatic rock formation."
+  },
+  {
+    "id": "meenmutty-waterfall",
+    "destination_id": "wayanad",
+    "name": "Meenmutty Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Multi-tiered waterfall near Banasura Dam, 5 km away. Dense forest surrounds the cascades. Best during monsoon when water flow is strongest."
+  },
+  {
+    "id": "wayanad-wildlife-sanctuary",
+    "destination_id": "wayanad",
+    "name": "Wayanad Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Part of Nilgiri Biosphere Reserve. Home to tigers, elephants, Malabar giant squirrels, and diverse bird species. Coffee, pepper, and cardamom plantations surround the sanctuary."
+  },
+  {
+    "id": "brindavan-gardens-mysore",
+    "destination_id": "mysore",
+    "name": "Brindavan Gardens",
+    "type": "garden",
+    "entry_fee": "Varies",
+    "description": "Man-made terrace garden on Kaveri River banks near Krishnarajasagara Dam, 12 km northwest of Mysore. Features botanical park, colourful musical fountains, and boating facilities."
+  },
+  {
+    "id": "chamundi-hill-mysore",
+    "destination_id": "mysore",
+    "name": "Chamundi Hill",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hill temple 13 km from Mysore city at 1000 metres elevation dedicated to Goddess Chamundeshwari. Climb 1000 steps to reach the pristine temple with a 16-foot Nandi statue."
+  },
+  {
+    "id": "mysore-palace-mysore",
+    "destination_id": "mysore",
+    "name": "Mysore Palace",
+    "type": "palace",
+    "entry_fee": "Varies",
+    "description": "Built in 1912 for the 24th Wodeyar ruler, this Indo-Saracenic architectural masterpiece was the dwelling of the royal family. Famous for its evening lighting display."
+  },
+  {
+    "id": "mysore-zoo-mysore",
+    "destination_id": "mysore",
+    "name": "Sri Chamarajendra Zoological Gardens",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Large zoo housing diverse animal species in spacious enclosures, located within the Mysore Palace grounds. Popular family destination with walking paths and animal displays."
+  },
+  {
+    "id": "kanakakkunnu-palace",
+    "destination_id": "trivandrum",
+    "name": "Kanakakkunnu Palace Gardens",
+    "type": "palace",
+    "entry_fee": "Varies",
+    "description": "Historic palace with verdant gardens for serene walks. Hosts cultural programmes and performances, particularly during festival season."
+  },
+  {
+    "id": "kuthiramalika-palace",
+    "destination_id": "trivandrum",
+    "name": "Kuthiramalika Palace Museum",
+    "type": "palace",
+    "entry_fee": "Varies",
+    "description": "Built by Maharaja Swathi Thirunal, named for 122 wooden horse carvings on roof beams. Houses exquisite Kerala-style architecture, royal artifacts, and musical instruments."
+  },
+  {
+    "id": "napier-museum",
+    "destination_id": "trivandrum",
+    "name": "Napier Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Historical museum in Thiruvananthapuram housing ancient sculptures, royal regalia, and artefacts. Neo-Gothic architecture set within the Thiruvananthapuram Zoo campus."
+  },
+  {
+    "id": "padmanabhaswamy-temple",
+    "destination_id": "trivandrum",
+    "name": "Sree Padmanabhaswamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Over 3,000 years old, one of the world's richest temples. Principal deity is Lord Vishnu in eternal yogic sleep (Anantha Shayanam) on serpent Adisheshan. Seven-tiered gopuram dominates the skyline."
+  },
+  {
+    "id": "haribaldev-jeu-temple-baripada",
+    "destination_id": "baripada",
+    "name": "Haribaldev Jeu Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple associated with the second Rath Yatra of Odisha. Built in 10th century, it holds significant place in local tribal and Hindu culture."
+  },
+  {
+    "id": "mayurbhanj-chhau-performance-baripada",
+    "destination_id": "baripada",
+    "name": "Mayurbhanj Chhau Dance",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "UNESCO-recognized Intangible Cultural Heritage martial dance form performed without masks. Baripada Chhau Mahotsav in April showcases this unique art form."
+  },
+  {
+    "id": "simlipal-national-park-pithabata-gate-baripada",
+    "destination_id": "baripada",
+    "name": "Simlipal National Park (Pithabata Gate)",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Tiger reserve and biodiversity hotspot with dense deciduous forests, waterfalls, and wild animals. Entry via Pithabata Gate, 22km from Baripada. Open November to mid-June."
+  },
+  {
+    "id": "deomali-peak-trek-deomali",
+    "destination_id": "deomali",
+    "name": "Deomali Peak Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Odisha's highest point at 1,672m on the Eastern Ghats. Moderately challenging trek through deep forests with panoramic views over valleys inhabited by Kandha and Paraja tribes. Summit camping available."
+  },
+  {
+    "id": "deomali-camping-deomali",
+    "destination_id": "deomali",
+    "name": "Summit Area Camping",
+    "type": "viewpoint",
+    "entry_fee": "₹200-500",
+    "description": "Overnight camping on high-altitude forest clearing near the peak. Observe Eastern Ghats valleys at sunset, experience tribal cultures of surrounding villages, and spot indigenous forest fauna."
+  },
+  {
+    "id": "tribal-museum-deomali",
+    "destination_id": "deomali",
+    "name": "Tribal Museum Koraput",
+    "type": "museum",
+    "entry_fee": "₹50-100",
+    "description": "Repository of tribal culture from Kondh, Bonda and Paroja communities. Displays traditional textiles, musical instruments, stone sculptures, terracotta and embroidered shawls of Dongria Kondh artisans."
+  },
+  {
+    "id": "kadmat-lagoon",
+    "destination_id": "kadmat",
+    "name": "Kadmat Lagoon",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine shallow lagoon ideal for snorkeling, kayaking, and water sports. Glass-bottom boats, pedal boats, and sailing boats available for hire."
+  },
+  {
+    "id": "kadmat-reef-walking",
+    "destination_id": "kadmat",
+    "name": "Kadmat Reef Walking",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walk across exposed coral reefs at low tide. Longest sandbank in Lakshadweep. Safe exploration of coral formations, clownfish, and parrotfish habitats."
+  },
+  {
+    "id": "kadmat-the-wall",
+    "destination_id": "kadmat",
+    "name": "The Wall — Dive Site",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Dramatic underwater cliff face. Premier scuba diving spot offering wall-like coral reefs and encounters with pelagic fish and sea turtles. Only CMAS-certified dive school in India based here."
+  },
+  {
+    "id": "gandhi-museum-madurai",
+    "destination_id": "madurai",
+    "name": "Gandhi Memorial Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Located in 17th-century palace. Preserves Mahatma Gandhi items and freedom struggle records."
+  },
+  {
+    "id": "meenakshi-temple-madurai",
+    "destination_id": "madurai",
+    "name": "Meenakshi Amman Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of world's largest temple complexes. 4500 sq m, 14 gopurams, 33000 sculptures. Midnight ceremony: Sundareshwarar carried to Meenakshi's bedchamber."
+  },
+  {
+    "id": "thirumalai-palace-madurai",
+    "destination_id": "madurai",
+    "name": "Thirumalai Nayakkar Palace",
+    "type": "palace",
+    "entry_fee": "₹30",
+    "description": "Built 1636 by Tirumala Nayaka; blends Islamic and Dravidian styles. 82-foot columns; intricate ceiling paintings."
+  },
+  {
+    "id": "doddabetta-peak-ooty",
+    "destination_id": "ooty",
+    "name": "Doddabetta Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The highest peak in the Nilgiris at 2,623 metres elevation, located 10 km from Ooty. Offers panoramic views of the surrounding hills and valleys on clear days."
+  },
+  {
+    "id": "botanical-gardens-ooty",
+    "destination_id": "ooty",
+    "name": "Government Botanical Gardens",
+    "type": "garden",
+    "entry_fee": "Known",
+    "description": "A 55-acre botanical garden established in 1897 featuring rare tree species, a 20-million-year-old fossilized tree, Italian-style gardens, and orchid displays. Hosts an annual flower show in May."
+  },
+  {
+    "id": "ooty-lake-ooty",
+    "destination_id": "ooty",
+    "name": "Ooty Lake",
+    "type": "lake",
+    "entry_fee": "Known",
+    "description": "An artificial lake built in 1824 offering paddle boats, rowboats, and motorboat rides. Popular spot for families and couples seeking leisurely water activities."
+  },
+  {
+    "id": "bichitrapur-mangrove-forest-talasari",
+    "destination_id": "talasari",
+    "name": "Bichitrapur Mangrove Reserve",
+    "type": "viewpoint",
+    "entry_fee": "₹1,200-1,400",
+    "description": "Odisha's second largest mangrove forest 10 km from Talasari. Boating through winding waterways to observe birdlife and dense mangrove vegetation in their natural habitat."
+  },
+  {
+    "id": "subarnarekha-river-mouth-talasari",
+    "destination_id": "talasari",
+    "name": "Subarnarekha River Mouth",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Where Subarnarekha River flows into the Bay of Bengal. Scenic spot for photography and observing river-sea convergence with fishing activities."
+  },
+  {
+    "id": "talasari-beach-talasari",
+    "destination_id": "talasari",
+    "name": "Talasari Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine unspoiled beach where Subarnarekha River meets the Bay of Bengal at the Odisha-Bengal border. Casuarina groves and red crabs; minimal tourist traffic."
+  },
+  {
+    "id": "beypore-beach-lighthouse",
+    "destination_id": "beypore",
+    "name": "Beypore Beach and Lighthouse",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Quiet fishing village beach with traditional boats anchored. Historic lighthouse on the headland. Sunset views. Less touristy than nearby Calicut beach."
+  },
+  {
+    "id": "beypore-uru-shipyard",
+    "destination_id": "beypore",
+    "name": "Beypore Uru Shipyard",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Traditional dhow (uru) shipbuilding centre active for 1,000+ years. Hand-built 500-tonne wooden vessels using teak and jackwood by master craftsmen (ustads). Boats exported to the Gulf."
+  },
+  {
+    "id": "dongria-kondh-villages-koraput",
+    "destination_id": "koraput",
+    "name": "Dongria Kondh Villages",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "About 100 villages of the Dongria Kondh PVTG community scattered through Niyamgiri Hills. Tourism through licensed guides supports community livelihoods while respecting traditions."
+  },
+  {
+    "id": "niyamgiri-hills-koraput",
+    "destination_id": "koraput",
+    "name": "Niyamgiri Hills",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "250 sq km hill range sacred to the Dongria Kondh tribe. Perennial streams and springs originate here; bauxite-capped peaks offer scenic views. Responsible trekking available with community guides."
+  },
+  {
+    "id": "mahaganapati-ranjangaon",
+    "destination_id": "ranjangaon",
+    "name": "Mahaganapati Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The largest of the eight Ashtavinayak temples, where sunrays enter the inner sanctum on Surya-Sankranti. The idol has 10 trunks and 20 hands in its hidden form. Engineered to align with the sun at specific times of year."
+  },
+  {
+    "id": "pataleshwar-caves-ranjangaon",
+    "destination_id": "ranjangaon",
+    "name": "Pataleshwar Caves",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Ancient rock-cut caves in Pune (near Ranjangaon route), featuring a Shiva temple carved into the mountainside. Dating from around the 8th-9th century, the site shows intricate stone carvings and tunnel networks."
+  },
+  {
+    "id": "undavalli-caves-undavalli-caves",
+    "destination_id": "undavalli-caves",
+    "name": "Undavalli Caves",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "Four-story rock-cut caves from the 4th-5th century featuring monolithic 20-foot reclining Vishnu statue on serpent Ananta. Important Gupta-era monument with elephant carvings."
+  }
+]

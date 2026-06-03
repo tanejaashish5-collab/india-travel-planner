@@ -1,0 +1,22 @@
+[
+  {
+    "id": "fort-geldria-pulicat-lake",
+    "destination_id": "pulicat-lake",
+    "name": "Fort Geldria",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Description claims Fort Geldria was 'the first European settlement in India', but Portuguese arrived in India in 1498 (Vasco da Gama) and captured Goa in 1510, over 100 years before Fort Geldria (1613).",
+    "evidence": "Portuguese explorer Vasco da Gama first reached India in Calicut on 20 May 1498 and established trading posts. Goa was captured by the Portuguese in 1510. Fort Geldria was built by the Dutch in 1613, making it the first Dutch settlement, not the first European settlement. Source: https://en.wikipedia.org/wiki/Vasco_da_Gama and https://en.wikipedia.org/wiki/Fort_Geldria",
+    "suggested_fix": "Change '...the first European settlement in India' to '...the first Dutch settlement in India' or '...the Dutch Republic's first settlement in India'"
+  },
+  {
+    "id": "dhyana-buddha-statue-amaravati",
+    "destination_id": "amaravati",
+    "name": "Dhyana Buddha Statue",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description claims the statue is a '125-foot bronze Buddha statue', but the statue is made of reinforced concrete, not bronze.",
+    "evidence": "The Dhyana Buddha statue is made of reinforced concrete and covered with sandstone panels, completed in 2015. Multiple sources confirm it is concrete/stone, not bronze. Source: https://en.wikipedia.org/wiki/Dhyana_Buddha_statue",
+    "suggested_fix": "Change '125-foot bronze Buddha statue' to '125-foot concrete Buddha statue' or '125-foot stone and concrete Buddha statue'"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ajanta-caves-cave-1",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 1 — Padmapani Murals",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Described as 'oldest cave in the complex' but Cave 1 dates to late 5th century CE; Caves 9 and 10 are older (2nd century BCE).",
+    "evidence": "Wikipedia + multiple sources confirm Caves 9 and 10 (2nd century BCE) predate Cave 1 (late 5th century CE). See https://en.wikipedia.org/wiki/Ajanta_Caves",
+    "suggested_fix": "Change 'The oldest cave' to 'An important cave' or 'A later Vakataka-period cave featuring'"
+  },
+  {
+    "id": "durga-temple-aihole",
+    "destination_id": "aihole",
+    "name": "Durga Temple",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Described as '5th-century temple' but the Durga Temple is dated to 7th-8th century CE (not 5th century). May be confusing with the broader Aihole site which has 5th-century temples like Lad Khan.",
+    "evidence": "Multiple sources including Wikipedia and Hubpages confirm Durga Temple was built 7th-8th century (reign of Vikramaditya II, 733-746 CE). See https://en.wikipedia.org/wiki/Durga_temple,_Aihole and https://discover.hubpages.com/education/Durga-temple-of-Aihole-Karnataka-7th-cent-Vesara-style-of-Architecture",
+    "suggested_fix": "Change '5th-century temple' to '7th-8th century temple' or '7th-century temple'"
+  },
+  {
+    "id": "st-marys-island-udupi",
+    "destination_id": "udupi",
+    "name": "St Mary's Island",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Hexagonal basalt columns stated as '40 feet high' but tallest confirmed columns are approximately 6 metres (20 feet), not 40 feet.",
+    "evidence": "Wikipedia and Outlook Traveller confirm the tallest columns are about 6 m (20 ft). See https://en.wikipedia.org/wiki/St._Mary's_Islands and https://www.outlooktraveller.com/experiences/nature/explore-the-lesser-known-st-marys-island-of-udupi-in-karnataka",
+    "suggested_fix": "Change '40 feet high' to '20 feet high' or '6 metres high'"
+  },
+  {
+    "id": "sindhudurg-fort-malvan",
+    "destination_id": "malvan",
+    "name": "Sindhudurg Fort",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Described as '16th-century' fort but Sindhudurg Fort was built 1664-1667 (17th century), not 16th century. Also distance (500m offshore vs 1.5 km), bastions (22 vs 42-52), and wall height (40 feet vs ~30 feet/9-10m) are inaccurate.",
+    "evidence": "Multiple sources confirm construction 1664-1667 under Shivaji. See https://reismagosfortgoa.com/ (Reis Magos comparison), https://www.re-thinkingthefuture.com/case-studies/a2791-sindhudurg-fort-the-1664-architecture-marvel-constructed-on-an-island, Maharashtra Tourism https://maharashtratourism.gov.in/fort/sindhudurg/",
+    "suggested_fix": "Change '16th-century island sea fortress built by Shivaji' to '17th-century island sea fortress built by Shivaji (1664-1667)'. Update distance to ~1.5 km, bastions to 42, walls to ~30 feet."
+  },
+  {
+    "id": "borra-caves-chamber-andhra-pradesh",
+    "destination_id": "borra-caves",
+    "name": "Borra Caves Main Chamber",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Stated as '150-metre-deep limestone cave system, India's deepest' but actual depth is 80 metres (260 feet), not 150 metres.",
+    "evidence": "Wikipedia and Outlook Traveller confirm caves extend to 80 m depth, not 150 m. See https://en.wikipedia.org/wiki/Borra_Caves and https://www.outlooktraveller.com/experiences/adventure/borra-caves-in-andhra-pradesh-are-the-deepest-limestone-caves-in-india",
+    "suggested_fix": "Change '150-metre-deep' to '80-metre-deep' or '260-foot-deep'"
+  },
+  {
+    "id": "ajanta-caves-cave-26",
+    "destination_id": "ajanta-caves",
+    "name": "Cave 26 — Reclining Buddha",
+    "severity": "med",
+    "issue_type": "contradiction",
+    "problem": "Described as 'One of two chaityas' but Ajanta Caves has 5 chaityas total (caves 9, 10, 19, 26, 29), not two.",
+    "evidence": "Multiple sources confirm 5 chaityas at Ajanta: caves 9, 10, 19, 26, 29. Cave 26 is one of five. See https://en.wikipedia.org/wiki/Ajanta_Caves",
+    "suggested_fix": "Change 'One of two chaityas' to 'One of five chaityas' or simply remove the quantifier and say 'A major chaityagriha'"
+  }
+]

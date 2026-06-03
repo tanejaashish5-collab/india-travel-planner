@@ -1,0 +1,12 @@
+[
+  {
+    "id": "kodai-lake-kodaikanal",
+    "destination_id": "kodaikanal",
+    "name": "Kodaikanal Lake",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Stated area of 60 sq km is more than double the actual size of Kodaikanal Lake.",
+    "evidence": "Kodaikanal Lake is approximately 24-25 sq km, consistently documented across tourism sources and official data. The 60 sq km figure represents a significant factual overestimation.",
+    "suggested_fix": "Change '60 sq km' to '24 sq km' or '~24-25 sq km' in the description"
+  }
+]

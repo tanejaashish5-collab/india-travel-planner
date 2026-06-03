@@ -1,0 +1,32 @@
+[
+  {
+    "id": "alibaug-kanakeshwar-temple",
+    "destination_id": "alibaug",
+    "name": "Kanakeshwar Temple",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Temple construction date listed as 1764 but should be 1674.",
+    "evidence": "Per TourMyIndia and Grokipedia sources: 'The unique architecture of the temple was built in 1674 and is the finest example of Hoysala style of architecture'. https://www.tourmyindia.com/states/maharashtra/kanakeshwar-devasthan-temple-alibaug.html",
+    "suggested_fix": "Change '1764' to '1674' in description."
+  },
+  {
+    "id": "athirapally-falls-athirapally",
+    "destination_id": "athirapally",
+    "name": "Athirapally Falls",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Description claims 'India's largest by monsoon volume' but this is factually incorrect. Chitrakote Falls (Indravati River) is India's largest waterfall by monsoon volume with ~300m width. Athirapally is the largest in Kerala only.",
+    "evidence": "Wikipedia List of waterfalls in India by height; multiple sources confirm Chitrakote Falls as 'India's largest waterfall by volume of water discharge' and 'The Niagara of India'. Athirapally is verified only as 'largest in Kerala'. https://en.wikipedia.org/wiki/Jog_Falls; https://padhai.ai/blogs-padhai/list-of-top-waterfalls-in-india",
+    "suggested_fix": "Remove 'India's largest by monsoon volume' and replace with 'Largest waterfall in Kerala' or 'one of Kerala's largest waterfalls by volume'."
+  },
+  {
+    "id": "athirapally-falls-athirapally",
+    "destination_id": "athirapally",
+    "name": "Athirapally Falls",
+    "severity": "low",
+    "issue_type": "wrong_fact",
+    "problem": "Height listed as '80-foot' but verified height is 81.5 feet (approximately 24-25 meters).",
+    "evidence": "Wikipedia Athirappilly Falls and multiple Kerala tourism sources confirm height as 81.5 feet. https://en.wikipedia.org/wiki/Athirappilly_Falls",
+    "suggested_fix": "Update height from '80-foot' to '81.5-foot' or round to '82-foot'."
+  }
+]

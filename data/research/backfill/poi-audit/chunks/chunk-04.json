@@ -1,0 +1,386 @@
+[
+  {
+    "id": "arthurs-seat-mahabaleshwar",
+    "destination_id": "mahabaleshwar",
+    "name": "Arthur's Seat",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Most famous viewpoint in Mahabaleshwar offering panoramic vistas. On clear days, the view extends to the Konkan coast. Named after British administrator Arthur Stanley. Early morning and sunset are prime times."
+  },
+  {
+    "id": "lingmala-falls-mahabaleshwar",
+    "destination_id": "mahabaleshwar",
+    "name": "Lingmala Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Waterfall in Mahabaleshwar fed by monsoon rains. Flows down a steep slope creating cascading water. Popular during monsoon season (June-September) when water volume is highest."
+  },
+  {
+    "id": "old-mahabaleshwar-temple",
+    "destination_id": "mahabaleshwar",
+    "name": "Old Mahabaleshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple in Mahabaleshwar dedicated to Shiva. Historical structure marking the original settlement site. Religious significance for pilgrims visiting Mahabaleshwar."
+  },
+  {
+    "id": "pratapgad-fort-mahabaleshwar",
+    "destination_id": "mahabaleshwar",
+    "name": "Pratapgad Fort",
+    "type": "fort",
+    "entry_fee": "Varies",
+    "description": "Historic Maratha fort where Shivaji defeated and killed Afzal Khan in 1659. Fortification complex on elevated terrain overlooks the Krishna Valley. Museum inside displays weapons and artifacts."
+  },
+  {
+    "id": "venna-lake-mahabaleshwar",
+    "destination_id": "mahabaleshwar",
+    "name": "Venna Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Scenic lake in Mahabaleshwar offering boating and paddle facilities. Surrounded by gardens and walking paths. Popular destination for evening recreation and water activities."
+  },
+  {
+    "id": "wilson-point-mahabaleshwar",
+    "destination_id": "mahabaleshwar",
+    "name": "Wilson Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic viewpoint on the Mahabaleshwar ridge known for sunrise views. Clear panoramic vistas of the surrounding valleys and hills. Peaceful morning hours with fewer crowds."
+  },
+  {
+    "id": "hawah-beach-kovalam",
+    "destination_id": "kovalam",
+    "name": "Hawah Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A quieter crescent just north of Lighthouse Beach, where fishermen still haul traditional catamarans onto the sand at dawn."
+  },
+  {
+    "id": "lighthouse-beach-kovalam",
+    "destination_id": "kovalam",
+    "name": "Lighthouse Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Kovalam's best-known beach, curving below the red-and-white striped Vizhinjam lighthouse. Swimming, sunsets, and a line of shoreline cafes."
+  },
+  {
+    "id": "samudra-beach-kovalam",
+    "destination_id": "kovalam",
+    "name": "Samudra Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The relatively secluded, rockier beach at Kovalam's northern end, better suited to walks and rest than to swimming."
+  },
+  {
+    "id": "vizhinjam-lighthouse-kovalam",
+    "destination_id": "kovalam",
+    "name": "Vizhinjam Lighthouse",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "The 35-metre striped lighthouse on Kurumkal headland; the climb up the spiral stairs gives a wide view over the Kovalam coves."
+  },
+  {
+    "id": "vizhinjam-cave-temple-kovalam",
+    "destination_id": "kovalam",
+    "name": "Vizhinjam Rock-Cut Cave Temple",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "An 8th-century Ay-dynasty rock-cut shrine with an unfinished relief, beside the busy Vizhinjam fishing harbour a short way from Kovalam."
+  },
+  {
+    "id": "evening-safari-bandipur",
+    "destination_id": "bandipur",
+    "name": "Evening Safari (3:30pm)",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Afternoon jeep safari through open grassland and forest, ideal for bird watching (250+ species) and evening animal sightings. Milder temperatures than morning safari."
+  },
+  {
+    "id": "gopalaswamy-betta-bandipur",
+    "destination_id": "bandipur",
+    "name": "Gopalaswamy Betta Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic hilltop 32km inside Bandipur National Park at 1,450m elevation. Small temple structure with panoramic views of the Nilgiri Mountains and reserve forest canopy."
+  },
+  {
+    "id": "morning-safari-bandipur",
+    "destination_id": "bandipur",
+    "name": "Morning Safari (6am)",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Government-operated jeep safari departing at 6am through dry deciduous forest. High probability of sighting elephant herds, tigers, and leopards. Advance booking through Karnataka Forest Dept or Jungleledges required."
+  },
+  {
+    "id": "nh766-scenic-drive-bandipur",
+    "destination_id": "bandipur",
+    "name": "NH766 Scenic Drive",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Major route cutting through Bandipur linking Mysore and Ooty. Daytime-only drive (6am-6pm) through the national park with frequent elephant crossings and dense forest. One of South India's most scenic highways."
+  },
+  {
+    "id": "ganpatipule-beach-ganpatipule",
+    "destination_id": "ganpatipule",
+    "name": "Ganpatipule Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A 6km crescent-shaped white sand beach adjacent to the Ganpati Temple, one of only two white sand beaches in Maharashtra. Clean water and gentle waves make it suitable for swimming and relaxation."
+  },
+  {
+    "id": "jaigad-fort-ganpatipule",
+    "destination_id": "ganpatipule",
+    "name": "Jaigad Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historical coastal fort located 25km from Ganpatipule, built during the Maratha period with strategic views of the Arabian Sea and surrounding Konkan landscape."
+  },
+  {
+    "id": "prachin-konkan-museum-ganpatipule",
+    "destination_id": "ganpatipule",
+    "name": "Prachin Konkan Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Museum showcasing traditional Konkan life, culture, and artwork with a collection of over 3,000 artefacts including daily-use items, handicrafts, and historical pieces reflecting regional heritage."
+  },
+  {
+    "id": "swayambhu-ganpati-temple-ganpatipule",
+    "destination_id": "ganpatipule",
+    "name": "Swayambhu Ganpati Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A 400-year-old temple with a naturally-formed Ganesh idol believed to be self-manifested. One of few temples in India where the deity faces west, attracting thousands of devotees to this sacred Konkan site."
+  },
+  {
+    "id": "aazhimala-shiva-temple",
+    "destination_id": "poovar",
+    "name": "Aazhimala Shiva Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple 7.8 km from Poovar near Aazhimala village. Dedicated to Lord Shiva with sea views from the temple grounds and traditional Kerala architecture."
+  },
+  {
+    "id": "poovar-backwater-boat",
+    "destination_id": "poovar",
+    "name": "Poovar Backwater Cruise",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Traditional houseboat and canoe cruises through mangrove-fringed backwaters with birdwatching. Calm waters allow you to see wading birds, kingfishers, and egrets."
+  },
+  {
+    "id": "poovar-estuary",
+    "destination_id": "poovar",
+    "name": "Poovar Estuary",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The rare trifecta where Neyyar River meets Arabian Sea creating a golden sand estuary. Coconut groves line the shore, creating Kerala's most photographed confluence point."
+  },
+  {
+    "id": "poovar-golden-beach",
+    "destination_id": "poovar",
+    "name": "Poovar Golden Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sandy beach on one side with backwaters and lagoons on the other. Quieter than Kovalam, ideal for sunset walks and swimming in calm shallow waters."
+  },
+  {
+    "id": "agonda-beach-agonda",
+    "destination_id": "agonda",
+    "name": "Agonda Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A 3km stretch of empty sand backed by coconut palms. Olive ridley turtles nest here October-March; beach lights are dimmed during nesting season. Wide, quiet, minimal development—ideal for solitary walks and swimming."
+  },
+  {
+    "id": "cabo-de-rama-fort-agonda",
+    "destination_id": "agonda",
+    "name": "Cabo de Rama Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "16th-century Portuguese fort perched on a cliff 15km south of Agonda. The fort ruins overlook the Arabian Sea and a small cove. Accessible by foot from the road; minimal remains but the location offers commanding views and a sense of isolation."
+  },
+  {
+    "id": "our-lady-of-mount-carmel-agonda",
+    "destination_id": "agonda",
+    "name": "Our Lady of Mount Carmel Church",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Whitewashed church at the heart of Agonda village, built in the Portuguese era. Simple, peaceful interior with a small bell tower visible from the beach. Locals gather for Sunday Mass; visitors welcome outside service hours."
+  },
+  {
+    "id": "gnana-saraswathi-temple-basara",
+    "destination_id": "basara",
+    "name": "Gnana Saraswathi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of only two Saraswathi temples in India, 6th century structure on banks of Godavari. Children perform first writing ceremony (Aksharabhyasa) here. Free entry."
+  },
+  {
+    "id": "godavari-ghat-boating-basara",
+    "destination_id": "basara",
+    "name": "Godavari Ghat & Boating",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "River bathing ghat 2km from Basara temple where Manjeera and Godavari rivers meet. Boats operate throughout the day for pilgrimages and tourism."
+  },
+  {
+    "id": "vyasa-maharshi-cave-basara",
+    "destination_id": "basara",
+    "name": "Vyasa Maharshi Cave",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Hilltop cave 1km from Basara, traditionally believed to be where sage Veda Vyasa rested after the Kurukshetra war. Contains a marble idol of the sage."
+  },
+  {
+    "id": "devils-canyon-dudhsagar-falls",
+    "destination_id": "dudhsagar-falls",
+    "name": "Devil's Canyon",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A stunning river gorge with criss-cross rock formations where water flows through underground passages. Located near Mollem, accessible as part of sanctuary visits."
+  },
+  {
+    "id": "dudhsagar-waterfall-dudhsagar-falls",
+    "destination_id": "dudhsagar-falls",
+    "name": "Dudhsagar Falls",
+    "type": "waterfall",
+    "entry_fee": "Jeep safari ₹300-500 per person",
+    "description": "One of India's highest waterfalls at 310 metres, cascading in four tiers. Accessible via 45-minute jeep safari from Collem through Bhagwan Mahavir Wildlife Sanctuary. The railway bridge crossing in front of the falls creates an iconic image."
+  },
+  {
+    "id": "tambdi-surla-temple-dudhsagar-falls",
+    "destination_id": "dudhsagar-falls",
+    "name": "Tambdi Surla Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A 12th-century Shiva temple built during the Kadamba dynasty, located deep in Bhagwan Mahavir Wildlife Sanctuary. The only structural stone temple of its kind surviving in Goa, featuring intricate stonework and lotus carvings."
+  },
+  {
+    "id": "bhaja-cave-complex-karla-bhaja-caves",
+    "destination_id": "karla-bhaja-caves",
+    "name": "Bhaja Cave Complex",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "A 22-cave Buddhist monastery complex dating to the 2nd century BCE, 3km from Karla. Features the earliest surviving chaitya hall with apsidal hall design and stupa cluster, simpler and older than Karla caves."
+  },
+  {
+    "id": "ekvira-temple-karla-bhaja-caves",
+    "destination_id": "karla-bhaja-caves",
+    "name": "Ekvira Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A Hindu temple near the Karla Caves complex dedicated to Goddess Ekvira, combining ancient and medieval architecture. Located within walking distance of the Buddhist cave sites."
+  },
+  {
+    "id": "karla-chaitya-karla-bhaja-caves",
+    "destination_id": "karla-bhaja-caves",
+    "name": "Karla Chaitya Hall",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "The largest preserved Buddhist chaitya hall in India at 45m long and 14m high, featuring 37 octagonal pillars. Built in the 2nd century BCE as part of an important early Hinayana monastic complex."
+  },
+  {
+    "id": "charlotte-lake-matheran",
+    "destination_id": "matheran",
+    "name": "Charlotte Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Lake that supplies water to Matheran town. Calm walk around the reservoir through forest. Birdwatching spot."
+  },
+  {
+    "id": "matheran-toy-train-matheran",
+    "destination_id": "matheran",
+    "name": "Neral-Matheran Toy Train",
+    "type": "monument",
+    "entry_fee": "₹45–₹200",
+    "description": "Heritage narrow-gauge railway built in 1907, 21km zigzag climb through Western Ghats. Only motorised transport to car-free Matheran. Operates daily except monsoon."
+  },
+  {
+    "id": "panorama-point-matheran",
+    "destination_id": "matheran",
+    "name": "Panorama Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest viewpoint in Matheran overlooking Sahyadri valleys. Sunset views. 30-minute walk from town on forest paths."
+  },
+  {
+    "id": "bird-watching-pench-maharashtra",
+    "destination_id": "pench-maharashtra",
+    "name": "Bird Watching & Hides",
+    "type": "viewpoint",
+    "entry_fee": "Included in safari fees",
+    "description": "Over 280 bird species recorded in Pench National Park. Photography hides at permanent water holes attract migratory and resident birds year-round."
+  },
+  {
+    "id": "pench-river-safari-pench-maharashtra",
+    "destination_id": "pench-maharashtra",
+    "name": "Pench River Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹1500–3000 per person (depends on gate and season)",
+    "description": "Morning and evening safari routes along the Pench River (Kipling's Waingunga). Tiger and leopard sighting zones with photography hides at water holes. Open October–June."
+  },
+  {
+    "id": "sillari-gate-pench-maharashtra",
+    "destination_id": "pench-maharashtra",
+    "name": "Sillari Gate",
+    "type": "viewpoint",
+    "entry_fee": "Gate entry + safari fees",
+    "description": "Primary entry gate to Pench National Park on the Maharashtra side. Gateway to the park's teak and bamboo forests. Base for organizing safaris and accessing wildlife viewing zones."
+  },
+  {
+    "id": "big-vagator-beach-vagator",
+    "destination_id": "vagator",
+    "name": "Big Vagator Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Wider crescent beach separated from Little Vagator by a headland with a car park. Dramatic red cliffs, calm water, and sunset views. Main beach hub with beach bars and water sports."
+  },
+  {
+    "id": "chapora-fort-vagator",
+    "destination_id": "vagator",
+    "name": "Chapora Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historic fort (17th century, renovated by Portuguese) perched above Vagator Beach. Open ramparts with views across the Arabian Sea and adjacent beaches. Famous Dil Chahta Hai movie bench site."
+  },
+  {
+    "id": "little-vagator-beach-vagator",
+    "destination_id": "vagator",
+    "name": "Little Vagator (Ozran Beach)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Smaller, quieter beach enclosed by red laterite cliffs. Famous for the carved Shiva face on the cliff rock. Rock pools at low tide, secluded coves, and fewer crowds than Big Vagator."
+  },
+  {
+    "id": "girijatmaj-ganesha-lenyadri",
+    "destination_id": "lenyadri",
+    "name": "Girijatmaj Ganesha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the eight Ashtavinayaks (sacred Ganesha temples). Located in Cave 7 of the 30 Lenyadri Buddhist caves near Junnar. 283 stone steps lead to the temple. The only Ashtavinayak where the idol faces north."
+  },
+  {
+    "id": "lenyadri-buddhist-caves",
+    "destination_id": "lenyadri",
+    "name": "Lenyadri Buddhist Caves",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Rock-cut Buddhist cave complex with 30 caves dating from 1st-3rd century CE. Viharas (monasteries) and chaitya halls carved into the hillside. Archaeological significance in Buddhist architecture."
+  },
+  {
+    "id": "jambukeswarar-temple-srirangam",
+    "destination_id": "srirangam",
+    "name": "Jambukeswarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "An ancient Shiva temple built around 1,800 years ago by Kochenga Chola. One of the five Pancha Bhoota Sthalams representing the water element."
+  },
+  {
+    "id": "ranganathaswamy-temple-srirangam",
+    "destination_id": "srirangam",
+    "name": "Sri Ranganathaswamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The world's largest functioning Hindu temple covering 631,000 square metres. Dedicated to Lord Vishnu, it features a Sapta-Prakaram design with seven concentric enclosures."
+  }
+]

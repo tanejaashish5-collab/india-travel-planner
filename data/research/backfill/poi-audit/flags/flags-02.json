@@ -1,0 +1,52 @@
+[
+  {
+    "id": "hiranyakeshi-temple-amboli",
+    "destination_id": "amboli",
+    "name": "Hiranyakeshi Temple",
+    "severity": "high",
+    "issue_type": "misattributed",
+    "problem": "Described as part of Ashtavinayak circuit, but Hiranyakeshi is a Shiva temple dedicated to Goddess Parvati, not a Ganesha temple. The 8 Ashtavinayak temples are at Ojhar, Morgaon, Theur, Ranjangaon, Siddhatek, Lenyadri, Mahad, and Pali—none include Amboli.",
+    "evidence": "Ashtavinayak temples list verified via Wikipedia and official Kerala tourism sources. Hiranyakeshi Temple is a 12th-century Shiva shrine to Parvati, not part of any Ganesha pilgrimage circuit.",
+    "suggested_fix": "Remove 'part of the Ashtavinayak circuit pilgrimage route' clause. Update to 'Ancient Shiva temple dedicated to Goddess Parvati (Hiranyakeshi) with a self-manifested Shivling called Hiranyakeshwar.'"
+  },
+  {
+    "id": "sawantwadi-palace-amboli",
+    "destination_id": "amboli",
+    "name": "Sawantwadi Palace",
+    "severity": "high",
+    "issue_type": "misattributed",
+    "problem": "Sawantwadi Palace is located in Sawantwadi town, not Amboli. While accessible via Amboli Road (~12km away), it is a distinct destination. The POI entry incorrectly attributes it to Amboli.",
+    "evidence": "Official Sindhudurg tourism website and multiple sources confirm the palace is in Sawantwadi, address: NH 17, Khaskilwada, Sawantwadi, Sindhudurg District, Maharashtra 416510. Amboli is a separate destination ~12km away.",
+    "suggested_fix": "Remove from Amboli POIs entirely. Create a Sawantwadi destination entry with this palace. Alternatively, note in description: 'Historic palace in nearby Sawantwadi town (12km away), accessible via Amboli Road.'"
+  },
+  {
+    "id": "bahubali-monolith-dharmasthala",
+    "destination_id": "dharmasthala",
+    "name": "Bahubali Monolith",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description states the monolith was 'installed on Ratnagiri Hill in 1973,' but it was sculpted in 1973 and positioned (installed) in February 1982.",
+    "evidence": "Official Shri Kshetra Dharmasthala website confirms: 'sculpted in 1973 by sculptor Renjala Gopalkrishna Shenoy' and 'positioned atop the Ratnagiri Hill in February 1982 by Dr. D. Veerendra Heggade.'",
+    "suggested_fix": "Change 'installed on Ratnagiri Hill in 1973' to 'sculpted in 1973 and installed on Ratnagiri Hill in 1982' or simply 'A 39-foot monolith of Lord Bahubali installed in 1982.'"
+  },
+  {
+    "id": "car-museum-dharmasthala",
+    "destination_id": "dharmasthala",
+    "name": "Car Museum",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Museum founder name is given as 'Manjunatha Dharma Veerendra Heggade,' which is malformed. The correct name is 'D. Veerendra Heggade.' The title 'Manjunatha Dharma' conflates the temple's name (Manjunatha) with the museum's name (Manjusha).",
+    "evidence": "Multiple sources including The Week and official Dharmasthala tourism confirm the founder is 'D. Veerendra Heggade,' the hereditary administrator of the Dharmasthala temple trust. No such compound name 'Manjunatha Dharma Veerendra Heggade' exists.",
+    "suggested_fix": "Change 'Manjunatha Dharma Veerendra Heggade' to 'D. Veerendra Heggade' (or 'Dr. D. Veerendra Heggade')."
+  },
+  {
+    "id": "theyyam-ritual-kannur",
+    "destination_id": "kannur",
+    "name": "Theyyam Ritual Performance",
+    "severity": "low",
+    "issue_type": "wrong_fact",
+    "problem": "Description states 'Performances occur December–May during harvest season,' but Theyyam season actually runs November–May, with peak season in November-December. The season should begin in November, not December.",
+    "evidence": "Multiple sources including DTPC Kannur and Kerala Tourism confirm the Theyyam season is November–May, with November and December being the peak months. Onam (July/August) is one harvest festival with Theyyam, but the main season is Nov–May.",
+    "suggested_fix": "Change 'December–May' to 'November–May' or 'Peak season November–May.'"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "nandankanan-zoo-bhubaneswar",
+    "destination_id": "bhubaneswar",
+    "name": "Nandankanan Zoological Park",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description states 'first Indian zoo in WAZA' but Nandankanan was established in 1960 and only joined WAZA in 2009, not at founding.",
+    "evidence": "Wikipedia + verified sources confirm: 'It became the first zoo in India to join World Association of Zoos and Aquariums (WAZA) in 2009', not 1960. https://en.wikipedia.org/wiki/Nandankanan_Zoological_Park",
+    "suggested_fix": "Change 'first Indian zoo in WAZA' to 'joined WAZA in 2009' or drop the WAZA claim entirely and keep only 'established in 1960'"
+  },
+  {
+    "id": "kailasa-temple-ellora-caves",
+    "destination_id": "ellora-caves",
+    "name": "Kailasa Temple (Cave 16)",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description claims 'took over 100 years to complete' but documented evidence shows construction took only 18-20 years.",
+    "evidence": "Wikipedia and verified sources state: 'it only took 18 years to finish' and 'it only took 18 years to complete the construction using iron chisels and hammers only', though scholars note it would take 100+ years with modern machinery. https://en.wikipedia.org/wiki/Kailasa_Temple,_Ellora",
+    "suggested_fix": "Remove 'took over 100 years to complete'. Replace with accurate statement: 'completed in approximately 18-20 years during the 8th century' or note the comparison to modern machinery separately"
+  },
+  {
+    "id": "kanakakkunnu-palace",
+    "destination_id": "trivandrum",
+    "name": "Kanakakkunnu Palace Gardens",
+    "severity": "high",
+    "issue_type": "misattributed",
+    "problem": "Palace is attributed to destination 'trivandrum' but Kanakakkunnu Palace is actually located in Thiruvananthapuram (Trivandrum) as part of that city, making this entry duplicative with Kuthiramalika Palace in the same destination. However, the destination_id is correct—the actual issue is Palace exists in Thiruvananthapuram and is ~800m NE of Napier Museum (which is also listed separately). This is not a separate destination POI.",
+    "evidence": "Multiple sources (Wikipedia, Kerala Tourism, official Incredible India) confirm: 'Kanakakkunnu Palace is situated in Thiruvananthapuram' and located near Napier Museum. https://en.wikipedia.org/wiki/Kanakakkunnu_Palace",
+    "suggested_fix": "Verify with founder: this palace is in Trivandrum city proper, not a distinct destination. If the POI is valid, confirm it as a separate attraction in Trivandrum (alongside other Trivandrum palaces). Entry appears correct as-is if these are meant to be multiple palace attractions in Trivandrum."
+  },
+  {
+    "id": "padmanabhaswamy-temple",
+    "destination_id": "trivandrum",
+    "name": "Sree Padmanabhaswamy Temple",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description claims 'Over 3,000 years old' but documented evidence places temple at 2,300+ years minimum, with scholarly debate and no conclusive proof exceeding 3,000 years.",
+    "evidence": "Wikipedia and verified scholarly sources state: 'The earliest recorded mention of the temple is from the 8th or 9th century CE, although the temple is likely older' and 'the history of the Sree Padmanabhaswamy Temple can be traced back to at least 300 BCE' (~2,300 years), with speculative claims of 5,000+ years but 'it is not possible to determine with any exactitude' the true founding date. https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
+    "suggested_fix": "Change 'Over 3,000 years old' to 'at least 2,300 years old (dating to 300 BCE)' or 'one of India's oldest temples with origins likely before 300 BCE' to stay within documented evidence"
+  },
+  {
+    "id": "chamundi-hill-mysore",
+    "destination_id": "mysore",
+    "name": "Chamundi Hill",
+    "severity": "low",
+    "issue_type": "wrong_fact",
+    "problem": "Description states 'Climb 1000 steps' but the actual number is 1,008 steps (the main recognized official count), or 1,180 steps total including alternate routes.",
+    "evidence": "Multiple verified sources including FKT (Fastest Known Time) confirm: 'Chamundi 1008 Steps' is the official main pathway. Some sources cite 1,001 or 1,180 total steps including secondary routes. https://fastestknowntime.com/route/chamundi-1008-steps-india",
+    "suggested_fix": "Change 'Climb 1000 steps' to 'Climb 1,008 steps to reach the pristine temple' (the official count) or '1,008+ steps' to be precise"
+  }
+]

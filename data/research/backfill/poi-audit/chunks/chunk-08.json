@@ -1,0 +1,386 @@
+[
+  {
+    "id": "dowleswaram-barrage-rajahmundry",
+    "destination_id": "rajahmundry",
+    "name": "Dowleswaram Barrage",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "1852 engineering marvel across the Godavari River, 3.5 km long with 175 crest gates. Built by Sir Arthur Cotton to control river discharge and enable irrigation across Andhra Pradesh."
+  },
+  {
+    "id": "godavari-river-cruise-rajahmundry",
+    "destination_id": "rajahmundry",
+    "name": "Godavari River Cruises",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Scenic boat rides along the Godavari from Rajahmundry, ranging from short local trips to 8-hour journeys to Papikondalu. Options include small motor boats and larger river steamers."
+  },
+  {
+    "id": "gowthami-ghat-rajahmundry",
+    "destination_id": "rajahmundry",
+    "name": "Gowthami Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred riverfront steps on the Godavari where pilgrims perform ritual bathing and ancestral ceremonies. Major pilgrimage site during Godavari Pushkaralu festival (every 12 years)."
+  },
+  {
+    "id": "iskcon-temple-rajahmundry",
+    "destination_id": "rajahmundry",
+    "name": "ISKCON Rajahmundry Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Second-largest ISKCON temple in southern India (after Bangalore), spanning 2 acres on the Godavari riverbank. Dedicated to Lord Krishna with ornate architecture and spiritual atmosphere."
+  },
+  {
+    "id": "papikondalu-gorge-rajahmundry",
+    "destination_id": "rajahmundry",
+    "name": "Papikondalu Gorge",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Three-hill gorge 60 km from Rajahmundry where the Godavari narrows through tropical rain forests. Accessible by 8-hour boat journey from Rajahmundry or Bhadrachalam."
+  },
+  {
+    "id": "sri-ranganatha-temple-rajahmundry",
+    "destination_id": "rajahmundry",
+    "name": "Sri Ranganatha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple dedicated to Lord Ranganatha (reclining form of Vishnu) located at Gowthami Ghat. Associated with Godavari pilgrimage traditions and daily ritual worship."
+  },
+  {
+    "id": "devil-kitchen-panchgani",
+    "destination_id": "panchgani",
+    "name": "Devil's Kitchen",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Rock formation on Table Land resembling a kitchen, formed by natural erosion. A modest site that requires a short walk from the main plateau. Local spot for adventurous visitors."
+  },
+  {
+    "id": "mapro-garden-panchgani",
+    "destination_id": "panchgani",
+    "name": "Mapro Garden",
+    "type": "garden",
+    "entry_fee": "Free (fruit picking charged separately)",
+    "description": "Agro-tourism farm growing strawberries, raspberries, and mulberries. Open for farm visits, picking experiences, and buying fresh fruits and jams. Cafe serving strawberry ice-cream and desserts."
+  },
+  {
+    "id": "parsi-point-panchgani",
+    "destination_id": "panchgani",
+    "name": "Parsi Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "High viewpoint on Table Land with panoramic views of the Krishna Valley. Named after Parsi community members who settled in the area. Popular for sunset and sunrise viewing."
+  },
+  {
+    "id": "sidney-point-panchgani",
+    "destination_id": "panchgani",
+    "name": "Sidney Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Viewpoint overlooking the Krishna Valley with dense vegetation and layered mountains. Named after Sidney, a British officer. Quieter than Parsi Point, ideal for photography and sunset watching."
+  },
+  {
+    "id": "table-land-panchgani",
+    "destination_id": "panchgani",
+    "name": "Table Land",
+    "type": "viewpoint",
+    "entry_fee": "Free (paragliding has separate fees)",
+    "description": "Asia's second-longest laterite plateau at 1,334m elevation with flat volcanic rock surface. 360-degree views of the Krishna Valley. Popular for paragliding, horse riding, and walking."
+  },
+  {
+    "id": "baba-budangiri-chikmagalur",
+    "destination_id": "chikmagalur",
+    "name": "Baba Budangiri",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A rare Hindu-Muslim shared shrine dedicated to the saint Baba Budan, who brought India's first coffee beans from Yemen in the 17th century. The cave shrine houses a shrine chamber and coffee history."
+  },
+  {
+    "id": "hebbe-falls-chikmagalur",
+    "destination_id": "chikmagalur",
+    "name": "Hebbe Falls",
+    "type": "waterfall",
+    "entry_fee": "₹100 jeep + guide",
+    "description": "A powerful two-tier waterfall tumbling through coffee plantations in the Western Ghats. Reach by jeep ride through scenic coffee estates followed by a short trek through forest."
+  },
+  {
+    "id": "kemmanagundi-chikmagalur",
+    "destination_id": "chikmagalur",
+    "name": "Kemmanagundi",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A hill station with Z-Point viewpoint offering sweeping views over the Chikmagalur valley. Morning mist through the valleys creates a serene landscape. The ridge walk passes through shola grasslands."
+  },
+  {
+    "id": "mullayanagiri-chikmagalur",
+    "destination_id": "chikmagalur",
+    "name": "Mullayanagiri",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Karnataka's highest peak at 1,930 metres. A short trek from the road end reaches the summit with panoramic views of the Western Ghats, coffee estates, and clear-day visibility of Chikmagalur town."
+  },
+  {
+    "id": "cape-beach-kanyakumari",
+    "destination_id": "kanyakumari",
+    "name": "Cape Comorin Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "India's southernmost tip where Bay of Bengal, Arabian Sea, Indian Ocean converge. Only place with sunrise and sunset both over sea."
+  },
+  {
+    "id": "kumari-temple-kanyakumari",
+    "destination_id": "kanyakumari",
+    "name": "Kumari Amman Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient shore temple dedicated to Goddess Kumari Amman. Overlooks Cape Comorin beach; sacred to Hindu pilgrims."
+  },
+  {
+    "id": "thiruvalluvar-statue-kanyakumari",
+    "destination_id": "kanyakumari",
+    "name": "Thiruvalluvar Statue",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "40.6m-tall stone sculpture of Tamil poet Valluvar by V. Ganapati Sthapati, unveiled 1 Jan 2000. Represents 38 and 95 chapters of Thirukkural."
+  },
+  {
+    "id": "vivekananda-rock-kanyakumari",
+    "destination_id": "kanyakumari",
+    "name": "Vivekananda Rock Memorial",
+    "type": "monument",
+    "entry_fee": "₹60 (ferry included)",
+    "description": "Offshore rock island 500m from shore where Swami Vivekananda meditated in 1892. Memorial completed 1970; where three seas converge."
+  },
+  {
+    "id": "chavadi-shirdi",
+    "destination_id": "shirdi",
+    "name": "Chavadi",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The building where Sai Baba alternately slept on different nights. Now a revered shrine with the original structure preserved. Devotees visit to pay respects at the space where Baba resided."
+  },
+  {
+    "id": "dwarkamai-shirdi",
+    "destination_id": "shirdi",
+    "name": "Dwarkamai Mosque",
+    "type": "mosque",
+    "entry_fee": "Free",
+    "description": "The mosque where Sai Baba lived and spent his days. Located adjacent to Samadhi Mandir. The structure retains authentic period features and is revered by both Hindu and Muslim devotees as a sacred space."
+  },
+  {
+    "id": "samadhi-mandir-shirdi",
+    "destination_id": "shirdi",
+    "name": "Samadhi Mandir",
+    "type": "temple",
+    "entry_fee": "Free (online pass optional)",
+    "description": "The primary temple in Shirdi complex housing Sai Baba's marble tomb. The sanctum contains the idol of Sai Baba in Italian marble. The temple receives 40,000+ daily visitors. Online darshan passes reduce queue times significantly."
+  },
+  {
+    "id": "shani-shingnapur-shirdi",
+    "destination_id": "shirdi",
+    "name": "Shani Shingnapur",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shani (Saturn) temple 65km from Shirdi, famous for a village with no locked doors (traditionally). The temple sits atop a black stone representing Shani. A popular day-trip addition to Shirdi visits."
+  },
+  {
+    "id": "anjuna-beach-coves-anjuna",
+    "destination_id": "anjuna",
+    "name": "Anjuna Beach Rocky Coves",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Rocky outcrops and small coves dot Anjuna's shoreline. Dark rocks contrast with white sand; tide pools and small sheltered areas among the boulders. Popular for photography and exploring rock formations."
+  },
+  {
+    "id": "chapora-fort-anjuna",
+    "destination_id": "anjuna",
+    "name": "Chapora Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "17th-century fort built by the Portuguese, later used by the Marathas. Sits on a cliff overlooking Anjuna and Vagator beaches with the Arabian Sea spread below. Famous for its sunset views and appearance in the Bollywood film Dil Chahta Hai."
+  },
+  {
+    "id": "flea-market-anjuna",
+    "destination_id": "anjuna",
+    "name": "Wednesday Flea Market",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Sprawling bazaar running since the 1970s every Wednesday. Stalls sell clothes, jewelry, handicrafts, paintings, drums, and food. Once a countercultural hub, now more commercial but still the iconic Goa flea market experience."
+  },
+  {
+    "id": "gahirmatha-turtle-beach-bhitarkanika",
+    "destination_id": "bhitarkanika",
+    "name": "Gahirmatha Turtle Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹100-200",
+    "description": "World's largest nesting ground for endangered olive ridley sea turtles. Annual mass nesting event called Arribada occurs November onwards, with up to 500,000 turtles laying eggs on the beach."
+  },
+  {
+    "id": "river-safari-bhitarkanika",
+    "destination_id": "bhitarkanika",
+    "name": "River Safari through Mangrove Channels",
+    "type": "viewpoint",
+    "entry_fee": "₹300-500",
+    "description": "Boat-based wildlife exploration through tidal creeks and mangrove channels. Spot saltwater crocodiles, king cobras, water monitors and over 300 bird species including kingfishers and sea eagles."
+  },
+  {
+    "id": "saltwater-crocodile-viewing-bhitarkanika",
+    "destination_id": "bhitarkanika",
+    "name": "Saltwater Crocodile Viewing",
+    "type": "viewpoint",
+    "entry_fee": "₹250-400",
+    "description": "Home to 1,826 saltwater crocodiles including 18 albino specimens. India's largest concentration of these reptiles can be observed from designated viewing platforms and boat routes."
+  },
+  {
+    "id": "devaswom-museum-guruvayur",
+    "destination_id": "guruvayur",
+    "name": "Devaswom Museum",
+    "type": "museum",
+    "entry_fee": "₹30 (adult), ₹15 (child)",
+    "description": "Museum displaying temple artifacts, royal regalia, and historical items related to the Guruvayur Temple and the Travancore royal family."
+  },
+  {
+    "id": "guruvayur-krishna-temple-guruvayur",
+    "destination_id": "guruvayur",
+    "name": "Guruvayur Sri Krishna Temple",
+    "type": "temple",
+    "entry_fee": "Free (darshan)",
+    "description": "One of Hinduism's most sacred Krishna temples, called Bhuloka Vaikunta (Heaven on Earth). Famous for its religious significance and the annual Guruvayur Ekadashi festival. Non-Hindus not permitted in the inner sanctum."
+  },
+  {
+    "id": "punnathur-kotta-elephant-sanctuary-guruvayur",
+    "destination_id": "guruvayur",
+    "name": "Punnathur Kotta Elephant Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹50 (adult), ₹25 (child)",
+    "description": "Sanctuary housing over 60 temple elephants on 11.5 acres. Morning elephant bathing (9–11 AM) where mahouts scrub animals with coir brushes. Visitors can participate in Aanayoottu (feeding rituals) under mahout guidance."
+  },
+  {
+    "id": "ashtamudi-lake-kollam",
+    "destination_id": "kollam",
+    "name": "Ashtamudi Lake",
+    "type": "lake",
+    "entry_fee": "Free (houseboat/canoe rental ₹500–2000+)",
+    "description": "Second-largest water body in Kerala (Ramsar Wetland), palm-shaped with extensive backwaters. Gateway to Kerala's backwaters system. Houseboat cruises and canoeing offer views of palm groves and village life."
+  },
+  {
+    "id": "dutch-church-munroe-island-kollam",
+    "destination_id": "kollam",
+    "name": "Dutch Church (Munroe Island)",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Red brick church built by the Dutch in 1878 on the shores of Ashtamudi Lake. Showcases blend of Dutch and traditional Keralan architectural styles."
+  },
+  {
+    "id": "munroe-island-canoe-cruise-kollam",
+    "destination_id": "kollam",
+    "name": "Munroe Island Canoe Cruise",
+    "type": "viewpoint",
+    "entry_fee": "₹300–500 per person",
+    "description": "2-hour paddle canoe tour through narrow waterways and canals surrounded by coconut and palm trees. Glimpses of authentic village life, coir-making, clam harvesting, and mangrove ecosystems."
+  },
+  {
+    "id": "moyar-lake-mudumalai",
+    "destination_id": "mudumalai",
+    "name": "Moyar Lake",
+    "type": "lake",
+    "entry_fee": "Included in safari",
+    "description": "A tranquil water body within Mudumalai Tiger Reserve frequented by gaur, deer, and various bird species. Accessible during safari excursions."
+  },
+  {
+    "id": "needle-rock-mudumalai",
+    "destination_id": "mudumalai",
+    "name": "Needle Rock Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A scenic hilltop viewpoint offering expansive views of the Nilgiri hills and surrounding reserve forest. Popular for sunrise photography and spotting wildlife in the valley below."
+  },
+  {
+    "id": "theppakadu-elephant-camp-mudumalai",
+    "destination_id": "mudumalai",
+    "name": "Theppakadu Elephant Camp",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "The headquarters of Mudumalai Tiger Reserve with an elephant camp where visitors can observe Asian elephants. Houses a nature interpretation centre and organizes guided jungle safaris."
+  },
+  {
+    "id": "dhanushkodi-rameswaram",
+    "destination_id": "rameswaram",
+    "name": "Dhanushkodi Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The southernmost tip of Rameswaram island where the Bay of Bengal meets the Indian Ocean. A historic site largely abandoned after a 1964 cyclone, now a popular destination for its desolate landscape."
+  },
+  {
+    "id": "pamban-bridge-rameswaram",
+    "destination_id": "rameswaram",
+    "name": "Pamban Bridge",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "India's first sea bridge opened in 1914, connecting Rameswaram to mainland India. Features a bascule section allowing ships to pass. Offers views of the Bay of Bengal."
+  },
+  {
+    "id": "ramanathaswamy-temple-rameswaram",
+    "destination_id": "rameswaram",
+    "name": "Ramanathaswamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A 12th-century Shiva temple dedicated to Lord Ramanathaswamy, one of the twelve Jyotirlinga shrines. Features 22 sacred water bodies (tirthas) within the complex."
+  },
+  {
+    "id": "kawal-tiger-reserve-adilabad",
+    "destination_id": "adilabad",
+    "name": "Kawal Tiger Reserve",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "893 square km wildlife sanctuary home to tigers, sambar, panthers, and diverse bird species, accessible via early morning jeep safaris through dense forest terrain."
+  },
+  {
+    "id": "kuntala-falls-adilabad",
+    "destination_id": "adilabad",
+    "name": "Kuntala Falls",
+    "type": "waterfall",
+    "entry_fee": "₹10-20 per adult",
+    "description": "Telangana's highest waterfall at 45 metres, cascading over lush forest terrain with 408 steps for access, best visited during monsoon and post-monsoon seasons."
+  },
+  {
+    "id": "barabati-fort-cuttack",
+    "destination_id": "cuttack",
+    "name": "Barabati Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "14th-century fortress that once housed the rulers of Odisha. Located near Gadagadia Ghat on the Mahanadi River, it anchors the city's historical identity and hosts the annual Bali Jatra festival."
+  },
+  {
+    "id": "tarakasi-silver-filigree-cuttack",
+    "destination_id": "cuttack",
+    "name": "Tarakasi (Silver Filigree) Workshops",
+    "type": "bazaar",
+    "entry_fee": "Free to observe",
+    "description": "Intricate spider-web style silver jewelry craft over 500 years old. Watch artisans create delicate rose motifs (3-4 hours per piece) and purchase handmade filigree items in Old Town workshops."
+  },
+  {
+    "id": "karha-river-morgaon",
+    "destination_id": "morgaon",
+    "name": "Karha River",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "River flowing past Morgaon with riverside temples and ghats. Good for morning and evening walks."
+  },
+  {
+    "id": "mayureshwar-temple-morgaon",
+    "destination_id": "morgaon",
+    "name": "Mayureshwar Ashtavinayak Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "First stop of the traditional Ashtavinayak Yatra, on the Karha River. Ganesha idol set within tortoise-shaped fort walls. Yatra is considered incomplete without returning here."
+  },
+  {
+    "id": "volcano-viewpoint-barren-island",
+    "destination_id": "barren-island",
+    "name": "Barren Island Volcano Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "₹8,310 per person (government vessel) or ₹1,50,000-1,70,000 private charter",
+    "description": "India's only active volcano visible from boat tours. Located 135-140km east of Port Blair. Last erupted in 2017. No landing permitted; viewing only from safe distance by boat. Dolphins and manta rays visible en route."
+  }
+]

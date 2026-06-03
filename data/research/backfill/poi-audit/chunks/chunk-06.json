@@ -1,0 +1,386 @@
+[
+  {
+    "id": "fort-geldria-pulicat-lake",
+    "destination_id": "pulicat-lake",
+    "name": "Fort Geldria",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "17th-century Dutch colonial fort built in 1613, the first European settlement in India. Ruins include historic stone fortifications and remnants of Dutch administrative headquarters."
+  },
+  {
+    "id": "nelapattu-bird-sanctuary-pulicat-lake",
+    "destination_id": "pulicat-lake",
+    "name": "Nelapattu Bird Sanctuary",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Important breeding site for spot-billed pelicans and black-headed ibis. Adjacent to Pulicat, 20 km away; birds feed on Pulicat and nest here."
+  },
+  {
+    "id": "fishing-village-pulicat-lake",
+    "destination_id": "pulicat-lake",
+    "name": "Pulicat Fishing Village",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Traditional Tamil fishing settlement with authentic village life and Dutch cemetery. Visitors can interact with local fishermen and explore maritime heritage."
+  },
+  {
+    "id": "pulicat-lake-bird-sanctuary-pulicat-lake",
+    "destination_id": "pulicat-lake",
+    "name": "Pulicat Lake Bird Sanctuary",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Second-largest brackish-water lagoon in India covering 759 sq km. Hosts 15,000 flamingos during peak migration (Nov-Feb), along with pelicans, painted storks, and kingfishers."
+  },
+  {
+    "id": "pulicat-lake-boating-pulicat-lake",
+    "destination_id": "pulicat-lake",
+    "name": "Pulicat Lake Boat Tours",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Guided boat rides through the lagoon with experienced local guides. Tours range 1.5 to 4.5 hours, offering close-up views of flamingos and other migratory birds."
+  },
+  {
+    "id": "pulicat-lake-viewpoint-pulicat-lake",
+    "destination_id": "pulicat-lake",
+    "name": "Pulicat Lakeside Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic observation points along the lake's edge for birdwatching and photography. Best during sunrise and sunset when flamingos are most active and visible."
+  },
+  {
+    "id": "kudroli-gokarnath-temple-mangalore",
+    "destination_id": "mangalore",
+    "name": "Kudroli Gokarnath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Built by Sri Narayana Guru and dedicated to Gokarnanatha, a manifestation of Lord Shiva. Features a 60-foot golden gopuram with Dravidian architecture and serves as a major pilgrimage site."
+  },
+  {
+    "id": "mangaladevi-temple-mangalore",
+    "destination_id": "mangalore",
+    "name": "Mangaladevi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "9th-century temple dedicated to Goddess Mangaladevi, the namesake of Mangalore city. Features traditional Dravidian architecture and remains the spiritual heart of the coastal town."
+  },
+  {
+    "id": "panambur-beach-mangalore",
+    "destination_id": "mangalore",
+    "name": "Panambur Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "One of India's cleanest and most well-maintained beaches with golden sand and calm waters ideal for swimming. Popular for sunset views and beach walks."
+  },
+  {
+    "id": "st-aloysius-chapel-mangalore",
+    "destination_id": "mangalore",
+    "name": "St. Aloysius Chapel",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Catholic chapel perched atop Lighthouse Hill adorned with fresco paintings on walls and canvases on ceilings, crafted by legendary painter Antonio Moscheni."
+  },
+  {
+    "id": "sultan-battery-mangalore",
+    "destination_id": "mangalore",
+    "name": "Sultan Battery",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Watch tower built by Tipu Sultan in 1784 situated 4 km from central Mangalore. Offers panoramic views of the Arabian Sea from the hilltop after climbing stairs."
+  },
+  {
+    "id": "bhongir-citadel-viewpoint-bhongir",
+    "destination_id": "bhongir",
+    "name": "Bala Hisar Citadel Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "₹40",
+    "description": "Highest point of Bhongir Fort offering bird's eye views across Telangana landscape. Accessible after climbing to the summit of the monolith."
+  },
+  {
+    "id": "bhongir-fort-bhongir",
+    "destination_id": "bhongir",
+    "name": "Bhongir Fort",
+    "type": "fort",
+    "entry_fee": "₹40",
+    "description": "Massive egg-shaped monolith 500+ feet high, built by Vikramaditya VI in the 10th century. Panoramic views of surrounding landscape; looks like a tortoise from the south and sleeping elephant from the west."
+  },
+  {
+    "id": "hanuman-temple-bhongir",
+    "destination_id": "bhongir",
+    "name": "Hanuman Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple dedicated to Lord Hanuman located within Bhongir Fort premises. Part of the fort's ancient religious structures dating back centuries."
+  },
+  {
+    "id": "shiva-temple-bhongir",
+    "destination_id": "bhongir",
+    "name": "Shiva Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple atop the Bhongir Fort hill with black Nandi statue. Features religious carvings and architectural elements from the Chalukya period."
+  },
+  {
+    "id": "ganesh-galli-harihareshwar",
+    "destination_id": "harihareshwar",
+    "name": "Ganesh Galli",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A narrow 3-foot passage between two rocky mountains with a large idol of Ganesh said to emerge during low tides, creating a sacred and unique natural phenomenon."
+  },
+  {
+    "id": "harihareshwar-beach-harihareshwar",
+    "destination_id": "harihareshwar",
+    "name": "Harihareshwar Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dramatic black basalt beach with tide pools and rocky formations, surrounded by four hills forming a natural amphitheater. Strong currents make swimming unsafe; best for walking and photography at low tide."
+  },
+  {
+    "id": "harihareshwar-temple-harihareshwar",
+    "destination_id": "harihareshwar",
+    "name": "Harihareshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Peshwa-era Shiva temple built on a peninsula surrounded by the Savitri River and Arabian Sea. Features stone carvings and overlooks crashing waves from dramatic black basalt cliffs."
+  },
+  {
+    "id": "kalbhairav-temple-harihareshwar",
+    "destination_id": "harihareshwar",
+    "name": "Kalbhairav Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple dedicated to Kalbhairav, a fierce form of Shiva, traditionally visited before the main Harihareshwar temple. Located with views of the Savitri River confluence."
+  },
+  {
+    "id": "palampet-surroundings-ramappa-temple",
+    "destination_id": "ramappa-temple",
+    "name": "Palampet Village & Surroundings",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Temple sits at foothills of forested area amidst agricultural fields near Ramappa Lake. Peaceful natural setting with scenic views and local village atmosphere."
+  },
+  {
+    "id": "ramappa-lake-cheruvu-ramappa-temple",
+    "destination_id": "ramappa-temple",
+    "name": "Ramappa Lake (Cheruvu)",
+    "type": "lake",
+    "entry_fee": "Free (boating: ₹15 adults, ₹10 children)",
+    "description": "Kakatiya-era water reservoir built approximately 1 km from the temple. Scenic spot for walks under sprawling trees with boating facilities. Popular with migratory birds and nature lovers."
+  },
+  {
+    "id": "ramappa-temple-site-ramappa-temple",
+    "destination_id": "ramappa-temple",
+    "name": "Ramappa Temple (Kakatiya Rudreshwara)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "UNESCO World Heritage Site inscribed in July 2021. 13th-century Kakatiya temple (1213 CE) named after sculptor Ramappa. Features floating bricks, intricate carvings, earthquake-resistant sandbox foundation, and decorated granite pillars."
+  },
+  {
+    "id": "sculpted-pillars-ramappa-temple",
+    "destination_id": "ramappa-temple",
+    "name": "Sculpted Pillars & Carvings",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Temple features intricately decorated beams and pillars of carved granite and dolerite. Distinctive pyramid-shaped Vimana (tower) made of lightweight floating bricks. Exemplar of Kakatiya architectural craftsmanship."
+  },
+  {
+    "id": "amaravati-great-stupa-amaravati",
+    "destination_id": "amaravati",
+    "name": "Amaravati Great Stupa",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Ancient Buddhist monument built 200 BCE-250 CE representing one of the largest and most important stupas of antiquity, now under Archaeological Survey of India protection."
+  },
+  {
+    "id": "dhyana-buddha-statue-amaravati",
+    "destination_id": "amaravati",
+    "name": "Dhyana Buddha Statue",
+    "type": "monument",
+    "entry_fee": "₹20 per person",
+    "description": "Towering 125-foot bronze Buddha statue in meditative pose set on a lotus platform with 8 pillars, overlooking the Krishna River with an integrated museum at its base."
+  },
+  {
+    "id": "kalachakra-museum-amaravati",
+    "destination_id": "amaravati",
+    "name": "Kalachakra Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Buddhist heritage museum displaying artifacts and marble panels depicting episodes from Buddha's life and Jataka tales, inaugurated by the 14th Dalai Lama in 2006."
+  },
+  {
+    "id": "ankai-flat-bhandardara",
+    "destination_id": "bhandardara",
+    "name": "Ankai Flat (Table-Top Mountain)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Flat-topped mountain with 360-degree views of surrounding valleys and villages. Accessible via a hiking trail from Bhandardara valley."
+  },
+  {
+    "id": "arthur-lake-bhandardara",
+    "destination_id": "bhandardara",
+    "name": "Arthur Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Scenic lake surrounded by green hills, formed by a dam across the Pravara river. Popular for nature walks and picnicking."
+  },
+  {
+    "id": "ratangad-fort-bhandardara",
+    "destination_id": "bhandardara",
+    "name": "Ratangad Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historic fort perched on a mountain ridge above Bhandardara village. Accessible by trekking through the valley with views of the surrounding landscape."
+  },
+  {
+    "id": "gandikota-adventure-activities",
+    "destination_id": "gandikota",
+    "name": "Gandikota Adventure Zone",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Adventure recreation area offering rock climbing, rappelling, kayaking, cliff jumping, and canyon trekking along the Pennar River. Operated by local guides. Best during monsoon for water activities."
+  },
+  {
+    "id": "gandikota-fort-ruins",
+    "destination_id": "gandikota",
+    "name": "Gandikota Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Medieval red sandstone fort perched above the Pennar River gorge. Built by Kaka Raja with later Pemmasani Nayaka and Golconda additions. Features intricate palace carvings, perennial springs, and a 5-mile perimeter wall."
+  },
+  {
+    "id": "pennar-river-gorge-gandikota",
+    "destination_id": "gandikota",
+    "name": "Pennar River Gorge Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dramatic 200-meter wide gorge carved by the Pennar River through Erramala Hills. Red sandstone cliffs frame the river canyon. Best viewed from the fort ramparts at sunset with crimson reflections on water."
+  },
+  {
+    "id": "kavaratti-lagoon",
+    "destination_id": "kavaratti",
+    "name": "Kavaratti Lagoon",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Turquoise shallow lagoon with glass-bottom boat tours available. The administrative capital offers the best infrastructure for lagoon exploration in Lakshadweep."
+  },
+  {
+    "id": "kavaratti-marine-aquarium",
+    "destination_id": "kavaratti",
+    "name": "Kavaratti Marine Aquarium",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Showcases diverse marine species of Lakshadweep including colorful fish, sea cucumbers, octopuses, corals, and anemones. Located near Ujra Mosque and Marine Museum."
+  },
+  {
+    "id": "kavaratti-ujra-mosque",
+    "destination_id": "kavaratti",
+    "name": "Ujra Mosque",
+    "type": "mosque",
+    "entry_fee": "Free",
+    "description": "Oldest and most beautiful mosque in Lakshadweep, built in the 17th century by Sheikh Mohammad Kasim. Features ornate ceiling and intricately carved pillars. Sacred well with reportedly curative water on premises."
+  },
+  {
+    "id": "bhagwan-mahavir-sanctuary-mollem",
+    "destination_id": "mollem",
+    "name": "Bhagwan Mahavir Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Free (jeep safaris separate)",
+    "description": "Goa's largest protected forest area covering 240 sq km in the Western Ghats foothills. Home to leopards, sloth bears, gaur (Indian bison), sambar, and 200+ bird species. Semi-evergreen forest with rich biodiversity."
+  },
+  {
+    "id": "devils-canyon-gorge-mollem",
+    "destination_id": "mollem",
+    "name": "Devil's Canyon",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A dramatic river gorge with criss-cross rock formations where the river flows through deep underground passages. Located at the Mollem entrance to Bhagwan Mahavir Wildlife Sanctuary, a natural marvel."
+  },
+  {
+    "id": "mollem-tambdi-surla-temple-mollem",
+    "destination_id": "mollem",
+    "name": "Tambdi Surla Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A 12th-century Hemadpanthi stone temple dedicated to Lord Mahadev, located 12 km from Mollem village in the heart of Bhagwan Mahavir Wildlife Sanctuary. Features intricate lotus carvings and is Goa's oldest surviving Hindu temple."
+  },
+  {
+    "id": "french-quarter-pondicherry",
+    "destination_id": "pondicherry",
+    "name": "French Quarter (Ville Blanche)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Historic colonial enclave with mustard-yellow buildings, bougainvillea-draped streets, and French architecture. Lined with cafes, boutiques, and galleries. Stroll tree-lined boulevards like Rue Dumas and Rue Suffren for old-world European ambiance."
+  },
+  {
+    "id": "promenade-beach-pondicherry",
+    "destination_id": "pondicherry",
+    "name": "Promenade Beach (Rock Beach)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "1.2 km seafront promenade bordered by colonial-era architecture. Features French War Memorial, Gandhi Statue, and seaside cafes. Tree-lined walkway connects to nearby French Quarter. Popular for evening strolls and sunset."
+  },
+  {
+    "id": "sri-aurobindo-ashram-pondicherry",
+    "destination_id": "pondicherry",
+    "name": "Sri Aurobindo Ashram",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Spiritual retreat founded 1926 by Sri Aurobindo and Mirra Alfassa (The Mother). Houses library, printing press, art gallery, dispensary, dairy, farms, and guest houses. Open to seekers and visitors for meditation and study."
+  },
+  {
+    "id": "bhavani-island-vijayawada",
+    "destination_id": "vijayawada",
+    "name": "Bhavani Island",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Asia's largest river island on Krishna River offering boating, water sports, and picnic areas. Natural landscape with recreational facilities."
+  },
+  {
+    "id": "kanaka-durga-temple-vijayawada",
+    "destination_id": "vijayawada",
+    "name": "Kanaka Durga Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Major temple atop Indrakeeladri Hill dedicated to Goddess Kanaka Durga. One of India's Shaktipeeths; eight-armed Durga idol; panoramic Krishna River views."
+  },
+  {
+    "id": "prakasam-barrage-vijayawada",
+    "destination_id": "vijayawada",
+    "name": "Prakasam Barrage",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Engineering marvel across Krishna River connecting Krishna and Guntur districts. Major irrigation project serving 13.5 lakh acres; free to walk; stunning at sunset."
+  },
+  {
+    "id": "mahad-waterfall-mahad-raigad",
+    "destination_id": "mahad-raigad",
+    "name": "Mahad Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Seasonal waterfall near Mahad village that flows during monsoon. Trek routes from Khopoli lead through forest to the falls."
+  },
+  {
+    "id": "varadvinayak-temple-mahad-raigad",
+    "destination_id": "mahad-raigad",
+    "name": "Varadvinayak Ganesha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple on the Khopoli-area banks where the Ganesha idol was discovered in 1690. The Nandadeep oil lamp (continuously burning since 1892) sits in the sanctum. Mayureshwar and Morgaon pilgrims often include this."
+  },
+  {
+    "id": "chintamani-temple-theur",
+    "destination_id": "theur",
+    "name": "Chintamani Ganesha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the eight Ashtavinayak shrines dedicated to Ganesha, set at the confluence of three rivers (Bhima, Mula, Mutha). Built in Hemadpanti black-stone style with intricate carvings. The main idol is carved from black stone; devotees believe it grants relief from worry."
+  },
+  {
+    "id": "chintamani-teertha-pond-theur",
+    "destination_id": "theur",
+    "name": "Chintamani Teertha Pond",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred pond in front of the temple sanctum where devotees bathe before prayers. Considered ritually important for pilgrims following the Ashtavinayak yatra tradition."
+  }
+]

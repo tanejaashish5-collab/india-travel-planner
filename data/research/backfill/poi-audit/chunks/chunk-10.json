@@ -1,0 +1,386 @@
+[
+  {
+    "id": "anna-park-yercaud",
+    "destination_id": "yercaud",
+    "name": "Anna Park (Japanese Garden)",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "A public park within Yercaud town featuring manicured gardens and landscaping. The Japanese Garden inside is the main attraction with ornamental pathways, rocks, and plantings."
+  },
+  {
+    "id": "lady-seat-yercaud",
+    "destination_id": "yercaud",
+    "name": "Lady's Seat Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A scenic overlook on the eastern slopes of Yercaud with panoramic views of the Salem plains and ghats. Named after Lady Shelton of the British era. Ideal for sunrise and sunset photography."
+  },
+  {
+    "id": "pagoda-point-yercaud",
+    "destination_id": "yercaud",
+    "name": "Pagoda Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Also called Pyramid Point, lies on the eastern side of Yercaud hills. A Rama Temple stands at this viewpoint, offering spiritual ambiance with valley views. Less crowded than Lady's Seat."
+  },
+  {
+    "id": "shevarayan-temple-yercaud",
+    "destination_id": "yercaud",
+    "name": "Shevarayan Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Built inside a narrow black rock cave on Yercaud's highest point (5,326 feet). Dedicated to Lord Shevaroyan, worshipped by local tribal communities. May festival celebrated by natives every year."
+  },
+  {
+    "id": "sri-raja-rajeswari-temple-yercaud",
+    "destination_id": "yercaud",
+    "name": "Sri Raja Rajeswari Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A temple 4km from Yercaud on the way to Shevarayan Temple, dedicated to Goddess Rajeswari (Durga). Devotees believe prayers here grant wealth, prosperity, and spiritual elevation."
+  },
+  {
+    "id": "yercaud-lake-yercaud",
+    "destination_id": "yercaud",
+    "name": "Yercaud Lake",
+    "type": "lake",
+    "entry_fee": "Free (boat: Rs. 80-320)",
+    "description": "The only natural lake among South Indian hill stations, surrounded by a deer park and botanical gardens. Boating available (Rs. 80 for 2, Rs. 110 for 4, Rs. 320 for 8 persons). Open 9am-5:30pm."
+  },
+  {
+    "id": "jagdishwar-temple-raigad",
+    "destination_id": "raigad-fort",
+    "name": "Jagdishwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple inside Raigad Fort dedicated to Jagdishwar (Vishnu). The temple structure predates the fort and represents the spiritual foundation of the fortress."
+  },
+  {
+    "id": "queens-palace-raigad",
+    "destination_id": "raigad-fort",
+    "name": "Queen's Palace",
+    "type": "palace",
+    "entry_fee": "Free",
+    "description": "Royal residence chambers inside Raigad Fort where the queen and royal family lived. Features ornate architecture and connected to the Mena Darwaza (ladies' gate)."
+  },
+  {
+    "id": "rajya-sabha-raigad",
+    "destination_id": "raigad-fort",
+    "name": "Rajya Sabha (Royal Court)",
+    "type": "monument",
+    "entry_fee": "₹50 (included in fort entry)",
+    "description": "The royal court where Chhatrapati Shivaji Maharaj held council and made decrees. Located inside Raigad Fort at 820m elevation, represents the seat of Maratha governance from 1674."
+  },
+  {
+    "id": "shivaji-samadhi-raigad",
+    "destination_id": "raigad-fort",
+    "name": "Shivaji Samadhi",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Memorial shrine of Chhatrapati Shivaji Maharaj inside Raigad Fort. A sacred space where devotees pay respects to the founder of the Maratha Empire."
+  },
+  {
+    "id": "takmak-tok-raigad",
+    "destination_id": "raigad-fort",
+    "name": "Takmak Tok (Cliff Viewpoint)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "High cliff edge inside Raigad Fort offering panoramic views of the surrounding landscape and valleys. A dramatic natural feature with near-vertical drops."
+  },
+  {
+    "id": "divar-island-cycle-tour-chorao-divar",
+    "destination_id": "chorao-divar",
+    "name": "Divar Island Cycling",
+    "type": "viewpoint",
+    "entry_fee": "Free (bike rental ₹200-300)",
+    "description": "Bicycle exploration of Divar Island's interior reveals Portuguese-era mansions (some crumbling, some restored), narrow village lanes, small temples, and agricultural fields. A quiet, undeveloped island atmosphere. Bicycles can be rented from the ferry dock."
+  },
+  {
+    "id": "salim-ali-bird-sanctuary-chorao-divar",
+    "destination_id": "chorao-divar",
+    "name": "Dr Salim Ali Bird Sanctuary",
+    "type": "lake",
+    "entry_fee": "₹200-300 per boat",
+    "description": "Mangrove sanctuary on Chorao Island covering about 400 hectares. Home to 200+ bird species including kingfishers, egrets, osprey, and painted storks. Guided boat rides through mangroves last 1-2 hours. Peak season: October to March. Local boatmen provide guided tours."
+  },
+  {
+    "id": "mandovi-river-ferry-chorao-divar",
+    "destination_id": "chorao-divar",
+    "name": "Mandovi River Ferry Experience",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Free government ferries run every 15-20 minutes from Panaji (Ribandar) to Chorao and Divar islands. A 10-minute crossing offers views of the river, mangroves, and colonial-era structures. The ferry ride itself is a cultural experience. Evening crossings provide scenic sunset views."
+  },
+  {
+    "id": "piedade-church-chorao-divar",
+    "destination_id": "chorao-divar",
+    "name": "Piedade Church",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Historic church on the hilltop of Divar Island, visible from across the Mandovi River. Offers elevated views over the island and river landscape. Built in the Portuguese colonial era. Peaceful and rarely crowded."
+  },
+  {
+    "id": "banganga-river-katra",
+    "destination_id": "katra",
+    "name": "Banganga River",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Holy river flowing through Katra with bathing ghats, believed to have originated from the footprint of Bhairav. Traditional morning ritual point for pilgrims."
+  },
+  {
+    "id": "bhairavnath-temple-katra",
+    "destination_id": "katra",
+    "name": "Bhairavnath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple dedicated to Bhairav at 1,600m elevation on the pilgrimage route to Vaishno Devi, housed in a natural cave with stone carvings."
+  },
+  {
+    "id": "katra-bazaar-katra",
+    "destination_id": "katra",
+    "name": "Katra Bazaar",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Main commercial area with shops selling religious items, souvenirs, and local crafts. Point of departure for the Vaishno Devi trek with facilities for ponies, palanquins, and supplies."
+  },
+  {
+    "id": "vaishno-devi-shrine-katra",
+    "destination_id": "katra",
+    "name": "Vaishno Devi Shrine",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred cave shrine 13km uphill from Katra, housing three pindis representing Mahakali, Mahalakshmi, and Mahasaraswati. One of India's most-visited pilgrimage sites with 8M+ annual visitors."
+  },
+  {
+    "id": "barehipani-falls-simlipal",
+    "destination_id": "simlipal",
+    "name": "Barehipani Falls",
+    "type": "waterfall",
+    "entry_fee": "Varies",
+    "description": "India's second-highest waterfall at 217-metre height, located in northern Simlipal. Cascades in two tiers through dense forest. Requires prior pass from Jashipur or Baripada. Viewing platform at 50 meters walk from parking."
+  },
+  {
+    "id": "chahala-zone-safari-simlipal",
+    "destination_id": "simlipal",
+    "name": "Chahala Zone Safari",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Popular safari zone within Simlipal known for dense forest cover and diverse wildlife. Visitors can observe tigers, Asian elephants, gaur, and over 1,000 plant species."
+  },
+  {
+    "id": "joranda-falls-simlipal",
+    "destination_id": "simlipal",
+    "name": "Joranda Falls",
+    "type": "waterfall",
+    "entry_fee": "Varies",
+    "description": "Waterfall in southwestern Simlipal with 181-metre height, second-highest in the park. Surrounded by dense forest with monsoon water flow providing a scenic spectacle."
+  },
+  {
+    "id": "simlipal-tribal-museum-simlipal",
+    "destination_id": "simlipal",
+    "name": "Simlipal Tribal Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Museum within Simlipal National Park showcasing exhibits on Santhal, Ho, and Munda tribal cultures including traditional crafts, tools, and lifestyle artifacts."
+  },
+  {
+    "id": "arambol-beach-arambol",
+    "destination_id": "arambol",
+    "name": "Arambol Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Long, lively main beach with wooden shacks, sunset drum circles, and a community atmosphere. Popular with long-stay travelers and characterized by a relaxed, bohemian vibe. Daily sunset gatherings with live drums are a nightly tradition."
+  },
+  {
+    "id": "kalacha-beach-arambol",
+    "destination_id": "arambol",
+    "name": "Kalacha Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Secluded cove accessible by a 30-minute walk north from Sweet Lake along coastal paths. Quieter and more isolated than the main Arambol Beach, clothing-optional. Popular with those seeking privacy and solitude."
+  },
+  {
+    "id": "sweet-lake-arambol",
+    "destination_id": "arambol",
+    "name": "Sweet Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Freshwater lake behind Arambol Beach, warmed by natural springs. Visitors coat themselves in natural clay found on the lakebed—believed to have therapeutic properties. Located a 20-minute walk north over the headland from the main beach."
+  },
+  {
+    "id": "muziris-archaeological-site-cherai",
+    "destination_id": "cherai",
+    "name": "Ancient Port of Muziris",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Archaeological site of a once-thriving ancient port connected to Asia, Africa, and Europe. Now restored as an open-air museum showcasing the heritage of maritime trade."
+  },
+  {
+    "id": "cherai-gowreeshwara-temple-cherai",
+    "destination_id": "cherai",
+    "name": "Cherai Gowreeshwara Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The only Chaturmukha (four-faced) temple in Asia, dedicated to Lord Subrahmanyam. Features a chariot and draws crowds during processions when up to 30 caparisoned elephants march."
+  },
+  {
+    "id": "munambam-confluence-cherai",
+    "destination_id": "cherai",
+    "name": "Munambam Confluence Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Where the Periyar River meets the Arabian Sea, creating a unique brackish estuary. Chinese fishing nets operate here and the vista spans paddy fields, lagoons, and coconut groves."
+  },
+  {
+    "id": "elephant-beach-snorkeling-havelock-island",
+    "destination_id": "havelock-island",
+    "name": "Elephant Beach Snorkeling",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "20-minute speedboat ride from Havelock jetty. Crystal clear water ideal for snorkeling. Coral reefs close to shore with colorful fish, clownfish, parrotfish, and sea cucumbers. Gentle currents and shallow reefs perfect for beginners."
+  },
+  {
+    "id": "radhanagar-beach-havelock-island",
+    "destination_id": "havelock-island",
+    "name": "Radhanagar Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Asia's best beach per TIME magazine (2004). Pristine white sand, clear water, calm atmosphere. Popular for sunset viewing and photography. Beyond the flagged area the water is deep; snorkeling at Elephant Beach is recommended instead."
+  },
+  {
+    "id": "scuba-diving-havelock-island",
+    "destination_id": "havelock-island",
+    "name": "Scuba Diving",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Premier diving destination with 30m+ visibility. Elephant Beach is ideal for newbie divers with gentle currents and shallow reefs. Multiple coral varieties and diverse marine life. Best season: October to May."
+  },
+  {
+    "id": "kukke-subramanya-temple",
+    "destination_id": "kukke-subramanya",
+    "name": "Kukke Subramanya Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of India's most important Subrahmanya shrines, renowned for Sarpa Dosha pujas (snake curse remedies). Houses an Adi Subrahmanya idol believed to be over 5,000 years old. Pilgrimage destination for devotees."
+  },
+  {
+    "id": "kumara-parvatha-trek",
+    "destination_id": "kukke-subramanya",
+    "name": "Kumara Parvatha Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "One of Karnataka's toughest treks, 1,700m elevation gain covering 28 km round trip. Passes through Pushpagiri Wildlife Sanctuary's lush forest. Trek starts before dawn, requires online permits (max 150/day), 12-hour limit."
+  },
+  {
+    "id": "kumaradhara-river-kukke",
+    "destination_id": "kukke-subramanya",
+    "name": "Kumaradhara River",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "A pristine river originating at the base of Kumara Parvatha near the temple. Offers scenic water features, river walks, and natural pools for swimming in the surrounding forest area."
+  },
+  {
+    "id": "janjira-fort-murud-janjira",
+    "destination_id": "murud-janjira",
+    "name": "Janjira Fort",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "Undefeated 15th-century Siddi sea fortress on an island, 500m offshore. Never conquered by Mughals, Marathas, or British. 22 bastions, 40-foot walls. Boat tour from Rajapuri jetty."
+  },
+  {
+    "id": "murud-beach-murud-janjira",
+    "destination_id": "murud-janjira",
+    "name": "Murud Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Long clean sandy beach adjacent to Murud town. Good for swimming and long walks. Less crowded than nearby tourist beaches."
+  },
+  {
+    "id": "nawab-palace-murud-janjira",
+    "destination_id": "murud-janjira",
+    "name": "Nawab Palace",
+    "type": "palace",
+    "entry_fee": "Varies",
+    "description": "Waterfront palace of the Siddi Nawabs on Murud shore. Reflects Siddi heritage and Indo-Islamic architecture. Limited opening hours."
+  },
+  {
+    "id": "jaigad-fort-ratnagiri",
+    "destination_id": "ratnagiri",
+    "name": "Jaigad Fort with Lighthouse",
+    "type": "fort",
+    "entry_fee": "₹30",
+    "description": "Medieval fort located 30km from Ratnagiri, featuring a restored lighthouse that guides coastal navigation. The fort sits on a clifftop with views of the Konkan coast and smaller islands. Access is via steps carved into the hillside."
+  },
+  {
+    "id": "ratnadurg-fort-ratnagiri",
+    "destination_id": "ratnagiri",
+    "name": "Ratnadurg Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historic coastal fort overlooking the Arabian Sea, built in the medieval period. Offers panoramic sea views and is accessible via a short walk from town. The fort structure shows typical Marathi military architecture."
+  },
+  {
+    "id": "thibaw-palace-ratnagiri",
+    "destination_id": "ratnagiri",
+    "name": "Thibaw Palace",
+    "type": "palace",
+    "entry_fee": "₹50",
+    "description": "The palace where Burma's last king, King Thibaw, was exiled by the British in 1886. The building overlooks the Konkan coast and now operates as a museum documenting Burmese royal history and the exile period."
+  },
+  {
+    "id": "lower-ahobilam-temples-ahobilam",
+    "destination_id": "ahobilam",
+    "name": "Lower Ahobilam Temples",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Cluster of five easily accessible Narasimha temples in the lower gorge, including Karanja and Bhargava shrines, serving as entry point for the Nava Narasimha pilgrimage."
+  },
+  {
+    "id": "upper-ahobilam-trek-ahobilam",
+    "destination_id": "ahobilam",
+    "name": "Upper Ahobilam Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Steep 8 km forest trek through Eastern Ghats gorge leading to Jwala and Pavana Narasimha shrines, requiring full day commitment and moderate to advanced trekking skills."
+  },
+  {
+    "id": "elephanta-cave-main-elephanta-caves",
+    "destination_id": "elephanta-caves",
+    "name": "Elephanta Cave Temple",
+    "type": "monument",
+    "entry_fee": "₹600",
+    "description": "UNESCO World Heritage site with ancient rock-cut temples dedicated to Shiva. Contains 6th-century sculptures of high artistic quality including a 5.5-meter Maheshwara sculpture."
+  },
+  {
+    "id": "elephanta-island-elephanta-caves",
+    "destination_id": "elephanta-caves",
+    "name": "Elephanta Island",
+    "type": "monument",
+    "entry_fee": "Ferry ₹200 return",
+    "description": "Island in Mumbai Harbour reached by ferry from Gateway of India. Part of Mumbai UNESCO World Heritage zone. Named after the stone elephant sculpture found here."
+  },
+  {
+    "id": "ethipothala-falls-nagarjuna-sagar",
+    "destination_id": "nagarjuna-sagar",
+    "name": "Ethipothala Falls",
+    "type": "waterfall",
+    "entry_fee": "Rs 20 (adults), Rs 15 (children)",
+    "description": "70-foot cascade on the Chandravanka River forming a lagoon at the base. Forest Department operates a crocodile breeding center in the pond — visitors observe the facility from designated viewpoints. Year-round water flow."
+  },
+  {
+    "id": "nagarjuna-sagar-dam-nagarjuna-sagar",
+    "destination_id": "nagarjuna-sagar",
+    "name": "Nagarjuna Sagar Dam",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "World's tallest masonry dam (124m) on the Krishna River, constructed 1955–1968. Viewpoint near the spillway allows visitors to see the engineering scale. Reservoir supplies water to adjacent states."
+  },
+  {
+    "id": "kuttanad-paddy-fields-kuttanad",
+    "destination_id": "kuttanad",
+    "name": "Kuttanad Paddy Fields",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Vast rice paddies 1-2 metres below sea level, recognized by FAO as Globally Important Agricultural Heritage System. Canoe rides through narrow canal networks offer immersion in working farmland."
+  }
+]

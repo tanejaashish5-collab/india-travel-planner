@@ -1,0 +1,42 @@
+[
+  {
+    "id": "salim-ali-bird-sanctuary-chorao-divar",
+    "destination_id": "chorao-divar",
+    "name": "Dr Salim Ali Bird Sanctuary",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description understates sanctuary area (400 hectares vs actual 178 ha) and bird species (200+ vs actual 473+).",
+    "evidence": "Wikipedia + multiple tourism sources confirm sanctuary is 178 hectares and hosts 473+ bird species. See https://en.wikipedia.org/wiki/Salim_Ali_Bird_Sanctuary",
+    "suggested_fix": "Update to: 'Mangrove sanctuary on Chorao Island covering 178 hectares. Home to 473+ bird species including kingfishers, egrets, osprey, and painted storks.'"
+  },
+  {
+    "id": "barehipani-falls-simlipal",
+    "destination_id": "simlipal",
+    "name": "Barehipani Falls",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Waterfall height stated as 217m but actual height is 399m total (with 259m single drop). Error is ~45% understatement.",
+    "evidence": "Wikipedia + multiple sources confirm Barehipani is 399m total height and second-highest waterfall in India. See https://en.wikipedia.org/wiki/Barehipani_Falls",
+    "suggested_fix": "Update description to: 'India's second-highest waterfall at 399-metre height (259m single drop), located in northern Simlipal.'"
+  },
+  {
+    "id": "joranda-falls-simlipal",
+    "destination_id": "simlipal",
+    "name": "Joranda Falls",
+    "severity": "low",
+    "issue_type": "wrong_fact",
+    "problem": "Height stated as 181m but most authoritative sources cite 150m.",
+    "evidence": "Wikipedia and multiple sources consistently report 150m height, though some sources do cite 181m. See https://en.wikipedia.org/wiki/Joranda_Falls",
+    "suggested_fix": "Update to: 'Waterfall in southwestern Simlipal with 150-metre height.'"
+  },
+  {
+    "id": "elephanta-cave-main-elephanta-caves",
+    "destination_id": "elephanta-caves",
+    "name": "Elephanta Cave Temple",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Entry fee listed as ₹600 but this is only for foreign nationals; Indian visitors pay ₹40. Description does not clarify.",
+    "evidence": "Official sources confirm ₹40 for Indian/SAARC visitors, ₹600 for other foreign nationals. See https://traveltriangle.com/maharashtra-tourism/mumbai/places-to-visit/elephanta-caves/",
+    "suggested_fix": "Update entry_fee to clarify: '₹40 (Indian/SAARC), ₹600 (foreign)' or just '₹40-600' with description noting foreigner rate."
+  }
+]

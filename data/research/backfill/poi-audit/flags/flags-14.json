@@ -1,0 +1,22 @@
+[
+  {
+    "id": "arjunas-penance-mahabalipuram",
+    "destination_id": "mahabalipuram",
+    "name": "Arjuna's Penance",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Dimensions stated as 27m high × 90m wide; actual documented dimensions are 29m × 13m (96 ft × 43 ft).",
+    "evidence": "Wikipedia and official sources confirm 96 by 43 feet (29 m × 13 m). See https://en.wikipedia.org/wiki/Descent_of_the_Ganges_(Mahabalipuram) and https://www.tamilnadutourism.tn.gov.in/destinations/arjunas-penance",
+    "suggested_fix": "Change description to: 'World's largest bas-relief, 29m high × 13m wide (96 ft × 43 ft). 7th–8th century Pallava carved tableau depicting Hindu mythology scenes.'"
+  },
+  {
+    "id": "manginapudi-beach-machilipatnam",
+    "destination_id": "machilipatnam",
+    "name": "Manginapudi Beach",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Claims 'Manginapudi Lighthouse (1611)' but lighthouse was first established in 1852, with the one at Manginapudi specifically built in 1858.",
+    "evidence": "Wikipedia Machilipatnam Lighthouse states: 'The first light at Machilipatnam was commissioned in 1852 at a different location' and 'first established in 1858, at Manginapudi Beach.' See https://en.wikipedia.org/wiki/Machilipatnam_lighthouse and https://www.dgll.nic.in/DGLL-light-house-location/about-vishakhapatnam/machilipatnam-lighthouse",
+    "suggested_fix": "Change description to: '11km stretch of sandy beach on the Bay of Bengal with year-round calm waters. Offers swimming, jet skiing, speed boating, and fishing community walks. Machilipatnam Lighthouse (1858) stands nearby.'"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "murud-janjira-fort-kashid",
+    "destination_id": "kashid",
+    "name": "Murud Janjira Fort",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Described as '15th-century offshore fort built under Malik Amber's rule', but the stone fort was built in 1567 AD (16th century) by Malik Ambar, replacing an earlier 15th-century wooden structure.",
+    "evidence": "Wikipedia Murud-Janjira: 'After its construction in 1567 AD' and 'Itbarrao Koli...built this island in the 15th century' (wooden fort); https://en.wikipedia.org/wiki/Murud-Janjira",
+    "suggested_fix": "Change to '16th-century offshore stone fort, rebuilt in 1567 AD by Malik Ambar from an earlier 15th-century wooden garrison'"
+  },
+  {
+    "id": "borra-caves-araku-valley",
+    "destination_id": "araku-valley",
+    "name": "Borra Caves",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Described as 'Second largest cave system in the Indian subcontinent, 3,229m long total.' But Borra is NOT the second largest (Belum Caves is), and Wikipedia states Borra's length is ~200m, not 3,229m.",
+    "evidence": "Wikipedia Borra Caves: 'length is about 200 m (660 ft)'; search reveals Belum Caves (3,200+ metres) is second largest after Krem Liat Prah; https://en.wikipedia.org/wiki/Borra_Caves",
+    "suggested_fix": "Remove second-largest ranking and 3,229m length. Replace with accurate description: 'Limestone cave system with stalactite and stalagmite formations, approximately 200m in explored length. One of India's deepest caves (80m depth).'"
+  }
+]
