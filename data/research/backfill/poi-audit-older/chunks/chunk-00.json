@@ -1,0 +1,378 @@
+[
+  {
+    "id": "agrasen-ki-baoli",
+    "destination_id": "delhi",
+    "name": "Agrasen Ki Baoli",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Dramatic 60-meter stepwell from Mahabharata era. 103 steps descending into darkness. Featured in PK movie."
+  },
+  {
+    "id": "akshardham",
+    "destination_id": "delhi",
+    "name": "Akshardham Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sprawling modern Hindu temple complex with boat ride, water show, exhibitions, and stunning architecture."
+  },
+  {
+    "id": "chandni-chowk",
+    "destination_id": "delhi",
+    "name": "Chandni Chowk",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Asia's oldest and busiest market street (1650). Paranthas, jalebi, spices, electronics, and old Delhi charm."
+  },
+  {
+    "id": "dilli-haat",
+    "destination_id": "delhi",
+    "name": "Dilli Haat",
+    "type": "bazaar",
+    "entry_fee": "₹30",
+    "description": "Open-air food and craft bazaar with stalls from all Indian states. Government-run, fixed prices. Great for souvenirs."
+  },
+  {
+    "id": "gurudwara-bangla-sahib",
+    "destination_id": "delhi",
+    "name": "Gurudwara Bangla Sahib",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "Iconic Sikh gurudwara with golden dome and sacred sarovar. 24/7 langar feeds thousands daily."
+  },
+  {
+    "id": "hauz-khas-village",
+    "destination_id": "delhi",
+    "name": "Hauz Khas Village",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Historic ruins meets trendy restaurants and boutiques. 13th-century madrasa and reservoir with deer park."
+  },
+  {
+    "id": "nizamuddin-dargah",
+    "destination_id": "delhi",
+    "name": "Hazrat Nizamuddin Dargah",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Sufi shrine of the 14th-century saint. Thursday evening qawwali sessions are a transcendent experience."
+  },
+  {
+    "id": "humayuns-tomb",
+    "destination_id": "delhi",
+    "name": "Humayun's Tomb",
+    "type": "monument",
+    "entry_fee": "₹35",
+    "description": "UNESCO World Heritage Mughal garden tomb (1570). Precursor to the Taj Mahal in architecture and design."
+  },
+  {
+    "id": "india-gate",
+    "destination_id": "delhi",
+    "name": "India Gate & Kartavya Path",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "42-meter war memorial designed by Lutyens. Amar Jawan Jyoti eternal flame. Iconic Delhi landmark."
+  },
+  {
+    "id": "jama-masjid-delhi",
+    "destination_id": "delhi",
+    "name": "Jama Masjid",
+    "type": "monument",
+    "entry_fee": "₹300 (minaret)",
+    "description": "India's largest mosque built by Shah Jahan in 1656. Can hold 25,000 worshippers. Climb minaret for views."
+  },
+  {
+    "id": "jantar-mantar-delhi",
+    "destination_id": "delhi",
+    "name": "Jantar Mantar",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "Astronomical observation site built by Maharaja Jai Singh II in 1724 with 13 architectural instruments."
+  },
+  {
+    "id": "lodhi-garden",
+    "destination_id": "delhi",
+    "name": "Lodhi Gardens",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Historic park with 15th-century Sayyid and Lodhi dynasty tombs. Popular jogging and picnic spot."
+  },
+  {
+    "id": "lotus-temple",
+    "destination_id": "delhi",
+    "name": "Lotus Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Bahai House of Worship shaped like a lotus flower. 27 marble petals. Open to all faiths for prayer."
+  },
+  {
+    "id": "national-gallery-modern-art",
+    "destination_id": "delhi",
+    "name": "National Gallery of Modern Art",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "India's leading modern art museum with works by Amrita Sher-Gil, Rabindranath Tagore, and contemporary artists."
+  },
+  {
+    "id": "national-museum-delhi",
+    "destination_id": "delhi",
+    "name": "National Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "India's largest museum with 200,000 works spanning 5,000 years. Indus Valley artifacts to modern art."
+  },
+  {
+    "id": "purana-qila",
+    "destination_id": "delhi",
+    "name": "Purana Qila (Old Fort)",
+    "type": "fort",
+    "entry_fee": "₹35",
+    "description": "One of the oldest forts in Delhi built on the site of ancient Indraprastha. Mughal architecture with sound-light show."
+  },
+  {
+    "id": "qutub-minar",
+    "destination_id": "delhi",
+    "name": "Qutub Minar",
+    "type": "monument",
+    "entry_fee": "₹35",
+    "description": "UNESCO World Heritage 73-meter tower built in 1193. Tallest brick minaret in the world with Indo-Islamic carvings."
+  },
+  {
+    "id": "raj-ghat",
+    "destination_id": "delhi",
+    "name": "Raj Ghat",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Mahatma Gandhi's cremation site. Simple black marble platform with eternal flame in serene gardens."
+  },
+  {
+    "id": "red-fort-delhi",
+    "destination_id": "delhi",
+    "name": "Red Fort (Lal Qila)",
+    "type": "fort",
+    "entry_fee": "₹35",
+    "description": "UNESCO World Heritage Mughal fort built by Shah Jahan in 1638. Sound and light show every evening."
+  },
+  {
+    "id": "netarhat-sunrise",
+    "destination_id": "netarhat",
+    "name": "Netarhat Sunrise Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Called \"Queen of Chotanagpur\". Famous sunrise and sunset points at 3,700 ft. Sal forests and waterfalls."
+  },
+  {
+    "id": "netarhat-sunrise-point",
+    "destination_id": "netarhat",
+    "name": "Prabhat Vihar (Sunrise Point)",
+    "type": "viewpoint",
+    "entry_fee": "free",
+    "description": "Best sunrise viewpoint in Netarhat at 1,128m. Watch mist clear from Chotanagpur plateau at dawn."
+  },
+  {
+    "id": "netarhat-upper-ghaghri-falls",
+    "destination_id": "netarhat",
+    "name": "Upper Ghaghri Falls",
+    "type": "waterfall",
+    "entry_fee": "free",
+    "description": "Cascading waterfall 4km from Netarhat. Swimming pool at base. Monsoon surge impressive."
+  },
+  {
+    "id": "upper-ghagri-falls",
+    "destination_id": "netarhat",
+    "name": "Upper Ghagri Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Waterfall cascading through dense forest near Netarhat. Accessible via forest trail."
+  },
+  {
+    "id": "chail-cricket-ground",
+    "destination_id": "chail",
+    "name": "Chail Cricket Ground",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "World's highest cricket ground at 7,500 ft, built in 1893 by Maharaja of Patiala."
+  },
+  {
+    "id": "chail-palace",
+    "destination_id": "chail",
+    "name": "Chail Palace",
+    "type": "palace",
+    "entry_fee": "₹50",
+    "description": "Former summer retreat of Maharaja of Patiala, now a heritage hotel surrounded by deodar forests."
+  },
+  {
+    "id": "kali-ka-tibba-chail",
+    "destination_id": "chail",
+    "name": "Kali Ka Tibba",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop temple at the highest point in Chail with 360-degree views of Shimla and Kasauli."
+  },
+  {
+    "id": "christ-church-kasauli",
+    "destination_id": "kasauli",
+    "name": "Christ Church Kasauli",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Anglican church built in 1853, one of the oldest churches in North India. Beautiful stained glass."
+  },
+  {
+    "id": "kasauli-mall-road",
+    "destination_id": "kasauli",
+    "name": "Kasauli Mall Road",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Colonial-era main street with heritage buildings, cafés, and craft shops surrounded by pine forests."
+  },
+  {
+    "id": "monkey-point-kasauli",
+    "destination_id": "kasauli",
+    "name": "Monkey Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest point in Kasauli at 6,130 ft with a temple and views stretching to Chandigarh plains. Army area."
+  },
+  {
+    "id": "allahabad-fort",
+    "destination_id": "prayagraj",
+    "name": "Allahabad Fort",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "Mughal fort built by Akbar in 1583 at the confluence. Houses the Akshaya Vat (undying banyan tree) and Patalpuri Temple."
+  },
+  {
+    "id": "anand-bhawan",
+    "destination_id": "prayagraj",
+    "name": "Anand Bhawan",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "Ancestral home of the Nehru-Gandhi family. Museum with personal belongings, letters, and independence movement artifacts."
+  },
+  {
+    "id": "triveni-sangam",
+    "destination_id": "prayagraj",
+    "name": "Triveni Sangam",
+    "type": "ghat",
+    "entry_fee": "₹100-500 (boat)",
+    "description": "Sacred confluence of Ganges, Yamuna, and mythical Saraswati. Site of the world's largest gathering — Kumbh Mela."
+  },
+  {
+    "id": "bala-quila-alwar",
+    "destination_id": "alwar",
+    "name": "Bala Quila Fort",
+    "type": "fort",
+    "entry_fee": "₹50",
+    "description": "Massive hilltop fort predating Amber Fort. 5 km perimeter wall with views of Alwar city and lakes."
+  },
+  {
+    "id": "sariska-tiger-reserve-alwar",
+    "destination_id": "alwar",
+    "name": "Sariska Tiger Reserve",
+    "type": "viewpoint",
+    "entry_fee": "₹600",
+    "description": "Tiger reserve in the Aravallis. Home to Bengal tigers, leopards, and the Pandupol Hanuman temple."
+  },
+  {
+    "id": "devka-beach",
+    "destination_id": "daman",
+    "name": "Devka Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Beach with amusement park, water rides, and camel rides. Most developed beach in Daman for families."
+  },
+  {
+    "id": "daman-fort-moti",
+    "destination_id": "daman",
+    "name": "Moti Daman Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Larger Portuguese fort with Church of Bom Jesus, lighthouse, and seafront bastions overlooking the Arabian Sea."
+  },
+  {
+    "id": "bering-nag-temple",
+    "destination_id": "kinnaur",
+    "name": "Bering Nag Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient pagoda-style temple in Batseri village with elaborate wood carvings and stone reliefs."
+  },
+  {
+    "id": "kinnaur-kailash",
+    "destination_id": "kinnaur",
+    "name": "Kinnaur Kailash",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sacred 19,849 ft peak with a natural rock Shiva lingam at the summit. Circumambulation pilgrimage in August."
+  },
+  {
+    "id": "morni-fort",
+    "destination_id": "morni-hills",
+    "name": "Morni Fort Ruins",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Ruins of an ancient fort at the highest point in Haryana. Trek through pine forests."
+  },
+  {
+    "id": "tikkar-taal",
+    "destination_id": "morni-hills",
+    "name": "Tikkar Taal",
+    "type": "lake",
+    "entry_fee": "₹50",
+    "description": "Twin lakes in the Shivalik foothills. Boating, bird watching, and forested surroundings."
+  },
+  {
+    "id": "batseri-village",
+    "destination_id": "sangla",
+    "name": "Batseri Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Traditional Kinnauri village known for weaving and wood carving. Authentic homestay experience."
+  },
+  {
+    "id": "kamru-fort-sangla",
+    "destination_id": "sangla",
+    "name": "Kamru Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Ancient hilltop fort with Kamaksha Devi temple. Blend of Hindu and Buddhist architecture with wood carvings."
+  },
+  {
+    "id": "surya-kund-yamunotri",
+    "destination_id": "yamunotri",
+    "name": "Surya Kund",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Hot spring near the temple where water boils. Pilgrims cook rice and potatoes in the thermal water."
+  },
+  {
+    "id": "yamunotri-temple",
+    "destination_id": "yamunotri",
+    "name": "Yamunotri Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Char Dham temple dedicated to Goddess Yamuna at 10,797 ft. Accessible only by a 6 km trek."
+  },
+  {
+    "id": "kodia-jungle-kanatal",
+    "destination_id": "kanatal",
+    "name": "Kodia Jungle Trek",
+    "type": "viewpoint",
+    "entry_fee": "₹200-500",
+    "description": "Dense forest trail through oak and deodar trees with rope courses and adventure activities."
+  },
+  {
+    "id": "jalmandir-pawapuri",
+    "destination_id": "pawapuri",
+    "name": "Jalmandir (Water Temple)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "White marble Jain temple in the middle of a lotus tank. Marks the cremation site of Lord Mahavira."
+  },
+  {
+    "id": "velavadar-safari",
+    "destination_id": "velavadar",
+    "name": "Blackbuck Safari Drive",
+    "type": "viewpoint",
+    "entry_fee": "₹250",
+    "description": "Open grassland jeep safari. Herds of 100+ blackbuck visible. Wolves, hyenas, and harrier birds in winter."
+  }
+]

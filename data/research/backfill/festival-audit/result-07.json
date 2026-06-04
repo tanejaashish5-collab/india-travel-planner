@@ -1,0 +1,142 @@
+[
+  {
+    "destination_id": "ujjain",
+    "name": "Maha Shivaratri",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Mahakaleshwar_Jyotirlinga",
+    "note": "Ujjain Mahakaleshwar Jyotirlinga; celebrated with Bhasma Aarti"
+  },
+  {
+    "destination_id": "ujjain",
+    "name": "Simhastha Kumbh Mela",
+    "verdict": "WRONG_MONTH",
+    "db_month": 4,
+    "correct_month": 3,
+    "confidence": "high",
+    "source_url": "https://simhastha2028.com/ujjain-simhastha-kumbh-mela-2028-dates/",
+    "note": "Spans March–May 2028 (27 Mar–27 May); month=4 incomplete"
+  },
+  {
+    "destination_id": "omkareshwar",
+    "name": "Maha Shivaratri",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Omkareshwar_Temple",
+    "note": "Omkareshwar Jyotirlinga on Narmada; 24h celebration"
+  },
+  {
+    "destination_id": "omkareshwar",
+    "name": "Kartik Purnima",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.freepressjournal.in/bhopal/mp-1-lakh-devotees-take-holy-dip-in-narmada-on-kartik-purnima-15-lakh-more-expected-in-omkareshwar-mandla-watch",
+    "note": "Sacred bathing festival; 1.5L+ devotees; Chaturmas end"
+  },
+  {
+    "destination_id": "gwalior",
+    "name": "Tansen Samaroh",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.mptourism.com/Tansen-Samaroh-Gwalior-Madhya-Pradesh.htm",
+    "note": "101st edition Dec 15–19, 2025; classical music festival"
+  },
+  {
+    "destination_id": "mandu",
+    "name": "Mandu Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.mptourism.com/mandu-festival.htm",
+    "note": "Jan 7–11 typically; heritage + folk + food festival"
+  },
+  {
+    "destination_id": "pachmarhi",
+    "name": "Nagdwari Mela",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": null,
+    "confidence": "med",
+    "source_url": "https://narmadapuram.nic.in/en/festival/nagdwari-mela-pachmarhi/",
+    "note": "Nag Devata worship; Nagpur/Maharashtra communities"
+  },
+  {
+    "destination_id": "sanchi",
+    "name": "Buddha Purnima",
+    "verdict": "CONFIRMED",
+    "db_month": 5,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.themooknayak.com/society/buddha-purnima-2025-how-sanchi-became-the-heart-of-buddhist-pilgrimage-in-india",
+    "note": "Vaishakh Purnima; Sanchi UNESCO heritage; intl Buddhist gathering"
+  },
+  {
+    "destination_id": "bhopal",
+    "name": "Lokrang Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.mptourism.com/Lokrang-Festival.htm",
+    "note": "Jan 26–30 (Republic Day week); tribal folk heritage celebration"
+  },
+  {
+    "destination_id": "moreh",
+    "name": "Vel Vel Festival",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "med",
+    "source_url": "https://northeastlivetv.com/topnews/unique-fire-walking-festival-begins-in-manipurs-moreh-amid-continued-tensions/",
+    "note": "Fire-walking festival; Tamil/Meitei/Burmese communities; annual"
+  },
+  {
+    "destination_id": "tamenglong",
+    "name": "Gaan-Ngai",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Gaan-Ngai",
+    "note": "Zeliangrong Naga festival; Feb 15 (Lui-Ngai-Ni unified); post-harvest"
+  },
+  {
+    "destination_id": "tamenglong",
+    "name": "Orange Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://boroktimes.com/manipur-orange-festival-2025-governor-bhalla-inaugurates-18th-edition",
+    "note": "GI-tagged Tamenglong orange; 18th edition 2025; Dec 17–19"
+  },
+  {
+    "destination_id": "ukhrul",
+    "name": "Shirui Lily Festival",
+    "verdict": "WRONG_MONTH",
+    "db_month": 5,
+    "correct_month": 4,
+    "confidence": "high",
+    "source_url": "https://manipurtourism.gov.in/shirui-lily-festival/",
+    "note": "Blooms April–June; 5th edition May 20–24, 2025; state flower"
+  },
+  {
+    "destination_id": "ukhrul",
+    "name": "Luira Phanit",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://eastmojo.com/manipur/2023/02/07/luira-phanit-sowing-seeds-of-festivity-in-manipur/",
+    "note": "Tangkhul Naga seed-sowing; Jan–Feb per village; Feb 15 Lui-Ngai-Ni"
+  }
+]

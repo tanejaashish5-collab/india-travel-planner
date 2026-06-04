@@ -1,0 +1,565 @@
+[
+  {
+    "id": "vaishno-devi-shrine-katra",
+    "destination_id": "katra",
+    "name": "Vaishno Devi Shrine",
+    "type": "temple",
+    "description": "Sacred cave shrine 13km uphill from Katra, housing three pindis representing Mahakali, Mahalakshmi, and Mahasaraswati. One of India's most-visited pilgrimage sites with 8M+ annual visitors.",
+    "tags": [
+      "pilgrimage",
+      "cave-shrine",
+      "sacred"
+    ],
+    "time_needed": "4-6 hours roundtrip",
+    "entry_fee": "Free",
+    "kids_suitable": false,
+    "hi_description": "कात्रा से 13 किमी ऊपर की ओर पवित्र गुफा मंदिर। महाकाली, महालक्ष्मी और महासरस्वती को समर्पित तीन पिंडियों को दर्शन करने लायक स्थान। भारत के सबसे अधिक दर्शन किए जाने वाले तीर्थ स्थलों में से एक।",
+    "source_urls": [
+      "https://maatavaishnodevishrine.com/"
+    ]
+  },
+  {
+    "id": "bhairavnath-temple-katra",
+    "destination_id": "katra",
+    "name": "Bhairavnath Temple",
+    "type": "temple",
+    "description": "Temple dedicated to Bhairav at 1,600m elevation on the pilgrimage route to Vaishno Devi, housed in a natural cave with stone carvings.",
+    "tags": [
+      "pilgrimage",
+      "cave-temple",
+      "viewpoint"
+    ],
+    "time_needed": "1.5-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "वैष्णो देवी की यात्रा पथ पर 1,600 मीटर की ऊंचाई पर भैरव को समर्पित मंदिर। प्राकृतिक गुफा में स्थित पत्थर की नक्काशी के साथ मंदिर।",
+    "source_urls": [
+      "https://maatavaishnodevishrine.com/"
+    ]
+  },
+  {
+    "id": "banganga-river-katra",
+    "destination_id": "katra",
+    "name": "Banganga River",
+    "type": "ghat",
+    "description": "Holy river flowing through Katra with bathing ghats, believed to have originated from the footprint of Bhairav. Traditional morning ritual point for pilgrims.",
+    "tags": [
+      "sacred-water",
+      "pilgrimage",
+      "ritual"
+    ],
+    "time_needed": "30 minutes",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "कात्रा से बहने वाली पवित्र नदी, जिसके बारे में माना जाता है कि यह भैरव के पदचिन्ह से निकली है। तीर्थ यात्रियों के लिए सुबह की पूजा और स्नान का स्थान।",
+    "source_urls": [
+      "https://maatavaishnodevishrine.com/"
+    ]
+  },
+  {
+    "id": "katra-bazaar-katra",
+    "destination_id": "katra",
+    "name": "Katra Bazaar",
+    "type": "market",
+    "description": "Main commercial area with shops selling religious items, souvenirs, and local crafts. Point of departure for the Vaishno Devi trek with facilities for ponies, palanquins, and supplies.",
+    "tags": [
+      "shopping",
+      "local-craft",
+      "trek-supplies"
+    ],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "धार्मिक वस्तुओं, स्मृति चिन्ह और स्थानीय कलाकृतियों की दुकानों वाला मुख्य व्यावसायिक क्षेत्र। वैष्णो देवी ट्रेक के लिए प्रस्थान बिंदु।",
+    "source_urls": [
+      "https://maatavaishnodevishrine.com/"
+    ]
+  },
+  {
+    "id": "durga-temple-aihole",
+    "destination_id": "aihole",
+    "name": "Durga Temple",
+    "type": "monument",
+    "description": "5th-century temple with an apsidal (curved) architectural plan unique in India. Carved from stone with intricate decorative panels depicting Hindu mythological scenes.",
+    "tags": [
+      "chalukya-architecture",
+      "ancient-temple",
+      "sculpture"
+    ],
+    "time_needed": "1-1.5 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "5वीं शताब्दी का मंदिर जिसमें अप्सीडल (घुमावदार) वास्तुकला योजना है जो भारत में अद्वितीय है। पत्थर से खोदा गया हिंदू पौराणिक दृश्यों के साथ सजावटी पैनल।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Aihole"
+    ]
+  },
+  {
+    "id": "lad-khan-temple-aihole",
+    "destination_id": "aihole",
+    "name": "Lad Khan Temple",
+    "type": "monument",
+    "description": "Possibly the 5th-century earliest structural Hindu temple in India. Two-storied square structure with ornate columns and relief carvings of celestial figures and dancers.",
+    "tags": [
+      "ancient-temple",
+      "chalukya",
+      "architectural-heritage"
+    ],
+    "time_needed": "45 minutes",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "संभवतः भारत का 5वीं शताब्दी का सबसे पुराना संरचनात्मक हिंदू मंदिर। दो मंजिला चौकोर संरचना जिसमें सजे हुए स्तंभ और देवता तथा नर्तकियों की राहत नक्काशी है।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Aihole"
+    ]
+  },
+  {
+    "id": "meguti-temple-aihole",
+    "destination_id": "aihole",
+    "name": "Meguti Temple",
+    "type": "monument",
+    "description": "Hilltop temple with an inscription dated 634 CE, one of India's earliest dated temples. Two-storied structure with ornamental doorways and views of surrounding Chalukya landscape.",
+    "tags": [
+      "ancient-temple",
+      "hilltop-viewpoint",
+      "historical-inscription"
+    ],
+    "time_needed": "1 hour",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "पहाड़ी पर स्थित मंदिर जिसमें 634 ईस्वी का शिलालेख है, भारत के सबसे पुराने दिनांकित मंदिरों में से एक। दो मंजिला संरचना जिसमें सजावटी द्वार और चारों ओर का दृश्य है।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Aihole"
+    ]
+  },
+  {
+    "id": "buddhist-cave-aihole",
+    "destination_id": "aihole",
+    "name": "Buddhist Cave Temple",
+    "type": "cave",
+    "description": "Carved cave with Buddhist iconography and sculptures. Part of the diverse religious heritage of Aihole from the 6th-7th centuries.",
+    "tags": [
+      "buddhist-heritage",
+      "cave-temple",
+      "ancient"
+    ],
+    "time_needed": "45 minutes",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बौद्ध धार्मिक प्रतीकों और मूर्तियों के साथ खोदी गई गुफा। 6वीं-7वीं शताब्दी से अहोल की विविध धार्मिक विरासत का हिस्सा।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Aihole"
+    ]
+  },
+  {
+    "id": "cave-1-badami",
+    "destination_id": "badami",
+    "name": "Cave 1 (Shiva Cave)",
+    "type": "cave",
+    "description": "Earliest cave temple with an 18-armed dancing Nataraja (Shiva) panel carved into red sandstone. Overlooks Agastya Lake with elaborate sculptural details.",
+    "tags": [
+      "cave-temple",
+      "chalukya",
+      "nataraja"
+    ],
+    "time_needed": "45 minutes",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "सबसे पुरानी गुफा मंदिर जिसमें 18-भुजा नृत्य करते हुए नटराज (शिव) की नक्काशी है। लाल बलुआ पत्थर में तराशी गई विस्तृत मूर्तिकला के साथ अगस्त्य झील पर नजर।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Badami_Caves"
+    ]
+  },
+  {
+    "id": "cave-3-badami",
+    "destination_id": "badami",
+    "name": "Cave 3 (Vishnu Cave, 578 CE)",
+    "type": "cave",
+    "description": "Largest and most ornate cave (70 ft wide) with an inscription dated 578 CE. Features Vishnu in Varaha and Trivikrama forms with stunning carved pillars and intricate sculptural panels.",
+    "tags": [
+      "cave-temple",
+      "vishnu",
+      "chalukya",
+      "oldest-dated"
+    ],
+    "time_needed": "1 hour",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "सबसे बड़ी और सबसे सुंदर गुफा (70 फीट चौड़ी) जिसमें 578 ईस्वी की तारीख वाली शिलालेख है। विष्णु के वराह और त्रिविक्रम रूपों में उत्कृष्ट नक्काशीदार स्तंभ और जटिल मूर्तिकला पैनल।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Badami_Caves"
+    ]
+  },
+  {
+    "id": "agastya-lake-badami",
+    "destination_id": "badami",
+    "name": "Agastya Lake",
+    "type": "lake",
+    "description": "Scenic water body at the base of red sandstone cliffs, historically known as Bhutanatha Lake. Two temple complexes on its shores are among Karnataka's most photographed locations.",
+    "tags": [
+      "sacred-lake",
+      "temple-complex",
+      "photography"
+    ],
+    "time_needed": "1.5 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "लाल बलुआ पत्थर की चट्टानों के आधार पर सुंदर जल निकाय, जिसे ऐतिहासिक रूप से भूतनाथ झील कहा जाता है। इसके किनारों पर दो मंदिर परिसर कर्नाटक के सबसे अधिक फोटो खींचे जाने वाले स्थान हैं।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Badami"
+    ]
+  },
+  {
+    "id": "banashankari-temple-badami",
+    "destination_id": "badami",
+    "name": "Banashankari Temple",
+    "type": "temple",
+    "description": "Active Hindu temple 5km from central Badami dedicated to Parvati. Built during Chalukya period with ornamental architecture and regular worship ceremonies.",
+    "tags": [
+      "chalukya-temple",
+      "parvati",
+      "active-worship"
+    ],
+    "time_needed": "1 hour",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बादामी से 5 किमी दूर पार्वती को समर्पित सक्रिय हिंदू मंदिर। चालुक्य काल में बनाया गया सजावटी वास्तुकला और नियमित पूजा समारोहों के साथ मंदिर।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Badami"
+    ]
+  },
+  {
+    "id": "morning-safari-bandipur",
+    "destination_id": "bandipur",
+    "name": "Morning Safari (6am)",
+    "type": "viewpoint",
+    "description": "Government-operated jeep safari departing at 6am through dry deciduous forest. High probability of sighting elephant herds, tigers, and leopards. Advance booking through Karnataka Forest Dept or Jungleledges required.",
+    "tags": [
+      "wildlife",
+      "tiger-reserve",
+      "safari"
+    ],
+    "time_needed": "2.5 hours",
+    "entry_fee": "Varies",
+    "kids_suitable": true,
+    "hi_description": "सुबह 6 बजे सरकार द्वारा संचालित जीप सफारी। शुष्क पर्णपाती वन के माध्यम से हाथियों, बाघों और तेंदुओं को देखने की उच्च संभावना। अग्रिम बुकिंग आवश्यक।",
+    "source_urls": [
+      "https://jungleledges.com/",
+      "https://www.karnatakafriends.com/bandipur-national-park"
+    ]
+  },
+  {
+    "id": "evening-safari-bandipur",
+    "destination_id": "bandipur",
+    "name": "Evening Safari (3:30pm)",
+    "type": "viewpoint",
+    "description": "Afternoon jeep safari through open grassland and forest, ideal for bird watching (250+ species) and evening animal sightings. Milder temperatures than morning safari.",
+    "tags": [
+      "wildlife",
+      "bird-watching",
+      "safari"
+    ],
+    "time_needed": "2.5 hours",
+    "entry_fee": "Varies",
+    "kids_suitable": true,
+    "hi_description": "दोपहर 3:30 बजे खुले घास के मैदान और वन के माध्यम से जीप सफारी। पक्षी देखने (250+ प्रजातियां) और शाम की पशु दृश्यों के लिए आदर्श। सुबह की सफारी की तुलना में हल्का तापमान।",
+    "source_urls": [
+      "https://jungleledges.com/",
+      "https://www.karnatakafriends.com/bandipur-national-park"
+    ]
+  },
+  {
+    "id": "gopalaswamy-betta-bandipur",
+    "destination_id": "bandipur",
+    "name": "Gopalaswamy Betta Viewpoint",
+    "type": "viewpoint",
+    "description": "Scenic hilltop 32km inside Bandipur National Park at 1,450m elevation. Small temple structure with panoramic views of the Nilgiri Mountains and reserve forest canopy.",
+    "tags": [
+      "viewpoint",
+      "hiking",
+      "temple"
+    ],
+    "time_needed": "3-4 hours roundtrip",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बांदीपुर राष्ट्रीय पार्क के अंदर 32 किमी दूर 1,450 मीटर की ऊंचाई पर सुंदर पहाड़ी दृश्य। नीलगिरी पर्वत और रिजर्व वन के मुकुट के विस्तृत दृश्य वाला छोटा मंदिर।",
+    "source_urls": [
+      "https://www.karnatakafriends.com/bandipur-national-park"
+    ]
+  },
+  {
+    "id": "nh766-scenic-drive-bandipur",
+    "destination_id": "bandipur",
+    "name": "NH766 Scenic Drive",
+    "type": "viewpoint",
+    "description": "Major route cutting through Bandipur linking Mysore and Ooty. Daytime-only drive (6am-6pm) through the national park with frequent elephant crossings and dense forest. One of South India's most scenic highways.",
+    "tags": [
+      "scenic-drive",
+      "wildlife-corridor",
+      "photography"
+    ],
+    "time_needed": "1 hour drive",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बांदीपुर को मैसूर और ऊटी से जोड़ने वाला प्रमुख मार्ग। दिन के समय (6am-6pm) राष्ट्रीय पार्क के माध्यम से ड्राइव, बार-बार हाथियों की पार। दक्षिण भारत के सबसे सुंदर राजमार्गों में से एक।",
+    "source_urls": [
+      "https://www.karnatakafriends.com/bandipur-national-park"
+    ]
+  },
+  {
+    "id": "chennakesava-temple-belur",
+    "destination_id": "belur",
+    "name": "Chennakesava Temple",
+    "type": "temple",
+    "description": "UNESCO World Heritage Site (2024) built 1117-1220 CE. Star-shaped platform with 48 unique bracket figures (madanikas), lathe-turned Narasimha pillar, and intricate Ramayana/Mahabharata wall panels. Still actively worshipped.",
+    "tags": [
+      "hoysala-architecture",
+      "unesco-heritage",
+      "sculpture"
+    ],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "यूनेस्को विश्व धरोहर स्थल (2024) जो 1117-1220 ईस्वी में बनाया गया। तारे के आकार के प्लेटफॉर्म के साथ 48 अद्वितीय ब्रैकेट फिगर, खराद वाली नृसिंह स्तंभ, और जटिल रामायण/महाभारत दीवार पैनल। अभी भी सक्रिय पूजा स्थल।",
+    "source_urls": [
+      "https://whc.unesco.org/",
+      "https://en.wikipedia.org/wiki/Chennakesava_Temple,_Belur"
+    ]
+  },
+  {
+    "id": "narasimha-pillar-belur",
+    "destination_id": "belur",
+    "name": "Narasimha Pillar",
+    "type": "monument",
+    "description": "Remarkable lathe-turned stone pillar with intricate circular grooves, sculpted in a single piece. Said to rotate on its axis — a rare feat of Hoysala architectural engineering.",
+    "tags": [
+      "hoysala-engineering",
+      "sculpture",
+      "architectural-marvel"
+    ],
+    "time_needed": "30 minutes",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "खराद से तराशी गई पत्थर की स्तंभ जिसमें जटिल गोलाकार खांचे हैं। एक ही पत्थर से तराशा गया। अपनी धुरी पर घूमने के लिए जाना जाता है — होयसल स्थापत्य इंजीनियरिंग की दुर्लभ उपलब्धि।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Chennakesava_Temple,_Belur"
+    ]
+  },
+  {
+    "id": "gravity-pillar-belur",
+    "destination_id": "belur",
+    "name": "Gravity Pillar",
+    "type": "monument",
+    "description": "Intentionally tilted pillar held in place by bracket support, demonstrating Hoysala mastery of structural engineering. A puzzle of engineering and architecture.",
+    "tags": [
+      "hoysala-engineering",
+      "structural-marvel"
+    ],
+    "time_needed": "20 minutes",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "जानबूझकर झुकाई गई स्तंभ जिसे ब्रैकेट समर्थन द्वारा रखा गया है। होयसल संरचनात्मक इंजीनियरिंग के कौशल का प्रदर्शन।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Chennakesava_Temple,_Belur"
+    ]
+  },
+  {
+    "id": "yagachi-dam-belur",
+    "destination_id": "belur",
+    "name": "Yagachi Dam",
+    "type": "garden",
+    "description": "Reservoir near Belur with boating facilities and scenic spots for picnicking. Created for irrigation, now a popular local recreational spot with gardens and walking trails.",
+    "tags": [
+      "boating",
+      "picnic-spot",
+      "scenic"
+    ],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बेलूर के पास जलाशय जिसमें नाव चलाने की सुविधा है। सिंचाई के लिए बनाया गया, अब स्थानीय मनोरंजन स्थल, बागों और पैदल पथों के साथ।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Belur,_Karnataka"
+    ]
+  },
+  {
+    "id": "cubbon-park-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "Cubbon Park",
+    "type": "garden",
+    "description": "Central 300-acre green space in Bangalore's city center. Tree-lined walking paths, fountains, and adjacent Vidhana Soudha. Pleasant 920m elevation provides year-round mild weather.",
+    "tags": [
+      "park",
+      "walking",
+      "greenspace"
+    ],
+    "time_needed": "1.5-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बेंगलुरु के शहर के केंद्र में 300 एकड़ का हरा स्थान। पेड़ों से सजे पैदल पथ, फव्वारे, और आसन्न विधान सौध। 920 मीटर की ऊंचाई पर साल भर हल्का मौसम।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Cubbon_Park"
+    ]
+  },
+  {
+    "id": "lalbagh-botanical-garden-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "Lalbagh Botanical Garden",
+    "type": "garden",
+    "description": "240-year-old botanical garden with glass house modelled on London's Crystal Palace. Over 1,000 species of plants, seasonal flower shows, and lake. One of India's finest horticultural spaces.",
+    "tags": [
+      "botanical-garden",
+      "flowers",
+      "photography"
+    ],
+    "time_needed": "2-3 hours",
+    "entry_fee": "₹50-100",
+    "kids_suitable": true,
+    "hi_description": "240 साल पुराना वनस्पति उद्यान जिसमें लंदन के क्रिस्टल पैलेस के आकार की ग्लास हाउस है। 1,000 से अधिक पौधों की प्रजातियां, मौसमी फूलों की प्रदर्शनी, और झील। भारत के सर्वश्रेष्ठ बागवानी स्थलों में से एक।",
+    "source_urls": [
+      "https://lalbagh.in/",
+      "https://en.wikipedia.org/wiki/Lalbagh"
+    ]
+  },
+  {
+    "id": "tipu-sultan-palace-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "Tipu Sultan Summer Palace",
+    "type": "palace",
+    "description": "18th-century Indo-Islamic palace built by Tipu Sultan in 1791. Features ornate wooden pillars, arched windows, and heritage exhibitions. Located in the old city near KR Market.",
+    "tags": [
+      "historical-palace",
+      "indo-islamic",
+      "museum"
+    ],
+    "time_needed": "1-1.5 hours",
+    "entry_fee": "₹5",
+    "kids_suitable": true,
+    "hi_description": "18वीं शताब्दी का इंडो-इस्लामिक महल जो टीपू सुल्तान द्वारा 1791 में बनाया गया। सजे हुए लकड़ी के स्तंभ, आर्केड विंडो, और विरासत प्रदर्शनी। पुराने शहर में KR मार्केट के पास स्थित।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Tipu_Sultan's_Summer_Palace"
+    ]
+  },
+  {
+    "id": "kr-market-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "KR Market (Krishnarajendra City Market)",
+    "type": "market",
+    "description": "Historic spice and produce market since 1928. Chaotic, authentic bazaar selling flowers, spices, vegetables, and dry fruits. Strong sensory experience of old Bangalore commerce.",
+    "tags": [
+      "market",
+      "spices",
+      "local-commerce"
+    ],
+    "time_needed": "1-1.5 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "1928 के बाद से ऐतिहासिक मसाला और उत्पाद बाजार। फूल, मसाले, सब्जियां, और सूखे मेवों को बेचने वाला प्रामाणिक बाजार। पुराने बेंगलुरु के वाणिज्य का शक्तिशाली संवेदी अनुभव।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Krishnarajendra_City_Market"
+    ]
+  },
+  {
+    "id": "iskcon-temple-bengaluru",
+    "destination_id": "bengaluru",
+    "name": "ISKCON Temple",
+    "type": "temple",
+    "description": "Modern Krishna consciousness temple with ornate sanctum sanctorum, multi-level structure, and restaurant serving vegetarian cuisine. Active community worship and festivals year-round.",
+    "tags": [
+      "krishna-temple",
+      "modern-temple",
+      "vegetarian-food"
+    ],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "आधुनिक कृष्ण चेतना मंदिर जिसमें सजा हुआ गर्भगृह, बहु-स्तर की संरचना, और शाकाहारी भोजन परोसने वाला रेस्तरां है। सक्रिय सामुदायिक पूजा और साल भर त्योहार।",
+    "source_urls": [
+      "https://www.iskconbangalore.com/"
+    ]
+  },
+  {
+    "id": "bidar-fort-bidar",
+    "destination_id": "bidar",
+    "name": "Bidar Fort",
+    "type": "fort",
+    "description": "Massive 15th-century fortress with 5.5km perimeter walls, triple moats, and five gateways. Contains palaces (Rangin Mahal), mosques (Solah Khamba), and royal baths. One of India's largest but least-restored forts.",
+    "tags": [
+      "bahmani-sultanate",
+      "fort",
+      "heritage"
+    ],
+    "time_needed": "3-4 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "15वीं शताब्दी का विशाल किला जिसमें 5.5 किमी की परिधि वाली दीवारें, तीन खाई, और पांच द्वार हैं। महलों (रंगीन महल), मस्जिदों (सोलह खंभा), और शाही स्नान गृहों को रखता है। भारत के सबसे बड़े लेकिन कम संरक्षित किलों में से एक।",
+    "source_urls": [
+      "https://asi.nic.in/",
+      "https://en.wikipedia.org/wiki/Bidar_Fort"
+    ]
+  },
+  {
+    "id": "rangin-mahal-bidar",
+    "destination_id": "bidar",
+    "name": "Rangin Mahal (Colored Palace)",
+    "type": "palace",
+    "description": "Persian-tiled palace within Bidar Fort featuring intricate turquoise, blue, and white tile work. Multi-chambered structure with decorated archways reflecting Indo-Persian architectural fusion.",
+    "tags": [
+      "bahmani-sultanate",
+      "persian-tiles",
+      "palace"
+    ],
+    "time_needed": "1-1.5 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बिदार किले के अंदर फारसी-टाइल वाला महल जिसमें पेचीदा फ़िरोज़ी, नीले और सफेद टाइल काम हैं। सजे हुए मेहराबों के साथ बहु-कक्षीय संरचना जो इंडो-फारसी वास्तुकला संलयन को दर्शाती है।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bidar_Fort"
+    ]
+  },
+  {
+    "id": "guru-nanak-jhira-sahib-bidar",
+    "destination_id": "bidar",
+    "name": "Guru Nanak Jhira Sahib",
+    "type": "gurudwara",
+    "description": "Sikh gurudwara built around a natural spring believed to have been created by Guru Nanak. Sacred pilgrimage site with free langar (community meal) serving visitors daily.",
+    "tags": [
+      "sikh-pilgrimage",
+      "natural-spring",
+      "langar"
+    ],
+    "time_needed": "1-1.5 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "एक प्राकृतिक झरने के चारों ओर बना सिख गुरुद्वारा जिसे गुरु नानक द्वारा बनाया गया माना जाता है। पवित्र तीर्थ स्थल जहां प्रतिदिन मुफ्त लंगर (सामुदायिक भोजन) परोसा जाता है।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bidar"
+    ]
+  },
+  {
+    "id": "bahmani-tombs-bidar",
+    "destination_id": "bidar",
+    "name": "Bahmani Tombs (Ashtur)",
+    "type": "monument",
+    "description": "Cluster of domed mausoleums 8km from Bidar built for Bahmani Sultanate rulers. Impressive Indo-Islamic architecture with intricate carvings and Persian-influenced arches, rivalling Hyderabad's monuments.",
+    "tags": [
+      "bahmani-sultanate",
+      "mausoleum",
+      "indo-islamic"
+    ],
+    "time_needed": "1.5-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बिदार से 8 किमी दूर बहमनी सल्तनत के शासकों के लिए बनाए गए गुंबद वाले मकबरों का समूह। पेचीदा नक्काशी और फारसी-प्रभावित मेहराबों के साथ प्रभावशाली इंडो-इस्लामिक आर्किटेक्चर।",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bidar"
+    ]
+  }
+]

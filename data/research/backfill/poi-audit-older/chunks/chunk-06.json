@@ -1,0 +1,370 @@
+[
+  {
+    "id": "chesma-shahi",
+    "destination_id": "srinagar",
+    "name": "Chesma Shahi",
+    "type": "garden",
+    "entry_fee": "₹24",
+    "description": "Smallest but most beautiful Mughal garden built over a natural spring. Fresh spring water flows through terraces."
+  },
+  {
+    "id": "floating-market-srinagar",
+    "destination_id": "srinagar",
+    "name": "Dal Lake Floating Vegetable Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Early morning floating market where vendors sell vegetables and flowers from shikaras. Starts at 5 AM."
+  },
+  {
+    "id": "dal-lake-shikara",
+    "destination_id": "srinagar",
+    "name": "Dal Lake Shikara Ride",
+    "type": "lake",
+    "entry_fee": "₹500-1,500",
+    "description": "Iconic wooden boat ride through floating gardens and houseboats. Sunset is magical."
+  },
+  {
+    "id": "hazratbal-shrine",
+    "destination_id": "srinagar",
+    "name": "Hazratbal Shrine",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "White marble mosque on the western shore of Dal Lake housing a relic believed to be a hair of Prophet Muhammad."
+  },
+  {
+    "id": "tulip-garden-srinagar",
+    "destination_id": "srinagar",
+    "name": "Indira Gandhi Memorial Tulip Garden",
+    "type": "garden",
+    "entry_fee": "₹50",
+    "description": "Asia's largest tulip garden with 1.5 million bulbs of 68 varieties. Open mid-March to mid-April only."
+  },
+  {
+    "id": "jama-masjid-srinagar",
+    "destination_id": "srinagar",
+    "name": "Jamia Masjid",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Grand mosque built in 1394 with 370 wooden pillars of deodar wood. Can hold 33,333 worshippers."
+  },
+  {
+    "id": "mughal-gardens-srinagar",
+    "destination_id": "srinagar",
+    "name": "Mughal Gardens",
+    "type": "garden",
+    "entry_fee": "₹24 / ₹100 each",
+    "description": "Three terraced gardens — Nishat, Shalimar, Chashme Shahi. 400-year-old Mughal landscaping."
+  },
+  {
+    "id": "nishat-bagh",
+    "destination_id": "srinagar",
+    "name": "Nishat Bagh",
+    "type": "garden",
+    "entry_fee": "₹24",
+    "description": "Largest Mughal garden in Kashmir with 12 terraces representing the 12 signs of zodiac. Dal Lake backdrop."
+  },
+  {
+    "id": "pari-mahal",
+    "destination_id": "srinagar",
+    "name": "Pari Mahal",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "Seven-terraced garden built by Dara Shikoh as a Buddhist monastery, later converted to a library. Night-lit."
+  },
+  {
+    "id": "shalimar-bagh-srinagar",
+    "destination_id": "srinagar",
+    "name": "Shalimar Bagh",
+    "type": "garden",
+    "entry_fee": "₹24",
+    "description": "Emperor Jahangir's \"Garden of Love\" built in 1619. Terraced Mughal garden with fountains and chinars."
+  },
+  {
+    "id": "shankaracharya-temple",
+    "destination_id": "srinagar",
+    "name": "Shankaracharya Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop Shiva temple at 1,000 ft above Dal Lake dating to 200 BC. Panoramic views of Srinagar and Dal Lake."
+  },
+  {
+    "id": "double-decker-root-bridge",
+    "destination_id": "cherrapunji",
+    "name": "Double Decker Living Root Bridge",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Two-level bridge grown from rubber tree roots by Khasi people over centuries. UNESCO Tentative List."
+  },
+  {
+    "id": "mawsmai-cave",
+    "destination_id": "cherrapunji",
+    "name": "Mawsmai Cave",
+    "type": "monument",
+    "entry_fee": "₹20",
+    "description": "Limestone cave with stalactites and stalagmites. Well-lit 150-meter walkthrough. Narrow passages."
+  },
+  {
+    "id": "nohkalikai-falls",
+    "destination_id": "cherrapunji",
+    "name": "Nohkalikai Falls",
+    "type": "waterfall",
+    "entry_fee": "₹20",
+    "description": "India's tallest plunge waterfall at 1,115 ft. Named after a tragic Khasi legend. Dramatic cliff-edge view."
+  },
+  {
+    "id": "seven-sisters-falls",
+    "destination_id": "cherrapunji",
+    "name": "Seven Sisters Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Seven separate waterfalls cascading down a cliff. Best viewed during monsoon season from Mawkdok."
+  },
+  {
+    "id": "eco-park-cherrapunji",
+    "destination_id": "cherrapunji",
+    "name": "Thangkharang Park",
+    "type": "viewpoint",
+    "entry_fee": "₹30",
+    "description": "Park on a cliff edge with views of Bangladesh plains below. Fossils and rare orchids on display."
+  },
+  {
+    "id": "chalal-trek",
+    "destination_id": "kasol",
+    "name": "Chalal Village Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Easy 30-minute riverside trek from Kasol to Chalal village with cafés, mountain views, and Parvati River."
+  },
+  {
+    "id": "kasol-riverside",
+    "destination_id": "kasol",
+    "name": "Kasol Riverside Cafés",
+    "type": "cafe",
+    "entry_fee": "Free",
+    "description": "Cluster of bohemian cafés along Parvati River. Known for Israeli food, live music, and mountain views."
+  },
+  {
+    "id": "kheerganga-trek-kasol",
+    "destination_id": "kasol",
+    "name": "Kheerganga Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Iconic 12 km trek through forests to natural hot springs at 9,700 ft. Camping under stars."
+  },
+  {
+    "id": "manikaran-sahib",
+    "destination_id": "kasol",
+    "name": "Manikaran Sahib Gurudwara",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "Sacred Sikh shrine with natural hot springs. Langar serves thousands daily. Hot springs used for cooking."
+  },
+  {
+    "id": "bara-bazaar-aizawl",
+    "destination_id": "aizawl",
+    "name": "Bara Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Main market of Aizawl spread over a hillside. Traditional Mizo textiles, bamboo products, and local food."
+  },
+  {
+    "id": "mizoram-state-museum",
+    "destination_id": "aizawl",
+    "name": "Mizoram State Museum",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Mizo tribal artifacts, traditional costumes, bamboo crafts, and historical exhibits."
+  },
+  {
+    "id": "solomon-temple",
+    "destination_id": "aizawl",
+    "name": "Solomon's Temple",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Striking white church modeled on Solomon's Temple in Jerusalem. Views over Aizawl city."
+  },
+  {
+    "id": "chittorgarh-fort",
+    "destination_id": "chittorgarh",
+    "name": "Chittorgarh Fort",
+    "type": "fort",
+    "entry_fee": "₹40",
+    "description": "Largest fort in India (692 acres). UNESCO World Heritage Site. Rani Padmini Palace, Vijay Stambh, Kirti Stambh."
+  },
+  {
+    "id": "rani-padmini-palace",
+    "destination_id": "chittorgarh",
+    "name": "Rani Padmini Palace",
+    "type": "palace",
+    "entry_fee": "Included in fort entry",
+    "description": "Lakeside palace associated with the legendary queen Padmini. Mirror chamber where Alauddin Khilji saw her reflection."
+  },
+  {
+    "id": "vijay-stambh",
+    "destination_id": "chittorgarh",
+    "name": "Vijay Stambh (Tower of Victory)",
+    "type": "monument",
+    "entry_fee": "Included in fort entry",
+    "description": "37-meter tower built in 1448 by Rana Kumbha. Nine stories with intricate Hindu iconography."
+  },
+  {
+    "id": "bhairavnath-temple-kedarnath",
+    "destination_id": "kedarnath",
+    "name": "Bhairavnath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Guardian deity temple above Kedarnath. Trek to this spot offers spectacular views of the temple and valley."
+  },
+  {
+    "id": "gandhi-sarovar",
+    "destination_id": "kedarnath",
+    "name": "Gandhi Sarovar (Chorabari Lake)",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Glacial lake at 12,900 ft, 3 km from Kedarnath. Named after Mahatma Gandhi, whose ashes were immersed here."
+  },
+  {
+    "id": "kedarnath-temple",
+    "destination_id": "kedarnath",
+    "name": "Kedarnath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the 12 Jyotirlingas, at 11,755 ft. Built by Adi Shankaracharya in 8th century. Survived 2013 floods."
+  },
+  {
+    "id": "kala-dungar",
+    "destination_id": "rann-of-kutch",
+    "name": "Kala Dungar (Black Hill)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest point in Kutch at 462m. Views of the Rann and Pakistan border. Magnetic hill phenomenon on the road."
+  },
+  {
+    "id": "rann-utsav",
+    "destination_id": "rann-of-kutch",
+    "name": "Rann Utsav Tent City",
+    "type": "viewpoint",
+    "entry_fee": "₹3,000-15,000",
+    "description": "Luxury tent resort with cultural programs, live music, craft bazaar, ATV rides, and camel carts. Nov-Feb only."
+  },
+  {
+    "id": "white-rann",
+    "destination_id": "rann-of-kutch",
+    "name": "White Rann (Great Rann)",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Infinite white salt desert stretching to every horizon. Under full moon it glows like a frozen ocean. India's most surreal landscape."
+  },
+  {
+    "id": "bandhavgarh-fort",
+    "destination_id": "bandhavgarh",
+    "name": "Bandhavgarh Fort",
+    "type": "fort",
+    "entry_fee": "Included in safari",
+    "description": "Ancient fort inside the park dating to 2,000 years. 35-ft reclining Vishnu statue carved from rock."
+  },
+  {
+    "id": "bandhavgarh-safari",
+    "destination_id": "bandhavgarh",
+    "name": "Bandhavgarh Tiger Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹1,500-3,000",
+    "description": "Highest tiger density of any national park in India. Jeep and elephant safaris for tiger sighting."
+  },
+  {
+    "id": "eco-park-dhanaulti",
+    "destination_id": "dhanaulti",
+    "name": "Dhanaulti Eco Park",
+    "type": "garden",
+    "entry_fee": "₹20",
+    "description": "Two adjoining parks (Amber & Dhara) with adventure activities set in deodar forests at 7,600 ft."
+  },
+  {
+    "id": "surkanda-devi-temple",
+    "destination_id": "dhanaulti",
+    "name": "Surkanda Devi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop Shakti temple at 9,000 ft reached by a short trek. Panoramic views of snow-clad peaks."
+  },
+  {
+    "id": "kufri-nature-park",
+    "destination_id": "kufri",
+    "name": "Himalayan Nature Park (Kufri Zoo)",
+    "type": "viewpoint",
+    "entry_fee": "₹80",
+    "description": "Home to Himalayan wildlife including snow leopard, musk deer, and pheasants at 7,990 ft."
+  },
+  {
+    "id": "mahasu-peak-kufri",
+    "destination_id": "kufri",
+    "name": "Mahasu Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest point in Kufri at 8,563 ft. Panoramic views of Shimla, Kedarnath and Badrinath ranges on clear days."
+  },
+  {
+    "id": "nalanda-museum",
+    "destination_id": "nalanda",
+    "name": "Nalanda Archaeological Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Artifacts from Nalanda excavations — bronze statues, stone sculptures, manuscripts, and seals."
+  },
+  {
+    "id": "nalanda-university-ruins",
+    "destination_id": "nalanda",
+    "name": "Nalanda University Ruins",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "UNESCO World Heritage site of the ancient Nalanda Mahavihara. World's first residential university (5th century)."
+  },
+  {
+    "id": "mandawa-castle",
+    "destination_id": "shekhawati",
+    "name": "Mandawa Castle",
+    "type": "fort",
+    "entry_fee": "₹100",
+    "description": "Heritage castle hotel in the heart of Shekhawati. Gateway to the painted haveli trail."
+  },
+  {
+    "id": "shekhawati-havelis",
+    "destination_id": "shekhawati",
+    "name": "Painted Havelis of Shekhawati",
+    "type": "palace",
+    "entry_fee": "₹50-100",
+    "description": "Open-air art gallery of Rajasthan. Hundreds of havelis with frescoes in Mandawa, Nawalgarh, Fatehpur."
+  },
+  {
+    "id": "achabal-garden",
+    "destination_id": "achabal",
+    "name": "Achabal Garden",
+    "type": "garden",
+    "entry_fee": "₹25",
+    "description": "Mughal garden built by Empress Nur Jahan. Three terraces with cascading waterfalls and chinar trees."
+  },
+  {
+    "id": "baidyanath-temple",
+    "destination_id": "deoghar",
+    "name": "Baba Baidyanath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 12 Jyotirlingas and one of 51 Shakti Peethas. Massive pilgrimage during Shravan month."
+  },
+  {
+    "id": "manas-safari",
+    "destination_id": "manas-national-park",
+    "name": "Manas Tiger Reserve Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹500-1,500",
+    "description": "UNESCO World Heritage Site and Tiger Reserve. Golden langur, pygmy hog, and Bengal florican habitat."
+  },
+  {
+    "id": "roopkund-skeleton-lake",
+    "destination_id": "roopkund",
+    "name": "Roopkund (Skeleton Lake)",
+    "type": "lake",
+    "entry_fee": "₹500 (permit)",
+    "description": "Mysterious glacial lake at 16,500 ft with hundreds of ancient human skeletons visible when ice melts."
+  }
+]

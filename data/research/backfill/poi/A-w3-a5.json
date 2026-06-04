@@ -1,0 +1,465 @@
+[
+  {
+    "id": "amboli-waterfall-amboli",
+    "destination_id": "amboli",
+    "name": "Amboli Waterfall",
+    "type": "waterfall",
+    "description": "Seasonal waterfall that flows during monsoon from June to September. Located in the Western Ghats with surrounding teak forests.",
+    "entry_fee": "Free",
+    "time_needed": "1-2 hours",
+    "tags": [
+      "monsoon",
+      "waterfall",
+      "western-ghats",
+      "photography"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "अंबोली झरना",
+        "description": "मई से सितंबर में बहने वाला मौसमी झरना। पश्चिमी घाट में स्थित साल के जंगलों से घिरा हुआ।"
+      }
+    }
+  },
+  {
+    "id": "sawantwadi-palace-amboli",
+    "destination_id": "amboli",
+    "name": "Sawantwadi Palace",
+    "type": "palace",
+    "description": "Historic palace of the Sawantwadi royal family, now serving as a museum displaying traditional Malwa art and local history artifacts.",
+    "entry_fee": "₹50",
+    "time_needed": "1-1.5 hours",
+    "tags": [
+      "palace",
+      "history",
+      "art",
+      "museum"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "सवंतवाडी पैलेस",
+        "description": "सवंतवाडी शाही परिवार के ऐतिहासिक महल, अब पारंपरिक मालवा कला और स्थानीय इतिहास कलाकृतियों को प्रदर्शित करने वाले संग्रहालय के रूप में काम कर रहे हैं।"
+      }
+    }
+  },
+  {
+    "id": "vasota-lake-amboli",
+    "destination_id": "amboli",
+    "name": "Vasota Lake",
+    "type": "lake",
+    "description": "Man-made lake in the forests near Amboli, created by a dam. Popular for picnics and bird watching during monsoon.",
+    "entry_fee": "Free",
+    "time_needed": "1-2 hours",
+    "tags": [
+      "lake",
+      "nature",
+      "bird-watching",
+      "dam"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "वसोता झील",
+        "description": "अंबोली के पास जंगल में मानव निर्मित झील। बर्ड वाचिंग और पिकनिक के लिए लोकप्रिय।"
+      }
+    }
+  },
+  {
+    "id": "hiranyakeshi-temple-amboli",
+    "destination_id": "amboli",
+    "name": "Hiranyakeshi Temple",
+    "type": "temple",
+    "description": "Ancient Shiva temple located within walking distance of Amboli. The temple is part of the Ashtavinayak circuit pilgrimage route.",
+    "entry_fee": "Free",
+    "time_needed": "45-60 minutes",
+    "tags": [
+      "temple",
+      "pilgrimage",
+      "shiva",
+      "religious"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "हिरण्यकेशी मंदिर",
+        "description": "अंबोली के पास स्थित प्राचीन शिव मंदिर। अष्टविनायक सर्किट तीर्थ मार्ग का हिस्सा।"
+      }
+    }
+  },
+  {
+    "id": "morgaon-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Morgaon Ashtavinayak",
+    "type": "temple",
+    "description": "One of the eight Ashtavinayak temples. Dedicated to Mayureshwar (Ganesha riding peacock). Located in Pune district.",
+    "entry_fee": "Free",
+    "time_needed": "1-1.5 hours",
+    "tags": [
+      "ashtavinayak",
+      "temple",
+      "ganesha",
+      "pilgrimage"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "मोरगांव अष्टविनायक",
+        "description": "आठ अष्टविनायक मंदिरों में से एक। मयूरेश्वर (मोर पर सवार गणेश) को समर्पित। पुणे जिले में स्थित।"
+      }
+    }
+  },
+  {
+    "id": "siddhatek-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Siddhatek Ashtavinayak",
+    "type": "temple",
+    "description": "Second of the eight Ashtavinayak temples. Dedicated to Siddhivinayak (the Ganesha of prosperity). Situated on a hilltop in Ahmednagar district.",
+    "entry_fee": "Free",
+    "time_needed": "1-1.5 hours",
+    "tags": [
+      "ashtavinayak",
+      "temple",
+      "ganesha",
+      "hilltop"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "सिद्धटेक अष्टविनायक",
+        "description": "आठ अष्टविनायक मंदिरों में से दूसरा। सिद्धिविनायक (समृद्धि के गणेश) को समर्पित। अहमदनगर जिले में पहाड़ी पर स्थित।"
+      }
+    }
+  },
+  {
+    "id": "pali-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Pali Ashtavinayak",
+    "type": "temple",
+    "description": "Third Ashtavinayak temple dedicated to Girijatmaja (Ganesha son of Parvati). Located in Raigad district near Mahad.",
+    "entry_fee": "Free",
+    "time_needed": "1 hour",
+    "tags": [
+      "ashtavinayak",
+      "temple",
+      "ganesha",
+      "raigad"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "पाली अष्टविनायक",
+        "description": "गिरिजात्मज (पार्वती के पुत्र गणेश) को समर्पित तीसरा अष्टविनायक मंदिर। राइगड़ जिले में महाड के पास स्थित।"
+      }
+    }
+  },
+  {
+    "id": "mahad-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Mahad Ashtavinayak",
+    "type": "temple",
+    "description": "Fourth Ashtavinayak temple dedicated to Vighneshwara (Ganesha the remover of obstacles). Built on a small island in the Ulhas river.",
+    "entry_fee": "Free",
+    "time_needed": "1-1.5 hours",
+    "tags": [
+      "ashtavinayak",
+      "temple",
+      "ganesha",
+      "river"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "महाड अष्टविनायक",
+        "description": "विघ्नेश्वर (बाधाओं के हरण करने वाले गणेश) को समर्पित चौथा अष्टविनायक मंदिर। उलहास नदी में एक छोटे द्वीप पर स्थित।"
+      }
+    }
+  },
+  {
+    "id": "theur-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Theur Ashtavinayak",
+    "type": "temple",
+    "description": "Fifth Ashtavinayak temple dedicated to Chintamani (the wish-fulfilling Ganesha). Located in Pune district on the banks of Indrayani river.",
+    "entry_fee": "Free",
+    "time_needed": "1 hour",
+    "tags": [
+      "ashtavinayak",
+      "temple",
+      "ganesha",
+      "river"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "ठेउर अष्टविनायक",
+        "description": "चिंतामणि (इच्छा पूरी करने वाले गणेश) को समर्पित पांचवां अष्टविनायक मंदिर। पुणे जिले में इंद्रायणी नदी के तट पर स्थित।"
+      }
+    }
+  },
+  {
+    "id": "bibi-ka-maqbara-aurangabad",
+    "destination_id": "aurangabad",
+    "name": "Bibi Ka Maqbara",
+    "type": "monument",
+    "description": "17th-century mausoleum built by Aurangzeb for his wife Dilras Banu Begum. Also known as the Taj of the Deccan, featuring white marble inlay work.",
+    "entry_fee": "₹600",
+    "time_needed": "1-1.5 hours",
+    "tags": [
+      "monument",
+      "mughal",
+      "architecture",
+      "history"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "बीबी का मकबरा",
+        "description": "औरंगजेब द्वारा अपनी पत्नी दिलरास बानू बेगम के लिए बनवाया गया 17वीं सदी का मकबरा। दक्कन की ताज के नाम से भी जाना जाता है।"
+      }
+    }
+  },
+  {
+    "id": "aurangabad-caves-aurangabad",
+    "destination_id": "aurangabad",
+    "name": "Aurangabad Caves",
+    "type": "cave",
+    "description": "Ancient Buddhist cave temples carved between 2nd-6th centuries. Ten caves decorated with sculptures and carvings depicting Buddhist religious scenes.",
+    "entry_fee": "₹400",
+    "time_needed": "2-3 hours",
+    "tags": [
+      "cave",
+      "buddhist",
+      "ancient",
+      "sculpture"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "औरंगाबाद की गुफाएं",
+        "description": "2ई-6वीं सदी के बीच खोदी गई प्राचीन बौद्ध गुफा मंदिर। बौद्ध धार्मिक दृश्यों को दर्शाने वाली मूर्तियों और नक्काशीयों से सजी गुफाएं।"
+      }
+    }
+  },
+  {
+    "id": "panchakki-aurangabad",
+    "destination_id": "aurangabad",
+    "name": "Panchakki (Water Mill)",
+    "type": "monument",
+    "description": "Historic 17th-century water mill built adjacent to the tomb of Sufi saint Baba Urus. The mill uses an underground water channel spanning 13 km from a spring.",
+    "entry_fee": "₹100",
+    "time_needed": "45-60 minutes",
+    "tags": [
+      "monument",
+      "sufi",
+      "history",
+      "water-mill"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "पंचक्की",
+        "description": "सूफी संत बाबा उरूस की कब्र के साथ बनी 17वीं सदी की ऐतिहासिक जलचक्की। यह एक झरने से 13 किमी लंबी भूमिगत जल चैनल का उपयोग करती है।"
+      }
+    }
+  },
+  {
+    "id": "arthur-lake-bhandardara",
+    "destination_id": "bhandardara",
+    "name": "Arthur Lake",
+    "type": "lake",
+    "description": "Scenic lake surrounded by green hills, formed by a dam across the Pravara river. Popular for nature walks and picnicking.",
+    "entry_fee": "Free",
+    "time_needed": "2-3 hours",
+    "tags": [
+      "lake",
+      "scenic",
+      "nature",
+      "dam"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "आर्थर झील",
+        "description": "हरी पहाड़ियों से घिरी सुंदर झील, प्रवरा नदी के पार बनाया गया बांध। प्रकृति सैर और पिकनिक के लिए लोकप्रिय।"
+      }
+    }
+  },
+  {
+    "id": "ankai-flat-bhandardara",
+    "destination_id": "bhandardara",
+    "name": "Ankai Flat (Table-Top Mountain)",
+    "type": "viewpoint",
+    "description": "Flat-topped mountain with 360-degree views of surrounding valleys and villages. Accessible via a hiking trail from Bhandardara valley.",
+    "entry_fee": "Free",
+    "time_needed": "3-4 hours",
+    "tags": [
+      "trekking",
+      "viewpoint",
+      "mountain",
+      "nature"
+    ],
+    "kids_suitable": false,
+    "translations": {
+      "hi": {
+        "name": "अंकई फ्लैट",
+        "description": "समतल शिखर वाला पहाड़, जिससे आसपास की घाटियों और गांवों का 360 डिग्री दृश्य मिलता है। भंडारदरा घाटी से ट्रेकिंग ट्रेल द्वारा सुलभ।"
+      }
+    }
+  },
+  {
+    "id": "ratangad-fort-bhandardara",
+    "destination_id": "bhandardara",
+    "name": "Ratangad Fort",
+    "type": "fort",
+    "description": "Historic fort perched on a mountain ridge above Bhandardara village. Accessible by trekking through the valley with views of the surrounding landscape.",
+    "entry_fee": "Free",
+    "time_needed": "4-5 hours",
+    "tags": [
+      "fort",
+      "trekking",
+      "history",
+      "mountain"
+    ],
+    "kids_suitable": false,
+    "translations": {
+      "hi": {
+        "name": "रतनगड़ किला",
+        "description": "भंडारदरा गांव के ऊपर पहाड़ी पर स्थित ऐतिहासिक किला। घाटी से ट्रेकिंग के माध्यम से पहुंचने योग्य।"
+      }
+    }
+  },
+  {
+    "id": "bhimashankar-temple-bhimashankar",
+    "destination_id": "bhimashankar",
+    "name": "Bhimashankar Jyotirlinga Temple",
+    "type": "temple",
+    "description": "One of the twelve Jyotirlingas dedicated to Shiva. Located in the Sahyadri range with natural springs flowing within the temple complex.",
+    "entry_fee": "Free",
+    "time_needed": "1-2 hours",
+    "tags": [
+      "jyotirlinga",
+      "temple",
+      "shiva",
+      "pilgrimage"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "भीमशंकर ज्योतिर्लिंग मंदिर",
+        "description": "शिव को समर्पित बारह ज्योतिर्लिंगों में से एक। सह्याद्री रेंज में स्थित, मंदिर परिसर में प्राकृतिक झरने बहते हैं।"
+      }
+    }
+  },
+  {
+    "id": "bhimashankar-wildlife-sanctuary-bhimashankar",
+    "destination_id": "bhimashankar",
+    "name": "Bhimashankar Wildlife Sanctuary",
+    "type": "wildlife",
+    "description": "Protected forest area known for the endemic giant flying squirrel and diverse bird species. Accessible via trekking trails through dense forests.",
+    "entry_fee": "₹50",
+    "time_needed": "2-3 hours",
+    "tags": [
+      "wildlife",
+      "sanctuary",
+      "nature",
+      "trekking"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "भीमशंकर वन्यजीव अभयारण्य",
+        "description": "संरक्षित वन क्षेत्र, स्थानीय विशाल उड़ने वाली गिलहरी और विविध पक्षी प्रजातियों के लिए जाना जाता है। सघन जंगल से गुजरने वाली ट्रेकिंग ट्रेल्स के माध्यम से सुलभ।"
+      }
+    }
+  },
+  {
+    "id": "hanuman-lake-bhimashankar",
+    "destination_id": "bhimashankar",
+    "name": "Hanuman Lake",
+    "type": "lake",
+    "description": "Scenic lake surrounded by thick forest within the Bhimashankar Wildlife Sanctuary. A peaceful spot for nature walks and reflection.",
+    "entry_fee": "₹50",
+    "time_needed": "1-1.5 hours",
+    "tags": [
+      "lake",
+      "sanctuary",
+      "nature",
+      "forest"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "हनुमान झील",
+        "description": "भीमशंकर वन्यजीव अभयारण्य के भीतर सघन जंगल से घिरी सुंदर झील। प्रकृति सैर के लिए एक शांतिपूर्ण स्थान।"
+      }
+    }
+  },
+  {
+    "id": "daulatabad-fort-daulatabad",
+    "destination_id": "daulatabad",
+    "name": "Daulatabad Fort",
+    "type": "fort",
+    "description": "Historic medieval fortress with a 56-meter tower of victory. Features underground passages and ramparts. Built in 12th century, modified during Mughal period.",
+    "entry_fee": "₹500",
+    "time_needed": "2-3 hours",
+    "tags": [
+      "fort",
+      "history",
+      "medieval",
+      "mughal"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "दौलताबाद किला",
+        "description": "56 मीटर की जय मीनार वाला ऐतिहासिक मध्यकालीन दुर्ग। भूमिगत मार्ग और दीवारें हैं। 12वीं सदी में निर्मित, मुगल काल में संशोधित।"
+      }
+    }
+  },
+  {
+    "id": "elephanta-cave-main-elephanta-caves",
+    "destination_id": "elephanta-caves",
+    "name": "Elephanta Cave Temple",
+    "type": "cave",
+    "description": "UNESCO World Heritage site with ancient rock-cut temples dedicated to Shiva. Contains 6th-century sculptures of high artistic quality including a 5.5-meter Maheshwara sculpture.",
+    "entry_fee": "₹600",
+    "time_needed": "2-3 hours",
+    "tags": [
+      "cave",
+      "temple",
+      "unesco",
+      "shiva",
+      "sculpture"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "एलिफेंटा की गुफा मंदिर",
+        "description": "यूनेस्को विश्व विरासत स्थल, शिव को समर्पित प्राचीन शैल-कट मंदिर। 6वीं सदी की उच्च कलात्मक गुणवत्ता की मूर्तियां हैं जिनमें 5.5 मीटर की महेश्वर मूर्ति शामिल है।"
+      }
+    }
+  },
+  {
+    "id": "elephanta-island-elephanta-caves",
+    "destination_id": "elephanta-caves",
+    "name": "Elephanta Island",
+    "type": "monument",
+    "description": "Island in Mumbai Harbour reached by ferry from Gateway of India. Part of Mumbai UNESCO World Heritage zone. Named after the stone elephant sculpture found here.",
+    "entry_fee": "Ferry ₹200 return",
+    "time_needed": "4-5 hours",
+    "tags": [
+      "island",
+      "heritage",
+      "monument",
+      "ferry"
+    ],
+    "kids_suitable": true,
+    "translations": {
+      "hi": {
+        "name": "एलिफेंटा द्वीप",
+        "description": "मुंबई हार्बर में स्थित द्वीप, गेटवे ऑफ इंडिया से फेरी द्वारा पहुंचने योग्य। मुंबई यूनेस्को विश्व विरासत क्षेत्र का हिस्सा।"
+      }
+    }
+  }
+]

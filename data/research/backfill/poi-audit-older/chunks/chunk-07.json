@@ -1,0 +1,370 @@
+[
+  {
+    "id": "assi-ghat",
+    "destination_id": "varanasi",
+    "name": "Assi Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Southernmost ghat popular with travelers and students. Morning yoga, chai stalls, and subah-e-banaras program."
+  },
+  {
+    "id": "bhu-campus",
+    "destination_id": "varanasi",
+    "name": "BHU & New Vishwanath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Banaras Hindu University campus with the modern Vishwanath Temple — largest temple complex in North India."
+  },
+  {
+    "id": "blue-lassi-shop",
+    "destination_id": "varanasi",
+    "name": "Blue Lassi Shop",
+    "type": "cafe",
+    "entry_fee": "₹60-150",
+    "description": "Legendary tiny shop serving thick fruit lassi since 1925."
+  },
+  {
+    "id": "chunar-fort-varanasi",
+    "destination_id": "varanasi",
+    "name": "Chunar Fort",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "Ancient fort 40 km from Varanasi on the Ganges. Used by Mughal and British rulers. Legends of supernatural events."
+  },
+  {
+    "id": "dashashwamedh-ghat",
+    "destination_id": "varanasi",
+    "name": "Dashashwamedh Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Main ghat where the spectacular Ganga Aarti happens every evening at sunset."
+  },
+  {
+    "id": "kashi-vishwanath",
+    "destination_id": "varanasi",
+    "name": "Kashi Vishwanath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 12 Jyotirlingas — the most sacred Shiva temple in India."
+  },
+  {
+    "id": "manikarnika-ghat",
+    "destination_id": "varanasi",
+    "name": "Manikarnika Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Primary cremation ghat burning 24/7 for thousands of years. Most sacred site for Hindu cremation rites."
+  },
+  {
+    "id": "panchganga-ghat",
+    "destination_id": "varanasi",
+    "name": "Panchganga Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred ghat where five rivers are said to meet. Alamgir Mosque (former Bindu Madhava temple) towers above."
+  },
+  {
+    "id": "ramnagar-fort",
+    "destination_id": "varanasi",
+    "name": "Ramnagar Fort",
+    "type": "fort",
+    "entry_fee": "₹50",
+    "description": "Fort-palace of the Maharaja of Varanasi across the Ganges. Museum with vintage cars, ivory, and weapons."
+  },
+  {
+    "id": "sarnath",
+    "destination_id": "varanasi",
+    "name": "Sarnath",
+    "type": "monument",
+    "entry_fee": "₹25 / ₹300",
+    "description": "Where Buddha gave his first sermon. Dhamek Stupa and archaeological museum."
+  },
+  {
+    "id": "tulsi-manas-temple",
+    "destination_id": "varanasi",
+    "name": "Tulsi Manas Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Modern marble temple where Tulsidas wrote Ramcharitmanas. Walls inscribed with the entire epic text."
+  },
+  {
+    "id": "gulmarg-golf-course",
+    "destination_id": "gulmarg",
+    "name": "Gulmarg Golf Course",
+    "type": "viewpoint",
+    "entry_fee": "₹500-2,000",
+    "description": "World's highest green golf course at 8,700 ft. 18 holes surrounded by snow-capped peaks."
+  },
+  {
+    "id": "gulmarg-gondola",
+    "destination_id": "gulmarg",
+    "name": "Gulmarg Gondola",
+    "type": "viewpoint",
+    "entry_fee": "₹740-1,500",
+    "description": "World's second-highest operating cable car reaching 14,000 ft. Two phases with views of Nanga Parbat and K2."
+  },
+  {
+    "id": "khilanmarg",
+    "destination_id": "gulmarg",
+    "name": "Khilanmarg",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Alpine meadow above Gulmarg with direct views of Nanga Parbat and Harmukh peak. Wildflowers in summer."
+  },
+  {
+    "id": "maharani-temple-gulmarg",
+    "destination_id": "gulmarg",
+    "name": "Maharani Temple (Rani Temple)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop Shiva temple built by Maharaja Hari Singh's wife. Stunning views of Gulmarg meadow."
+  },
+  {
+    "id": "strawberry-valley-gulmarg",
+    "destination_id": "gulmarg",
+    "name": "Strawberry Valley",
+    "type": "viewpoint",
+    "entry_fee": "₹500 (horse)",
+    "description": "Lush meadow known for wild strawberries in summer. Horse riding with Himalayan backdrop."
+  },
+  {
+    "id": "kaza-main-bazaar",
+    "destination_id": "kaza",
+    "name": "Kaza Main Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "The 300-metre main street that carries every cafe, gear shop, money-changer, and SIM vendor in Spiti. Last reliable ATM before Tabo/Komic is here (SBI)."
+  },
+  {
+    "id": "kaza-key-monastery-viewpoint",
+    "destination_id": "kaza",
+    "name": "Key Monastery Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free (Key Gompa entry ₹20)",
+    "description": "7km from Kaza on the Kibber road — the classic photo stop for Key Gompa stacked up the hillside. 11th-century founding, largest monastery in Spiti."
+  },
+  {
+    "id": "kaza-sakya-tangyud",
+    "destination_id": "kaza",
+    "name": "Sakya Tangyud Monastery",
+    "type": "monastery",
+    "entry_fee": "Free (donations welcome)",
+    "description": "The original seat of the Sakya sect in Spiti, 2km above Kaza town. The walled fortress-style complex houses 30+ monks and a decorated dukhang (prayer hall)."
+  },
+  {
+    "id": "kaza-spiti-river-ghat",
+    "destination_id": "kaza",
+    "name": "Spiti River Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "5-minute walk below the main market. Cold river running through the valley floor — locals do their prayers and offerings here at sunset."
+  },
+  {
+    "id": "adhai-din-ka-jhonpra",
+    "destination_id": "ajmer",
+    "name": "Adhai Din Ka Jhonpra",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Indo-Islamic mosque built in 1199, originally a Sanskrit college. Seven arches with intricate calligraphy."
+  },
+  {
+    "id": "ajmer-sharif-dargah",
+    "destination_id": "ajmer",
+    "name": "Ajmer Sharif Dargah",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Sufi shrine of Moinuddin Chishti (1236). One of the most important Muslim pilgrimages in India. Visited by all faiths."
+  },
+  {
+    "id": "ana-sagar-lake",
+    "destination_id": "ajmer",
+    "name": "Ana Sagar Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Artificial lake created in 1135. Mughal-era marble pavilions (Baradari) on the promenade. Sunset spot."
+  },
+  {
+    "id": "chandrashila-peak",
+    "destination_id": "chopta",
+    "name": "Chandrashila Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Summit at 13,000 ft above Tungnath with 360-degree Himalayan panorama including Nanda Devi and Chaukhamba."
+  },
+  {
+    "id": "deoria-tal",
+    "destination_id": "chopta",
+    "name": "Deoria Tal",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Emerald lake at 7,841 ft reflecting Chaukhamba peaks. Popular camping and trekking destination from Sari village."
+  },
+  {
+    "id": "tungnath-trek-chopta",
+    "destination_id": "chopta",
+    "name": "Tungnath Trek from Chopta",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "World's highest Shiva temple at 12,073 ft. 3.5 km trek through rhododendron forests from Chopta."
+  },
+  {
+    "id": "brahma-sarovar",
+    "destination_id": "kurukshetra",
+    "name": "Brahma Sarovar",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "One of India's largest sacred tanks. Site where Lord Brahma performed a yajna to create the universe."
+  },
+  {
+    "id": "jyotisar",
+    "destination_id": "kurukshetra",
+    "name": "Jyotisar (Bhagavad Gita Birthplace)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Sacred spot where Krishna delivered the Bhagavad Gita to Arjuna. Banyan tree marks the chariot site."
+  },
+  {
+    "id": "kurukshetra-panorama",
+    "destination_id": "kurukshetra",
+    "name": "Kurukshetra Panorama & Science Centre",
+    "type": "museum",
+    "entry_fee": "₹40",
+    "description": "Cylindrical building with 360-degree painting of the Mahabharata war. Interactive science exhibits."
+  },
+  {
+    "id": "sabarimala-erumeli",
+    "destination_id": "sabarimala",
+    "name": "Erumeli Petta Thullal",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Starting point for the traditional 60km route to Sabarimala. Pilgrims gather here for the longer, austere Mala-clad (celibate) pilgrimage. Less common than Pamba but spiritually significant."
+  },
+  {
+    "id": "sabarimala-pamba",
+    "destination_id": "sabarimala",
+    "name": "Pamba Ghats",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred bathing point where pilgrims purify before the trek. Confluence of Pamba, Achankovil, and Manimala rivers. Simple guest houses and the start of the trekking trail."
+  },
+  {
+    "id": "sabarimala-sannidhanam",
+    "destination_id": "sabarimala",
+    "name": "Sannidhanam Temple Complex",
+    "type": "temple",
+    "entry_fee": "Free (donations accepted)",
+    "description": "The main Ayyappa shrine at 914m peak. The sanctum sanctorum houses the deity's idol. The vast open courtyard can hold thousands of pilgrims during season."
+  },
+  {
+    "id": "bangus-forest-trail",
+    "destination_id": "bangus-valley",
+    "name": "Bangus Forest Trail",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dense deodar and pine forest walk with wildlife sightings. Bears, leopards, and musk deer habitat."
+  },
+  {
+    "id": "bangus-meadow",
+    "destination_id": "bangus-valley",
+    "name": "Bangus Valley Meadow",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine alpine meadow surrounded by snow-capped peaks. One of Kashmir's most untouched valleys."
+  },
+  {
+    "id": "girnar-ropeway",
+    "destination_id": "girnar",
+    "name": "Girnar Ropeway",
+    "type": "viewpoint",
+    "entry_fee": "₹700",
+    "description": "Cable car to the first peak (Ambaji temple at 2,700 ft). Panoramic views of Junagadh and Saurashtra plains."
+  },
+  {
+    "id": "neminath-temple-girnar",
+    "destination_id": "girnar",
+    "name": "Neminath Jain Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "2,500-year-old Jain temple at the summit. Exquisite marble carvings. Reward after the gruelling climb."
+  },
+  {
+    "id": "kumbhalgarh-fort",
+    "destination_id": "kumbhalgarh",
+    "name": "Kumbhalgarh Fort",
+    "type": "fort",
+    "entry_fee": "₹100",
+    "description": "UNESCO World Heritage fort with world's second-longest continuous wall (36 km). Birth place of Maharana Pratap."
+  },
+  {
+    "id": "kumbhalgarh-wildlife-sanctuary",
+    "destination_id": "kumbhalgarh",
+    "name": "Kumbhalgarh Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "Sanctuary in the Aravalli Hills connecting Kumbhalgarh to Ranakpur. Wolves, leopards, and sloth bears."
+  },
+  {
+    "id": "char-dham-namchi",
+    "destination_id": "namchi",
+    "name": "Char Dham",
+    "type": "temple",
+    "entry_fee": "₹100",
+    "description": "Replica of India's four Char Dham temples at one location with a 108-ft Shiva statue. Pilgrimage theme park."
+  },
+  {
+    "id": "samdruptse",
+    "destination_id": "namchi",
+    "name": "Samdruptse Statue",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "135-ft copper statue of Guru Padmasambhava on a hilltop. Second-largest statue in Sikkim."
+  },
+  {
+    "id": "shikharji-jal-mandir",
+    "destination_id": "shikharji",
+    "name": "Jal Mandir (Water Temple)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Small shrine halfway through the parikrama dedicated to water. Pilgrims believe drinking water here grants blessings. Natural spring feeds the temple."
+  },
+  {
+    "id": "parasnath-temple",
+    "destination_id": "shikharji",
+    "name": "Parasnath Hill Temples",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Supreme Jain pilgrimage site with 24 temples on Parasnath Hill. Highest peak in Jharkhand at 4,480 ft."
+  },
+  {
+    "id": "alchi-monastery",
+    "destination_id": "alchi",
+    "name": "Alchi Monastery",
+    "type": "monastery",
+    "entry_fee": "₹50",
+    "description": "Rare 11th-century Kashmiri-style Buddhist monastery with Indo-European art. Wooden carvings and murals."
+  },
+  {
+    "id": "dholavira-ruins",
+    "destination_id": "dholavira",
+    "name": "Dholavira UNESCO Site",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "UNESCO Harappan city with advanced water management, citadel, ceremonial ground, and the famous Indus script signboard."
+  },
+  {
+    "id": "mawphlang-sacred-forest",
+    "destination_id": "mawphlang",
+    "name": "Mawphlang Sacred Forest",
+    "type": "viewpoint",
+    "entry_fee": "₹200 (guide mandatory)",
+    "description": "Ancient sacred grove preserved for centuries by the Khasi people. No leaf or twig may be removed."
+  },
+  {
+    "id": "rudranath-confluence",
+    "destination_id": "rudraprayag",
+    "name": "Rudraprayag Sangam",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred confluence of Alaknanda and Mandakini rivers. Important stop on the Char Dham yatra route."
+  }
+]

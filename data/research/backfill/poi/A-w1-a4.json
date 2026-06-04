@@ -1,0 +1,386 @@
+[
+  {
+    "id": "colva-beach-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Colva Beach",
+    "type": "viewpoint",
+    "description": "A 2.4 km stretch of white sand beach, mostly empty on weekdays. The main beach in South Goa with calm waters suitable for swimming. Local families prefer this over the northern beaches.",
+    "tags": ["beach", "swimming", "relaxation", "local"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "कोल्वा समुद्र तट दक्षिण गोवा का मुख्य समुद्र तट है। यह 2.4 किमी की सफ़ेद रेत वाली पट्टी है जो सप्ताह के दिनों में खाली रहती है। यहाँ का पानी शांत है और तैराकी के लिए उपयुक्त है।",
+    "source_urls": [
+      "https://www.incredibleindia.gov.in/en/goa/goa/colva-beach",
+      "https://footloosedev.com/colva-beach-goa/"
+    ]
+  },
+  {
+    "id": "benaulim-beach-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Benaulim Beach",
+    "type": "viewpoint",
+    "description": "A quieter beach 2 km south of Colva with pristine white sand and fewer crowds. Popular with families seeking a more peaceful beach experience.",
+    "tags": ["beach", "peaceful", "quieter", "families"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बेनौलिम समुद्र तट कोल्वा के 2 किमी दक्षिण में स्थित है। यह अधिक शांत है और भीड़ कम है। परिवारों के लिए एक अच्छा विकल्प।",
+    "source_urls": [
+      "https://www.tourism-of-india.com/colva-benaulim-beaches.html",
+      "https://orchidresortgoa.com/blogs/top-attractions-near-benaulim-beach-in-south-goa/"
+    ]
+  },
+  {
+    "id": "margao-market-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Margao Municipal Market",
+    "type": "market",
+    "description": "South Goa's primary market selling fresh fish, Goan sausages, spices, and produce. Best visited early morning (6 am - noon). A sensory introduction to local Goan commerce.",
+    "tags": ["market", "local", "morning", "shopping"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": false,
+    "hi_description": "मार्गाओ नगर पालिका बाज़ार दक्षिण गोवा का मुख्य बाज़ार है। यहाँ ताज़ी मछली, गोवन सॉसेज, मसाले और स्थानीय उत्पाद मिलते हैं। सुबह 6 से 12 बजे का समय सबसे अच्छा है।",
+    "source_urls": [
+      "https://belezagoa.com/places-to-visit-in-south-goa/",
+      "https://wanderlog.com/place/details/55155/madgaon"
+    ]
+  },
+  {
+    "id": "betalbatim-sunset-beach-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Betalbatim Beach",
+    "type": "viewpoint",
+    "description": "Known as the Sunset Beach of South Goa, located between Colva and Benaulim. Offers romantic sunset views with less crowding than Colva.",
+    "tags": ["beach", "sunset", "romantic", "quieter"],
+    "time_needed": "2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "बेतालबतीम समुद्र तट दक्षिण गोवा का सूर्यास्त समुद्र तट कहलाता है। यह कोल्वा और बेनौलिम के बीच स्थित है और शानदार सूर्यास्त के दृश्य प्रदान करता है।",
+    "source_urls": [
+      "https://www.tourism-of-india.com/colva-benaulim-beaches.html",
+      "https://soulvacation.in/best-places-to-visit-near-colva-beach/"
+    ]
+  },
+  {
+    "id": "ancestral-goa-museum-colva-benaulim",
+    "destination_id": "colva-benaulim",
+    "name": "Ancestral Goa",
+    "type": "museum",
+    "description": "An open-air museum in Loutolim showcasing Goan rural life through art and traditional artifacts. Also known as Big Foot. Features displays of old Goan architecture and lifestyle.",
+    "tags": ["museum", "culture", "heritage", "traditions"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Varies",
+    "kids_suitable": true,
+    "hi_description": "आन्सेस्ट्रल गोवा लौतोलिम में स्थित एक खुली हवा का संग्रहालय है। यह गोवा के ग्रामीण जीवन को कला और परंपरागत कलाकृतियों के माध्यम से प्रदर्शित करता है।",
+    "source_urls": [
+      "https://footloosedev.com/colva-beach-goa/",
+      "https://belezagoa.com/places-to-visit-in-south-goa/"
+    ]
+  },
+  {
+    "id": "dudhsagar-waterfall-dudhsagar-falls",
+    "destination_id": "dudhsagar-falls",
+    "name": "Dudhsagar Falls",
+    "type": "waterfall",
+    "description": "One of India's highest waterfalls at 310 metres, cascading in four tiers. Accessible via 45-minute jeep safari from Collem through Bhagwan Mahavir Wildlife Sanctuary. The railway bridge crossing in front of the falls creates an iconic image.",
+    "tags": ["waterfall", "nature", "adventure", "jeep-safari"],
+    "time_needed": "4-5 hours",
+    "entry_fee": "Jeep safari ₹300-500 per person",
+    "kids_suitable": true,
+    "hi_description": "दूधसागर जलप्रपात भारत के सबसे ऊँचे जलप्रपातों में से एक है जो 310 मीटर की ऊँचाई से गिरता है। कोल्लेम से जीप सफारी के माध्यम से यहाँ तक पहुँचा जा सकता है।",
+    "source_urls": [
+      "https://www.indiabycaranddriver.com/blog/the-green-side-of-goa-exploring-bhagwan-mahavir-wildlife-sanctuary-dudhsagar-falls/",
+      "https://dudhsagar-falls.com/snake-birds-bhagwan-mahaveer-wildlife-sanctuary-goa/"
+    ]
+  },
+  {
+    "id": "tambdi-surla-temple-dudhsagar-falls",
+    "destination_id": "dudhsagar-falls",
+    "name": "Tambdi Surla Temple",
+    "type": "temple",
+    "description": "A 12th-century Shiva temple built during the Kadamba dynasty, located deep in Bhagwan Mahavir Wildlife Sanctuary. The only structural stone temple of its kind surviving in Goa, featuring intricate stonework and lotus carvings.",
+    "tags": ["temple", "heritage", "historic", "forest"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "तंबड़ी सुरला मंदिर 12वीं सदी का एक शिव मंदिर है जो कादंब राजवंश के समय बनाया गया था। यह भगवान महावीर वन्यजीव अभयारण्य में स्थित है और गोवा का एकमात्र पत्थर का मंदिर है।",
+    "source_urls": [
+      "https://www.lonelyplanet.com/india/goa/molem-region/attractions/bhagwan-mahavir-wildlife-sanctuary/a/poi-sig/1181968/1329276",
+      "https://www.goavision.com/mahavir-wildlife-sanctuary.html"
+    ]
+  },
+  {
+    "id": "devils-canyon-dudhsagar-falls",
+    "destination_id": "dudhsagar-falls",
+    "name": "Devil's Canyon",
+    "type": "viewpoint",
+    "description": "A stunning river gorge with criss-cross rock formations where water flows through underground passages. Located near Mollem, accessible as part of sanctuary visits.",
+    "tags": ["canyon", "nature", "gorge", "photography"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "डेविल्स कैनियन एक नदी घाटी है जहाँ पानी भूमिगत मार्ग से बहता है। यह मोल्लेम के पास स्थित है और अभयारण्य की यात्रा का हिस्सा है।",
+    "source_urls": [
+      "https://travelsetu.com/guide/bhagwan-mahavir-wildlife-sanctuary-tourism",
+      "https://oneboard.app/places/bhagwan-mahavir-national-park-and-wildlife-sanctuary-mollem-goa"
+    ]
+  },
+  {
+    "id": "fort-aguada-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Fort Aguada",
+    "type": "fort",
+    "description": "A 17th-century Portuguese fortification built in 1612 to guard against Dutch attacks. Massive laterite walls with a moat, underground water storage, and bastions. The fort contains a freshwater spring and has been a significant historical defensive structure.",
+    "tags": ["fort", "history", "architecture", "heritage"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "फोर्ट अगुड़ा 1612 में पुर्तगालियों द्वारा डच हमलों से बचाव के लिए बनाया गया 17वीं सदी का किला है। इसमें विशाल पत्थर की दीवारें, एक खाई और ताज़े पानी के स्रोत हैं।",
+    "source_urls": [
+      "https://www.incredibleindia.gov.in/en/goa/goa/fort-aguada",
+      "https://www.fabhotels.com/blog/aguada-fort-goa/"
+    ]
+  },
+  {
+    "id": "aguada-lighthouse-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Fort Aguada Lighthouse",
+    "type": "monument",
+    "description": "The oldest lighthouse in Asia, built in 1864 on a hill overlooking the Arabian Sea. Standing 40 metres tall with distinctive red and white stripes. Offers panoramic views of Sinquerim and Candolim beaches.",
+    "tags": ["lighthouse", "viewpoint", "historic", "photography"],
+    "time_needed": "1 hour",
+    "entry_fee": "Free (viewing area)",
+    "kids_suitable": true,
+    "hi_description": "अगुड़ा लाइटहाउस एशिया का सबसे पुराना लाइटहाउस है जो 1864 में बनाया गया था। यह 40 मीटर ऊँचा है और समुद्र के शानदार दृश्य प्रदान करता है।",
+    "source_urls": [
+      "https://www.atlasobscura.com/places/lighthouse-near-fort-aguada",
+      "https://www.makemytrip.com/tripideas/attractions/aguada-fort"
+    ]
+  },
+  {
+    "id": "candolim-beach-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Candolim Beach",
+    "type": "viewpoint",
+    "description": "A calm and upscale beach stretching south from Fort Aguada with white sand and gentle waves. Less crowded than Calangute with an array of quality restaurants and water sports.",
+    "tags": ["beach", "calm", "upscale", "water-sports"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "कैंडोलिम समुद्र तट फोर्ट अगुड़ा के दक्षिण में फैला एक शांत और उच्च मानदंड का समुद्र तट है। यह कालंगुट से कम भीड़ भरा है।",
+    "source_urls": [
+      "https://www.fabhotels.com/blog/aguada-fort-goa/",
+      "https://evendo.com/locations/india/goa/candolim/landmark/lower-aguada-fort"
+    ]
+  },
+  {
+    "id": "sinquerim-beach-water-sports-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Sinquerim Beach",
+    "type": "viewpoint",
+    "description": "The beach on the north side of Fort Aguada with Goa's most organized water sports setup including jet skiing, parasailing, and paddleboarding. Clean sand and established operators.",
+    "tags": ["beach", "water-sports", "adventure", "organized"],
+    "time_needed": "2-4 hours",
+    "entry_fee": "Free (water sports costs vary)",
+    "kids_suitable": true,
+    "hi_description": "सिंकेरिम समुद्र तट फोर्ट अगुड़ा के उत्तरी ओर स्थित है। यहाँ गोवा की सबसे संगठित जल क्रीड़ा सुविधाएँ हैं।",
+    "source_urls": [
+      "https://www.fabhotels.com/blog/aguada-fort-goa/",
+      "https://www.makemytrip.com/tripideas/attractions/aguada-fort"
+    ]
+  },
+  {
+    "id": "mandrem-beach-mandrem",
+    "destination_id": "mandrem",
+    "name": "Mandrem Beach",
+    "type": "viewpoint",
+    "description": "A wide, clean 3 km stretch of uncrowded sand with calm waters. A tidal creek separates the beach from the village, creating scenic wading opportunities at low tide.",
+    "tags": ["beach", "peaceful", "tidal-creek", "quiet"],
+    "time_needed": "3-4 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "मन्ड्रेम समुद्र तट एक 3 किमी की शांत और साफ़ रेत वाली पट्टी है। एक ज्वारीय नाला समुद्र तट को गाँव से अलग करता है।",
+    "source_urls": [
+      "https://www.tripadvisor.in/Attraction_Review-g1010240-d1723866-Reviews-Mandrem_Beach-Mandrem_North_Goa_District_Goa.html",
+      "https://evendo.com/locations/india/goa/attraction/mandrem-beach"
+    ]
+  },
+  {
+    "id": "mandrem-tidal-creek-mandrem",
+    "destination_id": "mandrem",
+    "name": "Mandrem Tidal Creek",
+    "type": "viewpoint",
+    "description": "A scenic river creek that divides the beach into two sections. At high tide, seawater rushes in creating a dramatic visual effect and opportunities for kayaking. Creates a distinctive geographical feature unique to Mandrem.",
+    "tags": ["creek", "tidal", "photography", "water-activity"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "मन्ड्रेम की ज्वारीय नदी का नाला समुद्र तट को दो भागों में बाँटता है। उच्च ज्वार पर समुद्र का पानी एक नाटकीय दृश्य बनाता है।",
+    "source_urls": [
+      "https://www.gosahin.com/places-to-visit/mandrem-beach/",
+      "https://trip101.com/article/best-things-to-do-in-mandrem-goa-india"
+    ]
+  },
+  {
+    "id": "mandrem-yoga-ashiyana-mandrem",
+    "destination_id": "mandrem",
+    "name": "Ashiyana Yoga Retreat",
+    "type": "temple",
+    "description": "An internationally recognized yoga retreat centre offering classes and multi-day programs in yoga, meditation, and holistic practices. Attracts serious practitioners from around the world.",
+    "tags": ["yoga", "wellness", "retreat", "meditation"],
+    "time_needed": "2-3 hours (single class)",
+    "entry_fee": "Classes ₹500-1000, packages vary",
+    "kids_suitable": false,
+    "hi_description": "अशियान योग रिट्रीट एक अंतरराष्ट्रीय स्तर के योग केंद्र हैं। यहाँ योग, ध्यान और समग्र कल्याण के कार्यक्रम दिए जाते हैं।",
+    "source_urls": [
+      "https://www.tripoto.com/goa/places-to-visit/mandrem-beach",
+      "https://trip101.com/article/best-things-to-do-in-mandrem-goa-india"
+    ]
+  },
+  {
+    "id": "margao-church-holy-spirit-margao",
+    "destination_id": "margao",
+    "name": "Church of the Holy Spirit",
+    "type": "church",
+    "description": "Built by the Portuguese in 1675, this baroque church features a pristine white façade and interior decorated with gilt crystal and stucco. One of Goa's oldest churches, located at the Largo de Igreja square.",
+    "tags": ["church", "heritage", "architecture", "historic"],
+    "time_needed": "30-45 minutes",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "पवित्र आत्मा का चर्च 1675 में पुर्तगालियों द्वारा बनाया गया था। इसका सफ़ेद रंग का अग्रभाग और सजावटी आंतरिक भाग बहुत सुंदर है।",
+    "source_urls": [
+      "https://www.tripadvisor.in/ShowUserReviews-g1152662-d2711469-r365541138-Church_of_Holy_Spirit-Margao_South_Goa_District_Goa.html",
+      "https://inngoa.com/cities/margao-city/"
+    ]
+  },
+  {
+    "id": "margao-municipal-market-margao",
+    "destination_id": "margao",
+    "name": "Margao Municipal Market",
+    "type": "market",
+    "description": "The primary market of South Goa selling fresh fish, Goan sausages, spices, cardamom, cinnamon, and local produce. Best visited 6 am - noon. A covered colonial-era building houses dozens of vendors.",
+    "tags": ["market", "shopping", "local", "morning"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": false,
+    "hi_description": "मार्गाओ नगर पालिका बाज़ार दक्षिण गोवा का मुख्य बाज़ार है। यहाँ ताज़ी मछली, गोवन सॉसेज और मसाले मिलते हैं। सुबह 6 से दोपहर 12 तक सबसे अच्छा समय है।",
+    "source_urls": [
+      "https://cityseeker.com/goa/406160-new-municipal-market",
+      "https://evendo.com/locations/india/goa/margao"
+    ]
+  },
+  {
+    "id": "sat-burzam-ghor-mansion-margao",
+    "destination_id": "margao",
+    "name": "Sat Burzam Ghor Mansion",
+    "type": "monument",
+    "description": "The finest Indo-Portuguese heritage mansion in Margao's Church Square (Largo de Igreja), built in the late 18th century with seven distinctive gables. A striking example of colonial-era architecture.",
+    "tags": ["heritage", "mansion", "architecture", "colonial"],
+    "time_needed": "30 minutes",
+    "entry_fee": "Free (exterior viewing)",
+    "kids_suitable": true,
+    "hi_description": "सात बुर्ज़ाम घर मार्गाओ के चर्च स्क्वायर में स्थित सबसे सुंदर भारत-पुर्तगाली हवेली है। इसमें सात विशिष्ट शिखर हैं।",
+    "source_urls": [
+      "https://inngoa.com/cities/margao-city/",
+      "https://www.facebook.com/gomantaktimes/videos/exploring-goas-margao-city-madgaon-municipal-market-monte-holy-spirit-church-gom/904959781575168/"
+    ]
+  },
+  {
+    "id": "mollem-tambdi-surla-temple-mollem",
+    "destination_id": "mollem",
+    "name": "Tambdi Surla Temple",
+    "type": "temple",
+    "description": "A 12th-century Hemadpanthi stone temple dedicated to Lord Mahadev, located 12 km from Mollem village in the heart of Bhagwan Mahavir Wildlife Sanctuary. Features intricate lotus carvings and is Goa's oldest surviving Hindu temple.",
+    "tags": ["temple", "heritage", "historic", "forest"],
+    "time_needed": "2-3 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "तंबड़ी सुरला मंदिर 12वीं सदी का एक हेमडपंत शैली का पत्थर का मंदिर है। यह भगवान महावीर वन्यजीव अभयारण्य के दिल में स्थित है।",
+    "source_urls": [
+      "https://goa-tourism.com/wildlife/bhagwan-mahavir-sanctuary/",
+      "https://evendo.com/locations/india/goa-beaches/attraction/mollem-national-park-bhagwan-mahavir-wildlife-sanctuary"
+    ]
+  },
+  {
+    "id": "devils-canyon-gorge-mollem",
+    "destination_id": "mollem",
+    "name": "Devil's Canyon",
+    "type": "viewpoint",
+    "description": "A dramatic river gorge with criss-cross rock formations where the river flows through deep underground passages. Located at the Mollem entrance to Bhagwan Mahavir Wildlife Sanctuary, a natural marvel.",
+    "tags": ["canyon", "gorge", "nature", "photography"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "डेविल्स कैनियन एक नदी घाटी है जहाँ पानी गहरे भूमिगत मार्गों से बहता है। यह मोल्लेम में भगवान महावीर वन्यजीव अभयारण्य के प्रवेश द्वार पर है।",
+    "source_urls": [
+      "https://travelsetu.com/guide/bhagwan-mahavir-wildlife-sanctuary-tourism",
+      "https://oneboard.app/places/mollem-national-park-and-bhagwan-mahavir-wildlife-sanctuary"
+    ]
+  },
+  {
+    "id": "bhagwan-mahavir-sanctuary-mollem",
+    "destination_id": "mollem",
+    "name": "Bhagwan Mahavir Wildlife Sanctuary",
+    "type": "viewpoint",
+    "description": "Goa's largest protected forest area covering 240 sq km in the Western Ghats foothills. Home to leopards, sloth bears, gaur (Indian bison), sambar, and 200+ bird species. Semi-evergreen forest with rich biodiversity.",
+    "tags": ["wildlife", "nature", "forest", "sanctuary"],
+    "time_needed": "4-6 hours",
+    "entry_fee": "Free (jeep safaris separate)",
+    "kids_suitable": true,
+    "hi_description": "भगवान महावीर वन्यजीव अभयारण्य गोवा का सबसे बड़ा संरक्षित वन क्षेत्र है जो 240 वर्ग किमी में फैला है। यहाँ तेंदुए, भालू और गौर पाए जाते हैं।",
+    "source_urls": [
+      "https://forest.goa.gov.in/node/1187",
+      "https://www.lonelyplanet.com/india/goa/molem-region/attractions/bhagwan-mahavir-wildlife-sanctuary/a/poi-sig/1181968/1329276"
+    ]
+  },
+  {
+    "id": "morjim-turtle-nesting-site-morjim",
+    "destination_id": "morjim",
+    "name": "Olive Ridley Turtle Nesting Site",
+    "type": "viewpoint",
+    "description": "Morjim Beach is an important nesting site for endangered Olive Ridley sea turtles from October to March. Female turtles emerge at night to lay eggs in the sand. Protected nesting zones with guided viewing opportunities.",
+    "tags": ["turtle", "wildlife", "nature", "conservation"],
+    "time_needed": "1-2 hours",
+    "entry_fee": "Free (guided tours available)",
+    "kids_suitable": true,
+    "hi_description": "मोरजिम समुद्र तट जलपाई रिडली कछुओं की संरक्षित अंडे देने की जगह है। अक्टूबर से मार्च तक ये कछुएँ रात में अंडे देते हैं।",
+    "source_urls": [
+      "https://www.airial.travel/attractions/india/morjim/turtle-nesting-site-morjim-beach-goa-s1dk2LbX",
+      "https://nri.goa.gov.in/turtle-nesting-sites/"
+    ]
+  },
+  {
+    "id": "morjim-beach-morjim",
+    "destination_id": "morjim",
+    "name": "Morjim Beach",
+    "type": "viewpoint",
+    "description": "A 3 km stretch of clean white sand with calm, shallow waters ideal for swimming. Gentle waves and peaceful atmosphere attract yoga retreats and wellness-focused travelers. Less crowded than northern Goa beaches.",
+    "tags": ["beach", "calm", "peaceful", "swimming"],
+    "time_needed": "2-4 hours",
+    "entry_fee": "Free",
+    "kids_suitable": true,
+    "hi_description": "मोरजिम समुद्र तट 3 किमी की साफ़ सफ़ेद रेत वाली पट्टी है। शांत और गहरा पानी तैराकी के लिए आदर्श है।",
+    "source_urls": [
+      "https://www.tripoto.com/goa/places-to-visit/morjim-beach",
+      "https://placeguider.com/morjim-beach-goa-complete-travel-guide-history-turtle-nesting-things-to-do"
+    ]
+  },
+  {
+    "id": "morjim-yoga-retreats-morjim",
+    "destination_id": "morjim",
+    "name": "Morjim Yoga & Wellness Retreats",
+    "type": "temple",
+    "description": "Several yoga retreat centres and wellness resorts offering sunrise yoga, meditation, and Ayurveda therapy programs. Attracts yoga practitioners seeking beachfront holistic healing experiences.",
+    "tags": ["yoga", "wellness", "retreat", "meditation"],
+    "time_needed": "2-3 hours (single class)",
+    "entry_fee": "Classes ₹500-1000, packages vary",
+    "kids_suitable": false,
+    "hi_description": "मोरजिम में कई योग रिट्रीट केंद्र हैं जो सूर्योदय योग, ध्यान और आयुर्वेद चिकित्सा कार्यक्रम देते हैं।",
+    "source_urls": [
+      "https://beingmomandmore.com/travel/morjim-beach-goa",
+      "https://placeguider.com/morjim-beach-goa-complete-travel-guide-history-turtle-nesting-things-to-do"
+    ]
+  }
+]

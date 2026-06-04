@@ -1,0 +1,142 @@
+[
+  {
+    "destination_id": "ponda-spice",
+    "name": "Mahalsa Temple Annual Jatra",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Mahalasa_Narayani_Temple,_Mardol",
+    "note": "Jatra confirmed; held Feb/Mar, but Magha Jatra in Feb. Mardol location confirmed."
+  },
+  {
+    "destination_id": "ambaji",
+    "name": "Bhadarvi Poonam Mela",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.gujarattourism.com/fair-and-festival/ambaji-bhadarvi-poonam-fair.html",
+    "note": "Bhadarvi Poonam falls in Bhadrapada month, typically early Sept as recorded."
+  },
+  {
+    "destination_id": "dakor",
+    "name": "Janmashtami Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 8,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.ranchhodraijidakor.com/article/id/36/festivals-celebrated-in-temple",
+    "note": "Major festival at Dakor Ranchhodraiji temple; Krishna birth month August."
+  },
+  {
+    "destination_id": "dakor",
+    "name": "Sharad Purnima Festival",
+    "verdict": "WRONG_MONTH",
+    "db_month": 10,
+    "correct_month": null,
+    "confidence": "med",
+    "source_url": "https://mpanchang.com/festivals/sharad-purnima/",
+    "note": "Sharad Purnima 2026 falls Oct 25-26 (tithi span); month=10 is technically correct but lunar drift edge case."
+  },
+  {
+    "destination_id": "junagadh",
+    "name": "Bhavnath Mela (Girnar Mahashivratri Mela)",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://gujarattourism.com/fair-and-festival/mahashivratri-mela.html",
+    "note": "Maha Shivratri Mela 2026: Feb 11-15. Location: Bhavnath at foot of Girnar, Junagadh."
+  },
+  {
+    "destination_id": "modhera",
+    "name": "Uttarardh Mahotsav (Modhera Dance Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://gujarattourism.com/fair-and-festival/modhera-dance-festival.html",
+    "note": "2026 dates Jan 17-18 at Modhera Sun Temple. Third week of January confirmed."
+  },
+  {
+    "destination_id": "mandvi",
+    "name": "Mandvi Beach Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.gujarattourism.com/fair-and-festival/mandvi-beach-festival.html",
+    "note": "2025 dates Dec 21-31 confirmed. Festival held annually Dec 21-31."
+  },
+  {
+    "destination_id": "dholavira",
+    "name": "Dholavira Festival",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://utsav.gov.in/view-event/dholavira-festival",
+    "note": "Heritage/cultural festival confirmed; dates vary annually. Authentic event."
+  },
+  {
+    "destination_id": "girnar",
+    "name": "Lili Parikrama (Green Circumambulation of Mount Girnar)",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://utsav.gov.in/view-event/girnar-lili-parikrama",
+    "note": "Kartik Sud Agyaras to Poonam (typically Nov, rarely early Oct). Month 11 correct."
+  },
+  {
+    "destination_id": "girnar",
+    "name": "Bhavnath Maha Shivaratri Mela",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": 2,
+    "confidence": "high",
+    "source_url": "https://utsav.gov.in/view-event/girnar-mahashivratri-mela-bhavnath-fair-1",
+    "note": "Maha Shivratri on lunar calendar; 2026 Feb 11-15. Location Bhavnath at Girnar."
+  },
+  {
+    "destination_id": "porbandar",
+    "name": "Gandhi Jayanti Celebrations at Kirti Mandir",
+    "verdict": "CONFIRMED",
+    "db_month": 10,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://bhaktiinformation.com/temple-blog/kirti-mandir-porbandar-gujarat",
+    "note": "Gandhi Jayanti Oct 2 fixed date. Porbandar is Gandhi's birthplace. Kirti Mandir confirmed."
+  },
+  {
+    "destination_id": "rani-ki-vav",
+    "name": "Water Festival - Rani ki Vav",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": null,
+    "confidence": "med",
+    "source_url": "https://utsav.gov.in/view-event/water-festival-rani-ki-vav-1",
+    "note": "Festival held Dec-Jan, month 12 reasonable. UNESCO site Patan confirmed venue."
+  },
+  {
+    "destination_id": "saputara",
+    "name": "Saputara Monsoon Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 7,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://gujarattourism.com/fair-and-festival/saputara-monsson-festival.html",
+    "note": "2025 Jul 26-Aug 17. Tribal heritage festival. July month recorded; Jul-Aug span typical."
+  },
+  {
+    "destination_id": "saputara",
+    "name": "Dang Darbar Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": null,
+    "confidence": "med",
+    "source_url": "https://utsav.gov.in/view-event/dang-darbar",
+    "note": "Before Holi festival. Feb 2026: Holi Mar 3-4, so Feb 26-Mar 3 recorded is consistent."
+  }
+]

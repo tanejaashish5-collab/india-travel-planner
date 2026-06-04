@@ -1,0 +1,142 @@
+[
+  {
+    "destination_id": "kukke-subramanya",
+    "name": "Champa Shashti (Shasti)",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": 12,
+    "confidence": "high",
+    "source_url": "https://kukkedevasthanam.org.in/",
+    "note": "Festival Dec 15, 2026; Margashirsha Shukla Shashti; confirmed official temple"
+  },
+  {
+    "destination_id": "kukke-subramanya",
+    "name": "Nagara Panchami",
+    "verdict": "WRONG_MONTH",
+    "db_month": 7,
+    "correct_month": 8,
+    "confidence": "high",
+    "source_url": "https://www.drikpanchang.com/festivals/nag-panchami/nag-panchami-date-time.html",
+    "note": "Nag Panchami 2026 is Aug 17, not July. Shravana Shukla Panchami"
+  },
+  {
+    "destination_id": "kukke-subramanya",
+    "name": "Ashlesha Bali Puja",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://kukkedevasthanam.org.in/ashlesha-bali-kukke-subramanya-pooja/",
+    "note": "Nakshatra-based, occurs multiple times yearly; month=null correct"
+  },
+  {
+    "destination_id": "gulbarga",
+    "name": "Khwaja Bande Nawaz Urs",
+    "verdict": "UNVERIFIABLE",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "low",
+    "source_url": "https://dedaandsons.com/khwaja-banda-nawaz-gesu-daraz-urs-date.php",
+    "note": "Lunar festival; 2026 is May 4, not Aug-Sep as stated in batch notes"
+  },
+  {
+    "destination_id": "karwar",
+    "name": "Karavali Utsav",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": 12,
+    "confidence": "high",
+    "source_url": "https://sahilonline.org/karavali-utsava-2025-to-be-held-in-karwar-from-december-22-to-28-preparations-in-full-swing",
+    "note": "Dec 22-28 confirmed every year; coastal cultural festival"
+  },
+  {
+    "destination_id": "sabarimala",
+    "name": "Mandala-Makaravilakku Pilgrimage Season",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": 11,
+    "confidence": "high",
+    "source_url": "https://www.keralatourism.org/sabarimala/pilgrimage-season",
+    "note": "Mandala opens Nov 16; Makaravilakku Jan 14; month=11 for opening correct"
+  },
+  {
+    "destination_id": "cherai",
+    "name": "Cherai Pooram (Gowreeswara Temple Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": 1,
+    "confidence": "high",
+    "source_url": "https://allevents.in/ernakulam/cherai-pooram-temple-festival-in-cherai-kerala-india/200026010052544",
+    "note": "Late Jan-early Feb; Pooram Nakshatra Makaram month; elephant processions"
+  },
+  {
+    "destination_id": "marari",
+    "name": "Marari Mahadeva Arattu (Temple Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": 2,
+    "confidence": "high",
+    "source_url": "https://www.nearmein.com/2025-festival/mararikulam-sree-mahadeva-temple-a-divine-gem-of-kerala/",
+    "note": "Kumbham month (Feb-Mar); new moon day; 10-day festival; Arattu ceremony"
+  },
+  {
+    "destination_id": "vagamon",
+    "name": "Thangal Para Uroos (Sufi Pilgrimage Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 4,
+    "correct_month": 4,
+    "confidence": "high",
+    "source_url": "https://www.onmanorama.com/travel/kerala/2017/05/03/thangal-para-uroos-vagamon.html",
+    "note": "Late April confirmed; Sheikh Fariduddin Baba Sufi shrine; syncretic site"
+  },
+  {
+    "destination_id": "bhimashankar",
+    "name": "Kartik Purnima",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": 11,
+    "confidence": "high",
+    "source_url": "https://www.drikpanchang.com/festivals/kartika-purnima/kartika-purnima-date-time.html",
+    "note": "Nov 24, 2026; Kartik month full moon; Tripurasura slaying mythology"
+  },
+  {
+    "destination_id": "astavinayak-circuit",
+    "name": "Ganesh Chaturthi",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": 9,
+    "confidence": "high",
+    "source_url": "https://www.drikpanchang.com/festivals/ganesh-chaturthi/ganesh-chaturthi-date-time.html",
+    "note": "Sept 14-25, 2026; 10-day festival; pilgrimage circuit spanning 8 temples"
+  },
+  {
+    "destination_id": "ganpatipule",
+    "name": "Ganesh Chaturthi",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": 9,
+    "confidence": "high",
+    "source_url": "https://www.drikpanchang.com/festivals/ganesh-chaturthi/ganesh-chaturthi-date-time.html",
+    "note": "Sept 14-25, 2026; self-manifested shrine on Konkan coast"
+  },
+  {
+    "destination_id": "harihareshwar",
+    "name": "Maha Shivaratri",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": 2,
+    "confidence": "high",
+    "source_url": "https://www.drikpanchang.com/festivals/maha-shivaratri/maha-shivaratri-date-time.html",
+    "note": "Feb 15, 2026; Phalgun month Krishna Chaturdashi; Kashi of South mythology"
+  },
+  {
+    "destination_id": "ellora-caves",
+    "name": "Ellora-Ajanta Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": 1,
+    "confidence": "high",
+    "source_url": "https://www.holidify.com/places/aurangabad/ellora-ajanta-dance-festival-sightseeing-1253637.html",
+    "note": "January annual classical music/dance festival at UNESCO heritage caves"
+  }
+]

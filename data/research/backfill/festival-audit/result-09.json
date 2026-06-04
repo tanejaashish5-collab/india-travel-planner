@@ -1,0 +1,142 @@
+[
+  {
+    "destination_id": "chandipur",
+    "name": "Chandipur Beach Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://odishatv.in/odisha-news/body-slider/all-set-for-chandipur-beach-festival-from-jan-7-119733",
+    "note": "Jan festival confirmed; vanishing tide beach feature corroborated"
+  },
+  {
+    "destination_id": "gopalpur-on-sea",
+    "name": "Gopalpur Beach Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://odishabytes.com/odisha-gopalpur-beach-festival-2026-underway-till-january-30/",
+    "note": "Jan 27-30 confirmed; Governor inauguration 2026 verified"
+  },
+  {
+    "destination_id": "talasari",
+    "name": "Chaitra Mela",
+    "verdict": "CONFIRMED",
+    "db_month": 4,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.tourmyindia.com/states/odisha/taratarini-mela.html",
+    "note": "Chaitra month (March-April) confirmed; Chandaneswar temple Talasari area"
+  },
+  {
+    "destination_id": "yuksom",
+    "name": "Dubdi Monastery Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Dubdi_Monastery",
+    "note": "Feb/March lunar; 15th Tibetan month 1; Losar + Chaam dances confirmed"
+  },
+  {
+    "destination_id": "namchi",
+    "name": "Pang Lhabsol",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://sikkimtourism.gov.in/Public/ExperienceSikkim/FairsAndFestivalDetails/FF20A071?type=Festival",
+    "note": "Late Aug/early Sep confirmed; 15th Tibetan month 7; guardian deity Kanchenjunga"
+  },
+  {
+    "destination_id": "namchi",
+    "name": "Tendong Lho Rum Faat",
+    "verdict": "CONFIRMED",
+    "db_month": 8,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://namchi.nic.in/the-state-level-level-celebration-of-tendong-lho-rum-faat-will-be-celebrated-in-nali-partam-lingee-on-the-7th-and-8th-august/",
+    "note": "August confirmed; Lepcha tribal festival; 3rd Tibetan lunar month"
+  },
+  {
+    "destination_id": "ravangla",
+    "name": "Mahakala Dance (Ralang Monastery)",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.trawell.in/sikkim/ravangla/ralang-monastery",
+    "note": "November confirmed; Tibetan Buddhist masked dance; Kagyup order monastery"
+  },
+  {
+    "destination_id": "karaikal",
+    "name": "Sani Peyarchi (Saturn Transit Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": 3,
+    "confidence": "high",
+    "source_url": "https://karaikal.gov.in/sanipeyarchi-festival-2026/",
+    "note": "2026 = March 6; Thirunallar Sani Bhagavan Temple confirmed; every 2.5 yrs"
+  },
+  {
+    "destination_id": "damdama-sahib",
+    "name": "Baisakhi",
+    "verdict": "CONFIRMED",
+    "db_month": 4,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://punjabtourism.punjab.gov.in/baisakhi.php",
+    "note": "April 13 confirmed; Khalsa founding 1699; Takht Damdama Sahib major venue"
+  },
+  {
+    "destination_id": "alampur",
+    "name": "Sharan Navaratri at Jogulamba Temple",
+    "verdict": "WRONG_MONTH",
+    "db_month": 9,
+    "correct_month": 10,
+    "confidence": "high",
+    "source_url": "https://www.thehansindia.com/telangana/all-arrangements-have-been-made-for-sharan-navaratri-in-jogulamba-templeeo-829870",
+    "note": "October confirmed (Oct 15-24), NOT September; Shakti Peeth shrine verified"
+  },
+  {
+    "destination_id": "ananthagiri-hills",
+    "name": "Karthika Pournami Jatara",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://logout.world/tours/karthika-pournami-ananthagiri-hills/",
+    "note": "November Karthika Pournami confirmed; Anantha Padmanabha Swamy temple"
+  },
+  {
+    "destination_id": "ananthagiri-hills",
+    "name": "Ashada Jatara",
+    "verdict": "CONFIRMED",
+    "db_month": 6,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.outlookindia.com/traveller/ot-getaway-guides/ananthagiri_hills_cradle_of_the_musi_river",
+    "note": "June-July Ashada masam confirmed; pilgrimage fair at temple"
+  },
+  {
+    "destination_id": "deeg",
+    "name": "Braj Holi Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": 3,
+    "confidence": "high",
+    "source_url": "https://www.rajasthantourtrip.com/fairs-and-festivals/braj-holi-festival.html",
+    "note": "Phalgun Shukla (Feb-Mar) confirmed; 2026 March 12-14; 900 fountain spectacle"
+  },
+  {
+    "destination_id": "gagron-fort",
+    "name": "Mitthe Shah Dargah Urs Fair",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Gagron_Fort",
+    "note": "Muharram (Sep-Oct Islamic lunar) confirmed; Sufi shrine at UNESCO fort"
+  }
+]

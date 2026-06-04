@@ -1,0 +1,370 @@
+[
+  {
+    "id": "hadimba-temple",
+    "destination_id": "manali",
+    "name": "Hadimba Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient cave temple dedicated to Hidimba Devi, surrounded by towering deodar cedars. The 1553 pagoda-style wooden structure is one of Himachal's most photographed buildings."
+  },
+  {
+    "id": "jogini-waterfall",
+    "destination_id": "manali",
+    "name": "Jogini Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Short 3km trek from Vashisht village to a 150-foot waterfall through apple orchards."
+  },
+  {
+    "id": "mall-road-manali",
+    "destination_id": "manali",
+    "name": "Mall Road",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Main commercial strip with shops, restaurants, and the Tibetan market."
+  },
+  {
+    "id": "manu-temple-manali",
+    "destination_id": "manali",
+    "name": "Manu Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple dedicated to sage Manu, believed to be the creator of the world. One of the oldest temples in the region."
+  },
+  {
+    "id": "naggar-castle",
+    "destination_id": "manali",
+    "name": "Naggar Castle",
+    "type": "fort",
+    "entry_fee": "₹15",
+    "description": "Medieval stone and wood castle built in 1460, now a heritage hotel with panoramic valley views and an art gallery."
+  },
+  {
+    "id": "nehru-kund-manali",
+    "destination_id": "manali",
+    "name": "Nehru Kund",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Natural spring named after Jawaharlal Nehru who used to drink water from this spring. On the Leh highway."
+  },
+  {
+    "id": "roerich-art-gallery",
+    "destination_id": "manali",
+    "name": "Nicholas Roerich Art Gallery",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "Gallery showcasing works of Russian artist Nicholas Roerich who lived in Naggar. Beautiful Himalayan art collection."
+  },
+  {
+    "id": "old-manali",
+    "destination_id": "manali",
+    "name": "Old Manali",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Bohemian village across the Manalsu stream — cafés, bakeries, live music, hippie shops, and Manu Temple."
+  },
+  {
+    "id": "solang-valley-ropeway",
+    "destination_id": "manali",
+    "name": "Solang Valley Ropeway",
+    "type": "viewpoint",
+    "entry_fee": "₹500-800",
+    "description": "Gondola ride to 3,780m with panoramic Himalayan views. Paragliding, skiing (winter), and zorbing available at the base."
+  },
+  {
+    "id": "vashisht-hot-springs",
+    "destination_id": "manali",
+    "name": "Vashisht Hot Springs",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Natural sulphur hot springs inside a centuries-old temple complex."
+  },
+  {
+    "id": "dhankar-monastery",
+    "destination_id": "spiti-valley",
+    "name": "Dhankar Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Perched on a 1,000-ft cliff at 12,774 ft. Former capital of Spiti with stunning valley views."
+  },
+  {
+    "id": "hikkim-post-office",
+    "destination_id": "spiti-valley",
+    "name": "Hikkim Post Office",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "World's highest post office at 14,400 ft. Send postcards with a unique stamp from this remote village."
+  },
+  {
+    "id": "key-monastery",
+    "destination_id": "spiti-valley",
+    "name": "Key Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Largest and oldest monastery in Spiti Valley. Perched on a cliff at 4,166m."
+  },
+  {
+    "id": "kunzum-pass",
+    "destination_id": "spiti-valley",
+    "name": "Kunzum Pass",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "High mountain pass at 15,060 ft connecting Kullu and Spiti. Temple at the top with prayer flags."
+  },
+  {
+    "id": "pin-valley-np",
+    "destination_id": "spiti-valley",
+    "name": "Pin Valley National Park",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "Cold desert national park home to snow leopard, Himalayan ibex, and rare Himalayan plants."
+  },
+  {
+    "id": "tabo-monastery",
+    "destination_id": "spiti-valley",
+    "name": "Tabo Monastery",
+    "type": "monastery",
+    "entry_fee": "₹50",
+    "description": "Founded in 996 AD, one of the oldest continuously operating Buddhist monasteries. Called \"Ajanta of the Himalayas\" for murals."
+  },
+  {
+    "id": "eastern-group-khajuraho",
+    "destination_id": "khajuraho",
+    "name": "Eastern Group (Jain Temples)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Parsvanath, Adinath, and Ghantai Jain temples with exquisite carvings. Less crowded than western group."
+  },
+  {
+    "id": "raneh-falls-khajuraho",
+    "destination_id": "khajuraho",
+    "name": "Raneh Falls",
+    "type": "waterfall",
+    "entry_fee": "₹25",
+    "description": "Volcanic canyon with 5 km gorge of crystalline granite in vibrant colors. Spectacular during monsoon."
+  },
+  {
+    "id": "sound-light-show-khajuraho",
+    "destination_id": "khajuraho",
+    "name": "Sound & Light Show",
+    "type": "monument",
+    "entry_fee": "₹250",
+    "description": "Evening show narrating the history of Chandela kings and the temples, held at the Western Group."
+  },
+  {
+    "id": "western-group-khajuraho",
+    "destination_id": "khajuraho",
+    "name": "Western Group of Temples",
+    "type": "temple",
+    "entry_fee": "₹40",
+    "description": "UNESCO World Heritage masterpiece. Kandariya Mahadeva, Lakshmana, and Vishwanath temples with erotic sculptures (10th-11th century)."
+  },
+  {
+    "id": "auli-ropeway",
+    "destination_id": "auli",
+    "name": "Auli Ropeway (Gondola)",
+    "type": "viewpoint",
+    "entry_fee": "₹1,000",
+    "description": "Asia's longest cable car at 4 km connecting Joshimath to Auli. Spectacular views of Nanda Devi."
+  },
+  {
+    "id": "auli-ski-slopes",
+    "destination_id": "auli",
+    "name": "Auli Ski Slopes",
+    "type": "viewpoint",
+    "entry_fee": "₹500-2,000",
+    "description": "India's premier ski destination with slopes between 8,200-10,000 ft. Nanda Devi backdrop."
+  },
+  {
+    "id": "gorson-bugyal",
+    "destination_id": "auli",
+    "name": "Gorson Bugyal",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Alpine meadow at 10,000 ft with stunning views of Nanda Devi and Trishul. Easy trek from Auli."
+  },
+  {
+    "id": "corbett-museum",
+    "destination_id": "corbett-national-park",
+    "name": "Corbett Museum (Gurney House)",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "Former home of Jim Corbett with his belongings, photographs, and hunting memorabilia."
+  },
+  {
+    "id": "garjia-devi-temple",
+    "destination_id": "corbett-national-park",
+    "name": "Garjia Devi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple perched on a large rock in the middle of Kosi River. Beautiful setting with wildlife nearby."
+  },
+  {
+    "id": "corbett-jeep-safari",
+    "destination_id": "corbett-national-park",
+    "name": "Jim Corbett Jeep Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹600-6,000",
+    "description": "India's oldest national park (1936). Tiger safari across 5 zones — Bijrani, Jhirna, Dhikala, Durga Devi, Sitabani."
+  },
+  {
+    "id": "atal-tunnel",
+    "destination_id": "lahaul-valley",
+    "name": "Atal Tunnel (Rohtang)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "World's longest highway tunnel above 10,000 ft at 9.02 km. Engineering marvel connecting Manali to Lahaul."
+  },
+  {
+    "id": "sissu-waterfall",
+    "destination_id": "lahaul-valley",
+    "name": "Sissu Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Spectacular waterfall visible from the highway in Lahaul. Frozen in winter, thundering in summer."
+  },
+  {
+    "id": "trilokinath-temple",
+    "destination_id": "lahaul-valley",
+    "name": "Trilokinath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred to both Hindus and Buddhists. White marble Shiva idol worshipped as Avalokiteshvara by Buddhists."
+  },
+  {
+    "id": "gira-waterfalls",
+    "destination_id": "saputara",
+    "name": "Gira Waterfalls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "30-meter waterfall in Dangs forest, spectacular during monsoon. 50 km from Saputara."
+  },
+  {
+    "id": "saputara-lake",
+    "destination_id": "saputara",
+    "name": "Saputara Lake",
+    "type": "lake",
+    "entry_fee": "₹50-200",
+    "description": "Boating lake in the centre of town. Paddle boats, row boats, and speed boats available."
+  },
+  {
+    "id": "saputara-ropeway",
+    "destination_id": "saputara",
+    "name": "Saputara Ropeway",
+    "type": "viewpoint",
+    "entry_fee": "₹90",
+    "description": "Cable car ride over the lake and hills with panoramic Western Ghats views. Best at sunset."
+  },
+  {
+    "id": "barmer-handicrafts",
+    "destination_id": "barmer",
+    "name": "Barmer Handicraft Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Famous for hand-block printing, mirror work embroidery, and wooden crafts of the Thar Desert."
+  },
+  {
+    "id": "kiradu-temples",
+    "destination_id": "barmer",
+    "name": "Kiradu Temples",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Cluster of five ruined temples from 11th-12th century. Called \"Khajuraho of Rajasthan\" for intricate carvings."
+  },
+  {
+    "id": "ghnp-tirthan-trek",
+    "destination_id": "great-himalayan-np",
+    "name": "Tirthan Valley Trek",
+    "type": "viewpoint",
+    "entry_fee": "₹50-600",
+    "description": "UNESCO World Heritage park with pristine forests, 375 fauna species. Home to Western Tragopan pheasant."
+  },
+  {
+    "id": "ghnp-wildlife",
+    "destination_id": "great-himalayan-np",
+    "name": "Wildlife Observation Points",
+    "type": "viewpoint",
+    "entry_fee": "Included in park entry",
+    "description": "Designated spots for observing Himalayan brown bear, snow leopard, musk deer, and blue sheep."
+  },
+  {
+    "id": "mahaparinirvana-temple",
+    "destination_id": "kushinagar",
+    "name": "Mahaparinirvana Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred site where Buddha attained Mahaparinirvana (passed away). 6-meter reclining Buddha statue."
+  },
+  {
+    "id": "ramabhar-stupa",
+    "destination_id": "kushinagar",
+    "name": "Ramabhar Stupa",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Stupa marking the cremation site of Lord Buddha. Peaceful park setting with meditation areas."
+  },
+  {
+    "id": "rainbow-falls-nongriat",
+    "destination_id": "nongriat",
+    "name": "Rainbow Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Waterfall reached after crossing two root bridges. Rainbow visible in the spray on sunny mornings."
+  },
+  {
+    "id": "nongriat-root-bridges",
+    "destination_id": "nongriat",
+    "name": "Single Decker Living Root Bridge",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Ancient living root bridge of Tyrna in the Nongriat village area. Requires 3,000+ steps trek down and up."
+  },
+  {
+    "id": "shrikhand-parvati-bagh",
+    "destination_id": "shrikhand-mahadev",
+    "name": "Parvati Bagh",
+    "type": "garden",
+    "entry_fee": null,
+    "description": "A wildflower meadow at ~4,200m on the route between Kunsa and Bhim Dwar, named for Parvati. Brahma Kamal blooms here through July and August."
+  },
+  {
+    "id": "shrikhand-shivling",
+    "destination_id": "shrikhand-mahadev",
+    "name": "Shrikhand Mahadev Shivling",
+    "type": "temple",
+    "entry_fee": null,
+    "description": "A 75-foot vertical natural rock formation revered as the Shrikhand Mahadev Shivling. Standing at 5,227m it is one of India's highest pilgrim destinations."
+  },
+  {
+    "id": "mehao-wildlife-sanctuary",
+    "destination_id": "anini",
+    "name": "Mehao Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Remote sanctuary in the Mishmi Hills. Home to Mishmi takin and hoolock gibbons. Birding paradise."
+  },
+  {
+    "id": "doodhpathri-meadow",
+    "destination_id": "doodhpathri",
+    "name": "Doodhpathri Meadow",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Bowl-shaped meadow meaning \"Valley of Milk\". Shaliganga stream meanders through vast green carpet of flowers."
+  },
+  {
+    "id": "mawsynram-caves",
+    "destination_id": "mawsynram",
+    "name": "Mawjymbuin Cave",
+    "type": "monument",
+    "entry_fee": "₹10",
+    "description": "Cave with massive stalagmite shaped like a Shiva lingam. In the wettest place on Earth."
+  },
+  {
+    "id": "bhimakali-temple",
+    "destination_id": "sarahan",
+    "name": "Bhimakali Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the 51 Shakti Peethas. Spectacular Himalayan wooden temple architecture with silver doors. Kinner Kailash views."
+  }
+]

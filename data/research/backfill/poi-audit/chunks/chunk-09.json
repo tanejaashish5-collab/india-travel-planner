@@ -1,0 +1,386 @@
+[
+  {
+    "id": "arunachala-mountain-tiruvannamalai",
+    "destination_id": "tiruvannamalai",
+    "name": "Arunachala Mountain (Girivalam Circumambulation)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A 3-billion-year-old, 2670-foot sacred mountain. Pilgrims walk 14km around it (Girivalam) as an act of devotion. Barefoot walks at dawn offer the most spiritual experience. Summit hikes also available."
+  },
+  {
+    "id": "arunachaleswarar-temple-tiruvannamalai",
+    "destination_id": "tiruvannamalai",
+    "name": "Arunachaleswarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of India's largest temple complexes at 10 hectares with 9 gopurams. Dedicated to Shiva as the fire element of the Pancha Bhoota Stalams. Built over centuries with intricate Dravidian architecture."
+  },
+  {
+    "id": "seshadri-swamigal-ashram-tiruvannamalai",
+    "destination_id": "tiruvannamalai",
+    "name": "Seshadri Swamigal Ashram",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "A short walk from Sri Ramana Ashram, dedicated to Seshadri Swamigal, a contemporary of Ramana Maharshi. Known for his spiritual eccentricities and devotion. Smaller, intimate meditation space."
+  },
+  {
+    "id": "skandashramam-cave-tiruvannamalai",
+    "destination_id": "tiruvannamalai",
+    "name": "Skandashramam Cave",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "A cave on Arunachala's slopes where Ramana Maharshi lived and meditated before settling at Ramanasramam. Reached via a steep trail; pilgrims visit to trace his early spiritual path."
+  },
+  {
+    "id": "sri-ramana-ashram-tiruvannamalai",
+    "destination_id": "tiruvannamalai",
+    "name": "Sri Ramana Ashram",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Spiritual center at the base of Arunachala where Ramana Maharshi lived for 54 years until his samadhi in 1950. The world's most-visited meditation center, drawing thousands annually from 50+ countries. Houses his samadhi shrine, meditation hall, library."
+  },
+  {
+    "id": "virupaksha-cave-tiruvannamalai",
+    "destination_id": "tiruvannamalai",
+    "name": "Virupaksha Cave",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "A meditation cave on Arunachala's eastern slope, once inhabited by 13th-century saint Virupaksha Deva. Natural rock formation, accessible via trail. Offers solitude and views of the surrounding landscape."
+  },
+  {
+    "id": "deer-park-pillalamarri",
+    "destination_id": "pillalamarri",
+    "name": "Deer Park & Zoo",
+    "type": "garden",
+    "entry_fee": "Varies",
+    "description": "Small zoo and deer park within the tourism complex. Features various animals and birds in natural settings surrounding the banyan tree."
+  },
+  {
+    "id": "banyan-tree-pillalamarri",
+    "destination_id": "pillalamarri",
+    "name": "Pillalamarri Banyan Tree",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "800-year-old banyan tree spanning 4 acres with multiple trunks. One of India's oldest and largest banyan trees, surrounded by walking paths and a nursery."
+  },
+  {
+    "id": "science-museum-pillalamarri",
+    "destination_id": "pillalamarri",
+    "name": "Pillalamarri Science Museum",
+    "type": "museum",
+    "entry_fee": "₹5 (adults), ₹3 (children)",
+    "description": "Small archaeology museum displaying artifacts from the Palamuru region including Palaeolithic tools, Iron Age pottery, and sculptures from Chalukya, Rashtrakuta, Kakatiya, and Vijayanagara periods."
+  },
+  {
+    "id": "rajarajeshwara-temple-pillalamarri",
+    "destination_id": "pillalamarri",
+    "name": "Rajarajeshwara Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "16th-century Vijayanagara-style temple relocated and reconstructed in 1983. Original structure was moved from Erladdinne to prevent submergence during Krishna River reservoir construction."
+  },
+  {
+    "id": "sufi-tombs-pillalamarri",
+    "destination_id": "pillalamarri",
+    "name": "Sufi Saints' Tombs",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Historic shrines of Jamal Hussain and Kamal Hussain, Muslim Sufi saints. Located near the banyan tree complex with separate shrine entrance."
+  },
+  {
+    "id": "chandravalli-caves-chitradurga",
+    "destination_id": "chitradurga",
+    "name": "Chandravalli Caves",
+    "type": "monument",
+    "entry_fee": "₹20",
+    "description": "Ancient caves with prehistoric rock paintings dating to early human settlement. Located 3km from Chitradurga town, the site provides insight into ancient dwelling patterns and early art."
+  },
+  {
+    "id": "chitradurga-fort-chitradurga",
+    "destination_id": "chitradurga",
+    "name": "Chitradurga Fort",
+    "type": "fort",
+    "entry_fee": "₹60",
+    "description": "One of India's most impressive hill forts with seven concentric walls covering 1,500 acres. Built by the Nayaka dynasty and expanded by Hyder Ali and Tipu Sultan. Contains 19 gates, 38 watchtowers, and temples within massive boulder formations."
+  },
+  {
+    "id": "hidimbeshwara-temple-chitradurga",
+    "destination_id": "chitradurga",
+    "name": "Hidimbeshwara Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "An ancient Shiva temple built within a natural boulder cave inside Chitradurga Fort. The cave setting and historical significance make it one of the fort's spiritual highlights."
+  },
+  {
+    "id": "obavva-passage-chitradurga",
+    "destination_id": "chitradurga",
+    "name": "Obavva Passage",
+    "type": "monument",
+    "entry_fee": "Free (with fort entry)",
+    "description": "The secret entrance to Chitradurga Fort where the legendary warrior woman Obavva single-handedly defended the passage with a pestle, killing invaders one by one. A shrine now marks this historic entrance."
+  },
+  {
+    "id": "kashid-beach-kashid",
+    "destination_id": "kashid",
+    "name": "Kashid Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A 3km stretch of white sand beach backed by casuarina trees, one of only two white sand beaches in Maharashtra. Clean water, calm waves, and minimal development make it ideal for swimming and relaxation."
+  },
+  {
+    "id": "murud-janjira-fort-kashid",
+    "destination_id": "kashid",
+    "name": "Murud Janjira Fort",
+    "type": "fort",
+    "entry_fee": "₹20-50 (boat)",
+    "description": "A 15th-century offshore fort built under Malik Amber's rule, accessible by boat from Rajapuri jetty. Known for its historic architecture and strategic island location in the Arabian Sea."
+  },
+  {
+    "id": "phansad-wildlife-sanctuary-kashid",
+    "destination_id": "kashid",
+    "name": "Phansad Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "A biodiverse wildlife sanctuary located 30km from Kashid, home to varied bird species, migratory birds, and diverse flora. Ideal for nature walks and bird watching during winter months."
+  },
+  {
+    "id": "revdanda-fort-kashid",
+    "destination_id": "kashid",
+    "name": "Revdanda Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Ruins of a Portuguese fort located 15km from Kashid, offering quieter beach ambiance and historical significance from the colonial period. Known for sunset photography and isolated coastal charm."
+  },
+  {
+    "id": "dudhni-lake-silvassa",
+    "destination_id": "silvassa",
+    "name": "Dudhni Lake Water Sports",
+    "type": "viewpoint",
+    "entry_fee": "₹100–200 (entry + water sports)",
+    "description": "Waterfront created by Madhuban Dam on Daman Ganga. Premier destination for water sports including boating and jet skiing. 40 km from Silvassa."
+  },
+  {
+    "id": "hirwa-van-garden-silvassa",
+    "destination_id": "silvassa",
+    "name": "Hirwa Van Garden (Green Forest Park)",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Forested garden with walking trails, picnic spots, and scenic views. Greenery-rich destination contrasting with nearby coastal Daman and Diu."
+  },
+  {
+    "id": "tribal-museum-silvassa",
+    "destination_id": "silvassa",
+    "name": "Silvassa Tribal Museum",
+    "type": "museum",
+    "entry_fee": "₹20–50 (estimated)",
+    "description": "Showcases tribal culture of Varli, Dodhiya, Kokna, and Kathodia tribes. Exhibits ornaments, musical instruments, fishing tools, hunting gadgets, and household articles."
+  },
+  {
+    "id": "vanganga-lake-garden-silvassa",
+    "destination_id": "silvassa",
+    "name": "Vanganga Lake Garden",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Landscaped garden with vivacious flowers, diverse trees, and tranquil lake. Boating, fountains, jogging tracks. Winter bird-watching spot with exotic migratory species."
+  },
+  {
+    "id": "araku-tribal-museum-araku-valley",
+    "destination_id": "araku-valley",
+    "name": "Araku Tribal Museum",
+    "type": "museum",
+    "entry_fee": "₹70",
+    "description": "Museum showcasing tribal life, culture, tools, art, and traditional costumes of local Adivasi communities. Displays Dhimsa dance costumes and handicrafts for sale."
+  },
+  {
+    "id": "borra-caves-araku-valley",
+    "destination_id": "araku-valley",
+    "name": "Borra Caves",
+    "type": "monument",
+    "entry_fee": "₹60",
+    "description": "Second largest cave system in the Indian subcontinent, 3,229m long total. Features stalactite and stalagmite formations carved by the underground Chitravathi River over millennia."
+  },
+  {
+    "id": "padmapuram-gardens-araku-valley",
+    "destination_id": "araku-valley",
+    "name": "Padmapuram Gardens",
+    "type": "garden",
+    "entry_fee": "₹60",
+    "description": "Botanical garden 2.5km from Araku town featuring landscaped pathways, local flora, and shaded walking areas. Peaceful spot for nature walks."
+  },
+  {
+    "id": "baga-beach-calangute-baga",
+    "destination_id": "calangute-baga",
+    "name": "Baga Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The northern extension of Calangute Beach, known for nightlife and water sports. Tito's Lane houses the major nightclubs and bars. The Saturday Night Market (Mackie's) is held nearby. Water sports operators line the beach."
+  },
+  {
+    "id": "calangute-beach-calangute-baga",
+    "destination_id": "calangute-baga",
+    "name": "Calangute Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Wide, busy beach lined with sunbeds, vendors, and water sports operators. The most commercial and touristy beach in Goa. Parasailing, jet ski, and banana boat rides available. Beach shacks serve food and drinks. Popular with first-time Goa visitors."
+  },
+  {
+    "id": "mackie-market-calangute-baga",
+    "destination_id": "calangute-baga",
+    "name": "Mackie's Saturday Night Market",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Large bazaar held Saturday evenings in Baga, near the beach. Stalls sell clothes, jewelry, souvenirs, handicrafts, and food. A lively social gathering spot with live music and performances. Crowds peak after 8pm."
+  },
+  {
+    "id": "archaeological-museum-halebidu",
+    "destination_id": "halebidu",
+    "name": "Archaeological Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Located 0.5 km from Hoysaleshwara Temple, established in the 1970s. Houses over 1,500 sculptures and inscriptions recovered from Halebidu and surrounding areas, with both closed and open-air exhibits."
+  },
+  {
+    "id": "hoysaleshwara-temple-halebidu",
+    "destination_id": "halebidu",
+    "name": "Hoysaleshwara Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Built in 1121 AD, this twin shrine is dedicated to Hoysaleswara and Shantaleswara. Features 240 outer wall panels with intricate carvings depicting Hindu mythology. UNESCO World Heritage site with exceptional sculptural detail."
+  },
+  {
+    "id": "nandi-monolith-halebidu",
+    "destination_id": "halebidu",
+    "name": "Nandi Monolith",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "A colossal monolithic Nandi (sacred bull) measuring 20 feet from nose to tail and 11 feet from hump to pedestal. Carved from single stone, representing Shiva's mount with remarkable craftsmanship."
+  },
+  {
+    "id": "antarvedi-temple-konaseema",
+    "destination_id": "konaseema",
+    "name": "Antarvedi Sri Lakshmi Narasimha Swamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient riverside temple at the confluence of the Godavari River and Bay of Bengal. The beach at Antarvedi offers views of the river mouth (Saagara sangamam) where freshwater meets ocean."
+  },
+  {
+    "id": "coringa-wildlife-sanctuary-konaseema",
+    "destination_id": "konaseema",
+    "name": "Coringa Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Third-largest mangrove forest stretch in India spanning 8 km from Kakinada. Home to 120+ bird species and the critically endangered white-backed vulture. Features a 600m boardwalk through mangrove forest."
+  },
+  {
+    "id": "godavari-backwaters-konaseema",
+    "destination_id": "konaseema",
+    "name": "Godavari Backwaters & Houseboats",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Delta formed by seven mouths of the Godavari with islands, coconut groves, and fishing villages. Houseboat cruises offer views of rural life, mangroves, and bird sanctuaries."
+  },
+  {
+    "id": "eravikulam-national-park-munnar",
+    "destination_id": "munnar",
+    "name": "Eravikulam National Park",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "High-altitude park protecting endangered Nilgiri Tahr. Home to Anamudi (2,695 m), South India's highest peak. Rolling grasslands, shola forests, and trekking trails offer panoramic views."
+  },
+  {
+    "id": "mattupetty-dam-munnar",
+    "destination_id": "munnar",
+    "name": "Mattupetty Dam",
+    "type": "lake",
+    "entry_fee": "Varies",
+    "description": "Masonry dam at 1,700 m elevation creating a scenic lake. Pedal boats and speedboat rentals available. Wildlife sightings include elephants, bison, deer and birds."
+  },
+  {
+    "id": "tata-tea-museum-munnar",
+    "destination_id": "munnar",
+    "name": "Tata Tea Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Museum on Tata's Nallathanni estate showcasing tea production from green leaf plucking to finished packaging. Learn the craft of high-altitude tea making at 2,000+ metres elevation."
+  },
+  {
+    "id": "amkunj-beach-rangat",
+    "destination_id": "rangat",
+    "name": "Amkunj Beach Eco-Park",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pebbled beach with driftwood benches. Serene sunrise views. Eco-park built by Forest Department. 8 km from Rangat Bazaar on Andaman Trunk Road."
+  },
+  {
+    "id": "cuthbert-bay-turtle-sanctuary-rangat",
+    "destination_id": "rangat",
+    "name": "Cuthbert Bay Turtle Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Free (guide recommended)",
+    "description": "Wildlife sanctuary with artificial hatchery for sea turtle conservation. Olive ridley and leatherback turtles nest Nov–Feb. Guest house run by tourism department."
+  },
+  {
+    "id": "dhani-nallah-mangrove-boardwalk-rangat",
+    "destination_id": "rangat",
+    "name": "Dhani Nallah Mangrove Boardwalk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "India's longest mangrove boardwalk at 713 metres. Wooden walkway winds through mangrove creek. 20 km from Rangat. Best for sunrise walks and bird-watching."
+  },
+  {
+    "id": "agatti-airport-viewpoint",
+    "destination_id": "agatti",
+    "name": "Agatti Aerodrome Approach",
+    "type": "viewpoint",
+    "entry_fee": "N/A",
+    "description": "Only airport in Lakshadweep, offering a breathtaking aerial view over turquoise lagoon during landing. One of India's most dramatic approaches."
+  },
+  {
+    "id": "agatti-lagoon",
+    "destination_id": "agatti",
+    "name": "Agatti Lagoon",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sprawling turquoise lagoon covering 24.84 sq km with shallow, crystal-clear waters and thriving marine ecosystem. Ideal for snorkeling, kayaking, and water sports."
+  },
+  {
+    "id": "coffee-plantations-daringbadi",
+    "destination_id": "daringbadi",
+    "name": "Coffee Plantations",
+    "type": "viewpoint",
+    "entry_fee": "₹100-300",
+    "description": "Working coffee estates on hill station slopes demonstrating cultivation and processing methods. Tours include tasting freshly roasted coffee sourced from local organic plantations."
+  },
+  {
+    "id": "putudi-waterfall-daringbadi",
+    "destination_id": "daringbadi",
+    "name": "Putudi Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "60-foot cascade where river Salunki drops over dense forest surroundings. Clear waters suitable for bathing, with light forest trekking paths accessible to reach the falls."
+  },
+  {
+    "id": "kabini-river-nagarhole",
+    "destination_id": "nagarhole",
+    "name": "Kabini River Boat Safari",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Motorboat rides on Kabini River backwaters through forest, observing crocodiles, birds, and animals drinking water or bathing. Evening safaris offer excellent wildlife viewing."
+  },
+  {
+    "id": "nagarhole-safari-nagarhole",
+    "destination_id": "nagarhole",
+    "name": "Nagarhole National Park Safari",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "640 sq km wildlife sanctuary with jeep, boat, and canter safaris offering views of Bengal tigers, leopards, Asian elephants, and diverse fauna. Book safaris at least 2 days in advance."
+  },
+  {
+    "id": "daulatabad-fort-daulatabad",
+    "destination_id": "daulatabad",
+    "name": "Daulatabad Fort",
+    "type": "fort",
+    "entry_fee": "₹500",
+    "description": "Historic medieval fortress with a 56-meter tower of victory. Features underground passages and ramparts. Built in 12th century, modified during Mughal period."
+  }
+]

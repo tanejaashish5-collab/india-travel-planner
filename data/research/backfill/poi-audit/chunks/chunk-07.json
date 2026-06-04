@@ -1,0 +1,386 @@
+[
+  {
+    "id": "aga-khan-palace-pune",
+    "destination_id": "pune",
+    "name": "Aga Khan Palace",
+    "type": "palace",
+    "entry_fee": "₹50 (Indians), ₹200 (foreign)",
+    "description": "Built in 1892, this palace served as a prison where Gandhi, Kasturba, and Mahadev Desai were held during the Quit India Movement. Now a museum dedicated to India's independence struggle."
+  },
+  {
+    "id": "dagdusheth-ganpati-pune",
+    "destination_id": "pune",
+    "name": "Dagdusheth Ganpati Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Central Pune temple where Ganesha is believed to remove obstacles. Built in 1893, the temple is a community gathering point during Ganesh Chaturthi festival."
+  },
+  {
+    "id": "kayani-bakery-pune",
+    "destination_id": "pune",
+    "name": "Kayani Bakery",
+    "type": "cafe",
+    "entry_fee": "₹30–150 per item",
+    "description": "Heritage Irani bakery operating since the British era, famous for shrewsbury biscuits and traditional Iranian breads. Located in the old city, it's a cultural landmark."
+  },
+  {
+    "id": "pataleshwar-cave-temple-pune",
+    "destination_id": "pune",
+    "name": "Pataleshwar Cave Temple",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "8th-century rock-cut temple dedicated to Shiva. Carved from a single rock in the heart of Pune, featuring an open courtyard and sanctum with intricate carvings."
+  },
+  {
+    "id": "shaniwar-wada-pune",
+    "destination_id": "pune",
+    "name": "Shaniwar Wada",
+    "type": "palace",
+    "entry_fee": "₹25 (Indians), ₹250 (foreign)",
+    "description": "Seven-story Peshwa palace built in 1732, now in ruins but with massive walls intact. The palace burned in 1828 but remains the symbol of Maratha power. Nightly light-and-sound show available."
+  },
+  {
+    "id": "sinhagad-fort-pune",
+    "destination_id": "pune",
+    "name": "Sinhagad Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historic fort 35km from Pune, a popular monsoon trek. Scenic 2-hour climb through forests offers views of the Sahyadri range. Located at the junction of two rivers forming a natural defensive position."
+  },
+  {
+    "id": "gangapur-dam-nashik",
+    "destination_id": "nashik",
+    "name": "Gangapur Dam & Lake",
+    "type": "lake",
+    "entry_fee": "Free (water sports have separate fees)",
+    "description": "Reservoir on the Godavari River, 20km from Nashik town. Calm waters surrounded by vineyards and hills, popular for water sports, picnics, and sunset views."
+  },
+  {
+    "id": "panchavati-ramkund-nashik",
+    "destination_id": "nashik",
+    "name": "Panchavati & Ramkund",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred ghats on the Godavari River where Ram, Sita, and Lakshman are believed to have lived during their exile. Ramkund is the main ghat where pilgrims bathe and perform rituals."
+  },
+  {
+    "id": "pandavleni-caves-nashik",
+    "destination_id": "nashik",
+    "name": "Pandavleni Caves",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Buddhist caves from the 2nd century BCE carved into a hillside inside Nashik. Contain stone pillars, chaitya hall, and inscriptions dating to the Satavahana period."
+  },
+  {
+    "id": "sula-vineyards-nashik",
+    "destination_id": "nashik",
+    "name": "Sula Vineyards",
+    "type": "garden",
+    "entry_fee": "₹500–1200 (tasting packages)",
+    "description": "India's pioneering wine estate established in 2000, 15km from Nashik. Offers vineyard tours, tastings of Indian wines, and restaurant dining overlooking the vineyards."
+  },
+  {
+    "id": "trimbakeshwar-temple-nashik",
+    "destination_id": "nashik",
+    "name": "Trimbakeshwar Jyotirlinga Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the 12 Jyotirlingas, 28km from Nashik. The temple sits at the source of the Godavari River. The main lingam is flanked by two smaller lingas representing Brahma and Vishnu."
+  },
+  {
+    "id": "bahmani-tombs-bidar",
+    "destination_id": "bidar",
+    "name": "Bahmani Tombs (Ashtur)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Cluster of domed mausoleums 8km from Bidar built for Bahmani Sultanate rulers. Impressive Indo-Islamic architecture with intricate carvings and Persian-influenced arches, rivalling Hyderabad's monuments."
+  },
+  {
+    "id": "bidar-fort-bidar",
+    "destination_id": "bidar",
+    "name": "Bidar Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Massive 15th-century fortress with 5.5km perimeter walls, triple moats, and five gateways. Contains palaces (Rangin Mahal), mosques (Solah Khamba), and royal baths. One of India's largest but least-restored forts."
+  },
+  {
+    "id": "guru-nanak-jhira-sahib-bidar",
+    "destination_id": "bidar",
+    "name": "Guru Nanak Jhira Sahib",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "Sikh gurudwara built around a natural spring believed to have been created by Guru Nanak. Sacred pilgrimage site with free langar (community meal) serving visitors daily."
+  },
+  {
+    "id": "rangin-mahal-bidar",
+    "destination_id": "bidar",
+    "name": "Rangin Mahal (Colored Palace)",
+    "type": "palace",
+    "entry_fee": "Free",
+    "description": "Persian-tiled palace within Bidar Fort featuring intricate turquoise, blue, and white tile work. Multi-chambered structure with decorated archways reflecting Indo-Persian architectural fusion."
+  },
+  {
+    "id": "coracle-hogenakkal",
+    "destination_id": "hogenakkal",
+    "name": "Coracle Rides",
+    "type": "viewpoint",
+    "entry_fee": "₹100–200 per person",
+    "description": "Wicker boats sealed with animal fat, traditional 2000-year craft. Hold 6 people; navigate through falls in monsoon spray."
+  },
+  {
+    "id": "falls-hogenakkal",
+    "destination_id": "hogenakkal",
+    "name": "Hogenakkal Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Kaveri River plunges through columnar basalt gorge. The main attraction; 300+ feet drop into misty waters. Free to view from top."
+  },
+  {
+    "id": "swimming-hogenakkal",
+    "destination_id": "hogenakkal",
+    "name": "Mineral-Rich Swimming",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Natural pools below falls with mineral-rich waters believed to have healing properties. Safe swimming in designated areas."
+  },
+  {
+    "id": "massage-hogenakkal",
+    "destination_id": "hogenakkal",
+    "name": "Riverside Oil Massage",
+    "type": "cafe",
+    "entry_fee": "₹300–500 per session",
+    "description": "Traditional full-body massage by trained masseurs using herbal oils. Unique to Hogenakkal; de-stresses pressure points."
+  },
+  {
+    "id": "coffee-plantation-sakleshpur",
+    "destination_id": "sakleshpur",
+    "name": "Coffee Estate Tour",
+    "type": "garden",
+    "entry_fee": "Varies",
+    "description": "Guided tours of coffee plantations offering insights into cultivation and processing from bean to cup. Learn traditional coffee-making techniques amidst lush greenery."
+  },
+  {
+    "id": "jenukal-gudda-sakleshpur",
+    "destination_id": "sakleshpur",
+    "name": "Jenukal Gudda Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Second-highest peak in Karnataka. Trek passes through coffee plantations, lush forests, and rocky terrain to reach the summit with breathtaking views."
+  },
+  {
+    "id": "kukke-subrahmanya-temple-sakleshpur",
+    "destination_id": "sakleshpur",
+    "name": "Kukke Subrahmanya Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple dedicated to Lord Subrahmanya in the Sakleshpur region. Known for traditional Hindu pilgrimage significance and scenic location."
+  },
+  {
+    "id": "manjarabad-fort-sakleshpur",
+    "destination_id": "sakleshpur",
+    "name": "Manjarabad Fort",
+    "type": "fort",
+    "entry_fee": "Varies",
+    "description": "Star-shaped fort built by Tipu Sultan in 1792 with unique geometric architecture. Popular historical attraction showcasing the region's glorious past."
+  },
+  {
+    "id": "anantha-padmanabha-swamy-temple-ananthagiri-hills",
+    "destination_id": "ananthagiri-hills",
+    "name": "Anantha Padmanabha Swamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "400-year-old hilltop temple dedicated to Lord Vishnu, built by a Nizam king. Located at the summit of Ananthagiri Hills, accessible via a trekking trail."
+  },
+  {
+    "id": "coffee-plantations-ananthagiri-hills",
+    "destination_id": "ananthagiri-hills",
+    "name": "Coffee Plantations",
+    "type": "garden",
+    "entry_fee": "Varies",
+    "description": "Working coffee estates covering the hillsides with shade-grown arabica plants. Visitors can walk through the plantations and learn about harvesting techniques."
+  },
+  {
+    "id": "galikonda-viewpoint-ananthagiri-hills",
+    "destination_id": "ananthagiri-hills",
+    "name": "Galikonda Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Panoramic vista over surrounding forests, waterfalls, and rolling hills. Popular spot for sunset views and photography."
+  },
+  {
+    "id": "bhimashankar-temple-bhimashankar",
+    "destination_id": "bhimashankar",
+    "name": "Bhimashankar Jyotirlinga Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the twelve Jyotirlingas dedicated to Shiva. Located in the Sahyadri range with natural springs flowing within the temple complex."
+  },
+  {
+    "id": "bhimashankar-wildlife-sanctuary-bhimashankar",
+    "destination_id": "bhimashankar",
+    "name": "Bhimashankar Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Protected forest area known for the endemic giant flying squirrel and diverse bird species. Accessible via trekking trails through dense forests."
+  },
+  {
+    "id": "hanuman-lake-bhimashankar",
+    "destination_id": "bhimashankar",
+    "name": "Hanuman Lake",
+    "type": "lake",
+    "entry_fee": "₹50",
+    "description": "Scenic lake surrounded by thick forest within the Bhimashankar Wildlife Sanctuary. A peaceful spot for nature walks and reflection."
+  },
+  {
+    "id": "gopalpur-colonial-warehouses",
+    "destination_id": "gopalpur-on-sea",
+    "name": "Colonial Port Warehouses Remnants",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Ruins of East India Company warehouses and colonial trading structures from the 19th-20th centuries. Godalpur was a prominent trading port for rice from Burma under British rule. Crumbling structures dot the shoreline as remnants of maritime heritage."
+  },
+  {
+    "id": "gopalpur-beach-walk",
+    "destination_id": "gopalpur-on-sea",
+    "name": "Gopalpur Beach Shoreline",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Four-kilometer stretch of clean sandy beach lined with casuarina and coconut groves. Quiet Bay of Bengal coastline without crowds. Suitable for long walks and occasional sightings of Olive Ridley turtle nesting in season."
+  },
+  {
+    "id": "gopalpur-lighthouse",
+    "destination_id": "gopalpur-on-sea",
+    "name": "Gopalpur Lighthouse",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Historic 40-meter tall red and white striped lighthouse commissioned in 1967, standing on the headland. Originally established in 1871, now offers panoramic 360-degree views of the town and Bay of Bengal. Built during the British colonial era."
+  },
+  {
+    "id": "district-museum-kolanupaka",
+    "destination_id": "kolanupaka",
+    "name": "District Museum Kolanupaka",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Site museum in the temple complex housing Hindu and Jain sculptures from 6th to 16th century AD, including statues of Mahavira, Chamundi, and Nandi."
+  },
+  {
+    "id": "kolanupaka-jain-temple-kolanupaka",
+    "destination_id": "kolanupaka",
+    "name": "Kolanupaka Jain Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "2000-year-old Jain temple housing a 130cm jade Mahavira statue carved from a single stone. The temple features eight Tirthankara idols and dates to the Kalyani Chalukya period."
+  },
+  {
+    "id": "someshwara-temple-kolanupaka",
+    "destination_id": "kolanupaka",
+    "name": "Someshwara Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "800-year-old Shiva temple built by the Chalukyas, located near the Jain temple complex. The temple has traditional Chalukyan architecture and stone carvings."
+  },
+  {
+    "id": "morjim-beach-morjim",
+    "destination_id": "morjim",
+    "name": "Morjim Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A 3 km stretch of clean white sand with calm, shallow waters ideal for swimming. Gentle waves and peaceful atmosphere attract yoga retreats and wellness-focused travelers. Less crowded than northern Goa beaches."
+  },
+  {
+    "id": "morjim-yoga-retreats-morjim",
+    "destination_id": "morjim",
+    "name": "Morjim Yoga & Wellness Retreats",
+    "type": "temple",
+    "entry_fee": "Classes ₹500-1000, packages vary",
+    "description": "Several yoga retreat centres and wellness resorts offering sunrise yoga, meditation, and Ayurveda therapy programs. Attracts yoga practitioners seeking beachfront holistic healing experiences."
+  },
+  {
+    "id": "morjim-turtle-nesting-site-morjim",
+    "destination_id": "morjim",
+    "name": "Olive Ridley Turtle Nesting Site",
+    "type": "viewpoint",
+    "entry_fee": "Free (guided tours available)",
+    "description": "Morjim Beach is an important nesting site for endangered Olive Ridley sea turtles from October to March. Female turtles emerge at night to lay eggs in the sand. Protected nesting zones with guided viewing opportunities."
+  },
+  {
+    "id": "anthropological-museum-port-blair",
+    "destination_id": "port-blair",
+    "name": "Anthropological Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Inaugurated in 1975, exhibits tribal cultures of Andaman and Nicobar Islands—four Negrito tribes (Jarawa, Sentinelese, Great Andamanese, Onge) and two Mongoloid tribes (Nicobarese, Shompens)."
+  },
+  {
+    "id": "cellular-jail-port-blair",
+    "destination_id": "port-blair",
+    "name": "Cellular Jail National Memorial",
+    "type": "monument",
+    "entry_fee": "₹30 (Indians), ₹100 (foreigners); light & sound show ₹300 extra",
+    "description": "British-built prison (1896–1906) holding 600+ solitary cells across seven wings. Known as Kala Pani, it housed Indian independence revolutionaries. Museum displays photographs, letters, and belongings of inmates."
+  },
+  {
+    "id": "corbyn-cove-beach-port-blair",
+    "destination_id": "port-blair",
+    "name": "Corbyn's Cove Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sandy beach near Port Blair with calm waters suitable for swimming. Popular for quick dips and sunset views. Lifeguards and basic facilities available."
+  },
+  {
+    "id": "bhadrakali-temple-warangal",
+    "destination_id": "warangal",
+    "name": "Bhadrakali Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple dedicated to Goddess Bhadrakali situated on the banks of the scenic Bhadrakali Lake, surrounded by natural rock formations and hills."
+  },
+  {
+    "id": "kakatiya-fort-warangal",
+    "destination_id": "warangal",
+    "name": "Kakatiya Fort",
+    "type": "fort",
+    "entry_fee": "₹20 Indians, ₹250 foreigners",
+    "description": "Medieval Kakatiya fort with three concentric circular walls and artistic palaces, designated a Monument of National Importance by the Archaeological Survey of India."
+  },
+  {
+    "id": "thousand-pillar-temple-warangal",
+    "destination_id": "warangal",
+    "name": "Thousand Pillar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "12th-century Kakatiya temple with 1,000 intricately carved stone pillars and a monolithic Nandi sculpture, featuring architecture recognized by UNESCO as a heritage site."
+  },
+  {
+    "id": "medak-cathedral-medak",
+    "destination_id": "medak",
+    "name": "Medak Cathedral",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Asia's largest cathedral (1924) with 5,000-person capacity and 175-foot bell tower. Gothic Revival architecture features stained glass windows by British artist Frank Owen Salisbury depicting the Nativity, Crucifixion, and Ascension."
+  },
+  {
+    "id": "medak-fort-medak",
+    "destination_id": "medak",
+    "name": "Medak Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "12th-century Kakatiya-era fort set on a hillock overlooking Medak town. Granite walls with 500+ stone steps lead to the ramparts. Weathered bastions and gates reveal medieval military engineering."
+  },
+  {
+    "id": "chandragiri-fort-tirupati",
+    "destination_id": "tirupati",
+    "name": "Chandragiri Fort",
+    "type": "fort",
+    "entry_fee": "₹50",
+    "description": "17th-century hilltop fort where British first gained Indian foothold. Spans 25 acres with Raja Mahal and Rani Mahal palaces. Offers panoramic views of Tirupati plain."
+  },
+  {
+    "id": "tirupati-venkateswara-temple",
+    "destination_id": "tirupati",
+    "name": "Tirumala Venkateswara Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Most-visited temple globally, receiving more pilgrims than Vatican and Mecca combined. Located on Tirupati hills, famous for sacred laddoo prasadam (GI-tagged confection)."
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "destination_id": "amboli",
+    "name": "Monsoon Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 7,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://utsav.gov.in/view-event/monsoon-festival-amboli",
+    "note": "Government-recognized festival; July timing consistent with monsoon season."
+  },
+  {
+    "destination_id": "lenyadri",
+    "name": "Ganesh Chaturthi",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Lenyadri",
+    "note": "Ashtavinayak temple; Ganesh Chaturthi confirmed; month 9 approximate (Aug-Sep)."
+  },
+  {
+    "destination_id": "lenyadri",
+    "name": "Maghi Ganesh Jayanti",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://shreelenyadriganpati.com/en/2025/01/",
+    "note": "Official temple site confirms Maghi Ganesh Jayanti January-February celebration."
+  },
+  {
+    "destination_id": "morgaon",
+    "name": "Ganesh Chaturthi",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://maharashtratourism.gov.in/ashtavinayak/morgaon/",
+    "note": "Morgaon Mayureshwar is first Ashtavinayak; Ganesh Chaturthi confirmed."
+  },
+  {
+    "destination_id": "morgaon",
+    "name": "Maghi Ganesh Jayanti",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://maharashtratourism.gov.in/ashtavinayak/morgaon/",
+    "note": "Standard Ashtavinayak festival; January-February timing confirmed."
+  },
+  {
+    "destination_id": "mahad-raigad",
+    "name": "Ganesh Chaturthi",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://maharashtratourism.gov.in/ashtavinayak/mahad/",
+    "note": "Mahad Varadvinayak is Ashtavinayak; Ganesh Chaturthi August-September confirmed."
+  },
+  {
+    "destination_id": "mahad-raigad",
+    "name": "Maghi Ganesh Jayanti",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://maharashtratourism.gov.in/ashtavinayak/mahad/",
+    "note": "Standard Ashtavinayak secondary festival; January month confirmed."
+  },
+  {
+    "destination_id": "karla-bhaja-caves",
+    "name": "Navratri",
+    "verdict": "CONFIRMED",
+    "db_month": 10,
+    "correct_month": 9,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Navaratri",
+    "note": "Navratri falls in Ashwin (Sep-Oct); month 10 is approximate; lunar date drifts."
+  },
+  {
+    "destination_id": "karla-bhaja-caves",
+    "name": "Dussehra (Seemollanghan at Shami Tree)",
+    "verdict": "CONFIRMED",
+    "db_month": 10,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.ganeshaspeaks.com/predictions/astrology/significance-of-shami-tree-puja-on-dussehra/",
+    "note": "Only Shami tree shrine in India confirmed; Dussehra celebration verified."
+  },
+  {
+    "destination_id": "lonar-crater",
+    "name": "Kamala Devi Festival",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Lonar_Lake",
+    "note": "Kamalaja Devi temple confirmed; Navaratri (Oct-Nov) timing verified."
+  },
+  {
+    "destination_id": "mahabaleshwar",
+    "name": "Krishnabai Annual Utsav",
+    "verdict": "CONFIRMED",
+    "db_month": 3,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.astroved.com/astropedia/en/temples/south-india/krishnabai-temple-mahabaleshwar",
+    "note": "Annual Utsav celebrated Phalguna month (March-April); month 3 correct."
+  },
+  {
+    "destination_id": "nagpur",
+    "name": "Dhammachakra Pravartan Din",
+    "verdict": "CONFIRMED",
+    "db_month": 10,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Dhammachakra_Pravartan_Din",
+    "note": "Landmark Buddhist festival Oct 14-15; Ambedkarite Buddhism; 70K+ conversions annually."
+  },
+  {
+    "destination_id": "ozar",
+    "name": "Ganesh Chaturthi",
+    "verdict": "WRONG_MONTH",
+    "db_month": 8,
+    "correct_month": 9,
+    "confidence": "high",
+    "source_url": "https://www.ashtavinayak.in/ozar-vighnahar-ganpati-ashtavinayak.php",
+    "note": "Ganesh Chaturthi is Bhadrapada (Aug-Sep, ~late Aug or Sep); not purely August."
+  },
+  {
+    "destination_id": "ozar",
+    "name": "Maghi Ganesh (Maghi Chaturthi)",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.ashtavinayak.in/ozar-vighnahar-ganpati-ashtavinayak.php",
+    "note": "Maghi Chaturthi celebrated January-February; month 1 correct."
+  }
+]

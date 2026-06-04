@@ -1,0 +1,386 @@
+[
+  {
+    "id": "banganga-tank-mumbai",
+    "destination_id": "mumbai",
+    "name": "Banganga Tank",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Ancient temple tank in Walkeshwar (South Mumbai), believed fed by underground Ganges waters. 16th-century temples around the pond. Heritage walk area with old streets."
+  },
+  {
+    "id": "chhatrapati-shivaji-terminus-mumbai",
+    "destination_id": "mumbai",
+    "name": "Chhatrapati Shivaji Terminus (Victoria Terminus)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "UNESCO World Heritage Victorian Gothic railway station (1887). Central Mumbai landmark. Working station with heritage interiors, stained glass, and turrets."
+  },
+  {
+    "id": "gateway-of-india-mumbai",
+    "destination_id": "mumbai",
+    "name": "Gateway of India",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Iconic 26-meter high basalt arch (1924), symbol of Mumbai. Front plaza faces the Arabian Sea and Taj Mahal Palace Hotel. Ferries to Elephanta depart from here."
+  },
+  {
+    "id": "haji-ali-mumbai",
+    "destination_id": "mumbai",
+    "name": "Haji Ali Dargah",
+    "type": "mosque",
+    "entry_fee": "Free",
+    "description": "15th-century tomb-mosque on an island connected by causeway. Muslim saint Ali shrine. Accessible during low tide or boat service. Evening prayers and azaan."
+  },
+  {
+    "id": "marine-drive-mumbai",
+    "destination_id": "mumbai",
+    "name": "Marine Drive",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "5.6 km seafront boulevard arc from Nariman Point to Bandra, lined with high-rise towers. Locals call it the Queen's Necklace for its night lights. Evening walks and sunset."
+  },
+  {
+    "id": "siddhivinayak-temple-mumbai",
+    "destination_id": "mumbai",
+    "name": "Siddhivinayak Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Mumbai's most visited Ganesha temple (18th century, rebuilt 1801 in Prabhadevi). Daily crowds. Accessible by metro from South Mumbai."
+  },
+  {
+    "id": "daitya-sudan-temple-lonar",
+    "destination_id": "lonar-crater",
+    "name": "Daitya Sudan Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple on the crater rim dedicated to Hanuman. The name means 'slayer of demons'. Built with large stone blocks and architectural details reflecting regional styles."
+  },
+  {
+    "id": "gomukh-temple-lonar",
+    "destination_id": "lonar-crater",
+    "name": "Gomukh Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple on the crater rim with the name 'Gomukh' (cow's mouth). Ancient structure with historical significance. Offers views of the crater and surrounding landscape."
+  },
+  {
+    "id": "kamalja-devi-temple-lonar",
+    "destination_id": "lonar-crater",
+    "name": "Kamalja Devi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple located inside the crater. Dedicated to the goddess Kamalja. Accessible via descent path from crater rim. Unique location within the crater basin."
+  },
+  {
+    "id": "lonar-crater-lake",
+    "destination_id": "lonar-crater",
+    "name": "Lonar Crater Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Crater lake formed by meteorite impact 50,000 years ago, diameter 1.8km, depth 150m. Only known hypervelocity impact crater in basaltic rock. Lake is simultaneously saline and alkaline. Habitat for unique microbial ecosystems."
+  },
+  {
+    "id": "mtdc-interpretation-centre-lonar",
+    "destination_id": "lonar-crater",
+    "name": "MTDC Interpretation Centre",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Information center managed by Maharashtra Tourism Development Corporation. Displays geological history of the crater, meteorite impact science, and local ecology. Educational resource for visitors."
+  },
+  {
+    "id": "chennakesava-temple-belur",
+    "destination_id": "belur",
+    "name": "Chennakesava Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "UNESCO World Heritage Site (2024) built 1117-1220 CE. Star-shaped platform with 48 unique bracket figures (madanikas), lathe-turned Narasimha pillar, and intricate Ramayana/Mahabharata wall panels. Still actively worshipped."
+  },
+  {
+    "id": "gravity-pillar-belur",
+    "destination_id": "belur",
+    "name": "Gravity Pillar",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Intentionally tilted pillar held in place by bracket support, demonstrating Hoysala mastery of structural engineering. A puzzle of engineering and architecture."
+  },
+  {
+    "id": "narasimha-pillar-belur",
+    "destination_id": "belur",
+    "name": "Narasimha Pillar",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Remarkable lathe-turned stone pillar with intricate circular grooves, sculpted in a single piece. Said to rotate on its axis — a rare feat of Hoysala architectural engineering."
+  },
+  {
+    "id": "yagachi-dam-belur",
+    "destination_id": "belur",
+    "name": "Yagachi Dam",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Reservoir near Belur with boating facilities and scenic spots for picnicking. Created for irrigation, now a popular local recreational spot with gardens and walking trails."
+  },
+  {
+    "id": "kudle-beach-gokarna",
+    "destination_id": "gokarna",
+    "name": "Kudle Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A backpacker hub with basic beach shacks, cafes, and homestays. Unlike commercialised beach towns, Kudle retains a laid-back atmosphere with minimal development. Popular for surfing in certain seasons and a base for coastal treks."
+  },
+  {
+    "id": "mahabaleshwar-temple-gokarna",
+    "destination_id": "gokarna",
+    "name": "Mahabaleshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of Hinduism's seven mukti-sthalas (liberation places) housing a Shiva linga. The principal temple of Gokarna town with daily rituals and a centuries-old tradition. Pilgrims from across India visit for spiritual significance."
+  },
+  {
+    "id": "mirjan-fort-gokarna",
+    "destination_id": "gokarna",
+    "name": "Mirjan Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "A vine-covered ruin of a Nawab fort 22km north of Gokarna. The crumbling bastion walls and overgrown structures set in a quiet landscape create one of Karnataka's most photogenic abandoned sites. Best visited early morning for light and solitude."
+  },
+  {
+    "id": "om-beach-gokarna",
+    "destination_id": "gokarna",
+    "name": "Om Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A crescent bay shaped like the sacred OM symbol, lined with mid-range beach shacks and eateries. Popular for sunset viewing, the beach attracts pilgrims and travellers alike. Clear waters suitable for swimming in designated areas."
+  },
+  {
+    "id": "bhagabata-tungi-raghurajpur",
+    "destination_id": "raghurajpur",
+    "name": "Bhagabata Tungi",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Traditional community meeting place and gathering space at village center. Features line of small temples. Central landmark where village life and traditions converge."
+  },
+  {
+    "id": "gotipua-dance-gurukul-raghurajpur",
+    "destination_id": "raghurajpur",
+    "name": "Gotipua Dance Gurukul",
+    "type": "monastery",
+    "entry_fee": "Free (donation appreciated)",
+    "description": "Abhinav Sundar Gotipua Dance Gurukul replicating ancient Gurukul system. Boys train for minimum 6 years in traditional Odissi dance precursor with resident Guru. Open for visitors to observe practice sessions."
+  },
+  {
+    "id": "craft-heritage-trail-raghurajpur",
+    "destination_id": "raghurajpur",
+    "name": "Heritage Craft Trail",
+    "type": "garden",
+    "entry_fee": "Free (guide tips appreciated)",
+    "description": "Walking route through village with heritage walks offered by trained villagers. Showcases multiple traditional crafts: Pattachitra painting, palm leaf engraving, stone carving, papier-mâché masks, and wood carving."
+  },
+  {
+    "id": "pattachitra-studios-raghurajpur",
+    "destination_id": "raghurajpur",
+    "name": "Pattachitra Artist Studios",
+    "type": "bazaar",
+    "entry_fee": "Free (paintings available for purchase from ₹100 onwards)",
+    "description": "100+ family homes functioning as art studios where master Pattachitra painters create intricate cloth paintings depicting mythological stories and local folklore. Visitors welcome to observe artists at work."
+  },
+  {
+    "id": "jogulamba-temple-alampur",
+    "destination_id": "alampur",
+    "name": "Jogulamba Shakti Peetha",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred Shakti Peetha where Sati's upper teeth are said to have fallen, rebuilt in 2005 in original Chalukyan style after medieval destruction, housing the primary goddess shrine."
+  },
+  {
+    "id": "navabrahma-temples-alampur",
+    "destination_id": "alampur",
+    "name": "Navabrahma Temples",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Nine Badami Chalukya temples built between 640-753 CE featuring distinctive northern architectural style, with intricate stone carvings and symmetrical temple complex on Tungabhadra riverbanks."
+  },
+  {
+    "id": "tungabhadra-krishna-confluence-alampur",
+    "destination_id": "alampur",
+    "name": "Tungabhadra-Krishna Confluence",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sacred river confluence where Tungabhadra merges with Krishna River, creating a spiritually significant meeting point surrounded by temples and known as Dakshina Kashi."
+  },
+  {
+    "id": "godavari-ghat-pilgrimage-bhadrachalam",
+    "destination_id": "bhadrachalam",
+    "name": "Godavari Ghat (Pilgrimage Bathing)",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred bathing ghat on Godavari where pilgrims ritually bathe before temple darshan. Central to the Vaikuntha Ekadashi pilgrimage experience."
+  },
+  {
+    "id": "sri-sitaramachandra-temple-bhadrachalam",
+    "destination_id": "bhadrachalam",
+    "name": "Sri Sitaramachandra Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Major Rama temple on Godavari banks, built in 17th century by Bhakta Ramadasu. Central icon shows Rama with Sita seated on his lap. Pilgrimage site for hundreds of thousands during Vaikuntha Ekadashi."
+  },
+  {
+    "id": "vaikuntha-dwaram-gateway-bhadrachalam",
+    "destination_id": "bhadrachalam",
+    "name": "Vaikuntha Dwaram (Temple Gateway)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Large ceremonial gateway built in 1974 to manage the flow of devotees during Vaikuntha Ekadashi. Utsava idols pass through this gateway during the festival."
+  },
+  {
+    "id": "anamudi-peak-viewpoint-eravikulam",
+    "destination_id": "eravikulam",
+    "name": "Anamudi Peak Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "₹110 (adult), ₹50 (child)",
+    "description": "Designated viewpoint offering views of South India's highest peak (2,695m) across dense forests and rolling grasslands. Direct summit access restricted to protect Nilgiri Tahr habitat."
+  },
+  {
+    "id": "lakkom-waterfalls-eravikulam",
+    "destination_id": "eravikulam",
+    "name": "Lakkom Waterfalls",
+    "type": "waterfall",
+    "entry_fee": "Included in park entry",
+    "description": "Cascading waterfall within Eravikulam National Park where water flows from the hills. The Cascade Walk trail follows alongside the falls through Shola forest."
+  },
+  {
+    "id": "nilgiri-tahr-habitat-eravikulam",
+    "destination_id": "eravikulam",
+    "name": "Nilgiri Tahr Habitat",
+    "type": "viewpoint",
+    "entry_fee": "₹110 (adult), ₹50 (child)",
+    "description": "The park's primary wildlife zone where endangered Nilgiri Tahr (mountain goats found only in the Western Ghats) roam the shola grasslands. Early morning visits offer the best viewing chances."
+  },
+  {
+    "id": "devbagh-island-karwar",
+    "destination_id": "karwar",
+    "name": "Devbagh Island",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "A secluded island near the confluence of Kali River and Arabian Sea, known for golden sands and calm shallow waters. Offers snorkeling, scuba diving, banana boat rides, parasailing, and close contact with marine life."
+  },
+  {
+    "id": "kurumgad-island-karwar",
+    "destination_id": "karwar",
+    "name": "Kurumgad Island",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "A tortoise-shaped island accessible by boat from Devbagh or Karwar. Small island with unique shape offering scenic boat rides and marine ecosystem experiences."
+  },
+  {
+    "id": "sadashivgad-fort-karwar",
+    "destination_id": "karwar",
+    "name": "Sadashivgad Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Built in the 17th century, this fort sits on a hilltop 4 km from Devbagh Beach. Offers panoramic views of the Arabian Sea and Kali River confluence. Historical landmark with strategic coastal location."
+  },
+  {
+    "id": "minicoy-lagoon",
+    "destination_id": "minicoy",
+    "name": "Minicoy Lagoon",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "One of the largest lagoons with half-moon shaped island outline. Colorful corals and small uninhabited islet Viringili on the southern side. Calm turquoise waters for snorkeling."
+  },
+  {
+    "id": "minicoy-lighthouse",
+    "destination_id": "minicoy",
+    "name": "Minicoy Lighthouse",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "300-foot tall historic lighthouse built in 1885 by the British. Standing 49.5 meters high with ornate lantern and gallery offering spectacular 360-degree views of the entire island."
+  },
+  {
+    "id": "minicoy-tuna-canning",
+    "destination_id": "minicoy",
+    "name": "Minicoy Tuna Canning Factory",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Active working plant showcasing the island's tuna fishing and canning industry. Visitors can observe the processing of the daily catch. Insight into Lakshadweep's export economy."
+  },
+  {
+    "id": "sahakari-spice-farm-ponda-spice",
+    "destination_id": "ponda-spice",
+    "name": "Sahakari Spice Farm",
+    "type": "garden",
+    "entry_fee": "₹400",
+    "description": "Working spice plantation with nutmeg, pepper, cardamom, cinnamon, vanilla, and cashew trees. Guided walk, traditional Goan vegetarian lunch on banana leaves, and local feni (liquor) tasting included."
+  },
+  {
+    "id": "mangeshi-temple-ponda-spice",
+    "destination_id": "ponda-spice",
+    "name": "Shri Mangeshi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred Hindu temple dedicated to Lord Shiva, built in Indo-Portuguese architectural style. Features a large tank, ornate domed gateway, and deepstambha (lamp tower). Active pilgrimage site."
+  },
+  {
+    "id": "shantadurga-temple-ponda-spice",
+    "destination_id": "ponda-spice",
+    "name": "Shri Shantadurga Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "18th-century temple dedicated to Goddess Durga, located in Kavalam village. Known for its peaceful atmosphere and ornate carvings. One of Goa's most important Hindu pilgrimage sites."
+  },
+  {
+    "id": "janardanaswamy-temple-varkala",
+    "destination_id": "varkala",
+    "name": "Janardanaswamy Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Over 2,000 years old temple dedicated to Lord Vishnu as Janardana. Perched at cliff-top overlooking Papanasam Beach. Traditional Kerala architecture with sea views."
+  },
+  {
+    "id": "papanasam-beach",
+    "destination_id": "varkala",
+    "name": "Papanasam Beach (Sacred Beach)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Beach below Varkala Cliff believed sacred for ritual bathing. Name means 'destruction of sins'. Golden sands and gentle waters make it ideal for swimming and spiritual rituals."
+  },
+  {
+    "id": "varkala-cliff",
+    "destination_id": "varkala",
+    "name": "Varkala North Cliff",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dramatic 15 m laterite escarpment above Arabian Sea. UNESCO declared geological monument (Varkala Formation). Cliff-top walkway lined with cafes, yoga centres, and handicraft shops."
+  },
+  {
+    "id": "lalaji-bay-beach-long-island-andaman",
+    "destination_id": "long-island-andaman",
+    "name": "Lalaji Bay Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine white-sand beach on Long Island's west coast. 30 minutes by boat from Long Island jetty, then 2km forest walk. Forest Rest House with 5-6 tented cottages managed by Forest Department. No ATM, no mobile network."
+  },
+  {
+    "id": "forest-rest-house-long-island-andaman",
+    "destination_id": "long-island-andaman",
+    "name": "Lalaji Bay Forest Rest House",
+    "type": "cafe",
+    "entry_fee": "Varies",
+    "description": "Basic forest accommodation with 5-6 tented cottages managed by Andaman & Nicobar Forest Department. Home-cooked meals available. Simple amenities: clean rooms and washrooms. Book in advance through Divisional Forest Officer, Middle Andaman (03192-274210)."
+  },
+  {
+    "id": "kandhuni-mata-temple-taptapani",
+    "destination_id": "taptapani",
+    "name": "Kandhuni Mata Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple dedicated to Goddess Kandhuni Devi near Taptapani Hot Springs. Venerated as the mother goddess by local tribal communities."
+  },
+  {
+    "id": "taptapani-hot-springs-taptapani",
+    "destination_id": "taptapani",
+    "name": "Taptapani Hot Springs",
+    "type": "hot-spring",
+    "entry_fee": "₹20",
+    "description": "Natural sulfur hot springs with therapeutic properties reaching up to 140°C. Revered by Saora and Kondh tribal communities as sacred healing waters."
+  }
+]

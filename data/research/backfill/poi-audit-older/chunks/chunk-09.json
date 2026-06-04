@@ -1,0 +1,370 @@
+[
+  {
+    "id": "ambrai-ghat",
+    "destination_id": "udaipur",
+    "name": "Ambrai Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Best sunset viewpoint in Udaipur. Views of City Palace, Jag Mandir, and Lake Palace from across Pichola."
+  },
+  {
+    "id": "bagore-ki-haveli",
+    "destination_id": "udaipur",
+    "name": "Bagore Ki Haveli",
+    "type": "palace",
+    "entry_fee": "₹60 (museum) / ₹150 (dance)",
+    "description": "18th-century haveli on Lake Pichola with 138 rooms. Evening Dharohar folk dance show is a must-see."
+  },
+  {
+    "id": "city-palace-udaipur",
+    "destination_id": "udaipur",
+    "name": "City Palace",
+    "type": "palace",
+    "entry_fee": "₹300 / ₹500",
+    "description": "Largest palace complex in Rajasthan overlooking Lake Pichola."
+  },
+  {
+    "id": "fateh-sagar-lake",
+    "destination_id": "udaipur",
+    "name": "Fateh Sagar Lake",
+    "type": "lake",
+    "entry_fee": "₹160 (boat)",
+    "description": "Artificial lake with Nehru Island Park in the center. Boating with City Palace and Aravalli Hills views."
+  },
+  {
+    "id": "jag-mandir-udaipur",
+    "destination_id": "udaipur",
+    "name": "Jag Mandir Island Palace",
+    "type": "palace",
+    "entry_fee": "₹400 (boat + entry)",
+    "description": "Island palace on Lake Pichola. Shah Jahan took refuge here — inspiration for the Taj Mahal design."
+  },
+  {
+    "id": "jagdish-temple-udaipur",
+    "destination_id": "udaipur",
+    "name": "Jagdish Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Massive Indo-Aryan temple built in 1651 with intricate carvings. Dedicated to Lord Vishnu as Jagannath."
+  },
+  {
+    "id": "lake-pichola-boat",
+    "destination_id": "udaipur",
+    "name": "Lake Pichola Boat Ride",
+    "type": "lake",
+    "entry_fee": "₹400-800",
+    "description": "Sunset boat ride past Jag Mandir and the Lake Palace Hotel."
+  },
+  {
+    "id": "monsoon-palace-udaipur",
+    "destination_id": "udaipur",
+    "name": "Monsoon Palace (Sajjangarh)",
+    "type": "palace",
+    "entry_fee": "₹80",
+    "description": "Hilltop palace at 944 meters. Built to watch monsoon clouds. Panoramic sunset views of the lake city."
+  },
+  {
+    "id": "saheliyon-ki-bari",
+    "destination_id": "udaipur",
+    "name": "Saheliyon Ki Bari",
+    "type": "garden",
+    "entry_fee": "₹10",
+    "description": "Garden of Maidens built for 48 women of the queen's retinue. Lotus pools, marble elephants, fountains."
+  },
+  {
+    "id": "shilpgram-udaipur",
+    "destination_id": "udaipur",
+    "name": "Shilpgram",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "Rural arts and crafts complex with 26 traditional huts. Live demonstrations of pottery, weaving, and painting."
+  },
+  {
+    "id": "agra-fort",
+    "destination_id": "agra",
+    "name": "Agra Fort",
+    "type": "fort",
+    "entry_fee": "₹50 / ₹650",
+    "description": "Massive red sandstone Mughal fortress with marble palaces inside. Shah Jahan was imprisoned here."
+  },
+  {
+    "id": "fatehpur-sikri-agra",
+    "destination_id": "agra",
+    "name": "Fatehpur Sikri",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "UNESCO World Heritage Mughal capital built by Akbar (1571-1585). Buland Darwaza — world's tallest gateway."
+  },
+  {
+    "id": "itimad-ud-daulah",
+    "destination_id": "agra",
+    "name": "Itimad-ud-Daulah (Baby Taj)",
+    "type": "monument",
+    "entry_fee": "₹110",
+    "description": "Exquisite Mughal tomb with pietra dura inlay work. Called \"Baby Taj\" as a precursor to the Taj Mahal."
+  },
+  {
+    "id": "mehtab-bagh",
+    "destination_id": "agra",
+    "name": "Mehtab Bagh",
+    "type": "garden",
+    "entry_fee": "₹50",
+    "description": "Mughal garden across the Yamuna from the Taj Mahal. Best sunset view of the Taj without crowds."
+  },
+  {
+    "id": "taj-mahal",
+    "destination_id": "agra",
+    "name": "Taj Mahal",
+    "type": "monument",
+    "entry_fee": "₹50 / ₹1,300",
+    "description": "The ultimate symbol of love. Mughal marble mausoleum. Best at sunrise. Closed Fridays."
+  },
+  {
+    "id": "brahma-temple-pushkar",
+    "destination_id": "pushkar",
+    "name": "Brahma Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the very few temples in the world dedicated to Lord Brahma. Red spire with silver turtle on dome."
+  },
+  {
+    "id": "pushkar-camel-fair-ground",
+    "destination_id": "pushkar",
+    "name": "Pushkar Camel Fair Ground",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Site of the world's largest camel fair held every November. Year-round you can see the grounds."
+  },
+  {
+    "id": "pushkar-lake",
+    "destination_id": "pushkar",
+    "name": "Pushkar Lake & Ghats",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred lake surrounded by 52 ghats. Evening aarti ceremony. Believed to appear from lotus dropped by Brahma."
+  },
+  {
+    "id": "rangji-temple-pushkar",
+    "destination_id": "pushkar",
+    "name": "Rangji Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Unique Dravidian-style gopuram temple in Rajasthan. Blend of South Indian, Rajput, and Mughal architecture."
+  },
+  {
+    "id": "savitri-temple-pushkar",
+    "destination_id": "pushkar",
+    "name": "Savitri Temple",
+    "type": "temple",
+    "entry_fee": "₹100 (ropeway)",
+    "description": "Hilltop temple reached by rope way or 400+ steps. Panoramic views of Pushkar Lake and town at sunset."
+  },
+  {
+    "id": "hanuman-garhi",
+    "destination_id": "ayodhya",
+    "name": "Hanuman Garhi",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop temple with 76 steps. Largest temple in Ayodhya before Ram Mandir. Panoramic city views."
+  },
+  {
+    "id": "ram-mandir-ayodhya",
+    "destination_id": "ayodhya",
+    "name": "Ram Mandir",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Grand temple at the birthplace of Lord Rama. Newly built Nagara-style temple inaugurated in 2024 with stunning architecture."
+  },
+  {
+    "id": "saryu-ghat-ayodhya",
+    "destination_id": "ayodhya",
+    "name": "Saryu River Ghats",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Ancient ghats along the Saryu River. Evening aarti ceremony and boat rides."
+  },
+  {
+    "id": "dirang-dzong",
+    "destination_id": "dirang",
+    "name": "Dirang Dzong",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Ancient stone fortress of the Monpa tribe. Still inhabited village inside with traditional stone houses."
+  },
+  {
+    "id": "dirang-hot-springs",
+    "destination_id": "dirang",
+    "name": "Dirang Hot Springs",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Natural hot water springs along the road. Locals use them for bathing and washing."
+  },
+  {
+    "id": "sangti-valley",
+    "destination_id": "dirang",
+    "name": "Sangti Valley",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Beautiful valley known for black-necked cranes in winter. Apple orchards and traditional Monpa settlements."
+  },
+  {
+    "id": "char-dukan",
+    "destination_id": "landour",
+    "name": "Char Dukan",
+    "type": "cafe",
+    "entry_fee": "₹100-300",
+    "description": "Four iconic shops dating back to 1920s. Famous for Maggi, omelettes, and chai with valley views. Ruskin Bond's favorite."
+  },
+  {
+    "id": "lal-tibba-landour",
+    "destination_id": "landour",
+    "name": "Lal Tibba Landour",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Highest point of Mussoorie-Landour at 7,464 ft. Telescope to spot Himalayan peaks on clear days."
+  },
+  {
+    "id": "ruskin-bond-walk",
+    "destination_id": "landour",
+    "name": "Ruskin Bond's Landour Walk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walking trail past the famous author's home, through deodar forests and heritage British-era buildings."
+  },
+  {
+    "id": "kala-bhavana",
+    "destination_id": "shantiniketan",
+    "name": "Kala Bhavana (Art College)",
+    "type": "museum",
+    "entry_fee": "Included in entry",
+    "description": "Art school with murals by Nandalal Bose, Binode Behari Mukhopadhyay, and other Bengal School masters."
+  },
+  {
+    "id": "tagore-museum",
+    "destination_id": "shantiniketan",
+    "name": "Uttarayan (Tagore Museum)",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Five houses where Tagore lived and wrote. Personal effects, manuscripts, and paintings on display."
+  },
+  {
+    "id": "visva-bharati",
+    "destination_id": "shantiniketan",
+    "name": "Visva-Bharati University",
+    "type": "monument",
+    "entry_fee": "₹20",
+    "description": "University founded by Rabindranath Tagore in 1921. Open-air classrooms under trees, Tagore's vision."
+  },
+  {
+    "id": "betla-tiger-reserve",
+    "destination_id": "betla",
+    "name": "Palamau Tiger Reserve Visitor Centre",
+    "type": "museum",
+    "entry_fee": "₹60-250 (by vehicle)",
+    "description": "Visitor information, forest guides, and safari bookings. Tiger spotting probability highest Nov–Mar."
+  },
+  {
+    "id": "betla-palamu-fort",
+    "destination_id": "betla",
+    "name": "Palamu Fort Ruins",
+    "type": "monument",
+    "entry_fee": "₹250 (park entry)",
+    "description": "3km forest trail to abandoned Mughal-era fort ruins. Wildlife spotting en route."
+  },
+  {
+    "id": "dawar-village",
+    "destination_id": "gurez-valley",
+    "name": "Dawar Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Main settlement of Gurez with traditional log houses and bridges over Kishanganga River. Near LOC."
+  },
+  {
+    "id": "habba-khatoon-peak",
+    "destination_id": "gurez-valley",
+    "name": "Habba Khatoon Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Named after the famous Kashmiri poetess. Dramatic pyramid-shaped peak dominating the Gurez skyline."
+  },
+  {
+    "id": "yumthang-valley",
+    "destination_id": "lachung",
+    "name": "Yumthang Valley (Valley of Flowers)",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "River valley at 11,800 ft carpeted with rhododendrons in April-May. Hot springs and yak pastures."
+  },
+  {
+    "id": "zero-point-lachung",
+    "destination_id": "lachung",
+    "name": "Zero Point (Yumesamdong)",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "Snow point at 15,300 ft where the road ends. Surrounded by glaciers and complete silence."
+  },
+  {
+    "id": "mamleshwar-temple",
+    "destination_id": "omkareshwar",
+    "name": "Mamleshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple across the river from Omkareshwar. Second of the two Jyotirlinga temples here."
+  },
+  {
+    "id": "omkareshwar-temple",
+    "destination_id": "omkareshwar",
+    "name": "Omkareshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 12 Jyotirlingas on an Om-shaped island in the Narmada. Ancient temple with stunning river setting."
+  },
+  {
+    "id": "coronation-bridge-siliguri",
+    "destination_id": "siliguri",
+    "name": "Coronation Bridge",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Historic bridge over the Teesta River connecting plains to hills. Gateway to Darjeeling and Sikkim."
+  },
+  {
+    "id": "mahananda-sanctuary",
+    "destination_id": "siliguri",
+    "name": "Mahananda Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Dense forest sanctuary near Siliguri with leopards, elephants, and diverse birdlife."
+  },
+  {
+    "id": "barnawapara-sanctuary",
+    "destination_id": "barnawapara",
+    "name": "Barnawapara Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Dense sal forest sanctuary with leopards, wild boar, and sambar deer. Guided jeep safaris."
+  },
+  {
+    "id": "drass-war-memorial",
+    "destination_id": "drass",
+    "name": "Drass War Memorial",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Kargil War memorial in the second-coldest inhabited place on Earth. Gallery of soldier tributes."
+  },
+  {
+    "id": "modhera-sun-temple",
+    "destination_id": "modhera",
+    "name": "Modhera Sun Temple",
+    "type": "temple",
+    "entry_fee": "₹25",
+    "description": "1026 AD Solanki-era marvel. Surya Kund stepped tank with 108 shrines. Sun hits the inner sanctum at equinox."
+  },
+  {
+    "id": "shnongpdeng-camping",
+    "destination_id": "shnongpdeng",
+    "name": "Shnongpdeng River Camping",
+    "type": "viewpoint",
+    "entry_fee": "₹1,500-3,000",
+    "description": "Camping on the banks of the crystal-clear Umngot River. Cliff jumping, kayaking, and snorkeling."
+  }
+]

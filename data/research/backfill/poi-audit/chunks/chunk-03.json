@@ -1,0 +1,386 @@
+[
+  {
+    "id": "bhaja-caves-lonavala",
+    "destination_id": "lonavala",
+    "name": "Bhaja Caves",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Buddhist cave monastery complex from 1st-2nd century BCE. Contains 22 caves including viharas and cisterns. Less crowded than Karla with significant archaeological importance."
+  },
+  {
+    "id": "bhushi-dam-lonavala",
+    "destination_id": "lonavala",
+    "name": "Bhushi Dam",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Step dam that creates a waterfall cascade during monsoon season. Water flows over stepped rock formations creating a tiered waterfall effect. Extremely popular during June-September."
+  },
+  {
+    "id": "karla-caves-lonavala",
+    "destination_id": "lonavala",
+    "name": "Karla Caves",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Ancient Buddhist cave complex from 2nd century BCE. Features a grand chaitya hall carved into rock with intricate architectural details. Viharas and residential caves surrounding the main hall."
+  },
+  {
+    "id": "lion-point-lonavala",
+    "destination_id": "lonavala",
+    "name": "Lion Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic viewpoint with valley vistas. Quieter alternative to Tiger Point. Offers perspectives of the surrounding Sahyadri ridge and Krishna Valley."
+  },
+  {
+    "id": "lonavala-lake",
+    "destination_id": "lonavala",
+    "name": "Lonavala Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Man-made lake in the town of Lonavala. Boating and paddling available. Surrounded by gardens and walking paths. Popular for evening recreation."
+  },
+  {
+    "id": "tiger-point-lonavala",
+    "destination_id": "lonavala",
+    "name": "Tiger Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Popular viewpoint offering panoramic valley views. Becomes shrouded in mist during monsoon. Clear views of surrounding hills and gorges in winter and summer."
+  },
+  {
+    "id": "bedse-caves-khandala",
+    "destination_id": "khandala",
+    "name": "Bedse Caves",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Ancient Buddhist rock-cut caves from the 1st-2nd century CE. Complex includes a chaitya hall and viharas. Less crowded than nearby Karla caves. Stone carvings and architectural details remain well-preserved."
+  },
+  {
+    "id": "dukes-nose-khandala",
+    "destination_id": "khandala",
+    "name": "Duke's Nose",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Promontory on the Sahyadri ridge offering panoramic valley views. The name derives from its resemblance to the Duke of Wellington's profile. Short trek from the main road to the summit."
+  },
+  {
+    "id": "rajmachi-fort-khandala",
+    "destination_id": "khandala",
+    "name": "Rajmachi Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historical Maratha fort accessible via trekking routes from Khandala. The two-fort complex (Lower and Upper) sits atop the Sahyadri ridge. Ancient fort walls and structures remain visible."
+  },
+  {
+    "id": "reversing-station-khandala",
+    "destination_id": "khandala",
+    "name": "Reversing Station Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Historic viewpoint on the old Mumbra-Pune ghat road where steam trains had to reverse direction due to steep gradient. Overlooks the valley below and offers panoramic ridge vistas."
+  },
+  {
+    "id": "tigers-leap-khandala",
+    "destination_id": "khandala",
+    "name": "Tiger's Leap",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Cliff-edge viewpoint with sheer drop overlooking the valley below. Dramatic vistas of the surrounding hills and gorges. Exercise caution near the cliff edge."
+  },
+  {
+    "id": "agastya-lake-badami",
+    "destination_id": "badami",
+    "name": "Agastya Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Scenic water body at the base of red sandstone cliffs, historically known as Bhutanatha Lake. Two temple complexes on its shores are among Karnataka's most photographed locations."
+  },
+  {
+    "id": "banashankari-temple-badami",
+    "destination_id": "badami",
+    "name": "Banashankari Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Active Hindu temple 5km from central Badami dedicated to Parvati. Built during Chalukya period with ornamental architecture and regular worship ceremonies."
+  },
+  {
+    "id": "cave-1-badami",
+    "destination_id": "badami",
+    "name": "Cave 1 (Shiva Cave)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Earliest cave temple with an 18-armed dancing Nataraja (Shiva) panel carved into red sandstone. Overlooks Agastya Lake with elaborate sculptural details."
+  },
+  {
+    "id": "cave-3-badami",
+    "destination_id": "badami",
+    "name": "Cave 3 (Vishnu Cave, 578 CE)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Largest and most ornate cave (70 ft wide) with an inscription dated 578 CE. Features Vishnu in Varaha and Trivikrama forms with stunning carved pillars and intricate sculptural panels."
+  },
+  {
+    "id": "candolim-beach-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Candolim Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A calm and upscale beach stretching south from Fort Aguada with white sand and gentle waves. Less crowded than Calangute with an array of quality restaurants and water sports."
+  },
+  {
+    "id": "fort-aguada-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Fort Aguada",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "A 17th-century Portuguese fortification built in 1612 to guard against Dutch attacks. Massive laterite walls with a moat, underground water storage, and bastions. The fort contains a freshwater spring and has been a significant historical defensive structure."
+  },
+  {
+    "id": "aguada-lighthouse-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Fort Aguada Lighthouse",
+    "type": "monument",
+    "entry_fee": "Free (viewing area)",
+    "description": "The oldest lighthouse in Asia, built in 1864 on a hill overlooking the Arabian Sea. Standing 40 metres tall with distinctive red and white stripes. Offers panoramic views of Sinquerim and Candolim beaches."
+  },
+  {
+    "id": "sinquerim-beach-water-sports-fort-aguada",
+    "destination_id": "fort-aguada",
+    "name": "Sinquerim Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free (water sports costs vary)",
+    "description": "The beach on the north side of Fort Aguada with Goa's most organized water sports setup including jet skiing, parasailing, and paddleboarding. Clean sand and established operators."
+  },
+  {
+    "id": "ikat-museum-pochampally",
+    "destination_id": "pochampally",
+    "name": "Ikat Museum & Exhibition",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Museum within Handloom Park displaying the history and evolution of ikat weaving. Features contemporary adaptations and traditional textiles of Pochampally with details on double ikat technique."
+  },
+  {
+    "id": "handloom-park-pochampally",
+    "destination_id": "pochampally",
+    "name": "Pochampally Handloom Park",
+    "type": "bazaar",
+    "entry_fee": "Varies",
+    "description": "Ministry of Textiles facility with weaving clusters, museum, and shop. Displays different types of looms, weaving techniques, dyeing methods, and ikat history. 24-acre complex with training center."
+  },
+  {
+    "id": "weavers-bazaar-pochampally",
+    "destination_id": "pochampally",
+    "name": "Weavers' Bazaar & Shops",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Main village bazaar with numerous small shops selling ikat fabric, sarees, dress materials, pillow covers, bedsheets, and value-added items. Direct purchase from weavers available."
+  },
+  {
+    "id": "weaving-clusters-pochampally",
+    "destination_id": "pochampally",
+    "name": "Weaving Clusters & Looms",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "5,000+ hand looms operated by 10,000 weaving families producing double ikat sarees. Visitors can watch weavers at work creating traditional tie-dye patterns."
+  },
+  {
+    "id": "ins-kurusura-submarine-museum-visakhapatnam",
+    "destination_id": "visakhapatnam",
+    "name": "INS Kurusura Submarine Museum",
+    "type": "museum",
+    "entry_fee": "₹70 adults, ₹40 children",
+    "description": "South Asia's first submarine-turned-museum, offering a unique glimpse into the life of submariners with interactive exhibits and historical artifacts from naval operations."
+  },
+  {
+    "id": "kailasagiri-park-visakhapatnam",
+    "destination_id": "visakhapatnam",
+    "name": "Kailasagiri Park",
+    "type": "viewpoint",
+    "entry_fee": "Free (cable car ₹28-55)",
+    "description": "Hilltop park at 360 feet elevation featuring statues of Lord Shiva and Goddess Parvati, with a cable car offering panoramic views of the Bay of Bengal and city."
+  },
+  {
+    "id": "rushikonda-beach-visakhapatnam",
+    "destination_id": "visakhapatnam",
+    "name": "Rushikonda Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Golden sandy beach with clear deep waters, offering water sports opportunities under expert supervision and safe swimming conditions for families."
+  },
+  {
+    "id": "simhachalam-temple-visakhapatnam",
+    "destination_id": "visakhapatnam",
+    "name": "Simhachalam Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Dedicated to Lord Varaha Narasimha, this centuries-old temple showcases a blend of Kalinga and Dravidian architectural styles with intricately carved stone pillars."
+  },
+  {
+    "id": "kalipur-beach-diglipur",
+    "destination_id": "diglipur",
+    "name": "Kalipur Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine long sandy stretch 18km from Diglipur, fringed by lush forests and coconut trees. Major nesting ground for four sea turtle species. Calm atmosphere with views of Saddle Peak. Limited development."
+  },
+  {
+    "id": "ross-smith-islands-diglipur",
+    "destination_id": "diglipur",
+    "name": "Ross & Smith Twin Islands",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Twin islands connected by a natural 50-meter sandbar. The sandbar submerges during high tide and emerges during low tide. Turquoise waters and pristine beaches. Accessible by boat from Aerial Bay Jetty."
+  },
+  {
+    "id": "saddle-peak-diglipur",
+    "destination_id": "diglipur",
+    "name": "Saddle Peak Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest point in Andaman & Nicobar archipelago at 732m elevation. Trek takes 3-4 hours round trip. Requires a guide. Panoramic views from the summit. Challenging but rewarding hike through forest."
+  },
+  {
+    "id": "karaikal-ammaiyar-temple-karaikal",
+    "destination_id": "karaikal",
+    "name": "Karaikal Ammaiyar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hindu temple built 1929 dedicated to Karaikal Ammaiyar, one of 63 revered Saivite saints (Nayanmars). Located in town center, 1.5 km from railway station. Holds festival with mango showers during Tamil month Aani (June-July)."
+  },
+  {
+    "id": "karaikal-beach-karaikal",
+    "destination_id": "karaikal",
+    "name": "Karaikal Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Uncrowded natural beach on Arasalar River banks. Offers water sports (boating, canoeing, kayaking) and beach activities. Peaceful setting suitable for leisurely walks and sunset views."
+  },
+  {
+    "id": "thirunallar-temple-karaikal",
+    "destination_id": "karaikal",
+    "name": "Thirunallar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple dedicated to Shani (Saturn god) 5 km south of Karaikal. Considered powerful pilgrimage site for devotees seeking relief from Saturn's planetary effects. Significant in Tamil Saivite tradition."
+  },
+  {
+    "id": "margao-church-holy-spirit-margao",
+    "destination_id": "margao",
+    "name": "Church of the Holy Spirit",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Built by the Portuguese in 1675, this baroque church features a pristine white façade and interior decorated with gilt crystal and stucco. One of Goa's oldest churches, located at the Largo de Igreja square."
+  },
+  {
+    "id": "margao-municipal-market-margao",
+    "destination_id": "margao",
+    "name": "Margao Municipal Market",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "The primary market of South Goa selling fresh fish, Goan sausages, spices, cardamom, cinnamon, and local produce. Best visited 6 am - noon. A covered colonial-era building houses dozens of vendors."
+  },
+  {
+    "id": "sat-burzam-ghor-mansion-margao",
+    "destination_id": "margao",
+    "name": "Sat Burzam Ghor Mansion",
+    "type": "monument",
+    "entry_fee": "Free (exterior viewing)",
+    "description": "The finest Indo-Portuguese heritage mansion in Margao's Church Square (Largo de Igreja), built in the late 18th century with seven distinctive gables. A striking example of colonial-era architecture."
+  },
+  {
+    "id": "pattadakal-temples-group-pattadakal",
+    "destination_id": "pattadakal",
+    "name": "Group of Monuments at Pattadakal",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "Complex of 9 Hindu and Jain temples from 7th-8th centuries inscribed as UNESCO World Heritage Site. Showcases harmonious blend of northern and southern Indian architectural forms."
+  },
+  {
+    "id": "mallapikarjana-temple-pattadakal",
+    "destination_id": "pattadakal",
+    "name": "Mallikarjun Temple",
+    "type": "temple",
+    "entry_fee": "Varies",
+    "description": "Important Chalukyan temple in Pattadakal dedicated to Lord Shiva, featuring intricate stone carvings and traditional South Indian architecture."
+  },
+  {
+    "id": "virupaksha-temple-pattadakal",
+    "destination_id": "pattadakal",
+    "name": "Virupaksha Temple",
+    "type": "temple",
+    "entry_fee": "Varies",
+    "description": "Architectural masterpiece commissioned by Queen Lokamahadevi around 740 CE on the west bank of Malaprabha River. UNESCO World Heritage site representing Chalukyan temple design."
+  },
+  {
+    "id": "anjaneri-fort-trimbakeshwar",
+    "destination_id": "trimbakeshwar",
+    "name": "Anjaneri Fort Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sacred fort 20 km from Trimbakeshwar believed to be the birthplace of Hanuman. Moderate 2-3 hour trek with caves, temples, and panoramic views of surrounding ranges."
+  },
+  {
+    "id": "brahmagiri-hill-trek-trimbakeshwar",
+    "destination_id": "trimbakeshwar",
+    "name": "Brahmagiri Hill Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Moderate trek behind the temple with stone steps to reach the actual Godavari River source at Gangadwar cave. Ascent reaches 1,000+ meters with views of Trimbak town and surrounding hills."
+  },
+  {
+    "id": "kushavarta-kund-trimbakeshwar",
+    "destination_id": "trimbakeshwar",
+    "name": "Kushavarta Kund",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred ceremonial tank where devotees perform rituals and take ritual baths year-round. The water is considered ritually pure and available throughout all seasons."
+  },
+  {
+    "id": "chilika-dolphin-boat-tour",
+    "destination_id": "chilika-lake",
+    "name": "Chilika Dolphin Watching Boat Tour",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Guided boat tours from Satapada to observe Irrawaddy dolphins in their natural habitat. Tour options range from 3.5 to 8 hours, available year-round with peak season Dec-Feb."
+  },
+  {
+    "id": "chilika-lake-nalabana-island",
+    "destination_id": "chilika-lake",
+    "name": "Chilika Lake and Nalabana Island",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Asia's largest brackish water lagoon (1,165 sq km) with 150+ Irrawaddy dolphins. Nalabana Island bird sanctuary attracts 300,000+ migratory birds Nov-Feb, designated as Ramsar wetland."
+  },
+  {
+    "id": "coffee-plantations-lambasingi",
+    "destination_id": "lambasingi",
+    "name": "Coffee and Pepper Plantations",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Terraced plantations on misty slopes growing premium Arabica coffee and pepper. Tribal communities manage the estates; plantation walks offer agritourism experience."
+  },
+  {
+    "id": "lambasingi-viewpoint-lambasingi",
+    "destination_id": "lambasingi",
+    "name": "Lambasingi Cloud Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Hill station at 1000m elevation with panoramic views of cloud-covered valleys. Winter temperatures drop to -2°C, creating frost and occasionally frozen trees — the only sub-zero location south of the Vindhyas."
+  },
+  {
+    "id": "kalamkari-workshop-srikalahasti",
+    "destination_id": "srikalahasti",
+    "name": "Kalamkari Workshop District",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Artisan workshops and shops in BP Agraharams and Sriram Nagar Colony producing traditional hand-painted Kalamkari textiles using natural dyes. Visitors can observe artists working and purchase saris and paintings."
+  },
+  {
+    "id": "srikalahasti-temple-srikalahasti",
+    "destination_id": "srikalahasti",
+    "name": "Srikalahasti Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of five elemental Shiva temples representing the air element, built by Vijayanagara king Krishnadevaraya in the 16th century. Features a 120-foot gopuram with nine stories and intricate carved pillars."
+  }
+]

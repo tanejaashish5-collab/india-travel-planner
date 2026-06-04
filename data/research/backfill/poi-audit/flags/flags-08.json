@@ -1,0 +1,22 @@
+[
+  {
+    "id": "cape-beach-kanyakumari",
+    "destination_id": "kanyakumari",
+    "name": "Cape Comorin Beach",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Description claims 'Only place with sunrise and sunset both over sea' which is geographically false—many coastal peninsulas allow both views.",
+    "evidence": "Kanyakumari actually allows viewing sunrise over Bay of Bengal and sunset over Arabian Sea (different seas). This is a common tourist myth. Multiple sources confirm the phenomena occurs at other locations. Source: https://www.incredibleindia.gov.in/en/tamil-nadu/kanniyakumari",
+    "suggested_fix": "Replace with: 'India's southernmost tip where Bay of Bengal, Arabian Sea, and Indian Ocean converge. Unique for viewing sunrise over Bay of Bengal and sunset over Arabian Sea from the same location.'"
+  },
+  {
+    "id": "dutch-church-munroe-island-kollam",
+    "destination_id": "kollam",
+    "name": "Dutch Church (Munroe Island)",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description states church was 'built by the Dutch in 1878' but it was actually built by the Portuguese in 1518, with major renovations in 1878 adopting Dutch architectural elements.",
+    "evidence": "Wikipedia and official sources confirm Portuguese construction in 1518, not Dutch in 1878. 1878 was renovation date. Source: https://en.wikipedia.org/wiki/Dutch_Church,_Munroe_Island",
+    "suggested_fix": "Replace with: 'Red brick church originally built by the Portuguese in 1518, later renovated in 1878 with Dutch architectural elements. Showcases blend of Dutch and traditional Keralan architectural styles.'"
+  }
+]

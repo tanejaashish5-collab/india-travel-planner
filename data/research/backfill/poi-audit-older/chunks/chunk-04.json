@@ -1,0 +1,370 @@
+[
+  {
+    "id": "rancho-school",
+    "destination_id": "leh",
+    "name": "Druk White Lotus School (3 Idiots School)",
+    "type": "monument",
+    "entry_fee": "₹50",
+    "description": "Solar-powered school featured in Bollywood's \"3 Idiots\". Innovative mud-brick architecture."
+  },
+  {
+    "id": "hall-of-fame-leh",
+    "destination_id": "leh",
+    "name": "Hall of Fame Museum",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "Indian Army museum documenting the history of warfare in Ladakh."
+  },
+  {
+    "id": "hemis-monastery",
+    "destination_id": "leh",
+    "name": "Hemis Monastery",
+    "type": "monastery",
+    "entry_fee": "₹50",
+    "description": "Largest and wealthiest monastery in Ladakh. Famous for annual Hemis Festival with masked dances."
+  },
+  {
+    "id": "khardung-la",
+    "destination_id": "leh",
+    "name": "Khardung La",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "One of the world's highest motorable passes at 17,582 ft. Gateway to Nubra Valley. Iconic photo point."
+  },
+  {
+    "id": "leh-main-bazaar",
+    "destination_id": "leh",
+    "name": "Leh Main Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Central market with Tibetan jewellery, pashmina shawls, and thangka paintings."
+  },
+  {
+    "id": "leh-palace",
+    "destination_id": "leh",
+    "name": "Leh Palace",
+    "type": "palace",
+    "entry_fee": "₹50",
+    "description": "Nine-storey former royal palace modelled after the Potala Palace in Lhasa."
+  },
+  {
+    "id": "magnetic-hill-leh",
+    "destination_id": "leh",
+    "name": "Magnetic Hill",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Optical illusion where vehicles appear to roll uphill against gravity. Popular roadside attraction."
+  },
+  {
+    "id": "shanti-stupa-leh",
+    "destination_id": "leh",
+    "name": "Shanti Stupa",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "White-domed Buddhist stupa overlooking Leh town. Best at sunrise and sunset."
+  },
+  {
+    "id": "spituk-monastery",
+    "destination_id": "leh",
+    "name": "Spituk Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Founded in 11th century on a hillock overlooking the Indus Valley. Views of Leh and Stok Kangri."
+  },
+  {
+    "id": "thiksay-monastery",
+    "destination_id": "leh",
+    "name": "Thiksey Monastery",
+    "type": "monastery",
+    "entry_fee": "₹50",
+    "description": "Spectacular 12-story monastery resembling the Potala Palace in Lhasa. 15-meter Maitreya Buddha statue."
+  },
+  {
+    "id": "sangam-confluence-leh",
+    "destination_id": "leh",
+    "name": "Zanskar-Indus Confluence",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dramatic confluence where turquoise Zanskar meets muddy Indus. Stunning color contrast visible from the road."
+  },
+  {
+    "id": "bodhi-tree",
+    "destination_id": "bodh-gaya",
+    "name": "Bodhi Tree",
+    "type": "monument",
+    "entry_fee": "Included",
+    "description": "Direct descendant of the original tree under which Buddha attained enlightenment 2,500+ years ago."
+  },
+  {
+    "id": "dungeshwari-caves",
+    "destination_id": "bodh-gaya",
+    "name": "Dungeshwari Cave Temples (Sujata Temple)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Cave where Buddha practiced extreme austerities before enlightenment. Sujata Stupa marks where he was offered rice milk."
+  },
+  {
+    "id": "great-buddha-statue",
+    "destination_id": "bodh-gaya",
+    "name": "Great Buddha Statue",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "80-ft seated Buddha statue unveiled by the Dalai Lama. Surrounded by 10 smaller Buddhas in garden."
+  },
+  {
+    "id": "thai-monastery-bodhgaya",
+    "destination_id": "bodh-gaya",
+    "name": "International Monasteries",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Monasteries from 25+ countries (Japan, Thailand, Bhutan, Nepal) each in their own architectural style."
+  },
+  {
+    "id": "mahabodhi-temple",
+    "destination_id": "bodh-gaya",
+    "name": "Mahabodhi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "UNESCO World Heritage temple marking where Buddha attained enlightenment. Bodhi Tree descendant still stands."
+  },
+  {
+    "id": "gangotri-glacier-trail",
+    "destination_id": "gangotri",
+    "name": "Bhojbasa Forest Camp",
+    "type": "viewpoint",
+    "entry_fee": "free",
+    "description": "Forest camp at 3,780m between Gangotri and Gaumukh. Popular overnight halt on the trek with basic dhabas."
+  },
+  {
+    "id": "gangotri-main-temple",
+    "destination_id": "gangotri",
+    "name": "Gangotri Main Temple",
+    "type": "temple",
+    "entry_fee": "free",
+    "description": "Sacred temple at 3,100m marking the source of the Ganga River. Steep stone steps lead up to the inner sanctum."
+  },
+  {
+    "id": "gangotri-temple",
+    "destination_id": "gangotri",
+    "name": "Gangotri Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Source of the holy Ganges at 10,200 ft. 18th-century white granite temple. Char Dham pilgrimage site."
+  },
+  {
+    "id": "gaumukh-glacier",
+    "destination_id": "gangotri",
+    "name": "Gaumukh Glacier",
+    "type": "viewpoint",
+    "entry_fee": "₹150 (permit)",
+    "description": "Snout of the Gangotri Glacier — actual source of the Ganges. 18 km trek from Gangotri at 12,769 ft."
+  },
+  {
+    "id": "apatani-villages",
+    "destination_id": "ziro-valley",
+    "name": "Apatani Tribal Villages",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Traditional Apatani settlements like Hong Village. Unique culture with nose plugs and facial tattoos (elderly women)."
+  },
+  {
+    "id": "ziro-pine-forest",
+    "destination_id": "ziro-valley",
+    "name": "Pine Forest Canopy Walk",
+    "type": "garden",
+    "entry_fee": "free",
+    "description": "Dense pine and rhododendron forest walks. Bird-watching spot. Paths through sacred groves."
+  },
+  {
+    "id": "ziro-music-festival",
+    "destination_id": "ziro-valley",
+    "name": "Ziro Music Festival Grounds",
+    "type": "viewpoint",
+    "entry_fee": "Free (during non-festival)",
+    "description": "India's premier outdoor music festival held every September amidst rice paddies and pine forests."
+  },
+  {
+    "id": "ziro-paddy-fields",
+    "destination_id": "ziro-valley",
+    "name": "Ziro Paddy Fields",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "UNESCO Tentative List cultural landscape. Stunning terraced rice paddies of the Apatani tribe."
+  },
+  {
+    "id": "deolo-hill",
+    "destination_id": "kalimpong",
+    "name": "Deolo Hill",
+    "type": "viewpoint",
+    "entry_fee": "₹10",
+    "description": "Highest point in Kalimpong at 5,580 ft with panoramic views of the Teesta Valley and Kanchenjunga."
+  },
+  {
+    "id": "durpin-dara",
+    "destination_id": "kalimpong",
+    "name": "Durpin Dara (Zang Dhok Palri)",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Hilltop Buddhist monastery modeled on the Heavenly Palace of Guru Padmasambhava."
+  },
+  {
+    "id": "kalimpong-nurseries",
+    "destination_id": "kalimpong",
+    "name": "Kalimpong Flower Nurseries",
+    "type": "garden",
+    "entry_fee": "₹20",
+    "description": "Famous orchid and gladioli nurseries. Over 50 varieties of orchids and hundreds of cacti species."
+  },
+  {
+    "id": "tea-gardens-palampur",
+    "destination_id": "palampur",
+    "name": "Kangra Tea Gardens",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Lush tea plantations producing the world-famous Kangra tea. Walking trails through manicured gardens."
+  },
+  {
+    "id": "neugal-khad",
+    "destination_id": "palampur",
+    "name": "Neugal Khad",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic gorge with a river and an iron bridge offering views of Dhauladhar mountains."
+  },
+  {
+    "id": "tashi-jong-monastery",
+    "destination_id": "palampur",
+    "name": "Tashi Jong Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Tibetan Buddhist monastery and arts center. Home to traditional thangka painting and mask-making schools."
+  },
+  {
+    "id": "aalo-donyi-polo-temple",
+    "destination_id": "aalo",
+    "name": "Donyi Polo Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The main temple of the Donyi-Polo religion — an indigenous animist belief system of the Galo and neighbouring tribes centred on Sun (Donyi) and Moon (Polo). Active worship with traditional rituals on full-moon days."
+  },
+  {
+    "id": "aalo-yomgo-river",
+    "destination_id": "aalo",
+    "name": "Yomgo River & Confluence",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Aalo sits at the confluence of the Yomgo and Siyom rivers. Walk along the bamboo suspension bridge for a classic Siang-region frame. Sunset here is the town's signature moment."
+  },
+  {
+    "id": "ambaji-temple",
+    "destination_id": "ambaji",
+    "name": "Ambaji Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 51 Shakti Peethas. No idol — worship is of the Shri Visa Yantra. Massive Navratri gatherings."
+  },
+  {
+    "id": "gabbar-hill",
+    "destination_id": "ambaji",
+    "name": "Gabbar Hill",
+    "type": "viewpoint",
+    "entry_fee": "₹118 (ropeway)",
+    "description": "Hilltop with Aravalli views. Temple at summit. Ropeway available or 300-step climb."
+  },
+  {
+    "id": "dambuk-dibang-bridge",
+    "destination_id": "dambuk",
+    "name": "Dibang River suspension bridge",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "The access bridge to Dambuk across the Dibang's braided channels — 4WD-only crossing for most of the year. Photogenic at dawn when valley mist rises through the bridge deck."
+  },
+  {
+    "id": "dambuk-orange-orchards",
+    "destination_id": "dambuk",
+    "name": "Orange orchards",
+    "type": "garden",
+    "entry_fee": "Free entry; fruit paid",
+    "description": "Rolling citrus farms that give Dambuk its identity — peak fruit is Nov-Dec, which aligns with the Orange Festival. Several farms welcome visitors and sell direct."
+  },
+  {
+    "id": "kinner-kailash-charang-la",
+    "destination_id": "kinner-kailash",
+    "name": "Charang La Pass",
+    "type": "viewpoint",
+    "entry_fee": null,
+    "description": "The 5,242m crossing at the top of the parikrama, between Charang and Chitkul valleys. Snowbound till early August in most years."
+  },
+  {
+    "id": "kinner-kailash-shivling",
+    "destination_id": "kinner-kailash",
+    "name": "Kinner Kailash Shivling",
+    "type": "temple",
+    "entry_fee": null,
+    "description": "A 79-foot vertical rock formation revered as a natural Shiva lingam, sitting just below the Kinner Kailash peak. The colour appears to shift across the day as the light angle changes."
+  },
+  {
+    "id": "chauli-ki-jali",
+    "destination_id": "mukteshwar",
+    "name": "Chauli Ki Jali",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Rock formation with natural holes through which you can see the valley below. Rappelling point."
+  },
+  {
+    "id": "mukteshwar-temple",
+    "destination_id": "mukteshwar",
+    "name": "Mukteshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Shiva temple at 7,500 ft perched on a cliff edge with chauti ki jali (rock overhang for adventure)."
+  },
+  {
+    "id": "pandupol-sariska",
+    "destination_id": "sariska",
+    "name": "Pandupol Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Cave temple of Hanuman inside the tiger reserve. Believed to be where Pandavas hid during exile."
+  },
+  {
+    "id": "sariska-safari",
+    "destination_id": "sariska",
+    "name": "Sariska Tiger Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹600",
+    "description": "Tiger reserve in the Aravalli Hills. First to successfully relocate tigers. Jeep safaris available."
+  },
+  {
+    "id": "dubdi-monastery",
+    "destination_id": "yuksom",
+    "name": "Dubdi Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Oldest monastery in Sikkim (1701). 45-minute uphill trek through forest. Peaceful and remote."
+  },
+  {
+    "id": "coronation-throne",
+    "destination_id": "yuksom",
+    "name": "Norbugang Coronation Throne",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Historic site where the first Chogyal (king) of Sikkim was crowned in 1642 by three revered lamas."
+  },
+  {
+    "id": "likir-monastery",
+    "destination_id": "likir",
+    "name": "Likir Monastery",
+    "type": "monastery",
+    "entry_fee": "₹30",
+    "description": "11th-century monastery with a 25-meter gold-covered Maitreya Buddha statue visible for miles."
+  },
+  {
+    "id": "ranakpur-jain-temples",
+    "destination_id": "ranakpur",
+    "name": "Ranakpur Jain Temple",
+    "type": "temple",
+    "entry_fee": "₹200 (Foreign)",
+    "description": "15th-century Chaumukha Temple with 1,444 uniquely carved marble pillars — no two alike. Jain architecture masterpiece."
+  }
+]

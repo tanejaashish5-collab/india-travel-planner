@@ -1,0 +1,370 @@
+[
+  {
+    "id": "bhagsu-waterfall",
+    "destination_id": "mcleodganj",
+    "name": "Bhagsu Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Easy 1km walk from Bhagsu village to a 20m waterfall."
+  },
+  {
+    "id": "dal-lake-mcleodganj",
+    "destination_id": "mcleodganj",
+    "name": "Dal Lake McLeodganj",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Small mid-lake surrounded by deodar trees, sacred to Shiva. Annual fair held here in September."
+  },
+  {
+    "id": "naddi-viewpoint",
+    "destination_id": "mcleodganj",
+    "name": "Naddi Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic viewpoint above McLeodganj with panoramic views of Dhauladhar range and Kangra Valley. Sunset spot."
+  },
+  {
+    "id": "namgyal-monastery",
+    "destination_id": "mcleodganj",
+    "name": "Namgyal Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Personal monastery of the Dalai Lama and the largest Tibetan temple outside Tibet. Daily prayer sessions open to visitors."
+  },
+  {
+    "id": "st-john-church-mcleodganj",
+    "destination_id": "mcleodganj",
+    "name": "St. John in the Wilderness",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Neo-Gothic church built in 1852, surrounded by deodar trees. Contains memorial of Lord Elgin, former Viceroy."
+  },
+  {
+    "id": "tibet-museum-mcleodganj",
+    "destination_id": "mcleodganj",
+    "name": "Tibet Museum",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Museum documenting the history of the Tibetan freedom movement with photos, videos and personal accounts."
+  },
+  {
+    "id": "triund-trek-start",
+    "destination_id": "mcleodganj",
+    "name": "Triund Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Popular 9 km trek to Triund Hill at 9,350 ft with panoramic views of Dhauladhar range and Kangra Valley."
+  },
+  {
+    "id": "beatles-ashram",
+    "destination_id": "rishikesh",
+    "name": "Beatles Ashram",
+    "type": "monument",
+    "entry_fee": "₹150 / ₹600",
+    "description": "Abandoned ashram where The Beatles stayed in 1968. Now a street art gallery."
+  },
+  {
+    "id": "laxman-jhula",
+    "destination_id": "rishikesh",
+    "name": "Laxman Jhula",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Iconic 450-ft suspension bridge over the Ganges. Legend says Laxman crossed the river here on a jute rope."
+  },
+  {
+    "id": "neer-garh-waterfall",
+    "destination_id": "rishikesh",
+    "name": "Neer Garh Waterfall",
+    "type": "waterfall",
+    "entry_fee": "₹30",
+    "description": "Two-tiered waterfall near Laxman Jhula. Short hike through forest to a refreshing rock pool."
+  },
+  {
+    "id": "parmarth-niketan",
+    "destination_id": "rishikesh",
+    "name": "Parmarth Niketan Ganga Aarti",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Largest ashram in Rishikesh hosting grand evening Ganga Aarti with hundreds of lamps on the riverfront."
+  },
+  {
+    "id": "rajaji-np-rishikesh",
+    "destination_id": "rishikesh",
+    "name": "Rajaji National Park",
+    "type": "viewpoint",
+    "entry_fee": "₹600",
+    "description": "Tiger reserve and elephant corridor just outside Rishikesh. Jeep safaris to spot Asian elephants."
+  },
+  {
+    "id": "ram-jhula",
+    "destination_id": "rishikesh",
+    "name": "Ram Jhula",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Iconic iron suspension bridge over the Ganges. 450 feet long."
+  },
+  {
+    "id": "triveni-ghat",
+    "destination_id": "rishikesh",
+    "name": "Triveni Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred confluence ghat with evening Ganga Aarti."
+  },
+  {
+    "id": "chaturbhuj-temple-orchha",
+    "destination_id": "orchha",
+    "name": "Chaturbhuj Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Massive temple with spectacular spire visible from across the town. Climb to the top for panoramic views."
+  },
+  {
+    "id": "orchha-fort-complex",
+    "destination_id": "orchha",
+    "name": "Orchha Fort Complex",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "Stunning Bundela Rajput citadel with Jahangir Mahal, Raja Mahal, and Rai Praveen Mahal. Riverside setting."
+  },
+  {
+    "id": "phool-bagh-orchha",
+    "destination_id": "orchha",
+    "name": "Phool Bagh",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Garden with an underground cooling system and a memorial to Bundela king Pal Shah. Unique ventilation design."
+  },
+  {
+    "id": "ram-raja-temple-orchha",
+    "destination_id": "orchha",
+    "name": "Ram Raja Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Only temple in India where Lord Rama is worshipped as a king. Guard of honor tradition continues."
+  },
+  {
+    "id": "orchha-cenotaphs",
+    "destination_id": "orchha",
+    "name": "Royal Cenotaphs (Chhatris)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Cluster of 14 cenotaphs along the Betwa River. Spectacular at sunset with reflections in the water."
+  },
+  {
+    "id": "kal-bhairav-temple",
+    "destination_id": "ujjain",
+    "name": "Kal Bhairav Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple where the deity is offered liquor as prasad. Unique and ancient tradition draws curious visitors."
+  },
+  {
+    "id": "mahakaleshwar-temple",
+    "destination_id": "ujjain",
+    "name": "Mahakaleshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 12 Jyotirlingas. Bhasma Aarti at dawn where the deity is anointed with cremation ash. Deeply powerful ritual."
+  },
+  {
+    "id": "ram-ghat-ujjain",
+    "destination_id": "ujjain",
+    "name": "Ram Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Most sacred ghat on the Shipra River. Site of the Kumbh Mela held every 12 years. Beautiful evening aarti."
+  },
+  {
+    "id": "vedha-shala",
+    "destination_id": "ujjain",
+    "name": "Vedha Shala (Jantar Mantar Ujjain)",
+    "type": "monument",
+    "entry_fee": "₹20",
+    "description": "Astronomical observatory built by Maharaja Jai Singh II in 1725. Still used for calculating Hindu calendar."
+  },
+  {
+    "id": "marble-rocks",
+    "destination_id": "jabalpur",
+    "name": "Bhedaghat Marble Rocks",
+    "type": "viewpoint",
+    "entry_fee": "₹90 (boat)",
+    "description": "White marble cliffs rising 100 ft on both sides of the Narmada. Moonlight boat ride is spectacular."
+  },
+  {
+    "id": "chausath-yogini-jabalpur",
+    "destination_id": "jabalpur",
+    "name": "Chausath Yogini Temple",
+    "type": "temple",
+    "entry_fee": "₹25",
+    "description": "Circular 10th-century temple with 64 yogini statues. Inspired the Parliament House of India design."
+  },
+  {
+    "id": "dhuandhar-falls",
+    "destination_id": "jabalpur",
+    "name": "Dhuandhar Falls",
+    "type": "waterfall",
+    "entry_fee": "₹25",
+    "description": "Narmada River plunges 30 meters through marble rocks creating a cloud of mist (dhuan = smoke)."
+  },
+  {
+    "id": "dilwara-temples",
+    "destination_id": "mount-abu",
+    "name": "Dilwara Jain Temples",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Five Jain temples from 11th-13th century with the most intricate marble carving in India. Rival the Taj Mahal in craftsmanship."
+  },
+  {
+    "id": "guru-shikhar",
+    "destination_id": "mount-abu",
+    "name": "Guru Shikhar",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest peak in Rajasthan at 5,650 ft. Dattatreya temple at the summit with panoramic views."
+  },
+  {
+    "id": "nakki-lake-abu",
+    "destination_id": "mount-abu",
+    "name": "Nakki Lake",
+    "type": "lake",
+    "entry_fee": "₹100 (boat)",
+    "description": "Sacred lake believed to be dug by gods with their nails (nakha). Boating with Toad Rock views."
+  },
+  {
+    "id": "turtuk-mosque",
+    "destination_id": "turtuk",
+    "name": "Jamia Masjid (old mosque)",
+    "type": "mosque",
+    "entry_fee": "Free",
+    "description": "The old wooden mosque at the centre of upper Turtuk — one of the older Balti mosques in India, active since the Yabgo era. Modest architecture; open for respectful visitors outside prayer times."
+  },
+  {
+    "id": "turtuk-thang-viewpoint",
+    "destination_id": "turtuk",
+    "name": "Thang Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free (permit check)",
+    "description": "The last motorable point on the Indian side before the LoC — 10km from Turtuk toward Thang village. Panoramic view of the Shyok valley extending into Pakistan-administered Baltistan."
+  },
+  {
+    "id": "turtuk-yabgo-royal-house",
+    "destination_id": "turtuk",
+    "name": "Yabgo Royal House Museum",
+    "type": "museum",
+    "entry_fee": "Donation-based",
+    "description": "The 14th-century home of the Yabgo dynasty that ruled Baltistan for two millennia. The current descendant, Yabgo Mohammad Khan Kacho, still lives here and personally shows visitors around the upstairs museum. Modest two-storey courtyard structure with aged wooden columns."
+  },
+  {
+    "id": "champhai-viewpoint",
+    "destination_id": "champhai",
+    "name": "Champhai Glass House View",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Stunning views of Myanmar hills from the glass house viewpoint. Rice paddies in the valley below."
+  },
+  {
+    "id": "rih-dil-lake",
+    "destination_id": "champhai",
+    "name": "Rih Dil Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Heart-shaped natural lake on the Myanmar border. Sacred to Mizo people as gateway to the afterlife."
+  },
+  {
+    "id": "kardang-monastery",
+    "destination_id": "keylong",
+    "name": "Kardang Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "One of the largest and oldest Buddhist monasteries in Lahaul. Houses a large library of Buddhist scriptures."
+  },
+  {
+    "id": "shashur-monastery",
+    "destination_id": "keylong",
+    "name": "Shashur Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Hilltop monastery founded in the 17th century with views of the Bhaga Valley and snow-capped peaks."
+  },
+  {
+    "id": "mawlynnong-cleanest-village",
+    "destination_id": "mawlynnong",
+    "name": "Mawlynnong (Cleanest Village)",
+    "type": "viewpoint",
+    "entry_fee": "₹20",
+    "description": "Asia's cleanest village. Flower-lined paths, bamboo dustbins, and a living root bridge nearby."
+  },
+  {
+    "id": "sky-walk-mawlynnong",
+    "destination_id": "mawlynnong",
+    "name": "Mawlynnong Sky Walk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Bamboo watchtower above the canopy with views of Bangladesh plains. Slightly rickety but thrilling."
+  },
+  {
+    "id": "kaba-gandhi-no-delo",
+    "destination_id": "rajkot",
+    "name": "Kaba Gandhi No Delo",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Gandhi's childhood home where he lived from age 6 to 16. Museum with personal items and photographs."
+  },
+  {
+    "id": "watson-museum",
+    "destination_id": "rajkot",
+    "name": "Watson Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Colonial-era museum with artifacts from the Saurashtra region — coins, textiles, and a replica of Junagadh inscriptions."
+  },
+  {
+    "id": "baba-harbhajan-shrine",
+    "destination_id": "tsomgo-lake",
+    "name": "Baba Harbhajan Singh Shrine",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Shrine of an Indian Army soldier believed to guard the border even after death. Army-maintained memorial."
+  },
+  {
+    "id": "tsomgo-lake-visit",
+    "destination_id": "tsomgo-lake",
+    "name": "Tsomgo Lake (Changu Lake)",
+    "type": "lake",
+    "entry_fee": "₹200 (permit)",
+    "description": "Sacred glacial lake at 12,313 ft. Changes colors with seasons — frozen in winter, emerald in summer. Yak rides."
+  },
+  {
+    "id": "chitrakote-falls-viewpoint",
+    "destination_id": "chitrakote-falls",
+    "name": "Chitrakote Falls Main Viewpoint",
+    "type": "waterfall",
+    "entry_fee": "₹100 vehicle entry",
+    "description": "Best vantage for the 299m-wide waterfall. Monsoon spray and mist create rainbows. Picnic-friendly platform."
+  },
+  {
+    "id": "haflong-lake",
+    "destination_id": "haflong",
+    "name": "Haflong Lake",
+    "type": "lake",
+    "entry_fee": "₹50",
+    "description": "Scenic lake in \"Scotland of the East\". Boating surrounded by hills and lush forests."
+  },
+  {
+    "id": "daying-ering-sanctuary",
+    "destination_id": "pasighat",
+    "name": "Daying Ering Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Riverine sanctuary on the Siang (Brahmaputra). Wild buffalo, elephants, and diverse birdlife."
+  },
+  {
+    "id": "unakoti-rock-carvings",
+    "destination_id": "unakoti",
+    "name": "Unakoti Rock Carvings",
+    "type": "monument",
+    "entry_fee": "₹20",
+    "description": "Massive rock-cut Shiva sculptures from 7th-9th century. Faces carved into cliff sides — \"one less than a crore\" (99,99,999)."
+  }
+]

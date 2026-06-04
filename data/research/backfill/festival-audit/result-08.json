@@ -1,0 +1,142 @@
+[
+  {
+    "destination_id": "mawphlang",
+    "name": "Monolith Festival",
+    "verdict": "CONFIRMED",
+    "db_month": null,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://eastmojo.com/meghalaya/2024/03/08/meghalaya-monolith-festival-makes-a-comeback-after-eight-years-gap/",
+    "note": "Real, Mawphlang venue confirmed, March 2024 edition dated"
+  },
+  {
+    "destination_id": "champhai",
+    "name": "Hnahsin Kut (Cosmos Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 10,
+    "correct_month": 10,
+    "confidence": "high",
+    "source_url": "https://nenews.in/mizoram/hnahsin-kut-festival-kicks-off-in-mizorams-champhai/14561/",
+    "note": "October festival, Champhai, 2024-2025 confirmed, cosmos bloom season"
+  },
+  {
+    "destination_id": "lunglei",
+    "name": "Leitlangpui Music Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": 11,
+    "confidence": "high",
+    "source_url": "https://northeasttoday.in/northeast/mizoram-health-minister-lalrinpuii-inaugurates-leitlangpui-music-festival-2025/",
+    "note": "November 13-15 confirmed, Lunglei, Mizo culture fest"
+  },
+  {
+    "destination_id": "dzukou-valley",
+    "name": "Dzukou Valley Festival",
+    "verdict": "UNVERIFIABLE",
+    "db_month": 10,
+    "correct_month": null,
+    "confidence": "low",
+    "source_url": "https://www.india.com/travel/articles/experience-the-first-dzukou-valley-festival-in-nagaland-this-october-3382186/",
+    "note": "Only 2018 inaugural confirmed; no 2024-25 evidence found"
+  },
+  {
+    "destination_id": "khonoma",
+    "name": "Sekrenyi",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": 2,
+    "confidence": "high",
+    "source_url": "https://morungexpress.com/sekrenyi-cum-mini-hornbill-2025-in-kisama-on-february-25-26",
+    "note": "February 25, Khonoma Angami Naga, purification/renewal fest"
+  },
+  {
+    "destination_id": "kiphire",
+    "name": "Mongmong Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 9,
+    "correct_month": 9,
+    "confidence": "high",
+    "source_url": "https://ipr.nagaland.gov.in/mungmung-tribal-festival-celebrated-kiphire-town",
+    "note": "September 1-6, Sangtam harvest fest, togetherness theme"
+  },
+  {
+    "destination_id": "kiphire",
+    "name": "Metemneo Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 8,
+    "correct_month": 8,
+    "confidence": "high",
+    "source_url": "https://ipr.nagaland.gov.in/yimchungers-celebrate-metumnyo-festival-kisama",
+    "note": "August 2nd week, Yimchunger harvest/renewal fest, Kiphire"
+  },
+  {
+    "destination_id": "pfutsero",
+    "name": "Tsükhenye Festival",
+    "verdict": "WRONG_MONTH",
+    "db_month": 5,
+    "correct_month": 4,
+    "confidence": "high",
+    "source_url": "https://ipr.nagaland.gov.in/tsiikhenyie-festival-celebrated-pfutsero-village",
+    "note": "April 24-27 typical, not May; Chakhesang purification fest"
+  },
+  {
+    "destination_id": "jampui-hills",
+    "name": "Orange and Tourism Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": 11,
+    "confidence": "high",
+    "source_url": "https://www.indianholiday.com/tripura/fairs-and-festivals/orange-tourism-festival.html",
+    "note": "November, Jampui Hills Tripura, orange harvest fest"
+  },
+  {
+    "destination_id": "neermahal",
+    "name": "Neermahal Water Festival - Boat Race",
+    "verdict": "CONFIRMED",
+    "db_month": 8,
+    "correct_month": 8,
+    "confidence": "high",
+    "source_url": "https://ica.tripura.gov.in/neermahal-tourism-water-festival",
+    "note": "August boat race on Rudrasagar Lake, Neermahal"
+  },
+  {
+    "destination_id": "unakoti",
+    "name": "Ashokastami Mela",
+    "verdict": "CONFIRMED",
+    "db_month": 4,
+    "correct_month": 4,
+    "confidence": "high",
+    "source_url": "https://tripuratourism.gov.in/asokastami",
+    "note": "April (8th Chaitra), Unakoti Shaivite pilgrimage, rock-cut site"
+  },
+  {
+    "destination_id": "dhauli",
+    "name": "Dhauli Kalinga Mahotsav",
+    "verdict": "CONFIRMED",
+    "db_month": 2,
+    "correct_month": 2,
+    "confidence": "high",
+    "source_url": "https://utsav.gov.in/view-event/dhauli-kalinga-mahostav",
+    "note": "February (6-8 typical), dance/peace festival, Buddhist site"
+  },
+  {
+    "destination_id": "dhauli",
+    "name": "Buddha Purnima",
+    "verdict": "CONFIRMED",
+    "db_month": 5,
+    "correct_month": 5,
+    "confidence": "high",
+    "source_url": "https://odishatv.in/news/festivals-events/buddha-purnima-significance-of-dhauli-shanti-stupa-its-historic-tale-of-emperor-ashoka-kalinga-war-203458",
+    "note": "May (Vaisakha full moon), Dhauli pilgrimage, Buddha's birth/enlightenment"
+  },
+  {
+    "destination_id": "nrusinghanath-harishankar",
+    "name": "Nrusingha Chaturdasi (Baisakh Mela)",
+    "verdict": "CONFIRMED",
+    "db_month": 5,
+    "correct_month": 5,
+    "confidence": "high",
+    "source_url": "https://www.bsmjsambalpuri.in/2025/05/baisakh-mela-2025-harishankar-and.html",
+    "note": "May (14th Vaisakha), Nrusinghanath/Harishankar temples, 5-day mela"
+  }
+]

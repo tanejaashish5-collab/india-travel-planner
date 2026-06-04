@@ -1,0 +1,370 @@
+[
+  {
+    "id": "batasia-loop",
+    "destination_id": "darjeeling",
+    "name": "Batasia Loop",
+    "type": "viewpoint",
+    "entry_fee": "₹10",
+    "description": "Spiral railway loop where the toy train makes a complete circle. War memorial and Kanchenjunga views."
+  },
+  {
+    "id": "darjeeling-mall",
+    "destination_id": "darjeeling",
+    "name": "Chowrasta (The Mall)",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Heart of Darjeeling — pedestrian square with heritage buildings, pony rides, and mountain views."
+  },
+  {
+    "id": "toy-train-darjeeling",
+    "destination_id": "darjeeling",
+    "name": "Darjeeling Himalayan Railway",
+    "type": "monument",
+    "entry_fee": "₹1,350-1,700",
+    "description": "UNESCO World Heritage \"Toy Train\" running since 1881. 88 km narrow-gauge journey through tea gardens."
+  },
+  {
+    "id": "ghoom-monastery",
+    "destination_id": "darjeeling",
+    "name": "Ghoom Monastery (Yiga Choeling)",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Oldest Tibetan Buddhist monastery in Darjeeling (1875). 15-ft clay statue of Maitreya Buddha."
+  },
+  {
+    "id": "happy-valley-tea",
+    "destination_id": "darjeeling",
+    "name": "Happy Valley Tea Estate",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Working tea estate since 1854. Tour the factory and learn the process of making world-famous Darjeeling tea."
+  },
+  {
+    "id": "mountaineering-institute",
+    "destination_id": "darjeeling",
+    "name": "Himalayan Mountaineering Institute",
+    "type": "museum",
+    "entry_fee": "₹100",
+    "description": "Founded by Tenzing Norgay after Everest conquest. Museum of mountaineering history, equipment, and expeditions."
+  },
+  {
+    "id": "peace-pagoda-darjeeling",
+    "destination_id": "darjeeling",
+    "name": "Japanese Peace Pagoda",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "White and gold Buddhist stupa built by the Japanese Buddhist order. Panoramic views and serene gardens."
+  },
+  {
+    "id": "observatory-hill",
+    "destination_id": "darjeeling",
+    "name": "Observatory Hill",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred hilltop with a temple shared by Hindus and Buddhists. Covered in prayer flags with Kanchenjunga views."
+  },
+  {
+    "id": "himalayan-zoo",
+    "destination_id": "darjeeling",
+    "name": "Padmaja Naidu Himalayan Zoological Park",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Home to red pandas, snow leopards, and Himalayan wolves. Successful red panda breeding program."
+  },
+  {
+    "id": "rock-garden-darjeeling",
+    "destination_id": "darjeeling",
+    "name": "Rock Garden & Ganga Maya Park",
+    "type": "garden",
+    "entry_fee": "₹30",
+    "description": "Terraced garden with waterfalls and streams on a steep mountain slope. Connected by walking paths."
+  },
+  {
+    "id": "tiger-hill-darjeeling",
+    "destination_id": "darjeeling",
+    "name": "Tiger Hill",
+    "type": "viewpoint",
+    "entry_fee": "₹40",
+    "description": "Sunrise viewpoint at 8,482 ft for spectacular views of Kanchenjunga and on clear days, Mt. Everest."
+  },
+  {
+    "id": "bharat-bhavan",
+    "destination_id": "bhopal",
+    "name": "Bharat Bhavan",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Multi-arts complex designed by Charles Correa. Galleries of contemporary art, poetry library, and performance spaces."
+  },
+  {
+    "id": "taj-ul-masajid",
+    "destination_id": "bhopal",
+    "name": "Taj-ul-Masajid",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "One of the largest mosques in Asia with pink sandstone facade and two 18-story minarets. Begun in 1844."
+  },
+  {
+    "id": "tribal-museum-bhopal",
+    "destination_id": "bhopal",
+    "name": "Tribal Museum (Museum of Man)",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Open-air museum showcasing tribal habitats, art, and culture of Madhya Pradesh's indigenous communities."
+  },
+  {
+    "id": "upper-lake-bhopal",
+    "destination_id": "bhopal",
+    "name": "Upper Lake (Bada Talab)",
+    "type": "lake",
+    "entry_fee": "₹50 (boat)",
+    "description": "Oldest man-made lake in India (11th century). 31 sq km with boating, lake view promenade, and sunset point."
+  },
+  {
+    "id": "van-vihar-np",
+    "destination_id": "bhopal",
+    "name": "Van Vihar National Park",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Urban safari park next to Upper Lake. Semi-captive big cats including tigers, lions, and leopards."
+  },
+  {
+    "id": "bhuri-singh-museum",
+    "destination_id": "chamba",
+    "name": "Bhuri Singh Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Houses Pahari miniature paintings, Chamba rumals (embroidered handkerchiefs), and ancient inscriptions."
+  },
+  {
+    "id": "chamunda-devi-temple",
+    "destination_id": "chamba",
+    "name": "Chamunda Devi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient hilltop temple with carved wooden panels and panoramic views of Chamba Valley."
+  },
+  {
+    "id": "lakshmi-narayan-temple-chamba",
+    "destination_id": "chamba",
+    "name": "Lakshmi Narayan Temple Complex",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Six shikhara-style temples from 10th century. Finest examples of Nagara architecture in Himachal."
+  },
+  {
+    "id": "chamba-chaugan",
+    "destination_id": "chamba",
+    "name": "The Chaugan",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Large central green in the heart of Chamba town. Venue for the famous Minjar Fair held every August."
+  },
+  {
+    "id": "banke-bihari-temple",
+    "destination_id": "vrindavan",
+    "name": "Banke Bihari Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Most visited temple in Vrindavan dedicated to Krishna as Banke Bihari. Unique curtain-style darshan."
+  },
+  {
+    "id": "iskcon-vrindavan",
+    "destination_id": "vrindavan",
+    "name": "ISKCON Temple (Krishna Balaram Mandir)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "International Hare Krishna temple founded by Prabhupada in 1975. Beautiful architecture and bhajan sessions."
+  },
+  {
+    "id": "nidhivan",
+    "destination_id": "vrindavan",
+    "name": "Nidhivan",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred grove where Krishna is believed to perform Raas Leela every night. Locked after sunset."
+  },
+  {
+    "id": "prem-mandir",
+    "destination_id": "vrindavan",
+    "name": "Prem Mandir",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Stunning modern white marble temple depicting Krishna's leelas. Spectacular at night with light show."
+  },
+  {
+    "id": "ashoka-rock-edicts",
+    "destination_id": "junagadh",
+    "name": "Ashokan Rock Edicts",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Emperor Ashoka's 14 rock edicts from 250 BC carved on a boulder. Sanskrit and Prakrit inscriptions still legible."
+  },
+  {
+    "id": "mahabat-maqbara",
+    "destination_id": "junagadh",
+    "name": "Mahabat Maqbara",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Jaw-dropping mausoleum blending Gothic, Indo-Islamic, and Hindu architecture. Silver doors and spiral staircases."
+  },
+  {
+    "id": "uparkot-fort",
+    "destination_id": "junagadh",
+    "name": "Uparkot Fort",
+    "type": "fort",
+    "entry_fee": "₹25",
+    "description": "2,300-year-old fort with Buddhist caves, ancient stepwells, and cannons. 16-time siege survivor."
+  },
+  {
+    "id": "bee-falls",
+    "destination_id": "pachmarhi",
+    "name": "Bee Falls",
+    "type": "waterfall",
+    "entry_fee": "₹25",
+    "description": "Highest waterfall in Madhya Pradesh at 35 meters. Swimming pool at the base. Known as Jamuna Prapat."
+  },
+  {
+    "id": "jata-shankar-caves",
+    "destination_id": "pachmarhi",
+    "name": "Jata Shankar Caves",
+    "type": "temple",
+    "entry_fee": "₹25",
+    "description": "Natural cave formation resembling Shiva's matted hair (jata). Stalactites form a natural Shiva lingam."
+  },
+  {
+    "id": "pandav-caves-pachmarhi",
+    "destination_id": "pachmarhi",
+    "name": "Pandav Caves",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "Five rock-cut caves believed to be the shelter of Pandavas during exile. Buddhist period cave architecture."
+  },
+  {
+    "id": "chadar-trek-start",
+    "destination_id": "zanskar",
+    "name": "Chadar Frozen River Trek",
+    "type": "viewpoint",
+    "entry_fee": "₹15,000-30,000",
+    "description": "Legendary winter trek on the frozen Zanskar River through a gorge. Only January-February."
+  },
+  {
+    "id": "padum-zanskar",
+    "destination_id": "zanskar",
+    "name": "Padum",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Capital of Zanskar at 11,500 ft. Traditional Zanskari houses, Karsha Monastery visible across the valley."
+  },
+  {
+    "id": "phuktal-monastery",
+    "destination_id": "zanskar",
+    "name": "Phuktal Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Spectacular cave monastery built into a cliff face over 2,500 years ago. Accessible only by foot."
+  },
+  {
+    "id": "gomti-talav-dakor",
+    "destination_id": "dakor",
+    "name": "Gomti Talav",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Sacred lake near the temple. Ghats for bathing rituals. Serene early mornings."
+  },
+  {
+    "id": "ranchhodrai-temple",
+    "destination_id": "dakor",
+    "name": "Ranchhodrai Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple where Krishna's idol is believed to have followed a devotee from Dwarka. Millions visit during Sharad Purnima."
+  },
+  {
+    "id": "khonoma-nature-trail",
+    "destination_id": "khonoma",
+    "name": "Khonoma Nature Conservation Trail",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "Forest trail through the community conserved area. Tragopan and other rare birds. Guided walks available."
+  },
+  {
+    "id": "khonoma-green-village",
+    "destination_id": "khonoma",
+    "name": "Khonoma Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Asia's first green village. Angami Naga village that banned hunting in 1998. Traditional terraced farming."
+  },
+  {
+    "id": "mon-konyak-villages",
+    "destination_id": "mon",
+    "name": "Konyak Naga Villages",
+    "type": "viewpoint",
+    "entry_fee": "₹200 (guide)",
+    "description": "Villages of the former headhunter Konyak tribe. Last tattooed headhunter warriors still alive here."
+  },
+  {
+    "id": "shangyu-village",
+    "destination_id": "mon",
+    "name": "Shangnyu Village",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "Village with the Angh (chief)'s house. Skull trophies displayed from the headhunting era. Cultural immersion."
+  },
+  {
+    "id": "sanchi-stupa",
+    "destination_id": "sanchi",
+    "name": "Great Stupa at Sanchi",
+    "type": "monument",
+    "entry_fee": "₹30",
+    "description": "UNESCO World Heritage Buddhist monument commissioned by Emperor Ashoka in 3rd century BC. Four ornate toranas (gateways)."
+  },
+  {
+    "id": "sanchi-museum",
+    "destination_id": "sanchi",
+    "name": "Sanchi Archaeological Museum",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Houses original artifacts from the stupa site including Ashoka's Lion Capital replica and Buddhist sculptures."
+  },
+  {
+    "id": "hemkund-sahib-vof",
+    "destination_id": "valley-of-flowers",
+    "name": "Hemkund Sahib",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "Sikh pilgrimage site at 15,200 ft — highest gurudwara in the world. Glacial lake surrounded by seven peaks."
+  },
+  {
+    "id": "vof-national-park",
+    "destination_id": "valley-of-flowers",
+    "name": "Valley of Flowers National Park",
+    "type": "viewpoint",
+    "entry_fee": "₹150 (Indian) / ₹600 (Foreign)",
+    "description": "UNESCO World Heritage Site. Alpine meadow with 600+ species of flowers including brahma kamal and blue poppy."
+  },
+  {
+    "id": "deeg-palace",
+    "destination_id": "deeg",
+    "name": "Deeg Palace",
+    "type": "palace",
+    "entry_fee": "₹25",
+    "description": "Exquisite water palace of Jat kings. Fountains designed to simulate monsoon with thunder-sound mechanism."
+  },
+  {
+    "id": "lachen-monastery",
+    "destination_id": "lachen",
+    "name": "Lachen Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Monastery of the Lachen people governed by the traditional Pipon council system. Remote and authentic."
+  },
+  {
+    "id": "yadavindra-gardens",
+    "destination_id": "pinjore-gardens",
+    "name": "Yadavindra Gardens (Pinjore Gardens)",
+    "type": "garden",
+    "entry_fee": "₹30",
+    "description": "Mughal-style terraced garden built by Fidai Khan. Seven terraces with fountains, palaces, and a mini zoo."
+  }
+]

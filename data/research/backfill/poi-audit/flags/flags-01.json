@@ -1,0 +1,32 @@
+[
+  {
+    "id": "vembanad-lake-alleppey",
+    "destination_id": "alleppey",
+    "name": "Vembanad Lake",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Lake length is stated as 68km, but verified sources confirm it is 96.5 km long.",
+    "evidence": "Wikipedia (Vembanad) and Kottayam District Government website state the lake is 96.5 km long, the longest lake in India. The 68km figure may refer only to a section between Thanneermukkom and Alappuzha.",
+    "suggested_fix": "Change '68km long' to '96.5 km long (or approximately 60-68 km in the Kumarakom/Alleppey section)' to reflect the full lake while acknowledging regional segments."
+  },
+  {
+    "id": "mandrem-beach-mandrem",
+    "destination_id": "mandrem",
+    "name": "Mandrem Beach",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Beach is described as a '3 km stretch', but verified sources indicate 790 metres to 1.5 km.",
+    "evidence": "Multiple sources (Thrillophilia, Tripadvisor, local guides) confirm Mandrem Beach stretches 790 meters to 1.5 kilometres. The longer 9.44 km measurement refers to the broader Arambol-to-Chapora coastal stretch, not Mandrem Beach itself.",
+    "suggested_fix": "Change '3 km stretch' to '1.5 km stretch' or 'approximately 1-2 km of uncrowded sand' to match verified measurements."
+  },
+  {
+    "id": "ibrahim-roza-bijapur",
+    "destination_id": "bijapur",
+    "name": "Ibrahim Roza",
+    "severity": "low",
+    "issue_type": "unverifiable",
+    "problem": "Description claims the mausoleum 'is believed to have inspired the Taj Mahal's design', but this claim is unproven and contested.",
+    "evidence": "Search results show the claim appears in tourism marketing (Tripadvisor reviews, some blogs), but Wikipedia and architectural sources note the influence is unproven. One source suggests the reverse—that Malik may have been inspired BY the Taj Mahal, given the Taj (1653) was completed well after Ibrahim Roza (1627).",
+    "suggested_fix": "Change to 'believed by some to have influenced subsequent Mughal architecture' or remove the inspiration claim entirely and focus on its own architectural merits: '...with intricate calligraphy and serene gardens, showcasing Adil Shahi architecture at its finest.'"
+  }
+]

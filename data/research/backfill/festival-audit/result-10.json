@@ -1,0 +1,142 @@
+[
+  {
+    "destination_id": "kumbhalgarh",
+    "name": "Kumbhalgarh Festival",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/kumbhalgarh-festival.html",
+    "note": "Rajasthan Tourism confirms Dec 1-3, Kumbhalgarh Fort, Mewar heritage celebration"
+  },
+  {
+    "destination_id": "ranakpur",
+    "name": "Mahavir Jayanti",
+    "verdict": "CONFIRMED",
+    "db_month": 3,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.outlookindia.com/brand-studio/mahavir-jayanti-celebrate-mahavir-jayanti-and-explore-majestic-jain-temples-in-india",
+    "note": "Ranakpur Jain Temple listed as major Mahavir Jayanti celebration, April date lunar"
+  },
+  {
+    "destination_id": "sariska",
+    "name": "Hanuman Jayanti",
+    "verdict": "WRONG_MONTH",
+    "db_month": 3,
+    "correct_month": 4,
+    "confidence": "high",
+    "source_url": "https://www.incredibleindia.gov.in/en/rajasthan/alwar/pandupol-hanuman-ji-mandir",
+    "note": "Pandupol temple at Sariska celebrates in April (Chaitra), not March. Lakhi Mela is March-April."
+  },
+  {
+    "destination_id": "kanchipuram",
+    "name": "Vaikasi Brahmotsavam (Garuda Sevai)",
+    "verdict": "CONFIRMED",
+    "db_month": 5,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.livechennai.com/detailnews.asp?newsid=48336",
+    "note": "Sri Varadaraja Perumal temple, Vaikasi month (May-June), Garuda Sevai confirmed"
+  },
+  {
+    "destination_id": "palani",
+    "name": "Thaipusam",
+    "verdict": "CONFIRMED",
+    "db_month": 1,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://palani.org/photo-gallery/thaipusam-lord-murugan-festival-at-palani/",
+    "note": "Palani Murugan temple, Tamil month Thai (January/February), Kavadi festival confirmed"
+  },
+  {
+    "destination_id": "palani",
+    "name": "Panguni Uthiram",
+    "verdict": "CONFIRMED",
+    "db_month": 3,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://palani.org/panguni-uthiram/",
+    "note": "Palani Murugan temple, Panguni month (March/April), 10-day festival with Therottam confirmed"
+  },
+  {
+    "destination_id": "kodaikanal",
+    "name": "Kodai Vizha (Summer Festival and Flower Show)",
+    "verdict": "CONFIRMED",
+    "db_month": 5,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://utsav.gov.in/view-event/kodai-vizha-flower-show-kodaikanal",
+    "note": "Tamil Nadu Tourism, Bryant's Park, May-June, 10-day flower show and cultural events"
+  },
+  {
+    "destination_id": "coonoor",
+    "name": "Coonoor Fruit Show (Nilgiris Summer Festival)",
+    "verdict": "CONFIRMED",
+    "db_month": 5,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://en.wikipedia.org/wiki/Summer_Festival_in_The_Nilgiris",
+    "note": "Sim's Park Coonoor, final week of May, 150 fruit varieties, 25K attendees annually"
+  },
+  {
+    "destination_id": "coimbatore",
+    "name": "Arudra Darshan (Margazhi Tiruvadhirai)",
+    "verdict": "CONFIRMED",
+    "db_month": 12,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.rudraksha-ratna.com/articles/arudra-darshan",
+    "note": "Perur Patteeswarar Temple Coimbatore, Margazhi month (Dec-Jan), Shiva Nataraja dance festival"
+  },
+  {
+    "destination_id": "coimbatore",
+    "name": "Panguni Brahmotsavam",
+    "verdict": "CONFIRMED",
+    "db_month": 3,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.tirthayatra.org/panguni-uttaram-brahmotsavam-2026-begins-at-srirangam-with-grandeur/",
+    "note": "Perur Patteeswarar Temple Coimbatore, Panguni month (March-April), chariot festival confirmed"
+  },
+  {
+    "destination_id": "pazhamudircholai",
+    "name": "Skanda Sashti",
+    "verdict": "CONFIRMED",
+    "db_month": 10,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.omspiritualshop.com/blogs/news/arulmigu-solaimalai-murugan-temple-pazhamudircholai",
+    "note": "One of six Murugan abodes, Aippasi month (Oct-Nov), 6-day Soorasamharam festival"
+  },
+  {
+    "destination_id": "pazhamudircholai",
+    "name": "Panguni Uthiram",
+    "verdict": "CONFIRMED",
+    "db_month": 3,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://www.rudraksha-ratna.com/articles/panguni-uthiram",
+    "note": "Pazhamudircholai Murugan temple, Panguni month (March-April), pilgrimage festival"
+  },
+  {
+    "destination_id": "tiruvannamalai",
+    "name": "Karthigai Deepam",
+    "verdict": "CONFIRMED",
+    "db_month": 11,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://thiruvannamalai.in/tiruvannamalai-temple/tiruvannamalai-karthigai-deepam/",
+    "note": "Arunachalesvara Temple Tiruvannamalai, Kaarthigai month (Nov-Dec), Maha Deepam on Arunachala hill, 3M devotees"
+  },
+  {
+    "destination_id": "tiruchendur",
+    "name": "Skanda Sashti",
+    "verdict": "CONFIRMED",
+    "db_month": 10,
+    "correct_month": null,
+    "confidence": "high",
+    "source_url": "https://tiruchendur.org/kanda-sasti/kanda-sasti-surasamharam-photo-gallery/",
+    "note": "One of six Murugan abodes on coast, Aippasi month (Oct-Nov), Soorasamharam, heavily attended festival"
+  }
+]

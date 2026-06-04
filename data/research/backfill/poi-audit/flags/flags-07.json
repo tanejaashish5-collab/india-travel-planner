@@ -1,0 +1,32 @@
+[
+  {
+    "id": "coracle-hogenakkal",
+    "destination_id": "hogenakkal",
+    "name": "Coracle Rides",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description claims coracles are a '2000-year craft' at Hogenakkal, implying the boats themselves have that pedigree. Actual coracles used today are modern reconstructions of an ancient boat design.",
+    "evidence": "Coracle rides at Hogenakkal use modern reconstructions of this ancient design. While coracles as a design concept have ancient origins (dating back 2000+ years in various cultures), the specific boats at Hogenakkal are contemporary vessels. Source: https://en.wikipedia.org/wiki/Coracle",
+    "suggested_fix": "Change '2000-year craft' to 'ancient boat design' or 'traditional round boats inspired by ancient design'"
+  },
+  {
+    "id": "sula-vineyards-nashik",
+    "destination_id": "nashik",
+    "name": "Sula Vineyards",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description states 'established in 2000' but Sula Vineyards was founded in 1999 by Rajeev Samant. The first commercial wine release occurred in 2000 after the 1999 inaugural harvest.",
+    "evidence": "Sula Vineyards was founded in 1999 with the first bottle of wine sold in 2000 (inaugural harvest 1999). Source: https://sulavineyards.com/our-history.php and https://en.wikipedia.org/wiki/Sula_Vineyards",
+    "suggested_fix": "Change 'established in 2000' to 'established in 1999' or 'first wine released in 2000'"
+  },
+  {
+    "id": "gopalpur-colonial-warehouses",
+    "destination_id": "gopalpur-on-sea",
+    "name": "Colonial Port Warehouses Remnants",
+    "severity": "low",
+    "issue_type": "wrong_fact",
+    "problem": "Description contains misspelling: 'Godalpur was a prominent trading port' should be 'Gopalpur'. The correct spelling throughout historical records is 'Gopalpur' (Gopalpur-on-Sea), not 'Godalpur'.",
+    "evidence": "All historical sources and the government of Odisha refer to this location as 'Gopalpur' or 'Gopalpur-on-Sea'. Source: https://en.wikipedia.org/wiki/Gopalpur,_Odisha and https://apps.odishatourism.gov.in/",
+    "suggested_fix": "Change 'Godalpur' to 'Gopalpur' in the description"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "minicoy-lighthouse",
+    "destination_id": "minicoy",
+    "name": "Minicoy Lighthouse",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description states '300-foot tall' but actual height is 49.5 meters (162 feet), not 300 feet.",
+    "evidence": "Wikipedia and official sources confirm 49.5m (162 ft) height. https://en.wikipedia.org/wiki/Minicoy_Island_Lighthouse",
+    "suggested_fix": "Replace '300-foot tall' with '49.5 meters high' or '162 feet tall'"
+  },
+  {
+    "id": "chennakesava-temple-belur",
+    "destination_id": "belur",
+    "name": "Chennakesava Temple",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description states 'UNESCO World Heritage Site (2024)' but UNESCO recognition occurred in 2023, not 2024.",
+    "evidence": "UNESCO designation as Sacred Ensembles of the Hoysalas in 2023. https://en.wikipedia.org/wiki/Chennakeshava_Temple,_Belur",
+    "suggested_fix": "Change '(2024)' to '(2023)' in the description"
+  }
+]

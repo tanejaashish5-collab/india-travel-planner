@@ -1,0 +1,32 @@
+[
+  {
+    "id": "arthurs-seat-mahabaleshwar",
+    "destination_id": "mahabaleshwar",
+    "name": "Arthur's Seat",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Named after Sir Arthur Mallet, not Arthur Stanley",
+    "evidence": "Arthur's Seat Mahabaleshwar sources consistently identify it as named after Sir Arthur Mallet, a British officer. Multiple sources (gomahabaleshwar.com, travelsetu.com) confirm this spelling and attribution.",
+    "suggested_fix": "Change 'Named after British administrator Arthur Stanley' to 'Named after British officer Sir Arthur Mallet'"
+  },
+  {
+    "id": "gopalaswamy-betta-bandipur",
+    "destination_id": "bandipur",
+    "name": "Gopalaswamy Betta Viewpoint",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Distance claim of '32km inside Bandipur National Park' unverified; authoritative sources cite 19km from Bandipur or 9km from Hangla",
+    "evidence": "Wikipedia and multiple tourism sources (thrillophilia.com, travelsetu.com) indicate 19 km from Bandipur town; 9 km from Hangla; some sources note 25-30 km range. No source supports 32 km.",
+    "suggested_fix": "Change '32km inside Bandipur National Park' to '19km from Bandipur' or 'at the core of Bandipur National Park'"
+  },
+  {
+    "id": "cabo-de-rama-fort-agonda",
+    "destination_id": "agonda",
+    "name": "Cabo de Rama Fort",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Listed as '16th-century Portuguese fort' but main fortifications date to 1763, not 16th century",
+    "evidence": "Search results (tripoto.com, traveltriangle.com) clarify: Fort origins predate Portuguese; Chapel of Saint Anthony built 1591 (16th c.), but major Portuguese fortifications added in 1763 after capture",
+    "suggested_fix": "Change '16th-century Portuguese fort' to 'Historic fort with 16th-century Portuguese chapel and major fortifications added in 1763'"
+  }
+]

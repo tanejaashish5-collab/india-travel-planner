@@ -1,0 +1,378 @@
+[
+  {
+    "id": "albert-hall-jaipur",
+    "destination_id": "jaipur",
+    "name": "Albert Hall Museum",
+    "type": "museum",
+    "entry_fee": "₹40",
+    "description": "Indo-Saracenic architecture museum built in 1887. Houses Egyptian mummy, Persian carpet, and Rajasthani artifacts."
+  },
+  {
+    "id": "amber-fort",
+    "destination_id": "jaipur",
+    "name": "Amber Fort",
+    "type": "fort",
+    "entry_fee": "₹200 / ₹500",
+    "description": "Massive hilltop Rajput fortress with Sheesh Mahal. UNESCO World Heritage site."
+  },
+  {
+    "id": "birla-mandir-jaipur",
+    "destination_id": "jaipur",
+    "name": "Birla Mandir (Laxmi Narayan Temple)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "White marble temple built in 1988 by the Birla family. Combines modern and ancient temple architecture."
+  },
+  {
+    "id": "chokhi-dhani-jaipur",
+    "destination_id": "jaipur",
+    "name": "Chokhi Dhani",
+    "type": "market",
+    "entry_fee": "₹800-1,500",
+    "description": "Rajasthani ethnic village resort. Traditional food, folk dances, puppet shows, camel rides, and cultural performances."
+  },
+  {
+    "id": "city-palace-jaipur",
+    "destination_id": "jaipur",
+    "name": "City Palace",
+    "type": "palace",
+    "entry_fee": "₹200 / ₹500",
+    "description": "Working royal palace with museums, courtyards, and famous oversized silver urns."
+  },
+  {
+    "id": "galtaji-monkey-temple",
+    "destination_id": "jaipur",
+    "name": "Galtaji (Monkey Temple)",
+    "type": "temple",
+    "entry_fee": "₹100 (camera)",
+    "description": "Ancient pilgrimage site with natural springs in a mountain gorge. Famous for troops of monkeys. Featured in documentaries."
+  },
+  {
+    "id": "hawa-mahal",
+    "destination_id": "jaipur",
+    "name": "Hawa Mahal",
+    "type": "palace",
+    "entry_fee": "₹50 / ₹200",
+    "description": "Iconic pink sandstone Palace of Winds with 953 small windows. Built in 1799."
+  },
+  {
+    "id": "jaigarh-fort",
+    "destination_id": "jaipur",
+    "name": "Jaigarh Fort",
+    "type": "fort",
+    "entry_fee": "₹100",
+    "description": "Fort of Victory on Cheel ka Teela with Jaivana cannon — world's largest wheeled cannon. Connected to Amber Fort."
+  },
+  {
+    "id": "jal-mahal",
+    "destination_id": "jaipur",
+    "name": "Jal Mahal",
+    "type": "palace",
+    "entry_fee": "Free (view only)",
+    "description": "Stunning palace in the middle of Man Sagar Lake. Five floors, four submerged. Beautifully lit at night."
+  },
+  {
+    "id": "jantar-mantar-jaipur",
+    "destination_id": "jaipur",
+    "name": "Jantar Mantar",
+    "type": "monument",
+    "entry_fee": "₹50 / ₹200",
+    "description": "World's largest stone astronomical observatory. UNESCO World Heritage site."
+  },
+  {
+    "id": "johari-bazaar",
+    "destination_id": "jaipur",
+    "name": "Johari Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Jaipur's jewellery market since the 18th century. Gold, silver, precious stones."
+  },
+  {
+    "id": "nahargarh-fort",
+    "destination_id": "jaipur",
+    "name": "Nahargarh Fort",
+    "type": "fort",
+    "entry_fee": "₹50 / ₹200",
+    "description": "Best sunset viewpoint in Jaipur. Overlooks the entire pink city."
+  },
+  {
+    "id": "panna-meena-ka-kund",
+    "destination_id": "jaipur",
+    "name": "Panna Meena Ka Kund",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Beautiful 16th-century stepwell with symmetrical crisscross stairways. Instagram-famous geometric architecture."
+  },
+  {
+    "id": "guwahati-assam-museum",
+    "destination_id": "guwahati",
+    "name": "Assam State Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Collection of tribal artifacts, sculptures, Ahom-era manuscripts, and textiles from Northeast India."
+  },
+  {
+    "id": "brahmaputra-cruise",
+    "destination_id": "guwahati",
+    "name": "Brahmaputra River Sunset Cruise",
+    "type": "viewpoint",
+    "entry_fee": "₹500-1,500",
+    "description": "Evening cruise on Asia's widest river. Sunset views with Assamese folk music and snacks aboard."
+  },
+  {
+    "id": "kamakhya-temple",
+    "destination_id": "guwahati",
+    "name": "Kamakhya Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of the most important Shakti Peethas on Nilachal Hill. Tantric temple with the annual Ambubachi Mela."
+  },
+  {
+    "id": "srimanta-sankardev",
+    "destination_id": "guwahati",
+    "name": "Srimanta Sankardev Kalakshetra",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "Cultural complex showcasing Assamese culture. Traditional huts, museum galleries, open-air theatre, and craft workshops."
+  },
+  {
+    "id": "umananda-temple",
+    "destination_id": "guwahati",
+    "name": "Umananda Island Temple",
+    "type": "temple",
+    "entry_fee": "₹20 (ferry)",
+    "description": "Shiva temple on Peacock Island — smallest river island in the world. Ferry ride on the Brahmaputra."
+  },
+  {
+    "id": "bijli-mahadev",
+    "destination_id": "kullu",
+    "name": "Bijli Mahadev Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple at 7,874 ft where the Shiva lingam gets struck by lightning and shatters, then reassembled by priests."
+  },
+  {
+    "id": "great-himalayan-np-gate",
+    "destination_id": "kullu",
+    "name": "GHNP Entry Gate Kullu",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Gateway to the UNESCO Great Himalayan National Park from Kullu side. Trekking permits available here."
+  },
+  {
+    "id": "kullu-shawl-market",
+    "destination_id": "kullu",
+    "name": "Kullu Shawl Market (Akhara Bazaar)",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Famous for handwoven Kullu shawls and caps. Direct from local weavers at wholesale prices."
+  },
+  {
+    "id": "raghunath-temple-kullu",
+    "destination_id": "kullu",
+    "name": "Raghunath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Main deity temple of Kullu Valley. Center of the famous Kullu Dussehra festival celebrated for 7 days."
+  },
+  {
+    "id": "bundi-palace",
+    "destination_id": "bundi",
+    "name": "Bundi Palace (Garh Palace)",
+    "type": "palace",
+    "entry_fee": "₹100",
+    "description": "Rajput palace famous for Bundi-style miniature murals depicting court life, mythology, and nature."
+  },
+  {
+    "id": "bundi-stepwells",
+    "destination_id": "bundi",
+    "name": "Raniji Ki Baori",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Multi-storied stepwell from 1699 with 46-meter depth. Intricately carved pillars and elephant sculptures."
+  },
+  {
+    "id": "taragarh-fort-bundi",
+    "destination_id": "bundi",
+    "name": "Taragarh Fort",
+    "type": "fort",
+    "entry_fee": "₹100",
+    "description": "Star Fort built in 1354. Massive structure with huge reservoirs and views over the blue city of Bundi."
+  },
+  {
+    "id": "kalpa-apple-orchards",
+    "destination_id": "kalpa",
+    "name": "Kalpa Apple Orchards",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walk through terraced apple orchards with Kinner Kailash as backdrop. Best during Sept-Oct harvest."
+  },
+  {
+    "id": "narayan-nagini-temple",
+    "destination_id": "kalpa",
+    "name": "Narayan-Nagini Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient wooden temple with intricate carvings. Fine example of Kinnauri temple architecture."
+  },
+  {
+    "id": "kalpa-suicide-point",
+    "destination_id": "kalpa",
+    "name": "Suicide Point (Roghi Village)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dramatic cliff viewpoint overlooking Sutlej Gorge and Kinner Kailash range. Despite the name, a stunning photo spot."
+  },
+  {
+    "id": "malana-village",
+    "destination_id": "parvati-valley",
+    "name": "Malana Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Ancient village claiming descent from Alexander's army. Unique democracy and customs. Photography restricted."
+  },
+  {
+    "id": "parvati-river-confluence",
+    "destination_id": "parvati-valley",
+    "name": "Parvati-Beas Confluence (Bhuntar)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Where Parvati River meets the Beas. Scenic spot marking the entrance to Parvati Valley."
+  },
+  {
+    "id": "tosh-village",
+    "destination_id": "parvati-valley",
+    "name": "Tosh Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Hilltop hamlet at 7,874 ft with traditional Himachali houses, apple orchards, and Parvati Valley views."
+  },
+  {
+    "id": "adi-kailash-om-parvat",
+    "destination_id": "adi-kailash",
+    "name": "Om Parvat",
+    "type": "viewpoint",
+    "entry_fee": null,
+    "description": "A 6,191m peak near Nabhi whose north face naturally forms the sacred \"Om\" symbol in snow. Best viewed from Nabhidhang campsite at dawn."
+  },
+  {
+    "id": "adi-kailash-parvati-sarovar",
+    "destination_id": "adi-kailash",
+    "name": "Parvati Sarovar (Gauri Kund)",
+    "type": "lake",
+    "entry_fee": null,
+    "description": "Glacial lake at the base of Adi Kailash, considered the bathing pool of goddess Parvati. The standard turnaround point for the yatra."
+  },
+  {
+    "id": "kamadgiri-parikrama",
+    "destination_id": "chitrakoot",
+    "name": "Kamadgiri Parikrama",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "5 km circumambulation of the sacred Kamadgiri hill. Lined with temples and ashrams."
+  },
+  {
+    "id": "ram-ghat-chitrakoot",
+    "destination_id": "chitrakoot",
+    "name": "Ram Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Most sacred ghat in Chitrakoot where Lord Rama performed aarti. Evening aarti ceremony on the Mandakini River."
+  },
+  {
+    "id": "khardung-la-cafeteria",
+    "destination_id": "khardung-la",
+    "name": "BRO Cafeteria",
+    "type": "cafe",
+    "entry_fee": "Free entry; food paid",
+    "description": "The small cafeteria run by the army at the pass — hot tea, maggi, soup. Often cited as the 'highest cafeteria' in India at 5,359m. Oxygen first-aid available."
+  },
+  {
+    "id": "khardung-la-summit",
+    "destination_id": "khardung-la",
+    "name": "Khardung La pass summit",
+    "type": "viewpoint",
+    "entry_fee": "Free (ILP required)",
+    "description": "5,359m (17,582ft) pass marker with prayer flags, a small stupa, and the BRO signage board — the definitive photo stop for every Ladakh road-trip. Built 1976 by the Border Roads Organisation; gateway to Nubra valley."
+  },
+  {
+    "id": "mokokchung-village-trail",
+    "destination_id": "mokokchung",
+    "name": "Ao Naga Village Trail",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walking trail through Ao Naga villages. Traditional morungs (dormitories), log drums, and warrior tradition."
+  },
+  {
+    "id": "longkhum-village",
+    "destination_id": "mokokchung",
+    "name": "Longkhum Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic hilltop village with views of Mt. Tiyi. Known as \"Beholder of God\" with old stone monoliths."
+  },
+  {
+    "id": "ralang-monastery",
+    "destination_id": "ravangla",
+    "name": "Ralang Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Important Karma Kagyu monastery with elaborate murals and thangka paintings. Hosts annual Pang Lhabsol festival."
+  },
+  {
+    "id": "buddha-park",
+    "destination_id": "ravangla",
+    "name": "Tathagata Tsal (Buddha Park)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Serene park with a 130-ft statue of the Buddha surrounded by Himalayan peaks. Inaugurated by the Dalai Lama."
+  },
+  {
+    "id": "vaishali-buddha-stupa",
+    "destination_id": "vaishali",
+    "name": "Ashoka Pillar & Relic Stupa",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "Well-preserved Ashoka Pillar with single lion capital. Relic stupa found to contain Buddha's ashes."
+  },
+  {
+    "id": "vaishali-museum",
+    "destination_id": "vaishali",
+    "name": "Vaishali Museum",
+    "type": "museum",
+    "entry_fee": "₹10",
+    "description": "Artifacts from ancient Vaishali — world's first republic. Terracotta, coins, and Buddhist sculptures."
+  },
+  {
+    "id": "umngot-river",
+    "destination_id": "dawki",
+    "name": "Umngot River",
+    "type": "viewpoint",
+    "entry_fee": "₹500-1,000",
+    "description": "Crystal-clear river where boats appear to float on air. Glass-bottom boat rides near India-Bangladesh border."
+  },
+  {
+    "id": "kishtwar-np",
+    "destination_id": "kishtwar",
+    "name": "Kishtwar National Park",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Rugged national park home to snow leopard, brown bear, and Himalayan ibex. Pristine and remote."
+  },
+  {
+    "id": "phawngpui-peak-trek",
+    "destination_id": "phawngpui-peak",
+    "name": "Phawngpui (Blue Mountain) Peak",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Highest peak in Mizoram at 7,100 ft. Rhododendrons and orchids. Views stretching to Myanmar."
+  },
+  {
+    "id": "zuluk-zigzag",
+    "destination_id": "zuluk",
+    "name": "Zuluk Zigzag Road",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Historic Silk Route with 32 hairpin bends visible from above. Kanchenjunga sunrise from Thambi viewpoint."
+  }
+]

@@ -1,0 +1,378 @@
+[
+  {
+    "id": "belur-math",
+    "destination_id": "kolkata",
+    "name": "Belur Math",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Headquarters of Ramakrishna Mission on the Hooghly. Built in a style combining Hindu, Islamic, and Christian architecture."
+  },
+  {
+    "id": "birla-planetarium-kolkata",
+    "destination_id": "kolkata",
+    "name": "Birla Planetarium",
+    "type": "museum",
+    "entry_fee": "₹80",
+    "description": "Second-largest planetarium in Asia. Daily shows on astronomy, cosmology, and space exploration."
+  },
+  {
+    "id": "college-street",
+    "destination_id": "kolkata",
+    "name": "College Street Book Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "World's largest secondhand book market. Miles of bookstalls with the famous Indian Coffee House."
+  },
+  {
+    "id": "dakshineswar-kali",
+    "destination_id": "kolkata",
+    "name": "Dakshineswar Kali Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple where Ramakrishna Paramahamsa had his spiritual visions. 12 Shiva temples in the compound."
+  },
+  {
+    "id": "eden-gardens",
+    "destination_id": "kolkata",
+    "name": "Eden Gardens",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Iconic cricket stadium — oldest and one of largest in the world. 66,000 capacity. Museum inside."
+  },
+  {
+    "id": "howrah-bridge",
+    "destination_id": "kolkata",
+    "name": "Howrah Bridge",
+    "type": "bridge",
+    "entry_fee": "Free",
+    "description": "Iconic cantilever bridge over the Hooghly River. One of the busiest bridges in the world with no nuts or bolts."
+  },
+  {
+    "id": "indian-museum-kolkata",
+    "destination_id": "kolkata",
+    "name": "Indian Museum",
+    "type": "museum",
+    "entry_fee": "₹75",
+    "description": "Oldest and largest museum in India (1814). Egyptian mummy, Gandhara sculptures, and meteorite collection."
+  },
+  {
+    "id": "jorasanko-thakur-bari",
+    "destination_id": "kolkata",
+    "name": "Jorasanko Thakur Bari (Tagore House)",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Ancestral home of Rabindranath Tagore where he was born and died. Museum of his life, art, and manuscripts."
+  },
+  {
+    "id": "kalighat-temple",
+    "destination_id": "kolkata",
+    "name": "Kalighat Kali Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 51 Shakti Peethas. Ancient temple where the city of Calcutta derives its name from."
+  },
+  {
+    "id": "kumartuli",
+    "destination_id": "kolkata",
+    "name": "Kumartuli (Potters' Quarter)",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Artisan quarter where clay idols for Durga Puja and other festivals are sculpted. Living craft heritage."
+  },
+  {
+    "id": "marble-palace",
+    "destination_id": "kolkata",
+    "name": "Marble Palace",
+    "type": "palace",
+    "entry_fee": "Free (permit needed)",
+    "description": "Neoclassical mansion with art collection including Rubens, Reynolds, and Titian paintings. Free entry."
+  },
+  {
+    "id": "mother-house",
+    "destination_id": "kolkata",
+    "name": "Mother House (Mother Teresa's Home)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Headquarters of Missionaries of Charity. Mother Teresa's tomb and small museum of her life."
+  },
+  {
+    "id": "flower-market-kolkata",
+    "destination_id": "kolkata",
+    "name": "Mullick Ghat Flower Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Largest flower market in Asia below Howrah Bridge. 2,000+ vendors. Best visited at dawn."
+  },
+  {
+    "id": "princep-ghat",
+    "destination_id": "kolkata",
+    "name": "Prinsep Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Neoclassical colonnade on the Hooghly riverbank. Sunset views and evening boat rides."
+  },
+  {
+    "id": "south-park-cemetery",
+    "destination_id": "kolkata",
+    "name": "South Park Street Cemetery",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Gothic colonial cemetery from 1767 with ornate tombs. One of the oldest non-church cemeteries in the world."
+  },
+  {
+    "id": "st-pauls-cathedral",
+    "destination_id": "kolkata",
+    "name": "St. Paul's Cathedral",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Gothic Revival cathedral built 1839-1847. Stained glass windows, frescoes, and colonial-era architecture."
+  },
+  {
+    "id": "victoria-memorial",
+    "destination_id": "kolkata",
+    "name": "Victoria Memorial",
+    "type": "monument",
+    "entry_fee": "₹30",
+    "description": "Magnificent white marble hall built 1906-1921. Museum of British-era paintings, manuscripts, and artifacts."
+  },
+  {
+    "id": "kisama-heritage-village",
+    "destination_id": "kohima",
+    "name": "Kisama Heritage Village",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Venue of the famous Hornbill Festival (Dec 1-10). Naga tribal morungs, bamboo architecture, and cultural showcases."
+  },
+  {
+    "id": "kohima-cathedral",
+    "destination_id": "kohima",
+    "name": "Kohima Cathedral",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "One of the largest cathedrals in Asia. Center of Nagaland's predominantly Christian community."
+  },
+  {
+    "id": "kohima-war-cemetery",
+    "destination_id": "kohima",
+    "name": "Kohima War Cemetery",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Commonwealth War Graves Commission cemetery. Marks the site of the Battle of Kohima (1944) — turning point of WWII in Asia."
+  },
+  {
+    "id": "kohima-state-museum",
+    "destination_id": "kohima",
+    "name": "Nagaland State Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Artifacts, weapons, textiles, and ceremonial objects of all 16 Naga tribes. Tribal heritage showcase."
+  },
+  {
+    "id": "barot-trout-farm",
+    "destination_id": "barot-valley",
+    "name": "Barot Trout Farm",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Government fish farm breeding rainbow and brown trout. Surrounded by mountains with fishing opportunities."
+  },
+  {
+    "id": "nargu-wildlife-sanctuary",
+    "destination_id": "barot-valley",
+    "name": "Nargu Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dense forest sanctuary home to Himalayan black bear, monal, and leopard. Great for birding."
+  },
+  {
+    "id": "shanan-powerhouse",
+    "destination_id": "barot-valley",
+    "name": "Shanan Hydroelectric Project",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Asia's first hydro project built by Col. Ninon in 1932. British-era marvel of engineering."
+  },
+  {
+    "id": "jalori-pass-jibhi",
+    "destination_id": "jibhi",
+    "name": "Jalori Pass",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Mountain pass at 10,282 ft with panoramic Himalayan views. Starting point for Serolsar Lake trek."
+  },
+  {
+    "id": "jibhi-waterfall",
+    "destination_id": "jibhi",
+    "name": "Jibhi Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Hidden waterfall reached via a short forest trail. Crystal-clear pool at the base for wading."
+  },
+  {
+    "id": "raghupur-fort-jibhi",
+    "destination_id": "jibhi",
+    "name": "Raghupur Fort Trek",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Ruins of a 14th-century fort perched on a ridge above Jalori Pass with 360-degree mountain views."
+  },
+  {
+    "id": "birthi-falls",
+    "destination_id": "munsiyari",
+    "name": "Birthi Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "126-meter waterfall on the way to Munsiyari. Short trek from the road to the base."
+  },
+  {
+    "id": "nanda-devi-viewpoint",
+    "destination_id": "munsiyari",
+    "name": "Nanda Devi Base Camp View",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Panoramic viewpoint of five Panch Chuli peaks glowing at sunrise. One of the best Himalayan panoramas."
+  },
+  {
+    "id": "tribal-heritage-museum",
+    "destination_id": "munsiyari",
+    "name": "Tribal Heritage Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Private museum showcasing artifacts and lifestyle of the Bhotia and Johari tribal communities."
+  },
+  {
+    "id": "eme-temple-vadodara",
+    "destination_id": "vadodara",
+    "name": "EME Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Unique aluminium-covered temple built by the Indian Army's EME corps. All faiths represented inside."
+  },
+  {
+    "id": "laxmi-vilas-palace",
+    "destination_id": "vadodara",
+    "name": "Laxmi Vilas Palace",
+    "type": "palace",
+    "entry_fee": "₹250",
+    "description": "4x the size of Buckingham Palace. Indo-Saracenic marvel with Italian marble, Belgian stained glass, and Venetian mosaics."
+  },
+  {
+    "id": "champaner-from-vadodara",
+    "destination_id": "vadodara",
+    "name": "Sayaji Baug (Kamati Baug)",
+    "type": "garden",
+    "entry_fee": "₹20",
+    "description": "Sprawling garden with Baroda Museum, planetarium, zoo, toy train, and health museum. All-day family destination."
+  },
+  {
+    "id": "chandratal-lake",
+    "destination_id": "chandratal",
+    "name": "Chandra Taal Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "The crescent moon lake itself, 1km diameter at 4,270m. Walk around the full perimeter takes 30-40 minutes. Camping is banned within 1km of the shore — camps are at Batal/Parasol area."
+  },
+  {
+    "id": "chandratal-samudri-tapu",
+    "destination_id": "chandratal",
+    "name": "Samudri Tapu Glacier viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The glacier feeding Chandra Taal — visible on the trek from Batal. Source of the Chandra River. Requires acclimatisation; not for day visitors."
+  },
+  {
+    "id": "goecha-la-trek",
+    "destination_id": "khangchendzonga-np",
+    "name": "Goecha La Trek",
+    "type": "viewpoint",
+    "entry_fee": "₹200 (permit)",
+    "description": "Iconic 10-day trek to Goecha La pass at 15,100 ft. Face-to-face with Kanchenjunga and surrounding 7,000m peaks."
+  },
+  {
+    "id": "kanchenjunga-base-camp",
+    "destination_id": "khangchendzonga-np",
+    "name": "Kanchenjunga Base Camp Trail",
+    "type": "viewpoint",
+    "entry_fee": "₹200 (permit)",
+    "description": "UNESCO World Heritage mixed site. Trek through rhododendron forests to views of the world's 3rd highest peak."
+  },
+  {
+    "id": "mechuka-valley-walk",
+    "destination_id": "mechuka",
+    "name": "Mechuka Valley Walk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Flat valley floor walk through Memba tribal villages with Siyom River and snow peaks."
+  },
+  {
+    "id": "mechuka-monastery",
+    "destination_id": "mechuka",
+    "name": "Samten Yongcha Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Ancient Gelug Buddhist monastery at the edge of the McMahon Line. Peaceful with mountain backdrop."
+  },
+  {
+    "id": "ranthambore-fort",
+    "destination_id": "ranthambore",
+    "name": "Ranthambore Fort",
+    "type": "fort",
+    "entry_fee": "₹100",
+    "description": "UNESCO World Heritage hill fort within the national park. Ancient temples and dramatic cliff-top views."
+  },
+  {
+    "id": "ranthambore-safari",
+    "destination_id": "ranthambore",
+    "name": "Ranthambore Tiger Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹1,500-2,500",
+    "description": "One of the best places in India to spot Bengal tigers in the wild. Jeep and canter safaris."
+  },
+  {
+    "id": "nehru-mountaineering-institute",
+    "destination_id": "uttarkashi",
+    "name": "Nehru Institute of Mountaineering",
+    "type": "museum",
+    "entry_fee": "₹30",
+    "description": "Premier mountaineering training institute with a museum of expedition artifacts and Everest memorabilia."
+  },
+  {
+    "id": "vishwanath-temple-uttarkashi",
+    "destination_id": "uttarkashi",
+    "name": "Vishwanath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple with a massive trident (trishul). Believed to be built during the Mahabharata era."
+  },
+  {
+    "id": "takht-damdama-sahib",
+    "destination_id": "damdama-sahib",
+    "name": "Takht Sri Damdama Sahib",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "One of five Sikh Takhts. Where Guru Gobind Singh compiled the final version of Sri Guru Granth Sahib."
+  },
+  {
+    "id": "kiphire-saramati-base",
+    "destination_id": "kiphire",
+    "name": "Thanamir Village & Saramati Base",
+    "type": "viewpoint",
+    "entry_fee": "free",
+    "description": "Small village at base of Saramati Peak. Last supply point before trek. Local homestays and guides available."
+  },
+  {
+    "id": "glory-peak",
+    "destination_id": "pfutsero",
+    "name": "Glory Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Highest inhabited town in Nagaland at 7,250 ft. Views of the Dzukou Valley and Manipur hills."
+  },
+  {
+    "id": "verinag-spring",
+    "destination_id": "verinag",
+    "name": "Verinag Spring",
+    "type": "viewpoint",
+    "entry_fee": "₹25",
+    "description": "Mughal-era octagonal stone basin at the source of Jhelum River. Built by Emperor Jahangir in 1620."
+  }
+]

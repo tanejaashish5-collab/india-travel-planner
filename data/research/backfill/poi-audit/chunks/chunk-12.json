@@ -1,0 +1,386 @@
+[
+  {
+    "id": "aliyar-dam-anamalai",
+    "destination_id": "anamalai",
+    "name": "Aliyar Dam",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Dam across Aliyar River with adjoining garden and aquarium. Mountainous backdrop creates scenic location. Walking trails around the reservoir. Popular for day outings and nature walks."
+  },
+  {
+    "id": "elephant-safari-anamalai",
+    "destination_id": "anamalai",
+    "name": "Elephant Safari",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Elephant-back forest tours 10:30 AM to 3:30 PM daily. Slow-moving vantage point for spotting macaques, elephants, leopards. More intimate wildlife encounters than vehicle safaris."
+  },
+  {
+    "id": "jeep-safari-anamalai",
+    "destination_id": "anamalai",
+    "name": "Jeep Safari",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Forest department jeep tours through core reserve zones. Morning (6:30-9:30 AM) and afternoon (3:00-5:30 PM) drives. Wildlife viewing: elephants, gaur (Indian bison), deer, wild boar, lion-tailed macaques, hornbills, leopards."
+  },
+  {
+    "id": "kozhikamuthi-elephant-camp-anamalai",
+    "destination_id": "anamalai",
+    "name": "Kozhikamuthi Elephant Camp",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "Historic timber-training camp for elephants, operational until early 1970s. Now a tourist attraction documenting colonial-era forest harvesting. Museum displays equipment and photographs of logging heritage."
+  },
+  {
+    "id": "monkey-falls-anamalai",
+    "destination_id": "anamalai",
+    "name": "Monkey Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Seasonal waterfall that flows during southwest monsoon. Mountain stream cascades into natural pool with cold mountain water. Accessible by short trek through forest path."
+  },
+  {
+    "id": "fort-st-george-chennai",
+    "destination_id": "chennai",
+    "name": "Fort St. George",
+    "type": "monument",
+    "entry_fee": "₹100",
+    "description": "Built in 1644, India's first British fort with museum exhibits of arms, uniforms, manuscripts, and historical artifacts from the colonial period."
+  },
+  {
+    "id": "government-museum-chennai",
+    "destination_id": "chennai",
+    "name": "Government Museum Chennai",
+    "type": "museum",
+    "entry_fee": "₹50",
+    "description": "One of India's oldest museums housing sculptures, bronzes, and artifacts from Chola, Hoysala, and Vijayanagar dynasties covering South Indian cultural heritage."
+  },
+  {
+    "id": "kapaleeshwarar-temple-chennai",
+    "destination_id": "chennai",
+    "name": "Kapaleeshwarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "7th century Pallava temple dedicated to Lord Shiva with 120-foot ornate gopuram and Dravidian architecture. Still an active place of worship."
+  },
+  {
+    "id": "marina-beach-chennai",
+    "destination_id": "chennai",
+    "name": "Marina Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Second-longest urban beach in the world, 13 km of sandy shore along the Bay of Bengal with public access, food stalls, and daily swimming."
+  },
+  {
+    "id": "san-thome-basilica-chennai",
+    "destination_id": "chennai",
+    "name": "San Thome Basilica",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Neo-Gothic church built over the tomb of St. Thomas, one of Jesus's apostles. Architectural monument showcasing colonial-era craftsmanship."
+  },
+  {
+    "id": "bahubali-monolith-shravanabelagola",
+    "destination_id": "shravanabelagola",
+    "name": "Bahubali Monolith (Gomateshwara)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "57-foot granite monolith carved in 981 CE from a single stone on Vindhyagiri Hill. One of the world's tallest stone carvings. Visible from 25km away."
+  },
+  {
+    "id": "chandragiri-hill-shravanabelagola",
+    "destination_id": "shravanabelagola",
+    "name": "Chandragiri Hill",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Easier climb (370 steps) than Vindhyagiri. Chandragupta Basadi marks Chandragupta Maurya's meditation site. Ancient Jain basadis with intricate carvings."
+  },
+  {
+    "id": "jain-mathas-shravanabelagola",
+    "destination_id": "shravanabelagola",
+    "name": "Jain Mathas (Monasteries)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Bhandari Basadi and other Jain monasteries in town offering free vegetarian meals (annadana) to visitors. Open to all faiths. Spiritual experience in meditation halls."
+  },
+  {
+    "id": "shravanabelagola-museum",
+    "destination_id": "shravanabelagola",
+    "name": "Shravanabelagola Museum",
+    "type": "museum",
+    "entry_fee": "Varies",
+    "description": "Near the base of Vindhyagiri Hill. Displays Jain sculptures, inscriptions, and artifacts from the 9th–15th centuries. Small but comprehensive regional history."
+  },
+  {
+    "id": "vindhyagiri-hill-shravanabelagola",
+    "destination_id": "shravanabelagola",
+    "name": "Vindhyagiri Hill",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "614 barefoot rock-cut steps lead to the summit with Jain temple and panoramic views. Shoes removed at base (socks allowed). Hot granite in afternoon — start early."
+  },
+  {
+    "id": "bryant-park-kodaikanal",
+    "destination_id": "kodaikanal",
+    "name": "Bryant Park",
+    "type": "garden",
+    "entry_fee": "₹30",
+    "description": "20.5 acres planned 1908 by forest officer H.D. Bryant. 325 tree/shrub/cactus species; 740 rose varieties; flower rainbow."
+  },
+  {
+    "id": "coakers-walk-kodaikanal",
+    "destination_id": "kodaikanal",
+    "name": "Coaker's Walk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "1.3km narrow cliff-edge promenade built 19th century by Lieutenant Coaker. Sweeping panoramic vistas; peaceful walk."
+  },
+  {
+    "id": "kodai-lake-kodaikanal",
+    "destination_id": "kodaikanal",
+    "name": "Kodaikanal Lake",
+    "type": "lake",
+    "entry_fee": "₹50 (boating extra)",
+    "description": "Star-shaped man-made lake built 1863 by British missionaries. 60 sq km; peaceful boating and tree-lined lakeside walks."
+  },
+  {
+    "id": "pillar-rocks-kodaikanal",
+    "destination_id": "kodaikanal",
+    "name": "Pillar Rocks",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Three massive granite boulders 400 feet tall standing shoulder-to-shoulder. Often shrouded in mist; dramatic valley and forest views."
+  },
+  {
+    "id": "mangala-devi-temple",
+    "destination_id": "thekkady",
+    "name": "Mangala Devi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple dedicated to Goddess Mangala within the Periyar Wildlife Sanctuary. Accessible during Chitra Pournami festival primarily. Offers views of surrounding forested hills."
+  },
+  {
+    "id": "periyar-lake-safari",
+    "destination_id": "thekkady",
+    "name": "Periyar Lake Boat Safari",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Morning and evening boat safaris on Periyar Lake to spot elephants, gaurs, sambar, and leopards at the water's edge. Wildlife sanctuary spreads across 925 sq km."
+  },
+  {
+    "id": "spice-plantation-walk",
+    "destination_id": "thekkady",
+    "name": "Spice Plantation Walk",
+    "type": "garden",
+    "entry_fee": "Varies",
+    "description": "Guided walks through pepper, cardamom, and tea plantations around Thekkady. Learn cultivation methods and taste fresh spices. Part of local tourism network."
+  },
+  {
+    "id": "thekkady-tribal-village",
+    "destination_id": "thekkady",
+    "name": "Tribal Heritage Programme",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Immersive experience with reformed tribal guides who share stories of traditional hunting, forest knowledge, and sustainable living practices in the sanctuary."
+  },
+  {
+    "id": "aurangabad-caves-aurangabad",
+    "destination_id": "aurangabad",
+    "name": "Aurangabad Caves",
+    "type": "monument",
+    "entry_fee": "₹400",
+    "description": "Ancient Buddhist cave temples carved between 2nd-6th centuries. Ten caves decorated with sculptures and carvings depicting Buddhist religious scenes."
+  },
+  {
+    "id": "bibi-ka-maqbara-aurangabad",
+    "destination_id": "aurangabad",
+    "name": "Bibi Ka Maqbara",
+    "type": "monument",
+    "entry_fee": "₹600",
+    "description": "17th-century mausoleum built by Aurangzeb for his wife Dilras Banu Begum. Also known as the Taj of the Deccan, featuring white marble inlay work."
+  },
+  {
+    "id": "panchakki-aurangabad",
+    "destination_id": "aurangabad",
+    "name": "Panchakki (Water Mill)",
+    "type": "monument",
+    "entry_fee": "₹100",
+    "description": "Historic 17th-century water mill built adjacent to the tomb of Sufi saint Baba Urus. The mill uses an underground water channel spanning 13 km from a spring."
+  },
+  {
+    "id": "birdwatching-chidiya-tapu",
+    "destination_id": "chidiya-tapu",
+    "name": "Bird Island Birdwatching",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Home to over 240 species of native and migratory birds. Spot drongos, parakeets, sea eagles, and herons amidst lush forests and mangroves. Early morning and late afternoon are best times for sightings."
+  },
+  {
+    "id": "sunset-viewpoint-chidiya-tapu",
+    "destination_id": "chidiya-tapu",
+    "name": "Chidiya Tapu Sunset Point",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "One of Port Blair's best sunset spots. Sky transforms to orange, pink, and gold as sun dips into the Andaman Sea. Reached via Mundapahad Trek or directly from the beach. Popular with photographers."
+  },
+  {
+    "id": "mundapahad-trek-chidiya-tapu",
+    "destination_id": "chidiya-tapu",
+    "name": "Mundapahad Trek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Easy-to-moderate forest walk (1.5-2km one way) through lush rainforest to a cliff-top viewpoint. Journey takes 30 minutes. Panoramic views of the Andaman Sea where coastline meets the ocean."
+  },
+  {
+    "id": "hyderabad-charminar",
+    "destination_id": "hyderabad",
+    "name": "Charminar",
+    "type": "monument",
+    "entry_fee": "₹100",
+    "description": "Iconic 1591 monument built by Quli Qutub Shah marking Hyderabad's founding. Four minarets (Char Minar) dominate the old city, with bustling markets and authentic biryani stalls surrounding it."
+  },
+  {
+    "id": "golconda-fort-hyderabad",
+    "destination_id": "hyderabad",
+    "name": "Golconda Fort",
+    "type": "fort",
+    "entry_fee": "₹65",
+    "description": "Ancient citadel of Qutb Shahi dynasty with renowned acoustics and panoramic city views. Sound-and-light evening show illustrates the fort's layered history and architecture."
+  },
+  {
+    "id": "hussain-sagar-buddha-statue-hyderabad",
+    "destination_id": "hyderabad",
+    "name": "Hussain Sagar Lake and Buddha Statue",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Heart-shaped lake built in 1562, with world's tallest monolithic Buddha statue (18 meters) on Gibraltar Rock. Major recreational and sightseeing destination in city center."
+  },
+  {
+    "id": "hanging-pillar-lepakshi",
+    "destination_id": "lepakshi",
+    "name": "Hanging Pillar",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "One of 70 pillars in the temple complex; this pillar barely touches the ground allowing a thin object (paper or coin) to pass underneath. An architectural marvel showcasing Vijayanagara engineering precision."
+  },
+  {
+    "id": "monolithic-nandi-lepakshi",
+    "destination_id": "lepakshi",
+    "name": "Monolithic Nandi Statue",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "20-foot-tall, 30-foot-long granite bull carved from a single stone block located 200m from the temple. One of India's largest monolithic Nandi sculptures, ornately decorated with garlands and bells."
+  },
+  {
+    "id": "veerabhadra-temple-lepakshi",
+    "destination_id": "lepakshi",
+    "name": "Veerabhadra Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "16th-century Vijayanagara temple dedicated to a fierce form of Shiva. Renowned for intricate wall murals depicting Ramayana and Mahabharata scenes in bright natural pigments. A centrally protected monument of national importance."
+  },
+  {
+    "id": "bharatpur-beach-neil-island",
+    "destination_id": "neil-island",
+    "name": "Bharatpur Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Shallow, clear waters with diverse coral varieties. Known for snorkelling and reef walking. Sandy beach with serene shoreline, safe for families."
+  },
+  {
+    "id": "lakshmanpur-beach-neil-island",
+    "destination_id": "neil-island",
+    "name": "Lakshmanpur Beach (Sunset Beach)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "West-facing beach known for golden sunsets. Serene shoreline with calm waters. A bicyclist's stop on the island's main route."
+  },
+  {
+    "id": "natural-bridge-neil-island",
+    "destination_id": "neil-island",
+    "name": "Natural Bridge (Howrah Bridge)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Coral limestone arch formation accessible at low tide. Rock archway decorated with creepers. Popular for photography and viewing tidal pools with marine life."
+  },
+  {
+    "id": "badamul-viewpoint-satkosia",
+    "destination_id": "satkosia",
+    "name": "Badamul Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Scenic viewpoint in Satkosia where hundreds of Indian skimmers gather on sandbars during winter months alongside Brahminy ducks, pintails, and bar-headed geese. Known for serene beauty and bird watching."
+  },
+  {
+    "id": "mahanadi-gorge-satkosia",
+    "destination_id": "satkosia",
+    "name": "Mahanadi Gorge",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "22-km-long gorge carved by the Mahanadi river through dense forest. Offers scenic views with deep blue waters and wildlife sightings including gharials, mugger crocodiles, and water birds."
+  },
+  {
+    "id": "tikarpada-camp-satkosia",
+    "destination_id": "satkosia",
+    "name": "Tikarpada Nature Camp",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Main eco-tourism hub within Satkosia Tiger Reserve featuring an interpretation centre, gharial research unit, nature trails, and overnight camping. Base for boating and wildlife observation."
+  },
+  {
+    "id": "bangaram-coral-reef",
+    "destination_id": "bangaram",
+    "name": "Bangaram Coral Gardens",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Vibrant coral reefs home to brain coral, staghorn coral, and table coral formations. Excellent snorkeling right from the beach to explore colorful tropical fish, rays, sharks, and sea turtles."
+  },
+  {
+    "id": "bangaram-lagoon",
+    "destination_id": "bangaram",
+    "name": "Bangaram Lagoon",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Enclosed by coral reef with shallow, pristine turquoise waters. Uninhabited atoll with only one resort. Dolphin spotting possible at sunset. Closest equivalent to Maldives in India."
+  },
+  {
+    "id": "kabini-river-backwater",
+    "destination_id": "kabini",
+    "name": "Kabini River Backwater",
+    "type": "lake",
+    "entry_fee": "Varies",
+    "description": "Massive reservoir formed where the Kabini River flows into Nagarhole National Park. Offers coracle rides at sunset where elephants bathe. One of India's premier wildlife watching locations with diverse fauna."
+  },
+  {
+    "id": "nagarhole-national-park-kabini",
+    "destination_id": "kabini",
+    "name": "Nagarhole National Park",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Southern fringes of this tiger reserve offer jeep and canter safaris to spot elephants, tigers, leopards, gaurs, and various bird species. One of India's designated Tiger Reserves with rich biodiversity."
+  },
+  {
+    "id": "butterfly-garden-ponmudi",
+    "destination_id": "ponmudi",
+    "name": "Butterfly Garden and Forest Trails",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walking trails through forests home to 195+ butterfly species including rare Western Ghats endemics. Best in monsoon and post-monsoon months. Peppara Wildlife Sanctuary nearby hosts leopards and sambars."
+  },
+  {
+    "id": "ponmudi-golden-peak-ponmudi",
+    "destination_id": "ponmudi",
+    "name": "Ponmudi Golden Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Golden Peak viewpoint at 1,100 m accessed via 22 hairpin turns. Panoramic misty valley views with lush vegetation. Best visited early morning for clear visibility."
+  },
+  {
+    "id": "nagarjuna-konda-museum-nagarjuna-konda",
+    "destination_id": "nagarjuna-konda",
+    "name": "Nagarjuna Konda Island Museum",
+    "type": "museum",
+    "entry_fee": "Rs 20 (adults), Rs 10 (children)",
+    "description": "Island museum on Nagarjuna Sagar reservoir housing 3rd–4th century Buddhist sculptures and artifacts from ancient monasteries. 14 replica structures recreate excavated ruins. Accessible only by boat ferry (45-minute ride from dam)."
+  }
+]

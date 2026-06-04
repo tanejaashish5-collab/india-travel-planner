@@ -1,0 +1,386 @@
+[
+  {
+    "id": "asar-mahal-bijapur",
+    "destination_id": "bijapur",
+    "name": "Asar Mahal",
+    "type": "museum",
+    "entry_fee": "₹30",
+    "description": "A 17th-century structure believed to house a relic of the Prophet Muhammad. The building serves as a museum displaying Islamic manuscripts and Adil Shahi artifacts."
+  },
+  {
+    "id": "gol-gumbaz-bijapur",
+    "destination_id": "bijapur",
+    "name": "Gol Gumbaz",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "Mausoleum of Muhammad Adil Shah (1656) with the world's second-largest unsupported dome after St Peter's Basilica. The Whispering Gallery inside carries sound clearly across 37 metres."
+  },
+  {
+    "id": "ibrahim-roza-bijapur",
+    "destination_id": "bijapur",
+    "name": "Ibrahim Roza",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "Built in 1627, this mausoleum with intricate calligraphy and serene gardens is believed to have inspired the Taj Mahal's design. The proportions and detailing showcase Adil Shahi architecture at its finest."
+  },
+  {
+    "id": "jama-masjid-bijapur",
+    "destination_id": "bijapur",
+    "name": "Jama Masjid",
+    "type": "mosque",
+    "entry_fee": "Free",
+    "description": "One of India's finest Islamic structures with capacity for 2,250 worshippers. Distinctive arched arcades and a prayer hall of exceptional proportions reflect Adil Shahi grandeur."
+  },
+  {
+    "id": "malik-e-maidan-bijapur",
+    "destination_id": "bijapur",
+    "name": "Malik-e-Maidan",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "A 55-tonne bronze cannon with a lion swallowing elephants cast on its barrel. One of the largest medieval cannons in India, mounted on the old fortification walls."
+  },
+  {
+    "id": "upli-burj-bijapur",
+    "destination_id": "bijapur",
+    "name": "Upli Burj",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A historic watchtower on the fort walls offering panoramic views of Bijapur city and surrounding plains. The tower provides insight into the fort's defensive architecture."
+  },
+  {
+    "id": "hemakuta-hill-hampi",
+    "destination_id": "hampi",
+    "name": "Hemakuta Hill",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Sacred hill with ancient temple ruins and 34 small shrines scattered across its slopes. Offers 360-degree views of Hampi's ruins and boulder-strewn landscape. Popular for sunset viewing and photography."
+  },
+  {
+    "id": "lotus-mahal-hampi",
+    "destination_id": "hampi",
+    "name": "Lotus Mahal",
+    "type": "palace",
+    "entry_fee": "Free",
+    "description": "A ruined palace in the Royal Enclosure with unique Indo-Islamic architecture. Features symmetrical arches and decorative elements, offering insight into royal life during Vijayanagara's prosperity."
+  },
+  {
+    "id": "stone-chariot-hampi",
+    "destination_id": "hampi",
+    "name": "Stone Chariot",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "An exquisitely carved stone chariot dedicated to Garuda, Vishnu's mount, located within Vittala Temple complex. Featured on India's 50-rupee currency note. Represents the apex of Vijayanagara sculptural artistry."
+  },
+  {
+    "id": "virupaksha-temple-hampi",
+    "destination_id": "hampi",
+    "name": "Virupaksha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Dating to the 7th century, this active Shiva temple is one of India's oldest functioning shrines. Features impressive architecture and panoramic views of Hampi's ruins. Hosts annual spring festival and Maha Shivaratri celebrations."
+  },
+  {
+    "id": "vittala-temple-hampi",
+    "destination_id": "hampi",
+    "name": "Vittala Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Heralded as a masterpiece of Vijayanagara architecture, this temple complex is 3 km northeast of Virupaksha Temple. Features the iconic stone chariot (Garuda), 56 musical pillars, and intricate carvings."
+  },
+  {
+    "id": "alleppey-backwaters",
+    "destination_id": "alleppey",
+    "name": "Alleppey Backwaters",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "900km network of interconnected canals, rivers, and lagoons. Kettuvallam (traditional wooden houseboat) cruises offer immersive backwater experience. Most extensive in India."
+  },
+  {
+    "id": "alleppey-beach-lighthouse",
+    "destination_id": "alleppey",
+    "name": "Alleppey Beach and Lighthouse",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Historic lighthouse and sandy beach in the town centre. One of India's older lighthouses. Sunset viewing point. Beach has shacks and water sports."
+  },
+  {
+    "id": "nehru-trophy-snake-boat-race-alleppey",
+    "destination_id": "alleppey",
+    "name": "Nehru Trophy Snake Boat Race",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Annual August festival featuring 100-foot-long snake boats with 100 rowers each. Synchronized paddling, traditional music. Spectator boats available. Dates vary yearly."
+  },
+  {
+    "id": "vembanad-lake-alleppey",
+    "destination_id": "alleppey",
+    "name": "Vembanad Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Largest lagoon in the backwater network, 68km long. Fishing, prawn farming, and bird watching sites. Receives monsoon rains, rises 2 metres seasonally."
+  },
+  {
+    "id": "dandeli-wildlife-sanctuary-dandeli",
+    "destination_id": "dandeli",
+    "name": "Dandeli Wildlife Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "₹200 + guide",
+    "description": "A 834 sq km sanctuary contiguous with Anshi National Park, forming one of the largest protected areas in the Western Ghats. Wildlife includes black panthers, sloth bears, king cobras, mugger crocodiles, and over 300 bird species."
+  },
+  {
+    "id": "kali-river-rafting-dandeli",
+    "destination_id": "dandeli",
+    "name": "Kali River Rafting",
+    "type": "viewpoint",
+    "entry_fee": "₹1,200-1,500 per person",
+    "description": "Grade II-III white water rafting through a 9km stretch of the Kali River surrounded by dense Western Ghats forest. Rapids alternate with calm sections, passing through granite canyon walls. Best from October to May."
+  },
+  {
+    "id": "moulangi-eco-park-dandeli",
+    "destination_id": "dandeli",
+    "name": "Moulangi Eco Park",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "An eco-tourism facility featuring a hanging bridge 60 metres above a crocodile-inhabited pool in the Kali River. The bridge walk offers thrilling views and wildlife spotting opportunities in a natural setting."
+  },
+  {
+    "id": "syntheri-rocks-dandeli",
+    "destination_id": "dandeli",
+    "name": "Syntheri Rocks",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A natural granite canyon 300 feet deep cut by the Kali River through basalt formations. The sheer rock walls and flowing water create a dramatic landscape. A short walk leads to viewpoints along the canyon rim."
+  },
+  {
+    "id": "nandi-temple-nandi-hills",
+    "destination_id": "nandi-hills",
+    "name": "Bhoga Nandeeshwara Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple at the base of Nandi Hills with traditional architecture. Dedicated to Lord Shiva and known for its historical significance."
+  },
+  {
+    "id": "nandi-hills-viewpoint-nandi-hills",
+    "destination_id": "nandi-hills",
+    "name": "Nandi Hills Sunrise Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Hilltop viewpoint at 1478 metres elevation 60 km north of Bangalore offering magical sunrise views above clouds with pink, orange, and golden skies."
+  },
+  {
+    "id": "tipu-drop-nandi-hills",
+    "destination_id": "nandi-hills",
+    "name": "Tipu Drop",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Historic cliff edge on Nandi Hills with views of the plains below. Named after Tipu Sultan era, offers dramatic perspectives of the surrounding landscape."
+  },
+  {
+    "id": "tipu-sultans-fort-nandi-hills",
+    "destination_id": "nandi-hills",
+    "name": "Tipu Sultan's Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Historic fort with ancient connections atop Nandi Hills. Features associated with Tipu Sultan's rule and offers strategic views of surrounding landscape."
+  },
+  {
+    "id": "kurisumala-ashram",
+    "destination_id": "vagamon",
+    "name": "Kurisumala Ashram",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Christian monastic community on a hilltop accessible via 365 steps. Serene environment for meditation and prayer with valley views."
+  },
+  {
+    "id": "vagamon-meadows",
+    "destination_id": "vagamon",
+    "name": "Vagamon Meadows",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Expansive rolling meadows known as Motta Kunnu (Barren Hills) with interlocked ponds. Panoramic Western Ghats views and ideal for picnics and photography, especially at dawn."
+  },
+  {
+    "id": "vagamon-paragliding",
+    "destination_id": "vagamon",
+    "name": "Vagamon Paragliding",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Paragliding with aerial views of Western Ghats from 1,000 m altitude. Professional operators guide flights over forested slopes and meadows."
+  },
+  {
+    "id": "vagamon-pine-forest",
+    "destination_id": "vagamon",
+    "name": "Vagamon Pine Forest",
+    "type": "garden",
+    "entry_fee": "Free",
+    "description": "Six-acre man-made forest at 1,000 m elevation with rare towering pine trees planted during British era. Cool mountain air and peaceful trekking trails through tall pines."
+  },
+  {
+    "id": "ashoka-rock-edicts-dhauli",
+    "destination_id": "dhauli",
+    "name": "Ashoka's Rock Edicts",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Eleven Brahmi script edicts carved into rock by Emperor Ashoka around 261 BCE. Rock-cut elephant sculpture, one of earliest Buddhist artworks in Odisha. Marks the site of the transformative Kalinga War."
+  },
+  {
+    "id": "dhauli-giri-hills-viewpoint",
+    "destination_id": "dhauli",
+    "name": "Dhauli Giri Hills Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Hilltop vantage point overlooking the Daya River where the Kalinga War battlefield is situated. Offers views of the river valley and surrounding landscape from the stupa complex."
+  },
+  {
+    "id": "shanti-stupa-dhauli",
+    "destination_id": "dhauli",
+    "name": "Shanti Stupa",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "White Peace Pagoda built by Japanese monks in 1972. Domed structure with golden pinnacle and four golden Buddha statues facing cardinal directions. Located on the hillside above Ashoka's rock edicts."
+  },
+  {
+    "id": "water-system-kanheri-caves",
+    "destination_id": "kanheri-caves",
+    "name": "Ancient Water Management System",
+    "type": "monument",
+    "entry_fee": "₹100",
+    "description": "Rock-cut channels carved above the caves that fed monsoon rainwater into underground cisterns, providing a sophisticated water supply system for the monastic community."
+  },
+  {
+    "id": "cave-3-kanheri-caves",
+    "destination_id": "kanheri-caves",
+    "name": "Cave 3 (Chaitya Hall)",
+    "type": "monument",
+    "entry_fee": "₹100",
+    "description": "A large 26m Buddhist chaitya hall with twin Buddha figures and stone pillars, representing the finest example of Hinayana Buddhist architecture within the Kanheri complex."
+  },
+  {
+    "id": "stupa-congregation-hall-kanheri-caves",
+    "destination_id": "kanheri-caves",
+    "name": "Stupa and Congregation Hall",
+    "type": "monument",
+    "entry_fee": "₹100",
+    "description": "Buddhist pagoda (stupa) within a congregation hall surrounded by massive stone pillars, demonstrating the scale and organization of the monastic establishment at Kanheri."
+  },
+  {
+    "id": "mandrem-yoga-ashiyana-mandrem",
+    "destination_id": "mandrem",
+    "name": "Ashiyana Yoga Retreat",
+    "type": "temple",
+    "entry_fee": "Classes ₹500-1000, packages vary",
+    "description": "An internationally recognized yoga retreat centre offering classes and multi-day programs in yoga, meditation, and holistic practices. Attracts serious practitioners from around the world."
+  },
+  {
+    "id": "mandrem-beach-mandrem",
+    "destination_id": "mandrem",
+    "name": "Mandrem Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A wide, clean 3 km stretch of uncrowded sand with calm waters. A tidal creek separates the beach from the village, creating scenic wading opportunities at low tide."
+  },
+  {
+    "id": "mandrem-tidal-creek-mandrem",
+    "destination_id": "mandrem",
+    "name": "Mandrem Tidal Creek",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A scenic river creek that divides the beach into two sections. At high tide, seawater rushes in creating a dramatic visual effect and opportunities for kayaking. Creates a distinctive geographical feature unique to Mandrem."
+  },
+  {
+    "id": "ballaleshwar-temple-pali-raigad",
+    "destination_id": "pali-raigad",
+    "name": "Ballaleshwar Ganesha Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ashtavinayak temple in Pali village, Raigad district. Dedicated to Ganesha in his form as Ballaleshwar, named after the child devotee Ballal whose devotion caused Ganesha to manifest here. Original wooden shrine rebuilt in stone in 1760."
+  },
+  {
+    "id": "pali-village-market-pali-raigad",
+    "destination_id": "pali-raigad",
+    "name": "Pali Village Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Local market in Pali village selling fresh produce, local handicrafts, and traditional Maharashtrian items. Authentic village experience with minimal tourist infrastructure."
+  },
+  {
+    "id": "sarasgad-fort-pali-raigad",
+    "destination_id": "pali-raigad",
+    "name": "Sarasgad Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Hill fort near Pali village with trekking routes through forested terrain. The fort offers panoramic views of the surrounding Sahyadri range and is a moderate trek suitable for families."
+  },
+  {
+    "id": "brihadeeswarar-temple-thanjavur",
+    "destination_id": "thanjavur",
+    "name": "Brihadeeswarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "A UNESCO World Heritage site built by Raja Raja Chola I in the 11th century. Features a 66-metre tall vimana, massive granite Nandi statue, and intricate stone carvings."
+  },
+  {
+    "id": "saraswathi-mahal-library-thanjavur",
+    "destination_id": "thanjavur",
+    "name": "Saraswathi Mahal Library",
+    "type": "museum",
+    "entry_fee": "Known",
+    "description": "One of Asia's oldest libraries established in the 16th century, housing over 49,000 manuscripts in Tamil, Sanskrit, Marathi, and Telugu covering literature, medicine, and astronomy."
+  },
+  {
+    "id": "thanjavur-palace-art-gallery-thanjavur",
+    "destination_id": "thanjavur",
+    "name": "Thanjavur Palace and Art Gallery",
+    "type": "palace",
+    "entry_fee": "Known",
+    "description": "A 16th-century palace complex housing the Art Gallery with bronze and stone sculptures from the Chola, Nayak, and Maratha periods. Includes the Royal Durbar Hall and Bell Tower."
+  },
+  {
+    "id": "mirzapur-fishing-village-chandipur",
+    "destination_id": "chandipur",
+    "name": "Mirzapur Fishing Village",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Working fishing community at the confluence of Budhabalanga River and Bay of Bengal. Observe traditional fishing practices, see the daily catch, and spot horseshoe crabs on nearby shores."
+  },
+  {
+    "id": "tidal-seabed-walk-chandipur",
+    "destination_id": "chandipur",
+    "name": "Tidal Seabed Walk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walk on exposed seabed after the sea recedes up to 5km during low tide. The phenomenon occurs twice daily and reveals marine life including horseshoe crabs, starfish and other organisms."
+  },
+  {
+    "id": "chinese-fishing-nets-kumbalangi",
+    "destination_id": "kumbalangi",
+    "name": "Chinese Fishing Nets",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Over 100 traditional fishing nets in Kumbalangi's backwaters. Watch fishermen work and purchase fresh catch directly. These iconic structures are integral to daily village life."
+  },
+  {
+    "id": "mangrove-walks-kumbalangi",
+    "destination_id": "kumbalangi",
+    "name": "Mangrove Walks",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Guided walks through Kumbalangi's mangrove ecosystem. Dense mangroves separate land from water, providing breeding grounds for prawns, crabs and small fish."
+  },
+  {
+    "id": "ross-island-ruins-port-blair",
+    "destination_id": "ross-island",
+    "name": "Ross Island Colonial Ruins",
+    "type": "monument",
+    "entry_fee": "Nominal island fee (varies)",
+    "description": "Former British administrative headquarters now reclaimed by jungle. Walk through moss-covered Victorian ruins—church, bakery, officers' quarters. Spotted deer roam freely. 20-minute boat from Port Blair."
+  },
+  {
+    "id": "ross-island-lighthouse-port-blair",
+    "destination_id": "ross-island",
+    "name": "Ross Island Lighthouse",
+    "type": "monument",
+    "entry_fee": "Included with island entry",
+    "description": "Historic British-era lighthouse at the far end of the island. Used as beacon and watchtower. Offers elevated views of the bay."
+  }
+]

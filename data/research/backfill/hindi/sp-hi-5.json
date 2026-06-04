@@ -1,0 +1,427 @@
+[
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "lenyadri",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम इसे Lenyadri की गुफाओं और Bhimashankar मंदिर परिसर के सीधे पास होने के लिए सुझाते हैं — स्थानीय गाइड के साथ संरक्षित विरासत ठहरने सुविधाएँ।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "lenyadri",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे मुख्य Lenyadri गुफा प्रवेश द्वार से पैदल दूरी के अंदर (800 मीटर से कम) होने के लिए सुझाते हैं। स्थानीय बस स्टैंड भी पास है, परिवहन की परेशानी नहीं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhaderwah",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "हम इस पारिवारिक होमस्टे को घर के बने खाने, घास के मैदान की पगडंडियों का स्थानीय ज्ञान, और दक्षिण की ओर पाइन जंगलों को देखने वाली खिड़कियों वाले कमरों के लिए सुझाते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "mysore",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम इसे Mysore का सबसे करीबी सच्चा लक्जरी विकल्प (Bangalore से 90 किमी) मानते हैं। यहाँ खर्च करने के लिए, इसकी सेवा और खानपान दक्षिण भारत की पाँच सितारा परिभाषा तय करते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "lenyadri",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे Bhimashankar वन्यजीव अभयारण्य की सीमा के अंदर होने के लिए सुझाते हैं — सुबह पक्षी देखना और स्थानीय जनजातीय गाइड। यह वह प्रकार की जगह है जिसे लोग यात्रा पत्रिकाओं के लिए फोटो खींचते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "pawapuri",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इस कार्यशील खेत संपत्ति को सब्जी के खेतों के बीच रहने का दुर्लभ अवसर देने के लिए सुझाते हैं। स्थानीय कृषक परिवारों के साथ बातचीत करें, मंदिर से 4 किमी की दूरी पर, मानक तीर्थ आवास से सच में अलग।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "dwarka",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे Gomti नदी पर सोने और शाम की आरती दृश्य, सूर्योदय देखने का दुर्लभ मौका देने के लिए सुझाते हैं — Dwarka की मंदिर-कस्बा लय से एक अलग विपरीत।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kolanupaka",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "हम इस स्थानीय-संचालित लॉज को स्वच्छ कमरे, शाकाहारी भोजन, और मंदिर तथा आसपास के Nizam-युग के तालाब को देखते समय असल मूल्य के लिए सुझाते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kolanupaka",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Kolanupaka में ट्रीहाउस, हाउसबोट, फार्मस्टे, या कथा-संचालित ठहरने की सुविधाएँ नहीं हैं। हम यहाँ स्मरणीय विकल्प की सुझाव नहीं दे सकते।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "betla",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम इसे Betla का मुख्य ठहराव मानते हैं क्योंकि यह राष्ट्रीय पार्क की सीमा के अंदर है। बाघ और हाथी के आवास तक सीधी पहुँच, प्राकृतिकवादी-संचालित सुबह की सैर।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "gandhinagar",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "Gandhinagar में विशिष्ट फार्मस्टे, हाउसबोट, या विरासत परिवर्तन नहीं हैं जो सच में स्मरणीय विकल्प के रूप में योग्य हों।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "betla",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "हम Betla गाँव में स्थानीय-संचालित बजट लॉज को स्वच्छ कमरे, बुनियादी आराम, और पार्क प्रवेश लॉजिस्टिक जानने वाले कर्मचारियों के लिए सुझाते हैं — श्रृंखलाओं के मार्जन के बिना।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "betla",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम वन विभाग लॉज को सुझाते हैं क्योंकि यह पार्क प्रवेश द्वार पर है। सफारी प्रस्थान बिंदु या मुख्य आगंतुक केंद्र तक कोई टैक्सी की जरूरत नहीं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "betla",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम स्थानीय पार्क गाइड या Betla के पास के गाँवों द्वारा आयोजित अनौपचारिक होमस्टे को सुझाते हैं। जनजातीय समुदायों के साथ घनिष्ठ ठहराव, खेत की सुबह की चाय, अप्रस्तुत वन्यजीव मुठभेड़।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhoramdeo",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम इसे औपनिवेशिक वास्तुकला और 11वीं शताब्दी के Bhoramdeo मंदिर की निकटता के लिए सुझाते हैं। क्षेत्र के इतिहास में सबसे विसर्जक ठहराव।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhoramdeo",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "हम इस सादा संपत्ति को स्वच्छ कमरे, सहायक कर्मचारी, और विरासत विकल्प की कीमत का तीसरा से कम मूल्य पर विश्वसनीय WiFi के लिए सुझाते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhoramdeo",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे Bhoramdeo मंदिर और जंगल पगडंडी तक सीधी पैदल पहुँच के लिए सुझाते हैं। मुख्य दृश्यों के लिए गाइड या परिवहन की जरूरत नहीं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhoramdeo",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे ऊँचे ट्रीहाउस ठहरने के लिए सुझाते हैं जिनमें स्थानीय जनजातीय कला और खेत-से-मेज भोजन है। Chhattisgarh के वन समुदायों के साथ स्पर्शनीय जुड़ाव।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kiphire",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम इसे Kiphire का सबसे स्थापित ठहराव मानते हैं। प्रामाणिक स्थानीय आतिथ्य, Kiphire कस्बे के सांस्कृतिक स्थलों और जनजातीय गाँवों की निकटता।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kiphire",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "हम Kiphire कस्बे के पास स्थानीय परिवारों द्वारा संचालित गाँव होमस्टे को सुझाते हैं। यात्री घर के बने Naga भोजन पाते हैं और सुबह की बाजार जीवन तक सीधी पहुँच होटल की लागत का अंश।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kiphire",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे Kiphire कस्बे के केंद्र में स्थिति के लिए सुझाते हैं — बाजार, स्थानीय खाने की जगह, और जनजातीय गाँव पर्यटन के प्रस्थान बिंदु तक पैदल दूरी।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "kiphire",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम आसपास के Naga गाँवों में कृषक परिवार के साथ ठहराव को सुझाते हैं। अतिथि दैनिक कृषि कार्य में भाग लेते हैं और सांध्य जनजातीय सभा में उपस्थित होते हैं — पूर्ण विसर्जन जो अधिकांश यात्री नहीं भूलते।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chitrakote-falls",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम इसे एकमात्र संगठित रिसॉर्ट संपत्ति मानते हैं जिसमें सीधी जलप्रपात दृश्य और एयर-कंडीशनड कमरे मुख्य झरने के दृश्य में हों।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chitrakote-falls",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "हम इस APTDC-संचालित संपत्ति को जलप्रपात से 8 किमी के लिए सुझाते हैं — सादा स्वच्छ बिस्तर, डॉर्म विकल्प, और विश्वसनीय पानी। क्षेत्र में सर्वश्रेष्ठ रुपये-से-आराम अनुपात।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chitrakote-falls",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे सुझाते हैं क्योंकि कमरे जलप्रपात प्रवेश द्वार से 200 मीटर पर हैं। दृश्य बिंदु तक 5 मिनट में पैदल जा सकते हैं, परिवहन के बिना सूर्योदय देख सकते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chitrakote-falls",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इस कैनवास-तंबू संचालन को Kanger घाटी जंगल में 25 किमी के लिए सुझाते हैं क्योंकि यात्री झींगुरों और साल पेड़ों की आवाज के साथ सोते हैं, सुबह की जीप से जलप्रपात देखते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "adilabad",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम Hotel Sambhrama को कस्बे के केंद्रीय स्थान के लिए सुझाते हैं — Adilabad किले के खंडहर, बाजार, और स्थानीय खाने की जगह तक पैदल।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "jampui-hills",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम इसे पहाड़ियों पर सबसे स्थापित पूर्ण-सेवा संपत्ति मानते हैं — उचित सुविधाएँ, एक रेस्तरां, और Manipur घाटी भर दृश्य जो खर्च करने को न्यायसंगत ठहराते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "jampui-hills",
+    "slot": "value",
+    "hi": {
+      "why_nakshiq": "हम Jampui गाँव में Tripuri परिवारों द्वारा संचालित होमस्टे को सुझाते हैं — प्रामाणिक भोजन, स्थानीय अंतर्दृष्टि, और नारंगी बाग तक पहुँच रिसॉर्ट लागत का अंश।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "jampui-hills",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे सुझाते हैं क्योंकि यह मुख्य दृश्य बिंदु और गाँव बाजार के पास है। बाग की पगडंडी और बस्ती तक एक छोटी सी सैर, परिवहन की जरूरत नहीं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "jampui-hills",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम कार्यशील नारंगी बागान में ठहराव को सुझाते हैं जिसमें परिवर्तित खेत झोपड़ियों में बुनियादी कमरे हों। सुबह फल चुनें, परिवार के साथ खाना बनाएँ, ढलान पर तारों के नीचे सोएँ।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "bhadrachalam",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम Godavari पर रातोंरात हाउसबोट बुकिंग को सुझाते हैं — नदी पर सोने का विशिष्ट अनुभव। स्थानीय रूप से नाव संचालकों के माध्यम से आयोजित, निश्चित संपत्ति नहीं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ananthagiri-hills",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम Ananthagiri गाँव में या मुख्य दृष्टिकोण सड़क पर ठहराव को सुझाते हैं — मंदिर, स्थानीय दुकान, और पगडंडी शुरुआत तक पैदल दूरी, परिवहन के बिना।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ananthagiri-hills",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम आसपास के कृषि गाँवों में फार्मस्टे या ईको-कॉटेज को सुझाते हैं — फल तोड़ने में भाग लेने और जंगल पहुँच के साथ ग्रामीण Telangana जीवन देखने का मौका।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "patnitop",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इन बुनियादी अल्पाइन झोपड़ियों को ट्रेकर और साहसिक चाहने वालों के लिए सुझाते हैं जो घास के मैदान हाइकिंग पगडंडी के पास सोना चाहते हैं — न्यूनतम बुनियादी ढाँचा।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "basara",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे सुझाते हैं क्योंकि यह Basara Saraswati मंदिर और Godavari नदी के किनारे तक पैदल दूरी में है। स्थान अधिक केंद्रीय नहीं हो सकता।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "basara",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम यात्रियों के लिए इसे सुझाते हैं जो मंदिर-कस्बा लय के बाहर ग्रामीण Telangana कृषि में कदम रखना चाहते हैं। Godavari नाव पहुँच और मौसमी फसलों से जुड़े घर के बने खाने।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "machilipatnam",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इस विकल्प को 20 किमी अंदर की ओर सुझाते हैं यदि आप Machilipatnam के बंदरगाह भ्रमण के साथ सदियों पुरानी किला गाँव में ठहराव को संयुक्त करना चाहते हैं। तटीय पर्यटन के लिए एक तीव्र विपरीत, खिलौना बनाने के लिए जाना जाता है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "champhai",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे बाजार-क्षेत्र स्थिति के लिए सुझाते हैं — दुकान, मुख्य बाजार, और स्थानीय खाने की जगह तक पैदल।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "palitana",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे कस्बे के बाहर 6 किमी एक कार्यशील खेत पर ठहराव के लिए सुझाते हैं। सब्जी की कटाई में सहायता करें और आप जो चुने उससे बने भोजन खाएँ।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "chitradurga",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे Tungabhadra नदी के किनारे संपत्ति के लिए सुझाते हैं जिसमें खेत गतिविधि, मालिकों द्वारा बनाए गए परंपरागत Kannada भोजन, और कॉरकल सवारी तक सीधी पहुँच हो। किला-केंद्रित पर्यटन सर्किट से विपरीत।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "rajkot",
+    "slot": "experience",
+    "hi": {
+      "why_nakshiq": "हम Rajkot Palace विरासत सर्किट को Rajput वास्तुकला में विसर्जन चाहने वाले यात्रियों के लिए सुझाते हैं। यद्यपि समर्पित लक्जरी महल होटल Udaipur के पैमाने से मेल नहीं खाते, महल परिसर और संग्रहालय के पास ठहराव शहर में सबसे करीबी समकक्ष अनुभव दे।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "srirangam",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे Ranganathaswamy मंदिर के पूर्वी प्रवेश द्वार के सामने सड़क पर और मुख्य बाजार के 8 मिनट पैदल के लिए सुझाते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "horsley-hills",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे सुझाते हैं यदि यह स्थानीय पर्यटन संचालकों के माध्यम से मौजूद है — जंगल छतरी के बीच ऊँचे ठहराव वह हैं जो यात्री पहाड़ी स्टेशनों से याद रखते हैं। Horsley Hills के सघन जंगल से यह संभव है।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "srirangam",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम Kaveri नदी पर सुबह की कॉरकल सवारी और मंदिर-कस्बा कृषि के लिए इसे सुझाते हैं — जीवित अनुभव अधिकांश आगंतुक याद रखते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "belum-caves",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इस कार्यशील कपास और गन्ने के खेत को गुफाओं से 12 किमी के लिए सुझाते हैं जहाँ अतिथि कटाई में सहायता करते हैं, बाग उपज से भोजन बनाते हैं, और परिवर्तित खेत-घर के कमरों में सोते हैं। गुफा पर्यटन के लिए सच्चा ग्रामीण विपरीत।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "gandikota",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम यात्रियों के लिए इसे सुझाते हैं जो Pennar नदी घाटी के ही किनारे सोना चाहते हैं। घाटी की प्रतिध्वनि के साथ जागें और खुली आग पर खाना बनाएँ।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "yuksom",
+    "slot": "location",
+    "hi": {
+      "why_nakshiq": "हम इसे Yuksom के केंद्रीय चौराहे के पास स्थिति के लिए सुझाते हैं — Kanyam Khola पुल, मुख्य बाजार, और ट्रेक पंजीकरण कार्यालय तक पैदल।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "ranchi",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम Ranchi के बाहरी इलाके पर फार्मस्टे को सुझाते हैं — अनुभवात्मक ग्रामीण जीवन, जैविक भोजन, और Jharkhand के कृषि परिदृश्य को अनुभव करने का मौका। शहर होटलों से सच में अलग।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "statue-of-unity",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम Kevadia के पास जैविक खेतों पर कृषि-पर्यटन अनुभव के लिए इसे सुझाते हैं। अतिथि कटाई में सहायता करते हैं, खेत-से-मेज भोजन बनाते हैं, और परंपरागत मिट्टी की झोपड़ियों में सोते हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "anandpur-sahib",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम यात्रियों के लिए इसे सुझाते हैं जो कार्यशील मिट्टी के खेत पर सोना चाहते हैं। कुम्हार के पहिये से जागें और उन परिवारों के साथ हाथ से फेंकने की तकनीक सीखें जो पीढ़ियों से मिट्टी आकार दे रहे हैं।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "tosamaidan",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे परंपरागत चरवाहे की बस्ती में ठहराव के मौके के लिए सुझाते हैं — बुनियादी सुविधाएँ, इन ऊँचाई वाले घास के मैदानों को बनाए रखने वाली पशु-पालन जीवन का अनुभव।"
+    }
+  },
+  {
+    "table": "destination_stay_picks",
+    "destination_id": "baratang-island",
+    "slot": "xfactor",
+    "hi": {
+      "why_nakshiq": "हम इसे Baratang पर उपलब्ध होने पर सुझाते हैं — घास-छत की झोपड़ी बालू पर मैंग्रोव दृश्यों के साथ। यात्री जो दूरस्थ द्वीप सोने की अपेक्षा करते हैं, रिसॉर्ट पॉलिश के बिना।",
+      "signature_experience": "Hornbill Nest, Corbyns Cove (Port Blair हवाई अड्डे से 5 किमी, Baratang से 100 किमी) पर ANIIDCO संपत्ति है। बुकिंग Baratang कारवाँ प्रस्थान (Jirkatang से Jarawa रिज़र्व पार करते हुए) के 6:30 पूर्वाह्न के साथ संरेखित।"
+    }
+  }
+]

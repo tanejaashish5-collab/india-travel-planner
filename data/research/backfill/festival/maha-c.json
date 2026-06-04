@@ -1,0 +1,161 @@
+[
+  {
+    "destination_id": "nagpur",
+    "name": "Dhammachakra Pravartan Din",
+    "month": 10,
+    "description": "Annual observance commemorating the historic mass conversion to Buddhism led by B. R. Ambedkar on October 14-15, 1956 at Deekshabhoomi in Nagpur, when approximately 600,000 Dalits renounced Hinduism and embraced Buddhism. Celebrations feature processions with Ambedkar's blue flag and Buddha statues, conversion ceremonies, cultural programs, bhajans, and seminars.",
+    "significance": "Landmark Buddhist festival; celebrates Ambedkarite Buddhism and social equality; up to 70,000 new converts annually.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Dhammachakra_Pravartan_Din", "https://en.wikipedia.org/wiki/Deekshabhoomi"]
+  },
+  {
+    "destination_id": "ozar",
+    "name": "Ganesh Chaturthi",
+    "month": 8,
+    "description": "Celebrated at Vighnahar Ganapati Temple, one of the eight Ashtavinayak temples. Birth anniversary of Lord Ganesha with temple decorations, processions, and devotional rituals.",
+    "significance": "Major Ashtavinayak pilgrimage festival; temple renovated by Peshwa-era leader Chimaji Appa.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Vigneshwara_Temple,_Ozar"]
+  },
+  {
+    "destination_id": "ozar",
+    "name": "Maghi Ganesh (Maghi Chaturthi)",
+    "month": 1,
+    "description": "Festival celebrating Lord Ganesha in the month of Magh (January-February) at Vighnahar Ganapati Temple.",
+    "significance": "Secondary Ashtavinayak festival; Magh month observance.",
+    "source_urls": ["https://www.ashtavinayak.in/ozar-vighnahar-ganpati-ashtavinayak.php"]
+  },
+  {
+    "destination_id": "pali-raigad",
+    "name": "Ganesh Chaturthi",
+    "month": 8,
+    "description": "Grand celebration at Ballaleshwar Ganpati Temple, one of the eight Ashtavinayak temples.",
+    "significance": "Ashtavinayak festival; temple unique as only Ganesha incarnation known by devotee's name (Ballala).",
+    "source_urls": ["https://en.wikipedia.org/wiki/Ballaleshwar_Pali"]
+  },
+  {
+    "destination_id": "pali-raigad",
+    "name": "Maghi Utsav (Magha Chaturthi)",
+    "month": 1,
+    "description": "Celebrated January-February at Ballaleshwar temple with rituals, devotional singing, bhajans, and kirtans.",
+    "significance": "Major Ashtavinayak festival; temple features Vinayaka idol with two diamonds in eyes.",
+    "source_urls": ["https://www.ashtavinayak.in/pali-ballaleshwar-ganpati-ashtavinayak.php"]
+  },
+  {
+    "destination_id": "pali-raigad",
+    "name": "Bhadrapadi Utsav",
+    "month": 8,
+    "description": "Festival at Ballaleshwar temple August-September with bhajans, kirtan, and discourse.",
+    "significance": "Ashtavinayak seasonal festival; five-day celebration.",
+    "source_urls": ["https://www.ashtavinayak.in/pali-ballaleshwar-ganpati-ashtavinayak.php"]
+  },
+  {
+    "destination_id": "ranjangaon",
+    "name": "Ganesh Chaturthi",
+    "month": 8,
+    "description": "Grand celebration at Mahaganapati Temple, one of the eight Ashtavinayak temples believed to house the most powerful form of Ganesha.",
+    "significance": "Ashtavinayak pilgrimage festival; temple dates to 9th-10th centuries.",
+    "source_urls": ["https://maharashtratourism.gov.in/ashtavinayak/ranjangaon/"]
+  },
+  {
+    "destination_id": "ranjangaon",
+    "name": "Ganesh Jayanti (Maghi)",
+    "month": 1,
+    "description": "Festival celebrating rebirth of Lord Ganesha in Magha (January-February) with aartis, bhajans, and processions.",
+    "significance": "Ashtavinayak festival period; marks Ganesha rebirth.",
+    "source_urls": ["https://maharashtratourism.gov.in/ashtavinayak/ranjangaon/"]
+  },
+  {
+    "destination_id": "ratnagiri",
+    "name": "Ganesh Chaturthi",
+    "month": 8,
+    "description": "Grand celebration at Ganpatipule Temple, a swayambhu (self-originated) Ganesha shrine on the Konkan coastline. Five-day festival with elaborate decorations, aartis, and processions.",
+    "significance": "One of Maharashtra's most popular pilgrimage sites; unique western-facing Ganesha idol (Paschim-Dwar-Devata); swayambhu temple.",
+    "source_urls": ["https://www.ganpatipule.co.in/Eng/Home"]
+  },
+  {
+    "destination_id": "shirdi",
+    "name": "Ram Navami",
+    "month": 3,
+    "description": "Celebrated as Lord Rama's birth. Sai Baba encouraged its celebration in 1911, uniting Hindu and Muslim communities. Processions, puja, music, and public parayana.",
+    "significance": "One of three major Shirdi Sai Baba temple festivals; represents Sai Baba's inclusive spiritual philosophy.",
+    "source_urls": ["https://sai.org.in/en/festivals"]
+  },
+  {
+    "destination_id": "shirdi",
+    "name": "Guru Purnima",
+    "month": 7,
+    "description": "The only festival Sai Baba explicitly asked his devotees to celebrate. Honors spiritual gurus with puja, bhajan, parayana, and processions.",
+    "significance": "Sai Baba-mandated festival; honors spiritual teachers and Sai Baba's guruship; records highest attendance in India.",
+    "source_urls": ["https://sai.org.in/en/festivals"]
+  },
+  {
+    "destination_id": "shirdi",
+    "name": "Vijayadashami (Sai Baba Punyatithi)",
+    "month": 10,
+    "description": "Marks Sai Baba's Mahasamadhi (death) on October 15, 1918. Observed with puja, bhajan, parayana, and exuberant processions.",
+    "significance": "Sai Baba's death anniversary; considered holy day; one of three major temple festivals.",
+    "source_urls": ["https://sai.org.in/en/festivals"]
+  },
+  {
+    "destination_id": "siddhatek",
+    "name": "Ganesh Jayanti (Maghi Ganesh)",
+    "month": 1,
+    "description": "Celebrated in Magha (January-February) at Siddhivinayak Temple, marking Ganesha's rebirth. Three-day palkhi (palanquin) procession with devotional singing.",
+    "significance": "Ashtavinayak festival; temple has unique eastern-facing idol with trunk turned right, symbolizing supreme spiritual energy.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Siddhivinayak_Temple,_Siddhatek"]
+  },
+  {
+    "destination_id": "siddhatek",
+    "name": "Ganesh Chaturthi",
+    "month": 8,
+    "description": "Grand celebration August-September at Siddhivinayak Temple for five days with elaborate rituals and ceremonies.",
+    "significance": "Ashtavinayak pilgrimage festival; temple legend associates Vishnu's penance where Ganesha bestowed divine powers.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Siddhivinayak_Temple,_Siddhatek"]
+  },
+  {
+    "destination_id": "tarkarli",
+    "name": "Anganewadi Jatra (Bharadi Devi Yatra)",
+    "month": 2,
+    "description": "Major annual fair at Bharadi Devi Temple in Anganewadi village (Masure, ~10-12 km from Malvan). Goddess Bharadi (Earth Goddess) renowned for wish-fulfilling power. Festival February or March with no fixed date (decided by consensus). Rituals 4am to 10pm with mass cooking and 'Taate Lawane' (prasad serving). Devotees from Maharashtra, Goa, Karnataka participate.",
+    "significance": "Known as 'Pandharpur of Konkan'; one of biggest religious events in region; goddess legend spans 400 years.",
+    "source_urls": ["https://utsav.gov.in/view-event/bharadi-devi-yatra", "https://en.wikipedia.org/wiki/Aangnechi_wadi"]
+  },
+  {
+    "destination_id": "theur",
+    "name": "Ganesh Chaturthi",
+    "month": 8,
+    "description": "Celebrated August-September at Chintamani Temple for 10 days with temple ceremonies and processions honoring Chintamani Vinayaka.",
+    "significance": "Ashtavinayak festival; temple associated with Ganapatya saint Morya Gosavi; renovated by Peshwa Madhavrao I.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Chintamani_Temple,_Theur"]
+  },
+  {
+    "destination_id": "theur",
+    "name": "Maghi Chaturthi",
+    "month": 1,
+    "description": "Festival January-February at Chintamani Temple from Chaturthi to Ashtami with temple rituals and celebrations.",
+    "significance": "Ashtavinayak festival period; temple at sacred Sangam (confluence) of Mula, Mutha, and Bhima rivers.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Chintamani_Temple,_Theur"]
+  },
+  {
+    "destination_id": "trimbakeshwar",
+    "name": "Maha Shivaratri",
+    "month": 2,
+    "description": "Most important festival for Shiva devotees at Trimbakeshwar Jyotirlinga Temple. Midnight Nishita Kaal puja draws massive crowds.",
+    "significance": "Festival honoring Shiva; temple is ancient Shaiva Akhada center; one of 12 sacred Jyotirlingas.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Nashik-Trimbakeshwar_Simhastha"]
+  },
+  {
+    "destination_id": "trimbakeshwar",
+    "name": "Nashik-Trimbakeshwar Simhastha Kumbh Mela",
+    "description": "Held every 12 years when Jupiter is in Leo. One of four traditional Kumbha Melas. Dual centers: Ramkund (Panchavati, Vaishnava) and Kushavarta (Trimbakeshwar, Shaiva). Single dip during Shahi Snan (royal bath) believed to grant Moksha.",
+    "significance": "One of four major Hindu pilgrimage Melas; occurs every 12 years; draws millions; next mela October 2026 to July 2028 with peak rituals in 2027.",
+    "source_urls": ["https://en.wikipedia.org/wiki/Nashik-Trimbakeshwar_Simhastha", "https://kumbhmela.org.in/nashik-trimbakeshwar-simhastha-kumbh-mela-2027-28-official-guide"]
+  },
+  {
+    "destination_id": "panchgani",
+    "name": []
+  },
+  {
+    "destination_id": "pench-maharashtra",
+    "name": []
+  }
+]

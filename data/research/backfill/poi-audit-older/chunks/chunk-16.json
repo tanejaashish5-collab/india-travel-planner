@@ -1,0 +1,370 @@
+[
+  {
+    "id": "ambedkar-park",
+    "destination_id": "lucknow",
+    "name": "Ambedkar Memorial Park",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Sprawling 107-acre park in red sandstone with monuments dedicated to social reformers. Night illumination."
+  },
+  {
+    "id": "aminabad-market",
+    "destination_id": "lucknow",
+    "name": "Aminabad Market",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Famous for chikankari embroidery, ittar (perfume), and the legendary Lucknowi kebabs and biryani."
+  },
+  {
+    "id": "bara-imambara",
+    "destination_id": "lucknow",
+    "name": "Bara Imambara",
+    "type": "monument",
+    "entry_fee": "₹50",
+    "description": "Colossal 18th-century Shia assembly hall with the famous Bhool Bhulaiya labyrinth. Largest unsupported vaulted structure."
+  },
+  {
+    "id": "chota-imambara",
+    "destination_id": "lucknow",
+    "name": "Chhota Imambara",
+    "type": "monument",
+    "entry_fee": "Included with Bara",
+    "description": "Opulent 1838 congregation hall with Belgian chandeliers, gilt-edged mirrors, and calligraphy. \"Palace of Lights\"."
+  },
+  {
+    "id": "hazratganj",
+    "destination_id": "lucknow",
+    "name": "Hazratganj",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Heritage shopping boulevard of Lucknow. Boutiques, restaurants, and colonial architecture."
+  },
+  {
+    "id": "rumi-darwaza",
+    "destination_id": "lucknow",
+    "name": "Rumi Darwaza",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Iconic 60-ft Awadhi gateway modeled on a Turkish gate in Istanbul. Symbol of Lucknow."
+  },
+  {
+    "id": "british-residency",
+    "destination_id": "lucknow",
+    "name": "The Residency",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "Ruins of the British compound besieged during the 1857 revolt. Museum and gardens with colonial history."
+  },
+  {
+    "id": "cave-garden-nainital",
+    "destination_id": "nainital",
+    "name": "Cave Garden (Eco Cave)",
+    "type": "monument",
+    "entry_fee": "₹80",
+    "description": "Interconnected caves named after animals (bat cave, tiger cave). Adventure crawl for kids. Musical fountain show."
+  },
+  {
+    "id": "nainital-zoo",
+    "destination_id": "nainital",
+    "name": "High Altitude Zoo",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "India's highest zoo at 6,900 ft housing snow leopard, Himalayan bear, Siberian tiger, and red panda."
+  },
+  {
+    "id": "nainital-mall-road",
+    "destination_id": "nainital",
+    "name": "Mall Road Nainital",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Bustling lakeside promenade with shops, restaurants, and candle sellers. Heart of Nainital social life."
+  },
+  {
+    "id": "naina-devi-temple",
+    "destination_id": "nainital",
+    "name": "Naina Devi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Sacred temple on the banks of Naini Lake. One of the 51 Shakti Peethas — eyes of Sati fell here."
+  },
+  {
+    "id": "naini-lake",
+    "destination_id": "nainital",
+    "name": "Naini Lake",
+    "type": "lake",
+    "entry_fee": "₹160-310 (boat)",
+    "description": "Crescent-shaped natural lake at 6,358 ft. Boating, Mall Road promenade, and mountain reflections."
+  },
+  {
+    "id": "snow-view-point",
+    "destination_id": "nainital",
+    "name": "Snow View Point",
+    "type": "viewpoint",
+    "entry_fee": "₹200 (cable car)",
+    "description": "Cable car ride to 7,500 ft for panoramic views of Nanda Devi, Trishul, and other Himalayan peaks."
+  },
+  {
+    "id": "tiffin-top-nainital",
+    "destination_id": "nainital",
+    "name": "Tiffin Top (Dorothy's Seat)",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Hilltop viewpoint at 7,520 ft offering 360-degree views. Named after English painter Dorothy Kellett."
+  },
+  {
+    "id": "aina-mahal",
+    "destination_id": "kutch",
+    "name": "Aina Mahal (Mirror Palace)",
+    "type": "palace",
+    "entry_fee": "₹40",
+    "description": "18th-century palace with Venetian glass, mirrors, and tilework. Built by a craftsman trained in Europe by the Kutch Maharao."
+  },
+  {
+    "id": "ajrakhpur",
+    "destination_id": "kutch",
+    "name": "Ajrakhpur Block Printing Village",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Village specializing in the ancient ajrakh printing technique. Watch artisans stamp intricate patterns on fabric."
+  },
+  {
+    "id": "bhujodi-village",
+    "destination_id": "kutch",
+    "name": "Bhujodi Weaving Village",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Living craft village where every family weaves. Buy shawls, blankets, and bags directly from master weavers."
+  },
+  {
+    "id": "hodka-village",
+    "destination_id": "kutch",
+    "name": "Hodka Village",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Bhunga (circular mud hut) village with stunning mirror-work walls. Homestays available. Near the Rann edge."
+  },
+  {
+    "id": "prag-mahal",
+    "destination_id": "kutch",
+    "name": "Prag Mahal",
+    "type": "palace",
+    "entry_fee": "₹30",
+    "description": "Italian Gothic palace from 1865 with the tallest tower in Kutch. Grand Darbar Hall and Jain temple views from roof."
+  },
+  {
+    "id": "jungle-safari-sou",
+    "destination_id": "statue-of-unity",
+    "name": "Jungle Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹250",
+    "description": "Drive-through zoo with indigenous wildlife — lions, tigers, leopards, deer, and bear in natural habitats."
+  },
+  {
+    "id": "sardar-sarovar-dam",
+    "destination_id": "statue-of-unity",
+    "name": "Sardar Sarovar Dam",
+    "type": "viewpoint",
+    "entry_fee": "Included",
+    "description": "India's second largest dam. View from the statue area shows the full scale of this Narmada mega-project."
+  },
+  {
+    "id": "statue-viewing-gallery",
+    "destination_id": "statue-of-unity",
+    "name": "Statue of Unity Viewing Gallery",
+    "type": "viewpoint",
+    "entry_fee": "₹350",
+    "description": "Chest-level viewing gallery at 153 meters offering 360° views of the Narmada Valley, Satpura, and Vindhya ranges."
+  },
+  {
+    "id": "valley-of-flowers-sou",
+    "destination_id": "statue-of-unity",
+    "name": "Valley of Flowers",
+    "type": "garden",
+    "entry_fee": "Included in ticket",
+    "description": "Landscaped garden below the statue with seasonal flower displays and walking paths."
+  },
+  {
+    "id": "hemkund-sahib-gurdwara",
+    "destination_id": "hemkund-sahib",
+    "name": "Gurdwara Shri Hemkund Sahib",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "Star-shaped Sikh shrine at 4,329m, commemorating Guru Gobind Singh's previous incarnation per the Dasam Granth. Open late May to early October; winters are snowbound."
+  },
+  {
+    "id": "hemkund-sahib-lake",
+    "destination_id": "hemkund-sahib",
+    "name": "Hemkund Sarovar (lake)",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "The glacial lake beside the Gurdwara — pilgrims take a ritual dip in its near-freezing waters. Seven peaks ring the lake, giving the destination its 'Hemkund' (lake of snow) name."
+  },
+  {
+    "id": "hemkund-sahib-lakshman-temple",
+    "destination_id": "hemkund-sahib",
+    "name": "Lakshman Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Small Hindu shrine beside the Gurdwara, associated with the Ramayana legend of Lakshman meditating here after the war. Both Sikh and Hindu pilgrims visit as a pair."
+  },
+  {
+    "id": "dwarkadhish-temple-mathura",
+    "destination_id": "mathura",
+    "name": "Dwarkadhish Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Richly painted temple from 1814 with intricate carvings. Main festival temple during Holi and Janmashtami."
+  },
+  {
+    "id": "mathura-museum",
+    "destination_id": "mathura",
+    "name": "Government Museum Mathura",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Outstanding collection of Mathura-school sculptures from 3rd century BC. Kushan and Gupta period masterpieces."
+  },
+  {
+    "id": "krishna-janmabhoomi",
+    "destination_id": "mathura",
+    "name": "Shri Krishna Janmabhoomi",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Birthplace of Lord Krishna. Temple built at the exact prison cell site. One of India's most sacred sites."
+  },
+  {
+    "id": "tura-nokrek-biosphere",
+    "destination_id": "tura",
+    "name": "Nokrek Biosphere Reserve Visitor Centre",
+    "type": "garden",
+    "entry_fee": "₹50 entry fee",
+    "description": "UNESCO-recognized biosphere reserve. Home to rare Khasi wild orange trees and clouded leopards. Visitor information and guide services."
+  },
+  {
+    "id": "nokrek-peak",
+    "destination_id": "tura",
+    "name": "Nokrek National Park",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "UNESCO Biosphere Reserve. Home to red panda and Hoolock gibbon. Origin of the wild citrus (memang narang)."
+  },
+  {
+    "id": "tura-tribal-market",
+    "destination_id": "tura",
+    "name": "Tura Weekly Market",
+    "type": "museum",
+    "entry_fee": "free to browse",
+    "description": "Vibrant tribal market every Sunday. Garo crafts, local produce, betel leaf, and traditional wear."
+  },
+  {
+    "id": "jama-masjid-champaner",
+    "destination_id": "champaner-pavagadh",
+    "name": "Jama Masjid Champaner",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "UNESCO masterpiece. Prototype for all Mughal mosques — perfect proportions, carved minarets, jali screens."
+  },
+  {
+    "id": "kalika-mata-temple",
+    "destination_id": "champaner-pavagadh",
+    "name": "Kalika Mata Temple (Pavagadh)",
+    "type": "temple",
+    "entry_fee": "₹118 (ropeway)",
+    "description": "Shakti Peeth on Pavagadh hilltop. Ropeway + 250 steps. Panoramic views of Gujarat plains from the summit."
+  },
+  {
+    "id": "anasakti-ashram",
+    "destination_id": "kausani",
+    "name": "Anasakti Ashram",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Where Mahatma Gandhi stayed in 1929 and wrote Anasakti Yoga. Panoramic views of Trishul, Nanda Devi, Panchachuli."
+  },
+  {
+    "id": "kausani-tea-estate",
+    "destination_id": "kausani",
+    "name": "Kausani Tea Estate",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Uttarakhand's only tea garden at 5,600 ft. Walk through plantations and buy organic Kausani tea."
+  },
+  {
+    "id": "coral-reef-walk",
+    "destination_id": "marine-national-park",
+    "name": "Coral Reef Walk",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Walk on exposed coral reef at low tide. Octopus, sea horses, pufferfish, and anemones visible in shallow pools."
+  },
+  {
+    "id": "pirotan-island",
+    "destination_id": "marine-national-park",
+    "name": "Pirotan Island",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "Island with nesting birds, tidal flats, and mangroves. Accessible by boat. Flamingos in winter."
+  },
+  {
+    "id": "prashar-camping",
+    "destination_id": "prashar-lake",
+    "name": "Prashar Lake Campsite",
+    "type": "viewpoint",
+    "entry_fee": "₹500-1,500",
+    "description": "Camping spot at 8,900 ft with the lake, temple, and Dhauladhar and Kinnaur Kailash views."
+  },
+  {
+    "id": "prashar-lake-temple",
+    "destination_id": "prashar-lake",
+    "name": "Prashar Rishi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Three-tiered pagoda temple at Prashar Lake dedicated to sage Prashar. Floating island in the lake."
+  },
+  {
+    "id": "korzok-monastery",
+    "destination_id": "tso-moriri",
+    "name": "Korzok Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Highest monastery in Ladakh on the shores of Tso Moriri. Ancient gompa with Buddhist murals."
+  },
+  {
+    "id": "tso-moriri-lake",
+    "destination_id": "tso-moriri",
+    "name": "Tso Moriri Lake",
+    "type": "lake",
+    "entry_fee": "₹300 (permit)",
+    "description": "High-altitude lake at 15,075 ft — Ramsar wetland site. Breeding ground for black-necked cranes and bar-headed geese."
+  },
+  {
+    "id": "chaukori-tea-garden",
+    "destination_id": "chaukori",
+    "name": "Chaukori Tea Garden",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Small tea estate at 6,500 ft with stunning views of Panch Chuli and Nanda Devi peaks."
+  },
+  {
+    "id": "gurudongmar-lake-visit",
+    "destination_id": "gurudongmar-lake",
+    "name": "Gurudongmar Lake",
+    "type": "lake",
+    "entry_fee": "₹200 (permit)",
+    "description": "One of the highest lakes in the world at 17,800 ft. Sacred to Sikhs and Buddhists. Part never freezes."
+  },
+  {
+    "id": "shatrunjaya-hill",
+    "destination_id": "palitana",
+    "name": "Shatrunjaya Hill Temples",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "863 Jain temples on one hill, built over 900 years. 3,500+ steps to the summit. Most sacred Jain pilgrimage on Earth."
+  },
+  {
+    "id": "umlingla-pass",
+    "destination_id": "umlingla",
+    "name": "Umling La Pass",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "World's highest motorable pass at 19,024 ft. BRO-maintained road to this extreme altitude record."
+  }
+]

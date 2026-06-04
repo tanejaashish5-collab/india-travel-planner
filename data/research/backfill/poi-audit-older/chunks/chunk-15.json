@@ -1,0 +1,370 @@
+[
+  {
+    "id": "bhagsunath-temple",
+    "destination_id": "dharamshala",
+    "name": "Bhagsunath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple near a waterfall, built by King Bhagsu. Popular pilgrimage and trekking spot."
+  },
+  {
+    "id": "cricket-stadium-dharamshala",
+    "destination_id": "dharamshala",
+    "name": "HPCA Cricket Stadium",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "One of the most picturesque cricket grounds in the world at 4,108 ft with snow-capped Dhauladhar backdrop."
+  },
+  {
+    "id": "kangra-fort",
+    "destination_id": "dharamshala",
+    "name": "Kangra Fort",
+    "type": "fort",
+    "entry_fee": "₹100",
+    "description": "One of the oldest and largest forts in India, dating back to the Trigarta Kingdom. Mentioned in Alexander's war records."
+  },
+  {
+    "id": "mclo-ganj-market",
+    "destination_id": "dharamshala",
+    "name": "Kotwali Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Main market area of Dharamshala with local handicrafts, Tibetan goods, and street food stalls."
+  },
+  {
+    "id": "norbulingka-institute",
+    "destination_id": "dharamshala",
+    "name": "Norbulingka Institute",
+    "type": "museum",
+    "entry_fee": "₹100",
+    "description": "Tibetan cultural center preserving traditional arts — thangka painting, metalwork, woodcarving. Beautiful Japanese gardens."
+  },
+  {
+    "id": "tsuglagkhang",
+    "destination_id": "dharamshala",
+    "name": "Tsuglagkhang Complex",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "The Dalai Lama's residence and main temple. Tibet Museum inside."
+  },
+  {
+    "id": "war-memorial-dharamshala",
+    "destination_id": "dharamshala",
+    "name": "War Memorial",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Memorial honoring soldiers of the Kangra region. Peaceful gardens with mountain views."
+  },
+  {
+    "id": "cloud-end-mussoorie",
+    "destination_id": "mussoorie",
+    "name": "Cloud's End",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Where Mussoorie ends and the thick forest begins. Heritage bungalow site with deodar trails."
+  },
+  {
+    "id": "company-garden",
+    "destination_id": "mussoorie",
+    "name": "Company Garden (Municipal Garden)",
+    "type": "garden",
+    "entry_fee": "₹50",
+    "description": "Botanical garden established during British era with colorful flower beds and a mini lake."
+  },
+  {
+    "id": "george-everest-house",
+    "destination_id": "mussoorie",
+    "name": "George Everest House",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Ruins of the house of Sir George Everest (after whom Mt. Everest is named). Stunning 360-degree viewpoint."
+  },
+  {
+    "id": "gun-hill",
+    "destination_id": "mussoorie",
+    "name": "Gun Hill",
+    "type": "viewpoint",
+    "entry_fee": "₹150 (cable car)",
+    "description": "Second-highest peak in Mussoorie at 6,967 ft. Cable car ride with views of Bandarpunch, Srikantha peaks."
+  },
+  {
+    "id": "kempty-falls",
+    "destination_id": "mussoorie",
+    "name": "Kempty Falls",
+    "type": "waterfall",
+    "entry_fee": "₹50",
+    "description": "Popular waterfall cascading from 40 ft into a pool. Can swim in the natural pool at the base."
+  },
+  {
+    "id": "lal-tibba",
+    "destination_id": "mussoorie",
+    "name": "Lal Tibba",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Highest point in Mussoorie at 7,464 ft. Telescope available for viewing peaks including Kedarnath and Badrinath."
+  },
+  {
+    "id": "mussoorie-mall-road",
+    "destination_id": "mussoorie",
+    "name": "Mall Road Mussoorie",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Heritage promenade from Library Point to Picture Palace. Shops, eateries, and mountain views since 1825."
+  },
+  {
+    "id": "ima-keithel",
+    "destination_id": "imphal",
+    "name": "Ima Keithel (Mothers' Market)",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "World's largest all-women market. Over 3,000 women traders selling everything from vegetables to textiles."
+  },
+  {
+    "id": "war-cemetery-imphal",
+    "destination_id": "imphal",
+    "name": "Imphal War Cemetery",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "British and Indian soldiers' WWII cemetery. 1,600+ graves from the Battles of Imphal and Kohima."
+  },
+  {
+    "id": "ina-memorial-moirang",
+    "destination_id": "imphal",
+    "name": "INA War Memorial (Moirang)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Memorial where the Indian National Army first hoisted the Indian flag on Indian soil in 1944 under Netaji Bose."
+  },
+  {
+    "id": "kangla-fort",
+    "destination_id": "imphal",
+    "name": "Kangla Fort",
+    "type": "fort",
+    "entry_fee": "₹50",
+    "description": "Ancient seat of Manipuri kings. Sacred citadel with the Kangla Sha (twin dragon) gate. Now a park and museum."
+  },
+  {
+    "id": "shree-govindajee",
+    "destination_id": "imphal",
+    "name": "Shree Govindajee Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Vaishnavite temple near Kangla Fort with twin gold domes. Center of Manipuri Raas Leela dance tradition."
+  },
+  {
+    "id": "ashoka-pillar-sarnath",
+    "destination_id": "sarnath",
+    "name": "Ashoka Pillar (Lion Capital)",
+    "type": "monument",
+    "entry_fee": "Included in entry",
+    "description": "Site where Emperor Ashoka erected his pillar in 250 BC. The lion capital is India's national emblem."
+  },
+  {
+    "id": "dhamek-stupa",
+    "destination_id": "sarnath",
+    "name": "Dhamek Stupa",
+    "type": "monument",
+    "entry_fee": "₹25",
+    "description": "Massive 128-ft cylindrical stupa marking where Buddha gave his first sermon after enlightenment."
+  },
+  {
+    "id": "mulagandha-kuti-vihar",
+    "destination_id": "sarnath",
+    "name": "Mulagandha Kuti Vihar",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Modern Buddhist temple with stunning Japanese-style murals depicting Buddha's life. Built by Mahabodhi Society."
+  },
+  {
+    "id": "sarnath-museum",
+    "destination_id": "sarnath",
+    "name": "Sarnath Archaeological Museum",
+    "type": "museum",
+    "entry_fee": "₹25",
+    "description": "Houses the original Ashoka Lion Capital, plus Buddhist sculptures from the 3rd century BC onwards."
+  },
+  {
+    "id": "har-ki-doon-meadow",
+    "destination_id": "har-ki-doon",
+    "name": "Har Ki Doon meadow",
+    "type": "viewpoint",
+    "entry_fee": "Free (forest permit required)",
+    "description": "The cradle-shaped alpine meadow at 3,566m under Swargarohini I, II and Hata peak. Wildflowers in June-July. Open camping ground is 1km from the meadow base."
+  },
+  {
+    "id": "har-ki-doon-jaundhar-glacier",
+    "destination_id": "har-ki-doon",
+    "name": "Jaundhar Glacier viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "The glacier feeding Har Ki Doon, visible from the meadow. The source of the Tons river. 2-hour extension hike from the base camp for the best view."
+  },
+  {
+    "id": "har-ki-doon-osla-temple",
+    "destination_id": "har-ki-doon",
+    "name": "Osla Village & Someshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "The last inhabited village on the Har Ki Doon trek, at 2,559m. Wooden Someshwar temple (locally associated with the Pandava story of Duryodhana) is the centre of village life. Homestays here are the overnight halt before the final push."
+  },
+  {
+    "id": "shiva-temple-manikaran",
+    "destination_id": "manikaran",
+    "name": "Lord Shiva Temple Manikaran",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Hindu temple where legend says Parvati's earrings fell into the earth, creating the hot springs."
+  },
+  {
+    "id": "manikaran-hot-springs",
+    "destination_id": "manikaran",
+    "name": "Manikaran Hot Springs",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Natural hot springs where water boils at near 100°C. Rice and dal cooked in spring water for pilgrims."
+  },
+  {
+    "id": "sri-guru-nanak-dev-ji-gurdwara",
+    "destination_id": "manikaran",
+    "name": "Sri Guru Nanak Dev Ji Gurudwara",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "Massive gurudwara built over hot springs. Serves langar cooked with hot spring water."
+  },
+  {
+    "id": "tirumala-akasaganga",
+    "destination_id": "tirumala",
+    "name": "Akasaganga Waterfall",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Natural spring on the hill generating a small cascade. Considered sacred by pilgrims. Cool, shaded spot with steps leading down."
+  },
+  {
+    "id": "tirumala-papavinasanam",
+    "destination_id": "tirumala",
+    "name": "Papavinasanam Tank",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred pond where pilgrims bathe before darshan. Believed to wash away sins (papa = sin, vinasanam = destruction)."
+  },
+  {
+    "id": "tirumala-venkateswara",
+    "destination_id": "tirumala",
+    "name": "Sri Venkateswara Temple",
+    "type": "temple",
+    "entry_fee": "Free (donations)",
+    "description": "The main shrine dedicated to Vishnu (Venkateswara). Famous for the Tirupati Laddu (sweet offering). Darshan queues are long; free meals (annadanam) provided by TTD."
+  },
+  {
+    "id": "deoban-chakrata",
+    "destination_id": "chakrata",
+    "name": "Deoban",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Dense deodar and oak forest at 9,290 ft with views of Swargarohini, Bandarpunch, and Black Peak."
+  },
+  {
+    "id": "tiger-falls-chakrata",
+    "destination_id": "chakrata",
+    "name": "Tiger Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Highest waterfall in Uttarakhand at 312 ft. Hidden in dense forest, reached by a 5 km trek."
+  },
+  {
+    "id": "kargil-war-memorial",
+    "destination_id": "kargil",
+    "name": "Kargil War Memorial",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Memorial honoring soldiers of the 1999 Kargil War at the foot of Tololing Hill. Museum and sound-light show."
+  },
+  {
+    "id": "mulbekh-chamba",
+    "destination_id": "kargil",
+    "name": "Mulbekh Chamba (Rock Buddha)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Massive 9-meter Buddha carved into a rock face dating to 7th-8th century. Important Buddhist landmark."
+  },
+  {
+    "id": "mansarovar-lake",
+    "destination_id": "mansarovar-kailash",
+    "name": "Lake Mansarovar",
+    "type": "lake",
+    "entry_fee": null,
+    "description": "A 320 sq-km freshwater lake at 4,590m, regarded by Hindus, Buddhists, Jains and Bon as one of the holiest waters on earth. Yatris bathe in it during the official KMVN circumambulation."
+  },
+  {
+    "id": "lipulekh-pass",
+    "destination_id": "mansarovar-kailash",
+    "name": "Lipulekh Pass",
+    "type": "viewpoint",
+    "entry_fee": null,
+    "description": "The 5,334m pass on the Indo-Tibet border in Pithoragarh district — the historical Indian-side entry point for the Kailash Mansarovar Yatra. A jeepable road to the pass was completed in 2020."
+  },
+  {
+    "id": "kirti-mandir",
+    "destination_id": "porbandar",
+    "name": "Kirti Mandir (Gandhi Birthplace)",
+    "type": "museum",
+    "entry_fee": "Free",
+    "description": "Mahatma Gandhi's birth house with the room where he was born. Memorial and small museum."
+  },
+  {
+    "id": "porbandar-bird-sanctuary",
+    "destination_id": "porbandar",
+    "name": "Porbandar Bird Sanctuary",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Wetland sanctuary right in the city. Flamingos, herons, and migratory birds. Best Nov-Feb."
+  },
+  {
+    "id": "tosamaidan-meadow",
+    "destination_id": "tosamaidan",
+    "name": "Tosamaidan Meadow",
+    "type": "viewpoint",
+    "entry_fee": "₹50",
+    "description": "Vast alpine meadow at 10,000 ft. Former army firing range, now open to tourists. Carpet of wildflowers in summer."
+  },
+  {
+    "id": "tosamaidan-trek",
+    "destination_id": "tosamaidan",
+    "name": "Tosamaidan Trek from Doodpathri",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic 14 km trek connecting Doodpathri to Tosamaidan through pine forests and high meadows."
+  },
+  {
+    "id": "charaideo-moidams-site",
+    "destination_id": "charaideo",
+    "name": "Charaideo Moidam Complex",
+    "type": "monument",
+    "entry_fee": "₹30",
+    "description": "UNESCO World Heritage \"Pyramids of Assam\". Royal burial mounds of the Ahom dynasty spanning 600 years."
+  },
+  {
+    "id": "vishwanath-temple-guptkashi",
+    "destination_id": "guptkashi",
+    "name": "Vishwanath Temple Guptkashi",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple where Pandavas sought Lord Shiva. Name means \"Hidden Kashi\" — gateway to Kedarnath."
+  },
+  {
+    "id": "palani-temple",
+    "destination_id": "palani",
+    "name": "Dandayuthapani Swamy Temple",
+    "type": "temple",
+    "entry_fee": "Free (donations)",
+    "description": "The main hilltop shrine. Deity carved from nine sacred herbs (Navapashanam). Approach via 670 steps, rope car, or rail. Open dawn to 9 PM; darshan typically 2–3 hours due to crowds."
+  },
+  {
+    "id": "shirui-kashung-peak",
+    "destination_id": "ukhrul",
+    "name": "Shirui Kashung Peak",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Home to the Shirui Lily (Lilium mackliniae) — found nowhere else on Earth. Blooms May-June."
+  }
+]

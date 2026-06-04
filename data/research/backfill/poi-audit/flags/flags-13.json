@@ -1,0 +1,32 @@
+[
+  {
+    "id": "mahad-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Mahad Ashtavinayak",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Temple dedication is listed as 'Vighneshwara' but Mahad's Ashtavinayak is actually dedicated to 'Varadvinayak'. Vighneshwara is located at Ozar (7th in sequence).",
+    "evidence": "Official Ashtavinayak sequence: 1.Mayureshwar 2.Siddhivinayak 3.Ballaleshwar 4.Varadvinayak (Mahad) 5.Chintamani 6.Girijatmaj 7.Vighneshwara (Ozar) 8.Mahaganapati. Source: https://www.ashtavinayak.in/mahad-varadvinayak-ganpati-ashtavinayak.php",
+    "suggested_fix": "Change dedication from 'Vighneshwara' to 'Varadvinayak (the wish-fulfilling Ganesha)'"
+  },
+  {
+    "id": "pali-temple-astavinayak-circuit",
+    "destination_id": "astavinayak-circuit",
+    "name": "Pali Ashtavinayak",
+    "severity": "high",
+    "issue_type": "wrong_fact",
+    "problem": "Temple at Pali is listed as 'Third Ashtavinayak temple dedicated to Girijatmaja' but Pali actually hosts Ballaleshwar (3rd in sequence). Girijatmaj is the 6th Ashtavinayak, located at Lenyadri, not Pali.",
+    "evidence": "Official Ashtavinayak sequence: Pali = Ballaleshwar (3rd). Girijatmaj = Lenyadri (6th, carved into cave 8 with 307 steps). Source: https://www.shreeballaleshwarpali.org/ and https://www.ashtavinayak.in/lenyadri-girijatmaj-ganpati-ashtavinayak.php",
+    "suggested_fix": "Change 'Girijatmaja' to 'Ballaleshwar (the wish-granting Ganesha)', noting that Pali is the 3rd in sequence"
+  },
+  {
+    "id": "srirangapatna-fort-walls",
+    "destination_id": "srirangapatna",
+    "name": "Srirangapatna Fort Walls",
+    "severity": "med",
+    "issue_type": "wrong_fact",
+    "problem": "Description states '16th-century fort' but historical sources indicate the fort was fortified in the 15th century, with later Tipu Sultan renovations in the 18th century.",
+    "evidence": "Fort fortification began 15th century; Tipu Sultan renovated and strengthened the fort in 18th century. British breached walls in 1799. Source: https://en.wikipedia.org/wiki/Seringapatam and https://www.britannica.com/place/Srirangapatna",
+    "suggested_fix": "Change '16th-century fort' to '15th-century fort (renovated by Tipu Sultan in the 18th century)'"
+  }
+]

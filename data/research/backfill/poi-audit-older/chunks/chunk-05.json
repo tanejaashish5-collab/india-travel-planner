@@ -1,0 +1,370 @@
+[
+  {
+    "id": "annandale-shimla",
+    "destination_id": "shimla",
+    "name": "Annandale",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Flat ground used by British for polo and cricket. Now army helipad and heritage museum."
+  },
+  {
+    "id": "chadwick-falls",
+    "destination_id": "shimla",
+    "name": "Chadwick Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "67-meter waterfall surrounded by dense deodar forest. 7 km from the main town. Best during monsoon."
+  },
+  {
+    "id": "christ-church-shimla",
+    "destination_id": "shimla",
+    "name": "Christ Church",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Second oldest church in North India (1857). Stained glass windows."
+  },
+  {
+    "id": "green-valley-shimla",
+    "destination_id": "shimla",
+    "name": "Green Valley",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dense deodar forest valley on the way to Kufri, often used as Bollywood filming location."
+  },
+  {
+    "id": "shimla-state-museum",
+    "destination_id": "shimla",
+    "name": "Himachal State Museum",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Displays Pahari miniature paintings, sculptures, textiles and colonial-era artifacts of Himachal Pradesh."
+  },
+  {
+    "id": "jakhoo-temple-shimla",
+    "destination_id": "shimla",
+    "name": "Jakhoo Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop temple with 108-ft Hanuman statue at 8,048 ft — highest point in Shimla with panoramic views."
+  },
+  {
+    "id": "kalka-shimla-railway",
+    "destination_id": "shimla",
+    "name": "Kalka-Shimla Railway",
+    "type": "monument",
+    "entry_fee": "₹300-600",
+    "description": "UNESCO World Heritage mountain railway built in 1898. 96 km narrow gauge track through 102 tunnels and 864 bridges."
+  },
+  {
+    "id": "lakkar-bazaar-shimla",
+    "destination_id": "shimla",
+    "name": "Lakkar Bazaar",
+    "type": "bazaar",
+    "entry_fee": "Free",
+    "description": "Famous wood crafts market. Hand-carved walking sticks, toys, and decorative items from local deodar wood."
+  },
+  {
+    "id": "scandal-point-shimla",
+    "destination_id": "shimla",
+    "name": "Scandal Point & The Ridge",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Iconic open space in the heart of Shimla with views of snow-capped mountains. Hub of social life since colonial era."
+  },
+  {
+    "id": "mall-road-shimla",
+    "destination_id": "shimla",
+    "name": "The Mall Road",
+    "type": "market",
+    "entry_fee": "Free",
+    "description": "Shimla's main promenade — colonial architecture, bookshops, mountain views."
+  },
+  {
+    "id": "viceregal-lodge-shimla",
+    "destination_id": "shimla",
+    "name": "Viceregal Lodge (Indian Institute of Advanced Study)",
+    "type": "monument",
+    "entry_fee": "₹50",
+    "description": "Scottish baronial-style building built in 1888 as summer residence of the British Viceroy. Stunning architecture and gardens."
+  },
+  {
+    "id": "capitol-complex",
+    "destination_id": "chandigarh",
+    "name": "Capitol Complex",
+    "type": "monument",
+    "entry_fee": "₹50",
+    "description": "UNESCO World Heritage Le Corbusier masterpiece. High Court, Secretariat, and Open Hand Monument."
+  },
+  {
+    "id": "le-corbusier-centre",
+    "destination_id": "chandigarh",
+    "name": "Le Corbusier Centre",
+    "type": "museum",
+    "entry_fee": "₹20",
+    "description": "Museum dedicated to the city's architect with original furniture, sketches, and city planning documents."
+  },
+  {
+    "id": "rock-garden-chandigarh",
+    "destination_id": "chandigarh",
+    "name": "Rock Garden",
+    "type": "garden",
+    "entry_fee": "₹30",
+    "description": "Sculpture park created by Nek Chand using industrial and urban waste. 25 acres of recycled art. UNESCO-acclaimed."
+  },
+  {
+    "id": "sukhna-lake",
+    "destination_id": "chandigarh",
+    "name": "Sukhna Lake",
+    "type": "lake",
+    "entry_fee": "₹100 (boat)",
+    "description": "Man-made lake at the foot of Shivalik Hills. Boating, jogging track, and bird watching."
+  },
+  {
+    "id": "rose-garden-chandigarh",
+    "destination_id": "chandigarh",
+    "name": "Zakir Hussain Rose Garden",
+    "type": "garden",
+    "entry_fee": "₹30",
+    "description": "Asia's largest rose garden with 1,600 rose varieties across 30 acres. Annual Rose Festival in February."
+  },
+  {
+    "id": "chitrakote-falls",
+    "destination_id": "jagdalpur",
+    "name": "Chitrakote Falls",
+    "type": "waterfall",
+    "entry_fee": "₹25",
+    "description": "Called \"Niagara of India\" — widest waterfall in India on the Indravati River. Horseshoe-shaped 95-ft drop."
+  },
+  {
+    "id": "danteshwari-temple",
+    "destination_id": "jagdalpur",
+    "name": "Danteshwari Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of 51 Shakti Peethas. 14th-century temple in Dantewada, important Bastar tribal pilgrimage."
+  },
+  {
+    "id": "kanger-valley-np",
+    "destination_id": "jagdalpur",
+    "name": "Kanger Valley National Park",
+    "type": "viewpoint",
+    "entry_fee": "₹100",
+    "description": "Biosphere reserve with Kutumsar Cave (limestone cave with blind fish) and Dandak Cave."
+  },
+  {
+    "id": "tirathgarh-falls",
+    "destination_id": "jagdalpur",
+    "name": "Tirathgarh Falls",
+    "type": "waterfall",
+    "entry_fee": "₹25",
+    "description": "Multi-tiered 300-ft waterfall in Kanger Valley National Park. Steps lead to the base for swimming."
+  },
+  {
+    "id": "heritage-park-agartala",
+    "destination_id": "agartala",
+    "name": "Heritage Park",
+    "type": "garden",
+    "entry_fee": "₹10",
+    "description": "Park showcasing replicas of all major monuments of Tripura. Good introduction to the state."
+  },
+  {
+    "id": "jagannath-temple-agartala",
+    "destination_id": "agartala",
+    "name": "Jagannath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Main Hindu temple of Agartala with typical Bengali terracotta architecture."
+  },
+  {
+    "id": "ujjayanta-palace",
+    "destination_id": "agartala",
+    "name": "Ujjayanta Palace",
+    "type": "palace",
+    "entry_fee": "₹10",
+    "description": "Former royal palace built in 1901. Now Tripura State Museum with tribal art and royal history."
+  },
+  {
+    "id": "chitkul-baspa-river",
+    "destination_id": "chitkul",
+    "name": "Baspa River Walk",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Scenic walk along the Baspa River with views of snow-capped peaks and apple orchards."
+  },
+  {
+    "id": "chitkul-last-village",
+    "destination_id": "chitkul",
+    "name": "Last Indian Village Monument",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Marker at India's last inhabited village before the Tibet border. Iconic photo spot at 11,319 ft."
+  },
+  {
+    "id": "chitkul-mathi-temple",
+    "destination_id": "chitkul",
+    "name": "Mathi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient wooden temple dedicated to the local deity Mathi with exquisite Kinnauri wood carvings."
+  },
+  {
+    "id": "kaziranga-central-range",
+    "destination_id": "kaziranga",
+    "name": "Kaziranga Central Range (Kohora)",
+    "type": "viewpoint",
+    "entry_fee": "Included in safari",
+    "description": "Best range for rhino sightings. Swamp deer, wild buffalo, and elephants also commonly seen."
+  },
+  {
+    "id": "kaziranga-elephant-safari",
+    "destination_id": "kaziranga",
+    "name": "Kaziranga Elephant Safari",
+    "type": "viewpoint",
+    "entry_fee": "₹1,000-2,000",
+    "description": "UNESCO World Heritage park. Elephant and jeep safaris to see one-horned rhinoceros. Highest rhino density globally."
+  },
+  {
+    "id": "orchid-park-kaziranga",
+    "destination_id": "kaziranga",
+    "name": "National Orchid & Biodiversity Park",
+    "type": "garden",
+    "entry_fee": "₹100",
+    "description": "Park with 500+ orchid species and other rare plants of Northeast India. Educational walking trails."
+  },
+  {
+    "id": "chaubatia-gardens",
+    "destination_id": "ranikhet",
+    "name": "Chaubatia Gardens",
+    "type": "garden",
+    "entry_fee": "₹50",
+    "description": "Sprawling orchards of apple, peach, and plum with Himalayan backdrop. Government fruit research station."
+  },
+  {
+    "id": "jhula-devi-temple",
+    "destination_id": "ranikhet",
+    "name": "Jhula Devi Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple famous for thousands of brass bells hung by devotees whose wishes were fulfilled."
+  },
+  {
+    "id": "ranikhet-golf-course",
+    "destination_id": "ranikhet",
+    "name": "Upat Golf Course",
+    "type": "viewpoint",
+    "entry_fee": "₹200",
+    "description": "One of the highest golf courses in Asia at 6,000 ft with Himalayan panorama. Open to visitors."
+  },
+  {
+    "id": "takht-kesgarh-sahib",
+    "destination_id": "anandpur-sahib",
+    "name": "Takht Sri Kesgarh Sahib",
+    "type": "gurudwara",
+    "entry_fee": "Free",
+    "description": "One of five Sikh Takhts. Where Guru Gobind Singh founded the Khalsa in 1699. Houses sacred weapons."
+  },
+  {
+    "id": "virasat-e-khalsa",
+    "destination_id": "anandpur-sahib",
+    "name": "Virasat-e-Khalsa",
+    "type": "museum",
+    "entry_fee": "₹30",
+    "description": "Stunning modern museum designed by Moshe Safdie depicting 500 years of Sikh history through multimedia."
+  },
+  {
+    "id": "raghunath-temple-devprayag",
+    "destination_id": "devprayag",
+    "name": "Raghunath Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient temple at the confluence point. One of the 108 Divya Desams of Vaishnavism."
+  },
+  {
+    "id": "devprayag-confluence",
+    "destination_id": "devprayag",
+    "name": "Sangam (Confluence of Alaknanda and Bhagirathi)",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred confluence where Alaknanda and Bhagirathi rivers merge to form the Ganges. Visible color difference."
+  },
+  {
+    "id": "kokernag-spring",
+    "destination_id": "kokernag",
+    "name": "Kokernag Spring",
+    "type": "viewpoint",
+    "entry_fee": "₹25",
+    "description": "Largest freshwater spring in Kashmir. Beautiful Mughal-style garden around the spring with trout fishery."
+  },
+  {
+    "id": "kokernag-trout-farm",
+    "destination_id": "kokernag",
+    "name": "Kokernag Trout Hatchery",
+    "type": "viewpoint",
+    "entry_fee": "₹10",
+    "description": "Government trout breeding center. See rainbow and brown trout in crystal-clear spring water pools."
+  },
+  {
+    "id": "nako-lake",
+    "destination_id": "nako",
+    "name": "Nako Lake",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Sacred high-altitude lake at 12,014 ft surrounded by willow trees. Freezes completely in winter."
+  },
+  {
+    "id": "nako-monastery",
+    "destination_id": "nako",
+    "name": "Nako Monastery",
+    "type": "monastery",
+    "entry_fee": "Free",
+    "description": "Buddhist monastery with ancient murals and thangka paintings dating back to the Rinchen Zangpo era."
+  },
+  {
+    "id": "gir-crocodile-centre",
+    "destination_id": "sasangir",
+    "name": "Crocodile Breeding Centre",
+    "type": "viewpoint",
+    "entry_fee": "₹20",
+    "description": "Government centre breeding marsh crocodiles for reintroduction. Dozens of crocs visible in ponds."
+  },
+  {
+    "id": "tulsi-shyam-springs",
+    "destination_id": "sasangir",
+    "name": "Tulsi Shyam Hot Springs",
+    "type": "hot-spring",
+    "entry_fee": "Free",
+    "description": "Natural sulphur hot springs with a temple. Believed to have curative properties. 45 km from Sasan."
+  },
+  {
+    "id": "doodh-ganga-yusmarg",
+    "destination_id": "yusmarg",
+    "name": "Doodh Ganga River",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Crystal-clear milky river flowing through Yusmarg. Trout fishing with permit available."
+  },
+  {
+    "id": "yusmarg-meadow",
+    "destination_id": "yusmarg",
+    "name": "Yusmarg Meadow",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine meadow at 7,500 ft meaning \"Meadow of Jesus\". Believed to be where Jesus Christ visited Kashmir."
+  },
+  {
+    "id": "saikuti-hall",
+    "destination_id": "lunglei",
+    "name": "Saikuti Hall",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Historic hall named after legendary Mizo heroine. Cultural center of southern Mizoram."
+  },
+  {
+    "id": "rani-ki-vav-stepwell",
+    "destination_id": "rani-ki-vav",
+    "name": "Rani ki Vav Stepwell",
+    "type": "monument",
+    "entry_fee": "₹40",
+    "description": "UNESCO World Heritage inverted temple. 7 storeys deep, 500+ principal sculptures, 1,000+ minor carvings. Featured on Indian ₹100 note."
+  }
+]

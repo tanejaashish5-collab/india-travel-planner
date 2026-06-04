@@ -1,0 +1,386 @@
+[
+  {
+    "id": "alibaug-kanakeshwar-temple",
+    "destination_id": "alibaug",
+    "name": "Kanakeshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hoysala-style Shiva temple built in 1764, located on a hilltop 900 feet above sea level, 13 km from Alibaug. Offers views of surrounding hills and valleys."
+  },
+  {
+    "id": "alibaug-kashid-beach",
+    "destination_id": "alibaug",
+    "name": "Kashid Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Pristine white sand beach with turquoise waters. About 30 km from Alibaug town. Known for calm waters and excellent for families and swimming."
+  },
+  {
+    "id": "alibaug-kihim-beach",
+    "destination_id": "alibaug",
+    "name": "Kihim Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Untouched, peaceful beach bordered by coconut trees and wildflowers. Sanctuary for nature enthusiasts and photographers. Quieter alternative to Alibaug Beach."
+  },
+  {
+    "id": "alibaug-kolaba-fort",
+    "destination_id": "alibaug",
+    "name": "Kolaba Fort",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "17th-century Maratha fort built as an island fortress. Accessible by wading through water at low tide, or short boat ride at high tide. Ruins of the fort visible from Alibaug Beach."
+  },
+  {
+    "id": "alibaug-nagaon-beach",
+    "destination_id": "alibaug",
+    "name": "Nagaon Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Silky sand beach stretching 3 km along the Arabian Sea. Known for water sports and adventure activities at reasonable prices. Popular for beach volleyball and kayaking."
+  },
+  {
+    "id": "candolim-beach-candolim",
+    "destination_id": "candolim",
+    "name": "Candolim Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "A 4km stretch of calm, swimmable beach backed by coconut groves and water sports operators. Lifeguards monitor the beach. The sea is gentler than rocky Anjuna. Popular with families and those seeking a safe, organized beach experience."
+  },
+  {
+    "id": "fort-aguada-candolim",
+    "destination_id": "candolim",
+    "name": "Fort Aguada",
+    "type": "fort",
+    "entry_fee": "Free",
+    "description": "Portuguese fort built in 1612 at the southern end of Candolim Beach. The fort houses a 1864 lighthouse, one of the oldest in Asia. The location offers 360-degree views of the Mandovi River mouth and Arabian Sea. Historic prison ruins also visible on the grounds."
+  },
+  {
+    "id": "fort-aguada-lighthouse-candolim",
+    "destination_id": "candolim",
+    "name": "Fort Aguada Lighthouse",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Historic lighthouse built in 1864 inside Fort Aguada. One of Asia's oldest lighthouses, still functional. The tower provides panoramic views of Candolim Beach, the Mandovi River mouth, and the Arabian Sea. Accessible to visitors during daylight hours."
+  },
+  {
+    "id": "river-princess-wreck-candolim",
+    "destination_id": "candolim",
+    "name": "River Princess Wreck",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Rusting tanker ship visible just offshore in shallow water near Sinquerim Beach at Candolim's southern end. The wreck is a distinctive landmark recognizable from the beach. Popular with photographers; remains untouched for decades."
+  },
+  {
+    "id": "st-anthonys-chapel-candolim",
+    "destination_id": "candolim",
+    "name": "St. Anthony's Chapel",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Small chapel perched above Baga Beach, north of Candolim. Offers elevated views over the beach and sea. A quiet spot for contemplation and photography, especially popular at sunrise and sunset."
+  },
+  {
+    "id": "ghanteswari-temple-sambalpur",
+    "destination_id": "sambalpur",
+    "name": "Ghanteswari Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Temple 33 km from Sambalpur with thousands of metal bells hanging throughout the premises, offered by devotees as acts of worship. Located near Chipilima on the Mahanadi riverbank."
+  },
+  {
+    "id": "hirakud-dam-sambalpur",
+    "destination_id": "sambalpur",
+    "name": "Hirakud Dam",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "World's longest earthen dam spanning 25.8 km across the Mahanadi river. Built to 200 feet height with a 746-sq-km reservoir. Observation towers named Gandhi Minar and Nehru Minar offer expansive views."
+  },
+  {
+    "id": "huma-temple-sambalpur",
+    "destination_id": "sambalpur",
+    "name": "Huma Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Historic temple 23 km from Sambalpur town on the Mahanadi riverbank, known for its distinctive tilted structure. Dedicated to Lord Bimaleswar, it leans deliberately to one side."
+  },
+  {
+    "id": "jawahar-minar-sambalpur",
+    "destination_id": "sambalpur",
+    "name": "Jawahar Minar",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Tower near Hirakud Dam inaugurated by Jawaharlal Nehru in 1957. Offers panoramic views of the dam and surrounding landscape."
+  },
+  {
+    "id": "samaleswari-temple-sambalpur",
+    "destination_id": "sambalpur",
+    "name": "Samaleswari Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient shrine on the Mahanadi riverbank dedicated to the presiding mother goddess of Sambalpur. Built in 16th-century Odisha architectural style using red sandstone."
+  },
+  {
+    "id": "chinese-fishing-nets-kochi",
+    "destination_id": "kochi",
+    "name": "Chinese Fishing Nets",
+    "type": "viewpoint",
+    "entry_fee": "Free (fee for demonstration)",
+    "description": "Iconic wooden structures with nets hanging over the sea, introduced to Kochi in the 14th century. Operated by fishermen who demonstrate the process for a small fee. Most active in early morning."
+  },
+  {
+    "id": "mattancherry-palace-kochi",
+    "destination_id": "kochi",
+    "name": "Mattancherry Palace",
+    "type": "palace",
+    "entry_fee": "₹20 (adult), ₹10 (child)",
+    "description": "Built by Portuguese in 1555 and later renovated by Dutch (hence called Dutch Palace). Features stunning murals depicting Hindu epics Ramayana and Mahabharata. Traditional Keralan architecture."
+  },
+  {
+    "id": "paradesi-synagogue-kochi",
+    "destination_id": "kochi",
+    "name": "Paradesi Synagogue (Jew Synagogue)",
+    "type": "monument",
+    "entry_fee": "₹5 (donation)",
+    "description": "Oldest active synagogue in the Commonwealth of Nations, built in 1568 by the Cochin Jewish community. Located in Jew Town, the only surviving synagogue of seven in the area. Hand-painted floor tiles visible inside."
+  },
+  {
+    "id": "st-francis-church-kochi",
+    "destination_id": "kochi",
+    "name": "St. Francis Church",
+    "type": "church",
+    "entry_fee": "₹10 (donation)",
+    "description": "Oldest European church in India, built in 1503 by Portuguese. Originally dedicated to St. Francis, later became Protestant and then Anglican. Vasco da Gama was first buried here in 1524."
+  },
+  {
+    "id": "bhramaramba-devi-shrine-srisailam",
+    "destination_id": "srisailam",
+    "name": "Bhramaramba Devi Shrine",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Shrine within Srisailam temple complex dedicated to goddess Parvati as Bhramaramba. One of the fifty-two Shakti Peethas where the left breast fell during Sati's body's dispersal."
+  },
+  {
+    "id": "mallikarjuna-jyotirlinga-srisailam",
+    "destination_id": "srisailam",
+    "name": "Mallikarjuna Jyotirlinga Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "One of twelve sacred Jyotirlingas of Shiva and one of fifty-two Shakti Peethas. Located atop Nallamala Hills, it houses combined shrines to Shiva (Mallikarjuna) and Parvati (Bhramaramba). Enclosed by 600-foot walls with four gopurams."
+  },
+  {
+    "id": "nallamala-forest-viewpoint-srisailam",
+    "destination_id": "srisailam",
+    "name": "Nallamala Forest Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Forested hills surrounding Srisailam temple with a wildlife sanctuary. Dense forest canopy with tiger reserve habitat, offering views of the Krishna River valley below."
+  },
+  {
+    "id": "patala-ganga-ghat-srisailam",
+    "destination_id": "srisailam",
+    "name": "Patala Ganga Ghat",
+    "type": "ghat",
+    "entry_fee": "Free",
+    "description": "Sacred ghat on the Krishna River adjacent to Mallikarjuna temple. Accessible via ropeway or stone steps leading down to the river. Traditional bathing spot with spiritual significance."
+  },
+  {
+    "id": "assagao-heritage-trail-assagao",
+    "destination_id": "assagao",
+    "name": "Assagao Heritage Trail",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Walking route through restored Portuguese-era bungalows and heritage properties in the village. Passes by churches, temples, and colonial mansions now converted to boutiques, restaurants, and villas. Self-guided or arranged through local guides."
+  },
+  {
+    "id": "ghatyeshwar-temple-assagao",
+    "destination_id": "assagao",
+    "name": "Ghatyeshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Hindu temple in Assagao village, part of the heritage trail. The temple is a landmark in the community and remains actively worshipped. Modest structure but significant for understanding the village's cultural roots."
+  },
+  {
+    "id": "st-cajetan-church-assagao",
+    "destination_id": "assagao",
+    "name": "St. Cajetan Church",
+    "type": "church",
+    "entry_fee": "Free",
+    "description": "Historic church in central Assagao built in the 17th century. Part of the village's heritage trail, with simple colonial architecture. The church serves the local Christian community and is open to visitors."
+  },
+  {
+    "id": "athangudi-tiles-workshop-chettinad",
+    "destination_id": "chettinad",
+    "name": "Athangudi Tiles Workshop",
+    "type": "market",
+    "entry_fee": "Free (donations welcome)",
+    "description": "Active studio producing handcrafted floor tiles using traditional methods. Each tile is individually made with local sand, cement, and mineral pigments without bulk production."
+  },
+  {
+    "id": "chettinad-palace-chettinad",
+    "destination_id": "chettinad",
+    "name": "Chettinad Palace (Athangudi)",
+    "type": "palace",
+    "entry_fee": "₹100",
+    "description": "Preserved mansion featuring Italian marble floors, Japanese tiles, Belgian mirrors, Burma teak ceilings, and over 500 ornate stained glass windows. Open 9am-6pm."
+  },
+  {
+    "id": "kanadukathan-mansions-chettinad",
+    "destination_id": "chettinad",
+    "name": "Kanadukathan Mansions",
+    "type": "palace",
+    "entry_fee": "Free (guide available)",
+    "description": "Village with the densest concentration of Nattukottai Chettiar palatial homes built with imported materials from Italy, Belgium and Burma. Walking tour through architectural heritage."
+  },
+  {
+    "id": "horsley-hills-historic-restthouse",
+    "destination_id": "horsley-hills",
+    "name": "Historic Rest House (1870)",
+    "type": "monument",
+    "entry_fee": "Free",
+    "description": "Colonial-era forest rest house built by collector W.D. Horsley around 1870. Original structure still stands as a heritage building. Reflects Victorian-era hill station architecture and colonial leisure culture in the Deccan."
+  },
+  {
+    "id": "horsley-hills-forest",
+    "destination_id": "horsley-hills",
+    "name": "Horsley Hills Forest Ecosystem",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Dense forest reserve at 1,265 meters elevation with eucalyptus, mahogany, and silver oak plantations alongside native vegetation. Rich biodiversity with over 150 bird species. Cooler microclimate compared to surrounding Rayalaseema plains."
+  },
+  {
+    "id": "horsley-hills-viewpoint",
+    "destination_id": "horsley-hills",
+    "name": "Horsley Hills Western Viewpoint",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Large rocky slope on the western side of the hills with benches for visitors. Overlooks the Rayalaseema plains and surrounding forest valleys. Offers vistas of the entire landscape and strong hill breezes."
+  },
+  {
+    "id": "adi-kumbeswarar-kumbakonam",
+    "destination_id": "kumbakonam",
+    "name": "Adi Kumbeswarar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Central Shiva temple in Kumbakonam; believed where Lord Shiva shaped the Shiva Lingam. Core of Mahamaham festival."
+  },
+  {
+    "id": "airavatesvara-kumbakonam",
+    "destination_id": "kumbakonam",
+    "name": "Airavatesvara Temple (Darasuram)",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "UNESCO World Heritage 12th-century Chola temple 8km from Kumbakonam. Chariot-shaped mandapa; 'singing steps' produce melodious sounds when walked."
+  },
+  {
+    "id": "mahamaham-tank-kumbakonam",
+    "destination_id": "kumbakonam",
+    "name": "Mahamaham Tank",
+    "type": "lake",
+    "entry_fee": "Free",
+    "description": "Largest sacred temple tank in Tamil Nadu. Surrounded by 16 shrines. Mahamaham Festival every 12 years; tens of thousands gather for holy dip."
+  },
+  {
+    "id": "murudeshwar-shiva-statue-murudeshwar",
+    "destination_id": "murudeshwar",
+    "name": "Murudeshwar Shiva Statue",
+    "type": "monument",
+    "entry_fee": "Varies",
+    "description": "123-feet tall Shiva idol, the third tallest Shiva statue in the world. Built atop Kanduka Hill surrounded by sea on three sides, with a lift at the 20-storied Raja Gopura offering viewpoints."
+  },
+  {
+    "id": "murudeshwar-temple-murudeshwar",
+    "destination_id": "murudeshwar",
+    "name": "Murudeshwar Temple",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Ancient Shiva temple on Kanduka Hill with a 20-storied Raja Gopura built in 2008. Offers spiritual experience and commanding views of the Arabian Sea."
+  },
+  {
+    "id": "netrani-island-murudeshwar",
+    "destination_id": "murudeshwar",
+    "name": "Netrani Island",
+    "type": "viewpoint",
+    "entry_fee": "Varies",
+    "description": "Nearby island accessible by boat for water sports and scuba diving. Offers unique views of the coastline and marine life experiences."
+  },
+  {
+    "id": "kaas-plateau-satara",
+    "destination_id": "satara",
+    "name": "Kaas Plateau",
+    "type": "viewpoint",
+    "entry_fee": "₹100 (online booking required)",
+    "description": "UNESCO World Natural Heritage Site with 850+ flowering plant species. The laterite plateau blooms September-October in a carpet of wildflowers. Online entry permits required; daily visitor cap enforced. Designated walking paths must be followed."
+  },
+  {
+    "id": "sajjangad-satara",
+    "destination_id": "satara",
+    "name": "Sajjangad",
+    "type": "temple",
+    "entry_fee": "Free",
+    "description": "Hilltop temple dedicated to Ramdas Swami, a 17th-century saint. The fort-temple complex overlooks Satara town and involves a trek or ropeway access. Historic site of pilgrimage with panoramic city and valley views."
+  },
+  {
+    "id": "thoseghar-waterfalls-satara",
+    "destination_id": "satara",
+    "name": "Thoseghar Waterfalls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "Two-stage waterfall near Satara, most impressive during monsoon (June-September) when water flow is heavy. The falls descend into a natural pool. Best viewed from the overlook point accessible via short walk."
+  },
+  {
+    "id": "athirapally-falls",
+    "destination_id": "athirapally",
+    "name": "Athirapally Falls",
+    "type": "waterfall",
+    "entry_fee": "Known",
+    "description": "80-foot waterfall on Chalakudy River, India's largest by monsoon volume. Within UNESCO Western Ghats forest. Monsoon (Jun-Sep) is peak flow; Oct-Nov combines lush green with safer trails."
+  },
+  {
+    "id": "vazhachal-falls-athirapally",
+    "destination_id": "athirapally",
+    "name": "Vazhachal Falls",
+    "type": "waterfall",
+    "entry_fee": "Free",
+    "description": "40-foot waterfall on the same Chalakudy River system, 2km from Athirapally. More accessible year-round. Accessible during summer when Athirapally is low."
+  },
+  {
+    "id": "bhitarkanika-mangroves-gahirmatha",
+    "destination_id": "gahirmatha",
+    "name": "Bhitarkanika Mangrove Forests",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Protected mangrove ecosystem adjacent to Gahirmatha turtle nesting beach. Part of the 1,435 sq km marine sanctuary. Provides habitat for diverse bird species and aquatic life."
+  },
+  {
+    "id": "gahirmatha-beach-sanctuary",
+    "destination_id": "gahirmatha",
+    "name": "Gahirmatha Marine Sanctuary Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "World's largest nesting beach for Olive Ridley sea turtles. Up to 600,000 turtles arrive Jan-Apr for mass nesting (Arribada). Beach protected with fencing; visitors observe arribada phenomenon from designated areas."
+  },
+  {
+    "id": "north-bay-coral-viewing-port-blair",
+    "destination_id": "north-bay-island",
+    "name": "North Bay Coral Reef (Glass Bottom Boat)",
+    "type": "viewpoint",
+    "entry_fee": "₹500–1000 per person (glass boat); semi-submarine ₹1200+",
+    "description": "Crystal-clear waters with vibrant coral ecosystem. Glass-bottom boat rides let you view corals without diving. Semi-submarine available (140-seat capacity)."
+  },
+  {
+    "id": "north-bay-scuba-diving-port-blair",
+    "destination_id": "north-bay-island",
+    "name": "North Bay Scuba Diving",
+    "type": "viewpoint",
+    "entry_fee": "₹3500–4000 per person (training + gear)",
+    "description": "One of Andaman's top five scuba sites. Beginner-friendly diving with trained guides. Explore coral reefs and marine biodiversity up close."
+  },
+  {
+    "id": "marari-beach-marari",
+    "destination_id": "marari",
+    "name": "Marari Beach",
+    "type": "viewpoint",
+    "entry_fee": "Free",
+    "description": "Quiet fishing village beach 15 km north of Alleppey. Golden sands, swaying coconut palms, and fishing boats at dawn. Low-key alternative to crowded backwater resorts."
+  }
+]
