@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
+import { getCachedDestinationsIndex } from "@/lib/cached-data";
 import { localeAlternates } from "@/lib/seo-utils";
 import { CostIndexExplorer } from "@/components/cost-index-explorer";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
@@ -70,14 +71,17 @@ async function getData() {
     from += page;
   }
 
-  const { data: dests } = await supabase
-    .from("destinations")
-    .select("id, name, state:states(name)")
-    .order("name");
+  // Shared 24h-cached reference list (see lib/cached-data) — mapped back to the
+  // `state: { name }` shape the JSX below expects.
+  const dests = (await getCachedDestinationsIndex()).map((d) => ({
+    id: d.id,
+    name: d.name,
+    state: { name: d.state_name },
+  }));
 
   return {
     rows: all,
-    dests: dests ?? [],
+    dests,
     totalRows: all.length,
     destCount: new Set(all.map((r) => r.destination_id)).size,
   };

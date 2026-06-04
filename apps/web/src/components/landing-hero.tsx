@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { m as motion } from "framer-motion";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { getBrowserSupabase } from "@/lib/supabase-browser";
+import { useSearchIndex } from "@/lib/search-index";
 import { videoSrc } from "@/lib/video-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
@@ -551,8 +551,6 @@ export function LandingHero({
 
 /* ─── Live search bar for hero section ────────────────────────────── */
 
-const getSb = getBrowserSupabase;
-
 interface HeroResult {
   id: string;
   name: string;
@@ -563,47 +561,33 @@ interface HeroResult {
 function HeroSearch({ locale }: { locale: string }) {
   const router = useRouter();
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<HeroResult[]>([]);
   const [active, setActive] = useState(-1);
   const [focused, setFocused] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const search = useCallback(async (q: string) => {
-    if (q.length < 2) { setResults([]); return; }
-    const sb = getSb();
-    if (!sb) return;
+  // Cached search index — loaded once when the user engages the bar, then
+  // filtered client-side (instant, no per-keystroke DB query).
+  const { index } = useSearchIndex(focused || query.length >= 2);
 
-    const pattern = `%${q}%`;
-    const [dests, colls, states] = await Promise.all([
-      sb.from("destinations").select("id, name, state:states(name)").ilike("name", pattern).limit(6),
-      sb.from("collections").select("id, name").ilike("name", pattern).limit(3),
-      sb.from("states").select("id, name").ilike("name", pattern).limit(3),
-    ]);
-
-    const items: HeroResult[] = [
-      ...((dests.data ?? []) as any[]).map((d: any) => ({
-        id: d.id, name: d.name,
-        state_name: Array.isArray(d.state) ? d.state[0]?.name : d.state?.name,
-        type: "destination" as const,
-      })),
-      ...((states.data ?? []) as any[]).map((s: any) => ({
-        id: s.id, name: s.name, type: "state" as const,
-      })),
-      ...((colls.data ?? []) as any[]).map((c: any) => ({
-        id: c.id, name: c.name, type: "collection" as const,
-      })),
+  const results = useMemo<HeroResult[]>(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2 || !index) return [];
+    return [
+      ...index.destinations
+        .filter((d) => d.name.toLowerCase().includes(q))
+        .slice(0, 6)
+        .map((d) => ({ id: d.id, name: d.name, state_name: d.state?.name, type: "destination" as const })),
+      ...index.states
+        .filter((s) => s.name.toLowerCase().includes(q))
+        .slice(0, 3)
+        .map((s) => ({ id: s.id, name: s.name, type: "state" as const })),
+      ...index.collections
+        .filter((c) => c.name.toLowerCase().includes(q))
+        .slice(0, 3)
+        .map((c) => ({ id: c.id, name: c.name, type: "collection" as const })),
     ];
-    setResults(items);
-    setActive(-1);
-  }, []);
+  }, [query, index]);
 
-  useEffect(() => {
-    clearTimeout(timerRef.current);
-    if (query.length < 2) { setResults([]); return; }
-    timerRef.current = setTimeout(() => search(query), 200);
-    return () => clearTimeout(timerRef.current);
-  }, [query, search]);
 
   useEffect(() => {
     function handler(e: MouseEvent) {
@@ -615,8 +599,7 @@ function HeroSearch({ locale }: { locale: string }) {
 
   function navigate(item: HeroResult) {
     setFocused(false);
-    setQuery("");
-    setResults([]);
+    setQuery(""); // results derive from query → clears automatically
     const path = item.type === "destination" ? `/${locale}/destination/${item.id}`
       : item.type === "state" ? `/${locale}/state/${item.id}`
       : `/${locale}/collections/${item.id}`;
@@ -641,7 +624,7 @@ function HeroSearch({ locale }: { locale: string }) {
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => { setQuery(e.target.value); setActive(-1); }}
         onFocus={() => setFocused(true)}
         onKeyDown={handleKeyDown}
         placeholder={locale === "hi" ? "जगह खोजें — स्पिति, मनाली, ऋषिकेश..." : "Search destinations — Spiti, Manali, Rishikesh..."}

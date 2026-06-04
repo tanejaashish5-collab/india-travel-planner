@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
 import { allBestSlugs } from "@/lib/best-pages";
+import { getCachedDestinationsIndex } from "@/lib/cached-data";
 
 // Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
 // generateSitemaps() convention because its auto-generated /sitemap.xml
@@ -69,10 +70,9 @@ function getSupabase() {
 }
 
 async function getDestinationIds(): Promise<string[]> {
-  const supabase = getSupabase();
-  if (!supabase) return [];
-  const { data } = await supabase.from("destinations").select("id").order("id");
-  return (data ?? []).map((d: any) => d.id);
+  // 24h-cached reference list (see lib/cached-data) — this route is
+  // force-dynamic, so without the cache every crawler hit re-queried the DB.
+  return (await getCachedDestinationsIndex()).map((d) => d.id);
 }
 
 // Destinations that carry destination_costs rows — only these get a /cost/[slug]

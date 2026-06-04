@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { createClient } from "@supabase/supabase-js";
+import { getCachedDestinationsIndex } from "@/lib/cached-data";
 import { VS_PAIRS, VS_THEME_LABELS } from "@/lib/vs-pairs";
 import { localeAlternates } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
@@ -27,24 +27,13 @@ export async function generateMetadata({
 }
 
 async function getDestinationNames() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return {};
-  const supabase = createClient(url, key);
-  // Fetch the full destination set (505 rows, one page) rather than an
-  // .in(VS_DESTINATION_IDS) filter — the id list now runs to a few hundred
-  // entries and a long query string risks a 414.
-  const { data } = await supabase
-    .from("destinations")
-    .select("id, name, state:states(name)");
+  // Shared 24h-cached reference list (also used by /cost-index etc.) — avoids a
+  // full-table destinations fetch on every ISR regeneration. See lib/cached-data.
+  const dests = await getCachedDestinationsIndex();
   const map: Record<string, { name: string; state: string }> = {};
-  (data ?? []).forEach((d: Record<string, unknown>) => {
-    const stateField = d.state as { name: string } | { name: string }[] | null | undefined;
-    map[d.id as string] = {
-      name: d.name as string,
-      state: (Array.isArray(stateField) ? stateField[0]?.name : stateField?.name) ?? "",
-    };
-  });
+  for (const d of dests) {
+    map[d.id] = { name: d.name, state: d.state_name };
+  }
   return map;
 }
 
