@@ -34,14 +34,14 @@
     "PdMu0": "2026-06-04",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
-    "m8EAd_evening": "2026-06-03",
-    "PdMu0_evening": "2026-06-03",
+    "m8EAd_evening": "2026-06-04",
+    "PdMu0_evening": "2026-06-04",
     "GAh5p_yt_short": "2026-06-04",
     "m8EAd_yt_short": "2026-06-04",
     "m8EAd_evening_story": "2026-06-03",
     "m8EAd_story": "2026-06-04"
   },
-  "last_sync": "2026-06-04T08:06:03.016650+00:00",
+  "last_sync": "2026-06-04T17:27:24.075818+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -238,11 +238,14 @@
     {
       "destination_id": "kishtwar",
       "date": "2026-06-04"
+    },
+    {
+      "destination_id": "lahaul-valley",
+      "date": "2026-06-04"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "collection_spotlight",
       "festival_alert",
       "kids_intel",
       "v3_tl_city_neighborhood",
@@ -262,10 +265,10 @@
       "v2_local_knows",
       "v2_weekend_escape_map",
       "v2_texture_macro",
-      "v3_tl_world_best_india"
+      "v3_tl_world_best_india",
+      "v2_hidden_gem_reveal_atmo"
     ],
     "PdMu0": [
-      "collection_spotlight",
       "festival_alert",
       "kids_intel",
       "v3_tl_city_neighborhood",
@@ -285,7 +288,8 @@
       "v2_local_knows",
       "v2_weekend_escape_map",
       "v2_texture_macro",
-      "v3_tl_world_best_india"
+      "v3_tl_world_best_india",
+      "v2_hidden_gem_reveal_atmo"
     ]
   },
   "post_log": [
@@ -2117,6 +2121,28 @@
       "destination": "kishtwar",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_2026-06-04.mp4"
+    },
+    {
+      "timestamp": "2026-06-04T17:28:41.001815+00:00",
+      "date": "2026-06-04",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "P9PG0",
+      "destination": "lahaul-valley",
+      "format": "v2_hidden_gem_reveal_atmo",
+      "has_media": true,
+      "media_id": "lahaul-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-04T17:29:08.666319+00:00",
+      "date": "2026-06-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ABAb7",
+      "destination": "lahaul-valley",
+      "format": "v2_hidden_gem_reveal_atmo",
+      "has_media": true,
+      "media_id": "lahaul-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -2314,6 +2340,9 @@
       ],
       "roopkund": [
         "2026-06-04"
+      ],
+      "lahaul-valley": [
+        "2026-06-04"
       ]
     },
     "morning_formats": {
@@ -2416,6 +2445,9 @@
       ],
       "v2_texture_macro": [
         "2026-06-03"
+      ],
+      "v2_hidden_gem_reveal_atmo": [
+        "2026-06-04"
       ]
     },
     "reels": {
@@ -2492,6 +2524,9 @@
       ],
       "tawang": [
         "2026-06-03"
+      ],
+      "lahaul-valley": [
+        "2026-06-04"
       ]
     },
     "audience_tags": {
@@ -2539,6 +2574,9 @@
       ],
       "best-motorcycle-routes": [
         "2026-06-03"
+      ],
+      "after-dark-experiences": [
+        "2026-06-04"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -2625,7 +2663,8 @@
       "leh": [
         "2026-06-03"
       ]
-    }
+    },
+    "collection_carousel_dests:after-dark-experiences": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -2639,8 +2678,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kargil",
-    "collection": "best-motorcycle-routes"
+    "shared_best": "lahaul-valley",
+    "collection": "after-dark-experiences"
   },
   "manual_skip_dests": {}
 }

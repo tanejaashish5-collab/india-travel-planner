@@ -1985,3 +1985,47 @@ Date range: 2026-04-15 → 2026-06-03
 2026-06-04 14:26:06  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-06-04 14:26:06  INFO      State saved. YT Short run complete.
 2026-06-04 14:26:06  INFO      ════════════════════════════════════════════════════════════
+2026-06-04 17:26:51  INFO      ════════════════════════════════════════════════════════════
+2026-06-04 17:26:51  INFO      Nakshiq Autoposter · EVENING · 2026-06-04 · weekday=3
+2026-06-04 17:26:51  INFO      ════════════════════════════════════════════════════════════
+2026-06-04 17:26:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-04 17:27:24  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-04 17:27:24  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-04 17:27:25  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-04 17:27:25  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-04 17:27:37  INFO      [evening] variety pick: v2_hidden_gem_reveal_atmo (33 CSV + 3 visual candidates)
+2026-06-04 17:27:37  INFO      Formats — IG: v2_hidden_gem_reveal_atmo  ·  FB: v2_hidden_gem_reveal_atmo  ·  Story: collection_spotlight
+2026-06-04 17:27:37  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 48
+2026-06-04 17:27:37  INFO      Fingerprint dedup snapshot — 59 dests in 7d · 82 (dest,fmt) pairs in 30d · 84 media in 60d
+2026-06-04 17:27:37  INFO      Collection locked: After Dark — Night Experiences Worth Staying Up For (9/20 never featured)
+2026-06-04 17:27:40  INFO      Shared best destination locked: Lahaul Valley
+2026-06-04 17:27:40  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-06-04 17:27:40  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-04 17:27:40  INFO      [instagram/nakshiq] Generating v2_hidden_gem_reveal_atmo post...
+2026-06-04 17:27:40  INFO      [csv_formats] endpoint-anchored: v2_hidden_gem_reveal_atmo → hidden_gems (50 candidates)
+2026-06-04 17:27:40  WARNING   v2_hidden_gem_reveal_atmo: no endpoint candidate passed eligibility — falling back to safe format 'score_card'
+2026-06-04 17:27:40  INFO      [instagram/nakshiq] Caption ready (406 chars, dest=lahaul-valley)
+2026-06-04 17:27:40  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-04 17:27:40  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/lahaul-valley.mp4?v=20260524
+2026-06-04 17:27:43  INFO          Brand-stamp applied: lahaul-valley.mp4 (8,901,444 → 4,445,309 bytes)
+2026-06-04 17:27:43  INFO          Requesting upload URL for lahaul-valley.mp4 (4,445,309 bytes, video/mp4)
+2026-06-04 17:27:44  INFO          Uploading to R2 (timeout=300s)...
+2026-06-04 17:27:46  INFO          R2 PUT OK. Confirming...
+2026-06-04 17:27:47  INFO          Media ready: JTqv3 (4,445,309 bytes · lahaul-valley.mp4)
+2026-06-04 17:27:47  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-04 17:28:41  INFO      [instagram/nakshiq] ✅ Published · Outstand=P9PG0 · Platform=18531337657077821
+2026-06-04 17:28:41  INFO      [facebook/Nakshiq] Generating v2_hidden_gem_reveal_atmo post...
+2026-06-04 17:28:41  INFO      [csv_formats] endpoint-anchored: v2_hidden_gem_reveal_atmo → hidden_gems (50 candidates)
+2026-06-04 17:28:41  WARNING   v2_hidden_gem_reveal_atmo: no endpoint candidate passed eligibility — falling back to safe format 'score_card'
+2026-06-04 17:28:41  INFO      [facebook/Nakshiq] Caption ready (567 chars, dest=lahaul-valley)
+2026-06-04 17:28:41  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-04 17:28:41  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/lahaul-valley.mp4?v=20260524
+2026-06-04 17:28:43  INFO          Brand-stamp applied: lahaul-valley.mp4 (8,901,444 → 4,445,309 bytes)
+2026-06-04 17:28:43  INFO          Requesting upload URL for lahaul-valley.mp4 (4,445,309 bytes, video/mp4)
+2026-06-04 17:28:44  INFO          Uploading to R2 (timeout=300s)...
+2026-06-04 17:28:45  INFO          R2 PUT OK. Confirming...
+2026-06-04 17:28:47  INFO          Media ready: 46M7i (4,445,309 bytes · lahaul-valley.mp4)
+2026-06-04 17:28:47  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-04 17:29:08  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ABAb7 · Platform=1520032659635990
+2026-06-04 17:29:08  INFO      State saved. Run complete.
+2026-06-04 17:29:08  INFO      ════════════════════════════════════════════════════════════
