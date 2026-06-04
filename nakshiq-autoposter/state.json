@@ -30,17 +30,18 @@
     "v2_amapiano_deep"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-03",
-    "PdMu0": "2026-06-03",
+    "m8EAd": "2026-06-04",
+    "PdMu0": "2026-06-04",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-03",
     "PdMu0_evening": "2026-06-03",
     "GAh5p_yt_short": "2026-06-03",
     "m8EAd_yt_short": "2026-06-03",
-    "m8EAd_evening_story": "2026-06-03"
+    "m8EAd_evening_story": "2026-06-03",
+    "m8EAd_story": "2026-06-04"
   },
-  "last_sync": "2026-06-03T18:37:49.211364+00:00",
+  "last_sync": "2026-06-04T08:06:03.016650+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -225,11 +226,18 @@
     {
       "destination_id": "shimla",
       "date": "2026-06-03"
+    },
+    {
+      "destination_id": "nako",
+      "date": "2026-06-04"
+    },
+    {
+      "destination_id": "roopkund",
+      "date": "2026-06-04"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
@@ -249,10 +257,10 @@
       "v2_score_card_pov",
       "v2_local_knows",
       "v2_weekend_escape_map",
-      "v2_texture_macro"
+      "v2_texture_macro",
+      "v3_tl_world_best_india"
     ],
     "PdMu0": [
-      "reality_check",
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
@@ -272,7 +280,8 @@
       "v2_score_card_pov",
       "v2_local_knows",
       "v2_weekend_escape_map",
-      "v2_texture_macro"
+      "v2_texture_macro",
+      "v3_tl_world_best_india"
     ]
   },
   "post_log": [
@@ -2037,17 +2046,6 @@
       "media_id": "v2_texture_macro-tawang.png"
     },
     {
-      "timestamp": "2026-06-03T18:38:59.948176+00:00",
-      "date": "2026-06-03",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "kMIIh",
-      "destination": "keylong",
-      "format": "blog_promo",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-06-03T18:39:20.619030+00:00",
       "date": "2026-06-03",
       "platform": "facebook",
@@ -2057,6 +2055,39 @@
       "format": "v2_texture_macro",
       "has_media": true,
       "media_id": "v2_texture_macro-shimla.png"
+    },
+    {
+      "timestamp": "2026-06-04T08:06:55.007115+00:00",
+      "date": "2026-06-04",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "ZrbZu",
+      "destination": "nako",
+      "format": "v3_tl_world_best_india",
+      "has_media": true,
+      "media_id": "v3_tl_world_best_india-nako.png"
+    },
+    {
+      "timestamp": "2026-06-04T08:07:15.716572+00:00",
+      "date": "2026-06-04",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "NmHba",
+      "destination": "kargil",
+      "format": "score_card",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-06-04T08:07:27.061121+00:00",
+      "date": "2026-06-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "8wfeI",
+      "destination": "roopkund",
+      "format": "v3_tl_world_best_india",
+      "has_media": true,
+      "media_id": "v3_tl_world_best_india-roopkund.png"
     }
   ],
   "theme_usage": {
@@ -2245,6 +2276,15 @@
       ],
       "keylong": [
         "2026-06-03"
+      ],
+      "nako": [
+        "2026-06-04"
+      ],
+      "kargil": [
+        "2026-06-04"
+      ],
+      "roopkund": [
+        "2026-06-04"
       ]
     },
     "morning_formats": {
@@ -2312,7 +2352,8 @@
         "2026-05-28"
       ],
       "v3_tl_world_best_india": [
-        "2026-05-29"
+        "2026-05-29",
+        "2026-06-04"
       ],
       "v2_route_animated_map": [
         "2026-05-29"
@@ -2569,7 +2610,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "keylong",
+    "shared_best": "kargil",
     "collection": "best-motorcycle-routes"
   },
   "manual_skip_dests": {}
