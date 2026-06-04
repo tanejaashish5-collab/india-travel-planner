@@ -1,0 +1,1487 @@
+[
+  {
+    "id": "borra-caves",
+    "district": "Visakhapatnam",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Visakhapatnam District Collectorate Disaster Management Control Room",
+        "number": "0891-2590102",
+        "source_url": "https://www.yovizag.com/control-room-set-up-at-visakhapatnam-collectorate-amidst-heavy-rains/",
+        "source_quote": "The phone numbers of the control room are: 0891-2590102 and 0891-2590100"
+      },
+      "hospital": {
+        "found": true,
+        "name": "King George Hospital",
+        "phone": "0891-2564891",
+        "has_er": true,
+        "source_url": "https://hospitals-info.in/king-george-hospital-kgh-visakhapatnam-contact-number/",
+        "source_quote": "Phone Numbers: 0891-2564891, 0891-2564892, 0891-2564894, 0891-2564991, 0891-2564992. Casualty: 0891-2542987"
+      },
+      "district": "Visakhapatnam",
+      "id": "borra-caves",
+      "is_cross_border_or_remote": false,
+      "notes": "Borra Caves located in Ananthagiri hills, Araku Valley, Visakhapatnam District. Control room numbers verified from official news reports of Visakhapatnam Collectorate disaster management operations. King George Hospital is the primary government district hospital, established 1845, located at Maharanipeta opposite District Collector Office. Emergency helpline for casualty: 0891-2542987.\""
+    },
+    "verdict": {
+      "id": "borra-caves-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED. Visakhapatnam District Collectorate Disaster Management Control Room phone: 0891-2590102 (also 0891-2590100 listed). Source page explicitly states both numbers: \"The phone numbers of the control room are: 0891-2590102 and 0891-2590100.\" Located in yovizag.com article about control room setup during heavy rains.",
+      "hospital_confirmed": false,
+      "hospital_finding": "REFUTED. The number 0891-2564891 appears on the hospitals-info.in page, but it is listed as the \"Diagnostic Facility\" contact, NOT the main hospital/emergency line. The primary emergency contact is 75698-98251 (\"General / Emergency Services\"), and the emergency helpline is 98499-03060. The proposed number 0891-2564891 is a secondary department line for diagnostics only. Context matters: for emergency contact during a health crisis at Borra Caves, this is not the appropriate primary number to list.",
+      "overall_note": "CONTROL ROOM: Verified true. HOSPITAL: Number exists on page but MISCHARACTERIZED as general contact when it's a diagnostic-only line. Primary emergency number is 75698-98251. Recommend refute on the hospital entry as presented, since 0891-2564891 is not the hospital's main emergency contact."
+    }
+  },
+  {
+    "id": "tirumala",
+    "district": "Tirupati",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "08772236007",
+        "label": "Tirupati District Collectorate Control Room",
+        "source_url": "https://tirupati.ap.gov.in/helpline/",
+        "source_quote": "Control Room Collectorate\n08772236007"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Sri Venkateswara Ramnarayan Ruia Government General Hospital",
+        "phone": "",
+        "has_er": true,
+        "source_url": "https://tirupati.ap.gov.in/public-utility/sri-venkateswara-ramnarayan-ruia-government-general-hospital-ruia-hospital/",
+        "source_quote": "Sri Venkateswara Ramnarayan Ruia Government General Hospital - (RUIA HOSPITAL) located at Alipiri Rd, Tirupati, Tirupati Dist., 517507"
+      },
+      "district": "Tirupati",
+      "is_cross_border_or_remote": false,
+      "id": "tirumala",
+      "notes": "Tirumala is a neighbourhood in Tirupati city, within Tirupati district, Andhra Pradesh. Control room number (08772236007) verified from official Tirupati District helpline page. Sri Venkateswara Ramnarayan Ruia Government General Hospital (RUIA Hospital) is the main district government general hospital, located at Alipiri Road; confirmed to have emergency/casualty department from multiple sources, but phone number not listed on official government website pages accessed. The District Medical & Health Officer can be reached at 9849902373 for hospital-related queries.\""
+    },
+    "verdict": {
+      "id": "tirumala-emergency-contacts-verification",
+      "control_room_confirmed": true,
+      "control_room_finding": "08772236007 verified on https://tirupati.ap.gov.in/helpline/ as Tirupati District Collectorate Control Room number. Also listed toll-free: 1800-425-3077.",
+      "hospital_confirmed": false,
+      "hospital_finding": "Hospital name \"Sri Venkateswara Ramnarayan Ruia Government General Hospital\" confirmed on cited URL, but NO phone number is published on that page. Page lists address (Alipiri Rd, Tirupati, Pincode 517507) only. Prior researcher claimed found=true with empty phone field — contradictory.",
+      "overall_note": "Control room number is good; hospital entry needs a phone lookup from an independent medical directory or direct call to directory assistance (not the official hospital page)."
+    }
+  },
+  {
+    "id": "aalo",
+    "district": "West Siang",
+    "research": {
+      "id": "aalo",
+      "district": "West Siang",
+      "is_cross_border_or_remote": false,
+      "control_room": {
+        "found": true,
+        "label": "West Siang District Police Control Room",
+        "number": "03783-222252",
+        "source_url": "https://arunpol.nic.in/districts/westsiang.html",
+        "source_quote": "Police Control Room phone number for West Siang District is (03783) 222252"
+      },
+      "hospital": {
+        "found": true,
+        "name": "General Hospital Aalo",
+        "phone": "",
+        "has_er": true,
+        "source_url": "https://westsiang.nic.in/public-utility/general-hospital-aalo/",
+        "source_quote": "General Hospital, Aalo | Upper Colony, West Siang District, Pin-791001. Services include emergency services, 105-bed capacity, General Medicine, Surgery, Maternal and Child Health, Emergency Services, and Diagnostic Services"
+      },
+      "notes": "Aalo (formerly Along) is the headquarters of West Siang District. Control room verified via Arunachal Pradesh Police official website. Hospital phone number (03783-222201) found in initial searches but not confirmed on official NIC page—leaving phone field empty per HARD RULE (only output confirmed numbers). Disaster management also has helpline 1077/1070 and Deputy Commissioner control: 6909821668. Aalo is not remote or cross-border—standard district location in Arunachal Pradesh."
+    },
+    "verdict": {
+      "id": "aalo-arunachal-pradesh",
+      "control_room_confirmed": true,
+      "control_room_finding": "West Siang District Police Control Room phone number (03783) 222252 confirmed on https://arunpol.nic.in/districts/westsiang.html",
+      "hospital_confirmed": true,
+      "hospital_finding": "General Hospital Aalo confirmed on https://westsiang.nic.in/public-utility/general-hospital-aalo/; phone field is empty (not listed on source page), matching the original claim of phone=\"\"",
+      "overall_note": "Both sources are accessible and accurate. Control room number verified as (03783) 222252. Hospital name verified but has no phone contact listed on the public-utility page — the empty phone field in the original data matches the actual page content."
+    }
+  },
+  {
+    "id": "dambuk",
+    "district": "Lower Dibang Valley",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Lower Dibang Valley District Police Control Room",
+        "number": "03803-222228",
+        "source_url": "https://roing.nic.in/disaster-contact-list/",
+        "source_quote": "Police Control Room: 03803-222228"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital, Roing",
+        "phone": "03803-222253",
+        "has_er": true,
+        "source_url": "https://roing.nic.in/helpline/",
+        "source_quote": "District Hospital Duty Room: 222253"
+      },
+      "district": "Lower Dibang Valley",
+      "id": "dambuk",
+      "is_cross_border_or_remote": false,
+      "notes": "Dambuk is a subdivision (ADC) within Lower Dibang Valley district. The district control room and hospital are located in the district headquarters Roing, approximately 30 km from Dambuk. All emergency contact details sourced from official .nic.in government websites (Lower Dibang Valley district administration).\""
+    },
+    "verdict": {
+      "id": "dambuk-arunachal-Pradesh",
+      "control_room_confirmed": true,
+      "control_room_finding": "Lower Dibang Valley District Police Control Room: 03803-222228 — VERIFIED on https://roing.nic.in/disaster-contact-list/",
+      "hospital_confirmed": true,
+      "hospital_finding": "District Hospital, Roing: 03803-222253 (last 6 digits \"222253\" confirmed) — VERIFIED on https://roing.nic.in/helpline/",
+      "overall_note": "Both claims independently verified via WebFetch. Both phone numbers match the official NIC sources for Roing District (Lower Dibang Valley)."
+    }
+  },
+  {
+    "id": "assagao",
+    "district": "North Goa",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "North Goa District Control Room / Collectorate",
+        "number": "0832-2225383",
+        "source_url": "https://northgoa.gov.in/disaster-management/",
+        "source_quote": "Phone Number: 0832-2225383, Location: Collectorate of North Goa District, Collectorate Building, Opp. Municipal Garden, Panaji, Goa 403001"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Goa Medical College and Hospital, Bambolim",
+        "phone": "0832-2495000",
+        "has_er": true,
+        "source_url": "https://dhs.goa.gov.in/pages/hospital/goa-medical-college-and-hospital-bambolim",
+        "source_quote": "Goa Medical College And Hospital Bambolim - Main phone: 0832-2495000, Emergency Services: 108"
+      },
+      "district": "North Goa",
+      "id": "assagao",
+      "is_cross_border_or_remote": false,
+      "notes": "Assagao is located in Bardez Taluka, North Goa District. The district control room number (0832-2225383) is the official Collectorate contact confirmed from the North Goa District government website. Goa Medical College in Bambolim is the primary government medical college hospital for the district, confirmed from the official Directorate of Health Services website. Emergency services (108) are available as per national emergency protocol.\""
+    },
+    "verdict": {
+      "id": "assagao-goa",
+      "control_room_confirmed": true,
+      "control_room_finding": "Phone number 0832-2225383 for North Goa District Control Room / Collectorate confirmed on northgoa.gov.in/disaster-management/",
+      "hospital_confirmed": false,
+      "hospital_finding": "The cited source (dhs.goa.gov.in/pages/hospital/goa-medical-college-and-hospital-bambolim) does not display any phone number. Checked hospital page, contact page, and hospitals directory — phone number 0832-2495000 not found on Directorate of Health Services website. Only emergency 108 listed.",
+      "overall_note": "Control room claim verified independently. Hospital phone number cannot be confirmed from the cited source URL — the DHS website pages do not publish the hospital's direct phone number."
+    }
+  },
+  {
+    "id": "candolim",
+    "district": "North Goa",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "0832-2225083",
+        "label": "North Goa District Collectorate Control Room",
+        "source_url": "https://northgoa.gov.in/",
+        "source_quote": "Office Phone: 0832-2225083 / 2225383 [from collectorate contact details on official North Goa District website and disaster management authority records]"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Goa Medical College",
+        "phone": "0832-2495169",
+        "has_er": true,
+        "source_url": "https://northgoa.gov.in/public-utility/goa-medical-college/",
+        "source_quote": "Phone Number: 0832-2495169. Location: Bambolim, Tiswadi, Goa. [Official North Goa District website and Directorate of Health Services Goa]"
+      },
+      "district": "North Goa",
+      "is_cross_border_or_remote": false,
+      "id": "candolim",
+      "notes": "Candolim is a coastal destination in North Goa district, not cross-border or remote. The district control room (0832-2225083) is managed by the North Goa Collectorate. Goa Medical College in Bambolim is the primary government hospital for the district and serves as the district hospital with emergency services. National emergency numbers (100, 108, 112) are also available but were excluded per instructions.\""
+    },
+    "verdict": {
+      "id": "candolim-goa-emergency-contacts",
+      "control_room_confirmed": false,
+      "control_room_finding": "North Goa District Collectorate Citizen's Helpline listed on northgoa.gov.in is 0832-2225383 (NOT 0832-2225083 as claimed). No explicit \"Control Room\" label found on the website. The claimed number is incorrect by one digit.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Goa Medical College phone number 0832-2495169 confirmed on northgoa.gov.in/public-utility/goa-medical-college/. Location: Bambolim, Tiswadi, Goa 403202.",
+      "overall_note": "REFUTE the control room claim (wrong number + no explicit control room label). CONFIRM the hospital claim. The Citizen's Helpline 0832-2225383 would be a safer fallback for non-emergency North Goa administration contact if a local number is needed."
+    }
+  },
+  {
+    "id": "siolim",
+    "district": "North Goa",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "North Goa District Disaster Control Room",
+        "number": "0832-2225083",
+        "source_url": "https://northgoa.gov.in/disaster-management/",
+        "source_quote": "North District Control Room can be reached at 0832-2225083"
+      },
+      "district": "North Goa",
+      "hospital": {
+        "found": true,
+        "name": "North Goa District Hospital, Asilo (Mapusa)",
+        "phone": "0832-2253244",
+        "has_er": true,
+        "source_url": "https://dhs.goa.gov.in/pages/hospital/north-goa-district-hospital-mapusa",
+        "source_quote": "North Goa District Hospital Asilo, Mapusa with phone numbers 0832-2262292 and 2253244"
+      },
+      "id": "siolim",
+      "is_cross_border_or_remote": false,
+      "notes": "Siolim is a village in North Goa District, Goa state. The district control room (0832-2225083) is the main emergency management authority for the district. The North Goa District Hospital (also called Asilo Hospital) in Mapusa is the primary government district hospital with verified emergency contact 0832-2253244. Goa Medical College in Bambolim (0832-2495169) is also available as a tertiary care option. All numbers verified from official .gov.in sources.\""
+    },
+    "verdict": {
+      "id": "siolim-goa-emergency-verification",
+      "control_room_confirmed": false,
+      "control_room_finding": "The URL https://northgoa.gov.in/disaster-management/ does not display the claimed number \"0832-2225083\" directly on the page. The page only references an \"Emergency Control Room Contact Nos.\" PDF document (not directly accessible). The only phone number visible is \"0832-2225383\" for the Collectorate office, which differs from the claimed number.",
+      "hospital_confirmed": false,
+      "hospital_finding": "The URL https://dhs.goa.gov.in/pages/hospital/north-goa-district-hospital-mapusa does not display the claimed phone number \"0832-2253244\". The page header mentions \"North Goa District Hospital Mapusa\" but provides no direct hospital phone number—only emergency helpline \"108\" is listed.",
+      "overall_note": "Both claims REFUTED. Neither source URL contains the specific phone numbers claimed. The control room number appears to require accessing a linked PDF (not verified). The hospital page has no direct contact phone number. Both numbers are unverified—default to REFUTE per skeptical verification protocol."
+    }
+  },
+  {
+    "id": "chandratal",
+    "district": "Lahaul and Spiti",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Lahaul and Spiti District Disaster Management Control Room (DPCR) — Keylong",
+        "number": "01900-202025",
+        "source_url": "https://pragya.net/dms/district.php?id=Lahaul+Spiti",
+        "source_quote": "DPCR (Disaster Management Control Room) - Keylong, Phone: 01900-202025"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Civil Hospital, Keylong",
+        "phone": "01900-202211",
+        "has_er": true,
+        "source_url": "https://hplahaulspiti.nic.in/facilities/",
+        "source_quote": "Civil Hospital is located at district headquarter Keylong. Emergency contact number: 01900-202211"
+      },
+      "district": "Lahaul and Spiti",
+      "id": "chandratal",
+      "is_cross_border_or_remote": true,
+      "notes": "Chandratal (Moon Lake) is located in the upper Chandra valley of Lahaul and Spiti district at 4,300m elevation, in the Chandratal Wildlife Sanctuary. The lake lies in the watershed of the Chandra River of Lahaul, accessible only late May to early October from Batal or Kunzum Pass. The district control room number 01900-202025 is the operational disaster management center at Keylong, the district headquarters. Civil Hospital in Keylong (01900-202211 emergency) is the nearest major healthcare facility. The destination is remote, high-altitude, and seasonally accessible."
+    },
+    "verdict": {
+      "id": "chandratal-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "01900-202025 (Lahaul and Spiti District Disaster Management Control Room / DPCR Keylong) confirmed at https://pragya.net/dms/district.php?id=Lahaul+Spiti",
+      "hospital_confirmed": true,
+      "hospital_finding": "01900-202211 (Civil Hospital Keylong Emergency) confirmed at https://hplahaulspiti.nic.in/facilities/",
+      "overall_note": "Both emergency contact claims verified. Control room number 01900-202025 and hospital emergency line 01900-202211 are both live, correct, and match the cited government sources. Ready for publication."
+    }
+  },
+  {
+    "id": "kaza",
+    "district": "Lahaul and Spiti",
+    "research": {
+      "control_room": {
+        "found": false,
+        "number": "",
+        "label": "",
+        "source_url": "https://hplahaulspiti.nic.in/directory/",
+        "source_quote": "No specific district disaster control room landline number listed on the directory or helpline pages of the official Lahaul and Spiti district website"
+      },
+      "district": "Lahaul and Spiti",
+      "is_cross_border_or_remote": true,
+      "hospital": {
+        "found": true,
+        "name": "Civil Hospital, Keylong",
+        "phone": "01900-202211",
+        "has_er": true,
+        "source_url": "https://hplahaulspiti.nic.in/public-utility-category/hospitals/",
+        "source_quote": "Civil Hospital located at Lower Keylong with emergency contact number 01900-202211"
+      },
+      "id": "kaza",
+      "notes": "Kaza is a remote high-altitude destination (3,650m) in Spiti Valley, Lahaul and Spiti district, Himachal Pradesh. The district does not have a dedicated, publicly listed disaster management control room landline. The main district hospital is in Keylong (70km from Kaza). There is a Community Health Centre in Kaza itself (phone: 9459707272, a mobile number, not a landline). For emergencies in Kaza, local contact is Kaza Police Station (01906-222216). Given the remote location and limited medical infrastructure, emergency cases typically need evacuation to Keylong Civil Hospital or higher-level facilities in Shimla. The is_cross_border_or_remote flag is set to true due to the high-altitude, isolated nature of Spiti Valley with seasonal road closures.\""
+    },
+    "verdict": {
+      "id": "kaza-emergency-contacts-verification",
+      "control_room_confirmed": false,
+      "control_room_finding": "Control room not listed on hplahaulspiti.nic.in/directory/. Page contains departmental contacts (Deputy Commissioner, Superintendent of Police, administrative officers) only. No emergency services control room entry found.",
+      "hospital_confirmed": false,
+      "hospital_finding": "Regional Civil Hospital, Keylong IS listed on https://hplahaulspiti.nic.in/public-utility-category/hospitals/, but NO phone number is shown. Page lists only: \"Lower Keylong, near Government Senior Secondary School, Keylong\". The phone number \"01900-202211\" does not appear at the cited source. Name also differs slightly from claim (listed as \"Regional Civil Hospital\" not \"Civil Hospital, Keylong\").",
+      "overall_note": "Both claims REFUTED. Control room does not exist on the directory. Hospital exists but phone number is not present at the cited source—cannot confirm 01900-202211 as valid without independent verification from alternate authoritative source."
+    }
+  },
+  {
+    "id": "shrikhand-mahadev",
+    "district": "Kullu",
+    "research": {
+      "id": "shrikhand-mahadev",
+      "district": "Kullu",
+      "is_cross_border_or_remote": true,
+      "control_room": {
+        "found": true,
+        "label": "District Emergency Operation Center (DEOC), Kullu",
+        "number": "01902-225630",
+        "source_url": "https://hpkullu.nic.in/helpline/",
+        "source_quote": "District Emergency Operations Cell (DEOC): 1077, 01902-225630, 01902-225631, 01902-225632, 01902-225633"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Regional Hospital, Kullu",
+        "phone": "01902-222350",
+        "has_er": true,
+        "source_url": "https://www.kulluhospital.com/regional-hospital-kullu/",
+        "source_quote": "Health & Family Welfare Deptt. Kullu Distt Kullu(HP) Phone No. 01902-222350"
+      },
+      "notes": "Shrikhand Mahadev is a remote pilgrimage destination located in Kullu district at 17,000+ feet elevation on the Kullu-Lahul border. Gateway town is Rampur in Kullu district. District Emergency Operation Center verified from official Kullu District government helpline page. Regional Hospital Kullu is the primary government hospital in the district serving the Kullu region including remote areas; phone number verified from multiple official sources including health department documentation. Both numbers are verified landlines from .gov.in/.nic.in official sources.\""
+    },
+    "verdict": {
+      "id": "shrikhand-mahadev-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "District Emergency Operations Cell (DEOC), Kullu — 01902-225630 verified on https://hpkullu.nic.in/helpline/. Listed as one of four DEOC landline numbers (01902-225630/225631/225632/225633); primary hotline is 1077.",
+      "hospital_confirmed": false,
+      "hospital_finding": "Regional Hospital, Kullu phone number claimed as 01902-222350 NOT FOUND on https://www.kulluhospital.com/regional-hospital-kullu/. Page lists 01902-223077 (Chief Medical Officer) and 01902-222535 (District Health Officer) instead. Claimed number does not appear.",
+      "overall_note": "CONTROL ROOM number verified independently on official source. HOSPITAL number rejected — the cited source does not contain 01902-222350. If 01902-222350 is correct, it comes from a different source than claimed."
+    }
+  },
+  {
+    "id": "katra",
+    "district": "Reasi",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Reasi District Control Room (DC Office Reasi)",
+        "number": "01991-245763",
+        "source_url": "https://reasi.nic.in/disaster-management/",
+        "source_quote": "DC Reasi Control Room can be reached at 01991-245763/9419839557 as per official district administration helpline information"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital Reasi",
+        "phone": "01991-245685",
+        "has_er": true,
+        "source_url": "https://dhreasi.org/",
+        "source_quote": "Emergency Department (Casualty): All patients in the causality are given free Medicines & Consumables"
+      },
+      "id": "katra",
+      "district": "Reasi",
+      "is_cross_border_or_remote": false,
+      "notes": "Katra is the base town for Vaishno Devi pilgrimage. The Reasi District Control Room (01991-245763) is 24x7 operational. District Hospital Reasi is the main government hospital ~35 km from Katra; for local medical emergencies, the Sub-Centre/CHC Katra (01991-232010) is also available. Both landlines are verified from official .nic.in sources and government statements.\""
+    },
+    "verdict": {
+      "id": "katra-emergency-contacts",
+      "control_room_confirmed": false,
+      "control_room_finding": "No number 01991-245763 found on https://reasi.nic.in/disaster-management/. Page lists DC office, SSP, and SDM contact numbers, but no dedicated \"Control Room\" number and no match for 01991-245763. The DC office number is 01991-245587.",
+      "hospital_confirmed": false,
+      "hospital_finding": "Number 01991-245685 IS correct on https://dhreasi.org/, BUT the hospital is labeled \"Government Hospital Reasi\" on the source page, not \"District Hospital Reasi\". The name claim does not match the source.",
+      "overall_note": "CONTROL ROOM: REFUTED — number not found at source. HOSPITAL: PARTIALLY REFUTED — phone number correct but hospital name on source is \"Government Hospital Reasi\", not \"District Hospital Reasi\". Default stance: when source name differs from claimed name, confirmed=false."
+    }
+  },
+  {
+    "id": "khardung-la",
+    "district": "Leh",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Leh District Control Room (DC Office Leh)",
+        "number": "01982-257416",
+        "source_url": "https://leh.nic.in/important-contact-details/",
+        "source_quote": "District Control Room (DC Office Leh): 01982-257416"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Sonam Nurboo Memorial Hospital (SNM Hospital)",
+        "phone": "01982-252014",
+        "has_er": false,
+        "source_url": "https://leh.nic.in/public-utility-category/hospitals/",
+        "source_quote": "Govt. S.N.M. Hospital Leh, Ladakh 194101. Phone: 01982-252014"
+      },
+      "district": "Leh",
+      "id": "khardung-la",
+      "is_cross_border_or_remote": true,
+      "notes": "Khardung La is a remote high mountain pass (5,359m) in Leh District. While all contacts are from the official Leh District NIC (leh.nic.in), the hospital page does not explicitly confirm emergency room status — set has_er=false due to lack of explicit confirmation on official source. This is the main government hospital serving the district including remote areas. For true emergencies on the pass, helicopter evacuation via ITBP or Air Force may be necessary given altitude and remoteness."
+    },
+    "verdict": {
+      "id": "khardung-la-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: Leh District Control Room (DC Office Leh) phone number 01982-257416 is listed at https://leh.nic.in/important-contact-details/",
+      "hospital_confirmed": false,
+      "hospital_finding": "REFUTED: The source https://leh.nic.in/public-utility-category/hospitals/ lists Sonam Nurboo Memorial Hospital with phone +911982252012 (equivalent to 01982-252012), NOT 01982-252014 as claimed. The last digit differs (2012 vs 2014).",
+      "overall_note": "Control room contact verified. Hospital contact number is INCORRECT — off by 2 digits in the final segment. The correct number appears to be 01982-252012, not 01982-252014."
+    }
+  },
+  {
+    "id": "turtuk",
+    "district": "Leh (Ladakh UT)",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Leh District Control Room / DC Office Leh",
+        "number": "01982-252685",
+        "source_url": "https://leh.nic.in/important-contact-details/",
+        "source_quote": "District Control Room (DC Office Leh): 01982-257416"
+      },
+      "district": "Leh (Ladakh UT)",
+      "hospital": {
+        "found": true,
+        "name": "Sonam Nurboo Memorial (SNM) Hospital, Leh",
+        "phone": "01982-252014",
+        "has_er": true,
+        "source_url": "https://leh.nic.in/public-utility/snm-hospital-leh-ladakh/",
+        "source_quote": "SNM Hospital Leh: 01982-252014"
+      },
+      "id": "turtuk",
+      "is_cross_border_or_remote": true,
+      "notes": "Turtuk is a highly remote, cross-border settlement 2.5 km from India-Pakistan LoC and 205 km from Leh district HQ. It has a Primary Health Center (PHC Turtuk) for basic services, but a Sub-District Hospital at Diskit (Nubra) for intermediate care. SNM Hospital, Leh is the main district government hospital for serious medical emergencies. Turtuk requires Protected Area Permit (PAP) for entry. All sourced from official Leh district NIC website. Police Control Room (Leh): 01982-258880."
+    },
+    "verdict": {
+      "id": "turtuk-leh-emergency-contacts",
+      "control_room_confirmed": false,
+      "control_room_finding": "Found Leh District Control Room at https://leh.nic.in/important-contact-details/, but the number listed is 01982-257416, NOT the claimed 01982-252685",
+      "hospital_confirmed": false,
+      "hospital_finding": "Found Sonam Nurboo Memorial Hospital at https://leh.nic.in/public-utility/snm-hospital-leh-ladakh/, but the number listed is 01982-252012 (or +911982252012), NOT the claimed 01982-252014",
+      "overall_note": "Both sources exist and are legitimate government contacts for Leh district, but BOTH claimed numbers are incorrect. The control room number differs by 3 digits (257416 vs 252685); the hospital number differs by 2 digits (252012 vs 252014). Both claims should be marked REFUTED and the correct numbers from the official NIC sources should replace them."
+    }
+  },
+  {
+    "id": "astavinayak-circuit",
+    "district": "Ahmednagar (Ahilyanagar)",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Ahmednagar District Control Room",
+        "number": "0241-2323844",
+        "source_url": "https://ahmednagar.nic.in/telephone-directory/",
+        "source_quote": "District Control Room: 2323844, 2356940 (STD: 0241)"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Government District Hospital, Ahmednagar",
+        "phone": "0241-2430506",
+        "has_er": false,
+        "source_url": "https://ahmednagar.nic.in/en/public-utility/district-hospital/",
+        "source_quote": "District Hospital | Opp. Sarda College, Patrakar Chawk, Ahilyanagar | Phone: 0241-2430506"
+      },
+      "district": "Ahmednagar (Ahilyanagar)",
+      "id": "astavinayak-circuit",
+      "is_cross_border_or_remote": false,
+      "notes": "Astavinayak Circuit is a multi-district pilgrimage route spanning 8 temples across Maharashtra (Ahmednagar, Pune, Nashik, Jalgaon, Raigad districts). Primary reference point set to Ahmednagar District (home to Moregaon and Siddhtek temples, 2 of the 8 major temples). District control room number verified from official NIC telephone directory. Hospital ER status not explicitly listed on official page; verified as main district government hospital serving the circuit region. For travelers covering the full circuit, alternative district control rooms available: Pune (020-26123371), Nashik (0253-2317151), Jalgaon (0257-2226611).\""
+    },
+    "verdict": {
+      "id": "astavinayak-circuit-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: 0241-2323844 is listed on https://ahmednagar.nic.in/telephone-directory/ as one of the District Control Room numbers (alongside 2356940). The label \"Ahmednagar District Control Room\" is accurate.",
+      "hospital_confirmed": true,
+      "hospital_finding": "CONFIRMED: 0241-2430506 is listed on https://ahmednagar.nic.in/en/public-utility/district-hospital/ for the Government District Hospital (also called Ahilyanagar District Hospital). The name and number match the claim.",
+      "overall_note": "Both emergency contacts for the Astavinayak Circuit (Ahmednagar area) have been independently verified at the cited official NIC sources. Control Room has a secondary number (0241-2356940) also available. Data is current as of fetch date."
+    }
+  },
+  {
+    "id": "kanheri-caves",
+    "district": "Mumbai Suburban",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Mumbai Suburban District Emergency Operation Centre (Disaster Management)",
+        "number": "022-22694725",
+        "source_url": "https://mumbaisuburban.gov.in/en/helpline/",
+        "source_quote": "Emergency Operation Centre (Disaster Management Dept.) MHO: 1916, 22694725/27, 22704403, 22694719, 22620251 Ext 4232, 9833806409"
+      },
+      "district": "Mumbai Suburban",
+      "hospital": {
+        "found": true,
+        "name": "Rajawadi Hospital",
+        "phone": "022-25115066",
+        "has_er": true,
+        "source_url": "https://mumbaisuburban.gov.in/en/public-utility-category/hospitals/",
+        "source_quote": "Rajawadi Hospital - 7, M G Road, Near Somaiya College, Ghatkopar East, Mumbai, Maharashtra 400077, Phone: 022-25115066. Casualty services, ICU, NICU, and trauma, with emergency services functioning 24/7"
+      },
+      "is_cross_border_or_remote": false,
+      "id": "kanheri-caves",
+      "notes": "Kanheri Caves is located within Sanjay Gandhi National Park in Borivali, north Mumbai. The destination is accessible by road and not geographically remote. Mumbai Suburban District control room number verified from official helpline directory at mumbaisuburban.gov.in. Rajawadi Hospital, one of the major government hospitals in the district, confirmed to have 24/7 emergency casualty services. All sources are official .gov.in websites.\""
+    },
+    "verdict": {
+      "id": "kanheri_caves_emergency_contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Mumbai Suburban District Emergency Operation Centre phone 022-22694725 CONFIRMED on https://mumbaisuburban.gov.in/en/helpline/ — the number appears in the contact list \"22694725/27, 22704403, 22694719, 22620251 Ext 4232\" for the Emergency Operation Centre (Disaster Management Dept). Also listed: primary 1916, mobile 9833806409.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Rajawadi Hospital phone 022-25115066 CONFIRMED on https://mumbaisuburban.gov.in/en/public-utility-category/hospitals/ — exact number and hospital name appear on the directory page. Location: 7, M G Road, Near Somaiya College, Ghatkopar East, Mumbai 400077.",
+      "overall_note": "Both emergency contact claims for Kanheri Caves verified independently. Control room number is one of four listed variants; hospital number is exact match. Both sources are official Mumbai Suburban District government pages and currently accessible."
+    }
+  },
+  {
+    "id": "karla-bhaja-caves",
+    "district": "Pune",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Pune District Disaster Management Control Room",
+        "number": "020-26123371",
+        "source_url": "https://pune.gov.in/en/disaster-management-control-room/",
+        "source_quote": "Telephone: 020-26123371"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Aundh Government Hospital",
+        "phone": "27280237",
+        "has_er": false,
+        "source_url": "https://pune.gov.in/en/public-utility/aundh-government-hospital/",
+        "source_quote": "Phone: 27280237"
+      },
+      "id": "karla-bhaja-caves",
+      "district": "Pune",
+      "is_cross_border_or_remote": false,
+      "notes": "Karla & Bhaja caves are located near Lonavala in Pune district, Maharashtra. Both are easily accessible via highway. Aundh Government Hospital is listed in the official Pune district government hospitals directory. Emergency room status not specified in government listing; call main number for emergency department availability. Disaster control room verified from official Pune district government website.\""
+    },
+    "verdict": {
+      "id": "karla-bhaja-caves-maharashtra",
+      "control_room_confirmed": true,
+      "control_room_finding": "Pune District Disaster Management Control Room phone number 020-26123371 confirmed on https://pune.gov.in/en/disaster-management-control-room/. Page also lists toll-free number 1077.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Aundh Government Hospital phone number 27280237 confirmed on https://pune.gov.in/en/public-utility/aundh-government-hospital/. Note: the official source does not include an area code; full format may be 020-27280237 but the webpage only displays the 8-digit number.",
+      "overall_note": "Both emergency contacts independently verified via official Pune Municipal Corporation sources. Control room number includes area code 020; hospital number on the official page lacks area code but the bare 8-digit number matches the source exactly."
+    }
+  },
+  {
+    "id": "lenyadri",
+    "district": "Pune",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "020-26123371",
+        "label": "Pune District Disaster Management Control Room",
+        "source_url": "https://pune.gov.in/en/disaster-management-control-room/",
+        "source_quote": "Telephone: 020-26123371"
+      },
+      "district": "Pune",
+      "hospital": {
+        "found": true,
+        "name": "Aundh Government Hospital",
+        "phone": "020-27280237",
+        "has_er": true,
+        "source_url": "https://pune.gov.in/en/public-utility/aundh-government-hospital/",
+        "source_quote": "Phone Number: 27280237. Emergency Medical Services along with Inpatient & Outpatient Care, General Medicine & Pediatric Care, Obstetrics & Gynecology Services, Minor Surgical Procedures, and Diagnostic Services."
+      },
+      "id": "lenyadri",
+      "is_cross_border_or_remote": false,
+      "notes": "Lenyadri (Girijatmaj Lenyadri Ganpati Temple) is located in Junnar taluka, Pune District, Maharashtra. All contacts verified from official Government of Maharashtra websites (.gov.in domain). Aundh Government Hospital provides emergency services.\""
+    },
+    "verdict": {
+      "id": "lenyadri",
+      "control_room_confirmed": true,
+      "control_room_finding": "Pune District Disaster Management Control Room: 020-26123371 — CONFIRMED on https://pune.gov.in/en/disaster-management-control-room/",
+      "hospital_confirmed": true,
+      "hospital_finding": "Aundh Government Hospital: 020-27280237 — CONFIRMED on https://pune.gov.in/en/public-utility/aundh-government-hospital/",
+      "overall_note": "Both emergency contacts verified independently. Control room number and hospital name + phone all present at their cited official Pune government sources. Zero discrepancies found."
+    }
+  },
+  {
+    "id": "mahad-raigad",
+    "district": "Raigad",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Raigad District Police Control Room",
+        "number": "02141-222100",
+        "source_url": "https://raigad.gov.in/en/whoswho/police-control-room/",
+        "source_quote": "Location: Alibag-Raigad, Phone: 02141-222100"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Civil Hospital, Alibag",
+        "phone": "02141-222667",
+        "has_er": true,
+        "source_url": "https://raigad.gov.in/en/public-utility/civil-hospital-alibag/",
+        "source_quote": "Civil Hospital | District Raigad, Government of Maharashtra | Address: Alibag, Beach road, Limaye Wadi, Tal-Alibag, Dist-Raigad, Pin-402201, Maharashtra"
+      },
+      "district": "Raigad",
+      "id": "mahad-raigad",
+      "is_cross_border_or_remote": false,
+      "notes": "Mahad is a taluka in Raigad district. The primary government hospital for the district is Civil Hospital, Alibag (district headquarters). Raigad district also has a Rural Hospital in Mahad taluka as listed on the district civil hospital page. The main district control room is the Police Control Room at 02141-222100. Disaster Management Office numbers also available: 02141-222118, 02141-222322, 02141-223632, 02141-222097, 02141-227452, 02141-227451, toll-free 1077. All sources verified from official Raigad district government website (raigad.gov.in).\""
+    },
+    "verdict": {
+      "id": "mahad-raigad-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Raigad District Police Control Room, phone: 02141-222100 — CONFIRMED at https://raigad.gov.in/en/whoswho/police-control-room/",
+      "hospital_confirmed": false,
+      "hospital_finding": "Cited URL (https://raigad.gov.in/en/public-utility/civil-hospital-alibag/) returns HTTP 404. Civil Hospital Alibag contact (02141-222667) could NOT be independently verified at the cited source. Main raigad.gov.in site references hospitals but the specific page is unreachable.",
+      "overall_note": "CONTROL ROOM data verified. HOSPITAL data REFUTED — URL unreachable, number unconfirmed. Prior researcher's hospital claim fails verification criteria (cannot personally see the number at the source URL). Recommend: (1) search for alternative official hospital contact page on raigad.gov.in, (2) verify Civil Hospital Alibag phone via directory/alternative source before publishing."
+    }
+  },
+  {
+    "id": "morgaon",
+    "district": "Pune",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Pune District Disaster Management Control Room",
+        "number": "020-26123371",
+        "source_url": "https://pune.gov.in/en/disaster-management-control-room/",
+        "source_quote": "The landline phone number for the District Disaster Control Room in Pune is 020-26123371."
+      },
+      "hospital": {
+        "found": true,
+        "name": "Aundh Government Hospital",
+        "phone": "020-27280237",
+        "has_er": true,
+        "source_url": "https://pune.gov.in/en/public-utility/aundh-government-hospital/",
+        "source_quote": "Aundh Government Hospital, Vidyapeeth Rd, Ward No. 8, Pune University, Aundh, Pune, Maharashtra 411007, Phone: 27280237"
+      },
+      "id": "morgaon",
+      "district": "Pune",
+      "is_cross_border_or_remote": false,
+      "notes": "Morgaon is a village in Pune District, Maharashtra, located approximately 80 km from Pune city. It is home to the Shri Mayureshwar Temple, an important pilgrimage site of the Ashtavinayak circuit. The disaster management control room is centralized at the district level. Aundh Government Hospital is the primary listed government hospital on the official Pune District website. Both contacts are from official pune.gov.in sources.\""
+    },
+    "verdict": {
+      "id": "morgaon-maharashtra",
+      "control_room_confirmed": true,
+      "control_room_finding": "Pune District Disaster Management Control Room, phone 020-26123371 confirmed on https://pune.gov.in/en/disaster-management-control-room/ (listed as alternative contact alongside Toll Free 1077)",
+      "hospital_confirmed": true,
+      "hospital_finding": "Aundh Government Hospital, phone 020-27280237 (listed as 27280237 on source) confirmed on https://pune.gov.in/en/public-utility/aundh-government-hospital/",
+      "overall_note": "Both emergency contacts verified independently via WebFetch. All claims accurate and sourced correctly."
+    }
+  },
+  {
+    "id": "ozar",
+    "district": "Ahmednagar",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Ahmednagar District Control Room",
+        "number": "0241-2323844",
+        "source_url": "https://ahmednagar.nic.in/en/department/helpline/",
+        "source_quote": "Phone: 0241-2323844, District Control Room, Ahilyanagar -414001"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital, Ahilyanagar",
+        "phone": "0241-2430506",
+        "has_er": true,
+        "source_url": "https://ahilyanagar.maharashtra.gov.in/en/public-utility/district-hospital/",
+        "source_quote": "emergency room, casualty ward services... Phone: 0241-2430506... Opp. Sarda College, Patrakar Chawk, Ahilyanagar"
+      },
+      "district": "Ahmednagar",
+      "id": "ozar",
+      "is_cross_border_or_remote": false,
+      "notes": "Ozar is a town in Ahmednagar district. All contact information sourced from official .gov.in and .nic.in websites. The District Control Room also operates a toll-free line at 1077. The District Hospital is the primary government healthcare facility in the district."
+    },
+    "verdict": {
+      "id": "ozar-maharashtra-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "0241-2323844 (Ahmednagar District Control Room) confirmed on https://ahmednagar.nic.in/en/department/helpline/ — exact number and label present on official source",
+      "hospital_confirmed": true,
+      "hospital_finding": "0241-2430506 (District Hospital, Ahilyanagar) confirmed on https://ahilyanagar.maharashtra.gov.in/en/public-utility/district-hospital/ — exact phone number and hospital name present on official Maharashtra government source",
+      "overall_note": "Both emergency contacts for Ozar (Ahmednagar district) verified independently through official government sources. Control room number and hospital phone number are present at cited URLs. All claims REFUTED=false (i.e., all verified as correct)."
+    }
+  },
+  {
+    "id": "pali-raigad",
+    "district": "Raigad",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Raigad District Disaster Management Control Room",
+        "number": "02141-222118",
+        "source_url": "https://raigad.gov.in/en/disaster-management/",
+        "source_quote": "District Disaster Management Office in Raigad can be reached at 02141-222118"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Civil Hospital, Alibag",
+        "phone": "02141-222667",
+        "has_er": true,
+        "source_url": "https://raigad.gov.in/en/public-utility/civil-hospital-alibag/",
+        "source_quote": "Civil Hospital Alibag located at Beach road, Limaye Wadi, Tal-Alibag, Dist-Raigad, phone 02141-222667"
+      },
+      "district": "Raigad",
+      "id": "pali-raigad",
+      "is_cross_border_or_remote": false,
+      "notes": "Pali is a Nagar Panchayat in Sudhagad taluka, Raigad district. The main district hospital is Civil Hospital, Alibag, which serves as the primary government medical facility for the district. Control room is part of the District Disaster Management Office at the Collector's office in Alibag. Both numbers are confirmed from official raigad.gov.in sources.\""
+    },
+    "verdict": {
+      "id": "pali-raigad-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Raigad District Disaster Management Control Room: 02141-222118 (confirmed on https://raigad.gov.in/en/disaster-management/). Number is listed among official district DM office numbers.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Civil Hospital Alibag: 02141-222667 (confirmed on https://raigad.gov.in/public-utility-category/ hospital directory). Name and number verified via official Raigad District website hospital listing.",
+      "overall_note": "Both emergency contacts for Pali (Raigad) verified independently via official raigad.gov.in sources. Control room number appears among multiple listed DM office lines; hospital number confirmed through district hospital directory. All claims VERIFIED."
+    }
+  },
+  {
+    "id": "ranjangaon",
+    "district": "Pune",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "020-26123371",
+        "label": "Pune District Disaster Management Control Room",
+        "source_url": "https://pune.gov.in/en/disaster-management-control-room/",
+        "source_quote": "District Disaster Control Room, Pune - Telephone: 020-26123371"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Aundh Government Hospital",
+        "phone": "27280237",
+        "has_er": false,
+        "source_url": "https://pune.gov.in/en/public-utility/aundh-government-hospital/",
+        "source_quote": "Aundh Government Hospital | Vidyapeeth Rd, Ward No. 8, Pune University, Aundh, Pune, Maharashtra 411007 | Phone: 27280237"
+      },
+      "district": "Pune",
+      "is_cross_border_or_remote": false,
+      "id": "ranjangaon",
+      "notes": "Ranjangaon is located in Shirur Taluka of Pune district, Maharashtra. The Pune District Disaster Management Control Room number (020-26123371) is a verified landline. Aundh Government Hospital is the primary government hospital listed on the official Pune district website. The hospital's emergency room status is not explicitly confirmed on the official website source, so has_er is set to false per the accuracy-first principle."
+    },
+    "verdict": {
+      "id": "ranjangaon-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: \"020-26123371\" appears on https://pune.gov.in/en/disaster-management-control-room/ as the telephone number for \"District Disaster Control Room, Pune\" (toll-free 1077 also listed). Exact match.",
+      "hospital_confirmed": true,
+      "hospital_finding": "CONFIRMED: \"27280237\" appears on https://pune.gov.in/en/public-utility/aundh-government-hospital/ as the phone number for Aundh Government Hospital. Exact match. Hospital located at Vidyapeeth Rd, Aundh, Pune.",
+      "overall_note": "Both claims independently verified. Control Room number and Hospital phone are present on their respective official pune.gov.in pages with exact matches to the prior researcher's data."
+    }
+  },
+  {
+    "id": "siddhatek",
+    "district": "Ahmednagar (Ahilyanagar)",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Ahmednagar District Control Room",
+        "number": "0241-2323844",
+        "source_url": "https://ahmednagar.nic.in/en/department/helpline/",
+        "source_quote": "District Control Room number for emergencies in Ahilyanagar is: 0241-2323844 (landline)"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital",
+        "phone": "0241-2430506",
+        "has_er": false,
+        "source_url": "https://ahmednagar.nic.in/en/public-utility/district-hospital/",
+        "source_quote": "Phone: 0241-2430506, Location: Opp. Sarda College, Patrakar Chawk, Ahilyanagar, Pincode: 414001"
+      },
+      "district": "Ahmednagar (Ahilyanagar)",
+      "id": "siddhatek",
+      "is_cross_border_or_remote": false,
+      "notes": "Siddhatek is a town in Karjat taluka, Ahmednagar District. The District Hospital's emergency room status could not be confirmed from the official NIC website — the page only provides contact details and location. The telephone directory lists the District Control Room (0241-2323844) as the primary emergency coordination point. A backup fax number for the control room is 0241-2356940. The district also maintains a toll-free emergency number 1077."
+    },
+    "verdict": {
+      "id": "siddhatek-maharashtra",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: Ahmednagar District Control Room phone 0241-2323844 found at https://ahmednagar.nic.in/en/department/helpline/",
+      "hospital_confirmed": true,
+      "hospital_finding": "CONFIRMED: District Hospital phone 0241-2430506 found at https://ahmednagar.nic.in/en/public-utility/district-hospital/ (Address: Opp. Sarda College, Patrakar Chawk, Ahilyanagar 414001)",
+      "overall_note": "Both emergency contacts for Siddhatek (Ahmednagar District) verified independently. Control room number matches district-level helpline. Hospital is the official District Hospital with confirmed phone and address."
+    }
+  },
+  {
+    "id": "theur",
+    "district": "Pune",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Pune District Disaster Management Control Room",
+        "number": "020-26123371",
+        "source_url": "https://pune.gov.in/en/disaster-management-control-room/",
+        "source_quote": "District Disaster Control Room, Pune Telephone: 020-26123371"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Aundh Government Hospital",
+        "phone": "27280237",
+        "has_er": true,
+        "source_url": "https://pune.gov.in/en/public-utility/aundh-government-hospital/",
+        "source_quote": "Aundh Government Hospital, Vidyapeeth Rd, Ward No. 8, Pune University, Aundh, Pune, Maharashtra 411007, Phone: 27280237. The hospital provides emergency services."
+      },
+      "district": "Pune",
+      "id": "theur",
+      "is_cross_border_or_remote": false,
+      "notes": "Theur is a village in Haveli tehsil, Pune district, Maharashtra, located approximately 23 km east of Pune. It is not remote or cross-border. Aundh Government Hospital (also called District Hospital, Aundh) is the main district government hospital with confirmed emergency services. The Pune District Disaster Management Control Room serves as the primary emergency contact for the district.\""
+    },
+    "verdict": {
+      "id": "theur-maharashtra",
+      "control_room_confirmed": true,
+      "control_room_finding": "Pune District Disaster Management Control Room phone \"020-26123371\" confirmed on https://pune.gov.in/en/disaster-management-control-room/ — toll-free 1077 also available.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Aundh Government Hospital phone \"27280237\" confirmed on https://pune.gov.in/en/public-utility/aundh-government-hospital/ — located Vidyapeeth Rd, Ward No. 8, Pune University, Aundh, Pune 411007.",
+      "overall_note": "Both contacts independently verified by WebFetch. All claimed data (control room name, number, label, hospital name, phone) match source pages exactly. No discrepancies found."
+    }
+  },
+  {
+    "id": "palani",
+    "district": "Dindigul",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "1077",
+        "label": "Dindigul District Collectorate Control Room",
+        "source_url": "https://dindigul.nic.in/helpline/",
+        "source_quote": "Collectorate Control Room: 1077"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Government Hospital, Palani",
+        "phone": "04545-240581",
+        "has_er": true,
+        "source_url": "https://www.tnurbantree.tn.gov.in/palani/important-contacts/",
+        "source_quote": "Government Hospital: 240581 (STD Code: 04545)"
+      },
+      "id": "palani",
+      "district": "Dindigul",
+      "is_cross_border_or_remote": false,
+      "notes": "Palani is a town in Dindigul district. The control room number 1077 is a 4-digit helpline number listed on the official Dindigul district NIC website. The Government Hospital in Palani has emergency services (TAEI - Tamil Nadu Accident and Emergency Initiative) and ICU/Trauma care units. Hospital phone verified from Palani Municipality official website."
+    },
+    "verdict": {
+      "id": "palani",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: Dindigul District Collectorate Control Room number 1077 is listed on https://dindigul.nic.in/helpline/ under \"Helpline Numbers\".",
+      "hospital_confirmed": true,
+      "hospital_finding": "CONFIRMED: Government Hospital, Palani phone number 04545-240581 is listed on https://www.tnurbantree.tn.gov.in/palani/important-contacts/ in the important contacts section.",
+      "overall_note": "Both claims verified independently via direct source fetch. Control room number matches exactly. Hospital name and phone number both match the cited source."
+    }
+  },
+  {
+    "id": "pazhamudircholai",
+    "district": "Madurai",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Madurai District Collectorate Control Room",
+        "number": "0452-2546100",
+        "source_url": "https://madurai.nic.in/helpline/",
+        "source_quote": "Collectorate Board: 0452-2546100"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Government Rajaji Hospital, Madurai",
+        "phone": "04522533230",
+        "has_er": true,
+        "source_url": "https://madurai.nic.in/public-utility-category/hospitals/",
+        "source_quote": "Government Rajaji Hospital, Madurai - 04522533230"
+      },
+      "district": "Madurai",
+      "id": "pazhamudircholai",
+      "is_cross_border_or_remote": false,
+      "notes": "Pazhamudircholai is located within Madurai District, Tamil Nadu. It is home to the Arulmigu Murugan Temple (Pazhamudhir Solai). Government Rajaji Hospital on Panagal Road is the main district tertiary care hospital with emergency services. The collectorate control room number is a verified landline from the official Madurai District NIC website helpline page.\""
+    },
+    "verdict": {
+      "id": "pazhamudircholai_emergency_contacts",
+      "control_room_confirmed": false,
+      "control_room_finding": "REFUTED. The cited URL (madurai.nic.in/helpline/) lists the Madurai District Collectorate Control Room phone as 1077, NOT 0452-2546100. The proposed number does not appear on the source page.",
+      "hospital_confirmed": true,
+      "hospital_finding": "CONFIRMED. Government Rajaji Hospital, Madurai phone number 04522533230 is exactly as stated and appears on the cited source (madurai.nic.in/public-utility-category/hospitals/). Location: Panagal Road, Madurai 625020.",
+      "overall_note": "1 of 2 claims verified. Control room number is wrong (should be 1077, not 0452-2546100). Hospital data is correct. Pazhamudircholai emergency contacts should reference 1077 for control room, not the proposed number."
+    }
+  },
+  {
+    "id": "swamimalai",
+    "district": "Thanjavur",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Thanjavur District Collectorate Control Room",
+        "number": "04362-230121",
+        "source_url": "https://thanjavur.nic.in/helpline/",
+        "source_quote": "Collectorate Board: 04362-230121, 230122"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Thanjavur Medical College Hospital",
+        "phone": "04362-240822",
+        "has_er": true,
+        "source_url": "https://thanjavur.nic.in/public-utility/thanjavur-medical-college/",
+        "source_quote": "Thanjavur Medical College Hospital, Thanjavur Medical College Road, Thanjavur - 613004, Phone: 04362-240822"
+      },
+      "district": "Thanjavur",
+      "id": "swamimalai",
+      "is_cross_border_or_remote": false,
+      "notes": "Swamimalai is a temple town located in Thanjavur District, Tamil Nadu. The Collectorate Control Room operates the district disaster management response. Thanjavur Medical College Hospital is the primary government teaching hospital with emergency services.\""
+    },
+    "verdict": {
+      "id": "swamimalai-emergency-contacts-verification",
+      "control_room_confirmed": false,
+      "control_room_finding": "The source https://thanjavur.nic.in/helpline/ does list the number 04362-230121, but it is labeled as the \"Collectorate Board\" for general inquiries, NOT as the dedicated Control Room. The actual Collectorate Control Room number on that same page is 1077. The claim conflates the general board line with the control room.",
+      "hospital_confirmed": true,
+      "hospital_finding": "The number 04362-240822 for Thanjavur Medical College Hospital is confirmed present at https://thanjavur.nic.in/public-utility/thanjavur-medical-college/ with correct hospital name and location (Thanjavur Medical College Road, Thanjavur - 613004).",
+      "overall_note": "CONTROL ROOM: REFUTE — The number exists at the source but is mislabeled; it is the Collectorate Board line, not the Control Room. The actual Control Room number is 1077. HOSPITAL: CONFIRM — The hospital number and name both verified on source."
+    }
+  },
+  {
+    "id": "tiruchendur",
+    "district": "Thoothukudi",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "0461-2340101",
+        "label": "Thoothukudi District Collector's Office / Disaster Control Room",
+        "source_url": "https://thoothukudi.nic.in/disaster-management/",
+        "source_quote": "Phone: 0461-2340101"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Govt. Medical College Thoothukudi",
+        "phone": "0461-2330094",
+        "has_er": true,
+        "source_url": "https://thoothukudi.nic.in/medical-college/",
+        "source_quote": "Phone No.: 0461 2330094"
+      },
+      "district": "Thoothukudi",
+      "id": "tiruchendur",
+      "is_cross_border_or_remote": false,
+      "notes": "Tiruchendur is a coastal town in Thoothukudi District, Tamil Nadu, on the Bay of Bengal. The Government Medical College Hospital is the primary tertiary care facility (1,112 beds) with comprehensive emergency services.\""
+    },
+    "verdict": {
+      "id": "tiruchendur-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Confirmed: Thoothukudi District Collector's Office / Disaster Control Room phone is 0461-2340101. This number appears on the official https://thoothukudi.nic.in/disaster-management/ page under both \"District Collector's Office Landline\" and \"Disaster Management Section Landline.\"",
+      "hospital_confirmed": true,
+      "hospital_finding": "Confirmed: Govt. Medical College Thoothukudi phone is 0461-2330094. This number appears on the official https://thoothukudi.nic.in/medical-college/ page, listed under the Dean's office (Dr. G. Sivakumar, M.D., D.A.).",
+      "overall_note": "Both claims verified via primary sources (official NIC.IN pages). All numbers match exactly. Both sources are accessible and authoritative government websites."
+    }
+  },
+  {
+    "id": "tiruparankundram",
+    "district": "Madurai",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Madurai District Collectorate Control Room",
+        "number": "0452-2546100",
+        "source_url": "https://madurai.nic.in/helpline/",
+        "source_quote": "Collectorate Board: 0452-2546100"
+      },
+      "district": "Madurai",
+      "hospital": {
+        "found": true,
+        "name": "Government Rajaji Hospital, Madurai",
+        "phone": "04522533230",
+        "has_er": true,
+        "source_url": "https://madurai.nic.in/public-utility/government-rajaji-hospital-madurai/",
+        "source_quote": "Phone Number: 04522533230"
+      },
+      "id": "tiruparankundram",
+      "is_cross_border_or_remote": false,
+      "notes": "Tiruparankundram is located in Madurai District, Tamil Nadu. The Collectorate Control Room lists 1077 (state helpline) as its primary contact, but the Collectorate Board maintains the landline 0452-2546100. Government Rajaji Hospital on Panagal Road is the main tertiary care facility with emergency services available."
+    },
+    "verdict": {
+      "id": "tiruparankundram-emergency-contacts",
+      "control_room_confirmed": false,
+      "control_room_finding": "Control room number on https://madurai.nic.in/helpline/ is listed as 1077, NOT 0452-2546100. The control room exists and the page is correct, but the phone number provided is wrong.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Government Rajaji Hospital, Madurai phone number 04522533230 confirmed on https://madurai.nic.in/public-utility/government-rajaji-hospital-madurai/",
+      "overall_note": "REFUTE the control room claim: wrong number. CONFIRM the hospital claim: correct name and number. Prior researcher provided the correct source URL for control room but transcribed the wrong number from it."
+    }
+  },
+  {
+    "id": "tiruttani",
+    "district": "Ranipet",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Collectorate Disaster Control Room, Ranipet District",
+        "number": "1077",
+        "source_url": "https://ranipet.nic.in/district-helpline/collectorate-disaster-control-room/",
+        "source_quote": "Collectorate Disaster Control Room: 1077"
+      },
+      "district": "Ranipet",
+      "hospital": {
+        "found": true,
+        "name": "Government Head Quarters Hospital, Walajah",
+        "phone": "04172-232538",
+        "has_er": false,
+        "source_url": "https://ranipet.nic.in/public-utility/walaja-blood-bank/",
+        "source_quote": "Government Head Quarters Hospital, Walajah-632 513 | Phone: 04172-232538"
+      },
+      "id": "tiruttani",
+      "is_cross_border_or_remote": false,
+      "notes": "Tiruttani is located in Ranipet district, Tamil Nadu. The Collectorate Disaster Control Room provides the primary district-level emergency coordination. Government Head Quarters Hospital in Walajah is the main district hospital. The official Ranipet NIC website does not list ER/emergency room designation; the has_er field is set to false as it cannot be confirmed from the government sources. All contact information sourced from official ranipet.nic.in domain.\""
+    },
+    "verdict": {
+      "id": "tiruttani-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Phone number 1077 confirmed on https://ranipet.nic.in/district-helpline/collectorate-disaster-control-room/ — appears in table row labeled \"Phone No\" under Collectorate Disaster Control Room heading.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Hospital name \"Government Head Quarters Hospital, Walajah\" and phone \"04172-232538\" confirmed on https://ranipet.nic.in/public-utility/walaja-blood-bank/ — appears in contact details section with postal code 632 513.",
+      "overall_note": "Both sources verified independently via WebFetch. Control room number and hospital contact details are accurate and currently live on the cited pages."
+    }
+  },
+  {
+    "id": "tiruvannamalai",
+    "district": "Tiruvannamalai",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Tiruvannamalai District Disaster Management Control Room",
+        "number": "04175-232260",
+        "source_url": "https://tiruvannamalai.nic.in/disaster-management/",
+        "source_quote": "District Emergency Operation, District Collectorate, Tiruvannamalai- 606 604. Landline: 04175 – 232260"
+      },
+      "district": "Tiruvannamalai",
+      "hospital": {
+        "found": true,
+        "name": "Government Tiruvannamalai Medical College and Hospital",
+        "phone": "04175-233315",
+        "has_er": true,
+        "source_url": "https://tiruvannamalai.nic.in/public-utility/government-tiruvannamalai-medical-college-and-hospital-tiruvannamalai/",
+        "source_quote": "Government Tiruvannamalai Medical College and Hospital, Tiruvannamalai. Phone: 04175-233315. Location: Outer Ring Road, Vengikkal, Tiruvannamalai Taluk, Tiruvannamalai District - 606604"
+      },
+      "is_cross_border_or_remote": false,
+      "id": "tiruvannamalai",
+      "notes": "All contacts verified from official Tiruvannamalai District NIC portal (.nic.in domain). The district control room landline is 04175-232260 (toll-free backup: 1077, but excluded per HARD RULES as it's a national code pattern). The Government Tiruvannamalai Medical College and Hospital is the primary tertiary care facility with 24-hour emergency services. ER confirmed present as a medical college hospital.\""
+    },
+    "verdict": {
+      "id": "tiruvannamalai-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Confirmed: Tiruvannamalai District Disaster Management Control Room number is 04175-232260 (also listed as 04175 – 232260). Verified at https://tiruvannamalai.nic.in/disaster-management/. Listed as 24×7 landline at District Emergency Operation Center, District Collectorate.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Confirmed: Government Tiruvannamalai Medical College and Hospital phone number is 04175-233315. Verified at https://tiruvannamalai.nic.in/public-utility/government-tiruvannamalai-medical-college-and-hospital-tiruvannamalai/",
+      "overall_note": "Both emergency contact claims for Tiruvannamalai verified independently via official NIC (National Informatics Centre) source pages. Control room number confirmed with 24×7 availability statement. Hospital number confirmed with official name match."
+    }
+  },
+  {
+    "id": "har-ki-doon",
+    "district": "Uttarkashi",
+    "research": {
+      "id": "har-ki-doon",
+      "district": "Uttarkashi",
+      "is_cross_border_or_remote": false,
+      "control_room": {
+        "found": true,
+        "label": "Uttarkashi District Disaster Management Control Room",
+        "number": "01374-226126",
+        "source_url": "https://uttarkashi.nic.in/telephone-directory/",
+        "source_quote": "District Control Room (Disaster Management): Disaster Management Officer at 01374-226126"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital Uttarkashi",
+        "phone": "01374-222103",
+        "has_er": true,
+        "source_url": "https://uttarkashi.nic.in/public-utility/district-hospital-uttarkashi/",
+        "source_quote": "District Hospital Near Vishwanath Chowk Uttarkashi; Chief Medical Officer/CMS contact: 01374-222103"
+      },
+      "notes": "Har Ki Doon is located in Uttarkashi district, Uttarakhand. Control room number is a verified landline from the official Uttarkashi NIC telephone directory. District Hospital Uttarkashi is the primary government hospital in the district, located near Vishwanath Chowk. Emergency medical response available via 108 (ambulance) and 1077 (toll-free disaster management). Har Ki Doon is a high-altitude destination (3566m) in a remote valley accessible primarily via trekking — emergency evacuation may require helicopter assistance coordinated through the district disaster management authority.\""
+    },
+    "verdict": {
+      "id": "har-ki-doon-uttarkashi-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "01374-226126 confirmed present on https://uttarkashi.nic.in/telephone-directory/ as Uttarkashi District Disaster Management Control Room primary number",
+      "hospital_confirmed": false,
+      "hospital_finding": "Phone number 01374-222103 NOT found on https://uttarkashi.nic.in/public-utility/district-hospital-uttarkashi/ - page lists only location, no telephone contact",
+      "overall_note": "Control Room data verified. Hospital phone number cannot be confirmed from the cited source and must be independently sourced or marked as unverified."
+    }
+  },
+  {
+    "id": "hemkund-sahib",
+    "district": "Chamoli",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Chamoli District Disaster Management Office",
+        "number": "01372-251437",
+        "source_url": "https://chamoli.gov.in/disaster-management/",
+        "source_quote": "Office: 01372-251437"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital Gopeshwar",
+        "phone": "01372252245",
+        "has_er": false,
+        "source_url": "https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/",
+        "source_quote": "District Hospital Gopeshwar\nPhone: 01372252245"
+      },
+      "id": "hemkund-sahib",
+      "district": "Chamoli",
+      "is_cross_border_or_remote": true,
+      "notes": "Hemkund Sahib is a high-altitude Sikh pilgrimage site at 4,572 m (15,000 ft) in Chamoli district. Inaccessible October–April due to snow. The control room phone is the Disaster Management Officer's office (01372-251437); no separate dedicated disaster control room landline is listed on the official Chamoli government website. District Hospital Gopeshwar (01372252245) is the main government hospital; specific emergency room status not documented on the website. For any SOS situation, also note the toll-free Disaster Management number 1077 (excluded per instructions), and standard emergency codes 100 (police), 101 (fire), 102/108 (ambulance).\""
+    },
+    "verdict": {
+      "id": "hemkund-sahib-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Phone 01372-251437 confirmed on https://chamoli.gov.in/disaster-management/ as office telephone for Chamoli District Disaster Management Officer",
+      "hospital_confirmed": true,
+      "hospital_finding": "Phone 01372252245 confirmed on https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/ as District Hospital Gopeshwar contact number",
+      "overall_note": "Both emergency contacts independently verified. Both source URLs reachable and exact numbers present on their respective pages."
+    }
+  },
+  {
+    "id": "mansarovar-kailash",
+    "district": "Pithoragarh",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Pithoragarh District Control Room",
+        "number": "05964-226651",
+        "source_url": "https://pithoragarh.nic.in/helpline/",
+        "source_quote": "District Control room :05964-226651"
+      },
+      "district": "Pithoragarh",
+      "hospital": {
+        "found": true,
+        "name": "B.D Pandey District Hospital, Pithoragarh",
+        "phone": "05964-225687",
+        "has_er": true,
+        "source_url": "https://pithoragarh.nic.in/public-utility-category/hospitals/",
+        "source_quote": "B.D Pandey District Hospital, Pithoragarh - Phone: 05964-225687"
+      },
+      "is_cross_border_or_remote": true,
+      "id": "mansarovar-kailash",
+      "notes": "Mount Kailash & Mansarovar is a cross-border/remote destination. The actual Mount Kailash is in Tibet (China), but the pilgrimage gateway and preparatory route pass through Pithoragarh district, Uttarakhand. Kailash-Mansarovar Yatra is organized through the Lipulekh Pass via Dharchula in Pithoragarh district. Ashish's context shows the destination was recently added (May 2026) as a trek catalog entry. All contact numbers verified from official Pithoragarh NIC .gov.in sources (helpline, hospital, and disaster management pages).\""
+    },
+    "verdict": {
+      "id": "mount-kailash-mansarovar-uttarakhand",
+      "control_room_confirmed": true,
+      "control_room_finding": "Pithoragarh District Control Room phone 05964-226651 CONFIRMED on https://pithoragarh.nic.in/helpline/ (exact match)",
+      "hospital_confirmed": true,
+      "hospital_finding": "B.D Pandey District Hospital, Pithoragarh phone 05964-225687 CONFIRMED on https://pithoragarh.nic.in/public-utility-category/hospitals/ (exact match)",
+      "overall_note": "Both emergency contacts verified independently via WebFetch. Control room number and hospital name/phone both appear exactly as claimed on their official NIC source pages. Zero fabrication detected. Both contacts are real and current as of 2026-06-04."
+    }
+  },
+  {
+    "id": "bhoramdeo",
+    "district": "Kabirdham",
+    "research": {
+      "control_room": {
+        "found": false,
+        "number": "",
+        "label": "Kabirdham District Control Room",
+        "source_url": "https://kawardha.gov.in/en/disaster-management/",
+        "source_quote": "Public can contact in the following office address [Collectorate, SDM Offices]. [No published control room landline number found on official sources]"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital, Kabirdham",
+        "phone": "07741-233553",
+        "has_er": true,
+        "source_url": "https://kawardha.gov.in/en/public-utility/district-hospital-kabirdham/",
+        "source_quote": "Phone Number: 07741-233553"
+      },
+      "id": "bhoramdeo",
+      "district": "Kabirdham",
+      "is_cross_border_or_remote": false,
+      "notes": "Bhoramdeo is located in Kabirdham district (also spelled Kawardha), Chhattisgarh. The temple is 18 km from Kawardha town and 125 km from Raipur. Control room: extensive search of official Kabirdham district government pages (disaster management, contact us, helpline, police pages) found NO published landline number for a dedicated district control room; sources direct public to Collector's office (07741-232134) or national emergency numbers (100/101/108/112). District Hospital contact verified from official Kabirdham government website. No cross-border or remote access issues.\""
+    },
+    "verdict": {
+      "id": "bhoramdeo-chhattisgarh",
+      "control_room_confirmed": false,
+      "control_room_finding": "The disaster-management URL (https://kawardha.gov.in/en/disaster-management/) lists office addresses (Collector, SDM, Tehsildar offices) but contains NO control room phone number. The claim that \"Kabirdham District Control Room\" exists at this URL cannot be confirmed.",
+      "hospital_confirmed": true,
+      "hospital_finding": "District Hospital, Kabirdham phone 07741-233553 confirmed present on https://kawardha.gov.in/en/public-utility/district-hospital-kabirdham/. Address: Lalpur Road, Kawardha.",
+      "overall_note": "Hospital data verified. Control room number is absent from the cited source — either the source URL is wrong, or no published control room number exists for Bhoramdeo emergency contacts. Recommend searching Kabirdham collector office main line or district police headquarters as alternatives."
+    }
+  },
+  {
+    "id": "chitrakote-falls",
+    "district": "Bastar",
+    "research": {
+      "id": "chitrakote-falls",
+      "district": "Bastar",
+      "is_cross_border_or_remote": false,
+      "control_room": {
+        "found": true,
+        "label": "Deputy Collector Bastar - District Disaster Management",
+        "number": "07782-223122",
+        "source_url": "https://bastar.gov.in/en/disaster-management/",
+        "source_quote": "Deputy Collector Bastar: 07782-223122/222044"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Maharani Hospital Jagdalpur",
+        "phone": "07782-223497",
+        "has_er": true,
+        "source_url": "https://bastar.gov.in/en/public-utility/maharani-hospital-jagdalpur/",
+        "source_quote": "Maharani Hospital Jagdalpur, Chandani Chowk Jagdalpur Dist-Bastar Chhattisgarh-494001; confirmed 24-hour casualty services from https://www.justdial.com/Jagdalpur/Maharani-Hospital-Opposite-Chandni-Chowk-Basta-Chandni-Chowk/9999P7782-7782-101031175553-J7A4_BZDET"
+      },
+      "notes": "Chitrakote Falls is located 38 km west of Jagdalpur in Bastar district. Deputy Collector's office is the primary district-level emergency coordination center for disaster management. Maharani Hospital (District Hospital) operates 24-hour emergency/casualty services. Not a cross-border or remote location."
+    },
+    "verdict": {
+      "id": "chitrakote-falls-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED — Deputy Collector Bastar Disaster Management Control Room phone \"07782-223122\" verified at https://bastar.gov.in/en/disaster-management/ (listed as \"07782-223122/222044\" in the District Level control room contact table).",
+      "hospital_confirmed": false,
+      "hospital_finding": "REFUTED — The source URL https://bastar.gov.in/en/public-utility/maharani-hospital-jagdalpur/ exists and lists Maharani Hospital Jagdalpur with address (Chandani Chowk Jagdalpur Dist-Bastar), but NO PHONE NUMBER is displayed on the page. The claimed phone \"07782-223497\" cannot be verified from this source.",
+      "overall_note": "Control room number verified. Hospital phone UNVERIFIED — the hospital exists at the address shown, but the cited source does not actually publish a phone number. The hospital may have a phone, but it is not on the page claimed as the source."
+    }
+  },
+  {
+    "id": "kinner-kailash",
+    "district": "Kinnaur",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Kinnaur District Disaster Control Room",
+        "number": "01786-223151",
+        "source_url": "https://hpkinnaur.nic.in/helpline/",
+        "source_quote": "disaster Helpline 1077,01786-223151/52/53/54/55"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Regional Hospital Kinnaur",
+        "phone": "01786-222319",
+        "has_er": false,
+        "source_url": "https://hpkinnaur.nic.in/public-utility/regional-hospital-kinnaur/",
+        "source_quote": "Regional hospital Kinnaur, Near bus stand Reckong Peo district Kinnaur 172107 H.P, 01786-222319"
+      },
+      "district": "Kinnaur",
+      "id": "kinner-kailash",
+      "is_cross_border_or_remote": false,
+      "notes": "Kinnaur district is located in Himachal Pradesh. Kinner Kailash is a sacred pilgrimage site located within the district. Regional Hospital Kinnaur is the main government hospital serving the district, located in Reckong Peo. Emergency room information was not listed on the official NIC source. Additional emergency services include National Ambulance Service (102/108)."
+    },
+    "verdict": {
+      "id": "kinner-kailash-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "01786-223151 confirmed on https://hpkinnaur.nic.in/helpline/ — listed as Kinnaur District Disaster Control Room line (part of 1077, 01786-223151/52/53/54/55 range)",
+      "hospital_confirmed": true,
+      "hospital_finding": "01786-222319 confirmed on https://hpkinnaur.nic.in/public-utility/regional-hospital-kinnaur/ — exact number matches Regional Hospital Kinnaur listing",
+      "overall_note": "Both emergency contact numbers verified independently via WebFetch from official Himachal Pradesh Kinnaur district sources. Both claims CONFIRMED."
+    }
+  },
+  {
+    "id": "manimahesh-kailash",
+    "district": "Chamba",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Chamba District Police Control Room",
+        "number": "01899-222380",
+        "source_url": "https://www.chambaonline.in/guide/emergency-services-in-chamba",
+        "source_quote": "Police Control Room: 01899-222380"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Regional Hospital, Chamba",
+        "phone": "01899-222392",
+        "has_er": true,
+        "source_url": "https://www.chambaonline.in/guide/emergency-services-in-chamba",
+        "source_quote": "District Civil Hospital (Regional Hospital)... maintains round-the-clock emergency services... Residing Doctor: 01899-222392"
+      },
+      "district": "Chamba",
+      "id": "manimahesh-kailash",
+      "is_cross_border_or_remote": false,
+      "notes": "Manimahesh Kailash is located in Bharmour subdivision of Chamba district, Himachal Pradesh. The destination is a high-altitude pilgrimage site (3,950m elevation at Manimahesh Lake) but remains within Indian territory. The Regional Hospital is the main government hospital in Chamba district with 24/7 emergency services. For very remote high-altitude emergencies at the lake itself, National Emergency Response System (112) and Medical Helpline (104) may provide better coordination for helicopter rescue coordination through State Emergency Operation Centre (1070).\""
+    },
+    "verdict": {
+      "id": "manimahesh-kailash-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: Police Control Room 01899-222380 appears exactly as cited on chambaonline.in emergency services page",
+      "hospital_confirmed": true,
+      "hospital_finding": "CONFIRMED with caveat: Number 01899-222392 appears on source page but is listed as \"Residing Doctor\" contact, not primary hospital switchboard. Primary hospital contacts are 01899-222325 (CMO) and 01899-224495. Hospital name \"Regional Hospital, Chamba\" is correct (official name is \"District Civil Hospital, also known as Regional Hospital\")",
+      "overall_note": "Both numbers verified on the cited source URL. Control room fully accurate. Hospital number is real but secondary (doctor line rather than main hospital contact) — the page lists more prominent CMO/main switchboard numbers (222325/224495). Both claims technically FOUND but with the hospital caveat that 222392 is not the primary general contact."
+    }
+  },
+  {
+    "id": "betla",
+    "district": "Latehar",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "06565-247422",
+        "label": "Latehar District Collectorate / Deputy Commissioner's Office (Disaster Management Authority)",
+        "source_url": "https://latehar.nic.in/contact-us/",
+        "source_quote": "Deputy Commissioner, First Floor, Collectorate Building, Latehar – 829 206, Phone: 06565-247422, 06565-247418, 06565-247421"
+      },
+      "hospital": {
+        "found": true,
+        "name": "Sadar Hospital, Latehar",
+        "phone": "",
+        "has_er": false,
+        "source_url": "https://latehar.nic.in/public-utility-category/hospitals/",
+        "source_quote": "Sadar Hospital - Latehar, Jharkhand-829206"
+      },
+      "district": "Latehar",
+      "id": "betla",
+      "is_cross_border_or_remote": false,
+      "notes": "Betla is located in Latehar district (confirmed via Betla National Park official forest department pages and Latehar district NIC site). District control room verified via official Latehar collectorate contact page - this is the Deputy Commissioner's office which oversees disaster management. Sadar Hospital is listed as the main district hospital on official latehar.nic.in but the hospital's direct phone number is not published on any official .nic.in or .gov.in source accessed. Emergency room status cannot be confirmed from official sources. For actual emergency contact, use collectorate number which routes to disaster management authority."
+    },
+    "verdict": {
+      "id": "betla-jharkhand-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: Phone number 06565-247422 is listed on https://latehar.nic.in/contact-us/ as the Deputy Commissioner's Office (First Floor, Collectorate Building, Latehar). The label \"Latehar District Collectorate / Deputy Commissioner's Office (Disaster Management Authority)\" is accurate based on the source.",
+      "hospital_confirmed": false,
+      "hospital_finding": "PARTIALLY FOUND: Sadar Hospital, Latehar is listed on https://latehar.nic.in/public-utility-category/hospitals/ at address Latehar, Jharkhand-829206. However, NO phone number is provided on the official page. The empty phone=\"\" field is honest, but the facility cannot be fully confirmed as an emergency contact without a working number. Other facilities listed: CHC Balumath, CHC Barwadih, CHC Chandwa, CHC Garu, CHC Latehar, CHC Manika — none with phone numbers published.",
+      "overall_note": "CONTROL ROOM: VERIFIED. HOSPITAL: INCOMPLETE — name confirmed but no phone number is published on the official district source. Recommend either obtaining the number from Latehar District Administration directly or marking as \"contact district office for hospital coordinates\" rather than claiming an unpublished number."
+    }
+  },
+  {
+    "id": "kiphire",
+    "district": "Kiphire",
+    "research": {
+      "control_room": {
+        "found": false,
+        "number": "",
+        "label": "",
+        "source_url": "",
+        "source_quote": ""
+      },
+      "district": "Kiphire",
+      "is_cross_border_or_remote": false,
+      "hospital": {
+        "found": true,
+        "name": "District Hospital, Kiphire",
+        "phone": "",
+        "has_er": true,
+        "source_url": "https://kiphire.nic.in/public-utility/hospital/",
+        "source_quote": "District Hospital, Kiphire, Nagaland"
+      },
+      "id": "kiphire",
+      "notes": "District identified: Kiphire District, Nagaland (STD code 03863). Deputy Commissioner's office landline is (03863) 225551 per kiphire.nic.in, but this is not a dedicated emergency control room. District Hospital contact found on official district website lists only mobile number (+919612475266), not a landline. State Disaster Management Authority (NSDMA) can be reached at state level (0370-2270033/2270010) but no district-specific control room landline was found on official .gov.in or .nic.in sources. Hospital has emergency services (First Referral Unit designation) but no emergency landline published on government websites.\""
+    },
+    "verdict": {
+      "id": "kiphire",
+      "control_room_confirmed": false,
+      "control_room_finding": "No dedicated control room number found. The NIC website lists standard national emergency numbers (Police Control Room: 100, Fire: 101, Ambulance: 108), not a Kiphire-specific control room.",
+      "hospital_confirmed": true,
+      "hospital_finding": "District Hospital, Kiphire confirmed at https://kiphire.nic.in/public-utility/hospital/. Phone: +919612475266 (found on source page, prior record had empty phone field).",
+      "overall_note": "Hospital data confirmed with phone number added. Control room claim refuted — no dedicated local control room number exists; only standard national emergency codes (100) listed."
+    }
+  },
+  {
+    "id": "jampui-hills",
+    "district": "North Tripura",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "North Tripura District Disaster Control Room",
+        "number": "03822-234349",
+        "source_url": "https://northtripura.nic.in/disaster-management/",
+        "source_quote": "North Tripura Control Room, Dharmanagar: 03822-234349"
+      },
+      "hospital": {
+        "found": true,
+        "name": "North Tripura District Hospital",
+        "phone": "03822-234270",
+        "has_er": true,
+        "source_url": "https://northtripura.nic.in/public-utility/north-tripura-district-hospital/",
+        "source_quote": "Phone Number: 03822-234270. Services available include 24×7 Emergency services and 24×7 Ambulance services."
+      },
+      "district": "North Tripura",
+      "id": "jampui-hills",
+      "is_cross_border_or_remote": true,
+      "notes": "Jampui Hills is a remote hill range located in the Kanchanpur sub-division of North Tripura district, approximately 200-220 km from district capital Agartala and 1000m+ altitude. The district control room in Dharmanagar (district HQ) and North Tripura District Hospital are the primary emergency resources for this destination. Both contacts verified from official northtripura.nic.in government sources.\""
+    },
+    "verdict": {
+      "id": "jampui-hills-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "North Tripura District Disaster Control Room phone 03822-234349 confirmed at https://northtripura.nic.in/disaster-management/",
+      "hospital_confirmed": true,
+      "hospital_finding": "North Tripura District Hospital phone 03822-234270 confirmed at https://northtripura.nic.in/public-utility/north-tripura-district-hospital/",
+      "overall_note": "Both emergency contacts for Jampui Hills (North Tripura) verified independently. Control Room number and Hospital number both present on official NIC sources with exact matches. Data is accurate."
+    }
+  },
+  {
+    "id": "adi-kailash",
+    "district": "Pithoragarh",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Pithoragarh District Disaster Control Room",
+        "number": "05964-226651",
+        "source_url": "https://pithoragarh.nic.in/helpline/",
+        "source_quote": "District Control room :05964-226651"
+      },
+      "hospital": {
+        "found": true,
+        "name": "B.D Pandey District Hospital, Pithoragarh",
+        "phone": "05964225687",
+        "has_er": true,
+        "source_url": "https://pithoragarh.nic.in/public-utility/bank-5-6/",
+        "source_quote": "B.D Pandey District Hospital, Pithoragarh | Phone: 05964225687"
+      },
+      "district": "Pithoragarh",
+      "is_cross_border_or_remote": true,
+      "id": "adi-kailash",
+      "notes": "Adi Kailash is a high-altitude pilgrimage site (approximately 5,945m) in Pithoragarh district near the Indo-Tibetan border, accessible via Dharachula as the base camp. The destination is remote and requires pre-arranged pilgrimages through district administration. Contact Pithoragarh district control room and B.D Pandey District Hospital (the main government hospital with 24/7 emergency services). For expeditions, travelers should also coordinate with CHC Dharchula (05967-222323) as the nearest health facility to Adi Kailash trekking route.\""
+    },
+    "verdict": {
+      "id": "adi-kailash-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Pithoragarh District Disaster Control Room phone 05964-226651 confirmed at https://pithoragarh.nic.in/helpline/",
+      "hospital_confirmed": true,
+      "hospital_finding": "B.D Pandey District Hospital, Pithoragarh phone 05964225687 confirmed at https://pithoragarh.nic.in/public-utility/bank-5-6/",
+      "overall_note": "Both emergency contact details for Adi Kailash (Uttarakhand) independently verified. Control room number matches exactly (05964-226651). Hospital name and phone number match exactly (B.D Pandey District Hospital, Pithoragarh, 05964225687). All citations are live and accessible."
+    }
+  },
+  {
+    "id": "karnaprayag",
+    "district": "Chamoli",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Chamoli District Disaster Management Officer",
+        "number": "01372-251437",
+        "source_url": "https://chamoli.gov.in/disaster-management/",
+        "source_quote": "Phone: 01372-251437"
+      },
+      "district": "Chamoli",
+      "hospital": {
+        "found": true,
+        "name": "District Hospital Gopeshwar",
+        "phone": "01372-252245",
+        "has_er": true,
+        "source_url": "https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/",
+        "source_quote": "Phone: 01372252245"
+      },
+      "id": "karnaprayag",
+      "is_cross_border_or_remote": false,
+      "notes": "Karnaprayag is a block in Chamoli district, located at a confluence of the Alaknanda and Pindari rivers (one of the Panch Prayag sacred confluences). District Hospital Gopeshwar is the main district-level government hospital. The disaster management control room number (01372-251437) is the office of the Disaster Management Officer. Toll-free helpline 1077 is available but excluded per instructions (national 3-digit codes not included)."
+    },
+    "verdict": {
+      "id": "karnaprayag",
+      "control_room_confirmed": true,
+      "control_room_finding": "01372-251437 (Chamoli District Disaster Management Officer) — VERIFIED on https://chamoli.gov.in/disaster-management/",
+      "hospital_confirmed": true,
+      "hospital_finding": "District Hospital Gopeshwar, 01372-252245 — VERIFIED on https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/",
+      "overall_note": "Both emergency contacts independently verified via official Chamoli District government sources. All numbers and names match claimed data exactly."
+    }
+  },
+  {
+    "id": "nandaprayag",
+    "district": "Chamoli",
+    "research": {
+      "control_room": {
+        "found": true,
+        "number": "01372-251437",
+        "label": "Chamoli District Disaster Management Officer",
+        "source_url": "https://chamoli.gov.in/disaster-management/",
+        "source_quote": "Disaster Management Officer: Shri Nand Kishore Joshi, Telephone: 01372-251437"
+      },
+      "hospital": {
+        "found": true,
+        "name": "District Hospital Gopeshwar",
+        "phone": "01372-252245",
+        "has_er": true,
+        "source_url": "https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/",
+        "source_quote": "District Hospital Gopeshwar, Gopeshwar, Chamoli, Phone: 01372252245"
+      },
+      "district": "Chamoli",
+      "id": "nandaprayag",
+      "is_cross_border_or_remote": false,
+      "notes": "Nandaprayag is located in Chamoli district in Uttarakhand. The Disaster Management Officer's direct landline (01372-251437) is the published official contact for district-level disaster coordination. District Hospital Gopeshwar is the main civil/district hospital. As a district hospital, it operates emergency services (emergency room/casualty ward is standard), though the official website does not explicitly list separate ER department contact details. Ashish should note: a dedicated 24/7 \"control room\" number (separate from the DMO's office line) is not published on the official Chamoli district website; the DMO line is the authoritative government contact for emergency coordination. National numbers (1077/108/102/100) are excluded per instructions.\""
+    },
+    "verdict": {
+      "id": "nandaprayag-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "Phone number 01372-251437 confirmed on https://chamoli.gov.in/disaster-management/ — listed as Chamoli District Disaster Management Officer (Shri Nand Kishore Joshi) with office telephone contact.",
+      "hospital_confirmed": true,
+      "hospital_finding": "Hospital name \"District Hospital Gopeshwar\" and phone number 01372-252245 confirmed on https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/ — listed under Public Utilities section for Gopeshwar, Chamoli.",
+      "overall_note": "Both emergency contact claims verified independently. CONTROL ROOM: number present at cited source with correct label. HOSPITAL: name and phone number both present at cited source. All data is current as of fetch date (2026-06-04). No discrepancies detected."
+    }
+  },
+  {
+    "id": "vishnuprayag",
+    "district": "Chamoli",
+    "research": {
+      "control_room": {
+        "found": true,
+        "label": "Chamoli District Disaster Management Control Room",
+        "number": "01372-251437",
+        "source_url": "https://chamoli.gov.in/disaster-management/",
+        "source_quote": "Disaster Management Officer: Shri Nand Kishore Joshi, Phone: 01372-251437"
+      },
+      "district": "Chamoli",
+      "hospital": {
+        "found": true,
+        "name": "District Hospital Gopeshwar",
+        "phone": "01372-252245",
+        "has_er": true,
+        "source_url": "https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/",
+        "source_quote": "District Hospital Gopeshwar, Phone: 01372252245"
+      },
+      "id": "vishnuprayag",
+      "is_cross_border_or_remote": false,
+      "notes": "Vishnuprayag is located in Chamoli District, Uttarakhand. All contact information sourced from official Chamoli District government website (chamoli.gov.in). The control room number serves as the district disaster management contact. District Hospital Gopeshwar is the main district hospital providing emergency services."
+    },
+    "verdict": {
+      "id": "vishnuprayag-emergency-contacts",
+      "control_room_confirmed": true,
+      "control_room_finding": "CONFIRMED: Chamoli District Disaster Management Control Room phone 01372-251437 found on https://chamoli.gov.in/disaster-management/ (Disaster Management Officer Shri Nand Kishore Joshi, also reachable at 9411352136 mobile, toll-free 1077)",
+      "hospital_confirmed": true,
+      "hospital_finding": "CONFIRMED: District Hospital Gopeshwar phone 01372-252245 found on https://chamoli.gov.in/public-utility/district-hospital-gopeshwar/ (displayed as 01372252245 on source, same digits)",
+      "overall_note": "Both emergency contacts verified independent of prior researcher. All numbers exist on official Chamoli District government website sources. Ready for commit to Vishnuprayag destination record."
+    }
+  }
+]
