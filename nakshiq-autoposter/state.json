@@ -4,7 +4,8 @@
     "before_after",
     "mini_guide",
     "did_you_know",
-    "dont_go_here"
+    "dont_go_here",
+    "listicle"
   ],
   "yt_short_music_used": [
     "px_amapiano_afrobeat",
@@ -29,13 +30,14 @@
     "px_indian_hits",
     "31_future_garage",
     "v2_amapiano_deep",
-    "02_trap_cinema"
+    "02_trap_cinema",
+    "16_phonk_fury"
   ],
   "posted_today": {
     "m8EAd": "2026-06-04",
     "PdMu0": "2026-06-04",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-03",
     "PdMu0_evening": "2026-06-03",
     "GAh5p_yt_short": "2026-06-04",
@@ -235,6 +237,10 @@
     },
     {
       "destination_id": "roopkund",
+      "date": "2026-06-04"
+    },
+    {
+      "destination_id": "kishtwar",
       "date": "2026-06-04"
     }
   ],
@@ -2097,6 +2103,24 @@
       "destination": null,
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-06-04.mp4"
+    },
+    {
+      "timestamp": "2026-06-04T13:47:37.938317+00:00",
+      "date": "2026-06-04",
+      "platform": "youtube",
+      "post_id": "u4C1E",
+      "destination": "kishtwar",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-06-04.mp4"
+    },
+    {
+      "timestamp": "2026-06-04T13:48:26.328826+00:00",
+      "date": "2026-06-04",
+      "platform": "instagram",
+      "post_id": "LtDHV",
+      "destination": "kishtwar",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-06-04.mp4"
     }
   ],
   "theme_usage": {
