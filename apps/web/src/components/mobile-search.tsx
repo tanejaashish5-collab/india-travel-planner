@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
-import { getBrowserSupabase } from "@/lib/supabase-browser";
+import { useSearchIndex } from "@/lib/search-index";
 
 const CATEGORIES = [
   { label: "Hill Stations", tag: "hill-station", icon: "🏔️" },
@@ -19,16 +19,14 @@ const CATEGORIES = [
   { label: "Lakes", tag: "lake", icon: "💧" },
 ];
 
-const getSupabase = getBrowserSupabase;
-
 export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => void }) {
   const locale = useLocale();
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<any[]>([]);
-  const [loading, setLoading] = useState(false);
   const [recents, setRecents] = useState<string[]>([]);
+  // Cached search index — fetched once per session, filtered client-side below.
+  const { index } = useSearchIndex(open);
 
   useEffect(() => {
     if (open) {
@@ -37,37 +35,27 @@ export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => 
       if (saved) setRecents(JSON.parse(saved).slice(0, 5));
     } else {
       setQuery("");
-      setResults([]);
     }
   }, [open]);
 
-  const search = useCallback(async (q: string) => {
-    if (q.length < 2) { setResults([]); return; }
-    setLoading(true);
-    const supabase = getSupabase();
-    if (!supabase) { setLoading(false); return; }
+  // Filter the cached index client-side — instant, zero DB calls per keystroke.
+  const results = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2 || !index) return [];
+    const grouped: { type: string; items: { id: string; name: string; sub?: string; href: string }[] }[] = [];
+    const states = index.states.filter((s) => s.name.toLowerCase().includes(q)).slice(0, 3);
+    if (states.length) grouped.push({ type: "States", items: states.map((s) => ({ id: s.id, name: s.name, href: `/${locale}/state/${s.id}` })) });
+    const dests = index.destinations.filter((d) => d.name.toLowerCase().includes(q)).slice(0, 6);
+    if (dests.length) grouped.push({ type: "Destinations", items: dests.map((d) => ({ id: d.id, name: d.name, sub: d.state?.name || "", href: `/${locale}/destination/${d.id}` })) });
+    const colls = index.collections.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 3);
+    if (colls.length) grouped.push({ type: "Collections", items: colls.map((c) => ({ id: c.id, name: c.name, href: `/${locale}/collections/${c.id}` })) });
+    const arts = index.articles.filter((a) => a.title.toLowerCase().includes(q)).slice(0, 3);
+    if (arts.length) grouped.push({ type: "Articles", items: arts.map((a) => ({ id: a.slug, name: a.title, href: `/${locale}/blog/${a.slug}` })) });
+    return grouped;
+  }, [query, index, locale]);
 
-    const [dests, collections, articles, states] = await Promise.all([
-      supabase.from("destinations").select("id, name, state:states(name), difficulty").ilike("name", `%${q}%`).limit(6),
-      supabase.from("collections").select("id, name").ilike("name", `%${q}%`).limit(3),
-      supabase.from("articles").select("slug, title, category").ilike("title", `%${q}%`).limit(3),
-      supabase.from("states").select("id, name").ilike("name", `%${q}%`).limit(3),
-    ]);
-
-    const grouped: any[] = [];
-    if (states.data?.length) grouped.push({ type: "States", items: states.data.map((s: any) => ({ id: s.id, name: s.name, href: `/${locale}/state/${s.id}` })) });
-    if (dests.data?.length) grouped.push({ type: "Destinations", items: dests.data.map((d: any) => ({ id: d.id, name: d.name, sub: (Array.isArray(d.state) ? d.state[0]?.name : d.state?.name) || "", href: `/${locale}/destination/${d.id}` })) });
-    if (collections.data?.length) grouped.push({ type: "Collections", items: collections.data.map((c: any) => ({ id: c.id, name: c.name, href: `/${locale}/collections/${c.id}` })) });
-    if (articles.data?.length) grouped.push({ type: "Articles", items: articles.data.map((a: any) => ({ id: a.slug, name: a.title, href: `/${locale}/blog/${a.slug}` })) });
-
-    setResults(grouped);
-    setLoading(false);
-  }, [locale]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => search(query), 250);
-    return () => clearTimeout(timer);
-  }, [query, search]);
+  // Spinner shows only while the index itself is still loading on first open.
+  const loading = query.trim().length >= 2 && !index;
 
   function navigate(href: string, searchTerm?: string) {
     if (searchTerm) {

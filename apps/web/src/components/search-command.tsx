@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
-import { getBrowserSupabase } from "@/lib/supabase-browser";
+import { useSearchIndex } from "@/lib/search-index";
 
 interface SearchCommandProps {
   open: boolean;
@@ -174,8 +174,6 @@ function getHref(item: ResultItem, locale: string): string {
   }
 }
 
-const getSupabase = getBrowserSupabase;
-
 export function SearchCommand({ open, onClose }: SearchCommandProps) {
   const router = useRouter();
   const locale = useLocale();
@@ -185,74 +183,19 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Cached index data
-  const [destinations, setDestinations] = useState<Destination[] | null>(null);
-  const [subs, setSubs] = useState<SubDestination[] | null>(null);
-  const [states, setStates] = useState<State[] | null>(null);
-  const [treks, setTreks] = useState<Trek[] | null>(null);
-  const [routes, setRoutes] = useState<Route[] | null>(null);
-  const [collections, setCollections] = useState<Collection[] | null>(null);
-  const [festivals, setFestivals] = useState<Festival[] | null>(null);
-  const [stays, setStays] = useState<Stay[] | null>(null);
-  const [gems, setGems] = useState<HiddenGem[] | null>(null);
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loaded, setLoaded] = useState(false);
-
-  // Fetch index data on first open — 9 parallel queries, cached in session
-  useEffect(() => {
-    if (!open || loaded) return;
-    const sb = getSupabase();
-    if (!sb) return;
-
-    Promise.all([
-      sb.from("destinations").select("id, name, state:states(name), difficulty, tags"),
-      sb.from("sub_destinations").select("id, name, parent_id, parent:destinations!sub_destinations_parent_id_fkey(name)"),
-      sb.from("states").select("id, name"),
-      sb.from("treks").select("id, name, difficulty"),
-      sb.from("routes").select("id, name"),
-      sb.from("collections").select("id, name"),
-      sb.from("festivals").select("id, name, month, destination_id, destination:destinations(name)"),
-      sb.from("local_stays").select("id, name, type, destination_id, destination:destinations(name)"),
-      sb.from("hidden_gems").select("id, name, near_destination_id, near:destinations!hidden_gems_near_destination_id_fkey(name)"),
-    ]).then(([dRes, subRes, stRes, tRes, rRes, cRes, fRes, slRes, gRes]) => {
-      setDestinations((dRes.data as unknown as Destination[]) ?? []);
-      const subRows = ((subRes.data as unknown as Array<{ id: string; name: string; parent_id: string; parent: { name: string } | { name: string }[] | null }>) ?? []).map((s) => ({
-        id: s.id,
-        name: s.name,
-        parent_id: s.parent_id,
-        parent_name: Array.isArray(s.parent) ? s.parent[0]?.name ?? "" : s.parent?.name ?? "",
-      }));
-      setSubs(subRows);
-      setStates((stRes.data as State[]) ?? []);
-      setTreks((tRes.data as Trek[]) ?? []);
-      setRoutes((rRes.data as Route[]) ?? []);
-      setCollections((cRes.data as Collection[]) ?? []);
-      const festRows = ((fRes.data as unknown as Array<{ id: string; name: string; month: number | null; destination_id: string | null; destination: { name: string } | { name: string }[] | null }>) ?? []).map((f) => ({
-        id: f.id,
-        name: f.name,
-        month: f.month,
-        destination_id: f.destination_id,
-        destination_name: Array.isArray(f.destination) ? f.destination[0]?.name ?? "" : f.destination?.name ?? "",
-      }));
-      setFestivals(festRows);
-      const stayRows = ((slRes.data as unknown as Array<{ id: string; name: string; type: string | null; destination_id: string; destination: { name: string } | { name: string }[] | null }>) ?? []).map((s) => ({
-        id: s.id,
-        name: s.name,
-        type: s.type,
-        destination_id: s.destination_id,
-        destination_name: Array.isArray(s.destination) ? s.destination[0]?.name ?? "" : s.destination?.name ?? "",
-      }));
-      setStays(stayRows);
-      const gemRows = ((gRes.data as unknown as Array<{ id: string; name: string; near_destination_id: string | null; near: { name: string } | { name: string }[] | null }>) ?? []).map((g) => ({
-        id: g.id,
-        name: g.name,
-        near_destination_id: g.near_destination_id,
-        parent_name: Array.isArray(g.near) ? g.near[0]?.name ?? "" : g.near?.name ?? "",
-      }));
-      setGems(gemRows);
-      setLoaded(true);
-    });
-  }, [open, loaded]);
+  // Global search index — fetched once per session from /api/search-index
+  // (server + CDN + browser cached). Loads the first time the palette opens.
+  // Replaces 9 uncached Supabase queries per open + a per-keystroke article query.
+  const { index } = useSearchIndex(open);
+  const destinations: Destination[] | null = index?.destinations ?? null;
+  const subs: SubDestination[] | null = index?.subs ?? null;
+  const states: State[] | null = index?.states ?? null;
+  const treks: Trek[] | null = index?.treks ?? null;
+  const routes: Route[] | null = index?.routes ?? null;
+  const collections: Collection[] | null = index?.collections ?? null;
+  const festivals: Festival[] | null = index?.festivals ?? null;
+  const stays: Stay[] | null = index?.stays ?? null;
+  const gems: HiddenGem[] | null = index?.gems ?? null;
 
   // Auto-focus input
   useEffect(() => {
@@ -262,26 +205,6 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
       setTimeout(() => inputRef.current?.focus(), 50);
     }
   }, [open]);
-
-  // Debounced article search
-  useEffect(() => {
-    if (!query.trim()) {
-      setArticles([]);
-      return;
-    }
-    const timer = setTimeout(() => {
-      const sb = getSupabase();
-      if (!sb) return;
-      sb.from("articles")
-        .select("slug, title, category")
-        .ilike("title", `%${query}%`)
-        .limit(5)
-        .then(({ data }) => {
-          setArticles((data as Article[]) ?? []);
-        });
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [query]);
 
   // Filter local data
   const filterByName = useCallback(
@@ -309,6 +232,20 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
   const filteredFestivals = filterByName(festivals, query);
   const filteredStays = filterByName(stays, query);
   const filteredGems = filterByName(gems, query);
+  // Articles match on `title` (not `name`), so filter them separately.
+  const articles: Article[] = (() => {
+    const list = index?.articles;
+    if (!list || !query.trim()) return [];
+    const lower = query.toLowerCase();
+    const out: Article[] = [];
+    for (const a of list) {
+      if (a.title.toLowerCase().includes(lower)) {
+        out.push(a);
+        if (out.length >= 5) break;
+      }
+    }
+    return out;
+  })();
 
   // Build flat result list — order matches CATEGORY_ORDER
   const results: ResultItem[] = [];
