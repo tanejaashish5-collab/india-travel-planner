@@ -2183,3 +2183,46 @@ Date range: 2026-04-15 → 2026-06-04
 2026-06-05 14:14:36  INFO      YT Short posted: format=nakshiq_score, music=dance-1095
 2026-06-05 14:14:36  INFO      State saved. YT Short run complete.
 2026-06-05 14:14:36  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 16:45:31  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 16:45:31  INFO      Nakshiq Autoposter · EVENING · 2026-06-05 · weekday=4
+2026-06-05 16:45:31  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 16:45:31  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-05 16:46:03  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-05 16:46:03  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-05 16:46:03  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-05 16:46:04  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-05 16:46:17  INFO      [evening] variety pick: v4_dw_counter_narrative_myth_bust (33 CSV + 3 visual candidates)
+2026-06-05 16:46:17  INFO      Formats — IG: v4_dw_counter_narrative_myth_bust  ·  FB: v4_dw_counter_narrative_myth_bust  ·  Story: reality_check  ·  Audience: adventurers
+2026-06-05 16:46:17  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 53
+2026-06-05 16:46:17  INFO      Audience filter 'adventurers' → 11 destinations match.
+2026-06-05 16:46:17  INFO      Fingerprint dedup snapshot — 63 dests in 7d · 87 (dest,fmt) pairs in 30d · 89 media in 60d
+2026-06-05 16:46:18  INFO      Shared best destination locked: Gulmarg
+2026-06-05 16:46:18  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-05 16:46:18  INFO      [instagram/nakshiq] Generating v4_dw_counter_narrative_myth_bust post...
+2026-06-05 16:46:18  INFO      [instagram/nakshiq] Caption ready (526 chars, dest=madurai)
+2026-06-05 16:46:20  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v4_dw_counter_narrative_myth_bust → uploading...
+2026-06-05 16:46:20  INFO          Requesting upload URL for v4_dw_counter_narrative_myth_bust-madurai.png (1,828,801 bytes, image/png)
+2026-06-05 16:46:21  INFO          Uploading to R2 (timeout=120s)...
+2026-06-05 16:46:21  INFO          R2 PUT OK. Confirming...
+2026-06-05 16:46:22  INFO          Media ready: BHIZn (1,828,801 bytes · v4_dw_counter_narrative_myth_bust-madurai.png)
+2026-06-05 16:46:22  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-05 16:46:36  INFO      [instagram/nakshiq] ✅ Published · Outstand=IY6cX · Platform=18061877255708380
+2026-06-05 16:46:36  INFO      [instagram/nakshiq] Uploading Story image (kargil.jpg)...
+2026-06-05 16:46:36  INFO          Using branded image: kargil_story_bold-cinematic_watermark.jpg (432,679 bytes)
+2026-06-05 16:46:36  INFO          Requesting upload URL for kargil.jpg (432,679 bytes, image/jpeg)
+2026-06-05 16:46:37  INFO          Uploading to R2 (timeout=120s)...
+2026-06-05 16:46:38  INFO          R2 PUT OK. Confirming...
+2026-06-05 16:46:38  INFO          Media ready: jNn02 (432,679 bytes · kargil.jpg)
+2026-06-05 16:46:38  INFO      [instagram/nakshiq] Publishing Story · format=reality_check · dest=kargil
+2026-06-05 16:46:58  INFO      [instagram/nakshiq] ✅ Story live · ID=18098225669148594
+2026-06-05 16:46:58  INFO      [facebook/Nakshiq] Generating v4_dw_counter_narrative_myth_bust post...
+2026-06-05 16:46:58  INFO      [facebook/Nakshiq] Caption ready (620 chars, dest=coorg)
+2026-06-05 16:47:00  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v4_dw_counter_narrative_myth_bust → uploading...
+2026-06-05 16:47:00  INFO          Requesting upload URL for v4_dw_counter_narrative_myth_bust-coorg.png (1,544,327 bytes, image/png)
+2026-06-05 16:47:01  INFO          Uploading to R2 (timeout=120s)...
+2026-06-05 16:47:02  INFO          R2 PUT OK. Confirming...
+2026-06-05 16:47:02  INFO          Media ready: 8hmGI (1,544,327 bytes · v4_dw_counter_narrative_myth_bust-coorg.png)
+2026-06-05 16:47:02  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-05 16:47:10  INFO      [facebook/Nakshiq] ✅ Published · Outstand=NdOra · Platform=1040562729145369_122111043548700092
+2026-06-05 16:47:10  INFO      State saved. Run complete.
+2026-06-05 16:47:10  INFO      ════════════════════════════════════════════════════════════
