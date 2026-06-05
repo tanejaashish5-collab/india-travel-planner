@@ -16,3 +16,13 @@ autoposter.log
 data/post_outcomes.jsonl
 data/post_engagement.json
 data/bad-url-queue.jsonl
+
+# yt_shorts_v2 render outputs / previews (regenerated on demand — never commit)
+preview_*.mp4
+SERIES_*.mp4
+voice_*.mp4
+yt_short_*.mp4
+*.hook.png
+_grid.png
+_sheet.png
+_smoke_voice.mp3

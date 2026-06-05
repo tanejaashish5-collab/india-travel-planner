@@ -10505,8 +10505,23 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
     log.info("═" * 60)
 
     # ── Generate the Short ────────────────────────────────────────────────
+    # v2 = the narrated "NakshIQ Score" series (Hinglish voice + word captions +
+    # fast hook + real music). On by default; set NAKSHIQ_YT_V2=0 to use the old
+    # silent-slideshow builder. v2 returning None falls back to v1 automatically.
     try:
-        result = build_yt_short(dry_run=dry_run)
+        result = None
+        if os.environ.get("NAKSHIQ_YT_V2", "1") != "0":
+            try:
+                from yt_shorts_v2 import build_series_short
+                result = build_series_short(dry_run=dry_run)
+                if not result:
+                    log.warning("YT Short v2 produced nothing — falling back to v1 builder.")
+            except Exception as e:
+                log.warning(f"YT Short v2 failed ({e}) — falling back to v1 builder.")
+                import traceback
+                log.warning(traceback.format_exc())
+        if not result:
+            result = build_yt_short(dry_run=dry_run)
     except Exception as e:
         log.error(f"YT Short generation failed: {e}")
         import traceback
