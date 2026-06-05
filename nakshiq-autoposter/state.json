@@ -30,18 +30,17 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-04",
-    "PdMu0": "2026-06-04",
+    "m8EAd": "2026-06-05",
+    "PdMu0": "2026-06-05",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-04",
     "PdMu0_evening": "2026-06-04",
     "GAh5p_yt_short": "2026-06-04",
     "m8EAd_yt_short": "2026-06-04",
-    "m8EAd_evening_story": "2026-06-03",
     "m8EAd_story": "2026-06-04"
   },
-  "last_sync": "2026-06-04T17:27:24.075818+00:00",
+  "last_sync": "2026-06-05T07:23:35.299253+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -242,11 +241,14 @@
     {
       "destination_id": "lahaul-valley",
       "date": "2026-06-04"
+    },
+    {
+      "destination_id": "courtallam",
+      "date": "2026-06-05"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "festival_alert",
       "kids_intel",
       "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
@@ -266,10 +268,10 @@
       "v2_weekend_escape_map",
       "v2_texture_macro",
       "v3_tl_world_best_india",
-      "v2_hidden_gem_reveal_atmo"
+      "v2_hidden_gem_reveal_atmo",
+      "weekend_escape"
     ],
     "PdMu0": [
-      "festival_alert",
       "kids_intel",
       "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
@@ -289,7 +291,8 @@
       "v2_weekend_escape_map",
       "v2_texture_macro",
       "v3_tl_world_best_india",
-      "v2_hidden_gem_reveal_atmo"
+      "v2_hidden_gem_reveal_atmo",
+      "weekend_escape"
     ]
   },
   "post_log": [
@@ -2143,6 +2146,28 @@
       "format": "v2_hidden_gem_reveal_atmo",
       "has_media": true,
       "media_id": "lahaul-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-05T07:24:49.908397+00:00",
+      "date": "2026-06-05",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "lLYGK",
+      "destination": "courtallam",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-06-05T07:25:05.874024+00:00",
+      "date": "2026-06-05",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "Vm7rN",
+      "destination": "courtallam",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
     }
   ],
   "theme_usage": {
@@ -2343,6 +2368,9 @@
       ],
       "lahaul-valley": [
         "2026-06-04"
+      ],
+      "courtallam": [
+        "2026-06-05"
       ]
     },
     "morning_formats": {
@@ -2417,7 +2445,8 @@
         "2026-05-29"
       ],
       "weekend_escape": [
-        "2026-05-30"
+        "2026-05-30",
+        "2026-06-05"
       ],
       "v2_hindi_score_card": [
         "2026-05-30"
@@ -2663,8 +2692,7 @@
       "leh": [
         "2026-06-03"
       ]
-    },
-    "collection_carousel_dests:after-dark-experiences": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -2678,7 +2706,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lahaul-valley",
+    "shared_best": "kaza",
     "collection": "after-dark-experiences"
   },
   "manual_skip_dests": {}

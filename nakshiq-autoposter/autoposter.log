@@ -2078,3 +2078,43 @@ Date range: 2026-04-15 → 2026-06-03
 2026-06-04 20:28:30  INFO      
 Date range: 2026-04-15 → 2026-06-04
 2026-06-04 20:28:30  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 07:23:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 07:23:00  INFO      Nakshiq Autoposter · MORNING · 2026-06-05 · weekday=4
+2026-06-05 07:23:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 07:23:00  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-05 07:23:35  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-05 07:23:35  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-05 07:23:36  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-05 07:23:38  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-05 07:23:51  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-05 07:23:51  INFO      Morning format (themed-week-1→verdict): weekend_escape [57% vs target 50%] (0/14 never featured)
+2026-06-05 07:23:51  INFO      Formats — IG: weekend_escape  ·  FB: weekend_escape  ·  Story: infrastructure_truth
+2026-06-05 07:23:51  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 49
+2026-06-05 07:23:51  INFO      Fingerprint dedup snapshot — 60 dests in 7d · 83 (dest,fmt) pairs in 30d · 85 media in 60d
+2026-06-05 07:23:51  INFO      Weekend Escape: Courtallam (Kutralam)
+2026-06-05 07:23:54  INFO      Shared best destination locked: Kaza
+2026-06-05 07:23:54  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-05 07:23:54  INFO      [instagram/nakshiq] Generating weekend_escape post...
+2026-06-05 07:23:54  INFO      [instagram/nakshiq] Caption ready (410 chars, dest=courtallam)
+2026-06-05 07:23:54  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-06-05 07:23:54  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/courtallam.mp4?v=20260524
+2026-06-05 07:23:57  INFO          Brand-stamp applied: courtallam.mp4 (7,348,941 → 4,210,184 bytes)
+2026-06-05 07:23:57  INFO          Requesting upload URL for courtallam.mp4 (4,210,184 bytes, video/mp4)
+2026-06-05 07:23:58  INFO          Uploading to R2 (timeout=300s)...
+2026-06-05 07:23:59  INFO          R2 PUT OK. Confirming...
+2026-06-05 07:24:00  INFO          Media ready: FIorZ (4,210,184 bytes · courtallam.mp4)
+2026-06-05 07:24:00  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-05 07:24:49  INFO      [instagram/nakshiq] ✅ Published · Outstand=lLYGK · Platform=17943034578032648
+2026-06-05 07:24:49  INFO      [facebook/Nakshiq] Generating weekend_escape post...
+2026-06-05 07:24:49  INFO      [facebook/Nakshiq] Caption ready (541 chars, dest=courtallam)
+2026-06-05 07:24:50  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-06-05 07:24:50  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/courtallam.mp4?v=20260524
+2026-06-05 07:24:53  INFO          Brand-stamp applied: courtallam.mp4 (7,348,941 → 4,210,184 bytes)
+2026-06-05 07:24:53  INFO          Requesting upload URL for courtallam.mp4 (4,210,184 bytes, video/mp4)
+2026-06-05 07:24:54  INFO          Uploading to R2 (timeout=300s)...
+2026-06-05 07:24:55  INFO          R2 PUT OK. Confirming...
+2026-06-05 07:24:56  INFO          Media ready: yV8Gj (4,210,184 bytes · courtallam.mp4)
+2026-06-05 07:24:56  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-05 07:25:05  INFO      [facebook/Nakshiq] ✅ Published · Outstand=Vm7rN · Platform=1643519356949842
+2026-06-05 07:25:05  INFO      State saved. Run complete.
+2026-06-05 07:25:05  INFO      ════════════════════════════════════════════════════════════
