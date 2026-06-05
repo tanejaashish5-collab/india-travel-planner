@@ -34,6 +34,7 @@ import asyncio
 import glob
 import json
 import os
+import random
 import shutil
 import subprocess
 import tempfile
@@ -645,10 +646,21 @@ def _fetch_dest(slug: str, month: int = 6) -> Optional[dict]:
 # ─────────────────────────────────────────────────────────────────────────
 
 MUSIC_V2_DIR = HERE / "assets" / "yt_music_v2"
-# All current yt_music_v2 tracks are Kevin MacLeod / incompetech (CC BY 4.0) →
-# attribution required, auto-appended to captions. To go no-attribution, drop
-# YouTube-Audio-Library / Pixabay files here and clear _CC_BY_CREDIT.
-_CC_BY_CREDIT = "Music: Kevin MacLeod (incompetech.com) — CC BY 4.0"
+# Library = Mixkit Stock Music Free License tracks (mixkit.co), named
+# "<bucket>-<mixkitId>.mp3". That license is free for commercial + social/YouTube
+# use and requires NO attribution, so _CC_BY_CREDIT is intentionally empty.
+# (Prohibited: CDs/DVDs, TV/radio broadcast, video games, remix-as-music-track.)
+# If you ever add a track that DOES require credit, set _CC_BY_CREDIT and the
+# caption builders will append it automatically.
+_CC_BY_CREDIT = ""
+
+# Genre buckets (file prefixes) → mapped to content energy for mood-matched music.
+#   BRIGHT = high score / go-now / hidden gem  → modern, energetic
+#   DEEP   = warning / epic / lower score       → cinematic, propulsive
+_MUSIC_POOLS = {
+    "bright": ["hype", "edm", "dance", "fast"],   # hip-hop/trap, EDM/trance, dance, action
+    "deep":   ["cinematic", "fast"],              # film/orchestral/trailer + driving action
+}
 
 _HASHTAG_POOL = ["IncredibleIndia", "India", "IndiaTravel", "TravelIndia", "Shorts",
                  "TravelShorts", "IndianTravel", "Wanderlust", "TravelReels",
@@ -656,16 +668,22 @@ _HASHTAG_POOL = ["IncredibleIndia", "India", "IndiaTravel", "TravelIndia", "Shor
 
 
 def _pick_music_v2(profile: str) -> Optional[Path]:
-    """Mood-matched track: upbeat for BRIGHT (hype/go-now), calmer for DEEP."""
+    """Mood-matched track from the genre library, rotated for variety.
+
+    BRIGHT (go-now/gems, score>=8) -> hip-hop/trap, EDM/trance, dance, action.
+    DEEP   (warnings/epic, score<=6) -> cinematic (film/orchestral/trailer) + driving action.
+    Picks at random across the mood's buckets so consecutive posts differ.
+    """
     bright = "bright" in (profile or "")
-    order = (["Carefree.mp3", "Local_Forecast.mp3"] if bright
-             else ["Happy_Alley.mp3", "Carefree.mp3"])
-    for fn in order:
-        p = MUSIC_V2_DIR / fn
-        if p.exists():
-            return p
-    any_ = sorted(MUSIC_V2_DIR.glob("*.mp3")) or sorted(MUSIC_V2_DIR.glob("*.wav"))
-    return any_[0] if any_ else _pick_music()
+    buckets = _MUSIC_POOLS["bright" if bright else "deep"]
+    cands = []
+    for b in buckets:
+        cands.extend(MUSIC_V2_DIR.glob(f"{b}-*.mp3"))
+    if not cands:                                   # fall back to any track in the dir
+        cands = list(MUSIC_V2_DIR.glob("*.mp3")) or list(MUSIC_V2_DIR.glob("*.wav"))
+    if cands:
+        return random.choice(sorted(cands))
+    return _pick_music()
 
 
 def _music_credit(music_path: Optional[Path]) -> str:
