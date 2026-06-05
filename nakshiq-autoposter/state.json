@@ -33,11 +33,11 @@
     "m8EAd": "2026-06-05",
     "PdMu0": "2026-06-05",
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-04",
     "PdMu0_evening": "2026-06-04",
     "GAh5p_yt_short": "2026-06-05",
-    "m8EAd_yt_short": "2026-06-04",
+    "m8EAd_yt_short": "2026-06-05",
     "m8EAd_story": "2026-06-04"
   },
   "last_sync": "2026-06-05T07:23:35.299253+00:00",
@@ -252,6 +252,10 @@
     },
     {
       "destination_id": "kaza",
+      "date": "2026-06-05"
+    },
+    {
+      "destination_id": "gurez-valley",
       "date": "2026-06-05"
     }
   ],
@@ -2212,6 +2216,15 @@
       "destination": "kaza",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kaza_2026-06-05.mp4"
+    },
+    {
+      "timestamp": "2026-06-05T14:14:36.620628+00:00",
+      "date": "2026-06-05",
+      "platform": "instagram",
+      "post_id": "IYwVX",
+      "destination": "gurez-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_gurez-valley_2026-06-05.mp4"
     }
   ],
   "theme_usage": {

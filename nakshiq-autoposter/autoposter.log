@@ -2164,3 +2164,22 @@ Date range: 2026-04-15 → 2026-06-04
 2026-06-05 13:45:40  INFO      YT Short posted: format=nakshiq_score, music=edm-471
 2026-06-05 13:45:40  INFO      State saved. YT Short run complete.
 2026-06-05 13:45:40  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 14:12:33  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 14:12:33  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-05
+2026-06-05 14:12:33  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 14:12:36  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-05 14:13:48  INFO      Short rendered: yt_short_nakshiq_score_gurez-valley_2026-06-05.mp4 (13096 KB, 19.9s, fmt=nakshiq_score, music=dance-1095)
+2026-06-05 14:13:48  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_gurez-valley_2026-06-05.mp4 (13,410,643 bytes, video/mp4)
+2026-06-05 14:13:49  INFO          Uploading to R2 (timeout=300s)...
+2026-06-05 14:13:49  INFO          R2 PUT OK. Confirming...
+2026-06-05 14:13:51  INFO          Media ready: 9ceNQ (13,410,643 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_gurez-valley_2026-06-05.mp4)
+2026-06-05 14:13:51  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_gurez-valley_2026-06-05.mp4
+2026-06-05 14:13:51  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-06-05 14:13:51  INFO      [instagram/nakshiq] Publishing YT Short (nakshiq_score)...
+2026-06-05 14:13:51  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-06-05 14:13:54  INFO      [instagram/nakshiq] Outstand accepted (post_id=IYwVX), waiting for platform confirmation...
+2026-06-05 14:14:36  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=IYwVX · Platform=18096282203188310
+2026-06-05 14:14:36  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-05 14:14:36  INFO      YT Short posted: format=nakshiq_score, music=dance-1095
+2026-06-05 14:14:36  INFO      State saved. YT Short run complete.
+2026-06-05 14:14:36  INFO      ════════════════════════════════════════════════════════════
