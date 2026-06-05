@@ -1,3 +1,6 @@
 requests>=2.31.0
 Pillow>=10.0.0
 numpy>=1.24.0
+# yt_shorts_v2 narrated series — free Hindi TTS (no API key). Without this the
+# v2 builder ImportErrors on GitHub Actions and silently falls back to v1.
+edge-tts>=7.0
