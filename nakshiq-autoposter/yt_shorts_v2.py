@@ -768,17 +768,24 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
 
     heroes = {p.stem for p in SCRIPTS_DIR.glob("*.json")}
     pool = [d for d in dests if d.get("id") not in used]
+    # Probe lazily: hero scripts first, then highest-scoring dests, and STOP at
+    # the first with footage. has_clip() triggers an R2 fetch on a miss, so we
+    # must NOT probe the whole pool (that was ~90 R2 requests/run on GHA).
+    dest = None
     if slug:
-        cands = [d for d in dests if d.get("id") == slug]
+        dest = next((d for d in dests if d.get("id") == slug), None)
     else:
-        hero_c = [d for d in pool if d.get("id") in heroes and has_clip(d)]
-        rest = sorted([d for d in pool if d.get("id") not in heroes and has_clip(d)],
-                      key=lambda d: -d.get("score", 0))
-        cands = hero_c + rest
-    if not cands:
+        ordered = ([d for d in pool if d.get("id") in heroes] +
+                   sorted([d for d in pool if d.get("id") not in heroes],
+                          key=lambda d: -d.get("score", 0)))
+        for d in ordered:
+            if has_clip(d):
+                dest = d
+                break
+    if not dest:
         print("series: no eligible destination (needs footage + not posted this month)")
         return None
-    dest = cands[0]; slug = dest.get("id")
+    slug = dest.get("id")
     print(f"series: picked {slug} (score {dest.get('score')}, {dest.get('state','')})")
 
     spec = _resolve_spec(slug, dest)
