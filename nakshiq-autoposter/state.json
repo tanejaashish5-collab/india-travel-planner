@@ -32,7 +32,7 @@
   "posted_today": {
     "m8EAd": "2026-06-05",
     "PdMu0": "2026-06-05",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-04",
     "PdMu0_evening": "2026-06-04",
@@ -248,6 +248,10 @@
     },
     {
       "destination_id": "lolab-valley",
+      "date": "2026-06-05"
+    },
+    {
+      "destination_id": "kaza",
       "date": "2026-06-05"
     }
   ],
@@ -2190,6 +2194,24 @@
       "destination": "lolab-valley",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lolab-valley_2026-06-05.mp4"
+    },
+    {
+      "timestamp": "2026-06-05T13:44:52.307696+00:00",
+      "date": "2026-06-05",
+      "platform": "youtube",
+      "post_id": "uirxE",
+      "destination": "kaza",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kaza_2026-06-05.mp4"
+    },
+    {
+      "timestamp": "2026-06-05T13:45:40.900417+00:00",
+      "date": "2026-06-05",
+      "platform": "instagram",
+      "post_id": "45Rwi",
+      "destination": "kaza",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kaza_2026-06-05.mp4"
     }
   ],
   "theme_usage": {

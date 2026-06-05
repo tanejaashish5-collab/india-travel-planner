@@ -2141,3 +2141,26 @@ Date range: 2026-04-15 → 2026-06-04
 2026-06-05 08:22:44  INFO      YT Short posted: format=nakshiq_score, music=fast-680
 2026-06-05 08:22:44  INFO      State saved. YT Short run complete.
 2026-06-05 08:22:44  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 13:42:53  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 13:42:53  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-05
+2026-06-05 13:42:53  INFO      ════════════════════════════════════════════════════════════
+2026-06-05 13:42:56  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-05 13:44:27  INFO      Short rendered: yt_short_nakshiq_score_kaza_2026-06-05.mp4 (16731 KB, 26.6s, fmt=nakshiq_score, music=edm-471)
+2026-06-05 13:44:27  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_kaza_2026-06-05.mp4 (17,132,892 bytes, video/mp4)
+2026-06-05 13:44:28  INFO          Uploading to R2 (timeout=300s)...
+2026-06-05 13:44:29  INFO          R2 PUT OK. Confirming...
+2026-06-05 13:44:30  INFO          Media ready: lDIkK (17,132,892 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_kaza_2026-06-05.mp4)
+2026-06-05 13:44:30  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_kaza_2026-06-05.mp4
+2026-06-05 13:44:31  INFO      [youtube/@naksh-iq] Publishing YT Short (nakshiq_score)...
+2026-06-05 13:44:31  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-06-05 13:44:33  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=uirxE), waiting for platform confirmation...
+2026-06-05 13:44:52  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=uirxE · Platform=P98TKJEnxOY
+2026-06-05 13:44:52  INFO      [instagram/nakshiq] Publishing YT Short (nakshiq_score)...
+2026-06-05 13:44:52  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-06-05 13:44:54  INFO      [instagram/nakshiq] Outstand accepted (post_id=45Rwi), waiting for platform confirmation...
+2026-06-05 13:45:40  INFO          wait_for_publish exhausted 8 polls for post=45Rwi (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-05 13:45:40  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=45Rwi). May have silently failed.
+2026-06-05 13:45:40  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-05 13:45:40  INFO      YT Short posted: format=nakshiq_score, music=edm-471
+2026-06-05 13:45:40  INFO      State saved. YT Short run complete.
+2026-06-05 13:45:40  INFO      ════════════════════════════════════════════════════════════
