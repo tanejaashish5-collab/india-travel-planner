@@ -32,11 +32,11 @@
   "posted_today": {
     "m8EAd": "2026-06-05",
     "PdMu0": "2026-06-05",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-04",
     "PdMu0_evening": "2026-06-04",
-    "GAh5p_yt_short": "2026-06-04",
+    "GAh5p_yt_short": "2026-06-05",
     "m8EAd_yt_short": "2026-06-04",
     "m8EAd_story": "2026-06-04"
   },
@@ -244,6 +244,10 @@
     },
     {
       "destination_id": "courtallam",
+      "date": "2026-06-05"
+    },
+    {
+      "destination_id": "lolab-valley",
       "date": "2026-06-05"
     }
   ],
@@ -2168,6 +2172,24 @@
       "format": "weekend_escape",
       "has_media": true,
       "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-06-05T08:21:57.928071+00:00",
+      "date": "2026-06-05",
+      "platform": "youtube",
+      "post_id": "Z4g4u",
+      "destination": "lolab-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lolab-valley_2026-06-05.mp4"
+    },
+    {
+      "timestamp": "2026-06-05T08:22:44.816180+00:00",
+      "date": "2026-06-05",
+      "platform": "instagram",
+      "post_id": "NdzOa",
+      "destination": "lolab-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lolab-valley_2026-06-05.mp4"
     }
   ],
   "theme_usage": {
