@@ -511,10 +511,14 @@ def _build_background(clip: Optional[Path], total_dur: float, out: Path) -> Opti
 def _mix_audio(voice_mp3: Path, music: Optional[Path], total_dur: float, out: Path):
     ff = _ff()
     if music and music.exists():
+        # [0:a] = silent bed of length total_dur — mixing it in (duration=longest)
+        # forces the mix to span the FULL clip so the music plays under the CTA
+        # hold (TAIL) and completes its fade-out, instead of being cut at the
+        # voice end (duration=first dropped the tail -> abrupt clip + dead air).
         fc = (f"[1:a]adelay={int(LEAD*1000)}|{int(LEAD*1000)}[v];"
               f"[2:a]aloop=loop=-1:size=2e9,atrim=0:{total_dur},"
-              f"afade=t=in:st=0:d=0.6,afade=t=out:st={total_dur-1.4}:d=1.4,volume=0.16[m];"
-              f"[v][m]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[mx];"
+              f"afade=t=in:st=0:d=0.6,afade=t=out:st={total_dur-1.6}:d=1.6,volume=0.16[m];"
+              f"[0:a][v][m]amix=inputs=3:duration=longest:dropout_transition=0:normalize=0[mx];"
               f"[mx]alimiter=limit=0.9:level=disabled[a]")
         cmd = [ff, "-y",
                "-f", "lavfi", "-t", f"{total_dur}", "-i", "anullsrc=r=44100:cl=stereo",
