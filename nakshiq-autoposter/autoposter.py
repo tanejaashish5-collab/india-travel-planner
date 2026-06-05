@@ -5511,7 +5511,7 @@ def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jp
     fetch path in upload_media() — that's where bare unbranded photos enter
     the publish pipeline. Every other path (social_image_library variants,
     CSV slides, slide_gen carousels, tourist_map, pomelli, canva, flow_story,
-    reel_gen, ugc, yt_shorts) produces pre-composited media with text + chrome
+    reel_gen, yt_shorts) produces pre-composited media with text + chrome
     already baked in, and would double-stamp if brand_stamp ran. Added
     2026-05-26 with Issue 2.
     """
@@ -10096,203 +10096,6 @@ def run_reel_map(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# UGC MODE — AI avatar videos with persona-aware script matching
-# ─────────────────────────────────────────────────────────────────────────────
-
-UGC_LOCK_FILE = Path(__file__).parent / ".autoposter-ugc.lock"
-
-
-def _run_ugc(force: bool = False, dry_run: bool = False):
-    """
-    UGC mode — generates AI avatar videos using HeyGen and posts as Reels.
-    10-avatar roster with persona-script-music matching and strict cultural rules.
-    Posts to Instagram + YouTube.
-    """
-    from ugc_gen import generate_ugc, ContentRuleViolation
-
-    today   = date.today().isoformat()
-    st      = load_state()
-
-    log.info("═" * 60)
-    log.info(f"Nakshiq Autoposter · UGC · {today}")
-    log.info("═" * 60)
-
-    # ── Generate UGC video ──────────────────────────────────────────────
-    try:
-        result = generate_ugc(dry_run=dry_run)
-    except ContentRuleViolation as e:
-        log.error(f"UGC generation BLOCKED by content rules: {e}")
-        save_state(st)
-        return
-    except Exception as e:
-        log.error(f"UGC generation failed: {e}")
-        import traceback
-        log.error(traceback.format_exc())
-        save_state(st)
-        return
-
-    avatar_name = result.get("avatar_name", "Unknown")
-    dest = result.get("dest", "India")
-    category = result.get("category", "unknown")
-
-    log.info(f"Avatar: {avatar_name} | Dest: {dest} | Category: {category}")
-
-    # 2026-05-17 (Tier 7 Phase 1.4): once-per-calendar-month dedupe for UGC.
-    # The dest is determined inside generate_ugc() so we check post-hoc.
-    # This wastes one HeyGen credit when blocked, but UGC fires manually only
-    # (cron paused) and the alternative is letting Pahalgam appear again.
-    used = recently_used_destinations(st)
-    dest_id_candidate = (result.get("dest_id")
-                          or dest.lower().replace(" ", "-")
-                          or "")
-    if dest_id_candidate in used:
-        log.info(f"UGC for dest '{dest_id_candidate}' is BLOCKED by once-per-month / hardcoded — SKIPPING publish")
-        save_state(st)
-        return
-
-    if dry_run:
-        log.info(f"DRY RUN — script generated, skipping upload.")
-        log.info(f"Script: {result.get('script', '')[:200]}...")
-        save_state(st)
-        return
-
-    video_path = result.get("video_path")
-    if not video_path or not Path(video_path).exists():
-        log.error("UGC video file not found after generation.")
-        save_state(st)
-        return
-
-    video_bytes = Path(video_path).read_bytes()
-    video_size_kb = len(video_bytes) // 1024
-    log.info(f"UGC video rendered: {Path(video_path).name} ({video_size_kb} KB)")
-
-    # ── Upload to Outstand ──────────────────────────────────────────────
-    media_filename = f"ugc_{result['avatar']}_{dest.lower().replace(' ', '_')}.mp4"
-    media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4")
-    if not media_obj:
-        log.error("UGC video upload failed.")
-        save_state(st)
-        return
-
-    log.info(f"Video uploaded: {media_filename}")
-
-    # ── Publish to all platforms ────────────────────────────────────────
-    accounts = get_connected_accounts()
-    active   = [a for a in accounts if a.get("isActive")]
-    if not active:
-        log.warning("No active connected accounts.")
-        save_state(st)
-        return
-
-    mode_suffix = "_ugc"
-    posted_any = False
-
-    for account in active:
-        acc_id   = account["id"]
-        platform = account["network"]
-        username = account.get("username", acc_id)
-        label    = f"{platform}/{username}"
-
-        acc_scoped_key = acc_id + mode_suffix
-        if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:
-            log.info(f"[{label}] Already posted UGC today — skipping.")
-            continue
-
-        # Use platform-specific caption from ugc_gen
-        if platform == "youtube":
-            caption = result.get("caption_yt", result.get("caption_ig", ""))
-        else:
-            caption = result.get("caption_ig", "")
-
-        caption = apply_platform_voice(caption, platform)
-        caption = sanitize(caption)
-
-        log.info(f"[{label}] Publishing UGC ({avatar_name} on {dest})...")
-
-        pub_result = publish_reel(caption, account, media_obj, dry_run=False)
-        if not pub_result:
-            log.warning(f"[{label}] UGC post failed (API rejected).")
-            continue
-
-        post_id = pub_result.get("post", {}).get("id", "unknown")
-        log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
-
-        confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
-        # 2026-05-17 Tier 7 Phase 4: UGC was the only flow not writing to
-        # post_log + post_outcomes.jsonl. Add both calls here so cross-flow
-        # dedupe sees UGC posts AND the weekly digest can attribute clicks.
-        ugc_dest_id = result.get("dest_id") or (dest or "").lower().replace(" ", "-") or None
-        cta_url = _extract_caption_url(caption)
-        utm_content = build_utm_content(ugc_dest_id, f"ugc.{result.get('avatar', 'unknown')}")
-        if confirmed:
-            platform_id = confirmed.get("platformPostId", "—")
-            log.info(f"[{label}] ✅ UGC published · Outstand={post_id} · Platform={platform_id}")
-            _mark_posted_today(st, acc_scoped_key)
-            posted_any = True
-            record_publish(
-                st,
-                dest_id=ugc_dest_id,
-                fmt=f"ugc.{result.get('avatar', 'unknown')}",
-                post_id=post_id,
-                platform=platform,
-                media_id=media_filename,
-            )
-            _log_post_outcome(
-                post_id=post_id, dest_id=ugc_dest_id,
-                fmt=f"ugc.{result.get('avatar', 'unknown')}", media_id=media_filename,
-                account=account, caption=caption,
-                cta_url=cta_url, utm_content=utm_content,
-                status="published",
-            )
-        else:
-            log.warning(f"[{label}] ⚠️  UGC queued but NOT confirmed (post_id={post_id}).")
-            record_publish(
-                st,
-                dest_id=ugc_dest_id,
-                fmt=f"ugc.{result.get('avatar', 'unknown')}",
-                post_id=post_id,
-                platform=platform,
-                media_id=media_filename,
-            )
-            _log_post_outcome(
-                post_id=post_id, dest_id=ugc_dest_id,
-                fmt=f"ugc.{result.get('avatar', 'unknown')}", media_id=media_filename,
-                account=account, caption=caption,
-                cta_url=cta_url, utm_content=utm_content,
-                status="queued_unconfirmed",
-            )
-
-    if posted_any:
-        mark_theme_used(st, "ugc_avatars", result["avatar"])
-
-    save_state(st)
-    log.info(f"State saved. UGC run complete. Cost: ${result.get('cost', 0):.2f}")
-    log.info("═" * 60)
-
-
-def run_ugc(force: bool = False, dry_run: bool = False):
-    """Entry point for UGC mode with its own lock file."""
-    if not OUTSTAND_API_KEY:
-        log.error("OUTSTAND_API_KEY not set. Exiting.")
-        sys.exit(1)
-
-    global LOCK_FILE
-    original_lock = LOCK_FILE
-    LOCK_FILE = UGC_LOCK_FILE
-
-    try:
-        if not dry_run and not _acquire_lock(force=force):
-            sys.exit(0)
-        try:
-            _run_ugc(force=force, dry_run=dry_run)
-        finally:
-            if not dry_run:
-                _release_lock()
-    finally:
-        LOCK_FILE = original_lock
-
-
-# ─────────────────────────────────────────────────────────────────────────────
 # INFOGRAPHIC MODE — branded carousel infographics (treks, festivals, etc.)
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -11023,10 +10826,6 @@ if __name__ == "__main__":
                         help="Generate and post an animated map Reel. "
                              "Rotates through 4 formats (state_heatmap, route_trace, "
                              "cluster_reveal, score_pulse) × 28 states.")
-    parser.add_argument("--ugc", action="store_true",
-                        help="Generate and post a UGC AI avatar video. "
-                             "10-avatar roster with persona-aware script/music "
-                             "matching and strict cultural rules.")
     parser.add_argument("--analytics", action="store_true",
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
@@ -11079,9 +10878,9 @@ if __name__ == "__main__":
             "runs, pass --allow-local explicitly.\n"
         )
         sys.exit(0)
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -11094,8 +10893,6 @@ if __name__ == "__main__":
         run_reel(force=args.force, dry_run=args.dry_run)
     elif args.reel_map:
         run_reel_map(force=args.force, dry_run=args.dry_run)
-    elif args.ugc:
-        run_ugc(force=args.force, dry_run=args.dry_run)
     elif args.infographic:
         run_infographic(force=args.force, dry_run=args.dry_run)
     elif args.yt_short:

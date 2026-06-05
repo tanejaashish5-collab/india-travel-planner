@@ -30,9 +30,6 @@ on:
     # pomelli rotation). Brand-manifesto content earned zero engagement; only
     # rich-data verdict/verification posts (Morning + Evening) remain.
     # - cron: "47 7 * * *"
-    # UGC avatar video: 14:30 IST (09:00 UTC) — Wed+Sat only, IG+FB+YT
-    # DISABLED: HeyGen balance too low ($0.32). Uncomment after topping up.
-    # - cron: "0 9 * * 3,6"
     # Reel-map: PAUSED 2026-05-16 — was 15:17 IST Tue/Thu/Sat. Pomelli pipeline
     # not converting; pause until visual content earns first 50-engagement post.
     # - cron: "47 9 * * *"
@@ -398,12 +395,6 @@ jobs:
           elif [ "$TOTAL_MINS" -ge 390 ] && [ "$TOTAL_MINS" -lt 495 ]; then
             echo "args=" >> $GITHUB_OUTPUT
             echo "Drifted MORNING post (cron drift, fired in old visual window) · DOW=${DOW}"
-
-          # 14:30 IST = UTC 09:00 → UGC avatar video (cron=540, window: 495-569) — Wed+Sat only
-          # NOTE: cron trigger is currently commented out (HeyGen balance too low)
-          elif [ "$TOTAL_MINS" -ge 495 ] && [ "$TOTAL_MINS" -lt 570 ]; then
-            echo "args=--ugc" >> $GITHUB_OUTPUT
-            echo "Scheduled UGC · 14:30 IST (UTC ${HOUR}:${MINUTE})"
 
           # 15:17 IST = UTC 09:47 → Reel-map (cron=587, window: 570-614) — IG+FB+YT
           # TIER 3 (2026-05-10): DOW-gated to Tue/Thu/Sat only.  Pomelli pipeline
