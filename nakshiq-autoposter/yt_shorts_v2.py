@@ -288,7 +288,7 @@ def _synth_eleven(text: str, lines: list, voice_id: str, api_key: str,
     return bounds or [(0.0, _audio_dur(out_mp3), " ".join(lines))]
 
 
-def _word_cues(bounds: list, caption_texts: list = None, max_words: int = 3) -> list:
+def _word_cues(bounds: list, caption_texts: list = None, max_words: int = 2) -> list:
     """Split each sentence span across its words (weighted by length), then
     group into <=max_words caption cues that never cross a sentence. Returns
     [(start_s, end_s, text), ...].
@@ -301,7 +301,7 @@ def _word_cues(bounds: list, caption_texts: list = None, max_words: int = 3) -> 
     for i, (off, dur, txt) in enumerate(bounds):
         if caption_texts and i < len(caption_texts):
             txt = caption_texts[i]
-        words = txt.split()
+        words = [w for w in txt.split() if w not in ("—", "-", "–", "·", "|")]
         if not words:
             continue
         weights = [len(w) + 1 for w in words]
@@ -347,12 +347,12 @@ def build_ass(cues, score_disp, name, total_dur, out_ass: Path):
 ScriptType: v4.00+
 PlayResX: {REEL_W}
 PlayResY: {REEL_H}
-WrapStyle: 2
+WrapStyle: 0
 ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,Instrument Sans,132,{W},{W},&H00000000,&H64000000,-1,0,0,0,100,100,1,0,1,8,4,5,70,70,0,1
+Style: Cap,Instrument Sans,104,{W},{W},&H00000000,&H64000000,-1,0,0,0,100,100,1,0,1,7,4,2,96,96,470,1
 Style: Score,JetBrains Mono,250,{V},{V},&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,9,5,5,0,0,0,1
 Style: Kicker,Instrument Sans,56,{S},{S},&H00000000,&H64000000,-1,0,0,0,100,100,3,0,1,5,2,5,0,0,0,1
 Style: Badge,Instrument Sans,52,{W},{W},&H00000000,&HB4{vermillion_bg},-1,0,0,0,100,100,1,0,3,18,0,8,0,0,70,1
@@ -391,7 +391,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     # WORD CAPTIONS — big, low (in the bottom scrim), pop-in, synced to voice.
     for (s, e, txt) in cues:
         s2, e2 = s + LEAD, e + LEAD
-        anim = "{\\an5\\pos(540,1410)\\fad(45,40)\\fscx74\\fscy74\\t(0,120,\\fscx107\\fscy107)\\t(120,200,\\fscx100\\fscy100)}"
+        # No \\pos / \\an here on purpose: the Cap style's bottom-center alignment
+        # (an2) + MarginL/R let libass WRAP long lines within the safe width
+        # instead of overflowing the screen edges. \\pos would disable wrapping.
+        anim = "{\\fad(45,40)\\fscx82\\fscy82\\t(0,120,\\fscx104\\fscy104)\\t(120,200,\\fscx100\\fscy100)}"
         dlg(s2, e2, "Cap", anim + _ass_escape(txt))
 
     # CTA hold at the end (after the voice finishes)
@@ -831,7 +834,8 @@ if __name__ == "__main__":
                 rate_override=args.rate, pitch_override=args.pitch,
                 eleven_override=args.eleven_voice)
     if res:
-        print(json.dumps(res, indent=2, ensure_ascii=False))
+        print(json.dumps({k: v for k, v in res.items() if k != "video_bytes"},
+                         indent=2, ensure_ascii=False, default=str))
         print(f"\n✅ Preview: {res['video']}  ({res['duration']}s)")
     else:
         print("❌ build failed")
