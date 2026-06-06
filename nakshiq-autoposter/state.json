@@ -34,14 +34,14 @@
     "PdMu0": "2026-06-06",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
-    "m8EAd_evening": "2026-06-05",
-    "PdMu0_evening": "2026-06-05",
+    "m8EAd_evening": "2026-06-06",
+    "PdMu0_evening": "2026-06-06",
     "GAh5p_yt_short": "2026-06-06",
     "m8EAd_yt_short": "2026-06-06",
     "m8EAd_evening_story": "2026-06-05",
     "m8EAd_story": "2026-06-06"
   },
-  "last_sync": "2026-06-06T06:44:25.987920+00:00",
+  "last_sync": "2026-06-06T15:44:35.875405+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -282,11 +282,18 @@
     {
       "destination_id": "tosamaidan",
       "date": "2026-06-06"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-06-06"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-06-06"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
@@ -306,10 +313,10 @@
       "v2_hidden_gem_reveal_atmo",
       "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
-      "v2_hindi_score_card"
+      "v2_hindi_score_card",
+      "v2_myth_bust_oneline"
     ],
     "PdMu0": [
-      "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
@@ -329,7 +336,8 @@
       "v2_hidden_gem_reveal_atmo",
       "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
-      "v2_hindi_score_card"
+      "v2_hindi_score_card",
+      "v2_myth_bust_oneline"
     ]
   },
   "post_log": [
@@ -2330,6 +2338,28 @@
       "destination": "tosamaidan",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_tosamaidan_2026-06-06.mp4"
+    },
+    {
+      "timestamp": "2026-06-06T15:45:43.679287+00:00",
+      "date": "2026-06-06",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "AnDJ7",
+      "destination": "pangong-lake",
+      "format": "v2_myth_bust_oneline",
+      "has_media": true,
+      "media_id": "pangong-lake.mp4"
+    },
+    {
+      "timestamp": "2026-06-06T15:46:01.506100+00:00",
+      "date": "2026-06-06",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xwFL8",
+      "destination": "nubra-valley",
+      "format": "v2_myth_bust_oneline",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -2503,13 +2533,15 @@
       ],
       "nubra-valley": [
         "2026-06-01",
-        "2026-06-02"
+        "2026-06-02",
+        "2026-06-06"
       ],
       "tungnath": [
         "2026-06-02"
       ],
       "pangong-lake": [
-        "2026-06-02"
+        "2026-06-02",
+        "2026-06-06"
       ],
       "ukhrul": [
         "2026-06-03"
@@ -2653,6 +2685,9 @@
       ],
       "v4_dw_counter_narrative_myth_bust": [
         "2026-06-05"
+      ],
+      "v2_myth_bust_oneline": [
+        "2026-06-06"
       ]
     },
     "reels": {
@@ -2723,10 +2758,12 @@
         "2026-06-01"
       ],
       "pangong-lake": [
-        "2026-06-02"
+        "2026-06-02",
+        "2026-06-06"
       ],
       "nubra-valley": [
-        "2026-06-02"
+        "2026-06-02",
+        "2026-06-06"
       ],
       "tawang": [
         "2026-06-03"
@@ -2745,7 +2782,8 @@
       ],
       "families": [
         "2026-05-23",
-        "2026-05-30"
+        "2026-05-30",
+        "2026-06-06"
       ],
       "adventurers": [
         "2026-05-29",
@@ -2873,7 +2911,8 @@
       "leh": [
         "2026-06-03"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -2887,7 +2926,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tosamaidan",
+    "shared_best": "kaza",
     "collection": "after-dark-experiences"
   },
   "manual_skip_dests": {}

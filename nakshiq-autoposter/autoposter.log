@@ -2376,3 +2376,55 @@ Date range: 2026-04-15 → 2026-06-05
 2026-06-06 12:58:54  INFO      YT Short posted: format=nakshiq_score, music=fast-686
 2026-06-06 12:58:54  INFO      State saved. YT Short run complete.
 2026-06-06 12:58:54  INFO      ════════════════════════════════════════════════════════════
+2026-06-06 15:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-06-06 15:44:11  INFO      Nakshiq Autoposter · EVENING · 2026-06-06 · weekday=5
+2026-06-06 15:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-06-06 15:44:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-06 15:44:35  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-06 15:44:35  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-06 15:44:36  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-06 15:44:36  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-06 15:44:48  INFO      [evening] variety pick: v2_myth_bust_oneline (33 CSV + 3 visual candidates)
+2026-06-06 15:44:48  INFO      Formats — IG: v2_myth_bust_oneline  ·  FB: v2_myth_bust_oneline  ·  Story: route_spotlight  ·  Audience: families
+2026-06-06 15:44:48  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 59
+2026-06-06 15:44:48  WARNING   Audience filter 'families' → only 2 match (floor=3). Dropping filter to avoid same-dest spam.
+2026-06-06 15:44:48  INFO      Fingerprint dedup snapshot — 67 dests in 7d · 93 (dest,fmt) pairs in 30d · 95 media in 60d
+2026-06-06 15:44:48  INFO      Route locked: Khardung La & Nubra Loop
+2026-06-06 15:44:51  INFO      Shared best destination locked: Kaza
+2026-06-06 15:44:51  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-06 15:44:51  INFO      [instagram/nakshiq] Generating v2_myth_bust_oneline post...
+2026-06-06 15:44:51  INFO      v2_myth_bust_oneline: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:44:51  INFO      v2_myth_bust_oneline: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:44:51  INFO      v2_myth_bust_oneline: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:44:51  INFO      v2_myth_bust_oneline: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:44:51  INFO      v2_myth_bust_oneline: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:44:51  INFO      [instagram/nakshiq] Caption ready (423 chars, dest=pangong-lake)
+2026-06-06 15:44:51  INFO      [instagram/nakshiq] CSV video format (v2_myth_bust_oneline) — using dest Ken Burns clip as fallback
+2026-06-06 15:44:51  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pangong-lake.mp4?v=20260524
+2026-06-06 15:44:54  INFO          Brand-stamp applied: pangong-lake.mp4 (2,563,133 → 1,743,212 bytes)
+2026-06-06 15:44:54  INFO          Requesting upload URL for pangong-lake.mp4 (1,743,212 bytes, video/mp4)
+2026-06-06 15:44:55  INFO          Uploading to R2 (timeout=300s)...
+2026-06-06 15:44:55  INFO          R2 PUT OK. Confirming...
+2026-06-06 15:44:56  INFO          Media ready: bdWNT (1,743,212 bytes · pangong-lake.mp4)
+2026-06-06 15:44:56  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-06 15:45:43  INFO          wait_for_publish exhausted 8 polls for post=AnDJ7 (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-06 15:45:43  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=AnDJ7)
+2026-06-06 15:45:43  INFO      [facebook/Nakshiq] Generating v2_myth_bust_oneline post...
+2026-06-06 15:45:43  INFO      v2_myth_bust_oneline: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:45:43  INFO      v2_myth_bust_oneline: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:45:43  INFO      v2_myth_bust_oneline: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:45:43  INFO      v2_myth_bust_oneline: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:45:43  INFO      v2_myth_bust_oneline: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 15:45:43  INFO      v2_myth_bust_oneline: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-06 15:45:43  INFO      [facebook/Nakshiq] Caption ready (408 chars, dest=nubra-valley)
+2026-06-06 15:45:43  INFO      [facebook/Nakshiq] CSV video format (v2_myth_bust_oneline) — using dest Ken Burns clip as fallback
+2026-06-06 15:45:43  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nubra-valley.mp4?v=20260524
+2026-06-06 15:45:46  INFO          Brand-stamp applied: nubra-valley.mp4 (6,874,272 → 3,028,202 bytes)
+2026-06-06 15:45:46  INFO          Requesting upload URL for nubra-valley.mp4 (3,028,202 bytes, video/mp4)
+2026-06-06 15:45:47  INFO          Uploading to R2 (timeout=300s)...
+2026-06-06 15:45:47  INFO          R2 PUT OK. Confirming...
+2026-06-06 15:45:48  INFO          Media ready: m2Bfd (3,028,202 bytes · nubra-valley.mp4)
+2026-06-06 15:45:48  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-06 15:46:01  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xwFL8 · Platform=983836481293963
+2026-06-06 15:46:01  INFO      State saved. Run complete.
+2026-06-06 15:46:01  INFO      ════════════════════════════════════════════════════════════
