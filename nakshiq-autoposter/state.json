@@ -32,11 +32,11 @@
   "posted_today": {
     "m8EAd": "2026-06-06",
     "PdMu0": "2026-06-06",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-05",
     "PdMu0_evening": "2026-06-05",
-    "GAh5p_yt_short": "2026-06-05",
+    "GAh5p_yt_short": "2026-06-06",
     "m8EAd_yt_short": "2026-06-05",
     "m8EAd_evening_story": "2026-06-05",
     "m8EAd_story": "2026-06-06"
@@ -273,6 +273,10 @@
     },
     {
       "destination_id": "kargil",
+      "date": "2026-06-06"
+    },
+    {
+      "destination_id": "gulmarg",
       "date": "2026-06-06"
     }
   ],
@@ -2277,17 +2281,6 @@
       "media_id": "v2_hindi_score_card-keylong.png"
     },
     {
-      "timestamp": "2026-06-06T06:45:24.123340+00:00",
-      "date": "2026-06-06",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "X6Gie",
-      "destination": "gulmarg",
-      "format": "kids_intel",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
       "timestamp": "2026-06-06T06:45:41.646918+00:00",
       "date": "2026-06-06",
       "platform": "facebook",
@@ -2297,6 +2290,24 @@
       "format": "v2_hindi_score_card",
       "has_media": true,
       "media_id": "v2_hindi_score_card-kargil.png"
+    },
+    {
+      "timestamp": "2026-06-06T07:30:05.818458+00:00",
+      "date": "2026-06-06",
+      "platform": "youtube",
+      "post_id": "eRpmr",
+      "destination": "gulmarg",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_gulmarg_2026-06-06.mp4"
+    },
+    {
+      "timestamp": "2026-06-06T07:30:55.190950+00:00",
+      "date": "2026-06-06",
+      "platform": "instagram",
+      "post_id": "CeJNF",
+      "destination": "gulmarg",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_gulmarg_2026-06-06.mp4"
     }
   ],
   "theme_usage": {
