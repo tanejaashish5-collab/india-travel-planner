@@ -2277,3 +2277,57 @@ Date range: 2026-04-15 → 2026-06-04
 2026-06-05 20:17:05  INFO      
 Date range: 2026-04-15 → 2026-06-05
 2026-06-05 20:17:05  INFO      ════════════════════════════════════════════════════════════
+2026-06-06 06:44:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-06 06:44:00  INFO      Nakshiq Autoposter · MORNING · 2026-06-06 · weekday=5
+2026-06-06 06:44:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-06 06:44:00  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-06 06:44:25  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-06 06:44:25  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-06 06:44:26  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-06 06:44:28  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-06 06:44:39  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-06 06:44:39  INFO      Morning format (themed-week-1→verdict): v2_hindi_score_card [57% vs target 50%] (0/14 never featured)
+2026-06-06 06:44:39  INFO      Formats — IG: v2_hindi_score_card  ·  FB: v2_hindi_score_card  ·  Story: kids_intel
+2026-06-06 06:44:39  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-06-06 06:44:39  INFO      Fingerprint dedup snapshot — 63 dests in 7d · 89 (dest,fmt) pairs in 30d · 91 media in 60d
+2026-06-06 06:44:39  INFO      Kids destination locked: Gulmarg
+2026-06-06 06:44:39  INFO      Shared best destination locked: Tosamaidan
+2026-06-06 06:44:39  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-06 06:44:39  INFO      [instagram/nakshiq] Generating v2_hindi_score_card post...
+2026-06-06 06:44:39  INFO      v2_hindi_score_card: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:44:39  INFO      v2_hindi_score_card: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:44:39  INFO      v2_hindi_score_card: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:44:39  INFO      v2_hindi_score_card: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:44:39  INFO      v2_hindi_score_card: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:44:39  INFO      [instagram/nakshiq] Caption ready (389 chars, dest=keylong)
+2026-06-06 06:44:42  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_hindi_score_card → uploading...
+2026-06-06 06:44:42  INFO          Requesting upload URL for v2_hindi_score_card-keylong.png (1,782,452 bytes, image/png)
+2026-06-06 06:44:42  INFO          Uploading to R2 (timeout=120s)...
+2026-06-06 06:44:44  INFO          R2 PUT OK. Confirming...
+2026-06-06 06:44:44  INFO          Media ready: 4RQKi (1,782,452 bytes · v2_hindi_score_card-keylong.png)
+2026-06-06 06:44:44  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-06 06:45:03  INFO      [instagram/nakshiq] ✅ Published · Outstand=9N7jQ · Platform=18102832280047891
+2026-06-06 06:45:03  INFO      [instagram/nakshiq] Uploading Story image (gulmarg.jpg)...
+2026-06-06 06:45:03  INFO          Using branded image: gulmarg_story_minimal-elegant_watermark.jpg (354,540 bytes)
+2026-06-06 06:45:03  INFO          Requesting upload URL for gulmarg.jpg (354,540 bytes, image/jpeg)
+2026-06-06 06:45:04  INFO          Uploading to R2 (timeout=120s)...
+2026-06-06 06:45:04  INFO          R2 PUT OK. Confirming...
+2026-06-06 06:45:05  INFO          Media ready: LqG1V (354,540 bytes · gulmarg.jpg)
+2026-06-06 06:45:05  INFO      [instagram/nakshiq] Publishing Story · format=kids_intel · dest=gulmarg
+2026-06-06 06:45:24  INFO      [instagram/nakshiq] ✅ Story live · ID=17863631958587403
+2026-06-06 06:45:24  INFO      [facebook/Nakshiq] Generating v2_hindi_score_card post...
+2026-06-06 06:45:24  INFO      v2_hindi_score_card: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:45:24  INFO      v2_hindi_score_card: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:45:24  INFO      v2_hindi_score_card: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:45:24  INFO      v2_hindi_score_card: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:45:24  INFO      v2_hindi_score_card: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-06 06:45:24  INFO      [facebook/Nakshiq] Caption ready (379 chars, dest=kargil)
+2026-06-06 06:45:25  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_hindi_score_card → uploading...
+2026-06-06 06:45:26  INFO          Requesting upload URL for v2_hindi_score_card-kargil.png (2,079,415 bytes, image/png)
+2026-06-06 06:45:26  INFO          Uploading to R2 (timeout=120s)...
+2026-06-06 06:45:27  INFO          R2 PUT OK. Confirming...
+2026-06-06 06:45:28  INFO          Media ready: 3G66k (2,079,415 bytes · v2_hindi_score_card-kargil.png)
+2026-06-06 06:45:28  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-06 06:45:41  INFO      [facebook/Nakshiq] ✅ Published · Outstand=X6GBe · Platform=1040562729145369_122111107586700092
+2026-06-06 06:45:41  INFO      State saved. Run complete.
+2026-06-06 06:45:41  INFO      ════════════════════════════════════════════════════════════

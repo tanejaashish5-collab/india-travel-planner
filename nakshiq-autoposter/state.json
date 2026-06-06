@@ -30,18 +30,18 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-05",
-    "PdMu0": "2026-06-05",
+    "m8EAd": "2026-06-06",
+    "PdMu0": "2026-06-06",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-05",
     "PdMu0_evening": "2026-06-05",
     "GAh5p_yt_short": "2026-06-05",
     "m8EAd_yt_short": "2026-06-05",
-    "m8EAd_story": "2026-06-04",
-    "m8EAd_evening_story": "2026-06-05"
+    "m8EAd_evening_story": "2026-06-05",
+    "m8EAd_story": "2026-06-06"
   },
-  "last_sync": "2026-06-05T16:46:03.071747+00:00",
+  "last_sync": "2026-06-06T06:44:25.987920+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -266,11 +266,18 @@
     {
       "destination_id": "coorg",
       "date": "2026-06-05"
+    },
+    {
+      "destination_id": "keylong",
+      "date": "2026-06-06"
+    },
+    {
+      "destination_id": "kargil",
+      "date": "2026-06-06"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
@@ -290,10 +297,10 @@
       "v3_tl_world_best_india",
       "v2_hidden_gem_reveal_atmo",
       "weekend_escape",
-      "v4_dw_counter_narrative_myth_bust"
+      "v4_dw_counter_narrative_myth_bust",
+      "v2_hindi_score_card"
     ],
     "PdMu0": [
-      "v3_tl_city_neighborhood",
       "v2_arrival_intel_video",
       "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
@@ -313,7 +320,8 @@
       "v3_tl_world_best_india",
       "v2_hidden_gem_reveal_atmo",
       "weekend_escape",
-      "v4_dw_counter_narrative_myth_bust"
+      "v4_dw_counter_narrative_myth_bust",
+      "v2_hindi_score_card"
     ]
   },
   "post_log": [
@@ -2247,17 +2255,6 @@
       "media_id": "v4_dw_counter_narrative_myth_bust-madurai.png"
     },
     {
-      "timestamp": "2026-06-05T16:46:58.015357+00:00",
-      "date": "2026-06-05",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "Z4iyu",
-      "destination": "kargil",
-      "format": "reality_check",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-06-05T16:47:10.509459+00:00",
       "date": "2026-06-05",
       "platform": "facebook",
@@ -2267,6 +2264,39 @@
       "format": "v4_dw_counter_narrative_myth_bust",
       "has_media": true,
       "media_id": "v4_dw_counter_narrative_myth_bust-coorg.png"
+    },
+    {
+      "timestamp": "2026-06-06T06:45:03.899616+00:00",
+      "date": "2026-06-06",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "9N7jQ",
+      "destination": "keylong",
+      "format": "v2_hindi_score_card",
+      "has_media": true,
+      "media_id": "v2_hindi_score_card-keylong.png"
+    },
+    {
+      "timestamp": "2026-06-06T06:45:24.123340+00:00",
+      "date": "2026-06-06",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "X6Gie",
+      "destination": "gulmarg",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-06-06T06:45:41.646918+00:00",
+      "date": "2026-06-06",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "X6GBe",
+      "destination": "kargil",
+      "format": "v2_hindi_score_card",
+      "has_media": true,
+      "media_id": "v2_hindi_score_card-kargil.png"
     }
   ],
   "theme_usage": {
@@ -2455,14 +2485,16 @@
         "2026-06-03"
       ],
       "keylong": [
-        "2026-06-03"
+        "2026-06-03",
+        "2026-06-06"
       ],
       "nako": [
         "2026-06-04"
       ],
       "kargil": [
         "2026-06-04",
-        "2026-06-05"
+        "2026-06-05",
+        "2026-06-06"
       ],
       "roopkund": [
         "2026-06-04"
@@ -2475,6 +2507,9 @@
       ],
       "coorg": [
         "2026-06-05"
+      ],
+      "gulmarg": [
+        "2026-06-06"
       ]
     },
     "morning_formats": {
@@ -2553,7 +2588,8 @@
         "2026-06-05"
       ],
       "v2_hindi_score_card": [
-        "2026-05-30"
+        "2026-05-30",
+        "2026-06-06"
       ],
       "festival_alert": [
         "2026-05-31"
@@ -2818,7 +2854,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gulmarg",
+    "shared_best": "tosamaidan",
     "collection": "after-dark-experiences"
   },
   "manual_skip_dests": {}
