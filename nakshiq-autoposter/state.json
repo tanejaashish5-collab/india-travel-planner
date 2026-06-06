@@ -32,12 +32,12 @@
   "posted_today": {
     "m8EAd": "2026-06-06",
     "PdMu0": "2026-06-06",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-05",
     "PdMu0_evening": "2026-06-05",
     "GAh5p_yt_short": "2026-06-06",
-    "m8EAd_yt_short": "2026-06-05",
+    "m8EAd_yt_short": "2026-06-06",
     "m8EAd_evening_story": "2026-06-05",
     "m8EAd_story": "2026-06-06"
   },
@@ -277,6 +277,10 @@
     },
     {
       "destination_id": "gulmarg",
+      "date": "2026-06-06"
+    },
+    {
+      "destination_id": "tosamaidan",
       "date": "2026-06-06"
     }
   ],
@@ -2308,6 +2312,24 @@
       "destination": "gulmarg",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_gulmarg_2026-06-06.mp4"
+    },
+    {
+      "timestamp": "2026-06-06T12:58:17.816709+00:00",
+      "date": "2026-06-06",
+      "platform": "youtube",
+      "post_id": "bvSxT",
+      "destination": "tosamaidan",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_tosamaidan_2026-06-06.mp4"
+    },
+    {
+      "timestamp": "2026-06-06T12:58:54.710525+00:00",
+      "date": "2026-06-06",
+      "platform": "instagram",
+      "post_id": "mJbhd",
+      "destination": "tosamaidan",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_tosamaidan_2026-06-06.mp4"
     }
   ],
   "theme_usage": {
