@@ -34,13 +34,14 @@
     "PdMu0": "2026-06-07",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
-    "m8EAd_evening": "2026-06-06",
-    "PdMu0_evening": "2026-06-06",
+    "m8EAd_evening": "2026-06-07",
+    "PdMu0_evening": "2026-06-07",
     "GAh5p_yt_short": "2026-06-07",
     "m8EAd_yt_short": "2026-06-06",
-    "m8EAd_story": "2026-06-06"
+    "m8EAd_story": "2026-06-06",
+    "m8EAd_evening_story": "2026-06-07"
   },
-  "last_sync": "2026-06-07T07:19:00.515086+00:00",
+  "last_sync": "2026-06-07T15:47:14.866798+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -301,11 +302,18 @@
     {
       "destination_id": "khardung-la",
       "date": "2026-06-07"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-06-07"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-06-07"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
       "v2_route_animated_map",
@@ -325,10 +333,10 @@
       "v4_dw_counter_narrative_myth_bust",
       "v2_hindi_score_card",
       "v2_myth_bust_oneline",
-      "festival_alert"
+      "festival_alert",
+      "v3_tl_first_person_essay"
     ],
     "PdMu0": [
-      "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
       "v2_route_animated_map",
@@ -348,7 +356,8 @@
       "v4_dw_counter_narrative_myth_bust",
       "v2_hindi_score_card",
       "v2_myth_bust_oneline",
-      "festival_alert"
+      "festival_alert",
+      "v3_tl_first_person_essay"
     ]
   },
   "post_log": [
@@ -2429,6 +2438,39 @@
       "destination": "khardung-la",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_khardung-la_2026-06-07.mp4"
+    },
+    {
+      "timestamp": "2026-06-07T15:48:53.679034+00:00",
+      "date": "2026-06-07",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "r5Ke4",
+      "destination": "pangong-lake",
+      "format": "v3_tl_first_person_essay",
+      "has_media": true,
+      "media_id": "v3_tl_first_person_essay-pangong-lake_01_cover.png"
+    },
+    {
+      "timestamp": "2026-06-07T15:49:12.749723+00:00",
+      "date": "2026-06-07",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "uBPuE",
+      "destination": "courtallam",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-06-07T15:49:58.605503+00:00",
+      "date": "2026-06-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "LmGaV",
+      "destination": "nubra-valley",
+      "format": "v3_tl_first_person_essay",
+      "has_media": true,
+      "media_id": "v3_tl_first_person_essay-nubra-valley_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -2604,14 +2646,16 @@
       "nubra-valley": [
         "2026-06-01",
         "2026-06-02",
-        "2026-06-06"
+        "2026-06-06",
+        "2026-06-07"
       ],
       "tungnath": [
         "2026-06-02"
       ],
       "pangong-lake": [
         "2026-06-02",
-        "2026-06-06"
+        "2026-06-06",
+        "2026-06-07"
       ],
       "ukhrul": [
         "2026-06-03"
@@ -2638,13 +2682,17 @@
         "2026-06-04"
       ],
       "courtallam": [
-        "2026-06-05"
+        "2026-06-05",
+        "2026-06-07"
       ],
       "coorg": [
         "2026-06-05"
       ],
       "gulmarg": [
         "2026-06-06"
+      ],
+      "kaza": [
+        "2026-06-07"
       ]
     },
     "morning_formats": {
@@ -2759,6 +2807,9 @@
       ],
       "v2_myth_bust_oneline": [
         "2026-06-06"
+      ],
+      "v3_tl_first_person_essay": [
+        "2026-06-07"
       ]
     },
     "reels": {
@@ -2830,11 +2881,13 @@
       ],
       "pangong-lake": [
         "2026-06-02",
-        "2026-06-06"
+        "2026-06-06",
+        "2026-06-07"
       ],
       "nubra-valley": [
         "2026-06-02",
-        "2026-06-06"
+        "2026-06-06",
+        "2026-06-07"
       ],
       "tawang": [
         "2026-06-03"
@@ -2999,7 +3052,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurez-valley",
+    "shared_best": "kaza",
     "collection": "after-dark-experiences"
   },
   "manual_skip_dests": {}
