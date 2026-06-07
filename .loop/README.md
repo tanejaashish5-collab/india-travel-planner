@@ -1,6 +1,6 @@
 # `.loop/` — the guard-railed autonomous-loop control room
 
-This folder is the **safety layer** for letting Claude run autonomously on NakshIQ. Nothing here runs on its own yet — Phase 0 (these rails) + Phase 1 (the verify layer) are built. Auto-fix (Phase 2+) is gated behind your approval and not wired until you say so.
+This folder is the **safety layer** for letting Claude run autonomously on NakshIQ. Built so far: Phases 0–2 (rails, the verify layer, and propose-with-approval) and Phase 4 (the read-only opportunity scout). Everything that writes, commits, or deploys stays gated behind your approval; nothing here acts on its own. Phase 3 (auto-PR/merge for the safe class) is not wired.
 
 **The core promise:** Claude does the work; **you stay the judge** of anything that writes, commits, or deploys. Every disaster in this project's history came from a session running too long without a checkpoint — these rails make that structurally impossible.
 
@@ -59,9 +59,10 @@ These are enforced two ways:
 
 ---
 
-## Status: Phase 0 + 1 built
+## Status: Phases 0-2 + 4 built
 
 - ✅ Phase 0 — these rails + `guard.mjs` + `loopctl.mjs` + the PreToolUse hook script (one manual line to activate, see above).
 - ✅ Phase 1 — `scripts/_loop/verify-findings.mjs`: independently reproduces every M1–M7 audit finding before it counts. Run it manually: `node --env-file=apps/web/.env.local scripts/_loop/verify-findings.mjs`.
-- ⏳ Phase 2 (not wired) — diagnose + draft fix + iMessage you to approve.
+- ✅ Phase 2 — diagnose + draft fix + iMessage you to approve (`/loop-propose`).
+- ✅ **Phase 4 — the OPPORTUNITY SCOUT.** Finds value, not just defects: demand-weighted data gaps, SEO striking-distance, new-surface intent gaps (CRO is built but data-gated/off). Read-only; writes `opportunities-{inbox.json,digest.md}`; applies nothing. Full runbook: **[OPPORTUNITIES.md](OPPORTUNITIES.md)**. Sources probe: `node --env-file=apps/web/.env.local scripts/_loop/sources.mjs --probe`.
 - ⏳ Phase 3 (not wired) — auto-open PR → CI green → auto-merge for the safe class only.
