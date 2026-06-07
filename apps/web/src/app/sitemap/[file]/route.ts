@@ -108,6 +108,18 @@ async function getSafariDestinationIds(): Promise<string[]> {
   return (data ?? []).map((r: { destination_id: string }) => r.destination_id).sort();
 }
 
+// Pilgrimage routes that are published — only these get a /pilgrimage/[slug]
+// page (keyed by own slug, not destination_id). New route family → no allowlist.
+async function getPilgrimageSlugs(): Promise<string[]> {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const { data } = await supabase
+    .from("pilgrimage_routes")
+    .select("slug")
+    .eq("published", true);
+  return (data ?? []).map((r: { slug: string }) => r.slug).sort();
+}
+
 function escapeXml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -146,6 +158,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
       "weekend-from-lucknow", "weekend-from-indore", "weekend-from-bhopal",
       "weekend-from-kochi", "weekend-from-agra", "weekend-from-dehradun",
       "weekend-from-chandigarh", "weekend-from-coimbatore", "weekend-from-varanasi",
+      "pilgrimage",
       "arrival", "arrival/del", "arrival/bom", "arrival/blr", "arrival/maa",
       "arrival/ccu", "arrival/hyd", "arrival/cok", "arrival/goi", "arrival/amd",
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
@@ -193,7 +206,11 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const safariIds = await getSafariDestinationIds();
     const safariEntries = safariIds.flatMap((dId) => entry(`safari/${dId}`, "monthly", 0.7));
 
-    return [...destEntries, ...destMonthEntries, ...costEntries, ...safariEntries];
+    // /pilgrimage/[slug] — verified yatra/parikrama routing (only published rows).
+    const pilgrimageSlugs = await getPilgrimageSlugs();
+    const pilgrimageEntries = pilgrimageSlugs.flatMap((slug) => entry(`pilgrimage/${slug}`, "monthly", 0.7));
+
+    return [...destEntries, ...destMonthEntries, ...costEntries, ...safariEntries, ...pilgrimageEntries];
   }
 
   if (id === "2") {
