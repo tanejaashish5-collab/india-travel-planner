@@ -57,5 +57,30 @@
     ],
     "findingsInboxFile": ".loop/findings-inbox.json",
     "dismissedFile": ".loop/dismissed-findings.md"
+  },
+  "opportunities": {
+    "_comment": "Phase 4 — the OPPORTUNITY SCOUT (scout-opportunities.mjs). Finds value, not just defects. Read-only; writes .loop/opportunities-{inbox.json,digest.md}; applies nothing. Every candidate must clear an evidence gate before it surfaces.",
+    "scouts": {
+      "data-coverage": true,
+      "striking-distance": true,
+      "cro-leak": false,
+      "new-surface": true
+    },
+    "_croLeakDisabledReason": "GA4 events are bot-saturated (68% save/pageview median; keyEvents reads 400% of sessions) and organic traffic is too thin per page (0 pages clear 40 organic pv/28d) to measure per-page conversion. An autonomous CRO detector here would surface inverted noise. Re-enable once organic traffic per page grows AND attribution is bot-filtered — verified empirically 2026-06-07, not a code limitation.",
+    "strikingDistance": {
+      "nearMinImpr": 300,
+      "ctrGapMinImpr": 100,
+      "ctrGapMinLostClicks": 20,
+      "ctrGapMaxPos": 5
+    },
+    "croLeak": {
+      "minOrganicPageviews": 40,
+      "minPagesToMeasure": 8
+    },
+    "newSurface": {
+      "minClusterImpr": 200
+    },
+    "inboxFile": ".loop/opportunities-inbox.json",
+    "digestFile": ".loop/opportunities-digest.md"
   }
 }
