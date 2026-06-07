@@ -7,4 +7,4 @@
 
 | Date (UTC) | Job | Finding | Why dismissed (independent check) |
 |---|---|---|---|
-| _(none yet)_ | | | |
+| 2026-06-07 04:01 | audit-cache-headers | https://www.nakshiq.com/en/explore/state/himachal-pradesh | re-probe shows public + cached (HIT/STALE) across 3 passes (cache-control="public, max-age=0, must-revalidate", MISS→HIT→HIT). Edge has a cached copy — original MISS was a transient cold-start. |
