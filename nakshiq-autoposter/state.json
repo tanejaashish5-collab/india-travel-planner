@@ -30,18 +30,17 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-06",
-    "PdMu0": "2026-06-06",
+    "m8EAd": "2026-06-07",
+    "PdMu0": "2026-06-07",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-06",
     "PdMu0_evening": "2026-06-06",
     "GAh5p_yt_short": "2026-06-06",
     "m8EAd_yt_short": "2026-06-06",
-    "m8EAd_evening_story": "2026-06-05",
     "m8EAd_story": "2026-06-06"
   },
-  "last_sync": "2026-06-06T15:44:35.875405+00:00",
+  "last_sync": "2026-06-07T07:19:00.515086+00:00",
   "posted_destinations": [
     {
       "destination_id": "kalimpong",
@@ -290,11 +289,14 @@
     {
       "destination_id": "nubra-valley",
       "date": "2026-06-06"
+    },
+    {
+      "destination_id": "puri",
+      "date": "2026-06-07"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
@@ -314,10 +316,10 @@
       "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
       "v2_hindi_score_card",
-      "v2_myth_bust_oneline"
+      "v2_myth_bust_oneline",
+      "festival_alert"
     ],
     "PdMu0": [
-      "v2_women_solo_brief_video",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "v3_tl_world_best_india",
@@ -337,7 +339,8 @@
       "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
       "v2_hindi_score_card",
-      "v2_myth_bust_oneline"
+      "v2_myth_bust_oneline",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -2360,6 +2363,28 @@
       "format": "v2_myth_bust_oneline",
       "has_media": true,
       "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-07T07:19:59.436024+00:00",
+      "date": "2026-06-07",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "TgLn1",
+      "destination": "puri",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "puri.mp4"
+    },
+    {
+      "timestamp": "2026-06-07T07:20:23.953549+00:00",
+      "date": "2026-06-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "BoXCn",
+      "destination": "puri",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "puri.mp4"
     }
   ],
   "theme_usage": {
@@ -2468,7 +2493,8 @@
         "2026-05-31"
       ],
       "puri": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-06-07"
       ],
       "manikaran": [
         "2026-05-25",
@@ -2657,7 +2683,8 @@
         "2026-06-06"
       ],
       "festival_alert": [
-        "2026-05-31"
+        "2026-05-31",
+        "2026-06-07"
       ],
       "v2_tourist_trap_split": [
         "2026-05-31"
@@ -2859,6 +2886,9 @@
       ],
       "7a46a2ee-37e3-49c5-97d1-465da0861dd9": [
         "2026-06-01"
+      ],
+      "8f7f0ac4-df40-4853-a502-bc89d2606bcc": [
+        "2026-06-07"
       ]
     },
     "tourist_map_states": {
@@ -2911,8 +2941,7 @@
       "leh": [
         "2026-06-03"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -2926,7 +2955,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kaza",
+    "shared_best": "gurez-valley",
     "collection": "after-dark-experiences"
   },
   "manual_skip_dests": {}

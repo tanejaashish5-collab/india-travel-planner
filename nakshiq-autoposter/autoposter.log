@@ -2479,3 +2479,43 @@ Date range: 2026-04-15 → 2026-06-05
 2026-06-06 19:50:22  INFO      
 Date range: 2026-04-15 → 2026-06-06
 2026-06-06 19:50:22  INFO      ════════════════════════════════════════════════════════════
+2026-06-07 07:18:34  INFO      ════════════════════════════════════════════════════════════
+2026-06-07 07:18:34  INFO      Nakshiq Autoposter · MORNING · 2026-06-07 · weekday=6
+2026-06-07 07:18:34  INFO      ════════════════════════════════════════════════════════════
+2026-06-07 07:18:34  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-07 07:19:00  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-07 07:19:00  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-07 07:19:01  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-07 07:19:02  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-07 07:19:14  INFO      [csv_formats] 33/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-07 07:19:14  INFO      Morning format (themed-week-1→verdict): festival_alert [50% vs target 50%] (0/14 never featured)
+2026-06-07 07:19:14  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: score_card
+2026-06-07 07:19:14  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 59
+2026-06-07 07:19:14  INFO      Fingerprint dedup snapshot — 66 dests in 7d · 95 (dest,fmt) pairs in 30d · 97 media in 60d
+2026-06-07 07:19:14  INFO      Festival locked: Bahuda Yatra (21/28 active festivals never featured)
+2026-06-07 07:19:17  INFO      Shared best destination locked: Gurez Valley
+2026-06-07 07:19:17  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-07 07:19:17  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-06-07 07:19:17  INFO      [instagram/nakshiq] Caption ready (295 chars, dest=puri)
+2026-06-07 07:19:18  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-06-07 07:19:18  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/puri.mp4?v=20260524
+2026-06-07 07:19:21  INFO          Brand-stamp applied: puri.mp4 (12,360,500 → 6,788,065 bytes)
+2026-06-07 07:19:21  INFO          Requesting upload URL for puri.mp4 (6,788,065 bytes, video/mp4)
+2026-06-07 07:19:21  INFO          Uploading to R2 (timeout=300s)...
+2026-06-07 07:19:22  INFO          R2 PUT OK. Confirming...
+2026-06-07 07:19:23  INFO          Media ready: STCUJ (6,788,065 bytes · puri.mp4)
+2026-06-07 07:19:23  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-07 07:19:59  INFO      [instagram/nakshiq] ✅ Published · Outstand=TgLn1 · Platform=17977365171024181
+2026-06-07 07:19:59  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-06-07 07:19:59  INFO      [facebook/Nakshiq] Caption ready (419 chars, dest=puri)
+2026-06-07 07:19:59  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-06-07 07:19:59  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/puri.mp4?v=20260524
+2026-06-07 07:20:02  INFO          Brand-stamp applied: puri.mp4 (12,360,500 → 6,788,065 bytes)
+2026-06-07 07:20:02  INFO          Requesting upload URL for puri.mp4 (6,788,065 bytes, video/mp4)
+2026-06-07 07:20:03  INFO          Uploading to R2 (timeout=300s)...
+2026-06-07 07:20:04  INFO          R2 PUT OK. Confirming...
+2026-06-07 07:20:05  INFO          Media ready: japU2 (6,788,065 bytes · puri.mp4)
+2026-06-07 07:20:05  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-07 07:20:23  INFO      [facebook/Nakshiq] ✅ Published · Outstand=BoXCn · Platform=2792465761131124
+2026-06-07 07:20:23  INFO      State saved. Run complete.
+2026-06-07 07:20:23  INFO      ════════════════════════════════════════════════════════════
