@@ -1,0 +1,11 @@
+# Commit the config + docs; ignore mutable runtime state.
+state.json
+STOP
+PAUSE
+findings-inbox.json
+*.log
+# pending-actions.md and dismissed-findings.md are committed as templates;
+# their runtime content is fine to track (it's an audit trail), but ignore
+# any rotated copies.
+pending-actions.*.md
+dismissed-findings.*.md

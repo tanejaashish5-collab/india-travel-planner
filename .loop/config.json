@@ -1,0 +1,60 @@
+{
+  "_comment": "Guard-railed autonomous-loop config. Edit numbers here to tune; the loop reads this on every run. Changing this file is safe — it never executes anything.",
+  "version": 1,
+  "budget": {
+    "maxSubagentsPerRun": 15,
+    "maxTokensPerRun": 200000,
+    "maxWallClockMinutesPerRun": 90
+  },
+  "branch": {
+    "loopBranchPrefix": "loop/auto",
+    "neverWriteTo": ["main", "master"]
+  },
+  "egress": {
+    "maxRestWriteRows": 50,
+    "bulkMustUseDirectPg": true
+  },
+  "approval": {
+    "channel": "imessage",
+    "pendingActionsFile": ".loop/pending-actions.md"
+  },
+  "actionAllowlist": {
+    "noGate": [
+      "read-file",
+      "read-db-query",
+      "lint",
+      "type-check",
+      "web-search",
+      "web-fetch",
+      "write-scratch",
+      "draft-sql-to-staging"
+    ],
+    "requiresApproval": [
+      "db-write",
+      "git-commit",
+      "vercel-deploy",
+      "supabase-migration",
+      "env-change"
+    ],
+    "hardBlocked": [
+      "git-push-main",
+      "sql-drop",
+      "sql-delete",
+      "sql-truncate",
+      "vercel-domain-change",
+      "force-push",
+      "rm-rf"
+    ]
+  },
+  "verify": {
+    "monitoredJobs": [
+      "audit-cache-headers",
+      "audit-bot-crawl-rate",
+      "audit-supabase-advisors",
+      "audit-gsc-alerts",
+      "audit-gsc-ga4-correlation"
+    ],
+    "findingsInboxFile": ".loop/findings-inbox.json",
+    "dismissedFile": ".loop/dismissed-findings.md"
+  }
+}
