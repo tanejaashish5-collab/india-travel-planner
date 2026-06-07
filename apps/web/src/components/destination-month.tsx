@@ -737,6 +737,67 @@ export function DestinationMonth({
     </ScrollReveal>
   );
 
+  // How to reach (month-aware) — the transport block is absent on month pages
+  // otherwise. Reuses the destination's nearest_airport/nearest_railhead strings
+  // (which already embed distances) and, crucially, surfaces a MONTH-GATED access
+  // caveat: the one thing Maps/Rome2Rio/OTAs structurally flatten. The caveat is
+  // pulled from existing data (skip_reason / why_not) ONLY when it names a real
+  // access issue (road/snow/monsoon/closure) — no new data, no fabrication.
+  const HowToReachMonth = () => {
+    const airport = (destination as any).nearest_airport as string | undefined;
+    const rail = (destination as any).nearest_railhead as string | undefined;
+    if (!airport && !rail) return null;
+    const isHi = locale === "hi";
+    const MONTH_HI: Record<string, string> = {
+      January: "जनवरी", February: "फ़रवरी", March: "मार्च", April: "अप्रैल",
+      May: "मई", June: "जून", July: "जुलाई", August: "अगस्त",
+      September: "सितंबर", October: "अक्टूबर", November: "नवंबर", December: "दिसंबर",
+    };
+    const monthDisp = isHi ? (MONTH_HI[monthName] ?? monthName) : monthName;
+    // Show the access caveat only when the month's editorial reason actually names
+    // an access problem — otherwise a heat/crowd skip would mislabel as "access".
+    const accessRe = /\b(road|highway|snow|landslide|monsoon|flood|wash(?:ed)?|closed|closure|passes?|block(?:ed|s)?|cut off|inaccessible|jam)\b/i;
+    const caveatRaw =
+      (currentMonth?.skip_reason as string | undefined) ||
+      (currentMonth?.verdict && currentMonth.verdict !== "go"
+        ? (currentMonth?.why_not as string | undefined)
+        : undefined);
+    const accessCaveat = caveatRaw && accessRe.test(caveatRaw) ? caveatRaw.trim() : null;
+    return (
+      <div>
+        <h2 className="text-xl font-bold sm:text-2xl">
+          {isHi ? `${destination.name} कैसे पहुँचें` : `How to reach ${destination.name}`}
+        </h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {airport && (
+            <div className="rounded-2xl border border-border bg-muted/30 p-4 sm:p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                {isHi ? "हवाई अड्डा" : "Airport"}
+              </p>
+              <p className="mt-1.5 text-sm leading-relaxed">{airport}</p>
+            </div>
+          )}
+          {rail && (
+            <div className="rounded-2xl border border-border bg-muted/30 p-4 sm:p-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                {isHi ? "रेलवे" : "Rail"}
+              </p>
+              <p className="mt-1.5 text-sm leading-relaxed">{rail}</p>
+            </div>
+          )}
+        </div>
+        {accessCaveat && (
+          <div className="mt-3 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-amber-600 dark:text-amber-500">
+              {isHi ? `${monthDisp} में पहुँच` : `Access in ${monthDisp}`}
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-foreground/90">{accessCaveat}</p>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   // ── Render ─────────────────────────────────────────────────
   // Build sidebar ToC sections — only include ones that have data so the
   // rail doesn't show dead anchors.
@@ -744,6 +805,7 @@ export function DestinationMonth({
   const hasThings = Array.isArray(currentMonth?.things_to_do) && currentMonth.things_to_do.length > 0;
   const hasPack = Array.isArray(currentMonth?.pack_list) && currentMonth.pack_list.length > 0;
   const hasNearby = Array.isArray(nearby) && nearby.length > 0;
+  const hasReach = !!((destination as any).nearest_airport || (destination as any).nearest_railhead);
   const hasWhy = !!(
     currentMonth?.note ||
     (Array.isArray(currentMonth?.festivals_this_month) && currentMonth.festivals_this_month.length > 0)
@@ -757,6 +819,7 @@ export function DestinationMonth({
     { id: "months", label: "All 12 months" },
     hasPack && { id: "pack", label: "What to pack" },
     hasNearby && { id: "nearby", label: "Nearby" },
+    hasReach && { id: "reach", label: "How to reach" },
     { id: "booking", label: "Where to stay" },
     { id: "guide", label: `Full ${destination.name} guide` },
   ].filter((s): s is { id: string; label: string } => Boolean(s));
@@ -846,6 +909,11 @@ export function DestinationMonth({
           <section id="section-nearby" className="scroll-mt-28">
             <NearbySection />
           </section>
+          {hasReach && (
+            <section id="section-reach" className="scroll-mt-28">
+              <HowToReachMonth />
+            </section>
+          )}
           <section id="section-booking" className="scroll-mt-28">
             <BookingHandoff
               destinationName={destination.name}
