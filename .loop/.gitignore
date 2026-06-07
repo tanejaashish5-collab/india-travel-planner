@@ -6,6 +6,9 @@ findings-inbox.json
 proposals.json
 outbox.txt
 *.log
+# machine-specific channel binding — contains a personal chat handle, never commit
+channel.local.json
+*.local.json
 # pending-actions.md and dismissed-findings.md are committed as templates;
 # their runtime content is fine to track (it's an audit trail), but ignore
 # any rotated copies.

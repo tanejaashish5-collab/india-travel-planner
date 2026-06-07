@@ -16,6 +16,7 @@
   },
   "approval": {
     "channel": "imessage",
+    "_chatId": "machine-specific — lives in the gitignored .loop/channel.local.json (keeps the Apple ID / chat handle out of this public repo)",
     "pendingActionsFile": ".loop/pending-actions.md"
   },
   "actionAllowlist": {

@@ -42,7 +42,8 @@ Anything you didn't approve stays in `pending-actions.md` untouched. Anything th
 
 The iMessage send uses the iMessage MCP `reply` tool, which needs a **chat_id**. To activate:
 - **One-time:** text the assistant's iMessage bot once (e.g. "loop status"). That establishes the chat_id; Claude replies on the same thread thereafter. Access is managed by `/imessage:access` (run by you).
-- The loop writes the message to `.loop/outbox.txt`; Claude sends that text via `reply(chat_id, …)`.
+- **Where the chat_id lives:** `.loop/channel.local.json` — **gitignored**, because it contains a personal chat handle / Apple ID and this repo is public. Never put the chat_id in the tracked `config.json` or any tracked file. (Format example: `any;-;you@example.com`.)
+- The loop reads the chat_id from `.loop/channel.local.json`, writes the message to `.loop/outbox.txt`, and Claude sends that text via `reply(chat_id, …)`.
 - For a scheduled (headless) run, the chat_id is passed in the routine config. Note: interactively-authenticated MCP servers may be absent in headless/cron runs — confirm iMessage is reachable in that context before relying on it (Phase 3).
 
 Until the chat_id is established, the loop still produces `.loop/pending-actions.md` + `.loop/outbox.txt` — you just read them directly instead of getting a ping.
