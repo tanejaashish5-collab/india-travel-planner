@@ -32,11 +32,11 @@
   "posted_today": {
     "m8EAd": "2026-06-07",
     "PdMu0": "2026-06-07",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-06",
     "PdMu0_evening": "2026-06-06",
-    "GAh5p_yt_short": "2026-06-06",
+    "GAh5p_yt_short": "2026-06-07",
     "m8EAd_yt_short": "2026-06-06",
     "m8EAd_story": "2026-06-06"
   },
@@ -292,6 +292,10 @@
     },
     {
       "destination_id": "puri",
+      "date": "2026-06-07"
+    },
+    {
+      "destination_id": "kinnaur",
       "date": "2026-06-07"
     }
   ],
@@ -2385,6 +2389,24 @@
       "format": "festival_alert",
       "has_media": true,
       "media_id": "puri.mp4"
+    },
+    {
+      "timestamp": "2026-06-07T08:06:51.289588+00:00",
+      "date": "2026-06-07",
+      "platform": "youtube",
+      "post_id": "eRx2r",
+      "destination": "kinnaur",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kinnaur_2026-06-07.mp4"
+    },
+    {
+      "timestamp": "2026-06-07T08:07:38.897221+00:00",
+      "date": "2026-06-07",
+      "platform": "instagram",
+      "post_id": "Ce1fF",
+      "destination": "kinnaur",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kinnaur_2026-06-07.mp4"
     }
   ],
   "theme_usage": {
