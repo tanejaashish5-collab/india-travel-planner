@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { formatScoreInline } from "@itp/shared";
 
@@ -30,6 +30,11 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
+  // Flips true once the async Leaflet import resolves and the map instance
+  // exists. The marker effect depends on it so markers attach as soon as the
+  // map is ready — even when the dynamic import resolves >500ms after mount
+  // (cold chunk right after a deploy), which previously left the map markerless.
+  const [mapReady, setMapReady] = useState(false);
 
   // Initialize map once
   useEffect(() => {
@@ -74,6 +79,7 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
       }
 
       mapInstanceRef.current = map;
+      setMapReady(true);
     });
 
     return () => {
@@ -84,16 +90,15 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
     };
   }, []);
 
-  // Update markers when destinations change (filter/month change)
+  // Update markers when destinations change (filter/month change) or once the
+  // map becomes ready. mapReady in the deps guarantees this re-runs when the
+  // async Leaflet import resolves — so markers no longer depend on a one-shot
+  // 500ms retry winning the race against a cold-chunk import (which is exactly
+  // when it lost: right after a deploy, leaving a markerless map until a filter
+  // change). The "N markers" label lives in the parent and is unaffected, which
+  // is why it could read 511 while the overlay pane was empty.
   useEffect(() => {
-    const map = mapInstanceRef.current;
-    if (!map) {
-      // Map not ready yet — retry after a short delay
-      const timer = setTimeout(() => {
-        updateMarkers();
-      }, 500);
-      return () => clearTimeout(timer);
-    }
+    if (!mapInstanceRef.current) return;
     updateMarkers();
 
     function updateMarkers() {
@@ -151,7 +156,7 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         }
       });
     }
-  }, [destinations, locale]);
+  }, [destinations, locale, mapReady]);
 
   return (
     <>
