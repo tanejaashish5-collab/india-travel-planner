@@ -2705,3 +2705,59 @@ Date range: 2026-04-15 → 2026-06-06
 2026-06-07 19:50:43  INFO      
 Date range: 2026-04-15 → 2026-06-07
 2026-06-07 19:50:43  INFO      ════════════════════════════════════════════════════════════
+2026-06-08 08:27:39  INFO      ════════════════════════════════════════════════════════════
+2026-06-08 08:27:39  INFO      Nakshiq Autoposter · MORNING · 2026-06-08 · weekday=0
+2026-06-08 08:27:39  INFO      ════════════════════════════════════════════════════════════
+2026-06-08 08:27:39  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-08 08:28:10  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-08 08:28:10  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-08 08:28:11  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-08 08:28:13  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-08 08:28:27  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-08 08:28:27  INFO      Morning format (themed-week-2→verification): v2_cost_index_handwritten [0% vs target 20%] (0/14 never featured)
+2026-06-08 08:28:27  INFO      Formats — IG: v2_cost_index_handwritten  ·  FB: v2_cost_index_handwritten  ·  Story: festival_alert
+2026-06-08 08:28:27  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 62
+2026-06-08 08:28:27  INFO      Fingerprint dedup snapshot — 67 dests in 7d · 100 (dest,fmt) pairs in 30d · 102 media in 60d
+2026-06-08 08:28:27  INFO      Festival locked: Hemkund Sahib Prakash Utsav (17/25 active festivals never featured)
+2026-06-08 08:28:30  INFO      Shared best destination locked: Gurez Valley
+2026-06-08 08:28:30  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-08 08:28:30  INFO      [instagram/nakshiq] Generating v2_cost_index_handwritten post...
+2026-06-08 08:28:30  INFO      v2_cost_index_handwritten: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:28:30  INFO      v2_cost_index_handwritten: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:28:30  INFO      v2_cost_index_handwritten: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:28:30  INFO      v2_cost_index_handwritten: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:28:30  INFO      v2_cost_index_handwritten: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:28:30  INFO      [instagram/nakshiq] Caption ready (489 chars, dest=pangong-lake)
+2026-06-08 08:28:32  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_cost_index_handwritten → uploading...
+2026-06-08 08:28:33  INFO          Requesting upload URL for v2_cost_index_handwritten-pangong-lake.png (1,691,336 bytes, image/png)
+2026-06-08 08:28:33  INFO          Uploading to R2 (timeout=120s)...
+2026-06-08 08:28:35  INFO          R2 PUT OK. Confirming...
+2026-06-08 08:28:35  INFO          Media ready: DzhBo (1,691,336 bytes · v2_cost_index_handwritten-pangong-lake.png)
+2026-06-08 08:28:35  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-08 08:28:49  INFO      [instagram/nakshiq] ✅ Published · Outstand=avgkb · Platform=17934660036278353
+2026-06-08 08:28:49  INFO      [instagram/nakshiq] Uploading Story image (hemkund-sahib.jpg)...
+2026-06-08 08:28:49  INFO          Using branded image: hemkund-sahib_story_bold-cinematic_watermark.jpg (373,528 bytes)
+2026-06-08 08:28:49  INFO          Requesting upload URL for hemkund-sahib.jpg (373,528 bytes, image/jpeg)
+2026-06-08 08:28:50  INFO          Uploading to R2 (timeout=120s)...
+2026-06-08 08:28:50  INFO          R2 PUT OK. Confirming...
+2026-06-08 08:28:51  INFO          Media ready: xh0p8 (373,528 bytes · hemkund-sahib.jpg)
+2026-06-08 08:28:51  INFO      [instagram/nakshiq] Publishing Story · format=festival_alert · dest=hemkund-sahib
+2026-06-08 08:29:10  INFO      [instagram/nakshiq] ✅ Story live · ID=17990637902808838
+2026-06-08 08:29:10  INFO      [facebook/Nakshiq] Generating v2_cost_index_handwritten post...
+2026-06-08 08:29:10  INFO      v2_cost_index_handwritten: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:29:10  INFO      v2_cost_index_handwritten: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:29:10  INFO      v2_cost_index_handwritten: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:29:10  INFO      v2_cost_index_handwritten: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:29:10  INFO      v2_cost_index_handwritten: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-08 08:29:10  INFO      v2_cost_index_handwritten: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-08 08:29:10  INFO      [facebook/Nakshiq] Caption ready (473 chars, dest=nubra-valley)
+2026-06-08 08:29:12  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_cost_index_handwritten → uploading...
+2026-06-08 08:29:12  INFO          Requesting upload URL for v2_cost_index_handwritten-nubra-valley.png (1,488,443 bytes, image/png)
+2026-06-08 08:29:13  INFO          Uploading to R2 (timeout=120s)...
+2026-06-08 08:29:14  INFO          R2 PUT OK. Confirming...
+2026-06-08 08:29:14  INFO          Media ready: PKCc0 (1,488,443 bytes · v2_cost_index_handwritten-nubra-valley.png)
+2026-06-08 08:29:14  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-08 08:29:39  WARNING       Platform error for post=nLVdl: Error publishing post to Facebook: Failed to upload Facebook photo: 500 - Please reduce the amount of data you're asking for, then retry your request
+2026-06-08 08:29:39  WARNING   [facebook/Nakshiq] ⚠️  Rejected (ID=nLVdl)
+2026-06-08 08:29:39  INFO      State saved. Run complete.
+2026-06-08 08:29:39  INFO      ════════════════════════════════════════════════════════════
