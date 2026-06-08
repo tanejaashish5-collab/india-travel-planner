@@ -101,17 +101,14 @@ class FormatSpec:
 # LOADING
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Formats pulled from rotation — loaded specs are skipped entirely so they never
-# post. These 3 are "orphan-data" carousels: their templates promise a specific
-# story (first-person essay / hotel drone feature / neighborhood guide) but have no
-# data source, so they'd only ever render the generic dest-carousel fallback under a
-# mismatched caption. Re-enable by removing the id here once the format has real data
-# or eligibility-gating. (2026-06-08, founder call — empty-carousel incident.)
-DISABLED_FORMAT_IDS: frozenset[str] = frozenset({
-    "v3_tl_first_person_essay",
-    "v3_tl_hotel_drone_feature",
-    "v3_tl_city_neighborhood",
-})
+# Hard kill-switch — format ids listed here are skipped at load so they NEVER post,
+# regardless of data. Normally EMPTY: orphan-data formats (those whose templates
+# promise specific content they have no data for) are now handled automatically by
+# the data-eligibility gate in is_eligible() — they simply don't become eligible for
+# any dest until their data exists, then self-heal. Only add an id here to force a
+# format dark even if it has data. (Replaced the 2026-06-08 manual denylist of
+# first_person_essay/hotel_drone_feature/city_neighborhood with the gate.)
+DISABLED_FORMAT_IDS: frozenset[str] = frozenset()
 
 
 def load_all_formats(csv_dir: Path | None = None,
@@ -727,6 +724,41 @@ def _has_dest_video(dest: dict) -> bool:
     return bool((dest or {}).get("video"))
 
 
+# Storyboard DIRECTION lines in a caption_template ("Slide 1: where it began.")
+# are design notes, not data-dependent content — mirror of slide_gen's regex.
+_STORYBOARD_DIRECTION_RE = re.compile(r"^slides?\s+[\d]", re.I)
+
+
+def _resolvable_body_stats(spec: FormatSpec, ctx: dict) -> tuple[int, int]:
+    """Inspect spec.caption_template line by line and report
+    (data_dependent_lines, resolvable_lines):
+
+      - data_dependent_lines: body lines (excluding storyboard directions) that
+        reference at least one DEST-data placeholder (i.e. not in
+        _NON_DEST_DATA_FIELDS, which are injected at render time).
+      - resolvable_lines: of those, the lines whose every dest-data placeholder
+        resolves to a non-empty value in `ctx`.
+
+    A format with data_dependent_lines > 0 but resolvable_lines == 0 is
+    "orphan-data" for this dest — it can only render generic chrome, never its
+    promised specific content (the empty-carousel failure mode).
+    """
+    data_lines = 0
+    resolvable = 0
+    for raw in (spec.caption_template or "").split("\n"):
+        raw = raw.strip()
+        if not raw or _STORYBOARD_DIRECTION_RE.match(raw):
+            continue
+        dest_ph = [p for p in _extract_placeholders(raw)
+                   if p not in _NON_DEST_DATA_FIELDS]
+        if not dest_ph:
+            continue  # static prose or render-injected line — not data-dependent
+        data_lines += 1
+        if all(ctx.get(p) not in (None, "", "None") for p in dest_ph):
+            resolvable += 1
+    return data_lines, resolvable
+
+
 def is_eligible(spec: FormatSpec,
                 candidate_dest: dict,
                 asset_dir: Path) -> tuple[bool, str]:
@@ -772,6 +804,16 @@ def is_eligible(spec: FormatSpec,
     # transport_total_inr etc.) aren't yet populated in phase2_fields. The
     # image still ships with a real dest hero + score chip + brand chrome.
     if spec.post_type in DYNAMIC_RENDER_POST_TYPES:
+        # Eligibility-gate: a data-dependent format that can resolve NONE of its
+        # body content for this dest is "orphan-data" — it would only render the
+        # generic dest fallback under a caption promising specific content (the
+        # 2026-06-07 empty-carousel bug). Skip it for this dest; it stays eligible
+        # for any dest that DOES have the data. Partial data (>=1 line resolves)
+        # still passes — slide_gen's fallback covers the unresolved lines.
+        data_lines, resolvable = _resolvable_body_stats(spec, ctx)
+        if data_lines and not resolvable:
+            return False, (f"orphan-data: 0/{data_lines} body lines resolve for "
+                           f"this dest (needs {sorted(missing)[:5]})")
         return True, ("ok" if not missing
                       else f"ok (will use fallback for {len(missing)} unresolved fields)")
 
