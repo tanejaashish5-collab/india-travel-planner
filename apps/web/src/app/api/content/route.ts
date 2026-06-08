@@ -85,7 +85,7 @@ export async function GET(req: NextRequest) {
       // 100% populated, and we don't want the playbook query to silently drop
       // 30% of the catalog.
       const selectCols = includeIntel
-        ? "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(id, name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers), local_eateries(name, signature_dish, is_legendary, area))"
+        ? "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(id, name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers, tourist_helpline, rescue_contact), local_eateries(name, signature_dish, is_legendary, area))"
         : "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(id, name), confidence_cards(sleep), local_eateries(name, signature_dish, is_legendary, area))";
 
       let query = supabase
@@ -170,6 +170,17 @@ export async function GET(req: NextRequest) {
                   local_helper: Array.isArray(sos.local_helpers) && sos.local_helpers.length > 0
                     ? sos.local_helpers[0]
                     : null,
+                  // Best VERIFIED reachable contact for the Shorts emergency beat —
+                  // prefer a specific named helper/rescue line over the generic
+                  // 100/108. {label, value} or null. All fields are already
+                  // verified (emergency_sos.verified) and live on the site.
+                  safety_contact: (() => {
+                    const lh = Array.isArray(sos.local_helpers) && sos.local_helpers[0];
+                    if (lh && lh.phone) return { label: lh.name || "local rescue", value: String(lh.phone) };
+                    const pick = [sos.mountain_rescue, sos.rescue_contact, sos.tourist_helpline]
+                      .find((v: any) => typeof v === "string" && /\d{3}/.test(v));
+                    return pick ? { label: "emergency", value: String(pick) } : null;
+                  })(),
                 }
               : null,
             legendary_eatery: legendary
