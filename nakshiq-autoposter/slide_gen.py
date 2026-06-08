@@ -1010,6 +1010,12 @@ import re as _re_fallback
 _BROKEN_TEMPLATE_RE = _re_fallback.compile(
     r"(:\s*[.,;:!?]|\b\w+:\s*$|^\s*[.,;:!?]\s*$|:\s*$)"
 )
+# Storyboard DIRECTION lines in a caption_template are design notes, not content.
+# e.g. "Slide 1: where it began.", "Slides 2–4: what changed.", "Slide 5: …".
+# They have no {placeholders} and pass _looks_broken, so without this they'd be
+# rendered as literal slide text when the real (templated) content gets filtered
+# out for missing data. (v3_tl_first_person_essay, 2026-06-07 empty-carousel bug.)
+_STORYBOARD_DIRECTION_RE = _re_fallback.compile(r"^slides?\s+[\d]", _re_fallback.I)
 
 
 def _looks_broken(text: str) -> bool:
@@ -1187,15 +1193,38 @@ def build_csv_carousel(spec, dest: dict, extras: dict | None = None,
     if use_fallback_carousel:
         body_segments = _fallback_body_segments(dest)
     else:
-        body_text = _safe_format(spec.caption_template, ctx)
-        segments = [s.strip() for s in body_text.split("\n") if s.strip()]
-        # Filter template-leftover lines (still have {placeholders}) AND
-        # segments that look broken (label-with-no-value, mostly punctuation,
-        # leading-comma).
-        segments = [s for s in segments
-                    if "{" not in s and "}" not in s and not _looks_broken(s)]
+        # Resolve ctx the way _safe_format does (aliases expanded, empties
+        # dropped) so we can tell which {placeholders} actually have data.
+        try:
+            from csv_format_loader import _expand_aliases
+            resolved = {k: v for k, v in (_expand_aliases(ctx) or {}).items()
+                        if v not in (None, "")}
+        except Exception:
+            resolved = {k: v for k, v in (ctx or {}).items() if v not in (None, "")}
         n_body = max(0, slide_count - 2)
-        body_segments = segments[:n_body] if segments else []
+        segments = []
+        for raw in spec.caption_template.split("\n"):
+            raw = raw.strip()
+            if not raw:
+                continue
+            # Storyboard DIRECTION lines ("Slide 1: where it began.") are design
+            # notes, not content — never render them.
+            if _STORYBOARD_DIRECTION_RE.match(raw):
+                continue
+            # Drop any line referencing a placeholder with NO data — _safe_format
+            # would otherwise empty {expectation} → "What I expected: ." artifacts.
+            # This is the real orphan-data guard.
+            keys = _re_fallback.findall(r"\{(\w+)\}", raw)
+            if any(k not in resolved for k in keys):
+                continue
+            seg = _safe_format(raw, ctx)
+            if seg and not _looks_broken(seg):
+                segments.append(seg)
+        # If no genuine content survives — an orphan-data format whose editorial
+        # fields (expectation, duration_days, …) have no source — fall back to
+        # dest-driven body slides instead of shipping empty/scaffold slides.
+        # (v3_tl_first_person_essay empty-carousel bug, 2026-06-07.)
+        body_segments = segments[:n_body] if segments else _fallback_body_segments(dest)
 
     for i, seg in enumerate(body_segments, start=2):
         # Split "Label: value" segments. A genuine short stat (number/score/

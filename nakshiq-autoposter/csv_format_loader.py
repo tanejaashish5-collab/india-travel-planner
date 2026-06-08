@@ -101,6 +101,19 @@ class FormatSpec:
 # LOADING
 # ─────────────────────────────────────────────────────────────────────────────
 
+# Formats pulled from rotation — loaded specs are skipped entirely so they never
+# post. These 3 are "orphan-data" carousels: their templates promise a specific
+# story (first-person essay / hotel drone feature / neighborhood guide) but have no
+# data source, so they'd only ever render the generic dest-carousel fallback under a
+# mismatched caption. Re-enable by removing the id here once the format has real data
+# or eligibility-gating. (2026-06-08, founder call — empty-carousel incident.)
+DISABLED_FORMAT_IDS: frozenset[str] = frozenset({
+    "v3_tl_first_person_essay",
+    "v3_tl_hotel_drone_feature",
+    "v3_tl_city_neighborhood",
+})
+
+
 def load_all_formats(csv_dir: Path | None = None,
                      filenames: Iterable[str] | None = None
                      ) -> dict[str, FormatSpec]:
@@ -133,6 +146,9 @@ def load_all_formats(csv_dir: Path | None = None,
                 for row in reader:
                     spec = _row_to_spec(row, source_csv=fname)
                     if not spec:
+                        continue
+                    if spec.format_id in DISABLED_FORMAT_IDS:
+                        log.info(f"[csv_formats] {spec.format_id} is DISABLED — skipping")
                         continue
                     if spec.format_id in specs:
                         log.warning(
