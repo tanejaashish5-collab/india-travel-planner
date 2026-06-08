@@ -35,6 +35,7 @@ import glob
 import json
 import os
 import random
+import re
 import shutil
 import subprocess
 import tempfile
@@ -149,76 +150,312 @@ def _profile_for(dest: dict) -> str:
     return "swara_deep" if even else "madhur_deep"   # <= 6/10 -> serious/warning
 
 
-def _template_spec(dest: dict) -> dict:
-    """Deterministic tone-B (bold/dramatic) script from real intel — the
-    unattended fallback when a destination has no hand-written script.
+# ── Devanagari → Latin (for CAPTIONS only) ───────────────────────────────
+# The VOICE always reads the real Devanagari (edge-tts → correct Hindi). This
+# only romanizes the on-screen caption mirror (libass breaks Devanagari
+# conjuncts), so minor schwa imperfections are acceptable. Deterministic, no
+# deps, no API — it just lets us surface the audited Hindi tagline/why_special
+# as the spoken hook with a readable Latin caption underneath.
+_V_IND = {'अ': 'a', 'आ': 'aa', 'इ': 'i', 'ई': 'ee', 'उ': 'u', 'ऊ': 'oo', 'ऋ': 'ri',
+          'ए': 'e', 'ऐ': 'ai', 'ओ': 'o', 'औ': 'au', 'ऍ': 'e', 'ऑ': 'o', 'ॲ': 'a'}
+_MATRA = {'ा': 'aa', 'ि': 'i', 'ी': 'ee', 'ु': 'u', 'ू': 'oo', 'ृ': 'ri', 'े': 'e',
+          'ै': 'ai', 'ो': 'o', 'ौ': 'au', 'ॅ': 'e', 'ॉ': 'o', 'ॆ': 'e', 'ॊ': 'o'}
+_CONS = {'क': 'k', 'ख': 'kh', 'ग': 'g', 'घ': 'gh', 'ङ': 'ng', 'च': 'ch', 'छ': 'chh',
+         'ज': 'j', 'झ': 'jh', 'ञ': 'ny', 'ट': 't', 'ठ': 'th', 'ड': 'd', 'ढ': 'dh',
+         'ण': 'n', 'त': 't', 'थ': 'th', 'द': 'd', 'ध': 'dh', 'न': 'n', 'प': 'p',
+         'फ': 'ph', 'ब': 'b', 'भ': 'bh', 'म': 'm', 'य': 'y', 'र': 'r', 'ल': 'l',
+         'व': 'v', 'श': 'sh', 'ष': 'sh', 'स': 's', 'ह': 'h', 'ळ': 'l'}
+_CONS_NUKTA = {'क': 'q', 'ख': 'kh', 'ग': 'g', 'ज': 'z', 'ड': 'r', 'ढ': 'rh', 'फ': 'f', 'य': 'y'}
+_DEVA_DIGITS = {'०': '0', '१': '1', '२': '2', '३': '3', '४': '4', '५': '5',
+                '६': '6', '७': '7', '८': '8', '९': '9'}
+_VIRAMA, _NUKTA = '्', '़'
+_DEVA_RE = re.compile(r'[ऀ-ॿ]')
 
-    VOICE lines are Devanagari frames (correct Hindi pronunciation) with English
-    place names / numerals slotted in; CAPTIONS are the romanized mirror. Each
-    line is ONE sentence so edge-tts boundaries map 1:1 to caption_lines.
-    Uses only real data points (no fabrication)."""
+
+def _aksharas(w: str) -> list:
+    """Devanagari word → [[consonant, vowel], …]. Inherent schwa = [c, 'a'],
+    virama = [c, ''], independent vowel = ['', v]; nasals fold into the vowel."""
+    out, i, n = [], 0, len(w)
+    while i < n:
+        ch = w[i]
+        if ch in _CONS:
+            base = _CONS[ch]; i += 1
+            if i < n and w[i] == _NUKTA:
+                base = _CONS_NUKTA.get(ch, base); i += 1
+            if i < n and w[i] in _MATRA:
+                out.append([base, _MATRA[w[i]]]); i += 1
+            elif i < n and w[i] == _VIRAMA:
+                out.append([base, '']); i += 1
+            else:
+                out.append([base, 'a'])
+        elif ch in _V_IND:
+            out.append(['', _V_IND[ch]]); i += 1
+        elif ch in _DEVA_DIGITS:
+            out.append(['', _DEVA_DIGITS[ch]]); i += 1
+        elif ch in ('ं', 'ँ'):
+            if out:
+                out[-1][1] += 'n'
+            i += 1
+        elif ch == 'ः':
+            if out:
+                out[-1][1] += 'h'
+            i += 1
+        elif ch in (_NUKTA, '‍', '‌'):
+            i += 1
+        else:
+            out.append(['', ch]); i += 1
+    return out
+
+
+def _translit_word(w: str) -> str:
+    ak = _aksharas(w)
+    if not ak:
+        return ''
+    if len(ak) > 1 and ak[-1][0] and ak[-1][1] == 'a':   # word-final schwa
+        ak[-1][1] = ''
+    for i in range(len(ak) - 2, 0, -1):                  # medial schwa (VC_CV)
+        if ak[i][0] and ak[i][1] == 'a':
+            nxt = ak[i + 1]
+            if any(ak[j][1] for j in range(i)) and nxt[0] and nxt[1]:
+                ak[i][1] = ''
+    return ''.join(c + v for c, v in ak)
+
+
+def deva_to_latin(text: str) -> str:
+    if not text:
+        return text
+    text = text.replace('।', ' ').replace('॥', ' ')
+    res = []
+    for t in re.split(r'(\s+)', text):
+        if _DEVA_RE.search(t):
+            m = re.match(r'^([^ऀ-ॿ]*)(.*?)([^ऀ-ॿ]*)$', t, re.S)
+            res.append(m.group(1) + _translit_word(m.group(2)) + m.group(3))
+        else:
+            res.append(t)
+    return re.sub(r'\s+', ' ', ''.join(res)).strip()
+
+
+def _hi_clauses(text: str) -> list:
+    """Split Hindi prose into speakable clauses (≈8–96 chars), in order."""
+    if not text:
+        return []
+    parts = re.split(r'[।\n;|]|—|–|(?<=[ऀ-ॿ])\.(?=\s)', text)
+    out = []
+    for p in parts:
+        p = (p or '').strip().strip('-–—,').strip()
+        if 8 <= len(p) <= 96:
+            out.append(p)
+    return out
+
+
+def _lead_token(s: str) -> str:
+    """'Kaza (Indian Oil) — only pump' → 'Kaza'."""
+    s = (s or '').strip()
+    for sep in ('(', '—', '–', ',', ' - ', '.'):
+        if sep in s:
+            s = s.split(sep)[0]
+    return s.strip()
+
+
+def _template_spec(dest: dict) -> dict:
+    """Deterministic, data-driven script — the unattended fallback when a slug
+    has no hand-written bank file. Picks one of 5 ARCS (WAIT / WARN / FOOD /
+    DRIVE / GEM) by score band + which intel fields exist, then assembles
+    field-GATED beats: the score is the *receipt* (what we checked), never the
+    payload. VOICE lines are Devanagari (correct pronunciation); CAPTIONS are
+    the romanized mirror. Every beat slots a VERIFIED field — null field → beat
+    skipped (honest scarcity). No runtime LLM, no fabrication."""
     name = dest.get("name") or dest.get("id") or "Yeh jagah"
-    state = dest.get("state", "")
+    state = dest.get("state") or ""
     raw = dest.get("score") or 3
-    disp = _format_score(raw)                       # "10/10" etc.
+    disp = _format_score(raw)                       # "10/10"
+    disp_voice = disp.replace("/", " बटा ")          # edge-tts: "10 बटा 10" = "das bata das"
+
     intel = dest.get("intel") or {}
-    sleep = intel.get("sleep") or {}
     net = intel.get("network") or {}
+    fuel = intel.get("fuel") or {}
     wx = intel.get("weather_night") or {}
+    sos = intel.get("sos") or {}
     reach = intel.get("reach") or {}
-    note = (dest.get("note") or dest.get("tagline") or "").strip().rstrip(".")
+    leg = intel.get("legendary_eatery") or {}
+    helper = sos.get("local_helper") if isinstance(sos.get("local_helper"), dict) else {}
+    helper = helper or {}
+
+    tagline_hi = (dest.get("tagline_hi") or "").strip()
+    why_hi = dest.get("why_special_hi") or ""
+    note = (dest.get("note") or "").strip()
+    elev = dest.get("elevation_m")
+    diff = (dest.get("difficulty") or "").lower()
+    price = dest.get("price_range_inr")
+    dish = dest.get("hero_dish")
+    eatery = (leg.get("name") if isinstance(leg, dict) else None) or dest.get("eatery_name")
+    summer_low = wx.get("summer_low_c")
+    pump = _lead_token(fuel.get("nearest_petrol_pump"))
+    carry_extra = bool(fuel.get("carry_extra"))
+    phone = (helper.get("phone") or "").strip()
+    helper_name = (helper.get("name") or "").strip()
+    road = (reach.get("road_condition") or "").lower()
+    last_km = (reach.get("last_km_difficulty") or "").lower()
 
     nets = [k for k in ("jio", "airtel", "bsnl", "vi") if net.get(k)]
-    price = sleep.get("price_range_inr")
-    lo, hi = wx.get("summer_low_c"), wx.get("summer_high_c")
-    near = (reach.get("from_nearest_city") or "").split(".")[0].strip()
+    bsnl_only = bool(net.get("bsnl")) and not (net.get("jio") or net.get("airtel") or net.get("vi"))
 
-    lines, caps = [], []
+    # ── field-gated beats (each returns (devanagari, caption) or None) ──
+    def b_hook():
+        if not tagline_hi:
+            return None
+        t = tagline_hi.rstrip("।. ").strip()
+        if len(t) > 80 and re.search(r"[—–]", t):
+            t = re.split(r"[—–]", t)[0].strip()
+        return (f"{name} — {t}।", f"{name} — {deva_to_latin(t)}")
 
-    def add(dev, cap):
-        lines.append(dev)
-        caps.append(cap)
+    def b_why(punchy=True):
+        cl = _hi_clauses(why_hi)
+        if not cl:
+            return None
+        if punchy:
+            sig = [c for c in cl if re.search(r"\d", c) or any(
+                s in c for s in ("सबसे", "एकमात्र", "अकेल", "दुनिया", "विश्व",
+                                 "पहली", "पहला", "आख़िर", "आखिर", "रहस्य", "केवल"))]
+            cl = sig or cl
+        c = cl[0]
+        return (c + "।", deva_to_latin(c))
 
-    if raw >= 4:
-        # GO-NOW / GEM
-        add(f"{name} — {state} की वो जगह जिसका जून score है पूरा {disp}।",
-            f"{name} — June score poora {disp}")
-        add("और ज़्यादातर लोगों को इसके बारे में पता ही नहीं।",
-            "Aur zyaadatar logon ko pata hi nahi")
-        # one strong intel beat
+    def b_altitude():
+        if not elev or elev < 3500:
+            return None
+        if elev >= 5000:
+            return (f"{elev} मीटर — हवा में आधी ऑक्सीजन।", f"{elev}m — hawa mein aadhi oxygen")
+        return (f"{elev} मीटर पर हवा पतली — साँस फूलेगी।", f"{elev}m — hawa patli, saans phoolegi")
+
+    def b_network():
+        if bsnl_only:
+            return ("यहाँ सिर्फ़ BSNL टिकता है — बाकी सब डेड।", "Yahan sirf BSNL — baaki sab dead")
         if len(nets) == 1:
-            add(f"यहाँ सिर्फ़ {nets[0].upper()} चलता है — पूरा digital detox।",
-                f"Yahan sirf {nets[0].upper()} — poora digital detox")
-        elif price:
-            add(f"और रुकना भी सस्ता — होमस्टे सिर्फ़ {price} रुपये से।",
-                f"Homestay sirf {price} se")
-        elif lo is not None and hi is not None:
-            add(f"दिन में मौसम {lo} से {hi} डिग्री — बिलकुल perfect।",
-                f"Mausam {lo} se {hi} degree — perfect")
-        elif near:
-            add(f"और ये है {near} से बस कुछ ही घंटे दूर।",
-                f"{near} se kuch hi ghante door")
-        add("ये जगह वायरल होने से पहले, सेव कर लीजिए।",
-            "Ye jagah viral hone se pehle — save karo")
-    else:
-        # WARNING / WAIT
-        add(f"{name} का प्लान बना रहे हो? जून में ज़रा रुको।",
-            f"{name} ka plan? June mein ruko")
-        add(f"इसका जून का NakshIQ score सिर्फ़ {disp}।",
-            f"June ka score — sirf {disp}")
-        if note:
-            short = note.split(".")[0][:70]
-            add(f"वजह — {short}।", f"Wajah — {short}")
-        elif lo is not None and hi is not None:
-            add(f"मौसम {lo} से {hi} डिग्री — सही नहीं अभी।",
-                f"Mausam {lo} se {hi} degree — sahi nahi abhi")
-        add("बेहतर महीना देखो NakshIQ पे, फिर जाओ।",
-            "Behtar mahina dekho NakshIQ pe")
+            return (f"यहाँ सिर्फ़ {nets[0].upper()} का नेटवर्क चलता है।", f"Yahan sirf {nets[0].upper()} ka network")
+        return None
 
+    def b_fuel():
+        if not (carry_extra and pump):
+            return None
+        return (f"पेट्रोल सिर्फ़ {pump} में — टंकी फुल, जरकन साथ।",
+                f"Petrol sirf {pump} mein — tank full, jerry can saath")
+
+    def b_cold():
+        if summer_low is None or summer_low > 8:
+            return None
+        return (f"गर्मियों में भी रातें {summer_low} डिग्री — थर्मल साथ लाना।",
+                f"Garmi mein bhi raatein {summer_low}°C — thermals laao")
+
+    def b_food():
+        if not dish:
+            return None
+        if eatery:
+            return (f"और जाते-जाते {dish} ज़रूर — {eatery} का।",
+                    f"Jaate-jaate {dish} zaroor — {eatery} ka")
+        return (f"और यहाँ का {dish} खाना मत भूलना।", f"Yahan ka {dish} miss mat karna")
+
+    def b_cost():
+        if not price:
+            return None
+        m = re.findall(r"\d[\d,]*", str(price))
+        if not m or int(m[0].replace(",", "")) > 2500:
+            return None
+        return (f"और रुकना सस्ता — सिर्फ़ ₹{m[0]} से।", f"Rukna sasta — sirf ₹{m[0]} se")
+
+    def b_drive():
+        return ("यहाँ मंज़िल नहीं — रास्ता ही असली सफ़र है।", "Yahan manzil nahi — raasta hi safar hai")
+
+    def b_emergency():
+        if not phone:
+            return None
+        nm = helper_name or "rescue"
+        return (f"इमरजेंसी में यही एक मदद — नंबर सेव कर लो।", f"Emergency: {nm} → {phone}")
+
+    def b_wait_reason():
+        nl = note.lower()
+        if any(k in nl for k in ("monsoon", "rain", "rainfall", "flood")):
+            return ("अभी मानसून — रास्ते फिसलन भरे, ट्रेल और नज़ारे बंद।",
+                    "Abhi monsoon — raaste fisalan-bhare, trail/view band")
+        if any(k in nl for k in ("snow", "closed", "pass clos", "blocked")):
+            return ("रास्ता अभी बंद — बर्फ़ और बंद दर्रे।", "Raasta abhi band — barf, darre band")
+        if any(k in nl for k in ("heat", "38", "40", "42", "45", "47", "brutal", "hot")):
+            return ("अभी झुलसाने वाली गर्मी — दिन में घूमना मुश्किल।", "Abhi jhulsane wali garmi — ghoomna mushkil")
+        if summer_low is not None and summer_low <= 4:
+            return (f"और रातें {summer_low} डिग्री तक — हालात अभी सही नहीं।", f"Raatein {summer_low}°C tak — haalat sahi nahi")
+        return ("अभी का मौसम इस जगह के हक़ में नहीं।", "Abhi ka mausam is jagah ke haq mein nahi")
+
+    def b_shock():
+        return (f"और इसका अभी का स्कोर? सिर्फ़ {disp_voice}।", f"Iska abhi ka score? sirf {disp}")
+
+    def b_receipt():
+        return ("मौसम, सड़क, भीड़, अस्पताल, नेटवर्क — पाँचों परखे, तभी " + disp_voice + "।",
+                f"Mausam · sadak · bheed · hospital · network → {disp}")
+
+    def b_cta(kind):
+        if kind == "warn":
+            return ("जाने से पहले पूरी कुंडली NakshIQ पे देख लेना।", "Jaane se pehle poori kundli — NakshIQ pe")
+        if kind == "wait":
+            return ("बेहतर महीना NakshIQ पे देखो, फिर निकलो।", "Behtar mahina NakshIQ pe — phir niklo")
+        return ("वायरल होने से पहले — सेव कर लो।", "Viral hone se pehle — save karo")
+
+    # ── arc selection (priority cascade) ──
+    is_risky = (elev and elev >= 3500) or diff == "hard" or bsnl_only
+    has_drive = last_km == "hard" or any(
+        k in road for k in ("landslide", "pass", "4wd", "4x4", "narrow", "unpaved", "single-lane", "single lane"))
+    even = (sum(ord(c) for c in (dest.get("id") or "x")) % 2 == 0)
+    profile = _profile_for(dest)
+
+    if raw <= 2:                                   # DON'T-GO / WAIT (score leads)
+        arc, kind = "wait", "wait"
+        profile = "swara_deep" if even else "madhur_deep"
+        body = [b_hook(), b_shock(), b_wait_reason()]
+    elif is_risky:                                  # WARN-then-WHY (go prepared)
+        arc, kind = "warn", "warn"
+        profile = "swara_deep" if even else "madhur_deep"
+        body = [b_hook(), b_why(), b_altitude() or b_network(), b_fuel() or b_cold(), b_emergency()]
+    elif dish and eatery and raw >= 4:              # FOOD-ANCHOR
+        arc, kind = "food", "gem"
+        body = [b_hook(), b_food(), b_why(), b_cost() or b_why(False)]
+    elif has_drive and raw >= 3:                    # THE-DRIVE
+        arc, kind = "drive", "gem"
+        body = [b_hook(), b_drive(), b_why(), b_fuel() or b_network() or b_cold()]
+    else:                                            # GEM (default, go-now)
+        arc, kind = "gem", "gem"
+        body = [b_hook(), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
+
+    # filter + dedupe body
+    seen, uniq = set(), []
+    for beat in body:
+        if not beat:
+            continue
+        k = beat[1].lower()[:26]
+        if k in seen:
+            continue
+        seen.add(k); uniq.append(beat)
+    body = uniq
+    # pad short bodies with extra why-clauses (still real, audited data)
+    if len(body) < 3:
+        for c in _hi_clauses(why_hi):
+            cand = (c + "।", deva_to_latin(c))
+            if cand[1].lower()[:26] not in seen:
+                body.append(cand); seen.add(cand[1].lower()[:26])
+            if len(body) >= 3:
+                break
+    # absolute floor (no tagline_hi AND no why_hi — ~never: 525/525 have tagline_hi)
+    if len(body) < 2:
+        where = f"{state} की " if state else ""
+        body = [(f"{name} — {where}एक ऐसी जगह जिसे लोग अक्सर miss कर देते हैं।",
+                 f"{name}{(' — ' + state) if state else ''}")]
+
+    seq = body[:4] + [b_receipt(), b_cta(kind)]
+    lines = [d for d, _ in seq]
+    caps = [c for _, c in seq]
     return {
-        "lines": lines[:5],
-        "caption_lines": caps[:5],
-        "voice_profile": _profile_for(dest),
+        "lines": lines[:6],
+        "caption_lines": caps[:6],
+        "voice_profile": profile,
+        "arc": arc,
         "generated": True,
     }
 
