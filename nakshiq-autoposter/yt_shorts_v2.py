@@ -280,6 +280,8 @@ def _template_spec(dest: dict) -> dict:
     leg = intel.get("legendary_eatery") or {}
     helper = sos.get("local_helper") if isinstance(sos.get("local_helper"), dict) else {}
     helper = helper or {}
+    safety = sos.get("safety_contact") if isinstance(sos.get("safety_contact"), dict) else {}
+    safety = safety or {}
 
     tagline_hi = (dest.get("tagline_hi") or "").strip()
     why_hi = dest.get("why_special_hi") or ""
@@ -367,10 +369,12 @@ def _template_spec(dest: dict) -> dict:
         return ("यहाँ मंज़िल नहीं — रास्ता ही असली सफ़र है।", "Yahan manzil nahi — raasta hi safar hai")
 
     def b_emergency():
-        if not phone:
+        val = (safety.get("value") or phone or "").strip()
+        if not val:
             return None
-        nm = helper_name or "rescue"
-        return (f"इमरजेंसी में यही एक मदद — नंबर सेव कर लो।", f"Emergency: {nm} → {phone}")
+        label = (safety.get("label") or helper_name or "emergency").strip()
+        return ("इमरजेंसी में मदद का एक नंबर — caption में सेव कर लो।",
+                f"Emergency: {label} → {val}")
 
     def b_wait_reason():
         nl = note.lower()
@@ -448,12 +452,15 @@ def _template_spec(dest: dict) -> dict:
         body = [(f"{name} — {where}एक ऐसी जगह जिसे लोग अक्सर miss कर देते हैं।",
                  f"{name}{(' — ' + state) if state else ''}")]
 
-    seq = body[:4] + [b_receipt(), b_cta(kind)]
+    # WARN gets one extra body slot so the emergency-number beat survives
+    # (hook → why → altitude → fuel → emergency); other arcs stay at 4.
+    cap = 5 if arc == "warn" else 4
+    seq = body[:cap] + [b_receipt(), b_cta(kind)]
     lines = [d for d, _ in seq]
     caps = [c for _, c in seq]
     return {
-        "lines": lines[:6],
-        "caption_lines": caps[:6],
+        "lines": lines[:7],
+        "caption_lines": caps[:7],
         "voice_profile": profile,
         "arc": arc,
         "generated": True,
