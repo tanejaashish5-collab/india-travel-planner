@@ -32,13 +32,14 @@
   "posted_today": {
     "m8EAd": "2026-06-08",
     "PdMu0": "2026-06-08",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "m8EAd_evening": "2026-06-07",
     "PdMu0_evening": "2026-06-07",
-    "GAh5p_yt_short": "2026-06-07",
+    "GAh5p_yt_short": "2026-06-08",
     "m8EAd_evening_story": "2026-06-07",
-    "m8EAd_story": "2026-06-08"
+    "m8EAd_story": "2026-06-08",
+    "m8EAd_yt_short": "2026-06-08"
   },
   "last_sync": "2026-06-08T08:28:10.102155+00:00",
   "posted_destinations": [
@@ -316,6 +317,10 @@
     },
     {
       "destination_id": "nubra-valley",
+      "date": "2026-06-08"
+    },
+    {
+      "destination_id": "hemkund-sahib",
       "date": "2026-06-08"
     }
   ],
@@ -2480,17 +2485,6 @@
       "media_id": "v2_cost_index_handwritten-pangong-lake.png"
     },
     {
-      "timestamp": "2026-06-08T08:29:10.572090+00:00",
-      "date": "2026-06-08",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "vUwZg",
-      "destination": "hemkund-sahib",
-      "format": "festival_alert",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
       "timestamp": "2026-06-08T08:29:39.565259+00:00",
       "date": "2026-06-08",
       "platform": "facebook",
@@ -2500,6 +2494,24 @@
       "format": "v2_cost_index_handwritten",
       "has_media": true,
       "media_id": "v2_cost_index_handwritten-nubra-valley.png"
+    },
+    {
+      "timestamp": "2026-06-08T09:09:40.490795+00:00",
+      "date": "2026-06-08",
+      "platform": "youtube",
+      "post_id": "VdvjN",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_hemkund-sahib_2026-06-08.mp4"
+    },
+    {
+      "timestamp": "2026-06-08T09:10:23.561967+00:00",
+      "date": "2026-06-08",
+      "platform": "instagram",
+      "post_id": "KNbf9",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_hemkund-sahib_2026-06-08.mp4"
     }
   ],
   "theme_usage": {
