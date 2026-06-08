@@ -2805,3 +2805,18 @@ Date range: 2026-04-15 → 2026-06-07
 2026-06-08 14:45:35  INFO      YT Short posted: format=nakshiq_score, music=cinematic-846
 2026-06-08 14:45:35  INFO      State saved. YT Short run complete.
 2026-06-08 14:45:35  INFO      ════════════════════════════════════════════════════════════
+2026-06-08 15:05:16  INFO      ════════════════════════════════════════════════════════════
+2026-06-08 15:05:16  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-08
+2026-06-08 15:05:16  INFO      ════════════════════════════════════════════════════════════
+2026-06-08 15:05:19  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-08 15:07:42  INFO      Short rendered: yt_short_nakshiq_score_lamayuru_2026-06-08.mp4 (28061 KB, 38.1s, fmt=nakshiq_score, music=fast-686)
+2026-06-08 15:07:42  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_lamayuru_2026-06-08.mp4 (28,735,059 bytes, video/mp4)
+2026-06-08 15:07:43  INFO          Uploading to R2 (timeout=300s)...
+2026-06-08 15:07:45  INFO          R2 PUT OK. Confirming...
+2026-06-08 15:07:46  INFO          Media ready: 8UxKI (28,735,059 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_lamayuru_2026-06-08.mp4)
+2026-06-08 15:07:46  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_lamayuru_2026-06-08.mp4
+2026-06-08 15:07:47  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-06-08 15:07:47  INFO      [instagram/nakshiq] Already posted 2 YT Shorts today — skipping.
+2026-06-08 15:07:47  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-08 15:07:47  INFO      State saved. YT Short run complete.
+2026-06-08 15:07:47  INFO      ════════════════════════════════════════════════════════════
