@@ -32,8 +32,8 @@
   "posted_today": {
     "m8EAd": "2026-06-08",
     "PdMu0": "2026-06-08",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "m8EAd_evening": "2026-06-07",
     "PdMu0_evening": "2026-06-07",
     "GAh5p_yt_short": "2026-06-08",
@@ -321,6 +321,10 @@
     },
     {
       "destination_id": "hemkund-sahib",
+      "date": "2026-06-08"
+    },
+    {
+      "destination_id": "likir",
       "date": "2026-06-08"
     }
   ],
@@ -2512,6 +2516,24 @@
       "destination": "hemkund-sahib",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_hemkund-sahib_2026-06-08.mp4"
+    },
+    {
+      "timestamp": "2026-06-08T14:44:47.091809+00:00",
+      "date": "2026-06-08",
+      "platform": "youtube",
+      "post_id": "vUo0g",
+      "destination": "likir",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_likir_2026-06-08.mp4"
+    },
+    {
+      "timestamp": "2026-06-08T14:45:35.857252+00:00",
+      "date": "2026-06-08",
+      "platform": "instagram",
+      "post_id": "MeQaC",
+      "destination": "likir",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_likir_2026-06-08.mp4"
     }
   ],
   "theme_usage": {
