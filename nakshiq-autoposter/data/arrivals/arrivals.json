@@ -1,0 +1,139 @@
+{
+  "_meta": {
+    "name": "Landing in India — arrival-logistics reel bank",
+    "verified": "2026-06-09",
+    "audit": "AUDIT-arrivals-2026-06-09.md",
+    "rule": "Every claim is sourced (see audit). null = honest scarcity (beat is skipped). Lines are single sentences, English, en-IN voice; no fares/numbers unless authoritatively confirmed.",
+    "spoken": "Numbers are spelled out (edge-tts reads words cleanly); captions == voice."
+  },
+  "national": {
+    "visa": "Most passports need an India e-Visa — sort it online before you fly.",
+    "sim": "Get a tourist SIM at the arrivals counter — passport, visa, and one photo.",
+    "money": "Use an ATM in arrivals, not the forex counters, and keep small notes.",
+    "taxi_safe": "Take the official prepaid taxi, or an app cab from the marked zone.",
+    "scam": "And if anyone says your hotel is closed, ignore them — it's a classic scam."
+  },
+  "airports": [
+    {
+      "code": "DEL",
+      "airport_name": "Indira Gandhi International",
+      "city": "Delhi",
+      "clip_slug": "delhi",
+      "rail": "The Airport metro hits the city in about twenty minutes, for sixty rupees.",
+      "distance_note": null,
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "BOM",
+      "airport_name": "Chhatrapati Shivaji Maharaj International",
+      "city": "Mumbai",
+      "clip_slug": "mumbai",
+      "rail": "The new Aqua Line metro runs underground, right to Terminal Two.",
+      "distance_note": null,
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "MAA",
+      "airport_name": "Chennai International",
+      "city": "Chennai",
+      "clip_slug": "chennai",
+      "rail": "The Blue Line metro runs straight from the airport into the city.",
+      "distance_note": null,
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "CCU",
+      "airport_name": "Netaji Subhas Chandra Bose International",
+      "city": "Kolkata",
+      "clip_slug": "kolkata",
+      "rail": "The new Yellow Line metro links the airport into the city.",
+      "distance_note": null,
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "BLR",
+      "airport_name": "Kempegowda International",
+      "city": "Bengaluru",
+      "clip_slug": "bengaluru",
+      "rail": null,
+      "distance_note": "The airport's about forty kilometres out — allow an hour into town.",
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "HYD",
+      "airport_name": "Rajiv Gandhi International",
+      "city": "Hyderabad",
+      "clip_slug": "hyderabad",
+      "rail": null,
+      "distance_note": "The airport's a fair way out, so plan for a longer ride in.",
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "COK",
+      "airport_name": "Cochin International",
+      "city": "Kochi",
+      "clip_slug": "kochi",
+      "rail": null,
+      "distance_note": "The airport's about thirty kilometres north — allow an hour.",
+      "ride_note": null,
+      "fun_fact": "Fun fact — it's the world's first fully solar-powered airport."
+    },
+    {
+      "code": "GOX",
+      "airport_name": "Manohar International, Mopa",
+      "city": "Goa",
+      "serves": "North Goa",
+      "clip_slug": "panaji",
+      "rail": null,
+      "distance_note": "Mopa airport serves North Goa — the top beaches are an hour away.",
+      "ride_note": "In Goa, ride apps are limited — use the prepaid taxi or GoaMiles app.",
+      "fun_fact": null
+    },
+    {
+      "code": "TRV",
+      "airport_name": "Thiruvananthapuram International",
+      "city": "Thiruvananthapuram",
+      "clip_slug": "trivandrum",
+      "rail": null,
+      "distance_note": "The airport's barely five kilometres out — you're in town in minutes.",
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "AMD",
+      "airport_name": "Sardar Vallabhbhai Patel International",
+      "city": "Ahmedabad",
+      "clip_slug": "ahmedabad",
+      "rail": null,
+      "distance_note": "The airport's about nine kilometres north of central Ahmedabad.",
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "JAI",
+      "airport_name": "Jaipur International",
+      "city": "Jaipur",
+      "clip_slug": "jaipur",
+      "rail": null,
+      "distance_note": "The airport's about fifteen kilometres from the Pink City.",
+      "ride_note": null,
+      "fun_fact": null
+    },
+    {
+      "code": "ATQ",
+      "airport_name": "Sri Guru Ram Dass Jee International",
+      "city": "Amritsar",
+      "clip_slug": "amritsar",
+      "rail": null,
+      "distance_note": "The airport's a twenty-minute ride from the Golden Temple.",
+      "ride_note": null,
+      "fun_fact": null
+    }
+  ]
+}

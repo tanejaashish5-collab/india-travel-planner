@@ -10316,7 +10316,20 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
         if os.environ.get("NAKSHIQ_YT_V2", "1") != "0":
             try:
                 from yt_shorts_v2 import build_series_short
-                result = build_series_short(dry_run=dry_run)
+                # A LOW fraction of slots (NAKSHIQ_YT_ARRIVAL_RATIO, default 0 = OFF)
+                # run the inbound "Landing in India" arrival reel — English (en-IN
+                # Neerja), same accounts — instead of the destination-score reel.
+                try:
+                    from yt_shorts_v2 import build_arrival_short, arrival_due_today
+                    if arrival_due_today():
+                        log.info("YT Short: arrival slot due — building 'Landing in India' reel.")
+                        result = build_arrival_short(dry_run=dry_run)
+                        if not result:
+                            log.warning("Arrival reel produced nothing — using destination series.")
+                except Exception as e:
+                    log.warning(f"Arrival-reel check skipped ({e}).")
+                if not result:
+                    result = build_series_short(dry_run=dry_run)
                 if not result:
                     log.warning("YT Short v2 produced nothing — falling back to v1 builder.")
             except Exception as e:
