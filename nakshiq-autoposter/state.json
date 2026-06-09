@@ -32,11 +32,11 @@
   "posted_today": {
     "m8EAd": "2026-06-09",
     "PdMu0": "2026-06-09",
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-06-08",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short": "2026-06-09",
     "m8EAd_story": "2026-06-08",
-    "m8EAd_yt_short": "2026-06-08"
+    "m8EAd_yt_short": "2026-06-09"
   },
   "last_sync": "2026-06-09T07:03:30.582185+00:00",
   "posted_destinations": [
@@ -326,6 +326,10 @@
     },
     {
       "destination_id": "tosamaidan",
+      "date": "2026-06-09"
+    },
+    {
+      "destination_id": "lamayuru",
       "date": "2026-06-09"
     }
   ],
@@ -2557,6 +2561,24 @@
       "format": "emergency_intel",
       "has_media": true,
       "media_id": "tosamaidan.mp4"
+    },
+    {
+      "timestamp": "2026-06-09T08:08:24.045871+00:00",
+      "date": "2026-06-09",
+      "platform": "youtube",
+      "post_id": "pXocM",
+      "destination": "lamayuru",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lamayuru_hi_2026-06-09.mp4"
+    },
+    {
+      "timestamp": "2026-06-09T08:08:56.331957+00:00",
+      "date": "2026-06-09",
+      "platform": "instagram",
+      "post_id": "JMBl3",
+      "destination": "lamayuru",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lamayuru_hi_2026-06-09.mp4"
     }
   ],
   "theme_usage": {
