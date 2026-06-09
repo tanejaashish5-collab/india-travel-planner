@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-09",
+    "date": "2026-06-09",
+    "started_utc": "2026-06-09T02:09:00Z",
+    "completed_utc": "2026-06-09T02:27:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.8 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-06-09/probe.py, reused from 2026-06-08 with today's date+seed; sequential honest timing + warm re-probe pass); 6 small Supabase aggregate reads to ground-truth SOS coverage + 1 targeted 3-row read for prior phone-format bugs; Section K via Claude in Chrome MCP (explore map toggle + 2 dest pages + 7 controlled console observations on editorial/atlas/leaflet surfaces)",
+    "mode": "Daily regression — A through K matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 18,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (8 probes; bare-path 301-chain followed to 404)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-06-09) + warm re-probe pass",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (12 URLs: landing + 10 dests + 1 month sub-route)",
+    "E — SOS completeness: SSR emergencySos blob parse (10 dests) + 6 DB ground-truth aggregates + 3-row prior-bug recheck",
+    "F — API smoke (13 probes incl. oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks)",
+    "I — Core routes HTTP matrix (21 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: explore grid+map toggle, jaipur (atlas) + betla (Leaflet) dest pages, 7 controlled console reads"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass (cost-aware rule; no material template ship vs 2026-05-04 baseline beyond in-flight Leaflet restore). Color-contrast + aria-tablist carries remain un-retested."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Curl TTFB healthy (21 core routes median 900 ms, all sub-2.6 s; dest first-hit median 2910 ms is cold-ISR inflated — warm re-probes 136-202 ms, median 157 ms)."
+    },
+    {
+      "phase": "Welcome-tour modal i18n on /hi (E2E-2026-05-04-A1)",
+      "reason": "Not exercised in today's Chrome pass; carried STILL OPEN."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en + /hi /destination/this-does-not-exist-xyz, zzzzzz-fake all hard 404 (9 bytes). Bare-path /destination/nonexistent-slug-qa/june → 301 → /en/... → 404 (followed chain: final 404, redirects=1). 8/8 correct, 0 misses."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 → all hard 404 (9 bytes)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed→400 'Malformed JSON body', empty→400, wrong-shape→400 'Invalid question', 200KB body→413 'Payload too large — questions are capped at 1000 characters', valid question→200 (2842b real Leh answer). 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed→400, empty→400, {}→400 'Missing required fields'. 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with | NakshIQ | NakshIQ title stutter",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D-seo.csv: 0/12 URLs with stutter."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-07",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js const CACHE_VERSION = \"nakshiq-v51\", md5 d0cc522e363cd7fc6521684ac6679f9a (byte-identical 7th consecutive day); manifest 3 icons + 5 shortcuts; /offline 301→/en/offline→200. (Harness regex artifact reported v32 — first match in the cleanup list; see INFO-2026-06-09-002.)"
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: site-wide placeholder regex (X{3,}) on 11 dialable columns = 0 rows. uttarkashi police 100 / ambulance 108 / fire 101 / women 1091 (or 181) / DDMA Control Room 01374-222722 / 1077 / mountain_rescue 01374-222126 / 7310913129; verified=true (constants-reverify-2026-06-09)."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: khonoma police 100 / ambulance 108 / fire 101 / women 1091 / road 1073 / tourist 1363 / Kohima Police Control Room 7005986046 · NSDMA 1070. All dialable; verified=true (constants-reverify-2026-06-09)."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field (Operator-specific)",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: police 100 / ambulance 108 / fire 101 / women 1091 / road 1073 / tourist 1800-345-3006; rescue_contact Geyzing PS 8145887528 + District Hospital Gyalshing 03595-250634, with an honest 'no published civilian park-rescue phone → use district admin' note (policy-compliant honest scarcity, not a placeholder). verified=true."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "Harness regex covers both casings; 12/12 URLs show en + hi + x-default."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL 2026-06-07 (recorded 405 with curated local_helpers block / 120 without, 109 tier-A)",
+      "today_status": "PARTIAL — clarified by NEW-2026-06-09-001 resolution (no regression)",
+      "evidence": "Safety baseline GREEN and unchanged: 525/525 emergency_sos rows, 0 rows under 3 dialable structured fields (min 5, avg 7.42), 0 placeholder-X site-wide, 10/10 sampled pages render Emergency SOS with ≥6 fields + universal 112. Curated-helper COVERAGE by source (all intact): destinations.deep_dive.local_helpers = 405/525 (867 entries — the historical figure, unchanged); confidence_cards.people_who_help = 491/525 (the rendered 'People who help' card); emergency_sos.local_helpers = 186/525 (the SOS sub-section). The '405→186 drop' was a metric-source mix-up between two different fields, NOT a loss — see NEW-2026-06-09-001."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-06-07",
+      "today_status": "PARTIAL",
+      "evidence": "Two-template state persists: betla renders live Leaflet (1 container, 28 tiles, 1 overlay-pane marker, window.L defined); jaipur renders the CinematicStateMap atlas SVG (viewBox 0 0 1000 1100 ×2 + india-outline). Both render structurally fine. Not a defect on either surface per skill map-type note; tracking migration only."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED 2026-06-07",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Explore map toggle: 511 markers render as .leaflet-overlay-pane svg path matching the '511 markers · colored by score' label; .leaflet-marker-pane legitimately empty (no icon markers used). betla dest map shows its 1 overlay-pane marker. The marker-pane probe was checking the wrong pane."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL 2026-06-07",
+      "today_status": "PARTIAL",
+      "evidence": "Restoration continues (betla confirmed Leaflet today with overlay-pane marker). 'Markers missing' half remains withdrawn — markers render via overlay-pane circleMarkers."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED 2026-06-07 (low)",
+      "today_status": "REPRODUCED",
+      "evidence": "jaipur atlas readout = '23.5N · 80.5E' at runtime; jaipur's real coords (26.9N) absent. Cosmetic/data-credibility issue on the decorative atlas only."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces (/en, /en/explore)",
+      "prior_status": "NEW 2026-06-07 (medium) — 2 of 4 editorial loads, 0/5 destination pages",
+      "today_status": "REPRODUCED",
+      "evidence": "Fired on 4 of 7 controlled loads today: /en navigate, /en cmd+r reload, /en/explore navigate, and /en/destination/jaipur navigate (1 of 2). betla dest page clean across 2 loads. Same minified stack (rX/iu/sd) in chunk 13w0ldxt56tn..js, new deploy hash dpl_asYuef7bqRWjQ5uw23kzdNdfjLzr (was dpl_CNZX… on 06-07) so the bug survived a redeploy. NEW vs 06-07: observed at least once on a destination page (jaipur), where 06-07 saw 0/5. Still self-recovering, no user-visible breakage. See INFO-2026-06-09-003."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Not exercised in today's Chrome pass."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run in daily pass; curl TTFB healthy but is not a LH-score substitute."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-07",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's seed-random sample: bharatpur, bhimbetka, raghurajpur, nongriat, pinjore-gardens, marine-national-park, sariska, mount-abu, elephanta-caves, sarnath."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-06-09-001",
+      "severity": "info",
+      "status": "RESOLVED 2026-06-09 (post-run forensics) — false alarm, metric-source mismatch, NO data loss",
+      "title": "RESOLVED: the '405→186 local_helpers drop' was apples-to-oranges. 405 = destinations.deep_dive.local_helpers (intact: still 405 blocks / 867 entries today); 186 = emergency_sos.local_helpers (a DIFFERENT, always-sparse column). Nothing was wiped; constants-reverify is exonerated.",
+      "detail": "Two distinct fields were conflated across runs. (1) destinations.deep_dive->'local_helpers' is the curated phone-bearing helper list the QA harness measured on 2026-06-04..06-07 — the findings literally name the metric 'deep_dive.local_helpers'. (2) emergency_sos.local_helpers is a SEPARATE table column holding sparser, often phone-less informal helpers. LIVE DB TODAY: destinations.deep_dive ? 'local_helpers' = 405 rows, all non-empty arrays, 867 total entries — an EXACT match to the historical '405 blocks / 867 phone entries'. So the 405 source is 100% intact and unchanged. The 186 I measured today is emergency_sos.local_helpers non-empty — a different column that has always been sparse, and whose 186 holders are a STRICT SUBSET of the 405 deep_dive holders. Today's Section-E probe silently re-pointed from deep_dive.local_helpers to emergency_sos.local_helpers, then compared the new field's 186 against the old field's carried-forward 405 → a phantom 219-row 'loss' that never happened. constants-reverify-2026-06-09 is fully exonerated: migration 069 only creates a staleness-classifier VIEW (reads local_police_station/nearest_hospital), and the reverify only stamped verified_date/last_verified_attempt_at/verified_by — it never UPDATEs any local_helpers array (proven in data/audits/sos-reverify-2026-06-09.md). emergency_sos.updated_at being stuck at 2026-06-04 is real (the table has no auto-update trigger) but irrelevant here — no helper data changed.",
+      "evidence": "DB (dudzsdzfvikjjhurxrgc): destinations.deep_dive?'local_helpers' = 405 present / 405 nonempty / 0 empty / 867 total entries (== historical 405/867, exact). emergency_sos.local_helpers nonempty = 186, all within the 405 deep_dive holders (overlap 186). jaipur proof of two datasets: deep_dive.local_helpers = 3 phoned helplines (Rajasthan Tourism 0141-5110598 / Police 100 / Dial 112); emergency_sos.local_helpers = 2 phone-less descriptive helpers (Hawa Mahal tourist police booth / hotel concierge). Reverify scope confirmed write-limited to verified_* columns (migration 069 + sos-reverify-2026-06-09.md audit trail).",
+      "recommendation": "NO restore required — no data was lost. Harness fix: pin daily Section-E to the fields the SITE actually renders — confidence_cards.people_who_help (491/525, the 'People who help' card via confidence-card.tsx) and emergency_sos.local_helpers (186/525, the SOS sub-section via emergency-sos.tsx) — and STOP measuring destinations.deep_dive.local_helpers, which is an unrendered legacy/backing store (no component reads it). Separate OPPORTUNITY (not a defect): emergency_sos.local_helpers is populated on only 186/405 dests with phone-less entries while deep_dive holds 405 phone-bearing sets — the SOS sub-section could be enriched from deep_dive. An updated_at trigger on emergency_sos remains a nice-to-have for dating future changes."
+    },
+    {
+      "id": "INFO-2026-06-09-002",
+      "severity": "info",
+      "title": "Harness artifact: probe SW-version regex grabs nakshiq-v32 from the cleanup list; actual CACHE_VERSION is v51 (file byte-identical 7 days)",
+      "detail": "probe.py sec_g uses re.search(r'nakshiq-v\\d+', body), which returns the FIRST match. sw.js contains a cache-cleanup/delete list enumerating old names (v32,v33,…,v50) before the active const CACHE_VERSION = \"nakshiq-v51\". So the probe mislabels the active SW as v32. md5 of /sw.js is d0cc522e363cd7fc6521684ac6679f9a — byte-identical to 2026-06-07 (and the 6 days before), so the SW is unchanged (now 7 consecutive identical days). No service-worker regression; purely a harness extraction bug.",
+      "evidence": "grep on /sw.js: 'const CACHE_VERSION = \"nakshiq-v51' present; 15 nakshiq-v* strings v32..v51; md5 d0cc522e363cd7fc6521684ac6679f9a (15144 bytes).",
+      "recommendation": "Patch probe.py sec_g to anchor: re.search(r'CACHE_VERSION\\s*=\\s*\"(nakshiq-v\\d+)\"', body) (fall back to max nakshiq-v<N>). One-line fix; harness only."
+    },
+    {
+      "id": "INFO-2026-06-09-003",
+      "severity": "info",
+      "title": "React #418 observed on a destination page (jaipur) for the first time; survived a redeploy",
+      "detail": "Folds into NEW-2026-06-07-001. Yesterday #418 was editorial-only (0/5 dest pages). Today jaipur (atlas template) fired it on 1 of 2 loads; betla (Leaflet template) stayed clean on 2 loads; editorial surfaces fired 3/3. The deploy hash changed (dpl_asYuef7… vs dpl_CNZX…) but the same rX/iu/sd hydration stack persists. Because the error is intermittent AND the console reader can miss load-time exceptions on some reads (it warns 'tracking starts when first called'), the per-surface fire counts are observational, not exhaustive — 'clean' is not proof of absence.",
+      "evidence": "section-K-map.csv console-* rows; chunk 13w0ldxt56tn..js?dpl=dpl_asYuef7bqRWjQ5uw23kzdNdfjLzr.",
+      "recommendation": "Treat as part of the #418 fix. The dest-page sighting argues the mismatch source may be a component shared by the atlas template + editorial layout (e.g., issue masthead / month-aware copy / rotating hero), not editorial-template-exclusive — useful narrowing for the non-minified-build repro."
+    },
+    {
+      "id": "INFO-2026-06-09-004",
+      "severity": "info",
+      "title": "Sitemap grew 26,064 → 26,082 URLs (+18); destination/cost families unchanged",
+      "detail": "5 chunks, all 200. 525 destination slugs + 6,300 month sub-routes + 525 en-cost (1,050 incl hi) — all stable vs 2026-06-07. The +18 is in the editorial-index chunks (0/2/3/4). Chunk URLs live at /sitemap/N.xml (Next.js generateSitemaps convention).",
+      "evidence": "section-H-sitemap.csv: chunk locs 370 / 14,756 / 1,124 / 3,196 / 6,636 = 26,082.",
+      "recommendation": "None — informational growth signal."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 21,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 188, "median": 900, "p90": 1452, "max": 2581 },
+    "core_routes_TTFB_note": "21 real routes all 200 first-hit. A 22nd probe (/en/search) is an intentional phantom-route check — it correctly 404s (route never existed; see nakshiq_qa_false_positives memory) and is excluded from the 2xx tally.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 2419, "median": 2910, "max": 7524 },
+    "destinations_TTFB_note": "Cold-ISR first hits (low-traffic random sample); warm re-probes 136-202 ms, median 157 ms (warm-reprobe-B.txt).",
+    "destinations_warm_TTFB_ms": { "min": 136, "median": 157, "max": 202 },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 79,
+    "sos_min_structured_fields_per_dest": 6,
+    "sos_phones_total_across_10_dests": 79,
+    "sos_phones_invalid_format": 0,
+    "sos_universal_112_present": 10,
+    "sos_sample_text_name_fields_by_design": 3,
+    "sos_destinations_with_local_helpers_block": 186,
+    "sos_destinations_without_block": 339,
+    "sos_no_block_tierA": 0,
+    "sos_local_helpers_nonempty_db": 186,
+    "sos_local_helpers_empty_array_db": 339,
+    "sos_local_helpers_null_db": 0,
+    "sos_deepdive_local_helpers_present_db": 405,
+    "sos_deepdive_local_helpers_total_entries_db": 867,
+    "sos_confidence_people_who_help_present_db": 491,
+    "sos_local_helpers_metric_note": "RESOLVED (NEW-2026-06-09-001): 186 = emergency_sos.local_helpers (SOS sub-section, always sparse, strict subset of the 405). The historical 405/867 = destinations.deep_dive.local_helpers — a DIFFERENT field, fully intact today (405 blocks / 867 entries). No data was lost; no restore needed.",
+    "sos_emergency_sos_rows_db": 525,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.42,
+    "sos_db_total_dialable_entries_11col": 3896,
+    "sos_db_total_structured_incl_local_police_station_12col": 4107,
+    "sos_db_rows_with_placeholder_X": 0,
+    "sos_rows_verified_dated_today": 466,
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "api_404_expected_returned": 2,
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_days": 7,
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 26082,
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_total_cost_urls": 1050,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 36,
+    "map_explore_overlay_marker_paths": 511,
+    "map_dest_pages_probed_interactive": 2,
+    "map_widget_destination_pages_probed_interactive": 2,
+    "map_dest_pages_with_leaflet": 1,
+    "map_widget_destination_pages_with_leaflet": 1,
+    "map_dest_pages_with_atlas_svg": 1,
+    "map_dest_leaflet_marker_paths_each": 1,
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 7,
+    "console_react_418_fired_loads": "4 of 7 controlled loads (/en navigate, /en reload, /en/explore navigate, /en/destination/jaipur 1-of-2); betla 0-of-2"
+  },
+  "deliverables": [
+    "qa/findings/2026-06-09.json",
+    "qa/findings/2026-06-09/ (probe.py + section CSVs A-K + section-E-db.json + html/ SSR snapshots + sample-slugs.json + warm-reprobe-B.txt)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "Most recent COMPLETE prior findings = 2026-06-07.json (used as the regression baseline). 2026-06-08 left a probe.py + section CSVs but no findings/2026-06-08.json and no regenerated reports — yesterday's scheduled run appears to have ended before writing its JSON. Today's run is fresh end-to-end.",
+    "local_helpers 405→186 was RESOLVED post-run as a false alarm (NEW-2026-06-09-001): the 405/867 is destinations.deep_dive.local_helpers (intact, exact match today) and the 186 is emergency_sos.local_helpers (a different, always-sparse column) — the daily probe compared two different fields. constants-reverify-2026-06-09 was confirmed write-limited to verified_* columns (migration 069 + audit doc) and touched no helper array. No data was lost; no restore needed. The lingering true-but-minor facts: emergency_sos has no updated_at trigger, and the harness should be pinned to site-rendered fields. Safety baseline (≥3 dialable on 525/525, 0 placeholders) is independently verified and GREEN.",
+    "React #418 finding remains observational: minified build hides the mismatch diff; intermittent (4/7 today). The Chrome console reader warned tracking can start after load on some reads, so per-surface 'clean' results are indicative, not proof of absence.",
+    "service_worker_version reported as v51 from the actual const CACHE_VERSION assignment, NOT from probe.py's naive first-match regex (which returned v32 off the cleanup list); md5 byte-identity (d0cc522e…, 7 days) confirms the SW is unchanged. Harness fix noted in INFO-2026-06-09-002.",
+    "sos_phones_invalid_format=0 counts placeholder/X-masked or digit-free values in DIALABLE fields only; the 3 local_police_station station-name text fields (nongriat, pinjore-gardens, sarnath) are by-design name fields per the ratnagiri precedent and are not malformed.",
+    "Destination TTFB medians are sequential single-shot curl measurements from the Cowork sandbox (Linux, shared egress); today's random sample hit cold low-traffic slugs (cold median 2910 ms) — warm re-probes (median 157 ms) confirm cold-ISR, not a regression. Trend + cold/warm split is the signal.",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe matching prior-run methodology.",
+    "6 Supabase reads were small aggregates / a 3-row lookup (a few KB total) over the MCP — egress-safe per CLAUDE.md (bulk-dump rule applies to >500-row REST pulls).",
+    "Axe-core, Lighthouse, and the /hi welcome-tour modal not exercised today (cost-aware + scope); carried STILL OPEN."
+  ],
+  "business_summary": {
+    "headline": "GREEN across everything customer-facing. All 21 core routes, all 10 sampled destinations in English and Hindi, every SEO check, the API layer, PWA assets, and the 26k-URL sitemap passed. Emergency SOS safety baseline is rock-solid — every one of 525 destinations has real dialable emergency numbers in the database (minimum 5 each, zero placeholders), and every sampled page renders them plus the universal 112. The one scare this week — that curated 'local helper' contacts had dropped from 405 to 186 — was chased down and is a FALSE ALARM: the 405 are fully intact (a database field the daily check used to read), and the 186 came from a different, sparser field the check accidentally switched to. Nothing was lost or wiped. The only genuine watch item is a long-standing intermittent React warning (invisible to users, self-recovering) that was seen once on a destination page today, having previously only appeared on the landing + explore pages.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "21/21 real core routes 200; 10/10 sampled destinations 200. Low-traffic first hits were slow today (cold cache, up to 7.5 s) but warm to ~157 ms" },
+      { "area": "API health", "status": "GREEN", "why": "0 × 5xx across 13 probes; malformed/empty/wrong bodies → 400; a 200 KB attack-sized body → 413; valid chat + weather + search-index return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages serve lang=hi with Devanagari titles" },
+      { "area": "SEO metadata", "status": "GREEN", "why": "12/12 URLs: no title stutter, canonical + en/hi/x-default hreflang + og:image all present; soft-404 guards 8/8" },
+      { "area": "Emergency SOS — safety baseline", "status": "GREEN", "why": "525/525 destinations have a DB SOS row with ≥5 dialable numbers (min 5, avg 7.42, 0 placeholders); 10/10 sampled pages render 6+ numbers plus universal 112; the 3 historically-flagged dests re-verified today" },
+      { "area": "Emergency SOS — curated extras", "status": "GREEN", "why": "The '405→186' scare was a false alarm: 405 = destinations.deep_dive.local_helpers (intact, 867 entries today) and 186 = emergency_sos.local_helpers (a different, always-sparse column) — the harness compared two different fields. The rendered 'People who help' card covers 491/525. No data lost; no restore needed (NEW-2026-06-09-001 RESOLVED)" },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 511/511 score-colored markers confirmed. Destination pages: 2 templates coexist mid-migration (live Leaflet on betla vs decorative atlas on jaipur), both render cleanly" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical 7 days (v51); manifest 3 icons + 5 shortcuts; offline page 200" },
+      { "area": "Console health", "status": "AMBER", "why": "The intermittent React hydration warning (#418) on landing + explore persists through a redeploy and was seen once on a destination page (jaipur) today; self-recovers, invisible to users, but burns client CPU on high-traffic pages" }
+    ],
+    "whats_changed": [
+      "[resolved] The 'curated local helper extras dropped 405→186' flag was chased down and is a FALSE ALARM — no data was lost. The 405 (still 405, with 867 entries today) lives in one database field (deep_dive.local_helpers); the 186 is a different, always-sparse field (emergency_sos.local_helpers) the daily check accidentally switched to. Yesterday's re-verification job only re-stamped dates and touched none of it. Nothing to restore; the daily check will be pinned to the fields the site actually shows.",
+      "[medium] The React #418 hydration warning was observed once on a destination page (jaipur) today; through Jun 7 it had only appeared on landing + explore. It survived a site redeploy. Still intermittent and invisible to users.",
+      "[reproduced] The decorative atlas still prints the same static coordinates (23.5N · 80.5E) on every non-Leaflet destination page — cosmetic, but a credibility nick for a data-honesty brand.",
+      "[info] The daily harness mislabeled the service worker version (v32) by reading an old name from a cleanup list; the real version is v51 and the file is byte-identical for 7 straight days. One-line harness fix noted.",
+      "[info] Sitemap grew by 18 URLs to 26,082; destination/cost counts unchanged (525 + 6,300 month pages)."
+    ],
+    "risks": [
+      "Metric-trust, not data-loss: the daily QA Section-E was measuring an UNRENDERED legacy field (destinations.deep_dive.local_helpers) and silently switched to a different one this run, which produced a false 'data wiped' alarm. The real risk is a noisy harness that could cry wolf (or hide a genuine future regression) — fix by pinning the metric to site-rendered fields. Secondary: emergency_sos has no updated_at trigger, so future genuine changes to that table are hard to date — worth adding.",
+      "The hydration warning hits the landing page and explore — the two pages most first-time visitors see — and now occasionally a destination page. Low user impact today, but hydration mismatches can mask real content divergence and slow perceived load on cheap phones.",
+      "Accessibility (color contrast, tab markup) and mobile Lighthouse performance haven't been re-measured since early May; the deep pass is overdue, especially with the new map template shipping."
+    ],
+    "bottom_line": [
+      "SOS 'local helper' scare is CLOSED — no action needed, no data lost (the 405 curated helpers are intact in deep_dive.local_helpers; the 186 was a different, sparser field the daily check mismeasured). Follow-ups are housekeeping only: pin the daily QA metric to the site-rendered fields (people_who_help + emergency_sos.local_helpers), and optionally add an updated_at trigger on emergency_sos.",
+      "Spend 30 minutes on the React #418 warning with a non-minified build — the destination-page sighting points at a component shared by the atlas template and the editorial layout (issue masthead / month-aware copy / rotating hero).",
+      "Fix the static atlas coordinates (one template variable) — small effort, visible credibility win.",
+      "Schedule the overdue deep accessibility + Lighthouse pass once the Leaflet destination-map rollout finishes."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi (random seed, 525-slug pool): bharatpur, bhimbetka, raghurajpur, nongriat, pinjore-gardens, marine-national-park, sariska, mount-abu, elephanta-caves, sarnath",
+      "21 core routes + 13 API probes + 8 soft-404 guards probed",
+      "Explore map + 2 destination templates exercised in a real Chrome session, 7 controlled console observations",
+      "525 destination SOS rows ground-truthed directly in the database (6 aggregate reads + 3-row prior-bug recheck)",
+      "26,082-URL sitemap walked chunk by chunk"
+    ]
+  }
+}
