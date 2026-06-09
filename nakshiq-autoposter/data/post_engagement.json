@@ -1,4 +1,35 @@
 {
+  "1I7EG": {
+    "account": "Nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 1,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 0
+    },
+    "destination": null,
+    "format": null,
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 1,
+      "impressions": 0,
+      "likes": 1,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 0
+    },
+    "network": "facebook",
+    "platform_post_id": "1040562729145369_122111513426700092",
+    "post_id": "1I7EG",
+    "published_at": "2026-06-09T16:54:33.728Z",
+    "pulled_at": "2026-06-09T22:55:09.009677+00:00",
+    "utm_content": null
+  },
   "1ghUG": {
     "account": "Nakshiq",
     "account_count": 1,
@@ -27,7 +58,7 @@
     "platform_post_id": "1040562729145369_122110827146700092",
     "post_id": "1ghUG",
     "published_at": "2026-06-03T18:39:15.748Z",
-    "pulled_at": "2026-06-08T22:54:36.484928+00:00",
+    "pulled_at": "2026-06-09T22:54:28.890019+00:00",
     "utm_content": "shimla-v2_texture_macro-20260603"
   },
   "4HEFi": {
@@ -58,7 +89,7 @@
     "platform_post_id": "CFRoo0UYMwQ",
     "post_id": "4HEFi",
     "published_at": "2026-06-03T16:11:40.988Z",
-    "pulled_at": "2026-06-08T22:54:33.255715+00:00",
+    "pulled_at": "2026-06-09T22:54:23.693550+00:00",
     "utm_content": "bangus-valley-yt_short-20260603"
   },
   "4HWEi": {
@@ -89,8 +120,39 @@
     "platform_post_id": "17908026093242485",
     "post_id": "4HWEi",
     "published_at": "2026-06-03T18:38:29.519Z",
-    "pulled_at": "2026-06-08T22:54:35.296458+00:00",
+    "pulled_at": "2026-06-09T22:54:25.786268+00:00",
     "utm_content": "tawang-v2_texture_macro-20260603"
+  },
+  "4ol9i": {
+    "account": "nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 5.88235294117647,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 1,
+      "total_reach": 17,
+      "total_shares": 0,
+      "total_views": 0
+    },
+    "destination": "sinthan-top",
+    "format": "yt_short.nakshiq_score",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 1,
+      "reach": 17,
+      "saves": 0,
+      "shares": 0,
+      "views": 0
+    },
+    "network": "instagram",
+    "platform_post_id": "18093065738588213",
+    "post_id": "4ol9i",
+    "published_at": "2026-06-09T14:10:16.110Z",
+    "pulled_at": "2026-06-09T22:55:05.494294+00:00",
+    "utm_content": "sinthan-top-yt_short-20260609"
   },
   "5WBMD": {
     "account": "Nakshiq",
@@ -213,7 +275,7 @@
     "platform_post_id": "1040562729145369_122110874420700092",
     "post_id": "8wfeI",
     "published_at": "2026-06-04T08:07:26.480Z",
-    "pulled_at": "2026-06-08T22:54:38.767827+00:00",
+    "pulled_at": "2026-06-09T22:54:31.988556+00:00",
     "utm_content": "roopkund-v3_tl_world_best_india-20260604"
   },
   "9N7jQ": {
@@ -244,7 +306,7 @@
     "platform_post_id": "18102832280047891",
     "post_id": "9N7jQ",
     "published_at": "2026-06-06T06:45:03.264Z",
-    "pulled_at": "2026-06-08T22:54:50.902033+00:00",
+    "pulled_at": "2026-06-09T22:54:44.100128+00:00",
     "utm_content": "keylong-v2_hindi_score_card-20260606"
   },
   "9aypQ": {
@@ -257,7 +319,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 3
+      "total_views": 4
     },
     "destination": "khardung-la",
     "format": "yt_short.nakshiq_score",
@@ -269,13 +331,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 3
+      "views": 4
     },
     "network": "youtube",
     "platform_post_id": "C-0mvGinxus",
     "post_id": "9aypQ",
     "published_at": "2026-06-07T13:14:30.638Z",
-    "pulled_at": "2026-06-08T22:55:01.644959+00:00",
+    "pulled_at": "2026-06-09T22:54:51.835451+00:00",
     "utm_content": "khardung-la-yt_short-20260607"
   },
   "9cASQ": {
@@ -461,7 +523,7 @@
     "platform_post_id": "18061877255708380",
     "post_id": "IY6cX",
     "published_at": "2026-06-05T16:46:35.085Z",
-    "pulled_at": "2026-06-08T22:54:46.980198+00:00",
+    "pulled_at": "2026-06-09T22:54:40.698142+00:00",
     "utm_content": "madurai-v4_dw_counter_narrative_myth_bust-20260605"
   },
   "IYwVX": {
@@ -492,7 +554,7 @@
     "platform_post_id": "18096282203188310",
     "post_id": "IYwVX",
     "published_at": "2026-06-05T14:14:32.354Z",
-    "pulled_at": "2026-06-08T22:54:45.340916+00:00",
+    "pulled_at": "2026-06-09T22:54:38.569761+00:00",
     "utm_content": "gurez-valley-yt_short-20260605"
   },
   "J1ap3": {
@@ -526,15 +588,46 @@
     "pulled_at": "2026-06-03T23:17:51.648181+00:00",
     "utm_content": "nainital-v4_dw_architecture_detail_deep_dive-20260528"
   },
+  "JMBl3": {
+    "account": "nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 2.34375,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 3,
+      "total_reach": 128,
+      "total_shares": 0,
+      "total_views": 0
+    },
+    "destination": "lamayuru",
+    "format": "yt_short.nakshiq_score",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 3,
+      "reach": 128,
+      "saves": 0,
+      "shares": 0,
+      "views": 0
+    },
+    "network": "instagram",
+    "platform_post_id": "18045251576571593",
+    "post_id": "JMBl3",
+    "published_at": "2026-06-09T08:08:54.702Z",
+    "pulled_at": "2026-06-09T22:55:02.935279+00:00",
+    "utm_content": "lamayuru-yt_short-20260609"
+  },
   "KNbf9": {
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 8.695652173913043,
+      "average_engagement_rate": 1.7699115044247788,
       "total_comments": 0,
       "total_impressions": 0,
       "total_likes": 2,
-      "total_reach": 23,
+      "total_reach": 113,
       "total_shares": 0,
       "total_views": 0
     },
@@ -545,7 +638,7 @@
       "engagement_total": 0,
       "impressions": 0,
       "likes": 2,
-      "reach": 23,
+      "reach": 113,
       "saves": 0,
       "shares": 0,
       "views": 0
@@ -554,7 +647,7 @@
     "platform_post_id": "18076861265650524",
     "post_id": "KNbf9",
     "published_at": "2026-06-08T09:10:20.956Z",
-    "pulled_at": "2026-06-08T22:55:08.510255+00:00",
+    "pulled_at": "2026-06-09T22:54:58.070441+00:00",
     "utm_content": "hemkund-sahib-yt_short-20260608"
   },
   "LmGaV": {
@@ -585,18 +678,18 @@
     "platform_post_id": "1040562729145369_122111269352700092",
     "post_id": "LmGaV",
     "published_at": "2026-06-07T15:49:56.328Z",
-    "pulled_at": "2026-06-08T22:55:03.967252+00:00",
+    "pulled_at": "2026-06-09T22:54:54.020732+00:00",
     "utm_content": "nubra-valley-v3_tl_first_person_essay-20260607"
   },
   "MeQaC": {
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 0,
+      "average_engagement_rate": 9.523809523809524,
       "total_comments": 0,
       "total_impressions": 0,
-      "total_likes": 0,
-      "total_reach": 7,
+      "total_likes": 2,
+      "total_reach": 21,
       "total_shares": 0,
       "total_views": 0
     },
@@ -606,8 +699,8 @@
       "comments": 0,
       "engagement_total": 0,
       "impressions": 0,
-      "likes": 0,
-      "reach": 7,
+      "likes": 2,
+      "reach": 21,
       "saves": 0,
       "shares": 0,
       "views": 0
@@ -616,7 +709,7 @@
     "platform_post_id": "18091012688067844",
     "post_id": "MeQaC",
     "published_at": "2026-06-08T14:45:34.824Z",
-    "pulled_at": "2026-06-08T22:55:10.945952+00:00",
+    "pulled_at": "2026-06-09T22:55:00.522327+00:00",
     "utm_content": "likir-yt_short-20260608"
   },
   "NdOra": {
@@ -647,7 +740,7 @@
     "platform_post_id": "1040562729145369_122111043548700092",
     "post_id": "NdOra",
     "published_at": "2026-06-05T16:47:09.770Z",
-    "pulled_at": "2026-06-08T22:54:49.108669+00:00",
+    "pulled_at": "2026-06-09T22:54:42.654259+00:00",
     "utm_content": "coorg-v4_dw_counter_narrative_myth_bust-20260605"
   },
   "O3rpv": {
@@ -815,7 +908,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 11
+      "total_views": 16
     },
     "destination": "hemkund-sahib",
     "format": "yt_short.nakshiq_score",
@@ -827,13 +920,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 11
+      "views": 16
     },
     "network": "youtube",
     "platform_post_id": "gtq0tOlbjBw",
     "post_id": "VdvjN",
     "published_at": "2026-06-08T09:09:37.161Z",
-    "pulled_at": "2026-06-08T22:55:06.852602+00:00",
+    "pulled_at": "2026-06-09T22:54:56.823332+00:00",
     "utm_content": "hemkund-sahib-yt_short-20260608"
   },
   "X6GBe": {
@@ -864,7 +957,7 @@
     "platform_post_id": "1040562729145369_122111107586700092",
     "post_id": "X6GBe",
     "published_at": "2026-06-06T06:45:39.639Z",
-    "pulled_at": "2026-06-08T22:54:54.653736+00:00",
+    "pulled_at": "2026-06-09T22:54:45.363975+00:00",
     "utm_content": "kargil-v2_hindi_score_card-20260606"
   },
   "XYwqe": {
@@ -957,7 +1050,7 @@
     "platform_post_id": "0SA_l3H1SrI",
     "post_id": "Z4g4u",
     "published_at": "2026-06-05T08:21:57.288Z",
-    "pulled_at": "2026-06-08T22:54:42.585036+00:00",
+    "pulled_at": "2026-06-09T22:54:36.068789+00:00",
     "utm_content": "lolab-valley-yt_short-20260605"
   },
   "ZrbZu": {
@@ -988,8 +1081,39 @@
     "platform_post_id": "17917791600369794",
     "post_id": "ZrbZu",
     "published_at": "2026-06-04T08:06:49.430Z",
-    "pulled_at": "2026-06-08T22:54:37.566719+00:00",
+    "pulled_at": "2026-06-09T22:54:30.387922+00:00",
     "utm_content": "nako-v3_tl_world_best_india-20260604"
+  },
+  "ag1Ob": {
+    "account": "@naksh-iq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 0,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 50
+    },
+    "destination": "kedarnath",
+    "format": "yt_short.nakshiq_score",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 0,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 50
+    },
+    "network": "youtube",
+    "platform_post_id": "8SA2kf6ylQ8",
+    "post_id": "ag1Ob",
+    "published_at": "2026-06-09T13:33:02.568Z",
+    "pulled_at": "2026-06-09T22:55:04.182870+00:00",
+    "utm_content": "kedarnath-yt_short-20260609"
   },
   "avgkb": {
     "account": "nakshiq",
@@ -1019,7 +1143,7 @@
     "platform_post_id": "17934660036278353",
     "post_id": "avgkb",
     "published_at": "2026-06-08T08:28:47.935Z",
-    "pulled_at": "2026-06-08T22:55:05.073342+00:00",
+    "pulled_at": "2026-06-09T22:54:55.198109+00:00",
     "utm_content": "pangong-lake-v2_cost_index_handwritten-20260608"
   },
   "bmnmT": {
@@ -1063,7 +1187,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 14
+      "total_views": 17
     },
     "destination": "tosamaidan",
     "format": "yt_short.nakshiq_score",
@@ -1075,13 +1199,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 14
+      "views": 17
     },
     "network": "youtube",
     "platform_post_id": "qnXbgTbpxBE",
     "post_id": "bvSxT",
     "published_at": "2026-06-06T12:58:14.417Z",
-    "pulled_at": "2026-06-08T22:54:56.935441+00:00",
+    "pulled_at": "2026-06-09T22:54:47.732523+00:00",
     "utm_content": "tosamaidan-yt_short-20260606"
   },
   "e6HZr": {
@@ -1125,7 +1249,7 @@
       "total_likes": 3,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 128
+      "total_views": 139
     },
     "destination": "gulmarg",
     "format": "yt_short.nakshiq_score",
@@ -1137,13 +1261,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 128
+      "views": 139
     },
     "network": "youtube",
     "platform_post_id": "88ObtpEaK3c",
     "post_id": "eRpmr",
     "published_at": "2026-06-06T07:30:04.030Z",
-    "pulled_at": "2026-06-08T22:54:55.744745+00:00",
+    "pulled_at": "2026-06-09T22:54:46.575022+00:00",
     "utm_content": "gulmarg-yt_short-20260606"
   },
   "eRx2r": {
@@ -1156,7 +1280,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 5
+      "total_views": 7
     },
     "destination": "kinnaur",
     "format": "yt_short.nakshiq_score",
@@ -1168,13 +1292,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 5
+      "views": 7
     },
     "network": "youtube",
     "platform_post_id": "v9Enukv6194",
     "post_id": "eRx2r",
     "published_at": "2026-06-07T08:06:46.203Z",
-    "pulled_at": "2026-06-08T22:55:00.544610+00:00",
+    "pulled_at": "2026-06-09T22:54:50.596393+00:00",
     "utm_content": "kinnaur-yt_short-20260607"
   },
   "esO2r": {
@@ -1298,7 +1422,7 @@
     "platform_post_id": "iCHdi1ZyvVA",
     "post_id": "ghqDx",
     "published_at": "2026-06-04T08:40:04.523Z",
-    "pulled_at": "2026-06-08T22:54:40.178208+00:00",
+    "pulled_at": "2026-06-09T22:54:33.514557+00:00",
     "utm_content": "yt_short-20260604"
   },
   "gkYgx": {
@@ -1332,6 +1456,37 @@
     "pulled_at": "2026-06-04T22:49:52.932905+00:00",
     "utm_content": "yt_short-20260529"
   },
+  "kZDRh": {
+    "account": "nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 100,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 1,
+      "total_reach": 1,
+      "total_shares": 0,
+      "total_views": 0
+    },
+    "destination": null,
+    "format": null,
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 1,
+      "reach": 1,
+      "saves": 0,
+      "shares": 0,
+      "views": 0
+    },
+    "network": "instagram",
+    "platform_post_id": "17915512131404883",
+    "post_id": "kZDRh",
+    "published_at": "2026-06-09T16:55:03.008Z",
+    "pulled_at": "2026-06-09T22:55:06.852408+00:00",
+    "utm_content": null
+  },
   "mJbhd": {
     "account": "nakshiq",
     "account_count": 1,
@@ -1360,8 +1515,39 @@
     "platform_post_id": "18421116763131483",
     "post_id": "mJbhd",
     "published_at": "2026-06-06T12:58:53.162Z",
-    "pulled_at": "2026-06-08T22:54:58.145207+00:00",
+    "pulled_at": "2026-06-09T22:54:49.110685+00:00",
     "utm_content": "tosamaidan-yt_short-20260606"
+  },
+  "pXocM": {
+    "account": "@naksh-iq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 0,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 19
+    },
+    "destination": "lamayuru",
+    "format": "yt_short.nakshiq_score",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 0,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 19
+    },
+    "network": "youtube",
+    "platform_post_id": "WW5jSp9fiAQ",
+    "post_id": "pXocM",
+    "published_at": "2026-06-09T08:08:17.941Z",
+    "pulled_at": "2026-06-09T22:55:01.670448+00:00",
+    "utm_content": "lamayuru-yt_short-20260609"
   },
   "pgpuM": {
     "account": "nakshiq",
@@ -1422,7 +1608,7 @@
     "platform_post_id": "17936082315256053",
     "post_id": "r5Ke4",
     "published_at": "2026-06-07T15:49:22.732Z",
-    "pulled_at": "2026-06-08T22:55:02.761431+00:00",
+    "pulled_at": "2026-06-09T22:54:52.822546+00:00",
     "utm_content": "pangong-lake-v3_tl_first_person_essay-20260607"
   },
   "r6Gg4": {
@@ -1484,7 +1670,7 @@
     "platform_post_id": "Lz-tw4hhX1s",
     "post_id": "u4C1E",
     "published_at": "2026-06-04T13:47:35.872Z",
-    "pulled_at": "2026-06-08T22:54:41.385789+00:00",
+    "pulled_at": "2026-06-09T22:54:34.828797+00:00",
     "utm_content": "kishtwar-yt_short-20260604"
   },
   "uirxE": {
@@ -1515,7 +1701,7 @@
     "platform_post_id": "P98TKJEnxOY",
     "post_id": "uirxE",
     "published_at": "2026-06-05T13:44:45.906Z",
-    "pulled_at": "2026-06-08T22:54:43.732318+00:00",
+    "pulled_at": "2026-06-09T22:54:37.226179+00:00",
     "utm_content": "kaza-yt_short-20260605"
   },
   "uryKE": {
@@ -1608,7 +1794,7 @@
     "platform_post_id": "cE5ApGxPycU",
     "post_id": "vUo0g",
     "published_at": "2026-06-08T14:44:46.492Z",
-    "pulled_at": "2026-06-08T22:55:09.764797+00:00",
+    "pulled_at": "2026-06-09T22:54:59.305239+00:00",
     "utm_content": "likir-yt_short-20260608"
   },
   "xkk98": {
@@ -1732,7 +1918,7 @@
     "platform_post_id": "E6lrHkVgUjw",
     "post_id": "yaWYj",
     "published_at": "2026-06-03T09:09:40.707Z",
-    "pulled_at": "2026-06-08T22:54:32.217584+00:00",
+    "pulled_at": "2026-06-09T22:54:22.534254+00:00",
     "utm_content": "sonamarg-yt_short-20260603"
   }
 }
