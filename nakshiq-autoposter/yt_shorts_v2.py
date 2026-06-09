@@ -69,10 +69,10 @@ VOICE_RATE = "+14%"            # Shorts want pace; +14% keeps Neerja crisp witho
 # the daily series: BRIGHT = hype / go-now / hidden-gem; DEEP = gravitas /
 # warnings / famous-epic. Alternate male/female across days for variety.
 VOICE_PROFILES = {
-    "madhur_deep":   {"voice": "hi-IN-MadhurNeural", "rate": "+8%",  "pitch": "-12Hz"},  # epic / authority
-    "madhur_bright": {"voice": "hi-IN-MadhurNeural", "rate": "+15%", "pitch": "+18Hz"},  # adventure / energy
-    "swara_deep":    {"voice": "hi-IN-SwaraNeural",  "rate": "+8%",  "pitch": "-8Hz"},   # warning / serious
-    "swara_bright":  {"voice": "hi-IN-SwaraNeural",  "rate": "+18%", "pitch": "+22Hz"},  # gem / aspirational
+    "madhur_deep":   {"voice": "hi-IN-MadhurNeural", "rate": "+12%", "pitch": "-9Hz"},   # gripping / authority
+    "madhur_bright": {"voice": "hi-IN-MadhurNeural", "rate": "+21%", "pitch": "+22Hz"},  # adventure / hype
+    "swara_deep":    {"voice": "hi-IN-SwaraNeural",  "rate": "+12%", "pitch": "-5Hz"},   # gripping / serious
+    "swara_bright":  {"voice": "hi-IN-SwaraNeural",  "rate": "+21%", "pitch": "+26Hz"},  # gem / aspirational
 }
 
 # ── Optional ElevenLabs premium voice ─────────────────────────────────
@@ -248,6 +248,15 @@ def _hi_clauses(text: str) -> list:
     return out
 
 
+def _single_sentence(s: str) -> str:
+    """edge-tts emits one SentenceBoundary per . ? ! । — so a voice line with an
+    INTERNAL terminator yields 2 bounds but only 1 caption_line → caption drift.
+    Collapse any internal ।/?/! (not the terminal one) to a dash-pause so every
+    voice line is exactly one sentence and maps 1:1 to its caption. Latin '.'
+    (abbreviations like W.D.) is left alone."""
+    return re.sub(r"\s*[।?!]+(?=\s*\S)", " —", s.strip())
+
+
 def _lead_token(s: str) -> str:
     """'Kaza (Indian Oil) — only pump' → 'Kaza'."""
     s = (s or '').strip()
@@ -293,6 +302,9 @@ def _template_spec(dest: dict) -> dict:
     eatery = (leg.get("name") if isinstance(leg, dict) else None) or dest.get("eatery_name")
     summer_low = wx.get("summer_low_c")
     pump = _lead_token(fuel.get("nearest_petrol_pump"))
+    # only use pump in voice if it's a real PLACE name (not "In town"/"Everywhere"/"Multiple"/"N/A")
+    pump_ok = bool(pump) and len(pump) <= 22 and pump[:1].isupper() and not re.search(
+        r"(?i)\b(town|city|everywhere|multiple|n/?a|none|local|nearest|all)\b", pump)
     carry_extra = bool(fuel.get("carry_extra"))
     phone = (helper.get("phone") or "").strip()
     helper_name = (helper.get("name") or "").strip()
@@ -303,16 +315,35 @@ def _template_spec(dest: dict) -> dict:
     bsnl_only = bool(net.get("bsnl")) and not (net.get("jio") or net.get("airtel") or net.get("vi"))
 
     # ── field-gated beats (each returns (devanagari, caption) or None) ──
-    def b_hook():
-        if not tagline_hi:
-            return None
-        t = tagline_hi.rstrip("।. ").strip()
-        if len(t) > 80 and re.search(r"[—–]", t):
-            t = re.split(r"[—–]", t)[0].strip()
-        return (f"{name} — {t}।", f"{name} — {deva_to_latin(t)}")
+    def b_hook(arc):
+        # Scroll-stopping OPENER (≤1.5s pull), arc-flavoured + data-gated. Hand-
+        # written bilingual (Devanagari voice + clean romanized caption). Confident
+        # "No Bakwaas" energy — curiosity / stakes / craving, never cheesy hype.
+        # Screened by a brand+fabrication judge panel (catchy-yt-hooks workflow).
+        if arc == "wait":
+            return (f"{name} अभी जाना — सबसे बड़ी गलती होगी।",
+                    f"{name} abhi jaana — sabse badi galti hogi")
+        if arc == "warn":
+            if elev and elev >= 3500:
+                return (f"{elev} मीटर पर एक छोटी गलती — और मदद कोसों दूर।",
+                        f"{elev}m par ek chhoti galti — aur madad koson door")
+            return (f"{name} खूबसूरत है — पर यहाँ एक चूक भारी पड़ती है।",
+                    f"{name} khoobsurat hai — par ek chook bhaari padti hai")
+        if arc == "food" and dish:
+            return (f"{name} जाओ तो {dish} ज़रूर — वरना जाना बेकार।",
+                    f"{name} jao to {dish} zaroor — varna jaana bekaar")
+        if arc == "drive":
+            if pump_ok:
+                return (f"{pump} के बाद का रास्ता — मंज़िल भुला देगा।",
+                        f"{pump} ke baad ka raasta — manzil bhula dega")
+            return (f"{name} में मंज़िल भूल जाओ — रास्ता ही पूरी कहानी है।",
+                    f"{name} mein manzil bhool jao — raasta hi poori kahani hai")
+        # GEM (default) — curiosity + FOMO; pays off in beat 2 (the why)
+        return (f"{name} — वायरल होने से पहले, ये देख लो।",
+                f"{name} — viral hone se pehle, ye dekh lo")
 
     def b_why(punchy=True):
-        cl = _hi_clauses(why_hi)
+        cl = _hi_clauses(why_hi) or _hi_clauses(tagline_hi)
         if not cl:
             return None
         if punchy:
@@ -338,7 +369,7 @@ def _template_spec(dest: dict) -> dict:
         return None
 
     def b_fuel():
-        if not (carry_extra and pump):
+        if not (carry_extra and pump_ok):
             return None
         return (f"पेट्रोल सिर्फ़ {pump} में — टंकी फुल, जरकन साथ।",
                 f"Petrol sirf {pump} mein — tank full, jerry can saath")
@@ -372,9 +403,14 @@ def _template_spec(dest: dict) -> dict:
         val = (safety.get("value") or phone or "").strip()
         if not val:
             return None
-        label = (safety.get("label") or helper_name or "emergency").strip()
-        return ("इमरजेंसी में मदद का एक नंबर — caption में सेव कर लो।",
-                f"Emergency: {label} → {val}")
+        label = (safety.get("label") or helper_name or "").strip()
+        # don't render "Emergency: emergency" when the label is generic
+        cap = f"Emergency: {label} → {val}" if label and label.lower() not in (
+            "emergency", "rescue", "local rescue", "helpline") else f"Emergency → {val}"
+        # keep the number readable in the caption: trim an over-long label tail
+        if len(cap) > 80:
+            cap = f"Emergency → {val}"
+        return ("इमरजेंसी में मदद का एक नंबर — caption में सेव कर लो।", cap)
 
     def b_wait_reason():
         nl = note.lower()
@@ -390,7 +426,7 @@ def _template_spec(dest: dict) -> dict:
         return ("अभी का मौसम इस जगह के हक़ में नहीं।", "Abhi ka mausam is jagah ke haq mein nahi")
 
     def b_shock():
-        return (f"और इसका अभी का स्कोर? सिर्फ़ {disp_voice}।", f"Iska abhi ka score? sirf {disp}")
+        return (f"और अभी का स्कोर — सिर्फ़ {disp_voice}।", f"Aur abhi ka score — sirf {disp}")
 
     def b_receipt():
         return ("मौसम, सड़क, भीड़, अस्पताल, नेटवर्क — पाँचों परखे, तभी " + disp_voice + "।",
@@ -401,7 +437,8 @@ def _template_spec(dest: dict) -> dict:
             return ("जाने से पहले पूरी कुंडली NakshIQ पे देख लेना।", "Jaane se pehle poori kundli — NakshIQ pe")
         if kind == "wait":
             return ("बेहतर महीना NakshIQ पे देखो, फिर निकलो।", "Behtar mahina NakshIQ pe — phir niklo")
-        return ("वायरल होने से पहले — सेव कर लो।", "Viral hone se pehle — save karo")
+        # gem/food/drive — the hook owns "viral hone se pehle", so the CTA differs
+        return ("अभी save कर लो — अगली मंज़िल यही।", "Save karo — agli manzil yahi")
 
     # ── arc selection (priority cascade) ──
     is_risky = (elev and elev >= 3500) or diff == "hard" or bsnl_only
@@ -413,20 +450,24 @@ def _template_spec(dest: dict) -> dict:
     if raw <= 2:                                   # DON'T-GO / WAIT (score leads)
         arc, kind = "wait", "wait"
         profile = "swara_deep" if even else "madhur_deep"
-        body = [b_hook(), b_shock(), b_wait_reason()]
+        body = [b_hook("wait"), b_shock(), b_wait_reason()]
     elif is_risky:                                  # WARN-then-WHY (go prepared)
         arc, kind = "warn", "warn"
         profile = "swara_deep" if even else "madhur_deep"
-        body = [b_hook(), b_why(), b_altitude() or b_network(), b_fuel() or b_cold(), b_emergency()]
+        # hook already sells the altitude stakes → skip b_altitude (redundant),
+        # keep it tight: hook → why → one logistics beat → emergency
+        body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
     elif dish and eatery and raw >= 4:              # FOOD-ANCHOR
         arc, kind = "food", "gem"
-        body = [b_hook(), b_food(), b_why(), b_cost() or b_why(False)]
+        # why between hook and b_food so the dish isn't said back-to-back
+        body = [b_hook("food"), b_why(), b_food(), b_cost() or b_network()]
     elif has_drive and raw >= 3:                    # THE-DRIVE
         arc, kind = "drive", "gem"
-        body = [b_hook(), b_drive(), b_why(), b_fuel() or b_network() or b_cold()]
+        # hook already says "the road is the story" → drop b_drive, go to substance
+        body = [b_hook("drive"), b_why(), b_fuel() or b_network() or b_cold()]
     else:                                            # GEM (default, go-now)
         arc, kind = "gem", "gem"
-        body = [b_hook(), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
+        body = [b_hook("gem"), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
 
     # filter + dedupe body
     seen, uniq = set(), []
@@ -456,7 +497,7 @@ def _template_spec(dest: dict) -> dict:
     # (hook → why → altitude → fuel → emergency); other arcs stay at 4.
     cap = 5 if arc == "warn" else 4
     seq = body[:cap] + [b_receipt(), b_cta(kind)]
-    lines = [d for d, _ in seq]
+    lines = [_single_sentence(d) for d, _ in seq]   # 1 sentence/line → captions stay 1:1
     caps = [c for _, c in seq]
     return {
         "lines": lines[:7],
