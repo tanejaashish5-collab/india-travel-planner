@@ -32,7 +32,7 @@
   "posted_today": {
     "m8EAd": "2026-06-09",
     "PdMu0": "2026-06-09",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-06-09",
     "m8EAd_story": "2026-06-08",
@@ -330,6 +330,10 @@
     },
     {
       "destination_id": "lamayuru",
+      "date": "2026-06-09"
+    },
+    {
+      "destination_id": "kedarnath",
       "date": "2026-06-09"
     }
   ],
@@ -2579,6 +2583,24 @@
       "destination": "lamayuru",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lamayuru_hi_2026-06-09.mp4"
+    },
+    {
+      "timestamp": "2026-06-09T13:33:05.610140+00:00",
+      "date": "2026-06-09",
+      "platform": "youtube",
+      "post_id": "ag1Ob",
+      "destination": "kedarnath",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kedarnath_hi_2026-06-09.mp4"
+    },
+    {
+      "timestamp": "2026-06-09T13:33:53.614389+00:00",
+      "date": "2026-06-09",
+      "platform": "instagram",
+      "post_id": "vw8Ug",
+      "destination": "kedarnath",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kedarnath_hi_2026-06-09.mp4"
     }
   ],
   "theme_usage": {
