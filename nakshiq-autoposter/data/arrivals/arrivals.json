@@ -3,15 +3,19 @@
     "name": "Landing in India — arrival-logistics reel bank",
     "verified": "2026-06-09",
     "audit": "AUDIT-arrivals-2026-06-09.md",
-    "rule": "Every claim is sourced (see audit). null = honest scarcity (beat is skipped). Lines are single sentences, English, en-IN voice; no fares/numbers unless authoritatively confirmed.",
-    "spoken": "Numbers are spelled out (edge-tts reads words cleanly); captions == voice."
+    "rule": "Every claim is sourced (see audit). null/absent = honest scarcity (beat skipped). Single sentences, English, en-IN voice; captions == voice. No fares/numbers unless authoritatively confirmed.",
+    "structure": "Each reel = city hook + vibe + visa + transport + signature + 2 rotated national tips + CTA. vibe/transport/signature are CITY-SPECIFIC so reels don't read identically; national tips rotate from the pool so the constant advice varies airport to airport."
   },
   "national": {
     "visa": "Most passports need an India e-Visa — sort it online before you fly.",
-    "sim": "Get a tourist SIM at the arrivals counter — passport, visa, and one photo.",
-    "money": "Use an ATM in arrivals, not the forex counters, and keep small notes.",
-    "taxi_safe": "Take the official prepaid taxi, or an app cab from the marked zone.",
-    "scam": "And if anyone says your hotel is closed, ignore them — it's a classic scam."
+    "tips": {
+      "taxi_safe": "Take the official prepaid taxi, or an app cab from the marked zone.",
+      "scam": "If anyone says your hotel is closed, ignore them — it's a classic scam.",
+      "sim": "Grab a tourist SIM at arrivals — passport, visa, and one photo.",
+      "money": "Use an ATM in arrivals, not the forex counters, for a better rate.",
+      "water": "Skip the tap water — stick to sealed bottles your whole trip.",
+      "mrp": "Check the printed MRP on packs — that's the most you should pay."
+    }
   },
   "airports": [
     {
@@ -19,70 +23,70 @@
       "airport_name": "Indira Gandhi International",
       "city": "Delhi",
       "clip_slug": "delhi",
-      "rail": "The Airport metro hits the city in about twenty minutes, for sixty rupees.",
-      "distance_note": null,
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Delhi hits you with its sheer scale and energy.",
+      "transport": "The Airport metro hits the city in about twenty minutes, for sixty rupees.",
+      "signature": "Your hotel could be an hour off in traffic, so don't cut timing fine.",
+      "ride_note": null
     },
     {
       "code": "BOM",
       "airport_name": "Chhatrapati Shivaji Maharaj International",
       "city": "Mumbai",
       "clip_slug": "mumbai",
-      "rail": "The new Aqua Line metro runs underground, right to Terminal Two.",
-      "distance_note": null,
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Mumbai is humid, loud, and never sleeps.",
+      "transport": "The new Aqua Line metro runs underground, right to Terminal Two.",
+      "signature": "The local trains are the city's lifeline — but brutal at rush hour.",
+      "ride_note": null
     },
     {
       "code": "MAA",
       "airport_name": "Chennai International",
       "city": "Chennai",
       "clip_slug": "chennai",
-      "rail": "The Blue Line metro runs straight from the airport into the city.",
-      "distance_note": null,
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Step out in Chennai and the heat and humidity hit at once.",
+      "transport": "The Blue Line metro runs straight from the airport into the city.",
+      "signature": "Filter coffee here is a ritual — grab one as soon as you can.",
+      "ride_note": null
     },
     {
       "code": "CCU",
       "airport_name": "Netaji Subhas Chandra Bose International",
       "city": "Kolkata",
       "clip_slug": "kolkata",
-      "rail": "The new Yellow Line metro links the airport into the city.",
-      "distance_note": null,
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Kolkata runs on old-world charm, chaos, and street food.",
+      "transport": "The new Yellow Line metro links the airport into the city.",
+      "signature": "The yellow Ambassador taxis are a city icon, though an app's easier.",
+      "ride_note": null
     },
     {
       "code": "BLR",
       "airport_name": "Kempegowda International",
       "city": "Bengaluru",
       "clip_slug": "bengaluru",
-      "rail": null,
-      "distance_note": "The airport's about forty kilometres out — allow an hour into town.",
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Bengaluru surprises you — cool and green most of the year.",
+      "transport": "The airport's about forty kilometres out — allow an hour into town.",
+      "signature": "The traffic is legendary, so pad your transfer time generously.",
+      "ride_note": null
     },
     {
       "code": "HYD",
       "airport_name": "Rajiv Gandhi International",
       "city": "Hyderabad",
       "clip_slug": "hyderabad",
-      "rail": null,
-      "distance_note": "The airport's a fair way out, so plan for a longer ride in.",
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Hyderabad blends old nizami charm with a tech-city buzz.",
+      "transport": "The airport's a fair way out, so plan for a longer ride in.",
+      "signature": "The biryani here is the real deal — make it your first meal.",
+      "ride_note": null
     },
     {
       "code": "COK",
       "airport_name": "Cochin International",
       "city": "Kochi",
       "clip_slug": "kochi",
-      "rail": null,
-      "distance_note": "The airport's about thirty kilometres north — allow an hour.",
-      "ride_note": null,
-      "fun_fact": "Fun fact — it's the world's first fully solar-powered airport."
+      "vibe": "Kochi is green, humid, and laced with backwaters.",
+      "transport": "The airport's about thirty kilometres north — allow an hour.",
+      "signature": "Fun fact — it's the world's first fully solar-powered airport.",
+      "ride_note": null
     },
     {
       "code": "GOX",
@@ -90,50 +94,50 @@
       "city": "Goa",
       "serves": "North Goa",
       "clip_slug": "panaji",
-      "rail": null,
-      "distance_note": "Mopa airport serves North Goa — the top beaches are an hour away.",
-      "ride_note": "In Goa, ride apps are limited — use the prepaid taxi or GoaMiles app.",
-      "fun_fact": null
+      "vibe": "Land in Goa and you feel the pace drop at once.",
+      "transport": "Mopa airport serves North Goa — the top beaches are an hour away.",
+      "signature": "Goa runs on cash — many beach shacks won't take cards.",
+      "ride_note": "Ride apps are limited here — use the prepaid taxi or the GoaMiles app."
     },
     {
       "code": "TRV",
       "airport_name": "Thiruvananthapuram International",
       "city": "Thiruvananthapuram",
       "clip_slug": "trivandrum",
-      "rail": null,
-      "distance_note": "The airport's barely five kilometres out — you're in town in minutes.",
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Thiruvananthapuram is Kerala at its most laid-back.",
+      "transport": "The airport's barely five kilometres out — you're in town in minutes.",
+      "signature": "Kovalam's famous beaches are a short ride down the coast.",
+      "ride_note": null
     },
     {
       "code": "AMD",
       "airport_name": "Sardar Vallabhbhai Patel International",
       "city": "Ahmedabad",
       "clip_slug": "ahmedabad",
-      "rail": null,
-      "distance_note": "The airport's about nine kilometres north of central Ahmedabad.",
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Ahmedabad is dry heat, deep history, and big food.",
+      "transport": "The airport's about nine kilometres north of the centre.",
+      "signature": "Gujarat is a dry state — you'll need a tourist permit to drink.",
+      "ride_note": null
     },
     {
       "code": "JAI",
       "airport_name": "Jaipur International",
       "city": "Jaipur",
       "clip_slug": "jaipur",
-      "rail": null,
-      "distance_note": "The airport's about fifteen kilometres from the Pink City.",
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Jaipur greets you with desert heat and pink-stone forts.",
+      "transport": "The airport's about fifteen kilometres from the Pink City.",
+      "signature": "Haggle hard in the bazaars — first prices are aimed at tourists.",
+      "ride_note": null
     },
     {
       "code": "ATQ",
       "airport_name": "Sri Guru Ram Dass Jee International",
       "city": "Amritsar",
       "clip_slug": "amritsar",
-      "rail": null,
-      "distance_note": "The airport's a twenty-minute ride from the Golden Temple.",
-      "ride_note": null,
-      "fun_fact": null
+      "vibe": "Amritsar runs on faith, history, and incredible food.",
+      "transport": "The airport's a twenty-minute ride from the Golden Temple.",
+      "signature": "The Golden Temple's free kitchen feeds a hundred thousand a day.",
+      "ride_note": null
     }
   ]
 }

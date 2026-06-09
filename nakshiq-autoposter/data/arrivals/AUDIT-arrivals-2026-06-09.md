@@ -34,6 +34,20 @@ Source bank: `data/arrivals/arrivals.json`. Rule (project CLAUDE.md): every clai
 
 Each airport maps to a **gateway-city** destination clip that already exists in R2 (HEAD 200 verified 2026-06-09): `delhi, mumbai, chennai, kolkata, bengaluru, hyderabad, kochi, panaji, trivandrum, ahmedabad, jaipur, amritsar`. The renderer's `has_clip()` eligibility gate is reused — an airport with no gateway-city clip is simply skipped (no brand-colour "no video" fallback in production).
 
+## City vibe + signature lines (added 2026-06-09 to differentiate the reels)
+
+The reels were near-identical (only the transport line varied), so each airport got a true **vibe** (first impression) + a distinctive **signature** tip. These are qualitative-but-accurate; the two that assert a checkable fact were verified:
+
+| Code | Signature claim | Verdict | Source |
+|---|---|---|---|
+| **AMD** | Gujarat is a **dry state** — tourists need a permit to drink | CONFIRMED (prohibition since 1949; free temporary tourist permit; public consumption banned) | psrcompliance.com/blog/liquor-license-in-gujarat-2026; indiabaggagerules.com (dry-state rules) |
+| **ATQ** | The Golden Temple's free kitchen feeds **~100,000 a day** | CONFIRMED (world's largest free community kitchen / langar, ~100k daily, doubles on holidays) | thenationalnews.com (2023); sbs.com.au/food; yourstory.com (2023) |
+
+Other vibe/signature lines are well-established qualitative facts (Delhi scale + traffic; Mumbai local trains + humidity; Chennai heat/humidity + filter coffee; Kolkata yellow Ambassador taxis "an icon"; Bengaluru mild climate + notorious traffic; Hyderabad biryani; Kochi backwaters + solar airport [verified above]; Goa cash culture + limited ride-apps [verified above]; Thiruvananthapuram laid-back + Kovalam beaches; Jaipur desert heat + bazaar haggling). No fares/contacts/statistics asserted beyond the two confirmed above.
+
+## National tips pool (rotated so the constant advice varies per airport)
+visa (verified above) · prepaid-taxi/app-cab (verified above) · "hotel-closed" scam (verified above) · airport SIM (verified above) · ATM>forex (verified above) · **tap water → sealed bottles** (standard travel-health advice) · **MRP is the max price** (CONFIRMED — Legal Metrology / packaged-goods rules make the printed Maximum Retail Price the legal ceiling). One safety tip + one extra are chosen deterministically per airport, so no two reels carry the same four constants.
+
 ## Honest-scarcity decisions
 - 8 of 12 airports have **no asserted rail beat** (`rail: null`) because no metro link to the airport was authoritatively confirmed operational — they use distance-context + the universal prepaid-taxi line instead of an invented one.
 - No fares stated except DEL (₹60, multi-source confirmed). HYD distance kept qualitative.

@@ -767,41 +767,35 @@ def _template_spec_arrival(airport: dict, national: dict) -> dict:
     English destination engine. Returns the standard spec shape."""
     city = (airport.get("city") or "your city").strip()
     code = (airport.get("code") or "").strip().upper()
-    rail = (airport.get("rail") or "").strip()
-    distance = (airport.get("distance_note") or "").strip()
-    ride_note = (airport.get("ride_note") or "").strip()
-    fun = (airport.get("fun_fact") or "").strip()
+    vibe = (airport.get("vibe") or "").strip()              # city first-impression
+    transport = (airport.get("transport") or "").strip()    # airport-specific ride
+    signature = (airport.get("signature") or "").strip()    # city distinctive tip
+    ride_note = (airport.get("ride_note") or "").strip()    # Goa taxi override
 
     visa = (national.get("visa") or "").strip()
-    sim = (national.get("sim") or "").strip()
-    taxi_safe = (national.get("taxi_safe") or "").strip()
-    scam = (national.get("scam") or "").strip()
+    tips = national.get("tips") or {}
 
-    # Two-beat hook keeps the scroll-stopping question intact (a single line with
-    # an internal "?" would be split by edge-tts into 2 sentences → caption drift).
-    hook_a = f"Just landed in {city}?"
-    hook_b = "Here's your first hour in India."
+    # Rotate the constant national advice so reels DON'T all read with the same
+    # four lines: one safety tip + one extra, picked deterministically per airport.
+    idx = sum(ord(c) for c in code) if code else 0
+    safety_pool = [t for t in (tips.get("taxi_safe", ""), tips.get("scam", "")) if t]
+    extra_pool = [t for t in (tips.get("sim", ""), tips.get("money", ""),
+                              tips.get("water", ""), tips.get("mrp", "")) if t]
+    safety = safety_pool[idx % len(safety_pool)] if safety_pool else ""
+    # Goa: the prepaid-taxi/app-cab line is wrong (ride apps are limited) — swap in
+    # the airport's own ride note whenever the taxi tip is the one that came up.
+    if ride_note and safety == tips.get("taxi_safe", ""):
+        safety = ride_note
+    extra = extra_pool[idx % len(extra_pool)] if extra_pool else ""
 
-    # TRANSPORT differentiator: a verified rail line if we have one, else a
-    # distance-context line (may be empty → beat skipped).
-    transport = rail or distance
-    # TAXI guidance: Goa's "ride apps limited → GoaMiles" note OVERRIDES the
-    # generic prepaid-taxi/app-cab line (Uber/Ola don't operate there).
-    taxi = ride_note or taxi_safe
-
-    # Body order (highest-signal first hour): visa → transport → taxi → SIM →
-    # scam → optional fun fact (e.g. Kochi solar). The generic ATM/forex "money"
-    # tip is left out to keep the reel tight — it's the least surprising step.
-    # Skip blanks; dedupe.
-    body = [visa]
-    if transport:
-        body.append(transport)
-    body += [taxi, sim, scam]
-    if fun:
-        body.append(fun)
+    # The city-specific lines (vibe / transport / signature) carry the
+    # differentiation; visa anchors the value; safety + extra rotate. The hook
+    # names the city. Skip blanks; dedupe.
+    hook = f"Just landed in {city}?"
+    body = [vibe, visa, transport, signature, safety, extra]
     cta = "Save this — first-hour guides for every Indian airport on NakshIQ."
 
-    seq, seen = [hook_a, hook_b], set()
+    seq, seen = [hook], set()
     for s in body + [cta]:
         s = (s or "").strip()
         if not s:
@@ -812,9 +806,9 @@ def _template_spec_arrival(airport: dict, national: dict) -> dict:
         seen.add(k)
         seq.append(s)
 
-    # Keep it Short-length: 2-line hook + up to 7 body/extra + CTA (≤10 lines).
-    if len(seq) > 10:
-        seq = seq[:9] + seq[-1:]
+    # Keep it Short-length: hook + up to 7 body + CTA (≤9 lines).
+    if len(seq) > 9:
+        seq = seq[:8] + seq[-1:]
     lines = [_single_sentence(s) for s in seq]
 
     even = (sum(ord(c) for c in code) % 2 == 0)
@@ -1505,9 +1499,9 @@ def _arrival_hashtags(city: str, code: str, n: int = 12) -> str:
 
 
 def _arrival_body_lines(spec: dict) -> str:
-    """The on-screen body steps (skip the 2-line hook + the CTA)."""
+    """The on-screen body steps (skip the hook + the CTA)."""
     caps = spec.get("caption_lines") or []
-    return " ".join(caps[2:-1]).strip() if len(caps) > 3 else ""
+    return " ".join(caps[1:-1]).strip() if len(caps) > 2 else ""
 
 
 def _yt_caption_arrival(airport: dict, spec: dict, music_credit: str) -> str:
