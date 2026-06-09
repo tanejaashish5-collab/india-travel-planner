@@ -145,9 +145,13 @@ def _profile_for(dest: dict) -> str:
     consecutive days vary. BRIGHT = go-now/gem (score >= 8/10), DEEP = warning."""
     raw = dest.get("score") or 3
     even = (sum(ord(c) for c in (dest.get("id") or "x")) % 2 == 0)
-    if raw >= 4:                       # 8/10+ -> hype/go-now
+    # raw>=3 (6/10+) -> bright/energetic. The positive arcs (gem/food/drive) only
+    # fire at raw>=3, so they all get the hype voice; warn/wait force deep
+    # themselves regardless. Energy is about the discovery, not a score claim —
+    # the receipt still states the honest score.
+    if raw >= 3:
         return "swara_bright" if even else "madhur_bright"
-    return "swara_deep" if even else "madhur_deep"   # <= 6/10 -> serious/warning
+    return "swara_deep" if even else "madhur_deep"
 
 
 # ── Devanagari → Latin (for CAPTIONS only) ───────────────────────────────
