@@ -69,10 +69,15 @@ VOICE_RATE = "+14%"            # Shorts want pace; +14% keeps Neerja crisp witho
 # the daily series: BRIGHT = hype / go-now / hidden-gem; DEEP = gravitas /
 # warnings / famous-epic. Alternate male/female across days for variety.
 VOICE_PROFILES = {
-    "madhur_deep":   {"voice": "hi-IN-MadhurNeural", "rate": "+8%",  "pitch": "-12Hz"},  # epic / authority
-    "madhur_bright": {"voice": "hi-IN-MadhurNeural", "rate": "+15%", "pitch": "+18Hz"},  # adventure / energy
-    "swara_deep":    {"voice": "hi-IN-SwaraNeural",  "rate": "+8%",  "pitch": "-8Hz"},   # warning / serious
-    "swara_bright":  {"voice": "hi-IN-SwaraNeural",  "rate": "+18%", "pitch": "+22Hz"},  # gem / aspirational
+    "madhur_deep":   {"voice": "hi-IN-MadhurNeural", "rate": "+12%", "pitch": "-9Hz"},   # gripping / authority
+    "madhur_bright": {"voice": "hi-IN-MadhurNeural", "rate": "+21%", "pitch": "+22Hz"},  # adventure / hype
+    "swara_deep":    {"voice": "hi-IN-SwaraNeural",  "rate": "+12%", "pitch": "-5Hz"},   # gripping / serious
+    "swara_bright":  {"voice": "hi-IN-SwaraNeural",  "rate": "+21%", "pitch": "+26Hz"},  # gem / aspirational
+    # English (inbound / international travellers) — authentic Indian-English, clear.
+    "en_deep_f":     {"voice": "en-IN-NeerjaNeural",            "rate": "+6%",  "pitch": "-2Hz"},   # warn/wait
+    "en_deep_m":     {"voice": "en-IN-PrabhatNeural",           "rate": "+5%",  "pitch": "-8Hz"},
+    "en_bright_f":   {"voice": "en-IN-NeerjaExpressiveNeural",  "rate": "+12%", "pitch": "+0Hz"},   # gem/food/drive
+    "en_bright_m":   {"voice": "en-IN-PrabhatNeural",           "rate": "+10%", "pitch": "+0Hz"},
 }
 
 # ── Optional ElevenLabs premium voice ─────────────────────────────────
@@ -120,11 +125,12 @@ def _format_score(raw) -> str:
 # 1. SCRIPT  (hand-authored Hinglish — no paid LLM API)
 # ─────────────────────────────────────────────────────────────────────────
 
-def _resolve_spec(slug: str, dest: dict) -> dict:
-    """Return the full script spec: {lines (Devanagari voice), caption_lines
-    (romanized on-screen), voice_profile, ...}. Hand-written bank file wins;
-    otherwise a deterministic tone-B template built from real intel."""
-    f = SCRIPTS_DIR / f"{slug}.json"
+def _resolve_spec(slug: str, dest: dict, lang: str = "hi") -> dict:
+    """Return the full script spec: {lines (voice), caption_lines (on-screen),
+    voice_profile, ...}. Hand-written bank file wins (lang-specific:
+    <slug>.en.json for English, <slug>.json for Hindi); otherwise the
+    deterministic data-driven template in that language."""
+    f = SCRIPTS_DIR / (f"{slug}.en.json" if lang == "en" else f"{slug}.json")
     if f.exists():
         try:
             data = json.loads(f.read_text())
@@ -132,7 +138,7 @@ def _resolve_spec(slug: str, dest: dict) -> dict:
                 return data
         except Exception:
             pass
-    return _template_spec(dest)
+    return _template_spec_en(dest) if lang == "en" else _template_spec(dest)
 
 
 def load_script(slug: str, dest: dict) -> list[str]:
@@ -145,9 +151,13 @@ def _profile_for(dest: dict) -> str:
     consecutive days vary. BRIGHT = go-now/gem (score >= 8/10), DEEP = warning."""
     raw = dest.get("score") or 3
     even = (sum(ord(c) for c in (dest.get("id") or "x")) % 2 == 0)
-    if raw >= 4:                       # 8/10+ -> hype/go-now
+    # raw>=3 (6/10+) -> bright/energetic. The positive arcs (gem/food/drive) only
+    # fire at raw>=3, so they all get the hype voice; warn/wait force deep
+    # themselves regardless. Energy is about the discovery, not a score claim —
+    # the receipt still states the honest score.
+    if raw >= 3:
         return "swara_bright" if even else "madhur_bright"
-    return "swara_deep" if even else "madhur_deep"   # <= 6/10 -> serious/warning
+    return "swara_deep" if even else "madhur_deep"
 
 
 # ── Devanagari → Latin (for CAPTIONS only) ───────────────────────────────
@@ -248,6 +258,30 @@ def _hi_clauses(text: str) -> list:
     return out
 
 
+def _single_sentence(s: str) -> str:
+    """edge-tts emits one SentenceBoundary per . ? ! । — so a voice line with an
+    INTERNAL terminator yields 2 bounds but only 1 caption_line → caption drift.
+    Collapse any internal ।/?/! (not the terminal one) to a dash-pause so every
+    voice line is exactly one sentence and maps 1:1 to its caption. Latin '.'
+    (abbreviations like W.D.) is left alone."""
+    s = re.sub(r"\s*[।?!]+(?=\s*\S)", " —", s.strip())
+    # English: an internal '.' before a space + capital is a sentence break too
+    return re.sub(r"\.\s+(?=[A-Z])", " — ", s)
+
+
+def _en_clauses(text: str) -> list:
+    """Split English prose into speakable single-sentence clauses (≈8–115 chars)."""
+    if not text:
+        return []
+    parts = re.split(r"(?<=[.;:])\s+|\n+|—|–|\s\(", text)
+    out = []
+    for p in parts:
+        p = (p or "").strip().strip("-–—,;:()").strip().rstrip(".")
+        if 8 <= len(p) <= 115 and not p.lower().startswith(("see ", "more ", "http")):
+            out.append(p)
+    return out
+
+
 def _lead_token(s: str) -> str:
     """'Kaza (Indian Oil) — only pump' → 'Kaza'."""
     s = (s or '').strip()
@@ -293,6 +327,9 @@ def _template_spec(dest: dict) -> dict:
     eatery = (leg.get("name") if isinstance(leg, dict) else None) or dest.get("eatery_name")
     summer_low = wx.get("summer_low_c")
     pump = _lead_token(fuel.get("nearest_petrol_pump"))
+    # only use pump in voice if it's a real PLACE name (not "In town"/"Everywhere"/"Multiple"/"N/A")
+    pump_ok = bool(pump) and len(pump) <= 22 and pump[:1].isupper() and not re.search(
+        r"(?i)\b(town|city|everywhere|multiple|n/?a|none|local|nearest|all)\b", pump)
     carry_extra = bool(fuel.get("carry_extra"))
     phone = (helper.get("phone") or "").strip()
     helper_name = (helper.get("name") or "").strip()
@@ -303,16 +340,35 @@ def _template_spec(dest: dict) -> dict:
     bsnl_only = bool(net.get("bsnl")) and not (net.get("jio") or net.get("airtel") or net.get("vi"))
 
     # ── field-gated beats (each returns (devanagari, caption) or None) ──
-    def b_hook():
-        if not tagline_hi:
-            return None
-        t = tagline_hi.rstrip("।. ").strip()
-        if len(t) > 80 and re.search(r"[—–]", t):
-            t = re.split(r"[—–]", t)[0].strip()
-        return (f"{name} — {t}।", f"{name} — {deva_to_latin(t)}")
+    def b_hook(arc):
+        # Scroll-stopping OPENER (≤1.5s pull), arc-flavoured + data-gated. Hand-
+        # written bilingual (Devanagari voice + clean romanized caption). Confident
+        # "No Bakwaas" energy — curiosity / stakes / craving, never cheesy hype.
+        # Screened by a brand+fabrication judge panel (catchy-yt-hooks workflow).
+        if arc == "wait":
+            return (f"{name} अभी जाना — सबसे बड़ी गलती होगी।",
+                    f"{name} abhi jaana — sabse badi galti hogi")
+        if arc == "warn":
+            if elev and elev >= 3500:
+                return (f"{elev} मीटर पर एक छोटी गलती — और मदद कोसों दूर।",
+                        f"{elev}m par ek chhoti galti — aur madad koson door")
+            return (f"{name} खूबसूरत है — पर यहाँ एक चूक भारी पड़ती है।",
+                    f"{name} khoobsurat hai — par ek chook bhaari padti hai")
+        if arc == "food" and dish:
+            return (f"{name} जाओ तो {dish} ज़रूर — वरना जाना बेकार।",
+                    f"{name} jao to {dish} zaroor — varna jaana bekaar")
+        if arc == "drive":
+            if pump_ok:
+                return (f"{pump} के बाद का रास्ता — मंज़िल भुला देगा।",
+                        f"{pump} ke baad ka raasta — manzil bhula dega")
+            return (f"{name} में मंज़िल भूल जाओ — रास्ता ही पूरी कहानी है।",
+                    f"{name} mein manzil bhool jao — raasta hi poori kahani hai")
+        # GEM (default) — curiosity + FOMO; pays off in beat 2 (the why)
+        return (f"{name} — वायरल होने से पहले, ये देख लो।",
+                f"{name} — viral hone se pehle, ye dekh lo")
 
     def b_why(punchy=True):
-        cl = _hi_clauses(why_hi)
+        cl = _hi_clauses(why_hi) or _hi_clauses(tagline_hi)
         if not cl:
             return None
         if punchy:
@@ -338,7 +394,7 @@ def _template_spec(dest: dict) -> dict:
         return None
 
     def b_fuel():
-        if not (carry_extra and pump):
+        if not (carry_extra and pump_ok):
             return None
         return (f"पेट्रोल सिर्फ़ {pump} में — टंकी फुल, जरकन साथ।",
                 f"Petrol sirf {pump} mein — tank full, jerry can saath")
@@ -372,9 +428,14 @@ def _template_spec(dest: dict) -> dict:
         val = (safety.get("value") or phone or "").strip()
         if not val:
             return None
-        label = (safety.get("label") or helper_name or "emergency").strip()
-        return ("इमरजेंसी में मदद का एक नंबर — caption में सेव कर लो।",
-                f"Emergency: {label} → {val}")
+        label = (safety.get("label") or helper_name or "").strip()
+        # don't render "Emergency: emergency" when the label is generic
+        cap = f"Emergency: {label} → {val}" if label and label.lower() not in (
+            "emergency", "rescue", "local rescue", "helpline") else f"Emergency → {val}"
+        # keep the number readable in the caption: trim an over-long label tail
+        if len(cap) > 80:
+            cap = f"Emergency → {val}"
+        return ("इमरजेंसी में मदद का एक नंबर — caption में सेव कर लो।", cap)
 
     def b_wait_reason():
         nl = note.lower()
@@ -390,7 +451,7 @@ def _template_spec(dest: dict) -> dict:
         return ("अभी का मौसम इस जगह के हक़ में नहीं।", "Abhi ka mausam is jagah ke haq mein nahi")
 
     def b_shock():
-        return (f"और इसका अभी का स्कोर? सिर्फ़ {disp_voice}।", f"Iska abhi ka score? sirf {disp}")
+        return (f"और अभी का स्कोर — सिर्फ़ {disp_voice}।", f"Aur abhi ka score — sirf {disp}")
 
     def b_receipt():
         return ("मौसम, सड़क, भीड़, अस्पताल, नेटवर्क — पाँचों परखे, तभी " + disp_voice + "।",
@@ -401,7 +462,8 @@ def _template_spec(dest: dict) -> dict:
             return ("जाने से पहले पूरी कुंडली NakshIQ पे देख लेना।", "Jaane se pehle poori kundli — NakshIQ pe")
         if kind == "wait":
             return ("बेहतर महीना NakshIQ पे देखो, फिर निकलो।", "Behtar mahina NakshIQ pe — phir niklo")
-        return ("वायरल होने से पहले — सेव कर लो।", "Viral hone se pehle — save karo")
+        # gem/food/drive — the hook owns "viral hone se pehle", so the CTA differs
+        return ("अभी save कर लो — अगली मंज़िल यही।", "Save karo — agli manzil yahi")
 
     # ── arc selection (priority cascade) ──
     is_risky = (elev and elev >= 3500) or diff == "hard" or bsnl_only
@@ -413,20 +475,24 @@ def _template_spec(dest: dict) -> dict:
     if raw <= 2:                                   # DON'T-GO / WAIT (score leads)
         arc, kind = "wait", "wait"
         profile = "swara_deep" if even else "madhur_deep"
-        body = [b_hook(), b_shock(), b_wait_reason()]
+        body = [b_hook("wait"), b_shock(), b_wait_reason()]
     elif is_risky:                                  # WARN-then-WHY (go prepared)
         arc, kind = "warn", "warn"
         profile = "swara_deep" if even else "madhur_deep"
-        body = [b_hook(), b_why(), b_altitude() or b_network(), b_fuel() or b_cold(), b_emergency()]
+        # hook already sells the altitude stakes → skip b_altitude (redundant),
+        # keep it tight: hook → why → one logistics beat → emergency
+        body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
     elif dish and eatery and raw >= 4:              # FOOD-ANCHOR
         arc, kind = "food", "gem"
-        body = [b_hook(), b_food(), b_why(), b_cost() or b_why(False)]
+        # why between hook and b_food so the dish isn't said back-to-back
+        body = [b_hook("food"), b_why(), b_food(), b_cost() or b_network()]
     elif has_drive and raw >= 3:                    # THE-DRIVE
         arc, kind = "drive", "gem"
-        body = [b_hook(), b_drive(), b_why(), b_fuel() or b_network() or b_cold()]
+        # hook already says "the road is the story" → drop b_drive, go to substance
+        body = [b_hook("drive"), b_why(), b_fuel() or b_network() or b_cold()]
     else:                                            # GEM (default, go-now)
         arc, kind = "gem", "gem"
-        body = [b_hook(), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
+        body = [b_hook("gem"), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
 
     # filter + dedupe body
     seen, uniq = set(), []
@@ -456,13 +522,217 @@ def _template_spec(dest: dict) -> dict:
     # (hook → why → altitude → fuel → emergency); other arcs stay at 4.
     cap = 5 if arc == "warn" else 4
     seq = body[:cap] + [b_receipt(), b_cta(kind)]
-    lines = [d for d, _ in seq]
+    lines = [_single_sentence(d) for d, _ in seq]   # 1 sentence/line → captions stay 1:1
     caps = [c for _, c in seq]
     return {
         "lines": lines[:7],
         "caption_lines": caps[:7],
         "voice_profile": profile,
         "arc": arc,
+        "generated": True,
+    }
+
+
+def _template_spec_en(dest: dict) -> dict:
+    """ENGLISH variant for international / inbound travellers — same 5-arc engine
+    and the SAME verified data, but English script + English (Indian-English)
+    voice. Captions == voice (English, no transliteration). One sentence per
+    beat. $0, no runtime LLM, no fabrication."""
+    name = dest.get("name") or dest.get("id") or "This place"
+    state = dest.get("state") or ""
+    raw = dest.get("score") or 3
+    disp = _format_score(raw)                         # "10/10"
+    disp_v = disp.replace("/", " out of ")            # spoken: "10 out of 10"
+
+    intel = dest.get("intel") or {}
+    net = intel.get("network") or {}
+    fuel = intel.get("fuel") or {}
+    wx = intel.get("weather_night") or {}
+    sos = intel.get("sos") or {}
+    reach = intel.get("reach") or {}
+    leg = intel.get("legendary_eatery") or {}
+    safety = sos.get("safety_contact") if isinstance(sos.get("safety_contact"), dict) else {}
+    safety = safety or {}
+    helper = sos.get("local_helper") if isinstance(sos.get("local_helper"), dict) else {}
+    helper = helper or {}
+
+    tagline = (dest.get("tagline") or "").strip()
+    why = dest.get("why_special") or ""
+    note = (dest.get("note") or "").strip()
+    elev = dest.get("elevation_m")
+    diff = (dest.get("difficulty") or "").lower()
+    price = dest.get("price_range_inr")
+    dish = dest.get("hero_dish")
+    eatery = (leg.get("name") if isinstance(leg, dict) else None) or dest.get("eatery_name")
+    summer_low = wx.get("summer_low_c")
+    pump = _lead_token(fuel.get("nearest_petrol_pump"))
+    pump_ok = bool(pump) and len(pump) <= 22 and pump[:1].isupper() and not re.search(
+        r"(?i)\b(town|city|everywhere|multiple|n/?a|none|local|nearest|all)\b", pump)
+    carry_extra = bool(fuel.get("carry_extra"))
+    road = (reach.get("road_condition") or "").lower()
+    last_km = (reach.get("last_km_difficulty") or "").lower()
+    nets = [k for k in ("jio", "airtel", "bsnl", "vi") if net.get(k)]
+    bsnl_only = bool(net.get("bsnl")) and not (net.get("jio") or net.get("airtel") or net.get("vi"))
+
+    def _en(s):
+        return (s, s)
+
+    def b_hook(arc):
+        if arc == "wait":
+            return _en(f"Going to {name} right now — that's the mistake.")
+        if arc == "warn":
+            if elev and elev >= 3500:
+                return _en(f"{elev} metres up — one wrong move, and help is hours away.")
+            return _en(f"{name} is stunning — but one slip here costs you.")
+        if arc == "food" and dish:
+            return _en(f"In {name}, skip the {dish} and you've missed the point.")
+        if arc == "drive":
+            if pump_ok:
+                return _en(f"Past {pump}, the road itself becomes the destination.")
+            return _en(f"In {name}, forget the destination — the drive is the story.")
+        return _en(f"{name} — save this before everyone else finds it.")
+
+    def b_why(punchy=True):
+        cl = _en_clauses(why) or _en_clauses(tagline)
+        if not cl:
+            return None
+        if punchy:
+            sig = [c for c in cl if re.search(r"\d", c) or re.search(
+                r"(?i)\b(only|largest|highest|first|oldest|world|rare|biggest|best|second)\b", c)]
+            cl = sig or cl
+        return _en(cl[0] + ".")
+
+    def b_altitude():
+        if not elev or elev < 3500:
+            return None
+        if elev >= 5000:
+            return _en(f"At {elev} metres, the air holds half the oxygen of sea level.")
+        return _en(f"At {elev} metres the air is thin — you'll feel every step.")
+
+    def b_network():
+        if bsnl_only:
+            return _en("Only BSNL works here — every other network is dead.")
+        if len(nets) == 1:
+            return _en(f"Only {nets[0].upper()} holds a signal here.")
+        return None
+
+    def b_fuel():
+        if not (carry_extra and pump_ok):
+            return None
+        return _en(f"The last fuel is at {pump} — fill up and carry a spare can.")
+
+    def b_cold():
+        if summer_low is None or summer_low > 8:
+            return None
+        return _en(f"Even in summer, nights fall to {summer_low} degrees — pack warm.")
+
+    def b_food():
+        if not dish:
+            return None
+        if eatery:
+            return _en(f"And don't leave without the {dish}, at {eatery}.")
+        return _en(f"And don't miss the local {dish}.")
+
+    def b_cost():
+        if not price:
+            return None
+        m = re.findall(r"\d[\d,]*", str(price))
+        if not m or int(m[0].replace(",", "")) > 2500:
+            return None
+        return _en(f"And it's cheap — stays start at just {m[0]} rupees.")
+
+    def b_emergency():
+        val = (safety.get("value") or helper.get("phone") or "").strip()
+        if not val:
+            return None
+        label = (safety.get("label") or helper.get("name") or "").strip()
+        cap = f"Emergency: {label} → {val}" if label and label.lower() not in (
+            "emergency", "rescue", "local rescue", "helpline") else f"Emergency → {val}"
+        if len(cap) > 80:
+            cap = f"Emergency → {val}"
+        return ("Save one emergency number before you go — it's below.", cap)
+
+    def b_wait_reason():
+        nl = note.lower()
+        if any(k in nl for k in ("monsoon", "rain", "rainfall", "flood")):
+            return _en("It's monsoon now — trails shut, roads slick, views fogged out.")
+        if any(k in nl for k in ("snow", "closed", "pass clos", "blocked")):
+            return _en("The route's closed now — snow and blocked passes.")
+        if any(k in nl for k in ("heat", "38", "40", "42", "45", "47", "brutal", "hot")):
+            return _en("It's brutally hot right now — the middle of the day is rough.")
+        if summer_low is not None and summer_low <= 4:
+            return _en(f"Nights drop to {summer_low} degrees — conditions aren't right yet.")
+        return _en("The weather just isn't on your side right now.")
+
+    def b_shock():
+        return _en(f"Its score right now — just {disp}.")
+
+    def b_receipt():
+        return (f"Weather, road, crowd, hospital, signal — all five checked, and that's a {disp_v}.",
+                f"Weather · road · crowd · hospital · signal → {disp}")
+
+    def b_cta(kind):
+        if kind == "warn":
+            return _en("See the full breakdown on NakshIQ before you go.")
+        if kind == "wait":
+            return _en("Check a better month on NakshIQ first.")
+        return _en("Save it — your next trip might start here.")
+
+    is_risky = (elev and elev >= 3500) or diff == "hard" or bsnl_only
+    has_drive = last_km == "hard" or any(
+        k in road for k in ("landslide", "pass", "4wd", "4x4", "narrow", "unpaved", "single-lane", "single lane"))
+    even = (sum(ord(c) for c in (dest.get("id") or "x")) % 2 == 0)
+
+    def _prof(bright):
+        if bright:
+            return "en_bright_f" if even else "en_bright_m"
+        return "en_deep_f" if even else "en_deep_m"
+
+    if raw <= 2:
+        arc, kind, profile = "wait", "wait", _prof(False)
+        body = [b_hook("wait"), b_shock(), b_wait_reason()]
+    elif is_risky:
+        arc, kind, profile = "warn", "warn", _prof(False)
+        body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
+    elif dish and eatery and raw >= 4:
+        arc, kind, profile = "food", "gem", _prof(True)
+        body = [b_hook("food"), b_why(), b_food(), b_cost() or b_network()]
+    elif has_drive and raw >= 3:
+        arc, kind, profile = "drive", "gem", _prof(True)
+        body = [b_hook("drive"), b_why(), b_fuel() or b_network() or b_cold()]
+    else:
+        arc, kind, profile = "gem", "gem", _prof(True)
+        body = [b_hook("gem"), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
+
+    seen, uniq = set(), []
+    for beat in body:
+        if not beat:
+            continue
+        k = beat[1].lower()[:26]
+        if k in seen:
+            continue
+        seen.add(k); uniq.append(beat)
+    body = uniq
+    if len(body) < 3:
+        for c in _en_clauses(why):
+            cand = (c + ".", c + ".")
+            if cand[1].lower()[:26] not in seen:
+                body.append(cand); seen.add(cand[1].lower()[:26])
+            if len(body) >= 3:
+                break
+    if len(body) < 2:
+        body = [_en(f"{name} — a corner of {state or 'India'} most travellers walk right past.")]
+
+    cap = 5 if arc == "warn" else 4
+    seq = body[:cap] + [b_receipt(), b_cta(kind)]
+    lines = [_single_sentence(d) for d, _ in seq]
+    caps = [c for _, c in seq]
+    return {
+        "lines": lines[:7],
+        "caption_lines": caps[:7],
+        "voice_profile": profile,
+        "arc": arc,
+        "lang": "en",
         "generated": True,
     }
 
@@ -802,7 +1072,8 @@ def _pick_music() -> Optional[Path]:
 
 def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
           voice_override: str = None, rate_override: str = None,
-          pitch_override: str = None, eleven_override: str = None) -> Optional[dict]:
+          pitch_override: str = None, eleven_override: str = None,
+          lang: str = "hi") -> Optional[dict]:
     score_disp = _format_score(dest.get("score"))
     name = dest.get("name") or slug
 
@@ -810,7 +1081,7 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         tdp = Path(td)
         # 1. script -> 2. voice (hand-written bank or tone-B template; profile
         #    sets the tuned voice/rate/pitch, CLI flags still override)
-        spec = _resolve_spec(slug, dest)
+        spec = _resolve_spec(slug, dest, lang)
         lines = spec.get("lines", [])
         if not lines:
             print("no script lines"); return None
@@ -971,7 +1242,7 @@ def _yt_caption_v2(dest: dict, spec: dict, music_credit: str, month_name: str) -
     name = dest.get("name") or dest.get("id"); state = dest.get("state", "")
     disp = _format_score(dest.get("score"))
     caps = spec.get("caption_lines") or []
-    hook = caps[0] if caps else f"{name} — {disp}"
+    hook = (caps[0] if caps else f"{name} — {disp}").rstrip(".")
     link = _series_link(dest.get("id"), month_name.lower())
     title = f"{name}: {month_name} NakshIQ Score {disp}"
     body = (f"{hook}.\n\n{name}, {state} — {month_name} score {disp} "
@@ -986,7 +1257,7 @@ def _ig_caption_v2(dest: dict, spec: dict, music_credit: str, month_name: str) -
     name = dest.get("name") or dest.get("id"); state = dest.get("state", "")
     disp = _format_score(dest.get("score"))
     caps = spec.get("caption_lines") or []
-    hook = caps[0] if caps else f"{name} — {disp}"
+    hook = (caps[0] if caps else f"{name} — {disp}").rstrip(".")
     body = (f"{hook}.\n\n{name}, {state} — {month_name} NakshIQ score {disp}. "
             f"Real data, no fluff.\n\n\U0001f4be Save this for your {month_name} trip.\n\n"
             f"{_hashtags(name, state, 16)}")
@@ -1011,7 +1282,8 @@ def _fetch_destinations(month: int = None, max_score: int = None) -> list:
 
 
 def build_series_short(dry_run: bool = False, preview: bool = False,
-                       slug: str = None, month: int = None) -> Optional[dict]:
+                       slug: str = None, month: int = None,
+                       lang: str = None) -> Optional[dict]:
     """Autoposter entrypoint for the 'NakshIQ Score' v2 series. Returns the same
     dict shape as yt_shorts_gen.build_yt_short so _run_yt_short publishes it to
     YouTube + Instagram unchanged. None on failure (caller falls back to v1)."""
@@ -1052,15 +1324,23 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
         print("series: no eligible destination (needs footage + not posted this month)")
         return None
     slug = dest.get("id")
-    print(f"series: picked {slug} (score {dest.get('score')}, {dest.get('state','')})")
+    # Language: a LOW RATIO of posts go out in English for inbound/international
+    # travellers (same accounts). Deterministic per slug+day so retries are
+    # stable. Tune or disable via NAKSHIQ_YT_EN_RATIO (default 0.25; 0 = Hindi
+    # only). English reuses the same verified data + arcs, en-IN Neerja voice.
+    if lang is None:
+        ratio = float(os.environ.get("NAKSHIQ_YT_EN_RATIO", "0.25") or 0)
+        h = sum(ord(c) for c in (slug + date.today().isoformat())) % 100
+        lang = "en" if (ratio > 0 and h < ratio * 100) else "hi"
+    print(f"series: picked {slug} (score {dest.get('score')}, {dest.get('state','')}) lang={lang}")
 
-    spec = _resolve_spec(slug, dest)
+    spec = _resolve_spec(slug, dest, lang)
     profile = spec.get("voice_profile") or _profile_for(dest)
     music = _pick_music_v2(profile)
 
-    final_name = f"yt_short_nakshiq_score_{slug}_{date.today().isoformat()}.mp4"
+    final_name = f"yt_short_nakshiq_score_{slug}_{lang}_{date.today().isoformat()}.mp4"
     out = (HERE / final_name) if preview else (Path(tempfile.gettempdir()) / final_name)
-    res = build(slug, dest, out, music=music)
+    res = build(slug, dest, out, music=music, lang=lang)
     if not res:
         print("series: render failed")
         return None
@@ -1095,6 +1375,7 @@ if __name__ == "__main__":
     ap.add_argument("--pitch", default=None, help="override pitch e.g. +20Hz or -10Hz")
     ap.add_argument("--music", default=None, help="path to a music file (mp3/wav)")
     ap.add_argument("--eleven-voice", default=None, help="ElevenLabs voice id (needs ELEVENLABS_API_KEY)")
+    ap.add_argument("--lang", default="hi", choices=["hi", "en"], help="script language (hi=Hindi, en=English/inbound)")
     args = ap.parse_args()
 
     dest = _fetch_dest(args.slug, args.month)
@@ -1105,7 +1386,7 @@ if __name__ == "__main__":
     music = Path(args.music) if args.music else None
     res = build(args.slug, dest, out, music=music, voice_override=args.voice,
                 rate_override=args.rate, pitch_override=args.pitch,
-                eleven_override=args.eleven_voice)
+                eleven_override=args.eleven_voice, lang=args.lang)
     if res:
         print(json.dumps({k: v for k, v in res.items() if k != "video_bytes"},
                          indent=2, ensure_ascii=False, default=str))

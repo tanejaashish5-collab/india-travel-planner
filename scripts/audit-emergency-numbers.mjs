@@ -4,8 +4,10 @@
  *
  * Lists emergency_sos rows that need re-verification:
  *   - never marked verified, OR
- *   - last verified > 30 days ago, OR
- *   - missing source_url
+ *   - missing source_url, OR
+ *   - past their class re-check window: 45 days for rows with a real district
+ *     desk / hospital phone, 180 days for national-constants-only rows
+ *     (100/101/108/112/1091/1073/1363 — MHA/MoT constants that don't change).
  *
  * Output is grouped by state so the editorial pass is easy:
  * "this week: re-check all Tamil Nadu SOS rows".
@@ -37,17 +39,28 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSessi
 
 const { data: rows, error } = await supabase
   .from("emergency_sos")
-  .select("destination_id, verified, verified_date, last_verified_attempt_at, source_url, source_label, destinations:destination_id(name, state_id)");
+  .select("destination_id, verified, verified_date, last_verified_attempt_at, source_url, source_label, local_police_station, nearest_hospital, destinations:destination_id(name, state_id)");
 if (error) {
   console.error("Fetch failed:", error.message);
   process.exit(1);
 }
 
-const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+// Smart re-verification cadence (migration 069): national-constant numbers
+// (100/101/108/112/1091/1073/1363 — MHA/MoT constants that don't change) →
+// 180-day window; rows whose local_police_station / nearest_hospital carry a
+// real district desk / hospital PHONE → 45-day window. PHONE_RE needs an
+// STD-hyphen group, a 10-digit mobile, or "Tel:" so a bare 6-digit pincode in
+// a hospital address isn't mis-read as a desk line.
+const PHONE_RE = /Tel:|\d{3,5}-\d{5,8}|[6-9]\d{9}/;
+const DISTRICT_WINDOW_MS = 45 * 24 * 60 * 60 * 1000;
+const CONSTANTS_WINDOW_MS = 180 * 24 * 60 * 60 * 1000;
 const nowMs = Date.now();
 
 const stale = rows
   .map((r) => {
+    const hasDistrictLine =
+      PHONE_RE.test(r.local_police_station ?? "") || PHONE_RE.test(r.nearest_hospital ?? "");
+    const windowMs = hasDistrictLine ? DISTRICT_WINDOW_MS : CONSTANTS_WINDOW_MS;
     const verifiedMs = r.verified_date ? new Date(r.verified_date).getTime() : 0;
     const attemptedMs = r.last_verified_attempt_at ? new Date(r.last_verified_attempt_at).getTime() : 0;
     const lastTouch = Math.max(verifiedMs, attemptedMs);
@@ -55,7 +68,7 @@ const stale = rows
     const reasons = [];
     if (!r.verified) reasons.push("not_verified");
     if (!r.verified_date) reasons.push("no_verified_date");
-    else if (verifiedMs < nowMs - THIRTY_DAYS_MS) reasons.push(`stale_${daysSince}d`);
+    else if (verifiedMs < nowMs - windowMs) reasons.push(`stale_${daysSince}d`);
     if (!r.source_url) reasons.push("no_source_url");
     return {
       destination_id: r.destination_id,
@@ -82,6 +95,7 @@ if (flagJson) {
 console.log(`\n=== SOS verification audit ===`);
 console.log(`Run at: ${new Date().toISOString()}`);
 console.log(`Total rows in emergency_sos: ${rows.length}`);
+console.log(`Cadence: district desk/hospital lines 45d · national-constant numbers 180d (migration 069)`);
 console.log(`Need attention: ${stale.length}\n`);
 
 const byState = new Map();
