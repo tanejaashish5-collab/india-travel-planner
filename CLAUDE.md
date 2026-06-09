@@ -54,6 +54,7 @@ Monorepo (npm workspaces + Turborepo):
 - **All data must be real and verifiable** — zero fabricated phones, contacts, statistics. Honest scarcity (`[]`) preferred over fabrication.
 - Verify JSONB field names against `canonical_schema.md` in memory before inserting state data
 - i18n messages: `apps/web/src/messages/en.json` and `hi.json`
+- **Verified-data backfills that write to `destinations` should also bump `content_reviewed_at` for the rows they touch.** The `destinations_updated_at` trigger bumps `updated_at` on every write, and the freshness-drift cron treats `updated_at > content_reviewed_at` as editorial review-debt. A verified backfill IS a review of that data, so stamp `content_reviewed_at = now()` on the touched rows (or disable the trigger and set it `= updated_at`) — otherwise every data sweep re-inflates the Monday "REVIEW NEEDED" digest. There's a 21-day grace window, so transient drift is fine; persistent drift is the signal.
 
 ## Environment
 

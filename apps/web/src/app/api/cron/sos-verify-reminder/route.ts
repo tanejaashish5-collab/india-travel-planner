@@ -39,19 +39,31 @@ export async function GET(req: NextRequest) {
 
   const { data: rows, error } = await supabase
     .from("emergency_sos")
-    .select("destination_id, verified, verified_date, last_verified_attempt_at, source_url, destinations:destination_id(name, state_id)");
+    .select("destination_id, verified, verified_date, last_verified_attempt_at, source_url, local_police_station, nearest_hospital, destinations:destination_id(name, state_id)");
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-  const THIRTY_DAYS_MS = 30 * 86400_000;
+  // Smart re-verification cadence (migration 069). National-constant numbers
+  // (police 100/112, fire 101, ambulance 108, women 1091/181, road 1073,
+  // tourist 1363) are MHA / Ministry-of-Tourism constants that don't change →
+  // 180-day window. Rows whose local_police_station / nearest_hospital carry an
+  // actual district desk or hospital PHONE can decay → 45-day window. The
+  // classifier requires an STD-hyphen group, a 10-digit mobile, or "Tel:" so a
+  // bare 6-digit PINCODE in a hospital address isn't mis-read as a desk line.
+  const PHONE_RE = /Tel:|\d{3,5}-\d{5,8}|[6-9]\d{9}/;
+  const DISTRICT_WINDOW_MS = 45 * 86400_000;
+  const CONSTANTS_WINDOW_MS = 180 * 86400_000;
   const nowMs = Date.now();
 
   const stale = (rows ?? [])
     .map((r) => {
+      const hasDistrictLine =
+        PHONE_RE.test(r.local_police_station ?? "") || PHONE_RE.test(r.nearest_hospital ?? "");
+      const windowMs = hasDistrictLine ? DISTRICT_WINDOW_MS : CONSTANTS_WINDOW_MS;
       const verifiedMs = r.verified_date ? new Date(r.verified_date).getTime() : 0;
       const reasons: string[] = [];
       if (!r.verified) reasons.push("not_verified");
       if (!r.verified_date) reasons.push("no_date");
-      else if (verifiedMs < nowMs - THIRTY_DAYS_MS) {
+      else if (verifiedMs < nowMs - windowMs) {
         const days = Math.floor((nowMs - verifiedMs) / 86400_000);
         reasons.push(`stale_${days}d`);
       }
@@ -108,7 +120,8 @@ export async function GET(req: NextRequest) {
       <p style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 8px;">Weekly · SOS verification</p>
       <h2 style="margin:0 0 8px;font-size:18px;">${stale.length} emergency SOS rows need re-checking</h2>
       <p style="color:#666;font-size:13px;line-height:1.5;">
-        These rows are unverified, missing a source URL, or were last verified more than 30 days ago.
+        These rows are unverified, missing a source URL, or past their re-check window —
+        district desk / hospital lines after 45 days, national-constant numbers (100/101/108/112/1091/1073/1363) after 180.
         Numbers can go stale fast — POC desk lines change, hospitals relocate. Please re-check,
         update <code>verified_date</code> + <code>source_url</code>, and the warning clears.
       </p>
@@ -130,9 +143,10 @@ export async function GET(req: NextRequest) {
       subject: `[NakshIQ · SOS] ${stale.length} rows need re-verification`,
       html,
     });
-  } catch (err: any) {
-    console.error("[sos-verify-reminder] email failed:", err?.message);
-    return NextResponse.json({ ok: true, summary, emailed: false, error: err?.message });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("[sos-verify-reminder] email failed:", message);
+    return NextResponse.json({ ok: true, summary, emailed: false, error: message });
   }
 
   return NextResponse.json({ ok: true, summary, emailed: true });
