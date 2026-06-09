@@ -78,6 +78,8 @@ VOICE_PROFILES = {
     "en_deep_m":     {"voice": "en-IN-PrabhatNeural",           "rate": "+5%",  "pitch": "-8Hz"},
     "en_bright_f":   {"voice": "en-IN-NeerjaExpressiveNeural",  "rate": "+12%", "pitch": "+0Hz"},   # gem/food/drive
     "en_bright_m":   {"voice": "en-IN-PrabhatNeural",           "rate": "+10%", "pitch": "+0Hz"},
+    # "Landing in India" arrival reels — Neerja, clear + brisk (info reel, keep it tight).
+    "en_arrival":    {"voice": "en-IN-NeerjaNeural",           "rate": "+16%", "pitch": "+0Hz"},
 }
 
 # ── Optional ElevenLabs premium voice ─────────────────────────────────
@@ -738,6 +740,93 @@ def _template_spec_en(dest: dict) -> dict:
 
 
 # ─────────────────────────────────────────────────────────────────────────
+# 1b. "LANDING IN INDIA" — arrival-logistics reels for inbound travellers
+#     A SEPARATE content type (NOT a destination score). English, en-IN voice.
+#     Beats are field-gated against data/arrivals/arrivals.json (verified +
+#     sourced; see AUDIT-arrivals-*.md). $0, no runtime LLM, no fabrication:
+#     an unconfirmed airport-transport fact is `null` → the beat falls back to
+#     the always-true prepaid-taxi line (honest scarcity).
+# ─────────────────────────────────────────────────────────────────────────
+
+ARRIVALS_FILE = HERE / "data" / "arrivals" / "arrivals.json"
+
+
+def load_arrivals() -> Optional[dict]:
+    """Return {"national": {...}, "airports": [...]} or None if the bank is
+    missing/unreadable."""
+    try:
+        return json.loads(ARRIVALS_FILE.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"arrivals: bank unavailable ({e})")
+        return None
+
+
+def _template_spec_arrival(airport: dict, national: dict) -> dict:
+    """Deterministic, field-gated arrival-logistics script for one gateway
+    airport. Same caption==voice / one-sentence-per-beat discipline as the
+    English destination engine. Returns the standard spec shape."""
+    city = (airport.get("city") or "your city").strip()
+    code = (airport.get("code") or "").strip().upper()
+    vibe = (airport.get("vibe") or "").strip()              # city first-impression
+    transport = (airport.get("transport") or "").strip()    # airport-specific ride
+    signature = (airport.get("signature") or "").strip()    # city distinctive tip
+    ride_note = (airport.get("ride_note") or "").strip()    # Goa taxi override
+
+    visa = (national.get("visa") or "").strip()
+    tips = national.get("tips") or {}
+
+    # Rotate the constant national advice so reels DON'T all read with the same
+    # four lines: one safety tip + one extra, picked deterministically per airport.
+    idx = sum(ord(c) for c in code) if code else 0
+    safety_pool = [t for t in (tips.get("taxi_safe", ""), tips.get("scam", "")) if t]
+    extra_pool = [t for t in (tips.get("sim", ""), tips.get("money", ""),
+                              tips.get("water", ""), tips.get("mrp", "")) if t]
+    safety = safety_pool[idx % len(safety_pool)] if safety_pool else ""
+    # Goa: the prepaid-taxi/app-cab line is wrong (ride apps are limited) — swap in
+    # the airport's own ride note whenever the taxi tip is the one that came up.
+    if ride_note and safety == tips.get("taxi_safe", ""):
+        safety = ride_note
+    extra = extra_pool[idx % len(extra_pool)] if extra_pool else ""
+
+    # The city-specific lines (vibe / transport / signature) carry the
+    # differentiation; visa anchors the value; safety + extra rotate. The hook
+    # names the city. Skip blanks; dedupe.
+    hook = f"Just landed in {city}?"
+    body = [vibe, visa, transport, signature, safety, extra]
+    cta = "Save this — first-hour guides for every Indian airport on NakshIQ."
+
+    seq, seen = [hook], set()
+    for s in body + [cta]:
+        s = (s or "").strip()
+        if not s:
+            continue
+        k = s.lower()[:28]
+        if k in seen:
+            continue
+        seen.add(k)
+        seq.append(s)
+
+    # Keep it Short-length: hook + up to 7 body + CTA (≤9 lines).
+    if len(seq) > 9:
+        seq = seq[:8] + seq[-1:]
+    lines = [_single_sentence(s) for s in seq]
+
+    even = (sum(ord(c) for c in code) % 2 == 0)
+    return {
+        "lines": lines,
+        "caption_lines": lines,           # captions == voice (English)
+        "voice_profile": "en_arrival",
+        "arc": "arrive",
+        "lang": "en",
+        "arrival": True,
+        "code": code,
+        "city": city,
+        "generated": True,
+        "even": even,
+    }
+
+
+# ─────────────────────────────────────────────────────────────────────────
 # 2. VOICE  (edge-tts + word timing from sentence boundaries)
 # ─────────────────────────────────────────────────────────────────────────
 
@@ -854,7 +943,7 @@ def _ass_color(hex6: str) -> str:
     return f"&H00{b}{g}{r}".upper()
 
 
-def build_ass(cues, score_disp, name, total_dur, out_ass: Path):
+def build_ass(cues, score_disp, name, total_dur, out_ass: Path, hook: dict = None):
     W = _ass_color(BONE); V = _ass_color(VERMILLION); S = _ass_color(SAFFRON)
     INK = _ass_color(INK_DEEP)
     vermillion_bg = (VERMILLION[4:6] + VERMILLION[2:4] + VERMILLION[0:2]).upper()  # BGR for ASS box
@@ -889,19 +978,34 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
     voice_end = total_dur - TAIL
 
-    # HOOK — small kicker + the score SLAMMING in (0.12 -> hook_end), then it
-    # shrinks into the persistent top badge.
+    # HOOK — small kicker + a big token SLAMMING in (0.12 -> hook_end), then it
+    # shrinks into the persistent top badge. Destination reels slam the score;
+    # arrival reels ("Landing in India") have no score, so they slam the 3-letter
+    # airport code and use English/arrival copy instead.
+    if hook:
+        kicker_txt = hook.get("kicker", "FIRST HOUR IN INDIA")
+        slam_txt = hook.get("slam", "")
+        badge_txt = hook.get("badge", "")
+        cta1_txt = hook.get("cta1", "SAVE THIS")
+        cta2_txt = hook.get("cta2", "nakshiq.com")
+    else:
+        kicker_txt = "JUNE  •  NAKSHIQ SCORE"
+        slam_txt = score_disp.replace("/", " / ")
+        badge_txt = "  " + name.upper() + "   " + score_disp + "  "
+        cta1_txt = "SAVE THIS"
+        cta2_txt = "roz naye scores · nakshiq.com"
+
     hook_end = LEAD + 1.6
     dlg(0.40, hook_end, "Kicker",
-        "{\\an5\\pos(540,560)\\fad(150,80)}JUNE  •  NAKSHIQ SCORE")
+        "{\\an5\\pos(540,560)\\fad(150,80)}" + kicker_txt)
     dlg(0.12, hook_end, "Score",
         "{\\an5\\pos(540,800)\\fad(60,120)\\fscx26\\fscy26\\t(0,240,\\fscx120\\fscy120)\\t(240,440,\\fscx100\\fscy100)}"
-        + score_disp.replace("/", " / "))
+        + slam_txt)
 
-    # Persistent top badge (after the hook): "<NAME> · 10/10" so the score +
-    # destination stay on screen the whole time — reinforces the data brand.
+    # Persistent top badge (after the hook): destination "<NAME> · 10/10", or for
+    # arrival "<CITY> · <CODE>" — stays on screen to anchor the reel.
     dlg(hook_end - 0.1, voice_end, "Badge",
-        "{\\an8\\pos(540,150)\\fad(180,0)}  " + name.upper() + "   " + score_disp + "  ")
+        "{\\an8\\pos(540,150)\\fad(180,0)}" + badge_txt)
 
     # WORD CAPTIONS — big, low (in the bottom scrim), pop-in, synced to voice.
     for (s, e, txt) in cues:
@@ -914,9 +1018,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
     # CTA hold at the end (after the voice finishes)
     dlg(voice_end + 0.05, total_dur, "CTA",
-        "{\\an5\\pos(540,1150)\\fad(140,0)}SAVE THIS")
+        "{\\an5\\pos(540,1150)\\fad(140,0)}" + cta1_txt)
     dlg(voice_end + 0.30, total_dur, "Kicker",
-        "{\\an5\\pos(540,1320)\\fad(180,0)}roz naye scores · nakshiq.com")
+        "{\\an5\\pos(540,1320)\\fad(180,0)}" + cta2_txt)
 
     out_ass.write_text(header + "\n".join(ev) + "\n", encoding="utf-8")
     return out_ass
@@ -1073,15 +1177,16 @@ def _pick_music() -> Optional[Path]:
 def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
           voice_override: str = None, rate_override: str = None,
           pitch_override: str = None, eleven_override: str = None,
-          lang: str = "hi") -> Optional[dict]:
+          lang: str = "hi", spec: dict = None, hook: dict = None) -> Optional[dict]:
     score_disp = _format_score(dest.get("score"))
     name = dest.get("name") or slug
 
     with tempfile.TemporaryDirectory(prefix="nq_v2_") as td:
         tdp = Path(td)
         # 1. script -> 2. voice (hand-written bank or tone-B template; profile
-        #    sets the tuned voice/rate/pitch, CLI flags still override)
-        spec = _resolve_spec(slug, dest, lang)
+        #    sets the tuned voice/rate/pitch, CLI flags still override). A caller
+        #    can inject a ready-made spec (arrival reels) to bypass _resolve_spec.
+        spec = spec or _resolve_spec(slug, dest, lang)
         lines = spec.get("lines", [])
         if not lines:
             print("no script lines"); return None
@@ -1110,7 +1215,7 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         cues = _word_cues(bounds, cap_lines)
 
         # 3. ASS
-        ass = build_ass(cues, score_disp, name, total, tdp / "subs.ass")
+        ass = build_ass(cues, score_disp, name, total, tdp / "subs.ass", hook=hook)
         # 4. background
         clip = _find_clip(slug)
         bg = _build_background(clip, total, tdp / "bg.mp4")
@@ -1364,6 +1469,167 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
     return result
 
 
+# ─────────────────────────────────────────────────────────────────────────
+# 7b. "LANDING IN INDIA" arrival reels — captions + autoposter entry
+# ─────────────────────────────────────────────────────────────────────────
+
+_ARRIVAL_HASHTAGS = ["IncredibleIndia", "IndiaTravel", "FirstTimeInIndia", "TravelIndia",
+                     "IndiaTrip", "Shorts", "TravelShorts", "IndiaTips", "BackpackingIndia",
+                     "TravelTips", "NakshIQ", "TravelWithIQ"]
+
+
+def _arrival_link() -> str:
+    return ("https://nakshiq.com/en?utm_source=youtube&utm_medium=short"
+            "&utm_campaign=nakshiq-arrival")
+
+
+def _arrival_hashtags(city: str, code: str, n: int = 12) -> str:
+    tags = []
+
+    def push(t):
+        t = (t or "").replace(" ", "").replace("-", "").replace("&", "")
+        if t and t not in tags:
+            tags.append(t)
+    push(city); push((city or "") + "Airport"); push(code)
+    for t in _ARRIVAL_HASHTAGS:
+        if len(tags) >= n:
+            break
+        push(t)
+    return " ".join("#" + t for t in tags[:n])
+
+
+def _arrival_body_lines(spec: dict) -> str:
+    """The on-screen body steps (skip the hook + the CTA)."""
+    caps = spec.get("caption_lines") or []
+    return " ".join(caps[1:-1]).strip() if len(caps) > 2 else ""
+
+
+def _yt_caption_arrival(airport: dict, spec: dict, music_credit: str) -> str:
+    city = airport.get("city") or ""
+    code = airport.get("code") or ""
+    aname = airport.get("airport_name") or f"{city} Airport"
+    hook = f"Just landed at {aname} ({code})? Here's your first hour in India"
+    title = f"Landing at {aname} ({code})? Your first hour in India"
+    body = (f"{hook}.\n\n{_arrival_body_lines(spec)}\n\n"
+            f"Verified, no-fluff India guides → {_arrival_link()}\n\n"
+            f"{_arrival_hashtags(city, code)}").replace("  ", " ")
+    if music_credit:
+        body += f"\n\n{music_credit}"
+    return title + "\n\n" + body   # _run_yt_short takes the first line as YT title
+
+
+def _ig_caption_arrival(airport: dict, spec: dict, music_credit: str) -> str:
+    city = airport.get("city") or ""
+    code = airport.get("code") or ""
+    body = (f"Just landed in {city}? Here's your first hour in India.\n\n"
+            f"Visa, SIM, the ride into town, and the one scam to ignore.\n\n"
+            f"\U0001f4be Save this before you fly.\n\n"
+            f"{_arrival_hashtags(city, code, 16)}")
+    if music_credit:
+        body += f"\n\n{music_credit}"
+    return body
+
+
+def arrival_due_today() -> bool:
+    """True on a deterministic LOW fraction of days, set by NAKSHIQ_YT_ARRIVAL_RATIO
+    (default 0 = OFF). Lets a few daily slots run the inbound "Landing in India"
+    reel instead of the destination-score reel, on the same accounts."""
+    try:
+        ratio = float(os.environ.get("NAKSHIQ_YT_ARRIVAL_RATIO", "0") or 0)
+    except ValueError:
+        ratio = 0.0
+    if ratio <= 0:
+        return False
+    h = sum(ord(c) for c in ("arrival" + date.today().isoformat())) % 100
+    return h < ratio * 100
+
+
+def _arrival_hook(airport: dict) -> dict:
+    city = (airport.get("city") or "").upper()
+    code = (airport.get("code") or "").upper()
+    return {
+        "kicker": "FIRST HOUR IN INDIA",
+        "slam": code,
+        "badge": f"  {city}  ·  {code}  ",
+        "cta1": "SAVE THIS",
+        "cta2": "your first hour in India · nakshiq.com",
+    }
+
+
+def build_arrival_short(dry_run: bool = False, preview: bool = False,
+                        code: str = None) -> Optional[dict]:
+    """Autoposter entry for a "Landing in India" arrival reel. Returns the same
+    publish-dict shape as build_series_short (so _run_yt_short ships it to
+    YouTube + Instagram unchanged), or None to let the caller fall back."""
+    bank = load_arrivals()
+    if not bank:
+        return None
+    national = bank.get("national") or {}
+    airports = bank.get("airports") or []
+    if not airports:
+        print("arrival: empty bank")
+        return None
+
+    used = set()
+    try:
+        from autoposter import recently_used_destinations, load_state
+        used = recently_used_destinations(load_state()) or set()
+    except Exception as e:
+        print(f"arrival: cross-flow dedup unavailable ({e})")
+
+    if code:
+        pool = [a for a in airports if (a.get("code") or "").upper() == code.upper()]
+    else:
+        # rotate by date so consecutive arrival slots pick different gateways,
+        # and prefer a gateway whose city clip wasn't just used by the score series.
+        seed = sum(ord(c) for c in date.today().isoformat()) % len(airports)
+        rot = airports[seed:] + airports[:seed]
+        pool = [a for a in rot if a.get("clip_slug") not in used] or rot
+
+    airport = None
+    for a in pool:
+        if _find_clip(a.get("clip_slug", "")) is not None:   # R2 fetch on miss
+            airport = a
+            break
+    if not airport:
+        print("arrival: no eligible gateway (needs footage)")
+        return None
+
+    code = (airport.get("code") or "").upper()
+    city = airport.get("city") or ""
+    clip_slug = airport.get("clip_slug") or ""
+    spec = _template_spec_arrival(airport, national)
+    music = _pick_music_v2("bright")          # arrival = welcoming / upbeat
+    hook = _arrival_hook(airport)
+    dest = {"id": clip_slug, "name": city, "score": None, "state": airport.get("serves", "")}
+    print(f"arrival: picked {code} ({city}, clip={clip_slug}) lines={len(spec.get('lines', []))}")
+
+    final_name = f"yt_short_nakshiq_arrival_{code}_{date.today().isoformat()}.mp4"
+    out = (HERE / final_name) if preview else (Path(tempfile.gettempdir()) / final_name)
+    res = build(clip_slug, dest, out, music=music, lang="en", spec=spec, hook=hook)
+    if not res:
+        print("arrival: render failed")
+        return None
+
+    credit = _music_credit(music)
+    result = {
+        "video_bytes": res["video_bytes"],
+        "video_filename": final_name,
+        "caption": _yt_caption_arrival(airport, spec, credit),
+        "ig_caption": _ig_caption_arrival(airport, spec, credit),
+        "format": "nakshiq_arrival",
+        "duration": res["duration"],
+        "music": res.get("music_name", ""),
+        "primary_dest_id": clip_slug,
+    }
+    if not preview:
+        try:
+            out.unlink()
+        except Exception:
+            pass
+    return result
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", default="lolab-valley")
@@ -1376,7 +1642,18 @@ if __name__ == "__main__":
     ap.add_argument("--music", default=None, help="path to a music file (mp3/wav)")
     ap.add_argument("--eleven-voice", default=None, help="ElevenLabs voice id (needs ELEVENLABS_API_KEY)")
     ap.add_argument("--lang", default="hi", choices=["hi", "en"], help="script language (hi=Hindi, en=English/inbound)")
+    ap.add_argument("--arrival", default=None, help="render a 'Landing in India' arrival preview for an IATA code, e.g. DEL")
     args = ap.parse_args()
+
+    if args.arrival:
+        res = build_arrival_short(preview=True, code=args.arrival)
+        if res:
+            print(json.dumps({k: v for k, v in res.items() if k != "video_bytes"},
+                             indent=2, ensure_ascii=False, default=str))
+            print(f"\n✅ Arrival preview: {HERE / res['video_filename']}  ({res['duration']}s)")
+            raise SystemExit(0)
+        print("❌ arrival build failed")
+        raise SystemExit(1)
 
     dest = _fetch_dest(args.slug, args.month)
     if not dest:
