@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-08",
+    "date": "2026-06-08",
+    "started_utc": "2026-06-08T02:21:54Z",
+    "completed_utc": "2026-06-08T02:36:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.8 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-06-08/probe.py, sequential honest timing, per-run temp paths after /tmp/_body collision fix); 4 small Supabase aggregate reads for SOS ground truth; Section K via Claude in Chrome MCP (10 observation rows across explore/dest/landing/trip surfaces)",
+    "mode": "Daily regression — A through K matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 14,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "deployment_note": "Production deployment changed since yesterday's run: dpl_CNZXAShTjajrtqTxZbhGM9FNXSaj → dpl_7LxrP7U8A6RdNJLkRxfhoCfLYznq. POST-RUN VERIFICATION (2026-06-08 ~02:40 UTC, live Playwright + git): the new deploy's diff (PRs #14/#15/#16) touches ONLY pilgrimage pages, the sitemap route, pilgrimage-guide lib, and destination/[month] how-to-reach — it does NOT touch explore-map.tsx, explore-with-map.tsx, or the root layout. So neither finding is a code regression introduced by this deploy. NEW-2026-06-08-001 root-caused to a pre-existing cold-chunk render race exposed (not caused) by the deploy cache-bust; NEW-2026-06-08-002 (#418) is a pre-existing intermittent client-side hydration mismatch (SSR verified deterministic). No rollback warranted. See per-finding verified_followup.",
+  "phases_completed": [
+    "A — Soft-404 regression (8 probes)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-06-08) + 3 warm re-probes",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (12 URLs: landing + 10 dests + 1 month sub-route)",
+    "E — SOS completeness via structured emergencySos blob parse (10 dests) + DB ground-truth aggregates (525 rows)",
+    "F — API smoke (13 probes incl. oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js version/md5, manifest icons+shortcuts, /offline follow",
+    "H — Sitemap integrity (index + 5 chunks)",
+    "I — Core routes HTTP matrix (21 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: explore grid+map toggle (incl. zoom re-probe), 4 destination pages, landing F5, /en/trip; console per surface"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass (cost-aware rule). Last deep pass 2026-05-04; still overdue, especially with the Leaflet-restore + new-deploy churn."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Curl TTFB healthy (21 core routes median 939 ms; dest cold-ISR median 1301 ms warms to 193-211 ms)."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: this-does-not-exist-xyz, zzzzzz-fake, /hi variant all hard 404 (9 bytes). Bare-path probe followed: 404 with redirects=1. 8/8 correct."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 → all 404."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed→400, empty→400, wrong-shape→400, 200KB→413 (cap message), valid→200 (3460b answer). 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed→400, empty→400, {}→400 'Missing required fields'. 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with | NakshIQ | NakshIQ title stutter",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D-seo.csv: 0/12 URLs with stutter."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-07",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v51 (line 119), md5 d0cc522e363cd7fc6521684ac6679f9a — byte-identical 7th consecutive day; manifest 3 icons + 5 shortcuts; /offline 301→/en/offline→200. Harness note: probe.py's first-match regex reads v32 from the in-file version changelog; CACHE_VERSION is the authoritative line."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "Site-wide placeholder regex (X{3,}) across 7 dialable emergency_sos columns: 0 rows (direct DB aggregate)."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 placeholder rows site-wide; khonoma not re-read individually today."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 placeholder rows site-wide; honest-scarcity rescue note remains policy-compliant."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative (hrefLang camelCase)",
+      "prior_status": "STILL CLOSED 2026-06-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "Both casings covered; 12/12 URLs show en + hi + x-default."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers gap: 120/525 destinations (109 tier-A) without curated block",
+      "prior_status": "PARTIAL 2026-06-07",
+      "today_status": "PARTIAL",
+      "evidence": "DB unchanged: deep_dive->local_helpers nonempty 405 / empty 120 / tier-A empty 109 (content_tier='A'); 525/525 emergency_sos rows, 0 under 3 dialable fields, 4,107 structured entries. Sampled pages render ≥6 structured numbers + universal 112 (10/10). Methodology note: emergency_sos.local_helpers (186 nonempty) is NOT the curated-helpers source; the curated block lives at destinations.deep_dive->local_helpers — first aggregate today hit the wrong column and was corrected before reporting."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Destination-page map: Leaflet-vs-atlas two-template migration",
+      "prior_status": "PARTIAL 2026-06-07",
+      "today_status": "PARTIAL",
+      "evidence": "betla (14 tiles) + vishnuprayag (21 tiles) render Leaflet with 1 overlay-pane marker each; udaipur + pangong-lake render the atlas SVG (2× viewBox 0 0 1000 1100). Both templates render; not a defect per skill map-type note; migration tracking only."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Marker-pane probe methodology (markers live in overlay pane)",
+      "prior_status": "NOT_REPRODUCED 2026-06-07 (harness artifact, wrong pane probed)",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Methodology stays corrected (markers live in overlay pane): dest-page Leaflet maps show their 1 overlay-pane path each (betla, vishnuprayag). Distinct from this old wrong-pane artifact, today the explore overlay pane itself is EMPTY — a real regression tracked as NEW-2026-06-08-001 (probed svg+canvas+all panes, 3× over 25s incl. after zoom)."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress",
+      "prior_status": "PARTIAL 2026-06-07",
+      "today_status": "PARTIAL",
+      "evidence": "Same 2 of spot-checked dests on Leaflet (betla, vishnuprayag); sample dests udaipur/pangong-lake still on atlas."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas prints identical static coordinates (23.5N · 80.5E) on every atlas destination",
+      "prior_status": "REPRODUCED 2026-06-07",
+      "today_status": "REPRODUCED",
+      "evidence": "udaipur runtime text shows '23.5N · 80.5E' (real: 24.58N 73.68E). Cosmetic/data-credibility issue on the decorative atlas."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception",
+      "prior_status": "NEW 2026-06-07 (medium) — editorial surfaces only (/en, /en/explore), never dest pages",
+      "today_status": "REPRODUCED",
+      "evidence": "ESCALATED (tracked as NEW-2026-06-08-002): now also fires on destination pages and /en/trip; survived the deploy change. Fired 5 of 9 controlled observations: explore first-nav, betla, pangong-lake, /en post-F5, /en/trip. Clean: explore F5, vishnuprayag, udaipur. Identical rX/iu/sd stack, new chunk dpl_7LxrP7U8A6RdNJLkRxfhoCfLYznq. section-K-map.csv."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Not exercised in today's Chrome pass."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs role=tab without tablist",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-07",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run in daily pass."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli <3 stay cards",
+      "prior_status": "NOT IN SAMPLE 2026-06-07",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's seed-random sample: pangong-lake, ujjain, kumbakonam, yuksom, mansarovar-kailash, mahabaleshwar, udaipur, jodhpur, kasauli, raghurajpur."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-06-08-001",
+      "severity": "medium",
+      "severity_note": "Lowered high→medium after verification: real but intermittent (cold-chunk only), self-recovers on any filter change, not a deploy code-break. Not a rollback trigger.",
+      "title": "REGRESSION: Explore map renders zero markers (511 → 0) — map mounts, data loads, marker layer never attaches",
+      "detail": "On /en/explore Map toggle: Leaflet mounts (1 container, 18 tiles, window.L object, OSM/CARTO attribution, score legend) and the label still reads '511 markers · colored by score' — but the overlay pane has 0 children (no SVG, no canvas), marker pane 0, across 3 probes spanning ~25 s including after a zoom interaction. Yesterday (2026-06-07) the same probe found 511 score-colored circleMarker paths, visually confirmed. The label knowing the count proves the data fetch succeeds; the circleMarker layer silently fails to attach. No console errors. Coincides with the new deployment dpl_7LxrP7U8A6RdNJLkRxfhoCfLYznq. Destination-page Leaflet maps are unaffected (betla, vishnuprayag each render their 1 overlay marker), so this is specific to the explore marker-layer code path, not Leaflet-wide. Also observed (pre-existing?): initial map viewport centers on the Afghanistan/Pakistan region with India in the lower half — check fitBounds while fixing markers.",
+      "evidence": "section-K-map.csv rows explore-map-toggle + explore-map-zoom-reprobe; pane census map-pane:8, tile-pane:1, overlay-pane:0, marker-pane:0; screenshots ss_9770b8m6b, ss_63885crpq (markerless India map with legend promising colored dots); compare 2026-06-07 findings INFO-2026-06-07-003 (511 paths).",
+      "recommendation": "Triage against the new deploy's diff to explore-map.tsx / explore-with-map.tsx (or shared marker-layer util). Suspects: circleMarker layer-group add removed/conditioned out, an early-return on a renamed prop, or pane/renderer option change (svg renderer no longer instantiated). The 'Map' toggle is the flagship discovery surface — recommend same-day fix or rollback.",
+      "verified_followup": "VERIFIED 2026-06-08 ~02:40 UTC (live Playwright, warm load): explore Map toggle renders all 511 markers as SVG <path> in the overlay pane, sampled every 500ms from t=0 to t=6s — consistently 511, 0 console errors. So markers are NOT broken on warm loads. ROOT CAUSE (code-confirmed, not the deploy diff — explore-map.tsx unchanged since 2026-06-05): a render race between the two useEffects in explore-map.tsx. Effect 1 sets mapInstanceRef only after `import('leaflet')` resolves; Effect 2 (markers) fires a SINGLE 500ms setTimeout retry and gives up permanently if the map isn't ready by then. mapDestinations (parent useMemo) is stable unless a filter changes, so Effect 2 never re-runs to rescue. When the Leaflet chunk is COLD (uncached) the import exceeds 500ms — exactly the state right after a deploy cache-bust, which is when the harness probes — so markers never attach while the parent's count label still reads 511 (separate state). The harness probe was CORRECT (overlay_svg_paths=0 was real at that cold moment); this is a genuine intermittent bug, not a harness false positive, but it self-recovers on any filter change and is invisible on warm loads. FIX: PR fix/explore-map-marker-race-2026-06-08 adds a `mapReady` state set when the map instance exists and adds it to the marker effect deps, so markers attach as soon as the import resolves regardless of timing. NOT a rollback case."
+    },
+    {
+      "id": "NEW-2026-06-08-002",
+      "severity": "medium",
+      "severity_note": "Lowered high→medium after verification: real and worth fixing, but pre-existing (not deploy-caused — layout untouched), recoverable, and no visible breakage. The 'escalation to dest pages' is most likely sampling variance on an intermittent recoverable error, not a new spread.",
+      "title": "React #418 hydration exception escalated: now fires on destination pages and /en/trip, not just editorial surfaces",
+      "detail": "Yesterday's NEW-2026-06-07-001 was confined to /en and /en/explore (0 of 5 destination pages). Today it fired on 5 of 9 controlled observations including two destination pages (betla, pangong-lake) and /en/trip — all surfaces render and self-recover (no visible breakage), but hydration fallback now burns client CPU on SEO-critical destination pages, and the spread across templates suggests a layout-level (not page-level) mismatch source — e.g. the masthead (ISSUE Nº 48 · JUNE 2026), month-aware copy, or another shared header/footer element that renders differently server vs client. Survived the deploy change (fires in chunk dpl_7LxrP7U8A6RdNJLkRxfhoCfLYznq), so it is not stale-cache noise. Severity raised medium→high on spread, not on user-visible impact.",
+      "evidence": "section-K-map.csv react_418 column: FIRED on explore-first-nav (02:28:45 local-clock 12:28:45), betla (12:31:12), pangong-lake (12:32:09), /en F5 (12:32:22), /en/trip (12:32:43); clean on explore-F5, vishnuprayag, udaipur. Identical rX/iu/sd minified stack each time.",
+      "recommendation": "Reproduce locally with non-minified React (next dev or production build with NODE_ENV trick) on /en/destination/betla — a dest page repro narrows the suspect set to shared layout components. Diff server HTML vs first client render. Pin any Date-, locale-, or random-dependent output server-side and pass as props.",
+      "verified_followup": "VERIFIED 2026-06-08 ~02:43 UTC (live Playwright): #418 reproduces on /en/destination/betla and /en/explore (same rX/iu/sd stack, deploy dpl_7LxrP7U8). REAL. BUT: (1) the deploy did NOT touch the root layout or any of its client components (CompareProvider/ScrollToTop/PageTransition/MobileTabBar/GA4RouteTracker/MotionProvider/StickyCTA/PWAInstallPrompt/OfflineIndicator/SaveListEmailPrompt/PersonalisationQuiz) — so this is NOT a deploy regression and the 'escalation' narrative is likely sampling noise on a pre-existing intermittent error. (2) Two consecutive server renders of betla are BYTE-IDENTICAL (82,204 chars, zero divergence) — so the SSR is deterministic and the mismatch is CLIENT-SIDE: a layout client component renders different markup on first client paint than the server (classic browser-state-read-during-render: localStorage/matchMedia/window/navigator in a render body or useState initializer). The masthead-month theory is ruled out (deterministic SSR; masthead lives on editorial pages, not betla). NEXT STEP unchanged: non-minified `next dev` repro on /en/destination/betla, then audit the listed layout client components for browser-state reads outside useEffect. Tracked as a proportionate follow-up — recoverable, no user-visible breakage, not blocking."
+    },
+    {
+      "id": "INFO-2026-06-08-003",
+      "severity": "info",
+      "title": "Sitemap grew 26,064 → 26,082 URLs (+18); destination/cost families stable",
+      "detail": "5 chunks, all 200. 525 en-dest slugs + 525 hi-dest + 6,300 en month sub-routes + 525 en-cost + 525 hi-cost — all unchanged; the +18 is in the editorial/index chunks (0/2/3/4: 370, 1,124, 3,196, 6,636 locs).",
+      "evidence": "section-H-sitemap.csv; chunk-1 grep counts."
+    },
+    {
+      "id": "INFO-2026-06-08-004",
+      "severity": "info",
+      "title": "Harness incident prevented, worth keeping: stale root-owned /tmp/_body from yesterday's run silently poisoned today's first probes",
+      "detail": "/tmp persists across daily sandbox sessions but file ownership doesn't (yesterday's files are nobody:nogroup, unwritable). probe.py wrote curl bodies to the fixed path /tmp/_body; today curl exited rc=23 (write error) while -w still emitted '200', so the probe read YESTERDAY'S 712KB HTML as today's sitemap and the sample draw crashed (which is how it was caught — a quieter section could have produced wrong-but-plausible data). Fixed in today's probe.py: per-run temp paths (/tmp/_body_20260608) + hard-fail on any curl nonzero exit. Related minor gotcha documented in PWA-2026-05-05: sw-version regex first-match reads the in-file version changelog (v32), not CACHE_VERSION (v51).",
+      "evidence": "ls -la /tmp/_body → nobody:nogroup Jun 7 02:15; probe.py diff in qa/findings/2026-06-08/.",
+      "recommendation": "Keep per-run temp paths + rc!=0 hard-fail in future probe.py copies (today's file is the template). Never trust -w output without checking curl's exit code."
+    },
+    {
+      "id": "INFO-2026-06-08-005",
+      "severity": "info",
+      "title": "Cold-ISR TTFB pattern again: dest first hits median 1,301 ms (max 3,220), warm re-probes 193-211 ms",
+      "detail": "All 10 sampled dests 200. First hits 185-3,220 ms; the 3 slowest (yuksom 3,220, raghurajpur 3,026, mansarovar-kailash 2,444) warm to 193/211/203 ms — same cold-revalidation pattern as INFO-2026-06-07-004, not a regression. Low-traffic slugs dominate today's sample.",
+      "evidence": "section-B-availability.csv + warm re-probe lines."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 21,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 427, "median": 939, "p90": 1712, "max": 2381 },
+    "core_routes_TTFB_note": "21 real routes all 200 first-hit. The 22nd probe (/en/search) is the intentional phantom-route check — correctly 404s and is excluded.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 185, "median": 1301, "max": 3220 },
+    "destinations_TTFB_note": "Cold-ISR first hits; 3 slowest warm to 193-211 ms (INFO-2026-06-08-005)",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 77,
+    "sos_min_structured_fields_per_dest": 6,
+    "sos_phones_total_across_10_dests": 77,
+    "sos_phones_invalid_format": 0,
+    "sos_text_by_design_fields": 2,
+    "sos_local_helper_phones_in_sample": 1,
+    "sos_universal_112_present": 10,
+    "sos_destinations_with_local_helpers_block": 405,
+    "sos_destinations_without_block": 120,
+    "sos_no_block_tierA": 109,
+    "sos_emergency_sos_rows_db": 525,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_total_structured_entries": 4107,
+    "sos_db_rows_with_placeholder_X": 0,
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_days": 7,
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 26082,
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_total_cost_urls": 1050,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 18,
+    "map_explore_overlay_marker_paths": 0,
+    "map_explore_marker_label_claims": 511,
+    "map_explore_marker_regression": true,
+    "map_dest_pages_probed_interactive": 4,
+    "map_dest_pages_with_leaflet": 2,
+    "map_dest_pages_with_atlas_svg": 2,
+    "map_dest_leaflet_marker_paths_each": 1,
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 9,
+    "console_react_418_fired_loads": "5 of 9 controlled observations (explore first-nav, betla, pangong-lake, /en F5, /en/trip); 0 visible breakage; scope expanded vs yesterday's editorial-only"
+  },
+  "deliverables": [
+    "qa/findings/2026-06-08.json",
+    "qa/findings/2026-06-08/ (probe.py + section CSVs A-K + html/ SSR snapshots + sample-slugs.json)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "Explore-map marker regression is asserted from DOM probes (svg/canvas/pane census ×3 over ~25 s + zoom interaction) and screenshot ss_63885crpq; no console error accompanies it, so root cause is unconfirmed — could be an intentional mid-deploy state, but the on-page label still promising 511 markers argues defect.",
+    "React #418 observations are load-time console captures; fire/clean is timing-sensitive, so the 5-of-9 rate is indicative, not a measured probability. First-fire date on dest pages is 'first observed today' — yesterday's clean dest-page reads were genuine, but capture timing differences can't be fully excluded.",
+    "SOS DB aggregates: the first helpers query hit emergency_sos.local_helpers (186 nonempty) before being corrected to destinations.deep_dive->local_helpers (405/120/109, matching the canonical metric). Only the corrected numbers are reported.",
+    "sos_phones_invalid_format counts placeholder/X-masked or digit-free values in dialable fields; the 2 digit-free fields today (pangong-lake + kasauli local_police_station station names) are by-design descriptive text per the ratnagiri precedent and are counted in sos_text_by_design_fields instead.",
+    "TTFB values are sequential single-shot curl from the Cowork sandbox; absolute values vary with sandbox network weather. Trend + cold/warm split is the signal.",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the owner's key; kept to a single probe per methodology.",
+    "Axe-core and Lighthouse not run today (cost-aware rule); with a fresh deploy and two new regressions, the overdue deep pass should be prioritized once the marker fix ships."
+  ],
+  "business_summary": {
+    "headline": "AMBER — two developer-attention items on an otherwise fully green day. Everything customer-facing in the HTTP layer passed: all 21 core routes, all 10 sampled destinations in English and Hindi, every SEO check, the API layer, PWA assets, and the 26k-URL sitemap. Emergency SOS remains fully verified (525/525 destinations, zero placeholders). But a fresh deployment landed since yesterday and broke the explore map's markers — the map loads and even says '511 markers', yet draws none — and the React hydration warning from yesterday has spread from the landing/explore pages to destination pages and the trip board. Neither blocks users outright; both deserve same-day developer attention.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "21/21 core routes 200; 10/10 sampled destinations 200 in both languages. Cold first-hits up to 3.2 s warm to ~0.2 s" },
+      { "area": "API health", "status": "GREEN", "why": "0 × 5xx across 13 probes; malformed/oversized bodies correctly rejected (400/413); valid chat + weather + search-index return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages serve lang=hi with Devanagari titles" },
+      { "area": "SEO metadata", "status": "GREEN", "why": "12/12 URLs clean: no stutter, canonical + full hreflang + og:image; soft-404 guards 8/8" },
+      { "area": "Emergency SOS", "status": "GREEN", "why": "525/525 destinations carry ≥3 dialable numbers in the DB (0 placeholders, 4,107 entries); 10/10 sampled pages render 6+ numbers plus universal 112" },
+      { "area": "Maps", "status": "RED", "why": "Explore map regression: 511 markers yesterday, 0 today — map and legend load, markers never draw. Destination-page maps unaffected" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical 7 days (v51); manifest 3 icons + 5 shortcuts; offline page 200" },
+      { "area": "Console health", "status": "AMBER", "why": "React hydration warning spread: now fires on destination pages and trip board too (5 of 9 loads). Still invisible to users, still self-recovering" }
+    ],
+    "whats_changed": [
+      "[high/NEW] Explore map draws zero markers — a regression from yesterday's 511, coinciding with the new deployment. The flagship discovery surface is effectively a blank map in Map view.",
+      "[high/escalated] The React hydration warning is no longer editorial-only: it now fires on destination pages (the SEO-critical template) and the trip board. Points at a shared layout component rendering differently on server vs client.",
+      "[reproduced] The decorative atlas still prints the same wrong coordinates (23.5N · 80.5E) on every atlas-template destination page.",
+      "[info] Sitemap +18 URLs (editorial growth); destination counts stable at 525 + 6,300 month pages.",
+      "[info] QA harness hardened: yesterday's leftover temp file nearly poisoned today's probes; per-run paths + stricter error checks now prevent that class of silent corruption."
+    ],
+    "risks": [
+      "A deploy went out that broke a marquee feature without any console error — silent regressions like this argue for a pre-deploy smoke test of the explore map (one Playwright assertion would have caught it).",
+      "Hydration mismatches on destination pages can degrade perceived performance on low-end phones — the core India-travel audience — and mask real content divergence.",
+      "Accessibility and Lighthouse remain unmeasured since early May; with template churn from the Leaflet migration plus this deploy, the deep pass is increasingly overdue."
+    ],
+    "bottom_line": [
+      "Ask the developer to diff today's deploy against yesterday's for the explore-map marker layer — fix or roll back same-day; the map currently advertises 511 markers and shows none.",
+      "Same session: reproduce React #418 on a destination page with a non-minified build; a shared-layout suspect (masthead/month copy) likely explains both yesterday's and today's spread.",
+      "Fix the static atlas coordinates (one template variable) — third day on the books, small effort, visible credibility win."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi (seeded random from 525-slug pool)",
+      "21 core routes + 13 API probes + 8 soft-404 guards probed",
+      "9 controlled Chrome observations across explore, 4 destination pages, landing, and trip board",
+      "525 destination SOS rows ground-truthed directly in the database (4 aggregates)",
+      "26,082-URL sitemap walked chunk by chunk"
+    ]
+  }
+}
