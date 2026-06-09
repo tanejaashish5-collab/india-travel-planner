@@ -2975,3 +2975,55 @@ Date range: 2026-04-15 → 2026-06-08
 2026-06-09 14:10:17  INFO      YT Short posted: format=nakshiq_score, music=fast-1085
 2026-06-09 14:10:17  INFO      State saved. YT Short run complete.
 2026-06-09 14:10:17  INFO      ════════════════════════════════════════════════════════════
+2026-06-09 16:52:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-09 16:52:50  INFO      Nakshiq Autoposter · EVENING · 2026-06-09 · weekday=1
+2026-06-09 16:52:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-09 16:52:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-09 16:53:26  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-09 16:53:26  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-09 16:53:27  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-09 16:53:27  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-09 16:53:43  INFO      [evening] variety pick: infographic (25 CSV + 3 visual candidates)
+2026-06-09 16:53:43  INFO      Formats — IG: infographic  ·  FB: infographic  ·  Story: collection_spotlight
+2026-06-09 16:53:43  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 67
+2026-06-09 16:53:43  INFO      Delegating evening slot → infographic visual pipeline
+2026-06-09 16:53:43  INFO      ════════════════════════════════════════════════════════════
+2026-06-09 16:53:43  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-06-09 · weekday=1
+2026-06-09 16:53:43  INFO      ════════════════════════════════════════════════════════════
+2026-06-09 16:53:45  INFO      Generated 5 slides: topic=festivals, theme=topo
+2026-06-09 16:53:45  INFO          Requesting upload URL for infographic_infographic_festivals_topo_01_cover.jpg (106,503 bytes, image/jpeg)
+2026-06-09 16:53:46  INFO          Uploading to R2 (timeout=120s)...
+2026-06-09 16:53:47  INFO          R2 PUT OK. Confirming...
+2026-06-09 16:53:48  INFO          Media ready: BDMhn (106,503 bytes · infographic_infographic_festivals_topo_01_cover.jpg)
+2026-06-09 16:53:48  INFO        Uploaded: infographic_festivals_topo_01_cover.jpg (104 KB)
+2026-06-09 16:53:48  INFO          Requesting upload URL for infographic_infographic_festivals_topo_02_guptkashi.jpg (272,725 bytes, image/jpeg)
+2026-06-09 16:53:48  INFO          Uploading to R2 (timeout=120s)...
+2026-06-09 16:53:49  INFO          R2 PUT OK. Confirming...
+2026-06-09 16:53:50  INFO          Media ready: jb752 (272,725 bytes · infographic_infographic_festivals_topo_02_guptkashi.jpg)
+2026-06-09 16:53:50  INFO        Uploaded: infographic_festivals_topo_02_guptkashi.jpg (266 KB)
+2026-06-09 16:53:50  INFO          Requesting upload URL for infographic_infographic_festivals_topo_03_hemkund-sahib.jpg (275,877 bytes, image/jpeg)
+2026-06-09 16:53:51  INFO          Uploading to R2 (timeout=120s)...
+2026-06-09 16:53:51  INFO          R2 PUT OK. Confirming...
+2026-06-09 16:53:52  INFO          Media ready: 8wN2I (275,877 bytes · infographic_infographic_festivals_topo_03_hemkund-sahib.jpg)
+2026-06-09 16:53:52  INFO        Uploaded: infographic_festivals_topo_03_hemkund-sahib.jpg (269 KB)
+2026-06-09 16:53:52  INFO          Requesting upload URL for infographic_infographic_festivals_topo_04_kedarnath.jpg (290,601 bytes, image/jpeg)
+2026-06-09 16:53:53  INFO          Uploading to R2 (timeout=120s)...
+2026-06-09 16:53:53  INFO          R2 PUT OK. Confirming...
+2026-06-09 16:53:54  INFO          Media ready: e6Tkr (290,601 bytes · infographic_infographic_festivals_topo_04_kedarnath.jpg)
+2026-06-09 16:53:54  INFO        Uploaded: infographic_festivals_topo_04_kedarnath.jpg (283 KB)
+2026-06-09 16:53:54  INFO          Requesting upload URL for infographic_infographic_festivals_topo_06_cta.jpg (93,427 bytes, image/jpeg)
+2026-06-09 16:53:55  INFO          Uploading to R2 (timeout=120s)...
+2026-06-09 16:53:55  INFO          R2 PUT OK. Confirming...
+2026-06-09 16:53:56  INFO          Media ready: i5psB (93,427 bytes · infographic_infographic_festivals_topo_06_cta.jpg)
+2026-06-09 16:53:56  INFO        Uploaded: infographic_festivals_topo_06_cta.jpg (91 KB)
+2026-06-09 16:53:56  INFO      All slides uploaded: 5 media objects
+2026-06-09 16:53:57  INFO      [youtube/@naksh-iq] Skipping infographic (YouTube only accepts video/reels).
+2026-06-09 16:53:57  INFO      [instagram/nakshiq] Publishing infographic carousel: festivals/topo...
+2026-06-09 16:53:57  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-06-09 16:54:00  INFO      [instagram/nakshiq] Infographic carousel posted successfully!
+2026-06-09 16:54:00  INFO      [facebook/Nakshiq] Publishing infographic carousel: festivals/topo...
+2026-06-09 16:54:00  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-06-09 16:54:02  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-06-09 16:54:02  INFO      Infographic state updated: topic=festivals, theme=topo
+2026-06-09 16:54:02  INFO      State saved. Infographic run complete.
+2026-06-09 16:54:02  INFO      ════════════════════════════════════════════════════════════
