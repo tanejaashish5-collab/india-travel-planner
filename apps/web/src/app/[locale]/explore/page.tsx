@@ -35,20 +35,44 @@ async function getData() {
 
   const supabase = createClient(url, key);
 
-  const [destResult, statesResult, coordsResult] = await Promise.all([
-    supabase
-      .from("destinations")
-      .select(`
-        id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, eco_tier,
-        hero_image_url, vehicle_fit, family_stress, solo_female_score,
-        state:states(name),
-        kids_friendly(suitable, rating),
-        destination_months(month, score, note, solo_female_override)
-      `)
-      .order("name"),
-    supabase.from("states").select("id, name, region").order("display_order"),
-    supabase.from("destinations_with_coords").select("id, lat, lng"),
-  ]);
+  const fetchAll = () =>
+    Promise.all([
+      supabase
+        .from("destinations")
+        .select(`
+          id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, eco_tier,
+          hero_image_url, vehicle_fit, family_stress, solo_female_score,
+          state:states(name),
+          kids_friendly(suitable, rating),
+          destination_months(month, score, note, solo_female_override)
+        `)
+        .order("name"),
+      supabase.from("states").select("id, name, region").order("display_order"),
+      supabase.from("destinations_with_coords").select("id, lat, lng"),
+    ]);
+
+  // The full-catalog query is heavy and can transiently fail under render
+  // bursts. Swallowing that into [] bakes a "0 places" page into the 6h ISR
+  // cache — retry, then throw so revalidation keeps the last good page (and a
+  // build fails loudly) instead of caching an empty catalog.
+  let results = await fetchAll();
+  for (
+    let attempt = 1;
+    attempt < 3 && (results[0].error || !results[0].data?.length);
+    attempt++
+  ) {
+    console.error(
+      `[explore] destinations fetch attempt ${attempt} failed: ${results[0].error?.message ?? "empty result"} — retrying`,
+    );
+    await new Promise((r) => setTimeout(r, attempt * 1000));
+    results = await fetchAll();
+  }
+  const [destResult, statesResult, coordsResult] = results;
+  if (destResult.error || !destResult.data?.length) {
+    throw new Error(
+      `[explore] destinations fetch failed after retries: ${destResult.error?.message ?? "empty result"}`,
+    );
+  }
 
   return {
     destinations: destResult.data ?? [],
