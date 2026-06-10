@@ -82,5 +82,24 @@
     },
     "inboxFile": ".loop/opportunities-inbox.json",
     "digestFile": ".loop/opportunities-digest.md"
+  },
+  "bizOpportunities": {
+    "_comment": "Phase 5 — the BUSINESS-OPPORTUNITY SCOUT (bizscout-workflow.js + bizscout-ledger.mjs, driven by /loop-bizscout). Finds NEW businesses for the portfolio, not NakshIQ growth. Harvests live demand signals across many channels, validates + scores each on a 6-factor rubric, fact-checks load-bearing claims, dedupes across runs into a living ledger. Read-only discovery; the iMessage send is gated by autoSend below.",
+    "channels": [
+      "regulatory-forced-buyers", "australia-local-gaps", "ai-frontier-gaps", "yc-rfs-themes",
+      "reddit-forum-pains", "review-complaint-gaps", "job-postings-demand", "producthunt-indiehackers",
+      "funding-flows", "too-early-now-viable", "india-bharat-demand", "boring-profitable",
+      "creator-economy-tools", "cross-border-digital"
+    ],
+    "_channelWeightNote": "Channel richness is computed OBJECTIVELY each run by bizscout-ledger.mjs (avg validated composite, penalised for duplicate-flooding) — NOT by a committee guess. Volume never wins. See biz-opportunities-digest.md.",
+    "rubricWeights": { "demand": 0.25, "moat": 0.2, "competition_shape": 0.15, "profit_ceiling": 0.15, "speed_to_cash": 0.15, "founder_fit": 0.1 },
+    "factCheck": { "topNToVerify": 10, "_note": "the top N ledger ideas get an independent primary-source check on their single most load-bearing claim; unverified -> flagged UNVERIFIED, never presented as fact." },
+    "dedupe": { "jaccardThreshold": 0.6, "oneLinerThreshold": 0.65, "rescoreDelta": 0.3 },
+    "autoSend": false,
+    "_autoSendNote": "false = the scout writes the digest + waits; you review and send. Flip to true ONLY when you want the weekly digest to iMessage you autonomously (a 'send' — gated on purpose per the founder's confirm-before-send rule).",
+    "cadence": "weekly",
+    "ledgerFile": ".loop/biz-opportunities-ledger.json",
+    "digestFile": ".loop/biz-opportunities-digest.md",
+    "humanLedgerFile": "data/research/OPPORTUNITIES.md"
   }
 }

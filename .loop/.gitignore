@@ -5,6 +5,11 @@ PAUSE
 findings-inbox.json
 opportunities-inbox.json
 opportunities-digest.md
+# Phase 5 business-opportunity scout: the machine ledger (biz-opportunities-ledger.json)
+# is COMMITTED on purpose — it's the durable dedupe memory. The per-run digest + raw
+# run dumps are scratch.
+biz-opportunities-digest.md
+bizscout-runs/
 proposals.json
 outbox.txt
 *.log
