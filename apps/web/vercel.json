@@ -55,6 +55,10 @@
       "schedule": "17 * * * *"
     },
     {
+      "path": "/api/cron/canary-probe",
+      "schedule": "*/30 * * * *"
+    },
+    {
       "path": "/api/cron/audit-gsc-alerts",
       "schedule": "30 3 * * *"
     },
