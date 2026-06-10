@@ -32,10 +32,10 @@
   "posted_today": {
     "m8EAd": "2026-06-10",
     "PdMu0": "2026-06-10",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-06-10",
-    "m8EAd_yt_short": "2026-06-09",
+    "m8EAd_yt_short": "2026-06-10",
     "m8EAd_infographic": "2026-06-09",
     "PdMu0_infographic": "2026-06-09",
     "m8EAd_story": "2026-06-10"
@@ -328,6 +328,10 @@
     },
     {
       "destination_id": "doodhpathri",
+      "date": "2026-06-10"
+    },
+    {
+      "destination_id": "spiti-valley",
       "date": "2026-06-10"
     }
   ],
@@ -2644,6 +2648,24 @@
       "destination": "doodhpathri",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_doodhpathri_hi_2026-06-10.mp4"
+    },
+    {
+      "timestamp": "2026-06-10T14:07:37.895074+00:00",
+      "date": "2026-06-10",
+      "platform": "youtube",
+      "post_id": "mkuHd",
+      "destination": "spiti-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_spiti-valley_hi_2026-06-10.mp4"
+    },
+    {
+      "timestamp": "2026-06-10T14:08:17.703959+00:00",
+      "date": "2026-06-10",
+      "platform": "instagram",
+      "post_id": "xYzN8",
+      "destination": "spiti-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_spiti-valley_hi_2026-06-10.mp4"
     }
   ],
   "theme_usage": {
