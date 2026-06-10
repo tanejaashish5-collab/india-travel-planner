@@ -4,7 +4,10 @@ test.describe("Gap Year Planner v2", () => {
   test("form shows all 7 required sections", async ({ page }) => {
     await page.goto("/en/gap-year");
 
-    await expect(page.getByRole("heading", { name: /Gap Year Planner/i })).toBeVisible();
+    // Two headings match since the cinematic hero ("The gap year planner.")
+    // was added above the form's own h1 — assert the first to avoid a
+    // strict-mode violation.
+    await expect(page.getByRole("heading", { name: /Gap Year Planner/i }).first()).toBeVisible();
     await expect(page.getByText(/Duration:\s*6 months/i)).toBeVisible();
     await expect(page.getByText(/Start month/i)).toBeVisible();
     await expect(page.getByText(/Where are you travelling from\?/i)).toBeVisible();
@@ -40,8 +43,10 @@ test.describe("Gap Year Planner v2", () => {
     const originInput = page.getByPlaceholder(/Start typing your city/i);
     await originInput.click();
     await originInput.fill("Rajas");
-    // Should surface Jaipur (state: Rajasthan) at least
-    await expect(page.getByRole("button", { name: /Jaipur/i })).toBeVisible({ timeout: 3000 });
+    // Should surface Jaipur (state: Rajasthan) at least. Name includes the
+    // state line so it doesn't collide with the "First major India trip"
+    // familiarity card, whose copy also mentions Jaipur (strict mode).
+    await expect(page.getByRole("button", { name: /Jaipur Rajasthan/i })).toBeVisible({ timeout: 3000 });
   });
 
   test("themes cap at 3 selected", async ({ page }) => {
@@ -54,7 +59,10 @@ test.describe("Gap Year Planner v2", () => {
     }
     // The 4th click should have been blocked by the disabled state — verify
     // at most 3 theme chips appear with the primary (selected) style.
-    const selectedChips = await page.locator("button.bg-primary.text-primary-foreground").count();
+    // Chips uniquely carry border-primary alongside bg-primary; the submit
+    // button shares bg-primary/text-primary-foreground and was inflating the
+    // old count to 4.
+    const selectedChips = await page.locator("button.bg-primary.text-primary-foreground.border-primary").count();
     expect(selectedChips).toBeLessThanOrEqual(3);
   });
 

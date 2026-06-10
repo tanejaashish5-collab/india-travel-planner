@@ -24,10 +24,27 @@ env:
   BASE: https://www.nakshiq.com
 
 jobs:
+  # The `secrets` context is NOT allowed in job-level `if:` expressions.
+  # `if: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}` on thin-content made
+  # the whole workflow file invalid — every run failed at the WORKFLOW level
+  # in 0s with no jobs executed (100/100 recent runs), so PRs merged with zero
+  # checks. Standard fix: compute the check in a step (where `secrets` IS
+  # allowed) and gate the job on the resulting job output.
+  preflight:
+    name: Secrets preflight
+    runs-on: ubuntu-latest
+    outputs:
+      has-supabase: ${{ steps.check.outputs.has-supabase }}
+    steps:
+      - name: Detect SUPABASE_SERVICE_ROLE_KEY
+        id: check
+        run: echo "has-supabase=${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}" >> "$GITHUB_OUTPUT"
+
   thin-content:
     name: Thin-content gate (R2 §9 #4)
     runs-on: ubuntu-latest
-    if: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}
+    needs: preflight
+    if: needs.preflight.outputs.has-supabase == 'true'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

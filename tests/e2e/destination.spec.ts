@@ -8,8 +8,9 @@ test.describe("Destination Detail", () => {
     await expect(page.locator("video, img[alt]").first()).toBeVisible();
     // Name and tagline
     await expect(page.getByText("Varanasi").first()).toBeVisible();
-    // Monthly scores section
-    await expect(page.getByText(/monthly/i).first()).toBeVisible();
+    // Month scores section — the cinematic template labels it
+    // "month-by-month" / "Best months" instead of "Monthly".
+    await expect(page.getByText(/month-by-month|best months/i).first()).toBeVisible();
   });
 
   test("confidence cards render", async ({ page }) => {
