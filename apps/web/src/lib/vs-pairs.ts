@@ -197,6 +197,18 @@ export const VS_PAIRS_CURATED: { id1: string; id2: string; theme: string }[] = [
   { id1: "gulmarg", id2: "doodhpathri", theme: "kashmir" },
   { id1: "hampi", id2: "warangal", theme: "heritage" },
   { id1: "dharamshala", id2: "bir-billing", theme: "hill-stations" },
+
+  // ─── Kasauli breakout (2026-06-10) — GSC: `kasauli` is the #1 query and
+  // /vs/kasauli-vs-manali the #1 page (~5% of all site clicks). Kasauli already
+  // has ~23 vs-pages, so this is a deliberate SMALL marquee add of the genuinely
+  // missing high-intent "Delhi-weekend / Himachal which-is-better" decisions, not
+  // bulk cluster-fill (which would feed the crawled-not-indexed bucket). All four
+  // partners are major destinations with full 12-month data → auto-rendered from
+  // verified columns, zero fabrication. Verified no reverse-order collisions.
+  { id1: "kasauli", id2: "kufri", theme: "hill-stations" },
+  { id1: "kasauli", id2: "mussoorie", theme: "hill-stations" },
+  { id1: "kasauli", id2: "nainital", theme: "hill-stations" },
+  { id1: "kasauli", id2: "dharamshala", theme: "hill-stations" },
 ];
 
 // Curated + machine-generated pairs, merged. Reversed-pair dedupe is handled
