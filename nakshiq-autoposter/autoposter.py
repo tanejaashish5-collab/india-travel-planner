@@ -5879,6 +5879,118 @@ def _sanitize_caption(caption: str, platform: str = "") -> str:
     return sanitized
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# EMAIL-CAPTURE CTA — "The Window" newsletter (added 2026-06-10)
+# -----------------------------------------------------------------------------
+# WHY: the email list sits at ~6 confirmed subscribers against the
+# 2,000-subscriber monetisation gate, and 391 lifetime social posts carried
+# exactly ONE newsletter mention. Captions/descriptions are free real estate
+# for the only audience channel we own.
+#
+# Copy promises ONLY what the live /en/newsletter page promises (verified
+# 2026-06-10): "The Window" — free, every Sunday, the week's best-scoring
+# destination, the honest skip, and what changed. Zero fabrication.
+#
+# Behaviour (ADDITIVE, post-caption/description text only — NEVER touches the
+# spoken script, TTS input, or burned-in ASS captions in yt_shorts_v2.py):
+#   • YouTube: EVERY description gets a standing newsletter line
+#     (descriptions are cheap real estate — always-on, not rotated).
+#   • Instagram / Facebook: every Nth lifetime post gets a short CTA line.
+#     N is counted off the durable post_log.jsonl (synced + merged across
+#     GitHub Actions runners via the autoposter-state branch) so the rotation
+#     never resets to zero on a fresh runner — no new state file needed.
+#     N via NAKSHIQ_EMAIL_CTA_EVERY_N (default 3; 0 disables the rotation).
+#   • NAKSHIQ_EMAIL_CTA=0 is the kill-switch for the whole feature
+#     (mirrors the NAKSHIQ_YT_V2 pattern).
+# ─────────────────────────────────────────────────────────────────────────────
+
+NEWSLETTER_URL = "https://www.nakshiq.com/en/newsletter"  # direct 200 (bare /newsletter 301s here)
+
+# utm_source per normalised platform — GA4 attribution per channel.
+_EMAIL_CTA_SOURCES = {
+    "instagram": "instagram",
+    "facebook":  "facebook",
+    "yt_shorts": "youtube",
+    "reels":     "instagram",
+}
+
+# Hard platform caption limits — if appending the CTA would cross these, the
+# CTA is skipped (never risk a rejected post over a nice-to-have line).
+_EMAIL_CTA_HARD_CAPS = {"yt_shorts": 4950}
+_EMAIL_CTA_HARD_CAP_DEFAULT = 2190   # IG hard limit 2200, small buffer
+
+
+def _email_cta_enabled() -> bool:
+    return os.environ.get("NAKSHIQ_EMAIL_CTA", "1") != "0"
+
+
+def _email_cta_every_n() -> int:
+    """Rotation cadence N for IG/FB captions (1-in-N). Default 3; 0 disables
+    the rotation (the YouTube standing line is independent of this)."""
+    try:
+        return int(os.environ.get("NAKSHIQ_EMAIL_CTA_EVERY_N", "3") or 0)
+    except ValueError:
+        return 3
+
+
+def _email_cta_line(platform: str, standing: bool = False) -> str:
+    """One short CTA line with a UTM'd /en/newsletter link. utm_source matches
+    the posting platform; utm_content separates the always-on YT description
+    line from the rotated caption line for funnel attribution."""
+    plat = _normalise_platform(platform) or "social"
+    source = _EMAIL_CTA_SOURCES.get(plat, plat)
+    link = utm(NEWSLETTER_URL, source, "social", "email_cta",
+               content="yt_description" if standing else "caption_rotation")
+    if standing:
+        return ("📩 The Window — our free Sunday email: the week's best-scoring "
+                f"destination, the one to skip, and what changed → {link}")
+    return f"📩 Free Sunday email — one destination worth it, one to skip → {link}"
+
+
+def _email_cta_rotation_due(every_n: int) -> bool:
+    """True when THIS publish is the Nth lifetime post (N, 2N, 3N, …), counted
+    off post_log.jsonl. Sibling publishes inside one run that fire before the
+    log append share the same count — acceptable: the same content then
+    carries the same CTA across platforms."""
+    if every_n <= 0:
+        return False
+    return (len(load_post_log_jsonl()) + 1) % every_n == 0
+
+
+def _append_email_cta(caption: str, platform: str) -> str:
+    """Append the email-capture CTA to a FINISHED post caption/description.
+
+    Called from publish_feed_post + publish_reel AFTER _sanitize_caption so
+    the length cap can never truncate the line mid-URL. Inserts above the
+    trailing hashtag block (same convention as _add_ig_engagement_cta);
+    never touches the first line (publish_reel reads it as the YT title).
+    Idempotent — captions already mentioning the newsletter are left alone.
+    Note for IG: the URL renders unclickable there (visual pointer only) —
+    kept anyway so the CTA stays identical + measurable across platforms.
+    """
+    if not caption or not _email_cta_enabled():
+        return caption
+    if "utm_campaign=email_cta" in caption or "/newsletter" in caption:
+        return caption
+    plat = _normalise_platform(platform)
+    if plat == "yt_shorts":
+        line = _email_cta_line(platform, standing=True)
+    elif plat in ("instagram", "facebook"):
+        if not _email_cta_rotation_due(_email_cta_every_n()):
+            return caption
+        line = _email_cta_line(platform)
+    else:
+        return caption
+    cap = _EMAIL_CTA_HARD_CAPS.get(plat, _EMAIL_CTA_HARD_CAP_DEFAULT)
+    if len(caption) + len(line) + 2 > cap:
+        log.info(f"    Email CTA skipped (caption near {cap}-char platform cap).")
+        return caption
+    m = re.search(r"\n\n#[A-Za-z0-9_ ]+(?:\s|$)", caption)
+    if m:
+        return caption[:m.start()] + f"\n\n{line}" + caption[m.start():]
+    return caption.rstrip() + f"\n\n{line}"
+
+
 _HEALTHCHECK_CACHE: dict[str, tuple[bool, int]] = {}
 _BAD_URL_QUEUE_PATH = Path(__file__).parent / "data" / "bad-url-queue.jsonl"
 _POST_OUTCOMES_PATH = Path(__file__).parent / "data" / "post_outcomes.jsonl"
@@ -6001,6 +6113,10 @@ def publish_feed_post(caption: str, account: dict, media,
     platform = account["network"]
     # Sanitize caption BEFORE any platform call (banned tags + length cap)
     caption = _sanitize_caption(caption, platform=platform)
+    # Email-capture CTA (1-in-N rotation, see _append_email_cta). After the
+    # sanitizer so the length cap can't truncate the link; before the URL
+    # healthcheck so the newsletter link is covered on text-only captions.
+    caption = _append_email_cta(caption, platform)
 
     # Pre-publish healthcheck on the caption's CTA URL. If it's a hard 4xx/5xx,
     # ABORT the post — better to skip a slot than ship a 404 to followers.
@@ -6191,6 +6307,12 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     platform = account["network"]
     # Sanitize caption BEFORE any platform call (banned tags + length cap)
     caption = _sanitize_caption(caption, platform=platform)
+    # Email-capture CTA: YouTube descriptions get the standing newsletter line
+    # on EVERY Short; IG/FB reel captions join the 1-in-N rotation. Appended
+    # after the sanitizer + below the first line, so the YT title extraction
+    # further down is untouched. POST TEXT ONLY — the rendered video (voice +
+    # burned-in ASS captions) is already final bytes at this point.
+    caption = _append_email_cta(caption, platform)
 
     # Pre-publish healthcheck — same gate as publish_feed_post. Reels and YT
     # Shorts both flow through here, so a single check covers both. Skipped on
