@@ -3222,3 +3222,22 @@ Date range: 2026-04-15 → 2026-06-09
 2026-06-10 14:08:17  INFO      YT Short posted: format=nakshiq_score, music=fast-1085
 2026-06-10 14:08:17  INFO      State saved. YT Short run complete.
 2026-06-10 14:08:17  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 14:46:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 14:46:21  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-10
+2026-06-10 14:46:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 14:46:24  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-10 14:48:17  INFO      Short rendered: yt_short_nakshiq_score_guptkashi_hi_2026-06-10.mp4 (15475 KB, 32.6s, fmt=nakshiq_score, music=edm-966)
+2026-06-10 14:48:17  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_guptkashi_hi_2026-06-10.mp4 (15,847,015 bytes, video/mp4)
+2026-06-10 14:48:18  INFO          Uploading to R2 (timeout=300s)...
+2026-06-10 14:48:20  INFO          R2 PUT OK. Confirming...
+2026-06-10 14:48:21  INFO          Media ready: eRhbr (15,847,015 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_guptkashi_hi_2026-06-10.mp4)
+2026-06-10 14:48:21  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_guptkashi_hi_2026-06-10.mp4
+2026-06-10 14:48:22  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-06-10 14:48:22  INFO      [instagram/nakshiq] Publishing YT Short (nakshiq_score)...
+2026-06-10 14:48:22  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-06-10 14:48:24  INFO      [instagram/nakshiq] Outstand accepted (post_id=Pjuo0), waiting for platform confirmation...
+2026-06-10 14:49:11  INFO          wait_for_publish exhausted 8 polls for post=Pjuo0 (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-10 14:49:11  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=Pjuo0). May have silently failed.
+2026-06-10 14:49:11  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-10 14:49:11  INFO      State saved. YT Short run complete.
+2026-06-10 14:49:11  INFO      ════════════════════════════════════════════════════════════
