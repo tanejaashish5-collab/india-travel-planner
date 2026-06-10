@@ -32,9 +32,9 @@
   "posted_today": {
     "m8EAd": "2026-06-10",
     "PdMu0": "2026-06-10",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-06-09",
+    "GAh5p_yt_short": "2026-06-10",
     "m8EAd_yt_short": "2026-06-09",
     "m8EAd_infographic": "2026-06-09",
     "PdMu0_infographic": "2026-06-09",
@@ -324,6 +324,10 @@
     },
     {
       "destination_id": "nubra-valley",
+      "date": "2026-06-10"
+    },
+    {
+      "destination_id": "doodhpathri",
       "date": "2026-06-10"
     }
   ],
@@ -2613,17 +2617,6 @@
       "media_id": "v2_cost_vs_feeling-pangong-lake_01_cover.png"
     },
     {
-      "timestamp": "2026-06-10T07:24:50.007814+00:00",
-      "date": "2026-06-10",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "xYc28",
-      "destination": "gurez-valley",
-      "format": "collection_spotlight",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
       "timestamp": "2026-06-10T07:26:05.633359+00:00",
       "date": "2026-06-10",
       "platform": "facebook",
@@ -2633,6 +2626,24 @@
       "format": "v2_cost_vs_feeling",
       "has_media": true,
       "media_id": "v2_cost_vs_feeling-nubra-valley_01_cover.png"
+    },
+    {
+      "timestamp": "2026-06-10T08:22:53.455574+00:00",
+      "date": "2026-06-10",
+      "platform": "youtube",
+      "post_id": "mkD9d",
+      "destination": "doodhpathri",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_doodhpathri_hi_2026-06-10.mp4"
+    },
+    {
+      "timestamp": "2026-06-10T08:23:41.743014+00:00",
+      "date": "2026-06-10",
+      "platform": "instagram",
+      "post_id": "DtXAo",
+      "destination": "doodhpathri",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_doodhpathri_hi_2026-06-10.mp4"
     }
   ],
   "theme_usage": {
@@ -3234,8 +3245,7 @@
       "kiphire": [
         "2026-06-09"
       ]
-    },
-    "collection_carousel_dests:arupadai-veedu": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
