@@ -40,9 +40,14 @@ function istToday() {
 const date = arg("date", istToday());
 const indexedRaw = arg("indexed");
 const notIndexedRaw = arg("not-indexed");
+// --source inspection-sample → numbers are estimates from the stratified
+// URL Inspection sweep (scripts/gsc-inspect-sweep.mjs), not dashboard reads.
+// --note adds free text (CI, sample size) to the block footnote.
+const source = arg("source", "dashboard");
+const note = arg("note", "");
 
 if (!indexedRaw || !notIndexedRaw) {
-  console.error("Usage: node scripts/patch-gsc-indexing.mjs --indexed N --not-indexed N [--date YYYY-MM-DD]");
+  console.error("Usage: node scripts/patch-gsc-indexing.mjs --indexed N --not-indexed N [--date YYYY-MM-DD] [--source dashboard|inspection-sample] [--note text]");
   console.error("");
   console.error("Pull these from https://search.google.com/search-console/index (property www.nakshiq.com).");
   console.error("");
@@ -86,6 +91,11 @@ const indexedFmt = formatCount(indexed);
 const notIndexedFmt = formatCount(notIndexed);
 const totalFmt = formatCount(indexed + notIndexed);
 
+const footnote =
+  source === "inspection-sample"
+    ? `_ESTIMATED from a stratified URL Inspection API sample via \`scripts/gsc-inspect-sweep.mjs\` — sitemap-submitted URLs only, so "Not indexed" runs lower than the dashboard's (which also counts discovered non-sitemap URLs).${note ? ` ${note}.` : ""} Patched via \`scripts/patch-gsc-indexing.mjs\`._`
+    : `_Pulled manually from the GSC Coverage dashboard — the Search Analytics API doesn't expose these counts.${note ? ` ${note}.` : ""} Patched via \`scripts/patch-gsc-indexing.mjs\`._`;
+
 const block = `
 ## Indexing Status
 
@@ -95,7 +105,7 @@ const block = `
 | Not indexed          | ${notIndexedFmt} |
 | Total submitted      | ${totalFmt} |
 
-_Pulled manually from the GSC Coverage dashboard — the Search Analytics API doesn't expose these counts. Patched via \`scripts/patch-gsc-indexing.mjs\`._
+${footnote}
 `;
 
 const BLOCK_START = "## Indexing Status";
