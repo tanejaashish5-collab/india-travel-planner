@@ -107,6 +107,26 @@ Result: **47 dests updated, 67 entries added, `emergency_sos.local_helpers` non-
 Availability stamped only where the official source stated it (no fabricated "24/7" except where
 true for police control rooms / the 24/7 hospital). Every number independently confirmed twice.
 
+## ✅ RESOLVED 2026-06-10 — confidence_cards free-text phones (see data/audits/cc-phone-fabrication-purge-2026-06-10.md)
+The gap below was fully audited + cleaned on 2026-06-10. The field held ~69 distinct phones (NOT the
+~12 first estimated) — fabricated at the same ~80% rate as deep_dive. Adversarial 2-pass workflow
+(wf_dfe24959-27f, 17 agents) + 6 direct .gov.in fetches → 16 KEEP / 19 CORRECT / 35 DROP across 106 dests
+(124 in-prose edits). Applied via MCP (committed), post-write assertion = 0 leftover of all 54 old numbers,
+and a full re-extraction confirms every remaining number is in the verified keep∪correct set. confidence_cards
+is now fabrication-free. "No fabricated data remains" is now true for all THREE phone-bearing surfaces.
+
+## ⚠️ ORIGINAL OPEN GAP — confidence_cards free-text phones (found 2026-06-09 via live-page verify) [now resolved above]
+Verifying the deployed great-himalayan-np page showed the SOS-field fakes gone (0177-2621100 ✓ removed,
+new verified 01902-265320 present) BUT a purged number, `0177-2625348`, still in the page payload —
+sourced from **`confidence_cards.people_who_help.tourist_police`** (`"HP Tourism Helpline: 0177-2625348"`),
+a free-text field this audit did not cover. `confidence_cards` (491 rows) embeds phone numbers as PROSE in
+`people_who_help` / `emergency` / `reach` / `network` / `fuel` — **12 rows** match just 4 sampled fakes
+(0177-2621100 / 0177-2625348 / 0141-5110598 / 0755-2443500); `people_who_help` has 11 rows with embedded
+phones (93 object-shape, 398 array-shape). This is the SAME fabrication source bleeding into a third surface.
+**TODO (separate pass):** extract every distinct phone embedded in confidence_cards free-text, verify against
+official sources (many overlap the 108 already adjudicated here), and surgically remove/correct the fakes in-prose.
+Until then, "no fabricated data remains" is true ONLY for emergency_sos.local_helpers + deep_dive.local_helpers.
+
 ## Lesson
 The original deep_dive backfill presented fabricated emergency numbers as verified. Re-confirmed
 the rule: **emergency numbers must be verified against an official source per-number, or shown as
