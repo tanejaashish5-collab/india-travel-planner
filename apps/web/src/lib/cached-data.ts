@@ -31,6 +31,8 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { unstable_cache } from "next/cache";
 
+import { hasItineraryPage, type MicroItineraries } from "./itinerary-page";
+
 // 24h — reference data only changes on backfill, and a tag-bust forces it sooner.
 const REVALIDATE_SECONDS = 86400;
 
@@ -168,6 +170,30 @@ export const getCachedDestinationsIndex = unstable_cache(
       .sort((a, b) => a.name.localeCompare(b.name));
   },
   ["ref-destinations-index-v1"],
+  { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.destinations] },
+);
+
+// ── Itinerary page allowlist ─────────────────────────────────────────────────
+// Destination ids whose `micro_itineraries` pass the min-content gate in
+// lib/itinerary-page.ts — the ONLY ids /itinerary/[slug] renders (the page
+// notFound()s the rest). Shared by the sitemap and generateStaticParams so we
+// never sitemap or pre-render a 404. Cached because the gate needs the JSONB
+// column for every destination — one paged read per 24h, not per crawl.
+export const getCachedItinerarySlugs = unstable_cache(
+  async (): Promise<string[]> => {
+    const supabase = anonClient();
+    if (!supabase) return [];
+    const rows = await fetchAllRows<{ id: string; micro_itineraries: MicroItineraries | null }>(
+      supabase,
+      "destinations",
+      "id, micro_itineraries",
+    );
+    return rows
+      .filter((r) => hasItineraryPage(r.micro_itineraries))
+      .map((r) => r.id)
+      .sort();
+  },
+  ["ref-itinerary-slugs-v1"],
   { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.destinations] },
 );
 
