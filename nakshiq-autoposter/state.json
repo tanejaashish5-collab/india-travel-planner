@@ -38,9 +38,11 @@
     "m8EAd_yt_short": "2026-06-10",
     "m8EAd_infographic": "2026-06-09",
     "PdMu0_infographic": "2026-06-09",
-    "m8EAd_story": "2026-06-10"
+    "m8EAd_story": "2026-06-10",
+    "m8EAd_evening": "2026-06-10",
+    "PdMu0_evening": "2026-06-10"
   },
-  "last_sync": "2026-06-10T07:22:52.564343+00:00",
+  "last_sync": "2026-06-10T17:39:25.097253+00:00",
   "posted_destinations": [
     {
       "destination_id": "kabini",
@@ -337,11 +339,18 @@
     {
       "destination_id": "guptkashi",
       "date": "2026-06-10"
+    },
+    {
+      "destination_id": "nako",
+      "date": "2026-06-10"
+    },
+    {
+      "destination_id": "sissu",
+      "date": "2026-06-10"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "weekend_escape",
       "v2_hindi_score_card",
       "festival_alert",
       "v2_tourist_trap_split",
@@ -361,10 +370,10 @@
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
       "emergency_intel",
-      "v2_cost_vs_feeling"
+      "v2_cost_vs_feeling",
+      "v2_series_episode"
     ],
     "PdMu0": [
-      "weekend_escape",
       "v2_hindi_score_card",
       "festival_alert",
       "v2_tourist_trap_split",
@@ -384,7 +393,8 @@
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
       "emergency_intel",
-      "v2_cost_vs_feeling"
+      "v2_cost_vs_feeling",
+      "v2_series_episode"
     ]
   },
   "post_log": [
@@ -2679,6 +2689,28 @@
       "destination": "guptkashi",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_guptkashi_hi_2026-06-10.mp4"
+    },
+    {
+      "timestamp": "2026-06-10T17:40:35.105324+00:00",
+      "date": "2026-06-10",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "JF003",
+      "destination": "nako",
+      "format": "v2_series_episode",
+      "has_media": true,
+      "media_id": "nako.mp4"
+    },
+    {
+      "timestamp": "2026-06-10T17:40:54.773831+00:00",
+      "date": "2026-06-10",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "NgBQa",
+      "destination": "sissu",
+      "format": "v2_series_episode",
+      "has_media": true,
+      "media_id": "sissu.mp4"
     }
   ],
   "theme_usage": {
@@ -2727,7 +2759,8 @@
       ],
       "sissu": [
         "2026-05-21",
-        "2026-05-25"
+        "2026-05-25",
+        "2026-06-10"
       ],
       "dwarka": [
         "2026-05-22"
@@ -2881,7 +2914,8 @@
         "2026-06-06"
       ],
       "nako": [
-        "2026-06-04"
+        "2026-06-04",
+        "2026-06-10"
       ],
       "kargil": [
         "2026-06-04",
@@ -3041,6 +3075,9 @@
       ],
       "v2_cost_vs_feeling": [
         "2026-06-10"
+      ],
+      "v2_series_episode": [
+        "2026-06-10"
       ]
     },
     "reels": {
@@ -3052,7 +3089,8 @@
         "2026-06-01"
       ],
       "sissu": [
-        "2026-05-21"
+        "2026-05-21",
+        "2026-06-10"
       ],
       "munsiyari": [
         "2026-05-23"
@@ -3128,6 +3166,9 @@
       ],
       "coorg": [
         "2026-06-05"
+      ],
+      "nako": [
+        "2026-06-10"
       ]
     },
     "audience_tags": {
@@ -3294,7 +3335,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurez-valley",
+    "shared_best": "sissu",
     "collection": "arupadai-veedu"
   },
   "manual_skip_dests": {}

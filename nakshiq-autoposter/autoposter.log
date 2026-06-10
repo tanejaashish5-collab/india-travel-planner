@@ -3241,3 +3241,62 @@ Date range: 2026-04-15 → 2026-06-09
 2026-06-10 14:49:11  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-06-10 14:49:11  INFO      State saved. YT Short run complete.
 2026-06-10 14:49:11  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 17:38:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 17:38:50  INFO      Nakshiq Autoposter · EVENING · 2026-06-10 · weekday=2
+2026-06-10 17:38:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 17:38:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-10 17:39:25  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-10 17:39:25  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-10 17:39:25  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-10 17:39:25  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-10 17:39:40  INFO      [evening] variety pick: v2_series_episode (25 CSV + 3 visual candidates)
+2026-06-10 17:39:40  INFO      Formats — IG: v2_series_episode  ·  FB: v2_series_episode  ·  Story: blog_promo
+2026-06-10 17:39:40  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 64
+2026-06-10 17:39:40  INFO      Fingerprint dedup snapshot — 64 dests in 7d · 113 (dest,fmt) pairs in 30d · 115 media in 60d
+2026-06-10 17:39:46  INFO      Shared best destination locked: Sissu
+2026-06-10 17:39:46  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-10 17:39:46  INFO      [instagram/nakshiq] Generating v2_series_episode post...
+2026-06-10 17:39:46  INFO      v2_series_episode: mathura has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: kalimpong has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:39:46  INFO      v2_series_episode: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-10 17:39:46  INFO      v2_series_episode: nubra-valley already posted today — SKIPPING dest (same-day guard)
+2026-06-10 17:39:46  INFO      [instagram/nakshiq] Caption ready (440 chars, dest=nako)
+2026-06-10 17:39:46  INFO      [instagram/nakshiq] CSV video format (v2_series_episode) — using dest Ken Burns clip as fallback
+2026-06-10 17:39:46  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nako.mp4?v=20260524
+2026-06-10 17:39:49  INFO          Brand-stamp applied: nako.mp4 (6,853,992 → 3,119,807 bytes)
+2026-06-10 17:39:49  INFO          Requesting upload URL for nako.mp4 (3,119,807 bytes, video/mp4)
+2026-06-10 17:39:50  INFO          Uploading to R2 (timeout=300s)...
+2026-06-10 17:39:50  INFO          R2 PUT OK. Confirming...
+2026-06-10 17:39:51  INFO          Media ready: LfRsV (3,119,807 bytes · nako.mp4)
+2026-06-10 17:39:51  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-10 17:40:35  INFO      [instagram/nakshiq] ✅ Published · Outstand=JF003 · Platform=18410199166178268
+2026-06-10 17:40:35  INFO      [facebook/Nakshiq] Generating v2_series_episode post...
+2026-06-10 17:40:35  INFO      v2_series_episode: mathura has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: kalimpong has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 17:40:35  INFO      v2_series_episode: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-10 17:40:35  INFO      v2_series_episode: nubra-valley already posted today — SKIPPING dest (same-day guard)
+2026-06-10 17:40:35  INFO      v2_series_episode: nako already posted today — SKIPPING dest (same-day guard)
+2026-06-10 17:40:35  INFO      [facebook/Nakshiq] Caption ready (542 chars, dest=sissu)
+2026-06-10 17:40:35  INFO      [facebook/Nakshiq] CSV video format (v2_series_episode) — using dest Ken Burns clip as fallback
+2026-06-10 17:40:35  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sissu.mp4?v=20260524
+2026-06-10 17:40:38  INFO          Brand-stamp applied: sissu.mp4 (7,080,386 → 3,914,696 bytes)
+2026-06-10 17:40:38  INFO          Requesting upload URL for sissu.mp4 (3,914,696 bytes, video/mp4)
+2026-06-10 17:40:38  INFO          Uploading to R2 (timeout=300s)...
+2026-06-10 17:40:39  INFO          R2 PUT OK. Confirming...
+2026-06-10 17:40:40  INFO          Media ready: pINbM (3,914,696 bytes · sissu.mp4)
+2026-06-10 17:40:40  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-10 17:40:54  INFO      [facebook/Nakshiq] ✅ Published · Outstand=NgBQa · Platform=1339952781674881
+2026-06-10 17:40:54  INFO      State saved. Run complete.
+2026-06-10 17:40:54  INFO      ════════════════════════════════════════════════════════════
