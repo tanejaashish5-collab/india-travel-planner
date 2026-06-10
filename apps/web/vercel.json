@@ -69,6 +69,10 @@
     {
       "path": "/api/cron/audit-bot-crawl-rate",
       "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/refresh-embeddings",
+      "schedule": "0 21 2 * *"
     }
   ]
 }
