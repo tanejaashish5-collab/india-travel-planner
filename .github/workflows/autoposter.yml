@@ -470,6 +470,12 @@ jobs:
         env:
           OUTSTAND_API_KEY: ${{ secrets.OUTSTAND_API_KEY }}
           HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
+          # Sunday --digest-weekly owned-audience section: absolute subscriber/
+          # alert/trip-board counts via PostgREST HEAD count probes (zero-row
+          # egress). Missing secrets degrade gracefully — the digest prints
+          # "unavailable" instead of failing the run.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: python nakshiq-autoposter/autoposter.py ${{ steps.mode.outputs.args }}
 
       - name: Commit updated state to autoposter-state branch

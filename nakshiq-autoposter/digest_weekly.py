@@ -31,7 +31,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
+import urllib.error
+import urllib.request
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -45,9 +48,99 @@ ENGAGEMENT_PATH = DATA_DIR / "post_engagement.json"
 OUTCOMES_PATH = DATA_DIR / "post_outcomes.jsonl"
 REPORT_DIR = REPO_ROOT / "data" / "research"
 
+# Monetisation gate from the roadmap (CLAUDE.md: "gated until 100K MUV +
+# 2K email list") — shown next to the subscriber count so the digest always
+# answers "how far from the gate are we?" in absolute terms.
+EMAIL_LIST_GATE = 2000
+
 
 def _log(msg: str) -> None:
     print(f"[digest_weekly] {msg}", flush=True)
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Owned-audience ABSOLUTE counts (added 2026-06-10)
+# -------------------------------------------------------------------------
+# WHY: the digest reported only percentages / relative metrics, which masked
+# an email base of ~6 against the 2,000-subscriber monetisation gate.
+# Absolute counts make a tiny base un-maskable.
+#
+# DB access mirrors content_calendar_gen.py (env or apps/web/.env.local +
+# PostgREST). Counts use HEAD probes with `Prefer: count=exact`, which
+# return ONLY a Content-Range header — zero row egress (Supabase egress
+# rules, CLAUDE.md). Missing creds / network errors degrade to "unavailable"
+# so the Sunday cron never fails on this section.
+# ─────────────────────────────────────────────────────────────────────────
+
+def _load_env_local() -> None:
+    """Mirror content_calendar_gen.py's loader: pick up Supabase creds from
+    apps/web/.env.local when not already in the environment (local runs).
+    On GitHub Actions the secrets arrive via the workflow env."""
+    env_file = REPO_ROOT / "apps" / "web" / ".env.local"
+    if not env_file.exists():
+        return
+    for line in env_file.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        v = v.strip().strip('"').strip("'")
+        # Known repo gotcha (2026-06-08 session memory): some .env.local
+        # values carry a LITERAL "\n" inside the quotes → DNS failures.
+        v = v.replace("\\n", "").replace("\\r", "").strip()
+        os.environ.setdefault(k.strip(), v)
+
+
+def _sb_count(table: str, params: str = "") -> int | None:
+    """Exact row count via a PostgREST HEAD probe (no rows transferred).
+    Returns None when creds are missing or the request fails."""
+    url_base = (os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+                or os.environ.get("SUPABASE_URL"))
+    key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+    if not url_base or not key:
+        return None
+    qs = "select=*" + (f"&{params}" if params else "")
+    req = urllib.request.Request(
+        f"{url_base.rstrip('/')}/rest/v1/{table}?{qs}",
+        headers={
+            "apikey": key,
+            "Authorization": f"Bearer {key}",
+            "Prefer": "count=exact",
+            "Range": "0-0",
+        },
+        method="HEAD",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            content_range = resp.headers.get("Content-Range") or ""
+    except (urllib.error.URLError, OSError) as e:
+        _log(f"WARNING: count probe failed for {table}: {e}")
+        return None
+    # Content-Range looks like "0-0/123" (or "*/123" on empty tables).
+    try:
+        return int(content_range.rsplit("/", 1)[1])
+    except (IndexError, ValueError):
+        _log(f"WARNING: unparseable Content-Range for {table}: {content_range!r}")
+        return None
+
+
+def owned_audience_counts() -> dict[str, int | None]:
+    """Absolute owned-audience counts. Keys map to the report rows below."""
+    _load_env_local()
+    return {
+        # THE number: confirmed AND not unsubscribed — matches the
+        # "Active confirmed" definition in scripts/_audit-conversion.mjs.
+        "newsletter_active": _sb_count(
+            "newsletter_subscribers",
+            "confirmed_at=not.is.null&unsubscribed_at=is.null"),
+        "newsletter_total": _sb_count("newsletter_subscribers"),
+        "destination_alerts": _sb_count("destination_alerts"),
+        "trip_boards": _sb_count("trip_boards"),
+    }
+
+
+def _fmt_count(v: int | None) -> str:
+    return "unavailable" if v is None else f"{v:,}"
 
 
 def load_engagement() -> dict[str, Any]:
@@ -112,7 +205,8 @@ def _fmt_int(n: Any) -> str:
     return f"{int(n):,}"
 
 
-def render_report(snaps: list[dict[str, Any]], days: int) -> str:
+def render_report(snaps: list[dict[str, Any]], days: int,
+                  audience: dict[str, int | None] | None = None) -> str:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     # Sort variants
@@ -160,6 +254,36 @@ def render_report(snaps: list[dict[str, Any]], days: int) -> str:
     if total['reach']:
         eng_rate = (total['likes'] + total['comments'] + total['saves'] + total['shares']) / max(total['reach'], 1) * 100
         lines.append(f"- **Engagement rate (eng / reach):** {eng_rate:.2f}%")
+    lines.append("")
+
+    # ── Owned audience — ABSOLUTE counts ──
+    # Deliberately absolute, never percentage-only: a percentage on a base of
+    # 6 subscribers reads healthy and hides the real problem. If a number
+    # below is tiny, it must LOOK tiny.
+    aud = audience if audience is not None else {}
+    lines.append("## Owned audience — absolute counts")
+    lines.append("")
+    lines.append("Absolute numbers on purpose — percentage metrics previously "
+                 "masked a single-digit email base. Source: live Supabase "
+                 "count probes at digest time.")
+    lines.append("")
+    lines.append("| Metric | Count |")
+    lines.append("|---|---:|")
+    nl_active = aud.get("newsletter_active")
+    gate_note = (f" of {EMAIL_LIST_GATE:,} monetisation gate"
+                 if nl_active is not None else "")
+    lines.append(f"| **Newsletter subscribers (confirmed, not unsubscribed)** "
+                 f"| **{_fmt_count(nl_active)}**{gate_note} |")
+    lines.append(f"| Newsletter rows lifetime (incl. unconfirmed) "
+                 f"| {_fmt_count(aud.get('newsletter_total'))} |")
+    lines.append(f"| Destination peak-alert rows (total) "
+                 f"| {_fmt_count(aud.get('destination_alerts'))} |")
+    lines.append(f"| Trip boards (total) "
+                 f"| {_fmt_count(aud.get('trip_boards'))} |")
+    if nl_active is None:
+        lines.append("")
+        lines.append("_Counts unavailable — set `NEXT_PUBLIC_SUPABASE_URL` + "
+                     "`SUPABASE_SERVICE_ROLE_KEY` in the digest environment._")
     lines.append("")
 
     lines.append("## Top 5 by velocity (engagement / hour since publish)")
@@ -268,7 +392,8 @@ def run(days: int = 7) -> Path | None:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     out_path = REPORT_DIR / f"social-engagement-week-{today}.md"
-    out_path.write_text(render_report(snaps, days))
+    audience = owned_audience_counts()
+    out_path.write_text(render_report(snaps, days, audience=audience))
     _log(f"Digest written: {out_path} ({len(snaps)} posts in window)")
     return out_path
 
