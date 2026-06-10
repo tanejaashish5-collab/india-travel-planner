@@ -100,24 +100,30 @@ const STATE_ANCHOR = {
 // fall through to terrain default if nothing matches.
 // IMPORTANT: subjects do NOT pre-bake time-of-day terms — those come from the
 // month-mood layer. Subjects only describe SHAPE (what's in frame), not light.
+//
+// HUMAN-VENUE EXCLUSION (2026-06-09): subjects must describe a PLACE (terrain,
+// architecture, water), never a human-activity venue. Veo/AI-video models cannot
+// honour negation — "empty fairground … no crowds" reliably renders the crowd
+// (the words tents/flags/market/workshop prime the gathering, and "no crowds"
+// names the very concept it's trying to suppress). Verified live 2026-06-09:
+// fair/mela subjects rendered crowds on prashar-mela, mitthe-urs-fair, nagdwari-mela.
+// So "carnival|mela|fair", "food|cuisine", "craft|weave|…", and "tribal|adivasi"
+// keyword rules were REMOVED — those festivals now fall through to the terrain
+// default (or a later place-based keyword like temple/river/lake), which is the
+// LOCATION-ONLY B-roll this generator was always meant to produce (see header).
+// Keep this list place-only: a subject is safe when its core noun is a landscape
+// or structure that is inherently figure-free (a river, ridge, temple exterior,
+// empty beach, lantern-lit boats — the boat subject verified clean same run).
 const FESTIVAL_KEYWORDS = [
   { rx: /\b(kite|uttarayan|patang)\b/i,                  subject: "wide-angle empty sky with high cumulus and distant kite silhouettes (specks, no closeup)" },
   { rx: /\b(bird|flamingo|migratory)\b/i,                 subject: "wetland reflections, water birds at distance in flight, reed-bed foreground" },
   { rx: /\bcamel\b/i,                                     subject: "Thar desert dunes, distant camel silhouettes against the horizon (no riders, no closeup)" },
   { rx: /\b(snow|winter sports|ski).*(auli|kufri|kullu|gulmarg|tawang)\b/i, subject: "snow-covered slopes, fresh powder texture, low-angle light raking the ridge" },
   { rx: /\b(lit fest|literature|literary)\b/i,             subject: "Mughal-era palace courtyard exterior, light filtering through stone arches, empty stone benches" },
-  { rx: /\b(boat|float|teppa|jal vihar)\b/i,               subject: "still water surface ripples, distant lantern-lit boats, no occupants visible" },
-  { rx: /\b(carnival|mela|fair)\b/i,                       subject: "empty fairground wide shot — tents, flags, dusty paths, no crowds, no readable signage" },
-  { rx: /\b(dance|music festival|sangeet)\b/i,             subject: "ancient stone amphitheater steps, distant lights, no performers in frame" },
-  { rx: /\b(food|cuisine|gastronom)\b/i,                   subject: "empty market street — clay pots and steam, no vendors or customers visible" },
-  { rx: /\b(monastery|gompa|hemis|losar|saga dawa)\b/i,    subject: "monastery exterior wide shot at altitude, empty courtyard, no flags or figures visible, light on stone" },
-  { rx: /\b(tribal|adivasi|bastar haat)\b/i,               subject: "forest-village clearing, no figures, smoke from distant hearths" },
-  { rx: /\b(tulip|flower|bloom|garden)\b/i,                subject: "vast flower-bed geometric rows, slow drift through colour fields, no people" },
+  { rx: /\b(boat|float|teppa|jal vihar)\b/i,               subject: "still water surface ripples, distant lantern-lit boats, no occupants visible" },  { rx: /\b(dance|music festival|sangeet)\b/i,             subject: "ancient stone amphitheater steps, distant lights, no performers in frame" },  { rx: /\b(monastery|gompa|hemis|losar|saga dawa)\b/i,    subject: "monastery exterior wide shot at altitude, empty courtyard, no flags or figures visible, light on stone" },  { rx: /\b(tulip|flower|bloom|garden)\b/i,                subject: "vast flower-bed geometric rows, slow drift through colour fields, no people" },
   { rx: /\b(river|ganga|yamuna|brahmaputra|godavari|kaveri|narmada)\b/i, subject: "river current detail, ghats (architecture only, no figures), low mist on water" },
   { rx: /\b(temple|jagannath|kapaat|kapat|opening|kumbh|sangam)\b/i, subject: "temple-town exterior wide shot — sandstone or granite architecture, no figures, no idols visible" },
-  { rx: /\b(wildlife|safari|elephant|tiger)\b/i,            subject: "forest canopy from above, dust trails on a logging road, no animals or vehicles visible" },
-  { rx: /\b(craft|weave|textile|loom|pottery|kalamkari|kutchi)\b/i, subject: "empty workshop interior — looms, dye-pots, raw cotton bales, no figures" },
-  { rx: /\b(bonfire|lohri|bhogi|sankranti)\b/i,             subject: "empty harvest field, distant glow from small communal fires (low + small, no figures)" },
+  { rx: /\b(wildlife|safari|elephant|tiger)\b/i,            subject: "forest canopy from above, dust trails on a logging road, no animals or vehicles visible" },  { rx: /\b(bonfire|lohri|bhogi|sankranti)\b/i,             subject: "empty harvest field, distant glow from small communal fires (low + small, no figures)" },
   { rx: /\b(harvest|baisakhi|onam|pongal)\b/i,              subject: "ripening fields wide shot, no harvesters visible, distant grain stacks" },
   { rx: /\b(yatra|pilgrimage|parikrama|route|kapaat|opening)\b/i, subject: "long mountain road or trail receding into distance, no pilgrims visible" },
   { rx: /\b(beach|coast|sea)\b/i,                          subject: "empty beach at low tide, footprint-free sand, distant horizon, soft surf" },
