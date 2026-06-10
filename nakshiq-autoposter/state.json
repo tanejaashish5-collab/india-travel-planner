@@ -30,42 +30,18 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-09",
-    "PdMu0": "2026-06-09",
+    "m8EAd": "2026-06-10",
+    "PdMu0": "2026-06-10",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-06-09",
-    "m8EAd_story": "2026-06-08",
     "m8EAd_yt_short": "2026-06-09",
     "m8EAd_infographic": "2026-06-09",
-    "PdMu0_infographic": "2026-06-09"
+    "PdMu0_infographic": "2026-06-09",
+    "m8EAd_story": "2026-06-10"
   },
-  "last_sync": "2026-06-09T16:53:26.622777+00:00",
+  "last_sync": "2026-06-10T07:22:52.564343+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kalimpong",
-      "date": "2026-05-26"
-    },
-    {
-      "destination_id": "mathura",
-      "date": "2026-05-26"
-    },
-    {
-      "destination_id": "doodhpathri",
-      "date": "2026-05-26"
-    },
-    {
-      "destination_id": "auli",
-      "date": "2026-05-26"
-    },
-    {
-      "destination_id": "mumbai",
-      "date": "2026-05-26"
-    },
-    {
-      "destination_id": "chennai",
-      "date": "2026-05-26"
-    },
     {
       "destination_id": "kabini",
       "date": "2026-05-27"
@@ -341,11 +317,18 @@
     {
       "destination_id": "sinthan-top",
       "date": "2026-06-09"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-06-10"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-06-10"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_route_animated_map",
       "weekend_escape",
       "v2_hindi_score_card",
       "festival_alert",
@@ -365,10 +348,10 @@
       "festival_alert",
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
-      "emergency_intel"
+      "emergency_intel",
+      "v2_cost_vs_feeling"
     ],
     "PdMu0": [
-      "v2_route_animated_map",
       "weekend_escape",
       "v2_hindi_score_card",
       "festival_alert",
@@ -388,7 +371,8 @@
       "festival_alert",
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
-      "emergency_intel"
+      "emergency_intel",
+      "v2_cost_vs_feeling"
     ]
   },
   "post_log": [
@@ -2616,6 +2600,39 @@
       "destination": "sinthan-top",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_sinthan-top_hi_2026-06-09.mp4"
+    },
+    {
+      "timestamp": "2026-06-10T07:24:23.145255+00:00",
+      "date": "2026-06-10",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "DtxZo",
+      "destination": "pangong-lake",
+      "format": "v2_cost_vs_feeling",
+      "has_media": true,
+      "media_id": "v2_cost_vs_feeling-pangong-lake_01_cover.png"
+    },
+    {
+      "timestamp": "2026-06-10T07:24:50.007814+00:00",
+      "date": "2026-06-10",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "xYc28",
+      "destination": "gurez-valley",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-06-10T07:26:05.633359+00:00",
+      "date": "2026-06-10",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "AKJe7",
+      "destination": "nubra-valley",
+      "format": "v2_cost_vs_feeling",
+      "has_media": true,
+      "media_id": "v2_cost_vs_feeling-nubra-valley_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -2794,7 +2811,8 @@
         "2026-06-02",
         "2026-06-06",
         "2026-06-07",
-        "2026-06-08"
+        "2026-06-08",
+        "2026-06-10"
       ],
       "tungnath": [
         "2026-06-02"
@@ -2803,7 +2821,8 @@
         "2026-06-02",
         "2026-06-06",
         "2026-06-07",
-        "2026-06-08"
+        "2026-06-08",
+        "2026-06-10"
       ],
       "ukhrul": [
         "2026-06-03"
@@ -2844,6 +2863,9 @@
       ],
       "tosamaidan": [
         "2026-06-09"
+      ],
+      "gurez-valley": [
+        "2026-06-10"
       ]
     },
     "morning_formats": {
@@ -2970,6 +2992,9 @@
       ],
       "infographic": [
         "2026-06-09"
+      ],
+      "v2_cost_vs_feeling": [
+        "2026-06-10"
       ]
     },
     "reels": {
@@ -3109,6 +3134,9 @@
       ],
       "after-dark-experiences": [
         "2026-06-04"
+      ],
+      "arupadai-veedu": [
+        "2026-06-10"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -3206,7 +3234,8 @@
       "kiphire": [
         "2026-06-09"
       ]
-    }
+    },
+    "collection_carousel_dests:arupadai-veedu": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -3220,8 +3249,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tosamaidan",
-    "collection": "after-dark-experiences"
+    "shared_best": "gurez-valley",
+    "collection": "arupadai-veedu"
   },
   "manual_skip_dests": {}
 }

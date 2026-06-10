@@ -3078,3 +3078,102 @@ Date range: 2026-04-15 → 2026-06-08
 2026-06-09 20:26:00  INFO      
 Date range: 2026-04-15 → 2026-06-09
 2026-06-09 20:26:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 07:22:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 07:22:21  INFO      Nakshiq Autoposter · MORNING · 2026-06-10 · weekday=2
+2026-06-10 07:22:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-10 07:22:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-10 07:22:52  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-10 07:22:52  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-10 07:22:53  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-10 07:22:55  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-10 07:23:09  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-10 07:23:09  INFO      Morning format (themed-week-2→verification): v2_cost_vs_feeling [17% vs target 20%] (0/14 never featured)
+2026-06-10 07:23:09  INFO      Formats — IG: v2_cost_vs_feeling  ·  FB: v2_cost_vs_feeling  ·  Story: collection_spotlight
+2026-06-10 07:23:09  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 61
+2026-06-10 07:23:09  INFO      Fingerprint dedup snapshot — 61 dests in 7d · 108 (dest,fmt) pairs in 30d · 110 media in 60d
+2026-06-10 07:23:09  INFO      Collection locked: Arupadai Veedu: Six Abodes of Murugan (8/20 never featured)
+2026-06-10 07:23:13  INFO      Shared best destination locked: Gurez Valley
+2026-06-10 07:23:13  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-06-10 07:23:13  INFO      Carousel locked (v2_cost_vs_feeling): gurez-valley
+2026-06-10 07:23:13  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-10 07:23:13  INFO      [instagram/nakshiq] Generating v2_cost_vs_feeling post...
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: mathura has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: kalimpong has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      v2_cost_vs_feeling: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:23:13  INFO      [instagram/nakshiq] Caption ready (191 chars, dest=pangong-lake)
+2026-06-10 07:23:24  INFO      [instagram/nakshiq] dynamic render: 5 slide(s) for v2_cost_vs_feeling → uploading...
+2026-06-10 07:23:24  INFO          Requesting upload URL for v2_cost_vs_feeling-pangong-lake_01_cover.png (1,664,068 bytes, image/png)
+2026-06-10 07:23:24  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:23:25  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:23:26  INFO          Media ready: CXaqF (1,664,068 bytes · v2_cost_vs_feeling-pangong-lake_01_cover.png)
+2026-06-10 07:23:26  INFO          Requesting upload URL for v2_cost_vs_feeling-pangong-lake_02.png (1,658,342 bytes, image/png)
+2026-06-10 07:23:27  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:23:28  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:23:29  INFO          Media ready: VfRuN (1,658,342 bytes · v2_cost_vs_feeling-pangong-lake_02.png)
+2026-06-10 07:23:29  INFO          Requesting upload URL for v2_cost_vs_feeling-pangong-lake_03.png (1,654,881 bytes, image/png)
+2026-06-10 07:23:29  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:23:30  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:23:31  INFO          Media ready: rRvJ4 (1,654,881 bytes · v2_cost_vs_feeling-pangong-lake_03.png)
+2026-06-10 07:23:31  INFO          Requesting upload URL for v2_cost_vs_feeling-pangong-lake_04.png (1,655,141 bytes, image/png)
+2026-06-10 07:23:31  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:23:32  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:23:33  INFO          Media ready: KLeY9 (1,655,141 bytes · v2_cost_vs_feeling-pangong-lake_04.png)
+2026-06-10 07:23:33  INFO          Requesting upload URL for v2_cost_vs_feeling-pangong-lake_05_cta.png (49,808 bytes, image/png)
+2026-06-10 07:23:34  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:23:34  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:23:35  INFO          Media ready: dJzKO (49,808 bytes · v2_cost_vs_feeling-pangong-lake_05_cta.png)
+2026-06-10 07:23:35  INFO      [instagram/nakshiq] Publishing 5-slide carousel...
+2026-06-10 07:24:23  INFO          wait_for_publish exhausted 8 polls for post=DtxZo (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-10 07:24:23  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=DtxZo)
+2026-06-10 07:24:23  WARNING   collection_spotlight: no member of 'Arupadai Veedu: Six Abodes of Murugan' resolves in catalog — falling back to score_card to avoid caption/image mismatch.
+2026-06-10 07:24:23  INFO      [instagram/nakshiq] Uploading Story image (gurez-valley.jpg)...
+2026-06-10 07:24:23  INFO          Using branded image: gurez-valley_story_typographic-art_footer-bar.jpg (417,602 bytes)
+2026-06-10 07:24:23  INFO          Requesting upload URL for gurez-valley.jpg (417,602 bytes, image/jpeg)
+2026-06-10 07:24:23  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:24:24  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:24:25  INFO          Media ready: ad5Pb (417,602 bytes · gurez-valley.jpg)
+2026-06-10 07:24:25  INFO      [instagram/nakshiq] Publishing Story · format=collection_spotlight · dest=gurez-valley
+2026-06-10 07:24:50  INFO      [instagram/nakshiq] ✅ Story live · ID=17871053460682306
+2026-06-10 07:24:50  INFO      [facebook/Nakshiq] Generating v2_cost_vs_feeling post...
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: darjeeling has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: mathura has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: kalimpong has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-10 07:24:50  INFO      v2_cost_vs_feeling: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-10 07:24:50  INFO      [facebook/Nakshiq] Caption ready (193 chars, dest=nubra-valley)
+2026-06-10 07:25:00  INFO      [facebook/Nakshiq] dynamic render: 5 slide(s) for v2_cost_vs_feeling → uploading...
+2026-06-10 07:25:00  INFO          Requesting upload URL for v2_cost_vs_feeling-nubra-valley_01_cover.png (1,471,819 bytes, image/png)
+2026-06-10 07:25:00  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:25:01  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:25:02  INFO          Media ready: vk0jg (1,471,819 bytes · v2_cost_vs_feeling-nubra-valley_01_cover.png)
+2026-06-10 07:25:02  INFO          Requesting upload URL for v2_cost_vs_feeling-nubra-valley_02.png (1,480,016 bytes, image/png)
+2026-06-10 07:25:03  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:25:04  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:25:05  INFO          Media ready: MINvC (1,480,016 bytes · v2_cost_vs_feeling-nubra-valley_02.png)
+2026-06-10 07:25:05  INFO          Requesting upload URL for v2_cost_vs_feeling-nubra-valley_03.png (1,481,450 bytes, image/png)
+2026-06-10 07:25:05  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:25:06  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:25:06  INFO          Media ready: noIHl (1,481,450 bytes · v2_cost_vs_feeling-nubra-valley_03.png)
+2026-06-10 07:25:07  INFO          Requesting upload URL for v2_cost_vs_feeling-nubra-valley_04.png (1,458,930 bytes, image/png)
+2026-06-10 07:25:07  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:25:08  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:25:08  INFO          Media ready: i5xRB (1,458,930 bytes · v2_cost_vs_feeling-nubra-valley_04.png)
+2026-06-10 07:25:08  INFO          Requesting upload URL for v2_cost_vs_feeling-nubra-valley_05_cta.png (49,808 bytes, image/png)
+2026-06-10 07:25:09  INFO          Uploading to R2 (timeout=120s)...
+2026-06-10 07:25:09  INFO          R2 PUT OK. Confirming...
+2026-06-10 07:25:10  INFO          Media ready: zKFlP (49,808 bytes · v2_cost_vs_feeling-nubra-valley_05_cta.png)
+2026-06-10 07:25:10  INFO      [facebook/Nakshiq] Publishing 5-slide carousel...
+2026-06-10 07:25:52  WARNING       Platform error for post=PjUi0: Error publishing post to Facebook: Failed to publish Facebook multi-photo post: unknown - Failed to upload Facebook photo: 400 - Missing or invalid image file
+2026-06-10 07:25:52  WARNING   [facebook/Nakshiq] FB rejected 5-slide carousel (Error publishing post to Facebook: Failed to publish Facebook multi-photo post: unknown - Failed to upload Facebook photo: 400 - Missing or invalid image file) — retrying as single cover image.
+2026-06-10 07:26:05  INFO      [facebook/Nakshiq] ✅ Published · Outstand=AKJe7 · Platform=1040562729145369_122111566610700092
+2026-06-10 07:26:05  INFO      State saved. Run complete.
+2026-06-10 07:26:05  INFO      ════════════════════════════════════════════════════════════
