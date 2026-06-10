@@ -43,8 +43,10 @@ export async function generateStaticParams() {
 }
 
 function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // Whitespace-strip mirrors lib/cached-data.ts — local .env.local values can
+  // carry a literal "\n" (build-time "Invalid API key"); no-op on Vercel.
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\s/g, "");
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.replace(/\s/g, "");
   if (!url || !key) return null;
   return createClient(url, key);
 }

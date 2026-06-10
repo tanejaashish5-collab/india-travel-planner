@@ -105,6 +105,9 @@ import { CinematicRelatedRail } from "./cinematic-related-rail";
 import { HonestScarcityPanel } from "./honest-scarcity-panel";
 import { isHonestScarcityConfirmed } from "@/lib/honest-scarcity";
 import { hasSafariGuide } from "@/lib/safari-guide";
+import { pilgrimageSlugFor } from "@/lib/pilgrimage-guide";
+import { hasItineraryPage } from "@/lib/itinerary-page";
+import { VS_PAIRS } from "@/lib/vs-pairs";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale() as Locale;
@@ -1665,6 +1668,106 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </a>
             )}
 
+            {/* Inbound link to the verified yatra guide (/pilgrimage/[slug]) —
+                only for dests with a published pilgrimage_routes row (map in
+                pilgrimage-guide.ts, same advertise-only gate as safari). */}
+            {pilgrimageSlugFor(dest.id) && (
+              <a
+                href={`/${locale}/pilgrimage/${pilgrimageSlugFor(dest.id)}`}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 16,
+                  marginTop: 16,
+                  padding: "20px 24px",
+                  border: "1px solid var(--hair)",
+                  background: "rgba(245, 241, 232, 0.02)",
+                  textDecoration: "none",
+                }}
+              >
+                <span>
+                  <span
+                    style={{
+                      display: "block",
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontSize: 22,
+                      color: "var(--bone)",
+                    }}
+                  >
+                    {locale === "hi" ? `${displayName} यात्रा मार्ग — पूरी गाइड` : `The ${displayName} yatra route, verified`}
+                  </span>
+                  <span
+                    style={{
+                      display: "block",
+                      marginTop: 6,
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      color: "var(--bone-dim)",
+                    }}
+                  >
+                    {locale === "hi"
+                      ? "चरण, दूरियाँ, खुलने के महीने और भीड़ — स्रोत-सहित।"
+                      : "Stages, distances, open months & crowd windows — source-cited."}
+                  </span>
+                </span>
+                <span aria-hidden style={{ color: "var(--vermillion)", fontSize: 20 }}>
+                  &rarr;
+                </span>
+              </a>
+            )}
+
+            {/* Cross-family pills — compare pages + with-kids. These surfaces
+                lost their only hub inbound links in the cinematic flip
+                (2026-06-10 audit: 1,050 /with-kids + 3,334 /vs URLs near-
+                orphaned). Pair list derives from the same VS_PAIRS source of
+                truth the /vs route builds from, so a pill can never 404. */}
+            {(() => {
+              const pairs = VS_PAIRS.filter((p) => p.id1 === dest.id || p.id2 === dest.id).slice(0, 4);
+              const pretty = (id: string) =>
+                id.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+              if (pairs.length === 0 && !kf) return null;
+              return (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 20 }}>
+                  {pairs.map((p) => {
+                    const other = p.id1 === dest.id ? p.id2 : p.id1;
+                    return (
+                      <a
+                        key={`${p.id1}-${p.id2}`}
+                        href={`/${locale}/vs/${p.id1}-vs-${p.id2}`}
+                        style={{
+                          fontFamily: "var(--cinema-ui)",
+                          fontSize: 13,
+                          color: "var(--bone-dim)",
+                          border: "1px solid var(--hair)",
+                          padding: "8px 16px",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {locale === "hi" ? `बनाम ${pretty(other)}` : `vs ${pretty(other)}`} &rarr;
+                      </a>
+                    );
+                  })}
+                  {kf && (
+                    <a
+                      href={`/${locale}/with-kids/${dest.id}`}
+                      style={{
+                        fontFamily: "var(--cinema-ui)",
+                        fontSize: 13,
+                        color: "var(--bone-dim)",
+                        border: "1px solid var(--hair)",
+                        padding: "8px 16px",
+                        textDecoration: "none",
+                      }}
+                    >
+                      {locale === "hi" ? `बच्चों के साथ ${displayName}` : `${displayName} with kids`} &rarr;
+                    </a>
+                  )}
+                </div>
+              );
+            })()}
+
             {/* Cost grid — three tiers (budget / midrange / luxury), each a
                 line-item breakdown of the daily spend. Note rendered above
                 as a caption; non-tier keys (e.g. `note`) skipped from the
@@ -2741,6 +2844,27 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             {dest.micro_itineraries && (
               <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
                 <MicroItinerarySection data={dest.micro_itineraries} />
+              </div>
+            )}
+
+            {/* Deep link to the standalone /itinerary/[slug] page — same
+                min-content gate the page itself uses, so this never links a
+                notFound(). */}
+            {hasItineraryPage(dest.micro_itineraries) && (
+              <div style={{ maxWidth: 1100, margin: "24px auto 0" }}>
+                <a
+                  href={`/${locale}/itinerary/${dest.id}`}
+                  style={{
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 14,
+                    color: "var(--vermillion)",
+                    textDecoration: "none",
+                  }}
+                >
+                  {locale === "hi"
+                    ? `${displayName} का पूरा दिन-प्रतिदिन प्लान — शेयर करने लायक पेज →`
+                    : `The full ${displayName} itinerary — a shareable day-by-day page →`}
+                </a>
               </div>
             )}
 

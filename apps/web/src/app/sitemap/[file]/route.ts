@@ -3,7 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
 import { allBestSlugs } from "@/lib/best-pages";
-import { getCachedDestinationsIndex } from "@/lib/cached-data";
+import { getCachedDestinationsIndex, getCachedItinerarySlugs } from "@/lib/cached-data";
 
 // Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
 // generateSitemaps() convention because its auto-generated /sitemap.xml
@@ -210,7 +210,12 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const pilgrimageSlugs = await getPilgrimageSlugs();
     const pilgrimageEntries = pilgrimageSlugs.flatMap((slug) => entry(`pilgrimage/${slug}`, "monthly", 0.7));
 
-    return [...destEntries, ...destMonthEntries, ...costEntries, ...safariEntries, ...pilgrimageEntries];
+    // /itinerary/[slug] — 1/3/5-day plans. Same cached allowlist the page's
+    // generateStaticParams + notFound() use, so we never sitemap a 404.
+    const itinerarySlugs = await getCachedItinerarySlugs();
+    const itineraryEntries = itinerarySlugs.flatMap((dId) => entry(`itinerary/${dId}`, "monthly", 0.7));
+
+    return [...destEntries, ...destMonthEntries, ...costEntries, ...safariEntries, ...pilgrimageEntries, ...itineraryEntries];
   }
 
   if (id === "2") {

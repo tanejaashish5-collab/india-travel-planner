@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { VsComparison } from "@/components/vs-comparison";
@@ -252,6 +253,36 @@ export default async function VsPairPage({
         dest2={serialize(dest2 as unknown as Record<string, unknown>, name2)}
         locale={locale}
       />
+
+      {/* Cross-family links: each side's trip-cost calculator. daily_cost on
+          the destinations row is what /cost/[slug] itself renders from, so a
+          non-null value here means the cost page exists (audit #9: /vs pages
+          linked neither side's /cost — 3,334 near-orphan URLs). */}
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px 80px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+          {[
+            { d: dest1, label: name1 },
+            { d: dest2, label: name2 },
+          ]
+            .filter(({ d }) => (d as { daily_cost?: unknown }).daily_cost != null)
+            .map(({ d, label }) => (
+              <Link
+                key={(d as { id: string }).id}
+                href={`/${locale}/cost/${(d as { id: string }).id}`}
+                style={{
+                  fontFamily: "var(--cinema-ui)",
+                  fontSize: 14,
+                  color: "var(--bone)",
+                  border: "1px solid var(--hair)",
+                  padding: "12px 20px",
+                  textDecoration: "none",
+                }}
+              >
+                {locale === "hi" ? `${label} की यात्रा का बजट निकालें →` : `Budget a ${label} trip →`}
+              </Link>
+            ))}
+        </div>
+      </section>
 
       <CinematicRelatedRail />
       <Footer />

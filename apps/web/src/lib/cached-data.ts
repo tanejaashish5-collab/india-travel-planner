@@ -47,8 +47,11 @@ export const REF_TAGS = {
 export const ALL_REF_TAGS = Object.values(REF_TAGS);
 
 function anonClient(): SupabaseClient | null {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // Known local-env gotcha: .env.local values can carry a literal "\n"
+  // inside the quotes ("Invalid API key" at build time). Vercel values are
+  // clean; stripping whitespace is a no-op there.
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\s/g, "");
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.replace(/\s/g, "");
   if (!url || !key) return null;
   return createClient(url, key);
 }

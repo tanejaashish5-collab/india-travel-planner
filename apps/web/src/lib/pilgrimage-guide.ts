@@ -8,6 +8,23 @@ import { MONTH_NAMES_EN, MONTH_NAMES_HI, formatMonths } from "./safari-guide";
 
 export { MONTH_NAMES_EN, MONTH_NAMES_HI, formatMonths };
 
+// Destinations whose hub should advertise a /pilgrimage/[slug] guide — the
+// published pilgrimage_routes rows that carry a destination_id (circuit-only
+// routes like char-dham have none). Mirrors SAFARI_PARK_SLUGS in
+// safari-guide.ts: the page itself notFound()s for unpublished slugs, this map
+// only governs whether the hub *advertises* the link. Keep in sync with
+// pilgrimage_routes when coverage grows.
+export const PILGRIMAGE_SLUG_BY_DEST: Readonly<Record<string, string>> = {
+  "astavinayak-circuit": "ashtavinayak",
+  chitrakoot: "chitrakoot-parikrama",
+  palitana: "shatrunjaya-palitana",
+  katra: "vaishno-devi",
+};
+
+export function pilgrimageSlugFor(destId: string): string | null {
+  return PILGRIMAGE_SLUG_BY_DEST[destId] ?? null;
+}
+
 export type PilgrimageLeg = {
   seq: number;
   from: string;
