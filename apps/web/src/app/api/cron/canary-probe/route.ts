@@ -179,7 +179,7 @@ export async function GET(req: NextRequest) {
       .from("ops_reports")
       .select("ok, summary")
       .eq("job", "canary-probe")
-      .order("created_at", { ascending: false })
+      .order("run_at", { ascending: false })
       .limit(1);
     if (prev?.length) {
       prevOk = prev[0].ok !== false;
