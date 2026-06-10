@@ -29,12 +29,14 @@ test.describe("Mobile Navigation", () => {
     }
   });
 
-  test("more tab navigates to homepage", async ({ page }) => {
+  test("more tab navigates to the /more page", async ({ page }) => {
     await page.goto("/en/explore");
     const moreBtn = page.locator("nav[aria-label='Main navigation'] button").nth(4);
     if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
       await moreBtn.click();
-      await page.waitForURL("**/en", { timeout: 5000 });
+      // mobile-tab-bar.tsx routes the More tab to /<locale>/more now (the
+      // old expectation of navigating to the homepage was stale).
+      await page.waitForURL("**/more", { timeout: 5000 });
       // Should NOT land on About page
       const url = page.url();
       expect(url).not.toContain("/about");
@@ -62,7 +64,9 @@ test.describe("Desktop Navigation", () => {
 
   test("nav bar has main links", async ({ page }) => {
     await page.goto("/en");
-    await expect(page.locator("header")).toBeVisible();
+    // Cinematic landing renders one <header> per act — target the site
+    // header (first) to avoid a strict-mode violation.
+    await expect(page.locator("header").first()).toBeVisible();
     await expect(page.getByRole("link", { name: "Destinations" }).first()).toBeVisible();
   });
 });

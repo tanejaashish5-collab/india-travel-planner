@@ -6,16 +6,12 @@ import { test, expect } from "@playwright/test";
 // Stubs the subscribe endpoint so the test doesn't fire real emails.
 
 test.describe("Peak alert hook", () => {
-  test("renders mid-page on dest×month with vermillion outline + submit fires success", async ({ page }) => {
+  test("renders mid-page on dest×month and Save CTA flips to saved state", async ({ page }) => {
     // Tungnath/May has score 5 → guaranteed to render the hook.
-    await page.route("**/api/destination-alerts/subscribe", async (route) => {
-      await route.fulfill({
-        status: 200,
-        contentType: "application/json",
-        body: JSON.stringify({ ok: true, peak: { monthNum: 5, monthName: "May", score: 5 } }),
-      });
-    });
-
+    // The hook's email form was replaced by a one-tap Save CTA (PR #25 /
+    // peak-alert-hook.tsx rewrite — saves go to localStorage and the
+    // SaveListEmailPrompt now owns email capture), so the old
+    // fill-email + "Set alert" flow no longer exists on this surface.
     await page.goto("/en/destination/tungnath/may");
 
     // Section is keyed by section-alert id and contains "PEAK ALERT" kicker
@@ -27,12 +23,11 @@ test.describe("Peak alert hook", () => {
     // analytics events live in window.gtag which is a no-op in tests).
     await hook.scrollIntoViewIfNeeded();
 
-    // Submit a test email
-    await hook.getByPlaceholder("your.email@example.com").fill("playwright+conv@nakshiq.test");
-    await hook.getByRole("button", { name: /set alert/i }).click();
+    // One-tap save
+    await hook.getByRole("button", { name: /save tungnath/i }).click();
 
-    // Success state shows the ✓ confirmation row
-    await expect(hook.getByText(/you're on the list|peaks/i)).toBeVisible({ timeout: 5_000 });
+    // Success state shows the ✓ saved confirmation
+    await expect(hook.getByText(/saved to your shortlist/i)).toBeVisible({ timeout: 5_000 });
   });
 
   test("hidden when destination has no peak month (score < 4)", async ({ page }) => {
@@ -77,7 +72,10 @@ test.describe("Save-list email prompt", () => {
     // Submit
     await prompt.getByPlaceholder("your.email@example.com").fill("playwright+conv@nakshiq.test");
     await prompt.getByRole("button", { name: /^send/i }).click();
-    await expect(prompt.getByText(/saved|inbox|check/i)).toBeVisible({ timeout: 5_000 });
+    // Exact success copy ("✓ Saved. Check your inbox.") — the old loose
+    // /saved|inbox|check/ regex strict-mode-collided with the "WISHLIST · 3
+    // SAVED" kicker + body copy that also live inside the dialog.
+    await expect(prompt.getByText(/check your inbox/i)).toBeVisible({ timeout: 5_000 });
   });
 
   test("dismiss button hides the prompt and sets the 7d cookie", async ({ page }) => {

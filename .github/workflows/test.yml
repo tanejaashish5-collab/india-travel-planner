@@ -8,7 +8,19 @@ on:
       - "*.md"
       - "images/**"
       - "videos/**"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "nakshiq-autoposter/**"
+      - "*.md"
+      - "images/**"
+      - "videos/**"
   workflow_dispatch:
+    inputs:
+      update_snapshots:
+        description: "Re-baseline visual snapshots (--update-snapshots). Manual only — automatic re-baselining defeats visual regression."
+        type: boolean
+        default: false
 
 env:
   BASE_URL: https://www.nakshiq.com
@@ -28,9 +40,49 @@ jobs:
         run: npm run lint || true
       - run: npm run type-check
 
+  # PR gate: run the functional e2e suite against the Vercel PREVIEW deploy of
+  # the PR branch — catches regressions BEFORE merge instead of post-merge
+  # against prod. Visual-regression specs are excluded (prod-baseline
+  # screenshots don't match preview content).
+  preview-e2e:
+    name: E2E vs Vercel preview (PR)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      deployments: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for Vercel preview deployment
+        id: preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.3.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 1200 # prod builds run ~13 min; previews are similar
+          check_interval: 30
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      - name: Run functional E2E tests against the preview
+        run: npx playwright test --project=mobile --project=desktop --grep-invert="Visual"
+        env:
+          BASE_URL: ${{ steps.preview.outputs.url }}
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report-preview
+          path: playwright-report/
+          retention-days: 7
+
+  # Post-merge smoke check against prod (unchanged behaviour, now skipped on
+  # PRs where preview-e2e covers it).
   playwright-e2e:
     name: E2E Tests (Playwright)
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     needs: lint-and-typecheck
     steps:
       - uses: actions/checkout@v4
@@ -54,6 +106,7 @@ jobs:
   visual-regression:
     name: Visual Regression
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     needs: lint-and-typecheck
     steps:
       - uses: actions/checkout@v4
@@ -64,7 +117,11 @@ jobs:
       - run: npm ci
       - run: npx playwright install chromium
       - name: Run visual regression tests
-        run: npx playwright test visual --project=mobile --project=desktop --update-snapshots
+        # --update-snapshots used to be passed UNCONDITIONALLY here: every
+        # automatic run silently re-baselined the snapshots, so the comparison
+        # could never catch a regression. Re-baselining is now opt-in via the
+        # workflow_dispatch `update_snapshots` input only.
+        run: npx playwright test visual --project=mobile --project=desktop ${{ (github.event_name == 'workflow_dispatch' && inputs.update_snapshots) && '--update-snapshots' || '' }}
         env:
           BASE_URL: ${{ env.BASE_URL }}
       - uses: actions/upload-artifact@v4
@@ -79,6 +136,7 @@ jobs:
   lighthouse-audit:
     name: Lighthouse Audit
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     needs: lint-and-typecheck
     steps:
       - uses: actions/checkout@v4
