@@ -49,12 +49,73 @@ interface ConfidenceCardProps {
     wifi_available?: string;
     note?: string;
   };
-  people_who_help: Array<{
-    name: string;
-    role: string;
-    contact: string;
-    note: string;
-  }>;
+  // Two real shapes exist in the DB: an array of named people (canonical) and a
+  // legacy object that maps a facet (atm/guides/medical_shops/…) to a fact string.
+  // Both carry verified, hand-authored content — render whichever arrives.
+  people_who_help:
+    | Array<{
+        name: string;
+        role: string;
+        contact: string;
+        note: string;
+      }>
+    | Record<string, string>;
+}
+
+// Legacy "people_who_help" object rows store a facet→fact map. Render each facet
+// with a human label; acronyms get explicit casing, the rest title-case cleanly.
+const HELPER_KEY_LABELS: Record<string, string> = {
+  key_contact: "Key contact",
+  tourist_police: "Tourist police",
+  police: "Police",
+  army: "Army",
+  bro: "BRO",
+  forest_dept: "Forest dept",
+  atm: "ATM",
+  medical_shops: "Medical shops",
+  hospital: "Hospital",
+  guides: "Guides",
+  locals: "Locals",
+  tourism_office: "Tourism office",
+  hptdc: "HPTDC",
+  war_memorial: "War memorial",
+  note: "Note",
+};
+
+// Stable display order; "note" reads as a free sentence so it renders last.
+const HELPER_KEY_ORDER = [
+  "key_contact",
+  "tourist_police",
+  "police",
+  "army",
+  "bro",
+  "forest_dept",
+  "atm",
+  "medical_shops",
+  "hospital",
+  "guides",
+  "locals",
+  "tourism_office",
+  "hptdc",
+  "war_memorial",
+  "note",
+];
+
+function humanizeHelperKey(key: string): string {
+  return (
+    HELPER_KEY_LABELS[key] ??
+    key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+  );
+}
+
+function orderedHelperFacts(obj: Record<string, string>): [string, string][] {
+  return (Object.entries(obj) as [string, string][])
+    .filter(([, v]) => typeof v === "string" && v.trim() !== "")
+    .sort(([a], [b]) => {
+      const ia = HELPER_KEY_ORDER.indexOf(a);
+      const ib = HELPER_KEY_ORDER.indexOf(b);
+      return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+    });
 }
 
 const SAFETY_COLORS: Record<number, string> = {
@@ -269,40 +330,66 @@ export function ConfidenceCardComponent(props: ConfidenceCardProps) {
         </Section>
       </div>
 
-      {/* People Who Can Help */}
-      {props.people_who_help.length > 0 && (
-        <div className="rounded-lg border border-border p-4">
-          <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
-            <span>🤝</span>
-            <span>{t("peopleWhoHelp")}</span>
-          </div>
-          <div className="space-y-3">
-            {props.people_who_help.map((person, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                  {person.name.charAt(0)}
-                </div>
-                <div>
-                  <div className="text-sm font-medium">{person.name}</div>
-                  <div className="text-xs text-muted-foreground">
-                    {person.role}
-                  </div>
-                  {person.contact && (
-                    <div className="mt-0.5 text-xs text-primary">
-                      {person.contact}
+      {/* People Who Can Help — array = named people, object = legacy facts map */}
+      {(() => {
+        const pwh = props.people_who_help;
+        const people = Array.isArray(pwh) ? pwh : null;
+        const facts = Array.isArray(pwh) ? null : orderedHelperFacts(pwh);
+        const hasContent = people
+          ? people.length > 0
+          : (facts?.length ?? 0) > 0;
+        if (!hasContent) return null;
+        return (
+          <div className="rounded-lg border border-border p-4">
+            <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
+              <span>🤝</span>
+              <span>{t("peopleWhoHelp")}</span>
+            </div>
+            <div className="space-y-3">
+              {people
+                ? people.map((person, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                        {person.name.charAt(0)}
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium">{person.name}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {person.role}
+                        </div>
+                        {person.contact && (
+                          <div className="mt-0.5 text-xs text-primary">
+                            {person.contact}
+                          </div>
+                        )}
+                        {person.note && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">
+                            {person.note}
+                          </div>
+                        )}
+                      </div>
                     </div>
+                  ))
+                : facts!.map(([key, value]) =>
+                    key === "note" ? (
+                      <div key={key} className="text-xs text-muted-foreground">
+                        {value}
+                      </div>
+                    ) : (
+                      <div key={key}>
+                        <div className="text-sm font-medium">
+                          {humanizeHelperKey(key)}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {value}
+                        </div>
+                      </div>
+                    ),
                   )}
-                  {person.note && (
-                    <div className="mt-0.5 text-xs text-muted-foreground">
-                      {person.note}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </div>
   );
 }
