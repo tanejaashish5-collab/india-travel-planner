@@ -880,7 +880,14 @@ export function DestinationMonth({
           <section id="section-why" className="scroll-mt-28">
             <WhyThisScore />
           </section>
-          {peakMonth && score >= 4 && (
+          {/* Render on EVERY month a peak exists — not just score >= 4. The hook's
+              strongest pitch is the off-month "this isn't the month, <peak> is —
+              save it for the right window" branch, which only fires at score <= 3.
+              Gating to score >= 4 made that branch dead code AND hid the Save CTA
+              from the highest-traffic WAIT/off-month pages, while the "Peak alert"
+              nav pill (rendered on any peakMonth) scrolled to a missing section.
+              Dropping the gate fixes both (2026-06-10). */}
+          {peakMonth && (
             <section id="section-alert" className="scroll-mt-28">
               <PeakAlertHook
                 destinationId={destination.id}
