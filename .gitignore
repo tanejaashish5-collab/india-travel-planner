@@ -51,6 +51,7 @@ videos/
 # (scripts/_upload-festival-footage.mjs). Provenance + licences are committed in
 # data/festivals/footage-sources.md; the binaries stay out of git.
 data/festivals/footage/
+data/festivals/photos/
 
 # Editor / refactor backups (e.g. component.legacy.tsx.bak)
 *.bak

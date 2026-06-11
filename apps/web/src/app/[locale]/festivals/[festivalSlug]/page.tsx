@@ -13,7 +13,7 @@ import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
 import { singleFestivalEventJsonLd, type FestivalRow } from "@/lib/festival-schema";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
-import { festivalHeroSrc, festivalHeroCredit } from "@/lib/festival-heroes";
+import { festivalHeroSrc, festivalHeroCredit, festivalHeroPhotoSrc, festivalHeroPhotoCredit } from "@/lib/festival-heroes";
 import { destinationImage } from "@/lib/image-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
@@ -289,6 +289,10 @@ export default async function FestivalDetailPage({
   // place — mountains/monsoon/fields — and never the festival itself.)
   const heroVideo = festivalHeroSrc(festivalSlug);
   const heroCredit = festivalHeroCredit(festivalSlug);
+  // No video → a real festival-CELEBRATION photo if one exists, else the
+  // destination/place image. Shows the festival, not the landscape.
+  const heroPhoto = !heroVideo ? festivalHeroPhotoSrc(festivalSlug) : "";
+  const heroPhotoCredit = heroPhoto ? festivalHeroPhotoCredit(festivalSlug) : "";
 
   // VideoObject schema only when a clip exists. The clip shows the festival
   // itself (Holi colour, Diwali diyas, the Ganga aarti …), so the name and
@@ -373,6 +377,23 @@ export default async function FestivalDetailPage({
             >
               <source src={heroVideo} type="video/mp4" />
             </video>
+          ) : heroPhoto ? (
+            // Real festival-celebration photo (R2). eslint-disable: external R2
+            // host rendered as a full-bleed background, not a layout image.
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={heroPhoto}
+              alt={`${f.name} — festival celebration`}
+              loading="eager"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "saturate(0.92) brightness(0.74)",
+              }}
+            />
           ) : (
             <Image
               src={`/images/destinations/${f.destination_id}.jpg`}
@@ -390,7 +411,7 @@ export default async function FestivalDetailPage({
               background: "linear-gradient(180deg, rgba(10,10,8,0.20) 0%, transparent 40%, rgba(10,10,8,0.85) 100%)",
             }}
           />
-          {heroVideo && heroCredit && (
+          {(heroVideo ? heroCredit : heroPhotoCredit) && (
             <span
               style={{
                 position: "absolute",
@@ -403,7 +424,7 @@ export default async function FestivalDetailPage({
                 letterSpacing: "0.01em",
               }}
             >
-              {heroCredit}
+              {heroVideo ? heroCredit : heroPhotoCredit}
             </span>
           )}
         </div>

@@ -109,3 +109,70 @@ export const FESTIVAL_FOOTAGE: Record<string, string> = {
 export const FOOTAGE_CREDIT: Record<string, string> = {
   "monastery-cham": "Cham dance: Sumita Roy Dutta / Wikimedia Commons, CC BY-SA 3.0",
 };
+
+// Festival CELEBRATION photo (famphoto-<family>.jpg in R2) — the hero fallback
+// when a festival has no video: a real still of the festival, shown instead of
+// the destination/place photo. slug → photo family.
+// 43 festivals mapped across 14 photo families.
+export const FESTIVAL_PHOTO: Record<string, string> = {
+  "attukal-pongala": "harvest-sankranti",
+  "bangus-spring-bloom-festival": "flower-bloom",
+  "bastar-dussehra": "dussehra-tribal-bastar",
+  "bihu-rongalibohag": "bihu",
+  "bikaner-camel-festival": "camel-fair",
+  "binsar-makar-sankranti": "harvest-sankranti",
+  "bonalu": "bonalu",
+  "cherai-pooram-gowreeswara-temple-festival": "thrissur-pooram",
+  "chhath-puja": "chhath",
+  "chhath-puja-at-netarhat": "chhath",
+  "eid-ul-fitr-at-buland-darwaza": "islamic",
+  "eid-ul-fitr-celebration": "islamic",
+  "hornbill-festival": "hornbill",
+  "international-kite-festival-uttarayan": "harvest-sankranti",
+  "kaas-plateau-wildflower-bloom": "flower-bloom",
+  "khwaja-bande-nawaz-urs": "islamic",
+  "kodai-vizha-summer-festival-and-flower-show": "flower-bloom",
+  "kullu-dussehra-kullu": "dussehra-kullu",
+  "kullu-dussehra-manali": "dussehra-kullu",
+  "lucknow-muharram-processions": "islamic",
+  "maghi-chaturthi": "harvest-sankranti",
+  "maghi-utsav-magha-chaturthi": "harvest-sankranti",
+  "mitthe-shah-dargah-urs-fair": "islamic",
+  "mysore-dasara": "dasara-mysore",
+  "mysore-dasara-exhibition": "dasara-mysore",
+  "neelakurinji-bloom": "flower-bloom",
+  "ooty-flower-show": "flower-bloom",
+  "periyar-flower-show": "flower-bloom",
+  "pongal-chennai": "harvest-sankranti",
+  "pongal-puducherry": "harvest-sankranti",
+  "pushkar-camel-fair": "camel-fair",
+  "rath-yatra": "rath-yatra",
+  "rose-festival": "flower-bloom",
+  "sankranti-pongal": "harvest-sankranti",
+  "simlipal-flower-festival": "flower-bloom",
+  "theyyam-season": "theyyam",
+  "thrissur-pooram": "thrissur-pooram",
+  "tulip-festival": "flower-bloom",
+  "urs-of-khwaja-moinuddin-chishti": "islamic",
+  "urs-of-sheikh-salim-chishti": "islamic",
+  "uttarayani-fair": "harvest-sankranti",
+  "uttarayani-mela": "harvest-sankranti",
+  "yamuna-chhath": "chhath",
+};
+
+// Photo families requiring visible attribution (Wikimedia CC BY-SA).
+export const PHOTO_CREDIT: Record<string, string> = {
+  "bihu": "Photo: Diganta Talukdar / Wikimedia Commons, CC BY-SA 4.0",
+  "bonalu": "Photo: Storysbyharish / Wikimedia Commons, CC BY-SA 4.0",
+  "camel-fair": "Photo: Marina &amp; Enrique / Wikimedia Commons, CC BY 2.0",
+  "chhath": "Photo: Susovan Chakraborty5 / Wikimedia Commons, CC BY-SA 4.0",
+  "dasara-mysore": "Photo: Sharvarism / Wikimedia Commons, CC BY-SA 4.0",
+  "dussehra-kullu": "Photo: Kondephy / Wikimedia Commons, CC BY-SA 3.0",
+  "dussehra-tribal-bastar": "Photo: Sushil.skk / Wikimedia Commons, CC BY-SA 4.0",
+  "flower-bloom": "Photo: Gpkp / Wikimedia Commons, CC BY-SA 4.0",
+  "harvest-sankranti": "Photo: YVSREDDY / Wikimedia Commons, CC BY-SA 3.0",
+  "islamic": "Photo: Amitvakil74 / Wikimedia Commons, CC BY-SA 4.0",
+  "rath-yatra": "Photo: Prashant Kharote / Wikimedia Commons, CC BY-SA 4.0",
+  "theyyam": "Photo: Uajith / Wikimedia Commons, CC BY-SA 4.0",
+  "thrissur-pooram": "Photo: Stories By Anija Jalan / Wikimedia Commons, CC BY-SA 4.0",
+};
