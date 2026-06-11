@@ -8,13 +8,15 @@ Reads:  .scrapes/festival-footage/obscure-photo-picks.json
 Writes: .scrapes/festival-footage/obscure-raw/<slug>.jpg
         .scrapes/festival-footage/obscure-sheets/sheet-NN.jpg + index.json
 """
-import json, os, urllib.request
+import json, os, sys, urllib.request
 from PIL import Image, ImageDraw
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PICKS = os.path.join(ROOT, ".scrapes", "festival-footage", "obscure-photo-picks.json")
-RAW = os.path.join(ROOT, ".scrapes", "festival-footage", "obscure-raw")
-SHEETS = os.path.join(ROOT, ".scrapes", "festival-footage", "obscure-sheets")
+# argv[1] = picks json (default obscure); argv[2] = namespace for raw/sheets dirs
+PICKS = os.path.join(ROOT, sys.argv[1]) if len(sys.argv) > 1 else os.path.join(ROOT, ".scrapes", "festival-footage", "obscure-photo-picks.json")
+NS = sys.argv[2] if len(sys.argv) > 2 else "obscure"
+RAW = os.path.join(ROOT, ".scrapes", "festival-footage", f"{NS}-raw")
+SHEETS = os.path.join(ROOT, ".scrapes", "festival-footage", f"{NS}-sheets")
 UA = "NakshIQ/1.0 (taneja.ashish5@gmail.com)"
 os.makedirs(RAW, exist_ok=True); os.makedirs(SHEETS, exist_ok=True)
 

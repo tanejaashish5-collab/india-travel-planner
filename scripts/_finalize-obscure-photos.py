@@ -2,22 +2,26 @@
 """Finalize verified obscure-festival photos: normalize KEEPs → data/festivals/
 photos/famphoto-<slug>.jpg and merge credits into data/festivals/photo-sources.json.
 Rejects (sheet,position 1-indexed) come from manual montage verification."""
-import json, os
+import json, os, sys
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SHEETS = os.path.join(ROOT, ".scrapes", "festival-footage", "obscure-sheets")
-RAW = os.path.join(ROOT, ".scrapes", "festival-footage", "obscure-raw")
-PICKS = os.path.join(ROOT, ".scrapes", "festival-footage", "obscure-photo-picks.json")
+# argv[1] = namespace (obscure|wiki...); argv[2] = reject json {"<n>":[pos,...]}
+NS = sys.argv[1] if len(sys.argv) > 1 else "obscure"
+SHEETS = os.path.join(ROOT, ".scrapes", "festival-footage", f"{NS}-sheets")
+RAW = os.path.join(ROOT, ".scrapes", "festival-footage", f"{NS}-raw")
+PICKS = os.path.join(ROOT, ".scrapes", "festival-footage",
+                     "obscure-photo-picks.json" if NS == "obscure" else f"{NS}-photo-picks.json")
 OUTDIR = os.path.join(ROOT, "data", "festivals", "photos")
 SRCJSON = os.path.join(ROOT, "data", "festivals", "photo-sources.json")
 
-REJECT = {  # sheet -> [positions rejected during visual verification]
+DEFAULT_REJECT = {  # obscure pass — positions rejected during visual verification
   1: [2, 7, 8, 12, 15], 2: [3, 4, 8, 11, 12, 15], 3: [1, 3, 4, 7, 9, 13],
   4: [3, 5, 7, 9, 11, 15], 5: [2, 12, 14, 15, 16], 6: [2, 6, 7, 8, 9, 16],
   7: [1, 5, 9, 10], 8: [4, 5, 6, 10, 11, 13, 15], 9: [2, 5, 6, 7, 8, 9, 14, 15],
   10: [13, 15], 11: [1, 5, 9, 13, 15, 16],
 }
+REJECT = {int(k): v for k, v in json.loads(sys.argv[2]).items()} if len(sys.argv) > 2 else DEFAULT_REJECT
 index = json.load(open(os.path.join(SHEETS, "index.json")))
 picks = json.load(open(PICKS))
 
