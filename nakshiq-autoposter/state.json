@@ -32,10 +32,10 @@
   "posted_today": {
     "m8EAd": "2026-06-11",
     "PdMu0": "2026-06-11",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
-    "GAh5p_yt_short": "2026-06-10",
-    "m8EAd_yt_short": "2026-06-10",
+    "GAh5p_yt_short": "2026-06-11",
+    "m8EAd_yt_short": "2026-06-11",
     "m8EAd_story": "2026-06-10",
     "m8EAd_evening": "2026-06-10",
     "PdMu0_evening": "2026-06-10"
@@ -324,6 +324,10 @@
     },
     {
       "destination_id": "panaji",
+      "date": "2026-06-11"
+    },
+    {
+      "destination_id": "leh",
       "date": "2026-06-11"
     }
   ],
@@ -2711,6 +2715,24 @@
       "format": "eateries_pick",
       "has_media": true,
       "media_id": "panaji.mp4"
+    },
+    {
+      "timestamp": "2026-06-11T09:00:29.114167+00:00",
+      "date": "2026-06-11",
+      "platform": "youtube",
+      "post_id": "odGbc",
+      "destination": "leh",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_leh_en_2026-06-11.mp4"
+    },
+    {
+      "timestamp": "2026-06-11T09:01:06.221944+00:00",
+      "date": "2026-06-11",
+      "platform": "instagram",
+      "post_id": "4Ljji",
+      "destination": "leh",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_leh_en_2026-06-11.mp4"
     }
   ],
   "theme_usage": {
