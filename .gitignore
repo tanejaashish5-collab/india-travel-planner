@@ -65,6 +65,10 @@ nakshiq-autoposter/state.json.tmp
 nakshiq-autoposter/autoposter*.log
 /research/
 
+# GSC dashboard export zips + their extractions — raw download staging from
+# audit sessions; the distilled numbers live in the committed gsc-audits/*.md.
+gsc-audits/gsc-export-zips/
+
 # Build-time snapshot of gsc-audits/ + ga4-audits/ for M2/M3/M4 monitor crons.
 # Regenerated every build by scripts/build-audit-snapshot.mjs (prebuild hook).
 # Not tracked because (a) it's derived data and (b) the source markdowns
