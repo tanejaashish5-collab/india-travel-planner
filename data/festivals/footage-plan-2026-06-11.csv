@@ -1,0 +1,502 @@
+slug,festival_name,destination,state,month,bucket,footage_family,currently_live,note
+bissu-mela-jaunsar-bawar-new-year,Bissu Mela (Jaunsar-Bawar New Year),Chakrata,uttarakhand,April,FAMILY,colonial-christian,yes,Lights / church / parade.
+bonderam-festival,Bonderam Festival,Chorao & Divar Islands,goa,August,FAMILY,colonial-christian,yes,Lights / church / parade.
+bastille-day-celebration,Bastille Day Celebration,Pondicherry (Puducherry),puducherry,July,FAMILY,colonial-christian,yes,Lights / church / parade.
+christmas-at-medak-cathedral,Christmas at Medak Cathedral,Medak,telangana,December,FAMILY,colonial-christian,yes,Lights / church / parade.
+christmas-carnival,Christmas Carnival,Port Blair (Sri Vijaya Puram),andaman nicobar,December,FAMILY,colonial-christian,yes,Lights / church / parade.
+bastille-day,Bastille Day,Puducherry (Pondicherry),puducherry,July,FAMILY,colonial-christian,yes,Lights / church / parade.
+nowruz-balti-new-year,Nowruz (Balti New Year),Turtuk,ladakh,March,FAMILY,colonial-christian,yes,Lights / church / parade.
+dev-deepawali,Dev Deepawali,Varanasi,uttar pradesh,November,FAMILY,diwali,yes,Diyas / lamps at night.
+deepotsav,Deepotsav,Ayodhya,uttar pradesh,November,FAMILY,diwali,yes,Diyas / lamps at night.
+chitrakoot-deepotsav,Chitrakoot Deepotsav,Chitrakoot,uttar pradesh,October,FAMILY,diwali,yes,Diyas / lamps at night.
+gangotri-diwali-temple-closing,Gangotri Diwali (Temple Closing),Gangotri,uttarakhand,October,FAMILY,diwali,yes,Diyas / lamps at night.
+tihar-deepawali,Tihar (Deepawali),Darjeeling,west bengal,October,FAMILY,diwali,yes,Diyas / lamps at night.
+laksha-deepotsava,Laksha Deepotsava,Dharmasthala,karnataka,November,FAMILY,diwali,yes,Diyas / lamps at night.
+diwali-beach-celebration,Diwali Beach Celebration,Havelock Island (Swaraj Dweep),andaman nicobar,October,FAMILY,diwali,yes,Diyas / lamps at night.
+tulip-festival,Tulip Festival,Srinagar,jammu kashmir,April,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+rose-festival,Rose Festival,Chandigarh,chandigarh,February,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+bangus-spring-bloom-festival,Bangus Spring Bloom Festival,Bangus Valley,jammu kashmir,May,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+kaas-plateau-wildflower-bloom,Kaas Plateau Wildflower Bloom,Satara,maharashtra,September,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+neelakurinji-bloom,Neelakurinji Bloom,Munnar,kerala,September,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+periyar-flower-show,Periyar Flower Show,Thekkady (Periyar),kerala,January,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+ooty-flower-show,Ooty Flower Show,Ooty (Udagamandalam),tamil nadu,May,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+simlipal-flower-festival,Simlipal Flower Festival,Simlipal,odisha,April,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+kodai-vizha-summer-festival-and-flower-show,Kodai Vizha (Summer Festival and Flower Show),Kodaikanal,tamil nadu,May,FAMILY,flower-bloom,yes,Flower fields/beds (these ARE landscape-ok).
+gangaur-festival,Gangaur Festival,Bikaner,rajasthan,March,FAMILY,folk-women,yes,Folk dress/swings/fairs. Often SUBTYPE-ish — verify.
+kajli-teej,Kajli Teej,Bundi,rajasthan,August,FAMILY,folk-women,yes,Folk dress/swings/fairs. Often SUBTYPE-ish — verify.
+uttarayani-fair,Uttarayani Fair,Mukteshwar,uttarakhand,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+binsar-makar-sankranti,Binsar Makar Sankranti,Binsar,uttarakhand,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+uttarayani-mela,Uttarayani Mela,Ranikhet,uttarakhand,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+attukal-pongala,Attukal Pongala,Thiruvananthapuram (Trivandrum),kerala,March,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+pongal-chennai,Pongal,Chennai,tamil nadu,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+sankranti-pongal,Sankranti / Pongal,Vijayawada,andhra pradesh,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+international-kite-festival-uttarayan,International Kite Festival (Uttarayan),Ahmedabad,gujarat,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+pongal-puducherry,Pongal,Puducherry (Pondicherry),puducherry,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+maghi-utsav-magha-chaturthi,Maghi Utsav (Magha Chaturthi),Pali (Raigad),maharashtra,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+maghi-chaturthi,Maghi Chaturthi,Theur,maharashtra,January,FAMILY,harvest-sankranti,yes,Harvest / bonfire / kite.
+corbett-holi-with-elephants,Corbett Holi with Elephants,Jim Corbett National Park,uttarakhand,March,FAMILY,holi,yes,Colour powder + crowds.
+hola-mohalla,Hola Mohalla,Anandpur Sahib,punjab,March,FAMILY,holi,yes,Colour powder + crowds.
+lathmar-holi,Lathmar Holi,Vrindavan,uttar pradesh,March,FAMILY,holi,yes,Colour powder + crowds.
+shigmo-goan-holi,Shigmo (Goan Holi),Panaji,goa,March,FAMILY,holi,yes,Colour powder + crowds.
+orange-festival-of-adventure-music-ofam,Orange Festival of Adventure & Music (OFAM),Dambuk,arunachal pradesh,December,FAMILY,holi,yes,Colour powder + crowds.
+kaziranga-elephant-festival,Kaziranga Elephant Festival,Kaziranga,assam,February,FAMILY,holi,yes,Colour powder + crowds.
+lokrang-festival,Lokrang Festival,Bhopal,madhya pradesh,January,FAMILY,holi,yes,Colour powder + crowds.
+orange-festival,Orange Festival,Tamenglong,manipur,December,FAMILY,holi,yes,Colour powder + crowds.
+orange-and-tourism-festival,Orange and Tourism Festival,Jampui Hills,tripura,November,FAMILY,holi,yes,Colour powder + crowds.
+braj-holi-festival,Braj Holi Festival,Deeg,rajasthan,February,FAMILY,holi,yes,Colour powder + crowds.
+holi-festival-of-colours,Holi (Festival of Colours),Mathura,uttar pradesh,March,FAMILY,holi,yes,Colour powder + crowds.
+lucknow-muharram-processions,Lucknow Muharram Processions,Lucknow,uttar pradesh,July,FAMILY,islamic,yes,"Mosque/dargah, no figures-of-worship close-ups."
+urs-of-khwaja-moinuddin-chishti,Urs of Khwaja Moinuddin Chishti,Ajmer,rajasthan,January,FAMILY,islamic,yes,"Mosque/dargah, no figures-of-worship close-ups."
+urs-of-sheikh-salim-chishti,Urs of Sheikh Salim Chishti,Fatehpur Sikri,uttar pradesh,September,FAMILY,islamic,yes,"Mosque/dargah, no figures-of-worship close-ups."
+eid-ul-fitr-at-buland-darwaza,Eid ul-Fitr at Buland Darwaza,Fatehpur Sikri,uttar pradesh,April,FAMILY,islamic,yes,"Mosque/dargah, no figures-of-worship close-ups."
+eid-ul-fitr-celebration,Eid-ul-Fitr Celebration,Kavaratti,lakshadweep,April,FAMILY,islamic,yes,"Mosque/dargah, no figures-of-worship close-ups."
+khwaja-bande-nawaz-urs,Khwaja Bande Nawaz Urs,Gulbarga (Kalaburagi),karnataka,,FAMILY,islamic,yes,"Mosque/dargah, no figures-of-worship close-ups."
+mitthe-shah-dargah-urs-fair,Mitthe Shah Dargah Urs Fair,Gagron Fort,rajasthan,September,FAMILY,islamic,no,"Mosque/dargah, no figures-of-worship close-ups."
+baisakhi-amritsar,Baisakhi,Amritsar,punjab,April,FAMILY,newyear-harvest,yes,Regional new-year.
+baisakhi-at-dukh-niwaran-sahib,Baisakhi at Dukh Niwaran Sahib,Patiala,punjab,April,FAMILY,newyear-harvest,yes,Regional new-year.
+baisakhi-damdama-sahib,Baisakhi,Takht Sri Damdama Sahib,punjab,April,FAMILY,newyear-harvest,yes,Regional new-year.
+poila-boishakh-bengali-new-year,Poila Boishakh (Bengali New Year),Kolkata,west bengal,April,FAMILY,newyear-harvest,yes,Regional new-year.
+maha-shivaratri-varanasi,Maha Shivaratri,Varanasi,uttar pradesh,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+gopeshwar-shivratri-mela,Gopeshwar Shivratri Mela,Gopeshwar,uttarakhand,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+mandi-shivaratri-fair,Mandi Shivaratri Fair,Mandi,himachal pradesh,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-at-kandariya-mahadeva,Maha Shivaratri at Kandariya Mahadeva,Khajuraho,madhya pradesh,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+uttarkashi-mahadev-temple-festival-maha-shivaratri,Uttarkashi Mahadev Temple Festival (Maha Shivaratri),Uttarkashi,uttarakhand,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-at-tungnath,Maha Shivaratri at Tungnath,Tungnath,uttarakhand,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+shivratri-at-mahabaleshwar-temple,Shivratri at Mahabaleshwar Temple,Gokarna,karnataka,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivratri-at-murudeshwar,Maha Shivratri at Murudeshwar,Murudeshwar,karnataka,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-rameswaram,Maha Shivaratri,Rameswaram,tamil nadu,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-srikalahasti,Maha Shivaratri,Srikalahasti,andhra pradesh,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-at-mallikarjuna,Maha Shivaratri at Mallikarjuna,Srisailam,andhra pradesh,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-at-somnath,Maha Shivaratri at Somnath,Somnath,gujarat,March,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-amaravati,Maha Shivaratri,Amaravati,andhra pradesh,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+lepakshi-brahmotsavam-maha-shivaratri,Lepakshi Brahmotsavam (Maha Shivaratri),Lepakshi,andhra pradesh,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+shivratri-tribal-dance-mela,Shivratri Tribal Dance Mela,Maredumilli,andhra pradesh,February,FAMILY,shivaratri,no,"Temple night, no idol close-up."
+bhavnath-mela-girnar-mahashivratri-mela,Bhavnath Mela (Girnar Mahashivratri Mela),Junagadh,gujarat,February,FAMILY,shivaratri,no,"Temple night, no idol close-up."
+bhavnath-maha-shivaratri-mela,Bhavnath Maha Shivaratri Mela,Mount Girnar,gujarat,,FAMILY,shivaratri,no,"Temple night, no idol close-up."
+maha-shivaratri-harihareshwar,Maha Shivaratri,Harihareshwar,maharashtra,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-trimbakeshwar,Maha Shivaratri,Trimbakeshwar,maharashtra,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-ujjain,Maha Shivaratri,Ujjain,madhya pradesh,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+maha-shivaratri-omkareshwar,Maha Shivaratri,Omkareshwar,madhya pradesh,February,FAMILY,shivaratri,yes,"Temple night, no idol close-up."
+desert-festival,Desert Festival,Jaisalmer,rajasthan,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mewar-festival,Mewar Festival,Udaipur,rajasthan,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+marwar-festival,Marwar Festival,Jodhpur,rajasthan,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+international-yoga-festival,International Yoga Festival,Rishikesh,uttarakhand,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ladakh-festival,Ladakh Festival,Leh,ladakh,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kedarnath-opening,Kedarnath Opening,Kedarnath,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+fagli-festival-spiti-valley,Fagli Festival,Spiti Valley,himachal pradesh,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+summer-festival-shimla,Summer Festival,Shimla,himachal pradesh,May,NONE,obscure,no,No obvious authentic free footage — image fallback.
+paragliding-world-cup,Paragliding World Cup,Bir Billing,himachal pradesh,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gita-jayanti,Gita Jayanti,Kurukshetra,haryana,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+elephant-festival,Elephant Festival,Jaipur,rajasthan,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+taj-mahotsav,Taj Mahotsav,Agra,uttar pradesh,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+republic-day-parade,Republic Day Parade,Delhi,delhi,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+barmer-thar-festival,Barmer Thar Festival,Barmer,rajasthan,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mallinath-cattle-fair,Mallinath Cattle Fair,Barmer,rajasthan,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bundi-utsav,Bundi Utsav,Bundi,rajasthan,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+winter-festival-mount-abu,Winter Festival Mount Abu,Mount Abu,rajasthan,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+guru-shikhar-fair,Guru Shikhar Fair,Mount Abu,rajasthan,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nawalgarh-festival,Nawalgarh Festival,Shekhawati,rajasthan,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+baneshwar-fair,Baneshwar Fair,Dungarpur,rajasthan,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+matsya-festival,Matsya Festival,Alwar,rajasthan,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+auli-winter-carnival,Auli Winter Carnival,Auli,uttarakhand,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+phool-dei,Phool Dei,Dhanaulti,uttarakhand,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+harela-festival,Harela Festival,Kausani,uttarakhand,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nanda-devi-raj-jat-yatra-munsiyari,Nanda Devi Raj Jat Yatra,Munsiyari,uttarakhand,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+valley-of-flowers-opening-season,Valley of Flowers Opening Season,Valley of Flowers,uttarakhand,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+jauhar-mela,Jauhar Mela,Chittorgarh,rajasthan,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+meera-mahotsav,Meera Mahotsav,Chittorgarh,rajasthan,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tehri-lake-festival,Tehri Lake Festival,Tehri Lake,uttarakhand,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+lansdowne-autumn-festival,Lansdowne Autumn Festival,Lansdowne,uttarakhand,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+barot-trout-festival,Barot Trout Festival,Barot Valley,himachal pradesh,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+shringa-rishi-fair,Shringa Rishi Fair,Jibhi,himachal pradesh,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kasauli-rhythm-and-blues-festival,Kasauli Rhythm and Blues Festival,Kasauli,himachal pradesh,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ladarcha-fair-keylong,Ladarcha Fair,Keylong,himachal pradesh,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mandi-nalwari-cattle-fair,Mandi Nalwari Cattle Fair,Mandi,himachal pradesh,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bhimakali-dussehra,Bhimakali Dussehra,Sarahan,himachal pradesh,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tirthan-trout-season-opening,Tirthan Trout Season Opening,Tirthan Valley,himachal pradesh,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+amarnath-yatra-start,Amarnath Yatra Start,Pahalgam,jammu kashmir,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pahalgam-spring-festival,Pahalgam Spring Festival,Pahalgam,jammu kashmir,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gurez-cultural-festival,Gurez Cultural Festival,Gurez Valley,jammu kashmir,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+patnitop-winter-carnival,Patnitop Winter Carnival,Patnitop,jammu kashmir,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bhaderwah-mela,Bhaderwah Mela,Bhaderwah,jammu kashmir,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gulmarg-winter-games,Gulmarg Winter Games,Gulmarg,jammu kashmir,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sonamarg-thajiwas-glacier-festival,Sonamarg Thajiwas Glacier Festival,Sonamarg,jammu kashmir,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nubra-valley-festival,Nubra Valley Festival,Nubra Valley,ladakh,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pangong-nomad-festival,Pangong Nomad Festival,Pangong Tso,ladakh,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+zanskar-chadar-trek-season,Zanskar Chadar Trek Season,Zanskar Valley,ladakh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+hanle-stargazing-festival,Hanle Stargazing Festival,Hanle,ladakh,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+lucknow-festival,Lucknow Festival,Lucknow,uttar pradesh,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+prayagraj-rasa-leela,Prayagraj Rasa Leela,Prayagraj,uttar pradesh,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chandigarh-carnival,Chandigarh Carnival,Chandigarh,chandigarh,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+patiala-heritage-festival,Patiala Heritage Festival,Patiala,punjab,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+buddha-mahaparinirvana-day,Buddha Mahaparinirvana Day,Kushinagar,uttar pradesh,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sravasti-international-buddhist-festival,Sravasti International Buddhist Festival,Sravasti,uttar pradesh,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+osian-camel-safari-festival,Osian Camel Safari Festival,Osian,rajasthan,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+neemrana-music-festival,Neemrana Music Festival,Neemrana,rajasthan,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+devprayag-ganga-dussehra,Devprayag Ganga Dussehra,Devprayag,uttarakhand,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+badri-kedar-festival-joshimath,Badri-Kedar Festival,Joshimath,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+rudraprayag-kartik-purnima-mela,Rudraprayag Kartik Purnima Mela,Rudraprayag,uttarakhand,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+morni-mango-blossom-festival,Morni Mango Blossom Festival,Morni Hills,haryana,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pinjore-heritage-festival,Pinjore Heritage Festival,Pinjore Gardens,haryana,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kanwar-yatra,Kanwar Yatra,Haridwar,uttarakhand,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+malana-village-fair,Malana Village Fair,Kasol,himachal pradesh,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+dudhwa-tharu-cultural-festival,Dudhwa Tharu Cultural Festival,Dudhwa National Park,uttar pradesh,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pithoragarh-hilljatra,Pithoragarh Hilljatra,Pithoragarh,uttarakhand,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chaukori-tea-festival,Chaukori Tea Festival,Chaukori,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kanatal-surkanda-devi-mela,Kanatal Surkanda Devi Mela,Kanatal,uttarakhand,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+solan-shoolini-fair,Solan Shoolini Fair,Solan,himachal pradesh,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chail-cricket-festival,Chail Cricket Festival,Chail,himachal pradesh,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kufri-winter-sports-festival,Kufri Winter Sports Festival,Kufri,himachal pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nako-lake-festival,Nako Lake Festival,Nako,himachal pradesh,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+doodhpathri-meadow-festival,Doodhpathri Meadow Festival,Doodhpathri,jammu kashmir,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+guptkashi-vishwanath-temple-festival,Guptkashi Vishwanath Temple Festival,Guptkashi,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kishtwar-saffron-festival,Kishtwar Saffron Festival,Kishtwar,jammu kashmir,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+manikaran-guru-nanak-birthday,Manikaran Guru Nanak Birthday,Manikaran,himachal pradesh,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sinthan-top-snow-festival,Sinthan Top Snow Festival,Sinthan Top,jammu kashmir,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tosamaidan-wildflower-season,Tosamaidan Wildflower Season,Tosamaidan,jammu kashmir,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+yusmarg-shepherd-festival,Yusmarg Shepherd Festival,Yusmarg,jammu kashmir,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+badrinath-temple-opening-kapaat-kholna,Badrinath Temple Opening (Kapaat Kholna),Badrinath,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+badri-kedar-festival-badrinath,Badri-Kedar Festival,Badrinath,uttarakhand,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mata-murti-ka-mela,Mata Murti Ka Mela,Badrinath,uttarakhand,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ganga-dussehra,Ganga Dussehra,Haridwar,uttarakhand,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+wildlife-week,Wildlife Week,Tadoba-Andhari Tiger Reserve,maharashtra,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gangotri-temple-opening-akshaya-tritiya,Gangotri Temple Opening (Akshaya Tritiya),Gangotri,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+darjeeling-tea-tourism-festival,Darjeeling Tea & Tourism Festival,Darjeeling,west bengal,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pang-lhabsol-gangtok,Pang Lhabsol,Gangtok,sikkim,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+khajuraho-dance-festival,Khajuraho Dance Festival,Khajuraho,madhya pradesh,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ram-raja-temple-festival-ram-navami,Ram Raja Temple Festival (Ram Navami),Orchha,madhya pradesh,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+orchha-festival,Orchha Festival,Orchha,madhya pradesh,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+torgya-festival,Torgya Festival,Tawang,arunachal pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pang-lhabsol-pelling,Pang Lhabsol,Pelling,sikkim,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kullu-winter-carnival,Kullu Winter Carnival,Kullu,himachal pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+buddha-purnima-vesak,Buddha Purnima (Vesak),Sarnath,uttar pradesh,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sarnath-light-sound-show-season,Sarnath Light & Sound Show Season,Sarnath,uttar pradesh,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nanda-devi-mela,Nanda Devi Mela,Ranikhet,uttarakhand,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sauji-fair,Sauji Fair,Palampur,himachal pradesh,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tea-festival-kangra-tea,Tea Festival (Kangra Tea),Palampur,himachal pradesh,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tungnath-temple-opening-tungnath,Tungnath Temple Opening,Tungnath,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nanda-devi-raj-jat-yatra-roopkund,Nanda Devi Raj Jat Yatra,Roopkund,uttarakhand,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nanda-ashtami-trek-gathering,Nanda Ashtami Trek Gathering,Roopkund,uttarakhand,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+yamunotri-temple-opening-akshaya-tritiya,Yamunotri Temple Opening (Akshaya Tritiya),Yamunotri,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+jageshwar-monsoon-mela,Jageshwar Monsoon Mela,Almora,uttarakhand,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mussoorie-winterline-carnival,Mussoorie Winterline Carnival,Mussoorie,uttarakhand,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nainital-autumn-festival,Nainital Autumn Festival,Nainital,uttarakhand,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nanda-devi-mahotsav,Nanda Devi Mahotsav,Nainital,uttarakhand,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chitkul-pahari-fair,Chitkul Pahari Fair,Chitkul,himachal pradesh,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+phulech-festival,Phulech Festival,Kalpa,himachal pradesh,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kinnaur-dussehra-fulaich,Kinnaur Dussehra (Fulaich),Kalpa,himachal pradesh,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tungnath-temple-opening-chopta,Tungnath Temple Opening,Chopta,uttarakhand,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kargil-vijay-diwas,Kargil Vijay Diwas,Kargil,ladakh,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+munshi-aziz-bhat-memorial-festival,Munshi Aziz Bhat Memorial Festival,Kargil,ladakh,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+lamayuru-yuru-kabgyat,Lamayuru Yuru Kabgyat,Lamayuru,ladakh,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ghepan-festival,Ghepan Festival,Sissu,himachal pradesh,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+verinag-spring-festival,Verinag Spring Festival,Verinag,jammu kashmir,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+brij-festival,Brij Festival,Bharatpur,rajasthan,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+janmashtami,Janmashtami,Vrindavan,uttar pradesh,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ziro-music-festival,Ziro Music Festival,Ziro Valley,arunachal pradesh,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sangai-festival,Sangai Festival,Imphal,manipur,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chapchar-kut,Chapchar Kut,Aizawl,mizoram,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+wangala-100-drums-festival,Wangala (100 Drums Festival),Tura,meghalaya,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+moatsu,Moatsu,Mokokchung,nagaland,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sekrenyi-kohima,Sekrenyi,Kohima,nagaland,February,NONE,obscure,no,No obvious authentic free footage — image fallback.
+nongkrem-dance,Nongkrem Dance,Shillong,meghalaya,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+cherry-blossom-festival,Cherry Blossom Festival,Shillong,meghalaya,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+me-dam-me-phi,Me-Dam-Me-Phi,Sivasagar,assam,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+aoling-festival,Aoling Festival,Mon,nagaland,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ambubachi-mela,Ambubachi Mela,Guwahati,assam,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+elephanta-festival,Elephanta Festival,Elephanta Caves,maharashtra,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sulafest,SulaFest,Nashik,maharashtra,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pandharpur-wari,Pandharpur Wari,Pune,maharashtra,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+feast-of-st-francis-xavier,Feast of St Francis Xavier,Old Goa,goa,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sunburn-festival,Sunburn Festival,Calangute-Baga,goa,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sao-joao-festival,Sao Joao Festival,Palolem,goa,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+hampi-utsav-vijaya-utsav,Hampi Utsav (Vijaya Utsav),Hampi,karnataka,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+karaga-festival,Karaga Festival,Bengaluru,karnataka,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kadalekai-parishe-groundnut-fair,Kadalekai Parishe (Groundnut Fair),Bengaluru,karnataka,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kambala-buffalo-race,Kambala (Buffalo Race),Mangalore,karnataka,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+paryaya-festival,Paryaya Festival,Udupi,karnataka,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vairamudi-festival,Vairamudi Festival,Belur,karnataka,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+banashankari-temple-fair,Banashankari Temple Fair,Badami,karnataka,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+cauvery-sankriti-tula-sankramana,Cauvery Sankriti (Tula Sankramana),Coorg (Kodagu),karnataka,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+siddheshwara-jatre,Siddheshwara Jatre,Bijapur (Vijayapura),karnataka,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+pattadakal-dance-festival,Pattadakal Dance Festival,Pattadakal,karnataka,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mahamastakabhisheka,Mahamastakabhisheka,Shravanabelagola,karnataka,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+coffee-blossom-festival,Coffee Blossom Festival,Chikmagalur,karnataka,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kochi-muziris-biennale,Kochi-Muziris Biennale,Kochi (Fort Kochi),kerala,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+cochin-carnival,Cochin Carnival,Kochi (Fort Kochi),kerala,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+wayanad-food-festival,Wayanad Food Festival,Wayanad,kerala,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+malabar-mahotsavam,Malabar Mahotsavam,Kozhikode (Calicut),kerala,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ashtamudi-craft-coir-festival,Ashtamudi Craft & Coir Festival,Kollam,kerala,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+guruvayur-ekadashi,Guruvayur Ekadashi,Guruvayur,kerala,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bekal-fort-festival,Bekal Fort Festival,Bekal,kerala,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+varkala-sivagiri-pilgrimage,Varkala Sivagiri Pilgrimage,Varkala,kerala,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chalakudy-river-festival,Chalakudy River Festival,Athirapally Falls,kerala,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chithirai-festival,Chithirai Festival,Madurai,tamil nadu,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+float-festival-teppam,Float Festival (Teppam),Madurai,tamil nadu,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+margazhi-music-season,Margazhi Music Season,Chennai,tamil nadu,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+natyanjali-dance-festival,Natyanjali Dance Festival,Chidambaram,tamil nadu,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+brihadeeswara-temple-festival,Brihadeeswara Temple Festival,Thanjavur (Tanjore),tamil nadu,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vivekananda-jayanti-national-youth-day,Vivekananda Jayanti / National Youth Day,Kanyakumari,tamil nadu,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mahamaham-festival,Mahamaham Festival,Kumbakonam,tamil nadu,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vaikunta-ekadashi,Vaikunta Ekadashi,Srirangam,tamil nadu,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chettinad-heritage-walk-festival,Chettinad Heritage Walk Festival,Chettinad,tamil nadu,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+toda-tribal-festival,Toda Tribal Festival,Kotagiri,tamil nadu,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+aadi-festival-at-the-falls,Aadi Festival at the Falls,Courtallam (Kutralam),tamil nadu,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+hogenakkal-mela,Hogenakkal Mela,Hogenakkal Falls,tamil nadu,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mamallapuram-dance-festival,Mamallapuram Dance Festival,Mahabalipuram (Mamallapuram),tamil nadu,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+auroville-anniversary,Auroville Anniversary,Auroville,puducherry,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+srivari-brahmotsavam-tirupati,Srivari Brahmotsavam,Tirupati,andhra pradesh,October,NONE,obscure,no,No obvious authentic free footage — image fallback.
+vaikuntha-ekadasi,Vaikuntha Ekadasi,Tirupati,andhra pradesh,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vizag-utsav-deccan-festival,Vizag Utsav / Deccan Festival,Visakhapatnam,andhra pradesh,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+flamingo-festival,Flamingo Festival,Pulicat Lake,andhra pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+godavari-pushkaralu,Godavari Pushkaralu,Rajahmundry,andhra pradesh,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kalamkari-utsav,Kalamkari Utsav,Machilipatnam,andhra pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+hyderabadi-haleem-season,Hyderabadi Haleem Season,Hyderabad,telangana,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sammakka-saralamma-jatara,Sammakka Saralamma Jatara,Warangal,telangana,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sri-rama-navami-bhadrachalam-kalyanam,Sri Rama Navami (Bhadrachalam Kalyanam),Bhadrachalam,telangana,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vaikuntha-ekadasi-at-bhadrachalam,Vaikuntha Ekadasi at Bhadrachalam,Bhadrachalam,telangana,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kakatiya-utsavam,Kakatiya Utsavam,Ramappa Temple,telangana,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mahavir-jayanti-kolanupaka,Mahavir Jayanti,Kolanupaka,telangana,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+dandari-gusadi-dance-festival,Dandari / Gusadi Dance Festival,Adilabad,telangana,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+snana-yatra,Snana Yatra,Puri,odisha,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bahuda-yatra,Bahuda Yatra,Puri,odisha,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+konark-dance-festival,Konark Dance Festival,Konark,odisha,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+adivasi-mela,Adivasi Mela,Bhubaneswar,odisha,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+dhauli-shanti-utsav,Dhauli Shanti Utsav,Bhubaneswar,odisha,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bali-jatra,Bali Jatra,Cuttack,odisha,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sital-sasthi,Sital Sasthi,Sambalpur,odisha,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chilika-bird-festival,Chilika Bird Festival,Chilika Lake,odisha,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+olive-ridley-turtle-festival,Olive Ridley Turtle Festival,Bhitarkanika,odisha,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chaitra-parva-chhau-festival,Chaitra Parva Chhau Festival,Baripada,odisha,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+raghurajpur-art-festival,Raghurajpur Art Festival,Raghurajpur,odisha,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+parab-tribal-festival,Parab Tribal Festival,Koraput,odisha,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chaiti-ghoda,Chaiti Ghoda,Daringbadi,odisha,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+rann-utsav,Rann Utsav,Kutch (Bhuj),gujarat,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kutch-mahotsav,Kutch Mahotsav,Kutch (Bhuj),gujarat,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+janmashtami-at-dwarkadhish,Janmashtami at Dwarkadhish,Dwarka,gujarat,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kartik-purnima-at-somnath,Kartik Purnima at Somnath,Somnath,gujarat,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+shatrunjaya-mahotsav,Shatrunjaya Mahotsav,Palitana,gujarat,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gir-jungle-trail-festival,Gir Jungle Trail Festival,Gir National Park,gujarat,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+full-moon-rann-walk,Full Moon Rann Walk,Rann of Kutch,gujarat,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ekta-diwas-unity-day,Ekta Diwas (Unity Day),Statue of Unity,gujarat,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+buddha-purnima-bodh-gaya,Buddha Purnima,Bodh Gaya,bihar,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+meditation-retreat-season,Meditation Retreat Season,Bodh Gaya,bihar,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+rajgir-dance-festival,Rajgir Dance Festival,Rajgir,bihar,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+shravani-mela,Shravani Mela,Deoghar,jharkhand,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bastar-tribal-haat,Bastar Tribal Haat,Jagdalpur,chhattisgarh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kharchi-puja,Kharchi Puja,Agartala,tripura,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+island-tourism-festival,Island Tourism Festival,Port Blair (Sri Vijaya Puram),andaman nicobar,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+subhash-mela,Subhash Mela,Port Blair (Sri Vijaya Puram),andaman nicobar,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+beach-festival,Beach Festival,Havelock Island (Swaraj Dweep),andaman nicobar,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+independence-day-at-cellular-jail,Independence Day at Cellular Jail,Port Blair (Sri Vijaya Puram),andaman nicobar,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+monsoon-festival-port-blair,Monsoon Festival,Port Blair (Sri Vijaya Puram),andaman nicobar,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gandhi-jayanti-heritage-walk,Gandhi Jayanti Heritage Walk,Ross Island (Netaji Subhas Chandra Bose Dweep),andaman nicobar,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+lava-dance-festival,Lava Dance Festival,Minicoy Island,lakshadweep,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+marine-heritage-festival,Marine Heritage Festival,Kavaratti,lakshadweep,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+warli-art-festival,Warli Art Festival,Silvassa,daman diu,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ladarcha-fair-kaza,Ladarcha Fair,Kaza,himachal pradesh,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tsheshu-chaam-festival,Tsheshu Chaam Festival,Kaza,himachal pradesh,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+hemkund-sahib-prakash-utsav,Hemkund Sahib Prakash Utsav,Hemkund Sahib,uttarakhand,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mopin-festival,Mopin Festival,Aalo,arunachal pradesh,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+solung-festival-aalo,Solung Festival,Aalo,arunachal pradesh,September,NONE,obscure,no,No obvious authentic free footage — image fallback.
+narasimha-jayanthi,Narasimha Jayanthi,Ahobilam,andhra pradesh,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+belum-caves-festival,Belum Caves Festival,Belum Caves,andhra pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gandikota-festival,Gandikota Festival,Gandikota,andhra pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+lumbini-festival,Lumbini Festival,Nagarjuna Sagar,andhra pradesh,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+srivari-brahmotsavam-tirumala,Srivari Brahmotsavam,Tirumala,andhra pradesh,September,NONE,obscure,no,No obvious authentic free footage — image fallback.
+reh-festival,Reh Festival,Anini,arunachal pradesh,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+podi-barbi-festival,Podi-Barbi Festival,Mechuka,arunachal pradesh,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+solung-festival-pasighat,Solung Festival,Pasighat,arunachal pradesh,September,NONE,obscure,no,No obvious authentic free footage — image fallback.
+raas-mahotsav,Raas Mahotsav,Majuli,assam,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nirvana-mahotsav,Nirvana Mahotsav,Pawapuri,bihar,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vaishali-mahotsav,Vaishali Mahotsav,Vaishali,bihar,March,NONE,obscure,no,No obvious authentic free footage — image fallback.
+bhoramdeo-mahotsav,Bhoramdeo Mahotsav,Bhoramdeo,chhattisgarh,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sirpur-mahotsav-national-dance-and-music-festival,Sirpur Mahotsav (National Dance and Music Festival),Sirpur,chhattisgarh,February,NONE,obscure,no,No obvious authentic free footage — image fallback.
+sarhul,Sarhul,Ranchi,jharkhand,March,NONE,obscure,no,No obvious authentic free footage — image fallback.
+mahavir-jayanti-shikharji,Mahavir Jayanti,Shikharji,jharkhand,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+shigmo-shigmotsav-margao,Shigmo (Shigmotsav),Margao,goa,March,NONE,obscure,no,No obvious authentic free footage — image fallback.
+feast-of-the-three-kings-reis-magos,Feast of the Three Kings (Reis Magos),Reis Magos Fort,goa,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sao-joao-festival-so-joo-siolim,Sao Joao Festival (São João),Siolim,goa,June,NONE,obscure,no,No obvious authentic free footage — image fallback.
+sao-joao-festival-so-joo-assagao,Sao Joao Festival (São João),Assagao,goa,June,NONE,obscure,no,No obvious authentic free footage — image fallback.
+sammed-shikhar-festival,Sammed Shikhar Festival,Shikharji,jharkhand,,NONE,obscure,no,No obvious authentic free footage — image fallback.
+shigmo-shigmotsav-ponda-spice,Shigmo (Shigmotsav),Spice Plantations (Ponda),goa,March,NONE,obscure,no,No obvious authentic free footage — image fallback.
+mahalsa-temple-annual-jatra,Mahalsa Temple Annual Jatra,Spice Plantations (Ponda),goa,,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+bhadarvi-poonam-mela,Bhadarvi Poonam Mela,Ambaji,gujarat,September,NONE,obscure,no,No obvious authentic free footage — image fallback.
+janmashtami-festival,Janmashtami Festival,Dakor,gujarat,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sharad-purnima-festival,Sharad Purnima Festival,Dakor,gujarat,October,NONE,obscure,no,No obvious authentic free footage — image fallback.
+uttarardh-mahotsav-modhera-dance-festival,Uttarardh Mahotsav (Modhera Dance Festival),Modhera Sun Temple,gujarat,January,NONE,obscure,no,No obvious authentic free footage — image fallback.
+mandvi-beach-festival,Mandvi Beach Festival,Mandvi,gujarat,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+dholavira-festival,Dholavira Festival,Dholavira,gujarat,,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+lili-parikrama-green-circumambulation-of-mount-girnar,Lili Parikrama (Green Circumambulation of Mount Girnar),Mount Girnar,gujarat,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gandhi-jayanti-celebrations-at-kirti-mandir,Gandhi Jayanti Celebrations at Kirti Mandir,Porbandar,gujarat,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+water-festival-rani-ki-vav,Water Festival - Rani ki Vav,Rani ki Vav (Patan),gujarat,December,NONE,obscure,no,No obvious authentic free footage — image fallback.
+saputara-monsoon-festival,Saputara Monsoon Festival,Saputara,gujarat,July,NONE,obscure,no,No obvious authentic free footage — image fallback.
+dang-darbar-festival,Dang Darbar Festival,Saputara,gujarat,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+dalai-lamas-birthday,Dalai Lama's Birthday,McLeod Ganj,himachal pradesh,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+manimahesh-yatra,Manimahesh Yatra,Manimahesh Kailash,himachal pradesh,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+shrikhand-mahadev-yatra,Shrikhand Mahadev Yatra,Shrikhand Mahadev,himachal pradesh,July,NONE,obscure,no,No obvious authentic free footage — image fallback.
+kinner-kailash-parikrama,Kinner Kailash Parikrama,Kinner Kailash,himachal pradesh,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+phulaich-festival-of-flowers,Phulaich (Festival of Flowers),Sangla Valley,himachal pradesh,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+prashar-mela-parashar-fair,Prashar Mela (Parashar Fair),Prashar Lake,himachal pradesh,June,NONE,obscure,no,No obvious authentic free footage — image fallback.
+fagli-festival-kinnaur,Fagli Festival,Kinnaur,himachal pradesh,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+lolab-winter-festival,Lolab Winter Festival,Lolab Valley,jammu kashmir,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ashlesha-bali-puja,Ashlesha Bali Puja,Kukke Subramanya,karnataka,,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+karavali-utsav,Karavali Utsav,Karwar,karnataka,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mandala-makaravilakku-pilgrimage-season,Mandala-Makaravilakku Pilgrimage Season,Sabarimala,kerala,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+marari-mahadeva-arattu-temple-festival,Marari Mahadeva Arattu (Temple Festival),Marari Beach,kerala,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+thangal-para-uroos-sufi-pilgrimage-festival,Thangal Para Uroos (Sufi Pilgrimage Festival),Vagamon,kerala,April,NONE,obscure,no,No obvious authentic free footage — image fallback.
+kartik-purnima-bhimashankar,Kartik Purnima,Bhimashankar,maharashtra,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ellora-ajanta-festival,Ellora-Ajanta Festival,Ellora Caves,maharashtra,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+monsoon-festival-amboli,Monsoon Festival,Amboli,maharashtra,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+dussehra-seemollanghan-at-shami-tree,Dussehra (Seemollanghan at Shami Tree),Karla & Bhaja Caves,maharashtra,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kamala-devi-festival,Kamala Devi Festival,Lonar Crater,maharashtra,,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+krishnabai-annual-utsav,Krishnabai Annual Utsav,Mahabaleshwar,maharashtra,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+dhammachakra-pravartan-din,Dhammachakra Pravartan Din,Nagpur,maharashtra,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ram-navami,Ram Navami,Shirdi,maharashtra,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+guru-purnima,Guru Purnima,Shirdi,maharashtra,July,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vijayadashami-sai-baba-punyatithi,Vijayadashami (Sai Baba Punyatithi),Shirdi,maharashtra,October,NONE,obscure,no,No obvious authentic free footage — image fallback.
+anganewadi-jatra-bharadi-devi-yatra,Anganewadi Jatra (Bharadi Devi Yatra),Tarkarli,maharashtra,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kartik-purnima-omkareshwar,Kartik Purnima,Omkareshwar,madhya pradesh,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tansen-samaroh,Tansen Samaroh,Gwalior,madhya pradesh,December,NONE,obscure,no,No obvious authentic free footage — image fallback.
+mandu-festival,Mandu Festival,Mandu,madhya pradesh,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nagdwari-mela,Nagdwari Mela,Pachmarhi,madhya pradesh,November,NONE,obscure,no,No obvious authentic free footage — image fallback.
+buddha-purnima-sanchi,Buddha Purnima,Sanchi,madhya pradesh,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vel-vel-festival,Vel Vel Festival,Moreh,manipur,,NONE,obscure,no,No obvious authentic free footage — image fallback.
+gaan-ngai,Gaan-Ngai,Tamenglong,manipur,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+shirui-lily-festival,Shirui Lily Festival,Ukhrul,manipur,May,NONE,obscure,no,No obvious authentic free footage — image fallback.
+luira-phanit,Luira Phanit,Ukhrul,manipur,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+monolith-festival,Monolith Festival,Mawphlang,meghalaya,,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+hnahsin-kut-cosmos-festival,Hnahsin Kut (Cosmos Festival),Champhai,mizoram,October,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+leitlangpui-music-festival,Leitlangpui Music Festival,Lunglei,mizoram,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+sekrenyi-khonoma,Sekrenyi,Khonoma,nagaland,February,NONE,obscure,no,No obvious authentic free footage — image fallback.
+mongmong-festival,Mongmong Festival,Kiphire,nagaland,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+metemneo-festival,Metemneo Festival,Kiphire,nagaland,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ashokastami-mela,Ashokastami Mela,Unakoti,tripura,April,NONE,obscure,no,No obvious authentic free footage — image fallback.
+dhauli-kalinga-mahotsav,Dhauli Kalinga Mahotsav,Dhauli,odisha,February,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+buddha-purnima-dhauli,Buddha Purnima,Dhauli,odisha,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+nrusingha-chaturdasi-baisakh-mela,Nrusingha Chaturdasi (Baisakh Mela),Nrusinghanath & Harishankar,odisha,May,NONE,obscure,no,No obvious authentic free footage — image fallback.
+chandipur-beach-festival,Chandipur Beach Festival,Chandipur,odisha,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+gopalpur-beach-festival,Gopalpur Beach Festival,Gopalpur-on-Sea,odisha,January,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+chaitra-mela,Chaitra Mela,Talasari,odisha,April,NONE,obscure,no,No obvious authentic free footage — image fallback.
+pang-lhabsol-namchi,Pang Lhabsol,Namchi,sikkim,September,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tendong-lho-rum-faat,Tendong Lho Rum Faat,Namchi,sikkim,August,NONE,obscure,no,No obvious authentic free footage — image fallback.
+sani-peyarchi-saturn-transit-festival,Sani Peyarchi (Saturn Transit Festival),Karaikal,puducherry,,NONE,obscure,no,No obvious authentic free footage — image fallback.
+karthika-pournami-jatara,Karthika Pournami Jatara,Ananthagiri Hills,telangana,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+ashada-jatara,Ashada Jatara,Ananthagiri Hills,telangana,June,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kumbhalgarh-festival,Kumbhalgarh Festival,Kumbhalgarh,rajasthan,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+mahavir-jayanti-ranakpur,Mahavir Jayanti,Ranakpur Jain Temple,rajasthan,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+vaikasi-brahmotsavam-garuda-sevai,Vaikasi Brahmotsavam (Garuda Sevai),Kanchipuram,tamil nadu,May,NONE,obscure,no,No obvious authentic free footage — image fallback.
+thaipusam-palani,Thaipusam,Palani,tamil nadu,January,NONE,obscure,no,No obvious authentic free footage — image fallback.
+panguni-uthiram-palani,Panguni Uthiram,Palani,tamil nadu,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+coonoor-fruit-show-nilgiris-summer-festival,Coonoor Fruit Show (Nilgiris Summer Festival),Coonoor,tamil nadu,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+arudra-darshan-margazhi-tiruvadhirai,Arudra Darshan (Margazhi Tiruvadhirai),Coimbatore,tamil nadu,December,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+panguni-brahmotsavam,Panguni Brahmotsavam,Coimbatore,tamil nadu,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+skanda-sashti-pazhamudircholai,Skanda Sashti,Pazhamudircholai,tamil nadu,October,NONE,obscure,no,No obvious authentic free footage — image fallback.
+panguni-uthiram-pazhamudircholai,Panguni Uthiram,Pazhamudircholai,tamil nadu,March,NONE,obscure,no,No obvious authentic free footage — image fallback.
+karthigai-deepam,Karthigai Deepam,Tiruvannamalai,tamil nadu,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+skanda-sashti-tiruchendur,Skanda Sashti,Tiruchendur,tamil nadu,October,NONE,obscure,no,No obvious authentic free footage — image fallback.
+thaipusam-swamimalai,Thaipusam,Swamimalai,tamil nadu,January,NONE,obscure,no,No obvious authentic free footage — image fallback.
+skanda-sashti-swamimalai,Skanda Sashti,Swamimalai,tamil nadu,October,NONE,obscure,no,No obvious authentic free footage — image fallback.
+vaikasi-vishakham-brahmotsavam,Vaikasi Vishakham / Brahmotsavam,Tiruparankundram,tamil nadu,May,NONE,obscure,no,No obvious authentic free footage — image fallback.
+panguni-uthiram-tiruparankundram,Panguni Uthiram,Tiruparankundram,tamil nadu,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+thaipusam-tiruttani,Thaipusam,Tiruttani,tamil nadu,January,NONE,obscure,no,No obvious authentic free footage — image fallback.
+skanda-sashti-tiruttani,Skanda Sashti,Tiruttani,tamil nadu,October,NONE,obscure,no,No obvious authentic free footage — image fallback.
+vaikunta-ekadasi,Vaikunta Ekadasi,Trichy (Tiruchirappalli),tamil nadu,December,NONE,obscure,no,No obvious authentic free footage — image fallback.
+samayapuram-mariamman-brahmotsavam,Samayapuram Mariamman Brahmotsavam,Trichy (Tiruchirappalli),tamil nadu,May,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+summer-festival-yercaud,Summer Festival,Yercaud,tamil nadu,May,NONE,obscure,no,No obvious authentic free footage — image fallback.
+krishna-janmashtami-birth-of-krishna,Krishna Janmashtami (Birth of Krishna),Mathura,uttar pradesh,August,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+kali-puja,Kali Puja,Kolkata,west bengal,November,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+poush-mela,Poush Mela,Shantiniketan,west bengal,December,NONE,obscure,no,No obvious authentic free footage — image fallback.
+basanta-utsav-spring-festival,Basanta Utsav (Spring Festival),Shantiniketan,west bengal,March,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+harela-mela-monsoon-festival,Harela Mela (Monsoon Festival),Bhimtal,uttarakhand,July,NONE,obscure,no,No obvious authentic free footage — image fallback.
+bonbibi-mela-forest-goddess-festival,Bonbibi Mela (Forest Goddess Festival),Sundarbans,west bengal,January,NONE,obscure,no,No obvious authentic free footage — image fallback.
+hanuman-jayanti,Hanuman Jayanti,Sariska Tiger Reserve,rajasthan,April,NONE,obscure,yes,No obvious authentic free footage — image fallback.
+tskhenye-festival,Tsükhenye Festival,Pfutsero,nagaland,April,NONE,obscure,no,No obvious authentic free footage — image fallback.
+bihu-rongalibohag,Bihu (Rongali/Bohag),Guwahati,assam,April,SPECIFIC,bihu,yes,"Assam dance, dhol, gamosa."
+pushkar-camel-fair,Pushkar Camel Fair,Pushkar,rajasthan,November,SPECIFIC,camel-fair,yes,Camels + desert fairground.
+bikaner-camel-festival,Bikaner Camel Festival,Bikaner,rajasthan,January,SPECIFIC,camel-fair,yes,Camels + desert fairground.
+yamuna-chhath,Yamuna Chhath,Yamunotri,uttarakhand,April,SPECIFIC,chhath,yes,Riverbank sunrise offerings.
+chhath-puja,Chhath Puja,Patna,bihar,November,SPECIFIC,chhath,yes,Riverbank sunrise offerings.
+chhath-puja-at-netarhat,Chhath Puja at Netarhat,Netarhat,jharkhand,November,SPECIFIC,chhath,yes,Riverbank sunrise offerings.
+navratri-at-mahalaxmi-temple,Navratri at Mahalaxmi Temple,Kolhapur,maharashtra,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+vijayawada-dussehra-durga-navaratri,Vijayawada Dussehra (Durga Navaratri),Vijayawada,andhra pradesh,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+durga-puja-cuttack-silver-edition,Durga Puja (Cuttack Silver Edition),Cuttack,odisha,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+navratri-garba,Navratri Garba,Vadodara,gujarat,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+shantadurga-temple-annual-fair,Shantadurga Temple Annual Fair,Spice Plantations (Ponda),goa,December,SPECIFIC,durga-navratri,no,Pandals/idols OR garba circle.
+navratri,Navratri,Karla & Bhaja Caves,maharashtra,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+durga-puja,Durga Puja,Kolkata,west bengal,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+navratri-pilgrimage-at-vaishno-devi,Navratri Pilgrimage at Vaishno Devi,Katra,jammu kashmir,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+sharan-navaratri-at-jogulamba-temple,Sharan Navaratri at Jogulamba Temple,Alampur,telangana,October,SPECIFIC,durga-navratri,yes,Pandals/idols OR garba circle.
+ganesh-chaturthi-at-trinetra-ganesh-temple,Ganesh Chaturthi at Trinetra Ganesh Temple,Ranthambore,rajasthan,September,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-mumbai,Ganesh Chaturthi,Mumbai,maharashtra,August,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-ganeshotsav,Ganesh Chaturthi (Ganeshotsav),Pune,maharashtra,August,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-astavinayak-circuit,Ganesh Chaturthi,Astavinayak Circuit,maharashtra,September,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-ganpatipule,Ganesh Chaturthi,Ganpatipule,maharashtra,September,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-lenyadri,Ganesh Chaturthi,Lenyadri,maharashtra,September,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+maghi-ganesh-jayanti-lenyadri,Maghi Ganesh Jayanti,Lenyadri,maharashtra,January,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-morgaon,Ganesh Chaturthi,Morgaon,maharashtra,September,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+maghi-ganesh-jayanti-morgaon,Maghi Ganesh Jayanti,Morgaon,maharashtra,January,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-mahad-raigad,Ganesh Chaturthi,Mahad (Raigad — Ashtavinayak),maharashtra,September,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+maghi-ganesh-jayanti-mahad-raigad,Maghi Ganesh Jayanti,Mahad (Raigad — Ashtavinayak),maharashtra,January,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-ozar,Ganesh Chaturthi,Ozar,maharashtra,August,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+maghi-ganesh-maghi-chaturthi,Maghi Ganesh (Maghi Chaturthi),Ozar,maharashtra,January,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-pali-raigad,Ganesh Chaturthi,Pali (Raigad),maharashtra,August,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-ranjangaon,Ganesh Chaturthi,Ranjangaon,maharashtra,August,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-jayanti-maghi,Ganesh Jayanti (Maghi),Ranjangaon,maharashtra,January,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-jayanti-maghi-ganesh,Ganesh Jayanti (Maghi Ganesh),Siddhatek,maharashtra,January,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-siddhatek,Ganesh Chaturthi,Siddhatek,maharashtra,August,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+ganesh-chaturthi-theur,Ganesh Chaturthi,Theur,maharashtra,August,SPECIFIC,ganesh,yes,Ganesh idol + visarjan.
+goa-carnival-panaji,Goa Carnival,Panaji,goa,February,SPECIFIC,goa-carnival,no,"Float parade, King Momo."
+goa-carnival-margao,Goa Carnival,Margao,goa,February,SPECIFIC,goa-carnival,no,"Float parade, King Momo."
+magh-mela-prayagraj,Magh Mela,Prayagraj,uttar pradesh,January,SPECIFIC,kumbh-snan,yes,River mass-bathing ghats.
+ganga-aarti-at-har-ki-pauri-kumbh-legacy,Ganga Aarti at Har Ki Pauri (Kumbh legacy),Haridwar,uttarakhand,January,SPECIFIC,kumbh-snan,yes,River mass-bathing ghats.
+magh-mela-uttarkashi,Magh Mela,Uttarkashi,uttarakhand,January,SPECIFIC,kumbh-snan,yes,River mass-bathing ghats.
+magh-mela-jaunsar,Magh Mela (Jaunsar),Chakrata,uttarakhand,January,SPECIFIC,kumbh-snan,yes,River mass-bathing ghats.
+kumbh-mela,Kumbh Mela,Nashik,maharashtra,August,SPECIFIC,kumbh-snan,yes,River mass-bathing ghats.
+nashik-trimbakeshwar-simhastha-kumbh-mela,Nashik-Trimbakeshwar Simhastha Kumbh Mela,Trimbakeshwar,maharashtra,,SPECIFIC,kumbh-snan,no,River mass-bathing ghats.
+simhastha-kumbh-mela,Simhastha Kumbh Mela,Ujjain,madhya pradesh,April,SPECIFIC,kumbh-snan,no,River mass-bathing ghats.
+jaipur-literature-festival,Jaipur Literature Festival,Jaipur,rajasthan,January,SPECIFIC,litfest,yes,Tented sessions/crowd. Generic conference if none.
+kovalam-literary-festival,Kovalam Literary Festival,Kovalam,kerala,December,SPECIFIC,litfest,yes,Tented sessions/crowd. Generic conference if none.
+hemis-festival,Hemis Festival,Leh,ladakh,June,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+chamba-minjar-fair,Chamba Minjar Fair,Chamba,himachal pradesh,July,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+chamba-dussehra,Chamba Dussehra,Chamba,himachal pradesh,October,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+dosmoche-festival-diskit,Dosmoche Festival (Diskit),Nubra Valley,ladakh,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+karsha-gustor,Karsha Gustor,Zanskar Valley,ladakh,July,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+korzok-gustor,Korzok Gustor,Tso Moriri,ladakh,July,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+champawat-nanda-devi-fair,Champawat Nanda Devi Fair,Champawat,uttarakhand,September,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar-tibetan-new-year-darjeeling,Losar (Tibetan New Year),Darjeeling,west bengal,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar-tibetansikkimese-new-year,Losar (Tibetan/Sikkimese New Year),Gangtok,sikkim,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+saga-dawa-gangtok,Saga Dawa,Gangtok,sikkim,June,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar-monpa-new-year,Losar (Monpa New Year),Tawang,arunachal pradesh,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+saga-dawa-pelling,Saga Dawa,Pelling,sikkim,June,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar-tibetan-new-year-dharamshala,Losar (Tibetan New Year),Dharamshala,himachal pradesh,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+saga-dawa-gangtok,Saga Dawa,Gangtok,sikkim,May,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar,Losar,Gangtok,sikkim,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+nag-panchami-battis-shirala,Nag Panchami (Battis Shirala),Kolhapur,maharashtra,August,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+vasant-panchami,Vasant Panchami,Basara,telangana,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+champaner-heritage-festival,Champaner Heritage Festival,Champaner-Pavagadh,gujarat,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar-tibetan-new-year-mcleodganj,Losar (Tibetan New Year),McLeod Ganj,himachal pradesh,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar-tibetan-new-year-halda,Losar (Tibetan New Year / Halda),Lahaul Valley,himachal pradesh,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+likir-dosmochey-stromochey-festival,Likir Dosmochey (Stromochey) Festival,Likir,ladakh,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+champa-shashti-shasti,Champa Shashti (Shasti),Kukke Subramanya,karnataka,December,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+dubdi-monastery-festival,Dubdi Monastery Festival,Yuksom,sikkim,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+mahakala-dance-ralang-monastery,Mahakala Dance (Ralang Monastery),Ravangla,sikkim,November,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+losar-tibetan-new-year-kalimpong,Losar (Tibetan New Year),Kalimpong,west bengal,February,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+nagara-panchami,Nagara Panchami,Kukke Subramanya,karnataka,August,SPECIFIC,monastery-cham,yes,"Masked Cham dance, monastery courtyard."
+nehru-trophy-boat-race,Nehru Trophy Boat Race,Alleppey (Alappuzha),kerala,August,SPECIFIC,onam-boatrace,yes,Snake-boat race / pookalam.
+alleppey-houseboat-onam,Alleppey Houseboat Onam,Alleppey (Alappuzha),kerala,September,SPECIFIC,onam-boatrace,yes,Snake-boat race / pookalam.
+aranmula-boat-race,Aranmula Boat Race,Alleppey (Alappuzha),kerala,September,SPECIFIC,onam-boatrace,yes,Snake-boat race / pookalam.
+neermahal-water-festival-boat-race,Neermahal Water Festival - Boat Race,Neermahal,tripura,August,SPECIFIC,onam-boatrace,yes,Snake-boat race / pookalam.
+rath-yatra,Rath Yatra,Puri,odisha,July,SPECIFIC,rath-yatra,yes,Giant chariots + crowds (Puri).
+bathukamma,Bathukamma,Hyderabad,telangana,October,SUBTYPE,bathukamma,yes,Flower-stack + women circle. Specific or image.
+bathukamma-at-bhadrakali-lake,Bathukamma at Bhadrakali Lake,Warangal,telangana,October,SUBTYPE,bathukamma,yes,Flower-stack + women circle. Specific or image.
+bonalu,Bonalu,Hyderabad,telangana,July,SUBTYPE,bonalu,yes,Telangana pot-on-head + potharaju. Specific or image.
+mysore-dasara,Mysore Dasara,Mysore,karnataka,October,SUBTYPE,dasara-mysore,yes,Caparisoned-elephant Jamboo Savari. Needs Mysore-specific clip.
+mysore-dasara-exhibition,Mysore Dasara Exhibition,Mysore,karnataka,October,SUBTYPE,dasara-mysore,yes,Caparisoned-elephant Jamboo Savari. Needs Mysore-specific clip.
+kullu-dussehra-manali,Kullu Dussehra,Manali,himachal pradesh,October,SUBTYPE,dussehra-kullu,yes,"Deity-palanquin procession in the maidan, NOT effigy. Specific or image."
+kullu-dussehra-kullu,Kullu Dussehra,Kullu,himachal pradesh,October,SUBTYPE,dussehra-kullu,yes,"Deity-palanquin procession in the maidan, NOT effigy. Specific or image."
+bastar-dussehra,Bastar Dussehra,Jagdalpur,chhattisgarh,October,SUBTYPE,dussehra-tribal-bastar,yes,"Tribal Dussehra (rath/anga deo), NOT Ravana-effigy. Specific or image."
+hornbill-festival,Hornbill Festival,Kohima,nagaland,December,SUBTYPE,hornbill,yes,Naga morungs/log-drums. Needs Hornbill-specific clip.
+theyyam-season,Theyyam Season,Kannur,kerala,November,SUBTYPE,theyyam,yes,Kerala ritual costume/fire. Specific or image.
+thrissur-pooram,Thrissur Pooram,Thrissur,kerala,April,SUBTYPE,thrissur-pooram,yes,Elephant line + parasols + percussion. Specific.
+cherai-pooram-gowreeswara-temple-festival,Cherai Pooram (Gowreeswara Temple Festival),Cherai Beach,kerala,January,SUBTYPE,thrissur-pooram,yes,Elephant line + parasols + percussion. Specific.

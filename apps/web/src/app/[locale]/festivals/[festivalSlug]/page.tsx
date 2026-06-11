@@ -13,7 +13,7 @@ import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
 import { singleFestivalEventJsonLd, type FestivalRow } from "@/lib/festival-schema";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
-import { festivalHeroSrc } from "@/lib/festival-heroes";
+import { festivalHeroSrc, festivalHeroCredit } from "@/lib/festival-heroes";
 import { destinationImage } from "@/lib/image-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
@@ -282,20 +282,23 @@ export default async function FestivalDetailPage({
   const enriched = await loadEnriched(f.id, f.destination_id, f.month);
   const dest = enriched.destination;
 
-  // Festival B-roll hero clip (location footage of the host destination at
-  // this time of year), if one was uploaded to R2 for this slug. Empty string
-  // when none exists → the static destination image is used instead.
+  // Real festival-footage hero clip — authentic, free-licensed video of this
+  // festival type (mapped by visual family in festival-footage-map.ts), if one
+  // exists. Empty string when none → the static destination image is used.
+  // (Replaced the former location-only landscape B-roll, which showed the host
+  // place — mountains/monsoon/fields — and never the festival itself.)
   const heroVideo = festivalHeroSrc(festivalSlug);
+  const heroCredit = festivalHeroCredit(festivalSlug);
 
-  // VideoObject schema only when a clip exists. Description stays honest: the
-  // clips are location B-roll of the host destination at festival time, not
-  // footage of the festival/ritual itself (the prompt guardrail forbids that).
+  // VideoObject schema only when a clip exists. The clip shows the festival
+  // itself (Holi colour, Diwali diyas, the Ganga aarti …), so the name and
+  // description describe the festival, not the host landscape.
   const festivalVideoLd =
     heroVideo && f.destination_id
       ? videoObjectJsonLd({
           id: festivalSlug,
-          name: `${f.name} — ${destName ?? "India"} B-roll`,
-          description: `Location footage of ${destName ?? f.destination_id} around ${dateLabel}, when ${f.name} is celebrated.`,
+          name: `${f.name} — festival footage`,
+          description: `Footage of ${f.name}${destName ? `, celebrated at ${destName}` : ""} around ${dateLabel}.`,
           thumbnailUrl: destinationImage(f.destination_id, 1600),
           embedUrl: pageUrl,
         })
@@ -387,6 +390,22 @@ export default async function FestivalDetailPage({
               background: "linear-gradient(180deg, rgba(10,10,8,0.20) 0%, transparent 40%, rgba(10,10,8,0.85) 100%)",
             }}
           />
+          {heroVideo && heroCredit && (
+            <span
+              style={{
+                position: "absolute",
+                bottom: 6,
+                right: 10,
+                zIndex: 2,
+                fontSize: 10,
+                lineHeight: 1.2,
+                color: "rgba(255,255,255,0.5)",
+                letterSpacing: "0.01em",
+              }}
+            >
+              {heroCredit}
+            </span>
+          )}
         </div>
       )}
 
