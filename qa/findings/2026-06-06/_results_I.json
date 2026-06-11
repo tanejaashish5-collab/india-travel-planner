@@ -1,0 +1,122 @@
+{
+ "probes": [
+  [
+   "/en",
+   "200",
+   119
+  ],
+  [
+   "/hi",
+   "200",
+   806
+  ],
+  [
+   "/en/explore",
+   "200",
+   818
+  ],
+  [
+   "/en/states",
+   "200",
+   983
+  ],
+  [
+   "/en/collections",
+   "200",
+   1376
+  ],
+  [
+   "/en/routes",
+   "200",
+   1380
+  ],
+  [
+   "/en/treks",
+   "200",
+   2227
+  ],
+  [
+   "/en/plan",
+   "200",
+   1173
+  ],
+  [
+   "/en/camping",
+   "200",
+   1284
+  ],
+  [
+   "/en/permits",
+   "200",
+   1304
+  ],
+  [
+   "/en/stays",
+   "200",
+   1241
+  ],
+  [
+   "/en/festivals",
+   "200",
+   2017
+  ],
+  [
+   "/en/about",
+   "200",
+   1170
+  ],
+  [
+   "/en/methodology",
+   "200",
+   1216
+  ],
+  [
+   "/en/destination/jaipur",
+   "200",
+   924
+  ],
+  [
+   "/en/destination/leh",
+   "200",
+   1060
+  ],
+  [
+   "/en/destination/varanasi",
+   "200",
+   1325
+  ],
+  [
+   "/hi/destination/jaipur",
+   "200",
+   812
+  ],
+  [
+   "/en/with-kids/jaipur",
+   "200",
+   1021
+  ],
+  [
+   "/en/cost/jaipur",
+   "200",
+   9623
+  ],
+  [
+   "/en/destination/jaipur/june",
+   "200",
+   7233
+  ],
+  [
+   "/en/offline",
+   "200",
+   422
+  ]
+ ],
+ "probed": 22,
+ "x2xx": 22,
+ "x3xx": 0,
+ "x4xx5xx": 0,
+ "ttfb_min": 119,
+ "ttfb_median": 1194,
+ "ttfb_p90": 2227,
+ "ttfb_max": 9623
+}

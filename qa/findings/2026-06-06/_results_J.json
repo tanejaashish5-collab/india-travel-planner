@@ -1,0 +1,30 @@
+{
+ "probes": [
+  [
+   "/",
+   "301",
+   "https://www.nakshiq.com/en"
+  ],
+  [
+   "/explore",
+   "301",
+   "https://www.nakshiq.com/en/explore"
+  ],
+  [
+   "/destination/jaipur",
+   "301",
+   "https://www.nakshiq.com/en/destination/jaipur"
+  ],
+  [
+   "/treks",
+   "301",
+   "https://www.nakshiq.com/en/treks"
+  ],
+  [
+   "/about",
+   "301",
+   "https://www.nakshiq.com/en/about"
+  ]
+ ],
+ "all_301_to_en": true
+}

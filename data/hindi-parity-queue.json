@@ -1,0 +1,1377 @@
+{
+  "generated_at": "2026-04-25T03:38:12.910Z",
+  "counts": {
+    "dest_total": 488,
+    "dest_complete": 216,
+    "dest_partial": 0,
+    "dest_missing": 272,
+    "dest_parity_pct": 44,
+    "articles_total": 0,
+    "articles_complete": 0
+  },
+  "queue": {
+    "destinations_missing_both": [
+      {
+        "id": "aalo",
+        "name": "Aalo",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "achabal",
+        "name": "Achabal",
+        "state_id": "jammu-kashmir"
+      },
+      {
+        "id": "agonda",
+        "name": "Agonda",
+        "state_id": "goa"
+      },
+      {
+        "id": "ahmedabad",
+        "name": "Ahmedabad",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "aihole",
+        "name": "Aihole",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "ajanta-caves",
+        "name": "Ajanta Caves",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "alchi",
+        "name": "Alchi",
+        "state_id": "ladakh"
+      },
+      {
+        "id": "alibaug",
+        "name": "Alibaug",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "alleppey",
+        "name": "Alleppey (Alappuzha)",
+        "state_id": "kerala"
+      },
+      {
+        "id": "almora",
+        "name": "Almora",
+        "state_id": "uttarakhand"
+      },
+      {
+        "id": "ambaji",
+        "name": "Ambaji",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "amboli",
+        "name": "Amboli",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "anamalai",
+        "name": "Anamalai Tiger Reserve (Topslip)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "anini",
+        "name": "Anini",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "anjuna",
+        "name": "Anjuna",
+        "state_id": "goa"
+      },
+      {
+        "id": "arambol",
+        "name": "Arambol",
+        "state_id": "goa"
+      },
+      {
+        "id": "athirapally",
+        "name": "Athirapally Falls",
+        "state_id": "kerala"
+      },
+      {
+        "id": "aurangabad",
+        "name": "Aurangabad",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "auroville",
+        "name": "Auroville",
+        "state_id": "puducherry"
+      },
+      {
+        "id": "badami",
+        "name": "Badami",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "bandhavgarh",
+        "name": "Bandhavgarh National Park",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "bandipur",
+        "name": "Bandipur National Park",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "bangus-valley",
+        "name": "Bangus Valley",
+        "state_id": "jammu-kashmir"
+      },
+      {
+        "id": "barnawapara",
+        "name": "Barnawapara",
+        "state_id": "chhattisgarh"
+      },
+      {
+        "id": "bekal",
+        "name": "Bekal",
+        "state_id": "kerala"
+      },
+      {
+        "id": "belur",
+        "name": "Belur",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "bengaluru",
+        "name": "Bengaluru",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "beypore",
+        "name": "Beypore",
+        "state_id": "kerala"
+      },
+      {
+        "id": "bhalukpong",
+        "name": "Bhalukpong",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "bhandardara",
+        "name": "Bhandardara",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "bharatpur",
+        "name": "Bharatpur",
+        "state_id": "rajasthan"
+      },
+      {
+        "id": "bhavnagar",
+        "name": "Bhavnagar",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "bhimashankar",
+        "name": "Bhimashankar",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "bhimtal",
+        "name": "Bhimtal",
+        "state_id": "uttarakhand"
+      },
+      {
+        "id": "bhopal",
+        "name": "Bhopal",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "bidar",
+        "name": "Bidar",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "bijapur",
+        "name": "Bijapur (Vijayapura)",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "bodh-gaya",
+        "name": "Bodh Gaya",
+        "state_id": "bihar"
+      },
+      {
+        "id": "bomdila",
+        "name": "Bomdila",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "calangute-baga",
+        "name": "Calangute-Baga",
+        "state_id": "goa"
+      },
+      {
+        "id": "chamba",
+        "name": "Chamba",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "champaner-pavagadh",
+        "name": "Champaner-Pavagadh",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "champhai",
+        "name": "Champhai",
+        "state_id": "mizoram"
+      },
+      {
+        "id": "chandratal",
+        "name": "Chandratal",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "chennai",
+        "name": "Chennai",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "cherai",
+        "name": "Cherai Beach",
+        "state_id": "kerala"
+      },
+      {
+        "id": "chettinad",
+        "name": "Chettinad",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "chidambaram",
+        "name": "Chidambaram",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "chikmagalur",
+        "name": "Chikmagalur",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "chinnar",
+        "name": "Chinnar Wildlife Sanctuary",
+        "state_id": "kerala"
+      },
+      {
+        "id": "chitradurga",
+        "name": "Chitradurga",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "chittorgarh",
+        "name": "Chittorgarh",
+        "state_id": "rajasthan"
+      },
+      {
+        "id": "chorao-divar",
+        "name": "Chorao & Divar Islands",
+        "state_id": "goa"
+      },
+      {
+        "id": "coimbatore",
+        "name": "Coimbatore",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "colva-benaulim",
+        "name": "Colva & Benaulim",
+        "state_id": "goa"
+      },
+      {
+        "id": "coonoor",
+        "name": "Coonoor",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "coorg",
+        "name": "Coorg (Kodagu)",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "courtallam",
+        "name": "Courtallam (Kutralam)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "dakor",
+        "name": "Dakor",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "dalhousie",
+        "name": "Dalhousie",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "daman",
+        "name": "Daman",
+        "state_id": "daman-diu"
+      },
+      {
+        "id": "dambuk",
+        "name": "Dambuk",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "dandeli",
+        "name": "Dandeli",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "daulatabad",
+        "name": "Daulatabad Fort",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "deeg",
+        "name": "Deeg",
+        "state_id": "rajasthan"
+      },
+      {
+        "id": "deoghar",
+        "name": "Deoghar",
+        "state_id": "jharkhand"
+      },
+      {
+        "id": "dhanushkodi",
+        "name": "Dhanushkodi",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "dharamshala",
+        "name": "Dharamshala",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "dharmasthala",
+        "name": "Dharmasthala",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "dholavira",
+        "name": "Dholavira",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "dirang",
+        "name": "Dirang",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "diu",
+        "name": "Diu",
+        "state_id": "daman-diu"
+      },
+      {
+        "id": "dudhsagar-falls",
+        "name": "Dudhsagar Falls",
+        "state_id": "goa"
+      },
+      {
+        "id": "dwarka",
+        "name": "Dwarka",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "elephanta-caves",
+        "name": "Elephanta Caves",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "ellora-caves",
+        "name": "Ellora Caves",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "eravikulam",
+        "name": "Eravikulam National Park",
+        "state_id": "kerala"
+      },
+      {
+        "id": "fort-aguada",
+        "name": "Fort Aguada & Candolim",
+        "state_id": "goa"
+      },
+      {
+        "id": "gagron-fort",
+        "name": "Gagron Fort",
+        "state_id": "rajasthan"
+      },
+      {
+        "id": "gandhinagar",
+        "name": "Gandhinagar",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "ganpatipule",
+        "name": "Ganpatipule",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "gir-national-park",
+        "name": "Gir National Park",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "girnar",
+        "name": "Mount Girnar",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "gokarna",
+        "name": "Gokarna",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "gulbarga",
+        "name": "Gulbarga (Kalaburagi)",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "gurudongmar-lake",
+        "name": "Gurudongmar Lake",
+        "state_id": "sikkim"
+      },
+      {
+        "id": "guruvayur",
+        "name": "Guruvayur",
+        "state_id": "kerala"
+      },
+      {
+        "id": "gwalior",
+        "name": "Gwalior",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "haflong",
+        "name": "Haflong",
+        "state_id": "assam"
+      },
+      {
+        "id": "halebidu",
+        "name": "Halebidu",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "hampi",
+        "name": "Hampi",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "har-ki-doon",
+        "name": "Har Ki Doon",
+        "state_id": "uttarakhand"
+      },
+      {
+        "id": "harihareshwar",
+        "name": "Harihareshwar",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "hemkund-sahib",
+        "name": "Hemkund Sahib",
+        "state_id": "uttarakhand"
+      },
+      {
+        "id": "hogenakkal",
+        "name": "Hogenakkal Falls",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "idukki",
+        "name": "Idukki",
+        "state_id": "kerala"
+      },
+      {
+        "id": "igatpuri",
+        "name": "Igatpuri",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "jagdalpur",
+        "name": "Jagdalpur",
+        "state_id": "chhattisgarh"
+      },
+      {
+        "id": "jog-falls",
+        "name": "Jog Falls",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "jorhat",
+        "name": "Jorhat",
+        "state_id": "assam"
+      },
+      {
+        "id": "junagadh",
+        "name": "Junagadh",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "kabini",
+        "name": "Kabini",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "kalimpong",
+        "name": "Kalimpong",
+        "state_id": "west-bengal"
+      },
+      {
+        "id": "kanchipuram",
+        "name": "Kanchipuram",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "kanha",
+        "name": "Kanha National Park",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "kannur",
+        "name": "Kannur",
+        "state_id": "kerala"
+      },
+      {
+        "id": "kanyakumari",
+        "name": "Kanyakumari",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "karwar",
+        "name": "Karwar",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "kashid",
+        "name": "Kashid",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "kasol",
+        "name": "Kasol",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "kaza",
+        "name": "Kaza",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "khandala",
+        "name": "Khandala",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "khardung-la",
+        "name": "Khardung La",
+        "state_id": "ladakh"
+      },
+      {
+        "id": "kochi",
+        "name": "Kochi (Fort Kochi)",
+        "state_id": "kerala"
+      },
+      {
+        "id": "kodaikanal",
+        "name": "Kodaikanal",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "kokernag",
+        "name": "Kokernag",
+        "state_id": "jammu-kashmir"
+      },
+      {
+        "id": "kolad",
+        "name": "Kolad",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "kolhapur",
+        "name": "Kolhapur",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "kolkata",
+        "name": "Kolkata",
+        "state_id": "west-bengal"
+      },
+      {
+        "id": "kollam",
+        "name": "Kollam",
+        "state_id": "kerala"
+      },
+      {
+        "id": "kotagiri",
+        "name": "Kotagiri",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "kovalam",
+        "name": "Kovalam",
+        "state_id": "kerala"
+      },
+      {
+        "id": "kozhikode",
+        "name": "Kozhikode (Calicut)",
+        "state_id": "kerala"
+      },
+      {
+        "id": "kukke-subramanya",
+        "name": "Kukke Subramanya",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "kumarakom",
+        "name": "Kumarakom",
+        "state_id": "kerala"
+      },
+      {
+        "id": "kumbakonam",
+        "name": "Kumbakonam",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "kumbalangi",
+        "name": "Kumbalangi",
+        "state_id": "kerala"
+      },
+      {
+        "id": "kumbhalgarh",
+        "name": "Kumbhalgarh",
+        "state_id": "rajasthan"
+      },
+      {
+        "id": "kutch",
+        "name": "Kutch (Bhuj)",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "kuttanad",
+        "name": "Kuttanad",
+        "state_id": "kerala"
+      },
+      {
+        "id": "lachen",
+        "name": "Lachen",
+        "state_id": "sikkim"
+      },
+      {
+        "id": "lahaul-valley",
+        "name": "Lahaul Valley",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "lamayuru",
+        "name": "Lamayuru",
+        "state_id": "ladakh"
+      },
+      {
+        "id": "landour",
+        "name": "Landour",
+        "state_id": "uttarakhand"
+      },
+      {
+        "id": "likir",
+        "name": "Likir",
+        "state_id": "ladakh"
+      },
+      {
+        "id": "lolab-valley",
+        "name": "Lolab Valley",
+        "state_id": "jammu-kashmir"
+      },
+      {
+        "id": "lonar-crater",
+        "name": "Lonar Crater",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "lonavala",
+        "name": "Lonavala",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "lothal",
+        "name": "Lothal",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "lunglei",
+        "name": "Lunglei",
+        "state_id": "mizoram"
+      },
+      {
+        "id": "madurai",
+        "name": "Madurai",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "mahabaleshwar",
+        "name": "Mahabaleshwar",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "mahabalipuram",
+        "name": "Mahabalipuram (Mamallapuram)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "malvan",
+        "name": "Malvan",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "manas-national-park",
+        "name": "Manas National Park",
+        "state_id": "assam"
+      },
+      {
+        "id": "mandrem",
+        "name": "Mandrem",
+        "state_id": "goa"
+      },
+      {
+        "id": "mandu",
+        "name": "Mandu",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "mandvi",
+        "name": "Mandvi",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "mangalore",
+        "name": "Mangalore",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "marari",
+        "name": "Marari Beach",
+        "state_id": "kerala"
+      },
+      {
+        "id": "margao",
+        "name": "Margao",
+        "state_id": "goa"
+      },
+      {
+        "id": "marine-national-park",
+        "name": "Marine National Park",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "matheran",
+        "name": "Matheran",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "mathura",
+        "name": "Mathura",
+        "state_id": "uttar-pradesh"
+      },
+      {
+        "id": "mawphlang",
+        "name": "Mawphlang",
+        "state_id": "meghalaya"
+      },
+      {
+        "id": "mcleodganj",
+        "name": "McLeod Ganj",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "mechuka",
+        "name": "Mechuka",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "meghamalai",
+        "name": "Meghamalai (High Wavy Mountains)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "modhera",
+        "name": "Modhera Sun Temple",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "mokokchung",
+        "name": "Mokokchung",
+        "state_id": "nagaland"
+      },
+      {
+        "id": "mollem",
+        "name": "Mollem (Bhagwan Mahavir Sanctuary)",
+        "state_id": "goa"
+      },
+      {
+        "id": "mon",
+        "name": "Mon",
+        "state_id": "nagaland"
+      },
+      {
+        "id": "moreh",
+        "name": "Moreh",
+        "state_id": "manipur"
+      },
+      {
+        "id": "morjim",
+        "name": "Morjim",
+        "state_id": "goa"
+      },
+      {
+        "id": "mudumalai",
+        "name": "Mudumalai National Park",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "mumbai",
+        "name": "Mumbai",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "munnar",
+        "name": "Munnar",
+        "state_id": "kerala"
+      },
+      {
+        "id": "murud-janjira",
+        "name": "Murud-Janjira",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "murudeshwar",
+        "name": "Murudeshwar",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "mussoorie",
+        "name": "Mussoorie",
+        "state_id": "uttarakhand"
+      },
+      {
+        "id": "mysore",
+        "name": "Mysore",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "nagarhole",
+        "name": "Nagarhole National Park",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "nagpur",
+        "name": "Nagpur",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "nainital",
+        "name": "Nainital",
+        "state_id": "uttarakhand"
+      },
+      {
+        "id": "nalanda",
+        "name": "Nalanda",
+        "state_id": "bihar"
+      },
+      {
+        "id": "nalsarovar",
+        "name": "Nalsarovar Bird Sanctuary",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "namdapha",
+        "name": "Namdapha",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "nandi-hills",
+        "name": "Nandi Hills",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "nashik",
+        "name": "Nashik",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "neermahal",
+        "name": "Neermahal",
+        "state_id": "tripura"
+      },
+      {
+        "id": "nelliyampathy",
+        "name": "Nelliyampathy",
+        "state_id": "kerala"
+      },
+      {
+        "id": "netarhat",
+        "name": "Netarhat",
+        "state_id": "jharkhand"
+      },
+      {
+        "id": "nongriat",
+        "name": "Nongriat",
+        "state_id": "meghalaya"
+      },
+      {
+        "id": "old-goa",
+        "name": "Old Goa",
+        "state_id": "goa"
+      },
+      {
+        "id": "omkareshwar",
+        "name": "Omkareshwar",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "ooty",
+        "name": "Ooty (Udagamandalam)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "pachmarhi",
+        "name": "Pachmarhi",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "palitana",
+        "name": "Palitana",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "palolem",
+        "name": "Palolem",
+        "state_id": "goa"
+      },
+      {
+        "id": "panaji",
+        "name": "Panaji",
+        "state_id": "goa"
+      },
+      {
+        "id": "panchgani",
+        "name": "Panchgani",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "parvati-valley",
+        "name": "Parvati Valley",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "pasighat",
+        "name": "Pasighat",
+        "state_id": "arunachal-pradesh"
+      },
+      {
+        "id": "patna",
+        "name": "Patna",
+        "state_id": "bihar"
+      },
+      {
+        "id": "pattadakal",
+        "name": "Pattadakal",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "pawapuri",
+        "name": "Pawapuri",
+        "state_id": "bihar"
+      },
+      {
+        "id": "pench-maharashtra",
+        "name": "Pench National Park",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "pfutsero",
+        "name": "Pfutsero",
+        "state_id": "nagaland"
+      },
+      {
+        "id": "phawngpui-peak",
+        "name": "Phawngpui Peak",
+        "state_id": "mizoram"
+      },
+      {
+        "id": "point-calimere",
+        "name": "Point Calimere Wildlife Sanctuary",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "ponda-spice",
+        "name": "Spice Plantations (Ponda)",
+        "state_id": "goa"
+      },
+      {
+        "id": "pondicherry",
+        "name": "Pondicherry (Puducherry)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "ponmudi",
+        "name": "Ponmudi",
+        "state_id": "kerala"
+      },
+      {
+        "id": "poovar",
+        "name": "Poovar",
+        "state_id": "kerala"
+      },
+      {
+        "id": "porbandar",
+        "name": "Porbandar",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "prashar-lake",
+        "name": "Prashar Lake",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "pune",
+        "name": "Pune",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "raigad-fort",
+        "name": "Raigad Fort",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "rajgir",
+        "name": "Rajgir",
+        "state_id": "bihar"
+      },
+      {
+        "id": "rajkot",
+        "name": "Rajkot",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "rameswaram",
+        "name": "Rameswaram",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "ranakpur",
+        "name": "Ranakpur Jain Temple",
+        "state_id": "rajasthan"
+      },
+      {
+        "id": "ranchi",
+        "name": "Ranchi",
+        "state_id": "jharkhand"
+      },
+      {
+        "id": "rani-ki-vav",
+        "name": "Rani ki Vav (Patan)",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "rann-of-kutch",
+        "name": "Rann of Kutch",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "ratnagiri",
+        "name": "Ratnagiri",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "reis-magos",
+        "name": "Reis Magos Fort",
+        "state_id": "goa"
+      },
+      {
+        "id": "sabarimala",
+        "name": "Sabarimala",
+        "state_id": "kerala"
+      },
+      {
+        "id": "sakleshpur",
+        "name": "Sakleshpur",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "sanchi",
+        "name": "Sanchi",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "saputara",
+        "name": "Saputara",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "sariska",
+        "name": "Sariska Tiger Reserve",
+        "state_id": "rajasthan"
+      },
+      {
+        "id": "sasangir",
+        "name": "Sasan Gir",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "satara",
+        "name": "Satara",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "shantiniketan",
+        "name": "Shantiniketan",
+        "state_id": "west-bengal"
+      },
+      {
+        "id": "shikharji",
+        "name": "Shikharji (Parasnath Hill)",
+        "state_id": "jharkhand"
+      },
+      {
+        "id": "shirdi",
+        "name": "Shirdi",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "shnongpdeng",
+        "name": "Shnongpdeng",
+        "state_id": "meghalaya"
+      },
+      {
+        "id": "shravanabelagola",
+        "name": "Shravanabelagola",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "silent-valley",
+        "name": "Silent Valley National Park",
+        "state_id": "kerala"
+      },
+      {
+        "id": "siliguri",
+        "name": "Siliguri",
+        "state_id": "west-bengal"
+      },
+      {
+        "id": "sirpur",
+        "name": "Sirpur",
+        "state_id": "chhattisgarh"
+      },
+      {
+        "id": "sissu",
+        "name": "Sissu",
+        "state_id": "himachal-pradesh"
+      },
+      {
+        "id": "sivasagar",
+        "name": "Sivasagar",
+        "state_id": "assam"
+      },
+      {
+        "id": "somnath",
+        "name": "Somnath",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "srirangam",
+        "name": "Srirangam",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "srirangapatna",
+        "name": "Srirangapatna",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "statue-of-unity",
+        "name": "Statue of Unity",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "sundarbans",
+        "name": "Sundarbans",
+        "state_id": "west-bengal"
+      },
+      {
+        "id": "surat",
+        "name": "Surat",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "tadoba",
+        "name": "Tadoba-Andhari Tiger Reserve",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "tamenglong",
+        "name": "Tamenglong",
+        "state_id": "manipur"
+      },
+      {
+        "id": "tarkarli",
+        "name": "Tarkarli",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "thanjavur",
+        "name": "Thanjavur (Tanjore)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "tharangambadi",
+        "name": "Tharangambadi (Tranquebar)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "thekkady",
+        "name": "Thekkady (Periyar)",
+        "state_id": "kerala"
+      },
+      {
+        "id": "thrissur",
+        "name": "Thrissur",
+        "state_id": "kerala"
+      },
+      {
+        "id": "trichy",
+        "name": "Trichy (Tiruchirappalli)",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "trimbakeshwar",
+        "name": "Trimbakeshwar",
+        "state_id": "maharashtra"
+      },
+      {
+        "id": "trivandrum",
+        "name": "Thiruvananthapuram (Trivandrum)",
+        "state_id": "kerala"
+      },
+      {
+        "id": "tsomgo-lake",
+        "name": "Tsomgo Lake",
+        "state_id": "sikkim"
+      },
+      {
+        "id": "tura",
+        "name": "Tura",
+        "state_id": "meghalaya"
+      },
+      {
+        "id": "turtuk",
+        "name": "Turtuk",
+        "state_id": "ladakh"
+      },
+      {
+        "id": "udupi",
+        "name": "Udupi",
+        "state_id": "karnataka"
+      },
+      {
+        "id": "ujjain",
+        "name": "Ujjain",
+        "state_id": "madhya-pradesh"
+      },
+      {
+        "id": "ukhrul",
+        "name": "Ukhrul",
+        "state_id": "manipur"
+      },
+      {
+        "id": "umlingla",
+        "name": "Umlingla",
+        "state_id": "ladakh"
+      },
+      {
+        "id": "unakoti",
+        "name": "Unakoti",
+        "state_id": "tripura"
+      },
+      {
+        "id": "vadodara",
+        "name": "Vadodara",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "vagamon",
+        "name": "Vagamon",
+        "state_id": "kerala"
+      },
+      {
+        "id": "vagator",
+        "name": "Vagator",
+        "state_id": "goa"
+      },
+      {
+        "id": "vaishali",
+        "name": "Vaishali",
+        "state_id": "bihar"
+      },
+      {
+        "id": "valparai",
+        "name": "Valparai",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "varkala",
+        "name": "Varkala",
+        "state_id": "kerala"
+      },
+      {
+        "id": "vedanthangal",
+        "name": "Vedanthangal Bird Sanctuary",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "velavadar",
+        "name": "Velavadar",
+        "state_id": "gujarat"
+      },
+      {
+        "id": "verinag",
+        "name": "Verinag",
+        "state_id": "jammu-kashmir"
+      },
+      {
+        "id": "vrindavan",
+        "name": "Vrindavan",
+        "state_id": "uttar-pradesh"
+      },
+      {
+        "id": "wayanad",
+        "name": "Wayanad",
+        "state_id": "kerala"
+      },
+      {
+        "id": "yercaud",
+        "name": "Yercaud",
+        "state_id": "tamil-nadu"
+      },
+      {
+        "id": "yuksom",
+        "name": "Yuksom",
+        "state_id": "sikkim"
+      },
+      {
+        "id": "ziro-valley",
+        "name": "Ziro Valley",
+        "state_id": "arunachal-pradesh"
+      }
+    ],
+    "destinations_partial": []
+  }
+}

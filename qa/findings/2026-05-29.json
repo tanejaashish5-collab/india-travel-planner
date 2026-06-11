@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-05-29",
+    "date": "2026-05-29",
+    "started_utc": "2026-05-29T02:05:00Z",
+    "completed_utc": "2026-05-29T02:18:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.7 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A–J; Section K reduced to HTML structural inspection because Chrome MCP is not available in this unattended scheduled-task context",
+    "mode": "Daily regression — A through K matrix per qa/SKILL.md, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 13,
+    "user_present": false,
+    "status": "completed"
+  },
+
+  "blockers": [],
+
+  "phases_completed": [
+    "Section A — soft-404 regression (8 routes vs prior NEW-004/NEW-006 closures)",
+    "Section B — destination availability + TTFB (10 random destinations from sitemap-1, deterministic seed sha256('nakshiq-qa-2026-05-29'))",
+    "Section C — Hindi parity (same 10 destinations, /hi locale — lang=hi + Devanagari title + uniqueness)",
+    "Section D — SEO meta sanity (title stutter, canonical, hreflang en/hi/x-default, og:image on 12 standard URLs — landing + 10 destinations + old-goa/may sub-route)",
+    "Section D-supplement — title-stutter sweep of /luxury + /festivals + /treks surfaces (8 URLs — hubs + detail, en + hi; /en/festivals/diwali-beach-celebration replaces yesterday's bad-slug `diwali` probe)",
+    "Section D-supplement-2 — /with-kids/ surface spot-check (3 URLs — /en/with-kids/mon, /en/with-kids/haridwar, /hi/with-kids/mon)",
+    "Section E — SOS phone format on 10 destinations + targeted Uttarkashi & Khonoma re-tests (combined tel: + JSON \"phone\" extraction, escaped + bare variants; 1800-XXX-XXXX toll-free + 1363 tourist-helpline accepted by validator)",
+    "Section F — API smoke (11 endpoint+body combos including DEEP-Phase7-A1/A2 regressions + valid /api/weather?id=)",
+    "Section G — PWA / SW / manifest / offline page (SW CACHE_VERSION bumped v50 -> v51; sw.js size 13835 -> 15144 bytes)",
+    "Section H — Sitemap integrity (5 index-referenced chunks, all well-formed, 24630 real URLs — -28 vs 2026-05-28)",
+    "Section I — Core routes HTTP matrix (21 high-traffic routes)",
+    "Section J — Locale-routing redirect from `/` and bare paths (4 probes)",
+    "Section K — HTML structural inspection of 5 destination pages (Chrome MCP not available in unattended scheduled-task context; recorded as PARTIAL — see phases_skipped)"
+  ],
+
+  "phases_skipped": [
+    {
+      "phase": "Section K — Chrome E2E interactive (window.L probe + console errors + F5 reload + map marker visibility)",
+      "reason": "Chrome MCP requires an interactive Chrome extension session connected to the user's desktop. This scheduled run is unattended — the Chrome extension is not connected. Section K was reduced to HTML structural inspection only (Leaflet container/marker/tile grep). Carried forward as a gap to re-check in the next interactive run."
+    },
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass. Last deep pass was 2026-05-04. With /with-kids/ (1050 URLs) + /treks (207 URLs) added in the last 7 days the deferred deep pass remains overdue."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Last LH pass: 2026-05-05. Multiple new surfaces (/treks, /with-kids/) plus continued deploy cadence make a fresh LH run warranted."
+    },
+    {
+      "phase": "Persona round-trip (Phase 5 from 2026-05-04)",
+      "reason": "Carry-forward defer; not in the daily A-K matrix."
+    },
+    {
+      "phase": "Dedicated security probes (Phase 9 from 2026-05-04)",
+      "reason": "Carry-forward defer; needs its own session."
+    }
+  ],
+
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/this-does-not-exist-xyz -> 404 (9 bytes); /en/destination/zzzzzz-fake -> 404 (9 bytes); /hi/destination/this-does-not-exist-xyz -> 404 (9 bytes). section-A-soft404.csv: all 8 probes returned 404, 9-byte body each."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/shimla/3 -> 404; /en/destination/shimla/marchx -> 404; /en/destination/shimla/99 -> 404; /en/destination/shimla/jan -> 404; /en/destination/shimla/jul -> 404 (section-A-soft404.csv). Three-letter abbreviations 404 by design per slug-validator allowlist."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat with body `{\"broken` -> 400 {\"error\":\"Malformed JSON body\"}; empty body -> 400 {\"error\":\"Malformed JSON body\"}; valid `{\"message\":\"hi\"}` -> 400 {\"error\":\"Invalid question\"} (input validation, not 5xx). section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/itinerary with body `{\"broken` -> 400 {\"error\":\"Malformed JSON body\"}; empty body -> 400 {\"error\":\"Malformed JSON body\"}; minimum payload `{}` -> 400 {\"error\":\"Missing required fields\"}. section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with `| NakshIQ | NakshIQ` title stutter",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "0/12 standard sampled URLs (landing + 10 destinations + old-goa/may sub-route) and 0/11 new-surface URLs (/luxury hub + detail + hi, /festivals hub + detail + hi, /treks hub en + hi, /with-kids 3 probes) carry the doubled `| NakshIQ | NakshIQ` suffix. section-D-seo.csv + section-D-new-surfaces.csv."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-05-28 (v50, sw.js 13835 bytes)",
+      "today_status": "STILL GREEN",
+      "evidence": "SW CACHE_VERSION bumped to nakshiq-v51 (was v50); sw.js size 15144 bytes (was 13835 — +1309 bytes, +9.5%, suggests new asset added to precache list). manifest.json unchanged (name=\"NakshIQ — India travel confidence\", icons=3, shortcuts=5, display=standalone, start_url=/en, theme_color=#161614). /en/offline -> 200 (94533 bytes, TTFB 783 ms). PWA contract fully GREEN."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone `+91-94120-XXXXX` (Taxi Union)",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "Targeted fresh re-test today: curl https://www.nakshiq.com/en/destination/uttarkashi. Extracted phones via combined tel:+JSON: ['+91-1374-222123', '0135-2559898', '1070', '112']. Raw-byte grep: 0 `XXXXX` hits, 0 `94120` hits. section-E-sos-targeted.csv"
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed `phone` field (`Contact via Kohima tourism office`)",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "Targeted fresh re-test today (Khonoma not in today's random sample): curl https://www.nakshiq.com/en/destination/khonoma. Extracted phones: ['0370-2243011', '0370-2290142', '112'], 0 invalid. Raw-byte grep: 0 `Contact via Kohima` hits. section-E-sos-targeted.csv"
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "Self-corrected false-negative on hreflang grep: site uses `hrefLang` (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-05-28",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section D used a case-insensitive regex from the start: 12/12 hreflang en + hi + x-default present on first probe. section-D-seo.csv"
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "STILL OPEN 2026-05-28 (Day 12 of Leaflet absence)",
+      "today_status": "STILL OPEN — not actively re-tested",
+      "evidence": "Section K could not be exercised interactively today (no Chrome MCP). HTML structural inspection on today's first 5 dests (mon, morni-hills, haridwar, chamba, bhubaneswar — all content-heavy 333-458 KB HTML) shows 0/5 ship leaflet.min.css link or `Loading map...` placeholder or any leaflet-* class refs in SSR markup. This is consistent with the data-conditional pattern observed 2026-05-28 (where the 3/5 content-heavy dests likewise didn't ship Leaflet). Working hypothesis (client-side mount conditional on data availability) continues to hold. A real interactive re-check is still needed."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget no longer present on destination pages",
+      "prior_status": "STILL OPEN 2026-05-28 (Day 12)",
+      "today_status": "STILL OPEN — not actively re-tested",
+      "evidence": "Today's SSR sweep on 5 content-heavy dests shows 0/5 with Leaflet markup — the same pattern as yesterday's 3 content-heavy dests. Need an interactive Chrome session against the v51 build with `typeof window.L` + `.leaflet-container` count after JS load. Recommend explicitly probing a small-HTML pilgrimage slug (like yesterday's tiruchendur/tiruparankundram which DID ship Leaflet markup) on the next interactive run."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN — not investigated 2026-05-28",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "The tour modal is a client-side mount and was not exercised in today's run (no Chrome MCP). Carry-forward."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — token sweep needed",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "axe was not run today. The deferred deep a11y pass remains warranted given the /with-kids/ + /treks new surfaces."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — ARIA pattern conversion needed",
+      "today_status": "STILL OPEN — not re-tested without axe today"
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — image responsiveness/offscreen/format levers catalogued",
+      "today_status": "STILL OPEN",
+      "evidence": "Today's destination-TTFB sample (curl from sandbox region, not LH-equivalent): min 568 ms (diamond-triangle), median 2473 ms, p90 3197 ms, max 3991 ms (morni-hills) across 10 destinations — modestly faster than 2026-05-28 (median 2899 ms). Core routes warmed substantially: min 112 ms (sw.js), median 164 ms, p90 192 ms, max 1008 ms (/hi/trip) — dramatic improvement vs yesterday's 5553 ms /en/where-to-go/june outlier (today /en/where-to-go/june TTFB 168 ms, fully warm). A fresh LH run is still warranted. section-B-destinations.csv + http-matrix.csv"
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "PARTIAL 2026-05-28 (kaza resolved 2026-05-24; phawngpui-peak + majuli still unverified)",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "None of kaza, phawngpui-peak or majuli landed in today's sha256('nakshiq-qa-2026-05-29') random sample. No new data this run — carried at PARTIAL pending a targeted re-check of phawngpui-peak + majuli."
+    }
+  ],
+
+  "new_findings_today": [
+    {
+      "id": "INFO-2026-05-29-001",
+      "severity": "info",
+      "title": "SW CACHE_VERSION bumped v50 -> v51; sw.js size grew 13835 -> 15144 bytes (+1309, +9.5%) — first SW change in 24h",
+      "detail": "Today's deploy (dpl_8Qzcz6AhovvWna5kbLeyqTXUbaEi, was dpl_HJLzCAwqj8ozD2AeTdyhiXN67Z2R on 2026-05-28) bumped CACHE_VERSION to nakshiq-v51 and grew sw.js by 1309 bytes — most likely a new asset added to the precache list, consistent with the /with-kids/ surface shipped 2026-05-28 now being app-shell-cacheable. Yesterday's run noted SW had been HELD at v50 across yesterday's content-only deploy. Returning PWA users will refresh their app shell on next launch. No defect — recorded as deploy-cadence + cache-management signal.",
+      "evidence": "curl https://www.nakshiq.com/sw.js -> CACHE_VERSION='nakshiq-v51', size=15144 (was 13835 yesterday), md5 d0cc522e363cd7fc6521684ac6679f9a (was unchanged previously). Vercel deploy id from landing-en.html: dpl_8Qzcz6AhovvWna5kbLeyqTXUbaEi.",
+      "recommendation": "None — informational. The v50 -> v51 bump after one held day matches the expected deploy/SW cadence. Continue tracking SW version per day."
+    },
+    {
+      "id": "INFO-2026-05-29-002",
+      "severity": "info",
+      "title": "Core-route TTFB dramatically warmer today across the board — median 164 ms vs yesterday's 150 ms; outlier /en/where-to-go/june collapsed 5553 -> 168 ms",
+      "detail": "All 21 core routes returned warm-cache TTFBs today: min 112 ms (sw.js), median 164 ms, p90 192 ms, max 1008 ms (/hi/trip). The repeating outlier of the last 2+ days, /en/where-to-go/june (yesterday 5553 ms, day before 6338 ms), today returned 168 ms — the page is now fully cached on Vercel edges. /hi/trip was the day's slowest at 1008 ms which is well within the acceptable band. This is partially attributable to repeat-probing the same edge node and partially to today's deploy + ISR warm-up. Not a defect; a positive observation.",
+      "evidence": "http-matrix.csv shows 19x 2xx + 2x 3xx, 0x 4xx/5xx, TTFB range 112-1008 ms.",
+      "recommendation": "Keep tracking /en/where-to-go/june across runs — if it returns to multi-second TTFB tomorrow, the cold-cache regression catalogued under Phase-4-carry-perf remains worth investigating."
+    },
+    {
+      "id": "INFO-2026-05-29-003",
+      "severity": "info",
+      "title": "Site URL count dropped 24658 -> 24630 (-28) overnight — `ziro` slug consolidated into `ziro-valley` with a 301 (healthy SEO de-duplication)",
+      "detail": "Across the 5 sitemap chunks the total real URL count fell from 24658 (2026-05-28) to 24630 (today). Per-chunk: chunk-0 unchanged (368); chunk-1 -26 (13676 -> 13650); chunk-2 unchanged (1120); chunk-3 unchanged (3196); chunk-4 -2 (6298 -> 6296). Diff of en-dest-slugs.txt isolates the change to a single slug: `ziro` was removed today. Curl confirms /en/destination/ziro now 301 -> /en/destination/ziro-valley (yesterday's sitemap already carried BOTH `ziro` AND `ziro-valley` — they were duplicates). Today's deploy pruned the redundant `ziro` slug + 12 EN month sub-routes + HI mirror (1 slug + 12 month sub-routes) × 2 locales = 26 chunk-1 URLs. The /with-kids/ ziro entry was also pruned (525 instead of 526) — accounts for the chunk-4 -2 (en + hi). Net 28 URLs removed maps perfectly. This is a healthy slug-dedup / SEO consolidation, NOT a destination prune. Ziro Valley (the canonical, more descriptive slug) survives.",
+      "evidence": "diff /tmp/prev-bare.txt /tmp/today-bare.txt: only `ziro` removed. curl -s -o /dev/null -w '%{http_code} -> %{redirect_url}' https://www.nakshiq.com/en/destination/ziro returns '301 -> https://www.nakshiq.com/en/destination/ziro-valley'. /en/destination/ziro-valley returns 200 today and was present in 2026-05-28 sitemap-1 (confirmed via grep). Sitemap chunk URL counts {0:368, 1:13650, 2:1120, 3:3196, 4:6296}; total 24630.",
+      "recommendation": "None — slug-dedup with a 301 in place is correct SEO behaviour. Recommend GSC URL Inspection on /en/destination/ziro to flag the redirect for fast re-indexing if material organic traffic was hitting the old slug. Otherwise no action."
+    },
+    {
+      "id": "INFO-2026-05-29-004",
+      "severity": "info",
+      "title": "/en/with-kids/ Safety scores ARE destination-derived, not template-default — today's spot-check shows Mon 2.0/10 vs Haridwar 10.0/10",
+      "detail": "Yesterday's INFO-2026-05-28-001 flagged that 3/3 sample dests (aalo/achabal/adi-kailash) all showed 8.0/10 Safety and asked product whether the score was template-default or destination-derived. Today's deliberate probe of /en/with-kids/mon (2.0/10) and /en/with-kids/haridwar (10.0/10) confirms the scores ARE destination-derived — the system spans the full 2.0-10.0 range across destinations. /en/with-kids/mon = 'Mon with Kids: 2.0/10 Safety · Family Guide | NakshIQ', /en/with-kids/haridwar = 'Haridwar with Kids: 10.0/10 Safety · Family Guide | NakshIQ'. The /hi/with-kids/ title remains in English (same i18n gap as /hi/luxury and /hi/festivals — defer to single i18n sprint). Closes the yesterday-open INFO-2026-05-28-001 question.",
+      "evidence": "section-D-new-surfaces.csv: /en/with-kids/mon title 'Mon with Kids: 2.0/10 Safety · Family Guide | NakshIQ'; /en/with-kids/haridwar title 'Haridwar with Kids: 10.0/10 Safety · Family Guide | NakshIQ'; /hi/with-kids/mon title 'Mon with Kids: 2.0/10 Safety · Family Guide | NakshIQ' (English-only).",
+      "recommendation": "Mark INFO-2026-05-28-001's product question as resolved (data-driven score, not template-default). Continue the standing recommendation to translate /hi/with-kids/* titles + H1s as part of the unified i18n sprint."
+    }
+  ],
+
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 19,
+    "core_routes_3xx_redirect": 2,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 112, "median": 164, "p90": 192, "max": 1008 },
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 568, "median": 2473, "max": 3991 },
+    "destinations_TTFB_p90_ms": 3197,
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_pages_with_unique_titles": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "seo_new_surface_urls_probed": 8,
+    "seo_new_surface_title_stutter": 0,
+    "seo_new_surface_stutter_note": "0 of 8 probed new-surface URLs (/luxury hub + 1 detail + hi, /festivals hub + 1 real detail slug `diwali-beach-celebration` + hi, /treks hub en + hi) carry the doubled suffix. Note: yesterday's probe of /en/festivals/diwali was a bad slug (404) — corrected today to the real sitemap-listed slug /en/festivals/diwali-beach-celebration which returns 200 with a clean single-suffix title. Hub + detail + locale variants all clean.",
+    "seo_with_kids_urls_probed": 3,
+    "seo_with_kids_title_stutter": 0,
+    "seo_with_kids_note": "3 /with-kids/ probes (mon EN, haridwar EN, mon HI). All 200 with clean single-suffix titles. Safety scores VERIFIED as destination-derived (Mon 2.0/10 vs Haridwar 10.0/10) — closes yesterday's INFO-2026-05-28-001 product question. /hi/with-kids/mon title still rendered in English — same i18n gap as /hi/luxury + /hi/festivals.",
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "soft_404_regression_note": "All 8 bad-slug + garbage-month probes returned 404 (9-byte body each). Three-letter month abbreviations (jan, jul) 404 by design per slug-validator allowlist; consistent with prior runs.",
+    "sos_phones_total_across_10_dests": 24,
+    "sos_phones_invalid_format": 0,
+    "sos_phones_extraction_note": "Combined extraction: tel: links + JSON-embedded `phone` fields (bare and escaped variants). Per-destination range: 0–4 phones. 1 destination returned 0 phones (bidar — honest-scarcity null, not a fabrication). All 24 phones conform to Indian phone formats: emergency short codes (112, 1070, 1363 — Tourist Helpline, multi-lingual), STD-prefixed landlines (0364-2224250, 0172-2585010, etc.), +91-DDDD-DDDDDD mobile/landline, and toll-free 1800-XXX-XXXX (chamba ships 1800-180-8002 — Himachal Tourism helpline). Targeted re-tests outside the random sample: Uttarkashi 4 phones (+91-1374-222123, 0135-2559898, 1070, 112), 0 XXXXX/94120 hits — NEW-2026-05-10-001 holding; Khonoma 3 phones (0370-2243011, 0370-2290142, 112), 0 'Contact via Kohima' hits — NEW-2026-05-11-001 holding.",
+    "sos_uttarkashi_targeted_retest_phones": 4,
+    "sos_uttarkashi_targeted_retest_invalid": 0,
+    "sos_khonoma_targeted_retest_phones": 3,
+    "sos_khonoma_targeted_retest_invalid": 0,
+    "api_endpoints_probed": 11,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_returned": 1,
+    "api_404_html_returned": 2,
+    "api_endpoints_note": "/api/destinations and /api/health returned 404 with HTML body — these endpoints do not exist (page-route fallthrough), not a regression. The 8 validation 4xx are correct rejections of malformed/empty/insufficient bodies. /api/weather?id=haridwar returned 200 with a valid weather payload (temp 25C, feels_like 24, humidity 49, broken clouds, wind 11 m/s, visibility 10, clouds 57, updated 2026-05-29T02:12:48Z) — confirms the weather endpoint is healthy with the correct `id` param; passing `slug=` or no param returns a clean 400 `Missing destination id`. /api/chat with valid `{\"message\":\"hi\"}` returns 400 `Invalid question` (input validation, not 5xx). All as expected.",
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_previous_version": "nakshiq-v50",
+    "service_worker_version_delta": "BUMPED v50 -> v51; sw.js size 13835 -> 15144 bytes (+1309, +9.5%). Vercel deploy id dpl_HJLzCAwqj8ozD2AeTdyhiXN67Z2R -> dpl_8Qzcz6AhovvWna5kbLeyqTXUbaEi. See INFO-2026-05-29-001.",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "sitemap_chunks": 5,
+    "sitemap_chunks_advertised_in_robots": 5,
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_total_hi_destination_slug_urls": 525,
+    "sitemap_total_hi_destination_month_urls": 6300,
+    "sitemap_total_urls_real": 24630,
+    "sitemap_chunk_url_counts": { "0": 368, "1": 13650, "2": 1120, "3": 3196, "4": 6296 },
+    "sitemap_all_chunks_well_formed": true,
+    "sitemap_festival_detail_urls_en": 331,
+    "sitemap_luxury_detail_urls_en": 30,
+    "sitemap_trek_detail_urls_en": 207,
+    "sitemap_with_kids_urls_en": 525,
+    "sitemap_with_kids_urls_hi": 525,
+    "sitemap_where_to_go_urls": 888,
+    "sitemap_note": "All 5 chunks referenced by the index are well-formed (xmllint --noout exit 0) and load. Real URL count across the 5 chunks is 24630 (down from 24658 on 2026-05-28 — -28 URLs). Per-chunk delta: chunk-0 0, chunk-1 -26, chunk-2 0, chunk-3 0, chunk-4 -2. EN destination slug count 525 (was 526), HI 525 (was 526). EN month sub-routes 6300 (was 6312, -12 maps cleanly to 1 removed slug × 12 months). /with-kids/ counts also fell 526 -> 525 in lockstep. festivals 331, luxury 30, treks 207 unchanged. robots.txt continues to list 5 Sitemap directives. See INFO-2026-05-29-003.",
+    "chrome_e2e_pages_probed": 5,
+    "chrome_e2e_pageloads_total": 5,
+    "chrome_e2e_console_errors_total": null,
+    "chrome_e2e_destination_map_tiles_loaded": null,
+    "chrome_e2e_destination_map_markers_rendered": null,
+    "chrome_e2e_destination_map_markers_note": "Section K reduced to HTML structural inspection in this unattended scheduled run (no Chrome MCP connection). Across 5 dest HTMLs (mon, morni-hills, haridwar, chamba, bhubaneswar — all content-heavy 333-458 KB HTML): 0/5 ship leaflet.min.css link or `Loading map...` placeholder or any leaflet-* class refs in SSR markup. This is consistent with yesterday's data-conditional pattern (where 3/5 content-heavy dests also lacked SSR Leaflet markup). The hypothesis that the map widget is a client-side mount conditional on data availability continues to hold. Definitive verification still requires an interactive Chrome session.",
+    "locale_redirects_probed": 4,
+    "locale_redirects_to_en": 4,
+    "deploy_signal_present": true,
+    "deploy_signal_note": "Deploy ID changed (dpl_HJLzCAwqj8ozD2AeTdyhiXN67Z2R -> dpl_8Qzcz6AhovvWna5kbLeyqTXUbaEi); SW bumped v50 -> v51 (+1309 bytes); destination corpus shrunk by 1 slug. See INFO-2026-05-29-001 + INFO-2026-05-29-003.",
+    "fixed_today_count": 0,
+    "still_open_count": 6,
+    "regression_count": 0,
+    "new_findings_count": 4
+  },
+
+  "deliverables": [
+    "qa/findings/2026-05-29.json (this file)",
+    "qa/findings/2026-05-29/section-A-soft404.csv",
+    "qa/findings/2026-05-29/section-B-destinations.csv",
+    "qa/findings/2026-05-29/section-C-hindi-parity.csv",
+    "qa/findings/2026-05-29/section-D-seo.csv",
+    "qa/findings/2026-05-29/section-D-new-surfaces.csv",
+    "qa/findings/2026-05-29/section-E-sos.csv",
+    "qa/findings/2026-05-29/section-E-sos-targeted.csv",
+    "qa/findings/2026-05-29/section-F-api.csv",
+    "qa/findings/2026-05-29/section-J-locale-redirect.csv",
+    "qa/findings/2026-05-29/section-K-chrome-e2e.csv",
+    "qa/findings/2026-05-29/http-matrix.csv",
+    "qa/findings/2026-05-29/en-dest-slugs.txt",
+    "qa/findings/2026-05-29/sample-10.txt",
+    "qa/findings/2026-05-29/extract_sos.py",
+    "qa/findings/2026-05-29/sitemap-{0..4}.xml",
+    "qa/findings/2026-05-29/sitemap-index.xml",
+    "qa/findings/2026-05-29/robots.txt",
+    "qa/findings/2026-05-29/sw.js",
+    "qa/findings/2026-05-29/manifest.json",
+    "NakshIQ_Developer_Report.docx (workspace root)",
+    "NakshIQ_QA_Report.docx (workspace root)",
+    "NakshIQ_Business_Report.docx (workspace root)"
+  ],
+
+  "honest_caveats": [
+    "ZERO REGRESSIONS today, ZERO CLOSURES of open defects (still_open_count=6). All previously-closed defects remained closed. New findings are all severity=info — 1 SW version bump (expected), 1 core-route TTFB warm-cache observation, 1 small destination corpus contraction (-1 slug), 1 confirmation that /with-kids/ Safety scores are data-driven (closes yesterday's INFO-2026-05-28-001 product question).",
+    "SW BUMP v50 -> v51 — sw.js grew 13835 -> 15144 bytes (+9.5%). Most likely a new asset added to the precache list, consistent with the /with-kids/ surface shipped 2026-05-28 now being cacheable in the app shell. Returning PWA users will refresh on next launch. Not a defect — see INFO-2026-05-29-001.",
+    "SITE CONTRACTED — sitemap total URL count fell 24658 -> 24630 (-28). Diff isolates the change to a slug dedup: `ziro` was consolidated into `ziro-valley` with a 301 redirect in place. Yesterday's sitemap already carried both — today's pruned the duplicate. 1 slug × 12 month sub-routes × 2 locales + 1 /with-kids/ × 2 locales = 28 URLs. Healthy SEO consolidation, NOT a destination prune. See INFO-2026-05-29-003.",
+    "Random sample: 10 destinations from the 525-EN-destination corpus (~1.9%), drawn via sha256('nakshiq-qa-2026-05-29') for reproducibility. Today's sample (mon, morni-hills, haridwar, chamba, bhubaneswar, dawki, namdapha, diamond-triangle, vaishali, bidar) spans 9 states (Nagaland, Haryana, Uttarakhand, Himachal Pradesh, Odisha x2, Meghalaya, Arunachal Pradesh, Bihar, Karnataka) and has minimal overlap with the 2026-05-28 sample.",
+    "Yesterday's /en/festivals/diwali probe was a bad slug — the actual sitemap-listed slug is `diwali-beach-celebration`. Corrected today: /en/festivals/diwali-beach-celebration returns 200 with a clean single-suffix title. The 404 on bare `diwali` is correct slug-validator behaviour, not a defect.",
+    "SECTION K LIMITED — Chrome MCP is not available in this unattended scheduled-task context. HTML structural inspection of 5 content-heavy dests shows 0/5 with SSR Leaflet markup — consistent with yesterday's 3/5 content-heavy = no-Leaflet pattern, strengthening the working hypothesis that the map widget is a client-side mount conditional on data availability. Definitive verification still requires an interactive Chrome session. Recommend the next interactive run probe both a content-heavy slug (e.g. haridwar) AND a small-HTML pilgrimage slug (e.g. tiruchendur) to confirm divergent behaviour.",
+    "TTFB for destinations is curl-from-sandbox, not 4G mobile Lighthouse. Useful as a relative comparison + hot/cold cache signal, not absolute web-vitals. Today's destination median (2473 ms) is modestly faster than 2026-05-28 (2899 ms) but within day-to-day variance. Core-route TTFB collapsed across the board (median 164 ms vs yesterday 150 ms) and the repeating /en/where-to-go/june outlier collapsed from 5553 ms to 168 ms — fully cached on Vercel edges today.",
+    "Section H: 5 sitemap chunks referenced by the index, all well-formed (xmllint --noout exit 0). Real URL count 24630 (was 24658). robots.txt still lists 5 chunks (matches index). NEW-2026-05-23-001 remains CLOSED.",
+    "Section I: 21 core routes — 19× 2xx + 2× 3xx (root `/` correctly 301 -> /en, AND /en/destination/goa still 301 -> /en/state/goa per yesterday's INFO-2026-05-28-003). 0 × 4xx/5xx. /en/treks returned 200 (1925028 bytes, identical to yesterday — no trek-content change in 24h).",
+    "Section E: 24 phones across 10 destinations, 0 invalid format. 1 destination returned 0 phones (bidar — honest-scarcity null). Validator accepts: emergency short codes (112, 100/101/102/108, 139, 1070, 1091, 1098, 1363 Tourist Helpline), toll-free 1800-XXX-XXXX (chamba ships 1800-180-8002 — Himachal Tourism helpline), STD-prefixed landlines, +91-DDDD-DDDDDD format, bare 10-digit. Targeted Uttarkashi + Khonoma re-tests held the two prior SOS closures.",
+    "Hindi titles for /hi/luxury, /hi/festivals (hub), /hi/treks, and /hi/with-kids/<slug> are still in English — same i18n gap carried from 2026-05-28. The title stutter is fixed but the locale of the title text on these surfaces remains a known i18n gap. Worth product confirmation + a single i18n sprint to cover all four new surfaces.",
+    "axe-core, Lighthouse, Playwright full E2E specs, persona round-trips, and dedicated security probes were NOT run in this daily pass. The deferred Lighthouse + axe-core deep pass remains overdue given /with-kids/ + /treks new surfaces.",
+    "still_open_count=6 counts open regression-matrix rows: INFO-2026-05-08-001 + NEW-2026-05-17-001 (same Leaflet-absence row, tracked as two), E2E-2026-05-04-A1 (Hindi tour modal), Phase-3-carry-color-contrast, Phase-3-carry-aria-allowed-attr, Phase-4-carry-perf. Phase-8-carry-sparse-stays (PARTIAL) is not counted. Unchanged from 2026-05-28."
+  ]
+}

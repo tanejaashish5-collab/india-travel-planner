@@ -1,0 +1,567 @@
+[
+  {
+    "id": "aalo",
+    "name": "Aalo",
+    "state_id": "arunachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "northeast",
+      "transit-town",
+      "siang-valley",
+      "galo-tribe",
+      "base-town"
+    ]
+  },
+  {
+    "id": "achabal",
+    "name": "Achabal",
+    "state_id": "jammu-kashmir",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Mughal Gardens",
+      "Springs",
+      "Heritage"
+    ]
+  },
+  {
+    "id": "adi-kailash",
+    "name": "Adi Kailash",
+    "state_id": "uttarakhand",
+    "region": "Kumaon",
+    "subregion": "Pithoragarh",
+    "type": [
+      "peak",
+      "pilgrimage"
+    ],
+    "place_type": "peak",
+    "best_months": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "spiritual",
+      "remote"
+    ],
+    "tags": [
+      "pilgrimage",
+      "restricted-access",
+      "sacred-peak"
+    ]
+  },
+  {
+    "id": "adilabad",
+    "name": "Adilabad",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Nature",
+    "type": [
+      "nature",
+      "wildlife",
+      "tribal",
+      "waterfall"
+    ],
+    "place_type": "district-town",
+    "best_months": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      1
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "tribal",
+      "forested",
+      "adventurous"
+    ],
+    "tags": [
+      "waterfall",
+      "tiger-reserve",
+      "tribal",
+      "nature",
+      "offbeat",
+      "gond"
+    ]
+  },
+  {
+    "id": "agatti",
+    "name": "Agatti Island",
+    "state_id": "lakshadweep",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "beach",
+      "coral",
+      "snorkeling"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "tropical",
+      "gateway",
+      "pristine"
+    ],
+    "tags": [
+      "lakshadweep",
+      "agatti",
+      "airport",
+      "coral",
+      "snorkeling",
+      "lagoon"
+    ]
+  },
+  {
+    "id": "ahmedabad",
+    "name": "Ahmedabad",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "heritage",
+      "food",
+      "city",
+      "architecture",
+      "gandhi"
+    ]
+  },
+  {
+    "id": "ahobilam",
+    "name": "Ahobilam",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Pilgrimage & Heritage",
+    "type": [
+      "pilgrimage",
+      "trekking",
+      "nature"
+    ],
+    "place_type": "temple-complex",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "spiritual",
+      "wilderness",
+      "adventurous"
+    ],
+    "tags": [
+      "pilgrimage",
+      "trekking",
+      "divya-desam",
+      "moat",
+      "wildlife",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "alampur",
+    "name": "Alampur",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Spiritual & Heritage",
+    "type": [
+      "heritage",
+      "temple",
+      "pilgrimage"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "ancient",
+      "spiritual",
+      "peaceful"
+    ],
+    "tags": [
+      "heritage",
+      "temple",
+      "moat",
+      "chalukya",
+      "pilgrimage",
+      "offbeat",
+      "shakti-peetha"
+    ]
+  },
+  {
+    "id": "alchi",
+    "name": "Alchi",
+    "state_id": "ladakh",
+    "region": "Srinagar-Leh Highway",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      9,
+      8
+    ],
+    "avoid_months": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "monastery",
+      "heritage",
+      "art",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "alleppey",
+    "name": "Alleppey (Alappuzha)",
+    "state_id": "kerala",
+    "region": "Kerala Backwaters",
+    "subregion": null,
+    "type": [
+      "backwater",
+      "houseboat",
+      "lake",
+      "village"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "serene",
+      "romantic",
+      "lazy",
+      "green"
+    ],
+    "tags": [
+      "backwater",
+      "houseboat",
+      "romantic",
+      "family",
+      "village",
+      "boat-race"
+    ]
+  },
+  {
+    "id": "almora",
+    "name": "Almora",
+    "state_id": "uttarakhand",
+    "region": "Kumaon",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      10,
+      3,
+      5,
+      9,
+      11
+    ],
+    "avoid_months": null,
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "heritage",
+      "spiritual",
+      "culture",
+      "hippie"
+    ]
+  },
+  {
+    "id": "amaravati",
+    "name": "Amaravati",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Pilgrimage & Heritage",
+    "type": [
+      "heritage",
+      "archaeological",
+      "buddhist"
+    ],
+    "place_type": "archaeological-site",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "historical",
+      "peaceful",
+      "cultural"
+    ],
+    "tags": [
+      "heritage",
+      "buddhist",
+      "archaeological",
+      "stupa",
+      "history"
+    ]
+  },
+  {
+    "id": "ambaji",
+    "name": "Ambaji",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "busy",
+    "vibe": [],
+    "tags": [
+      "pilgrimage",
+      "shakti-peeth",
+      "spiritual",
+      "temple"
+    ]
+  },
+  {
+    "id": "anamalai",
+    "name": "Anamalai Tiger Reserve (Topslip)",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Wildlife",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "tiger-reserve",
+      "nature",
+      "offbeat"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "wild",
+      "pristine",
+      "remote",
+      "adventurous"
+    ],
+    "tags": [
+      "wildlife",
+      "tiger-reserve",
+      "nature",
+      "macaque",
+      "offbeat",
+      "bamboo-rafting"
+    ]
+  },
+  {
+    "id": "ananthagiri-hills",
+    "name": "Ananthagiri Hills",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Hyderabad & Surrounds",
+    "type": [
+      "hill-station",
+      "nature",
+      "trekking"
+    ],
+    "place_type": "hill-station",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      4,
+      5
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "green",
+      "peaceful",
+      "weekend"
+    ],
+    "tags": [
+      "hill-station",
+      "weekend",
+      "camping",
+      "trekking",
+      "nature"
+    ]
+  },
+  {
+    "id": "anini",
+    "name": "Anini",
+    "state_id": "arunachal-pradesh",
+    "region": "Northeast India",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "remote",
+      "wildlife",
+      "unexplored"
+    ]
+  }
+]

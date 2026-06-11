@@ -1,0 +1,552 @@
+[
+  {
+    "id": "trivandrum",
+    "name": "Thiruvananthapuram (Trivandrum)",
+    "state_id": "kerala",
+    "region": "Kerala Heritage",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "temple",
+      "museum",
+      "capital"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "historic",
+      "clean",
+      "cultural",
+      "laid-back"
+    ],
+    "tags": [
+      "heritage",
+      "temple",
+      "museum",
+      "capital",
+      "zoo",
+      "palace"
+    ]
+  },
+  {
+    "id": "tsomgo-lake",
+    "name": "Tsomgo Lake",
+    "state_id": "sikkim",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "glacial-lake",
+      "Nathula",
+      "day-trip"
+    ]
+  },
+  {
+    "id": "tura",
+    "name": "Tura",
+    "state_id": "meghalaya",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Garo-Hills",
+      "biosphere",
+      "tribal"
+    ]
+  },
+  {
+    "id": "turtuk",
+    "name": "Turtuk",
+    "state_id": "ladakh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "border",
+      "balti-culture",
+      "last-village",
+      "shyok-valley",
+      "apricots",
+      "photography"
+    ]
+  },
+  {
+    "id": "ujjain",
+    "name": "Ujjain",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Kumbh-Mela",
+      "Jyotirlinga",
+      "pilgrimage"
+    ]
+  },
+  {
+    "id": "ukhrul",
+    "name": "Ukhrul",
+    "state_id": "manipur",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Shirui-Lily",
+      "endemic-flower",
+      "tribal"
+    ]
+  },
+  {
+    "id": "umlingla",
+    "name": "Umlingla",
+    "state_id": "ladakh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Highest Motorable Pass",
+      "Extreme Altitude",
+      "Adventure"
+    ]
+  },
+  {
+    "id": "unakoti",
+    "name": "Unakoti",
+    "state_id": "tripura",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "rock-carvings",
+      "archaeological",
+      "Shiva"
+    ]
+  },
+  {
+    "id": "undavalli-caves",
+    "name": "Undavalli Caves",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Caves & Geology",
+    "type": [
+      "heritage",
+      "archaeological",
+      "cave"
+    ],
+    "place_type": "rock-cut-cave",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "historical",
+      "artistic",
+      "peaceful"
+    ],
+    "tags": [
+      "heritage",
+      "archaeological",
+      "moat",
+      "cave",
+      "buddhist",
+      "hindu",
+      "jain"
+    ]
+  },
+  {
+    "id": "vadodara",
+    "name": "Vadodara",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "heritage",
+      "palace",
+      "museum",
+      "city",
+      "culture"
+    ]
+  },
+  {
+    "id": "vagamon",
+    "name": "Vagamon",
+    "state_id": "kerala",
+    "region": "Kerala Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "meadow",
+      "paragliding",
+      "offbeat"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "misty",
+      "quiet",
+      "adventurous",
+      "underrated"
+    ],
+    "tags": [
+      "hill-station",
+      "offbeat",
+      "paragliding",
+      "meadow",
+      "quiet",
+      "nature"
+    ]
+  },
+  {
+    "id": "vaishali",
+    "name": "Vaishali",
+    "state_id": "bihar",
+    "region": "North Bihar",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Buddhist",
+      "Ashoka",
+      "ancient-republic"
+    ]
+  },
+  {
+    "id": "valparai",
+    "name": "Valparai",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "wildlife",
+      "tea",
+      "offbeat"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "untouched",
+      "wild",
+      "misty",
+      "adventurous"
+    ],
+    "tags": [
+      "hill-station",
+      "wildlife",
+      "tea",
+      "offbeat",
+      "nature",
+      "macaque",
+      "cloud-forest"
+    ]
+  },
+  {
+    "id": "varkala",
+    "name": "Varkala",
+    "state_id": "kerala",
+    "region": "Kerala Coast",
+    "subregion": null,
+    "type": [
+      "beach",
+      "cliff",
+      "yoga",
+      "spiritual"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "meditative",
+      "bohemian",
+      "scenic",
+      "spiritual"
+    ],
+    "tags": [
+      "beach",
+      "cliff",
+      "yoga",
+      "spiritual",
+      "ayurveda",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "vedanthangal",
+    "name": "Vedanthangal Bird Sanctuary",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Wildlife",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "birding",
+      "sanctuary",
+      "daytrip"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "natural",
+      "educational",
+      "seasonal",
+      "accessible"
+    ],
+    "tags": [
+      "birding",
+      "sanctuary",
+      "daytrip",
+      "nature",
+      "offbeat",
+      "seasonal"
+    ]
+  },
+  {
+    "id": "velavadar",
+    "name": "Velavadar",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "empty",
+    "vibe": [],
+    "tags": [
+      "wildlife",
+      "blackbuck",
+      "grassland",
+      "birding",
+      "photography"
+    ]
+  }
+]

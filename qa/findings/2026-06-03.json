@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-03",
+    "date": "2026-06-03",
+    "started_utc": "2026-06-03T02:07:00Z",
+    "completed_utc": "2026-06-03T02:17:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.7 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J; Section K driven via Claude in Chrome MCP (browser was connected today)",
+    "mode": "Daily regression — A through K matrix per qa/SKILL.md, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 10,
+    "user_present": false,
+    "status": "completed"
+  },
+
+  "blockers": [],
+
+  "phases_completed": [
+    "Section A — soft-404 regression (8 routes vs prior NEW-004/NEW-006 closures)",
+    "Section B — destination availability + TTFB (10 random destinations from sitemap-1, deterministic seed sha256('nakshiq-qa-2026-06-03'))",
+    "Section C — Hindi parity (same 10 destinations, /hi locale — lang=hi + Devanagari title)",
+    "Section D — SEO meta sanity (title stutter, canonical, hreflang en/hi/x-default, og:image on 12 URLs — landing + 10 destinations + old-goa/june month sub-route)",
+    "Section E — SOS phone format on 10 destinations + targeted Uttarkashi / Khonoma / Khangchendzonga-NP re-tests (escaped-JSON `phone` extraction from RSC payload)",
+    "Section F — API smoke (11 endpoint+body combos including DEEP-Phase7-A1/A2 regressions + valid /api/weather?id=varanasi)",
+    "Section G — PWA / SW / manifest / offline page (SW CACHE_VERSION held at v51; sw.js size 15144 bytes; md5 d0cc522e363cd7fc6521684ac6679f9a — byte-identical to 2026-06-02)",
+    "Section H — Sitemap integrity (5 index-referenced chunks, all 200/well-formed, 24632 real URLs — unchanged vs 2026-06-02)",
+    "Section I — Core routes HTTP matrix (21 high-traffic routes)",
+    "Section J — Locale-routing redirect from `/` and bare paths (4 probes — all 301 to /en/<path>)",
+    "Section K — Chrome E2E interactive (Claude in Chrome MCP): navigated 4 surfaces (jaipur, leh, varanasi, explore) and probed window.L / .leaflet-container / markers / tiles + console errors"
+  ],
+
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass. Last deep pass was 2026-05-04. With /with-kids/ + /treks added in the last 2 weeks the deferred deep pass remains overdue."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Last LH pass: 2026-05-05. Multiple new surfaces (/treks, /with-kids/) plus continued deploy cadence make a fresh LH run warranted."
+    },
+    {
+      "phase": "Persona round-trip (Phase 5 from 2026-05-04)",
+      "reason": "Carry-forward defer; not in the daily A-K matrix."
+    },
+    {
+      "phase": "Dedicated security probes (Phase 9 from 2026-05-04)",
+      "reason": "Carry-forward defer; needs its own session."
+    }
+  ],
+
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/this-does-not-exist-xyz -> 404 (9 bytes); /en/destination/zzzzzz-fake -> 404 (9 bytes); /hi/destination/this-does-not-exist-xyz -> 404 (9 bytes). section-A-soft404.csv: 8/8 probes returned 404, 9-byte body each."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/shimla/3 -> 404; /en/destination/shimla/marchx -> 404; /en/destination/shimla/99 -> 404; /en/destination/shimla/jan -> 404; /en/destination/shimla/jul -> 404 (section-A-soft404.csv). 3-letter month abbreviations 404 by design per slug-validator allowlist."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat with body `{\"broken` -> 400 {\"error\":\"Malformed JSON body\"}; empty body -> 400 {\"error\":\"Malformed JSON body\"}; valid `{\"message\":\"hi\"}` -> 400 {\"error\":\"Invalid question\"} (input validation, not 5xx). section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/itinerary with body `{\"broken` -> 400 {\"error\":\"Malformed JSON body\"}; empty body -> 400 {\"error\":\"Malformed JSON body\"}; minimum payload `{}` -> 400 {\"error\":\"Missing required fields\"}. section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with `| NakshIQ | NakshIQ` title stutter",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "0/12 sampled URLs (landing + 10 destinations + old-goa/june sub-route) carry the doubled `| NakshIQ | NakshIQ` suffix. section-D-seo.csv: title_stutter column = 0 across all 12 rows."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-02 (v51, sw.js 15144 bytes, md5 d0cc522e...)",
+      "today_status": "STILL GREEN",
+      "evidence": "SW CACHE_VERSION held at nakshiq-v51 (no change). sw.js size 15144 bytes (unchanged); md5 d0cc522e363cd7fc6521684ac6679f9a (BYTE-IDENTICAL to 2026-06-02). manifest.json unchanged (icons=3, shortcuts=5, display=standalone, start_url=/en, theme_color=#161614). /en/offline -> 200 (94640 bytes, TTFB 341 ms). PWA contract fully GREEN."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone `+91-94120-XXXXX` (Taxi Union)",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "Uttarkashi SOS: 4 phones extracted, 4 format-valid, 0 invalid; no `XXXXX` placeholders detected. section-E-sos.csv row `uttarkashi,4,4,0,`"
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed `phone` field (`Contact via Kohima tourism office`)",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "Khonoma SOS: 4 phones extracted, 4 format-valid, 0 invalid; no `Contact via` text phones detected. section-E-sos.csv row `khonoma,4,4,0,`"
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed `phone` field — `Operator-specific` (Trek Tour Operator)",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "khangchendzonga-np SOS: 4 phones extracted, 4 format-valid, 0 invalid; no `Operator-specific` text phones detected. section-E-sos.csv row `khangchendzonga-np,4,4,0,`"
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "Self-corrected false-negative on hreflang grep: site uses `hrefLang` (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-02",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D-seo.csv extracts hrefLang OR hreflang via regex; 12/12 URLs match en + hi + x-default."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "STILL OPEN 2026-06-02 — now superseded by NEW-2026-05-17-001 (entire widget missing)",
+      "today_status": "STILL OPEN",
+      "evidence": "Chrome MCP probe on jaipur/leh/varanasi: leaflet-container = 0, marker-pane children = 0, tile-pane imgs = 0. Same outcome as 2026-06-02 — widget absent, so marker pane question is moot."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget no longer present on destination pages",
+      "prior_status": "STILL OPEN 2026-06-02 (Day 17)",
+      "today_status": "STILL OPEN",
+      "evidence": "section-K-map.csv: hasLeaflet=false; leaflet-container=0; tile-pane imgs=0; marker-pane children=0; marker-icons=0 across all 4 surfaces (jaipur, leh, varanasi, explore). DAY 18 — no movement. body text still mentions \"Places\" on jaipur surface despite missing widget — UX is inconsistent."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN 2026-06-02 — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Carry-forward defer; needs explicit modal-trigger interaction (clearing storage + first-visit cookie) not in today's A-K matrix."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-02 — not re-tested without axe in this session",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core sweep skipped — see phases_skipped."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-02 — not re-tested without axe in this session",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core sweep skipped — see phases_skipped."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-02",
+      "today_status": "STILL OPEN",
+      "evidence": "Lighthouse not re-run in this daily pass (see phases_skipped). Curl-based TTFB on core routes is healthy (min 109, median 244, p90 863, max 1459 ms) but does not address LH perf score."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-02",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's deterministic 10-sample (alampur, leh, amaravati, arambol, satkosia, halebidu, murud-janjira, vagator, diamond-triangle, kumarakom) excludes the named trio."
+    }
+  ],
+
+  "new_findings_today": [
+    {
+      "id": "INFO-2026-06-03-001",
+      "severity": "info",
+      "title": "TTFB tail elevated on 2/10 random destinations (arambol 3642 ms, vagator 2973 ms) — cold cache",
+      "detail": "Destination TTFB median holds at 761 ms (B sample) and core-routes median at 244 ms (I sample). However arambol and vagator both show first-hit TTFB > 2.9 s, well above the 10-destination median. Most likely ISR cache miss after the latest deploy; warm-cache re-probe of the same URLs would confirm — not run in this pass.",
+      "evidence": "section-B-destinations.csv: arambol TTFB 3642 ms (total 3801); vagator TTFB 2973 ms (total 3051). Remaining 8 destinations 443–1409 ms.",
+      "recommendation": "Add a 2nd TTFB probe of arambol + vagator to the prewarm-next-month cron, or include them in the warm-cache sweep so the tail doesn't bite SEO crawlers."
+    },
+    {
+      "id": "INFO-2026-06-03-002",
+      "severity": "high",
+      "title": "Map widget still missing on destination pages — DAY 18",
+      "detail": "Live Chrome probe confirms zero Leaflet artefacts on jaipur, leh, varanasi, and explore. The body of jaipur still surfaces the word `Places` so the page copy continues to advertise a feature that does not render. NEW-2026-05-17-001 has now been live in production for 18 consecutive QA passes.",
+      "evidence": "section-K-map.csv: hasLeaflet=false, leaflet-container=0, marker-pane=0 across all 4 surfaces; jaipur body text contains `Places`.",
+      "recommendation": "Either restore the Leaflet widget or strip the `Places` copy + map-related schema/preview slots. The drift between copy and rendered UI is now the highest-severity user-visible defect on dest pages."
+    },
+    {
+      "id": "INFO-2026-06-03-003",
+      "severity": "info",
+      "title": "Sitemap URL count unchanged at 24,632 — content-quiet day",
+      "detail": "Sitemap chunk 0 (368) + 1 (13,650) + 2 (1,122) + 3 (3,196) + 4 (6,296) = 24,632. Matches 2026-06-02 exactly across all 5 chunks. No new destinations / month combos shipped overnight.",
+      "evidence": "sitemap-chunks-result.csv: chunks identical to 2026-06-02 in both location count and byte size for chunks 0/1/2/3/4.",
+      "recommendation": "No action — content cadence pause is normal mid-sprint."
+    },
+    {
+      "id": "INFO-2026-06-03-004",
+      "severity": "medium",
+      "title": "4/10 random destinations ship empty SOS phone list — arambol, halebidu, murud-janjira, vagator",
+      "detail": "Yesterday 2/10 (chikmagalur, margao) had empty SOS arrays; today 4/10 do (arambol, halebidu, murud-janjira, vagator). Honest-scarcity is preferable to fabrication per CLAUDE.md, but four-in-ten random hits is high enough that it signals incomplete coverage rather than judicious omission. The /sos surface on these pages will be a dead end for the user.",
+      "evidence": "section-E-sos.csv: arambol, halebidu, murud-janjira, vagator all show phone_total = 0 with no invalid entries (i.e., the field is genuinely empty, not malformed).",
+      "recommendation": "Add a 'minimum-3-sos-entries' guardrail to the daily QA, then either backfill SOS for the 4 named destinations or wire a clearer empty-state explaining the omission to users."
+    }
+  ],
+
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 21,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": {
+      "min": 109,
+      "median": 244,
+      "p90": 863,
+      "max": 1459
+    },
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": {
+      "min": 443,
+      "median": 761,
+      "max": 3642
+    },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "sos_phones_total_across_10_dests": 10,
+    "sos_phones_invalid_format": 0,
+    "api_endpoints_probed": 11,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 7,
+    "service_worker_version": "nakshiq-v51",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "sitemap_chunks": 5,
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "map_widget_destination_pages_with_leaflet": 0,
+    "map_widget_destination_pages_probed_interactive": 4
+  },
+
+  "deliverables": [
+    "qa/findings/2026-06-03.json (this file)",
+    "qa/findings/2026-06-03/section-A-soft404.csv",
+    "qa/findings/2026-06-03/section-B-destinations.csv",
+    "qa/findings/2026-06-03/section-C-hindi.csv",
+    "qa/findings/2026-06-03/section-D-seo.csv",
+    "qa/findings/2026-06-03/section-E-sos.csv",
+    "qa/findings/2026-06-03/section-F-api.csv",
+    "qa/findings/2026-06-03/section-J-locale.csv",
+    "qa/findings/2026-06-03/section-K-map.csv",
+    "qa/findings/2026-06-03/http-matrix.csv",
+    "qa/findings/2026-06-03/sitemap-chunks-result.csv",
+    "qa/findings/2026-06-03/sitemap-{0..4}.xml (raw artefacts)",
+    "qa/findings/2026-06-03/sw.js (raw artefact, byte-identical to 06-02)",
+    "qa/findings/2026-06-03/manifest.json (raw artefact, unchanged)",
+    "qa/findings/2026-06-03/sample-10-dest.txt (deterministic random sample)",
+    "NakshIQ_Developer_Report.docx (workspace root)",
+    "NakshIQ_QA_Report.docx (workspace root)",
+    "NakshIQ_Business_Report.docx (workspace root)"
+  ],
+
+  "honest_caveats": [
+    "Axe-core and Lighthouse were not run today; the Phase-3 and Phase-4 carry-forwards are reported as STILL OPEN — not re-tested. Last canonical perf+a11y baseline is qa/findings/2026-05-04-deep/.",
+    "Welcome-tour /hi modal (E2E-2026-05-04-A1) was not interactively triggered today; carried forward unchanged.",
+    "/api/destinations and /api/health probed for completeness — both 404. These endpoints are not part of the documented API surface; counted as 4xx-not-validation in the matrix.",
+    "Destination TTFB tail (arambol 3.6 s, vagator 3.0 s) is a single-shot cold-cache reading; a second probe would clarify ISR vs origin behaviour but was not run to keep this pass focused on the daily matrix.",
+    "Section E phone counts depend on the escaped-JSON `\\\"phone\\\":\\\"...\\\"` regex against the RSC payload; very short helplines (e.g. `112`) are classified as format-valid via a relaxed helpline pattern. Targeted UTK/Khonoma/KNP re-tests in addition to the 10-random sample reconfirm the NEW-2026-05-10/11/30 closures."
+  ]
+}

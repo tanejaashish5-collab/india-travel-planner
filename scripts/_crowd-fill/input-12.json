@@ -1,0 +1,575 @@
+[
+  {
+    "id": "mudumalai",
+    "name": "Mudumalai National Park",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Wildlife",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "national-park",
+      "safari",
+      "nature"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "avoid_months": [
+      8,
+      9
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "wild",
+      "green",
+      "adventurous",
+      "natural"
+    ],
+    "tags": [
+      "wildlife",
+      "national-park",
+      "safari",
+      "elephant",
+      "tiger",
+      "Nilgiri"
+    ]
+  },
+  {
+    "id": "munnar",
+    "name": "Munnar",
+    "state_id": "kerala",
+    "region": "Kerala Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "tea",
+      "nature",
+      "wildlife"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "misty",
+      "romantic",
+      "cool",
+      "green"
+    ],
+    "tags": [
+      "hill-station",
+      "tea",
+      "wildlife",
+      "romantic",
+      "nature",
+      "family",
+      "trekking"
+    ]
+  },
+  {
+    "id": "mussoorie",
+    "name": "Mussoorie",
+    "state_id": "uttarakhand",
+    "region": "Dehradun District",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      10,
+      3,
+      9,
+      11
+    ],
+    "avoid_months": null,
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "hill-station",
+      "family",
+      "popular",
+      "colonial"
+    ]
+  },
+  {
+    "id": "nagarjuna-konda",
+    "name": "Nagarjuna Konda",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Nature",
+    "type": [
+      "heritage",
+      "buddhist",
+      "museum"
+    ],
+    "place_type": "island-museum",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "historical",
+      "peaceful",
+      "archaeological"
+    ],
+    "tags": [
+      "buddhist",
+      "heritage",
+      "museum",
+      "island",
+      "archaeological",
+      "history"
+    ]
+  },
+  {
+    "id": "nagarjuna-sagar",
+    "name": "Nagarjuna Sagar",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Wildlife",
+    "type": [
+      "heritage",
+      "nature",
+      "dam",
+      "wildlife"
+    ],
+    "place_type": "dam-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      9
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "historical",
+      "engineering",
+      "peaceful"
+    ],
+    "tags": [
+      "dam",
+      "heritage",
+      "buddhist",
+      "waterfall",
+      "tiger-reserve",
+      "engineering"
+    ]
+  },
+  {
+    "id": "nalanda",
+    "name": "Nalanda",
+    "state_id": "bihar",
+    "region": "Magadh",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "university-ruins",
+      "Buddhist"
+    ]
+  },
+  {
+    "id": "nalsarovar",
+    "name": "Nalsarovar Bird Sanctuary",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "birding",
+      "wildlife",
+      "wetland",
+      "nature",
+      "photography"
+    ]
+  },
+  {
+    "id": "namdapha",
+    "name": "Namdapha",
+    "state_id": "arunachal-pradesh",
+    "region": "Northeast India",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "tiger-reserve",
+      "rainforest",
+      "birding"
+    ]
+  },
+  {
+    "id": "nandaprayag",
+    "name": "Nandaprayag",
+    "state_id": "uttarakhand",
+    "region": "Garhwal",
+    "subregion": "Chamoli",
+    "type": [
+      "confluence",
+      "pilgrimage"
+    ],
+    "place_type": "confluence",
+    "best_months": [
+      4,
+      5,
+      6,
+      10
+    ],
+    "avoid_months": null,
+    "crowd_level": "moderate",
+    "vibe": [
+      "spiritual"
+    ],
+    "tags": [
+      "pilgrimage",
+      "confluence",
+      "sacred-site"
+    ]
+  },
+  {
+    "id": "neermahal",
+    "name": "Neermahal",
+    "state_id": "tripura",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "water-palace",
+      "lake",
+      "heritage"
+    ]
+  },
+  {
+    "id": "neil-island",
+    "name": "Neil Island (Shaheed Dweep)",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "beach",
+      "island",
+      "coral",
+      "cycling"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "peaceful",
+      "pristine",
+      "slow",
+      "offbeat"
+    ],
+    "tags": [
+      "andaman",
+      "neil",
+      "shaheed-dweep",
+      "beach",
+      "coral",
+      "natural-bridge",
+      "cycling"
+    ]
+  },
+  {
+    "id": "nelliyampathy",
+    "name": "Nelliyampathy",
+    "state_id": "kerala",
+    "region": "Kerala Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "tea",
+      "coffee",
+      "offbeat"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "minimal",
+    "vibe": [
+      "pristine",
+      "quiet",
+      "green",
+      "untouched"
+    ],
+    "tags": [
+      "hill-station",
+      "offbeat",
+      "tea",
+      "coffee",
+      "nature",
+      "birding",
+      "quiet"
+    ]
+  },
+  {
+    "id": "netarhat",
+    "name": "Netarhat",
+    "state_id": "jharkhand",
+    "region": "Chotanagpur Plateau",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "hill-station",
+      "sunrise",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "nongriat",
+    "name": "Nongriat",
+    "state_id": "meghalaya",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "living-root-bridge",
+      "trek",
+      "natural-wonder"
+    ]
+  },
+  {
+    "id": "north-bay-island",
+    "name": "North Bay Island",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "coral",
+      "snorkeling",
+      "diving",
+      "water-sports"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "adventure",
+      "fun",
+      "accessible"
+    ],
+    "tags": [
+      "andaman",
+      "north-bay",
+      "coral",
+      "snorkeling",
+      "diving",
+      "glass-bottom-boat",
+      "sea-walking"
+    ]
+  },
+  {
+    "id": "nrusinghanath-harishankar",
+    "name": "Nrusinghanath & Harishankar",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Spiritual & Offbeat",
+    "type": [
+      "pilgrimage",
+      "temple",
+      "nature"
+    ],
+    "place_type": "twin-temples",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "spiritual",
+      "forested",
+      "mythological"
+    ],
+    "tags": [
+      "pilgrimage",
+      "temple",
+      "mythology",
+      "ramayana",
+      "offbeat",
+      "nature"
+    ]
+  }
+]

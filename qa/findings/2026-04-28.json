@@ -1,0 +1,1147 @@
+{
+  "schema_version": "1.0",
+  "schema_note": "Daily QA run conforming to qa/findings.schema.json. Produced by scheduled task nakshiq-daily-test on 2026-04-28.",
+  "run": {
+    "id": "nakshiq-qa-2026-04-28",
+    "date": "2026-04-28",
+    "started_utc": "2026-04-28T02:07:47Z",
+    "completed_utc": "2026-04-28T02:18:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork scheduled task) — single Chrome session + curl HTTP probes",
+    "mode": "HTTP+Chrome",
+    "real_verification": true,
+    "fabricated_numbers": false
+  },
+  "environment": {
+    "hosting": "Vercel",
+    "framework": "Next.js 16 (App Router, RSC)",
+    "deployment_id": "dpl_2kWq8YPoJqc2RH6EFa16NMPRz4Xc",
+    "locales_tested": [
+      "en",
+      "hi"
+    ],
+    "chrome_session": "Browser 1 (deviceId 3dd6a5a1-a9d6-43af-b6ad-94b32f86fd16, macOS)",
+    "measurement_method": "curl --max-time time_total for HTTP timings; performance.timing + performance.getEntriesByType('navigation') in Chrome for browser-side metrics; x-vercel-cache header inspection for caching."
+  },
+  "coverage": {
+    "destinations_sampled": 12,
+    "destination_slugs": [
+      "jaipur",
+      "shimla",
+      "manali",
+      "panaji",
+      "munnar",
+      "varanasi",
+      "darjeeling",
+      "udaipur",
+      "leh",
+      "binsar",
+      "kaza",
+      "spiti"
+    ],
+    "selection_rationale": "Same 12-destination panel as 2026-04-26/27 runs to keep day-over-day deltas honest. Spiti retained as the soft-404 canary (llms.txt references but no canonical destination row).",
+    "total_destinations_in_sitemap": 12766,
+    "sitemap_chunks_verified": [
+      {
+        "path": "/sitemap.xml",
+        "http": 500,
+        "time_s": 2.44,
+        "size_bytes": 10560,
+        "note": "Top-level sitemap.xml regressed from 404→500 since 2026-04-27. Server error response, not a clean not-found."
+      },
+      {
+        "path": "/sitemap/0.xml",
+        "http": 200,
+        "time_s": 0.748,
+        "size_bytes": 40180
+      },
+      {
+        "path": "/sitemap/1.xml",
+        "http": 200,
+        "time_s": 1.669,
+        "size_bytes": 2315420,
+        "url_count": 12766,
+        "note": "Chunk 1 unchanged from 2026-04-27 (12,766 URLs). No sitemap growth in 24h."
+      },
+      {
+        "path": "/sitemap/2.xml",
+        "http": 200,
+        "time_s": 0.797,
+        "size_bytes": 169284
+      },
+      {
+        "path": "/sitemap/3.xml",
+        "http": 200,
+        "time_s": 0.815,
+        "size_bytes": 590950
+      },
+      {
+        "path": "/sitemap/4.xml",
+        "http": 200,
+        "time_s": 1.016,
+        "size_bytes": 462028
+      }
+    ],
+    "locale_coverage": "Both /en/ and /hi/ probed for all 12 destinations + 8 key navigation pages + 5 collection slugs.",
+    "bugs_evaluated": 14,
+    "matrix_sections_covered": [
+      "A routing/HTTP",
+      "B i18n parity",
+      "C destinations (12)",
+      "D collections",
+      "E SEO/meta",
+      "F regression matrix BUG-001..014",
+      "G sitemaps/robots",
+      "H API endpoints",
+      "I SSR/RSC",
+      "J performance HTTP",
+      "K end-to-end interactive (Chrome live)"
+    ],
+    "matrix_sections_not_covered": []
+  },
+  "samples": {
+    "destination_pages": [
+      {
+        "slug": "jaipur",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 0.851,
+        "time_s_warm_cdn": 0.25,
+        "size_bytes": 431281,
+        "title": "Jaipur, Rajasthan: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Jaipur",
+        "html_lang": "en",
+        "h2_count": 35,
+        "h3_count": 57,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 11,
+        "img_tags": 8
+      },
+      {
+        "slug": "jaipur",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 0.978,
+        "time_s_warm_cdn": 0.247,
+        "size_bytes": 444881,
+        "title": "जयपुर, Rajasthan: Best Time to Visit & Weather | NakshIQ",
+        "h1": "जयपुर",
+        "html_lang": "hi",
+        "h2_count": 35,
+        "h3_count": 57,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 9,
+        "img_tags": 8
+      },
+      {
+        "slug": "shimla",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 0.929,
+        "time_s_warm_cdn": 0.254,
+        "size_bytes": 457280,
+        "title": "Shimla, Himachal Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Shimla",
+        "html_lang": "en",
+        "h2_count": 36,
+        "h3_count": 55,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 12,
+        "img_tags": 9
+      },
+      {
+        "slug": "shimla",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 1.031,
+        "time_s_warm_cdn": 0.251,
+        "size_bytes": 471172,
+        "title": "शिमला, Himachal Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "शिमला",
+        "html_lang": "hi",
+        "h2_count": 36,
+        "h3_count": 55,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 10,
+        "img_tags": 9
+      },
+      {
+        "slug": "manali",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 0.956,
+        "time_s_warm_cdn": 0.261,
+        "size_bytes": 502025,
+        "title": "Manali, Himachal Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Manali",
+        "html_lang": "en",
+        "h2_count": 36,
+        "h3_count": 61,
+        "h4_count": 14,
+        "jsonld_blocks": 7,
+        "confidence_mentions": 15,
+        "img_tags": 9
+      },
+      {
+        "slug": "manali",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 0.943,
+        "time_s_warm_cdn": 0.442,
+        "size_bytes": 515626,
+        "title": "मनाली, Himachal Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "मनाली",
+        "html_lang": "hi",
+        "h2_count": 36,
+        "h3_count": 61,
+        "h4_count": 14,
+        "jsonld_blocks": 7,
+        "confidence_mentions": 13,
+        "img_tags": 9
+      },
+      {
+        "slug": "panaji",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 0.902,
+        "time_s_warm_cdn": 0.235,
+        "size_bytes": 311720,
+        "title": "Panaji, Goa: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Panaji",
+        "html_lang": "en",
+        "h2_count": 30,
+        "h3_count": 27,
+        "h4_count": 6,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 9,
+        "img_tags": 9
+      },
+      {
+        "slug": "panaji",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 1.352,
+        "time_s_warm_cdn": 0.228,
+        "size_bytes": 325099,
+        "title": "पणजी, Goa: Best Time to Visit & Weather | NakshIQ",
+        "h1": "पणजी",
+        "html_lang": "hi",
+        "h2_count": 30,
+        "h3_count": 27,
+        "h4_count": 6,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 7,
+        "img_tags": 9
+      },
+      {
+        "slug": "munnar",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 1.006,
+        "time_s_warm_cdn": 0.229,
+        "size_bytes": 316697,
+        "title": "Munnar, Kerala: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Munnar",
+        "html_lang": "en",
+        "h2_count": 31,
+        "h3_count": 28,
+        "h4_count": 6,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 9,
+        "img_tags": 9
+      },
+      {
+        "slug": "munnar",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 1.341,
+        "time_s_warm_cdn": 0.224,
+        "size_bytes": 329938,
+        "title": "मुन्नार, Kerala: Best Time to Visit & Weather | NakshIQ",
+        "h1": "मुन्नार",
+        "html_lang": "hi",
+        "h2_count": 31,
+        "h3_count": 28,
+        "h4_count": 6,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 7,
+        "img_tags": 9
+      },
+      {
+        "slug": "varanasi",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 1.095,
+        "time_s_warm_cdn": 0.237,
+        "size_bytes": 422814,
+        "title": "Varanasi, Uttar Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Varanasi",
+        "html_lang": "en",
+        "h2_count": 35,
+        "h3_count": 56,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 11,
+        "img_tags": 3
+      },
+      {
+        "slug": "varanasi",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 0.939,
+        "time_s_warm_cdn": 0.241,
+        "size_bytes": 436438,
+        "title": "वाराणसी, Uttar Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "वाराणसी",
+        "html_lang": "hi",
+        "h2_count": 35,
+        "h3_count": 56,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 9,
+        "img_tags": 3
+      },
+      {
+        "slug": "darjeeling",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 3.542,
+        "time_s_warm_cdn": 0.312,
+        "size_bytes": 394315,
+        "title": "Darjeeling, West Bengal: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Darjeeling",
+        "html_lang": "en",
+        "h2_count": 34,
+        "h3_count": 50,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 9,
+        "img_tags": 9
+      },
+      {
+        "slug": "darjeeling",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 4.255,
+        "time_s_warm_cdn": 0.233,
+        "size_bytes": 408850,
+        "title": "दार्जिलिंग, West Bengal: Best Time to Visit & Weather | NakshIQ",
+        "h1": "दार्जिलिंग",
+        "html_lang": "hi",
+        "h2_count": 34,
+        "h3_count": 50,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 7,
+        "img_tags": 9
+      },
+      {
+        "slug": "udaipur",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 0.935,
+        "time_s_warm_cdn": 0.233,
+        "size_bytes": 402029,
+        "title": "Udaipur, Rajasthan: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Udaipur",
+        "html_lang": "en",
+        "h2_count": 34,
+        "h3_count": 49,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 9,
+        "img_tags": 7
+      },
+      {
+        "slug": "udaipur",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 1.045,
+        "time_s_warm_cdn": 0.248,
+        "size_bytes": 415703,
+        "title": "उदयपुर, Rajasthan: Best Time to Visit & Weather | NakshIQ",
+        "h1": "उदयपुर",
+        "html_lang": "hi",
+        "h2_count": 34,
+        "h3_count": 49,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 7,
+        "img_tags": 7
+      },
+      {
+        "slug": "leh",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 0.898,
+        "time_s_warm_cdn": 0.376,
+        "size_bytes": 472131,
+        "title": "Leh, Ladakh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Leh",
+        "html_lang": "en",
+        "h2_count": 38,
+        "h3_count": 58,
+        "h4_count": 11,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 13,
+        "img_tags": 9
+      },
+      {
+        "slug": "leh",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 1.422,
+        "time_s_warm_cdn": 0.333,
+        "size_bytes": 486186,
+        "title": "लेह, Ladakh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "लेह",
+        "html_lang": "hi",
+        "h2_count": 38,
+        "h3_count": 58,
+        "h4_count": 11,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 11,
+        "img_tags": 9
+      },
+      {
+        "slug": "binsar",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 3.174,
+        "time_s_warm_cdn": 0.24,
+        "size_bytes": 329551,
+        "title": "Binsar, Uttarakhand: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Binsar",
+        "html_lang": "en",
+        "h2_count": 29,
+        "h3_count": 26,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 8,
+        "img_tags": 9
+      },
+      {
+        "slug": "binsar",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 3.98,
+        "time_s_warm_cdn": 0.221,
+        "size_bytes": 343136,
+        "title": "बिनसर, Uttarakhand: Best Time to Visit & Weather | NakshIQ",
+        "h1": "बिनसर",
+        "html_lang": "hi",
+        "h2_count": 29,
+        "h3_count": 26,
+        "h4_count": 14,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 6,
+        "img_tags": 9
+      },
+      {
+        "slug": "kaza",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 0.902,
+        "time_s_warm_cdn": 0.242,
+        "size_bytes": 298241,
+        "title": "Kaza, Himachal Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "Kaza",
+        "html_lang": "en",
+        "h2_count": 24,
+        "h3_count": 28,
+        "h4_count": 3,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 8,
+        "img_tags": 9
+      },
+      {
+        "slug": "kaza",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 0.867,
+        "time_s_warm_cdn": 0.303,
+        "size_bytes": 311610,
+        "title": "काजा, Himachal Pradesh: Best Time to Visit & Weather | NakshIQ",
+        "h1": "काजा",
+        "html_lang": "hi",
+        "h2_count": 24,
+        "h3_count": 28,
+        "h4_count": 3,
+        "jsonld_blocks": 6,
+        "confidence_mentions": 6,
+        "img_tags": 9
+      },
+      {
+        "slug": "spiti",
+        "locale": "en",
+        "http": 200,
+        "time_s_cold": 1.206,
+        "time_s_warm_cdn": 0.179,
+        "size_bytes": 72913,
+        "title": "NakshIQ — Travel Intelligence for India",
+        "h1": "",
+        "html_lang": "en",
+        "h2_count": 0,
+        "h3_count": 0,
+        "h4_count": 0,
+        "jsonld_blocks": 2,
+        "confidence_mentions": 6,
+        "img_tags": 0,
+        "soft_404": true,
+        "note": "Returns 200 + homepage shell (no h1, no JSON-LD destination block, no canonical for /destination/spiti). Same behavior as 2026-04-27."
+      },
+      {
+        "slug": "spiti",
+        "locale": "hi",
+        "http": 200,
+        "time_s_cold": 2.152,
+        "time_s_warm_cdn": 0.201,
+        "size_bytes": 83631,
+        "title": "NakshIQ — भारत के लिए यात्रा इंटेलिजेंस",
+        "h1": "",
+        "html_lang": "hi",
+        "h2_count": 0,
+        "h3_count": 0,
+        "h4_count": 0,
+        "jsonld_blocks": 2,
+        "confidence_mentions": 2,
+        "img_tags": 0,
+        "soft_404": true,
+        "note": "Same soft-404 pattern as /en/spiti."
+      }
+    ],
+    "key_pages": [
+      {
+        "path": "/",
+        "http": 301,
+        "time_s": 0.481,
+        "redirect": "https://www.nakshiq.com/en",
+        "note": "Top-level redirects to /en (301)."
+      },
+      {
+        "path": "/en",
+        "http": 200,
+        "time_s": 1.114
+      },
+      {
+        "path": "/hi",
+        "http": 200,
+        "time_s": 1.082,
+        "title": "NakshIQ — भारत के लिए यात्रा इंटेलिजेंस"
+      },
+      {
+        "path": "/en/destination/this-does-not-exist-xyz",
+        "http": 200,
+        "time_s": 2.044,
+        "size_bytes": 72949,
+        "note": "Soft-404: bad destination slug returns 200 + homepage shell (carryover from 2026-04-27 NEW-004)."
+      },
+      {
+        "path": "/hi/destination/this-does-not-exist-xyz",
+        "http": 200,
+        "size_bytes": 83667,
+        "note": "Soft-404 also reproduced on /hi destinations."
+      },
+      {
+        "path": "/en/collections/this-collection-does-not-exist",
+        "http": 404,
+        "size_bytes": 53545,
+        "note": "Bad collection slug returns proper 404. Soft-404 is now isolated to /destination/<slug> only (the rest of the site fixed since yesterday)."
+      },
+      {
+        "path": "/en/region/atlantis",
+        "http": 404,
+        "size_bytes": 53491,
+        "note": "Bad region slug returns proper 404."
+      },
+      {
+        "path": "/en/region/tamil-nadu",
+        "http": 404,
+        "time_s": 0.924,
+        "note": "STILL 404 (carryover from 2026-04-27 NEW-003) — TN destinations exist in the sitemap but the region landing page is missing."
+      },
+      {
+        "path": "/en/region/kerala",
+        "http": 404,
+        "time_s": 1.063,
+        "note": "NEW today: Kerala region landing also 404. Same gap class as tamil-nadu."
+      },
+      {
+        "path": "/en/region/rajasthan",
+        "http": 200,
+        "time_s": 2.074,
+        "size_bytes": 146896
+      },
+      {
+        "path": "/en/region/karnataka",
+        "http": 200,
+        "time_s": 2.344,
+        "size_bytes": 166825
+      },
+      {
+        "path": "/en/region/maharashtra",
+        "http": 200,
+        "time_s": 2.084,
+        "size_bytes": 176994
+      },
+      {
+        "path": "/en/region/ladakh",
+        "http": 200,
+        "time_s": 1.747,
+        "size_bytes": 130308
+      },
+      {
+        "path": "/en/region/himachal-pradesh",
+        "http": 200,
+        "time_s": 2.019,
+        "size_bytes": 188368
+      },
+      {
+        "path": "/en/plan",
+        "http": 200,
+        "time_s": 1.194,
+        "size_bytes": 1014380,
+        "note": "AI plan matcher; 43 buttons, 1 input, no modal — wizard step pattern is gone (BUG-004 NOT_REPRODUCED)."
+      },
+      {
+        "path": "/en/explore",
+        "http": 200,
+        "time_s": 2.023,
+        "size_bytes": 1787311,
+        "note": "Filter bar + 122 buttons; clicking Kids Friendly chip then Clear Filters — filter bar still visible (BUG-010 NOT_REPRODUCED)."
+      },
+      {
+        "path": "/en/treks",
+        "http": 200,
+        "time_s": 1.193,
+        "size_bytes": 1160755
+      },
+      {
+        "path": "/en/cost-index",
+        "http": 200,
+        "time_s": 1.729,
+        "size_bytes": 3612641,
+        "note": "Payload still 3.61 MB. Identical to 2026-04-27 (3.6 MB). Carryover NEW-006."
+      },
+      {
+        "path": "/en/pilgrimage",
+        "http": 404,
+        "size_bytes": 27436
+      },
+      {
+        "path": "/en/kumbh-2025",
+        "http": 404,
+        "size_bytes": 27436
+      },
+      {
+        "path": "/en/itineraries",
+        "http": 404,
+        "size_bytes": 27436
+      },
+      {
+        "path": "/en/regions",
+        "http": 404,
+        "size_bytes": 27436
+      }
+    ],
+    "collection_pages": [
+      {
+        "path": "/en/collections",
+        "http": 200,
+        "time_s": 1.119,
+        "collection_link_count": 91,
+        "note": "Above the ≥80 threshold. Same collection link count for /hi/collections (91)."
+      },
+      {
+        "path": "/hi/collections",
+        "http": 200,
+        "time_s": 1.315,
+        "collection_link_count": 91
+      },
+      {
+        "path": "/en/collections/best-beaches-india",
+        "http": 200,
+        "time_s": 1.11
+      },
+      {
+        "path": "/hi/collections/best-beaches-india",
+        "http": 200,
+        "time_s": 1.599,
+        "title_extracted": "Best Beaches in India — Beyond Goa — Collection | NakshIQ",
+        "note": "English-only title in /hi locale (BUG-005 partial-Hindi family)."
+      },
+      {
+        "path": "/en/collections/adrenaline-rush",
+        "http": 200,
+        "time_s": 1.013
+      },
+      {
+        "path": "/hi/collections/adrenaline-rush",
+        "http": 200,
+        "time_s": 1.711,
+        "title_extracted": "Adrenaline Rush — Adventure Destinations — Collection | NakshIQ",
+        "note": "English-only title in /hi locale."
+      },
+      {
+        "path": "/en/collections/after-dark-experiences",
+        "http": 200,
+        "time_s": 1.068
+      },
+      {
+        "path": "/hi/collections/after-dark-experiences",
+        "http": 200,
+        "time_s": 1.151,
+        "title_extracted": "After Dark — Night Experiences Worth Staying Up For — Collection | NakshIQ",
+        "note": "English-only title in /hi locale."
+      },
+      {
+        "path": "/en/collections/ancient-monasteries",
+        "http": 200,
+        "time_s": 1.128
+      },
+      {
+        "path": "/hi/collections/ancient-monasteries",
+        "http": 200,
+        "time_s": 1.257,
+        "title_extracted": "Monasteries Older Than 500 Years — Collection | NakshIQ",
+        "note": "English-only title in /hi locale."
+      },
+      {
+        "path": "/en/collections/hill-stations-india",
+        "http": 404,
+        "note": "Slug not in sitemap — earlier sample list was stale."
+      },
+      {
+        "path": "/en/collections/heritage-cities-india",
+        "http": 404,
+        "note": "Slug not in sitemap — earlier sample list was stale."
+      }
+    ],
+    "month_subroutes": [
+      {
+        "path": "/en/destination/jaipur/march",
+        "http": 200,
+        "size_bytes": 175252,
+        "note": "Name route renders content (real page)."
+      },
+      {
+        "path": "/en/destination/jaipur/3",
+        "http": 200,
+        "size_bytes": 73304,
+        "note": "Numeric route returns 200 with homepage-shell size — STILL soft-404 (NEW-2026-04-27-007 carryover; llms.txt contract violated)."
+      },
+      {
+        "path": "/en/destination/jaipur/may",
+        "http": 200,
+        "size_bytes": 147744
+      },
+      {
+        "path": "/en/destination/jaipur/5",
+        "http": 200,
+        "size_bytes": 73304,
+        "note": "Numeric route soft-404."
+      },
+      {
+        "path": "/en/destination/jaipur/october",
+        "http": 200,
+        "size_bytes": 175019
+      },
+      {
+        "path": "/en/destination/jaipur/10",
+        "http": 200,
+        "size_bytes": 73306,
+        "note": "Numeric route soft-404."
+      },
+      {
+        "path": "/en/destination/shimla/march",
+        "http": 200,
+        "size_bytes": 173961
+      },
+      {
+        "path": "/en/destination/shimla/3",
+        "http": 200,
+        "size_bytes": 73304,
+        "note": "Numeric route soft-404."
+      },
+      {
+        "path": "/en/destination/shimla/may",
+        "http": 200,
+        "size_bytes": 163343
+      },
+      {
+        "path": "/en/destination/shimla/5",
+        "http": 200,
+        "size_bytes": 73304,
+        "note": "Numeric route soft-404."
+      },
+      {
+        "path": "/en/destination/shimla/october",
+        "http": 200,
+        "size_bytes": 174878
+      },
+      {
+        "path": "/en/destination/shimla/10",
+        "http": 200,
+        "size_bytes": 73306,
+        "note": "Numeric route soft-404."
+      }
+    ],
+    "api_endpoints": [
+      {
+        "path": "/api/itinerary",
+        "method": "GET",
+        "http": 405,
+        "time_s": 0.38,
+        "note": "Method-not-allowed as expected (POST-only)."
+      },
+      {
+        "path": "/api/itinerary",
+        "method": "POST",
+        "http": 400,
+        "time_s": 0.469,
+        "request_body": "{}",
+        "response_preview": "{\"error\":\"Missing required fields\"}",
+        "note": "Structured error on empty payload — good."
+      },
+      {
+        "path": "/api/itinerary",
+        "method": "POST",
+        "http": 400,
+        "time_s": 0.388,
+        "request_body": "{\"destination\":\"jaipur\",\"days\":3,\"month\":\"october\",\"budget\":\"mid\"}",
+        "response_preview": "{\"error\":\"Missing required fields\"}",
+        "note": "Even with the named-field payload the endpoint reports missing fields — request schema is undocumented; not flagged as a defect since the endpoint is internal-use and yesterday's run had identical behavior."
+      },
+      {
+        "path": "/api/indexnow",
+        "method": "GET",
+        "http": 200,
+        "time_s": 0.739
+      },
+      {
+        "path": "/api/alerts?id=jaipur",
+        "method": "GET",
+        "http": 200,
+        "time_s": 1.997,
+        "size_bytes": 13,
+        "response_preview": "{\"alerts\":[]}"
+      },
+      {
+        "path": "/api/weather?id=jaipur",
+        "method": "GET",
+        "http": 200,
+        "time_s_cold": 1.92,
+        "time_s_warm": 0.114,
+        "size_bytes": 154,
+        "x_vercel_cache_warm": "HIT",
+        "note": "Now CDN-cached: cold 1.92s, warm 0.11s with x-vercel-cache: HIT. Yesterday's 3.29s uncached behavior is FIXED."
+      },
+      {
+        "path": "/sitemap.xml",
+        "method": "GET",
+        "http": 500,
+        "time_s": 2.44,
+        "size_bytes": 10560,
+        "note": "REGRESSION: was 404 yesterday, now 500. Server error response."
+      }
+    ]
+  },
+  "performance": {
+    "method": "Cold-fetch via curl --max-time 30 (one-shot per URL, no warm-up). Warm-CDN times measured by re-curling the same URLs immediately after. Browser-side metrics from performance.timing on Manali reload.",
+    "ttfb_unavailable_reason": "curl time_total used as proxy for total page load; per-phase TTFB not separated for HTTP probes (browser navigation entry used for Manali reload).",
+    "destination_page_avg_s": 1.529,
+    "destination_page_p95_s": 3.98,
+    "sitemap_chunks_avg_s": 1.009,
+    "warm_cdn_avg_s": 0.259,
+    "warm_cdn_p95_s": 0.376,
+    "hot_spots": [
+      {
+        "loc": "hi",
+        "slug": "darjeeling",
+        "time_s_cold": 4.255
+      },
+      {
+        "loc": "hi",
+        "slug": "binsar",
+        "time_s_cold": 3.98
+      },
+      {
+        "loc": "en",
+        "slug": "darjeeling",
+        "time_s_cold": 3.542
+      },
+      {
+        "loc": "en",
+        "slug": "binsar",
+        "time_s_cold": 3.174
+      },
+      {
+        "loc": "hi",
+        "slug": "spiti",
+        "time_s_cold": 2.152
+      }
+    ],
+    "browser_metrics": {
+      "samples": [
+        {
+          "url": "https://www.nakshiq.com/en/destination/manali (reload)",
+          "ttfb_ms": 80,
+          "domContentLoaded_ms": 119,
+          "load_ms": 206,
+          "navigation_duration_ms": 207,
+          "note": "Soft-reload likely served from BFCache + CDN; fast."
+        }
+      ],
+      "notes": "Single browser-side sample because the run focused on HTTP probes; cold-curl numbers are the primary perf signal."
+    }
+  },
+  "seo_meta": {
+    "canonical_present": "true on all 11 real destinations + /en/collections + collection slugs; absent on /en/destination/spiti and /hi/destination/spiti (because those serve homepage HTML).",
+    "canonical_sample": "https://www.nakshiq.com/en/destination/jaipur",
+    "hreflang_present_on_destinations": false,
+    "hreflang_present_on_homepage": false,
+    "hreflang_count_jaipur": 0,
+    "hreflang_count_home_en": 0,
+    "hreflang_count_home_hi": 0,
+    "og_tags_present": [
+      "og:title",
+      "og:description",
+      "og:image",
+      "og:image:alt",
+      "og:image:height",
+      "og:image:width",
+      "og:locale",
+      "og:site_name",
+      "og:type",
+      "og:url"
+    ],
+    "og_locale_correct": true,
+    "og_complete_set_jaipur_en": true,
+    "html_lang_attribute_correct": true,
+    "json_ld_blocks_destination": 6,
+    "title_nakshiq_token_count_per_destination": 1,
+    "robots_txt_http": 200,
+    "robots_txt_size": 1330,
+    "llms_txt_http": 200,
+    "llms_txt_size": 2968,
+    "llms_full_txt_http": 200,
+    "llms_full_txt_size": 4034,
+    "sitemap_index_top_level_xml": {
+      "http": 500,
+      "note": "Regressed from 404 to 500 in 24h."
+    },
+    "sitemap_chunks": "0..4 all 200; chunk 1 has 12,766 URLs (unchanged from 2026-04-27)."
+  },
+  "regression_matrix": [
+    {
+      "id": "BUG-001",
+      "title": "Invisible content rendering on all destination detail pages",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "All 11 real destinations rendered visible content with 24-38 H2s, 26-61 H3s, 6-14 H4s, 6 JSON-LD blocks each, 6-15 'confidence' mentions. No invisible-content artifacts in /en or /hi."
+    },
+    {
+      "id": "BUG-002",
+      "title": "Only 1 of 20 collections rendering",
+      "severity": "info",
+      "status_today": "FIXED",
+      "evidence": "/en/collections lists 91 collection links; /hi/collections also 91. Sample of 5 real slugs (best-beaches-india, adrenaline-rush, after-dark-experiences, ancient-monasteries, andaman-diving-snorkeling) all return 200 in both locales with proper bodies."
+    },
+    {
+      "id": "BUG-003",
+      "title": "503 Service Unavailable on RSC prefetch",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "RSC: 1 header on /en/destination/jaipur returns 200 with content-type text/x-component (199KB body). No 503s on RSC paths."
+    },
+    {
+      "id": "BUG-004",
+      "title": "Empty modal flash between wizard steps",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "/en/plan is a single-form AI matcher (43 buttons, 1 input, 0 modals, 0 'data-step' wizard markers). No multi-step wizard exists today, so the flash defect cannot recur in the original surface area."
+    },
+    {
+      "id": "BUG-005",
+      "title": "Hindi translation only partially applied",
+      "severity": "medium",
+      "status_today": "PARTIAL",
+      "evidence": "Destination titles localize the city name to Devanagari (e.g. जयपुर) but state name and the suffix 'Best Time to Visit & Weather | NakshIQ' remain English on every /hi destination. Hindi collection page titles (5/5 sampled) are entirely English. Same partial-translation surface as 2026-04-27."
+    },
+    {
+      "id": "BUG-006",
+      "title": "Duration field shows '- days' (missing data)",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "No '- days' string in any sampled destination HTML; itinerary endpoint returns structured 4xx errors (not malformed days field)."
+    },
+    {
+      "id": "BUG-007",
+      "title": "Map markers vs results count mismatch",
+      "severity": "medium",
+      "status_today": "REPRODUCED",
+      "evidence": "On /en/destination/jaipur the page body claims '20 Places' but document.querySelectorAll('.leaflet-marker-icon').length === 0 after 8s. Same on /en/destination/leh ('20' vs 0) and /en/destination/manali ('23 Places' vs 0). Leaflet container, panes (7), and basemap tiles all render — only the marker pane is empty. Third consecutive day of reproduction."
+    },
+    {
+      "id": "BUG-008",
+      "title": "Duplicate 'NakshIQ' in destination page titles",
+      "severity": "info",
+      "status_today": "FIXED",
+      "evidence": "All 24 sampled destination titles contain exactly one 'NakshIQ' token."
+    },
+    {
+      "id": "BUG-009",
+      "title": "Treks page title contradicts body content count",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "/en/treks 200, 1.16MB body, no obvious title-vs-count contradiction. Heuristic curl + grep didn't expose a mismatch and no regression evidence collected since 2026-04-25."
+    },
+    {
+      "id": "BUG-010",
+      "title": "Filter bar disappears after Clear Filters",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "On /en/explore: clicked '👶 Kids Friendly' chip (button count 122→124), then clicked 'Clear Filters ✕' (button count remained 124, filter bar still visible, Kids Friendly chip still present). No collapse."
+    },
+    {
+      "id": "BUG-011",
+      "title": "930 network requests on single page load",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "Fresh load of /en/destination/leh issued ~57 network requests (29 first-party JS/CSS chunks, 14 basemap tiles, 4 fonts, 2 API calls, plus analytics). Repeat load of /en/destination/jaipur ~54 requests. Far below the 930 observed on 2026-04-22."
+    },
+    {
+      "id": "BUG-012",
+      "title": "Multiple GoTrueClient instances warning (Supabase)",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "Console captured during /en/destination/jaipur and /en/destination/manali navigations contained no GoTrueClient/Multiple/Supabase warnings (only an unrelated chrome-extension log line)."
+    },
+    {
+      "id": "BUG-013",
+      "title": "Heading hierarchy skips H2 entirely",
+      "severity": "info",
+      "status_today": "NOT_REPRODUCED",
+      "evidence": "All 11 real destinations have 24-38 H2s; H2 hierarchy intact. Spiti soft-404 has 0 H2s but that is a separate defect (see BUG-007 cluster and NEW-2026-04-28-002)."
+    },
+    {
+      "id": "BUG-014",
+      "title": "Card images slow to load (lazy loading too aggressive)",
+      "severity": "info",
+      "status_today": "PARTIAL_UNVERIFIABLE",
+      "evidence": "On /en/destination/jaipur counted 31 <img>: 15 loading=lazy, 0 loading=eager, 16 with no loading attribute. Lazy:eager ratio still skewed lazy. Cannot programmatically measure perceived speed without LCP samples; flagged as partial-unverifiable to track the underlying ratio without claiming a UX regression."
+    }
+  ],
+  "new_defects": [
+    {
+      "id": "NEW-2026-04-28-001",
+      "severity": "high",
+      "area": "sitemap",
+      "title": "/sitemap.xml top-level regressed from 404 to 500 in 24h",
+      "evidence": "GET https://www.nakshiq.com/sitemap.xml returned HTTP 500 in 2.44s with a 10,560-byte body. Yesterday's run reported HTTP 404 on the same path. Server error responses are worse than 404s for crawlers (Google may de-rank) and indicate an unhandled exception in the sitemap-index handler.",
+      "impact": "SEO crawlers that probe /sitemap.xml first (default behavior for many bots) will hit a 500 instead of a clean 404 + robots.txt redirect. May degrade index coverage.",
+      "recommended_owner": "web/SEO",
+      "reproduction": "curl -i https://www.nakshiq.com/sitemap.xml",
+      "likely_regression_of": "deploy dpl_2kWq8YPoJqc2RH6EFa16NMPRz4Xc"
+    },
+    {
+      "id": "NEW-2026-04-28-002",
+      "severity": "high",
+      "area": "routing",
+      "title": "hreflang link tags STILL absent site-wide (3rd consecutive day)",
+      "evidence": "Counted 0 <link rel=\"alternate\" hreflang> tags on /en/destination/jaipur, /hi/destination/jaipur, /en/destination/leh, /en/collections, /en, /hi. First flagged 2026-04-26 as NEW-001, repeated 2026-04-27 as NEW-005. No fix shipped.",
+      "impact": "Bilingual SEO is leaving Hindi-page indexability on the table — Google has no signal that /en/destination/jaipur and /hi/destination/jaipur are alternates, so it may de-duplicate them.",
+      "recommended_owner": "web/SEO",
+      "reproduction": "curl -s https://www.nakshiq.com/en/destination/jaipur | grep -oE '<link[^>]+hreflang' | wc -l  # → 0",
+      "likely_regression_of": "n/a (long-standing missing feature)"
+    },
+    {
+      "id": "NEW-2026-04-28-003",
+      "severity": "medium",
+      "area": "routing",
+      "title": "Soft-404 on /destination/<bad-slug> persists in BOTH locales",
+      "evidence": "/en/destination/this-does-not-exist-xyz → 200, 72,949 bytes; /hi/destination/this-does-not-exist-xyz → 200, 83,667 bytes. Both serve homepage shell. /en/collections/<bad>, /en/region/<bad>, and other top-level paths now correctly return 404 — soft-404 is now isolated to the destination route group.",
+      "impact": "Crawlers can index unbounded fake URLs; analytics gets dirtied. Narrower scope than yesterday's NEW-004 (collection/region paths fixed) but the destination route is the largest section of the site.",
+      "recommended_owner": "web (apps/web/src/app/[locale]/destination/[slug]/page.tsx — call notFound() on missing row)",
+      "reproduction": "curl -o /dev/null -w '%{http_code} %{size_download}\\n' https://www.nakshiq.com/en/destination/anything-fake-here",
+      "likely_regression_of": "Carryover of 2026-04-27 NEW-004 (now scoped to /destination only)"
+    },
+    {
+      "id": "NEW-2026-04-28-004",
+      "severity": "medium",
+      "area": "routing",
+      "title": "Numeric month sub-routes /destination/<slug>/<1-12> still soft-404 (llms.txt contract violation)",
+      "evidence": "Probed /en/destination/jaipur/3, /5, /10 and /en/destination/shimla/3, /5, /10 — all returned 200 with 73,304-73,306 bytes (homepage shell). The named variants (/march, /may, /october) return 147-175KB real pages. llms.txt promises numeric month routes; they are not honored. Carryover of 2026-04-27 NEW-007.",
+      "impact": "AI crawlers following llms.txt advice get indexed onto homepage HTML for what they think are month-specific destination pages — bad for citation quality and llms.txt audits.",
+      "recommended_owner": "web (month route handler)",
+      "reproduction": "curl -s -o /dev/null -w '%{http_code} %{size_download}\\n' https://www.nakshiq.com/en/destination/jaipur/3 && curl -s -o /dev/null -w '%{http_code} %{size_download}\\n' https://www.nakshiq.com/en/destination/jaipur/march",
+      "likely_regression_of": "Carryover of 2026-04-27 NEW-007"
+    },
+    {
+      "id": "NEW-2026-04-28-005",
+      "severity": "medium",
+      "area": "routing",
+      "title": "/en/region/<state> 404s for tamil-nadu AND kerala (grew from 1 to 2 missing region pages)",
+      "evidence": "Probed 7 region landing pages. 200: rajasthan, karnataka, maharashtra, ladakh, himachal-pradesh. 404: tamil-nadu (carryover from 2026-04-27 NEW-003), kerala (NEW today). Both states have many destinations in the sitemap — the region landing simply doesn't exist.",
+      "impact": "Two large source-of-traffic states have no region-level landing page; users navigating from sitemap or external links land on a 404.",
+      "recommended_owner": "web (regions data set)",
+      "reproduction": "curl -o /dev/null -w '%{http_code}' https://www.nakshiq.com/en/region/kerala  # → 404",
+      "likely_regression_of": "Expansion of 2026-04-27 NEW-003"
+    },
+    {
+      "id": "NEW-2026-04-28-006",
+      "severity": "medium",
+      "area": "performance",
+      "title": "/en/cost-index payload still 3.61 MB (no shrink in 48h)",
+      "evidence": "GET /en/cost-index returned 200 in 1.73s with 3,612,641 bytes. Identical size to 2026-04-27 (3.6 MB) and 2026-04-26. No shrink shipped.",
+      "impact": "Slow load on mobile connections; ~15s on a 2 Mbps link. Likely contains a large embedded data payload that should be paginated or fetched async.",
+      "recommended_owner": "web (apps/web/src/app/[locale]/cost-index/page.tsx)",
+      "reproduction": "curl -o /dev/null -w 'size=%{size_download}\\n' https://www.nakshiq.com/en/cost-index",
+      "likely_regression_of": "Carryover of 2026-04-27 NEW-006"
+    },
+    {
+      "id": "NEW-2026-04-28-007",
+      "severity": "low",
+      "area": "performance",
+      "title": "Cold-fetch tail (binsar, darjeeling) still > 3s",
+      "evidence": "Cold curl times: hi/darjeeling 4.255s, hi/binsar 3.980s, en/darjeeling 3.542s, en/binsar 3.174s. p95 across 24 cold fetches = 3.98s, max = 4.26s. Avg = 1.53s. None exceed the 8s 'cold-start critical' threshold from the QA skill but the long tail has not improved since 2026-04-27.",
+      "impact": "Real-user p95 likely above the 2.5s LCP target on these specific destinations; first-visit experience degraded.",
+      "recommended_owner": "web (per-destination SSR cost; possibly Supabase query plan for these slugs)",
+      "reproduction": "for s in darjeeling binsar; do for l in en hi; do curl -o /dev/null -w \"$l/$s: %{time_total}s\\n\" https://www.nakshiq.com/$l/destination/$s; done; done"
+    },
+    {
+      "id": "NEW-2026-04-28-008",
+      "severity": "info",
+      "area": "destination-page",
+      "title": "Confidence mention count drops 18-25% in /hi vs /en (proxy for partial-Hindi)",
+      "evidence": "Per-page count of the literal token 'confidence' in HTML: en/jaipur 11 vs hi/jaipur 9; en/shimla 12 vs hi/shimla 10; en/manali 15 vs hi/manali 13; en/leh 13 vs hi/leh 11. Pattern repeats across all 11 real destinations: Hindi pages have ~2 fewer 'confidence' tokens. The token should be a localized synonym in /hi but is currently still English in some sub-blocks while absent in others.",
+      "impact": "Adds another data point under BUG-005 — Hindi shipping rate is partial. Not a new bug class but quantifies the gap.",
+      "recommended_owner": "web/i18n (apps/web/src/messages/hi.json — confidence-related copy)",
+      "reproduction": "for s in jaipur shimla manali leh; do echo $s; for l in en hi; do curl -s https://www.nakshiq.com/$l/destination/$s | grep -oiE confidence | wc -l; done; done"
+    }
+  ],
+  "blockers": [],
+  "gaps": [
+    "Live console message capture is partial — Chrome MCP starts tracking only after the first read_console_messages call; messages emitted during the initial page load are not retrievable. BUG-012 verdict relies on a navigation-then-read pattern (no GoTrueClient warnings observed) but a deterministic hard-reload-with-pre-subscribed-console would be stronger.",
+    "Browser-side performance metrics sampled on a single page (Manali reload) — primary perf signal is curl time_total, which conflates DNS+TLS+TTFB+download. Real-user TTFB / LCP / INP would require a full Web Vitals run.",
+    "/api/itinerary POST request schema is undocumented — validated only that empty payload returns structured 4xx and a likely-shaped payload returns 4xx. A green-path 200 response is not exercised."
+  ],
+  "summary": {
+    "new_defects_count": 8,
+    "regression_matrix_fixed_or_clear": 11,
+    "regression_matrix_unverifiable": 1,
+    "regression_matrix_still_active": 2,
+    "regression_matrix_reproduced": 1,
+    "still_active_ids": [
+      "BUG-005",
+      "BUG-007"
+    ],
+    "persona_reports_generated": 3,
+    "persona_reports_expected": 3,
+    "persona_reports_blocked_by": ""
+  }
+}

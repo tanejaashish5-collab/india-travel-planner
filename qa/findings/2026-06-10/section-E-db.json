@@ -1,0 +1,40 @@
+{
+  "queried_utc": "2026-06-10T02:15:00Z",
+  "project": "dudzsdzfvikjjhurxrgc",
+  "method": "3 small aggregate reads + 1 three-row lookup over Supabase MCP (egress-safe)",
+  "safety_baseline": {
+    "emergency_sos_rows": 525,
+    "dests_without_emergency_sos_row": 0,
+    "rows_under_3_dialable": 0,
+    "min_dialable_fields": 5,
+    "avg_dialable_fields": 7.42,
+    "total_dialable_entries_11col": 3896,
+    "rows_with_placeholder_X": 0
+  },
+  "local_helpers_rendered_fields": {
+    "emergency_sos.local_helpers_nonempty": 178,
+    "emergency_sos.local_helpers_empty_array": 347,
+    "emergency_sos.local_helpers_null": 0,
+    "note": "178 matches the SKILL.md post-purge baseline recorded 2026-06-09 (was 186 pre-purge at yesterday's run time; the 2026-06-09 fabrication purge ran AFTER the daily run). Stable vs post-purge baseline, no regression."
+  },
+  "people_who_help_shape_breakdown": {
+    "confidence_cards_rows": 491,
+    "pwh_null": 0,
+    "pwh_nonempty_array": 79,
+    "pwh_empty_array": 319,
+    "pwh_object_legacy": 93,
+    "sum_check": "79+319+93 = 491 = exactly yesterday's 'present' count — DB unchanged; prior 491 was IS-NOT-NULL row count, not rendered coverage",
+    "object_examples": ["kalpa {hptdc, locals, police}", "kolkata {guides, tourism_office}", "gangtok {atm, guides, key_contact, medical_shops, tourist_police}"],
+    "component_behavior": "confidence-card.tsx types people_who_help as HelperContact[] and gates on .length>0 — object rows yield undefined>0=false, section silently hidden; no crash. No upstream normalization (destination-detail-cinematic.tsx:1137 spreads cc raw)."
+  },
+  "deep_dive_unrendered_reference_only": {
+    "deepdive_local_helpers_present": 405,
+    "deepdive_local_helpers_total_entries": 589,
+    "note": "Matches SKILL.md post-purge figures exactly (was 867 pre-purge; 278 fabricated entries purged 2026-06-09). NOT a coverage metric — unrendered backing store."
+  },
+  "prior_bug_3row_recheck": {
+    "uttarkashi": "police 100 / ambulance 108 / fire 101 / women 1091 (or 181) / DDMA 01374-222722 / 1077 / mtn 01374-222126 / 7310913129; verified=true (constants-reverify-2026-06-09)",
+    "khonoma": "police 100 / ambulance 108 / fire 101 / women 1091 / Kohima PCR 7005986046 · NSDMA 1070; verified=true (deepdive-recorrect-2026-06-09)",
+    "khangchendzonga-np": "police 100 / ambulance 108 / fire 101 / women 1091 / Geyzing PS 8145887528 + District Hospital Gyalshing 03595-250634; tourist_helpline now 1800-111-363 (changed from 1800-345-3006 by emsos-th-audit-2026-06-10 — fresh write TODAY); verified=true"
+  }
+}

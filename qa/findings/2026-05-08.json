@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-05-08",
+    "date": "2026-05-08",
+    "started_utc": "2026-05-08T02:05:00Z",
+    "completed_utc": "2026-05-08T02:25:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.7 (Cowork) — curl + Python HTTP probes + Chrome MCP for Section K (interactive)",
+    "mode": "Daily regression — A through K matrix per qa/SKILL.md, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 20,
+    "user_present": false,
+    "status": "completed"
+  },
+
+  "blockers": [],
+
+  "phases_completed": [
+    "Section A — soft-404 regression (8 routes vs prior NEW-004/NEW-006 closures)",
+    "Section B — destination availability + TTFB (10 random sample from sitemap-1)",
+    "Section C — Hindi parity (same 10 destinations, /hi locale)",
+    "Section D — SEO meta sanity (title stutter, canonical, hreflang en/hi/x-default, og:image on 12 URLs)",
+    "Section E — SOS phone format on 10 destinations",
+    "Section F — API smoke (8 endpoint+body combos including DEEP-Phase7-A1/A2 regressions)",
+    "Section G — PWA / SW / manifest / robots.txt sanity",
+    "Section H — Sitemap integrity (5 sitemap chunks, 20150 entries)",
+    "Section I — Core routes HTTP matrix (21 high-traffic routes)",
+    "Section J — Locale-routing redirect from `/` and bare paths",
+    "Section K — Chrome E2E (5 pages: 3 destinations + explore + trip; map tiles + marker count + console errors)"
+  ],
+
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across 20 templates × 2 viewports",
+      "reason": "Cost-aware rule per qa/SKILL.md: axe-core not run daily unless material changes since last deep pass. Last full axe pass: 2026-05-04 (qa/findings/2026-05-04-deep/phase-03-axe.json — 16 critical/serious fixed; carry-forward color-contrast + aria-allowed-attr remain open)."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Last LH pass: 2026-05-05 (qa/findings/2026-05-05-pwa/lh-pwa-en.json — perf 61, a11y 98, BP 100, SEO 100). No re-run today on a quiet day."
+    },
+    {
+      "phase": "Persona round-trip (Phase 5 from 2026-05-04)",
+      "reason": "Carry-forward defer; not regressed by recent commits."
+    },
+    {
+      "phase": "Dedicated security probes (Phase 9 from 2026-05-04)",
+      "reason": "Carry-forward defer; needs its own session."
+    }
+  ],
+
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-05-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/this-does-not-exist-xyz → 404; /en/destination/zzzzzz-fake → 404; /hi/destination/this-does-not-exist-xyz → 404 (section-A-soft404.csv)"
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-05-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/shimla/3 → 404; /en/destination/shimla/marchx → 404; /en/destination/shimla/99 → 404 (section-A-soft404.csv). Three-letter abbreviations (jan, jul) also 404 — by design per slug-validator allowlist (full month names only). Same as INFO-2026-05-07-001."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-05-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat with body `{\"broken` → 400 {\"error\":\"Malformed JSON body\"}; empty body → 400; valid `{\"message\":\"hi\"}` → 400 {\"error\":\"Invalid question\"} (input validation, not 5xx). section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-05-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/itinerary with body `{\"broken` → 400 {\"error\":\"Malformed JSON body\"}; empty body → 400. section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "16 pages with `| NakshIQ | NakshIQ` title stutter",
+      "prior_status": "STILL CLOSED 2026-05-07",
+      "today_status": "STILL CLOSED",
+      "evidence": "0/12 sampled URLs (landing + 10 destinations + alwar/may sub-route) showed stutter. section-D-seo.csv"
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker v32 / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-05-07",
+      "today_status": "STILL GREEN",
+      "evidence": "VERSION = \"nakshiq-v32\" in /sw.js; manifest.json: name=\"NakshIQ — India travel confidence\", icons=3, shortcuts=5, display=standalone, start_url=/en, theme_color=#161614. /offline → 301 → /en/offline → 200."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN — needs i18n sprint",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Static-HTML check shows /hi/<dest> pages have lang=\"hi\" + Devanagari titles (10/10), but the tour modal is a client-side mount; not exercised in today's Chrome E2E pass."
+    },
+    {
+      "id": "E2E-2026-05-04-B1",
+      "title": "/hi/destination/<slug>/<month> H1 + body labels still English",
+      "prior_status": "STILL OPEN — needs i18n sprint",
+      "today_status": "STILL OPEN — not actively re-tested"
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — token sweep needed",
+      "today_status": "STILL OPEN — not re-tested without axe in this session"
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — ARIA pattern conversion needed",
+      "today_status": "STILL OPEN — not re-tested without axe today"
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — image responsiveness/offscreen/format levers catalogued",
+      "today_status": "STILL OPEN; today's destination-TTFB sample (curl from sandbox region, not LH-equivalent): min 2302 ms, median 3201 ms, max 3810 ms across 10 destinations. Tighter spread than 2026-05-07 (5228 ms tail) — all 10 sample slugs were warm enough to settle in 2.3-3.8 s."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "STILL OPEN — investigation needed",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE — random shuf drew taptapani/bekal/daman/chilika-lake/sirpur/kabini/osian/warangal/alwar/statue-of-unity. Edge-case slugs deferred again."
+    }
+  ],
+
+  "new_findings_today": [
+    {
+      "id": "INFO-2026-05-08-001",
+      "severity": "info",
+      "title": "Destination map tile pane renders, but marker pane is empty across 3 sampled destinations",
+      "detail": "Chrome E2E (Section K) on alwar / kabini / bekal: each renders a Leaflet container with 28-42 tiles loaded but document.querySelectorAll('.leaflet-marker-icon').length === 0 and document.querySelectorAll('.leaflet-div-icon').length === 0 after a 5 s post-load delay + scroll-into-view. Marker pane innerHTML length is 0 on all three. No console errors. Could be intentional (destination page may render only the map background centered on the destination, with markers reserved for nearby-places overlay or trip-planner mode). Logged as INFO until product intent is confirmed.",
+      "evidence": "section-K-chrome-e2e.csv — alwar 28 tiles / 0 markers, kabini 42 tiles / 0 markers, bekal 42 tiles / 0 markers; 0 console errors after F5 on each.",
+      "recommendation": "Confirm intent: are destination-page maps supposed to show nearby-place markers? If yes, this is a regression (silently rendering empty marker layer). If no, no action — close as INFO."
+    },
+    {
+      "id": "INFO-2026-05-08-002",
+      "severity": "info",
+      "title": "/api/destinations and /api/health do not exist (404 HTML response)",
+      "detail": "Probed /api/destinations and /api/health as candidate public reads — both return 404 with the Next.js HTML 404 shell rather than a JSON 404. Not a defect — these endpoints simply aren't implemented. Documenting so future probes don't re-discover.",
+      "evidence": "section-F-api.csv: GET /api/destinations → 404 (HTML); GET /api/health → 404 (HTML).",
+      "recommendation": "If a JSON health probe is desired (e.g., for Vercel uptime monitoring), add a thin /api/health route returning {\"status\":\"ok\"}. Otherwise no action."
+    },
+    {
+      "id": "INFO-2026-05-08-003",
+      "severity": "info",
+      "title": "/api/weather signature is `?id=<slug>`, not `?lat=&lon=`",
+      "detail": "Probing /api/weather?lat=28.6&lon=77.2 returns 400 {\"error\":\"Missing destination id\"}. Probing /api/weather?id=alwar returns 200 with full weather payload (temp, feels_like, humidity, description, icon, wind_speed, visibility, clouds). Confirming /api/weather is a destination-keyed read, not a coordinate-keyed read. Logged so future API probes use the correct query shape.",
+      "evidence": "section-F-api.csv: ?lat=28.6&lon=77.2 → 400; ?id=alwar → 200 (TTFB 2160 ms); ?destinationId=alwar → 400.",
+      "recommendation": "No code change. Update qa/SKILL.md if weather probe is canonized."
+    }
+  ],
+
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 19,
+    "core_routes_3xx_redirect": 2,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 101, "median": 715, "p90": 886, "max": 3894 },
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 2302, "median": 3201, "max": 3810 },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "soft_404_regression_note": "All 8 bad-slug + garbage-month probes returned 404. Three-letter month abbreviations (jan, jul) 404 by design per slug-validator allowlist; consistent with 2026-05-07 INFO-2026-05-07-001. Not a regression.",
+    "sos_phones_total_across_10_dests": 25,
+    "sos_phones_invalid_format": 0,
+    "sos_phones_extraction_note": "Combined extraction: JSON-embedded \"phone\" fields + rendered Emergency/Police/Hospital <dt>/<dd> + visible 📞/Phone: patterns + tel: links. Per-destination range: 1-4 phones. Lower than 2026-05-07's 120 because today's regex narrowed scope to actual SOS contacts (excludes CSS-class numerics like 'text-base-128'). All 25 conform to Indian phone formats (+91, short codes 1xx-1xxxx, STD-prefixed landlines, 10-digit mobiles).",
+    "api_endpoints_probed": 10,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 7,
+    "api_2xx_returned": 1,
+    "api_404_html_returned": 2,
+    "service_worker_version": "nakshiq-v32",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "sitemap_chunks": 5,
+    "sitemap_total_destination_slug_urls": 1010,
+    "sitemap_total_destination_month_urls": 12120,
+    "sitemap_total_urls": 20150,
+    "chrome_e2e_pages_probed": 5,
+    "chrome_e2e_console_errors_total": 0,
+    "chrome_e2e_destination_map_tiles_loaded": true,
+    "chrome_e2e_destination_map_markers_rendered": false,
+    "chrome_e2e_destination_map_markers_note": "0 markers across 3 sampled destination pages — see INFO-2026-05-08-001."
+  },
+
+  "deliverables": [
+    "qa/findings/2026-05-08.json (this file)",
+    "qa/findings/2026-05-08/section-A-soft404.csv",
+    "qa/findings/2026-05-08/section-B-destinations.csv",
+    "qa/findings/2026-05-08/section-C-hindi-parity.csv",
+    "qa/findings/2026-05-08/section-D-seo.csv",
+    "qa/findings/2026-05-08/section-E-sos-final.csv",
+    "qa/findings/2026-05-08/section-F-api.csv",
+    "qa/findings/2026-05-08/section-J-locale-redirect.csv",
+    "qa/findings/2026-05-08/section-K-chrome-e2e.csv",
+    "qa/findings/2026-05-08/http-matrix.csv",
+    "qa/findings/2026-05-08/sitemap-{0..4}.xml",
+    "qa/findings/2026-05-08/sw.js",
+    "qa/findings/2026-05-08/manifest.json",
+    "qa/findings/2026-05-08/robots.txt",
+    "NakshIQ_Developer_Report.docx (workspace root)",
+    "NakshIQ_QA_Report.docx (workspace root)",
+    "NakshIQ_Business_Report.docx (workspace root)"
+  ],
+
+  "honest_caveats": [
+    "TTFB for destinations is curl-from-sandbox, not 4G mobile Lighthouse. Useful as relative comparison + hot/cold cache signal, not absolute web-vitals.",
+    "Sample size is 10 destinations from a 505-EN-destination corpus (~2%). Random selection via shuf -n 10 against sitemap-1's en-destination-only filter.",
+    "Section K (Chrome E2E) probed 3 destination pages + explore + trip — enough to confirm map renders and 0 console errors, but not the full 10-destination map sweep. The 0-marker observation is logged as INFO-2026-05-08-001 pending product-intent confirmation.",
+    "axe-core, Lighthouse, Playwright full E2E specs, persona round-trips, and dedicated security probes were skipped per cost-aware rules in qa/SKILL.md (last deep pass 2026-05-04, last LH pass 2026-05-05; no material commits since)."
+  ]
+}

@@ -1,0 +1,562 @@
+[
+  {
+    "id": "dwarka",
+    "name": "Dwarka",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "busy",
+    "vibe": [],
+    "tags": [
+      "pilgrimage",
+      "char-dham",
+      "spiritual",
+      "coastal",
+      "mythology"
+    ]
+  },
+  {
+    "id": "eravikulam",
+    "name": "Eravikulam National Park",
+    "state_id": "kerala",
+    "region": "Kerala Wildlife",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "national-park",
+      "trekking",
+      "rare-species"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      12,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [
+      2,
+      3
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "wild",
+      "pristine",
+      "cool",
+      "educational"
+    ],
+    "tags": [
+      "wildlife",
+      "tahr",
+      "national-park",
+      "trekking",
+      "endangered-species",
+      "photography"
+    ]
+  },
+  {
+    "id": "gagron-fort",
+    "name": "Gagron Fort",
+    "state_id": "rajasthan",
+    "region": "southern",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "hill-fort",
+      "water-fort"
+    ]
+  },
+  {
+    "id": "gahirmatha",
+    "name": "Gahirmatha",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Coast & Beaches",
+    "type": [
+      "wildlife",
+      "beach",
+      "nature"
+    ],
+    "place_type": "wildlife-beach",
+    "best_months": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "wild",
+      "conservation",
+      "seasonal"
+    ],
+    "tags": [
+      "wildlife",
+      "moat",
+      "turtle",
+      "conservation",
+      "seasonal",
+      "nature"
+    ]
+  },
+  {
+    "id": "gandhinagar",
+    "name": "Gandhinagar",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "city",
+      "temple",
+      "stepwell",
+      "modern",
+      "capital"
+    ]
+  },
+  {
+    "id": "gandikota",
+    "name": "Gandikota",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Eastern Ghats & Hills",
+    "type": [
+      "heritage",
+      "adventure",
+      "nature"
+    ],
+    "place_type": "fort-canyon",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      9
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "dramatic",
+      "adventurous",
+      "rugged"
+    ],
+    "tags": [
+      "adventure",
+      "canyon",
+      "fort",
+      "camping",
+      "nature",
+      "photography"
+    ]
+  },
+  {
+    "id": "gir-national-park",
+    "name": "Gir National Park",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "wildlife",
+      "safari",
+      "lion",
+      "nature"
+    ]
+  },
+  {
+    "id": "girnar",
+    "name": "Mount Girnar",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "busy",
+    "vibe": [],
+    "tags": [
+      "pilgrimage",
+      "trek",
+      "jain",
+      "viewpoint",
+      "ropeway"
+    ]
+  },
+  {
+    "id": "gopalpur-on-sea",
+    "name": "Gopalpur-on-Sea",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Coast & Beaches",
+    "type": [
+      "beach",
+      "heritage",
+      "coastal"
+    ],
+    "place_type": "beach-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "quiet",
+      "colonial",
+      "seaside"
+    ],
+    "tags": [
+      "beach",
+      "colonial",
+      "quiet",
+      "coastal",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "great-himalayan-np",
+    "name": "Great Himalayan National Park",
+    "state_id": "himachal-pradesh",
+    "region": "Kullu-Tirthan",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "nature",
+      "UNESCO",
+      "trekking"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "wild",
+      "adventurous",
+      "pristine"
+    ],
+    "tags": [
+      "UNESCO",
+      "national-park",
+      "snow-leopard"
+    ]
+  },
+  {
+    "id": "gurudongmar-lake",
+    "name": "Gurudongmar Lake",
+    "state_id": "sikkim",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      5,
+      6,
+      10
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "sacred-lake",
+      "extreme-altitude",
+      "frozen-lake"
+    ]
+  },
+  {
+    "id": "guruvayur",
+    "name": "Guruvayur",
+    "state_id": "kerala",
+    "region": "Kerala Heritage",
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple",
+      "elephant",
+      "cultural"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "devotional",
+      "sacred",
+      "traditional",
+      "serene"
+    ],
+    "tags": [
+      "pilgrimage",
+      "temple",
+      "elephant",
+      "cultural",
+      "festival"
+    ]
+  },
+  {
+    "id": "gwalior",
+    "name": "Gwalior",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "fort",
+      "music-heritage",
+      "Rajput"
+    ]
+  },
+  {
+    "id": "haflong",
+    "name": "Haflong",
+    "state_id": "assam",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "hill-station",
+      "bird-mystery",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "har-ki-doon",
+    "name": "Har Ki Doon",
+    "state_id": "uttarakhand",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      7,
+      8,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "trek",
+      "offbeat",
+      "forest",
+      "photography",
+      "wildlife-sanctuary",
+      "beginner-friendly-high-altitude"
+    ]
+  },
+  {
+    "id": "havelock-island",
+    "name": "Havelock Island (Swaraj Dweep)",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "beach",
+      "island",
+      "coral",
+      "diving",
+      "snorkeling",
+      "water-sports"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "tropical",
+      "pristine",
+      "adventure",
+      "relaxed"
+    ],
+    "tags": [
+      "andaman",
+      "havelock",
+      "swaraj-dweep",
+      "beach",
+      "diving",
+      "snorkeling",
+      "radhanagar",
+      "coral"
+    ]
+  }
+]

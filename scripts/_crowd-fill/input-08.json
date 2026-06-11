@@ -1,0 +1,576 @@
+[
+  {
+    "id": "karla-bhaja-caves",
+    "name": "Karla & Bhaja Caves",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "heritage",
+      "caves",
+      "rock-cut",
+      "buddhist"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "historic",
+      "quiet",
+      "off-highway"
+    ],
+    "tags": [
+      "caves",
+      "buddhist",
+      "heritage",
+      "western-ghats",
+      "rock-cut",
+      "maharashtra"
+    ]
+  },
+  {
+    "id": "karnaprayag",
+    "name": "Karnaprayag",
+    "state_id": "uttarakhand",
+    "region": "Garhwal",
+    "subregion": "Chamoli",
+    "type": [
+      "confluence",
+      "pilgrimage"
+    ],
+    "place_type": "confluence",
+    "best_months": [
+      4,
+      5,
+      6,
+      10
+    ],
+    "avoid_months": null,
+    "crowd_level": "moderate",
+    "vibe": [
+      "spiritual"
+    ],
+    "tags": [
+      "pilgrimage",
+      "confluence",
+      "sacred-site",
+      "mythology"
+    ]
+  },
+  {
+    "id": "kasol",
+    "name": "Kasol",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Backpacker Hub",
+      "Riverside",
+      "Trekking Base"
+    ]
+  },
+  {
+    "id": "katra",
+    "name": "Katra",
+    "state_id": "jammu-kashmir",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "base-town",
+      "shakti-peetha"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [
+      1,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "crowded",
+      "well-organised"
+    ],
+    "tags": [
+      "pilgrimage",
+      "shakti-peetha",
+      "devi",
+      "trek",
+      "hindu-religious",
+      "jammu-kashmir"
+    ]
+  },
+  {
+    "id": "kavaratti",
+    "name": "Kavaratti",
+    "state_id": "lakshadweep",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "beach",
+      "coral",
+      "lagoon"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "peaceful",
+      "tropical",
+      "cultural"
+    ],
+    "tags": [
+      "lakshadweep",
+      "kavaratti",
+      "lagoon",
+      "coral",
+      "island",
+      "mosque"
+    ]
+  },
+  {
+    "id": "kaza",
+    "name": "Kaza",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      9
+    ],
+    "avoid_months": [
+      1,
+      2,
+      12
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "high-altitude",
+      "offbeat",
+      "buddhist",
+      "monasteries",
+      "road-trip",
+      "photography"
+    ]
+  },
+  {
+    "id": "khangchendzonga-np",
+    "name": "Khangchendzonga National Park",
+    "state_id": "sikkim",
+    "region": "West Sikkim",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "nature",
+      "UNESCO",
+      "trekking",
+      "spiritual"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "epic",
+      "sacred",
+      "extreme"
+    ],
+    "tags": [
+      "UNESCO",
+      "mixed-heritage",
+      "Kanchenjunga"
+    ]
+  },
+  {
+    "id": "khardung-la",
+    "name": "Khardung La",
+    "state_id": "ladakh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "high-altitude",
+      "motorable-pass",
+      "road-trip",
+      "ladakh",
+      "border",
+      "motorcycle"
+    ]
+  },
+  {
+    "id": "kinner-kailash",
+    "name": "Kinner Kailash",
+    "state_id": "himachal-pradesh",
+    "region": "Kinnaur",
+    "subregion": "Kinnaur",
+    "type": [
+      "peak",
+      "pilgrimage"
+    ],
+    "place_type": "peak",
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "spiritual",
+      "scenic"
+    ],
+    "tags": [
+      "pilgrimage",
+      "viewpoint",
+      "parikrama"
+    ]
+  },
+  {
+    "id": "kiphire",
+    "name": "Kiphire",
+    "state_id": "nagaland",
+    "region": "Eastern Nagaland",
+    "subregion": null,
+    "type": [
+      "trekking-base",
+      "tribal"
+    ],
+    "place_type": "town",
+    "best_months": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very-low",
+    "vibe": [
+      "tribal",
+      "border",
+      "adventure"
+    ],
+    "tags": []
+  },
+  {
+    "id": "kochi",
+    "name": "Kochi (Fort Kochi)",
+    "state_id": "kerala",
+    "region": "Kerala Heritage",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "colonial",
+      "art",
+      "port"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "cultural",
+      "cosmopolitan",
+      "historic",
+      "artistic"
+    ],
+    "tags": [
+      "heritage",
+      "colonial",
+      "art",
+      "port",
+      "biennale",
+      "museum",
+      "spice-trade"
+    ]
+  },
+  {
+    "id": "kodaikanal",
+    "name": "Kodaikanal",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "lake",
+      "nature",
+      "romantic"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "misty",
+      "romantic",
+      "cool",
+      "peaceful"
+    ],
+    "tags": [
+      "hill-station",
+      "lake",
+      "nature",
+      "romantic",
+      "family",
+      "trekking",
+      "Kurinji"
+    ]
+  },
+  {
+    "id": "kokernag",
+    "name": "Kokernag",
+    "state_id": "jammu-kashmir",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Botanical Garden",
+      "Trout Stream",
+      "Springs"
+    ]
+  },
+  {
+    "id": "kolanupaka",
+    "name": "Kolanupaka",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Craft & Culture",
+    "type": [
+      "heritage",
+      "pilgrimage",
+      "jain"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [],
+    "crowd_level": "very low",
+    "vibe": [
+      "ancient",
+      "spiritual",
+      "quiet"
+    ],
+    "tags": [
+      "jain",
+      "heritage",
+      "moat",
+      "offbeat",
+      "jade",
+      "archaeological",
+      "ancient"
+    ]
+  },
+  {
+    "id": "kolkata",
+    "name": "Kolkata",
+    "state_id": "west-bengal",
+    "region": "east",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "cultural-capital",
+      "NE-gateway",
+      "Durga-Puja"
+    ]
+  },
+  {
+    "id": "kollam",
+    "name": "Kollam",
+    "state_id": "kerala",
+    "region": "Kerala Backwaters",
+    "subregion": null,
+    "type": [
+      "backwater",
+      "lake",
+      "heritage",
+      "port"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "historic",
+      "authentic",
+      "peaceful",
+      "off-radar"
+    ],
+    "tags": [
+      "backwater",
+      "heritage",
+      "offbeat",
+      "port",
+      "lake",
+      "canoe"
+    ]
+  }
+]

@@ -1,0 +1,5139 @@
+{
+  "count": 118,
+  "treks": [
+    {
+      "id": "bhadraj-temple-trek",
+      "name": "Bhadraj Temple Trek",
+      "destination_id": "mussoorie",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2180,
+      "distance_km": 8,
+      "best_months": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "beginner",
+      "description": "A gentle forest walk from Mussoorie to one of the region's oldest temples dedicated to Lord Bal Bhadra (Krishna's brother). The trail passes through dense oak and deodar forests with views of the Yamuna valley and Doon valley stretching to the horizon. Ideal for families and first-time trekkers.",
+      "description_len": 296,
+      "highlights": [
+        "Ancient Bhadraj Temple with panoramic Doon Valley views",
+        "Dense oak and deodar forest canopy",
+        "Views of Yamuna valley and distant Himalayan peaks",
+        "Bird-watching paradise — over 50 species spotted",
+        "Family-friendly gradient suitable for children"
+      ],
+      "warnings": [
+        "Trail can be slippery after rain",
+        "Monkeys in forested sections — keep food packed",
+        "No shops after Hathipaon — carry water and snacks",
+        "Return before dark as trail is poorly marked",
+        "Leeches present during July-August monsoon"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Bhadraj Temple",
+          "day": 1,
+          "from": "Hathipaon",
+          "hours": 4,
+          "meals": "Carry packed lunch. Nothing available on trail.",
+          "title": "Hathipaon to Bhadraj Temple",
+          "water": "Small stream at 2km mark (seasonal). Carry 2L from Mussoorie.",
+          "terrain": "Forest trail through oak and deodar, gentle gradient with a few short steep sections. Well-trodden path.",
+          "campsite": "None — day trek",
+          "altitude_m": 2180,
+          "description": "Start from Hathipaon estate on Mussoorie-Yamuna Bridge road. The trail enters oak forest immediately, climbing gently. Pass through small clearings with valley views. At 3km mark, trail forks — take right for Bhadraj. Dense deodar section before final clearing with the temple. Views open up dramatically at the top. Return same route.",
+          "distance_km": 8
+        }
+      ],
+      "nearest_hospital": "Landour Community Hospital — 8km from trailhead, 30 minutes by road. Doon Hospital Dehradun — 35km.",
+      "network_coverage": "Jio and Airtel work for most of the trail. Signal drops in dense forest sections. Good coverage at temple."
+    },
+    {
+      "id": "singalila-ridge-trek",
+      "name": "Singalila Ridge Trek",
+      "destination_id": "pelling",
+      "difficulty": "moderate",
+      "duration_days": 5,
+      "max_altitude_m": 3636,
+      "distance_km": 45,
+      "best_months": [
+        3,
+        4,
+        5,
+        10,
+        11
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "intermediate",
+      "description": "A 5-day ridge walk through Singalila National Park along the India-Nepal border with continuous views of the Kanchenjunga range. Shorter and more focused than the Sandakphu-Phalut circuit, this trek stays on the ridge for maximum mountain exposure. Spring transforms the trail into a rhododendron wonderland. Trekkers' huts along the route provide comfortable shelter.",
+      "description_len": 368,
+      "highlights": [
+        "Continuous Kanchenjunga range views for 5 days",
+        "Rhododendron forests in spectacular spring bloom",
+        "Walk along India-Nepal border ridge",
+        "Comfortable trekkers' huts along the route",
+        "Sandakphu summit — highest point in West Bengal",
+        "Less crowded than the full Sandakphu-Phalut circuit"
+      ],
+      "warnings": [
+        "Altitude sickness possible above 3000m",
+        "Cold temperatures at ridge camps (below -5°C in winter)",
+        "Permits required for Singalila National Park",
+        "Weather can obscure views — allow buffer days",
+        "Limited medical facilities on trail",
+        "Leeches in monsoon season"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Tumling",
+          "day": 1,
+          "from": "Manebhanjan",
+          "hours": 6,
+          "meals": "Tea house meals",
+          "title": "Manebhanjan to Tumling",
+          "water": "Tea houses",
+          "terrain": "Forest trail, jeep track, steep sections",
+          "campsite": "Tumling trekkers hut",
+          "altitude_m": 2970,
+          "description": "Start from Manebhanjan and climb through forest into Singalila National Park. Reach Tumling on the India-Nepal border.",
+          "distance_km": 11
+        }
+      ],
+      "nearest_hospital": "Darjeeling District Hospital — 60km from Manebhanjan, 3 hours. Basic first aid at Sandakphu.",
+      "network_coverage": "Patchy Airtel/Jio at Tumling and Sandakphu. No coverage between stops."
+    },
+    {
+      "id": "gandikota-gorge",
+      "name": "Gandikota Canyon Trek",
+      "destination_id": "gandikota",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 350,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Trek along the Pennar River gorge rim and down to the river level.",
+      "description_len": 66,
+      "highlights": [
+        "Canyon rim views",
+        "Fort ruins exploration",
+        "Pennar River access",
+        "Sunset from gorge edge"
+      ],
+      "warnings": [
+        "Unfenced cliff edges",
+        "No shade — carry water",
+        "Last section is a scramble"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "pin-parvati-pass",
+      "name": "Pin Parvati Pass",
+      "destination_id": "spiti-valley",
+      "difficulty": "hard",
+      "duration_days": 11,
+      "max_altitude_m": 5319,
+      "distance_km": 110,
+      "best_months": [
+        7,
+        8,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "very high",
+      "description": "Cross from Parvati Valley to Spiti over 5319m pass. India classic high-altitude crossing.",
+      "description_len": 89,
+      "highlights": [
+        "5319m pass crossing",
+        "Two valleys one trek",
+        "Glacier walking"
+      ],
+      "warnings": [
+        "Glacier crossings",
+        "AMS severe at pass",
+        "Weather can trap you"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Kheerganga",
+          "day": 1,
+          "from": "Barsheni",
+          "hours": 5,
+          "meals": "Lunch at Nakthan. Dinner at Kheerganga camp",
+          "title": "Barsheni to Kheerganga",
+          "water": "Parvati river. Hot springs (not for drinking)",
+          "terrain": "Forest trail along Parvati river",
+          "campsite": "Kheerganga",
+          "altitude_m": 2960,
+          "description": "Drive from Bhuntar to Barsheni. Trek along Parvati river through forest. Pass Rudra Nag waterfall. Reach Kheerganga hot springs. Soak and rest.",
+          "distance_km": 6,
+          "altitude_gain_m": 860
+        }
+      ],
+      "nearest_hospital": "PHC Jari 15km from Barsheni (Parvati side). Zero medical facilities for 7 days. Mudh has no medical facility. Kaza has PHC. Serious cases: Kullu 50km or Keylong 80km. Helicopter evacuation extremely difficult in upper valley.",
+      "network_coverage": "Jio at Barsheni. Zero signal from Kheerganga to Mudh (9 days of complete isolation). This is one of India's most remote crossings. Satellite phone MANDATORY."
+    },
+    {
+      "id": "tarsar-marsar-trek",
+      "name": "Tarsar Marsar Trek",
+      "destination_id": "pahalgam",
+      "difficulty": "hard",
+      "duration_days": 7,
+      "max_altitude_m": 3970,
+      "distance_km": 46,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "high",
+      "description": "Twin alpine lake trek through Kashmir — the most scenic trek in the valley.",
+      "description_len": 75,
+      "highlights": [
+        "Two stunning alpine lakes",
+        "Kashmir meadow camping",
+        "Shepherd trail"
+      ],
+      "warnings": [
+        "High altitude",
+        "Remote — no evacuation",
+        "Weather unpredictable",
+        "Permit required"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Aru",
+          "day": 1,
+          "from": "Srinagar",
+          "hours": 0,
+          "meals": "Lunch enroute Pahalgam. Dinner at Aru",
+          "title": "Srinagar to Aru Valley",
+          "water": "Village water. River at Aru",
+          "terrain": "Road journey",
+          "campsite": "Aru Valley camp/guesthouse",
+          "altitude_m": 2400,
+          "description": "Drive from Srinagar to Aru Valley via Pahalgam (95km, 4hr). Aru is a picturesque meadow village with gujjar settlements. Register with local guide. Overnight at Aru guesthouse or camp.",
+          "distance_km": 0,
+          "altitude_gain_m": 0
+        }
+      ],
+      "nearest_hospital": "PHC Aru area. District Hospital Pahalgam 12km from Aru. Serious cases: SKIMS Srinagar 95km.",
+      "network_coverage": "Jio/Airtel at Aru and Pahalgam. No signal from Lidderwat onwards. Zero coverage at lakes. BSNL very patchy at Lidderwat only."
+    },
+    {
+      "id": "triund-trek",
+      "name": "Triund Trek",
+      "destination_id": "dharamshala",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2875,
+      "distance_km": 9,
+      "best_months": [
+        3,
+        4,
+        5,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "low",
+      "description": "Most popular day trek in Himachal — 9km return to Dhauladhar ridge.",
+      "description_len": 67,
+      "highlights": [
+        "Dhauladhar at eye level",
+        "Day-doable from McLeod",
+        "Camping possible"
+      ],
+      "warnings": [
+        "Now ticketed",
+        "Crowded weekends",
+        "Monsoon leeches"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Triund Top",
+          "day": 1,
+          "from": "McLeodganj",
+          "hours": 5,
+          "meals": "Maggi and chai at trail cafes. Dinner at Triund camp dhabas",
+          "title": "McLeodganj to Triund",
+          "water": "Multiple chai shops on trail. Carry 1L minimum for summit push",
+          "terrain": "Well-marked rocky trail through oak and rhododendron forest",
+          "campsite": "Triund Top",
+          "altitude_m": 2875,
+          "description": "Start from Galu Devi Temple near Dharamkot. Steady climb through dense forest. Trail widens after Magic View Cafe. Final 1km is steep rocky switchbacks. Stunning Dhauladhar views at top.",
+          "distance_km": 9,
+          "altitude_gain_m": 1125
+        }
+      ],
+      "nearest_hospital": "Zonal Hospital McLeodganj 9km. Serious cases: Fortis Hospital Kangra 30km.",
+      "network_coverage": "Jio/Airtel works till Dharamkot. Patchy signal at Magic View Cafe. Intermittent Jio at Triund Top. BSNL best coverage."
+    },
+    {
+      "id": "mullayyanagiri-trek",
+      "name": "Mullayyanagiri Trek",
+      "destination_id": "chikmagalur",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1930,
+      "distance_km": 6,
+      "best_months": [
+        9,
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "low",
+      "description": "Trek to the highest peak in Karnataka. Easy trail from Sarpadhari viewpoint to the summit temple.",
+      "description_len": 97,
+      "highlights": [
+        "Highest peak in Karnataka 1930m",
+        "Summit Shiva temple",
+        "Easy sunrise trek",
+        "Views of Baba Budangiri range"
+      ],
+      "warnings": [
+        "Very cold at sunrise",
+        "Windy at summit",
+        "Fog can reduce visibility"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Government Hospital Chikmagalur 30km.",
+      "network_coverage": "Jio at Sarpadhari. Weak signal at summit."
+    },
+    {
+      "id": "kolahoi-glacier",
+      "name": "Kolahoi Glacier Trek",
+      "destination_id": "pahalgam",
+      "difficulty": "hard",
+      "duration_days": 5,
+      "max_altitude_m": 3600,
+      "distance_km": 40,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "high",
+      "description": "Trek to Kashmir largest glacier from Pahalgam via Lidderwat.",
+      "description_len": 60,
+      "highlights": [
+        "Kashmir largest glacier",
+        "Lidderwat meadow camping",
+        "Pine forest trail"
+      ],
+      "warnings": [
+        "River crossings",
+        "Weather unpredictable",
+        "Remote",
+        "Permit may be needed"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Lidderwat",
+          "day": 1,
+          "from": "Aru",
+          "hours": 5,
+          "meals": "Breakfast at Srinagar. Lunch on trail. Dinner at camp",
+          "title": "Srinagar to Aru to Lidderwat",
+          "water": "Lidder river alongside trail. Stream at camp",
+          "terrain": "Forest trail along Lidder river",
+          "campsite": "Lidderwat",
+          "altitude_m": 2800,
+          "description": "Drive Srinagar to Aru (4hr). Trek along Lidder river through pine forest. Gentle climb to Lidderwat - a stunning meadow at river confluence. Classic Kashmir basecamp.",
+          "distance_km": 10,
+          "altitude_gain_m": 400
+        }
+      ],
+      "nearest_hospital": "PHC Aru area. District Hospital Pahalgam 12km. Serious cases: SKIMS Srinagar 95km.",
+      "network_coverage": "Jio/Airtel at Aru. Weak BSNL at Lidderwat. No signal from Satlanjan onwards. Zero coverage near glacier."
+    },
+    {
+      "id": "goecha-la-approach",
+      "name": "Goecha La Approach (Yuksom to Dzongri)",
+      "destination_id": "yuksom",
+      "difficulty": "moderate",
+      "duration_days": 4,
+      "max_altitude_m": 3680,
+      "distance_km": 28,
+      "best_months": [
+        3,
+        4,
+        5,
+        10,
+        11
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "intermediate",
+      "description": "A shorter, more accessible version of the legendary Goechala Trek, ending at Dzongri viewpoint (3680m) instead of pushing to the pass. Perfect for trekkers who want Kanchenjunga views and rhododendron forests without the extreme altitude and 10-day commitment. Dzongri Top offers a stunning 360-degree panorama of Sikkim's highest peaks.",
+      "description_len": 337,
+      "highlights": [
+        "Kanchenjunga views from Dzongri Top (4020m)",
+        "Rhododendron forests in spectacular spring bloom",
+        "Shorter 4-day version of the legendary Goechala trek",
+        "360-degree panorama from Dzongri viewpoint",
+        "Tshoka monastery camp",
+        "Accessible introduction to high-altitude Sikkim trekking"
+      ],
+      "warnings": [
+        "Altitude sickness possible at Dzongri (3680m)",
+        "No mobile network from Day 2 onwards",
+        "Permits required — allow 2 days processing in Yuksom",
+        "Weather can obscure views",
+        "Leeches in monsoon season below 2500m",
+        "Trail is shared with Goechala trekkers — can be busy in season"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Sachen",
+          "day": 1,
+          "from": "Yuksom",
+          "hours": 5,
+          "meals": "Packed lunch, camp dinner",
+          "title": "Yuksom to Sachen",
+          "water": "Multiple streams",
+          "terrain": "Forest trail through subtropical forest",
+          "campsite": "Sachen campsite",
+          "altitude_m": 2200,
+          "description": "Begin at Yuksom (1780m). Enter Kanchenjunga National Park and climb through dense forest.",
+          "distance_km": 8
+        }
+      ],
+      "nearest_hospital": "Namchi District Hospital — 110km from Yuksom, 5 hours. Yuksom has a basic health center.",
+      "network_coverage": "No network from Day 2. Jio/Airtel work in Yuksom only."
+    },
+    {
+      "id": "kedarkantha-trek",
+      "name": "Kedarkantha Winter Trek",
+      "destination_id": "uttarkashi",
+      "difficulty": "moderate",
+      "duration_days": 5,
+      "max_altitude_m": 3810,
+      "distance_km": 20,
+      "best_months": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "India most popular winter trek. Guaranteed snow.",
+      "description_len": 48,
+      "highlights": [
+        "Guaranteed snow Dec-Feb",
+        "Pine forest camping",
+        "360-degree summit view"
+      ],
+      "warnings": [
+        "Cold -10C nights",
+        "Snow gear essential",
+        "Slippery descents"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Sankri",
+          "day": 1,
+          "from": "Dehradun",
+          "hours": 0,
+          "meals": "Breakfast at Dehradun. Lunch enroute at Purola. Dinner at Sankri homestay",
+          "title": "Dehradun to Sankri",
+          "water": "Shops at Sankri",
+          "terrain": "Road journey",
+          "campsite": "Sankri village guesthouse",
+          "altitude_m": 1920,
+          "description": "Drive from Dehradun to Sankri (1920m) via Mussoorie, Purola, Mori. 10hr scenic drive through Govind National Park area. Register at forest office. Overnight at guesthouse.",
+          "distance_km": 0,
+          "altitude_gain_m": 0
+        }
+      ],
+      "nearest_hospital": "PHC Sankri 4km. CHC Purola 50km. Serious cases: District Hospital Uttarkashi 80km or Dehradun 200km.",
+      "network_coverage": "BSNL at Sankri (weak). Jio at Sankri (intermittent). No signal at Juda Ka Talab, base camp, or summit. Zero coverage on trail."
+    },
+    {
+      "id": "kumara-parvatha-trek",
+      "name": "Kumara Parvatha Trek",
+      "destination_id": "coorg",
+      "difficulty": "hard",
+      "duration_days": 3,
+      "max_altitude_m": 1712,
+      "distance_km": 22,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "high",
+      "description": "The toughest trek in Karnataka. Pushpagiri range through Kukke Subramanya to the summit. Steep, exposed, and breathtaking. Dense shola forests to open grasslands.",
+      "description_len": 162,
+      "highlights": [
+        "Karnataka's toughest trek",
+        "Sunrise from 1712m summit",
+        "Pushpagiri Wildlife Sanctuary",
+        "Dense shola-grassland transition"
+      ],
+      "warnings": [
+        "Extremely steep sections",
+        "No water after Bhattara Mane",
+        "Leeches in monsoon",
+        "No trail markers above treeline"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "PHC Kukke Subramanya 12km. Nearest hospital: Sullia 40km. Serious: Mangalore 100km.",
+      "network_coverage": "BSNL at Kukke Subramanya. Zero coverage on trek after Bhattara Mane."
+    },
+    {
+      "id": "nandi-hills-sunrise-trek",
+      "name": "Nandi Hills Sunrise Trek",
+      "destination_id": "nandi-hills",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1478,
+      "distance_km": 4,
+      "best_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        10,
+        11,
+        12
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "low",
+      "description": "Popular sunrise trek from the base of Nandi Hills. Stunning sunrise above clouds on winter mornings.",
+      "description_len": 100,
+      "highlights": [
+        "Sunrise above cloud layer",
+        "Ancient Tipu Sultan fort",
+        "Closest hill station to Bengaluru",
+        "Cycling possible"
+      ],
+      "warnings": [
+        "Extremely crowded weekends",
+        "Gate opens 5am",
+        "Cold winter mornings"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "PHC Nandi Hills. Nearest hospital: Chikkaballapur 12km.",
+      "network_coverage": "Full Jio/Airtel coverage."
+    },
+    {
+      "id": "srisailam-nallamala",
+      "name": "Srisailam Nallamala Forest Trek",
+      "destination_id": "srisailam",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 600,
+      "distance_km": 12,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Forest trek through Nallamala Hills near Srisailam.",
+      "description_len": 51,
+      "highlights": [
+        "Nallamala forest immersion",
+        "Krishna River viewpoints",
+        "Wildlife potential"
+      ],
+      "warnings": [
+        "Inform forest office before trekking",
+        "No solo trekking",
+        "Carry first-aid"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "deoria-tal-chandrashila",
+      "name": "Deoria Tal to Chandrashila",
+      "destination_id": "chopta",
+      "difficulty": "moderate",
+      "duration_days": 3,
+      "max_altitude_m": 4000,
+      "distance_km": 18,
+      "best_months": [
+        4,
+        5,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "Combine Deoria Tal reflection lake with Tungnath temple and Chandrashila summit.",
+      "description_len": 80,
+      "highlights": [
+        "Deoria Tal reflection",
+        "World highest Shiva temple",
+        "4000m summit"
+      ],
+      "warnings": [
+        "4000m at summit",
+        "Steep final ascent",
+        "Cold at altitude"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Deoria Tal",
+          "day": 1,
+          "from": "Sari",
+          "hours": 2,
+          "meals": "Lunch at Sari. Dinner at camp",
+          "title": "Sari Village to Deoria Tal",
+          "water": "Deoria Tal lake (purify). Seasonal stream near camp",
+          "terrain": "Steep forest trail with stone steps",
+          "campsite": "Deoria Tal",
+          "altitude_m": 2438,
+          "description": "Drive from Rishikesh/Ukhimath to Sari village (1920m). Short but steep climb through dense forest. Deoria Tal is a pristine emerald lake reflecting Chaukhamba peaks. Camp by the lake - one of the most photographed campsites in Uttarakhand.",
+          "distance_km": 3,
+          "altitude_gain_m": 500
+        }
+      ],
+      "nearest_hospital": "PHC Chopta (basic). CHC Ukhimath 25km. Serious cases: District Hospital Rudraprayag 60km.",
+      "network_coverage": "BSNL at Sari village. No signal at Deoria Tal or Rohini Bugyal. BSNL patchy at Chopta. Jio at Chopta only."
+    },
+    {
+      "id": "hampta-pass",
+      "name": "Hampta Pass Trek",
+      "destination_id": "manali",
+      "difficulty": "moderate",
+      "duration_days": 4,
+      "max_altitude_m": 4270,
+      "distance_km": 26,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Cross from green Kullu to barren Lahaul in 4 days. Classic intro to Himalayan trekking.",
+      "description_len": 87,
+      "highlights": [
+        "Green to desert shift",
+        "Hampta Pass 4270m",
+        "Chandratal add-on"
+      ],
+      "warnings": [
+        "River crossings monsoon",
+        "AMS at pass",
+        "Weather changes rapidly"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Chikka",
+          "day": 1,
+          "from": "Manali",
+          "hours": 5,
+          "meals": "Breakfast at Manali. Lunch on trail. Dinner at camp",
+          "title": "Manali to Jobra to Chikka",
+          "water": "Rani Nallah stream alongside trail. Stream at Chikka camp",
+          "terrain": "Forest trail along Rani Nallah stream",
+          "campsite": "Chikka",
+          "altitude_m": 3050,
+          "description": "Drive from Manali to Jobra (2700m, 30min). Trek starts along Rani Nallah through dense birch and maple forest. Gradual ascent through beautiful valley. Cross wooden bridge over stream. Reach Chikka campsite in a valley bowl.",
+          "distance_km": 8,
+          "altitude_gain_m": 500
+        }
+      ],
+      "nearest_hospital": "Civil Hospital Manali 15km from Jobra. On Lahaul side: PHC Chatru 5km from Shea Goru. Serious cases: Keylong Hospital 60km.",
+      "network_coverage": "Jio/Airtel at Jobra. No signal from Chikka onwards until Chatru. Chatru has weak BSNL. Zero coverage at pass."
+    },
+    {
+      "id": "kuari-pass",
+      "name": "Kuari Pass Trek",
+      "destination_id": "auli",
+      "difficulty": "moderate",
+      "duration_days": 5,
+      "max_altitude_m": 3876,
+      "distance_km": 26,
+      "best_months": [
+        4,
+        5,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Lord Curzon trail with Nanda Devi views throughout.",
+      "description_len": 51,
+      "highlights": [
+        "Nanda Devi panorama",
+        "Lord Curzon trail",
+        "Oak and rhodo forests"
+      ],
+      "warnings": [
+        "Altitude acclimatize",
+        "Cold nights",
+        "Muddy post-monsoon"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Gorson Bugyal",
+          "day": 1,
+          "from": "Auli",
+          "hours": 2,
+          "meals": "Lunch at Auli. Dinner at camp",
+          "title": "Auli to Gorson Bugyal",
+          "water": "Spring near Gorson camp",
+          "terrain": "Gentle meadow trail from Auli ski slopes",
+          "campsite": "Gorson Bugyal",
+          "altitude_m": 3056,
+          "description": "Reach Auli from Joshimath by ropeway or road. Short walk through Auli meadows to Gorson Bugyal. Stunning views of Nanda Devi, Dronagiri, Hathi Parvat. Easy acclimatization day.",
+          "distance_km": 3,
+          "altitude_gain_m": 300
+        }
+      ],
+      "nearest_hospital": "PHC Auli 5km. CHC Joshimath 10km. Serious cases: District Hospital Chamoli 60km.",
+      "network_coverage": "Jio/BSNL at Joshimath and Auli. Patchy at Gorson. No signal at Tali or Kuari Pass."
+    },
+    {
+      "id": "lambasingi-cloud-trek",
+      "name": "Lambasingi Cloud Forest Walk",
+      "destination_id": "lambasingi",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1100,
+      "distance_km": 6,
+      "best_months": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Walk through cloud-wrapped Eastern Ghats forest above Lambasingi.",
+      "description_len": 65,
+      "highlights": [
+        "Sub-zero temperatures",
+        "Frost-covered landscape",
+        "Cloud forest immersion"
+      ],
+      "warnings": [
+        "Sub-zero temperatures — carry heavy winter gear",
+        "No marked trails",
+        "No phone signal"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "bhongir-fort-climb",
+      "name": "Bhongir Fort Scramble",
+      "destination_id": "bhongir",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 500,
+      "distance_km": 2,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Scramble up the egg-shaped monolithic rock to the 10th-century fort summit.",
+      "description_len": 75,
+      "highlights": [
+        "Egg-shaped monolith geology",
+        "Panoramic Deccan views",
+        "Historical fort exploration"
+      ],
+      "warnings": [
+        "No safety railings at top",
+        "Slippery when wet",
+        "Start early — rock absorbs heat"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "ananthagiri-forest-trek",
+      "name": "Ananthagiri Hills Forest Trek",
+      "destination_id": "ananthagiri-hills",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 700,
+      "distance_km": 8,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Easy forest walk through deciduous forest above Vikarabad.",
+      "description_len": 58,
+      "highlights": [
+        "Vikarabad forest immersion",
+        "Ancient temple at summit",
+        "Birdwatching"
+      ],
+      "warnings": [
+        "Leeches in monsoon months",
+        "Carry water",
+        "Return by 4pm"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "horsley-hills-forest",
+      "name": "Horsley Hills Nature Walk",
+      "destination_id": "horsley-hills",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1265,
+      "distance_km": 5,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Gentle forest walk through eucalyptus and mahogany plantation forests.",
+      "description_len": 70,
+      "highlights": [
+        "Colonial forest plantation",
+        "Rayalaseema plains panorama",
+        "Birdwatching"
+      ],
+      "warnings": [
+        "Trail can be slippery in monsoon",
+        "Limited shade in open sections"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "indrahar-pass-trek",
+      "name": "Indrahar Pass Trek",
+      "destination_id": "dharamshala",
+      "difficulty": "moderate",
+      "duration_days": 3,
+      "max_altitude_m": 4342,
+      "distance_km": 24,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "high",
+      "description": "The crown jewel beyond Triund — Indrahar Pass at 4342m is the gateway from Kangra valley to Chamba. Standing at the pass, you see the lush green Kangra valley on one side and the stark, dramatic Chamba landscape on the other. The climb from Triund involves steep snow sections and requires good fitness, but the reward is one of the most dramatic pass crossings in Himachal.",
+      "description_len": 374,
+      "highlights": [
+        "Gateway pass between Kangra and Chamba valleys",
+        "Dramatic landscape change visible from the pass",
+        "Snow wall climb near the pass — thrilling",
+        "Dhauladhar range up close and personal",
+        "Far less crowded than nearby treks"
+      ],
+      "warnings": [
+        "Pass crossing requires good fitness and prior experience",
+        "Snow on approach even in September — crampons may be needed",
+        "AMS risk above 4000m — acclimatize at Lahesh Cave",
+        "Weather at pass is unpredictable — turn back if clouds build",
+        "Trail from Lahesh Cave to pass is steep and exposed",
+        "Guide essential — trail not marked above Lahesh Cave",
+        "Do NOT attempt in monsoon — extremely dangerous"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Triund",
+          "day": 1,
+          "from": "McLeodganj",
+          "hours": 5,
+          "meals": "Lunch at trail cafes. Dinner at Triund dhabas.",
+          "title": "McLeodganj to Triund",
+          "water": "Multiple chai shops on trail. Water at Triund camp.",
+          "terrain": "Well-marked forest trail. Rocky switchbacks in final section.",
+          "campsite": "Triund",
+          "altitude_m": 2875,
+          "description": "Standard Triund trek from Galu Devi Temple. Through oak and rhododendron forest with Dhauladhar views opening up. Camp at Triund — the launchpad for Indrahar Pass.",
+          "distance_km": 9
+        }
+      ],
+      "nearest_hospital": "Dharamshala Zonal Hospital — 10km from McLeodganj, 30 minutes by road",
+      "network_coverage": "Jio/Airtel work at Triund (weak). No signal at Lahesh Cave or pass. Completely off-grid above Triund."
+    },
+    {
+      "id": "kheerganga-trek",
+      "name": "Kheerganga Trek",
+      "destination_id": "kasol",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 2960,
+      "distance_km": 12,
+      "best_months": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Trek to natural hot springs at 2960m in Parvati Valley.",
+      "description_len": 55,
+      "highlights": [
+        "Natural hot springs",
+        "Forest trail",
+        "Camping under stars"
+      ],
+      "warnings": [
+        "Trail crowded",
+        "Leeches monsoon",
+        "Steep sections"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Kheerganga",
+          "day": 1,
+          "from": "Barshaini",
+          "hours": 5,
+          "meals": "Lunch at Nakthan village dhaba. Dinner at Kheerganga camps (Israeli/Indian food available)",
+          "title": "Barshaini to Kheerganga",
+          "water": "Parvati river and streams throughout. Carry 1L",
+          "terrain": "Forest trail with river crossings, some exposed sections",
+          "campsite": "Kheerganga",
+          "altitude_m": 2960,
+          "description": "Start from Barshaini (2100m). Cross Parvati river on bridge. Trail follows Parvati valley through dense forest. Pass Rudra Nag waterfall at midpoint. Final steep section through meadows to Kheerganga hot springs. Soak in natural hot water pools.",
+          "distance_km": 6,
+          "altitude_gain_m": 860
+        }
+      ],
+      "nearest_hospital": "PHC Jari 15km from Barshaini. Serious cases: Regional Hospital Kullu 50km.",
+      "network_coverage": "Jio at Barshaini. No signal on trail. Faint BSNL at Kheerganga. Airtel absent throughout."
+    },
+    {
+      "id": "rupin-pass",
+      "name": "Rupin Pass Trek",
+      "destination_id": "shimla",
+      "difficulty": "hard",
+      "duration_days": 7,
+      "max_altitude_m": 4650,
+      "distance_km": 52,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "high",
+      "description": "Cross from Shimla side to Kinnaur via 4650m pass with hanging glacier waterfall.",
+      "description_len": 80,
+      "highlights": [
+        "Hanging glacier at pass",
+        "Dramatic landscape shift",
+        "Village-to-village trail"
+      ],
+      "warnings": [
+        "4650m altitude",
+        "Technical snow sections",
+        "Remote no evacuation"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Dhaula",
+          "day": 1,
+          "from": "Rohru",
+          "hours": 0,
+          "meals": "Lunch enroute. Dinner at Dhaula homestay",
+          "title": "Shimla/Rohru to Dhaula",
+          "water": "Village water supply",
+          "terrain": "Road journey to trailhead",
+          "campsite": "Dhaula village homestay",
+          "altitude_m": 2100,
+          "description": "Drive from Shimla to Rohru (6hr) then to Dhaula village (2100m). Register and meet local guide. Stay at village homestay. Trek briefing.",
+          "distance_km": 0,
+          "altitude_gain_m": 0
+        }
+      ],
+      "nearest_hospital": "PHC Jiskun area (seasonal). CHC Rohru 50km (Shimla side). CHC Sangla 12km (Kinnaur side). Serious cases: IGMC Shimla 150km.",
+      "network_coverage": "BSNL at Dhaula and Sewa (weak). No signal from Jiskun to Ronti Gad. Jio/Airtel at Sangla. Zero coverage on pass."
+    },
+    {
+      "id": "rajmachi-fort-trek",
+      "name": "Rajmachi Fort Trek",
+      "destination_id": "lonavala",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 820,
+      "distance_km": 16,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Twin forts of Shrivardhan and Manaranjan perched on the Sahyadri ridge. The trek from Lonavala via Udhewadi passes through dense forest. Monsoon transforms the trail with waterfalls and greenery.",
+      "description_len": 195,
+      "highlights": [
+        "Twin Maratha forts with panoramic views",
+        "Waterfall trail in monsoon",
+        "Camping at Udhewadi village",
+        "Night trek popular with Mumbai/Pune trekkers"
+      ],
+      "warnings": [
+        "Leeches in monsoon",
+        "Path unclear in fog — use GPS",
+        "No water sources after Udhewadi",
+        "Last bus from Lonavala at 9pm"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "sar-pass-trek",
+      "name": "Sar Pass Trek",
+      "destination_id": "kasol",
+      "difficulty": "moderate",
+      "duration_days": 5,
+      "max_altitude_m": 4200,
+      "distance_km": 48,
+      "best_months": [
+        5,
+        6,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Cross the Sar Pass from Parvati Valley with snow corridors and pine forests.",
+      "description_len": 76,
+      "highlights": [
+        "Snow corridor crossing",
+        "Pine forest camping",
+        "Parvati Valley views"
+      ],
+      "warnings": [
+        "4200m altitude",
+        "Snow sections slippery",
+        "Leeches lower sections"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Grahan",
+          "day": 1,
+          "from": "Kasol",
+          "hours": 5,
+          "meals": "Breakfast at Kasol. Lunch on trail. Dinner at Grahan homestay",
+          "title": "Kasol to Grahan",
+          "water": "Parvati river at start. Streams on trail. Village tap water at Grahan",
+          "terrain": "Forest trail along river, then steep climb to village",
+          "campsite": "Grahan village homestay",
+          "altitude_m": 2500,
+          "description": "Start from Kasol bridge. Follow Parvati river briefly then climb steeply through pine and oak forest. Reach Grahan - a beautiful hamlet with wooden houses, temple, and apple orchards. Homestay in village.",
+          "distance_km": 8,
+          "altitude_gain_m": 700
+        }
+      ],
+      "nearest_hospital": "PHC Kasol 8km from Grahan. Regional Hospital Kullu 55km. Serious cases: Kullu hospital.",
+      "network_coverage": "Jio/Airtel at Kasol. Patchy BSNL at Grahan. No signal from Min Thatch onwards until Barshaini."
+    },
+    {
+      "id": "harishchandragad-trek",
+      "name": "Harishchandragad Trek (Konkan Kada)",
+      "destination_id": "igatpuri",
+      "difficulty": "hard",
+      "duration_days": 1,
+      "max_altitude_m": 1424,
+      "distance_km": 18,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "high",
+      "description": "One of Maharashtra's most dramatic treks. Konkan Kada is a concave cliff face overhanging a 1,400m vertical drop — standing at the edge is one of India's most thrilling experiences. Multiple routes: Pachnai (easiest), Nalichi Vaat (rock patch), Junnar Darwaza.",
+      "description_len": 260,
+      "highlights": [
+        "Konkan Kada — overhanging cliff with 1400m drop",
+        "Kedareshwar cave temple with Shiva linga surrounded by water",
+        "Saptatirtha Pushkarini (ancient rock-cut pool)",
+        "Taramati Peak summit"
+      ],
+      "warnings": [
+        "Konkan Kada edge has NO railing — fatal falls have occurred",
+        "Nalichi Vaat route requires rock climbing",
+        "Leeches in monsoon",
+        "No phone signal on most of the trek"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "maredumilli-eco-trek",
+      "name": "Maredumilli Waterfall Trek",
+      "destination_id": "maredumilli",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 500,
+      "distance_km": 10,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Tribal-guided trek through semi-evergreen forest to waterfalls.",
+      "description_len": 63,
+      "highlights": [
+        "Tribal guide storytelling",
+        "Two waterfall destinations",
+        "Semi-evergreen forest"
+      ],
+      "warnings": [
+        "Tribal guide mandatory",
+        "Leeches in monsoon",
+        "No phone signal"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "milam-glacier",
+      "name": "Milam Glacier Trek",
+      "destination_id": "munsiyari",
+      "difficulty": "hard",
+      "duration_days": 10,
+      "max_altitude_m": 3450,
+      "distance_km": 120,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "very high",
+      "description": "Multi-day trek to one of India largest glaciers. Inner Line Permit required.",
+      "description_len": 76,
+      "highlights": [
+        "One of India largest glaciers",
+        "Ancient trade route to Tibet",
+        "Johar Valley villages"
+      ],
+      "warnings": [
+        "120km total distance",
+        "Inner Line Permit",
+        "Very remote",
+        "10 days commitment"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Munsiyari",
+          "day": 1,
+          "from": "Kathgodam",
+          "hours": 0,
+          "meals": "Road dhabas. Dinner at Munsiyari",
+          "title": "Kathgodam to Munsiyari",
+          "water": "Town water supply",
+          "terrain": "Road journey",
+          "campsite": "Munsiyari guesthouse",
+          "altitude_m": 2290,
+          "description": "Train to Kathgodam, then drive to Munsiyari (10hr) via Almora and Birthi Falls. Munsiyari offers stunning Panchachuli range views. Rest and acclimatize. Register at ITBP checkpoint.",
+          "distance_km": 0,
+          "altitude_gain_m": 0
+        }
+      ],
+      "nearest_hospital": "PHC Munsiyari at start/end. Zero medical facilities between Lilam and Milam. Serious cases: District Hospital Pithoragarh 90km. Helicopter evacuation difficult in narrow valley.",
+      "network_coverage": "BSNL at Munsiyari (weak). No signal from Lilam to Milam (8 days). This is one of India's most remote treks. Satellite phone essential."
+    },
+    {
+      "id": "kalsubai-peak-trek",
+      "name": "Kalsubai Peak Trek",
+      "destination_id": "bhandardara",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1646,
+      "distance_km": 12,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "Maharashtra's highest peak at 1,646m. The trek from Bari village follows a well-marked trail with iron ladders on steep rock sections. The summit has a small temple and 360-degree views of the Sahyadri range and Arthur Lake.",
+      "description_len": 224,
+      "highlights": [
+        "Highest point in Maharashtra at 1,646m",
+        "Iron ladders on rock sections",
+        "Views of Bhandardara reservoir and Sahyadri range",
+        "Kalsubai temple at summit"
+      ],
+      "warnings": [
+        "Iron ladders can be slippery in rain",
+        "Not for those with vertigo",
+        "Start early (6am) to avoid afternoon clouds",
+        "Carry 3L water — no water sources on trail"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "gandhamardan-twin-temple",
+      "name": "Gandhamardan Hills Twin Temple Trek",
+      "destination_id": "nrusinghanath-harishankar",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 600,
+      "distance_km": 16,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "16km plateau walk connecting Nrusinghanath and Harishankar temples through Gandhamardan Hills. Buddhist ruins en route.",
+      "description_len": 119,
+      "highlights": [
+        "Twin temple connection",
+        "Buddhist university ruins",
+        "Ramayana Sanjeevani link",
+        "Forest walk",
+        "Herbal plants"
+      ],
+      "warnings": [
+        "Carry water and food for 16km",
+        "No facilities between temples",
+        "Forest area — wildlife awareness",
+        "Return before dark"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "satkosia-gorge-trail",
+      "name": "Satkosia Gorge Nature Trail",
+      "destination_id": "satkosia",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 200,
+      "distance_km": 6,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Guided nature trail along the rim of Satkosia gorge with views of the Mahanadi River below. Gharial spotting from viewpoints.",
+      "description_len": 125,
+      "highlights": [
+        "Gorge rim panoramas",
+        "Gharial spotting points",
+        "Mahanadi River views",
+        "Conservation briefing"
+      ],
+      "warnings": [
+        "Stay on trail — cliff edges",
+        "No solo trekking — guide required",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "daringbadi-forest-walk",
+      "name": "Daringbadi Pine Forest Walk",
+      "destination_id": "daringbadi",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 915,
+      "distance_km": 5,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Easy walk through Daringbadi pine forests and coffee gardens. Tribal village visits possible with guide.",
+      "description_len": 104,
+      "highlights": [
+        "Pine forest immersion",
+        "Coffee garden walk",
+        "Kutia Kondh village (with guide)",
+        "Waterfall detour"
+      ],
+      "warnings": [
+        "Leeches in monsoon",
+        "Guide recommended for tribal areas",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "ali-bedni-bugyal",
+      "name": "Ali Bedni Bugyal",
+      "destination_id": "auli",
+      "difficulty": "moderate",
+      "duration_days": 4,
+      "max_altitude_m": 3354,
+      "distance_km": 24,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "Trek to one of India largest alpine meadows — Bedni Bugyal at 3354m with Nanda Ghunti views.",
+      "description_len": 92,
+      "highlights": [
+        "Massive alpine meadow",
+        "Nanda Ghunti panorama",
+        "Campsite on bugyal"
+      ],
+      "warnings": [
+        "Altitude 3354m",
+        "Cold nights",
+        "Trail muddy monsoon"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Didna Village",
+          "day": 1,
+          "from": "Lohajung",
+          "hours": 4,
+          "meals": "Lunch at Lohajung. Dinner at Didna homestay (home-cooked Garhwali food)",
+          "title": "Lohajung to Didna Village",
+          "water": "Village tap water. Stream near Didna",
+          "terrain": "Village trail through terraced fields and forest",
+          "campsite": "Didna Village homestay",
+          "altitude_m": 2500,
+          "description": "Drive from Rishikesh to Lohajung (2250m, 10hr). Trek descends slightly then climbs through beautiful terraced villages. Didna is a small Garhwali village with homestays. Acclimatize here.",
+          "distance_km": 7,
+          "altitude_gain_m": 400
+        }
+      ],
+      "nearest_hospital": "PHC Wan Village 9km from Bedni. CHC Tharali 45km. Serious cases: District Hospital Chamoli 80km.",
+      "network_coverage": "BSNL at Lohajung and Didna (weak). Zero signal at Ali Bugyal and Bedni Bugyal. Jio/Airtel absent on trail."
+    },
+    {
+      "id": "beas-kund-trek",
+      "name": "Beas Kund Trek",
+      "destination_id": "manali",
+      "difficulty": "easy",
+      "duration_days": 3,
+      "max_altitude_m": 3700,
+      "distance_km": 14,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "low",
+      "description": "Easy trek to the glacial source of the Beas River near Manali.",
+      "description_len": 62,
+      "highlights": [
+        "Beas River source",
+        "Glacial lake at 3700m",
+        "Easy for beginners"
+      ],
+      "warnings": [
+        "Altitude at lake",
+        "Slippery near glacier",
+        "Weather changes fast"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Bakarthach",
+          "day": 1,
+          "from": "Solang Valley",
+          "hours": 3,
+          "meals": "Lunch packed from Manali. Dinner at camp",
+          "title": "Solang Valley to Bakarthach",
+          "water": "Multiple stream crossings. Beas river tributary alongside trail",
+          "terrain": "Gradual forest trail along Beas river tributary",
+          "campsite": "Bakarthach",
+          "altitude_m": 3050,
+          "description": "Drive from Manali to Solang Valley (2480m). Trek begins past the ropeway station. Gentle ascent through silver birch and pine forest. Cross small streams. Reach Bakarthach meadow by afternoon.",
+          "distance_km": 4,
+          "altitude_gain_m": 500
+        }
+      ],
+      "nearest_hospital": "Civil Hospital Manali 15km. Serious cases: Regional Hospital Kullu 55km.",
+      "network_coverage": "Jio/Airtel at Solang Valley. No signal beyond Solang. Zero coverage at Bakarthach and Beas Kund."
+    },
+    {
+      "id": "bhrigu-lake-trek",
+      "name": "Bhrigu Lake Trek",
+      "destination_id": "manali",
+      "difficulty": "moderate",
+      "duration_days": 3,
+      "max_altitude_m": 4300,
+      "distance_km": 22,
+      "best_months": [
+        5,
+        6,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Trek to a sacred glacial lake at 4300m near Manali.",
+      "description_len": 51,
+      "highlights": [
+        "Sacred glacial lake 4300m",
+        "360-degree views",
+        "Snow even in summer"
+      ],
+      "warnings": [
+        "4300m AMS risk",
+        "Steep final ascent",
+        "No trail markers above Gulaba"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Rola Kholi",
+          "day": 1,
+          "from": "Gulaba",
+          "hours": 4,
+          "meals": "Lunch packed from Manali. Dinner at camp",
+          "title": "Gulaba to Rola Kholi",
+          "water": "Stream at Rola Kholi campsite. Small streams on trail",
+          "terrain": "Grassy meadow trail with gradual ascent",
+          "campsite": "Rola Kholi",
+          "altitude_m": 3400,
+          "description": "Drive from Manali to Gulaba (2800m) on Rohtang road. Trek through lush green meadows dotted with wildflowers. Gradual climb with views of Pir Panjal range. Camp at Rola Kholi, a beautiful meadow beside a stream.",
+          "distance_km": 6,
+          "altitude_gain_m": 600
+        }
+      ],
+      "nearest_hospital": "Civil Hospital Manali 20km. Serious cases: Regional Hospital Kullu 60km.",
+      "network_coverage": "Jio at Gulaba (on Rohtang road). No signal at Rola Kholi or above. Zero coverage at Bhrigu Lake."
+    },
+    {
+      "id": "lohagad-fort-trek",
+      "name": "Lohagad Fort Trek",
+      "destination_id": "lonavala",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1058,
+      "distance_km": 6,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "low",
+      "description": "One of Maharashtra's most accessible fort treks. Well-paved steps lead to the top of Lohagad (Iron Fort), with panoramic views of Pawna Lake and the surrounding Sahyadri hills. Connected to Visapur Fort via a saddle.",
+      "description_len": 216,
+      "highlights": [
+        "Well-paved steps — accessible for beginners",
+        "Vinchukata (Scorpion's Tail) fortification",
+        "Pawna Lake views from the top",
+        "Connected to Visapur Fort — do both in a day"
+      ],
+      "warnings": [
+        "Steps slippery in monsoon",
+        "Monkeys at the entrance",
+        "Weekend crowds can be heavy",
+        "No food/water at the top"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "brahmatal-trek",
+      "name": "Brahmatal Winter Trek",
+      "destination_id": "auli",
+      "difficulty": "moderate",
+      "duration_days": 5,
+      "max_altitude_m": 3570,
+      "distance_km": 22,
+      "best_months": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Winter trek to two frozen lakes with Trishul views.",
+      "description_len": 51,
+      "highlights": [
+        "Two frozen alpine lakes",
+        "Trishul views",
+        "Guaranteed snow"
+      ],
+      "warnings": [
+        "Cold -15C",
+        "Snow gear needed",
+        "Limited rescue"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Bekaltal",
+          "day": 1,
+          "from": "Lohajung",
+          "hours": 4,
+          "meals": "Lunch at Lohajung. Dinner at camp",
+          "title": "Lohajung to Bekaltal",
+          "water": "Bekaltal lake (purify). Small stream near campsite",
+          "terrain": "Forest trail through oak and rhododendron",
+          "campsite": "Bekaltal",
+          "altitude_m": 2750,
+          "description": "Drive from Rishikesh to Lohajung (2250m, 10hr). Start trek through dense forest. Gentle climb with occasional clearings showing Trishul and Nanda Ghunti peaks. Reach Bekaltal - a serene forest lake, frozen in winter.",
+          "distance_km": 6,
+          "altitude_gain_m": 500
+        }
+      ],
+      "nearest_hospital": "PHC Wan Village 6km from Brahmatal. CHC Tharali 40km. Serious cases: District Hospital Chamoli 80km.",
+      "network_coverage": "BSNL at Lohajung (weak). No signal at Bekaltal, Brahmatal, or summit. Jio/Airtel absent. Zero coverage on entire trail."
+    },
+    {
+      "id": "chadar-trek",
+      "name": "Chadar Trek",
+      "destination_id": "zanskar",
+      "difficulty": "extreme",
+      "duration_days": 9,
+      "max_altitude_m": 3900,
+      "distance_km": 62,
+      "best_months": [
+        1,
+        2
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 18,
+      "fitness_level": "very high",
+      "description": "Walk on frozen Zanskar River for 62km over 9 days at -25C.",
+      "description_len": 58,
+      "highlights": [
+        "Frozen river walking",
+        "Canyon camping",
+        "Nerak frozen waterfall"
+      ],
+      "warnings": [
+        "-25C minimum",
+        "No evacuation",
+        "Ice can crack"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Leh",
+          "day": 1,
+          "from": "Leh",
+          "hours": 0,
+          "meals": "Light meals at Leh. Avoid heavy food",
+          "title": "Leh acclimatization",
+          "water": "Bottled water from shops",
+          "terrain": "Rest day",
+          "campsite": "Leh hotel",
+          "altitude_m": 3500,
+          "description": "Arrive in Leh. MANDATORY acclimatization day. Do not exert. Walk slowly. Drink 3-4L water. Visit Leh Palace or Shanti Stupa gently. Altitude sickness is the biggest risk on this trek.",
+          "distance_km": 0,
+          "altitude_gain_m": 0
+        }
+      ],
+      "nearest_hospital": "Zero medical facilities on entire route. Nearest: SNM Hospital Leh 3-6hr walk + drive. Helicopter evacuation extremely difficult in narrow gorge. Medical kit must be comprehensive. Operator should carry oxygen cylinder.",
+      "network_coverage": "Zero signal on entire chadar. No BSNL, no Jio, no Airtel from Chilling to Nerak and back (7-8 days). Satellite phone MANDATORY. Register your satellite phone IMEI with DoT India before trek."
+    },
+    {
+      "id": "sandakphu-phalut-trek",
+      "name": "Sandakphu-Phalut Trek",
+      "destination_id": "pelling",
+      "difficulty": "moderate",
+      "duration_days": 6,
+      "max_altitude_m": 3636,
+      "distance_km": 55,
+      "best_months": [
+        3,
+        4,
+        5,
+        10,
+        11,
+        12
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "intermediate",
+      "description": "The only place on earth where you can see four of the world's five highest peaks in a single panorama — Everest, Kanchenjunga, Lhotse, and Makalu. Walking along the India-Nepal border ridge through Singalila National Park, this trek rewards with the famous \"Sleeping Buddha\" silhouette formed by the Kanchenjunga range. Rhododendron forests explode in color during spring.",
+      "description_len": 372,
+      "highlights": [
+        "Only place to see 4 of world's 5 highest peaks simultaneously",
+        "Famous Sleeping Giant/Sleeping Buddha view of Kanchenjunga range",
+        "Spring rhododendron forests in spectacular bloom",
+        "Walk along India-Nepal border ridge",
+        "Sandakphu — highest point in West Bengal at 3636m",
+        "Phalut viewpoint with 360-degree Himalayan panorama"
+      ],
+      "warnings": [
+        "Altitude sickness possible above 3000m",
+        "Extremely cold at Sandakphu/Phalut in winter (below -10°C)",
+        "Land Rover tracks can be dusty — not a wilderness trail",
+        "Leeches in monsoon season",
+        "Limited medical facilities on trail",
+        "Weather can close views for days — allow buffer days"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Tumling",
+          "day": 1,
+          "from": "Manebhanjan",
+          "hours": 6,
+          "meals": "Tea house meals available",
+          "title": "Manebhanjan to Tumling",
+          "water": "Tea houses",
+          "terrain": "Forest trail with steep sections, jeep track",
+          "campsite": "Tumling lodge",
+          "altitude_m": 2970,
+          "description": "Start from Manebhanjan (2134m). Climb through Chitrey and dense forest. Cross into Singalila National Park. Tumling sits on the India-Nepal border.",
+          "distance_km": 11
+        }
+      ],
+      "nearest_hospital": "Darjeeling District Hospital — 60km from Manebhanjan, 3 hours. Basic first aid at Sandakphu.",
+      "network_coverage": "Patchy Airtel/Jio at Tumling and Sandakphu. No coverage between stops and at Phalut."
+    },
+    {
+      "id": "pachmarhi-bee-falls",
+      "name": "Pachmarhi Nature Trail",
+      "destination_id": "pachmarhi",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1100,
+      "distance_km": 6,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Forest walk through Satpura Hills to Bee Falls and Pandava Caves. MP only hill station.",
+      "description_len": 87,
+      "highlights": [
+        "Bee Falls swimming",
+        "Pandava Caves",
+        "Satpura forest",
+        "Viewpoints"
+      ],
+      "warnings": [
+        "Slippery near falls",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "great-himalayan-trail",
+      "name": "Great Himalayan Trail",
+      "destination_id": "leh",
+      "difficulty": "extreme",
+      "duration_days": 30,
+      "max_altitude_m": 5500,
+      "distance_km": 1700,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 21,
+      "fitness_level": "extreme",
+      "description": "Multi-section traverse of the entire Himalayan range across multiple states.",
+      "description_len": 76,
+      "highlights": [
+        "Entire Himalayan range",
+        "Multiple states",
+        "Months-long expedition"
+      ],
+      "warnings": [
+        "Months of commitment",
+        "Extreme altitude",
+        "Permit complexities",
+        "Life-threatening sections"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Munsiyari",
+          "day": 1,
+          "from": "Nainital",
+          "hours": 0,
+          "meals": "Road dhabas",
+          "title": "Nainital to Munsiyari (Kumaon Start)",
+          "water": "Town water",
+          "terrain": "Road journey to eastern starting point",
+          "campsite": "Munsiyari guesthouse",
+          "altitude_m": 2290,
+          "description": "Drive or take shared transport to Munsiyari (10-12hr). GHT Indian section typically starts from eastern Kumaon. Acclimatize. Register with local authorities. Meet guide team.",
+          "distance_km": 0,
+          "altitude_gain_m": 0
+        }
+      ],
+      "nearest_hospital": "Resupply towns have PHC/CHC: Munsiyari, Joshimath (best), Ghangaria (seasonal), Har Ki Dun area (Osla), Chitkul, Kasol, Manali. Between towns: zero medical facilities for 3-5 day stretches. Helicopter evacuation possible from meadows only. Comprehensive medical kit and trained first-aider in team mandatory.",
+      "network_coverage": "Signal at resupply towns only: Munsiyari (BSNL), Joshimath (all networks), Ghangaria (BSNL weak), Chitkul (BSNL), Kasol (Jio/Airtel), Manali (all). Zero signal for 3-7 day stretches between towns. Satellite phone MANDATORY for entire route."
+    },
+    {
+      "id": "great-lakes-kashmir",
+      "name": "Great Lakes of Kashmir",
+      "destination_id": "sonamarg",
+      "difficulty": "hard",
+      "duration_days": 7,
+      "max_altitude_m": 4100,
+      "distance_km": 70,
+      "best_months": [
+        7,
+        8,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "high",
+      "description": "Seven alpine lakes in 7 days — Kashmir most epic multi-day trek.",
+      "description_len": 64,
+      "highlights": [
+        "Seven different alpine lakes",
+        "Color changes between lakes",
+        "Kashmir wildflower meadows"
+      ],
+      "warnings": [
+        "Altitude 4100m max",
+        "Very remote",
+        "River crossings",
+        "Snow patches"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Nichnai",
+          "day": 1,
+          "from": "Sonamarg",
+          "hours": 6,
+          "meals": "Breakfast at Srinagar. Lunch on trail. Dinner at camp",
+          "title": "Srinagar to Sonamarg to Nichnai",
+          "water": "Streams every 1-2km. Nichnai stream at camp",
+          "terrain": "Well-trodden path through pine forest and meadows",
+          "campsite": "Nichnai",
+          "altitude_m": 3505,
+          "description": "Drive Srinagar to Sonamarg (80km, 3hr). Trek starts from Sonamarg. Gradual ascent through pine forest and alpine meadows. Nichnai is a beautiful camp in a meadow bowl surrounded by mountains.",
+          "distance_km": 11,
+          "altitude_gain_m": 700
+        }
+      ],
+      "nearest_hospital": "PHC Sonamarg (entry). PHC Naranag area (exit). Serious cases: SKIMS Srinagar 80km. Helicopter evacuation possible from open meadows.",
+      "network_coverage": "Jio/Airtel at Sonamarg. Zero signal from Nichnai to Naranag (6 days). Occasional BSNL blip at high passes. Satellite phone recommended."
+    },
+    {
+      "id": "david-scott-trail",
+      "name": "David Scott Trail",
+      "destination_id": "mawphlang",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1800,
+      "distance_km": 16,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "beginner",
+      "description": "A colonial-era horse trail built by David Scott, the first British administrator of the Khasi and Jaintia Hills, to connect Assam with Bangladesh (then Sylhet). This gentle 16km walk through pine and oak forests, past streams, and through traditional Khasi villages offers a window into Meghalaya's living cultural landscape. One of the most accessible and rewarding treks in Northeast India.",
+      "description_len": 392,
+      "highlights": [
+        "Colonial-era horse trail with historical significance",
+        "Pine and oak forests with moss-covered canopy",
+        "Crystal-clear streams with natural swimming spots",
+        "Traditional Khasi villages along the route",
+        "Views of rolling Khasi Hills",
+        "One of Northeast India's most accessible treks"
+      ],
+      "warnings": [
+        "Trail can be muddy and slippery in monsoon (Jun-Sep)",
+        "Limited shade in open sections — carry sun protection",
+        "No shops or eateries on trail — carry all food and water",
+        "Some stream crossings may be tricky after rain",
+        "Return transport from endpoint needs pre-arrangement",
+        "Leeches present in monsoon months"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Lad Mawphlang",
+          "day": 1,
+          "from": "Mawphlang Sacred Grove",
+          "hours": 6,
+          "meals": "Carry packed lunch and snacks",
+          "title": "Mawphlang to Lad Mawphlang",
+          "water": "Multiple streams — purify before drinking",
+          "terrain": "Gentle forest trail, some stream crossings, grassland sections",
+          "campsite": "None — day trek",
+          "altitude_m": 1800,
+          "description": "Start near Mawphlang Sacred Grove. The trail follows the old horse path through pine forests, crossing several streams. Pass through open grasslands with views of the Khasi Hills. Enter oak forest sections draped in moss. Cross through small Khasi hamlets. End at Lad Mawphlang village where pre-arranged transport waits.",
+          "distance_km": 16
+        }
+      ],
+      "nearest_hospital": "Shillong Civil Hospital — 25km from Mawphlang, 1 hour by road.",
+      "network_coverage": "Airtel and Jio work at Mawphlang. Patchy coverage mid-trail. Signal returns at Lad Mawphlang."
+    },
+    {
+      "id": "chandrashila-summit",
+      "name": "Chandrashila Summit",
+      "destination_id": "chopta",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 4000,
+      "distance_km": 5,
+      "best_months": [
+        4,
+        5,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Easiest 4000m summit in India. 360-degree Himalayan panorama.",
+      "description_len": 61,
+      "highlights": [
+        "360-degree panorama",
+        "World highest Shiva temple",
+        "Paved trail to Tungnath"
+      ],
+      "warnings": [
+        "4000m AMS risk",
+        "Last 1.5km steep",
+        "Cold and windy"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Chandrashila Summit",
+          "day": 1,
+          "from": "Chopta",
+          "hours": 5,
+          "meals": "Breakfast at Chopta dhaba. Carry packed lunch. Prasad at Tungnath temple. Dinner at Chopta",
+          "title": "Chopta to Chandrashila Summit",
+          "water": "Carry 2L from Chopta. Small shop at Tungnath (seasonal). No water on summit ridge",
+          "terrain": "Stone steps to Tungnath, then rocky scramble to summit",
+          "campsite": "None - day trek, return to Chopta",
+          "altitude_m": 4000,
+          "description": "Start early from Chopta (3000m). Well-paved stone path to Tungnath temple (3680m, highest Shiva temple). From Tungnath, steep rocky ridge trail to Chandrashila summit. 360-degree panorama of Nanda Devi, Trishul, Kedarnath, Chaukhamba, Bandarpunch. Return same day to Chopta.",
+          "distance_km": 5,
+          "altitude_gain_m": 1000
+        }
+      ],
+      "nearest_hospital": "PHC Chopta 0km (basic). CHC Ukhimath 25km. Serious cases: District Hospital Rudraprayag 60km.",
+      "network_coverage": "BSNL works at Chopta. Jio patchy. No signal at Tungnath or summit. Airtel at Chopta only."
+    },
+    {
+      "id": "deomali-summit",
+      "name": "Deomali Peak Summit Trek",
+      "destination_id": "deomali",
+      "difficulty": "hard",
+      "duration_days": 1,
+      "max_altitude_m": 1672,
+      "distance_km": 12,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "high",
+      "description": "Trek to Odisha's highest point at 1,672m through Eastern Ghats tribal country. Paved road halfway, final section is steep climbing.",
+      "description_len": 131,
+      "highlights": [
+        "Odisha's highest point",
+        "Panoramic Eastern Ghats views",
+        "Dongria Kondh tribal villages",
+        "Summit sunrise"
+      ],
+      "warnings": [
+        "No phone signal",
+        "No facilities at peak",
+        "Carry 3L water",
+        "Start by 6am",
+        "Inform someone of plans"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "khaliya-top-trek",
+      "name": "Khaliya Top Trek",
+      "destination_id": "munsiyari",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 3500,
+      "distance_km": 10,
+      "best_months": [
+        4,
+        5,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "Day trek to Panchachuli viewpoint from Munsiyari.",
+      "description_len": 49,
+      "highlights": [
+        "Panchachuli at eye level",
+        "Alpine meadow",
+        "Wildflowers in season"
+      ],
+      "warnings": [
+        "3500m altitude",
+        "10km return",
+        "Can be strenuous"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Khaliya Top",
+          "day": 1,
+          "from": "Munsiyari",
+          "hours": 5,
+          "meals": "Breakfast at Munsiyari. Carry packed lunch. Dinner at Munsiyari",
+          "title": "Munsiyari to Khaliya Top and return",
+          "water": "Forest spring at 2km. No water above treeline - carry 2L",
+          "terrain": "Forest trail through rhododendron and oak, final stretch through alpine meadow",
+          "campsite": "None - return to Munsiyari (can camp at Khaliya meadow)",
+          "altitude_m": 3500,
+          "description": "Start from Munsiyari (2700m). Trail begins near KMVN guesthouse. Climb through dense rhododendron forest (spectacular in March-April with red blooms). Above treeline, open bugyals (meadows) with 180-degree Panchachuli range view. Summit offers views of Nanda Devi East, Rajrambha, Hardeol.",
+          "distance_km": 5,
+          "altitude_gain_m": 800
+        }
+      ],
+      "nearest_hospital": "PHC Munsiyari 0km. Serious cases: District Hospital Pithoragarh 90km (4hr drive).",
+      "network_coverage": "BSNL at Munsiyari town. Jio patchy. No signal on trail or at Khaliya Top. Airtel absent."
+    },
+    {
+      "id": "nag-tibba-trek",
+      "name": "Nag Tibba Trek",
+      "destination_id": "mussoorie",
+      "difficulty": "easy",
+      "duration_days": 2,
+      "max_altitude_m": 3022,
+      "distance_km": 18,
+      "best_months": [
+        3,
+        4,
+        5,
+        10,
+        11,
+        12
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "low",
+      "description": "Highest peak in lower Garhwal — easy weekend trek from Delhi.",
+      "description_len": 61,
+      "highlights": [
+        "Highest in lower Garhwal",
+        "Weekend doable from Delhi",
+        "Snow in winter"
+      ],
+      "warnings": [
+        "Cold at summit",
+        "Basic camping",
+        "Route finding tricky in fog"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Nag Tibba Base Camp",
+          "day": 1,
+          "from": "Pantwari village",
+          "hours": 4,
+          "meals": "Lunch at Pantwari dhaba. Dinner at camp (guide provides or self-cook)",
+          "title": "Pantwari to Nag Tibba Base Camp",
+          "water": "Stream crossing at 2km mark. Seasonal spring near base camp",
+          "terrain": "Moderate forest trail through oak and deodar",
+          "campsite": "Nag Tibba Base Camp",
+          "altitude_m": 2600,
+          "description": "Drive from Dehradun/Mussoorie to Pantwari village (1900m). Register at forest checkpoint. Trail winds through dense forest with gradual ascent. Reach base camp clearing by afternoon. Set up camp with Himalayan views.",
+          "distance_km": 7,
+          "altitude_gain_m": 700
+        }
+      ],
+      "nearest_hospital": "PHC Nainbagh 15km. CHC Mussoorie 30km. Serious cases: Doon Hospital Dehradun 60km.",
+      "network_coverage": "Jio/Airtel at Pantwari village. No signal at base camp or summit. BSNL very patchy throughout."
+    },
+    {
+      "id": "sinhagad-fort-trek",
+      "name": "Sinhagad Fort Trek",
+      "destination_id": "pune",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1312,
+      "distance_km": 8,
+      "best_months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "low",
+      "description": "Pune's most beloved trek. Sinhagad (Lion Fort) is where Tanaji Malusare scaled the cliff face with a monitor lizard to recapture it for Shivaji — \"Gad aala pan Sinha gela\" (the fort is won but the lion is lost). The monsoon trek from the base is stunning.",
+      "description_len": 255,
+      "highlights": [
+        "Tanaji memorial and historical significance",
+        "Valley views and Pune cityscape",
+        "Famous Sinhagad pithla-bhakri at top",
+        "Easy monsoon trek with waterfall crossings"
+      ],
+      "warnings": [
+        "Extremely crowded on weekends",
+        "Road to top closed in heavy monsoon — trek only",
+        "Slippery basalt steps in rain",
+        "Parking lot fills by 8am on weekends"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "valley-of-flowers-trek",
+      "name": "Valley of Flowers Trek",
+      "destination_id": "valley-of-flowers",
+      "difficulty": "moderate",
+      "duration_days": 4,
+      "max_altitude_m": 3658,
+      "distance_km": 26,
+      "best_months": [
+        7,
+        8
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "Trek to UNESCO valley with 500+ wildflower species.",
+      "description_len": 51,
+      "highlights": [
+        "500+ wildflower species",
+        "UNESCO World Heritage",
+        "Blue poppy sighting"
+      ],
+      "warnings": [
+        "13km trek each way",
+        "Monsoon leeches",
+        "Rain every day"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Ghangaria",
+          "day": 1,
+          "from": "Govindghat",
+          "hours": 6,
+          "meals": "Breakfast at Govindghat. Lunch at Bhyundar midway. Dinner at Ghangaria hotel",
+          "title": "Govindghat to Ghangaria",
+          "water": "Multiple streams and chai shops along route. River alongside",
+          "terrain": "Paved path along Lakshman Ganga river, mule track available",
+          "campsite": "Ghangaria guesthouse/hotel",
+          "altitude_m": 3049,
+          "description": "Start from Govindghat (1828m) on Joshimath-Badrinath road. Well-maintained paved/stone path along Lakshman Ganga river. Steady climb through gorge. Helicopter option available (Rs 3500). Ghangaria is base for both Valley of Flowers and Hemkund Sahib.",
+          "distance_km": 13,
+          "altitude_gain_m": 1100
+        }
+      ],
+      "nearest_hospital": "Medical post at Ghangaria (basic, seasonal). PHC Govindghat. Serious cases: District Hospital Chamoli 60km or Joshimath CHC 25km.",
+      "network_coverage": "BSNL at Ghangaria (intermittent). Jio weak. No signal inside Valley of Flowers. Airtel absent. Best coverage at Govindghat."
+    },
+    {
+      "id": "roopkund-trek",
+      "name": "Roopkund Mystery Lake",
+      "destination_id": "roopkund",
+      "difficulty": "hard",
+      "duration_days": 7,
+      "max_altitude_m": 4800,
+      "distance_km": 53,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "high",
+      "description": "Trek to the mysterious skeleton lake at 4800m — hundreds of human skeletons visible when snow melts.",
+      "description_len": 100,
+      "highlights": [
+        "Mystery skeleton lake",
+        "4800m altitude",
+        "Ali Bugyal meadow"
+      ],
+      "warnings": [
+        "Permit required since 2020",
+        "Very high altitude",
+        "Weather unpredictable"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Bedni Bugyal",
+          "day": 1,
+          "from": "Lohajung",
+          "hours": 7,
+          "meals": "Lunch at Lohajung. Dinner at camp",
+          "title": "Lohajung to Wan Village to Bedni Bugyal",
+          "water": "Village water at Wan. Forest streams. Bedni Kund lake (purify)",
+          "terrain": "Village trail then steep forest climb to alpine meadow",
+          "campsite": "Bedni Bugyal",
+          "altitude_m": 3354,
+          "description": "Drive from Rishikesh to Lohajung (10hr). Trek to Wan village then steep climb through forest to Bedni Bugyal. Vast alpine meadow with Bedni Kund (sacred lake). Acclimatize at this stunning campsite.",
+          "distance_km": 10,
+          "altitude_gain_m": 1100
+        }
+      ],
+      "nearest_hospital": "PHC Wan Village. CHC Tharali 45km. Serious cases: District Hospital Chamoli 80km. Helicopter evacuation possible from Bedni Bugyal.",
+      "network_coverage": "BSNL weak at Lohajung. Zero signal from Wan village onwards. No coverage at any campsite or Roopkund. Satellite phone recommended for emergencies."
+    },
+    {
+      "id": "torna-fort-trek",
+      "name": "Torna Fort Trek",
+      "destination_id": "pune",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1404,
+      "distance_km": 10,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Shivaji's first fort — he captured Torna at age 16 in 1643, beginning the Maratha Empire. The highest fort in the Pune district at 1,404m. The trek from Velhe village is steep but rewarding with views of Rajgad and the surrounding Sahyadri.",
+      "description_len": 240,
+      "highlights": [
+        "Shivaji's first conquest at age 16",
+        "Highest fort in Pune district",
+        "Massive Menghai Goddess temple inside",
+        "Views of Rajgad Fort across the valley"
+      ],
+      "warnings": [
+        "Steep final ascent",
+        "No water at the top",
+        "Leeches in monsoon",
+        "Carry headlamp if starting late"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "bijli-mahadev-trek",
+      "name": "Bijli Mahadev Trek",
+      "destination_id": "kullu",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2460,
+      "distance_km": 6,
+      "best_months": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "beginner",
+      "description": "A short but rewarding trek to one of Himachal's most dramatic temples — Bijli Mahadev — where lightning strikes the Shiva lingam and the priest reassembles it with butter. The panoramic ridge walk offers jaw-dropping views of Kullu, Parvati, and Garsa valleys with the Beas River snaking below.",
+      "description_len": 294,
+      "highlights": [
+        "Lightning-struck Shiva lingam reassembled with butter",
+        "360-degree views of Kullu, Parvati and Garsa valleys",
+        "One of the easiest ridge treks in Himachal",
+        "Ancient temple at 2460m with fascinating legend",
+        "Beas River valley panorama at sunset"
+      ],
+      "warnings": [
+        "Trail is exposed — avoid during thunderstorms",
+        "No water source on the trail — carry from base",
+        "Last section is steep stone steps",
+        "Monkeys near the temple can snatch food",
+        "Return before dark — trail not marked for night hiking"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Bijli Mahadev Temple",
+          "day": 1,
+          "from": "Chansari Village",
+          "hours": 3,
+          "meals": "Carry packed lunch. Small shop at Chansari for biscuits and water.",
+          "title": "Chansari Village to Bijli Mahadev Temple",
+          "water": "No water on trail. Carry 1.5L from Chansari.",
+          "terrain": "Paved road for first 1km then stone steps and dirt trail along ridge. Final approach is steep stone steps.",
+          "campsite": "None — day trek",
+          "altitude_m": 2460,
+          "description": "Drive from Kullu to Chansari village (25km, 45min). The trek begins at the road end. First section follows a gentle incline through apple orchards and deodar forest. After 2km the trail opens onto a grassy ridge with stunning valley views. Final 500m is a steep climb up stone steps to the temple. Spend time at the temple, enjoy the views, and return the same way.",
+          "distance_km": 6
+        }
+      ],
+      "nearest_hospital": "Regional Hospital Kullu — 25km from Chansari, 45 minutes by road",
+      "network_coverage": "Jio and Airtel work at temple top. BSNL intermittent. Good signal at Chansari."
+    },
+    {
+      "id": "chandra-tal-trek",
+      "name": "Chandra Tal Lake Trek",
+      "destination_id": "spiti-valley",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 4300,
+      "distance_km": 4,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "The crescent-shaped Moon Lake of Spiti sits at 4300m surrounded by stark brown mountains that reflect perfectly in its turquoise waters. While reachable by a short 2km walk from the parking lot, the altitude makes it deceptively challenging. One of the most photogenic high-altitude lakes in India — every angle is a postcard.",
+      "description_len": 326,
+      "highlights": [
+        "Crescent-shaped turquoise lake at 4300m",
+        "Perfect mountain reflections in still morning water",
+        "Stark Spiti landscape — feels like another planet",
+        "One of India's highest accessible lakes",
+        "Stargazing at campsite is extraordinary — zero light pollution"
+      ],
+      "warnings": [
+        "High altitude — acclimatize in Kaza for 2 days minimum before visiting",
+        "AMS risk is real even for a short walk — descend immediately if headache/nausea",
+        "Road to parking lot is rough and only open June-September",
+        "Camping rules are strict — designated spots only, no littering",
+        "Weather changes rapidly — carry warm layers even in summer",
+        "No medical help nearby — nearest hospital is Kaza 70km away"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Chandra Tal Lake",
+          "day": 1,
+          "from": "Chandra Tal Parking Lot",
+          "hours": 3,
+          "meals": "All meals self-arranged or through camping operators who set up parachute tents with kitchen.",
+          "title": "Chandra Tal Parking to Lake and Return",
+          "water": "Stream near campsite. Lake water is clean but purify to be safe. Carry 2L.",
+          "terrain": "Flat to gently undulating trail across marshy ground and rocky moraine. Boardwalks installed in marshy sections.",
+          "campsite": "Chandra Tal Campsite",
+          "altitude_m": 4300,
+          "description": "Drive from Kaza to Batal (65km, 3hrs on rough road) then to Chandra Tal parking (14km further, 1hr). The walk from parking to lake is 2km on a well-marked trail. Cross marshy sections on boardwalks, then rocky moraine before the lake appears. Spend time at the lake — mornings offer mirror reflections. Return same route. Camping overnight at designated campsite 2km before lake.",
+          "distance_km": 4
+        }
+      ],
+      "nearest_hospital": "Community Health Center Kaza — 70km, 3 hours by road. For serious cases, Rampur Hospital 200km.",
+      "network_coverage": "No mobile network at Chandra Tal. BSNL occasionally works at Batal. Kaza has BSNL coverage."
+    },
+    {
+      "id": "har-ki-dun-trek",
+      "name": "Har Ki Dun Trek",
+      "destination_id": "uttarkashi",
+      "difficulty": "moderate",
+      "duration_days": 4,
+      "max_altitude_m": 3566,
+      "distance_km": 47,
+      "best_months": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "permits_required": true,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "A cradle-shaped valley at the foot of Swargarohini peak — the mountain where the Pandavas are believed to have ascended to heaven. Har Ki Dun is one of the few treks that combines ancient mythology, stunning alpine meadows, and living Himalayan culture in villages that still follow traditions dating back centuries. The trail passes through gorgeous forests and traditional Himalayan hamlets.",
+      "description_len": 393,
+      "highlights": [
+        "Swargarohini peak views — mythological ascent of Pandavas",
+        "Ancient timber villages of Osla and Seema with pagoda temples",
+        "Vast alpine meadows carpeted in wildflowers (May-June)",
+        "Rich wildlife — Himalayan monal, musk deer sightings possible",
+        "One of the best moderate treks accessible to families"
+      ],
+      "warnings": [
+        "Inner Line Permit required from Uttarkashi DM office",
+        "Stream crossings can be tricky after rain — use trekking poles",
+        "Bears have been sighted — make noise on trail",
+        "Osla village has strict cultural norms — dress respectfully at temple",
+        "Weather changes fast in valley — carry rain gear always",
+        "Mobile network dies after Sankri"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Taluka",
+          "day": 1,
+          "from": "Sankri",
+          "hours": 5,
+          "meals": "Lunch packed from Sankri. Dinner at homestay or campsite.",
+          "title": "Sankri to Taluka",
+          "water": "Supin river accessible throughout. Streams at regular intervals.",
+          "terrain": "Gentle trail through pine forest along Supin river. Some road walking initially.",
+          "campsite": "Taluka Campsite",
+          "altitude_m": 2200,
+          "description": "Start from Sankri village. Follow the Supin river valley through mixed pine and oak forest. The trail is mostly flat with gentle undulations. Pass through small hamlets. Taluka is a small village with homestays and camping ground.",
+          "distance_km": 12
+        }
+      ],
+      "nearest_hospital": "District Hospital Uttarkashi — 95km from Sankri, 4 hours by road",
+      "network_coverage": "BSNL works in Sankri. No network after Taluka. Satellite phone recommended for emergencies."
+    },
+    {
+      "id": "bhimbetka-heritage-walk",
+      "name": "Bhimbetka Rock Shelter Walk",
+      "destination_id": "bhimbetka",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 600,
+      "distance_km": 3,
+      "best_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Walk through UNESCO rock shelters with 30,000-year-old cave paintings.",
+      "description_len": 70,
+      "highlights": [
+        "30,000-year-old paintings",
+        "UNESCO site",
+        "Forest setting",
+        "Archaeological history"
+      ],
+      "warnings": [
+        "No touching paintings",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "mount-harriet-trail",
+      "name": "Mount Harriet Trail",
+      "destination_id": "port-blair",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 365,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": null,
+      "description_len": 0,
+      "highlights": [],
+      "warnings": [],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "saddle-peak-trek",
+      "name": "Saddle Peak Trek",
+      "destination_id": "diglipur",
+      "difficulty": "hard",
+      "duration_days": 1,
+      "max_altitude_m": 732,
+      "distance_km": 6,
+      "best_months": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "high",
+      "description": null,
+      "description_len": 0,
+      "highlights": [],
+      "warnings": [],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "madhuban-trek",
+      "name": "Madhuban Trek",
+      "destination_id": "port-blair",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 200,
+      "distance_km": 12,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": null,
+      "description_len": 0,
+      "highlights": [],
+      "warnings": [],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "prashar-lake-trek",
+      "name": "Prashar Lake Trek",
+      "destination_id": "prashar-lake",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2730,
+      "distance_km": 9,
+      "best_months": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "beginner",
+      "description": "A serene alpine lake at 2730m with a floating island and ancient pagoda-style temple dedicated to Sage Prashar. The trail winds through cedar forests with panoramic views of Dhauladhar and Pir Panjal ranges. Perfect weekend trek from Delhi or Chandigarh — doable as a day hike or overnight camp.",
+      "description_len": 295,
+      "highlights": [
+        "Floating island in the lake that moves position",
+        "Ancient three-storey pagoda temple",
+        "360-degree Dhauladhar and Pir Panjal views",
+        "Cedar and oak forests with wildflowers in spring",
+        "Night camping by the lake under stars"
+      ],
+      "warnings": [
+        "Road to Baggi village can be rough in monsoon",
+        "Lake edge is slippery — stay on marked paths",
+        "No food stalls after Baggi — carry your own",
+        "Temperatures drop sharply after sunset even in summer",
+        "Mobile network is patchy — inform someone before starting"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Prashar Lake",
+          "day": 1,
+          "from": "Baggi Village",
+          "hours": 5,
+          "meals": "Carry packed lunch and snacks. Tea available at temple sometimes. Dinner self-cooked if camping.",
+          "title": "Baggi Village to Prashar Lake and Return",
+          "water": "Stream crossings on trail. Lake water needs purification. Carry 2L.",
+          "terrain": "Well-defined trail through dense cedar forest, moderate incline for first 3km then gradual",
+          "campsite": "Prashar Lake",
+          "altitude_m": 2730,
+          "description": "Drive from Mandi to Baggi village (35km, 1.5hrs). Trail starts at the end of the motorable road. Initial section through terraced fields, then enters dense cedar forest. Steady climb with occasional views of Beas valley. Temple and lake appear suddenly after final ridge. Explore the temple, circumambulate the lake, and return same route. Camping overnight possible near the lake.",
+          "distance_km": 9
+        }
+      ],
+      "nearest_hospital": "Zonal Hospital Mandi — 35km from Baggi village, 1.5 hours by road",
+      "network_coverage": "BSNL weak at lake. Jio/Airtel available till Baggi village. No reliable signal at campsite."
+    },
+    {
+      "id": "living-root-bridge-trek",
+      "name": "Living Root Bridge Trek (Nongriat)",
+      "destination_id": "nongriat",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1200,
+      "distance_km": 7,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "intermediate",
+      "description": "Descend 3500 hand-carved stone steps into a lush subtropical canyon to reach Nongriat village and its legendary Double Decker Living Root Bridge — a UNESCO-nominated marvel grown over centuries by the Khasi people from the aerial roots of rubber fig trees. The natural swimming pool below the bridge is a perfect reward. One of the most unique treks on the planet.",
+      "description_len": 364,
+      "highlights": [
+        "Double Decker Living Root Bridge — centuries-old living architecture",
+        "3500 stone steps carved into the hillside",
+        "Natural swimming pool with crystal-clear water",
+        "Single-root bridge nearby",
+        "Lush subtropical canyon with betel nut and areca palms",
+        "Khasi tribal village experience"
+      ],
+      "warnings": [
+        "3500 steps down means 3500 steps back UP — the ascent is demanding",
+        "Steps are slippery when wet — grip shoes essential",
+        "Very hot and humid in the canyon — carry 3L water",
+        "No medical facilities in Nongriat",
+        "The ascent back takes significantly longer than descent",
+        "Monsoon months make steps dangerously slippery"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Nongriat Double Decker Root Bridge",
+          "day": 1,
+          "from": "Tyrna Village",
+          "hours": 6,
+          "meals": "Basic meals available in Nongriat village",
+          "title": "Tyrna to Nongriat and back",
+          "water": "Streams in canyon, carry 3L from Tyrna",
+          "terrain": "3500 stone steps descent into canyon, same route return. Steep and demanding on return.",
+          "campsite": "None for day trek. Homestays available if staying overnight.",
+          "altitude_m": 1200,
+          "description": "Start from Tyrna village (1200m). Begin descending the famous 3500 steps through subtropical vegetation. Cross steel wire bridges over rushing streams. Reach Nongriat village and the Double Decker Living Root Bridge. Explore the natural swimming pool. Visit the nearby single root bridge. Begin the grueling ascent back to Tyrna.",
+          "distance_km": 7
+        }
+      ],
+      "nearest_hospital": "Cherrapunji CHC — 12km from Tyrna, 30 minutes by road. Shillong Civil Hospital — 80km, 3 hours.",
+      "network_coverage": "Jio works at Tyrna. No coverage in the canyon/Nongriat. Signal returns on ascent."
+    },
+    {
+      "id": "ratangad-fort-trek",
+      "name": "Ratangad Fort Trek",
+      "destination_id": "bhandardara",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1297,
+      "distance_km": 10,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "A Sahyadri fort with a natural rock window (Nedhe — the eye of the needle) that frames the surrounding hills perfectly. The trek from Ratanwadi village passes Amruteshwar temple (12th century Hemadpanthi architecture) and climbs through forest to the fort.",
+      "description_len": 256,
+      "highlights": [
+        "Nedhe — natural rock window with framed Sahyadri views",
+        "Amruteshwar Temple (12th century)",
+        "Views of Bhandardara lake and Kalsubai",
+        "Rock patch near summit — thrilling scramble"
+      ],
+      "warnings": [
+        "Rock patch requires scrambling — not for beginners",
+        "Leeches in monsoon",
+        "No water at the fort",
+        "Trail unclear in fog"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "visapur-fort-trek",
+      "name": "Visapur Fort Trek",
+      "destination_id": "lonavala",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1084,
+      "distance_km": 8,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "Larger and less crowded than neighbouring Lohagad. Visapur Fort has ruins of old buildings, cannon placements, and a waterfall inside the fort during monsoon. Connected to Lohagad via a saddle — do both in a day for the full experience.",
+      "description_len": 236,
+      "highlights": [
+        "Waterfall inside the fort (monsoon)",
+        "Less crowded than Lohagad",
+        "Larger fort area to explore",
+        "Connected to Lohagad for double fort trek"
+      ],
+      "warnings": [
+        "Steeper approach than Lohagad",
+        "Path less maintained",
+        "Slippery in monsoon",
+        "Carry water — none available"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "laka-glacier-trek",
+      "name": "Laka Glacier Trek",
+      "destination_id": "dharamshala",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 3200,
+      "distance_km": 16,
+      "best_months": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "A lesser-known extension beyond Triund that takes you into the raw Dhauladhar range. Laka Glacier sits in a dramatic amphitheater of rock and ice at 3200m, with massive boulders, moraines, and a seasonal glacial lake. Far fewer trekkers make it here compared to Triund, giving it a wild, remote feel just hours from McLeodganj.",
+      "description_len": 327,
+      "highlights": [
+        "Dramatic glacial amphitheater beyond Triund",
+        "Far fewer crowds than Triund — raw wilderness",
+        "Massive boulder fields and moraines",
+        "Seasonal glacial melt lake",
+        "Close-up views of Dhauladhar rock faces"
+      ],
+      "warnings": [
+        "Trail beyond Triund is unmarked — easy to get lost",
+        "Boulder field requires careful navigation",
+        "Weather deteriorates fast at glacier — morning visits only",
+        "No camping infrastructure at glacier — camp at Laka Got",
+        "Snow and ice patches even in summer near glacier",
+        "Not a good trek in monsoon — rockfall risk"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Laka Got",
+          "day": 1,
+          "from": "McLeodganj",
+          "hours": 7,
+          "meals": "Lunch at Triund tea shops. Dinner at camp (self-cooked or operator).",
+          "title": "McLeodganj to Triund to Laka Got",
+          "water": "Chai shops on Triund trail. Stream at Laka Got.",
+          "terrain": "Triund trail (well-marked) then beyond into unmarked rocky terrain. Steep sections after Triund.",
+          "campsite": "Laka Got",
+          "altitude_m": 3050,
+          "description": "Start from Galu Devi Temple. Follow Triund trail through forest (9km, 5hrs). At Triund, continue beyond — trail becomes faint. Cross rocky ground heading towards the Dhauladhar wall. Camp at Laka Got — a flat area with stream water before the glacier moraine begins.",
+          "distance_km": 11
+        }
+      ],
+      "nearest_hospital": "Dharamshala Zonal Hospital — 10km from McLeodganj, 30 minutes by road",
+      "network_coverage": "Jio/Airtel work till Triund (weak). No signal beyond Triund. Zero coverage at Laka Got/glacier."
+    },
+    {
+      "id": "phulara-ridge-trek",
+      "name": "Phulara Ridge Trek",
+      "destination_id": "uttarkashi",
+      "difficulty": "moderate",
+      "duration_days": 4,
+      "max_altitude_m": 3700,
+      "distance_km": 32,
+      "best_months": [
+        4,
+        5,
+        9,
+        10,
+        11
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "One of the few ridge walks in India where you spend most of the trek walking along a high ridge with continuous Himalayan views rather than in valleys. Phulara Ridge runs parallel to the Kedarkantha massif, offering non-stop views of Swargarohini, Black Peak, Bandarpoonch, and Ruinsara peaks. The trail crosses lush meadows with wildflowers and ancient shepherds' camps.",
+      "description_len": 371,
+      "highlights": [
+        "Continuous ridge walk with non-stop Himalayan panorama",
+        "Views of 12+ major peaks simultaneously",
+        "Wildflower meadows rival Valley of Flowers",
+        "Ancient shepherd trails and seasonal settlements",
+        "Far less crowded than Kedarkantha or Har Ki Dun"
+      ],
+      "warnings": [
+        "Inner Line Permit required from Uttarkashi",
+        "Ridge is exposed — no shelter from wind or rain",
+        "Weather can close in quickly — carry storm gear",
+        "Trail is less established — guide essential",
+        "No water on ridge sections — carry 3L minimum",
+        "Bears in forest sections — travel in groups"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Pushtara",
+          "day": 1,
+          "from": "Sankri",
+          "hours": 5,
+          "meals": "Packed lunch. Dinner at camp.",
+          "title": "Sankri to Taluka to Pushtara",
+          "water": "Stream at Pushtara. Fill up — next water is hours away.",
+          "terrain": "Forest trail ascending through pine and oak to meadow. Moderate gradient.",
+          "campsite": "Pushtara",
+          "altitude_m": 2650,
+          "description": "Drive to Sankri, then short drive to Taluka. Trek begins climbing through pine forest along a stream. At 2400m transition to oak and birch forest. Trail opens at Pushtara — a beautiful meadow campsite with first ridge views.",
+          "distance_km": 7
+        }
+      ],
+      "nearest_hospital": "District Hospital Uttarkashi — 95km from Sankri, 4 hours by road",
+      "network_coverage": "BSNL in Sankri (weak). No network on ridge. Completely off-grid for 3 days."
+    },
+    {
+      "id": "stok-kangri-trek",
+      "name": "Stok Kangri Trek",
+      "destination_id": "leh",
+      "difficulty": "hard",
+      "duration_days": 5,
+      "max_altitude_m": 6153,
+      "distance_km": 30,
+      "best_months": [
+        7,
+        8,
+        9
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 18,
+      "fitness_level": "extreme",
+      "description": "India's most popular 6000er and the highest trekkable peak in the country without mountaineering certification. At 6153m, Stok Kangri is a serious high-altitude endeavor — the summit push involves glacier travel, steep snow slopes, and extreme cold. The reward is standing on top of a 6000m peak with views stretching from the Karakoram to the Zanskar range. Not for the faint-hearted.",
+      "description_len": 385,
+      "highlights": [
+        "Summit a 6000m peak without mountaineering certification",
+        "Panoramic views of Karakoram, Zanskar, and Ladakh ranges",
+        "Glacier travel and steep snow climbing experience",
+        "Base camp in stunning Stok valley below the peak",
+        "Achievement of a lifetime for serious trekkers"
+      ],
+      "warnings": [
+        "Extreme altitude — AMS, HACE, HAPE are real risks. Acclimatize 3-4 days in Leh first",
+        "Summit success rate is only 40-50% — weather and fitness dependent",
+        "Temperatures drop to -20C on summit night",
+        "Glacier crevasses present — roped climbing required",
+        "Guide and high-altitude porters absolutely mandatory",
+        "Diamox recommended — consult doctor before trek",
+        "This is a mountaineering expedition, not a casual trek",
+        "Physical training for 3-6 months before attempting is essential"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Chang Ma",
+          "day": 1,
+          "from": "Stok Village",
+          "hours": 5,
+          "meals": "Packed lunch. Dinner at camp prepared by cook.",
+          "title": "Leh to Stok Village to Chang Ma",
+          "water": "Stok Nala runs alongside trail. Reliable.",
+          "terrain": "Valley trail along Stok Nala. Gradual ascent on well-defined path.",
+          "campsite": "Chang Ma",
+          "altitude_m": 4300,
+          "description": "Drive from Leh to Stok village (15km, 30min). Trek begins along the Stok Nala (stream). Gentle valley walk through arid Ladakhi landscape with willow trees. Pass small shepherd huts. Reach Chang Ma campsite at 4300m. Rest and hydrate.",
+          "distance_km": 7
+        }
+      ],
+      "nearest_hospital": "SNM Hospital Leh — 15km from Stok village, 30 minutes. Altitude rescue by Indian Army/ITBP on request.",
+      "network_coverage": "Jio/Airtel in Leh and Stok village. No network above Stok village. Satellite phone essential for expedition."
+    },
+    {
+      "id": "kudremukh-trek",
+      "name": "Kudremukh Peak Trek",
+      "destination_id": "chikmagalur",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 1894,
+      "distance_km": 20,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Trek to the horse-face peak through rolling grasslands in Kudremukh National Park. One of the most scenic treks in Western Ghats.",
+      "description_len": 129,
+      "highlights": [
+        "Horse-face shaped peak",
+        "Rolling shola grasslands",
+        "National Park biodiversity",
+        "Stunning sunrise"
+      ],
+      "warnings": [
+        "Forest dept permit required",
+        "Leeches Oct-Dec",
+        "No camping at summit",
+        "Steep descent sections"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "PHC Kalasa 25km. Government Hospital Sringeri 45km.",
+      "network_coverage": "No coverage inside the national park. Jio at Mullodi village."
+    },
+    {
+      "id": "mawryngkhang-bamboo-trail",
+      "name": "Mawryngkhang Bamboo Trail",
+      "destination_id": "shillong",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1500,
+      "distance_km": 6,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "intermediate",
+      "description": "One of Meghalaya's most thrilling trails, Mawryngkhang takes you across bamboo bridges suspended over a 1000-foot gorge and along cliff-edge paths to a rocky pinnacle. The Wahthyllong bamboo bridge — rebuilt annually by villagers — is the centerpiece, swaying as you cross high above the valley. Not for the faint-hearted, but the views and adrenaline are unmatched in Northeast India.",
+      "description_len": 385,
+      "highlights": [
+        "Bamboo bridge over 1000-foot gorge",
+        "Cliff-edge trail with dramatic valley views",
+        "Wahthyllong bamboo bridge — rebuilt every year",
+        "Rocky pinnacle viewpoint at the end",
+        "Traditional Khasi engineering on display",
+        "One of India's most thrilling day treks"
+      ],
+      "warnings": [
+        "Absolutely not suitable for anyone with vertigo or fear of heights",
+        "Bamboo bridges are narrow and sway — grip shoes essential",
+        "Trail is exposed and dangerous in rain or wind",
+        "No safety railings on cliff sections",
+        "Not suitable for children under 14",
+        "Turn back if conditions are wet — bridges become extremely slippery"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Mawryngkhang Pinnacle",
+          "day": 1,
+          "from": "Wahkhen Village",
+          "hours": 4,
+          "meals": "Carry snacks — nothing available",
+          "title": "Wahkhen to Mawryngkhang Pinnacle",
+          "water": "Carry all water — none on trail",
+          "terrain": "Stone steps, bamboo bridges over gorge, cliff-edge paths, rocky scramble to pinnacle",
+          "campsite": "None — day trek",
+          "altitude_m": 1500,
+          "description": "Start from Wahkhen village near Shillong. Descend stone steps into the gorge. Cross the famous Wahthyllong bamboo bridge suspended above the canyon. Navigate cliff-edge trails with exposure on both sides. Scramble up rocks to the Mawryngkhang pinnacle for panoramic views. Return same route.",
+          "distance_km": 6
+        }
+      ],
+      "nearest_hospital": "Shillong Civil Hospital — 50km from Wahkhen, 2 hours by road.",
+      "network_coverage": "Jio/Airtel at Wahkhen village. No coverage on the trail."
+    },
+    {
+      "id": "shirui-peak-trek",
+      "name": "Shirui Peak Trek",
+      "destination_id": "ukhrul",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2835,
+      "distance_km": 8,
+      "best_months": [
+        4,
+        5,
+        6
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "beginner",
+      "description": "A gentle trek to Shirui Peak (2835m) in Manipur's Ukhrul district, home to the endemic Shirui Lily (Lilium mackliniae) — a flower found nowhere else on earth that blooms in May-June. The trail passes through meadows and pine forests with panoramic views of the Manipur hills. The Shirui Lily Festival in May draws visitors from across the Northeast.",
+      "description_len": 349,
+      "highlights": [
+        "Endemic Shirui Lily blooms May-June — found nowhere else on earth",
+        "Panoramic views of Manipur hills from 2835m",
+        "Pine and rhododendron forests",
+        "Shirui Lily Festival in May",
+        "Tangkhul Naga cultural experience in Ukhrul",
+        "Gentle gradient suitable for families"
+      ],
+      "warnings": [
+        "Best only in Apr-Jun when lily blooms — limited season",
+        "ILP required for Manipur",
+        "Ukhrul has limited tourist infrastructure",
+        "Weather can be foggy — views not guaranteed",
+        "Basic medical facilities only",
+        "Road to Ukhrul can be disrupted in monsoon"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Shirui Peak",
+          "day": 1,
+          "from": "Shirui Village",
+          "hours": 4,
+          "meals": "Carry packed lunch",
+          "title": "Shirui Village to Shirui Peak",
+          "water": "Carry from village",
+          "terrain": "Gentle forest trail through pine and meadows",
+          "campsite": "None — day trek",
+          "altitude_m": 2835,
+          "description": "Start from Shirui village near Ukhrul. Trail climbs gently through pine forest and open meadows. In May-June, the endemic Shirui Lily covers the upper slopes. Reach the peak for 360-degree views of Manipur hills. Return same route.",
+          "distance_km": 8
+        }
+      ],
+      "nearest_hospital": "Ukhrul District Hospital — 8km from Shirui village, 20 minutes by road.",
+      "network_coverage": "Airtel works in Ukhrul and Shirui village. Patchy on the peak."
+    },
+    {
+      "id": "tadiandamol-trek",
+      "name": "Tadiandamol Trek",
+      "destination_id": "coorg",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1748,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "low",
+      "description": "Highest peak in Coorg, easy day trek through coffee plantations and shola grasslands.",
+      "description_len": 85,
+      "highlights": [
+        "Highest peak in Coorg",
+        "Coffee plantation walk",
+        "Easy summit for beginners",
+        "360-degree Western Ghats view"
+      ],
+      "warnings": [
+        "Slippery in rain",
+        "No shade on upper section",
+        "Start early to avoid heat"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Government Hospital Virajpet 20km.",
+      "network_coverage": "Jio/Airtel at Nalknad Palace trailhead. No coverage on peak."
+    },
+    {
+      "id": "bali-pass-trek",
+      "name": "Bali Pass Trek",
+      "destination_id": "uttarkashi",
+      "difficulty": "hard",
+      "duration_days": 7,
+      "max_altitude_m": 4950,
+      "distance_km": 55,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "extreme",
+      "description": "A challenging crossover trek connecting Har Ki Dun valley to Yamunotri via the formidable Bali Pass at 4950m. This trek combines the cultural charm of the Har Ki Dun trail with a serious high-altitude pass crossing involving steep snow and scree. The descent into the Yamunotri valley provides a completely different perspective of Garhwal. Essentially two great treks connected by a dramatic pass.",
+      "description_len": 398,
+      "highlights": [
+        "Connects Har Ki Dun and Yamunotri — two iconic valleys",
+        "Technical pass crossing at 4950m",
+        "Ancient villages of Osla and Seema",
+        "Views of Swargarohini, Bandarpoonch, and Kalanag",
+        "Far less crowded than either valley separately"
+      ],
+      "warnings": [
+        "Pass crossing requires crampons, ice axe, and rope",
+        "Steep snow wall on pass approach — guide mandatory",
+        "AMS risk above 4500m — acclimatize properly",
+        "Weather at pass extremely unpredictable",
+        "River crossings in Har Ki Dun valley can be tricky",
+        "Inner Line Permit required",
+        "Not suitable without prior high-altitude pass experience",
+        "Emergency evacuation from pass area is extremely difficult"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Taluka",
+          "day": 1,
+          "from": "Sankri",
+          "hours": 5,
+          "meals": "Packed lunch. Dinner at homestay.",
+          "title": "Sankri to Taluka",
+          "water": "Supin River alongside.",
+          "terrain": "Gentle forest trail along Supin River.",
+          "campsite": "Taluka",
+          "altitude_m": 2200,
+          "description": "Same as Har Ki Dun day 1. Follow Supin River through pine and oak forest to Taluka village.",
+          "distance_km": 12
+        }
+      ],
+      "nearest_hospital": "District Hospital Uttarkashi — 95km from Sankri (start), 80km from Yamunotri (end). No medical help for 4 days mid-trek.",
+      "network_coverage": "BSNL in Sankri and Osla (weak). Zero coverage days 3-5. BSNL returns at Yamunotri."
+    },
+    {
+      "id": "buran-ghati-trek",
+      "name": "Buran Ghati Trek",
+      "destination_id": "shimla",
+      "difficulty": "moderate",
+      "duration_days": 5,
+      "max_altitude_m": 4572,
+      "distance_km": 35,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "high",
+      "description": "One of the most thrilling moderate-to-hard crossover treks in Himachal. Buran Ghati involves a steep snow wall rappel at the 4572m pass — a unique experience not found on most Indian treks. The trail traverses from Shimla's green Pabbar valley to the arid Spiti-like landscapes on the other side, passing through forests, meadows, glacial lakes, and finally the dramatic pass.",
+      "description_len": 376,
+      "highlights": [
+        "Rappelling down a steep snow wall at the pass",
+        "Landscape transition — green valley to arid moonscape",
+        "Chandranahan Lake — sacred glacial lake at 4000m",
+        "Dense silver birch and maple forests",
+        "One of the few treks with a technical rappel section"
+      ],
+      "warnings": [
+        "Snow wall rappel is real — not for those with fear of heights",
+        "Operator with fixed ropes and safety equipment is mandatory",
+        "Pass is only crossable May-June and September-October",
+        "AMS risk above 4000m — acclimatize properly",
+        "Weather at pass changes in minutes — carry storm gear",
+        "River crossings can be dangerous after rain",
+        "Not suitable without prior high-altitude experience"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Dayara Thach",
+          "day": 1,
+          "from": "Janglik Village",
+          "hours": 4,
+          "meals": "Packed lunch. Dinner at camp.",
+          "title": "Janglik to Dayara Thach",
+          "water": "Stream runs through meadow. Reliable.",
+          "terrain": "Forest trail through pine and maple. Gradual ascent on well-trodden path.",
+          "campsite": "Dayara Thach",
+          "altitude_m": 3100,
+          "description": "Drive from Shimla to Janglik village via Rohru and Chirgaon (10hrs, 210km — start early). Trek from Janglik through dense pine forest. Trail follows a stream upward. Emerge at Dayara Thach — a vast meadow surrounded by peaks. Camp here.",
+          "distance_km": 6
+        }
+      ],
+      "nearest_hospital": "Civil Hospital Rohru — 60km from Janglik, 3 hours. For Barua side: Hospital Rampur — 100km.",
+      "network_coverage": "BSNL in Janglik (weak). No network on trek. Mudh village has BSNL."
+    },
+    {
+      "id": "chandrakhani-pass-trek",
+      "name": "Chandrakhani Pass Trek",
+      "destination_id": "kullu",
+      "difficulty": "moderate",
+      "duration_days": 3,
+      "max_altitude_m": 3660,
+      "distance_km": 22,
+      "best_months": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "An ancient trade route connecting Kullu to Malana — the famously isolated village with its own parliament and laws. The pass at 3660m offers stunning views of Parvati valley, Deo Tibba, and Indrasan peaks. The descent to Malana village adds a fascinating cultural dimension — one of the most unique communities in the Himalayas with strict touch-me-not customs.",
+      "description_len": 361,
+      "highlights": [
+        "Ancient trade route to isolated Malana village",
+        "Views of Deo Tibba, Indrasan, and Parvati valley",
+        "Malana's unique culture — own parliament and ancient democracy",
+        "Dense forests of birch, oak, and rhododendron",
+        "Less commercial than nearby Kheerganga or Triund"
+      ],
+      "warnings": [
+        "Malana has strict no-touch customs — do not touch anyone, any wall, or any temple",
+        "Photography restricted in Malana — ask before shooting",
+        "Trail can be unclear after snowfall — guide recommended",
+        "Steep descent to Malana is hard on knees",
+        "Do not accept or buy any illegal substances",
+        "Bears sighted in forest sections occasionally"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Pass Base Camp",
+          "day": 1,
+          "from": "Naggar",
+          "hours": 6,
+          "meals": "Packed lunch. Dinner at camp.",
+          "title": "Naggar to Rumsu to Chandrakhani Pass Base",
+          "water": "Streams in forest. Spring near base camp.",
+          "terrain": "Steep climb through village then dense forest. Trail well-defined but relentless uphill.",
+          "campsite": "Chandrakhani Base Meadow",
+          "altitude_m": 3100,
+          "description": "Start from Naggar (drive from Kullu 20km). Climb through Rumsu village past ancient temples. Enter dense oak and cedar forest. Trail climbs steadily — no flat sections. Emerge at a meadow below the pass. Camp here.",
+          "distance_km": 8
+        }
+      ],
+      "nearest_hospital": "Regional Hospital Kullu — 20km from Naggar, 45 minutes. From Malana side: Kasol PHC 15km.",
+      "network_coverage": "Jio/Airtel at Naggar. No network after Rumsu until Malana. Malana has weak BSNL sometimes."
+    },
+    {
+      "id": "taragarh-fort-trek",
+      "name": "Taragarh Fort Trek",
+      "destination_id": "ajmer",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 870,
+      "distance_km": 6,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Trek to Taragarh Fort (Star Fort) above Ajmer. One of India oldest hill forts. Panoramic views over Pushkar and Ana Sagar Lake.",
+      "description_len": 127,
+      "highlights": [
+        "India oldest hill fort",
+        "Panoramic Ajmer views",
+        "Pushkar visible",
+        "700+ years history"
+      ],
+      "warnings": [
+        "Steep sections",
+        "No shade — carry water",
+        "Start early to avoid heat"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "dayara-bugyal-trek",
+      "name": "Dayara Bugyal Trek",
+      "destination_id": "uttarkashi",
+      "difficulty": "moderate",
+      "duration_days": 3,
+      "max_altitude_m": 3408,
+      "distance_km": 28,
+      "best_months": [
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "permits_required": true,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "moderate",
+      "description": "One of the largest and most beautiful high-altitude meadows in India. Dayara Bugyal is a massive expanse of rolling alpine grassland at 3400m that turns gold in autumn and gets carpeted in snow during winter. The views of Bandarpoonch, Draupadi Ka Danda, and Black Peak from the meadow are breathtaking. A relatively easy moderate trek suitable for beginners stepping up.",
+      "description_len": 371,
+      "highlights": [
+        "Massive alpine meadow — one of largest in India",
+        "Bandarpoonch and Draupadi Ka Danda peak views",
+        "Spectacular autumn colors (October-November)",
+        "Winter snow trek possible (December-January)",
+        "Gentle gradients make it ideal for first moderate trek"
+      ],
+      "warnings": [
+        "Inner Line Permit required from Uttarkashi DM office",
+        "Weather turns suddenly at meadow — carry warm layers",
+        "No tree cover at bugyal — exposed to wind and sun",
+        "Snow makes trail harder to follow in winter — guide essential",
+        "Bears in forest sections — make noise while walking"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Barnala Tal",
+          "day": 1,
+          "from": "Barsu Village",
+          "hours": 5,
+          "meals": "Packed lunch from Barsu. Dinner at campsite.",
+          "title": "Barsu to Barnala Tal",
+          "water": "Stream near Barnala Tal. Carry 2L from Barsu.",
+          "terrain": "Forest trail through oak and rhododendron. Moderate incline with well-defined path.",
+          "campsite": "Barnala Tal",
+          "altitude_m": 2700,
+          "description": "Drive from Uttarkashi to Barsu village (45km, 2hrs). Trek starts with a climb through dense oak forest. Trail is well-marked and gradually ascends. At 2500m, forest opens slightly. Reach Barnala Tal — a small seasonal lake surrounded by trees. Camp here overnight.",
+          "distance_km": 9
+        }
+      ],
+      "nearest_hospital": "District Hospital Uttarkashi — 45km from Barsu, 2 hours by road",
+      "network_coverage": "BSNL works in Barsu. No network at Barnala Tal or Dayara Bugyal. Satellite phone recommended."
+    },
+    {
+      "id": "kangla-pass-trek",
+      "name": "Kangla Pass Trek",
+      "destination_id": "spiti-valley",
+      "difficulty": "hard",
+      "duration_days": 7,
+      "max_altitude_m": 5500,
+      "distance_km": 55,
+      "best_months": [
+        7,
+        8,
+        9
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 18,
+      "fitness_level": "extreme",
+      "description": "A demanding high-altitude crossover connecting Pin Valley in Spiti to Kullu via the Kangla Pass at 5500m. The trek traverses the Pin Valley National Park — home to snow leopards and ibex — before climbing to a dramatic pass with views of the Great Himalayan Range. The descent into Kullu valley is steep and wild. A genuine wilderness adventure for experienced high-altitude trekkers.",
+      "description_len": 384,
+      "highlights": [
+        "Cross from Spiti to Kullu over 5500m pass",
+        "Pin Valley National Park — snow leopard habitat",
+        "Views of Great Himalayan Range from the pass",
+        "Ibex herds commonly sighted on approach",
+        "Complete landscape transition — arid Spiti to green Kullu"
+      ],
+      "warnings": [
+        "Very high pass at 5500m — AMS risk severe",
+        "Snow on pass even in August — crampons essential",
+        "Pin Valley NP permit required",
+        "Guide mandatory — trail unmarked above Pin base",
+        "Steep descent on Kullu side is treacherous",
+        "No habitation for 4-5 days mid-trek",
+        "Prior 5000m experience strongly recommended",
+        "River crossings in Pin Valley can be dangerous after rain"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Mudh Village",
+          "day": 1,
+          "from": "Kaza",
+          "hours": 0,
+          "meals": "Homestay meals.",
+          "title": "Kaza to Mudh Village",
+          "water": "Village water.",
+          "terrain": "Vehicle drive.",
+          "campsite": "Mudh Homestay",
+          "altitude_m": 3850,
+          "description": "Drive from Kaza to Mudh — the last village in Pin Valley (45km, 2hrs). Acclimatize and prepare. Meet guide and porters. Beautiful Buddhist village.",
+          "distance_km": 0
+        }
+      ],
+      "nearest_hospital": "CHC Kaza (start side) 45km. Kasol PHC (end side). No medical help for 4 days mid-trek.",
+      "network_coverage": "BSNL in Mudh (weak). Zero coverage days 2-5. Returns near Kheerganga (weak Jio/Airtel)."
+    },
+    {
+      "id": "mundapahad-trek",
+      "name": "Mundapahad Trek",
+      "destination_id": "chidiya-tapu",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 30,
+      "distance_km": 3,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "beginner",
+      "description": null,
+      "description_len": 0,
+      "highlights": [],
+      "warnings": [],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "elephant-beach-trek",
+      "name": "Elephant Beach Trek",
+      "destination_id": "havelock-island",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 10,
+      "distance_km": 2,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "beginner",
+      "description": null,
+      "description_len": 0,
+      "highlights": [],
+      "warnings": [],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "markha-valley-trek",
+      "name": "Markha Valley Trek",
+      "destination_id": "leh",
+      "difficulty": "hard",
+      "duration_days": 6,
+      "max_altitude_m": 5150,
+      "distance_km": 65,
+      "best_months": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "high",
+      "description": "The classic Ladakh trek — a complete immersion into the stark, beautiful high-altitude desert landscape with whitewashed villages, ancient monasteries, and two high passes. The Markha Valley connects Hemis National Park to the Indus Valley, crossing Kongmaru La at 5150m. You walk through a landscape that feels prehistoric — craggy peaks, turquoise streams, and Buddhist prayer flags at every turn.",
+      "description_len": 399,
+      "highlights": [
+        "Two high passes — Ganda La (4960m) and Kongmaru La (5150m)",
+        "Traditional Ladakhi villages with homestays",
+        "Hemis National Park — snow leopard territory",
+        "Ancient monasteries and prayer flag-draped passes",
+        "Complete Ladakhi cultural immersion with local families"
+      ],
+      "warnings": [
+        "Two passes above 5000m — serious AMS risk. Acclimatize in Leh 3-4 days",
+        "River crossings can be thigh-deep in July-August — trekking sandals needed",
+        "No phone network for entire trek duration",
+        "Homestays are basic — squat toilets, no hot water",
+        "Carry cash — no ATMs or digital payment on trek",
+        "Sun is intense at altitude — cover all exposed skin",
+        "Afternoon winds in valley can be fierce"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Jingchan",
+          "day": 1,
+          "from": "Spituk",
+          "hours": 5,
+          "meals": "Lunch packed from Leh. Dinner at homestay — Ladakhi thukpa and skyu.",
+          "title": "Spituk to Jingchan",
+          "water": "Stream in valley. Taps at Jingchan.",
+          "terrain": "Gradual climb up side valley. Rocky path through arid landscape.",
+          "campsite": "Jingchan Homestay",
+          "altitude_m": 3460,
+          "description": "Drive from Leh to Spituk (8km). Cross Indus on bridge and enter side valley. Trail follows stream through barren but beautiful terrain. Jingchan is the last village before Ganda La. Homestay overnight.",
+          "distance_km": 9
+        }
+      ],
+      "nearest_hospital": "SNM Hospital Leh — accessible only at start (Spituk) and end (Shang Sumdo). No medical help on trek.",
+      "network_coverage": "Zero mobile coverage for entire trek. BSNL at Spituk and Shang Sumdo only. Satellite phone recommended."
+    },
+    {
+      "id": "sandakphu-trek",
+      "name": "Sandakphu Trek",
+      "destination_id": "darjeeling",
+      "difficulty": "moderate",
+      "duration_days": 4,
+      "max_altitude_m": 3636,
+      "distance_km": 51,
+      "best_months": [
+        3,
+        4,
+        5,
+        10,
+        11
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "The only place on Earth where you can see four of the five highest peaks in the world in a single panorama — Everest, Kanchenjunga, Lhotse, and Makalu. Sandakphu at 3636m is the highest point in West Bengal, sitting right on the India-Nepal border. The trail passes through rhododendron forests that explode in red during April and the famous sleeping Buddha silhouette of the Kanchenjunga range.",
+      "description_len": 396,
+      "highlights": [
+        "Four of world's five highest peaks visible from summit",
+        "Sleeping Buddha silhouette of Kanchenjunga at sunrise",
+        "Rhododendron forests in full bloom (April)",
+        "Walk along India-Nepal border ridge",
+        "Sunrise view from Sandakphu — once seen never forgotten"
+      ],
+      "warnings": [
+        "Singalila National Park permit required",
+        "Trek crosses into Nepal briefly — carry ID proof",
+        "Leeches during monsoon (avoid July-September)",
+        "Accommodation is basic trekkers huts — no luxury",
+        "Food options limited — Nepali dal-bhat is the staple",
+        "Cold nights even in October — carry proper warm layers",
+        "Land Rover option exists but misses the point of the trek"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Tumling",
+          "day": 1,
+          "from": "Manebhanjan",
+          "hours": 6,
+          "meals": "Lunch at Meghma. Dinner at Tumling lodge — Nepali thukpa and dal-bhat.",
+          "title": "Manebhanjan to Tumling",
+          "water": "Streams and taps at Chitrey and Meghma. Tumling has piped water.",
+          "terrain": "Steep initial climb on jeep track through forest. Rocky path with moderate gradient.",
+          "campsite": "Tumling Trekkers Hut",
+          "altitude_m": 2970,
+          "description": "Drive from Darjeeling to Manebhanjan (26km, 1hr). Trek starts with a steep climb through Chitrey village. Pass through bamboo and rhododendron forest. Cross into Singalila National Park at Meghma. Tumling sits right on the India-Nepal border with first views of Kanchenjunga.",
+          "distance_km": 11
+        }
+      ],
+      "nearest_hospital": "Darjeeling District Hospital — 26km from Manebhanjan, 1 hour by road",
+      "network_coverage": "Jio/Airtel work at Tumling (weak). No network at Kalipokhri. Intermittent at Sandakphu summit. BSNL best."
+    },
+    {
+      "id": "phawngpui-peak-trek",
+      "name": "Phawngpui Peak Trek",
+      "destination_id": "phawngpui-peak",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2157,
+      "distance_km": 6,
+      "best_months": [
+        3,
+        4,
+        5,
+        10,
+        11
+      ],
+      "permits_required": true,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "beginner",
+      "description": "A trek to the highest point in Mizoram — Phawngpui (Blue Mountain) at 2157m. The gentle trail through Phawngpui National Park passes through rhododendron and orchid forests with panoramic views extending to Myanmar. The peak is sacred to the Mizo people, and local legends surround the mountain. One of the easiest high-point treks in Northeast India.",
+      "description_len": 351,
+      "highlights": [
+        "Highest point in Mizoram at 2157m",
+        "Rhododendrons and orchids in spring bloom",
+        "Panoramic views into Myanmar hills",
+        "Sacred mountain in Mizo culture",
+        "Phawngpui National Park biodiversity",
+        "One of the easiest state high-point treks in India"
+      ],
+      "warnings": [
+        "ILP required for Mizoram",
+        "Remote location — limited tourist infrastructure",
+        "Weather can close views for days",
+        "Basic medical facilities in Thenzawl (nearest town)",
+        "Road access can be disrupted in monsoon",
+        "Carry all food and water"
+      ],
+      "day_by_day_first": [
+        {
+          "to": "Phawngpui Peak",
+          "day": 1,
+          "from": "Phawngpui NP Gate",
+          "hours": 3,
+          "meals": "Carry packed lunch",
+          "title": "Park Gate to Phawngpui Peak",
+          "water": "Carry from base — no reliable sources on trail",
+          "terrain": "Gentle forest trail through rhododendron and bamboo",
+          "campsite": "None — day trek",
+          "altitude_m": 2157,
+          "description": "Start from Phawngpui National Park gate. Trail winds through dense rhododendron and orchid forest. Cross bamboo groves and open meadows. Final gentle ascent to the summit with views stretching into Myanmar. Return same route.",
+          "distance_km": 6
+        }
+      ],
+      "nearest_hospital": "Thenzawl Community Health Centre — 60km, 3 hours by road. Lunglei District Hospital — 100km.",
+      "network_coverage": "Patchy Jio/Airtel at the park gate. No coverage on the trail."
+    },
+    {
+      "id": "simlipal-waterfall-circuit",
+      "name": "Simlipal Waterfall Circuit",
+      "destination_id": "simlipal",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 900,
+      "distance_km": 20,
+      "best_months": [
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Circuit through Simlipal biosphere visiting Barehipani Falls (217m) and Joranda Falls (181m). Forest roads + short walks to viewpoints.",
+      "description_len": 135,
+      "highlights": [
+        "Barehipani Falls — India's 2nd highest",
+        "Joranda Falls — 181m cascade",
+        "Tiger territory drive",
+        "96 orchid species forest"
+      ],
+      "warnings": [
+        "Tiger territory — stay in vehicle",
+        "No phone signal",
+        "Park permits mandatory",
+        "Carry food and water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "skandagiri-night-trek",
+      "name": "Skandagiri Night Trek",
+      "destination_id": "bengaluru",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1450,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Popular night trek near Bengaluru. Start at midnight, summit for sunrise. Rocky trail to a ruined fort.",
+      "description_len": 103,
+      "highlights": [
+        "Night trek under stars",
+        "Sunrise above clouds",
+        "Ruined hilltop fort",
+        "Closest adventure to Bengaluru"
+      ],
+      "warnings": [
+        "Rocky trail at night",
+        "Steep final section",
+        "Cold at summit",
+        "Permit required"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Government Hospital Chikkaballapur 20km.",
+      "network_coverage": "Jio at base. No coverage on hill."
+    },
+    {
+      "id": "kodachadri-trek",
+      "name": "Kodachadri Trek",
+      "destination_id": "chikmagalur",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 1343,
+      "distance_km": 16,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Trek through dense Western Ghats rainforest to the misty peak. Spectacular sunset views of the Arabian Sea.",
+      "description_len": 107,
+      "highlights": [
+        "Western Ghats rainforest",
+        "Sunset over Arabian Sea",
+        "Sarvajna Peetha summit temple",
+        "Hidlumane Falls en route"
+      ],
+      "warnings": [
+        "Leeches in monsoon",
+        "Slippery forest trail",
+        "No facilities at summit"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "PHC Kollur 25km. Government Hospital Shimoga 80km.",
+      "network_coverage": "No coverage on most of the trek. BSNL at Nittur base."
+    },
+    {
+      "id": "brahmagiri-trek",
+      "name": "Brahmagiri Peak Trek",
+      "destination_id": "coorg",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 1608,
+      "distance_km": 14,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Trek through Brahmagiri Wildlife Sanctuary on the Karnataka-Kerala border. Pristine shola forests and views into Wayanad.",
+      "description_len": 121,
+      "highlights": [
+        "Karnataka-Kerala border crossing",
+        "Brahmagiri Wildlife Sanctuary",
+        "Shola forest ecosystem",
+        "Views into Wayanad valley"
+      ],
+      "warnings": [
+        "Permit required from Forest Dept",
+        "Leeches in monsoon",
+        "No camping at summit",
+        "Elephant territory"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Government Hospital Virajpet 35km.",
+      "network_coverage": "No coverage in sanctuary. BSNL at Iruppu Falls entrance."
+    },
+    {
+      "id": "savandurga-trek",
+      "name": "Savandurga Hill Trek",
+      "destination_id": "bengaluru",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1226,
+      "distance_km": 4,
+      "best_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        10,
+        11,
+        12
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "One of the largest monolith hills in Asia, 50km from Bengaluru. Rocky scramble up exposed granite face.",
+      "description_len": 103,
+      "highlights": [
+        "Largest monolith hill in Asia",
+        "Granite rock scrambling",
+        "Two difficulty routes",
+        "Close to Bengaluru"
+      ],
+      "warnings": [
+        "Very steep exposed rock",
+        "No shade",
+        "Banned by Forest Dept intermittently"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Government Hospital Magadi 15km.",
+      "network_coverage": "Jio/Airtel at base."
+    },
+    {
+      "id": "yana-rocks-trek",
+      "name": "Yana Rocks Trek",
+      "destination_id": "gokarna",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 610,
+      "distance_km": 6,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "low",
+      "description": "Short trek through dense forest to dramatic black limestone rock formations. The rocks look otherworldly.",
+      "description_len": 105,
+      "highlights": [
+        "Dramatic limestone pillars",
+        "Dense forest walk",
+        "Cave temple at base",
+        "Easy family trek"
+      ],
+      "warnings": [
+        "Slippery in rain",
+        "Leeches in monsoon"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "PHC Kumta 20km.",
+      "network_coverage": "Weak BSNL at Yana village."
+    },
+    {
+      "id": "dudhsagar-falls-trek",
+      "name": "Dudhsagar Falls Trek",
+      "destination_id": "dudhsagar-falls",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 310,
+      "distance_km": 11,
+      "best_months": [
+        10,
+        11,
+        12,
+        1
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Trek along abandoned railway tracks through Bhagwan Mahavir Sanctuary to India's 5th tallest waterfall. Cross bridges, wade through streams, and emerge at the 310m cascade.",
+      "description_len": 172,
+      "highlights": [
+        "India's 5th tallest waterfall",
+        "Railway track walking",
+        "Bridge crossings",
+        "Jungle sanctuary trek"
+      ],
+      "warnings": [
+        "Slippery rocks near falls",
+        "Leeches in monsoon",
+        "Strong current at base pool",
+        "Jeep track only — no private vehicles"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Sub-district Hospital Mollem 10km.",
+      "network_coverage": "No coverage on trail. BSNL at Collem."
+    },
+    {
+      "id": "fort-aguada-walk",
+      "name": "Fort Aguada Heritage Walk",
+      "destination_id": "fort-aguada",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 70,
+      "distance_km": 3,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "low",
+      "description": "Walk through the 17th-century Portuguese fortress overlooking the Arabian Sea. Lighthouse, ramparts, and panoramic views of Sinquerim Beach.",
+      "description_len": 140,
+      "highlights": [
+        "Portuguese fortress ruins",
+        "Working lighthouse",
+        "Arabian Sea panorama",
+        "Sinquerim Beach views"
+      ],
+      "warnings": [
+        "Hot in afternoon",
+        "No shade on ramparts"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Goa Medical College Bambolim 20km.",
+      "network_coverage": "Full Jio/Airtel coverage."
+    },
+    {
+      "id": "netravali-trek",
+      "name": "Netravali Wildlife Trek",
+      "destination_id": "mollem",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 300,
+      "distance_km": 6,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 10,
+      "fitness_level": "low",
+      "description": "Trek through Netravali Wildlife Sanctuary to the Bubbling Lake (a natural carbonated spring) and Savari waterfall. Light jungle walk with birdwatching.",
+      "description_len": 151,
+      "highlights": [
+        "Bubbling Lake natural spring",
+        "Savari Waterfall",
+        "Rich birdlife",
+        "Western Ghats forest"
+      ],
+      "warnings": [
+        "Leeches in monsoon",
+        "Trail can be muddy"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Sub-district Hospital Quepem 20km.",
+      "network_coverage": "Weak signal inside sanctuary."
+    },
+    {
+      "id": "kumbhalgarh-wall-trek",
+      "name": "Kumbhalgarh Great Wall Walk",
+      "destination_id": "kumbhalgarh",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1100,
+      "distance_km": 10,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Walk along the 36km Kumbhalgarh Wall — 2nd longest wall in the world after China. Fort interior exploration included.",
+      "description_len": 117,
+      "highlights": [
+        "2nd longest wall in world",
+        "36km fortification",
+        "360 temples inside",
+        "Aravalli panorama"
+      ],
+      "warnings": [
+        "Full day needed",
+        "Carry water and food",
+        "No shade on wall sections"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "chembra-peak-trek",
+      "name": "Chembra Peak Trek",
+      "destination_id": "wayanad",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 2100,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Trek to Wayanad's highest peak past the viral heart-shaped lake. Rolling grasslands, shola forests, and panoramic views of the Western Ghats. The heart lake at the midpoint is one of Kerala's most photographed spots.",
+      "description_len": 216,
+      "highlights": [
+        "Heart-shaped lake (viral)",
+        "Wayanad's highest peak",
+        "Western Ghats panorama",
+        "Rolling grasslands"
+      ],
+      "warnings": [
+        "Steep final section",
+        "Slippery in rain",
+        "Permit from Forest Dept required",
+        "Leeches in monsoon"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Wayanad District Hospital Kalpetta 20km.",
+      "network_coverage": "No signal on trek. Jio at Meppady base."
+    },
+    {
+      "id": "meesapulimala-trek",
+      "name": "Meesapulimala Trek",
+      "destination_id": "munnar",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 2640,
+      "distance_km": 16,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Trek to Kerala's second-highest peak through rolling grasslands and rhododendron forests. At 2,640m, the summit offers views of Tamil Nadu and Kerala simultaneously. The most rewarding multi-day trek in Kerala.",
+      "description_len": 210,
+      "highlights": [
+        "Kerala's 2nd highest peak",
+        "Above-cloud sunrise",
+        "Rhododendron forests",
+        "Dual-state panorama"
+      ],
+      "warnings": [
+        "Cold nights at camp",
+        "AMS possible above 2400m",
+        "Permit required",
+        "No facilities above base camp"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Tata Hospital Munnar 30km.",
+      "network_coverage": "Zero coverage on trek."
+    },
+    {
+      "id": "agasthyarkoodam-trek",
+      "name": "Agasthyarkoodam Trek",
+      "destination_id": "trivandrum",
+      "difficulty": "hard",
+      "duration_days": 3,
+      "max_altitude_m": 1868,
+      "distance_km": 28,
+      "best_months": [
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "high",
+      "description": "Trek to the sacred peak of Agasthya Muni through the Neyyar Wildlife Sanctuary. One of Kerala's most challenging treks — steep ascents, dense forest, and a summit used by the Kani tribe for medicinal herb collection. Open only Jan-March.",
+      "description_len": 237,
+      "highlights": [
+        "Sacred peak of Agasthya Muni",
+        "Neyyar Wildlife Sanctuary",
+        "Kani tribal heritage",
+        "Medicinal herb biodiversity"
+      ],
+      "warnings": [
+        "Open only Jan-March",
+        "Lottery-based permit (limited slots)",
+        "Steep and strenuous",
+        "Elephant and gaur territory",
+        "No water above base camp"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Trivandrum Medical College 75km.",
+      "network_coverage": "Zero. No signal."
+    },
+    {
+      "id": "ponmudi-golden-peak-trek",
+      "name": "Ponmudi Golden Peak Trail",
+      "destination_id": "ponmudi",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1100,
+      "distance_km": 4,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "low",
+      "description": "Easy trail through montane forest to the Golden Peak viewpoint. Butterfly-rich path through cardamom and coffee. Perfect family trek with stunning views of the Agasthyamalai range.",
+      "description_len": 180,
+      "highlights": [
+        "365+ butterfly species",
+        "Golden Peak panorama",
+        "Montane forest walk",
+        "Easy family trek"
+      ],
+      "warnings": [
+        "Slippery in rain",
+        "Fog reduces visibility"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Trivandrum Medical College 55km.",
+      "network_coverage": "Decent Jio/Airtel."
+    },
+    {
+      "id": "periyar-jungle-patrol",
+      "name": "Periyar Tiger Trail (Jungle Patrol)",
+      "destination_id": "thekkady",
+      "difficulty": "moderate",
+      "duration_days": 2,
+      "max_altitude_m": 1200,
+      "distance_km": 20,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 16,
+      "fitness_level": "moderate",
+      "description": "A unique night-camping trek inside Periyar Tiger Reserve, guided by reformed poachers. Sleep in the forest, track wildlife, and experience the jungle at its most raw. One of India's most unique wildlife experiences.",
+      "description_len": 215,
+      "highlights": [
+        "Guided by reformed poachers",
+        "Night camping inside tiger reserve",
+        "Real wildlife tracking",
+        "Bamboo rafting"
+      ],
+      "warnings": [
+        "Basic camping conditions",
+        "Wildlife encounters (elephants common)",
+        "Limited to 5 trekkers per group",
+        "Physical fitness required"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Kumily Hospital 10km.",
+      "network_coverage": "Zero inside reserve."
+    },
+    {
+      "id": "wayanad-chembra-heart-lake",
+      "name": "Chembra Heart Lake Easy Trek",
+      "destination_id": "wayanad",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1600,
+      "distance_km": 4,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": true,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "low",
+      "description": "Easy 2km trek from the permit point to the famous heart-shaped lake. The lake that broke the internet. Suitable for families — the trail is well-maintained and gentle. Stop at the lake, no need to continue to the peak.",
+      "description_len": 218,
+      "highlights": [
+        "The viral heart-shaped lake",
+        "Easy family hike",
+        "Western Ghats meadows",
+        "Selfie point of Kerala"
+      ],
+      "warnings": [
+        "Slippery after rain",
+        "Crowded on weekends"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Wayanad District Hospital 20km.",
+      "network_coverage": "Weak signal at lake."
+    },
+    {
+      "id": "edakkal-cave-trek",
+      "name": "Edakkal Cave Trek",
+      "destination_id": "wayanad",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1200,
+      "distance_km": 2,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "low",
+      "description": "Short steep trek up to the prehistoric Edakkal Caves containing 8,000-year-old Mesolithic petroglyphs. One of the oldest human archaeological sites in South India. The cave is a natural cleft between two massive boulders.",
+      "description_len": 221,
+      "highlights": [
+        "8,000-year-old petroglyphs",
+        "Prehistoric rock art",
+        "Mountain viewpoint",
+        "Archaeological significance"
+      ],
+      "warnings": [
+        "Steep steps — 1000+ stairs",
+        "Hot in midday",
+        "Queue on weekends"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Wayanad District Hospital 15km.",
+      "network_coverage": "Good coverage."
+    },
+    {
+      "id": "ahobilam-nava-narasimha",
+      "name": "Ahobilam Upper Trail (9 Narasimha Temples)",
+      "destination_id": "ahobilam",
+      "difficulty": "hard",
+      "duration_days": 1,
+      "max_altitude_m": 800,
+      "distance_km": 16,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "high",
+      "description": "8km one-way trek through dense Eastern Ghats forest gorge visiting all 9 Narasimha shrines.",
+      "description_len": 91,
+      "highlights": [
+        "9 unique Narasimha temple forms",
+        "Dense forest gorge trekking",
+        "River crossings",
+        "Eastern Ghats wildlife"
+      ],
+      "warnings": [
+        "No phone signal on trail",
+        "Flash flood risk in monsoon",
+        "Wild animals in forest",
+        "Carry 3L water minimum"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "athirapally-vazhachal-trail",
+      "name": "Athirapally-Vazhachal Forest Trail",
+      "destination_id": "athirapally",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 200,
+      "distance_km": 5,
+      "best_months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "low",
+      "description": "Easy forest trail connecting Athirapally Falls to Vazhachal Falls through dense Western Ghats evergreen forest. Best in monsoon when both waterfalls are in full flow. Birdwatching opportunities en route.",
+      "description_len": 203,
+      "highlights": [
+        "Two waterfalls in one walk",
+        "Western Ghats evergreen forest",
+        "Monsoon spectacle",
+        "Birdwatching"
+      ],
+      "warnings": [
+        "Slippery in monsoon",
+        "Leeches Jun-Sep",
+        "Strong waterfall spray"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Chalakudy Hospital 30km.",
+      "network_coverage": "Weak inside forest."
+    },
+    {
+      "id": "kodaikanal-dolphin-nose",
+      "name": "Kodaikanal Dolphin Nose Trek",
+      "destination_id": "kodaikanal",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2066,
+      "distance_km": 6,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "low",
+      "description": "Easy trek from Kodaikanal to Dolphin Nose viewpoint — a rock formation shaped like a dolphin's nose hanging over a 2,000ft valley. One of the most dramatic viewpoints in the Western Ghats.",
+      "description_len": 188,
+      "highlights": [
+        "Dolphin-shaped rock over 2000ft valley",
+        "Shola forest walk",
+        "Vattakanal hippy village en route",
+        "Easy family trek"
+      ],
+      "warnings": [
+        "Slippery in rain",
+        "Cliff edge — no railing at viewpoint"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Kodaikanal Hospital 5km.",
+      "network_coverage": "Decent coverage."
+    },
+    {
+      "id": "kotagiri-catherine-falls",
+      "name": "Catherine Falls Trek",
+      "destination_id": "kotagiri",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1800,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": 12,
+      "fitness_level": "moderate",
+      "description": "Trek through tea estates to Catherine Falls — 250m double-tiered waterfall, one of the tallest in Tamil Nadu. The falls are named after the wife of a British collector. Best post-monsoon.",
+      "description_len": 187,
+      "highlights": [
+        "250m double-tiered waterfall",
+        "Tea estate walk",
+        "Nilgiri panorama",
+        "Quiet — almost no tourists"
+      ],
+      "warnings": [
+        "Steep sections near falls",
+        "Slippery rocks",
+        "No trail markers"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Coonoor Hospital 20km.",
+      "network_coverage": "No signal on trek."
+    },
+    {
+      "id": "ooty-doddabetta",
+      "name": "Doddabetta Peak Trek",
+      "destination_id": "ooty",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2637,
+      "distance_km": 3,
+      "best_months": [
+        3,
+        4,
+        5,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "low",
+      "description": "Short walk to the highest point in the Nilgiris (2,637m). Telescope house at summit. On clear days, views stretch across three states.",
+      "description_len": 134,
+      "highlights": [
+        "Highest peak in Nilgiris 2637m",
+        "Telescope house",
+        "Three-state views",
+        "Easy family walk"
+      ],
+      "warnings": [
+        "Crowded weekends",
+        "Fog can reduce visibility",
+        "Cold and windy at summit"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Ooty Hospital 10km.",
+      "network_coverage": "Good coverage."
+    },
+    {
+      "id": "valparai-sholayar",
+      "name": "Valparai Sholayar Forest Trail",
+      "destination_id": "valparai",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1200,
+      "distance_km": 10,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Trek through Sholayar dam area and Anamalai forest. Lion-tailed macaque territory. Dense shola-grassland mosaic. Guided trek only.",
+      "description_len": 130,
+      "highlights": [
+        "Lion-tailed macaque sighting",
+        "Sholayar dam viewpoint",
+        "Dense Western Ghats shola forest",
+        "Genuine wilderness experience"
+      ],
+      "warnings": [
+        "Forest dept guide mandatory",
+        "Elephant territory",
+        "Leeches in monsoon",
+        "Remote — no help nearby"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Pollachi Hospital 65km.",
+      "network_coverage": "No signal."
+    },
+    {
+      "id": "meghamalai-cloud-trail",
+      "name": "Meghamalai Cloud Forest Trek",
+      "destination_id": "meghamalai",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 1600,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": true,
+      "kids_suitable": false,
+      "min_age": 14,
+      "fitness_level": "moderate",
+      "description": "Guided trek through cloud forest and tea estates in the High Wavy Mountains. Advance estate permission required. One of Tamil Nadu's most pristine forest walks.",
+      "description_len": 160,
+      "highlights": [
+        "Untouched cloud forest",
+        "Cardamom plantation walk",
+        "Wildlife encounters possible",
+        "Zero other tourists"
+      ],
+      "warnings": [
+        "Advance permission mandatory",
+        "No facilities",
+        "No medical access",
+        "Carry all supplies"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Theni Hospital 50km.",
+      "network_coverage": "Zero signal."
+    },
+    {
+      "id": "chettinad-mansion-walk",
+      "name": "Chettinad Heritage Mansion Walk",
+      "destination_id": "chettinad",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 80,
+      "distance_km": 5,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 6,
+      "fitness_level": "low",
+      "description": "Walking tour through Kanadukathan and Karaikudi villages visiting Chettinad mansions, Athangudi tile workshops, and cooking demonstrations. The best way to experience 10,000 mansions.",
+      "description_len": 183,
+      "highlights": [
+        "Palatial mansion interiors",
+        "Athangudi tile-making demo",
+        "Chettinad cooking class",
+        "Burma teak and Italian marble architecture"
+      ],
+      "warnings": [
+        "Hot midday — start early",
+        "Some mansions privately owned — permission needed"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Karaikudi Hospital 5km.",
+      "network_coverage": "Good coverage."
+    },
+    {
+      "id": "hogenakkal-coracle-trail",
+      "name": "Hogenakkal Coracle & Falls Trail",
+      "destination_id": "hogenakkal",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 300,
+      "distance_km": 3,
+      "best_months": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": 8,
+      "fitness_level": "low",
+      "description": "Coracle ride through waterfalls followed by river fish fry and traditional oil massage. The complete Hogenakkal experience in one morning.",
+      "description_len": 138,
+      "highlights": [
+        "Coracle through waterfalls",
+        "Traditional oil massage",
+        "Fish spa experience",
+        "River fish fry"
+      ],
+      "warnings": [
+        "Strong currents in peak monsoon",
+        "Slippery rocks",
+        "Not available when river is in flood"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": "Dharmapuri Hospital 45km.",
+      "network_coverage": "BSNL weak."
+    },
+    {
+      "id": "khandagiri-caves-trek",
+      "name": "Khandagiri-Udayagiri Caves Heritage Walk",
+      "destination_id": "bhubaneswar",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 40,
+      "distance_km": 3,
+      "best_months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Walk through 2nd century BCE Jain rock-cut caves. Two adjacent hills with carved chambers, inscriptions, and elephant friezes.",
+      "description_len": 126,
+      "highlights": [
+        "2,300-year-old Jain caves",
+        "Hathi Gumpha inscription",
+        "Queen's cave with carvings",
+        "City panorama from top"
+      ],
+      "warnings": [
+        "Steps can be slippery",
+        "Hot in afternoon — go early",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "girnar-trek",
+      "name": "Girnar Hill Trek (10,000 Steps)",
+      "destination_id": "girnar",
+      "difficulty": "hard",
+      "duration_days": 1,
+      "max_altitude_m": 1031,
+      "distance_km": 12,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "high",
+      "description": "10,000 stone steps to the summit of Mount Girnar. Passes 16 Jain and Hindu temples. Starts at 4am for sunrise. One of India oldest pilgrimage treks.",
+      "description_len": 148,
+      "highlights": [
+        "10,000 stone steps",
+        "16 temples on route",
+        "Sunrise from summit",
+        "Neminath Jain Temple",
+        "Guru Dattatreya peak"
+      ],
+      "warnings": [
+        "Start by 4am — 6-8 hours needed",
+        "No water above step 5000",
+        "Monkeys aggressive — secure food",
+        "Not for knee problems"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "saputara-trek",
+      "name": "Saputara Sunset Point Trek",
+      "destination_id": "saputara",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 875,
+      "distance_km": 4,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Easy hill station walk to Sunset Point through tribal Dang forest. Gujarat only hill station.",
+      "description_len": 93,
+      "highlights": [
+        "Sunset viewpoint",
+        "Dang tribal forest",
+        "Gujarat only hill station",
+        "Lake walk"
+      ],
+      "warnings": [
+        "Slippery in monsoon",
+        "Return before dark"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "palitana-shatrunjaya",
+      "name": "Shatrunjaya Hill Climb (863 Temples)",
+      "destination_id": "palitana",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 603,
+      "distance_km": 7,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "3,500 stone steps to 863 Jain temples on a single hilltop. The most concentrated sacred architecture on Earth.",
+      "description_len": 110,
+      "highlights": [
+        "863 Jain temples",
+        "Adinath Temple at summit",
+        "Panoramic views",
+        "Stone step pilgrimage",
+        "Doli (palanquin) option"
+      ],
+      "warnings": [
+        "3,500 steps — moderate fitness needed",
+        "No food/water on hill",
+        "Closes at sunset — time your visit",
+        "Doli carriers available for those who cannot walk"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "champaner-trek",
+      "name": "Champaner Pavagadh Hill Trek",
+      "destination_id": "champaner-pavagadh",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 822,
+      "distance_km": 5,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Trek through UNESCO World Heritage ruins to Kalika Mata Temple at summit. Passes Mughal mosques and Hindu temples.",
+      "description_len": 114,
+      "highlights": [
+        "UNESCO ruins",
+        "Kalika Mata Temple",
+        "Mughal architecture",
+        "Hindu temple mix",
+        "Ropeway option"
+      ],
+      "warnings": [
+        "Steep final section",
+        "Hot in afternoon",
+        "Ropeway available as alternative"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "ranthambore-fort-trek",
+      "name": "Ranthambore Fort Heritage Trek",
+      "destination_id": "ranthambore",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 450,
+      "distance_km": 4,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Walk to the 10th-century Ranthambore Fort inside the tiger reserve. Ganesh temple, Jain temples, and panoramic views.",
+      "description_len": 117,
+      "highlights": [
+        "Fort inside tiger reserve",
+        "Ganesh temple",
+        "Jain temples",
+        "Panoramic views",
+        "Wildlife chance on trail"
+      ],
+      "warnings": [
+        "Inside tiger reserve — stay on path",
+        "Monkeys aggressive with food",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "mount-abu-guru-shikhar",
+      "name": "Guru Shikhar Summit Trek",
+      "destination_id": "mount-abu",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 1722,
+      "distance_km": 3,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Short trek to Guru Shikhar — highest peak in the Aravalli Range and all of Rajasthan at 1,722m.",
+      "description_len": 95,
+      "highlights": [
+        "Highest point in Rajasthan",
+        "Aravalli Range summit",
+        "Dattatreya temple",
+        "360° panorama"
+      ],
+      "warnings": [
+        "Short but steep final section",
+        "Can be cold in winter",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "chitrakoot-parikrama",
+      "name": "Chitrakoot Parikrama Walk",
+      "destination_id": "chitrakoot",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 300,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Sacred circumambulation of Kamadgiri hill — where Ram, Sita, and Lakshman lived during exile. Multiple temples en route.",
+      "description_len": 120,
+      "highlights": [
+        "Ram-Sita exile site",
+        "Kamadgiri circumambulation",
+        "Multiple temples",
+        "Mandakini River"
+      ],
+      "warnings": [
+        "Flat pilgrimage walk",
+        "Can be crowded during festivals",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "haflong-hills-trek",
+      "name": "Haflong Hills Trek",
+      "destination_id": "haflong",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 680,
+      "distance_km": 8,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Trek through Assam only hill station. Haflong Lake, Jatinga (mysterious bird suicide point), Dimasa tribal areas.",
+      "description_len": 113,
+      "highlights": [
+        "Assam only hill station",
+        "Haflong Lake",
+        "Jatinga mystery",
+        "Dimasa tribal villages"
+      ],
+      "warnings": [
+        "Leeches in monsoon",
+        "Guide recommended",
+        "Limited phone signal"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "rajgir-hills-circuit",
+      "name": "Rajgir Five Hills Circuit",
+      "destination_id": "rajgir",
+      "difficulty": "moderate",
+      "duration_days": 1,
+      "max_altitude_m": 400,
+      "distance_km": 10,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "moderate",
+      "description": "Walk the 5 hills surrounding Rajgir — each associated with Buddha. Hot springs, Griddhakuta (Vulture Peak), Japanese Stupa.",
+      "description_len": 123,
+      "highlights": [
+        "5 sacred Buddhist hills",
+        "Griddhakuta (Vulture Peak)",
+        "Hot springs",
+        "Japanese Peace Pagoda",
+        "Ropeway"
+      ],
+      "warnings": [
+        "Steep sections on some hills",
+        "Hot in afternoon",
+        "Carry water"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "darjeeling-tiger-hill",
+      "name": "Tiger Hill Sunrise Trek",
+      "destination_id": "darjeeling",
+      "difficulty": "easy",
+      "duration_days": 1,
+      "max_altitude_m": 2590,
+      "distance_km": 4,
+      "best_months": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "permits_required": false,
+      "kids_suitable": true,
+      "min_age": null,
+      "fitness_level": "low",
+      "description": "Pre-dawn trek (or drive) to Tiger Hill for sunrise over Kanchenjunga — the world 3rd highest peak. Golden light on snow.",
+      "description_len": 120,
+      "highlights": [
+        "Kanchenjunga sunrise",
+        "3rd highest peak view",
+        "Golden dawn light",
+        "Everest visible on clear days"
+      ],
+      "warnings": [
+        "Start at 4am",
+        "Very cold pre-dawn (bring layers)",
+        "Foggy days = no view — check forecast"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    },
+    {
+      "id": "sandakphu-approach",
+      "name": "Sandakphu Approach Trek",
+      "destination_id": "darjeeling",
+      "difficulty": "hard",
+      "duration_days": 3,
+      "max_altitude_m": 3636,
+      "distance_km": 35,
+      "best_months": [
+        10,
+        11,
+        12,
+        3,
+        4
+      ],
+      "permits_required": false,
+      "kids_suitable": false,
+      "min_age": null,
+      "fitness_level": "high",
+      "description": "Trek to Sandakphu — highest point in West Bengal. See 4 of 5 highest peaks: Everest, Kanchenjunga, Lhotse, Makalu.",
+      "description_len": 114,
+      "highlights": [
+        "4 of 5 highest peaks visible",
+        "Sleeping Buddha ridge",
+        "Rhododendron forests",
+        "India-Nepal border walk"
+      ],
+      "warnings": [
+        "3-day trek — serious fitness needed",
+        "Cold at altitude — sleeping bag essential",
+        "Altitude sickness possible",
+        "Guide mandatory"
+      ],
+      "day_by_day_first": null,
+      "nearest_hospital": null,
+      "network_coverage": null
+    }
+  ]
+}

@@ -1,0 +1,550 @@
+[
+  {
+    "id": "manimahesh-kailash",
+    "name": "Manimahesh Kailash",
+    "state_id": "himachal-pradesh",
+    "region": "Chamba",
+    "subregion": "Chamba",
+    "type": [
+      "peak",
+      "pilgrimage"
+    ],
+    "place_type": "peak",
+    "best_months": [
+      8,
+      9
+    ],
+    "avoid_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "spiritual",
+      "scenic"
+    ],
+    "tags": [
+      "pilgrimage",
+      "viewpoint",
+      "sacred-lake"
+    ]
+  },
+  {
+    "id": "mansarovar-kailash",
+    "name": "Mount Kailash & Mansarovar",
+    "state_id": "uttarakhand",
+    "region": "Kumaon",
+    "subregion": "Pithoragarh",
+    "type": [
+      "peak",
+      "temple",
+      "restricted"
+    ],
+    "place_type": "peak",
+    "best_months": [
+      5,
+      6,
+      8,
+      9
+    ],
+    "avoid_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "spiritual",
+      "extreme"
+    ],
+    "tags": [
+      "pilgrimage",
+      "restricted-access",
+      "viewpoint",
+      "lake",
+      "international"
+    ]
+  },
+  {
+    "id": "marari",
+    "name": "Marari Beach",
+    "state_id": "kerala",
+    "region": "Kerala Coast",
+    "subregion": null,
+    "type": [
+      "beach",
+      "fishing",
+      "village",
+      "eco"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "pristine",
+      "quiet",
+      "authentic",
+      "peaceful"
+    ],
+    "tags": [
+      "beach",
+      "fishing",
+      "village",
+      "eco",
+      "quiet",
+      "romantic"
+    ]
+  },
+  {
+    "id": "maredumilli",
+    "name": "Maredumilli",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Eastern Ghats & Hills",
+    "type": [
+      "nature",
+      "tribal",
+      "eco-tourism"
+    ],
+    "place_type": "eco-village",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "tribal",
+      "wilderness",
+      "authentic"
+    ],
+    "tags": [
+      "eco-tourism",
+      "tribal",
+      "moat",
+      "offbeat",
+      "waterfalls",
+      "nature"
+    ]
+  },
+  {
+    "id": "marine-national-park",
+    "name": "Marine National Park",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "marine",
+      "coral",
+      "wildlife",
+      "unique",
+      "coastal"
+    ]
+  },
+  {
+    "id": "mathura",
+    "name": "Mathura",
+    "state_id": "uttar-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      2,
+      3
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Krishna Birthplace",
+      "Temples",
+      "Pilgrimage"
+    ]
+  },
+  {
+    "id": "mcleodganj",
+    "name": "McLeod Ganj",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      10,
+      3
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Dalai Lama",
+      "Tibetan Colony",
+      "Cafes"
+    ]
+  },
+  {
+    "id": "mechuka",
+    "name": "Mechuka",
+    "state_id": "arunachal-pradesh",
+    "region": "Northeast India",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "remote",
+      "tribal",
+      "frontier"
+    ]
+  },
+  {
+    "id": "medak",
+    "name": "Medak",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Spiritual & Heritage",
+    "type": [
+      "heritage",
+      "religious",
+      "architecture"
+    ],
+    "place_type": "heritage-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "architectural",
+      "peaceful",
+      "historical"
+    ],
+    "tags": [
+      "heritage",
+      "church",
+      "fort",
+      "architecture",
+      "christian",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "meghamalai",
+    "name": "Meghamalai (High Wavy Mountains)",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "cloud-forest",
+      "tea",
+      "offbeat"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "crowd_level": "minimal",
+    "vibe": [
+      "remote",
+      "pristine",
+      "mysterious",
+      "untouched"
+    ],
+    "tags": [
+      "hill-station",
+      "cloud-forest",
+      "tea",
+      "offbeat",
+      "restricted",
+      "nature",
+      "pristine"
+    ]
+  },
+  {
+    "id": "minicoy",
+    "name": "Minicoy Island",
+    "state_id": "lakshadweep",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "beach",
+      "heritage",
+      "fishing"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "cultural",
+      "remote",
+      "traditional"
+    ],
+    "tags": [
+      "lakshadweep",
+      "minicoy",
+      "lighthouse",
+      "tuna",
+      "maldivian",
+      "lava-dance"
+    ]
+  },
+  {
+    "id": "modhera",
+    "name": "Modhera Sun Temple",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      9,
+      11,
+      12
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "heritage",
+      "temple",
+      "architecture",
+      "sun-worship",
+      "medieval"
+    ]
+  },
+  {
+    "id": "mokokchung",
+    "name": "Mokokchung",
+    "state_id": "nagaland",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Ao-Naga",
+      "festival",
+      "viewpoint"
+    ]
+  },
+  {
+    "id": "mon",
+    "name": "Mon",
+    "state_id": "nagaland",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "headhunters",
+      "tribal",
+      "frontier"
+    ]
+  },
+  {
+    "id": "moreh",
+    "name": "Moreh",
+    "state_id": "manipur",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "border-town",
+      "trade-market",
+      "Myanmar-gateway"
+    ]
+  },
+  {
+    "id": "morgaon",
+    "name": "Morgaon",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "village",
+      "rural"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "pune-district"
+    ]
+  }
+]

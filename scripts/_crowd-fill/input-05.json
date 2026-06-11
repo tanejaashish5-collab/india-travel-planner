@@ -1,0 +1,538 @@
+[
+  {
+    "id": "dalhousie",
+    "name": "Dalhousie",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Colonial Hill Station",
+      "Pine Forests",
+      "Scenic Walks"
+    ]
+  },
+  {
+    "id": "daman",
+    "name": "Daman",
+    "state_id": "daman-diu",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "beach",
+      "portuguese",
+      "colonial",
+      "coastal",
+      "heritage"
+    ]
+  },
+  {
+    "id": "dambuk",
+    "name": "Dambuk",
+    "state_id": "arunachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "northeast",
+      "festival",
+      "orange-orchards",
+      "river",
+      "tribal-culture",
+      "dibang-valley"
+    ]
+  },
+  {
+    "id": "damdama-sahib",
+    "name": "Takht Sri Damdama Sahib",
+    "state_id": "punjab",
+    "region": "Bathinda-Talwandi Sabo",
+    "subregion": null,
+    "type": [
+      "spiritual",
+      "heritage",
+      "pilgrimage"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "peaceful",
+      "devotional"
+    ],
+    "tags": [
+      "Sikh-Takht",
+      "Guru-Granth-Sahib",
+      "pilgrimage"
+    ]
+  },
+  {
+    "id": "daringbadi",
+    "name": "Daringbadi",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Hill Stations & Tribal",
+    "type": [
+      "hill-station",
+      "tribal",
+      "nature"
+    ],
+    "place_type": "hill-station",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "cool",
+      "tribal",
+      "forested"
+    ],
+    "tags": [
+      "hill-station",
+      "moat",
+      "tribal",
+      "coffee",
+      "offbeat",
+      "nature"
+    ]
+  },
+  {
+    "id": "deeg",
+    "name": "Deeg",
+    "state_id": "rajasthan",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      2,
+      3
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Water Palace",
+      "Mughal Architecture",
+      "Heritage"
+    ]
+  },
+  {
+    "id": "deoghar",
+    "name": "Deoghar",
+    "state_id": "jharkhand",
+    "region": "Santhal Pargana",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Jyotirlinga",
+      "Shiva",
+      "pilgrimage"
+    ]
+  },
+  {
+    "id": "deomali",
+    "name": "Deomali",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Hill Stations & Tribal",
+    "type": [
+      "trekking",
+      "tribal",
+      "nature"
+    ],
+    "place_type": "peak",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "adventurous",
+      "tribal",
+      "remote"
+    ],
+    "tags": [
+      "trekking",
+      "moat",
+      "tribal",
+      "peak",
+      "offbeat",
+      "adventure"
+    ]
+  },
+  {
+    "id": "dhanushkodi",
+    "name": "Dhanushkodi",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Coast",
+    "subregion": null,
+    "type": [
+      "ghost-town",
+      "beach",
+      "heritage",
+      "unique"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "eerie",
+      "dramatic",
+      "remote",
+      "powerful"
+    ],
+    "tags": [
+      "ghost-town",
+      "beach",
+      "heritage",
+      "unique",
+      "remote",
+      "photography",
+      "ruins"
+    ]
+  },
+  {
+    "id": "dharamshala",
+    "name": "Dharamshala",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      10,
+      3
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Tibetan Culture",
+      "Cricket",
+      "Monasteries"
+    ]
+  },
+  {
+    "id": "dhauli",
+    "name": "Dhauli",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Buddhist & Heritage",
+    "type": [
+      "heritage",
+      "buddhist",
+      "historical"
+    ],
+    "place_type": "peace-monument",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "historical",
+      "spiritual",
+      "peaceful"
+    ],
+    "tags": [
+      "heritage",
+      "buddhist",
+      "ashoka",
+      "peace",
+      "historical",
+      "day-trip"
+    ]
+  },
+  {
+    "id": "dholavira",
+    "name": "Dholavira",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "empty",
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "archaeology",
+      "indus-valley",
+      "ancient",
+      "desert"
+    ]
+  },
+  {
+    "id": "diamond-triangle",
+    "name": "Buddhist Diamond Triangle",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Buddhist & Heritage",
+    "type": [
+      "heritage",
+      "buddhist",
+      "archaeological"
+    ],
+    "place_type": "archaeological-complex",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "historical",
+      "peaceful",
+      "scholarly"
+    ],
+    "tags": [
+      "buddhist",
+      "heritage",
+      "moat",
+      "archaeological",
+      "UNESCO-tentative",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "diglipur",
+    "name": "Diglipur",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "nature",
+      "trekking",
+      "wildlife",
+      "beach"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "remote",
+      "adventure",
+      "offbeat",
+      "pristine"
+    ],
+    "tags": [
+      "andaman",
+      "diglipur",
+      "saddle-peak",
+      "turtle",
+      "ross-smith",
+      "trekking"
+    ]
+  },
+  {
+    "id": "dirang",
+    "name": "Dirang",
+    "state_id": "arunachal-pradesh",
+    "region": "Northeast India",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "hot-springs",
+      "valley",
+      "dzong"
+    ]
+  },
+  {
+    "id": "diu",
+    "name": "Diu",
+    "state_id": "daman-diu",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "beach",
+      "portuguese",
+      "colonial",
+      "island",
+      "coastal"
+    ]
+  }
+]

@@ -1,0 +1,553 @@
+[
+  {
+    "id": "ranakpur",
+    "name": "Ranakpur Jain Temple",
+    "state_id": "rajasthan",
+    "region": "western",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Jain",
+      "marble-pillars",
+      "architecture"
+    ]
+  },
+  {
+    "id": "ranchi",
+    "name": "Ranchi",
+    "state_id": "jharkhand",
+    "region": "Chotanagpur Plateau",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "waterfalls",
+      "plateau",
+      "capital"
+    ]
+  },
+  {
+    "id": "rangat",
+    "name": "Rangat",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "nature",
+      "wildlife",
+      "mangrove"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "offbeat",
+      "serene",
+      "raw",
+      "untouched"
+    ],
+    "tags": [
+      "andaman",
+      "rangat",
+      "mangrove",
+      "turtle",
+      "cuthbert-bay",
+      "amkunj",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "rani-ki-vav",
+    "name": "Rani ki Vav (Patan)",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "stepwell",
+      "heritage",
+      "architecture",
+      "sculpture"
+    ]
+  },
+  {
+    "id": "ranjangaon",
+    "name": "Ranjangaon",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak",
+      "solar-alignment"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "ancient",
+      "engineering"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "pune-district",
+      "solar-aligned"
+    ]
+  },
+  {
+    "id": "rann-of-kutch",
+    "name": "Rann of Kutch",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "desert",
+      "festival",
+      "photography",
+      "unique",
+      "moonlight"
+    ]
+  },
+  {
+    "id": "ross-island",
+    "name": "Ross Island (Netaji Subhas Chandra Bose Dweep)",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "heritage",
+      "nature"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "historic",
+      "serene",
+      "photogenic"
+    ],
+    "tags": [
+      "andaman",
+      "ross-island",
+      "british-ruins",
+      "heritage",
+      "deer",
+      "colonial"
+    ]
+  },
+  {
+    "id": "sabarimala",
+    "name": "Sabarimala",
+    "state_id": "kerala",
+    "region": "Kerala Heritage",
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "trek"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "extreme",
+    "vibe": [
+      "spiritual",
+      "remote"
+    ],
+    "tags": [
+      "pilgrimage",
+      "temple",
+      "trek",
+      "spiritual",
+      "devotional"
+    ]
+  },
+  {
+    "id": "sambalpur",
+    "name": "Sambalpur",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Sacred Triangle & Cities",
+    "type": [
+      "city",
+      "craft",
+      "heritage",
+      "dam"
+    ],
+    "place_type": "heritage-city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "artisan",
+      "engineering",
+      "cultural"
+    ],
+    "tags": [
+      "craft",
+      "ikat",
+      "dam",
+      "engineering",
+      "textile",
+      "heritage"
+    ]
+  },
+  {
+    "id": "sanchi",
+    "name": "Sanchi",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "Buddhist",
+      "Ashoka"
+    ]
+  },
+  {
+    "id": "saputara",
+    "name": "Saputara",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      7,
+      8,
+      9,
+      12,
+      1
+    ],
+    "avoid_months": [
+      5
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "hill-station",
+      "tribal",
+      "nature",
+      "western-ghats"
+    ]
+  },
+  {
+    "id": "sariska",
+    "name": "Sariska Tiger Reserve",
+    "state_id": "rajasthan",
+    "region": "northern",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "tiger-reserve",
+      "Aravalli",
+      "accessible"
+    ]
+  },
+  {
+    "id": "sasangir",
+    "name": "Sasan Gir",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "wildlife",
+      "safari",
+      "lion",
+      "eco-tourism",
+      "tribal"
+    ]
+  },
+  {
+    "id": "satkosia",
+    "name": "Satkosia",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Wildlife & Nature",
+    "type": [
+      "wildlife",
+      "nature",
+      "gorge"
+    ],
+    "place_type": "gorge-sanctuary",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "wild",
+      "dramatic",
+      "conservation"
+    ],
+    "tags": [
+      "wildlife",
+      "moat",
+      "gorge",
+      "gharial",
+      "conservation",
+      "ramsar",
+      "nature"
+    ]
+  },
+  {
+    "id": "shantiniketan",
+    "name": "Shantiniketan",
+    "state_id": "west-bengal",
+    "region": "east",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "Tagore",
+      "arts"
+    ]
+  },
+  {
+    "id": "shikharji",
+    "name": "Shikharji",
+    "state_id": "jharkhand",
+    "region": "eastern",
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "jain-site",
+      "trek"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "remote"
+    ],
+    "tags": [
+      "Jain-holiest",
+      "Tirthankara",
+      "pilgrimage"
+    ]
+  }
+]

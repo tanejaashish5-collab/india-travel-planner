@@ -1,0 +1,619 @@
+[
+  {
+    "id": "chandipur",
+    "name": "Chandipur",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Coast & Beaches",
+    "type": [
+      "beach",
+      "nature",
+      "geological"
+    ],
+    "place_type": "beach-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "mysterious",
+      "natural",
+      "unique"
+    ],
+    "tags": [
+      "beach",
+      "moat",
+      "geological",
+      "unique",
+      "nature",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "chandratal",
+    "name": "Chandratal",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "high-altitude",
+      "lake",
+      "camping",
+      "road-trip",
+      "photography",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "charaideo",
+    "name": "Charaideo Moidams",
+    "state_id": "assam",
+    "region": "Sivasagar-Charaideo",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "UNESCO",
+      "historical"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "historical",
+      "offbeat"
+    ],
+    "tags": [
+      "UNESCO-2024",
+      "Ahom-dynasty",
+      "burial-mounds"
+    ]
+  },
+  {
+    "id": "chennai",
+    "name": "Chennai",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Cities",
+    "subregion": null,
+    "type": [
+      "city",
+      "beach",
+      "heritage",
+      "culture"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "vibrant",
+      "cultural",
+      "hot",
+      "cosmopolitan"
+    ],
+    "tags": [
+      "city",
+      "beach",
+      "heritage",
+      "culture",
+      "music",
+      "dance",
+      "shopping",
+      "food"
+    ]
+  },
+  {
+    "id": "cherai",
+    "name": "Cherai Beach",
+    "state_id": "kerala",
+    "region": "Kerala Coast",
+    "subregion": null,
+    "type": [
+      "beach",
+      "dolphin",
+      "fishing",
+      "island"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "relaxed",
+      "family",
+      "nature",
+      "accessible"
+    ],
+    "tags": [
+      "beach",
+      "dolphin",
+      "fishing",
+      "family",
+      "island",
+      "nature"
+    ]
+  },
+  {
+    "id": "chettinad",
+    "name": "Chettinad",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Offbeat",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "mansions",
+      "food",
+      "art"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "palatial",
+      "spicy",
+      "authentic",
+      "unique"
+    ],
+    "tags": [
+      "heritage",
+      "mansions",
+      "food",
+      "art",
+      "tiles",
+      "spice",
+      "Instagrammable",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "chidambaram",
+    "name": "Chidambaram",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "heritage",
+      "sacred",
+      "dance"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "sacred",
+      "intense",
+      "ancient",
+      "scholarly"
+    ],
+    "tags": [
+      "temple",
+      "heritage",
+      "sacred",
+      "dance",
+      "Pancha-Bhuta"
+    ]
+  },
+  {
+    "id": "chidiya-tapu",
+    "name": "Chidiya Tapu",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "nature",
+      "birding",
+      "trekking"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "serene",
+      "natural",
+      "photogenic"
+    ],
+    "tags": [
+      "andaman",
+      "chidiya-tapu",
+      "birding",
+      "sunset",
+      "trekking",
+      "nature",
+      "bird-island"
+    ]
+  },
+  {
+    "id": "chilika-lake",
+    "name": "Chilika Lake",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Wildlife & Nature",
+    "type": [
+      "nature",
+      "birding",
+      "lagoon",
+      "wildlife"
+    ],
+    "place_type": "lagoon",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "serene",
+      "wild",
+      "seasonal"
+    ],
+    "tags": [
+      "lagoon",
+      "birding",
+      "dolphins",
+      "nature",
+      "wildlife",
+      "family"
+    ]
+  },
+  {
+    "id": "chinnar",
+    "name": "Chinnar Wildlife Sanctuary",
+    "state_id": "kerala",
+    "region": "Kerala Wildlife",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "sanctuary",
+      "trekking",
+      "rare-species"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "dry",
+      "wild",
+      "offbeat",
+      "adventurous"
+    ],
+    "tags": [
+      "wildlife",
+      "sanctuary",
+      "trekking",
+      "birding",
+      "offbeat",
+      "dry-forest"
+    ]
+  },
+  {
+    "id": "chitrakote-falls",
+    "name": "Chitrakote Falls",
+    "state_id": "chhattisgarh",
+    "region": "Bastar",
+    "subregion": null,
+    "type": [
+      "waterfall",
+      "trekking",
+      "tribal-culture"
+    ],
+    "place_type": "waterfall",
+    "best_months": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "wet-season",
+      "bastar-tribal"
+    ],
+    "tags": []
+  },
+  {
+    "id": "chittorgarh",
+    "name": "Chittorgarh",
+    "state_id": "rajasthan",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      2,
+      3
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Fort",
+      "Rajput Heritage",
+      "History"
+    ]
+  },
+  {
+    "id": "coimbatore",
+    "name": "Coimbatore",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Cities",
+    "subregion": null,
+    "type": [
+      "city",
+      "spiritual",
+      "gateway",
+      "industry"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "modern",
+      "spiritual",
+      "gateway",
+      "practical"
+    ],
+    "tags": [
+      "city",
+      "spiritual",
+      "gateway",
+      "industry",
+      "yoga",
+      "medical-tourism"
+    ]
+  },
+  {
+    "id": "courtallam",
+    "name": "Courtallam (Kutralam)",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Coast",
+    "subregion": null,
+    "type": [
+      "waterfall",
+      "therapeutic",
+      "nature",
+      "sacred"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      1
+    ],
+    "avoid_months": [
+      3,
+      4,
+      5
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "healing",
+      "refreshing",
+      "natural",
+      "spiritual"
+    ],
+    "tags": [
+      "waterfall",
+      "therapeutic",
+      "nature",
+      "sacred",
+      "bathing",
+      "family",
+      "monsoon"
+    ]
+  },
+  {
+    "id": "cuttack",
+    "name": "Cuttack",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Sacred Triangle & Cities",
+    "type": [
+      "city",
+      "heritage",
+      "craft"
+    ],
+    "place_type": "heritage-city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "busy",
+    "vibe": [
+      "historical",
+      "artisan",
+      "festive"
+    ],
+    "tags": [
+      "city",
+      "heritage",
+      "craft",
+      "silver",
+      "filigree",
+      "festival"
+    ]
+  },
+  {
+    "id": "dakor",
+    "name": "Dakor",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "busy",
+    "vibe": [],
+    "tags": [
+      "pilgrimage",
+      "krishna",
+      "spiritual",
+      "temple"
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "_comment": "Section E SOS ground-truth — direct Supabase aggregate reads (small, 1-7 row results; egress-safe per CLAUDE.md). Project dudzsdzfvikjjhurxrgc. Captured 2026-06-09.",
+  "coverage_and_completeness": {
+    "dest_total": 525,
+    "sos_rows": 525,
+    "dests_without_sos_row": 0,
+    "rows_under_3_dialable": 0,
+    "min_dialable_fields": 5,
+    "avg_dialable_fields": 7.42,
+    "rows_with_placeholder_X": 0,
+    "total_dialable_entries_11cols": 3896,
+    "total_dialable_incl_local_police_station_12cols": 4107,
+    "local_police_station_populated": 211,
+    "_dialable_cols_counted": ["police","ambulance","fire","women_helpline","tourist_helpline","road_accident","rescue_contact","mountain_rescue","mechanic_contact","tow_service","embassy_emergency_line"],
+    "_note": "4107 (12-col, incl local_police_station name field) reconciles EXACTLY to prior findings sos_db_total_structured_entries=4107. The 3896 figure excludes local_police_station (a by-design station-NAME field, not dialable). No dialable data lost."
+  },
+  "local_helpers_distribution": {
+    "null": 0,
+    "empty_array": 339,
+    "nonempty_array": 186,
+    "not_null": 525,
+    "_note": "Prior findings (through 2026-06-07) carried '405 with curated local_helpers block / 120 without'. Today's directly-measured nonempty=186. See new finding NEW-2026-06-09-001."
+  },
+  "verified_by_breakdown": [
+    {"verified_by": "constants-reverify-2026-06-09", "rows": 458, "lh_nonempty": 178, "lh_empty": 280, "latest_verified_date": "2026-06-09"},
+    {"verified_by": "sos-backfill-2026-06-04", "rows": 45, "lh_nonempty": 0, "lh_empty": 45, "latest_verified_date": "2026-06-04"},
+    {"verified_by": "district-reverify-2026-06-09", "rows": 8, "lh_nonempty": 8, "lh_empty": 0, "latest_verified_date": "2026-06-09"},
+    {"verified_by": null, "rows": 5, "lh_nonempty": 0, "lh_empty": 5},
+    {"verified_by": "NakshIQ ops 2026-06-01 — national emergency short codes re-affirmed", "rows": 5, "lh_nonempty": 0, "lh_empty": 5},
+    {"verified_by": "sos-research-sweep-2026-05-04", "rows": 3, "lh_nonempty": 0, "lh_empty": 3},
+    {"verified_by": "NakshIQ ops 2026-06-01 — mirrored canonical puducherry SOS", "rows": 1, "lh_nonempty": 0, "lh_empty": 1}
+  ],
+  "change_tracking": {
+    "rows_updated_today_2026_06_09": 0,
+    "rows_updated_since_2026_06_08": 0,
+    "rows_updated_since_2026_06_01": 45,
+    "verified_dated_today_2026_06_09": 466,
+    "min_updated_at": "2026-04-11T09:38:26Z",
+    "max_updated_at": "2026-06-04T03:06:19Z",
+    "_note": "466 rows carry verified_date=2026-06-09 but 0 rows have updated_at on Jun 8/9 (max updated_at = Jun 4). The reverify wrote verified_date/verified_by WITHOUT bumping updated_at, so updated_at is NOT a reliable change-tracker on emergency_sos. Cannot definitively date the local_helpers state from updated_at."
+  },
+  "prior_phone_format_bugs_recheck": {
+    "uttarkashi": {"police": "100", "ambulance": "108", "fire": "101", "women_helpline": "1091 (or 181)", "road_accident": "1073", "tourist_helpline": "1800-111-363 (toll-free)", "rescue_contact": "DDMA Uttarkashi Control Room: 01374-222722 / 1077", "mountain_rescue": "DDMA Uttarkashi: 01374-222126 / 7310913129", "verified": true, "verified_by": "constants-reverify-2026-06-09", "status": "STILL CLOSED — no placeholder X, all dialable"},
+    "khonoma": {"police": "100", "ambulance": "108", "fire": "101", "women_helpline": "1091", "road_accident": "1073", "tourist_helpline": "1363", "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070", "verified": true, "verified_by": "constants-reverify-2026-06-09", "status": "STILL CLOSED — all dialable, no text-typed phone"},
+    "khangchendzonga-np": {"police": "100", "ambulance": "108", "fire": "101", "women_helpline": "1091", "road_accident": "1073", "tourist_helpline": "1800-345-3006", "rescue_contact": "Geyzing PS: 8145887528; District Hospital Gyalshing: 03595-250634; park rescue via Forest Dept (no published civilian phone -> district admin)", "verified": true, "verified_by": "constants-reverify-2026-06-09", "status": "STILL CLOSED — honest-scarcity note on park rescue is policy-compliant, not a placeholder"}
+  }
+}

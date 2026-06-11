@@ -1,0 +1,32 @@
+{
+  "sample_id": "kaziranga",
+  "sample_name": "Kaziranga",
+  "deep_dive": {
+    "local_helpers": [
+      {
+        "name": "Assam Tourism Helpline",
+        "role": "Tourist assistance",
+        "phone": "0361-2547102",
+        "availability": "Office hours"
+      },
+      {
+        "name": "Assam Police Control Room",
+        "role": "Emergency",
+        "phone": "0361-2540126",
+        "availability": "24/7"
+      },
+      {
+        "name": "Kaziranga National Park Range Office",
+        "role": "Park emergency, wildlife incident reporting, visitor safety",
+        "phone": "03776-262429",
+        "availability": "Park hours + emergency 24/7"
+      },
+      {
+        "name": "Dial 112",
+        "role": "India Unified Emergency Number — connects to nearest police, ambulance, fire service",
+        "phone": "112",
+        "availability": "24/7 nationwide"
+      }
+    ]
+  }
+}

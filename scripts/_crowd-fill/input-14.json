@@ -1,0 +1,645 @@
+[
+  {
+    "id": "point-calimere",
+    "name": "Point Calimere Wildlife Sanctuary",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Wildlife",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "birding",
+      "wetland",
+      "flamingo"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1
+    ],
+    "avoid_months": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "wild",
+      "serene",
+      "seasonal",
+      "remote"
+    ],
+    "tags": [
+      "wildlife",
+      "birding",
+      "wetland",
+      "flamingo",
+      "blackbuck",
+      "Ramsar",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "pondicherry",
+    "name": "Pondicherry (Puducherry)",
+    "state_id": "puducherry",
+    "region": "Tamil Nadu Coast",
+    "subregion": null,
+    "type": [
+      "colonial",
+      "beach",
+      "french",
+      "spiritual"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "bohemian",
+      "french",
+      "relaxed",
+      "cultural"
+    ],
+    "tags": [
+      "colonial",
+      "beach",
+      "french",
+      "spiritual",
+      "cafe",
+      "art",
+      "yoga"
+    ]
+  },
+  {
+    "id": "ponmudi",
+    "name": "Ponmudi",
+    "state_id": "kerala",
+    "region": "Kerala Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "butterfly",
+      "nature",
+      "scenic"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "misty",
+      "serene",
+      "green",
+      "accessible"
+    ],
+    "tags": [
+      "hill-station",
+      "butterfly",
+      "nature",
+      "scenic",
+      "weekend",
+      "family"
+    ]
+  },
+  {
+    "id": "poovar",
+    "name": "Poovar",
+    "state_id": "kerala",
+    "region": "Kerala Offbeat",
+    "subregion": null,
+    "type": [
+      "beach",
+      "estuary",
+      "island",
+      "nature"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "secluded",
+      "pristine",
+      "romantic",
+      "untouched"
+    ],
+    "tags": [
+      "beach",
+      "estuary",
+      "island",
+      "nature",
+      "romantic",
+      "offbeat",
+      "boat-access"
+    ]
+  },
+  {
+    "id": "porbandar",
+    "name": "Porbandar",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "gandhi",
+      "heritage",
+      "coastal",
+      "birthplace",
+      "pilgrimage"
+    ]
+  },
+  {
+    "id": "port-blair",
+    "name": "Port Blair (Sri Vijaya Puram)",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "city",
+      "island",
+      "heritage",
+      "beach",
+      "water-sports"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "historic",
+      "tropical",
+      "vibrant",
+      "gateway"
+    ],
+    "tags": [
+      "andaman",
+      "port-blair",
+      "cellular-jail",
+      "island",
+      "heritage",
+      "seafood",
+      "sri-vijaya-puram"
+    ]
+  },
+  {
+    "id": "prashar-lake",
+    "name": "Prashar Lake",
+    "state_id": "himachal-pradesh",
+    "region": "Mandi",
+    "subregion": null,
+    "type": [
+      "Lake"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "Offbeat",
+      "Trek",
+      "Spiritual",
+      "Quiet"
+    ],
+    "tags": [
+      "trek",
+      "offbeat",
+      "spiritual",
+      "lake",
+      "camping"
+    ]
+  },
+  {
+    "id": "puducherry",
+    "name": "Puducherry (Pondicherry)",
+    "state_id": "puducherry",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "city",
+      "heritage",
+      "beach",
+      "spiritual",
+      "food"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "charming",
+      "bohemian",
+      "cultural",
+      "romantic"
+    ],
+    "tags": [
+      "puducherry",
+      "pondicherry",
+      "french-quarter",
+      "ashram",
+      "promenade",
+      "colonial",
+      "cafe",
+      "beach"
+    ]
+  },
+  {
+    "id": "pulicat-lake",
+    "name": "Pulicat Lake",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Coast & Delta",
+    "type": [
+      "nature",
+      "birding",
+      "lagoon"
+    ],
+    "place_type": "lagoon",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "serene",
+      "seasonal",
+      "natural"
+    ],
+    "tags": [
+      "birding",
+      "nature",
+      "moat",
+      "lagoon",
+      "flamingo",
+      "offbeat",
+      "seasonal"
+    ]
+  },
+  {
+    "id": "puri",
+    "name": "Puri",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Sacred Triangle & Cities",
+    "type": [
+      "pilgrimage",
+      "beach",
+      "city"
+    ],
+    "place_type": "temple-city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very busy",
+    "vibe": [
+      "spiritual",
+      "festive",
+      "coastal"
+    ],
+    "tags": [
+      "pilgrimage",
+      "char-dham",
+      "beach",
+      "rath-yatra",
+      "family",
+      "must-visit"
+    ]
+  },
+  {
+    "id": "raghurajpur",
+    "name": "Raghurajpur",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Buddhist & Heritage",
+    "type": [
+      "craft",
+      "heritage",
+      "cultural"
+    ],
+    "place_type": "craft-village",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [],
+    "crowd_level": "low",
+    "vibe": [
+      "artisan",
+      "traditional",
+      "cultural"
+    ],
+    "tags": [
+      "craft",
+      "moat",
+      "heritage",
+      "pattachitra",
+      "artisan",
+      "village",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "rajahmundry",
+    "name": "Rajahmundry",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Cities & Culture",
+    "type": [
+      "city",
+      "heritage",
+      "nature"
+    ],
+    "place_type": "river-city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "cultural",
+      "historical",
+      "scenic"
+    ],
+    "tags": [
+      "city",
+      "heritage",
+      "river",
+      "godavari",
+      "gateway",
+      "food"
+    ]
+  },
+  {
+    "id": "rajgir",
+    "name": "Rajgir",
+    "state_id": "bihar",
+    "region": "Magadh",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "hot-springs",
+      "Buddhist",
+      "Jain"
+    ]
+  },
+  {
+    "id": "rajkot",
+    "name": "Rajkot",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "city",
+      "heritage",
+      "gandhi",
+      "food",
+      "culture"
+    ]
+  },
+  {
+    "id": "ramappa-temple",
+    "name": "Ramappa Temple",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Kakatiya Heritage",
+    "type": [
+      "heritage",
+      "temple",
+      "UNESCO"
+    ],
+    "place_type": "temple",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [],
+    "crowd_level": "moderate",
+    "vibe": [
+      "architectural",
+      "peaceful",
+      "historical"
+    ],
+    "tags": [
+      "UNESCO",
+      "heritage",
+      "kakatiya",
+      "temple",
+      "moat",
+      "architecture"
+    ]
+  },
+  {
+    "id": "rameswaram",
+    "name": "Rameswaram",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "island",
+      "bridge"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "sacred",
+      "dramatic",
+      "remote",
+      "devotional"
+    ],
+    "tags": [
+      "temple",
+      "pilgrimage",
+      "island",
+      "bridge",
+      "Char-Dham",
+      "sacred"
+    ]
+  }
+]

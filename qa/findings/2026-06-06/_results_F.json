@@ -1,0 +1,73 @@
+{
+ "probes": [
+  [
+   "POST /api/chat",
+   "{\"broken",
+   "400",
+   "{\"error\":\"Malformed JSON body\"}"
+  ],
+  [
+   "POST /api/chat",
+   "",
+   "400",
+   "{\"error\":\"Malformed JSON body\"}"
+  ],
+  [
+   "POST /api/chat",
+   "{\"message\":\"hi\"}",
+   "400",
+   "{\"error\":\"Invalid question\"}"
+  ],
+  [
+   "POST /api/chat",
+   "{\"question\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaa...",
+   "400",
+   "{\"error\":\"Invalid question\"}"
+  ],
+  [
+   "POST /api/itinerary",
+   "{\"broken",
+   "400",
+   "{\"error\":\"Malformed JSON body\"}"
+  ],
+  [
+   "POST /api/itinerary",
+   "",
+   "400",
+   "{\"error\":\"Malformed JSON body\"}"
+  ],
+  [
+   "POST /api/itinerary",
+   "{}",
+   "400",
+   "{\"error\":\"Missing required fields\"}"
+  ],
+  [
+   "GET /api/weather?id=varanasi",
+   "",
+   "200",
+   "{\"temp\":36,\"feels_like\":36,\"humidity\":30,\"description\":\"clear sky\",\"icon\":\"01d\",\"wind_speed\":10,\"visibility\":10,\"clouds\":0,\"updated\":\"2026-06-06T02:11:03.575Z\"}"
+  ],
+  [
+   "GET /api/destinations",
+   "",
+   "404",
+   "<!DOCTYPE html><html data-dpl-id=\"dpl_CNZXAShTjajrtqTxZbhGM9FNXSaj\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scal"
+  ],
+  [
+   "GET /api/health",
+   "",
+   "404",
+   "<!DOCTYPE html><html data-dpl-id=\"dpl_CNZXAShTjajrtqTxZbhGM9FNXSaj\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scal"
+  ],
+  [
+   "POST /api/chat",
+   "{\"question\":\"What is the best time to vi...",
+   "200",
+   "{\"answer\":\"# Best Time to Visit Leh\\n\\nBased on NakshIQ's monthly scores, here's the honest breakdown:\\n\\n## **Peak Seasons (Highest Scores)**\\n\\n### **June, Ju"
+  ]
+ ],
+ "probed": 11,
+ "x5xx": 0,
+ "x4xx_validation": 7
+}

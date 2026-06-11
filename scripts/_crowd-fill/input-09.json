@@ -1,0 +1,600 @@
+[
+  {
+    "id": "konark",
+    "name": "Konark",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Sacred Triangle & Cities",
+    "type": [
+      "heritage",
+      "temple",
+      "UNESCO"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "architectural",
+      "artistic",
+      "historical"
+    ],
+    "tags": [
+      "UNESCO",
+      "heritage",
+      "temple",
+      "dance",
+      "architecture",
+      "must-visit"
+    ]
+  },
+  {
+    "id": "konaseema",
+    "name": "Konaseema",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Coast & Delta",
+    "type": [
+      "nature",
+      "backwaters",
+      "birding"
+    ],
+    "place_type": "backwaters",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      9
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "serene",
+      "rural",
+      "untouched"
+    ],
+    "tags": [
+      "backwaters",
+      "nature",
+      "moat",
+      "offbeat",
+      "birding",
+      "rural",
+      "peaceful"
+    ]
+  },
+  {
+    "id": "koraput",
+    "name": "Koraput",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Hill Stations & Tribal",
+    "type": [
+      "tribal",
+      "nature",
+      "heritage"
+    ],
+    "place_type": "tribal-district",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "tribal",
+      "authentic",
+      "remote"
+    ],
+    "tags": [
+      "tribal",
+      "moat",
+      "responsible-tourism",
+      "offbeat",
+      "GI-tag",
+      "nature"
+    ]
+  },
+  {
+    "id": "kovalam",
+    "name": "Kovalam",
+    "state_id": "kerala",
+    "region": "Kerala Coast",
+    "subregion": null,
+    "type": [
+      "beach",
+      "ayurveda",
+      "lighthouse",
+      "resort"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "relaxed",
+      "healing",
+      "warm",
+      "touristy"
+    ],
+    "tags": [
+      "beach",
+      "ayurveda",
+      "lighthouse",
+      "water-sports",
+      "family",
+      "yoga"
+    ]
+  },
+  {
+    "id": "kozhikode",
+    "name": "Kozhikode (Calicut)",
+    "state_id": "kerala",
+    "region": "Kerala Heritage",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "cuisine",
+      "port",
+      "beach"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "historic",
+      "foodie",
+      "authentic",
+      "malabar"
+    ],
+    "tags": [
+      "heritage",
+      "cuisine",
+      "port",
+      "beach",
+      "history",
+      "spice-trade",
+      "foodie"
+    ]
+  },
+  {
+    "id": "kumarakom",
+    "name": "Kumarakom",
+    "state_id": "kerala",
+    "region": "Kerala Backwaters",
+    "subregion": null,
+    "type": [
+      "backwater",
+      "birding",
+      "lake",
+      "resort"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "serene",
+      "upscale",
+      "peaceful",
+      "nature"
+    ],
+    "tags": [
+      "backwater",
+      "birding",
+      "luxury",
+      "romantic",
+      "lake",
+      "nature"
+    ]
+  },
+  {
+    "id": "kumbakonam",
+    "name": "Kumbakonam",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "heritage",
+      "UNESCO",
+      "sacred"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "sacred",
+      "traditional",
+      "ancient",
+      "scholarly"
+    ],
+    "tags": [
+      "temple",
+      "UNESCO",
+      "heritage",
+      "sacred",
+      "coffee",
+      "brass"
+    ]
+  },
+  {
+    "id": "kumbalangi",
+    "name": "Kumbalangi",
+    "state_id": "kerala",
+    "region": "Kerala Backwaters",
+    "subregion": null,
+    "type": [
+      "ecotourism",
+      "village",
+      "fishing",
+      "homestay"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "authentic",
+      "educational",
+      "peaceful",
+      "sustainable"
+    ],
+    "tags": [
+      "ecotourism",
+      "village",
+      "fishing",
+      "sustainable",
+      "offbeat",
+      "family"
+    ]
+  },
+  {
+    "id": "kumbhalgarh",
+    "name": "Kumbhalgarh",
+    "state_id": "rajasthan",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      2,
+      3
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Great Wall of India",
+      "Fort",
+      "Wildlife"
+    ]
+  },
+  {
+    "id": "kutch",
+    "name": "Kutch (Bhuj)",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "handicraft",
+      "tribal",
+      "culture",
+      "desert",
+      "heritage"
+    ]
+  },
+  {
+    "id": "kuttanad",
+    "name": "Kuttanad",
+    "state_id": "kerala",
+    "region": "Kerala Backwaters",
+    "subregion": null,
+    "type": [
+      "backwater",
+      "agriculture",
+      "village",
+      "unique"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "minimal",
+    "vibe": [
+      "authentic",
+      "rural",
+      "educational",
+      "green"
+    ],
+    "tags": [
+      "backwater",
+      "agriculture",
+      "offbeat",
+      "heritage",
+      "village",
+      "educational"
+    ]
+  },
+  {
+    "id": "lachen",
+    "name": "Lachen",
+    "state_id": "sikkim",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "North-Sikkim",
+      "tribal",
+      "gateway"
+    ]
+  },
+  {
+    "id": "lahaul-valley",
+    "name": "Lahaul Valley",
+    "state_id": "himachal-pradesh",
+    "region": "Lahaul",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      9,
+      5,
+      7,
+      10
+    ],
+    "avoid_months": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "valley",
+      "road-trip",
+      "gateway"
+    ]
+  },
+  {
+    "id": "laknavaram",
+    "name": "Laknavaram",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Kakatiya Heritage",
+    "type": [
+      "nature",
+      "lake",
+      "adventure"
+    ],
+    "place_type": "forest-lake",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      9
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "serene",
+      "forested",
+      "adventurous"
+    ],
+    "tags": [
+      "lake",
+      "nature",
+      "moat",
+      "offbeat",
+      "forest",
+      "suspension-bridge",
+      "adventure"
+    ]
+  },
+  {
+    "id": "lamayuru",
+    "name": "Lamayuru",
+    "state_id": "ladakh",
+    "region": "Srinagar-Leh Highway",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      9,
+      8
+    ],
+    "avoid_months": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "monastery",
+      "offbeat",
+      "photography",
+      "moonscape"
+    ]
+  },
+  {
+    "id": "lambasingi",
+    "name": "Lambasingi",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Eastern Ghats & Hills",
+    "type": [
+      "hill-station",
+      "nature",
+      "offbeat"
+    ],
+    "place_type": "hamlet",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "cold",
+      "misty",
+      "remote"
+    ],
+    "tags": [
+      "hill-station",
+      "moat",
+      "offbeat",
+      "cold",
+      "winter",
+      "nature"
+    ]
+  }
+]

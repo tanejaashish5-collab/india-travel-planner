@@ -1,0 +1,598 @@
+[
+  {
+    "id": "hemkund-sahib",
+    "name": "Hemkund Sahib",
+    "state_id": "uttarakhand",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "pilgrimage",
+      "sikh",
+      "high-altitude",
+      "trek",
+      "glacial-lake",
+      "uttarakhand"
+    ]
+  },
+  {
+    "id": "hogenakkal",
+    "name": "Hogenakkal Falls",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Offbeat",
+    "subregion": null,
+    "type": [
+      "waterfall",
+      "coracle",
+      "heritage",
+      "nature"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "dramatic",
+      "unique",
+      "adventurous",
+      "authentic"
+    ],
+    "tags": [
+      "waterfall",
+      "coracle",
+      "heritage",
+      "nature",
+      "massage",
+      "unique",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "horsley-hills",
+    "name": "Horsley Hills",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Eastern Ghats & Hills",
+    "type": [
+      "hill-station",
+      "nature",
+      "heritage"
+    ],
+    "place_type": "hill-station",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "colonial",
+      "peaceful",
+      "forested"
+    ],
+    "tags": [
+      "hill-station",
+      "colonial",
+      "nature",
+      "weekend",
+      "peaceful"
+    ]
+  },
+  {
+    "id": "idukki",
+    "name": "Idukki",
+    "state_id": "kerala",
+    "region": "Kerala Offbeat",
+    "subregion": null,
+    "type": [
+      "dam",
+      "wildlife",
+      "spice",
+      "hills"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "remote",
+      "green",
+      "adventurous",
+      "wild"
+    ],
+    "tags": [
+      "dam",
+      "wildlife",
+      "spice",
+      "hills",
+      "offbeat",
+      "nature",
+      "cardamom"
+    ]
+  },
+  {
+    "id": "jabalpur",
+    "name": "Jabalpur",
+    "state_id": "madhya-pradesh",
+    "region": "Jabalpur-Narmada",
+    "subregion": null,
+    "type": [
+      "nature",
+      "waterfall",
+      "heritage"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "scenic",
+      "cultural",
+      "gateway"
+    ],
+    "tags": [
+      "marble-rocks",
+      "waterfall",
+      "tiger-gateway"
+    ]
+  },
+  {
+    "id": "jagdalpur",
+    "name": "Jagdalpur",
+    "state_id": "chhattisgarh",
+    "region": "Bastar",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "waterfall",
+      "tribal",
+      "national-park"
+    ]
+  },
+  {
+    "id": "jampui-hills",
+    "name": "Jampui Hills",
+    "state_id": "tripura",
+    "region": "North Tripura",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "trekking"
+    ],
+    "place_type": "hill-station",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "very-low",
+    "vibe": [
+      "eternal-spring",
+      "forest-trek",
+      "quiet"
+    ],
+    "tags": []
+  },
+  {
+    "id": "jorhat",
+    "name": "Jorhat",
+    "state_id": "assam",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "tea-gardens",
+      "gibbon",
+      "gateway"
+    ]
+  },
+  {
+    "id": "junagadh",
+    "name": "Junagadh",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "heritage",
+      "fort",
+      "buddhist",
+      "ashoka",
+      "nawabi"
+    ]
+  },
+  {
+    "id": "kadmat",
+    "name": "Kadmat Island",
+    "state_id": "lakshadweep",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "beach",
+      "diving",
+      "water-sports",
+      "coral"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "adventure",
+      "tropical",
+      "active"
+    ],
+    "tags": [
+      "lakshadweep",
+      "kadmat",
+      "diving",
+      "water-sports",
+      "sandbank",
+      "kayaking"
+    ]
+  },
+  {
+    "id": "kalimpong",
+    "name": "Kalimpong",
+    "state_id": "west-bengal",
+    "region": "east",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "nursery",
+      "Buddhist",
+      "orchids"
+    ]
+  },
+  {
+    "id": "kanchipuram",
+    "name": "Kanchipuram",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "heritage",
+      "silk",
+      "sacred"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "sacred",
+      "traditional",
+      "artisanal",
+      "historic"
+    ],
+    "tags": [
+      "temple",
+      "heritage",
+      "silk",
+      "pilgrimage",
+      "sacred",
+      "shopping"
+    ]
+  },
+  {
+    "id": "kanha",
+    "name": "Kanha National Park",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "avoid_months": [
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "tiger-reserve",
+      "Jungle-Book",
+      "wildlife"
+    ]
+  },
+  {
+    "id": "kanheri-caves",
+    "name": "Kanheri Caves",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "heritage",
+      "caves",
+      "rock-cut",
+      "buddhist",
+      "national-park"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "historic",
+      "urban-edge",
+      "forested"
+    ],
+    "tags": [
+      "caves",
+      "buddhist",
+      "heritage",
+      "mumbai",
+      "national-park",
+      "rock-cut"
+    ]
+  },
+  {
+    "id": "kanyakumari",
+    "name": "Kanyakumari",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Coast",
+    "subregion": null,
+    "type": [
+      "spiritual",
+      "beach",
+      "heritage",
+      "viewpoint"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "dramatic",
+      "sacred",
+      "cinematic",
+      "emotional"
+    ],
+    "tags": [
+      "spiritual",
+      "viewpoint",
+      "heritage",
+      "sacred",
+      "sunrise",
+      "sunset",
+      "three-seas"
+    ]
+  },
+  {
+    "id": "karaikal",
+    "name": "Karaikal",
+    "state_id": "puducherry",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "beach",
+      "heritage",
+      "temple",
+      "food"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "quiet",
+      "offbeat",
+      "cultural"
+    ],
+    "tags": [
+      "puducherry",
+      "karaikal",
+      "temple",
+      "french",
+      "beach",
+      "seafood",
+      "cauvery"
+    ]
+  }
+]

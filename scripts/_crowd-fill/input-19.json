@@ -1,0 +1,293 @@
+[
+  {
+    "id": "verinag",
+    "name": "Verinag",
+    "state_id": "jammu-kashmir",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Mughal Spring",
+      "Kashmir Valley",
+      "Peaceful"
+    ]
+  },
+  {
+    "id": "vijayawada",
+    "name": "Vijayawada",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Cities & Culture",
+    "type": [
+      "city",
+      "pilgrimage",
+      "heritage"
+    ],
+    "place_type": "city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "busy",
+    "vibe": [
+      "bustling",
+      "spiritual",
+      "commercial"
+    ],
+    "tags": [
+      "city",
+      "temple",
+      "commercial",
+      "gateway",
+      "food"
+    ]
+  },
+  {
+    "id": "visakhapatnam",
+    "name": "Visakhapatnam",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Coast & Delta",
+    "type": [
+      "city",
+      "beach",
+      "coastal"
+    ],
+    "place_type": "port-city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "busy",
+    "vibe": [
+      "coastal",
+      "modern",
+      "vibrant"
+    ],
+    "tags": [
+      "beach",
+      "city",
+      "coastal",
+      "submarine",
+      "family",
+      "food"
+    ]
+  },
+  {
+    "id": "vishnuprayag",
+    "name": "Vishnuprayag",
+    "state_id": "uttarakhand",
+    "region": "Garhwal",
+    "subregion": "Chamoli",
+    "type": [
+      "confluence",
+      "pilgrimage"
+    ],
+    "place_type": "confluence",
+    "best_months": [
+      4,
+      5,
+      6,
+      10
+    ],
+    "avoid_months": null,
+    "crowd_level": "moderate",
+    "vibe": [
+      "spiritual"
+    ],
+    "tags": [
+      "pilgrimage",
+      "confluence",
+      "sacred-site"
+    ]
+  },
+  {
+    "id": "warangal",
+    "name": "Warangal",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Kakatiya Heritage",
+    "type": [
+      "heritage",
+      "temple",
+      "fort"
+    ],
+    "place_type": "heritage-city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "historical",
+      "architectural",
+      "cultural"
+    ],
+    "tags": [
+      "heritage",
+      "kakatiya",
+      "fort",
+      "temple",
+      "UNESCO-tentative",
+      "state-emblem"
+    ]
+  },
+  {
+    "id": "wayanad",
+    "name": "Wayanad",
+    "state_id": "kerala",
+    "region": "Kerala Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "wildlife",
+      "heritage",
+      "spice"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "adventurous",
+      "misty",
+      "cultural",
+      "green"
+    ],
+    "tags": [
+      "hill-station",
+      "wildlife",
+      "heritage",
+      "spice",
+      "trekking",
+      "adventure",
+      "caves"
+    ]
+  },
+  {
+    "id": "yercaud",
+    "name": "Yercaud",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "coffee",
+      "lake",
+      "budget"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "peaceful",
+      "affordable",
+      "green",
+      "accessible"
+    ],
+    "tags": [
+      "hill-station",
+      "coffee",
+      "lake",
+      "budget",
+      "weekend",
+      "nature"
+    ]
+  },
+  {
+    "id": "yuksom",
+    "name": "Yuksom",
+    "state_id": "sikkim",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "trek-base",
+      "heritage",
+      "Kanchenjunga"
+    ]
+  }
+]

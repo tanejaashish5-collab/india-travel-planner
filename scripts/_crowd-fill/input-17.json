@@ -1,0 +1,578 @@
+[
+  {
+    "id": "surat",
+    "name": "Surat",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "city",
+      "food",
+      "diamond",
+      "modern",
+      "textile"
+    ]
+  },
+  {
+    "id": "swamimalai",
+    "name": "Swamimalai",
+    "state_id": "tamil-nadu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual"
+    ],
+    "tags": []
+  },
+  {
+    "id": "talasari",
+    "name": "Talasari",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Coast & Beaches",
+    "type": [
+      "beach",
+      "nature",
+      "offbeat"
+    ],
+    "place_type": "hidden-beach",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "very low",
+    "vibe": [
+      "pristine",
+      "quiet",
+      "untouched"
+    ],
+    "tags": [
+      "beach",
+      "moat",
+      "offbeat",
+      "pristine",
+      "nature",
+      "hidden"
+    ]
+  },
+  {
+    "id": "tamenglong",
+    "name": "Tamenglong",
+    "state_id": "manipur",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "waterfall",
+      "wilderness",
+      "tribal"
+    ]
+  },
+  {
+    "id": "taptapani",
+    "name": "Taptapani",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Hill Stations & Tribal",
+    "type": [
+      "wellness",
+      "tribal",
+      "nature"
+    ],
+    "place_type": "hot-springs",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "therapeutic",
+      "tribal",
+      "spiritual"
+    ],
+    "tags": [
+      "wellness",
+      "moat",
+      "hot-springs",
+      "tribal",
+      "offbeat",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "thanjavur",
+    "name": "Thanjavur (Tanjore)",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "heritage",
+      "UNESCO",
+      "museum"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "historic",
+      "spiritual",
+      "majestic",
+      "scholarly"
+    ],
+    "tags": [
+      "temple",
+      "UNESCO",
+      "heritage",
+      "museum",
+      "art",
+      "Chola"
+    ]
+  },
+  {
+    "id": "tharangambadi",
+    "name": "Tharangambadi (Tranquebar)",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Coast",
+    "subregion": null,
+    "type": [
+      "colonial",
+      "danish",
+      "heritage",
+      "beach"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "minimal",
+    "vibe": [
+      "historic",
+      "quiet",
+      "unique",
+      "authentic"
+    ],
+    "tags": [
+      "colonial",
+      "danish",
+      "heritage",
+      "beach",
+      "unique",
+      "offbeat",
+      "church"
+    ]
+  },
+  {
+    "id": "thekkady",
+    "name": "Thekkady (Periyar)",
+    "state_id": "kerala",
+    "region": "Kerala Hills",
+    "subregion": null,
+    "type": [
+      "wildlife",
+      "spice",
+      "lake",
+      "culture"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      3,
+      4,
+      5
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "wild",
+      "adventurous",
+      "cultural",
+      "green"
+    ],
+    "tags": [
+      "wildlife",
+      "spice",
+      "safari",
+      "culture",
+      "trekking",
+      "family"
+    ]
+  },
+  {
+    "id": "theur",
+    "name": "Theur",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak",
+      "river-confluence"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "peshwa-history",
+      "accessible"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "pune-district",
+      "peshwa-heritage"
+    ]
+  },
+  {
+    "id": "thrissur",
+    "name": "Thrissur",
+    "state_id": "kerala",
+    "region": "Kerala Heritage",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "festival",
+      "temple",
+      "culture"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "cultural",
+      "festive",
+      "traditional",
+      "spiritual"
+    ],
+    "tags": [
+      "heritage",
+      "festival",
+      "temple",
+      "culture",
+      "elephant",
+      "music"
+    ]
+  },
+  {
+    "id": "tiruchendur",
+    "name": "Tiruchendur",
+    "state_id": "tamil-nadu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "coastal"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "coastal"
+    ],
+    "tags": []
+  },
+  {
+    "id": "tirumala",
+    "name": "Tirumala",
+    "state_id": "andhra-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "trek"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "visited"
+    ],
+    "tags": []
+  },
+  {
+    "id": "tiruparankundram",
+    "name": "Tiruparankundram",
+    "state_id": "tamil-nadu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "hills"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual"
+    ],
+    "tags": []
+  },
+  {
+    "id": "tirupati",
+    "name": "Tirupati",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Pilgrimage & Heritage",
+    "type": [
+      "pilgrimage",
+      "temple"
+    ],
+    "place_type": "temple-city",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "very busy",
+    "vibe": [
+      "spiritual",
+      "crowded",
+      "traditional"
+    ],
+    "tags": [
+      "pilgrimage",
+      "temple",
+      "family",
+      "must-visit"
+    ]
+  },
+  {
+    "id": "tiruttani",
+    "name": "Tiruttani",
+    "state_id": "tamil-nadu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "hills"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual"
+    ],
+    "tags": []
+  },
+  {
+    "id": "tiruvannamalai",
+    "name": "Tiruvannamalai",
+    "state_id": "tamil-nadu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "sacred-hill"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "reverent",
+      "small-town"
+    ],
+    "tags": [
+      "pilgrimage",
+      "shiva",
+      "pancha-bhoota",
+      "fire-element",
+      "temple-town",
+      "tamil-nadu"
+    ]
+  }
+]

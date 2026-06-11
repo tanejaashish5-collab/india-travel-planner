@@ -1,0 +1,150 @@
+{
+  "thin_why_special": [
+    {
+      "id": "vrindavan",
+      "name": "Vrindavan",
+      "state_id": "uttar-pradesh",
+      "type": [],
+      "vibe": [],
+      "tagline": "City of 5000 temples — where Krishna grew up, Holi is a war, and spiritual energy is tangible.",
+      "why_special": "Banke Bihari temple, Prem Mandir, ISKCON, widow ashrams, Lathmar Holi, 5000+ temples"
+    },
+    {
+      "id": "parvati-valley",
+      "name": "Parvati Valley",
+      "state_id": "himachal-pradesh",
+      "type": [],
+      "vibe": [],
+      "tagline": "The valley beyond Kasol — Tosh, Malana, Kheerganga hot springs, and some of India's finest treks.",
+      "why_special": "Kheerganga hot springs, Malana ancient village, Tosh viewpoint, Pin-Parvati pass, riverside trails"
+    },
+    {
+      "id": "chamba",
+      "name": "Chamba",
+      "state_id": "himachal-pradesh",
+      "type": [],
+      "vibe": [],
+      "tagline": "1000-year-old Lakshmi Narayan temples, the Chaugan meadow, and Himachali culture untouched by tourism.",
+      "why_special": "Lakshmi Narayan 10th-century temples, Chaugan meadow, Bhuri Singh museum, Chamba rumal embroidery"
+    },
+    {
+      "id": "achabal",
+      "name": "Achabal",
+      "state_id": "jammu-kashmir",
+      "type": [],
+      "vibe": [],
+      "tagline": "Queen of Kashmir's springs — Mughal terraced garden with natural cascading water channels and chinar shade.",
+      "why_special": "Mughal terraced garden, natural cascades, chinar trees, Queen Nur Jahan favorite retreat"
+    },
+    {
+      "id": "chittorgarh",
+      "name": "Chittorgarh",
+      "state_id": "rajasthan",
+      "type": [],
+      "vibe": [],
+      "tagline": "India's largest fort — 700 acres of Rajput defiance, Padmini's palace, and the Tower of Victory.",
+      "why_special": "Largest fort in India (700 acres), Vijay Stambh, Padmini Palace, Rani Padmini story, 3 jauhar sites"
+    },
+    {
+      "id": "dalhousie",
+      "name": "Dalhousie",
+      "state_id": "himachal-pradesh",
+      "type": [],
+      "vibe": [],
+      "tagline": "Colonial hill station with Scottish churches, Khajjiar meadow (Mini Switzerland), and cedar-lined walks.",
+      "why_special": "Khajjiar meadow, Kalatop wildlife sanctuary, St John church, Panchpula waterfalls, Subhash Baoli"
+    },
+    {
+      "id": "mathura",
+      "name": "Mathura",
+      "state_id": "uttar-pradesh",
+      "type": [],
+      "vibe": [],
+      "tagline": "Krishna's birthplace — the jail cell temple, Vishram Ghat on the Yamuna, and India's most colorful Holi.",
+      "why_special": "Krishna Janmabhoomi temple, Vishram Ghat, Holi capital, Govardhan Hill, ancient Buddhist art museum"
+    },
+    {
+      "id": "deeg",
+      "name": "Deeg",
+      "state_id": "rajasthan",
+      "type": [],
+      "vibe": [],
+      "tagline": "A water palace where 900 fountains once fired simultaneously — Rajasthan's most underrated monsoon palace.",
+      "why_special": "900-fountain water palace, monsoon light show recreation, Gopal Bhawan, Suraj Mal's summer retreat"
+    },
+    {
+      "id": "kasol",
+      "name": "Kasol",
+      "state_id": "himachal-pradesh",
+      "type": [],
+      "vibe": [],
+      "tagline": "India's backpacker capital in the Parvati Valley — Israeli cafes, riverside camping, and mountain vibes.",
+      "why_special": "Parvati River camping, Israeli food scene, budget backpacker hub, gateway to Kheerganga and Malana"
+    },
+    {
+      "id": "verinag",
+      "name": "Verinag",
+      "state_id": "jammu-kashmir",
+      "type": [],
+      "vibe": [],
+      "tagline": "Source spring of the Jhelum — an octagonal Mughal pool so blue it looks photoshopped, virtually no tourists.",
+      "why_special": "Jhelum river source, octagonal Mughal spring, Jahangir garden, zero tourist crowds, sacred water"
+    },
+    {
+      "id": "pithoragarh",
+      "name": "Pithoragarh",
+      "state_id": "uttarakhand",
+      "type": [
+        "town",
+        "gateway"
+      ],
+      "vibe": [
+        "offbeat",
+        "quiet"
+      ],
+      "tagline": "Gateway to Panchachuli peaks and Nepal border — where Kumaon gets real.",
+      "why_special": "Valley locals call Little Kashmir. Gateway to Munsiyari, Milam Glacier, Kailash Mansarovar route."
+    },
+    {
+      "id": "bharatpur",
+      "name": "Bharatpur",
+      "state_id": "rajasthan",
+      "type": [],
+      "vibe": [],
+      "tagline": "Keoladeo Ghana UNESCO bird sanctuary — 350+ species including Siberian cranes, 55km from the Taj.",
+      "why_special": "UNESCO Keoladeo Ghana, 350+ bird species, Siberian cranes, Lohagarh Fort, cycling trails"
+    },
+    {
+      "id": "mcleodganj",
+      "name": "McLeod Ganj",
+      "state_id": "himachal-pradesh",
+      "type": [],
+      "vibe": [],
+      "tagline": "Home of the Dalai Lama — Tibetan cafes, meditation retreats, and the Triund trek start point at 2082m.",
+      "why_special": "Dalai Lama temple, Triund trek, Bhagsu waterfall, Tibetan cooking classes, Namgyal monastery"
+    }
+  ],
+  "thin_tagline": [
+    {
+      "id": "bhopal",
+      "name": "Bhopal",
+      "state_id": "madhya-pradesh",
+      "tagline": "City of Lakes"
+    }
+  ],
+  "empty_deep_dive_count": 190,
+  "empty_deep_dive_sample": [
+    {
+      "id": "khonoma",
+      "name": "Khonoma"
+    },
+    {
+      "id": "bhimbetka",
+      "name": "Bhimbetka Rock Shelters"
+    },
+    {
+      "id": "velavadar",
+      "name": "Velavadar"
+    }
+  ]
+}

@@ -64,3 +64,49 @@ nakshiq-autoposter/autoposter*.log
 # Not tracked because (a) it's derived data and (b) the source markdowns
 # already live in the repo.
 apps/web/src/data/audit-snapshots.json
+
+# --- root-clutter cleanup 2026-06-11 (session: untracked-clutter analysis) ---
+# Local-only scratch / tool caches
+.scrapes/
+.playwright-mcp/
+.claude/worktrees/
+*.pre-flip-backup
+# R2 upload staging — prod serves all media from R2, these are local sources
+/images/
+/videos-9x16-portrait/
+/voice-exports/
+/nakshiq-design-system/
+/trip-board/
+# Research & mining dumps (large; distilled outputs are committed elsewhere)
+data/research/
+data/ideas/_raw/
+data/ideas/_remine/
+data/ideas/_validation/
+data/festivals/_inbox/
+data/festivals/_quarantine-old-fairground-2026-06-09/
+data/health-check.log
+# QA harness: keep code + JSON findings; ignore raw page captures
+qa/_lib/node_modules/
+qa/findings/**/*.html
+qa/findings/**/*.csv
+qa/findings/**/*.xml
+qa/findings/**/*.txt
+# Autoposter local media/caches (text tooling + audits ARE committed)
+nakshiq-autoposter/assets/music/*.wav
+nakshiq-autoposter/avatar_previews/
+nakshiq-autoposter/pomelli_library_backup_*/
+nakshiq-autoposter/data/strategy_briefs/
+nakshiq-autoposter/data/research/
+nakshiq-autoposter/.regen_dirty_cache.json
+nakshiq-autoposter/*.gz
+# Supabase local artifacts
+supabase/seed.db
+# Founder documents parked at repo root (his files, not project files)
+/Ash.jpg
+/Aur-1.jpg
+/NakshIQ_*.docx
+/NakshIQ — Trip Board.pdf
+/Website Feedback And Analysis.pdf
+/GSC non indexing/
+/Web Res reports/
+*.tmp

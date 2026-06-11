@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "schema_note": "Conforms to /qa/findings.schema.json. Run executed 2026-05-04 against https://www.nakshiq.com/ from Cowork scheduled task. Single source of truth for the three persona reports.",
+  "run": {
+    "id": "nakshiq-qa-2026-05-04",
+    "date": "2026-05-04",
+    "started_utc": "2026-05-04T02:07:31Z",
+    "completed_utc": "2026-05-04T02:16:24Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork scheduled task) — single Chrome session + curl HTTP probes, full A–K matrix",
+    "mode": "HTTP+Chrome",
+    "real_verification": true,
+    "fabricated_numbers": false
+  },
+  "environment": {
+    "hosting": "Vercel",
+    "framework": "Next.js 16 (App Router, RSC)",
+    "deployment_id": "dpl_7Xu6wG5Swk2RGd8LkrRxZVJJ1MDq",
+    "locales_tested": ["en", "hi"],
+    "chrome_session": "Chrome MCP single-tab session (tabId 1894300920)",
+    "measurement_method": "curl --max-time time_total for HTTP timings; performance.getEntriesByType('navigation') in Chrome for browser-side TTFB / DCL / load; performance.getEntriesByType('resource').length for browser request count; data-dpl-id attribute on <html> for deployment fingerprint."
+  },
+  "coverage": {
+    "destinations_sampled": 12,
+    "destination_slugs": [
+      "jaipur", "shimla", "manali", "panaji", "munnar", "varanasi",
+      "darjeeling", "udaipur", "leh", "binsar", "kaza", "spiti"
+    ],
+    "selection_rationale": "Same 12-destination panel held since 2026-04-26 to keep day-over-day deltas honest. Spiti retained as the soft-404 canary (referenced in llms.txt with no canonical destination row). Shimla newly surfaces as a critical defect today.",
+    "total_destinations_in_sitemap": 12766,
+    "sitemap_chunks_verified": [
+      { "path": "/sitemap.xml", "http": 200, "time_s": 0.655, "size_bytes": 752, "note": "Top-level index references chunks 0..4 only (chunk 5 still removed from index)." },
+      { "path": "/sitemap/0.xml", "http": 200, "time_s": 0.660, "size_bytes": 39840, "url_count": 212 },
+      { "path": "/sitemap/1.xml", "http": 200, "time_s": 1.478, "size_bytes": 2583506, "url_count": 12766, "note": "Destination chunk — flat vs 2026-05-03 (12766)." },
+      { "path": "/sitemap/2.xml", "http": 200, "time_s": 0.879, "size_bytes": 191948, "url_count": 944, "note": "Collections chunk grew from 932 → 944 (+12) vs 2026-05-03." },
+      { "path": "/sitemap/3.xml", "http": 200, "time_s": 0.712, "size_bytes": 656074, "url_count": 3196 },
+      { "path": "/sitemap/4.xml", "http": 200, "time_s": 1.056, "size_bytes": 516626, "url_count": 2618 },
+      { "path": "/sitemap/5.xml", "http": 200, "time_s": 0.653, "size_bytes": 111, "url_count": 0, "note": "STILL serves 200 with empty <urlset>. NEW-2026-04-30-001 / NEW-2026-05-03-004 remain partial — no longer crawler-advertised, but the route still resolves." },
+      { "path": "/sitemap/6.xml", "http": 404, "time_s": 0.339, "size_bytes": 9, "url_count": 0 }
+    ],
+    "locale_coverage": "Both /en/ and /hi/ probed for all 12 destinations + 4 collection slugs (real + intentionally-bad) + plan + explore + treks + month sub-routes (sample) + key APIs.",
+    "bugs_evaluated": 14,
+    "matrix_sections_covered": [
+      "A routing/HTTP",
+      "B i18n parity",
+      "C destinations (12)",
+      "D collections",
+      "E SEO/meta",
+      "F regression matrix BUG-001..014",
+      "G sitemaps/robots",
+      "H API endpoints",
+      "I SSR/RSC",
+      "J performance HTTP",
+      "K end-to-end interactive (Chrome live)"
+    ],
+    "matrix_sections_not_covered": []
+  },
+  "samples": {
+    "destination_pages": [
+      { "slug": "jaipur",     "locale": "en", "http": 200, "time_s": 1.139, "size_bytes": 438969, "title_ok": true,  "h1": "Jaipur",     "html_lang": "en", "h2": 35, "h3": 57, "h4": 14, "jsonld": 2, "confidence_mentions": 11, "imgs": 8, "soft_404": false },
+      { "slug": "jaipur",     "locale": "hi", "http": 200, "time_s": 0.866, "size_bytes": 453884, "title_ok": true,  "h1": "जयपुर",      "html_lang": "hi", "h2": 35, "h3": 57, "h4": 14, "jsonld": 2, "confidence_mentions": 9,  "imgs": 8, "soft_404": false },
+      { "slug": "shimla",     "locale": "en", "http": 200, "time_s": 0.772, "size_bytes": 75136,  "title_ok": true,  "h1": "",           "html_lang": "en", "h2": 0,  "h3": 0,  "h4": 0,  "jsonld": 1, "confidence_mentions": 4,  "imgs": 0, "soft_404": true,  "soft_404_marker": "NEXT_HTTP_ERROR_FALLBACK;404", "note": "REGRESSION — destination page renders 'Lost in the mountains / 404' fallback body even though metadata, OG image, /api/weather?id=shimla, /api/alerts?id=shimla, /hi/destination/shimla, and /en/destination/shimla/march all resolve normally. Reproduced across 3 cache-busted requests." },
+      { "slug": "shimla",     "locale": "hi", "http": 200, "time_s": 0.905, "size_bytes": 479964, "title_ok": true,  "h1": "शिमला",      "html_lang": "hi", "h2": 36, "h3": 55, "h4": 14, "jsonld": 2, "confidence_mentions": 10, "imgs": 9, "soft_404": false },
+      { "slug": "manali",     "locale": "en", "http": 200, "time_s": 0.862, "size_bytes": 512198, "title_ok": true,  "h1": "Manali",     "html_lang": "en", "h2": 36, "h3": 61, "h4": 14, "jsonld": 2, "confidence_mentions": 15, "imgs": 9, "soft_404": false },
+      { "slug": "manali",     "locale": "hi", "http": 200, "time_s": 1.082, "size_bytes": 527150, "title_ok": true,  "h1": "मनाली",      "html_lang": "hi", "h2": 36, "h3": 61, "h4": 14, "jsonld": 2, "confidence_mentions": 13, "imgs": 9, "soft_404": false },
+      { "slug": "panaji",     "locale": "en", "http": 200, "time_s": 0.848, "size_bytes": 315908, "title_ok": true,  "h1": "Panaji",     "html_lang": "en", "h2": 30, "h3": 28, "h4": 6,  "jsonld": 2, "confidence_mentions": 10, "imgs": 9, "soft_404": false },
+      { "slug": "panaji",     "locale": "hi", "http": 200, "time_s": 0.832, "size_bytes": 330458, "title_ok": true,  "h1": "पणजी",       "html_lang": "hi", "h2": 30, "h3": 28, "h4": 6,  "jsonld": 2, "confidence_mentions": 8,  "imgs": 9, "soft_404": false },
+      { "slug": "munnar",     "locale": "en", "http": 200, "time_s": 0.802, "size_bytes": 321866, "title_ok": true,  "h1": "Munnar",     "html_lang": "en", "h2": 31, "h3": 29, "h4": 6,  "jsonld": 2, "confidence_mentions": 9,  "imgs": 9, "soft_404": false },
+      { "slug": "munnar",     "locale": "hi", "http": 200, "time_s": 1.044, "size_bytes": 336356, "title_ok": true,  "h1": "मुन्नार",    "html_lang": "hi", "h2": 31, "h3": 29, "h4": 6,  "jsonld": 2, "confidence_mentions": 7,  "imgs": 9, "soft_404": false },
+      { "slug": "varanasi",   "locale": "en", "http": 200, "time_s": 0.709, "size_bytes": 426759, "title_ok": true,  "h1": "Varanasi",   "html_lang": "en", "h2": 35, "h3": 56, "h4": 14, "jsonld": 2, "confidence_mentions": 11, "imgs": 3, "soft_404": false },
+      { "slug": "varanasi",   "locale": "hi", "http": 200, "time_s": 0.800, "size_bytes": 441770, "title_ok": true,  "h1": "वाराणसी",    "html_lang": "hi", "h2": 35, "h3": 56, "h4": 14, "jsonld": 2, "confidence_mentions": 9,  "imgs": 3, "soft_404": false },
+      { "slug": "darjeeling", "locale": "en", "http": 200, "time_s": 2.982, "size_bytes": 414024, "title_ok": true,  "h1": "Darjeeling", "html_lang": "en", "h2": 35, "h3": 50, "h4": 14, "jsonld": 2, "confidence_mentions": 9,  "imgs": 9, "soft_404": false, "note": "Cold-render — flagged on 3 of last 5 daily runs but still under 8 s ceiling." },
+      { "slug": "darjeeling", "locale": "hi", "http": 200, "time_s": 3.961, "size_bytes": 429586, "title_ok": true,  "h1": "दार्जिलिंग", "html_lang": "hi", "h2": 35, "h3": 50, "h4": 14, "jsonld": 2, "confidence_mentions": 7,  "imgs": 9, "soft_404": false },
+      { "slug": "udaipur",    "locale": "en", "http": 200, "time_s": 0.866, "size_bytes": 408017, "title_ok": true,  "h1": "Udaipur",    "html_lang": "en", "h2": 34, "h3": 49, "h4": 14, "jsonld": 2, "confidence_mentions": 9,  "imgs": 7, "soft_404": false },
+      { "slug": "udaipur",    "locale": "hi", "http": 200, "time_s": 0.786, "size_bytes": 422958, "title_ok": true,  "h1": "उदयपुर",     "html_lang": "hi", "h2": 34, "h3": 49, "h4": 14, "jsonld": 2, "confidence_mentions": 7,  "imgs": 7, "soft_404": false },
+      { "slug": "leh",        "locale": "en", "http": 200, "time_s": 1.346, "size_bytes": 473356, "title_ok": true,  "h1": "Leh",        "html_lang": "en", "h2": 38, "h3": 58, "h4": 11, "jsonld": 2, "confidence_mentions": 13, "imgs": 9, "soft_404": false },
+      { "slug": "leh",        "locale": "hi", "http": 200, "time_s": 0.939, "size_bytes": 487974, "title_ok": true,  "h1": "लेह",        "html_lang": "hi", "h2": 38, "h3": 58, "h4": 11, "jsonld": 2, "confidence_mentions": 11, "imgs": 9, "soft_404": false },
+      { "slug": "binsar",     "locale": "en", "http": 200, "time_s": 2.995, "size_bytes": 334225, "title_ok": true,  "h1": "Binsar",     "html_lang": "en", "h2": 29, "h3": 26, "h4": 14, "jsonld": 2, "confidence_mentions": 8,  "imgs": 9, "soft_404": false },
+      { "slug": "binsar",     "locale": "hi", "http": 200, "time_s": 4.247, "size_bytes": 349103, "title_ok": true,  "h1": "बिनसर",      "html_lang": "hi", "h2": 29, "h3": 26, "h4": 14, "jsonld": 2, "confidence_mentions": 6,  "imgs": 9, "soft_404": false, "note": "Slowest sample today — 4.25 s, well below 8 s ceiling but flagged as a hot spot." },
+      { "slug": "kaza",       "locale": "en", "http": 200, "time_s": 0.865, "size_bytes": 303419, "title_ok": true,  "h1": "Kaza",       "html_lang": "en", "h2": 24, "h3": 28, "h4": 3,  "jsonld": 2, "confidence_mentions": 8,  "imgs": 9, "soft_404": false },
+      { "slug": "kaza",       "locale": "hi", "http": 200, "time_s": 0.826, "size_bytes": 318415, "title_ok": true,  "h1": "काजा",       "html_lang": "hi", "h2": 24, "h3": 28, "h4": 3,  "jsonld": 2, "confidence_mentions": 6,  "imgs": 9, "soft_404": false },
+      { "slug": "spiti",      "locale": "en", "http": 200, "time_s": 1.789, "size_bytes": 73645,  "title_ok": false, "h1": "",           "html_lang": "en", "h2": 0,  "h3": 0,  "h4": 0,  "jsonld": 1, "confidence_mentions": 6,  "imgs": 0, "soft_404": true,  "soft_404_marker": "NEXT_HTTP_ERROR_FALLBACK;404", "note": "Long-known soft-404 — slug referenced in llms.txt but no canonical destination row (treated as a region cluster, not a destination)." },
+      { "slug": "spiti",      "locale": "hi", "http": 200, "time_s": 2.009, "size_bytes": 84405,  "title_ok": false, "h1": "",           "html_lang": "hi", "h2": 0,  "h3": 0,  "h4": 0,  "jsonld": 1, "confidence_mentions": 2,  "imgs": 0, "soft_404": true,  "soft_404_marker": "NEXT_HTTP_ERROR_FALLBACK;404" }
+    ],
+    "key_pages": [
+      { "path": "/",                 "http": 301, "redirect": "https://www.nakshiq.com/en", "note": "Locale redirect intact." },
+      { "path": "/en",               "http": 200, "time_s": 1.104 },
+      { "path": "/hi",               "http": 200, "time_s": 0.696 },
+      { "path": "/en/plan",          "http": 200, "title": "Plan Your Trip — Smart Destination Matcher | NakshIQ", "h1": "Plan Your Trip", "buttons": 43, "inputs": 1, "modal_dialogs_present_on_load": 0, "form_count": 0, "note": "BUG-004 not reproduced — wizard is a single-step form with chip toggles, no modal flash observed." },
+      { "path": "/en/explore",       "http": 200, "title": "Explore Destinations — Filter by Month, Difficulty, Kids & More | NakshIQ", "h1": "Explore", "destinations_visible": 0, "destination_links": 0, "leaflet_maps": 0, "leaflet_markers": 0, "note": "REGRESSION — Explore lists '0 destinations' both in default May view AND after pressing Clear Filters AND in Map view AND with explicit ?month=4. Filter-bar still renders but the listing/map pane returns no rows." },
+      { "path": "/en/treks",         "http": 200, "title": "Treks — Scored Trails Across India | NakshIQ", "h1": "Treks & Hikes", "trek_links": 136, "destination_links": 17, "body_count": "136 treks", "note": "BUG-009 NOT_REPRODUCED — title/body counts agree." },
+      { "path": "/en/destination/this-does-not-exist-xyz", "http": 200, "soft_404": true, "note": "Bad-slug path still returns 200 with 404 fallback body — BUG-005-soft-404 family / NEW-2026-05-03-005 STILL ACTIVE on day 9." },
+      { "path": "/hi/destination/this-does-not-exist-xyz", "http": 200, "soft_404": true, "note": "Bad-slug Hindi path also still 200 with 404 fallback body." }
+    ],
+    "collection_pages": [
+      { "path": "/en/collections",                              "http": 200, "time_s": 1.181, "size_bytes": 444296, "unique_collection_links": 91 },
+      { "path": "/en/collections/best-beaches-india",           "http": 200, "time_s": 1.450, "size_bytes": 135580 },
+      { "path": "/hi/collections/best-beaches-india",           "http": 200, "time_s": 1.183, "size_bytes": 146758, "title": "Best Beaches in India — Beyond Goa — संग्रह | NakshIQ", "note": "Title body is English; only the suffix 'संग्रह | NakshIQ' is translated — confirms BUG-005 still PARTIAL." },
+      { "path": "/en/collections/adrenaline-rush",              "http": 200, "time_s": 1.370, "size_bytes": 167934 },
+      { "path": "/hi/collections/adrenaline-rush",              "http": 200, "time_s": 1.290, "size_bytes": 179112, "title": "Adrenaline Rush — Adventure Destinations — संग्रह | NakshIQ" },
+      { "path": "/en/collections/after-dark-experiences",       "http": 200, "time_s": 1.125, "size_bytes": 122535 },
+      { "path": "/hi/collections/after-dark-experiences",       "http": 200, "time_s": 1.145, "size_bytes": 133713, "title": "After Dark — Night Experiences Worth Staying Up For — संग्रह | NakshIQ" },
+      { "path": "/en/collections/ancient-monasteries",          "http": 200, "time_s": 1.197, "size_bytes": 146575 },
+      { "path": "/hi/collections/ancient-monasteries",          "http": 200, "time_s": 1.410, "size_bytes": 157753, "title": "Monasteries Older Than 500 Years — संग्रह | NakshIQ" },
+      { "path": "/en/collections/most-photogenic-india",        "http": 404, "note": "Probe slug not in DB — expected miss, not a defect." },
+      { "path": "/en/collections/family-friendly-mountains",    "http": 404, "note": "Probe slug not in DB — expected miss, not a defect." }
+    ],
+    "month_subroutes": [
+      { "path": "/en/destination/jaipur/march",  "http": 200, "title": "Jaipur in March 2026: Great time (15–30°C) | NakshIQ", "soft_404": false },
+      { "path": "/en/destination/jaipur/3",      "http": 200, "title": "NakshIQ — Travel Intelligence for India",                "soft_404": true, "note": "Numeric month sub-route still soft-404 — llms.txt contract still broken (NEW-2026-05-03-006 STILL ACTIVE)." },
+      { "path": "/en/destination/shimla/march",  "http": 200, "title": "Shimla in March 2026: Great time (8–18°C) | NakshIQ",   "soft_404": false, "note": "Month sub-route works while parent /en/destination/shimla 404s — confirms data layer is healthy and the regression is parent-only." },
+      { "path": "/en/destination/shimla/may",    "http": 200, "title": "Shimla in May 2026: Tough season (16–28°C) | NakshIQ",  "soft_404": false },
+      { "path": "/en/destination/shimla/3",      "http": 200, "title": "NakshIQ — Travel Intelligence for India",                "soft_404": true },
+      { "path": "/en/destination/manali/march",  "http": 200, "title": "Manali in March 2026: Mixed conditions (4–14°C) | NakshIQ", "soft_404": false },
+      { "path": "/en/destination/manali/3",      "http": 200, "title": "NakshIQ — Travel Intelligence for India",                "soft_404": true },
+      { "path": "/hi/destination/jaipur/march",  "http": 200, "title": "Jaipur in March 2026: Great time (15–30°C) | NakshIQ",  "note": "ENGLISH-ONLY title on a Hindi route — NEW-2026-05-03-002 STILL ACTIVE." },
+      { "path": "/hi/destination/jaipur/3",      "http": 200, "title": "NakshIQ — भारत के लिए यात्रा इंटेलिजेंस",                "soft_404": true },
+      { "path": "/hi/destination/shimla/march",  "http": 200, "title": "Shimla in March 2026: Great time (8–18°C) | NakshIQ",   "note": "ENGLISH-ONLY title on a Hindi route." },
+      { "path": "/hi/destination/shimla/3",      "http": 200, "title": "NakshIQ — भारत के लिए यात्रा इंटेलिजेंस",                "soft_404": true }
+    ],
+    "api_endpoints": [
+      { "path": "/api/itinerary",  "method": "GET",  "http": 405, "expected": 405, "status": "OK" },
+      { "path": "/api/itinerary",  "method": "POST", "body": "{}",                                                                "http": 400, "body_excerpt": "{\"error\":\"Missing required fields\"}",            "status": "OK — structured 400" },
+      { "path": "/api/itinerary",  "method": "POST", "body": "{\"destination\":\"jaipur\",\"days\":3,\"month\":4}",                "http": 500, "body_excerpt": "(empty)",                                       "status": "DEFECT — 500 with empty body on a payload that uses sensible field names; the four other malformed payloads I tried all returned a clean 400 'Missing required fields'. Validation path raises an unhandled exception instead of returning the structured 400." },
+      { "path": "/api/itinerary",  "method": "POST", "body": "{\"destinations\":[\"jaipur\"],\"days\":3,\"month\":4}",             "http": 400, "body_excerpt": "{\"error\":\"Missing required fields\"}", "status": "OK" },
+      { "path": "/api/itinerary",  "method": "POST", "body": "{\"slug\":\"jaipur\",\"days\":3,\"month\":4}",                       "http": 400, "body_excerpt": "{\"error\":\"Missing required fields\"}", "status": "OK" },
+      { "path": "/api/indexnow",   "method": "GET",  "http": 200, "status": "OK" },
+      { "path": "/api/alerts",     "method": "GET",  "query": "id=jaipur",  "http": 200, "size_bytes": 192, "body_excerpt": "{\"alerts\":[{\"type\":\"warning\",\"title\":\"Low season for Jaipur\",\"message\":\"This destination scores 1/5 in the current month. Consider visiting during a better-rated month.\",\"source\":\"seasonal\"}]}" },
+      { "path": "/api/alerts",     "method": "GET",  "query": "id=shimla",  "http": 200, "size_bytes": 196, "body_excerpt": "{\"alerts\":[{\"type\":\"warning\",\"title\":\"Low season for Shimla\",\"message\":\"This destination scores 2/5 in the current month. Consider visiting during a better-rated month.\",\"source\":\"seasonal\"}]}", "note": "Confirms Shimla destination row is alive in the DB — the page-render regression is presentation-layer only." },
+      { "path": "/api/weather",    "method": "GET",  "query": "id=jaipur",  "http": 200, "size_bytes": 154, "body_excerpt": "{\"temp\":34,\"feels_like\":32,\"humidity\":27,\"description\":\"haze\",...}" },
+      { "path": "/api/weather",    "method": "GET",  "query": "id=shimla",  "http": 200, "size_bytes": 158, "body_excerpt": "{\"temp\":26,\"feels_like\":25,\"humidity\":18,\"description\":\"overcast clouds\",...}" }
+    ]
+  },
+  "performance": {
+    "method": "curl --max-time 25 time_total over 24 destination probes (12 slugs × en+hi); browser-side performance.getEntriesByType('navigation') captured for /en/destination/jaipur and /en/destination/manali during interactive run.",
+    "ttfb_unavailable_reason": "Curl exposes time_total but not separated TTFB on every probe; browser-side TTFB captured separately in browser_metrics below.",
+    "destination_page_avg_s": 1.428,
+    "destination_page_p95_s": 2.995,
+    "destination_page_max_s": 4.247,
+    "destination_page_min_s": 0.709,
+    "sitemap_chunks_avg_s": 0.873,
+    "hot_spots": [
+      { "slug": "binsar",     "locale": "hi", "time_s": 4.247, "verdict": "below 8 s ceiling but slowest of run" },
+      { "slug": "darjeeling", "locale": "hi", "time_s": 3.961, "verdict": "below 8 s ceiling — slow on 4 of last 5 runs" },
+      { "slug": "binsar",     "locale": "en", "time_s": 2.995, "verdict": "below 8 s ceiling" },
+      { "slug": "darjeeling", "locale": "en", "time_s": 2.982, "verdict": "below 8 s ceiling" }
+    ],
+    "browser_metrics": {
+      "samples": [
+        { "url": "https://www.nakshiq.com/en/destination/jaipur",  "ttfb_ms": 127, "domContentLoaded_ms": 839, "loadEvent_ms": 4394, "transferSize_bytes": 439269, "resourceCount": 66, "imgs_total": 45, "imgs_lazy": 17, "imgs_eager": 0, "imgs_no_loading_attr": 28, "leaflet_maps": 1, "leaflet_markers": 0, "jsonld_blocks": 9 },
+        { "url": "https://www.nakshiq.com/en/destination/manali",  "domContentLoaded_ms": 290, "loadEvent_ms": 442, "resourceCount": 66, "imgs_total": 47, "leaflet_maps": 1, "leaflet_markers": 0, "note": "Warm-cache navigation after Jaipur — same resource count, sub-second load." },
+        { "url": "https://www.nakshiq.com/en/destination/leh",     "imgs_total": 47, "imgs_lazy": 19, "imgs_eager": 0, "imgs_no_loading_attr": 28, "leaflet_maps": 1, "leaflet_markers": 0, "jsonld_blocks": 9 }
+      ],
+      "notes": "Across all 3 destination pages inspected interactively: 0 leaflet markers despite 1 leaflet container per page (BUG-007 reproduced); zero <img loading=\"eager\"> hero images on any page (BUG-014 stays partial — hero is in the no-loading-attr bucket, not eager-marked); resource count well under BUG-011's 930 ceiling (66 per page); no GoTrueClient/Multiple/Supabase warnings observed in console (BUG-012 not reproduced)."
+    }
+  },
+  "seo_meta": {
+    "canonical_present": true,
+    "canonical_uses_locale_prefix": true,
+    "og_title_present": true,
+    "og_description_present": true,
+    "og_image_present": true,
+    "og_locale_matches_route": true,
+    "og_locale_values_seen": ["en_IN", "hi_IN"],
+    "hreflang_in_server_html": true,
+    "hreflang_count_per_destination_page": 3,
+    "hreflang_values_seen": ["en", "hi", "x-default"],
+    "noindex_meta_observed": false,
+    "robots_txt": { "http": 200, "size_bytes": 1382, "time_s": 0.354 },
+    "llms_txt": { "http": 200, "size_bytes": 2993, "time_s": 0.350 },
+    "llms_full_txt": { "http": 200, "size_bytes": 4034, "time_s": 0.381 },
+    "note": "hreflang link tags are now present in server-rendered HTML for destination pages (en, hi, x-default — 3 tags per page), closing NEW-2026-05-03-003. og:locale correctly matches each route locale across the sample. Confidence-mention count remains exactly 2 lower in /hi than /en across all 11 working destinations — same fixed delta observed on 2026-05-03 (NEW-2026-05-03-007 still INFO-level)."
+  },
+  "regression_matrix": [
+    { "id": "BUG-001", "title": "Invisible content rendering on all destination detail pages", "status_today": "PARTIAL", "severity": "high", "evidence": "10 of 12 sampled destinations render full content with proper h1/h2/h3 + JSON-LD. Spiti continues to render the homepage fallback (long-known soft-404). Shimla EN regressed today: HTTP 200, correct <title> and OG metadata, but the rendered body is the 'Lost in the mountains / 404' fallback (NEXT_HTTP_ERROR_FALLBACK marker present). Status flipped from NOT_REPRODUCED to PARTIAL because Shimla is a top-12 destination and the same render-vs-data divergence is the BUG-001 family signature." },
+    { "id": "BUG-002", "title": "Only 1 of 20 collections rendering",                          "status_today": "FIXED",            "severity": "info",   "evidence": "/en/collections lists 91 unique collection links (≥80 bar). 4 of 4 real-slug probes rendered 200 with content; only the 2 probes I made up returned 404 (expected)." },
+    { "id": "BUG-003", "title": "503 Service Unavailable on RSC prefetch",                      "status_today": "NOT_REPRODUCED",   "severity": "info",   "evidence": "GET /en/destination/jaipur with header 'RSC: 1' returned 200, content-type text/x-component, 203176 bytes in 0.796 s. RSC payload begins with 'react.fragment' marker — well-formed." },
+    { "id": "BUG-004", "title": "Empty modal flash between wizard steps",                       "status_today": "NOT_REPRODUCED",   "severity": "info",   "evidence": "/en/plan rendered as a single-step form with 43 chip buttons + 1 slider. 0 dialog/modal elements present on load. No flash observed during chip toggling." },
+    { "id": "BUG-005", "title": "Hindi translation only partially applied",                     "status_today": "PARTIAL",          "severity": "medium", "evidence": "Hindi destination titles + h1 + body render in Devanagari (verified across 11 of 12 slugs). However /hi/collections/<slug> titles still keep the English collection name with only the suffix 'संग्रह | NakshIQ' translated (3 of 3 real-slug probes). /hi/destination/<slug>/march title is fully English ('Jaipur in March 2026: ...') — NEW-2026-05-03-002 still active." },
+    { "id": "BUG-006", "title": "Duration field shows '- days' (missing data)",                  "status_today": "NOT_REPRODUCED",   "severity": "info",   "evidence": "Plan page shows 'How many days? 7d' with a 3..30 day slider; default value rendered as '7d', no '- days' string in body." },
+    { "id": "BUG-007", "title": "Map markers vs results count mismatch",                        "status_today": "REPRODUCED",       "severity": "medium", "evidence": "3 destination pages inspected via Chrome (Jaipur, Manali, Leh). Each renders exactly 1 .leaflet-container (1512×384 px on Jaipur) but 0 .leaflet-marker-icon and 0 vector marker children. Pages have 6–8 'Places to visit'-class headings, so the data side has rows that should plot. Severity unchanged from prior run." },
+    { "id": "BUG-008", "title": "Duplicate 'NakshIQ' in destination page titles",               "status_today": "FIXED",            "severity": "info",   "evidence": "All 24 destination probes (12 slugs × 2 locales) show exactly one 'NakshIQ' suffix per <title>. Shimla-EN's title is correct even though its body is the 404 fallback." },
+    { "id": "BUG-009", "title": "Treks page title contradicts body content count",              "status_today": "NOT_REPRODUCED",   "severity": "info",   "evidence": "/en/treks renders h1 'Treks & Hikes', 136 trek-card links and body string '136 treks' — counts agree." },
+    { "id": "BUG-010", "title": "Filter bar disappears after Clear Filters",                    "status_today": "REPRODUCED",       "severity": "high",   "evidence": "After clicking Clear Filters on /en/explore, URL navigates to /en/explore?month=0 and the listing pane keeps showing '0 destinations'. Beyond the original disappearance complaint, today's deeper finding is that the listing pane returns 0 destinations BEFORE clearing too — the explore listing is empty in default state across both Grid and Map views (see NEW-2026-05-04-002)." },
+    { "id": "BUG-011", "title": "930 network requests on single page load",                     "status_today": "NOT_REPRODUCED",   "severity": "info",   "evidence": "Cold load of /en/destination/jaipur measured 66 resource entries in performance.getEntriesByType('resource'); Manali warm-cache load also 66. Far below the 930 figure that triggered the original report." },
+    { "id": "BUG-012", "title": "Multiple GoTrueClient instances warning (Supabase)",          "status_today": "NOT_REPRODUCED",   "severity": "info",   "evidence": "Console captured during /en/destination/jaipur load showed only Chrome-extension WTP logs; no GoTrueClient/Supabase/Multiple-instances warnings emitted by the page itself." },
+    { "id": "BUG-013", "title": "Heading hierarchy skips H2 entirely",                          "status_today": "NOT_REPRODUCED",   "severity": "info",   "evidence": "Working destination pages have h2 counts ranging 24–38 and h3 counts 26–61. Pages with 0 h2/h3 (Shimla-EN, Spiti) are soft-404 cases, not hierarchy defects." },
+    { "id": "BUG-014", "title": "Card images slow to load (lazy loading too aggressive)",       "status_today": "PARTIAL",          "severity": "medium", "evidence": "On the 3 destination pages inspected interactively (Jaipur, Manali, Leh), the split is consistent: 17–19 imgs marked loading=lazy, 0 imgs marked loading=eager, 28 imgs with no loading attribute. Hero/above-the-fold imagery appears in the no-attribute bucket rather than being explicitly eager — unchanged from 2026-05-03. Status escalated from PARTIAL_UNVERIFIABLE to PARTIAL because the eager-zero pattern is now reproduced across multiple destinations." }
+  ],
+  "new_defects": [
+    {
+      "id": "NEW-2026-05-04-001",
+      "severity": "critical",
+      "area": "rendering / destination page",
+      "title": "/en/destination/shimla regressed to 404 fallback body (HTTP 200) on a top-12 destination",
+      "evidence": "3 cache-busted curls all returned the same 75136-byte HTML containing a NEXT_HTTP_ERROR_FALLBACK;404 digest and the rendered body 'Lost in the mountains / 404 / This trail doesn't exist…'. Title, og:title, og:image, hreflang and JSON-LD organization block all resolve correctly. /api/weather?id=shimla and /api/alerts?id=shimla both return real data. /hi/destination/shimla, /en/destination/shimla/march and /en/destination/shimla/may all render the full destination page. Deployment fingerprint dpl_7Xu6wG5Swk2RGd8LkrRxZVJJ1MDq.",
+      "impact": "Shimla is one of the most-trafficked destinations on the site. EN-locale users and search crawlers receive a 404 page for the canonical URL while the underlying data is healthy. High soft-404 risk in GSC and cannibalisation of Shimla rankings if the EN canonical stays broken.",
+      "recommended_owner": "web app (Next.js destination page render) — investigate why ENGLISH locale at the parent /destination/<slug> route falls through to the not-found fallback while month sub-routes and Hindi parent both render normally.",
+      "reproduction": "curl -s -o /dev/null -w '%{http_code} %{size_download}\\n' https://www.nakshiq.com/en/destination/shimla → 200 75136. grep -c NEXT_HTTP_ERROR_FALLBACK on the body → 1.",
+      "likely_regression_of": "BUG-001 family (render-vs-data divergence)"
+    },
+    {
+      "id": "NEW-2026-05-04-002",
+      "severity": "high",
+      "area": "explore listing",
+      "title": "/en/explore returns 0 destinations across Grid view, Map view and all month filters",
+      "evidence": "Default load shows 'Explore — 0 destinations · Filter or browse the map' and '0 destinations found · Showing scores for May'. Clicking Clear Filters navigates to /en/explore?month=0 and still shows 0 destinations. Forcing /en/explore?month=4 shows 0 destinations. Forcing /en/explore?month=4&view=map shows 0 leaflet containers, 0 markers and 0 destination links. Filter chips for State, Month, Difficulty, Kids Friendly, Solo-female all render — only the listing/map pane is empty.",
+      "impact": "One of the two primary destination-discovery surfaces is unusable. Users hitting /en/explore see a dead grid; the Map view also fails to render any leaflet container. Likely cratered click-throughs from /en into destination pages.",
+      "recommended_owner": "web app (explore listing query) — likely either the destinations RSC fetch or the score-by-month filter logic. The destinations exist (sitemap chunk 1 still has 12766 entries; individual destination pages render normally).",
+      "reproduction": "Load https://www.nakshiq.com/en/explore in any browser. Body text 'No destinations match your filters' is shown beneath an empty grid even with no filters active.",
+      "likely_regression_of": "BUG-010 (filter bar regressions)"
+    },
+    {
+      "id": "NEW-2026-05-04-003",
+      "severity": "medium",
+      "area": "API / itinerary",
+      "title": "/api/itinerary returns HTTP 500 with empty body on a payload that uses sensible field names",
+      "evidence": "POST /api/itinerary {\"destination\":\"jaipur\",\"days\":3,\"month\":4} → 500, 0 bytes body. The 4 other malformed payloads I tried (different field names — destinations[], slug, duration, start/end) all returned a clean 400 with body {\"error\":\"Missing required fields\"}. The one payload that hits the 500 path uses the exact field names a caller would guess from the schema, suggesting the validator is partially attempting to use the payload and crashing in the body of the route rather than the validator.",
+      "impact": "Any client (LLM, sandbox, integration) that POSTs a roughly-correct payload gets a 500 with no error body — uncatchable on the client side. Should at minimum return a structured 400.",
+      "recommended_owner": "web app (itinerary route handler) — wrap whatever throws in this branch and surface a structured error response.",
+      "reproduction": "curl -s -X POST -H 'Content-Type: application/json' -d '{\"destination\":\"jaipur\",\"days\":3,\"month\":4}' -w '%{http_code} %{size_download}\\n' https://www.nakshiq.com/api/itinerary → 500 0",
+      "likely_regression_of": null
+    },
+    {
+      "id": "NEW-2026-05-04-004",
+      "severity": "medium",
+      "area": "routing / soft-404",
+      "title": "Soft-404 on /destination/<bad-slug> persists in BOTH locales — 9th consecutive day",
+      "evidence": "GET /en/destination/this-does-not-exist-xyz → 200 + NEXT_HTTP_ERROR_FALLBACK body. GET /hi/destination/this-does-not-exist-xyz → 200 + NEXT_HTTP_ERROR_FALLBACK body. Same canary URL has been used since 2026-04-26 and has returned 200 every day. The matrix says this should be 404.",
+      "impact": "Crawlers index junk slugs; indexNow / GSC report soft-404 on every nonsense slug crawlers find. Skill explicitly calls this out as a current defect. Continues to cap content-quality signal in GSC.",
+      "recommended_owner": "web app (destination [slug] route handler) — return notFound() / 404 when the destination row is missing instead of falling through to the 200 fallback shell.",
+      "reproduction": "curl -s -o /dev/null -w '%{http_code}\\n' https://www.nakshiq.com/en/destination/this-does-not-exist-xyz → 200",
+      "likely_regression_of": "NEW-2026-05-03-005"
+    },
+    {
+      "id": "NEW-2026-05-04-005",
+      "severity": "low",
+      "area": "i18n / month sub-route",
+      "title": "Hindi month sub-route /hi/destination/<slug>/<month> still ships an English-only <title>",
+      "evidence": "/hi/destination/jaipur/march → <title>Jaipur in March 2026: Great time (15–30°C) | NakshIQ</title>. /hi/destination/shimla/march → <title>Shimla in March 2026: Great time (8–18°C) | NakshIQ</title>. Two Hindi sample routes today, both English titles. Body content is also English on these routes.",
+      "impact": "Hindi-locale month pages send an English signal to Google, and the Hindi audience sees English copy on the month-specific landing page even though the parent /hi/destination/<slug> page is fully translated.",
+      "recommended_owner": "web app (month sub-route page metadata + body i18n).",
+      "reproduction": "curl -s https://www.nakshiq.com/hi/destination/jaipur/march | grep -oE '<title[^>]*>[^<]*</title>'",
+      "likely_regression_of": "NEW-2026-05-03-002"
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "severity": "medium",
+      "area": "routing / numeric month sub-route",
+      "title": "Numeric month sub-routes /destination/<slug>/<1-12> still soft-404 — llms.txt contract still broken",
+      "evidence": "/en/destination/jaipur/3, /en/destination/shimla/3, /en/destination/manali/3, /hi/destination/jaipur/3, /hi/destination/shimla/3 — all return 200 with the homepage <title> and a NEXT_HTTP_ERROR_FALLBACK body. llms.txt advertises numeric month sub-routes as a stable contract.",
+      "impact": "Any LLM agent that follows the llms.txt instructions to fetch /destination/<slug>/<1-12> gets a homepage soft-404 instead of the destination's monthly card. Breaks the documented bot-friendly contract.",
+      "recommended_owner": "web app — either route /<slug>/<1-12> through the same handler as /<slug>/<name> or update llms.txt to drop the numeric form.",
+      "reproduction": "curl -s -o /dev/null -w '%{http_code}\\n' https://www.nakshiq.com/en/destination/jaipur/3 → 200; grep NEXT_HTTP_ERROR_FALLBACK confirms fallback body.",
+      "likely_regression_of": "NEW-2026-05-03-006"
+    },
+    {
+      "id": "NEW-2026-05-04-007",
+      "severity": "low",
+      "area": "sitemap",
+      "title": "/sitemap/5.xml still resolves 200 with empty <urlset> — partial close on NEW-2026-04-30-001",
+      "evidence": "Top-level /sitemap.xml index lists chunks 0..4 only. /sitemap/5.xml returns 200 with size 111 bytes, 0 <loc> entries. /sitemap/6.xml returns 404. So the route is no longer crawler-advertised but still resolvable.",
+      "impact": "Low — crawlers won't follow it because it isn't in the index, but the empty 200 response remains a stale code path.",
+      "recommended_owner": "web app (sitemap route) — return 404 for chunks beyond the configured count.",
+      "reproduction": "curl -s -o /tmp/s5 -w '%{http_code} %{size_download}\\n' https://www.nakshiq.com/sitemap/5.xml → 200 111. grep -c '<loc>' /tmp/s5 → 0.",
+      "likely_regression_of": "NEW-2026-04-30-001 / NEW-2026-05-03-004"
+    },
+    {
+      "id": "NEW-2026-05-04-008",
+      "severity": "info",
+      "area": "i18n / scoring copy",
+      "title": "Confidence mention count drops EXACTLY 2 in /hi vs /en across all 11 working destinations",
+      "evidence": "Per-destination delta computed from grep -c 'confidence' on the rendered HTML: jaipur 11/9, manali 15/13, panaji 10/8, munnar 9/7, varanasi 11/9, darjeeling 9/7, udaipur 9/7, leh 13/11, binsar 8/6, kaza 8/6, shimla 4/10 (Shimla-EN is the broken page so its 4 is the navigation chrome only). Same fixed -2 delta seen on 2026-05-03.",
+      "impact": "Two specific 'confidence' mentions in the EN page body are not being translated to Hindi (likely a static label in a shared component). Cosmetic / copy hygiene issue; does not affect rendering.",
+      "recommended_owner": "web app — find the two un-translated occurrences and route them through the i18n message catalog.",
+      "reproduction": "for slug in jaipur manali panaji munnar varanasi darjeeling udaipur leh binsar kaza; do en=$(curl -s https://www.nakshiq.com/en/destination/$slug | grep -oic confidence); hi=$(curl -s https://www.nakshiq.com/hi/destination/$slug | grep -oic confidence); echo $slug $en $hi $((en-hi)); done — every line ends in '2'.",
+      "likely_regression_of": "NEW-2026-05-03-007"
+    }
+  ],
+  "blockers": [],
+  "gaps": [
+    "Itinerary endpoint contract is undocumented — could only fuzz 5 payload shapes; the one that returned 500 may be the canonical shape but I cannot verify without source-of-truth schema.",
+    "BUG-007 root cause not determined — confirmed map renders empty, did not inspect /api/places or whichever endpoint the leaflet layer subscribes to.",
+    "Did not regression-probe the Hindi /hi/explore page — only English explore was tested, but given the English explore returns 0, it's worth a follow-up."
+  ],
+  "summary": {
+    "new_defects_count": 8,
+    "regression_matrix_fixed_or_clear": 9,
+    "regression_matrix_unverifiable": 0,
+    "regression_matrix_still_active": 3,
+    "regression_matrix_reproduced": 2,
+    "still_active_ids": ["BUG-001", "BUG-005", "BUG-014"],
+    "persona_reports_generated": 3,
+    "persona_reports_expected": 3,
+    "persona_reports_blocked_by": ""
+  }
+}

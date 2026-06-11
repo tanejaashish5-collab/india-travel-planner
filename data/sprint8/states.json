@@ -1,0 +1,625 @@
+{
+  "states": [
+    {
+      "id": "himachal-pradesh",
+      "name": "Himachal Pradesh",
+      "region": "North India",
+      "capital": "Shimla",
+      "description": "The Himalayas have two faces — the tourist trail and the real one. Himachal has both.",
+      "description_len": 85,
+      "dest_count": 34,
+      "top_dests": [
+        "Dharamshala",
+        "Chitkul",
+        "Parvati Valley",
+        "Chamba",
+        "Barot Valley",
+        "Lahaul Valley",
+        "Prashar Lake",
+        "Sissu"
+      ]
+    },
+    {
+      "id": "uttarakhand",
+      "name": "Uttarakhand",
+      "region": "North India",
+      "capital": "Dehradun",
+      "description": "Pilgrimage corridors and peaceful Kumaon hills — two Uttarakhands in one.",
+      "description_len": 73,
+      "dest_count": 38,
+      "top_dests": [
+        "Nainital",
+        "Auli",
+        "Kedarnath",
+        "Yamunotri",
+        "Lansdowne",
+        "Munsiyari",
+        "Kanatal",
+        "Chakrata"
+      ]
+    },
+    {
+      "id": "jammu-kashmir",
+      "name": "Jammu & Kashmir",
+      "region": "North India",
+      "capital": "Srinagar",
+      "description": "The most beautiful valley on Earth has villages nobody visits. Until now.",
+      "description_len": 73,
+      "dest_count": 17,
+      "top_dests": [
+        "Achabal",
+        "Bangus Valley",
+        "Kishtwar",
+        "Kokernag",
+        "Yusmarg",
+        "Gurez Valley",
+        "Patnitop",
+        "Srinagar"
+      ]
+    },
+    {
+      "id": "ladakh",
+      "name": "Ladakh",
+      "region": "North India",
+      "capital": "Leh",
+      "description": "Where the road ends and the sky begins. Buddhist monasteries on moonscape cliffs.",
+      "description_len": 81,
+      "dest_count": 14,
+      "top_dests": [
+        "Tso Moriri",
+        "Zanskar Valley",
+        "Alchi",
+        "Drass",
+        "Likir",
+        "Umlingla",
+        "Kargil",
+        "Lamayuru"
+      ]
+    },
+    {
+      "id": "rajasthan",
+      "name": "Rajasthan",
+      "region": "North India",
+      "capital": "Jaipur",
+      "description": "Desert forts, blue cities, pink cities — every district has its own character.",
+      "description_len": 78,
+      "dest_count": 23,
+      "top_dests": [
+        "Pushkar",
+        "Ajmer",
+        "Chittorgarh",
+        "Kumbhalgarh",
+        "Ranthambore",
+        "Bundi",
+        "Barmer",
+        "Deeg"
+      ]
+    },
+    {
+      "id": "punjab",
+      "name": "Punjab",
+      "region": "North India",
+      "capital": "Chandigarh",
+      "description": "The gateway to the Himalayas and Le Corbusier city.",
+      "description_len": 51,
+      "dest_count": 4,
+      "top_dests": [
+        "Anandpur Sahib",
+        "Takht Sri Damdama Sahib",
+        "Amritsar",
+        "Patiala"
+      ]
+    },
+    {
+      "id": "delhi",
+      "name": "Delhi",
+      "region": "North India",
+      "capital": "New Delhi",
+      "description": "Mughal heritage, street food capital, and the gateway to all of India.",
+      "description_len": 70,
+      "dest_count": 1,
+      "top_dests": [
+        "Delhi"
+      ]
+    },
+    {
+      "id": "uttar-pradesh",
+      "name": "Uttar Pradesh",
+      "region": "North India",
+      "capital": "Lucknow",
+      "description": "Spiritual spine of India — Taj Mahal, Varanasi ghats, and the most intensely Indian state.",
+      "description_len": 90,
+      "dest_count": 13,
+      "top_dests": [
+        "Vrindavan",
+        "Dudhwa National Park",
+        "Sravasti",
+        "Fatehpur Sikri",
+        "Sarnath",
+        "Mathura",
+        "Ayodhya",
+        "Agra"
+      ]
+    },
+    {
+      "id": "chandigarh",
+      "name": "Chandigarh",
+      "region": "North India",
+      "capital": "Chandigarh",
+      "description": "India modern planned city and the gateway between plains and mountains.",
+      "description_len": 71,
+      "dest_count": 1,
+      "top_dests": [
+        "Chandigarh"
+      ]
+    },
+    {
+      "id": "haryana",
+      "name": "Haryana",
+      "region": "North India",
+      "capital": "Chandigarh",
+      "description": "Plains state connecting Delhi to Punjab, with Sultanpur bird sanctuary.",
+      "description_len": 71,
+      "dest_count": 3,
+      "top_dests": [
+        "Morni Hills",
+        "Pinjore Gardens",
+        "Kurukshetra"
+      ]
+    },
+    {
+      "id": "madhya-pradesh",
+      "name": "Madhya Pradesh",
+      "region": "Central India",
+      "capital": "Bhopal",
+      "description": "Tiger country, prehistoric caves, and ancient temples in the heart of India.",
+      "description_len": 76,
+      "dest_count": 13,
+      "top_dests": [
+        "Bhimbetka Rock Shelters",
+        "Khajuraho",
+        "Jabalpur",
+        "Bhopal",
+        "Omkareshwar",
+        "Orchha",
+        "Pachmarhi",
+        "Mandu"
+      ]
+    },
+    {
+      "id": "sikkim",
+      "name": "Sikkim",
+      "region": "Northeast India",
+      "capital": "Gangtok",
+      "description": "Kanchenjunga views, Buddhist monasteries, and the cleanest state in India.",
+      "description_len": 74,
+      "dest_count": 11,
+      "top_dests": [
+        "Yuksom",
+        "Zuluk",
+        "Namchi",
+        "Pelling",
+        "Gangtok",
+        "Lachung",
+        "Lachen",
+        "Gurudongmar Lake"
+      ]
+    },
+    {
+      "id": "west-bengal",
+      "name": "West Bengal",
+      "region": "East India",
+      "capital": "Kolkata",
+      "description": "Colonial heritage, Sundarbans tigers, and the gateway to Northeast India.",
+      "description_len": 73,
+      "dest_count": 6,
+      "top_dests": [
+        "Darjeeling",
+        "Kalimpong",
+        "Kolkata",
+        "Siliguri",
+        "Shantiniketan",
+        "Sundarbans"
+      ]
+    },
+    {
+      "id": "arunachal-pradesh",
+      "name": "Arunachal Pradesh",
+      "region": "Northeast India",
+      "capital": "Itanagar",
+      "description": "India last frontier — Tawang monastery and tribal cultures unchanged for centuries.",
+      "description_len": 83,
+      "dest_count": 11,
+      "top_dests": [
+        "Mechuka",
+        "Bomdila",
+        "Anini",
+        "Bhalukpong",
+        "Namdapha",
+        "Pasighat",
+        "Aalo",
+        "Dambuk"
+      ]
+    },
+    {
+      "id": "assam",
+      "name": "Assam",
+      "region": "Northeast India",
+      "capital": "Dispur",
+      "description": "Tea gardens, Kaziranga rhinos, and the cultural heart of the Northeast.",
+      "description_len": 71,
+      "dest_count": 8,
+      "top_dests": [
+        "Kaziranga",
+        "Guwahati",
+        "Manas National Park",
+        "Majuli",
+        "Jorhat",
+        "Sivasagar",
+        "Haflong",
+        "Charaideo Moidams"
+      ]
+    },
+    {
+      "id": "meghalaya",
+      "name": "Meghalaya",
+      "region": "Northeast India",
+      "capital": "Shillong",
+      "description": "Scotland of the East — living root bridges, crystal rivers, and endless rain.",
+      "description_len": 77,
+      "dest_count": 9,
+      "top_dests": [
+        "Mawphlang",
+        "Cherrapunji (Sohra)",
+        "Shillong",
+        "Mawlynnong",
+        "Shnongpdeng",
+        "Nongriat",
+        "Mawsynram",
+        "Tura"
+      ]
+    },
+    {
+      "id": "nagaland",
+      "name": "Nagaland",
+      "region": "Northeast India",
+      "capital": "Kohima",
+      "description": "WWII battlefields, Hornbill Festival, and fierce Naga tribal heritage.",
+      "description_len": 70,
+      "dest_count": 6,
+      "top_dests": [
+        "Khonoma",
+        "Mon",
+        "Pfutsero",
+        "Kohima",
+        "Dzukou Valley",
+        "Mokokchung"
+      ]
+    },
+    {
+      "id": "manipur",
+      "name": "Manipur",
+      "region": "Northeast India",
+      "capital": "Imphal",
+      "description": "Loktak Lake, Ima Market, and the gateway to Myanmar.",
+      "description_len": 52,
+      "dest_count": 5,
+      "top_dests": [
+        "Imphal",
+        "Moreh",
+        "Ukhrul",
+        "Loktak Lake",
+        "Tamenglong"
+      ]
+    },
+    {
+      "id": "mizoram",
+      "name": "Mizoram",
+      "region": "Northeast India",
+      "capital": "Aizawl",
+      "description": "Blue mountains, bamboo forests, and India most literate state.",
+      "description_len": 62,
+      "dest_count": 4,
+      "top_dests": [
+        "Aizawl",
+        "Lunglei",
+        "Phawngpui Peak",
+        "Champhai"
+      ]
+    },
+    {
+      "id": "tripura",
+      "name": "Tripura",
+      "region": "Northeast India",
+      "capital": "Agartala",
+      "description": "Neermahal lake palace and the least-visited Northeast state.",
+      "description_len": 60,
+      "dest_count": 3,
+      "top_dests": [
+        "Agartala",
+        "Neermahal",
+        "Unakoti"
+      ]
+    },
+    {
+      "id": "bihar",
+      "name": "Bihar",
+      "region": "East India",
+      "capital": "Patna",
+      "description": "Buddhist pilgrimage circuit — Bodh Gaya, Nalanda, Rajgir.",
+      "description_len": 57,
+      "dest_count": 6,
+      "top_dests": [
+        "Bodh Gaya",
+        "Rajgir",
+        "Pawapuri",
+        "Nalanda",
+        "Patna",
+        "Vaishali"
+      ]
+    },
+    {
+      "id": "jharkhand",
+      "name": "Jharkhand",
+      "region": "East India",
+      "capital": "Ranchi",
+      "description": "Waterfalls, tribal culture, and Betla tiger reserve.",
+      "description_len": 52,
+      "dest_count": 4,
+      "top_dests": [
+        "Deoghar",
+        "Ranchi",
+        "Shikharji (Parasnath Hill)",
+        "Netarhat"
+      ]
+    },
+    {
+      "id": "chhattisgarh",
+      "name": "Chhattisgarh",
+      "region": "Central India",
+      "capital": "Raipur",
+      "description": "Tribal heartland with Chitrakote Falls and Bastar.",
+      "description_len": 50,
+      "dest_count": 3,
+      "top_dests": [
+        "Jagdalpur",
+        "Barnawapara",
+        "Sirpur"
+      ]
+    },
+    {
+      "id": "gujarat",
+      "name": "Gujarat",
+      "region": "West India",
+      "capital": "Gandhinagar",
+      "description": "Land of legends, lions, and the world's largest salt desert. From Gandhi's Sabarmati to the Statue of Unity, Gujarat blends ancient pilgrimage, tribal craft, and modern ambition.",
+      "description_len": 178,
+      "dest_count": 29,
+      "top_dests": [
+        "Velavadar",
+        "Champaner-Pavagadh",
+        "Dakor",
+        "Gandhinagar",
+        "Ahmedabad",
+        "Rann of Kutch",
+        "Dwarka",
+        "Ambaji"
+      ]
+    },
+    {
+      "id": "maharashtra",
+      "name": "Maharashtra",
+      "region": "West India",
+      "capital": "Mumbai",
+      "description": null,
+      "description_len": 0,
+      "dest_count": 35,
+      "top_dests": [
+        "Kashid",
+        "Shirdi",
+        "Alibaug",
+        "Kolhapur",
+        "Amboli",
+        "Ajanta Caves",
+        "Bhandardara",
+        "Daulatabad Fort"
+      ]
+    },
+    {
+      "id": "goa",
+      "name": "Goa",
+      "region": "West India",
+      "capital": "Panaji",
+      "description": null,
+      "description_len": 0,
+      "dest_count": 18,
+      "top_dests": [
+        "Chorao & Divar Islands",
+        "Agonda",
+        "Dudhsagar Falls",
+        "Margao",
+        "Panaji",
+        "Old Goa",
+        "Palolem",
+        "Anjuna"
+      ]
+    },
+    {
+      "id": "karnataka",
+      "name": "Karnataka",
+      "region": "South India",
+      "capital": "Bengaluru",
+      "description": null,
+      "description_len": 0,
+      "dest_count": 30,
+      "top_dests": [
+        "Bidar",
+        "Dharmasthala",
+        "Pattadakal",
+        "Gokarna",
+        "Nandi Hills",
+        "Aihole",
+        "Badami",
+        "Belur"
+      ]
+    },
+    {
+      "id": "kerala",
+      "name": "Kerala",
+      "region": "South India",
+      "capital": "Thiruvananthapuram",
+      "description": null,
+      "description_len": 0,
+      "dest_count": 30,
+      "top_dests": [
+        "Bekal",
+        "Beypore",
+        "Kannur",
+        "Alleppey (Alappuzha)",
+        "Kuttanad",
+        "Nelliyampathy",
+        "Ponmudi",
+        "Poovar"
+      ]
+    },
+    {
+      "id": "tamil-nadu",
+      "name": "Tamil Nadu",
+      "region": "South India",
+      "capital": "Chennai",
+      "description": null,
+      "description_len": 0,
+      "dest_count": 29,
+      "top_dests": [
+        "Trichy (Tiruchirappalli)",
+        "Coonoor",
+        "Anamalai Tiger Reserve (Topslip)",
+        "Chettinad",
+        "Chidambaram",
+        "Courtallam (Kutralam)",
+        "Hogenakkal Falls",
+        "Kanchipuram"
+      ]
+    },
+    {
+      "id": "andhra-pradesh",
+      "name": "Andhra Pradesh",
+      "region": "south",
+      "capital": "Amaravati",
+      "description": "Temple powerhouse of South India — home to the world's richest temple (Tirupati), Godavari delta backwaters, Eastern Ghats hill stations, and a Buddhist heritage circuit spanning 2,000 years. From the hanging pillar of Lepakshi to the sub-zero mists of Lambasingi, AP delivers pilgrimage, coast, caves, and tribal wilderness.",
+      "description_len": 325,
+      "dest_count": 20,
+      "top_dests": [
+        "Araku Valley",
+        "Belum Caves",
+        "Gandikota",
+        "Horsley Hills",
+        "Machilipatnam",
+        "Nagarjuna Sagar",
+        "Pulicat Lake",
+        "Rajahmundry"
+      ]
+    },
+    {
+      "id": "telangana",
+      "name": "Telangana",
+      "region": "south",
+      "capital": "Hyderabad",
+      "description": "Deccan plateau state centered on Hyderabad — India's biryani capital and tech hub. Beyond the Old City, Telangana hides Kakatiya dynasty forts (UNESCO-listed Ramappa Temple), India's largest tribal festival, ikat weaving villages, and forested lakes with suspension bridges. Heritage, craft, and wilderness wrapped in Deccani charm.",
+      "description_len": 332,
+      "dest_count": 15,
+      "top_dests": [
+        "Hyderabad",
+        "Adilabad",
+        "Ananthagiri Hills",
+        "Basara",
+        "Kolanupaka",
+        "Laknavaram",
+        "Warangal",
+        "Pillalamarri"
+      ]
+    },
+    {
+      "id": "odisha",
+      "name": "Odisha",
+      "region": "east",
+      "capital": "Bhubaneswar",
+      "description": "India's temple, tribal, and turtle powerhouse — home to Jagannath's Rath Yatra (world's largest chariot festival), Konark Sun Temple (UNESCO), Asia's largest lagoon (Chilika), and the world's largest Olive Ridley turtle rookery. 62 tribal cultures, a Buddhist Diamond Triangle rivaling Ajanta, and a beach where the sea disappears daily.",
+      "description_len": 337,
+      "dest_count": 22,
+      "top_dests": [
+        "Puri",
+        "Baripada",
+        "Nrusinghanath & Harishankar",
+        "Satkosia",
+        "Taptapani",
+        "Bhubaneswar",
+        "Gahirmatha",
+        "Cuttack"
+      ]
+    },
+    {
+      "id": "andaman-nicobar",
+      "name": "Andaman & Nicobar Islands",
+      "region": "Islands",
+      "capital": null,
+      "description": null,
+      "description_len": 0,
+      "dest_count": 12,
+      "top_dests": [
+        "Neil Island (Shaheed Dweep)",
+        "Baratang Island",
+        "Chidiya Tapu",
+        "Diglipur",
+        "Long Island",
+        "North Bay Island",
+        "Ross Island (Netaji Subhas Chandra Bose Dweep)",
+        "Port Blair (Sri Vijaya Puram)"
+      ]
+    },
+    {
+      "id": "lakshadweep",
+      "name": "Lakshadweep",
+      "region": "Islands",
+      "capital": null,
+      "description": null,
+      "description_len": 0,
+      "dest_count": 5,
+      "top_dests": [
+        "Bangaram Island",
+        "Agatti Island",
+        "Kadmat Island",
+        "Kavaratti",
+        "Minicoy Island"
+      ]
+    },
+    {
+      "id": "puducherry",
+      "name": "Puducherry",
+      "region": "South",
+      "capital": null,
+      "description": null,
+      "description_len": 0,
+      "dest_count": 3,
+      "top_dests": [
+        "Puducherry (Pondicherry)",
+        "Auroville",
+        "Karaikal"
+      ]
+    },
+    {
+      "id": "daman-diu",
+      "name": "Daman & Diu",
+      "region": "West",
+      "capital": null,
+      "description": null,
+      "description_len": 0,
+      "dest_count": 3,
+      "top_dests": [
+        "Silvassa",
+        "Daman",
+        "Diu"
+      ]
+    }
+  ]
+}

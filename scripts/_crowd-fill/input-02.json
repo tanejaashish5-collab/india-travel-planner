@@ -1,0 +1,631 @@
+[
+  {
+    "id": "araku-valley",
+    "name": "Araku Valley",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Eastern Ghats & Hills",
+    "type": [
+      "hill-station",
+      "nature",
+      "tribal"
+    ],
+    "place_type": "valley",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "scenic",
+      "tribal",
+      "cool"
+    ],
+    "tags": [
+      "hill-station",
+      "coffee",
+      "tribal",
+      "caves",
+      "nature",
+      "family"
+    ]
+  },
+  {
+    "id": "astavinayak-circuit",
+    "name": "Astavinayak Circuit",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-circuit",
+      "ganesha"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "road-trip",
+      "small-town"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-circuit",
+      "hindu-religious",
+      "maharashtra",
+      "road-trip"
+    ]
+  },
+  {
+    "id": "athirapally",
+    "name": "Athirapally Falls",
+    "state_id": "kerala",
+    "region": "Kerala Offbeat",
+    "subregion": null,
+    "type": [
+      "waterfall",
+      "forest",
+      "nature",
+      "scenic"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [
+      3,
+      4,
+      5
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "dramatic",
+      "thundering",
+      "green",
+      "cinematic"
+    ],
+    "tags": [
+      "waterfall",
+      "forest",
+      "nature",
+      "scenic",
+      "family",
+      "photography",
+      "monsoon"
+    ]
+  },
+  {
+    "id": "auroville",
+    "name": "Auroville",
+    "state_id": "puducherry",
+    "region": "Tamil Nadu Offbeat",
+    "subregion": null,
+    "type": [
+      "spiritual",
+      "community",
+      "organic",
+      "experimental"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "conscious",
+      "international",
+      "peaceful",
+      "experimental"
+    ],
+    "tags": [
+      "spiritual",
+      "community",
+      "organic",
+      "experimental",
+      "meditation",
+      "international"
+    ]
+  },
+  {
+    "id": "bandhavgarh",
+    "name": "Bandhavgarh National Park",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "avoid_months": [
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "tiger-reserve",
+      "highest-density",
+      "fort"
+    ]
+  },
+  {
+    "id": "bangaram",
+    "name": "Bangaram Island",
+    "state_id": "lakshadweep",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "beach",
+      "coral",
+      "diving",
+      "luxury"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "pristine",
+      "exclusive",
+      "romantic",
+      "luxury"
+    ],
+    "tags": [
+      "lakshadweep",
+      "bangaram",
+      "luxury",
+      "maldives-alternative",
+      "coral",
+      "diving",
+      "resort"
+    ]
+  },
+  {
+    "id": "bangus-valley",
+    "name": "Bangus Valley",
+    "state_id": "jammu-kashmir",
+    "region": "Kupwara District",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      9,
+      7,
+      8
+    ],
+    "avoid_months": [
+      4,
+      11,
+      1,
+      2,
+      3,
+      12
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "remote",
+      "meadow",
+      "permit",
+      "frontier"
+    ]
+  },
+  {
+    "id": "baratang-island",
+    "name": "Baratang Island",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "nature",
+      "mangrove",
+      "cave"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "adventure",
+      "raw",
+      "offbeat"
+    ],
+    "tags": [
+      "andaman",
+      "baratang",
+      "limestone-caves",
+      "mud-volcano",
+      "mangrove",
+      "jarawa"
+    ]
+  },
+  {
+    "id": "baripada",
+    "name": "Baripada",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Spiritual & Offbeat",
+    "type": [
+      "cultural",
+      "tribal",
+      "heritage"
+    ],
+    "place_type": "cultural-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "cultural",
+      "tribal",
+      "festive"
+    ],
+    "tags": [
+      "cultural",
+      "chhau-dance",
+      "UNESCO-intangible",
+      "tribal",
+      "simlipal-gateway"
+    ]
+  },
+  {
+    "id": "barnawapara",
+    "name": "Barnawapara",
+    "state_id": "chhattisgarh",
+    "region": "Central Chhattisgarh",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "wildlife",
+      "birding",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "barren-island",
+    "name": "Barren Island",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "volcano",
+      "nature",
+      "wildlife"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "extreme",
+      "raw",
+      "once-in-a-lifetime"
+    ],
+    "tags": [
+      "andaman",
+      "barren-island",
+      "volcano",
+      "active-volcano",
+      "extreme",
+      "boat-only"
+    ]
+  },
+  {
+    "id": "basara",
+    "name": "Basara",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Spiritual & Heritage",
+    "type": [
+      "pilgrimage",
+      "temple",
+      "river"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "spiritual",
+      "traditional",
+      "riverside"
+    ],
+    "tags": [
+      "pilgrimage",
+      "temple",
+      "saraswathi",
+      "education",
+      "godavari"
+    ]
+  },
+  {
+    "id": "belum-caves",
+    "name": "Belum Caves",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Caves & Geology",
+    "type": [
+      "nature",
+      "geological",
+      "adventure"
+    ],
+    "place_type": "cave-system",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [],
+    "crowd_level": "moderate",
+    "vibe": [
+      "underground",
+      "mysterious",
+      "cool"
+    ],
+    "tags": [
+      "caves",
+      "geological",
+      "adventure",
+      "family",
+      "unique"
+    ]
+  },
+  {
+    "id": "betla",
+    "name": "Betla",
+    "state_id": "jharkhand",
+    "region": "Latehar/Palamu",
+    "subregion": null,
+    "type": [
+      "national-park",
+      "trekking",
+      "wildlife"
+    ],
+    "place_type": "protected-area",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "wild",
+      "tiger-country",
+      "forest-trek"
+    ],
+    "tags": []
+  },
+  {
+    "id": "beypore",
+    "name": "Beypore",
+    "state_id": "kerala",
+    "region": "Kerala Offbeat",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "shipbuilding",
+      "beach",
+      "port"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "historic",
+      "artisanal",
+      "authentic",
+      "quiet"
+    ],
+    "tags": [
+      "heritage",
+      "shipbuilding",
+      "beach",
+      "port",
+      "offbeat",
+      "artisan",
+      "unique"
+    ]
+  },
+  {
+    "id": "bhadrachalam",
+    "name": "Bhadrachalam",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Spiritual & Heritage",
+    "type": [
+      "pilgrimage",
+      "temple",
+      "river"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "spiritual",
+      "riverside",
+      "traditional"
+    ],
+    "tags": [
+      "pilgrimage",
+      "temple",
+      "godavari",
+      "river",
+      "spiritual"
+    ]
+  }
+]

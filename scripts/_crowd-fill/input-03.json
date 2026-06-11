@@ -1,0 +1,521 @@
+[
+  {
+    "id": "bhalukpong",
+    "name": "Bhalukpong",
+    "state_id": "arunachal-pradesh",
+    "region": "Northeast India",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "tiger-reserve",
+      "rafting",
+      "gateway"
+    ]
+  },
+  {
+    "id": "bharatpur",
+    "name": "Bharatpur",
+    "state_id": "rajasthan",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      2,
+      3
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Bird Sanctuary",
+      "Wildlife",
+      "UNESCO"
+    ]
+  },
+  {
+    "id": "bhavnagar",
+    "name": "Bhavnagar",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [],
+    "tags": [
+      "heritage",
+      "gateway",
+      "museum",
+      "temple",
+      "city"
+    ]
+  },
+  {
+    "id": "bhimbetka",
+    "name": "Bhimbetka Rock Shelters",
+    "state_id": "madhya-pradesh",
+    "region": "Raisen-Bhopal",
+    "subregion": null,
+    "type": [
+      "heritage",
+      "UNESCO",
+      "historical"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "ancient",
+      "educational",
+      "offbeat"
+    ],
+    "tags": [
+      "UNESCO",
+      "rock-art",
+      "prehistoric"
+    ]
+  },
+  {
+    "id": "bhimtal",
+    "name": "Bhimtal",
+    "state_id": "uttarakhand",
+    "region": "Kumaon / Nainital District",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      10,
+      3,
+      9,
+      11
+    ],
+    "avoid_months": null,
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "lake",
+      "quiet",
+      "family",
+      "nature"
+    ]
+  },
+  {
+    "id": "bhitarkanika",
+    "name": "Bhitarkanika",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Wildlife & Nature",
+    "type": [
+      "wildlife",
+      "nature",
+      "mangrove"
+    ],
+    "place_type": "national-park",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      9
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "wild",
+      "mangrove",
+      "adventurous"
+    ],
+    "tags": [
+      "wildlife",
+      "mangrove",
+      "crocodile",
+      "ramsar",
+      "nature",
+      "safari"
+    ]
+  },
+  {
+    "id": "bhongir",
+    "name": "Bhongir",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Hyderabad & Surrounds",
+    "type": [
+      "heritage",
+      "adventure",
+      "fort"
+    ],
+    "place_type": "fort-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      9
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "dramatic",
+      "adventurous",
+      "historical"
+    ],
+    "tags": [
+      "fort",
+      "adventure",
+      "moat",
+      "offbeat",
+      "trekking",
+      "paragliding"
+    ]
+  },
+  {
+    "id": "bhopal",
+    "name": "Bhopal",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "lakes",
+      "UNESCO-rock-art",
+      "mosque"
+    ]
+  },
+  {
+    "id": "bhoramdeo",
+    "name": "Bhoramdeo",
+    "state_id": "chhattisgarh",
+    "region": "Kabirdham",
+    "subregion": null,
+    "type": [
+      "temple",
+      "architecture",
+      "trekking"
+    ],
+    "place_type": "temple",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "spiritual",
+      "forest",
+      "historical"
+    ],
+    "tags": []
+  },
+  {
+    "id": "bhubaneswar",
+    "name": "Bhubaneswar",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Sacred Triangle & Cities",
+    "type": [
+      "city",
+      "temple",
+      "heritage"
+    ],
+    "place_type": "metro",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "busy",
+    "vibe": [
+      "cultural",
+      "historical",
+      "modern"
+    ],
+    "tags": [
+      "city",
+      "temple",
+      "heritage",
+      "caves",
+      "jain",
+      "gateway",
+      "family"
+    ]
+  },
+  {
+    "id": "bodh-gaya",
+    "name": "Bodh Gaya",
+    "state_id": "bihar",
+    "region": "Magadh",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "Buddhism",
+      "pilgrimage"
+    ]
+  },
+  {
+    "id": "bomdila",
+    "name": "Bomdila",
+    "state_id": "arunachal-pradesh",
+    "region": "Northeast India",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      12,
+      1,
+      2
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "monastery",
+      "gateway",
+      "apple-orchards"
+    ]
+  },
+  {
+    "id": "borra-caves",
+    "name": "Borra Caves",
+    "state_id": "andhra-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "caves",
+      "natural-formation",
+      "limestone-karst",
+      "sacred-natural"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "adventure",
+      "tribal",
+      "off-the-grid"
+    ],
+    "tags": [
+      "caves",
+      "eastern-ghats",
+      "karst",
+      "natural",
+      "andhra-pradesh",
+      "tribal-area"
+    ]
+  },
+  {
+    "id": "chamba",
+    "name": "Chamba",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Temples",
+      "Hill Station",
+      "Heritage"
+    ]
+  },
+  {
+    "id": "champaner-pavagadh",
+    "name": "Champaner-Pavagadh",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "heritage",
+      "archaeology",
+      "fort",
+      "mosque"
+    ]
+  },
+  {
+    "id": "champhai",
+    "name": "Champhai",
+    "state_id": "mizoram",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "rice-bowl",
+      "Myanmar-border",
+      "mythology"
+    ]
+  }
+]

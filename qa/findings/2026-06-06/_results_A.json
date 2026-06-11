@@ -1,0 +1,46 @@
+{
+ "probes": [
+  [
+   "https://www.nakshiq.com/en/destination/this-does-not-exist-xyz",
+   "404",
+   9
+  ],
+  [
+   "https://www.nakshiq.com/en/destination/zzzzzz-fake",
+   "404",
+   9
+  ],
+  [
+   "https://www.nakshiq.com/hi/destination/this-does-not-exist-xyz",
+   "404",
+   9
+  ],
+  [
+   "https://www.nakshiq.com/en/destination/shimla/3",
+   "404",
+   9
+  ],
+  [
+   "https://www.nakshiq.com/en/destination/shimla/marchx",
+   "404",
+   9
+  ],
+  [
+   "https://www.nakshiq.com/en/destination/shimla/99",
+   "404",
+   9
+  ],
+  [
+   "https://www.nakshiq.com/en/destination/shimla/jan",
+   "404",
+   9
+  ],
+  [
+   "https://www.nakshiq.com/en/destination/shimla/jul",
+   "404",
+   9
+  ]
+ ],
+ "passes": 8,
+ "misses": 0
+}

@@ -1,0 +1,560 @@
+[
+  {
+    "id": "shnongpdeng",
+    "name": "Shnongpdeng",
+    "state_id": "meghalaya",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "river-camping",
+      "adventure",
+      "crystal-water"
+    ]
+  },
+  {
+    "id": "shrikhand-mahadev",
+    "name": "Shrikhand Mahadev",
+    "state_id": "himachal-pradesh",
+    "region": "Kullu",
+    "subregion": "Kullu",
+    "type": [
+      "peak",
+      "pilgrimage"
+    ],
+    "place_type": "peak",
+    "best_months": [
+      7,
+      8
+    ],
+    "avoid_months": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "spiritual",
+      "demanding"
+    ],
+    "tags": [
+      "pilgrimage",
+      "viewpoint",
+      "extreme-trek"
+    ]
+  },
+  {
+    "id": "siddhatek",
+    "name": "Siddhatek",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak",
+      "river-island"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "isolated",
+      "rural"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "ahmednagar-district"
+    ]
+  },
+  {
+    "id": "silent-valley",
+    "name": "Silent Valley National Park",
+    "state_id": "kerala",
+    "region": "Kerala Wildlife",
+    "subregion": null,
+    "type": [
+      "national-park",
+      "rainforest",
+      "wildlife",
+      "conservation"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "minimal",
+    "vibe": [
+      "pristine",
+      "wild",
+      "remote",
+      "untouched"
+    ],
+    "tags": [
+      "national-park",
+      "rainforest",
+      "wildlife",
+      "conservation",
+      "trekking",
+      "birding",
+      "offbeat"
+    ]
+  },
+  {
+    "id": "siliguri",
+    "name": "Siliguri",
+    "state_id": "west-bengal",
+    "region": "east",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "gateway",
+      "transit-hub",
+      "Chicken-Neck"
+    ]
+  },
+  {
+    "id": "silvassa",
+    "name": "Silvassa",
+    "state_id": "daman-diu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "nature",
+      "tribal",
+      "lake",
+      "forest"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "quiet",
+      "green",
+      "family",
+      "offbeat"
+    ],
+    "tags": [
+      "daman-diu",
+      "silvassa",
+      "dadra-nagar-haveli",
+      "tribal",
+      "warli",
+      "lake",
+      "forest",
+      "picnic"
+    ]
+  },
+  {
+    "id": "simlipal",
+    "name": "Simlipal",
+    "state_id": "odisha",
+    "region": "east",
+    "subregion": "Wildlife & Nature",
+    "type": [
+      "wildlife",
+      "nature",
+      "waterfall"
+    ],
+    "place_type": "national-park",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      10
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "wild",
+      "forested",
+      "adventurous"
+    ],
+    "tags": [
+      "wildlife",
+      "tiger",
+      "waterfall",
+      "orchid",
+      "UNESCO-biosphere",
+      "nature"
+    ]
+  },
+  {
+    "id": "sirpur",
+    "name": "Sirpur",
+    "state_id": "chhattisgarh",
+    "region": "Central Chhattisgarh",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "archaeological",
+      "Buddhist-Hindu",
+      "ruins"
+    ]
+  },
+  {
+    "id": "sissu",
+    "name": "Sissu",
+    "state_id": "himachal-pradesh",
+    "region": "Lahaul",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": null,
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "waterfall",
+      "gateway",
+      "atal-tunnel"
+    ]
+  },
+  {
+    "id": "sivasagar",
+    "name": "Sivasagar",
+    "state_id": "assam",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Ahom-dynasty",
+      "heritage",
+      "amphitheatre"
+    ]
+  },
+  {
+    "id": "somnath",
+    "name": "Somnath",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "busy",
+    "vibe": [],
+    "tags": [
+      "pilgrimage",
+      "jyotirlinga",
+      "coastal",
+      "heritage",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "srikalahasti",
+    "name": "Srikalahasti",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Pilgrimage & Heritage",
+    "type": [
+      "pilgrimage",
+      "temple",
+      "craft"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "spiritual",
+      "artisan",
+      "quiet"
+    ],
+    "tags": [
+      "pilgrimage",
+      "temple",
+      "art",
+      "kalamkari",
+      "pancha-bhuta"
+    ]
+  },
+  {
+    "id": "srirangam",
+    "name": "Srirangam",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "heritage",
+      "island",
+      "sacred"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "monumental",
+      "sacred",
+      "ancient",
+      "immersive"
+    ],
+    "tags": [
+      "temple",
+      "heritage",
+      "island",
+      "pilgrimage",
+      "Divya-Desam",
+      "record"
+    ]
+  },
+  {
+    "id": "srisailam",
+    "name": "Srisailam",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Pilgrimage & Heritage",
+    "type": [
+      "pilgrimage",
+      "wildlife",
+      "nature"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      9
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "spiritual",
+      "forest",
+      "adventurous"
+    ],
+    "tags": [
+      "pilgrimage",
+      "jyotirlinga",
+      "shakti-peetha",
+      "wildlife",
+      "forest"
+    ]
+  },
+  {
+    "id": "statue-of-unity",
+    "name": "Statue of Unity",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "overrun",
+    "vibe": [],
+    "tags": [
+      "modern",
+      "landmark",
+      "engineering",
+      "viewpoint"
+    ]
+  },
+  {
+    "id": "sundarbans",
+    "name": "Sundarbans",
+    "state_id": "west-bengal",
+    "region": "east",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "tiger",
+      "mangrove"
+    ]
+  }
+]

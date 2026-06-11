@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-07",
+    "date": "2026-06-07",
+    "started_utc": "2026-06-07T02:10:21Z",
+    "completed_utc": "2026-06-07T02:25:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.8 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-06-07/probe.py, sequential honest timing); 3 small Supabase aggregate reads to ground-truth SOS coverage + 1 targeted 3-row read for prior phone-format bugs; Section K via Claude in Chrome MCP (8 surfaces probed at runtime, 4 controlled console observations)",
+    "mode": "Daily regression — A through K matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 15,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (8 probes)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-06-07)",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (12 URLs: landing + 10 dests + 1 month sub-route)",
+    "E — SOS completeness via structured emergencySos blob parse (10 dests) + DB ground-truth aggregates",
+    "F — API smoke (13 probes incl. oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js version/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks)",
+    "I — Core routes HTTP matrix (21 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: explore grid+map toggle, 5 destination pages, landing; console after F5"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass. Last deep pass 2026-05-04. The Leaflet-restored dest template and /cost surface remain un-swept; deferred deep a11y pass still overdue."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Last LH pass 2026-05-05. Curl TTFB healthy (21 core routes median 877 ms, all sub-2.1 s; dest first-hit median 760 ms is cold-ISR inflated — warm re-probes 176-397 ms)."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en/destination/this-does-not-exist-xyz, zzzzzz-fake, /hi variant all hard 404 (9 bytes). Bare-path probe 301s to /en/... then 404 (verified followed chain: 404, redirects=1). 8/8 correct."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 → all 404."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed→400, empty→400, wrong-shape→400, 200KB body→413 ('Payload too large — questions are capped at 1000 characters'), valid question→200 (3935b answer). 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed→400, empty→400, {}→400 'Missing required fields'. 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with | NakshIQ | NakshIQ title stutter",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D-seo.csv: 0/12 URLs with stutter."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-06",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v51, md5 d0cc522e363cd7fc6521684ac6679f9a (byte-identical 6th consecutive day); manifest 3 icons + 5 shortcuts; /offline 301→/en/offline→200."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "Direct DB read: uttarkashi police 100 / ambulance 108 / fire 101 / women 1091 (or 181) / DDMA Control Room 01374-222722 / 1077. Site-wide placeholder regex (X{3,}) on 7 dialable columns: 0 rows."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "Direct DB read: khonoma police 100 / ambulance 108 / fire 101 / women 1091 / Kohima Police Control Room 7005986046 · NSDMA 1070. All dialable."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field (Operator-specific)",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "Direct DB read: police 100 / ambulance 108 / fire 101 / women 1091 / Geyzing PS 8145887528 + District Hospital 03595-250634; rescue_contact carries an honest no-published-phone note for park rescue, which is policy-compliant honest scarcity, not a placeholder."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-06",
+      "today_status": "STILL CLOSED",
+      "evidence": "Harness regex covers both casings; 12/12 URLs show en + hi + x-default."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS coverage gap: 120/525 destinations (109 tier-A) had no curated local_helpers block",
+      "prior_status": "PARTIAL 2026-06-06 (universal-helpline fallback shipped; curated backfill pending)",
+      "today_status": "PARTIAL",
+      "evidence": "Fallback holding: 10/10 sampled dests render Emergency SOS with ≥6 structured dialable fields + universal 112 (SSR HTML parse, section-E-sos.csv) and 7/7 Chrome-probed surfaces render the SOS section at runtime. DB unchanged since yesterday: 405 with curated local_helpers block / 120 without (109 tier-A); 525/525 emergency_sos rows, 0 rows under 3 dialable structured fields. Remaining work is content completeness (curated district numbers), backlog not safety."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-06-06 (Leaflet restored on 3/10 dests)",
+      "today_status": "PARTIAL",
+      "evidence": "Two-template state persists: betla (14 tiles) + vishnuprayag (21 tiles) render live Leaflet with 1 overlay-pane marker each; kodaikanal, vagator, jaipur render the CinematicStateMap atlas SVG (viewBox 0 0 1000 1100 ×2 + india-outline). Both templates render without console errors. Not a defect on either surface per skill map-type note; tracking the migration only."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "REPRODUCED 2026-06-06",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Harness artifact resolved: markers render as SVG circleMarkers in .leaflet-overlay-pane, not .leaflet-marker-pane. Explore map toggle: 511 overlay-pane paths matching the '511 markers · colored by score' label, visually confirmed on screenshot (score-colored dots across India). Dest Leaflet pages each show 1 overlay path = their marker. The marker-pane probe was checking the wrong pane; markers were never missing on surfaces that render Leaflet."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "NEW 2026-06-06 (medium) — Leaflet on 3/10 dests, markers reported missing",
+      "today_status": "PARTIAL",
+      "evidence": "Restoration continues (betla, vishnuprayag confirmed Leaflet today). The 'markers missing' half of yesterday's finding is withdrawn — markers render via overlay-pane circleMarkers (see INFO-2026-05-08-001 reclassification)."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "NEW 2026-06-06 (low)",
+      "today_status": "REPRODUCED",
+      "evidence": "kodaikanal, vagator, jaipur all show 23.5/80.5 readouts at runtime; jaipur's real coords (26.9N) absent from page text. Cosmetic/data-credibility issue on the decorative atlas only."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN 2026-06-06",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Not exercised in today's Chrome pass."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-06",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-06",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-06",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run in daily pass; curl TTFB healthy but is not a LH-score substitute."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-06",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's seed-random sample: daman, sirpur, palolem, alampur, barot-valley, mahad-raigad, old-goa, laknavaram, kodaikanal, vagator."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-06-07-001",
+      "severity": "medium",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces (/en landing, /en/explore) — ~50% of loads, never on destination pages",
+      "detail": "Minified React error #418 (hydration mismatch, args[]=HTML) thrown from the main app chunk during hydration. 4 controlled observations: /en/explore first navigate → FIRED; /en/explore F5 reload → clean; /en F5 reload → FIRED; /en fresh navigate (cache-busting query) → clean. 0 errors on any of the 5 destination pages probed (kodaikanal, vagator, jaipur, betla, vishnuprayag). Pages recover visually (React falls back to client render) — no user-visible breakage observed, but hydration fallback costs client CPU on the two highest-traffic surfaces and signals server/client HTML divergence. Both affected surfaces are the editorial template; suspects include time/issue-sensitive masthead content (ISSUE N° 48 · JUNE 2026), the rotating landing hero (h1 was 'Alchi.' on one load), or month-aware copy ('Showing scores for June').",
+      "evidence": "Console captures in session: identical stack via rX/iu/sd in chunk 13w0ldxt56tn..js?dpl=dpl_CNZXAShTjajrtqTxZbhGM9FNXSaj at 02:18:03Z (explore), 02:21:23Z (/en post-F5); clean reads at 02:18:29Z (explore reload) and 02:22Z (/en fresh). section-K-map.csv rows explore-grid + landing-/en.",
+      "recommendation": "Run /en locally with non-minified React to get the full mismatch diff. Audit the editorial template for Date.now()/locale-dependent or randomized SSR output (rotating hero pick is the classic culprit — pin the choice server-side and pass it as a prop). Honest caveat: yesterday's pass recorded 0 console errors on explore, but its console attach timing may not have captured load-time exceptions, so 'new today' vs 'newly observed' is not certain."
+    },
+    {
+      "id": "INFO-2026-06-07-002",
+      "severity": "info",
+      "title": "Sitemap grew 26,062 → 26,064 URLs (+2); chunk URL convention is /sitemap/N.xml",
+      "detail": "5 chunks, all 200. 525 destination slugs (en) + 6,300 month sub-routes (en) + 525 en-cost + 525 hi-cost URLs — all stable vs yesterday; the +2 is outside the destination/cost families (chunk 0/2/3/4 editorial-index growth). Harness note: the old probe pattern /sitemap-N.xml returns 404 — chunks live at /sitemap/N.xml (Next.js generateSitemaps convention); today's probe.py was corrected accordingly.",
+      "evidence": "section-H-sitemap.csv; curl /sitemap-1.xml → 404, /sitemap/1.xml → 200 (14,740 locs)."
+    },
+    {
+      "id": "INFO-2026-06-07-003",
+      "severity": "info",
+      "title": "Explore Map toggle fully functional: 511 score-colored markers render via overlay-pane SVG; marker-pane probes are methodologically invalid",
+      "detail": "Grid/Map toggle on /en/explore mounts Leaflet on demand (1 container, 18 tile imgs, window.L defined, label '511 markers · colored by score'). All 511 markers are circleMarker SVG paths in .leaflet-overlay-pane; .leaflet-marker-pane is legitimately empty (no icon markers used anywhere). Visually confirmed: dense score-colored dots + legend + OSM/CARTO attribution. This permanently reclassifies INFO-2026-05-08-001 as a wrong-pane harness artifact, and corrects yesterday's 'markers are missing' note on the restored dest-page Leaflet (each dest map shows its 1 overlay-path marker).",
+      "evidence": "section-K-map.csv explore-map-toggle row; pane census map-pane:8, tile-pane:1, overlay-pane:1(svg with 511 paths), marker-pane:0; screenshots ss_9356qs1hi / ss_514270b2t.",
+      "recommendation": "Future K passes must probe .leaflet-overlay-pane svg path (or canvas) counts, never .leaflet-marker-pane."
+    },
+    {
+      "id": "INFO-2026-06-07-004",
+      "severity": "info",
+      "title": "Destination first-hit TTFB cold-ISR pattern more visible in today's sample (median 760 ms cold, 176-397 ms warm)",
+      "detail": "All 10 sampled dests 200, but first hits ranged 365-2,971 ms (median 760) vs yesterday's 126-161 ms sample. Warm re-probes: laknavaram 2,797→397 ms, vagator 2,971→176 ms, palolem 1,414→363 ms — classic cold ISR revalidation, not a regression. Today's random sample simply hit more cold pages (lower-traffic slugs like laknavaram, sirpur, alampur).",
+      "evidence": "section-B-availability.csv + warm re-probe lines in session log."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 21,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 146, "median": 877, "p90": 1452, "max": 2065 },
+    "core_routes_TTFB_note": "21 real routes all 200 first-hit. A 22nd probe (/en/search) is an intentional phantom-route check — it correctly 404s (route never existed in codebase; see nakshiq_qa_false_positives memory) and is excluded from the matrix.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 365, "median": 760, "max": 2971 },
+    "destinations_TTFB_note": "Cold-ISR first hits; warm re-probes 176-397 ms (see INFO-2026-06-07-004)",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 75,
+    "sos_min_structured_fields_per_dest": 6,
+    "sos_phones_total_across_10_dests": 75,
+    "sos_phones_invalid_format": 0,
+    "sos_universal_112_present": 10,
+    "sos_destinations_with_local_helpers_block": 405,
+    "sos_destinations_without_block": 120,
+    "sos_no_block_tierA": 109,
+    "sos_emergency_sos_rows_db": 525,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_total_structured_entries": 4107,
+    "sos_db_rows_with_placeholder_X": 0,
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_days": 6,
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 26064,
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_total_cost_urls": 1050,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 18,
+    "map_explore_overlay_marker_paths": 511,
+    "map_dest_pages_probed_interactive": 5,
+    "map_dest_pages_with_leaflet": 2,
+    "map_dest_pages_with_atlas_svg": 3,
+    "map_dest_leaflet_marker_paths_each": 1,
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 8,
+    "console_react_418_fired_loads": "2 of 4 controlled editorial-surface loads; 0 of 5 destination pages"
+  },
+  "deliverables": [
+    "qa/findings/2026-06-07.json",
+    "qa/findings/2026-06-07/ (probe.py + section CSVs A-K + html/ SSR snapshots + sample-slugs.json)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "qa/SKILL.md was missing from the working tree at run start (it lives only on unmerged branch qa/sos-backfill-and-harness-fixes-2026-06-04); restored from git commit 4f7bd8c2 and followed. Recommend merging that branch or committing the harness to main so the skill survives sessions.",
+    "React #418 finding is observational (2/4 loads): minified build hides the mismatch diff; root cause unconfirmed. Yesterday's 0-console-error records for the same surfaces may simply not have captured load-time exceptions, so first-seen date is uncertain.",
+    "Today's first probe-script draft matched i18n label strings for SOS fields (police:'Police') before being corrected to parse the emergencySos blob; the shipped section-E-sos.csv contains only corrected blob-parsed data.",
+    "sos_phones_invalid_format counts placeholder/X-masked or digit-free values in dialable fields; descriptive name fields (local_police_station station names, laknavaram's mountain_rescue advisory note) are by-design text per the ratnagiri precedent in qa/SKILL.md and are not counted as malformed.",
+    "TTFB medians are sequential single-shot curl measurements from the Cowork sandbox (Linux, shared egress); absolute values vary with sandbox network weather — trend vs yesterday is the signal, and the cold/warm split is reported explicitly.",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe matching prior-run methodology.",
+    "Axe-core and Lighthouse not run today (cost-aware rule: no material template ship detected vs 2026-05-04/05 baselines beyond the in-flight Leaflet restore, which remains flagged for the overdue deep pass)."
+  ],
+  "business_summary": {
+    "headline": "GREEN. Everything customer-facing passed: all 21 core routes, all 10 sampled destination pages in both English and Hindi, every SEO check, the API layer, PWA assets, and the 26k-URL sitemap. Emergency SOS is in its strongest verified state — every one of 525 destinations has real, dialable emergency numbers in the database (zero placeholders site-wide), and every sampled page renders them. Best news of the day: the explore map's 'missing markers' scare is conclusively dead — all 511 score-colored markers render and were visually confirmed; the probe had been looking in the wrong place for a month. One new watch item: an intermittent, self-recovering React warning on the landing and explore pages that users don't see but that deserves a developer look.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "21/21 real core routes 200; 10/10 sampled destinations 200. First hits on low-traffic pages are slower (cold cache, up to 3 s) but warm to 176-397 ms" },
+      { "area": "API health", "status": "GREEN", "why": "0 × 5xx across 13 probes; malformed/empty bodies → 400; a 200 KB attack-sized body is correctly rejected with 413; valid chat + weather return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages serve lang=hi with Devanagari titles" },
+      { "area": "SEO metadata", "status": "GREEN", "why": "12/12 URLs: no title stutter, canonical + en/hi/x-default hreflang + og:image all present; soft-404 guards 8/8" },
+      { "area": "Emergency SOS", "status": "GREEN", "why": "525/525 destinations have a DB SOS row with ≥3 dialable numbers (0 placeholders, 4,107 entries); 10/10 sampled pages render 6+ numbers plus universal 112" },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 511/511 markers visually confirmed. Destination pages: 2 templates coexist mid-migration (live Leaflet vs decorative atlas), both render cleanly" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical 6 days (v51); manifest 3 icons + 5 shortcuts; offline page 200" },
+      { "area": "Console health", "status": "AMBER", "why": "New intermittent React hydration warning (#418) on landing + explore — fires on roughly half of loads, self-recovers, invisible to users, but burns client CPU on the two highest-traffic pages" }
+    ],
+    "whats_changed": [
+      "[resolved-as-artifact] The month-old 'map markers missing' finding is closed for good: markers render as vector dots in a different layer than the probe checked. 511/511 visible on the explore map, screenshot-confirmed.",
+      "[medium] New intermittent React hydration warning on /en and /en/explore (2 of 4 controlled loads; never on destination pages). Self-recovering, no visible breakage.",
+      "[reproduced] The decorative atlas still prints the same wrong coordinates (23.5N · 80.5E) on every non-Leaflet destination page — cosmetic, but a credibility nick for a data-honesty brand.",
+      "[info] Sitemap grew by 2 URLs to 26,064; destination counts unchanged (525 + 6,300 month pages).",
+      "[info] Leaflet map restoration on destination pages continues (2 of 5 spot-checked today render it; rest show the atlas)."
+    ],
+    "risks": [
+      "The hydration warning hits the landing page and explore — the two pages most first-time visitors see. Low user impact today, but hydration mismatches can mask real content divergence and slow perceived load on cheap phones.",
+      "109 top-tier destinations still lack curated local emergency numbers (district control rooms, hospitals). Universal helplines cover the safety baseline, so this is backlog — but it is also the product's differentiation claim.",
+      "Accessibility (color contrast, tab markup) and mobile Lighthouse performance haven't been re-measured since early May; the deep pass is overdue, especially with the new map template shipping."
+    ],
+    "bottom_line": [
+      "Ask the developer to spend 30 minutes on the React #418 warning with a non-minified build — prime suspect is the rotating hero/issue masthead rendering differently on server vs client.",
+      "Fix the static atlas coordinates (one template variable) — small effort, visible credibility win.",
+      "Schedule the overdue deep accessibility + Lighthouse pass once the Leaflet destination-map rollout finishes, so it's measured once, not twice."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi (random seed, 525-slug pool)",
+      "21 core routes + 13 API probes + 8 soft-404 guards probed",
+      "8 surfaces exercised in a real Chrome session, 4 controlled console observations",
+      "525 destination SOS rows ground-truthed directly in the database",
+      "26,064-URL sitemap walked chunk by chunk"
+    ]
+  }
+}

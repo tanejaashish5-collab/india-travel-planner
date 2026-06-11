@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-06",
+    "date": "2026-06-06",
+    "started_utc": "2026-06-06T02:08:00Z",
+    "completed_utc": "2026-06-06T02:25:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.8 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (section-addressable probe.py, sequential honest timing); small targeted direct Supabase reads (per-slug + 3 aggregates) to ground-truth the SOS gap; Section K via Claude in Chrome MCP (browser connected, 6 surfaces probed at runtime)",
+    "mode": "Daily regression — A through K matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 17,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [
+    {
+      "id": "INFRA-2026-06-06-001",
+      "severity": "info",
+      "title": "qa/SKILL.md (the A-K matrix definition) is absent from the workspace — matrix reconstructed from schema + prior findings",
+      "detail": "The scheduled task and the uploaded task-wrapper both instruct 'Read the current skill at qa/SKILL.md and follow it exactly', but that file does not exist in the workspace (qa/ holds hero-images.md, cinematic-readiness.md, an-pilot-sample, findings/, _lib/, the 3 generator wrappers and findings.schema.json — but no SKILL.md). The A-K matrix was reconstructed faithfully from qa/findings.schema.json (which enumerates every section's headline metrics) and the structure of the last persisted run (2026-06-05.json). build_report.js, by contrast, persisted correctly from yesterday's reconstruction (qa/_lib/build_report.js, 13302 bytes), so no report-builder rebuild was needed today.",
+      "evidence": [
+        "ls qa/SKILL.md -> No such file or directory",
+        "find qa -iname '*.md' returns hero-images.md, cinematic-readiness.md, an-pilot-sample-2026-05-08.md only",
+        "qa/_lib/build_report.js present (13302 bytes, dated Jun 5 02:32) — yesterday's reconstruction survived"
+      ],
+      "consequence": "No functional impact on today's run — the matrix is fully defined by the schema and prior run. But the canonical matrix doc the task points at is missing, so each run reconstructs it from secondary sources.",
+      "recommendation": "Author qa/SKILL.md (the A-K matrix spec) and commit qa/ to git (it is still untracked) so the matrix, harness (_lib/*.js) and findings history survive across sessions. This is the same durability gap flagged 2026-06-05."
+    }
+  ],
+  "phases_completed": [
+    "Section A — soft-404 regression (8 routes vs NEW-2026-05-04-004/006 closures)",
+    "Section B — destination availability + TTFB (10 random destinations from sitemap, deterministic seed sha256('nakshiq-qa-2026-06-06'))",
+    "Section C — Hindi parity (same 10 destinations on /hi — lang=hi + Devanagari title)",
+    "Section D — SEO meta sanity (title stutter, canonical, hreflang en/hi/x-default, og:image on 12 URLs — landing + 10 destinations + sasangir/june month sub-route)",
+    "Section E — SOS phone format on 10 destinations + DIRECT SUPABASE ground-truth of the SOS coverage gap (deep_dive.local_helpers per-slug + 3 aggregates: block presence, tier-A gap, phone-entry validity)",
+    "Section F — API smoke (11 endpoint+body combos incl. DEEP-Phase7-A1/A2 regressions + valid /api/weather?id=varanasi + valid /api/chat round-trip)",
+    "Section G — PWA / SW / manifest / offline page (SW CACHE_VERSION nakshiq-v51; sw.js 15144 bytes; md5 d0cc522e363cd7fc6521684ac6679f9a — byte-identical to 2026-06-05)",
+    "Section H — Sitemap integrity (5 index-referenced chunks, all 200/well-formed, 26062 total URLs — unchanged vs 2026-06-05)",
+    "Section I — Core routes HTTP matrix (22 high-traffic routes incl. /en/treks, /en/with-kids/jaipur, /en/cost/jaipur, /en/destination/jaipur/june)",
+    "Section J — Locale-routing redirect from / and bare paths (5 probes — all 301 to /en/<path>)",
+    "Section K — Chrome E2E interactive (Claude in Chrome MCP): navigated 6 surfaces (vishnuprayag, swamimalai, betla, anjuna, jaipur, explore); probed window.L / .leaflet-container / .leaflet-tile / .leaflet-marker + Emergency-SOS render + Atlas coord + console errors at runtime"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass. Last deep pass 2026-05-04. The newly-restored Leaflet map template (3/10 dests today) and the /cost surface are both un-swept; the deferred deep a11y pass remains overdue."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Last LH pass 2026-05-05. Curl TTFB is healthy today (dest median 135 ms; core median 1194 ms inflated only by 2 cold ISR routes), but LH perf score is a separate signal."
+    },
+    {
+      "phase": "Persona round-trip (Phase 5 from 2026-05-04)",
+      "reason": "Carry-forward defer; not in the daily A-K matrix."
+    },
+    {
+      "phase": "Dedicated security probes (Phase 9 from 2026-05-04)",
+      "reason": "Carry-forward defer; needs its own session."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/this-does-not-exist-xyz -> 404 (9 bytes); /en/destination/zzzzzz-fake -> 404; /hi/destination/this-does-not-exist-xyz -> 404. section-A-soft404.csv: 8/8 probes returned 404."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/shimla/3, /marchx, /99, /jan, /jul all -> 404 (section-A-soft404.csv). 3-letter month abbreviations 404 by design per slug-validator allowlist."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat {\"broken -> 400 {\"error\":\"Malformed JSON body\"}; empty -> 400 same; {\"message\":\"hi\"} -> 400 {\"error\":\"Invalid question\"}; 9000-char question -> 400 {\"error\":\"Invalid question\"} (not 5xx). A valid {\"question\":\"...Leh?\"} -> 200 with a real answer. section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/itinerary {\"broken -> 400 Malformed JSON body; empty -> 400 same; {} -> 400 {\"error\":\"Missing required fields\"}. section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with | NakshIQ | NakshIQ title stutter",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "0/12 sampled URLs carry a doubled NakshIQ suffix. section-D-seo.csv: title_stutter=0 across all 12 rows."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-05 (v51, 15144 bytes, md5 d0cc522e...)",
+      "today_status": "STILL GREEN",
+      "evidence": "CACHE_VERSION nakshiq-v51 (unchanged). sw.js 15144 bytes; md5 d0cc522e363cd7fc6521684ac6679f9a — BYTE-IDENTICAL to 2026-06-05 (5 consecutive days). manifest /manifest.json icons=3, shortcuts=5, display=standalone, start_url=/en, theme_color=#161614. /en/offline -> 200 (92113 bytes, TTFB 928 ms)."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not in today's random sample, but proven site-wide by direct DB aggregate: across all 405 local_helpers blocks (867 phone entries), 0 contain an X-placeholder (regex 'x{4,}') and 0 are non-digit text. Stronger than a single-slug re-check."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "Site-wide DB aggregate: 0/867 phone entries across 405 blocks are non-digit text (no 'Contact via' / 'Operator-specific' free-text phones anywhere)."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field (Operator-specific)",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "Site-wide DB aggregate: 0/867 phone entries are non-digit text. khangchendzonga-np not individually in today's 10-sample, but the aggregate covers it."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D-seo.csv regex matches hrefLang OR hreflang; 12/12 URLs carry en + hi + x-default."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS coverage gap: 120/525 destinations (109 tier-A) had no SOS block and rendered a completely empty SOS surface (not even universal helplines)",
+      "prior_status": "REPRODUCED/high 2026-06-05 (safety dead-end)",
+      "today_status": "PARTIAL",
+      "evidence": "TWO-PART today. (1) USER-FACING DEAD-END FIXED: all 10 sampled destinations now render a non-empty 'Emergency SOS' section with the universal helpline set. Critically, the 6 sampled destinations that the DB confirms still LACK a curated block (anjuna, bengaluru, betla, pattadakal, swamimalai, vishnuprayag — all DB has_block=false) now render '📞 112' plus the expandable 100/101/102/108/1091/1073 set at runtime (Chrome) and in SSR HTML. Yesterday these same gap pages rendered NOTHING. => the recommended universal-helpline fallback shipped. (2) DB BACKFILL STILL OPEN: the curated-data gap is unchanged — deep_dive.local_helpers present on 405/525, absent on 120 (109 tier-A). So no page is a safety dead-end anymore, but 120 destinations still rely on the generic fallback rather than curated district control-room/hospital numbers."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget no longer present on destination pages",
+      "prior_status": "STILL OPEN 2026-06-05 (Day 20)",
+      "today_status": "PARTIAL",
+      "evidence": "MAP IS RETURNING. Runtime Chrome probe: 3/5 destination surfaces now render a working Leaflet map — vishnuprayag (window.L=true, .leaflet-container=1, 42 tiles), swamimalai (28 tiles), betla (28 tiles). These 3 are exactly the destinations that ship Leaflet 1.9.4 CSS in SSR. The other 2 (jaipur, anjuna) still show the decorative 'Atlas' placeholder + Places-to-Visit list and no map (window.L=false, 0 tiles). 0 console errors on any surface. Was absent on ALL destinations yesterday (Day 20); Day 21 shows a partial rollout. NOTE: markers are still 0 even where the map renders (see INFO-2026-05-08-001)."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "STILL OPEN 2026-06-05 (moot — no map rendered)",
+      "today_status": "REPRODUCED",
+      "evidence": "Now directly observable again on the restored maps: vishnuprayag .leaflet-tile=42 but .leaflet-marker=0; swamimalai 28 tiles / 0 markers; betla 28 tiles / 0 markers. So where the map has returned, the tile pane plots but the marker pane is empty — the original 2026-05-08 symptom, no longer moot."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN 2026-06-05 — not investigated",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Carry-forward defer; needs explicit modal-trigger interaction (clearing storage + first-visit cookie) not in today's A-K matrix."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-05 — not re-tested without axe",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core sweep skipped — see phases_skipped. The restored map template is also un-swept."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-05 — not re-tested without axe",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core sweep skipped — see phases_skipped."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-05",
+      "today_status": "STILL OPEN",
+      "evidence": "Lighthouse not re-run (see phases_skipped). Curl TTFB healthy (dest median 135 ms; core median 1194 ms but only because 2 cold ISR routes sit in the 22-route set — warm re-probe of both lands 186-219 ms), but this does not address the LH perf score."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-05",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's deterministic 10-sample (sasangir, vishnuprayag, anjuna, amaravati, swamimalai, betla, bengaluru, pattadakal, bikaner, bharatpur) excludes the named trio."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-06-06-001",
+      "severity": "high",
+      "title": "SOS universal-helpline fallback has SHIPPED — the 120-destination 'empty SOS' dead-end is resolved; DB curated backfill (109 tier-A) still pending",
+      "detail": "This is a positive, high-impact change resolving yesterday's top finding. Yesterday (NEW-2026-06-05-001) the 120 destinations without a deep_dive.local_helpers block rendered NO emergency surface at all — not even the universal national helplines — a safety dead-end on 109 tier-A pages. Today, every one of the 10 sampled destinations renders a non-empty 'Emergency SOS' section. The decisive evidence is the 6 sampled destinations that the database CONFIRMS still have no curated block (anjuna, bengaluru, betla, pattadakal, swamimalai, vishnuprayag — all DB has_block=false): at runtime (Chrome) and in SSR HTML they now show '📞 112' plus the expandable universal set (100 police / 101 fire / 102 & 108 ambulance / 1091 women / 1073 highway). So the recommended fix #1 ('always render 112/100/108 even when local_helpers is absent') is live. What is NOT yet done is fix #2, the data backfill: the DB still has the local_helpers block on 405/525 and absent on 120 (109 tier-A) — identical to yesterday. So the urgent safety risk is closed; the remaining work is content completeness (curated district control-room/hospital numbers for the 109 tier-A gap), which is now a normal backlog item, not a safety emergency.",
+      "evidence": "Per-slug DB read: amaravati/bharatpur/bikaner/sasangir has_block=true; anjuna/bengaluru/betla/pattadakal/swamimalai/vishnuprayag has_block=false. Live render of all 6 block-less dests shows Emergency SOS + 112 (Chrome javascript probe: sosRendered=true, sos112=true; SSR grep: universal helplines present 10/10). Aggregate DB: with_block=405, without_block=120, without_block_tierA=109 (unchanged vs 2026-06-05). Payload markers 'fallback' and 'universal' present on gap pages.",
+      "recommendation": "(1) Confirm the fallback is intended and keep it — it de-risks all 120 gap pages. (2) Proceed with the 109-tier-A curated backfill at normal (not emergency) priority, from authoritative .gov.in/.nic.in district control-room + hospital sources; never fabricate. (3) Consider rendering a small 'generic national helplines — local numbers being verified' label on fallback-only pages so users know the difference."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "severity": "medium",
+      "title": "Leaflet destination map is being RESTORED — renders on 3/10 sampled destinations (Day 21), though markers are still empty",
+      "detail": "After 20 days absent on every destination, the Leaflet map has returned on a subset. 3 of the 5 destination surfaces probed at runtime render a real, tiled map: vishnuprayag (window.L defined, 1 .leaflet-container, 42 tiles), swamimalai (28 tiles), betla (28 tiles) — all with 0 console errors. These are precisely the destinations that ship Leaflet 1.9.4 CSS in their SSR HTML, so the SSR signal cleanly predicts the runtime map. The remaining destinations (jaipur, anjuna, bengaluru, etc.) still show the decorative 'Atlas' placeholder + the functional Places-to-Visit list and no map. So this looks like a staged rollout of the map's return rather than a global flip. The one caveat: even where the map now renders, the marker pane is empty (0 markers on all 3) — so the tiles plot but the POI pins do not, reproducing the original 2026-05-08 symptom (INFO-2026-05-08-001).",
+      "evidence": "section-K-map.csv: vishnuprayag L=true container=1 tiles=42 markers=0; swamimalai tiles=28 markers=0; betla tiles=28 markers=0; jaipur/anjuna L=false tiles=0 (atlas placeholder + Places list); explore card-grid (51 cards, no map expected). SSR: the same 3 dests carry cloudflare leaflet/1.9.4/leaflet.min.css + .leaflet-tile-pane/.leaflet-popup styles; the other 7 do not.",
+      "recommendation": "Good direction — finish the rollout to all destinations and fix the empty marker pane so the POI coordinates already in the payload actually plot. Verify whether the 3-vs-7 split is an intentional cohort (template flag / content tier) or an incomplete deploy."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "severity": "low",
+      "title": "Decorative 'Atlas' section prints identical static coordinates (23.5N · 80.5E) on every placeholder-template destination",
+      "detail": "On the 7/10 destinations still using the 'Atlas' placeholder (where the map has not yet returned), the stylized 'NAKSHIQ ATLAS · 2026 · SCALE 1:24M' band prints the coordinate label '23.5N · 80.5E' identically for every destination — i.e. the same central-Madhya-Pradesh point appears on Anjuna (Goa, ~15.6N 73.7E), Bengaluru (~12.9N 77.6E), Bikaner (~28.0N 73.3E), Bharatpur, Pattadakal, Amaravati and Sasangir. It reads as intentional magazine-style chrome (paired with a fixed 'SCALE 1:24M' and a 'ROLLING' tag), not a real coordinate readout, so functional impact is nil. But a product branded a 'travel confidence engine' printing the same wrong-looking coordinates on every page is a small credibility nick worth a quick polish — either bind it to the destination's real coords (already in the `coords` column) or drop the numeric label.",
+      "evidence": "SSR text extraction across the 7 atlas-template dests: atlas_coord='23.5N · 80.5E' on all 7 (sasangir, anjuna, amaravati, bengaluru, pattadakal, bikaner, bharatpur); the 3 map-template dests (vishnuprayag/swamimalai/betla) have no atlas band. Chrome runtime confirmed the same on anjuna/jaipur.",
+      "recommendation": "Bind the Atlas coordinate label to destinations.coords, or remove the numeric label if it is purely decorative. Low priority."
+    },
+    {
+      "id": "INFO-2026-06-06-004",
+      "severity": "info",
+      "title": "Availability and timing are excellent today; the only TTFB outliers are 2 cold ISR routes that warm to sub-220 ms",
+      "detail": "Destination TTFB is the best in recent runs: min 126 / median 135 / max 161 ms across the 10-sample (vs a 900 ms median yesterday). Core-route TTFB shows min 119 / median 1194 / p90 2227 / max 9623 ms, but the median is inflated entirely by 2 single-shot cold ISR misses in the 22-route set — /en/cost/jaipur (9623 ms) and /en/destination/jaipur/june (7233 ms). Both warm immediately: a 2nd and 3rd hit landed 203/219 ms and 189/186 ms respectively. All 22 core routes returned 2xx; 0 non-2xx. This mirrors the recurring cold-ISR tail pattern, not a regression.",
+      "evidence": "section-B-destinations.csv (10/10 200, TTFB 126-161 ms); section-I-coreroutes.csv (22/22 2xx); warm re-probe: /en/cost/jaipur hit1 0.203s hit2 0.219s; /en/destination/jaipur/june hit1 0.189s hit2 0.186s.",
+      "recommendation": "Add /cost/{slug} and month sub-routes to the prewarm-next-month cron so cold ISR misses don't hit SEO crawlers; otherwise no action."
+    },
+    {
+      "id": "INFO-2026-06-06-005",
+      "severity": "info",
+      "title": "Sitemap stable at 26,062 URLs; service worker byte-identical for 5 consecutive days",
+      "detail": "5 sitemap chunks all 200/well-formed: 368 / 14740 / 1122 / 3196 / 6636 = 26,062 — identical to 2026-06-05. 525 destination slug + 6,300 month + 1,050 /cost URLs. Service worker nakshiq-v51 is byte-identical (md5 d0cc522e363cd7fc6521684ac6679f9a) for the 5th straight day; manifest 3 icons / 5 shortcuts / standalone; /en/offline 200. A stable mid-sprint content cadence.",
+      "evidence": "sitemap-{0..4}.xml; sw.js md5 d0cc522e363cd7fc6521684ac6679f9a (today == 2026-06-05); _results_G.json.",
+      "recommendation": "No action."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 22,
+    "core_routes_2xx": 22,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 119, "median": 1194, "p90": 2227, "max": 9623 },
+    "core_routes_TTFB_note": "median/max inflated by 2 cold ISR routes (/cost/jaipur 9623, /jaipur/june 7233); both warm to 186-219 ms on re-probe",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 126, "median": 135, "max": 161 },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_sample_db_gap_dests_now_rendering_universal": 6,
+    "sos_phones_invalid_format": 0,
+    "sos_destinations_with_local_helpers_block": 405,
+    "sos_destinations_without_block": 120,
+    "sos_no_block_tierA": 109,
+    "sos_total_phone_entries_db": 867,
+    "sos_phone_entries_placeholder_or_text": 0,
+    "api_endpoints_probed": 11,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 7,
+    "api_2xx_valid_returned": 2,
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_days": 5,
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 26062,
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_total_cost_urls": 1050,
+    "map_widget_destination_pages_probed_interactive": 5,
+    "map_widget_destination_pages_with_leaflet": 3,
+    "map_widget_tiles_rendering_dests": 3,
+    "map_widget_markers_rendering_dests": 0,
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true
+  },
+  "deliverables": [
+    "qa/findings/2026-06-06.json (this file)",
+    "qa/findings/2026-06-06/section-A-soft404.csv",
+    "qa/findings/2026-06-06/section-B-destinations.csv",
+    "qa/findings/2026-06-06/section-C-hindi.csv",
+    "qa/findings/2026-06-06/section-D-seo.csv",
+    "qa/findings/2026-06-06/section-E-sos.csv",
+    "qa/findings/2026-06-06/section-F-api.csv",
+    "qa/findings/2026-06-06/section-I-coreroutes.csv",
+    "qa/findings/2026-06-06/section-J-locale.csv",
+    "qa/findings/2026-06-06/section-K-map.csv",
+    "qa/findings/2026-06-06/sitemap-{0..4}.xml (raw artefacts)",
+    "qa/findings/2026-06-06/raw/sw.js + manifest.json (raw artefacts)",
+    "qa/findings/2026-06-06/raw/en-*.html + hi-*.html (per-page bodies used for SEO/SOS/Atlas extraction)",
+    "qa/findings/2026-06-06/sample-10-dest.txt (deterministic random sample) + all-slugs.txt",
+    "NakshIQ_Developer_Report.docx (workspace root)",
+    "NakshIQ_QA_Report.docx (workspace root)",
+    "NakshIQ_Business_Report.docx (workspace root)"
+  ],
+  "honest_caveats": [
+    "qa/SKILL.md (the canonical A-K matrix definition the task points at) does not exist in the workspace; the matrix was reconstructed from qa/findings.schema.json + the 2026-06-05 run. No functional impact, but see blockers — qa/ is still untracked in git.",
+    "Section A-J timing was measured sequentially via curl (--max-time 40) in a section-addressable probe; each TTFB is a single-shot measurement. The 2 elevated core-route TTFBs were re-probed warm to confirm cold-ISR cause; destination TTFBs were not warm-re-probed (already sub-200 ms).",
+    "Section E's authoritative SOS metric is DB block presence + live render, NOT a rendered tel: link count — the site renders phones as plain text inside the Emergency-SOS component, not as <a href=tel:> links, so a tel:-link count reads 0 and is not used. The universal-fallback conclusion rests on 6 DB-confirmed-gap destinations rendering 112 + the universal set at runtime where yesterday they rendered nothing.",
+    "The SOS gap was ground-truthed with small targeted direct reads via the Supabase MCP (1 per-slug query for the 10-sample + 3 aggregates) — well under any egress concern, and the per-slug DB verdicts were cross-validated against live Chrome renders.",
+    "Axe-core and Lighthouse were not run today; Phase-3/Phase-4 carry-forwards are reported STILL OPEN — not re-tested. The newly-restored Leaflet map template is also un-swept for a11y.",
+    "Welcome-tour /hi modal (E2E-2026-05-04-A1) was not interactively triggered today; carried forward unchanged.",
+    "/api/destinations and /api/health probed for completeness — both 404 (HTML 404 page); not part of the documented API surface, counted as 4xx-not-validation (so api_4xx_validation_returned=7 counts only the 400s, not these 404s)."
+  ],
+  "business_summary": {
+    "headline": "GREEN, and two of yesterday's amber items moved the right way. The emergency-SOS dead-end is fixed: the 120 destinations that showed no emergency contact yesterday now all display the national helplines (112 + police/fire/ambulance/women/highway), confirmed on pages the database still lists as un-backfilled. And the destination map — gone for 20 days — has started coming back, rendering correctly on 3 of 10 sampled destinations. Availability, API, Hindi, SEO and PWA remain fully green. Remaining work is normal backlog: finish the map rollout (and its empty pins), and backfill curated local emergency numbers for 109 top-tier destinations now that no page is a dead end.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "22/22 core routes 2xx; 10/10 sampled destinations 200; destination TTFB median a fast 135 ms" },
+      { "area": "API health", "status": "GREEN", "why": "0 × 5xx across 11 probes; malformed/empty/oversized bodies all return 400; valid weather + chat endpoints return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 hi pages had lang=hi + Devanagari titles" },
+      { "area": "SEO basics", "status": "GREEN", "why": "0 title-stutter; 12/12 canonical + hreflang en/hi/x-default + og:image" },
+      { "area": "Emergency SOS", "status": "GREEN", "why": "Fixed since yesterday: 10/10 sampled render the universal helplines, including 6 destinations the DB still lists as un-backfilled. 0 malformed/placeholder phones in all 867 DB phone entries. Curated backfill of 109 tier-A is now normal backlog, not a safety risk" },
+      { "area": "Destination map", "status": "AMBER (improving)", "why": "Returning after 20 days: renders with tiles on 3/10 sampled (vishnuprayag/swamimalai/betla); still placeholder on the other 7; pins (markers) still empty where it renders" },
+      { "area": "PWA", "status": "GREEN", "why": "SW nakshiq-v51 byte-identical 5 days; manifest 3 icons / 5 shortcuts; offline page 200" }
+    ],
+    "whats_changed": [
+      "[high · positive] SOS dead-end FIXED — the universal-helpline fallback shipped. All 120 previously-empty destinations now show 112 + the national helpline set; verified on 6 DB-confirmed-gap pages that rendered nothing yesterday. The safety risk flagged yesterday is closed.",
+      "[medium · positive] Destination map is COMING BACK — after 20 days absent it now renders (with tiles) on 3/10 sampled destinations. Markers/pins are still empty where it renders.",
+      "[low] Cosmetic: the decorative 'Atlas' band prints the same static coordinates (23.5N · 80.5E) on every placeholder-template destination regardless of where it actually is.",
+      "[info] Performance excellent — destination TTFB median 135 ms (vs 900 ms yesterday). The only slow core routes were 2 cold-cache ISR pages that warm to ~200 ms.",
+      "[info] Sitemap steady at 26,062 URLs; service worker unchanged for 5 straight days."
+    ],
+    "post_run_verification": {
+      "note": "Adversarial self-re-check of today's findings against primary evidence, per the 'verify before verdict' rule. The two headline movements (SOS fix, map return) were each cross-checked DB-vs-live and at runtime in Chrome before being called.",
+      "rows": [
+        { "id": "NEW-2026-06-06-001", "original": "high", "corrected": "CONFIRMED as a FIX (partial) — 6 destinations with DB has_block=false render 112 + universal set at runtime; yesterday the same pages rendered nothing. DB gap count (120/109-tierA) unchanged, so framed as 'dead-end fixed, curated backfill still pending', not 'gap closed'." },
+        { "id": "NEW-2026-06-06-002", "original": "medium", "corrected": "CONFIRMED — 3/5 surfaces render window.L=true + 28-42 tiles; the SSR leaflet-CSS signal predicts the runtime map exactly; 0 console errors. Markers 0 noted honestly." },
+        { "id": "NEW-2026-06-06-003", "original": "low", "corrected": "CONFIRMED — identical 23.5N·80.5E on 7/7 atlas-template dests; flagged as cosmetic, not functional." },
+        { "id": "INFO-2026-06-06-004", "original": "info", "corrected": "CONFIRMED — 2 cold ISR routes warm-re-probed to 186-219 ms; destination median 135 ms." }
+      ]
+    },
+    "real_gap": {
+      "title": "Where the work now sits — no longer a safety emergency, but two clean follow-ups",
+      "paragraphs": [
+        "Yesterday's headline risk — 120 destinations (109 of them top-tier) showing no emergency contact at all — is resolved at the user-facing layer. The site now renders the national helplines (112 unified, 100 police, 101 fire, 102/108 ambulance, 1091 women, 1073 highway) on every sampled destination, and we verified this specifically on six pages that the database still records as having no curated local block (anjuna, bengaluru, betla, pattadakal, swamimalai, vishnuprayag). Those six rendered nothing yesterday and render the full helpline set today, so the universal fallback is live. No destination page is a dead end anymore.",
+        "What remains is content completeness, not safety. The database still has curated local emergency contacts (deep_dive.local_helpers) on 405 of 525 destinations and none on the other 120 — 109 of which are tier-A. Every one of the 405 curated blocks is clean: 867 phone entries, zero placeholders, zero free-text. The follow-up is to backfill curated district control-room and hospital numbers for those 109 tier-A destinations, at normal priority, from authoritative .gov.in/.nic.in sources — never fabricated. A small 'national helplines shown; local numbers being verified' label on fallback-only pages would set the right expectation in the meantime.",
+        "The second follow-up is the map. After 20 days fully absent it has started returning: 3 of the 10 sampled destinations (vishnuprayag, swamimalai, betla) now render a real tiled Leaflet map with no console errors, while the other 7 still show the decorative Atlas placeholder next to the (working) Places-to-Visit list. The remaining glitch is that even where the map renders, the location pins don't — 28-42 map tiles draw but 0 markers — so the POI coordinates already in the page payload still aren't plotted. Finishing the rollout to all destinations and fixing the empty pin layer closes this out."
+      ]
+    },
+    "risks": [
+      "Map rollout is partial and the pin layer is empty where the map renders — a half-restored feature can read as broken; worth finishing or gating behind the cohort until pins work.",
+      "The 109 tier-A destinations still lean on generic national helplines rather than curated local numbers — fine as a floor, but a 'travel confidence' product should close this for its highest-traffic places."
+    ],
+    "coverage": [
+      "10 destinations sampled live (en + hi) + per-slug DB ground-truth + 3 DB aggregates",
+      "22 core routes probed (all 2xx)",
+      "11 API endpoints probed (0 × 5xx; 2 valid 200s)",
+      "6 surfaces probed interactively in Chrome for the map widget (3 render the map)",
+      "525 destination + 1,050 /cost + 6,300 month URLs published in sitemap (26,062 total)"
+    ],
+    "bottom_line": [
+      "SOS dead-end is fixed — the universal-helpline fallback shipped; verify it's intentional and keep it. Yesterday's safety risk is closed.",
+      "Backfill curated local emergency numbers for the 109 tier-A gap destinations at normal priority (.gov.in/.nic.in sources, never fabricate); add a 'local numbers being verified' label on fallback-only pages.",
+      "Finish the destination-map rollout to all destinations and fix the empty marker/pin layer (POI coords are already in the payload).",
+      "Cosmetic: bind the Atlas coordinate label to each destination's real coords, or drop the numeric label.",
+      "Durability: author qa/SKILL.md and commit qa/ to git — the matrix doc the task points at is still missing and qa/ remains untracked."
+    ]
+  }
+}

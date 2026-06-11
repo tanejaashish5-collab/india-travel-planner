@@ -1,0 +1,532 @@
+[
+  {
+    "id": "omkareshwar",
+    "name": "Omkareshwar",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Jyotirlinga",
+      "Shiva",
+      "Narmada"
+    ]
+  },
+  {
+    "id": "ooty",
+    "name": "Ooty (Udagamandalam)",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Hills",
+    "subregion": null,
+    "type": [
+      "hill-station",
+      "tea",
+      "nature",
+      "railway"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "misty",
+      "colonial",
+      "cool",
+      "touristy"
+    ],
+    "tags": [
+      "hill-station",
+      "tea",
+      "UNESCO",
+      "railway",
+      "nature",
+      "botanical",
+      "family"
+    ]
+  },
+  {
+    "id": "ozar",
+    "name": "Ozar",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "peshwa-history",
+      "river-side"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "pune-district",
+      "junnar-taluka"
+    ]
+  },
+  {
+    "id": "pachmarhi",
+    "name": "Pachmarhi",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "hill-station",
+      "waterfalls",
+      "cantonment"
+    ]
+  },
+  {
+    "id": "palani",
+    "name": "Palani",
+    "state_id": "tamil-nadu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "trek"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "accessible"
+    ],
+    "tags": []
+  },
+  {
+    "id": "pali-raigad",
+    "name": "Pali (Raigad)",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "village",
+      "konkan-edge"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "raigad-district"
+    ]
+  },
+  {
+    "id": "palitana",
+    "name": "Palitana",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "busy",
+    "vibe": [],
+    "tags": [
+      "jain",
+      "pilgrimage",
+      "temple",
+      "trek",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "parvati-valley",
+    "name": "Parvati Valley",
+    "state_id": "himachal-pradesh",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "avoid_months": [],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Valley",
+      "Hot Springs",
+      "Backpacking"
+    ]
+  },
+  {
+    "id": "pasighat",
+    "name": "Pasighat",
+    "state_id": "arunachal-pradesh",
+    "region": "Northeast India",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "adventure-sports",
+      "river",
+      "oldest-town"
+    ]
+  },
+  {
+    "id": "patna",
+    "name": "Patna",
+    "state_id": "bihar",
+    "region": "North Bihar",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Sikh-pilgrimage",
+      "gateway",
+      "Ganges"
+    ]
+  },
+  {
+    "id": "pawapuri",
+    "name": "Pawapuri",
+    "state_id": "bihar",
+    "region": "Magadh",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "Jain",
+      "Mahavira",
+      "water-temple"
+    ]
+  },
+  {
+    "id": "pazhamudircholai",
+    "name": "Pazhamudircholai",
+    "state_id": "tamil-nadu",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "temple",
+      "pilgrimage",
+      "hills"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual"
+    ],
+    "tags": []
+  },
+  {
+    "id": "pfutsero",
+    "name": "Pfutsero",
+    "state_id": "nagaland",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "highest-town",
+      "tribal",
+      "Scotland-vibes"
+    ]
+  },
+  {
+    "id": "phawngpui-peak",
+    "name": "Phawngpui Peak",
+    "state_id": "mizoram",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      3,
+      4,
+      5
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "highest-point",
+      "rhododendron",
+      "Blue-Mountain"
+    ]
+  },
+  {
+    "id": "pillalamarri",
+    "name": "Pillalamarri",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Nature",
+    "type": [
+      "nature",
+      "heritage",
+      "botanical"
+    ],
+    "place_type": "heritage-site",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [],
+    "crowd_level": "low",
+    "vibe": [
+      "ancient",
+      "natural",
+      "spiritual"
+    ],
+    "tags": [
+      "nature",
+      "heritage",
+      "botanical",
+      "sufi",
+      "offbeat",
+      "ancient"
+    ]
+  },
+  {
+    "id": "pochampally",
+    "name": "Pochampally",
+    "state_id": "telangana",
+    "region": "south",
+    "subregion": "Craft & Culture",
+    "type": [
+      "craft",
+      "heritage",
+      "cultural"
+    ],
+    "place_type": "weaving-village",
+    "best_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "avoid_months": [],
+    "crowd_level": "very low",
+    "vibe": [
+      "artisan",
+      "authentic",
+      "cultural"
+    ],
+    "tags": [
+      "craft",
+      "ikat",
+      "moat",
+      "UNESCO",
+      "weaving",
+      "offbeat",
+      "cultural",
+      "GI-tag"
+    ]
+  }
+]

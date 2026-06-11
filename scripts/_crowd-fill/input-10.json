@@ -1,0 +1,568 @@
+[
+  {
+    "id": "landour",
+    "name": "Landour",
+    "state_id": "uttarakhand",
+    "region": "Dehradun District",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      4,
+      9,
+      10,
+      3,
+      5,
+      11
+    ],
+    "avoid_months": null,
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "colonial",
+      "literary",
+      "quiet",
+      "writers"
+    ]
+  },
+  {
+    "id": "lenyadri",
+    "name": "Lenyadri",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak",
+      "rock-cut-caves",
+      "buddhist-heritage"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "climb-required",
+      "offbeat"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "pune-district",
+      "rock-cut-caves",
+      "junnar"
+    ]
+  },
+  {
+    "id": "lepakshi",
+    "name": "Lepakshi",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Pilgrimage & Heritage",
+    "type": [
+      "heritage",
+      "temple",
+      "architecture"
+    ],
+    "place_type": "temple-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "moderate",
+    "vibe": [
+      "architectural",
+      "mysterious",
+      "artistic"
+    ],
+    "tags": [
+      "heritage",
+      "vijayanagara",
+      "mystery",
+      "architecture",
+      "day-trip"
+    ]
+  },
+  {
+    "id": "likir",
+    "name": "Likir",
+    "state_id": "ladakh",
+    "region": "Srinagar-Leh Highway",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      6,
+      7,
+      9,
+      8
+    ],
+    "avoid_months": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "monastery",
+      "spiritual",
+      "offbeat",
+      "photography"
+    ]
+  },
+  {
+    "id": "little-andaman",
+    "name": "Little Andaman",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "beach",
+      "surfing",
+      "waterfall"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "remote",
+      "wild",
+      "adventure",
+      "frontier"
+    ],
+    "tags": [
+      "andaman",
+      "little-andaman",
+      "surfing",
+      "butler-bay",
+      "waterfall",
+      "offbeat",
+      "wilderness"
+    ]
+  },
+  {
+    "id": "lolab-valley",
+    "name": "Lolab Valley",
+    "state_id": "jammu-kashmir",
+    "region": "Kupwara District",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      5,
+      6,
+      9,
+      4,
+      10
+    ],
+    "avoid_months": [
+      12
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "offbeat",
+      "meadow",
+      "kashmir",
+      "remote",
+      "quiet"
+    ]
+  },
+  {
+    "id": "long-island-andaman",
+    "name": "Long Island",
+    "state_id": "andaman-nicobar",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "island",
+      "beach",
+      "offbeat"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "remote",
+      "pristine",
+      "offbeat",
+      "digital-detox"
+    ],
+    "tags": [
+      "andaman",
+      "long-island",
+      "lalaji-bay",
+      "offbeat",
+      "pristine",
+      "digital-detox"
+    ]
+  },
+  {
+    "id": "lothal",
+    "name": "Lothal",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "archaeology",
+      "indus-valley",
+      "ancient",
+      "museum",
+      "history"
+    ]
+  },
+  {
+    "id": "lunglei",
+    "name": "Lunglei",
+    "state_id": "mizoram",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "colonial-fort",
+      "blue-mountains",
+      "gateway"
+    ]
+  },
+  {
+    "id": "machilipatnam",
+    "name": "Machilipatnam",
+    "state_id": "andhra-pradesh",
+    "region": "south",
+    "subregion": "Coast & Delta",
+    "type": [
+      "heritage",
+      "craft",
+      "coastal"
+    ],
+    "place_type": "coastal-town",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "crowd_level": "low",
+    "vibe": [
+      "historical",
+      "artisan",
+      "coastal"
+    ],
+    "tags": [
+      "heritage",
+      "kalamkari",
+      "craft",
+      "coastal",
+      "moat",
+      "offbeat",
+      "history"
+    ]
+  },
+  {
+    "id": "madurai",
+    "name": "Madurai",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "heritage",
+      "city",
+      "culture"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      4,
+      5,
+      6
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "ancient",
+      "spiritual",
+      "vibrant",
+      "intense"
+    ],
+    "tags": [
+      "temple",
+      "heritage",
+      "culture",
+      "pilgrimage",
+      "food",
+      "ancient"
+    ]
+  },
+  {
+    "id": "mahabalipuram",
+    "name": "Mahabalipuram (Mamallapuram)",
+    "state_id": "tamil-nadu",
+    "region": "Tamil Nadu Temples",
+    "subregion": null,
+    "type": [
+      "temple",
+      "heritage",
+      "UNESCO",
+      "beach"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": "high",
+    "vibe": [
+      "historic",
+      "coastal",
+      "artistic",
+      "relaxed"
+    ],
+    "tags": [
+      "UNESCO",
+      "temple",
+      "beach",
+      "heritage",
+      "sculpture",
+      "Pallava"
+    ]
+  },
+  {
+    "id": "mahad-raigad",
+    "name": "Mahad (Raigad — Ashtavinayak)",
+    "state_id": "maharashtra",
+    "region": null,
+    "subregion": null,
+    "type": [
+      "pilgrimage",
+      "temple-town",
+      "astavinayak"
+    ],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8
+    ],
+    "crowd_level": null,
+    "vibe": [
+      "spiritual",
+      "village",
+      "konkan-edge"
+    ],
+    "tags": [
+      "pilgrimage",
+      "ganesha",
+      "astavinayak",
+      "temple-town",
+      "maharashtra",
+      "raigad-district",
+      "khopoli-area"
+    ]
+  },
+  {
+    "id": "manas-national-park",
+    "name": "Manas National Park",
+    "state_id": "assam",
+    "region": "northeast",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "UNESCO",
+      "tiger-reserve",
+      "rhino"
+    ]
+  },
+  {
+    "id": "mandu",
+    "name": "Mandu",
+    "state_id": "madhya-pradesh",
+    "region": "central",
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": null,
+    "vibe": [],
+    "tags": [
+      "medieval-ruins",
+      "romantic",
+      "Afghan-architecture"
+    ]
+  },
+  {
+    "id": "mandvi",
+    "name": "Mandvi",
+    "state_id": "gujarat",
+    "region": null,
+    "subregion": null,
+    "type": [],
+    "place_type": "destination",
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "crowd_level": "quiet",
+    "vibe": [],
+    "tags": [
+      "beach",
+      "palace",
+      "shipbuilding",
+      "coastal",
+      "heritage"
+    ]
+  }
+]

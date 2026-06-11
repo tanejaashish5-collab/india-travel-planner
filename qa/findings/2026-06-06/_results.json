@@ -1,0 +1,662 @@
+{
+ "A": {
+  "probes": [
+   [
+    "https://www.nakshiq.com/en/destination/this-does-not-exist-xyz",
+    "404",
+    9
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/zzzzzz-fake",
+    "404",
+    9
+   ],
+   [
+    "https://www.nakshiq.com/hi/destination/this-does-not-exist-xyz",
+    "404",
+    9
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/shimla/3",
+    "404",
+    9
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/shimla/marchx",
+    "404",
+    9
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/shimla/99",
+    "404",
+    9
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/shimla/jan",
+    "404",
+    9
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/shimla/jul",
+    "404",
+    9
+   ]
+  ],
+  "passes": 8,
+  "misses": 0
+ },
+ "B": {
+  "probes": [
+   [
+    "sasangir",
+    "200",
+    127,
+    200,
+    336852
+   ],
+   [
+    "vishnuprayag",
+    "200",
+    126,
+    183,
+    225764
+   ],
+   [
+    "anjuna",
+    "200",
+    139,
+    213,
+    363777
+   ],
+   [
+    "amaravati",
+    "200",
+    132,
+    203,
+    342953
+   ],
+   [
+    "swamimalai",
+    "200",
+    132,
+    187,
+    228553
+   ],
+   [
+    "betla",
+    "200",
+    127,
+    184,
+    218653
+   ],
+   [
+    "bengaluru",
+    "200",
+    144,
+    338,
+    489976
+   ],
+   [
+    "pattadakal",
+    "200",
+    161,
+    328,
+    345024
+   ],
+   [
+    "bikaner",
+    "200",
+    144,
+    342,
+    383256
+   ],
+   [
+    "bharatpur",
+    "200",
+    138,
+    217,
+    367162
+   ]
+  ],
+  "all_200": true,
+  "ttfb_min": 126,
+  "ttfb_median": 135,
+  "ttfb_max": 161
+ },
+ "C": {
+  "probes": [
+   [
+    "sasangir",
+    "200",
+    true,
+    true,
+    "\u0938\u0938\u0928 \u0917\u093f\u0930, \u0917\u0941\u091c\u0930\u093e\u0924: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "vishnuprayag",
+    "200",
+    true,
+    true,
+    "\u0935\u093f\u0937\u094d\u0923\u0941\u092a\u094d\u0930\u092f\u093e\u0917, \u0909\u0924\u094d\u0924\u0930\u093e\u0916\u0902\u0921: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "anjuna",
+    "200",
+    true,
+    true,
+    "\u0905\u0902\u091c\u0941\u0928\u093e, \u0917\u094b\u0935\u093e: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "amaravati",
+    "200",
+    true,
+    true,
+    "\u0905\u092e\u0930\u093e\u0935\u0924\u0940, \u0906\u0902\u0927\u094d\u0930 \u092a\u094d\u0930\u0926\u0947\u0936: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "swamimalai",
+    "200",
+    true,
+    true,
+    "\u0938\u094d\u0935\u093e\u092e\u093f\u092e\u0932\u0948, \u0924\u092e\u093f\u0932 \u0928\u093e\u0921\u0941: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "betla",
+    "200",
+    true,
+    true,
+    "\u092c\u0947\u0924\u0932\u093e, \u091d\u093e\u0930\u0916\u0902\u0921: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "bengaluru",
+    "200",
+    true,
+    true,
+    "\u092c\u0947\u0902\u0917\u0932\u0941\u0930\u0941, \u0915\u0930\u094d\u0928\u093e\u091f\u0915: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "pattadakal",
+    "200",
+    true,
+    true,
+    "\u092a\u091f\u094d\u091f\u0921\u0915\u0932, \u0915\u0930\u094d\u0928\u093e\u091f\u0915: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "bikaner",
+    "200",
+    true,
+    true,
+    "\u092c\u0940\u0915\u093e\u0928\u0947\u0930, \u0930\u093e\u091c\u0938\u094d\u0925\u093e\u0928: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ],
+   [
+    "bharatpur",
+    "200",
+    true,
+    true,
+    "\u092d\u0930\u0924\u092a\u0941\u0930, \u0930\u093e\u091c\u0938\u094d\u0925\u093e\u0928: \u0938\u0930\u094d\u0935\u094b\u0924\u094d\u0924\u092e \u092f\u093e\u0924\u094d\u0930\u093e \u0938\u092e\u092f \u0914\u0930 \u092e\u094c\u0938\u092e | NakshIQ"
+   ]
+  ],
+  "sampled": 10,
+  "lang_hi": 10,
+  "deva_title": 10
+ },
+ "D": {
+  "probes": [
+   [
+    "https://www.nakshiq.com/en",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "NakshIQ \u2014 Travel Intelligence for India"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/sasangir",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Sasan Gir, Gujarat: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/vishnuprayag",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Vishnuprayag, Uttarakhand: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/anjuna",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Anjuna, Goa: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/amaravati",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Amaravati, Andhra Pradesh: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/swamimalai",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Swamimalai, Tamil Nadu: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/betla",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Betla, Jharkhand: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/bengaluru",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Bengaluru, Karnataka: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/pattadakal",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Pattadakal, Karnataka: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/bikaner",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Bikaner, Rajasthan: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/bharatpur",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Bharatpur, Rajasthan: Best Time to Visit & Weather | NakshIQ"
+   ],
+   [
+    "https://www.nakshiq.com/en/destination/sasangir/june",
+    "200",
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    "Sasan Gir in June, 24\u00b0C nights \u2014 What to expect | NakshIQ"
+   ]
+  ],
+  "sampled": 12,
+  "stutter": 0,
+  "canonical": 12,
+  "hl_en": 12,
+  "hl_hi": 12,
+  "hl_xd": 12,
+  "og": 12
+ },
+ "E": {
+  "probes": [
+   [
+    "sasangir",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "vishnuprayag",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "anjuna",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "amaravati",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "swamimalai",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "betla",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "bengaluru",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "pattadakal",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "bikaner",
+    0,
+    0,
+    0,
+    ""
+   ],
+   [
+    "bharatpur",
+    0,
+    0,
+    0,
+    ""
+   ]
+  ],
+  "phones_total": 0,
+  "phones_invalid": 0,
+  "empty_dests": 10
+ },
+ "F": {
+  "probes": [
+   [
+    "POST /api/chat",
+    "{\"broken",
+    "400",
+    "{\"error\":\"Malformed JSON body\"}"
+   ],
+   [
+    "POST /api/chat",
+    "",
+    "400",
+    "{\"error\":\"Malformed JSON body\"}"
+   ],
+   [
+    "POST /api/chat",
+    "{\"message\":\"hi\"}",
+    "400",
+    "{\"error\":\"Invalid question\"}"
+   ],
+   [
+    "POST /api/chat",
+    "{\"question\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaa...",
+    "400",
+    "{\"error\":\"Invalid question\"}"
+   ],
+   [
+    "POST /api/itinerary",
+    "{\"broken",
+    "400",
+    "{\"error\":\"Malformed JSON body\"}"
+   ],
+   [
+    "POST /api/itinerary",
+    "",
+    "400",
+    "{\"error\":\"Malformed JSON body\"}"
+   ],
+   [
+    "POST /api/itinerary",
+    "{}",
+    "400",
+    "{\"error\":\"Missing required fields\"}"
+   ],
+   [
+    "GET /api/weather?id=varanasi",
+    "",
+    "200",
+    "{\"temp\":36,\"feels_like\":36,\"humidity\":30,\"description\":\"clear sky\",\"icon\":\"01d\",\"wind_speed\":10,\"visibility\":10,\"clouds\":0,\"updated\":\"2026-06-06T02:11:03.575Z\"}"
+   ],
+   [
+    "GET /api/destinations",
+    "",
+    "404",
+    "<!DOCTYPE html><html data-dpl-id=\"dpl_CNZXAShTjajrtqTxZbhGM9FNXSaj\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scal"
+   ],
+   [
+    "GET /api/health",
+    "",
+    "404",
+    "<!DOCTYPE html><html data-dpl-id=\"dpl_CNZXAShTjajrtqTxZbhGM9FNXSaj\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scal"
+   ],
+   [
+    "POST /api/chat",
+    "{\"question\":\"What is the best time to vi...",
+    "200",
+    "{\"answer\":\"# Best Time to Visit Leh\\n\\nBased on NakshIQ's monthly scores, here's the honest breakdown:\\n\\n## **Peak Seasons (Highest Scores)**\\n\\n### **June, Ju"
+   ]
+  ],
+  "probed": 11,
+  "x5xx": 0,
+  "x4xx_validation": 7
+ },
+ "G": {
+  "sw_version": "nakshiq-v51",
+  "sw_bytes": 15144,
+  "sw_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+  "manifest_path": "/manifest.json",
+  "icons": 3,
+  "shortcuts": 5,
+  "display": "standalone",
+  "start_url": "/en",
+  "theme": "#161614",
+  "offline_code": "200",
+  "offline_size": 92113,
+  "offline_ttfb": 928
+ },
+ "I": {
+  "probes": [
+   [
+    "/en",
+    "200",
+    119
+   ],
+   [
+    "/hi",
+    "200",
+    806
+   ],
+   [
+    "/en/explore",
+    "200",
+    818
+   ],
+   [
+    "/en/states",
+    "200",
+    983
+   ],
+   [
+    "/en/collections",
+    "200",
+    1376
+   ],
+   [
+    "/en/routes",
+    "200",
+    1380
+   ],
+   [
+    "/en/treks",
+    "200",
+    2227
+   ],
+   [
+    "/en/plan",
+    "200",
+    1173
+   ],
+   [
+    "/en/camping",
+    "200",
+    1284
+   ],
+   [
+    "/en/permits",
+    "200",
+    1304
+   ],
+   [
+    "/en/stays",
+    "200",
+    1241
+   ],
+   [
+    "/en/festivals",
+    "200",
+    2017
+   ],
+   [
+    "/en/about",
+    "200",
+    1170
+   ],
+   [
+    "/en/methodology",
+    "200",
+    1216
+   ],
+   [
+    "/en/destination/jaipur",
+    "200",
+    924
+   ],
+   [
+    "/en/destination/leh",
+    "200",
+    1060
+   ],
+   [
+    "/en/destination/varanasi",
+    "200",
+    1325
+   ],
+   [
+    "/hi/destination/jaipur",
+    "200",
+    812
+   ],
+   [
+    "/en/with-kids/jaipur",
+    "200",
+    1021
+   ],
+   [
+    "/en/cost/jaipur",
+    "200",
+    9623
+   ],
+   [
+    "/en/destination/jaipur/june",
+    "200",
+    7233
+   ],
+   [
+    "/en/offline",
+    "200",
+    422
+   ]
+  ],
+  "probed": 22,
+  "x2xx": 22,
+  "x3xx": 0,
+  "x4xx5xx": 0,
+  "ttfb_min": 119,
+  "ttfb_median": 1194,
+  "ttfb_p90": 2227,
+  "ttfb_max": 9623
+ },
+ "J": {
+  "probes": [
+   [
+    "/",
+    "301",
+    "https://www.nakshiq.com/en"
+   ],
+   [
+    "/explore",
+    "301",
+    "https://www.nakshiq.com/en/explore"
+   ],
+   [
+    "/destination/jaipur",
+    "301",
+    "https://www.nakshiq.com/en/destination/jaipur"
+   ],
+   [
+    "/treks",
+    "301",
+    "https://www.nakshiq.com/en/treks"
+   ],
+   [
+    "/about",
+    "301",
+    "https://www.nakshiq.com/en/about"
+   ]
+  ],
+  "all_301_to_en": true
+ }
+}
