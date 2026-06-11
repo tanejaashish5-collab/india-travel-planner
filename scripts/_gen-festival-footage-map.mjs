@@ -100,14 +100,22 @@ const sourcedPhotos = new Set(
     ? readdirSync(PHOTO_DIR).filter((f) => /^famphoto-.+\.jpg$/.test(f)).map((f) => f.replace(/^famphoto-/, "").replace(/\.jpg$/, ""))
     : [],
 );
+// A photo key is either a FAMILY (famphoto-<family>.jpg, serves many festivals)
+// or a SLUG (famphoto-<slug>.jpg, a per-festival photo for the obscure long tail).
+// Per-festival wins over family — it's the more specific image.
 const photoMap = {};
 const perPhotoFamily = {};
 for (const r of data) {
   const slug = r[col.festival_slug];
-  const cls = classifyFootage(r[col.festival_name]);
-  if (sourcedPhotos.has(cls.family)) {
-    photoMap[slug] = cls.family;
-    perPhotoFamily[cls.family] = (perPhotoFamily[cls.family] || 0) + 1;
+  let key = null;
+  if (sourcedPhotos.has(slug)) key = slug;
+  else {
+    const fam = classifyFootage(r[col.festival_name]).family;
+    if (sourcedPhotos.has(fam)) key = fam;
+  }
+  if (key) {
+    photoMap[slug] = key;
+    perPhotoFamily[key] = (perPhotoFamily[key] || 0) + 1;
   }
 }
 const photoCredits = {};
