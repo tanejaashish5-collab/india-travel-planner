@@ -37,10 +37,10 @@
     "GAh5p_yt_short": "2026-06-11",
     "m8EAd_yt_short": "2026-06-11",
     "m8EAd_story": "2026-06-10",
-    "m8EAd_evening": "2026-06-10",
-    "PdMu0_evening": "2026-06-10"
+    "m8EAd_evening": "2026-06-11",
+    "PdMu0_evening": "2026-06-11"
   },
-  "last_sync": "2026-06-11T08:21:37.549895+00:00",
+  "last_sync": "2026-06-11T17:53:37.996521+00:00",
   "posted_destinations": [
     {
       "destination_id": "nainital",
@@ -333,11 +333,18 @@
     {
       "destination_id": "bhaderwah",
       "date": "2026-06-11"
+    },
+    {
+      "destination_id": "darjeeling",
+      "date": "2026-06-11"
+    },
+    {
+      "destination_id": "mathura",
+      "date": "2026-06-11"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "festival_alert",
       "v2_tourist_trap_split",
       "score_card",
       "v2_festival_alert_sensory",
@@ -357,10 +364,10 @@
       "emergency_intel",
       "v2_cost_vs_feeling",
       "v2_series_episode",
-      "eateries_pick"
+      "eateries_pick",
+      "v3_tl_poll_reel"
     ],
     "PdMu0": [
-      "festival_alert",
       "v2_tourist_trap_split",
       "score_card",
       "v2_festival_alert_sensory",
@@ -380,7 +387,8 @@
       "emergency_intel",
       "v2_cost_vs_feeling",
       "v2_series_episode",
-      "eateries_pick"
+      "eateries_pick",
+      "v3_tl_poll_reel"
     ]
   },
   "post_log": [
@@ -2755,6 +2763,28 @@
       "destination": "bhaderwah",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_bhaderwah_hi_2026-06-11.mp4"
+    },
+    {
+      "timestamp": "2026-06-11T17:54:52.066599+00:00",
+      "date": "2026-06-11",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "jMep2",
+      "destination": "darjeeling",
+      "format": "v3_tl_poll_reel",
+      "has_media": true,
+      "media_id": "darjeeling.mp4"
+    },
+    {
+      "timestamp": "2026-06-11T17:55:13.189922+00:00",
+      "date": "2026-06-11",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "mUu6d",
+      "destination": "mathura",
+      "format": "v3_tl_poll_reel",
+      "has_media": true,
+      "media_id": "mathura.mp4"
     }
   ],
   "theme_usage": {
@@ -2835,7 +2865,8 @@
       "mathura": [
         "2026-05-24",
         "2026-05-25",
-        "2026-05-26"
+        "2026-05-26",
+        "2026-06-11"
       ],
       "kedarnath": [
         "2026-05-24"
@@ -2945,7 +2976,8 @@
         "2026-06-06",
         "2026-06-07",
         "2026-06-08",
-        "2026-06-10"
+        "2026-06-10",
+        "2026-06-11"
       ],
       "ukhrul": [
         "2026-06-03"
@@ -2959,7 +2991,8 @@
       ],
       "nako": [
         "2026-06-04",
-        "2026-06-10"
+        "2026-06-10",
+        "2026-06-11"
       ],
       "kargil": [
         "2026-06-04",
@@ -2986,12 +3019,17 @@
         "2026-06-07"
       ],
       "tosamaidan": [
-        "2026-06-09"
+        "2026-06-09",
+        "2026-06-11"
       ],
       "gurez-valley": [
-        "2026-06-10"
+        "2026-06-10",
+        "2026-06-11"
       ],
       "panaji": [
+        "2026-06-11"
+      ],
+      "darjeeling": [
         "2026-06-11"
       ]
     },
@@ -3128,6 +3166,9 @@
       ],
       "eateries_pick": [
         "2026-06-11"
+      ],
+      "v3_tl_poll_reel": [
+        "2026-06-11"
       ]
     },
     "reels": {
@@ -3153,7 +3194,8 @@
         "2026-05-24"
       ],
       "mathura": [
-        "2026-05-24"
+        "2026-05-24",
+        "2026-06-11"
       ],
       "kedarnath": [
         "2026-05-24"
@@ -3219,6 +3261,9 @@
       ],
       "nako": [
         "2026-06-10"
+      ],
+      "darjeeling": [
+        "2026-06-11"
       ]
     },
     "audience_tags": {
@@ -3274,6 +3319,9 @@
       ],
       "arupadai-veedu": [
         "2026-06-10"
+      ],
+      "best-stargazing-spots": [
+        "2026-06-11"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -3376,6 +3424,20 @@
       "670b0e93-d216-47e0-b24c-59abad77d6b6": [
         "2026-06-11"
       ]
+    },
+    "collection_carousel_dests:best-stargazing-spots": {
+      "tosamaidan": [
+        "2026-06-11"
+      ],
+      "gurez-valley": [
+        "2026-06-11"
+      ],
+      "pangong-lake": [
+        "2026-06-11"
+      ],
+      "nako": [
+        "2026-06-11"
+      ]
     }
   },
   "infographic": {
@@ -3390,8 +3452,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "leh",
-    "collection": "arupadai-veedu"
+    "shared_best": "sonamarg",
+    "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {}
 }

@@ -3450,3 +3450,43 @@ Date range: 2026-04-15 → 2026-06-10
 2026-06-11 15:11:07  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-06-11 15:11:07  INFO      State saved. YT Short run complete.
 2026-06-11 15:11:07  INFO      ════════════════════════════════════════════════════════════
+2026-06-11 17:53:05  INFO      ════════════════════════════════════════════════════════════
+2026-06-11 17:53:05  INFO      Nakshiq Autoposter · EVENING · 2026-06-11 · weekday=3
+2026-06-11 17:53:05  INFO      ════════════════════════════════════════════════════════════
+2026-06-11 17:53:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-11 17:53:37  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-11 17:53:38  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-11 17:53:39  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-11 17:53:39  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-11 17:53:53  INFO      [evening] variety pick: v3_tl_poll_reel (25 CSV + 3 visual candidates)
+2026-06-11 17:53:53  INFO      Formats — IG: v3_tl_poll_reel  ·  FB: v3_tl_poll_reel  ·  Story: collection_spotlight
+2026-06-11 17:53:53  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 61
+2026-06-11 17:53:53  INFO      Fingerprint dedup snapshot — 61 dests in 7d · 118 (dest,fmt) pairs in 30d · 119 media in 60d
+2026-06-11 17:53:53  INFO      Collection locked: Best Stargazing Spots (Dark Sky Locations) (7/20 never featured)
+2026-06-11 17:53:59  INFO      Shared best destination locked: Sonamarg
+2026-06-11 17:53:59  INFO      Carousel locked (collection_spotlight): tosamaidan, gurez-valley, pangong-lake, nako
+2026-06-11 17:53:59  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-11 17:53:59  INFO      [instagram/nakshiq] Generating v3_tl_poll_reel post...
+2026-06-11 17:53:59  INFO      [instagram/nakshiq] Caption ready (313 chars, dest=darjeeling)
+2026-06-11 17:53:59  INFO      [instagram/nakshiq] CSV video format (v3_tl_poll_reel) — using dest Ken Burns clip as fallback
+2026-06-11 17:53:59  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/darjeeling.mp4?v=20260524
+2026-06-11 17:54:02  INFO          Brand-stamp applied: darjeeling.mp4 (3,769,032 → 2,107,915 bytes)
+2026-06-11 17:54:02  INFO          Requesting upload URL for darjeeling.mp4 (2,107,915 bytes, video/mp4)
+2026-06-11 17:54:03  INFO          Uploading to R2 (timeout=300s)...
+2026-06-11 17:54:04  INFO          R2 PUT OK. Confirming...
+2026-06-11 17:54:05  INFO          Media ready: H0aF5 (2,107,915 bytes · darjeeling.mp4)
+2026-06-11 17:54:05  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-11 17:54:52  INFO      [instagram/nakshiq] ✅ Published · Outstand=jMep2 · Platform=18100772188886876
+2026-06-11 17:54:52  INFO      [facebook/Nakshiq] Generating v3_tl_poll_reel post...
+2026-06-11 17:54:52  INFO      [facebook/Nakshiq] Caption ready (304 chars, dest=mathura)
+2026-06-11 17:54:52  INFO      [facebook/Nakshiq] CSV video format (v3_tl_poll_reel) — using dest Ken Burns clip as fallback
+2026-06-11 17:54:52  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mathura.mp4?v=20260524
+2026-06-11 17:54:55  INFO          Brand-stamp applied: mathura.mp4 (6,915,738 → 3,864,959 bytes)
+2026-06-11 17:54:55  INFO          Requesting upload URL for mathura.mp4 (3,864,959 bytes, video/mp4)
+2026-06-11 17:54:56  INFO          Uploading to R2 (timeout=300s)...
+2026-06-11 17:54:57  INFO          R2 PUT OK. Confirming...
+2026-06-11 17:54:58  INFO          Media ready: lNJoK (3,864,959 bytes · mathura.mp4)
+2026-06-11 17:54:58  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-11 17:55:13  INFO      [facebook/Nakshiq] ✅ Published · Outstand=mUu6d · Platform=1737009497455861
+2026-06-11 17:55:13  INFO      State saved. Run complete.
+2026-06-11 17:55:13  INFO      ════════════════════════════════════════════════════════════
