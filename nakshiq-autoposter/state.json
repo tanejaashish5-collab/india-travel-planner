@@ -32,13 +32,15 @@
   "posted_today": {
     "m8EAd": "2026-06-12",
     "PdMu0": "2026-06-12",
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-06-11",
-    "m8EAd_yt_short": "2026-06-11",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short": "2026-06-12",
+    "m8EAd_yt_short": "2026-06-12",
     "m8EAd_evening": "2026-06-11",
     "PdMu0_evening": "2026-06-11",
-    "xS5s8": "2026-06-12"
+    "xS5s8": "2026-06-12",
+    "xS5s8_yt_short": "2026-06-12",
+    "xS5s8_yt_short_count": 1
   },
   "last_sync": "2026-06-12T08:07:20.928820+00:00",
   "posted_destinations": [
@@ -340,6 +342,10 @@
     },
     {
       "destination_id": "lonavala",
+      "date": "2026-06-12"
+    },
+    {
+      "destination_id": "chitkul",
       "date": "2026-06-12"
     }
   ],
@@ -2807,6 +2813,33 @@
       "format": "stays_pick",
       "has_media": true,
       "media_id": "lonavala.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T08:48:00.100174+00:00",
+      "date": "2026-06-12",
+      "platform": "youtube",
+      "post_id": "Xos7e",
+      "destination": "chitkul",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_chitkul_hi_2026-06-12.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T08:48:18.996129+00:00",
+      "date": "2026-06-12",
+      "platform": "youtube",
+      "post_id": "2Fb8S",
+      "destination": "chitkul",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_chitkul_hi_2026-06-12.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T08:48:55.180282+00:00",
+      "date": "2026-06-12",
+      "platform": "instagram",
+      "post_id": "5mWjD",
+      "destination": "chitkul",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_chitkul_hi_2026-06-12.mp4"
     }
   ],
   "theme_usage": {
