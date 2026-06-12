@@ -32,7 +32,7 @@
   "posted_today": {
     "m8EAd": "2026-06-12",
     "PdMu0": "2026-06-12",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-06-12",
     "m8EAd_yt_short": "2026-06-12",
@@ -40,7 +40,7 @@
     "PdMu0_evening": "2026-06-11",
     "xS5s8": "2026-06-12",
     "xS5s8_yt_short": "2026-06-12",
-    "xS5s8_yt_short_count": 1
+    "xS5s8_yt_short_count": 2
   },
   "last_sync": "2026-06-12T08:07:20.928820+00:00",
   "posted_destinations": [
@@ -346,6 +346,10 @@
     },
     {
       "destination_id": "chitkul",
+      "date": "2026-06-12"
+    },
+    {
+      "destination_id": "alchi",
       "date": "2026-06-12"
     }
   ],
@@ -2840,6 +2844,33 @@
       "destination": "chitkul",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_chitkul_hi_2026-06-12.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T13:12:38.966549+00:00",
+      "date": "2026-06-12",
+      "platform": "youtube",
+      "post_id": "W26Qz",
+      "destination": "alchi",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_alchi_en_2026-06-12.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T13:13:15.546792+00:00",
+      "date": "2026-06-12",
+      "platform": "youtube",
+      "post_id": "G42ep",
+      "destination": "alchi",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_alchi_en_2026-06-12.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T13:14:03.179184+00:00",
+      "date": "2026-06-12",
+      "platform": "instagram",
+      "post_id": "Lgn8V",
+      "destination": "alchi",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_alchi_en_2026-06-12.mp4"
     }
   ],
   "theme_usage": {
