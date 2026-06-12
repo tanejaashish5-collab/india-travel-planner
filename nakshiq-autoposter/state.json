@@ -36,13 +36,13 @@
     "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-06-12",
     "m8EAd_yt_short": "2026-06-12",
-    "m8EAd_evening": "2026-06-11",
-    "PdMu0_evening": "2026-06-11",
+    "m8EAd_evening": "2026-06-12",
+    "PdMu0_evening": "2026-06-12",
     "xS5s8": "2026-06-12",
     "xS5s8_yt_short": "2026-06-12",
     "xS5s8_yt_short_count": 2
   },
-  "last_sync": "2026-06-12T08:07:20.928820+00:00",
+  "last_sync": "2026-06-12T17:21:34.714401+00:00",
   "posted_destinations": [
     {
       "destination_id": "ooty",
@@ -355,11 +355,18 @@
     {
       "destination_id": "kalpa",
       "date": "2026-06-12"
+    },
+    {
+      "destination_id": "bhandardara",
+      "date": "2026-06-12"
+    },
+    {
+      "destination_id": "courtallam",
+      "date": "2026-06-12"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
       "v2_local_knows",
@@ -379,10 +386,10 @@
       "v2_series_episode",
       "eateries_pick",
       "v3_tl_poll_reel",
-      "stays_pick"
+      "stays_pick",
+      "v2_wildlife_moment"
     ],
     "PdMu0": [
-      "score_card",
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
       "v2_local_knows",
@@ -402,7 +409,8 @@
       "v2_series_episode",
       "eateries_pick",
       "v3_tl_poll_reel",
-      "stays_pick"
+      "stays_pick",
+      "v2_wildlife_moment"
     ]
   },
   "post_log": [
@@ -2884,6 +2892,28 @@
       "destination": "kalpa",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kalpa_en_2026-06-12.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T17:22:42.193612+00:00",
+      "date": "2026-06-12",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "AyED7",
+      "destination": "bhandardara",
+      "format": "v2_wildlife_moment",
+      "has_media": true,
+      "media_id": "bhandardara.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T17:23:01.674871+00:00",
+      "date": "2026-06-12",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "W27az",
+      "destination": "courtallam",
+      "format": "v2_wildlife_moment",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
     }
   ],
   "theme_usage": {
@@ -2928,7 +2958,8 @@
       ],
       "bhandardara": [
         "2026-05-20",
-        "2026-06-03"
+        "2026-06-03",
+        "2026-06-12"
       ],
       "sissu": [
         "2026-05-21",
@@ -3106,7 +3137,8 @@
       ],
       "courtallam": [
         "2026-06-05",
-        "2026-06-07"
+        "2026-06-07",
+        "2026-06-12"
       ],
       "coorg": [
         "2026-06-05"
@@ -3274,6 +3306,9 @@
       ],
       "stays_pick": [
         "2026-06-12"
+      ],
+      "v2_wildlife_moment": [
+        "2026-06-12"
       ]
     },
     "reels": {
@@ -3369,6 +3404,12 @@
       ],
       "darjeeling": [
         "2026-06-11"
+      ],
+      "bhandardara": [
+        "2026-06-12"
+      ],
+      "courtallam": [
+        "2026-06-12"
       ]
     },
     "audience_tags": {
@@ -3383,7 +3424,8 @@
       ],
       "adventurers": [
         "2026-05-29",
-        "2026-06-05"
+        "2026-06-05",
+        "2026-06-12"
       ]
     },
     "collections": {
@@ -3562,7 +3604,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lolab-valley",
+    "shared_best": "leh",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {}

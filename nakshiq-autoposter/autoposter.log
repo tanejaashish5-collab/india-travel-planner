@@ -3656,3 +3656,58 @@ Date range: 2026-04-15 → 2026-06-11
 2026-06-12 14:27:31  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-06-12 14:27:31  INFO      State saved. YT Short run complete.
 2026-06-12 14:27:31  INFO      ════════════════════════════════════════════════════════════
+2026-06-12 17:20:41  INFO      ════════════════════════════════════════════════════════════
+2026-06-12 17:20:41  INFO      Nakshiq Autoposter · EVENING · 2026-06-12 · weekday=4
+2026-06-12 17:20:41  INFO      ════════════════════════════════════════════════════════════
+2026-06-12 17:20:41  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-12 17:21:34  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-12 17:21:34  INFO      brand_stamp: registered 400 destinations for overlay lookup
+2026-06-12 17:21:36  INFO      Active accounts: ['youtube/@chanakyasutra-t8o', 'youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-12 17:21:36  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-12 17:21:52  INFO      [evening] variety pick: v2_wildlife_moment (25 CSV + 3 visual candidates)
+2026-06-12 17:21:52  INFO      Formats — IG: v2_wildlife_moment  ·  FB: v2_wildlife_moment  ·  Story: reality_check  ·  Audience: adventurers
+2026-06-12 17:21:52  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 66
+2026-06-12 17:21:52  INFO      Audience filter 'adventurers' → 11 destinations match.
+2026-06-12 17:21:52  INFO      Fingerprint dedup snapshot — 65 dests in 7d · 124 (dest,fmt) pairs in 30d · 125 media in 60d
+2026-06-12 17:21:56  INFO      Shared best destination locked: Leh
+2026-06-12 17:21:56  INFO      [youtube/@chanakyasutra-t8o] Skipping feed post (YouTube only accepts video/reels).
+2026-06-12 17:21:56  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-12 17:21:56  INFO      [instagram/nakshiq] Generating v2_wildlife_moment post...
+2026-06-12 17:21:56  INFO      v2_wildlife_moment: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:21:56  INFO      v2_wildlife_moment: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:21:56  INFO      v2_wildlife_moment: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:21:56  INFO      v2_wildlife_moment: kalimpong has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:21:56  INFO      v2_wildlife_moment: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:21:56  INFO      v2_wildlife_moment: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:21:56  INFO      v2_wildlife_moment: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:21:56  INFO      [instagram/nakshiq] Caption ready (734 chars, dest=bhandardara)
+2026-06-12 17:21:57  INFO      [instagram/nakshiq] CSV video format (v2_wildlife_moment) — using dest Ken Burns clip as fallback
+2026-06-12 17:21:57  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhandardara.mp4?v=20260524
+2026-06-12 17:21:59  INFO          Brand-stamp applied: bhandardara.mp4 (3,086,211 → 1,651,453 bytes)
+2026-06-12 17:21:59  INFO          Requesting upload URL for bhandardara.mp4 (1,651,453 bytes, video/mp4)
+2026-06-12 17:22:00  INFO          Uploading to R2 (timeout=300s)...
+2026-06-12 17:22:01  INFO          R2 PUT OK. Confirming...
+2026-06-12 17:22:01  INFO          Media ready: iLUZB (1,651,453 bytes · bhandardara.mp4)
+2026-06-12 17:22:01  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-12 17:22:42  INFO      [instagram/nakshiq] ✅ Published · Outstand=AyED7 · Platform=18083022164170498
+2026-06-12 17:22:42  INFO      [facebook/Nakshiq] Generating v2_wildlife_moment post...
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: kalimpong has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-12 17:22:42  INFO      v2_wildlife_moment: bhandardara already posted today — SKIPPING dest (same-day guard)
+2026-06-12 17:22:42  INFO      [facebook/Nakshiq] Caption ready (645 chars, dest=courtallam)
+2026-06-12 17:22:42  INFO      [facebook/Nakshiq] CSV video format (v2_wildlife_moment) — using dest Ken Burns clip as fallback
+2026-06-12 17:22:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/courtallam.mp4?v=20260524
+2026-06-12 17:22:44  INFO          Brand-stamp applied: courtallam.mp4 (7,348,941 → 4,210,184 bytes)
+2026-06-12 17:22:44  INFO          Requesting upload URL for courtallam.mp4 (4,210,184 bytes, video/mp4)
+2026-06-12 17:22:45  INFO          Uploading to R2 (timeout=300s)...
+2026-06-12 17:22:46  INFO          R2 PUT OK. Confirming...
+2026-06-12 17:22:47  INFO          Media ready: X5JZe (4,210,184 bytes · courtallam.mp4)
+2026-06-12 17:22:47  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-12 17:23:01  INFO      [facebook/Nakshiq] ✅ Published · Outstand=W27az · Platform=1319049610402201
+2026-06-12 17:23:01  INFO      State saved. Run complete.
+2026-06-12 17:23:01  INFO      ════════════════════════════════════════════════════════════
