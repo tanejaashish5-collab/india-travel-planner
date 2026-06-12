@@ -62,6 +62,17 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Build chunks are crawlable (robots.txt allows /_next/static/ so
+        // Googlebot can render pages) but must never appear in the index —
+        // GSC 2026-06-12 had 18 chunk URLs "Indexed, though blocked by
+        // robots.txt". noindex only stops document indexing; it does not
+        // block fetching them as page subresources.
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+        ],
+      },
+      {
         source: "/images/:path*",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },

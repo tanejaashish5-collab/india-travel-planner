@@ -1,8 +1,16 @@
 # NakshIQ robots.txt — AI-citability + search crawl allowlist
 
 # Default: allow search + answer engines
+# /_next/static/ re-allowed 2026-06-12: blocking JS/CSS stops Googlebot from
+# rendering pages (Google explicitly warns this harms indexing — we sit on a
+# ~1.1K "Crawled, currently not indexed" pile) and caused 18 chunk URLs to be
+# "Indexed, though blocked by robots.txt". Chunks are CDN-cached static files
+# (no function/DB cost) and now carry X-Robots-Tag: noindex (next.config.ts)
+# so they render-serve but never index. Longest-match wins: Allow beats the
+# shorter Disallow /_next/ which still covers /_next/image and /_next/data.
 User-agent: *
 Allow: /
+Allow: /_next/static/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/

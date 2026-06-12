@@ -96,14 +96,17 @@ export default function middleware(request: NextRequest) {
   // repointed; this 301s every ziro URL (bare or month sub-route) → ziro-valley.
   // Must run BEFORE the known-slug 404 check below, since `ziro` is no longer in
   // the allowlist. `ziro-valley` is safe — the regex stops at `ziro` + `/` or end.
+  // Also covers /with-kids/ziro (GSC 404, 2026-06-12) — any dest-keyed route
+  // family that gains a page for ziro-valley should be added to this group.
   const ziroMatch = request.nextUrl.pathname.match(
-    /^(?:\/(en|hi))?\/destination\/ziro(?:\/([^/]+))?\/?$/,
+    /^(?:\/(en|hi))?\/(destination|with-kids)\/ziro(?:\/([^/]+))?\/?$/,
   );
   if (ziroMatch) {
     const locale = ziroMatch[1] ?? "en";
-    const month = ziroMatch[2] ? `/${ziroMatch[2]}` : "";
+    const family = ziroMatch[2];
+    const month = ziroMatch[3] ? `/${ziroMatch[3]}` : "";
     return NextResponse.redirect(
-      new URL(`/${locale}/destination/ziro-valley${month}`, request.url),
+      new URL(`/${locale}/${family}/ziro-valley${month}`, request.url),
       301,
     );
   }
@@ -134,8 +137,12 @@ export default function middleware(request: NextRequest) {
       if (!KNOWN_DESTINATION_SLUGS.has(slug)) {
         return new NextResponse("Not Found", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
       }
-      // Month sub-route — only valid named months. Numeric / "marchx" / etc → 404.
-      if (month !== undefined && !VALID_MONTH_SLUGS.has(month)) {
+      // Sub-route — valid named months plus the real non-month sub-pages
+      // ("share" = trip-report form at destination/[id]/share). Numeric /
+      // "marchx" / arbitrary input → 404. GSC 2026-06-12: this check predated
+      // the share route's audit and 404'd every /destination/*/share page
+      // for ~5 weeks (route code was fine — middleware killed it first).
+      if (month !== undefined && !VALID_MONTH_SLUGS.has(month) && month !== "share") {
         return new NextResponse("Not Found", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
       }
     }
