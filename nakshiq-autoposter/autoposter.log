@@ -3541,3 +3541,45 @@ Date range: 2026-04-15 → 2026-06-10
 2026-06-11 20:38:58  INFO      
 Date range: 2026-04-15 → 2026-06-11
 2026-06-11 20:38:58  INFO      ════════════════════════════════════════════════════════════
+2026-06-12 08:06:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-12 08:06:50  INFO      Nakshiq Autoposter · MORNING · 2026-06-12 · weekday=4
+2026-06-12 08:06:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-12 08:06:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-12 08:07:20  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-12 08:07:20  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-12 08:07:21  INFO      Active accounts: ['youtube/@chanakyasutra-t8o', 'youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-12 08:07:23  INFO      Outstand dedup guard: merged 1 remote posts into state.
+2026-06-12 08:07:23  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-12 08:07:37  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-12 08:07:37  INFO      Morning format (themed-week-2→verification): stays_pick [33% vs target 20%] (0/14 never featured)
+2026-06-12 08:07:37  INFO      Formats — IG: stays_pick  ·  FB: stays_pick  ·  Story: infrastructure_truth
+2026-06-12 08:07:37  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 62
+2026-06-12 08:07:37  INFO      Fingerprint dedup snapshot — 61 dests in 7d · 120 (dest,fmt) pairs in 30d · 121 media in 60d
+2026-06-12 08:07:37  INFO      Stay locked: Della Adventure Parks (Treehouse Stays) (76/76 never featured)
+2026-06-12 08:07:42  INFO      Shared best destination locked: Lolab Valley
+2026-06-12 08:07:42  INFO      [youtube/@chanakyasutra-t8o] Skipping feed post (YouTube only accepts video/reels).
+2026-06-12 08:07:42  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-12 08:07:42  INFO      [instagram/nakshiq] Generating stays_pick post...
+2026-06-12 08:07:42  INFO      [instagram/nakshiq] Caption ready (483 chars, dest=lonavala)
+2026-06-12 08:07:42  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-06-12 08:07:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/lonavala.mp4?v=20260524
+2026-06-12 08:07:44  INFO          Brand-stamp applied: lonavala.mp4 (4,819,012 → 2,384,788 bytes)
+2026-06-12 08:07:44  INFO          Requesting upload URL for lonavala.mp4 (2,384,788 bytes, video/mp4)
+2026-06-12 08:07:45  INFO          Uploading to R2 (timeout=300s)...
+2026-06-12 08:07:46  INFO          R2 PUT OK. Confirming...
+2026-06-12 08:07:46  INFO          Media ready: 3F07k (2,384,788 bytes · lonavala.mp4)
+2026-06-12 08:07:46  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-12 08:08:34  INFO      [instagram/nakshiq] ✅ Published · Outstand=EQXzA · Platform=18059376002720248
+2026-06-12 08:08:34  INFO      [facebook/Nakshiq] Generating stays_pick post...
+2026-06-12 08:08:34  INFO      [facebook/Nakshiq] Caption ready (635 chars, dest=lonavala)
+2026-06-12 08:08:34  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-06-12 08:08:34  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/lonavala.mp4?v=20260524
+2026-06-12 08:08:36  INFO          Brand-stamp applied: lonavala.mp4 (4,819,012 → 2,384,788 bytes)
+2026-06-12 08:08:36  INFO          Requesting upload URL for lonavala.mp4 (2,384,788 bytes, video/mp4)
+2026-06-12 08:08:37  INFO          Uploading to R2 (timeout=300s)...
+2026-06-12 08:08:38  INFO          R2 PUT OK. Confirming...
+2026-06-12 08:08:38  INFO          Media ready: NviQa (2,384,788 bytes · lonavala.mp4)
+2026-06-12 08:08:38  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-12 08:09:03  INFO      [facebook/Nakshiq] ✅ Published · Outstand=oO7Zc · Platform=1005180385819198
+2026-06-12 08:09:03  INFO      State saved. Run complete.
+2026-06-12 08:09:03  INFO      ════════════════════════════════════════════════════════════

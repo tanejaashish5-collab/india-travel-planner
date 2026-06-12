@@ -30,26 +30,18 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "m8EAd": "2026-06-11",
-    "PdMu0": "2026-06-11",
+    "m8EAd": "2026-06-12",
+    "PdMu0": "2026-06-12",
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-06-11",
     "m8EAd_yt_short": "2026-06-11",
-    "m8EAd_story": "2026-06-10",
     "m8EAd_evening": "2026-06-11",
-    "PdMu0_evening": "2026-06-11"
+    "PdMu0_evening": "2026-06-11",
+    "xS5s8": "2026-06-12"
   },
-  "last_sync": "2026-06-11T17:53:37.996521+00:00",
+  "last_sync": "2026-06-12T08:07:20.928820+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "nainital",
-      "date": "2026-05-28"
-    },
-    {
-      "destination_id": "hampi",
-      "date": "2026-05-28"
-    },
     {
       "destination_id": "ooty",
       "date": "2026-05-29"
@@ -341,11 +333,18 @@
     {
       "destination_id": "mathura",
       "date": "2026-06-11"
+    },
+    {
+      "destination_id": "final",
+      "date": "2026-06-12"
+    },
+    {
+      "destination_id": "lonavala",
+      "date": "2026-06-12"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_tourist_trap_split",
       "score_card",
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
@@ -365,10 +364,10 @@
       "v2_cost_vs_feeling",
       "v2_series_episode",
       "eateries_pick",
-      "v3_tl_poll_reel"
+      "v3_tl_poll_reel",
+      "stays_pick"
     ],
     "PdMu0": [
-      "v2_tourist_trap_split",
       "score_card",
       "v2_festival_alert_sensory",
       "v2_score_card_pov",
@@ -388,7 +387,8 @@
       "v2_cost_vs_feeling",
       "v2_series_episode",
       "eateries_pick",
-      "v3_tl_poll_reel"
+      "v3_tl_poll_reel",
+      "stays_pick"
     ]
   },
   "post_log": [
@@ -2785,6 +2785,28 @@
       "format": "v3_tl_poll_reel",
       "has_media": true,
       "media_id": "mathura.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T08:08:34.392403+00:00",
+      "date": "2026-06-12",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "EQXzA",
+      "destination": "lonavala",
+      "format": "stays_pick",
+      "has_media": true,
+      "media_id": "lonavala.mp4"
+    },
+    {
+      "timestamp": "2026-06-12T08:09:03.780315+00:00",
+      "date": "2026-06-12",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "oO7Zc",
+      "destination": "lonavala",
+      "format": "stays_pick",
+      "has_media": true,
+      "media_id": "lonavala.mp4"
     }
   ],
   "theme_usage": {
@@ -3031,6 +3053,9 @@
       ],
       "darjeeling": [
         "2026-06-11"
+      ],
+      "lonavala": [
+        "2026-06-12"
       ]
     },
     "morning_formats": {
@@ -3169,6 +3194,9 @@
       ],
       "v3_tl_poll_reel": [
         "2026-06-11"
+      ],
+      "stays_pick": [
+        "2026-06-12"
       ]
     },
     "reels": {
@@ -3438,6 +3466,11 @@
       "nako": [
         "2026-06-11"
       ]
+    },
+    "stays": {
+      "lonavala": [
+        "2026-06-12"
+      ]
     }
   },
   "infographic": {
@@ -3452,7 +3485,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sonamarg",
+    "shared_best": "lolab-valley",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {}
