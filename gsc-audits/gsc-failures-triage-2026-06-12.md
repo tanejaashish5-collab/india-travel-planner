@@ -78,7 +78,22 @@ Core pages verified indexable on 06-11. No action.
 ## Ship record
 
 - Commit `39e06b18` on main (middleware + robots.txt + next.config) — Vercel prod deploy
-  `dpl_JC6kkZKdpeo6ttZRHbvfYosdQrhY`.
-- Live verify checklist: `/en/destination/jaipur/share` 200 + noindex meta; robots.txt
-  serves `Allow: /_next/static/`; chunk URL serves `X-Robots-Tag: noindex`;
-  `/hi/with-kids/ziro` 301→ziro-valley; spot dest/month pages no-regress.
+  `dpl_JC6kkZKdpeo6ttZRHbvfYosdQrhY`, READY + live-verified 2026-06-12 ~09:45 UTC, 9/9:
+  1. `/en/destination/jaipur/share` → **200** ✓
+  2. share page meta → `<meta name="robots" content="noindex, follow"/>` ✓
+  3. robots.txt serves `Allow: /_next/static/` (Disallow `/_next/` retained below it) ✓
+  4. live chunk URL → `x-robots-tag: noindex` header ✓
+  5. `/hi/with-kids/ziro` → **301** → `/hi/with-kids/ziro-valley` ✓
+  6. no-regress: `/en/destination/jaipur/june` → 200 ✓
+  7. garbage month `/jaipur/marchx` still → 404 ✓
+  8. unknown slug still → 404 ✓
+  9. `/hi/destination/badrinath/share` → 200 (Hindi path) ✓
+
+## Ongoing automation
+
+Cloud routine `trig_017LEeweYtrhAoYWTuFxeYHx` "NakshIQ — GSC autonomous triage" now runs
+twice daily (10:30 + 22:30 UTC = 8:30pm/8:30am AEST): Gmail sweep of sc-noreply →
+classify per this playbook → live-check → fix the safe class (middleware/robots/headers,
+≤5 files, tsc-clean, no DB writes) → verify deploy → commit
+`gsc-audits/gsc-email-triage-<date>.md` → email/draft the founder.
+Manage: https://claude.ai/code/routines/trig_017LEeweYtrhAoYWTuFxeYHx
