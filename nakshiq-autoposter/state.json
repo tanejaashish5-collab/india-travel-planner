@@ -32,7 +32,7 @@
   "posted_today": {
     "m8EAd": "2026-06-12",
     "PdMu0": "2026-06-12",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-06-13",
     "m8EAd_yt_short": "2026-06-13",
@@ -346,6 +346,10 @@
     },
     {
       "destination_id": "prashar-lake",
+      "date": "2026-06-13"
+    },
+    {
+      "destination_id": "mudumalai",
       "date": "2026-06-13"
     }
   ],
@@ -2916,6 +2920,24 @@
       "destination": "prashar-lake",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_prashar-lake_en_2026-06-13.mp4"
+    },
+    {
+      "timestamp": "2026-06-13T13:18:32.315067+00:00",
+      "date": "2026-06-13",
+      "platform": "youtube",
+      "post_id": "yCQCj",
+      "destination": "mudumalai",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_mudumalai_hi_2026-06-13.mp4"
+    },
+    {
+      "timestamp": "2026-06-13T13:19:19.727523+00:00",
+      "date": "2026-06-13",
+      "platform": "instagram",
+      "post_id": "Trbi1",
+      "destination": "mudumalai",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_mudumalai_hi_2026-06-13.mp4"
     }
   ],
   "theme_usage": {
