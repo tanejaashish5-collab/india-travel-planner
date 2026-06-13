@@ -250,6 +250,28 @@ def _build_score_reveal_filters(dest_name: str, month: str, score: int,
         enable="gte(t,6)"
     ))
 
+    # ── FORWARD-TRIGGER END-FRAME (7.3-10s) ───────────────────────────────────
+    # In 2026 the #1 IG Reels distribution signal is DM-sends (sends-per-reach),
+    # weighted ~15x a like. A faceless data reel can't earn that without an
+    # explicit "send this to a friend" prompt. Naming the destination makes the
+    # recipient concrete ("send to whoever you'd take here"), which converts a
+    # passive view into a forward. ASCII-only to avoid drawtext escaping issues.
+    short_dest = (dest_name.split(",")[0].split() or [dest_name])[0].upper()
+    lines.append(
+        "drawbox=x=0:y=h*0.72:w=iw:h=170:color=0x161614@0.62:t=fill:"
+        "enable='between(t\\,7.3\\,10)'"
+    )
+    lines.append(_build_drawtext(
+        "SEND THIS TO YOUR", FONT_INSTRUMENT, 44,
+        BONE, "(w-text_w)/2", "h*0.74",
+        enable="between(t,7.3,10)"
+    ))
+    lines.append(_build_drawtext(
+        f"{short_dest} TRIP CREW", FONT_INSTRUMENT, 48,
+        SAFFRON, "(w-text_w)/2", "h*0.80",
+        enable="between(t,7.3,10)"
+    ))
+
     # Bottom branding bar
     lines.append("drawbox=x=0:y=h-160:w=iw:h=160:color=0x161614@0.85:t=fill:enable='gte(t\\,0)'")
     lines.append(_build_drawtext(
