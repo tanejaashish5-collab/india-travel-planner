@@ -3762,3 +3762,28 @@ Date range: 2026-04-15 → 2026-06-11
 2026-06-12 20:30:00  INFO      
 Date range: 2026-04-15 → 2026-06-12
 2026-06-12 20:30:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 07:11:07  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 07:11:07  INFO      Nakshiq Autoposter · MORNING · 2026-06-13 · weekday=5
+2026-06-13 07:11:07  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 07:11:07  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-13 07:11:42  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-13 07:11:42  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-13 07:11:43  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-13 07:11:43  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-13 07:11:45  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-13 07:11:58  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-13 07:11:58  INFO      Morning format (themed-week-2→verification): confidence_intel [42% vs target 20%] (0/14 never featured)
+2026-06-13 07:11:58  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: kids_intel
+2026-06-13 07:11:58  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 62
+2026-06-13 07:11:58  INFO      Fingerprint dedup snapshot — 61 dests in 7d · 126 (dest,fmt) pairs in 30d · 125 media in 60d
+2026-06-13 07:11:58  INFO      Kids destination locked: Courtallam (Kutralam)
+2026-06-13 07:12:02  INFO      Shared best destination locked: Lolab Valley
+2026-06-13 07:12:02  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-13 07:12:02  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-06-13 07:12:02  INFO      confidence_intel for Lolab Valley: only 0 card rows — SKIPPING
+2026-06-13 07:12:02  WARNING   [instagram/nakshiq] No content generated — skipping.
+2026-06-13 07:12:02  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-06-13 07:12:02  INFO      confidence_intel for Lolab Valley: only 0 card rows — SKIPPING
+2026-06-13 07:12:02  WARNING   [facebook/Nakshiq] No content generated — skipping.
+2026-06-13 07:12:02  INFO      State saved. Run complete.
+2026-06-13 07:12:02  INFO      ════════════════════════════════════════════════════════════
