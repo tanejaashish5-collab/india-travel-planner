@@ -40,9 +40,11 @@
     "PdMu0_evening": "2026-06-12",
     "xS5s8": "2026-06-12",
     "xS5s8_yt_short": "2026-06-12",
-    "xS5s8_yt_short_count": 2
+    "xS5s8_yt_short_count": 2,
+    "GAh5p_reel_map": "2026-06-13",
+    "PdMu0_reel_map": "2026-06-13"
   },
-  "last_sync": "2026-06-13T07:11:42.411281+00:00",
+  "last_sync": "2026-06-13T15:54:47.697171+00:00",
   "posted_destinations": [
     {
       "destination_id": "manikaran",
@@ -2938,6 +2940,33 @@
       "destination": "mudumalai",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_mudumalai_hi_2026-06-13.mp4"
+    },
+    {
+      "timestamp": "2026-06-13T15:55:52.567122+00:00",
+      "date": "2026-06-13",
+      "platform": "youtube",
+      "post_id": "ibSqB",
+      "destination": null,
+      "format": "reel_map.route_trace",
+      "media_id": "reel_pomelli_may_himachal_roads_the_stability_scores.mp4"
+    },
+    {
+      "timestamp": "2026-06-13T15:56:40.527653+00:00",
+      "date": "2026-06-13",
+      "platform": "instagram",
+      "post_id": "mYrFd",
+      "destination": null,
+      "format": "reel_map.route_trace",
+      "media_id": "reel_pomelli_may_himachal_roads_the_stability_scores.mp4"
+    },
+    {
+      "timestamp": "2026-06-13T15:56:53.781080+00:00",
+      "date": "2026-06-13",
+      "platform": "facebook",
+      "post_id": "A2d17",
+      "destination": null,
+      "format": "reel_map.route_trace",
+      "media_id": "reel_pomelli_may_himachal_roads_the_stability_scores.mp4"
     }
   ],
   "theme_usage": {
@@ -3333,6 +3362,9 @@
       ],
       "v2_wildlife_moment": [
         "2026-06-12"
+      ],
+      "reel_map": [
+        "2026-06-13"
       ]
     },
     "reels": {
@@ -3613,6 +3645,16 @@
     "stays": {
       "lonavala": [
         "2026-06-12"
+      ]
+    },
+    "reel_map_campaigns": {
+      "may_himachal_roads_the_stability_scores": [
+        "2026-06-13"
+      ]
+    },
+    "reel_map_formats": {
+      "route_trace": [
+        "2026-06-13"
       ]
     }
   },

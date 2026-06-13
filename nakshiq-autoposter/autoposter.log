@@ -3834,3 +3834,41 @@ Date range: 2026-04-15 → 2026-06-12
 2026-06-13 13:19:19  INFO      YT Short posted: format=nakshiq_score, music=fast-686
 2026-06-13 13:19:19  INFO      State saved. YT Short run complete.
 2026-06-13 13:19:19  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 15:54:17  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 15:54:17  INFO      Nakshiq Autoposter · EVENING · 2026-06-13 · weekday=5
+2026-06-13 15:54:17  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 15:54:17  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-13 15:54:47  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-13 15:54:47  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-13 15:54:48  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-13 15:54:48  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-13 15:54:48  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-13 15:55:01  INFO      [evening] variety pick: reel_map (25 CSV + 3 visual candidates)
+2026-06-13 15:55:01  INFO      Formats — IG: reel_map  ·  FB: reel_map  ·  Story: route_spotlight  ·  Audience: families
+2026-06-13 15:55:01  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 64
+2026-06-13 15:55:01  INFO      Delegating evening slot → reel_map visual pipeline
+2026-06-13 15:55:01  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 15:55:01  INFO      Nakshiq Autoposter · REEL-MAP v3 · 2026-06-13 · weekday=5
+2026-06-13 15:55:01  INFO      ════════════════════════════════════════════════════════════
+2026-06-13 15:55:01  INFO      Picked campaign: 'may_himachal_roads_the_stability_scores' (4 images) → "May Himachal Roads The Stability Scores"
+2026-06-13 15:55:01  INFO      Campaign: may_himachal_roads_the_stability_scores | Music style: route_trace
+2026-06-13 15:55:29  INFO      Reel rendered: reel_pomelli_may_himachal_roads_the_stability_scores.mp4 (11874 KB)
+2026-06-13 15:55:29  INFO          Requesting upload URL for reel_pomelli_may_himachal_roads_the_stability_scores.mp4 (12,158,992 bytes, video/mp4)
+2026-06-13 15:55:30  INFO          Uploading to R2 (timeout=300s)...
+2026-06-13 15:55:31  INFO          R2 PUT OK. Confirming...
+2026-06-13 15:55:32  INFO          Media ready: Zl4nu (12,158,992 bytes · reel_pomelli_may_himachal_roads_the_stability_scores.mp4)
+2026-06-13 15:55:32  INFO      Video uploaded: reel_pomelli_may_himachal_roads_the_stability_scores.mp4
+2026-06-13 15:55:32  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-13 15:55:32  INFO      [youtube/@naksh-iq] Publishing reel (may_himachal_roads_the_stability_scores)...
+2026-06-13 15:55:34  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=ibSqB), confirming...
+2026-06-13 15:55:52  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=ibSqB · Platform=5_4qwVEJ0Og
+2026-06-13 15:55:52  INFO      [instagram/nakshiq] Publishing reel (may_himachal_roads_the_stability_scores)...
+2026-06-13 15:55:54  INFO      [instagram/nakshiq] Outstand accepted (post_id=mYrFd), confirming...
+2026-06-13 15:56:40  INFO          wait_for_publish exhausted 8 polls for post=mYrFd (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-13 15:56:40  WARNING   [instagram/nakshiq] ⚠️  Reel queued but NOT confirmed (post_id=mYrFd).
+2026-06-13 15:56:40  INFO      [facebook/Nakshiq] Publishing reel (may_himachal_roads_the_stability_scores)...
+2026-06-13 15:56:42  INFO      [facebook/Nakshiq] Outstand accepted (post_id=A2d17), confirming...
+2026-06-13 15:56:53  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=A2d17 · Platform=2222560581874489
+2026-06-13 15:56:53  INFO      Theme tracker updated: campaign=may_himachal_roads_the_stability_scores, music=route_trace
+2026-06-13 15:56:53  INFO      State saved. Reel-map run complete.
+2026-06-13 15:56:53  INFO      ════════════════════════════════════════════════════════════
