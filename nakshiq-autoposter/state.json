@@ -32,10 +32,10 @@
   "posted_today": {
     "m8EAd": "2026-06-12",
     "PdMu0": "2026-06-12",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
-    "GAh5p_yt_short": "2026-06-12",
-    "m8EAd_yt_short": "2026-06-12",
+    "GAh5p_yt_short": "2026-06-13",
+    "m8EAd_yt_short": "2026-06-13",
     "m8EAd_evening": "2026-06-12",
     "PdMu0_evening": "2026-06-12",
     "xS5s8": "2026-06-12",
@@ -44,26 +44,6 @@
   },
   "last_sync": "2026-06-13T07:11:42.411281+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ooty",
-      "date": "2026-05-29"
-    },
-    {
-      "destination_id": "munsiyari",
-      "date": "2026-05-29"
-    },
-    {
-      "destination_id": "khangchendzonga-np",
-      "date": "2026-05-29"
-    },
-    {
-      "destination_id": "tirthan-valley",
-      "date": "2026-05-29"
-    },
-    {
-      "destination_id": "gurudongmar-lake",
-      "date": "2026-05-29"
-    },
     {
       "destination_id": "manikaran",
       "date": "2026-05-30"
@@ -363,6 +343,10 @@
     {
       "destination_id": "courtallam",
       "date": "2026-06-12"
+    },
+    {
+      "destination_id": "prashar-lake",
+      "date": "2026-06-13"
     }
   ],
   "posted_formats": {
@@ -2914,6 +2898,24 @@
       "format": "v2_wildlife_moment",
       "has_media": true,
       "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-06-13T08:03:20.119279+00:00",
+      "date": "2026-06-13",
+      "platform": "youtube",
+      "post_id": "NI9ya",
+      "destination": "prashar-lake",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_prashar-lake_en_2026-06-13.mp4"
+    },
+    {
+      "timestamp": "2026-06-13T08:04:16.475820+00:00",
+      "date": "2026-06-13",
+      "platform": "instagram",
+      "post_id": "IopuX",
+      "destination": "prashar-lake",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_prashar-lake_en_2026-06-13.mp4"
     }
   ],
   "theme_usage": {
