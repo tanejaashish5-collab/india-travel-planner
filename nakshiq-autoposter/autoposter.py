@@ -5411,12 +5411,31 @@ def outstand_post_req(path: str, payload: dict, timeout: int = 30) -> dict:
             "error": f"HTTP {r.status_code} non-JSON: {r.text[:200]}",
         }
 
+# HARD ACCOUNT ALLOWLIST (2026-06-13). The Outstand workspace is SHARED with the
+# Chanakya Sutra channel (id xS5s8): on 2026-06-12 it was connected and this
+# script's "every active account" selection posted NakshIQ reels onto the
+# Chanakya YouTube channel. Only the ids below may EVER receive a NakshIQ post.
+# Connecting a new NakshIQ account? Add its id here DELIBERATELY — fail-closed.
+NAKSHIQ_ACCOUNT_IDS = {
+    "GAh5p",  # youtube   @naksh-iq
+    "m8EAd",  # instagram nakshiq
+    "PdMu0",  # facebook  Nakshiq
+}
+
+
 def get_connected_accounts() -> list:
     try:
-        return outstand_get("/v1/social-accounts").get("data", [])
+        accounts = outstand_get("/v1/social-accounts").get("data", [])
     except Exception as e:
         log.error(f"Could not fetch accounts: {e}")
         return []
+    allowed = [a for a in accounts if a.get("id") in NAKSHIQ_ACCOUNT_IDS]
+    for a in accounts:
+        if a.get("id") not in NAKSHIQ_ACCOUNT_IDS and a.get("isActive"):
+            log.warning(
+                f"Ignoring non-NakshIQ account in shared Outstand workspace: "
+                f"{a.get('network')}/{a.get('username')} ({a.get('id')})")
+    return allowed
 
 # ─────────────────────────────────────────────────────────────────────────────
 # MEDIA UPLOAD
