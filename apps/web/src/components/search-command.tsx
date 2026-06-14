@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import { useSearchIndex } from "@/lib/search-index";
+import { rankFilter } from "@/lib/search-rank";
 
 interface SearchCommandProps {
   open: boolean;
@@ -22,6 +23,7 @@ interface SubDestination {
   name: string;
   parent_id: string;
   parent_name: string;
+  region: string | null;
 }
 interface State {
   id: string;
@@ -46,6 +48,7 @@ interface Festival {
   month: number | null;
   destination_id: string | null;
   destination_name: string;
+  region: string | null;
 }
 interface Stay {
   id: string;
@@ -53,12 +56,14 @@ interface Stay {
   type: string | null;
   destination_id: string;
   destination_name: string;
+  region: string | null;
 }
 interface HiddenGem {
   id: string;
   name: string;
   near_destination_id: string | null;
   parent_name: string;
+  region: string | null;
 }
 interface Article {
   slug: string;
@@ -122,7 +127,7 @@ function getSubtitle(item: ResultItem): string {
     case "destination":
       return item.data.state?.name ?? "";
     case "sub":
-      return `in ${item.data.parent_name}`;
+      return [`in ${item.data.parent_name}`, item.data.region].filter(Boolean).join(" · ");
     case "state":
       return "State";
     case "trek":
@@ -134,12 +139,12 @@ function getSubtitle(item: ResultItem): string {
     case "festival": {
       const m = item.data.month ? MONTH_SHORT[item.data.month] : "";
       const dest = item.data.destination_name;
-      return [m, dest].filter(Boolean).join(" · ");
+      return [m, dest, item.data.region].filter(Boolean).join(" · ");
     }
     case "stay":
-      return [item.data.type, item.data.destination_name].filter(Boolean).join(" · ");
+      return [item.data.type, item.data.destination_name, item.data.region].filter(Boolean).join(" · ");
     case "gem":
-      return item.data.parent_name ? `near ${item.data.parent_name}` : "";
+      return [item.data.parent_name ? `near ${item.data.parent_name}` : "", item.data.region].filter(Boolean).join(" · ");
     case "article":
       return item.data.category ?? "";
   }
@@ -206,46 +211,21 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
     }
   }, [open]);
 
-  // Filter local data
-  const filterByName = useCallback(
-    <T extends { name: string }>(items: T[] | null, q: string, max = 5): T[] => {
-      if (!items || !q.trim()) return [];
-      const lower = q.toLowerCase();
-      const results: T[] = [];
-      for (const item of items) {
-        if (item.name.toLowerCase().includes(lower)) {
-          results.push(item);
-          if (results.length >= max) break;
-        }
-      }
-      return results;
-    },
-    []
-  );
-
-  const filteredDestinations = filterByName(destinations, query);
-  const filteredSubs = filterByName(subs, query);
-  const filteredStates = filterByName(states, query);
-  const filteredTreks = filterByName(treks, query);
-  const filteredRoutes = filterByName(routes, query);
-  const filteredCollections = filterByName(collections, query);
-  const filteredFestivals = filterByName(festivals, query);
-  const filteredStays = filterByName(stays, query);
-  const filteredGems = filterByName(gems, query);
-  // Articles match on `title` (not `name`), so filter them separately.
-  const articles: Article[] = (() => {
-    const list = index?.articles;
-    if (!list || !query.trim()) return [];
-    const lower = query.toLowerCase();
-    const out: Article[] = [];
-    for (const a of list) {
-      if (a.title.toLowerCase().includes(lower)) {
-        out.push(a);
-        if (out.length >= 5) break;
-      }
-    }
-    return out;
-  })();
+  // Filter + relevance-rank local data (exact > prefix > word-start > substring)
+  // so true matches lead and weak mid-word substring hits sink. See
+  // lib/search-rank.ts for why (the "Mangan" -> Barmer/Rajasthan report).
+  const byName = (i: { name: string }) => i.name;
+  const filteredDestinations = rankFilter(destinations, query, byName);
+  const filteredSubs = rankFilter(subs, query, byName);
+  const filteredStates = rankFilter(states, query, byName);
+  const filteredTreks = rankFilter(treks, query, byName);
+  const filteredRoutes = rankFilter(routes, query, byName);
+  const filteredCollections = rankFilter(collections, query, byName);
+  const filteredFestivals = rankFilter(festivals, query, byName);
+  const filteredStays = rankFilter(stays, query, byName);
+  const filteredGems = rankFilter(gems, query, byName);
+  // Articles match on `title` (not `name`).
+  const articles: Article[] = rankFilter(index?.articles ?? null, query, (a) => a.title);
 
   // Build flat result list — order matches CATEGORY_ORDER
   const results: ResultItem[] = [];

@@ -7,6 +7,7 @@ import { m as motion } from "framer-motion";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useSearchIndex } from "@/lib/search-index";
+import { rankFilter } from "@/lib/search-rank";
 import { videoSrc } from "@/lib/video-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
@@ -573,17 +574,11 @@ function HeroSearch({ locale }: { locale: string }) {
     const q = query.trim().toLowerCase();
     if (q.length < 2 || !index) return [];
     return [
-      ...index.destinations
-        .filter((d) => d.name.toLowerCase().includes(q))
-        .slice(0, 6)
+      ...rankFilter(index.destinations, query, (d) => d.name, 6)
         .map((d) => ({ id: d.id, name: d.name, state_name: d.state?.name, type: "destination" as const })),
-      ...index.states
-        .filter((s) => s.name.toLowerCase().includes(q))
-        .slice(0, 3)
+      ...rankFilter(index.states, query, (s) => s.name, 3)
         .map((s) => ({ id: s.id, name: s.name, type: "state" as const })),
-      ...index.collections
-        .filter((c) => c.name.toLowerCase().includes(q))
-        .slice(0, 3)
+      ...rankFilter(index.collections, query, (c) => c.name, 3)
         .map((c) => ({ id: c.id, name: c.name, type: "collection" as const })),
     ];
   }, [query, index]);

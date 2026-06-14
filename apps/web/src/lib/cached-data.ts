@@ -203,14 +203,14 @@ export const getCachedItinerarySlugs = unstable_cache(
 // ── Global search index (powers all 3 client search surfaces) ───────────────
 export interface SearchIndex {
   destinations: { id: string; name: string; state: { name: string } | null; difficulty: string | null; tags: string[] | null }[];
-  subs: { id: string; name: string; parent_id: string; parent_name: string }[];
+  subs: { id: string; name: string; parent_id: string; parent_name: string; region: string | null }[];
   states: { id: string; name: string }[];
   treks: { id: string; name: string; difficulty: string | null }[];
   routes: { id: string; name: string }[];
   collections: { id: string; name: string }[];
-  festivals: { id: string; name: string; month: number | null; destination_id: string | null; destination_name: string }[];
-  stays: { id: string; name: string; type: string | null; destination_id: string; destination_name: string }[];
-  gems: { id: string; name: string; near_destination_id: string | null; parent_name: string }[];
+  festivals: { id: string; name: string; month: number | null; destination_id: string | null; destination_name: string; region: string | null }[];
+  stays: { id: string; name: string; type: string | null; destination_id: string; destination_name: string; region: string | null }[];
+  gems: { id: string; name: string; near_destination_id: string | null; parent_name: string; region: string | null }[];
   articles: { slug: string; title: string; category: string | null }[];
 }
 
@@ -225,22 +225,31 @@ export const getCachedSearchIndex = unstable_cache(
     if (!supabase) return EMPTY_INDEX;
 
     const refName = (v: unknown): string => (Array.isArray(v) ? v[0]?.name ?? "" : (v as { name?: string } | null)?.name ?? "");
+    // The state of the embedded parent/destination — so cross-state matches
+    // (e.g. searching Sikkim's "Mangan" hitting Barmer's "Manganiyar" gem) can
+    // be labelled with their real region and never masquerade as the place the
+    // user typed. The embedded ref is an object or a 1-element array.
+    const refRegion = (v: unknown): string | null => {
+      const obj = Array.isArray(v) ? v[0] : v;
+      if (!obj || typeof obj !== "object") return null;
+      return stateName((obj as { state?: unknown }).state) || null;
+    };
 
     // destinations / local_stays / hidden_gems exceed (or approach) PostgREST's
     // 1000-row cap, so page through them. The rest are comfortably under 1000
     // and `articles` has no `id` column (PK is slug), so they use single selects.
     const [dRows, slRows, gRows] = await Promise.all([
       fetchAllRows(supabase, "destinations", "id, name, state:states(name), difficulty, tags"),
-      fetchAllRows(supabase, "local_stays", "id, name, type, destination_id, destination:destinations(name)"),
-      fetchAllRows(supabase, "hidden_gems", "id, name, near_destination_id, near:destinations!hidden_gems_near_destination_id_fkey(name)"),
+      fetchAllRows(supabase, "local_stays", "id, name, type, destination_id, destination:destinations(name, state:states(name))"),
+      fetchAllRows(supabase, "hidden_gems", "id, name, near_destination_id, near:destinations!hidden_gems_near_destination_id_fkey(name, state:states(name))"),
     ]);
     const [subRes, stRes, tRes, rRes, cRes, fRes, aRes] = await Promise.all([
-      supabase.from("sub_destinations").select("id, name, parent_id, parent:destinations!sub_destinations_parent_id_fkey(name)").order("name"),
+      supabase.from("sub_destinations").select("id, name, parent_id, parent:destinations!sub_destinations_parent_id_fkey(name, state:states(name))").order("name"),
       supabase.from("states").select("id, name").order("name"),
       supabase.from("treks").select("id, name, difficulty").order("name"),
       supabase.from("routes").select("id, name").order("name"),
       supabase.from("collections").select("id, name").order("name"),
-      supabase.from("festivals").select("id, name, month, destination_id, destination:destinations(name)").order("name"),
+      supabase.from("festivals").select("id, name, month, destination_id, destination:destinations(name, state:states(name))").order("name"),
       supabase.from("articles").select("slug, title, category").order("title"),
     ]);
 
@@ -258,7 +267,7 @@ export const getCachedSearchIndex = unstable_cache(
       }),
       subs: ((subRes.data as unknown[]) ?? []).map((r) => {
         const s = r as { id: string; name: string; parent_id: string; parent: unknown };
-        return { id: s.id, name: s.name, parent_id: s.parent_id, parent_name: refName(s.parent) };
+        return { id: s.id, name: s.name, parent_id: s.parent_id, parent_name: refName(s.parent), region: refRegion(s.parent) };
       }),
       states: ((stRes.data as { id: string; name: string }[]) ?? []),
       treks: ((tRes.data as { id: string; name: string; difficulty: string | null }[]) ?? []),
@@ -266,19 +275,22 @@ export const getCachedSearchIndex = unstable_cache(
       collections: ((cRes.data as { id: string; name: string }[]) ?? []),
       festivals: ((fRes.data as unknown[]) ?? []).map((r) => {
         const f = r as { id: string; name: string; month: number | null; destination_id: string | null; destination: unknown };
-        return { id: f.id, name: f.name, month: f.month, destination_id: f.destination_id, destination_name: refName(f.destination) };
+        return { id: f.id, name: f.name, month: f.month, destination_id: f.destination_id, destination_name: refName(f.destination), region: refRegion(f.destination) };
       }),
       stays: slRows.map((r) => {
         const s = r as { id: string; name: string; type: string | null; destination_id: string; destination: unknown };
-        return { id: s.id, name: s.name, type: s.type, destination_id: s.destination_id, destination_name: refName(s.destination) };
+        return { id: s.id, name: s.name, type: s.type, destination_id: s.destination_id, destination_name: refName(s.destination), region: refRegion(s.destination) };
       }),
       gems: gRows.map((r) => {
         const g = r as { id: string; name: string; near_destination_id: string | null; near: unknown };
-        return { id: g.id, name: g.name, near_destination_id: g.near_destination_id, parent_name: refName(g.near) };
+        return { id: g.id, name: g.name, near_destination_id: g.near_destination_id, parent_name: refName(g.near), region: refRegion(g.near) };
       }),
       articles: ((aRes.data as { slug: string; title: string; category: string | null }[]) ?? []),
     };
   },
-  ["ref-search-index-v1"],
+  // v2: added `region` to subs/gems/stays/festivals (2026-06-14). Bumping the
+  // cache key forces a fresh build on first request post-deploy so the new field
+  // appears immediately instead of waiting out the 24h revalidate on the v1 entry.
+  ["ref-search-index-v2"],
   { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.searchIndex, REF_TAGS.destinations, REF_TAGS.collections, REF_TAGS.states] },
 );

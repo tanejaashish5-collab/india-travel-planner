@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { useSearchIndex } from "@/lib/search-index";
+import { rankFilter } from "@/lib/search-rank";
 
 const CATEGORIES = [
   { label: "Hill Stations", tag: "hill-station", icon: "🏔️" },
@@ -43,13 +44,13 @@ export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => 
     const q = query.trim().toLowerCase();
     if (q.length < 2 || !index) return [];
     const grouped: { type: string; items: { id: string; name: string; sub?: string; href: string }[] }[] = [];
-    const states = index.states.filter((s) => s.name.toLowerCase().includes(q)).slice(0, 3);
+    const states = rankFilter(index.states, query, (s) => s.name, 3);
     if (states.length) grouped.push({ type: "States", items: states.map((s) => ({ id: s.id, name: s.name, href: `/${locale}/state/${s.id}` })) });
-    const dests = index.destinations.filter((d) => d.name.toLowerCase().includes(q)).slice(0, 6);
+    const dests = rankFilter(index.destinations, query, (d) => d.name, 6);
     if (dests.length) grouped.push({ type: "Destinations", items: dests.map((d) => ({ id: d.id, name: d.name, sub: d.state?.name || "", href: `/${locale}/destination/${d.id}` })) });
-    const colls = index.collections.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 3);
+    const colls = rankFilter(index.collections, query, (c) => c.name, 3);
     if (colls.length) grouped.push({ type: "Collections", items: colls.map((c) => ({ id: c.id, name: c.name, href: `/${locale}/collections/${c.id}` })) });
-    const arts = index.articles.filter((a) => a.title.toLowerCase().includes(q)).slice(0, 3);
+    const arts = rankFilter(index.articles, query, (a) => a.title, 3);
     if (arts.length) grouped.push({ type: "Articles", items: arts.map((a) => ({ id: a.slug, name: a.title, href: `/${locale}/blog/${a.slug}` })) });
     return grouped;
   }, [query, index, locale]);
