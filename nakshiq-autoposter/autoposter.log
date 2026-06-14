@@ -3996,3 +3996,51 @@ Date range: 2026-04-15 → 2026-06-13
 2026-06-14 13:25:03  INFO      YT Short posted: format=nakshiq_score, music=edm-471
 2026-06-14 13:25:03  INFO      State saved. YT Short run complete.
 2026-06-14 13:25:03  INFO      ════════════════════════════════════════════════════════════
+2026-06-14 16:02:01  INFO      ════════════════════════════════════════════════════════════
+2026-06-14 16:02:01  INFO      Nakshiq Autoposter · EVENING · 2026-06-14 · weekday=6
+2026-06-14 16:02:01  INFO      ════════════════════════════════════════════════════════════
+2026-06-14 16:02:01  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-14 16:02:16  WARNING   Nakshiq [stats] fetch failed: HTTPSConnectionPool(host='www.nakshiq.com', port=443): Read timed out. (read timeout=15)
+2026-06-14 16:02:59  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=505
+2026-06-14 16:02:59  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-14 16:03:00  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-14 16:03:00  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-14 16:03:00  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-14 16:03:15  INFO      [evening] variety pick: v2_pov_slow_morning (25 CSV + 3 visual candidates)
+2026-06-14 16:03:15  INFO      Formats — IG: v2_pov_slow_morning  ·  FB: v2_pov_slow_morning  ·  Story: kids_intel
+2026-06-14 16:03:15  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 61
+2026-06-14 16:03:15  INFO      Fingerprint dedup snapshot — 60 dests in 7d · 130 (dest,fmt) pairs in 30d · 130 media in 60d
+2026-06-14 16:03:15  INFO      Kids destination locked: Courtallam (Kutralam)
+2026-06-14 16:03:22  INFO      Shared best destination locked: Sonamarg
+2026-06-14 16:03:22  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-14 16:03:22  INFO      [instagram/nakshiq] Generating v2_pov_slow_morning post...
+2026-06-14 16:03:22  INFO      v2_pov_slow_morning: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-14 16:03:22  INFO      v2_pov_slow_morning: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-14 16:03:22  INFO      v2_pov_slow_morning: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-14 16:03:22  INFO      [instagram/nakshiq] Caption ready (431 chars, dest=pahalgam)
+2026-06-14 16:03:23  INFO      [instagram/nakshiq] CSV video format (v2_pov_slow_morning) — using dest Ken Burns clip as fallback
+2026-06-14 16:03:23  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260524
+2026-06-14 16:03:26  INFO          Brand-stamp applied: pahalgam.mp4 (11,691,764 → 5,895,696 bytes)
+2026-06-14 16:03:26  INFO          Requesting upload URL for pahalgam.mp4 (5,895,696 bytes, video/mp4)
+2026-06-14 16:03:27  INFO          Uploading to R2 (timeout=300s)...
+2026-06-14 16:03:28  INFO          R2 PUT OK. Confirming...
+2026-06-14 16:03:29  INFO          Media ready: iNjqB (5,895,696 bytes · pahalgam.mp4)
+2026-06-14 16:03:29  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-14 16:04:09  INFO      [instagram/nakshiq] ✅ Published · Outstand=8ovLI · Platform=17885284107416248
+2026-06-14 16:04:09  INFO      [facebook/Nakshiq] Generating v2_pov_slow_morning post...
+2026-06-14 16:04:09  INFO      v2_pov_slow_morning: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-14 16:04:09  INFO      v2_pov_slow_morning: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-14 16:04:09  INFO      v2_pov_slow_morning: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-14 16:04:09  INFO      v2_pov_slow_morning: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-14 16:04:09  INFO      [facebook/Nakshiq] Caption ready (429 chars, dest=munsiyari)
+2026-06-14 16:04:09  INFO      [facebook/Nakshiq] CSV video format (v2_pov_slow_morning) — using dest Ken Burns clip as fallback
+2026-06-14 16:04:09  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/munsiyari.mp4?v=20260524
+2026-06-14 16:04:11  INFO          Brand-stamp applied: munsiyari.mp4 (4,592,394 → 2,146,004 bytes)
+2026-06-14 16:04:11  INFO          Requesting upload URL for munsiyari.mp4 (2,146,004 bytes, video/mp4)
+2026-06-14 16:04:12  INFO          Uploading to R2 (timeout=300s)...
+2026-06-14 16:04:14  INFO          R2 PUT OK. Confirming...
+2026-06-14 16:04:15  INFO          Media ready: bXZwT (2,146,004 bytes · munsiyari.mp4)
+2026-06-14 16:04:15  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-14 16:04:29  INFO      [facebook/Nakshiq] ✅ Published · Outstand=eV8br · Platform=1584147793217157
+2026-06-14 16:04:29  INFO      State saved. Run complete.
+2026-06-14 16:04:29  INFO      ════════════════════════════════════════════════════════════

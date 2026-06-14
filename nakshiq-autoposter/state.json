@@ -36,9 +36,13 @@
     "m8EAd_yt_short": "2026-06-13",
     "xS5s8_yt_short_count": 2,
     "GAh5p_reel_map": "2026-06-13",
-    "PdMu0_reel_map": "2026-06-13"
+    "PdMu0_reel_map": "2026-06-13",
+    "m8EAd": "2026-06-14",
+    "m8EAd_evening": "2026-06-14",
+    "PdMu0": "2026-06-14",
+    "PdMu0_evening": "2026-06-14"
   },
-  "last_sync": "2026-06-14T08:02:28.039824+00:00",
+  "last_sync": "2026-06-14T16:02:59.805453+00:00",
   "posted_destinations": [
     {
       "destination_id": "devprayag",
@@ -335,11 +339,18 @@
     {
       "destination_id": "verinag",
       "date": "2026-06-14"
+    },
+    {
+      "destination_id": "pahalgam",
+      "date": "2026-06-14"
+    },
+    {
+      "destination_id": "munsiyari",
+      "date": "2026-06-14"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_festival_alert_sensory",
       "v2_score_card_pov",
       "v2_local_knows",
       "v2_weekend_escape_map",
@@ -359,10 +370,10 @@
       "eateries_pick",
       "v3_tl_poll_reel",
       "stays_pick",
-      "v2_wildlife_moment"
+      "v2_wildlife_moment",
+      "v2_pov_slow_morning"
     ],
     "PdMu0": [
-      "v2_festival_alert_sensory",
       "v2_score_card_pov",
       "v2_local_knows",
       "v2_weekend_escape_map",
@@ -382,7 +393,8 @@
       "eateries_pick",
       "v3_tl_poll_reel",
       "stays_pick",
-      "v2_wildlife_moment"
+      "v2_wildlife_moment",
+      "v2_pov_slow_morning"
     ]
   },
   "post_log": [
@@ -2985,6 +2997,28 @@
       "destination": "verinag",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_verinag_hi_2026-06-14.mp4"
+    },
+    {
+      "timestamp": "2026-06-14T16:04:09.300768+00:00",
+      "date": "2026-06-14",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "8ovLI",
+      "destination": "pahalgam",
+      "format": "v2_pov_slow_morning",
+      "has_media": true,
+      "media_id": "pahalgam.mp4"
+    },
+    {
+      "timestamp": "2026-06-14T16:04:29.519376+00:00",
+      "date": "2026-06-14",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "eV8br",
+      "destination": "munsiyari",
+      "format": "v2_pov_slow_morning",
+      "has_media": true,
+      "media_id": "munsiyari.mp4"
     }
   ],
   "theme_usage": {
@@ -3022,7 +3056,8 @@
       ],
       "pahalgam": [
         "2026-05-20",
-        "2026-05-27"
+        "2026-05-27",
+        "2026-06-14"
       ],
       "havelock-island": [
         "2026-05-20"
@@ -3042,7 +3077,8 @@
       ],
       "munsiyari": [
         "2026-05-23",
-        "2026-05-29"
+        "2026-05-29",
+        "2026-06-14"
       ],
       "madurai": [
         "2026-05-23",
@@ -3249,7 +3285,8 @@
       ],
       "v2_pov_slow_morning": [
         "2026-05-20",
-        "2026-05-21"
+        "2026-05-21",
+        "2026-06-14"
       ],
       "hidden_gem_reveal": [
         "2026-05-22"
@@ -3398,7 +3435,8 @@
         "2026-06-10"
       ],
       "munsiyari": [
-        "2026-05-23"
+        "2026-05-23",
+        "2026-06-14"
       ],
       "madurai": [
         "2026-05-23",
@@ -3484,6 +3522,9 @@
       ],
       "courtallam": [
         "2026-06-12"
+      ],
+      "pahalgam": [
+        "2026-06-14"
       ]
     },
     "audience_tags": {
@@ -3688,7 +3729,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
+    "shared_best": "sonamarg",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {}
