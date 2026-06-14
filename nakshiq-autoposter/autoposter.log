@@ -3924,3 +3924,27 @@ Date range: 2026-04-15 → 2026-06-12
 2026-06-13 19:57:50  INFO      
 Date range: 2026-04-15 → 2026-06-13
 2026-06-13 19:57:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-14 08:01:39  INFO      ════════════════════════════════════════════════════════════
+2026-06-14 08:01:39  INFO      Nakshiq Autoposter · MORNING · 2026-06-14 · weekday=6
+2026-06-14 08:01:39  INFO      ════════════════════════════════════════════════════════════
+2026-06-14 08:01:39  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-14 08:02:28  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=525
+2026-06-14 08:02:28  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-14 08:02:29  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-14 08:02:29  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-14 08:02:31  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-14 08:02:52  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-14 08:02:52  INFO      Morning format (themed-week-2→verification): confidence_intel [50% vs target 20%] (0/14 never featured)
+2026-06-14 08:02:52  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: score_card
+2026-06-14 08:02:52  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 59
+2026-06-14 08:02:52  INFO      Fingerprint dedup snapshot — 58 dests in 7d · 128 (dest,fmt) pairs in 30d · 128 media in 60d
+2026-06-14 08:02:52  INFO      Shared best destination locked: Sangla Valley
+2026-06-14 08:02:52  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-14 08:02:52  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-06-14 08:02:52  INFO      confidence_intel for Sangla Valley: only 0 card rows — SKIPPING
+2026-06-14 08:02:52  WARNING   [instagram/nakshiq] No content generated — skipping.
+2026-06-14 08:02:52  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-06-14 08:02:52  INFO      confidence_intel for Sangla Valley: only 0 card rows — SKIPPING
+2026-06-14 08:02:52  WARNING   [facebook/Nakshiq] No content generated — skipping.
+2026-06-14 08:02:52  INFO      State saved. Run complete.
+2026-06-14 08:02:52  INFO      ════════════════════════════════════════════════════════════
