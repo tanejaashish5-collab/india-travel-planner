@@ -53,22 +53,53 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
   if (!anchor) notFound();
 
   const supabase = getSupabase();
-  if (!supabase) notFound();
+  // Missing env is a config error, not a missing page — throw so it never bakes
+  // a 404 into the 6h ISR cache.
+  if (!supabase) throw new Error(`[weekend-from:${city}] Supabase env not configured`);
 
-  const { data: rpcData, error } = await supabase.rpc("find_nearby_destinations", {
-    lat: anchor.lat,
-    lng: anchor.lng,
-    radius_km: 500,
-  });
-  if (error) notFound();
+  // The PostGIS RPC can transiently fail (search_path/extension hiccups under
+  // render bursts) and EVERY metro anchor is within 500 km of itself, so an
+  // empty result is always a transient failure, never the truth. Swallowing
+  // either an error into notFound() or an empty array bakes a 404 / "no
+  // destinations" page into the 6h ISR cache — delhi did exactly this
+  // (2026-06-14), same class as the /explore "0 places" bake (2026-06-10).
+  // Retry, then throw so revalidation keeps the last good page (and a build
+  // fails loudly) instead of caching a broken one.
+  const callRpc = () =>
+    supabase.rpc("find_nearby_destinations", {
+      lat: anchor.lat,
+      lng: anchor.lng,
+      radius_km: 500,
+    });
+  let rpc = await callRpc();
+  for (
+    let attempt = 1;
+    attempt < 3 && (rpc.error || !Array.isArray(rpc.data) || rpc.data.length === 0);
+    attempt++
+  ) {
+    console.error(
+      `[weekend-from:${city}] nearby RPC attempt ${attempt} failed: ${rpc.error?.message ?? "empty result"} — retrying`,
+    );
+    await new Promise((r) => setTimeout(r, attempt * 1000));
+    rpc = await callRpc();
+  }
+  if (rpc.error || !Array.isArray(rpc.data) || rpc.data.length === 0) {
+    throw new Error(
+      `[weekend-from:${city}] nearby RPC failed after retries: ${rpc.error?.message ?? "empty result"}`,
+    );
+  }
 
-  const nearby: NearbyRow[] = Array.isArray(rpcData) ? rpcData : [];
+  const nearby: NearbyRow[] = rpc.data;
   const ids = nearby.map((n) => n.destination_id);
 
-  const { data: full } = await supabase
+  const { data: full, error: fullError } = await supabase
     .from("destinations")
     .select("id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, solo_female_score, state:states(name), kids_friendly(suitable, rating), destination_months(month, score)")
     .in("id", ids);
+  // Don't swallow a hydrate error into `full ?? []` — that bakes an empty page.
+  if (fullError) {
+    throw new Error(`[weekend-from:${city}] destinations hydrate failed: ${fullError.message}`);
+  }
 
   const currentMonth = currentMonthIST();
   const distMap = new Map<string, number>(nearby.map((n) => [n.destination_id, n.distance_km]));

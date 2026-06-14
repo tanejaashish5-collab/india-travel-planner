@@ -53,7 +53,10 @@ const PROBES: Probe[] = [
   { path: "/en/cost/manali", family: "cost" },
   { path: "/en/festivals", family: "festivals hub" },
   { path: "/en/itinerary/jaipur", family: "itinerary" },
-  { path: "/en/weekend-from-delhi", family: "weekend-from (PostGIS RPC)" },
+  // "Within 3 hours" = the first drive-time band heading; it only renders when
+  // the PostGIS RPC returned destinations. Without this marker the canary went
+  // green on a baked "000 destinations" empty page (2026-06-14, delhi).
+  { path: "/en/weekend-from-delhi", family: "weekend-from (PostGIS RPC)", marker: "Within 3 hours" },
   { path: "/en/collections", family: "collections hub" },
   { path: "/en/sos", family: "sos" },
   { path: "/en/pilgrimage/char-dham", family: "pilgrimage" },
