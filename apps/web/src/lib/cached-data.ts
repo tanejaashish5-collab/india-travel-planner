@@ -288,9 +288,10 @@ export const getCachedSearchIndex = unstable_cache(
       articles: ((aRes.data as { slug: string; title: string; category: string | null }[]) ?? []),
     };
   },
-  // v2: added `region` to subs/gems/stays/festivals (2026-06-14). Bumping the
-  // cache key forces a fresh build on first request post-deploy so the new field
-  // appears immediately instead of waiting out the 24h revalidate on the v1 entry.
-  ["ref-search-index-v2"],
+  // v3: +8 Sikkim destinations (mangan, yumthang-valley, nathu-la, aritar,
+  // tashiding, phodong, rinchenpong, dzongu) seeded 2026-06-14. v2 added `region`
+  // to subs/gems/stays/festivals. Bumping the key forces a fresh build on first
+  // request post-deploy so new rows appear immediately, not after the 24h revalidate.
+  ["ref-search-index-v3"],
   { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.searchIndex, REF_TAGS.destinations, REF_TAGS.collections, REF_TAGS.states] },
 );

@@ -37,6 +37,11 @@ export function matchRank(text: string, query: string): number {
     if (word && word.startsWith(q)) return 2;
   }
   if (t.includes(q)) return 3;
+  // Space/punctuation-insensitive fallback (weakest): "nathula" -> "Nathu La",
+  // "lehladakh" -> "Leh-Ladakh". Collapse both sides and retest. Guarded at >=3
+  // chars so tiny queries don't over-match.
+  const nq = q.replace(/[^a-z0-9]/g, "");
+  if (nq.length >= 3 && t.replace(/[^a-z0-9]/g, "").includes(nq)) return 4;
   return -1;
 }
 
