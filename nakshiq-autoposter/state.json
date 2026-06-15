@@ -35,14 +35,15 @@
     "GAh5p_yt_short": "2026-06-15",
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-06-15",
-    "m8EAd_evening": "2026-06-14",
+    "m8EAd_evening": "2026-06-15",
     "PdMu0": "2026-06-15",
-    "PdMu0_evening": "2026-06-14",
+    "PdMu0_evening": "2026-06-15",
     "m8EAd_yt_short": "2026-06-15",
     "m8EAd_tourist_map": "2026-06-15",
-    "PdMu0_tourist_map": "2026-06-15"
+    "PdMu0_tourist_map": "2026-06-15",
+    "m8EAd_evening_story": "2026-06-15"
   },
-  "last_sync": "2026-06-15T16:15:10.157629+00:00",
+  "last_sync": "2026-06-15T18:53:04.202835+00:00",
   "posted_destinations": [
     {
       "destination_id": "yusmarg",
@@ -343,11 +344,18 @@
     {
       "destination_id": "yamunotri",
       "date": "2026-06-15"
+    },
+    {
+      "destination_id": "nako",
+      "date": "2026-06-15"
+    },
+    {
+      "destination_id": "sissu",
+      "date": "2026-06-15"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_local_knows",
       "v2_weekend_escape_map",
       "v2_texture_macro",
       "v3_tl_world_best_india",
@@ -367,10 +375,10 @@
       "stays_pick",
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "v2_thali_close_up"
     ],
     "PdMu0": [
-      "v2_local_knows",
       "v2_weekend_escape_map",
       "v2_texture_macro",
       "v3_tl_world_best_india",
@@ -390,7 +398,8 @@
       "stays_pick",
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "v2_thali_close_up"
     ]
   },
   "post_log": [
@@ -3091,6 +3100,39 @@
       "destination": null,
       "format": "tourist_map",
       "media_id": "UK_editorial_dark"
+    },
+    {
+      "timestamp": "2026-06-15T18:54:40.878811+00:00",
+      "date": "2026-06-15",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "racC4",
+      "destination": "nako",
+      "format": "v2_thali_close_up",
+      "has_media": true,
+      "media_id": "v2_thali_close_up-nako_01_cover.png"
+    },
+    {
+      "timestamp": "2026-06-15T18:55:05.128640+00:00",
+      "date": "2026-06-15",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "dRwaO",
+      "destination": "haridwar",
+      "format": "festival_alert",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-06-15T18:55:53.411859+00:00",
+      "date": "2026-06-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "v5YGg",
+      "destination": "sissu",
+      "format": "v2_thali_close_up",
+      "has_media": true,
+      "media_id": "v2_thali_close_up-sissu_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -3142,7 +3184,8 @@
       "sissu": [
         "2026-05-21",
         "2026-05-25",
-        "2026-06-10"
+        "2026-06-10",
+        "2026-06-15"
       ],
       "dwarka": [
         "2026-05-22"
@@ -3189,7 +3232,8 @@
         "2026-05-28"
       ],
       "sonamarg": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-06-15"
       ],
       "mussoorie": [
         "2026-05-25"
@@ -3303,7 +3347,8 @@
       "nako": [
         "2026-06-04",
         "2026-06-10",
-        "2026-06-11"
+        "2026-06-11",
+        "2026-06-15"
       ],
       "kargil": [
         "2026-06-04",
@@ -3346,6 +3391,9 @@
       ],
       "lonavala": [
         "2026-06-12"
+      ],
+      "haridwar": [
+        "2026-06-15"
       ]
     },
     "morning_formats": {
@@ -3373,7 +3421,8 @@
         "2026-05-23"
       ],
       "v2_thali_close_up": [
-        "2026-05-23"
+        "2026-05-23",
+        "2026-06-15"
       ],
       "collection_series": [
         "2026-05-24"
@@ -3508,7 +3557,8 @@
       ],
       "sissu": [
         "2026-05-21",
-        "2026-06-10"
+        "2026-06-10",
+        "2026-06-15"
       ],
       "munsiyari": [
         "2026-05-23",
@@ -3588,7 +3638,8 @@
         "2026-06-05"
       ],
       "nako": [
-        "2026-06-10"
+        "2026-06-10",
+        "2026-06-15"
       ],
       "darjeeling": [
         "2026-06-11"
@@ -3606,7 +3657,8 @@
     "audience_tags": {
       "backpackers": [
         "2026-05-18",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-15"
       ],
       "families": [
         "2026-05-23",
@@ -3700,6 +3752,9 @@
       ],
       "6b063adc-f716-4192-87a5-c3e15b941377": [
         "2026-06-08"
+      ],
+      "3d26d374-6231-4254-b2f7-bb353e859e06": [
+        "2026-06-15"
       ]
     },
     "tourist_map_states": {
@@ -3811,7 +3866,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lolab-valley",
+    "shared_best": "sonamarg",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {}

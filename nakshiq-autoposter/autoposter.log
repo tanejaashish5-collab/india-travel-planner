@@ -4255,3 +4255,108 @@ Date range: 2026-04-15 → 2026-06-14
 2026-06-15 16:38:56  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-06-15 16:38:56  INFO      State saved. YT Short run complete.
 2026-06-15 16:38:56  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 18:52:30  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 18:52:30  INFO      Nakshiq Autoposter · EVENING · 2026-06-15 · weekday=0
+2026-06-15 18:52:30  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 18:52:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-15 18:53:04  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-15 18:53:04  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-15 18:53:05  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-15 18:53:05  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-15 18:53:05  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-15 18:53:25  INFO      [evening] variety pick: v2_thali_close_up (25 CSV + 3 visual candidates)
+2026-06-15 18:53:25  INFO      Formats — IG: v2_thali_close_up  ·  FB: v2_thali_close_up  ·  Story: festival_alert  ·  Audience: backpackers
+2026-06-15 18:53:25  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 60
+2026-06-15 18:53:25  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-06-15 18:53:25  INFO      Fingerprint dedup snapshot — 59 dests in 7d · 136 (dest,fmt) pairs in 30d · 134 media in 60d
+2026-06-15 18:53:25  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-15 18:53:25  INFO      Festival locked: Kanwar Yatra (4/13 active festivals never featured)
+2026-06-15 18:53:26  INFO      Shared best destination locked: Sonamarg
+2026-06-15 18:53:26  INFO      Carousel locked (v2_thali_close_up): sonamarg
+2026-06-15 18:53:26  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-15 18:53:26  INFO      [instagram/nakshiq] Generating v2_thali_close_up post...
+2026-06-15 18:53:26  INFO      v2_thali_close_up: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-15 18:53:26  INFO      v2_thali_close_up: nubra-valley already posted today — SKIPPING dest (same-day guard)
+2026-06-15 18:53:26  INFO      [instagram/nakshiq] Caption ready (400 chars, dest=nako)
+2026-06-15 18:53:33  INFO      [instagram/nakshiq] dynamic render: 5 slide(s) for v2_thali_close_up → uploading...
+2026-06-15 18:53:34  INFO          Requesting upload URL for v2_thali_close_up-nako_01_cover.png (1,572,159 bytes, image/png)
+2026-06-15 18:53:34  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:53:35  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:53:37  INFO          Media ready: zSwZP (1,572,159 bytes · v2_thali_close_up-nako_01_cover.png)
+2026-06-15 18:53:37  INFO          Requesting upload URL for v2_thali_close_up-nako_02.png (1,559,184 bytes, image/png)
+2026-06-15 18:53:37  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:53:38  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:53:40  INFO          Media ready: 9GuiQ (1,559,184 bytes · v2_thali_close_up-nako_02.png)
+2026-06-15 18:53:40  INFO          Requesting upload URL for v2_thali_close_up-nako_03.png (1,545,285 bytes, image/png)
+2026-06-15 18:53:41  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:53:41  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:53:42  INFO          Media ready: Xobge (1,545,285 bytes · v2_thali_close_up-nako_03.png)
+2026-06-15 18:53:42  INFO          Requesting upload URL for v2_thali_close_up-nako_04.png (1,565,397 bytes, image/png)
+2026-06-15 18:53:43  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:53:44  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:53:45  INFO          Media ready: Xobxe (1,565,397 bytes · v2_thali_close_up-nako_04.png)
+2026-06-15 18:53:45  INFO          Requesting upload URL for v2_thali_close_up-nako_05_cta.png (67,494 bytes, image/png)
+2026-06-15 18:53:46  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:53:47  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:53:48  INFO          Media ready: 2FWyS (67,494 bytes · v2_thali_close_up-nako_05_cta.png)
+2026-06-15 18:53:48  INFO      [instagram/nakshiq] Publishing 5-slide carousel...
+2026-06-15 18:54:40  INFO          wait_for_publish exhausted 8 polls for post=racC4 (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-15 18:54:40  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=racC4)
+2026-06-15 18:54:40  INFO      [instagram/nakshiq] Uploading Story image (haridwar.jpg)...
+2026-06-15 18:54:40  INFO          Using branded image: haridwar_story_minimal-elegant_badge.jpg (351,311 bytes)
+2026-06-15 18:54:40  INFO          Requesting upload URL for haridwar.jpg (351,311 bytes, image/jpeg)
+2026-06-15 18:54:41  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:54:42  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:54:43  INFO          Media ready: Fl2FZ (351,311 bytes · haridwar.jpg)
+2026-06-15 18:54:43  INFO      [instagram/nakshiq] Publishing Story · format=festival_alert · dest=haridwar
+2026-06-15 18:55:05  INFO      [instagram/nakshiq] ✅ Story live · ID=17932393080295175
+2026-06-15 18:55:05  INFO      [facebook/Nakshiq] Generating v2_thali_close_up post...
+2026-06-15 18:55:05  INFO      v2_thali_close_up: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: nubra-valley already posted today — SKIPPING dest (same-day guard)
+2026-06-15 18:55:05  INFO      v2_thali_close_up: nako already posted today — SKIPPING dest (same-day guard)
+2026-06-15 18:55:05  INFO      [facebook/Nakshiq] Caption ready (338 chars, dest=sissu)
+2026-06-15 18:55:11  INFO      [facebook/Nakshiq] dynamic render: 5 slide(s) for v2_thali_close_up → uploading...
+2026-06-15 18:55:11  INFO          Requesting upload URL for v2_thali_close_up-sissu_01_cover.png (2,082,439 bytes, image/png)
+2026-06-15 18:55:12  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:55:13  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:55:14  INFO          Media ready: OYcxv (2,082,439 bytes · v2_thali_close_up-sissu_01_cover.png)
+2026-06-15 18:55:14  INFO          Requesting upload URL for v2_thali_close_up-sissu_02.png (2,094,403 bytes, image/png)
+2026-06-15 18:55:14  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:55:16  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:55:17  INFO          Media ready: yM7Jj (2,094,403 bytes · v2_thali_close_up-sissu_02.png)
+2026-06-15 18:55:17  INFO          Requesting upload URL for v2_thali_close_up-sissu_03.png (2,092,262 bytes, image/png)
+2026-06-15 18:55:18  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:55:20  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:55:21  INFO          Media ready: gRVex (2,092,262 bytes · v2_thali_close_up-sissu_03.png)
+2026-06-15 18:55:21  INFO          Requesting upload URL for v2_thali_close_up-sissu_04.png (2,101,529 bytes, image/png)
+2026-06-15 18:55:21  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:55:22  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:55:23  INFO          Media ready: TeKF1 (2,101,529 bytes · v2_thali_close_up-sissu_04.png)
+2026-06-15 18:55:23  INFO          Requesting upload URL for v2_thali_close_up-sissu_05_cta.png (67,494 bytes, image/png)
+2026-06-15 18:55:24  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 18:55:24  INFO          R2 PUT OK. Confirming...
+2026-06-15 18:55:25  INFO          Media ready: SZPsJ (67,494 bytes · v2_thali_close_up-sissu_05_cta.png)
+2026-06-15 18:55:25  INFO      [facebook/Nakshiq] Publishing 5-slide carousel...
+2026-06-15 18:55:53  INFO      [facebook/Nakshiq] ✅ Published · Outstand=v5YGg · Platform=1040562729145369_122112205340700092
+2026-06-15 18:55:53  INFO      State saved. Run complete.
+2026-06-15 18:55:53  INFO      ════════════════════════════════════════════════════════════
