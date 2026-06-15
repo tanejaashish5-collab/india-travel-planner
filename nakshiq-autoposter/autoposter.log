@@ -4096,3 +4096,67 @@ Date range: 2026-04-15 → 2026-06-13
 2026-06-14 20:01:44  INFO      
 Date range: 2026-04-15 → 2026-06-14
 2026-06-14 20:01:44  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 09:41:56  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 09:41:56  INFO      Nakshiq Autoposter · MORNING · 2026-06-15 · weekday=0
+2026-06-15 09:41:56  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 09:41:56  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-15 09:42:31  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-15 09:42:31  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-15 09:42:32  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-15 09:42:32  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-15 09:42:35  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-15 09:42:35  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-15 09:42:49  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-15 09:42:49  INFO      Morning format (themed-week-3→anti_trap): v2_tourist_trap_split [0% vs target 20%] (0/14 never featured)
+2026-06-15 09:42:49  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: festival_alert
+2026-06-15 09:42:49  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-06-15 09:42:49  INFO      Fingerprint dedup snapshot — 57 dests in 7d · 132 (dest,fmt) pairs in 30d · 131 media in 60d
+2026-06-15 09:42:49  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-15 09:42:49  INFO      Festival locked: Pandharpur Wari (4/13 active festivals never featured)
+2026-06-15 09:42:56  INFO      Shared best destination locked: Lolab Valley
+2026-06-15 09:42:56  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-15 09:42:56  INFO      [instagram/nakshiq] Generating v2_tourist_trap_split post...
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:42:56  INFO      [instagram/nakshiq] Caption ready (447 chars, dest=pangong-lake)
+2026-06-15 09:42:56  INFO      [instagram/nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-06-15 09:42:56  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pangong-lake.mp4?v=20260524
+2026-06-15 09:42:59  INFO          Brand-stamp applied: pangong-lake.mp4 (2,563,133 → 1,743,212 bytes)
+2026-06-15 09:42:59  INFO          Requesting upload URL for pangong-lake.mp4 (1,743,212 bytes, video/mp4)
+2026-06-15 09:42:59  INFO          Uploading to R2 (timeout=300s)...
+2026-06-15 09:43:01  INFO          R2 PUT OK. Confirming...
+2026-06-15 09:43:02  INFO          Media ready: G4X0p (1,743,212 bytes · pangong-lake.mp4)
+2026-06-15 09:43:02  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-15 09:43:55  INFO      [instagram/nakshiq] ✅ Published · Outstand=Dguwo · Platform=17873994543511804
+2026-06-15 09:43:55  INFO      [facebook/Nakshiq] Generating v2_tourist_trap_split post...
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-15 09:43:55  INFO      v2_tourist_trap_split: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-15 09:43:55  INFO      [facebook/Nakshiq] Caption ready (432 chars, dest=nubra-valley)
+2026-06-15 09:43:55  INFO      [facebook/Nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-06-15 09:43:55  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nubra-valley.mp4?v=20260524
+2026-06-15 09:43:58  INFO          Brand-stamp applied: nubra-valley.mp4 (6,874,272 → 3,028,202 bytes)
+2026-06-15 09:43:58  INFO          Requesting upload URL for nubra-valley.mp4 (3,028,202 bytes, video/mp4)
+2026-06-15 09:43:58  INFO          Uploading to R2 (timeout=300s)...
+2026-06-15 09:44:00  INFO          R2 PUT OK. Confirming...
+2026-06-15 09:44:01  INFO          Media ready: rLD34 (3,028,202 bytes · nubra-valley.mp4)
+2026-06-15 09:44:01  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-15 09:44:16  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xo2f8 · Platform=1306090461241086
+2026-06-15 09:44:16  INFO      State saved. Run complete.
+2026-06-15 09:44:16  INFO      ════════════════════════════════════════════════════════════

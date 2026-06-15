@@ -33,37 +33,14 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-06-14",
-    "m8EAd_yt_short": "2026-06-13",
     "xS5s8_yt_short_count": 2,
-    "GAh5p_reel_map": "2026-06-13",
-    "PdMu0_reel_map": "2026-06-13",
-    "m8EAd": "2026-06-14",
+    "m8EAd": "2026-06-15",
     "m8EAd_evening": "2026-06-14",
-    "PdMu0": "2026-06-14",
+    "PdMu0": "2026-06-15",
     "PdMu0_evening": "2026-06-14"
   },
-  "last_sync": "2026-06-14T16:02:59.805453+00:00",
+  "last_sync": "2026-06-15T09:42:31.476353+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "devprayag",
-      "date": "2026-05-31"
-    },
-    {
-      "destination_id": "joshimath",
-      "date": "2026-05-31"
-    },
-    {
-      "destination_id": "tirthan-valley",
-      "date": "2026-05-31"
-    },
-    {
-      "destination_id": "har-ki-doon",
-      "date": "2026-05-31"
-    },
-    {
-      "destination_id": "pithoragarh",
-      "date": "2026-05-31"
-    },
     {
       "destination_id": "yusmarg",
       "date": "2026-06-01"
@@ -347,11 +324,18 @@
     {
       "destination_id": "munsiyari",
       "date": "2026-06-14"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-06-15"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-06-15"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_score_card_pov",
       "v2_local_knows",
       "v2_weekend_escape_map",
       "v2_texture_macro",
@@ -371,10 +355,10 @@
       "v3_tl_poll_reel",
       "stays_pick",
       "v2_wildlife_moment",
-      "v2_pov_slow_morning"
+      "v2_pov_slow_morning",
+      "v2_tourist_trap_split"
     ],
     "PdMu0": [
-      "v2_score_card_pov",
       "v2_local_knows",
       "v2_weekend_escape_map",
       "v2_texture_macro",
@@ -394,7 +378,8 @@
       "v3_tl_poll_reel",
       "stays_pick",
       "v2_wildlife_moment",
-      "v2_pov_slow_morning"
+      "v2_pov_slow_morning",
+      "v2_tourist_trap_split"
     ]
   },
   "post_log": [
@@ -3019,6 +3004,28 @@
       "format": "v2_pov_slow_morning",
       "has_media": true,
       "media_id": "munsiyari.mp4"
+    },
+    {
+      "timestamp": "2026-06-15T09:43:55.598174+00:00",
+      "date": "2026-06-15",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Dguwo",
+      "destination": "pangong-lake",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "pangong-lake.mp4"
+    },
+    {
+      "timestamp": "2026-06-15T09:44:16.772847+00:00",
+      "date": "2026-06-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xo2f8",
+      "destination": "nubra-valley",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -3203,7 +3210,8 @@
         "2026-06-06",
         "2026-06-07",
         "2026-06-08",
-        "2026-06-10"
+        "2026-06-10",
+        "2026-06-15"
       ],
       "tungnath": [
         "2026-06-02"
@@ -3214,7 +3222,8 @@
         "2026-06-07",
         "2026-06-08",
         "2026-06-10",
-        "2026-06-11"
+        "2026-06-11",
+        "2026-06-15"
       ],
       "ukhrul": [
         "2026-06-03"
@@ -3359,7 +3368,8 @@
         "2026-06-07"
       ],
       "v2_tourist_trap_split": [
-        "2026-05-31"
+        "2026-05-31",
+        "2026-06-15"
       ],
       "score_card": [
         "2026-06-01"
@@ -3729,7 +3739,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sonamarg",
+    "shared_best": "lolab-valley",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {}
