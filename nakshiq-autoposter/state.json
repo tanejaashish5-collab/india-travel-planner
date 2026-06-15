@@ -38,9 +38,11 @@
     "m8EAd_evening": "2026-06-14",
     "PdMu0": "2026-06-15",
     "PdMu0_evening": "2026-06-14",
-    "m8EAd_yt_short": "2026-06-15"
+    "m8EAd_yt_short": "2026-06-15",
+    "m8EAd_tourist_map": "2026-06-15",
+    "PdMu0_tourist_map": "2026-06-15"
   },
-  "last_sync": "2026-06-15T09:42:31.476353+00:00",
+  "last_sync": "2026-06-15T16:15:10.157629+00:00",
   "posted_destinations": [
     {
       "destination_id": "yusmarg",
@@ -3071,6 +3073,24 @@
       "destination": "yamunotri",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_yamunotri_hi_2026-06-15.mp4"
+    },
+    {
+      "timestamp": "2026-06-15T16:15:41.161155+00:00",
+      "date": "2026-06-15",
+      "platform": "instagram",
+      "post_id": "iTo7B",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "UK_editorial_dark"
+    },
+    {
+      "timestamp": "2026-06-15T16:15:44.637298+00:00",
+      "date": "2026-06-15",
+      "platform": "facebook",
+      "post_id": "zkQcP",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "UK_editorial_dark"
     }
   ],
   "theme_usage": {
@@ -3346,7 +3366,8 @@
         "2026-05-22"
       ],
       "tourist_map": [
-        "2026-05-22"
+        "2026-05-22",
+        "2026-06-15"
       ],
       "v2_budget_receipt": [
         "2026-05-23"
@@ -3684,11 +3705,17 @@
     "tourist_map_states": {
       "TN": [
         "2026-05-22"
+      ],
+      "UK": [
+        "2026-06-15"
       ]
     },
     "tourist_map_combos": {
       "TN_cartographic_dark": [
         "2026-05-22"
+      ],
+      "UK_editorial_dark": [
+        "2026-06-15"
       ]
     },
     "reel_formats": {

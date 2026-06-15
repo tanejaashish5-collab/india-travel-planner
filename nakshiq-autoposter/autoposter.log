@@ -4206,3 +4206,36 @@ Date range: 2026-04-15 → 2026-06-14
 2026-06-15 13:38:55  INFO      YT Short posted: format=nakshiq_score, music=cinematic-724
 2026-06-15 13:38:55  INFO      State saved. YT Short run complete.
 2026-06-15 13:38:55  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 16:14:39  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 16:14:39  INFO      Nakshiq Autoposter · EVENING · 2026-06-15 · weekday=0
+2026-06-15 16:14:39  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 16:14:39  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-15 16:15:10  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-15 16:15:10  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-15 16:15:11  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-15 16:15:11  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-15 16:15:11  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-15 16:15:33  INFO      [evening] variety pick: tourist_map (25 CSV + 3 visual candidates)
+2026-06-15 16:15:33  INFO      Formats — IG: tourist_map  ·  FB: tourist_map  ·  Story: festival_alert  ·  Audience: backpackers
+2026-06-15 16:15:33  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 60
+2026-06-15 16:15:33  INFO      Delegating evening slot → tourist_map visual pipeline
+2026-06-15 16:15:33  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 16:15:33  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-06-15 · weekday=0
+2026-06-15 16:15:33  INFO      ════════════════════════════════════════════════════════════
+2026-06-15 16:15:33  INFO      Tourist Map target: Uttarakhand (UK) · editorial · dark (27/28 states never featured)
+2026-06-15 16:15:33  INFO      Map rendered: tourist_map_UK_dark_editorial.jpg (89 KB)
+2026-06-15 16:15:33  INFO          Requesting upload URL for tourist_map_UK_dark_editorial.jpg (91,567 bytes, image/jpeg)
+2026-06-15 16:15:34  INFO          Uploading to R2 (timeout=120s)...
+2026-06-15 16:15:35  INFO          R2 PUT OK. Confirming...
+2026-06-15 16:15:36  INFO          Media ready: SZ7hJ (91,567 bytes · tourist_map_UK_dark_editorial.jpg)
+2026-06-15 16:15:36  INFO      Map image uploaded: tourist_map_UK_dark_editorial.jpg
+2026-06-15 16:15:37  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-15 16:15:37  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-15 16:15:37  INFO      [youtube/@naksh-iq] Skipping tourist map (YouTube only accepts video/reels).
+2026-06-15 16:15:37  INFO      [instagram/nakshiq] Publishing tourist map for Uttarakhand...
+2026-06-15 16:15:41  INFO      [instagram/nakshiq] Tourist map posted successfully!
+2026-06-15 16:15:41  INFO      [facebook/Nakshiq] Publishing tourist map for Uttarakhand...
+2026-06-15 16:15:44  INFO      [facebook/Nakshiq] Tourist map posted successfully!
+2026-06-15 16:15:44  INFO      Theme tracker updated: UK / UK_editorial_dark
+2026-06-15 16:15:44  INFO      State saved. Tourist Map run complete.
+2026-06-15 16:15:44  INFO      ════════════════════════════════════════════════════════════
