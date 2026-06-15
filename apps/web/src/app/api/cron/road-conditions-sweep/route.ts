@@ -87,15 +87,23 @@ export async function GET(req: NextRequest) {
 
     const expiredMs = r.expires_at ? new Date(r.expires_at).getTime() : 0;
     const reportedMs = r.reported_at ? new Date(r.reported_at).getTime() : 0;
+    // Freshness is driven by the most recent of reported_at / last_reviewed_at.
+    // The email tells the editor "update last_reviewed_at and the warning
+    // clears" — but the staleness test used reported_at alone, so a re-verified
+    // row kept re-flagging forever (it never cleared without rewriting
+    // reported_at). Honour last_reviewed_at: a row re-checked within 14d is
+    // fresh even if first reported months ago.
+    const reviewedMs = r.last_reviewed_at ? new Date(r.last_reviewed_at).getTime() : 0;
+    const freshestMs = Math.max(reportedMs, reviewedMs);
 
     if (r.expires_at && expiredMs < nowMs) {
       expired.push(flat);
     }
-    // Non-open status that hasn't been touched in 14d
+    // Non-open status not re-verified in 14d.
     if (
       r.status !== "open" &&
       r.status !== "good" &&
-      reportedMs < nowMs - FOURTEEN_DAYS_MS
+      freshestMs < nowMs - FOURTEEN_DAYS_MS
     ) {
       stale.push(flat);
     }

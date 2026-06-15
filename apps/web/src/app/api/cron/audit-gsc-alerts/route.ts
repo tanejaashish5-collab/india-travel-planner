@@ -25,7 +25,17 @@ export const maxDuration = 60;
 const ALERT_TO = "taneja.ashish5@gmail.com";
 
 const ANALYSIS_WINDOW_DAYS = 14;
-const INDEXED_DROP_PCT = 5;
+// Indexed-pages drop, smoothed. The indexed counts are stratified-sample
+// ESTIMATES from scripts/gsc-inspect-sweep.mjs (round numbers that jitter
+// ±~8% sample-to-sample — e.g. 17200→16800→16000→17300 over 06-01..06-12).
+// The old single-reading 5% threshold sat BELOW that noise floor and fired
+// ~half the time: a lone 16000 sample produced the 2026-06-09..14 daily
+// "audit-gsc-alerts errored" storm even though the trend was flat/up. We now
+// compare a trailing N-reading average to the prior N and only fire on a
+// SUSTAINED ≥12% loss — a real ISR/indexing regression collapses the count
+// and holds it down; sampling noise averages out and bounces back next read.
+const INDEXED_DROP_PCT = 12;
+const INDEXED_SMOOTH_WINDOW = 5;
 const INDEXED_FROZEN_RUN_LIMIT = 3;
 const COHORT_CLICKS_DROP_PCT = 30;
 const COHORT_MIN_CLICKS = 20;
@@ -72,24 +82,28 @@ function evaluate(parsed: GscAudit[]): Finding[] {
   if (recent.length < 3) return findings;
 
   const latest = recent[recent.length - 1];
-  const baseline = recent.slice(0, Math.max(1, recent.length - 7));
 
-  // M2.a — indexed-pages drop
-  if (latest.indexed_pages !== null) {
-    const baselineValues = baseline
-      .map((a) => a.indexed_pages)
-      .filter((v): v is number => v !== null);
-    if (baselineValues.length >= 2) {
-      const avg = baselineValues.reduce((a, b) => a + b, 0) / baselineValues.length;
-      const pct = ((latest.indexed_pages - avg) / avg) * 100;
-      if (pct <= -INDEXED_DROP_PCT) {
-        findings.push({
-          rule: "indexed_pages_drop",
-          severity: "high",
-          detail: `Indexed pages dropped ${pct.toFixed(1)}% vs prior ${baselineValues.length}-day average (${avg.toFixed(0)} → ${latest.indexed_pages}). Same shape as the 2026-05-05 ISR regression.`,
-          data: { latest: latest.indexed_pages, baseline_avg: avg, pct_change: pct, audit_date: latest.date },
-        });
-      }
+  // M2.a — indexed-pages drop (smoothed, sustained). Average the last N
+  // readings against the prior N so a single noisy sample can't fire; only a
+  // genuine, held drop survives. See INDEXED_DROP_PCT comment above.
+  const series = recent
+    .map((a) => a.indexed_pages)
+    .filter((v): v is number => v !== null);
+  const W = INDEXED_SMOOTH_WINDOW;
+  if (series.length >= W * 2) {
+    const current = series.slice(-W);
+    const prior = series.slice(-W * 2, -W);
+    const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
+    const currentAvg = mean(current);
+    const priorAvg = mean(prior);
+    const pct = ((currentAvg - priorAvg) / priorAvg) * 100;
+    if (pct <= -INDEXED_DROP_PCT) {
+      findings.push({
+        rule: "indexed_pages_drop",
+        severity: "high",
+        detail: `Indexed pages dropped ${pct.toFixed(1)}% — trailing ${W}-read average ${currentAvg.toFixed(0)} vs prior ${W}-read average ${priorAvg.toFixed(0)} (sustained, not a single-sample dip). Same shape as the 2026-05-05 ISR regression.`,
+        data: { current_avg: currentAvg, prior_avg: priorAvg, pct_change: pct, audit_date: latest.date },
+      });
     }
   }
 

@@ -51,7 +51,12 @@ type Lint = {
 };
 
 async function fetchAdvisors(pat: string, type: "security" | "performance"): Promise<Lint[]> {
-  const url = `https://api.supabase.com/v1/projects/${PROJECT_REF}/advisors?type=${type}`;
+  // Supabase moved advisors from the `?type=` query form to a path segment
+  // (`/advisors/security` | `/advisors/performance`) — the old query form
+  // started 404'ing ~2026-06-14, producing the daily "audit-supabase-advisors
+  // errored" DEGRADED alert (advisors fetch failed: 404). Response shape is
+  // unchanged: { lints: [...] }.
+  const url = `https://api.supabase.com/v1/projects/${PROJECT_REF}/advisors/${type}`;
   const r = await fetch(url, { headers: { Authorization: `Bearer ${pat}` } });
   if (!r.ok) throw new Error(`advisors fetch ${type} failed: ${r.status}`);
   const body = await r.json();
