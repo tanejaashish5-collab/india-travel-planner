@@ -1,0 +1,38 @@
+{
+ "date": "2026-06-12",
+ "method": "5 small Supabase MCP aggregate/targeted reads (egress-safe)",
+ "emergency_sos": {
+  "rows": 525,
+  "dests_without_row": 0,
+  "rows_under_3_dialable": 0,
+  "min_dialable": 5,
+  "avg_dialable": 7.42,
+  "total_dialable_11col": 3896,
+  "rows_with_placeholder_X": 0,
+  "local_helpers_nonempty": 178,
+  "local_helpers_empty_array": 347,
+  "canonical_dialable_11col_set": "police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line — EXCLUDES local_police_station (text station-name field). Pinned 2026-06-12 after a first-pass query swapped embassy(241) for local_ps(211) and produced a phantom -30 delta (3866); recomputed with the canonical set = 3896 EXACT match to 2026-06-11/10 baseline.",
+  "per_column_nonempty": {"police":525,"ambulance":525,"fire":525,"women_helpline":525,"tourist_helpline":500,"road_accident":495,"rescue_contact":508,"local_police_station_text":211,"mountain_rescue":52,"mechanic_contact":0,"tow_service":0,"embassy_emergency_line":241},
+  "note": "EXACT match to baseline on every aggregate — no drift. Per-column breakdown recorded for the first time so future runs can diff columns, not just totals."
+ },
+ "people_who_help_shape_breakdown": {
+  "rows_not_null": 525,
+  "nonempty_array_renders": 84,
+  "empty_array": 348,
+  "legacy_object_renders": 93,
+  "null": 0,
+  "sum_check": "84+348+93=525 OK",
+  "rendered_coverage": 177,
+  "note": "EXACT match to 2026-06-11 post-fix baseline (db208da2 + 73e5c417). No drift."
+ },
+ "deep_dive_local_helpers": {
+  "blocks": 405,
+  "entries": 589,
+  "note": "Unrendered backing store; exact match to post-purge baseline."
+ },
+ "prior_bug_3row_recheck": {
+  "uttarkashi": {"police":"100","ambulance":"108","fire":"101","women":"1091 (or 181)","tourist":"1800-111-363 (toll-free)","rescue":"DDMA Uttarkashi Control Room: 01374-222722 / 1077","mountain":"DDMA Uttarkashi: 01374-222126 / 7310913129","verified_by":"constants-reverify-2026-06-09","placeholder":false},
+  "khonoma": {"police":"100","ambulance":"108","fire":"101","women":"1091","tourist":"1363","rescue":"Kohima Police Control Room: 7005986046 · NSDMA: 1070","verified_by":"deepdive-recorrect-2026-06-09","text_typed_phone":false},
+  "khangchendzonga-np": {"police":"100","ambulance":"108","fire":"101","women":"1091","tourist":"1800-111-363","rescue":"Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634","verified_by":"emsos-th-audit-2026-06-10","text_typed_phone":false}
+ }
+}

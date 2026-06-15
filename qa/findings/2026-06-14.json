@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-14",
+    "date": "2026-06-14",
+    "started_utc": "2026-06-14T02:03:00Z",
+    "completed_utc": "2026-06-14T02:55:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-06-14/probe.py, sequential honest timing, SSR HTML snapshots saved); 2 small Supabase MCP aggregate reads for SOS + people_who_help ground truth + 1 three-row prior-bug recheck; Section K via Claude in Chrome MCP (explore Leaflet map toggle + 2 atlas dest pages + 8 controlled console observations across en/hi)",
+    "mode": "Daily regression — A through K matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 52,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (9 probes incl itinerary garbage slug)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1: cuttack, badrinath, minicoy, kutch, lonavala, tso-moriri, fatehpur-sikri, marari, pulicat-lake, haflong)",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (13 URLs: landing + 10 dests + 1 month sub-route + 1 itinerary URL)",
+    "E — SOS completeness: SSR emergencySos blob parse (10 dests) + DB ground-truth aggregates (canonical dialable-11 column set) + 3-row prior-bug recheck + people_who_help shape check",
+    "F — API smoke (13 probes incl oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks)",
+    "I — Core routes HTTP matrix (23 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: explore grid->map toggle (Leaflet container/tiles/markers verified) + badrinath (atlas) + lonavala/hi (atlas) dest pages, 8 controlled console observations, atlas static-coordinate readout captured"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass (cost-aware rule). The /[locale]/itinerary/[slug] template (792 URLs, live since 06-11) remains unmeasured by the 2026-05-04 deep baseline AND carries two confirmed metadata defects — the deep pass is overdue."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Curl TTFB healthy (23 core routes median 185 ms; dest cold median 938 ms is cold-ISR inflated)."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en + /hi bad slugs all hard 404 (9 bytes). Bare-path /destination/nonexistent-slug-qa/june -> 301 -> final 404. 9/9 correct, 0 misses, incl. /en/itinerary/this-does-not-exist-xyz -> 404 (styled 66KB 404 page, correct status code)."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 -> all hard 404 (9 bytes)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed->400 'Malformed JSON body', empty->400, wrong-shape->400 'Invalid question', 200KB->413 'Payload too large', valid->200 (3539b real Leh answer). 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400, empty->400, {}->400 'Missing required fields'. 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with | NakshIQ | NakshIQ title stutter",
+      "prior_status": "REGRESSION 2026-06-12",
+      "today_status": "REGRESSION",
+      "evidence": "STILL OPEN day 3: the /[locale]/itinerary/[slug] template (792 URLs, shipped 06-11) still ships the literal stutter: section-D-seo.csv itinerary/agra title = 'Agra itinerary — 1, 3 & 5 days (verified) | NakshIQ | NakshIQ' (stutter=True). All 12 other sampled URLs (landing, 10 dests, month sub-route) remain clean — regression scoped to the new template. Root cause unchanged (page.tsx hard-codes ' | NakshIQ' while layout applies '%s | NakshIQ'). See NEW-2026-06-12-001 — not yet fixed."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image (all 792 URLs)",
+      "prior_status": "STILL OPEN 2026-06-12 (medium)",
+      "today_status": "STILL OPEN",
+      "evidence": "section-D-seo.csv itinerary/agra row og_image=False; all 12 other sampled URLs carry og:image. Not yet fixed."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-12",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v51, md5 d0cc522e363cd7fc6521684ac6679f9a — byte-identical to the most recent prior run (06-12, then day 10; 06-13 findings absent so exact consecutive count not asserted). manifest 3 icons + 5 shortcuts; /offline -> 200."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB 3-row recheck: uttarkashi police 100 / ambulance 108 / fire 101 / women 1091 (or 181) / tourist 1800-111-363 / DDMA 01374-222722 / 1077; verified_by=constants-reverify-2026-06-09. Site-wide placeholder regex (X{3,}) = 0 rows (DB aggregate)."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: khonoma police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1363 / Kohima PCR 7005986046 · NSDMA 1070; verified_by=deepdive-recorrect-2026-06-09 unchanged."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1800-111-363 / Geyzing PS 8145887528 + District Hospital Gyalshing 03595-250634; verified_by=emsos-th-audit-2026-06-10 unchanged."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "Harness regex covers both casings; 13/13 URLs show en + hi + x-default (incl. the new itinerary URL)."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED 2026-06-12",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB people_who_help nonempty arrays = 84 (exact match to post-fix baseline). Fix holds. (No per-page live render check today; DB shape stable.)"
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL 2026-06-12",
+      "today_status": "PARTIAL",
+      "evidence": "Safety baseline GREEN: 525/525 emergency_sos rows, 0 without row, 0 under 3 dialable (min 5, avg 7.40, total 3883), 0 placeholder-X. emergency_sos.local_helpers nonempty = 178/525 — exact match to baseline. Enrichment opportunity (178 -> up to 405 from deep_dive) remains open. Note: total dialable 3883 vs 3896 on 06-12 (-13, avg 7.42->7.40) — floor intact (min 5, 0 under 3); attributable to ongoing honest-scarcity corrections, not a safety regression."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-06-12",
+      "today_status": "PARTIAL",
+      "evidence": "Two-template state persists. Today probed 2 atlas dest pages (badrinath EN, lonavala HI) — each renders CinematicStateMap atlas (4x svg viewBox 0 0 1000 1100 + india-outline.svg ref, leaflet=0 by design, correct per SKILL map-type note). Explore renders live Leaflet (1 container / 36 tiles / 511 markers / window.L). A Leaflet-template dest page (e.g. betla) was NOT probed today — tracking migration only, no defect."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED 2026-06-12",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Explore map: 511 overlay-pane svg paths matching the '511 markers' label; circleMarkers render in overlay pane by design; marker-pane children = 0 by design."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL 2026-06-12",
+      "today_status": "PARTIAL",
+      "evidence": "Explore Leaflet confirmed healthy (1 container / 36 tiles / 511 overlay paths / window.L). No Leaflet-template dest page probed today. 'Markers missing' half remains withdrawn."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED 2026-06-12 (low)",
+      "today_status": "REPRODUCED",
+      "evidence": "lonavala/hi atlas runtime readout '23.5N · 80.5E' (real Lonavala ~18.75N 73.4E) — fifth consecutive sighting. Cosmetic/data-credibility issue on the decorative atlas only; one template variable."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "NOT_REPRODUCED 2026-06-12 (0/8, second clean day)",
+      "today_status": "FIXED",
+      "evidence": "0 of 8 controlled observations fired (badrinath nav, badrinath F5, explore+map-toggle, /en nav, /en F5, /hi nav, /hi F5, /hi/lonavala nav+F5) — THIRD clean observed day (06-11, 06-12, 06-14). Per the 06-11 rule (one more clean day -> FIXED), closing. CAVEAT: 06-13 has no persisted findings file, so the streak has a one-day observation gap (not a fired-error gap)."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "FIXED 2026-06-12 (permanent closure, code + live confirmed)",
+      "today_status": "STILL CLOSED",
+      "evidence": "Permanently closed 06-12 (GuidedTour mounted nowhere in apps/web/src). Not re-tested today; reopen only if GuidedTour is re-mounted."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-12",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-12",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-12",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run in daily pass; curl TTFB healthy but is not a LH-score substitute."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-12",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's sample: cuttack, badrinath, minicoy, kutch, lonavala, tso-moriri, fatehpur-sikri, marari, pulicat-lake, haflong."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "INFO-2026-06-14-001",
+      "severity": "info",
+      "title": "Itinerary metadata defects (title stutter + missing og:image) remain live 3 days after first report — still one-line fixes each",
+      "detail": "Both NEW-2026-06-12-001 (literal '| NakshIQ | NakshIQ' on all 792 itinerary URLs) and NEW-2026-06-12-002 (no og:image on itinerary URLs) are re-confirmed live today on /en/itinerary/agra and remain unfixed. These are the only two real open SEO/metadata defects on the site. Every day they stand, 792 brand-new pages accumulate stuttered-brand SERP snippets and preview-less social shares during their first-impressions window.",
+      "evidence": "section-D-seo.csv itinerary/agra row: title_stutter=True, og_image=False (vs 12/12 clean on all other sampled templates).",
+      "recommendation": "Ship the two one-line fixes from NEW-2026-06-12-001/-002: remove the manual ' | NakshIQ' suffix in the itinerary generateMetadata title, and add an images entry to its openGraph block (reuse the destination hero). Re-probe is already in the daily Section D matrix."
+    },
+    {
+      "id": "INFO-2026-06-14-002",
+      "severity": "info",
+      "title": "minicoy SOS ambulance field is honest-scarcity 'Not available' (not a malformed phone) — by design for a remote Lakshadweep island",
+      "detail": "Section-E SSR parse flagged minicoy 'ambulance' and 'local_police_station' as no-digit fields. Inspection of the SSR blob shows ambulance='Not available' (honest scarcity — Minicoy has Government Hospital Minicoy but no published ambulance dispatch line) and local_police_station='Minicoy Police Station' (a station NAME, text-by-design like all local_police_station values). minicoy still publishes 6 dialable structured fields (police 100, fire 101, women 1091, tourist 04896-262258, road 1073, rescue_contact Deputy Collector 04892-222333 / 7042671197) — above the 3-field safety floor. Not a defect; consistent with honest-scarcity-over-fabrication. Other flagged local_police_station fields (badrinath, tso-moriri, fatehpur-sikri, marari, haflong) are all station names, text-by-design.",
+      "evidence": "qa/findings/2026-06-14/html/en_minicoy.html emergencySos blob; section-E-sos.csv malformed/text_no_digit columns.",
+      "recommendation": "No action. Harness correctly counts these in structured-field totals but excludes them from dialable-phone counts. Optionally enrich minicoy ambulance with the Government Hospital Minicoy line if an official number can be verified."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 23,
+    "core_routes_2xx": 23,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 128, "median": 185, "p90": 1556, "max": 2455 },
+    "core_routes_TTFB_note": "23 real routes all 200 first-hit. The 24th probe (/en/search) is the intentional phantom-route check — correctly 404s and is excluded from the 2xx tally.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 572, "median": 938, "max": 3494 },
+    "destinations_TTFB_note": "Cold-ISR first hits on a low-traffic random sample (cuttack 3490 / tso-moriri 3494 max); typical 700-1000 ms warm.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 13,
+    "seo_title_stutter": 1,
+    "seo_title_stutter_note": "The 1 stutter is the itinerary template (class-wide, all 792 URLs) — DEEP-Phase2-D1 REGRESSION / NEW-2026-06-12-001 still open day 3. The 12 non-itinerary URLs are clean.",
+    "seo_canonical_present": 13,
+    "seo_hreflang_en_present": 13,
+    "seo_hreflang_hi_present": 13,
+    "seo_hreflang_xdefault_present": 13,
+    "seo_og_image_present": 12,
+    "seo_og_image_note": "The 1 miss is the itinerary template (class-wide) — NEW-2026-06-12-002 still open.",
+    "soft_404_regression_passes": 9,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 82,
+    "sos_min_structured_fields_per_dest": 7,
+    "sos_phones_total_across_10_dests": 74,
+    "sos_phones_invalid_format": 0,
+    "sos_universal_112_present": 10,
+    "sos_sample_text_name_fields_by_design": 6,
+    "sos_sample_text_name_note": "5 local_police_station fields carry station NAMES (badrinath, tso-moriri, fatehpur-sikri, marari, haflong) + minicoy local_police_station name; minicoy ambulance = 'Not available' (honest scarcity). All counted in structured-field totals, excluded from the 74 dialable-phone count. 0 malformed phones, 0 placeholders. See INFO-2026-06-14-002.",
+    "sos_emergency_sos_rows_db": 525,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.40,
+    "sos_db_total_dialable_entries_11col": 3883,
+    "sos_db_dialable_11col_note": "Canonical 11-column set (police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line; EXCLUDES local_police_station). Total 3883 vs 3896 on 06-12 (-13); min 5, 0 under 3 — floor intact.",
+    "sos_db_rows_with_placeholder_X": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — exact match to baseline.",
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_baseline_note": "84 = confidence_cards.people_who_help nonempty arrays — exact match to post-fix baseline.",
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "api_404_expected_returned": 2,
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_note": "Unchanged vs most recent prior run (06-12); 06-13 findings absent so exact consecutive-day count not asserted.",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 26884,
+    "sitemap_total_urls_delta_note": "+2 vs 06-12 (26882). Minor content growth, not a defect.",
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_cost_urls_en": 525,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 36,
+    "map_explore_overlay_marker_paths": 511,
+    "map_explore_note": "Map toggle activated (bg-primary confirmed) and Leaflet verified: 1 container, 36 tiles, 511 score-colored overlay markers, window.L present, marker-pane empty (circleMarkers in overlay by design).",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_with_atlas_svg": 2,
+    "map_dest_atlas_note": "badrinath EN + lonavala HI each render 4x atlas svg viewBox 0 0 1000 1100 + india-outline.svg ref, leaflet=0 by design (correct).",
+    "map_widget_destination_pages_probed_interactive": 3,
+    "map_widget_destination_pages_with_leaflet": 1,
+    "map_widget_note": "Of 3 map surfaces probed, 1 uses Leaflet (explore — healthy) and 2 use the decorative atlas by design (badrinath, lonavala). Dest pages carry NO Leaflet by design per SKILL map-type note; that is correct, not a miss.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 8,
+    "console_react_418_fired_loads": "0 of 8 controlled observations (badrinath nav, badrinath F5, explore+toggle, /en nav, /en F5, /hi nav, /hi F5, /hi/lonavala nav+F5) — THIRD clean observed day; NEW-2026-06-07-001 labeled FIXED (one-day observation gap on 06-13, which has no persisted findings)."
+  },
+  "deliverables": [
+    "qa/findings/2026-06-14.json",
+    "qa/findings/2026-06-14/ (probe.py + section CSVs A-K + html/ SSR snapshots + sample-slugs.json)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "React #418 'FIXED' rests on 0/8 today plus 0/8 on 06-11 and 06-12 — three clean observed days, but 06-13 produced no persisted findings file so there is a one-day observation gap (not a fired-error gap). Reopen if it returns.",
+    "Itinerary title-stutter / og:image are re-confirmed on /en/itinerary/agra only this run; the class-wide claim rests on the shared generateMetadata code path all 792 URLs execute (root-caused 06-12), not a per-URL sweep.",
+    "Destination TTFB medians are sequential single-shot curl from the Cowork sandbox; cold-ISR inflation is the signal (cuttack/tso-moriri ~3.5s cold).",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe per methodology.",
+    "3 small Supabase reads total (2 aggregates + 1 three-row lookup, a few KB) over MCP — egress-safe per CLAUDE.md.",
+    "SOS total-dialable -13 vs 06-12 (3896->3883) is within ongoing honest-scarcity correction noise; the safety floor (min 5, 0 under 3, 525/525 rows, 0 placeholders) is exact-GREEN.",
+    "people_who_help / NEW-2026-06-10-001 confirmed via DB shape (84 nonempty arrays) only — no per-page live render check today (was live-verified holding 06-12).",
+    "Section K probed 2 atlas dest pages + the explore Leaflet map; a Leaflet-template dest page (betla) was not probed today — the two-template migration (NEW-2026-05-17-001/-06-06-002) stays PARTIAL by tracking, no defect observed.",
+    "Axe-core and Lighthouse not run today (cost-aware); the itinerary template (792 URLs) remains two metadata defects deep and unmeasured for a11y/perf — the deep pass is overdue."
+  ],
+  "business_summary": {
+    "headline": "Quietest day in a while: zero new breakage, and the one ongoing real issue is the same self-inflicted polish debt from Tuesday. The 792 itinerary pages still say '| NakshIQ | NakshIQ' in every browser tab and Google result and still share with no preview image — both remain one-line fixes, now live for a third day. Everything else is green: all 23 core routes and 10 sampled destinations serve 200 in both languages, the API layer returned zero server errors, the emergency-SOS safety floor is exactly baseline (525/525 destinations, min 5 dialable numbers each, zero placeholders), and the React hydration warning that haunted early June stayed silent across all 8 checks — a third clean day, so it's now declared dead.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "23/23 real core routes 200; 10/10 sampled destinations 200 in both languages. Cold first hits up to 3.5s, warm to ~700-1000 ms — cache behavior, not a serving problem" },
+      { "area": "API health", "status": "GREEN", "why": "0 x 5xx across 13 probes; malformed/empty/wrong bodies -> 400; 200 KB attack-sized body -> 413; valid chat + weather + search-index return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages serve lang=hi with Devanagari titles" },
+      { "area": "SEO metadata", "status": "YELLOW", "why": "The itinerary class (792 URLs) still ships a literal '| NakshIQ | NakshIQ' title and no share image — both one-line fixes, now open 3 days. Everything else: 12/12 clean titles, 13/13 canonical + full hreflang, soft-404 guards 9/9" },
+      { "area": "Emergency SOS — safety baseline", "status": "GREEN", "why": "525/525 destinations, min 5 dialable numbers (avg 7.4), 0 placeholders; the 3 historically-flagged dests re-verified in the database. (Total dialable dipped 13 from honest-scarcity corrections — floor unchanged)" },
+      { "area": "'People Who Can Help' card", "status": "GREEN", "why": "Database shape stable at 84 populated cards — Tuesday's fix holding" },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 511/511 score-colored markers after a verified toggle. Destination pages render the decorative atlas cleanly (Leaflet-on-dest-pages is intentionally retired)" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical to the last run (v51); manifest 3 icons + 5 shortcuts; offline page 200" },
+      { "area": "Console health", "status": "GREEN", "why": "React #418 fired on 0 of 8 observations — third clean day. The June-7 ghost is declared dead" }
+    ],
+    "whats_changed": [
+      "[still open, day 3] Itinerary pages (all 792, both languages) still double the brand suffix in their titles and still have no social-share image. Root cause was found Tuesday; both are one-line fixes that haven't shipped yet.",
+      "[closed] React #418 hydration warning: 0/8 today after 0/8 on Tuesday and Monday — third clean day, now closed without a debug session. (One caveat: Friday's run left no report on file, so there's a one-day gap in the watch — reopen if it ever returns.)",
+      "[reproduced] Static atlas coordinates (23.5N · 80.5E) on decorative maps — fifth sighting (lonavala this time). Still cosmetic, still a one-variable fix.",
+      "[verified] A flagged 'minicoy has no ambulance number' is actually honest data — Minicoy is a remote Lakshadweep island with no published ambulance line, so the site correctly says 'Not available' rather than inventing one. Six other dialable numbers are present."
+    ],
+    "risks": [
+      "The itinerary metadata bugs are now live for a third day during the page class's first-impression window with Google — cheap to fix, compounding to ignore.",
+      "The itinerary template remains unmeasured for accessibility and performance (deep pass overdue since May 4); it has already shown it can ship metadata defects.",
+      "Accessibility + mobile Lighthouse carries (color contrast, tab roles, perf scores) remain open and untested in daily passes.",
+      "Atlas static-coordinates: cosmetic but prints wrong geography on every atlas-template page — a credibility leak on a brand built on data accuracy."
+    ],
+    "bottom_line": [
+      "Ship the two itinerary metadata one-liners (title suffix + og:image) — located and verified since Tuesday, re-probe is already in the daily matrix.",
+      "React #418 is closed — no further action unless it resurfaces.",
+      "Schedule the overdue deep pass (axe + Lighthouse) with the itinerary template explicitly in scope.",
+      "Fix the static atlas coordinates when convenient — one variable, fifth sighting."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi: cuttack, badrinath, minicoy, kutch, lonavala, tso-moriri, fatehpur-sikri, marari, pulicat-lake, haflong",
+      "23 core routes + 13 API probes + 9 soft-404 guards + 5 locale redirects probed",
+      "Explore Leaflet map + 2 atlas destination pages exercised in a real Chrome session; 8 controlled console observations across en/hi",
+      "525 destination SOS rows ground-truthed in the database (canonical-formula aggregates + 3-row prior-bug recheck + people_who_help shape check)",
+      "26,884-URL sitemap walked chunk by chunk (+2 vs yesterday)"
+    ]
+  }
+}

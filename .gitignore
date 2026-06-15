@@ -127,3 +127,7 @@ supabase/seed.db
 data/festivals/_archive-broll/
 # Local PDF/image screen-captures used while debugging audits — not source
 data/audits/screencaptures/
+
+# Python bytecode from qa probe scripts
+qa/findings/**/__pycache__/
+*.pyc

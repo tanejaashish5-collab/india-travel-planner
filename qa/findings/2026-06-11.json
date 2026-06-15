@@ -1,0 +1,371 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-11",
+    "date": "2026-06-11",
+    "started_utc": "2026-06-11T02:08:04Z",
+    "completed_utc": "2026-06-11T02:45:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Fable 5 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-06-11/probe.py + run_part.py, sequential honest timing + warm re-probe pass); 5 small Supabase MCP aggregate/targeted reads for SOS + people_who_help ground truth; Section K via Claude in Chrome MCP (explore map toggle + 5 dest pages + 8 controlled console observations + live people_who_help render verification on zuluk/manali + /hi welcome-tour attempt after storage clear)",
+    "mode": "Daily regression — A through K matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 37,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (8 probes; bare-path 301 followed with -L to final 404)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-06-11) + warm re-probe pass",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (12 URLs: landing + 10 dests + 1 month sub-route)",
+    "E — SOS completeness: SSR emergencySos blob parse (10 dests) + DB ground-truth aggregates + 3-row prior-bug recheck + people_who_help shape re-forensics (delta vs yesterday explained by commits)",
+    "F — API smoke (13 probes incl oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks; new /itinerary URL-class delta investigated + spot-verified)",
+    "I — Core routes HTTP matrix (21 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: explore grid→map toggle, zuluk+manali (atlas) + betla (Leaflet) + jaipur dest pages, 8 controlled console observations, live people_who_help render verification (zuluk legacy-object NOW RENDERS — db208da2 verified), /hi welcome-tour modal attempt post storage-clear"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass (cost-aware rule). NOTE: a NEW page template shipped overnight (/[locale]/itinerary/[slug], 396 slugs x 2 locales) — recommend including it in the next deep axe+Lighthouse pass."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Curl TTFB healthy (21 core routes median 1157 ms; dest cold median 2681 ms is cold-ISR inflated — warm re-probes median 152 ms)."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en + /hi bad slugs all hard 404 (9 bytes). Bare-path /destination/nonexistent-slug-qa/june → 301 → /en/... → final 404 (verified with -L, redirects=1). 8/8 correct, 0 misses. New itinerary route class also guards: /en/itinerary/this-does-not-exist-xyz → 404."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 → all hard 404 (9 bytes)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed→400 'Malformed JSON body', empty→400, wrong-shape→400 'Invalid question', 200KB→413 'Payload too large', valid question→200 (3828b real Leh answer). 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed→400, empty→400, {}→400 'Missing required fields'. 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with | NakshIQ | NakshIQ title stutter",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D-seo.csv: 0/12 URLs with stutter."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-10",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v51, md5 d0cc522e363cd7fc6521684ac6679f9a byte-identical 9th consecutive day; manifest 3 icons + 5 shortcuts; /offline 301→/en/offline→200 (followed with -L)."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB 3-row recheck: uttarkashi police 100 / ambulance 108 / fire 101 / women 1091 (or 181) / tourist 1800-111-363 / DDMA 01374-222722 / 1077 / mtn 01374-222126 / 7310913129; verified=true (constants-reverify-2026-06-09). Site-wide placeholder regex (X{3,}) on 11 dialable columns = 0 rows."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: khonoma police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1363 / Kohima PCR 7005986046 · NSDMA 1070; verified=true (deepdive-recorrect-2026-06-09). No new write since."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field (Operator-specific)",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1800-111-363 / Geyzing PS 8145887528 + District Hospital Gyalshing 03595-250634; verified=true (emsos-th-audit-2026-06-10, unchanged since yesterday's INFO-2026-06-10-002)."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-10",
+      "today_status": "STILL CLOSED",
+      "evidence": "Harness regex covers both casings; 12/12 URLs show en + hi + x-default."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' renders on only 79/525; 93 dests hold real curated content in legacy OBJECT shape the component silently hides",
+      "prior_status": "NEW 2026-06-10 (medium)",
+      "today_status": "FIXED",
+      "evidence": "Same-day fix shipped and verified: db208da2 'fix(web): render legacy object-shape people_who_help on 93 dests' (confidence-card.tsx now Array.isArray-guards + renders object facets via orderedHelperFacts/humanizeHelperKey) + 73e5c417 'data(cards): deterministic confidence_cards restructure for 34 dests'. LIVE CONFIRMED on zuluk (yesterday's failing dest): '🤝 People Who Can Help — Key contact: Tour agent. East Sikkim permit office Gangtok | Tourist police: None — army checkpoints | ATM: None — carry cash from Gangtok | Medical shops … | Guides: Mandatory', visible rect 720x290, no hidden ancestor. manali array-shape still renders. DB shape now: 84 nonempty arrays + 93 objects (both render) + 348 empty (honest scarcity) = 525 not-null rows; rendered coverage 177/525. Delta vs yesterday (+34 not-null: 491→525; +5 arrays; +29 empty) fully explained by the 73e5c417 restructure — no unexplained drift."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL 2026-06-10",
+      "today_status": "PARTIAL",
+      "evidence": "Safety baseline GREEN and EXACT-stable: 525/525 emergency_sos rows, 0 dests without row, 0 under 3 dialable (min 5, avg 7.42, total 3896), 0 placeholder-X. emergency_sos.local_helpers nonempty = 178/525 — exact match to post-purge baseline 3rd consecutive day. deep_dive.local_helpers 405 blocks / 589 entries — exact match (unrendered reference). The enrichment OPPORTUNITY (178 → up to 405 from deep_dive) remains open."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-06-10",
+      "today_status": "PARTIAL",
+      "evidence": "Two-template state persists: betla renders live Leaflet (1 container, 28 tiles, 4 overlay-pane paths, window.L); zuluk + manali render CinematicStateMap atlas (4× viewBox 0 0 1000 1100 + india-outline), leaflet=0 by design. All render structurally fine; tracking migration only."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED 2026-06-10",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Explore map: 511 overlay-pane svg paths matching '511 markers · colored by score' label; circleMarkers render in overlay pane by design. betla shows 4 overlay-pane paths."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL 2026-06-10",
+      "today_status": "PARTIAL",
+      "evidence": "betla confirmed Leaflet today (1 container / 28 tiles / 4 overlay paths). 'Markers missing' half remains withdrawn."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED 2026-06-10 (low)",
+      "today_status": "REPRODUCED",
+      "evidence": "zuluk runtime readout '23.5N · 80.5E' (real ~27.4N 88.8E) — THIRD dest confirmed — AND manali again '23.5N · 80.5E' (real 32.2N). Cosmetic/data-credibility issue on the decorative atlas only; one template variable."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces (/en, /en/explore)",
+      "prior_status": "REPRODUCED 2026-06-10 (2/8 loads, both /en)",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "0 of 8 controlled observations fired today (/en navigate + /en F5 reload + explore + zuluk + manali + betla + jaipur + /hi) — first fully-clean day since 2026-06-07. Hydration-adjacent fixes deployed overnight (c628e441 null-tolerant confidence card, b0755518 explore ISR guard, db208da2 pwh render); new deploy id dpl_GerGttffkqzL765QxczDNxbgXbzh visible on 404 pages. Intermittency cuts both ways — needs ≥2 more consecutive clean days before labeling FIXED."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN 2026-06-10 (not investigated)",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Actively exercised today (first time since 05-04): cleared localStorage+sessionStorage, fresh /hi navigation — no [role=dialog]/tour/welcome/onboard element appeared. Modal is either removed or cookie-gated (cookies were NOT cleared), so the hard-coded-English content could not be exercised. Two nav labels remain English by brand design (SKIP LIST, THE WINDOW). If the modal is confirmed removed in code, close this permanently."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-10",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-10",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-10",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run in daily pass; curl TTFB healthy but is not a LH-score substitute."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-10",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's seed-random sample: kasol, zuluk, warangal, point-calimere, manali, patnitop, mahabaleshwar, srisailam, lachung, kanha."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "INFO-2026-06-11-001",
+      "severity": "info",
+      "title": "New sitemap URL class shipped overnight: /[locale]/itinerary/[slug] — 396 slugs × 2 locales (+792 URLs, sitemap 26,082 → 26,882); spot-verified live and guarded",
+      "detail": "Commit 4c8d93c3 'feat(web): cross-family internal links + itinerary sitemap/hub wiring (audit #9)' added itinerary pages to sitemap chunk 1 (also +8 URLs in chunk 4). Spot-checks: /en/itinerary/{achabal,adilabad,agartala} all 200 with real content (113-120KB), /hi/itinerary/agra 200 (154KB), /en/itinerary/this-does-not-exist-xyz → hard 404. Dest/month/cost counts unchanged (525/6300/525-en). This is a NEW page template not yet covered by the 2026-05-04 axe/Lighthouse deep baseline.",
+      "evidence": "section-H-sitemap.csv; /tmp chunk1 URL-class breakdown (6825 dest + 525 cost + 396 itinerary + 20 safari + 8 pilgrimage per locale); curl spot-checks in run log.",
+      "recommendation": "Include /en/itinerary/[slug] + /hi/itinerary/[slug] in the next deep axe+Lighthouse pass and consider adding 1-2 itinerary URLs to the daily Section-I core-routes matrix. Per CLAUDE.md sibling rule, confirm new-page-class SEO (canonical/hreflang) in tomorrow's Section D sample."
+    },
+    {
+      "id": "INFO-2026-06-11-002",
+      "severity": "info",
+      "title": "people_who_help shape counts moved 491→525 not-null (+5 arrays, +29 empty) — fully explained by commit 73e5c417 restructure; rendered coverage now 177/525 (84 arrays + 93 objects) after db208da2",
+      "detail": "Same-field comparison with yesterday's shape-aware baseline shows: not-null rows 491→525, nonempty arrays 79→84, empty arrays 319→348, legacy objects 93→93 (sum check 84+348+93=525 OK). Both deltas trace to the overnight commits (73e5c417 data restructure for 34 dests; db208da2 component fallback rendering objects). deep_dive.local_helpers untouched (405/589 exact). No unexplained drift; baseline updated to today's counts.",
+      "evidence": "section-E-db.json people_who_help_shape_breakdown + git log.",
+      "recommendation": "Track rendered coverage as 177/525 going forward (arrays + objects both render). The 348 empty arrays are honest scarcity. Optional follow-up: migrate the 93 objects to HelperContact[] eventually for type cleanliness, but there is no longer a user-facing gap."
+    },
+    {
+      "id": "INFO-2026-06-11-003",
+      "severity": "info",
+      "title": "Harness notes: explore Map ref-click registered but did not switch the view (coordinate click did); body.innerText false-negatives below-fold sections — use DOM queries for render checks",
+      "detail": "(1) Clicking the Map toggle via element ref returned success but the view stayed on Grid (0 Leaflet containers); per yesterday's rule the 0-count was screenshot-verified before recording, and a coordinate click at (204,400) switched the view correctly (1 container / 36 tiles / 511 markers). (2) On zuluk, document.body.innerText did NOT contain 'People Who Can Help' even though the section is rendered, visible (rect 720×290), and has no hidden ancestor — likely content-visibility/lazy-paint behavior. A querySelectorAll text scan found it immediately. Yesterday's 'zuluk renders NOTHING' live check used innerText; the conclusion was still correct yesterday (the component gate genuinely hid objects pre-fix, confirmed by SSR HTML lacking the section), but innerText alone is an unreliable probe for below-fold sections going forward.",
+      "evidence": "section-K-map.csv map-explore + pwh-zuluk rows.",
+      "recommendation": "Update SKILL.md Section-K notes: (a) after toggling explore to Map view, verify the toggle state visually before recording counts; (b) verify rendered-content checks with DOM element queries (querySelector + getBoundingClientRect + hidden-ancestor walk), never innerText alone."
+    },
+    {
+      "id": "INFO-2026-06-11-004",
+      "severity": "info",
+      "title": "Metric-hygiene note: yesterday's findings JSON recorded sitemap_total_cost_urls=1050 while its own section-H CSV TOTAL row says cost=525 (the /en-only regex count both days)",
+      "detail": "The harness regex counts /en/cost/[slug] only (525). The 1050 in yesterday's headline appears to be a transcription that doubled for both locales. Today's headline records cost_urls_en=525 with the locale scope explicit. No site-side change — chunk-1 cost URLs are byte-stable.",
+      "evidence": "qa/findings/2026-06-10/section-H-sitemap.csv TOTAL row vs 2026-06-10.json headline_metrics.",
+      "recommendation": "Keep locale scope explicit in metric names for per-class sitemap counts."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 21,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 143, "median": 1157, "p90": 1963, "max": 2829 },
+    "core_routes_TTFB_note": "21 real routes all 200 first-hit. The 22nd probe (/en/search) is the intentional phantom-route check — correctly 404s and is excluded from the 2xx tally.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 802, "median": 2681, "max": 4163 },
+    "destinations_TTFB_note": "Cold-ISR first hits on a low-traffic random sample (srisailam 4.2s max); warm re-probes confirm cold-ISR, not a serving regression. No outlier above 4.2s today (yesterday saw 11.6s).",
+    "destinations_warm_TTFB_ms": { "min": 136, "median": 152, "max": 962 },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 81,
+    "sos_min_structured_fields_per_dest": 6,
+    "sos_phones_total_across_10_dests": 79,
+    "sos_phones_invalid_format": 0,
+    "sos_universal_112_present": 10,
+    "sos_sample_text_name_fields_by_design": 2,
+    "sos_sample_text_name_note": "kasol + manali local_police_station carry station NAMES ('PS Bhuntar (covers Kasol/Parvati Valley)', 'PS Manali') — text-by-design fields, counted in structured-field totals but excluded from the 79 phone-bearing count. 0 malformed phones.",
+    "sos_emergency_sos_rows_db": 525,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.42,
+    "sos_db_total_dialable_entries_11col": 3896,
+    "sos_db_rows_with_placeholder_X": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_local_helpers_empty_array_db": 347,
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — exact match to post-purge baseline, 3rd consecutive day.",
+    "people_who_help_rows_db": 525,
+    "people_who_help_nonempty_array_renders": 84,
+    "people_who_help_empty_array": 348,
+    "people_who_help_legacy_object_now_renders": 93,
+    "people_who_help_rendered_coverage": 177,
+    "people_who_help_baseline_note": "NEW-2026-06-10-001 FIXED overnight (db208da2 component fallback + 73e5c417 data restructure). Objects now RENDER (live-verified on zuluk). Rendered coverage = 84 arrays + 93 objects = 177/525; 348 empty arrays are honest scarcity. Deltas vs yesterday fully commit-explained (INFO-2026-06-11-002).",
+    "sos_deepdive_local_helpers_present_db": 405,
+    "sos_deepdive_local_helpers_total_entries_db": 589,
+    "sos_deepdive_note": "Unrendered backing store, reference only — exact match to post-purge baseline.",
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "api_404_expected_returned": 2,
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_days": 9,
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 26882,
+    "sitemap_total_urls_delta_note": "+800 vs yesterday: +792 new /[locale]/itinerary/[slug] (396×2, commit 4c8d93c3) + 8 in chunk 4. Dest/month counts unchanged.",
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_cost_urls_en": 525,
+    "sitemap_itinerary_urls_per_locale": 396,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 36,
+    "map_explore_overlay_marker_paths": 511,
+    "map_dest_pages_probed_interactive": 4,
+    "map_dest_pages_with_leaflet": 1,
+    "map_dest_pages_with_atlas_svg": 2,
+    "map_dest_leaflet_betla": "1 container / 28 tiles / 4 overlay paths",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 8,
+    "console_react_418_fired_loads": "0 of 8 controlled observations (/en nav, /en F5, explore, zuluk, manali, betla, jaipur, /hi) — first fully-clean day since 2026-06-07; hydration-adjacent fixes deployed overnight"
+  },
+  "deliverables": [
+    "qa/findings/2026-06-11.json",
+    "qa/findings/2026-06-11/ (probe.py + run_part.py + section CSVs A-K + section-E-db.json + html/ SSR snapshots + sample-slugs.json + warm-reprobe-B.txt)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "React #418 'NOT_REPRODUCED' is 0/8 observations on one day of an intermittent defect (2/8 yesterday) — overnight fixes are plausible-cause but unproven; hold the FIXED label until ≥2 more clean days.",
+    "Welcome-tour modal: localStorage+sessionStorage were cleared but cookies were not; if the tour is cookie-gated it may still exist with hard-coded English. Code-level check (component removed or not) would settle it permanently.",
+    "Console 'clean' readings are indicative, not proof of absence — tracking starts at first read per page; navigate+wait+read sequencing was consistent across all 8 observations.",
+    "Destination TTFB medians are sequential single-shot curl from the Cowork sandbox; cold/warm split is the signal (cold median 2681 ms vs warm 152 ms = cold-ISR inflation, no serving regression).",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe per methodology.",
+    "5 Supabase reads were small aggregates / 3-row lookups (a few KB total) over MCP — egress-safe per CLAUDE.md.",
+    "zuluk people_who_help render verification used DOM element queries after discovering body.innerText false-negatives below-fold content (INFO-2026-06-11-003); the visible-rect + hidden-ancestor walk is the evidence standard.",
+    "Axe-core and Lighthouse not run today (cost-aware); the NEW itinerary template shipped overnight is unmeasured by the 2026-05-04 deep baseline — flagged for the next deep pass.",
+    "Sitemap cost-URL count is explicitly /en-scoped (525); yesterday's 1050 headline vs its own CSV 525 was a transcription artifact (INFO-2026-06-11-004)."
+  ],
+  "business_summary": {
+    "headline": "GREEN across the board, and yesterday's one substantive finding is already FIXED and live: the 'People Who Can Help' card now renders on all 177 destinations that have content (the 93 destinations whose hand-written helper advice was invisible — zuluk's carry-cash-from-Gangtok warning included — now display it; verified live this morning). All 21 core routes, all 10 sampled destinations in English and Hindi, every SEO check, the API layer, PWA assets, and the sitemap passed. The emergency-SOS safety floor is intact and byte-stable (525/525 destinations, min 5 dialable numbers, zero placeholders). Bonus: the React hydration warning that has haunted the landing page since June 7 did NOT fire once today (0/8 checks, first clean day) — last night's fixes are the likely cause, watching two more days before calling it dead. The site also quietly shipped 792 new itinerary pages overnight; spot-checks all serve correctly.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "21/21 real core routes 200; 10/10 sampled destinations 200 in both languages. Cold first hits max 4.2s warm to ~152 ms — cache behavior, not a serving problem" },
+      { "area": "API health", "status": "GREEN", "why": "0 × 5xx across 13 probes; malformed/empty/wrong bodies → 400; 200 KB attack-sized body → 413; valid chat + weather + search-index return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages serve lang=hi with Devanagari titles" },
+      { "area": "SEO metadata", "status": "GREEN", "why": "12/12 URLs: no title stutter, canonical + en/hi/x-default hreflang + og:image all present; soft-404 guards 8/8 — and the new itinerary route class guards correctly too" },
+      { "area": "Emergency SOS — safety baseline", "status": "GREEN", "why": "525/525 destinations with ≥5 dialable numbers (avg 7.4, 0 placeholders) — every aggregate an exact match to baseline; the 3 historically-flagged dests re-verified in DB" },
+      { "area": "'People Who Can Help' card", "status": "GREEN", "why": "FIXED overnight and verified live: legacy-format content now renders (zuluk confirmed on-screen); coverage 177/525 destinations with content, 348 honestly empty. Yesterday's only medium finding, closed in under 24h" },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 511/511 score-colored markers. Destination pages: both templates render cleanly (Leaflet on betla; decorative atlas on zuluk/manali)" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical 9 days (v51); manifest 3 icons + 5 shortcuts; offline page 200" },
+      { "area": "Console health", "status": "GREEN", "why": "React #418 fired on 0 of 8 observations — first fully-clean day since June 7, right after last night's hydration-adjacent fixes. Cautious: needs 2 more clean days to confirm dead" }
+    ],
+    "whats_changed": [
+      "[fixed, verified live] 'People Who Can Help' — yesterday's medium finding closed same-day: component now renders the legacy object format (93 dests) and 34 more rows were restructured. Zuluk's previously-invisible safety advice (no ATM, mandatory guides, permit office) is on-screen. Rendered coverage: 177/525.",
+      "[improved?] React #418 hydration warning: 0/8 today (was 2/8 yesterday, 4/7 the day before). Last night shipped three hydration-adjacent fixes. Not declaring victory until 2 more clean days.",
+      "[new, info] 792 itinerary pages (/en + /hi × 396 destinations) entered the sitemap overnight (commit 4c8d93c3); spot-checks 200 with real content, fake slugs hard-404. New template — flagged for the next accessibility/performance deep pass.",
+      "[reproduced] Static atlas coordinates (23.5N · 80.5E) confirmed on a THIRD destination (zuluk, real 27.4N) plus manali again — still cosmetic, still a one-variable fix.",
+      "[housekeeping] Welcome-tour modal on /hi could not be summoned even after clearing storage — either removed or cookie-gated; a code check would close this 5-week-old carry permanently."
+    ],
+    "risks": [
+      "The hydration warning's disappearance is correlation, not proof — if it returns tomorrow the 30-min non-minified repro session is still the only path to certainty.",
+      "The new itinerary template (792 pages) is live but unmeasured: no axe, no Lighthouse, not in the daily core-routes matrix yet. Recommend adding 1-2 itinerary URLs to Section I and including the template in the next deep pass.",
+      "Accessibility + mobile Lighthouse still unmeasured since early May; the deep pass is increasingly overdue now that two template changes (Leaflet rollout, itinerary pages) have shipped since the baseline.",
+      "Atlas static-coordinates: third confirmation; trivial fix but it prints wrong geography on every atlas-template page — small credibility leak on a brand built on data accuracy."
+    ],
+    "bottom_line": [
+      "Nothing needs fixing today that wasn't already fixed overnight — yesterday's finding is closed and verified, and the site is fully green.",
+      "Watch React #418 for 2 more days; if clean, close NEW-2026-06-07-001 and skip the repro session.",
+      "Add itinerary URLs to tomorrow's route matrix and schedule the overdue deep pass (axe + Lighthouse) now that the itinerary template shipped.",
+      "Fix the static atlas coordinates when convenient — one variable, third sighting."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi (seed nakshiq-2026-06-11, 525-slug pool): kasol, zuluk, warangal, point-calimere, manali, patnitop, mahabaleshwar, srisailam, lachung, kanha",
+      "21 core routes + 13 API probes + 8 soft-404 guards + 5 locale redirects probed",
+      "Explore map + 4 destination pages exercised in a real Chrome session; 8 controlled console observations; 2 live people_who_help render verifications (zuluk object-shape FIXED, manali array)",
+      "525 destination SOS rows ground-truthed in the database (aggregates + 3-row prior-bug recheck + people_who_help shape re-forensics)",
+      "26,882-URL sitemap walked chunk by chunk; +800 delta fully attributed (itinerary class) and spot-verified live"
+    ]
+  }
+}

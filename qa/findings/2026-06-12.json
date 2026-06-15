@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-12",
+    "date": "2026-06-12",
+    "started_utc": "2026-06-12T02:08:13Z",
+    "completed_utc": "2026-06-12T02:33:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Fable 5 (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-06-12/probe.py + run_part.py, sequential honest timing + warm re-probe pass); 5 small Supabase MCP aggregate/targeted reads for SOS + people_who_help ground truth; Section K via Claude in Chrome MCP (explore map toggle + 4 dest pages + 8 controlled console observations + /hi?tour=1 explicit tour-trigger test); itinerary-template root-cause located via repo grep",
+    "mode": "Daily regression — A through K matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 25,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (9 probes; +1 itinerary garbage-slug guard added per yesterday's recommendation)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-06-12) + warm re-probe pass",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (13 URLs: landing + 10 dests + 1 month sub-route + 1 itinerary URL added per yesterday's recommendation)",
+    "E — SOS completeness: SSR emergencySos blob parse (10 dests) + DB ground-truth aggregates (canonical dialable-11 column set pinned) + 3-row prior-bug recheck + people_who_help shape check",
+    "F — API smoke (13 probes incl oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks)",
+    "I — Core routes HTTP matrix (23 real routes — 21 prior + 2 itinerary added per yesterday's recommendation — + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: explore grid→map toggle (coordinate click + visual toggle verify), zuluk+manali (atlas) + betla (Leaflet) + jaipur dest pages, 8 controlled console observations, people_who_help render persistence check (zuluk object-shape + manali array-shape), /hi?tour=1 explicit welcome-tour trigger + code-level mount grep (permanent closure)"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass (cost-aware rule). The /[locale]/itinerary/[slug] template (792 URLs, live since 06-11) remains unmeasured by the 2026-05-04 deep baseline AND now carries two confirmed metadata defects — the deep pass is increasingly urgent."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Curl TTFB healthy (23 core routes median 995 ms; dest cold median 2054 ms is cold-ISR inflated — warm re-probes median 379 ms)."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en + /hi bad slugs all hard 404 (9 bytes). Bare-path /destination/nonexistent-slug-qa/june → 301 → final 404 (followed with -L). 9/9 correct, 0 misses, incl. /en/itinerary/this-does-not-exist-xyz → 404 (styled 66KB 404 page, correct status)."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 → all hard 404 (9 bytes)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed→400 'Malformed JSON body', empty→400, wrong-shape→400 'Invalid question', 200KB→413 'Payload too large', valid question→200 (2948b real Leh answer). 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed→400, empty→400, {}→400 'Missing required fields'. 0×5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Pages with | NakshIQ | NakshIQ title stutter",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "REGRESSION",
+      "evidence": "The NEW /[locale]/itinerary/[slug] template (792 URLs, shipped 06-11 in 4c8d93c3) ships the literal stutter on every page: '<title>Agra itinerary — 1, 3 & 5 days (verified) | NakshIQ | NakshIQ</title>'. Live-confirmed on /en/itinerary/agra + /en/itinerary/manali + /hi/itinerary/agra (Devanagari variant stutters too). All 12 other sampled URLs (landing, 10 dests, month sub-route) remain clean — the regression is scoped to the new template. ROOT CAUSE (repo-verified): itinerary page.tsx:162-164 hard-codes '| NakshIQ' into the title string AND root layout.tsx:88-91 applies template '%s | NakshIQ' — double append. og:title bypasses the layout template, hence single-suffixed (correct) — which is also the proof. See NEW-2026-06-12-001."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-11",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v51, md5 d0cc522e363cd7fc6521684ac6679f9a byte-identical 10th consecutive day; manifest 3 icons + 5 shortcuts; /offline 301→/en/offline→200 (followed with -L)."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB 3-row recheck: uttarkashi police 100 / ambulance 108 / fire 101 / women 1091 (or 181) / tourist 1800-111-363 / DDMA 01374-222722 / 1077 / mtn 01374-222126 / 7310913129; verified_by=constants-reverify-2026-06-09 unchanged. Site-wide placeholder regex (X{3,}) = 0 rows."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: khonoma police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1363 / Kohima PCR 7005986046 · NSDMA 1070; verified_by=deepdive-recorrect-2026-06-09 unchanged."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field (Operator-specific)",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1800-111-363 / Geyzing PS 8145887528 + District Hospital Gyalshing 03595-250634; verified_by=emsos-th-audit-2026-06-10 unchanged."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "Harness regex covers both casings; 13/13 URLs show en + hi + x-default (incl. the new itinerary URL)."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering (was: hidden on 93 dests)",
+      "prior_status": "FIXED 2026-06-11 (db208da2 + 73e5c417, live-verified)",
+      "today_status": "STILL CLOSED",
+      "evidence": "Fix HOLDS day 2: DB shape exact match to post-fix baseline (525 not-null = 84 nonempty arrays + 348 empty + 93 objects; rendered coverage 177/525). Live: zuluk 'People Who Can Help' heading SPAN 157×16 visible (object-shape), manali visible (array-shape). No drift."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL 2026-06-11",
+      "today_status": "PARTIAL",
+      "evidence": "Safety baseline GREEN and EXACT-stable on the canonical dialable-11 column set: 525/525 emergency_sos rows, 0 without row, 0 under 3 dialable (min 5, avg 7.42, total 3896), 0 placeholder-X. emergency_sos.local_helpers nonempty = 178/525 — exact match 4th consecutive day. deep_dive.local_helpers 405 blocks / 589 entries — exact (unrendered reference). Enrichment opportunity (178 → up to 405) remains open."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-06-11",
+      "today_status": "PARTIAL",
+      "evidence": "Two-template state persists: betla renders live Leaflet (1 container, 14 tiles, 4 overlay-pane paths, window.L object); zuluk + manali render CinematicStateMap atlas (4× viewBox 0 0 1000 1100), leaflet=0 by design. All render structurally fine; tracking migration only."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED 2026-06-11",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Explore map: 511 overlay-pane svg paths matching the '511 markers · colored by score' label; circleMarkers render in overlay pane by design. betla shows 4 overlay-pane paths."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL 2026-06-11",
+      "today_status": "PARTIAL",
+      "evidence": "betla confirmed Leaflet today (1 container / 14 tiles / 4 overlay paths). 'Markers missing' half remains withdrawn."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED 2026-06-11 (low)",
+      "today_status": "REPRODUCED",
+      "evidence": "zuluk runtime readout '23.5N · 80.5E' (real ~27.4N 88.8E) and manali '23.5N · 80.5E' (real ~32.2N) — fourth consecutive sighting. Cosmetic/data-credibility issue on the decorative atlas only; one template variable."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces (/en, /en/explore)",
+      "prior_status": "NOT_REPRODUCED 2026-06-11 (0/8, first clean day)",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "0 of 8 controlled observations fired (/en navigate, /en F5 reload, explore+map-toggle, zuluk, manali, betla, jaipur, /hi?tour=1) — SECOND consecutive fully-clean day since the 06-10/06-11 hydration-adjacent fixes (c628e441, b0755518, db208da2). Per the 06-11 rule (≥2 more clean days before FIXED): one more clean day → label FIXED and skip the repro session."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "NOT_REPRODUCED 2026-06-11 (storage-clear attempt; cookie-gate uncertainty)",
+      "today_status": "FIXED",
+      "evidence": "PERMANENT CLOSURE, code + live confirmed. Code: guided-tour.tsx still exists with hard-coded English strings, but <GuidedTour is mounted NOWHERE in apps/web/src (repo-wide grep; page.tsx:11-14 comment: 'GuidedTour temporarily removed from landing per Ashish 2026-05-05 — conflicts visually with the cinematic ACT I hero'). TourReplayLink (the footer replay path) is also unmounted — no dead UI exposed. Live: /hi?tour=1 (the explicit force-trigger path) renders no dialog and the ?tour param is NOT stripped, proving the component never ran. The hard-coded-English modal cannot reach any user on any locale. Closing permanently per the 06-11 recommendation; reopen only if GuidedTour is re-mounted (it needs i18n first — strings are still English-only in code)."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-11",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-11",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-11",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run in daily pass; curl TTFB healthy but is not a LH-score substitute."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-11",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's seed-random sample: kalpa, mansarovar-kailash, athirapally, kabini, ajanta-caves, chittorgarh, mechuka, karwar, kukke-subramanya, patnitop."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-06-12-001",
+      "severity": "high",
+      "title": "Itinerary template ships literal '| NakshIQ | NakshIQ' title stutter on all 792 itinerary URLs (both locales) — scoped regression of DEEP-Phase2-D1 on the new page class",
+      "detail": "Every /[locale]/itinerary/[slug] page renders a double brand suffix in <title>: 'Agra itinerary — 1, 3 & 5 days (verified) | NakshIQ | NakshIQ' (EN) and 'आगरा यात्रा योजना — 1, 3 और 5 दिन (सत्यापित) | NakshIQ | NakshIQ' (HI). This is the exact stutter pattern DEEP-Phase2-D1 closed site-wide — re-introduced by the new template that shipped 2026-06-11 (4c8d93c3). It pollutes the browser tab, every SERP snippet, and GSC title CTR for a brand-new 792-URL page class that is still earning its first impressions. ROOT CAUSE (repo-verified): apps/web/src/app/[locale]/itinerary/[slug]/page.tsx lines 162-164 hard-code '| NakshIQ' into both locale title strings, while apps/web/src/app/[locale]/layout.tsx:88-91 already applies title template '%s | NakshIQ'. og:title bypasses Next's title template and is single-suffixed (correct), which confirms the mechanism.",
+      "evidence": "section-D-seo.csv itinerary/agra row (stutter=True); live <title> captures for /en/itinerary/agra, /en/itinerary/manali, /hi/itinerary/agra in run log; page.tsx:162-164 + layout.tsx:88-91.",
+      "recommendation": "One-line fix: remove the literal ' | NakshIQ' from both title strings in the itinerary page's generateMetadata (the layout template appends it). Verify with curl '<title>' grep on 2-3 itinerary URLs post-deploy. Also sweep any future new-template PRs for the same pattern — this is the second time a template hand-appended the brand suffix."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "severity": "medium",
+      "title": "Itinerary template has no og:image — all 792 itinerary URLs share with no preview image (every other sampled template has one)",
+      "detail": "The itinerary page's generateMetadata openGraph block (page.tsx:174-181) sets title/description/type/url/siteName/locale but NO images field, and no metadata-default og:image applies to this route. All 13 other sampled URLs (landing, 10 destinations, month sub-route) carry og:image. WhatsApp/X/Slack shares of itinerary pages — a share-prone content type — render text-only cards. twitter:card is declared summary_large_image, which explicitly expects an image.",
+      "evidence": "section-D-seo.csv itinerary/agra row (og_image=False); /en/itinerary/manali + /hi/itinerary/agra live HTML grep (0 og:image); page.tsx:174-182.",
+      "recommendation": "Add an images entry to the itinerary openGraph block — reuse the destination's existing og/hero image (the dest object is already loaded in generateMetadata). Verify with an og scraper or curl grep post-deploy."
+    },
+    {
+      "id": "INFO-2026-06-12-003",
+      "severity": "info",
+      "title": "Metric-hygiene: 'dialable-11' column set pinned canonically after a first-pass query produced a phantom -30 drift (3866 vs 3896)",
+      "detail": "Today's first DB aggregate used local_police_station (211 nonempty, text station-names) and excluded embassy_emergency_line (241), yielding total 3866 / avg 7.36 — a false -30 'regression' vs the 3896 baseline. Recomputed with the historical set (the 12 phone-bearing columns MINUS local_police_station, INCLUDING embassy_emergency_line): 3896 / 7.42 / min 5 / 0 under-3 — EXACT baseline match, zero drift. The canonical column list + first-ever per-column breakdown are now recorded in section-E-db.json so future runs diff columns, not just totals.",
+      "evidence": "qa/findings/2026-06-12/section-E-db.json (canonical_dialable_11col_set + per_column_nonempty); the two MCP query results in run log.",
+      "recommendation": "Add the canonical dialable-11 column list verbatim to SKILL.md Section E so the formula can't drift between runs (same class of trap as the 06-09 local_helpers field-mismatch alarm)."
+    },
+    {
+      "id": "INFO-2026-06-12-004",
+      "severity": "info",
+      "title": "Baseline changes this run (explicit per SKILL rule): Section I 21→23 real routes (+2 itinerary), Section D 12→13 URLs (+1 itinerary), Section A 8→9 probes (+1 itinerary garbage slug)",
+      "detail": "All three additions implement yesterday's INFO-2026-06-11-001 recommendation to fold the new itinerary class into the daily matrix. Run-over-run comparisons for these sections should use today as the new baseline. Sitemap is byte-stable at 26,882 URLs (zero delta vs yesterday). Overnight commits were festivals-content + docs only (629a3590…9146d944) plus a new deploy id dpl_GYo83eQjq22xkxFhLVzMw1CEpzXA — consistent with the only behavioral deltas today being the itinerary metadata defects, which shipped 06-11 but were first metadata-sampled today.",
+      "evidence": "git log 06-11T02:00..06-12T03:00; section-H-sitemap.csv TOTAL row; probe.py diff vs 2026-06-11/probe.py.",
+      "recommendation": "Keep the 3 itinerary probes in the matrix permanently; treat 23-route and 13-URL counts as the new normals."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 23,
+    "core_routes_2xx": 23,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 133, "median": 995, "p90": 2283, "max": 2523 },
+    "core_routes_TTFB_note": "23 real routes all 200 first-hit (21 prior + /en/itinerary/agra + /hi/itinerary/agra added per yesterday's recommendation — baseline change, see INFO-2026-06-12-004). The 24th probe (/en/search) is the intentional phantom-route check — correctly 404s and is excluded from the 2xx tally.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 354, "median": 2054, "max": 6905 },
+    "destinations_TTFB_note": "Cold-ISR first hits on a low-traffic random sample (karwar 6.9s max); warm re-probes confirm cold-ISR, not a serving regression.",
+    "destinations_warm_TTFB_ms": { "min": 145, "median": 379, "max": 1053 },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 13,
+    "seo_title_stutter": 1,
+    "seo_title_stutter_note": "The 1 stutter is the NEW itinerary template (class-wide on all 792 itinerary URLs, verified on 3 URLs across both locales) — NEW-2026-06-12-001 / DEEP-Phase2-D1 REGRESSION. The 12 non-itinerary URLs are clean.",
+    "seo_canonical_present": 13,
+    "seo_hreflang_en_present": 13,
+    "seo_hreflang_hi_present": 13,
+    "seo_hreflang_xdefault_present": 13,
+    "seo_og_image_present": 12,
+    "seo_og_image_note": "The 1 miss is the itinerary template (class-wide) — NEW-2026-06-12-002.",
+    "soft_404_regression_passes": 9,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 77,
+    "sos_min_structured_fields_per_dest": 5,
+    "sos_phones_total_across_10_dests": 74,
+    "sos_phones_invalid_format": 0,
+    "sos_universal_112_present": 10,
+    "sos_sample_text_name_fields_by_design": 3,
+    "sos_sample_text_name_note": "kalpa local_police_station ('PS Reckong Peo (covers Kalpa)') + athirapally local_police_station ('Athirappilly PS') and mountain_rescue ('Vazhachal Forest Division: contact via Athirappilly PS or DFO Vazhachal') carry NAMES/instructions — text-by-design fields, counted in structured-field totals but excluded from the 74 phone-bearing count. 0 malformed phones, 0 placeholders.",
+    "sos_emergency_sos_rows_db": 525,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.42,
+    "sos_db_total_dialable_entries_11col": 3896,
+    "sos_db_dialable_11col_note": "Canonical column set pinned today (INFO-2026-06-12-003): police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line — EXCLUDES local_police_station (text). EXACT match to 06-11/06-10 baseline.",
+    "sos_db_rows_with_placeholder_X": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_local_helpers_empty_array_db": 347,
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — exact match to post-purge baseline, 4th consecutive day.",
+    "people_who_help_rows_db": 525,
+    "people_who_help_nonempty_array_renders": 84,
+    "people_who_help_empty_array": 348,
+    "people_who_help_legacy_object_now_renders": 93,
+    "people_who_help_rendered_coverage": 177,
+    "people_who_help_baseline_note": "EXACT match to 06-11 post-fix baseline; fix live-verified holding on zuluk (object) + manali (array).",
+    "sos_deepdive_local_helpers_present_db": 405,
+    "sos_deepdive_local_helpers_total_entries_db": 589,
+    "sos_deepdive_note": "Unrendered backing store, reference only — exact match to post-purge baseline.",
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "api_404_expected_returned": 2,
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_days": 10,
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 26882,
+    "sitemap_total_urls_delta_note": "Zero delta vs yesterday — byte-stable after the 06-11 itinerary addition.",
+    "sitemap_total_destination_slug_urls": 525,
+    "sitemap_total_destination_month_urls": 6300,
+    "sitemap_cost_urls_en": 525,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 18,
+    "map_explore_overlay_marker_paths": 511,
+    "map_explore_note": "Map toggle clicked by coordinate and VISUALLY verified active before recording counts (per 06-11 harness rule). Tile count varies with viewport/zoom (18 today vs 36 yesterday) — containers + 511 markers are the stable signal.",
+    "map_dest_pages_probed_interactive": 4,
+    "map_dest_pages_with_leaflet": 1,
+    "map_dest_pages_with_atlas_svg": 2,
+    "map_dest_leaflet_betla": "1 container / 14 tiles / 4 overlay paths",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 8,
+    "console_react_418_fired_loads": "0 of 8 controlled observations (/en nav, /en F5, explore+toggle, zuluk, manali, betla, jaipur, /hi?tour=1) — SECOND consecutive fully-clean day; one more clean day → FIXED per the 06-11 rule",
+    "deploy_id_observed": "dpl_GYo83eQjq22xkxFhLVzMw1CEpzXA"
+  },
+  "deliverables": [
+    "qa/findings/2026-06-12.json",
+    "qa/findings/2026-06-12/ (probe.py + run_part.py + section CSVs A-K + section-E-db.json + html/ SSR snapshots + sample-slugs.json + warm-reprobe-B.txt)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "React #418 'NOT_REPRODUCED' is now 0/16 across two days of an intermittent defect — strong but not conclusive; the FIXED label waits for tomorrow per the 06-11 rule.",
+    "Itinerary title-stutter/og:image class-wide claims rest on 3 live URLs (agra EN+HI, manali EN) + the shared generateMetadata code path that all 792 URLs execute — the code path is the proof of class-wideness; no per-URL sweep was run.",
+    "Console 'clean' readings are indicative, not proof of absence — tracking starts at first read per page; the first /en observation carries the tracking-start caveat (its F5 re-read was fully tracked and clean).",
+    "Destination TTFB medians are sequential single-shot curl from the Cowork sandbox; cold/warm split is the signal (cold median 2054 ms vs warm 379 ms = cold-ISR inflation, no serving regression).",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe per methodology.",
+    "7 Supabase reads total, all small aggregates / 3-row lookups (a few KB) over MCP — egress-safe per CLAUDE.md; the extra 2 reads were the dialable-column-set verification (INFO-2026-06-12-003).",
+    "people_who_help render checks used DOM element queries (smallest-element text match + getBoundingClientRect), not innerText, per the 06-11 harness rule.",
+    "Axe-core and Lighthouse not run today (cost-aware); the itinerary template (792 URLs) is now TWO known defects deep and still unmeasured for a11y/perf — the deep pass is overdue.",
+    "Welcome-tour closure is code-level + live-trigger evidence; if GuidedTour is ever re-mounted, its strings are still English-only and E2E-2026-05-04-A1 should be reopened as an i18n blocker for that PR."
+  ],
+  "business_summary": {
+    "headline": "One real defect today, and it's brand-new self-inflicted polish debt, not breakage: the 792 itinerary pages that went live yesterday say '| NakshIQ | NakshIQ' in every browser tab and Google result, and share to WhatsApp/X with no preview image. Both bugs are located to the exact lines (a one-line fix each) and nothing else moved: all 23 core routes and 10 sampled destinations serve 200 in both languages, the API layer returned zero server errors, the emergency-SOS safety floor is exactly baseline (525/525, min 5 dialable, zero placeholders), yesterday's 'People Who Can Help' fix is holding live, and the React hydration warning stayed silent a second straight day (one more clean day and it's officially dead). Bonus closure: the 5-week-old 'welcome tour in English on Hindi pages' mystery is solved permanently — you removed that tour from the landing page on May 5 and it's mounted nowhere; it cannot reach any user.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "23/23 real core routes 200 (now including 2 itinerary pages); 10/10 sampled destinations 200 in both languages. Cold first hits max 6.9s warm to ~379 ms — cache behavior, not a serving problem" },
+      { "area": "API health", "status": "GREEN", "why": "0 × 5xx across 13 probes; malformed/empty/wrong bodies → 400; 200 KB attack-sized body → 413; valid chat + weather + search-index return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages serve lang=hi with Devanagari titles" },
+      { "area": "SEO metadata", "status": "YELLOW", "why": "The new itinerary class (792 URLs) ships a literal '| NakshIQ | NakshIQ' title on every page and no share image — both root-caused to single lines, fix-today material. Everything else: 12/12 clean titles, 13/13 canonical + full hreflang, soft-404 guards 9/9" },
+      { "area": "Emergency SOS — safety baseline", "status": "GREEN", "why": "525/525 destinations, min 5 dialable numbers (avg 7.4), 0 placeholders — every aggregate an exact baseline match on the now-pinned canonical formula; the 3 historically-flagged dests re-verified in DB" },
+      { "area": "'People Who Can Help' card", "status": "GREEN", "why": "Tuesday's fix holding day 2: live-verified rendering on zuluk (legacy format) + manali (current format); database shape exactly stable at 177/525 rendered coverage" },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 511/511 score-colored markers after a visually-verified toggle. Destination pages: both templates render cleanly (Leaflet on betla; decorative atlas on zuluk/manali)" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical 10 days (v51); manifest 3 icons + 5 shortcuts; offline page 200" },
+      { "area": "Console health", "status": "GREEN", "why": "React #418 fired on 0 of 8 observations — second consecutive clean day. One more clean day and the June-7 ghost is declared dead" }
+    ],
+    "whats_changed": [
+      "[new, high] Itinerary pages (all 792, both languages) double the brand suffix in their titles — '… | NakshIQ | NakshIQ' on every tab, SERP snippet, and bookmark. Root cause found in code: the page adds '| NakshIQ' manually AND the site template adds it again. One-line fix.",
+      "[new, medium] The same itinerary pages have no social-share image — WhatsApp/X/Slack previews render text-only on the most share-prone content type. Also a one-line-class fix (reuse each destination's existing hero image).",
+      "[closed permanently] The welcome-tour-in-English mystery (open since May 4): the tour was removed from the landing page on May 5 per your own call and is mounted nowhere in the codebase — confirmed live with the force-trigger URL. If it ever comes back, it needs Hindi strings first.",
+      "[improving] React #418 hydration warning: 0/8 today after 0/8 yesterday (was 2/8 on June 10). One more clean day → closed without the debug session.",
+      "[reproduced] Static atlas coordinates (23.5N · 80.5E) — fourth sighting (zuluk + manali again). Still cosmetic, still a one-variable fix.",
+      "[hygiene] The SOS 'dialable numbers' formula is now pinned column-by-column in the evidence file after today's first-pass query briefly manufactured a phantom -30 drift. Real answer: zero drift, exact baseline."
+    ],
+    "risks": [
+      "The itinerary metadata bugs are live during the class's first-impression window with Google — every day they stand, 792 pages accumulate SERP snippets with a stuttered brand and shares without previews. Cheap to fix, compounding to ignore.",
+      "The itinerary template remains unmeasured for accessibility and performance (deep pass overdue since the May 4 baseline; two template generations have shipped since). It just demonstrated it can ship metadata defects — a11y/perf state is unknown.",
+      "Accessibility + mobile Lighthouse carries (color contrast, tab roles, perf scores) remain open and untested in daily passes.",
+      "Atlas static-coordinates: cosmetic but it prints wrong geography on every atlas-template page — credibility leak on a brand built on data accuracy."
+    ],
+    "bottom_line": [
+      "Fix the two itinerary metadata lines today (title suffix + og:image) — both are located, verified, and one-liners; re-probe is already in the daily matrix.",
+      "If tomorrow's console watch is clean again, close the React #418 saga for good.",
+      "Schedule the overdue deep pass (axe + Lighthouse) with the itinerary template explicitly in scope.",
+      "Fix the static atlas coordinates when convenient — one variable, fourth sighting."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi (seed nakshiq-2026-06-12, 525-slug pool): kalpa, mansarovar-kailash, athirapally, kabini, ajanta-caves, chittorgarh, mechuka, karwar, kukke-subramanya, patnitop",
+      "23 core routes + 13 API probes + 9 soft-404 guards + 5 locale redirects probed (matrix expanded with 3 itinerary checks per yesterday's recommendation)",
+      "Explore map + 4 destination pages exercised in a real Chrome session; 8 controlled console observations; 2 people_who_help render persistence checks; welcome-tour force-trigger test",
+      "525 destination SOS rows ground-truthed in the database (canonical-formula aggregates + first per-column breakdown + 3-row prior-bug recheck + people_who_help shape check)",
+      "26,882-URL sitemap walked chunk by chunk (byte-stable, zero delta); itinerary metadata root-caused in repo source"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source": "Supabase MCP execute_sql, project dudzsdzfvikjjhurxrgc, 2026-06-14",
+  "canonical_dialable_11col_set": ["police","ambulance","fire","women_helpline","tourist_helpline","road_accident","rescue_contact","mountain_rescue","mechanic_contact","tow_service","embassy_emergency_line"],
+  "es_rows": 525,
+  "dest_rows": 525,
+  "rows_without_emergency_sos": 0,
+  "rows_under_3_dialable": 0,
+  "min_dialable": 5,
+  "avg_dialable": 7.42,
+  "total_dialable_11col": 3896,
+  "placeholder_X_rows": 0,
+  "es_localhelpers_nonempty": 178,
+  "people_who_help_nonempty_array": 84,
+  "people_who_help_legacy_object": 93,
+  "people_who_help_notnull": 525,
+  "people_who_help_rendered_coverage": 177,
+  "note": "EXACT match to 2026-06-12 baseline on every aggregate. Single SQL aggregate over MCP (egress-safe)."
+}

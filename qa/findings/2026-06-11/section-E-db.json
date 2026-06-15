@@ -1,0 +1,27 @@
+{
+  "date": "2026-06-11",
+  "method": "3 small Supabase MCP aggregate/targeted reads (egress-safe)",
+  "emergency_sos": {
+    "rows": 525, "dests_without_row": 0, "rows_under_3_dialable": 0,
+    "min_dialable": 5, "avg_dialable": 7.42, "total_dialable_11col": 3896,
+    "rows_with_placeholder_X": 0,
+    "local_helpers_nonempty": 178, "local_helpers_empty_array": 347,
+    "note": "EXACT match to 2026-06-10 baseline on every aggregate — no drift."
+  },
+  "people_who_help_shape_breakdown": {
+    "rows_not_null": 525, "nonempty_array_renders": 84, "empty_array": 348, "legacy_object": 93,
+    "sum_check": "84+348+93=525 OK",
+    "delta_vs_2026_06_10": "rows 491->525 (+34), nonempty 79->84 (+5), empty 319->348 (+29), object 93->93 (0)",
+    "explained_by_commits": [
+      "73e5c417 data(cards): deterministic confidence_cards restructure for 34 dests (audit #8) — the +34 NULL->value rows",
+      "db208da2 fix(web): render legacy object-shape people_who_help on 93 dests — component-side Array.isArray guard + orderedHelperFacts object fallback now in confidence-card.tsx:366-369"
+    ],
+    "expected_rendered_coverage_if_fix_works": "84 arrays + 93 objects = 177 (live verification in section K)"
+  },
+  "deep_dive_local_helpers": { "blocks": 405, "entries": 589, "note": "Unrendered backing store; exact match to post-purge baseline." },
+  "prior_bug_3row_recheck": {
+    "uttarkashi": { "police": "100", "ambulance": "108", "fire": "101", "women": "1091 (or 181)", "tourist": "1800-111-363 (toll-free)", "rescue": "DDMA 01374-222722 / 1077", "mountain": "01374-222126 / 7310913129", "verified_by": "constants-reverify-2026-06-09", "placeholder": false },
+    "khonoma": { "police": "100", "ambulance": "108", "fire": "101", "women": "1091", "tourist": "1363", "rescue": "Kohima PCR 7005986046 · NSDMA 1070", "verified_by": "deepdive-recorrect-2026-06-09", "text_typed_phone": false },
+    "khangchendzonga-np": { "police": "100", "ambulance": "108", "fire": "101", "women": "1091", "tourist": "1800-111-363", "rescue": "Geyzing PS 8145887528; District Hospital Gyalshing 03595-250634", "verified_by": "emsos-th-audit-2026-06-10", "text_typed_phone": false }
+  }
+}
