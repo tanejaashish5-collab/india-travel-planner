@@ -21,3 +21,13 @@ channel.local.json
 # any rotated copies.
 pending-actions.*.md
 dismissed-findings.*.md
+# Phase 9 daily radar: commit the config (radar-sources.json), the install tooling
+# (radar-install/) and the human-readable briefs (radar-briefs/ — an audit trail like
+# gsc-audits/). Ignore the mutable per-run dumps + incremental state.
+radar-runs/
+radar-state.json
+radar-cron.err
+# Per-run strategist + Ratan-Tata score dumps — intermediate scoring output. The
+# durable merged memory is biz-opportunities-ledger.json (committed).
+strategist-scores-*.json
+tata-scores-*.json

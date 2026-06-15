@@ -33,6 +33,7 @@ ideas = ideas.map(({ _scored, ...rest }) => rest);
 
 // The scoring prompt: structural-fail vs unproven-unknown is the load-bearing distinction.
 const PROMPT_HEAD =
+  'CRITICAL: DO THE SCORING YOURSELF, IN THIS RESPONSE. Do NOT invoke any Skill (no /loop-checklist), do NOT run apply/merge scripts, do NOT write or edit ANY file, do NOT spawn sub-agents — the pipeline applies your output; your ONLY job is to return the JSON for the schema. (2026-06-11: a scorer agent invoked the loop-checklist skill and self-applied a Tata verdict outside the controlled flow — never again.)\n\n' +
   'Score ONE EARLY-STAGE business idea against a strategist-derived business-quality checklist (Tony Robbins, Masters Union founders, Basesh Gala). The idea is described by a one-liner — it is PRE-LAUNCH, so it has no traction, team, or financials yet. Judge the intrinsic potential of the IDEA, not the completeness of its description.\n\nIDEA:\n';
 const PROMPT_RULES =
   '\n\nCRITICAL verdict rules — get this distinction right:\n' +
@@ -80,16 +81,17 @@ const SCORE_SCHEMA = {
 }
 
 const checklistBlob = JSON.stringify(CHECKLIST)
+async function chunked(thunks, n) { const out = []; for (let i = 0; i < thunks.length; i += n) { out.push(...await parallel(thunks.slice(i, i + n))) } return out }
 phase('Score')
 log('Scoring ' + IDEAS.length + ' ideas vs ' + CHECKLIST.length + '-item checklist (Sonnet)')
-const scored = (await parallel(IDEAS.map((idea) => () =>
+const scored = (await chunked(IDEAS.map((idea) => () =>
   agent(
     PROMPT_HEAD + JSON.stringify(idea) +
     '\\n\\nCHECKLIST (id, category, title, test, weight 1-3):\\n' + checklistBlob +
     PROMPT_RULES + ' key="' + idea.key + '", name="' + idea.name + '".',
     { schema: SCORE_SCHEMA, model: 'sonnet', label: 'score:' + idea.key, phase: 'Score' }
   )
-))).filter(Boolean)
+), 3)).filter(Boolean)
 log('Scored ' + scored.length + '/' + IDEAS.length)
 return { scored }
 `;

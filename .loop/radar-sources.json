@@ -1,0 +1,34 @@
+{
+  "_comment": "Phase 9 DAILY RADAR source registry. Safe to edit — gen-radar-workflow.mjs reads this on every run. Add/remove sources here; never hardcode them in the workflow.",
+  "youtubeChannels": [
+    { "handle": "GregIsenberg", "channelId": "UCPjNBjflYl0-HQtUvOx0Ibw", "why": "startup ideas / audience plays" },
+    { "handle": "nateherk", "channelId": "UC2ojq-nuP8ceeHqiroeKhBA", "why": "AI automation / agent systems" },
+    { "handle": "ColeMedin", "channelId": "UCMwVTLZIRRUyyVrkjDpn4pA", "why": "AI agents / dev frontier" },
+    { "handle": "aiexplained-official", "channelId": "UCNJ1Ymd5yFuUPtn21xtRbbw", "why": "frontier model capabilities" },
+    { "handle": "DavidOndrej", "channelId": "UCPGrgwfbkjTIgPoOh2q1BAg", "why": "AI builds / agent tooling" },
+    { "handle": "mreflow", "channelId": "UChpleBmo18P08aKCIgti38g", "why": "Matt Wolfe — AI tools landscape" },
+    { "handle": "MyFirstMillionPod", "channelId": "UCxoRKax_0vHaulMbceZtAwA", "why": "business ideas / frameworks" },
+    { "handle": "ycombinator", "channelId": "UCxIJaCMEptJjxmmQgGFsnCg", "why": "YC theses / RFS signals" },
+    { "handle": "starterstory", "channelId": "UChhw6DlKKTQ9mYSpTfXUYqA", "why": "real-revenue case studies" }
+  ],
+  "newsletterSenders": [
+    { "from": "dan@tldrnewsletter.com", "label": "TLDR AI" },
+    { "from": "noreply@medium.com", "label": "Medium digest" }
+  ],
+  "govtIndia": [
+    { "name": "RBI press releases", "url": "https://rbi.org.in/pressreleases_rss.xml", "type": "rss" },
+    { "name": "SEBI updates", "url": "https://www.sebi.gov.in/sebirss.xml", "type": "rss" },
+    { "name": "PIB releases", "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3", "type": "rss" },
+    { "name": "TRAI press releases", "url": "https://trai.gov.in/release-publication/press-release", "type": "html" },
+    { "name": "MeitY whats new", "url": "https://www.meity.gov.in/whatsnew", "type": "html" }
+  ],
+  "govtAustralia": [
+    { "name": "ACCC media releases", "url": "https://www.accc.gov.au/rss/media_releases.xml", "type": "rss" },
+    { "name": "ASIC media releases", "url": "https://asic.gov.au/about-asic/news-centre/", "type": "html" },
+    { "name": "business.gov.au grants", "url": "https://business.gov.au/grants-and-programs", "type": "html" },
+    { "name": "Treasury consultations", "url": "https://treasury.gov.au/consultation", "type": "html" },
+    { "name": "ACMA news", "url": "https://www.acma.gov.au/newsroom", "type": "html" }
+  ],
+  "webChannelsPerDay": 2,
+  "maxTranscriptsPerDay": 2
+}

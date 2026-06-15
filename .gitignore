@@ -120,3 +120,10 @@ supabase/seed.db
 /GSC non indexing/
 /Web Res reports/
 *.tmp
+
+# Festival B-roll archive (520 .mp4, ~910MB) — authoritative copies live on R2
+# (scripts/_upload-festival-footage.mjs); never commit the binaries. Matches the
+# data/festivals/footage/ + photos/ convention above.
+data/festivals/_archive-broll/
+# Local PDF/image screen-captures used while debugging audits — not source
+data/audits/screencaptures/

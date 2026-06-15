@@ -30,11 +30,12 @@ if (newOnly) ideas = ideas.filter((i) => !i._gated);
 ideas = ideas.map(({ _gated, ...rest }) => rest);
 
 const PROMPT_HEAD =
+  'CRITICAL: DO THE JUDGING YOURSELF, IN THIS RESPONSE. Do NOT invoke any Skill, do NOT run apply/merge scripts, do NOT write or edit ANY file, do NOT spawn sub-agents — the pipeline applies your output; your ONLY job is to return the JSON for the schema.\n\n' +
   'Judge ONE business idea against the RATAN TATA FINAL GATE — an integrity/ethics veto. This is NOT about whether the idea makes money; it is about whether Ratan Tata would be proud to put the Tata name on it. Apply his actual standard: trusteeship (business serves society, not just the owner), integrity over profit, never exploit the vulnerable, dignity and fairness to all stakeholders, the long view, doing what is right when no one is watching. Be FAIR, not performatively harsh — most honest B2B/compliance/anti-fraud/help-the-underdog businesses PASS. Reserve FAIL for genuine integrity violations.\n\nIDEA:\n';
 const PROMPT_RULES =
   '\n\nThe overarching test: ' + overall + '\n\nVerdict rules:\n' +
   '- "fail" = the idea violates a NON-NEGOTIABLE (weight-3) gate test at its core — it is built on deception, dark patterns, exploiting the vulnerable/desperate, manipulation, harm, or extraction-without-value. Ratan Tata would refuse to put his name on it. List the failed test ids.\n' +
-  '- "conditional" = the idea is acceptable ONLY with a specific safeguard (e.g. honest disclosure, refusing certain customers, a fairness guarantee). State the concern AND the fix that would clear the gate.\n' +
+  '- "conditional" = the idea is acceptable ONLY with a specific safeguard (e.g. honest disclosure, refusing certain customers, a fairness guarantee). State the concern AND the fix that would clear the gate. NOTE (founder, 2026-06-11): a conditional does NOT demote the idea — the fix becomes a mandatory launch precondition. So your job is to be the INTELLIGENT ETHICS LAYER: there is almost always a way to run a profitable business ethically — FIND it and write it as the fix. Reserve "fail" for ideas where the harm IS the business model and no fix can exist.\n' +
   '- "pass" = no integrity concern; it creates genuine value honestly. (This is the common, correct answer for legitimate businesses.)\n' +
   'Do NOT invent ethical problems that are not there, and do NOT pass something that genuinely preys on people. Give: verdict, failed_tests (ids, may be empty), concerns (may be empty), a one-line reason, and for conditional a one-line fix.';
 
@@ -63,16 +64,17 @@ const GATE_SCORE_SCHEMA = {
 }
 
 const gateBlob = JSON.stringify(GATE_TESTS)
+async function chunked(thunks, n) { const out = []; for (let i = 0; i < thunks.length; i += n) { out.push(...await parallel(thunks.slice(i, i + n))) } return out }
 phase('Gate')
 log('Gating ' + IDEAS.length + ' ideas through the Ratan Tata Final Gate')
-const scored = (await parallel(IDEAS.map((idea) => () =>
+const scored = (await chunked(IDEAS.map((idea) => () =>
   agent(
     PROMPT_HEAD + JSON.stringify(idea) +
     '\\n\\nGATE TESTS (id, title, test, weight; weight 3 = non-negotiable veto):\\n' + gateBlob +
     PROMPT_RULES + ' key="' + idea.key + '".',
     { schema: GATE_SCORE_SCHEMA, model: 'sonnet', label: 'tata:' + idea.key, phase: 'Gate' }
   )
-))).filter(Boolean)
+), 3)).filter(Boolean)
 log('Gated ' + scored.length + '/' + IDEAS.length)
 return { scored }
 `;

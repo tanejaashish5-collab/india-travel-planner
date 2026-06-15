@@ -26,7 +26,7 @@ export const meta = {
   ],
 }
 
-const ASHISH = `Ashish Taneja: AI-fluent non-technical founder in Canberra, Australia; runs ~7 small AI businesses ($0-cheap infra; strong at AI automation, content, SEO/AEO, data products). OPEN to all business shapes (AI/SaaS, data/API, content/audience, productized-service), India on-ground ops via a partner, NO geography constraint. Founder-fit is a SCORING factor, not a filter.`
+const ASHISH = `Ashish Taneja: AI-fluent non-technical founder in Canberra, Australia; deep India ties (the India<->Australia corridor is his un-clonable edge, INCLUDING physical goods trade). OPEN to ALL verticals and shapes: physical trade/import-export, manufacturing/private-label, franchises/distribution/licensing, owning media properties, services, AI/SaaS, data. Capital is flexible (sized to conviction); India/physical ops via a partner-operator. CRITICAL (founder, 2026-06-11): AI is his EXECUTION advantage, NOT a required product ingredient — do NOT force AI into ideas; an idea whose whole premise is "AI-something for X" scores founder_fit DOWN. He wants good businesses with real-economy demand. Founder-fit is a SCORING factor, not a filter.`
 const BAN = `BANNED: do NOT extend his existing projects (NakshIQ, Workflow Automation, ForgeVoice, Demand Radar). Bring genuinely NEW directions. Every claim must be grounded in evidence you actually find — no hype.`
 
 const CHANNELS_ALL = [
@@ -44,6 +44,11 @@ const CHANNELS_ALL = [
   { key: 'too-early-now-viable', brief: 'ideas that failed pre-AI but are newly viable in 2026.' },
   { key: 'india-bharat-demand', brief: 'tier 2-3 India digital/SMB demand (UPI/ONDC/vernacular/fintech) with a defensible moat, not generic TAM.' },
   { key: 'cross-border-digital', brief: 'cross-border DIGITAL services/products (no physical ops): global talent, compliance, payments, localization.' },
+  { key: 'physical-trade-import-export', brief: 'PHYSICAL goods trade: import/export + distribution arbitrage on the India<->Australia corridor and beyond — underserved import niches, exclusive distribution/agency rights, commodity + B2B trade flows (ONDC/IndiaMART gaps), customs wedges. The business is the TRADE, not software.' },
+  { key: 'manufacturing-msme', brief: 'manufacturing + private-label: India Make-in-India / PLI scheme opportunities (sector incentives, export windows), contract manufacturing, white-label products with owned-brand distribution, AU sovereign-manufacturing grants, niche hardware. The business is the PRODUCT, not software.' },
+  { key: 'markets-trading-fintech', brief: 'financial markets: systematic/rules-based trading where licensing permits, tools/data/education for traders, prop/funded-trader ecosystems, commodity/FX niches. Flag SEBI/ASIC/AFSL licensing reality honestly — price it in, never auto-kill.' },
+  { key: 'franchise-distribution-licensing', brief: 'proven models to acquire/license rather than invent: franchises, master-franchise arbitrage (proven Indian brand -> AU or vice versa, the corridor edge), distribution rights, brand licensing. Buying proven demand.' },
+  { key: 'content-media-brands', brief: 'OWNING media properties (not tools for creators): niche newsletters, YouTube/faceless channels, regional-language content, B2B trade media, acquiring small content assets — ads/affiliate/sponsorship/product monetization.' },
 ]
 const CORE6 = ['regulatory-forced-buyers', 'australia-local-gaps', 'ai-frontier-gaps', 'yc-rfs-themes', 'boring-profitable', 'creator-economy-tools']
 
@@ -71,7 +76,7 @@ const IDEA_SCHEMA = { type: 'object', required: ['ideas'], properties: { ideas: 
   type: 'object',
   required: ['name', 'shape', 'source_channel', 'one_liner', 'the_insight', 'moat_type', 'target_customer', 'monetization', 'why_now', 'search_queries'],
   properties: {
-    name: { type: 'string' }, shape: { type: 'string', enum: ['ai-saas', 'data-api', 'content-audience', 'productized-service', 'marketplace', 'other'] },
+    name: { type: 'string' }, shape: { type: 'string', enum: ['ai-saas', 'data-api', 'content-audience', 'productized-service', 'marketplace', 'physical-trade', 'manufacturing', 'media-property', 'franchise-license', 'trading-systematic', 'other'] },
     source_channel: { type: 'string', enum: CHANNEL_ENUM, description: 'the channel of the signal this idea is grounded in (exact, not guessed)' },
     one_liner: { type: 'string' }, the_insight: { type: 'string' }, moat_type: { type: 'string' },
     target_customer: { type: 'string' }, monetization: { type: 'string' }, why_now: { type: 'string' },

@@ -89,8 +89,11 @@
       "regulatory-forced-buyers", "australia-local-gaps", "ai-frontier-gaps", "yc-rfs-themes",
       "reddit-forum-pains", "review-complaint-gaps", "job-postings-demand", "producthunt-indiehackers",
       "funding-flows", "too-early-now-viable", "india-bharat-demand", "boring-profitable",
-      "creator-economy-tools", "cross-border-digital"
+      "creator-economy-tools", "cross-border-digital",
+      "physical-trade-import-export", "manufacturing-msme", "markets-trading-fintech",
+      "franchise-distribution-licensing", "content-media-brands"
     ],
+    "_verticalNote": "2026-06-11 founder correction: the original 14 channels were digital/AI-skewed ('you're trying to force AI on stuff'). The 5 real-economy channels (trade, manufacturing, markets, franchise, media-ownership) are permanent. AI is the founder's execution advantage, never a required product ingredient.",
     "_channelWeightNote": "Channel richness is computed OBJECTIVELY each run by bizscout-ledger.mjs (avg validated composite, penalised for duplicate-flooding) — NOT by a committee guess. Volume never wins. See biz-opportunities-digest.md.",
     "rubricWeights": { "demand": 0.25, "moat": 0.2, "competition_shape": 0.15, "profit_ceiling": 0.15, "speed_to_cash": 0.15, "founder_fit": 0.1 },
     "factCheck": { "topNToVerify": 10, "_note": "the top N ledger ideas get an independent primary-source check on their single most load-bearing claim; unverified -> flagged UNVERIFIED, never presented as fact." },
@@ -101,5 +104,22 @@
     "ledgerFile": ".loop/biz-opportunities-ledger.json",
     "digestFile": ".loop/biz-opportunities-digest.md",
     "humanLedgerFile": "data/research/OPPORTUNITIES.md"
+  },
+  "dailyRadar": {
+    "_comment": "Phase 9 — the DAILY OPPORTUNITY RADAR (/loop-radar, gen-radar-workflow.mjs). 4 Haiku harvest legs (2 rotating web channels, Gmail newsletters, pro-YouTube RSS watchlist, govt IN+AU) -> Sonnet synthesis filter -> validate + fact-check -> ledger merge -> strategist + Tata scoring on NEW -> manager presents high conviction only. Scheduled daily 12:05pm via launchd (com.nakshiq.loop-radar).",
+    "autoSend": true,
+    "_autoSendNote": "true = the daily brief is DELIVERED autonomously (founder's 2026-06-11 daily-presentation request = standing approval). Flip to false to fall back to pending-actions.md.",
+    "delivery": {
+      "primary": "email",
+      "emailTo": "taneja.ashish5@gmail.com",
+      "emailVia": "node --env-file=apps/web/.env.local scripts/_loop/send-radar-brief.mjs --file <brief.md>",
+      "_note": "EMAIL IS PRIMARY (founder 2026-06-11: 'I did not receive any email. It should be sent to me at a Gmail account' — the noon iMessage landed in his notification-less self-chat). iMessage = best-effort secondary.",
+      "briefsDir": ".loop/radar-briefs"
+    },
+    "cadence": "daily-12pm",
+    "maxAgentsPerRun": 15,
+    "sourcesFile": ".loop/radar-sources.json",
+    "stateFile": ".loop/radar-state.json",
+    "runsDir": ".loop/radar-runs"
   }
 }

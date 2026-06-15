@@ -36,6 +36,33 @@ export const TATA_GATE_MD = path.join(ROOT, 'data/research/RATAN-TATA-GATE.md');
 // asked for, so it carries slightly more than half.
 export const BLEND = { checklist: 0.55, composite: 0.45 };
 
+// ---------------------------------------------------------------------------
+// CASH-FLOW LENS (added 2026-06-11, founder: "find the best opportunities, it
+// doesn't matter what the sector is... don't be biased").
+// The checklist is distilled from venture-shaped sources (Robbins / Masters
+// Union / Gala prize moats, scale economics, compounding distribution), so a
+// perfectly good CASH-FLOW business — trade margin, franchise income, media
+// rents — structurally fails the venture-only weight-3 items and gets
+// PARK-capped by construction. The fix is a second lens, not a lower bar:
+// cash-flow-shaped ideas are ALSO scored with the venture-only items excluded
+// and a margin/speed-weighted composite; the BETTER of the two lenses sets the
+// strategist tier. Venture-shaped ideas are unaffected.
+// ---------------------------------------------------------------------------
+export const VENTURE_ONLY_ITEMS = new Set([
+  'defensible-moat', 'scale-economics', 'distribution-moat', 'category-creation', 'large-growing-market',
+]);
+export const CASHFLOW_SHAPES = new Set([
+  'physical-trade', 'manufacturing', 'franchise-license', 'media-property', 'trading-systematic', 'productized-service',
+  'content-audience', // 2026-06-11: a faceless channel/newsletter is a cash business — same lens as media-property
+]);
+// margin + speed weighted; moat intentionally 0 — a cash business defends with relationships/contracts, not moats.
+export const CF_WEIGHTS = { demand: 0.3, speed_to_cash: 0.25, profit_ceiling: 0.2, founder_fit: 0.15, competition_shape: 0.1, moat: 0 };
+export function cashflowComposite(scores = {}) {
+  let t = 0;
+  for (const [k, w] of Object.entries(CF_WEIGHTS)) t += (Number(scores[k]) || 0) * w;
+  return Math.round(t * 100) / 100;
+}
+
 // A checklist item is one of three STAGES:
 //   - idea     : assessable from the opportunity itself (demand, moat, distribution-path,
 //                unit-economics potential, timing). THIS is what we screen ideas on.
@@ -156,8 +183,11 @@ export const TIER_RANK = { BLOCKED: 0, PARK: 1, WATCH: 2, PURSUE: 3 };
 export function finalTierFor(strategistTier, tata) {
   if (!tata || !tata.verdict) return strategistTier;          // gate not run yet
   if (tata.verdict === 'fail') return 'BLOCKED';              // hard veto, regardless of conviction
-  if (tata.verdict === 'conditional') return strategistTier === 'PURSUE' ? 'WATCH' : strategistTier; // cap
-  return strategistTier;                                      // 'pass' — strategist tier stands
+  // 'conditional' no longer caps the tier (founder 2026-06-11: "be flexible with the
+  // gates... it should not break any high-profitable business idea for no reason —
+  // there's always a way to be ethically aligned"). The gate's `fix` is carried as a
+  // MANDATORY LAUNCH PRECONDITION on the idea instead of a demotion.
+  return strategistTier;                                      // 'pass'/'conditional' — strategist tier stands
 }
 
 /** Merge workflow result into ranked rows (deterministic). Headline fit = IDEA-stage only. */
@@ -167,6 +197,7 @@ export function rankIdeas(result, ledgerOpportunities) {
   const execItems = checklist.filter((c) => c.stage === 'execution');
   const founderItems = checklist.filter((c) => c.stage === 'founder');
   const ledgerByKey = new Map((ledgerOpportunities || []).map((o) => [o.key, o]));
+  const cfIdeaItems = ideaItems.filter((c) => !VENTURE_ONLY_ITEMS.has(c.id));
   const rows = (result.scored || []).map((s) => {
     const led = ledgerByKey.get(s.key) || {};
     const composite = led.composite != null ? led.composite : (s.composite || 0);
@@ -174,21 +205,38 @@ export function rankIdeas(result, ledgerOpportunities) {
     const ex = fitForIdea(s.item_verdicts, execItems);      // execution readiness (guidance)
     const fo = fitForIdea(s.item_verdicts, founderItems);   // founder readiness (guidance)
     const conv = conviction(f.fit, composite);
+    const ventureTier = tierFor(conv, f.dealbreakers.length);
+    // CASH-FLOW lens: only for cash-flow shapes; venture-only items excluded from
+    // both fit and the deal-breaker cap; composite reweighted for margin + speed.
+    const isCashflowShape = CASHFLOW_SHAPES.has(led.shape || s.shape || '');
+    const ledScores = (led.validation && led.validation.scores) || led.scores || {};
+    const cf = isCashflowShape ? fitForIdea(s.item_verdicts, cfIdeaItems) : null;
+    const cfComp = isCashflowShape ? cashflowComposite(ledScores) : null;
+    const cfConv = cf ? conviction(cf.fit, cfComp != null && cfComp > 0 ? cfComp : composite) : null;
+    const cfTier = cf ? tierFor(cfConv, cf.dealbreakers.length) : null;
+    const useCf = cfTier && (TIER_RANK[cfTier] > TIER_RANK[ventureTier] || (cfTier === ventureTier && cfConv > conv));
+    const effConv = useCf ? cfConv : conv;
+    const effDealbreakers = useCf ? cf.dealbreakers : f.dealbreakers;
+    const effTier = useCf ? cfTier : ventureTier;
     return {
       key: s.key,
       name: s.name || led.name || s.key,
       category: led.category || s.category || '',
+      shape: led.shape || s.shape || '',
       composite: Math.round(composite * 100) / 100,
-      checklistFit: Math.round(f.fit * 1000) / 1000,
+      checklistFit: Math.round((useCf ? cf.fit : f.fit) * 1000) / 1000,
       fitLoadBearing: Math.round(f.fitLoadBearing * 1000) / 1000,
       execReadiness: Math.round(ex.fit * 1000) / 1000,
       founderReadiness: Math.round(fo.fit * 1000) / 1000,
-      conviction: conv,
+      conviction: effConv,
+      convictionVenture: conv,
+      convictionCashflow: cfConv,
+      lens: useCf ? 'cash-flow' : 'venture',
       factStatus: led.fact_status || 'unchecked',           // from the fact-check gate (separate from fit)
-      dealbreakers: f.dealbreakers,                         // idea-stage weight-3 fails only
-      tier: tierFor(conv, f.dealbreakers.length),           // strategist (quality) tier
+      dealbreakers: effDealbreakers,                        // weight-3 fails under the winning lens
+      tier: effTier,                                        // strategist (quality) tier, best lens
       tata: led.tata || null,                               // Ratan Tata gate verdict (if run)
-      finalTier: finalTierFor(tierFor(conv, f.dealbreakers.length), led.tata),
+      finalTier: finalTierFor(effTier, led.tata),
       coverage: `${f.scored}/${ideaItems.length * 3}`,      // weighted coverage of idea items
       ideaItemsAssessed: f.scored,
       top_strengths: s.top_strengths || [],
@@ -255,7 +303,8 @@ export function buildScoredMd(rows, result, today) {
   let md = `# Opportunities — scored against the Strategist Checklist\n\n`;
   md += `> Generated ${today}. Each idea graded against the [Strategist Checklist](STRATEGIST-CHECKLIST.md) (${cl.length} items). **Conviction** = ${BLEND.checklist} × idea-quality-fit + ${BLEND.composite} × 6-factor composite. Only the **${ideaCount} idea-quality** items score an idea (execution + founder items are a roadmap, not a filter). An idea that **fails 2+ load-bearing idea-quality tests** is capped at **PARK** regardless of score.\n\n`;
   md += `> ⚠️ **Fit ≠ verified.** Conviction measures how well the idea fits what great operators demand — NOT whether its demand claims are true. The **Fact** column is the separate fact-check gate: \`refuted\` = a load-bearing claim was checked and is false, \`partial\` = mixed, \`unchecked\` = not yet run.\n\n`;
-  if (tataRun) md += `> ⛔ **The Ratan Tata gate is the FINAL word.** The [Ratan Tata Gate](RATAN-TATA-GATE.md) is an integrity/ethics veto that OVERRIDES conviction: a \`FAIL\` → **BLOCKED** no matter how high the score; \`conditional\` → capped at WATCH until the concern is resolved. "Even if the others are contradictory, follow Ratan Tata. He is the final gate, always." The **Tier** column below is the FINAL, Tata-gated tier.\n\n`;
+  md += `> 💰 **Dual lens (2026-06-11).** The checklist is venture-shaped (moats, scale, compounding) — so cash-flow-shaped ideas (physical trade, manufacturing, franchise, media property, systematic trading, productized service) are ALSO scored with the venture-only items excluded and a margin/speed-weighted composite; the better lens sets the tier. The **Lens** column shows which won: 🚀 venture / 💰 cash-flow.\n\n`;
+  if (tataRun) md += `> ⛔ **The Ratan Tata gate is the FINAL word.** The [Ratan Tata Gate](RATAN-TATA-GATE.md) is an integrity/ethics veto: a \`FAIL\` → **BLOCKED** no matter how high the score. A \`conditional\` does NOT demote the idea — its **fix is a mandatory launch precondition** (founder 2026-06-11: "be flexible with the gates... there's always a way to be ethically aligned"). "Even if the others are contradictory, follow Ratan Tata. He is the final gate, always." The **Tier** column below is the FINAL, Tata-gated tier.\n\n`;
   // group by FINAL tier (Tata-gated)
   const order = ['BLOCKED', 'PURSUE', 'WATCH', 'PARK'];
   const tiers = { BLOCKED: [], PURSUE: [], WATCH: [], PARK: [] };
@@ -263,10 +312,11 @@ export function buildScoredMd(rows, result, today) {
   const counts = order.filter((t) => tiers[t].length).map((t) => `${tiers[t].length} ${t}`).join(' · ');
   md += `**${counts}**\n\n`;
   const factFlag = (f) => f === 'refuted' ? '🔴 refuted' : f === 'partial' ? '🟡 partial' : (f && f !== 'unchecked' && f !== 'verified') ? f : (f === 'verified' ? '🟢 verified' : '—');
-  md += `| # | Idea | Conviction | Idea-quality fit | Composite | 🛑 | Fact |${tataRun ? ' Tata |' : ''} Tier |\n`;
-  md += `|---|------|-----------|------------------|-----------|----|------|${tataRun ? '------|' : ''}------|\n`;
+  md += `| # | Idea | Conviction | Lens | Idea-quality fit | Composite | 🛑 | Fact |${tataRun ? ' Tata |' : ''} Tier |\n`;
+  md += `|---|------|-----------|------|------------------|-----------|----|------|${tataRun ? '------|' : ''}------|\n`;
   rows.forEach((r, i) => {
-    md += `| ${i + 1} | **${r.name}** | ${r.conviction.toFixed(2)} | ${bar(r.checklistFit)} ${(r.checklistFit * 100).toFixed(0)}% | ${r.composite.toFixed(1)} | ${r.dealbreakers.length || '—'} | ${factFlag(r.factStatus)} |${tataRun ? ` ${TATA_FLAG(r.tata)} |` : ''} ${r.finalTier} |\n`;
+    const lens = r.lens === 'cash-flow' ? '💰' : '🚀';
+    md += `| ${i + 1} | **${r.name}** | ${r.conviction.toFixed(2)} | ${lens} | ${bar(r.checklistFit)} ${(r.checklistFit * 100).toFixed(0)}% | ${r.composite.toFixed(1)} | ${r.dealbreakers.length || '—'} | ${factFlag(r.factStatus)} |${tataRun ? ` ${TATA_FLAG(r.tata)} |` : ''} ${r.finalTier} |\n`;
   });
   md += `\n---\n\n`;
   const dbNames = (ids) => ids.map((id) => titleById.get(id) || id);
@@ -283,7 +333,8 @@ export function buildScoredMd(rows, result, today) {
         md += `- ${icon} **Ratan Tata gate: ${r.tata.verdict.toUpperCase()}** — ${r.tata.reason || ''}\n`;
         if (r.tata.failed_tests && r.tata.failed_tests.length) md += `  - Fails: ${r.tata.failed_tests.join(', ')}\n`;
         if (r.tata.concerns && r.tata.concerns.length) md += `  - Concerns: ${r.tata.concerns.join('; ')}\n`;
-        if (r.tata.fix) md += `  - To clear the gate: ${r.tata.fix}\n`;
+        if (r.tata.fix && r.tata.verdict === 'conditional') md += `  - 📋 **MANDATORY LAUNCH PRECONDITION** (does not demote the tier): ${r.tata.fix}\n`;
+        else if (r.tata.fix) md += `  - To clear the gate: ${r.tata.fix}\n`;
       } else if (r.tata && r.tata.verdict === 'pass') {
         md += `- 🟢 **Ratan Tata gate: PASS** — ${r.tata.reason || 'no integrity concerns.'}\n`;
       }
@@ -512,9 +563,39 @@ function selfTest() {
   eq('finalTier pass keeps tier', finalTierFor('PURSUE', { verdict: 'pass' }), 'PURSUE');
   eq('finalTier FAIL blocks PURSUE', finalTierFor('PURSUE', { verdict: 'fail' }), 'BLOCKED');
   eq('finalTier FAIL blocks even PARK', finalTierFor('PARK', { verdict: 'fail' }), 'BLOCKED');
-  eq('finalTier conditional caps PURSUE->WATCH', finalTierFor('PURSUE', { verdict: 'conditional' }), 'WATCH');
+  // 2026-06-11 founder rule: conditional = mandatory-fix annotation, NEVER a demotion
+  // ("be flexible with the gates... there's always a way to be ethically aligned").
+  eq('finalTier conditional keeps PURSUE (fix = precondition, not demotion)', finalTierFor('PURSUE', { verdict: 'conditional' }), 'PURSUE');
   eq('finalTier conditional leaves WATCH', finalTierFor('WATCH', { verdict: 'conditional' }), 'WATCH');
   eq('finalTier conditional leaves PARK', finalTierFor('PARK', { verdict: 'conditional' }), 'PARK');
+  // cash-flow lens (2026-06-11): venture-only items excluded for cash-flow shapes
+  eq('cf composite weights margin+speed, moat 0', cashflowComposite({ demand: 4, speed_to_cash: 4, profit_ceiling: 4, founder_fit: 4, competition_shape: 4, moat: 0 }), 4);
+  eq('cf composite ignores moat', cashflowComposite({ demand: 3, speed_to_cash: 3, profit_ceiling: 3, founder_fit: 3, competition_shape: 3, moat: 5 }), 3);
+  {
+    // a trade idea that fails ONLY the venture-only items must not be PARK-capped under the cf lens
+    const cl = [
+      { id: 'defensible-moat', weight: 3, category: 'moat' },
+      { id: 'scale-economics', weight: 3, category: 'economics' },
+      { id: 'validated-paying-demand', weight: 3, category: 'demand' },
+      { id: 'unit-economics', weight: 3, category: 'economics' },
+    ];
+    const verdicts = [
+      { id: 'defensible-moat', verdict: 'fail' },
+      { id: 'scale-economics', verdict: 'fail' },
+      { id: 'validated-paying-demand', verdict: 'pass' },
+      { id: 'unit-economics', verdict: 'pass' },
+    ];
+    const full = fitForIdea(verdicts, cl);
+    const cfCl = cl.filter((c) => !VENTURE_ONLY_ITEMS.has(c.id));
+    const cf = fitForIdea(verdicts, cfCl);
+    eq('venture lens sees 2 dealbreakers', full.dealbreakers.length, 2);
+    eq('cf lens excludes venture-only fails', cf.dealbreakers.length, 0);
+    eq('cf fit is clean', cf.fit, 1);
+    eq('venture tier PARK-capped', tierFor(conviction(full.fit, 4), full.dealbreakers.length), 'PARK');
+    eq('cf tier escapes the cap', tierFor(conviction(cf.fit, 4), cf.dealbreakers.length), 'PURSUE');
+  }
+  eq('cashflow shape set covers trade', CASHFLOW_SHAPES.has('physical-trade'), true);
+  eq('cashflow shape set excludes ai-saas', CASHFLOW_SHAPES.has('ai-saas'), false);
   eq('tier rank ordering', [TIER_RANK.BLOCKED, TIER_RANK.PARK, TIER_RANK.WATCH, TIER_RANK.PURSUE], [0, 1, 2, 3]);
 
   // rankIdeas honors the gate from the ledger opportunity + sorts blocked last
