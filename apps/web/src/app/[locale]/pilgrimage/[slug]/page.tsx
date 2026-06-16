@@ -74,9 +74,12 @@ export async function generateMetadata({
   const r = localizePilgrimage(raw, locale);
   const metric = headlineMetric(r, isHindi);
 
+  // <title> omits " | NakshIQ" — the locale layout's title.template appends
+  // it. ogTitle carries the brand inline (the template skips OG/twitter).
   const title = isHindi
-    ? `${r.name} — दूरी, मार्ग और योजना (2026) | NakshIQ`
-    : `${r.name} — distances, route & planning (2026) | NakshIQ`;
+    ? `${r.name} — दूरी, मार्ग और योजना (2026)`
+    : `${r.name} — distances, route & planning (2026)`;
+  const ogTitle = `${title} | NakshIQ`;
   const description = isHindi
     ? `${r.name} की पूरी योजना — ${metric ? `${metric}, ` : ""}चरण-दर-चरण दूरियाँ, पहुँचने के तरीके (पैदल/घोड़ा/हेली), सबसे अच्छा समय और असली दिक्कतें। हर दूरी आधिकारिक स्रोत से सत्यापित।`
     : `Plan the ${r.name} — ${metric ? `${metric}, ` : ""}leg-by-leg distances, how pilgrims cover each stage (foot/pony/heli), the best window and the real gotchas. Every distance source-verified, not blog guesswork.`;
@@ -86,14 +89,14 @@ export async function generateMetadata({
     description: description.slice(0, 200),
     ...localeAlternates(locale, `/pilgrimage/${slug}`),
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       type: "article",
       url: `${BASE}/${locale}/pilgrimage/${slug}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title: ogTitle, description },
   };
 }
 

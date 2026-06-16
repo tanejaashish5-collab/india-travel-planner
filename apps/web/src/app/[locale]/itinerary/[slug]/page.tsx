@@ -23,6 +23,8 @@ import {
   durationPhrase,
 } from "@/lib/itinerary-page";
 import { getCachedItinerarySlugs } from "@/lib/cached-data";
+import { isCinematicDestination } from "@/lib/cinematic-destinations";
+import { destinationImage } from "@/lib/image-url";
 import { MONTH_NAMES_EN, MONTH_NAMES_HI } from "@/lib/trip-cost";
 import { ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 import { localizeRow, currentMonthIST, type Locale, type Translations } from "@itp/shared";
@@ -159,27 +161,45 @@ export async function generateMetadata({
   const mi = dest.micro_itineraries as MicroItineraries;
   const days = durationPhrase(availableDurations(mi), locale);
 
+  // The <title> carries NO " | NakshIQ" — the locale layout's title.template
+  // ("%s | NakshIQ") appends the brand. Hardcoding it here too double-stamped
+  // it ("... | NakshIQ | NakshIQ"). OG/twitter titles aren't run through the
+  // template, so ogTitle carries the brand inline (mirrors destination/[id]).
   const title = isHindi
-    ? `${name} यात्रा योजना — ${days} (सत्यापित) | NakshIQ`
-    : `${name} itinerary — ${days} (verified) | NakshIQ`;
+    ? `${name} यात्रा योजना — ${days} (सत्यापित)`
+    : `${name} itinerary — ${days} (verified)`;
+  const ogTitle = `${title} | NakshIQ`;
 
   const description = isHindi
     ? `${name} में ${days} में क्या करें — सुबह से शाम तक की समय-बँधी योजनाएँ, NakshIQ की सत्यापित गाइड से। साथ में कहाँ खाएँ, कहाँ ठहरें${mi.one_day?.bad_weather_plan ? " और मौसम बिगड़ने का प्लान" : ""}।`
     : `What to do in ${name} with ${days} — time-blocked plans from NakshIQ's verified guide, with where to eat and stay${mi.one_day?.bad_weather_plan ? " and a bad-weather fallback" : ""}. No filler.`;
+
+  // Destination-level OG image — same resolution as the destination hub:
+  // cinematic dests get the composed card route, the rest the raw R2 hero.
+  const imageUrl = isCinematicDestination(slug)
+    ? `${BASE}/api/og/destination/${slug}?locale=${locale}`
+    : destinationImage(slug);
+  const imageAlt = isHindi ? `${name} यात्रा योजना` : `${name} itinerary`;
 
   return {
     title,
     description: description.slice(0, 200),
     ...localeAlternates(locale, `/itinerary/${slug}`),
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       type: "article",
       url: `${BASE}/${locale}/itinerary/${slug}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: imageAlt }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [imageUrl],
+    },
   };
 }
 

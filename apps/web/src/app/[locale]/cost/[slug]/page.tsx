@@ -93,9 +93,12 @@ export async function generateMetadata({
   const month = currentMonthIST();
   const t = estimateAllTiers(data.rows, { days: 4, people: 2, month });
 
+  // <title> omits " | NakshIQ" — the locale layout's title.template appends
+  // it. ogTitle carries the brand inline (the template skips OG/twitter).
   const title = isHindi
-    ? `${name} यात्रा खर्च (2026): 2–10 दिन का बजट | NakshIQ`
-    : `${name} trip cost (2026): budget for 2–10 days | NakshIQ`;
+    ? `${name} यात्रा खर्च (2026): 2–10 दिन का बजट`
+    : `${name} trip cost (2026): budget for 2–10 days`;
+  const ogTitle = `${title} | NakshIQ`;
 
   const description = isHindi
     ? `${name} की यात्रा का असली खर्च — दो लोगों के 4 दिन के लिए मध्यम बजट लगभग ${inr(t.mid.total)} (≈ ${inr(t.mid.perDay)}/दिन)। बैकपैकर ${inr(t.budget.total)} से लग्ज़री ${inr(t.luxury.total)} तक। मौसम के अनुसार, स्रोत-सहित।`
@@ -106,14 +109,14 @@ export async function generateMetadata({
     description: description.slice(0, 200),
     ...localeAlternates(locale, `/cost/${slug}`),
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       type: "article",
       url: `${BASE}/${locale}/cost/${slug}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title: ogTitle, description },
   };
 }
 

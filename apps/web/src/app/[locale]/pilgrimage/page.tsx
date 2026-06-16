@@ -37,9 +37,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const isHindi = locale === "hi";
+  // <title> omits " | NakshIQ" — the locale layout's title.template appends
+  // it. ogTitle carries the brand inline (the template skips OG/twitter).
   const title = isHindi
-    ? "भारत की तीर्थयात्राएँ — दूरी, मार्ग और योजना | NakshIQ"
-    : "India pilgrimage routes — distances, route & planning | NakshIQ";
+    ? "भारत की तीर्थयात्राएँ — दूरी, मार्ग और योजना"
+    : "India pilgrimage routes — distances, route & planning";
+  const ogTitle = `${title} | NakshIQ`;
   const description = isHindi
     ? "चार धाम, वैष्णो देवी, अष्टविनायक और अन्य प्रमुख यात्राओं की चरण-दर-चरण दूरियाँ, पहुँचने के तरीके और सबसे अच्छा समय — हर दूरी आधिकारिक स्रोत से सत्यापित।"
     : "Leg-by-leg distances, access modes and the best window for Char Dham, Vaishno Devi, Ashtavinayak and India's major yatras — every distance source-verified.";
@@ -47,8 +50,8 @@ export async function generateMetadata({
     title,
     description,
     ...localeAlternates(locale, `/pilgrimage`),
-    openGraph: { title, description, type: "website", url: `${BASE}/${locale}/pilgrimage`, siteName: "NakshIQ", locale: isHindi ? "hi_IN" : "en_IN" },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title: ogTitle, description, type: "website", url: `${BASE}/${locale}/pilgrimage`, siteName: "NakshIQ", locale: isHindi ? "hi_IN" : "en_IN" },
+    twitter: { card: "summary_large_image", title: ogTitle, description },
   };
 }
 

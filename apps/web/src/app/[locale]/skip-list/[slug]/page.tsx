@@ -117,7 +117,10 @@ export async function generateMetadata({
 
   const { trapDest } = data;
   const stateName = resolveState(trapDest.state);
-  const title = `${trapDest.name} — Is It Worth Visiting? Honest Review | NakshIQ`;
+  // <title> omits " | NakshIQ" — the locale layout's title.template appends
+  // it. ogTitle carries the brand inline (the template skips OG/twitter).
+  const title = `${trapDest.name} — Is It Worth Visiting? Honest Review`;
+  const ogTitle = `${title} | NakshIQ`;
   const description = `Should you skip ${trapDest.name}${stateName ? `, ${stateName}` : ""}? Honest assessment with ${data.alternatives.length} better alternative${data.alternatives.length > 1 ? "s" : ""} nearby. Data-driven, no sponsored picks.`;
   const canonicalUrl = `${SITE}/${locale}/skip-list/${slug}`;
   const imageUrl = `${SITE}/images/destinations/${slug}.jpg`;
@@ -134,7 +137,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       type: "article",
       url: canonicalUrl,
@@ -144,7 +147,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: ogTitle,
       description,
       images: [imageUrl],
     },

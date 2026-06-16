@@ -97,9 +97,12 @@ export async function generateMetadata({
       ? "गेट पर"
       : "on arrival";
 
+  // <title> omits " | NakshIQ" — the locale layout's title.template appends
+  // it. ogTitle carries the brand inline (the template skips OG/twitter).
   const title = isHindi
-    ? `${name} सफ़ारी बुकिंग (2026): परमिट, ज़ोन, शुल्क | NakshIQ`
-    : `${name} safari booking (2026): permits, zones & fees | NakshIQ`;
+    ? `${name} सफ़ारी बुकिंग (2026): परमिट, ज़ोन, शुल्क`
+    : `${name} safari booking (2026): permits, zones & fees`;
+  const ogTitle = `${title} | NakshIQ`;
 
   const description = isHindi
     ? `${name} सफ़ारी कैसे बुक करें — ${s.booking_authority ?? "वन विभाग"} के ज़रिये, ${window} खुलती है। ज़ोन, जीप/कैंटर शुल्क, ID ज़रूरतें और असली बुकिंग दिक्कतें — स्रोत-सहित, सत्यापित।`
@@ -110,14 +113,14 @@ export async function generateMetadata({
     description: description.slice(0, 200),
     ...localeAlternates(locale, `/safari/${slug}`),
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       type: "article",
       url: `${BASE}/${locale}/safari/${slug}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title: ogTitle, description },
   };
 }
 
