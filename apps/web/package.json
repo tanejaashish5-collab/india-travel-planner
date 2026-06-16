@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "check:env": "node scripts/check-env.mjs",
-    "prebuild": "node scripts/check-env.mjs && node ../../scripts/build-audit-snapshot.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "prebuild": "node scripts/check-env.mjs && node scripts/check-i18n.mjs && node ../../scripts/build-audit-snapshot.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
