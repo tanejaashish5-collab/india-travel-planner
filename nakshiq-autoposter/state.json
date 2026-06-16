@@ -34,37 +34,18 @@
     "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-06-15",
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-06-15",
+    "m8EAd": "2026-06-16",
     "m8EAd_evening": "2026-06-15",
-    "PdMu0": "2026-06-15",
+    "PdMu0": "2026-06-16",
     "PdMu0_evening": "2026-06-15",
     "m8EAd_yt_short": "2026-06-15",
     "m8EAd_tourist_map": "2026-06-15",
     "PdMu0_tourist_map": "2026-06-15",
-    "m8EAd_evening_story": "2026-06-15"
+    "m8EAd_evening_story": "2026-06-15",
+    "m8EAd_story": "2026-06-16"
   },
-  "last_sync": "2026-06-15T18:53:04.202835+00:00",
+  "last_sync": "2026-06-16T09:09:03.777909+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "yusmarg",
-      "date": "2026-06-01"
-    },
-    {
-      "destination_id": "sissu",
-      "date": "2026-06-01"
-    },
-    {
-      "destination_id": "rudraprayag",
-      "date": "2026-06-01"
-    },
-    {
-      "destination_id": "kasol",
-      "date": "2026-06-01"
-    },
-    {
-      "destination_id": "achabal",
-      "date": "2026-06-01"
-    },
     {
       "destination_id": "tungnath",
       "date": "2026-06-02"
@@ -352,11 +333,18 @@
     {
       "destination_id": "sissu",
       "date": "2026-06-15"
+    },
+    {
+      "destination_id": "achabal",
+      "date": "2026-06-16"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-06-16"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_weekend_escape_map",
       "v2_texture_macro",
       "v3_tl_world_best_india",
       "v2_hidden_gem_reveal_atmo",
@@ -376,10 +364,10 @@
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
       "v2_tourist_trap_split",
-      "v2_thali_close_up"
+      "v2_thali_close_up",
+      "v2_local_knows"
     ],
     "PdMu0": [
-      "v2_weekend_escape_map",
       "v2_texture_macro",
       "v3_tl_world_best_india",
       "v2_hidden_gem_reveal_atmo",
@@ -399,7 +387,8 @@
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
       "v2_tourist_trap_split",
-      "v2_thali_close_up"
+      "v2_thali_close_up",
+      "v2_local_knows"
     ]
   },
   "post_log": [
@@ -3113,17 +3102,6 @@
       "media_id": "v2_thali_close_up-nako_01_cover.png"
     },
     {
-      "timestamp": "2026-06-15T18:55:05.128640+00:00",
-      "date": "2026-06-15",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "dRwaO",
-      "destination": "haridwar",
-      "format": "festival_alert",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-06-15T18:55:53.411859+00:00",
       "date": "2026-06-15",
       "platform": "facebook",
@@ -3133,6 +3111,39 @@
       "format": "v2_thali_close_up",
       "has_media": true,
       "media_id": "v2_thali_close_up-sissu_01_cover.png"
+    },
+    {
+      "timestamp": "2026-06-16T09:09:40.895731+00:00",
+      "date": "2026-06-16",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "KM0X9",
+      "destination": "achabal",
+      "format": "v2_local_knows",
+      "has_media": true,
+      "media_id": "v2_local_knows-achabal.png"
+    },
+    {
+      "timestamp": "2026-06-16T09:10:07.178645+00:00",
+      "date": "2026-06-16",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "dRTzO",
+      "destination": "lolab-valley",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-06-16T09:10:31.001498+00:00",
+      "date": "2026-06-16",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ar2Db",
+      "destination": "pangong-lake",
+      "format": "v2_local_knows",
+      "has_media": true,
+      "media_id": "v2_local_knows-pangong-lake.png"
     }
   ],
   "theme_usage": {
@@ -3158,7 +3169,8 @@
       ],
       "achabal": [
         "2026-05-19",
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-16"
       ],
       "mumbai": [
         "2026-05-20",
@@ -3242,7 +3254,8 @@
         "2026-05-25"
       ],
       "lolab-valley": [
-        "2026-05-25"
+        "2026-05-25",
+        "2026-06-16"
       ],
       "pithoragarh": [
         "2026-05-25",
@@ -3332,7 +3345,8 @@
         "2026-06-08",
         "2026-06-10",
         "2026-06-11",
-        "2026-06-15"
+        "2026-06-15",
+        "2026-06-16"
       ],
       "ukhrul": [
         "2026-06-03"
@@ -3496,7 +3510,8 @@
         "2026-06-02"
       ],
       "v2_local_knows": [
-        "2026-06-02"
+        "2026-06-02",
+        "2026-06-16"
       ],
       "v2_weekend_escape_map": [
         "2026-06-03"
@@ -3866,7 +3881,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sonamarg",
+    "shared_best": "lolab-valley",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {}

@@ -4412,3 +4412,60 @@ Date range: 2026-04-15 → 2026-06-14
 2026-06-15 21:25:26  INFO      
 Date range: 2026-04-15 → 2026-06-15
 2026-06-15 21:25:26  INFO      ════════════════════════════════════════════════════════════
+2026-06-16 09:08:34  INFO      ════════════════════════════════════════════════════════════
+2026-06-16 09:08:34  INFO      Nakshiq Autoposter · MORNING · 2026-06-16 · weekday=1
+2026-06-16 09:08:34  INFO      ════════════════════════════════════════════════════════════
+2026-06-16 09:08:34  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-16 09:09:03  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-16 09:09:03  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-16 09:09:04  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-16 09:09:04  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-16 09:09:06  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-16 09:09:06  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-16 09:09:18  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-16 09:09:18  INFO      Morning format (themed-week-3→anti_trap): v2_local_knows [9% vs target 15%] (0/14 never featured)
+2026-06-16 09:09:18  INFO      Formats — IG: v2_local_knows  ·  FB: v2_local_knows  ·  Story: blog_promo
+2026-06-16 09:09:18  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-06-16 09:09:18  INFO      Fingerprint dedup snapshot — 57 dests in 7d · 138 (dest,fmt) pairs in 30d · 136 media in 60d
+2026-06-16 09:09:22  INFO      Shared best destination locked: Lolab Valley
+2026-06-16 09:09:22  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-16 09:09:22  INFO      [instagram/nakshiq] Generating v2_local_knows post...
+2026-06-16 09:09:22  INFO      v2_local_knows: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:09:22  INFO      [instagram/nakshiq] Caption ready (493 chars, dest=achabal)
+2026-06-16 09:09:25  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-06-16 09:09:25  INFO          Requesting upload URL for v2_local_knows-achabal.png (2,082,992 bytes, image/png)
+2026-06-16 09:09:25  INFO          Uploading to R2 (timeout=120s)...
+2026-06-16 09:09:26  INFO          R2 PUT OK. Confirming...
+2026-06-16 09:09:27  INFO          Media ready: 9GgUQ (2,082,992 bytes · v2_local_knows-achabal.png)
+2026-06-16 09:09:27  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-16 09:09:40  INFO      [instagram/nakshiq] ✅ Published · Outstand=KM0X9 · Platform=18140752153541936
+2026-06-16 09:09:40  INFO      [instagram/nakshiq] Uploading Story image (lolab-valley.jpg)...
+2026-06-16 09:09:40  INFO          Using branded image: lolab-valley_story_minimal-elegant_watermark.jpg (474,681 bytes)
+2026-06-16 09:09:40  INFO          Requesting upload URL for lolab-valley.jpg (474,681 bytes, image/jpeg)
+2026-06-16 09:09:41  INFO          Uploading to R2 (timeout=120s)...
+2026-06-16 09:09:41  INFO          R2 PUT OK. Confirming...
+2026-06-16 09:09:42  INFO          Media ready: XoPye (474,681 bytes · lolab-valley.jpg)
+2026-06-16 09:09:42  INFO      [instagram/nakshiq] Publishing Story · format=blog_promo · dest=lolab-valley
+2026-06-16 09:10:07  INFO      [instagram/nakshiq] ✅ Story live · ID=18171835579420624
+2026-06-16 09:10:07  INFO      [facebook/Nakshiq] Generating v2_local_knows post...
+2026-06-16 09:10:07  INFO      v2_local_knows: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      v2_local_knows: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 09:10:07  INFO      [facebook/Nakshiq] Caption ready (578 chars, dest=pangong-lake)
+2026-06-16 09:10:09  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-06-16 09:10:09  INFO          Requesting upload URL for v2_local_knows-pangong-lake.png (1,700,269 bytes, image/png)
+2026-06-16 09:10:10  INFO          Uploading to R2 (timeout=120s)...
+2026-06-16 09:10:10  INFO          R2 PUT OK. Confirming...
+2026-06-16 09:10:11  INFO          Media ready: XoPje (1,700,269 bytes · v2_local_knows-pangong-lake.png)
+2026-06-16 09:10:11  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-16 09:10:31  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ar2Db · Platform=1040562729145369_122112259316700092
+2026-06-16 09:10:31  INFO      State saved. Run complete.
+2026-06-16 09:10:31  INFO      ════════════════════════════════════════════════════════════
