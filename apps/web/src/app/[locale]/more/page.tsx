@@ -10,7 +10,7 @@ import { Title } from "@/components/landing-cinema/editorial";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "More — every NakshIQ tool, guide, and policy in one place",
+    title: "More — every tool, guide, and policy in one place",
     description:
       "Trip planning tools, destination comparisons, editorial policy, press, corrections, and the rest of NakshIQ — all linked from a single hub.",
     // GSC: 14 sessions / 0 engaged in 7d. People land here from "site map"-style

@@ -15,7 +15,7 @@ const BASE_URL = "https://www.nakshiq.com";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Press & research — NakshIQ",
+    title: "Press & research",
     description:
       "Citable datasets on India travel: the NakshIQ Cost Index (7,000+ verified cost rows across 505 destinations), month-by-month scoring on 5,856 destination-months, and the Tourist Trap Atlas. Attribution, methodology, and a direct line to the newsroom.",
     ...localeAlternates(locale, "/press"),

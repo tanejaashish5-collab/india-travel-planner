@@ -12,7 +12,7 @@ export const revalidate = 21600;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Data freshness — NakshIQ",
+    title: "Data freshness",
     description:
       "How current is NakshIQ's data? Live dashboard of review coverage, stay-pick refresh cadence, and scheduled jobs.",
     ...localeAlternates(locale, "/methodology/freshness"),

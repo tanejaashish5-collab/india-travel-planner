@@ -27,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Shared Trip Board — NakshIQ",
+    title: "Shared Trip Board",
     description: "View a NakshIQ trip board someone shared with you. Plan your own at nakshiq.com/trip.",
     ...localeAlternates(locale, "/trip/share"),
     robots: { index: false, follow: false },

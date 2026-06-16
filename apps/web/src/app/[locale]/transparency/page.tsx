@@ -27,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Fabrication audit — NakshIQ",
+    title: "Fabrication audit",
     description:
       "What we caught while auditing destination stays state by state. Hotels that don't exist, listicles that swap towns, properties listed under the wrong city. The catching is the moat — and we publish it.",
     ...localeAlternates(locale, "/transparency"),

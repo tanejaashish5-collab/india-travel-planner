@@ -13,7 +13,7 @@ export const revalidate = 86400;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Team — NakshIQ",
+    title: "Team",
     description:
       "The people behind NakshIQ. Named editors and contributors who stand behind every destination score, every itinerary, every honest skip verdict on the site.",
     ...localeAlternates(locale, "/about/team"),

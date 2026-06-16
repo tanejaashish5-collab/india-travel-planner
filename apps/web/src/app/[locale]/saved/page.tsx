@@ -11,7 +11,7 @@ import { Title } from "@/components/landing-cinema/editorial";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Saved — your NakshIQ shortlist",
+    title: "Saved — your shortlist",
     description: "Destinations you've saved on NakshIQ — ready to compare, sequence into a trip, or revisit later.",
     robots: { index: false, follow: true },
     ...localeAlternates(locale, "/saved"),

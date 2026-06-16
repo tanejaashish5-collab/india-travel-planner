@@ -10,7 +10,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Cookie Policy — NakshIQ",
+    title: "Cookie Policy",
     description:
       "NakshIQ uses minimal cookies. No advertising cookies, no third-party tracking. Only functional cookies for authentication and language preference.",
     ...localeAlternates(locale, "/cookies"),

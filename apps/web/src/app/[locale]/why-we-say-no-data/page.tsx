@@ -9,7 +9,7 @@ export const revalidate = 86400;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Why we say no data — NakshIQ",
+    title: "Why we say no data",
     description:
       "When you see a dash instead of a phone number, a price, or a contact, it means we couldn't verify one. We won't fabricate it. Here's why honest gaps beat plausible fiction.",
     ...localeAlternates(locale, "/why-we-say-no-data"),

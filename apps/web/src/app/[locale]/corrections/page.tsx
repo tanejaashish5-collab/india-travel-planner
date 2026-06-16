@@ -33,7 +33,7 @@ const BASE_URL = "https://www.nakshiq.com";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Corrections log — NakshIQ",
+    title: "Corrections log",
     description:
       "Every correction we've run on NakshIQ, in public. When we got something wrong, when we fixed it, and who signed off. Accountability is non-negotiable.",
     ...localeAlternates(locale, "/corrections"),

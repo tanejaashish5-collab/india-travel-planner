@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const isHindi = locale === "hi";
   return {
-    title: isHindi ? "संपर्क करें — NakshIQ" : "Contact NakshIQ",
+    title: isHindi ? "संपर्क करें" : "Contact",
     description: isHindi
       ? "सुधार सुझाएं, प्रेस पूछताछ, या साझेदारी — हम पढ़ते हैं हर ईमेल। NakshIQ एक परिवार-निर्मित यात्रा बुद्धिमत्ता परियोजना है।"
       : "Corrections, press enquiries, partnerships, or a simple hello. Every message is read by the family behind NakshIQ — no contact-centre, no autoresponder.",

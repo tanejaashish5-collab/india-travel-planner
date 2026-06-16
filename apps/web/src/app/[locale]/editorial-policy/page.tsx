@@ -16,7 +16,7 @@ const SITE = "https://www.nakshiq.com";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Editorial Policy — NakshIQ",
+    title: "Editorial Policy",
     description:
       "No paid placements. No sponsored content. No tourism board deals. How NakshIQ scores destinations, identifies tourist traps, and keeps editorial independent from revenue.",
     ...localeAlternates(locale, "/editorial-policy"),

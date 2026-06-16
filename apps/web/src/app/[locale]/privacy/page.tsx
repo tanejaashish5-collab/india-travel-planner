@@ -10,7 +10,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Privacy Policy — NakshIQ",
+    title: "Privacy Policy",
     description:
       "How NakshIQ handles your data. Minimal collection, no data sales, no marketing spam, privacy-focused analytics.",
     ...localeAlternates(locale, "/privacy"),

@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const isHindi = locale === "hi";
   return {
-    title: isHindi ? "यात्रा मिलान प्रश्नोत्तरी — NakshIQ" : "Find your trip — NakshIQ's 5-question matcher",
+    title: isHindi ? "यात्रा मिलान प्रश्नोत्तरी" : "Find your trip — our 5-question matcher",
     description: isHindi
       ? "5 प्रश्न, 60 सेकंड। आपके लिए 5 सर्वश्रेष्ठ स्थल — आपके महीने, आराम स्तर, और यात्रा समूह के लिए।"
       : "Five questions, sixty seconds. Get the 5 best India destinations for your month, comfort level, and travel group. No email required, no account.",

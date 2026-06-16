@@ -6,7 +6,7 @@ import { localeAlternates } from "@/lib/seo-utils";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-  title: "Data Deletion Request — NakshIQ",
+  title: "Data Deletion Request",
   description:
     "Request deletion of your personal data from NakshIQ. We respect your privacy and will process all requests within 30 days.",
 

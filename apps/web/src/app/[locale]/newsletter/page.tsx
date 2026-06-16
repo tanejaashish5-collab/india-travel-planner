@@ -12,7 +12,7 @@ const SITE = "https://www.nakshiq.com";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "The Window — NakshIQ's Weekly Travel Intelligence",
+    title: "The Window — Weekly Travel Intelligence",
     description:
       "Every Sunday: the best-scored destinations this week, one honest skip, one road you should know about, and what changed. No fluff. No sponsored picks. Just signal.",
     ...localeAlternates(locale, "/newsletter"),

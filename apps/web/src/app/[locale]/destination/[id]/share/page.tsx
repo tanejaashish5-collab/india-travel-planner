@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const dest = await getDest(id);
   if (!dest) return {};
   return {
-    title: `Share your ${dest.name} trip — NakshIQ`,
+    title: `Share your ${dest.name} trip`,
     description: `Report back from your ${dest.name} trip. Your on-the-ground notes improve every future traveler's decision.`,
     ...localeAlternates(locale, `/destination/${id}/share`),
     robots: { index: false, follow: true }, // no-index the form page

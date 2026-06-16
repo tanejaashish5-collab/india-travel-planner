@@ -10,7 +10,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "About NakshIQ — Built by an Indian Family, for Every Traveler",
+    title: "About — Built by an Indian Family, for Every Traveler",
     description:
       "No investors. No sponsored content. No tourism boards. NakshIQ is built by one family for the next people in it — and for every traveller who deserves honest answers before they go.",
     ...localeAlternates(locale, "/about"),

@@ -14,7 +14,7 @@ export const dynamic = "force-static";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Offline — NakshIQ",
+    title: "Offline",
     description: "You're offline. Your saved trips and previously-viewed destinations remain available.",
     ...localeAlternates(locale, "/offline"),
     robots: { index: false, follow: false },

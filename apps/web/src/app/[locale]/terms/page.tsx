@@ -10,7 +10,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Terms of Service — NakshIQ",
+    title: "Terms of Service",
     description:
       "Terms of Service for NakshIQ, operated by Impresa de Artiste Pty Ltd. Covers editorial content, AI itineraries, affiliate links, and user responsibilities.",
     ...localeAlternates(locale, "/terms"),

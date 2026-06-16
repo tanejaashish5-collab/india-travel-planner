@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Cost Index methodology — NakshIQ",
+    title: "Cost Index methodology",
     description:
       "How NakshIQ derives the 2026 India Travel Cost Index — base rates, region multipliers, season classification, destination overrides, and update cadence.",
     ...localeAlternates(locale, "/cost-index/methodology"),

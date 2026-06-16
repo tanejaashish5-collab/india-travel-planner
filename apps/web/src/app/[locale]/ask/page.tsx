@@ -11,7 +11,7 @@ const SITE = "https://www.nakshiq.com";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Ask NakshIQ — AI Travel Assistant for India",
+    title: "Ask — AI Travel Assistant for India",
     description:
       "Ask anything about traveling in India. Get instant answers powered by 340+ destinations, 710+ POIs, monthly scores, kids ratings, and safety data.",
     ...localeAlternates(locale, "/ask"),
