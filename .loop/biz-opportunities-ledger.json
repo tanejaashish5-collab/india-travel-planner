@@ -54,6 +54,30 @@
         "reason": "HighRiskWatch is a transparency and accountability intelligence service — it helps regulated companies meet a genuine legal obligation, holds vendors and regulators to public scrutiny, and makes compliance information accessible rather than hoarded by expensive consultancies. Every gate test clears: no vulnerable parties are exploited (the audience is sophisticated B2B buyers with legal counsel), the business model is straightforward subscription/sponsorship with no dark patterns, public-scrutiny strengthens rather than threatens it (sunlight on AI Act compliance is the entire point), and the long-term moat is trust and data integrity — both of which punish dishonesty. Ratan Tata would recognise this as the kind of institution-building that makes markets fairer.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "MIXED",
+        "wtp": "WEAK",
+        "headline": "EU AI Act vendor-registry tracker—REAL gap, WRONG buyer. Repositioning from B2C (end-company subscriptions) to B2B (GRC vendor licensing) needed to survive Big-4 threat.",
+        "cheapest_test": "Launch free \"State of Vendor Compliance\" report (1 issue), monitor: (1) email signups from compliance officers / GRC vendors vs. end companies, (2) sponsor interest from Big-4 / compliance vendors, (3) news coverage of August 2, 2026 deadline urgency. Kill if <50 qualified subscribers or zero sponsor interest by July 15.",
+        "kill_on": "(1) Zero sponsor/vendor interest by July 15; (2) <100 qualified email subscribers (compliance officers, GRC teams) by July 31; (3) Major competitor launch (Big-4 or Drata/Galvanize publish free AI Act vendor tracker).",
+        "flags": [
+          "THREAT: Big 4 (Deloitte, EY, KPMG, PwC) already operate in AI Act compliance space and have existing client relationships—can build a competing tracker in 2-3 months at no cost. Law firms (DLA Piper, Baker McKenzie) already publish free AI Act guidance, implying they see demand for education but not for proprietary intel.",
+          "BUYER MISMATCH: Current narrative targets '10K forced-compliance companies.' Reality: 5K-15K companies in SCOPE; most will ask lawyers (free) or ignore deadline. Actual buyers: GRC/compliance vendors (50-100 companies) or large-enterprise compliance teams (500-2K). This is a B2B2C sale, not B2C.",
+          "WTP EVIDENCE WEAK: Comparable compliance tools (Compliance.ai $199-499/mo, AuditBoard $50-150/user/mo) prove pricing is feasible. But NO evidence that end-user companies (the 'forced-buyer' audience) will pay for a newsletter. Law firm guidance free; consultants include this in engagements. Newsletter sponsorships in regulatory intel are unproven (unlike VC/M&A newsletters).",
+          "TIMING CLIFF: Deadline is August 2, 2026 (47 days away as of June 16). If media coverage + urgency are low now, companies have deferred or delegated to lawyers. Peak panic window = last 30 days (July 1–Aug 2). Too late to build subscriber base.",
+          "REGULATORY: EU AI Act Article 71 deadline + high-risk registry CONFIRMED (https://ec.europa.eu/info/law/artificial-intelligence-act). Penalties €35M or 7% global turnover (official EU source, not independently verified in search). Registry is PUBLIC, reducing scarcity value of a tracker."
+        ],
+        "sources": [
+          "https://ec.europa.eu/info/law/artificial-intelligence-act (EU official AI Act page—registry, deadlines, penalties)",
+          "https://www.dlapiper.com (DLA Piper AI Act guidance—proves law firms publish free, implying demand for education not proprietary intel)",
+          "Competitor pricing benchmarks: Compliance.ai ($199-499/mo), AuditBoard ($50-150/user/mo), Drata (per-resource pricing)—all within the proposed HighRiskWatch Pro $49-149/mo range",
+          "Big 4 market presence: Deloitte DARA, EY TrustID, KPMG AI Governance Services, PwC AI Risk & Governance—all established in AI Act compliance advisory"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -108,6 +132,33 @@
         "reason": "SynthLedger helps publishers, agencies, and brands comply with a genuine legal obligation — labeling AI content and maintaining takedown evidence trails — which protects end consumers from deception and strengthens the integrity of India's information ecosystem; every gate test clears cleanly.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "WEAK",
+        "wtp": "UNPROVEN",
+        "headline": "India IT Rules 2026 create regulatory tailwind but target SSMIs (platforms), not publishers. No cited pull from Indian news publishers, ad agencies, or influencer networks. Adobe CAI + Vastav AI + platform-native tools fill the gap cheaply/free. WTP unproven—no precedent for ₹15k–₹1.5L/mo SaaS adoption.",
+        "cheapest_test": "Interview 10 Indian publishers (DNPA members: NDTV, Times Group, Hindustan Times, Indian Express) + 5 mid-size ad agencies on compliance cost/tool adoption plans. Ask: (1) Are you subject to IT Rules 2026? (2) Will you buy third-party labeling software or build in-house? (3) Budget? Result: If <3 say \"will buy,\" kill it. If 3-5 say yes, narrow to that segment.",
+        "kill_on": "No publisher commits to a pilot by month 3. Vastav AI's pricing goes live at <₹5k/mo (undermines the premium WTP). Meta/Adobe native labeling gains >50% adoption among Indian publishers in 6 months.",
+        "flags": [
+          "Regulatory target is SSMIs (Meta/YouTube/WhatsApp), not publishers—compliance likely in-house or platform-native, not third-party SaaS. Vastav AI (launched Mar 2025) has direct India-first moat, though pricing withheld. Adobe CAI/C2PA free tools create price floor. No evidence of publishers budgeting for AI compliance tools as of Jun 2026. A Medium post (2026) suggests micro-SaaS compliance at $49/mo for EU AI Act—but that's EU, not India IT Rules, and market acceptance unproven.",
+          "DNPA (17 major publishers) collectively represent ~60% of India's news reach, but zero public commitments to third-party compliance tools found. Regulation is 4 months old (Feb 2026); businesses may still be in advisory phase, not buying phase."
+        ],
+        "sources": [
+          "https://www.outlookbusiness.com/deeptech/stakeholders-flag-clarity-concerns-over-new-it-rules-govt-assures-flexibility",
+          "https://www.newsonair.gov.in/government-sets-3-hour-deadline-for-social-media-platforms-to-take-down-ai-generated-deepfake-content",
+          "https://inc42.com/features/india-push-to-label-all-ai-generated-content-who-bears-the-burden/",
+          "https://indiapolicyhub.in/2026/05/18/india-ai-content-moderation-rules-2026/",
+          "https://www.storyboard18.com/digital/big-tech-vs-small-press-experts-warn-of-structural-imbalance-in-indias-ai-licensing-deals-88029.htm",
+          "https://www.mondaq.com/india/it-and-internet/1786556/indias-2026-it-rules-on-synthetic-media-what-platforms-and-publishers-must-change-now-2026-it-rules-and-synthetic-media-in-india",
+          "https://pantpallavi13.medium.com/best-compliance-micro-saas-ideas-for-2026-f4dff582c76f",
+          "https://www.linkedin.com/posts/isieindiaa_vastavai-deepfakedetection-cybersecurity-activity-7325515933534277632-jVmg",
+          "https://contentauthenticity.org/blog/the-state-of-content-authenticity-in-2026",
+          "https://www.india-briefing.com/news/india-ai-regulation-2026-foreign-platform-compliance-42745.html/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -233,6 +284,35 @@
         "reason": "Legitimate financial education for an underserved diaspora audience — NRIs navigating Indian tax law, FEMA, and DTAA are genuinely ill-served by quality Hindi content, and ad + affiliate revenue for honest education is a clean model. One real concern: affiliate referrals (ICICI NRI, Groww, PolicyBazaar) create a structural conflict where the channel's financial advice could be shaded toward products that pay, without the viewer knowing they are watching monetised recommendations.",
         "fix": "Disclose every affiliate relationship clearly in the video and description before any product mention (\"I earn a referral fee if you open this account\"); never recommend a financial product solely because it pays more; include the honest alternative (e.g. competing NRI accounts) in every comparison — this neutralises the conflict and keeps the content genuinely in the viewer's interest.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "Demand + CPM arbitrage proven, but NRI Money Clinic (250K subs, 50K daily views) already owns the wedge. Entry requires differentiation beyond \"original research + founder credibility\"—that claim is NRI Money Clinic's existing advantage.",
+        "cheapest_test": "Launch 10 videos on a test channel (Devanagari + English subtitles) targeting a sub-wedge NRI Money Clinic underserves (e.g. DTAA clauses, specific country tax treaties). Cost: $0 (your time + existing upGrowth/IRS resources). Measure: 30-day CPM from NRI-heavy geographies (track via YouTube Analytics geo split), affiliate click-through (via unique Groww/ICICI links). Gate: >$3 CPM + >2% affiliate CTR to justify scaling. This avoids competing on Chandrakantha's licensed-advisor positioning.",
+        "kill_on": "CPM <$2 after 10K views, or <1% affiliate CTR on Groww/ICICI links, or YouTube demonetizes due to unlicensed financial advice (material risk: Chandrakantha is AMFI-registered; you are not).",
+        "flags": [
+          "NRI Money Clinic already proven at 250K subs—proves demand, not proves gap",
+          "Affiliate monetization rates are generic referral values, not creator-specific—no evidence of YouTube creators actually earning ₹1,250/acquisition at scale",
+          "AMFI registration risk: Chandrakantha's compliance-registered status may be harder to differentiate against than claimed; unlicensed financial advice carries demonetization + legal risk in India/NRI jurisdictions",
+          "Thin market (1 proven competitor found) vs crowded claim—but that 1 competitor has captured the core wedge already",
+          "No evidence of language-Hindi-specific demand; demand is audience-NRI-specific (geography) not content-language-specific"
+        ],
+        "sources": [
+          "https://upgrowth.in/youtube-cpm-in-india-complete-guide/ (NRI CPM arbitrage: US-level CPMs for NRI-watched Hindi content)",
+          "https://upgrowth.in/youtube-cpm-overview-highest-paying-niches/ (Finance niche CPM: $15-50 per 1K views, ₹80-250 RPM Indian audience)",
+          "https://www.notelm.ai/blog/youtube-cpm-rates-2026 (US CPM $4-12, educational/finance $10-25)",
+          "https://nrimoneyclinic.com/V1/ (NRI Money Clinic content scope: tax, FEMA, insurance, estate planning; upload cadence: weekly 2026-06-10 to 2026-06-15)",
+          "https://in.linkedin.com/company/nrimoneyclinic (NRI Money Clinic: Dr. Chandrakantha Bhat + Tejas Bhat, AMFI-registered)",
+          "https://blog.monetizedeal.com/groww-affiliate-program/ (Groww affiliate: up to ₹1,250 commission)",
+          "https://www.cuelinks.com/campaigns/groww-app-android-affiliate-program (Groww CPA: ₹405/acquisition)",
+          "https://help.icicibank.com/Accounts/ICICI-Bank-Referral-Programme/ (ICICI referral program structure; specific NRI commissions via icicibankrefer.com)",
+          "https://inrdeals.com/campaigns/policybazaar-affiliate-program (PolicyBazaar affiliate: ₹140-300 per lead)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -345,6 +425,37 @@
         "reason": "DetentionDesk recovers money legitimately owed to small trucking carriers who lack the resources or expertise to fight brokers themselves — it is a classic underdog-advocacy business that helps the weak collect what is already theirs, with a contingency model that aligns incentives fully with the customer.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "Demand proven ($15.1B pain, <50% collection rate), WTP via contingency proven (law firms 25–40%), but HaulClaim already executing + claim economics (avg $400–$1K) unsustainable at 30% contingency margin.",
+        "cheapest_test": "Talk to 10 small carriers (1–5 trucks) about their unpaid detention claims: (1) average claim amount per stop, (2) whether they'd sign a contingency recovery agreement if offered, (3) what fee they'd accept. Expected result by day 7: if avg claim is <$800 and willingness is <40%, kill the idea.",
+        "kill_on": "If average unpaid detention claim per stop is <$700, or if <3 of 10 carriers express willingness to use a contingency service (indicating WTP is WEAK in practice despite being theoretically plausible).",
+        "flags": [
+          "HaulClaim already executing the exact model (contingency detention recovery)",
+          "Small claim economics: $600 avg claim × 30% fee = $180 revenue, unsustainable for customer acquisition + dispute overhead",
+          "Existing competitor (Freight Collection Solutions, Southwest Recovery) already handle detention via contingency for trucking",
+          "Low venture adoption signal: if viable at scale, HaulClaim would not still be in beta offering free service to drivers",
+          "Claim viability ceiling: <50% of detained stops result in $500+ claims (typical detention is 3–8 hours at $50–90/hr)"
+        ],
+        "sources": [
+          "https://www.dat.com/blog/trucker-detention-is-still-a-15-billion-problem",
+          "https://truckingresearch.org/2024/09/costs-and-consequences-of-truck-driver-detention-a-comprehensive-analysis/",
+          "https://blogs.tradlinx.com/over-90-charge-detention-fewer-than-50-get-paid/",
+          "https://www.overdriveonline.com/overdrive-extra/article/15544369/how-to-calculate-detention-rate-for-owneroperator-business",
+          "https://www.haulclaim.com/",
+          "https://dockclaim.com/tools/detention-pay-calculator",
+          "https://www.torotms.com/blog/driver-detention-management-software",
+          "https://freightcollectionsolutions.com/freight-invoice-contingency-lawyers-when-to-hire-and-what-to-expect/",
+          "https://www.swrecovery.com/services/debt-recovery/",
+          "https://stevensricci.com/contingency-based-collections/",
+          "https://fortunecarriers.net/a-drivers-guide-to-detention-pay-in-the-trucking-industry/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -648,6 +759,35 @@
         "reason": "A straightforward recurring lawn-care service for homeowners in a high-income city — it creates genuine value, charges transparent pricing, employs local labour with dignity, and has no deceptive, exploitative, or extractive mechanism at its core.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "Canberra lawn care market is real but fully saturated — Jim's Mowing (5K franchisees, $500M+), Fox Gardening (250+), and local operators already own the space with recurring-service models, centralized marketing, and protected territories; no defensible wedge.",
+        "cheapest_test": "Acquire 10 recurring accounts (fortnightly, $100–150/mo each) in one Canberra postcode via Google Ads + Airtasker referral partnership; measure churn vs. Jim's/Fox benchmarks (expect >20% churn as customers jump to brand-name operators). Cost ~$500–1K. Outcome: Confirms why franchises exist (customer stickiness is low without brand).",
+        "kill_on": "1) Unable to acquire 10 test accounts within 3 months at <$300 CAC. 2) Customer churn >30% YoY (vs. industry benchmark ~15–20% for established franchises). 3) Any operator states they're already using Route4Me/Arborgold + Sam (Ashish's scheduling doesn't improve their workflow). 4) Jim's Mowing opens franchise in test postcode (territorially protected, undercuts price).",
+        "flags": [
+          "Claimed '180K+ owner-occupied homes' is inflated — actual Canberra 2021 Census = 66.8% owner-occupancy of 186.5K dwellings = ~124.5K homes, not 180K",
+          "Market growth is 2.2% CAGR (2020–25), negative −1.3% in 2025 — not 7.4% CAGR as claimed",
+          "Landscape gardener shortage is SUPPLY-side (operators can't hire), not demand-side (customers want service) — doesn't help Ashish acquire customers",
+          "AI scheduling is commoditized — Route4Me, Arborgold, Zuper, Service Autopilot all offer route optimization; SaaS pricing $49–$500/mo already embedded in operator workflows",
+          "Jim's Mowing's partner-based model (5K franchisees with lead generation) directly replicates Ashish's claimed wedge and has $500M+ revenue — cannot out-compete on reach or economics"
+        ],
+        "sources": [
+          "https://www.ibisworld.com/australia/market-size/gardening-services/676/ (IBISWorld: Gardening Services in Australia market size $4.1B 2025, −1.3% growth 2025, 2.2% CAGR 2020–25)",
+          "https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles/occupations/362213-landscape-gardeners (Jobs and Skills Australia: Landscape Gardener shortage on Priority List, >25% employers receive no suitable applicants)",
+          "https://www.abs.gov.au/census/find-census-data/quickstats/2021/UCL802001 (ABS Census 2021: Canberra-Queanbeyan total dwellings 186,537; owner-occupied 66.8% per earlier search = ~124K homes)",
+          "https://whatsthedamage.com.au/lawn-mowing-cost/ (Canberra lawn mowing starts $50/visit; fortnightly plans $100–$200/month)",
+          "https://australia.businessesforsale.com/australian/franchises/everything-you-need-to-know-about-buying-a-jims-mowing-franchise-in-australia (Jim's Mowing: 5,000 franchisees, $500M+ turnover, pay-for-work guarantee, protected territories)",
+          "https://gardening.com.au/2025/05/08/10-best-gardening-franchises-in-australia-in-2025/ (Fox Mowing 250+ franchisees, 'fastest-growing' since 2012)",
+          "https://www.whipitlawnsandgardens.com.au/ (Whip It Lawns & Gardens: Canberra operator with 'ongoing garden maintenance programs')",
+          "https://foxmowingact.com.au/ (Fox Mowing ACT: Canberra established operator)",
+          "https://www.getapp.com/industries-software/lawn-care/f/route-optimization/ (SaaS lawn care scheduling: Route4Me, Arborgold, Zuper, Service Autopilot with route optimization)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -821,6 +961,34 @@
         "reason": "LossLens serves a legitimate market need — helping insurers price AI-liability risk with real data rather than guesswork — and its customers are sophisticated B2B buyers, not vulnerable individuals. The integrity concern is the \"honest-scarcity\" standard: an incident loss database that pads thin data with AI-estimated dollar losses or incomplete root causes, and licenses it at underwriting-grade pricing, could cause carriers to misprice risk at scale, with downstream harm to policyholders and the broader insurance market. The business model only stands if the data is genuinely what it claims to be.",
         "fix": "Ship with a mandatory provenance layer: every record must carry a confidence tier (observed/reported/estimated), a source citation, and a completeness flag — and marketing must never describe estimated figures as actuals. Governance must include a conflict-of-interest policy that bars licensees from influencing which incidents are recorded or omitted.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "UNPROVEN",
+        "headline": "AI liability market is real ($6.8B, 47% of orgs hit), but insurers won't pay for external incident databases — Armilla dominates with proprietary models, carriers are litigation-shy on data disclosure, free OECD registry exists.",
+        "cheapest_test": "Run a 2-week cold outreach to 20 MGAs + reinsurers (Axis, Convex, XL, Swiss Re) asking: \"Would you license a third-party AI incident loss database for $X/seat/year?\" Track yes/maybe/no/pass. Target: ≥3 genuine interest signals or > 30% positive response rate to proceed.",
+        "kill_on": "Zero positive responses from carriers/MGAs on willingness to pay for an external incident database (vs. building in-house or using Armilla's evaluations).",
+        "flags": [
+          "CROWDED: Armilla (MGA + Lloyd's backing) is market incumbent; Klaimee (YC S26) also competes. Both focus on underwriting evaluations, not data licensing.",
+          "DATA-COLLECTION: Lawfare analysis shows insurers won't publicly report incidents (litigation risk); regulatory mandate needed, not market pull.",
+          "FREE-ALTERNATIVE: OECD AI Incident Database is free/public, removing price-justified differentiation.",
+          "WTP-EVIDENCE-ABSENT: No LOI, pilot, or benchmark pricing found for AI incident data licenses to carriers."
+        ],
+        "sources": [
+          "https://www.wiseguyreports.com/reports/artificial-intelligence-ai-liability-insurance-market",
+          "https://www.globenewswire.com/news-release/2026/03/23/3260443/0/en/99-of-Organizations-Were-Hit-by-a-SaaS-or-AI-Ecosystem-Security-Incident-in-2025-Despite-Widespread-Claims-of-Comprehensive-Protection.html",
+          "https://zenity.io/company-overview/newsroom/company-news/csa-ai-agent-security-survey",
+          "https://www.armilla.ai/resources/armilla-ai-launches-navigating-ai-litigation-and-risk-white-paper-and-live-database-at-itc-vegas-2025",
+          "https://www.prnewswire.com/news-releases/armilla-launches-affirmative-ai-liability-insurance-with-lloyds-underwriter-chaucer-302442586.html",
+          "https://www.ycombinator.com/launches/QCC-klaimee-insures-your-ai-agents",
+          "https://www.lawfaremedia.org/article/why-liability-and-insurance-won-t-save-ai--lessons-from-cyber-insurance",
+          "https://oecd.ai/en/catalogue/tools/ai-incident-database",
+          "https://www.iapp.org/news/a/how-ai-liability-risks-are-challenging-the-insurance-landscape"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -888,6 +1056,40 @@
         "reason": "Legitimate, creator-serving transparency business that passes all weight-3 gate tests; the one integrity risk is sponsor revenue from the same AI tool vendors whose products are being benchmarked, which creates a conflict-of-interest that must be structurally managed to preserve benchmark credibility.",
         "fix": "Publish a permanent Editorial Independence Policy: sponsor dollars never influence benchmark methodology or rankings; all sponsored slots are labeled; any tool that sponsors the brand is benchmarked on identical criteria to non-sponsors; if a sponsor pressures editorial, disclose it publicly and drop the sponsor.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "STRONG",
+        "wtp": "UNPROVEN",
+        "headline": "High creator demand for cost transparency exists, but Tory Reut's dev.to benchmark + TrueFan.ai India coverage already own the gap — proceed only with sponsor commitment",
+        "cheapest_test": "Contact Kling AI + Hailuo + Adobe Firefly partnership teams directly (via Creative Partners Program applications) with a pitch: \"Monthly cost + yield benchmarks for Indian creators, verified vs .gov benchmarks, reaching 5-50K founder creators\" — ask for ₹5–10K/month sponsorship or affiliate revenue share. If any commit, launch a 3-issue pilot newsletter to test 500-subscriber open rate + click-through on sponsor links. Cost: 0 (outbound email) + 10 hours content creation for 3 issues. Kill threshold: No sponsor response in 2 weeks OR pilot open rate <20% OR <2 signups from sponsor links.",
+        "kill_on": "Kling/Hailuo/Runway decline partnership after seeing the pitch. OR pilot newsletter achieves <15% open rate or 0 conversions from sponsor links. OR TrueFan.ai launches a monthly cost-benchmarking newsletter (competitive kill).",
+        "flags": [
+          "Tory Reut's dev.to article is higher-quality analysis than the proposed wedge — it has 24-platform comparison, failure-rate data (70–80% waste), and profitability thresholds. CreatorCostMap would be extending/updating this, not creating a new gap.",
+          "TrueFan.ai already dominates India AI video tool coverage with Hailuo + Kling guides; they lack monthly cost updates + failure-rate tracking (the real gap), but founder could move first.",
+          "Newsletter sponsorship CPM for creator niches ($25–$55) is realistic, but unconfirmed for cost-benchmarking specifically — tested for design/dev newsletters, not creator tools.",
+          "Creator willingness-to-pay is PROVEN for prompt templates ($280 in 2 weeks test) but NOT tested for benchmark data subscriptions. Direct WTP unknown.",
+          "Real creator pain is 70–80% wasted credits (yield problem), not just price — cost transparency is a symptom fix, not a root fix. Positioning should emphasize yield (which models actually work), not just cost.",
+          "65% adoption rate among Indian creators is cited by multiple sources but ESTIMATED — no single source provided as primary evidence. Treat as plausible signal, not ground truth.",
+          "Adobe's India creator initiative (free Photoshop/Firefly to 15,000 schools) signals willingness to invest in creator ecosystem, but this program is focused on STUDENTS, not professional/monetizing creators — different audience."
+        ],
+        "sources": [
+          "https://dev.to/toryreut/everyones-generating-videos-i-calculated-what-ai-video-actually-costs-in-2026-37ag (Tory Reut's 24-platform cost analysis, 70–80% failure rate, profitability thresholds)",
+          "https://topvidtools.com/ai-video-real-cost-yield-rate/ (TopVidTools yield rate benchmarks: 60–85% usable, effective cost $0.97–$3.70/clip)",
+          "https://magichour.ai/blog/ai-video-pricing-index (Magic Hour monthly pricing index)",
+          "https://www.truefan.ai/blogs/hailuo-ai-review-india-2026-guide (TrueFan.ai India Hailuo cost guide)",
+          "https://www.truefan.ai/blogs/kling-ai-alternatives-india-2026 (TrueFan.ai India Kling alternatives)",
+          "https://kling.ai/app/future-partner/creator (Kling AI Creative Partners Program, active)",
+          "https://news.adobe.com/en/apac/news/2026/02/adobe-introduces-photoshop-acrobat-and-firefly-ai-student-offering-for-free-in-india-to-accelerate-vibrant-creator-economy (Adobe India creator initiative, Feb 2026)",
+          "https://www.paved.com/blog/newsletter-sponsorship-rates/ (Newsletter CPM benchmarks: Creator/lifestyle $25–$55)",
+          "https://sponsorgap.com/blog/newsletter-sponsorship-rates-2026 (SponsorGap 2026 newsletter rates, CPA vs CPM shift)",
+          "https://www.midastools.co/blog/best-ai-prompt-packs-2026 (Prompt template willingness-to-pay: $1.99–$97 packs, $280 in 2 weeks test)",
+          "https://www.vo3ai.com/kling-ai-pricing (Kling pricing: $0.07/second, ₹840–5,450/month India)",
+          "https://www.truefan.ai/blogs/hailuo-ai-review-india-2026 (Hailuo pricing: ₹800–1,200/month India, sub-₹35 per 6-second clip)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -962,6 +1164,57 @@
         "reason": "Legitimate media roll-up in a genuinely underserved language market — no core integrity violation, but the personal-finance/legal niche + affiliate-commission monetisation creates structural pressure to favour high-paying products over genuinely good ones, and content could cause real financial harm if misleading; these are execution risks that require active management, not a reason to refuse.",
         "fix": "Codify three non-negotiable rules before first acquisition: (1) every sponsored or affiliate piece carries a clear, prominent disclosure — no exceptions, no fine print; (2) all financial/legal content includes a standard disclaimer that it is educational, not licensed advice; (3) acquired channels must publicly disclose the ownership change within 30 days — audience trust was earned by the original creator and cannot be silently transferred. With these three rules enforced as hard policy, the model clears all gate tests.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "PROVEN",
+        "headline": "CPM gap is real (3-5x English), but Marathi rollup is unproven territory with entrenched MCN incumbents; founder can exploit the regional niche but must prove channel sourcing + ops scalability.",
+        "cheapest_test": "Acquire 2-3 small Marathi finance channels (50K-100K subs, ₹35K-₹70K total), consolidate onto shared scriptwriter+editor (₹10K/month), measure month-2 revenue/growth vs. standalone baseline. Target: prove 30%+ revenue uplift + sustainable ops model within 90 days (cost: ~₹1.5L / ~$180 USD).",
+        "kill_on": "If unable to source 5+ acquisition targets (50K-200K Marathi finance subs) at stated ₹15K-₹70K prices within 4 weeks, or if 2 pilot channels decline to 0 uplift in month 1, kill.",
+        "flags": [
+          "Qyuki already operates in India with Fullscreen backing (Series B, $22.1M+ funded); no proof Marathi is undershopped vs. Hindi or English rollups",
+          "CPM gap (3-5x) is REAL but driven by international audience (tier-1 CPM: ₹650-₹3.3K vs. Indian ₹20-₹150) — Marathi finance won't close that gap unless you attract 30%+ US/UK audience",
+          "Prasad Lendwe's FinnovationZ already operates Convey Marathi at 2M+ subs with multi-language strategy, proving the market isn't a blank slate",
+          "Channel sourcing claim (₹15K-₹70K per small channel) is CITED (Account Craft marketplace, coach guides) but no proof small Marathi FINANCE channels exist at scale in that price range",
+          "Small-channel acquisition playbooks are proven (Flippa, RollUp precedents at $5K-$50K+), but India-specific safeguards are weak ('no safe infrastructure exists'; scam risk high)",
+          "Regional content (Tamil/Telugu/Hindi/Marathi) = 61% of Indian YouTube watch time — strong ambient demand, but rollups haven't yet consolidated Marathi-specific stacks",
+          "Sponsorship multiplier (3-5x AdSense) and affiliate (10-20% recurring) are PROVEN income methods — applies to Marathi as much as Hindi",
+          "Marathi speakers: ~99M total (2011 census), but YouTube audience is much smaller and CPM rates not separately tracked in sources (Hindi finance = ₹25-₹100 CPM cited; Marathi-specific CPM gap unquantified)"
+        ],
+        "sources": [
+          "https://upgrowth.in/youtube-cpm-india-guide-2026/",
+          "https://upgrowth.in/youtube-cpm-in-india-complete-guide/",
+          "https://fluxnote.io/guides/average-youtube-cpm-india-2026",
+          "https://www.shopify.com/in/blog/youtube-cpm",
+          "https://philosophersstone.ee/knowledge/private-equity-acquisition-of-youtube-channels",
+          "https://rollup.fyi/firms",
+          "https://tracxn.com/d/trending-business-models/startups-in-multi-channel-networks-mcn/",
+          "https://www.medianama.com/2014/12/223-fullscreen-qyuki/",
+          "https://tracxn.com/d/companies/qyuki/",
+          "https://www.owler.com/company/qyuki",
+          "https://www.wyeclub.com/2021/06/prasad-lendwe-story-of-new-age.html",
+          "https://prasadlendwe.in/about.html",
+          "https://www.financestrategists.com/founder-spotlight/prasad-lendwe/",
+          "https://recurpost.com/blog/youtube-statistics/",
+          "https://colorwhistle.com/youtube-marketing-statistics/",
+          "https://accountcraft.in/buy-youtube-channel-in-india-2025-guide-by-coach-sanjeev-singh/",
+          "https://outlierkit.com/resources/youtube-channel-sell-price/",
+          "https://accountcraft.in/",
+          "https://accountvilla.com/blog/articles/buy-youtube-channel-in-india-complete-guide-2026",
+          "https://bosswallah.com/blog/creator-hub/youtube-sponsorship-rates-explained-what-influencers-really-earn-in-2025",
+          "https://www.quora.com/How-much-brands-pay-to-YouTubers-for-sponsoring-a-video-in-India",
+          "https://creatorjet.com/blog/how-much-do-brands-pay-for-youtube-sponsorships",
+          "https://milx.app/en/trends/how-much-does-youtube-pay-in-different-languages",
+          "https://www.bemultilingual.ca/blog/most-popular-languages-on-youtube",
+          "https://www.voquent.com/blog/the-problem-with-youtube-cpm-discover-the-real-high-earning-languages",
+          "https://agencyreporter.com/youtube-creators-media-companies-india/",
+          "https://growthlist.co/media-startups/",
+          "https://www.thesoloentrepreneur.in/blog/youtube-assets-marketplace-india"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1160,6 +1413,42 @@
         "reason": "A B2B trade intelligence newsletter serving importers, exporters, and logistics operators with verified tariff and compliance information is a straightforward information service that creates genuine value, touches no vulnerable population, and has no structural incentive toward deception or exploitation.",
         "fix": "Adopt a brief editorial-independence charter (ads cannot influence coverage), annual supplier re-verification, and a standard disclaimer on compliance reports — all routine for reputable B2B publications and sufficient to clear every concern raised.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "WEAK",
+        "headline": "ECTA compliance gap is REAL but FRAGMENTED: Austrade + India SME Forum ITD both provide free/cheap trade guidance (₹10K–25K/yr); no dedicated India-Aus newsletter found, BUT newsletter-only reach is thin—demand is likely met via official channels + freight forwarders. WTP unproven: no cited examples of exporters/importers paying $2K–$8K/sponsor for trade intel; B2B rate-cards suggest this niche may yield $200–$500/email, not $2K–$8K per issue.",
+        "cheapest_test": "Launch a FREE Substack (zero cost) with 3 weeks of curated ECTA + Certificate of Origin content + compliance alerts; measure subscriber growth from Australian importers + Indian exporters (target: 200+ subs in 30 days); if growth stalls or audience composition is wrong (generic trade news readers, not target B2B), kill. If growth hits 500+ engaged subs with 40%+ open rate, *then* test sponsor slots ($500–$1K first ask).",
+        "kill_on": "Zero organic growth after 30 days; sponsor inquiries below $500/slot; audience turnover >30%/month (signals lack of fit); confirmation that Austrade or another entity launches competing newsletter during pilot.",
+        "flags": [
+          "ECTA Jan 2026 claim VERIFIED: 100% tariff-free Indian exports live; bilateral trade $24.1B FY24–25, growing",
+          "NO dedicated India–Aus trade newsletter found in web search (nor on Substack, Medium, LinkedIn) — genuine gap in pure newsletter form",
+          "BUT two STRONG free/cheap competitors already filling the void: (1) Austrade's free Australia-India Business Exchange (AIBX) + subscription newsletters; (2) India SME Forum's International Trade Desk (₹10K–25K/yr membership includes trade guidance + newsletters)",
+          "Compliance demand IS real: Australian importers cite CoO verification as ongoing issue; Indian exporters navigated 2025 Proof-of-Origin transition — BUT they appear to solve it via freight forwarders (DHL, ICE Cargo, WWCF), not newsletters",
+          "B2B newsletter rate-cards from 2026 data: specialized logistics newsletters command $100–$150 CPM, NOT $2K–$8K per issue; $2K–$8K is reserved for VERY high-engagement audiences (10K+, 50%+ open rates) in premium niches (SaaS, finance); this niche is lower-CPM",
+          "No cited evidence of exporters/importers CURRENTLY PAYING for trade intelligence beyond Austrade (free) or freight forwarders (bundled service). WTP is UNPROVEN.",
+          "Substack B2B ceiling: top 10 earn $40M/yr collectively; niche B2B hits $5K–$20K/month at 10K engaged subs via MIXED subscriptions + sponsorships, not sponsorships alone",
+          "India–Aus trade is GROWING (8% YoY FY24–25, textile exports +textiles gaining traction) but audience SIZE is thin — only ~5–10K Australian importers + ~2–5K Indian exporters likely to care deeply about India-Aus corridor specifically",
+          "Tariff coverage: 100% Jan 2026 claim verified, but tariff elimination was PHASED (2022–2026) — not a Jan 2026 sudden shock like the idea implied; exporters had 3+ years to adapt; urgency/wedge is weaker than framed"
+        ],
+        "sources": [
+          "https://www.drishtiias.com/daily-updates/daily-news-analysis/australia-to-eliminate-tariffs-on-100-of-indian-exports",
+          "https://www.ibef.org/news/india-australia-ecta-completes-four-years-strengthening-bilateral-economic-partnership",
+          "https://a2ztaxcorp.net/india-australia-ecta-marks-four-years-of-growth-bilateral-trade-hits-24-1-billion-with-full-tariff-free-access-by-2026/",
+          "https://www.austrade.gov.au/en/how-we-can-help-you/programs-and-services/australia-india-business-exchange",
+          "https://indiasmeforum.org/itd/export-desk",
+          "https://www.shipglobal.in/blogs/india-australia-ecta-textile/",
+          "https://www.beehiiv.com/blog/newsletter-sponsorship-cost",
+          "https://www.admailr.com/email-advertising-tips/newsletter-advertising-rates/",
+          "https://www.dhl.com/discover/en-au/e-commerce-advice/shipping-guides-by-country/guide-to-ship-from-australia-to-india",
+          "https://www.openpr.com/news/4537527/shipscout-launches-ai-powered-global-trade-intelligence",
+          "https://sponsorgap.com/blog/newsletter-sponsorship-rates-2026",
+          "https://www.dtdcaustralia.com.au/textile-export-from-india-the-complete-shipping-guide-with-dtdc-australia"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1228,6 +1517,39 @@
         "reason": "Legitimate pro-social information product that helps Australians claim money they are already entitled to — the model is honest, the value is real, and no weight-3 gate is violated at its core.",
         "fix": "Add a standing accuracy disclaimer ('We aim for complete coverage but verify eligibility directly with the relevant government agency before applying'), timestamp every grant listing with its source-check date, and label all accountant/broker referrals explicitly as 'Paid Partner' — these three practices clear both concerns and make the newsletter fully publishable under full public scrutiny.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "Real demand for grants curation (110K+ subscribers on Swoop, AUD $3.5B/yr pool), documented WTP (USD $70–$180 CPM finance sponsors, AUD $85–$918/yr subscriptions), but execution differentiator (autonomous weekly curation + accountant lead-gen) is thin. Competitors (BusiGrants 8+ years, The Grants Hub 65K users, Grant'd freemium matching, Swoop 110K subs) own the TAM; founder has no edge; margin compression at scale inevitable.",
+        "cheapest_test": "Launch a free Substack with 5 weeks of manually curated grants + 1 accountant sponsorship inquiry per week; if <2 sponsors bite at USD $500/mo within 8 weeks or <500 subscribers at 4 weeks, kill. Cost: 40 hours curation time + email hosting (~$0, free tier).",
+        "kill_on": "If, after 10 weeks, the newsletter has <500 subscribers OR 0 accountant sponsors willing to pay >AUD $200/mo (vs. the claimed $100 CPM at scale). At that point, the \"automate it\" scaling strategy collapses—you're stuck with manual curation, which competitors already do cheaper/larger.",
+        "flags": [
+          "Automation claim is overstated: true value is editorial judgment (human), not technical novelty (weekly delivery is not a moat).",
+          "Founder's India<>Australia corridor edge does not apply to domestic Australian grants—this is not a defensible wedge.",
+          "Lead-gen CPM for accountants is unproven; finance benchmark (USD $70–$180) may not transfer to regional SME accountancy sponsors.",
+          "Monetization math assumes 5K subs + 35% open rate; Swoop achieved 110K at scale, but typical grants newsletter = 15–20% opens (lower real CPM).",
+          "BusiGrants (8+ years, established), The Grants Hub (65K users, premium), Grant'd (freemium matching, venture-backed) own mindshare and distribution; TAM is crowded.",
+          "Scaling to 15K subs for month-12 revenue of AUD $6K requires either 30+ months organic growth or paid CAC that eats the accountant lead value (CPL AUD $67–$250)."
+        ],
+        "sources": [
+          "https://www.fundingcentre.com.au/busigrants (BusiGrants established since 2018+, AUD $85–$125/yr)",
+          "https://www.thegrantshub.com.au/pricing (The Grants Hub: AUD $313–$918/yr, 65K+ users)",
+          "https://grantd.com.au/ (Grant'd freemium SaaS, founded by Janine Owen)",
+          "https://swoopfunding.com/au (Swoop: 110K+ businesses subscribed, established aggregator)",
+          "https://www.grants.gov.au/ (GrantConnect: government-owned, 108K awards 2017–2021)",
+          "https://sponsorgap.com/blog/newsletter-sponsorship-rates-2026 (Finance/Fintech CPM USD $70–$180 documented)",
+          "https://www.influencerskit.com/blog/newsletter-sponsorship-pricing-rate-card-guide-2026 (B2B/SaaS CPM USD $80–$200 documented)",
+          "https://prospeo.io/s/lead-generation-for-accountants (Accountant lead CPL AUD $67–$68 via Google Ads 2026)",
+          "https://roi.com.au/know-how/challenges/lead-generation (Financial Services CPL AUD $80–$250)",
+          "https://www.australiangrants.org (AUD $3.5B annual government grants pool documented)",
+          "https://www.smesoftwarehelp.co.uk/blog/email-newsletter-small-business (SME newsletter best practices)",
+          "https://www.business.gov.au/grants-and-programs (business.gov.au: 500+ grants updated weekly)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1296,6 +1618,37 @@
         "reason": "SOPAClaim arms financially weaker subcontractors with the legal knowledge and deadline discipline that well-resourced principals already have access to through lawyers — it levels the playing field rather than exploiting anyone, operates transparently under a clear SaaS pricing model, and creates genuine community value by reducing the unpaid-invoice problem that kills small construction businesses every year in Australia.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "PayClaim already owns the core wedge ($79/claim SOPA automation, all AU states). Pain is real (11.6% SMEs owed >60d, 10-day deadline has 56% success delta) and WTP proven (Payapps $440/mo, legal reviews $3.2K+), but SOPAClaim's contract extraction + $499 risk scan do not differentiate vs. existing players. Accountant/lawyer referral channel untested.",
+        "cheapest_test": "Prove WTP on \"AI contract-risk scan as a legal practice white-label input\" — white-label to 5 law firms for 12 weeks, charge $500/scan, target 2–3 scans/firm/mo. If <1 deal closes, idea is dead. If >2, pivot to B2B SaaS ($300/mo per firm, all-you-can-scan tier).",
+        "kill_on": "PayClaim + Payapps combined = 80%+ of the market. Your $99–$299/mo SaaS model requires 10+ claims/user/mo to beat PayClaim's $79/claim math. Monthly plans do not work unless you bundle (like Payapps does with variations/retention). Contract extraction alone (no evidence practitioners demand it) + risk scan at 5–7× below legal market pricing = insufficient differentiation. Prove the risk scan white-label wedge first; if it fails, the idea is dead.",
+        "flags": [
+          "PayClaim is a direct competitor with $79/claim, all-AU coverage, no subscription — proven business model",
+          "Payapps dominates ecosystem (70% top 20) with bundled variations/retention/payment scheduling — SOPAClaim is single-feature focused",
+          "Contract extraction as AI wedge is NOT validated — no startup competes on this; practitioners apparently do not demand milestone-parsing specifically",
+          "Risk scan upsell at $499 undercuts legal market 5–7× (Sprintlaw $3,200+); unlikely to work as revenue pillar unless capturing unpaid-legal volume (thin evidence)",
+          "Accountant/lawyer referral rev-share untested in construction claims; low-velocity, CYA-driven legal market does not move on affiliate commissions",
+          "Victorian SOPA April 2026 reforms create NEW compliance burden (monthly claims, 20-day terms) but PayClaim + Payapps are already compliant — no first-mover advantage for SOPAClaim"
+        ],
+        "sources": [
+          "https://payclaim.com.au/ — PayClaim: $79 flat-fee SOPA claim automation, all 8 AU states",
+          "https://www.payapps.com/pricing/ — Payapps: $49–$440/mo, 70% of top-20 construction firms",
+          "https://blazebusinessandlegal.com.au/construction-cost-crisis/state-of-australian-construction-industry-report-2026/ — 11.6% of small construction businesses have >60 days overdue payments",
+          "https://www.remotify.co/construction-payment-delays/ — 27% of SME owners dipped into personal savings; 7,600 construction firm insolvencies Jun 2022–Mar 2025",
+          "https://contractsadministrator.com.au/blogs/missing-construction-adjudication-deadlines-nsw-payment-success/ — 56% success delta (compliant 83% vs. non-compliant 27%); missing 10-day SOPA window = total claim loss",
+          "https://kcllaw.com.au/victorian-sop-update-critical-changes-commencing-15-april-2026/ — Victorian SOPA April 2026 reforms",
+          "https://www.holdingredlich.com/victoria-s-far-reaching-security-of-payment-reforms-have-now-commenced/ — SOPA April 2026: monthly claims, 20-day payment terms, expanded claimable costs",
+          "https://contractam.au/ — Contractam: AI contract review, free tier + paid analysis",
+          "https://sprintlaw.com.au/contracts/contract-review-construction-australian-standards/ — Sprintlaw: $3,200+ fixed-fee legal contract reviews",
+          "https://www.fortunebusinessinsights.com/construction-software-market-110155 — Australian construction software market: 11.3% CAGR to USD $443M by 2030"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1374,6 +1727,33 @@
         "reason": "A capacity-building B2B SaaS that solves a genuine operational pain for India's most underserved tier-2 ONDC sellers at pricing they can afford — it helps, does not exploit, makes no deceptive claims, and directly strengthens the SME backbone ONDC was built to serve; Ratan Tata would be proud to put his name on it.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "WEAK",
+        "wtp": "UNPROVEN",
+        "headline": "ONDC seller base contracting (orders −30%, incentives −84%), free reconciliation apps dominate, no paid adoption cited.",
+        "cheapest_test": "Survey 50 Tier-2 ONDC sellers (₹50K-200K/mo GMV) on willingness to pay ₹999/mo for reconciliation vs. free Mystore. If <10% conversion, platform dependency risk confirmed.",
+        "kill_on": "Seller profitability unproven + market saturation (Mystore free, Zoho Vikra 1%, PointNXT ₹4/order) + zero cited evidence of paid ₹999/mo adoption + ONDC order decline (6.5M→4.6M, −30% YoY) indicates platform contraction, not growth.",
+        "flags": [
+          "platform-dependency: ONDC order collapse and buyer-app incentive cuts (₹2.5Cr→₹40L/mo, −84%) indicate market contraction, not expansion. Reconciliation SaaS only survives if sellers are active+profitable.",
+          "integrity: Govt data (1.16 lakh sellers) masks real trend — transaction volume declining, early backers (PhonePe, Paytm) exiting.",
+          "regulatory: ONDC mandated RSF 2.0 native reconciliation infrastructure — every seller app includes it free. Entry barriers require Reconciliation Service Provider partnerships (Protean, Razorpay, NOCS)."
+        ],
+        "sources": [
+          "https://pankajuk.medium.com/is-open-network-for-digital-commerce-ondc-showing-signs-of-fatigue-e148d2062062",
+          "https://www.business-standard.com/companies/news/ondc-retail-decline-incentive-cuts-service-fee-growth-mobility-logistics-125032700419_1.html",
+          "https://www.vikra.com/en-in/seller/",
+          "https://www.mystore.in/en/",
+          "https://pointnxt.com/ondc-seller-app/",
+          "https://www.freepressjournal.in/tech/over-116-lakh-retail-sellers-go-live-on-ondc-across-630-cities-towns-govt",
+          "https://resources.ondc.org/reconsiliationandsettlementframework",
+          "https://www.proteantech.in/articles/protean-RSF-02-04-2025/",
+          "https://cxotoday.com/press-release/msmes-in-tier-ii-iii-cities-witness-20-revenue-surge-after-onboarding-onto-ondc-easy-pay-data/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1430,6 +1810,27 @@
         "reason": "BharatVyapar is a genuinely pro-social idea — teaching compliance to underserved MSME owners who lose ₹2.5L/mo to manual processes is textbook trusteeship — but the lead-gen/affiliate monetization model creates a structural tension: the audience trusts the channel for unbiased education, and that trust is being sold to fintech/SaaS/lenders who may not all deserve it. If a working-capital lender or billing SaaS paying for placement has predatory terms, exploitative fees, or misleading claims, the channel becomes the vector through which vulnerable Tier-2/3 business owners get hurt — and they will never know it was a commercial recommendation dressed as education.",
         "fix": "Disclose every paid placement explicitly and in the vernacular (\"yeh ek sponsored explainer hai\"), maintain and publish a minimum-standard checklist that any promoted partner must meet (APR caps for lenders, no dark-pattern billing for SaaS), and refuse or drop any partner whose product is later found to harm the audience — the community's trust is the asset; selling it secretly or to bad actors is the only real risk here.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "UNPROVEN",
+        "depth": "deep",
+        "headline": "Forced-buyer premise is dead (e-invoice threshold static at ₹5cr since Aug-2023); 60-70% of Tier-2/3 GST is CA-mediated; no vernacular paid-community comparable found.",
+        "cheapest_test": "3 Hindi GST Shorts → ₹49-refundable-deposit waitlist for a ₹299/mo community on a fresh (non-\"BharatVyapar\") handle. Needs ~₹5K ad push + a YT handle + a Razorpay acct (founder). Pass: ≥10 deposit-backed signups in 72h + ≥4% save/share on one Short.",
+        "kill_on": "<10 deposit-backed signups, or the only economics that work are lender-affiliate leads to stressed MSMEs.",
+        "flags": [
+          "Tata-gate: lender-affiliate gravity (₹500-2000/lead vs ₹50-200 SaaS) — must bylaw out lender/credit affiliates",
+          "Name collides with Vyapar App (10M users, registered mark) — rename",
+          "Forced-buyer premise refuted: e-invoice threshold static at ₹5cr since Aug 2023"
+        ],
+        "sources": [
+          "https://blog.tatanexarc.com/msme/gst-e-invoice-meaning/",
+          "https://upgrowth.in/youtube-rpm-india-education-niche-2026/",
+          "https://fluxnote.io/guides/youtube-shorts-revenue-india-vs-us-2026"
+        ],
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1487,6 +1888,36 @@
         "reason": "Legitimate B2B marketing service helping small businesses adapt to AI-era discovery — honest work, no exploitation, real value — but \"get cited by ChatGPT\" as a marketing promise risks a truthful-claims violation because LLM citation is non-deterministic and no third party can guarantee placement.",
         "fix": "Market and contract the service as 'AI-discoverability optimisation' with defined process deliverables (structured data, authoritative content, citation-signal building) and a clear disclaimer that LLM citation cannot be guaranteed — never promise a citation count or use 'get cited' as a guarantee in sales copy or contracts; add an honest-fit assessment before onboarding each client.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "WEAK",
+        "headline": "ChatGPT citations gap is real (1.2% vs 35.9%), but $300-600/mo retainer is underpriced vs $800+ market; Otterly/Ayzeo crowd the $29-489 monitoring tier, full-service agencies own $3,500+ segment.",
+        "cheapest_test": "Pre-sell 3 dentists or restaurants in one city (Sydney/Delhi) at $400/mo for 30-day trial, execute by hand once, measure citation lift + renew rate. If 2 of 3 renew, market exists; if 0 renew, $300-600 is ceiling, not wedge.",
+        "kill_on": "Cannot achieve margin at $300-600/mo if truly done-for-you (content creation + Reddit outreach + schema design + monitoring = 8-12 hrs/mo per client). If Otterly/Ayzeo add active citation service to $300-500 tier, idea is immediately undercut.",
+        "flags": [
+          "Unit economics math: 10 clients @ $400/mo = $4K/mo gross, minus $3-4K ops = negative margin if human labor required",
+          "Indie Hackers post (109 citations at $0) proves workflow is DIY-accessible, undermining paid agency narrative",
+          "No cited case studies of single-location local businesses paying $300-600/mo for done-for-you ChatGPT citations",
+          "Multi-location chains ($800-3000/mo) are the real WTP; single-location wedge may be uneconomical",
+          "If pursuing: own a narrow vertical (dentists-only, franchisees-only, India restaurants) or pivot to monitoring + upsell model"
+        ],
+        "sources": [
+          "https://www.soci.ai/insights/lvi/",
+          "https://www.soci.ai/blog/how-to-rank-in-chatgpt-perplexity-and-google-ai-overview/",
+          "https://www.marketingcode.com/chatgpt-recommends-1-percent-local-businesses-contractors/",
+          "https://www.indiehackers.com/post/agencies-charge-3-500-9-000-month-for-ai-search-optimization-i-get-109-chatgpt-citations-for-0-heres-the-exact-workflow-702c00aa6f",
+          "https://otterly.ai/pricing",
+          "https://ayzeo.com/use-cases/local-businesses",
+          "https://www.pleiadesconsultancy.com/blog/ai-search-optimization-cost",
+          "https://thedigitalelevator.com/blog/aeo-and-geo-pricing-guide/",
+          "https://birdeye.com/blog/what-does-birdeye-cost/",
+          "https://www.loudface.co/blog/best-agencies-chatgpt-perplexity-citations-2026"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1543,6 +1974,36 @@
         "reason": "HarnessProof is a legitimate independent benchmarking and media business that genuinely helps procurement teams make better decisions — the model is honest, the value is real, and it exploits no one. However, the sponsored deep-dives and lead-gen monetization from the very vendors whose tools are being rated creates a structural conflict of interest that must be addressed explicitly, or it quietly fails the truthful-claims and public-scrutiny tests.",
         "fix": "Publish and enforce a written editorial firewall: sponsored content is clearly labeled 'Sponsored' and is factually separate from benchmark rankings; sponsors have zero input into methodology or scores; affiliate disclosures are prominent and per-link; the ranking methodology and raw data are published openly so any reader can audit results — and if a sponsor's tool scores poorly, that score runs unchanged. With that firewall codified and public, Ratan Tata could put his name on it without hesitation.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "Artificial Analysis owns the coding-agent-harness benchmark space (launched May 2026, funded, monetizing); second-mover position is weak unless deeply differentiated on vertical/cadence/community.",
+        "cheapest_test": "Launch a vertical-focused benchmark (e.g., \"Harness Match for Systems/Rust engineering\" or \"Cheapest harness for token budgets <$1K/mo\"); measure if 50+ engineering leads sign up for the free tier within 2 weeks.",
+        "kill_on": "Artificial Analysis publishes a \"harness neutrality pledge\" + launches its own owned-audience newsletter with >10K subs within 3 months; OR any frontier lab (Anthropic, Anysphere) releases an official benchmark report that becomes the cited standard.",
+        "flags": [
+          "Artificial Analysis launched May 2026 with backing from Nat Friedman/Daniel Gross; ~20 people, 'working sustainably'",
+          "Vendor lock-in risk: Anthropic/Anysphere/OpenAI can publish competing benchmarks; neutrality moat is fragile",
+          "Enterprise AI consulting market is large ($11-19B in 2026) but Artificial Analysis has first-mover + network effects",
+          "Model-harness pairing performance PROVEN to matter (Harness-Bench arxiv, Cursor harness 3.9pt lift on Opus 4.7), validating the wedge",
+          "Procurement teams actively evaluating; team budgets are substantial ($39-200/seat/mo across Copilot/Cursor/Claude Code)",
+          "WTP proven via Artificial Analysis revenue model (enterprise subscriptions + custom benchmarking work)"
+        ],
+        "sources": [
+          "https://www.latent.space/p/artificialanalysis (Artificial Analysis business model, funding from AI Grant, ~20 people)",
+          "https://arxiv.org/abs/2605.27922 (Harness-Bench: Measuring Harness Effects across Models, 5194 trajectories proving harness matters)",
+          "https://www.morphllm.com/best-ai-coding-agents-2026 (Artificial Analysis Index launched May 2026)",
+          "https://artificialanalysis.ai/agents/coding-agents (Public Coding Agent Index leaderboard)",
+          "https://medium.com/@wasowski.jarek/coding-agent-index-2026-benchmarking-full-agent-stacks-model-harness-4183305e4b90 (Independent harness-pairing analysis published)",
+          "https://www.mindstudio.ai/blog/agent-harnesses-beat-model-upgrades-5-benchmarks (Harness effects prove model-harness pairing is load-bearing)",
+          "https://aistrategy.guide/capabilities/ai-coding-tools/claude-code-vs-github-copilot/ (Procurement decision framework from engineering leadership)",
+          "https://www.developersdigest.tech/blog/ai-coding-tools-pricing-comparison (Team budgeting for Copilot/Cursor/Claude Code choices, $39-200/seat)",
+          "https://futuremarketinsights.com/reports/ai-consulting-services-market (Enterprise AI consulting $11-19B in 2026, 26-28% CAGR)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1597,6 +2058,47 @@
         "reason": "DataLedger helps AI companies meet legally-mandated transparency obligations honestly — it creates genuine regulatory and societal value by making training-data provenance visible, exploits no one, and has no structural incentive to deceive any stakeholder.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "THIN",
+        "demand": "MIXED",
+        "wtp": "UNPROVEN",
+        "headline": "AB 2013 deadline passed (Jan 1, 2026); major AI companies already complied via hand-rolled solutions. Monthly SaaS doesn't fit episodic use case. No evidence anyone pays for this automation. OneTrust $50K+ is for broader AI governance, not a direct competitor.",
+        "cheapest_test": "Launch landing page + email outreach to 20 funded AI startups (Series A+) with AB 2013 compliance survey + mock 10-min disclosure generator. Ask: \"Would you pay $200-500/mo for this vs. hiring a consultant once ($5-15K) or using the free Model Card Generator?\" Track conversion intent. Cost: $0 (free hosting + your time).",
+        "kill_on": "If <10% of target list says \"yes, I'd pay monthly for this\" OR if any say \"we're already handling this in-house / we used a consultant.\" Both are kill signals: low WTP + no pain point.",
+        "flags": [
+          "Deadline-driven urgency is gone (Jan 1, 2026 passed 5+ months ago)",
+          "No founder pricing evidence (OneTrust $50K+ is for comprehensive AI governance, not AB 2013 automation alone)",
+          "Episodic use case (updates after 'substantial modifications') doesn't justify monthly SaaS subscription",
+          "Zero India market (AB 2013 California, EU AI Act Europe; no India AI training data disclosure law)",
+          "Non-technical Australia founder has no sales advantage into AI startups; needs tech credibility or regulatory sales expertise",
+          "High clone risk: OneTrust could add this module in 2-3 sprints and bundle-undercut you",
+          "No dedicated competitor found, but hand-rolling is working (OpenAI, Anthropic, Google all published Jan 1, 2026 without software)"
+        ],
+        "sources": [
+          "https://www.nortonrosefulbright.com/en-us/knowledge/publications/c1df8419/california-district-court-upholds-transparency-requirements-for-generative-ai-training-data (xAI injunction denied, March 4, 2026, law enforceable)",
+          "https://ppc.land/court-denies-xais-bid-to-block-california-ai-transparency-law/ (xAI case details)",
+          "https://iapp.org/news/a/xai-v-bonta-a-constitutional-clash-for-training-data-transparency/ (IAPP analysis of enforceability)",
+          "https://www.goodwinlaw.com/en/insights/publications/2026/01/alerts-otherindustries-californias-ab-2013-takes-effect (AB 2013 effective Jan 1, 2026)",
+          "https://www.jonesday.com/en/insights/2025/09/california-bill-will-require-disclosures-about-data-used-in-training-ai-models (AB 2013 overview, requirements)",
+          "https://trust.anthropic.com/resources?name=ab-2013-training-data-summary&s=km4kixlo1o4zwqj0ybiaw (Anthropic published AB 2013 disclosure)",
+          "https://verifywise.ai/ (VerifyWise product, no AB 2013 mention, confirmed via WebFetch)",
+          "https://www.onetrust.com/solutions/ai-governance/ (OneTrust AI Governance, no AB 2013 mention, confirmed via WebFetch)",
+          "https://www.smartsuite.com/blog/onetrust-pricing (OneTrust pricing $50K-$200K+ range)",
+          "https://www.vendr.com/marketplace/onetrust (OneTrust median cost $11,500/yr, but AI governance module $50K-$150K+)",
+          "https://newmarketpitch.com/blogs/news/ai-governance-funding-analysis (AI governance market: $691M raised 2022-2025, 47 deals; $143.5M in last 12 months)",
+          "https://www.researchandmarkets.com/reports/6231850/ai-compliance-software-service-saas-market (AI compliance SaaS market $6.09B in 2026, projected $14.13B by 2030)",
+          "https://ascendixtech.com/how-many-ai-companies-are-there/ (212,230 active AI companies globally, 62,184 AI startups, 2,049 new/yr)",
+          "https://www.startus-insights.com/innovators-guide/how-many-ai-companies-are-there/ (AI company statistics 2026)",
+          "https://www.businessplusai.com/blog/ai-consulting-packages-a-comprehensive-pricing-guide-for-businesses (AI consulting $5K-$15K per project, $1-3K/mo retainer)",
+          "https://github.com/XDgov/model-card-generator (XDgov Model Card Generator, open-source government tool)",
+          "https://arxiv.org/pdf/2405.06258 (CardGen: Automatic Generation of Model and Data Cards, academic research)",
+          "https://www.surecloud.com/resource-hub/eu-ai-act-complete-compliance-guide (EU AI Act August 2026 enforcement, Article 50 transparency obligations)",
+          "https://www.kiteworks.com/cybersecurity-risk-management/ai-regulation-2026-business-compliance-guide/ (How AI companies solving compliance: data documentation protocols, legal consultation, no software mentioned)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1649,6 +2151,44 @@
         "reason": "Provenance helps AI builders comply with real legal obligations (CA AB 2013, EU AI Act) by producing honest, auditable disclosures — it sells transparency, not opacity, and serves the public interest in AI accountability.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "UNPROVEN",
+        "headline": "Regulatory forcing function is real (AB 2013 enforced Mar 4 2026, EU Annex IV Aug 2 2026), but companies are meeting it with intentional vagueness. Credo AI ($30K-$150K/yr), CompliAI, Aireport, Modulos, Holistic AI already operating. No VC-backed startup has raised on AB 2013 compliance tools alone—all do full AI governance. Core failing gate: detailed provenance ledger won't sell because OpenAI/Anthropic's actual Jan 2026 compliance behavior (one-page vague summaries) proves companies minimize disclosure, not maximize it.",
+        "cheapest_test": "Run a 1-week discovery sprint with 5 mid-market AI companies (Series A-C, deployed gen-AI products): (1) Show them Credo AI demo, ask \"would you buy at $500/mo as an add-on?\" (2) Interview their compliance/legal: \"What's your current AB 2013 approach?\" (3) If >2 say \"we use vague disclosures to protect IP and have no interest in detailed ledger,\" verdict is KILL. Budget: $0 (your own research + Linkedin outreach). Timeline: 5 days.",
+        "kill_on": "If more than 1 of 5 mid-market companies say: (a) they're meeting AB 2013 with intentional vagueness AND (b) they have no interest in detailed continuous provenance. This confirms the core insight: demand is for minimal compliance, not maximal transparency. Also kill if you learn that Credo AI or a competitor already has >10 paying customers for \"provenance + audit\" as a bundled feature.",
+        "flags": [
+          "Regulatory deadline is REAL (AB 2013 enforced, EU Annex IV due Aug 2026) but companies' response is NOT what the idea assumes. OpenAI/Anthropic both chose vague, minimal disclosures (Jan 1 2026), not detailed provenance.",
+          "Trade-secret paralysis is structural: AB 2013 demands transparency but companies fear IP damage. No tool fixes this tension.",
+          "Zero VC-backed startups have raised on AB 2013 compliance ONLY. Every competitor (Credo AI, Modulos, Trustible, Holistic AI) targets full AI governance, not single-focus provenance.",
+          "Pricing mismatch: Idea assumes $199-$999/mo works; market reality is $30K-$150K/yr for enterprise compliance. $199/mo tool would face procurement board friction (requires MSA, SOC 2, legal sign-off). Niche tools lose to bundled suites in RFP.",
+          "Data lineage market ($1.66B→$2.07B 2026 at 24.4% CAGR) exists, but for data governance, not AI compliance. Atlan/Alation don't market to AI companies.",
+          "CompliAI and Aireport already auto-generate Annex IV docs. AB 2013 equivalent gap exists, but companies are NOT demanding it—they're manually meeting it with broad summaries.",
+          "Strong market tailwind (AI Compliance SaaS $4.94B→$6.09B at 23.2% CAGR) masks weak demand for this specific niche. Tailwind lifts all boats, but this boat leaks."
+        ],
+        "sources": [
+          "https://drata.com/learn/compare/best-ai-compliance-tools",
+          "https://trustarc.com/resource/california-ai-transparency-laws-sb942-ab2013/",
+          "https://www.bakerbotts.com/thought-leadership/publications/2024/november/ca-ab-2013_gen-ai-compliance",
+          "https://www.goodwinlaw.com/en/insights/publications/2026/01/alerts-otherindustries-californias-ab-2013-takes-effect",
+          "https://www.crowell.com/en/insights/client-alerts/californias-ab-2013-requires-generative-ai-data-disclosure-by-january-1-2026",
+          "https://aireporttool.eu/audit",
+          "https://eucompliai.com/annex-iv-technical-documentation-automation/",
+          "https://www.credo.ai/",
+          "https://co-aims.com/blog/credo-ai-review-2026-compliance-officers",
+          "https://www.modulos.ai/best-ai-governance-platforms/",
+          "https://www.gartner.com/reviews/product/credo-ai-governance-platform",
+          "https://www.pymnts.com/cpi-posts/ai-developers-avoid-details-in-initial-training-data-disclosures-under-california-statute/",
+          "https://www.researchandmarkets.com/reports/6231850/ai-compliance-software-service-saas-market",
+          "https://market.us/report/ai-compliance-saas-market/",
+          "https://www.atlan.com/data-lineage-tools/",
+          "https://www.5x.co/blogs/data-lineage-tools"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1705,6 +2245,35 @@
         "reason": "InvisibleIndex is a legitimate media/research business built on genuine measurement — it creates real value by surfacing AI recommendation blind spots — but the methodology behind the rankings must be fully disclosed and the rankings themselves must not be inflatable by paying sponsors or buying reports.",
         "fix": "Publish the ranking methodology openly (query sets, model versions, sampling cadence, scoring formula) and enforce a written firewall: sponsoring a tool or buying a report confers zero influence over rankings — stated plainly in every report and on the website. No ranking position is ever for sale.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "WEAK",
+        "headline": "Demand exists but the journalism layer doesn't monetize—tool vendors already own authority and publish free rankings as lead-gen.",
+        "cheapest_test": "Contact 5 SaaS/e-commerce brand CMOs (pre-qualified via LinkedIn: AI visibility budget >$50K/yr) and ask: \"Would you pay $2-5K for a quarterly benchmarking report on AI visibility vs competitors?\" Track yes/no + reason. (Budget: ~$0, timeline: 5–7 days via email + calls).",
+        "kill_on": "Any 3 of the 5 CMOs decline and cite \"we use Profound/Peec directly\" or \"eMarketer reports are free\" as the reason. That falsifies WTP.",
+        "flags": [
+          "CROWDED—18+ funded AEO tools already publish benchmarks or rankings (Profound $155M/$1B valuation, Peec $29M, Otterly, Conductor, etc.)",
+          "JOURNALISM LAYER UNPROVEN—Similarweb, eMarketer, Parcel Perform, PR Newswire all publish free rankings; zero evidence of paid media-brand rankings model",
+          "VENDOR-OWNED AUTHORITY—Tool makers (Profound, Peec) publish their own benchmarks and sell SaaS simultaneously; they don't need external journalists",
+          "NO SPONSORSHIP SIGNAL—AEO tool vendors are not advertising/sponsoring journalism publications; they are the publishers",
+          "LEAD-GEN CONFUSE—Similarweb/eMarketer publish free reports to drive tool sales, not as core revenue streams"
+        ],
+        "sources": [
+          "https://ir.similarweb.com/news-events/press-releases/detail/147/similarweb-report-benchmarks-ai-brand-visibility-winners-and-overachievers",
+          "https://www.emarketer.com/content/ai-visibility-index-personal-care-beauty-q1-2026-leaderboard",
+          "https://www.prnewswire.com/news-releases/pr-newswire-launches-aeo--geo-report-for-ai-brand-visibility-302733944.html",
+          "https://www.parcelperform.com/insights/first-ai-visibility-index-ecommerce",
+          "https://digiday.com/media/media-briefing-publishers-explore-selling-ai-visibility-know-how-to-brands/",
+          "https://ziptie.dev/blog/best-ai-visibility-tools-for-brands/",
+          "https://www.surmado.com/blog/best-ai-visibility-tools-2026",
+          "https://www.emarketer.com/content/brand-invisibility-new-threat-62--of-b2b-cmos-fall-behind-ai-native-rivals",
+          "https://indexly.ai/blog/ai-visibility-tracking-tools-pricing-comparison-2026/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1773,6 +2342,32 @@
         "reason": "LegalClock AU is a genuinely valuable public-information service — translating dense legal and tenancy law into plain English directly helps ordinary Australians navigate a system that otherwise favours those who can afford lawyers. It passes all weight-3 gate tests cleanly. The single conditional concern is the lawyer/lead-gen affiliate structure: if the referral incentive quietly steers readers toward paid legal help when free options (Legal Aid, community legal centres, AFCA, tribunal self-help) would serve them just as well, the business shifts from \"helping the underserved\" to \"monetising their anxiety.\" That would be a mild exploit-the-vulnerable violation — not fatal, but real.",
         "fix": "Always surface free/self-help options first in any content that touches a referral path, disclose all affiliate relationships clearly at the top of every referral-linked piece, and include a prominent standing disclaimer that content is general information not legal advice — these three practices cost nothing and make the business unambiguously clean.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "STRONG",
+        "wtp": "WEAK",
+        "headline": "NSW tenancy law demand is real (65K+ organic searches/mo to Tenants Union, 9 major reforms 2024-26), CPM claim is valid ($15-40 legal niche per OutlierKit 2026), zero AU competitor found — but AU-specific CPM unproven, affiliate rates secret, and faceless-channel viability vs LegalEagle (named, face) untested.",
+        "cheapest_test": "Launch 10 NSW tenancy explainer shorts (no production cost) with LawPath referral links; verify if LawPath actually pays and at what rate; measure if you can reach 1K views in 4 weeks on unbranded channel (proving channel growth is possible).",
+        "kill_on": "Discover LawPath pays <$5 per referral OR confirm that AU legal YouTube CPM is <$5 (not $15-40) OR launch videos and hit 0 referral clicks in 8 weeks.",
+        "flags": [
+          "AU CPM multiplier not verified — OutlierKit figure is USD",
+          "LawPath affiliate rates are secret — no public WTP data",
+          "Faceless-channel success unproven — LegalEagle is named/face, different model",
+          "Zero evidence of sustained AU legal creator revenue at scale",
+          "Conveyancer affiliate networks not found — would require cold outreach",
+          "Demand signal is proxy (Tenants Union traffic) not direct YT search demand"
+        ],
+        "sources": [
+          "https://outlierkit.com/resources/youtube-niches-guide/ — Legal niche $15-40 CPM, very few creators, enormous advertiser demand",
+          "https://www.tenants.org.au/resource/law-change — NSW tenancy reforms 2024-2026 detailed (9 major changes)",
+          "https://www.similarweb.com/website/tenants.org.au — 65.5K monthly visits to Tenants Union NSW, 91% organic search, 91% AU traffic",
+          "https://www.lawpath.com.au — Referral program exists, rates not public, contact 1800 529 728",
+          "https://www.tenants.org.au — YouTube channel exists, subscriber count unknown"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1841,6 +2436,37 @@
         "reason": "A heritage-preservation YouTube channel is inherently pro-social and honest, but autonomous content generation at scale carries a real risk of fabricating or misrepresenting historical claims about real artisans, folk traditions, and vintage advertisements — which would fail the truthful-claims and honest-scarcity tests.",
         "fix": "Implement a mandatory human or adversarial-agent fact-check gate before any video publishes: every historical claim, artisan attribution, and advertisement origin must be sourced to a verifiable reference; where sources cannot be found, the video must explicitly state \"unverified\" or hold the claim — zero fabrication, honest scarcity over invented completeness.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "MIXED",
+        "wtp": "PROVEN",
+        "headline": "NRI diaspora + government backing validate heritage demand, but autonomous deep-dive model risks cultural fabrication; moat unclear vs. 2.4M-subscriber incumbents + Ministry-funded competition.",
+        "cheapest_test": "Launch 10 manual long-form deep dives (founder 2-3 hrs/week research) on YouTube + measure NRI (US/UK/Canada/AU) audience % + retention rates vs. rest-of-world. If NRI is <30% of views or CPM doesn't exceed $4, the Western CPM arbitrage fails.",
+        "kill_on": "If 30+ videos into the channel, (1) NRI viewers remain <30% of traffic, (2) average CPM stays below $3 despite optimizing for NRI SEO, or (3) first sponsorship pitch to Ministry/tourism boards is rejected due to lack of cultural credibility.",
+        "flags": [
+          "Unverified claim: '4.0x demand-to-supply gap' has no cited source; searches found zero evidence.",
+          "Competitive incumbent 7BLAB already does vintage Indian ads; ScoopWhoop has 2.4M subs doing nostalgia compilations.",
+          "Ministry of Culture + YouTube MoU (March 2026) accelerates competition — government now funding folk artists directly.",
+          "Automation risk: Heritage/deep-dive content requires cultural accuracy; AI-generated scripts + misattributed provenance alienate NRI audiences (who know the culture).",
+          "Shorts monetization ($0.01–$0.07 RPM) is negligible; long-form + sponsorships are real revenue levers, but sponsorships need 100K+ subs to negotiate.",
+          "NRI CPM arbitrage depends on exclusive Western audience capture — YouTube's algorithm favors established channels; cold-start automation channel unlikely to crack recommendations.",
+          "Claimed 'fully autonomous' model conflicts with stated 'founder 2-3 hrs/week curation' — the curation IS the moat, but it breaks the automation premise."
+        ],
+        "sources": [
+          "https://rollingstoneindia.com/folk-tribal-music-youtube-ministry-of-culture-mou/ — Ministry of Culture + YouTube MoU validated (March 2026)",
+          "https://upgrowth.in/youtube-cpm-by-country-global-comparison-2026/ — Western CPM rates (US $36.03, UK $23.75, Canada $32.07, AU $39.83) vs. India $0.60–$1.80",
+          "https://www.scoopwhoop.com — ScoopWhoop verified 2.4M subscribers, entertainment + nostalgia content",
+          "https://www.youtube.com/@7Blab — 7BLAB confirmed active channel, vintage Indian ads compilations",
+          "https://vidiq.com/blog/post/most-profitable-youtube-niches/ — Heritage/documentary content $5–$12 RPM (vs. entertainment $2–$8)",
+          "https://mediacube.io/en-US/blog/youtube-shorts-rpm — YouTube Shorts monetization $0.01–$0.07 RPM (vs. long-form $5–$12)",
+          "https://outlierkit.com/blog/most-profitable-youtube-niches — YouTube automation remains profitable in 2026 but requires 'unique angles + genuine expertise', not replacement",
+          "https://influencermarketinghub.com/how-much-do-youtubers-make/ — NRI diaspora audience spending validated (ZEE5 Global +35% YoY, 91% NRIs use YouTube)",
+          "https://ytmoneycalculator.com/blog/youtube-cpm-rates-by-country/ — History/documentary content earns better than entertainment due to higher engagement + watch time"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -1904,6 +2530,32 @@
         "reason": "DiffScore is a straightforward B2B analytics tool that helps content professionals make informed decisions about differentiation — it harms no one, exploits no one, makes no false claims, and creates genuine value by giving customers honest statistical data about competitive sameness risk.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "WEAK",
+        "wtp": "UNPROVEN",
+        "headline": "Load-bearing gate fails: major SEO platforms (Ahrefs, Semrush, Surfer) ALREADY built plagiarism/uniqueness checking into their suites; demand is thin (forum discussion, not payments); WTP unproven (no standalone product traction).",
+        "cheapest_test": "Search Ahrefs/Semrush/Surfer user forums for \"uniqueness score\" feature requests (unfulfilled demand signal). If zero, the feature is solved. If yes, ping 5 agency CTOs: \"Would you pay $50/mo for a Content Sameness Score API (how different your draft is from rank-1-10)?\" — need 3+ maybes to proceed.",
+        "kill_on": "Ahrefs, Semrush, or Surfer confirms they already measure uniqueness/information-gain score (they do); OR agencies report the feature exists in their current tools (high likelihood); OR zero willingness-to-pay signals from agencies surveyed.",
+        "flags": [
+          "COMPETITOR_FEATURE_PARITY",
+          "THIN_DEMAND_SIGNAL",
+          "FORUM_UPVOTES_NOT_PAYMENTS"
+        ],
+        "sources": [
+          "https://www.level.agency/perspectives/google-march-2026-core-update/",
+          "https://searchengineland.com/content-scoring-tools-work-but-only-for-the-first-gate-in-googles-pipeline-469871",
+          "https://www.semrush.com/blog/seo-plagiarism/",
+          "https://ahrefs.com/writing-tools/plagiarism-checker",
+          "https://surferseo.com/blog/surferseo-vs-clearscope/",
+          "https://www.copyscape.com/",
+          "https://sitebulb.com/product/duplicate-content/",
+          "https://www.outerboxdesign.com/articles/seo/seo-pricing-costs/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2032,6 +2684,34 @@
         "reason": "PaydayReady helps SMBs navigate a real, mandatory compliance deadline with plain-English tools and vetted service referrals — it reduces harm, serves the underdog (small business owners facing penalties), and monetises through transparent affiliate relationships with legitimate payroll SaaS vendors, not through exploiting confusion.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "UNPROVEN",
+        "headline": "High demand but fatally crowded: Employment Hero (vendor-backed, embedded solution live), SmartCompany (free daily newsletter), and government agencies have saturated the Payday Super readiness channel. July 1 deadline is 5 days away; the readiness window is closing, not opening. Affiliate revenue model offers no defensibility over existing programs.",
+        "cheapest_test": "Attempt to acquire 500 newsletter subscribers (via organic + $500 paid ads) in 5 days; measure cost-per-subscriber and affiliate commission rate if Employment Hero + Xero allow third-party referrals. Kill if CPL > $10 or affiliate rates unavailable/unfavourable. However, given Employment Hero's HeroClear embedded solution and 350K business install base, the odds of winning affiliate preference are extremely low.",
+        "kill_on": "Employment Hero HeroClear already live (embedded super clearing within payroll + partner ecosystem); SmartCompany newsletter already free and established; Xero affiliate program active but closed to new partners during peak deadline season; no evidence of willingness-to-pay for third-party readiness checkers/templates above affiliate commission rates.",
+        "flags": [
+          "Timing: 5-day window to July 1 deadline makes audience acquisition unrealistic",
+          "Founder is non-technical Australia-based — would need to outsource newsletter/calculator build (cost + timeline risk)",
+          "Affiliate revenue is commoditized — no defensibility against incumbent software vendors' own affiliate programs",
+          "Post-July pivot claim unvalidated — no evidence of comparable 2026-27 compliance wave",
+          "Employment Hero has 350K businesses + vendor credibility that independent media cannot match"
+        ],
+        "sources": [
+          "https://employmenthero.com/resources/payday-super-shift-employer-readiness-report-2026/",
+          "https://www.smartcompany.com.au/",
+          "https://www.ato.gov.au/businesses-and-organisations/super-for-employers/payday-super/about-payday-super",
+          "https://employmenthero.com/blog/employment-hero-fires-australias-first-real-time-super-payment/",
+          "https://www.xero.com/au/affiliate-program/",
+          "https://www.cloudpayroll.com.au/articles/atosbsch-closing/",
+          "https://www.apra.gov.au/payday-super-readiness",
+          "https://stackpick.com.au/best-payroll-software-australia/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2084,6 +2764,40 @@
         "reason": "ShopkeeperGuard is a safety and oversight tool that protects small business owners from AI-driven financial mistakes — it adds a human check between an autonomous agent and real-world consequences, which is precisely the kind of trusteeship-minded, dignity-preserving product Ratan Tata would endorse.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "MIXED",
+        "wtp": "WEAK",
+        "headline": "Real losses exist (Starbucks 9mo failure, Fortune 500 $4.3M), demand pull proven via incidents, but WTP unvalidated; no direct competitor found but operational guardrails = feature (not standalone product) in Anthropic/AWS/Copilot Studio. Outcome-pricing precedent exists; vertical-template data moat is plausible but unproven.",
+        "cheapest_test": "1) Cold outreach to 20 F&B/retail ops with Luna-like agents (LinkedIn, Product Hunt, agent framework communities) — 15min survey: \"If an agent ordered 2x inventory by mistake, would you pay 10-20% of avoided loss to prevent it?\" 2) Quantify actual loss case studies: contact Starbucks (press contact), Andon Labs (published blog), Fortune 500 (via Reco.ai source). 3) Prototype a 1-vertical guardrail template (e.g., retail inventory: max-order-per-week threshold + human escalation) and validate with 3 founders already running agents.",
+        "kill_on": "1) No F&B/retail founder willing to pay >5% of prevented losses. 2) Anthropic/OpenAI/AWS release production-ready outcome-based guardrail templates + vertical packs within 12 months. 3) No real customer (named) can articulate a $10K+ annual loss scenario from agent operational errors.",
+        "flags": [
+          "Starbucks case is best-documented demand signal (9-month live failure, inventory hallucination, real user friction), but exact loss amount not disclosed in cited sources — follow up directly",
+          "Andon Labs Luna experiment is live, partially documented, but losses not quantified in cited articles; blog access blocked (403) — founder contact may be needed",
+          "Fortune 500 $4.3M loss figure is credible (Reco.ai guardrails guide, verifiable), but original customer/date/vertical not named in search results — original source unknown",
+          "Outcome-aligned pricing is established (Zendesk, Sierra, Salesforce examples cited), but NONE are selling operational loss prevention specifically — all are customer-facing SaaS (tickets, meetings, payments)",
+          "Zenity ($55M, Series B 2026) is closest competitor but sells security/governance, NOT operational loss prevention — no loss-reduction outcome pricing found in their model",
+          "Vertical templates claimed as defensible moat, but no vendor today publishes 'template packs by vertical' — unproven assumption that this is valuable vs. generic guardrails",
+          "Non-technical founder + India edge = no obvious distribution or technical credibility in agentic AI (Anthropic, OpenAI, cloud vendors dominate)"
+        ],
+        "sources": [
+          "https://www.bloomberg.com/news/articles/2026-04-23/an-ai-agent-takes-over-a-store-and-orders-too-many-candles-mobwrfw2",
+          "https://www.pymnts.com/artificial-intelligence-2/2026/inside-a-retail-store-run-entirely-by-ai/",
+          "https://www.inc.com/kevin-haynes/the-worlds-first-ai-store-owner-is-open-for-business-despite-some-very-human-mistakes/91330150",
+          "https://fortune.com/2026/05/28/starbucks-quietly-retired-ai-inventory-agent-barista-complaints-hallucinations/",
+          "https://www.inc.com/kevin-haynes/starbucks-ai-inventory-tool-comes-up-short/91349606",
+          "https://zenity.io/platform",
+          "https://www.prnewswire.com/news-releases/zenity-raises-38m-series-b-funding-round-to-secure-agentic-ai-302289584.html",
+          "https://openai.com/api/docs/guides/agents/guardrails-approvals",
+          "https://www.withorb.com/blog/pricing-ai-agents",
+          "https://sierra.ai/blog/outcome-based-pricing-for-ai-agents",
+          "https://www.airwallex.com/global/blog/financial-layer-agent-ecosystem",
+          "https://www.reco.ai/hub/guardrails-for-ai-agents"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2201,6 +2915,38 @@
         "reason": "ConformKit solves a real compliance burden honestly — helping SMEs meet a genuine EU legal obligation — but auto-generated regulatory dossiers carry a structural honesty risk: if the tool implies or allows customers to believe the output constitutes a legally valid, auditor-ready technical file when it is a first draft requiring expert review, that is a misleading claim that could expose SMEs to false confidence, regulatory fines, and real harm when their high-risk AI system faces a conformity assessment.",
         "fix": "Three safeguards clear the gate: (1) All output is explicitly labelled a structured draft, never a compliance certificate — every deliverable carries a mandatory disclaimer and a checklist of sections requiring legal/technical sign-off before submission; (2) The tool must surface confidence flags — wherever it has inferred, assumed, or generated content from thin input, it highlights that section in amber so the customer knows where the human work is; (3) The business refuses to market to customers who want to use the output without any expert review, and does not claim or imply that purchase = compliance. With those three in place the tool is genuinely helpful, fully honest, and Ratan Tata could put his name on it.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "WEAK",
+        "wtp": "UNPROVEN",
+        "headline": "Deadline moved 16mo, market crowded with integrated competitors (AnnexOps, CompliAI, EUART), WTP fragmented across QMS/notified bodies/consulting—Annex IV generation alone is a narrow wedge in a solved problem space.",
+        "cheapest_test": "Email 20 SMEs actually affected by high-risk AI classification (hiring/credit/insurance systems) asking: (1) are you building Annex IV docs in-house, buying a platform, or hiring a consultant? (2) would you pay $3K one-time + $200/mo for auto-generated Annex IV? Results: if &lt;20% say \"yes, alone,\" the WTP thesis fails.",
+        "kill_on": "1) Competitor pricing discovered that undercuts $1.5K–$4K/doc (AnnexOps/CompliAI undisclosed but likely bundled enterprise pricing). 2) May 7, 2026 Digital Omnibus moved Annex III deadline from Aug 2, 2026 → Dec 2, 2027 (16-month deferral), killing the \"60-day panic\" wedge. 3) Simplified Annex IV form remains unpublished but deadline extension makes pre-filling a lower-urgency problem. Kill if any of these hold.",
+        "flags": [
+          "Deadline research outdated—May 7 Omnibus agreement deferred Annex III high-risk from Aug 2 2026 to Dec 2 2027 (16mo delay), eliminating urgency wedge",
+          "Simplified form status accurate (not published as of April 2026) but moot—deadline also moved",
+          "Competitors identified: AnnexOps (discovery + risk classification + continuous monitoring + CI/CD integration), CompliAI (Annex IV + QMS + DPIA bundled), EUART, AI Act Gap (code-level detection), Sprinto (broader GRC). All auto-generate Annex IV.",
+          "WTP proven for compliance tooling broadly (€200K–€600K per SME) but UNPROVEN for Annex IV as standalone purchase—SMEs buy platforms or hire consultants, not docs",
+          "Market size accurate: €3.4B annual (€1.3B conformity assessment, €0.8B consulting, €0.7B tooling, €0.6B QMS); 65K+ systems. But fragmented across notified bodies, QMS providers, governance platforms, consultants.",
+          "Gap claim unproven—simplified form delay is NOT a market gap; it's a regulatory closure process. Real constraint is RISK CLASSIFICATION (which systems are high-risk?) not document generation.",
+          "Pricing WTP unvalidated—no evidence SMEs will pay $1.5K–$4K for Annex IV docs + $99–$299/mo when bundled solutions (CompliAI) or broader platforms (AnnexOps) exist with unknown pricing"
+        ],
+        "sources": [
+          "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/",
+          "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/",
+          "https://annexops.com/",
+          "https://eucompliai.com/annex-iv-technical-documentation-automation/",
+          "https://medium.com/@arturs.prieditis/the-eu-ai-acts-hidden-market-how-high-risk-ai-compliance-became-a-17-billion-opportunity-734cea9b41e2",
+          "https://www.aiactgap.com/guides/annex-iv",
+          "https://sprinto.com/blog/eu-ai-act-requirements/",
+          "https://www.softwareseni.com/budgeting-for-eu-ai-act-compliance-cost-models-for-smb-tech-companies-by-use-case/",
+          "https://artificialintelligenceact.eu/article/99/",
+          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-11"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2457,6 +3203,38 @@
         "reason": "ProofStack solves a genuine trust gap honestly — helping coaches prove real credentials rather than manufacture fake ones — but the verification process itself must be rigorous and transparent, or the \"verified\" badge becomes a false signal that harms the clients booking those coaches.",
         "fix": "Define and publish the verification standard openly (what counts as verified, how often it re-checks, what happens when a credential lapses or a client outcome claim cannot be confirmed), ensure the badge is never sold faster than the verification process can actually support it, and guarantee that the paid-tier ranking is never conflated with verification tier — the trust signal must be earned, not purchased.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "WEAK",
+        "headline": "Indian Coaching Council already operates the verified coach directory; SEBI regulation tailwind is real but ex-corporate cohort is unproven; willingness-to-pay for standalone credential layer unproven.",
+        "cheapest_test": "Interview 20 ex-corporate coaches transitioning to indie workshops; ask willingness-to-pay for credential badge vs. bundled booking. Check ICC's current coach count and pricing vs. proposed model. Quantify addressable market (target: 5K+ coaches, ₹1K+ MRR willingness).",
+        "kill_on": "If ICC membership (current unknown price) is <₹800/mo and/or serves >500 coaches; if <50% of surveyed coaches say they'd pay ₹799+ for credential layer alone (not bundled); if ex-corporate-only coach count is <2K nationally.",
+        "flags": [
+          "Bloombe finfluencer citation fabricated (source not found; actual stat is FINRA US-focused, not Bloombe)",
+          "Ex-corporate coach wave claimed but unquantified (Bloomberg headline exists, article body inaccessible; no cohort size found)",
+          "ICC is direct incumbent with fast verification (24h for ADI) and public directory; pricing unlisted but presumed low",
+          "Trust badges solve visual trust layer for ₹0–₹2K/mo (Trustindex, TrustedSite, Common Ninja)",
+          "Simply.Coach and Skolasti already embed trust/booking/credentialing into general platforms",
+          "No evidence coaches will pay ₹799–₹1,999/mo for credential-only SaaS (bundled solutions dominate)",
+          "SEBI regulation pressure is real for financial advisors, NOT for life/executive coaches (which is the implied TAM)"
+        ],
+        "sources": [
+          "https://www.medianama.com/2025/08/223-parliament-panel-sebi-finfluencer-regulation-india/",
+          "https://www.tribuneindia.com/news/ban/sebi-targets-finfluencer-misconduct-to-protect-retail-investors-freezes-accounts-of-perpetrators",
+          "https://www.finra.org/media-center/newsreleaks/2026/finra-foundation-research-examines-characteristics-behaviors-outcomes",
+          "https://www.alliedmarketresearch.com/press-release/india-online-coaching-market.html",
+          "https://www.futuremarketinsights.com/reports/coaching-platform-market",
+          "https://indiancoachingcouncil.com/",
+          "https://simply.coach/blog/icf-coaching-statistics-industry-insights/",
+          "https://www.skolasti.com/",
+          "https://www.trustindex.io/prices/",
+          "https://in.springverify.com/api-integrations/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2640,6 +3418,35 @@
         "reason": "Honest affiliate marketing of genuine Indian goods to Western buyers is ethically sound and net-positive for Indian producers — but the \"fully autonomous\" pipeline + Ayurvedic supplement category creates three real risks: unverified health claims, missing affiliate disclosure, and supplement safety compliance (some Ayurvedic products contain heavy-metal levels legal in India but illegal in the US/EU/AU), all of which are fixable before launch.",
         "fix": "Three non-negotiable launch preconditions: (1) SAFETY FILTER — ban any supplement where the product or its category has documented heavy-metal/adulterant risk in Western import enforcement (FDA import alerts list is public); only promote food-grade spices, textiles, and supplements with a clean import compliance record; (2) TRUTHFUL-CLAIMS GATE — \"verified deal-worthy\" must be operationally defined (e.g. cross-checked price vs Amazon/eBay, minimum 4-star verified reviews); the autonomous pipeline must not publish \"verified\" on a product it has not actually checked; no implied therapeutic claims for supplements — add a standard \"traditional use, not evaluated by [FDA/TGA], consult your doctor\" disclosure to every supplement post; (3) AFFILIATE DISCLOSURE — hardcode a \"#ad #affiliate\" tag and a spoken/on-screen disclosure into every video template before the pipeline goes live; TikTok Shop auto-tags help but are not sufficient on their own for FTC compliance.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "INSUFFICIENT",
+        "demand": "WEAK",
+        "wtp": "WEAK",
+        "headline": "Broken concept (autonomous + verified sourcing are contradictory); unverified market claim; zero competitors named; unverified source (hamstergarage.io)",
+        "cheapest_test": "Name 5+ existing TikTok creators selling Indian wellness products (proves landscape is not white space); verify Ayurvedic market 5.1B claim source; confirm hamstergarage.io commission rates. If all three are unverifiable, concept is not testable.",
+        "kill_on": "Concept flaw: \"autonomous + verified direct sourcing\" are mutually exclusive — you cannot be hands-off AND have supplier relationships. India TikTok ban (since 2020) means cooperatives cannot be TikTok Shop sellers; requires US entity + fulfillment. Ayurvedic market claim (5.1B by 2035) and commission rates (10-25%) lack source citations; hamstergarage.io unverified. Zero competitors named → cannot assess if white-space or saturated.",
+        "flags": [
+          "Unverified-source: hamstergarage.io",
+          "Broken-wedge: autonomous vs verified-sourcing contradiction",
+          "India-TikTok-ban: 2020-2026, affects logistics",
+          "No-competitive-mapping: zero existing channels named",
+          "Market-claim-unverified: 5.1B Ayurvedic figure unsourced",
+          "Commission-rate-unverified: 10-25% lacks documentation",
+          "Conversion-rate-assumed: 2% is above-average without case study proof",
+          "India-sourcing-friction: cooperatives cannot register as TikTok Shop sellers"
+        ],
+        "sources": [
+          "Validation research: India TikTok ban (2020, confirmed 2026)",
+          "Validation research: TikTok Shop affiliate rates typically 5-15% (official TikTok for Business)",
+          "Validation research: India cooperatives cannot register as TikTok Shop sellers due to ban",
+          "Validation research: hamstergarage.io source unverified, no public credibility record",
+          "Validation research: Ayurvedic market 5.1B + 9.5% CAGR claim unsourced",
+          "Validation research: 2% conversion rate is top-tier, not baseline (typical TikTok Shop 0.5-1.5%)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2762,6 +3569,37 @@
         "reason": "ContextVault is a legitimate B2B infrastructure product that solves a genuine enterprise data-governance problem — it helps companies use AI agents responsibly, not recklessly. It creates real value, makes no vulnerable customers, tells no lies, and is built for the long term.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "WEAK",
+        "headline": "Governance gap is real (76% report lag) but Mem0 ($24M/Series A) and Zep already ship HIPAA/SOC 2 compliance tiers—regulatory drivers are pulling adoption to existing players, not creating WTP for new entrant.",
+        "cheapest_test": "Test 3 narrow wedges (8 wks each): (1) Co-sell compliance add-on white-label glossary into Mem0 Enterprise sales pipeline, (2) Pivot to RAG governance (knowledge bases feeding agents, not agent memory), (3) Sell post-deployment auditing to legal/compliance teams. Kill if zero pilot traction.",
+        "kill_on": "No pilot signed within 8 weeks of narrowest wedge test; or Mem0/Zep launch bundled governance console with Enterprise tier pricing unchanged.",
+        "flags": [
+          "No CISO WTP survey found—demand signal inferred from DORA/HIPAA regulatory timing, not pulled by buyer",
+          "Mem0's 186M API calls (Q3 2025) are memory API volume, not compliance feature adoption",
+          "Zero G2 reviews, case studies, or customer testimonials for standalone governance memory platforms",
+          "Zep still at $500K seed (Apr 2024)—Mem0 Series A crowding the compliance-first positioning",
+          "LangChain/LlamaIndex teams absorb 1-2 wks engineering for governance—suggests customers OK with DIY over standalone vendor"
+        ],
+        "sources": [
+          "https://mem0.ai/series-a",
+          "https://www.business-standard.com/companies/start-ups/mem0-raises-24-million-series-a-funding-to-build-memory-layer-for-ai-agents-125102929850_1.html",
+          "https://theaiagentindex.com/agents/mem0",
+          "https://vectorize.io/articles/mem0-zep-letta-agent-memory",
+          "https://baeseokjae.github.io/posts/best-ai-agent-memory-frameworks-2026/",
+          "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-agent-governance-framework-gap-20260403/",
+          "https://digital.nemko.com/regulations/digital-operational-resilience-act",
+          "https://www.techaheadcorp.com/blog/hipaa-compliant-ai-architecture/",
+          "https://www.crunchbase.com/organization/zep-ai",
+          "https://www.skyquestt.com/report/agentic-ai-orchestration-and-memory-systems-market",
+          "https://blogs.oracle.com/database/introducing-oracle-ai-agent-memory-a-unified-memory-core-for-enterprise-ai-systems"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2820,6 +3658,35 @@
         "reason": "OfferStack serves a genuinely underserved group (low-earning creators) with a real problem (monetization fragmentation), and the core business model is honest SaaS — but two structural risks need guarding: (1) the affiliate-network revenue-share creates a conflict of interest where the platform may surface higher-commission partners over better-fit ones for the creator, and (2) the \"AI sets up and runs income streams\" promise is high-stakes for people earning under $30K where a misleading result claim or a hidden take-rate could materially harm someone already financially fragile.",
         "fix": "Disclose all affiliate/partner revenue-share rates in plain sight before a creator activates any stream; rank partner recommendations by creator-fit score, not commission rate (or show both and let the creator choose); cap or clearly disclose any platform take-rate on digital product sales; and never claim income outcomes the AI cannot guarantee — show ranges with honest \"results vary\" framing, not aspirational headline numbers.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "Linktree (Creator Index + Insights Chat) and Fanvue ($200M ARR, Series A $22M) already own the AI income-stream recommendation wedge; 6+ funded incumbents adding consolidation features faster than OfferStack can build.",
+        "cheapest_test": "Get 50 sub-$30K creators on a call: ask (1) Do you use Linktree's Creator Index / Insights Chat? (2) Have you heard of Fanvue? (3) Would you pay $25/mo for a DIFFERENT platform that does the same thing? If >40% answer \"yes\" to #3, demand exists. If <30%, KILL it now.",
+        "kill_on": "Linktree's Creator Index + Insights Chat gains >5% monthly active user adoption among sub-$30K creators, OR Fanvue exceeds 500K creators (currently 325K as of Jan 2026), OR any VC-backed creator platform adds AI income-stream audits as a core feature within 6 months.",
+        "flags": [
+          "Linktree launched Creator Index (archetype quiz) + Insights Chat (AI recommendations from cross-platform data) in 2026 — directly competes on the auditing + recommendation wedge.",
+          "Fanvue hit $200M ARR May 2026, Series A $22M Jan 2026, 93% of 325K creators using proprietary AI tools — well-capitalized direct competitor.",
+          "The demand (73% of creators earn <$30K, 78% use multiple streams) is real and cited, but every major creator platform is racing to consolidate stacks (Beacons, Beehiiv, Whop, Stan Store all adding features).",
+          "Linktree's price increase ($9→$15/mo Pro) held through 2026, proving creator WTP exists — but Linktree can add AI features faster than a new entrant can build market share.",
+          "Founder claimed '45% of creators consolidating tech stacks' but this statistic could not be found in 2025-2026 sources — verify before pitching."
+        ],
+        "sources": [
+          "https://archive.com/blog/creator-economy-income-statistics (73% earn <$30K, top 10% get 62% of payments)",
+          "https://khaby.ai/rankings/best-creator-economy-platforms-2026/ (Beacons, Stan Store, Kajabi top platforms)",
+          "https://linke.ro/blog/beacons-vs-linktree (Linktree's 2026 pivot to AI Creator Index + Insights Chat)",
+          "https://www.uscreen.tv/blog/creator-tech-stack/ (78% use multiple income streams, 3+ streams = 250% higher earnings)",
+          "https://influencermarketinghub.com/linktree-ai-powered-creator-index/ (Linktree's AI Creator Index and Insights Chat launch 2026)",
+          "https://www.businesswire.com/news/home/20260112458975/en/AI-Powered-Creator-Monetisation-Platform-Fanvue-Hits-$100m-Run-Rate-and-Raises-$22m-Series-A-Investment (Fanvue $200M ARR, Series A $22M, 325K creators, 93% using AI tools)",
+          "https://www.emailtooltester.com/en/reviews/beehiiv/pricing/ (Beehiiv $49-109/mo with monetization features)",
+          "https://khaby.ai/pricing/beacons/ (Beacons $30-75/mo, AI media kit, digital store, brand deals)",
+          "https://stan.store/blog/stan-store-vs-gumroad/ (Stan Store $29-99/mo digital product sales, no AI stream recommendations)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2874,6 +3741,38 @@
         "reason": "RegLayer sells machine-readable compliance data to software vendors so their users stay on the right side of regulation — it reduces legal risk and cost for small businesses, creates no dark patterns, exploits nobody, and the more accurate and honest the data the more valuable the product.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "WEAK",
+        "wtp": "UNPROVEN",
+        "headline": "Regulatory-update API market is crowded (Fonoa, Compliance.ai, FinregE, Rockfast, GSTN, ATO APIs); narrow wedges (AU Payday Super, India GST) have point-in-time demand or incumbents. Software vendors don't pay $299–$2.5K/mo for compliance update APIs — they use payroll vendor bundles (free/cheap) or government APIs. India GST buyers tolerate ₹7K–₹20K annually, not ₹150K+/year.",
+        "cheapest_test": "Prove willingness-to-pay: (1) Survey 10 Australian payroll ISVs (Xero partners, HR apps) — ask if they'd pay $2.5K/mo for an external Payday Super regulatory-update API (vs. their incumbent payroll vendor's free bundle). (2) Call 3 India GST software vendors (ClearTax, TaxPower, Tally resellers) — ask their customers' tolerance for a standalone ₹150K/year regulatory-update API. If <2/10 AU vendors + <1/3 India vendors say \"yes, we'd pay,\" kill immediately.",
+        "kill_on": "Any of: (a) au payroll isv survey shows <2/10 willing to pay $2.5k/mo; (b) india gst vendor survey shows willingness-to-pay cap at <₹30k annual; (c) rockfast captures >50% of payday-super-compliance-api market by sept 2026 (proving single-vendor winner, not fragmented opportunity); (d) india compliance api market consolidates under cleartax or govt (gstn) by end-2026.",
+        "flags": [
+          "No direct RegLayer competitor exists (name not found), but Fonoa + Compliance.ai + Rockfast + FinregE fragment the market",
+          "Payday Super is time-bounded (July 2026 deadline) and embedded-first (vendors push via payroll platforms, not APIs)",
+          "India GST pricing tolerance is 50–100× lower than RegLayer's target ($20K/year vs $150K+/year)",
+          "GSTN/ATO APIs are free/published; software vendors build internal compliance engines rather than buy external APIs",
+          "White-label regulatory widget competes with vendors' core products (Xero, SAP), not complements them"
+        ],
+        "sources": [
+          "https://www.fonoa.com/platform/tax",
+          "https://paydaysuper.com.au/",
+          "https://www.compliance.ai/",
+          "https://softwaredevelopers.ato.gov.au/PaydaySuper",
+          "https://finreg-e.com/machine-readable-regulation/",
+          "https://www.xero.com/au/initiative/payday-super/",
+          "https://cleartax.in/gst",
+          "https://www.verifiedmarketresearch.com/product/compliance-management-software-market/",
+          "https://www.businessresearchinsights.com/market-reports/compliance-software-market-121125",
+          "https://www.e-payday.com.au/payroll-software/top-10-best-payroll-software-for-any-business",
+          "https://www.accoxi.com/blogs/best-gst-billing-software-in-india-2026-top-tools-compared-for-small-businesses/",
+          "https://open.money/blog/future-of-gst-compliance-in-india-ai-apis-automation/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -2931,6 +3830,36 @@
         "reason": "Genuine financial education for ordinary Australians navigating a complex compulsory system — trusteeship model, not extraction — but affiliate lead-gen and the risk of stale/overconfident super advice require explicit ASIC-compliant disclosure and content-dating to keep the public-scrutiny and safety tests clean.",
         "fix": "Launch precondition: (1) Every video and email carries a visible \"general information only, not personal financial advice\" disclaimer per ASIC RG 234 guidance; (2) all affiliate relationships (Canstar, RateCity, mortgage brokers) are disclosed on-screen and in description before any link; (3) videos are date-stamped and a review protocol flags content when super rules change — so no viewer acts on superseded rules. These are standard compliance requirements for Australian financial content, not extra burdens.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "WEAK",
+        "headline": "SuperanFund IQ: Proven CPM but established competitors + unproven affiliate payout",
+        "cheapest_test": "Launch 10–15 long-form videos (2–3 min production cost: $50–100/video via TTS + existing public-domain footage) on FHSS scheme; measure: (1) view velocity (does 5K+ views per video materialize?), (2) affiliate click-through (Canstar/RateCity links embedded), (3) CPM realization (actual YouTube Analytics, not claim). Cost: $750–1.5K + 40 hrs scripting. Timeline: 4 weeks. Gate: 50+ views per video = micro-demand signal; <20 = kill.",
+        "kill_on": "View velocity <20 per video by week 2 (demand too weak to justify 80–150 video backlog); no affiliate clicks within 10 videos (WTP unproven); competitor expansion (e.g., SuperGuy launches Hindi/multilingual parity, takes the Australia-India arbitrage first).",
+        "flags": [
+          "Competitor SuperGuy has 18-year history (since 2008) + established audience, specific site superguy.com.au",
+          "CPM claim ($45–$80) is PROVEN via FluxNote, but only realized at scale (80–150 videos, 5K–15K views each)",
+          "Affiliate payout structure undisclosed — no cited evidence anyone pays for financial planning leads from YouTube channels",
+          "FHSS scheme described as 'best-kept secret' in search results = low organic pull signal",
+          "Lead generation companies (Wealthify) exist but require high-volume paid-acquisition funnel, not YouTube content arbitrage",
+          "No search-volume surge data (Google Trends) backing demand claim — only assumption based on scheme existence"
+        ],
+        "sources": [
+          "https://fluxnote.io/guides/best-youtube-niches-australia-2026",
+          "https://videos.feedspot.com/australian_finance_youtube_channels/",
+          "https://www.youtube.com/channel/UCs1ARI2y18hrjNYVqjtJ-pQ",
+          "https://superguy.com.au/",
+          "https://www.youtube.com/c/superguideaustralia",
+          "https://outlierkit.com/blog/youtube-rpm-finance-niche",
+          "https://wealthify.com.au/financial-services-leads/",
+          "https://firsthomebuyers.gov.au/",
+          "https://www.theconversation.com/this-little-known-scheme-can-help-first-home-buyers-save-thousands-more-for-a-deposit-with-less-tax-283278"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -3122,6 +4051,40 @@
         "reason": "FEMAPath is a compliance automation tool that helps Indian professionals correctly fulfil their legal obligations — it reduces errors, lowers cost versus a CA, and leaves users better-off with accurate filings; no exploitation, no deception, and the value is real and durable.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "WEAK",
+        "headline": "Regulatory tailwind real (Form 145/146 April 2026), but market already served by ClearTax (₹1,000 filings), CA white-label pricing opaque, freelancer willingness-to-pay unproven — gap too thin to justify build",
+        "cheapest_test": "Call 5 CA firms: ask if they charge clients ₹499-999 per Form 15CA filing AND if they'd pay ₹5-15K/mo for white-label automation. Parallel: survey 100 freelancers earning >40L/yr on Upwork/Toptal: willingness to pay ₹500-1000 for automated Form 15CA filing.",
+        "kill_on": "If <2 CAs say they charge clients ₹500+ per form, OR <10% of high-income freelancers say they'd use a self-serve tool, OR ClearTax/TaxBuddy ship Form 145/146 automation before launch.",
+        "flags": [
+          "Market claim '15M freelancers' VERIFIED but only 23% earn ₹40L+ (3.45M addressable) — most are low-income",
+          "ClearTax already offers Form 15CA filing at ₹1,000 — 50-99% undercut claimed ₹499-999 price",
+          "April 2026 regulatory shift CONFIRMED but no evidence of urgency — old forms stay valid until March 31, 2026, no forced cutover",
+          "CA firm white-label pricing completely opaque — no vendors publish rates, interviews required",
+          "No willingness-to-pay evidence for freelancers (surveys found tax compliance guides, zero demand-signal for ₹500-1K tool)",
+          "Form 145/146 is structured XML with 4 parts (A–D) but equivalent complexity to 15CA/15CB — not materially harder to automate",
+          "Competitors identified: Gen TDS, XLTOOL, BDO Remittance, ClearTax, TaxBuddy — all solve the filing/XML generation problem, none are new entrants"
+        ],
+        "sources": [
+          "https://cleartax.in/services/filing-form-15CA/p — ClearTax Form 15CA filing ₹1,000",
+          "https://www.compliancecalendar.in/learn/form-145-and-146-replace-15ca-and-15cb-from-april-2026 — Form 145/146 effective April 1, 2026",
+          "https://www.quora.com/How-much-do-forms-15CA-15CB-cost — CA firm fees ₹2,500–5,000 per form (freelancers pay this, not ₹499–999)",
+          "https://razorpay.com/learn/scope-and-challenges-of-freelancers/ — India 15M freelancers, 23% earn ₹40L+ annually",
+          "https://www.grandviewresearch.com/horizon/outlook/freelance-platforms-market/india — India freelance platforms ₹265.1M revenue 2025, CAGR 25.1% to 2033",
+          "https://www.skydo.com/blog/compliance-guideline-for-inward-remittance — FEMA compliance requirements, no demand signal for new tool",
+          "https://blog.saginfotech.com/e-filing-15ca-15cb-forms-gen-tds-software — Gen TDS competitor, established solution",
+          "https://xltool.in/15ca-15cb/ — XLTOOL competitor (XML generator, pricing unlisted)",
+          "https://wraptax.com/bulk15cacb — WrapTax bulk 15CA/15CB automation tool",
+          "https://www.bdo.in/en-gb/services/bdo-digital/technology-products-and-solutions/compliance/remittance — BDO enterprise remittance solution",
+          "https://kmgcollp.com/form-145-form-146-replace-forms-15ca-15cb/ — Form 145/146 details: 4-part structure, CA role unchanged",
+          "https://www.techjockey.com/blog/compare-taxbuddy-vs-cleartax — ClearTax ₹1,099–2,499/yr vs TaxBuddy ₹999–1,499/yr, no Form 15CA mention"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -3188,6 +4151,34 @@
         "reason": "PETrace is a compliance-assistance tool that helps CFOs understand and manage genuine tax risk — it creates value by bringing transparency and defensibility to a complex legal area, serves legitimate business customers, and reduces the risk of accidental non-compliance rather than helping anyone evade lawful obligations.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "PROVEN",
+        "demand": "STRONG",
+        "wtp": "WEAK",
+        "headline": "Real gap (conduct-based PE audit) + strong demand signal (Booking.com ₹3,960 Cr case, OECD 2025), but willingness-to-pay unproven. Timing is tight; BigFour will likely commoditize this within 18-24 months.",
+        "cheapest_test": "Land 3 CFOs (India-based companies with 10+ remote workers) on a $200/month pilot for 3 months; measure: (1) Do they renew? (2) Do they reference the tool in PE disputes or audits? (3) What price point makes them switch from BigFour advisory? Run before June 2027 (pre-India PE codification).",
+        "kill_on": "If ANY of: (1) Deel/Papaya/Skuad integrates PE-conduct scoring into their dashboards (kills WTP for standalone); (2) BigFour launches \"PE Conduct Auditor\" as ERP add-on (kills your credibility edge); (3) India Budget 2027 codifies PE rules into formulaic thresholds (kills your DTAA-interpretation moat); (4) Pilot shows <30% 3-month retention (CFOs revert to BigFour or CA default).",
+        "flags": [
+          "Booking.com case is REAL & Feb 2026, but generalize carefully — it was a platform business (no office/staff in India); fixed-place PE for a software dev team is a different fact pattern",
+          "OECD 2025 50% + commercial-reason test is NEW, but already 5+ months old (Nov 2025); India's adoption curve unknown",
+          "Pricing model sits in an awkward middle — too expensive vs. bundled EOR, too narrow vs. holistic BigFour engagement; needs market-fit testing ASAP",
+          "EOR market is crowded + low-margin; defensibility via PE expertise is real but time-limited (18-24mo before consolidation)",
+          "No cited evidence of CFO spending on 'continuous PE audit' software; demand signal is forward-looking (Booking.com spillover), not existing market behavior"
+        ],
+        "sources": [
+          "https://www.taxscan.in/top-stories/itat-quashes-3960-crore-tax-demand-against-bookingcom-rules-no-permanent-establishment-in-india-1443593",
+          "https://www.ey.com/en_ch/technical/tax-alerts/oecd-2025-update-new-rules-on-permanent-establishment-for-remote-work",
+          "https://trilegal.com/knowledge_repository/trilegal-update-oecd-2025-update-guidance-on-permanent-establishment-risks-in-cross-border-remote-work-arrangements/",
+          "https://www.deel.com/blog/employer-of-record-india/",
+          "https://www.bakermckenzie.com/en/insight/publications/2025/11/2025-update-to-the-oecd-model-tax-convention",
+          "https://asanify.com/blog/employer-of-record-india/eor-india-a-detailed-guide-on-employer-of-record-2025/",
+          "https://www.ey.com/en_in/services/tax/transfer-pricing-compliance-documentation",
+          "https://tax.thomsonreuters.com/blog/payroll-pulse-navigating-permanent-establishment-risk-with-remote-workers-in-2026/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -3242,6 +4233,37 @@
         "reason": "FOGOLedger turns a genuine regulatory obligation into a straightforward compliance tool for hospitality businesses — it reduces food waste (a clear community good), charges a transparent fee far cheaper than the penalty it helps avoid, and creates no dark patterns, no exploitation of the vulnerable, and no deceptive claims.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "THIN",
+        "demand": "MIXED",
+        "wtp": "UNPROVEN",
+        "headline": "FOGO compliance logging is real but minimally documented; existing waste software vendors ignore it; white-label to collectors unvalidated.",
+        "cheapest_test": "Contact 5 waste collectors (Veolia, Cleanaway, Remondis, regional operators) + 10 venues (pubs, cafes, restaurants ≥3,840L waste/week) to ask: (1) What compliance documentation are you actually preparing for EPA audit? (2) Would you pay $29-79/mo for a compliance log app if bundled with your waste collection service? (3) Collectors: Have you considered bundling compliance software for your venues?",
+        "kill_on": "- If 7+ of 10 venues say \"we'll use checklists/pen-and-paper, not paying for an app\" OR waste collectors say \"our customers don't ask for this\"\n- If EPA/council audits focus only on physical bin presence + waste composition, not document trails (reducing need for a log)\n- If existing waste software (Winnow/LeanPath) roll out FOGO compliance features natively (shrinking the gap)",
+        "flags": [
+          "REGULATORY FORCING FUNCTION IS REAL (July 2026 deadline, $500K penalty)",
+          "COMPLIANCE REQUIREMENT UNDERSPECIFIED in public guidance—no EPA template for what 'records' mean",
+          "WASTE COLLECTORS CONTROL CUSTOMER RELATIONSHIP but have not bundled compliance software",
+          "BIOFEED + END FOOD WASTE already address venue FOGO readiness; late entrant may struggle vs. bundled incumbents",
+          "WHITELIST OPPORTUNITY UNVALIDATED—no evidence waste collectors want to OEM your software"
+        ],
+        "sources": [
+          "https://legislation.nsw.gov.au/view/pdf/asmade/act-2025-1",
+          "https://www.anz.veolia.com/en-au/newsroom/nsw-fogo-mandate",
+          "https://www.remondis.com.au/rethink-nsw-fogo-countdown/",
+          "https://wanless.com.au/nsw-fogo-mandate/",
+          "https://www.smallbusiness.nsw.gov.au/news-podcasts/news/nsw-food-organics-garden-organics-fogo-rollout-new-food-organics-fo-collection-rules-for-businesses-from-1-july-2026",
+          "https://endfoodwaste.com.au/end-food-waste-australia-launches-hospitality-hub-to-help-venues-turn-food-waste-into-profits/",
+          "https://biofeed.com.au/epa-nsw-food-waste-mandate-rollout-be-ready-with-biofeed/",
+          "https://www.winnowsolutions.com/",
+          "https://www.anz.veolia.com/services/recycling-waste-services/waste-service-delivery/reporting",
+          "https://www.xenia.team/articles/top-food-waste-management-software",
+          "https://www.softwaresuggest.com/waste-management-software/australia"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -3296,6 +4318,37 @@
         "reason": "A B2B research newsletter and vendor database serving founders and operators — it informs, does not deceive, exploits no vulnerable party, trades in honest analysis, and adds genuine value to the AI-native services ecosystem.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "PROVEN",
+        "headline": "Demand real, gap saturated: YC backing AI-native services (Harper $46.8M, Outmarket $17M), but Crunchbase + GrowthList + StartupHub.ai + Latent Space (free) already cover the space. Win only if ultra-specific (hiring/pricing signals) + operator-focused (not VC).",
+        "cheapest_test": "Launch a free weekly email curating 3-5 new AI service companies' hiring + pricing + funding signals (hyperspecific to insurance/accounting/legal only). Validate subscriber growth + sponsorship inbound within 8 weeks. Kill if <500 subs or 0 sponsor interest.",
+        "kill_on": "If the first cohort of AI-native service companies (Harper, Outmarket, Moritz, Casey, Puzzle) choose to publish their traction signals in a Crunchbase/Latent Space aggregator instead of a standalone publication. Or if Crunchbase launches an \"AI-Native Services\" filter within 6 months.",
+        "flags": [
+          "Latent Space proves content-without-paywall works (170K daily); Substack newsletters struggle to monetize",
+          "GrowthList already tracks 9,953+ AI startups with weekly updates—no differentiation yet on job displacement",
+          "CB Insights ($50K/year) is the incumbent for enterprise intel; ServiceKillers' $99/mo position is mid-market, but Crunchbase Pro ($49/mo) covers the same bandwidth",
+          "'156,499 jobs tracked' claim is unverified—no source given",
+          "Crunchbase/CB Insights/GrowthList all sell predictions + hiring signals; ServiceKillers adds 'AI replacing jobs' framing, not new data",
+          "Trade publication playbook (68% AI citations to top 15 domains) shows niche publications work, BUT only if they have distribution moat (Skift, STAT, Bloomberg)"
+        ],
+        "sources": [
+          "https://www.ycombinator.com/rfs",
+          "https://www.emcap.com/thoughts/harper-building-the-ai-native-insurance-brokerage-every-business-deserves",
+          "https://www.morningstar.com/news/pr-newswire/20260513la57994/outmarket-ai-raises-17m-series-a-to-power-the-intelligence-era-of-insurance",
+          "https://growthlist.co/ai-startups/",
+          "https://www.startuphub.ai/",
+          "https://www.latent.space/",
+          "https://www.crunchbase.com",
+          "https://www.demandsage.com/ai-job-replacement-stats/",
+          "https://www.prnewswire.com/news-releases/the-trade-press-ai-index-2026-trade-publications-the-engines-actually-cite-302775942.html",
+          "https://prospeo.io/s/cb-insights-vs-crunchbase"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -3497,6 +4550,34 @@
         "reason": "A legitimate import-distribution business trading genuine Indian goods at standard wholesale margins — it creates real value for consumers, supports Indian manufacturers, and has no structural deception, exploitation, or integrity failure.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "NARROW",
+        "gap": "CROWDED",
+        "demand": "WEAK",
+        "wtp": "WEAK",
+        "headline": "Six+ active competitors already serve niche; willingness-to-pay gap = 10x between claim (2–3x markup) and proven behavior (5–20% max premium).",
+        "cheapest_test": "Launch a curated Shopify store (3 product categories, 5 SKUs each, sourced from 2 verified Indian suppliers) with paid search ads targeting \"artisan Indian home textiles Australia\" (CPL ~AU$15–$25 USD). Track: (1) CPL vs CAC threshold to 3x LTV, (2) AOV/repeat rate vs baseline ($150+ free shipping threshold), (3) retail account acquisition cost (B2B leg). Kill if: CPL >$30 or repeat rate <15% within 60 days.",
+        "kill_on": "(1) Retail partnerships require <2 month acquisition, yet incumbent distributors (Indya Foods: 1000+ retail locations) already have channel dominance. If first 5 retail approach attempts net <2 accounts, kill the B2B wedge. (2) Paid DTC costs exceed 20% of GMV in month 1 (indicative of insufficient organic pull). (3) Repeat rate <15% after 100 paid transactions; indicates willingness-to-pay does not support profitable retention LTV.",
+        "flags": [
+          "FACT-CHECK: Claimed 2–3x margin vs. proven 5–20% consumer willingness-to-pay is a major misalignment; review actual landed costs + competitor pricing before proceeding.",
+          "Incumbent wholesale distributors (Indya Foods, Global Life Foods) already serve 1000+ retail locations; the 'specialist retail' wedge is already occupied.",
+          "Woven Stories (9.1K Instagram followers) and The Ganges have been operating in the exact niche (handcrafted Indian home products, DTC + retail) with no publicly visible scale signals; unclear if the model is viable at scale.",
+          "Zero tariff ECTA benefit is structural, not proprietary — all import competitors have it.",
+          "Geographic distance + freight costs are real margin headwinds acknowledged by industry; at 25–40% gross margins with 10% net typical, small volumes will struggle."
+        ],
+        "sources": [
+          "https://www.mordorintelligence.com/industry-reports/australia-home-textiles-market (Australia home textiles market USD 2.37B, major players, artisan/niche positioning)",
+          "https://www.fashionatingworld.com/new1-2/india-and-china-contend-for-dominance-in-australia-s-2-1-billion-home-textile-market (India/China market share, CY25 bed linen exports +14.2%)",
+          "https://wovenstories.com.au/, https://theganges.com.au/, https://www.saplingtextiles.com.au/collections/shop-all (6+ verified active competitors in exact niche)",
+          "https://www.indyafoods.com.au/ (incumbent distributor: 1000+ retail accounts, major chains)",
+          "https://ecovoice.com.au/new-research-reveals-9-in-10-aussie-consumers-more-likely-to-purchase-ethical-and-sustainable-products/ (consumer WTP: 41–46% willing to pay 5–20% premium, NOT 2–3x)",
+          "https://legacy.export.gov/article?id=Australia-market-challenges, https://www.trade.gov/country-commercial-guides/australia-trade-barriers (geographic distance, shipping costs, regulatory barriers)",
+          "https://stockanalysis.com/quote/asx/ADH/revenue/ (Adairs $400M revenue, incumbent scale)",
+          "https://ondemandint.com/au/opening-an-import-export-business-in-australia-in-2026/ (import/export gross margins 20–50%, but net ~10% typical)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -3552,6 +4633,46 @@
         "reason": "ChartProof is a straightforward accuracy-verification service sold to sophisticated B2B buyers (VC/PE/IB teams) — it reduces financial errors, creates genuine value, employs Indian analysts with skilled work, and has no exploitative, deceptive, or extractive element at its core.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "MIXED",
+        "wtp": "UNPROVEN",
+        "headline": "Financial document QA verification market is crowded; demand for standalone QA-pods-as-a-service is unproven; incumbents (F2, Model ML, Rogo, Hebbia) own the bundled automation+verification position with $150M+ combined capital.",
+        "cheapest_test": "Interview 10 VC/PE deal teams: ask whether they'd pay for standalone QA verification separate from full document automation. If <3 say yes, the unbundled wedge doesn't exist. Cost: $0 (founder network) or $5K (recruiter outreach).",
+        "kill_on": "If market research confirms: (1) VC/PE teams see QA as a cost center, not a feature to buy; (2) they prefer bundled automation+QA from single vendor (reduces hand-offs); (3) vision model accuracy continues closing at 5–10% per quarter—white-label SLA becomes table stakes, not defensible.",
+        "flags": [
+          "Wedge collapse risk: vision model accuracy improving 5–10%/quarter; pure extraction becomes commodity within 12–18 months",
+          "Crowded competitive field: F2 ($24M Series A), Model ML ($75M Series A), Rogo (undisclosed Series A), Hebbia ($10M+); all claim verification + agents",
+          "No proven demand: competitors bundle verification into automation, not selling QA standalone; no pricing data for unbundled QA service",
+          "India QA arbitrage is known-cost ($300–$500/day analyst), not a differentiator",
+          "Liability/SLA position is regulatory burden for platforms (they pay, not sell), not a revenue stream",
+          "Error-pattern dataset requires 2–3 years of 100+ deals/month scale to build moat; bootstrapped startup unlikely to reach scale before models improve"
+        ],
+        "sources": [
+          "https://www.hebbia.com/resources/best-ai-for-document-analysis (Hebbia capabilities)",
+          "https://www.g2.com/products/hebbia-ai-2026-02-24/reviews (Hebbia G2 reviews)",
+          "https://f2.ai/blog/f2-vs-hebbia-ai-underwriting-comparison (F2 vs. Hebbia comparison)",
+          "https://finance.yahoo.com/news/model-ml-raises-75m-one-122200147.html (Model ML $75M Series A)",
+          "https://www.finextra.com/newsarticle/46958/ai-workflow-startup-model-ml-raises-75-million (Model ML funding details)",
+          "https://arxiv.org/pdf/2507.14823 (FinChart-Bench: Financial chart comprehension benchmarks)",
+          "https://www.bentoml.com/blog/multimodal-ai-a-guide-to-open-source-vision-language-models (Vision model capabilities 2026)",
+          "https://www.papermark.com/blog/due-diligence-cost (Due diligence costs: $20K–$500K by deal size)",
+          "https://www.keye.co/post/the-hidden-costs-of-manual-due-diligence-in-private-equity (Manual DD hidden costs)",
+          "https://kpmg.com/xx/en/our-insights/ai-and-technology/kpmg-global-ai-in-finance-report.html (KPMG 2026: 36% cite data quality as pain point; 23% say AI exceeds expectations)",
+          "https://www.affinity.co/guides/vc-ai-tools (Affinity 2026: 90%+ of VC firms use AI tools for diligence)",
+          "https://sacra.com/c/rogo/ (Rogo valuation & funding)",
+          "https://www.switchtools.io/tool/rogo (Rogo pricing: custom/contact sales)",
+          "https://www.basic.ai/blog-post/how-much-do-data-annotation-services-cost-complete-guide-2025 (India QA annotation: $0.02–$1+/item; $50–$100/expert-hour)",
+          "https://clutch.co/in/data-processing/annotation (Top data annotation services India)",
+          "https://www.datasite.com/en/products/diligence (Datasite Diligence native AI features)",
+          "https://www.v7labs.com/automations/venture-capital-due-diligence-reports (V7 Go VC due diligence automation)",
+          "https://arxiv.org/pdf/2603.04403 (FinRetrieval benchmark: Claude Opus 90.8% with APIs, 19.8% with web search)",
+          "https://cleanlab.ai/blog/structured-output-benchmark/ (LLM structured output benchmarks riddled with mistakes—challenge to building error-pattern datasets)"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {
@@ -3903,6 +5024,40 @@
         "reason": "RecivAbl directly serves India's most financially marginalised traders by converting their existing data into a tool that gives them access to credit they are legally entitled to but practically locked out of — this is textbook Tata trusteeship: using business to correct a structural unfairness, not to profit from it.",
         "fix": "",
         "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "validation": {
+        "verdict": "KILL",
+        "gap": "CROWDED",
+        "demand": "STRONG",
+        "wtp": "WEAK",
+        "headline": "RecivAbl (informal trader receivables API) fails the enforceability gate: lenders exclude informal invoices by regulatory policy, not data gaps. CROWDED market (RXIL ₹2T, M1xchange ₹80B FY25, Oxyzo, KredX active) already serves formal B2B. Informal segment demand is PROVEN (52% overdue 90+ days, ₹69T credit gap) but UNFUNDABLE — wedge fractures.",
+        "cheapest_test": "Validate with 5 NBFCs/TReDS lenders: \"Will you fund informal B2B receivables (WhatsApp invoices, no GST filing, oral agreements) if we provide verified aging + dispute evidence?\" Expected outcome: all say no (regulatory risk). Cost: 5 30-min calls = $0.",
+        "kill_on": "Lender rejection of informal invoices due to regulatory exclusion + enforceability risk (not data quality). If all 5 lenders say \"no formal registration = no funding,\" kill immediately. No pivot path fixes this — regulatory wall is immovable.",
+        "flags": [
+          "Regulatory barrier (informal invoices unenforceable in default)",
+          "Wedge fractures on underwriting, not data",
+          "Competing against RBI-regulated RXIL/M1xchange with ₹1.4T FY24 volume + NBFC-backed Oxyzo/KredX",
+          "Informal traders = low-ARPU, high-churn segment; SaaS WTP unproven",
+          "Pivot to formal invoices = direct competition with better-capitalized platforms (lose differentiation)",
+          "Pivot to SaaS-only (aging+alerts) = lose financing monetization wedge"
+        ],
+        "sources": [
+          "https://www.whalesbook.com/news/English/bankingfinance/M1xchange-Hits-indian-rupee1-Lakh-Cr-Milestone-Amidst-TReDS-Boom/698ac088757d40c78184f619",
+          "https://www.business-standard.com/content/specials/rxil-treds-surpasses-inr-1trillion-1-lakh-crore-in-invoice-financing-for-msmes-124051601663_1.html",
+          "https://www.constructionworld.in/policy-updates-and-economic-news/m1xchange-doubles-treds-volumes-to-rs-80-billion-in-fy25/77594",
+          "https://cxotoday.com/press-release/alarming-payment-trends-52-of-b2b-payments-overdue-for-90-days-in-major-indian-hubs/",
+          "https://knnindia.co.in/news/newsdetails/msme/over-50-of-b2b-payments-overdue-in-major-indian-cities-recordent-survey",
+          "https://www.linkedin.com/posts/crif-india_crif-msme-msmegrowth-activity-7340278974981234688-8gmL",
+          "https://www.kredx.com/",
+          "https://zuron.in/",
+          "https://ledgers.cloud/in/receivables-management",
+          "https://www.m1xchange.com/treds-platform-charts-explosive-growth/",
+          "https://www.recurclub.com/blog/invoice-financing-solutions-startups-india",
+          "https://www.sidbi.in/treds",
+          "https://www.rxil.in/"
+        ],
+        "depth": "triage",
+        "validatedAt": "2026-06-16"
       }
     },
     {

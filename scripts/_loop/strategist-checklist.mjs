@@ -237,6 +237,9 @@ export function rankIdeas(result, ledgerOpportunities) {
       tier: effTier,                                        // strategist (quality) tier, best lens
       tata: led.tata || null,                               // Ratan Tata gate verdict (if run)
       finalTier: finalTierFor(effTier, led.tata),
+      founderReaction: led.founder_reaction || null,        // your explicit verdict on this idea, if any
+      founderRejected: !!(led.founder_reaction && led.founder_reaction.verdict === 'not-interested'),
+      validation: led.validation || null,                   // demand-test verdict (the 🧪 Tested layer), if run
       coverage: `${f.scored}/${ideaItems.length * 3}`,      // weighted coverage of idea items
       ideaItemsAssessed: f.scored,
       top_strengths: s.top_strengths || [],
@@ -294,29 +297,41 @@ export function buildChecklistMd(result) {
 
 const TATA_FLAG = (t) => !t || !t.verdict ? '—' : t.verdict === 'pass' ? '🟢 pass' : t.verdict === 'conditional' ? '🟠 cond.' : '⛔ FAIL';
 const TATA_RUN = (rows) => rows.some((r) => r.tata && r.tata.verdict);
+const VAL_FLAG = (v) => !v || !v.verdict ? '—' : v.verdict === 'PROCEED' ? '🟢 proceed' : v.verdict === 'NARROW' ? '🟡 narrow' : v.verdict === 'KILL' ? '🔴 kill' : String(v.verdict).toLowerCase();
+const VAL_RUN = (rows) => rows.some((r) => r.validation && r.validation.verdict);
 
 export function buildScoredMd(rows, result, today) {
   const cl = annotateStages(result.checklist || []);
   const ideaCount = cl.filter((c) => c.stage === 'idea').length;
   const titleById = new Map(cl.map((c) => [c.id, c.title]));
   const tataRun = TATA_RUN(rows);
+  const valRun = VAL_RUN(rows);
   let md = `# Opportunities — scored against the Strategist Checklist\n\n`;
   md += `> Generated ${today}. Each idea graded against the [Strategist Checklist](STRATEGIST-CHECKLIST.md) (${cl.length} items). **Conviction** = ${BLEND.checklist} × idea-quality-fit + ${BLEND.composite} × 6-factor composite. Only the **${ideaCount} idea-quality** items score an idea (execution + founder items are a roadmap, not a filter). An idea that **fails 2+ load-bearing idea-quality tests** is capped at **PARK** regardless of score.\n\n`;
   md += `> ⚠️ **Fit ≠ verified.** Conviction measures how well the idea fits what great operators demand — NOT whether its demand claims are true. The **Fact** column is the separate fact-check gate: \`refuted\` = a load-bearing claim was checked and is false, \`partial\` = mixed, \`unchecked\` = not yet run.\n\n`;
   md += `> 💰 **Dual lens (2026-06-11).** The checklist is venture-shaped (moats, scale, compounding) — so cash-flow-shaped ideas (physical trade, manufacturing, franchise, media property, systematic trading, productized service) are ALSO scored with the venture-only items excluded and a margin/speed-weighted composite; the better lens sets the tier. The **Lens** column shows which won: 🚀 venture / 💰 cash-flow.\n\n`;
+  if (valRun) md += `> 🧪 **Tested = a real demand validation was run** (born 2026-06-16: the founder wanted tested ideas to strategize from, not a ranked wishlist). Conviction/fit measure how well an idea fits what operators want; **🧪 Tested** is the separate question of whether cited evidence shows real demand AND that someone will pay: 🟢 \`proceed\` = worth a real-world test · 🟡 \`narrow\` = real, but only a narrower wedge survives · 🔴 \`kill\` = the load-bearing demand/pay gate fails on evidence · \`—\` = not yet tested. A 🔴 or 🟡 outranks a high conviction score — an untested high-conviction idea is still just an opinion.\n\n`;
   if (tataRun) md += `> ⛔ **The Ratan Tata gate is the FINAL word.** The [Ratan Tata Gate](RATAN-TATA-GATE.md) is an integrity/ethics veto: a \`FAIL\` → **BLOCKED** no matter how high the score. A \`conditional\` does NOT demote the idea — its **fix is a mandatory launch precondition** (founder 2026-06-11: "be flexible with the gates... there's always a way to be ethically aligned"). "Even if the others are contradictory, follow Ratan Tata. He is the final gate, always." The **Tier** column below is the FINAL, Tata-gated tier.\n\n`;
-  // group by FINAL tier (Tata-gated)
+  // Founder-verdict filter: ideas you explicitly marked "not interested" are pulled
+  // OUT of the ranked tiers (parked in a Set-aside section below, not deleted) so the
+  // board shows only what you'd actually back. (founder 2026-06-16: the 8 AI-compliance
+  // ideas rejected on 06-11 were stamped but still topped PURSUE — a stamp must move the board.)
+  const isKilled = (r) => r.validation && r.validation.verdict === 'KILL';
+  const setAside = rows.filter((r) => r.founderRejected);
+  const killed = rows.filter((r) => !r.founderRejected && isKilled(r));
+  const active = rows.filter((r) => !r.founderRejected && !isKilled(r));
+  // group by FINAL tier (Tata-gated) — LIVE ideas only (demand-test KILLs + founder set-asides pulled out)
   const order = ['BLOCKED', 'PURSUE', 'WATCH', 'PARK'];
   const tiers = { BLOCKED: [], PURSUE: [], WATCH: [], PARK: [] };
-  for (const r of rows) (tiers[r.finalTier] || tiers.PARK).push(r);
+  for (const r of active) (tiers[r.finalTier] || tiers.PARK).push(r);
   const counts = order.filter((t) => tiers[t].length).map((t) => `${tiers[t].length} ${t}`).join(' · ');
-  md += `**${counts}**\n\n`;
+  md += `**${counts}**${killed.length ? ` · ${killed.length} killed (demand test)` : ''}${setAside.length ? ` · ${setAside.length} set aside` : ''}\n\n`;
   const factFlag = (f) => f === 'refuted' ? '🔴 refuted' : f === 'partial' ? '🟡 partial' : (f && f !== 'unchecked' && f !== 'verified') ? f : (f === 'verified' ? '🟢 verified' : '—');
-  md += `| # | Idea | Conviction | Lens | Idea-quality fit | Composite | 🛑 | Fact |${tataRun ? ' Tata |' : ''} Tier |\n`;
-  md += `|---|------|-----------|------|------------------|-----------|----|------|${tataRun ? '------|' : ''}------|\n`;
-  rows.forEach((r, i) => {
+  md += `| # | Idea | Conviction | Lens | Idea-quality fit | Composite | 🛑 | Fact |${tataRun ? ' Tata |' : ''}${valRun ? ' 🧪 Tested |' : ''} Tier |\n`;
+  md += `|---|------|-----------|------|------------------|-----------|----|------|${tataRun ? '------|' : ''}${valRun ? '------|' : ''}------|\n`;
+  active.forEach((r, i) => {
     const lens = r.lens === 'cash-flow' ? '💰' : '🚀';
-    md += `| ${i + 1} | **${r.name}** | ${r.conviction.toFixed(2)} | ${lens} | ${bar(r.checklistFit)} ${(r.checklistFit * 100).toFixed(0)}% | ${r.composite.toFixed(1)} | ${r.dealbreakers.length || '—'} | ${factFlag(r.factStatus)} |${tataRun ? ` ${TATA_FLAG(r.tata)} |` : ''} ${r.finalTier} |\n`;
+    md += `| ${i + 1} | **${r.name}** | ${r.conviction.toFixed(2)} | ${lens} | ${bar(r.checklistFit)} ${(r.checklistFit * 100).toFixed(0)}% | ${r.composite.toFixed(1)} | ${r.dealbreakers.length || '—'} | ${factFlag(r.factStatus)} |${tataRun ? ` ${TATA_FLAG(r.tata)} |` : ''}${valRun ? ` ${VAL_FLAG(r.validation)} |` : ''} ${r.finalTier} |\n`;
   });
   md += `\n---\n\n`;
   const dbNames = (ids) => ids.map((id) => titleById.get(id) || id);
@@ -344,8 +359,35 @@ export function buildScoredMd(rows, result, today) {
       if (r.dealbreakers.length) md += `- 🛑 **Load-bearing fails:** ${dbNames(r.dealbreakers).join('; ')}\n`;
       if (r.factStatus === 'refuted') md += `- 🔴 **Fact-check: REFUTED** — a load-bearing demand claim was checked and is false. Re-validate before trusting.\n`;
       else if (r.factStatus === 'partial') md += `- 🟡 **Fact-check: partial** — some claims verified, some not.\n`;
+      if (r.validation && r.validation.verdict) {
+        const v = r.validation;
+        const icon = v.verdict === 'PROCEED' ? '🟢' : v.verdict === 'NARROW' ? '🟡' : '🔴';
+        const depthTag = v.depth ? `, ${v.depth === 'triage' ? 'lean screen' : v.depth}` : '';
+        md += `- ${icon} **🧪 Demand-tested ${v.validatedAt ? `(${v.validatedAt}${depthTag})` : ''}: ${v.verdict}** — gap ${v.gap || '?'} · demand ${v.demand || '?'} · will-they-pay ${v.wtp || '?'}.${v.headline ? ` ${v.headline}` : ''}\n`;
+        if (v.cheapest_test) md += `  - Cheapest real-world test: ${v.cheapest_test}\n`;
+        if (v.kill_on) md += `  - Kill if: ${v.kill_on}\n`;
+        if (v.flags && v.flags.length) md += `  - Flags: ${v.flags.join('; ')}\n`;
+      }
       md += `\n`;
     }
+  }
+  if (killed.length) {
+    md += `## 🔴 Killed by the demand test\n\n`;
+    md += `_A 🧪 demand-validation came back **KILL** — the gap is already owned by a funded incumbent and/or there's no evidence anyone will pay. Pulled out of the ranked tiers (kept here, not deleted). Most are lean 1-agent screens; a deep 4-agent re-test can revive one (it softened BharatVyapar from kill-shaped to NARROW)._\n\n`;
+    killed.slice().sort((a, b) => b.conviction - a.conviction).forEach((r) => {
+      const v = r.validation || {};
+      md += `- **${r.name}** — _was ${r.finalTier} · conviction ${r.conviction.toFixed(2)} ${r.lens === 'cash-flow' ? '💰' : '🚀'} · ${v.depth === 'deep' ? 'deep test' : 'lean screen'}_ — ${v.headline || ''}\n`;
+    });
+    md += `\n`;
+  }
+  if (setAside.length) {
+    md += `## ❌ Set aside — you marked these "not interested"\n\n`;
+    md += `_Stamped \`not-interested\` in the ledger, so they're pulled out of the ranked tiers above and parked here — kept for the record, not deleted. They keep their scores; clear the stamp to bring one back._\n\n`;
+    setAside.slice().sort((a, b) => b.conviction - a.conviction).forEach((r) => {
+      const fr = r.founderReaction || {};
+      md += `- **${r.name}** — _was ${r.finalTier} · conviction ${r.conviction.toFixed(2)} ${r.lens === 'cash-flow' ? '💰' : '🚀'}_ · set aside ${fr.date || ''}${fr.note ? `\n  - ${fr.note}` : ''}\n`;
+    });
+    md += `\n`;
   }
   return md;
 }
@@ -614,6 +656,40 @@ function selfTest() {
   eq('Tata FAIL blocks the higher-conviction idea', grows.find((r) => r.key === 'evil').finalTier, 'BLOCKED');
   eq('Tata PASS idea keeps PURSUE', grows.find((r) => r.key === 'good').finalTier, 'PURSUE');
   eq('blocked sorts below pursue despite higher conviction', grows.map((r) => r.key), ['good', 'evil']);
+
+  // founder-verdict filter: a not-interested stamp removes the idea from the ranked tiers
+  const frrows = rankIdeas(gresult, [
+    { key: 'good', name: 'Good', composite: 3.0, tata: { verdict: 'pass' } },
+    { key: 'evil', name: 'Evil', composite: 3.0, tata: { verdict: 'pass' }, founder_reaction: { date: '2026-06-11', verdict: 'not-interested', note: 'forcing AI on stuff' } },
+  ]);
+  eq('founderRejected flagged from ledger stamp', frrows.find((r) => r.key === 'evil').founderRejected, true);
+  eq('non-stamped idea not flagged', frrows.find((r) => r.key === 'good').founderRejected, false);
+  const frmd = buildScoredMd(frrows, gresult, '2026-06-16');
+  eq('set-aside idea leaves the ranked count', /\*\*1 PURSUE\*\* · 1 set aside/.test(frmd), true);
+  eq('set-aside section rendered', frmd.includes('Set aside —'), true);
+  eq('rejected idea absent from PURSUE detail header', !frmd.includes('### Evil'), true);
+
+  // 🧪 Tested layer: a validation block surfaces a column + per-idea verdict; the column
+  // only appears once at least one idea is tested (otherwise the board is unchanged)
+  const vrows = rankIdeas(gresult, [
+    { key: 'good', name: 'Good', composite: 3.0, tata: { verdict: 'pass' }, validation: { verdict: 'NARROW', gap: 'THIN', demand: 'STRONG', wtp: 'PROVEN', headline: 'real but a narrower wedge', validatedAt: '2026-06-16', depth: 'deep' } },
+    { key: 'evil', name: 'Evil', composite: 3.0, tata: { verdict: 'pass' } },
+  ]);
+  eq('validation carried onto row', vrows.find((r) => r.key === 'good').validation.verdict, 'NARROW');
+  const vmd = buildScoredMd(vrows, gresult, '2026-06-16');
+  eq('tested column header rendered when a validation exists', vmd.includes('🧪 Tested |'), true);
+  eq('narrow verdict flag stays in table', vmd.includes('🟡 narrow'), true);
+  eq('per-idea tested line rendered', vmd.includes('Demand-tested'), true);
+  eq('no tested column when nothing tested', buildScoredMd(grows, gresult, '2026-06-16').includes('🧪 Tested |'), false);
+  // a KILL verdict pulls the idea out of the ranked tiers into the Killed section
+  const krows = rankIdeas(gresult, [
+    { key: 'good', name: 'Good', composite: 3.0, tata: { verdict: 'pass' } },
+    { key: 'evil', name: 'Evil', composite: 3.0, tata: { verdict: 'pass' }, validation: { verdict: 'KILL', gap: 'CROWDED', demand: 'STRONG', wtp: 'UNPROVEN', headline: 'incumbent owns it', depth: 'triage', validatedAt: '2026-06-16' } },
+  ]);
+  const kmd = buildScoredMd(krows, gresult, '2026-06-16');
+  eq('killed idea leaves ranked count', /\*\*1 PURSUE\*\* · 1 killed/.test(kmd), true);
+  eq('killed section rendered', kmd.includes('Killed by the demand test'), true);
+  eq('killed idea absent from PURSUE detail', !kmd.includes('### Evil'), true);
 
   // markdown builders don't throw
   try { buildChecklistMd({ checklist: [{ id: 'defensible-moat', category: 'moat', title: 'Real moat', test: 'Is there a moat?', why_it_matters: 'x', strategists: ['Tony'], weight: 3 }, { id: 'systems-replace-founder', category: 'execution', title: 'Systems', test: 'Runs without you?', strategists: ['Basesh'], weight: 3 }], consensus_principles: ['p'] }); pass++; } catch (e) { fail++; console.error('FAIL buildChecklistMd', e.message); }
