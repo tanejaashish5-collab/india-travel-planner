@@ -4531,3 +4531,73 @@ Date range: 2026-04-15 → 2026-06-15
 2026-06-16 16:17:58  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-06-16 16:17:58  INFO      State saved. YT Short run complete.
 2026-06-16 16:17:58  INFO      ════════════════════════════════════════════════════════════
+2026-06-16 18:43:57  INFO      ════════════════════════════════════════════════════════════
+2026-06-16 18:43:57  INFO      Nakshiq Autoposter · EVENING · 2026-06-16 · weekday=1
+2026-06-16 18:43:57  INFO      ════════════════════════════════════════════════════════════
+2026-06-16 18:43:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-16 18:44:34  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-16 18:44:34  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-16 18:44:35  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-16 18:44:35  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-16 18:44:35  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-16 18:44:50  INFO      [evening] variety pick: v2_budget_receipt (25 CSV + 3 visual candidates)
+2026-06-16 18:44:50  INFO      Formats — IG: v2_budget_receipt  ·  FB: v2_budget_receipt  ·  Story: collection_spotlight
+2026-06-16 18:44:50  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 61
+2026-06-16 18:44:50  INFO      Fingerprint dedup snapshot — 60 dests in 7d · 141 (dest,fmt) pairs in 30d · 139 media in 60d
+2026-06-16 18:44:50  INFO      Collection locked: Best on ₹5,000/Day — The Sweet Spot (6/20 never featured)
+2026-06-16 18:44:56  INFO      Shared best destination locked: Sangla Valley
+2026-06-16 18:44:56  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-06-16 18:44:56  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-16 18:44:56  INFO      [instagram/nakshiq] Generating v2_budget_receipt post...
+2026-06-16 18:44:56  INFO      v2_budget_receipt: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:44:56  INFO      v2_budget_receipt: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-16 18:44:56  INFO      [instagram/nakshiq] Caption ready (488 chars, dest=nubra-valley)
+2026-06-16 18:44:58  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_budget_receipt → uploading...
+2026-06-16 18:44:58  INFO          Requesting upload URL for v2_budget_receipt-nubra-valley.png (1,496,270 bytes, image/png)
+2026-06-16 18:44:59  INFO          Uploading to R2 (timeout=120s)...
+2026-06-16 18:45:00  INFO          R2 PUT OK. Confirming...
+2026-06-16 18:45:02  INFO          Media ready: iNx1B (1,496,270 bytes · v2_budget_receipt-nubra-valley.png)
+2026-06-16 18:45:02  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-16 18:45:23  INFO      [instagram/nakshiq] ✅ Published · Outstand=DgJmo · Platform=18089095730620271
+2026-06-16 18:45:23  INFO      [instagram/nakshiq] Uploading Story image (dharamshala.jpg)...
+2026-06-16 18:45:23  INFO          Using branded image: dharamshala_story_typographic-art_badge.jpg (381,804 bytes)
+2026-06-16 18:45:23  INFO          Requesting upload URL for dharamshala.jpg (381,804 bytes, image/jpeg)
+2026-06-16 18:45:24  INFO          Uploading to R2 (timeout=120s)...
+2026-06-16 18:45:25  INFO          R2 PUT OK. Confirming...
+2026-06-16 18:45:26  INFO          Media ready: bXDBT (381,804 bytes · dharamshala.jpg)
+2026-06-16 18:45:26  INFO      [instagram/nakshiq] Publishing Story · format=collection_spotlight · dest=dharamshala
+2026-06-16 18:45:40  INFO      [instagram/nakshiq] ✅ Story live · ID=18410722534149725
+2026-06-16 18:45:40  INFO      [facebook/Nakshiq] Generating v2_budget_receipt post...
+2026-06-16 18:45:40  INFO      v2_budget_receipt: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-16 18:45:40  INFO      v2_budget_receipt: nubra-valley already posted today — SKIPPING dest (same-day guard)
+2026-06-16 18:45:40  INFO      [facebook/Nakshiq] Caption ready (487 chars, dest=nako)
+2026-06-16 18:45:42  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_budget_receipt → uploading...
+2026-06-16 18:45:42  INFO          Requesting upload URL for v2_budget_receipt-nako.png (1,605,456 bytes, image/png)
+2026-06-16 18:45:43  INFO          Uploading to R2 (timeout=120s)...
+2026-06-16 18:45:43  INFO          R2 PUT OK. Confirming...
+2026-06-16 18:45:44  INFO          Media ready: mwW5d (1,605,456 bytes · v2_budget_receipt-nako.png)
+2026-06-16 18:45:44  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-16 18:46:00  INFO      [facebook/Nakshiq] ✅ Published · Outstand=PhG30 · Platform=1040562729145369_122112317426700092
+2026-06-16 18:46:00  INFO      State saved. Run complete.
+2026-06-16 18:46:00  INFO      ════════════════════════════════════════════════════════════
