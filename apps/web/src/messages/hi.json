@@ -650,6 +650,21 @@
     "nearestEmbassy": "निकटतम दूतावास",
     "visaNotes": "वीज़ा से जुड़ी बातें"
   },
+  "itinerary": {
+    "kicker": "दिन-प्रतिदिन की योजना",
+    "title": "{name} की यात्रा योजना — {days}",
+    "oneDayHeading": "अगर आपके पास एक दिन है",
+    "threeDayHeading": "तीन दिन",
+    "fiveDayHeading": "पाँच दिन",
+    "poisHeading": "और क्या देखें",
+    "eatHeading": "कहाँ खाएँ",
+    "stayHeading": "कहाँ ठहरें",
+    "faqHeading": "अक्सर पूछे जाने वाले सवाल",
+    "badWeather": "अगर मौसम बिगड़ जाए",
+    "fullGuide": "{name} की पूरी गाइड",
+    "budgetTrip": "इस यात्रा का बजट",
+    "monthPage": "{month} में {name}"
+  },
   "pwaInstall": {
     "headline": "बिना इंटरनेट भी ट्रिप देखें",
     "iosBody": "Share ↗ टैप करें, फिर \"Add to Home Screen\" चुनें",

@@ -650,6 +650,21 @@
     "nearestEmbassy": "Nearest Embassy",
     "visaNotes": "Visa Notes"
   },
+  "itinerary": {
+    "kicker": "Day-by-day plan",
+    "title": "{name} itinerary — {days}",
+    "oneDayHeading": "If you have one day",
+    "threeDayHeading": "Three days",
+    "fiveDayHeading": "Five days",
+    "poisHeading": "What else to see",
+    "eatHeading": "Where to eat",
+    "stayHeading": "Where to stay",
+    "faqHeading": "Common questions",
+    "badWeather": "If the weather turns",
+    "fullGuide": "Full {name} guide",
+    "budgetTrip": "Budget this trip",
+    "monthPage": "{name} in {month}"
+  },
   "pwaInstall": {
     "headline": "Access trips offline",
     "iosBody": "Tap Share ↗ then \"Add to Home Screen\"",
