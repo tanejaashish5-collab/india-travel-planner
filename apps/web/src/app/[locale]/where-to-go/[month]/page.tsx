@@ -13,6 +13,8 @@ import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { TrendingMonthPages } from "@/components/trending-month-pages";
+import type { HighImpressionPage } from "@/lib/high-impression-pages";
 
 export const revalidate = 604800; // 7d — content changes rarely; prewarm cron flushes month routes on rollover; /api/admin/revalidate covers ad-hoc edits
 export const dynamicParams = true;
@@ -502,6 +504,18 @@ export default async function WhereToGoPage({
           destinationCount={stats.destinations}
           monthReviewedAt={monthReviewedAt}
         />
+
+        {/* Internal-link rail to this month's high-impression / page-2 dest×month
+            pages (lib/high-impression-pages.ts). Only the national month-only
+            hub gets it — the cohort is India-wide. Self-hides for months with
+            no cohort. Surfaces e.g. the August cohort on /where-to-go/august
+            ahead of the Aug-1 current-month rollover. */}
+        {!regionInfo && (
+          <TrendingMonthPages
+            locale={locale}
+            monthSlug={monthSlug as HighImpressionPage["monthSlug"]}
+          />
+        )}
       </main>
       <CinematicRelatedRail />
       <Footer />

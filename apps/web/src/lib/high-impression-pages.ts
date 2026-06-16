@@ -52,6 +52,24 @@ export const HIGH_IMPRESSION_PAGES: HighImpressionPage[] = [
   { destId: "vrindavan",     monthSlug: "june", anchor: "Vrindavan temperature in June", query: "vrindavan temperature in june", position: 11.2, impressions: 96  },
   { destId: "ranikhet",      monthSlug: "june", anchor: "Ranikhet weather in June",      query: "ranikhet weather in june",      position: 7.7,  impressions: 83  },
   { destId: "munnar",        monthSlug: "june", anchor: "Munnar weather in June",        query: "weather in munnar in june",     position: 6.3,  impressions: 77  },
+  // August cohort — early-surfacing demand (added 2026-06-16; August queries
+  // opened ~6 weeks ahead this year). Auto-enters the /explore + /where-to-go
+  // rail on Aug 1, and renders NOW on /where-to-go/august via the month-hub
+  // mount. Source: scripts/_gsc-august-demand-2026-06-16.mjs (28d GSC,
+  // 2026-05-17..06-14). All slugs verified live against destinations +
+  // destination_months(month=8). August verdicts skew skip/wait (it's
+  // monsoon) — the anchor still mirrors the query verbatim and the page
+  // honestly answers the search.
+  { destId: "darjeeling",    monthSlug: "august", anchor: "Darjeeling weather in August", query: "darjeeling weather in august", position: 9.5,  impressions: 307 },
+  { destId: "hampi",         monthSlug: "august", anchor: "Hampi in August",              query: "hampi in august",              position: 9.6,  impressions: 227 },
+  { destId: "kolkata",       monthSlug: "august", anchor: "Kolkata weather in August",    query: "weather in kolkata in august", position: 7.0,  impressions: 95  },
+  { destId: "tirupati",      monthSlug: "august", anchor: "Tirupati in August",           query: "tirupati in august",           position: 9.7,  impressions: 85  },
+  { destId: "vrindavan",     monthSlug: "august", anchor: "Vrindavan in August",          query: "vrindavan in august",          position: 7.5,  impressions: 71  },
+  { destId: "chikmagalur",   monthSlug: "august", anchor: "Chikmagalur in August",        query: "chikmagalur in august",        position: 9.3,  impressions: 59  },
+  { destId: "nashik",        monthSlug: "august", anchor: "Nashik weather in August",     query: "nashik weather in august",     position: 11.7, impressions: 52  },
+  { destId: "kochi",         monthSlug: "august", anchor: "Kochi in August",              query: "kochi in august",              position: 11.0, impressions: 41  },
+  { destId: "gulmarg",       monthSlug: "august", anchor: "Gulmarg in August",            query: "gulmarg in august",            position: 7.1,  impressions: 24  },
+  { destId: "landour",       monthSlug: "august", anchor: "Landour in August",            query: "landour in august",            position: 7.1,  impressions: 21  },
 ];
 
 /** Filter to the current-month cohort. Used by the rail component. */
