@@ -8,6 +8,8 @@ import { Footer } from "@/components/footer";
 import { CostCalculator } from "@/components/cost-calculator";
 import { BookingHandoff } from "@/components/booking-handoff";
 import { localeAlternates, breadcrumbSchema, faqPageSchema, articleSchema } from "@/lib/seo-utils";
+import { isCinematicDestination } from "@/lib/cinematic-destinations";
+import { destinationImage } from "@/lib/image-url";
 import {
   type CostRow,
   estimateAllTiers,
@@ -99,6 +101,12 @@ export async function generateMetadata({
     ? `${name} यात्रा खर्च (2026): 2–10 दिन का बजट`
     : `${name} trip cost (2026): budget for 2–10 days`;
   const ogTitle = `${title} | NakshIQ`;
+  // Destination-level OG image (slug = destination id) — same resolver as the
+  // destination hub: composed card for cinematic dests, R2 hero otherwise.
+  const ogImage = isCinematicDestination(slug)
+    ? `${BASE}/api/og/destination/${slug}?locale=${locale}`
+    : destinationImage(slug);
+  const ogAlt = isHindi ? `${name} यात्रा खर्च` : `${name} trip cost`;
 
   const description = isHindi
     ? `${name} की यात्रा का असली खर्च — दो लोगों के 4 दिन के लिए मध्यम बजट लगभग ${inr(t.mid.total)} (≈ ${inr(t.mid.perDay)}/दिन)। बैकपैकर ${inr(t.budget.total)} से लग्ज़री ${inr(t.luxury.total)} तक। मौसम के अनुसार, स्रोत-सहित।`
@@ -115,8 +123,9 @@ export async function generateMetadata({
       url: `${BASE}/${locale}/cost/${slug}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: ogAlt }],
     },
-    twitter: { card: "summary_large_image", title: ogTitle, description },
+    twitter: { card: "summary_large_image", title: ogTitle, description, images: [ogImage] },
   };
 }
 

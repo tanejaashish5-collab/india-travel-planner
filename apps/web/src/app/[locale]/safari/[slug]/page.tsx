@@ -8,6 +8,8 @@ import { Footer } from "@/components/footer";
 import { BookingHandoff } from "@/components/booking-handoff";
 import { SafariSaveReminder } from "@/components/safari-save-reminder";
 import { localeAlternates, breadcrumbSchema, faqPageSchema, articleSchema } from "@/lib/seo-utils";
+import { isCinematicDestination } from "@/lib/cinematic-destinations";
+import { destinationImage } from "@/lib/image-url";
 import {
   type SafariRow,
   localizeSafari,
@@ -103,6 +105,12 @@ export async function generateMetadata({
     ? `${name} सफ़ारी बुकिंग (2026): परमिट, ज़ोन, शुल्क`
     : `${name} safari booking (2026): permits, zones & fees`;
   const ogTitle = `${title} | NakshIQ`;
+  // Destination-level OG image (slug = destination id) — same resolver as the
+  // destination hub: composed card for cinematic dests, R2 hero otherwise.
+  const ogImage = isCinematicDestination(slug)
+    ? `${BASE}/api/og/destination/${slug}?locale=${locale}`
+    : destinationImage(slug);
+  const ogAlt = isHindi ? `${name} सफ़ारी` : `${name} safari`;
 
   const description = isHindi
     ? `${name} सफ़ारी कैसे बुक करें — ${s.booking_authority ?? "वन विभाग"} के ज़रिये, ${window} खुलती है। ज़ोन, जीप/कैंटर शुल्क, ID ज़रूरतें और असली बुकिंग दिक्कतें — स्रोत-सहित, सत्यापित।`
@@ -119,8 +127,9 @@ export async function generateMetadata({
       url: `${BASE}/${locale}/safari/${slug}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: ogAlt }],
     },
-    twitter: { card: "summary_large_image", title: ogTitle, description },
+    twitter: { card: "summary_large_image", title: ogTitle, description, images: [ogImage] },
   };
 }
 

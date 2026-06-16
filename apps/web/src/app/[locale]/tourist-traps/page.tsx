@@ -115,6 +115,8 @@ export async function generateMetadata({
   const ogTitle = `${title} | NakshIQ`;
   const description = `An honest editorial: the places India's tourism boards still photograph for the brochure, and the alternatives within forty kilometres that nobody bothered to tell you about.`;
   const canonicalUrl = `${SITE}/${locale}/tourist-traps`;
+  // Editorial index — no single destination, so use the site default OG card.
+  const ogImage = `${SITE}/og-image.jpg`;
 
   return {
     title,
@@ -134,11 +136,13 @@ export async function generateMetadata({
       url: canonicalUrl,
       siteName: "NakshIQ",
       locale: locale === "hi" ? "hi_IN" : "en_IN",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
       description,
+      images: [ogImage],
     },
   };
 }

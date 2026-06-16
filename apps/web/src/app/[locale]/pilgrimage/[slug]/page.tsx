@@ -6,6 +6,8 @@ import { createClient } from "@supabase/supabase-js";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { localeAlternates, breadcrumbSchema, faqPageSchema, articleSchema } from "@/lib/seo-utils";
+import { isCinematicDestination } from "@/lib/cinematic-destinations";
+import { destinationImage } from "@/lib/image-url";
 import {
   type PilgrimageRow,
   localizePilgrimage,
@@ -80,6 +82,14 @@ export async function generateMetadata({
     ? `${r.name} — दूरी, मार्ग और योजना (2026)`
     : `${r.name} — distances, route & planning (2026)`;
   const ogTitle = `${title} | NakshIQ`;
+  // OG image — the route's anchor destination when it has one (composed card
+  // for cinematic dests, R2 hero otherwise); circuits with no single anchor
+  // (destination_id null) fall back to the site default card.
+  const ogImage = r.destination_id
+    ? isCinematicDestination(r.destination_id)
+      ? `${BASE}/api/og/destination/${r.destination_id}?locale=${locale}`
+      : destinationImage(r.destination_id)
+    : `${BASE}/og-image.jpg`;
   const description = isHindi
     ? `${r.name} की पूरी योजना — ${metric ? `${metric}, ` : ""}चरण-दर-चरण दूरियाँ, पहुँचने के तरीके (पैदल/घोड़ा/हेली), सबसे अच्छा समय और असली दिक्कतें। हर दूरी आधिकारिक स्रोत से सत्यापित।`
     : `Plan the ${r.name} — ${metric ? `${metric}, ` : ""}leg-by-leg distances, how pilgrims cover each stage (foot/pony/heli), the best window and the real gotchas. Every distance source-verified, not blog guesswork.`;
@@ -95,8 +105,9 @@ export async function generateMetadata({
       url: `${BASE}/${locale}/pilgrimage/${slug}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: r.name }],
     },
-    twitter: { card: "summary_large_image", title: ogTitle, description },
+    twitter: { card: "summary_large_image", title: ogTitle, description, images: [ogImage] },
   };
 }
 
