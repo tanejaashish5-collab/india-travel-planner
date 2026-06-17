@@ -1,0 +1,47 @@
+{
+  "source": "Supabase MCP execute_sql (small aggregates, egress-safe)",
+  "captured_utc": "2026-06-17",
+  "emergency_sos_rows": 533,
+  "destinations_total": 533,
+  "dests_without_emergency_sos_row": 0,
+  "min_dialable_11col": 5,
+  "avg_dialable_11col": 7.41,
+  "total_dialable_11col": 3952,
+  "rows_under_3_dialable": 0,
+  "rows_with_placeholder_X": 0,
+  "es_localhelpers_nonempty": 178,
+  "people_who_help_nonempty": 84,
+  "latest_created_at": "2026-06-14 08:52",
+  "new_dests_since_last_run": 0,
+  "canonical_11col": "police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line (non-null + trimmed-non-empty; EXCLUDES local_police_station)",
+  "baseline_match_note": "total_dialable_11col=3952, es_localhelpers_nonempty=178, people_who_help_nonempty=84 — EXACT match to 2026-06-16 baseline. Catalogue steady at 533 (latest created_at 2026-06-14 08:52, 0 new since last run).",
+  "three_row_recheck": [
+    {
+      "id": "uttarkashi",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091 (or 181)", "tourist_helpline": "1800-111-363 (toll-free)",
+      "rescue_contact": "DDMA Uttarkashi Control Room: 01374-222722 / 1077",
+      "verified_by": "constants-reverify-2026-06-09", "verified_date": "2026-06-09",
+      "prior_bug": "NEW-2026-05-10-001 placeholder +91-94120-XXXXX",
+      "status": "STILL CLOSED — no placeholder, structured numbers intact, unchanged from baseline"
+    },
+    {
+      "id": "khonoma",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091", "tourist_helpline": "1363",
+      "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070",
+      "verified_by": "deepdive-recorrect-2026-06-09", "verified_date": "2026-06-09",
+      "prior_bug": "NEW-2026-05-11-001 text-typed phone field",
+      "status": "STILL CLOSED — police field is dialable 100, contacts in rescue_contact, unchanged from baseline"
+    },
+    {
+      "id": "khangchendzonga-np",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091", "tourist_helpline": "1800-111-363",
+      "rescue_contact": "Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; KNP permits + park rescue coordination via Forest Environment & Wildlife Mgmt Dept, Sikkim",
+      "verified_by": "emsos-th-audit-2026-06-10", "verified_date": "2026-06-10",
+      "prior_bug": "NEW-2026-05-30-001 text-typed phone field",
+      "status": "STILL CLOSED — structured numbers intact, unchanged from baseline"
+    }
+  ]
+}

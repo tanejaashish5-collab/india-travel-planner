@@ -1,0 +1,22 @@
+{
+  "destinations_total": 533,
+  "emergency_sos_rows": 533,
+  "dests_without_sos_row": 0,
+  "rows_under_3_dialable": 0,
+  "min_dialable": 5,
+  "avg_dialable": 7.41,
+  "total_dialable_11col": 3952,
+  "total_dialable_11col_definition": "non-null AND trimmed-non-empty across the canonical 11 columns (police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line; EXCLUDES local_police_station). Exact match to 06-15 baseline (3952). A strict digit-presence variant (field ~ '[0-9]') yields 3939 — the 13-field gap is non-empty text fields without their own digit (e.g. rescue_contact notes), NOT a data loss.",
+  "total_dialable_11col_digitstrict": 3939,
+  "placeholder_X_rows": 0,
+  "es_localhelpers_nonempty": 178,
+  "people_who_help_nonempty": 84,
+  "new_dests_since_0615": 0,
+  "latest_created_at": "2026-06-14 08:52",
+  "new_dests_note": "No new destinations since the 8-strong Sikkim cluster created 2026-06-14 08:52. Catalogue steady at 533.",
+  "prior_bug_recheck": {
+    "uttarkashi": "police 100 / amb 108 / fire 101 / women 1091 (or 181) / tourist 1800-111-363 / DDMA Uttarkashi Control Room 01374-222722 / 1077; verified_by=constants-reverify-2026-06-09. No placeholder X. NEW-2026-05-10-001 STILL CLOSED.",
+    "khonoma": "100 / 108 / 101 / 1091 / 1363 / Kohima Police Control Room 7005986046 · NSDMA 1070; verified_by=deepdive-recorrect-2026-06-09. NEW-2026-05-11-001 STILL CLOSED.",
+    "khangchendzonga-np": "100 / 108 / 101 / 1091 / 1800-111-363 / Geyzing PS 8145887528 (PI Roshan Gurung) + District Hospital Gyalshing 03595-250634; verified_by=emsos-th-audit-2026-06-10. NEW-2026-05-30-001 STILL CLOSED."
+  }
+}
