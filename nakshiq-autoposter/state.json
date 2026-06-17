@@ -34,42 +34,16 @@
     "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-06-16",
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-06-16",
+    "m8EAd": "2026-06-17",
     "m8EAd_evening": "2026-06-16",
-    "PdMu0": "2026-06-16",
+    "PdMu0": "2026-06-17",
     "PdMu0_evening": "2026-06-16",
     "m8EAd_yt_short": "2026-06-16",
-    "m8EAd_tourist_map": "2026-06-15",
-    "PdMu0_tourist_map": "2026-06-15",
     "m8EAd_evening_story": "2026-06-16",
     "m8EAd_story": "2026-06-16"
   },
-  "last_sync": "2026-06-16T18:44:34.050862+00:00",
+  "last_sync": "2026-06-17T08:42:08.273252+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "tungnath",
-      "date": "2026-06-02"
-    },
-    {
-      "destination_id": "chopta",
-      "date": "2026-06-02"
-    },
-    {
-      "destination_id": "bir-billing",
-      "date": "2026-06-02"
-    },
-    {
-      "destination_id": "turtuk",
-      "date": "2026-06-02"
-    },
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-06-02"
-    },
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-06-02"
-    },
     {
       "destination_id": "bhandardara",
       "date": "2026-06-03"
@@ -357,11 +331,18 @@
     {
       "destination_id": "nako",
       "date": "2026-06-16"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-06-17"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-06-17"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v3_tl_world_best_india",
       "v2_hidden_gem_reveal_atmo",
       "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
@@ -381,10 +362,10 @@
       "v2_tourist_trap_split",
       "v2_thali_close_up",
       "v2_local_knows",
-      "v2_budget_receipt"
+      "v2_budget_receipt",
+      "v2_myth_bust_oneline"
     ],
     "PdMu0": [
-      "v3_tl_world_best_india",
       "v2_hidden_gem_reveal_atmo",
       "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
@@ -404,7 +385,8 @@
       "v2_tourist_trap_split",
       "v2_thali_close_up",
       "v2_local_knows",
-      "v2_budget_receipt"
+      "v2_budget_receipt",
+      "v2_myth_bust_oneline"
     ]
   },
   "post_log": [
@@ -3198,17 +3180,6 @@
       "media_id": "v2_budget_receipt-nubra-valley.png"
     },
     {
-      "timestamp": "2026-06-16T18:45:40.711244+00:00",
-      "date": "2026-06-16",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "xoWH8",
-      "destination": "dharamshala",
-      "format": "collection_spotlight",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-06-16T18:46:00.306793+00:00",
       "date": "2026-06-16",
       "platform": "facebook",
@@ -3218,6 +3189,28 @@
       "format": "v2_budget_receipt",
       "has_media": true,
       "media_id": "v2_budget_receipt-nako.png"
+    },
+    {
+      "timestamp": "2026-06-17T08:43:31.306133+00:00",
+      "date": "2026-06-17",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "HO3h5",
+      "destination": "pangong-lake",
+      "format": "v2_myth_bust_oneline",
+      "has_media": true,
+      "media_id": "pangong-lake.mp4"
+    },
+    {
+      "timestamp": "2026-06-17T08:43:50.894144+00:00",
+      "date": "2026-06-17",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ILtdX",
+      "destination": "nubra-valley",
+      "format": "v2_myth_bust_oneline",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -3319,7 +3312,8 @@
       ],
       "sonamarg": [
         "2026-05-25",
-        "2026-06-15"
+        "2026-06-15",
+        "2026-06-17"
       ],
       "mussoorie": [
         "2026-05-25"
@@ -3352,7 +3346,8 @@
       "leh": [
         "2026-05-25",
         "2026-05-27",
-        "2026-06-03"
+        "2026-06-03",
+        "2026-06-17"
       ],
       "gopeshwar": [
         "2026-05-26",
@@ -3408,7 +3403,8 @@
         "2026-06-08",
         "2026-06-10",
         "2026-06-15",
-        "2026-06-16"
+        "2026-06-16",
+        "2026-06-17"
       ],
       "tungnath": [
         "2026-06-02"
@@ -3421,7 +3417,8 @@
         "2026-06-10",
         "2026-06-11",
         "2026-06-15",
-        "2026-06-16"
+        "2026-06-16",
+        "2026-06-17"
       ],
       "ukhrul": [
         "2026-06-03"
@@ -3471,7 +3468,8 @@
       ],
       "gurez-valley": [
         "2026-06-10",
-        "2026-06-11"
+        "2026-06-11",
+        "2026-06-17"
       ],
       "panaji": [
         "2026-06-11"
@@ -3606,7 +3604,8 @@
         "2026-06-05"
       ],
       "v2_myth_bust_oneline": [
-        "2026-06-06"
+        "2026-06-06",
+        "2026-06-17"
       ],
       "v3_tl_first_person_essay": [
         "2026-06-07"
@@ -3812,6 +3811,9 @@
       ],
       "budget-under-5000": [
         "2026-06-16"
+      ],
+      "photography-spots": [
+        "2026-06-17"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -3953,7 +3955,20 @@
         "2026-06-13"
       ]
     },
-    "collection_carousel_dests:budget-under-5000": {}
+    "collection_carousel_dests:photography-spots": {
+      "gurez-valley": [
+        "2026-06-17"
+      ],
+      "pangong-lake": [
+        "2026-06-17"
+      ],
+      "sonamarg": [
+        "2026-06-17"
+      ],
+      "leh": [
+        "2026-06-17"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -3967,8 +3982,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
-    "collection": "budget-under-5000"
+    "shared_best": "yusmarg",
+    "collection": "photography-spots"
   },
   "manual_skip_dests": {}
 }
