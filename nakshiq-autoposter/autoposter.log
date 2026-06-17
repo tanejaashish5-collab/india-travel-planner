@@ -4766,3 +4766,23 @@ Date range: 2026-04-15 → 2026-06-16
 2026-06-17 14:18:16  INFO      YT Short posted: format=nakshiq_score, music=cinematic-846
 2026-06-17 14:18:16  INFO      State saved. YT Short run complete.
 2026-06-17 14:18:16  INFO      ════════════════════════════════════════════════════════════
+2026-06-17 14:46:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-17 14:46:00  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-17
+2026-06-17 14:46:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-17 14:46:05  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-17 14:48:14  INFO      Short rendered: yt_short_nakshiq_score_umlingla_hi_2026-06-17.mp4 (28628 KB, 31.2s, fmt=nakshiq_score, music=fast-679)
+2026-06-17 14:48:14  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_umlingla_hi_2026-06-17.mp4 (29,315,864 bytes, video/mp4)
+2026-06-17 14:48:15  INFO          Uploading to R2 (timeout=300s)...
+2026-06-17 14:48:17  INFO          R2 PUT OK. Confirming...
+2026-06-17 14:48:18  INFO          Media ready: MBGOC (29,315,864 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_umlingla_hi_2026-06-17.mp4)
+2026-06-17 14:48:18  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_umlingla_hi_2026-06-17.mp4
+2026-06-17 14:48:19  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-17 14:48:19  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-06-17 14:48:19  INFO      [instagram/nakshiq] Publishing YT Short (nakshiq_score)...
+2026-06-17 14:48:19  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-06-17 14:48:24  INFO      [instagram/nakshiq] Outstand accepted (post_id=LI6jV), waiting for platform confirmation...
+2026-06-17 14:49:07  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=LI6jV · Platform=18342225079220070
+2026-06-17 14:49:07  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-17 14:49:07  INFO      YT Short posted: format=nakshiq_score, music=fast-679
+2026-06-17 14:49:07  INFO      State saved. YT Short run complete.
+2026-06-17 14:49:07  INFO      ════════════════════════════════════════════════════════════
