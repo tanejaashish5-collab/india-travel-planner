@@ -478,6 +478,20 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: python nakshiq-autoposter/autoposter.py ${{ steps.mode.outputs.args }}
 
+      - name: Check cooldown violations (non-blocking guardrail)
+        # 2026-06-17: deterministic backstop for the pangong-lake 7×/14d class.
+        # Replays the same 14d/30d/60d cooldown windows the autoposter enforces
+        # against the freshly-written post_log and annotates the run if any
+        # destination / (dest,fmt) / media repeated inside its window in the
+        # last few days. Never blocks publishing — it surfaces a regression the
+        # AI daily audit (which said "0 issues" the whole time) cannot see.
+        if: ${{ always() }}
+        continue-on-error: true
+        run: |
+          if ! python3 nakshiq-autoposter/scripts/check_cooldown_violations.py --since-days 3; then
+            echo "::warning title=Autoposter cooldown violation::A destination or (dest,fmt) repeated inside its cooldown window in the last 3 days — should not happen after the 2026-06-17 dedup fix. See step log."
+          fi
+
       - name: Commit updated state to autoposter-state branch
         # Push the autoposter's state files to the side branch `autoposter-state`,
         # not to main. main only receives real code changes — Vercel deploys from

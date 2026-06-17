@@ -935,6 +935,36 @@ def load_post_log_jsonl() -> list[dict]:
     return out
 
 
+def merged_post_log(state: dict) -> list[dict]:
+    """Canonical post history: the durable post_log.jsonl (fresh read, race-safe)
+    UNIONED with the in-memory state['post_log'], deduped on
+    (post_id, platform, timestamp).
+
+    Why merge both: the JSONL is the real-time mirror (a sibling autoposter run
+    that pushed minutes ago is visible even before its state.json propagates
+    through the autoposter-state branch), while state['post_log'] retains up to
+    ~2000 historical entries a freshly-cloned runner's JSONL might not have.
+
+    Reading only state['post_log'] / state['posted_destinations'] is what let
+    pangong-lake post 7× in 14 days (flagged 2026-06-17): the in-memory snapshot
+    drifts stale across the concurrent morning/evening/YT GitHub-Actions runs,
+    while the JSONL stayed complete. Every dedup source-of-truth
+    (post_fingerprints, recently_used_destinations,
+    current_month_posted_destinations) now reads through this helper so the
+    picker can't be fooled by a stale state.json.
+    """
+    jsonl_entries = load_post_log_jsonl()
+    seen = {(e.get("post_id"), e.get("platform"), e.get("timestamp"))
+            for e in jsonl_entries}
+    out = list(jsonl_entries)
+    for e in (state.get("post_log") or []):
+        key = (e.get("post_id"), e.get("platform"), e.get("timestamp"))
+        if key not in seen:
+            seen.add(key)
+            out.append(e)
+    return out
+
+
 def destinations_posted_today_jsonl() -> tuple[set, set]:
     """Fresh read of post_log.jsonl → ({dest_ids}, {media_ids}) posted *today*.
 
@@ -1301,15 +1331,9 @@ def post_fingerprints(state: dict, *, dest_days: int = 14,
     # the in-memory state["post_log"] for older entries the JSONL might not
     # have (state has up to 2000 historical entries from state.json; JSONL is
     # the canonical real-time mirror but a freshly-cloned runner can have an
-    # empty JSONL).
-    jsonl_entries = load_post_log_jsonl()
-    seen_keys = {(e.get("post_id"), e.get("platform"), e.get("timestamp"))
-                 for e in jsonl_entries}
-    log_entries = list(jsonl_entries)
-    for e in (state.get("post_log") or []):
-        key = (e.get("post_id"), e.get("platform"), e.get("timestamp"))
-        if key not in seen_keys:
-            log_entries.append(e)
+    # empty JSONL). 2026-06-17: extracted to merged_post_log() so the dest /
+    # monthly dedup sources read the SAME canonical history.
+    log_entries = merged_post_log(state)
 
     used_dests:    set = set()
     used_dest_fmt: set = set()  # tuples of (dest_id, fmt)
@@ -1407,7 +1431,10 @@ def current_month_posted_destinations(state: dict) -> set:
     """
     month_prefix = date.today().strftime("%Y-%m")
     used: set = set()
-    for e in state.get("post_log", []) or []:
+    # 2026-06-17: read the merged canonical log (JSONL ∪ in-memory) so a
+    # video posted by a sibling run this month still blocks even when the
+    # in-memory state.json snapshot is stale.
+    for e in merged_post_log(state):
         d = e.get("date") or ""
         if not d.startswith(month_prefix):
             continue
@@ -1445,9 +1472,23 @@ def recently_used_destinations(state: dict, cutoff_days: int = 14) -> set:
     the same top-scored dest every day, e.g. Pahalgam Apr 19/27/30).
     """
     cutoff = (date.today() - timedelta(days=cutoff_days)).isoformat()
-    rolling = {d["destination_id"]
-               for d in state.get("posted_destinations", [])
-               if (d.get("date") or "") >= cutoff}
+    rolling: set = set()
+    # 2026-06-17: primary source is the merged canonical log (JSONL ∪
+    # in-memory), so a dest posted by a sibling run is seen even when the
+    # in-memory posted_destinations snapshot is stale (the pangong-lake 7×/14d
+    # bug). The post_log uses `destination`/`dest_id`; posted_destinations uses
+    # `destination_id`.
+    for e in merged_post_log(state):
+        if (e.get("date") or "") < cutoff:
+            continue
+        did = e.get("destination") or e.get("dest_id")
+        if did:
+            rolling.add(did)
+    # Belt-and-braces: legacy posted_destinations entries that predate the
+    # post_log media_id column (or older writer paths) still count.
+    for d in state.get("posted_destinations", []):
+        if (d.get("date") or "") >= cutoff and d.get("destination_id"):
+            rolling.add(d["destination_id"])
     return rolling | current_month_posted_destinations(state)
 
 
@@ -1789,7 +1830,8 @@ def contrarian_score(dest: dict) -> float:
 
 def pick_best_destination(destinations: list, used: set,
                           content: dict | None = None,
-                          state: dict | None = None) -> dict | None:
+                          state: dict | None = None,
+                          also_exclude: set | None = None) -> dict | None:
     """
     Pick the highest-scoring destination from the pool, preferring ones whose
     hero image actually resolves (Nakshiq's catalog has broken image URLs for
@@ -1802,8 +1844,12 @@ def pick_best_destination(destinations: list, used: set,
     picking too. Prevents cross-format repeats (e.g. Bhimtal reel yesterday +
     Bhimtal score_card today). Wrapped in try/except so any tracker corruption
     fails open — the feed picker still works, just without the extra guard.
+
+    also_exclude (2026-06-17): extra dest_ids to drop from the pool — used to
+    pass the 30-day same-(dest,fmt) block so a format genuinely rotates its
+    subject. Honoured only while it doesn't empty the pool (graceful fallback).
     """
-    extra_used: set = set()
+    extra_used: set = set(also_exclude or set())
     if state is not None:
         try:
             cutoff = (date.today() - timedelta(days=14)).isoformat()
@@ -4664,14 +4710,30 @@ def _article_image_dest(article: dict, dest_map: dict,
 # ─────────────────────────────────────────────────────────────────────────────
 
 def generate_post(fmt: str, content: dict, platform: str,
-                  used: set, *, _fallback_from: str | None = None) -> tuple[str, dict | None]:
+                  used: set, *, fp: dict | None = None,
+                  _fallback_from: str | None = None) -> tuple[str, dict | None]:
     """Returns (caption, dest_obj | None). dest_obj carries image + video URLs.
+
+    fp: the fresh post_fingerprints() snapshot for this run (dests/dest_fmt/media
+    windows, read from the canonical merged log). Threaded in 2026-06-17 because
+    `used` alone is derived from the in-memory state.json and drifts stale across
+    concurrent runs — that let pangong-lake post 7× in 14 days. We union
+    fp["dests"] into the dest filter and enforce the 30-day (dest,fmt) +
+    60-day media windows that were previously computed but never consumed.
 
     _fallback_from: set internally when an endpoint-anchored format wipes all its
     candidates and we recurse into the safe destination-anchored format. Guards
     against infinite recursion — a fallback that itself yields nothing returns
     ("", None) rather than recursing again.
     """
+    # 2026-06-17: fold the fresh fingerprint snapshot into the dedup filters.
+    _fp_dests   = (fp or {}).get("dests")    or set()
+    _fp_destfmt = (fp or {}).get("dest_fmt") or set()
+    _fp_media   = (fp or {}).get("media")    or set()
+    used_eff = set(used) | _fp_dests
+    # dests already shown in THIS format inside the 30-day (dest,fmt) window.
+    _fmt_excl = {d for (d, f) in _fp_destfmt if f == fmt}
+
     destinations = content["destinations"].get("data", [])
     traps        = content["traps"].get("data", [])
     collections  = content.get("collections", {}).get("data", []) or []
@@ -4680,7 +4742,7 @@ def generate_post(fmt: str, content: dict, platform: str,
     festivals    = ((content.get("festivals",      {}).get("data", []) or [])
                     + (content.get("festivals_next", {}).get("data", []) or []))
     articles     = content.get("articles",    {}).get("data", []) or []
-    fresh        = [d for d in destinations if d["id"] not in used]
+    fresh        = [d for d in destinations if d["id"] not in used_eff]
     pool         = fresh if fresh else destinations
     dest_map     = {d["id"]: d for d in destinations}
     # Wider catalog map — lets us resolve festival home destinations that
@@ -4693,9 +4755,18 @@ def generate_post(fmt: str, content: dict, platform: str,
     # Use the run-scoped shared best (pre-picked before the per-account loop)
     # so that split-format days (e.g. Thu IG=score_card, FB=collection_spotlight)
     # always anchor on the same destination across platforms.
-    best = content.get("__run_best__") or pick_best_destination(pool, used, content)
+    best = content.get("__run_best__") or pick_best_destination(
+        pool, used_eff, content, also_exclude=_fmt_excl)
 
     if fmt == "score_card" and best:
+        # 30-day same-(dest,fmt) guard: if this exact dest already ran as a
+        # score_card this window (e.g. a shared __run_best__), re-pick from a
+        # pool that excludes the blocked dests so the format genuinely rotates.
+        if best.get("id") in _fmt_excl:
+            alt_pool = [d for d in pool if d.get("id") not in _fmt_excl]
+            alt = pick_best_destination(alt_pool, used_eff, content) if alt_pool else None
+            if alt:
+                best = alt
         return copy_score_card(best, platform), best
 
     elif fmt == "reality_check":
@@ -5091,6 +5162,13 @@ def generate_post(fmt: str, content: dict, platform: str,
                 did = (row.get("destination_id") or "").lower()
                 if did in _today_dests:
                     continue
+                # 2026-06-17: fingerprint cooldowns (fresh from the merged log).
+                if did in used_eff:
+                    continue
+                if did in _fmt_excl:  # same (dest,fmt) within 30 days
+                    continue
+                if f"{did}.mp4" in _fp_media:  # same video within 60 days
+                    continue
                 joined_dest = dest_by_id.get(did) or {}
                 # Without a joined dest we lose hero + Ken Burns — skip
                 if not joined_dest:
@@ -5131,7 +5209,7 @@ def generate_post(fmt: str, content: dict, platform: str,
                     f"falling back to safe format 'score_card'"
                 )
                 return generate_post(
-                    "score_card", content, platform, used, _fallback_from=fmt
+                    "score_card", content, platform, used, fp=fp, _fallback_from=fmt
                 )
             log.info(f"{fmt}: no endpoint candidate passed eligibility — SKIPPING")
             return "", None
@@ -5141,10 +5219,11 @@ def generate_post(fmt: str, content: dict, platform: str,
         # purpose-built CSV asset). Asset-backed go FIRST so a format-specific
         # asset always wins over a pool dest's generic image; both are 14-day
         # `used`-filtered so the few asset-dests rotate instead of spamming one.
+        # 2026-06-17: used_eff folds in fp["dests"] (fresh merged-log cooldown).
         _pool_ids = {p.get("id") for p in pool}
         _csv_pool = [
             d for d in asset_backed_csv_dests(content)
-            if d.get("id") not in _pool_ids and d.get("id") not in used
+            if d.get("id") not in _pool_ids and d.get("id") not in used_eff
         ] + pool
 
         # 2026-05-29 (P5 integrity gate): never render a stale or low-month
@@ -5196,6 +5275,21 @@ def generate_post(fmt: str, content: dict, platform: str,
                     f"{fmt}: {cid}.mp4 already used today — SKIPPING dest "
                     f"(same-day media guard)"
                 )
+                continue
+            # 2026-06-17: fingerprint cooldowns, fresh from the merged log.
+            # pool is already used_eff-filtered, but it falls back to the raw
+            # current-month slice when fully exhausted — re-check here so an
+            # exhausted-pool fallback can't leak a 14-day repeat. The (dest,fmt)
+            # + media windows are the founder's "rotate the format too" rule
+            # that nothing enforced before.
+            if cid in used_eff:
+                log.info(f"{fmt}: {cid} in 14-day cooldown — SKIPPING dest")
+                continue
+            if cid in _fmt_excl:
+                log.info(f"{fmt}: {cid}+{fmt} in 30-day (dest,fmt) window — SKIPPING")
+                continue
+            if cid and f"{cid}.mp4" in _fp_media:
+                log.info(f"{fmt}: {cid}.mp4 in 60-day media window — SKIPPING")
                 continue
             ok, _reason = _csv_fmt.is_eligible(
                 spec, cand, SOCIAL_IMAGE_LIBRARY_DIR
@@ -5342,7 +5436,7 @@ def generate_post(fmt: str, content: dict, platform: str,
                 f"falling back to safe format 'score_card'"
             )
             return generate_post(
-                "score_card", content, platform, used, _fallback_from=fmt
+                "score_card", content, platform, used, fp=fp, _fallback_from=fmt
             )
         log.info(f"{fmt}: no eligible dest at render time — SKIPPING")
         return "", None
@@ -7384,7 +7478,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             continue
 
         log.info(f"[{label}] Generating {fmt} post...")
-        caption, dest_obj = generate_post(fmt, content, platform, used)
+        caption, dest_obj = generate_post(fmt, content, platform, used, fp=fp)
 
         if not caption or not dest_obj:
             log.warning(f"[{label}] No content generated — skipping.")
@@ -7396,6 +7490,24 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
 
         dest_id = dest_obj["id"]
         log.info(f"[{label}] Caption ready ({len(caption)} chars, dest={dest_id})")
+
+        # ── Fail-closed cooldown gate (2026-06-17) ────────────────────────────
+        # Last line of defence against the pangong-lake 7×/14d class: if the
+        # picker still handed back a dest that the fresh fingerprint snapshot
+        # already shows inside its 14-day window — or the same (dest,fmt) inside
+        # 30 days — DON'T publish it. Skip the slot and log ERROR so the
+        # regression (or a genuinely exhausted in-season pool) is visible rather
+        # than silently shipping a duplicate. fp is a run-start snapshot, so the
+        # FB↔IG mirror within this same run is never blocked here.
+        if fp and dest_id in (fp.get("dests") or set()):
+            log.error(f"[{label}] COOLDOWN VIOLATION: {dest_id} is in the 14-day "
+                      f"window but was selected for {fmt} — skipping (pool likely "
+                      f"exhausted or a dedup regression).")
+            continue
+        if fp and (dest_id, fmt) in (fp.get("dest_fmt") or set()):
+            log.error(f"[{label}] COOLDOWN VIOLATION: ({dest_id}, {fmt}) is in the "
+                      f"30-day (dest,fmt) window — skipping to keep the format rotating.")
+            continue
 
         # ── Decide: Reel, carousel, or single-image ───────────────────────────
         # Evening mode is VIDEO-FIRST — the entertainment pillar. Morning mode
@@ -7679,7 +7791,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 and not use_video):  # Stories use images only; Reel days skip Story
 
             # Generate a story-specific caption + image (DIFFERENT from feed)
-            story_caption, story_dest = generate_post(story_fmt, content, "instagram", used)
+            story_caption, story_dest = generate_post(story_fmt, content, "instagram", used, fp=fp)
             if not story_caption or not story_dest:
                 log.warning(f"[{label}] Story content unavailable for {story_fmt} — skipping Story.")
                 continue

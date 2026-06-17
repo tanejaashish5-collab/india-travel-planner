@@ -29,11 +29,31 @@ Zero manual input required after the one-time setup below.
 
 ### Rules enforced automatically
 - Never posts the same destination twice within 14 days
+- Never posts the same destination **in the same format** within 30 days (rotate the format too)
+- Never reuses the same media (image/video) within 60 days
 - Never duplicates copy verbatim across platforms (platform-adapted)
 - Never posts twice in one day to the same account
 - Always includes at least one concrete data point (score, elevation, stat)
 - Attaches image from Nakshiq API on every post
 - Silent day if content pool is empty rather than posting filler
+
+> These three cooldown windows are computed by `post_fingerprints()` from the
+> **merged canonical log** (`data/post_log.jsonl` ∪ in-memory state, race-safe)
+> and applied at selection inside `generate_post()`. Before the 2026-06-17 fix
+> the snapshot was computed but ignored at the pick — the picker trusted a
+> stale in-memory `used` set, which let pangong-lake post 7× in 14 days.
+
+### Cooldown guardrail (deterministic)
+`scripts/check_cooldown_violations.py` replays the same three windows against the
+post log and exits non-zero on any violation. It runs automatically as a
+non-blocking step in the `autoposter.yml` workflow (annotates the run), and the
+**daily audit routine should run it** so the audit can't report "0 issues" while
+a destination is actually being spammed:
+
+```bash
+python3 scripts/check_cooldown_violations.py            # last 16 days
+python3 scripts/check_cooldown_violations.py --all      # whole history (backtest)
+```
 
 ---
 
