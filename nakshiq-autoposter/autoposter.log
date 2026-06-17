@@ -4719,3 +4719,26 @@ Date range: 2026-04-15 → 2026-06-16
 2026-06-17 08:43:50  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ILtdX · Platform=990196253717441
 2026-06-17 08:43:50  INFO      State saved. Run complete.
 2026-06-17 08:43:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-17 09:16:52  INFO      ════════════════════════════════════════════════════════════
+2026-06-17 09:16:52  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-17
+2026-06-17 09:16:52  INFO      ════════════════════════════════════════════════════════════
+2026-06-17 09:16:54  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-17 09:18:46  INFO      Short rendered: yt_short_nakshiq_score_har-ki-doon_hi_2026-06-17.mp4 (26953 KB, 30.0s, fmt=nakshiq_score, music=fast-676)
+2026-06-17 09:18:46  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_har-ki-doon_hi_2026-06-17.mp4 (27,600,550 bytes, video/mp4)
+2026-06-17 09:18:47  INFO          Uploading to R2 (timeout=300s)...
+2026-06-17 09:18:48  INFO          R2 PUT OK. Confirming...
+2026-06-17 09:18:49  INFO          Media ready: SZQEJ (27,600,550 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_har-ki-doon_hi_2026-06-17.mp4)
+2026-06-17 09:18:49  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_har-ki-doon_hi_2026-06-17.mp4
+2026-06-17 09:18:50  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-17 09:18:50  INFO      [youtube/@naksh-iq] Publishing YT Short (nakshiq_score)...
+2026-06-17 09:18:50  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-06-17 09:18:52  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=QFely), waiting for platform confirmation...
+2026-06-17 09:19:10  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=QFely · Platform=DJ01dJ-MQDE
+2026-06-17 09:19:10  INFO      [instagram/nakshiq] Publishing YT Short (nakshiq_score)...
+2026-06-17 09:19:10  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-06-17 09:19:12  INFO      [instagram/nakshiq] Outstand accepted (post_id=lp8BK), waiting for platform confirmation...
+2026-06-17 09:19:46  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=lp8BK · Platform=18103088128851466
+2026-06-17 09:19:46  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-17 09:19:46  INFO      YT Short posted: format=nakshiq_score, music=fast-676
+2026-06-17 09:19:46  INFO      State saved. YT Short run complete.
+2026-06-17 09:19:46  INFO      ════════════════════════════════════════════════════════════
