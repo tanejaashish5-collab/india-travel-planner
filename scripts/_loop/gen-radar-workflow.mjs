@@ -149,7 +149,7 @@ const judgeHead =
   '- claim_status = "refuted" when at least refuteThreshold skeptics found a LIVE source that ACTIVELY CONTRADICTS the claim. Then score_action = "downgrade" — or "kill" if that claim was the idea\'s entire reason to exist (no claim, no business).\n' +
   '- claim_status = "unsupported" when skeptics could not find support but nothing contradicts it. score_action = "flag_unverified" — do NOT kill; absence of evidence is not disproof, and the founder may still cheaply test it.\n' +
   '- claim_status = "confirmed" when >=1 skeptic confirmed via a primary source AND none refuted. score_action = "stand".\n' +
-  '- MOAT: if any skeptic broke the no-competition / first-mover assumption, say so plainly in moat_assessment and never let an unverified absence inflate the moat.\n';
+  '- MOAT TEETH: when a MAJORITY of skeptics return moat_verdict "broken" (they found direct competitors the idea\'s no-competition / first-mover assumption ignored), set score_action to AT LEAST "downgrade" — even if the claim is confirmed or merely unsupported — because the rubric\'s moat/competition scores were inflated by a moat that does not exist. Reserve "stand" for ideas whose claim holds AND whose moat survives (no skeptic broke it). Always describe what was found in moat_assessment, and never let an unverified absence inflate the moat.\n';
 const judgeTail =
   '\nReturn the final verdict for the manager: claim_status, confidence, moat_assessment, score_action, and a one-line summary the founder can read at a glance.';
 
