@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-06-14T12:00:00.000Z",
-  "count": 66,
+  "count": 69,
   "opportunities": [
     {
       "key": "highriskwatch",
@@ -788,6 +788,76 @@
         ],
         "depth": "triage",
         "validatedAt": "2026-06-16"
+      }
+    },
+    {
+      "key": "fundedtrader-hindi",
+      "name": "FundedTrader Hindi",
+      "shape": "content-audience",
+      "source_channel": "markets-trading-fintech",
+      "one_liner": "A fully faceless Hindi-language YouTube channel and companion email list that teaches Indian retail traders how to pass international funded-account (prop trading) challenges — FTMO, FundingPips, Topstep — and navigate INR payment logistics to actually receive payouts.",
+      "the_insight": "International prop firms draw 20-40% of their organic traffic and 20-30% of global revenue from India, yet there is zero Hindi-language educational media covering the mechanics of funded accounts. The unmet demand is concrete: traders searching for 'prop trading India Hindi', 'FTMO India payment', 'funded account India kaise milega' get English-only, US-centric results. The affiliate economics are unusually strong — FTMO, FundingPips, Topstep all run affiliate programs paying 30-50% of challenge fees ($50-200 per referred signup), and Indian traders are already buying in volume. This is a fully faceless, data-driven media play with zero capex beyond scripting and voice synthesis.",
+      "monetization": "Affiliate commissions from prop firm programs (FTMO 30-50% of challenge fees, industry standard); newsletter sponsorships from brokers and trading tool vendors; a paid 'India prop trading starter kit' PDF/course ($15-30 one-time, low friction); long-term: referral agreements with Wise/Razorpay for the payment logistics angle.",
+      "surviving_wedge": "**First-mover advantage in Hindi-language prop trading education:** Zero competitors exist. The wedge is the unmet demand from India's 2-4M retail traders seeking Hindi-language guides to FTMO challenge rules, INR payout logistics, and affiliate earnings. **Scalability:** Faceless production (voice synthesis + screen recordings + simple graphics) enables rapid iteration. **Timeline:** Wedge survives 6-12 months before established stock-trading channels (Power of Stocks, Booming Bulls) pivot or new Hindi copycat channels launch. **Defense:** None. Affiliate commissions are public. Language is only defense, and it's low-friction to replicate. **Sustainable path:** Transition from traffic arbitrage (affiliate commissions on founder's views) to owned-audience arbitrage (email list of 50K+ traders, then sell paid courses, trading signals, or private coaching at ₹5K-₹20K/student) by month 9-12. Affiliate revenue alone ≤ 2 years before margin compression and audience saturation.",
+      "demand_evidence": "**Primary load-bearing claim:** India generates 40% of organic traffic among the top 50 prop trading firms globally, and FTMO specifically re-entered India in December 2025 after a 2-year blackout — explicit market signal. Verified source: Finance Magnates article \"FTMO Opens Doors to Indian Traders Amid Growing Youth Interest in Prop Trading.\" **Secondary:** Zero existing Hindi-language YouTube channels teach FTMO, FundingPips, or Topstep mechanics. Competitors (Power of Stocks 2.1M subs, Booming Bulls 3.5M, IITian Trader 1.21M) all teach Indian stock market trading only, not international funded accounts. Confirmed by: (1) direct YouTube search for \"FTMO Hindi YouTube\" returned zero results; (2) searches for \"FTMO + FundingPips + Topstep + Hindi\" found only English sites; (3) stockmarketlearnhindi.com (the sole Hindi prop trading resource found) has only one guide on general \"Funded Trading Accounts\" with no India-specific payout logistics. **Tertiary:** Interest trend is rising — Finance Magnates notes \"interest in prop trading has risen since 2023, especially among young Indians aged 18–30.\" **Business viability:** Affiliate economics confirmed: Earn2Trade 40%, SabioTrade 30-70%, Instant Funding 17.5%, Apex 15%, with Indian audience willing to spend ₹9,360-₹1.13L per challenge. Finance YouTube CPM in India ₹150-₹300 (English) or ₹30-₹100 (Hindi), 3-5x higher than general content — confirmed by upGrowth 2026 YouTube CPM guide.",
+      "market_size": "**Total Addressable Market (TAM):** India's retail trader base. Estimated 50-60M retail trading accounts (stock market); prop trading interest surge since 2023 targets 15-30% of active traders = 7.5-18M potential audience. **Serviceable Addressable Market (SAM):** Tier 1-2 Hindi-speaking retail traders (age 18-35, ₹25K+ monthly income) capable of funding a ₹9,360-₹50K challenge = ~2-4M. **Serviceable Obtainable Market (SOM) — Year 1:** 100K-500K channel subscribers; 5K-15K monthly affiliate signups @ ₹10K-₹50K avg challenge = ₹500M-₹750M annual transaction volume. **Revenue (Year 1 model):** Affiliate commissions at 15-20% = ₹75M-₹150M gross (before YouTube AdSense, sponsorships, email list monetization). **Market size validation:** Global prop trading market $4-6B (estimated), India 40% of traffic = $1.6-2.4B, but only ~5-10% translates to funded account purchases = $80-240M India market opportunity. Hindi language segment = 40-50% of that = $32-120M TAM. Highly fragmented, no dominant player.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 3,
+        "speed_to_cash": 4,
+        "profit_ceiling": 4,
+        "competition_shape": 3
+      },
+      "composite": 3.35,
+      "verdict": "YELLOW",
+      "confidence": "high",
+      "fact_checks": [
+        {
+          "claim": "India generates 40% of organic traffic among the top 50 prop trading firms globally",
+          "verified": "true",
+          "source": "https://www.financemagnates.com/forex/ftmo-opens-doors-to-indian-traders-amid-growing-youth-interest-in-prop-trading/"
+        },
+        {
+          "claim": "Zero existing Hindi-language YouTube channels teach FTMO, FundingPips, or Topstep mechanics",
+          "verified": "false",
+          "source": "Multiple Hindi YouTube videos exist: (1) https://www.youtube.com/watch?v=haIDoYiF_u4 (FTMO vs My Forex Funds in Hindi), (2) https://www.youtube.com/watch?v=Wo2OsoSJLfs (Funding Pips Prop Firm Updated Review in Hindi), (3) https://www.youtube.com/playlist?list=PLKdS4xOfydctrx9UHzBesfOahX05OC9Ym (Forex Prop Firm Reviews in Hindi playlist)"
+        }
+      ],
+      "fact_status": "refuted",
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-17",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-17",
+          "composite": 3.35
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.714,
+        "fitLoadBearing": 0.75,
+        "conviction": 3.65,
+        "tier": "WATCH",
+        "dealbreakers": [
+          "survive-constraint-shifts"
+        ],
+        "coverage": "35/42",
+        "verdict": "These strategists would call this a solid first content bet worth a 90-day test — the timing, low capex, and genuine INR pain point are real — but they would not back it as a standalone business because the structural moat is absent and the existential regulatory exposure to a single RBI/SEBI decision makes it fragile; the play is to build the audience fast and pivot the monetisation toward a proprietary product (community, course, or signal service) before a copycat or a regulator kills the edge.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "tata": {
+        "verdict": "conditional",
+        "failed_tests": [],
+        "concerns": [
+          "Affiliate incentive misalignment: creator earns 30-50% of challenge fees whether or not the student is ready — this financially rewards pushing unprepared traders to sign up, which is the exact opposite of their interest.",
+          "Indian retail trading audience skews toward financially aspirational and sometimes desperate participants who may overestimate their readiness based on confident Hindi content; pass rates for prop challenges industry-wide are 5-20% — if this is not disclosed prominently, the content exploits information asymmetry.",
+          "Broker and trading-tool sponsorships add a second layer of undisclosed commercial influence on content recommendations if not clearly labelled.",
+          "The 'starter kit' PDF must not overstate likely outcomes or imply that buying the kit meaningfully improves pass rates beyond what free preparation provides."
+        ],
+        "reason": "The educational premise is legitimate and the payment-logistics angle is genuinely helpful for Indian traders, but the affiliate structure (paid per challenge fee, not per student success) creates a structural conflict of interest that could tip honest education into exploitation of financially aspirational retail traders if left ungoverned.",
+        "fix": "Launch with three mandatory non-negotiables: (1) disclose every affiliate relationship and commission rate on every video and email — not buried in a description, prominently stated; (2) publish and pin the industry-average prop challenge pass rate (and any firm-specific data available) in every piece of content that recommends a challenge purchase, so no student can claim they were not warned; (3) add a self-assessment gate in the starter kit — a checklist of trading discipline prerequisites — so the product actively screens out unprepared buyers rather than converting them. With these three in place, the business earns on honest education, not on aspirational hype, and Ratan Tata could put his name on it.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
       }
     },
     {
@@ -1754,6 +1824,83 @@
         ],
         "depth": "triage",
         "validatedAt": "2026-06-16"
+      }
+    },
+    {
+      "key": "franchiselens-india",
+      "name": "FranchiseLens India",
+      "shape": "content-audience",
+      "source_channel": "franchise-distribution-licensing",
+      "one_liner": "A neutral benchmark media brand and searchable database that publishes verified unit economics, default rates, and franchisee return data for Indian QSR and food franchise networks — the Levels.fyi for franchise buyers.",
+      "the_insight": "Sparkleminds and FranchiseTrade (2026) document that master franchisee selection failure is endemic — franchisors sign the first interested investor, networks collapse within 18-24 months. The root cause is information asymmetry: prospective franchisees get franchisor-provided projections only; independent verified data on actual unit-level EBITDA, payback periods, and default rates is structurally absent from the Indian market. A neutral media brand that collects and publishes anonymized real performance data (like Levels.fyi did for salaries or DealReceipts proposes for creator deals) creates a mandatory-reference destination. The franchise sector is entering its 'peak season' per Francorp 2026 — Tier II/III expansion at 22% CAGR — meaning the buyer pool is growing fast and the information gap is widening. Distribution is purely inbound: franchise buyers search before they sign; a high-authority data brand captures that traffic without cold outreach.",
+      "monetization": "Verified franchisee report subscriptions (₹499-999/mo for full unit-economics data); franchisor 'verified performance' badge (pays to have their data independently audited and published — the credibility signal attracts better partners); newsletter sponsorship from franchise consultants and NBFC lenders; long-term: a due-diligence API for franchise lending desks.",
+      "surviving_wedge": "**Content-first media brand**: Start as a neutral publisher of anonymized franchisee performance data (EBITDA/payback/default rates by brand + location + format). Publish 5–10 deep-dive case studies per month with verified franchisee interviews (anonymized returns, cost breakdowns, month-12/24/36 profitability curves). Charge franchisors zero for inclusion (network effect); monetize through: (1) Premium tier for franchisees ($99–299/mo) with searchable filtered data, peer benchmarking, and ROI calculators; (2) B2B licensing to consultants/advisors (Sparkleminds, Francorp, brokers); (3) Lead-gen partnerships with lenders/insurance (franchisees seeking funding are identified by platform). **Why this survives competition**: Frandera is US/global SEC-focused (India lacks mandate); Sparkleminds/FranchiseBazar monetize consulting (conflict of interest—can't be neutral). A media-first model that is transparent, neutral, and buyer-centric becomes a mandatory reference, like Levels.fyi did for salary negotiation. **Moat builds over 18 months**: 200+ verified case studies → network effects → franchisors voluntarily disclose to reach buyers → flywheel.",
+      "demand_evidence": "**Load-bearing claim**: Prospect franchisees in India receive ONLY franchisor-provided projections—no independent, verified unit-level EBITDA, default rates, or payback-period data exists as a public resource. **Source**: Sparkleminds' own content warns \"Do not assume peak sales every month\" and Sparkleminds' Crunchbase profile notes they've worked with 870+ franchisors but publish zero verified performance metrics. The gap is structural: (1) Frandera (global benchmark) serves US/global franchises with SEC-filed FDDs—India has no equivalent disclosure mandate, so franchisees are information-starved. (2) The Indian Franchise Expo draws 40,000+ buyers/year (demand signal), yet no exhibitor publishes verified unit economics. (3) Master franchisee failure rate is documented at 40% (Mizuho analyst finding)—papa John's India 2011–2018 collapse cited as example—with root cause being post-signature discovery of actual vs. projected unit returns. (4) Tier II/III city franchisee pool is expanding at 22%+ CAGR with zero independent benchmarking. The most credible demand signal: **information asymmetry is endemic, acknowledged by the 2 largest Indian advisors (Sparkleminds, FranchiseBazar), but unfilled**—they monetize consulting, not data.",
+      "market_size": "**India organized QSR franchise sector**: ₹43.5B projected by 2030 (14.2% CAGR from current ~₹30B), serving 4,600+ active franchisors across all sectors. **Tier II/III expansion**: 22%+ CAGR; middle-class fast-food spend up 108% in 2 years. **Franchise Expo draw**: 40,000+ qualified franchisee buyers annually. **Audience size**: Estimated 250,000–400,000 active franchisee candidates in India annually across food/retail/services. **Secondary markets (AU/SG/UAE)**: Indian diaspora and SAARC franchises add 50K–100K buyers in parallel markets. **Conservative TAM (first 3 years, India only)**: 60,000 franchisee buyers × ₹50–200K annual spend on due diligence research, advisory, benchmarking tools = ₹3B–₹12B TAM addressable by a FranchiseLens equivalent.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 3,
+        "speed_to_cash": 3,
+        "profit_ceiling": 4,
+        "competition_shape": 3
+      },
+      "composite": 3.2,
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "Papa John's India franchise collapsed between 2011–2018 as a documented example of master franchisee failure due to post-signature discovery of actual vs. projected unit returns.",
+          "verified": "true",
+          "source": "https://startuptalky.com/papa-johns-failure-case-study/ and https://www.restaurantindia.in/news/papa-john-s-shuts-india-operation.n15170 confirm Papa John's closed all 66 stores in India (ended operations July 2017 after entering 2011), citing focus on brand-building over store-level EBITDA performance as a key failure factor."
+        },
+        {
+          "claim": "India has no equivalent disclosure mandate to the US FDD system, leaving franchisees information-starved on verified unit-level EBITDA, default rates, or payback-period data.",
+          "verified": "true",
+          "source": "https://www.sparkleminds.com/2026/01/05/franchise-disclosure-document-india-2026/ explicitly states 'Not a single franchise law has made it explicitly mandatory at this time' in India; the FTC Franchise Rule's 23 required disclosures have no Indian statutory equivalent. Frandera (https://frandera.com/for-investors) operates a US/global FDD database backed by state regulatory filings—India lacks this infrastructure."
+        },
+        {
+          "claim": "Master franchisee failure rate is documented at 40% (Mizuho analyst finding).",
+          "verified": "true",
+          "source": "https://www.franchising.com/articles/how_franchisors_have_failed_at_international_master_franchising_and_what_th.html reports Mizuho analysis found 40% of master franchising deals fail altogether, with only 6% fully satisfied and 80% opening fewer than half committed stores. This is a primary analyst finding from Mizuho Financial Group on international master franchise performance."
+        },
+        {
+          "claim": "The Indian Franchise Expo draws 40,000+ buyers/year (demand signal).",
+          "verified": "true",
+          "source": "https://www.franchiseindia.com/expo/ and https://www.businesstoday.in/india/story/franchise-indias-record-breaking-expo-sets-new-global-standards-for-franchising-and-retail-430358-2024-05-21 confirm Franchise India Expo 2026 aims for 40,000+ qualified verified buyers across 500+ franchisors, establishing significant franchisee demand signal."
+        }
+      ],
+      "fact_status": "verified",
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-17",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-17",
+          "composite": 3.2
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.912,
+        "fitLoadBearing": 0.722,
+        "conviction": 4.08,
+        "tier": "PURSUE",
+        "dealbreakers": [],
+        "coverage": "31/42",
+        "verdict": "Strategists would call this a sharp insight with a structurally sound problem statement — but they would not back it yet, because the Levels.fyi analogy obscures a fatal difference: engineers are repeat visitors who drive compounding data and page views, whereas franchise buyers are one-time transactors, so the model only works if the real customer is a recurring professional (CA, consultant, investor network) rather than the end buyer — and that pivot needs to be explicit before the revenue model can be validated.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "tata": {
+        "verdict": "conditional",
+        "failed_tests": [],
+        "concerns": [
+          "The franchisor-pays-for-verification model (like issuer-pays in credit ratings) creates pressure to present data favourably to retain badge revenue — if a franchisor's numbers look bad, they simply don't renew, so only flattering audits stay published, which is the opposite of neutral benchmarking and deceives buyer-subscribers who are paying for objectivity.",
+          "The platform must resist becoming a marketing vehicle for franchisors who pay most; newsletter sponsorships from franchise consultants (who earn commission on deals closed) carry the same conflict and must be clearly disclosed.",
+          "Honest-scarcity discipline is critical: Indian franchise unit-economics data is genuinely sparse and often self-reported — fabricating or padding thin datasets to appear comprehensive would be a direct harm to buyers making ₹10-50L decisions."
+        ],
+        "reason": "FranchiseLens India is a transparency-first business that genuinely serves the most vulnerable participant in the franchise equation — the individual buyer putting life savings into a unit — and Ratan Tata would broadly approve; however, the franchisor-paid \"verified performance badge\" creates a structural conflict of interest: the entity funding the audit is the one being audited, which can quietly corrupt data integrity and mislead the very buyers the platform exists to protect.",
+        "fix": "Structurally separate the audit function from the badge-sales function (arm's-length auditor, published methodology, data published regardless of whether the franchisor continues paying); cap franchisor badge revenue to a minority of total revenue so withdrawal cannot suppress a finding; disclose all commercial relationships prominently on every data page; and enforce an explicit honest-scarcity policy — publish sample size, data vintage, and confidence level on every unit-economics figure, marking thin or self-reported data clearly rather than presenting it as verified.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
       }
     },
     {
@@ -3235,6 +3382,77 @@
         ],
         "depth": "triage",
         "validatedAt": "2026-06-16"
+      }
+    },
+    {
+      "key": "algoverify-india",
+      "name": "AlgoVerify India",
+      "shape": "content-audience",
+      "source_channel": "markets-trading-fintech",
+      "one_liner": "A neutral media brand and searchable database that verifies SEBI Research Analyst licenses and Exchange Empanelment IDs for every Indian algo trading service provider — the missing trust layer between retail traders and the 200+ unvetted algo vendors.",
+      "the_insight": "SEBI's April 2026 algo mandate created a new compliance burden on retail traders — they must now confirm that any algo service they use carries a valid Exchange Empanelment ID and, where applicable, an RA license — yet no centralized directory exists. The regulatory vacuum produces a search behavior ('is [vendor] SEBI registered algo') with zero quality answers. A data-first media brand that does the verification work once and publishes it earns both SEO traffic and genuine word-of-mouth from the 10M+ retail trader base. Crucially this is a data/trust play, not a compliance SaaS — it sidesteps the archetype-saturation trap. Revenue compounds via broker affiliate programs and vendor premium listings, not enterprise contracts.",
+      "monetization": "Broker affiliate commissions (Zerodha, Upstox, Dhan pay ₹300-2000/referred account); premium 'verified' badge for compliant vendors (₹5K-15K/yr SaaS-lite); newsletter sponsorship from brokers and fintech tools; long-term: a paid API tier for broker compliance teams to auto-check vendor lists.",
+      "surviving_wedge": "Launch as a verified vendor directory + comparison tool (free listing tier) with SEBI RA license verification as the core trust layer. Revenue via premium vendor profiles (₹5-10K/mo) + affiliate fees from broker partnerships (0.5-1% trading commissions) + paid verification/compliance consulting for vendors. Own the 'trust layer' between retail traders and 200+ unvetted providers rather than competing with Stratzy's strategy marketplace or TradeTron's creator tools. The moat is curation + trust, not technology—defensible only if you curate continuously and maintain SEBI compliance expertise that Stratzy (as a RA) now owns.\"",
+      "demand_evidence": "SEBI flagged 1.33 lakh misleading social media posts about securities in FY2026 and removed 66 fake trading apps from app stores. SEBI issued enforcement orders against fake algo trading rackets offering 'guaranteed returns' with operators ordered to return ₹4.83 crore + penalties. Retail traders actively search 'is [vendor] SEBI registered' / 'SEBI RA license checker' with zero quality answers. Retail participation in algo trading expected to be 38.5% by 2026, yet no curated, searchable directory exists beyond the official NSE/BSE lists. The demand is real (proven by SEBI's crackdown + search behavior) but currently unserved by a consumer-facing media brand.\"",
+      "market_size": "India's algorithmic trading market: ₹1.08B (FY2024) → ₹2.61B (FY2032), CAGR 11.65%. Retail investors expected to hold 38.5% market share by 2026 = ~₹400M+ addressable for retail-focused services. 10M+ retail traders in India actively use APIs or algo platforms. Broker affiliate programs pay 0.5-1% commission per trading volume; premium vendor listings could command ₹5-20K/month per high-volume provider.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 3,
+        "speed_to_cash": 3,
+        "profit_ceiling": 3,
+        "competition_shape": 2
+      },
+      "composite": 2.9,
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "SEBI flagged 1.33 lakh misleading social media posts about securities in FY2026 and removed 66 fake trading apps from app stores.",
+          "verified": "true",
+          "source": "https://www.angelone.in/news/market-updates/sebi-flags-1-33-lakh-misleading-social-media-posts-on-securities (confirmed by Ministry of Finance disclosure to Parliament, March 23, 2026); https://www.outlookmoney.com/invest/sebi-launches-verified-label-for-stock-trading-apps-on-google-play-store (66 fake apps flagged and removed, March 2026)"
+        },
+        {
+          "claim": "SEBI issued enforcement orders against fake algo trading rackets offering 'guaranteed returns' with operators ordered to return ₹4.83 crore + penalties.",
+          "verified": "true",
+          "source": "https://www.outlookmoney.com/invest/equity/sebi-busts-false-algo-trading-racket-orders-scamsters-to-return-unlawful-gains-along-with-interest-and-penalty; https://www.business-standard.com/markets/news/sebi-bans-two-from-markets-for-three-years-impounds-illegal-gains-125062200716_1.html (Shivprasad Pattiya and Alkesh Narware banned for 3 years, ordered to return ₹4.83 crore plus 12% interest, and fined ₹25 lakh each under SEBI Act Section 15HA, June 2025)"
+        },
+        {
+          "claim": "Retail participation in algo trading expected to be 38.5% by 2026.",
+          "verified": "true",
+          "source": "https://www.coherentmarketinsights.com/market-insight/algorithmic-trading-market-2476; https://www.quantinsti.com/articles/algorithmic-trading-india/ (retail investors expected to hold the largest market share at 38.5% by 2026, driven by accessibility of fintech platforms)"
+        }
+      ],
+      "fact_status": "verified",
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-17",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-17",
+          "composite": 2.9
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.912,
+        "fitLoadBearing": 0.722,
+        "conviction": 3.95,
+        "tier": "PURSUE",
+        "dealbreakers": [],
+        "coverage": "31/42",
+        "verdict": "A structurally sound trust-layer idea riding a real regulatory tailwind with a clear MVP path, but the strategists would likely hold until three questions are answered: who pays (trader, vendor, or advertiser), how the moat survives a SEBI self-service portal, and whether retail traders will actively seek verification before subscribing to an algo service — without those three resolved, the idea is a credible content/media asset but not yet a fundable business.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "tata": {
+        "verdict": "conditional",
+        "failed_tests": [],
+        "concerns": [
+          "The ₹5K-15K/yr 'verified badge' for compliant vendors risks conflating a paid product with an independent trust signal — if users read the badge as 'independently vetted/endorsed' when it is actually a self-service fee for display, the badge deceives the very retail traders the brand claims to protect (truthful-claims, public-scrutiny gates).",
+          "Broker affiliate commissions (₹300-2000/referred account) create an undisclosed financial relationship between AlgoVerify and the brokers it implicitly recommends alongside 'verified' vendors — without clear disclosure this is a hidden incentive that undermines the neutral-media positioning (public-scrutiny, all-or-nothing integrity gates)."
+        ],
+        "reason": "Fundamentally pro-consumer idea that protects retail traders from unvetted algo vendors — Ratan Tata would be proud of the mission — but the paid \"verified badge\" model risks selling the appearance of trustworthiness rather than purely reflecting objective license status, and broker affiliate commissions must be disclosed or they quietly bias the trust signal the brand is built on.",
+        "fix": "Badge must mean exactly one thing: 'SEBI RA license / Exchange Empanelment ID confirmed current as of [date]' — displayed identically for all verified vendors regardless of payment; the fee covers only the API/display infrastructure, not any quality signal beyond regulatory status. All broker affiliate relationships must be labeled 'paid partner' adjacent to every link or recommendation. With these two disclosures codified at launch, both concerns clear and the business is fully pass.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
       }
     },
     {
