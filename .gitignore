@@ -131,3 +131,9 @@ data/audits/screencaptures/
 # Python bytecode from qa probe scripts
 qa/findings/**/__pycache__/
 *.pyc
+
+# Ad-hoc loop workflow regenerated on demand by gen-validation-batch.mjs (the
+# generator is the source of truth; this output is a per-run artifact)
+scripts/_loop/_validation-batch.workflow.js
+# Per-run festival celebration-batch scratch input (for _match_copy_celebration.py)
+data/festivals/_tmp_*.json
