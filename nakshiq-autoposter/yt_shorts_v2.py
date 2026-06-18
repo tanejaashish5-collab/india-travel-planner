@@ -467,6 +467,72 @@ def _template_spec(dest: dict) -> dict:
         # gem/food/drive — the hook owns "viral hone se pehle", so the CTA differs
         return ("अभी save कर लो — अगली मंज़िल यही।", "Save karo — agli manzil yahi")
 
+    # ── STORY-SPINE beats (2026-06-18) — Hook → Tension → Payoff → Turn.
+    # Reuses the verified beat-builders above; the score becomes EARNED evidence
+    # inside the TURN (not a standalone "we checked 5 things → score" receipt),
+    # so the short reads as one narrative instead of a data checklist. Gated by
+    # NAKSHIQ_YT_STORY_SPINE (default ON); =0 → legacy data-receipt assembly.
+    _STORY_SPINE = os.environ.get("NAKSHIQ_YT_STORY_SPINE", "1") != "0"
+    _HI_MONTHS = {1: "जनवरी", 2: "फ़रवरी", 3: "मार्च", 4: "अप्रैल", 5: "मई", 6: "जून",
+                  7: "जुलाई", 8: "अगस्त", 9: "सितंबर", 10: "अक्टूबर", 11: "नवंबर", 12: "दिसंबर"}
+    _best = dest.get("best_months") or []
+
+    def b_tag():
+        cl = _hi_clauses(tagline_hi)
+        return (cl[0] + "।", deva_to_latin(cl[0])) if cl else None
+
+    def b_when_wait():
+        try:
+            bm = _HI_MONTHS.get(int(_best[0])) if _best else None
+        except Exception:
+            bm = None
+        if bm:
+            return (f"रुक जाओ — {bm} में जाओ, तब ये जगह अपने असली रंग में होती है।",
+                    f"Ruk jao — {bm} mein, tab asli rang")
+        return ("रुक जाओ — सही मौसम का इंतज़ार करो।", "Ruk jao — sahi mausam ka intezaar")
+
+    def b_when_go():
+        return ("और अभी मौसम इसके हक़ में है — सही वक़्त यही है।",
+                "Aur abhi mausam iske haq mein — sahi waqt yahi")
+
+    def b_warn_rule():
+        if elev and elev >= 3500:
+            return ("एक नियम — ऊँचाई पर शरीर को ढलने का वक़्त दो, वरना पहाड़ की बीमारी तोड़ देगी।",
+                    "Ek niyam — body ko dhalne do, warna pahaad ki bimari")
+        if carry_extra and pump_ok:
+            return (f"पेट्रोल सिर्फ़ {pump} में मिलेगा — टंकी फुल रखो, जरकन साथ।",
+                    f"Petrol sirf {pump} — tank full, jerry can saath")
+        if summer_low is not None and summer_low <= 4:
+            return (f"रातें {summer_low} डिग्री तक गिरती हैं — गर्म कपड़े ज़रूर।",
+                    f"Raatein {summer_low}°C tak — garam kapde zaroor")
+        return ("जाओ — पर पूरी तैयारी के साथ।", "Jao — par poori taiyari ke saath")
+
+    def b_warn_extra():
+        if bsnl_only:
+            return ("और यहाँ सिर्फ़ BSNL टिकता है — बाकी सब डेड।", "Sirf BSNL — baaki sab dead")
+        if net and not nets:
+            return ("और फ़ोन यहाँ काम नहीं करेगा — सब पहले से सेव कर लो, किसी को अपनी योजना बता दो।",
+                    "Phone nahi chalega — sab save, plan batao")
+        if summer_low is not None and summer_low <= 4 and not (elev and elev >= 3500):
+            return (f"और रातें {summer_low} डिग्री तक — गर्म कपड़े साथ।", f"Raatein {summer_low}°C — garam kapde")
+        return b_emergency()
+
+    def b_turn(a):
+        if a == "wait":
+            return (f"अभी का स्कोर सिर्फ़ {disp_voice} — जगह बुरी नहीं, महीना ग़लत है।",
+                    f"Abhi score {disp} — jagah nahi, mahina galat")
+        if a == "warn":
+            return (f"इसीलिए स्कोर {disp_voice} — ख़ूबसूरती के लिए नहीं, बल्कि इसलिए कि सही तैयारी के साथ ये जगह बदल देती है।",
+                    f"Isliye score {disp} — sahi taiyari ke saath ye jagah badal deti hai")
+        if a == "food":
+            return (f"स्कोर {disp_voice} — और यही स्वाद बार-बार वापस खींचता है।",
+                    f"Score {disp} — yahi swaad wapas kheenchta hai")
+        if a == "drive":
+            return (f"स्कोर {disp_voice} — पर असली इनाम मंज़िल नहीं, वो रास्ता है।",
+                    f"Score {disp} — asli inaam manzil nahi, raasta hai")
+        return (f"स्कोर {disp_voice} — वायरल होने से पहले देख लो।",
+                f"Score {disp} — viral hone se pehle dekh lo")
+
     # ── arc selection (priority cascade) ──
     is_risky = (elev and elev >= 3500) or diff == "hard" or bsnl_only
     has_drive = last_km == "hard" or any(
@@ -474,56 +540,80 @@ def _template_spec(dest: dict) -> dict:
     even = (sum(ord(c) for c in (dest.get("id") or "x")) % 2 == 0)
     profile = _profile_for(dest)
 
-    if raw <= 2:                                   # DON'T-GO / WAIT (score leads)
-        arc, kind = "wait", "wait"
-        profile = "swara_deep" if even else "madhur_deep"
-        body = [b_hook("wait"), b_shock(), b_wait_reason()]
-    elif is_risky:                                  # WARN-then-WHY (go prepared)
-        arc, kind = "warn", "warn"
-        profile = "swara_deep" if even else "madhur_deep"
-        # hook already sells the altitude stakes → skip b_altitude (redundant),
-        # keep it tight: hook → why → one logistics beat → emergency
-        body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
-    elif dish and eatery and raw >= 4:              # FOOD-ANCHOR
-        arc, kind = "food", "gem"
-        # why between hook and b_food so the dish isn't said back-to-back
-        body = [b_hook("food"), b_why(), b_food(), b_cost() or b_network()]
-    elif has_drive and raw >= 3:                    # THE-DRIVE
-        arc, kind = "drive", "gem"
-        # hook already says "the road is the story" → drop b_drive, go to substance
-        body = [b_hook("drive"), b_why(), b_fuel() or b_network() or b_cold()]
-    else:                                            # GEM (default, go-now)
-        arc, kind = "gem", "gem"
-        body = [b_hook("gem"), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
+    if _STORY_SPINE:
+        # Hook → Tension → Payoff → Turn (score folded into the turn as earned).
+        if raw <= 2:                                # WAIT
+            arc, kind = "wait", "wait"
+            profile = "swara_deep" if even else "madhur_deep"
+            body = [b_hook("wait"), b_wait_reason(), b_when_wait(), b_turn("wait")]
+        elif is_risky:                              # WARN (go prepared)
+            arc, kind = "warn", "warn"
+            profile = "swara_deep" if even else "madhur_deep"
+            body = [b_hook("warn"), b_why(punchy=False) or b_tag(), b_warn_rule(), b_warn_extra(), b_turn("warn")]
+        elif dish and eatery and raw >= 4:          # FOOD
+            arc, kind = "food", "gem"
+            body = [b_hook("food"), b_why(punchy=False) or b_tag(), b_food(), b_turn("food")]
+        elif has_drive and raw >= 3:                # DRIVE
+            arc, kind = "drive", "gem"
+            body = [b_hook("drive"), b_why(punchy=False) or b_tag(), b_fuel() or b_cold() or b_drive(), b_turn("drive")]
+        else:                                       # GEM (default, go-now)
+            arc, kind = "gem", "gem"
+            body = [b_hook("gem"), b_why(punchy=False) or b_tag(),
+                    b_food() or b_cold() or b_cost() or b_network() or b_altitude() or b_when_go(),
+                    b_turn("gem")]
+        seen, uniq = set(), []
+        for beat in body:
+            if not beat:
+                continue
+            k = beat[1].lower()[:26]
+            if k in seen:
+                continue
+            seen.add(k); uniq.append(beat)
+        # floor: never ship fewer than hook + turn
+        if len(uniq) < 2:
+            uniq = [b for b in (b_hook(arc), b_turn(kind if kind == "wait" else "gem")) if b]
+        seq = uniq[:6] + [b_cta(kind)]
+    else:
+        if raw <= 2:                                   # DON'T-GO / WAIT (score leads)
+            arc, kind = "wait", "wait"
+            profile = "swara_deep" if even else "madhur_deep"
+            body = [b_hook("wait"), b_shock(), b_wait_reason()]
+        elif is_risky:                                  # WARN-then-WHY (go prepared)
+            arc, kind = "warn", "warn"
+            profile = "swara_deep" if even else "madhur_deep"
+            body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
+        elif dish and eatery and raw >= 4:              # FOOD-ANCHOR
+            arc, kind = "food", "gem"
+            body = [b_hook("food"), b_why(), b_food(), b_cost() or b_network()]
+        elif has_drive and raw >= 3:                    # THE-DRIVE
+            arc, kind = "drive", "gem"
+            body = [b_hook("drive"), b_why(), b_fuel() or b_network() or b_cold()]
+        else:                                            # GEM (default, go-now)
+            arc, kind = "gem", "gem"
+            body = [b_hook("gem"), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
+        seen, uniq = set(), []
+        for beat in body:
+            if not beat:
+                continue
+            k = beat[1].lower()[:26]
+            if k in seen:
+                continue
+            seen.add(k); uniq.append(beat)
+        body = uniq
+        if len(body) < 3:
+            for c in _hi_clauses(why_hi):
+                cand = (c + "।", deva_to_latin(c))
+                if cand[1].lower()[:26] not in seen:
+                    body.append(cand); seen.add(cand[1].lower()[:26])
+                if len(body) >= 3:
+                    break
+        if len(body) < 2:
+            where = f"{state} की " if state else ""
+            body = [(f"{name} — {where}एक ऐसी जगह जिसे लोग अक्सर miss कर देते हैं।",
+                     f"{name}{(' — ' + state) if state else ''}")]
+        cap = 5 if arc == "warn" else 4
+        seq = body[:cap] + [b_receipt(), b_cta(kind)]
 
-    # filter + dedupe body
-    seen, uniq = set(), []
-    for beat in body:
-        if not beat:
-            continue
-        k = beat[1].lower()[:26]
-        if k in seen:
-            continue
-        seen.add(k); uniq.append(beat)
-    body = uniq
-    # pad short bodies with extra why-clauses (still real, audited data)
-    if len(body) < 3:
-        for c in _hi_clauses(why_hi):
-            cand = (c + "।", deva_to_latin(c))
-            if cand[1].lower()[:26] not in seen:
-                body.append(cand); seen.add(cand[1].lower()[:26])
-            if len(body) >= 3:
-                break
-    # absolute floor (no tagline_hi AND no why_hi — ~never: 525/525 have tagline_hi)
-    if len(body) < 2:
-        where = f"{state} की " if state else ""
-        body = [(f"{name} — {where}एक ऐसी जगह जिसे लोग अक्सर miss कर देते हैं।",
-                 f"{name}{(' — ' + state) if state else ''}")]
-
-    # WARN gets one extra body slot so the emergency-number beat survives
-    # (hook → why → altitude → fuel → emergency); other arcs stay at 4.
-    cap = 5 if arc == "warn" else 4
-    seq = body[:cap] + [b_receipt(), b_cta(kind)]
     lines = [_single_sentence(d) for d, _ in seq]   # 1 sentence/line → captions stay 1:1
     caps = [c for _, c in seq]
     return {
