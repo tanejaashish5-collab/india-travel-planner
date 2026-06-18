@@ -4838,3 +4838,96 @@ Date range: 2026-04-15 → 2026-06-16
 2026-06-17 20:34:00  INFO      
 Date range: 2026-04-15 → 2026-06-17
 2026-06-17 20:34:00  INFO      ════════════════════════════════════════════════════════════
+2026-06-18 08:24:51  INFO      ════════════════════════════════════════════════════════════
+2026-06-18 08:24:51  INFO      Nakshiq Autoposter · MORNING · 2026-06-18 · weekday=3
+2026-06-18 08:24:51  INFO      ════════════════════════════════════════════════════════════
+2026-06-18 08:24:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-18 08:25:33  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-18 08:25:33  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-18 08:25:34  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-18 08:25:34  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-18 08:25:37  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-18 08:25:37  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-18 08:25:57  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-18 08:25:57  INFO      Morning format (themed-week-3→anti_trap): v2_tourist_trap_split [27% vs target 15%] (0/14 never featured)
+2026-06-18 08:25:57  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: score_card
+2026-06-18 08:25:57  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 62
+2026-06-18 08:25:57  INFO      Fingerprint dedup snapshot — 61 dests in 7d · 143 (dest,fmt) pairs in 30d · 144 media in 60d
+2026-06-18 08:26:04  INFO      Shared best destination locked: Sangla Valley
+2026-06-18 08:26:04  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-18 08:26:04  INFO      [instagram/nakshiq] Generating v2_tourist_trap_split post...
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: nako in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: sissu in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: kaza in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: keylong in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: sangla in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: kargil in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: leh in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  WARNING   v2_tourist_trap_split: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-18 08:26:04  INFO      [instagram/nakshiq] Caption ready (249 chars, dest=sangla)
+2026-06-18 08:26:04  ERROR     [instagram/nakshiq] COOLDOWN VIOLATION: sangla is in the 14-day window but was selected for v2_tourist_trap_split — skipping (pool likely exhausted or a dedup regression).
+2026-06-18 08:26:04  INFO      [facebook/Nakshiq] Generating v2_tourist_trap_split post...
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: nako in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: sissu in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: kaza in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: keylong in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: sangla in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: kargil in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  INFO      v2_tourist_trap_split: leh in 14-day cooldown — SKIPPING dest
+2026-06-18 08:26:04  WARNING   v2_tourist_trap_split: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-18 08:26:04  INFO      [facebook/Nakshiq] Caption ready (396 chars, dest=sangla)
+2026-06-18 08:26:04  ERROR     [facebook/Nakshiq] COOLDOWN VIOLATION: sangla is in the 14-day window but was selected for v2_tourist_trap_split — skipping (pool likely exhausted or a dedup regression).
+2026-06-18 08:26:04  INFO      State saved. Run complete.
+2026-06-18 08:26:04  INFO      ════════════════════════════════════════════════════════════
