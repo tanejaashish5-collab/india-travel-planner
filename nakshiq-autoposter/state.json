@@ -38,7 +38,7 @@
     "PdMu0": "2026-06-17",
     "m8EAd_yt_short": "2026-06-18"
   },
-  "last_sync": "2026-06-18T08:25:33.550126+00:00",
+  "last_sync": "2026-06-18T17:35:57.379683+00:00",
   "posted_destinations": [
     {
       "destination_id": "nako",
@@ -3530,7 +3530,8 @@
         "2026-06-05"
       ],
       "gulmarg": [
-        "2026-06-06"
+        "2026-06-06",
+        "2026-06-18"
       ],
       "kaza": [
         "2026-06-07"
@@ -3887,6 +3888,9 @@
       ],
       "photography-spots": [
         "2026-06-17"
+      ],
+      "best-family-destinations": [
+        "2026-06-18"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -4041,6 +4045,11 @@
       "leh": [
         "2026-06-17"
       ]
+    },
+    "collection_carousel_dests:best-family-destinations": {
+      "gulmarg": [
+        "2026-06-18"
+      ]
     }
   },
   "infographic": {
@@ -4055,8 +4064,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
-    "collection": "photography-spots"
+    "shared_best": "yusmarg",
+    "collection": "best-family-destinations"
   },
   "manual_skip_dests": {}
 }
