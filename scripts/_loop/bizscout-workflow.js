@@ -22,7 +22,9 @@ export const meta = {
     { title: 'Harvest', detail: 'channel agents research live 2026 demand signals' },
     { title: 'Synthesize', detail: 'craft NEW businesses, each tagged with its source_channel' },
     { title: 'Validate+Score', detail: 'competitors + 6-factor rubric per idea' },
-    { title: 'FactCheck', detail: 'independently verify each top idea’s load-bearing claim' },
+    { title: 'Verify', detail: 'N independent refute-mode skeptics attack each top idea’s claim + moat (live web)' },
+    { title: 'Judge', detail: 'Sonnet panel adjudicates -> verdict adjusts the rank (stand/flag/downgrade/kill)' },
+    { title: 'FactCheck', detail: 'cheap single-pass primary-source check of the next tier of ideas' },
   ],
 }
 
@@ -117,6 +119,29 @@ for (const i of validated) { const s = i.validation?.scores || {}; i.composite =
 validated.sort((a, b) => (b.composite || 0) - (a.composite || 0))
 const topN = Math.min(args?.full ? 12 : 6, validated.length)
 
+// ---- adversarial verify -> judge (2026-06-17, the Fable-class lift) -------------------
+// The very top ideas are attacked by independent refute-mode skeptics + adjudicated by a
+// judge whose verdict has teeth (re-ranks by verified_composite). The next tier still gets
+// the cheap single-pass fact-check so coverage isn't lost. <=3 agents in flight throughout.
+const VCFG = { skepticsPerIdea: 2, refuteThreshold: 2, downgradeFactor: 0.7, deepVerifyTopN: args?.full ? 4 : 2 }
+const deepN = Math.min(VCFG.deepVerifyTopN, validated.length)
+async function chunked(thunks, n) { const out = []; for (let i = 0; i < thunks.length; i += n) { out.push(...await parallel(thunks.slice(i, i + n))) } return out }
+
+const SKEPTIC_SCHEMA = { type: 'object', required: ['name', 'claim_verdict', 'moat_verdict'], properties: {
+  name: { type: 'string' },
+  claim_verdict: { type: 'string', enum: ['confirmed', 'unsupported', 'refuted'] },
+  claim_reason: { type: 'string' }, claim_source: { type: 'string', description: 'the live URL you actually fetched' },
+  moat_verdict: { type: 'string', enum: ['holds', 'weak', 'broken'] },
+  moat_reason: { type: 'string' }, competitors_found: { type: 'array', items: { type: 'string' } },
+} }
+const JUDGE_SCHEMA = { type: 'object', required: ['name', 'claim_status', 'score_action', 'summary'], properties: {
+  name: { type: 'string' },
+  claim_status: { type: 'string', enum: ['confirmed', 'unsupported', 'refuted'] },
+  confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
+  moat_assessment: { type: 'string' },
+  score_action: { type: 'string', enum: ['stand', 'flag_unverified', 'downgrade', 'kill'] },
+  summary: { type: 'string' },
+} }
 const FC_SCHEMA = { type: 'object', required: ['name', 'fact_checks'], properties: {
   name: { type: 'string' },
   fact_checks: { type: 'array', items: { type: 'object', required: ['claim', 'verified'], properties: {
@@ -125,19 +150,56 @@ const FC_SCHEMA = { type: 'object', required: ['name', 'fact_checks'], propertie
     source: { type: 'string', description: 'the source consulted (URL/name)' },
   } } },
 } }
+
+const SKEPTIC_HEAD = `CRITICAL: return ONLY the JSON for the schema. Do NOT invoke any Skill, run apply/merge scripts, write or edit ledger/report files, or spawn sub-agents. You are an INDEPENDENT SKEPTIC on an adversarial verification panel. REFUTE — assume the idea is wrong until a LIVE primary/authoritative source proves otherwise. You MUST run live WebSearch/WebFetch; NEVER answer from memory. Attack BOTH:\n1) THE CLAIM. Find the primary source. claim_verdict="refuted" ONLY if a live source ACTIVELY CONTRADICTS it; "unsupported" if you simply cannot find support (absence of evidence is NOT refutation); "confirmed" ONLY if a live primary source directly supports it. Put the live URL in claim_source.\n2) THE MOAT / COMPETITION. Actively HUNT for competitors in the EXACT market/geography named. A "zero competitors / first-mover / nobody does this" claim is REFUTED the moment you find one real player. moat_verdict="broken" if >=1 direct competitor the claim ignored; "weak" if only adjacent players; "holds" only if a real wedge survives. List who you found in competitors_found.\n`
+const JUDGE_HEAD = `CRITICAL: return ONLY the JSON for the schema. Do NOT invoke any Skill or write any file. You are the JUDGE of an adversarial verification panel — the honest adjudicator, not an advocate. Given K skeptics who each tried to refute an idea's load-bearing claim and moat, render ONE calibrated verdict. Rules:\n- claim_status="refuted" when >= refuteThreshold skeptics found a LIVE source that ACTIVELY CONTRADICTS the claim -> score_action="downgrade" (or "kill" if that claim was the idea's whole reason to exist).\n- claim_status="unsupported" when skeptics found no support but nothing contradicts -> score_action="flag_unverified" (do NOT kill; absence isn't disproof).\n- claim_status="confirmed" when >=1 skeptic confirmed via a primary source AND none refuted -> score_action="stand".\n- MOAT TEETH: when a MAJORITY of skeptics return moat_verdict="broken" (direct competitors the no-competition/first-mover assumption ignored), set score_action to AT LEAST "downgrade" even if the claim is confirmed or unsupported — the rubric's moat/competition scores were inflated by a moat that does not exist. Reserve "stand" for ideas whose claim holds AND whose moat survives. Always describe what was found in moat_assessment; never let an unverified absence inflate the moat.\n`
+
+phase('Verify')
+for (const idea of validated.slice(0, deepN)) {
+  const ctx = `IDEA: ${idea.name} [${idea.shape}]\n${idea.one_liner}\nLOAD-BEARING CLAIM: ${idea.validation?.demand_evidence || idea.the_insight}\nMOAT / NO-COMPETITION ASSUMPTION: ${idea.moat_type || ''} / ${idea.validation?.surviving_wedge || '(no stated wedge)'}\nWHY-NOW: ${idea.why_now || ''}`
+  idea._skeptics = (await chunked(Array.from({ length: VCFG.skepticsPerIdea }, (_, k) => () => agent(
+    `${SKEPTIC_HEAD}${ctx}\n\nYou are skeptic #${k + 1} of ${VCFG.skepticsPerIdea}. Search independently; find what the others might miss. Be specific and cite live URLs. Set name to exactly "${idea.name}".`,
+    { label: `skeptic${k + 1}:${(idea.name || '').slice(0, 16)}`, phase: 'Verify', model: 'haiku', schema: SKEPTIC_SCHEMA }
+  )), 3)).filter(Boolean)
+}
+
+phase('Judge')
+const judged = (await chunked(validated.slice(0, deepN).map((idea) => () => agent(
+  `${JUDGE_HEAD}refuteThreshold = ${VCFG.refuteThreshold}.\nIDEA: ${idea.name}\nLOAD-BEARING CLAIM: ${idea.validation?.demand_evidence || idea.the_insight}\n\nSKEPTIC VERDICTS (JSON):\n${JSON.stringify(idea._skeptics || [])}\nReturn the final verdict (claim_status, confidence, moat_assessment, score_action, one-line summary). Set name to exactly "${idea.name}".`,
+  { label: `judge:${(idea.name || '').slice(0, 20)}`, phase: 'Judge', schema: JUDGE_SCHEMA }
+)), 3)).filter(Boolean)
+const judgeByName = new Map(judged.map((j) => [j.name, j]))
+for (const i of validated.slice(0, deepN)) {
+  const sk = i._skeptics || []
+  const j = judgeByName.get(i.name) || { claim_status: 'unsupported', score_action: 'flag_unverified', confidence: 'low', moat_assessment: '', summary: 'judge unavailable — treat as unverified' }
+  i.verification = { skeptics: sk, judge: j }
+  i.fact_checks = [{ claim: (i.validation?.demand_evidence || i.the_insight), verified: j.claim_status === 'refuted' ? 'false' : j.claim_status === 'confirmed' ? 'true' : 'unclear', source: (sk.find((s) => s.claim_source) || {}).claim_source || '' }]
+  i.verified_composite = j.score_action === 'kill' ? 0 : j.score_action === 'downgrade' ? Math.round((i.composite || 0) * VCFG.downgradeFactor * 100) / 100 : (i.composite || 0)
+  i.verify_flag = j.score_action
+}
+
+// cheap single-pass fact-check for the next tier (the weekly run can afford the coverage)
 phase('FactCheck')
-const facts = await parallel(validated.slice(0, topN).map((i) => () => agent(
+const cheap = validated.slice(deepN, topN)
+const facts = (await chunked(cheap.map((i) => () => agent(
   `Independent fact-checker. Verify the single most load-bearing demand claim behind a business idea against a PRIMARY or authoritative source (gov site, regulator, official filing, the company itself, a named study). Do NOT trust marketing blogs or the idea's own pitch.\nIDEA: ${i.name}\nCLAIM TO CHECK: ${i.validation?.demand_evidence || i.the_insight}\n\nSearch for the original source. Return 1-2 fact_checks with verified = 'true' ONLY if a primary source confirms it; 'false' if contradicted; 'unclear' if you cannot confirm. Set name to exactly "${i.name}".`,
   { label: `fact:${(i.name || '').slice(0, 24)}`, phase: 'FactCheck', model: 'haiku', schema: FC_SCHEMA }
-)))
-const factByName = new Map(facts.filter(Boolean).map((f) => [f.name, f.fact_checks]))
-for (const i of validated) if (factByName.has(i.name)) i.fact_checks = factByName.get(i.name)
+)), 3)).filter(Boolean)
+const factByName = new Map(facts.map((f) => [f.name, f.fact_checks]))
+for (const i of validated) {
+  if (i.verify_flag) continue // already deep-verified above
+  if (factByName.has(i.name)) { i.fact_checks = factByName.get(i.name); i.verify_flag = 'fact-checked' }
+  i.verified_composite = i.composite
+}
+for (const i of validated) if (i.verified_composite == null) { i.verified_composite = i.composite; i.verify_flag = i.verify_flag || 'unverified' }
+validated.sort((a, b) => ((b.verified_composite ?? b.composite ?? 0) - (a.verified_composite ?? a.composite ?? 0)))
 
 // shape the output for bizscout-ledger.mjs (scored_ideas[] with source_channel + validation + fact_checks)
 const scored_ideas = validated.map((i) => ({
   name: i.name, shape: i.shape, source_channel: i.source_channel, one_liner: i.one_liner,
-  the_insight: i.the_insight, monetization: i.monetization, composite: i.composite,
-  validation: i.validation, fact_checks: i.fact_checks || [],
+  the_insight: i.the_insight, monetization: i.monetization,
+  composite: i.composite, verified_composite: i.verified_composite ?? i.composite, verify_flag: i.verify_flag || 'unverified',
+  validation: i.validation, verification: i.verification || null, fact_checks: i.fact_checks || [],
 }))
-log(`done: ${scored_ideas.length} scored, top ${topN} fact-checked`)
+log(`done: ${scored_ideas.length} scored, top ${deepN} adversarially verified + ${Math.max(0, topN - deepN)} fact-checked`)
 return { scored_ideas, signal_count: allSignals.length, idea_count: ideas.length, channels: selKeys, deep: !!args?.full }

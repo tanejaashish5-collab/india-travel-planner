@@ -22,7 +22,11 @@
  *                      verification pass; an idea with an unverified load-bearing claim is
  *                      flagged UNVERIFIED in the digest, never presented as fact.
  *   4. COMPOSITE      — the same weighted 6-factor rubric, computed in code (not by an LLM),
- *                      so scores are comparable across runs.
+ *                      so scores are comparable across runs. The ledger RANKS + DISPLAYS on
+ *                      `effScore` = the rubric after the adversarial verify→judge verdict
+ *                      (verified_composite: a "downgrade" cuts it, a "kill" zeroes it), while
+ *                      `composite` stays the stable cross-run rubric. So a high-rubric idea whose
+ *                      moat the skeptics demolish actually drops in the ranking, not just in a note.
  *
  * Read-only re: the world; writes ONLY .loop/ scratch + data/research/OPPORTUNITIES.md
  * (the human ledger). Applies nothing, sends nothing (the /loop-bizscout skill owns the
@@ -57,6 +61,19 @@ export function compositeScore(scores = {}, weights = WEIGHTS) {
   let total = 0;
   for (const [k, w] of Object.entries(weights)) total += (Number(scores[k]) || 0) * w;
   return Math.round(total * 100) / 100;
+}
+
+/**
+ * EFFECTIVE score — what the ledger ranks and displays on. It is the pure rubric
+ * `composite` adjusted by the adversarial-verify→judge verdict (verified_composite:
+ * a "downgrade" cuts it, a "kill" zeroes it). `composite` itself stays the stable,
+ * cross-run-comparable rubric (per the COMPOSITE invariant above); effScore is the
+ * rubric-after-the-verdict's-teeth, so a demolished moat actually drops the rank.
+ * Falls back to composite when an idea predates the verify layer (no verified_composite).
+ */
+export function effScore(o) {
+  if (!o) return 0;
+  return o.verified_composite != null ? o.verified_composite : (o.composite || 0);
 }
 
 /** token set of a name+blurb, minus stopwords, for fuzzy dedupe. */
@@ -112,8 +129,8 @@ export function channelRichness(ideas) {
     if (!by.has(ch)) by.set(ch, { channel: ch, count: 0, dupes: 0, sum: 0, max: 0 });
     const e = by.get(ch);
     e.count++;
-    e.sum += i.composite || 0;
-    e.max = Math.max(e.max, i.composite || 0);
+    e.sum += effScore(i);
+    e.max = Math.max(e.max, effScore(i));
     if (i._dup) e.dupes++;
   }
   const rows = [...by.values()].map((e) => {
@@ -140,6 +157,11 @@ export function normalizeIdea(raw, { today } = {}) {
   const scores = v.scores || raw.scores || {};
   const name = raw.name || raw.title || "(unnamed)";
   const composite = raw.composite != null ? raw.composite : compositeScore(scores);
+  // the adversarial-verify→judge verdict (bizscout/radar workflows). verified_composite is
+  // the rubric after the verdict's teeth; verify_flag is the verdict badge. Both optional —
+  // ideas that predate the verify layer simply carry null and effScore falls back to composite.
+  const verified_composite = raw.verified_composite != null ? raw.verified_composite : composite;
+  const verify_flag = raw.verify_flag || null;
   const fc = raw.fact_checks || v.fact_checks || [];
   return {
     key: slugify(name),
@@ -154,6 +176,8 @@ export function normalizeIdea(raw, { today } = {}) {
     market_size: v.market_size || raw.market_size || "",
     scores,
     composite,
+    verified_composite,
+    verify_flag,
     verdict: v.verdict || raw.verdict || "YELLOW",
     confidence: v.confidence || raw.confidence || "medium",
     fact_checks: fc,
@@ -161,14 +185,14 @@ export function normalizeIdea(raw, { today } = {}) {
     first_seen: today || raw.first_seen || "",
     last_seen: today || raw.last_seen || "",
     runs_seen: raw.runs_seen || 1,
-    score_history: raw.score_history || (composite ? [{ date: today || "", composite }] : []),
+    score_history: raw.score_history || (composite ? [{ date: today || "", composite, verified_composite }] : []),
   };
 }
 
 /** Collapse near-duplicates WITHIN one batch, keeping the highest-composite of each cluster. */
 export function dedupeWithin(ideas, opts = {}) {
   const kept = [];
-  for (const idea of [...ideas].sort((a, b) => (b.composite || 0) - (a.composite || 0))) {
+  for (const idea of [...ideas].sort((a, b) => effScore(b) - effScore(a))) {
     if (!kept.some((k) => isDuplicate(idea, k, opts))) kept.push(idea);
   }
   return kept;
@@ -181,7 +205,7 @@ export function classifyAgainstLedger(fresh, ledger, opts = {}) {
     const prior = ledger.find((p) => isDuplicate(idea, p, opts));
     if (!prior) { out.new.push(idea); continue; }
     idea._dup = true;
-    const delta = +(idea.composite - prior.composite).toFixed(2);
+    const delta = +(effScore(idea) - effScore(prior)).toFixed(2);
     if (Math.abs(delta) >= (opts.rescoreDelta ?? 0.3)) out.rescored.push({ idea, prior, delta });
     else out.seen.push({ idea, prior });
   }
@@ -198,16 +222,18 @@ export function mergeLedger(ledger, classified, today) {
     const tgt = findPrior(prior);
     if (!tgt) continue;
     tgt.composite = idea.composite; tgt.scores = idea.scores; tgt.verdict = idea.verdict;
+    tgt.verified_composite = idea.verified_composite != null ? idea.verified_composite : idea.composite;
+    tgt.verify_flag = idea.verify_flag || tgt.verify_flag || null;
     tgt.fact_checks = idea.fact_checks?.length ? idea.fact_checks : tgt.fact_checks;
     tgt.fact_status = factStatus(tgt.fact_checks);
     tgt.last_seen = today; tgt.runs_seen = (tgt.runs_seen || 1) + 1;
-    tgt.score_history = [...(tgt.score_history || []), { date: today, composite: idea.composite, delta }];
+    tgt.score_history = [...(tgt.score_history || []), { date: today, composite: idea.composite, verified_composite: tgt.verified_composite, delta }];
   }
   for (const { prior } of classified.seen) {
     const tgt = findPrior(prior);
     if (tgt) { tgt.last_seen = today; tgt.runs_seen = (tgt.runs_seen || 1) + 1; }
   }
-  next.sort((a, b) => (b.composite || 0) - (a.composite || 0));
+  next.sort((a, b) => effScore(b) - effScore(a));
   return next;
 }
 
@@ -217,17 +243,23 @@ export function mergeLedger(ledger, classified, today) {
 
 const SHAPE_ICON = { "ai-saas": "🤖", "data-api": "🔌", "content-audience": "📣", "productized-service": "🛠", marketplace: "🏪", other: "•" };
 const factBadge = (s) => ({ verified: "✅ verified", partial: "🟡 partly verified", unverified: "⚠️ UNVERIFIED", refuted: "❌ refuted", unchecked: "· unchecked" }[s] || s);
+// the adversarial-verify→judge verdict badge (verify_flag). Only the teeth cases are loud.
+const verifyBadge = (f) => ({ kill: "☠️ KILLED by verify", downgrade: "⬇️ downgraded by verify", flag_unverified: "🔬 verify: unverified", stand: "🛡️ verify: stands", "fact-checked": "", unverified: "" }[f] || "");
 
 export function buildDigest(classified, richness, today) {
   const n = classified.new.length, r = classified.rescored.length, s = classified.seen.length;
   let md = `# Business-opportunity digest — ${today}\n\n`;
-  md += `_${n} NEW · ${r} re-scored · ${s} already-seen (deduped). Ranked by validated composite (6-factor rubric). `;
-  md += `Every load-bearing claim is independently fact-checked before it reaches you; ⚠️ = an unverified claim, treat with suspicion._\n\n`;
+  md += `_${n} NEW · ${r} re-scored · ${s} already-seen (deduped). Ranked by VERIFIED composite — the 6-factor rubric after the adversarial verify→judge verdict cuts it (a broken moat or refuted claim downgrades; the raw rubric is shown in parentheses). `;
+  md += `Every load-bearing claim is independently checked before it reaches you; ⚠️ = unverified, ⬇️ = the skeptic+judge panel downgraded it, ☠️ = killed._\n\n`;
 
   md += `## 🆕 New opportunities (${n})\n\n`;
   if (!n) md += `_None this run — every candidate was a duplicate of something already in the ledger. Honest scarcity beats repeating yourself._\n\n`;
-  for (const o of [...classified.new].sort((a, b) => b.composite - a.composite)) {
-    md += `### [${o.composite}] ${SHAPE_ICON[o.shape] || "•"} ${o.name}  _(${o.shape} · ${o.verdict} · ${factBadge(o.fact_status)})_\n`;
+  for (const o of [...classified.new].sort((a, b) => effScore(b) - effScore(a))) {
+    const eff = effScore(o);
+    const vb = verifyBadge(o.verify_flag);
+    const wasNote = eff !== o.composite ? ` _(rubric ${o.composite})_` : "";
+    md += `### [${eff}]${wasNote} ${SHAPE_ICON[o.shape] || "•"} ${o.name}  _(${o.shape} · ${o.verdict} · ${factBadge(o.fact_status)}${vb ? ` · ${vb}` : ""})_\n`;
+    if (o.verify_flag === "downgrade" || o.verify_flag === "kill") md += `- _verify verdict: ${o.verify_flag} — the adversarial skeptic+judge panel cut this from the rubric ${o.composite}. See the ledger's \`verification\` for the skeptics' findings._\n`;
     md += `- ${o.one_liner}\n`;
     if (o.the_insight) md += `- **Wedge:** ${o.surviving_wedge || o.the_insight}\n`;
     if (o.demand_evidence) md += `- **Demand:** ${o.demand_evidence}\n`;
@@ -237,7 +269,7 @@ export function buildDigest(classified, richness, today) {
   if (r) {
     md += `## 🔁 Re-scored (evidence moved ≥0.3)\n\n`;
     for (const { idea, delta } of classified.rescored.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta)))
-      md += `- **${idea.name}** ${delta > 0 ? "▲" : "▼"} ${delta > 0 ? "+" : ""}${delta} → ${idea.composite} (${idea.verdict})\n`;
+      md += `- **${idea.name}** ${delta > 0 ? "▲" : "▼"} ${delta > 0 ? "+" : ""}${delta} → ${effScore(idea)} (${idea.verdict}${idea.verify_flag && verifyBadge(idea.verify_flag) ? ` · ${verifyBadge(idea.verify_flag)}` : ""})\n`;
     md += `\n`;
   }
 
@@ -252,10 +284,12 @@ export function buildDigest(classified, richness, today) {
 export function buildHumanLedger(ledger, today) {
   let md = `# OPPORTUNITIES — living ledger\n\n`;
   md += `> Auto-maintained by the Phase 5 business-opportunity scout (\`/loop-bizscout\`). ${ledger.length} ideas, deduped across runs. `;
-  md += `Updated ${today}. Ranked by validated composite (demand·moat·fit·speed·ceiling·competition). ⚠️ = a load-bearing claim is unverified.\n\n`;
+  md += `Updated ${today}. Ranked by VERIFIED composite — the rubric (demand·moat·fit·speed·ceiling·competition) after the adversarial verify→judge verdict; the raw rubric is in (parens) when the verdict moved it. ⚠️ = a load-bearing claim is unverified.\n\n`;
   md += `| # | idea | shape | score | verdict | facts | channel | seen | first |\n|--:|---|---|--:|---|---|---|--:|---|\n`;
   ledger.forEach((o, i) => {
-    md += `| ${i + 1} | **${o.name}** | ${o.shape} | ${o.composite} | ${o.verdict} | ${factBadge(o.fact_status).replace(/^[^ ]+ /, "")} | ${o.source_channel} | ${o.runs_seen}× | ${o.first_seen} |\n`;
+    const eff = effScore(o);
+    const scoreCell = eff !== o.composite ? `${eff} _(${o.composite})_` : `${eff}`;
+    md += `| ${i + 1} | **${o.name}** | ${o.shape} | ${scoreCell} | ${o.verdict} | ${factBadge(o.fact_status).replace(/^[^ ]+ /, "")} | ${o.source_channel} | ${o.runs_seen}× | ${o.first_seen} |\n`;
   });
   md += `\n_Full per-idea detail (wedge, demand proof, competitors, fact-checks) in \`.loop/biz-opportunities-ledger.json\`._\n`;
   return md;
@@ -411,6 +445,35 @@ function selfTest() {
   ]);
   ok("dedupeWithin: collapses near-dup, keeps 2", within.length === 2);
   ok("dedupeWithin: keeps the higher-composite of the pair", within.some((x) => x.name === "DisclosureForge") && !within.some((x) => x.name === "DataLedger"));
+
+  // ---- adversarial-verify→judge teeth: the ledger ranks/displays on effScore ----
+  ok("effScore falls back to composite when no verdict", effScore({ composite: 3.4 }) === 3.4);
+  ok("effScore uses verified_composite when present", effScore({ composite: 3.75, verified_composite: 2.63 }) === 2.63);
+  ok("effScore: a kill (verified 0) is honoured, not read as missing", effScore({ composite: 4.0, verified_composite: 0 }) === 0);
+
+  const vHi = normalizeIdea({ name: "BrokenMoat", one_liner: "high rubric but the moat was demolished by skeptics", scores: sc, composite: 3.75, verified_composite: 2.63, verify_flag: "downgrade" }, { today: "2026-06-17" });
+  ok("normalizeIdea carries verified_composite + verify_flag", vHi.verified_composite === 2.63 && vHi.verify_flag === "downgrade");
+  const cLo = normalizeIdea({ name: "CleanLower", one_liner: "lower rubric but survives verification intact", scores: sc, composite: 3.0, verified_composite: 3.0, verify_flag: "stand" }, { today: "2026-06-17" });
+  const rankMerged = mergeLedger([], { new: [vHi, cLo], rescored: [], seen: [] }, "2026-06-17");
+  ok("ledger ranks by effScore: downgraded 3.75→2.63 sits BELOW clean 3.0", rankMerged[0].name === "CleanLower" && rankMerged[1].name === "BrokenMoat");
+
+  const richV = channelRichness([
+    { source_channel: "alpha", composite: 3.8, verified_composite: 2.0 },
+    { source_channel: "beta", composite: 3.0, verified_composite: 3.0 },
+  ]);
+  ok("richness uses effScore (downgraded alpha ranks below clean beta)", richV[0].channel === "beta");
+
+  const baseL = [normalizeIdea({ name: "FlipFlop", one_liner: "a claim later refuted on re-verify", scores: sc, composite: 3.6, verified_composite: 3.6 }, { today: "2026-06-16" })];
+  const reVer = [normalizeIdea({ name: "FlipFlop", one_liner: "a claim later refuted on re-verify", scores: sc, composite: 3.6, verified_composite: 2.5, verify_flag: "downgrade" }, { today: "2026-06-17" })];
+  const clV = classifyAgainstLedger(reVer, baseL);
+  ok("classify: a verify downgrade on re-merge -> rescored ▼", clV.rescored.length === 1 && clV.rescored[0].delta < 0);
+
+  // the digest + human-ledger render the verdict without throwing (no-I/O render check)
+  const digestMd = buildDigest({ new: [vHi, cLo], rescored: [], seen: [] }, channelRichness([vHi, cLo]), "2026-06-17");
+  ok("buildDigest: effScore headline + rubric note for the downgraded idea", digestMd.includes("[2.63]") && digestMd.includes("rubric 3.75"));
+  ok("buildDigest: tags the downgrade verdict", digestMd.includes("downgraded by verify"));
+  const humanMd = buildHumanLedger(rankMerged, "2026-06-17");
+  ok("buildHumanLedger: score cell shows effScore + raw rubric", humanMd.includes("2.63 _(3.75)_"));
 
   console.log(`\n${fail === 0 ? "ALL GREEN" : "FAILURES"} — ${pass} passed, ${fail} failed`);
   process.exit(fail === 0 ? 0 : 1);

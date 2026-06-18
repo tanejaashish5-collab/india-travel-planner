@@ -29,6 +29,17 @@ const sources = JSON.parse(fs.readFileSync(path.join(ROOT, '.loop/radar-sources.
 const state = JSON.parse(fs.readFileSync(path.join(ROOT, '.loop/radar-state.json'), 'utf8'));
 const ledger = JSON.parse(fs.readFileSync(path.join(ROOT, '.loop/biz-opportunities-ledger.json'), 'utf8'));
 const profile = fs.readFileSync(path.join(ROOT, 'data/research/FOUNDER-PROFILE.md'), 'utf8');
+const config = JSON.parse(fs.readFileSync(path.join(ROOT, '.loop/config.json'), 'utf8'));
+
+// verify layer (2026-06-17 Fable-class lift): find -> adversarial-verify -> judge.
+// Knobs live in config.json (.loop) so the founder can tune without touching code.
+const radarCfg = config.dailyRadar || {};
+const MAX_AGENTS = radarCfg.maxAgentsPerRun || 15;
+const VCFG = Object.assign(
+  { mode: 'adversarial', skepticsPerIdea: 2, deepVerifyTopN: 2, judge: true, refuteThreshold: 2, downgradeFactor: 0.7 },
+  radarCfg.verify || {},
+);
+for (const k of Object.keys(VCFG)) if (k.startsWith('_')) delete VCFG[k]; // drop config comments before embedding
 
 const existingIdeas = (ledger.opportunities || [])
   .map((o) => `${o.name}: ${String(o.one_liner || '').slice(0, 160)}`)
@@ -104,6 +115,7 @@ const synthTail =
   '\n\nEXISTING LEDGER IDEAS — already known; do NOT propose duplicates or thin renames of these (the dedupe layer rejects them anyway). If a signal merely supports an existing idea, skip it:\n' + existingIdeas +
   '\n\nARCHETYPE-SATURATION GUARD (added 2026-06-14): the ledger is already saturated with the "new single-jurisdiction regulatory deadline → compliance SaaS for the forced buyers" shape (SOPAClaim, PaydayReady, SuperGuard, PracticeShield, RegLayer, FOGOLedger, DisclosureForge, DAP ComplySuite, DecisionDisclosure AU…). These near-always land PARK/low-WATCH because the TAM is bounded by one regulation and the value collapses if the deadline slips or a GRC incumbent bundles it. So do NOT surface yet another deadline-compliance-tool UNLESS it clears a HIGHER bar: a durable thesis BEYOND the single deadline — recurring obligations spanning ≥2 regulations that compound spend, OR a proprietary-data / network / distribution moat the incumbents cannot clone. A bare "deadline X forces buyers to comply, so build the dashboard" is a thin member of a saturated cluster — skip it.' +
   '\n\nDISTRIBUTION-FIT GUARD (added 2026-06-15): the founder\'s only proven go-to-market muscles are owned-audience/automation (newsletters, autoposted channels, SEO) and India↔Australia corridor/licensing/partner-embed — NOT cold outbound, enterprise field-sales, or feet-on-street to offline buyers (FOUNDER-PROFILE: "cold outbound sales as the primary GTM = does NOT fit"). Two ideas this shape slipped through on 2026-06-15 with high conviction yet were unbuyable for him: ONDCBackOffice (a ₹499/mo SaaS whose customers are 1.16-lakh OFFLINE tier-2 retailers reachable only by field sales) and PETrace (compliance SaaS to enterprise CFOs reachable only by outbound). For EVERY candidate, name the cheapest realistic way the FOUNDER reaches its buyer: if the only path is cold-outbound / enterprise field-sales / offline feet-on-street with no owned-audience and no credible partner-embed channel, score founder_fit ≤2 and prefer to skip — a high-conviction idea he structurally cannot distribute is noise, not signal.' +
+  '\n\nKNOWN-FALSE-CLAIMS GUARD (added 2026-06-17): some signals recur with a stale "why-now" that the fact-check has already refuted more than once. Do NOT build an idea whose why-now rests on any of these, and down-weight a signal that leads with one: (1) the India–Australia ECTA "tariff-free unlock from Jan 1 2026" framing — ECTA has been in force and progressively tariff-free since 29 Dec 2022; there is NO new Jan-2026 tariff event (refuted on the 06-11 MadeInIndia Shelf idea and again in the 06-17 franchise harvest). India↔AU trade ideas are still welcome, but the wedge must NOT hinge on a fictional 2026 tariff cliff. Also: a harvest claim of "ZERO competitors / no one is doing this in <language/market>" is an UNVERIFIED absence — treat it as "none found in our quick search", never as proof of a first-mover moat (the 06-17 FundedTrader Hindi "zero Hindi prop-trading channels" claim was refuted by a 30-second YouTube search); do not let an unverified absence inflate the moat/competition factor.' +
   '\n\n' + ASHISH + '\n\n' + BAN +
   '\n\nFor EACH idea: name, shape, source_channel = the EXACT channel of the grounding signal, one_liner, the_insight (the non-obvious wedge), moat_type, target_customer, monetization, why_now (tie to the specific signal + date), and 3-4 web search_queries to validate it. Prefer defensible moats (proprietary-data/regulatory/audience/network/automation) and real evidenced demand.';
 
@@ -118,6 +130,28 @@ const fcHead =
   'Independent fact-checker. Verify the single most load-bearing demand claim behind a business idea against a PRIMARY or authoritative source (gov site, regulator, official filing, the company itself, a named study). Do NOT trust marketing blogs or the ideas own pitch.\n';
 const fcTail =
   '\nSearch for the original source — you MUST run a LIVE WebSearch/WebFetch; NEVER answer from memory or your training-data knowledge cutoff. Return 1-2 fact_checks with verified = "true" ONLY if a live primary source confirms it; "false" ONLY if a live source actively CONTRADICTS it (absence of evidence — e.g. "Wikipedia does not list it" or "I have no record of it" — is "unclear", NEVER "false"; refuted-on-absence was the 2026-06-12 Trimble/Document Crunch false-refutation); "unclear" if sources are blocked/inaccessible or you cannot confirm either way. In source, name the live URL you actually fetched.';
+
+// ---- adversarial verify (2026-06-17): N independent skeptics REFUTE each top idea ------
+// A swarm of skeptics + a judge reconstructs the quality ceiling a single frontier pass
+// would give (the Fable-class lift). Skeptics are Haiku (web research); the judge is
+// Sonnet (genuine synthesis/judgement — the one place a bigger model earns its keep).
+const skepticHead =
+  NO_ROGUE +
+  'You are an INDEPENDENT SKEPTIC on an adversarial verification panel. Your job is to REFUTE — assume the idea is wrong until a LIVE primary/authoritative source proves otherwise. You MUST run live WebSearch/WebFetch; NEVER answer from memory or training data. You are given a business idea, its single most load-bearing demand/why-now claim, and its moat / no-competition assumption. Attack BOTH:\n' +
+  '1) THE CLAIM. Hunt for the primary source (regulator, official filing, the company itself, a named study). claim_verdict = "refuted" ONLY if a live source ACTIVELY CONTRADICTS the claim. claim_verdict = "unsupported" if you simply cannot find support — absence of evidence is NOT refutation (the 2026-06-12 Trimble false-refutation: "Wikipedia does not list it" = unsupported, never refuted). claim_verdict = "confirmed" ONLY if a live primary source directly supports it. Put the live URL you fetched in claim_source.\n' +
+  '2) THE MOAT / COMPETITION. Actively HUNT for competitors in the EXACT market, language and geography named. A "zero competitors / first-mover / nobody does this in <X>" assumption is REFUTED the moment you find even one real player (the 2026-06-17 "zero Hindi prop-trading channels" claim died to a 30-second YouTube search). moat_verdict = "broken" if you find >=1 direct competitor the claim ignored; "weak" if only adjacent/substitute players exist; "holds" only if a genuine defensible wedge survives your search. List who you found in competitors_found.\n';
+const skepticTail =
+  '\nBe specific and cite live URLs. Do NOT grade generously — your value to the panel is finding what the optimistic pitch missed.';
+
+const judgeHead =
+  NO_ROGUE +
+  'You are the JUDGE of an adversarial verification panel — the honest adjudicator, not an advocate. You are given a business idea, its load-bearing claim, and K independent skeptics who each tried to refute that claim and its moat. Synthesize their findings into ONE calibrated verdict. Rules:\n' +
+  '- claim_status = "refuted" when at least refuteThreshold skeptics found a LIVE source that ACTIVELY CONTRADICTS the claim. Then score_action = "downgrade" — or "kill" if that claim was the idea\'s entire reason to exist (no claim, no business).\n' +
+  '- claim_status = "unsupported" when skeptics could not find support but nothing contradicts it. score_action = "flag_unverified" — do NOT kill; absence of evidence is not disproof, and the founder may still cheaply test it.\n' +
+  '- claim_status = "confirmed" when >=1 skeptic confirmed via a primary source AND none refuted. score_action = "stand".\n' +
+  '- MOAT TEETH: when a MAJORITY of skeptics return moat_verdict "broken" (they found direct competitors the idea\'s no-competition / first-mover assumption ignored), set score_action to AT LEAST "downgrade" — even if the claim is confirmed or merely unsupported — because the rubric\'s moat/competition scores were inflated by a moat that does not exist. Reserve "stand" for ideas whose claim holds AND whose moat survives (no skeptic broke it). Always describe what was found in moat_assessment, and never let an unverified absence inflate the moat.\n';
+const judgeTail =
+  '\nReturn the final verdict for the manager: claim_status, confidence, moat_assessment, score_action, and a one-line summary the founder can read at a glance.';
 
 // ---- schemas --------------------------------------------------------------------------
 const LEG_SCHEMA = {
@@ -168,6 +202,29 @@ const FC_SCHEMA = {
   properties: { name: { type: 'string' }, fact_checks: { type: 'array', items: { type: 'object', required: ['claim', 'verified'], properties: {
     claim: { type: 'string' }, verified: { type: 'string', enum: ['true', 'false', 'unclear'] }, source: { type: 'string' } } } } },
 };
+const SKEPTIC_SCHEMA = {
+  type: 'object', required: ['name', 'claim_verdict', 'moat_verdict'],
+  properties: {
+    name: { type: 'string' },
+    claim_verdict: { type: 'string', enum: ['confirmed', 'unsupported', 'refuted'] },
+    claim_reason: { type: 'string' },
+    claim_source: { type: 'string', description: 'the live URL you actually fetched' },
+    moat_verdict: { type: 'string', enum: ['holds', 'weak', 'broken'] },
+    moat_reason: { type: 'string' },
+    competitors_found: { type: 'array', items: { type: 'string' }, description: 'real players you found in the named market/language/geo' },
+  },
+};
+const JUDGE_SCHEMA = {
+  type: 'object', required: ['name', 'claim_status', 'score_action', 'summary'],
+  properties: {
+    name: { type: 'string' },
+    claim_status: { type: 'string', enum: ['confirmed', 'unsupported', 'refuted'] },
+    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
+    moat_assessment: { type: 'string' },
+    score_action: { type: 'string', enum: ['stand', 'flag_unverified', 'downgrade', 'kill'] },
+    summary: { type: 'string' },
+  },
+};
 
 // ---- emit -----------------------------------------------------------------------------
 const J = (v) => JSON.stringify(v);
@@ -177,20 +234,41 @@ lines.push('// Phase 9 DAILY RADAR fan-out. Run via Workflow({ scriptPath: "scri
 lines.push('// Web channels today: ' + webToday.map((c) => c.key).join(', '));
 lines.push('export const meta = {');
 lines.push("  name: 'daily-radar',");
-lines.push("  description: 'Phase 9 daily opportunity radar: web channels + newsletter inbox + pro YouTube + govt IN/AU -> synthesize -> validate -> fact-check',");
+lines.push("  description: 'Phase 9 daily opportunity radar: web channels + newsletter inbox + pro YouTube + govt IN/AU -> synthesize -> validate -> " + (VCFG.mode === 'adversarial' ? 'adversarial-verify -> judge' : 'fact-check') + "',");
 lines.push('  phases: [');
 lines.push("    { title: 'Harvest', detail: 'Haiku legs: web x" + webToday.length + ", inbox, youtube, govt IN, govt AU' },");
 lines.push("    { title: 'Synthesize', detail: 'Sonnet filter -> at most 5 genuinely new ideas (0 is honest)' },");
 lines.push("    { title: 'Validate+Score', detail: 'live-web competitor check + 6-factor rubric per idea' },");
-lines.push("    { title: 'FactCheck', detail: 'primary-source check of each top ideas load-bearing claim' },");
+if (VCFG.mode === 'adversarial') {
+  lines.push("    { title: 'Verify', detail: '" + VCFG.skepticsPerIdea + " independent Haiku skeptics refute each top ideas claim + moat (live web)' },");
+  lines.push("    { title: 'Judge', detail: 'Sonnet panel adjudicates -> verdict adjusts the rank (stand/flag/downgrade/kill)' },");
+} else {
+  lines.push("    { title: 'FactCheck', detail: 'primary-source check of each top ideas load-bearing claim' },");
+}
 lines.push('  ],');
 lines.push('}');
 lines.push('');
 lines.push('const LEG_SCHEMA = ' + J(LEG_SCHEMA));
 lines.push('const IDEA_SCHEMA = ' + J(IDEA_SCHEMA));
 lines.push('const VS_SCHEMA = ' + J(VS_SCHEMA));
-lines.push('const FC_SCHEMA = ' + J(FC_SCHEMA));
+if (VCFG.mode === 'adversarial') {
+  lines.push('const SKEPTIC_SCHEMA = ' + J(SKEPTIC_SCHEMA));
+  lines.push('const JUDGE_SCHEMA = ' + J(JUDGE_SCHEMA));
+} else {
+  lines.push('const FC_SCHEMA = ' + J(FC_SCHEMA));
+}
 lines.push('const W = { demand: 0.25, moat: 0.2, competition_shape: 0.15, profit_ceiling: 0.15, speed_to_cash: 0.15, founder_fit: 0.1 }');
+lines.push('const MAX_AGENTS = ' + MAX_AGENTS + '  // dailyRadar.maxAgentsPerRun — the verify layer auto-shrinks to stay under this');
+lines.push('const VCFG = ' + J(VCFG));
+if (VCFG.mode === 'adversarial') {
+  lines.push('const SKEPTIC_HEAD = ' + J(skepticHead));
+  lines.push('const SKEPTIC_TAIL = ' + J(skepticTail));
+  lines.push('const JUDGE_HEAD = ' + J(judgeHead));
+  lines.push('const JUDGE_TAIL = ' + J(judgeTail));
+} else {
+  lines.push('const FC_HEAD = ' + J(fcHead));
+  lines.push('const FC_TAIL = ' + J(fcTail));
+}
 lines.push('');
 lines.push('// firm founder rule: never more than 3 agents in flight');
 lines.push('async function chunked(thunks, n) { const out = []; for (let i = 0; i < thunks.length; i += n) { out.push(...await parallel(thunks.slice(i, i + n))) } return out }');
@@ -228,22 +306,69 @@ lines.push(').then((v) => (v ? { ...idea, validation: v } : null)))');
 lines.push('const validated = (await chunked(valThunks, 3)).filter(Boolean)');
 lines.push('for (const i of validated) { const s = (i.validation && i.validation.scores) || {}; i.composite = Math.round(100 * Object.entries(W).reduce((t, [k, w]) => t + (s[k] || 0) * w, 0)) / 100 }');
 lines.push('validated.sort((a, b) => (b.composite || 0) - (a.composite || 0))');
-lines.push('const topN = Math.min(3, validated.length)');
+// --- budget-aware deep-verify selection: never exceed MAX_AGENTS (the ≤15 founder rule) ---
+lines.push('// deep-verify only as many top ideas as the agent budget allows (≤3 in flight, ≤MAX_AGENTS total)');
+lines.push('const usedSoFar = harvests.length + 1 + validated.length  // harvest legs + synth + validate');
+lines.push('const perIdea = VCFG.mode === "adversarial" ? (VCFG.skepticsPerIdea + (VCFG.judge ? 1 : 0)) : 1');
+lines.push('const wantN = Math.min(VCFG.deepVerifyTopN, validated.length)');
+lines.push('const affordN = Math.max(0, Math.floor((MAX_AGENTS - usedSoFar) / perIdea))');
+lines.push('const deepN = Math.min(wantN, affordN)');
+lines.push('if (deepN < wantN) log(`budget: verifying top ${deepN}/${validated.length} ideas (cap ${MAX_AGENTS}, used ${usedSoFar}, ${perIdea} agents/idea); lower-ranked ideas deferred to validate-only`)');
+lines.push('const toVerify = validated.slice(0, deepN)');
 lines.push('');
-lines.push("phase('FactCheck')");
-lines.push('const facts = (await chunked(validated.slice(0, topN).map((i) => () => agent(');
-lines.push(`  ${J(fcHead)} + 'IDEA: ' + i.name + '\\nCLAIM TO CHECK: ' + ((i.validation && i.validation.demand_evidence) || i.the_insight) + ${J(fcTail)} + ' Set name to exactly ' + JSON.stringify(i.name) + '.',`);
-lines.push("  { label: 'fact:' + String(i.name || '').slice(0, 24), phase: 'FactCheck', model: 'haiku', schema: FC_SCHEMA }");
-lines.push(')), 3)).filter(Boolean)');
-lines.push('const factByName = new Map(facts.map((f) => [f.name, f.fact_checks]))');
-lines.push('for (const i of validated) if (factByName.has(i.name)) i.fact_checks = factByName.get(i.name)');
-lines.push('');
+
+if (VCFG.mode === 'adversarial') {
+  // find -> adversarial-verify -> judge (the Fable-class lift: a skeptic swarm + a judge
+  // reconstructs the quality ceiling a single frontier pass would give).
+  lines.push("phase('Verify')");
+  lines.push('for (const idea of toVerify) {');
+  lines.push('  const claim = (idea.validation && idea.validation.demand_evidence) || idea.the_insight');
+  lines.push('  const moatClaim = (idea.moat_type || "") + " / " + ((idea.validation && idea.validation.surviving_wedge) || "(no stated wedge)")');
+  lines.push('  const ctx = "IDEA: " + idea.name + " [" + idea.shape + "]\\n" + idea.one_liner + "\\nLOAD-BEARING CLAIM: " + claim + "\\nMOAT / NO-COMPETITION ASSUMPTION: " + moatClaim + "\\nWHY-NOW: " + (idea.why_now || "")');
+  lines.push('  idea._skeptics = (await chunked(Array.from({ length: VCFG.skepticsPerIdea }, (_, k) => () => agent(');
+  lines.push('    SKEPTIC_HEAD + ctx + "\\n\\nYou are skeptic #" + (k + 1) + " of " + VCFG.skepticsPerIdea + ". Search independently; find what the others might miss." + SKEPTIC_TAIL + " Set name to exactly " + JSON.stringify(idea.name) + ".",');
+  lines.push('    { label: "skeptic" + (k + 1) + ":" + String(idea.name || "").slice(0, 16), phase: "Verify", model: "haiku", schema: SKEPTIC_SCHEMA }');
+  lines.push('  )), 3)).filter(Boolean)');
+  lines.push('}');
+  lines.push('');
+  lines.push("phase('Judge')");
+  lines.push('const judged = (await chunked(toVerify.map((idea) => () => agent(');
+  lines.push('  JUDGE_HEAD + "refuteThreshold = " + VCFG.refuteThreshold + ".\\nIDEA: " + idea.name + "\\nLOAD-BEARING CLAIM: " + ((idea.validation && idea.validation.demand_evidence) || idea.the_insight) + "\\n\\nSKEPTIC VERDICTS (JSON):\\n" + JSON.stringify(idea._skeptics || []) + JUDGE_TAIL + " Set name to exactly " + JSON.stringify(idea.name) + ".",');
+  lines.push('  { label: "judge:" + String(idea.name || "").slice(0, 20), phase: "Judge", model: "sonnet", schema: JUDGE_SCHEMA }');
+  lines.push(')), 3)).filter(Boolean)');
+  lines.push('const judgeByName = new Map(judged.map((j) => [j.name, j]))');
+  lines.push('for (const i of validated) {');
+  lines.push('  const sk = i._skeptics || []');
+  lines.push('  const j = judgeByName.get(i.name) || { claim_status: "unsupported", score_action: "flag_unverified", confidence: "low", moat_assessment: "", summary: "deep-verify deferred (agent budget) — validate-only, not independently checked" }');
+  lines.push('  i.verification = { skeptics: sk, judge: j }');
+  lines.push('  const claim = (i.validation && i.validation.demand_evidence) || i.the_insight');
+  lines.push('  const src = (sk.find((s) => s.claim_source) || {}).claim_source || ""');
+  lines.push('  i.fact_checks = [{ claim, verified: j.claim_status === "refuted" ? "false" : j.claim_status === "confirmed" ? "true" : "unclear", source: src }]');
+  lines.push('  i.verified_composite = j.score_action === "kill" ? 0 : j.score_action === "downgrade" ? Math.round((i.composite || 0) * VCFG.downgradeFactor * 100) / 100 : (i.composite || 0)');
+  lines.push('  i.verify_flag = j.score_action');
+  lines.push('}');
+  lines.push('validated.sort((a, b) => ((b.verified_composite ?? b.composite ?? 0) - (a.verified_composite ?? a.composite ?? 0)))');
+  lines.push('log(`judged top ${deepN}: ` + validated.slice(0, deepN).map((i) => i.name + "=" + (i.verify_flag || "?")).join(", "))');
+  lines.push('');
+} else {
+  // legacy single-pass fact-check (config mode = "single")
+  lines.push("phase('FactCheck')");
+  lines.push('const facts = (await chunked(toVerify.map((i) => () => agent(');
+  lines.push('  FC_HEAD + "IDEA: " + i.name + "\\nCLAIM TO CHECK: " + ((i.validation && i.validation.demand_evidence) || i.the_insight) + FC_TAIL + " Set name to exactly " + JSON.stringify(i.name) + ".",');
+  lines.push('  { label: "fact:" + String(i.name || "").slice(0, 24), phase: "FactCheck", model: "haiku", schema: FC_SCHEMA }');
+  lines.push(')), 3)).filter(Boolean)');
+  lines.push('const factByName = new Map(facts.map((f) => [f.name, f.fact_checks]))');
+  lines.push('for (const i of validated) { if (factByName.has(i.name)) i.fact_checks = factByName.get(i.name); i.verification = null; i.verified_composite = i.composite; i.verify_flag = factByName.has(i.name) ? "fact-checked" : "unverified" }');
+  lines.push('');
+}
+
 lines.push('const scored_ideas = validated.map((i) => ({');
 lines.push('  name: i.name, shape: i.shape, source_channel: i.source_channel, one_liner: i.one_liner,');
-lines.push('  the_insight: i.the_insight, monetization: i.monetization, composite: i.composite,');
-lines.push('  validation: i.validation, fact_checks: i.fact_checks || [],');
+lines.push('  the_insight: i.the_insight, monetization: i.monetization,');
+lines.push('  composite: i.composite, verified_composite: i.verified_composite ?? i.composite, verify_flag: i.verify_flag || "unverified",');
+lines.push('  validation: i.validation, verification: i.verification || null, fact_checks: i.fact_checks || [],');
 lines.push('}))');
-lines.push('log(`done: ${scored_ideas.length} scored, top ${topN} fact-checked`)');
+lines.push('log(`done: ${scored_ideas.length} scored, top ${deepN} ${VCFG.mode === "adversarial" ? "adversarially verified" : "fact-checked"}`)');
 lines.push('return { ...baseOut, scored_ideas, idea_count: ideas.length }');
 lines.push('');
 
