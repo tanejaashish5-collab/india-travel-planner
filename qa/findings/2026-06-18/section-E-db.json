@@ -1,0 +1,60 @@
+{
+  "source": "Supabase MCP execute_sql (small aggregates, egress-safe)",
+  "captured_utc": "2026-06-18",
+  "emergency_sos_rows": 533,
+  "destinations_total": 533,
+  "dests_without_emergency_sos_row": 0,
+  "min_dialable_11col": 5,
+  "avg_dialable_11col": 7.41,
+  "total_dialable_11col": 3952,
+  "rows_under_3_dialable": 0,
+  "rows_with_placeholder_X": 0,
+  "es_localhelpers_nonempty": 178,
+  "people_who_help_nonempty": 84,
+  "latest_created_at": "2026-06-14 08:52:57",
+  "new_dests_since_last_run": 0,
+  "new_dests_boundary_note": "First aggregate reported 8 with a created_at>'2026-06-14 08:52:00' cutoff — that is a minute-floor boundary artifact: the 8 Sikkim dests were all created 2026-06-14 08:52:57, i.e. DURING the prior run's latest minute, not after it. Confirmed with created_at>'2026-06-14 09:00:00' => 0. Catalogue steady at 533, identical max created_at to the 06-17 baseline => 0 genuinely-new destinations since the last QA run.",
+  "canonical_11col": "police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line (non-null + trimmed-non-empty; EXCLUDES local_police_station)",
+  "baseline_match_note": "total_dialable_11col=3952, es_localhelpers_nonempty=178, people_who_help_nonempty=84, min=5, avg=7.41, 0 without row, 0 under 3, 0 placeholder-X — EXACT match to the 2026-06-17 baseline. Catalogue steady at 533 (latest created_at 2026-06-14 08:52:57, 0 new since last run).",
+  "three_row_recheck": [
+    {
+      "id": "uttarkashi",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091 (or 181)", "tourist_helpline": "1800-111-363 (toll-free)",
+      "rescue_contact": "DDMA Uttarkashi Control Room: 01374-222722 / 1077",
+      "verified_by": "constants-reverify-2026-06-09", "verified_date": "2026-06-09",
+      "prior_bug": "NEW-2026-05-10-001 placeholder +91-94120-XXXXX",
+      "status": "STILL CLOSED — no placeholder, structured numbers intact, unchanged from baseline"
+    },
+    {
+      "id": "khonoma",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091", "tourist_helpline": "1363",
+      "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070",
+      "verified_by": "deepdive-recorrect-2026-06-09", "verified_date": "2026-06-09",
+      "prior_bug": "NEW-2026-05-11-001 text-typed phone field",
+      "status": "STILL CLOSED — police field is dialable 100, contacts in rescue_contact, unchanged from baseline"
+    },
+    {
+      "id": "khangchendzonga-np",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091", "tourist_helpline": "1800-111-363",
+      "rescue_contact": "Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; KNP permits + park rescue coordination via Forest Environment & Wildlife Mgmt Dept, Sikkim",
+      "verified_by": "emsos-th-audit-2026-06-10", "verified_date": "2026-06-10",
+      "prior_bug": "NEW-2026-05-30-001 text-typed phone field",
+      "status": "STILL CLOSED — structured numbers intact, unchanged from baseline"
+    }
+  ],
+  "sample_sos_summary_10dests": {
+    "sample": ["pachmarhi","satara","rudraprayag","chitrakoot","patna","kiphire","mount-abu","chikmagalur","bhaderwah","porbandar"],
+    "all_render_nonempty_sos": true,
+    "dests_with_no_blob": 0,
+    "structured_fields_total": 74,
+    "dialable_total": 73,
+    "min_dialable_per_dest": 5,
+    "min_dialable_dest": "satara",
+    "universal_112_present": 10,
+    "harness_malformed_flag": 1,
+    "harness_malformed_note": "chitrakoot local_police_station = 'Karwi Police Station (parent for Chitrakoot Dham)' — a station NAME with no dialable digits (text-by-design per SKILL Section E note), excluded from the 73 dialable count. NOT a real malformed phone. patna local_police_station is also a station name but contains '87+' so the harness counts it dialable — same by-design text-field class. 0 placeholder-X, 0 real malformed phones."
+  }
+}
