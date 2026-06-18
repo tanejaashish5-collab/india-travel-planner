@@ -6,7 +6,7 @@
     {
       "id": "complyreel-amfi-mandate-holds",
       "idea_key": "complyreel",
-      "assumption": "AMFI Master Circular MFD-CIR/32/2025-26 (May 2026) mandating ARN disclosure + SEBI tagline + spoken disclaimer + AMC pre-approval on every MFD social post remains in force unchanged \u2014 compliance IS the product, so the whole wedge rests on this circular.",
+      "assumption": "AMFI Master Circular MFD-CIR/32/2025-26 (May 2026) mandating ARN disclosure + SEBI tagline + spoken disclaimer + AMC pre-approval on every MFD social post remains in force unchanged — compliance IS the product, so the whole wedge rests on this circular.",
       "trigger": "AMFI or SEBI issues an amendment, FAQ, or relaxation that removes the pre-approval workflow, drops the spoken-disclaimer requirement, or grants a blanket safe-harbor for distributor social content.",
       "check_query": "AMFI master circular MFD-CIR/32/2025-26 social media ARN disclosure amendment relaxation deferred",
       "direction": "kills",
@@ -15,7 +15,7 @@
     {
       "id": "complyreel-no-incumbent-mfd-tool",
       "idea_key": "complyreel",
-      "assumption": "No compliance-locked content engine exists for India's 341K MFDs \u2014 distributor platforms (NJ Wealth, Prudent, AssetPlus) and AMCs only provide static approved templates, not an auto-baked reel/post generation + approval workflow.",
+      "assumption": "No compliance-locked content engine exists for India's 341K MFDs — distributor platforms (NJ Wealth, Prudent, AssetPlus) and AMCs only provide static approved templates, not an auto-baked reel/post generation + approval workflow.",
       "trigger": "An MFD platform, AMC, or AMFI itself ships a free or bundled AI content tool that auto-embeds ARN/SEBI disclaimers and routes posts through AMC pre-approval.",
       "check_query": "mutual fund distributor compliant social media content tool AMFI approved reels AssetPlus NJ Wealth launch",
       "direction": "kills",
@@ -24,8 +24,8 @@
     {
       "id": "complyreel-enforcement-begins",
       "idea_key": "complyreel",
-      "assumption": "MFDs can currently ignore the mandate cheaply (the strategist verdict's open question: will MFDs pay vs. accept compliance risk) \u2014 there is no visible enforcement yet.",
-      "trigger": "AMFI/SEBI publicizes first penalties, ARN suspensions, or show-cause notices against MFDs for non-compliant social media posts \u2014 creates the forced willingness-to-pay the verdict was gated on.",
+      "assumption": "MFDs can currently ignore the mandate cheaply (the strategist verdict's open question: will MFDs pay vs. accept compliance risk) — there is no visible enforcement yet.",
+      "trigger": "AMFI/SEBI publicizes first penalties, ARN suspensions, or show-cause notices against MFDs for non-compliant social media posts — creates the forced willingness-to-pay the verdict was gated on.",
       "check_query": "AMFI SEBI action penalty mutual fund distributor social media post ARN suspension non-compliant",
       "direction": "upgrades",
       "severity": "high"
@@ -33,7 +33,7 @@
     {
       "id": "bharatbill-incumbent-ships-voice",
       "idea_key": "bharatbill",
-      "assumption": "No incumbent GST invoicing app (Swipe with 15L users / \u20b95.75Cr FY2025 revenue, Vyapar, Zoho Books, ClearTax) offers vernacular voice-to-IRN invoice creation on WhatsApp \u2014 voice is the only surviving wedge.",
+      "assumption": "No incumbent GST invoicing app (Swipe with 15L users / ₹5.75Cr FY2025 revenue, Vyapar, Zoho Books, ClearTax) offers vernacular voice-to-IRN invoice creation on WhatsApp — voice is the only surviving wedge.",
       "trigger": "Swipe, Vyapar, ClearTax, or Zoho announces voice-based invoice creation in Tamil/Marathi/Hindi or a WhatsApp e-invoicing bot with IRN generation.",
       "check_query": "Swipe Vyapar ClearTax Zoho voice invoice WhatsApp GST e-invoicing IRN Hindi Tamil launch",
       "direction": "kills",
@@ -42,8 +42,8 @@
     {
       "id": "bharatbill-2cr-threshold-notified",
       "idea_key": "bharatbill",
-      "assumption": "The e-invoicing mandate sits at \u20b95Cr (~300K SMEs forced in since April 2025); the proposal to drop the threshold to \u20b92Cr exists but is NOT yet notified.",
-      "trigger": "CBIC/GST Council formally notifies a \u20b92Cr (or lower) e-invoicing threshold \u2014 multiplies the forced-buyer TAM of vernacular Tier-2/3 merchants several-fold.",
+      "assumption": "The e-invoicing mandate sits at ₹5Cr (~300K SMEs forced in since April 2025); the proposal to drop the threshold to ₹2Cr exists but is NOT yet notified.",
+      "trigger": "CBIC/GST Council formally notifies a ₹2Cr (or lower) e-invoicing threshold — multiplies the forced-buyer TAM of vernacular Tier-2/3 merchants several-fold.",
       "check_query": "CBIC notification GST e-invoicing threshold reduced 2 crore turnover effective date",
       "direction": "upgrades",
       "severity": "high"
@@ -51,7 +51,7 @@
     {
       "id": "bharatbill-gstn-free-vernacular-tool",
       "idea_key": "bharatbill",
-      "assumption": "GSTN/NIC's free e-invoicing tools remain form-based, English-centric and desktop-first \u2014 the 'forms 12 times' friction for non-English users is the adoption gap BharatBill monetizes.",
+      "assumption": "GSTN/NIC's free e-invoicing tools remain form-based, English-centric and desktop-first — the 'forms 12 times' friction for non-English users is the adoption gap BharatBill monetizes.",
       "trigger": "GSTN or NIC launches a free vernacular and/or voice-driven e-invoicing app or WhatsApp channel for small taxpayers.",
       "check_query": "GSTN NIC free e-invoicing app regional language voice small taxpayers launch",
       "direction": "kills",
@@ -60,8 +60,8 @@
     {
       "id": "agentvouch-registries-add-attestation",
       "idea_key": "agentvouch",
-      "assumption": "Incumbent MCP registries (Smithery 3,305+ servers, Apigene 251+ vendor-verified, Kong MCP Registry, MCPize, Nevermined, MCP-Hive) do DISCOVERY only \u2014 none does behavioral attestation, runtime safety reports, or continuous monitoring.",
-      "trigger": "Any incumbent registry \u2014 or a security vendor (Snyk, Wiz, Socket) \u2014 launches a verified-badge + runtime behavioral monitoring product for MCP servers.",
+      "assumption": "Incumbent MCP registries (Smithery 3,305+ servers, Apigene 251+ vendor-verified, Kong MCP Registry, MCPize, Nevermined, MCP-Hive) do DISCOVERY only — none does behavioral attestation, runtime safety reports, or continuous monitoring.",
+      "trigger": "Any incumbent registry — or a security vendor (Snyk, Wiz, Socket) — launches a verified-badge + runtime behavioral monitoring product for MCP servers.",
       "check_query": "Smithery Apigene Kong MCP registry security verification runtime monitoring badge launch",
       "direction": "kills",
       "severity": "high"
@@ -69,7 +69,7 @@
     {
       "id": "agentvouch-official-registry-absorbs-trust",
       "idea_key": "agentvouch",
-      "assumption": "The official MCP registry / Anthropic does not provide first-party trust infrastructure (signing, security attestation, verified-publisher program) \u2014 leaving the trust layer vacant for a third party.",
+      "assumption": "The official MCP registry / Anthropic does not provide first-party trust infrastructure (signing, security attestation, verified-publisher program) — leaving the trust layer vacant for a third party.",
       "trigger": "Anthropic or the MCP steering committee announces first-party server verification, code signing, or a security attestation program in the official registry.",
       "check_query": "Anthropic official MCP registry server verification signing security attestation announcement",
       "direction": "kills",
@@ -79,7 +79,7 @@
       "id": "agentvouch-incident-cadence-continues",
       "idea_key": "agentvouch",
       "assumption": "MCP supply-chain incidents keep enterprise urgency alive (Postmark-MCP backdoor Sept 2025 compromised ~300 orgs; Knostic found 1,862 exposed servers).",
-      "trigger": "Another in-the-wild malicious MCP server or agent-tool supply-chain breach makes enterprise headlines \u2014 each incident strengthens the buying case.",
+      "trigger": "Another in-the-wild malicious MCP server or agent-tool supply-chain breach makes enterprise headlines — each incident strengthens the buying case.",
       "check_query": "malicious MCP server incident enterprise breach AI agent supply chain attack 2026",
       "direction": "upgrades",
       "severity": "medium"
@@ -87,7 +87,7 @@
     {
       "id": "losslens-incumbent-builds-database",
       "idea_key": "losslens",
-      "assumption": "No underwriting-grade AI-agent incident & loss database exists \u2014 carriers, MGAs and reinsurers writing AI-liability are still blind, and no Verisk-type player has entered.",
+      "assumption": "No underwriting-grade AI-agent incident & loss database exists — carriers, MGAs and reinsurers writing AI-liability are still blind, and no Verisk-type player has entered.",
       "trigger": "Verisk/ISO, CyberCube, Kovrr, or a reinsurer (Swiss Re, Munich Re) announces an AI-incident loss-data product, consortium, or data call.",
       "check_query": "Verisk CyberCube Kovrr Swiss Re Munich Re AI liability incident loss database launch",
       "direction": "kills",
@@ -96,8 +96,8 @@
     {
       "id": "losslens-startup-takes-corpus-window",
       "idea_key": "losslens",
-      "assumption": "The first-mover collection window is still open \u2014 'loss data cannot be backfilled, you had to be collecting in 2026' only works if nobody else started collecting first.",
-      "trigger": "A startup announces funding or launch for an AI-agent incident/loss data company aimed at insurers \u2014 the historical-corpus wedge is gone the day someone else starts the clock.",
+      "assumption": "The first-mover collection window is still open — 'loss data cannot be backfilled, you had to be collecting in 2026' only works if nobody else started collecting first.",
+      "trigger": "A startup announces funding or launch for an AI-agent incident/loss data company aimed at insurers — the historical-corpus wedge is gone the day someone else starts the clock.",
       "check_query": "startup funding AI incident loss data insurance underwriting agents seed round 2026",
       "direction": "kills",
       "severity": "high"
@@ -105,8 +105,8 @@
     {
       "id": "losslens-ai-liability-market-materializes",
       "idea_key": "losslens",
-      "assumption": "AI-agent liability insurance is an emerging line \u2014 the buyer universe (carriers/MGAs writing these policies) is still small; demand evidence is incident statistics (CSA: 47% of orgs had an agent security incident), not yet a thick insurance market.",
-      "trigger": "Multiple major carriers/MGAs launch dedicated AI-agent liability products \u2014 the buyer pool for licensed loss data expands materially.",
+      "assumption": "AI-agent liability insurance is an emerging line — the buyer universe (carriers/MGAs writing these policies) is still small; demand evidence is incident statistics (CSA: 47% of orgs had an agent security incident), not yet a thick insurance market.",
+      "trigger": "Multiple major carriers/MGAs launch dedicated AI-agent liability products — the buyer pool for licensed loss data expands materially.",
       "check_query": "new AI agent liability insurance product launch carrier MGA 2026",
       "direction": "upgrades",
       "severity": "medium"
@@ -115,7 +115,7 @@
       "id": "driftwatch-eval-incumbent-ships-anchors",
       "idea_key": "driftwatch",
       "assumption": "Eval/observability incumbents (LangSmith, Braintrust, Arize, Galileo, Patronus) have NOT shipped auto-accumulating golden anchor sets built from production traffic with continuous silent-regression paging for deployed vertical agents.",
-      "trigger": "Any eval-tooling incumbent announces automatic baseline construction from prod traffic + scheduled re-testing/drift alerts for production agents \u2014 erases the one-trick wedge the verdict already flagged as thin.",
+      "trigger": "Any eval-tooling incumbent announces automatic baseline construction from prod traffic + scheduled re-testing/drift alerts for production agents — erases the one-trick wedge the verdict already flagged as thin.",
       "check_query": "LangSmith Braintrust Arize Galileo production agent regression monitoring golden dataset automatic drift alerts release",
       "direction": "kills",
       "severity": "high"
@@ -123,8 +123,8 @@
     {
       "id": "driftwatch-agent-deployment-stalls",
       "idea_key": "driftwatch",
-      "assumption": "Enterprise agent deployment keeps growing (51% of enterprises run agents in production Q2 2026; vertical AI spend $3.5B in 2025) \u2014 the 40%-of-projects-cancelled-by-2027 prediction stays a tailwind (governance demand), not a market shrink.",
-      "trigger": "New surveys show enterprise agents-in-production flat or declining, or mass cancellation of vertical-agent projects without replacement \u2014 the buyer pool itself contracts.",
+      "assumption": "Enterprise agent deployment keeps growing (51% of enterprises run agents in production Q2 2026; vertical AI spend $3.5B in 2025) — the 40%-of-projects-cancelled-by-2027 prediction stays a tailwind (governance demand), not a market shrink.",
+      "trigger": "New surveys show enterprise agents-in-production flat or declining, or mass cancellation of vertical-agent projects without replacement — the buyer pool itself contracts.",
       "check_query": "enterprise AI agents production deployment survey 2026 2027 percentage trend cancellations",
       "direction": "kills",
       "severity": "medium"
@@ -132,8 +132,8 @@
     {
       "id": "superguard-payday-super-date-holds",
       "idea_key": "superguard",
-      "assumption": "Payday Super starts 1 July 2026 with ATO cross-matching STP-reported liability against SuperStream receipts per pay cycle \u2014 the entire timing play rides on this date.",
-      "trigger": "Treasury or the ATO announces a start-date delay, extended transition period, or a soft-enforcement/penalty-moratorium approach for the first year(s) \u2014 urgency (and the director-liability fear driving purchase) evaporates.",
+      "assumption": "Payday Super starts 1 July 2026 with ATO cross-matching STP-reported liability against SuperStream receipts per pay cycle — the entire timing play rides on this date.",
+      "trigger": "Treasury or the ATO announces a start-date delay, extended transition period, or a soft-enforcement/penalty-moratorium approach for the first year(s) — urgency (and the director-liability fear driving purchase) evaporates.",
       "check_query": "Payday Super 1 July 2026 start date delay ATO transition compliance approach announcement",
       "direction": "kills",
       "severity": "high"
@@ -141,7 +141,7 @@
     {
       "id": "superguard-xero-myob-native-alert",
       "idea_key": "superguard",
-      "assumption": "Xero and MYOB have not shipped a native super-contribution exception/fund-receipt alert \u2014 the verdict explicitly says the window before they do is short.",
+      "assumption": "Xero and MYOB have not shipped a native super-contribution exception/fund-receipt alert — the verdict explicitly says the window before they do is short.",
       "trigger": "Xero or MYOB announces (roadmap or release) Payday Super exception monitoring or fund-landing reconciliation alerts in their payroll products.",
       "check_query": "Xero MYOB Payday Super exception alert fund receipt reconciliation feature announcement",
       "direction": "kills",
@@ -150,7 +150,7 @@
     {
       "id": "superguard-bookkeeper-channel-open",
       "idea_key": "superguard",
-      "assumption": "Bookkeepers/BAS agents (charging $300\u20131,500/mo per client) still reconcile super manually with no multi-client Payday Super dashboard \u2014 the intermediary channel wedge is unoccupied.",
+      "assumption": "Bookkeepers/BAS agents (charging $300–1,500/mo per client) still reconcile super manually with no multi-client Payday Super dashboard — the intermediary channel wedge is unoccupied.",
       "trigger": "A bookkeeper-focused tool (e.g. a BAS-agent platform or payroll add-on) launches a multi-client Payday Super monitoring dashboard or white-label offering.",
       "check_query": "bookkeeper BAS agent multi-client payday super monitoring dashboard software Australia launch",
       "direction": "kills",
@@ -160,7 +160,7 @@
       "id": "vouchfolio-veremark-goes-downmarket",
       "idea_key": "vouchfolio",
       "assumption": "Veremark ($26M raised) stays enterprise background-check focused and does not ship a self-serve per-link freelancer/contractor verification product.",
-      "trigger": "Veremark \u2014 or Checkr/Persona \u2014 launches a self-serve freelancer verification link combining liveness, identity and reference checks.",
+      "trigger": "Veremark — or Checkr/Persona — launches a self-serve freelancer verification link combining liveness, identity and reference checks.",
       "check_query": "Veremark Checkr Persona freelancer contractor self-serve verification product launch",
       "direction": "kills",
       "severity": "high"
@@ -168,7 +168,7 @@
     {
       "id": "vouchfolio-platforms-commoditize-liveness",
       "idea_key": "vouchfolio",
-      "assumption": "Hiring platforms (Upwork, Fiverr, LinkedIn) have not made free liveness + portfolio-provenance verification a native, mandatory feature \u2014 the verdict already flags platform giants as the commoditization risk.",
+      "assumption": "Hiring platforms (Upwork, Fiverr, LinkedIn) have not made free liveness + portfolio-provenance verification a native, mandatory feature — the verdict already flags platform giants as the commoditization risk.",
       "trigger": "Upwork, Fiverr, or LinkedIn announces free built-in liveness/deepfake-resistant identity verification plus portfolio ownership checks for freelancers.",
       "check_query": "Upwork Fiverr LinkedIn freelancer identity liveness verification deepfake feature announcement",
       "direction": "kills",
@@ -177,8 +177,8 @@
     {
       "id": "vouchfolio-fraud-trend-accelerates",
       "idea_key": "vouchfolio",
-      "assumption": "Hiring fraud keeps compounding ($90M 2020 \u2192 $501M 2024 per FTC = 456% growth; 41% of large orgs onboarded someone fraudulent by 2026).",
-      "trigger": "New FTC/industry data or a headline deepfake-contractor incident shows the fraud curve still steepening \u2014 strengthens willingness to pay per verification.",
+      "assumption": "Hiring fraud keeps compounding ($90M 2020 → $501M 2024 per FTC = 456% growth; 41% of large orgs onboarded someone fraudulent by 2026).",
+      "trigger": "New FTC/industry data or a headline deepfake-contractor incident shows the fraud curve still steepening — strengthens willingness to pay per verification.",
       "check_query": "deepfake hiring fraud statistics FTC losses fake contractor incident 2026",
       "direction": "upgrades",
       "severity": "medium"
@@ -186,7 +186,7 @@
     {
       "id": "dealreceipts-receipt-database-launches",
       "idea_key": "dealreceipts",
-      "assumption": "Nobody publishes structured REAL brand-deal receipts \u2014 every 'creator rate card 2026' source is survey ranges ($150\u2013$3,000), useless for negotiation; the receipts gap is open.",
+      "assumption": "Nobody publishes structured REAL brand-deal receipts — every 'creator rate card 2026' source is survey ranges ($150–$3,000), useless for negotiation; the receipts gap is open.",
       "trigger": "FYPM (F*ck You Pay Me), Clara, or another creator-pay platform announces a structured deal database with line items (base rate, whitelisting, exclusivity, usage rights) at meaningful scale.",
       "check_query": "FYPM Clara creator brand deal rate database real deals whitelisting exclusivity launch",
       "direction": "kills",
@@ -196,7 +196,7 @@
       "id": "dealreceipts-platform-rate-transparency",
       "idea_key": "dealreceipts",
       "assumption": "The platforms themselves (TikTok Creator Marketplace, YouTube BrandConnect, Instagram creator tools) do not expose real deal-rate benchmarks to creators or brands.",
-      "trigger": "A major platform ships public or in-product rate benchmarking from its own closed-deal data \u2014 platform data beats crowdsourced receipts on volume instantly.",
+      "trigger": "A major platform ships public or in-product rate benchmarking from its own closed-deal data — platform data beats crowdsourced receipts on volume instantly.",
       "check_query": "TikTok Creator Marketplace YouTube BrandConnect creator rate benchmark transparency feature",
       "direction": "kills",
       "severity": "medium"
@@ -204,7 +204,7 @@
     {
       "id": "detentionledger-samsara-motive-native",
       "idea_key": "detentionledger",
-      "assumption": "Samsara and Motive have not made detention capture + broker-defensible dispute packaging a native telematics feature \u2014 the verdict's existential question is reaching benchmark critical mass before they do.",
+      "assumption": "Samsara and Motive have not made detention capture + broker-defensible dispute packaging a native telematics feature — the verdict's existential question is reaching benchmark critical mass before they do.",
       "trigger": "Samsara or Motive announces a detention documentation/auto-dispute or dwell-time benchmark feature.",
       "check_query": "Samsara Motive detention time dispute feature dwell benchmark announcement trucking",
       "direction": "kills",
@@ -222,8 +222,8 @@
     {
       "id": "detentionledger-fmcsa-rule",
       "idea_key": "detentionledger",
-      "assumption": "Detention is unregulated \u2014 $15B/yr charged, <50% collected, disputes are private evidence fights, which is exactly what makes the capture+packaging layer valuable.",
-      "trigger": "FMCSA finalizes a detention-time rule (mandatory recording or compensation) \u2014 standardized evidence requirements would supercharge demand for compliant capture tooling.",
+      "assumption": "Detention is unregulated — $15B/yr charged, <50% collected, disputes are private evidence fights, which is exactly what makes the capture+packaging layer valuable.",
+      "trigger": "FMCSA finalizes a detention-time rule (mandatory recording or compensation) — standardized evidence requirements would supercharge demand for compliant capture tooling.",
       "check_query": "FMCSA detention time rule final rulemaking driver detention compensation 2026",
       "direction": "upgrades",
       "severity": "medium"
@@ -231,7 +231,7 @@
     {
       "id": "synthledger-it-rules-survive",
       "idea_key": "synthledger",
-      "assumption": "The India IT Rules amendment (notified 10-Feb-2026, in force 20-Feb-2026: mandatory AI-content labelling, un-strippable provenance, 3-hour takedown, 7-day grievance redress) stays in force \u2014 the strategist dealbreaker already flags this as a single-regulation time-bomb.",
+      "assumption": "The India IT Rules amendment (notified 10-Feb-2026, in force 20-Feb-2026: mandatory AI-content labelling, un-strippable provenance, 3-hour takedown, 7-day grievance redress) stays in force — the strategist dealbreaker already flags this as a single-regulation time-bomb.",
       "trigger": "A High Court/Supreme Court stay, or MeitY dilution/deferral of the labelling, provenance, or 3-hour takedown provisions.",
       "check_query": "IT Rules amendment 2026 AI labelling synthetic media court stay MeitY dilution deferral challenge",
       "direction": "kills",
@@ -240,8 +240,8 @@
     {
       "id": "synthledger-first-enforcement",
       "idea_key": "synthledger",
-      "assumption": "Enforcement of the AI-labelling rules is so far untested \u2014 publishers/agencies can wait-and-see instead of buying compliance ops.",
-      "trigger": "First publicized MeitY or grievance-committee action penalizing a publisher/platform for unlabeled AI content or a missed 3-hour takedown \u2014 converts wait-and-see into forced buying.",
+      "assumption": "Enforcement of the AI-labelling rules is so far untested — publishers/agencies can wait-and-see instead of buying compliance ops.",
+      "trigger": "First publicized MeitY or grievance-committee action penalizing a publisher/platform for unlabeled AI content or a missed 3-hour takedown — converts wait-and-see into forced buying.",
       "check_query": "MeitY enforcement action penalty AI generated content labelling takedown India publisher",
       "direction": "upgrades",
       "severity": "high"
@@ -249,7 +249,7 @@
     {
       "id": "synthledger-c2pa-turnkey-india",
       "idea_key": "synthledger",
-      "assumption": "Meta/Adobe/C2PA tooling covers each vendor's OWN surface only \u2014 no one ships a cross-tool (Canva + Runway + in-house + agency), India-statute-mapped evidence trail for publishers.",
+      "assumption": "Meta/Adobe/C2PA tooling covers each vendor's OWN surface only — no one ships a cross-tool (Canva + Runway + in-house + agency), India-statute-mapped evidence trail for publishers.",
       "trigger": "Adobe/C2PA, a major DAM, or an Indian platform ships a turnkey India IT-Rules compliance module with statute-mapped audit/evidence trails.",
       "check_query": "C2PA Adobe content credentials India IT Rules compliance evidence audit trail product publishers",
       "direction": "kills",
@@ -258,8 +258,8 @@
     {
       "id": "highriskwatch-aug-2026-deadline-holds",
       "idea_key": "highriskwatch",
-      "assumption": "The EU AI Act high-risk obligations + Article 71 registry deadline of 2 Aug 2026 (penalties \u20ac35M / 7% global turnover) holds \u2014 the dealbreaker already on file says one EU deadline slip kills the forced-buyer moment.",
-      "trigger": "The European Commission's digital-omnibus/simplification package (or Parliament/Council action) formally delays high-risk obligations to 2027+ \u2014 proposals to do so are already circulating.",
+      "assumption": "The EU AI Act high-risk obligations + Article 71 registry deadline of 2 Aug 2026 (penalties €35M / 7% global turnover) holds — the dealbreaker already on file says one EU deadline slip kills the forced-buyer moment.",
+      "trigger": "The European Commission's digital-omnibus/simplification package (or Parliament/Council action) formally delays high-risk obligations to 2027+ — proposals to do so are already circulating.",
       "check_query": "EU AI Act high-risk obligations August 2026 delay digital omnibus simplification Article 71 registry postponed",
       "direction": "kills",
       "severity": "high"
@@ -267,7 +267,7 @@
     {
       "id": "highriskwatch-neutral-tracker-launches",
       "idea_key": "highriskwatch",
-      "assumption": "ZERO independent vendors publicly track the Article 71 registry or vendor-by-vendor compliance \u2014 only biased sources (vendors' own marketing, law firms) exist.",
+      "assumption": "ZERO independent vendors publicly track the Article 71 registry or vendor-by-vendor compliance — only biased sources (vendors' own marketing, law firms) exist.",
       "trigger": "A neutral registry-tracking product launches (data journalism outlet, AI-governance firm, or newsletter publishing vendor compliance scorecards).",
       "check_query": "EU AI Act Article 71 database registry tracker vendor compliance scorecard independent launch",
       "direction": "kills",
@@ -276,7 +276,7 @@
     {
       "id": "harnessproof-neutral-benchmark-launches",
       "idea_key": "harnessproof",
-      "assumption": "No neutral, continuously-refreshed 'which harness extracts the most from each model' benchmark exists \u2014 Vals.ai/HarnessBench-type domain evals don't publish longitudinal harness\u00d7model pairing rankings.",
+      "assumption": "No neutral, continuously-refreshed 'which harness extracts the most from each model' benchmark exists — Vals.ai/HarnessBench-type domain evals don't publish longitudinal harness×model pairing rankings.",
       "trigger": "An established eval brand (Vals.ai, LMArena, Epoch AI, SWE-bench maintainers) or a frontier lab starts publishing refreshed-per-model-drop harness-pairing leaderboards.",
       "check_query": "coding agent harness model pairing benchmark leaderboard Vals LMArena SWE-bench harness comparison launch",
       "direction": "kills",
@@ -285,8 +285,8 @@
     {
       "id": "harnessproof-pairing-effect-fades",
       "idea_key": "harnessproof",
-      "assumption": "Model-harness-fit is real and persistent \u2014 labs post-train weights against specific harnesses (tool names, schemas, citation tags baked in; e.g. ForgeCode 79.8% vs Capy 75.3% on the same model), so rankings carry alpha.",
-      "trigger": "New frontier model releases show negligible cross-harness performance deltas, or labs converge on harness-agnostic standard tool schemas \u2014 the entire measured phenomenon (and the content's value) disappears.",
+      "assumption": "Model-harness-fit is real and persistent — labs post-train weights against specific harnesses (tool names, schemas, citation tags baked in; e.g. ForgeCode 79.8% vs Capy 75.3% on the same model), so rankings carry alpha.",
+      "trigger": "New frontier model releases show negligible cross-harness performance deltas, or labs converge on harness-agnostic standard tool schemas — the entire measured phenomenon (and the content's value) disappears.",
       "check_query": "frontier model harness agnostic performance delta coding agents standardized tool schema post-training 2026",
       "direction": "kills",
       "severity": "high"
@@ -294,8 +294,8 @@
     {
       "id": "bharatvyapar-2cr-threshold-notified",
       "idea_key": "bharatvyapar",
-      "assumption": "GST e-invoicing is mandatory at \u20b95Cr from 1 April 2026 with the 30-day IRP rejection window; the \u20b92Cr threshold drop is proposed but NOT notified.",
-      "trigger": "CBIC notifies the \u20b92Cr (or lower) threshold \u2014 millions more Hindi/Tamil-first MSME owners get forced into compliance, multiplying the audience for vernacular explainer content.",
+      "assumption": "GST e-invoicing is mandatory at ₹5Cr from 1 April 2026 with the 30-day IRP rejection window; the ₹2Cr threshold drop is proposed but NOT notified.",
+      "trigger": "CBIC notifies the ₹2Cr (or lower) threshold — millions more Hindi/Tamil-first MSME owners get forced into compliance, multiplying the audience for vernacular explainer content.",
       "check_query": "GST e-invoicing threshold 2 crore notification CBIC effective date MSME",
       "direction": "upgrades",
       "severity": "high"
@@ -303,7 +303,7 @@
     {
       "id": "bharatvyapar-vernacular-channel-incumbent",
       "idea_key": "bharatvyapar",
-      "assumption": "No vernacular GST-compliance media channel has reached scale (200K+ subs) and locked exclusive fintech distribution partnerships \u2014 the 12-month build window is open.",
+      "assumption": "No vernacular GST-compliance media channel has reached scale (200K+ subs) and locked exclusive fintech distribution partnerships — the 12-month build window is open.",
       "trigger": "ClearTax/Vyapar/Khatabook launches a serious Hindi/Tamil content arm, or an independent vernacular creator hits 200K+ subs on GST/e-invoicing content with lender/fintech tie-ins.",
       "check_query": "Hindi Tamil YouTube channel GST e-invoicing MSME compliance subscribers fintech partnership ClearTax Khatabook vernacular content",
       "direction": "kills",
@@ -312,8 +312,8 @@
     {
       "id": "proofstack-sebi-official-registry",
       "idea_key": "proofstack",
-      "assumption": "The SEBI verified-credential system for financial advisors is only a Parliamentary Standing Committee RECOMMENDATION \u2014 no official government registry/badge exists yet, leaving the verification gap to a private player.",
-      "trigger": "SEBI launches an official verified-advisor/finfluencer registry or badge \u2014 a free government substitute guts the finance-coach niche the wedge leans on.",
+      "assumption": "The SEBI verified-credential system for financial advisors is only a Parliamentary Standing Committee RECOMMENDATION — no official government registry/badge exists yet, leaving the verification gap to a private player.",
+      "trigger": "SEBI launches an official verified-advisor/finfluencer registry or badge — a free government substitute guts the finance-coach niche the wedge leans on.",
       "check_query": "SEBI verified credential registry financial advisor finfluencer badge launch implementation",
       "direction": "kills",
       "severity": "high"
@@ -321,8 +321,8 @@
     {
       "id": "proofstack-platform-ships-verification",
       "idea_key": "proofstack",
-      "assumption": "Indian coaching/booking platforms (Topmate, Graphy, Exly) do not offer built-in credential/employment verification badges \u2014 the verdict already notes the trust-page surface is easy to clone.",
-      "trigger": "A major coaching platform ships native employment-history/certification verification for its creators \u2014 embedded distribution beats a standalone proof layer.",
+      "assumption": "Indian coaching/booking platforms (Topmate, Graphy, Exly) do not offer built-in credential/employment verification badges — the verdict already notes the trust-page surface is easy to clone.",
+      "trigger": "A major coaching platform ships native employment-history/certification verification for its creators — embedded distribution beats a standalone proof layer.",
       "check_query": "Topmate Graphy Exly coach credential verification badge feature launch India",
       "direction": "kills",
       "severity": "medium"
@@ -330,7 +330,7 @@
     {
       "id": "proofstack-trust-crisis-deepens",
       "idea_key": "proofstack",
-      "assumption": "The finfluencer/coach trust crisis keeps building demand (8%+ of finfluencer followers report being defrauded; coaching market growing 14.4% CAGR 2026\u20132031).",
+      "assumption": "The finfluencer/coach trust crisis keeps building demand (8%+ of finfluencer followers report being defrauded; coaching market growing 14.4% CAGR 2026–2031).",
       "trigger": "A new high-profile fake-coach/finfluencer fraud scandal or regulator crackdown makes verification a purchase trigger for workshop buyers.",
       "check_query": "India finfluencer fake coach fraud scandal SEBI crackdown coaching scam news",
       "direction": "upgrades",
@@ -339,7 +339,7 @@
     {
       "id": "diffscore-information-gain-signal-verified",
       "idea_key": "diffscore",
-      "assumption": "Google's March 2026 core update re-weighted \"Information Gain\" (unique value vs SERP competitors) as a live ranking signal \u2014 the entire pitch ties differentiation scoring to this. Currently UNVERIFIED (fact-check could not confirm on developers.google.com/search/updates).",
+      "assumption": "Google's March 2026 core update re-weighted \"Information Gain\" (unique value vs SERP competitors) as a live ranking signal — the entire pitch ties differentiation scoring to this. Currently UNVERIFIED (fact-check could not confirm on developers.google.com/search/updates).",
       "trigger": "Official Google Search documentation / status page confirms OR refutes that Information Gain is a named March 2026 ranking-signal change. Refutation downgrades the wedge to generic content-QA tooling.",
       "check_query": "site:developers.google.com search updates March 2026 core update information gain ranking signal",
       "direction": "kills",
@@ -348,7 +348,7 @@
     {
       "id": "diffscore-incumbents-no-sameness-score",
       "idea_key": "diffscore",
-      "assumption": "No incumbent (Surfer SEO, Clearscope, Semrush, Frase, NEURONwriter) ships a competitive-sameness / differentiation score \u2014 they all optimise TOWARD the SERP pattern, not away from it.",
+      "assumption": "No incumbent (Surfer SEO, Clearscope, Semrush, Frase, NEURONwriter) ships a competitive-sameness / differentiation score — they all optimise TOWARD the SERP pattern, not away from it.",
       "trigger": "Surfer SEO, Semrush or Clearscope announces a content-differentiation / uniqueness / information-gain score feature.",
       "check_query": "Surfer SEO OR Semrush OR Clearscope \"differentiation score\" OR \"information gain\" OR \"content uniqueness\" feature launch",
       "direction": "kills",
@@ -357,7 +357,7 @@
     {
       "id": "diffscore-plugin-marketplace-open",
       "idea_key": "diffscore",
-      "assumption": "GTM rests on plugin-marketplace distribution (Ahrefs/SEMrush/Surfer app ecosystems accepting third-party scoring add-ons) \u2014 removes the cold-sales dependency.",
+      "assumption": "GTM rests on plugin-marketplace distribution (Ahrefs/SEMrush/Surfer app ecosystems accepting third-party scoring add-ons) — removes the cold-sales dependency.",
       "trigger": "Target SEO platforms close or heavily restrict third-party app marketplaces, or charge prohibitive rev-share for data-API add-ons.",
       "check_query": "Semrush app center OR Surfer SEO integrations third party developer program requirements 2026",
       "direction": "kills",
@@ -366,7 +366,7 @@
     {
       "id": "sopaclaim-no-unified-parse-deadline-claim-tool",
       "idea_key": "sopaclaim",
-      "assumption": "No AU competitor (Payapps/Autodesk, ClaimTrack, Styck, Neo Intelligence) offers contract parsing + reference-date extraction + statutory claim generation as ONE unified workflow for SME subbies \u2014 the surviving wedge.",
+      "assumption": "No AU competitor (Payapps/Autodesk, ClaimTrack, Styck, Neo Intelligence) offers contract parsing + reference-date extraction + statutory claim generation as ONE unified workflow for SME subbies — the surviving wedge.",
       "trigger": "Payapps (Autodesk) or ClaimTrack ships AI contract-ingestion with automated SOPA deadline alerts and one-click statutory claim drafting.",
       "check_query": "Payapps OR ClaimTrack OR Styck AI contract parsing SOPA deadline payment claim generation new feature Australia",
       "direction": "kills",
@@ -376,7 +376,7 @@
       "id": "sopaclaim-vic-2026-sopa-reform-real",
       "idea_key": "sopaclaim",
       "assumption": "April 2026 Victorian SOPA reform expanded claimable costs (e.g. time-related), strengthening the compliance-value thesis. Currently UNVERIFIED (Maddocks/VBA sources were WAF-blocked); the related Trimble-acquired-Document-Crunch validation claim was REFUTED.",
-      "trigger": "legislation.vic.gov.au or VBA confirms the reform text and commencement \u2014 confirmation upgrades the demand thesis; non-existence weakens it.",
+      "trigger": "legislation.vic.gov.au or VBA confirms the reform text and commencement — confirmation upgrades the demand thesis; non-existence weakens it.",
       "check_query": "site:legislation.vic.gov.au OR site:vba.vic.gov.au Building and Construction Industry Security of Payment amendment 2026 time-related costs",
       "direction": "upgrades",
       "severity": "medium"
@@ -384,7 +384,7 @@
     {
       "id": "sopaclaim-state-fragmentation-persists",
       "idea_key": "sopaclaim",
-      "assumption": "SOPA stays fragmented state-by-state (NSW/VIC/QLD variants) \u2014 the per-state statutory complexity is what makes a specialised tool worth paying for.",
+      "assumption": "SOPA stays fragmented state-by-state (NSW/VIC/QLD variants) — the per-state statutory complexity is what makes a specialised tool worth paying for.",
       "trigger": "Commonwealth announces national harmonisation of security-of-payment legislation (single national regime would shrink the complexity moat).",
       "check_query": "national harmonisation security of payment act Australia federal review 2026",
       "direction": "kills",
@@ -393,8 +393,8 @@
     {
       "id": "ondcbackoffice-space-unserved-at-price",
       "idea_key": "ondcbackoffice",
-      "assumption": "No incumbent serves ONDC-native reconciliation + WhatsApp-to-inventory sync for tier-2 retailers at the \u20b9499\u2013999/month price point \u2014 the wedge rests on this gap. Already CONTESTED at validation: PointNXT bundles ONDC+WhatsApp+inventory for SMBs and Zoho Vikra does ONDC settlement reconciliation (Zoho put \u20b970cr into ONDC, May 2026). The price/Hindi-first niche is the only unclaimed sliver.",
-      "trigger": "Zoho Vikra, PointNXT, ReconPe, or a funded player ships an ONDC reconciliation + WhatsApp-inventory product priced under \u20b91,000/month aimed at tier-2 sellers.",
+      "assumption": "No incumbent serves ONDC-native reconciliation + WhatsApp-to-inventory sync for tier-2 retailers at the ₹499–999/month price point — the wedge rests on this gap. Already CONTESTED at validation: PointNXT bundles ONDC+WhatsApp+inventory for SMBs and Zoho Vikra does ONDC settlement reconciliation (Zoho put ₹70cr into ONDC, May 2026). The price/Hindi-first niche is the only unclaimed sliver.",
+      "trigger": "Zoho Vikra, PointNXT, ReconPe, or a funded player ships an ONDC reconciliation + WhatsApp-inventory product priced under ₹1,000/month aimed at tier-2 sellers.",
       "check_query": "ONDC seller reconciliation WhatsApp inventory sync SaaS pricing per month tier-2 Zoho Vikra PointNXT ReconPe",
       "direction": "kills",
       "severity": "high"
@@ -402,8 +402,8 @@
     {
       "id": "ondcbackoffice-seller-willingness-to-pay",
       "idea_key": "ondcbackoffice",
-      "assumption": "Tier-2 ONDC sellers earning \u20b950K\u2013200K/month will actually PAY \u20b9499\u2013999/month for back-office reconciliation. Entirely unproven \u2014 the strategist flagged CAC-to-LTV as fragile and the only planned validation is a WhatsApp-group interest test. Price-sensitive segment + offline distribution = the make-or-break unknown.",
-      "trigger": "A direct demand test (WhatsApp-group reframe, landing-page presales) returns <30% interest or clear unwillingness to pay; OR published ONDC-seller ARPU data shows tooling spend far below \u20b9500/month.",
+      "assumption": "Tier-2 ONDC sellers earning ₹50K–200K/month will actually PAY ₹499–999/month for back-office reconciliation. Entirely unproven — the strategist flagged CAC-to-LTV as fragile and the only planned validation is a WhatsApp-group interest test. Price-sensitive segment + offline distribution = the make-or-break unknown.",
+      "trigger": "A direct demand test (WhatsApp-group reframe, landing-page presales) returns <30% interest or clear unwillingness to pay; OR published ONDC-seller ARPU data shows tooling spend far below ₹500/month.",
       "check_query": "ONDC tier-2 seller willingness to pay software subscription back office tooling ARPU",
       "direction": "kills",
       "severity": "high"
@@ -411,7 +411,7 @@
     {
       "id": "ondcbackoffice-platform-native-reconciliation",
       "idea_key": "ondcbackoffice",
-      "assumption": "ONDC network participants (PhonePe, Meesho, Google) and WhatsApp Commerce do NOT ship native settlement reconciliation + inventory sync \u2014 if they do, the standalone tool is stranded (platform-dependency is the existential moat risk).",
+      "assumption": "ONDC network participants (PhonePe, Meesho, Google) and WhatsApp Commerce do NOT ship native settlement reconciliation + inventory sync — if they do, the standalone tool is stranded (platform-dependency is the existential moat risk).",
       "trigger": "A major ONDC buyer/seller app or WhatsApp Commerce launches native settlement reconciliation and/or inventory sync for sellers.",
       "check_query": "ONDC PhonePe Meesho WhatsApp Commerce native settlement reconciliation inventory sync seller 2026",
       "direction": "kills",
@@ -429,7 +429,7 @@
     {
       "id": "franchiselens-data-obtainable-without-franchisor-consent",
       "idea_key": "franchiselens-india",
-      "assumption": "Verified franchisee performance data can be sourced from franchisees (crowd-sourced, compounds) WITHOUT depending on franchisor cooperation \u2014 otherwise the issuer-pays conflict (Tata gate) corrupts neutrality and a funded competitor clones the manual-research dataset in ~12 months.",
+      "assumption": "Verified franchisee performance data can be sourced from franchisees (crowd-sourced, compounds) WITHOUT depending on franchisor cooperation — otherwise the issuer-pays conflict (Tata gate) corrupts neutrality and a funded competitor clones the manual-research dataset in ~12 months.",
       "trigger": "Franchisee-side data proves unobtainable at scale without franchisor sign-off (legal/NDA blocks), forcing a franchisor-paid model = the conflict the Tata gate flagged.",
       "check_query": "India franchisee performance data sharing NDA confidentiality restrictions franchise agreement",
       "direction": "kills",
@@ -438,7 +438,7 @@
     {
       "id": "algoverify-no-official-sebi-vendor-registry",
       "idea_key": "algoverify-india",
-      "assumption": "SEBI / the exchanges do NOT publish a free, authoritative, searchable public registry of RA-licensed + empanelled algo vendors \u2014 the missing trust layer is the whole product. (WARM: SEBI already launched a verified label for trading apps on Google Play, March 2026 \u2014 adjacent encroachment.)",
+      "assumption": "SEBI / the exchanges do NOT publish a free, authoritative, searchable public registry of RA-licensed + empanelled algo vendors — the missing trust layer is the whole product. (WARM: SEBI already launched a verified label for trading apps on Google Play, March 2026 — adjacent encroachment.)",
       "trigger": "SEBI or NSE/BSE launches an official searchable verified-algo-vendor / verified-RA directory covering the same vendors, making a third-party trust layer redundant.",
       "check_query": "SEBI NSE BSE official verified algo trading vendor registry directory RA empanelment search 2026",
       "direction": "kills",
@@ -447,10 +447,37 @@
     {
       "id": "algoverify-sebi-enforcement-tailwind-persists",
       "idea_key": "algoverify-india",
-      "assumption": "SEBI continues active enforcement against unvetted/fake algo vendors (1.33 lakh misleading posts flagged, 66 fake apps removed FY26) \u2014 the enforcement climate is what creates retail demand for a verification trust layer.",
+      "assumption": "SEBI continues active enforcement against unvetted/fake algo vendors (1.33 lakh misleading posts flagged, 66 fake apps removed FY26) — the enforcement climate is what creates retail demand for a verification trust layer.",
       "trigger": "SEBI enforcement against algo/finfluencer fraud wanes OR the 200+ unvetted-vendor problem consolidates to a few licensed players, collapsing the need for a directory.",
       "check_query": "SEBI enforcement algo trading vendors finfluencer fraud action 2026 retail investor protection",
       "direction": "strengthens",
+      "severity": "medium"
+    },
+    {
+      "id": "bharatcreator-brands-pay-for-verification",
+      "idea_key": "bharatcreator-index",
+      "assumption": "Brand marketing managers / agencies distrust current regional-creator rate estimates enough to pay ₹15K–₹50K/mo for an independent, verified benchmark — i.e. paying demand exists beyond a free 'nice-to-have'. This is the most load-bearing, currently-UNVALIDATED claim (strategist: 'validated paying demand is zero').",
+      "trigger": "First-validation calls (5 brand/agency media buyers) come back saying they're satisfied with Qoruz/manual estimates, OR a free benchmark report gets traffic but no subscription conversions.",
+      "check_query": "India regional influencer rate card benchmark subscription brands willing to pay Qoruz alternative verified pricing",
+      "direction": "kills",
+      "severity": "high"
+    },
+    {
+      "id": "bharatcreator-moat-before-incumbent-copy",
+      "idea_key": "bharatcreator-index",
+      "assumption": "No well-funded incumbent (GroupM, Nielsen, Kantar, or a PE-backed data firm) ships a regional-language verified-creator-benchmark product first — the moat must come from a proprietary creator-submission network built faster than the 6–12 months it would take an incumbent to replicate the public-data audit methodology.",
+      "trigger": "GroupM/Nielsen/Kantar/Qoruz announce a verified rate-card + audience-audit benchmark for Indian regional-language creators, or a funded startup raises specifically for this wedge.",
+      "check_query": "GroupM Nielsen Kantar Qoruz India regional creator verified rate card benchmark audience audit launch 2026",
+      "direction": "weakens",
+      "severity": "high"
+    },
+    {
+      "id": "bharatcreator-tam-is-business-not-consulting-niche",
+      "idea_key": "bharatcreator-index",
+      "assumption": "Enough brands have regional-YouTube budgets large enough — plus enough PE/strategic acquirers actively buying regional channels — to support a scalable subscription business, rather than a one-analyst consulting practice in benchmark clothing.",
+      "trigger": "Validation shows the addressable pool is a few dozen buyers (a retainer/consulting shape), or regional-YouTube M&A deal flow in India stays negligible through 2026.",
+      "check_query": "India regional language YouTube channel acquisition M&A deal volume 2026 brand regional creator budget size",
+      "direction": "weakens",
       "severity": "medium"
     }
   ]

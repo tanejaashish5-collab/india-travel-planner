@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-06-14T12:00:00.000Z",
-  "count": 69,
+  "count": 70,
   "opportunities": [
     {
       "key": "highriskwatch",
@@ -3452,6 +3452,82 @@
         ],
         "reason": "Fundamentally pro-consumer idea that protects retail traders from unvetted algo vendors — Ratan Tata would be proud of the mission — but the paid \"verified badge\" model risks selling the appearance of trustworthiness rather than purely reflecting objective license status, and broker affiliate commissions must be disclosed or they quietly bias the trust signal the brand is built on.",
         "fix": "Badge must mean exactly one thing: 'SEBI RA license / Exchange Empanelment ID confirmed current as of [date]' — displayed identically for all verified vendors regardless of payment; the fee covers only the API/display infrastructure, not any quality signal beyond regulatory status. All broker affiliate relationships must be labeled 'paid partner' adjacent to every link or recommendation. With these two disclosures codified at launch, both concerns clear and the business is fully pass.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
+      }
+    },
+    {
+      "key": "bharatcreator-index",
+      "name": "BharatCreator Index",
+      "shape": "content-audience",
+      "source_channel": "content-media-brands",
+      "one_liner": "A verified benchmark media brand that publishes audited audience intelligence, deal rate cards, and M&A valuation data for India's regional-language YouTube creator economy — monetised by subscriptions from brands and PE acquirers, not by running a marketplace.",
+      "the_insight": "Two forces are colliding in 2026: brand digital budgets have shifted 35% to regional-language (Hindi/Tamil/Telugu) placements, yet brand teams have no reliable way to verify audience quality or fair-market deal rates for those creators; simultaneously PE and media holding companies are buying YouTube channel IP at scale (Flippa baseline $1.5K–$300K+, GameSquare/TubeBuddy deal Jun 2026) but India's regional channels are invisible in Western M&A intelligence. The gap is NOT a platform or marketplace — it is verified, independently published intelligence that both buyer-side audiences (brand marketing managers, PE associates) will pay for as a research subscription. This is the Levels.fyi / PitchBook wedge applied to India's creator economy: anonymous, structured data submissions from creators + adversarial verification layer → published rate cards, audience-quality scores, and channel-valuation multiples. No cold outbound needed: brand marketing managers and PE associates find benchmark research via SEO and newsletter; the data moat compounds with each submission cohort.",
+      "monetization": "Brand-side research subscription (₹15K–₹50K/month for verified deal rate cards + audience quality reports); PE/acquirer due-diligence report fee (per-channel valuation report, ₹25K–₹1L); creator-side free tier drives submission volume. No advertising dependency.",
+      "surviving_wedge": "Launch as a free-to-freemium rate-card data aggregator targeted at **brand marketing managers in Tier-2 India** (Delhi, Bangalore, Mumbai agencies), seeded with 50–100 verified regional (Hindi/Tamil/Telugu) YouTube channels' real-world sponsorship deals + audience-quality audits. Position against Qoruz (which is discovery, not benchmarking) and undercut Flippa's channel-valuation multiples by focusing solely on creator deal rates + audience verification. Wedge: brands see benchmarking as a \"nice-to-have\" today, but as regional-language spend grows, buyers will demand independent verification. First revenue comes from agencies + mid-market brands ($2K–$5K/mo per subscription), not from creators. Trap: existing platforms can copy; moat is speed to credibility + volume of audited submissions.",
+      "demand_evidence": "Most load-bearing, checkable claim: \"Brand digital budgets shifted 35% to regional-language placements, yet brand teams have no reliable way to verify deal rates or audience quality.\" Evidence: (1) India's digital ad spend reached ₹59,200 crore in 2025, growing 10.1% to $14.56B by 2026 (GlobeNewswire, Feb 2026). (2) Regional language content drives 60%+ of YouTube India's watch time (Google blog, 2025). (3) Existing influencer platforms (Qoruz, Grynow, Social Beat) offer DISCOVERY only, not benchmarking—they list creators but don't publish verified rate cards or audience quality scores. (4) Flippa's YouTube channel transaction data shows 155% growth in deals (2025), but no India-specific regional language benchmarking product exists. (5) GameSquare acquired TubeBuddy and YouTube is investing $100M in creator infrastructure, signaling PE interest in creator IP but NO independent intelligence provider covering regional-language rate benchmarks.",
+      "market_size": "India creator economy $15B (2026) growing to $62B (2033, 22.4% CAGR). Regional language content drives 60%+ of YouTube India watch time. Brand digital budgets: $14.56B in 2026, with 35% flowing to regional-language placements. TAM for benchmarking intelligence (brand marketing + PE buyers): estimated $200M–$500M annually in India alone.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 3,
+        "speed_to_cash": 3,
+        "profit_ceiling": 3,
+        "competition_shape": 2
+      },
+      "composite": 2.9,
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "India's digital ad spend reached ₹59,200 crore in 2025, growing 10.1% to $14.56B by 2026",
+          "verified": "true",
+          "source": "https://www.globenewswire.com/news-release/2026/02/10/3235582/0/en/India-Digital-Ad-Spend-Business-Report-2026-A-20-46-Billion-Market-by-2029-Google-and-Meta-Retain-Budget-Share-ShareChat-Dailyhunt-and-InMobi-Scale-Through-Regional-Content.html"
+        },
+        {
+          "claim": "Regional language content drives 60%+ of YouTube India's watch time (Google blog, 2025)",
+          "verified": "unclear",
+          "source": "https://blog.google/intl/en-in/products/platforms/2025s-biggest-trends-on-youtube-that-gave-india-a-new-shared-vernacular/ — Google India blog reports 77% of Gen Z consumed translated content and emphasizes regional language dominance, but does NOT publish a specific watch-time percentage (60%, 90%, or 95%). Search results cite 90-95% regional language consumption, but the specific 60% figure from 'Google blog 2025' cannot be verified from the official Google source."
+        },
+        {
+          "claim": "Flippa's YouTube channel transaction data shows 155% growth in deals (2025)",
+          "verified": "true",
+          "source": "https://flippa.com/blog/2025-online-business-ma-insights-from-flippa/ — Report confirms: 'YouTube deals exploded 155%' and 'Transaction volume: +155% growth – the fastest-growing category on the platform.'"
+        },
+        {
+          "claim": "YouTube is investing $100M in creator infrastructure",
+          "verified": "unclear",
+          "source": "YouTube's public announcements report $100 billion in cumulative creator payouts over 4 years (2021-2025), NOT a specific $100M infrastructure investment. A dedicated $100M creator infrastructure investment line item was not found in YouTube or Alphabet's 2025-2026 announcements. The broader Alphabet capex plan is $180B in 2026, but no specific YouTube creator infrastructure allocation of $100M is documented."
+        }
+      ],
+      "fact_status": "partial",
+      "first_seen": "2026-06-18",
+      "last_seen": "2026-06-18",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-18",
+          "composite": 2.9
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.85,
+        "fitLoadBearing": 0.778,
+        "conviction": 3.78,
+        "tier": "PURSUE",
+        "dealbreakers": [],
+        "coverage": "31/42",
+        "verdict": "These strategists would see a well-timed, first-mover idea clearing the latent-need and category-creation bars, but would not back it without answers to two questions: is the paying subscriber pool large enough to build a real business (or is this a consulting practice in benchmark clothing?), and what structurally prevents a GroupM or PE-backed data firm from copying the audit methodology in six months — conditional interest, not conviction.",
+        "scoredAt": "2026-06-14T12:00:00.000Z"
+      },
+      "tata": {
+        "verdict": "conditional",
+        "failed_tests": [],
+        "concerns": [
+          "'Verified' and 'audited' are the core value proposition — if the verification methodology is thin, proprietary, or self-certified without disclosure, brands and PE acquirers are paying for false confidence on decisions involving real money (M&A, campaign budgets). This touches truthful-claims, public-scrutiny, and safety-never-compromised simultaneously.",
+          "Creators on the free tier are the data supply for reports sold to paying subscribers and acquirers. If their channel data, audience metrics, or rate-card submissions appear in paid reports without explicit informed consent and clear disclosure of how their data is used commercially, this is a fairness and dignity violation against the very people the free tier is meant to serve."
+        ],
+        "reason": "The business model is structurally honest and pro-market — bringing verified intelligence to an opaque influencer economy serves brands, acquirers, and creators fairly — but two launch-critical integrity gaps exist: (1) the words \"verified\" and \"audited\" are commercially load-bearing and must not outrun the actual methodology rigor, and (2) creator data used in paid reports requires explicit informed consent from the free-tier contributors who supply it.",
+        "fix": "Launch with a publicly documented, methodology-disclosed verification standard (not just 'audited by us') — state exactly what is checked, what the confidence level is, and where data is insufficient say so explicitly rather than interpolating; AND require explicit opt-in consent from creators before their submitted data appears in any paid subscriber report or acquirer due-diligence product, with a clear plain-language explanation of the commercial use.",
         "scoredAt": "2026-06-14T12:00:00.000Z"
       }
     },
