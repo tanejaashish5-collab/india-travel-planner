@@ -5071,3 +5071,55 @@ Date range: 2026-04-15 → 2026-06-17
 2026-06-18 17:36:16  ERROR     [facebook/Nakshiq] COOLDOWN VIOLATION: pangong-lake is in the 14-day window but was selected for v2_ugc_spotlight — skipping (pool likely exhausted or a dedup regression).
 2026-06-18 17:36:16  INFO      State saved. Run complete.
 2026-06-18 17:36:16  INFO      ════════════════════════════════════════════════════════════
+2026-06-18 20:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-06-18 20:44:11  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-06-18
+2026-06-18 20:44:11  INFO      ════════════════════════════════════════════════════════════
+2026-06-18 20:44:22  INFO      Synced 5 new posts (total: 482)
+2026-06-18 20:44:22  INFO      ── Analytics Summary ──
+2026-06-18 20:44:22  INFO      Total posts tracked: 482
+2026-06-18 20:44:22  INFO      Successfully published: 421 | Failed: 52
+2026-06-18 20:44:22  INFO      
+2026-06-18 20:44:22  INFO      By content type:
+2026-06-18 20:44:22  INFO        feed_post: 204
+2026-06-18 20:44:22  INFO        yt_short: 168
+2026-06-18 20:44:22  INFO        reel: 68
+2026-06-18 20:44:22  INFO        canva_visual: 14
+2026-06-18 20:44:22  INFO        tourist_map: 12
+2026-06-18 20:44:22  INFO        infographic: 10
+2026-06-18 20:44:22  INFO        pomelli_visual: 6
+2026-06-18 20:44:22  INFO      
+2026-06-18 20:44:22  INFO      By format:
+2026-06-18 20:44:22  INFO        feed_post:unknown: 204
+2026-06-18 20:44:22  INFO        yt_short:nakshiq: 63
+2026-06-18 20:44:22  INFO        yt_short:did: 24
+2026-06-18 20:44:22  INFO        reel:seasonal: 23
+2026-06-18 20:44:22  INFO        reel:destination: 21
+2026-06-18 20:44:22  INFO        yt_short:listicle: 20
+2026-06-18 20:44:22  INFO        yt_short:mini: 18
+2026-06-18 20:44:22  INFO        yt_short:before: 17
+2026-06-18 20:44:22  INFO        reel:map: 15
+2026-06-18 20:44:22  INFO        canva_visual:unknown: 14
+2026-06-18 20:44:22  INFO        yt_short:this: 14
+2026-06-18 20:44:22  INFO        tourist_map:unknown: 12
+2026-06-18 20:44:22  INFO        yt_short:dont: 12
+2026-06-18 20:44:22  INFO        infographic:unknown: 10
+2026-06-18 20:44:22  INFO        reel:score: 6
+2026-06-18 20:44:22  INFO        pomelli_visual:unknown: 6
+2026-06-18 20:44:22  INFO        reel:pomelli: 3
+2026-06-18 20:44:22  INFO      
+2026-06-18 20:44:22  INFO      By platform:
+2026-06-18 20:44:22  INFO        instagram: 244
+2026-06-18 20:44:22  INFO        facebook: 117
+2026-06-18 20:44:22  INFO        youtube: 112
+2026-06-18 20:44:22  INFO      
+2026-06-18 20:44:22  INFO      YT Short format distribution:
+2026-06-18 20:44:22  INFO        nakshiq: 63 (38%)
+2026-06-18 20:44:22  INFO        did: 24 (14%)
+2026-06-18 20:44:22  INFO        listicle: 20 (12%)
+2026-06-18 20:44:22  INFO        mini: 18 (11%)
+2026-06-18 20:44:22  INFO        before: 17 (10%)
+2026-06-18 20:44:22  INFO        this: 14 (8%)
+2026-06-18 20:44:22  INFO        dont: 12 (7%)
+2026-06-18 20:44:22  INFO      
+Date range: 2026-04-15 → 2026-06-18
+2026-06-18 20:44:22  INFO      ════════════════════════════════════════════════════════════
