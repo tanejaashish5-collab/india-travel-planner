@@ -2678,7 +2678,8 @@ def copy_score_card(dest: dict, platform: str) -> str:
         url = dest_url(dest, "social", "post", "score-card",
                        content=build_utm_content(dest.get("id"), "score_card"))
         body = [hook] if hook else []
-        body.append(f"Verified for {mon}. Score: {score}/5. {state}.")
+        body.append(f"{name}, {state} — the honest read for {mon}.")
+        body.append(f"We don't do sponsored hype. That {score}/5 is what's left after we check weather, roads, crowds, hospitals and signal.")
         body.append(cta)
         body.append(f"Full {name} guide → {url}")
         body.append(tags)
@@ -2686,7 +2687,7 @@ def copy_score_card(dest: dict, platform: str) -> str:
 
     # IG — no URL (stripped from captions). Link-in-bio model + comment-CTA.
     body = [hook] if hook else []
-    body.append(f"{mon} · NakshIQ {score}/5 · {state}")
+    body.append(f"{mon} · {name}, {state}. Our honest read: {score}/5 — earned on weather, roads, crowds, hospitals and signal, not vibes.")
     body.append(cta)
     body.append("🔗 link in bio for the full guide.")
     body.append(tags)
