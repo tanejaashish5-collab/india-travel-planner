@@ -770,6 +770,70 @@ def _template_spec_en(dest: dict) -> dict:
             return _en("Check a better month on NakshIQ first.")
         return _en("Save it — your next trip might start here.")
 
+    # ── STORY-SPINE beats (2026-06-19) — mirror of the Hindi engine: Hook →
+    # Tension → Payoff → Turn, with the score folded into the TURN as EARNED
+    # evidence (not a standalone "5 things checked → score" receipt). Reuses the
+    # verified beat-builders above. Same flag as Hindi (NAKSHIQ_YT_STORY_SPINE,
+    # default ON); =0 → legacy data-receipt assembly. No fabrication.
+    _STORY_SPINE = os.environ.get("NAKSHIQ_YT_STORY_SPINE", "1") != "0"
+    _EN_MONTHS = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May",
+                  6: "June", 7: "July", 8: "August", 9: "September", 10: "October",
+                  11: "November", 12: "December"}
+    _best = dest.get("best_months") or []
+
+    def b_tag():
+        cl = _en_clauses(tagline)
+        return _en(cl[0] + ".") if cl else None
+
+    def b_when_wait():
+        try:
+            bm = _EN_MONTHS.get(int(_best[0])) if _best else None
+        except Exception:
+            bm = None
+        if bm:
+            return _en(f"Wait — go in {bm}, when this place is at its best.")
+        return _en("Wait for the right season — that's when it's worth it.")
+
+    def b_when_go():
+        return _en("And right now the weather's on your side — this is the window.")
+
+    def b_warn_rule():
+        if elev and elev >= 3500:
+            return _en("One rule — give your body a day to adjust to the altitude, or it will break you.")
+        if carry_extra and pump_ok:
+            return _en(f"The last fuel is at {pump} — fill the tank and carry a spare can.")
+        if summer_low is not None and summer_low <= 4:
+            return _en(f"Nights drop to {summer_low} degrees — pack proper warm layers.")
+        return _en("Go — but go fully prepared.")
+
+    def b_warn_extra():
+        if bsnl_only:
+            return _en("And only BSNL works here — every other network is dead.")
+        if net and not nets:
+            return _en("And your phone won't work here — download everything first, and tell someone your plan.")
+        if summer_low is not None and summer_low <= 4 and not (elev and elev >= 3500):
+            return _en(f"And nights drop to {summer_low} degrees — carry warm layers.")
+        return b_emergency()
+
+    def b_drive_line():
+        return _en("Out here it's not about arriving — the road is the whole trip.")
+
+    def b_turn(a):
+        if a == "wait":
+            return (f"Right now it scores just {disp_v} — the place isn't the problem, the month is.",
+                    f"Right now — just {disp}. Not the place, the month.")
+        if a == "warn":
+            return (f"That's why it scores {disp_v} — not for the views, but because with the right prep, this place changes you.",
+                    f"That's the {disp} — earned with the right prep.")
+        if a == "food":
+            return (f"It scores {disp_v} — and that one taste is what pulls you back.",
+                    f"Scores {disp} — and that taste pulls you back.")
+        if a == "drive":
+            return (f"It scores {disp_v} — but the real reward isn't the destination, it's the road.",
+                    f"Scores {disp} — the road is the reward.")
+        return (f"It scores {disp_v} — see it before it goes viral.",
+                f"Scores {disp} — see it before it goes viral.")
+
     is_risky = (elev and elev >= 3500) or diff == "hard" or bsnl_only
     has_drive = last_km == "hard" or any(
         k in road for k in ("landslide", "pass", "4wd", "4x4", "narrow", "unpaved", "single-lane", "single lane"))
@@ -780,43 +844,72 @@ def _template_spec_en(dest: dict) -> dict:
             return "en_bright_f" if even else "en_bright_m"
         return "en_deep_f" if even else "en_deep_m"
 
-    if raw <= 2:
-        arc, kind, profile = "wait", "wait", _prof(False)
-        body = [b_hook("wait"), b_shock(), b_wait_reason()]
-    elif is_risky:
-        arc, kind, profile = "warn", "warn", _prof(False)
-        body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
-    elif dish and eatery and raw >= 4:
-        arc, kind, profile = "food", "gem", _prof(True)
-        body = [b_hook("food"), b_why(), b_food(), b_cost() or b_network()]
-    elif has_drive and raw >= 3:
-        arc, kind, profile = "drive", "gem", _prof(True)
-        body = [b_hook("drive"), b_why(), b_fuel() or b_network() or b_cold()]
+    if _STORY_SPINE:
+        # Hook → Tension → Payoff → Turn (score folded into the turn as earned).
+        if raw <= 2:                                # WAIT
+            arc, kind, profile = "wait", "wait", _prof(False)
+            body = [b_hook("wait"), b_wait_reason(), b_when_wait(), b_turn("wait")]
+        elif is_risky:                              # WARN (go prepared)
+            arc, kind, profile = "warn", "warn", _prof(False)
+            body = [b_hook("warn"), b_why(punchy=False) or b_tag(), b_warn_rule(), b_warn_extra(), b_turn("warn")]
+        elif dish and eatery and raw >= 4:          # FOOD
+            arc, kind, profile = "food", "gem", _prof(True)
+            body = [b_hook("food"), b_why(punchy=False) or b_tag(), b_food(), b_turn("food")]
+        elif has_drive and raw >= 3:                # DRIVE
+            arc, kind, profile = "drive", "gem", _prof(True)
+            body = [b_hook("drive"), b_why(punchy=False) or b_tag(), b_fuel() or b_cold() or b_drive_line(), b_turn("drive")]
+        else:                                       # GEM (default, go-now)
+            arc, kind, profile = "gem", "gem", _prof(True)
+            body = [b_hook("gem"), b_why(punchy=False) or b_tag(),
+                    b_food() or b_cold() or b_cost() or b_network() or b_altitude() or b_when_go(),
+                    b_turn("gem")]
+        seen, uniq = set(), []
+        for beat in body:
+            if not beat:
+                continue
+            k = beat[1].lower()[:26]
+            if k in seen:
+                continue
+            seen.add(k); uniq.append(beat)
+        if len(uniq) < 2:
+            uniq = [b for b in (b_hook(arc), b_turn(kind if kind == "wait" else "gem")) if b]
+        seq = uniq[:6] + [b_cta(kind)]
     else:
-        arc, kind, profile = "gem", "gem", _prof(True)
-        body = [b_hook("gem"), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
-
-    seen, uniq = set(), []
-    for beat in body:
-        if not beat:
-            continue
-        k = beat[1].lower()[:26]
-        if k in seen:
-            continue
-        seen.add(k); uniq.append(beat)
-    body = uniq
-    if len(body) < 3:
-        for c in _en_clauses(why):
-            cand = (c + ".", c + ".")
-            if cand[1].lower()[:26] not in seen:
-                body.append(cand); seen.add(cand[1].lower()[:26])
-            if len(body) >= 3:
-                break
-    if len(body) < 2:
-        body = [_en(f"{name} — a corner of {state or 'India'} most travellers walk right past.")]
-
-    cap = 5 if arc == "warn" else 4
-    seq = body[:cap] + [b_receipt(), b_cta(kind)]
+        if raw <= 2:
+            arc, kind, profile = "wait", "wait", _prof(False)
+            body = [b_hook("wait"), b_shock(), b_wait_reason()]
+        elif is_risky:
+            arc, kind, profile = "warn", "warn", _prof(False)
+            body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
+        elif dish and eatery and raw >= 4:
+            arc, kind, profile = "food", "gem", _prof(True)
+            body = [b_hook("food"), b_why(), b_food(), b_cost() or b_network()]
+        elif has_drive and raw >= 3:
+            arc, kind, profile = "drive", "gem", _prof(True)
+            body = [b_hook("drive"), b_why(), b_fuel() or b_network() or b_cold()]
+        else:
+            arc, kind, profile = "gem", "gem", _prof(True)
+            body = [b_hook("gem"), b_why(), b_food() or b_cold() or b_cost() or b_network() or b_altitude()]
+        seen, uniq = set(), []
+        for beat in body:
+            if not beat:
+                continue
+            k = beat[1].lower()[:26]
+            if k in seen:
+                continue
+            seen.add(k); uniq.append(beat)
+        body = uniq
+        if len(body) < 3:
+            for c in _en_clauses(why):
+                cand = (c + ".", c + ".")
+                if cand[1].lower()[:26] not in seen:
+                    body.append(cand); seen.add(cand[1].lower()[:26])
+                if len(body) >= 3:
+                    break
+        if len(body) < 2:
+            body = [_en(f"{name} — a corner of {state or 'India'} most travellers walk right past.")]
+        cap = 5 if arc == "warn" else 4
+        seq = body[:cap] + [b_receipt(), b_cta(kind)]
     lines = [_single_sentence(d) for d, _ in seq]
     caps = [c for _, c in seq]
     return {
