@@ -5259,3 +5259,23 @@ Date range: 2026-04-15 → 2026-06-18
 2026-06-19 14:03:50  INFO      YT Short posted: format=nakshiq_score, music=edm-371
 2026-06-19 14:03:50  INFO      State saved. YT Short run complete.
 2026-06-19 14:03:50  INFO      ════════════════════════════════════════════════════════════
+2026-06-19 14:31:16  INFO      ════════════════════════════════════════════════════════════
+2026-06-19 14:31:16  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-19
+2026-06-19 14:31:16  INFO      ════════════════════════════════════════════════════════════
+2026-06-19 14:31:19  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-19 14:32:45  INFO      Short rendered: yt_short_nakshiq_score_igatpuri_hi_2026-06-19.mp4 (15024 KB, 25.7s, fmt=nakshiq_score, music=fast-676)
+2026-06-19 14:32:45  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_igatpuri_hi_2026-06-19.mp4 (15,385,056 bytes, video/mp4)
+2026-06-19 14:32:47  INFO          Uploading to R2 (timeout=300s)...
+2026-06-19 14:32:48  INFO          R2 PUT OK. Confirming...
+2026-06-19 14:32:50  INFO          Media ready: O6Xcv (15,385,056 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_igatpuri_hi_2026-06-19.mp4)
+2026-06-19 14:32:50  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_igatpuri_hi_2026-06-19.mp4
+2026-06-19 14:32:51  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-19 14:32:51  INFO      [youtube/@naksh-iq] Publishing YT Short (nakshiq_score)...
+2026-06-19 14:32:51  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-06-19 14:32:56  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=vDXSg), waiting for platform confirmation...
+2026-06-19 14:33:11  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=vDXSg · Platform=5CFmfuz3gBM
+2026-06-19 14:33:11  INFO      [instagram/nakshiq] Already posted 2 YT Shorts today — skipping.
+2026-06-19 14:33:11  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-19 14:33:11  INFO      YT Short posted: format=nakshiq_score, music=fast-676
+2026-06-19 14:33:11  INFO      State saved. YT Short run complete.
+2026-06-19 14:33:11  INFO      ════════════════════════════════════════════════════════════
