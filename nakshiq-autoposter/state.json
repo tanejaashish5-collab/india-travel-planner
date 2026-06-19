@@ -36,9 +36,11 @@
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-19",
     "m8EAd": "2026-06-19",
-    "PdMu0": "2026-06-19"
+    "PdMu0": "2026-06-19",
+    "m8EAd_evening": "2026-06-19",
+    "PdMu0_evening": "2026-06-19"
   },
-  "last_sync": "2026-06-19T08:46:33.756227+00:00",
+  "last_sync": "2026-06-19T16:45:34.334921+00:00",
   "posted_destinations": [
     {
       "destination_id": "courtallam",
@@ -331,11 +333,18 @@
     {
       "destination_id": "igatpuri",
       "date": "2026-06-19"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "date": "2026-06-19"
+    },
+    {
+      "destination_id": "kanatal",
+      "date": "2026-06-19"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
       "v2_hindi_score_card",
       "v2_myth_bust_oneline",
@@ -355,10 +364,10 @@
       "v2_local_knows",
       "v2_budget_receipt",
       "v2_myth_bust_oneline",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "v4_dw_heritage_reel_sensory_pov"
     ],
     "PdMu0": [
-      "weekend_escape",
       "v4_dw_counter_narrative_myth_bust",
       "v2_hindi_score_card",
       "v2_myth_bust_oneline",
@@ -378,7 +387,8 @@
       "v2_local_knows",
       "v2_budget_receipt",
       "v2_myth_bust_oneline",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "v4_dw_heritage_reel_sensory_pov"
     ]
   },
   "post_log": [
@@ -3351,6 +3361,28 @@
       "destination": "igatpuri",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_igatpuri_hi_2026-06-19.mp4"
+    },
+    {
+      "timestamp": "2026-06-19T16:46:44.953049+00:00",
+      "date": "2026-06-19",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "ROcQH",
+      "destination": "valley-of-flowers",
+      "format": "v4_dw_heritage_reel_sensory_pov",
+      "has_media": true,
+      "media_id": "valley-of-flowers.mp4"
+    },
+    {
+      "timestamp": "2026-06-19T16:47:03.980120+00:00",
+      "date": "2026-06-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ESPVA",
+      "destination": "kanatal",
+      "format": "v4_dw_heritage_reel_sensory_pov",
+      "has_media": true,
+      "media_id": "kanatal.mp4"
     }
   ],
   "theme_usage": {
@@ -3627,6 +3659,12 @@
       ],
       "dharamshala": [
         "2026-06-16"
+      ],
+      "valley-of-flowers": [
+        "2026-06-19"
+      ],
+      "kanatal": [
+        "2026-06-19"
       ]
     },
     "morning_formats": {
@@ -3665,7 +3703,8 @@
         "2026-05-24"
       ],
       "v4_dw_heritage_reel_sensory_pov": [
-        "2026-05-24"
+        "2026-05-24",
+        "2026-06-19"
       ],
       "v3_tl_editorial_listicle": [
         "2026-05-25"
@@ -3891,6 +3930,12 @@
       ],
       "pahalgam": [
         "2026-06-14"
+      ],
+      "valley-of-flowers": [
+        "2026-06-19"
+      ],
+      "kanatal": [
+        "2026-06-19"
       ]
     },
     "audience_tags": {
@@ -3907,7 +3952,8 @@
       "adventurers": [
         "2026-05-29",
         "2026-06-05",
-        "2026-06-12"
+        "2026-06-12",
+        "2026-06-19"
       ]
     },
     "collections": {
@@ -4133,7 +4179,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "roopkund",
+    "shared_best": "lahaul-valley",
     "collection": "best-family-destinations"
   },
   "manual_skip_dests": {}

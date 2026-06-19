@@ -5279,3 +5279,46 @@ Date range: 2026-04-15 → 2026-06-18
 2026-06-19 14:33:11  INFO      YT Short posted: format=nakshiq_score, music=fast-676
 2026-06-19 14:33:11  INFO      State saved. YT Short run complete.
 2026-06-19 14:33:11  INFO      ════════════════════════════════════════════════════════════
+2026-06-19 16:44:59  INFO      ════════════════════════════════════════════════════════════
+2026-06-19 16:44:59  INFO      Nakshiq Autoposter · EVENING · 2026-06-19 · weekday=4
+2026-06-19 16:44:59  INFO      ════════════════════════════════════════════════════════════
+2026-06-19 16:44:59  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-19 16:45:34  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-19 16:45:34  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-19 16:45:35  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-19 16:45:35  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-19 16:45:35  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-19 16:45:49  INFO      [evening] variety pick: v4_dw_heritage_reel_sensory_pov (25 CSV + 3 visual candidates)
+2026-06-19 16:45:49  INFO      Formats — IG: v4_dw_heritage_reel_sensory_pov  ·  FB: v4_dw_heritage_reel_sensory_pov  ·  Story: reality_check  ·  Audience: adventurers
+2026-06-19 16:45:49  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 67
+2026-06-19 16:45:49  INFO      Audience filter 'adventurers' → 11 destinations match.
+2026-06-19 16:45:49  INFO      Fingerprint dedup snapshot — 66 dests in 7d · 146 (dest,fmt) pairs in 30d · 150 media in 60d
+2026-06-19 16:45:50  INFO      Shared best destination locked: Lahaul Valley
+2026-06-19 16:45:50  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-19 16:45:50  INFO      [instagram/nakshiq] Generating v4_dw_heritage_reel_sensory_pov post...
+2026-06-19 16:45:50  INFO      [csv_formats] endpoint-anchored: v4_dw_heritage_reel_sensory_pov → festivals (20 candidates)
+2026-06-19 16:45:50  INFO      [instagram/nakshiq] Caption ready (454 chars, dest=valley-of-flowers)
+2026-06-19 16:45:50  INFO      [instagram/nakshiq] CSV video format (v4_dw_heritage_reel_sensory_pov) — using dest Ken Burns clip as fallback
+2026-06-19 16:45:50  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/valley-of-flowers.mp4?v=20260524
+2026-06-19 16:45:53  INFO          Brand-stamp applied: valley-of-flowers.mp4 (13,154,801 → 7,233,305 bytes)
+2026-06-19 16:45:53  INFO          Requesting upload URL for valley-of-flowers.mp4 (7,233,305 bytes, video/mp4)
+2026-06-19 16:45:54  INFO          Uploading to R2 (timeout=300s)...
+2026-06-19 16:45:55  INFO          R2 PUT OK. Confirming...
+2026-06-19 16:45:56  INFO          Media ready: RfLSH (7,233,305 bytes · valley-of-flowers.mp4)
+2026-06-19 16:45:56  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-19 16:46:44  INFO          wait_for_publish exhausted 8 polls for post=ROcQH (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-19 16:46:44  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=ROcQH)
+2026-06-19 16:46:44  INFO      [facebook/Nakshiq] Generating v4_dw_heritage_reel_sensory_pov post...
+2026-06-19 16:46:44  INFO      [csv_formats] endpoint-anchored: v4_dw_heritage_reel_sensory_pov → festivals (20 candidates)
+2026-06-19 16:46:44  INFO      [facebook/Nakshiq] Caption ready (412 chars, dest=kanatal)
+2026-06-19 16:46:45  INFO      [facebook/Nakshiq] CSV video format (v4_dw_heritage_reel_sensory_pov) — using dest Ken Burns clip as fallback
+2026-06-19 16:46:45  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kanatal.mp4?v=20260524
+2026-06-19 16:46:48  INFO          Brand-stamp applied: kanatal.mp4 (10,220,022 → 5,103,351 bytes)
+2026-06-19 16:46:48  INFO          Requesting upload URL for kanatal.mp4 (5,103,351 bytes, video/mp4)
+2026-06-19 16:46:48  INFO          Uploading to R2 (timeout=300s)...
+2026-06-19 16:46:49  INFO          R2 PUT OK. Confirming...
+2026-06-19 16:46:50  INFO          Media ready: WSfMz (5,103,351 bytes · kanatal.mp4)
+2026-06-19 16:46:50  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-19 16:47:03  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ESPVA · Platform=3171057156436854
+2026-06-19 16:47:03  INFO      State saved. Run complete.
+2026-06-19 16:47:03  INFO      ════════════════════════════════════════════════════════════
