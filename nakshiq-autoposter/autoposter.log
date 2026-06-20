@@ -5374,3 +5374,101 @@ Date range: 2026-04-15 → 2026-06-18
 2026-06-19 20:07:36  INFO      
 Date range: 2026-04-15 → 2026-06-19
 2026-06-19 20:07:36  INFO      ════════════════════════════════════════════════════════════
+2026-06-20 07:13:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-20 07:13:21  INFO      Nakshiq Autoposter · MORNING · 2026-06-20 · weekday=5
+2026-06-20 07:13:21  INFO      ════════════════════════════════════════════════════════════
+2026-06-20 07:13:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-20 07:13:51  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-20 07:13:51  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-20 07:13:52  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-20 07:13:52  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-20 07:13:55  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-20 07:13:55  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-20 07:14:07  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-20 07:14:07  INFO      Morning format (themed-week-3→anti_trap): v2_local_knows [44% vs target 15%] (0/14 never featured)
+2026-06-20 07:14:07  INFO      Formats — IG: v2_local_knows  ·  FB: v2_local_knows  ·  Story: kids_intel
+2026-06-20 07:14:07  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 67
+2026-06-20 07:14:07  INFO      Fingerprint dedup snapshot — 66 dests in 7d · 143 (dest,fmt) pairs in 30d · 152 media in 60d
+2026-06-20 07:14:07  INFO      Kids destination locked: Courtallam (Kutralam)
+2026-06-20 07:14:12  INFO      Shared best destination locked: Sangla Valley
+2026-06-20 07:14:12  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-20 07:14:12  INFO      [instagram/nakshiq] Generating v2_local_knows post...
+2026-06-20 07:14:12  INFO      v2_local_knows: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: nako in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: sissu in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: kaza in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: keylong in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: sangla in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: kargil in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: leh in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  WARNING   v2_local_knows: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-20 07:14:12  INFO      [instagram/nakshiq] Caption ready (341 chars, dest=sangla)
+2026-06-20 07:14:12  ERROR     [instagram/nakshiq] COOLDOWN VIOLATION: sangla is in the 14-day window but was selected for v2_local_knows — skipping (pool likely exhausted or a dedup regression).
+2026-06-20 07:14:12  INFO      [facebook/Nakshiq] Generating v2_local_knows post...
+2026-06-20 07:14:12  INFO      v2_local_knows: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-20 07:14:12  INFO      v2_local_knows: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: nako in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: sissu in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: kaza in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: keylong in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: sangla in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: kargil in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  INFO      v2_local_knows: leh in 14-day cooldown — SKIPPING dest
+2026-06-20 07:14:12  WARNING   v2_local_knows: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-20 07:14:12  INFO      [facebook/Nakshiq] Caption ready (521 chars, dest=sangla)
+2026-06-20 07:14:12  ERROR     [facebook/Nakshiq] COOLDOWN VIOLATION: sangla is in the 14-day window but was selected for v2_local_knows — skipping (pool likely exhausted or a dedup regression).
+2026-06-20 07:14:12  INFO      State saved. Run complete.
+2026-06-20 07:14:12  INFO      ════════════════════════════════════════════════════════════
