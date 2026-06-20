@@ -1,6 +1,6 @@
-# Hero image audit — 2026-05-08
+# Hero image audit — 2026-06-20
 
 Base: `https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev`
 
-Totals: ok=**505** · missing(404)=**0** · errors(other)=**0** · total=505
+Totals: ok=**533** · missing(404)=**0** · errors(other)=**0** · total=533
 

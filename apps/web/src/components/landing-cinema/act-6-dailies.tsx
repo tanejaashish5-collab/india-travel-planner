@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
 import { useInView } from "./use-in-view";
@@ -45,6 +46,12 @@ export function Act6Dailies({
 }) {
   const t = useTranslations("cinema");
   const [ref, seen] = useInView<HTMLDivElement>({ threshold: 0.25 });
+  // A freshly-added destination can reach this rail before its R2 hero is
+  // uploaded (the rail surfaces the most-recently-verified first). Without a
+  // fallback, that 404s to a pure-black card on the landing page. Track which
+  // thumbnails failed to load and swap in a tasteful gradient instead — the
+  // score/name/state text lives in sibling layers, so the card stays readable.
+  const [failed, setFailed] = useState<Set<string>>(new Set());
 
   if (!entries.length) return null;
 
@@ -143,20 +150,40 @@ export function Act6Dailies({
                   background: "#000",
                 }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={destinationImage(row.id, 800)}
-                  alt={`${row.name} — ${row.state}`}
-                  loading="lazy"
-                  decoding="async"
-                  className={kbClass}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    filter: "saturate(.7) brightness(.7)",
-                  }}
-                />
+                {failed.has(row.id) ? (
+                  <div
+                    aria-hidden
+                    className={kbClass}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      background:
+                        "linear-gradient(135deg, var(--film) 0%, #1a1a17 55%, var(--hair) 100%)",
+                    }}
+                  />
+                ) : (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={destinationImage(row.id, 800)}
+                    alt={`${row.name} — ${row.state}`}
+                    loading="lazy"
+                    decoding="async"
+                    className={kbClass}
+                    onError={() =>
+                      setFailed((prev) => {
+                        const next = new Set(prev);
+                        next.add(row.id);
+                        return next;
+                      })
+                    }
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      filter: "saturate(.7) brightness(.7)",
+                    }}
+                  />
+                )}
                 <div
                   aria-hidden
                   style={{
