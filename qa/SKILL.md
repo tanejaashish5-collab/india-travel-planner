@@ -39,6 +39,7 @@ Run all sections in a single Chrome session. Sample at least 10 destinations. Te
 | **I — Core routes HTTP matrix** | 21 high-traffic routes (landing, explore, trip, ask, sos, blog, etc.) | 0 × 4xx/5xx (except expected redirects) |
 | **J — Locale-routing redirect** | `/` and bare paths | 301/307 to `/en` |
 | **K — Chrome E2E (interactive)** | plan/explore/destination map | Maps render (see map-type note below); no console errors after F5 |
+| **L — Hero/cover images** | every destination's R2 hero | 0 missing — run `node scripts/audit-hero-images.mjs` (expects `missing: 0`). Now also automated daily by the `audit-hero-images` cron (03:50 UTC); a fresh miss emails ops next morning. See note below. |
 
 ### Section K map-type note (added 2026-06-04 — fixes a 19-day phantom "high")
 
@@ -84,6 +85,14 @@ Reconciliation: NEW-2026-06-04-004 ("ratnagiri publishes zero phone entries") wa
   ```
 - **`emergency_sos` has NO `updated_at` auto-trigger.** Re-verify jobs stamp `verified_date`/`verified_by` without bumping `updated_at` (it sat at 2026-06-04 while 466 rows were re-stamped 2026-06-09). So **do not use `emergency_sos.updated_at` to date content changes** — use `verified_date` + a content diff.
 - OPPORTUNITY (not a defect, tracked separately): `deep_dive` holds 405 phone-bearing helper sets but only 186 reached the rendered `emergency_sos.local_helpers` — the SOS sub-section could be enriched 186 → up to 405 from `deep_dive`.
+
+### Section L hero-image note (added 2026-06-20 after the Sikkim black-card incident)
+
+A destination with no R2 hero (`destinations/<id>.jpg`) renders a **black card** in the landing-page Dailies reel (Act VI) and a broken full-bleed hero on its detail page. The Dailies reel orders by freshest `content_reviewed_at`, so a **newly-added** destination is the *most* likely to surface image-less — that's how the 8 Sikkim dests (added 2026-06-14, no images) showed 3 black cards on the landing page for 6 days. Root cause: a seed/backfill that adds destinations does **not** add hero images; that's a separate `node scripts/upload-images.mjs` step.
+
+- Manual check: `node scripts/audit-hero-images.mjs` → `qa/hero-images.json` must show `missing: 0`.
+- This is now also automated: the **`audit-hero-images` cron** (daily 03:50 UTC, `apps/web/src/app/api/cron/audit-hero-images/route.ts`) HEAD-probes every hero and emails ops the morning after any destination goes image-less. So a new gap no longer waits for a manual QA pass.
+- Fix when flagged: source a real, **place-accurate** (visually verify it — the Mangan→Gurudongmar trap), **license-clean** (Wikimedia Commons CC) image → `apps/web/public/images/destinations/<slug>.jpg` → `node scripts/upload-images.mjs`. Record provenance like `data/destinations/hero-image-sources-sikkim-2026-06-20.json`.
 
 ## Cost-aware operating rules (per CLAUDE.md)
 

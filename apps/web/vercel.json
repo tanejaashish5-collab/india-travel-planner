@@ -75,6 +75,10 @@
       "schedule": "0 3 * * *"
     },
     {
+      "path": "/api/cron/audit-hero-images",
+      "schedule": "50 3 * * *"
+    },
+    {
       "path": "/api/cron/refresh-embeddings",
       "schedule": "0 21 2 * *"
     }
