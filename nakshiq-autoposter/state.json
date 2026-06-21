@@ -30,11 +30,11 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-06-20",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short": "2026-06-21",
     "xS5s8_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-06-20",
+    "m8EAd_yt_short": "2026-06-21",
     "m8EAd": "2026-06-21",
     "m8EAd_story": "2026-06-21",
     "PdMu0": "2026-06-21"
@@ -315,6 +315,10 @@
     },
     {
       "destination_id": "v2_local_knows-keylong",
+      "date": "2026-06-21"
+    },
+    {
+      "destination_id": "hanle",
       "date": "2026-06-21"
     }
   ],
@@ -3416,6 +3420,24 @@
       "format": "v2_local_knows",
       "has_media": true,
       "media_id": "v2_local_knows-kargil.png"
+    },
+    {
+      "timestamp": "2026-06-21T08:46:57.120063+00:00",
+      "date": "2026-06-21",
+      "platform": "youtube",
+      "post_id": "HvCF5",
+      "destination": "hanle",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_hanle_en_2026-06-21.mp4"
+    },
+    {
+      "timestamp": "2026-06-21T08:47:40.338696+00:00",
+      "date": "2026-06-21",
+      "platform": "instagram",
+      "post_id": "IVS3X",
+      "destination": "hanle",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_hanle_en_2026-06-21.mp4"
     }
   ],
   "theme_usage": {
