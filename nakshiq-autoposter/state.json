@@ -30,8 +30,8 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-06-21",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-21",
@@ -319,6 +319,10 @@
     },
     {
       "destination_id": "hanle",
+      "date": "2026-06-21"
+    },
+    {
+      "destination_id": "shravanabelagola",
       "date": "2026-06-21"
     }
   ],
@@ -3438,6 +3442,24 @@
       "destination": "hanle",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_hanle_en_2026-06-21.mp4"
+    },
+    {
+      "timestamp": "2026-06-21T13:31:00.426922+00:00",
+      "date": "2026-06-21",
+      "platform": "youtube",
+      "post_id": "ZjgOu",
+      "destination": "shravanabelagola",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-06-21.mp4"
+    },
+    {
+      "timestamp": "2026-06-21T13:31:38.712387+00:00",
+      "date": "2026-06-21",
+      "platform": "instagram",
+      "post_id": "NrzWa",
+      "destination": "shravanabelagola",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-06-21.mp4"
     }
   ],
   "theme_usage": {
