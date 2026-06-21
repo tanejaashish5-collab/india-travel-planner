@@ -39,7 +39,7 @@
     "m8EAd_story": "2026-06-21",
     "PdMu0": "2026-06-21"
   },
-  "last_sync": "2026-06-21T01:45:36.177880+00:00",
+  "last_sync": "2026-06-21T08:16:01.370510+00:00",
   "posted_destinations": [
     {
       "destination_id": "puri",
@@ -307,6 +307,14 @@
     },
     {
       "destination_id": "kargil",
+      "date": "2026-06-21"
+    },
+    {
+      "destination_id": "v2_local_knows-kargil",
+      "date": "2026-06-21"
+    },
+    {
+      "destination_id": "v2_local_knows-keylong",
       "date": "2026-06-21"
     }
   ],
@@ -3399,17 +3407,6 @@
       "media_id": "v2_local_knows-keylong.png"
     },
     {
-      "timestamp": "2026-06-21T01:46:33.255947+00:00",
-      "date": "2026-06-21",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "yuHtj",
-      "destination": "kargil",
-      "format": "score_card",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
       "timestamp": "2026-06-21T01:46:45.063373+00:00",
       "date": "2026-06-21",
       "platform": "facebook",
@@ -4218,7 +4215,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kargil",
+    "shared_best": "sangla",
     "collection": "best-family-destinations"
   },
   "manual_skip_dests": {}
