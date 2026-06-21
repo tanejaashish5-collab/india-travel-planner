@@ -5810,3 +5810,47 @@ Date range: 2026-04-15 → 2026-06-20
 2026-06-21 13:31:38  INFO      YT Short posted: format=did_you_know, music=hype-412
 2026-06-21 13:31:38  INFO      State saved. YT Short run complete.
 2026-06-21 13:31:38  INFO      ════════════════════════════════════════════════════════════
+2026-06-21 16:15:12  INFO      ════════════════════════════════════════════════════════════
+2026-06-21 16:15:12  INFO      Nakshiq Autoposter · EVENING · 2026-06-21 · weekday=6
+2026-06-21 16:15:12  INFO      ════════════════════════════════════════════════════════════
+2026-06-21 16:15:12  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-21 16:15:53  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-21 16:15:53  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-21 16:15:54  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-21 16:15:54  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-21 16:15:54  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-21 16:15:54  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-21 16:16:10  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-21 16:16:10  INFO      Evening format (balance→verdict): score_card [0% vs target 50%] (0/15 never featured)
+2026-06-21 16:16:10  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: kids_intel
+2026-06-21 16:16:10  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 73
+2026-06-21 16:16:10  INFO      Fingerprint dedup snapshot — 70 dests in 7d · 146 (dest,fmt) pairs in 30d · 158 media in 60d
+2026-06-21 16:16:10  INFO      Kids destination locked: Courtallam (Kutralam)
+2026-06-21 16:16:12  INFO      Shared best destination locked: Yusmarg
+2026-06-21 16:16:12  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-21 16:16:12  INFO      [instagram/nakshiq] Generating score_card post...
+2026-06-21 16:16:12  WARNING   [instagram/nakshiq] score_card: pangong-lake inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'yusmarg' as score_card to keep the slot live.
+2026-06-21 16:16:12  INFO      [instagram/nakshiq] Caption ready (420 chars, dest=yusmarg)
+2026-06-21 16:16:12  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-21 16:16:12  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/yusmarg.mp4?v=20260524
+2026-06-21 16:16:16  INFO          Brand-stamp applied: yusmarg.mp4 (12,771,993 → 6,137,047 bytes)
+2026-06-21 16:16:16  INFO          Requesting upload URL for yusmarg.mp4 (6,137,047 bytes, video/mp4)
+2026-06-21 16:16:17  INFO          Uploading to R2 (timeout=300s)...
+2026-06-21 16:16:19  INFO          R2 PUT OK. Confirming...
+2026-06-21 16:16:20  INFO          Media ready: Hm1C5 (6,137,047 bytes · yusmarg.mp4)
+2026-06-21 16:16:20  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-21 16:17:00  INFO      [instagram/nakshiq] ✅ Published · Outstand=XN31e · Platform=18109479380475794
+2026-06-21 16:17:00  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-06-21 16:17:00  WARNING   [facebook/Nakshiq] score_card: pangong-lake inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'yusmarg' as score_card to keep the slot live.
+2026-06-21 16:17:00  INFO      [facebook/Nakshiq] Caption ready (596 chars, dest=yusmarg)
+2026-06-21 16:17:00  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-21 16:17:00  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/yusmarg.mp4?v=20260524
+2026-06-21 16:17:03  INFO          Brand-stamp applied: yusmarg.mp4 (12,771,993 → 6,137,047 bytes)
+2026-06-21 16:17:03  INFO          Requesting upload URL for yusmarg.mp4 (6,137,047 bytes, video/mp4)
+2026-06-21 16:17:04  INFO          Uploading to R2 (timeout=300s)...
+2026-06-21 16:17:05  INFO          R2 PUT OK. Confirming...
+2026-06-21 16:17:07  INFO          Media ready: IoQJX (6,137,047 bytes · yusmarg.mp4)
+2026-06-21 16:17:07  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-21 16:17:22  INFO      [facebook/Nakshiq] ✅ Published · Outstand=XN3Ge · Platform=2460690364353904
+2026-06-21 16:17:22  INFO      State saved. Run complete.
+2026-06-21 16:17:22  INFO      ════════════════════════════════════════════════════════════

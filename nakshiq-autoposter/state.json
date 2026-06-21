@@ -37,9 +37,11 @@
     "m8EAd_yt_short": "2026-06-21",
     "m8EAd": "2026-06-21",
     "m8EAd_story": "2026-06-21",
-    "PdMu0": "2026-06-21"
+    "PdMu0": "2026-06-21",
+    "m8EAd_evening": "2026-06-21",
+    "PdMu0_evening": "2026-06-21"
   },
-  "last_sync": "2026-06-21T08:16:01.370510+00:00",
+  "last_sync": "2026-06-21T16:15:53.385207+00:00",
   "posted_destinations": [
     {
       "destination_id": "puri",
@@ -324,11 +326,14 @@
     {
       "destination_id": "shravanabelagola",
       "date": "2026-06-21"
+    },
+    {
+      "destination_id": "yusmarg",
+      "date": "2026-06-21"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_hindi_score_card",
       "v2_myth_bust_oneline",
       "festival_alert",
       "v3_tl_first_person_essay",
@@ -348,10 +353,10 @@
       "v2_myth_bust_oneline",
       "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
-      "v2_local_knows"
+      "v2_local_knows",
+      "score_card"
     ],
     "PdMu0": [
-      "v2_hindi_score_card",
       "v2_myth_bust_oneline",
       "festival_alert",
       "v3_tl_first_person_essay",
@@ -371,7 +376,8 @@
       "v2_myth_bust_oneline",
       "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
-      "v2_local_knows"
+      "v2_local_knows",
+      "score_card"
     ]
   },
   "post_log": [
@@ -3460,6 +3466,28 @@
       "destination": "shravanabelagola",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-06-21.mp4"
+    },
+    {
+      "timestamp": "2026-06-21T16:17:00.180256+00:00",
+      "date": "2026-06-21",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XN31e",
+      "destination": "yusmarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "yusmarg.mp4"
+    },
+    {
+      "timestamp": "2026-06-21T16:17:22.139058+00:00",
+      "date": "2026-06-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "XN3Ge",
+      "destination": "yusmarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "yusmarg.mp4"
     }
   ],
   "theme_usage": {
@@ -3638,7 +3666,8 @@
         "2026-05-31"
       ],
       "yusmarg": [
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-21"
       ],
       "kasol": [
         "2026-06-01",
@@ -3840,7 +3869,8 @@
         "2026-06-19"
       ],
       "score_card": [
-        "2026-06-01"
+        "2026-06-01",
+        "2026-06-21"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4016,6 +4046,9 @@
       ],
       "kanatal": [
         "2026-06-19"
+      ],
+      "yusmarg": [
+        "2026-06-21"
       ]
     },
     "audience_tags": {
@@ -4259,7 +4292,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
+    "shared_best": "yusmarg",
     "collection": "best-family-destinations"
   },
   "manual_skip_dests": {}
