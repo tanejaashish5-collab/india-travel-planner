@@ -5667,3 +5667,78 @@ Date range: 2026-04-15 → 2026-06-19
 2026-06-20 20:00:32  INFO      
 Date range: 2026-04-15 → 2026-06-20
 2026-06-20 20:00:32  INFO      ════════════════════════════════════════════════════════════
+2026-06-21 01:45:05  INFO      ════════════════════════════════════════════════════════════
+2026-06-21 01:45:05  INFO      Nakshiq Autoposter · MORNING · 2026-06-21 · weekday=6
+2026-06-21 01:45:05  INFO      ════════════════════════════════════════════════════════════
+2026-06-21 01:45:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-21 01:45:36  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-21 01:45:36  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-21 01:45:37  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-21 01:45:37  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-21 01:45:39  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-21 01:45:39  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-21 01:45:51  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-21 01:45:51  INFO      Morning format (themed-week-3→anti_trap): v2_local_knows [44% vs target 15%] (0/14 never featured)
+2026-06-21 01:45:51  INFO      Formats — IG: v2_local_knows  ·  FB: v2_local_knows  ·  Story: score_card
+2026-06-21 01:45:51  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 67
+2026-06-21 01:45:51  INFO      Fingerprint dedup snapshot — 66 dests in 7d · 142 (dest,fmt) pairs in 30d · 154 media in 60d
+2026-06-21 01:45:51  INFO      Shared best destination locked: Kargil
+2026-06-21 01:45:51  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-21 01:45:51  INFO      [instagram/nakshiq] Generating v2_local_knows post...
+2026-06-21 01:45:51  INFO      v2_local_knows: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      v2_local_knows: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:45:51  INFO      [instagram/nakshiq] Caption ready (684 chars, dest=keylong)
+2026-06-21 01:45:53  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-06-21 01:45:53  INFO          Requesting upload URL for v2_local_knows-keylong.png (1,796,475 bytes, image/png)
+2026-06-21 01:45:54  INFO          Uploading to R2 (timeout=120s)...
+2026-06-21 01:45:55  INFO          R2 PUT OK. Confirming...
+2026-06-21 01:45:56  INFO          Media ready: XcQae (1,796,475 bytes · v2_local_knows-keylong.png)
+2026-06-21 01:45:56  INFO      [instagram/nakshiq] Publishing feed post...
+2026-06-21 01:46:17  INFO      [instagram/nakshiq] ✅ Published · Outstand=O5Kbv · Platform=18324719488281221
+2026-06-21 01:46:17  INFO      [instagram/nakshiq] Uploading Story image (kargil.jpg)...
+2026-06-21 01:46:17  INFO          Using branded image: kargil_story_bold-cinematic_watermark.jpg (432,679 bytes)
+2026-06-21 01:46:17  INFO          Requesting upload URL for kargil.jpg (432,679 bytes, image/jpeg)
+2026-06-21 01:46:17  INFO          Uploading to R2 (timeout=120s)...
+2026-06-21 01:46:18  INFO          R2 PUT OK. Confirming...
+2026-06-21 01:46:19  INFO          Media ready: XcQbe (432,679 bytes · kargil.jpg)
+2026-06-21 01:46:19  INFO      [instagram/nakshiq] Publishing Story · format=score_card · dest=kargil
+2026-06-21 01:46:33  INFO      [instagram/nakshiq] ✅ Story live · ID=18124007134633813
+2026-06-21 01:46:33  INFO      [facebook/Nakshiq] Generating v2_local_knows post...
+2026-06-21 01:46:33  INFO      v2_local_knows: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: manali has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      v2_local_knows: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-21 01:46:33  INFO      [facebook/Nakshiq] Caption ready (601 chars, dest=kargil)
+2026-06-21 01:46:34  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-06-21 01:46:34  INFO          Requesting upload URL for v2_local_knows-kargil.png (2,075,993 bytes, image/png)
+2026-06-21 01:46:35  INFO          Uploading to R2 (timeout=120s)...
+2026-06-21 01:46:36  INFO          R2 PUT OK. Confirming...
+2026-06-21 01:46:37  INFO          Media ready: 2Z6zS (2,075,993 bytes · v2_local_knows-kargil.png)
+2026-06-21 01:46:37  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-06-21 01:46:45  INFO      [facebook/Nakshiq] ✅ Published · Outstand=goQpx · Platform=1040562729145369_122112760844700092
+2026-06-21 01:46:45  INFO      State saved. Run complete.
+2026-06-21 01:46:45  INFO      ════════════════════════════════════════════════════════════
