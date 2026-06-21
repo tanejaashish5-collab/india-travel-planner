@@ -1338,6 +1338,7 @@ def post_fingerprints(state: dict, *, dest_days: int = 14,
     used_dests:    set = set()
     used_dest_fmt: set = set()  # tuples of (dest_id, fmt)
     used_media:    set = set()
+    last_post:     dict = {}    # dest_id → most recent post date (YYYY-MM-DD), all history
     # 2026-05-16: once-per-calendar-month rule — see current_month_posted_destinations()
     month_prefix = today.strftime("%Y-%m")
 
@@ -1350,6 +1351,12 @@ def post_fingerprints(state: dict, *, dest_days: int = 14,
         # dest in the once-per-month block. Image / carousel / Pomelli /
         # tourist-map posts honour the 14-day rolling cooldown but don't lock
         # the dest out for the rest of the calendar month.
+        # Accurate per-dest recency over ALL history — powers the pool-exhaustion
+        # LRU fallback (_stalest_scorecard_post). Unlike the theme_usage tracker
+        # the picker consults, this is the same canonical merged log the
+        # cooldown windows above are built from, so picker + gate never disagree.
+        if did and d and d > last_post.get(did, ""):
+            last_post[did] = d
         was_video = isinstance(media, str) and media.lower().endswith(".mp4")
         in_window = d >= dest_cut
         in_month_as_video = bool(was_video and d.startswith(month_prefix))
@@ -1365,7 +1372,8 @@ def post_fingerprints(state: dict, *, dest_days: int = 14,
             used_dests.add(did)
     # 2026-05-17: hardcoded code-level blocks (durable, can't be wiped).
     used_dests |= hardcoded_block_dests()
-    return {"dests": used_dests, "dest_fmt": used_dest_fmt, "media": used_media}
+    return {"dests": used_dests, "dest_fmt": used_dest_fmt, "media": used_media,
+            "last_post": last_post}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -4710,6 +4718,37 @@ def _article_image_dest(article: dict, dest_map: dict,
 # POST GENERATOR
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _stalest_scorecard_post(content: dict, fp: dict | None, platform: str,
+                            today: str) -> tuple[str, dict | None]:
+    """Pool-exhaustion fallback (2026-06-21). When every in-season candidate is
+    inside its 14-day cooldown, the picker hands back a cooled dest and the old
+    fail-closed gate SKIPPED the slot — which left the whole feed dark on
+    2026-06-20. Instead of going silent, ship the GENUINELY stalest destination:
+    rank the current-month pool by the *accurate* merged-log recency
+    (`fp['last_post']`) and post the least-recently-used one as a score_card.
+
+    Never re-spams a recent dest (the stalest is by definition the oldest post),
+    and because every publish updates the merged log, the next run rotates to the
+    next-stalest — a clean LRU cycle through the whole pool. Excludes dests
+    already posted today (same UTC day) so the FB/IG mirror can't double a
+    same-day dest. Prefers a stalest dest whose hero image resolves. Returns
+    (caption, dest) or (None, None) when there is genuinely nothing to post."""
+    dests = (content.get("destinations") or {}).get("data") or []
+    last_post = (fp or {}).get("last_post") or {}
+    cands = [d for d in dests if d.get("id")
+             and last_post.get(d["id"], "")[:10] != today]
+    if not cands:
+        return None, None
+    cands.sort(key=lambda d: last_post.get(d["id"], ""))  # oldest / never-posted first
+    for d in cands[:15]:
+        try:
+            if check_image_available(d, content):
+                return copy_score_card(d, platform), d
+        except Exception:
+            pass
+    return copy_score_card(cands[0], platform), cands[0]
+
+
 def generate_post(fmt: str, content: dict, platform: str,
                   used: set, *, fp: dict | None = None,
                   _fallback_from: str | None = None) -> tuple[str, dict | None]:
@@ -7481,9 +7520,34 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         log.info(f"[{label}] Generating {fmt} post...")
         caption, dest_obj = generate_post(fmt, content, platform, used, fp=fp)
 
-        if not caption or not dest_obj:
-            log.warning(f"[{label}] No content generated — skipping.")
-            continue
+        # ── Pool-exhaustion guard (2026-06-21, replaces the fail-closed skip) ──
+        # generate_post can return nothing (no eligible dest), OR a dest the fresh
+        # fingerprint snapshot shows inside its 14-day window (every fresh dest
+        # exhausted), OR — via the theme_usage↔merged-log staleness mismatch — a
+        # RECENT dest the picker wrongly thought was stale. The old fail-closed
+        # gate SKIPPED the slot in all three cases, which left the whole feed dark
+        # on 2026-06-20. Recover instead: ship the GENUINELY stalest dest
+        # (accurate merged-log recency) as a score_card, so the slot is never
+        # silent AND we still never re-spam a recent dest (the stalest is the
+        # oldest post — the original pangong-7×/14d class stays prevented because
+        # the picker's fresh-pool preference is unchanged; this only fires when
+        # that pool is empty).
+        _did = (dest_obj or {}).get("id")
+        _cooled = bool(fp and _did and (
+            _did in (fp.get("dests") or set())
+            or (_did, fmt) in (fp.get("dest_fmt") or set())))
+        if (not caption or not dest_obj) or _cooled:
+            rcap, rdest = _stalest_scorecard_post(content, fp, platform, today)
+            if rdest:
+                _why = ("no eligible dest" if not dest_obj
+                        else f"{_did} inside its cooldown (in-season pool exhausted)")
+                log.warning(f"[{label}] {fmt}: {_why} — relaxed to stalest dest "
+                            f"'{rdest['id']}' as score_card to keep the slot live.")
+                fmt, caption, dest_obj = "score_card", rcap, rdest
+            else:
+                log.warning(f"[{label}] {fmt}: no eligible dest and no relaxed "
+                            f"fallback available — skipping.")
+                continue
 
         # Per-platform voice + brand-voice sanitation before publish
         caption = apply_platform_voice(caption, platform)
@@ -7491,24 +7555,6 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
 
         dest_id = dest_obj["id"]
         log.info(f"[{label}] Caption ready ({len(caption)} chars, dest={dest_id})")
-
-        # ── Fail-closed cooldown gate (2026-06-17) ────────────────────────────
-        # Last line of defence against the pangong-lake 7×/14d class: if the
-        # picker still handed back a dest that the fresh fingerprint snapshot
-        # already shows inside its 14-day window — or the same (dest,fmt) inside
-        # 30 days — DON'T publish it. Skip the slot and log ERROR so the
-        # regression (or a genuinely exhausted in-season pool) is visible rather
-        # than silently shipping a duplicate. fp is a run-start snapshot, so the
-        # FB↔IG mirror within this same run is never blocked here.
-        if fp and dest_id in (fp.get("dests") or set()):
-            log.error(f"[{label}] COOLDOWN VIOLATION: {dest_id} is in the 14-day "
-                      f"window but was selected for {fmt} — skipping (pool likely "
-                      f"exhausted or a dedup regression).")
-            continue
-        if fp and (dest_id, fmt) in (fp.get("dest_fmt") or set()):
-            log.error(f"[{label}] COOLDOWN VIOLATION: ({dest_id}, {fmt}) is in the "
-                      f"30-day (dest,fmt) window — skipping to keep the format rotating.")
-            continue
 
         # ── Decide: Reel, carousel, or single-image ───────────────────────────
         # Evening mode is VIDEO-FIRST — the entertainment pillar. Morning mode
