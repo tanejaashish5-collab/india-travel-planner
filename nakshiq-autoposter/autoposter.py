@@ -122,9 +122,10 @@ MORNING_FORMATS = [
     "women_solo_brief",          # NEW: solo-female-safe curated dest
     # ─── Anti-trap (1) — restored ───────────────────────────────────────
     "tourist_trap",              # RESTORED + revoiced: skip X go Y
-    # ─── Moment (2) — practical / decisional ────────────────────────────
+    # ─── Moment (3) — practical / decisional + data carousel ────────────
     "arrival_intel",             # NEW: airport prepaid taxi + scam warning
     "cost_index_card",           # NEW: ₹/day breakdown
+    "data_carousel",             # 2026-06-21 REACTIVATED: ranked top-5 "this month's 10/10s" multi-slide data carousel (founder: "not enough data carousels")
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2027,11 +2028,12 @@ def eligible_csv_formats(content: dict, dests: list) -> list:
     return out
 
 
-def pick_morning_format(state: dict, content: dict) -> str:
-    """
-    Pick the oldest-never-used morning format via strict round-robin.
-    No format repeats until ALL 18 have been cycled through.
-    """
+def _eligible_feed_formats(state: dict, content: dict) -> list:
+    """Compute the feed formats whose data preconditions resolve this run — the
+    active copy_* MORNING_FORMATS plus every eligible CSV (v2/v3/v4) spec. Shared
+    by BOTH the morning and evening pickers so they draw from the same pillar-
+    complete pool (the evening pool used to be CSV-only, which had almost no
+    verdict formats — the 2026-06 verdict-starvation root cause)."""
     try:
         traps    = content.get("traps", {}).get("data", [])
         # Festival eligibility: combine current + next month and apply the
@@ -2164,6 +2166,8 @@ def pick_morning_format(state: dict, content: dict) -> str:
                 ci = content.get("cost_index", {}).get("data", []) or []
                 if not ci:
                     continue
+            if fmt == "data_carousel" and len(dests) < 5:
+                continue  # ranked top-5 carousel needs >=5 current-month dests
             eligible.append(fmt)
 
         # 2026-05-20 — CSV-loaded v2/v3/v4 formats. Iterate every feed-eligible
@@ -2186,48 +2190,78 @@ def pick_morning_format(state: dict, content: dict) -> str:
         if not eligible:
             eligible = ["score_card"]
 
-        # 2026-05-17 Tier 7 Phase 3 — themed-week bias.
-        # PRIMARY: WEEK_OF_MONTH_BIAS preferred pillars for today's week-of-month.
-        # FALLBACK: under-share deficit (existing playbook discipline).
-        # Final FALLBACK: full eligible pool.
-        biased_pool = eligible
-        chosen_pillar = None
-        bias_source = "balanced"
-        wom = week_of_month()
-        themed_pillars = WEEK_OF_MONTH_BIAS.get(wom, [])
-        for pillar in themed_pillars:
-            candidates = [f for f in eligible if FORMAT_PILLARS.get(f) == pillar]
-            if candidates:
-                biased_pool = candidates
-                chosen_pillar = pillar
-                bias_source = f"themed-week-{wom}"
-                break
-        # Fall back to deficit-pillar if themed week didn't match anything
-        # (week 5 catch-up, or themed pillar had no eligible formats today)
+        return eligible
+    except Exception as e:
+        log.warning(f"_eligible_feed_formats error: {e} — fallback to score_card")
+        return ["score_card"]
+
+
+def _pillar_biased_pick(state: dict, eligible: list, *, mode: str = "themed",
+                        label: str = "Morning") -> str:
+    """Pick a format from `eligible`, biased so the feed tracks PILLAR_WEEKLY_SHARE.
+
+    mode='themed' (MORNING, unchanged): WEEK_OF_MONTH_BIAS preferred pillar →
+    deficit-greedy fallback → balanced. Morning owns the monthly narrative arc.
+
+    mode='balance' (EVENING): deficit-PROPORTIONAL weighted-random pillar. A
+    pillar's pick-weight = how far it is BELOW target (max(0, target-actual)),
+    so the slot fills gaps smoothly and converges to target WITHOUT the greedy
+    overshoot — a pure most-under pick flipped the evening to 57% verdict / 3%
+    moment in replay, and that kind of overcorrection is how prior fixes
+    regressed. Within the chosen pillar the oldest-unused round-robin (shared
+    'morning_formats' bucket) gives variety + stops same-format-twice-a-day."""
+    eligible = eligible or ["score_card"]
+    chosen_pillar = None
+    bias_source = "balanced"
+    wom = week_of_month()
+    _has = lambda p: any(FORMAT_PILLARS.get(f) == p for f in eligible)
+    if mode == "themed":
+        for pillar in WEEK_OF_MONTH_BIAS.get(wom, []):
+            if _has(pillar):
+                chosen_pillar = pillar; bias_source = f"themed-week-{wom}"; break
         if not chosen_pillar:
-            deficit_pillars = under_share_pillars(state)
-            for pillar in deficit_pillars:
-                candidates = [f for f in eligible if FORMAT_PILLARS.get(f) == pillar]
-                if candidates:
-                    biased_pool = candidates
-                    chosen_pillar = pillar
-                    bias_source = "deficit"
-                    break
+            for pillar in under_share_pillars(state):
+                if _has(pillar):
+                    chosen_pillar = pillar; bias_source = "deficit"; break
+    else:  # balance — deficit-proportional weighted random (no overshoot)
+        target = target_pillar_share()
+        actual = compute_weekly_pillar_share(state)
+        avail = [p for p in PILLAR_WEEKLY_SHARE if _has(p)]
+        if avail:
+            import random as _r
+            # DEFICIT-PROPORTIONAL weighting: pick each pillar in proportion to how
+            # far BELOW its playbook target the recent 7-day feed is. Weighted (not
+            # greedy "always the single most-under pillar") so it converges toward
+            # target WITHOUT the overshoot-flip a greedy pick caused in replay (57%
+            # verdict / 3% moment). When everything is at/above target the deficits
+            # zero out and it falls back to the plain target shape.
+            wts = [max(0.0, target[p] - actual.get(p, 0.0)) for p in avail]
+            if sum(wts) <= 0:
+                wts = [target[p] for p in avail]
+            chosen_pillar = _r.choices(avail, weights=wts)[0]
+            bias_source = "balance"
+    biased_pool = ([f for f in eligible if FORMAT_PILLARS.get(f) == chosen_pillar]
+                   if chosen_pillar else eligible)
+    ordered = pick_oldest_unused(state, "morning_formats", biased_pool, key=None)
+    chosen = ordered[0] if ordered else "score_card"
+    status = dimension_cycle_status(state, "morning_formats", len(MORNING_FORMATS))
+    if chosen_pillar:
+        actual = compute_weekly_pillar_share(state).get(chosen_pillar, 0.0)
+        target = target_pillar_share().get(chosen_pillar, 0.0)
+        log.info(f"{label} format ({bias_source}→{chosen_pillar}): {chosen} "
+                 f"[{actual:.0%} vs target {target:.0%}] "
+                 f"({status['unused']}/{status['total']} never featured)")
+    else:
+        log.info(f"{label} format (balanced, week-{wom}): {chosen} "
+                 f"({status['unused']}/{status['total']} never featured)")
+    return chosen
 
-        ordered = pick_oldest_unused(state, "morning_formats", biased_pool, key=None)
-        chosen = ordered[0]
 
-        status = dimension_cycle_status(state, "morning_formats", len(MORNING_FORMATS))
-        if chosen_pillar:
-            actual = compute_weekly_pillar_share(state).get(chosen_pillar, 0.0)
-            target = target_pillar_share().get(chosen_pillar, 0.0)
-            log.info(f"Morning format ({bias_source}→{chosen_pillar}): {chosen} "
-                     f"[{actual:.0%} vs target {target:.0%}] "
-                     f"({status['unused']}/{status['total']} never featured)")
-        else:
-            log.info(f"Morning format (balanced, week-{wom}): {chosen} "
-                     f"({status['unused']}/{status['total']} never featured)")
-        return chosen
+def pick_morning_format(state: dict, content: dict) -> str:
+    """Pillar-biased round-robin morning format (themed-week + deficit bias)."""
+    try:
+        return _pillar_biased_pick(state, _eligible_feed_formats(state, content),
+                                   mode="themed", label="Morning")
     except Exception as e:
         log.warning(f"pick_morning_format error: {e} — fallback to score_card")
         return "score_card"
@@ -6823,17 +6857,19 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         # pillar lock — the morning run owns the pillar arc. Shares the
         # `morning_formats` usage bucket so morning + evening jointly rotate
         # and never repeat the same format across one day.
-        _eve_pool = (eligible_csv_formats(content, dests)
-                     + list(VISUAL_DELEGATE_FORMATS))
-        if _eve_pool:
-            base_fmt = pick_oldest_unused(
-                state, "morning_formats", _eve_pool, key=None
-            )[0]
-            _n_vis = len(VISUAL_DELEGATE_FORMATS)
-            log.info(
-                f"[evening] variety pick: {base_fmt} "
-                f"({len(_eve_pool) - _n_vis} CSV + {_n_vis} visual candidates)"
-            )
+        # 2026-06-21 — evening now draws from the SAME pillar-complete pool as
+        # morning (copy_* MORNING_FORMATS + eligible CSV + visual delegates) and
+        # applies the deficit pillar bias, so the slot that was 40% moment / 4%
+        # verdict tracks PILLAR_WEEKLY_SHARE. themed=False: morning owns the
+        # monthly arc, evening is the pure deficit-correcting valve.
+        try:
+            _eve_pool = (_eligible_feed_formats(state, content)
+                         + list(VISUAL_DELEGATE_FORMATS))
+            base_fmt = _pillar_biased_pick(state, _eve_pool, mode="balance",
+                                           label="Evening")
+        except Exception as e:
+            log.warning(f"[evening] pillar-biased pick failed ({e}) — "
+                        f"fallback to {base_fmt}")
         ig_fmt         = base_fmt
         fb_fmt         = base_fmt
         story_fmt      = EVENING_STORY_SCHEDULE.get(weekday, "score_card")

@@ -923,6 +923,84 @@ def _template_spec_en(dest: dict) -> dict:
 
 
 # ─────────────────────────────────────────────────────────────────────────
+# 1a-VARIETY. Non-score narrated formats (2026-06-21) — so the channel isn't
+#     100% "NakshIQ score". Same render pipeline + voice; different STORY.
+#     Zero fabrication: every fact is a clause of why_special / tagline.
+# ─────────────────────────────────────────────────────────────────────────
+
+def _template_spec_did_you_know(dest: dict, lang: str = "hi"):
+    """Narrated 'Did You Know' awe-fact short — opens on a VERIFIED striking fact
+    (the why_special / tagline clause), not the score. Returns None when the dest
+    has no usable fact (caller falls back to the score short)."""
+    name = dest.get("name") or dest.get("id") or "this place"
+    prof = _profile_for(dest)
+    if lang == "en":
+        cl = _en_clauses(dest.get("why_special") or "") or _en_clauses(dest.get("tagline") or "")
+        if not cl:
+            return None
+        sig = [c for c in cl if re.search(r"\d", c) or re.search(
+            r"(?i)\b(only|largest|highest|first|oldest|world|rare|biggest|second|last|hidden)\b", c)]
+        facts = (sig or cl)[:2]
+        seq = [f"Here's something most people don't know about {name}."]
+        seq += [c.strip().rstrip(".") + "." for c in facts]
+        seq.append("Details like that are the whole reason it's worth the trip.")
+        seq.append("Full story, and the right month to go — on NakshIQ.")
+        lines = [_single_sentence(s) for s in seq]
+        caps = list(lines)
+    else:
+        cl = _hi_clauses(dest.get("why_special_hi") or "") or _hi_clauses(dest.get("tagline_hi") or "")
+        if not cl:
+            return None
+        sig = [c for c in cl if re.search(r"\d", c) or any(
+            s in c for s in ("सबसे", "एकमात्र", "अकेल", "दुनिया", "विश्व", "पहल",
+                             "आख़िर", "आखिर", "रहस्य", "केवल", "अनोखा", "अनोखी"))]
+        facts = (sig or cl)[:2]
+        deva = [f"{name} के बारे में एक बात — जो कम लोग जानते हैं।"]
+        deva += [c.strip().rstrip("।") + "।" for c in facts]
+        deva.append("यही छोटी-छोटी बातें इस जगह को खास बनाती हैं।")
+        deva.append("पूरी कहानी और सही महीना — NakshIQ पे।")
+        lines = [_single_sentence(d) for d in deva]
+        caps = [deva_to_latin(d) for d in deva]
+    return {"lines": lines[:6], "caption_lines": caps[:6], "voice_profile": prof,
+            "arc": "did_you_know", "lang": lang, "generated": True}
+
+
+def _template_spec_vs(a: dict, b: dict, lang: str = "hi"):
+    """Honest two-destination comparison for the SAME month — verified scores +
+    one distinguishing clause each. None if names missing. The video uses dest
+    `a`'s footage; `b` is named in the script only."""
+    na = a.get("name"); nb = b.get("name")
+    if not na or not nb:
+        return None
+    sa = a.get("score") or 0; sb = b.get("score") or 0
+    win = a if sa >= sb else b
+    prof = _profile_for(win)
+    if lang == "en":
+        ca = (_en_clauses(a.get("why_special") or a.get("tagline") or "") or [""])[0].strip().rstrip(".")
+        cb = (_en_clauses(b.get("why_special") or b.get("tagline") or "") or [""])[0].strip().rstrip(".")
+        seq = [f"{na} or {nb} this month? Let's settle it."]
+        seq.append(f"{na}: {ca}." if ca else f"{na} scores {_format_score(sa)} right now.")
+        seq.append(f"{nb}: {cb}." if cb else f"{nb} scores {_format_score(sb)} right now.")
+        seq.append(f"The honest call this month: {win.get('name')}, at {_format_score(win.get('score'))}.")
+        seq.append("Both re-checked every month on NakshIQ — no sponsors, just the data.")
+        lines = [_single_sentence(s) for s in seq]
+        caps = list(lines)
+    else:
+        ca = (_hi_clauses(a.get("why_special_hi") or a.get("tagline_hi") or "") or [""])[0].strip().rstrip("।")
+        cb = (_hi_clauses(b.get("why_special_hi") or b.get("tagline_hi") or "") or [""])[0].strip().rstrip("।")
+        ws = _format_score(win.get("score")).replace("/", " बटा ")
+        deva = [f"{na} या {nb} — इस महीने कौन बेहतर?"]
+        deva.append(f"{na} — {ca}।" if ca else f"{na} का स्कोर {_format_score(sa).replace('/', ' बटा ')}।")
+        deva.append(f"{nb} — {cb}।" if cb else f"{nb} का स्कोर {_format_score(sb).replace('/', ' बटा ')}।")
+        deva.append(f"ईमानदार जवाब अभी — {win.get('name')}, स्कोर {ws}।")
+        deva.append("दोनों की पूरी जाँच हर महीने — NakshIQ पे।")
+        lines = [_single_sentence(d) for d in deva]
+        caps = [deva_to_latin(d) for d in deva]
+    return {"lines": lines[:6], "caption_lines": caps[:6], "voice_profile": prof,
+            "arc": "this_vs_that", "lang": lang, "generated": True}
+
+
+# ─────────────────────────────────────────────────────────────────────────
 # 1b. "LANDING IN INDIA" — arrival-logistics reels for inbound travellers
 #     A SEPARATE content type (NOT a destination score). English, en-IN voice.
 #     Beats are field-gated against data/arrivals/arrivals.json (verified +
@@ -1532,10 +1610,20 @@ def _yt_caption_v2(dest: dict, spec: dict, music_credit: str, month_name: str) -
     caps = spec.get("caption_lines") or []
     hook = (caps[0] if caps else f"{name} — {disp}").rstrip(".")
     link = _series_link(dest.get("id"), month_name.lower())
-    title = f"{name}: {month_name} NakshIQ Score {disp}"
-    body = (f"{hook}.\n\n{name}, {state} — {month_name} score {disp} "
-            f"(weather, roads, crowds, hospital & cell signal all checked).\n\n"
-            f"Full verified guide → {link}\n\n{_hashtags(name, state)}")
+    arc = spec.get("arc", "")
+    if arc == "did_you_know":
+        title = hook[:95]
+        body = (f"{hook}.\n\n{name}, {state} — verified field intel, re-checked "
+                f"monthly. No fluff, no sponsors.\n\nFull guide → {link}\n\n{_hashtags(name, state)}")
+    elif arc == "this_vs_that":
+        title = hook[:95]
+        body = (f"{hook}.\n\n{name}, {state} — an honest, data-backed call, "
+                f"re-checked every month on NakshIQ.\n\nFull guide → {link}\n\n{_hashtags(name, state)}")
+    else:
+        title = f"{name}: {month_name} NakshIQ Score {disp}"
+        body = (f"{hook}.\n\n{name}, {state} — {month_name} score {disp} "
+                f"(weather, roads, crowds, hospital & cell signal all checked).\n\n"
+                f"Full verified guide → {link}\n\n{_hashtags(name, state)}")
     if music_credit:
         body += f"\n\n{music_credit}"
     return title + "\n\n" + body   # _run_yt_short takes the first line as YT title
@@ -1546,9 +1634,15 @@ def _ig_caption_v2(dest: dict, spec: dict, music_credit: str, month_name: str) -
     disp = _format_score(dest.get("score"))
     caps = spec.get("caption_lines") or []
     hook = (caps[0] if caps else f"{name} — {disp}").rstrip(".")
-    body = (f"{hook}.\n\n{name}, {state} — {month_name} NakshIQ score {disp}. "
-            f"Real data, no fluff.\n\n\U0001f4be Save this for your {month_name} trip.\n\n"
-            f"{_hashtags(name, state, 16)}")
+    arc = spec.get("arc", "")
+    if arc in ("did_you_know", "this_vs_that"):
+        body = (f"{hook}.\n\n{name}, {state} — verified, re-checked every month "
+                f"on NakshIQ. No fluff, no sponsors.\n\n\U0001f4be Save this for your "
+                f"{month_name} trip.\n\n{_hashtags(name, state, 16)}")
+    else:
+        body = (f"{hook}.\n\n{name}, {state} — {month_name} NakshIQ score {disp}. "
+                f"Real data, no fluff.\n\n\U0001f4be Save this for your {month_name} trip.\n\n"
+                f"{_hashtags(name, state, 16)}")
     if music_credit:
         body += f"\n\n{music_credit}"
     return body
@@ -1622,13 +1716,36 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
         lang = "en" if (ratio > 0 and h < ratio * 100) else "hi"
     print(f"series: picked {slug} (score {dest.get('score')}, {dest.get('state','')}) lang={lang}")
 
-    spec = _resolve_spec(slug, dest, lang)
+    # 2026-06-21 — format VARIETY. Rotate the score short with narrated
+    # 'did_you_know' (awe-fact) + 'this_vs_that' (comparison) so the channel
+    # isn't 100% score. Deterministic per slug+day. NAKSHIQ_YT_VARIETY_RATIO =
+    # fraction of shorts that are NON-score (default 0.5; 0 = score-only / old
+    # behaviour). A variety spec that can't resolve falls back to the score short.
+    fmt, spec = "nakshiq_score", None
+    _variety = float(os.environ.get("NAKSHIQ_YT_VARIETY_RATIO", "0.5") or 0)
+    _vh = sum(ord(c) for c in (slug + "|v|" + date.today().isoformat())) % 100
+    if _variety > 0 and _vh < _variety * 100:
+        for _kind in (["dyk", "vs"] if _vh % 2 == 0 else ["vs", "dyk"]):
+            if _kind == "dyk":
+                cand = _template_spec_did_you_know(dest, lang)
+                if cand:
+                    spec, fmt = cand, "did_you_know"; break
+            else:
+                _other = next((d for d in dests
+                               if d.get("id") != slug and d.get("name")), None)
+                if _other:
+                    cand = _template_spec_vs(dest, _other, lang)
+                    if cand:
+                        spec, fmt = cand, "this_vs_that"; break
+    if spec is None:
+        spec, fmt = _resolve_spec(slug, dest, lang), "nakshiq_score"
+    print(f"series: format={fmt}")
     profile = spec.get("voice_profile") or _profile_for(dest)
     music = _pick_music_v2(profile)
 
-    final_name = f"yt_short_nakshiq_score_{slug}_{lang}_{date.today().isoformat()}.mp4"
+    final_name = f"yt_short_{fmt}_{slug}_{lang}_{date.today().isoformat()}.mp4"
     out = (HERE / final_name) if preview else (Path(tempfile.gettempdir()) / final_name)
-    res = build(slug, dest, out, music=music, lang=lang)
+    res = build(slug, dest, out, music=music, lang=lang, spec=spec)
     if not res:
         print("series: render failed")
         return None
@@ -1639,7 +1756,7 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
         "video_filename": final_name,
         "caption": _yt_caption_v2(dest, spec, credit, month_name),
         "ig_caption": _ig_caption_v2(dest, spec, credit, month_name),
-        "format": "nakshiq_score",
+        "format": fmt,
         "duration": res["duration"],
         "music": res.get("music_name", ""),
         "primary_dest_id": slug,
