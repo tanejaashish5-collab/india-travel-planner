@@ -35,34 +35,14 @@
     "GAh5p_yt_short": "2026-06-21",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-21",
-    "m8EAd": "2026-06-21",
+    "m8EAd": "2026-06-22",
     "m8EAd_story": "2026-06-21",
-    "PdMu0": "2026-06-21",
+    "PdMu0": "2026-06-22",
     "m8EAd_evening": "2026-06-21",
     "PdMu0_evening": "2026-06-21"
   },
-  "last_sync": "2026-06-21T16:15:53.385207+00:00",
+  "last_sync": "2026-06-22T09:28:17.644946+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "puri",
-      "date": "2026-06-07"
-    },
-    {
-      "destination_id": "kinnaur",
-      "date": "2026-06-07"
-    },
-    {
-      "destination_id": "khardung-la",
-      "date": "2026-06-07"
-    },
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-06-07"
-    },
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-06-07"
-    },
     {
       "destination_id": "pangong-lake",
       "date": "2026-06-08"
@@ -330,11 +310,14 @@
     {
       "destination_id": "yusmarg",
       "date": "2026-06-21"
+    },
+    {
+      "destination_id": "manali",
+      "date": "2026-06-22"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_myth_bust_oneline",
       "festival_alert",
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
@@ -354,10 +337,10 @@
       "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
-      "score_card"
+      "score_card",
+      "hidden_gem_reveal"
     ],
     "PdMu0": [
-      "v2_myth_bust_oneline",
       "festival_alert",
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
@@ -377,7 +360,8 @@
       "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
-      "score_card"
+      "score_card",
+      "hidden_gem_reveal"
     ]
   },
   "post_log": [
@@ -3488,6 +3472,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "yusmarg.mp4"
+    },
+    {
+      "timestamp": "2026-06-22T09:29:20.755574+00:00",
+      "date": "2026-06-22",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Ve0xN",
+      "destination": "manali",
+      "format": "hidden_gem_reveal",
+      "has_media": true,
+      "media_id": "manali.mp4"
+    },
+    {
+      "timestamp": "2026-06-22T09:29:33.577926+00:00",
+      "date": "2026-06-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "rbsV4",
+      "destination": "manali",
+      "format": "hidden_gem_reveal",
+      "has_media": true,
+      "media_id": "manali.mp4"
     }
   ],
   "theme_usage": {
@@ -3773,6 +3779,9 @@
       ],
       "kanatal": [
         "2026-06-19"
+      ],
+      "manali": [
+        "2026-06-22"
       ]
     },
     "morning_formats": {
@@ -3790,7 +3799,8 @@
         "2026-06-14"
       ],
       "hidden_gem_reveal": [
-        "2026-05-22"
+        "2026-05-22",
+        "2026-06-22"
       ],
       "tourist_map": [
         "2026-05-22",
@@ -4278,7 +4288,8 @@
       "gulmarg": [
         "2026-06-18"
       ]
-    }
+    },
+    "hidden_gem_reveal": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -4292,7 +4303,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "yusmarg",
+    "shared_best": "sangla",
     "collection": "best-family-destinations"
   },
   "manual_skip_dests": {}
