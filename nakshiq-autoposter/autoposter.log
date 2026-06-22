@@ -5997,3 +5997,23 @@ Date range: 2026-04-15 → 2026-06-21
 2026-06-22 14:22:36  INFO      YT Short posted: format=this_vs_that, music=fast-680
 2026-06-22 14:22:36  INFO      State saved. YT Short run complete.
 2026-06-22 14:22:36  INFO      ════════════════════════════════════════════════════════════
+2026-06-22 16:20:52  INFO      ════════════════════════════════════════════════════════════
+2026-06-22 16:20:52  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-22
+2026-06-22 16:20:52  INFO      ════════════════════════════════════════════════════════════
+2026-06-22 16:20:54  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-22 16:22:32  INFO      Short rendered: yt_short_this_vs_that_mysore_hi_2026-06-22.mp4 (16710 KB, 27.1s, fmt=this_vs_that, music=fast-686)
+2026-06-22 16:22:32  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-06-22.mp4 (17,111,330 bytes, video/mp4)
+2026-06-22 16:22:33  INFO          Uploading to R2 (timeout=300s)...
+2026-06-22 16:22:34  INFO          R2 PUT OK. Confirming...
+2026-06-22 16:22:35  INFO          Media ready: eLSRr (17,111,330 bytes · yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-06-22.mp4)
+2026-06-22 16:22:35  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-06-22.mp4
+2026-06-22 16:22:36  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-22 16:22:36  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-06-22 16:22:36  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-06-22 16:22:36  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-06-22 16:22:38  INFO      [instagram/nakshiq] Outstand accepted (post_id=i1RxB), waiting for platform confirmation...
+2026-06-22 16:23:14  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=i1RxB · Platform=17998803263778803
+2026-06-22 16:23:14  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-22 16:23:14  INFO      YT Short posted: format=this_vs_that, music=fast-686
+2026-06-22 16:23:14  INFO      State saved. YT Short run complete.
+2026-06-22 16:23:14  INFO      ════════════════════════════════════════════════════════════
