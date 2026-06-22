@@ -38,10 +38,10 @@
     "m8EAd": "2026-06-22",
     "m8EAd_story": "2026-06-21",
     "PdMu0": "2026-06-22",
-    "m8EAd_evening": "2026-06-21",
-    "PdMu0_evening": "2026-06-21"
+    "m8EAd_evening": "2026-06-22",
+    "PdMu0_evening": "2026-06-22"
   },
-  "last_sync": "2026-06-22T09:28:17.644946+00:00",
+  "last_sync": "2026-06-22T18:22:27.632494+00:00",
   "posted_destinations": [
     {
       "destination_id": "pangong-lake",
@@ -326,11 +326,14 @@
     {
       "destination_id": "mysore",
       "date": "2026-06-22"
+    },
+    {
+      "destination_id": "ukhrul",
+      "date": "2026-06-22"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "festival_alert",
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
       "emergency_intel",
@@ -350,10 +353,10 @@
       "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
       "score_card",
-      "hidden_gem_reveal"
+      "hidden_gem_reveal",
+      "score_card"
     ],
     "PdMu0": [
-      "festival_alert",
       "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
       "emergency_intel",
@@ -373,7 +376,8 @@
       "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
       "score_card",
-      "hidden_gem_reveal"
+      "hidden_gem_reveal",
+      "score_card"
     ]
   },
   "post_log": [
@@ -3551,6 +3555,28 @@
       "destination": "mysore",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-06-22.mp4"
+    },
+    {
+      "timestamp": "2026-06-22T18:23:42.525507+00:00",
+      "date": "2026-06-22",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "lMobK",
+      "destination": "ukhrul",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "ukhrul.mp4"
+    },
+    {
+      "timestamp": "2026-06-22T18:24:09.154065+00:00",
+      "date": "2026-06-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "eaYcr",
+      "destination": "ukhrul",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "ukhrul.mp4"
     }
   ],
   "theme_usage": {
@@ -3762,7 +3788,8 @@
         "2026-06-17"
       ],
       "ukhrul": [
-        "2026-06-03"
+        "2026-06-03",
+        "2026-06-22"
       ],
       "tawang": [
         "2026-06-03"
@@ -3937,7 +3964,8 @@
       ],
       "score_card": [
         "2026-06-01",
-        "2026-06-21"
+        "2026-06-21",
+        "2026-06-22"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4116,13 +4144,17 @@
       ],
       "yusmarg": [
         "2026-06-21"
+      ],
+      "ukhrul": [
+        "2026-06-22"
       ]
     },
     "audience_tags": {
       "backpackers": [
         "2026-05-18",
         "2026-06-01",
-        "2026-06-15"
+        "2026-06-15",
+        "2026-06-22"
       ],
       "families": [
         "2026-05-23",
@@ -4359,7 +4391,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
+    "shared_best": "ukhrul",
     "collection": "best-family-destinations"
   },
   "manual_skip_dests": {}
