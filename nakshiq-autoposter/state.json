@@ -30,11 +30,11 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-06-21",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short": "2026-06-22",
     "xS5s8_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-06-21",
+    "m8EAd_yt_short": "2026-06-22",
     "m8EAd": "2026-06-22",
     "m8EAd_story": "2026-06-21",
     "PdMu0": "2026-06-22",
@@ -313,6 +313,10 @@
     },
     {
       "destination_id": "manali",
+      "date": "2026-06-22"
+    },
+    {
+      "destination_id": "gangotri",
       "date": "2026-06-22"
     }
   ],
@@ -3494,6 +3498,24 @@
       "format": "hidden_gem_reveal",
       "has_media": true,
       "media_id": "manali.mp4"
+    },
+    {
+      "timestamp": "2026-06-22T10:20:57.341071+00:00",
+      "date": "2026-06-22",
+      "platform": "youtube",
+      "post_id": "vDSog",
+      "destination": "gangotri",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_gangotri_hi_2026-06-22.mp4"
+    },
+    {
+      "timestamp": "2026-06-22T10:21:33.773430+00:00",
+      "date": "2026-06-22",
+      "platform": "instagram",
+      "post_id": "M9gyC",
+      "destination": "gangotri",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_gangotri_hi_2026-06-22.mp4"
     }
   ],
   "theme_usage": {
@@ -4288,8 +4310,7 @@
       "gulmarg": [
         "2026-06-18"
       ]
-    },
-    "hidden_gem_reveal": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
