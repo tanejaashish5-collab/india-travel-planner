@@ -109,6 +109,9 @@ nakshiq-autoposter/data/strategy_briefs/
 nakshiq-autoposter/data/research/
 nakshiq-autoposter/.regen_dirty_cache.json
 nakshiq-autoposter/*.gz
+# Autoposter runtime posting-state — canonical copy lives on the autoposter-state
+# branch; a snapshot committed to main only goes stale (see post_log gotcha).
+nakshiq-autoposter/data/theme_usage.jsonl
 # Supabase local artifacts
 supabase/seed.db
 # Founder documents parked at repo root (his files, not project files)
