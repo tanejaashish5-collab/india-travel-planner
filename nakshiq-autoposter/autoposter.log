@@ -6296,3 +6296,118 @@ Date range: 2026-04-15 → 2026-06-22
 2026-06-23 14:09:51  INFO      YT Short posted: format=did_you_know, music=hype-267
 2026-06-23 14:09:51  INFO      State saved. YT Short run complete.
 2026-06-23 14:09:51  INFO      ════════════════════════════════════════════════════════════
+2026-06-23 16:46:29  INFO      ════════════════════════════════════════════════════════════
+2026-06-23 16:46:29  INFO      Nakshiq Autoposter · EVENING · 2026-06-23 · weekday=1
+2026-06-23 16:46:29  INFO      ════════════════════════════════════════════════════════════
+2026-06-23 16:46:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-23 16:47:01  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-23 16:47:01  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-23 16:47:03  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-23 16:47:03  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-23 16:47:03  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-23 16:47:03  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-23 16:47:15  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-23 16:47:15  INFO      Evening format (balance→verdict): v2_weekend_escape_map [30% vs target 50%] (0/15 never featured)
+2026-06-23 16:47:15  INFO      Formats — IG: v2_weekend_escape_map  ·  FB: v2_weekend_escape_map  ·  Story: collection_spotlight
+2026-06-23 16:47:15  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 80
+2026-06-23 16:47:15  INFO      Fingerprint dedup snapshot — 77 dests in 7d · 151 (dest,fmt) pairs in 30d · 166 media in 60d
+2026-06-23 16:47:15  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5 (3/20 never featured)
+2026-06-23 16:47:16  INFO      Shared best destination locked: Courtallam (Kutralam)
+2026-06-23 16:47:16  INFO      Carousel locked (collection_spotlight): leh
+2026-06-23 16:47:16  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-23 16:47:16  INFO      [instagram/nakshiq] Generating v2_weekend_escape_map post...
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: nako in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: sissu in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: kaza in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: keylong in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: sonamarg already posted today — SKIPPING dest (same-day guard)
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: sangla in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: kargil in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  INFO      v2_weekend_escape_map: leh in 14-day cooldown — SKIPPING dest
+2026-06-23 16:47:16  WARNING   v2_weekend_escape_map: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-23 16:47:16  WARNING   [instagram/nakshiq] v2_weekend_escape_map: courtallam inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'lahaul-valley' as score_card to keep the slot live.
+2026-06-23 16:47:16  INFO      [instagram/nakshiq] Caption ready (498 chars, dest=lahaul-valley)
+2026-06-23 16:47:17  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-23 16:47:17  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/lahaul-valley.mp4?v=20260524
+2026-06-23 16:47:19  INFO          Brand-stamp applied: lahaul-valley.mp4 (8,901,444 → 4,445,309 bytes)
+2026-06-23 16:47:19  INFO          Requesting upload URL for lahaul-valley.mp4 (4,445,309 bytes, video/mp4)
+2026-06-23 16:47:20  INFO          Uploading to R2 (timeout=300s)...
+2026-06-23 16:47:21  INFO          R2 PUT OK. Confirming...
+2026-06-23 16:47:23  INFO          Media ready: 14t7G (4,445,309 bytes · lahaul-valley.mp4)
+2026-06-23 16:47:23  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-23 16:48:17  INFO      [instagram/nakshiq] ✅ Published · Outstand=KCbA9 · Platform=18333617128280561
+2026-06-23 16:48:17  INFO      [facebook/Nakshiq] Generating v2_weekend_escape_map post...
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: nako in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: sissu in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: kaza in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: keylong in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: sonamarg already posted today — SKIPPING dest (same-day guard)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: sangla in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: lahaul-valley already posted today — SKIPPING dest (same-day guard)
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: kargil in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  INFO      v2_weekend_escape_map: leh in 14-day cooldown — SKIPPING dest
+2026-06-23 16:48:17  WARNING   v2_weekend_escape_map: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-23 16:48:17  WARNING   [facebook/Nakshiq] v2_weekend_escape_map: courtallam inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'lahaul-valley' as score_card to keep the slot live.
+2026-06-23 16:48:17  INFO      [facebook/Nakshiq] Caption ready (692 chars, dest=lahaul-valley)
+2026-06-23 16:48:17  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-23 16:48:17  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/lahaul-valley.mp4?v=20260524
+2026-06-23 16:48:19  INFO          Brand-stamp applied: lahaul-valley.mp4 (8,901,444 → 4,445,309 bytes)
+2026-06-23 16:48:19  INFO          Requesting upload URL for lahaul-valley.mp4 (4,445,309 bytes, video/mp4)
+2026-06-23 16:48:21  INFO          Uploading to R2 (timeout=300s)...
+2026-06-23 16:48:21  INFO          R2 PUT OK. Confirming...
+2026-06-23 16:48:23  INFO          Media ready: ovEMc (4,445,309 bytes · lahaul-valley.mp4)
+2026-06-23 16:48:23  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-23 16:48:38  INFO      [facebook/Nakshiq] ✅ Published · Outstand=dHUVO · Platform=1006470925310014
+2026-06-23 16:48:38  INFO      State saved. Run complete.
+2026-06-23 16:48:38  INFO      ════════════════════════════════════════════════════════════

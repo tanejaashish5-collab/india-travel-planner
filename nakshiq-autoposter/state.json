@@ -37,10 +37,10 @@
     "m8EAd_yt_short": "2026-06-23",
     "m8EAd": "2026-06-23",
     "PdMu0": "2026-06-23",
-    "m8EAd_evening": "2026-06-22",
-    "PdMu0_evening": "2026-06-22"
+    "m8EAd_evening": "2026-06-23",
+    "PdMu0_evening": "2026-06-23"
   },
-  "last_sync": "2026-06-23T07:05:29.123349+00:00",
+  "last_sync": "2026-06-23T16:47:01.584964+00:00",
   "posted_destinations": [
     {
       "destination_id": "tosamaidan",
@@ -329,11 +329,14 @@
     {
       "destination_id": "tso-moriri",
       "date": "2026-06-23"
+    },
+    {
+      "destination_id": "lahaul-valley",
+      "date": "2026-06-23"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_cost_index_handwritten",
       "emergency_intel",
       "v2_cost_vs_feeling",
       "v2_series_episode",
@@ -352,11 +355,11 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card"
     ],
     "PdMu0": [
-      "v2_cost_index_handwritten",
       "emergency_intel",
       "v2_cost_vs_feeling",
       "v2_series_episode",
@@ -375,6 +378,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card"
     ]
@@ -3643,6 +3647,28 @@
       "destination": "tso-moriri",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_tso-moriri_hi_2026-06-23.mp4"
+    },
+    {
+      "timestamp": "2026-06-23T16:48:17.320895+00:00",
+      "date": "2026-06-23",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "KCbA9",
+      "destination": "lahaul-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "lahaul-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-23T16:48:38.314216+00:00",
+      "date": "2026-06-23",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "dHUVO",
+      "destination": "lahaul-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "lahaul-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -3781,7 +3807,8 @@
         "2026-05-25",
         "2026-05-27",
         "2026-06-03",
-        "2026-06-17"
+        "2026-06-17",
+        "2026-06-23"
       ],
       "gopeshwar": [
         "2026-05-26",
@@ -4187,7 +4214,8 @@
         "2026-06-03"
       ],
       "lahaul-valley": [
-        "2026-06-04"
+        "2026-06-04",
+        "2026-06-23"
       ],
       "coorg": [
         "2026-06-05"
@@ -4291,6 +4319,9 @@
       ],
       "best-family-destinations": [
         "2026-06-18"
+      ],
+      "autumn-destinations": [
+        "2026-06-23"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -4450,6 +4481,11 @@
       "gulmarg": [
         "2026-06-18"
       ]
+    },
+    "collection_carousel_dests:autumn-destinations": {
+      "leh": [
+        "2026-06-23"
+      ]
     }
   },
   "infographic": {
@@ -4464,8 +4500,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sangla",
-    "collection": "best-family-destinations"
+    "shared_best": "courtallam",
+    "collection": "autumn-destinations"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-06-23"
