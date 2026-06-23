@@ -35,30 +35,13 @@
     "GAh5p_yt_short": "2026-06-22",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-22",
-    "m8EAd": "2026-06-22",
-    "m8EAd_story": "2026-06-21",
-    "PdMu0": "2026-06-22",
+    "m8EAd": "2026-06-23",
+    "PdMu0": "2026-06-23",
     "m8EAd_evening": "2026-06-22",
     "PdMu0_evening": "2026-06-22"
   },
-  "last_sync": "2026-06-22T18:22:27.632494+00:00",
+  "last_sync": "2026-06-23T07:05:29.123349+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-06-08"
-    },
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-06-08"
-    },
-    {
-      "destination_id": "hemkund-sahib",
-      "date": "2026-06-08"
-    },
-    {
-      "destination_id": "likir",
-      "date": "2026-06-08"
-    },
     {
       "destination_id": "tosamaidan",
       "date": "2026-06-09"
@@ -330,11 +313,14 @@
     {
       "destination_id": "ukhrul",
       "date": "2026-06-22"
+    },
+    {
+      "destination_id": "sonamarg",
+      "date": "2026-06-23"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
       "emergency_intel",
       "v2_cost_vs_feeling",
@@ -354,10 +340,10 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card"
     ],
     "PdMu0": [
-      "v3_tl_first_person_essay",
       "v2_cost_index_handwritten",
       "emergency_intel",
       "v2_cost_vs_feeling",
@@ -377,6 +363,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card"
     ]
   },
@@ -3577,6 +3564,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "ukhrul.mp4"
+    },
+    {
+      "timestamp": "2026-06-23T07:06:47.047372+00:00",
+      "date": "2026-06-23",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "BGoxn",
+      "destination": "sonamarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "sonamarg.mp4"
+    },
+    {
+      "timestamp": "2026-06-23T07:07:17.544736+00:00",
+      "date": "2026-06-23",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jETB2",
+      "destination": "sonamarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "sonamarg.mp4"
     }
   ],
   "theme_usage": {
@@ -3624,7 +3633,8 @@
       "bhandardara": [
         "2026-05-20",
         "2026-06-03",
-        "2026-06-12"
+        "2026-06-12",
+        "2026-06-23"
       ],
       "sissu": [
         "2026-05-21",
@@ -3679,7 +3689,8 @@
       "sonamarg": [
         "2026-05-25",
         "2026-06-15",
-        "2026-06-17"
+        "2026-06-17",
+        "2026-06-23"
       ],
       "mussoorie": [
         "2026-05-25"
@@ -3730,7 +3741,8 @@
         "2026-05-27"
       ],
       "sangla": [
-        "2026-05-28"
+        "2026-05-28",
+        "2026-06-23"
       ],
       "somnath": [
         "2026-05-28"
@@ -3817,7 +3829,8 @@
         "2026-06-19"
       ],
       "lahaul-valley": [
-        "2026-06-04"
+        "2026-06-04",
+        "2026-06-23"
       ],
       "courtallam": [
         "2026-06-05",
@@ -3832,11 +3845,13 @@
         "2026-06-18"
       ],
       "kaza": [
-        "2026-06-07"
+        "2026-06-07",
+        "2026-06-23"
       ],
       "tosamaidan": [
         "2026-06-09",
-        "2026-06-11"
+        "2026-06-11",
+        "2026-06-23"
       ],
       "gurez-valley": [
         "2026-06-10",
@@ -3965,7 +3980,8 @@
       "score_card": [
         "2026-06-01",
         "2026-06-21",
-        "2026-06-22"
+        "2026-06-22",
+        "2026-06-23"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4391,8 +4407,9 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "ukhrul",
+    "shared_best": "sangla",
     "collection": "best-family-destinations"
   },
-  "manual_skip_dests": {}
+  "manual_skip_dests": {},
+  "data_carousel_floor_last": "2026-06-23"
 }
