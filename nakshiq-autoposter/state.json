@@ -31,7 +31,7 @@
   ],
   "posted_today": {
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 1,
+    "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-06-23",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-23",
@@ -324,6 +324,10 @@
     },
     {
       "destination_id": "athirapally",
+      "date": "2026-06-23"
+    },
+    {
+      "destination_id": "tso-moriri",
       "date": "2026-06-23"
     }
   ],
@@ -3630,6 +3634,15 @@
       "destination": "athirapally",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_athirapally_hi_2026-06-23.mp4"
+    },
+    {
+      "timestamp": "2026-06-23T14:09:51.308318+00:00",
+      "date": "2026-06-23",
+      "platform": "instagram",
+      "post_id": "rbDG4",
+      "destination": "tso-moriri",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_tso-moriri_hi_2026-06-23.mp4"
     }
   ],
   "theme_usage": {
