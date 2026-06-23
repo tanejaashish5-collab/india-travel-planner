@@ -38,6 +38,14 @@ if (creds && (creds.startsWith("./") || creds.startsWith("../"))) {
 const AUDIT_DIR = path.join(ROOT, "ga4-audits");
 const WINDOW_DAYS = 7; // rolling 7-day window, matches the GSC daily audit
 
+// Affiliate go-signal: booking-link clicks per 7-day window above which it's
+// worth the effort of joining the OTA affiliate programs (Travelpayouts first)
+// and setting the 4 Vercel env vars. The links + tracking are already live and
+// fire `outbound_booking_click`; activation is a zero-code env-var flip. As of
+// 2026-06-23 real human clicks run ~3–16/week, so this threshold is far above
+// noise. Born 2026-06-23 (founder: "wire that in").
+const BOOKING_CLICK_TRIPWIRE = 100;
+
 // ── GA4 client ───────────────────────────────────────────────────
 const { BetaAnalyticsDataClient } = await import("@google-analytics/data");
 const ga = new BetaAnalyticsDataClient();
@@ -163,6 +171,7 @@ const eventRows = await runReport({
           "destination_alert_view", "save_destination",
           "save_prompt_view", "save_prompt_attempt", "save_prompt_success",
           "email_signup",
+          "outbound_booking_click", "outbound_experience_click",
         ],
       },
     },
@@ -218,6 +227,8 @@ const cur = {
   savePromptAttempt: ev("save_prompt_attempt"),
   savePromptSuccess: ev("save_prompt_success"),
   emailSignup: ev("email_signup"),
+  outboundBookingClick: ev("outbound_booking_click"),
+  outboundExperienceClick: ev("outbound_experience_click"),
 };
 const p = prev?.data ?? {};
 
@@ -261,6 +272,29 @@ if (cur.savePromptSuccess > 0) {
 if (cur.emailSignup > 1000) {
   concerns.push(`email_signup at ${cur.emailSignup.toLocaleString()} events — still bot-inflated (UA bot-guard doesn't stop real-Chrome bots). Needs a scroll/interaction gate or a GA4 data filter.`);
   actions.push(`email_signup bot inflation persists (${cur.emailSignup.toLocaleString()}). Add an IntersectionObserver/interaction gate like the alert hook has, OR configure the GA4 Admin "Real Humans" filter.`);
+}
+
+// Affiliate go-signal tripwire. The booking handoff is live on dest/cost/safari/
+// month pages and already logs `outbound_booking_click`; the affiliate accounts
+// are pending and activation is a zero-code Vercel env-var flip. We only want to
+// nudge the founder to join the programs once click VOLUME justifies the effort.
+// Guard against the bot-lockstep artifact found 2026-06-23: a crawler that fires
+// every onClick on a page inflates booking clicks in near-perfect lockstep with
+// save_destination (90d: 32,597 vs 32,578). When that signature shows, the spike
+// is bots — flag inflation, do NOT fire the affiliate go-signal.
+const bookingClicks = cur.outboundBookingClick;
+const bookingBotLockstep =
+  bookingClicks > 500 &&
+  cur.saveDestination > 500 &&
+  Math.abs(bookingClicks - cur.saveDestination) / Math.max(bookingClicks, cur.saveDestination) < 0.1;
+if (bookingBotLockstep) {
+  concerns.push(`outbound_booking_click at ${bookingClicks.toLocaleString()} moves in lockstep with save_destination (${cur.saveDestination.toLocaleString()}) — the bot-onClick-storm signature, NOT real booking intent. Ignore for the affiliate decision; needs the GA4 "Real Humans" filter.`);
+} else if (bookingClicks >= BOOKING_CLICK_TRIPWIRE) {
+  wins.push(`Booking-link clicks hit ${bookingClicks}/week — past the ${BOOKING_CLICK_TRIPWIRE}/week bar that justifies affiliate monetisation.`);
+  actions.push(`🎯 AFFILIATE GO-SIGNAL: ${bookingClicks} booking-link clicks this week (≥${BOOKING_CLICK_TRIPWIRE} bar). Join the OTA programs (Travelpayouts first, then Booking.com/Agoda/Thrillophilia) and set the 4 NEXT_PUBLIC_* markers in Vercel env — links + tracking are already live, so it's a zero-code env-var flip (see apps/web/src/lib/affiliate.ts).`);
+} else if (bookingClicks >= BOOKING_CLICK_TRIPWIRE * 0.4) {
+  // Climbing but not there yet — informational, no action needed.
+  wins.push(`Booking-link clicks climbing — ${bookingClicks}/week vs the ${BOOKING_CLICK_TRIPWIRE}/week affiliate-activation bar (${Math.round((bookingClicks / BOOKING_CLICK_TRIPWIRE) * 100)}% of the way). Hold on joining programs until it crosses.`);
 }
 
 if (wins.length === 0) wins.push("No threshold-crossing wins this run — metrics steady.");
@@ -330,6 +364,10 @@ L(`| save_destination (hook conversion) | ${cur.saveDestination} | ${p.saveDesti
 L(`| save_prompt_view | ${cur.savePromptView} | ${p.savePromptView ?? "—"} | ${delta(cur.savePromptView, p.savePromptView).txt} |`);
 L(`| save_prompt_success (email captured) | ${cur.savePromptSuccess} | ${p.savePromptSuccess ?? "—"} | ${delta(cur.savePromptSuccess, p.savePromptSuccess).txt} |`);
 L(`| email_signup (legacy, bot-prone) | ${cur.emailSignup.toLocaleString()} | ${p.emailSignup != null ? p.emailSignup.toLocaleString() : "—"} | ${delta(cur.emailSignup, p.emailSignup).txt} |`);
+L(`| outbound_booking_click (affiliate intent) | ${cur.outboundBookingClick.toLocaleString()} | ${p.outboundBookingClick != null ? p.outboundBookingClick.toLocaleString() : "—"} | ${delta(cur.outboundBookingClick, p.outboundBookingClick).txt} |`);
+L(`| outbound_experience_click | ${cur.outboundExperienceClick.toLocaleString()} | ${p.outboundExperienceClick != null ? p.outboundExperienceClick.toLocaleString() : "—"} | ${delta(cur.outboundExperienceClick, p.outboundExperienceClick).txt} |`);
+L("");
+L(`> Affiliate go-signal: booking links + \`outbound_booking_click\` tracking are live but the OTA accounts are pending (zero-code env-var flip). This audit flags **join the programs** once weekly booking clicks cross **${BOOKING_CLICK_TRIPWIRE}** (bot-lockstep spikes excluded). As of wiring (2026-06-23): ~3–16 real clicks/week.`);
 L("");
 
 L(`## Wins`);
@@ -378,6 +416,8 @@ const auditData = {
   savePromptView: cur.savePromptView,
   savePromptSuccess: cur.savePromptSuccess,
   emailSignup: cur.emailSignup,
+  outboundBookingClick: cur.outboundBookingClick,
+  outboundExperienceClick: cur.outboundExperienceClick,
 };
 L(`<!-- AUDIT_DATA ${JSON.stringify(auditData)} -->`);
 
@@ -387,4 +427,5 @@ const outPath = path.join(AUDIT_DIR, `ga4-audit-${today()}.md`);
 writeFileSync(outPath, out.join("\n"));
 console.log(`✓ wrote ${path.relative(ROOT, outPath)}`);
 console.log(`  ${cur.organicSessions} organic sessions · India ${cur.indiaEngaged} engaged @ ${cur.indiaAvgSec}s · ${cur.aiSessions} AI referrals · bot share ${cur.botPct.toFixed(0)}%`);
+console.log(`  booking-link clicks: ${cur.outboundBookingClick}/wk (affiliate go-signal at ${BOOKING_CLICK_TRIPWIRE})`);
 console.log(`  wins: ${wins.length} · concerns: ${concerns.length} · actions: ${actions.length}`);
