@@ -1663,6 +1663,25 @@ def _fetch_destinations(month: int = None, max_score: int = None) -> list:
         return []
 
 
+def _arc_hook(fmt: str, name: str) -> Optional[dict]:
+    """The on-screen hook (kicker / slam / badge / CTA) for a NON-score arc, so
+    build_ass() doesn't fall back to its score default — a giant score number +
+    'NAKSHIQ SCORE' kicker + '<NAME> 8/10' badge — which made the 2026-06-23
+    did_you_know / this_vs_that reels still LOOK like score reels (founder, 06-24:
+    "last night again I saw the score reels on insta"). Returns None for
+    nakshiq_score (the one weekly slot that SHOULD show the score) / unknown arcs.
+    Latin-only: the Kicker/Badge ASS styles use Instrument Sans (no Devanagari),
+    the same constraint the score reel already lives under on Hindi posts."""
+    name_uc = (name or "").upper()
+    if fmt == "did_you_know":
+        return {"kicker": "DID YOU KNOW", "slam": "?", "badge": "  " + name_uc + "  ",
+                "cta1": "SAVE THIS", "cta2": "more on nakshiq.com"}
+    if fmt == "this_vs_that":
+        return {"kicker": "THIS OR THAT", "slam": "VS", "badge": "  " + name_uc + "  ",
+                "cta1": "SAVE THIS", "cta2": "honest calls · nakshiq.com"}
+    return None
+
+
 def _score_short_recent(days: int = 7) -> bool:
     """True if a `nakshiq_score` short was published in the trailing `days`,
     read from the autoposter's canonical merged post log. Powers the weekly
@@ -1777,9 +1796,15 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
     profile = spec.get("voice_profile") or _profile_for(dest)
     music = _pick_music_v2(profile)
 
+    # 2026-06-24 — the VISUAL must match the arc (see _arc_hook). Without a hook
+    # build_ass() stamps the score number + "NAKSHIQ SCORE" + "<NAME> 8/10" on
+    # screen, so the non-score reels still looked like score reels. nakshiq_score
+    # gets None → keeps the score visual (the one weekly slot that should).
+    hook = _arc_hook(fmt, dest.get("name") or slug)
+
     final_name = f"yt_short_{fmt}_{slug}_{lang}_{date.today().isoformat()}.mp4"
     out = (HERE / final_name) if preview else (Path(tempfile.gettempdir()) / final_name)
-    res = build(slug, dest, out, music=music, lang=lang, spec=spec)
+    res = build(slug, dest, out, music=music, lang=lang, spec=spec, hook=hook)
     if not res:
         print("series: render failed")
         return None

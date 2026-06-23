@@ -190,6 +190,26 @@ def proof_feed_frequency(days=28):
     return counts, score_worst
 
 
+def proof_visual_no_score():
+    """REGRESSION GUARD (2026-06-24): the on-screen overlay must MATCH the arc.
+    A non-score reel rendered without an _arc_hook falls back to build_ass's score
+    default (score number + 'NAKSHIQ SCORE' kicker + '<NAME> 8/10' badge) — that's
+    why the did_you_know/this_vs_that reels still LOOKED like score reels. Build the
+    real ASS for each arc and assert the score tokens appear ONLY for nakshiq_score."""
+    import tempfile
+    from pathlib import Path
+    import yt_shorts_v2 as YV
+    cues = [(1.0, 2.2, "most people"), (2.3, 3.6, "dont know this")]
+    out = {}
+    for fmt in ("nakshiq_score", "did_you_know", "this_vs_that"):
+        hook = YV._arc_hook(fmt, "Manali")
+        ass = Path(tempfile.gettempdir()) / f"_proof_{fmt}.ass"
+        YV.build_ass(cues, "8/10", "Manali", 6.0, ass, hook=hook)
+        txt = ass.read_text(encoding="utf-8")
+        out[fmt] = ("NAKSHIQ SCORE" in txt) or ("8/10" in txt) or ("8 / 10" in txt)
+    return out
+
+
 # ── Run + report ─────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     print("=" * 70)
@@ -254,5 +274,19 @@ if __name__ == "__main__":
     print("   feed mix:")
     for f, n in fcounts.most_common():
         print(f"      {f:24} {n}")
+
+    print("\n" + "=" * 70)
+    print("PROOF 5 — REEL VISUAL matches arc (no score stamped on non-score reels)")
+    print("=" * 70)
+    vis = proof_visual_no_score()
+    print(f"\n   nakshiq_score reel shows score on screen : {vis['nakshiq_score']}  "
+          f"(expect True)")
+    print(f"   did_you_know reel shows score on screen  : {vis['did_you_know']}  "
+          f"(expect False)")
+    print(f"   this_vs_that reel shows score on screen  : {vis['this_vs_that']}  "
+          f"(expect False)")
+    vok = vis["nakshiq_score"] and not vis["did_you_know"] and not vis["this_vs_that"]
+    print(f"   {'PASS' if vok else 'FAIL'} — the score number + 'NAKSHIQ SCORE' "
+          f"badge render ONLY on the weekly score reel")
 
     A.date = RD  # restore
