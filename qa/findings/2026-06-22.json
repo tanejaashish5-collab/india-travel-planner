@@ -1,0 +1,385 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-06-22",
+    "date": "2026-06-22",
+    "started_utc": "2026-06-22T02:05:00Z",
+    "completed_utc": "2026-06-22T02:18:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-06-22/probe.py, sequential honest timing, SSR HTML snapshots saved); Supabase MCP aggregate reads (canonical 11-column SOS dialable formula + local_helpers/people_who_help shape + 3-row prior-bug recheck + new-destination check); Section K via Claude in Chrome MCP (yumthang-valley/en Leaflet-template dest + thekkady/hi atlas-template dest + explore grid->map Leaflet toggle, 5 controlled console observations across en/hi nav+F5); Section L hero-image audit via scripts/audit-hero-images.mjs (533 R2 HEAD probes)",
+    "mode": "Daily regression — A through L matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 13,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (9 probes incl /en/itinerary garbage slug)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-06-22: nagarjuna-konda, gandhinagar, neermahal, khonoma, pawapuri, munsiyari, puri, dharmasthala, nongriat, thekkady)",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (13 URLs: landing + 10 dests + 1 month sub-route [nagarjuna-konda/december] + 1 itinerary URL [itinerary/agra])",
+    "E — SOS completeness: SSR emergencySos blob parse (10 dests) + DB ground-truth aggregates (canonical 11-column formula) + 3-row prior-bug recheck + people_who_help shape check + new-destination SOS-coverage check",
+    "F — API smoke (13 probes incl oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks)",
+    "I — Core routes HTTP matrix (23 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: yumthang-valley/en (Leaflet-template dest page — container/tiles/markers verified) + thekkady/hi (atlas-template dest page, Devanagari, static-coord readout captured) + explore grid->map toggle (Leaflet verified), 5 controlled console observations across en/hi nav+F5",
+    "L — Hero-image audit (scripts/audit-hero-images.mjs HEAD-probed all 533 R2 heroes: 533 ok / 0 missing / 0 errors)"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass (cost-aware rule). The deep pass remains overdue: the /[locale]/itinerary/[slug] template (792+ URLs, live since 06-11, metadata-clean since the 06-17 fix) and the 8 Sikkim destination pages (live 06-14) remain a11y/perf-unmeasured by the 2026-05-04 deep baseline."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass. Curl TTFB this run is warm (destinations median 562 ms, all 10 between 356-1038 ms with no multi-second cold-ISR outlier; core routes median 179 ms, slowest real route /en/itinerary/agra 890 ms) — a cache-state signal, not a Lighthouse-score substitute."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en + /hi bad slugs all hard 404 (9 bytes). Bare-path /destination/nonexistent-slug-qa/june -> 404. 9/9 correct, 0 misses, incl. /en/itinerary/this-does-not-exist-xyz -> 404 (styled 66623-byte 404 page, correct status code)."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 -> all hard 404 (9 bytes)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed->400 'Malformed JSON body', empty->400, wrong-shape->400 'Invalid question', 200KB->413 'Payload too large — questions are capped at 1000 characters.', valid->200 (3438 b real Leh answer). 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400 'Malformed JSON body', empty->400, {}->400 'Missing required fields'. 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template '| NakshIQ | NakshIQ' title stutter (also tracked NEW-2026-06-12-001)",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "Fix holds on day-6 verification. section-D-seo.csv: 0/13 title_stutter; /en/itinerary/agra clean (single ' | NakshIQ' suffix). No regression of the shared generateMetadata path."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image (all itinerary URLs)",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "Fix holds (day-6). section-D-seo.csv: 13/13 og:image present incl /en/itinerary/agra. No regression."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-06-21",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v51, md5 d0cc522e363cd7fc6521684ac6679f9a — byte-identical to the prior NINE persisted runs (06-12, 06-14, 06-15, 06-16, 06-17, 06-18, 06-19, 06-20, 06-21); TENTH consecutive identical capture. manifest 3 icons + 5 shortcuts; /offline -> 200 (92575 b)."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB 3-row recheck: uttarkashi police 100 / ambulance 108 / fire 101 / women 1091 (or 181) / tourist 1800-111-363 (toll-free) / DDMA Uttarkashi Control Room 01374-222722 / 1077; verified_by=constants-reverify-2026-06-09 unchanged. Site-wide placeholder regex (X{3,} across the 11 dialable columns + local_police_station) = 0 rows (DB aggregate over 533 rows)."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "khonoma was in today's random sample — SSR-confirmed: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1363 / rescue 'Kohima Police Control Room: 7005986046 · NSDMA: 1070'. DB recheck: verified_by=deepdive-recorrect-2026-06-09 unchanged."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1800-111-363 / Geyzing PS 8145887528 (PI Roshan Gurung) + District Hospital Gyalshing 03595-250634; verified_by=emsos-th-audit-2026-06-10 unchanged."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "Harness regex covers both casings; 13/13 URLs show en + hi + x-default (incl. the itinerary URL)."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB confidence_cards.people_who_help nonempty arrays = 84 (exact match to the 06-19/06-20/06-21 baseline). Fix holds. (No per-page live render check today; DB shape stable.)"
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL 2026-06-21",
+      "today_status": "PARTIAL",
+      "evidence": "Safety baseline GREEN: 533/533 emergency_sos rows, 0 without row, 0 under 3 dialable (min 5, avg 7.41, total 3952 non-empty across the canonical 11 columns — EXACT match to the 06-19/06-20/06-21 baseline of 3952), 0 placeholder-X. emergency_sos.local_helpers nonempty = 178/533 — unchanged from baseline (catalogue steady at 533, no new dests since 06-14). Enrichment opportunity (178 -> up to 405 from deep_dive) remains open."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-06-21",
+      "today_status": "PARTIAL",
+      "evidence": "Two-template state persists; today BOTH templates probed on real dest pages. Leaflet-template dest page (yumthang-valley/en, Sikkim): renders real Leaflet (1 container / 42 tiles all loaded / 9 overlay markers / window.L), no atlas. Atlas-template dest page (thekkady/hi): renders CinematicStateMap atlas (4x svg viewBox 0 0 1000 1100 + 2x india-outline ref, leaflet=0 by design, correct per SKILL map-type note). Both render cleanly; migration still split, no defect."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED 2026-06-21",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Explore map: 519 overlay-pane paths matching the score-colored markers; circleMarkers render in overlay pane by design; marker-pane children = 0 by design. Same pattern confirmed on the yumthang-valley Leaflet dest page (9 overlay markers, marker-pane 0)."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL 2026-06-21",
+      "today_status": "PARTIAL",
+      "evidence": "Markers confirmed rendering on a real Leaflet-template dest page today: yumthang-valley = 1 container / 42 tiles / 9 overlay-pane circleMarkers / window.L present, stable across nav + F5 (reload re-probe: 1/42/9). The 'markers missing' half remains withdrawn; migration tracking only, no defect."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED 2026-06-21 (low)",
+      "today_status": "REPRODUCED",
+      "evidence": "thekkady/hi atlas runtime readout '23.5N · 80.5E' (real Thekkady/Periyar ~9.58N 77.16E; 23.5N 80.5E is roughly the geographic centre of India, a generic placeholder) — thirteenth consecutive sighting (ranakpur 06-15, udupi 06-16, coonoor 06-17, chitrakoot 06-18/06-19, bhimtal 06-20, pahalgam 06-21, thekkady today). Cosmetic/data-credibility issue on the decorative atlas only; one template variable."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 React #418 across all 5 controlled observations today (yumthang-valley nav, yumthang-valley F5, thekkady/hi nav, thekkady/hi F5, explore + map-toggle) spanning en + hi, Leaflet + atlas dest templates. No page-origin errors/warnings/exceptions under the error/418/warning filter. Holds closed (0/5 after 0/5 on 06-16..06-21)."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED 2026-06-21 (permanent closure, code + live confirmed)",
+      "today_status": "STILL CLOSED",
+      "evidence": "Permanently closed 06-12 (GuidedTour mounted nowhere in apps/web/src). Not re-tested today; reopen only if GuidedTour is re-mounted. thekkady/hi nav showed no English tour modal on the Hindi surface visited."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images (black cards in landing Dailies reel)",
+      "prior_status": "STILL CLOSED 2026-06-21",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section L hero-image audit (scripts/audit-hero-images.mjs HEAD-probed all 533 R2 heroes): 533 ok / 0 missing / 0 errors. qa/hero-images.json missing=[]. The Sikkim black-card fix holds; every destination (incl. the 8 Sikkim dests) carries a real R2 hero at destinations/<id>.jpg."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-06-21",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass (cost-aware)."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-06-21",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass (cost-aware)."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-06-21",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run in daily pass; curl TTFB this run is warm (core median 179 ms, dest median 562 ms with no multi-second cold outlier) but TTFB is not a LH-score substitute."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-06-21",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's sample: nagarjuna-konda, gandhinagar, neermahal, khonoma, pawapuri, munsiyari, puri, dharmasthala, nongriat, thekkady."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "INFO-2026-06-22-001",
+      "severity": "info",
+      "title": "Clean daily pass — itinerary metadata fix holds on day-6, SOS safety floor exact-baseline, hero images 533/533, zero open real defects on the site",
+      "detail": "Sixth consecutive fully-clean daily pass. The two itinerary metadata defects fixed 06-17 (DEEP-Phase2-D1 / NEW-2026-06-12-001 title stutter, NEW-2026-06-12-002 missing og:image) continue to hold: section D is again 0/13 title-stutter, 13/13 canonical + full hreflang, 13/13 og:image, with the itinerary/agra URL clean. All availability/parity/API/SOS/PWA/map/console checks pass. The Section L hero-image audit is GREEN — all 533 R2 heroes present (0 missing), so the 06-20 Sikkim black-card fix holds. The catalogue is steady at 533 destinations (0 new since the 06-14 Sikkim cluster) and the SOS safety floor is an EXACT match to the baseline (533/533 rows, 0 without, min 5, avg 7.41, total 3952 dialable across the canonical 11 columns, 0 placeholder-X). The only tracked items remaining are not real serving defects: the cosmetic static atlas coordinate and the overdue deep a11y/perf pass.",
+      "evidence": "section-D-seo.csv (0/13 stutter, 13/13 canonical/og/hreflang-xd); section-E-db.json (533/533 SOS rows, 0 without, min 5, avg 7.41, total 3952, 0 placeholder-X, local_helpers 178, people_who_help 84, max_created_at 2026-06-14 08:52:57, 0 new since last run); qa/hero-images.json (533 ok / 0 missing / 0 errors); section-F-api.csv (0x5xx); section-I-core-routes.csv (23/23 real routes 200); section-K-console.txt (0/5 React #418).",
+      "recommendation": "No action — track as a steady clean state. Keep the Section D itinerary probe and the Section L hero-image audit in the daily matrix so any regression of the shared generateMetadata path or any image-less new destination is caught early."
+    },
+    {
+      "id": "INFO-2026-06-22-002",
+      "severity": "info",
+      "title": "Warm cache this run (no multi-second cold outlier); catalogue + sitemap steady; only the decorative atlas coordinate + overdue deep pass remain queued",
+      "detail": "Cache state was warm this run. All 10 sampled destinations served 200 in 356-1038 ms (median 562 ms), with NO multi-second cold-ISR outlier. Core routes were warm at median 179 ms (slowest real route /en/itinerary/agra 890 ms). Every route and destination returned 200. Sitemap held flat at 27,110 URLs with destination/month/cost counts unchanged (533 dest-slug / 6,396 dest-month / 525 cost) — the 8 Sikkim dests still have no /cost/ page. Section L (hero images) is GREEN (533/533). Open follow-ups unchanged: (1) the cosmetic static atlas coordinate '23.5N · 80.5E' on the decorative atlas (NEW-2026-06-06-003, 13th sighting, one template variable); (2) the overdue deep axe+Lighthouse pass that should fold in the itinerary template and the 8 Sikkim pages; (3) the long-standing a11y/perf carries (color contrast, tab roles, mobile perf).",
+      "evidence": "section-B-availability.csv (dest TTFB min 356 / median 562 / max 1038, all 200, no multi-second outlier); section-I-core-routes.csv (core TTFB min 135 / median 179 / p90 754 / max 890, /en/itinerary/agra slowest real route); section-H-sitemap.csv (27110 total, dest=533, month=6396, cost=525); section-K-e2e.csv (thekkady/hi atlas readout 23.5N · 80.5E); qa/hero-images.json (533 ok / 0 missing).",
+      "recommendation": "No defect. Carry the queued follow-ups: (1) /cost/ pages + Hindi-parity editorial for the 8 Sikkim dests as the cluster matures; (2) schedule the overdue deep pass with the itinerary template + Sikkim pages in scope. Fix the static atlas coordinate when convenient (one variable)."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 23,
+    "core_routes_2xx": 23,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 135, "median": 179, "p90": 754, "max": 890 },
+    "core_routes_TTFB_note": "23 real routes all 200. TTFB over the 23 real routes (phantom /en/search excluded): min 135 / median 179 / p90 754 / max 890 ms. Slowest real route /en/itinerary/agra 890 ms. The 24th probe (/en/search) is the intentional phantom-route check — correctly 404s and is excluded from the 2xx tally and the TTFB stats.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 356, "median": 562, "max": 1038 },
+    "destinations_TTFB_note": "10/10 200. Warm: all 10 served 356-1038 ms with NO multi-second cold-ISR outlier. min 356 (dharmasthala), max 1038 (munsiyari), median 562.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 13,
+    "seo_title_stutter": 0,
+    "seo_title_stutter_note": "0 stutter — the 06-17 itinerary title-stutter fix (DEEP-Phase2-D1 / NEW-2026-06-12-001) holds on day-6. /en/itinerary/agra single brand suffix. All 13 sampled URLs clean.",
+    "seo_canonical_present": 13,
+    "seo_hreflang_en_present": 13,
+    "seo_hreflang_hi_present": 13,
+    "seo_hreflang_xdefault_present": 13,
+    "seo_og_image_present": 13,
+    "seo_og_image_note": "13/13 present — the 06-17 itinerary og:image fix (NEW-2026-06-12-002) holds on day-6. Itinerary URLs ship og:image = /api/og/destination/{slug}?locale={locale}.",
+    "soft_404_regression_passes": 9,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 81,
+    "sos_min_structured_fields_per_dest": 7,
+    "sos_phones_total_across_10_dests": 78,
+    "sos_phones_invalid_format": 0,
+    "sos_universal_112_present": 10,
+    "sos_destinations_without_block": 0,
+    "sos_sample_text_name_fields_by_design": 3,
+    "sos_sample_text_name_note": "3 local_police_station fields carry a station NAME without dialable digits (puri 'Sea Beach Police Station, Puri', nongriat 'Sohra Police Station', thekkady 'Kumily PS (Thekkady is in Kumily PS jurisdiction)') — text-by-design, counted in the 81 structured-field total but excluded from the 78 dialable-phone count. The SSR harness flags these 3 as 'malformed' only because they have no digits; they are the same by-design text-field class noted in the SKILL, NOT real malformed phones. 0 placeholder-X, 0 genuinely malformed phones. gandhinagar/dharmasthala/puri are the sample floor at 7 dialable fields (well above the 3-field safety floor).",
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.41,
+    "sos_db_total_dialable_entries_11col": 3952,
+    "sos_db_dialable_11col_note": "Canonical 11-column set (police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line; EXCLUDES local_police_station), counted as non-null + trimmed-non-empty — EXACT match to the 06-19/06-20/06-21 baseline of 3952. min 5, 0 under 3 — floor intact. Covers all 533 destinations.",
+    "sos_db_rows_with_placeholder_X": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — unchanged from baseline; catalogue steady at 533 (no new dests since 06-14).",
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_baseline_note": "84 = confidence_cards.people_who_help nonempty arrays — exact match to the 06-19/06-20/06-21 baseline.",
+    "destinations_total_db": 533,
+    "destinations_total_db_note": "Steady at 533 (max created_at 2026-06-14 08:52:57, 0 new since the Sikkim cluster; created_at>'2026-06-14 09:00' = 0).",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "Section L: scripts/audit-hero-images.mjs HEAD-probed every R2 hero (destinations/<id>.jpg). 533 ok / 0 missing / 0 errors — the 06-20 Sikkim black-card fix holds, every destination (incl. the 8 Sikkim dests) carries a real hero.",
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "api_404_expected_returned": 2,
+    "api_note": "7x 400 (chat malformed/empty/wrong-shape, itinerary malformed/empty/empty-object, weather no-params) + 1x 413 (chat 200 KB) = 8 validation 4xx; 3x 200 (valid chat 3438 b real Leh answer, weather?id=varanasi temp 36, search-index 718840 b); 2x 404 (/api/destinations, /api/health — expected, styled 404 page).",
+    "service_worker_version": "nakshiq-v51",
+    "service_worker_md5": "d0cc522e363cd7fc6521684ac6679f9a",
+    "service_worker_byte_identical_note": "Byte-identical to the prior NINE persisted runs (06-12, 06-14, 06-15, 06-16, 06-17, 06-18, 06-19, 06-20, 06-21) — tenth consecutive identical capture.",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 27110,
+    "sitemap_total_urls_delta_note": "Flat vs 06-21 (27110 -> 27110). Destination/month/cost counts unchanged — catalogue steady at 533 destinations.",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "sitemap_cost_note": "cost URLs still 525 — the 8 Sikkim dests have no /cost/ page yet (expected; cost pages lag new dest publishes).",
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 36,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "Map toggle ('Map' button) activated and Leaflet verified: 1 container, 36 tiles, 519 score-colored overlay markers (steady vs 519 on 06-15..06-21), window.L present, marker-pane empty (circleMarkers in overlay by design).",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_leaflet_template": 1,
+    "map_dest_pages_atlas_template": 1,
+    "map_dest_atlas_note": "thekkady/hi renders 4x atlas svg viewBox 0 0 1000 1100 + 2x india-outline ref, leaflet=0 by design (correct). yumthang-valley/en renders Leaflet (1 container / 42 tiles / 9 markers) — a Leaflet-template dest page.",
+    "map_widget_destination_pages_probed_interactive": 3,
+    "map_widget_destination_pages_with_leaflet": 2,
+    "map_widget_note": "Of 3 map surfaces probed, 2 use Leaflet (explore + yumthang-valley dest page — both healthy with markers) and 1 uses the decorative atlas by design (thekkady/hi). The two-template split persists; both render fine.",
+    "atlas_static_coord_readout": "23.5N · 80.5E (thekkady/hi; real Thekkady/Periyar ~9.58N 77.16E) — NEW-2026-06-06-003 REPRODUCED, 13th sighting.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 5,
+    "console_react_418_fired_loads": "0 of 5 controlled observations (yumthang-valley nav, yumthang-valley F5, thekkady/hi nav, thekkady/hi F5, explore+toggle) across en/hi and Leaflet/atlas dest templates — NEW-2026-06-07-001 holds STILL CLOSED."
+  },
+  "deliverables": [
+    "qa/findings/2026-06-22.json",
+    "qa/findings/2026-06-22/ (probe.py + section CSVs A-K + section-E-db.json + html/ SSR snapshots + sample-slugs.json)",
+    "qa/hero-images.json + qa/hero-images.md (Section L)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "Itinerary metadata fix (title-stutter + og:image) is re-verified today on the itinerary/agra URL plus the daily Section D matrix (0/13 stutter, 13/13 og:image) — a day-6 confirmation that the 06-17 code fix holds, not an exhaustive sweep of all 792+ itinerary URLs.",
+    "Destination TTFB this run is warm: all 10 dests served 356-1038 ms with no multi-second cold-ISR outlier (median 562 ms). Core routes median 179 ms (slowest real route /en/itinerary/agra 890 ms). Every route 200. Sequential single-shot curl from the Cowork sandbox — a cache-state signal, not a serving improvement to bank on.",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe per methodology.",
+    "4 small Supabase reads total (1 schema introspection to confirm destinations.id is the slug + canonical SOS aggregate + 3-row recheck) over MCP — a few KB, egress-safe per CLAUDE.md.",
+    "SOS total-dialable is reported as 3952 (non-null + trimmed-non-empty across the canonical 11 columns) — EXACT match to the 06-19/06-20/06-21 baseline of 3952, no regression. The 3 'malformed' flags from the SSR harness are puri/nongriat/thekkady text-name local_police_station fields (police-station NAMES without their own digits) — text-by-design, excluded from the 78 dialable count, NOT real malformed phones.",
+    "people_who_help / NEW-2026-06-10-001 confirmed via DB shape (84 nonempty jsonb arrays) only — no per-page live render check today. (The SKILL prose cites ~491 'present', a different measurement counting key-presence/legacy shapes; the rendered nonempty-array count is the stable per-run metric, diffed against the same field per the SKILL 'compare against the SAME field' rule — 84 == 84, no regression.)",
+    "Section L hero-image audit (533 R2 HEAD probes) is GREEN (0 missing) and part of the daily matrix; this catches a new image-less destination the morning it ships (the Sikkim black-card class), complementing the audit-hero-images cron (03:50 UTC).",
+    "Section K probed one Leaflet-template dest page (yumthang-valley, Sikkim), one atlas-template dest page (thekkady/hi), and the explore Leaflet map; the two-template migration (NEW-2026-05-17-001 / -06-06-002) stays PARTIAL by tracking, both templates render cleanly, no defect observed.",
+    "Chrome console tracking starts on the first read_console call per tab; the two F5 reloads (yumthang, thekkady) and the explore nav+interaction are the solidly-captured clean observations. Under the error/418/warning filter, 0 page-origin messages appeared on any of the 5 surfaces. React #418 streak: 0/5 today after 0/5 on 06-16..06-21; holds closed.",
+    "Axe-core and Lighthouse not run today (cost-aware); the itinerary template (metadata-clean but still a11y/perf-unmeasured) and the 8 Sikkim dest pages remain unmeasured for a11y/perf — the deep pass is overdue since 2026-05-04."
+  ],
+  "business_summary": {
+    "headline": "Sixth clean day in a row. The two June fixes to the trip-itinerary pages — the browser-tab titles that had doubled the brand name, and the missing social-share preview image — are both still holding, so today's metadata checks stayed completely clean for a sixth consecutive day. The daily hero-image audit confirmed all 533 destination cover photos are present (0 missing), so last week's Sikkim 'black card' issue stays fixed. Everything else stayed green: all 23 core routes and 10 freshly-sampled destinations served 200 in both English and Hindi, the API layer returned zero server errors, the emergency-SOS safety floor is exactly at baseline across all 533 destinations (at least 5 dialable numbers each, zero placeholders), the maps render correctly on both page templates, and the React hydration warning stayed silent across all 5 checks. The cache was warm this run — every destination under ~1.0s with no multi-second cold outlier. No new destinations and no new issues.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "23/23 real core routes 200; 10/10 freshly-sampled destinations 200 in both languages. Warm cache this run — every destination under ~1.0s (median ~0.56s), no multi-second cold outlier; core first-byte median ~0.18s" },
+      { "area": "Catalogue", "status": "GREEN", "why": "Steady at 533 destinations (0 new since the 06-14 Sikkim cluster); every destination still carries a complete emergency-SOS desk (0 without a row)" },
+      { "area": "Cover images (heroes)", "status": "GREEN", "why": "Daily audit: 533/533 destination hero images present on the CDN, 0 missing — the 06-20 Sikkim black-card fix holds" },
+      { "area": "API health", "status": "GREEN", "why": "0 x 5xx across 13 probes; malformed/empty/wrong bodies -> 400; 200 KB attack-sized body -> 413; valid chat + weather + search-index return real 200s" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages serve lang=hi with Devanagari titles" },
+      { "area": "SEO metadata", "status": "GREEN", "why": "Clean for a sixth day after the itinerary fixes: 13/13 clean titles, 13/13 canonical + full hreflang, 13/13 share images, soft-404 guards 9/9" },
+      { "area": "Emergency SOS — safety baseline", "status": "GREEN", "why": "533/533 destinations, min 5 dialable numbers (avg 7.4), 0 placeholders; the 3 historically-flagged dests re-verified in the database" },
+      { "area": "'People Who Can Help' card", "status": "GREEN", "why": "Database shape stable at 84 populated cards — fix holding" },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 519 score-colored markers (steady). Destination pages render either a live Leaflet map (Sikkim pages, markers verified) or the decorative atlas — both correct" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical to the last nine runs (v51); manifest 3 icons + 5 shortcuts; offline page 200" },
+      { "area": "Console health", "status": "GREEN", "why": "React #418 fired on 0 of 5 observations across English + Hindi and Leaflet + atlas pages — holds closed" }
+    ],
+    "whats_changed": [
+      "[steady] The June itinerary metadata fixes are holding on day-6 — titles single-suffixed, share images present. Metadata checks clean for a sixth consecutive day.",
+      "[steady, green] The daily hero-image audit (Section L) is green again — 533/533 cover photos present (0 missing). Last week's Sikkim black-card issue stays fixed.",
+      "[steady] No new destinations and no new defects. Catalogue held at 533; sitemap flat at 27,110 URLs.",
+      "[warm cache] Every destination served under ~1.0s this run (median ~0.56s) with no multi-second cold outlier; core pages warm (~0.18s).",
+      "[reproduced] Static atlas coordinates (23.5N · 80.5E) on the decorative map — thirteenth sighting (thekkady this time). Still cosmetic, still a one-variable fix.",
+      "[closed, holding] React #418 hydration warning silent on all 5 checks — continues to hold closed."
+    ],
+    "risks": [
+      "The 8 Sikkim destination pages and the (now metadata-clean) itinerary template remain unmeasured for accessibility and performance — the deep pass is overdue since May 4.",
+      "Accessibility + mobile Lighthouse carries (color contrast, tab roles, perf scores) remain open and untested in daily passes.",
+      "Atlas static-coordinates: cosmetic but prints wrong geography on every atlas-template page — a small credibility leak on a brand built on data accuracy.",
+      "The 8 Sikkim destinations still have no /cost/ pages (sitemap cost URLs 525 vs 533 destinations) — expected lag, worth closing as the cluster matures."
+    ],
+    "bottom_line": [
+      "Nothing urgent — sixth clean day in a row; the headline item (itinerary metadata) stays fixed and hero images are fully present.",
+      "Schedule the overdue deep pass (axe + Lighthouse) with the itinerary template AND the 8 Sikkim pages explicitly in scope.",
+      "Queue /cost/ pages and a Hindi-parity check for the 8 Sikkim destinations as the cluster matures.",
+      "Fix the static atlas coordinate when convenient — one variable, thirteenth sighting."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi: nagarjuna-konda, gandhinagar, neermahal, khonoma, pawapuri, munsiyari, puri, dharmasthala, nongriat, thekkady",
+      "23 core routes + 13 API probes + 9 soft-404 guards + 5 locale redirects probed",
+      "Explore Leaflet map + 1 Leaflet-template dest page (yumthang-valley) + 1 atlas-template dest page (thekkady/hi) exercised in a real Chrome session; 5 controlled console observations across en/hi",
+      "All 533 destination hero images HEAD-probed on the CDN (Section L: 0 missing)",
+      "533 destination SOS rows ground-truthed in the database (canonical-formula aggregates + 3-row prior-bug recheck + people_who_help shape check + new-destination check)",
+      "27,110-URL sitemap walked chunk by chunk (flat vs yesterday; destinations unchanged)",
+      "Itinerary metadata fix re-verified on itinerary/agra + the daily Section D matrix"
+    ]
+  }
+}

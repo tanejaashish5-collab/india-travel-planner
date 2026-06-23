@@ -1,0 +1,95 @@
+{
+  "source": "Supabase MCP execute_sql (project dudzsdzfvikjjhurxrgc) — small aggregates, egress-safe",
+  "aggregate": {
+    "dest_total": 533,
+    "dest_max_created": "2026-06-14 08:52:57.6882+00",
+    "dest_new_since_sikkim_2026-06-14_0900": 0,
+    "emergency_sos_rows": 533,
+    "dests_without_emergency_sos_row": 0,
+    "rows_under_3_dialable": 0,
+    "min_dialable": 5,
+    "avg_dialable": 7.41,
+    "total_dialable_11col": 3952,
+    "rows_with_placeholder_X": 0,
+    "emergency_sos_local_helpers_nonempty": 178,
+    "confidence_cards_people_who_help_nonempty_array": 84
+  },
+  "canonical_11_columns": [
+    "police",
+    "ambulance",
+    "fire",
+    "women_helpline",
+    "tourist_helpline",
+    "road_accident",
+    "rescue_contact",
+    "mountain_rescue",
+    "mechanic_contact",
+    "tow_service",
+    "embassy_emergency_line"
+  ],
+  "prior_bug_3row_recheck": {
+    "uttarkashi": {
+      "police": "100",
+      "ambulance": "108",
+      "fire": "101",
+      "women_helpline": "1091 (or 181)",
+      "tourist_helpline": "1800-111-363 (toll-free)",
+      "road_accident": "1073",
+      "rescue_contact": "DDMA Uttarkashi Control Room: 01374-222722 / 1077",
+      "mountain_rescue": "DDMA Uttarkashi: 01374-222126 / 7310913129",
+      "verified_by": "constants-reverify-2026-06-09",
+      "verified_date": "2026-06-09",
+      "placeholder_X": false
+    },
+    "khonoma": {
+      "police": "100",
+      "ambulance": "108",
+      "fire": "101",
+      "women_helpline": "1091",
+      "tourist_helpline": "1363",
+      "road_accident": "1073",
+      "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070",
+      "verified_by": "deepdive-recorrect-2026-06-09",
+      "verified_date": "2026-06-09",
+      "text_typed_phone": false
+    },
+    "khangchendzonga-np": {
+      "police": "100",
+      "ambulance": "108",
+      "fire": "101",
+      "women_helpline": "1091",
+      "tourist_helpline": "1800-111-363",
+      "road_accident": "1073",
+      "rescue_contact": "Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; ...",
+      "verified_by": "emsos-th-audit-2026-06-10",
+      "verified_date": "2026-06-10",
+      "text_typed_phone": false
+    }
+  },
+  "ssr_sample_summary": {
+    "sample": [
+      "lucknow",
+      "dzongu",
+      "lonavala",
+      "belum-caves",
+      "long-island-andaman",
+      "kinnaur",
+      "hyderabad",
+      "gir-national-park",
+      "ozar",
+      "yamunotri"
+    ],
+    "dests_with_emergencySos_blob": 10,
+    "dests_empty": 0,
+    "structured_fields_total": 80,
+    "dialable_total": 75,
+    "min_dialable_per_dest": 7,
+    "universal_112_present": 10,
+    "placeholder_X": 0,
+    "genuinely_malformed_phones": 0,
+    "text_name_fields_by_design": {
+      "count": 5,
+      "detail": "4 local_police_station station-NAME fields (lucknow, long-island-andaman, kinnaur, hyderabad) + 1 long-island-andaman ambulance='Not available' (honest scarcity on a remote Andaman island). All text-by-design; counted in 80 structured but excluded from 75 dialable. NOT real malformed phones (per SKILL Section-E note)."
+    }
+  }
+}

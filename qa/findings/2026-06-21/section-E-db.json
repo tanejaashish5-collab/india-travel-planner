@@ -1,0 +1,23 @@
+{
+  "captured_utc": "2026-06-21",
+  "source": "Supabase MCP execute_sql (project dudzsdzfvikjjhurxrgc), small aggregates only — egress-safe per CLAUDE.md",
+  "canonical_11col_formula": "police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line; non-null + trimmed-non-empty; EXCLUDES local_police_station",
+  "dest_total": 533,
+  "max_created_at": "2026-06-14 08:52:57.6882+00",
+  "new_since_sikkim_0900": 0,
+  "es_rows": 533,
+  "dests_without_es_row": 0,
+  "min_dialable": 5,
+  "avg_dialable": 7.41,
+  "total_dialable_11col": 3952,
+  "rows_under_3_dialable": 0,
+  "rows_with_placeholder_X": 0,
+  "es_localhelpers_nonempty": 178,
+  "people_who_help_nonempty": 84,
+  "baseline_match_note": "EXACT match to 06-19/06-20 baseline (533/533 rows, 0 without, min 5, avg 7.41, total 3952, 0 placeholder-X, local_helpers 178, people_who_help 84). Catalogue steady at 533, 0 new dests since 06-14 Sikkim cluster.",
+  "prior_bug_recheck": [
+    {"id": "khangchendzonga-np", "police": "100", "ambulance": "108", "fire": "101", "women_helpline": "1091", "tourist_helpline": "1800-111-363", "rescue_contact": "Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-25...", "verified_by": "emsos-th-audit-2026-06-10", "verified_date": "2026-06-10", "status": "STILL CLOSED — no text-typed phone, no placeholder"},
+    {"id": "khonoma", "police": "100", "ambulance": "108", "fire": "101", "women_helpline": "1091", "tourist_helpline": "1363", "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070", "verified_by": "deepdive-recorrect-2026-06-09", "verified_date": "2026-06-09", "status": "STILL CLOSED — no text-typed phone"},
+    {"id": "uttarkashi", "police": "100", "ambulance": "108", "fire": "101", "women_helpline": "1091 (or 181)", "tourist_helpline": "1800-111-363 (toll-free)", "rescue_contact": "DDMA Uttarkashi Control Room: 01374-222722 / 1077", "verified_by": "constants-reverify-2026-06-09", "verified_date": "2026-06-09", "status": "STILL CLOSED — no placeholder-X"}
+  ]
+}
