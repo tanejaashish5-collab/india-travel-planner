@@ -18,6 +18,12 @@ sys.path.insert(0, ".")
 import autoposter as A
 import csv_format_loader as L
 
+# 2026-06-23: the picker now consults merged_post_log (data_carousel weekly
+# floor + score cap). Point it at the in-memory simulated log instead of the
+# real on-disk post_log.jsonl, or the floor would read stale April data and
+# misfire every pick. Faithful: the sim already accumulates state["post_log"].
+A.merged_post_log = lambda state: state.get("post_log", [])
+
 PILLARS = ["verdict", "verification", "anti_trap", "discovery", "moment"]
 TARGET = A.PILLAR_WEEKLY_SHARE
 

@@ -1663,6 +1663,27 @@ def _fetch_destinations(month: int = None, max_score: int = None) -> list:
         return []
 
 
+def _score_short_recent(days: int = 7) -> bool:
+    """True if a `nakshiq_score` short was published in the trailing `days`,
+    read from the autoposter's canonical merged post log. Powers the weekly
+    score budget in build_series_short (2026-06-23 — founder: "limit the scoring
+    to once a week"). Fails toward 'recent' (→ variety) so a log-read error can
+    never let an EXTRA score through — the founder wants fewer scores, not more."""
+    try:
+        from datetime import timedelta
+        from autoposter import merged_post_log, load_state
+        cut = (date.today() - timedelta(days=days)).isoformat()
+        for e in merged_post_log(load_state()):
+            d = e.get("date") or (e.get("timestamp") or "")[:10]
+            f = e.get("format") or ""
+            if d and d >= cut and f.startswith("yt_short") and "nakshiq_score" in f:
+                return True
+    except Exception as ex:
+        print(f"series: score-budget log read failed ({ex}) — assuming recent (variety)")
+        return True
+    return False
+
+
 def build_series_short(dry_run: bool = False, preview: bool = False,
                        slug: str = None, month: int = None,
                        lang: str = None) -> Optional[dict]:
@@ -1716,15 +1737,27 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
         lang = "en" if (ratio > 0 and h < ratio * 100) else "hi"
     print(f"series: picked {slug} (score {dest.get('score')}, {dest.get('state','')}) lang={lang}")
 
-    # 2026-06-21 — format VARIETY. Rotate the score short with narrated
-    # 'did_you_know' (awe-fact) + 'this_vs_that' (comparison) so the channel
-    # isn't 100% score. Deterministic per slug+day. NAKSHIQ_YT_VARIETY_RATIO =
-    # fraction of shorts that are NON-score (default 0.5; 0 = score-only / old
-    # behaviour). A variety spec that can't resolve falls back to the score short.
-    fmt, spec = "nakshiq_score", None
-    _variety = float(os.environ.get("NAKSHIQ_YT_VARIETY_RATIO", "0.5") or 0)
-    _vh = sum(ord(c) for c in (slug + "|v|" + date.today().isoformat())) % 100
-    if _variety > 0 and _vh < _variety * 100:
+    # 2026-06-23 — WEEKLY SCORE BUDGET. Founder: "limit the scoring to once a
+    # week." The score short engages weakly yet was 100% of the channel (then
+    # 50% under the 2026-06-21 per-slug variety ratio, which still shipped a
+    # score every other day). Cap nakshiq_score at ONE post per
+    # NAKSHIQ_YT_SCORE_EVERY_DAYS (default 7), measured against the merged post
+    # log. Every other slot is a narrated NON-score arc: 'did_you_know' (verified
+    # awe-fact) or 'this_vs_that' (honest comparison). this_vs_that resolves for
+    # any pair of named dests, so it's the reliable variety backstop — meaning
+    # nakshiq_score posts ONLY on (a) the one weekly score slot, or (b) the rare
+    # slot where no variety arc resolves at all (never-silent: a score beats a
+    # dark slot). Set NAKSHIQ_YT_SCORE_EVERY_DAYS=0 to restore unconditional score.
+    try:
+        score_every = int(os.environ.get("NAKSHIQ_YT_SCORE_EVERY_DAYS", "7"))
+    except (TypeError, ValueError):
+        score_every = 7   # junk env → safe default (fewer scores), never crash
+    score_due = (score_every <= 0) or (not _score_short_recent(score_every))
+    fmt, spec = None, None
+    if not score_due:
+        # variety-only slot — prefer did_you_know, fall back to this_vs_that.
+        # Deterministic per slug+day so retries are stable.
+        _vh = sum(ord(c) for c in (slug + "|v|" + date.today().isoformat())) % 100
         for _kind in (["dyk", "vs"] if _vh % 2 == 0 else ["vs", "dyk"]):
             if _kind == "dyk":
                 cand = _template_spec_did_you_know(dest, lang)
@@ -1738,8 +1771,9 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
                     if cand:
                         spec, fmt = cand, "this_vs_that"; break
     if spec is None:
+        # the weekly score slot, OR a variety-due slot where no arc resolved.
         spec, fmt = _resolve_spec(slug, dest, lang), "nakshiq_score"
-    print(f"series: format={fmt}")
+    print(f"series: format={fmt} (score_due={score_due}, every={score_every}d)")
     profile = spec.get("voice_profile") or _profile_for(dest)
     music = _pick_music_v2(profile)
 

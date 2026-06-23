@@ -128,6 +128,12 @@ MORNING_FORMATS = [
     "data_carousel",             # 2026-06-21 REACTIVATED: ranked top-5 "this month's 10/10s" multi-slide data carousel (founder: "not enough data carousels")
 ]
 
+# 2026-06-23 — the score-flavoured FEED formats, capped to once per 7 days by
+# the cadence guard in _eligible_feed_formats (founder: "limit scoring to once a
+# week"). copy_* score_card + the two CSV score variants. The shorts engine caps
+# yt_short.nakshiq_score separately (yt_shorts_v2.build_series_short).
+SCORE_FEED_FORMATS = {"score_card", "v2_score_card_pov", "v2_hindi_score_card"}
+
 # ─────────────────────────────────────────────────────────────────────────────
 # CONTENT PILLARS — see docs/social-playbook.md
 # Every format maps to exactly one pillar. The rotation selector biases toward
@@ -964,6 +970,46 @@ def merged_post_log(state: dict) -> list[dict]:
             seen.add(key)
             out.append(e)
     return out
+
+
+def _env_int(name: str, default: int) -> int:
+    """Parse an int env var, falling back to `default` on unset OR junk. The
+    cadence guards (score cap / carousel floor / shorts budget) read tunables
+    this way so a typo'd value can't throw into the inverted path — a bad
+    NAKSHIQ_FEED_SCORE_EVERY_DAYS would otherwise crash _eligible_feed_formats
+    into its score_card-only fallback (= the opposite of 'fewer scores')."""
+    raw = os.environ.get(name)
+    if raw is None or raw == "":
+        return default
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        log.warning(f"[env] {name}={raw!r} is not an int — using default {default}")
+        return default
+
+
+def _format_recent(log_entries: list, days: int, predicate) -> bool:
+    """True if any logged post whose `format` satisfies `predicate(fmt)` landed
+    in the trailing `days`. Pure (takes the log list) so the format-mix simulator
+    can drive the same gate over a synthetic log.
+
+    NOTE the window is INCLUSIVE of the boundary day (`d >= today - days`), i.e.
+    ~`days+1` calendar days. Intentional: the cap then errs toward FEWER scores /
+    a slightly longer carousel gap — the safe direction for "once a week". Do not
+    'fix' the boundary to strict-greater without re-checking that intent."""
+    cut = (date.today() - timedelta(days=days)).isoformat()
+    for e in log_entries:
+        d = e.get("date") or (e.get("timestamp") or "")[:10]
+        if d and d >= cut and predicate(e.get("format") or ""):
+            return True
+    return False
+
+
+def _format_posted_within(state: dict, days: int, predicate) -> bool:
+    """`_format_recent` against the canonical merged post history. Used by the
+    feed cadence guards (2026-06-23 score-cap + data_carousel weekly floor) so
+    they read the SAME race-safe log every other dedup source reads."""
+    return _format_recent(merged_post_log(state), days, predicate)
 
 
 def destinations_posted_today_jsonl() -> tuple[set, set]:
@@ -2187,6 +2233,21 @@ def _eligible_feed_formats(state: dict, content: dict) -> list:
                     f"(asset present + data resolves)"
                 )
 
+        # ── 2026-06-23 SCORE CADENCE CAP — founder: "limit the scoring to once
+        # a week." The verdict/score_card family is the brand's core but engages
+        # weakly once it's most of what a follower sees. Drop the score-flavoured
+        # feed formats from the pool when one already posted to the feed in the
+        # trailing 7 days — UNLESS that empties the pool (a thin-data day still
+        # ships a score rather than nothing). Surface-independent: the shorts
+        # engine enforces its own weekly score budget (see
+        # yt_shorts_v2.build_series_short). Tunable via NAKSHIQ_FEED_SCORE_EVERY_DAYS.
+        score_every = _env_int("NAKSHIQ_FEED_SCORE_EVERY_DAYS", 7)
+        if score_every > 0 and _format_posted_within(
+                state, score_every, lambda f: f in SCORE_FEED_FORMATS):
+            non_score = [f for f in eligible if f not in SCORE_FEED_FORMATS]
+            if non_score:
+                eligible = non_score
+
         if not eligible:
             eligible = ["score_card"]
 
@@ -2211,6 +2272,36 @@ def _pillar_biased_pick(state: dict, eligible: list, *, mode: str = "themed",
     regressed. Within the chosen pillar the oldest-unused round-robin (shared
     'morning_formats' bucket) gives variety + stops same-format-twice-a-day."""
     eligible = eligible or ["score_card"]
+
+    # ── 2026-06-23 DATA-CAROUSEL WEEKLY FLOOR — founder: "not enough data
+    # carousels." data_carousel was reactivated 2026-06-21 but kept losing the
+    # round-robin (1 of ~5 'moment' formats against a 10% pillar target → it had
+    # not posted since 2026-04-27). Guarantee ~one swipeable data carousel per 7
+    # days: if it's eligible this run and none posted in the last week, pre-empt
+    # this slot. Tunable / disable via NAKSHIQ_DATA_CAROUSEL_EVERY_DAYS (0 = off).
+    #
+    # Two independent suppressors keep it from monopolising the feed:
+    #   (a) the merged post log — once a carousel PUBLISHES it can't recur for a
+    #       week; and
+    #   (b) state['data_carousel_floor_last'], stamped HERE at pre-empt time and
+    #       persisted by the carousel-lock save_state before publish is even
+    #       attempted. Without (b) a carousel that FAILS to publish writes no log
+    #       entry, so (a) alone would re-fire the floor on every subsequent slot
+    #       until one finally lands — pre-empting every other pillar. With (b) a
+    #       failed attempt forfeits the week instead (caught in adversarial
+    #       review 2026-06-23). A run that crashes before save_state simply
+    #       retries next run, which is correct.
+    carousel_every = _env_int("NAKSHIQ_DATA_CAROUSEL_EVERY_DAYS", 7)
+    floor_cut = (date.today() - timedelta(days=carousel_every)).isoformat()
+    floor_last = state.get("data_carousel_floor_last") or ""
+    if (carousel_every > 0 and "data_carousel" in eligible
+            and floor_last < floor_cut
+            and not _format_posted_within(
+                state, carousel_every, lambda f: f == "data_carousel")):
+        state["data_carousel_floor_last"] = date.today().isoformat()
+        log.info(f"{label} format (weekly carousel floor): data_carousel")
+        return "data_carousel"
+
     chosen_pillar = None
     bias_source = "balanced"
     wom = week_of_month()
