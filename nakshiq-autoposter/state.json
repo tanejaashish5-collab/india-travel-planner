@@ -35,29 +35,14 @@
     "GAh5p_yt_short": "2026-06-23",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-23",
-    "m8EAd": "2026-06-23",
-    "PdMu0": "2026-06-23",
+    "m8EAd": "2026-06-24",
+    "PdMu0": "2026-06-24",
     "m8EAd_evening": "2026-06-23",
-    "PdMu0_evening": "2026-06-23"
+    "PdMu0_evening": "2026-06-23",
+    "xS5s8": "2026-06-24"
   },
-  "last_sync": "2026-06-23T16:47:01.584964+00:00",
+  "last_sync": "2026-06-24T07:02:01.208077+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "tosamaidan",
-      "date": "2026-06-09"
-    },
-    {
-      "destination_id": "lamayuru",
-      "date": "2026-06-09"
-    },
-    {
-      "destination_id": "kedarnath",
-      "date": "2026-06-09"
-    },
-    {
-      "destination_id": "sinthan-top",
-      "date": "2026-06-09"
-    },
     {
       "destination_id": "pangong-lake",
       "date": "2026-06-10"
@@ -333,11 +318,18 @@
     {
       "destination_id": "lahaul-valley",
       "date": "2026-06-23"
+    },
+    {
+      "destination_id": "final",
+      "date": "2026-06-24"
+    },
+    {
+      "destination_id": "lolab-valley",
+      "date": "2026-06-24"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "emergency_intel",
       "v2_cost_vs_feeling",
       "v2_series_episode",
       "eateries_pick",
@@ -355,12 +347,12 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
     ],
     "PdMu0": [
-      "emergency_intel",
       "v2_cost_vs_feeling",
       "v2_series_episode",
       "eateries_pick",
@@ -378,6 +370,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
@@ -3669,6 +3662,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "lahaul-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-24T07:03:09.350416+00:00",
+      "date": "2026-06-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "BGarn",
+      "destination": "lolab-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "lolab-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-24T07:03:24.228612+00:00",
+      "date": "2026-06-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jECQ2",
+      "destination": "lolab-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "lolab-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -3783,7 +3798,8 @@
       ],
       "lolab-valley": [
         "2026-05-25",
-        "2026-06-16"
+        "2026-06-16",
+        "2026-06-24"
       ],
       "pithoragarh": [
         "2026-05-25",
@@ -4065,7 +4081,8 @@
         "2026-06-01",
         "2026-06-21",
         "2026-06-22",
-        "2026-06-23"
+        "2026-06-23",
+        "2026-06-24"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4322,6 +4339,9 @@
       ],
       "autumn-destinations": [
         "2026-06-23"
+      ],
+      "best-beaches-india": [
+        "2026-06-24"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -4486,7 +4506,8 @@
       "leh": [
         "2026-06-23"
       ]
-    }
+    },
+    "collection_carousel_dests:best-beaches-india": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -4500,8 +4521,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "courtallam",
-    "collection": "autumn-destinations"
+    "shared_best": "sissu",
+    "collection": "best-beaches-india"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-06-23"
