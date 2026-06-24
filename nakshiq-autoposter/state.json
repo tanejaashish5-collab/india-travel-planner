@@ -37,11 +37,11 @@
     "m8EAd_yt_short": "2026-06-24",
     "m8EAd": "2026-06-24",
     "PdMu0": "2026-06-24",
-    "m8EAd_evening": "2026-06-23",
-    "PdMu0_evening": "2026-06-23",
+    "m8EAd_evening": "2026-06-24",
+    "PdMu0_evening": "2026-06-24",
     "xS5s8": "2026-06-24"
   },
-  "last_sync": "2026-06-24T07:02:01.208077+00:00",
+  "last_sync": "2026-06-24T16:38:14.116180+00:00",
   "posted_destinations": [
     {
       "destination_id": "pangong-lake",
@@ -334,11 +334,14 @@
     {
       "destination_id": "kokernag",
       "date": "2026-06-24"
+    },
+    {
+      "destination_id": "gurez-valley",
+      "date": "2026-06-24"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_cost_vs_feeling",
       "v2_series_episode",
       "eateries_pick",
       "v3_tl_poll_reel",
@@ -355,13 +358,13 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
       "score_card"
     ],
     "PdMu0": [
-      "v2_cost_vs_feeling",
       "v2_series_episode",
       "eateries_pick",
       "v3_tl_poll_reel",
@@ -378,6 +381,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -3728,6 +3732,28 @@
       "destination": "kokernag",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_kokernag_hi_2026-06-24.mp4"
+    },
+    {
+      "timestamp": "2026-06-24T16:39:45.097196+00:00",
+      "date": "2026-06-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "4TTYi",
+      "destination": "gurez-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "gurez-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-24T16:40:03.892351+00:00",
+      "date": "2026-06-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "LXX0V",
+      "destination": "gurez-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "gurez-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -4000,7 +4026,8 @@
       "gurez-valley": [
         "2026-06-10",
         "2026-06-11",
-        "2026-06-17"
+        "2026-06-17",
+        "2026-06-24"
       ],
       "panaji": [
         "2026-06-11"
@@ -4309,6 +4336,9 @@
       ],
       "ukhrul": [
         "2026-06-22"
+      ],
+      "gurez-valley": [
+        "2026-06-24"
       ]
     },
     "audience_tags": {
@@ -4564,7 +4594,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sissu",
+    "shared_best": "courtallam",
     "collection": "best-beaches-india"
   },
   "manual_skip_dests": {},

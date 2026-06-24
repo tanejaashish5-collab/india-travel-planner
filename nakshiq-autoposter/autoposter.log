@@ -6626,3 +6626,52 @@ Date range: 2026-04-15 → 2026-06-23
 2026-06-24 14:00:06  INFO      YT Short posted: format=did_you_know, music=fast-1085
 2026-06-24 14:00:06  INFO      State saved. YT Short run complete.
 2026-06-24 14:00:06  INFO      ════════════════════════════════════════════════════════════
+2026-06-24 16:37:06  INFO      ════════════════════════════════════════════════════════════
+2026-06-24 16:37:06  INFO      Nakshiq Autoposter · EVENING · 2026-06-24 · weekday=2
+2026-06-24 16:37:06  INFO      ════════════════════════════════════════════════════════════
+2026-06-24 16:37:06  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-24 16:37:38  WARNING   destinations_full month=5 fetch failed: HTTPSConnectionPool(host='www.nakshiq.com', port=443): Read timed out. (read timeout=15)
+2026-06-24 16:37:54  WARNING   destinations_full month=7 fetch failed: HTTPSConnectionPool(host='www.nakshiq.com', port=443): Read timed out. (read timeout=15)
+2026-06-24 16:38:14  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-24 16:38:14  INFO      brand_stamp: registered 431 destinations for overlay lookup
+2026-06-24 16:38:15  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-24 16:38:15  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-24 16:38:15  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-24 16:38:15  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-24 16:38:39  WARNING   destinations_full month=4 fetch failed: HTTPSConnectionPool(host='www.nakshiq.com', port=443): Read timed out. (read timeout=15)
+2026-06-24 16:38:58  WARNING   destinations_full month=8 fetch failed: HTTPSConnectionPool(host='www.nakshiq.com', port=443): Read timed out. (read timeout=15)
+2026-06-24 16:39:03  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-24 16:39:03  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-06-24 16:39:03  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: blog_promo
+2026-06-24 16:39:03  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 82
+2026-06-24 16:39:03  INFO      Fingerprint dedup snapshot — 79 dests in 7d · 150 (dest,fmt) pairs in 30d · 168 media in 60d
+2026-06-24 16:39:07  INFO      Shared best destination locked: Courtallam (Kutralam)
+2026-06-24 16:39:07  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-24 16:39:07  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-06-24 16:39:07  INFO      confidence_intel for Courtallam (Kutralam): only 0 card rows — SKIPPING
+2026-06-24 16:39:07  WARNING   [instagram/nakshiq] confidence_intel: courtallam inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'gurez-valley' as score_card to keep the slot live.
+2026-06-24 16:39:07  INFO      [instagram/nakshiq] Caption ready (460 chars, dest=gurez-valley)
+2026-06-24 16:39:08  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-24 16:39:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/gurez-valley.mp4?v=20260524
+2026-06-24 16:39:11  INFO          Brand-stamp applied: gurez-valley.mp4 (5,957,729 → 2,971,678 bytes)
+2026-06-24 16:39:11  INFO          Requesting upload URL for gurez-valley.mp4 (2,971,678 bytes, video/mp4)
+2026-06-24 16:39:12  INFO          Uploading to R2 (timeout=300s)...
+2026-06-24 16:39:12  INFO          R2 PUT OK. Confirming...
+2026-06-24 16:39:13  INFO          Media ready: SuaiJ (2,971,678 bytes · gurez-valley.mp4)
+2026-06-24 16:39:13  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-24 16:39:45  INFO      [instagram/nakshiq] ✅ Published · Outstand=4TTYi · Platform=18369597202226907
+2026-06-24 16:39:45  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-06-24 16:39:45  INFO      confidence_intel for Courtallam (Kutralam): only 0 card rows — SKIPPING
+2026-06-24 16:39:45  WARNING   [facebook/Nakshiq] confidence_intel: courtallam inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'gurez-valley' as score_card to keep the slot live.
+2026-06-24 16:39:45  INFO      [facebook/Nakshiq] Caption ready (651 chars, dest=gurez-valley)
+2026-06-24 16:39:45  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-24 16:39:45  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/gurez-valley.mp4?v=20260524
+2026-06-24 16:39:47  INFO          Brand-stamp applied: gurez-valley.mp4 (5,957,729 → 2,971,678 bytes)
+2026-06-24 16:39:47  INFO          Requesting upload URL for gurez-valley.mp4 (2,971,678 bytes, video/mp4)
+2026-06-24 16:39:48  INFO          Uploading to R2 (timeout=300s)...
+2026-06-24 16:39:48  INFO          R2 PUT OK. Confirming...
+2026-06-24 16:39:49  INFO          Media ready: BbRgn (2,971,678 bytes · gurez-valley.mp4)
+2026-06-24 16:39:49  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-24 16:40:03  INFO      [facebook/Nakshiq] ✅ Published · Outstand=LXX0V · Platform=1486192503308077
+2026-06-24 16:40:03  INFO      State saved. Run complete.
+2026-06-24 16:40:03  INFO      ════════════════════════════════════════════════════════════
