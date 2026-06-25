@@ -37,11 +37,11 @@
     "m8EAd_yt_short": "2026-06-25",
     "m8EAd": "2026-06-25",
     "PdMu0": "2026-06-25",
-    "m8EAd_evening": "2026-06-24",
-    "PdMu0_evening": "2026-06-24",
+    "m8EAd_evening": "2026-06-25",
+    "PdMu0_evening": "2026-06-25",
     "xS5s8": "2026-06-24"
   },
-  "last_sync": "2026-06-25T07:01:44.284713+00:00",
+  "last_sync": "2026-06-25T16:40:28.942174+00:00",
   "posted_destinations": [
     {
       "destination_id": "panaji",
@@ -322,11 +322,14 @@
     {
       "destination_id": "siolim",
       "date": "2026-06-25"
+    },
+    {
+      "destination_id": "gulmarg",
+      "date": "2026-06-25"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "eateries_pick",
       "v3_tl_poll_reel",
       "stays_pick",
       "v2_wildlife_moment",
@@ -341,6 +344,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -349,7 +353,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "eateries_pick",
       "v3_tl_poll_reel",
       "stays_pick",
       "v2_wildlife_moment",
@@ -364,6 +367,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -3796,6 +3800,28 @@
       "destination": "siolim",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_siolim_hi_2026-06-25.mp4"
+    },
+    {
+      "timestamp": "2026-06-25T16:41:37.882166+00:00",
+      "date": "2026-06-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "9F74Q",
+      "destination": "gulmarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "gulmarg.mp4"
+    },
+    {
+      "timestamp": "2026-06-25T16:41:56.841017+00:00",
+      "date": "2026-06-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "XNGve",
+      "destination": "gulmarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "gulmarg.mp4"
     }
   ],
   "theme_usage": {
@@ -4054,7 +4080,8 @@
       ],
       "gulmarg": [
         "2026-06-06",
-        "2026-06-18"
+        "2026-06-18",
+        "2026-06-25"
       ],
       "kaza": [
         "2026-06-07",
@@ -4383,6 +4410,9 @@
       ],
       "gurez-valley": [
         "2026-06-24"
+      ],
+      "gulmarg": [
+        "2026-06-25"
       ]
     },
     "audience_tags": {
@@ -4460,6 +4490,9 @@
       ],
       "best-beaches-india": [
         "2026-06-24"
+      ],
+      "astavinayak-yatra": [
+        "2026-06-25"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -4624,7 +4657,8 @@
       "leh": [
         "2026-06-23"
       ]
-    }
+    },
+    "collection_carousel_dests:astavinayak-yatra": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -4638,8 +4672,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sissu",
-    "collection": "best-beaches-india"
+    "shared_best": "courtallam",
+    "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-06-23"
