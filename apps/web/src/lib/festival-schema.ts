@@ -128,13 +128,16 @@ export function festivalsItemListJsonLd(
 }
 
 // Single-Event schema for /festivals/[festivalSlug] detail pages — eligible
-// for Google's event-rich-result carousel. Always includes startDate/endDate
-// (month-level when the row carries no day-precision label).
+// for Google's event-rich-result carousel. Includes startDate/endDate
+// (month-level when the row carries no day-precision label). Returns null when
+// the festival has no confirmed month (movable/unannounced date) — an Event
+// without startDate is invalid for Google's rich result (GSC: "Missing field
+// startDate"), so we emit no Event schema rather than a broken one.
 export function singleFestivalEventJsonLd(
   f: FestivalRow,
   pageUrl: string,
   yearOverride?: number,
-) {
+): Record<string, unknown> | null {
   const year = yearOverride ?? new Date().getFullYear();
   const stateName = (() => {
     const st = f.destinations?.state;
@@ -149,7 +152,15 @@ export function singleFestivalEventJsonLd(
         startDate: dateRange?.startDate ?? `${year}-${pad2(f.month)}`,
         endDate: dateRange?.endDate ?? `${year}-${pad2(f.month)}-${pad2(lastDayOfMonth(year, f.month))}`,
       }
-    : {};
+    : null;
+
+  // No confirmed month → no honest startDate. Google's Event rich result
+  // REQUIRES startDate; emitting an Event without it earns a GSC "Missing field
+  // startDate" error for zero benefit (11/501 festivals carry a movable/
+  // unannounced date, month=null in the DB — e.g. Dholavira Festival). We do
+  // NOT fabricate a date (no-fake-data rule); we emit no Event schema and let
+  // the page render the human date label (approximate_date) for users.
+  if (!dates) return null;
 
   return {
     "@context": "https://schema.org",

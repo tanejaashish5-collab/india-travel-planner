@@ -53,13 +53,34 @@ type Entry = {
   priority: number;
 };
 
+// Mirror of middleware.ts (lines 305-312) noindex rule: these /hi path
+// families render ENGLISH content and are served X-Robots-Tag: noindex,follow.
+// A sitemap should list only canonical, indexable URLs — submitting the
+// noindex'd /hi duplicates permanently refills GSC's "Excluded by noindex" +
+// duplicate-canonical buckets and wastes crawl budget. So we emit only the /en
+// variant for these families. KEEP IN SYNC with the middleware regex.
+// (Translated /hi families — destination, vs, festivals/<slug>, best, explore,
+// treks, cost, etc. — are NOT here and keep both locales.)
+const HI_NOINDEX_PREFIXES = [
+  "where-to-go", "state", "with-kids", "india-vs", "the-window",
+  "guide", "arrival", "skip-list", "blog", "festivals/state",
+];
+
+function isHiNoindexed(path: string): boolean {
+  return HI_NOINDEX_PREFIXES.some((p) => path === p || path.startsWith(`${p}/`));
+}
+
 function entry(path: string, freq: Freq, priority: number): Entry[] {
-  return LOCALES.map((locale) => ({
-    url: `${BASE}/${locale}${path ? `/${path}` : ""}`,
-    lastModified: new Date(),
-    changeFrequency: freq,
-    priority,
-  }));
+  return LOCALES.flatMap((locale) => {
+    // Skip the /hi variant of noindex'd English-duplicate families.
+    if (locale === "hi" && isHiNoindexed(path)) return [];
+    return [{
+      url: `${BASE}/${locale}${path ? `/${path}` : ""}`,
+      lastModified: new Date(),
+      changeFrequency: freq,
+      priority,
+    }];
+  });
 }
 
 function getSupabase() {
@@ -273,15 +294,18 @@ async function buildChunk(id: string): Promise<Entry[]> {
     );
     const staysState = STATE_SLUGS.flatMap((s) => entry(`stays/state/${s}`, "monthly", 0.7));
     const familyState = FAMILY_STATES.flatMap((s) => entry(`family/${s}`, "monthly", 0.7));
-    const stateMonth = STATE_SLUGS.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`where-to-go/${s}-in-${m}`, "monthly", 0.75)),
-    );
+    // NOTE: `where-to-go/<state>-in-<month>` URLs are deliberately NOT listed —
+    // every one 301-redirects to `/where-to-go/<month>` (middleware.ts lines
+    // 272-281, legacy URL consolidation). Listing redirect-source URLs in a
+    // sitemap is a Google anti-pattern and permanently refills the "Page with
+    // redirect" indexing bucket (~672 such URLs). The middleware redirect stays
+    // for any inbound links; we just stop advertising them. (Removed 2026-06-25.)
 
     return [
       ...exploreState, ...exploreStateMonth, ...exploreDiff, ...exploreTag,
       ...trekState, ...trekStateMonth, ...trekDiff, ...campState,
       ...festMonth, ...festState, ...festStateMonth,
-      ...staysState, ...familyState, ...stateMonth,
+      ...staysState, ...familyState,
     ];
   }
 

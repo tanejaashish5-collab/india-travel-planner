@@ -326,10 +326,12 @@ export default async function FestivalDetailPage({
   return (
     <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
       <CinemaStyles />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventLd) }}
-      />
+      {eventLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
