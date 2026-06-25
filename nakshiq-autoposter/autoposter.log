@@ -6727,3 +6727,116 @@ Date range: 2026-04-15 → 2026-06-23
 2026-06-24 20:12:42  INFO      
 Date range: 2026-04-15 → 2026-06-24
 2026-06-24 20:12:42  INFO      ════════════════════════════════════════════════════════════
+2026-06-25 07:01:08  INFO      ════════════════════════════════════════════════════════════
+2026-06-25 07:01:08  INFO      Nakshiq Autoposter · MORNING · 2026-06-25 · weekday=3
+2026-06-25 07:01:08  INFO      ════════════════════════════════════════════════════════════
+2026-06-25 07:01:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-25 07:01:44  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-25 07:01:44  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-25 07:01:45  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-25 07:01:45  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-25 07:01:48  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-25 07:01:48  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-25 07:01:58  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-25 07:01:58  INFO      Morning format (themed-week-4→discovery): v2_ugc_spotlight [10% vs target 15%] (0/15 never featured)
+2026-06-25 07:01:58  INFO      Formats — IG: v2_ugc_spotlight  ·  FB: v2_ugc_spotlight  ·  Story: score_card
+2026-06-25 07:01:58  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 82
+2026-06-25 07:01:58  INFO      Fingerprint dedup snapshot — 79 dests in 7d · 140 (dest,fmt) pairs in 30d · 169 media in 60d
+2026-06-25 07:02:05  INFO      Shared best destination locked: Sissu
+2026-06-25 07:02:05  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-25 07:02:05  INFO      [instagram/nakshiq] Generating v2_ugc_spotlight post...
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: nako in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: sissu in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: kaza in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: keylong in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: sangla in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: kargil in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  INFO      v2_ugc_spotlight: leh in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:05  WARNING   v2_ugc_spotlight: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-25 07:02:05  WARNING   [instagram/nakshiq] v2_ugc_spotlight: sissu inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'kaza' as score_card to keep the slot live.
+2026-06-25 07:02:05  INFO      [instagram/nakshiq] Caption ready (397 chars, dest=kaza)
+2026-06-25 07:02:06  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-06-25 07:02:06  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kaza.mp4?v=20260524
+2026-06-25 07:02:08  INFO          Brand-stamp applied: kaza.mp4 (6,210,443 → 2,897,074 bytes)
+2026-06-25 07:02:08  INFO          Requesting upload URL for kaza.mp4 (2,897,074 bytes, video/mp4)
+2026-06-25 07:02:09  INFO          Uploading to R2 (timeout=300s)...
+2026-06-25 07:02:09  INFO          R2 PUT OK. Confirming...
+2026-06-25 07:02:11  INFO          Media ready: IoYDX (2,897,074 bytes · kaza.mp4)
+2026-06-25 07:02:11  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-25 07:02:38  INFO      [instagram/nakshiq] ✅ Published · Outstand=CQjwF · Platform=17903529153445121
+2026-06-25 07:02:38  INFO      [facebook/Nakshiq] Generating v2_ugc_spotlight post...
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: nako in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: sissu in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: kaza already posted today — SKIPPING dest (same-day guard)
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: keylong in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: sangla in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: kargil in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  INFO      v2_ugc_spotlight: leh in 14-day cooldown — SKIPPING dest
+2026-06-25 07:02:38  WARNING   v2_ugc_spotlight: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-25 07:02:38  WARNING   [facebook/Nakshiq] v2_ugc_spotlight: sissu inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'kaza' as score_card to keep the slot live.
+2026-06-25 07:02:38  INFO      [facebook/Nakshiq] Caption ready (564 chars, dest=kaza)
+2026-06-25 07:02:38  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-06-25 07:02:38  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kaza.mp4?v=20260524
+2026-06-25 07:02:40  INFO          Brand-stamp applied: kaza.mp4 (6,210,443 → 2,897,074 bytes)
+2026-06-25 07:02:40  INFO          Requesting upload URL for kaza.mp4 (2,897,074 bytes, video/mp4)
+2026-06-25 07:02:40  INFO          Uploading to R2 (timeout=300s)...
+2026-06-25 07:02:41  INFO          R2 PUT OK. Confirming...
+2026-06-25 07:02:42  INFO          Media ready: vRhRg (2,897,074 bytes · kaza.mp4)
+2026-06-25 07:02:42  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-25 07:02:57  INFO      [facebook/Nakshiq] ✅ Published · Outstand=Ve4jN · Platform=879983901835845
+2026-06-25 07:02:57  INFO      State saved. Run complete.
+2026-06-25 07:02:57  INFO      ════════════════════════════════════════════════════════════

@@ -35,42 +35,14 @@
     "GAh5p_yt_short": "2026-06-24",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-24",
-    "m8EAd": "2026-06-24",
-    "PdMu0": "2026-06-24",
+    "m8EAd": "2026-06-25",
+    "PdMu0": "2026-06-25",
     "m8EAd_evening": "2026-06-24",
     "PdMu0_evening": "2026-06-24",
     "xS5s8": "2026-06-24"
   },
-  "last_sync": "2026-06-24T16:38:14.116180+00:00",
+  "last_sync": "2026-06-25T07:01:44.284713+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-06-10"
-    },
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-06-10"
-    },
-    {
-      "destination_id": "doodhpathri",
-      "date": "2026-06-10"
-    },
-    {
-      "destination_id": "spiti-valley",
-      "date": "2026-06-10"
-    },
-    {
-      "destination_id": "guptkashi",
-      "date": "2026-06-10"
-    },
-    {
-      "destination_id": "nako",
-      "date": "2026-06-10"
-    },
-    {
-      "destination_id": "sissu",
-      "date": "2026-06-10"
-    },
     {
       "destination_id": "panaji",
       "date": "2026-06-11"
@@ -338,11 +310,14 @@
     {
       "destination_id": "gurez-valley",
       "date": "2026-06-24"
+    },
+    {
+      "destination_id": "kaza",
+      "date": "2026-06-25"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_series_episode",
       "eateries_pick",
       "v3_tl_poll_reel",
       "stays_pick",
@@ -358,6 +333,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -365,7 +341,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "v2_series_episode",
       "eateries_pick",
       "v3_tl_poll_reel",
       "stays_pick",
@@ -381,6 +356,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -3754,6 +3730,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "gurez-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-25T07:02:38.126365+00:00",
+      "date": "2026-06-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "CQjwF",
+      "destination": "kaza",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kaza.mp4"
+    },
+    {
+      "timestamp": "2026-06-25T07:02:57.484569+00:00",
+      "date": "2026-06-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "Ve4jN",
+      "destination": "kaza",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kaza.mp4"
     }
   ],
   "theme_usage": {
@@ -4016,7 +4014,8 @@
       ],
       "kaza": [
         "2026-06-07",
-        "2026-06-23"
+        "2026-06-23",
+        "2026-06-25"
       ],
       "tosamaidan": [
         "2026-06-09",
@@ -4153,7 +4152,8 @@
         "2026-06-21",
         "2026-06-22",
         "2026-06-23",
-        "2026-06-24"
+        "2026-06-24",
+        "2026-06-25"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4594,7 +4594,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "courtallam",
+    "shared_best": "sissu",
     "collection": "best-beaches-india"
   },
   "manual_skip_dests": {},
