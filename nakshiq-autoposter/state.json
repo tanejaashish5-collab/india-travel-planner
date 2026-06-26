@@ -30,11 +30,11 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-06-25",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short": "2026-06-26",
     "xS5s8_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-06-25",
+    "m8EAd_yt_short": "2026-06-26",
     "m8EAd": "2026-06-26",
     "PdMu0": "2026-06-26",
     "m8EAd_evening": "2026-06-25",
@@ -308,6 +308,10 @@
     },
     {
       "destination_id": "tosamaidan",
+      "date": "2026-06-26"
+    },
+    {
+      "destination_id": "chandratal",
       "date": "2026-06-26"
     }
   ],
@@ -3827,6 +3831,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "tosamaidan.mp4"
+    },
+    {
+      "timestamp": "2026-06-26T08:08:14.533806+00:00",
+      "date": "2026-06-26",
+      "platform": "youtube",
+      "post_id": "zh5EP",
+      "destination": "chandratal",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_chandratal_hi_2026-06-26.mp4"
+    },
+    {
+      "timestamp": "2026-06-26T08:08:54.822054+00:00",
+      "date": "2026-06-26",
+      "platform": "instagram",
+      "post_id": "9FPnQ",
+      "destination": "chandratal",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_chandratal_hi_2026-06-26.mp4"
     }
   ],
   "theme_usage": {
