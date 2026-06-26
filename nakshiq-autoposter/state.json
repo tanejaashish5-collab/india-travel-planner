@@ -37,10 +37,10 @@
     "m8EAd_yt_short": "2026-06-26",
     "m8EAd": "2026-06-26",
     "PdMu0": "2026-06-26",
-    "m8EAd_evening": "2026-06-25",
-    "PdMu0_evening": "2026-06-25"
+    "m8EAd_evening": "2026-06-26",
+    "PdMu0_evening": "2026-06-26"
   },
-  "last_sync": "2026-06-26T07:09:18.577956+00:00",
+  "last_sync": "2026-06-26T16:32:22.684503+00:00",
   "posted_destinations": [
     {
       "destination_id": "final",
@@ -317,11 +317,14 @@
     {
       "destination_id": "lachen",
       "date": "2026-06-26"
+    },
+    {
+      "destination_id": "leh",
+      "date": "2026-06-26"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "stays_pick",
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
       "v2_tourist_trap_split",
@@ -334,6 +337,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -344,7 +348,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "stays_pick",
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
       "v2_tourist_trap_split",
@@ -357,6 +360,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -3871,6 +3875,28 @@
       "destination": "lachen",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_lachen_en_2026-06-26.mp4"
+    },
+    {
+      "timestamp": "2026-06-26T16:33:24.049845+00:00",
+      "date": "2026-06-26",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Fy6WZ",
+      "destination": "leh",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "leh.mp4"
+    },
+    {
+      "timestamp": "2026-06-26T16:33:42.938552+00:00",
+      "date": "2026-06-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "yudwj",
+      "destination": "leh",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "leh.mp4"
     }
   ],
   "theme_usage": {
@@ -4011,7 +4037,8 @@
         "2026-05-27",
         "2026-06-03",
         "2026-06-17",
-        "2026-06-23"
+        "2026-06-23",
+        "2026-06-26"
       ],
       "gopeshwar": [
         "2026-05-26",
@@ -4380,7 +4407,8 @@
         "2026-05-26"
       ],
       "leh": [
-        "2026-05-27"
+        "2026-05-27",
+        "2026-06-26"
       ],
       "gangtok": [
         "2026-05-27"
@@ -4482,7 +4510,8 @@
         "2026-05-29",
         "2026-06-05",
         "2026-06-12",
-        "2026-06-19"
+        "2026-06-19",
+        "2026-06-26"
       ]
     },
     "collections": {
@@ -4722,7 +4751,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sissu",
+    "shared_best": "nako",
     "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},

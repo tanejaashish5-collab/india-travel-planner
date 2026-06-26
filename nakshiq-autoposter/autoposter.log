@@ -7213,3 +7213,49 @@ Date range: 2026-04-15 → 2026-06-25
 2026-06-26 13:41:54  INFO      YT Short posted: format=this_vs_that, music=edm-1001
 2026-06-26 13:41:54  INFO      State saved. YT Short run complete.
 2026-06-26 13:41:54  INFO      ════════════════════════════════════════════════════════════
+2026-06-26 16:31:55  INFO      ════════════════════════════════════════════════════════════
+2026-06-26 16:31:55  INFO      Nakshiq Autoposter · EVENING · 2026-06-26 · weekday=4
+2026-06-26 16:31:55  INFO      ════════════════════════════════════════════════════════════
+2026-06-26 16:31:55  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-26 16:32:22  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-26 16:32:22  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-26 16:32:23  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-26 16:32:23  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-26 16:32:23  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-26 16:32:23  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-26 16:32:36  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-26 16:32:36  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-06-26 16:32:36  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: reality_check  ·  Audience: adventurers
+2026-06-26 16:32:36  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 86
+2026-06-26 16:32:36  INFO      Audience filter 'adventurers' → 11 destinations match.
+2026-06-26 16:32:36  INFO      Fingerprint dedup snapshot — 83 dests in 7d · 141 (dest,fmt) pairs in 30d · 175 media in 60d
+2026-06-26 16:32:38  INFO      Shared best destination locked: Nako
+2026-06-26 16:32:38  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-26 16:32:38  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-06-26 16:32:38  INFO      confidence_intel for Nako: only 0 card rows — SKIPPING
+2026-06-26 16:32:38  WARNING   [instagram/nakshiq] confidence_intel: nako inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'leh' as score_card to keep the slot live.
+2026-06-26 16:32:38  INFO      [instagram/nakshiq] Caption ready (344 chars, dest=leh)
+2026-06-26 16:32:39  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-26 16:32:39  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/leh.mp4?v=20260524
+2026-06-26 16:32:42  INFO          Brand-stamp applied: leh.mp4 (7,377,578 → 3,429,049 bytes)
+2026-06-26 16:32:42  INFO          Requesting upload URL for leh.mp4 (3,429,049 bytes, video/mp4)
+2026-06-26 16:32:43  INFO          Uploading to R2 (timeout=300s)...
+2026-06-26 16:32:44  INFO          R2 PUT OK. Confirming...
+2026-06-26 16:32:46  INFO          Media ready: WSk4z (3,429,049 bytes · leh.mp4)
+2026-06-26 16:32:46  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-26 16:33:24  INFO      [instagram/nakshiq] ✅ Published · Outstand=Fy6WZ · Platform=18068714294392823
+2026-06-26 16:33:24  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-06-26 16:33:24  INFO      confidence_intel for Nako: only 0 card rows — SKIPPING
+2026-06-26 16:33:24  WARNING   [facebook/Nakshiq] confidence_intel: nako inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'leh' as score_card to keep the slot live.
+2026-06-26 16:33:24  INFO      [facebook/Nakshiq] Caption ready (508 chars, dest=leh)
+2026-06-26 16:33:24  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-26 16:33:24  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/leh.mp4?v=20260524
+2026-06-26 16:33:26  INFO          Brand-stamp applied: leh.mp4 (7,377,578 → 3,429,049 bytes)
+2026-06-26 16:33:26  INFO          Requesting upload URL for leh.mp4 (3,429,049 bytes, video/mp4)
+2026-06-26 16:33:27  INFO          Uploading to R2 (timeout=300s)...
+2026-06-26 16:33:28  INFO          R2 PUT OK. Confirming...
+2026-06-26 16:33:28  INFO          Media ready: GilOp (3,429,049 bytes · leh.mp4)
+2026-06-26 16:33:28  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-26 16:33:42  INFO      [facebook/Nakshiq] ✅ Published · Outstand=yudwj · Platform=1301007015529883
+2026-06-26 16:33:42  INFO      State saved. Run complete.
+2026-06-26 16:33:42  INFO      ════════════════════════════════════════════════════════════
