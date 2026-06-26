@@ -35,34 +35,13 @@
     "GAh5p_yt_short": "2026-06-25",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-25",
-    "m8EAd": "2026-06-25",
-    "PdMu0": "2026-06-25",
+    "m8EAd": "2026-06-26",
+    "PdMu0": "2026-06-26",
     "m8EAd_evening": "2026-06-25",
-    "PdMu0_evening": "2026-06-25",
-    "xS5s8": "2026-06-24"
+    "PdMu0_evening": "2026-06-25"
   },
-  "last_sync": "2026-06-25T16:40:28.942174+00:00",
+  "last_sync": "2026-06-26T07:09:18.577956+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "panaji",
-      "date": "2026-06-11"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-06-11"
-    },
-    {
-      "destination_id": "bhaderwah",
-      "date": "2026-06-11"
-    },
-    {
-      "destination_id": "darjeeling",
-      "date": "2026-06-11"
-    },
-    {
-      "destination_id": "mathura",
-      "date": "2026-06-11"
-    },
     {
       "destination_id": "final",
       "date": "2026-06-12"
@@ -326,11 +305,14 @@
     {
       "destination_id": "gulmarg",
       "date": "2026-06-25"
+    },
+    {
+      "destination_id": "tosamaidan",
+      "date": "2026-06-26"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v3_tl_poll_reel",
       "stays_pick",
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
@@ -344,6 +326,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -353,7 +336,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "v3_tl_poll_reel",
       "stays_pick",
       "v2_wildlife_moment",
       "v2_pov_slow_morning",
@@ -367,6 +349,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -3822,6 +3805,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "gulmarg.mp4"
+    },
+    {
+      "timestamp": "2026-06-26T07:10:35.151041+00:00",
+      "date": "2026-06-26",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "QZ0dy",
+      "destination": "tosamaidan",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tosamaidan.mp4"
+    },
+    {
+      "timestamp": "2026-06-26T07:10:50.633003+00:00",
+      "date": "2026-06-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "eaFzr",
+      "destination": "tosamaidan",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tosamaidan.mp4"
     }
   ],
   "theme_usage": {
@@ -4091,7 +4096,8 @@
       "tosamaidan": [
         "2026-06-09",
         "2026-06-11",
-        "2026-06-23"
+        "2026-06-23",
+        "2026-06-26"
       ],
       "gurez-valley": [
         "2026-06-10",
@@ -4224,7 +4230,8 @@
         "2026-06-22",
         "2026-06-23",
         "2026-06-24",
-        "2026-06-25"
+        "2026-06-25",
+        "2026-06-26"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4657,8 +4664,7 @@
       "leh": [
         "2026-06-23"
       ]
-    },
-    "collection_carousel_dests:astavinayak-yatra": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -4672,7 +4678,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "courtallam",
+    "shared_best": "sissu",
     "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},
