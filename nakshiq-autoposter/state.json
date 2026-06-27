@@ -37,10 +37,10 @@
     "m8EAd_yt_short": "2026-06-27",
     "m8EAd": "2026-06-27",
     "PdMu0": "2026-06-27",
-    "m8EAd_evening": "2026-06-26",
-    "PdMu0_evening": "2026-06-26"
+    "m8EAd_evening": "2026-06-27",
+    "PdMu0_evening": "2026-06-27"
   },
-  "last_sync": "2026-06-27T06:42:58.418405+00:00",
+  "last_sync": "2026-06-27T15:43:31.113390+00:00",
   "posted_destinations": [
     {
       "destination_id": "prashar-lake",
@@ -305,11 +305,14 @@
     {
       "destination_id": "uttarkashi",
       "date": "2026-06-27"
+    },
+    {
+      "destination_id": "lepakshi",
+      "date": "2026-06-27"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_pov_slow_morning",
       "v2_tourist_trap_split",
       "v2_thali_close_up",
       "v2_local_knows",
@@ -329,10 +332,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "collection_series"
     ],
     "PdMu0": [
-      "v2_pov_slow_morning",
       "v2_tourist_trap_split",
       "v2_thali_close_up",
       "v2_local_knows",
@@ -352,7 +355,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "collection_series"
     ]
   },
   "post_log": [
@@ -3939,6 +3943,28 @@
       "destination": "uttarkashi",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_uttarkashi_hi_2026-06-27.mp4"
+    },
+    {
+      "timestamp": "2026-06-27T15:44:31.454604+00:00",
+      "date": "2026-06-27",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XNPle",
+      "destination": "lepakshi",
+      "format": "collection_series",
+      "has_media": true,
+      "media_id": "lepakshi.mp4"
+    },
+    {
+      "timestamp": "2026-06-27T15:44:56.761302+00:00",
+      "date": "2026-06-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "XNPKe",
+      "destination": "lepakshi",
+      "format": "collection_series",
+      "has_media": true,
+      "media_id": "lepakshi.mp4"
     }
   ],
   "theme_usage": {
@@ -4242,6 +4268,9 @@
       ],
       "manali": [
         "2026-06-22"
+      ],
+      "lepakshi": [
+        "2026-06-27"
       ]
     },
     "morning_formats": {
@@ -4275,7 +4304,8 @@
         "2026-06-15"
       ],
       "collection_series": [
-        "2026-05-24"
+        "2026-05-24",
+        "2026-06-27"
       ],
       "v2_ugc_spotlight": [
         "2026-05-24"
@@ -4536,6 +4566,9 @@
       ],
       "gulmarg": [
         "2026-06-25"
+      ],
+      "lepakshi": [
+        "2026-06-27"
       ]
     },
     "audience_tags": {
@@ -4548,7 +4581,8 @@
       "families": [
         "2026-05-23",
         "2026-05-30",
-        "2026-06-06"
+        "2026-06-06",
+        "2026-06-27"
       ],
       "adventurers": [
         "2026-05-29",
@@ -4701,6 +4735,9 @@
     "collection_series": {
       "astavinayak-yatra": [
         "2026-05-24"
+      ],
+      "photography-spots": [
+        "2026-06-27"
       ]
     },
     "collection_carousel_dests:adrenaline-rush": {
@@ -4781,7 +4818,8 @@
       "leh": [
         "2026-06-23"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -4795,7 +4833,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "courtallam",
+    "shared_best": "sissu",
     "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},
