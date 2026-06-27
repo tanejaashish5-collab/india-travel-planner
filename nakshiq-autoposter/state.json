@@ -35,41 +35,13 @@
     "GAh5p_yt_short": "2026-06-26",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-26",
-    "m8EAd": "2026-06-26",
-    "PdMu0": "2026-06-26",
+    "m8EAd": "2026-06-27",
+    "PdMu0": "2026-06-27",
     "m8EAd_evening": "2026-06-26",
     "PdMu0_evening": "2026-06-26"
   },
-  "last_sync": "2026-06-26T16:32:22.684503+00:00",
+  "last_sync": "2026-06-27T06:42:58.418405+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "final",
-      "date": "2026-06-12"
-    },
-    {
-      "destination_id": "lonavala",
-      "date": "2026-06-12"
-    },
-    {
-      "destination_id": "chitkul",
-      "date": "2026-06-12"
-    },
-    {
-      "destination_id": "alchi",
-      "date": "2026-06-12"
-    },
-    {
-      "destination_id": "kalpa",
-      "date": "2026-06-12"
-    },
-    {
-      "destination_id": "bhandardara",
-      "date": "2026-06-12"
-    },
-    {
-      "destination_id": "courtallam",
-      "date": "2026-06-12"
-    },
     {
       "destination_id": "prashar-lake",
       "date": "2026-06-13"
@@ -321,11 +293,14 @@
     {
       "destination_id": "leh",
       "date": "2026-06-26"
+    },
+    {
+      "destination_id": "bhandardara",
+      "date": "2026-06-27"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_wildlife_moment",
       "v2_pov_slow_morning",
       "v2_tourist_trap_split",
       "v2_thali_close_up",
@@ -337,6 +312,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -348,7 +324,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "v2_wildlife_moment",
       "v2_pov_slow_morning",
       "v2_tourist_trap_split",
       "v2_thali_close_up",
@@ -360,6 +335,7 @@
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -3897,6 +3873,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "leh.mp4"
+    },
+    {
+      "timestamp": "2026-06-27T06:43:55.699421+00:00",
+      "date": "2026-06-27",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "M96pC",
+      "destination": "bhandardara",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bhandardara.mp4"
+    },
+    {
+      "timestamp": "2026-06-27T06:44:16.052660+00:00",
+      "date": "2026-06-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "nptnl",
+      "destination": "bhandardara",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bhandardara.mp4"
     }
   ],
   "theme_usage": {
@@ -3945,7 +3943,8 @@
         "2026-05-20",
         "2026-06-03",
         "2026-06-12",
-        "2026-06-23"
+        "2026-06-23",
+        "2026-06-27"
       ],
       "sissu": [
         "2026-05-21",
@@ -4302,7 +4301,8 @@
         "2026-06-23",
         "2026-06-24",
         "2026-06-25",
-        "2026-06-26"
+        "2026-06-26",
+        "2026-06-27"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4751,7 +4751,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nako",
+    "shared_best": "courtallam",
     "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},
