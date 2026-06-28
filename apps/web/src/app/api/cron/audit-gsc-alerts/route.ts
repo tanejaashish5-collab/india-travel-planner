@@ -19,8 +19,19 @@ export const maxDuration = 60;
 //     • >5% drop vs prior-7d average
 //     • same indexed-page count for 3+ consecutive audits (frozen snapshot)
 //
-//   M3 — Per-cohort click delta
-//     • Any URL family losing >30% of clicks rolling 7d vs prior 7d
+//   M3 — Per-cohort click delta (MEDIUM, contextual — not a standalone alarm)
+//     • Any URL family losing >30% of clicks rolling 7d vs prior 7d.
+//       This is derived from the parsed TOP-10 page tables, which only
+//       capture whichever pages charted that day — NOT real cohort traffic.
+//       As the seasonal mix rotates (e.g. June→July) and high-converting
+//       /vs/ pages climb, other families get pushed out of the visible
+//       top-10 and register as "click loss" even while TOTAL site clicks
+//       set records. It fired false HIGHs on vs/pair (06-23..28) and on
+//       destination/month while the site was at all-time-high clicks, so
+//       it is severity=medium: a watch-signal, never a standalone "errored".
+//       The reliable regression detector is M2 indexed_pages_drop above
+//       (smoothed/sustained) — it ALSO collapsed during the real 2026-05
+//       ISR regression, so demoting M3 loses no genuine coverage.
 
 const ALERT_TO = "taneja.ashish5@gmail.com";
 
@@ -143,10 +154,14 @@ function evaluate(parsed: GscAudit[]): Finding[] {
       const curClicks = currentSums.get(fam) ?? 0;
       const pct = ((curClicks - priorClicks) / priorClicks) * 100;
       if (pct <= -COHORT_CLICKS_DROP_PCT) {
+        // MEDIUM by design — see the M3 note at the top of this file. This is
+        // top-10-table composition, which rotates seasonally; it cannot
+        // distinguish "cohort lost traffic" from "cohort rotated out of the
+        // daily top-10". Never let it drive a standalone "errored" status.
         findings.push({
           rule: "cohort_clicks_drop",
-          severity: "high",
-          detail: `Cohort '${fam}' lost ${Math.abs(pct).toFixed(1)}% of clicks (${priorClicks} → ${curClicks} over the last 7 vs prior 7 audits). Same shape as the destination/month cohort losing share during the ISR regression.`,
+          severity: "medium",
+          detail: `Cohort '${fam}' fell ${Math.abs(pct).toFixed(1)}% in top-10 click share (${priorClicks} → ${curClicks} over the last 7 vs prior 7 audits). Contextual only — top-10 tables rotate seasonally, so this is NOT by itself a regression (cross-check against the M2 indexed-pages trend and total clicks).`,
           data: { family: fam, prior_7d: priorClicks, current_7d: curClicks, pct_change: pct },
         });
       }
