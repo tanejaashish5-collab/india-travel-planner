@@ -30,9 +30,9 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-06-27",
+    "GAh5p_yt_short": "2026-06-28",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-27",
     "m8EAd": "2026-06-28",
@@ -304,6 +304,10 @@
     },
     {
       "destination_id": "courtallam",
+      "date": "2026-06-28"
+    },
+    {
+      "destination_id": "auli",
       "date": "2026-06-28"
     }
   ],
@@ -3983,6 +3987,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-06-28T08:03:05.741769+00:00",
+      "date": "2026-06-28",
+      "platform": "youtube",
+      "post_id": "BGv5n",
+      "destination": "auli",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_auli_hi_2026-06-28.mp4"
+    },
+    {
+      "timestamp": "2026-06-28T08:03:53.779139+00:00",
+      "date": "2026-06-28",
+      "platform": "instagram",
+      "post_id": "jErb2",
+      "destination": "auli",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_auli_hi_2026-06-28.mp4"
     }
   ],
   "theme_usage": {
