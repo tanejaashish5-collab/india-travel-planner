@@ -35,21 +35,13 @@
     "GAh5p_yt_short": "2026-06-27",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-27",
-    "m8EAd": "2026-06-27",
-    "PdMu0": "2026-06-27",
+    "m8EAd": "2026-06-28",
+    "PdMu0": "2026-06-28",
     "m8EAd_evening": "2026-06-27",
     "PdMu0_evening": "2026-06-27"
   },
-  "last_sync": "2026-06-27T15:43:31.113390+00:00",
+  "last_sync": "2026-06-28T07:15:59.853261+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "prashar-lake",
-      "date": "2026-06-13"
-    },
-    {
-      "destination_id": "mudumalai",
-      "date": "2026-06-13"
-    },
     {
       "destination_id": "sangla",
       "date": "2026-06-14"
@@ -309,11 +301,14 @@
     {
       "destination_id": "lepakshi",
       "date": "2026-06-27"
+    },
+    {
+      "destination_id": "courtallam",
+      "date": "2026-06-28"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_tourist_trap_split",
       "v2_thali_close_up",
       "v2_local_knows",
       "v2_budget_receipt",
@@ -333,10 +328,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "collection_series"
+      "collection_series",
+      "score_card"
     ],
     "PdMu0": [
-      "v2_tourist_trap_split",
       "v2_thali_close_up",
       "v2_local_knows",
       "v2_budget_receipt",
@@ -356,7 +351,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "collection_series"
+      "collection_series",
+      "score_card"
     ]
   },
   "post_log": [
@@ -3965,6 +3961,28 @@
       "format": "collection_series",
       "has_media": true,
       "media_id": "lepakshi.mp4"
+    },
+    {
+      "timestamp": "2026-06-28T07:17:17.771083+00:00",
+      "date": "2026-06-28",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XNtQe",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-06-28T07:17:38.879758+00:00",
+      "date": "2026-06-28",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "XNtye",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
     }
   ],
   "theme_usage": {
@@ -4218,7 +4236,8 @@
       "courtallam": [
         "2026-06-05",
         "2026-06-07",
-        "2026-06-12"
+        "2026-06-12",
+        "2026-06-28"
       ],
       "coorg": [
         "2026-06-05"
@@ -4376,7 +4395,8 @@
         "2026-06-24",
         "2026-06-25",
         "2026-06-26",
-        "2026-06-27"
+        "2026-06-27",
+        "2026-06-28"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4818,8 +4838,7 @@
       "leh": [
         "2026-06-23"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -4833,7 +4852,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sissu",
+    "shared_best": "courtallam",
     "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},
