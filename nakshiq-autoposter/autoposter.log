@@ -7705,3 +7705,26 @@ Date range: 2026-04-15 → 2026-06-27
 2026-06-28 08:03:53  INFO      YT Short posted: format=this_vs_that, music=edm-1001
 2026-06-28 08:03:53  INFO      State saved. YT Short run complete.
 2026-06-28 08:03:53  INFO      ════════════════════════════════════════════════════════════
+2026-06-28 13:07:17  INFO      ════════════════════════════════════════════════════════════
+2026-06-28 13:07:17  INFO      Nakshiq Autoposter · YT SHORT · 2026-06-28
+2026-06-28 13:07:17  INFO      ════════════════════════════════════════════════════════════
+2026-06-28 13:07:20  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-28 13:09:08  INFO      Short rendered: yt_short_did_you_know_belur_hi_2026-06-28.mp4 (20044 KB, 26.2s, fmt=did_you_know, music=fast-676)
+2026-06-28 13:09:08  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_belur_hi_2026-06-28.mp4 (20,525,296 bytes, video/mp4)
+2026-06-28 13:09:09  INFO          Uploading to R2 (timeout=300s)...
+2026-06-28 13:09:10  INFO          R2 PUT OK. Confirming...
+2026-06-28 13:09:11  INFO          Media ready: vRNpg (20,525,296 bytes · yt_short_did_you_know_yt_short_did_you_know_belur_hi_2026-06-28.mp4)
+2026-06-28 13:09:11  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_belur_hi_2026-06-28.mp4
+2026-06-28 13:09:12  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-28 13:09:12  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-06-28 13:09:12  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-06-28 13:09:15  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=ROJgH), waiting for platform confirmation...
+2026-06-28 13:09:33  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=ROJgH · Platform=zsqOLIMEBts
+2026-06-28 13:09:33  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-06-28 13:09:33  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-06-28 13:09:35  INFO      [instagram/nakshiq] Outstand accepted (post_id=ESTkA), waiting for platform confirmation...
+2026-06-28 13:10:15  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=ESTkA · Platform=18092671859371585
+2026-06-28 13:10:15  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-06-28 13:10:15  INFO      YT Short posted: format=did_you_know, music=fast-676
+2026-06-28 13:10:15  INFO      State saved. YT Short run complete.
+2026-06-28 13:10:15  INFO      ════════════════════════════════════════════════════════════
