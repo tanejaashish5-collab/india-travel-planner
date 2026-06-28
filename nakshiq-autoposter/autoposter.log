@@ -7728,3 +7728,50 @@ Date range: 2026-04-15 → 2026-06-27
 2026-06-28 13:10:15  INFO      YT Short posted: format=did_you_know, music=fast-676
 2026-06-28 13:10:15  INFO      State saved. YT Short run complete.
 2026-06-28 13:10:15  INFO      ════════════════════════════════════════════════════════════
+2026-06-28 15:43:41  INFO      ════════════════════════════════════════════════════════════
+2026-06-28 15:43:41  INFO      Nakshiq Autoposter · EVENING · 2026-06-28 · weekday=6
+2026-06-28 15:43:41  INFO      ════════════════════════════════════════════════════════════
+2026-06-28 15:43:41  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-28 15:44:10  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-28 15:44:10  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-28 15:44:15  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-28 15:44:15  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-28 15:44:15  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-28 15:44:15  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-28 15:44:28  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-28 15:44:28  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-06-28 15:44:28  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: kids_intel
+2026-06-28 15:44:28  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 91
+2026-06-28 15:44:28  INFO      Fingerprint dedup snapshot — 88 dests in 7d · 141 (dest,fmt) pairs in 30d · 181 media in 60d
+2026-06-28 15:44:28  INFO      Kids destination locked: Courtallam (Kutralam)
+2026-06-28 15:44:31  INFO      Shared best destination locked: Sissu
+2026-06-28 15:44:31  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-28 15:44:31  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-06-28 15:44:31  INFO      confidence_intel for Sissu: only 0 card rows — SKIPPING
+2026-06-28 15:44:31  WARNING   [instagram/nakshiq] confidence_intel: sissu inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'sangla' as score_card to keep the slot live.
+2026-06-28 15:44:31  INFO      [instagram/nakshiq] Caption ready (341 chars, dest=sangla)
+2026-06-28 15:44:31  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-28 15:44:31  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sangla.mp4?v=20260524
+2026-06-28 15:44:34  INFO          Brand-stamp applied: sangla.mp4 (6,180,158 → 2,916,559 bytes)
+2026-06-28 15:44:34  INFO          Requesting upload URL for sangla.mp4 (2,916,559 bytes, video/mp4)
+2026-06-28 15:44:35  INFO          Uploading to R2 (timeout=300s)...
+2026-06-28 15:44:37  INFO          R2 PUT OK. Confirming...
+2026-06-28 15:44:38  INFO          Media ready: XcG8e (2,916,559 bytes · sangla.mp4)
+2026-06-28 15:44:38  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-28 15:45:26  INFO          wait_for_publish exhausted 8 polls for post=dHWxO (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-06-28 15:45:26  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=dHWxO)
+2026-06-28 15:45:26  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-06-28 15:45:26  INFO      confidence_intel for Sissu: only 0 card rows — SKIPPING
+2026-06-28 15:45:26  WARNING   [facebook/Nakshiq] confidence_intel: sissu inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'sangla' as score_card to keep the slot live.
+2026-06-28 15:45:26  INFO      [facebook/Nakshiq] Caption ready (521 chars, dest=sangla)
+2026-06-28 15:45:27  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-28 15:45:27  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sangla.mp4?v=20260524
+2026-06-28 15:45:29  INFO          Brand-stamp applied: sangla.mp4 (6,180,158 → 2,916,559 bytes)
+2026-06-28 15:45:29  INFO          Requesting upload URL for sangla.mp4 (2,916,559 bytes, video/mp4)
+2026-06-28 15:45:29  INFO          Uploading to R2 (timeout=300s)...
+2026-06-28 15:45:30  INFO          R2 PUT OK. Confirming...
+2026-06-28 15:45:31  INFO          Media ready: XcGIe (2,916,559 bytes · sangla.mp4)
+2026-06-28 15:45:31  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-28 15:45:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=a4Hpb · Platform=1022286960205554
+2026-06-28 15:45:52  INFO      State saved. Run complete.
+2026-06-28 15:45:52  INFO      ════════════════════════════════════════════════════════════
