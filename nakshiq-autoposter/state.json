@@ -35,29 +35,13 @@
     "GAh5p_yt_short": "2026-06-28",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-28",
-    "m8EAd": "2026-06-28",
-    "PdMu0": "2026-06-28",
+    "m8EAd": "2026-06-29",
+    "PdMu0": "2026-06-29",
     "m8EAd_evening": "2026-06-28",
     "PdMu0_evening": "2026-06-28"
   },
-  "last_sync": "2026-06-28T15:44:10.723270+00:00",
+  "last_sync": "2026-06-29T08:31:16.973644+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "sangla",
-      "date": "2026-06-14"
-    },
-    {
-      "destination_id": "verinag",
-      "date": "2026-06-14"
-    },
-    {
-      "destination_id": "pahalgam",
-      "date": "2026-06-14"
-    },
-    {
-      "destination_id": "munsiyari",
-      "date": "2026-06-14"
-    },
     {
       "destination_id": "pangong-lake",
       "date": "2026-06-15"
@@ -317,11 +301,14 @@
     {
       "destination_id": "sangla",
       "date": "2026-06-28"
+    },
+    {
+      "destination_id": "sissu",
+      "date": "2026-06-29"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_local_knows",
       "v2_budget_receipt",
       "v2_myth_bust_oneline",
       "v2_tourist_trap_split",
@@ -340,11 +327,11 @@
       "score_card",
       "score_card",
       "collection_series",
+      "score_card",
       "score_card",
       "score_card"
     ],
     "PdMu0": [
-      "v2_local_knows",
       "v2_budget_receipt",
       "v2_myth_bust_oneline",
       "v2_tourist_trap_split",
@@ -363,6 +350,7 @@
       "score_card",
       "score_card",
       "collection_series",
+      "score_card",
       "score_card",
       "score_card"
     ]
@@ -4053,6 +4041,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "sangla.mp4"
+    },
+    {
+      "timestamp": "2026-06-29T08:32:11.277242+00:00",
+      "date": "2026-06-29",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "yunaj",
+      "destination": "sissu",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "sissu.mp4"
+    },
+    {
+      "timestamp": "2026-06-29T08:32:30.075214+00:00",
+      "date": "2026-06-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "gofUx",
+      "destination": "sissu",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "sissu.mp4"
     }
   ],
   "theme_usage": {
@@ -4108,7 +4118,8 @@
         "2026-05-21",
         "2026-05-25",
         "2026-06-10",
-        "2026-06-15"
+        "2026-06-15",
+        "2026-06-29"
       ],
       "dwarka": [
         "2026-05-22"
@@ -4467,7 +4478,8 @@
         "2026-06-25",
         "2026-06-26",
         "2026-06-27",
-        "2026-06-28"
+        "2026-06-28",
+        "2026-06-29"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -4926,7 +4938,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sissu",
+    "shared_best": "nako",
     "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},
