@@ -37,10 +37,10 @@
     "m8EAd_yt_short": "2026-06-29",
     "m8EAd": "2026-06-29",
     "PdMu0": "2026-06-29",
-    "m8EAd_evening": "2026-06-28",
-    "PdMu0_evening": "2026-06-28"
+    "m8EAd_evening": "2026-06-29",
+    "PdMu0_evening": "2026-06-29"
   },
-  "last_sync": "2026-06-29T08:31:16.973644+00:00",
+  "last_sync": "2026-06-29T17:17:26.627496+00:00",
   "posted_destinations": [
     {
       "destination_id": "pangong-lake",
@@ -317,11 +317,14 @@
     {
       "destination_id": "barot-valley",
       "date": "2026-06-29"
+    },
+    {
+      "destination_id": "nako",
+      "date": "2026-06-29"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_budget_receipt",
       "v2_myth_bust_oneline",
       "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
@@ -339,12 +342,12 @@
       "score_card",
       "score_card",
       "collection_series",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
     ],
     "PdMu0": [
-      "v2_budget_receipt",
       "v2_myth_bust_oneline",
       "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
@@ -362,6 +365,7 @@
       "score_card",
       "score_card",
       "collection_series",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
@@ -4120,6 +4124,28 @@
       "destination": "barot-valley",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_barot-valley_hi_2026-06-29.mp4"
+    },
+    {
+      "timestamp": "2026-06-29T17:18:45.833533+00:00",
+      "date": "2026-06-29",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "KCnk9",
+      "destination": "nako",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nako.mp4"
+    },
+    {
+      "timestamp": "2026-06-29T17:19:13.227777+00:00",
+      "date": "2026-06-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "dHf4O",
+      "destination": "nako",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nako.mp4"
     }
   ],
   "theme_usage": {
@@ -4356,7 +4382,8 @@
         "2026-06-10",
         "2026-06-11",
         "2026-06-15",
-        "2026-06-16"
+        "2026-06-16",
+        "2026-06-29"
       ],
       "kargil": [
         "2026-06-04",
@@ -4695,7 +4722,8 @@
       "nako": [
         "2026-06-10",
         "2026-06-15",
-        "2026-06-16"
+        "2026-06-16",
+        "2026-06-29"
       ],
       "darjeeling": [
         "2026-06-11"
@@ -4739,7 +4767,8 @@
         "2026-05-18",
         "2026-06-01",
         "2026-06-15",
-        "2026-06-22"
+        "2026-06-22",
+        "2026-06-29"
       ],
       "families": [
         "2026-05-23",
@@ -4995,7 +5024,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nako",
+    "shared_best": "nubra-valley",
     "collection": "astavinayak-yatra"
   },
   "manual_skip_dests": {},
