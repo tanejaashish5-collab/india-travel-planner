@@ -37,10 +37,10 @@
     "m8EAd_yt_short": "2026-06-30",
     "m8EAd": "2026-06-30",
     "PdMu0": "2026-06-30",
-    "m8EAd_evening": "2026-06-29",
-    "PdMu0_evening": "2026-06-29"
+    "m8EAd_evening": "2026-06-30",
+    "PdMu0_evening": "2026-06-30"
   },
-  "last_sync": "2026-06-30T07:09:00.567869+00:00",
+  "last_sync": "2026-06-30T16:37:12.464876+00:00",
   "posted_destinations": [
     {
       "destination_id": "achabal",
@@ -309,11 +309,14 @@
     {
       "destination_id": "nagarhole",
       "date": "2026-06-30"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-06-30"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
       "score_card",
@@ -329,6 +332,7 @@
       "score_card",
       "score_card",
       "collection_series",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -336,7 +340,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "v2_tourist_trap_split",
       "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
       "score_card",
@@ -352,6 +355,7 @@
       "score_card",
       "score_card",
       "collection_series",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -4192,6 +4196,28 @@
       "destination": "nagarhole",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_nagarhole_hi_2026-06-30.mp4"
+    },
+    {
+      "timestamp": "2026-06-30T16:38:23.054156+00:00",
+      "date": "2026-06-30",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "bBMjT",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-06-30T16:38:42.903264+00:00",
+      "date": "2026-06-30",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "mHxad",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -4395,7 +4421,8 @@
         "2026-06-10",
         "2026-06-15",
         "2026-06-16",
-        "2026-06-17"
+        "2026-06-17",
+        "2026-06-30"
       ],
       "tungnath": [
         "2026-06-02"
@@ -4755,7 +4782,8 @@
         "2026-06-02",
         "2026-06-06",
         "2026-06-07",
-        "2026-06-16"
+        "2026-06-16",
+        "2026-06-30"
       ],
       "tawang": [
         "2026-06-03"
@@ -4891,6 +4919,9 @@
       ],
       "astavinayak-yatra": [
         "2026-06-25"
+      ],
+      "budget-under-2000": [
+        "2026-06-30"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -5058,7 +5089,8 @@
       "leh": [
         "2026-06-23"
       ]
-    }
+    },
+    "collection_carousel_dests:budget-under-2000": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -5072,8 +5104,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "pangong-lake",
-    "collection": "astavinayak-yatra"
+    "shared_best": "nubra-valley",
+    "collection": "budget-under-2000"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-06-23"

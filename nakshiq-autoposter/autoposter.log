@@ -8202,3 +8202,118 @@ Date range: 2026-04-15 → 2026-06-29
 2026-06-30 13:35:14  INFO      YT Short posted: format=did_you_know, music=hype-738
 2026-06-30 13:35:14  INFO      State saved. YT Short run complete.
 2026-06-30 13:35:14  INFO      ════════════════════════════════════════════════════════════
+2026-06-30 16:36:37  INFO      ════════════════════════════════════════════════════════════
+2026-06-30 16:36:37  INFO      Nakshiq Autoposter · EVENING · 2026-06-30 · weekday=1
+2026-06-30 16:36:37  INFO      ════════════════════════════════════════════════════════════
+2026-06-30 16:36:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-30 16:37:12  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-30 16:37:12  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-30 16:37:13  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-30 16:37:13  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-30 16:37:13  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-30 16:37:13  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-30 16:37:28  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-30 16:37:28  INFO      Evening format (balance→anti_trap): v2_myth_bust_oneline [0% vs target 15%] (0/15 never featured)
+2026-06-30 16:37:28  INFO      Formats — IG: v2_myth_bust_oneline  ·  FB: v2_myth_bust_oneline  ·  Story: collection_spotlight
+2026-06-30 16:37:28  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 96
+2026-06-30 16:37:28  INFO      Fingerprint dedup snapshot — 93 dests in 7d · 141 (dest,fmt) pairs in 30d · 187 media in 60d
+2026-06-30 16:37:28  INFO      Collection locked: Best on ₹2,000/Day — Comfort Without Compromise (0/20 never featured)
+2026-06-30 16:37:35  INFO      Shared best destination locked: Nubra Valley
+2026-06-30 16:37:35  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-06-30 16:37:35  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-30 16:37:35  INFO      [instagram/nakshiq] Generating v2_myth_bust_oneline post...
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: nako in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: sissu in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: kaza in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: keylong in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: sangla in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: kargil in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  INFO      v2_myth_bust_oneline: leh in 14-day cooldown — SKIPPING dest
+2026-06-30 16:37:35  WARNING   v2_myth_bust_oneline: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-30 16:37:35  WARNING   [instagram/nakshiq] v2_myth_bust_oneline: nubra-valley inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'nubra-valley' as score_card to keep the slot live.
+2026-06-30 16:37:35  INFO      [instagram/nakshiq] Caption ready (400 chars, dest=nubra-valley)
+2026-06-30 16:37:36  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-30 16:37:36  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nubra-valley.mp4?v=20260524
+2026-06-30 16:37:38  INFO          Brand-stamp applied: nubra-valley.mp4 (6,874,272 → 3,028,202 bytes)
+2026-06-30 16:37:38  INFO          Requesting upload URL for nubra-valley.mp4 (3,028,202 bytes, video/mp4)
+2026-06-30 16:37:39  INFO          Uploading to R2 (timeout=300s)...
+2026-06-30 16:37:40  INFO          R2 PUT OK. Confirming...
+2026-06-30 16:37:42  INFO          Media ready: FK5fZ (3,028,202 bytes · nubra-valley.mp4)
+2026-06-30 16:37:42  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-30 16:38:23  INFO      [instagram/nakshiq] ✅ Published · Outstand=bBMjT · Platform=18415438933196633
+2026-06-30 16:38:23  INFO      [facebook/Nakshiq] Generating v2_myth_bust_oneline post...
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: nainital has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: anandpur-sahib has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: ooty has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: gangtok has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: hampi has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: kasol has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: madurai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: mumbai has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: shimla has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: tawang has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: mussoorie has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: old-goa has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: coorg has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: munnar has no current-month row — SKIPPING (won't render a stale June score/note)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: pangong-lake already posted today — SKIPPING dest (same-day guard)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: nubra-valley already posted today — SKIPPING dest (same-day guard)
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: nako in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: sissu in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: roopkund in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: lolab-valley in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: kaza in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: yusmarg in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: bhandardara in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: gulmarg in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: ukhrul in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: keylong in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: sonamarg in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: sangla in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: lahaul-valley in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: kargil in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: courtallam in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: tosamaidan in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  INFO      v2_myth_bust_oneline: leh in 14-day cooldown — SKIPPING dest
+2026-06-30 16:38:23  WARNING   v2_myth_bust_oneline: no eligible dest at render time — falling back to safe format 'score_card'
+2026-06-30 16:38:23  WARNING   [facebook/Nakshiq] v2_myth_bust_oneline: nubra-valley inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'nubra-valley' as score_card to keep the slot live.
+2026-06-30 16:38:23  INFO      [facebook/Nakshiq] Caption ready (591 chars, dest=nubra-valley)
+2026-06-30 16:38:23  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-06-30 16:38:23  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nubra-valley.mp4?v=20260524
+2026-06-30 16:38:25  INFO          Brand-stamp applied: nubra-valley.mp4 (6,874,272 → 3,028,202 bytes)
+2026-06-30 16:38:25  INFO          Requesting upload URL for nubra-valley.mp4 (3,028,202 bytes, video/mp4)
+2026-06-30 16:38:25  INFO          Uploading to R2 (timeout=300s)...
+2026-06-30 16:38:26  INFO          R2 PUT OK. Confirming...
+2026-06-30 16:38:27  INFO          Media ready: gHu9x (3,028,202 bytes · nubra-valley.mp4)
+2026-06-30 16:38:27  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-30 16:38:42  INFO      [facebook/Nakshiq] ✅ Published · Outstand=mHxad · Platform=1508919023525092
+2026-06-30 16:38:42  INFO      State saved. Run complete.
+2026-06-30 16:38:42  INFO      ════════════════════════════════════════════════════════════
