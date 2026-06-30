@@ -52,6 +52,9 @@ videos/
 # data/festivals/footage-sources.md; the binaries stay out of git.
 data/festivals/footage/
 data/festivals/photos/
+# De-watermarked per-slug celebration clips — staging dir for the R2 upload
+# (scripts/_dewatermark-festival-videos.mjs). Authoritative copy on R2.
+data/festivals/videos-clean/
 
 # Editor / refactor backups (e.g. component.legacy.tsx.bak)
 *.bak

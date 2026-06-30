@@ -1,5 +1,6 @@
 import { videoSrc } from "./video-url";
 import { FESTIVAL_FOOTAGE, FOOTAGE_CREDIT, FESTIVAL_PHOTO, PHOTO_CREDIT } from "./festival-footage-map";
+import { FESTIVAL_CLIPS } from "./festival-clips";
 
 // R2 image origin (same bucket family as destination images). Festival photos
 // are stored as famphoto-<family>.jpg.
@@ -21,16 +22,29 @@ const IMAGE_BASE = "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev";
  * showed the host place (mountains / monsoon / fields) at the festival's time
  * of year and never the festival itself.
  */
-export const hasFestivalHero = (slug: string): boolean => slug in FESTIVAL_FOOTAGE;
+export const hasFestivalHero = (slug: string): boolean =>
+  FESTIVAL_CLIPS.has(slug) || slug in FESTIVAL_FOOTAGE;
 
-/** R2 real-footage hero-clip URL for a festival slug, or "" when none exists. */
+/**
+ * R2 hero-clip URL for a festival slug, or "" when none exists.
+ *
+ * A per-slug, festival-SPECIFIC celebration clip ({slug}.mp4) wins everywhere
+ * it exists (founder call 2026-06-30) — it shows that exact festival rather
+ * than a generic clip of the festival type. The generic real-footage family
+ * clip (fam-<family>.mp4) is the fallback for festivals without their own clip.
+ */
 export function festivalHeroSrc(slug: string): string {
+  if (FESTIVAL_CLIPS.has(slug)) return videoSrc(slug);
   const family = FESTIVAL_FOOTAGE[slug];
   return family ? videoSrc(`fam-${family}`) : "";
 }
 
-/** Visible attribution for a festival hero clip (CC BY-SA families), or "". */
+/**
+ * Visible attribution for a festival hero clip, or "". A per-slug clip is our
+ * own footage and needs no attribution; only the CC BY-SA family clips do.
+ */
 export function festivalHeroCredit(slug: string): string {
+  if (FESTIVAL_CLIPS.has(slug)) return "";
   const family = FESTIVAL_FOOTAGE[slug];
   return family ? FOOTAGE_CREDIT[family] ?? "" : "";
 }

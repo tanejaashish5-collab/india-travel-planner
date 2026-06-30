@@ -116,7 +116,11 @@
 //      Also adds the where-to-go / explore / treks / festivals / states /
 //      collections / luxury / guide hubs to precache (drift catch-up — these
 //      shipped after the list was last curated at v33).
-const CACHE_VERSION = "nakshiq-v51";
+// v52: 2026-06-30 Festival pages now render a per-slug, festival-SPECIFIC
+//      celebration video hero (de-watermarked Flow/Veo clips, {slug}.mp4 in
+//      R2) on ~500 /festivals/[slug] pages — markup changed from a static
+//      image to a <video> on the long tail that previously had no clip.
+const CACHE_VERSION = "nakshiq-v52";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
