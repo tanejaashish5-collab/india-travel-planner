@@ -8110,3 +8110,48 @@ Date range: 2026-04-15 → 2026-06-28
 2026-06-29 20:24:13  INFO      
 Date range: 2026-04-15 → 2026-06-29
 2026-06-29 20:24:13  INFO      ════════════════════════════════════════════════════════════
+2026-06-30 07:08:32  INFO      ════════════════════════════════════════════════════════════
+2026-06-30 07:08:32  INFO      Nakshiq Autoposter · MORNING · 2026-06-30 · weekday=1
+2026-06-30 07:08:32  INFO      ════════════════════════════════════════════════════════════
+2026-06-30 07:08:32  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-06-30 07:09:00  INFO      Synced → 20 destinations · 0 traps · 0 articles · 13 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 33 camping · 50 gems · total catalog=533
+2026-06-30 07:09:00  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-06-30 07:09:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-06-30 07:09:01  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-06-30 07:09:04  INFO      Festivals filtered (past/post-window): Hemis Festival, Valley of Flowers Opening Season, Bhaderwah Mela, Sonamarg Thajiwas Glacier Festival, Devprayag Ganga Dussehra, Kanatal Surkanda Devi Mela, Solan Shoolini Fair, Doodhpathri Meadow Festival (+12 more)
+2026-06-30 07:09:04  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-06-30 07:09:17  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-06-30 07:09:17  INFO      Morning format (deficit→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-06-30 07:09:17  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: blog_promo
+2026-06-30 07:09:17  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 94
+2026-06-30 07:09:17  INFO      Fingerprint dedup snapshot — 91 dests in 7d · 138 (dest,fmt) pairs in 30d · 185 media in 60d
+2026-06-30 07:09:22  INFO      Shared best destination locked: Pangong Tso
+2026-06-30 07:09:22  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-06-30 07:09:22  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-06-30 07:09:22  INFO      confidence_intel for Pangong Tso: only 0 card rows — SKIPPING
+2026-06-30 07:09:22  WARNING   [instagram/nakshiq] confidence_intel: pangong-lake inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'pangong-lake' as score_card to keep the slot live.
+2026-06-30 07:09:22  INFO      [instagram/nakshiq] Caption ready (396 chars, dest=pangong-lake)
+2026-06-30 07:09:23  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-06-30 07:09:23  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pangong-lake.mp4?v=20260524
+2026-06-30 07:09:25  INFO          Brand-stamp applied: pangong-lake.mp4 (2,563,133 → 1,743,212 bytes)
+2026-06-30 07:09:25  INFO          Requesting upload URL for pangong-lake.mp4 (1,743,212 bytes, video/mp4)
+2026-06-30 07:09:26  INFO          Uploading to R2 (timeout=300s)...
+2026-06-30 07:09:27  INFO          R2 PUT OK. Confirming...
+2026-06-30 07:09:28  INFO          Media ready: 8DCuI (1,743,212 bytes · pangong-lake.mp4)
+2026-06-30 07:09:28  INFO      [instagram/nakshiq] Publishing Reel...
+2026-06-30 07:10:08  INFO      [instagram/nakshiq] ✅ Published · Outstand=JWJ93 · Platform=17903932695284626
+2026-06-30 07:10:08  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-06-30 07:10:08  INFO      confidence_intel for Pangong Tso: only 0 card rows — SKIPPING
+2026-06-30 07:10:08  WARNING   [facebook/Nakshiq] confidence_intel: pangong-lake inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'pangong-lake' as score_card to keep the slot live.
+2026-06-30 07:10:08  INFO      [facebook/Nakshiq] Caption ready (586 chars, dest=pangong-lake)
+2026-06-30 07:10:09  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-06-30 07:10:09  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pangong-lake.mp4?v=20260524
+2026-06-30 07:10:10  INFO          Brand-stamp applied: pangong-lake.mp4 (2,563,133 → 1,743,212 bytes)
+2026-06-30 07:10:10  INFO          Requesting upload URL for pangong-lake.mp4 (1,743,212 bytes, video/mp4)
+2026-06-30 07:10:11  INFO          Uploading to R2 (timeout=300s)...
+2026-06-30 07:10:13  INFO          R2 PUT OK. Confirming...
+2026-06-30 07:10:14  INFO          Media ready: HmB95 (1,743,212 bytes · pangong-lake.mp4)
+2026-06-30 07:10:14  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-06-30 07:10:30  INFO      [facebook/Nakshiq] ✅ Published · Outstand=4T48i · Platform=1368653545360778
+2026-06-30 07:10:30  INFO      State saved. Run complete.
+2026-06-30 07:10:30  INFO      ════════════════════════════════════════════════════════════
