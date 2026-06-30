@@ -17,15 +17,22 @@ export const maxDuration = 60;
 // hit counts by URL family, and alerts when any family loses > 50% of
 // its crawl rate week-over-week.
 //
-// Middleware samples bot visits at 10% (`BOT_LOG_SAMPLE_RATE` in
-// middleware.ts), so the absolute counts here are 10× lower than real
+// Middleware samples bot visits at 1% (`BOT_LOG_SAMPLE_RATE` in
+// middleware.ts), so the absolute counts here are 100× lower than real
 // volume — but the *ratio* between two weeks is unaffected, which is
 // what we care about.
+//
+// Sampling transition: BOT_LOG_SAMPLE_RATE changed 0.1→0.01 on 2026-06-25
+// (commit fec4259). Any WoW window straddling that date shows a spurious
+// 60-90% drop because prior-7d had 10× more samples than current-7d.
+// Email alerts are suppressed until SAMPLING_STABLE_DATE when both
+// comparison windows are fully in the 1%-era; ops_reports still records.
+const SAMPLING_STABLE_DATE = "2026-07-09T00:00:00Z";
 
 const ALERT_TO = "taneja.ashish5@gmail.com";
 
 const CRAWL_DROP_PCT = 50;     // family loses >50% WoW = alert
-const MIN_HITS_PER_FAMILY = 30; // below this, sample too noisy (raw, post-sampling so true ~300+)
+const MIN_HITS_PER_FAMILY = 30; // below this, sample too noisy (raw, post-sampling so true ~3000+)
 const KNOWN_BOTS = ["Googlebot", "Bingbot"]; // crawl-rate watch is for these; LLM bots are bonus
 
 function urlPrefix(url: string): string {
@@ -78,7 +85,7 @@ export async function GET(req: NextRequest) {
   const cutoff_prior = new Date(now.getTime() - 14 * day).toISOString();
 
   // Pull a 14-day window of bot visits filtered to known bots, then bucket
-  // in memory. Volumes here are 10% sample (per middleware), so ~3-6K rows
+  // in memory. Volumes here are 1% sample (per middleware), so ~300-600 rows
   // for our scale — easily in-memory.
   const { data, error } = await supabase
     .from("bot_visits")
@@ -130,15 +137,20 @@ export async function GET(req: NextRequest) {
           current_7d: cell.current,
           prior_7d: cell.prior,
           pct_change: pct,
-          detail: `${bot} crawl rate on /${fam} dropped ${Math.abs(pct).toFixed(1)}% (${cell.prior} → ${cell.current} hits, week-over-week, 10% sample). Search engines deprioritize URL families with cache/render issues — same symptom shape as the 2026-05-05 ISR regression.`,
+          detail: `${bot} crawl rate on /${fam} dropped ${Math.abs(pct).toFixed(1)}% (${cell.prior} → ${cell.current} hits, week-over-week, 1% sample). Search engines deprioritize URL families with cache/render issues — same symptom shape as the 2026-05-05 ISR regression.`,
         });
       }
     }
   }
 
+  // Suppress email during the sampling-transition window: prior-7d was at
+  // 10% sample, current-7d is at 1%, so any WoW drop is a measurement
+  // artifact. Both windows are fully in the 1%-era after SAMPLING_STABLE_DATE.
+  const inSamplingTransition = new Date() < new Date(SAMPLING_STABLE_DATE);
+
   await supabase.from("ops_reports").insert({
     job: "audit-bot-crawl-rate",
-    summary: { window_days: 7, findings, full_summary: summary },
+    summary: { window_days: 7, findings, full_summary: summary, sampling_transition: inSamplingTransition },
     alerts_count: findings.length,
     // The job ran fine — a crawl-rate drop is a *flagged item*, not a crash.
     // `ok: true` lets the watchdog classify findings as `needs_review` (yellow)
@@ -153,7 +165,7 @@ export async function GET(req: NextRequest) {
   });
 
   let emailed = false;
-  if (findings.length > 0) {
+  if (findings.length > 0 && !inSamplingTransition) {
     const resend = getResend();
     if (resend) {
       try {
@@ -203,7 +215,7 @@ function renderHtml(findings: Finding[]): string {
     .join("");
   return `<!doctype html><html><body style="font-family:ui-sans-serif,system-ui,sans-serif;color:#171717;max-width:800px;margin:0 auto;padding:24px">
     <h1 style="font-size:20px;margin:0 0 8px">Bot crawl-rate drop — ${findings.length}</h1>
-    <p style="color:#525252;margin:0 0 16px">Family/bot pair(s) where crawl rate dropped >50% week-over-week. Counts are 10% sample (true volume ~10×).</p>
+    <p style="color:#525252;margin:0 0 16px">Family/bot pair(s) where crawl rate dropped >50% week-over-week. Counts are 1% sample (true volume ~100×).</p>
     <table style="width:100%;border-collapse:collapse;border:1px solid #e5e5e5">
       <thead><tr style="background:#fafafa">
         <th style="padding:8px 12px;text-align:left;font-size:11px;color:#525252">Bot</th>
