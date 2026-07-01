@@ -11109,6 +11109,117 @@ def run_carousel(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# VERIFIED-DATA REEL ENGINE (Phase 3, 2026-07-01) — reel_studio.py
+# -----------------------------------------------------------------------------
+# Multi-clip vertical reels (itinerary "N-day plan" from routes) with TRENDY
+# music (founder rule: no voiceover → trendy). Music is fetched from a baked
+# list of no-attribution CDN URLs at build time (no R2 hosting, no repo bloat,
+# no creds on the runner). Posts to YouTube + Instagram. Isolated lock.
+# ─────────────────────────────────────────────────────────────────────────────
+REEL_STUDIO_LOCK_FILE = Path(__file__).parent / ".autoposter-reel-studio.lock"
+
+
+def _run_reel_studio(force: bool = False, dry_run: bool = False):
+    import reel_studio as rstudio
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        return
+    today = date.today().isoformat()
+    st = load_state()
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · REEL STUDIO · {today}")
+    log.info("═" * 60)
+
+    content = sync_all_content()
+
+    # Route anti-repeat: skip routes used in the last 30 days (state-tracked).
+    routes_used = st.get("reel_studio_routes", {}) or {}
+    cut = (date.today() - timedelta(days=30)).isoformat()
+    used_ids = {rid for rid, d in routes_used.items() if (d or "") >= cut}
+
+    try:
+        built = rstudio.build(content, "itinerary", used_ids=used_ids)
+    except Exception as e:
+        import traceback
+        log.warning(f"reel_studio build failed: {e}\n{traceback.format_exc()}")
+        built = None
+    if not built:
+        log.warning("Reel studio: no route had enough footage this run — skipping slot.")
+        return
+
+    fmt = built["format"]
+    video_bytes = built["video_bytes"]
+    caption = built["caption"]
+    ig_caption = built.get("ig_caption", caption)
+    primary_dest_id = built.get("primary_dest_id")
+    route_id = built.get("route_id")
+    media_filename = built["video_filename"]
+    log.info(f"Reel built: fmt={fmt}, route={route_id}, {built.get('duration')}s, {len(video_bytes)//1024}KB")
+
+    media_obj = upload_media_bytes(video_bytes, f"reel_studio_{media_filename}", "video/mp4",
+                                   apply_brand_stamp=False)
+    if not media_obj:
+        log.error("Reel studio: video upload failed.")
+        return
+
+    accounts = [a for a in get_connected_accounts() if a.get("isActive")]
+    mode_suffix = "_reel_studio"
+    posted_any = False
+    for account in accounts:
+        platform = account["network"]
+        acc_id = account["id"]
+        username = account.get("username", acc_id)
+        label = f"{platform}/{username}"
+        if platform not in ("youtube", "instagram"):
+            continue
+        acc_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_key) == today and not force:
+            log.info(f"[{label}] already posted a studio reel today — skipping.")
+            continue
+        post_caption = sanitize(apply_platform_voice(ig_caption if platform == "instagram" else caption,
+                                                     "instagram" if platform == "instagram" else "yt_shorts"))
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish reel ({fmt}):\n{post_caption[:200]}...")
+            posted_any = True
+            continue
+        res = publish_reel(post_caption, account, media_obj, dry_run=False)
+        if not res:
+            log.warning(f"[{label}] studio reel post failed (API rejected).")
+            continue
+        post_id = res.get("post", {}).get("id", "unknown")
+        confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        _mark_posted_today(st, acc_key)
+        posted_any = True
+        record_publish(st, dest_id=primary_dest_id, fmt=f"reel_studio.{fmt}",
+                       post_id=post_id, platform=platform, media_id=media_filename)
+        status = "published" if confirmed else "queued_unconfirmed"
+        log.info(f"[{label}] {'✅' if confirmed else '⚠️'} studio reel {status} · post_id={post_id}")
+
+    if posted_any and route_id:
+        st.setdefault("reel_studio_routes", {})[route_id] = today
+    save_state(st)
+    log.info(f"Reel studio run complete (fmt={fmt}, route={route_id}, posted={posted_any}).")
+    log.info("═" * 60)
+
+
+def run_reel_studio(force: bool = False, dry_run: bool = False):
+    """Entry point for reel-studio mode with its own lock file (isolated slot)."""
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = REEL_STUDIO_LOCK_FILE
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_reel_studio(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ANALYTICS — Performance tracking & smart format weighting
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -11419,8 +11530,12 @@ if __name__ == "__main__":
     parser.add_argument("--carousel", action="store_true",
                         help="Generate and post a verified-data CAROUSEL to "
                              "Instagram + Facebook (carousel_studio). Rotates "
-                             "skip_list / best_month / collection, oldest-first, "
-                             "from the content sync. 1 per day per account.")
+                             "9 formats oldest-first, from the content sync. "
+                             "1 per day per account.")
+    parser.add_argument("--reel-studio", action="store_true",
+                        help="Generate and post a verified-data multi-clip REEL "
+                             "(reel_studio: itinerary 'N-day plan' from routes, "
+                             "trendy music) to YouTube + Instagram. 1/day.")
     parser.add_argument("--analytics", action="store_true",
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
@@ -11473,9 +11588,9 @@ if __name__ == "__main__":
             "runs, pass --allow-local explicitly.\n"
         )
         sys.exit(0)
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.carousel, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.carousel, args.reel_studio, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --carousel, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --carousel, --reel-studio, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -11494,6 +11609,8 @@ if __name__ == "__main__":
         run_yt_short(force=args.force, dry_run=args.dry_run)
     elif args.carousel:
         run_carousel(force=args.force, dry_run=args.dry_run)
+    elif args.reel_studio:
+        run_reel_studio(force=args.force, dry_run=args.dry_run)
     elif args.analytics:
         run_analytics()
     elif args.engagement_pull:
