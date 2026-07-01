@@ -37,6 +37,10 @@ on:
     # - cron: "47 10 * * *"
     # YT Short slot 2: 17:17 IST (11:47 UTC) — daily YT only
     - cron: "47 11 * * *"
+    # Carousel: 12:47 IST (07:17 UTC) — daily verified-data carousel to IG+FB
+    # (skip_list / best_month / collection, oldest-first). Replaces the dead
+    # data_carousel feed path — see carousel_studio.py / run_carousel().
+    - cron: "17 7 * * *"
     # Evening post: 19:47 IST (14:17 UTC) — daily IG+FB
     # Was 18:47 IST; pushed +1h on 2026-05-15 to land inside India IG peak
     # window (19:00-21:00) rather than 1h before it.
@@ -300,6 +304,11 @@ jobs:
               "47 11 * * *")
                 echo "args=--yt-short" >> $GITHUB_OUTPUT
                 echo "Cron-expression dispatch: --yt-short slot 2 (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
+                exit 0
+                ;;
+              "17 7 * * *")
+                echo "args=--carousel" >> $GITHUB_OUTPUT
+                echo "Cron-expression dispatch: --carousel (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
                 exit 0
                 ;;
               "17 14 * * *")

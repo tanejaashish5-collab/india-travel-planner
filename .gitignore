@@ -143,3 +143,7 @@ qa/findings/**/__pycache__/
 scripts/_loop/_validation-batch.workflow.js
 # Per-run festival celebration-batch scratch input (for _match_copy_celebration.py)
 data/festivals/_tmp_*.json
+
+# 2026-07-01 trendy/calm music pools — canonical in R2, keep out of repo (bloat)
+nakshiq-autoposter/assets/music_trendy/
+nakshiq-autoposter/assets/music_calm/

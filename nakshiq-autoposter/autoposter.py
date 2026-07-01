@@ -10959,6 +10959,156 @@ def run_yt_short(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# VERIFIED-DATA CAROUSEL ENGINE (2026-07-01) — carousel_studio.py
+# -----------------------------------------------------------------------------
+# Self-contained IG/FB carousel slot. Replaces the legacy `data_carousel` feed
+# path that silently fell back to score_card (its hero HEAD-check 403/404'd →
+# <2 slides → is_carousel=False), which is why the account posted ZERO carousels
+# for 65 days. This slot builds save-worthy carousels (skip_list / best_month /
+# collection) from the SAME verified content sync every other slot uses, renders
+# brand slides with PIL (carousel_studio), and never drops a slide (background
+# falls back R2-frame → gradient). Isolated lock like the YT-short slot.
+# ─────────────────────────────────────────────────────────────────────────────
+CAROUSEL_LOCK_FILE = Path(__file__).parent / ".autoposter-carousel.lock"
+
+
+def _carousel_format_order(state: dict) -> list:
+    """Carousel formats ordered oldest-posted-first (rotation + anti-repeat),
+    read from the canonical merged post log so a format that just posted rotates
+    to the back even across a race with another slot."""
+    import carousel_studio as cstudio
+    entries = merged_post_log(state)
+
+    def last_posted(fmt: str) -> str:
+        tag = f"carousel.{fmt}"
+        latest = ""
+        for e in entries:
+            if (e.get("format") or "") == tag:
+                d = e.get("date") or (e.get("timestamp") or "")[:10]
+                if d and d > latest:
+                    latest = d
+        return latest  # "" (never posted) sorts first → picked first
+
+    return sorted(cstudio.FORMAT_ROTATION, key=last_posted)
+
+
+def _run_carousel(force: bool = False, dry_run: bool = False):
+    """Build + publish one verified-data carousel to Instagram + Facebook."""
+    import carousel_studio as cstudio
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        return
+
+    today = date.today().isoformat()
+    st = load_state()
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · CAROUSEL · {today}")
+    log.info("═" * 60)
+
+    content = sync_all_content()
+
+    # Pick the oldest-rotated format that has enough verified data to build.
+    built = None
+    for fmt in _carousel_format_order(st):
+        try:
+            built = cstudio.build(content, fmt)
+        except Exception as e:
+            import traceback
+            log.warning(f"carousel build {fmt} failed: {e}")
+            log.warning(traceback.format_exc())
+            built = None
+        if built:
+            break
+    if not built:
+        log.warning("Carousel: no format had enough verified data this run — skipping slot.")
+        return
+
+    fmt = built["fmt"]
+    slides = built["slides"]
+    caption = built["caption"]
+    dest_ids = built.get("dest_ids") or []
+    primary_dest_id = dest_ids[0] if dest_ids else None
+    log.info(f"Carousel built: fmt={fmt}, {len(slides)} slides, primary={primary_dest_id}")
+
+    # Upload slides → carousel media list.
+    media_list = []
+    for i, b in enumerate(slides, 1):
+        m = upload_media_bytes(b, f"carousel_{fmt}_{today}_{i:02d}.jpg", "image/jpeg",
+                               apply_brand_stamp=False)
+        if m:
+            media_list.append(m)
+    if len(media_list) < 3:
+        log.error(f"Carousel: only {len(media_list)}/{len(slides)} slides uploaded — aborting (need >=3).")
+        return
+    log.info(f"Carousel: {len(media_list)} slides uploaded.")
+
+    accounts = [a for a in get_connected_accounts() if a.get("isActive")]
+    if not accounts:
+        log.warning("No active connected accounts.")
+        return
+
+    mode_suffix = "_carousel"
+    media_id = f"carousel_{fmt}_{today}"
+    posted_any = False
+    for account in accounts:
+        platform = account["network"]
+        acc_id = account["id"]
+        username = account.get("username", acc_id)
+        label = f"{platform}/{username}"
+        # Carousels are a feed format — Instagram + Facebook only (no YouTube).
+        if platform not in ("instagram", "facebook"):
+            continue
+        acc_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_key) == today and not force:
+            log.info(f"[{label}] already posted a carousel today — skipping.")
+            continue
+
+        post_caption = sanitize(apply_platform_voice(caption, platform))
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish carousel ({fmt}, {len(media_list)} slides):\n"
+                     f"{post_caption[:220]}...")
+            posted_any = True
+            continue
+
+        res = publish_feed_post(
+            post_caption, account, media_list, dry_run=False,
+            dest_id=primary_dest_id, fmt=f"carousel.{fmt}", media_id=media_id,
+            utm_content=build_utm_content(primary_dest_id, f"carousel_{fmt}"),
+        )
+        if not res:
+            log.warning(f"[{label}] carousel post failed (API rejected).")
+            continue
+        post_id = res.get("post", {}).get("id", "unknown")
+        _mark_posted_today(st, acc_key)
+        posted_any = True
+        # Cross-flow dedup + rotation log (format=carousel.<fmt> feeds _carousel_format_order).
+        record_publish(st, dest_id=primary_dest_id, fmt=f"carousel.{fmt}",
+                       post_id=post_id, platform=platform, media_id=media_id)
+        log.info(f"[{label}] ✅ carousel published ({fmt}) · post_id={post_id}")
+
+    save_state(st)
+    log.info(f"Carousel run complete (fmt={fmt}, posted={posted_any}).")
+    log.info("═" * 60)
+
+
+def run_carousel(force: bool = False, dry_run: bool = False):
+    """Entry point for carousel mode with its own lock file (isolated slot)."""
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = CAROUSEL_LOCK_FILE
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_carousel(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ANALYTICS — Performance tracking & smart format weighting
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -11266,6 +11416,11 @@ if __name__ == "__main__":
                         help="Generate and post an animated map Reel. "
                              "Rotates through 4 formats (state_heatmap, route_trace, "
                              "cluster_reveal, score_pulse) × 28 states.")
+    parser.add_argument("--carousel", action="store_true",
+                        help="Generate and post a verified-data CAROUSEL to "
+                             "Instagram + Facebook (carousel_studio). Rotates "
+                             "skip_list / best_month / collection, oldest-first, "
+                             "from the content sync. 1 per day per account.")
     parser.add_argument("--analytics", action="store_true",
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
@@ -11318,9 +11473,9 @@ if __name__ == "__main__":
             "runs, pass --allow-local explicitly.\n"
         )
         sys.exit(0)
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.carousel, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --carousel, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -11337,6 +11492,8 @@ if __name__ == "__main__":
         run_infographic(force=args.force, dry_run=args.dry_run)
     elif args.yt_short:
         run_yt_short(force=args.force, dry_run=args.dry_run)
+    elif args.carousel:
+        run_carousel(force=args.force, dry_run=args.dry_run)
     elif args.analytics:
         run_analytics()
     elif args.engagement_pull:
