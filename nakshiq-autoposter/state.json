@@ -30,11 +30,11 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-07-01",
     "xS5s8_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-06-30",
+    "m8EAd_yt_short": "2026-07-01",
     "m8EAd": "2026-06-30",
     "PdMu0": "2026-06-30",
     "m8EAd_evening": "2026-06-30",
@@ -304,6 +304,10 @@
     },
     {
       "destination_id": "kausani",
+      "date": "2026-07-01"
+    },
+    {
+      "destination_id": "lamayuru",
       "date": "2026-07-01"
     }
   ],
@@ -4264,6 +4268,24 @@
       "destination": "kausani",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-07-01"
+    },
+    {
+      "timestamp": "2026-07-01T13:24:16.634525+00:00",
+      "date": "2026-07-01",
+      "platform": "youtube",
+      "post_id": "Pwx10",
+      "destination": "lamayuru",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_lamayuru_hi_2026-07-01.mp4"
+    },
+    {
+      "timestamp": "2026-07-01T13:25:06.551610+00:00",
+      "date": "2026-07-01",
+      "platform": "instagram",
+      "post_id": "A3da7",
+      "destination": "lamayuru",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_lamayuru_hi_2026-07-01.mp4"
     }
   ],
   "theme_usage": {
