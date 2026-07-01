@@ -224,6 +224,26 @@ def _hashtags(*tags):
     return " ".join("#" + t.replace(" ", "") for t in tags if t)
 
 
+# Formats that rotate THROUGH their items across posts (founder 2026-07-01: "we
+# only shared 5 festivals — rotate through them across July"). run_carousel passes
+# `seen` (keys already featured) and stamps the returned item_keys after posting.
+_ROTATING = {"festival", "collection"}
+
+
+def _rotate(items, seen, n, keyfn):
+    """Return (chosen, keys_featured, recycled). Prefers items whose key isn't in
+    `seen`; when fewer than 3 fresh remain it starts a new cycle (recycled=True),
+    so a format keeps surfacing NEW items over the month instead of repeating the
+    same set. `items` should already be in priority order."""
+    seenset = set(seen or [])
+    fresh = [x for x in items if keyfn(x) not in seenset]
+    recycled = False
+    if len(fresh) < 3:
+        fresh = list(items); recycled = True
+    chosen = fresh[:n]
+    return chosen, [keyfn(x) for x in chosen], recycled
+
+
 def build_best_month(content: dict, mname: str) -> dict | None:
     dests = [d for d in _rows(content, "destinations")
              if (d.get("verdict") in (None, "go")) and (d.get("score") or 0) >= 4
@@ -286,16 +306,16 @@ def build_skip_list(content: dict, mname: str) -> dict | None:
             "dest_ids": [p["go_id"] for p in pairs if p["go_id"]]}
 
 
-def build_collection(content: dict, mname: str) -> dict | None:
-    colls = _rows(content, "collections")
+def build_collection(content: dict, mname: str, seen=None) -> dict | None:
+    colls = [c for c in _rows(content, "collections") if len(c.get("items") or []) >= 5]
     dmap = {d.get("id"): d for d in _rows(content, "destinations_full") or _rows(content, "destinations")}
-    best = None
-    for c in colls:
-        items = c.get("items") or []
-        if len(items) >= 5:
-            best = c; break
-    if not best:
+    if not colls:
         return None
+    # rotate which collection is featured across posts (105 collections)
+    chosen, item_keys, recycled = _rotate(colls, seen, 1, lambda c: c.get("id"))
+    if not chosen:
+        return None
+    best = chosen[0]
     items = best.get("items")[:6]
     title = (best.get("name") or "").strip()
     slides = [_cover_slide(
@@ -317,23 +337,27 @@ def build_collection(content: dict, mname: str) -> dict | None:
                + "\n\nFull collection with scores → nakshiq.com\n\n"
                + _hashtags("indiatravel", "traveltips", "traveldeeper", "incredibleindia"))
     return {"fmt": "collection", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
-            "dest_ids": [it.get("destination_id") for it in items]}
+            "dest_ids": [it.get("destination_id") for it in items],
+            "item_keys": item_keys, "recycled": recycled}
 
 
-def build_festival(content: dict, mname: str) -> dict | None:
+def build_festival(content: dict, mname: str, seen=None) -> dict | None:
     fests = _rows(content, "festivals")
-    picks = []
+    pool = []
     for f in fests:
         nm = (f.get("name") or "").strip()
         body = (f.get("description") or f.get("significance") or "").strip()
         if not nm or not body:
             continue
-        picks.append({
+        pool.append({
             "name": nm, "where": (f.get("destination_name") or "").strip(),
             "when": (f.get("approximate_date") or "").strip(),
             "line": body, "bg": f.get("destination_id") or "",
         })
-    picks = picks[:5]
+    if len(pool) < 3:
+        return None
+    # rotate through the month's festivals across posts (fresh 5 each time)
+    picks, item_keys, recycled = _rotate(pool, seen, 5, lambda p: p["name"])
     if len(picks) < 3:
         return None
     # Framed as month-DEFINING (evergreen), not "upcoming this month" — festival
@@ -359,7 +383,8 @@ def build_festival(content: dict, mname: str) -> dict | None:
                + _hashtags("indiatravel", f"{mname.lower()}festivals", "indianfestivals",
                            "traveltips", "incredibleindia"))
     return {"fmt": "festival", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
-            "dest_ids": [p["bg"] for p in picks if p["bg"]]}
+            "dest_ids": [p["bg"] for p in picks if p["bg"]],
+            "item_keys": item_keys, "recycled": recycled}
 
 
 def build_cost(content: dict, mname: str) -> dict | None:
@@ -618,11 +643,13 @@ FORMAT_ROTATION = ["skip_list", "festival", "food", "best_month", "comparison",
                    "persona", "cost", "route", "collection"]
 
 
-def build(content: dict, fmt: str, month: int | None = None) -> dict | None:
-    """Return {fmt, slides:[jpeg bytes], caption, dest_ids} or None if data thin."""
+def build(content: dict, fmt: str, month: int | None = None, seen=None) -> dict | None:
+    """Return {fmt, slides:[jpeg bytes], caption, dest_ids, [item_keys, recycled]} or None."""
     mname = month_long(month)
     fn = BUILDERS.get(fmt)
-    return fn(content, mname) if fn else None
+    if not fn:
+        return None
+    return fn(content, mname, seen=seen) if fmt in _ROTATING else fn(content, mname)
 
 
 def build_first_available(content: dict, order: list[str] | None = None, month: int | None = None) -> dict | None:

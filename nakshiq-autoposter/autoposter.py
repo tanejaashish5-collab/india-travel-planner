@@ -11006,12 +11006,34 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
     log.info("═" * 60)
 
     content = sync_all_content()
+    seen_map = st.get("carousel_seen", {}) or {}
+
+    order = _carousel_format_order(st)
+    # Festival cadence boost (founder 2026-07-01: "rotate through the festivals
+    # throughout the month smartly"). In a festival-heavy month, prioritise the
+    # festival carousel until the month's festivals are covered — but no more than
+    # every other day, so the other formats still rotate. Self-limiting: as the
+    # backlog clears (via carousel_seen) it falls back to normal oldest-first.
+    try:
+        _fest = (content.get("festivals") or {}).get("data") or []
+        _fest = [f for f in _fest if f.get("name") and (f.get("description") or f.get("significance"))]
+        _fseen = set(seen_map.get("festival", []))
+        _backlog = len([f for f in _fest if f.get("name") not in _fseen])
+        if (_backlog >= 6 and "festival" in order
+                and not _format_posted_within(st, 1, lambda x: x == "carousel.festival")):
+            # every-other-day during a festival-heavy backlog (not 2 days running),
+            # so festivals get covered while other formats still fill alternate days
+            order = ["festival"] + [f for f in order if f != "festival"]
+            log.info(f"Carousel: festival cadence boost (backlog={_backlog} unfeatured).")
+    except Exception as e:
+        log.warning(f"festival cadence check skipped: {e}")
 
     # Pick the oldest-rotated format that has enough verified data to build.
+    # `seen` rotates a format THROUGH its items across posts (fresh set each time).
     built = None
-    for fmt in _carousel_format_order(st):
+    for fmt in order:
         try:
-            built = cstudio.build(content, fmt)
+            built = cstudio.build(content, fmt, seen=seen_map.get(fmt))
         except Exception as e:
             import traceback
             log.warning(f"carousel build {fmt} failed: {e}")
@@ -11085,6 +11107,14 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
         record_publish(st, dest_id=primary_dest_id, fmt=f"carousel.{fmt}",
                        post_id=post_id, platform=platform, media_id=media_id)
         log.info(f"[{label}] ✅ carousel published ({fmt}) · post_id={post_id}")
+
+    # Rotation memory: record the items this format just featured so the next
+    # time it fires it surfaces a FRESH set. recycled=True means the builder
+    # started a new cycle → reset the seen list to just this batch.
+    if posted_any and built.get("item_keys"):
+        cs_seen = st.setdefault("carousel_seen", {})
+        prev = [] if built.get("recycled") else (cs_seen.get(fmt) or [])
+        cs_seen[fmt] = list(dict.fromkeys(list(prev) + list(built["item_keys"])))
 
     save_state(st)
     log.info(f"Carousel run complete (fmt={fmt}, posted={posted_any}).")
