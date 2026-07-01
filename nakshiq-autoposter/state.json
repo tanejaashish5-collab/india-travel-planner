@@ -35,16 +35,17 @@
     "GAh5p_yt_short": "2026-07-01",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-01",
-    "m8EAd": "2026-06-30",
-    "PdMu0": "2026-06-30",
-    "m8EAd_evening": "2026-06-30",
-    "PdMu0_evening": "2026-06-30",
+    "m8EAd": "2026-07-01",
+    "PdMu0": "2026-07-01",
+    "m8EAd_evening": "2026-07-01",
+    "PdMu0_evening": "2026-07-01",
     "GAh5p_reel_studio": "2026-07-01",
     "m8EAd_reel_studio": "2026-07-01",
     "m8EAd_carousel": "2026-07-01",
-    "PdMu0_carousel": "2026-07-01"
+    "PdMu0_carousel": "2026-07-01",
+    "m8EAd_evening_story": "2026-07-01"
   },
-  "last_sync": "2026-06-30T16:37:12.464876+00:00",
+  "last_sync": "2026-07-01T16:44:18.420154+00:00",
   "posted_destinations": [
     {
       "destination_id": "pangong-lake",
@@ -313,11 +314,30 @@
     {
       "destination_id": "zanskar",
       "date": "2026-07-01"
+    },
+    {
+      "destination_id": "hogenakkal",
+      "date": "2026-07-01"
+    },
+    {
+      "destination_id": "jog-falls",
+      "date": "2026-07-01"
+    },
+    {
+      "destination_id": "kolad",
+      "date": "2026-07-01"
+    },
+    {
+      "destination_id": "bhimashankar",
+      "date": "2026-07-01"
+    },
+    {
+      "destination_id": "khardung-la",
+      "date": "2026-07-01"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
@@ -337,10 +357,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ],
     "PdMu0": [
-      "v4_dw_heritage_reel_sensory_pov",
       "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
@@ -360,7 +380,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -4299,6 +4320,39 @@
       "destination": "zanskar",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_zanskar_hi_2026-07-01.mp4"
+    },
+    {
+      "timestamp": "2026-07-01T16:45:45.701522+00:00",
+      "date": "2026-07-01",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "41SXi",
+      "destination": "hogenakkal",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-07-01T16:46:20.190985+00:00",
+      "date": "2026-07-01",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "LeFoV",
+      "destination": "bhimashankar",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-07-01T16:46:56.039556+00:00",
+      "date": "2026-07-01",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "3PDJk",
+      "destination": "hogenakkal",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -4611,6 +4665,21 @@
       ],
       "lepakshi": [
         "2026-06-27"
+      ],
+      "hogenakkal": [
+        "2026-07-01"
+      ],
+      "jog-falls": [
+        "2026-07-01"
+      ],
+      "kolad": [
+        "2026-07-01"
+      ],
+      "bhimashankar": [
+        "2026-07-01"
+      ],
+      "khardung-la": [
+        "2026-07-01"
       ]
     },
     "morning_formats": {
@@ -4780,6 +4849,9 @@
       ],
       "reel_map": [
         "2026-06-13"
+      ],
+      "data_carousel": [
+        "2026-07-01"
       ]
     },
     "reels": {
@@ -4917,6 +4989,9 @@
       ],
       "sangla": [
         "2026-06-28"
+      ],
+      "hogenakkal": [
+        "2026-07-01"
       ]
     },
     "audience_tags": {
@@ -5184,11 +5259,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nubra-valley",
+    "shared_best": "bhimashankar",
     "collection": "budget-under-2000"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-06-23",
+  "data_carousel_floor_last": "2026-07-01",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-07-01"
   }
