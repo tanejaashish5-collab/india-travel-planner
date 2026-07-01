@@ -127,7 +127,11 @@ def _dtext(textfile=None, text=None, font=BOLD, size=54, color=WHITE, x="(w-tw)/
     if textfile:
         parts.append(f"textfile={textfile}")
     else:
-        parts.append("text='" + (text or "").replace(":", "\\:").replace("'", "") + "'")
+        # escape backslash FIRST, then ffmpeg-special ':' and '%' (drawtext expands
+        # %{...}); strip quotes. Prevents a name like "100% off" / "Devil's" from
+        # corrupting or dropping the whole text layer. (2026-07-01 audit MEDIUM)
+        t = (text or "").replace("\\", "\\\\").replace("%", "\\%").replace(":", "\\:").replace("'", "")
+        parts.append("text='" + t + "'")
     if shadow:
         parts += ["shadowcolor=black@0.85", "shadowx=3", "shadowy=4"]
     if borderw:
@@ -252,16 +256,28 @@ def build_itinerary(content: dict, month: int | None = None, used_ids: set | Non
     dmap = {d.get("id"): d for d in (_rows(content, "destinations_full") or _rows(content, "destinations"))}
 
     def resolve(s):
-        sid = s.get("id") if isinstance(s, dict) else str(s).strip()
-        d = dmap.get(sid)
-        if d and _fetch_clip(sid):
-            return {"place": d.get("name") or sid, "clip": _fetch_clip(sid),
-                    "line": (d.get("tagline") or "")[:70], "id": sid}
-        return None
+        # stops may be slug strings (text[] in DB) OR dicts keyed destination_id/id.
+        # (2026-07-01 audit HIGH: dict stops used the wrong key → 0 reels forever.)
+        if isinstance(s, dict):
+            sid = (s.get("id") or s.get("destination_id") or "").strip()
+            fb_name = (s.get("name") or "").strip()
+            fb_line = (s.get("tagline") or s.get("note") or "").strip()
+        else:
+            sid = str(s).strip(); fb_name = ""; fb_line = ""
+        if not sid:
+            return None
+        clip = _fetch_clip(sid)          # a stop with no footage is skipped
+        if not clip:
+            return None
+        d = dmap.get(sid) or {}
+        return {"place": (d.get("name") or fb_name or sid), "clip": clip,
+                "line": ((d.get("tagline") or fb_line or "")[:70]), "id": sid}
 
     for r in routes:
-        rid = r.get("id") or r.get("name")
-        if rid in used_ids:
+        # canonical dedup key — computed identically here and stored as route_id
+        # below so the check can never miss the store. (2026-07-01 audit MEDIUM)
+        rid = r.get("id") or (r.get("name") or r.get("title") or "").strip()
+        if rid and rid in used_ids:
             continue
         raw = r.get("stops") or []
         stops = [x for x in (resolve(s) for s in raw) if x][:5]
@@ -292,7 +308,7 @@ def build_itinerary(content: dict, month: int | None = None, used_ids: set | Non
             "format": "itinerary", "video_bytes": video_bytes,
             "video_filename": f"itinerary_{(r.get('id') or 'route')}.mp4",
             "caption": caption, "ig_caption": caption, "duration": dur,
-            "primary_dest_id": stops[0]["id"], "route_id": r.get("id") or rname,
+            "primary_dest_id": stops[0]["id"], "route_id": rid,
         }
     return None
 

@@ -336,10 +336,13 @@ def build_festival(content: dict, mname: str) -> dict | None:
     picks = picks[:5]
     if len(picks) < 3:
         return None
+    # Framed as month-DEFINING (evergreen), not "upcoming this month" — festival
+    # dates are freeform text we can't reliably parse, and some may already have
+    # passed this month, so we never assert they're still ahead. (2026-07-01 audit)
     slides = [_cover_slide(
         f"FESTIVAL CALENDAR · {mname.upper()}",
-        [f"{len(picks)} festivals worth", "planning a whole", f"trip around this {mname}"],
-        "When and where to catch each one — verified dates and the town that does it best.",
+        [f"{len(picks)} festivals that", "define", f"{mname} in India"],
+        "When each one falls, the town that does it best, and what to expect — save it for the year.",
         picks[0]["bg"])]
     for i, p in enumerate(picks, 1):
         badge = (p["when"][:16] or "FESTIVAL")
@@ -516,9 +519,12 @@ def build_comparison(content: dict, mname: str) -> dict | None:
         if not fd or not hd or not (fd.get("tagline") and hd.get("tagline")):
             continue
 
+        # NOTE: resolve from destinations_full for name coverage, but that source
+        # carries an arbitrary month's score (January-first union), so we show ONLY
+        # the month-agnostic tagline here — never a score that could be a wrong-month
+        # verdict (a 'go' score in Jan can be a 'skip' in Jul). (2026-07-01 audit HIGH)
         def sub(x):
-            sc = _score_disp(x.get("score")) if x.get("score") else ""
-            return (sc + " · " if sc else "") + (x.get("tagline") or "")
+            return (x.get("tagline") or "")
         pairs.append({"a": famous, "a_sub": sub(fd), "b": hidden, "b_sub": sub(hd),
                       "bg": hd.get("id") or ""})
     pairs = pairs[:5]
