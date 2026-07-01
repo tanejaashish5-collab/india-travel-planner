@@ -40,7 +40,9 @@
     "m8EAd_evening": "2026-06-30",
     "PdMu0_evening": "2026-06-30",
     "GAh5p_reel_studio": "2026-07-01",
-    "m8EAd_reel_studio": "2026-07-01"
+    "m8EAd_reel_studio": "2026-07-01",
+    "m8EAd_carousel": "2026-07-01",
+    "PdMu0_carousel": "2026-07-01"
   },
   "last_sync": "2026-06-30T16:37:12.464876+00:00",
   "posted_destinations": [
@@ -298,6 +300,10 @@
     },
     {
       "destination_id": "leh",
+      "date": "2026-07-01"
+    },
+    {
+      "destination_id": "kausani",
       "date": "2026-07-01"
     }
   ],
@@ -4240,6 +4246,24 @@
       "destination": "leh",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_khardung-la-nubra-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-07-01T10:53:38.406250+00:00",
+      "date": "2026-07-01",
+      "platform": "instagram",
+      "post_id": "yEw7j",
+      "destination": "kausani",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-01"
+    },
+    {
+      "timestamp": "2026-07-01T10:53:40.480521+00:00",
+      "date": "2026-07-01",
+      "platform": "facebook",
+      "post_id": "gcBNx",
+      "destination": "kausani",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-01"
     }
   ],
   "theme_usage": {
