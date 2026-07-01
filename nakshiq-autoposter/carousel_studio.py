@@ -320,12 +320,92 @@ def build_collection(content: dict, mname: str) -> dict | None:
             "dest_ids": [it.get("destination_id") for it in items]}
 
 
+def build_festival(content: dict, mname: str) -> dict | None:
+    fests = _rows(content, "festivals")
+    picks = []
+    for f in fests:
+        nm = (f.get("name") or "").strip()
+        body = (f.get("description") or f.get("significance") or "").strip()
+        if not nm or not body:
+            continue
+        picks.append({
+            "name": nm, "where": (f.get("destination_name") or "").strip(),
+            "when": (f.get("approximate_date") or "").strip(),
+            "line": body, "bg": f.get("destination_id") or "",
+        })
+    picks = picks[:5]
+    if len(picks) < 3:
+        return None
+    slides = [_cover_slide(
+        f"FESTIVAL CALENDAR · {mname.upper()}",
+        [f"{len(picks)} festivals worth", "planning a whole", f"trip around this {mname}"],
+        "When and where to catch each one — verified dates and the town that does it best.",
+        picks[0]["bg"])]
+    for i, p in enumerate(picks, 1):
+        badge = (p["when"][:16] or "FESTIVAL")
+        slides.append(_item_slide(i, len(picks), badge, GOLD, p["where"], p["name"],
+                                  p["line"][:150], p["bg"]))
+    slides.append(_end_slide(["Plan the trip", "around the date.", ""],
+                             "Full festival calendar with dates, towns and what to expect → nakshiq.com",
+                             picks[0]["bg"]))
+    caption = (f"{mname.upper()} FESTIVAL CALENDAR 🎉\n\nSave this — the dates move every year, "
+               f"and the town matters as much as the festival.\n\n"
+               + "\n".join(f"{i}. {p['name']}" + (f" — {p['where']}" if p['where'] else "")
+                           for i, p in enumerate(picks, 1))
+               + "\n\nFull calendar with verified dates → nakshiq.com\n\n"
+               + _hashtags("indiatravel", f"{mname.lower()}festivals", "indianfestivals",
+                           "traveltips", "incredibleindia"))
+    return {"fmt": "festival", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
+            "dest_ids": [p["bg"] for p in picks if p["bg"]]}
+
+
+def build_cost(content: dict, mname: str) -> dict | None:
+    ci = _rows(content, "cost_index")
+    picks = []
+    for d in ci:
+        nm = (d.get("destination_name") or d.get("name") or "").strip()
+        sleep = (d.get("sleep_price_range_inr") or "").strip()
+        if not nm or not sleep:
+            continue
+        extra = (d.get("reach_summary") or d.get("fuel_warning") or "").strip()
+        picks.append({
+            "name": nm, "state": (d.get("state") or "").strip(),
+            "sleep": sleep, "line": extra or f"Verified nightly stay range for {mname}.",
+            "bg": d.get("destination_id") or d.get("id") or "",
+        })
+    picks = picks[:5]
+    if len(picks) < 3:
+        return None
+    slides = [_cover_slide(
+        f"WHAT IT ACTUALLY COSTS · {mname.upper()}",
+        ["Real nightly", "prices for", f"{len(picks)} places"],
+        "Verified stay ranges — so you can budget a trip before you book anything.",
+        picks[0]["bg"])]
+    for i, p in enumerate(picks, 1):
+        slides.append(_item_slide(i, len(picks), f"Rs {p['sleep']}/nt", GREEN, p["state"],
+                                  p["name"], p["line"][:150], p["bg"]))
+    slides.append(_end_slide(["Budget it", "before you book.", ""],
+                             "Full ₹/day breakdown by traveller type for 500+ places → nakshiq.com",
+                             picks[0]["bg"]))
+    caption = (f"WHAT A TRIP ACTUALLY COSTS · {mname.upper()} 💸\n\nVerified nightly stay ranges — "
+               f"save it so you can budget before you book.\n\n"
+               + "\n".join(f"{i}. {p['name']} — ₹{p['sleep']}/night" for i, p in enumerate(picks, 1))
+               + "\n\nFull ₹/day breakdown → nakshiq.com\n\n"
+               + _hashtags("indiatravel", "budgettravel", "traveltips", "traveldeeper", "incredibleindia"))
+    return {"fmt": "cost", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
+            "dest_ids": [p["bg"] for p in picks if p["bg"]]}
+
+
 BUILDERS = {
     "best_month": build_best_month,
     "skip_list": build_skip_list,
     "collection": build_collection,
+    "festival": build_festival,
+    "cost": build_cost,
 }
-FORMAT_ROTATION = ["skip_list", "best_month", "collection"]  # skip_list first = biggest gap
+# Rotation order (oldest-posted-first at runtime; this is just the never-posted tiebreak).
+# skip_list first = biggest content gap; then the seasonal + budget levers.
+FORMAT_ROTATION = ["skip_list", "festival", "best_month", "cost", "collection"]
 
 
 def build(content: dict, fmt: str, month: int | None = None) -> dict | None:
