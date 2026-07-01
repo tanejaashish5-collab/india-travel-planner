@@ -8,6 +8,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicHeroParallax } from "@/components/cinematic-hero-parallax";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
@@ -344,81 +345,92 @@ export default async function FestivalDetailPage({
       )}
       <Nav />
 
-      {/* Destination hero image */}
+      {/* Full-bleed festival hero — 100vh, video/photo/image bleeds behind the
+          transparent Nav (Nav.tsx hasHero recognises /festivals/[slug]), kicker
+          + title + date overlaid bottom-left. Mirrors destination-detail-cinematic's
+          Act I (the dest hub) and luxury-hero-carousel — the site's "primary
+          cover" convention, now extended to festivals since each one has a real,
+          festival-specific clip. */}
       {f.destination_id && (
-        <div
+        <section
+          className="nq-glow-bookend"
           style={{
             position: "relative",
-            width: "100%",
-            height: "clamp(280px, 40vh, 480px)",
-            background: "var(--paper-2)",
+            minHeight: "100vh",
             overflow: "hidden",
-            marginTop: 88,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            padding: "120px 24px 56px",
+            color: "var(--bone)",
           }}
         >
-          {heroVideo ? (
-            // LCP-safe: poster is an R2 webp that paints immediately; the
-            // clip preloads metadata-only and autoplays muted over it. If the
-            // video fails the poster frame stays — no broken-media state.
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-hidden="true"
-              poster={destinationImage(f.destination_id, 1600)}
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                filter: "saturate(0.88) brightness(0.72)",
-              }}
-            >
-              <source src={heroVideo} type="video/mp4" />
-            </video>
-          ) : heroPhoto ? (
-            // Real festival-celebration photo (R2). eslint-disable: external R2
-            // host rendered as a full-bleed background, not a layout image.
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={heroPhoto}
-              alt={`${f.name} — festival celebration`}
-              loading="eager"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                filter: "saturate(0.92) brightness(0.74)",
-              }}
-            />
-          ) : (
-            <Image
-              src={`/images/destinations/${f.destination_id}.jpg`}
-              alt={`${destName ?? f.destination_id} — host of ${f.name}`}
-              fill
-              priority
-              sizes="100vw"
-              style={{ objectFit: "cover", filter: "saturate(0.88) brightness(0.72)" }}
-            />
-          )}
+          <CinematicHeroParallax strength={0.03}>
+            <div aria-hidden style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+              {heroVideo ? (
+                // LCP-safe: poster is an R2 webp that paints immediately; the
+                // clip preloads metadata-only and autoplays muted over it. If the
+                // video fails the poster frame stays — no broken-media state.
+                // nq-kb-1 bakes the desaturate/dim filter into its keyframes, so
+                // no separate inline filter is needed (matches act-1/5/9 usage).
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-hidden="true"
+                  className="nq-kb-1"
+                  poster={destinationImage(f.destination_id, 2400)}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                >
+                  <source src={heroVideo} type="video/mp4" />
+                </video>
+              ) : heroPhoto ? (
+                // Real festival-celebration photo (R2). eslint-disable: external R2
+                // host rendered as a full-bleed background, not a layout image.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={heroPhoto}
+                  alt={`${f.name} — festival celebration`}
+                  loading="eager"
+                  className="nq-kb-2"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    filter: "saturate(0.88) brightness(0.78)",
+                  }}
+                />
+              ) : (
+                <Image
+                  src={`/images/destinations/${f.destination_id}.jpg`}
+                  alt={`${destName ?? f.destination_id} — host of ${f.name}`}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="nq-kb-2"
+                  style={{ objectFit: "cover", filter: "saturate(0.88) brightness(0.78)" }}
+                />
+              )}
+            </div>
+          </CinematicHeroParallax>
           <div
+            aria-hidden
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(180deg, rgba(10,10,8,0.20) 0%, transparent 40%, rgba(10,10,8,0.85) 100%)",
+              zIndex: 1,
+              background:
+                "linear-gradient(180deg, rgba(10,10,8,0.55) 0%, rgba(10,10,8,0.12) 32%, rgba(10,10,8,0.42) 68%, rgba(10,10,8,0.94) 100%)",
             }}
           />
           {(heroVideo ? heroCredit : heroPhotoCredit) && (
             <span
               style={{
                 position: "absolute",
-                bottom: 6,
-                right: 10,
+                bottom: 14,
+                right: 18,
                 zIndex: 2,
                 fontSize: 10,
                 lineHeight: 1.2,
@@ -429,51 +441,100 @@ export default async function FestivalDetailPage({
               {heroVideo ? heroCredit : heroPhotoCredit}
             </span>
           )}
-        </div>
+
+          {/* Bottom-anchored: kicker · title · date — same content the old
+              banner-style <header> used to carry below the hero, now overlaid
+              on it (magazine-cover composition, matches the dest hub Act I). */}
+          <div style={{ position: "relative", zIndex: 2, maxWidth: 980 }}>
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 18,
+                letterSpacing: "0.22em",
+              }}
+            >
+              {(stateName ? `${t("kicker")} · ${stateName.toUpperCase()}` : t("kicker"))}
+            </p>
+            <Title
+              as="h1"
+              className="nq-display"
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(40px, 8vw, 120px)",
+                lineHeight: 0.96,
+                letterSpacing: "-0.026em",
+                margin: "0 0 20px",
+                textWrap: "balance",
+              }}
+            >
+              {f.name}.
+            </Title>
+            <p
+              className="nq-mono"
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 12,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--bone-dim)",
+              }}
+            >
+              {dateLabel}{destName ? ` · ${destName}` : ""}
+            </p>
+          </div>
+        </section>
       )}
 
       <main id="main-content" className="nq-grain" style={{ position: "relative", padding: "56px 24px 64px" }}>
-        <header style={{ maxWidth: 980, margin: "0 auto 48px" }}>
-          <p
-            className="nq-kicker"
-            style={{
-              color: "var(--vermillion)",
-              marginBottom: 20,
-              letterSpacing: "0.22em",
-            }}
-          >
-            {(stateName ? `${t("kicker")} · ${stateName.toUpperCase()}` : t("kicker"))}
-          </p>
-          <Title
-            as="h1"
-            className="nq-display"
-            style={{
-              fontFamily: "var(--cinema-display)",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: "clamp(36px, 6vw, 76px)",
-              lineHeight: 1.0,
-              letterSpacing: "-0.022em",
-              margin: 0,
-              textWrap: "balance",
-            }}
-          >
-            {f.name}.
-          </Title>
-          <p
-            className="nq-mono"
-            style={{
-              fontFamily: "var(--cinema-mono)",
-              fontSize: 12,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "var(--bone-dim)",
-              marginTop: 24,
-            }}
-          >
-            {dateLabel}{destName ? ` · ${destName}` : ""}
-          </p>
-        </header>
+        {/* Defensive fallback — every live festival row has a destination_id
+            today (verified 501/501, 2026-07-01), but a future row without one
+            would have no hero to carry the title, so it renders here instead. */}
+        {!f.destination_id && (
+          <header style={{ maxWidth: 980, margin: "0 auto 48px" }}>
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 20,
+                letterSpacing: "0.22em",
+              }}
+            >
+              {(stateName ? `${t("kicker")} · ${stateName.toUpperCase()}` : t("kicker"))}
+            </p>
+            <Title
+              as="h1"
+              className="nq-display"
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(36px, 6vw, 76px)",
+                lineHeight: 1.0,
+                letterSpacing: "-0.022em",
+                margin: 0,
+                textWrap: "balance",
+              }}
+            >
+              {f.name}.
+            </Title>
+            <p
+              className="nq-mono"
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 12,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--bone-dim)",
+                marginTop: 24,
+              }}
+            >
+              {dateLabel}{destName ? ` · ${destName}` : ""}
+            </p>
+          </header>
+        )}
 
         {/* Festival prose */}
         <article style={{ maxWidth: 720, margin: "0 auto 64px" }}>

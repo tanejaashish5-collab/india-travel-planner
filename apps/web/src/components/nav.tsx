@@ -155,10 +155,20 @@ export function Nav() {
   );
   const isCinematic = isLandingRoot || isCinematicPage || isCinematicDestination;
 
+  // /festivals/[festivalSlug] detail pages got a full-bleed 100vh video hero
+  // (2026-07-01) — exclude the /festivals/month/ and /festivals/state/ FILTER
+  // hubs, which are list pages with no hero (Next's literal-segment routing
+  // already shadows these prefixes ahead of the [festivalSlug] dynamic route,
+  // so this mirrors actual route precedence, not a heuristic).
+  const isFestivalDetail =
+    pathname.startsWith(`/${locale}/festivals/`) &&
+    !pathname.startsWith(`/${locale}/festivals/month/`) &&
+    !pathname.startsWith(`/${locale}/festivals/state/`);
+
   // Hero-scroll transparency applies to any cinematic page with a full-bleed
-  // 100vh hero (landing + cinematic destination). Legal pages render solid
-  // from scroll position 0 since they have no hero.
-  const hasHero = isLandingRoot || isCinematicDestination;
+  // 100vh hero (landing + cinematic destination + festival detail). Legal
+  // pages render solid from scroll position 0 since they have no hero.
+  const hasHero = isLandingRoot || isCinematicDestination || isFestivalDetail;
   const [overHero, setOverHero] = useState(hasHero);
   useEffect(() => {
     if (!hasHero) return;
