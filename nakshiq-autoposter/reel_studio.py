@@ -249,6 +249,32 @@ def _render(cover, stops, end, primary, voiceover=False):
     return (out.read_bytes(), round(dur, 1)) if out.exists() else None
 
 
+# ── REEL QUALITY BAR (founder rule, 2026-07-01) ──────────────────────────────
+# "Every posted reel must be INFORMATIONAL, SHAREABLE, REPOSTABLE, engagement-
+#  heavy — NEVER a singular generic post (one pretty place) that thousands of
+#  accounts already do."  This is ENFORCED, not aspirational: a build that does
+#  not clear the bar returns None, and the slot skips rather than ship a thin
+#  reel. Every current + future reel format must pass _meets_reel_bar():
+#    1. INFORMATIONAL   — >= REEL_MIN_BEATS distinct verified content beats
+#                         (stops / facts / picks), not a single subject
+#    2. SAVEABLE/SHAREABLE — a clear takeaway a viewer would bookmark or send
+#    3. DIFFERENTIATED  — built on our verified data (plan/route/list/compare),
+#                         never a lone-destination beauty clip
+#    4. ACTIONABLE      — ends on a takeaway CTA ("full plan -> nakshiq.com")
+REEL_MIN_BEATS = 3
+
+
+def _meets_reel_bar(cover: dict, stops: list, end: dict) -> tuple[bool, str]:
+    if not cover or not cover.get("title") or not cover.get("hook"):
+        return False, "missing hook/title"
+    beats = [s for s in (stops or []) if s and s.get("place")]
+    if len(beats) < REEL_MIN_BEATS:
+        return False, f"only {len(beats)} info beats (< {REEL_MIN_BEATS}) — too singular"
+    if not end or not end.get("headline"):
+        return False, "no takeaway/CTA"
+    return True, "ok"
+
+
 # ── FORMAT: itinerary (from routes) ──────────────────────────────────────────
 def build_itinerary(content: dict, month: int | None = None, used_ids: set | None = None) -> dict | None:
     used_ids = used_ids or set()
@@ -295,6 +321,10 @@ def build_itinerary(content: dict, month: int | None = None, used_ids: set | Non
             "clip": stops[0]["clip"],
         }
         end = {"headline": f"The full {rname} plan, free", "clip": stops[0]["clip"]}
+        ok, why = _meets_reel_bar(cover, stops, end)
+        if not ok:
+            print(f"reel_studio: route {rid} fails quality bar ({why}) — skipping")
+            continue
         rendered = _render(cover, stops, end, stops[0]["id"], voiceover=False)
         if not rendered:
             continue
