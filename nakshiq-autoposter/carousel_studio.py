@@ -396,16 +396,220 @@ def build_cost(content: dict, mname: str) -> dict | None:
             "dest_ids": [p["bg"] for p in picks if p["bg"]]}
 
 
+def _versus_slide(idx, total, a_name, a_sub, b_name, b_sub, bg_slug):
+    c = _bg(bg_slug, darken=0.55); d = ImageDraw.Draw(c)
+    num = f"{idx:02d}/{total:02d}"
+    tw = d.textlength(num, font=_F(MONO, 28)); d.text((W - 70 - tw, 80), num, font=_F(MONO, 28), fill=MUT)
+    y = H - 560
+    _chip(d, (70, y), "FAMOUS", _F(BOLD, 30), INK, WHITE); y += 66
+    for ln in _wrap(d, a_name, _F(BOLD, 56), W - 140):
+        d.text((68, y), ln, font=_F(BOLD, 56), fill=WHITE); y += 60
+    for ln in _wrap(d, a_sub, _F(SERIF, 34), W - 150)[:2]:
+        d.text((70, y), ln, font=_F(SERIF, 34), fill=(210, 216, 226)); y += 44
+    y += 18
+    _chip(d, (70, y), "QUIETER TWIN", _F(BOLD, 30), INK, GOLD); y += 66
+    for ln in _wrap(d, b_name, _F(BOLD, 56), W - 140):
+        d.text((68, y), ln, font=_F(BOLD, 56), fill=GOLD); y += 60
+    for ln in _wrap(d, b_sub, _F(SERIF, 34), W - 150)[:2]:
+        d.text((70, y), ln, font=_F(SERIF, 34), fill=(210, 216, 226)); y += 44
+    d.text((70, H - 70), "NakshIQ · verified", font=_F(MONO, 24), fill=MUT)
+    return c
+
+
+def build_food(content: dict, mname: str) -> dict | None:
+    eats = _rows(content, "eateries")
+    dmap = {d.get("id"): d for d in (_rows(content, "destinations_full") or _rows(content, "destinations"))}
+    picks = []
+    for e in eats:
+        nm = (e.get("name") or "").strip()
+        did = e.get("destination_id")
+        why = (e.get("why_it_matters") or "").strip()
+        sig = (e.get("signature_dish") or "").strip()
+        must = e.get("must_try") or []
+        line = why if len(why) > 30 else (f"Famous for {sig}." if sig else (f"Go for the {must[0]}." if must else ""))
+        if not nm or not did or not line:
+            continue
+        dn = (dmap.get(did, {}).get("name") or (e.get("area") or "")).strip()
+        picks.append({"name": nm, "where": dn, "line": line, "bg": did,
+                      "legendary": bool(e.get("is_legendary"))})
+    # legendary first, then cap 5
+    picks = sorted(picks, key=lambda p: not p["legendary"])[:5]
+    if len(picks) < 3:
+        return None
+    slides = [_cover_slide(
+        "WHERE LOCALS EAT",
+        [f"{len(picks)} legendary", "meals worth", "a detour"],
+        "The dishes regulars come back for — verified, not sponsored.",
+        picks[0]["bg"])]
+    for i, p in enumerate(picks, 1):
+        badge = "LEGENDARY" if p["legendary"] else "LOCAL PICK"
+        slides.append(_item_slide(i, len(picks), badge, GOLD, p["where"], p["name"], p["line"][:150], p["bg"]))
+    slides.append(_end_slide(["Eat where the", "locals actually go.", ""],
+                             "Verified eateries + signature dishes for 500+ places → nakshiq.com",
+                             picks[0]["bg"]))
+    caption = ("WHERE LOCALS ACTUALLY EAT 🍽️\n\nSave it for the trip — the dishes regulars drive back for:\n\n"
+               + "\n".join(f"{i}. {p['name']}" + (f" · {p['where']}" if p['where'] else "")
+                           for i, p in enumerate(picks, 1))
+               + "\n\nVerified food picks → nakshiq.com\n\n"
+               + _hashtags("indianfood", "indiatravel", "foodie", "streetfood", "traveldeeper"))
+    return {"fmt": "food", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
+            "dest_ids": [p["bg"] for p in picks if p["bg"]]}
+
+
+_PERSONA_KW = {
+    "the adventure seeker": ["trek", "trekking", "raft", "rafting", "ski", "climb",
+                             "paraglid", "bungee", "expedition", "summit", "high-altitude",
+                             "high altitude", "adventure", "cycling"],
+    "the pilgrim": ["temple", "ashram", "pilgrim", "sacred", "jyotirlinga", "gurudwara",
+                    "gurdwara", "monastery", "dargah", "char dham", "yatra", "shrine"],
+    "the offbeat explorer": ["offbeat", "hidden", "untouched", "remote", "secret",
+                             "less-explored", "unexplored", "crowd-free", "quiet", "nobody"],
+}
+
+
+def build_persona(content: dict, mname: str) -> dict | None:
+    dests = [d for d in _rows(content, "destinations")
+             if d.get("name") and d.get("tagline") and (d.get("score") or 0) >= 3]
+    best_label, best_hits = None, []
+    for label, kws in _PERSONA_KW.items():
+        hits = [d for d in dests
+                if any(k in ((d.get("tagline") or "") + " " + (d.get("why_special") or "")).lower() for k in kws)]
+        if len(hits) > len(best_hits):
+            best_label, best_hits = label, hits
+    if not best_label or len(best_hits) < 4:
+        return None
+    picks = sorted(best_hits, key=lambda d: -(d.get("score") or 0))[:5]
+    slides = [_cover_slide(
+        "MADE FOR YOU",
+        [f"India for", best_label.replace("the ", "")],
+        f"{len(picks)} places worth the trip if this is your kind of travel — verified for {mname}.",
+        picks[0].get("id"))]
+    for i, dd in enumerate(picks, 1):
+        slides.append(_item_slide(i, len(picks), "GO", GREEN, dd.get("state") or "",
+                                  dd["name"], (dd.get("tagline") or "")[:150], dd.get("id")))
+    slides.append(_end_slide(["Travel your", "way.", ""],
+                             "Filter 500+ verified places by what YOU want → nakshiq.com",
+                             picks[0].get("id")))
+    caption = (f"INDIA FOR {best_label.replace('the ','').upper()} 🧭\n\nSave your kind of trip:\n\n"
+               + "\n".join(f"{i}. {d['name']}" for i, d in enumerate(picks, 1))
+               + "\n\nMore verified picks → nakshiq.com\n\n"
+               + _hashtags("indiatravel", "traveltips", "traveldeeper", "incredibleindia"))
+    return {"fmt": "persona", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
+            "dest_ids": [d.get("id") for d in picks]}
+
+
+_CONTRARIAN_PAIRS = [
+    ("Mussoorie", "Dhanaulti"), ("Nainital", "Bhimtal"), ("Manali", "Tirthan Valley"),
+    ("Shimla", "Chaukori"), ("Kasol", "Jibhi"), ("Pahalgam", "Achabal"),
+    ("Dharamshala", "Chamba"),
+]
+
+
+def build_comparison(content: dict, mname: str) -> dict | None:
+    name_map = {}
+    for d in (_rows(content, "destinations_full") or []) + _rows(content, "destinations"):
+        if d.get("name"):
+            name_map.setdefault(d["name"].strip().lower(), d)
+    pairs = []
+    for famous, hidden in _CONTRARIAN_PAIRS:
+        fd = name_map.get(famous.lower()); hd = name_map.get(hidden.lower())
+        if not fd or not hd or not (fd.get("tagline") and hd.get("tagline")):
+            continue
+
+        def sub(x):
+            sc = _score_disp(x.get("score")) if x.get("score") else ""
+            return (sc + " · " if sc else "") + (x.get("tagline") or "")
+        pairs.append({"a": famous, "a_sub": sub(fd), "b": hidden, "b_sub": sub(hd),
+                      "bg": hd.get("id") or ""})
+    pairs = pairs[:5]
+    if len(pairs) < 3:
+        return None
+    slides = [_cover_slide(
+        "THIS OR THAT?",
+        [f"{len(pairs)} famous spots", "vs their quieter", "twin"],
+        "Same views, a fraction of the crowd. The honest side-by-side.",
+        pairs[0]["bg"])]
+    for i, p in enumerate(pairs, 1):
+        slides.append(_versus_slide(i, len(pairs), p["a"], p["a_sub"], p["b"], p["b_sub"], p["bg"]))
+    slides.append(_end_slide(["Pick the one", "that fits you.", ""],
+                             "Verified side-by-sides for the places everyone argues about → nakshiq.com",
+                             pairs[0]["bg"]))
+    caption = ("CAN'T DECIDE? Here's the honest call 🤔\n\nThe famous name vs its quieter twin:\n\n"
+               + "\n".join(f"{p['a']} vs {p['b']}" for p in pairs)
+               + "\n\nFull side-by-sides → nakshiq.com\n\n"
+               + _hashtags("indiatravel", "traveltips", "traveldeeper", "hillstations", "incredibleindia"))
+    return {"fmt": "comparison", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
+            "dest_ids": [p["bg"] for p in pairs if p["bg"]]}
+
+
+def build_route(content: dict, mname: str) -> dict | None:
+    routes = _rows(content, "routes")
+    dmap = {d.get("id"): d for d in (_rows(content, "destinations_full") or _rows(content, "destinations"))}
+
+    def resolve(s):
+        """Return (label, bg_slug, tagline) for a raw stop (id-slug, name, or dict)."""
+        if isinstance(s, dict):
+            sid = s.get("id") or s.get("destination_id") or ""
+            lbl = (s.get("name") or s.get("destination") or s.get("title") or "").strip()
+        else:
+            sid = str(s).strip(); lbl = ""
+        d = dmap.get(sid)
+        if d:
+            return (d.get("name") or lbl or sid, sid, (d.get("tagline") or "")[:150])
+        # not in catalog → humanize a slug ("vrindavan-mathura" → "Vrindavan Mathura")
+        pretty = lbl or " ".join(w.capitalize() for w in sid.replace("-", " ").split())
+        bg = sid if (sid and "-" in sid or (sid and sid.isalpha())) else None
+        return (pretty, bg, "")
+
+    chosen, resolved = None, []
+    for r in routes:
+        rr = [resolve(s) for s in (r.get("stops") or [])]
+        rr = [x for x in rr if x[0]]
+        if (r.get("name") or r.get("title")) and len(rr) >= 3:
+            chosen, resolved = r, rr
+            break
+    if not chosen:
+        return None
+    rname = (chosen.get("name") or chosen.get("title") or "The Route").strip()
+    days = chosen.get("days") or chosen.get("duration_days")
+    budget = (chosen.get("budget_range") or "").strip()
+    resolved = resolved[:6]
+    sub = "The stops, in order — a verified route you can actually follow."
+    if days:
+        sub = f"{days} days, {len(resolved)} key stops. " + sub
+    slides = [_cover_slide("THE ROUTE", _wrap(ImageDraw.Draw(Image.new("RGB", (W, H))),
+                                              rname, _F(BOLD, 82), W - 140)[:3] or [rname],
+                           sub, resolved[0][1])]
+    for i, (lbl, bg, tag) in enumerate(resolved, 1):
+        slides.append(_item_slide(i, len(resolved), f"STOP {i}", GOLD, "", lbl, tag, bg))
+    end_sub = "Full day-by-day route with drive times and stays → nakshiq.com"
+    if budget:
+        end_sub = f"Budget: {budget}. " + end_sub
+    slides.append(_end_slide(["The whole route", "is on the site.", ""], end_sub, resolved[0][1]))
+    caption = (f"{rname.upper()} — THE ROUTE 🗺️\n\nSave the whole run:\n\n"
+               + "\n".join(f"{i}. {lbl}" for i, (lbl, _, _) in enumerate(resolved, 1))
+               + (f"\n\nBudget: {budget}" if budget else "")
+               + "\n\nFull day-by-day → nakshiq.com\n\n"
+               + _hashtags("indiatravel", "roadtrip", "traveltips", "traveldeeper", "incredibleindia"))
+    return {"fmt": "route", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
+            "dest_ids": [bg for _, bg, _ in resolved if bg]}
+
+
 BUILDERS = {
     "best_month": build_best_month,
     "skip_list": build_skip_list,
     "collection": build_collection,
     "festival": build_festival,
     "cost": build_cost,
+    "food": build_food,
+    "persona": build_persona,
+    "comparison": build_comparison,
+    "route": build_route,
 }
 # Rotation order (oldest-posted-first at runtime; this is just the never-posted tiebreak).
 # skip_list first = biggest content gap; then the seasonal + budget levers.
-FORMAT_ROTATION = ["skip_list", "festival", "best_month", "cost", "collection"]
+FORMAT_ROTATION = ["skip_list", "festival", "food", "best_month", "comparison",
+                   "persona", "cost", "route", "collection"]
 
 
 def build(content: dict, fmt: str, month: int | None = None) -> dict | None:
