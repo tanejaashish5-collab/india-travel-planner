@@ -31,7 +31,7 @@
   ],
   "posted_today": {
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 1,
+    "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-07-01",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-01",
@@ -308,6 +308,10 @@
     },
     {
       "destination_id": "lamayuru",
+      "date": "2026-07-01"
+    },
+    {
+      "destination_id": "zanskar",
       "date": "2026-07-01"
     }
   ],
@@ -4286,6 +4290,15 @@
       "destination": "lamayuru",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_lamayuru_hi_2026-07-01.mp4"
+    },
+    {
+      "timestamp": "2026-07-01T14:00:19.020725+00:00",
+      "date": "2026-07-01",
+      "platform": "instagram",
+      "post_id": "Jz5U3",
+      "destination": "zanskar",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_zanskar_hi_2026-07-01.mp4"
     }
   ],
   "theme_usage": {

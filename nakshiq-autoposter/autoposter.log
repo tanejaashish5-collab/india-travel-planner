@@ -8476,3 +8476,23 @@ Date range: 2026-04-15 → 2026-06-30
 2026-07-01 13:25:06  INFO      YT Short posted: format=did_you_know, music=edm-1001
 2026-07-01 13:25:06  INFO      State saved. YT Short run complete.
 2026-07-01 13:25:06  INFO      ════════════════════════════════════════════════════════════
+2026-07-01 13:58:04  INFO      ════════════════════════════════════════════════════════════
+2026-07-01 13:58:04  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-01
+2026-07-01 13:58:04  INFO      ════════════════════════════════════════════════════════════
+2026-07-01 13:58:10  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-01 13:59:27  INFO      Short rendered: yt_short_did_you_know_zanskar_hi_2026-07-01.mp4 (22840 KB, 24.7s, fmt=did_you_know, music=edm-966)
+2026-07-01 13:59:27  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_zanskar_hi_2026-07-01.mp4 (23,389,172 bytes, video/mp4)
+2026-07-01 13:59:28  INFO          Uploading to R2 (timeout=300s)...
+2026-07-01 13:59:31  INFO          R2 PUT OK. Confirming...
+2026-07-01 13:59:32  INFO          Media ready: iamLB (23,389,172 bytes · yt_short_did_you_know_yt_short_did_you_know_zanskar_hi_2026-07-01.mp4)
+2026-07-01 13:59:32  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_zanskar_hi_2026-07-01.mp4
+2026-07-01 13:59:33  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-01 13:59:33  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-07-01 13:59:33  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-07-01 13:59:33  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-01 13:59:36  INFO      [instagram/nakshiq] Outstand accepted (post_id=Jz5U3), waiting for platform confirmation...
+2026-07-01 14:00:19  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=Jz5U3 · Platform=18602863105033042
+2026-07-01 14:00:19  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-01 14:00:19  INFO      YT Short posted: format=did_you_know, music=edm-966
+2026-07-01 14:00:19  INFO      State saved. YT Short run complete.
+2026-07-01 14:00:19  INFO      ════════════════════════════════════════════════════════════
