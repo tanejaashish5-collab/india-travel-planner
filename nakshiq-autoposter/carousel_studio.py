@@ -239,7 +239,11 @@ def _rotate(items, seen, n, keyfn):
     fresh = [x for x in items if keyfn(x) not in seenset]
     recycled = False
     if len(fresh) < 3:
-        fresh = list(items); recycled = True
+        # start a new cycle, but surface any still-unseen items FIRST so the tail
+        # of a set never gets skipped over the month (cover-all goal, 2026-07-01)
+        stale = [x for x in items if keyfn(x) in seenset]
+        fresh = fresh + stale
+        recycled = True
     chosen = fresh[:n]
     return chosen, [keyfn(x) for x in chosen], recycled
 
@@ -356,8 +360,9 @@ def build_festival(content: dict, mname: str, seen=None) -> dict | None:
         })
     if len(pool) < 3:
         return None
-    # rotate through the month's festivals across posts (fresh 5 each time)
-    picks, item_keys, recycled = _rotate(pool, seen, 5, lambda p: p["name"])
+    # Fuller roundup (up to 8) so the 2x/week festival cadence covers a month's
+    # festivals in a couple of posts; _rotate surfaces a FRESH set each time.
+    picks, item_keys, recycled = _rotate(pool, seen, 8, lambda p: p["name"])
     if len(picks) < 3:
         return None
     # Framed as month-DEFINING (evergreen), not "upcoming this month" — festival

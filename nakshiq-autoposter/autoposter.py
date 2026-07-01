@@ -1012,6 +1012,23 @@ def _format_posted_within(state: dict, days: int, predicate) -> bool:
     return _format_recent(merged_post_log(state), days, predicate)
 
 
+def _format_posted_days(state: dict, days: int, predicate) -> int:
+    """Number of DISTINCT CALENDAR DAYS in the trailing `days` on which a post
+    whose `format` satisfies `predicate` landed. Distinct-days (not raw rows)
+    because one carousel posts to BOTH Instagram + Facebook → two log rows per
+    day; a raw count would read as 2/week after a single post. Drives the
+    festival carousel's 2x/week cap (2026-07-01, founder: "2 times a week and
+    cover all the festivals — more than that and my feed just looks like
+    festivals"). Same inclusive window as _format_recent."""
+    cut = (date.today() - timedelta(days=days)).isoformat()
+    seen_days = set()
+    for e in merged_post_log(state):
+        d = e.get("date") or (e.get("timestamp") or "")[:10]
+        if d and d >= cut and predicate(e.get("format") or ""):
+            seen_days.add(d)
+    return len(seen_days)
+
+
 def destinations_posted_today_jsonl() -> tuple[set, set]:
     """Fresh read of post_log.jsonl → ({dest_ids}, {media_ids}) posted *today*.
 
@@ -11009,22 +11026,24 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
     seen_map = st.get("carousel_seen", {}) or {}
 
     order = _carousel_format_order(st)
-    # Festival cadence boost (founder 2026-07-01: "rotate through the festivals
-    # throughout the month smartly"). In a festival-heavy month, prioritise the
-    # festival carousel until the month's festivals are covered — but no more than
-    # every other day, so the other formats still rotate. Self-limiting: as the
-    # backlog clears (via carousel_seen) it falls back to normal oldest-first.
+    # Festival cadence (founder 2026-07-01: "do like 2 times a week and cover ALL
+    # the festivals — if we do more my feed just looks like festivals"). Boost the
+    # festival carousel to the front, but HARD-CAP it at 2 distinct days/week and
+    # never two days running, so the other 8 formats own the rest of the week. Each
+    # festival post is now a fuller roundup (build_festival shows up to 8), so
+    # ~2x/week covers a month's festivals via the carousel_seen rotation. Once the
+    # cap is hit festival drops to its natural 1-in-9 oldest-first slot.
     try:
         _fest = (content.get("festivals") or {}).get("data") or []
         _fest = [f for f in _fest if f.get("name") and (f.get("description") or f.get("significance"))]
         _fseen = set(seen_map.get("festival", []))
         _backlog = len([f for f in _fest if f.get("name") not in _fseen])
-        if (_backlog >= 6 and "festival" in order
+        _fest_wk = _format_posted_days(st, 7, lambda x: x == "carousel.festival")
+        if (len(_fest) >= 3 and "festival" in order and _fest_wk < 2
                 and not _format_posted_within(st, 1, lambda x: x == "carousel.festival")):
-            # every-other-day during a festival-heavy backlog (not 2 days running),
-            # so festivals get covered while other formats still fill alternate days
             order = ["festival"] + [f for f in order if f != "festival"]
-            log.info(f"Carousel: festival cadence boost (backlog={_backlog} unfeatured).")
+            log.info(f"Carousel: festival boost — {_fest_wk}/2 this week, "
+                     f"{_backlog} of {len(_fest)} festivals still unfeatured.")
     except Exception as e:
         log.warning(f"festival cadence check skipped: {e}")
 
