@@ -8369,3 +8369,27 @@ Date range: 2026-04-15 → 2026-06-29
 2026-06-30 20:23:30  INFO      
 Date range: 2026-04-15 → 2026-06-30
 2026-06-30 20:23:30  INFO      ════════════════════════════════════════════════════════════
+2026-07-01 08:24:44  INFO      ════════════════════════════════════════════════════════════
+2026-07-01 08:24:44  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-01
+2026-07-01 08:24:44  INFO      ════════════════════════════════════════════════════════════
+2026-07-01 08:24:48  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-01 08:25:52  INFO      Short rendered: yt_short_did_you_know_lonavala_hi_2026-07-01.mp4 (9641 KB, 20.4s, fmt=did_you_know, music=fast-686)
+2026-07-01 08:25:52  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_lonavala_hi_2026-07-01.mp4 (9,872,761 bytes, video/mp4)
+2026-07-01 08:25:53  INFO          Uploading to R2 (timeout=300s)...
+2026-07-01 08:25:55  INFO          R2 PUT OK. Confirming...
+2026-07-01 08:25:56  INFO          Media ready: XcPye (9,872,761 bytes · yt_short_did_you_know_yt_short_did_you_know_lonavala_hi_2026-07-01.mp4)
+2026-07-01 08:25:56  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_lonavala_hi_2026-07-01.mp4
+2026-07-01 08:25:57  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-01 08:25:57  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-07-01 08:25:57  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-07-01 08:26:00  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=voing), waiting for platform confirmation...
+2026-07-01 08:26:12  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=voing · Platform=aGRvvtCYv1s
+2026-07-01 08:26:12  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-07-01 08:26:12  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-01 08:26:14  INFO      [instagram/nakshiq] Outstand accepted (post_id=cXpFL), waiting for platform confirmation...
+2026-07-01 08:27:01  INFO          wait_for_publish exhausted 8 polls for post=cXpFL (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-07-01 08:27:01  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=cXpFL). May have silently failed.
+2026-07-01 08:27:01  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-01 08:27:01  INFO      YT Short posted: format=did_you_know, music=fast-686
+2026-07-01 08:27:01  INFO      State saved. YT Short run complete.
+2026-07-01 08:27:01  INFO      ════════════════════════════════════════════════════════════

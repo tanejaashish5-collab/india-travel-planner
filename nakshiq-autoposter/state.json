@@ -30,9 +30,9 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
-    "GAh5p_yt_short": "2026-06-30",
+    "GAh5p_yt_short": "2026-07-01",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-06-30",
     "m8EAd": "2026-06-30",
@@ -42,30 +42,6 @@
   },
   "last_sync": "2026-06-30T16:37:12.464876+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "achabal",
-      "date": "2026-06-16"
-    },
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-06-16"
-    },
-    {
-      "destination_id": "halebidu",
-      "date": "2026-06-16"
-    },
-    {
-      "destination_id": "kabini",
-      "date": "2026-06-16"
-    },
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-06-16"
-    },
-    {
-      "destination_id": "nako",
-      "date": "2026-06-16"
-    },
     {
       "destination_id": "pangong-lake",
       "date": "2026-06-17"
@@ -313,6 +289,10 @@
     {
       "destination_id": "nubra-valley",
       "date": "2026-06-30"
+    },
+    {
+      "destination_id": "lonavala",
+      "date": "2026-07-01"
     }
   ],
   "posted_formats": {
@@ -4218,6 +4198,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-07-01T08:26:12.219706+00:00",
+      "date": "2026-07-01",
+      "platform": "youtube",
+      "post_id": "voing",
+      "destination": "lonavala",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_lonavala_hi_2026-07-01.mp4"
+    },
+    {
+      "timestamp": "2026-07-01T08:27:01.088433+00:00",
+      "date": "2026-07-01",
+      "platform": "instagram",
+      "post_id": "cXpFL",
+      "destination": "lonavala",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_lonavala_hi_2026-07-01.mp4"
     }
   ],
   "theme_usage": {
@@ -5089,8 +5087,7 @@
       "leh": [
         "2026-06-23"
       ]
-    },
-    "collection_carousel_dests:budget-under-2000": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
