@@ -35,17 +35,17 @@
     "GAh5p_yt_short": "2026-07-02",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-02",
-    "m8EAd": "2026-07-01",
-    "PdMu0": "2026-07-01",
-    "m8EAd_evening": "2026-07-01",
-    "PdMu0_evening": "2026-07-01",
+    "m8EAd": "2026-07-02",
+    "PdMu0": "2026-07-02",
+    "m8EAd_evening": "2026-07-02",
+    "PdMu0_evening": "2026-07-02",
     "GAh5p_reel_studio": "2026-07-01",
     "m8EAd_reel_studio": "2026-07-01",
     "m8EAd_carousel": "2026-07-02",
     "PdMu0_carousel": "2026-07-02",
     "m8EAd_evening_story": "2026-07-01"
   },
-  "last_sync": "2026-07-01T16:44:18.420154+00:00",
+  "last_sync": "2026-07-02T16:20:43.683709+00:00",
   "posted_destinations": [
     {
       "destination_id": "amboli",
@@ -326,11 +326,14 @@
     {
       "destination_id": "adilabad",
       "date": "2026-07-02"
+    },
+    {
+      "destination_id": "jog-falls",
+      "date": "2026-07-02"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
       "score_card",
@@ -350,10 +353,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "data_carousel"
+      "data_carousel",
+      "score_card"
     ],
     "PdMu0": [
-      "v2_local_knows",
       "score_card",
       "hidden_gem_reveal",
       "score_card",
@@ -373,7 +376,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "data_carousel"
+      "data_carousel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -4388,6 +4392,28 @@
       "destination": "adilabad",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_adilabad_hi_2026-07-02.mp4"
+    },
+    {
+      "timestamp": "2026-07-02T16:21:55.475060+00:00",
+      "date": "2026-07-02",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "iGYOB",
+      "destination": "jog-falls",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "jog-falls.mp4"
+    },
+    {
+      "timestamp": "2026-07-02T16:22:14.379746+00:00",
+      "date": "2026-07-02",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "bBtHT",
+      "destination": "jog-falls",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "jog-falls.mp4"
     }
   ],
   "theme_usage": {
@@ -4531,7 +4557,8 @@
         "2026-06-03",
         "2026-06-17",
         "2026-06-23",
-        "2026-06-26"
+        "2026-06-26",
+        "2026-07-02"
       ],
       "gopeshwar": [
         "2026-05-26",
@@ -4619,7 +4646,8 @@
       "keylong": [
         "2026-06-03",
         "2026-06-06",
-        "2026-06-21"
+        "2026-06-21",
+        "2026-07-02"
       ],
       "nako": [
         "2026-06-04",
@@ -4633,7 +4661,8 @@
         "2026-06-04",
         "2026-06-05",
         "2026-06-06",
-        "2026-06-21"
+        "2026-06-21",
+        "2026-07-02"
       ],
       "roopkund": [
         "2026-06-04",
@@ -4705,7 +4734,8 @@
         "2026-07-01"
       ],
       "jog-falls": [
-        "2026-07-01"
+        "2026-07-01",
+        "2026-07-02"
       ],
       "kolad": [
         "2026-07-01"
@@ -4823,7 +4853,8 @@
         "2026-06-27",
         "2026-06-28",
         "2026-06-29",
-        "2026-06-30"
+        "2026-06-30",
+        "2026-07-02"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -5027,6 +5058,9 @@
       ],
       "hogenakkal": [
         "2026-07-01"
+      ],
+      "jog-falls": [
+        "2026-07-02"
       ]
     },
     "audience_tags": {
@@ -5113,6 +5147,9 @@
       ],
       "budget-under-2000": [
         "2026-06-30"
+      ],
+      "best-dhabas-on-highways": [
+        "2026-07-02"
       ]
     },
     "collection_carousel_dests:birding-hotspots": {
@@ -5280,6 +5317,17 @@
       "leh": [
         "2026-06-23"
       ]
+    },
+    "collection_carousel_dests:best-dhabas-on-highways": {
+      "leh": [
+        "2026-07-02"
+      ],
+      "kargil": [
+        "2026-07-02"
+      ],
+      "keylong": [
+        "2026-07-02"
+      ]
     }
   },
   "infographic": {
@@ -5294,8 +5342,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "bhimashankar",
-    "collection": "budget-under-2000"
+    "shared_best": "khardung-la",
+    "collection": "best-dhabas-on-highways"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-01",

@@ -8731,3 +8731,49 @@ Date range: 2026-04-15 → 2026-07-01
 2026-07-02 13:27:10  INFO      YT Short posted: format=this_vs_that, music=fast-676
 2026-07-02 13:27:10  INFO      State saved. YT Short run complete.
 2026-07-02 13:27:10  INFO      ════════════════════════════════════════════════════════════
+2026-07-02 16:20:11  INFO      ════════════════════════════════════════════════════════════
+2026-07-02 16:20:11  INFO      Nakshiq Autoposter · EVENING · 2026-07-02 · weekday=3
+2026-07-02 16:20:11  INFO      ════════════════════════════════════════════════════════════
+2026-07-02 16:20:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-02 16:20:43  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-02 16:20:43  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-07-02 16:20:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-02 16:20:44  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-02 16:20:44  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-02 16:20:58  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-02 16:20:58  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-07-02 16:20:58  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: collection_spotlight
+2026-07-02 16:20:58  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 69
+2026-07-02 16:20:58  INFO      Fingerprint dedup snapshot — 62 dests in 7d · 142 (dest,fmt) pairs in 30d · 196 media in 60d
+2026-07-02 16:20:58  INFO      Collection locked: Best Dhabas on Every Highway (0/20 never featured)
+2026-07-02 16:20:59  INFO      Shared best destination locked: Khardung La
+2026-07-02 16:21:00  INFO      Carousel locked (collection_spotlight): leh, kargil, keylong
+2026-07-02 16:21:00  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-02 16:21:00  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-07-02 16:21:00  INFO      confidence_intel for Khardung La: only 0 card rows — SKIPPING
+2026-07-02 16:21:00  WARNING   [instagram/nakshiq] confidence_intel: khardung-la inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'jog-falls' as score_card to keep the slot live.
+2026-07-02 16:21:00  INFO      [instagram/nakshiq] Caption ready (407 chars, dest=jog-falls)
+2026-07-02 16:21:01  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-02 16:21:01  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jog-falls.mp4?v=20260524
+2026-07-02 16:21:03  INFO          Brand-stamp applied: jog-falls.mp4 (5,145,247 → 2,513,658 bytes)
+2026-07-02 16:21:03  INFO          Requesting upload URL for jog-falls.mp4 (2,513,658 bytes, video/mp4)
+2026-07-02 16:21:04  INFO          Uploading to R2 (timeout=300s)...
+2026-07-02 16:21:06  INFO          R2 PUT OK. Confirming...
+2026-07-02 16:21:07  INFO          Media ready: 72MpW (2,513,658 bytes · jog-falls.mp4)
+2026-07-02 16:21:07  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-02 16:21:55  INFO      [instagram/nakshiq] ✅ Published · Outstand=iGYOB · Platform=18159952858462281
+2026-07-02 16:21:55  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-07-02 16:21:55  INFO      confidence_intel for Khardung La: only 0 card rows — SKIPPING
+2026-07-02 16:21:55  WARNING   [facebook/Nakshiq] confidence_intel: khardung-la inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'jog-falls' as score_card to keep the slot live.
+2026-07-02 16:21:55  INFO      [facebook/Nakshiq] Caption ready (589 chars, dest=jog-falls)
+2026-07-02 16:21:55  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-02 16:21:55  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jog-falls.mp4?v=20260524
+2026-07-02 16:21:58  INFO          Brand-stamp applied: jog-falls.mp4 (5,145,247 → 2,513,658 bytes)
+2026-07-02 16:21:58  INFO          Requesting upload URL for jog-falls.mp4 (2,513,658 bytes, video/mp4)
+2026-07-02 16:21:58  INFO          Uploading to R2 (timeout=300s)...
+2026-07-02 16:21:59  INFO          R2 PUT OK. Confirming...
+2026-07-02 16:22:00  INFO          Media ready: IommX (2,513,658 bytes · jog-falls.mp4)
+2026-07-02 16:22:00  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-02 16:22:14  INFO      [facebook/Nakshiq] ✅ Published · Outstand=bBtHT · Platform=1767093798070446
+2026-07-02 16:22:14  INFO      State saved. Run complete.
+2026-07-02 16:22:14  INFO      ════════════════════════════════════════════════════════════
