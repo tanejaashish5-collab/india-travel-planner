@@ -41,8 +41,8 @@
     "PdMu0_evening": "2026-07-01",
     "GAh5p_reel_studio": "2026-07-01",
     "m8EAd_reel_studio": "2026-07-01",
-    "m8EAd_carousel": "2026-07-01",
-    "PdMu0_carousel": "2026-07-01",
+    "m8EAd_carousel": "2026-07-02",
+    "PdMu0_carousel": "2026-07-02",
     "m8EAd_evening_story": "2026-07-01"
   },
   "last_sync": "2026-07-01T16:44:18.420154+00:00",
@@ -317,6 +317,10 @@
     },
     {
       "destination_id": "alchi",
+      "date": "2026-07-02"
+    },
+    {
+      "destination_id": "ahmedabad",
       "date": "2026-07-02"
     }
   ],
@@ -4344,6 +4348,24 @@
       "destination": "alchi",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_alchi_en_2026-07-02.mp4"
+    },
+    {
+      "timestamp": "2026-07-02T10:19:53.441659+00:00",
+      "date": "2026-07-02",
+      "platform": "instagram",
+      "post_id": "uS8AE",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-02"
+    },
+    {
+      "timestamp": "2026-07-02T10:19:55.187369+00:00",
+      "date": "2026-07-02",
+      "platform": "facebook",
+      "post_id": "41wni",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-02"
     }
   ],
   "theme_usage": {
