@@ -741,5 +741,66 @@
     "expHeading": "Tours and experiences",
     "expSub": "Treks, safaris and day tours — compare on the platforms below.",
     "disclosure": "We don't take payment to feature any destination, stay or operator. Book through a link here and we may earn a small commission, at no extra cost to you. It never affects our scores or recommendations. <policy>Editorial policy</policy>"
+  },
+  "hillQuiz": {
+    "pageTitle": "Which hill station is right for you?",
+    "pageIntro": "Three questions, thirty seconds. We match your month, budget, and travel style against {count} verified hill stations and hand back the three best. No email, no account.",
+    "howHeading": "How it maps",
+    "howBody": "Your answers filter {count} hill stations through the NakshIQ destination-month scoring — the same verified 0–10 scale on every destination page. Month score leads; budget and travel-style fit break ties. The matcher runs in your browser on cached data, so results are instant.",
+    "q1": "Which month are you travelling?",
+    "q2": "What's your budget?",
+    "q3": "What kind of trip?",
+    "stepLabel": "{n} of 3",
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "budget": {
+      "budget": "Budget",
+      "budgetDesc": "Homestays, hostels, basic hotels",
+      "mid": "Mid-range",
+      "midDesc": "3-star hotels, curated homestays",
+      "splurge": "Splurge",
+      "splurgeDesc": "4–5 star, heritage properties, luxury",
+      "any": "No preference",
+      "anyDesc": "Budget isn't the deciding factor"
+    },
+    "vibe": {
+      "family": "Family with kids",
+      "familyDesc": "Easy access, kid-friendly stays and days",
+      "offbeat": "Quiet and offbeat",
+      "offbeatDesc": "Villages, meadows, places the crowds skip",
+      "adventure": "Trek and adventure",
+      "adventureDesc": "Trailheads, camps, high passes",
+      "honeymoon": "Romantic",
+      "honeymoonDesc": "Lakes, views, unhurried mornings"
+    },
+    "results": {
+      "kicker": "Your match",
+      "none": "No hill station has a verified score for {month}. Try a different month — or",
+      "browseAll": "browse all hill stations",
+      "inMonth": "in {month}",
+      "fitsBudget": "Fits your budget",
+      "fits_family": "Good for kids",
+      "fits_offbeat": "Offbeat pick",
+      "fits_adventure": "Adventure base",
+      "fits_honeymoon": "Romantic pick",
+      "readMonth": "Read the {month} verdict",
+      "save": "Save",
+      "saved": "✓ Saved",
+      "cantDecide": "Can't decide? Read {a} vs {b} head-to-head →",
+      "takeAgain": "Take it again"
+    },
+    "howPool": "The pool right now:"
   }
 }

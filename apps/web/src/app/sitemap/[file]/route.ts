@@ -165,6 +165,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
       "camping", "permits", "road-conditions", "superlatives",
       "stays", "festivals", "luxury", "tourist-traps",
       "saved", "about", "methodology", "blog", "more",
+      "risk-quiz", "quiz/hill-station",
       "terms", "privacy", "cookies", "editorial-policy",
       "india-travel", "data-deletion", "newsletter", "the-window",
       "vs", "compare", "guide/permits", "guide/book-indian-trains",

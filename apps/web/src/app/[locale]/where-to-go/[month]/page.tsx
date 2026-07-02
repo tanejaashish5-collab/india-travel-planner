@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { MONTH_DISPLAY } from "@/lib/best-pages";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { WhereToGoContent } from "@/components/where-to-go-content";
@@ -516,6 +518,55 @@ export default async function WhereToGoPage({
             monthSlug={monthSlug as HighImpressionPage["monthSlug"]}
           />
         )}
+
+        {/* Decision-tool cross-links: month intent → the hill-station matcher
+            + this month's festival calendar (keyword-matched anchor). */}
+        <section
+          style={{
+            maxWidth: 1200,
+            margin: "48px auto 0",
+            padding: "0 24px",
+            display: "grid",
+            gap: 16,
+          }}
+        >
+          <Link
+            href={`/${locale}/quiz/hill-station`}
+            style={{
+              display: "block",
+              padding: "20px 24px",
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+              color: "var(--bone)",
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 15,
+              lineHeight: 1.6,
+              textDecoration: "none",
+            }}
+          >
+            {locale === "hi"
+              ? "हिल स्टेशन के बीच उलझन में? 30-सेकंड की क्विज़ लें — महीना, बजट, शैली → 3 सत्यापित सुझाव →"
+              : "Torn between hill stations? Take the 30-second quiz — month, budget, style → your 3 verified matches →"}
+          </Link>
+          <Link
+            href={`/${locale}/festivals/month/${monthSlug}`}
+            style={{
+              display: "block",
+              padding: "20px 24px",
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+              color: "var(--bone)",
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 15,
+              lineHeight: 1.6,
+              textDecoration: "none",
+            }}
+          >
+            {locale === "hi"
+              ? `${MONTH_DISPLAY[monthSlug as keyof typeof MONTH_DISPLAY]?.hi ?? monthName} के त्योहार — तारीखों और जगहों के साथ पूरा कैलेंडर →`
+              : `Festivals in ${monthName} — the full verified calendar with dates and places →`}
+          </Link>
+        </section>
       </main>
       <CinematicRelatedRail />
       <Footer />

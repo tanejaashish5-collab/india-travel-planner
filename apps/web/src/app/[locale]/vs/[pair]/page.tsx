@@ -48,7 +48,7 @@ async function getVsData(id1: string, id2: string) {
     supabase
       .from("destinations")
       .select(`
-        id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress,
+        id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress, tags,
         state:states(name),
         destination_months(month, score),
         kids_friendly(suitable, rating),
@@ -59,7 +59,7 @@ async function getVsData(id1: string, id2: string) {
     supabase
       .from("destinations")
       .select(`
-        id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress,
+        id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress, tags,
         state:states(name),
         destination_months(month, score),
         kids_friendly(suitable, rating),
@@ -283,6 +283,34 @@ export default async function VsPairPage({
             ))}
         </div>
       </section>
+
+      {/* Hill-station pairs → the decision quiz: same "which one?" intent,
+          across the whole verified pool instead of just these two. Gated on
+          BOTH sides carrying the hill-station tag (theme is too coarse —
+          cross-region holds 67 hill pairs alongside non-hill ones), so this
+          tracks the same tag the quiz pool queries. */}
+      {((dest1 as { tags?: string[] | null }).tags ?? []).includes("hill-station") &&
+        ((dest2 as { tags?: string[] | null }).tags ?? []).includes("hill-station") && (
+        <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px 80px" }}>
+          <Link
+            href={`/${locale}/quiz/hill-station`}
+            style={{
+              display: "block",
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 14,
+              lineHeight: 1.6,
+              color: "var(--bone)",
+              border: "1px solid var(--hair)",
+              padding: "16px 20px",
+              textDecoration: "none",
+            }}
+          >
+            {locale === "hi"
+              ? `${name1} और ${name2} से आगे देखना चाहते हैं? 30-सेकंड की हिल-स्टेशन क्विज़ लें →`
+              : `Still weighing ${name1} against ${name2}? Take the 30-second hill-station quiz →`}
+          </Link>
+        </section>
+      )}
 
       <CinematicRelatedRail />
       <Footer />

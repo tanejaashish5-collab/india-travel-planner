@@ -176,6 +176,80 @@ export const getCachedDestinationsIndex = unstable_cache(
   { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.destinations] },
 );
 
+// ── Hill-station quiz pool ──────────────────────────────────────────────────
+// Everything the /quiz/hill-station client matcher needs, in one compact row:
+// the 12 month scores come along so matching runs entirely client-side — no
+// per-submit API/DB hit (the bot fleet that inflated GA4 events must never be
+// able to make this page cost money). Subset of the 533 destinations (tag
+// filter), so a single select is safely under PostgREST's 1000-row cap.
+export interface HillStationQuizRow {
+  id: string;
+  name: string;
+  name_hi: string | null;
+  tagline: string | null;
+  tagline_hi: string | null;
+  state_name: string;
+  region: string | null;
+  difficulty: string | null;
+  budget_tier: string | null;
+  elevation_m: number | null;
+  tags: string[] | null;
+  kids_suitable: boolean | null;
+  kids_rating: number | null;
+  /** Raw 0–5 editorial scores indexed by month-1; null = no verified row. */
+  month_scores: (number | null)[];
+}
+
+export const getCachedHillStations = unstable_cache(
+  async (): Promise<HillStationQuizRow[]> => {
+    const supabase = anonClient();
+    if (!supabase) return [];
+    const { data, error } = await supabase
+      .from("destinations")
+      .select(
+        "id, name, tagline, name_hi:translations->hi->>name, tagline_hi:translations->hi->>tagline, region, difficulty, budget_tier, elevation_m, tags, state:states(name), kids_friendly(suitable, rating), destination_months(month, score)",
+      )
+      .contains("tags", ["hill-station"])
+      .order("id");
+    if (error) throw error; // don't cache an empty result on transient failure
+    return ((data as unknown[]) ?? []).map((r) => {
+      const d = r as {
+        id: string; name: string; tagline: string | null;
+        name_hi: string | null; tagline_hi: string | null;
+        region: string | null; difficulty: string | null;
+        budget_tier: string | null; elevation_m: number | null;
+        tags: string[] | null; state: unknown; kids_friendly: unknown;
+        destination_months: { month: number; score: number }[] | null;
+      };
+      // 1:1 embeds come back as an object or a 1-element array — flatten.
+      const kidsRaw = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
+      const kids = (kidsRaw ?? null) as { suitable: boolean | null; rating: number | null } | null;
+      const month_scores: (number | null)[] = Array.from({ length: 12 }, () => null);
+      for (const m of d.destination_months ?? []) {
+        if (m.month >= 1 && m.month <= 12) month_scores[m.month - 1] = m.score;
+      }
+      return {
+        id: d.id,
+        name: d.name,
+        name_hi: d.name_hi,
+        tagline: d.tagline,
+        tagline_hi: d.tagline_hi,
+        state_name: stateName(d.state),
+        region: d.region,
+        difficulty: d.difficulty,
+        budget_tier: d.budget_tier,
+        elevation_m: d.elevation_m,
+        tags: d.tags,
+        kids_suitable: kids?.suitable ?? null,
+        kids_rating: kids?.rating ?? null,
+        month_scores,
+      };
+    });
+  },
+  ["ref-hill-stations-v1"],
+  { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.destinations] },
+);
+
 // ── Itinerary page allowlist ─────────────────────────────────────────────────
 // Destination ids whose `micro_itineraries` pass the min-content gate in
 // lib/itinerary-page.ts — the ONLY ids /itinerary/[slug] renders (the page
