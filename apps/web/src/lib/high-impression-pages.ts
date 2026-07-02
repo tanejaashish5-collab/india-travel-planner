@@ -25,6 +25,11 @@ export type HighImpressionPage = {
   position: number;
   /** GSC impressions over the last 28d — informational only. */
   impressions: number;
+  /** Link to the destination HUB (/destination/{id}) instead of the
+   *  dest×month page. For pages whose GSC demand lands on the hub itself
+   *  (e.g. "shrikhand mahadev weather"); monthSlug still controls WHICH
+   *  month's rail cohort surfaces the entry. */
+  hubOnly?: boolean;
 };
 
 // Sourced from data/research/data-baseline-2026-05-09.md "almost-page-1" set.
@@ -70,6 +75,20 @@ export const HIGH_IMPRESSION_PAGES: HighImpressionPage[] = [
   { destId: "kochi",         monthSlug: "august", anchor: "Kochi in August",              query: "kochi in august",              position: 11.0, impressions: 41  },
   { destId: "gulmarg",       monthSlug: "august", anchor: "Gulmarg in August",            query: "gulmarg in august",            position: 7.1,  impressions: 24  },
   { destId: "landour",       monthSlug: "august", anchor: "Landour in August",            query: "landour in august",            position: 7.1,  impressions: 21  },
+  // July cohort — ranking-depth cycle 2026-07-03 (baseline:
+  // data/ranking-depth-cycle/baseline-2026-07-03.json, GSC 6/17–6/30).
+  // The rail had NO July rows at all, so /explore + /where-to-go rails were
+  // self-hiding for the whole month. Targets = the audit-flagged 4-digit
+  // under-converters (~0.3% CTR at pos 5-15); anchors mirror each page's
+  // top GSC query verbatim (impression-sorted, pulled 2026-07-03).
+  // NOTE: varkala/july + matheran/july + morni-hills are the cycle's CONTROL
+  // set — do NOT add them here before the day-14 re-measure.
+  { destId: "wayanad",           monthSlug: "july", anchor: "Wayanad weather in July",        query: "wayanad weather in july",        position: 7.9,  impressions: 2006 },
+  { destId: "landour",           monthSlug: "july", anchor: "Landour in July",                query: "landour in july",                position: 7.7,  impressions: 918  },
+  { destId: "mussoorie",         monthSlug: "july", anchor: "Mussoorie temperature in July",  query: "mussoorie temperature in july",  position: 10.6, impressions: 605  },
+  { destId: "trimbakeshwar",     monthSlug: "july", anchor: "Trimbakeshwar weather in July",  query: "trimbakeshwar weather in july",  position: 4.0,  impressions: 254  },
+  { destId: "shrikhand-mahadev", monthSlug: "july", anchor: "Shrikhand Mahadev weather",      query: "shrikhand mahadev weather",      position: 9.6,  impressions: 1168, hubOnly: true },
+  { destId: "chandratal",        monthSlug: "july", anchor: "Best time to visit Chandratal",  query: "best time to visit chandratal",  position: 9.5,  impressions: 1346, hubOnly: true },
 ];
 
 /** Filter to the current-month cohort. Used by the rail component. */

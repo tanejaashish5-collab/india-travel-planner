@@ -56,7 +56,7 @@ export function TrendingMonthPages({ locale, monthSlug, heading }: Props) {
         {pages.map((p) => (
           <li key={`${p.destId}-${p.monthSlug}`}>
             <Link
-              href={`/${locale}/destination/${p.destId}/${p.monthSlug}`}
+              href={p.hubOnly ? `/${locale}/destination/${p.destId}` : `/${locale}/destination/${p.destId}/${p.monthSlug}`}
               prefetch={false}
               title={p.query}
               className="group flex items-baseline justify-between gap-3 rounded-lg border border-transparent px-3 py-2 text-sm hover:border-border/60 hover:bg-card"
