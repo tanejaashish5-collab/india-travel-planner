@@ -30,8 +30,8 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "GAh5p_yt_short": "2026-07-02",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-02",
@@ -321,6 +321,10 @@
     },
     {
       "destination_id": "ahmedabad",
+      "date": "2026-07-02"
+    },
+    {
+      "destination_id": "adilabad",
       "date": "2026-07-02"
     }
   ],
@@ -4366,6 +4370,24 @@
       "destination": "ahmedabad",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-07-02"
+    },
+    {
+      "timestamp": "2026-07-02T13:26:27.357666+00:00",
+      "date": "2026-07-02",
+      "platform": "youtube",
+      "post_id": "41sli",
+      "destination": "adilabad",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_adilabad_hi_2026-07-02.mp4"
+    },
+    {
+      "timestamp": "2026-07-02T13:27:10.098056+00:00",
+      "date": "2026-07-02",
+      "platform": "instagram",
+      "post_id": "LezTV",
+      "destination": "adilabad",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_adilabad_hi_2026-07-02.mp4"
     }
   ],
   "theme_usage": {
