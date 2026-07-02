@@ -30,11 +30,11 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-07-01",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short": "2026-07-02",
     "xS5s8_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-07-01",
+    "m8EAd_yt_short": "2026-07-02",
     "m8EAd": "2026-07-01",
     "PdMu0": "2026-07-01",
     "m8EAd_evening": "2026-07-01",
@@ -47,26 +47,6 @@
   },
   "last_sync": "2026-07-01T16:44:18.420154+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-06-17"
-    },
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-06-17"
-    },
-    {
-      "destination_id": "har-ki-doon",
-      "date": "2026-06-17"
-    },
-    {
-      "destination_id": "great-himalayan-np",
-      "date": "2026-06-17"
-    },
-    {
-      "destination_id": "umlingla",
-      "date": "2026-06-17"
-    },
     {
       "destination_id": "amboli",
       "date": "2026-06-18"
@@ -334,6 +314,10 @@
     {
       "destination_id": "khardung-la",
       "date": "2026-07-01"
+    },
+    {
+      "destination_id": "alchi",
+      "date": "2026-07-02"
     }
   ],
   "posted_formats": {
@@ -4333,17 +4317,6 @@
       "media_id": "data_carousel_01_title.jpg"
     },
     {
-      "timestamp": "2026-07-01T16:46:20.190985+00:00",
-      "date": "2026-07-01",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "LeFoV",
-      "destination": "bhimashankar",
-      "format": "blog_promo",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-07-01T16:46:56.039556+00:00",
       "date": "2026-07-01",
       "platform": "facebook",
@@ -4353,6 +4326,24 @@
       "format": "data_carousel",
       "has_media": true,
       "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-07-02T07:50:05.850353+00:00",
+      "date": "2026-07-02",
+      "platform": "youtube",
+      "post_id": "MQdlC",
+      "destination": "alchi",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_alchi_en_2026-07-02.mp4"
+    },
+    {
+      "timestamp": "2026-07-02T07:50:44.723237+00:00",
+      "date": "2026-07-02",
+      "platform": "instagram",
+      "post_id": "nMYGl",
+      "destination": "alchi",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_alchi_en_2026-07-02.mp4"
     }
   ],
   "theme_usage": {
