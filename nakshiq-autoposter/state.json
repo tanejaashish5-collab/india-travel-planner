@@ -40,7 +40,9 @@
     "m8EAd_evening": "2026-07-02",
     "PdMu0_evening": "2026-07-02",
     "m8EAd_carousel": "2026-07-02",
-    "PdMu0_carousel": "2026-07-02"
+    "PdMu0_carousel": "2026-07-02",
+    "GAh5p_reel_studio": "2026-07-03",
+    "m8EAd_reel_studio": "2026-07-03"
   },
   "last_sync": "2026-07-02T16:20:43.683709+00:00",
   "posted_destinations": [
@@ -322,6 +324,10 @@
     },
     {
       "destination_id": "amboli",
+      "date": "2026-07-03"
+    },
+    {
+      "destination_id": "manali",
       "date": "2026-07-03"
     }
   ],
@@ -4425,6 +4431,24 @@
       "destination": "amboli",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_amboli_en_2026-07-03.mp4"
+    },
+    {
+      "timestamp": "2026-07-03T08:46:02.917742+00:00",
+      "date": "2026-07-03",
+      "platform": "youtube",
+      "post_id": "Z2e8u",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-biker.mp4"
+    },
+    {
+      "timestamp": "2026-07-03T08:46:45.087438+00:00",
+      "date": "2026-07-03",
+      "platform": "instagram",
+      "post_id": "N4fqa",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-biker.mp4"
     }
   ],
   "theme_usage": {
@@ -5359,6 +5383,7 @@
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-01",
   "reel_studio_routes": {
-    "khardung-la-nubra-circuit": "2026-07-01"
+    "khardung-la-nubra-circuit": "2026-07-01",
+    "ladakh-manali-biker": "2026-07-03"
   }
 }
