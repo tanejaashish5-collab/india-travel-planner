@@ -30,31 +30,20 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-07-02",
+    "GAh5p_yt_short": "2026-07-03",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-02",
     "m8EAd": "2026-07-02",
     "PdMu0": "2026-07-02",
     "m8EAd_evening": "2026-07-02",
     "PdMu0_evening": "2026-07-02",
-    "GAh5p_reel_studio": "2026-07-01",
-    "m8EAd_reel_studio": "2026-07-01",
     "m8EAd_carousel": "2026-07-02",
-    "PdMu0_carousel": "2026-07-02",
-    "m8EAd_evening_story": "2026-07-01"
+    "PdMu0_carousel": "2026-07-02"
   },
   "last_sync": "2026-07-02T16:20:43.683709+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "amboli",
-      "date": "2026-06-18"
-    },
-    {
-      "destination_id": "patnitop",
-      "date": "2026-06-18"
-    },
     {
       "destination_id": "roopkund",
       "date": "2026-06-19"
@@ -330,6 +319,10 @@
     {
       "destination_id": "jog-falls",
       "date": "2026-07-02"
+    },
+    {
+      "destination_id": "amboli",
+      "date": "2026-07-03"
     }
   ],
   "posted_formats": {
@@ -4414,6 +4407,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "jog-falls.mp4"
+    },
+    {
+      "timestamp": "2026-07-03T07:40:55.618678+00:00",
+      "date": "2026-07-03",
+      "platform": "youtube",
+      "post_id": "41RQi",
+      "destination": "amboli",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_amboli_en_2026-07-03.mp4"
+    },
+    {
+      "timestamp": "2026-07-03T07:41:43.226809+00:00",
+      "date": "2026-07-03",
+      "platform": "instagram",
+      "post_id": "LeqpV",
+      "destination": "amboli",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_amboli_en_2026-07-03.mp4"
     }
   ],
   "theme_usage": {
