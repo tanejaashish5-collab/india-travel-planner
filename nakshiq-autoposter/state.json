@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-02",
     "m8EAd_evening": "2026-07-02",
     "PdMu0_evening": "2026-07-02",
-    "m8EAd_carousel": "2026-07-02",
-    "PdMu0_carousel": "2026-07-02",
+    "m8EAd_carousel": "2026-07-03",
+    "PdMu0_carousel": "2026-07-03",
     "GAh5p_reel_studio": "2026-07-03",
     "m8EAd_reel_studio": "2026-07-03"
   },
@@ -328,6 +328,10 @@
     },
     {
       "destination_id": "manali",
+      "date": "2026-07-03"
+    },
+    {
+      "destination_id": "kausani",
       "date": "2026-07-03"
     }
   ],
@@ -4449,6 +4453,24 @@
       "destination": "manali",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_ladakh-manali-biker.mp4"
+    },
+    {
+      "timestamp": "2026-07-03T10:15:48.871875+00:00",
+      "date": "2026-07-03",
+      "platform": "instagram",
+      "post_id": "XasCe",
+      "destination": "kausani",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-03"
+    },
+    {
+      "timestamp": "2026-07-03T10:15:50.481939+00:00",
+      "date": "2026-07-03",
+      "platform": "facebook",
+      "post_id": "XasFe",
+      "destination": "kausani",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-03"
     }
   ],
   "theme_usage": {
@@ -5385,5 +5407,17 @@
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-07-01",
     "ladakh-manali-biker": "2026-07-03"
+  },
+  "carousel_seen": {
+    "festival": [
+      "Harela Festival",
+      "Amarnath Yatra Start",
+      "Chamba Minjar Fair",
+      "Pangong Nomad Festival",
+      "Karsha Gustor",
+      "Korzok Gustor",
+      "Lucknow Muharram Processions",
+      "Kanwar Yatra"
+    ]
   }
 }
