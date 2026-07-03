@@ -30,11 +30,11 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-07-03",
     "xS5s8_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-07-02",
+    "m8EAd_yt_short": "2026-07-03",
     "m8EAd": "2026-07-02",
     "PdMu0": "2026-07-02",
     "m8EAd_evening": "2026-07-02",
@@ -332,6 +332,10 @@
     },
     {
       "destination_id": "kausani",
+      "date": "2026-07-03"
+    },
+    {
+      "destination_id": "likir",
       "date": "2026-07-03"
     }
   ],
@@ -4471,6 +4475,24 @@
       "destination": "kausani",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-07-03"
+    },
+    {
+      "timestamp": "2026-07-03T13:28:52.321403+00:00",
+      "date": "2026-07-03",
+      "platform": "youtube",
+      "post_id": "OD3Fv",
+      "destination": "likir",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_likir_hi_2026-07-03.mp4"
+    },
+    {
+      "timestamp": "2026-07-03T13:29:34.885722+00:00",
+      "date": "2026-07-03",
+      "platform": "instagram",
+      "post_id": "yEaxj",
+      "destination": "likir",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_likir_hi_2026-07-03.mp4"
     }
   ],
   "theme_usage": {
