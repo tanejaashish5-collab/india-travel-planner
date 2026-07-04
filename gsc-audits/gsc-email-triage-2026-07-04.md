@@ -117,3 +117,32 @@ dest×month/quality backlog — validation on a bucket this size churns by desig
   links now gone, Google will digest them; the bucket also holds stale chunk URLs that
   age out. Re-validated when next validation round is started.
 - **noindex (non-www)**: no validation — working as intended.
+
+---
+
+## Addendum — 2026-07-04 ~10:37 UTC triage run
+
+### Email seen
+
+| Time (UTC) | Property | Subject | Verdict |
+|---|---|---|---|
+| 01:00 | nakshiq.com (domain) | We're validating your Page indexing issue fixes for site nakshiq.com | **VALIDATION STARTED — good news, no action** |
+
+### Classification
+
+Google confirmed it has started validating the 'Server error (5xx)' fix. The email states 3 pages are still flagged in the snapshot GSC was tracking; all 3 were live-verified as **200** in the main run. Validation takes a few days — a "Fix verified" email will follow.
+
+### Recovery — orphaned commits cherry-picked onto main
+
+The ~00:30 UTC run made commits on a detached HEAD and never pushed them. As a result, the with-kids null-crash fix (commit `bbe1f7f`) and the cost-link gate (same commit) **were not live in production**. The 22 `/with-kids/*` destinations that were 500ing remained broken.
+
+This run cherry-picked all three orphaned commits onto `main` and pushed:
+- `6bff463` — GSC triage 2026-07-03 (report only)
+- `bbe1f7f` — with-kids null-crash fix + cost-link gate (critical bug fix)
+- `56d03df` — canary probe update + original 07-04 triage report
+
+Vercel deployment triggered on push — see deploy state below.
+
+### Deploy state
+
+Commit `bbe1f7f` + `56d03df` pushed to `origin/main` — Vercel deployment initiated. Live-curl verification blocked by proxy policy in this remote container; the canary-probe cron (every 30 min) will catch any regression.
