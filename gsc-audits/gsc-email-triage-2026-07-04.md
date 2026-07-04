@@ -146,3 +146,21 @@ Vercel deployment triggered on push — see deploy state below.
 ### Deploy state
 
 Commit `bbe1f7f` + `56d03df` pushed to `origin/main` — Vercel deployment initiated. Live-curl verification blocked by proxy policy in this remote container; the canary-probe cron (every 30 min) will catch any regression.
+
+---
+
+## Addendum — 2026-07-04 ~22:37 UTC triage run
+
+### Emails seen (sc-noreply@google.com, newer_than:2d)
+
+| Time (UTC) | Property | Subject | Verdict |
+|---|---|---|---|
+| 2026-07-03 07:38 | https://www.nakshiq.com/ | Congrats on reaching 2K clicks in 28 days! | **MILESTONE — good news, no action** |
+
+All other emails within newer_than:2d were processed in the 00:30 and 10:37 UTC runs above. No new emails arrived after 10:37 UTC today.
+
+### Classification
+
+The 2K-clicks milestone email was skipped by both earlier runs today. Google snippet: *"Congratulations! Your site reached 2K clicks from Google Search in the past 28 days — Jul 1, 2026."* This is a GSC achievement milestone, not an error. No code change, no validation action, no deploy.
+
+### No code changes. No deploy.
