@@ -61,6 +61,11 @@ const PROBES: Probe[] = [
   { path: "/en/sos", family: "sos" },
   { path: "/en/pilgrimage/char-dham", family: "pilgrimage" },
   { path: "/en/safari/ranthambore", family: "safari" },
+  // "Kids Friendliness Rating" is a hardcoded literal in with-kids-content —
+  // proves the component SSR'd. katra = NULL-reach confidence_cards row: the
+  // 2026-07-04 class (typeof null === "object" crash 500'd 22 dests for ~24
+  // days; /with-kids wasn't probed, so it sat until GSC emailed a 5xx).
+  { path: "/en/with-kids/katra", family: "with-kids (null-section row)", marker: "Kids Friendliness Rating" },
 ];
 
 // /api/search-index feeds all 3 client search surfaces — probe it as JSON.
