@@ -35,16 +35,16 @@
     "GAh5p_yt_short": "2026-07-04",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-04",
-    "m8EAd": "2026-07-03",
-    "PdMu0": "2026-07-03",
-    "m8EAd_evening": "2026-07-03",
-    "PdMu0_evening": "2026-07-03",
+    "m8EAd": "2026-07-04",
+    "PdMu0": "2026-07-04",
+    "m8EAd_evening": "2026-07-04",
+    "PdMu0_evening": "2026-07-04",
     "m8EAd_carousel": "2026-07-04",
     "PdMu0_carousel": "2026-07-04",
     "GAh5p_reel_studio": "2026-07-03",
     "m8EAd_reel_studio": "2026-07-03"
   },
-  "last_sync": "2026-07-03T16:05:01.945706+00:00",
+  "last_sync": "2026-07-04T15:35:26.471297+00:00",
   "posted_destinations": [
     {
       "destination_id": "sambalpur",
@@ -329,11 +329,14 @@
     {
       "destination_id": "karla-bhaja-caves",
       "date": "2026-07-04"
+    },
+    {
+      "destination_id": "khandala",
+      "date": "2026-07-04"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "hidden_gem_reveal",
       "score_card",
       "score_card",
       "score_card",
@@ -353,10 +356,10 @@
       "score_card",
       "data_carousel",
       "score_card",
-      "score_card"
+      "score_card",
+      "v2_myth_bust_oneline"
     ],
     "PdMu0": [
-      "hidden_gem_reveal",
       "score_card",
       "score_card",
       "score_card",
@@ -376,7 +379,8 @@
       "score_card",
       "data_carousel",
       "score_card",
-      "score_card"
+      "score_card",
+      "v2_myth_bust_oneline"
     ]
   },
   "post_log": [
@@ -4561,6 +4565,28 @@
       "destination": "karla-bhaja-caves",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_karla-bhaja-caves_hi_2026-07-04.mp4"
+    },
+    {
+      "timestamp": "2026-07-04T15:36:33.840814+00:00",
+      "date": "2026-07-04",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "lCTCK",
+      "destination": "khandala",
+      "format": "v2_myth_bust_oneline",
+      "has_media": true,
+      "media_id": "khandala.mp4"
+    },
+    {
+      "timestamp": "2026-07-04T15:36:52.737642+00:00",
+      "date": "2026-07-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ebcTr",
+      "destination": "khandala",
+      "format": "v2_myth_bust_oneline",
+      "has_media": true,
+      "media_id": "khandala.mp4"
     }
   ],
   "theme_usage": {
@@ -4893,6 +4919,9 @@
       ],
       "khardung-la": [
         "2026-07-01"
+      ],
+      "khandala": [
+        "2026-07-04"
       ]
     },
     "morning_formats": {
@@ -5030,7 +5059,8 @@
       ],
       "v2_myth_bust_oneline": [
         "2026-06-06",
-        "2026-06-17"
+        "2026-06-17",
+        "2026-07-04"
       ],
       "v3_tl_first_person_essay": [
         "2026-06-07"
@@ -5213,6 +5243,9 @@
       ],
       "bhimashankar": [
         "2026-07-03"
+      ],
+      "khandala": [
+        "2026-07-04"
       ]
     },
     "audience_tags": {
@@ -5227,7 +5260,8 @@
         "2026-05-23",
         "2026-05-30",
         "2026-06-06",
-        "2026-06-27"
+        "2026-06-27",
+        "2026-07-04"
       ],
       "adventurers": [
         "2026-05-29",
@@ -5481,7 +5515,8 @@
       "keylong": [
         "2026-07-02"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -5495,7 +5530,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "bhimashankar",
+    "shared_best": "khandala",
     "collection": "best-dhabas-on-highways"
   },
   "manual_skip_dests": {},

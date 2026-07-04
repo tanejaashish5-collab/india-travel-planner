@@ -9140,3 +9140,108 @@ Date range: 2026-04-15 → 2026-07-03
 2026-07-04 12:54:15  INFO      YT Short posted: format=did_you_know, music=hype-305
 2026-07-04 12:54:15  INFO      State saved. YT Short run complete.
 2026-07-04 12:54:15  INFO      ════════════════════════════════════════════════════════════
+2026-07-04 15:34:49  INFO      ════════════════════════════════════════════════════════════
+2026-07-04 15:34:49  INFO      Nakshiq Autoposter · EVENING · 2026-07-04 · weekday=5
+2026-07-04 15:34:49  INFO      ════════════════════════════════════════════════════════════
+2026-07-04 15:34:49  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-04 15:35:26  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-04 15:35:26  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-07-04 15:35:27  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-04 15:35:27  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-04 15:35:27  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-04 15:35:45  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-04 15:35:45  INFO      Evening format (balance→anti_trap): v2_myth_bust_oneline [0% vs target 15%] (0/15 never featured)
+2026-07-04 15:35:45  INFO      Formats — IG: v2_myth_bust_oneline  ·  FB: v2_myth_bust_oneline  ·  Story: route_spotlight  ·  Audience: families
+2026-07-04 15:35:45  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 65
+2026-07-04 15:35:45  INFO      Audience filter 'families' → 7 destinations match.
+2026-07-04 15:35:45  INFO      Fingerprint dedup snapshot — 60 dests in 7d · 139 (dest,fmt) pairs in 30d · 205 media in 60d
+2026-07-04 15:35:45  INFO      Route locked: Spiti Valley Motorcycle Circuit
+2026-07-04 15:35:45  INFO      Shared best destination locked: Khandala
+2026-07-04 15:35:45  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-04 15:35:45  INFO      [instagram/nakshiq] Generating v2_myth_bust_oneline post...
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: darjeeling has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: chopta has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: nainital has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: achabal has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: mathura has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: anandpur-sahib has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: ooty has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: pahalgam.mp4 in 60-day media window — SKIPPING
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: gangtok has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: munsiyari has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: hampi has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: kasol has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: madurai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: mumbai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: shimla has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: tawang has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: tungnath has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: mussoorie has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: old-goa has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: coorg has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      v2_myth_bust_oneline: munnar has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:35:45  INFO      [instagram/nakshiq] Caption ready (413 chars, dest=khandala)
+2026-07-04 15:35:45  INFO      [instagram/nakshiq] CSV video format (v2_myth_bust_oneline) — using dest Ken Burns clip as fallback
+2026-07-04 15:35:45  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/khandala.mp4?v=20260524
+2026-07-04 15:35:48  INFO          Brand-stamp applied: khandala.mp4 (6,086,120 → 3,211,646 bytes)
+2026-07-04 15:35:48  INFO          Requesting upload URL for khandala.mp4 (3,211,646 bytes, video/mp4)
+2026-07-04 15:35:49  INFO          Uploading to R2 (timeout=300s)...
+2026-07-04 15:35:49  INFO          R2 PUT OK. Confirming...
+2026-07-04 15:35:50  INFO          Media ready: z3fyP (3,211,646 bytes · khandala.mp4)
+2026-07-04 15:35:50  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-04 15:36:33  INFO      [instagram/nakshiq] ✅ Published · Outstand=lCTCK · Platform=18162791578456599
+2026-07-04 15:36:33  INFO      [facebook/Nakshiq] Generating v2_myth_bust_oneline post...
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: darjeeling has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: chopta has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: nainital has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: achabal has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: mathura has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: anandpur-sahib has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: ooty has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: pahalgam.mp4 in 60-day media window — SKIPPING
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: gangtok has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: munsiyari has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: hampi has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: kasol has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: madurai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: mumbai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: shimla has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: tawang has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: tungnath has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: mussoorie has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: old-goa has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: coorg has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: munnar has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: lonavala already posted today — SKIPPING dest (same-day guard)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: kargil in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: igatpuri already posted today — SKIPPING dest (same-day guard)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: lamayuru in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: tso-moriri in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: zanskar in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: khardung-la in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: leh in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: karla-bhaja-caves already posted today — SKIPPING dest (same-day guard)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: jog-falls in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: hogenakkal in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: bhimashankar in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: kolad in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: courtallam in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: khandala already posted today — SKIPPING dest (same-day guard)
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: keylong in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: amboli in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  INFO      v2_myth_bust_oneline: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-07-04 15:36:33  WARNING   v2_myth_bust_oneline: no eligible dest at render time — falling back to safe format 'score_card'
+2026-07-04 15:36:33  INFO      [facebook/Nakshiq] Caption ready (531 chars, dest=khandala)
+2026-07-04 15:36:34  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-04 15:36:34  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/khandala.mp4?v=20260524
+2026-07-04 15:36:36  INFO          Brand-stamp applied: khandala.mp4 (6,086,120 → 3,211,646 bytes)
+2026-07-04 15:36:36  INFO          Requesting upload URL for khandala.mp4 (3,211,646 bytes, video/mp4)
+2026-07-04 15:36:37  INFO          Uploading to R2 (timeout=300s)...
+2026-07-04 15:36:38  INFO          R2 PUT OK. Confirming...
+2026-07-04 15:36:39  INFO          Media ready: 9MSTQ (3,211,646 bytes · khandala.mp4)
+2026-07-04 15:36:39  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-04 15:36:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ebcTr · Platform=2129859277590997
+2026-07-04 15:36:52  INFO      State saved. Run complete.
+2026-07-04 15:36:52  INFO      ════════════════════════════════════════════════════════════
