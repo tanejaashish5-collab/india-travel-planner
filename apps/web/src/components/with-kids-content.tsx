@@ -56,13 +56,16 @@ export function WithKidsContent({
       `${dest.difficulty.charAt(0).toUpperCase() + dest.difficulty.slice(1)} terrain — not suitable for toddlers or children with limited hiking experience.`
     );
   }
-  const ccEmergency = typeof cc?.emergency === "object"
+  // typeof null === "object" — the truthy check must come first, or an
+  // honest-scarcity NULL section (e.g. reach on the Ashtavinayak/caves cohort)
+  // crashes the whole page. Same class as the 2026-06-10 confidence-card fix.
+  const ccEmergency = cc?.emergency && typeof cc.emergency === "object"
     ? [cc.emergency.nearest_hospital, cc.emergency.ambulance, cc.emergency.rescue, cc.emergency.police_station, cc.emergency.helpline].filter(Boolean).join(". ")
     : cc?.emergency ?? "";
-  const ccNetwork = typeof cc?.network === "object"
+  const ccNetwork = cc?.network && typeof cc.network === "object"
     ? [cc.network.note, cc.network.jio && "Jio available", cc.network.bsnl && "BSNL available", cc.network.vi && "Vi available", cc.network.airtel && "Airtel available", cc.network.wifi_available && "WiFi available"].filter(Boolean).join(". ")
     : cc?.network ?? "";
-  const ccReach = typeof cc?.reach === "object"
+  const ccReach = cc?.reach && typeof cc.reach === "object"
     ? (cc.reach.road_condition || cc.reach.from_nearest_city || cc.reach.public_transport || "See destination guide")
     : cc?.reach ?? "";
   if (ccEmergency && ccEmergency.toLowerCase().includes("far")) {

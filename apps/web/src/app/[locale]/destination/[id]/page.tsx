@@ -183,7 +183,8 @@ async function getDestination(id: string) {
         destination_months(*),
         sub_destinations(*),
         local_legends(*),
-        viral_eats(*)
+        viral_eats(*),
+        destination_costs(count)
       `)
       .eq("id", id)
       .single();

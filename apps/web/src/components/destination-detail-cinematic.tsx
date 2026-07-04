@@ -1570,9 +1570,10 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             <SectionLabel num="VII" name="THE COST · THE CROWDS · THE GROUND" />
 
             {/* Inbound link to the full per-trip cost calculator (/cost/[slug]).
-                Always rendered — every destination carries cost data — so this
-                feeds SEO authority from the hub to the cost surface regardless
-                of whether the inline daily_cost grid below exists. */}
+                Gated on destination_costs rows existing (destination_costs(count)
+                in the hub page query) — /cost/[slug] 404s for dests without cost
+                rows (the 2026-06-14 Sikkim cohort), and GSC flagged those links. */}
+            {(dest.destination_costs?.[0]?.count ?? 0) > 0 && (
             <a
               href={`/${locale}/cost/${dest.id}`}
               style={{
@@ -1617,6 +1618,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 &rarr;
               </span>
             </a>
+            )}
 
             {/* Inbound link to the safari-booking guide (/safari/[slug]) — only
                 for the ~20 tiger reserves / national parks that carry a published

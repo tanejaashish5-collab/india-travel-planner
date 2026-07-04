@@ -406,7 +406,8 @@ async function getMonthData(id: string, month: string) {
         state:states(id, name),
         kids_friendly(*),
         confidence_cards(*),
-        destination_months(*)
+        destination_months(*),
+        destination_costs(count)
       `)
       .eq("id", id)
       .single(),

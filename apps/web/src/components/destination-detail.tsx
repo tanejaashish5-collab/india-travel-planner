@@ -953,8 +953,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 })()}
 
                 {/* Full per-trip cost calculator — inbound link to /cost/[slug]
-                    (days × travellers × month × style, season-adjusted). Feeds
-                    SEO authority from the dest hub to the cost surface. */}
+                    (days × travellers × month × style, season-adjusted). Gated on
+                    destination_costs rows existing (destination_costs(count) in the
+                    hub page query) — /cost/[slug] 404s for dests without cost rows
+                    (the 2026-06-14 Sikkim cohort), and GSC flagged those links. */}
+                {(dest.destination_costs?.[0]?.count ?? 0) > 0 && (
                 <a
                   href={`/${locale}/cost/${dest.id}`}
                   className="flex items-center justify-between gap-3 rounded-xl border border-border bg-muted/20 px-4 py-3 transition-colors hover:border-foreground/40 hover:bg-muted/40"
@@ -971,6 +974,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </span>
                   <span aria-hidden className="shrink-0 text-muted-foreground">&rarr;</span>
                 </a>
+                )}
 
                 {/* Safari booking guide — inbound link to /safari/[slug] for the
                     ~20 tiger reserves / national parks that carry a published

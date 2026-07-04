@@ -928,6 +928,10 @@ export function DestinationMonth({
               destinationId={destination.id}
             />
           </section>
+          {/* Gated on destination_costs rows existing (destination_costs(count)
+              in the page query) — /cost/[slug] 404s for dests without cost rows
+              (the 2026-06-14 Sikkim cohort), and GSC flagged those links. */}
+          {(destination.destination_costs?.[0]?.count ?? 0) > 0 && (
           <section id="section-cost" className="scroll-mt-28">
             <Link
               href={`/${locale}/cost/${destination.id}`}
@@ -946,6 +950,7 @@ export function DestinationMonth({
               <span aria-hidden className="shrink-0 text-muted-foreground">&rarr;</span>
             </Link>
           </section>
+          )}
           <section id="section-guide" className="scroll-mt-28">
             <FullGuideLink />
           </section>
