@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-03",
     "m8EAd_evening": "2026-07-03",
     "PdMu0_evening": "2026-07-03",
-    "m8EAd_carousel": "2026-07-03",
-    "PdMu0_carousel": "2026-07-03",
+    "m8EAd_carousel": "2026-07-04",
+    "PdMu0_carousel": "2026-07-04",
     "GAh5p_reel_studio": "2026-07-03",
     "m8EAd_reel_studio": "2026-07-03"
   },
@@ -320,6 +320,10 @@
     },
     {
       "destination_id": "igatpuri",
+      "date": "2026-07-04"
+    },
+    {
+      "destination_id": "lonavala",
       "date": "2026-07-04"
     }
   ],
@@ -4517,6 +4521,24 @@
       "destination": "igatpuri",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_igatpuri_hi_2026-07-04.mp4"
+    },
+    {
+      "timestamp": "2026-07-04T09:35:48.394917+00:00",
+      "date": "2026-07-04",
+      "platform": "instagram",
+      "post_id": "FjncZ",
+      "destination": "lonavala",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-07-04"
+    },
+    {
+      "timestamp": "2026-07-04T09:35:50.580685+00:00",
+      "date": "2026-07-04",
+      "platform": "facebook",
+      "post_id": "gc6Wx",
+      "destination": "lonavala",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-07-04"
     }
   ],
   "theme_usage": {
