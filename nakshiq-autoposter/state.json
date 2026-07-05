@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-04",
     "m8EAd_evening": "2026-07-04",
     "PdMu0_evening": "2026-07-04",
-    "m8EAd_carousel": "2026-07-04",
-    "PdMu0_carousel": "2026-07-04"
+    "m8EAd_carousel": "2026-07-05",
+    "PdMu0_carousel": "2026-07-05"
   },
   "last_sync": "2026-07-04T15:35:26.471297+00:00",
   "posted_destinations": [
@@ -326,6 +326,10 @@
     },
     {
       "destination_id": "turtuk",
+      "date": "2026-07-05"
+    },
+    {
+      "destination_id": "dhanaulti",
       "date": "2026-07-05"
     }
   ],
@@ -4599,6 +4603,24 @@
       "destination": "turtuk",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_turtuk_hi_2026-07-05.mp4"
+    },
+    {
+      "timestamp": "2026-07-05T09:51:25.121487+00:00",
+      "date": "2026-07-05",
+      "platform": "instagram",
+      "post_id": "ebNpr",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-07-05"
+    },
+    {
+      "timestamp": "2026-07-05T09:51:26.877613+00:00",
+      "date": "2026-07-05",
+      "platform": "facebook",
+      "post_id": "Cy93F",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-07-05"
     }
   ],
   "theme_usage": {
