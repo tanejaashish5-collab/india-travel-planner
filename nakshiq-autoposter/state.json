@@ -35,14 +35,14 @@
     "GAh5p_yt_short": "2026-07-04",
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-05",
-    "m8EAd": "2026-07-04",
-    "PdMu0": "2026-07-04",
-    "m8EAd_evening": "2026-07-04",
-    "PdMu0_evening": "2026-07-04",
+    "m8EAd": "2026-07-05",
+    "PdMu0": "2026-07-05",
+    "m8EAd_evening": "2026-07-05",
+    "PdMu0_evening": "2026-07-05",
     "m8EAd_carousel": "2026-07-05",
     "PdMu0_carousel": "2026-07-05"
   },
-  "last_sync": "2026-07-04T15:35:26.471297+00:00",
+  "last_sync": "2026-07-05T15:42:50.535054+00:00",
   "posted_destinations": [
     {
       "destination_id": "keylong",
@@ -335,6 +335,10 @@
     {
       "destination_id": "umlingla",
       "date": "2026-07-05"
+    },
+    {
+      "destination_id": "kolad",
+      "date": "2026-07-05"
     }
   ],
   "posted_formats": {
@@ -348,7 +352,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -359,7 +362,8 @@
       "data_carousel",
       "score_card",
       "score_card",
-      "v2_myth_bust_oneline"
+      "v2_myth_bust_oneline",
+      "score_card"
     ],
     "PdMu0": [
       "score_card",
@@ -371,7 +375,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -382,7 +385,8 @@
       "data_carousel",
       "score_card",
       "score_card",
-      "v2_myth_bust_oneline"
+      "v2_myth_bust_oneline",
+      "score_card"
     ]
   },
   "post_log": [
@@ -4643,6 +4647,28 @@
       "destination": "umlingla",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_umlingla_hi_2026-07-05.mp4"
+    },
+    {
+      "timestamp": "2026-07-05T15:44:01.620253+00:00",
+      "date": "2026-07-05",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Z2j9u",
+      "destination": "kolad",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kolad.mp4"
+    },
+    {
+      "timestamp": "2026-07-05T15:44:26.760639+00:00",
+      "date": "2026-07-05",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "N4rXa",
+      "destination": "kolad",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kolad.mp4"
     }
   ],
   "theme_usage": {
@@ -4967,7 +4993,8 @@
         "2026-07-02"
       ],
       "kolad": [
-        "2026-07-01"
+        "2026-07-01",
+        "2026-07-05"
       ],
       "bhimashankar": [
         "2026-07-01",
@@ -5088,7 +5115,8 @@
         "2026-06-29",
         "2026-06-30",
         "2026-07-02",
-        "2026-07-03"
+        "2026-07-03",
+        "2026-07-05"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -5302,6 +5330,9 @@
       ],
       "khandala": [
         "2026-07-04"
+      ],
+      "kolad": [
+        "2026-07-05"
       ]
     },
     "audience_tags": {
@@ -5585,7 +5616,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "khandala",
+    "shared_best": "khardung-la",
     "collection": "best-dhabas-on-highways"
   },
   "manual_skip_dests": {},
