@@ -31,10 +31,10 @@
   ],
   "posted_today": {
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "GAh5p_yt_short": "2026-07-04",
     "xS5s8_yt_short_count": 2,
-    "m8EAd_yt_short": "2026-07-04",
+    "m8EAd_yt_short": "2026-07-05",
     "m8EAd": "2026-07-04",
     "PdMu0": "2026-07-04",
     "m8EAd_evening": "2026-07-04",
@@ -330,6 +330,10 @@
     },
     {
       "destination_id": "dhanaulti",
+      "date": "2026-07-05"
+    },
+    {
+      "destination_id": "umlingla",
       "date": "2026-07-05"
     }
   ],
@@ -4621,6 +4625,24 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-07-05"
+    },
+    {
+      "timestamp": "2026-07-05T12:57:53.083806+00:00",
+      "date": "2026-07-05",
+      "platform": "youtube",
+      "post_id": "gcDmx",
+      "destination": "umlingla",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_umlingla_hi_2026-07-05.mp4"
+    },
+    {
+      "timestamp": "2026-07-05T12:58:34.490753+00:00",
+      "date": "2026-07-05",
+      "platform": "instagram",
+      "post_id": "TniN1",
+      "destination": "umlingla",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_umlingla_hi_2026-07-05.mp4"
     }
   ],
   "theme_usage": {
