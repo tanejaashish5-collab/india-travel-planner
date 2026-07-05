@@ -40,20 +40,10 @@
     "m8EAd_evening": "2026-07-04",
     "PdMu0_evening": "2026-07-04",
     "m8EAd_carousel": "2026-07-04",
-    "PdMu0_carousel": "2026-07-04",
-    "GAh5p_reel_studio": "2026-07-03",
-    "m8EAd_reel_studio": "2026-07-03"
+    "PdMu0_carousel": "2026-07-04"
   },
   "last_sync": "2026-07-04T15:35:26.471297+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "sambalpur",
-      "date": "2026-06-20"
-    },
-    {
-      "destination_id": "jibhi",
-      "date": "2026-06-20"
-    },
     {
       "destination_id": "keylong",
       "date": "2026-06-21"
@@ -333,6 +323,10 @@
     {
       "destination_id": "khandala",
       "date": "2026-07-04"
+    },
+    {
+      "destination_id": "turtuk",
+      "date": "2026-07-05"
     }
   ],
   "posted_formats": {
@@ -4587,6 +4581,24 @@
       "format": "v2_myth_bust_oneline",
       "has_media": true,
       "media_id": "khandala.mp4"
+    },
+    {
+      "timestamp": "2026-07-05T07:42:45.159038+00:00",
+      "date": "2026-07-05",
+      "platform": "youtube",
+      "post_id": "N4X8a",
+      "destination": "turtuk",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_turtuk_hi_2026-07-05.mp4"
+    },
+    {
+      "timestamp": "2026-07-05T07:43:32.374733+00:00",
+      "date": "2026-07-05",
+      "platform": "instagram",
+      "post_id": "8VoDI",
+      "destination": "turtuk",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_turtuk_hi_2026-07-05.mp4"
     }
   ],
   "theme_usage": {
@@ -5515,8 +5527,7 @@
       "keylong": [
         "2026-07-02"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
