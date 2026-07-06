@@ -34,17 +34,17 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-05",
-    "m8EAd": "2026-07-05",
-    "PdMu0": "2026-07-05",
-    "m8EAd_evening": "2026-07-05",
-    "PdMu0_evening": "2026-07-05",
+    "m8EAd": "2026-07-06",
+    "PdMu0": "2026-07-06",
+    "m8EAd_evening": "2026-07-06",
+    "PdMu0_evening": "2026-07-06",
     "m8EAd_carousel": "2026-07-06",
     "PdMu0_carousel": "2026-07-06",
     "GAh5p_yt_short": "2026-07-06",
     "GAh5p_reel_studio": "2026-07-06",
     "m8EAd_reel_studio": "2026-07-06"
   },
-  "last_sync": "2026-07-05T15:42:50.535054+00:00",
+  "last_sync": "2026-07-06T17:20:38.946731+00:00",
   "posted_destinations": [
     {
       "destination_id": "manali",
@@ -329,6 +329,10 @@
     {
       "destination_id": "keylong",
       "date": "2026-07-06"
+    },
+    {
+      "destination_id": "khardung-la",
+      "date": "2026-07-06"
     }
   ],
   "posted_formats": {
@@ -341,7 +345,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -353,6 +356,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card"
     ],
     "PdMu0": [
@@ -364,7 +368,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -376,6 +379,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card"
     ]
   },
@@ -4731,6 +4735,28 @@
       "destination": "keylong",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_keylong_hi_2026-07-06.mp4"
+    },
+    {
+      "timestamp": "2026-07-06T17:21:37.794266+00:00",
+      "date": "2026-07-06",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "BpA2n",
+      "destination": "khardung-la",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khardung-la.mp4"
+    },
+    {
+      "timestamp": "2026-07-06T17:22:01.531007+00:00",
+      "date": "2026-07-06",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jAts2",
+      "destination": "khardung-la",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khardung-la.mp4"
     }
   ],
   "theme_usage": {
@@ -5063,7 +5089,8 @@
         "2026-07-03"
       ],
       "khardung-la": [
-        "2026-07-01"
+        "2026-07-01",
+        "2026-07-06"
       ],
       "khandala": [
         "2026-07-04"
@@ -5178,7 +5205,8 @@
         "2026-06-30",
         "2026-07-02",
         "2026-07-03",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-06"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -5395,6 +5423,9 @@
       ],
       "kolad": [
         "2026-07-05"
+      ],
+      "khardung-la": [
+        "2026-07-06"
       ]
     },
     "audience_tags": {
@@ -5403,7 +5434,8 @@
         "2026-06-01",
         "2026-06-15",
         "2026-06-22",
-        "2026-06-29"
+        "2026-06-29",
+        "2026-07-06"
       ],
       "families": [
         "2026-05-23",
