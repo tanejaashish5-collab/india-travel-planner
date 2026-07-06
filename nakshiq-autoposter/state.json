@@ -38,8 +38,8 @@
     "PdMu0": "2026-07-05",
     "m8EAd_evening": "2026-07-05",
     "PdMu0_evening": "2026-07-05",
-    "m8EAd_carousel": "2026-07-05",
-    "PdMu0_carousel": "2026-07-05",
+    "m8EAd_carousel": "2026-07-06",
+    "PdMu0_carousel": "2026-07-06",
     "GAh5p_yt_short": "2026-07-06",
     "GAh5p_reel_studio": "2026-07-06",
     "m8EAd_reel_studio": "2026-07-06"
@@ -320,6 +320,10 @@
     },
     {
       "destination_id": "leh",
+      "date": "2026-07-06"
+    },
+    {
+      "destination_id": "lamayuru",
       "date": "2026-07-06"
     }
   ],
@@ -4687,6 +4691,24 @@
       "destination": "leh",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_ladakh-express-7d.mp4"
+    },
+    {
+      "timestamp": "2026-07-06T11:49:22.762967+00:00",
+      "date": "2026-07-06",
+      "platform": "instagram",
+      "post_id": "gcNOx",
+      "destination": "lamayuru",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-07-06"
+    },
+    {
+      "timestamp": "2026-07-06T11:49:26.014007+00:00",
+      "date": "2026-07-06",
+      "platform": "facebook",
+      "post_id": "ODLdv",
+      "destination": "lamayuru",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-07-06"
     }
   ],
   "theme_usage": {
