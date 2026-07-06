@@ -30,7 +30,7 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-07-05",
@@ -324,6 +324,10 @@
     },
     {
       "destination_id": "lamayuru",
+      "date": "2026-07-06"
+    },
+    {
+      "destination_id": "keylong",
       "date": "2026-07-06"
     }
   ],
@@ -4709,6 +4713,24 @@
       "destination": "lamayuru",
       "format": "carousel.persona",
       "media_id": "carousel_persona_2026-07-06"
+    },
+    {
+      "timestamp": "2026-07-06T14:51:22.628739+00:00",
+      "date": "2026-07-06",
+      "platform": "youtube",
+      "post_id": "2709S",
+      "destination": "keylong",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_keylong_hi_2026-07-06.mp4"
+    },
+    {
+      "timestamp": "2026-07-06T14:52:11.047313+00:00",
+      "date": "2026-07-06",
+      "platform": "instagram",
+      "post_id": "5xe6D",
+      "destination": "keylong",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_keylong_hi_2026-07-06.mp4"
     }
   ],
   "theme_usage": {
