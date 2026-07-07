@@ -9781,3 +9781,49 @@ Date range: 2026-04-15 → 2026-07-06
 2026-07-07 13:58:49  INFO      YT Short posted: format=this_vs_that, music=fast-676
 2026-07-07 13:58:49  INFO      State saved. YT Short run complete.
 2026-07-07 13:58:49  INFO      ════════════════════════════════════════════════════════════
+2026-07-07 16:45:25  INFO      ════════════════════════════════════════════════════════════
+2026-07-07 16:45:25  INFO      Nakshiq Autoposter · EVENING · 2026-07-07 · weekday=1
+2026-07-07 16:45:25  INFO      ════════════════════════════════════════════════════════════
+2026-07-07 16:45:25  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-07 16:46:02  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-07 16:46:02  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-07-07 16:46:03  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-07 16:46:03  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-07 16:46:03  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-07 16:46:18  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-07 16:46:18  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-07-07 16:46:18  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: collection_spotlight
+2026-07-07 16:46:18  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 60
+2026-07-07 16:46:18  INFO      Fingerprint dedup snapshot — 59 dests in 7d · 136 (dest,fmt) pairs in 30d · 218 media in 60d
+2026-07-07 16:46:18  INFO      Collection locked: Andaman Diving & Snorkeling (0/20 never featured)
+2026-07-07 16:46:27  INFO      Shared best destination locked: Tso Moriri
+2026-07-07 16:46:27  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-07-07 16:46:27  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-07 16:46:27  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-07-07 16:46:27  INFO      confidence_intel for Tso Moriri: only 0 card rows — SKIPPING
+2026-07-07 16:46:27  WARNING   [instagram/nakshiq] confidence_intel: tso-moriri inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'tso-moriri' as score_card to keep the slot live.
+2026-07-07 16:46:27  INFO      [instagram/nakshiq] Caption ready (407 chars, dest=tso-moriri)
+2026-07-07 16:46:27  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-07 16:46:27  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tso-moriri.mp4?v=20260524
+2026-07-07 16:46:30  INFO          Brand-stamp applied: tso-moriri.mp4 (3,715,209 → 1,721,232 bytes)
+2026-07-07 16:46:30  INFO          Requesting upload URL for tso-moriri.mp4 (1,721,232 bytes, video/mp4)
+2026-07-07 16:46:31  INFO          Uploading to R2 (timeout=300s)...
+2026-07-07 16:46:33  INFO          R2 PUT OK. Confirming...
+2026-07-07 16:46:34  INFO          Media ready: 8oUsI (1,721,232 bytes · tso-moriri.mp4)
+2026-07-07 16:46:34  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-07 16:47:28  INFO      [instagram/nakshiq] ✅ Published · Outstand=XaPle · Platform=18043456124608293
+2026-07-07 16:47:28  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-07-07 16:47:28  INFO      confidence_intel for Tso Moriri: only 0 card rows — SKIPPING
+2026-07-07 16:47:28  WARNING   [facebook/Nakshiq] confidence_intel: tso-moriri inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'tso-moriri' as score_card to keep the slot live.
+2026-07-07 16:47:28  INFO      [facebook/Nakshiq] Caption ready (592 chars, dest=tso-moriri)
+2026-07-07 16:47:28  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-07 16:47:28  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tso-moriri.mp4?v=20260524
+2026-07-07 16:47:30  INFO          Brand-stamp applied: tso-moriri.mp4 (3,715,209 → 1,721,232 bytes)
+2026-07-07 16:47:30  INFO          Requesting upload URL for tso-moriri.mp4 (1,721,232 bytes, video/mp4)
+2026-07-07 16:47:31  INFO          Uploading to R2 (timeout=300s)...
+2026-07-07 16:47:32  INFO          R2 PUT OK. Confirming...
+2026-07-07 16:47:34  INFO          Media ready: Hd7P5 (1,721,232 bytes · tso-moriri.mp4)
+2026-07-07 16:47:34  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-07 16:47:50  INFO      [facebook/Nakshiq] ✅ Published · Outstand=27XsS · Platform=3334023756798853
+2026-07-07 16:47:50  INFO      State saved. Run complete.
+2026-07-07 16:47:50  INFO      ════════════════════════════════════════════════════════════

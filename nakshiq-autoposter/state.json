@@ -33,10 +33,10 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-06",
-    "PdMu0": "2026-07-06",
-    "m8EAd_evening": "2026-07-06",
-    "PdMu0_evening": "2026-07-06",
+    "m8EAd": "2026-07-07",
+    "PdMu0": "2026-07-07",
+    "m8EAd_evening": "2026-07-07",
+    "PdMu0_evening": "2026-07-07",
     "m8EAd_carousel": "2026-07-07",
     "PdMu0_carousel": "2026-07-07",
     "GAh5p_yt_short": "2026-07-07",
@@ -44,7 +44,7 @@
     "m8EAd_reel_studio": "2026-07-06",
     "m8EAd_yt_short": "2026-07-07"
   },
-  "last_sync": "2026-07-06T17:20:38.946731+00:00",
+  "last_sync": "2026-07-07T16:46:02.233688+00:00",
   "posted_destinations": [
     {
       "destination_id": "sonamarg",
@@ -325,6 +325,10 @@
     {
       "destination_id": "sinthan-top",
       "date": "2026-07-07"
+    },
+    {
+      "destination_id": "tso-moriri",
+      "date": "2026-07-07"
     }
   ],
   "posted_formats": {
@@ -336,7 +340,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -348,6 +351,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card"
     ],
@@ -359,7 +363,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -371,6 +374,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card"
     ]
@@ -4803,6 +4807,28 @@
       "destination": "sinthan-top",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_sinthan-top_hi_2026-07-07.mp4"
+    },
+    {
+      "timestamp": "2026-07-07T16:47:28.499260+00:00",
+      "date": "2026-07-07",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XaPle",
+      "destination": "tso-moriri",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tso-moriri.mp4"
+    },
+    {
+      "timestamp": "2026-07-07T16:47:50.340391+00:00",
+      "date": "2026-07-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "27XsS",
+      "destination": "tso-moriri",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tso-moriri.mp4"
     }
   ],
   "theme_usage": {
@@ -5140,6 +5166,9 @@
       ],
       "khandala": [
         "2026-07-04"
+      ],
+      "tso-moriri": [
+        "2026-07-07"
       ]
     },
     "morning_formats": {
@@ -5252,7 +5281,8 @@
         "2026-07-02",
         "2026-07-03",
         "2026-07-05",
-        "2026-07-06"
+        "2026-07-06",
+        "2026-07-07"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -5472,6 +5502,9 @@
       ],
       "khardung-la": [
         "2026-07-06"
+      ],
+      "tso-moriri": [
+        "2026-07-07"
       ]
     },
     "audience_tags": {
@@ -5515,7 +5548,8 @@
         "2026-05-20"
       ],
       "andaman-diving-snorkeling": [
-        "2026-05-20"
+        "2026-05-20",
+        "2026-07-07"
       ],
       "adrenaline-rush": [
         "2026-05-26"
@@ -5742,7 +5776,8 @@
       "keylong": [
         "2026-07-02"
       ]
-    }
+    },
+    "collection_carousel_dests:andaman-diving-snorkeling": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -5756,8 +5791,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "khardung-la",
-    "collection": "best-dhabas-on-highways"
+    "shared_best": "tso-moriri",
+    "collection": "andaman-diving-snorkeling"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-01",
