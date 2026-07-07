@@ -23,11 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ? "महीना, बजट और यात्रा की शैली चुनें — सत्यापित स्कोरिंग से आपके लिए 3 सर्वश्रेष्ठ हिल स्टेशन। कोई ईमेल नहीं, कोई अकाउंट नहीं।"
     : "Pick your month, budget, and travel style — get the 3 best-matched hill stations from verified month-by-month scoring. No email, no account.";
   const ogTitle = `${title} | NakshIQ`; // template skips OG/twitter — brand inline
+  // Declaring openGraph/twitter here replaces (not merges) the layout's
+  // default block, so images must be repeated or the page ships with none.
+  const ogImage = { url: "https://www.nakshiq.com/og-image.jpg", width: 800, height: 450, alt: title };
   return {
     title,
     description,
-    openGraph: { title: ogTitle, description },
-    twitter: { title: ogTitle, description },
+    openGraph: { title: ogTitle, description, images: [ogImage] },
+    twitter: { title: ogTitle, description, images: [ogImage.url] },
     ...localeAlternates(locale, "/quiz/hill-station"),
   };
 }

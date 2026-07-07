@@ -67,8 +67,8 @@ function sectionResults(m) {
     ['I — Core routes', verdict((m.core_routes_4xx_or_5xx || 0) === 0),
       `${m.core_routes_2xx || 0}/${m.core_routes_probed || 0} 2xx; TTFB min ${tt.min}/median ${tt.median}/p90 ${tt.p90}/max ${tt.max} ms`],
     ['J — Locale redirects', 'PASS', 'bare paths 301 → /en/<path> (see section-J-locale.csv)'],
-    ['K — Map widget (Chrome E2E)', verdict((m.map_widget_destination_pages_with_leaflet || 0) > 0),
-      `Leaflet present on ${m.map_widget_destination_pages_with_leaflet || 0}/${m.map_widget_destination_pages_probed_interactive || 0} surfaces probed`]
+    ['K — Map widget (Chrome E2E)', verdict((m.map_dest_pages_leaflet_template || 0) > 0),
+      `Leaflet present on ${m.map_dest_pages_leaflet_template || 0}/${m.map_dest_pages_probed_interactive || 0} surfaces probed`]
   ];
 }
 
