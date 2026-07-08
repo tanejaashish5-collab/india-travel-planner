@@ -30,8 +30,8 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-07",
     "PdMu0": "2026-07-07",
@@ -39,33 +39,11 @@
     "PdMu0_evening": "2026-07-07",
     "m8EAd_carousel": "2026-07-07",
     "PdMu0_carousel": "2026-07-07",
-    "GAh5p_yt_short": "2026-07-07",
-    "GAh5p_reel_studio": "2026-07-06",
-    "m8EAd_reel_studio": "2026-07-06",
-    "m8EAd_yt_short": "2026-07-07"
+    "GAh5p_yt_short": "2026-07-08",
+    "m8EAd_yt_short": "2026-07-08"
   },
   "last_sync": "2026-07-07T16:46:02.233688+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "sonamarg",
-      "date": "2026-06-23"
-    },
-    {
-      "destination_id": "badrinath",
-      "date": "2026-06-23"
-    },
-    {
-      "destination_id": "athirapally",
-      "date": "2026-06-23"
-    },
-    {
-      "destination_id": "tso-moriri",
-      "date": "2026-06-23"
-    },
-    {
-      "destination_id": "lahaul-valley",
-      "date": "2026-06-23"
-    },
     {
       "destination_id": "final",
       "date": "2026-06-24"
@@ -329,6 +307,10 @@
     {
       "destination_id": "tso-moriri",
       "date": "2026-07-07"
+    },
+    {
+      "destination_id": "spiti-valley",
+      "date": "2026-07-08"
     }
   ],
   "posted_formats": {
@@ -4829,6 +4811,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "tso-moriri.mp4"
+    },
+    {
+      "timestamp": "2026-07-08T06:43:34.320710+00:00",
+      "date": "2026-07-08",
+      "platform": "youtube",
+      "post_id": "BMUzn",
+      "destination": "spiti-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_spiti-valley_hi_2026-07-08.mp4"
+    },
+    {
+      "timestamp": "2026-07-08T06:44:19.412555+00:00",
+      "date": "2026-07-08",
+      "platform": "instagram",
+      "post_id": "j75O2",
+      "destination": "spiti-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_spiti-valley_hi_2026-07-08.mp4"
     }
   ],
   "theme_usage": {
@@ -5776,8 +5776,7 @@
       "keylong": [
         "2026-07-02"
       ]
-    },
-    "collection_carousel_dests:andaman-diving-snorkeling": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
