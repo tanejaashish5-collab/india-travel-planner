@@ -30,8 +30,8 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-07",
     "PdMu0": "2026-07-07",
@@ -320,6 +320,10 @@
     },
     {
       "destination_id": "leh",
+      "date": "2026-07-08"
+    },
+    {
+      "destination_id": "pune",
       "date": "2026-07-08"
     }
   ],
@@ -4875,6 +4879,24 @@
       "destination": "leh",
       "format": "carousel.route",
       "media_id": "carousel_route_2026-07-08"
+    },
+    {
+      "timestamp": "2026-07-08T13:21:29.443268+00:00",
+      "date": "2026-07-08",
+      "platform": "youtube",
+      "post_id": "4GbUi",
+      "destination": "pune",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_pune_hi_2026-07-08.mp4"
+    },
+    {
+      "timestamp": "2026-07-08T13:22:14.748776+00:00",
+      "date": "2026-07-08",
+      "platform": "instagram",
+      "post_id": "30Wbk",
+      "destination": "pune",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_pune_hi_2026-07-08.mp4"
     }
   ],
   "theme_usage": {
