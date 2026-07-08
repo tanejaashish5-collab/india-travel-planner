@@ -26,6 +26,7 @@ $10/M in / $50/M out (2× Opus); long-horizon autonomy 91/100 vs Opus 63 (Every'
 
 - **gstack** (Garry Tan/YC, 89.7K stars): 23 skills + 8 power tools — CEO/Designer/Security-OWASP/QA-browser/Release personas. Verdict 2026-07: structurally the same as our global 6-Agent Quality Pipeline; **founder chose SKIP on install** (untrusted third-party code into `~/.claude/skills/` + binary compile + session hooks). Reference, not dependency.
 - **/council skill** ([[nate-herk]] gold finding): 6-persona anti-sycophancy panel → green-light/reshape/kill verdict + cheapest 48h test. `.claude/commands/council.md` exists locally (untracked) — operationalizes [[test-cheap-before-build]].
+- **deep-discipline skill** (BUILT 2026-07-08 from the Opus-as-Fable audit): global `~/.claude/skills/deep-discipline/` — 5 gates (scope→evidence→attack→verify→report) + leaked-prompt habits, loadable by any Opus/Sonnet session for hard tasks. Companion: the MODEL + EFFORT ROUTING table added to global CLAUDE.md same day (Haiku=read, Sonnet=execute, Opus=orchestrate/synthesize, Fable=hardest 5–15% paid; xhigh/max-overthinks warning).
 - **This research-wiki** (Karpathy LLM-wiki pattern): the memory system was already ~70% of it; this vault closes the research-corpus gap.
 
 Related: [[self-hosted-agents]], [[google-free-ai-stack]] (Antigravity is the competitor).
