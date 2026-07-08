@@ -16,9 +16,11 @@ updated: 2026-07-07
 | **Connectors** | Active: Canva, Gmail (read-only), Drive, Notion, Supabase, Vercel, Playwright, Telegram, iMessage. Not authorized: Slack, Google Calendar, Figma, Stripe, monday.com, Apollo, Clay, HuggingFace |
 | **Skills** | Large built-in library + our custom ones (/loop-radar, /council, /wrap, /handoff…) |
 
-## Fable 5 rules (banked 2026-07-02, global CLAUDE.md)
+## Fable 5 rules (banked 2026-07-02, global CLAUDE.md; effort nuances added 2026-07-08)
 
 $10/M in / $50/M out (2× Opus); long-horizon autonomy 91/100 vs Opus 63 (Every's benchmark); **"Opus plans, Fable executes"**; never ask Fable to show reasoning (silent reroute to Opus); reserve for the hardest 5–15% of tasks; free window ended 2026-07-07. **Fable is overkill for wiki/data ingestion — use Opus/Sonnet** ([[nate-herk]]).
+
+**Effort routing (from Anthropic's release chart + Nate's testing, 2026-07-08):** Fable-on-low ≈ Opus-on-high in score at similar cost; **xhigh/max often OVERTHINKS** — runs long, second-guesses, degrades output vs high. Effort is a per-task dial, not a quality slider. Post-free-window play: smart-orchestrator + cheap workers (Opus/Sonnet orchestrating Haiku scouts tested 3× cheaper at identical quality — our standing rule since 2026-04-27).
 
 ## Community layers (evaluated, not installed)
 
