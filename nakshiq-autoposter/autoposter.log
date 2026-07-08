@@ -9989,3 +9989,47 @@ Date range: 2026-04-15 → 2026-07-07
 2026-07-08 13:22:14  INFO      YT Short posted: format=this_vs_that, music=dance-740
 2026-07-08 13:22:14  INFO      State saved. YT Short run complete.
 2026-07-08 13:22:14  INFO      ════════════════════════════════════════════════════════════
+2026-07-08 16:15:44  INFO      ════════════════════════════════════════════════════════════
+2026-07-08 16:15:44  INFO      Nakshiq Autoposter · EVENING · 2026-07-08 · weekday=2
+2026-07-08 16:15:44  INFO      ════════════════════════════════════════════════════════════
+2026-07-08 16:15:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-08 16:16:19  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-08 16:16:19  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-07-08 16:16:20  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-08 16:16:20  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-08 16:16:20  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-08 16:16:35  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-08 16:16:35  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-07-08 16:16:35  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: blog_promo
+2026-07-08 16:16:35  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-07-08 16:16:35  INFO      Fingerprint dedup snapshot — 57 dests in 7d · 135 (dest,fmt) pairs in 30d · 223 media in 60d
+2026-07-08 16:16:41  INFO      Shared best destination locked: Zanskar Valley
+2026-07-08 16:16:41  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-08 16:16:41  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-07-08 16:16:41  INFO      confidence_intel for Zanskar Valley: only 0 card rows — SKIPPING
+2026-07-08 16:16:41  WARNING   [instagram/nakshiq] confidence_intel: zanskar inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'gurez-valley' as score_card to keep the slot live.
+2026-07-08 16:16:41  INFO      [instagram/nakshiq] Caption ready (468 chars, dest=gurez-valley)
+2026-07-08 16:16:42  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-08 16:16:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/gurez-valley.mp4?v=20260524
+2026-07-08 16:16:44  INFO          Brand-stamp applied: gurez-valley.mp4 (5,957,729 → 2,971,678 bytes)
+2026-07-08 16:16:44  INFO          Requesting upload URL for gurez-valley.mp4 (2,971,678 bytes, video/mp4)
+2026-07-08 16:16:45  INFO          Uploading to R2 (timeout=300s)...
+2026-07-08 16:16:45  INFO          R2 PUT OK. Confirming...
+2026-07-08 16:16:47  INFO          Media ready: SEESJ (2,971,678 bytes · gurez-valley.mp4)
+2026-07-08 16:16:47  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-08 16:17:30  INFO      [instagram/nakshiq] ✅ Published · Outstand=eTM9r · Platform=18142203871539805
+2026-07-08 16:17:30  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-07-08 16:17:30  INFO      confidence_intel for Zanskar Valley: only 0 card rows — SKIPPING
+2026-07-08 16:17:30  WARNING   [facebook/Nakshiq] confidence_intel: zanskar inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'gurez-valley' as score_card to keep the slot live.
+2026-07-08 16:17:30  INFO      [facebook/Nakshiq] Caption ready (659 chars, dest=gurez-valley)
+2026-07-08 16:17:31  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-08 16:17:31  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/gurez-valley.mp4?v=20260524
+2026-07-08 16:17:33  INFO          Brand-stamp applied: gurez-valley.mp4 (5,957,729 → 2,971,678 bytes)
+2026-07-08 16:17:33  INFO          Requesting upload URL for gurez-valley.mp4 (2,971,678 bytes, video/mp4)
+2026-07-08 16:17:34  INFO          Uploading to R2 (timeout=300s)...
+2026-07-08 16:17:35  INFO          R2 PUT OK. Confirming...
+2026-07-08 16:17:36  INFO          Media ready: eVNnr (2,971,678 bytes · gurez-valley.mp4)
+2026-07-08 16:17:36  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-08 16:17:56  INFO      [facebook/Nakshiq] ✅ Published · Outstand=PsHe0 · Platform=1336591085270736
+2026-07-08 16:17:56  INFO      State saved. Run complete.
+2026-07-08 16:17:56  INFO      ════════════════════════════════════════════════════════════
