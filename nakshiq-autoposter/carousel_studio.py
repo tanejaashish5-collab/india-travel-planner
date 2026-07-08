@@ -34,6 +34,13 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 HERE = Path(__file__).parent
 FONTS = HERE / "assets" / "fonts"
 R2_VIDEO = "https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev"
+# Hero-image bucket. All 533 destination rows have a verified hero at
+# `destinations/<slug>.jpg`, but only SOME have a per-dest video clip — so a
+# slide for a clip-less destination used to fall straight to a flat gradient.
+# We now try the hero image before the gradient (2026-07-08). Route-only stops
+# that aren't destination rows (e.g. Diskit/Hunder in Nubra) have neither, and
+# get a same-route footage fallback in build_route.
+R2_IMAGE = "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev"
 WORK = Path("/tmp/nakshiq_carousel"); WORK.mkdir(parents=True, exist_ok=True)
 FF = shutil.which("ffmpeg") or "ffmpeg"
 
@@ -68,7 +75,28 @@ def _score_disp(score) -> str:
         return ""
 
 
-# ── background: R2 video-frame → gradient fallback (never fails) ──────────────
+# ── background: R2 video-frame → hero image → gradient fallback (never fails) ──
+def _hero_img(slug: str) -> Path | None:
+    """Download the destination's hero JPEG from the image bucket. Every
+    destination row has `destinations/<slug>.jpg`; used when the dest has a hero
+    but no per-dest video clip (e.g. aritar) so the slide shows a real photo
+    instead of a gradient. Route-only stops that aren't destinations 404 here
+    too → caller's gradient / same-route fallback handles them."""
+    if not slug or requests is None:
+        return None
+    out = WORK / f"{slug}_hero.jpg"
+    if out.exists() and out.stat().st_size > 3000:
+        return out
+    try:
+        r = requests.get(f"{R2_IMAGE}/destinations/{slug}.jpg", timeout=30)
+        if r.status_code != 200 or len(r.content) < 3000:
+            return None
+        Image.open(io.BytesIO(r.content)).convert("RGB").save(out, "JPEG", quality=88)
+    except Exception:
+        return None
+    return out if out.exists() and out.stat().st_size > 3000 else None
+
+
 def _frame(slug: str) -> Path | None:
     if not slug or requests is None:
         return None
@@ -80,20 +108,31 @@ def _frame(slug: str) -> Path | None:
         if not mp4.exists():
             r = requests.get(f"{R2_VIDEO}/{slug}.mp4", timeout=45, stream=True)
             if r.status_code != 200:
-                return None
+                return _hero_img(slug)          # no clip → try the hero image
             with open(mp4, "wb") as fh:
                 for chunk in r.iter_content(65536):
                     fh.write(chunk)
         subprocess.run([FF, "-y", "-ss", "1.2", "-i", str(mp4), "-frames:v", "1", str(jpg)],
                        capture_output=True, timeout=40)
     except Exception:
-        return None
-    return jpg if jpg.exists() and jpg.stat().st_size > 5000 else None
+        return _hero_img(slug)
+    if jpg.exists() and jpg.stat().st_size > 5000:
+        return jpg
+    return _hero_img(slug)                       # clip fetch/frame failed → hero image
 
 
-def _bg(slug: str | None, darken: float = 0.5, blur: int = 0) -> Image.Image:
+def _bg(slug, darken: float = 0.5, blur: int = 0) -> Image.Image:
+    """`slug` may be a single slug or a list of candidate slugs (first with
+    resolvable media wins) — routes pass [own_stop, same-route-fallback…]."""
     base = Image.new("RGB", (W, H), BG)
-    fr = _frame(slug) if slug else None
+    cands = slug if isinstance(slug, (list, tuple)) else [slug]
+    fr = None
+    for s in cands:
+        if not s:
+            continue
+        fr = _frame(s)
+        if fr:
+            break
     if fr:
         try:
             im = Image.open(fr).convert("RGB")
@@ -610,18 +649,30 @@ def build_route(content: dict, mname: str) -> dict | None:
     days = chosen.get("days") or chosen.get("duration_days")
     budget = (chosen.get("budget_range") or "").strip()
     resolved = resolved[:6]
+    # Stops with their OWN media (clip or hero). Route-only stops that aren't
+    # destination rows (e.g. Diskit/Hunder in Nubra) have none → they'd render a
+    # flat gradient. Back-fill those with footage from another stop on the SAME
+    # route (same region, so it's honest mood imagery under the labelled stop),
+    # rotating through the good stops so it's not the same photo every time.
+    good = [bg for (_, bg, _) in resolved if bg and _frame(bg) is not None]
+
+    def _bgc(own, i):
+        rot = (good[i % len(good):] + good[:i % len(good)]) if good else []
+        return [own] + rot                      # own media first, else a route-mate's
+
     sub = "The stops, in order — a verified route you can actually follow."
     if days:
         sub = f"{days} days, {len(resolved)} key stops. " + sub
     slides = [_cover_slide("THE ROUTE", _wrap(ImageDraw.Draw(Image.new("RGB", (W, H))),
                                               rname, _F(BOLD, 82), W - 140)[:3] or [rname],
-                           sub, resolved[0][1])]
+                           sub, _bgc(resolved[0][1], 0))]
     for i, (lbl, bg, tag) in enumerate(resolved, 1):
-        slides.append(_item_slide(i, len(resolved), f"STOP {i}", GOLD, "", lbl, tag, bg))
+        slides.append(_item_slide(i, len(resolved), f"STOP {i}", GOLD, "", lbl, tag, _bgc(bg, i)))
     end_sub = "Full day-by-day route with drive times and stays → nakshiq.com"
     if budget:
         end_sub = f"Budget: {budget}. " + end_sub
-    slides.append(_end_slide(["The whole route", "is on the site.", ""], end_sub, resolved[0][1]))
+    slides.append(_end_slide(["The whole route", "is on the site.", ""], end_sub,
+                             _bgc(resolved[-1][1], len(resolved))))
     caption = (f"{rname.upper()} — THE ROUTE 🗺️\n\nSave the whole run:\n\n"
                + "\n".join(f"{i}. {lbl}" for i, (lbl, _, _) in enumerate(resolved, 1))
                + (f"\n\nBudget: {budget}" if budget else "")
