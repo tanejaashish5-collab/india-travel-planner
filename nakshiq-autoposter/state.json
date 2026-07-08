@@ -37,8 +37,8 @@
     "PdMu0": "2026-07-07",
     "m8EAd_evening": "2026-07-07",
     "PdMu0_evening": "2026-07-07",
-    "m8EAd_carousel": "2026-07-07",
-    "PdMu0_carousel": "2026-07-07",
+    "m8EAd_carousel": "2026-07-08",
+    "PdMu0_carousel": "2026-07-08",
     "GAh5p_yt_short": "2026-07-08",
     "m8EAd_yt_short": "2026-07-08",
     "GAh5p_reel_studio": "2026-07-08",
@@ -316,6 +316,10 @@
     },
     {
       "destination_id": "manali",
+      "date": "2026-07-08"
+    },
+    {
+      "destination_id": "leh",
       "date": "2026-07-08"
     }
   ],
@@ -4853,6 +4857,24 @@
       "destination": "manali",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_spiti-biker-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-07-08T09:42:03.544591+00:00",
+      "date": "2026-07-08",
+      "platform": "instagram",
+      "post_id": "r1RN4",
+      "destination": "leh",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-07-08"
+    },
+    {
+      "timestamp": "2026-07-08T09:42:05.585857+00:00",
+      "date": "2026-07-08",
+      "platform": "facebook",
+      "post_id": "dDJHO",
+      "destination": "leh",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-07-08"
     }
   ],
   "theme_usage": {
