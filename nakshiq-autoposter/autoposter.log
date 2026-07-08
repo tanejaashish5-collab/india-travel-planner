@@ -9903,3 +9903,20 @@ Date range: 2026-04-15 → 2026-07-07
 2026-07-08 06:44:19  INFO      YT Short posted: format=did_you_know, music=hype-267
 2026-07-08 06:44:19  INFO      State saved. YT Short run complete.
 2026-07-08 06:44:19  INFO      ════════════════════════════════════════════════════════════
+2026-07-08 08:04:26  INFO      ════════════════════════════════════════════════════════════
+2026-07-08 08:04:26  INFO      Nakshiq Autoposter · REEL STUDIO · 2026-07-08
+2026-07-08 08:04:26  INFO      ════════════════════════════════════════════════════════════
+2026-07-08 08:04:26  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-08 08:04:57  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-08 08:05:37  INFO      Reel built: fmt=itinerary, route=spiti-biker-circuit, 21.1s, 14242KB
+2026-07-08 08:05:37  INFO          Requesting upload URL for reel_studio_itinerary_spiti-biker-circuit.mp4 (14,583,967 bytes, video/mp4)
+2026-07-08 08:05:38  INFO          Uploading to R2 (timeout=300s)...
+2026-07-08 08:05:40  INFO          R2 PUT OK. Confirming...
+2026-07-08 08:05:42  INFO          Media ready: IcHRX (14,583,967 bytes · reel_studio_itinerary_spiti-biker-circuit.mp4)
+2026-07-08 08:05:43  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-08 08:05:43  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-07-08 08:05:58  INFO      [youtube/@naksh-iq] ✅ studio reel published · post_id=F2xUZ
+2026-07-08 08:05:58  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-07-08 08:06:43  INFO      [instagram/nakshiq] ✅ studio reel published · post_id=yAcmj
+2026-07-08 08:06:43  INFO      Reel studio run complete (fmt=itinerary, route=spiti-biker-circuit, posted=True).
+2026-07-08 08:06:43  INFO      ════════════════════════════════════════════════════════════

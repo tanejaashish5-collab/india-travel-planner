@@ -40,7 +40,9 @@
     "m8EAd_carousel": "2026-07-07",
     "PdMu0_carousel": "2026-07-07",
     "GAh5p_yt_short": "2026-07-08",
-    "m8EAd_yt_short": "2026-07-08"
+    "m8EAd_yt_short": "2026-07-08",
+    "GAh5p_reel_studio": "2026-07-08",
+    "m8EAd_reel_studio": "2026-07-08"
   },
   "last_sync": "2026-07-07T16:46:02.233688+00:00",
   "posted_destinations": [
@@ -310,6 +312,10 @@
     },
     {
       "destination_id": "spiti-valley",
+      "date": "2026-07-08"
+    },
+    {
+      "destination_id": "manali",
       "date": "2026-07-08"
     }
   ],
@@ -4829,6 +4835,24 @@
       "destination": "spiti-valley",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_spiti-valley_hi_2026-07-08.mp4"
+    },
+    {
+      "timestamp": "2026-07-08T08:05:58.478009+00:00",
+      "date": "2026-07-08",
+      "platform": "youtube",
+      "post_id": "F2xUZ",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_spiti-biker-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-07-08T08:06:43.734366+00:00",
+      "date": "2026-07-08",
+      "platform": "instagram",
+      "post_id": "yAcmj",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_spiti-biker-circuit.mp4"
     }
   ],
   "theme_usage": {
@@ -5798,7 +5822,8 @@
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-07-01",
     "ladakh-manali-biker": "2026-07-03",
-    "ladakh-express-7d": "2026-07-06"
+    "ladakh-express-7d": "2026-07-06",
+    "spiti-biker-circuit": "2026-07-08"
   },
   "carousel_seen": {
     "festival": [
