@@ -8,3 +8,4 @@
 - 2026-07-08 — Ingested ROMAN-KNOX-IDEAS-AUDIT (70-ideas carousel vs graveyard; engagement-rate-not-follower-count rule): new src-roman-knox-audit, updated ai-content-saturation.
 - 2026-07-09 — Ingest of the Nate one-prompt-company audit (1 new source page, nate-herk + test-cheap-before-build updated).
 - 2026-07-09 — Ingest of the Nick Saraev screen-watcher audit (new person page + source page).
+- 2026-07-09 — Ingest of the Nick Saraev 25-websites audit (new source page; nick-saraev + money-is-services-not-adsense updated).
