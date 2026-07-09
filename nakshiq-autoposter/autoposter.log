@@ -10086,3 +10086,26 @@ Date range: 2026-04-15 → 2026-07-07
 2026-07-08 19:59:10  INFO      
 Date range: 2026-04-15 → 2026-07-08
 2026-07-08 19:59:10  INFO      ════════════════════════════════════════════════════════════
+2026-07-09 07:56:23  INFO      ════════════════════════════════════════════════════════════
+2026-07-09 07:56:23  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-09
+2026-07-09 07:56:23  INFO      ════════════════════════════════════════════════════════════
+2026-07-09 07:56:26  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-09 07:57:53  INFO      Short rendered: yt_short_did_you_know_lolab-valley_en_2026-07-09.mp4 (19944 KB, 22.8s, fmt=did_you_know, music=edm-371)
+2026-07-09 07:57:53  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_lolab-valley_en_2026-07-09.mp4 (20,422,809 bytes, video/mp4)
+2026-07-09 07:57:54  INFO          Uploading to R2 (timeout=300s)...
+2026-07-09 07:57:55  INFO          R2 PUT OK. Confirming...
+2026-07-09 07:57:56  INFO          Media ready: Hd8e5 (20,422,809 bytes · yt_short_did_you_know_yt_short_did_you_know_lolab-valley_en_2026-07-09.mp4)
+2026-07-09 07:57:56  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_lolab-valley_en_2026-07-09.mp4
+2026-07-09 07:57:57  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-09 07:57:57  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-07-09 07:57:57  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-07-09 07:58:00  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=oeG5c), waiting for platform confirmation...
+2026-07-09 07:58:11  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=oeG5c · Platform=GLhMUb66Wfk
+2026-07-09 07:58:11  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-07-09 07:58:11  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-09 07:58:13  INFO      [instagram/nakshiq] Outstand accepted (post_id=pyWGM), waiting for platform confirmation...
+2026-07-09 07:58:47  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=pyWGM · Platform=18124339033674430
+2026-07-09 07:58:47  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-09 07:58:47  INFO      YT Short posted: format=did_you_know, music=edm-371
+2026-07-09 07:58:47  INFO      State saved. YT Short run complete.
+2026-07-09 07:58:47  INFO      ════════════════════════════════════════════════════════════

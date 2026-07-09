@@ -30,8 +30,8 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-08",
     "PdMu0": "2026-07-08",
@@ -39,33 +39,13 @@
     "PdMu0_evening": "2026-07-08",
     "m8EAd_carousel": "2026-07-08",
     "PdMu0_carousel": "2026-07-08",
-    "GAh5p_yt_short": "2026-07-08",
-    "m8EAd_yt_short": "2026-07-08",
+    "GAh5p_yt_short": "2026-07-09",
+    "m8EAd_yt_short": "2026-07-09",
     "GAh5p_reel_studio": "2026-07-08",
     "m8EAd_reel_studio": "2026-07-08"
   },
   "last_sync": "2026-07-08T16:16:19.336433+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "final",
-      "date": "2026-06-24"
-    },
-    {
-      "destination_id": "lolab-valley",
-      "date": "2026-06-24"
-    },
-    {
-      "destination_id": "srinagar",
-      "date": "2026-06-24"
-    },
-    {
-      "destination_id": "kokernag",
-      "date": "2026-06-24"
-    },
-    {
-      "destination_id": "gurez-valley",
-      "date": "2026-06-24"
-    },
     {
       "destination_id": "kaza",
       "date": "2026-06-25"
@@ -329,6 +309,10 @@
     {
       "destination_id": "gurez-valley",
       "date": "2026-07-08"
+    },
+    {
+      "destination_id": "lolab-valley",
+      "date": "2026-07-09"
     }
   ],
   "posted_formats": {
@@ -4923,6 +4907,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "gurez-valley.mp4"
+    },
+    {
+      "timestamp": "2026-07-09T07:58:11.775504+00:00",
+      "date": "2026-07-09",
+      "platform": "youtube",
+      "post_id": "oeG5c",
+      "destination": "lolab-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_lolab-valley_en_2026-07-09.mp4"
+    },
+    {
+      "timestamp": "2026-07-09T07:58:47.549705+00:00",
+      "date": "2026-07-09",
+      "platform": "instagram",
+      "post_id": "pyWGM",
+      "destination": "lolab-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_lolab-valley_en_2026-07-09.mp4"
     }
   ],
   "theme_usage": {
