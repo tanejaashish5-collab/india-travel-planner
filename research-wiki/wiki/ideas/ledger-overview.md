@@ -1,7 +1,7 @@
 ---
 type: idea
 sources: [.loop/biz-opportunities-ledger.json]
-updated: 2026-07-07
+updated: 2026-07-09
 ---
 
 # Ledger overview — the 77-idea board
@@ -35,8 +35,12 @@ Live system of record: `.loop/biz-opportunities-ledger.json` (ledger updatedAt 2
 | **BharatCreator Index** | 2.9 | conditional | content-audience | A verified benchmark media brand that publishes audited audience intelligence, deal rate cards, and M&A valuation data for India's regional-language YouTube cre |
 | **BharatBill** | 2.8 | pass | ai-saas | Voice-and-vernacular GST e-invoicing for the millions of Tier-2/3 Indian merchants newly pulled under the ₹5-crore mandate — speak the invoice in Tamil/Marathi/ |
 
+## ⚠️ PURSUE-tier verdicts do NOT survive fresh adversarial validation (2026-07-09)
+
+Before committing ANY resources to a PURSUE idea, run a fresh competitive-landscape validation — the ledger's own validation legs are missing findable incumbents. Evidence: of the 4 gate-compatible PURSUE ideas checked on 2026-07-09, **3 died on false "no/weak competition" premises** (ComplyReel — 5 platforms bundle it free; DealReceipts — FYPM owned it since 2020, one search away; ClearShip AU — AU brokers advertise the exact service free) **and the 4th (FranchiseLens) carried two legal blockers the tata-gate missed** (franchisee NDA breach on the data supply side + live Indian defamation precedent). Earlier kills of VouchFolio and InvisibleIndex (2026-07-02) fit the same pattern. Details in [[rejected-ideas]]. Composite scores rank *stories*, not verified gaps — treat every PURSUE verdict as UNVERIFIED until a dated validator sweep passes.
+
 ## How to use this page
 
 - Before researching any NEW idea: check it against this board first (the radar dedupes, but manual ideas should be checked here too), then against [[passion-fit-gate]], [[tata-gate]], [[strategist-checklist]].
-- The PURSUE tier is a *scored shortlist*, not a commitment — nothing on it has been founder-validated with money yet (as of 2026-07-07).
+- The PURSUE tier is a *scored shortlist*, not a commitment — nothing on it has been founder-validated with money yet (as of 2026-07-07), and per the 2026-07-09 warning above, several scored entries carry stale/false competition claims.
 - Rejected/parked reasoning lives in [[rejected-ideas]] so we never re-litigate a dead idea from scratch.

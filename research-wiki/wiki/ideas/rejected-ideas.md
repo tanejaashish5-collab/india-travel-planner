@@ -1,7 +1,7 @@
 ---
 type: idea
 sources: [data/research/NEXT-STEP-BUSINESS-2026-06-23.md, data/research/MEDICAL-EQUIPMENT-INDIA-OPPORTUNITY-2026-07-02.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/PASSION-FIT-IDEAS-2026-06.md]
-updated: 2026-07-07
+updated: 2026-07-09
 ---
 
 # Rejected ideas (the graveyard — never re-litigate from scratch)
@@ -16,6 +16,9 @@ Dated rejections with reasoning. A new pitch matching one of these must beat the
 - **Trip-builder/wizard for NakshIQ** (2026-07-02): CROWDED — Wanderlog ($15M), ixigo (IPO), Tripadvisor own it.
 - **Chanakya Council / Hindi business-ed product** (2026-07-02): DEAD — Vivek Bindra 20M, Think School 4.5M own the space.
 - **Permit-planner** (2026-07-02): DEAD. **VouchFolio-style contractor verification**: Checkr flooded the gap (Mar–May 2026). **InvisibleIndex**: 5W/Similarweb own it.
+- **DealReceipts as scoped** (2026-07-09, fresh validator, 22 searches): the ledger's core premise ("no competitor captures real brand-deal submissions") is FALSE — **FYPM (fypm.vip)** has owned "Glassdoor for creator deals" since 2020 (funded $275K, TechCrunch, claims 100K creators / 500K data points), plus Clara for Creators (35K creators, funded) and THREE 2025–26 clones (collabs.fyi, creatordata.fyi, savvycreator.fyi) racing at the same idea; InfluencerFee.com already publishes the whitelisting/exclusivity line-item breakdown free. The only unproven sliver (brand-side line-item API) is half-defended by Traackr/CreatorIQ. Also: collabs.fyi at 47/1,000 submissions proves the cold-start is brutal without an audience.
+- **ClearShip AU as scoped** (2026-07-09, fresh validator, 35 searches): the "AU customs brokers operate too late" premise is FALSE — Platinum Freight markets a pre-departure "Documentation Pre-Check" with the origin supplier and Clarke Global calls pre-sail document audits standard broker practice, both bundled FREE into existing brokerage; zero evidence Indian forwarders buy/bundle third-party compliance audits (the assumed no-cold-outreach channel is unvalidated); name collides with Clearship Forwarders Pvt Ltd (₹373 Cr FY25 Indian freight forwarder). The pain itself is real and growing (India→AU exports $4B→$8.5B FY21→25, zero-duty from Jan 2026, demurrage $80–250/day) — only the wedge and channel are dead. Untested sliver: DAFF-checklist tool for small exporters with no AU broker — requires direct sales to prove = park.
+- **ComplyReel as scoped** (2026-07-09, fresh validator sweep, 33 searches): the ledger's "competition is zero" premise is FALSE — NJ Wealth, AssetPlus (17K+ MFDs), Wealthy, Nivesh Partner, FundzBazar all bundle SEBI/AMFI-compliant creatives FREE into the platforms MFDs already use, and AMCs push their own pre-approved co-branded kits; boutique agencies (WebClass ₹2–8K/mo, RedVision) cover the rest. The regulatory driver IS real (SEBI circular 26-Feb-2026, effective 1-May-2026 + AMFI Master Circular MFD-CIR/32/2025-26) but incumbents own the distribution layer and had a 2-month head start. Also: ledger wrongly bundled IRDAI advisors (different, weaker mandate) and RIAs are only ~967 people. Narrow unverified sliver remains (AI automation of the spoken-disclaimer/ARN-stamp spec for off-platform MFDs) — would need market-sizing before any second look; competing against free.
 - **"Britain looted us / $45T" history genre** (2026-06-29): saturated (Dhruv Rathee 40M+, Abhi&Niyu); pseudo-history = HARD NO (fabrication landmines). Conditional survivor: verifiable econ-history INSIDE Anvikshiki format only.
 - **Indian mythology content** (2026-06-15): CROWDED — Odd Compass 330K+ owns it.
 
