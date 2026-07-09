@@ -1,3 +1,7 @@
+# ❌ REJECTED BY FOUNDER 2026-07-09 — do not run. "Useless, no one will ever use it."
+# Kept for the research record only; rejection logged in research-wiki rejected-ideas.
+# The factory itself (launch-package-factory.md) remains available for a future liked idea.
+
 # Run brief — FranchiseLens India (RESHAPED) for the launch-package factory
 
 > Companion to `launch-package-factory.md`. If the founder green-lights this idea for run 1, the

@@ -24,6 +24,7 @@ Dated rejections with reasoning. A new pitch matching one of these must beat the
 
 ## Killed on founder-fit (evidence fine, fit fatal)
 
+- **FranchiseLens India / franchise unit-economics benchmark** (2026-07-09): the ONLY PURSUE idea whose market gap survived the fresh validator sweep (all India incumbents pay-to-list conflicted; fraud pain documented) — founder killed it same day: "useless, no one will ever use it." No belief in the audience, no passion for the franchise-buyer niche. Per the [[passion-fit-gate]] precedent, founder rejection is final regardless of evidence. Consequence: **the gate-compatible PURSUE tier is now EMPTY** — the launch-package factory (`.loop/goal-files/launch-package-factory.md`) stays on the shelf until the radar surfaces an idea the founder actually wants; its franchise run brief is superseded.
 - **AU-super + AU-edu content** (2026-06-16): the original passion-gate rejections — "validated" but "not my domain/passion." Birthed [[passion-fit-gate]].
 - **15-Business Operator / build-in-public on camera** (2026-06-16): needs Ashish on camera — irreconcilable with fully-faceless constraint. (Pieter Levels/Marc Lou occupy it anyway.)
 - **B2B corporate AI training copycat** (2026-07-01): [[vaibhav-sisinty]]'s moat (sales team, enterprise clients); crowded; off-lane.

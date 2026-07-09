@@ -39,6 +39,8 @@ Live system of record: `.loop/biz-opportunities-ledger.json` (ledger updatedAt 2
 
 Before committing ANY resources to a PURSUE idea, run a fresh competitive-landscape validation — the ledger's own validation legs are missing findable incumbents. Evidence: of the 4 gate-compatible PURSUE ideas checked on 2026-07-09, **3 died on false "no/weak competition" premises** (ComplyReel — 5 platforms bundle it free; DealReceipts — FYPM owned it since 2020, one search away; ClearShip AU — AU brokers advertise the exact service free) **and the 4th (FranchiseLens) carried two legal blockers the tata-gate missed** (franchisee NDA breach on the data supply side + live Indian defamation precedent). Earlier kills of VouchFolio and InvisibleIndex (2026-07-02) fit the same pattern. Details in [[rejected-ideas]]. Composite scores rank *stories*, not verified gaps — treat every PURSUE verdict as UNVERIFIED until a dated validator sweep passes.
 
+**Update same day:** the founder then rejected FranchiseLens itself ("useless, no one will ever use it") — so as of 2026-07-09 the gate-compatible PURSUE tier is **EMPTY**. The next runnable idea must come from the radar with the passion-fit gate applied up front, or from the founder directly.
+
 ## How to use this page
 
 - Before researching any NEW idea: check it against this board first (the radar dedupes, but manual ideas should be checked here too), then against [[passion-fit-gate]], [[tata-gate]], [[strategist-checklist]].
