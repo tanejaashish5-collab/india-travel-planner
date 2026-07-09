@@ -33,10 +33,10 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-08",
-    "PdMu0": "2026-07-08",
-    "m8EAd_evening": "2026-07-08",
-    "PdMu0_evening": "2026-07-08",
+    "m8EAd": "2026-07-09",
+    "PdMu0": "2026-07-09",
+    "m8EAd_evening": "2026-07-09",
+    "PdMu0_evening": "2026-07-09",
     "m8EAd_carousel": "2026-07-09",
     "PdMu0_carousel": "2026-07-09",
     "GAh5p_yt_short": "2026-07-09",
@@ -44,7 +44,7 @@
     "GAh5p_reel_studio": "2026-07-08",
     "m8EAd_reel_studio": "2026-07-08"
   },
-  "last_sync": "2026-07-08T16:16:19.336433+00:00",
+  "last_sync": "2026-07-09T16:46:06.859868+00:00",
   "posted_destinations": [
     {
       "destination_id": "kaza",
@@ -325,11 +325,14 @@
     {
       "destination_id": "trimbakeshwar",
       "date": "2026-07-09"
+    },
+    {
+      "destination_id": "courtallam",
+      "date": "2026-07-09"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -346,6 +349,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -357,7 +361,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -369,6 +372,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -4982,6 +4986,28 @@
       "destination": "trimbakeshwar",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_trimbakeshwar_hi_2026-07-09.mp4"
+    },
+    {
+      "timestamp": "2026-07-09T16:47:34.621222+00:00",
+      "date": "2026-07-09",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "gVRPx",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-07-09T16:47:57.247317+00:00",
+      "date": "2026-07-09",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "BCaIn",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
     }
   ],
   "theme_usage": {
@@ -5244,7 +5270,8 @@
         "2026-06-05",
         "2026-06-07",
         "2026-06-12",
-        "2026-06-28"
+        "2026-06-28",
+        "2026-07-09"
       ],
       "coorg": [
         "2026-06-05"
@@ -5279,7 +5306,8 @@
         "2026-06-11"
       ],
       "lonavala": [
-        "2026-06-12"
+        "2026-06-12",
+        "2026-07-09"
       ],
       "haridwar": [
         "2026-06-15"
@@ -5323,6 +5351,18 @@
       ],
       "tso-moriri": [
         "2026-07-07"
+      ],
+      "igatpuri": [
+        "2026-07-09"
+      ],
+      "zanskar": [
+        "2026-07-09"
+      ],
+      "lamayuru": [
+        "2026-07-09"
+      ],
+      "amboli": [
+        "2026-07-09"
       ]
     },
     "morning_formats": {
@@ -5437,7 +5477,8 @@
         "2026-07-05",
         "2026-07-06",
         "2026-07-07",
-        "2026-07-08"
+        "2026-07-08",
+        "2026-07-09"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -5611,7 +5652,8 @@
         "2026-06-12"
       ],
       "courtallam": [
-        "2026-06-12"
+        "2026-06-12",
+        "2026-07-09"
       ],
       "pahalgam": [
         "2026-06-14"
@@ -5698,7 +5740,8 @@
         "2026-05-21"
       ],
       "best-honeymoon": [
-        "2026-05-20"
+        "2026-05-20",
+        "2026-07-09"
       ],
       "borders-worth-visiting": [
         "2026-05-20"
@@ -5946,11 +5989,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "zanskar",
-    "collection": "andaman-diving-snorkeling"
+    "shared_best": "amboli",
+    "collection": "best-honeymoon"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-07-01",
+  "data_carousel_floor_last": "2026-07-09",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-07-01",
     "ladakh-manali-biker": "2026-07-03",

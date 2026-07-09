@@ -10208,3 +10208,50 @@ Date range: 2026-04-15 → 2026-07-08
 2026-07-09 14:20:36  INFO      YT Short posted: format=did_you_know, music=hype-738
 2026-07-09 14:20:36  INFO      State saved. YT Short run complete.
 2026-07-09 14:20:36  INFO      ════════════════════════════════════════════════════════════
+2026-07-09 16:45:30  INFO      ════════════════════════════════════════════════════════════
+2026-07-09 16:45:30  INFO      Nakshiq Autoposter · EVENING · 2026-07-09 · weekday=3
+2026-07-09 16:45:30  INFO      ════════════════════════════════════════════════════════════
+2026-07-09 16:45:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-09 16:46:06  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-09 16:46:06  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-07-09 16:46:08  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-09 16:46:08  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-09 16:46:08  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-09 16:46:25  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-09 16:46:25  INFO      Evening format (weekly carousel floor): data_carousel
+2026-07-09 16:46:25  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-07-09 16:46:25  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-07-09 16:46:25  INFO      Fingerprint dedup snapshot — 58 dests in 7d · 135 (dest,fmt) pairs in 30d · 227 media in 60d
+2026-07-09 16:46:25  INFO      Collection locked: Best Honeymoon Destinations (0/20 never featured)
+2026-07-09 16:46:33  INFO      Shared best destination locked: Amboli
+2026-07-09 16:46:33  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-07-09 16:46:33  INFO          Skipped (no image) → karla-bhaja-caves
+2026-07-09 16:46:33  INFO      Carousel locked (data_carousel): igatpuri, zanskar, lamayuru, amboli, lonavala
+2026-07-09 16:46:33  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-09 16:46:33  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-07-09 16:46:33  WARNING   [instagram/nakshiq] data_carousel: igatpuri inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'courtallam' as score_card to keep the slot live.
+2026-07-09 16:46:33  INFO      [instagram/nakshiq] Caption ready (403 chars, dest=courtallam)
+2026-07-09 16:46:34  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-09 16:46:34  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/courtallam.mp4?v=20260524
+2026-07-09 16:46:36  INFO          Brand-stamp applied: courtallam.mp4 (7,348,941 → 4,210,184 bytes)
+2026-07-09 16:46:36  INFO          Requesting upload URL for courtallam.mp4 (4,210,184 bytes, video/mp4)
+2026-07-09 16:46:37  INFO          Uploading to R2 (timeout=300s)...
+2026-07-09 16:46:38  INFO          R2 PUT OK. Confirming...
+2026-07-09 16:46:40  INFO          Media ready: ibF8B (4,210,184 bytes · courtallam.mp4)
+2026-07-09 16:46:40  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-09 16:47:34  INFO          wait_for_publish exhausted 8 polls for post=gVRPx (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-07-09 16:47:34  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=gVRPx)
+2026-07-09 16:47:34  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-07-09 16:47:34  WARNING   [facebook/Nakshiq] data_carousel: igatpuri inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'courtallam' as score_card to keep the slot live.
+2026-07-09 16:47:34  INFO      [facebook/Nakshiq] Caption ready (599 chars, dest=courtallam)
+2026-07-09 16:47:34  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-09 16:47:34  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/courtallam.mp4?v=20260524
+2026-07-09 16:47:37  INFO          Brand-stamp applied: courtallam.mp4 (7,348,941 → 4,210,184 bytes)
+2026-07-09 16:47:37  INFO          Requesting upload URL for courtallam.mp4 (4,210,184 bytes, video/mp4)
+2026-07-09 16:47:38  INFO          Uploading to R2 (timeout=300s)...
+2026-07-09 16:47:39  INFO          R2 PUT OK. Confirming...
+2026-07-09 16:47:40  INFO          Media ready: 9M7BQ (4,210,184 bytes · courtallam.mp4)
+2026-07-09 16:47:40  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-09 16:47:57  INFO      [facebook/Nakshiq] ✅ Published · Outstand=BCaIn · Platform=1354352459358407
+2026-07-09 16:47:57  INFO      State saved. Run complete.
+2026-07-09 16:47:57  INFO      ════════════════════════════════════════════════════════════
