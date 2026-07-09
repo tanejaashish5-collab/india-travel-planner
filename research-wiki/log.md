@@ -7,3 +7,4 @@
 - 2026-07-08 — Applied the Opus-as-Fable takeables: global deep-discipline skill built (~/.claude/skills/deep-discipline/) + MODEL+EFFORT ROUTING table in global CLAUDE.md; claude-code-ecosystem page updated to built-status.
 - 2026-07-08 — Ingested ROMAN-KNOX-IDEAS-AUDIT (70-ideas carousel vs graveyard; engagement-rate-not-follower-count rule): new src-roman-knox-audit, updated ai-content-saturation.
 - 2026-07-09 — Ingest of the Nate one-prompt-company audit (1 new source page, nate-herk + test-cheap-before-build updated).
+- 2026-07-09 — Ingest of the Nick Saraev screen-watcher audit (new person page + source page).
