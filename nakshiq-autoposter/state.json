@@ -37,8 +37,8 @@
     "PdMu0": "2026-07-08",
     "m8EAd_evening": "2026-07-08",
     "PdMu0_evening": "2026-07-08",
-    "m8EAd_carousel": "2026-07-08",
-    "PdMu0_carousel": "2026-07-08",
+    "m8EAd_carousel": "2026-07-09",
+    "PdMu0_carousel": "2026-07-09",
     "GAh5p_yt_short": "2026-07-09",
     "m8EAd_yt_short": "2026-07-09",
     "GAh5p_reel_studio": "2026-07-08",
@@ -312,6 +312,10 @@
     },
     {
       "destination_id": "lolab-valley",
+      "date": "2026-07-09"
+    },
+    {
+      "destination_id": "yusmarg",
       "date": "2026-07-09"
     }
   ],
@@ -4925,6 +4929,24 @@
       "destination": "lolab-valley",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_lolab-valley_en_2026-07-09.mp4"
+    },
+    {
+      "timestamp": "2026-07-09T10:37:19.436380+00:00",
+      "date": "2026-07-09",
+      "platform": "instagram",
+      "post_id": "MjmiC",
+      "destination": "yusmarg",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-09"
+    },
+    {
+      "timestamp": "2026-07-09T10:37:22.641511+00:00",
+      "date": "2026-07-09",
+      "platform": "facebook",
+      "post_id": "nFsbl",
+      "destination": "yusmarg",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-09"
     }
   ],
   "theme_usage": {
@@ -5909,7 +5931,15 @@
       "Karsha Gustor",
       "Korzok Gustor",
       "Lucknow Muharram Processions",
-      "Kanwar Yatra"
+      "Kanwar Yatra",
+      "Yusmarg Shepherd Festival",
+      "Jageshwar Monsoon Mela",
+      "Kargil Vijay Diwas",
+      "Pandharpur Wari",
+      "Bastille Day Celebration",
+      "Aadi Festival at the Falls",
+      "Godavari Pushkaralu",
+      "Bonalu"
     ]
   }
 }
