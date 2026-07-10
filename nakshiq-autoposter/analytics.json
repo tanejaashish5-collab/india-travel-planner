@@ -10662,7 +10662,167 @@
           "posted_url": ""
         }
       ]
+    },
+    {
+      "post_id": "mo9Zd",
+      "created_at": "2026-07-10T16:40:02.769Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "iCstB",
+      "created_at": "2026-07-10T16:39:12.526Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "KEU59",
+      "created_at": "2026-07-10T13:41:01.150Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "VBZWN",
+      "created_at": "2026-07-10T13:40:39.370Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "nakshiq-score",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "S0hEJ",
+      "created_at": "2026-07-10T10:34:47.921Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "T9Mr1",
+      "created_at": "2026-07-10T10:34:45.816Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "failed",
+          "error": "Error publishing Instagram post: Failed to publish Instagram container: 400 - {\"error\":{\"message\":\"Media ID is not available\",\"type\":\"OAuthException\",\"code\":9007,\"error_subcode\":2207027,\"is_transient\":false,\"error_user_title\":\"Cannot publish\",\"error_user_msg\":\"The media is not ready to be published. Please wait a moment.\",\"fbtrace_id\":\"A9kHh1d9vjgOL5ylGRPStsa\"}}",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "7UApW",
+      "created_at": "2026-07-10T08:58:01.199Z",
+      "content_type": "reel",
+      "format": "studio",
+      "campaign": "email_cta",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "4prOi",
+      "created_at": "2026-07-10T08:57:47.751Z",
+      "content_type": "reel",
+      "format": "studio",
+      "campaign": "email_cta",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "oeHSc",
+      "created_at": "2026-07-10T07:56:58.896Z",
+      "content_type": "yt_short",
+      "format": "this",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "19asG",
+      "created_at": "2026-07-10T07:56:45.030Z",
+      "content_type": "yt_short",
+      "format": "this",
+      "campaign": "nakshiq-score",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
     }
   ],
-  "last_sync": "2026-07-09T20:07:23.161693"
+  "last_sync": "2026-07-10T19:54:46.091535"
 }
