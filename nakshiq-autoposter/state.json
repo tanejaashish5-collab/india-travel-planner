@@ -30,8 +30,8 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-09",
     "PdMu0": "2026-07-09",
@@ -40,7 +40,7 @@
     "m8EAd_carousel": "2026-07-10",
     "PdMu0_carousel": "2026-07-10",
     "GAh5p_yt_short": "2026-07-10",
-    "m8EAd_yt_short": "2026-07-09",
+    "m8EAd_yt_short": "2026-07-10",
     "GAh5p_reel_studio": "2026-07-10",
     "m8EAd_reel_studio": "2026-07-10"
   },
@@ -324,6 +324,10 @@
     },
     {
       "destination_id": "somnath",
+      "date": "2026-07-10"
+    },
+    {
+      "destination_id": "halebidu",
       "date": "2026-07-10"
     }
   ],
@@ -5058,6 +5062,24 @@
       "destination": "somnath",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-07-10"
+    },
+    {
+      "timestamp": "2026-07-10T13:41:00.690372+00:00",
+      "date": "2026-07-10",
+      "platform": "youtube",
+      "post_id": "VBZWN",
+      "destination": "halebidu",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_halebidu_en_2026-07-10.mp4"
+    },
+    {
+      "timestamp": "2026-07-10T13:41:46.356371+00:00",
+      "date": "2026-07-10",
+      "platform": "instagram",
+      "post_id": "KEU59",
+      "destination": "halebidu",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_halebidu_en_2026-07-10.mp4"
     }
   ],
   "theme_usage": {
