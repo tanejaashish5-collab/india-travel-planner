@@ -40,7 +40,9 @@
     "m8EAd_carousel": "2026-07-09",
     "PdMu0_carousel": "2026-07-09",
     "GAh5p_yt_short": "2026-07-10",
-    "m8EAd_yt_short": "2026-07-09"
+    "m8EAd_yt_short": "2026-07-09",
+    "GAh5p_reel_studio": "2026-07-10",
+    "m8EAd_reel_studio": "2026-07-10"
   },
   "last_sync": "2026-07-09T16:46:06.859868+00:00",
   "posted_destinations": [
@@ -314,6 +316,10 @@
     },
     {
       "destination_id": "kaza",
+      "date": "2026-07-10"
+    },
+    {
+      "destination_id": "sarahan",
       "date": "2026-07-10"
     }
   ],
@@ -5012,6 +5018,24 @@
       "destination": "kaza",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_kaza_en_2026-07-10.mp4"
+    },
+    {
+      "timestamp": "2026-07-10T08:58:00.728618+00:00",
+      "date": "2026-07-10",
+      "platform": "youtube",
+      "post_id": "4prOi",
+      "destination": "sarahan",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_kinnaur-spiti-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-07-10T08:58:36.976421+00:00",
+      "date": "2026-07-10",
+      "platform": "instagram",
+      "post_id": "7UApW",
+      "destination": "sarahan",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_kinnaur-spiti-circuit.mp4"
     }
   ],
   "theme_usage": {
@@ -6002,7 +6026,8 @@
     "khardung-la-nubra-circuit": "2026-07-01",
     "ladakh-manali-biker": "2026-07-03",
     "ladakh-express-7d": "2026-07-06",
-    "spiti-biker-circuit": "2026-07-08"
+    "spiti-biker-circuit": "2026-07-08",
+    "kinnaur-spiti-circuit": "2026-07-10"
   },
   "carousel_seen": {
     "festival": [
