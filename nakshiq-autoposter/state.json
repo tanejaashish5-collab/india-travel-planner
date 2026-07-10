@@ -37,8 +37,8 @@
     "PdMu0": "2026-07-09",
     "m8EAd_evening": "2026-07-09",
     "PdMu0_evening": "2026-07-09",
-    "m8EAd_carousel": "2026-07-09",
-    "PdMu0_carousel": "2026-07-09",
+    "m8EAd_carousel": "2026-07-10",
+    "PdMu0_carousel": "2026-07-10",
     "GAh5p_yt_short": "2026-07-10",
     "m8EAd_yt_short": "2026-07-09",
     "GAh5p_reel_studio": "2026-07-10",
@@ -320,6 +320,10 @@
     },
     {
       "destination_id": "sarahan",
+      "date": "2026-07-10"
+    },
+    {
+      "destination_id": "somnath",
       "date": "2026-07-10"
     }
   ],
@@ -5036,6 +5040,24 @@
       "destination": "sarahan",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_kinnaur-spiti-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-07-10T10:34:47.269845+00:00",
+      "date": "2026-07-10",
+      "platform": "instagram",
+      "post_id": "T9Mr1",
+      "destination": "somnath",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-07-10"
+    },
+    {
+      "timestamp": "2026-07-10T10:34:49.386625+00:00",
+      "date": "2026-07-10",
+      "platform": "facebook",
+      "post_id": "S0hEJ",
+      "destination": "somnath",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-07-10"
     }
   ],
   "theme_usage": {
@@ -6047,6 +6069,9 @@
       "Aadi Festival at the Falls",
       "Godavari Pushkaralu",
       "Bonalu"
+    ],
+    "collection": [
+      "dwadasa-jyotirlinga"
     ]
   }
 }
