@@ -33,10 +33,10 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-10",
-    "PdMu0": "2026-07-10",
-    "m8EAd_evening": "2026-07-10",
-    "PdMu0_evening": "2026-07-10",
+    "m8EAd": "2026-07-11",
+    "PdMu0": "2026-07-11",
+    "m8EAd_evening": "2026-07-11",
+    "PdMu0_evening": "2026-07-11",
     "m8EAd_carousel": "2026-07-11",
     "PdMu0_carousel": "2026-07-11",
     "GAh5p_yt_short": "2026-07-11",
@@ -44,7 +44,7 @@
     "GAh5p_reel_studio": "2026-07-10",
     "m8EAd_reel_studio": "2026-07-10"
   },
-  "last_sync": "2026-07-10T16:38:42.197680+00:00",
+  "last_sync": "2026-07-11T15:19:34.440216+00:00",
   "posted_destinations": [
     {
       "destination_id": "bhandardara",
@@ -329,11 +329,14 @@
     {
       "destination_id": "valley-of-flowers",
       "date": "2026-07-11"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-07-11"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -348,6 +351,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -359,7 +363,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -371,6 +374,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5156,6 +5160,28 @@
       "destination": "valley-of-flowers",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_valley-of-flowers_en_2026-07-11.mp4"
+    },
+    {
+      "timestamp": "2026-07-11T15:20:41.552079+00:00",
+      "date": "2026-07-11",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "vN4jg",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-07-11T15:20:59.945003+00:00",
+      "date": "2026-07-11",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "iFjRB",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -5361,7 +5387,8 @@
         "2026-06-15",
         "2026-06-16",
         "2026-06-17",
-        "2026-06-30"
+        "2026-06-30",
+        "2026-07-11"
       ],
       "tungnath": [
         "2026-06-02"
@@ -5628,7 +5655,8 @@
         "2026-07-07",
         "2026-07-08",
         "2026-07-09",
-        "2026-07-10"
+        "2026-07-10",
+        "2026-07-11"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -5778,7 +5806,8 @@
         "2026-06-06",
         "2026-06-07",
         "2026-06-16",
-        "2026-06-30"
+        "2026-06-30",
+        "2026-07-11"
       ],
       "tawang": [
         "2026-06-03"
@@ -5870,7 +5899,8 @@
         "2026-05-30",
         "2026-06-06",
         "2026-06-27",
-        "2026-07-04"
+        "2026-07-04",
+        "2026-07-11"
       ],
       "adventurers": [
         "2026-05-29",
@@ -6127,7 +6157,8 @@
       "keylong": [
         "2026-07-02"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -6141,7 +6172,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nubra-valley",
+    "shared_best": "hogenakkal",
     "collection": "best-honeymoon"
   },
   "manual_skip_dests": {},
