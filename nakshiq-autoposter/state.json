@@ -37,8 +37,8 @@
     "PdMu0": "2026-07-10",
     "m8EAd_evening": "2026-07-10",
     "PdMu0_evening": "2026-07-10",
-    "m8EAd_carousel": "2026-07-10",
-    "PdMu0_carousel": "2026-07-10",
+    "m8EAd_carousel": "2026-07-11",
+    "PdMu0_carousel": "2026-07-11",
     "GAh5p_yt_short": "2026-07-11",
     "m8EAd_yt_short": "2026-07-11",
     "GAh5p_reel_studio": "2026-07-10",
@@ -320,6 +320,10 @@
     },
     {
       "destination_id": "tosamaidan",
+      "date": "2026-07-11"
+    },
+    {
+      "destination_id": "puri",
       "date": "2026-07-11"
     }
   ],
@@ -5112,6 +5116,24 @@
       "destination": "tosamaidan",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_tosamaidan_hi_2026-07-11.mp4"
+    },
+    {
+      "timestamp": "2026-07-11T09:04:27.435675+00:00",
+      "date": "2026-07-11",
+      "platform": "instagram",
+      "post_id": "Q7r4y",
+      "destination": "puri",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-11"
+    },
+    {
+      "timestamp": "2026-07-11T09:04:30.742951+00:00",
+      "date": "2026-07-11",
+      "platform": "facebook",
+      "post_id": "luIeK",
+      "destination": "puri",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-11"
     }
   ],
   "theme_usage": {
@@ -6126,7 +6148,11 @@
       "Bastille Day Celebration",
       "Aadi Festival at the Falls",
       "Godavari Pushkaralu",
-      "Bonalu"
+      "Bonalu",
+      "Rath Yatra",
+      "Bahuda Yatra",
+      "Shravani Mela",
+      "Kharchi Puja"
     ],
     "collection": [
       "dwadasa-jyotirlinga"
