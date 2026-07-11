@@ -30,7 +30,7 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-10",
@@ -324,6 +324,10 @@
     },
     {
       "destination_id": "puri",
+      "date": "2026-07-11"
+    },
+    {
+      "destination_id": "valley-of-flowers",
       "date": "2026-07-11"
     }
   ],
@@ -5134,6 +5138,24 @@
       "destination": "puri",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-07-11"
+    },
+    {
+      "timestamp": "2026-07-11T12:44:34.408739+00:00",
+      "date": "2026-07-11",
+      "platform": "youtube",
+      "post_id": "jPSF2",
+      "destination": "valley-of-flowers",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_valley-of-flowers_en_2026-07-11.mp4"
+    },
+    {
+      "timestamp": "2026-07-11T12:45:26.030699+00:00",
+      "date": "2026-07-11",
+      "platform": "instagram",
+      "post_id": "8TXoI",
+      "destination": "valley-of-flowers",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_valley-of-flowers_en_2026-07-11.mp4"
     }
   ],
   "theme_usage": {
