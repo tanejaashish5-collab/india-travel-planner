@@ -33,16 +33,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-11",
-    "PdMu0": "2026-07-11",
-    "m8EAd_evening": "2026-07-11",
-    "PdMu0_evening": "2026-07-11",
+    "m8EAd": "2026-07-12",
+    "PdMu0": "2026-07-12",
+    "m8EAd_evening": "2026-07-12",
+    "PdMu0_evening": "2026-07-12",
     "m8EAd_carousel": "2026-07-12",
     "PdMu0_carousel": "2026-07-12",
     "GAh5p_yt_short": "2026-07-12",
     "m8EAd_yt_short": "2026-07-12"
   },
-  "last_sync": "2026-07-11T15:19:34.440216+00:00",
+  "last_sync": "2026-07-12T15:20:35.066609+00:00",
   "posted_destinations": [
     {
       "destination_id": "courtallam",
@@ -327,11 +327,14 @@
     {
       "destination_id": "mandu",
       "date": "2026-07-12"
+    },
+    {
+      "destination_id": "zanskar",
+      "date": "2026-07-12"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "collection_series",
@@ -345,6 +348,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -356,7 +360,6 @@
     "PdMu0": [
       "score_card",
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -368,6 +371,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5230,6 +5234,28 @@
       "destination": "mandu",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mandu_hi_2026-07-12.mp4"
+    },
+    {
+      "timestamp": "2026-07-12T15:21:45.148287+00:00",
+      "date": "2026-07-12",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "20ehS",
+      "destination": "zanskar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "zanskar.mp4"
+    },
+    {
+      "timestamp": "2026-07-12T15:22:05.530168+00:00",
+      "date": "2026-07-12",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "yzIsj",
+      "destination": "zanskar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "zanskar.mp4"
     }
   ],
   "theme_usage": {
@@ -5580,7 +5606,8 @@
         "2026-07-09"
       ],
       "zanskar": [
-        "2026-07-09"
+        "2026-07-09",
+        "2026-07-12"
       ],
       "lamayuru": [
         "2026-07-09"
@@ -5704,7 +5731,8 @@
         "2026-07-08",
         "2026-07-09",
         "2026-07-10",
-        "2026-07-11"
+        "2026-07-11",
+        "2026-07-12"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -5931,6 +5959,9 @@
       ],
       "tso-moriri": [
         "2026-07-07"
+      ],
+      "zanskar": [
+        "2026-07-12"
       ]
     },
     "audience_tags": {
@@ -6219,7 +6250,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "hogenakkal",
+    "shared_best": "keylong",
     "collection": "best-honeymoon"
   },
   "manual_skip_dests": {},
