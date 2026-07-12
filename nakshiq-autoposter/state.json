@@ -30,7 +30,7 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-11",
@@ -40,7 +40,7 @@
     "m8EAd_carousel": "2026-07-12",
     "PdMu0_carousel": "2026-07-12",
     "GAh5p_yt_short": "2026-07-12",
-    "m8EAd_yt_short": "2026-07-11"
+    "m8EAd_yt_short": "2026-07-12"
   },
   "last_sync": "2026-07-11T15:19:34.440216+00:00",
   "posted_destinations": [
@@ -322,6 +322,10 @@
     },
     {
       "destination_id": "ahmedabad",
+      "date": "2026-07-12"
+    },
+    {
+      "destination_id": "mandu",
       "date": "2026-07-12"
     }
   ],
@@ -5208,6 +5212,24 @@
       "destination": "ahmedabad",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-07-12"
+    },
+    {
+      "timestamp": "2026-07-12T12:39:53.496726+00:00",
+      "date": "2026-07-12",
+      "platform": "youtube",
+      "post_id": "uhHnE",
+      "destination": "mandu",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mandu_hi_2026-07-12.mp4"
+    },
+    {
+      "timestamp": "2026-07-12T12:40:35.285919+00:00",
+      "date": "2026-07-12",
+      "platform": "instagram",
+      "post_id": "LBjvV",
+      "destination": "mandu",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mandu_hi_2026-07-12.mp4"
     }
   ],
   "theme_usage": {
