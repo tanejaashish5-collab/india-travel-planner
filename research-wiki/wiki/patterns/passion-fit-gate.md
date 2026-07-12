@@ -1,7 +1,7 @@
 ---
 type: pattern
-sources: [data/research/PASSION-FIT-IDEAS-2026-06.md, data/research/FOUNDER-PROFILE.md]
-updated: 2026-07-07
+sources: [data/research/PASSION-FIT-IDEAS-2026-06.md, data/research/FOUNDER-PROFILE.md, data/research/PURSUE-REFILL-2026-07-12.md]
+updated: 2026-07-12
 ---
 
 # Passion-fit gate (HARD gate, founder-set)
@@ -22,6 +22,10 @@ Plus: AI stays the production engine, never the product ("AI-forced is NEGATIVE"
 - 🏆 PICK: **Guna Code / Sadhguru Decoder** — bilingual faceless shorts translating Vedic psychology (guna/kosha) into modern problems; runs on existing Sadhguru-OS KB (300+ distilled talks, $0 input) + Chanakya autoposter + voice clones. Test spec: 10 EN+HI shorts on a fresh handle, 4-week gates (>1,000 views/short, >40% watch-time US/UK/AU, >0.5% short→newsletter). Geography is make-or-break — >80% India audience collapses CPM to ₹1-2 → [[nri-diaspora-arbitrage]].
 - 🔴 KILL: 15-Business Operator (needs on-camera — irreconcilable with faceless).
 - The lane later sharpened into **Anvikshiki Applied** (2026-06-26 pivot): timely business story → named Chanakya principle, audience-first.
+
+## The FranchiseLens fix, confirmed working (2026-07-12)
+
+FranchiseLens (2026-07-09) got the order wrong: it validated first, found a real gap, THEN the founder rejected it on fit — wasted the full validation spend. The 2026-07-12 PURSUE refill ran the gate FIRST, before any validation: 18 candidates → 8 fit-gate kills/duplicates → 8 reached refute-mode validation, and every one of the 8 was genuinely in Ashish's lanes (no AlgoVerify-style "validated but he'd shrug" survivor reached the expensive phase). **The fix works** — but it has a limit: fit-first ordering saves validation cost, it cannot manufacture a market gap where none exists. All 8 fit-gate survivors still came back CROWDED on competition grounds; see [[rejected-ideas]] and [[src-pursue-refill-2026-07-12]].
 
 ## How it composes with the other gates
 

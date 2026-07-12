@@ -9,3 +9,4 @@
 - 2026-07-09 — Ingest of the Nate one-prompt-company audit (1 new source page, nate-herk + test-cheap-before-build updated).
 - 2026-07-09 — Ingest of the Nick Saraev screen-watcher audit (new person page + source page).
 - 2026-07-09 — Ingest of the Nick Saraev 25-websites audit (new source page; nick-saraev + money-is-services-not-adsense updated).
+- 2026-07-12 — Ingest of the PURSUE-refill passion-first run (all 8 fit-gate survivors CROWDED, pick = NONE): new src-pursue-refill-2026-07-12, rejected-ideas dated section added, passion-fit-gate updated with the fit-first-ordering confirmation.

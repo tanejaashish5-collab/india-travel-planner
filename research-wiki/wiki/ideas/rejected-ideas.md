@@ -1,7 +1,7 @@
 ---
 type: idea
-sources: [data/research/NEXT-STEP-BUSINESS-2026-06-23.md, data/research/MEDICAL-EQUIPMENT-INDIA-OPPORTUNITY-2026-07-02.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/PASSION-FIT-IDEAS-2026-06.md]
-updated: 2026-07-09
+sources: [data/research/NEXT-STEP-BUSINESS-2026-06-23.md, data/research/MEDICAL-EQUIPMENT-INDIA-OPPORTUNITY-2026-07-02.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/PASSION-FIT-IDEAS-2026-06.md, data/research/PURSUE-REFILL-2026-07-12.md]
+updated: 2026-07-12
 ---
 
 # Rejected ideas (the graveyard — never re-litigate from scratch)
@@ -21,6 +21,23 @@ Dated rejections with reasoning. A new pitch matching one of these must beat the
 - **ComplyReel as scoped** (2026-07-09, fresh validator sweep, 33 searches): the ledger's "competition is zero" premise is FALSE — NJ Wealth, AssetPlus (17K+ MFDs), Wealthy, Nivesh Partner, FundzBazar all bundle SEBI/AMFI-compliant creatives FREE into the platforms MFDs already use, and AMCs push their own pre-approved co-branded kits; boutique agencies (WebClass ₹2–8K/mo, RedVision) cover the rest. The regulatory driver IS real (SEBI circular 26-Feb-2026, effective 1-May-2026 + AMFI Master Circular MFD-CIR/32/2025-26) but incumbents own the distribution layer and had a 2-month head start. Also: ledger wrongly bundled IRDAI advisors (different, weaker mandate) and RIAs are only ~967 people. Narrow unverified sliver remains (AI automation of the spoken-disclaimer/ARN-stamp spec for off-platform MFDs) — would need market-sizing before any second look; competing against free.
 - **"Britain looted us / $45T" history genre** (2026-06-29): saturated (Dhruv Rathee 40M+, Abhi&Niyu); pseudo-history = HARD NO (fabrication landmines). Conditional survivor: verifiable econ-history INSIDE Anvikshiki format only.
 - **Indian mythology content** (2026-06-15): CROWDED — Odd Compass 330K+ owns it.
+
+## 2026-07-12 — passion-first PURSUE refill: all 8 fit-gate survivors came back CROWDED
+
+Full run: [[src-pursue-refill-2026-07-12]]. This time the [[passion-fit-gate]] ran FIRST (fixing the FranchiseLens failure mode) — 18 candidates → 8 fit-gate kills/duplicates → 8 reached refute-mode validation, and every one of the 8 was genuinely in Ashish's lanes. Validation then killed all 8 on competition, not fit. Gate-compatible PURSUE tier stays empty.
+
+- **Guna Code Report** (fit 4.5) — CROWDED but the only one with a surviving thin wedge (fully-automated + $29 impulse SKU + secular-Western branding, uncloned as a trio). Shikshanam (₹2,499 course + profiler, 100K+ learners), My Vedic Psychology (identical funnel live today), a free peer-reviewed 56-item instrument (PMC9893901), and the Chopra app ($69.99/yr, cheaper, already installed) all crowd it; AstroSure.ai ($6M seed) and Vaya Astrology ($1.5M seed) are funded adjacents that could clone it in weeks. **CROWDED but presell-testable — the only flip path**: a 14-day, A$150-capped presell smoke test (free quiz → Stripe presell page, kill gate <15 paid presells or <2% quiz→paid) is specced and needs founder sign-off before running.
+- **Dasha Companion** (fit 4.5) — RED. Every claimed differentiator already ships: DashaClub $19.99-29.99 one-time BPHS-cited (undercuts the price floor), AskSoma.ai $8.25/mo already marketing at the exact "Western tropical-app convert" wedge, AstroNidan (2M users claimed) already owns the "no fear-mongering" positioning, Om.AI free full computation with no signup. AstroTalk alone has raised $29.6M at ~$140M/yr revenue.
+- **Yatra Elder Desk** (fit 4.5) — RED as a standalone business, YELLOW as a NakshIQ feature. The information-vacuum premise failed falsification (8-10+ operator blogs, free official Tourist Care Uttarakhand app, free govt medical-screening forms); MakeMyTrip×Emoha #EldersFirst (Nov 2025) already runs nurse-accompanied elder pilgrimage travel at incumbent scale; IRCTC HeliYatra is the sole legal heli seller, blocking the affiliate revenue pillar by law. Surviving shape: a $10-20 pre-departure brief bolted onto NakshIQ's existing /pilgrimage pages, not a new brand.
+- **Kathamrita Audio** (fit 4.5) — RED. All 4 named Chanakya-canon texts already live on Audible/Kuku FM ($85M Series C)/Pocket FM (~$450M ARR) plus free on Spotify/YouTube/JioSaavn/Archive; Radhakrishnan Pillai (PhD, 6+ commentary titles) owns the commentary lane; Audible already sells Hindi editions at Western prices, killing the diaspora-arbitrage premise.
+- **High Passes Pack** (fit 5.0, highest-fit idea of the run) — RED, killed by our own product. NakshIQ's free offline PWA has been serving the exact road/pass/fuel/SOS bundle, precached, since `sw.js` v29 (2026-04-24) — the validator found the kill inside our own repo, not on the open web. Also crowded 5 ways externally (govt portals, ranking SEO blogs, Team-BHP/Drass Updates, RE Tripper free offline nav, iOverlander).
+- **Foreign-Passport India Desk** (fit 4.0) — RED as a business, YELLOW as a free NakshIQ feature. MHA's centralized e-FRRO (Jan 2026) is now the official single source the idea assumed was missing; PAP/RAP legally requires a registered agent who bundles the paperwork free into the tour anyway.
+- **First-Trip India Confidence Pack** (fit 4.0) — RED. World Nomads bundles free India safety guides into the insurance purchase — the exact high-willingness moment the pitch claimed was open — and NakshIQ's own free SOS data self-cannibalizes the rest.
+- **NakshIQ Ground Truth** (fit 4.0, data-licensing play) — RED. Google already grounds Gemini on official NHAI road data for free; comparable niche geo-risk datasets cap at $200-2K/mo on Snowflake Marketplace — below enterprise sales cost for the deal size.
+
+**Fit-gate kills before validation** (never reached the expensive phase): VerifiedYatra/Guna Compass/Jyotish Ledger (duplicates), AlgoVerify India + AutoApply India + Heartland Channel Portfolio + Creator Cost Map India + AU-NRI Money Desk (fit 2.5-3.5, outside the four lanes or zero founder belief in the audience — the AlgoVerify/FranchiseLens failure mode caught pre-spend), Bharat Heritage Atlas (fit 3.5, parked as a future NakshIQ content feature, needs founder editorial time).
+
+**Meta-lesson (bank it):** the residual pattern across all 8 kills is that Ashish's best assets — verified data, honest verdicts — are exactly what the market already gives away free. The monetizable form keeps being features and trust inside NakshIQ (or Chanakya), not new standalone SKUs. See [[verification-as-moat]].
 
 ## Killed on founder-fit (evidence fine, fit fatal)
 
