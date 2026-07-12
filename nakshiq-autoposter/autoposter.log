@@ -10784,3 +10784,27 @@ Date range: 2026-04-15 → 2026-07-10
 2026-07-11 19:34:53  INFO      
 Date range: 2026-04-15 → 2026-07-11
 2026-07-11 19:34:53  INFO      ════════════════════════════════════════════════════════════
+2026-07-12 06:49:15  INFO      ════════════════════════════════════════════════════════════
+2026-07-12 06:49:15  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-12
+2026-07-12 06:49:15  INFO      ════════════════════════════════════════════════════════════
+2026-07-12 06:49:17  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-12 06:50:42  INFO      Short rendered: yt_short_did_you_know_bhandardara_en_2026-07-12.mp4 (10707 KB, 26.3s, fmt=did_you_know, music=dance-1095)
+2026-07-12 06:50:42  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_bhandardara_en_2026-07-12.mp4 (10,964,126 bytes, video/mp4)
+2026-07-12 06:50:42  INFO          Uploading to R2 (timeout=300s)...
+2026-07-12 06:50:44  INFO          R2 PUT OK. Confirming...
+2026-07-12 06:50:45  INFO          Media ready: VIcCN (10,964,126 bytes · yt_short_did_you_know_yt_short_did_you_know_bhandardara_en_2026-07-12.mp4)
+2026-07-12 06:50:45  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_bhandardara_en_2026-07-12.mp4
+2026-07-12 06:50:46  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-12 06:50:46  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-07-12 06:50:46  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-07-12 06:50:48  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=b9nGT), waiting for platform confirmation...
+2026-07-12 06:50:54  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=b9nGT · Platform=Nj1H2ma3bLU
+2026-07-12 06:50:54  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-07-12 06:50:54  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-12 06:50:56  INFO      [instagram/nakshiq] Outstand accepted (post_id=mc5gd), waiting for platform confirmation...
+2026-07-12 06:51:41  INFO          wait_for_publish exhausted 8 polls for post=mc5gd (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-07-12 06:51:41  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=mc5gd). May have silently failed.
+2026-07-12 06:51:41  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-12 06:51:41  INFO      YT Short posted: format=did_you_know, music=dance-1095
+2026-07-12 06:51:41  INFO      State saved. YT Short run complete.
+2026-07-12 06:51:41  INFO      ════════════════════════════════════════════════════════════

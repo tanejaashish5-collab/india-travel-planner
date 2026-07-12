@@ -30,7 +30,7 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-11",
@@ -39,29 +39,11 @@
     "PdMu0_evening": "2026-07-11",
     "m8EAd_carousel": "2026-07-11",
     "PdMu0_carousel": "2026-07-11",
-    "GAh5p_yt_short": "2026-07-11",
-    "m8EAd_yt_short": "2026-07-11",
-    "GAh5p_reel_studio": "2026-07-10",
-    "m8EAd_reel_studio": "2026-07-10"
+    "GAh5p_yt_short": "2026-07-12",
+    "m8EAd_yt_short": "2026-07-11"
   },
   "last_sync": "2026-07-11T15:19:34.440216+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "bhandardara",
-      "date": "2026-06-27"
-    },
-    {
-      "destination_id": "gurudongmar-lake",
-      "date": "2026-06-27"
-    },
-    {
-      "destination_id": "uttarkashi",
-      "date": "2026-06-27"
-    },
-    {
-      "destination_id": "lepakshi",
-      "date": "2026-06-27"
-    },
     {
       "destination_id": "courtallam",
       "date": "2026-06-28"
@@ -333,6 +315,10 @@
     {
       "destination_id": "nubra-valley",
       "date": "2026-07-11"
+    },
+    {
+      "destination_id": "bhandardara",
+      "date": "2026-07-12"
     }
   ],
   "posted_formats": {
@@ -5182,6 +5168,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-07-12T06:50:54.428052+00:00",
+      "date": "2026-07-12",
+      "platform": "youtube",
+      "post_id": "b9nGT",
+      "destination": "bhandardara",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_bhandardara_en_2026-07-12.mp4"
+    },
+    {
+      "timestamp": "2026-07-12T06:51:41.781665+00:00",
+      "date": "2026-07-12",
+      "platform": "instagram",
+      "post_id": "mc5gd",
+      "destination": "bhandardara",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_bhandardara_en_2026-07-12.mp4"
     }
   ],
   "theme_usage": {
@@ -6157,8 +6161,7 @@
       "keylong": [
         "2026-07-02"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
