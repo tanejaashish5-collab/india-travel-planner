@@ -37,8 +37,8 @@
     "PdMu0": "2026-07-11",
     "m8EAd_evening": "2026-07-11",
     "PdMu0_evening": "2026-07-11",
-    "m8EAd_carousel": "2026-07-11",
-    "PdMu0_carousel": "2026-07-11",
+    "m8EAd_carousel": "2026-07-12",
+    "PdMu0_carousel": "2026-07-12",
     "GAh5p_yt_short": "2026-07-12",
     "m8EAd_yt_short": "2026-07-11"
   },
@@ -318,6 +318,10 @@
     },
     {
       "destination_id": "bhandardara",
+      "date": "2026-07-12"
+    },
+    {
+      "destination_id": "ahmedabad",
       "date": "2026-07-12"
     }
   ],
@@ -5186,6 +5190,24 @@
       "destination": "bhandardara",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_bhandardara_en_2026-07-12.mp4"
+    },
+    {
+      "timestamp": "2026-07-12T09:21:28.051160+00:00",
+      "date": "2026-07-12",
+      "platform": "instagram",
+      "post_id": "uhUXE",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-12"
+    },
+    {
+      "timestamp": "2026-07-12T09:21:30.387950+00:00",
+      "date": "2026-07-12",
+      "platform": "facebook",
+      "post_id": "4CF6i",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-12"
     }
   ],
   "theme_usage": {
