@@ -35,10 +35,10 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-12",
-    "PdMu0": "2026-07-12",
-    "m8EAd_evening": "2026-07-12",
-    "PdMu0_evening": "2026-07-12",
+    "m8EAd": "2026-07-13",
+    "PdMu0": "2026-07-13",
+    "m8EAd_evening": "2026-07-13",
+    "PdMu0_evening": "2026-07-13",
     "m8EAd_carousel": "2026-07-13",
     "PdMu0_carousel": "2026-07-13",
     "GAh5p_yt_short": "2026-07-13",
@@ -46,7 +46,7 @@
     "GAh5p_reel_studio": "2026-07-13",
     "m8EAd_reel_studio": "2026-07-13"
   },
-  "last_sync": "2026-07-12T15:20:35.066609+00:00",
+  "last_sync": "2026-07-13T16:48:04.613554+00:00",
   "posted_destinations": [
     {
       "destination_id": "sissu",
@@ -335,11 +335,14 @@
     {
       "destination_id": "diamond-triangle",
       "date": "2026-07-13"
+    },
+    {
+      "destination_id": "hogenakkal",
+      "date": "2026-07-13"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "collection_series",
       "score_card",
@@ -352,6 +355,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -363,7 +367,6 @@
     ],
     "PdMu0": [
       "score_card",
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -375,6 +378,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5332,6 +5336,28 @@
       "destination": "diamond-triangle",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-07-13.mp4"
+    },
+    {
+      "timestamp": "2026-07-13T16:49:20.945729+00:00",
+      "date": "2026-07-13",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "aQJsb",
+      "destination": "hogenakkal",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "hogenakkal.mp4"
+    },
+    {
+      "timestamp": "2026-07-13T16:49:43.813833+00:00",
+      "date": "2026-07-13",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "nA0xl",
+      "destination": "hogenakkal",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "hogenakkal.mp4"
     }
   ],
   "theme_usage": {
@@ -5654,7 +5680,8 @@
         "2026-06-27"
       ],
       "hogenakkal": [
-        "2026-07-01"
+        "2026-07-01",
+        "2026-07-13"
       ],
       "jog-falls": [
         "2026-07-01",
@@ -5808,7 +5835,8 @@
         "2026-07-09",
         "2026-07-10",
         "2026-07-11",
-        "2026-07-12"
+        "2026-07-12",
+        "2026-07-13"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6016,7 +6044,8 @@
         "2026-06-28"
       ],
       "hogenakkal": [
-        "2026-07-01"
+        "2026-07-01",
+        "2026-07-13"
       ],
       "jog-falls": [
         "2026-07-02"
@@ -6047,7 +6076,8 @@
         "2026-06-15",
         "2026-06-22",
         "2026-06-29",
-        "2026-07-06"
+        "2026-07-06",
+        "2026-07-13"
       ],
       "families": [
         "2026-05-23",
@@ -6326,7 +6356,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "keylong",
+    "shared_best": "hogenakkal",
     "collection": "best-honeymoon"
   },
   "manual_skip_dests": {},

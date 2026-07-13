@@ -11107,3 +11107,49 @@ edge_tts.exceptions.NoAudioReceived: No audio was received. Please verify that y
 2026-07-13 13:53:56  INFO      YT Short posted: format=this_vs_that, music=27_lofi_temples
 2026-07-13 13:53:56  INFO      State saved. YT Short run complete.
 2026-07-13 13:53:56  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 16:47:24  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 16:47:24  INFO      Nakshiq Autoposter · EVENING · 2026-07-13 · weekday=0
+2026-07-13 16:47:24  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 16:47:24  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-13 16:48:04  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-13 16:48:04  INFO      brand_stamp: registered 438 destinations for overlay lookup
+2026-07-13 16:48:05  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-13 16:48:05  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-13 16:48:05  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-13 16:48:20  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-13 16:48:20  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-07-13 16:48:20  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: festival_alert  ·  Audience: backpackers
+2026-07-13 16:48:20  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-07-13 16:48:20  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-07-13 16:48:20  INFO      Fingerprint dedup snapshot — 55 dests in 7d · 125 (dest,fmt) pairs in 30d · 242 media in 60d
+2026-07-13 16:48:20  INFO      Festival locked: Amarnath Yatra Start (14/24 active festivals never featured)
+2026-07-13 16:48:28  INFO      Shared best destination locked: Hogenakkal Falls
+2026-07-13 16:48:28  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-13 16:48:28  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-07-13 16:48:28  INFO      confidence_intel for Hogenakkal Falls: only 0 card rows — SKIPPING
+2026-07-13 16:48:28  WARNING   [instagram/nakshiq] confidence_intel: hogenakkal inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'hogenakkal' as score_card to keep the slot live.
+2026-07-13 16:48:28  INFO      [instagram/nakshiq] Caption ready (405 chars, dest=hogenakkal)
+2026-07-13 16:48:28  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-13 16:48:28  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/hogenakkal.mp4?v=20260524
+2026-07-13 16:48:31  INFO          Brand-stamp applied: hogenakkal.mp4 (11,249,828 → 6,419,238 bytes)
+2026-07-13 16:48:31  INFO          Requesting upload URL for hogenakkal.mp4 (6,419,238 bytes, video/mp4)
+2026-07-13 16:48:32  INFO          Uploading to R2 (timeout=300s)...
+2026-07-13 16:48:34  INFO          R2 PUT OK. Confirming...
+2026-07-13 16:48:35  INFO          Media ready: FQxYZ (6,419,238 bytes · hogenakkal.mp4)
+2026-07-13 16:48:35  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-13 16:49:20  INFO      [instagram/nakshiq] ✅ Published · Outstand=aQJsb · Platform=18142445800527054
+2026-07-13 16:49:20  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-07-13 16:49:20  INFO      confidence_intel for Hogenakkal Falls: only 0 card rows — SKIPPING
+2026-07-13 16:49:20  WARNING   [facebook/Nakshiq] confidence_intel: hogenakkal inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'hogenakkal' as score_card to keep the slot live.
+2026-07-13 16:49:20  INFO      [facebook/Nakshiq] Caption ready (596 chars, dest=hogenakkal)
+2026-07-13 16:49:21  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-13 16:49:21  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/hogenakkal.mp4?v=20260524
+2026-07-13 16:49:23  INFO          Brand-stamp applied: hogenakkal.mp4 (11,249,828 → 6,419,238 bytes)
+2026-07-13 16:49:23  INFO          Requesting upload URL for hogenakkal.mp4 (6,419,238 bytes, video/mp4)
+2026-07-13 16:49:24  INFO          Uploading to R2 (timeout=300s)...
+2026-07-13 16:49:27  INFO          R2 PUT OK. Confirming...
+2026-07-13 16:49:28  INFO          Media ready: gDSCx (6,419,238 bytes · hogenakkal.mp4)
+2026-07-13 16:49:28  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-13 16:49:43  INFO      [facebook/Nakshiq] ✅ Published · Outstand=nA0xl · Platform=996154269907994
+2026-07-13 16:49:43  INFO      State saved. Run complete.
+2026-07-13 16:49:43  INFO      ════════════════════════════════════════════════════════════
