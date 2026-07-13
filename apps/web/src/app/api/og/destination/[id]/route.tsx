@@ -82,7 +82,10 @@ export async function GET(
   const issueNum = getIssueNumber();
   const monthName = currentMonthLongIST().toUpperCase();
 
-  const heroPhoto = destinationImage(id, 1600);
+  // No width arg on purpose: satori can't decode WebP, so OG must use the
+  // original JPEG (see imageUrl()'s own contract). -w1600.webp here = 187
+  // "Unsupported image type" errors since 2026-05-16.
+  const heroPhoto = destinationImage(id);
   const stateBlurb =
     [stateName, region].filter(Boolean).join(" · ").toUpperCase() || "INDIA";
 
@@ -145,7 +148,7 @@ export async function GET(
                 textTransform: "uppercase",
               }}
             >
-              DISPATCH · ISSUE Nº {issueNum}
+              {`DISPATCH · ISSUE Nº ${issueNum}`}
             </div>
             <div
               style={{
@@ -192,7 +195,7 @@ export async function GET(
                     'ui-monospace, "SF Mono", Menlo, monospace',
                 }}
               >
-                {verdict} · {monthName}
+                {`${verdict} · ${monthName}`}
               </div>
             </div>
           )}
