@@ -200,7 +200,13 @@ export function rankIdeas(result, ledgerOpportunities) {
   const cfIdeaItems = ideaItems.filter((c) => !VENTURE_ONLY_ITEMS.has(c.id));
   const rows = (result.scored || []).map((s) => {
     const led = ledgerByKey.get(s.key) || {};
-    const composite = led.composite != null ? led.composite : (s.composite || 0);
+    // Prefer verified_composite (post adversarial-verify downgrade/kill from Phase 5) over the
+    // raw stable composite — otherwise an idea whose moat the skeptics demolished (e.g. Trades
+    // Pipeline ACT: rubric 3.2 -> verified 2.24 on a BROKEN moat, 2026-07-09) still computes
+    // conviction off the un-downgraded rubric and wrongly ranks PURSUE. This restores the
+    // guarantee OPPORTUNITY-BRAIN.md already documents: "a high-rubric idea whose moat the
+    // skeptics demolish actually drops in the ranking, not just in a note."
+    const composite = led.verified_composite != null ? led.verified_composite : (led.composite != null ? led.composite : (s.composite || 0));
     const f = fitForIdea(s.item_verdicts, ideaItems);       // headline: idea-quality only
     const ex = fitForIdea(s.item_verdicts, execItems);      // execution readiness (guidance)
     const fo = fitForIdea(s.item_verdicts, founderItems);   // founder readiness (guidance)
@@ -211,7 +217,17 @@ export function rankIdeas(result, ledgerOpportunities) {
     const isCashflowShape = CASHFLOW_SHAPES.has(led.shape || s.shape || '');
     const ledScores = (led.validation && led.validation.scores) || led.scores || {};
     const cf = isCashflowShape ? fitForIdea(s.item_verdicts, cfIdeaItems) : null;
-    const cfComp = isCashflowShape ? cashflowComposite(ledScores) : null;
+    // cashflowComposite() intentionally zero-weights moat (a cash business defends with
+    // relationships/contracts, not moats) — but it reads led.scores/validation.scores, which
+    // are the RAW pre-adversarial-verify scores, so it never sees a skeptic panel's "moat
+    // broken, N direct competitors found" finding. That finding means real competitors ALREADY
+    // occupy the exact relationships/contracts a cash business defends with, which undermines
+    // this lens too, not just the venture one. Carry forward the SAME downgrade ratio Phase 5
+    // already computed (verified_composite/composite) rather than re-deriving it, so a broken
+    // moat discounts both lenses consistently (2026-07-09, Trades Pipeline ACT case: 2/2
+    // skeptics found 5+ entrenched GTO/apprenticeship competitors already in-market).
+    const downgradeRatio = (led.composite && led.verified_composite != null && led.composite > 0) ? Math.min(1, led.verified_composite / led.composite) : 1;
+    const cfComp = isCashflowShape ? cashflowComposite(ledScores) * downgradeRatio : null;
     const cfConv = cf ? conviction(cf.fit, cfComp != null && cfComp > 0 ? cfComp : composite) : null;
     const cfTier = cf ? tierFor(cfConv, cf.dealbreakers.length) : null;
     const useCf = cfTier && (TIER_RANK[cfTier] > TIER_RANK[ventureTier] || (cfTier === ventureTier && cfConv > conv));

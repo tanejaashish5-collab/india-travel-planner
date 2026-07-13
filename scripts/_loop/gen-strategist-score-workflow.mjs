@@ -20,9 +20,21 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const LEDGER = path.join(ROOT, '.loop/biz-opportunities-ledger.json');
 const CHECKLIST = path.join(ROOT, 'data/research/strategist-checklist.json');
+const FOUNDER_PROFILE = path.join(ROOT, 'data/research/FOUNDER-PROFILE.md');
 const OUT = path.join(ROOT, 'scripts/_loop/strategist-score-workflow.js');
 
 const newOnly = process.argv.includes('--new-only');
+
+// OPPORTUNITY-BRAIN.md hard rule #6: "Founder-fit reads FOUNDER-PROFILE.md, not an agent's
+// guess." Prior to 2026-07-09 this workflow never embedded it, so every founder-passion-fit /
+// founder-fit checklist item came back "unknown" for lack of context — letting ideas the founder
+// explicitly rejects on sight (e.g. AI-native compliance tooling outside his 4 passion lanes;
+// his own words: "you're trying to force AI on stuff") still reach PURSUE on idea-quality alone.
+// Fixed by embedding the calibration sections directly in every scoring agent's prompt.
+const founderProfileRaw = fs.existsSync(FOUNDER_PROFILE) ? fs.readFileSync(FOUNDER_PROFILE, 'utf8') : '';
+// Keep only the load-bearing calibration sections (identity/edge/fits/values), drop the
+// changelog-style "current portfolio disposition" footer which is stale by the time this runs.
+const founderProfileForPrompt = founderProfileRaw.split('## Current portfolio disposition')[0].trim();
 
 const checklistFull = JSON.parse(fs.readFileSync(CHECKLIST, 'utf8')).checklist || [];
 const compact = checklistFull.map((c) => ({ id: c.id, category: c.category, title: c.title, test: c.test, weight: c.weight }));
@@ -34,7 +46,11 @@ ideas = ideas.map(({ _scored, ...rest }) => rest);
 // The scoring prompt: structural-fail vs unproven-unknown is the load-bearing distinction.
 const PROMPT_HEAD =
   'CRITICAL: DO THE SCORING YOURSELF, IN THIS RESPONSE. Do NOT invoke any Skill (no /loop-checklist), do NOT run apply/merge scripts, do NOT write or edit ANY file, do NOT spawn sub-agents — the pipeline applies your output; your ONLY job is to return the JSON for the schema. (2026-06-11: a scorer agent invoked the loop-checklist skill and self-applied a Tata verdict outside the controlled flow — never again.)\n\n' +
-  'Score ONE EARLY-STAGE business idea against a strategist-derived business-quality checklist (Tony Robbins, Masters Union founders, Basesh Gala). The idea is described by a one-liner — it is PRE-LAUNCH, so it has no traction, team, or financials yet. Judge the intrinsic potential of the IDEA, not the completeness of its description.\n\nIDEA:\n';
+  'Score ONE EARLY-STAGE business idea against a strategist-derived business-quality checklist (Tony Robbins, Masters Union founders, Basesh Gala). The idea is described by a one-liner — it is PRE-LAUNCH, so it has no traction, team, or financials yet. Judge the intrinsic potential of the IDEA, not the completeness of its description.\n\n' +
+  (founderProfileForPrompt
+    ? 'THE FOUNDER (read this before scoring ANY founder-fit / founder-passion-fit / founder-readiness item — never guess):\n' + founderProfileForPrompt + '\n\n'
+    : '') +
+  'IDEA:\n';
 const PROMPT_RULES =
   '\n\nCRITICAL verdict rules — get this distinction right:\n' +
   '- "fail" = the idea is STRUCTURALLY UNABLE to pass: its very nature makes this test impossible to satisfy no matter who executes it. Examples: a newsletter built only on public data structurally has no moat; a thin re-seller structurally has weak unit economics; a business whose whole value evaporates if one regulation changes structurally fails survive-constraint-shifts. A fail must be defensible as "even with perfect execution, this cannot pass."\n' +
