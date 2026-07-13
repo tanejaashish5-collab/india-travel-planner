@@ -1,0 +1,23 @@
+{
+  "purpose": "Independent live re-verification of the already-complete 2026-06-28 run (started 01:39 UTC) before reusing its findings.json for report generation. Cost-aware: confirms real verification without redoing the full 26-min matrix.",
+  "performed_utc": "2026-06-28T02:10:00Z",
+  "method": "fresh curl probes from Cowork sandbox vs claims in findings/2026-06-28.json",
+  "results": {
+    "A_soft404_bad_slug": {"live": 404, "claim": "404 (pass)", "agree": true},
+    "A_soft404_garbage_month": {"live": 404, "claim": "404 (pass)", "agree": true},
+    "B_dest_200_sample": {"live": "swamimalai/bhopal/zuluk/spiti-valley all 200", "claim": "10/10 200", "agree": true},
+    "C_hindi_bhopal": {"live": "200, lang=hi, Devanagari title present", "claim": "10/10 lang=hi + Devanagari", "agree": true},
+    "D_landing_seo": {"live": "canonical present, hrefLang en/hi/x-default present, og:image present, no title-stutter", "claim": "13/13 canonical+hreflang+og, 0 stutter", "agree": true},
+    "G_service_worker": {"live_version": "nakshiq-v51", "live_md5": "d0cc522e363cd7fc6521684ac6679f9a", "claim_version": "nakshiq-v51", "claim_md5": "d0cc522e363cd7fc6521684ac6679f9a", "agree": true, "note": "first naive grep caught changelog token v32; const CACHE_VERSION on line 119 = v51; md5 byte-identical to claim"},
+    "H_sitemap": {"live_chunks": 5, "live_total_urls": 24938, "claim_chunks": 5, "claim_total_urls": 24938, "agree": true, "note": "exact-match fingerprint"},
+    "I_core_routes": {"live": "en, en/explore, en/sos, en/treks, en/permits all 200", "claim": "23/23 2xx", "agree": true},
+    "J_locale_redirect": {"live": "/ -> 301 https://www.nakshiq.com/en", "claim": "5/5 301 to /en", "agree": true}
+  },
+  "sections_not_independently_reprobed": {
+    "E_sos_db_aggregates": "Supabase MCP reads in original run; not re-read (egress-aware). SSR SOS blobs corroborated by dest-200 spot-checks.",
+    "F_api_smoke": "valid /api/chat probe spends metered Anthropic key; not re-run.",
+    "K_chrome_e2e": "Chrome MCP console/Leaflet observations from original run; not re-run.",
+    "L_hero_images": "533 R2 HEAD probes in original run + audit-hero-images cron; hero-images.json fresh today (01:44)."
+  },
+  "verdict": "ALL 9 cheap HTTP spot-checks agree with the findings, including 2 exact-match fingerprints (sitemap 24938, sw md5). findings/2026-06-28.json is real, fresh, complete (A-L), schema-valid. Reuse approved; no section escalated to re-run."
+}

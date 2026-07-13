@@ -1,0 +1,29 @@
+{
+  "captured_utc": "2026-06-28T01:55:00Z",
+  "source": "Supabase MCP execute_sql (project dudzsdzfvikjjhurxrgc), small aggregates only — egress-safe",
+  "catalogue_and_shape": {
+    "dest_total": 533,
+    "emergency_sos_rows": 533,
+    "dest_without_emergency_sos_row": 0,
+    "max_destination_created_at": "2026-06-14 08:52:57.6882+00",
+    "new_destinations_since_sikkim_2026_06_14_0900": 0,
+    "emergency_sos_local_helpers_nonempty": 178,
+    "confidence_cards_people_who_help_nonempty_array": 84,
+    "people_who_help_note": "Counted with nested-CASE array guard (jsonb_typeof()=array -> array_length>0 else false) so legacy object-shape rows are correctly NOT counted. 84 == 06-19..06-26 baseline; NEW-2026-06-10-001 holds."
+  },
+  "sos_dialable_11col": {
+    "formula": "non-null + trimmed-non-empty across police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line (EXCLUDES local_police_station)",
+    "rows": 533,
+    "min_dialable": 5,
+    "avg_dialable": 7.41,
+    "total_dialable": 3952,
+    "rows_under_3_dialable": 0,
+    "placeholder_X_rows": 0,
+    "note": "EXACT match to the 06-19..06-26 baseline of 3952. Safety floor intact across all 533 dests. placeholder_X check covers all 11 columns + local_police_station = 0."
+  },
+  "three_row_prior_bug_recheck": {
+    "uttarkashi": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091 (or 181)","tourist_helpline":"1800-111-363 (toll-free)","road_accident":"1073","rescue_contact":"DDMA Uttarkashi Control Room: 01374-222722 / 1077","verified_by":"constants-reverify-2026-06-09","verified_date":"2026-06-09","verdict":"NEW-2026-05-10-001 STILL CLOSED — no placeholder X, all structured, unchanged"},
+    "khonoma": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1363","road_accident":"1073","rescue_contact":"Kohima Police Control Room: 7005986046 · NSDMA: 1070","verified_by":"deepdive-recorrect-2026-06-09","verified_date":"2026-06-09","verdict":"NEW-2026-05-11-001 STILL CLOSED — structured, unchanged"},
+    "khangchendzonga-np": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1800-111-363","road_accident":"1073","rescue_contact":"Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; KNP permits + park rescue coordination via Forest Environment & Wildlife Mgmt Dept, Sikkim","verified_by":"emsos-th-audit-2026-06-10","verified_date":"2026-06-10","verdict":"NEW-2026-05-30-001 STILL CLOSED — structured, unchanged"}
+  }
+}

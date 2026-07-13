@@ -1,0 +1,6 @@
+nakshiq-daily-test 2026-07-04 — run log
+started 2026-07-04T02:10:33Z, completed ~2026-07-04T02:26Z (UTC). Sequential foreground execution.
+Sections: sample -> A -> B(0:5,5:10) -> C(0:5,5:10) -> D -> D2 -> E -> F(1,2) -> G -> J -> H -> breakdown -> I(0:12,12:24) -> istats -> dpl-grep -> DB aggregates (Supabase MCP x2) -> L (audit-hero-images.mjs, 533 ok/0 missing) -> K (Chrome MCP, 5 solid captures).
+B/C/I halved purely for the shell 45s budget; in-section order preserved; timings are honest curl time_starttransfer.
+Deploy detected: data-dpl-id dpl_427PZ64JmYTQWF6QqYdHpmEtV89P -> dpl_C3pvzva1Ap4wq8PzxZECzefSq5BS (21/21 today's snapshots).
+Result: 0 new defects (2 INFO), quiz og:image REPRODUCED day-2, all baselines exact match.

@@ -1,0 +1,23 @@
+{
+  "queried_utc": "2026-07-07T02:20:00Z",
+  "method": "Supabase MCP execute_sql — 1 schema introspection (information_schema.columns for emergency_sos/destinations/confidence_cards, to confirm exact FK column names before querying rather than assume them) + 1 combined aggregate (canonical 11-column dialable formula, nested-CASE local_helpers + people_who_help array guards, no-row check, placeholder-X regex) + 1 three-row prior-bug recheck + 1 narrow id/name/state_id read (533 rows, 3 columns, used for the hero-image audit below since the node script hit the 45s shell budget twice). All narrow, egress-safe per CLAUDE.md.",
+  "aggregates": {
+    "es_rows": 533,
+    "dests_without_es_row": 0,
+    "rows_under_3_dialable": 0,
+    "min_dialable": 5,
+    "avg_dialable": 7.41,
+    "total_dialable_11col": 3952,
+    "rows_with_placeholder_X": 0,
+    "es_localhelpers_nonempty": 178,
+    "people_who_help_nonempty_arrays": 84,
+    "destinations_total": 533,
+    "max_dest_created_at": "2026-06-14 08:52:57.6882+00"
+  },
+  "prior_bug_recheck": {
+    "uttarkashi": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091 (or 181)","tourist_helpline":"1800-111-363 (toll-free)","road_accident":"1073","rescue_contact":"DDMA Uttarkashi Control Room: 01374-222722 / 1077","verified_by":"constants-reverify-2026-06-09"},
+    "khonoma": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1363","road_accident":"1073","rescue_contact":"Kohima Police Control Room: 7005986046 · NSDMA: 1070","verified_by":"deepdive-recorrect-2026-06-09","note":"Not in today's random sample (today: pachmarhi, sakleshpur, kalpa, bhimbetka, nalsarovar, sabarimala, parvati-valley, likir, kanchipuram, neemrana) — DB-only recheck today."},
+    "khangchendzonga-np": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1800-111-363","road_accident":"1073","rescue_contact":"Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; KNP permits + park rescue coordination via Forest Environment & Wildlife Mgmt Dept, Sikkim (no published civilian emergency phone -> use district admin)","verified_by":"emsos-th-audit-2026-06-10"}
+  },
+  "baseline_match": "EXACT match to the 06-19..07-06 baseline on every aggregate (per the streak documented in qa/findings/2026-07-06.json) — zero drift on the SOS safety floor today."
+}

@@ -1,70 +1,72 @@
-import json, os, sys, zipfile, shutil, datetime, re
+import zipfile, os, sys, re, shutil, tempfile, datetime, json
 base=os.path.expanduser('~/Desktop/India Travel Planner/data/festivals')
 viddir=os.path.join(base,'videos')
-acct=int(sys.argv[1])          # 1..6
-do_copy = len(sys.argv)>2 and sys.argv[2]=='copy'
-lo=(acct-1)*5; hi=lo+5
-b=json.load(open('/tmp/celebration_batch.json'))[lo:hi]
+acct=int(sys.argv[1]); lo=int(sys.argv[2]); hi=int(sys.argv[3])
+DRY = (len(sys.argv)>4 and sys.argv[4]=='dry')
+batch=json.load(open(os.path.join(base,'_run_batch.json')))
+sl=batch[lo:hi]
 zp=os.path.expanduser('~/Downloads/download.zip')
-today=datetime.date.today().isoformat()
-inbox=os.path.join(base,'_inbox',f'acct{acct}_{today}')
-stage=os.path.join(inbox,'_extracted')
-os.makedirs(stage,exist_ok=True)
-# extract via zipfile (handles unicode)
-with zipfile.ZipFile(zp) as z:
-    z.extractall(stage)
+if not os.path.exists(zp):
+    print('NO_ZIP at', zp); sys.exit(1)
+ex=os.path.join(tempfile.gettempdir(),f'flow_acct{acct}_extract')
+shutil.rmtree(ex, ignore_errors=True); os.makedirs(ex)
+with zipfile.ZipFile(zp) as z: z.extractall(ex)
 mp4s=[]
-for root,_,files in os.walk(stage):
+for root,_,files in os.walk(ex):
     for f in files:
-        if f.lower().endswith('.mp4') and not f.startswith('.'):
-            mp4s.append(os.path.join(root,f))
-mp4s.sort(key=lambda p: os.path.basename(p).lower())
-print(f"ACCT{acct} slugs (submission order):")
-for i,x in enumerate(b): print(f"  [{i}] {x['slug']} | dest={x['dest']} | fest={x['festival']}")
-print(f"\nExtracted {len(mp4s)} mp4 files:")
-for p in mp4s: print("  -", os.path.basename(p))
-
+        if f.lower().endswith('.mp4'): mp4s.append(os.path.join(root,f))
+mp4s.sort(key=lambda p: os.path.basename(p).lower())  # alpha == submission order within a dup family
+STOP={'festival','celebration','celebrated','video','footage','authentic','cinematic','documentary',
+      'style','seconds','people','crowds','rituals','their','with','real','look','new','year','temple'}
 def toks(s):
-    return set(re.findall(r"[a-z]+", s.lower()))
-STOP={'the','of','as','celebrated','in','and','a','festival','mela','utsav','at','day','s'}
-def keytoks(x):
-    t=toks(x['dest'])|toks(x['festival'])
-    return {w for w in t if w not in STOP and len(w)>2}
-
-# score each file against each slug by distinctive token overlap
-assign={}  # slug_index -> filepath
-used=set()
-scored=[]
-for fi,p in enumerate(mp4s):
-    fn=os.path.basename(p).lower()
-    for si,x in enumerate(b):
-        kt=keytoks(x)
-        hits=[w for w in kt if w in fn]
-        if hits: scored.append((len(hits),si,fi,hits))
-scored.sort(reverse=True)
-for sc,si,fi,hits in scored:
-    if si in assign or fi in used: continue
-    assign[si]=mp4s[fi]; used.add(fi)
-    print(f"\nMATCH slug[{si}] {b[si]['slug']}  <-  {os.path.basename(mp4s[si if False else fi])}  (hits={hits})")
-
-# fallback by submission order for any unmatched, using remaining files in submission(=name) order
-unmatched_slugs=[i for i in range(len(b)) if i not in assign]
-remaining=[i for i in range(len(mp4s)) if i not in used]
-if unmatched_slugs:
-    print("\nUnmatched slugs:", [b[i]['slug'] for i in unmatched_slugs])
-    print("Remaining files:", [os.path.basename(mp4s[i]) for i in remaining])
-
-print("\n=== PROPOSED FINAL ===")
-for si,x in enumerate(b):
-    fp=assign.get(si)
-    print(f"  {x['slug']}.mp4  <=  {os.path.basename(fp) if fp else '*** NO MATCH ***'}")
-
-if do_copy:
-    n=0
-    for si,x in enumerate(b):
-        fp=assign.get(si)
-        if not fp: 
-            print("SKIP (no match):", x['slug']); continue
-        dest=os.path.join(viddir, x['slug']+'.mp4')
-        shutil.copy2(fp, dest); n+=1
-    print(f"\nCopied {n} clips to videos/")
+    t=set()
+    for w in re.split(r'[^a-z0-9]+', s.lower()):
+        if len(w)>=4 and w not in STOP:
+            t.add(w); t.add(w[:4])
+    return t
+def norm(fn): return re.sub(r'[^a-z0-9]+',' ', fn.lower())
+def score(e, fn):  # dest weighted x10, festival x1
+    nf=norm(fn); sc=0
+    for w in toks(e['dest']):
+        if w in nf: sc+=10
+    for w in toks(e['festival']):
+        if w in nf: sc+=1
+    return sc
+pairs=[]
+for p in mp4s:
+    fn=os.path.basename(p)
+    for e in sl:
+        pairs.append((score(e,fn), p, e['slug']))
+pairs.sort(key=lambda x:(-x[0], os.path.basename(x[1]).lower(), x[2]))
+assigned={}; used_f=set(); used_s=set()
+for sc,p,slug in pairs:
+    if sc<=0 or p in used_f or slug in used_s: continue
+    assigned[slug]=p; used_f.add(p); used_s.add(slug)
+# submission-order fallback for any leftover slugs/files
+left_slugs=[e['slug'] for e in sl if e['slug'] not in assigned]
+left_files=[p for p in mp4s if p not in used_f]
+fb=[]
+for slug,p in zip(left_slugs, left_files):
+    assigned[slug]=p; used_f.add(p); fb.append((slug,os.path.basename(p)))
+print('--- EXTRACTED FILES (acct%d) ---'%acct)
+for p in mp4s: print('   ', os.path.basename(p))
+for slug,fn in fb: print('FALLBACK(submission-order)', slug, '<=', fn)
+print('--- ASSIGNMENT slots %d-%d%s ---'%(lo,hi-1,' [DRY]' if DRY else ''))
+copied=[]; unmatched=[]
+for e in sl:
+    slug=e['slug']
+    if slug in assigned:
+        src=assigned[slug]; dst=os.path.join(viddir, slug+'.mp4')
+        if not DRY: shutil.copyfile(src,dst)
+        copied.append(slug); print('OK  %-42s <= %s'%(slug, os.path.basename(src)))
+    else:
+        unmatched.append(slug); print('MISS', slug)
+unmatched_files=[os.path.basename(p) for p in mp4s if p not in used_f]
+if unmatched_files: print('UNMATCHED_FILES', unmatched_files)
+if not DRY:
+    today=datetime.date.today().isoformat()
+    inbox=os.path.join(base,'_inbox',f'acct{acct}_{today}')
+    os.makedirs(inbox, exist_ok=True)
+    shutil.move(zp, os.path.join(inbox,'download.zip'))
+    print('moved download.zip ->', inbox)
+print('COPIED %d/%d'%(len(copied),len(sl)), '| UNMATCHED_SLUGS', unmatched)

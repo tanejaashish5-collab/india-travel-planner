@@ -1,0 +1,22 @@
+{
+  "source": "Supabase MCP execute_sql (aggregate reads, egress-safe) — project dudzsdzfvikjjhurxrgc, 2026-06-24",
+  "canonical_11col_dialable_set": ["police","ambulance","fire","women_helpline","tourist_helpline","road_accident","rescue_contact","mountain_rescue","mechanic_contact","tow_service","embassy_emergency_line"],
+  "emergency_sos_rows": 533,
+  "destinations_total": 533,
+  "dests_without_emergency_sos_row": 0,
+  "min_dialable_fields": 5,
+  "avg_dialable_fields": 7.41,
+  "total_dialable_entries_11col": 3952,
+  "rows_under_3_dialable": 0,
+  "rows_with_placeholder_X": 0,
+  "local_helpers_nonempty": 178,
+  "people_who_help_nonempty_array": 84,
+  "max_created_at": "2026-06-14 08:52:57.6882+00",
+  "new_destinations_since_sikkim_2026_06_14": 0,
+  "baseline_note": "EXACT match to the 06-19..06-23 baseline (533/533 rows, 0 without, min 5, avg 7.41, total 3952, 0 placeholder-X, local_helpers 178, people_who_help 84). people_who_help aggregate used a nested-CASE array guard (legacy object-shape rows still exist and are correctly NOT counted; the planner reorders a flat jsonb_typeof()=... AND jsonb_array_length()>0, so the guard must nest).",
+  "prior_bug_recheck": {
+    "uttarkashi": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091 (or 181)","tourist_helpline":"1800-111-363 (toll-free)","road_accident":"1073","rescue_contact":"DDMA Uttarkashi Control Room: 01374-222722 / 1077","mountain_rescue":"DDMA Uttarkashi: 01374-222126 / 7310913129","verified_by":"constants-reverify-2026-06-09","placeholder_X":false,"bug":"NEW-2026-05-10-001 STILL CLOSED"},
+    "khonoma": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1363","road_accident":"1073","rescue_contact":"Kohima Police Control Room: 7005986046 · NSDMA: 1070","verified_by":"deepdive-recorrect-2026-06-09","text_typed_phone_in_dialable":false,"bug":"NEW-2026-05-11-001 STILL CLOSED"},
+    "khangchendzonga-np": {"police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1800-111-363","road_accident":"1073","rescue_contact":"Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; ...","verified_by":"emsos-th-audit-2026-06-10","text_typed_phone_in_dialable":false,"bug":"NEW-2026-05-30-001 STILL CLOSED"}
+  }
+}

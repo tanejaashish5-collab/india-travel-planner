@@ -1,0 +1,289 @@
+https://www.nakshiq.com/en/destination/this-does-not-exist-xyz -> 404 (9b)
+https://www.nakshiq.com/en/destination/zzzzzz-fake -> 404 (9b)
+https://www.nakshiq.com/hi/destination/this-does-not-exist-xyz -> 404 (9b)
+https://www.nakshiq.com/en/destination/jaipur/13 -> 404 (9b)
+https://www.nakshiq.com/en/destination/jaipur/0 -> 404 (9b)
+https://www.nakshiq.com/en/destination/jaipur/notamonth -> 404 (9b)
+https://www.nakshiq.com/hi/destination/varanasi/99 -> 404 (9b)
+https://www.nakshiq.com/destination/nonexistent-slug-qa/june -> 404 (9b)
+https://www.nakshiq.com/en/itinerary/this-does-not-exist-xyz -> 404 (68910b)
+WROTE section-A-soft404.csv (9 rows)
+udupi 200 TTFB=4199ms total=4280ms 366268b
+rajgir 200 TTFB=3221ms total=3301ms 339945b
+ziro-valley 200 TTFB=838ms total=920ms 363673b
+theur 200 TTFB=2791ms total=2970ms 286305b
+kukke-subramanya 200 TTFB=2792ms total=2872ms 352202b
+valparai 200 TTFB=2692ms total=2771ms 344135b
+uttarkashi 200 TTFB=3102ms total=3185ms 369994b
+kohima 200 TTFB=3414ms total=3501ms 405995b
+chettinad 200 TTFB=4359ms total=4441ms 363194b
+kolkata 200 TTFB=3176ms total=3264ms 425932b
+WROTE section-B-availability.csv (10 rows)
+udupi 200 lang=hi devanagari=True
+rajgir 200 lang=hi devanagari=True
+ziro-valley 200 lang=hi devanagari=True
+theur 200 lang=hi devanagari=True
+kukke-subramanya 200 lang=hi devanagari=True
+valparai 200 lang=hi devanagari=True
+uttarkashi 200 lang=hi devanagari=True
+kohima 200 lang=hi devanagari=True
+chettinad 200 lang=hi devanagari=True
+kolkata 200 lang=hi devanagari=True
+WROTE section-C-hindi.csv (10 rows)
+landing 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+udupi 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+rajgir 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+ziro-valley 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+theur 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+kukke-subramanya 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+valparai 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+uttarkashi 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+kohima 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+chettinad 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+kolkata 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+udupi/december 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+itinerary/agra 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+WROTE section-D-seo.csv (13 rows)
+udupi structured=7 dialable=7 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   rescue_contact = Udupi Helplines — Police 100 / Ambulance 108 / Children 1098 / Women 1
+   road_accident = 1073
+   tourist_helpline = 1800-111-363 (toll-free)
+   women_helpline = 1091
+rajgir structured=9 dialable=8 malformed=1 textonly=['local_police_station'] helper_phones=0
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   local_police_station = Rajgir Sub-Division (SDPO Rajgir office)
+   police = 100
+   rescue_contact = Nalanda Disaster Helpline: 1077
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+ziro-valley structured=8 dialable=8 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   police = 100
+   rescue_contact = Lower Subansiri — Disaster Helpline: 1077 / 1070 | Ambulance: 102 / 10
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+theur structured=7 dialable=7 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   rescue_contact = Pune District Disaster Management Control Room: 020-26123371
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 1091
+kukke-subramanya structured=7 dialable=7 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   rescue_contact = Dakshina Kannada Helplines — Police 100 / Fire 101 / District Helpline
+   road_accident = 1073
+   tourist_helpline = 1800-111-363 (toll-free)
+   women_helpline = 1091
+valparai structured=7 dialable=7 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   rescue_contact = Coimbatore Disaster Helpline: 1077
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 1091
+uttarkashi structured=9 dialable=9 malformed=0 textonly=[] helper_phones=1
+   ambulance = 108
+   embassy_emergency_line = US Embassy Delhi 24/7: +91-11-2419-8000
+   fire = 101
+   mountain_rescue = DDMA Uttarkashi: 01374-222126 / 7310913129
+   police = 100
+   rescue_contact = DDMA Uttarkashi Control Room: 01374-222722 / 1077
+   road_accident = 1073
+   tourist_helpline = 1800-111-363 (toll-free)
+   women_helpline = 1091 (or 181)
+kohima structured=9 dialable=8 malformed=1 textonly=['local_police_station'] helper_phones=1
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   local_police_station = Kohima North Police Station / Kohima South Police Station
+   police = 100
+   rescue_contact = Kohima Police Control Room: 7005986046 · Fire: 0370-2222952
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+chettinad structured=7 dialable=7 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   rescue_contact = Sivaganga Disaster Helpline: 1077 / SMS-WhatsApp 8903331077 / Collecto
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 1091
+kolkata structured=9 dialable=8 malformed=1 textonly=['local_police_station'] helper_phones=1
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   local_police_station = Lalbazar (Kolkata Police HQ)
+   police = 100
+   rescue_contact = Kolkata Police Lalbazar Control Room: 033-2214 3024 / 033-2214 3230 / 
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+WROTE section-E-sos.csv (10 rows)
+TOTAL structured fields: 79, dialable: 76, malformed: 3, text-only: [('rajgir', ['local_police_station']), ('kohima', ['local_police_station']), ('kolkata', ['local_police_station'])]
+DESTS WITH NO emergencySos BLOB: none
+POST /api/chat malformed -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/chat empty -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/chat wrong-shape -> 400 (28b) {"error":"Invalid question"}
+POST /api/chat oversized-200KB -> 413 (74b) {"error":"Payload too large — questions are capped at 1000 characters."}
+POST /api/chat valid -> 200 (2706b) {"answer":"# Best Time to Visit Leh, Ladakh\n\nBased on NakshIQ's monthly scorin
+POST /api/itinerary malformed -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/itinerary empty -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/itinerary empty-object -> 400 (35b) {"error":"Missing required fields"}
+GET /api/weather?id=varanasi -> 200 (167b) {"temp":34,"feels_like":38,"humidity":49,"description":"overcast clouds","icon":
+GET /api/weather no-params -> 400 (34b) {"error":"Missing destination id"}
+GET /api/search-index -> 200 (718840b) {"destinations":[{"id":"aalo","name":"Aalo","state":{"name":"Arunachal Pradesh"}
+GET /api/destinations (expect 404) -> 404 (27551b) <!DOCTYPE html><html data-dpl-id="dpl_427PZ64JmYTQWF6QqYdHpmEtV89P"><head><meta 
+GET /api/health (expect 404) -> 404 (27551b) <!DOCTYPE html><html data-dpl-id="dpl_427PZ64JmYTQWF6QqYdHpmEtV89P"><head><meta 
+WROTE section-F-api.csv (13 rows)
+/sw.js 200 15446 nakshiq-v52 md5 0c7bc0366b4f61237f86740e5d27f0b2
+/manifest.json 200 icons=3 shortcuts=5
+/offline 200
+WROTE section-G-pwa.csv (3 rows)
+/ -> 301 /en
+/explore -> 301 /en/explore
+/trip -> 301 /en/trip
+/destination/jaipur -> 301 /en/destination/jaipur
+/sos -> 301 /en/sos
+WROTE section-J-locale.csv (5 rows)
+/sitemap.xml 200 chunks=5
+https://www.nakshiq.com/sitemap/0.xml 200 locs=302 dest=0 month=0 cost=0
+https://www.nakshiq.com/sitemap/1.xml 200 locs=15756 dest=533 month=6396 cost=525
+https://www.nakshiq.com/sitemap/2.xml 200 locs=952 dest=0 month=0 cost=0
+https://www.nakshiq.com/sitemap/3.xml 200 locs=1864 dest=0 month=0 cost=0
+https://www.nakshiq.com/sitemap/4.xml 200 locs=6068 dest=0 month=0 cost=0
+TOTAL urls=24942 dest_slug=533 dest_month=6396 cost=525
+WROTE section-H-sitemap.csv (7 rows)
+0.xml: 302 urls -> {'best': 130, 'state': 36, 'guide': 12, 'where-to-go': 12, 'arrival': 10, '(home)': 2, 'explore': 2, 'states': 2, 'collections': 2, 'routes': 2, 'treks': 2, 'plan': 2, 'camping': 2, 'permits': 2, 'road-conditions': 2, 'superlatives': 2, 'stays': 2, 'festivals': 2, 'luxury': 2, 'tourist-traps': 2, 'saved': 2, 'about': 2, 'methodology': 2, 'more': 2, 'risk-quiz': 2, 'quiz': 2, 'terms': 2, 'privacy': 2, 'cookies': 2, 'editorial-policy': 2, 'india-travel': 2, 'data-deletion': 2, 'newsletter': 2, 'vs/<pair>': 2, 'compare': 2, 'weekend-from': 2, 'weekend-from-delhi': 2, 'weekend-from-mumbai': 2, 'weekend-from-bangalore': 2, 'weekend-from-chennai': 2, 'weekend-from-kolkata': 2, 'weekend-from-hyderabad': 2, 'weekend-from-pune': 2, 'weekend-from-ahmedabad': 2, 'weekend-from-jaipur': 2, 'weekend-from-lucknow': 2, 'weekend-from-indore': 2, 'weekend-from-bhopal': 2, 'weekend-from-kochi': 2, 'weekend-from-agra': 2, 'weekend-from-dehradun': 2, 'weekend-from-chandigarh': 2, 'weekend-from-coimbatore': 2, 'weekend-from-varanasi': 2, 'pilgrimage': 2, 'blog': 1, 'the-window': 1}
+1.xml: 15756 urls -> {'destination/<slug>/<month>': 12792, 'destination/<slug>': 1066, 'cost/<slug>': 1050, 'itinerary/<slug>': 792, 'safari': 40, 'pilgrimage': 16}
+2.xml: 952 urls -> {'treks': 414, 'collections': 210, 'blog': 167, 'routes': 150, 'the-window': 11}
+3.xml: 1864 urls -> {'explore': 984, 'festivals': 492, 'treks': 268, 'stays': 72, 'family': 28, 'camping': 20}
+4.xml: 6068 urls -> {'vs/<pair>': 3334, 'region': 1080, 'festivals': 1002, 'with-kids': 533, 'luxury': 60, 'skip-list': 59}
+
+=== OVERALL BY TYPE ===
+  destination/<slug>/<month>: 12792
+  vs/<pair>: 3336
+  festivals: 1496
+  region: 1080
+  destination/<slug>: 1066
+  cost/<slug>: 1050
+  explore: 986
+  itinerary/<slug>: 792
+  treks: 684
+  with-kids: 533
+  collections: 212
+  blog: 168
+  routes: 152
+  best: 130
+  stays: 74
+  luxury: 62
+  skip-list: 59
+  safari: 40
+  state: 36
+  family: 28
+  camping: 22
+  pilgrimage: 18
+  the-window: 12
+  guide: 12
+  where-to-go: 12
+  arrival: 10
+  (home): 2
+  states: 2
+  plan: 2
+  permits: 2
+  road-conditions: 2
+  superlatives: 2
+  tourist-traps: 2
+  saved: 2
+  about: 2
+  methodology: 2
+  more: 2
+  risk-quiz: 2
+  quiz: 2
+  terms: 2
+  privacy: 2
+  cookies: 2
+  editorial-policy: 2
+  india-travel: 2
+  data-deletion: 2
+  newsletter: 2
+  compare: 2
+  weekend-from: 2
+  weekend-from-delhi: 2
+  weekend-from-mumbai: 2
+  weekend-from-bangalore: 2
+  weekend-from-chennai: 2
+  weekend-from-kolkata: 2
+  weekend-from-hyderabad: 2
+  weekend-from-pune: 2
+  weekend-from-ahmedabad: 2
+  weekend-from-jaipur: 2
+  weekend-from-lucknow: 2
+  weekend-from-indore: 2
+  weekend-from-bhopal: 2
+  weekend-from-kochi: 2
+  weekend-from-agra: 2
+  weekend-from-dehradun: 2
+  weekend-from-chandigarh: 2
+  weekend-from-coimbatore: 2
+  weekend-from-varanasi: 2
+  TOTAL: 24942
+
+
+=== DELTA vs 2026-07-02 (today - yesterday) ===
+  quiz: 0 -> 2 (+2)
+  risk-quiz: 0 -> 2 (+2)
+/en 200 TTFB=155ms redirects=0
+/en/explore 200 TTFB=943ms redirects=0
+/en/trip 200 TTFB=1046ms redirects=0
+/en/ask 200 TTFB=783ms redirects=0
+/en/sos 200 TTFB=412ms redirects=0
+/en/blog 200 TTFB=1212ms redirects=0
+/en/collections 200 TTFB=789ms redirects=0
+/en/festivals 200 TTFB=1089ms redirects=0
+/en/treks 200 TTFB=1534ms redirects=0
+/en/permits 200 TTFB=855ms redirects=0
+/en/road-conditions 200 TTFB=433ms redirects=0
+/en/methodology 200 TTFB=809ms redirects=0
+/en/about 200 TTFB=487ms redirects=0
+/en/gap-year 200 TTFB=1152ms redirects=0
+/en/destination/jaipur 200 TTFB=882ms redirects=0
+/en/destination/varanasi 200 TTFB=1319ms redirects=0
+/hi 200 TTFB=685ms redirects=0
+/hi/explore 200 TTFB=980ms redirects=0
+/en/destination/jaipur/june 200 TTFB=2556ms redirects=0
+/en/cost/jaipur 200 TTFB=2057ms redirects=0
+/en/itinerary/agra 200 TTFB=435ms redirects=0
+/hi/itinerary/agra 200 TTFB=1144ms redirects=0
+/en/search 404 TTFB=126ms redirects=0
+/en/compare 200 TTFB=664ms redirects=0
+TTFB min=126 median=868 p90=1319 max=2556
+WROTE section-I-core-routes.csv (24 rows)
+en/quiz 404 TTFB=512ms 27551b lang=en stutter=False canonical=False hreflang=False/False/False og=False
+   title: 
+hi/quiz 404 TTFB=158ms 27551b lang=en stutter=False canonical=False hreflang=False/False/False og=False
+   title: 
+en/risk-quiz 200 TTFB=743ms 109855b lang=en stutter=False canonical=True hreflang=True/True/True og=True
+   title: Find your trip — our 5-question matcher | NakshIQ
+hi/risk-quiz 200 TTFB=1152ms 133722b lang=hi stutter=False canonical=True hreflang=True/True/True og=True
+   title: यात्रा मिलान प्रश्नोत्तरी | NakshIQ
+WROTE section-H2-new-routes.csv (4 rows)
+en/quiz/hill-station 200 TTFB=127ms 139162b lang=en stutter=False canonical=True hreflang=True/True/True og=False
+   title: Which hill station should you visit? A 30-second quiz | NakshIQ
+hi/quiz/hill-station 200 TTFB=916ms 165786b lang=hi stutter=False canonical=True hreflang=True/True/True og=False
+   title: कौन सा हिल स्टेशन जाएँ? 30-सेकंड की क्विज़ | NakshIQ
+WROTE section-H2-new-routes-actual.csv (2 rows)

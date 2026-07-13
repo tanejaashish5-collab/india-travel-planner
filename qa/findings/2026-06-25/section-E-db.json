@@ -1,0 +1,24 @@
+{
+  "source": "Supabase MCP execute_sql (project dudzsdzfvikjjhurxrgc), 3 small aggregate/recheck reads — egress-safe",
+  "canonical_11col": ["police","ambulance","fire","women_helpline","tourist_helpline","road_accident","rescue_contact","mountain_rescue","mechanic_contact","tow_service","embassy_emergency_line"],
+  "aggregate": {
+    "es_rows": 533,
+    "dest_total": 533,
+    "dests_without_es_row": 0,
+    "min_dialable": 5,
+    "avg_dialable": 7.41,
+    "rows_under_3_dialable": 0,
+    "total_dialable_11col": 3952,
+    "rows_with_placeholder_x": 0,
+    "es_localhelpers_nonempty": 178,
+    "people_who_help_nonempty": 84,
+    "dest_max_created_at": "2026-06-14 08:52:57",
+    "dests_created_after_sikkim_cutoff": 0
+  },
+  "baseline_note": "EXACT match to the 06-19..06-24 baseline (total_dialable 3952, local_helpers 178, people_who_help 84, min 5, avg 7.41). Catalogue steady at 533; 0 new destinations since the 06-14 Sikkim cluster. people_who_help counted with a nested-CASE array guard (legacy object-shape rows correctly excluded).",
+  "three_row_recheck": {
+    "uttarkashi":          {"bug":"NEW-2026-05-10-001 placeholder +91-94120-XXXXX","police":"100","ambulance":"108","fire":"101","women_helpline":"1091 (or 181)","tourist_helpline":"1800-111-363 (toll-free)","road_accident":"1073","rescue_contact":"DDMA Uttarkashi Control Room: 01374-222722 / 1077","verified_by":"constants-reverify-2026-06-09","status":"STILL CLOSED — no placeholder, all dialable"},
+    "khonoma":             {"bug":"NEW-2026-05-11-001 text-typed phone","police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1363","road_accident":"1073","rescue_contact":"Kohima Police Control Room: 7005986046 · NSDMA: 1070","verified_by":"deepdive-recorrect-2026-06-09","status":"STILL CLOSED"},
+    "khangchendzonga-np":  {"bug":"NEW-2026-05-30-001 text-typed phone","police":"100","ambulance":"108","fire":"101","women_helpline":"1091","tourist_helpline":"1800-111-363","road_accident":"1073","rescue_contact":"Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-25...","verified_by":"emsos-th-audit-2026-06-10","status":"STILL CLOSED"}
+  }
+}

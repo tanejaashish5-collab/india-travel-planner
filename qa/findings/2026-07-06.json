@@ -1,0 +1,404 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-07-06",
+    "date": "2026-07-06",
+    "started_utc": "2026-07-06T02:07:36Z",
+    "completed_utc": "2026-07-06T02:26:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test) — curl + Python HTTP probes for A-J (qa/findings/2026-07-06/probe.py, sequential honest timing, SSR HTML snapshots saved, fresh sample seed nakshiq-2026-07-06; sections B/C/I split into two sequential foreground halves purely for the shell 45s budget — same URLs, same in-order timing); Supabase MCP aggregate read (1 combined aggregate query with the canonical 11-column SOS dialable formula + nested-CASE local_helpers AND people_who_help array guards + new-destination check, and 1 three-row prior-bug recheck query — the inline AND/jsonb_array_length form used on prior days threw a Postgres non-short-circuit error today and was fixed mid-run, see section-E-db.json); Section K via Claude in Chrome MCP (explore grid->map Leaflet toggle + vishnuprayag/en, bandipur/hi, bhopal/en from today's random sample + dzongu/en Leaflet-template comparison + shrikhand-mahadev/en follow-up check — 6 controlled console observations, each with clear-before-load + QA_PROBE-marker solid capture); Section L hero-image audit via scripts/audit-hero-images.mjs (533 R2 HEAD probes, fresh today); Section H sitemap walked + full per-type composition + exact diff vs 07-05 (zero delta, total unchanged at 24,943); raw-HTML grep sweep across all 10 sampled + landing SSR snapshots for the atlas static-coordinate string (section-H-atlas-coord-sweep.txt); NO deploy overnight confirmed via data-dpl-id stability (dpl_C3pvzva1Ap4wq8PzxZECzefSq5BS identical across all saved 07-05 snapshots, all saved 07-06 snapshots, and live /api 404 pages)",
+    "mode": "Daily regression — A through L matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 18,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (9 probes incl /en/itinerary garbage slug)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-07-06: vishnuprayag, bandipur, assagao, puri, poovar, nalsarovar, dakor, bhopal, shrikhand-mahadev, athirapally)",
+    "C — Hindi parity (same 10 slugs)",
+    "D — SEO meta (13 URLs: landing + 10 dests + 1 month sub-route [vishnuprayag/december] + 1 itinerary URL [itinerary/agra])",
+    "D2 — Quiz/risk-quiz og:image recheck (4 URLs, both locales — NEW-2026-07-03-001 day-4 verification)",
+    "E — SOS completeness: SSR emergencySos blob parse (10 dests) + DB ground-truth aggregates (canonical 11-column formula, query rewritten mid-run to fix a Postgres short-circuit error) + 3-row prior-bug recheck + people_who_help shape check + new-destination check",
+    "F — API smoke (13 probes incl oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks) + FULL per-type composition diff vs 07-05 (zero delta, every type incl. the-window unchanged) + supplementary atlas-coordinate raw-HTML sweep",
+    "I — Core routes HTTP matrix (23 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths)",
+    "K — Chrome E2E: explore grid->map toggle (Leaflet verified; toggle needed a 2nd click by coordinate — known flakiness, recorded) + vishnuprayag/en (Leaflet+video template, from today's sample) + bandipur/hi (atlas, Hindi, from today's sample) + bhopal/en (atlas, from today's sample, static-coord bug reproduced) + dzongu/en (Leaflet template, historical comparison) + shrikhand-mahadev/en (Leaflet+video template, follow-up after vishnuprayag surfaced a second Leaflet dest) — 6 controlled console observations, each a solid capture (cleared before load, QA_PROBE marker read back after readyState=complete)",
+    "L — Hero-image audit (scripts/audit-hero-images.mjs HEAD-probed all 533 R2 heroes, fresh today: 533 ok / 0 missing / 0 errors)"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass (cost-aware rule). The deep pass remains overdue: the /[locale]/itinerary/[slug] template (792 URLs), the 8 Sikkim destination pages, and the two quiz templates are a11y/perf-unmeasured by the 2026-05-04 deep baseline."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Not run in this daily pass (cost-aware rule). Note: this is the 2nd consecutive no-deploy night with core routes fully warm — another clean window for the overdue steady-state read, per the same recommendation logged 07-05."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en + /hi bad slugs all hard 404 (9 bytes). Bare-path /destination/nonexistent-slug-qa/june -> 404. 9/9 correct, 0 misses, incl. /en/itinerary/this-does-not-exist-xyz -> 404 (styled 68910-byte 404 page, correct status code, byte-identical to 07-05's styled 404 page size)."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "jaipur/13, jaipur/0, jaipur/notamonth, /hi varanasi/99 -> all hard 404 (9 bytes)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed->400 'Malformed JSON body', empty->400, wrong-shape->400 'Invalid question', 200KB->413 'Payload too large — questions are capped at 1000 characters.', valid->200 (3305 b real Leh answer). 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400 'Malformed JSON body', empty->400, {}->400 'Missing required fields'. 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template '| NakshIQ | NakshIQ' title stutter (also tracked NEW-2026-06-12-001)",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "Fix holds on day-20 verification. section-D-seo.csv: 0/13 title_stutter; /en/itinerary/agra clean. The 4 quiz/risk-quiz URLs also stutter-free (section-D2)."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image (all itinerary URLs)",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "Fix holds on the ITINERARY template (day-20): 13/13 core-matrix URLs og:image present incl /en/itinerary/agra. The related quiz/[topic] gap is tracked separately as NEW-2026-07-03-001 (REPRODUCED today, day-4, see below)."
+    },
+    {
+      "id": "NEW-2026-07-03-001",
+      "title": "New quiz/[topic] template ships without og:image on both locales — same defect class as the June itinerary og:image gap",
+      "prior_status": "REPRODUCED (day 3) 2026-07-05",
+      "today_status": "REPRODUCED",
+      "evidence": "Day-4 recheck, section-D2-quiz-routes.csv: en/quiz/hill-station 200 og_image=False; hi/quiz/hill-station 200 og_image=False. Contrast: en+hi/risk-quiz og_image=True. No deploy landed overnight (2nd consecutive quiet night), so no fix was expected — the gap simply persists. Fix remains a copy-paste of risk-quiz's generateMetadata."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-07-05",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v52, md5 0c7bc0366b4f61237f86740e5d27f0b2 — byte-identical for a 5th consecutive day. manifest still 3 icons + 5 shortcuts; /offline -> 200."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: police 100 / ambulance 108 / fire 101 / women '1091 (or 181)' / tourist '1800-111-363 (toll-free)' / road 1073 / rescue 'DDMA Uttarkashi Control Room: 01374-222722 / 1077'; verified_by=constants-reverify-2026-06-09 unchanged. Site-wide placeholder regex (X{3,} across the 11 dialable columns + local_police_station) = 0 rows."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1363 / road 1073 / rescue 'Kohima Police Control Room: 7005986046 · NSDMA: 1070', verified_by=deepdive-recorrect-2026-06-09 unchanged. Not in today's random sample (today: vishnuprayag, bandipur, assagao, puri, poovar, nalsarovar, dakor, bhopal, shrikhand-mahadev, athirapally) — DB-only recheck today, no live re-verification."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1800-111-363 / road 1073 / rescue 'Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; ...'; verified_by=emsos-th-audit-2026-06-10 unchanged."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "Harness regex covers both casings; 13/13 core-matrix URLs + 4/4 quiz/risk-quiz URLs show en + hi + x-default."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB confidence_cards.people_who_help nonempty arrays = 84 (exact match to the 06-19..07-05 baseline). Query rewritten with a nested-CASE jsonb_typeof guard today (see section-E-db.json note) — same result, safer SQL. Fix holds; DB shape stable."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL 2026-07-05",
+      "today_status": "PARTIAL",
+      "evidence": "Safety baseline GREEN and an EXACT baseline match: 533/533 emergency_sos rows, 0 without row, 0 under 3 dialable (min 5, avg 7.41, total 3952 across the canonical 11 columns), 0 placeholder-X. emergency_sos.local_helpers nonempty = 178/533 — unchanged (catalogue steady at 533, 0 new dests since 06-14). Enrichment opportunity (178 -> up to 405 from deep_dive) remains open."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-07-05",
+      "today_status": "PARTIAL",
+      "evidence": "Migration confirmed BROADER than previously documented: today's random 10-dest sample landed 2 Leaflet-template dests OUTSIDE Sikkim for the first time — vishnuprayag (Uttarakhand) and shrikhand-mahadev (Himachal Pradesh), both rendering cleanly (Leaflet containers + tiles + video hero, 0 console errors). The other 8 sampled dests (assagao, athirapally, bandipur, bhopal, dakor, nalsarovar, poovar, puri) are all atlas-template, svg viewBox 0 0 1000 1100, leaflet=0 by design. All templates render cleanly on both sides of the split — no defect, just wider migration scope than last documented."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED 2026-07-05",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Explore map: 519 overlay-pane paths matching the score-colored markers (steady vs 519 on 06-15..07-05); circleMarkers render in overlay pane by design; marker-pane children = 0 by design."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL 2026-07-05",
+      "today_status": "PARTIAL",
+      "evidence": "Markers confirmed rendering on THREE Leaflet-template dests today: dzongu/en (28 tiles / 9 overlay markers / window.L, stable vs prior days), vishnuprayag/en (42 tiles / 9 overlay markers / window.L, NEW state), shrikhand-mahadev/en (28 tiles / window.L implied, NEW state). Restoration/migration now confirmed live in Sikkim + Uttarakhand + Himachal Pradesh. Migration tracking only, no defect."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED 2026-07-05",
+      "today_status": "REPRODUCED",
+      "evidence": "Chrome live-DOM confirmed on bhopal/en via document.body.innerText ('23.5N · 80.5E'; real Bhopal ~23.26N 77.41E). Supplementary raw-HTML grep sweep across all 10 today's cached SSR snapshots (section-H-atlas-coord-sweep.txt) found the identical literal string, confirmed embedded in real rendered (non-script) markup, on ALL 8 atlas-template dests in today's sample (assagao, athirapally, bandipur, bhopal, dakor, nalsarovar, poovar, puri) PLUS the /en landing page (next to a destination-card label 'BETLA') — a UI surface not previously documented. The 2 Leaflet-template dests (vishnuprayag, shrikhand-mahadev) correctly show 0 matches (they don't use the atlas widget). Recorded as today's own 9-sighting count rather than added to the prior 34-cumulative tally, since the detection method changed (full raw-HTML sweep vs. 3 interactively-probed dests on prior days) — diffing across a changed measurement basis would misrepresent the trend. Root cause remains a single hardcoded template variable; still cosmetic, still one-line."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 React #418 / error / hydration messages across all 6 controlled observations today (explore, vishnuprayag/en, bandipur/hi, bhopal/en, dzongu/en, shrikhand-mahadev/en), each a solid capture: console cleared before load, QA_PROBE marker emitted after readyState=complete and read back successfully. Spans en + hi and Leaflet + atlas templates. Holds closed (0/6 after 0/5 on 07-05)."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED 2026-07-05 (permanent closure, code + live confirmed)",
+      "today_status": "STILL CLOSED",
+      "evidence": "bandipur/hi probed live: 0 role=dialog modals on the Hindi surface, lang=hi, Devanagari title rendered. Reopen only if GuidedTour is re-mounted."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images (black cards in landing Dailies reel)",
+      "prior_status": "STILL CLOSED 2026-07-05",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section L hero-image audit (scripts/audit-hero-images.mjs, fresh today): 533 ok / 0 missing / 0 errors. dzongu's VIDEO hero (2 video elements, 2 with poster attribute) re-confirmed rendering in Section K."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrank 2,173 URLs (-8%) overnight 06-26 in generated secondary pages; core catalogue intact",
+      "prior_status": "NOT_REPRODUCED 2026-07-05 (stabilized)",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Total 24,943 -> 24,943: ZERO delta, every single type unchanged (breakdown.py full per-type diff vs 07-05). Fully stable for a 2nd consecutive day."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN 2026-07-05",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass (cost-aware)."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN 2026-07-05",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in daily pass (cost-aware)."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN 2026-07-05",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run (cost-aware). NOTE for scheduling: today is the 2nd consecutive no-deploy night and core routes were fully warm (min 218 / median 524 / p90 653 / max 879 ms) — another clean window for the overdue Lighthouse steady-state reading."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE 2026-07-05",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Today's sample: vishnuprayag, bandipur, assagao, puri, poovar, nalsarovar, dakor, bhopal, shrikhand-mahadev, athirapally."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "INFO-2026-07-06-001",
+      "severity": "info",
+      "title": "2nd consecutive no-deploy night — every stability signal byte- or count-identical to yesterday",
+      "detail": "The Vercel deployment id is UNCHANGED overnight for a 2nd straight day: dpl_C3pvzva1Ap4wq8PzxZECzefSq5BS across all of today's saved SSR snapshots and today's live /api 404 pages, matching 07-05. Consistent with that: sw.js is byte-identical for a 5th consecutive day (md5 0c7bc0366b4f61237f86740e5d27f0b2), the sitemap is EXACTLY unchanged (24,943 URLs, zero per-type delta vs 07-05 — the first perfectly flat day since the 06-26 shrink watch opened), the SOS DB aggregate is an exact match to the 06-19..07-05 baseline on every field, and /api/search-index is the same 718,840 bytes. Core-route TTFB (min 218 / median 524 / p90 653 / max 879 ms, 23/23 200) is consistent with a fully warm, quiet system.",
+      "evidence": "dpl-id grep across 2026-07-06/html/*.html (all identical); section-F-api.csv 404-page dpl id; section-G-pwa.csv md5; section-H-sitemap-breakdown.txt (DELTA vs 07-05: none); section-E-db.json aggregates; section-I-core-routes.csv.",
+      "recommendation": "None — record as a second healthy quiet-night baseline. Two clean nights in a row makes this an even better window than yesterday to schedule the overdue axe/Lighthouse deep pass."
+    },
+    {
+      "id": "INFO-2026-07-06-002",
+      "severity": "info",
+      "title": "Atlas/Leaflet destination-page template split confirmed broader than the Sikkim cluster; static-coordinate cosmetic bug also appears on the landing page",
+      "detail": "Today's random 10-destination sample happened to draw 2 dests outside Sikkim that render the Leaflet+video-hero template instead of the decorative atlas: vishnuprayag (Uttarakhand) and shrikhand-mahadev (Himachal Pradesh). Both render correctly (tiles, markers, window.L, video posters, 0 console errors) — this is new SCOPE information about an already-tracked migration-in-progress (NEW-2026-05-17-001 / NEW-2026-06-06-002), not a new defect. Separately, a supplementary raw-HTML sweep for the known static atlas-coordinate string ('23.5N · 80.5E', NEW-2026-06-06-003) found it is not confined to destination pages — it also renders on the /en landing page next to a destination-card ('BETLA'), a previously-undocumented UI surface for the same one-variable bug.",
+      "evidence": "section-K-e2e.csv (vishnuprayag/shrikhand-mahadev leaflet confirmations); section-H-atlas-coord-sweep.txt (8/8 atlas dests + landing page all show the identical string, confirmed in real rendered divs not script payloads).",
+      "recommendation": "No action beyond scope-tracking: fold into the existing PARTIAL/REPRODUCED entries above rather than treating as new work. If/when the atlas coordinate fix ships, verify it also covers the landing-page card component, not just the full destination-page widget."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 24,
+    "core_routes_2xx": 23,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 218, "median": 524, "p90": 653, "max": 879 },
+    "core_routes_TTFB_note": "23 real routes all 200 — second consecutive fully-warm no-deploy day. The 24th probe (/en/search) is the intentional phantom-route check — correctly 404s (156 ms) and is excluded from the 2xx tally and TTFB stats.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 461, "median": 527, "max": 3490 },
+    "destinations_TTFB_note": "10/10 200. 9 of 10 warm (461-569 ms); vishnuprayag was the lone cold hit (3490 ms TTFB, 3661 ms total) — routine ISR expiry on a lower-traffic Uttarakhand page, not a deploy signal (dpl id unchanged). Availability unaffected.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 13,
+    "seo_urls_extra_quiz_recheck": 4,
+    "seo_title_stutter": 0,
+    "seo_title_stutter_note": "0 stutter across the 13 core-matrix URLs AND the 4 quiz/risk-quiz recheck URLs (17 total today). Itinerary fix holds on day-20.",
+    "seo_canonical_present": 13,
+    "seo_hreflang_en_present": 13,
+    "seo_hreflang_hi_present": 13,
+    "seo_hreflang_xdefault_present": 13,
+    "seo_og_image_present": 13,
+    "seo_og_image_note": "13/13 on the core matrix (itinerary fix holds, day-20). Quiz recheck: risk-quiz 2/2 present; quiz/hill-station 0/2 — NEW-2026-07-03-001 REPRODUCED day-4 (no deploy overnight, so no fix expected; gap persists).",
+    "soft_404_regression_passes": 9,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_structured_fields_across_10_dests": 73,
+    "sos_min_structured_fields_per_dest": 5,
+    "sos_phones_total_across_10_dests": 69,
+    "sos_phones_invalid_format": 0,
+    "sos_universal_112_present": 10,
+    "sos_destinations_without_block": 0,
+    "sos_sample_text_name_fields_by_design": 4,
+    "sos_sample_text_name_note": "4 text-by-design fields, all local_police_station/mountain_rescue station or agency names (puri x1, poovar x1, athirapally x2) — the documented honest-scarcity pattern. Counted in the 73 structured total, excluded from the 69 dialable count. 0 placeholder-X, 0 genuinely malformed phones. Min dialable per sampled dest = 5 (bandipur) — still above the 3-field safety floor. 1 local_helper phone rendered across the sample (bhopal).",
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.41,
+    "sos_db_total_dialable_entries_11col": 3952,
+    "sos_db_dialable_11col_note": "Canonical 11-column set (excludes local_police_station), non-null + trimmed-non-empty — EXACT match to the 06-19..07-05 baseline of 3952. min 5, 0 under 3 — floor intact. Covers all 533 destinations. Query rewritten today with a nested-CASE jsonb_typeof guard after the prior inline AND form threw a Postgres non-short-circuit error (see section-E-db.json) — same result, safer SQL.",
+    "sos_db_rows_with_placeholder_X": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — unchanged from baseline; catalogue steady at 533 (no new dests since 06-14).",
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_baseline_note": "84 = confidence_cards.people_who_help nonempty arrays — exact match to the 06-19..07-05 baseline. NEW-2026-06-10-001 holds.",
+    "destinations_total_db": 533,
+    "destinations_total_db_note": "Steady at 533 (max created_at 2026-06-14 08:52:57, 0 new since the Sikkim cluster — 22 days now).",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "Section L: scripts/audit-hero-images.mjs HEAD-probed every R2 hero fresh today. 533 ok / 0 missing / 0 errors — the 06-20 Sikkim black-card fix holds.",
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "api_404_expected_returned": 2,
+    "api_note": "7x 400 (chat malformed/empty/wrong-shape, itinerary malformed/empty/empty-object, weather no-params) + 1x 413 (chat 200 KB) = 8 validation 4xx; 3x 200 (valid chat 3305 b real Leh answer, weather?id=varanasi temp 31, search-index 718840 b — byte-identical size 5th consecutive day); 2x 404 (/api/destinations, /api/health — expected).",
+    "service_worker_version": "nakshiq-v52",
+    "service_worker_md5": "0c7bc0366b4f61237f86740e5d27f0b2",
+    "service_worker_byte_identical_note": "Byte-identical for a 5th consecutive day (2nd straight no-deploy night). Healthy signal.",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 24943,
+    "sitemap_total_urls_delta_note": "24,943 -> 24,943: ZERO delta, every type unchanged vs 07-05 — the flattest day since the 06-26 shrink watch opened. NEW-2026-06-26-001 stays closed.",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "sitemap_cost_note": "cost URLs still 525 — the 8 Sikkim dests still have no /cost/ page (expected lag, queued in prior bottom_line).",
+    "sitemap_per_type_delta_note": "Exact per-type diff vs 07-05 stored breakdown = no changes at all (breakdown.py DELTA output: '(no per-type change)').",
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 36,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "Map toggle again needed a 2nd click today (1st click via element ref didn't switch the view — same known flakiness as 07-05, recorded in section-K-console.txt; 2nd click by coordinate worked): 1 container, 36 tiles loaded at probe time, 519 score-colored overlay markers (steady vs 519 on 06-15..07-05), window.L present, marker-pane empty by design.",
+    "map_dest_pages_probed_interactive": 5,
+    "map_dest_pages_leaflet_template": 3,
+    "map_dest_pages_atlas_template": 2,
+    "map_dest_atlas_note": "bandipur/hi, bhopal/en (both from today's random sample) render 4x atlas svg viewBox 0 0 1000 1100, leaflet=0 by design (correct).",
+    "map_dest_leaflet_note": "vishnuprayag/en (Uttarakhand, from today's sample) and shrikhand-mahadev/en (Himachal Pradesh, from today's sample) BOTH newly confirmed on the Leaflet+video template — first non-Sikkim sightings via random sampling. dzongu/en (Sikkim, historical comparison) still renders Leaflet cleanly too. All 3: containers + tiles + window.L present, video hero w/ poster where applicable.",
+    "atlas_static_coord_readout": "23.5N · 80.5E — Chrome live-DOM confirmed on bhopal/en (real ~23.26N 77.41E); supplementary raw-HTML sweep found the identical string on all 8 atlas-template dests in today's sample plus the /en landing page (9 sightings today, see section-H-atlas-coord-sweep.txt) — NEW-2026-06-06-003 REPRODUCED, recorded as today's own count rather than added to the 34-cumulative interactive-only tally since the detection method changed.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 6,
+    "console_react_418_fired_loads": "0 of 6 controlled observations (explore, vishnuprayag/en, bandipur/hi, bhopal/en, dzongu/en, shrikhand-mahadev/en — each a solid capture: cleared before load, QA_PROBE marker read back after readyState=complete) across en/hi and Leaflet/atlas templates — NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": false,
+    "deploy_evidence": "data-dpl-id STABLE overnight for a 2nd consecutive night: dpl_C3pvzva1Ap4wq8PzxZECzefSq5BS across all of today's saved SSR snapshots, matching 07-05, and today's live /api 404 pages."
+  },
+  "deliverables": [
+    "qa/findings/2026-07-06.json",
+    "qa/findings/2026-07-06/ (probe.py + breakdown.py + section CSVs A-K + section-E-db.json + section-D2-quiz-routes.csv + section-K-e2e.csv + section-K-console.txt + section-H-sitemap-breakdown.txt + section-H-atlas-coord-sweep.txt + html/ SSR snapshots + sample-slugs.json + run-start.txt + hero-images copies)",
+    "qa/hero-images.json + qa/hero-images.md (Section L, fresh today)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "NO deploy landed overnight for a 2nd consecutive night (dpl id stable) — every stability signal (sw.js md5, sitemap per-type breakdown, SOS DB aggregates, search-index byte size) is an EXACT match to 07-05. This is the flattest day of the tracked period so far.",
+    "Neither of the 3 previously-buggy SOS destinations (uttarkashi, khonoma, khangchendzonga-np) landed in today's random sample — all 3 got DB-only rechecks (unchanged), not the rarer live-page triple-check.",
+    "Sections B/C/I were executed in two sequential foreground halves each (shell 45s budget); ordering within each section preserved, no parallel probes, timings honest curl time_starttransfer values.",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe per methodology.",
+    "Supabase reads today: 1 combined aggregate + 1 three-row recheck + 1 schema introspection (information_schema.columns, to verify column names before querying rather than assume them) — all narrow, egress-safe per CLAUDE.md. The hero-image audit script's destinations select (id/name/state_id, 533 rows) is a narrow 3-column read.",
+    "The canonical SOS aggregate query had to be rewritten mid-run: the inline `jsonb_typeof(x)='array' AND jsonb_array_length(x)>0` CASE-WHEN form used on prior days threw '22023: cannot get array length of a non-array' when run today (Postgres does not guarantee left-to-right short-circuiting of AND inside a projected CASE). Fixed with a nested `CASE jsonb_typeof(x) WHEN 'array' THEN ... ELSE false END` guard (matching the pattern SKILL.md already mandates for people_who_help) applied to BOTH local_helpers and people_who_help, plus coalesce()-wrapped placeholder regex ORs. Same methodology, safer SQL, identical results — see section-E-db.json note_on_query_fix.",
+    "Today's 10-dest random sample split 8 atlas-template / 2 Leaflet-template (vishnuprayag, shrikhand-mahadev) — the first time random sampling has landed non-Sikkim Leaflet-template destinations. This broadens (but does not change the status of) the already-tracked PARTIAL migration bugs.",
+    "The atlas-coordinate-bug sighting count today (9: 8 dests + landing) is NOT directly comparable to the prior 34-cumulative count — today used a full raw-HTML grep sweep across the whole sample, while prior days counted only the 3 interactively-Chrome-probed dests per day. Recorded separately to avoid misrepresenting the trend from a changed measurement basis.",
+    "Chrome console tracking was proven functional on all 6 observations (QA_PROBE marker read back each time), so each empty error read is a TRUE clean capture. React #418 streak: 0/6 today after 0/5 on 07-05. The explore map toggle again needed a 2nd click (first ref-click didn't switch the view) — known UI flakiness, recorded, not filed as a defect.",
+    "Axe-core and Lighthouse not run today (cost-aware). NOTE: 2 consecutive no-deploy quiet nights is an even better window for the overdue Lighthouse/axe steady-state run than yesterday.",
+    "Today's sample pool from sitemap chunk 1 = 533 slugs (seed nakshiq-2026-07-06)."
+  ],
+  "business_summary": {
+    "headline": "A second quiet, green day in a row — nothing broke, nothing changed, and the one open item is exactly where it was yesterday. No deploy landed overnight for the second straight night, and it shows: the service worker, the sitemap, the emergency-SOS safety numbers, and the search index are all byte-for-byte or count-for-count identical to yesterday. All 23 core routes and all 10 freshly-sampled destinations served correctly in both languages, zero API server errors, all 533 cover photos present, and the React hydration warning stayed silent across all 6 browser checks. The only unfinished business is the same one from the last few days: the hill-station quiz is still missing its social-share preview image on both languages (day 4) — no deploy, no change. One piece of useful new information: today's random destination sample happened to include two places outside Sikkim (in Uttarakhand and Himachal Pradesh) that use the newer interactive-map template instead of the decorative map — both work fine, this just tells us the map upgrade is rolling out wider than we'd confirmed before.",
+    "traffic_lights": [
+      { "area": "Site availability", "status": "GREEN", "why": "23/23 core routes and 10/10 sampled destinations served 200 in both languages" },
+      { "area": "Quiz share-image fix (carried, day 4)", "status": "AMBER", "why": "Still not shipped: hill-station quiz has no og:image on either locale; risk-quiz next door has it — copy its generateMetadata. Quizzes are share-first surfaces" },
+      { "area": "Sitemap / crawl surface", "status": "GREEN", "why": "24,943 URLs, zero change from yesterday across every single page type — the flattest day tracked so far" },
+      { "area": "Catalogue", "status": "GREEN", "why": "Steady at 533 destinations; every one still carries a complete emergency-SOS desk" },
+      { "area": "Cover images (heroes)", "status": "GREEN", "why": "Daily audit fresh today: 533/533 present, 0 missing" },
+      { "area": "API health", "status": "GREEN", "why": "0 server errors across 13 probes; bad inputs correctly rejected; real answers returned" },
+      { "area": "Hindi parity", "status": "GREEN", "why": "10/10 Hindi pages correct with Devanagari titles, including a live browser check" },
+      { "area": "SEO metadata", "status": "GREEN", "why": "20th consecutive clean pass on the core matrix; soft-404 guards 9/9; the one gap remains the quiz share-image (amber above)" },
+      { "area": "Emergency SOS — safety baseline", "status": "GREEN", "why": "533/533 destinations, min 5 dialable numbers (avg 7.4), 0 placeholders — an exact match to yesterday's numbers" },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 519 markers (steady). Both destination map styles render correctly on all 5 pages checked today; the map upgrade is confirmed live in 2 more states beyond Sikkim; the decorative map's wrong-coordinates cosmetic bug also spotted once on the homepage today" },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical 5th day; manifest + offline page fine" },
+      { "area": "Console health", "status": "GREEN", "why": "React hydration warning: 0 of 6 checks across both languages and both map templates" }
+    ],
+    "whats_changed": [
+      "[carried, unfixed] The hill-station quiz share-image gap (NEW-2026-07-03-001) is now day 4 — no deploy landed, so no fix was expected. Still the single actionable ship-it item from QA: copy risk-quiz's metadata block into the quiz/[topic] template.",
+      "[healthy] Second no-deploy night in a row — every stability number (service worker, sitemap, SOS database, search index) matched yesterday exactly. This is the calmest 24 hours on record for this daily check.",
+      "[new information, not a defect] The interactive-map upgrade (previously only confirmed in Sikkim) showed up in today's random sample for Uttarakhand and Himachal Pradesh too — both destinations displayed correctly. Good sign the rollout is progressing.",
+      "[reproduced] The homepage itself was spotted showing the same wrong static map coordinates as individual destination pages — same one-line cosmetic bug, one more place it shows up.",
+      "[steady] SOS safety floor, cover images, and API health all held their exact baselines."
+    ],
+    "risks": [
+      "Quiz pages are built to be shared — every day the og:image gap stays open, hill-station quiz shares render imageless on WhatsApp/X/Slack, blunting the format's main growth loop. Now 4 days old.",
+      "The deep a11y/perf pass (overdue since May 4) still has unmeasured surface: itinerary template, 8 Sikkim pages, and both quiz templates. Two quiet nights in a row is an even better window than yesterday to schedule it.",
+      "Atlas static-coordinates: cosmetic but prints wrong geography on every atlas page (and now confirmed on the homepage too) — small credibility leak on a data-accuracy brand.",
+      "The 8 Sikkim destinations still lack /cost/ pages (expected lag, worth closing)."
+    ],
+    "bottom_line": [
+      "Ship the quiz og:image fix — day 4, still a copy-paste from risk-quiz, and there was no deploy last night to carry it.",
+      "Nothing else needs action today: no deploy, every safety/availability baseline matched exactly, and the map upgrade rollout is progressing cleanly.",
+      "Schedule the overdue deep pass (axe + Lighthouse) — two quiet nights in a row is as good a window as this check has seen.",
+      "Fix the static atlas coordinate when convenient (one variable, now also seen on the homepage).",
+      "Queue /cost/ pages for the 8 Sikkim destinations."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi: vishnuprayag, bandipur, assagao, puri, poovar, nalsarovar, dakor, bhopal, shrikhand-mahadev, athirapally",
+      "23 core routes + 13 API probes + 9 soft-404 guards + 5 locale redirects + 4 quiz-route recheck probes (both locales)",
+      "Explore Leaflet map + 2 atlas-template dest pages (incl. one Hindi) + 3 Leaflet-template dest pages (2 newly confirmed outside Sikkim); 6 controlled console observations, each a verified solid capture",
+      "All 533 destination hero images HEAD-probed on the CDN fresh today (0 missing)",
+      "533 destination SOS rows ground-truthed in the database (canonical-formula aggregates + 3-row prior-bug recheck + shape checks)",
+      "Sitemap walked chunk by chunk with FULL per-type composition + exact diff vs 07-05 (24,943; zero delta)",
+      "2nd consecutive no-deploy night independently confirmed via Vercel deployment-id stability across all saved SSR snapshots + live 404 pages"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "queried_utc": "2026-07-04",
+  "source": "Supabase MCP execute_sql — 1 combined aggregate + 1 three-row recheck (egress-safe, a few KB)",
+  "aggregate": {
+    "destinations_total": 533,
+    "max_dest_created": "2026-06-14 08:52:57",
+    "sos_rows": 533,
+    "dests_without_sos_row": 0,
+    "rows_under_3_dialable": 0,
+    "min_dialable": 5,
+    "avg_dialable": 7.41,
+    "total_dialable_11col": 3952,
+    "placeholder_x_rows": 0,
+    "local_helpers_nonempty": 178,
+    "people_who_help_nonempty_arrays": 84
+  },
+  "aggregate_note": "Canonical 11-column dialable formula (excludes local_police_station), non-null + trimmed-non-empty. EXACT match to the 06-19..07-03 baseline: 533/533 rows, 0 without row, 0 under 3, min 5, avg 7.41, total 3952, 0 placeholder-X, local_helpers 178, people_who_help nonempty arrays 84 (nested-CASE guard). Catalogue steady at 533, max created_at 2026-06-14 — 0 new destinations.",
+  "prior_bug_recheck": [
+    {
+      "destination_id": "uttarkashi",
+      "bug": "NEW-2026-05-10-001",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091 (or 181)", "tourist_helpline": "1800-111-363 (toll-free)",
+      "road_accident": "1073", "rescue_contact": "DDMA Uttarkashi Control Room: 01374-222722 / 1077",
+      "verified_by": "constants-reverify-2026-06-09",
+      "status": "unchanged — no placeholder"
+    },
+    {
+      "destination_id": "khonoma",
+      "bug": "NEW-2026-05-11-001",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091", "tourist_helpline": "1363",
+      "road_accident": "1073", "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070",
+      "verified_by": "deepdive-recorrect-2026-06-09",
+      "status": "unchanged"
+    },
+    {
+      "destination_id": "khangchendzonga-np",
+      "bug": "NEW-2026-05-30-001",
+      "police": "100", "ambulance": "108", "fire": "101",
+      "women_helpline": "1091", "tourist_helpline": "1800-111-363",
+      "road_accident": "1073", "rescue_contact": "Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; KNP permits + park rescue coordina…",
+      "verified_by": "emsos-th-audit-2026-06-10",
+      "status": "unchanged"
+    }
+  ]
+}

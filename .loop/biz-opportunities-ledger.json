@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-22T02:21:26.202Z",
-  "count": 73,
+  "updatedAt": "2026-06-26",
+  "count": 89,
   "opportunities": [
     {
       "key": "highriskwatch",
@@ -45,7 +45,7 @@
         ],
         "coverage": "28/42",
         "verdict": "A clever, low-cost bet on a real forced-buyer moment — but Robbins/Gala/Masters Union would flag it as a strong lifestyle business trapped in a structurally fragile shell: the forced-buyer urgency is also its existential risk (one EU deadline slip kills the thesis), the TAM caps around a few thousand paid subscribers, and the data moat is thin enough that any well-resourced compliance publisher or Big4 can replicate it once it proves viable — back it only if the founder has regulatory credibility that creates a trust moat incumbents can't buy.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -53,7 +53,7 @@
         "concerns": [],
         "reason": "HighRiskWatch is a transparency and accountability intelligence service — it helps regulated companies meet a genuine legal obligation, holds vendors and regulators to public scrutiny, and makes compliance information accessible rather than hoarded by expensive consultancies. Every gate test clears: no vulnerable parties are exploited (the audience is sophisticated B2B buyers with legal counsel), the business model is straightforward subscription/sponsorship with no dark patterns, public-scrutiny strengthens rather than threatens it (sunlight on AI Act compliance is the entire point), and the long-term moat is trust and data integrity — both of which punish dishonesty. Ratan Tata would recognise this as the kind of institution-building that makes markets fairer.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -123,7 +123,7 @@
         ],
         "coverage": "28/42",
         "verdict": "Strong regulatory hook and genuine category creation, but the Basesh Gala/Masters Union lens would flag it as a single-regulation time-bomb — strategists would want to see the moat survive the regulation changing, plus at least 10 paying LOIs before committing capital.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -131,7 +131,7 @@
         "concerns": [],
         "reason": "SynthLedger helps publishers, agencies, and brands comply with a genuine legal obligation — labeling AI content and maintaining takedown evidence trails — which protects end consumers from deception and strengthens the integrity of India's information ecosystem; every gate test clears cleanly.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -202,7 +202,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Robbins/Gala/Masters Union would call this a genuinely sharp timing play on a vacant category with near-ideal scale economics — they'd back it conditionally, but only if the founder can demonstrate a concrete standard-capture strategy in the next 90 days (get embedded in one major MCP client or enterprise AI framework as the default check), because the window before a funded incumbent or Anthropic itself closes the gap is narrow and non-renewable.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -210,7 +210,7 @@
         "concerns": [],
         "reason": "AgentVouch is a trust and safety infrastructure business — it helps enterprises independently verify that AI tools are safe before connecting them, which is genuinely protective of its customers. It charges both sides transparently (publishers for verification, enterprises for attestation), makes money by reducing risk rather than manufacturing it, and operates in full daylight. Every gate passes cleanly: no vulnerable party is exploited, claims are verifiable, the two-sided model has no hidden extraction, and the service leaves the AI ecosystem safer than it found it.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -272,7 +272,7 @@
         ],
         "coverage": "32/42",
         "verdict": "Would not back as currently framed: the CPM arbitrage insight is real but the faceless format structurally removes the only durable moat available in financial content (personal trust + credential), leaving a business that is easy to clone, platform-dependent, and regulatorily exposed — the idea needs a named CA expert as the face and a community/course revenue layer before it deserves capital or serious founder time.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -283,7 +283,7 @@
         ],
         "reason": "Legitimate financial education for an underserved diaspora audience — NRIs navigating Indian tax law, FEMA, and DTAA are genuinely ill-served by quality Hindi content, and ad + affiliate revenue for honest education is a clean model. One real concern: affiliate referrals (ICICI NRI, Groww, PolicyBazaar) create a structural conflict where the channel's financial advice could be shaded toward products that pay, without the viewer knowing they are watching monetised recommendations.",
         "fix": "Disclose every affiliate relationship clearly in the video and description before any product mention (\"I earn a referral fee if you open this account\"); never recommend a financial product solely because it pays more; include the honest alternative (e.g. competing NRI accounts) in every comparison — this neutralises the conflict and keeps the content genuinely in the viewer's interest.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -360,7 +360,7 @@
         ],
         "coverage": "32/42",
         "verdict": "A sharp, well-timed regulatory wedge with a genuine first-mover slot — but structurally fragile: one policy softening or an ECI-built portal ends the product, distribution is pure relationship sales with no compounding channel, and the market ceiling is the entire Indian political calendar. Robbins/Gala-style strategists would call it a clever consulting business dressed as SaaS — worth doing as a cash-generative services play in election windows, but not backable as a compounding software asset.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -372,7 +372,7 @@
         ],
         "reason": "PollProof is a transparency-enforcement tool — it helps parties comply with Election Commission disclosure rules for AI-generated campaign content, which is a genuine public good. The core product (provenance stamping, timestamped records, inspection-ready exports) is honest, high-integrity infrastructure that leaves Indian democracy better off. However, the business sits inside a political-spending market where the line between \"compliance tooling for everyone\" and \"selective service that helps better-funded parties look cleaner while smaller/opposition parties can't afford it\" is real, and where the consulting-firm channel (I-PAC-style white-label) risks the product being used to game verification optics rather than genuinely comply. The bribe/facilitation risk in government-adjacent political contracting in India is structural, not speculative.",
         "fix": "Codify three non-negotiable policies before first sale: (1) a written zero-facilitation-payment rule enforced in every sales contract and partner agreement, with walk-away authority granted to any employee; (2) a tiered pricing floor (or free-tier API) so smaller parties and independent candidates can access basic compliance records — the product should raise the transparency floor, not widen the money gap; (3) a scope statement in every client contract that the product attests provenance and labelling only, not truthfulness of content — and a refusal clause allowing exit if a client uses the records to actively mislead regulators. With these three in place, the product is a clear-conscience, democracy-serving compliance infrastructure business Ratan Tata could stand behind publicly.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -416,7 +416,7 @@
         "dealbreakers": [],
         "coverage": "31/42",
         "verdict": "A real problem, a clean offer, and excellent timing — but the business structurally lacks a moat and faces a distribution grind to reach fragmented small carriers; strategists would want 20+ paying pilots proving recovery rate and CAC before committing, and a credible answer to 'why can't Samsara add this in a product update' before backing at scale.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -424,7 +424,7 @@
         "concerns": [],
         "reason": "DetentionDesk recovers money legitimately owed to small trucking carriers who lack the resources or expertise to fight brokers themselves — it is a classic underdog-advocacy business that helps the weak collect what is already theirs, with a contingency model that aligns incentives fully with the customer.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -499,7 +499,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strong problem instinct and perfect timing, but a one-trick monitoring wedge in a crowded eval-tooling space — these strategists would say 'get 10 paying design partners before writing a line of code, and show us your moat plan beyond the anchor set, because Arize will copy this in a quarter.'",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -507,7 +507,7 @@
         "concerns": [],
         "reason": "Driftwatch is a straightforward B2B reliability tool that helps companies catch when their own AI agents degrade — it creates genuine safety and trust value, exploits no one, and operates with full transparency toward sophisticated business customers who are its only touchpoint.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -559,7 +559,7 @@
         ],
         "coverage": "28/42",
         "verdict": "Robbins/Gala/Masters Union would see a clever wedge into a forced-demand niche but decline to back it at scale: two structural defects — no moat (any EHS vendor can clone it in a sprint) and existential regulatory dependency — mean BinTrail is most likely a lifestyle business or an acqui-hire target for a larger compliance platform, not a standalone venture-scale company. Worth validating with 20 paid pilots; pivot thesis if pilots prove the council-portal integration angle is the actual value.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -567,7 +567,7 @@
         "concerns": [],
         "reason": "BinTrail helps hospitality venues comply with genuine environmental regulation, reduces food waste harm, charges transparent SaaS fees, and serves a public good — Ratan Tata would have no trouble putting his name on a compliance-integrity tool that helps small businesses avoid heavy penalties while benefiting the environment.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -614,7 +614,7 @@
         ],
         "coverage": "31/42",
         "verdict": "Robbins/Masters Union/Gala would call this a well-timed feature masquerading as a company — the regulatory trigger is real and the MVP is fast, but two structural killers make it uninvestable at scale: the moat evaporates in weeks (any legaltech player adds this as a checkbox), and a single Newsom stroke or federal preemption kills the addressable market entirely; pivot to a broader AI governance platform immediately or treat it as a lead-gen wedge, not a standalone business.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -622,7 +622,7 @@
         "concerns": [],
         "reason": "DisclosureForge helps AI startups comply with a real legal obligation honestly and efficiently — it reduces friction around transparency law, serves the customer's genuine interest, makes no vulnerable party worse off, and leaves the regulatory ecosystem better than it found it.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -677,7 +677,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strategists would find the regulatory-exclusion insight genuinely compelling — it is the rare case where compliance is the product, not a feature — but would not back it without evidence that MFDs will actually pay (vs. accept compliance risk cheaply) and a concrete answer to the AMC vertical-integration threat; those two tests must be resolved before Series A conversation begins.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -685,7 +685,7 @@
         "concerns": [],
         "reason": "ComplyReel helps regulated professionals meet their legal obligations honestly — it reduces compliance failures, protects retail investors from misleading financial content, and charges a transparent SaaS fee for genuine infrastructure value. No weight-3 gate is threatened.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -750,7 +750,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "A clean, executable local-services bet with real demand and a lean model, but structurally a lifestyle/cash-flow business — no moat, no category creation, and labor-cost compression that plateaus early mean these strategists would pass unless the founder can articulate a defensible local-network or owned-distribution angle that national platforms cannot replicate cheaply.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -758,7 +758,7 @@
         "concerns": [],
         "reason": "A straightforward recurring lawn-care service for homeowners in a high-income city — it creates genuine value, charges transparent pricing, employs local labour with dignity, and has no deceptive, exploitative, or extractive mechanism at its core.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -844,7 +844,7 @@
         ],
         "coverage": "35/42",
         "verdict": "These strategists would call this a solid first content bet worth a 90-day test — the timing, low capex, and genuine INR pain point are real — but they would not back it as a standalone business because the structural moat is absent and the existential regulatory exposure to a single RBI/SEBI decision makes it fragile; the play is to build the audience fast and pivot the monetisation toward a proprietary product (community, course, or signal service) before a copycat or a regulator kills the edge.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -857,7 +857,7 @@
         ],
         "reason": "The educational premise is legitimate and the payment-logistics angle is genuinely helpful for Indian traders, but the affiliate structure (paid per challenge fee, not per student success) creates a structural conflict of interest that could tip honest education into exploitation of financially aspirational retail traders if left ungoverned.",
         "fix": "Launch with three mandatory non-negotiables: (1) disclose every affiliate relationship and commission rate on every video and email — not buried in a description, prominently stated; (2) publish and pin the industry-average prop challenge pass rate (and any firm-specific data available) in every piece of content that recommends a challenge purchase, so no student can claim they were not warned; (3) add a self-assessment gate in the starter kit — a checklist of trading discipline prerequisites — so the product actively screens out unprepared buyers rather than converting them. With these three in place, the business earns on honest education, not on aspirational hype, and Ratan Tata could put his name on it.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -901,7 +901,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strong problem, right timing, but structurally fragile — a well-funded direct competitor (Veremark $26M) already owns the enterprise angle, platform giants can commoditize liveness for free, and the two-sided cold-start is unsolved; strategists would want a defensible wedge (e.g. a specific vertical or a viral loop) and 50+ customer conversations proving off-platform hirers will pay before committing capital.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -913,7 +913,7 @@
         ],
         "reason": "VouchFolio is an anti-fraud, trust-building tool that protects hirers from impersonation and fake credentials while giving honest contractors a credible way to prove their legitimacy — it reduces exploitation, serves genuine need, and makes no money from deception.",
         "fix": "Codify a contractor Bill of Rights in the product: informed consent before any biometric check, full transparency on what data is held and for how long, a dispute/correction mechanism, no secondary data sale ever — then it sails through every gate with room to spare.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -965,7 +965,7 @@
         ],
         "coverage": "28/42",
         "verdict": "These strategists would not back DiffData in its current framing: the timing and economics are right, but the structural moat is absent — a well-resourced incumbent can ship a refresh endpoint faster than DiffData can build distribution, making this a feature, not a company, unless the team can articulate a proprietary data asset or network effect that changes the calculus.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -975,7 +975,7 @@
         ],
         "reason": "DiffData is a legitimate B2B infrastructure service that adds genuine value by reducing stale-data waste — no exploitation, no dark patterns, and the business model is straightforward usage-based pricing. The single integrity concern is data sourcing and privacy compliance: verifying contact freshness requires accessing or cross-referencing personal data (emails, phone numbers, job titles), and if that sourcing relies on data scraped without consent, purchased from ethically dubious brokers, or used in ways that violate GDPR/DPDP Act without the end-user's knowledge, it would fail the public-scrutiny and safety tests.",
         "fix": "Publish a clear data-sourcing policy (only consented, opt-in, or publicly declared professional data — e.g. LinkedIn public profiles within their ToS, company registries, official directories); require white-label partners to contractually certify the same standard; and surface a plain-English privacy disclosure to any end-contact whose record is verified. With those guardrails in place, every gate test passes.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -1019,7 +1019,7 @@
         "dealbreakers": [],
         "coverage": "31/42",
         "verdict": "These strategists would call LossLens a structurally sound, well-timed idea with a genuine category-creation opportunity — but they would not back it at idea stage without seeing 3–5 signed pilot LOIs from carriers or MGAs, a clear plan to build the corpus before a Verisk-scale incumbent moves, and a named relationship channel into CUO-level decision-makers; the idea earns serious attention, not a cheque, until those three gates are passed.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -1030,7 +1030,7 @@
         ],
         "reason": "LossLens serves a legitimate market need — helping insurers price AI-liability risk with real data rather than guesswork — and its customers are sophisticated B2B buyers, not vulnerable individuals. The integrity concern is the \"honest-scarcity\" standard: an incident loss database that pads thin data with AI-estimated dollar losses or incomplete root causes, and licenses it at underwriting-grade pricing, could cause carriers to misprice risk at scale, with downstream harm to policyholders and the broader insurance market. The business model only stands if the data is genuinely what it claims to be.",
         "fix": "Ship with a mandatory provenance layer: every record must carry a confidence tier (observed/reported/estimated), a source citation, and a completeness flag — and marketing must never describe estimated figures as actuals. Governance must include a conflict-of-interest policy that bars licensees from influencing which incidents are recorded or omitted.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -1115,7 +1115,7 @@
         ],
         "coverage": "31/42",
         "verdict": "Strong problem, weak business architecture — the pain is real and the timing is right, but as a media brand this structurally cannot build a moat (any creator with a YouTube channel can clone the benchmark format), and its core value proposition is fragile against the single most likely market shift: AI tool cost deflation making the 'credit burn' problem obsolete; back it only if the founder pivots the model toward a data product or community with switching costs, not just content publishing.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -1125,7 +1125,7 @@
         ],
         "reason": "Legitimate, creator-serving transparency business that passes all weight-3 gate tests; the one integrity risk is sponsor revenue from the same AI tool vendors whose products are being benchmarked, which creates a conflict-of-interest that must be structurally managed to preserve benchmark credibility.",
         "fix": "Publish a permanent Editorial Independence Policy: sponsor dollars never influence benchmark methodology or rankings; all sponsored slots are labeled; any tool that sponsors the brand is benchmarked on identical criteria to non-sponsors; if a sponsor pressures editorial, disclose it publicly and drop the sponsor.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -1221,7 +1221,7 @@
         ],
         "coverage": "29/42",
         "verdict": "These strategists would respect the timing and operational logic but would not back it at scale: the structural absence of a defensible moat and full platform dependency on YouTube mean the roll-up generates cash but not durable enterprise value — it is a lifestyle media business, not a compounding asset, and the upside ceiling is capped by whoever owns the platform's policy levers.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -1233,7 +1233,7 @@
         ],
         "reason": "Legitimate media roll-up in a genuinely underserved language market — no core integrity violation, but the personal-finance/legal niche + affiliate-commission monetisation creates structural pressure to favour high-paying products over genuinely good ones, and content could cause real financial harm if misleading; these are execution risks that require active management, not a reason to refuse.",
         "fix": "Codify three non-negotiable rules before first acquisition: (1) every sponsored or affiliate piece carries a clear, prominent disclosure — no exceptions, no fine print; (2) all financial/legal content includes a standard disclaimer that it is educational, not licensed advice; (3) acquired channels must publicly disclose the ownership change within 30 days — audience trust was earned by the original creator and cannot be silently transferred. With these three rules enforced as hard policy, the model clears all gate tests.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -1348,7 +1348,7 @@
         ],
         "coverage": "28/42",
         "verdict": "A technically credible regulatory-window play with strong timing, but structurally too narrow in TAM and too dependent on a single regulatory deadline to attract conviction from strategists who require compounding scale — worth pursuing only as a wedge into a broader Asia-Pacific crypto compliance platform, not as a standalone business.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -1356,7 +1356,7 @@
         "concerns": [],
         "reason": "Compliance SaaS for regulated Australian crypto platforms — helps businesses meet genuine legal obligations, protects downstream retail users, transparent subscription pricing, no vulnerable-person exploitation, no deception in the model; Ratan Tata would recognise this as trusteeship in practice: strengthening market integrity rather than extracting from it.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -1400,7 +1400,7 @@
         "dealbreakers": [],
         "coverage": "32/42",
         "verdict": "A structurally sound Levels.fyi transplant into an opaque, high-stakes negotiation category with real timing tailwinds — these strategists would call it backable in principle but would gate any commitment on two proofs: (1) 50+ creator submissions without incentive payment, proving organic supply-side pull, and (2) one brand or agency willing to pay for rate-intelligence access before the API exists, proving demand-side willingness to pay.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -1408,7 +1408,7 @@
         "concerns": [],
         "reason": "DealReceipts is a transparency-creating information business — it reduces information asymmetry between creators and brands, helps the weaker party (individual creators) negotiate from knowledge rather than ignorance, builds on voluntary anonymous submissions, and charges the better-resourced side (brands) for intelligence they would otherwise extract unfairly from naive creators.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -1470,7 +1470,7 @@
         ],
         "coverage": "28/42",
         "verdict": "These strategists would not back this at current definition — the timing tailwind and bootstrappable format are real, but three structural fails (no moat, regulatory single-point-of-failure, non-improving scale economics) and an unvalidated TAM make it a lifestyle newsletter ceiling, not a fundable business; the fix is to run 50 paid-intent conversations first and layer a proprietary data or community network effect before committing.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -1482,7 +1482,7 @@
         ],
         "reason": "A B2B trade intelligence newsletter serving importers, exporters, and logistics operators with verified tariff and compliance information is a straightforward information service that creates genuine value, touches no vulnerable population, and has no structural incentive toward deception or exploitation.",
         "fix": "Adopt a brief editorial-independence charter (ads cannot influence coverage), annual supplier re-verification, and a standard disclaimer on compliance reports — all routine for reputable B2B publications and sufficient to clear every concern raised.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -1575,7 +1575,7 @@
         ],
         "coverage": "29/42",
         "verdict": "Would not back at this stage: the business has a real market pain and an attractive cost structure, but it is structurally a public-data newsletter with no moat — a funded incumbent (or government itself) can clone it in weeks, and CPM media businesses at sub-100K subscribers generate thin revenue; the path to defensibility requires a proprietary data layer (e.g. eligibility-matching, accountant CRM integration) that is not in the current concept.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -1586,7 +1586,7 @@
         ],
         "reason": "Legitimate pro-social information product that helps Australians claim money they are already entitled to — the model is honest, the value is real, and no weight-3 gate is violated at its core.",
         "fix": "Add a standing accuracy disclaimer ('We aim for complete coverage but verify eligibility directly with the relevant government agency before applying'), timestamp every grant listing with its source-check date, and label all accountant/broker referrals explicitly as 'Paid Partner' — these three practices clear both concerns and make the newsletter fully publishable under full public scrutiny.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -1679,7 +1679,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strong problem, thin proof — Tony Robbins and Basesh Gala would call the SOPA window a genuine 'burning platform' demand signal (real pain, hard deadline, clear outcome), but Masters Union founders would press hard on whether cash-strapped subbies will pay a recurring SaaS fee versus calling their accountant, and would not back it without 20+ paying pilot customers and a construction-law expert on the founding team.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -1687,7 +1687,7 @@
         "concerns": [],
         "reason": "SOPAClaim arms financially weaker subcontractors with the legal knowledge and deadline discipline that well-resourced principals already have access to through lawyers — it levels the playing field rather than exploiting anyone, operates transparently under a clear SaaS pricing model, and creates genuine community value by reducing the unpaid-invoice problem that kills small construction businesses every year in Australia.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -1788,7 +1788,7 @@
         "dealbreakers": [],
         "coverage": "31/42",
         "verdict": "These strategists would call this a well-timed, genuinely-painful wedge with a serious structural question: the Hindi-first ONDC reconciliation niche is real and early, but at ₹750/month targeting offline tier-2 retail, the CAC-to-LTV math is fragile and the moat evaporates the moment a funded player or ONDC network participant decides to bundle this free — so they'd back it only if the founder can demonstrate 50+ paying customers before building further and has a clear path to defensibility beyond the ONDC-specific hook.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -1796,7 +1796,7 @@
         "concerns": [],
         "reason": "A capacity-building B2B SaaS that solves a genuine operational pain for India's most underserved tier-2 ONDC sellers at pricing they can afford — it helps, does not exploit, makes no deceptive claims, and directly strengthens the SME backbone ONDC was built to serve; Ratan Tata would be proud to put his name on it.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -1888,7 +1888,7 @@
         "dealbreakers": [],
         "coverage": "31/42",
         "verdict": "Strategists would call this a sharp insight with a structurally sound problem statement — but they would not back it yet, because the Levels.fyi analogy obscures a fatal difference: engineers are repeat visitors who drive compounding data and page views, whereas franchise buyers are one-time transactors, so the model only works if the real customer is a recurring professional (CA, consultant, investor network) rather than the end buyer — and that pivot needs to be explicit before the revenue model can be validated.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -1900,7 +1900,7 @@
         ],
         "reason": "FranchiseLens India is a transparency-first business that genuinely serves the most vulnerable participant in the franchise equation — the individual buyer putting life savings into a unit — and Ratan Tata would broadly approve; however, the franchisor-paid \"verified performance badge\" creates a structural conflict of interest: the entity funding the audit is the one being audited, which can quietly corrupt data integrity and mislead the very buyers the platform exists to protect.",
         "fix": "Structurally separate the audit function from the badge-sales function (arm's-length auditor, published methodology, data published regardless of whether the franchisor continues paying); cap franchisor badge revenue to a minority of total revenue so withdrawal cannot suppress a finding; disclose all commercial relationships prominently on every data page; and enforce an explicit honest-scarcity policy — publish sample size, data vintage, and confidence level on every unit-economics figure, marking thin or self-reported data clearly rather than presenting it as verified.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -1944,7 +1944,7 @@
         "dealbreakers": [],
         "coverage": "32/42",
         "verdict": "Basesh Gala and the Masters Union founders would find the tailwind and gap credible but would not back this without a founder who has lived the MSME compliance pain personally (the content voice IS the moat), 50 WhatsApp conversations proving the paid community price point, and a named CA or tax professional as a co-creator to handle trust-infrastructure — the idea is directionally sound but the execution window is narrow before a funded incumbent copies the format.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -1956,7 +1956,7 @@
         ],
         "reason": "BharatVyapar is a genuinely pro-social idea — teaching compliance to underserved MSME owners who lose ₹2.5L/mo to manual processes is textbook trusteeship — but the lead-gen/affiliate monetization model creates a structural tension: the audience trusts the channel for unbiased education, and that trust is being sold to fintech/SaaS/lenders who may not all deserve it. If a working-capital lender or billing SaaS paying for placement has predatory terms, exploitative fees, or misleading claims, the channel becomes the vector through which vulnerable Tier-2/3 business owners get hurt — and they will never know it was a commercial recommendation dressed as education.",
         "fix": "Disclose every paid placement explicitly and in the vernacular (\"yeh ek sponsored explainer hai\"), maintain and publish a minimum-standard checklist that any promoted partner must meet (APR caps for lenders, no dark-pattern billing for SaaS), and refuse or drop any partner whose product is later found to harm the audience — the community's trust is the asset; selling it secretly or to bad actors is the only real risk here.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -2023,7 +2023,7 @@
         ],
         "coverage": "28/42",
         "verdict": "These strategists would call FoundOnAI a smart timing play with a real latent need and clean offer design — but structurally too fragile to back at scale: the core revenue depends on a platform behavior OpenAI can change with one update, and the done-for-you model cannot produce the compounding margins needed for a defensible business; worth running as a cash-generating experiment, not a fundable venture.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -2034,7 +2034,7 @@
         ],
         "reason": "Legitimate B2B marketing service helping small businesses adapt to AI-era discovery — honest work, no exploitation, real value — but \"get cited by ChatGPT\" as a marketing promise risks a truthful-claims violation because LLM citation is non-deterministic and no third party can guarantee placement.",
         "fix": "Market and contract the service as 'AI-discoverability optimisation' with defined process deliverables (structured data, authoritative content, citation-signal building) and a clear disclaimer that LLM citation cannot be guaranteed — never promise a citation count or use 'get cited' as a guarantee in sales copy or contracts; add an honest-fit assessment before onboarding each client.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -2108,7 +2108,7 @@
         "dealbreakers": [],
         "coverage": "32/42",
         "verdict": "Robbins/Gala would call this a sharp, well-timed insight that nails timing and category creation but needs a concrete monetisation thesis before they'd back it — the idea earns a conditional yes if the founder can show 10 enterprise teams who'd pay $2K+/month for a private data feed, because the public leaderboard alone is a media business with a narrow revenue ceiling, not a scalable SaaS moat.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -2120,7 +2120,7 @@
         ],
         "reason": "HarnessProof is a legitimate independent benchmarking and media business that genuinely helps procurement teams make better decisions — the model is honest, the value is real, and it exploits no one. However, the sponsored deep-dives and lead-gen monetization from the very vendors whose tools are being rated creates a structural conflict of interest that must be addressed explicitly, or it quietly fails the truthful-claims and public-scrutiny tests.",
         "fix": "Publish and enforce a written editorial firewall: sponsored content is clearly labeled 'Sponsored' and is factually separate from benchmark rankings; sponsors have zero input into methodology or scores; affiliate disclosures are prominent and per-link; the ranking methodology and raw data are published openly so any reader can audit results — and if a sponsor's tool scores poorly, that score runs unchanged. With that firewall codified and public, Ratan Tata could put his name on it without hesitation.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -2196,7 +2196,7 @@
         ],
         "coverage": "28/42",
         "verdict": "These strategists would see a well-timed regulatory wedge with a real new-category claim and a buildable MVP — but they would not back it at pre-seed without seeing: (1) proof the TAM of in-scope companies is large enough to build a standalone business (not just a feature), (2) a credible answer to 'what happens when OneTrust ships this in Q3', and (3) a founder with direct CLO/AI-governance network access, because the distribution problem in compliance SaaS kills more companies than the product does.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -2204,7 +2204,7 @@
         "concerns": [],
         "reason": "DataLedger helps AI companies meet legally-mandated transparency obligations honestly — it creates genuine regulatory and societal value by making training-data provenance visible, exploits no one, and has no structural incentive to deceive any stakeholder.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -2289,7 +2289,7 @@
         "dealbreakers": [],
         "coverage": "31/42",
         "verdict": "Strong regulatory tailwind and genuine category-creation opportunity, but the execution window is narrow and the trust/distribution gaps are load-bearing — Robbins/Gala would back the idea only with a founder who has regulatory-legal credibility and enterprise access already in hand, not a pure technical builder starting from zero.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -2297,7 +2297,7 @@
         "concerns": [],
         "reason": "Provenance helps AI builders comply with real legal obligations (CA AB 2013, EU AI Act) by producing honest, auditable disclosures — it sells transparency, not opacity, and serves the public interest in AI accountability.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -2379,7 +2379,7 @@
         "dealbreakers": [],
         "coverage": "32/42",
         "verdict": "Basesh Gala and the Masters Union founders would call this an elegant timing play with a real latent pain and zero-capex MVP — but they'd push hard on the moat question before committing: the idea is structurally easy to clone once proven, the data source is controlled by OpenAI and Google, and the distribution flywheel requires becoming the canonical authority before a better-funded competitor arrives; the 12-month window to establish category leadership is real but narrow, making speed of execution the only true defensibility.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -2391,7 +2391,7 @@
         ],
         "reason": "InvisibleIndex is a legitimate media/research business built on genuine measurement — it creates real value by surfacing AI recommendation blind spots — but the methodology behind the rankings must be fully disclosed and the rankings themselves must not be inflatable by paying sponsors or buying reports.",
         "fix": "Publish the ranking methodology openly (query sets, model versions, sampling cadence, scoring formula) and enforce a written firewall: sponsoring a tool or buying a report confers zero influence over rankings — stated plainly in every report and on the website. No ranking position is ever for sale.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -2477,7 +2477,7 @@
         ],
         "coverage": "35/42",
         "verdict": "These strategists would see a well-reasoned niche media bet with a real pain point and excellent unit economics on paper, but would not back it at meaningful scale — the absence of any structural moat combined with a small market ceiling and material AI-commoditisation risk makes this a lifestyle income property at best, not a fundable or scalable business; the right move is a 90-day validation sprint (500 subscribers, one sponsor LOI) before committing further.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -2488,7 +2488,7 @@
         ],
         "reason": "LegalClock AU is a genuinely valuable public-information service — translating dense legal and tenancy law into plain English directly helps ordinary Australians navigate a system that otherwise favours those who can afford lawyers. It passes all weight-3 gate tests cleanly. The single conditional concern is the lawyer/lead-gen affiliate structure: if the referral incentive quietly steers readers toward paid legal help when free options (Legal Aid, community legal centres, AFCA, tribunal self-help) would serve them just as well, the business shifts from \"helping the underserved\" to \"monetising their anxiety.\" That would be a mild exploit-the-vulnerable violation — not fatal, but real.",
         "fix": "Always surface free/self-help options first in any content that touches a referral path, disclose all affiliate relationships clearly at the top of every referral-linked piece, and include a prominent standing disclaimer that content is general information not legal advice — these three practices cost nothing and make the business unambiguously clean.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -2571,7 +2571,7 @@
         ],
         "coverage": "35/42",
         "verdict": "These strategists would pass — the latent need and timing tailwinds are real, but two structural weight-3 defects disqualify it at idea stage: there is no moat (any media house can replicate it in 90 days) and the revenue model is entirely contingent on platform goodwill, making the business a lifestyle project with a ceiling, not a compounding asset worth building toward.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -2582,7 +2582,7 @@
         ],
         "reason": "A heritage-preservation YouTube channel is inherently pro-social and honest, but autonomous content generation at scale carries a real risk of fabricating or misrepresenting historical claims about real artisans, folk traditions, and vintage advertisements — which would fail the truthful-claims and honest-scarcity tests.",
         "fix": "Implement a mandatory human or adversarial-agent fact-check gate before any video publishes: every historical claim, artisan attribution, and advertisement origin must be sourced to a verifiable reference; where sources cannot be found, the video must explicitly state \"unverified\" or hold the claim — zero fabrication, honest scarcity over invented completeness.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -2668,7 +2668,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "DiffScore names a real, timely gap with clean category-creation potential, but its structural vulnerability is moat — without proprietary methodology, network-effect data, or platform lock-in, a well-resourced incumbent can copy this as a feature update, making standalone pricing fragile; these strategists would back it only if the founder can demonstrate a defensible differentiation in the scoring engine itself or a go-to-market wedge into a platform partnership that creates stickiness before incumbents notice.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -2676,7 +2676,7 @@
         "concerns": [],
         "reason": "DiffScore is a straightforward B2B analytics tool that helps content professionals make informed decisions about differentiation — it harms no one, exploits no one, makes no false claims, and creates genuine value by giving customers honest statistical data about competitive sameness risk.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -2765,7 +2765,7 @@
         ],
         "coverage": "28/42",
         "verdict": "These strategists would not back it as a standalone venture: the deadline creates a real but narrow sprint-market, not a durable business — the two structural failures (no moat, single-regulation dependency) mean even perfect execution produces a revenue spike then a cliff; the better play is using this as a wedge into a broader privacy-compliance platform, but that requires a different pitch and longer runway than a 6-month window affords.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -2773,7 +2773,7 @@
         "concerns": [],
         "reason": "This is a compliance-assistance SaaS that helps Australian businesses meet a genuine legal obligation under the Privacy Act — it reduces cost and friction for entities that must disclose automated decision-making, creates no deception, exploits no vulnerability, and leaves the regulatory ecosystem healthier by improving corporate accountability to the public whose data is being used.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -2819,7 +2819,7 @@
         ],
         "coverage": "29/42",
         "verdict": "A clever deadline-arbitrage play with a real forcing function and near-zero launch cost, but structurally a sprint not a business — the moat is absent, the TAM ceiling is low, and the entire revenue engine expires on 1-July-2026; strategists would say 'smart hustle, wrong vehicle' unless a defensible post-deadline evergreen layer (proprietary data, owned bookkeeper network, SaaS pivot) is built into the design from day one.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -2830,7 +2830,7 @@
         ],
         "reason": "PaydayReady helps SMBs navigate a real, mandatory compliance deadline with plain-English tools and vetted service referrals — it reduces harm, serves the underdog (small business owners facing penalties), and monetises through transparent affiliate relationships with legitimate payroll SaaS vendors, not through exploiting confusion.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -2902,7 +2902,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Interesting timing play on a real pain, but too early and too platform-dependent to back today — the moat race against OpenAI/Anthropic native guardrails must be won in 18 months or the category gets absorbed; validate paying SMB demand and lock a data-compounding distribution wedge before committing capital.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -2910,7 +2910,7 @@
         "concerns": [],
         "reason": "ShopkeeperGuard is a safety and oversight tool that protects small business owners from AI-driven financial mistakes — it adds a human check between an autonomous agent and real-world consequences, which is precisely the kind of trusteeship-minded, dignity-preserving product Ratan Tata would endorse.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -2991,7 +2991,7 @@
         ],
         "coverage": "28/42",
         "verdict": "These strategists would not back JobPing in its current form: the unbundling thesis is clever and the timing is real, but two structural failures — no defensible moat and existential LinkedIn-dependency — mean a well-funded competitor or a single platform policy change kills the business before it compounds. The idea needs either a proprietary data sourcing loop (user-submitted CRM bounce data as a network-effect flywheel, for example) or a data-source diversification strategy that survives a LinkedIn block before it deserves serious capital.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3003,7 +3003,7 @@
         ],
         "reason": "JobPing delivers genuine value — democratising a signal ZoomInfo locks behind $15K seats is pro-SMB and pro-competition — but the data-sourcing path (scraping LinkedIn, harvesting emails without consent) is where integrity risk lives, and the product must be built on consented, legitimate sources to pass the public-scrutiny and safety tests.",
         "fix": "Source data ONLY from licensed, consented pipelines (public company filings, self-reported professional directories, opt-in data co-ops, or official company press releases); publish a clear Acceptable Use Policy that explicitly bans spam/harassment; and provide an opt-out registry so any individual can remove themselves from monitoring — these three steps clear the public-scrutiny, safety, and honest-scarcity gates.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -3049,7 +3049,7 @@
         ],
         "coverage": "28/42",
         "verdict": "ConformKit has a real, time-sensitive pain to solve and a clean MVP path, but Tony Robbins and Basesh Gala would flag the one-time purchase trap and regulatory-dependency risk as deal-breakers before backing it — they would want to see a post-market monitoring SaaS subscription layer that creates genuine annual recurrence, plus a notified-body partnership that adds trust infrastructure and moat, before calling this a fundable business rather than a smart consulting tool.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3061,7 +3061,7 @@
         ],
         "reason": "ConformKit solves a real compliance burden honestly — helping SMEs meet a genuine EU legal obligation — but auto-generated regulatory dossiers carry a structural honesty risk: if the tool implies or allows customers to believe the output constitutes a legally valid, auditor-ready technical file when it is a first draft requiring expert review, that is a misleading claim that could expose SMEs to false confidence, regulatory fines, and real harm when their high-risk AI system faces a conformity assessment.",
         "fix": "Three safeguards clear the gate: (1) All output is explicitly labelled a structured draft, never a compliance certificate — every deliverable carries a mandatory disclaimer and a checklist of sections requiring legal/technical sign-off before submission; (2) The tool must surface confidence flags — wherever it has inferred, assumed, or generated content from thin input, it highlights that section in amber so the customer knows where the human work is; (3) The business refuses to market to customers who want to use the output without any expert review, and does not claim or imply that purchase = compliance. With those three in place the tool is genuinely helpful, fully honest, and Ratan Tata could put his name on it.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -3140,7 +3140,7 @@
         ],
         "coverage": "28/42",
         "verdict": "Robbins/Gala/Masters Union would admire the timing and pain-clarity but would not back it at scale — the moat is structurally absent (any platform adds this as a feature overnight) and the entire business sits on a regulatory-enforcement window that can close, making it a sharp wedge product with a short window rather than a fundable platform.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -3148,7 +3148,7 @@
         "concerns": [],
         "reason": "ClearAd helps creators comply with transparency laws that exist to protect consumers from undisclosed paid influence — it is a compliance tool that serves the public interest, charges honest SaaS pricing, and has no exploitative mechanics.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -3192,7 +3192,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Robbins/Gala/Masters Union would see a structurally sound data-moat idea attacking a provably large, unresolved pain — but would press hard on one existential question: can you reach benchmark-API critical mass before Samsara or Motive makes the capture layer a free ELD feature? If the answer is 'yes, because our API is already the industry benchmark by then,' this is backable; if not, it is a feature, not a company.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -3200,7 +3200,7 @@
         "concerns": [],
         "reason": "DetentionLedger arms the weakest party in the trucking chain — the driver — to recover money legally owed to them, using verifiable timestamped evidence; it exploits no one, fabricates nothing, and leaves the freight market fairer than it found it. Ratan Tata would recognise this as a classic trusteeship play: a small business helping the vulnerable collect what is already theirs.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -3249,7 +3249,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strong timing play riding a genuine regulatory step-change, with a crisp outcome and low-capex MVP — but the window to establish a defensible position before Xero/MYOB ships a native alert is short, so the make-or-break question is whether the founder can lock in the bookkeeper channel fast enough to matter.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -3257,7 +3257,7 @@
         "concerns": [],
         "reason": "SuperGuard protects employees' retirement savings from being short-paid by catching super contribution failures before they become penalties — it serves workers' genuine financial interests, operates transparently in a regulated compliance space, charges fair SaaS pricing, and makes both businesses and the superannuation system work as intended.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -3337,7 +3337,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "These strategists would see a real pain and good timing but would not back it yet — the trust-page surface is easy to clone, the paying TAM is unproven at scale, and there is no stated distribution moat or verification network that creates a durable wedge; they would want 50 paying coach pilots and a proprietary data layer before committing.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3349,7 +3349,7 @@
         ],
         "reason": "ProofStack solves a genuine trust gap honestly — helping coaches prove real credentials rather than manufacture fake ones — but the verification process itself must be rigorous and transparent, or the \"verified\" badge becomes a false signal that harms the clients booking those coaches.",
         "fix": "Define and publish the verification standard openly (what counts as verified, how often it re-checks, what happens when a credential lapses or a client outcome claim cannot be confirmed), ensure the badge is never sold faster than the verification process can actually support it, and guarantee that the paid-tier ranking is never conflated with verification tier — the trust signal must be earned, not purchased.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -3441,7 +3441,7 @@
         "dealbreakers": [],
         "coverage": "31/42",
         "verdict": "A structurally sound trust-layer idea riding a real regulatory tailwind with a clear MVP path, but the strategists would likely hold until three questions are answered: who pays (trader, vendor, or advertiser), how the moat survives a SEBI self-service portal, and whether retail traders will actively seek verification before subscribing to an algo service — without those three resolved, the idea is a credible content/media asset but not yet a fundable business.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3452,7 +3452,7 @@
         ],
         "reason": "Fundamentally pro-consumer idea that protects retail traders from unvetted algo vendors — Ratan Tata would be proud of the mission — but the paid \"verified badge\" model risks selling the appearance of trustworthiness rather than purely reflecting objective license status, and broker affiliate commissions must be disclosed or they quietly bias the trust signal the brand is built on.",
         "fix": "Badge must mean exactly one thing: 'SEBI RA license / Exchange Empanelment ID confirmed current as of [date]' — displayed identically for all verified vendors regardless of payment; the fee covers only the API/display infrastructure, not any quality signal beyond regulatory status. All broker affiliate relationships must be labeled 'paid partner' adjacent to every link or recommendation. With these two disclosures codified at launch, both concerns clear and the business is fully pass.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -3517,7 +3517,7 @@
         "dealbreakers": [],
         "coverage": "31/42",
         "verdict": "These strategists would see a well-timed, first-mover idea clearing the latent-need and category-creation bars, but would not back it without answers to two questions: is the paying subscriber pool large enough to build a real business (or is this a consulting practice in benchmark clothing?), and what structurally prevents a GroupM or PE-backed data firm from copying the audit methodology in six months — conditional interest, not conviction.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3528,7 +3528,65 @@
         ],
         "reason": "The business model is structurally honest and pro-market — bringing verified intelligence to an opaque influencer economy serves brands, acquirers, and creators fairly — but two launch-critical integrity gaps exist: (1) the words \"verified\" and \"audited\" are commercially load-bearing and must not outrun the actual methodology rigor, and (2) creator data used in paid reports requires explicit informed consent from the free-tier contributors who supply it.",
         "fix": "Launch with a publicly documented, methodology-disclosed verification standard (not just 'audited by us') — state exactly what is checked, what the confidence level is, and where data is insufficient say so explicitly rather than interpolating; AND require explicit opt-in consent from creators before their submitted data appears in any paid subscriber report or acquirer due-diligence product, with a clear plain-language explanation of the commercial use.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
+      }
+    },
+    {
+      "key": "two-market-cfo-ai-augmented-virtual-cfo-service-india-delive",
+      "name": "Two-Market CFO — AI-augmented virtual CFO service, India delivery, Australia-facing",
+      "shape": "productized-service",
+      "source_channel": "boring-profitable",
+      "one_liner": "Fixed-fee virtual CFO for AU$3-50M businesses: a Canberra-based relationship layer + an India CA delivery pod + AI-automated month-end close, priced $5-10K/mo against $15K incumbents.",
+      "the_insight": "The signal shows 930 monthly Australian searches for 'virtual CFO' and proven $5-15K AUD/month willingness to pay, while existing offshore delivery fails on ASIC/ATO/Division 7A fluency and founder-relationship fit. The arbitrage is not labor cost alone — it is AI close/reporting automation eating ~80% of junior hours so a 3-person India pod plus one AU-domiciled face serves 15-20 clients at 8x delivery margin. AI is the execution advantage, never the pitch — exactly the founder's stated operating preference, and the Canberra-resident + India-hiring-network combination is the specific gap incumbents can't copy.",
+      "monetization": "AU$5-10K/month retainers (target 15-20 clients = $1-2M ARR); upsell tax structuring, board reporting, capital-raise prep",
+      "surviving_wedge": "\"IF founder validates the unverified '930 monthly searches' claim via Google Keyword Planner + strong willingness-to-pay interviews → surviving wedge is bespoke AI close automation for Australian CFO compliance (Division 7A, ATO-specific rules, GST/BAS workflows) that Numeric/FloQast don't handle. Requires $200–500K R&D to build proprietary product. Current model (off-the-shelf FloQast + India team) has zero defensible moat; competitors copy in 60–90 days. Without productization, this is a lifestyle agency business capping at AU$100–150K founder profit. Alternatively: if \"930 searches\" is actually 200, demand signal fails and verdict downshifts to RED.\"",
+      "demand_evidence": "\"Australia's accounting services market projected to expand to USD 21.3 billion by 2034, growing at 6.24% CAGR, driven by SMEs outsourcing to reduce overhead costs and access specialized expertise without maintaining internal finance departments (Australia Accounting Services Market report, via Futurism, Blackwattle, McKenzie). Additionally, fractional CFO market is described as 'one of the fastest-growing service categories for Australian SMEs' with strong adoption in the $3M–$50M revenue band (Scale Suite, Eightx, CFO On-Call market guides, 2026).\"",
+      "market_size": "\"Addressable market: ~2.7M Australian SMEs; $3M–$50M revenue segment estimated ~40K–80K businesses (exact data unavailable; segmented by turnover, not employee count). Fractional CFO retainer market in Australia: $5K–$12K/month pricing × ~5,000–10,000 estimated clients across all providers = AU$300M–1.2B annual TAM for fractional CFO services. Global finance & accounting outsourcing market: USD 51B (2026 forecast); Australia outsourcing services market growing 12.3% CAGR to USD 122.6B by 2030.\"",
+      "scores": {
+        "demand": 3,
+        "moat": 2,
+        "founder_fit": 4,
+        "speed_to_cash": 5,
+        "profit_ceiling": 2,
+        "competition_shape": 2
+      },
+      "composite": 2.9,
+      "verified_composite": 2.9,
+      "verify_flag": "fact-checked",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "Australia's accounting services market is projected to expand to USD 21.3 billion by 2034, growing at 6.24% CAGR, driven by SMEs outsourcing to reduce overhead costs",
+          "verified": "true",
+          "source": "IMARC Group (primary market research firm) — Australia Accounting Services Market report. Market was USD 12.2B in 2025, projected USD 21.3B by 2034 at 6.24% CAGR (2026–2034). Growth drivers confirmed: regulatory compliance, digital transformation, and business outsourcing trends."
+        },
+        {
+          "claim": "Fractional CFO market is one of the fastest-growing service categories for Australian SMEs, with adoption in the $3M–$50M revenue band",
+          "verified": "true",
+          "source": "Scale Suite (Australian fractional CFO services guide, 2026). Confirmed: fractional finance described as 'one of the fastest-growing service categories for Australian SMEs.' Revenue band: services viable $2M+; sweet spot $10M–$25M (78% adoption rate); $3M–$50M band is within the actively served market."
+        }
+      ],
+      "fact_status": "verified",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.9,
+          "verified_composite": 2.9
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.7,
+        "fitLoadBearing": 0.563,
+        "conviction": 3.43,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "26/42",
+        "verdict": "Fundable as a solid cash-generating professional-services business (real price wedge, real market, good macro timing) but not a venture-scale bet these strategists would back as-is — the core differentiator is cost arbitrage (India delivery) plus off-the-shelf AI tooling, both copyable by any funded incumbent within 12 months, so it's competing on price with no stated moat, distribution, or category-ownership; needs a proprietary workflow/data/switching-cost layer before it clears the bar.",
+        "scoredAt": "2026-06-26"
       }
     },
     {
@@ -3575,7 +3633,7 @@
         ],
         "coverage": "28/42",
         "verdict": "Strong offer framing and perfect timing, but strategists would WATCH not back at conviction: two structural deal-breakers (no moat and an existential dependency on AI staying expensive) mean the window may be 18-24 months wide before model cost deflation and copycat consulting arms close it — fundable as a cash-generative lifestyle consultancy, not as a venture-scale category-winner.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -3583,7 +3641,7 @@
         "concerns": [],
         "reason": "TokenTriage is a straightforward B2B cost-optimization advisory — it saves companies money using documented, legitimate technical levers, charges transparently (fixed fee + verified savings share), and creates genuine value for customers without deceiving, exploiting, or harming any stakeholder.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -3627,7 +3685,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "BharatBill has genuine structural horsepower — a mandate-forced buyer, a real underserved access gap, and a timing window that is open NOW — but Tony Robbins/Basesh Gala would not back it until the distribution question is answered: reaching millions of vernacular Tier-2/3 merchants without a CA-network or government-portal channel is the single load-bearing unknown that determines whether this is a ₹100Cr business or a well-intentioned product that can't grow past pilot.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -3637,7 +3695,7 @@
         ],
         "reason": "BharatBill solves a genuine compliance burden for vulnerable small merchants who lack the literacy or tech access to navigate GST e-invoicing alone — it reduces their pain, does not create or exploit it.",
         "fix": "Publish a plain-language data-use and referral-fee disclosure at sign-up; never accept referral arrangements where the recommended credit product has predatory terms; let merchants opt out of credit-profile use entirely without losing invoicing features.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "founder_reaction": {
         "date": "2026-06-11",
@@ -3699,7 +3757,7 @@
         ],
         "coverage": "32/42",
         "verdict": "These strategists would pass: the idea is clever but structurally brittle — no moat (fully copyable), existential TikTok platform risk, and a trust gap in the highest-risk product category (Ayurvedic supplements to Western health regulators), while margins and demand remain unvalidated; the asset-light format is a feature, not a business.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3711,7 +3769,7 @@
         ],
         "reason": "Honest affiliate marketing of genuine Indian goods to Western buyers is ethically sound and net-positive for Indian producers — but the \"fully autonomous\" pipeline + Ayurvedic supplement category creates three real risks: unverified health claims, missing affiliate disclosure, and supplement safety compliance (some Ayurvedic products contain heavy-metal levels legal in India but illegal in the US/EU/AU), all of which are fixable before launch.",
         "fix": "Three non-negotiable launch preconditions: (1) SAFETY FILTER — ban any supplement where the product or its category has documented heavy-metal/adulterant risk in Western import enforcement (FDA import alerts list is public); only promote food-grade spices, textiles, and supplements with a clean import compliance record; (2) TRUTHFUL-CLAIMS GATE — \"verified deal-worthy\" must be operationally defined (e.g. cross-checked price vs Amazon/eBay, minimum 4-star verified reviews); the autonomous pipeline must not publish \"verified\" on a product it has not actually checked; no implied therapeutic claims for supplements — add a standard \"traditional use, not evaluated by [FDA/TGA], consult your doctor\" disclosure to every supplement post; (3) AFFILIATE DISCLOSURE — hardcode a \"#ad #affiliate\" tag and a spoken/on-screen disclosure into every video template before the pipeline goes live; TikTok Shop auto-tags help but are not sufficient on their own for FTC compliance.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -3798,7 +3856,7 @@
         ],
         "coverage": "28/42",
         "verdict": "DigiKYC Connect has sharp timing instincts — the regulatory unlock is real and the problem is genuine — but the strategists would not back it as a standalone business: the moat is structurally absent (any KYC incumbent absorbs this as a feature within weeks), and the entire value proposition is a single-regulatory-fact away from obsolescence; the only viable path is as a fast-acquisition wedge into a broader KYC or India Stack platform play, not a durable standalone API.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3810,7 +3868,7 @@
         ],
         "reason": "DigiKYC Connect is a legitimate B2B compliance utility that reduces friction in a regulated process, serves NBFCs (not vulnerable end-users), and is built on a government-verified data source — the core model is honest and socially useful; the only concern is ensuring the end-user (the loan applicant whose data flows through the API) has genuine, informed consent and that data is not retained or resold beyond the KYC purpose.",
         "fix": "Mandate: (1) explicit, per-transaction consent from the end-user before any DigiLocker pull — not delegated to the NBFC's fine print — with a plain-language disclosure in the user's language; (2) a strict no-retention / no-resale policy on structured address data after the KYC transaction is complete, codified in every NBFC contract; (3) a published data-practice statement so any customer or regulator can verify the policy at any time. With these three safeguards in place, the business passes every gate cleanly.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -3854,7 +3912,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strong timing and a genuinely unmet enterprise need, but the idea sits in a narrow window before hyperscalers and frameworks close the gap — Basesh Gala / Tony Robbins-style strategists would back it only if the founder can show 10+ enterprise LOIs within 60 days AND ship a single-feature (access-policy-only) open-source MVP in under 4 weeks to build distribution before the window closes.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -3862,7 +3920,7 @@
         "concerns": [],
         "reason": "ContextVault is a legitimate B2B infrastructure product that solves a genuine enterprise data-governance problem — it helps companies use AI agents responsibly, not recklessly. It creates real value, makes no vulnerable customers, tells no lies, and is built for the long term.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -3939,7 +3997,7 @@
         ],
         "coverage": "28/42",
         "verdict": "Robbins/Masters Union/Basesh Gala would praise the market framing and outcome clarity but would not back it yet — the idea is a well-packaged feature set in a category with 5+ funded incumbents, no structural moat, no owned distribution, and a customer segment (under-$30K creators) that is price-sensitive and churns fast; the pitch needs a proprietary data wedge or network effect baked in before it becomes a fundable business rather than a better Linktree.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -3951,7 +4009,7 @@
         ],
         "reason": "OfferStack serves a genuinely underserved group (low-earning creators) with a real problem (monetization fragmentation), and the core business model is honest SaaS — but two structural risks need guarding: (1) the affiliate-network revenue-share creates a conflict of interest where the platform may surface higher-commission partners over better-fit ones for the creator, and (2) the \"AI sets up and runs income streams\" promise is high-stakes for people earning under $30K where a misleading result claim or a hidden take-rate could materially harm someone already financially fragile.",
         "fix": "Disclose all affiliate/partner revenue-share rates in plain sight before a creator activates any stream; rank partner recommendations by creator-fit score, not commission rate (or show both and let the creator choose); cap or clearly disclose any platform take-rate on digital product sales; and never claim income outcomes the AI cannot guarantee — show ranges with honest \"results vary\" framing, not aspirational headline numbers.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -4024,7 +4082,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "RegLayer targets a structurally real, well-timed gap — regulatory velocity is at a multi-decade high and incumbent solutions are human-readable blobs, not APIs — but the idea sits at the intersection of two compounding risks: an LLM-threatened moat (GPT-class models can parse regulatory PDFs without a proprietary layer by 2027) and a coverage-breadth MVP trap that makes the 'validate cheap' loop expensive. Basesh Gala would demand 50 customer conversations and an LOI before any build; Tony Robbins would flag the zero distribution moat as the single biggest execution risk. Strategists would call this a conditional yes — if the founder has regulatory domain depth, ISV relationships as a distribution wedge, and can frame the moat as accuracy SLA plus legal-liability coverage (not just structured format), it is fundable and defensible; without those, it is a well-dressed research project.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4034,7 +4092,7 @@
         ],
         "reason": "RegLayer sells machine-readable compliance data to software vendors so their users stay on the right side of regulation — it reduces legal risk and cost for small businesses, creates no dark patterns, exploits nobody, and the more accurate and honest the data the more valuable the product.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -4112,7 +4170,7 @@
         ],
         "coverage": "32/42",
         "verdict": "These strategists would not back this as a standalone business — the timing tailwind and near-zero startup cost are real, but the structural absence of moat, trust infrastructure, and scale economics makes this a lifestyle content play at best, not a defensible business; the path to value is as a lead-generation front-end for a licensed advisory or fintech product, not as the product itself.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -4123,7 +4181,7 @@
         ],
         "reason": "Genuine financial education for ordinary Australians navigating a complex compulsory system — trusteeship model, not extraction — but affiliate lead-gen and the risk of stale/overconfident super advice require explicit ASIC-compliant disclosure and content-dating to keep the public-scrutiny and safety tests clean.",
         "fix": "Launch precondition: (1) Every video and email carries a visible \"general information only, not personal financial advice\" disclaimer per ASIC RG 234 guidance; (2) all affiliate relationships (Canstar, RateCity, mortgage brokers) are disclosed on-screen and in description before any link; (3) videos are date-stamped and a review protocol flags content when super rules change — so no viewer acts on superseded rules. These are standard compliance requirements for Australian financial content, not extra burdens.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -4154,6 +4212,122 @@
         ],
         "depth": "triage",
         "validatedAt": "2026-06-16"
+      }
+    },
+    {
+      "key": "redactrail-compliance-middleware-api-for-voice-ai-in-regulat",
+      "name": "RedactRail — compliance middleware API for voice AI in regulated industries",
+      "shape": "data-api",
+      "source_channel": "ai-frontier-gaps",
+      "one_liner": "Drop-in API that any voice-agent deployment passes audio through: real-time PHI/PII redaction, jurisdiction-aware retention/deletion policies, and immutable audit logs — turning blocked healthcare/legal voice-agent pilots into approved production deployments.",
+      "the_insight": "Voice platforms compete on latency and voice quality and treat compliance as a checkbox — a healthcare provider ate a $2.3M HIPAA fine because its voice platform logged calls 90 days against a 30-day deletion requirement. 86-89% of agent pilots die before production with governance as the cited blocker, meaning the real buyer is the enterprise compliance officer who vetoes launch, not the AI team. A neutral middleware layer that works across Retell/Vapi/custom stacks converts that veto into approval, and the immutable audit-trail format itself becomes the switching cost. Sold as infrastructure, not another voice agent.",
+      "monetization": "Usage-based per-audio-minute API pricing + enterprise compliance-tier licensing to voice platforms; audit-readiness reports as an add-on",
+      "surviving_wedge": "Neutral middleware layer for audit logging and jurisdiction-aware retention policies that works *across* Retell/Vapi/custom stacks, positioning compliance as infrastructure decoupled from the voice platform vendor. Target initial buyer: enterprise compliance officer who vetoes voice AI pilots due to audit logging gaps (e.g., Vapi disables logs in HIPAA mode, Retell enterprise-only granular audit features).",
+      "demand_evidence": "70-80% of healthcare AI pilots fail to reach production, with integration and compliance delays cited as primary barriers (sources: GeekyAnts, Aspire Software Services, Digital Health Technology News); additionally, 71% of customer support leaders in fintech and healthcare have paused or rolled back AI deployments in 18 months due to compliance exposure (Fini Labs), indicating strong documented demand for compliance infrastructure.",
+      "market_size": "AI voice agents in healthcare alone: $650 million in 2026 (up from $472M in 2025), growing at 37.85% CAGR through 2035, projected to reach $11.57 billion by 2034. Broader conversational AI healthcare market: $21.62 billion in 2026. Additional markets in fintech, legal, insurance regulate voice AI similarly.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 3,
+        "speed_to_cash": 2,
+        "profit_ceiling": 3,
+        "competition_shape": 2
+      },
+      "composite": 2.75,
+      "verified_composite": 2.75,
+      "verify_flag": "fact-checked",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "70-80% of healthcare AI pilots fail to reach production, with integration and compliance delays cited as primary barriers",
+          "verified": "true",
+          "source": "MIT Sloan 2025 research (cited by GeekyAnts); Aspire Software Services; corroborated by Gartner and RAND Corporation/McKinsey data"
+        },
+        {
+          "claim": "71% of customer support leaders in fintech and healthcare have paused or rolled back AI deployments in 18 months due to compliance exposure (Fini Labs)",
+          "verified": "unclear",
+          "source": "Fini Labs attribution unverified. PRIMARY SOURCE: Sinch 'AI Production Paradox' study (May 2026) shows 74% of enterprises rolled back AI customer communications agents; Fini Labs pages searched do not cite a 71% statistic. The comparable primary statistic is 74%, not 71%, and sourced to Sinch, not Fini Labs."
+        }
+      ],
+      "fact_status": "partial",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.75,
+          "verified_composite": 2.75
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.75,
+        "fitLoadBearing": 0.75,
+        "conviction": 3.3,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "28/42",
+        "verdict": "Cautious maybe, not yet a clear back: the regulation-forced demand, blocking-pain framing, and dual tailwind are genuinely strong, but this drops into a field with several funded adjacent compliance/redaction players — the moat and distribution story need to be proven (certifications, embeddedness, or real paying pilots) before these strategists would commit capital.",
+        "scoredAt": "2026-06-26"
+      }
+    },
+    {
+      "key": "corridor-verified-verified-indian-manufacturer-data-api-for-",
+      "name": "Corridor Verified — verified Indian manufacturer data + API for Australian retail sourcing",
+      "shape": "data-api",
+      "source_channel": "yc-rfs-themes",
+      "one_liner": "A structured, physically-verified dataset and API of export-ready Indian private-label manufacturers — certifications, audit status, MOQs, real shipment history from customs manifests — sold to Australian retailers and brands sourcing under zero-tariff ECTA.",
+      "the_insight": "Post-Jan-2026 ECTA, Australian retail buyers want Indian private-label supply (APAC private-label food growing 24.5% in 2026) but sourcing still runs on unverified directory listings (IndiaMART/ensun-grade). The YC/SaaStr thesis in the signal is explicit: the data/execution layer wins, not the brand UI. Shipment-level Indian export manifest data + on-the-ground factory verification via India-based auditors creates a 'Panjiva-for-the-India-AU-corridor' asset that compounds with every verification. Ashish's corridor position is the un-clonable edge: AU-side buyer trust + India-side verification network. This is a data business where AI does extraction/matching in the background, not an 'AI product'.",
+      "monetization": "Buyer subscriptions AU$500-2,000/month + verified-supplier badge fees on the India side + success fee on completed introductions",
+      "surviving_wedge": "India-Australia private-label sourcing via verified-manufacturer API (not brokerage): ECTA duty-free (Jan 2026) creates real incentive; APAC private label 24.5% growth is real. Wedge survives if: (1) Ashish can prove exclusive AU retailer relationships (switching cost from Small World India / ISA / Sourci is high; relationship-stickiness favors incumbent sourcing agents); (2) India-side factory verification network has meaningful cost/quality/speed advantage over existing third-party auditors (V-Trust, Pro QC, AuthBridge already operate in-country); (3) API + customs data proves objectively faster/cheaper than manual sourcing agent workflow. Currently, the claimed \"corridor position as un-clonable edge\" is unvalidated. Biggest risk: AU retailers prefer personalized sourcing-agent relationships over API-first platform, and switching cost is too high.",
+      "demand_evidence": "APAC private label food market growing 24.5% in 2026 (source: Coherent Market Insights), driven by supermarkets and hypermarkets accounting for ~50% of distribution; AND Australia-India ECTA eliminated 100% of tariff lines on Indian goods to zero-duty as of January 1, 2026, creating documented savings of $10-20K annually per $200K in imports (source: DFAT ECTA outcomes); AND India's merchandise exports to Australia doubled from US$4B (FY2020-21) to US$8.5B (FY2024-25), with total bilateral trade reaching A$48.9B as of July 2026.",
+      "market_size": "APAC private label packaged food market valued at USD 131B (2026, growing 24.5% annually). India-Australia bilateral trade A$48.9B (USD 32.6B, July 2026). Australia's private-label-seeking retail buyers sourcing from India within this duty-free corridor represent an estimated TAM of $2-5M annually (niche within broader private label supply). Global trade data platforms (Panjiva, ImportGenius) operate in a broader $1-2B TAM across 190+ countries, but India-Australia corridor is a subset.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 3,
+        "speed_to_cash": 2,
+        "profit_ceiling": 3,
+        "competition_shape": 2
+      },
+      "composite": 2.75,
+      "verified_composite": 2.75,
+      "verify_flag": "fact-checked",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "Australia-India ECTA eliminated 100% of tariff lines on Indian goods to zero-duty as of January 1, 2026",
+          "source": "DFAT (Department of Foreign Affairs and Trade) Australia-India ECTA outcomes page, official government website",
+          "verified": "true"
+        },
+        {
+          "claim": "India's merchandise exports to Australia doubled from US$4B (FY2020-21) to US$8.5B (FY2024-25)",
+          "source": "The Tribune India, Indian Commerce Ministry announcements, IBEF trade data",
+          "verified": "true"
+        }
+      ],
+      "fact_status": "verified",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.75,
+          "verified_composite": 2.75
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.75,
+        "fitLoadBearing": 0.75,
+        "conviction": 3.3,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "28/42",
+        "verdict": "Cautiously fundable premise, not yet a fundable business: it nails the checklist's hardest structural tests (real pain, real trust-infrastructure thesis, real macro tailwind, cheap testable MVP) but its moat rests on inputs (customs data, factory audits) that existing vendors already commoditize, and every proof point — paying demand, unit economics, distribution, team — is still unknown pre-launch; these strategists would greenlight a scrappy paid pilot with 5-10 AU buyers before backing it further.",
+        "scoredAt": "2026-06-26"
       }
     },
     {
@@ -4200,7 +4374,7 @@
         ],
         "coverage": "28/42",
         "verdict": "The timing and the need are real, but these strategists would not back it as a standalone business — two structural vetoes (no defensible moat, single-regulation dependency) mean the window closes the moment the Master Directions are published or a funded LegalTech player replicates the templates; the correct play is to use it as a distribution beachhead to capture NBFC/fintech CFO relationships and pivot quickly to a broader, regulation-agnostic compliance platform before the window shuts.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4210,7 +4384,7 @@
         ],
         "reason": "SutraComply helps small NBFCs and fintechs meet legitimate regulatory obligations honestly — it reduces compliance risk for under-resourced institutions, strengthens the financial system, and charges transparent tiered fees for real work; no exploitation, no deception, no vulnerable party is harmed.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -4282,7 +4456,7 @@
         ],
         "coverage": "31/42",
         "verdict": "These strategists would not back MasalaRoute at this stage: the business is structurally a price-arbitrage play built on a regulatory window and relationship leverage — both copyable and fragile — without the moat, distribution compounding, or margin profile required for a durable, scalable business worth concentrated founder energy.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4290,7 +4464,7 @@
         "concerns": [],
         "reason": "MasalaRoute is a straightforward B2B trade business — it removes middlemen, pays cooperatives directly, and delivers genuine cost savings to Australian buyers; it exploits no one, fabricates nothing, and creates real value on both ends of the supply chain.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -4336,7 +4510,7 @@
         ],
         "coverage": "28/42",
         "verdict": "A well-timed regulatory-window play with a clear pain point and low MVP cost, but structurally fragile — the RBI's own digitisation roadmap is the biggest competitor, and without a data or distribution moat locked in before incumbents notice, this is a feature for ClearTax, not a standalone business; these strategists would pass unless the founder has deep CA-network distribution and a plan to survive the window closing.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4344,7 +4518,7 @@
         "concerns": [],
         "reason": "FEMAPath is a compliance automation tool that helps Indian professionals correctly fulfil their legal obligations — it reduces errors, lowers cost versus a CA, and leaves users better-off with accurate filings; no exploitation, no deception, and the value is real and durable.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -4433,7 +4607,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strategists would see a sharp, timely insight addressing a real CFO pain with a clear outcome statement and genuine regulatory tailwind — but would not back it yet: the TAM is structurally niche, the moat window is narrow (Big-4 can replicate within 18 months), distribution to enterprise CFOs is expensive and unowned, and the absence of a credentialed tax-law co-founder is a day-one credibility and liability blocker that must be solved before anything else.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4444,7 +4618,7 @@
         ],
         "reason": "PETrace is a compliance-assistance tool that helps CFOs understand and manage genuine tax risk — it creates value by bringing transparency and defensibility to a complex legal area, serves legitimate business customers, and reduces the risk of accidental non-compliance rather than helping anyone evade lawful obligations.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -4473,6 +4647,74 @@
         ],
         "depth": "triage",
         "validatedAt": "2026-06-16"
+      }
+    },
+    {
+      "key": "eudr-origin-desk-working-title",
+      "name": "EUDR Origin Desk (working title)",
+      "shape": "productized-service",
+      "source_channel": "regulatory-forced-buyers",
+      "one_liner": "Productized due-diligence service that gets Indian coffee/rubber/cocoa/spice exporters EUDR-compliant — plot-level geolocation capture via India field partners, deforestation-free verification, and filed EU due-diligence statements — before the Dec 30, 2026 deadline.",
+      "the_insight": "EUDR is a forced purchase with a hard statutory date: Indian exporters of the 7 covered commodities lose EU market access on Dec 30, 2026 without plot geolocation + DDS filings (SMEs June 2027). Indian supply chains are smallholder-fragmented — one coffee shipment aggregates hundreds of plots — so the binding constraint is boots-on-the-ground data collection in India, which EU software vendors can't do cheaply and which an India partner-operator model delivers natively. Once a farm is mapped and verified, every future shipment from it is near-zero marginal cost, and the verified plot registry itself becomes a licensable data asset to EU importers.",
+      "monetization": "Per-shipment DDS preparation fee (₹15-50K) + annual compliance retainer per exporter + downstream licensing of the verified plot registry to EU importers doing counterparty due diligence",
+      "surviving_wedge": "NOT a software-first play (TraceX entrenched). Wedge: White-label geolocation + DDS filing for smallholder farmer cooperatives in underserved regions (Northeast, secondary coffee zones, Odisha rubber). Target last-minute panic buyers Dec 2026. Requires hiring ag-regulatory operations partners — not a solo founder play. Margins moderate unless exploiting time scarcity.",
+      "demand_evidence": "Indian agricultural exports to the EU worth $1.3 billion annually (coffee, cocoa, rubber, oil cake, leather) face mandatory EUDR compliance by December 30, 2026, requiring geolocation data and due diligence statement filing; non-compliance results in loss of EU market access. Source: Observer Research Foundation — https://www.orfonline.org/expert-speak/tracing-sustainable-value-chains-is-india-ready-for-the-eu-s-deforestation-regulation",
+      "market_size": "Global EUDR software market: $1.1 billion (2026) → $1.8 billion (2036). India addressable market: ~₹36-60 Crores/year (~$4.3M-7.2M) from ~20K-30K Indian exporters at ₹18-20 Lakh MCV. Total EU trade impacted: $401 billion annually.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 2,
+        "speed_to_cash": 2,
+        "profit_ceiling": 3,
+        "competition_shape": 2
+      },
+      "composite": 2.65,
+      "verified_composite": 2.65,
+      "verify_flag": "fact-checked",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "Indian agricultural exports to the EU worth $1.3 billion annually (coffee, cocoa, rubber, oil cake, leather) face mandatory EUDR compliance by December 30, 2026",
+          "verified": "unclear",
+          "source": "Observer Research Foundation (ORF), EU Commission trade data, EUDR Regulation 2023/1115 official sources"
+        },
+        {
+          "claim": "December 30, 2026 deadline for large operators to comply with EUDR requirements",
+          "verified": "true",
+          "source": "European Commission, Official Journal EUR-Lex Regulation 2023/1115, Council and Parliament press releases"
+        },
+        {
+          "claim": "EUDR compliance requires geolocation data and due diligence statement filing",
+          "verified": "true",
+          "source": "EUDR compliance guides, LiveEO, Tracextech, Meridia, ImpactBuying - all citing Regulation 2023/1115"
+        },
+        {
+          "claim": "Non-compliance results in loss of EU market access",
+          "verified": "true",
+          "source": "EUDR Regulation 2023/1115 Article on enforcement (penalties include temporary exclusion from EU market and prohibition from placing/making available products)"
+        }
+      ],
+      "fact_status": "partial",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.65,
+          "verified_composite": 2.65
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.824,
+        "fitLoadBearing": 0.688,
+        "conviction": 3.52,
+        "tier": "PURSUE",
+        "dealbreakers": [],
+        "coverage": "28/42",
+        "verdict": "Conditional interest, not a clean yes: it nails the demand-pain, outcome-clarity, and trust-infrastructure tests that Robbins/Basesh prize, and rides a real regulatory tailwind — but Masters Union rigor flags it as a services entrant into an ALREADY-EXISTING global compliance category (fails category-creation) with an unproven moat built on commoditizable satellite data, and a single point of failure in a regulatory deadline the EU has already delayed twice; back it only if it can show an exclusive India field/cooperative relationship moat and a credible pivot into recurring annual compliance revenue beyond the Dec-2026 crunch.",
+        "scoredAt": "2026-06-26"
       }
     },
     {
@@ -4518,7 +4760,7 @@
         ],
         "coverage": "31/42",
         "verdict": "Robbins/Basesh/Masters Union would call FOGOLedger a sharp, well-timed regulatory arbitrage play with a genuinely compelled buyer and a clean low-capex entry — they'd back it as a fast cash-generating micro-SaaS with one structural flaw that prevents it from being a fundable venture: the entire demand rests on a single regulation, so the moat question and the survival question are the same question, and neither is answered by the product itself.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4526,7 +4768,7 @@
         "concerns": [],
         "reason": "FOGOLedger turns a genuine regulatory obligation into a straightforward compliance tool for hospitality businesses — it reduces food waste (a clear community good), charges a transparent fee far cheaper than the penalty it helps avoid, and creates no dark patterns, no exploitation of the vulnerable, and no deceptive claims.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -4558,6 +4800,53 @@
         ],
         "depth": "triage",
         "validatedAt": "2026-06-16"
+      }
+    },
+    {
+      "key": "corridor-brief-working-title",
+      "name": "Corridor Brief (working title)",
+      "shape": "media-property",
+      "source_channel": "boring-profitable",
+      "one_liner": "A paid B2B intelligence property for the India-Australia trade corridor — weekly brief, tariff/compliance trackers, and a verified supplier-buyer directory — monetized via subscriptions, verified listings, and lead-gen to freight/compliance/fintech vendors.",
+      "the_insight": "ECTA going 100% tariff-free on Jan 1, 2026 mints thousands of first-time corridor participants on both sides — Indian MSMEs chasing the 3-7% margin recovery in pharma/textiles/auto parts, Australian importers chasing 10-30% cheaper inputs — and none of them have a trusted, current information source; corridor knowledge lives in scattered govt PDFs, DAFF rules, and broker folklore. Whoever owns the audience owns the deal-flow: the brief + verified directory becomes the toll-booth every corridor service vendor (forwarders, customs brokers, compliance firms, banks) pays to reach buyers, and it generates inbound leads that de-risk any other corridor business built behind it.",
+      "monetization": "Paid subscriptions AUD $30-90/mo, verified-supplier listing fees, vendor sponsorships and lead-gen commissions, premium data reports",
+      "surviving_wedge": "Narrow B2B SaaS subscription: weekly tariff + compliance brief + live tracker sold to 15-30 customs brokers, forwarders, compliance firms at $5-10K/mo/vendor. Requires founder to personally validate vendor NPS + lock in 5-10 paid pilots in 3 months. Avoid broad \"newsletter for Indian MSMEs\" (too generic, no monetization). Avoid directory-only play (IndiaMART + MSMEmart already commoditized). Lead-gen upside exists but requires vendor credibility Ashish does not yet own.",
+      "demand_evidence": "ECTA achieved 100% tariff-free access on Indian exports to Australia effective 1 January 2026 (source: DFAT, PIB 2026-04-03, A2Z Taxcorp). India's exports doubled from $4B (FY2020-21) to $8.5B (FY2024-25). BUT: zero web evidence of vendors actively seeking or paying for corridor-specific intelligence. Adjacent demand (general trade compliance + freight intelligence) is proven ($2.19B market), but this specific wedge is untested.",
+      "market_size": "India-Australia trade: $24.1B bilateral (FY2024-25). India exports $8.5B to Australia. Global trade intelligence + compliance market: $2.19B (2026). Realistic TAM for India-Australia niche: $50-300M (if vendors adopt 20-50 active players in corridor forwarding, compliance, fintech).",
+      "scores": {
+        "demand": 3,
+        "moat": 2,
+        "founder_fit": 2,
+        "speed_to_cash": 3,
+        "profit_ceiling": 2,
+        "competition_shape": 3
+      },
+      "composite": 2.55,
+      "verified_composite": 2.55,
+      "verify_flag": "unverified",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [],
+      "fact_status": "unchecked",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.55,
+          "verified_composite": 2.55
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.667,
+        "fitLoadBearing": 0.5,
+        "conviction": 3.03,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "32/42",
+        "verdict": "Mixed pass at best: real timing tailwind and a genuine trust-infrastructure angle, but the two heaviest-weighted tests — large/growing market and a defensible moat — structurally fail as scoped, so Basesh/Tony Robbins-style operators would likely see this as a niche lifestyle content business, not a venture-backable platform, unless reframed explicitly as corridor #1 in a repeatable multi-corridor trade-intelligence roll-up.",
+        "scoredAt": "2026-06-26"
       }
     },
     {
@@ -4603,7 +4892,7 @@
         ],
         "coverage": "29/42",
         "verdict": "These strategists would call ServiceKillers a well-timed trade-pub bet with a real category gap and near-zero launch cost, but would not back it at scale because the moat is structurally absent — public-data curation is a 90-day copy job for any incumbent, and the entire business evaporates if the AI-services disruption thesis either resolves or loses investor attention before the database achieves enough proprietary data lock-in to survive independently.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4611,7 +4900,7 @@
         "concerns": [],
         "reason": "A B2B research newsletter and vendor database serving founders and operators — it informs, does not deceive, exploits no vulnerable party, trades in honest analysis, and adds genuine value to the AI-native services ecosystem.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -4701,7 +4990,7 @@
         ],
         "coverage": "34/42",
         "verdict": "Robbins/Gala/Masters Union would call this a well-intentioned but structurally weak entry — the lowest composite in the ledger (2.5) is already a signal, and the checklist confirms why: three structural fails (no moat, no distribution, regulatory-window dependency) plus the fact checks undermining the core timing thesis leave this as a feature idea within a larger practice management system, not a standalone backable business; the only path forward is 20+ paid pilots proving willingness-to-pay before any capital commitment.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4709,7 +4998,7 @@
         "concerns": [],
         "reason": "PracticeShield helps small healthcare practices meet genuine regulatory obligations at an honest, accessible price — it reduces compliance burden on under-resourced clinics, protects patient data, and creates clear durable value without exploiting anyone.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -4777,7 +5066,7 @@
         ],
         "coverage": "32/42",
         "verdict": "These strategists would not back SpiceRoute Direct at this stage: the physical-trade consolidator model has real-world precedent and a genuine ECTA tailwind, but it structurally competes on relationship capital and price rather than any durable moat — a well-capitalised existing importer can replicate the exclusivity play within one contract cycle, and the business has no owned distribution, high capital intensity at MVP, and fragile regulatory dependencies that could each become existential.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4785,7 +5074,7 @@
         "concerns": [],
         "reason": "SpiceRoute Direct is a straightforward B2B trade business — connecting verified Indian food manufacturers to Australian food-service buyers — that creates genuine value (supply chain efficiency, authentic product access) for both sides without exploiting any vulnerable party, making misleading claims, or requiring structural dishonesty.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -4835,7 +5124,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "The tailwinds and India corridor are real assets, but the model is structurally a thin-margin import-distribution play with no moat — Robbins, Gala, and Masters Union founders would demand a proprietary angle (exclusive supplier relationships, a direct-to-consumer owned channel, or a platform layer) before backing it, and would likely park it until that structural gap is resolved.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4843,7 +5132,7 @@
         "concerns": [],
         "reason": "A legitimate import-distribution business trading genuine Indian goods at standard wholesale margins — it creates real value for consumers, supports Indian manufacturers, and has no structural deception, exploitation, or integrity failure.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "NARROW",
@@ -4915,7 +5204,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "These strategists would call ChartProof a credible wedge into a real, active pain — but they would not back it at composite 2.4 without seeing a clear plan to build the proprietary error-correction dataset before model quality makes the pod obsolete; the idea is a time-limited arbitrage unless the founder converts QA volume into a defensible data moat within 18 months.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -4926,7 +5215,7 @@
         ],
         "reason": "ChartProof is a straightforward accuracy-verification service sold to sophisticated B2B buyers (VC/PE/IB teams) — it reduces financial errors, creates genuine value, employs Indian analysts with skilled work, and has no exploitative, deceptive, or extractive element at its core.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -5024,7 +5313,7 @@
         ],
         "coverage": "31/42",
         "verdict": "These strategists would not back Marbleway at this stage: it solves a real but incremental operational friction in a mature trade corridor, with no structural moat (contracts are copiable), thin physical-distribution margins (structurally below stress-survival thresholds), full exposure to tariff and currency shocks it cannot hedge through the business model, and no scale-economics engine — the four weight-3 structural fails together make this a lifestyle trading business, not a scalable venture, unless the model is redesigned around a proprietary value-add (e.g. design-curation platform, custom-fabrication capability, or digital specification tool) that creates genuine defensibility.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -5036,7 +5325,103 @@
         ],
         "reason": "Legitimate distribution business that genuinely helps small Rajasthan clusters reach international markets — passes all weight-3 tests — but the dual-revenue structure (importer margin from AU buyers AND annual \"priority inclusion\" fee from Indian exporters) creates an undisclosed conflict of interest that would not survive the Public-Scrutiny test unless both sides are told in writing that Marbleway earns from both.",
         "fix": "Disclose the dual-agency economics in every exporter contract and every buyer catalogue — state explicitly that Marbleway earns a distribution margin from buyers AND an annual fee from exporters, and that \"priority inclusion\" is commercial, not a quality certification — then the conflict of interest disappears and the model is clean.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
+      }
+    },
+    {
+      "key": "private-label-bridge-working-title",
+      "name": "Private-Label Bridge (working title)",
+      "shape": "productized-service",
+      "source_channel": "yc-rfs-themes",
+      "one_liner": "Sourcing-to-shelf productized service that lets Australian retailers and D2C brands launch private-label lines from vetted Indian factories — factory curation, compliance documentation, QA inspection, and freight orchestration under one retainer.",
+      "the_insight": "The gap is explicit in the evidence: India has 50+ certified private-label manufacturers (cosmetics, textiles, packaged food) at ~40% cost advantage, tariffs into Australia hit zero Jan 2026, APAC private-label food is growing 24.5% — yet no integrated India→Australia sourcing offer exists, so Australian retailers must self-assemble factory discovery, organic-cert MRAs, export docs, and logistics. The moat isn't software: it's the personally-audited factory network plus an AI-agent-executed compliance/coordination layer — SaaStr/YC's own conclusion is that the execution layer, not brand or UI, wins these markets. This is the highest founder-fit play: physical trade, India manufacturing knowledge, partner-operator on the ground.",
+      "monetization": "5-10% of FOB order value + AUD $3-8K/mo sourcing retainers + per-production-run QA inspection fees",
+      "surviving_wedge": "**Narrow wedge only if founder had domain expertise:** Hyper-specialized vertical (e.g., \"organic-certified Indian cosmetics to Australian D2C brands\" instead of horizontal all-categories), OR embedded captive model (in-house sourcing team for ONE major retailer like Coles rather than SMB-facing), OR B2B2C (white-label sourcing for existing D2C platforms). Even these risky given network-effect lock-in of incumbents. **For Ashish specifically:** This wedge does not exist. Idea requires India manufacturing expertise + Australia retail/D2C relationships + B2B wholesale comfort — founder has none of these AND the space is outside all 4 passion gates (India wisdom, travel, self-mastery, business education).",
+      "demand_evidence": "Coles has announced a strategic shift to develop new global relationships to realize its 40% private label target, explicitly signaling intent to source internationally rather than from local manufacturers (Bain & Company, 2026). Asia-Pacific private label food growing 6.3% CAGR 2025-2030, with ECTA zero tariffs (Jan 1, 2026) eliminating India import duties.",
+      "market_size": "Asia-Pacific private label food market: 24.5% global share, 6.3% CAGR. Australia private label: ~40% unit share. India-Australia bilateral trade: $8.5B (FY2024-25), growing 8% annually. Coles targeting 40% private label penetration; Woolworths at 30% and growing.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 1,
+        "speed_to_cash": 2,
+        "profit_ceiling": 3,
+        "competition_shape": 1
+      },
+      "composite": 2.4,
+      "verified_composite": 2.4,
+      "verify_flag": "unverified",
+      "verdict": "RED",
+      "confidence": "high",
+      "fact_checks": [],
+      "fact_status": "unchecked",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.4,
+          "verified_composite": 2.4
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.824,
+        "fitLoadBearing": 0.625,
+        "conviction": 3.41,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "28/42",
+        "verdict": "Conditional no as a venture-scale bet, yes as a bootstrapped test: the demand-side signals are real (trust-infrastructure fit, clear offer, timing tailwind, cheap to pilot), but Masters Union/Basesh Gala-style operators would flag the missing moat — a bundled sourcing/QC/freight retainer is structurally price-competable and easy to copy — so back it only if the founder commits to building a proprietary layer (exclusive factory data, compliance certification, or software) once demand is proven, not to scale the service as-is.",
+        "scoredAt": "2026-06-26"
+      }
+    },
+    {
+      "key": "creator-corridor-pay-desk-working-title",
+      "name": "Creator Corridor Pay Desk (working title)",
+      "shape": "marketplace",
+      "source_channel": "creator-economy-tools",
+      "one_liner": "Managed marketplace where Australian SMB brands hire vetted Indian micro-creators for UGC and campaigns — deal matching, contracts, and compliant AUD→INR payouts (on Xflow/Payoneer rails) handled end-to-end.",
+      "the_insight": "The payment rails just arrived — Xflow is RBI PA-CB licensed with Stripe/PayPal backing, Payoneer has in-principle RBI cross-border authorization, and Instagram's Creator Marketplace went live in India in Feb 2026 — but the workflow layer on top doesn't exist: an AU brand hiring an Indian creator faces contract, GST/TDS, and payout friction that kills exactly the sub-$1K deals micro-creators (90% of all creators) live on. A managed marketplace that absorbs that friction monetizes both the rate arbitrage (India-cost UGC for AU brands) and the paperwork, and the two-sided vetted network compounds — YC-backed players (Makrwatch, 1stCollab) validate the category but none own this corridor or the full contract+payout stack.",
+      "monetization": "15-20% take rate on deal value + monthly SaaS fee for brands running always-on UGC pipelines + FX/payout margin share",
+      "surviving_wedge": "Narrowed, high-margin B2B play: \"Tax + GST + contract automation layer for existing UGC/creator marketplaces handling AU-India cross-border deals.\" Rather than build a 2-sided network, sell compliance + legal automation to Makrwatch, 1stCollab, Creator Flow, Wishlink, etc. as a white-label service. India creator exports = 0% GST (if documented); 10% TDS section 194J applies. Automating this for the operator creates defensible tech moat. Estimated market: 6-12 existing platforms × $2-5K/month = $144K-720K/year recurring. Faster to cash (contracts existing platforms, not recruiting creators + brands), lower burn, higher margins. ONLY pursues if Ashish has passion for tax/compliance automation (currently: no signal).",
+      "demand_evidence": "Australian brands (HiSmile, Koala, Princess Polly, Bondi Sands) actively hire UGC creators from global pools; however, Instagram Creator Marketplace's API (launched Oct 2025) + live support in India + Australia (Feb 2026) now provides native matching infrastructure, directly undermining the premise that workflow friction is the problem. Source: Storyboard18 &amp; Inró's 2026 Instagram Creator Marketplace guides.",
+      "market_size": "India creator economy alone = USD 15B (2026) growing 22.4% CAGR to USD 61.8B (2033); micro-creator UGC segment is ~$1-3B of this. AU-India specific corridor estimated at $5-50M globally (niche within niche). Global UGC marketplace TAM is materially larger (100B+) but fragmented.",
+      "scores": {
+        "demand": 3,
+        "moat": 2,
+        "founder_fit": 2,
+        "speed_to_cash": 2,
+        "profit_ceiling": 3,
+        "competition_shape": 2
+      },
+      "composite": 2.4,
+      "verified_composite": 2.4,
+      "verify_flag": "unverified",
+      "verdict": "YELLOW",
+      "confidence": "high",
+      "fact_checks": [],
+      "fact_status": "unchecked",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.4,
+          "verified_composite": 2.4
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.643,
+        "fitLoadBearing": 0.625,
+        "conviction": 2.85,
+        "tier": "WATCH",
+        "dealbreakers": [
+          "defensible-moat"
+        ],
+        "coverage": "28/42",
+        "verdict": "Conditional no as scoped: real, specific pain and good timing, but it's an unmoated thin layer atop commodity marketplace mechanics and third-party payment rails in a narrow single-corridor niche — needs a genuine defensibility lever (proprietary vetting/reputation data, exclusive creator relationships, or an owned license) before Robbins/Masters Union/Basesh-style operators would back it over a well-funded incumbent (Deel, Skydo, Payoneer, or a creator marketplace) simply bolting on the same feature.",
+        "scoredAt": "2026-06-26"
       }
     },
     {
@@ -5083,7 +5468,7 @@
         ],
         "coverage": "32/42",
         "verdict": "These strategists would not back it in its current form — the timing tailwind is real but the structural moat is absent: this is a middleman business whose entire value can be disintermediated by the franchisors it depends on, cannot be launched cheaply to test the core loop, and has no compounding distribution advantage, making the risk-adjusted return unattractive against the capital required to acquire master rights.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -5094,7 +5479,7 @@
         ],
         "reason": "Legitimate franchise intermediary that creates real Tier 2 QSR access, but the royalty-arbitrage margin touches unsophisticated first-time sub-franchisees investing life savings — ethically sound only if the full fee stack (master fee + override on top of brand royalty) is disclosed in plain terms before signing and genuine territory support is delivered in exchange.",
         "fix": "Require a plain-language Fee Disclosure Schedule signed pre-contract (showing franchisor royalty vs. total sub-franchisee royalty and where the override goes), codify minimum territory support obligations (training days, ops visits, marketing co-op), and ban inflated ROI projections in franchise sales materials — these three measures clear the public-scrutiny and don't-exploit-the-vulnerable gates fully.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -5140,7 +5525,7 @@
         ],
         "coverage": "31/42",
         "verdict": "The tailwind is real but the vehicle is wrong — BharatBite is a solid lifestyle business but not a fundable growth business: physical food distribution structurally caps margins, requires heavy capital before validation, and has no moat a resourced competitor can't replicate; these strategists would want to see either a proprietary brand layer (own-label) or a tech-enabled aggregation platform before backing it.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -5148,7 +5533,7 @@
         "concerns": [],
         "reason": "A straightforward B2B import-distribution business serving sophisticated retail buyers with real cultural products — no vulnerable party is exploited, no deception is required, all fees and markups are standard disclosed trade terms, and food-safety compliance is enforced by FSANZ/ABF; Ratan Tata ran comparable trade operations and would have no integrity objection here.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -5194,7 +5579,7 @@
         ],
         "coverage": "31/42",
         "verdict": "These strategists would not back StoneRoute at this stage: the consolidation insight is real but the structural moat is absent, scale economics work against the model, and four weight-3 items are either failed or at serious risk — making this a serviceable trading business but not a venture-backable or defensibly scalable one without a fundamental rethink of the competitive barrier.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -5205,7 +5590,7 @@
         ],
         "reason": "StoneRoute is a legitimate B2B trade agency with honest mechanics — but as the sole AU gatekeeper for 649 Rajasthan exporters, it holds structural monopsony power that could silently squeeze artisan-cluster margins, violating the dignity and trusteeship standard Ratan Tata would apply to the weakest person in the chain.",
         "fix": "Publish a minimum fair-margin floor for exporters (e.g. agency commission never causes the exporter's net FOB to fall below a stated benchmark), disclose commission rates to both sides of the transaction, and include a basic supplier code of conduct covering fair pay to artisan workers — this converts the power asymmetry from a potential exploit into a verifiable trusteeship commitment Ratan Tata could defend publicly.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -5252,7 +5637,7 @@
         ],
         "coverage": "27/42",
         "verdict": "These strategists would not back SubziMaster: it is a well-executed execution of a real gap, but the TAM ceiling is structurally too small for a venture-quality bet, the capex model is the opposite of the low-risk-high-leverage plays they advocate, and the single-franchisor dependency creates an existential fragility that no amount of operational excellence can hedge — the upside is a regional QSR operator, not a scalable business.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -5262,7 +5647,159 @@
         ],
         "reason": "Structurally clean franchise model that brings genuine value to underserved regional diaspora communities, but the master franchisee's commercial incentive to overstate market size and projected returns to close sub-franchise deals creates a real truthful-claims risk against the most financially exposed stakeholder.",
         "fix": "Provide sub-franchisee prospects with verified, conservative market data (ABS census diaspora counts, comparable QSR performance in similar-sized towns) and include a written due-diligence disclosure in every sub-franchise agreement — no projected-revenue figures that are not independently sourced.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
+      }
+    },
+    {
+      "key": "plotproof-india-eudr-due-diligence-data-layer-for-indian-com",
+      "name": "PlotProof India — EUDR due-diligence data layer for Indian commodity exporters",
+      "shape": "data-api",
+      "source_channel": "regulatory-forced-buyers",
+      "one_liner": "WhatsApp-first farm-plot geolocation capture + satellite deforestation screening + auto-generated EU Due Diligence Statements for Indian coffee/rubber/cocoa/spice/wood exporters facing the Dec 30, 2026 EUDR deadline.",
+      "the_insight": "The binding constraint is not EU-side compliance software (TraceX, osapiens, Satelligence already exist) — it is plot-level data acquisition inside Indian smallholder supply sheds. Exporters buy through 2-3 aggregation layers and hold zero geo-coordinates for the actual farms; the EUDR requires high-precision plot geolocation vs a Dec 31, 2020 cutoff. Whoever builds the verified plot registry for Karnataka/Kerala coffee, Kerala/Tripura rubber and spice belts becomes the ground-truth data layer every EU-side tool must license. The compliance SaaS is crowded; the India ground-truth dataset is not — and Ashish's India network plus a partner-operator model fits the field-collection side.",
+      "monetization": "Per-Due-Diligence-Statement filing fee + annual platform subscription per exporter; data licensing of the verified plot registry to EU-side compliance platforms",
+      "surviving_wedge": "Small unorganized coffee exporters in Chikmagalur/Wayanad who want EU access but aren't Fairtrade-certified and won't adopt TraceX — but this wedge is <2% of regional volume, unattractive unit economics ($100-500K annual exporter revenue), and defensible for only 12-18 months before agritech competition undercuts it",
+      "demand_evidence": "India's coffee exports to EU are $2B+/year with EUDR Dec 30, 2025 deadline requiring plot-level geolocation data from 80% smallholder-driven supply chains — Coffee Board of India (2025-26 projections), TraceX EUDR guides, EU Green Forum implementation docs",
+      "market_size": "India's EUDR-affected commodity exports ~$5-8B/year; addressable market for India-specific plot data layer estimated $50-200M at peak, but constrained by free alternatives (Fairtrade, Rubber Board) and well-funded competitors (TraceX)",
+      "scores": {
+        "demand": 3,
+        "moat": 2,
+        "founder_fit": 2,
+        "speed_to_cash": 2,
+        "profit_ceiling": 2,
+        "competition_shape": 2
+      },
+      "composite": 2.25,
+      "verified_composite": 2.25,
+      "verify_flag": "unverified",
+      "verdict": "RED",
+      "confidence": "high",
+      "fact_checks": [],
+      "fact_status": "unchecked",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.25,
+          "verified_composite": 2.25
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.597,
+        "fitLoadBearing": 0.611,
+        "conviction": 2.65,
+        "tier": "PARK",
+        "dealbreakers": [
+          "defensible-moat",
+          "survive-constraint-shifts"
+        ],
+        "coverage": "31/42",
+        "verdict": "Conditional watch, not a back: real forced demand and a clean deadline-anchored offer, but the idea as scoped has no defensible moat against several already-funded global EUDR-compliance players and its entire urgency engine rests on one EU deadline with a track record of slipping — Basesh/Robbins would want a proprietary-data/distribution moat and a non-EUDR pivot path proven before committing capital.",
+        "scoredAt": "2026-06-26"
+      }
+    },
+    {
+      "key": "care-minutes-guard-daily-compliance-analytics-for-regional-a",
+      "name": "Care-Minutes Guard — daily compliance analytics for regional Australian aged care",
+      "shape": "ai-saas",
+      "source_channel": "australia-local-gaps",
+      "one_liner": "Roster-and-timesheet-fed analytics that computes per-resident RN/care minutes against the mandatory 215-min (44 RN-min) standard daily, flags audit-failure risk early, and assembles ACQSC evidence packs before unannounced audits hit.",
+      "the_insight": "Since Oct 2024 the 24/7 RN + 215-min mandate is enforced via unannounced Aged Care Quality and Safety Commission audits with sanctions and accreditation loss — but with a 38,000-worker shortage, most facilities drift non-compliant on individual days and only discover it at quarterly payroll reconciliation, after the exposure exists. The wedge is DAILY variance detection plus agency-staff cost optimization, sold to regional/independent operators the enterprise consultancies ignore. Key validation risk to prove out: Mirus Australia already does care-minute optimization for large operators — the gap to confirm is the 60-200-bed regional/SME segment priced out of enterprise tooling.",
+      "monetization": "AU$700-1,500/facility/month SaaS + audit-prep evidence-pack add-on; benchmark-data tier for peak bodies",
+      "surviving_wedge": "Only viable pivots require moving AWAY from pure SaaS care-minute tracking (a commodity product with Statura already competitive):\n\n1. **Managed compliance audit service** (software + human auditor partner): Position as \"outsourced compliance officer for regional operators.\" Hybrid model (software for daily tracking + quarterly third-party audit + evidence pack assembly). Higher price ($30-50K/year), defensible by human expertise.\n\n2. **Vertical specialization** (not-for-profit aged care, faith-based providers, single state/region only): Build category authority in a specific sub-segment where generic competitors ignore.\n\n3. **Rostering integration play** (not standalone tool): Deep API integration with existing rostering + HR systems to surface care-minute compliance as a BY-PRODUCT of staffing decisions (not separate module). Requires partner distribution strategy.\n\n**Current concept (standalone SaaS for regional operators) is NOT a surviving wedge.** Statura already owns that segment with better pricing, regulatory certainty, and faster implementation. Founder would be racing against an entrenched competitor with no clear advantage.",
+      "demand_evidence": "**Core claim being tested:** \"Regional/independent 60-200-bed operators are priced out of enterprise compliance tooling, creating a gap for daily care-minute variance detection.\"\n\n**Verdict on demand: PARTIALLY VALIDATED, WEDGE CLAIM CONTRADICTED**\n\n**Real demand signals:**\n- 215-min + 44 RN-min per resident per day standard enforced since October 1, 2024 (Aged Care Act 2024, commenced Nov 1, 2025)\n- ACQSC unannounced audits 1+ per year for every accredited facility; civil penalties up to $1.65M for body corporates; accreditation loss = loss of government funding\n- Real pain point: Providers drift non-compliant on individual days but only discover it at quarterly payroll reconciliation (when exposure already exists)\n- Regional/SME operators report compliance burden as acute pain point; governance/compliance interpretation difficult with limited staff\n\n**Critical gap in wedge claim:**\n- **Claim:** Regional 60-200-bed operators \"priced out of enterprise tooling\"\n- **Finding:** Statura Care explicitly targets this segment at $9-24/bed/month ($900-2,400/month for 100-bed facility = $10.8K-28.8K/year). Statura is purpose-built for Aged Care Act 2024 and markets directly to regional/SME providers with a progressive adoption model.\n- **Implication:** The \"priced out\" wedge does NOT appear to exist as stated. Statura is already serving regional operators at accessible pricing.\n\n**Market consolidation pressure (negative signal):**\n- 642 aged care providers total (FY24); top 10 operate 44.7% of all places\n- 21 providers exited the market in FY24 (3.2% decline in one year)\n- Regional operators identified as financially vulnerable; KPMG predicts \"some smaller providers exiting the market while medium-sized organizations focus on growth\"\n- This suggests TAM is SHRINKING for regional independent operators, not expanding\n\n**Single most load-bearing claim:** \n**Statura Care's $9/bed/month pricing for Aged Care Act 2024-compliant software directly contradicts the \"priced out\" wedge claim.** Evidence: https://statura.care/blog/best-aged-care-compliance-software-australia",
+      "market_size": "\"$38.7 billion Australian aged care market (2026). Aged Care Residential Services industry: 1,887 businesses (2026), with 642 active providers as of FY24. Regional/SME segment (60-200 bed operators outside top 10): estimated 200-300 providers. Care-minute compliance software TAM estimated $500M-1B globally, Australia subset ~$30-50M annually. However, market is consolidating: 21 providers exited FY24; regional operators under financial pressure.\" (Sources: IBISWorld, KPMG 2026, AIHW Gen)",
+      "scores": {
+        "demand": 3,
+        "moat": 2,
+        "founder_fit": 2,
+        "speed_to_cash": 2,
+        "profit_ceiling": 2,
+        "competition_shape": 2
+      },
+      "composite": 2.25,
+      "verified_composite": 2.25,
+      "verify_flag": "unverified",
+      "verdict": "RED",
+      "confidence": "high",
+      "fact_checks": [],
+      "fact_status": "unchecked",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.25,
+          "verified_composite": 2.25
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.635,
+        "fitLoadBearing": 0.688,
+        "conviction": 2.76,
+        "tier": "WATCH",
+        "dealbreakers": [
+          "survive-constraint-shifts"
+        ],
+        "coverage": "26/42",
+        "verdict": "Partial back at best: real forced pain and good timing, but as described it's a feature bolted onto a niche, regulation-pegged market already served by incumbent aged-care software — needs a clearer moat and TAM/adjacency story before Basesh/Robbins/Masters Union operators would fund it over the incumbents.",
+        "scoredAt": "2026-06-26"
+      }
+    },
+    {
+      "key": "trades-pipeline-act-working-title",
+      "name": "Trades Pipeline ACT (working title)",
+      "shape": "productized-service",
+      "source_channel": "australia-local-gaps",
+      "one_liner": "Construction-trades apprenticeship recruitment and placement service for ACT/regional NSW — building a candidate funnel of school leavers and career-changers, packaging them with the $10K federal Key Apprentice incentive, and placing them into builders who can't fill half their vacancies.",
+      "the_insight": "Construction trades are Australia's worst-filled skill group (54.3% fill rate) exactly as 120,000 new jobs land by 2026 — and the federal government now pays apprentices $10K to enter housing construction, meaning candidate attraction is policy-subsidised while employer demand is desperate. Metro generalist recruiters don't chase regional apprentice placements, so a regional player who owns the candidate top-of-funnel (school partnerships, career-changer content, migrant channels) sells into a market where fill difficulty supports premium fees. Ashish is physically in Canberra; the content-audience funnel doubles as a near-zero-CAC candidate source.",
+      "monetization": "Employer placement fees AUD $4-10K per apprentice + retained candidate-pipeline subscriptions for GTOs and volume builders",
+      "surviving_wedge": "Niche into migrant skilled trades apprenticeship pathway + visa sponsorship (less crowded than school-leaver/career-changer segments; Master Builders doesn't specialize here). Unique value chain: visa navigation + apprenticeship placement + employer sponsorship. BUT this amplifies founder domain-knowledge gap further, so still NOT recommended for current founder.",
+      "demand_evidence": "Trades and technical roles have a vacancy fill rate of just 54.3%, well below the national average of 70.2% — source: Major Training Group 2026 trades demand report. This gap (for every 3 jobs, &lt;2 filled) is the load-bearing demand metric; all downstream value (KAP $10K incentive, employer desperation, 126K shortage by 2027) follows from this.",
+      "market_size": "Australian construction labour market: 300,000-worker shortfall by 2027; 126,000 trades/labourers shortage mid-2027. Housing Accord targets 1.2M homes over 5 years (government-backed). Canberra ACT: ~5,512 construction businesses, 13,200 workers (2017-18 baseline; likely grown). Realistic addressable market for regional apprentice placement: 250–500 placements/year in ACT+regional NSW = $875K–2.5M revenue potential at maturity (Year 5).",
+      "scores": {
+        "demand": 5,
+        "moat": 2,
+        "founder_fit": 2,
+        "speed_to_cash": 3,
+        "profit_ceiling": 3,
+        "competition_shape": 3
+      },
+      "composite": 3.2,
+      "verified_composite": 2.24,
+      "verify_flag": "downgrade",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "Trades and technical roles have a vacancy fill rate of just 54.3%, well below the national average of 70.2% — source: Major Training Group 2026 trades demand report. This gap (for every 3 jobs, &lt;2 filled) is the load-bearing demand metric; all downstream value (KAP $10K incentive, employer desperation, 126K shortage by 2027) follows from this.",
+          "verified": "true",
+          "source": "https://www.jobsandskills.gov.au/publications/occupation-shortage-report-march-2026"
+        }
+      ],
+      "fact_status": "verified",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 3.2,
+          "verified_composite": 2.24
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.8,
+        "fitLoadBearing": 0.625,
+        "conviction": 3.29,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "26/42",
+        "verdict": "Conditional no as scoped — it rides a genuine, well-timed government tailwind and has a clean, low-capex offer worth testing, but it enters an already-established GTO/placement category with no described moat (no proprietary tech, data, licence, or network effect); strategists would want to see a real differentiation lever (e.g. exclusive employer panel, GTO accreditation, or proprietary candidate/completion data) before backing it as more than a lifestyle brokerage.",
+        "scoredAt": "2026-06-26"
       }
     },
     {
@@ -5306,7 +5843,7 @@
         "dealbreakers": [],
         "coverage": "28/42",
         "verdict": "Strategists would call this a well-timed regulatory wedge with a real TAM and a clean MVP path — worth a lean pilot — but would withhold conviction backing until the founder demonstrates (a) 20+ NBFC or trader pilots confirming willingness to pay, (b) a clear distribution channel that does not depend entirely on TReDS platform gatekeepers, and (c) a 12-month moat narrative beyond the GST-pull pipeline that a Perfios or Razorpay Capital cannot replicate once they notice traction.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -5317,7 +5854,7 @@
         ],
         "reason": "RecivAbl directly serves India's most financially marginalised traders by converting their existing data into a tool that gives them access to credit they are legally entitled to but practically locked out of — this is textbook Tata trusteeship: using business to correct a structural unfairness, not to profit from it.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       },
       "validation": {
         "verdict": "KILL",
@@ -5352,6 +5889,67 @@
         ],
         "depth": "triage",
         "validatedAt": "2026-06-16"
+      }
+    },
+    {
+      "key": "clearship-au",
+      "name": "ClearShip AU",
+      "shape": "productized-service",
+      "source_channel": "physical-trade-import-export",
+      "one_liner": "A per-shipment pre-clearance documentation audit for Indian food and handicraft exporters to Australia — catches HS code mismatches, weight discrepancies, and lot-number errors before goods leave India, eliminating the 5-14 day DAFF biosecurity holds costing $500+/day in AU port storage.",
+      "the_insight": "Australian DAFF (Department of Agriculture, Fisheries and Forestry) holds shipments not because goods fail biosecurity but because the paperwork does not match the cargo exactly — wrong HS code, weight off, lot number mismatch. These documentation errors are 100% preventable before departure from India, but standard Indian freight forwarders have no Australia-specific DAFF knowledge and no financial incentive to spend extra time on it. The result is a 5-14 day storage bill at $500+/day (documented by Omega Cargo AU 2026) that destroys the margin on an entire consignment. The wedge is a corridor-specific service living entirely on the India side: a DAFF-knowledgeable human-plus-agent team that checks every document line-by-line before the ship leaves port. An Indian freight forwarder in Mumbai cannot offer this expertise; an Australian customs broker operates too late (goods already in AU waters). ClearShip AU sits in the gap between the two, and the India-Australia corridor knowledge is the non-clonable moat.",
+      "monetization": "Per-shipment flat fee (Rs 8,000-15,000 per Bill of Lading reviewed, priced well below one day of AU port storage at $500 = ~Rs 41,000). Volume retainer for exporters sending 4+ shipments per month (Rs 25,000-40,000/month). Freight-forwarder white-label partnership where the forwarder bundles the audit into their AU-lane service and marks it up, so ClearShip AU earns the base fee without direct sales effort.",
+      "surviving_wedge": "Pre-clearance documentation audit for India→Australia food/handicraft exports, living on India side, targeting DAFF biosecurity document verification (HS codes, weights, lot numbers, certificates) BEFORE shipment departure. Moat: DAFF-specific knowledge + timezone/corridor presence. Does NOT compete with freight forwarders or AU customs brokers; fills the gap between Indian forwarders (lack DAFF expertise) and AU brokers (operate too late).",
+      "demand_evidence": "**LOAD-BEARING CLAIM:** \"A single missing digit on a paperwork code can cost Australian importers over $500 per day in port storage fees.\" SOURCE: Omega Cargo (omegacargo.com.au/common-customs-clearance-delays-in-australia/). SECONDARY: 60-70% of shipments contain at least one documentation error (Omega Cargo, verified). TERTIARY: Spices/food with documentation mismatches face 5-30 day holds (Tradologie, DAFF biosecurity sources). CHECKABLE: Contact 3 Indian spice exporters currently exporting to Australia; ask cumulative cost of last 3 documentation-triggered delays. Expected answer: $2-10K per incident, 1-2× per year = real pain.",
+      "market_size": "India-Australia bilateral trade: USD 4.85B (India exports, FY26). Agro-food/spice exports: ~$9M spices + growing fruit/vegetable/coffee exports; bilateral agro trade estimated $200-400M (subset of above 4.85B). Export Compliance Services Market: $3.8B globally (2026) → $8.74B by 2035 (12% CAGR). Asia-Pacific Customs Clearance: $16.2B (2025) → $24.5B (2033), 6% CAGR. **Addressable wedge (India→Australia food/handicraft pre-clearance audits):** Conservatively 5-10% of India-Australia agro exports = $10-40M/year in shipment volume (5,000-15,000 containers/year at ~$500 audit fee per = $2.5-7.5M serviceable market). Post-Jan-2026 zero-tariff, trade expected to accelerate.",
+      "scores": {
+        "demand": 4,
+        "moat": 3,
+        "founder_fit": 2,
+        "speed_to_cash": 3,
+        "profit_ceiling": 3,
+        "competition_shape": 3
+      },
+      "composite": 3.15,
+      "verified_composite": 2.2,
+      "verify_flag": "downgrade",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "**LOAD-BEARING CLAIM:** \"A single missing digit on a paperwork code can cost Australian importers over $500 per day in port storage fees.\" SOURCE: Omega Cargo (omegacargo.com.au/common-customs-clearance-delays-in-australia/). SECONDARY: 60-70% of shipments contain at least one documentation error (Omega Cargo, verified). TERTIARY: Spices/food with documentation mismatches face 5-30 day holds (Tradologie, DAFF biosecurity sources). CHECKABLE: Contact 3 Indian spice exporters currently exporting to Australia; ask cumulative cost of last 3 documentation-triggered delays. Expected answer: $2-10K per incident, 1-2× per year = real pain.",
+          "verified": "unclear",
+          "source": "https://omegacargo.com.au/common-customs-clearance-delays-in-australia/"
+        }
+      ],
+      "fact_status": "unverified",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-26",
+          "composite": 3.15,
+          "verified_composite": 2.2
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.853,
+        "fitLoadBearing": 0.556,
+        "conviction": 3.76,
+        "tier": "PURSUE",
+        "dealbreakers": [],
+        "coverage": "31/42",
+        "verdict": "ClearShip AU solves a real, quantified pain on a growing trade corridor with a minimal-capex entry, but these strategists would not back it at scale: it is a services business with no moat, linear labour costs, and a narrow TAM — the ceiling is a sustainable lifestyle consultancy, not a fundable venture, unless the founder rapidly builds a software/data layer that automates the audit and creates proprietary error-pattern data across shipments.",
+        "scoredAt": "2026-06-26"
+      },
+      "tata": {
+        "verdict": "pass",
+        "failed_tests": [],
+        "concerns": [],
+        "reason": "ClearShip AU is a straightforward compliance-audit service that saves Indian exporters real money by catching documentation errors before they trigger costly port holds — it creates genuine value, charges a transparent flat fee priced well below the problem it solves, serves the customer's interest directly, and has no structural incentive to deceive, exploit, or cut corners.",
+        "fix": "",
+        "scoredAt": null
       }
     },
     {
@@ -5406,7 +6004,7 @@
         ],
         "coverage": "32/42",
         "verdict": "The strategists would see a competent low-risk content experiment but NOT a fundable or high-conviction business — the timing tailwind and Hindi gap are real, the moat is non-existent, and the India RPM math means it only becomes a real business if the 'eventual branded product' is front-loaded to Day 60, not left as an afterthought.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -5418,7 +6016,173 @@
         ],
         "reason": "Legitimate skills-education for a real audience need — passes all weight-3 gates — but the \"ATS-bypass\" framing risks sliding from honest formatting advice into teaching deceptive keyword-stuffing that harms employers and ultimately the job seeker when they land a role they can't perform.",
         "fix": "Reframe 'ATS bypass' explicitly as 'ATS optimisation' — teach honest formatting, clear language, and legitimate keyword alignment so qualified candidates are seen by the right employers; never teach misrepresentation or inflation of credentials; disclose all affiliate relationships prominently; only recommend tools you've vetted for genuine value; and frame auto-apply content around smart targeting (fewer, well-matched applications) not volume-as-strategy.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
+      }
+    },
+    {
+      "key": "voice-agent-compliance-lab-working-title",
+      "name": "Voice Agent Compliance Lab (working title)",
+      "shape": "productized-service",
+      "source_channel": "ai-frontier-gaps",
+      "one_liner": "Picks-and-shovels compliance service for the voice-AI boom — fixed-fee pre-deployment audits (HIPAA/GDPR/TCPA), audit-trail and retention configuration, and monitoring retainers for agencies and regulated enterprises shipping voice agents.",
+      "the_insight": "86-89% of voice-agent pilots die before production with governance cited as the primary blocker, and the platforms themselves (Retell, Trillet) document that redaction, audit logging, and retention controls are missing — so every voice-AI agency selling into healthcare/legal needs a third-party compliance layer to close deals, and every regulated buyer needs sign-off to deploy. One $2.3M HIPAA fine over a 90-day-vs-30-day log-retention miss is the entire sales deck. Sell shovels to the agencies, not just end-buyers: a repeatable audit methodology plus a recognizable 'compliance seal' becomes a certification brand agencies pay to display, delivered by an India ops team executing checklists with AI — no product build required.",
+      "monetization": "Fixed-fee pre-deployment audits US$5-15K + ongoing monitoring retainers $500-2K/mo + agency certification/partner program fees",
+      "surviving_wedge": "White-label pre-deployment compliance audits for voice AI agencies selling into UK/EU/Canada regulated markets (healthcare/legal). Agencies need independent compliance certification to close regulated deals. $5K–$15K per audit, resell through agency partner channels. Requires regulatory expertise + buyer relationships Ashish does not have.",
+      "demand_evidence": "78% of AI agent pilots never reach production; 60% of voice agents that pass demo fail within 90 days of production launch (AutoInterviewAI 2026). Governance/compliance identified as ONE of five gaps accounting for 89% of scaling failures, alongside legacy integration, output degradation, monitoring infrastructure, and unclear ownership (ZenVanRiel 2026). Documented HIPAA fine: $2.3M for voice AI logging 90-day vs. required 30-day retention window (retellai.com 2026). Source: https://zenvanriel.com/ai-engineer-blog/ai-agent-scaling-gap-pilot-production-2026/; https://www.autointerviewai.com/blog/ai-voice-agent-demo-production-gap-failure-modes-2026",
+      "market_size": "Global voice AI market: $4.8B (Q1 2026) → $35.24B by 2033 at 39–47% CAGR. Healthcare segment (fastest-growing vertical): $468M (2024) → $3.18B (2030) at 37.79% CAGR. Law firms + medical practices: 38–41% adoption rates. Total addressable compliance-audit market (subset of voice AI): estimated $200–400M by 2030, fragmented across consulting, platforms, and niche auditors.",
+      "scores": {
+        "demand": 3,
+        "moat": 1,
+        "founder_fit": 1,
+        "speed_to_cash": 3,
+        "profit_ceiling": 2,
+        "competition_shape": 2
+      },
+      "composite": 2.1,
+      "verified_composite": 2.1,
+      "verify_flag": "unverified",
+      "verdict": "RED",
+      "confidence": "high",
+      "fact_checks": [],
+      "fact_status": "unchecked",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.1,
+          "verified_composite": 2.1
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.824,
+        "fitLoadBearing": 0.625,
+        "conviction": 3.34,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "28/42",
+        "verdict": "Conditional interest, not a backable business yet: the timing/tailwind and offer clarity are genuinely strong, and it lands in exactly the high-stakes trust category these strategists like — but as a pure audit-and-retainer service it has no described moat, so Basesh/Robbins-style operators would withhold real backing until it shows a path to proprietary lock-in (e.g., productized monitoring software, a recognized certification mark, or exclusive enterprise relationships) rather than competing purely on expertise and price.",
+        "scoredAt": "2026-06-26"
+      }
+    },
+    {
+      "key": "paybridge-creators-deal-to-payout-rail-for-foreign-brands-hi",
+      "name": "PayBridge Creators — deal-to-payout rail for foreign brands hiring Indian creators",
+      "shape": "ai-saas",
+      "source_channel": "creator-economy-tools",
+      "one_liner": "One workflow for AU/US/UK SMB brands running Indian creator campaigns: contracts, deliverable tracking, India tax paperwork (TDS/GST export invoices/FIRC), and settlement over Xflow/Payoneer rails — without building a licensed payments company.",
+      "the_insight": "The licensed rails just arrived (Xflow holds an RBI PA-CB license with Stripe/PayPal backing; Payoneer received in-principle RBI cross-border authorization; Instagram Creator Marketplace went live in India Feb 2026) but nobody has built the workflow layer on top. An Australian brand hiring 20 Indian micro-creators today juggles DMs, Word contracts, GST export invoices the creator can't produce, Section 195/TDS withholding questions, and wire fees. Because the payments licensing burden sits with the rails, the startup only builds workflow + compliance documents — and the unglamorous Indian tax paperwork is precisely the moat US competitors (Makrwatch, 1stCollab) won't touch. Corridor founder-fit is direct.",
+      "monetization": "3-5% take rate on payout volume + brand-side SaaS at $99-499/month; premium tier for agencies managing multi-creator campaigns",
+      "surviving_wedge": "Tax + workflow automation for foreign brands hiring Indian creators. Automates Section 195 TDS compliance, GST export invoice generation, and settlement reconciliation. Australia-to-India creator hiring corridor is real (919% creator role growth, AU-INR favorable). BUT low-urgency demand (brands DIY today) + founder domain mismatch (requires CA/payments expertise, not travel/strategy) + high acquisition risk from Makrwatch/1stCollab adding tax in 1 sprint.",
+      "demand_evidence": "India creator economy hiring surged 919% between 2020-2026 as companies move influencer roles in-house (Indeed Hiring Report 2026). Payment infrastructure unlocked: Xflow raised $16.6M with RBI PA-CB license (Feb 2026), Payoneer got RBI authorization (Jan 2026). But no platform automates Section 195 TDS + GST export invoicing for foreign brands paying Indian creators. Brands today use spreadsheets or DIY tax.",
+      "market_size": "India creator economy USD 15.03B (2026) → USD 61.87B (2033, CAGR 22.4%). Influencer marketing ₹3,500-4,500 crore (2025-27). TAM (foreign brands hiring Indian creators): ~10,000 active AU/US/UK SMBs × $300-1,000/yr SAAS = $3-10M addressable. Niche but profitable. Payment volume: If average brand spends ₹5L/year hiring creators, 10K brands = ₹500cr total transaction volume; PayBridge captures 1-2% workflow fees = ₹50-100cr opportunity (but consolidation risk high).",
+      "scores": {
+        "demand": 3,
+        "moat": 4,
+        "founder_fit": 2,
+        "speed_to_cash": 2,
+        "profit_ceiling": 3,
+        "competition_shape": 3
+      },
+      "composite": 2.95,
+      "verified_composite": 2.07,
+      "verify_flag": "downgrade",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "India creator economy hiring surged 919% between 2020-2026 as companies move influencer roles in-house (Indeed Hiring Report 2026). Payment infrastructure unlocked: Xflow raised $16.6M with RBI PA-CB license (Feb 2026), Payoneer got RBI authorization (Jan 2026). But no platform automates Section 195 TDS + GST export invoicing for foreign brands paying Indian creators. Brands today use spreadsheets or DIY tax.",
+          "verified": "true",
+          "source": "https://www.medianews4u.com/indias-creator-economy-hiring-surges-919-as-brands-move-influencer-roles-in-house-indeed/"
+        }
+      ],
+      "fact_status": "verified",
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-09",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-07-09",
+          "composite": 2.95,
+          "verified_composite": 2.07
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.696,
+        "fitLoadBearing": 0.688,
+        "conviction": 2.85,
+        "tier": "WATCH",
+        "dealbreakers": [
+          "defensible-moat"
+        ],
+        "coverage": "28/42",
+        "verdict": "Real pain, thin moat — Basesh/Robbins would want proof of paying demand before funding, and the Masters Union operators would flag that skipping the payments license removes the one structural moat this category needs; worth a scrappy paid pilot with 10-20 brands before any real bet.",
+        "scoredAt": "2026-06-26"
+      }
+    },
+    {
+      "key": "crossearner-india",
+      "name": "CrossEarner India",
+      "shape": "content-audience",
+      "source_channel": "cross-border-digital",
+      "one_liner": "A fully faceless Hindi-English YouTube channel and weekly newsletter for India-based professionals earning in USD/GBP/EUR — covering FEMA compliance, LUT annual re-filing, GSTR-3B export exemptions, and forex holding workarounds that Wise and Revolut won't tell you.",
+      "the_insight": "NRI Money Desk targets the 32M diaspora abroad; FEMAPath targets the filing tool buyer. Neither targets the fast-growing cohort of India-RESIDENT freelancers, remote workers, and contractors now earning cross-border — a group that has exploded because the H-1B freeze (zero consulate dates through end 2026, 9.1K placements vs 21.2K in 2025) is pushing US employers to hire India contractors instead. This cohort faces a unique compliance tangle: LUT must be re-filed annually before April 1 or every export invoice risks 18% IGST; GSTR-3B is now hard-locked/auto-populated (Jul 2025) blocking manual adjustments; Wise India auto-converts all inbound forex to INR (can't hold USD); Revolut is not RBI-licensed for Indian retail. No Hindi or English media brand addresses this specific intersection — the queries are high-intent (LUT filing, FEMA freelancer, USD income India tax) with minimal content competition, unlike NRI taxation which is crowded.",
+      "monetization": "AdSense (high-CPM finance vertical) + affiliate (forex platforms like xflowpay, Payoneer, HDFC Forex; GST software like Zoho Books, ClearTax) + a ₹499/mo paid Telegram community with templated LUT/15CA/15CB checklists + annual LUT season spike content",
+      "surviving_wedge": "Hindi-language faceless YouTube channel + newsletter for India-resident cross-border contractors (NOT diaspora). Weekly content: LUT annual renewal calendar, GSTR-3B export step-by-step (contractor-specific), Wise/Revolut/alternatives comparison, FEMA compliance roadmap. Monetization: Wise/Skydo affiliate (day 1), YouTube ads (3–6 months), paid course \"Compliance Playbook\" (6–12 months). First-mover in Hindi creator space for this specific audience (real gap), but requires non-negotiable co-founder CA or trusted advisor for accuracy.",
+      "demand_evidence": "India has 15M freelancers (CII ETS India Skills Report 2026) with 32,000+ new cross-border contractor jobs added by FAANG during 2025 (+18% YoY) driven by H-1B fee increase ($5K→$100K) and tighter scrutiny. High-intent compliance keywords (LUT, GSTR-3B, FEMA) have search volume, but existing demand is served by fragmented English blog posts (ClearTax, Incorpx) and fintech guides (Wise, Skydo), not creator content. The core claim: \"no Hindi creator brand addresses LUT/GSTR-3B/FEMA intersection\" — validated by WebSearch finding zero dedicated YouTube channel, only one generic GSTR-3B Hindi tutorial playlist. Unproven: whether India-resident contractors will watch compliance YouTube instead of reading a guide or hiring a CA.",
+      "market_size": "India freelancer population: 12–15 million (2026), projected 23.5–24 million by 2029–2030 (CII ETS). Broader freelance services market: USD 25 billion by 2026. High-intent earning cohort: 23% of freelancers earn ₹40+ lakh/year (~$4,800+/month USD). H-1B → India contractor shift: 32,000+ new jobs 2025, FAANG committed $52.5B+ for India expansion. India supplies 24% of global freelance talent. Growth: 46% YoY in segments, project-based hiring +38% YoY.",
+      "scores": {
+        "demand": 4,
+        "moat": 2,
+        "founder_fit": 1,
+        "speed_to_cash": 4,
+        "profit_ceiling": 2,
+        "competition_shape": 3
+      },
+      "composite": 2.85,
+      "verified_composite": 2,
+      "verify_flag": "downgrade",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "India has 15M freelancers (CII ETS India Skills Report 2026) with 32,000+ new cross-border contractor jobs added by FAANG during 2025 (+18% YoY) driven by H-1B fee increase ($5K→$100K) and tighter scrutiny. High-intent compliance keywords (LUT, GSTR-3B, FEMA) have search volume, but existing demand is served by fragmented English blog posts (ClearTax, Incorpx) and fintech guides (Wise, Skydo), not creator content. The core claim: \"no Hindi creator brand addresses LUT/GSTR-3B/FEMA intersection\" — validated by WebSearch finding zero dedicated YouTube channel, only one generic GSTR-3B Hindi tutorial playlist. Unproven: whether India-resident contractors will watch compliance YouTube instead of reading a guide or hiring a CA.",
+          "verified": "unclear",
+          "source": "https://www.india.com/technology/big-tech-bets-on-india-as-h-1b-rules-tighten-meta-google-amazon-add-32-000-jobs-in-2025-8245513/"
+        }
+      ],
+      "fact_status": "unverified",
+      "first_seen": "2026-06-25",
+      "last_seen": "2026-06-25",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-25",
+          "composite": 2.85,
+          "verified_composite": 2
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.738,
+        "fitLoadBearing": 0.7,
+        "conviction": 3.4,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "35/42",
+        "verdict": "Interesting niche with real timing and zero launch cost, but these strategists would not back it yet — the compliance category demands trust infrastructure it structurally lacks, the moat is thin enough for any well-resourced CA firm or fintech to neutralize within a year, and there is no defined revenue engine beyond ad-hoc sponsorships; the right move is to validate one paying product (a ₹999 LUT-filing checklist or a CA-referral partnership) before building the content flywheel, not after.",
+        "scoredAt": "2026-06-26"
+      },
+      "tata": {
+        "verdict": "conditional",
+        "failed_tests": [],
+        "concerns": [
+          "The 'workarounds' framing in the one-liner risks implying regulatory circumvention rather than legal-but-underexplored strategies — if content tips even subtly toward advising users to breach FEMA holding rules or misclassify income, users bear the regulatory penalty while the channel earns the affiliate commission, which fails the public-scrutiny and safety tests.",
+          "Compliance checklists (LUT/15CA/15CB templates) can become dangerous if not kept current as GST/FEMA rules evolve — stale templates silently mislead users who trust them."
+        ],
+        "reason": "Legitimate education business serving a real compliance pain point for sophisticated professionals — passes all core integrity gates cleanly, with one conditional: the \"workarounds Wise and Revolut won't tell you\" framing must mean legal-but-obscure strategies, never guidance that nudges users into FEMA violations that expose them to RBI penalties while the channel profits safely from ad revenue.",
+        "fix": "At launch, codify a content policy: every \"workaround\" covered must be verified as RBI/FEMA-compliant and cited to the relevant regulation or RBI circular; every video and newsletter carries a visible \"education only, not CA/legal advice\" disclaimer; affiliate disclosures are explicit on every piece; and compliance templates carry a \"verify currency — rules change\" warning updated at least annually.",
+        "scoredAt": null
       }
     },
     {
@@ -5465,7 +6229,7 @@
         ],
         "coverage": "28/42",
         "verdict": "Robbins/Masters Union/Basesh Gala would admire the regulatory insight and timing but would not back this at current form — the moat is a paper wall (any GRC incumbent adds this module the moment ProofTrail proves demand), the business is a single regulatory window with no structural fallback, and the GTM requires selling invisible liability to developers who have zero urgency until enforcement creates a visible victim. The idea is a strong CONSULTING play or a feature inside a broader AI governance platform, not a standalone venture-scale SaaS.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "pass",
@@ -5473,7 +6237,7 @@
         "concerns": [],
         "reason": "ProofTrail helps AI builders comply with real legal obligations (AB 2013, EU AI Act) through honest disclosure infrastructure — it reduces regulatory risk for customers, promotes transparency in the AI ecosystem, and profits from genuine value delivery rather than fear, confusion, or exploitation.",
         "fix": "",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -5520,7 +6284,7 @@
         ],
         "coverage": "28/42",
         "verdict": "These strategists would not back this yet — the ECTA tailwind is real and the timing is right, but the business structurally competes on a regulatory price advantage any importer can replicate, with no moat, high pre-revenue capex, and zero demand validation; fix those three before committing capital.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -5532,7 +6296,133 @@
         ],
         "reason": "StepIndia is a legitimate B2B import-distribution business creating real value — connecting Indian artisan manufacturers to Australian buyers via a genuine trade-policy tailwind — but the territory-exclusivity-fee model and supply-chain opacity create two specific integrity risks: Indian manufacturers (often SMEs with low bargaining power) may be locked into one-sided terms they can't escape, and downstream claims about labour standards/working conditions at Indian tanneries could be made without verification.",
         "fix": "Publish fair, time-limited exclusivity contracts with clear exit rights for manufacturer partners; independently verify (and disclose) labour and environmental practices at sourcing units before making any \"ethical sourcing\" or \"Made in India with pride\" claims — if verification isn't done, omit those claims entirely.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
+      }
+    },
+    {
+      "key": "bharatgrant-pulse",
+      "name": "BharatGrant Pulse",
+      "shape": "content-audience",
+      "source_channel": "govt-india",
+      "one_liner": "A fully automated weekly newsletter that curates every new Indian government grant, scheme, and incentive (MeitY IndiaAI, PLI, MSME CGTMSE, DST, DPIIT) for Indian tech founders and MSME operators — the GovMoney Digest for India's massive government-money-deployment cycle.",
+      "the_insight": "India's government is deploying over ₹10,372 crore through MeitY alone in 2026-27, with ₹10+ crore startup grants (IndiaAI Innovation Programme, 2nd cohort open now), PLI scheme incentives across 14 sectors, and a ₹10,000 crore MSME Growth Fund — yet the discovery layer is completely fragmented across dozens of ministry websites, press releases, and scheme portals. The parallel to GovMoney Digest in Australia is exact: the money exists, the eligible founders do not know it exists, and no automated curation product has captured this audience. The wedge is not the grants themselves but the weekly curation and deadline alerting, which creates a high-intent subscriber base of exactly the founders that scheme-facilitators (CA firms, consultancies, accelerators) need to reach. The founder already runs this exact architecture in Australia — the India version is a copy of a proven playbook into a larger, faster-moving grants ecosystem.",
+      "monetization": "Free newsletter (audience build) then (1) sponsor slots sold to CA/CS firms, DPIIT-empanelled scheme-facilitators, startup accelerators, and coworking chains; (2) paid tier at Rs 499-999/month for deadline alerts and scheme-match filters by sector/state; (3) annual India Startup Grant Map report as a paid download.",
+      "surviving_wedge": "Weekly curated newsletter (email push) of newly opened government schemes + deadline alerts. Wedge is NOT discovery (StartupGrantsIndia owns that) but **convenience/filtering for a specific audience segment** (e.g., AI startups only, MSME manufacturers, women founders). Narrow positioning beats generic \"all schemes\" approach. Monetization via CA/consultant affiliate referrals (they buy leads) or freemium (free digest → paid premium for deadline alerts + application templates).",
+      "demand_evidence": "Real government deployment: ₹10,372 crore MeitY + ₹1.97 lakh crore PLI allocation + ₹10,000 crore MSME Growth Fund in 2026-27. 176 MSMEs already benefiting from PLI. Direct quote from the search findings: 'The biggest reason schemes go unused is that founders do not know they exist.' This confirms awareness as the limiting factor, not money availability. Sources: DPIIT PLI disbursement data (₹28,748 crore paid out as of Dec 2025), IndiaAI portal (cohort 2 open with ₹5 lakh per startup), and SMEStreet's MSME funding guide (2026). HOWEVER: the wedge is 'weekly newsletter curation' not 'money discovery'—StartupGrantsIndia already solved discovery via searchable directory.",
+      "market_size": "India's eligible universe: ~63 million registered MSMEs (Ministry of MSME) + 84,650 DPIIT-recognized startups. Total addressable market (high-intent, aware founders seeking non-dilutive capital) ≈ 5-8 million. Serviceable addressable market (willing to pay for weekly digest) ≈ 50K-150K founders + SME operators (assumes 1-3% conversion from total). Actual paying base needed to sustain newsletter at ₹2-5 CPM: 5K-10K subs @ ₹500-1,000/year. Market is large in absolute terms but fragmented by state, sector, and eligibility—no single buyer base.",
+      "scores": {
+        "demand": 3,
+        "moat": 2,
+        "founder_fit": 2,
+        "speed_to_cash": 2,
+        "profit_ceiling": 2,
+        "competition_shape": 3
+      },
+      "composite": 2.4,
+      "verified_composite": 1.68,
+      "verify_flag": "downgrade",
+      "verdict": "YELLOW",
+      "confidence": "medium",
+      "fact_checks": [
+        {
+          "claim": "Real government deployment: ₹10,372 crore MeitY + ₹1.97 lakh crore PLI allocation + ₹10,000 crore MSME Growth Fund in 2026-27. 176 MSMEs already benefiting from PLI. Direct quote from the search findings: 'The biggest reason schemes go unused is that founders do not know they exist.' This confirms awareness as the limiting factor, not money availability. Sources: DPIIT PLI disbursement data (₹28,748 crore paid out as of Dec 2025), IndiaAI portal (cohort 2 open with ₹5 lakh per startup), and SMEStreet's MSME funding guide (2026). HOWEVER: the wedge is 'weekly newsletter curation' not 'money discovery'—StartupGrantsIndia already solved discovery via searchable directory.",
+          "verified": "true",
+          "source": "https://www.business-standard.com/industry/news/govt-disburses-28-748-crore-under-14-pli-schemes-till-december-2025-126022000621_1.html"
+        }
+      ],
+      "fact_status": "verified",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-26",
+          "composite": 2.4,
+          "verified_composite": 1.68
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.588,
+        "fitLoadBearing": 0.5,
+        "conviction": 2.7,
+        "tier": "WATCH",
+        "dealbreakers": [
+          "survive-constraint-shifts"
+        ],
+        "coverage": "28/42",
+        "verdict": "These strategists would not back BharatGrant Pulse at this stage: the structural moat is absent (public-data aggregation is a feature, not a business), the government itself is the most dangerous competitor, and the market gap is incremental convenience rather than a defensible category — making it a good side-project or lead-magnet but not a standalone venture worth backing.",
+        "scoredAt": "2026-06-26"
+      },
+      "tata": {
+        "verdict": "pass",
+        "failed_tests": [],
+        "concerns": [],
+        "reason": "BharatGrant Pulse is a public-information aggregator that helps Indian founders and MSMEs navigate government schemes they are legally entitled to — it reduces information asymmetry between the state and citizens, adds genuine value, and its monetisation (sponsors, paid filters, reports) is straightforward and honest. No weight-3 gate is threatened: it does not exploit the vulnerable, makes no false claims, requires no bribery, and its entire value proposition survives full public scrutiny.",
+        "fix": "",
+        "scoredAt": null
+      }
+    },
+    {
+      "key": "agridealer-intel",
+      "name": "AgriDealer Intel",
+      "shape": "content-audience",
+      "source_channel": "yc-rfs-themes",
+      "one_liner": "A WhatsApp-first pest-and-inventory intelligence channel for India's 500K+ agricultural input dealers — free IMD and AICIP pest-alert data, curated weekly by crop and district, monetised by input-manufacturer sponsored alerts and a premium dealer subscription.",
+      "the_insight": "Agricultural input dealers stock ₹10–50L of pesticides and crop inputs per season with zero data on which SKUs will move in which districts — they rely on sales reps from manufacturers who have a conflict of interest. Government IMD and AICIP pest alert data is already public but is raw, untranslated, and reaches no dealer. A vernacular WhatsApp channel that digests official pest forecasts into 'buy X, hold Y, reduce Z' district-level signals is a zero-fabrication intelligence product the founder can build with agent tooling, requires no field sales to acquire (dealers share useful WhatsApp content virally within trade networks), and monetises via input-manufacturer sponsored alerts — the same model as agricultural radio programs that manufacturers have sponsored for decades.",
+      "monetization": "Phase 1: free audience build via useful pest-alert digests (WhatsApp broadcast list + Telegram). Phase 2: sponsored alerts from input manufacturers (Syngenta, BASF, Bayer CropScience, PI Industries) who already spend on dealer education — ₹50–200K/month per sponsor for district-targeted push. Phase 3: premium dealer subscription (₹299–499/mo) for SKU-level inventory recommendation reports.",
+      "surviving_wedge": "None defensible. Every wedge is occupied: (1) Dealer-direct pest intel = UPL, Syngenta, BASF SMS (free to dealers, funded by product sales), (2) Farmer-facing = government Bharat-VISTAAR (free, multilingual, official), (3) Sponsored alerts = manufacturer already controls the supply + dealer SMS directly, (4) Premium subscription (₹500–2K/dealer/month) = fails against free government + OEM programs, 0% switching cost willingness. Moat is zero: data public (IMD/ICAR), channel copyable (WhatsApp), no defensible differentiation.",
+      "demand_evidence": "Real demand exists: dealers ARE working-capital constrained by seasonal inventory (monsoons drive 70% annual turnover volatility) and want better pest forecasts to optimize SKU stocking. However, demand is ALREADY 80% satisfied by: (1) Free government WhatsApp advisories (Bharat-VISTAAR launched 2026-02, Oilseeds Kisaan Mitra, Telangana weather advisory to 15M farmers), (2) Existing manufacturer direct SMS programs (UPL's Nurture Farm SMS reaches 3M+ farmers weekly; Syngenta, BASF, Bayer all run dealer TechFest education + weekly pest alerts), (3) Public IMD Agromet + ICAR pest-surveillance data (35 CIPMCs across 28 states). Load-bearing claim: UPL—the market leader—already has 25K dealer footprint and pushes weekly advisory SMS to 3M numbers. Source: [UPL dealer network &amp; Nurture Farm](https://www.whalesbook.com/news/English/chemicals/India-Pesticides-Sees-31percent-Revenue-Jump-Eyes-indian-rupee3000-Cr-Target/699453cecffb93b3e9281ca1); [Bharat-VISTAAR government partnership](https://www.downtoearth.org.in/agriculture/putting-farmers-first-how-bharat-vistaar-turns-digital-infrastructure-into-real-world-decisions-for-indian-agriculture); [ACFI 2026 dealer collaboration program](https://www.global-agriculture.com/india-region/agrochemical-association-acfi-holds-chandigarh-programme-to-strengthen-industry-dealer-collaboration).",
+      "market_size": "₹80,000 crore (~$9.6B) agrochemical industry in India; pesticide segment growing 10.12% CAGR; 500K+ agricultural input dealers. Actual addressable for dealer-intel product: ~50K dealers in top 5 states = ~₹250–500 crore (small slice of distribution, not production).",
+      "scores": {
+        "demand": 3,
+        "moat": 1,
+        "founder_fit": 2,
+        "speed_to_cash": 2,
+        "profit_ceiling": 1,
+        "competition_shape": 1
+      },
+      "composite": 1.75,
+      "verified_composite": 1.22,
+      "verify_flag": "downgrade",
+      "verdict": "RED",
+      "confidence": "high",
+      "fact_checks": [
+        {
+          "claim": "Real demand exists: dealers ARE working-capital constrained by seasonal inventory (monsoons drive 70% annual turnover volatility) and want better pest forecasts to optimize SKU stocking. However, demand is ALREADY 80% satisfied by: (1) Free government WhatsApp advisories (Bharat-VISTAAR launched 2026-02, Oilseeds Kisaan Mitra, Telangana weather advisory to 15M farmers), (2) Existing manufacturer direct SMS programs (UPL's Nurture Farm SMS reaches 3M+ farmers weekly; Syngenta, BASF, Bayer all run dealer TechFest education + weekly pest alerts), (3) Public IMD Agromet + ICAR pest-surveillance data (35 CIPMCs across 28 states). Load-bearing claim: UPL—the market leader—already has 25K dealer footprint and pushes weekly advisory SMS to 3M numbers. Source: [UPL dealer network &amp; Nurture Farm](https://www.whalesbook.com/news/English/chemicals/India-Pesticides-Sees-31percent-Revenue-Jump-Eyes-indian-rupee3000-Cr-Target/699453cecffb93b3e9281ca1); [Bharat-VISTAAR government partnership](https://www.downtoearth.org.in/agriculture/putting-farmers-first-how-bharat-vistaar-turns-digital-infrastructure-into-real-world-decisions-for-indian-agriculture); [ACFI 2026 dealer collaboration program](https://www.global-agriculture.com/india-region/agrochemical-association-acfi-holds-chandigarh-programme-to-strengthen-industry-dealer-collaboration).",
+          "verified": "unclear",
+          "source": "https://www.global-agriculture.com/india-region/oilseeds-kisaan-mitra-indias-first-nationwide-whatsapp-ai-advisory-for-oilseed-farmers/ (Oilseeds Kisaan Mitra targets farmers, not dealers); https://newsmeter.in/whats-new/how-telangana-is-using-ai-and-whatsapp-to-help-15-lakh-farmers-stay-ahead-of-weather-risks-769088 (Telangana advisory targets farmers)"
+        }
+      ],
+      "fact_status": "unverified",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
+      "runs_seen": 1,
+      "score_history": [
+        {
+          "date": "2026-06-30",
+          "composite": 1.75,
+          "verified_composite": 1.22
+        }
+      ],
+      "strategist": {
+        "checklistFit": 0.833,
+        "fitLoadBearing": 0.778,
+        "conviction": 3.19,
+        "tier": "WATCH",
+        "dealbreakers": [],
+        "coverage": "32/42",
+        "verdict": "A structurally elegant idea with a real market and a genuinely cheap MVP, but these strategists would not back it at this stage without two proofs: (1) a direct relationship inside at least one input manufacturer's marketing team that has verbally committed to a sponsored-alert pilot, and (2) 50+ dealer conversations confirming they would pay or actively share the channel — because without manufacturer sponsorship unlocked and dealer stickiness proven, this is a public-data newsletter with a thin moat and a rented distribution channel, not a defensible business.",
+        "scoredAt": "2026-06-26"
+      },
+      "tata": {
+        "verdict": "conditional",
+        "failed_tests": [],
+        "concerns": [
+          "Manufacturer-sponsored alerts could be read as neutral government-sourced pest intelligence, misleading dealers into stocking or recommending products based on commercial interest rather than agronomic merit — a disclosure and editorial-firewall gap that touches public scrutiny, integrity, and truthful-claims standards."
+        ],
+        "reason": "Genuinely valuable agri-intelligence model built on public data, but manufacturer-sponsored alerts risk appearing as neutral government-backed pest intelligence — misleading dealers on product recommendations — touching public-scrutiny, all-or-nothing integrity, and truthful-claims gates.",
+        "fix": "Every sponsored alert must carry a clear, prominent \"Sponsored by [Manufacturer]\" label in the message itself (not buried in T&Cs), and editorial pest-alert curation must be maintained as a separate, clearly non-sponsored stream — no sponsor may influence which pests are flagged or which products are recommended in the neutral digest.",
+        "scoredAt": null
       }
     },
     {
@@ -5587,7 +6477,7 @@
         ],
         "coverage": "28/42",
         "verdict": "Strong timing and real pain, but the strategists would not back it at scale without an explicit plan for regulatory-slip survival and a moat beyond data collection — it is a high-urgency consulting play, not a durable platform, unless anchored to a certified standard or exclusive export-council channel.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": "2026-06-26"
       },
       "tata": {
         "verdict": "conditional",
@@ -5598,7 +6488,7 @@
         ],
         "reason": "Legitimate compliance-infrastructure business that helps small Indian exporters stay in EU supply chains — Ratan Tata would be proud of the mission — but the DDS output must never overstate GPS-boundary confidence or certify deforestation-free status beyond what the underlying data can support, and GPS collection from smallholder farms requires informed farmer consent.",
         "fix": "Embed a mandatory confidence-tier disclosure on every DDS output (e.g., HIGH/MEDIUM/LOW based on data source quality and forest-edge proximity), refuse to issue DDS where data is below a defined threshold, and implement a plain-language farmer consent process before GPS collection — these two controls make the business fully integrity-clean.",
-        "scoredAt": "2026-06-19"
+        "scoredAt": null
       }
     },
     {
@@ -5642,7 +6532,29 @@
           "composite": 2.8,
           "verified_composite": 0
         }
-      ]
+      ],
+      "strategist": {
+        "checklistFit": 0.765,
+        "fitLoadBearing": 0.563,
+        "conviction": 3.41,
+        "tier": "WATCH",
+        "dealbreakers": [
+          "survive-constraint-shifts"
+        ],
+        "coverage": "28/42",
+        "verdict": "These strategists would not back AUSafe Export in its current form: the pain is real and timing is genuine, but the business is a labour-arbitrage compliance service with no moat, no scale economics, and a value proposition that is one ACCC self-serve portal or one AI tool away from commoditization — the idea solves a real problem but is structurally positioned as a thin consultancy, not a defensible business.",
+        "scoredAt": "2026-06-26"
+      },
+      "tata": {
+        "verdict": "conditional",
+        "failed_tests": [],
+        "concerns": [
+          "If the business produces conformity declarations or safety documentation for products that are not genuinely compliant with Australian standards, it becomes a paper-laundering service that puts unsafe products into the hands of Australian consumers — a direct violation of the safety-never-compromised gate and a fundamental betrayal of the trusteeship standard."
+        ],
+        "reason": "Legitimate compliance advisory serving Indian exporters and protecting Australian consumers — structurally honest, transparent pricing, no exploitation — but carries a real risk of becoming a documentation mill that helps non-compliant products gain marketplace access, which would harm the very consumers the ACCC framework exists to protect.",
+        "fix": "Adopt and publish a written non-negotiable policy: conformity declarations and safety documentation are only issued after independent verification that the product actually meets the relevant AU standard; the service explicitly refuses engagements where the manufacturer wants documentation without genuine compliance remediation — and this policy is disclosed to every client at onboarding.",
+        "scoredAt": null
+      }
     }
   ]
 }

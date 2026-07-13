@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-07-13",
+    "date": "2026-07-13",
+    "started_utc": "2026-07-13T02:08:16Z",
+    "completed_utc": "2026-07-13T02:35:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test) — freshly-authored probe.py (Python requests + ThreadPoolExecutor, qa/findings/2026-07-13/probe.py) for sections A/B/C/D/D2/F/G/I/J/L, run in staged CLI invocations to stay inside the 45s shell budget; Supabase MCP for Section E (1 schema-introspection query against information_schema.columns to confirm emergency_sos/confidence_cards/destinations column names before writing the aggregate — this caught that destinations.hero_image_url is NULL site-wide and NOT the real hero-image source of truth, so Section L was built against the R2 pattern read directly out of scripts/audit-hero-images.mjs instead; 1 canonical 11-column dialable aggregate + Hindi-translations + people_who_help/local_helpers aggregate, needed 2 attempts — Postgres does not short-circuit AND, so the first attempt's unguarded `jsonb_typeof(x)='array' AND jsonb_array_length(x)>0` pattern threw on non-array local_helpers/people_who_help rows; fixed with CASE WHEN, matching the CTE/nested-CASE lesson noted in prior runs; 1 three-row prior-bug recheck [khonoma/uttarkashi/khangchendzonga-np]; 1 destination_stay_picks row-count recheck [kaza/phawngpui-peak/majuli]; 1 kozhikode-specific Hindi-translations spot check to pair with the live DOM read); Section K via Claude in Chrome MCP (browser_batch) across 5 controlled observations — explore grid→map Leaflet toggle (the toggle had to be clicked; navigating straight to /en/explore does not initialize Leaflet, it starts in Grid view), kozhikode/en (atlas, from today's sample), kozhikode/hi (atlas, Hindi — independent live re-verification of NEW-2026-07-09-001 on a 4th distinct destination after wayanad/bandhavgarh/vadodara), vishnuprayag/en (Leaflet-template — today's random sample broke a 6-day streak of zero Leaflet-template destinations, so this is a fresh in-sample confirmation rather than the historical dzongu comparison), dzongu/en (Leaflet-template, kept as the historical comparison point too) — each preceded by read_console_messages(clear=true) and followed by an onlyErrors read; Section L hero-image audit via curl+xargs-equivalent Python HEAD-probe workaround (concurrency 24) against the R2 base URL read out of scripts/audit-hero-images.mjs source (NEXT_PUBLIC_IMAGE_BASE_URL from apps/web/.env.local) and the full destination-slug list read fresh from the sitemap rather than the node script, which the SKILL.md's own regression matrix (NEW-2026-07-07-003) flags as unreliable within the shell budget (confirmed CONCURRENCY still hardcoded to 8, source unchanged); Section H sitemap walked fully (index + 5 chunks) with a full per-locale/type breakdown, diffed by hand against qa/findings/2026-07-11/section-H-sitemap-breakdown.txt (the last complete run — 2026-07-12's run did not finish, see honest_caveats); deploy-freshness confirmed via the data-dpl-id literal visible in the /api/destinations and /api/health 404 page bodies during the Section F probes, byte-identical to 07-11's value, cross-checked against `git log --since 2026-07-10` on apps/web + supabase (0 commits, last real deploy-relevant commit f7fab29b2 on 2026-07-08); the atlas static-coordinate check was run twice — an initial shell `grep -l \"23.5\"` pass falsely flagged all 10 Hindi pages as matching (a byte-level false positive from grep run against UTF-8 Devanagari content, NOT a real match), caught by re-checking with Python's UTF-8-aware string search, which is what the reported numbers below are based on (see honest_caveats — this is a new methodology note worth keeping for future runs).",
+    "mode": "Daily regression — A through L matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 27,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (9 probes incl bad-slug /en/cost/<slug> in addition to the usual set)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-07-13: vrindavan, sasangir, alwar, kozhikode, vishnuprayag, alibaug, darjeeling, bandipur, gangtok, panaji)",
+    "C — Hindi parity (same 10 slugs; lang + Devanagari-title check)",
+    "D — SEO meta (13 URLs: landing + 10 dests + 1 month sub-route [vrindavan/december] + 1 itinerary URL [itinerary/agra])",
+    "D2 — Quiz/risk-quiz og:image recheck (4 URLs, both locales — NEW-2026-07-03-001 continued verification)",
+    "E — SOS completeness: DB ground-truth canonical 11-column aggregate + local_helpers/people_who_help aggregate + Hindi-translations aggregate + 3-row prior-bug recheck + destination_stay_picks spot-check (kaza/phawngpui-peak/majuli) + kozhikode-specific Hindi-translation DB check paired with the live DOM read",
+    "F — API smoke (13 probes incl oversized 200KB body + 1 valid chat call)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks) + full per-locale/type breakdown, hand-diffed vs 07-11",
+    "I — Core routes HTTP matrix (22 real routes + 1 intentional phantom-route probe)",
+    "J — Locale-routing redirect (5 bare paths, redirects NOT followed)",
+    "K — Chrome E2E: explore grid→map Leaflet toggle (Leaflet verified, had to click the toggle) + kozhikode/en (atlas, today's sample) + kozhikode/hi (atlas, Hindi — 4th distinct destination confirming NEW-2026-07-09-001) + vishnuprayag/en (Leaflet-template, IN today's random sample — first fresh in-sample Leaflet destination in 6+ days) + dzongu/en (Leaflet-template, historical comparison) — 5 fully console-swept observations",
+    "L — Hero-image audit (Python HEAD-probe workaround against R2, concurrency 24, full 533-slug list read from the sitemap: 533/533 ok, 0 missing, 0 errors)",
+    "Supplementary — atlas static-coordinate sweep across all 10 sampled destinations in both locales (Python UTF-8-verified after an initial shell-grep false positive), destination_stay_picks continuity spot-check, deploy-freshness verification via live data-dpl-id + git log cross-check"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass, consistent with SKILL.md's cost-aware rule (don't run daily unless the site shipped material changes since the last deep pass). No apps/web-relevant commit has landed since 2026-07-08 (git log confirms), so there is nothing new to re-audit. This item is now well over two months stale (origin 2026-05-04) — flagging again that it needs a deliberately scheped standalone session rather than daily deferral; see regression_matrix Phase-3-carry-color-contrast."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Same reasoning as the axe-core skip above — no material change to re-measure against, and the outstanding scope (itinerary template ~792 URLs, 8 Sikkim pages, both quiz templates) is a dedicated-session-sized effort, not a daily-matrix add-on."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-A-soft404.csv: /en + /hi bad slugs, /destination/<bad>/june, and /en/cost/<bad> all hard 404 (9 bytes). 9/9 correct, 0 misses."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "vrindavan/13, vrindavan/0, vrindavan/notamonth, /hi sasangir/99 -> all hard 404 (9 bytes)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-F-api.csv: malformed->400 'Malformed JSON body', empty->400, wrong-shape->400 'Invalid question', 200KB->413 'Payload too large — questions are capped at 1000 characters.', valid->200 (3901b real Leh answer). 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400 'Malformed JSON body', empty->400, {}->400 'Missing required fields'. 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template '| NakshIQ | NakshIQ' title stutter (also tracked NEW-2026-06-12-001)",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D-seo.csv: 0/13 title_stutter; /en/itinerary/agra title 'Agra itinerary — 1, 3 & 5 days (verified) | NakshIQ' clean, single 'NakshIQ' occurrence."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image (all itinerary URLs)",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "13/13 core-matrix URLs og:image present incl. /en/itinerary/agra."
+    },
+    {
+      "id": "NEW-2026-07-03-001",
+      "title": "quiz/[topic] template ships without og:image on both locales",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "section-D2-quiz-routes.csv: en/quiz/hill-station 200 og_image=True; hi/quiz/hill-station 200 og_image=True; en/risk-quiz + hi/risk-quiz both og_image=True. Fix continues to hold."
+    },
+    {
+      "id": "NEW-2026-07-07-004",
+      "title": "qa/_lib/build_report.js reads different field names than findings.json carries for the 'K — Map widget' QA-report row",
+      "prior_status": "PARTIAL 2026-07-11",
+      "today_status": "PARTIAL",
+      "evidence": "Re-grepped qa/_lib/build_report.js today (file mtime unchanged since 2026-07-07, confirmed via ls, and git log shows 0 commits touching qa/ since 07-11): line 70-71 still reads m.map_dest_pages_leaflet_template / m.map_dest_pages_probed_interactive directly (K-row half remains FIXED). Line 60 still references m.sos_destinations_with_local_helpers_block directly, which no script computes natively — today's findings.json again supplies it as a same-day compatibility alias (533 = destinations_total_db - sos_dests_without_emergency_sos_row_db).",
+      "recommendation": "Same as prior days: add a real sos_destinations_with_local_helpers_block computation to whatever step assembles headline_metrics so the alias is no longer needed. Low severity: report-accuracy only, no user-facing impact."
+    },
+    {
+      "id": "NEW-2026-07-07-003",
+      "title": "scripts/audit-hero-images.mjs (CONCURRENCY=8) does not reliably complete within the 45-second shell budget",
+      "prior_status": "STILL OPEN 2026-07-11",
+      "today_status": "STILL OPEN",
+      "evidence": "Confirmed unchanged again today: CONCURRENCY still hardcoded to 8 in scripts/audit-hero-images.mjs, went straight to a Python HEAD-probe workaround (concurrency 24, R2 pattern read out of the script's own source) instead — completed well inside budget, 533/533 ok / 0 missing / 0 errors. Underlying safety signal is real and fresh; the tooling gap itself is unaddressed across every day it's been checked (07-07 through 07-11, and again today).",
+      "recommendation": "Same as prior days: raise script concurrency, add --state chunking, or fold the proven curl/Python+HEAD workaround into the script itself. This is now a long-running open ticket worth prioritizing over other low-severity items."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-07-11",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION nakshiq-v52, md5 0c7bc0366b4f61237f86740e5d27f0b2 — byte-identical to 07-11. manifest still 3 icons + 5 shortcuts; /offline -> 200."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: police 100 / ambulance 108 / fire 101 / women '1091 (or 181)' / tourist '1800-111-363 (toll-free)' / road 1073 / rescue 'DDMA Uttarkashi Control Room: 01374-222722 / 1077'; verified_by=constants-reverify-2026-06-09, unchanged. Site-wide placeholder-X count = 0."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1363 / road 1073 / rescue 'Kohima Police Control Room: 7005986046 · NSDMA: 1070'; verified_by=deepdive-recorrect-2026-06-09, unchanged. Not in today's random sample — DB-only recheck."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: police 100 / ambulance 108 / fire 101 / women 1091 / tourist 1800-111-363 / road 1073 / rescue 'Geyzing PS: 8145887528 (PI Roshan Gurung); District Hospital Gyalshing: 03595-250634; ...'; verified_by=emsos-th-audit-2026-06-10, unchanged."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "Today's harness used a case-insensitive regex from the start; 13/13 core-matrix URLs + 4/4 quiz/risk-quiz URLs show en + hi + x-default hreflang."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB confidence_cards.people_who_help nonempty arrays = 84 — exact match to the 06-19..07-11 baseline. Fix holds; DB shape stable."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL 2026-07-11",
+      "today_status": "PARTIAL",
+      "evidence": "Safety baseline GREEN, near-exact match: 533/533 emergency_sos rows, 0 without row, 0 under 3 dialable (min 5, avg 7.42, total 3953 across the canonical 11 columns — +1 vs 07-11's 3952, see new_findings_today), 0 placeholder-X. emergency_sos.local_helpers nonempty = 178/533, unchanged. Enrichment opportunity (178 -> up to 405 from deep_dive) remains open."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL 2026-07-11",
+      "today_status": "PARTIAL",
+      "evidence": "Today's random 10-dest sample broke the streak: vishnuprayag is Leaflet-template (leaflet strings present, no atlas viewBox, live-confirmed via Chrome: 1 leaflet-container, 42 tiles, 9 overlay markers, window.L, 0 console errors), the other 9 (vrindavan, sasangir, alwar, kozhikode, alibaug, darjeeling, bandipur, gangtok, panaji) are atlas-template. This is the first fresh in-sample Leaflet-template confirmation in 6+ consecutive days — both templates coexist and both render cleanly. Carrying PARTIAL forward (migration still not 100% complete), but with stronger fresh evidence than the historical-comparison-only readings of the last week."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED 2026-07-11",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Explore map: 519 overlay-pane paths/circles matching the score-colored markers (steady vs 519 on 06-15..07-11); circleMarkers render in the overlay pane by design; leaflet-marker-pane children = 0 by design."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL 2026-07-11",
+      "today_status": "PARTIAL",
+      "evidence": "Two independent live confirmations today instead of one: vishnuprayag/en (fresh from today's random sample, Uttarakhand/Garhwal — not a Sikkim destination, so the Leaflet-template isn't Sikkim-exclusive) renders 42 tiles / 9 overlay markers / window.L / 0 console errors; dzongu/en (historical comparison) renders 28 tiles / 9 overlay markers / window.L / 2 video elements, matching the 07-07..07-11 reading. Restoration status carried forward unchanged but now backed by a fresh in-sample destination, not only the historical one."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N · 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED 2026-07-11",
+      "today_status": "REPRODUCED",
+      "evidence": "Python UTF-8-verified sweep (see honest_caveats re: a shell-grep false positive caught and corrected before reporting) across all 10 sampled destinations in both locales: 9/10 en + 9/10 hi atlas-template pages show the static '23.5' string (the 10th, vishnuprayag, correctly does NOT show it — it's Leaflet-template, doesn't render the Atlas component at all, which is internally consistent and not a new bug). Plus the /en landing page. 19 sightings today. Still cosmetic, still a one-line fix, unaffected by the (still deploy-free) window."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 React #418 / error / hydration messages across all 5 console-swept observations today (explore, kozhikode/en, kozhikode/hi, vishnuprayag/en, dzongu/en) — each initialized via read_console_messages(clear=true) before navigation, filtered onlyErrors read after page-settle came back empty every time."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED 2026-07-11 (permanent closure, code + live confirmed)",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not specifically re-probed today (no fresh first-visit session triggered), but no welcome-tour modal appeared incidentally across any of today's 5 Chrome page loads. No evidence of regression. Distinct from NEW-2026-07-09-001 (hero tagline/why-special content, not this modal)."
+    },
+    {
+      "id": "NEW-2026-07-09-001",
+      "title": "Destination hero tagline + 'why special' body copy render in English on /hi despite complete Hindi translations existing in the DB for 525/533 destinations",
+      "prior_status": "STILL OPEN 2026-07-11",
+      "today_status": "STILL OPEN",
+      "evidence": "Independently re-verified live today on a FOURTH completely distinct destination (kozhikode, from today's random sample — not wayanad [07-09], bandhavgarh [07-10], or vadodara [07-11]). Chrome DOM read of https://www.nakshiq.com/hi/destination/kozhikode: lang='hi' (correct), title correctly Devanagari ('कोझिकोड (कालीकट), केरल...'), BUT h1='Kozhikode (Calicut).' (should be Devanagari 'कोझिकोड (कालीकट)', confirmed present in destinations.translations->hi->name via a paired DB query run in the same session), tagline shown='Where Vasco da Gama landed — and Malabar biryani was perfected' (English; DB confirms has_hi_tagline=true for this destination), WHY SPECIAL heading itself untranslated and body English ('Where Vasco da Gama first landed in India (1498)...'; DB confirms has_hi_why_special=true). Now confirmed on 4 separate destinations across 4 separate days with 4 separate DOM reads, each paired with a same-session DB proof that the Hindi content exists. DB-wide aggregate re-run today: 525/533 destinations (98.5%) still have complete hi translations (tagline/why_special/name), unchanged from 07-09 through 07-11. No deploy has landed since before 07-09 (data-dpl-id byte-identical, and git log shows the last apps/web-relevant commit was 2026-07-08), so an unchanged bug on a 4th fresh destination is the expected, consistent result.",
+      "recommendation": "Unchanged from prior days: apply the `(locale !== \"en\" && dest.translations?.[locale]?.tagline) || dest.tagline` fallback pattern (already used for `name`) to the tagline and why_special read sites in destination-detail-cinematic.tsx. Translated content already exists for 525/533 destinations — this is now a 4-destination-confirmed, high-value, low-risk fix that keeps getting re-confirmed instead of fixed."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images (black cards in landing Dailies reel)",
+      "prior_status": "STILL CLOSED 2026-07-11",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section L hero-image audit (Python HEAD-probe workaround, concurrency 24, full 533-slug list from the sitemap): 533/533 ok / 0 missing / 0 errors."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrank 2,173 URLs (-8%) overnight 06-26 in generated secondary pages; core catalogue intact",
+      "prior_status": "NOT_REPRODUCED 2026-07-11 (stabilized)",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Total 24,943 -> 24,944: +1 URL, isolated entirely to en/the-window (13 -> 14, a single new editorial page) via a full hand-diff of the per-locale/type breakdown against 07-11's saved breakdown — every other type unchanged, including the previously-shrunk categories. Stable and, if anything, growing normally. See new_findings_today for the +1 detail."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "phawngpui-peak shows <3 stay cards in rendered HTML (kaza and majuli resolved/fine per 07-11)",
+      "prior_status": "PARTIAL 2026-07-11",
+      "today_status": "PARTIAL",
+      "evidence": "Continuity spot-check today (destination_stay_picks row counts, DB-only — none of the 3 landed in today's random sample): kaza=4, majuli=4, phawngpui-peak=2 — identical to 07-11's directly-verified numbers. No change either direction.",
+      "recommendation": "Unchanged: source 1+ more verified stay option for phawngpui-peak if one genuinely exists (remote Mizoram peak — may be honest scarcity). Kaza and majuli remain resolved."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — not re-tested without axe today 2026-07-11",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run in today's daily pass, per SKILL.md's cost-aware rule (no material apps/web change since 07-08 to re-audit against). Origin 2026-05-04 — this item is now well past two months old with no dedicated session yet scheduled."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — not re-tested without axe today 2026-07-11",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe not run today. Same note as Phase-3-carry-color-contrast above."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — not investigated today 2026-07-11",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run today. Same note as above."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-07-13-001",
+      "severity": "info",
+      "title": "Sitemap grew by exactly 1 URL (24,943 -> 24,944), isolated to a single new en/the-window editorial page",
+      "detail": "Full hand-diff of today's per-locale/type sitemap breakdown against 07-11's saved breakdown (07-12's run did not complete, so 07-11 is the last available comparison point) found every category unchanged except en/the-window: 13 -> 14. This reads as a normal single editorial publish under 'The Window' section, not a data or crawl-surface issue.",
+      "evidence": "qa/findings/2026-07-13/section-H-sitemap.json breakdown_by_locale_type['en/the-window']=14 vs qa/findings/2026-07-11/section-H-sitemap-breakdown.txt the-window=13. All 90+ other categories match exactly.",
+      "recommendation": "No action needed — informational only."
+    },
+    {
+      "id": "NEW-2026-07-13-002",
+      "severity": "medium",
+      "title": "The 2026-07-12 scheduled QA run started but never completed — no findings.json, no reports, sections K/L never ran",
+      "detail": "qa/findings/2026-07-12/ contains probe.py, breakdown.py, sample-slugs.json, run-start.txt, and section CSVs for sections A through J (including a 10-destination html/ snapshot set: bhandardara, bhavnagar, hyderabad, imphal, khangchendzonga-np, machilipatnam, nalsarovar, nathu-la, sasangir, sundarbans), but there is no qa/findings/2026-07-12.json and no evidence the three .docx reports were regenerated that day (all three currently in the workspace root are still dated 2026-07-11). The run appears to have stopped partway through Section J/K with no error artifact explaining why. Today's run (07-13) is being compared against 07-11 as the last complete baseline as a result — a full day of independent verification was silently lost.",
+      "evidence": "Directory listing of qa/findings/2026-07-12/ (CSVs through section-J-locale.csv, nothing for K/L) vs qa/findings/2026-07-11.json (complete) and qa/findings/2026-07-13.json (this run). NakshIQ_*.docx mtimes in the workspace root are all 2026-07-11.",
+      "recommendation": "Worth a quick look at whether the 07-12 scheduled-task invocation errored out, hit a timeout, or was interrupted — this is a reliability gap in the daily QA automation itself, not a site defect. If it recurs, the matrix should probably write partial progress to findings.json incrementally rather than only at the very end, so a cut-off run still leaves a usable (if partial) artifact instead of nothing."
+    },
+    {
+      "id": "NEW-2026-07-13-003",
+      "severity": "info",
+      "title": "Shell grep produced a false-positive match for the atlas static-coordinate string on UTF-8 Hindi HTML",
+      "detail": "An initial `grep -l \"23.5\"` pass over the 10 saved Hindi destination-page HTML snapshots reported 10/10 matches, including vishnuprayag — which is a Leaflet-template page that does not render the Atlas component at all and should not match. Re-checking with Python's UTF-8-aware string search (`\"23.5\" in text`) found the true result: 9/10, with vishnuprayag correctly absent. The shell grep's byte-level matching against multi-byte Devanagari UTF-8 sequences produced a spurious hit. This is a QA-harness methodology note, not a site defect — the site behavior is internally consistent (atlas bug only appears on atlas-template pages, in either locale).",
+      "evidence": "qa/findings/2026-07-13/html/hi_vishnuprayag.html: shell `grep -c \"23.5\"` returns 1, but `LC_ALL=C grep -ao` and a direct Python `text.find(\"23.5\")` both find no real match (idx=-1); Python confirms 0 atlas-viewBox and 14 'leaflet' string occurrences in that file, consistent with it being Leaflet-template.",
+      "recommendation": "For future runs: verify any grep-based text match against Hindi/Devanagari HTML with a UTF-8-aware tool (Python, or `grep` with explicit `--text` and a known-good locale) before reporting it, especially for short numeric-looking patterns like '23.5' that are more likely to collide with multi-byte sequences by chance."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 23,
+    "core_routes_2xx": 22,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 70, "median": 555, "p90": 733, "max": 950 },
+    "core_routes_TTFB_note": "22 real routes all 200 (redirects followed at this layer; raw redirect mechanics tested separately in Section J). The 23rd probe (/en/search) is the intentional phantom-route check — correctly 404s (133 ms) and is excluded from the 2xx tally and TTFB stats, matching prior-day convention. Slowest real route /en/destination/jaipur at 950 ms; fastest /  at 70 ms (redirect-follow to a CDN-cache-warm /en, X-Vercel-Cache: HIT observed elsewhere in today's probes).",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 554, "median": 756, "max": 1045 },
+    "destinations_TTFB_note": "10/10 200. Somewhat higher than 07-11's band (479-685ms) — darjeeling was the slowest today at 1045ms. No deploy landed (dpl-id unchanged) and nothing returned non-200, so this reads as ordinary cache/network variance rather than a regression; worth a glance if the elevated band persists tomorrow.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_parity_caveat": "Section C's narrow check (lang attribute + Devanagari title) passed 10/10 as usual. As established 07-09 and independently re-confirmed on a 4th distinct destination today (kozhikode), this check does not catch that the destination body copy (H1, tagline, WHY SPECIAL) ignores locale entirely — see NEW-2026-07-09-001, STILL OPEN.",
+    "seo_urls_sampled": 13,
+    "seo_urls_extra_quiz_recheck": 4,
+    "seo_title_stutter": 0,
+    "seo_title_stutter_note": "0 stutter across the 13 core-matrix URLs and the 4 quiz/risk-quiz recheck URLs (17 total today). Itinerary fix holds.",
+    "seo_canonical_present": 13,
+    "seo_hreflang_en_present": 13,
+    "seo_hreflang_hi_present": 13,
+    "seo_hreflang_xdefault_present": 13,
+    "seo_og_image_present": 13,
+    "seo_og_image_note": "13/13 on the core matrix. Quiz recheck: risk-quiz 2/2 present, quiz/hill-station 2/2 present — NEW-2026-07-03-001 continues clean.",
+    "soft_404_regression_passes": 9,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.42,
+    "sos_db_total_dialable_entries_11col": 3953,
+    "sos_db_dialable_11col_note": "Canonical 11-column set (excludes local_police_station), non-null + trimmed-non-empty. 3953 vs 07-11's 3952 (+1) — trivially small positive drift, likely a single field getting filled in somewhere; min still 5, 0 under 3 — safety floor intact. Covers all 533 destinations.",
+    "sos_db_rows_with_placeholder_x": 0,
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — unchanged from baseline; catalogue steady at 533 (no new dests since 06-14, 29 days now).",
+    "sos_destinations_with_local_helpers_block": 533,
+    "sos_destinations_with_local_helpers_block_note": "Compatibility alias for qa/_lib/build_report.js's E-row (= destinations_total_db - sos_dests_without_emergency_sos_row_db). See NEW-2026-07-07-004.",
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_baseline_note": "84 = confidence_cards.people_who_help nonempty arrays — exact match to the 06-19..07-11 baseline. NEW-2026-06-10-001 holds.",
+    "destinations_total_db": 533,
+    "destinations_total_db_note": "Steady at 533 (max created_at 2026-06-14, 0 new since the Sikkim cluster — 29 days now).",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "Section L: scripts/audit-hero-images.mjs not attempted directly (confirmed source unchanged, CONCURRENCY still 8) — used a Python HEAD-probe workaround (concurrency 24) against the same R2 pattern the script uses, with the destination-slug list read fresh from the sitemap. 533/533 ok / 0 missing / 0 errors — the 06-20 Sikkim black-card fix holds. See NEW-2026-07-07-003 (still open).",
+    "stay_picks_spotcheck_kaza": 4,
+    "stay_picks_spotcheck_phawngpui_peak": 2,
+    "stay_picks_spotcheck_majuli": 4,
+    "stay_picks_spotcheck_note": "DB-only continuity check today (none of the 3 landed in the random sample); identical to 07-11's directly-verified numbers.",
+    "api_endpoints_probed": 13,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 3,
+    "api_404_expected_returned": 2,
+    "api_note": "7x 400 (chat malformed/empty/wrong-shape, itinerary malformed/empty/empty-object, weather no-params) + 1x 413 (chat 200 KB) = 8 validation 4xx; 3x 200 (valid chat 3901b real Leh answer, weather?id=varanasi temp 32°C, search-index 718840b — byte-identical size vs 07-11); 2x 404 (/api/destinations, /api/health — expected, same dpl-id 404 page, confirming no deploy).",
+    "service_worker_version": "nakshiq-v52",
+    "service_worker_md5": "0c7bc0366b4f61237f86740e5d27f0b2",
+    "service_worker_byte_identical_note": "Byte-identical to 07-11 (and every prior check since sw.js was last touched).",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 24944,
+    "sitemap_total_urls_delta_note": "24,943 -> 24,944: +1, isolated to en/the-window (13->14, a single new editorial page) via full per-type hand-diff vs 07-11. Every other category unchanged. See new_findings_today NEW-2026-07-13-001.",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "sitemap_cost_note": "cost URLs still 525 — the 8 Sikkim dests still have no /cost/ page (expected lag) — same 8 dests missing Hindi translations (525/533 = 533-8).",
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 36,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "519 score-colored overlay markers (steady vs the 06-15..07-11 baseline), window.L present, marker-pane empty by design. Required clicking the Grid->Map toggle — navigating directly to /en/explore starts in Grid view and does not initialize Leaflet.",
+    "map_dest_pages_probed_interactive": 4,
+    "map_dest_pages_leaflet_template": 2,
+    "map_dest_pages_atlas_template": 2,
+    "map_widget_destination_pages_probed_interactive": 4,
+    "map_widget_destination_pages_with_leaflet": 2,
+    "map_widget_field_alias_note": "map_widget_destination_pages_* duplicates map_dest_pages_* above — kept as a compatibility alias since qa/_lib/build_report.js's K-row reads map_dest_pages_* directly.",
+    "map_dest_atlas_note": "kozhikode/en, kozhikode/hi (both from today's random sample) render atlas svg viewBox 0 0 1000 1100 + india-outline.svg reference, leaflet=0 by design (correct).",
+    "map_dest_leaflet_note": "vishnuprayag/en (fresh from today's random sample — first in 6+ days) renders 42 tiles / 9 overlay markers / window.L, 0 console errors. dzongu/en (historical comparison) renders 28 tiles / 9 overlay markers / window.L / 2 video elements, matching the 07-07..07-11 reading.",
+    "atlas_static_coord_readout": "23.5 (static Atlas coordinate) — reproduced on 9/10 of today's sampled destinations in BOTH locales (18 sightings, Python UTF-8-verified after catching a shell-grep false positive — see NEW-2026-07-13-003) plus the /en landing page = 19 sightings today. The 10th destination, vishnuprayag, correctly does NOT show it in either locale because it's Leaflet-template and never renders the Atlas component. NEW-2026-06-06-003 REPRODUCED, still cosmetic.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 5,
+    "console_react_418_fired_loads": "0 of 5 fully console-swept observations (explore, kozhikode/en, kozhikode/hi, vishnuprayag/en, dzongu/en) — NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": false,
+    "deploy_evidence": "data-dpl-id UNCHANGED: dpl_38ii2xU6oSUrwjGHX4cynQ7Gb8Jz — identical to 07-11's live-verified value, captured again today live during the Section F API probes (visible in the /api/destinations and /api/health 404 page bodies). Cross-checked against git log: 0 commits touching apps/web or supabase since 2026-07-10; the last real deploy-relevant commit is f7fab29b2 (2026-07-08).",
+    "hindi_translations_db_total": 533,
+    "hindi_translations_db_has_hi_tagline": 525,
+    "hindi_translations_db_has_hi_why_special": 525,
+    "hindi_translations_db_has_hi_name": 525,
+    "hindi_translations_note": "525/533 (98.5%) destinations have complete DB-side Hindi name/tagline/why_special translations that are NOT reaching the rendered page (NEW-2026-07-09-001, STILL OPEN) — unchanged from 07-09 through 07-11. Independently re-verified live today on kozhikode (today's sample, paired with a DB confirmation for that specific destination) — a 4th distinct destination now confirmed, after wayanad (07-09), bandhavgarh (07-10), vadodara (07-11)."
+  },
+  "deliverables": [
+    "qa/findings/2026-07-13.json",
+    "qa/findings/2026-07-13/ (probe.py + section CSVs/JSON A-L + sample-slugs.json + run-start.txt + html/ SSR snapshots for 10 sampled destinations, Hindi)",
+    "qa/hero-images.json + qa/hero-images.md not regenerated by the node script today (see NEW-2026-07-07-003) — Section L instead recorded in qa/findings/2026-07-13/section-L-hero-images.json",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "The 2026-07-12 scheduled run did not complete — no findings.json was produced and no reports were regenerated that day (see new_findings_today NEW-2026-07-13-002). Today's comparisons are made against 07-11 (the last complete run), two days back rather than one.",
+    "This run used a freshly-authored probe script (qa/findings/2026-07-13/probe.py), not a literal continuation of the prior scripts referenced in earlier findings files (which this session did not have direct access to) — built independently from qa/SKILL.md's Test Matrix and qa/findings.schema.json, and cross-checked field-for-field against 07-11's findings.json to keep the metric definitions consistent (same 11-column SOS dialable formula, same soft-404 URL set, same core-route list, same R2 hero-image URL pattern read directly out of scripts/audit-hero-images.mjs). Methodology equivalence, not identical tooling.",
+    "scripts/audit-hero-images.mjs (the standard node script) was not attempted today — confirmed via source read that CONCURRENCY is still hardcoded to 8. Used a Python HEAD-probe workaround (concurrency 24) instead — see NEW-2026-07-07-003 (still open).",
+    "An initial shell `grep -l \"23.5\"` pass produced a false positive on Hindi/Devanagari HTML (see NEW-2026-07-13-003) — caught and corrected with a Python UTF-8-aware re-check before it went into this report. Flagging in case future runs hit the same class of false positive on other Devanagari-content checks.",
+    "Today's 10-dest random sample (vrindavan, sasangir, alwar, kozhikode, vishnuprayag, alibaug, darjeeling, bandipur, gangtok, panaji) included 1 Leaflet-template destination (vishnuprayag) — the first fresh in-sample Leaflet-template destination in 6+ consecutive days per the 07-11 findings. This let Section K verify the Leaflet-template rendering path with fresh evidence rather than only the historical dzongu comparison point (which was also checked, for continuity).",
+    "khonoma and uttarkashi (2 of the 3 previously-buggy SOS destinations) did not land in today's random sample — DB-only rechecks (unchanged), not live re-verification, consistent with the same caveat on prior days when they don't land in the sample. khangchendzonga-np likewise DB-only.",
+    "The Phase-8-carry-sparse-stays watchlist (kaza, phawngpui-peak, majuli) was checked via a direct DB spot-check today (continuing 07-11's approach), not via random sampling — none of the 3 landed in today's sample.",
+    "NEW-2026-07-09-001 was independently re-verified live today on kozhikode (today's random sample), a 4th distinct destination (after wayanad 07-09, bandhavgarh 07-10, vadodara 07-11), each paired with a same-session DB proof that the missing Hindi content genuinely exists in the database.",
+    "No deploy has landed since 2026-07-08 (confirmed both via the live data-dpl-id, unchanged since 07-09/07-10/07-11, and via `git log` showing 0 commits touching apps/web or supabase since 07-10). The precondition that has repeatedly deferred the axe-core/Lighthouse deep pass (SKILL.md: don't run daily absent material changes) continues to hold — this item is now well past two months stale (origin 2026-05-04) and needs a deliberately scheduled standalone session rather than continued daily deferral.",
+    "destinations_TTFB_ms today (min 554 / median 756 / max 1045) is somewhat higher than 07-11's (min 479 / median 593 / max 685). No deploy landed and nothing returned non-200, so this reads as network/cache variance from a single day's sample rather than a regression — worth a glance if it persists.",
+    "/api/chat valid-question probe (1 call) spends metered Anthropic tokens on the site owner's key; kept to a single probe per methodology.",
+    "Supabase reads today: 1 narrow information_schema introspection (emergency_sos/confidence_cards/destinations columns) + 1 combined canonical aggregate (needed a CASE WHEN fix after the first attempt hit Postgres's non-short-circuiting AND on unguarded jsonb_array_length calls) + 1 three-row prior-bug recheck + 1 destination_stay_picks 3-row recheck + 1 kozhikode-specific Hindi-translation check — all narrow, egress-safe per CLAUDE.md. destinations.hero_image_url was checked and found NULL for all 533 rows — it is not the real hero-image source of truth (R2 + a naming convention is), noted so no future run wastes a query assuming otherwise.",
+    "Chrome console-tracking behavior: read_console_messages only captures messages from the moment it is first called on a tab, so each fully-swept Section K surface was probed by calling it once (clear=true) immediately before navigation, then again (onlyErrors filter) after the page settled.",
+    "Axe-core and Lighthouse not run today, consistent with SKILL.md's explicit cost-aware rule (no material change to re-audit against) rather than a judgment call about 'quiet nights' — flagging the growing staleness (now >2 months since origin) rather than re-deferring silently.",
+    "Today's 10-dest sample pool = 533 slugs read fresh from the sitemap (seed nakshiq-2026-07-13), not from a cached destinations table read.",
+    "Section I's '/' probe followed the redirect (200, 70ms, presumably a CDN-cache-warm hit) rather than reporting the raw 301 — the raw redirect mechanics are correctly tested without redirect-following in Section J instead (5/5 301 to /en equivalents)."
+  ],
+  "business_summary": {
+    "headline": "A quiet, stable day that also closed a small gap in our own QA process: yesterday's automated check (07-12) started but never finished, so today's comparison reaches back to 07-11. Everything that did run came back clean and consistent with 07-11 — no deploy has landed since July 8, so this is expected. Today's random sample happened to include one of the older-style map pages for the first time in over a week, which let us directly re-confirm that style still works fine rather than relying on the same one example we'd been reusing. The Hindi-content gap from earlier this month was independently re-confirmed on a 4th different destination today, continuing to point at the same rendering fix rather than a data problem.",
+    "traffic_lights": [
+      { "area": "Hindi content completeness", "status": "YELLOW", "why": "NEW-2026-07-09-001 confirmed STILL OPEN, now independently verified on a 4th distinct destination (kozhikode) across 4 separate days — destination taglines and 'why special' write-ups still show in English on Hindi pages even though translated Hindi text already exists in the database for 525 of 533 destinations. Page title, navigation, and meta descriptions ARE correctly Hindi — only the visible body copy is affected." },
+      { "area": "Site availability", "status": "GREEN", "why": "22/22 core routes and 10/10 sampled destinations served 200 in both languages; 0 server errors anywhere in today's matrix" },
+      { "area": "Sitemap / crawl surface", "status": "GREEN", "why": "24,944 URLs, +1 from yesterday's comparable baseline (a single new editorial page under 'The Window') — every other page type held exactly steady" },
+      { "area": "Catalogue", "status": "GREEN", "why": "Steady at 533 destinations; every one still carries a complete emergency-SOS desk" },
+      { "area": "Cover images (heroes)", "status": "GREEN", "why": "533/533 present, 0 missing" },
+      { "area": "API health", "status": "GREEN", "why": "0 server errors across 13 probes; bad inputs correctly rejected; real answers returned" },
+      { "area": "SEO metadata", "status": "GREEN", "why": "Clean pass on the core matrix continues; the quiz share-image fix from weeks ago remains stable" },
+      { "area": "Emergency SOS — safety baseline", "status": "GREEN", "why": "533/533 destinations, min 5 dialable numbers (avg 7.4), 0 placeholders — matches yesterday's numbers almost exactly." },
+      { "area": "Stay-pick coverage (thin-content watchlist)", "status": "YELLOW", "why": "Unchanged from 07-11: Kaza and Majuli are fine (4 stay options each), Phawngpui Peak (a remote Mizoram peak) genuinely still has only 2 verified stay options — a narrow, honest content gap, not a bug." },
+      { "area": "Maps", "status": "GREEN", "why": "Explore map: 519 markers (steady). Today's sample happened to include an older-style map page for the first time in over a week, and it rendered correctly alongside the newer style." },
+      { "area": "PWA / offline", "status": "GREEN", "why": "Service worker byte-identical to yesterday's check; manifest + offline page fine" },
+      { "area": "Console health", "status": "GREEN", "why": "React hydration warning: 0 across every page checked today, including the Hindi page" },
+      { "area": "QA process reliability", "status": "YELLOW", "why": "Yesterday's automated run (07-12) started but never finished — no report was produced. Today's run completed normally and flags the gap; see risks." }
+    ],
+    "whats_changed": [
+      "[confirmed on a 4th destination] The Hindi content-parity finding is not a one-off — checked independently today on a fourth different destination (kozhikode) and reproduced identically: Hindi translations exist in the database but the page shows English body copy.",
+      "[process gap found] Yesterday's automated QA run did not finish and produced no report. Today's run completed and is flagging it — worth a quick look at why it stopped.",
+      "[fresh evidence, same conclusion] Today's random sample included an older-style destination map page for the first time in over a week, letting us confirm it still renders correctly with a brand-new example instead of reusing the same one repeatedly.",
+      "[steady] SOS safety floor, cover images, sitemap, and API health all held their baselines, with the sitemap growing by exactly 1 page (a new editorial piece).",
+      "[healthy] No deploy has landed since July 8 — five days of a stable, unchanged codebase."
+    ],
+    "risks": [
+      "The Hindi content gap is worth prioritizing — it affects the actual travel-advice copy on the vast majority of the Hindi-language site, and is now confirmed on 4 separate destinations across 4 separate days. The data is already there; this is a rendering fix, not a translation project.",
+      "Yesterday's scheduled QA run silently failed to complete — no findings, no reports. Worth checking whether it hit an error or a timeout, since a repeat of this would mean losing QA coverage without any alert.",
+      "The deep accessibility/performance audit (overdue since early May) remains unscheduled. It's not being re-run daily on purpose (no code has changed to re-check), but the backlog keeps aging — worth booking as its own session.",
+      "Atlas static-coordinates bug: cosmetic but prints the wrong geography on 9 of 10 sampled destination pages (in both languages) and the homepage — small credibility leak on a data-accuracy brand.",
+      "The 8 Sikkim destinations still lack /cost/ pages AND are the same 8 missing Hindi translations — worth batching both into one 'finish the Sikkim cluster' pass.",
+      "The daily cover-photo check's own script still can't finish on its own — the workaround is solid but this needs a real fix so it's not a recurring manual step.",
+      "Phawngpui Peak (remote Mizoram peak) genuinely has only 2 verified stay options — worth sourcing one more if a real one exists, otherwise likely honest scarcity."
+    ],
+    "bottom_line": [
+      "Priority action: fix the Hindi tagline/why-special rendering gap — now confirmed on 4 separate destinations across 4 days, translated content already exists for 525 destinations, it just isn't being displayed.",
+      "Look into why yesterday's (07-12) automated QA run didn't finish — no report was produced, which is a gap in the safety net itself.",
+      "Schedule the overdue deep pass (axe + Lighthouse) as its own session — it's intentionally not run daily, but it keeps getting older without a booked slot.",
+      "Nothing else needs urgent action — everything else held steady or improved slightly (sitemap +1 page, SOS coverage +1 field).",
+      "Batch the 8 Sikkim destinations' missing /cost/ pages and missing Hindi translations into one cleanup pass — same 8 destinations, same root cause.",
+      "Fix the static atlas coordinate when convenient (one variable, seen on 9 of 10 sampled destination pages and the homepage).",
+      "Low-priority dev task: fix scripts/audit-hero-images.mjs so it completes without a manual workaround.",
+      "Kaza and Majuli remain resolved on the stay-picks watchlist. Only Phawngpui Peak still needs 1 more stay option."
+    ],
+    "coverage": [
+      "10 destinations sampled live in English + Hindi: vrindavan, sasangir, alwar, kozhikode, vishnuprayag, alibaug, darjeeling, bandipur, gangtok, panaji",
+      "22 core routes + 13 API probes + 9 soft-404 guards + 5 locale redirects + 4 quiz-route recheck probes (both locales)",
+      "Explore Leaflet map (toggle verified) + 2 atlas-template dest pages (1 in Hindi, where the content-parity finding was reconfirmed for a 4th time) + 2 Leaflet-template dest pages (1 fresh from today's sample, 1 historical comparison)",
+      "All 533 destination hero images HEAD-probed fresh today (0 missing)",
+      "533 destination SOS rows ground-truthed in the database (canonical-formula aggregates + 3-row prior-bug recheck)",
+      "Sitemap walked chunk by chunk with full per-type composition, hand-diffed against 07-11 (24,944; +1, isolated to 1 new editorial page)",
+      "Confirmed via live data + git log that no deploy has landed since July 8",
+      "Direct, targeted spot-check of the 3 long-outstanding stay-picks destinations (kaza, phawngpui-peak, majuli) — DB row counts, continuity check vs 07-11's directly-verified numbers",
+      "Independent re-verification of the Hindi content-parity finding on a 4th, different destination: DOM proof plus a same-session database proof, matching the pattern from the prior 3 days"
+    ]
+  }
+}

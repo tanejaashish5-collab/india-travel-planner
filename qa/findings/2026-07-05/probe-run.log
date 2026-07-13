@@ -1,0 +1,207 @@
+https://www.nakshiq.com/en/destination/this-does-not-exist-xyz -> 404 (9b)
+https://www.nakshiq.com/en/destination/zzzzzz-fake -> 404 (9b)
+https://www.nakshiq.com/hi/destination/this-does-not-exist-xyz -> 404 (9b)
+https://www.nakshiq.com/en/destination/jaipur/13 -> 404 (9b)
+https://www.nakshiq.com/en/destination/jaipur/0 -> 404 (9b)
+https://www.nakshiq.com/en/destination/jaipur/notamonth -> 404 (9b)
+https://www.nakshiq.com/hi/destination/varanasi/99 -> 404 (9b)
+https://www.nakshiq.com/destination/nonexistent-slug-qa/june -> 404 (9b)
+https://www.nakshiq.com/en/itinerary/this-does-not-exist-xyz -> 404 (68910b)
+WROTE section-A-soft404.csv (9 rows, mode=w)
+dzukou-valley 200 TTFB=1227ms total=1305ms 335406b
+swamimalai 200 TTFB=522ms total=582ms 239199b
+pithoragarh 200 TTFB=3337ms total=3415ms 363995b
+hyderabad 200 TTFB=478ms total=560ms 390467b
+udaipur 200 TTFB=621ms total=715ms 468817b
+WROTE section-B-availability.csv (5 rows, mode=w)
+assagao 200 TTFB=2760ms total=2842ms 373599b
+bikaner 200 TTFB=728ms total=808ms 383835b
+visakhapatnam 200 TTFB=2778ms total=2860ms 375474b
+khonoma 200 TTFB=2473ms total=2586ms 339167b
+pasighat 200 TTFB=3560ms total=3641ms 329221b
+WROTE section-B-availability.csv (5 rows, mode=a)
+dzukou-valley 200 lang=hi devanagari=True
+swamimalai 200 lang=hi devanagari=True
+pithoragarh 200 lang=hi devanagari=True
+hyderabad 200 lang=hi devanagari=True
+udaipur 200 lang=hi devanagari=True
+WROTE section-C-hindi.csv (5 rows, mode=w)
+assagao 200 lang=hi devanagari=True
+bikaner 200 lang=hi devanagari=True
+visakhapatnam 200 lang=hi devanagari=True
+khonoma 200 lang=hi devanagari=True
+pasighat 200 lang=hi devanagari=True
+WROTE section-C-hindi.csv (5 rows, mode=a)
+landing 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+dzukou-valley 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+swamimalai 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+pithoragarh 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+hyderabad 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+udaipur 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+assagao 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+bikaner 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+visakhapatnam 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+khonoma 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+pasighat 200(cached) stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+dzukou-valley/december 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+itinerary/agra 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+WROTE section-D-seo.csv (13 rows, mode=w)
+en/risk-quiz 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+hi/risk-quiz 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=True
+en/quiz/hill-station 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=False
+hi/quiz/hill-station 200 stutter=False canonical=True hreflang(en/hi/xd)=True/True/True og=False
+WROTE section-D2-quiz-routes.csv (4 rows, mode=w)
+dzukou-valley structured=8 dialable=8 malformed=0 textonly=[] helper_phones=1
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   police = 100
+   rescue_contact = Kohima Police Control Room: 7005986046 · NSDMA: 1070 · Fire: 0370-2222
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+swamimalai structured=6 dialable=6 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 1091
+pithoragarh structured=10 dialable=9 malformed=1 textonly=['local_police_station'] helper_phones=1
+   ambulance = 108
+   embassy_emergency_line = US Embassy Delhi 24/7: +91-11-2419-8000
+   fire = 101
+   local_police_station = Kotwali Pithoragarh
+   mountain_rescue = Pithoragarh DCR 05964-226651 (ITBP coordination for Adi Kailash / Om P
+   police = 100
+   rescue_contact = Pithoragarh District Control Room: 05964-226651 / 1077
+   road_accident = 1073
+   tourist_helpline = 1800-111-363 (toll-free)
+   women_helpline = 1091 (or 181)
+hyderabad structured=8 dialable=7 malformed=1 textonly=['local_police_station'] helper_phones=0
+   ambulance = 108
+   fire = 101
+   local_police_station = Abids Police Station (Hyderabad City Commissionerate)
+   police = 100
+   rescue_contact = Hyderabad Collectorate: 040-23202813 / DG Police Control Room: 040-232
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 181
+udaipur structured=8 dialable=8 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   police = 100
+   rescue_contact = Rajasthan Ambulance: 102 / 108 | Police: 100 / 112
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+assagao structured=7 dialable=7 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   rescue_contact = North Goa District Control Room / Collectorate: 0832-2225383
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 1091
+bikaner structured=8 dialable=8 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   police = 100
+   rescue_contact = Rajasthan Ambulance: 102 / 108 | Police: 100 / 112 | Heat / sandstorm 
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+visakhapatnam structured=7 dialable=7 malformed=0 textonly=[] helper_phones=0
+   ambulance = 108
+   fire = 101
+   police = 100
+   rescue_contact = Vizag — Police 112, Ambulance 108, Fire 101. COVID Control Room 089125
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 181
+khonoma structured=8 dialable=8 malformed=0 textonly=[] helper_phones=2
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   police = 100
+   rescue_contact = Kohima Police Control Room: 7005986046 · NSDMA: 1070
+   road_accident = 1073
+   tourist_helpline = 1363
+   women_helpline = 1091
+pasighat structured=9 dialable=8 malformed=1 textonly=['local_police_station'] helper_phones=0
+   ambulance = 108
+   embassy_emergency_line = US: +91-11-2419-8000 | UK: +91-11-2419-2100
+   fire = 101
+   local_police_station = Pasighat Police Station
+   police = 100
+   rescue_contact = East Siang — Citizen's Call Centre: 15500 | Police: 100 | Women: 1091 
+   road_accident = 1073
+   tourist_helpline = 1800-111-363
+   women_helpline = 1091
+WROTE section-E-sos.csv (10 rows, mode=w)
+TOTAL structured fields: 79, dialable: 76, malformed: 3, text-only: [('pithoragarh', ['local_police_station']), ('hyderabad', ['local_police_station']), ('pasighat', ['local_police_station'])]
+DESTS WITH NO emergencySos BLOB: none
+POST /api/chat malformed -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/chat empty -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/chat wrong-shape -> 400 (28b) {"error":"Invalid question"}
+POST /api/chat oversized-200KB -> 413 (74b) {"error":"Payload too large — questions are capped at 1000 characters."}
+POST /api/chat valid -> 200 (2686b) {"answer":"# Best Time to Visit Leh, Ladakh\n\nLooking at the monthly scores, he
+WROTE section-F-api.csv (5 rows, mode=w)
+POST /api/itinerary malformed -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/itinerary empty -> 400 (31b) {"error":"Malformed JSON body"}
+POST /api/itinerary empty-object -> 400 (35b) {"error":"Missing required fields"}
+GET /api/weather?id=varanasi -> 200 (168b) {"temp":34,"feels_like":38,"humidity":49,"description":"overcast clouds","icon":
+GET /api/weather no-params -> 400 (34b) {"error":"Missing destination id"}
+GET /api/search-index -> 200 (718840b) {"destinations":[{"id":"aalo","name":"Aalo","state":{"name":"Arunachal Pradesh"}
+GET /api/destinations (expect 404) -> 404 (27551b) <!DOCTYPE html><html data-dpl-id="dpl_C3pvzva1Ap4wq8PzxZECzefSq5BS"><head><meta 
+GET /api/health (expect 404) -> 404 (27551b) <!DOCTYPE html><html data-dpl-id="dpl_C3pvzva1Ap4wq8PzxZECzefSq5BS"><head><meta 
+WROTE section-F-api.csv (8 rows, mode=a)
+/sw.js 200 15446 nakshiq-v52 md5 0c7bc0366b4f61237f86740e5d27f0b2
+/manifest.json 200 icons=3 shortcuts=5
+/offline 200
+WROTE section-G-pwa.csv (3 rows, mode=w)
+/ -> 301 /en
+/explore -> 301 /en/explore
+/trip -> 301 /en/trip
+/destination/jaipur -> 301 /en/destination/jaipur
+/sos -> 301 /en/sos
+WROTE section-J-locale.csv (5 rows, mode=w)
+/sitemap.xml 200 chunks=5
+https://www.nakshiq.com/sitemap/0.xml 200 locs=302 dest=0 month=0 cost=0
+https://www.nakshiq.com/sitemap/1.xml 200 locs=15756 dest=533 month=6396 cost=525
+https://www.nakshiq.com/sitemap/2.xml 200 locs=953 dest=0 month=0 cost=0
+https://www.nakshiq.com/sitemap/3.xml 200 locs=1864 dest=0 month=0 cost=0
+https://www.nakshiq.com/sitemap/4.xml 200 locs=6068 dest=0 month=0 cost=0
+TOTAL urls=24943 dest_slug=533 dest_month=6396 cost=525
+WROTE section-H-sitemap.csv (7 rows, mode=w)
+/en 200 TTFB=127ms redirects=0
+/en/explore 200 TTFB=846ms redirects=0
+/en/trip 200 TTFB=585ms redirects=0
+/en/ask 200 TTFB=505ms redirects=0
+/en/sos 200 TTFB=437ms redirects=0
+/en/blog 200 TTFB=600ms redirects=0
+/en/collections 200 TTFB=728ms redirects=0
+/en/festivals 200 TTFB=763ms redirects=0
+/en/treks 200 TTFB=496ms redirects=0
+/en/permits 200 TTFB=521ms redirects=0
+/en/road-conditions 200 TTFB=505ms redirects=0
+/en/methodology 200 TTFB=412ms redirects=0
+WROTE section-I-core-routes.csv (12 rows, mode=w)
+/en/about 200 TTFB=457ms redirects=0
+/en/gap-year 200 TTFB=505ms redirects=0
+/en/destination/jaipur 200 TTFB=588ms redirects=0
+/en/destination/varanasi 200 TTFB=725ms redirects=0
+/hi 200 TTFB=439ms redirects=0
+/hi/explore 200 TTFB=580ms redirects=0
+/en/destination/jaipur/june 200 TTFB=515ms redirects=0
+/en/cost/jaipur 200 TTFB=521ms redirects=0
+/en/itinerary/agra 200 TTFB=463ms redirects=0
+/hi/itinerary/agra 200 TTFB=436ms redirects=0
+/en/search 404 TTFB=131ms redirects=0
+/en/compare 200 TTFB=512ms redirects=0
+WROTE section-I-core-routes.csv (12 rows, mode=a)
+routes=24 real=23 200s=23 non200=[]
+/en/search phantom probe: [('404', '131')]
+TTFB(real) min=127 median=512 p90=725 max=846
