@@ -14,6 +14,6 @@ Video `yt-h6G9R4UxR6g` (2026-07-07, 47K views/2d). One verbatim prompt → Fable
 
 **Two banked takeables:** (a) web design collapsed to token cost — "$10K website" templates are now a dead product category (he's giving 10,000 away as funnel bait); (b) static-scroll→experience direction noted for a possible NakshIQ design-exploration run, bounded by the mobile-India Lighthouse>90 budget.
 
-CTA = his two Skool communities (Maker School paid / Maker Zero free) — 7th lead-magnet-machine data point.
+CTA = his two Skool communities (Maker School paid / Maker Zero free) — re-confirms the lead-magnet-machine shape (Nick = the 6th distinct machine; same funnel, second study).
 
 Related: [[nick-saraev]], [[money-is-services-not-adsense]], [[claude-code-ecosystem]], [[verification-as-moat]].

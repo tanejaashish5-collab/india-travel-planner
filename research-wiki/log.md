@@ -10,3 +10,4 @@
 - 2026-07-09 — Ingest of the Nick Saraev screen-watcher audit (new person page + source page).
 - 2026-07-09 — Ingest of the Nick Saraev 25-websites audit (new source page; nick-saraev + money-is-services-not-adsense updated).
 - 2026-07-12 — Ingest of the PURSUE-refill passion-first run (all 8 fit-gate survivors CROWDED, pick = NONE): new src-pursue-refill-2026-07-12, rejected-ideas dated section added, passion-fit-gate updated with the fit-first-ordering confirmation.
+- 2026-07-13 — Ingest of the Nick Saraev × Justin Lob $20K/mo member-testimonial audit (7th money-is-services-not-adsense data point; surfaces a revive-or-retire decision on dashboard Project #1): new src-nick-justin-lob-20k, nick-saraev updated (3rd study).
