@@ -30,7 +30,7 @@
     "px_the_mountain-lofi-lofi-music-496553"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-12",
@@ -39,27 +39,11 @@
     "PdMu0_evening": "2026-07-12",
     "m8EAd_carousel": "2026-07-12",
     "PdMu0_carousel": "2026-07-12",
-    "GAh5p_yt_short": "2026-07-12",
-    "m8EAd_yt_short": "2026-07-12"
+    "GAh5p_yt_short": "2026-07-13",
+    "m8EAd_yt_short": "2026-07-13"
   },
   "last_sync": "2026-07-12T15:20:35.066609+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "courtallam",
-      "date": "2026-06-28"
-    },
-    {
-      "destination_id": "auli",
-      "date": "2026-06-28"
-    },
-    {
-      "destination_id": "belur",
-      "date": "2026-06-28"
-    },
-    {
-      "destination_id": "sangla",
-      "date": "2026-06-28"
-    },
     {
       "destination_id": "sissu",
       "date": "2026-06-29"
@@ -331,6 +315,10 @@
     {
       "destination_id": "zanskar",
       "date": "2026-07-12"
+    },
+    {
+      "destination_id": "hyderabad",
+      "date": "2026-07-13"
     }
   ],
   "posted_formats": {
@@ -5256,6 +5244,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "zanskar.mp4"
+    },
+    {
+      "timestamp": "2026-07-13T07:42:15.318080+00:00",
+      "date": "2026-07-13",
+      "platform": "youtube",
+      "post_id": "12X7G",
+      "destination": "hyderabad",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_hyderabad_hi_2026-07-13.mp4"
+    },
+    {
+      "timestamp": "2026-07-13T07:42:57.293610+00:00",
+      "date": "2026-07-13",
+      "platform": "instagram",
+      "post_id": "oBmMc",
+      "destination": "hyderabad",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_hyderabad_hi_2026-07-13.mp4"
     }
   ],
   "theme_usage": {

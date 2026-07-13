@@ -10969,3 +10969,26 @@ Date range: 2026-04-15 → 2026-07-11
 2026-07-12 19:34:20  INFO      
 Date range: 2026-04-15 → 2026-07-12
 2026-07-12 19:34:20  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 07:40:17  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 07:40:17  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-13
+2026-07-13 07:40:17  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 07:40:20  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-13 07:42:02  INFO      Short rendered: yt_short_this_vs_that_hyderabad_hi_2026-07-13.mp4 (21856 KB, 26.1s, fmt=this_vs_that, music=edm-371)
+2026-07-13 07:42:02  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_hyderabad_hi_2026-07-13.mp4 (22,380,981 bytes, video/mp4)
+2026-07-13 07:42:03  INFO          Uploading to R2 (timeout=300s)...
+2026-07-13 07:42:04  INFO          R2 PUT OK. Confirming...
+2026-07-13 07:42:06  INFO          Media ready: eNjWr (22,380,981 bytes · yt_short_this_vs_that_yt_short_this_vs_that_hyderabad_hi_2026-07-13.mp4)
+2026-07-13 07:42:06  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_hyderabad_hi_2026-07-13.mp4
+2026-07-13 07:42:06  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-13 07:42:06  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-07-13 07:42:06  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-07-13 07:42:09  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=12X7G), waiting for platform confirmation...
+2026-07-13 07:42:15  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=12X7G · Platform=lo5rH5FcDQA
+2026-07-13 07:42:15  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-07-13 07:42:15  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-13 07:42:17  INFO      [instagram/nakshiq] Outstand accepted (post_id=oBmMc), waiting for platform confirmation...
+2026-07-13 07:42:57  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=oBmMc · Platform=18167333749446427
+2026-07-13 07:42:57  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-13 07:42:57  INFO      YT Short posted: format=this_vs_that, music=edm-371
+2026-07-13 07:42:57  INFO      State saved. YT Short run complete.
+2026-07-13 07:42:57  INFO      ════════════════════════════════════════════════════════════
