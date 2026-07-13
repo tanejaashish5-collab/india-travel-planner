@@ -40,7 +40,9 @@
     "m8EAd_carousel": "2026-07-12",
     "PdMu0_carousel": "2026-07-12",
     "GAh5p_yt_short": "2026-07-13",
-    "m8EAd_yt_short": "2026-07-13"
+    "m8EAd_yt_short": "2026-07-13",
+    "GAh5p_reel_studio": "2026-07-13",
+    "m8EAd_reel_studio": "2026-07-13"
   },
   "last_sync": "2026-07-12T15:20:35.066609+00:00",
   "posted_destinations": [
@@ -318,6 +320,10 @@
     },
     {
       "destination_id": "hyderabad",
+      "date": "2026-07-13"
+    },
+    {
+      "destination_id": "manali",
       "date": "2026-07-13"
     }
   ],
@@ -5262,6 +5268,24 @@
       "destination": "hyderabad",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_hyderabad_hi_2026-07-13.mp4"
+    },
+    {
+      "timestamp": "2026-07-13T08:42:06.792447+00:00",
+      "date": "2026-07-13",
+      "platform": "youtube",
+      "post_id": "uw90E",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-route.mp4"
+    },
+    {
+      "timestamp": "2026-07-13T08:42:48.699743+00:00",
+      "date": "2026-07-13",
+      "platform": "instagram",
+      "post_id": "4ZVyi",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-route.mp4"
     }
   ],
   "theme_usage": {
@@ -6266,7 +6290,8 @@
     "ladakh-manali-biker": "2026-07-03",
     "ladakh-express-7d": "2026-07-06",
     "spiti-biker-circuit": "2026-07-08",
-    "kinnaur-spiti-circuit": "2026-07-10"
+    "kinnaur-spiti-circuit": "2026-07-10",
+    "ladakh-manali-route": "2026-07-13"
   },
   "carousel_seen": {
     "festival": [
