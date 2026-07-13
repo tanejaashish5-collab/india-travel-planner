@@ -1,7 +1,7 @@
 ---
 type: tool
-sources: [data/research/VAIBHAV-SISINTY-TOOLS-INVENTORY-2026-07-01.md, data/research/CLAUDE-CODE-FOR-MONEY-GOLD-2026-06-26.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/KARPATHY-LLM-WIKI-ASSESSMENT-2026-07-07.md]
-updated: 2026-07-07
+sources: [data/research/VAIBHAV-SISINTY-TOOLS-INVENTORY-2026-07-01.md, data/research/CLAUDE-CODE-FOR-MONEY-GOLD-2026-06-26.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/KARPATHY-LLM-WIKI-ASSESSMENT-2026-07-07.md, data/research/CLAUDE-CHANNEL-AUDIT-2026-07-13.md]
+updated: 2026-07-13
 ---
 
 # Claude Code ecosystem (our stack — status honest as of 2026-07-07)
@@ -30,3 +30,24 @@ $10/M in / $50/M out (2× Opus); long-horizon autonomy 91/100 vs Opus 63 (Every'
 - **This research-wiki** (Karpathy LLM-wiki pattern): the memory system was already ~70% of it; this vault closes the research-corpus gap.
 
 Related: [[self-hosted-agents]], [[google-free-ai-stack]] (Antigravity is the competitor).
+
+## 2026-07-13 — Official @claude channel audit (all 138 videos)
+
+**Verdict: we already run ~75% of enterprise-grade Claude Code patterns** (Spotify/DoorDash/Lovable/Anthropic-internal): verification-after-write, canary crons, multi-agent workflows, model routing, kill-gates, file-based memory, skills, hooks. Ranked adoption list, compressed:
+
+1. **Routines (`/schedule`, cloud-scheduled agents)** — time/webhook/GitHub triggers, runs on Anthropic infra. Retires the CronCreate-misfire + launchd-TCC failure classes for the *monitoring* layer (radar harvest, GSC/GA4 audit drafting, PR babysitting). Local renders/local files/interactive-auth MCP stay local.
+2. **Evals as infrastructure, not vibes** — the one theme every enterprise talk repeats ("evals are unit tests for AI"). Our biggest structural gap: we verify outputs well, barely eval pipelines. Concretes: grade the radar scorer's 68 self-tests, build a 20-case autoposter eval, a Playwright user-simulator eval on NakshIQ's 3 critical flows pre-deploy, re-run all evals on every model release.
+3. **Self-improving skills** — skills that encode their own blockers/solutions and get updated by the agent (Warp/Cursor/Lovable pattern). Make `qa/SKILL.md` + autoposter runbooks self-editing via a weekly "what broke/confused you" pass.
+4. **Memory "dreaming"** — nightly/weekly batch job across recent sessions: dedupe, consolidate, mark stale, extract cross-session patterns → PR against MEMORY.md/CLAUDE.md. We do this by hand (`/capture-session`); the pattern says automate it out-of-band (~95% cache-hit in Anthropic's implementation).
+5. Repo-level hooks hardening (post-edit format, pre-tool-use blocks on dangerous classes — global credential hooks exist, the repo itself is thin).
+6. Context economics habits (`/context` regularly, MCP servers off unless in use, stable-content-first prompt layout, target 80%+ cache-hit).
+7. New orchestration surfaces (Agent View, desktop session groups, native worktrees, `/ultra review` = confirmed our real `/code-review ultra`, phone remote-control).
+8. Advisor strategy — cheap model executes, expensive model is advisor-when-stuck (frontier quality at a fraction of cost); pairs with our existing `/council`.
+
+**Contradiction flagged, PENDING A/B — do not treat either side as settled:** our global routing table says "high = default; xhigh/max often overthinks" (Nate Herk study, 2026-07-08). Two Anthropic talks on this channel state xhigh is the Claude Code *default* and Pareto-optimal for coding/agentic work, with max showing the diminishing returns instead. Both can be partially true (their default tuned for coding agents; our warning came from open-ended strategy work). Action before editing the table: cheap A/B on 2-3 real tasks (one bugfix, one strategist scoring) at high vs xhigh.
+
+**What's coming:** Routines GA (currently research preview; GitHub-webhook triggers already live) · Managed Agents maturation — memory stores, *dreaming* (research preview), self-hosted sandboxes, agent identity/permission layer · proactive always-on agents (agents that wake unprompted on detected patterns; METR 16h autonomy today) · Claude Tag expanding beyond Slack to Microsoft Teams · effectively-infinite context (1M flat pricing, server-side compaction).
+
+Also resolved: Claude Code/Cowork on mobile is plan-tier gated (Max first, Pro rolling out "over the coming weeks" from Jul 7 launch), **not** an Australia geo-block.
+
+Source: [[src-claude-channel-audit]].
