@@ -1,6 +1,6 @@
 ---
 type: idea
-sources: [data/research/NEXT-STEP-BUSINESS-2026-06-23.md, data/research/MEDICAL-EQUIPMENT-INDIA-OPPORTUNITY-2026-07-02.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/PASSION-FIT-IDEAS-2026-06.md, data/research/PURSUE-REFILL-2026-07-12.md, data/research/ARISTOTLE-FIRST-PRINCIPLES-IDEAS-2026-07-13.md]
+sources: [data/research/NEXT-STEP-BUSINESS-2026-06-23.md, data/research/MEDICAL-EQUIPMENT-INDIA-OPPORTUNITY-2026-07-02.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/PASSION-FIT-IDEAS-2026-06.md, data/research/PURSUE-REFILL-2026-07-12.md, data/research/ARISTOTLE-FIRST-PRINCIPLES-IDEAS-2026-07-13.md, data/research/PRIVATE-PREMISE-INVERSION-2026-07-13.md]
 updated: 2026-07-13
 ---
 
@@ -54,6 +54,16 @@ Full run: [[src-aristotle-first-principles-run]]. Founder switched off the passi
 - **Process Archaeology** — CROWDED at the outcome level. AU AI-agencies already sell fixed-price SMB process-audit-to-ops-manual at $1.5–6K (matching the hypothesis); genuine multi-day unattended-agent autonomy is an execution method inside a commodity category, not an unserved buyer.
 
 **Meta-lesson (bank it):** two consecutive full generation runs, opposite methods (2026-07-12 passion-first vs. 2026-07-13 pure first-principles), both landed 100% CROWDED — ~106 validated ideas total, zero open gaps at the idea level. New pattern: [[public-premises-are-pre-arbitraged]] — reasoning from facts everyone can read converges on ground funded founders already took. Three kills here were by governments shipping the product free (the strongest form of "already done"). Next run, if any, must enumerate PRIVATE premises (owned data/audience/distribution/lived problem) first, not vary the search method again.
+
+## 2026-07-13 — Private-premise inversion: 3 KILL, 1 PROBE
+
+Full run: [[src-private-premise-inversion]]. Same-day follow-on to the Aristotle run above — this time ideas were derived from what the founder PRIVATELY owns (verified data corpus, verification methodology, the automation OS, panel-seller domain knowledge) rather than public facts. 3 of 4 still died; **idea 1 (verified India ground-truth API/MCP) is the only idea across 21 validated in 24h to survive as a PROBE** — not a rejection, see [[src-private-premise-inversion]] for the probe spec and 30–45-day kill gate.
+
+- **Dataset fabrication-audit service** (2026-07-13): INSUFFICIENT EVIDENCE. No dedicated "audit a third party's AI-scraped dataset" competitor found, but the non-replicable part (India .gov.in source expertise) doesn't transfer horizontally — this is idea 1's asset wearing a different go-to-market, not a second business. No evidence anyone pays to grade an existing dataset rather than just buying clean data instead.
+- **Non-Technical Founder's Claude OS (course/community)** (2026-07-13): CROWDED + audience-gated. 6+ active sellers from free (Anthropic Academy, official) to $599 (Maven "Claude for Non-Technical Operators," 4.9★/45 reviews) to Nate Herk's AIS+ (~3.4-3.8K paying members at $99/mo). Our OS is genuinely deeper, but every paid winner converted a **pre-existing audience** — the scarce resource is distribution, which we lack. 6th confirmation of the audience-first lead-magnet pattern.
+- **Panel-seller intelligence (BuyICT/DMP2)** (2026-07-13): CROWDED + moat unverified + structure changing. Intermedium ($130/user/mo, 100+ clients, acquired Jul 2026) and GovMarket/AwardedTenders ($89–165/user/mo) already resell the free AusTender/OCDS data at scale; the claimed invited-seller-opacity moat is unverified even to the founder; DMP2 is being consolidated into the whole-of-government "People Panel" mid-2026, risking the specific panel knowledge going stale mid-build.
+
+**Meta-lesson (bank it):** even private-premise ideas fail when the *binding* premise is distribution, not the asset itself. Data/capability premises (a corpus, a pipeline) survive the landscape test better than knowledge/credential premises (something merely known) — but validation can only prove crowdedness, never a gap; only a real demand probe (paying pilot) can finish the job. Promoted into [[public-premises-are-pre-arbitraged]] as "the inversion refinement." **Pipeline retired 2026-07-13** (commit `c4b248687`, `.loop/archive/2026-07-13-opportunity-pipeline-retired/`; radar launchd job disabled) — see [[ledger-overview]].
 
 ## Killed on founder-fit (evidence fine, fit fatal)
 

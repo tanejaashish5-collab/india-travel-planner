@@ -4,9 +4,11 @@ sources: [.loop/biz-opportunities-ledger.json]
 updated: 2026-07-09
 ---
 
-# Ledger overview — the 77-idea board
+# Ledger overview — the 77-idea board (RETIRED 2026-07-13, now historical)
 
-Live system of record: `.loop/biz-opportunities-ledger.json` (ledger updatedAt 2026-06-26, 77 ideas; refreshed by the [[radar-loop]] daily scout). This page is the wiki's analytical snapshot — the ledger stays canonical for scores.
+**⚠️ RETIRED 2026-07-13**: the entire opportunity pipeline (this ledger, radar briefs/runs, bizscout runs, digests, strategist/tata scores, goal files) was archived to `.loop/archive/2026-07-13-opportunity-pipeline-retired/` (commit `c4b248687`, reversible, nothing deleted) and the daily radar launchd job was unloaded (plist renamed `.disabled`). No automation refills this board going forward. Trigger: [[src-private-premise-inversion]] concluded validation had done all it could — 21 ideas validated in 24h across two 07-13 runs, 0 PURSUE, 1 cheap PROBE, and further searching without new premises just re-finds the same crowded ground. Everything below is now a historical snapshot, not a live board.
+
+Prior system of record: `.loop/biz-opportunities-ledger.json` (ledger updatedAt 2026-06-26, 77 ideas; formerly refreshed by the [[radar-loop]] daily scout, now disabled). This page is the wiki's analytical snapshot — the ledger stays canonical for scores.
 
 **Tier counts (strategist):** PURSUE 18 · WATCH 38 · PARK 21. Every idea also carries a validation verdict and a [[tata-gate]] ethics/durability verdict; strategist scoring applies the [[strategist-checklist]].
 
