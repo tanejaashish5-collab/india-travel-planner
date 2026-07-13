@@ -1,7 +1,7 @@
 ---
 type: idea
-sources: [data/research/NEXT-STEP-BUSINESS-2026-06-23.md, data/research/MEDICAL-EQUIPMENT-INDIA-OPPORTUNITY-2026-07-02.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/PASSION-FIT-IDEAS-2026-06.md, data/research/PURSUE-REFILL-2026-07-12.md]
-updated: 2026-07-12
+sources: [data/research/NEXT-STEP-BUSINESS-2026-06-23.md, data/research/MEDICAL-EQUIPMENT-INDIA-OPPORTUNITY-2026-07-02.md, data/research/FABLE5-YT-OPPORTUNITY-SCAN-2026-07-02.md, data/research/PASSION-FIT-IDEAS-2026-06.md, data/research/PURSUE-REFILL-2026-07-12.md, data/research/ARISTOTLE-FIRST-PRINCIPLES-IDEAS-2026-07-13.md]
+updated: 2026-07-13
 ---
 
 # Rejected ideas (the graveyard — never re-litigate from scratch)
@@ -38,6 +38,22 @@ Full run: [[src-pursue-refill-2026-07-12]]. This time the [[passion-fit-gate]] r
 **Fit-gate kills before validation** (never reached the expensive phase): VerifiedYatra/Guna Compass/Jyotish Ledger (duplicates), AlgoVerify India + AutoApply India + Heartland Channel Portfolio + Creator Cost Map India + AU-NRI Money Desk (fit 2.5-3.5, outside the four lanes or zero founder belief in the audience — the AlgoVerify/FranchiseLens failure mode caught pre-spend), Bharat Heritage Atlas (fit 3.5, parked as a future NakshIQ content feature, needs founder editorial time).
 
 **Meta-lesson (bank it):** the residual pattern across all 8 kills is that Ashish's best assets — verified data, honest verdicts — are exactly what the market already gives away free. The monetizable form keeps being features and trust inside NakshIQ (or Chanakya), not new standalone SKUs. See [[verification-as-moat]].
+
+## 2026-07-13 — Aristotle first-principles run: 9/9 CROWDED (fit gate off by founder instruction)
+
+Full run: [[src-aristotle-first-principles-run]]. Founder switched off the passion-fit gate and the radar pipeline for generation ("forget about my profile... think of brand new ideas") but not the evidence bar — all 9 axiom-derived ideas (NDIS/childcare/strata/estate/tribunal compliance-documentation plays, insurance/energy renewal switching, AI-output verification, tender drafting, autonomous-agent process audits) went through refute-mode competitive validation and died on competition, none on fit. Zero overlap with the existing 89-idea ledger — genuinely new territory, still crowded.
+
+- **NDIS Audit Copilot** — CROWDED. Audit Pilot (800+ providers, 13,000 automated checks/day), AuditCore ($350/mo, AI-drafts NDIS docs <60s), Willow AI, 15+ named players; every feature has ≥2 live AI competitors.
+- **QIP Copilot (childcare)** — CROWDED. QIP Flow is literally branded "the AI QIP Co-Pilot" ($249/mo, live) against 18,027 ACECQA services; only price is left to differentiate.
+- **Strata Committee Copilot** — CROWDED. UnitBuddy already AI-native at $199/yr flat across near the full feature list (368,234 schemes / 3.19M lots market); sole residual is one unconfirmed feature (maintenance-quote comparison), not a business.
+- **Executor-in-a-Box** — CROWDED. Safewill (A$22.5M raised) + Willed (A$6M) own the lawyer tier, SimplyEstate owns DIY, the free government Australian Death Notification Service already solves institution notifications; remaining sliver is "a sprint away" on an incumbent's own roadmap. Court-form drafting also brushes unqualified-legal-practice law.
+- **Tribunal Prep Copilot** — CROWDED. Claim Done (claimdone.com.au) ships near-identical AU-wide AI tribunal-application drafting at $49–197 flat; FWC lodgments jumped ~70% (30k→50-55k/yr) attributed by the Commission to free raw-ChatGPT filings — the volume substitute is free and already winning (badly: Justice Hatcher's own test fabricated case law).
+- **Renewal Challenger** — CROWDED + regulatorily blocked. NSW Energy Switch (government, free) already reads-requotes-and-files the exact energy-switch mechanic; Bill Hero (CHOICE-endorsed) owns independent auto-switch; ASIC's July-2025 informed-consent regime makes passive-consent insurance switching legally hollow, and a switching intermediary needs an AFSL (min $2M PI cover). UK precedent (Flipper) died in the 2021 price spike.
+- **AI-Work Verification Layer** — CROWDED, dies hardest. Norm AI ($260M raised, $1.2B valuation, Jul-2026 Series C), Patronus AI, a full legal-citator cluster, AND Evisent already owns the exact "AU mid-tier accounting firm mandatory-verification" wedge since 2017 ($1,850/mo).
+- **Tender Response Factory** — CROWDED but nascent. 6+ AU-native AI tender products already racing SMEs (TenderAssist $149–399/mo + $999 launch pack — the exact hypothesized price point); nobody has won yet, but entering means being the 7th racer.
+- **Process Archaeology** — CROWDED at the outcome level. AU AI-agencies already sell fixed-price SMB process-audit-to-ops-manual at $1.5–6K (matching the hypothesis); genuine multi-day unattended-agent autonomy is an execution method inside a commodity category, not an unserved buyer.
+
+**Meta-lesson (bank it):** two consecutive full generation runs, opposite methods (2026-07-12 passion-first vs. 2026-07-13 pure first-principles), both landed 100% CROWDED — ~106 validated ideas total, zero open gaps at the idea level. New pattern: [[public-premises-are-pre-arbitraged]] — reasoning from facts everyone can read converges on ground funded founders already took. Three kills here were by governments shipping the product free (the strongest form of "already done"). Next run, if any, must enumerate PRIVATE premises (owned data/audience/distribution/lived problem) first, not vary the search method again.
 
 ## Killed on founder-fit (evidence fine, fit fatal)
 

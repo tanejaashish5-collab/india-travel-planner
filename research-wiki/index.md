@@ -19,6 +19,7 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 - [[verification-as-moat]] — our deepest owned moat (NakshIQ); trust-registry idea family
 - [[distribution-arbitrage-via-guesting]] — 9% of posts, 38% of likes; doesn't transfer to faceless formats
 - [[delegation-fails-heuristic]] — app-layer value survives where outputs are untestable, decisions entangled, citations mandatory; NakshIQ fits it
+- [[public-premises-are-pre-arbitraged]] — first-principles reasoning from PUBLIC facts converges on ground funded founders already took; two opposite-method runs both hit 100% CROWDED; open gaps need PRIVATE premises
 
 ## Ideas
 
@@ -47,6 +48,6 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 ## Sources (terse, one per ingested doc)
 
 Creator studies: [[src-vaibhav-channel-audit]] · [[src-vaibhav-tools-inventory]] · [[src-vyan-gandhi-findings]] · [[src-doac-jay-research]] · [[src-doac-jay-opportunities]] · [[src-mastersunion-scan]] · [[src-naval-learnings]] · [[src-operators-playbook]] · [[src-ashwin-damera]] · [[src-basesh-gala-scout]] · [[src-nick-screen-watcher]] · [[src-nick-25-websites]] · [[src-nick-justin-lob-20k]]
-Opportunity scouts: [[src-basesh-9industries]] · [[src-wide-opportunity-scout]] · [[src-passion-fit-ideas]] · [[src-opportunities-ledger-doc]] · [[src-fable5-scan]] · [[src-medical-equipment-r1]] · [[src-medical-equipment-r2]] · [[src-next-step-business]] · [[src-pursue-refill-2026-07-12]]
+Opportunity scouts: [[src-basesh-9industries]] · [[src-wide-opportunity-scout]] · [[src-passion-fit-ideas]] · [[src-opportunities-ledger-doc]] · [[src-fable5-scan]] · [[src-medical-equipment-r1]] · [[src-medical-equipment-r2]] · [[src-next-step-business]] · [[src-pursue-refill-2026-07-12]] · [[src-aristotle-first-principles-run]]
 Frameworks/system: [[src-ratan-tata-gate]] · [[src-strategist-checklist]] · [[src-opportunity-brain]] · [[src-founder-profile]] · [[src-karpathy-llm-wiki]]
 Content/monetisation ops: [[src-content-radar]] · [[src-content-engine-gaps]] · [[src-claude-code-money-gold]] · [[src-reach-diagnosis]] · [[src-monetisation-spec]] · [[src-nate-herk-fable-mode]] · [[src-roman-knox-audit]] · [[src-nate-one-prompt-company]] · [[src-claude-channel-audit]]
