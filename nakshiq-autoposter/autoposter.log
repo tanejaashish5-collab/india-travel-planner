@@ -11056,3 +11056,54 @@ Date range: 2026-04-15 → 2026-07-12
 2026-07-13 10:40:00  INFO      [facebook/Nakshiq] ✅ carousel published (best_month) · post_id=IpVsX
 2026-07-13 10:40:00  INFO      Carousel run complete (fmt=best_month, posted=True).
 2026-07-13 10:40:00  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 13:51:52  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 13:51:52  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-13
+2026-07-13 13:51:52  INFO      ════════════════════════════════════════════════════════════
+2026-07-13 13:51:55  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-13 13:51:59  WARNING   YT Short v2 failed (No audio was received. Please verify that your parameters are correct.) — falling back to v1 builder.
+2026-07-13 13:51:59  WARNING   Traceback (most recent call last):
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/autoposter.py", line 10776, in _run_yt_short
+    result = build_series_short(dry_run=dry_run)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/yt_shorts_v2.py", line 1807, in build_series_short
+    res = build(slug, dest, out, music=music, lang=lang, spec=spec, hook=hook)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/yt_shorts_v2.py", line 1468, in build
+    bounds = asyncio.run(_synth(script_text, voice_mp3, voice, rate, pitch))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/yt_shorts_v2.py", line 1100, in _synth
+    async for ch in c.stream():
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/edge_tts/communicate.py", line 588, in stream
+    async for message in self.__stream():
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/edge_tts/communicate.py", line 562, in __stream
+    raise NoAudioReceived(
+edge_tts.exceptions.NoAudioReceived: No audio was received. Please verify that your parameters are correct.
+
+2026-07-13 13:51:59  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-13 13:52:59  INFO      Short rendered: yt_short_this_vs_that_2026-07-13.mp4 (9750 KB, 24.0s, fmt=this_vs_that, music=27_lofi_temples)
+2026-07-13 13:52:59  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-07-13.mp4 (9,984,741 bytes, video/mp4)
+2026-07-13 13:53:01  INFO          Uploading to R2 (timeout=300s)...
+2026-07-13 13:53:02  INFO          R2 PUT OK. Confirming...
+2026-07-13 13:53:03  INFO          Media ready: m6nEd (9,984,741 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-07-13.mp4)
+2026-07-13 13:53:03  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-07-13.mp4
+2026-07-13 13:53:04  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-13 13:53:04  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-07-13 13:53:07  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=oB40c), waiting for platform confirmation...
+2026-07-13 13:53:13  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=oB40c · Platform=tUh4Be6ThFs
+2026-07-13 13:53:13  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-07-13 13:53:15  INFO      [instagram/nakshiq] Outstand accepted (post_id=pJ2IM), waiting for platform confirmation...
+2026-07-13 13:53:56  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=pJ2IM · Platform=18607743040004173
+2026-07-13 13:53:56  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 132-133: surrogates not allowed
+2026-07-13 13:53:56  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-13 13:53:56  INFO      YT Short posted: format=this_vs_that, music=27_lofi_temples
+2026-07-13 13:53:56  INFO      State saved. YT Short run complete.
+2026-07-13 13:53:56  INFO      ════════════════════════════════════════════════════════════
