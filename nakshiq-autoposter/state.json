@@ -35,10 +35,10 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-13",
-    "PdMu0": "2026-07-13",
-    "m8EAd_evening": "2026-07-13",
-    "PdMu0_evening": "2026-07-13",
+    "m8EAd": "2026-07-14",
+    "PdMu0": "2026-07-14",
+    "m8EAd_evening": "2026-07-14",
+    "PdMu0_evening": "2026-07-14",
     "m8EAd_carousel": "2026-07-14",
     "PdMu0_carousel": "2026-07-14",
     "GAh5p_yt_short": "2026-07-14",
@@ -46,7 +46,7 @@
     "GAh5p_reel_studio": "2026-07-13",
     "m8EAd_reel_studio": "2026-07-13"
   },
-  "last_sync": "2026-07-13T16:48:04.613554+00:00",
+  "last_sync": "2026-07-14T15:53:02.361012+00:00",
   "posted_destinations": [
     {
       "destination_id": "pangong-lake",
@@ -331,11 +331,14 @@
     {
       "destination_id": "mysore",
       "date": "2026-07-14"
+    },
+    {
+      "destination_id": "jog-falls",
+      "date": "2026-07-14"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -347,6 +350,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -358,7 +362,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "score_card",
       "collection_series",
       "score_card",
       "score_card",
@@ -370,6 +373,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5404,6 +5408,28 @@
       "destination": "mysore",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-07-14.mp4"
+    },
+    {
+      "timestamp": "2026-07-14T15:54:26.295433+00:00",
+      "date": "2026-07-14",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "H4xt5",
+      "destination": "jog-falls",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "jog-falls.mp4"
+    },
+    {
+      "timestamp": "2026-07-14T15:54:41.254513+00:00",
+      "date": "2026-07-14",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "vTcRg",
+      "destination": "jog-falls",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "jog-falls.mp4"
     }
   ],
   "theme_usage": {
@@ -5731,7 +5757,8 @@
       ],
       "jog-falls": [
         "2026-07-01",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-07-14"
       ],
       "kolad": [
         "2026-07-01",
@@ -5882,7 +5909,8 @@
         "2026-07-10",
         "2026-07-11",
         "2026-07-12",
-        "2026-07-13"
+        "2026-07-13",
+        "2026-07-14"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6094,7 +6122,8 @@
         "2026-07-13"
       ],
       "jog-falls": [
-        "2026-07-02"
+        "2026-07-02",
+        "2026-07-14"
       ],
       "bhimashankar": [
         "2026-07-03"
@@ -6146,7 +6175,8 @@
     "collections": {
       "birding-hotspots": [
         "2026-05-19",
-        "2026-05-20"
+        "2026-05-20",
+        "2026-07-14"
       ],
       "best-winter": [
         "2026-05-20",
@@ -6402,8 +6432,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "hogenakkal",
-    "collection": "best-honeymoon"
+    "shared_best": "jog-falls",
+    "collection": "birding-hotspots"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-09",
