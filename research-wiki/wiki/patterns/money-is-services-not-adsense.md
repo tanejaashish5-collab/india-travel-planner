@@ -13,6 +13,7 @@ updated: 2026-07-09
 1. **Vyan Gandhi / Augmentables (2026-06-29 scrape):** AI-video money in India = B2B services — brand ads, micro-dramas for Pocket FM/OTT at ₹60–70K/min. The viral channel exists to prove capability to buyers. AI profits only where it replaces lakhs-with-thousands.
 2. **Vaibhav Sisinty (2026-07-01 audit, 100× scale):** 740K YT / 2M IG feeding a 1M+ WhatsApp community feeding B2B corporate AI training (Adobe, Razorpay, Uber) + GrowthSchool cohorts. One #ad in 96 posts — sponsorship incidental. See [[vaibhav-sisinty]].
 3. **Nick Saraev (2026-07-09):** gives away "$10K websites" — 25 built by one Fable prompt at $5–10/site, promising 10,000 free — as Skool funnel bait (Maker School paid / Maker Zero free). Deliverables AI can one-shot become free lead magnets, which kills them as product categories. See [[src-nick-25-websites]].
+4. **Nick Saraev (2026-07-14, 7th data point):** gives away his entire "Nick OS" agent-workflow system (Linear board, webhook dispatch, scored eval gates) free on-camera — the video is Maker School funnel bait, not a product launch. See [[src-nick-agent-workflow-2027]].
 
 ## Implication for us
 

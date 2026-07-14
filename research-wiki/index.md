@@ -36,7 +36,7 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 - [[naval-ravikant]] — wealth equations; the philosophy under the gates
 - [[operators-panel]] — Dan Koe, Hormozi, Isenberg, Marina, Codie + DOAC/Jay meta-findings
 - [[ashwin-damera]] — Harvard frameworks; India-campus education corridor facts
-- [[nick-saraev]] — AI-automation YouTuber; the screen-watcher founder-telemetry pattern; 6th lead-magnet-machine data point
+- [[nick-saraev]] — AI-automation YouTuber; the screen-watcher founder-telemetry pattern; 7th lead-magnet-machine data point
 
 ## Tools
 
@@ -47,7 +47,7 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 
 ## Sources (terse, one per ingested doc)
 
-Creator studies: [[src-vaibhav-channel-audit]] · [[src-vaibhav-tools-inventory]] · [[src-vyan-gandhi-findings]] · [[src-doac-jay-research]] · [[src-doac-jay-opportunities]] · [[src-mastersunion-scan]] · [[src-naval-learnings]] · [[src-operators-playbook]] · [[src-ashwin-damera]] · [[src-basesh-gala-scout]] · [[src-nick-screen-watcher]] · [[src-nick-25-websites]] · [[src-nick-justin-lob-20k]]
+Creator studies: [[src-vaibhav-channel-audit]] · [[src-vaibhav-tools-inventory]] · [[src-vyan-gandhi-findings]] · [[src-doac-jay-research]] · [[src-doac-jay-opportunities]] · [[src-mastersunion-scan]] · [[src-naval-learnings]] · [[src-operators-playbook]] · [[src-ashwin-damera]] · [[src-basesh-gala-scout]] · [[src-nick-screen-watcher]] · [[src-nick-25-websites]] · [[src-nick-justin-lob-20k]] · [[src-nick-agent-workflow-2027]]
 Opportunity scouts: [[src-basesh-9industries]] · [[src-wide-opportunity-scout]] · [[src-passion-fit-ideas]] · [[src-opportunities-ledger-doc]] · [[src-fable5-scan]] · [[src-medical-equipment-r1]] · [[src-medical-equipment-r2]] · [[src-next-step-business]] · [[src-pursue-refill-2026-07-12]] · [[src-aristotle-first-principles-run]] · [[src-private-premise-inversion]]
 Frameworks/system: [[src-ratan-tata-gate]] · [[src-strategist-checklist]] · [[src-opportunity-brain]] · [[src-founder-profile]] · [[src-karpathy-llm-wiki]]
 Content/monetisation ops: [[src-content-radar]] · [[src-content-engine-gaps]] · [[src-claude-code-money-gold]] · [[src-reach-diagnosis]] · [[src-monetisation-spec]] · [[src-nate-herk-fable-mode]] · [[src-roman-knox-audit]] · [[src-nate-one-prompt-company]] · [[src-claude-channel-audit]]
