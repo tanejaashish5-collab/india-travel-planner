@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-14",
     "m8EAd_evening": "2026-07-14",
     "PdMu0_evening": "2026-07-14",
-    "m8EAd_carousel": "2026-07-14",
-    "PdMu0_carousel": "2026-07-14",
+    "m8EAd_carousel": "2026-07-15",
+    "PdMu0_carousel": "2026-07-15",
     "GAh5p_yt_short": "2026-07-15",
     "m8EAd_yt_short": "2026-07-15"
   },
@@ -320,6 +320,10 @@
     },
     {
       "destination_id": "bangus-valley",
+      "date": "2026-07-15"
+    },
+    {
+      "destination_id": "lamayuru",
       "date": "2026-07-15"
     }
   ],
@@ -5434,6 +5438,24 @@
       "destination": "bangus-valley",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_bangus-valley_hi_2026-07-15.mp4"
+    },
+    {
+      "timestamp": "2026-07-15T09:26:55.486649+00:00",
+      "date": "2026-07-15",
+      "platform": "instagram",
+      "post_id": "c9QiL",
+      "destination": "lamayuru",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-07-15"
+    },
+    {
+      "timestamp": "2026-07-15T09:26:58.669791+00:00",
+      "date": "2026-07-15",
+      "platform": "facebook",
+      "post_id": "Qtfzy",
+      "destination": "lamayuru",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-07-15"
     }
   ],
   "theme_usage": {
