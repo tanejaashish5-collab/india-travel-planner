@@ -11572,3 +11572,130 @@ Date range: 2026-04-15 → 2026-07-14
 2026-07-15 13:03:24  INFO      YT Short posted: format=this_vs_that, music=hype-445
 2026-07-15 13:03:24  INFO      State saved. YT Short run complete.
 2026-07-15 13:03:24  INFO      ════════════════════════════════════════════════════════════
+2026-07-15 15:59:08  INFO      ════════════════════════════════════════════════════════════
+2026-07-15 15:59:08  INFO      Nakshiq Autoposter · EVENING · 2026-07-15 · weekday=2
+2026-07-15 15:59:08  INFO      ════════════════════════════════════════════════════════════
+2026-07-15 15:59:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-15 15:59:46  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-15 15:59:46  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-07-15 15:59:47  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-15 15:59:47  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-15 15:59:47  INFO      Festivals filtered (past/post-window): Harela Festival, Amarnath Yatra Start, Chamba Minjar Fair, Pangong Nomad Festival, Karsha Gustor, Korzok Gustor, Lucknow Muharram Processions, Kanwar Yatra (+12 more)
+2026-07-15 15:59:47  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-15 16:00:02  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-15 16:00:02  INFO      Evening format (balance→anti_trap): v2_tourist_trap_split [0% vs target 15%] (0/15 never featured)
+2026-07-15 16:00:02  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: blog_promo
+2026-07-15 16:00:02  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 52
+2026-07-15 16:00:02  INFO      Fingerprint dedup snapshot — 52 dests in 7d · 123 (dest,fmt) pairs in 30d · 249 media in 60d
+2026-07-15 16:00:11  INFO      Shared best destination locked: Keylong
+2026-07-15 16:00:11  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-15 16:00:11  INFO      [instagram/nakshiq] Generating v2_tourist_trap_split post...
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: madurai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: hampi has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: coorg has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: mumbai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: achabal has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: nainital has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: darjeeling has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: pahalgam.mp4 in 60-day media window — SKIPPING
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: munsiyari has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: tawang has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: mathura has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: tungnath has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: kasol has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: shimla has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: chopta has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: ooty has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: lonavala in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: kargil in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: igatpuri in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: lamayuru already posted today — SKIPPING dest (same-day guard)
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: tso-moriri in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: zanskar in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: khardung-la in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: leh in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: karla-bhaja-caves in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: jog-falls in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: hogenakkal in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: bhimashankar in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: kolad in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: courtallam in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: khandala in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: keylong in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: amboli in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  INFO      v2_tourist_trap_split: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-07-15 16:00:11  WARNING   v2_tourist_trap_split: no eligible dest at render time — falling back to safe format 'score_card'
+2026-07-15 16:00:11  WARNING   [instagram/nakshiq] v2_tourist_trap_split: keylong inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'bhimashankar' as score_card to keep the slot live.
+2026-07-15 16:00:11  INFO      [instagram/nakshiq] Caption ready (380 chars, dest=bhimashankar)
+2026-07-15 16:00:11  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-15 16:00:11  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhimashankar.mp4?v=20260524
+2026-07-15 16:00:14  INFO          Brand-stamp applied: bhimashankar.mp4 (11,427,609 → 5,724,311 bytes)
+2026-07-15 16:00:14  INFO          Requesting upload URL for bhimashankar.mp4 (5,724,311 bytes, video/mp4)
+2026-07-15 16:00:15  INFO          Uploading to R2 (timeout=300s)...
+2026-07-15 16:00:17  INFO          R2 PUT OK. Confirming...
+2026-07-15 16:00:19  INFO          Media ready: 4Tlri (5,724,311 bytes · bhimashankar.mp4)
+2026-07-15 16:00:19  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-15 16:01:08  INFO      [instagram/nakshiq] ✅ Published · Outstand=3gytk · Platform=18065381330707484
+2026-07-15 16:01:08  INFO      [facebook/Nakshiq] Generating v2_tourist_trap_split post...
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: madurai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: hampi has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: coorg has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: mumbai has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: achabal has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: nainital has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: darjeeling has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: pahalgam.mp4 in 60-day media window — SKIPPING
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: munsiyari has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: tawang has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: mathura has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: tungnath has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: mussoorie has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: kasol has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: shimla has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: chopta has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: ooty has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale July score/note)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: lonavala in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: kargil in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: igatpuri in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: lamayuru already posted today — SKIPPING dest (same-day guard)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: tso-moriri in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: gurez-valley in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: zanskar in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: khardung-la in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: leh in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: karla-bhaja-caves in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: jog-falls in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: hogenakkal in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: bhimashankar already posted today — SKIPPING dest (same-day guard)
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: kolad in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: courtallam in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: khandala in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: keylong in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: amboli in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: pangong-lake in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  INFO      v2_tourist_trap_split: nubra-valley in 14-day cooldown — SKIPPING dest
+2026-07-15 16:01:08  WARNING   v2_tourist_trap_split: no eligible dest at render time — falling back to safe format 'score_card'
+2026-07-15 16:01:08  WARNING   [facebook/Nakshiq] v2_tourist_trap_split: keylong inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'bhimashankar' as score_card to keep the slot live.
+2026-07-15 16:01:08  INFO      [facebook/Nakshiq] Caption ready (571 chars, dest=bhimashankar)
+2026-07-15 16:01:08  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-15 16:01:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhimashankar.mp4?v=20260524
+2026-07-15 16:01:10  INFO          Brand-stamp applied: bhimashankar.mp4 (11,427,609 → 5,724,311 bytes)
+2026-07-15 16:01:10  INFO          Requesting upload URL for bhimashankar.mp4 (5,724,311 bytes, video/mp4)
+2026-07-15 16:01:11  INFO          Uploading to R2 (timeout=300s)...
+2026-07-15 16:01:13  INFO          R2 PUT OK. Confirming...
+2026-07-15 16:01:15  INFO          Media ready: ZjWAu (5,724,311 bytes · bhimashankar.mp4)
+2026-07-15 16:01:15  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-15 16:01:37  INFO      [facebook/Nakshiq] ✅ Published · Outstand=c9RhL · Platform=1278070087737451
+2026-07-15 16:01:37  INFO      State saved. Run complete.
+2026-07-15 16:01:37  INFO      ════════════════════════════════════════════════════════════

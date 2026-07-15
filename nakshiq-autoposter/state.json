@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-14",
-    "PdMu0": "2026-07-14",
-    "m8EAd_evening": "2026-07-14",
-    "PdMu0_evening": "2026-07-14",
+    "m8EAd": "2026-07-15",
+    "PdMu0": "2026-07-15",
+    "m8EAd_evening": "2026-07-15",
+    "PdMu0_evening": "2026-07-15",
     "m8EAd_carousel": "2026-07-15",
     "PdMu0_carousel": "2026-07-15",
     "GAh5p_yt_short": "2026-07-15",
     "m8EAd_yt_short": "2026-07-15"
   },
-  "last_sync": "2026-07-14T15:53:02.361012+00:00",
+  "last_sync": "2026-07-15T15:59:46.360393+00:00",
   "posted_destinations": [
     {
       "destination_id": "lonavala",
@@ -329,11 +329,14 @@
     {
       "destination_id": "chandratal",
       "date": "2026-07-15"
+    },
+    {
+      "destination_id": "bhimashankar",
+      "date": "2026-07-15"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "collection_series",
       "score_card",
       "score_card",
       "score_card",
@@ -344,6 +347,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -356,7 +360,6 @@
       "score_card"
     ],
     "PdMu0": [
-      "collection_series",
       "score_card",
       "score_card",
       "score_card",
@@ -367,6 +370,7 @@
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5478,6 +5482,28 @@
       "destination": "chandratal",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_chandratal_hi_2026-07-15.mp4"
+    },
+    {
+      "timestamp": "2026-07-15T16:01:08.234963+00:00",
+      "date": "2026-07-15",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "3gytk",
+      "destination": "bhimashankar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bhimashankar.mp4"
+    },
+    {
+      "timestamp": "2026-07-15T16:01:37.691716+00:00",
+      "date": "2026-07-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "c9RhL",
+      "destination": "bhimashankar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bhimashankar.mp4"
     }
   ],
   "theme_usage": {
@@ -5814,7 +5840,8 @@
       ],
       "bhimashankar": [
         "2026-07-01",
-        "2026-07-03"
+        "2026-07-03",
+        "2026-07-15"
       ],
       "khardung-la": [
         "2026-07-01",
@@ -5958,7 +5985,8 @@
         "2026-07-11",
         "2026-07-12",
         "2026-07-13",
-        "2026-07-14"
+        "2026-07-14",
+        "2026-07-15"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6174,7 +6202,8 @@
         "2026-07-14"
       ],
       "bhimashankar": [
-        "2026-07-03"
+        "2026-07-03",
+        "2026-07-15"
       ],
       "khandala": [
         "2026-07-04"
@@ -6480,7 +6509,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "jog-falls",
+    "shared_best": "keylong",
     "collection": "birding-hotspots"
   },
   "manual_skip_dests": {},
