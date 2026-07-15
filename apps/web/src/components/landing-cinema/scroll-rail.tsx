@@ -73,6 +73,7 @@ export function ScrollRail() {
             key={a.id}
             href={`#${a.id}`}
             title={`ACT ${a.label}`}
+            tabIndex={-1}
             style={{
               display: "block",
               width: 1,

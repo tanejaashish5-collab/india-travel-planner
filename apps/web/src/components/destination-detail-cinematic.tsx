@@ -812,19 +812,16 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 gap: 6,
               }}
             >
-              {/* Pill accessible name starts with the VISIBLE text (short month
-                  + score) per WCAG 2.5.3 label-in-name — the previous
-                  "April — 10.0/10 peak" form failed label-content-name-match on
-                  every dest page because the cell shows "APR 10.0". */}
+              {/* WCAG 2.5.3 label-in-name: no aria-label here — an authored
+                  label can never reliably contain the visible text because
+                  the two cells concatenate without whitespace ("APR10.0").
+                  Instead the extra context lives in a visually-hidden span
+                  INSIDE the link, so the accessible name = visible text +
+                  suffix and containment holds by construction. */}
               {windowMonths.map((m) => (
                 <Link
                   key={m.monthIdx}
                   href={`/${locale}/destination/${dest.id}/${m.name.toLowerCase()}`}
-                  aria-label={`${m.shortName.toUpperCase()}${
-                    m.displayScore != null
-                      ? ` ${m.displayScore.toFixed(1)} — ${m.name}, ${m.displayScore.toFixed(1)}/10 ${m.verdict ?? ""}`
-                      : ` — ${m.name}, no data`
-                  }`}
                   style={{
                     display: "block",
                     border: m.isCurrent
@@ -865,6 +862,23 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       ? m.displayScore.toFixed(1)
                       : "—"}
                   </div>
+                  <span
+                    style={{
+                      position: "absolute",
+                      width: 1,
+                      height: 1,
+                      padding: 0,
+                      margin: -1,
+                      overflow: "hidden",
+                      clip: "rect(0,0,0,0)",
+                      whiteSpace: "nowrap",
+                      border: 0,
+                    }}
+                  >
+                    {m.displayScore != null
+                      ? ` — ${m.name}, ${m.displayScore.toFixed(1)}/10 ${m.verdict ?? ""}`
+                      : ` — ${m.name}, no data`}
+                  </span>
                 </Link>
               ))}
             </div>

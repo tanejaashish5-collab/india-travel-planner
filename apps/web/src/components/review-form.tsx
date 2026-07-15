@@ -198,8 +198,9 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
       {/* Optional name + email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label className="text-sm text-muted-foreground block mb-2">Name (optional)</label>
+          <label htmlFor="review-reporter-name" className="text-sm text-muted-foreground block mb-2">Name (optional)</label>
           <input
+            id="review-reporter-name"
             type="text"
             value={reporterName}
             onChange={(e) => setReporterName(e.target.value.slice(0, 120))}
@@ -208,8 +209,9 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
           />
         </div>
         <div>
-          <label className="text-sm text-muted-foreground block mb-2">Email (optional)</label>
+          <label htmlFor="review-reporter-email" className="text-sm text-muted-foreground block mb-2">Email (optional)</label>
           <input
+            id="review-reporter-email"
             type="email"
             value={reporterEmail}
             onChange={(e) => setReporterEmail(e.target.value.slice(0, 320))}

@@ -396,7 +396,9 @@ export function Nav() {
                   segments[1] = next;
                   window.location.href = segments.join("/");
                 }}
-                aria-label={`Switch to ${locale === "en" ? "Hindi" : "English"}`}
+                aria-label={
+                  locale === "en" ? "हि — switch to Hindi" : "EN — switch to English"
+                }
                 className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/75 hover:text-[#F5F1E8] transition-colors px-2 py-2"
               >
                 {locale === "en" ? "हि" : "EN"}
