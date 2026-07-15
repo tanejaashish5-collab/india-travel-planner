@@ -139,7 +139,10 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
               className="text-2xl transition-transform hover:scale-110 focus:outline-none"
               aria-label={`Rate ${star} star${star > 1 ? "s" : ""}`}
             >
-              <span className={star <= displayRating ? "text-amber-400" : "text-zinc-600"}>
+              <span
+                aria-hidden="true"
+                className={star <= displayRating ? "text-amber-400" : "text-zinc-600"}
+              >
                 {star <= displayRating ? "★" : "☆"}
               </span>
             </button>

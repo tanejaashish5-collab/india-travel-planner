@@ -26,12 +26,12 @@ export function LanguageToggle() {
   const otherLocale = locale === "en" ? "hi" : "en";
 
   return (
-    // Label starts with the visible segment glyphs (EN हि) so WCAG 2.5.3
-    // label-in-name containment holds; the switch intent follows.
+    // No aria-label: the segments concatenate whitespace-free ("ENहि"), so
+    // an authored label can't contain them (WCAG 2.5.3). The sr-only suffix
+    // completes the accessible name from contents instead.
     <button
       onClick={switchLocale}
       className="flex items-center gap-0.5 rounded-full border border-border text-sm font-medium transition-colors hover:bg-accent overflow-hidden"
-      aria-label={`EN हि — switch to ${otherLocale === "hi" ? "Hindi" : "English"}`}
       aria-current={locale === "en" ? "true" : undefined}
     >
       <span className={`px-2.5 py-1.5 transition-colors ${locale === "en" ? "bg-foreground text-background font-semibold" : "text-muted-foreground"}`}>
@@ -39,6 +39,9 @@ export function LanguageToggle() {
       </span>
       <span className={`px-2.5 py-1.5 transition-colors ${locale === "hi" ? "bg-foreground text-background font-semibold" : "text-muted-foreground"}`}>
         {LOCALE_LABELS.hi}
+      </span>
+      <span className="sr-only">
+        {` — switch to ${otherLocale === "hi" ? "Hindi" : "English"}`}
       </span>
     </button>
   );
