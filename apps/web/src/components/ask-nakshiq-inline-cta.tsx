@@ -9,11 +9,13 @@ import { ASK_NAKSHIQ_OPEN_EVENT } from "./ask-nakshiq";
 export function AskNakshIQInlineCTA({ subject }: { subject?: string }) {
   return (
     <section className="mt-12 border-t border-border/50 pt-8">
+      {/* No aria-label: the card's visible copy ("Have questions about X?
+          Ask NakshIQ — …") is the accessible name; an authored label can't
+          contain it (WCAG 2.5.3 label-in-name). */}
       <button
         type="button"
         onClick={() => window.dispatchEvent(new Event(ASK_NAKSHIQ_OPEN_EVENT))}
         className="group w-full flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4 text-left hover:border-primary/40 hover:bg-muted/40 transition-all"
-        aria-label={subject ? `Ask NakshIQ about ${subject}` : "Ask NakshIQ"}
       >
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

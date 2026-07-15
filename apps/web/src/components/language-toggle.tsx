@@ -26,10 +26,12 @@ export function LanguageToggle() {
   const otherLocale = locale === "en" ? "hi" : "en";
 
   return (
+    // Label starts with the visible segment glyphs (EN हि) so WCAG 2.5.3
+    // label-in-name containment holds; the switch intent follows.
     <button
       onClick={switchLocale}
       className="flex items-center gap-0.5 rounded-full border border-border text-sm font-medium transition-colors hover:bg-accent overflow-hidden"
-      aria-label={`Switch to ${otherLocale === "hi" ? "Hindi" : "English"}`}
+      aria-label={`EN हि — switch to ${otherLocale === "hi" ? "Hindi" : "English"}`}
       aria-current={locale === "en" ? "true" : undefined}
     >
       <span className={`px-2.5 py-1.5 transition-colors ${locale === "en" ? "bg-foreground text-background font-semibold" : "text-muted-foreground"}`}>
