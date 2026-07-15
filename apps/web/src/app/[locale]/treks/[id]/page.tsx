@@ -28,9 +28,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const supabase = createClient(url, key);
   const { data } = await supabase.from("treks").select("name, difficulty, duration_days, max_altitude_m, distance_km").eq("id", id).single();
   if (!data) return {};
+  // Distance leads the title: GSC's #1 trek query is "girnar 10,000 steps in
+  // km" (546 impr/28d at pos 4.8, 0.7% CTR) — searchers want the km number in
+  // the SERP itself. All 207 trek rows have distance_km (guarded anyway).
   return {
-    title: `${data.name} — ${data.duration_days}-Day ${data.difficulty} Trek`,
-    description: `${data.name}: ${data.duration_days} days, ${data.distance_km}km, max ${data.max_altitude_m}m. Day-by-day itinerary, campsites, gear list, costs, and safety info.`,
+    title: data.distance_km
+      ? `${data.name} — ${data.distance_km} km, ${data.duration_days}-Day ${data.difficulty} Trek`
+      : `${data.name} — ${data.duration_days}-Day ${data.difficulty} Trek`,
+    description: `${data.name}: ${data.distance_km} km in ${data.duration_days} day${data.duration_days === 1 ? "" : "s"}, max ${data.max_altitude_m}m. Day-by-day itinerary, campsites, gear list, costs, and safety info.`,
     ...localeAlternates(locale, `/treks/${id}`),
   };
 }

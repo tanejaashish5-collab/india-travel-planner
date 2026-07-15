@@ -10,6 +10,7 @@ import { DestinationSectionNav } from "./destination-section-nav";
 import { SectionLabel } from "./ui/section-label";
 import { BookingHandoff } from "./booking-handoff";
 import { formatScore, formatScoreInline, SCORE_MAX } from "@itp/shared";
+import { MONTH_NAMES_HI } from "@/lib/trip-cost";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -294,6 +295,54 @@ export function DestinationMonth({
             {whyGo}
           </p>
         )}
+      </FadeIn>
+    );
+  };
+
+  // ── 2a. Month Weather ───────────────────────────────────────
+  //
+  // Explicit "{name} weather in {month}" section. Born 2026-07-15: GSC shows
+  // 22K impressions/28d on "[dest] weather in [month]" queries landing on these
+  // pages at position 5–11 — but the body never said "weather", so relevance
+  // (and clicks) went to weather portals. Renders ONLY numbers parsed from this
+  // month's hand-verified editorial note (temp range / rainfall) — no seasonal
+  // approximations, no fabricated figures. No verified numbers → no section.
+
+  const MonthWeather = () => {
+    const note: string = currentMonth?.note ?? "";
+    const tempM = note.match(/(-?\d{1,2})\s*(?:to|-|–|—)\s*(-?\d{1,2})\s*°?\s*[Cc]\b/);
+    const rainM = note.match(/(\d{2,4})\s*(?:to|-|–|—)\s*(\d{2,4})\s*mm/i);
+    if (!tempM && !rainM) return null;
+    const isHi = locale === "hi";
+    const heading = isHi
+      ? `${MONTH_NAMES_HI[monthNum - 1]} में ${destination.name} का मौसम`
+      : `${destination.name} weather in ${monthName}`;
+    // The note itself is the month's weather story. It already renders as the
+    // lead paragraph when there's no prose_lead — only repeat it here when
+    // prose_lead exists (otherwise the same line would show twice in a row).
+    const showNote = !!currentMonth?.prose_lead && note;
+    return (
+      <FadeIn delay={0.18}>
+        <section aria-labelledby="month-weather-heading" className="mt-8 rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+          <h2 id="month-weather-heading" className="text-sm font-semibold uppercase tracking-[0.08em] text-zinc-500 mb-4">
+            {heading}
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {tempM && (
+              <span className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm text-zinc-200">
+                🌡 {tempM[1]}–{tempM[2]}°C <span className="text-zinc-500">{isHi ? "दिन" : "days"}</span>
+              </span>
+            )}
+            {rainM && (
+              <span className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm text-zinc-200">
+                🌧 {rainM[1]}–{rainM[2]}mm <span className="text-zinc-500">{isHi ? "बारिश" : "rain"}</span>
+              </span>
+            )}
+          </div>
+          {showNote && (
+            <p className="mt-4 text-base leading-relaxed text-zinc-300">{note}</p>
+          )}
+        </section>
       </FadeIn>
     );
   };
@@ -875,6 +924,7 @@ export function DestinationMonth({
 
           <section id="section-lead" className="scroll-mt-28">
             <LeadParagraph />
+            <MonthWeather />
             <OffSeasonDrivers />
           </section>
           <section id="section-why" className="scroll-mt-28">
