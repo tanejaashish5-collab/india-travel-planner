@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-14",
@@ -41,29 +41,11 @@
     "PdMu0_evening": "2026-07-14",
     "m8EAd_carousel": "2026-07-14",
     "PdMu0_carousel": "2026-07-14",
-    "GAh5p_yt_short": "2026-07-14",
-    "m8EAd_yt_short": "2026-07-14",
-    "GAh5p_reel_studio": "2026-07-13",
-    "m8EAd_reel_studio": "2026-07-13"
+    "GAh5p_yt_short": "2026-07-15",
+    "m8EAd_yt_short": "2026-07-15"
   },
   "last_sync": "2026-07-14T15:53:02.361012+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-06-30"
-    },
-    {
-      "destination_id": "ozar",
-      "date": "2026-06-30"
-    },
-    {
-      "destination_id": "nagarhole",
-      "date": "2026-06-30"
-    },
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-06-30"
-    },
     {
       "destination_id": "lonavala",
       "date": "2026-07-01"
@@ -335,6 +317,10 @@
     {
       "destination_id": "jog-falls",
       "date": "2026-07-14"
+    },
+    {
+      "destination_id": "bangus-valley",
+      "date": "2026-07-15"
     }
   ],
   "posted_formats": {
@@ -5430,6 +5416,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "jog-falls.mp4"
+    },
+    {
+      "timestamp": "2026-07-15T06:34:41.841717+00:00",
+      "date": "2026-07-15",
+      "platform": "youtube",
+      "post_id": "Dl03o",
+      "destination": "bangus-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_bangus-valley_hi_2026-07-15.mp4"
+    },
+    {
+      "timestamp": "2026-07-15T06:35:29.378294+00:00",
+      "date": "2026-07-15",
+      "platform": "instagram",
+      "post_id": "xMwP8",
+      "destination": "bangus-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_bangus-valley_hi_2026-07-15.mp4"
     }
   ],
   "theme_usage": {

@@ -11477,3 +11477,26 @@ Date range: 2026-04-15 → 2026-07-13
 2026-07-14 19:46:29  INFO      
 Date range: 2026-04-15 → 2026-07-14
 2026-07-14 19:46:29  INFO      ════════════════════════════════════════════════════════════
+2026-07-15 06:32:11  INFO      ════════════════════════════════════════════════════════════
+2026-07-15 06:32:11  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-15
+2026-07-15 06:32:11  INFO      ════════════════════════════════════════════════════════════
+2026-07-15 06:32:16  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-15 06:34:23  INFO      Short rendered: yt_short_nakshiq_score_bangus-valley_hi_2026-07-15.mp4 (23066 KB, 37.6s, fmt=nakshiq_score, music=fast-679)
+2026-07-15 06:34:23  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_bangus-valley_hi_2026-07-15.mp4 (23,620,360 bytes, video/mp4)
+2026-07-15 06:34:25  INFO          Uploading to R2 (timeout=300s)...
+2026-07-15 06:34:27  INFO          R2 PUT OK. Confirming...
+2026-07-15 06:34:29  INFO          Media ready: c86oL (23,620,360 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_bangus-valley_hi_2026-07-15.mp4)
+2026-07-15 06:34:29  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_bangus-valley_hi_2026-07-15.mp4
+2026-07-15 06:34:31  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-15 06:34:31  INFO      [youtube/@naksh-iq] Publishing YT Short (nakshiq_score)...
+2026-07-15 06:34:31  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-07-15 06:34:35  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Dl03o), waiting for platform confirmation...
+2026-07-15 06:34:41  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=Dl03o · Platform=v-2pI2ghByM
+2026-07-15 06:34:41  INFO      [instagram/nakshiq] Publishing YT Short (nakshiq_score)...
+2026-07-15 06:34:41  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-15 06:34:45  INFO      [instagram/nakshiq] Outstand accepted (post_id=xMwP8), waiting for platform confirmation...
+2026-07-15 06:35:29  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=xMwP8 · Platform=18131337304559783
+2026-07-15 06:35:29  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-15 06:35:29  INFO      YT Short posted: format=nakshiq_score, music=fast-679
+2026-07-15 06:35:29  INFO      State saved. YT Short run complete.
+2026-07-15 06:35:29  INFO      ════════════════════════════════════════════════════════════
