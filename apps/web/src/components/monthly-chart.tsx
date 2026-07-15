@@ -71,13 +71,16 @@ export function MonthlyChart({
       </p>
 
       {/* Bar chart — INTERACTIVE */}
+      {/* No aria-label on the bars: the visible cells concatenate
+          score-first ("0.0feb"), so an authored label can't contain them
+          (WCAG 2.5.3 label-in-name). The sr-only suffix completes the
+          accessible name from contents instead. */}
       <div className="flex items-end gap-1.5">
         {sorted.map((ms) => (
           <button
             key={ms.m}
             onClick={() => setSelectedMonth(ms.m)}
             className="flex flex-1 flex-col items-center gap-1 group cursor-pointer"
-            aria-label={`${tm(String(ms.m))}: ${formatScoreInline(ms.score)}`}
           >
             {/* Score number */}
             <span
@@ -113,6 +116,9 @@ export function MonthlyChart({
               }`}
             >
               {tm(String(ms.m)).slice(0, 3)}
+            </span>
+            <span className="sr-only">
+              {` — ${tm(String(ms.m))}, ${formatScoreInline(ms.score)}`}
             </span>
           </button>
         ))}

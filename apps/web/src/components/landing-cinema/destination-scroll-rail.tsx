@@ -70,18 +70,25 @@ export function DestinationScrollRail() {
       {ACTS.map((a, i) => {
         const isActive = i === active;
         return (
-          <a
+          // span, not <a>: the rail is aria-hidden (decorative, redundant
+          // nav), and audit tooling flags any anchor inside aria-hidden as
+          // focusable even with tabindex=-1. A span is never focusable;
+          // mouse clicks still scroll.
+          <span
             key={a.id}
-            href={`#${a.id}`}
             title={`ACT ${a.label}`}
-            tabIndex={-1}
+            onClick={() =>
+              document
+                .getElementById(a.id)
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             style={{
               display: "block",
               width: 1,
               height: isActive ? 22 : 12,
               background: isActive ? "var(--vermillion)" : "rgba(245,241,232,0.32)",
               transition: "all 0.4s cubic-bezier(.25,.46,.45,.94)",
-              textDecoration: "none",
+              cursor: "pointer",
             }}
           />
         );
