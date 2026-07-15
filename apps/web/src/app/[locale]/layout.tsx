@@ -206,12 +206,10 @@ export default async function LocaleLayout({
                 "@id": "https://www.nakshiq.com#organization",
                 name: "NakshIQ",
                 url: "https://www.nakshiq.com",
-                logo: {
-                  "@type": "ImageObject",
-                  url: "https://www.nakshiq.com/icon-512.png",
-                  width: 512,
-                  height: 512,
-                },
+                // Plain URL string, not ImageObject — strict validators (and the
+                // 2026-07-15 site audit) reject the object form here on every
+                // page; Google accepts both, so the string is the zero-risk shape.
+                logo: "https://www.nakshiq.com/icon-512.png",
                 description:
                   "Travel intelligence for India. 505 destinations across 36 states, each scored month-by-month for go/wait/skip verdicts, kids-suitability, solo-female safety, and altitude risk. Citation-first editorial — no fabricated prices, phone numbers, or stays.",
                 foundingDate: "2026",

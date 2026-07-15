@@ -12,16 +12,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  // Locale-split metadata (2026-07-15 audit: /en + /hi served identical
+  // English title+description = duplicate-content flag; og:image was missing).
+  const isHi = locale === "hi";
+  const title = isHi
+    ? "भारत की पहली यात्रा — सुरक्षा, ठगी, खाना, ट्रांसपोर्ट"
+    : "First trip to India — safety, scams, food, transport";
+  const description = isHi
+    ? "अंतरराष्ट्रीय यात्रियों के लिए ईमानदार भारत गाइड — सुरक्षा, आम ठगी, क्या पहनें, खाना, सोलो फ़ीमेल ट्रैवल। वो सब जो गाइडबुक नहीं बताती।"
+    : "Honest India travel for international visitors, by an Indian family: safety, scams, what to wear, food survival, solo female travel.";
+  const ogImage = "https://www.nakshiq.com/og-image.jpg";
   return {
-    title: "First trip to India — safety, scams, food, transport",
-    description:
-      "Honest India travel for international visitors, written by an Indian family. Safety, scams, what to wear, food survival, solo female travel — and what your guidebook won't say.",
+    title,
+    description,
     openGraph: {
-      title: "First trip to India — safety, scams, food, transport",
-      description:
-        "Honest India travel for international visitors. Safety, scams, food, transport, and what your guidebook won't tell you.",
+      title: `${title} | NakshIQ`,
+      description,
       type: "website",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
+    twitter: { card: "summary_large_image", title: `${title} | NakshIQ`, description, images: [ogImage] },
     ...localeAlternates(locale, "/india-travel"),
   };
 }

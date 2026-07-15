@@ -5,7 +5,9 @@ export default function ExploreLoading() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
+      {/* div, not <main> — streaming SSR keeps this fallback in the raw HTML
+          next to the page's real <main> (double-landmark, 2026-07-15 audit). */}
+      <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-6 space-y-2">
           <div className="h-8 w-32 animate-pulse rounded-lg bg-muted/50" />
           <div className="h-4 w-64 animate-pulse rounded-lg bg-muted/50" />
@@ -21,7 +23,7 @@ export default function ExploreLoading() {
             <SkeletonCard key={i} />
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

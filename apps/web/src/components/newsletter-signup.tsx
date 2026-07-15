@@ -112,7 +112,12 @@ export function NewsletterSignup({
     <FadeIn>
       <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 via-card to-primary/5 p-8">
         <div className="text-center max-w-md mx-auto">
-          <h3 className="text-xl font-bold">{headline ?? DEFAULT_HEADLINE}</h3>
+          {/* `??` keeps an EMPTY-STRING headline (only catches null/undefined),
+              which rendered a literally empty <h3> on /explore (2026-07-15
+              audit). Empty string = caller wants no heading → render none. */}
+          {(headline == null || headline.trim()) && (
+            <h3 className="text-xl font-bold">{headline ?? DEFAULT_HEADLINE}</h3>
+          )}
           <p className="mt-2 text-sm text-muted-foreground">
             {subhead ?? DEFAULT_SUBHEAD}
           </p>
@@ -135,6 +140,7 @@ export function NewsletterSignup({
               }}
               placeholder="your@email.com"
               required
+              aria-label="Email address"
               aria-invalid={hint ? true : undefined}
               className="flex-1 rounded-lg border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
               disabled={status === "loading"}

@@ -20,6 +20,7 @@ import { DistanceBadge } from "./distance-badge";
 import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { destinationImage } from "@/lib/image-url";
+import { preload } from "react-dom";
 import { videoSrc } from "@/lib/video-url";
 import { getRegionNameForState, getStateName } from "@/lib/seo-maps";
 
@@ -70,6 +71,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("destination");
   const tm = useTranslations("months");
+  // Hero poster is the LCP element (video poster on every dest page) — emit a
+  // high-priority preload into <head> during SSR (2026-07-15 audit: lcp-hints).
+  preload(destinationImage(dest.id, 1600), { as: "image", fetchPriority: "high" });
 
   const [saved, setSaved] = useState(false);
 

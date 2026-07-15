@@ -5,6 +5,7 @@ import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { PeakAlertHook } from "./peak-alert-hook";
 import { destinationImage } from "@/lib/image-url";
+import { preload } from "react-dom";
 import { videoSrc } from "@/lib/video-url";
 import { DestinationSectionNav } from "./destination-section-nav";
 import { SectionLabel } from "./ui/section-label";
@@ -92,6 +93,9 @@ export function DestinationMonth({
   const confidence = Array.isArray(destination.confidence_cards)
     ? destination.confidence_cards[0]
     : destination.confidence_cards;
+  // Hero poster is the LCP element on dest×month pages — preload it with high
+  // priority during SSR (2026-07-15 audit: lcp-hints / lcp-fetchpriority).
+  preload(destinationImage(destination.id, 1600), { as: "image", fetchPriority: "high" });
 
   // ── Helpers ────────────────────────────────────────────────
 

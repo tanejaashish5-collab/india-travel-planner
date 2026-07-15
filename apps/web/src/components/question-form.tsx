@@ -117,6 +117,7 @@ export function QuestionForm({ destinationId }: { destinationId: string }) {
       <input
         type="text"
         name="hp"
+        aria-label="Leave this field empty"
         tabIndex={-1}
         autoComplete="off"
         value={hp}
@@ -128,6 +129,7 @@ export function QuestionForm({ destinationId }: { destinationId: string }) {
       <div>
         <label className="text-sm text-muted-foreground block mb-2">Your question</label>
         <textarea
+          aria-label="Your question"
           value={question}
           onChange={(e) => setQuestion(e.target.value.slice(0, 300))}
           placeholder="Ask anything specific — what month is best for kids, road condition in March, where to refill water bottles..."
@@ -177,6 +179,7 @@ export function QuestionForm({ destinationId }: { destinationId: string }) {
           <label className="text-sm text-muted-foreground block mb-2">Name (optional)</label>
           <input
             type="text"
+            aria-label="Name (optional)"
             value={submitterName}
             onChange={(e) => setSubmitterName(e.target.value.slice(0, 120))}
             placeholder="Shown on the public page if used"
@@ -187,6 +190,7 @@ export function QuestionForm({ destinationId }: { destinationId: string }) {
           <label className="text-sm text-muted-foreground block mb-2">Email (optional)</label>
           <input
             type="email"
+            aria-label="Email (optional)"
             value={submitterEmail}
             onChange={(e) => setSubmitterEmail(e.target.value.slice(0, 320))}
             placeholder="Editors may follow up if anything is unclear"

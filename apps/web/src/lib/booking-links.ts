@@ -49,15 +49,6 @@ const OVERRIDES = overridesData as unknown as Record<
   Partial<Record<BookingPlatform, string>>
 >;
 
-/** Agoda per-city page slug: lowercased name, alt-name parens dropped, hyphenated. */
-function agodaSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/\([^)]*\)/g, "")
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /** Precise free-text location string, e.g. "Chopta, Uttarakhand, India". */
 function locationQuery(name: string, state?: string): string {
@@ -73,7 +64,6 @@ function locationQuery(name: string, state?: string): string {
 export function getBookingLinks(dest: DestinationArg): BookingLink[] {
   const override = (dest.id && OVERRIDES[dest.id]) || {};
   const q = encodeURIComponent(locationQuery(dest.name, dest.state));
-  const slug = agodaSlug(dest.name);
 
   const links: BookingLink[] = [
     {
@@ -99,7 +89,14 @@ export function getBookingLinks(dest: DestinationArg): BookingLink[] {
     {
       platform: "agoda",
       name: "Agoda",
-      url: override.agoda ?? `https://www.agoda.com/city/${slug}-in.html`,
+      // Search URL, not a guessed /city/ page. The city-slug guess 404'd for
+      // any town Agoda has no city page for (14 confirmed in the 2026-07-15
+      // audit: aalo, achabal, adi-kailash, agatti…) AND produced a literally
+      // empty slug on /hi pages (Devanagari names strip to "" → /city/-in.html).
+      // /search?q= returns 200 for every destination (curl-verified) and the
+      // affiliate cid param survives via buildAffiliateUrl. Per-destination
+      // overrides still win for the big cities with real /city/ pages.
+      url: override.agoda ?? `https://www.agoda.com/search?q=${q}`,
       color: "text-violet-300 border-violet-500/30 hover:bg-violet-500/10",
       affiliate: "agoda",
     },

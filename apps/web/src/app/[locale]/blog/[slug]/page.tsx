@@ -154,7 +154,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       "@type": "Organization",
       name: "NakshIQ",
       url: "https://www.nakshiq.com",
-      logo: { "@type": "ImageObject", url: "https://www.nakshiq.com/icon-192.png" },
+      logo: "https://www.nakshiq.com/icon-512.png",
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.nakshiq.com/${locale}/blog/${slug}` },
     ...(article.reading_time && { timeRequired: `PT${article.reading_time}M` }),

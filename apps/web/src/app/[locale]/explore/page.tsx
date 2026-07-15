@@ -24,6 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t("metaTitle"),
     description: t("metaDescription"),
+    // Own og:url — without it the locale layout's site-wide openGraph url
+    // (/{locale}) leaks through and mismatches the canonical (2026-07-15 audit).
+    openGraph: {
+      title: `${t("metaTitle")} | NakshIQ`,
+      description: t("metaDescription"),
+      url: `https://www.nakshiq.com/${locale}/explore`,
+    },
     ...localeAlternates(locale, "/explore"),
   };
 }

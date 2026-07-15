@@ -114,6 +114,7 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
       <input
         type="text"
         name="hp"
+        aria-label="Leave this field empty"
         tabIndex={-1}
         autoComplete="off"
         value={hp}
@@ -222,6 +223,7 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
       <div>
         <label className="text-sm text-muted-foreground block mb-2">Your experience</label>
         <textarea
+          aria-label="Your review"
           value={text}
           onChange={(e) => setText(e.target.value.slice(0, 2000))}
           placeholder="Share what you loved, what surprised you, and any tips for future travelers... (50-2000 characters)"

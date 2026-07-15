@@ -13,6 +13,7 @@ import {
 } from "./animated-hero";
 import { SCORE_COLORS, SCORE_SOLID, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { destinationImage } from "@/lib/image-url";
+import { preload } from "react-dom";
 import { formatScoreInline } from "@itp/shared";
 import { videoSrc } from "@/lib/video-url";
 import { hasMonthHero, monthHeroSrc } from "@/lib/landing-heroes";
@@ -280,6 +281,11 @@ export function WhereToGoContent({
   // Top-scoring destination drives the regional hero visual. Array is pre-sorted
   // score DESC so data[0] is the strongest representative of "go here this month".
   const heroDestId = isRegional ? data[0]?.id : null;
+  // The regional hero's video poster is the LCP element — preload it with high
+  // priority during SSR (2026-07-15 audit: lcp-hints on where-to-go pages).
+  if (heroDestId) {
+    preload(destinationImage(heroDestId, 1600), { as: "image", fetchPriority: "high" });
+  }
   const totalListed = data.length;
   // Sidebar ToC for regional variant — gated on section data presence so the
   // rail doesn't show dead anchors when a bucket is empty.

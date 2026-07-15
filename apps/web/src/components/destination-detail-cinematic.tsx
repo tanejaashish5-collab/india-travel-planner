@@ -812,14 +812,18 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 gap: 6,
               }}
             >
+              {/* Pill accessible name starts with the VISIBLE text (short month
+                  + score) per WCAG 2.5.3 label-in-name — the previous
+                  "April — 10.0/10 peak" form failed label-content-name-match on
+                  every dest page because the cell shows "APR 10.0". */}
               {windowMonths.map((m) => (
                 <Link
                   key={m.monthIdx}
                   href={`/${locale}/destination/${dest.id}/${m.name.toLowerCase()}`}
-                  aria-label={`${m.name}${
+                  aria-label={`${m.shortName.toUpperCase()}${
                     m.displayScore != null
-                      ? ` — ${m.displayScore.toFixed(1)}/10 ${m.verdict ?? ""}`
-                      : " — no data"
+                      ? ` ${m.displayScore.toFixed(1)} — ${m.name}, ${m.displayScore.toFixed(1)}/10 ${m.verdict ?? ""}`
+                      : ` — ${m.name}, no data`
                   }`}
                   style={{
                     display: "block",
