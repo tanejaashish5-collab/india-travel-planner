@@ -1,7 +1,7 @@
 ---
 type: pattern
-sources: [data/research/CLAUDE-CHANNEL-AUDIT-2026-07-13.md]
-updated: 2026-07-13
+sources: [data/research/CLAUDE-CHANNEL-AUDIT-2026-07-13.md, data/research/NATE-HERK-200K-INHOUSE-AI-JOB-2026-07-15.md]
+updated: 2026-07-15
 ---
 
 # Delegation-fails heuristic
@@ -29,4 +29,8 @@ Add to the strategist checklist's moat section, asked of any new idea before it'
 
 The audit's own assessment: this heuristic "would have killed several of our graveyarded SaaS ideas at generation time" — i.e. it's a cheap, free filter that should run *before* the existing [[strategist-checklist]] machinery, not after.
 
-Related: [[verification-as-moat]], [[strategist-checklist]], [[rejected-ideas]].
+## External-agency corroboration (2026-07-15)
+
+Nate Herk's "$200K AI job" video independently argues the external AI-agency market is the compressing side of this exact trade — clients pulling implementation in-house as tools get accessible ("the exact same thing that made AI agencies a ton of money is about to replace them") — matching [[nick-saraev]]'s own agency (LeftClick) graveyard and the "generic AI consultant/agency" kill already in [[rejected-ideas]] (2026-06-23). Three independent sources — a creator's self-audit, our own channel audit, and now a competing creator's career thesis — now agree on the same direction. See [[src-nate-herk-200k-inhouse-ai-job]].
+
+Related: [[verification-as-moat]], [[strategist-checklist]], [[rejected-ideas]], [[nick-saraev]], [[money-is-services-not-adsense]].
