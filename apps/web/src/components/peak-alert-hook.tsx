@@ -188,6 +188,14 @@ export function PeakAlertHook({
       >
         {t.kicker(peakMonthName)}
       </p>
+      {/* 2026-07-15 CRO fix: headline/subhead used var(--ink, #0e0e0e) /
+          var(--ink-soft, #444) — but --ink/--ink-soft are defined ONLY inside
+          the trip-board CSS scope, so on BOTH mount surfaces (dest×month +
+          non-cinematic hub, dark zinc theme) the pitch rendered near-black on
+          near-black. Prod-verified computed styles: headline rgb(14,14,14) on
+          a lab(2.75) page — contrast ~1:1, invisible since the 05-28 rewrite.
+          That, not the copy, was the 790 views → 3 saves cliff. Explicit
+          dark-theme colors; do not reintroduce the phantom vars. */}
       <h3
         style={{
           fontFamily: "var(--cinema-display, Fraunces, Georgia, serif)",
@@ -195,7 +203,7 @@ export function PeakAlertHook({
           fontWeight: 400,
           fontSize: "clamp(20px, 3.4vw, 26px)",
           lineHeight: 1.18,
-          color: "var(--ink, #0e0e0e)",
+          color: "#f4f4f5",
           margin: "0 0 8px",
         }}
       >
@@ -205,7 +213,7 @@ export function PeakAlertHook({
         style={{
           fontSize: 14,
           lineHeight: 1.55,
-          color: "var(--ink-soft, #444)",
+          color: "#d4d4d8",
           margin: "0 0 18px",
         }}
       >
@@ -231,7 +239,7 @@ export function PeakAlertHook({
               marginTop: 6,
               letterSpacing: "0.02em",
               textTransform: "none",
-              color: "var(--ink-soft, #555)",
+              color: "#a1a1aa",
               fontSize: 12,
             }}
           >
