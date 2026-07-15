@@ -138,13 +138,15 @@ export function DestinationGuideToC({
         </h2>
         <span className="text-xs text-muted-foreground/60">{t("tapToJump")}</span>
       </div>
+      {/* No aria-label on the tiles: the card's visible content (count +
+          label + teaser) is the accessible name — an authored "Jump to …"
+          label can't contain the concatenated visible text (WCAG 2.5.3). */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {tiles.map((tile) => (
           <button
             key={tile.id}
             onClick={() => onJump(tile.id)}
             className={`group text-left rounded-xl border bg-card p-4 transition-all hover:scale-[1.02] ${tile.accent}`}
-            aria-label={`Jump to ${tile.label} section — ${tile.count} ${tile.teaser}`}
           >
             <div className="flex items-start justify-between mb-2">
               <span className="text-2xl leading-none" aria-hidden="true">{tile.icon}</span>

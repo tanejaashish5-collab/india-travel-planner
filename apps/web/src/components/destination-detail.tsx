@@ -240,7 +240,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 }`}
                 aria-label={saved ? "Remove from saved" : "Save destination"}
               >
-                <span>{saved ? "♥" : "♡"}</span>
+                <span aria-hidden="true">{saved ? "♥" : "♡"}</span>
                 <span>{saved ? "Saved" : "Save"}</span>
               </button>
             </div>

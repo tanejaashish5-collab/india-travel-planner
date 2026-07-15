@@ -346,10 +346,12 @@ export function Nav() {
                   {item.label}
                 </Link>
               ))}
+              {/* No aria-label: the visible label is localized (और on /hi),
+                  so a hardcoded English label breaks WCAG 2.5.3 label-in-name.
+                  The visible text IS the accessible name. */}
               <button
                 type="button"
                 onClick={() => setMoreOpen(true)}
-                aria-label="More"
                 className="font-[var(--font-geist-sans)] font-medium text-[12px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] transition-colors whitespace-nowrap bg-transparent border-0 p-0 cursor-pointer"
               >
                 {t("more")}
@@ -585,13 +587,14 @@ export function Nav() {
           {/* Direct link: Saved */}
           <Link
             href={`/${locale}/saved`}
+            aria-label="Saved"
             className={`rounded-lg px-2.5 py-1.5 text-sm transition-colors ${
               isActive(`/${locale}/saved`)
                 ? "text-primary"
                 : "text-muted-foreground hover:text-foreground hover:bg-muted"
             }`}
           >
-            ♥
+            <span aria-hidden="true">♥</span>
           </Link>
 
           {/* AI Plan CTA */}

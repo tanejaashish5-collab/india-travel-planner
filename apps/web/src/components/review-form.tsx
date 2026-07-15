@@ -110,7 +110,10 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
         Anonymous submission — no login needed. Reviews are moderated before publication.
       </p>
 
-      {/* Honeypot — bots fill this; humans never see it */}
+      {/* Honeypot — bots fill this; humans never see it. No aria-hidden:
+          an input is natively focusable, so aria-hidden+input trips
+          aria-hidden-focus checkers even with tabindex=-1. Offscreen +
+          labelled + out of tab order is the accepted a11y honeypot shape. */}
       <input
         type="text"
         name="hp"
@@ -119,7 +122,6 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
         autoComplete="off"
         value={hp}
         onChange={(e) => setHp(e.target.value)}
-        aria-hidden="true"
         className="absolute left-[-9999px] opacity-0 pointer-events-none"
       />
 

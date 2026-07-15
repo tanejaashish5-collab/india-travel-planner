@@ -188,7 +188,7 @@ export function BottomCTABar({ destId, destName }: { destId: string; destName: s
               }`}
               aria-label={saved ? "Remove from saved" : "Save destination"}
             >
-              {saved ? "♥" : "♡"}
+              <span aria-hidden="true">{saved ? "♥" : "♡"}</span>
             </button>
             <button
               onClick={handleShare}

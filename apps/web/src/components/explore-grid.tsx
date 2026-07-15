@@ -380,12 +380,13 @@ function DestinationCard({
               action: nowSaved ? "add" : "remove",
               surface: "explore-grid",
             });
-            (e.target as HTMLElement).textContent = nowSaved ? "♥" : "♡";
+            const glyph = e.currentTarget.querySelector("span");
+            if (glyph) glyph.textContent = nowSaved ? "♥" : "♡";
           }}
           className="absolute top-2 right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white/80 hover:bg-black/70 hover:text-red-400 transition-all backdrop-blur-sm"
           aria-label="Save destination"
         >
-          ♡
+          <span aria-hidden="true">♡</span>
         </button>
         {!featured && (
           <div className="absolute top-2 left-2 z-10">
