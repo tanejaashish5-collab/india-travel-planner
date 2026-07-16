@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-15",
@@ -41,51 +41,11 @@
     "PdMu0_evening": "2026-07-15",
     "m8EAd_carousel": "2026-07-15",
     "PdMu0_carousel": "2026-07-15",
-    "GAh5p_yt_short": "2026-07-15",
-    "m8EAd_yt_short": "2026-07-15"
+    "GAh5p_yt_short": "2026-07-16",
+    "m8EAd_yt_short": "2026-07-16"
   },
   "last_sync": "2026-07-15T15:59:46.360393+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "lonavala",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "kausani",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "lamayuru",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "zanskar",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "hogenakkal",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "jog-falls",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "kolad",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "bhimashankar",
-      "date": "2026-07-01"
-    },
-    {
-      "destination_id": "khardung-la",
-      "date": "2026-07-01"
-    },
     {
       "destination_id": "alchi",
       "date": "2026-07-02"
@@ -333,6 +293,10 @@
     {
       "destination_id": "bhimashankar",
       "date": "2026-07-15"
+    },
+    {
+      "destination_id": "ananthagiri-hills",
+      "date": "2026-07-16"
     }
   ],
   "posted_formats": {
@@ -5504,6 +5468,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "bhimashankar.mp4"
+    },
+    {
+      "timestamp": "2026-07-16T06:36:28.910593+00:00",
+      "date": "2026-07-16",
+      "platform": "youtube",
+      "post_id": "MwKjC",
+      "destination": "ananthagiri-hills",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_ananthagiri-hills_hi_2026-07-16.mp4"
+    },
+    {
+      "timestamp": "2026-07-16T06:37:10.607517+00:00",
+      "date": "2026-07-16",
+      "platform": "instagram",
+      "post_id": "nPGZl",
+      "destination": "ananthagiri-hills",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_ananthagiri-hills_hi_2026-07-16.mp4"
     }
   ],
   "theme_usage": {

@@ -11752,3 +11752,26 @@ Date range: 2026-04-15 → 2026-07-14
 2026-07-15 19:40:04  INFO      
 Date range: 2026-04-15 → 2026-07-15
 2026-07-15 19:40:04  INFO      ════════════════════════════════════════════════════════════
+2026-07-16 06:34:14  INFO      ════════════════════════════════════════════════════════════
+2026-07-16 06:34:14  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-16
+2026-07-16 06:34:14  INFO      ════════════════════════════════════════════════════════════
+2026-07-16 06:34:16  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-16 06:36:15  INFO      Short rendered: yt_short_this_vs_that_ananthagiri-hills_hi_2026-07-16.mp4 (26958 KB, 26.5s, fmt=this_vs_that, music=fast-676)
+2026-07-16 06:36:15  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_ananthagiri-hills_hi_2026-07-16.mp4 (27,605,582 bytes, video/mp4)
+2026-07-16 06:36:16  INFO          Uploading to R2 (timeout=300s)...
+2026-07-16 06:36:18  INFO          R2 PUT OK. Confirming...
+2026-07-16 06:36:19  INFO          Media ready: BGVXn (27,605,582 bytes · yt_short_this_vs_that_yt_short_this_vs_that_ananthagiri-hills_hi_2026-07-16.mp4)
+2026-07-16 06:36:19  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_ananthagiri-hills_hi_2026-07-16.mp4
+2026-07-16 06:36:20  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-16 06:36:20  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-07-16 06:36:20  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-07-16 06:36:23  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=MwKjC), waiting for platform confirmation...
+2026-07-16 06:36:28  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=MwKjC · Platform=vLypLNP5EzU
+2026-07-16 06:36:28  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-07-16 06:36:28  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-16 06:36:30  INFO      [instagram/nakshiq] Outstand accepted (post_id=nPGZl), waiting for platform confirmation...
+2026-07-16 06:37:10  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=nPGZl · Platform=18120464449825137
+2026-07-16 06:37:10  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-16 06:37:10  INFO      YT Short posted: format=this_vs_that, music=fast-676
+2026-07-16 06:37:10  INFO      State saved. YT Short run complete.
+2026-07-16 06:37:10  INFO      ════════════════════════════════════════════════════════════
