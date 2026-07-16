@@ -1,6 +1,6 @@
 ---
 type: pattern
-sources: [data/research/FRESH-EYES-MARKET-SCAN-2026-07-14.md, data/research/ISENBERG-COREY-GANIM-AI-ASSESSMENT-2026-07-16.md]
+sources: [data/research/FRESH-EYES-MARKET-SCAN-2026-07-14.md, data/research/ISENBERG-COREY-GANIM-AI-ASSESSMENT-2026-07-16.md, data/research/LENNY-LEMKIN-CASEL-DEEP-SCRAPE-2026-07-16.md]
 updated: 2026-07-16
 ---
 
@@ -22,4 +22,6 @@ Creator content is optimized to be watched, not to be true — a source with a r
 
 Not all creator content sits at the low-receipts end. A guest-operator interview where the guest has independently corroborated numbers — a named real business, real named clients — sits closer to the receipts end than a host's own solo take. Corey Ganim on Isenberg's pod is the case: a corroborated $10M wholesale operator with named assessment clients, alongside the usual funnel mechanics underneath ([[corey-ganim]], [[src-ganim-ai-assessment]]). One dense hour on that single fresh episode out-produced take-able technique versus the last four full channel audits combined — **a single-video deep-read on a recently-published guest-operator episode beats a channel-wide scrape** as a research allocation, the same "verify the messenger, don't discard the message" move this pattern already applies to marketplaces, now confirmed inside content too. Isenberg's own channel shows the split cleanly: it has drifted to AI-news/idea-list content (430 videos, ~300 hrs) not worth a full audit, but the guest-operator format inside it remains worth a per-episode check ([[operators-panel]]).
 
-Related: [[money-is-services-not-adsense]], [[public-premises-are-pre-arbitraged]], [[src-fresh-eyes-scan-2026-07-14]], [[corey-ganim]], [[src-ganim-ai-assessment]], [[operators-panel]].
+**Lenny's channel is the receipts-dense exception at scale (2026-07-16):** 362 episodes of practitioner interviews with named numbers as the default format, not a single lucky guest slot — the 30-transcript deep-read ([[src-lenny-deep-scrape]]) confirms per-problem-never-as-news holds at channel scale too. See [[lenny-rachitsky]].
+
+Related: [[money-is-services-not-adsense]], [[public-premises-are-pre-arbitraged]], [[src-fresh-eyes-scan-2026-07-14]], [[corey-ganim]], [[src-ganim-ai-assessment]], [[operators-panel]], [[lenny-rachitsky]], [[src-lenny-deep-scrape]].

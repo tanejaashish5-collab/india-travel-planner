@@ -1,6 +1,6 @@
 ---
 type: person
-sources: [data/research/OPERATORS-PLAYBOOK-FOR-US-2026-06-24.md, data/research/DOAC-JAY-RESEARCH-2026-06.md, data/research/DOAC-JAY-OPPORTUNITIES-2026-06.md, data/research/ISENBERG-COREY-GANIM-AI-ASSESSMENT-2026-07-16.md]
+sources: [data/research/OPERATORS-PLAYBOOK-FOR-US-2026-06-24.md, data/research/DOAC-JAY-RESEARCH-2026-06.md, data/research/DOAC-JAY-OPPORTUNITIES-2026-06.md, data/research/ISENBERG-COREY-GANIM-AI-ASSESSMENT-2026-07-16.md, data/research/LENNY-LEMKIN-CASEL-DEEP-SCRAPE-2026-07-16.md]
 updated: 2026-07-16
 ---
 
@@ -27,4 +27,6 @@ Composite page for the tactical-operator cohort studied 2026-06-19 → 2026-06-2
 - **1:1 high-ticket wisdom/strategy offer ($500–2K)** — PURSUE, fastest first-revenue path.
 - Anti-pattern noted: the loudest DOAC names won via on-camera brand equity, physical inventory, or deep-science moats — all anti-fit for a faceless operator → don't copy their surface, copy the machine ([[money-is-services-not-adsense]]).
 
-Related: [[corey-ganim]], [[src-ganim-ai-assessment]], [[receipts-over-content]], [[test-cheap-before-build]], [[owned-audience-funnel]]
+**2026-07-16:** Lenny Rachitsky, Jason Lemkin, and Brian Casel were studied the same session but given individual pages rather than folded into this composite — see [[lenny-rachitsky]], [[jason-lemkin]], [[brian-casel]].
+
+Related: [[corey-ganim]], [[src-ganim-ai-assessment]], [[receipts-over-content]], [[test-cheap-before-build]], [[owned-audience-funnel]], [[lenny-rachitsky]], [[jason-lemkin]], [[brian-casel]]

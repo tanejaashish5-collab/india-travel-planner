@@ -20,7 +20,9 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 - [[distribution-arbitrage-via-guesting]] — 9% of posts, 38% of likes; doesn't transfer to faceless formats
 - [[delegation-fails-heuristic]] — app-layer value survives where outputs are untestable, decisions entangled, citations mandatory; NakshIQ fits it
 - [[public-premises-are-pre-arbitraged]] — first-principles reasoning from PUBLIC facts converges on ground funded founders already took; three consecutive runs (07-12, 07-13 ×2, 07-14) all hit 0 GREEN/PURSUE; open gaps need PRIVATE premises; INVERSION REFINEMENT — even private premises fail when the binding premise is distribution; counter-example — a public premise <30 days old (ACT Procurement Amendment Act) is not yet arbitraged; freshness matters independent of public/private
-- [[receipts-over-content]] — weekly research attention belongs on sources where every item is verifiable (marketplaces, complaint streams, procurement portals), not creator content; new Monday Empire Flippers / monthly SMERGERS habit; exception (2026-07-16): guest-operator episodes with corroborated receipts (Ganim) — single-video deep-reads on fresh operator episodes beat channel-wide scrapes
+- [[receipts-over-content]] — weekly research attention belongs on sources where every item is verifiable (marketplaces, complaint streams, procurement portals), not creator content; new Monday Empire Flippers / monthly SMERGERS habit; exception (2026-07-16): guest-operator episodes with corroborated receipts (Ganim) — single-video deep-reads on fresh operator episodes beat channel-wide scrapes; Lenny's Podcast is the same exception running at full channel scale
+- [[retainer-is-the-business]] — assessment/audit is a tripwire, the recurring maintenance retainer is the actual business; three-operator convergence 2026-07-16 (Ganim/Lemkin/Casel); corrects the Ganim-kit offer ladder to assessment→install→retainer from day one
+- [[aeo-citations-over-rankings]] — LLM visibility = citation frequency across sources, not SERP rank; share-of-voice measurement, indexing-vs-training bot split, model-collapse penalty on pure-AI content
 
 ## Ideas
 
@@ -39,6 +41,9 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 - [[ashwin-damera]] — Harvard frameworks; India-campus education corridor facts
 - [[nick-saraev]] — AI-automation YouTuber; the screen-watcher founder-telemetry pattern; 7th lead-magnet-machine data point
 - [[corey-ganim]] — $10M Amazon wholesale operator turned AI-assessment coach; mixed verdict (real operator + 8th lead-magnet funnel); full GTM spec banked for dashboard Project #1 (Workflow Automation)
+- [[lenny-rachitsky]] — Lenny's Podcast (362 eps); practitioner interviews with receipts, per-problem not news; the DOAC of product/growth
+- [[jason-lemkin]] — SaaStr; 20-agent fleet receipts, orchestration-as-headcount economics, enterprise-agent pricing gap
+- [[brian-casel]] — solo bootstrapper; agent-in-a-box template+install+retainer model, night-shift pattern
 
 ## Tools
 
@@ -49,7 +54,7 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 
 ## Sources (terse, one per ingested doc)
 
-Creator studies: [[src-vaibhav-channel-audit]] · [[src-vaibhav-tools-inventory]] · [[src-vyan-gandhi-findings]] · [[src-doac-jay-research]] · [[src-doac-jay-opportunities]] · [[src-mastersunion-scan]] · [[src-naval-learnings]] · [[src-operators-playbook]] · [[src-ashwin-damera]] · [[src-basesh-gala-scout]] · [[src-nick-screen-watcher]] · [[src-nick-25-websites]] · [[src-nick-justin-lob-20k]] · [[src-nick-agent-workflow-2027]] · [[src-nate-herk-200k-inhouse-ai-job]] · [[src-ganim-ai-assessment]]
+Creator studies: [[src-vaibhav-channel-audit]] · [[src-vaibhav-tools-inventory]] · [[src-vyan-gandhi-findings]] · [[src-doac-jay-research]] · [[src-doac-jay-opportunities]] · [[src-mastersunion-scan]] · [[src-naval-learnings]] · [[src-operators-playbook]] · [[src-ashwin-damera]] · [[src-basesh-gala-scout]] · [[src-nick-screen-watcher]] · [[src-nick-25-websites]] · [[src-nick-justin-lob-20k]] · [[src-nick-agent-workflow-2027]] · [[src-nate-herk-200k-inhouse-ai-job]] · [[src-ganim-ai-assessment]] · [[src-lenny-deep-scrape]]
 Opportunity scouts: [[src-basesh-9industries]] · [[src-wide-opportunity-scout]] · [[src-passion-fit-ideas]] · [[src-opportunities-ledger-doc]] · [[src-fable5-scan]] · [[src-medical-equipment-r1]] · [[src-medical-equipment-r2]] · [[src-next-step-business]] · [[src-pursue-refill-2026-07-12]] · [[src-aristotle-first-principles-run]] · [[src-private-premise-inversion]] · [[src-fresh-eyes-scan-2026-07-14]]
 Frameworks/system: [[src-ratan-tata-gate]] · [[src-strategist-checklist]] · [[src-opportunity-brain]] · [[src-founder-profile]] · [[src-karpathy-llm-wiki]]
 Content/monetisation ops: [[src-content-radar]] · [[src-content-engine-gaps]] · [[src-claude-code-money-gold]] · [[src-reach-diagnosis]] · [[src-monetisation-spec]] · [[src-nate-herk-fable-mode]] · [[src-roman-knox-audit]] · [[src-nate-one-prompt-company]] · [[src-claude-channel-audit]] · [[src-fable-parity-stack-2026-07-14]]
