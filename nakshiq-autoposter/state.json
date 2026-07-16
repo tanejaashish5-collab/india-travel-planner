@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-15",
-    "PdMu0": "2026-07-15",
-    "m8EAd_evening": "2026-07-15",
-    "PdMu0_evening": "2026-07-15",
+    "m8EAd": "2026-07-16",
+    "PdMu0": "2026-07-16",
+    "m8EAd_evening": "2026-07-16",
+    "PdMu0_evening": "2026-07-16",
     "m8EAd_carousel": "2026-07-16",
     "PdMu0_carousel": "2026-07-16",
     "GAh5p_yt_short": "2026-07-16",
     "m8EAd_yt_short": "2026-07-16"
   },
-  "last_sync": "2026-07-15T15:59:46.360393+00:00",
+  "last_sync": "2026-07-16T15:51:42.195901+00:00",
   "posted_destinations": [
     {
       "destination_id": "alchi",
@@ -305,6 +305,10 @@
     {
       "destination_id": "srirangapatna",
       "date": "2026-07-16"
+    },
+    {
+      "destination_id": "amboli",
+      "date": "2026-07-16"
     }
   ],
   "posted_formats": {
@@ -314,11 +318,11 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -337,11 +341,11 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5530,6 +5534,28 @@
       "destination": "srirangapatna",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_srirangapatna_hi_2026-07-16.mp4"
+    },
+    {
+      "timestamp": "2026-07-16T15:52:53.350376+00:00",
+      "date": "2026-07-16",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "EHTnA",
+      "destination": "amboli",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "amboli.mp4"
+    },
+    {
+      "timestamp": "2026-07-16T15:53:07.107556+00:00",
+      "date": "2026-07-16",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "WopQz",
+      "destination": "amboli",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "amboli.mp4"
     }
   ],
   "theme_usage": {
@@ -5884,13 +5910,15 @@
       ],
       "zanskar": [
         "2026-07-09",
-        "2026-07-12"
+        "2026-07-12",
+        "2026-07-16"
       ],
       "lamayuru": [
         "2026-07-09"
       ],
       "amboli": [
-        "2026-07-09"
+        "2026-07-09",
+        "2026-07-16"
       ]
     },
     "morning_formats": {
@@ -6012,7 +6040,8 @@
         "2026-07-12",
         "2026-07-13",
         "2026-07-14",
-        "2026-07-15"
+        "2026-07-15",
+        "2026-07-16"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6245,6 +6274,9 @@
       ],
       "zanskar": [
         "2026-07-12"
+      ],
+      "amboli": [
+        "2026-07-16"
       ]
     },
     "audience_tags": {
@@ -6283,7 +6315,8 @@
       ],
       "best-winter": [
         "2026-05-20",
-        "2026-05-21"
+        "2026-05-21",
+        "2026-07-16"
       ],
       "best-honeymoon": [
         "2026-05-20",
@@ -6521,6 +6554,11 @@
       "keylong": [
         "2026-07-02"
       ]
+    },
+    "collection_carousel_dests:best-winter": {
+      "zanskar": [
+        "2026-07-16"
+      ]
     }
   },
   "infographic": {
@@ -6535,8 +6573,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "keylong",
-    "collection": "birding-hotspots"
+    "shared_best": "leh",
+    "collection": "best-winter"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-09",
