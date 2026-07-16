@@ -1,7 +1,7 @@
 ---
 type: pattern
-sources: [data/research/ARISTOTLE-FIRST-PRINCIPLES-IDEAS-2026-07-13.md, data/research/PURSUE-REFILL-2026-07-12.md, data/research/PRIVATE-PREMISE-INVERSION-2026-07-13.md]
-updated: 2026-07-13
+sources: [data/research/ARISTOTLE-FIRST-PRINCIPLES-IDEAS-2026-07-13.md, data/research/PURSUE-REFILL-2026-07-12.md, data/research/PRIVATE-PREMISE-INVERSION-2026-07-13.md, data/research/FRESH-EYES-MARKET-SCAN-2026-07-14.md]
+updated: 2026-07-14
 ---
 
 # Public premises are pre-arbitraged
@@ -37,4 +37,10 @@ The very next run ([[src-private-premise-inversion]]) did the inversion the para
 
 **Refined rule: data and capability premises (something you own and can expose, like a verified corpus or a working pipeline) survive the landscape test measurably better than knowledge/credential premises (something you merely know) — because a dataset can be productized directly, while domain knowledge still needs a distribution channel to reach buyers.** But surviving the landscape test is not the same as proving a gap: the one true survivor (a district-granular India ground-truth API/MCP) is uncontested precisely because *no one has proven anyone will pay for it* — validation can only prove crowdedness, never demand. Once a search finds zero direct competitors, further validation has nothing left to do; only a real-world demand probe (a paying pilot, a committed usage commitment) can finish the job. See the probe spec in [[src-private-premise-inversion]] (kill gate: one paying pilot in 30–45 days).
 
-Related: [[passion-fit-gate]], [[verification-as-moat]], [[delegation-fails-heuristic]], [[rejected-ideas]], [[regulatory-forced-buyer]], [[owned-audience-funnel]], [[reach-before-monetisation]], [[src-private-premise-inversion]].
+## Third confirmation (2026-07-14) — and a counter-example worth noting
+
+The 2026-07-14 bizscout light restart ([[src-fresh-eyes-scan-2026-07-14]]) is the **third consecutive run** where harvest-channel ideas produce 0 GREEN (12 new ideas, 0 GREEN / 5 YELLOW / 7 RED). Same pattern holds.
+
+But the same run surfaces a genuine counter-example to "public premises are always pre-arbitraged": the **ACT Procurement Amendment Act**, live 1 Jul 2026, is a public premise — but it's under 30 days old at scan time, and the ACT Direct-Source Readiness Desk idea built on it scored a clean YELLOW (conviction 3.10, no incumbent found yet). **Freshness is a variable independent of public/private**: a public premise stays un-arbitraged for a window right after it's created, before well-capitalized founders have had time to reason from it. The rule isn't "public premises never work," it's "public premises decay fast" — the ledger's job going forward includes catching premises inside that window (regulation changes, new government programs) rather than only mining evergreen public facts.
+
+Related: [[passion-fit-gate]], [[verification-as-moat]], [[delegation-fails-heuristic]], [[rejected-ideas]], [[regulatory-forced-buyer]], [[owned-audience-funnel]], [[reach-before-monetisation]], [[src-private-premise-inversion]], [[src-fresh-eyes-scan-2026-07-14]], [[receipts-over-content]].

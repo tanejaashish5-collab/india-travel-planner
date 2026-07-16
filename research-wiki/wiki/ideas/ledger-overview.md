@@ -1,14 +1,16 @@
 ---
 type: idea
-sources: [.loop/biz-opportunities-ledger.json]
-updated: 2026-07-09
+sources: [.loop/biz-opportunities-ledger.json, data/research/FRESH-EYES-MARKET-SCAN-2026-07-14.md]
+updated: 2026-07-14
 ---
 
-# Ledger overview — the 77-idea board (RETIRED 2026-07-13, now historical)
+# Ledger overview — the 101-idea board (UN-RETIRED 2026-07-14)
 
-**⚠️ RETIRED 2026-07-13**: the entire opportunity pipeline (this ledger, radar briefs/runs, bizscout runs, digests, strategist/tata scores, goal files) was archived to `.loop/archive/2026-07-13-opportunity-pipeline-retired/` (commit `c4b248687`, reversible, nothing deleted) and the daily radar launchd job was unloaded (plist renamed `.disabled`). No automation refills this board going forward. Trigger: [[src-private-premise-inversion]] concluded validation had done all it could — 21 ideas validated in 24h across two 07-13 runs, 0 PURSUE, 1 cheap PROBE, and further searching without new premises just re-finds the same crowded ground. Everything below is now a historical snapshot, not a live board.
+**⚠️ UN-RETIRED 2026-07-14** by founder order: the pipeline (archived 2026-07-13, see below) was restored and a light bizscout run executed the same day — [[src-fresh-eyes-scan-2026-07-14]]. Archived ledger restored first so dedup held: **12 new ideas, 0 duplicates → ledger now 101 ideas (was 89 at archive time). Result: 0 GREEN / 5 YELLOW / 7 RED.** One harvest leg (yc-rfs-themes) died on a formatting error, logged for a prompt fix. This is the **third consecutive run** where harvest-channel ideas produce 0 GREEN, reconfirming [[public-premises-are-pre-arbitraged]] — the pipeline's current value is problem evidence and fresh premises (e.g. the ACT Procurement Amendment Act, live 1 Jul 2026), not idea generation. The daily radar launchd job remains disabled (founder call from 07-13; not part of this restart) — re-enabling it is a separate, standing-daily-spend decision.
 
-Prior system of record: `.loop/biz-opportunities-ledger.json` (ledger updatedAt 2026-06-26, 77 ideas; formerly refreshed by the [[radar-loop]] daily scout, now disabled). This page is the wiki's analytical snapshot — the ledger stays canonical for scores.
+**2026-07-13 retirement (superseded above, kept for record):** the entire opportunity pipeline (this ledger, radar briefs/runs, bizscout runs, digests, strategist/tata scores, goal files) was archived to `.loop/archive/2026-07-13-opportunity-pipeline-retired/` (commit `c4b248687`, reversible, nothing deleted) and the daily radar launchd job was unloaded (plist renamed `.disabled`). Trigger: [[src-private-premise-inversion]] concluded validation had done all it could — 21 ideas validated in 24h across two 07-13 runs, 0 PURSUE, 1 cheap PROBE, and further searching without new premises just re-finds the same crowded ground.
+
+Prior system of record: `.loop/biz-opportunities-ledger.json` (ledger updatedAt 2026-06-26, 77 ideas; formerly refreshed by the [[radar-loop]] daily scout, now disabled except for the 07-14 manual restart above). This page is the wiki's analytical snapshot — the ledger stays canonical for scores.
 
 **Tier counts (strategist):** PURSUE 18 · WATCH 38 · PARK 21. Every idea also carries a validation verdict and a [[tata-gate]] ethics/durability verdict; strategist scoring applies the [[strategist-checklist]].
 

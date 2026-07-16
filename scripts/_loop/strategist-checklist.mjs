@@ -256,6 +256,7 @@ export function rankIdeas(result, ledgerOpportunities) {
       founderReaction: led.founder_reaction || null,        // your explicit verdict on this idea, if any
       founderRejected: !!(led.founder_reaction && led.founder_reaction.verdict === 'not-interested'),
       validation: led.validation || null,                   // demand-test verdict (the 🧪 Tested layer), if run
+      scoutVerdict: led.verdict || null,                    // bizscout validator verdict (GREEN/YELLOW/RED) — separate axis from conviction; a RED here means the wedge was refuted even if conviction ranks high
       coverage: `${f.scored}/${ideaItems.length * 3}`,      // weighted coverage of idea items
       ideaItemsAssessed: f.scored,
       top_strengths: s.top_strengths || [],
@@ -727,7 +728,7 @@ if (argv.includes('--self-test')) {
   console.log(`Applied. ${rows.length} ideas scored.`);
   console.log(`Wrote: ${path.relative(ROOT, CHECKLIST_JSON)}, ${path.relative(ROOT, CHECKLIST_MD)}, ${path.relative(ROOT, SCORED_MD)}`);
   console.log(`\nTop 8 by FINAL tier / conviction:`);
-  rows.slice(0, 8).forEach((r, i) => console.log(`  ${i + 1}. ${r.name.padEnd(16)} conv ${r.conviction.toFixed(2)}  fit ${(r.checklistFit * 100).toFixed(0)}%  ${r.finalTier}${r.tata && r.tata.verdict && r.tata.verdict !== 'pass' ? '  ⛔Tata:' + r.tata.verdict : ''}`));
+  rows.slice(0, 8).forEach((r, i) => console.log(`  ${i + 1}. ${r.name.padEnd(16)} conv ${r.conviction.toFixed(2)}  fit ${(r.checklistFit * 100).toFixed(0)}%  ${r.finalTier}${r.tata && r.tata.verdict && r.tata.verdict !== 'pass' ? '  ⛔Tata:' + r.tata.verdict : ''}${r.validation && r.validation.verdict && !['GREEN', 'pass', 'PASS'].includes(r.validation.verdict) ? '  🧪validation:' + r.validation.verdict : ''}${r.scoutVerdict && r.scoutVerdict !== 'GREEN' ? '  🧪scout:' + r.scoutVerdict : ''}`));
 } else if (argv.includes('--apply-tata')) {
   const tp = argv[argv.indexOf('--apply-tata') + 1];
   const sp = argv[argv.indexOf('--strategist') + 1];

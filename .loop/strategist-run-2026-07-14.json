@@ -1,0 +1,2318 @@
+{
+ "scored": [
+  {
+   "key": "pathwayrn-working-name-india-australia-nurse-credential-pipe",
+   "name": "PathwayRN (working name) \u2014 India\u2192Australia nurse credential-pipeline platform",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "No payment/conversation signals yet; but the 24/7 RN mandate is a forced-buyer trigger that makes this fast to test cheaply."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "Real, growing demand (aging population + legislated 24/7 RN mandate + nursing shortage) but the buyer pool (AU aged-care providers + IQN recruiters) is likely sub-scale for venture TAM unless expanded to more source countries/occupations."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "pass",
+     "reason": "Multi-party AHPRA/ANMAC/OSCE/visa coordination is a genuinely fragmented, high-friction process today \u2014 a real gap, not a 10%-better ATS tweak."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "The product tracks a public, standardized government process with no proprietary data, license, or network effect \u2014 a funded competitor or an existing IQN recruitment agency's internal tool could replicate the tracker within 12 months."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "partial",
+     "reason": "Could be first-mover for this specific corridor, but generic credentialing SaaS and agency-built tracking tools already exist in adjacent form \u2014 unproven this reads as a new category vs. a better tracker."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "No owned channel yet; plausible via SEO content for IQN-migration search queries (mirrors the NakshIQ playbook) but nothing built."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 margins/CAC/LTV not modeled."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "No LTV calc or acquisition cap set yet."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "No revenue/runway stated; capital is flexible per founder calibration but unpriced here."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "A single-recruiter, single-provider stage-tracking dashboard is a cheap, one-sentence MVP, buildable by an AI agent team."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Software margins should improve with volume, but no direct AHPRA/ANMAC API likely means manual verification stays labor-heavy unless the workflow becomes truly self-service."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "partial",
+     "reason": "Clear stated outcome (cut the 8-10 week vacancy fill), but a multi-stakeholder system-of-record (provider + recruiter + nurse + migration agent) carries real onboarding friction not yet shown to be removed."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "No channels stood up yet."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No stated relationships with aged-care executives, recruiters, or ANMAC/AHPRA contacts."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no customer feedback loop exists yet."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "No product in market to delight anyone with."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "Nursing/immigration is exactly the big-ticket, low-repeat, information-asymmetric category (jobs + health) this test targets \u2014 a verified-status system directly reduces that asymmetry."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "The India-Australia corridor is a real structural edge, but healthcare/nursing-workforce compliance sits outside Ashish's declared passion lanes (India wisdom / travel / self-mastery / business edu). Per his documented hard-gate pattern \u2014 rejecting validated AU-super/AU-edu ideas as 'not my domain/passion' \u2014 no personal non-financial stake is evidenced for this vertical."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "No track record on this specific bet."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Not applicable pre-launch."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No hiring has happened."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No domain expert (registered migration agent / nursing-registration specialist) on the team \u2014 his AI-agent delegation model covers software build, not regulated-domain judgment calls; addressable by hiring, not yet done."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "No experts engaged yet."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "No team/culture exists pre-launch."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "Australia's legislated 24/7 RN mandate in aged care, plus a structural nursing shortage and aging population, is a genuine multi-year regulatory and demographic tailwind with working precedent (active offshore recruitment already happening)."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "partial",
+     "reason": "If AHPRA/ANMAC/DHA streamline or centralize credential verification (plausible given the shortage crisis pushes govt to simplify), the coordination-tool's core value could shrink \u2014 though pivot paths exist (other source countries, other regulated professions, a matching layer)."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "No shipped artifact yet to judge speed."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No stated competitor study."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "No metrics defined yet."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "No levers tested."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Unclear whether this becomes the 70%-time flagship or one of the 2-3 cheap parallel demand tests his portfolio mode calls for."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "No systems built yet."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "Loss floor is conviction-led per founder calibration; not sized against this specific bet yet."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "No portfolio treatment applied to this idea yet."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "unknown",
+     "reason": "No personal regret-threshold statement made about this specific idea."
+    }
+   ],
+   "top_strengths": [
+    "thematic-timing-tailwind: Australia's legislated 24/7 RN aged-care mandate + nursing shortage + aging population is a real, multi-year forced-buyer tailwind, not a speculative bet.",
+    "latent-unmet-need: the fragmented, multi-party AHPRA/ANMAC/OSCE/visa process is a genuine coordination pain today, not an incremental tweak on existing tools.",
+    "trust-infrastructure: nursing/immigration is precisely the high-stakes, information-asymmetric category (jobs + health) where a verified system-of-record adds real structural value.",
+    "low-capex-mvp: a single-loop stage-tracking dashboard is a cheap, fast, agent-buildable test of the core idea.",
+    "validated-paying-demand is unproven but unusually testable \u2014 the 24/7 RN mandate creates a forced-buyer that should reveal willingness-to-pay fast and cheaply."
+   ],
+   "top_gaps": [
+    "defensible-moat (fail, w3): the product coordinates a public, standardized government process with no proprietary data, license, or network effect described \u2014 a funded competitor or an existing IQN recruitment agency's internal tool can copy the tracker within 12 months; without a marketplace/network-effect evolution this is generic vertical workflow software.",
+    "founder-passion-fit (fail, w3): outside Ashish's declared passion lanes (India wisdom/travel/self-mastery/business edu) \u2014 per his own hard-gate history (rejected validated AU-super/AU-edu as 'not my domain'), the India-AU corridor is a real structural bonus but healthcare/nursing-workforce compliance itself has no shown personal stake.",
+    "large-growing-market (partial, w3): TAM for this specific niche (AU aged-care buyers) is likely modest unless deliberately expanded beyond one source country and one care-setting.",
+    "survive-constraint-shifts (partial, w3): the entire value proposition rides on the current AHPRA/ANMAC process staying complex/manual \u2014 a government digitization push (plausible given the shortage crisis) could compress the opportunity."
+   ],
+   "strategist_verdict": "Real regulatory tailwind and a genuine coordination pain worth a cheap demand test, but not fundable as-is: the core product is a copyable bureaucratic tracker with no structural moat, and per Ashish's own documented pattern this vertical sits outside his passion lanes despite the strong India-AU corridor fit \u2014 validate willingness-to-pay fast and cheap, but don't commit real capital until the moat question (network effect / exclusivity) and the founder-passion question are both resolved."
+  },
+  {
+   "key": "accentbench-working-name-production-reliability-testing-for-",
+   "name": "AccentBench (working name) \u2014 production reliability testing for voice AI agents",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch one-liner \u2014 no payments or customer conversations claimed yet; not structurally impossible to validate."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "Voice-AI-agent adoption is genuinely large/growing, but the 'gap internet-native competitors aren't serving well' half fails \u2014 funded players (Coval, Hamming AI, Cekura and similar) already sell simulated-call/voice-agent testing."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "Production reliability failures (accents/noise/latency) are a real pain, but this is an incremental entrant into an already-named 'voice AI eval/testing' category, not an ignored/inarticulable need."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "The stated moat mechanic (a published benchmark) is easily replicated by the better-funded, better-distributed incumbents already in this space within 12 months \u2014 no proprietary data/network/regulatory edge described."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "fail",
+     "reason": "Voice-AI-agent testing/observability is already a populated, funded category (Coval, Hamming AI, Cekura, legacy Bespoken) \u2014 this would be 'a better entrant,' not 'the original category.'"
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "partial",
+     "reason": "A published industry failure benchmark is a plausible organic-inbound/PR mechanic (content-as-distribution), but nothing owned or compounding is evidenced yet."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "No margin/CAC/LTV stated \u2014 pre-launch."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "No LTV math or acquisition cap described."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "No revenue/runway stated; pre-launch."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "A narrow single-loop MVP (synthesize test calls across accents/noise, run against a target agent, score failures) is describable in one sentence and buildable with existing TTS/audio tooling under $100K."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Some infra amortization at scale, but core cost (TTS synthesis + LLM scoring per test call) is metered third-party API spend that doesn't obviously fall 30-50% at 10x volume."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "partial",
+     "reason": "Value is statable in one sentence ('know your voice agent won't fail in production before you ship it'), but no frictionless offer/self-serve path is described."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "No channels named yet."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No evidence of existing relationships with voice-AI-agent buyers/decision-makers \u2014 a real gap, but not structurally unbuildable via content/outbound."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no customer process described."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no evidence of delight mechanics or referral behavior."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "unknown",
+     "reason": "B2B dev-tooling category doesn't map cleanly onto the listed high-stakes consumer categories (autos/homes/jobs/health/dating); not clearly applicable or evidenced either way."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "Zero connection to Ashish's stated lanes (India wisdom, travel, self-mastery, business edu) or the India-Australia corridor \u2014 this is a generic 'AI tooling for AI companies' product, the exact 'AI-forced' pattern he explicitly rejected on the 8-PURSUE board ('you're trying to force AI on stuff')."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Generic founder trait, not idea-specific; no evidence either way."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Generic founder trait, not idea-specific."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team/hiring described; pre-launch."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No cofounder/team named; the product needs audio/telephony/ML depth beyond a non-technical solo founder + AI agents, but that's a hireable gap, not structural."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "No experts identified or hired yet."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no values/culture described."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "Voice AI agent deployment is a real, active 2025-26 macro wave (multiple funded voice-agent platforms), with working precedent for testing/eval tooling riding alongside it."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "partial",
+     "reason": "Real risk that foundation ASR/LLM providers natively improve accent/noise robustness or ship native evals, absorbing this layer \u2014 a live constraint-shift risk, not fatal but not clearly survivable either."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "No shipping evidence yet; pre-launch."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No evidence of competitor study (Coval/Hamming/Cekura) or a specific 15% edge identified."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "No metrics/baseline defined yet."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "No customer-count/ACV/frequency targets set."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Not evaluable from a one-liner; founder-level commitment question."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no systems built."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "No bet-sizing stated; founder's loss floor is conviction-led per profile, not idea-specific."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not evaluable from a one-liner."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "fail",
+     "reason": "No credible personal-stake narrative available \u2014 same root cause as founder-passion-fit; nothing non-financial ties Ashish to this specific problem."
+    }
+   ],
+   "top_strengths": [
+    "thematic-timing-tailwind: voice AI agent adoption is a real, active 2025-26 macro wave with working precedent (multiple funded voice-agent platforms).",
+    "low-capex-mvp: a narrow, one-sentence testable loop (simulate calls across accents/noise, score against a target agent) is buildable without heavy capital.",
+    "value-as-outcome-and-offer: the pitch reduces cleanly to a customer outcome \u2014 'know your voice agent won't fail in production before you ship it.'"
+   ],
+   "top_gaps": [
+    "founder-passion-fit + regret-threshold-conviction (both fail, weight 3): zero connection to Ashish's stated lanes or corridor edge \u2014 this is the exact 'AI forced on stuff' pattern he explicitly rejected on the 8-PURSUE board.",
+    "category-creation + defensible-moat (both fail, weight 2-3): voice-AI-agent testing/eval is already a funded, populated category (Coval, Hamming AI, Cekura and peers) \u2014 not first, and the proposed moat (a published benchmark) is trivially copyable by better-resourced incumbents already ahead.",
+    "Everything demand/economics/team-related is simply unproven (pre-launch one-liner) \u2014 no payments, no decision-maker access, no unit economics modeled."
+   ],
+   "strategist_verdict": "These strategists would NOT back this as Ashish's next bet: the macro timing is real and the MVP is cheap to test, but it's a technically-competent entrant into an already-funded, already-named category (voice-AI testing/eval) with no described moat that survives incumbents copying it \u2014 and most decisively, it has zero founder passion-fit, matching precisely the 'AI forced on stuff' pattern Ashish told the system to stop recommending."
+  },
+  {
+   "key": "tariffbridge-working-name-india-australia-hs-code-crosswalk-",
+   "name": "TariffBridge (working name) \u2014 India\u2194Australia HS-code crosswalk + ECTA concession API",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch; no payments or customer conversations evidenced yet."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "India-Australia bilateral trade is real and growing under ECTA, but a single-corridor niche is narrower than sector-scale, and generalist trade-compliance platforms already exist."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "FTA-concession/HS-classification pain is real but already served (imperfectly) by customs brokers and generalist compliance software \u2014 closer to 'cheaper/automated' than wholly latent."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "Crosswalk logic derives entirely from public government tariff schedules and ECTA treaty text; a funded incumbent (Thomson Reuters ONESOURCE, Descartes, Avalara) could replicate it within weeks \u2014 no proprietary data, network effect, or license barrier evident."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "partial",
+     "reason": "Could claim 'first India-Australia ECTA specialist' in a micro-niche, but the parent category (multi-country tariff crosswalk / FTA compliance software) already has established players."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "partial",
+     "reason": "A programmatic-SEO long-tail-HS-code play is plausible and fits Ashish's distribution muscle, but no owned audience exists in this vertical yet \u2014 unproven."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "No margin/CAC/LTV modeled; pre-launch."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Not calculated yet."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "No revenue/runway stated; pre-launch."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "One-sentence MVP (crosswalk + concession flag) buildable from two public tariff schedules and treaty text \u2014 fits an agent-buildable, low-capex pattern."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "pass",
+     "reason": "API/database product; marginal cost per additional lookup approaches zero once the crosswalk is built."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "Clear measurable outcome: exact tariff line + concession eligibility + document checklist per shipment."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "No channels demonstrated pre-launch."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No stated relationships with customs brokers, freight forwarders, or trade-compliance buyers."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "No customers yet; pre-launch."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "No customers yet; pre-launch."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "High-stakes, information-asymmetric category (misclassification risks fines/shipment holds/duty overpayment) \u2014 the product's core function IS the trust infrastructure that closes that gap."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "Matches the exact 'compliance/data-API for X' archetype the founder explicitly rejected on the 2026-06-11 8-idea board ('you're trying to force AI on stuff\u2026 they do not interest me'); no stated personal narrative of interest in trade/customs beyond the geography."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "General founder trait not evidenced either way for this idea."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "General founder trait not evidenced either way for this idea."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team yet; pre-launch."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "Solo non-technical founder; no customs/trade-law domain expert on the team yet, though hireable."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "Not yet demonstrated for this idea."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no team."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "ECTA has been in force since Dec 2022 with an active government push to grow India-Australia trade (CECA talks ongoing) \u2014 a real, current tailwind."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "partial",
+     "reason": "The classification-crosswalk core updates naturally as tariff schedules change, but the concession-flagging value is tied to one treaty instrument; FTAs are usually expanded rather than revoked, so the risk is moderate, not existential."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "pass",
+     "reason": "A working crosswalk MVP from published tariff data is plausible within about a week using Ashish's agent-build capacity."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No evidence of studying Thomson Reuters ONESOURCE / Descartes / Avalara and defining a specific 15% edge."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "No metrics defined yet; pre-launch."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "No targets set yet; pre-launch."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Would be one of a 2-3 idea parallel demand-test slate per the founder's stated portfolio mode, not yet a flagship commitment."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "No systems/team built yet; pre-launch."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "Founder's loss floor is conviction-led/case-by-case; not yet sized for this specific idea."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not yet framed within a portfolio; pre-launch."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "fail",
+     "reason": "The category (multi-country tariff/FTA compliance software) is an established, funded, consensus space (Thomson Reuters, Descartes, Avalara) \u2014 a solvable data-integration problem, not a non-consensus 'experts call it impossible' insight."
+    }
+   ],
+   "top_strengths": [
+    "low-capex-mvp: one-sentence MVP buildable from two public tariff schedules + ECTA text, fits Ashish's agent-build muscle",
+    "value-as-outcome-and-offer: crisp measurable outcome \u2014 exact tariff line + concession eligibility + document checklist per shipment",
+    "thematic-timing-tailwind: ECTA in force since Dec 2022 with active government push to grow India-Australia trade (CECA talks ongoing)",
+    "scale-economics + trust-infrastructure: near-zero marginal cost per lookup once built, and the product itself closes a real information-asymmetry gap in a high-pain-of-reversal category",
+    "Structural India-Australia corridor fit (Canberra residency + India fluency) even though this doesn't rescue the founder-passion-fit test below"
+   ],
+   "top_gaps": [
+    "defensible-moat (w3, FAIL): built entirely from public government tariff schedules and treaty text \u2014 a funded incumbent (Thomson Reuters, Descartes, Avalara) replicates it in weeks, no proprietary data/network effect/license barrier",
+    "founder-passion-fit (w3, FAIL): structurally identical to the 'compliance/data-API for X' archetype the founder explicitly rejected on the 2026-06-11 board ('forcing AI on stuff... they do not interest me'), despite nailing the India-Australia geography",
+    "regret-threshold-conviction (w3, FAIL): the parent category is an established, funded, consensus space \u2014 a known solvable problem, not a non-consensus insight experts call impossible"
+   ],
+   "strategist_verdict": "Would not clear the Robbins/Basesh/Masters' Union bar as-is: the crosswalk sits on public government data with no real moat (a well-funded incumbent copies it in weeks), and despite genuinely nailing Ashish's India-Australia corridor advantage, it structurally repeats the exact \"AI/compliance-API\" pattern he explicitly rejected on the 2026-06-11 board \u2014 conviction-on-paper is real, founder interest is likely not; only worth a cheap demand test if reframed around owned distribution/broker partnerships rather than the API itself."
+  },
+  {
+   "key": "employer-paid-nurse-pipeline-media-property",
+   "name": "Employer-Paid Nurse Pipeline (media property)",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no employer conversations or paid placements yet; placement-fee staffing is a proven monetization pattern industry-wide, so this is unproven not impossible."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "AU aged-care nurse shortage is real and growing (demographic + policy driven), but 'internet-native competitors not serving it well' is unproven \u2014 established nurse-migration agencies and content channels already operate here."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "pass",
+     "reason": "AHPRA/ANMAC pathway is genuinely opaque and scam-prone; existing paid agents exploit rather than solve that information asymmetry."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "partial",
+     "reason": "A credible path exists (owned audience + proprietary success/trust data + partner relationship), but the 'licensed recruitment partner' isn't exclusive \u2014 any funded competitor can bolt on the same free-content layer."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "fail",
+     "reason": "Nurse-migration YouTube/FB/WhatsApp channels and paid migration consultancies already exist at scale for AU/UK/Canada/Gulf \u2014 this enters a populated category, it doesn't define one."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "partial",
+     "reason": "Design intent is owned/organic distribution, which fits the founder's automation muscle, but ranking #1-2 for high-intent keywords against entrenched migration-agent SEO/YouTube incumbents is unproven."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "No margin/CAC/LTV stated; placement fees in healthcare staffing are typically high-margin, but Ashish's cut depends on the partner's fee split, which isn't specified."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Not calculated pre-launch."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "No revenue or runway stated; pre-launch."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "Content channel + community + one recruitment partner is a near-$0 MVP testable in weeks, squarely in the founder's owned-content/automation muscle."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Content marginal cost is near-zero, but the placement/verification service itself likely scales sub-linearly (human ops via the recruitment partner), so 30-50% unit-cost drop at 10x is plausible but unproven."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "Clear, specific outcome (free help getting AHPRA/ANMAC-registered into an AU aged-care job) that removes the #1 friction \u2014 cost \u2014 for nurses."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "Likely organic search + YouTube + community referral, but not evidenced or tested yet."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No evidenced relationships with aged-care employer decision-makers or a specific licensed recruitment partner yet; AU residency gives a plausible access path, not proof."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "No process yet; pre-launch."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "No evidence yet of delight mechanics or referral behavior."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "Jobs + immigration + health is exactly the high-stakes, info-asymmetric category this checklist item targets, and a transparent verified pathway directly reduces the asymmetry predatory agents exploit \u2014 plays to the founder's NakshIQ verified-data muscle."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "No evidence of personal stake or domain knowledge in nursing/healthcare staffing; sits outside Ashish's 4 declared passion lanes (India wisdom, travel, self-mastery, business edu) \u2014 the same hard gate that sank prior AU-vertical ideas ('not my domain/passion') applies here."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Not idea-specific; unproven for this venture."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Not idea-specific; unproven for this venture."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No hiring has happened; pre-launch."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "partial",
+     "reason": "The design already delegates the licensed/regulated leg to a recruitment partner (covers the gap Ashish can't fill solo), but that partnership isn't secured yet."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "partial",
+     "reason": "One-liner already shows intent to let a licensed expert own the regulated placement mechanics rather than DIY, but it's not executed."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no team yet."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "Australia's aged-care workforce shortage is a documented, demographically-durable macro tailwind, with a working precedent \u2014 India is already the largest source country for AU nurse migration."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "partial",
+     "reason": "Depends on a specific regulatory window (AHPRA/ANMAC/visa policy); a major policy shift could force a pivot, though the underlying demographic driver (aging AU population) is durable independent of any one policy tweak."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "Not evidenced for this specific venture, though the founder has a general shipping track record elsewhere."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No evidence of competitive study of existing nurse-migration channels/agencies yet."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "No metrics defined; pre-launch."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not modeled; pre-launch."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Founder runs a portfolio of ~7-15 ventures in parallel by design, in tension with '70%+ deliberate time, no fallback' \u2014 not evaluated as fail since portfolio mode is his stated current strategy (2-3 cheap parallel demand tests), not a permanent block on this specific idea getting focus later."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "No systems built yet; pre-launch."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "Founder's stated loss floor is conviction-led/case-by-case, not pre-committed \u2014 a known general tension, not specific to this idea."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "General trait, not evidenced for this venture."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "unknown",
+     "reason": "No articulated personal regret-narrative for this vertical, and the underlying model (nurse-recruitment agency + content) is consensus, not a non-consensus insight \u2014 weakens but doesn't structurally rule this out."
+    }
+   ],
+   "top_strengths": [
+    "value-as-outcome-and-offer: a clear, specific, friction-removing promise (free help through AHPRA/ANMAC into an AU aged-care job) for a well-defined audience",
+    "trust-infrastructure: jobs + immigration + health is exactly the high-stakes, info-asymmetric category where a transparent, verified pathway beats predatory agents \u2014 plays to the founder's NakshIQ verified-data muscle",
+    "low-capex-mvp: content + community + one recruitment partner is a near-$0, one-sentence testable MVP squarely in the founder's owned-content/automation strength",
+    "thematic-timing-tailwind: Australia's aged-care workforce shortage is a documented, demographically-durable macro tailwind with a live precedent (India already the top source country for AU nurse migration)",
+    "latent-unmet-need: the opaque, scam-prone nurse-migration agent industry is a real, ignored pain, not an incremental tweak on an existing good experience"
+   ],
+   "top_gaps": [
+    "category-creation (fail, w2): nurse-migration YouTube/FB/WhatsApp channels and paid migration consultancies already exist at scale for AU/UK/Canada/Gulf \u2014 this enters a populated category rather than defining one",
+    "founder-passion-fit (fail, w3): no evidence of personal stake or domain knowledge in nursing/healthcare staffing; falls outside Ashish's 4 declared passion lanes (India wisdom, travel, self-mastery, business edu) \u2014 the same hard gate that sank prior AU-vertical ideas",
+    "defensible-moat (partial but load-bearing, w3): the licensed-recruitment-partner model is not exclusive \u2014 any existing, funded nurse-recruitment agency can add the same free-content layer within months, undercutting the 12-month-uncopiable bar"
+   ],
+   "strategist_verdict": "Mixed-to-cautious: real demand tailwind (AU aged-care shortage) and a genuinely low-capex, owned-distribution design fit the founder's build muscle, but it lands in an already-crowded nurse-migration content/agency category with no exclusive moat, and \u2014 per the founder's own hard passion-fit gate \u2014 sits outside his declared domain and interest lanes; strategists would want a proprietary trust/data wedge and evidence of personal conviction before backing it over a cheap demand test."
+  },
+  {
+   "key": "act-direct-source-readiness-desk",
+   "name": "ACT Direct-Source Readiness Desk",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "No payments or customer conversations stated; the Jul 2026 Act creates a plausible forcing function but demand is unproven pre-launch."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "fail",
+     "reason": "ACT is one small territory (~470K pop) tied to one Act; the addressable pool of SMBs seeking direct-source registration is structurally a regional niche, not sector-scale, as stated."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "The new law likely creates real confusion, but capability-statement/tender-positioning consulting already exists broadly \u2014 this applies an existing category to a new regulation rather than solving an unaddressed need."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "Knowledge of a newly-published Act is public and commoditizes fast; no proprietary tech, data, network effect, licence, or owned distribution is stated."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "fail",
+     "reason": "This is 'a better government-tender/compliance consultant' for a new law, not a category the business defines."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "No owned channel (SEO, audience, referral base) stated; buildable but unproven."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "No margin/CAC/LTV given; plausible high-margin knowledge service but unmodeled."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Not modeled."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no revenue/runway stated."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "A fixed-fee productized service (registration help, capability statement, positioning) is inherently cheap to launch and explainable in one sentence."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Templatized capability-statement artifacts could cut marginal cost, but bespoke buyer-unit targeting and a 'dedicated desk' imply labor-heavy work that resists steep cost drops at 10x volume."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "\"Get direct-sourced\" is a clear, measurable outcome; the fixed-fee package removes pricing friction."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "\"Buyer-unit targeting\" implies some knowledge of ACT procurement buyers, but no stated direct relationships with actual decision-makers."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no customer process described."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "partial",
+     "reason": "Procurement rules are genuinely information-asymmetric for SMBs, but no specific trust infrastructure beyond stated expertise is described."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "Government-procurement compliance consulting sits outside Ashish's declared passion lanes (India wisdom/travel/self-mastery/business-edu); a similar compliance-advisory business (AI Compliance Advisory) is already parked dormant by his own decision, and no personal stake in ACT procurement is evident beyond the India-linked sub-segment."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Not testable pre-launch."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Not idea-specific evidence."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team yet."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No team/cofounder; government-relations and compliance expertise not evidenced as covered."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no values stated."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "The Jul 2026 ACT Procurement Amendment Act is a genuine, dated regulatory tailwind creating forced near-term buyer urgency."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "fail",
+     "reason": "The entire business is a bet on one Act in one small jurisdiction; simplification, a government self-service portal, or rules becoming widely understood within a year would kill the core offer, with no stated diversification."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "No shipping evidence yet, though founder has a general execution track record."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "One of several candidate ideas being screened, not a stated 70%+ flagship commitment; also sits inside the founder's declared 2-3-parallel-cheap-test portfolio mode until a winner is picked."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "Pre-launch; unclear if buyer-unit relationships/expertise can be systematized without the founder."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "Founder capital is flexible per calibration but no bet-sizing stated for this idea specifically."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "unknown",
+     "reason": "No personal conviction statement evidenced."
+    }
+   ],
+   "top_strengths": [
+    "Real, dated regulatory tailwind \u2014 the Jul 2026 ACT Procurement Amendment Act creates forced near-term buyer urgency, not a speculative demand bet.",
+    "Low-capex, one-sentence MVP \u2014 a fixed-fee productized service (registration + capability statement + positioning) can launch cheaply with no inventory or deep tech.",
+    "Value stated as a clear customer outcome (\"get direct-sourced\") with a frictionless fixed-fee offer.",
+    "India-linked/multicultural desk sub-segment taps Ashish's genuine India\u2194Australia corridor edge, even though the core offer does not."
+   ],
+   "top_gaps": [
+    "No defensible moat \u2014 regulatory knowledge from a public Act commoditizes within weeks; any consultant/accountant can copy it, and no data, tech, network, or licensing barrier is claimed.",
+    "Structurally small market \u2014 bounded to ACT (~470K population) and one Act; not sector-scale, not obviously a large 2x-growing TAM as described.",
+    "Single regulatory-window dependency \u2014 the whole business evaporates if the Act is simplified, government builds self-service tooling, or the rules become common knowledge; no stated diversification survives that shift.",
+    "Existing category, not a new one \u2014 this is a better government-tender/capability-statement consultant applied to a new law, not a category the business defines.",
+    "Founder passion/domain misalignment \u2014 sits outside Ashish's declared lanes (India wisdom/travel/self-mastery/business-edu); he has already parked a similar compliance-advisory venture as dormant."
+   ],
+   "strategist_verdict": "These strategists would pass: the regulatory tailwind is real and the MVP is cheap to test, but the business has no moat (public-Act knowledge anyone can copy), is capped to one small jurisdiction, lives or dies on a single regulatory window it doesn't control, and doesn't match the founder's stated passion/domain lanes \u2014 closer to the \"AI-Compliance-Advisory\" pattern he's already shelved than a business he'd wake up excited to run."
+  },
+  {
+   "key": "eudr-dds-filing-bureau-rubber-cocoa-timber-mid-tier-exporter",
+   "name": "EUDR DDS Filing Bureau (rubber/cocoa/timber, mid-tier exporters)",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no stated payments or customer conversations yet; a good operator could validate this cheaply."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "EUDR compliance overall is a large/growing space, but this slice \u2014 mid-tier only, 3 commodities, India origin only \u2014 is a deliberately narrow niche as scoped."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "pass",
+     "reason": "Mid-tier exporters priced out of enterprise EUDR SaaS (built for large agribusiness/importers) is a real, ignored segment."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "No proprietary tech, network effect, license, or owned data \u2014 field-partner geo-collection + GeoJSON + filing is replicable by existing global players (Koltiva, TraceX, Agridence, Osapiens) or a funded new entrant within 12 months; competes on price/relationships."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "fail",
+     "reason": "EUDR compliance/DDS filing services already exist as a defined global category; this is a cheaper regional variant, not a new category."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "Not stated; a content/trade-association channel is plausible but unbuilt."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "Per-shipment pricing stated but no margin/CAC/LTV figures \u2014 pre-launch."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Not modeled yet."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Not stated; per-shipment upfront fee could plausibly self-fund but unproven."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "One exporter + one field partner + one shipment is a sub-$100K, one-sentence learning MVP."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Plausible: collected plot geodata is reusable across repeat shipments from the same farms, lowering marginal cost \u2014 but not demonstrated."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "Clear outcome (compliant DDS/customs clearance) and friction removed vs. an enterprise SaaS commitment mid-tier exporters can't justify."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No stated relationships with exporter decision-makers or trade bodies."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "No process described yet \u2014 pre-launch."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "Category is high-stakes/information-asymmetric (a bad DDS = blocked EU shipment); the product's risk-assessment layer is itself the trust infrastructure."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "Near-exact repeat of the 'AI/compliance-forced' shape (ComplyReel/Driftwatch/SuperGuard) the founder explicitly rejected 2026-06-11 ('you're trying to force AI on stuff'); no stated personal stake in agri-commodity export compliance."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Not applicable pre-launch."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Not applicable pre-launch."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team described."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No team/co-founder described; on-ground India field-partner network still to be built."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Not stated pre-launch."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "EUDR is an active, dated regulatory mandate with working precedent in compliance services for other commodities/origins."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "fail",
+     "reason": "Entire premise depends on one regulation's exact mechanics; EUDR has already been delayed/weakened multiple times (dates pushed, 'low-risk country' carve-out pressure) \u2014 a further delay or exemption for India collapses demand with no structural pivot."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "Not stated pre-launch."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No stated competitive study of Koltiva/TraceX/Agridence/Osapiens."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Fits the founder's 2-3-parallel-cheap-test model; not evaluable as a single flagship commitment yet."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "Not stated pre-launch."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "No bet-sizing stated for this specific idea."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "fail",
+     "reason": "No articulated non-consensus insight or personal regret-driven mission \u2014 reads as opportunistic regulatory arbitrage, the same shape the founder called out and rejected before."
+    }
+   ],
+   "top_strengths": [
+    "Real forced-buyer demand mechanism: EUDR is an active, dated EU mandate \u2014 exporters need a DDS filed or their shipment doesn't clear.",
+    "Genuinely underserved segment: mid-tier exporters are priced out of enterprise EUDR SaaS built for large agribusiness/importers.",
+    "Product IS trust infrastructure by nature \u2014 risk assessment/geo-verification directly reduces the deforestation-risk information asymmetry that makes this category high-stakes.",
+    "Low-capex, single-sentence MVP \u2014 one exporter, one field partner, one shipment is a cheap real-world test.",
+    "Clear outcome-based offer (compliant DDS, per-shipment vs. subscription) removes the #1 friction for occasional exporters."
+   ],
+   "top_gaps": [
+    "No defensible moat (w3): field-partner data collection + filing is a service any funded competitor (Koltiva, TraceX, Agridence, Osapiens already active in this space) replicates within 12 months.",
+    "Fails survive-constraint-shifts (w3): the entire business is downstream of one regulation's exact mechanics \u2014 EUDR has already been delayed/weakened multiple times and faces further simplification pressure; a delay or India carve-out zeroes demand with no pivot.",
+    "No category creation (w2): this is 'cheaper EUDR filing for mid-tier India' inside an already-existing global compliance-service category, not a new category.",
+    "Fails founder-passion-fit and regret-threshold-conviction (both w3): structurally the same 'AI/compliance-forced' shape the founder explicitly rejected on 2026-06-11 across an 8-idea board \u2014 no personal stake in agri-commodity export compliance."
+   ],
+   "strategist_verdict": "Real regulatory-forced demand and a genuine trust-infrastructure fit, but thin/no moat in an already-crowded global EUDR-service category, existential dependence on a single regulation that keeps getting delayed/watered down, and a founder-fit pattern (compliance-filing-as-product) the founder has explicitly rejected before \u2014 the strategists would treat this as a cheap kill-fast demand test at best, not a business worth committing capital or founder attention to."
+  },
+  {
+   "key": "plotproof-working-name-indian-smallholder-farm-polygon-regis",
+   "name": "PlotProof (working name) \u2014 Indian smallholder farm-polygon registry for EUDR",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "No payments or customer conversations stated; EUDR's deadline creates plausible forced urgency but demand is unproven."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "India's coffee/rubber/cocoa EU exports are real $B-scale trade, but the one-liner also lists spices \u2014 not an EUDR-regulated commodity (EUDR's 7 are cattle, cocoa, coffee, palm oil, rubber, soy, wood) \u2014 inflating the claimed TAM; it's also a compliance-driven surge market, not clearly compounding 2x+."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "Genuine existential pain for exporters (no polygon data = no EU market access), but several funded global EUDR traceability vendors (Koltiva, Sourcemap, Satelligence, TraceX) already operate in this exact space, so 'competitors ignore it' is unproven."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "partial",
+     "reason": "A verified farmer-polygon dataset is a real data moat once built, but well-funded traceability incumbents already active in adjacent geographies could replicate an India registry within 12 months given capital + local partners."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "fail",
+     "reason": "EUDR geolocation/DDS compliance is already an established global category with multiple incumbents; this is a better India-focused entrant, not the original of a new category."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "No owned channel stated; B2B sale into exporters/compliance vendors is relationship-driven by default, though EUDR-compliance SEO content is a plausible future channel."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "Not modeled in the one-liner \u2014 pre-launch."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Not modeled."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "partial",
+     "reason": "A single-cooperative pilot (map ~50 plots, generate one exporter's DDS) is plausibly low-capex, though the idea bundles 'registry' plus 'DDS generation API' as two coupled deliverables rather than one clean loop."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Plausible cost curve via satellite/remote-sensing verification displacing field visits at scale, but unproven at this stage."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "Crisp, measurable outcome: farmer/exporter stays EUDR-compliant and retains EU market access \u2014 the offer is the compliance document itself."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No evidence of existing relationships with EU buyers, EUDR compliance vendors, or Indian commodity boards (Coffee/Rubber/Spices Boards) \u2014 this would be a cold entry into a relationship-driven enterprise sale."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no process stated."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no process stated."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "The category is exactly high-stakes and information-asymmetric (proving deforestation-free status, EU market access on the line) \u2014 reducing that asymmetry IS the product's core value."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "No stated personal or domain connection to agri-commodities/EU regulation; this matches the exact 'compliance/data/verification product' pattern the founder explicitly rejected across the 8-idea PURSUE board (ComplyReel, BharatBill, AgentVouch, etc.) as 'not interesting, forcing [tech] on stuff.'"
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Not evidenced, pre-launch."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Not evidenced, pre-launch."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team yet."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "Needs GIS/remote-sensing, EU regulatory/legal, and agri-supply-chain domain expertise Ashish doesn't currently have; no team formed."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "No hiring has occurred yet."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no values articulated."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "EUDR is a live regulatory tailwind with working precedent in adjacent geographies (Indonesia palm oil, Brazil soy/cattle traceability programs already operate this model)."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "fail",
+     "reason": "The entire demand engine is tied to EUDR's enforcement timeline, which the EU has already delayed twice (originally Dec 2024, pushed to Dec 2025, with active 2025/26 proposals to further simplify/exempt smallholders) \u2014 no stated non-regulatory demand path if the mandate slips or is diluted again."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no shipping cadence evidenced."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No stated study of Koltiva/Sourcemap/Satelligence/TraceX or a specific 15% edge over them."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "No metrics defined yet."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not evidenced."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Not evidenced \u2014 this would compete for time against NakshIQ/agency priorities."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "Pre-launch."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "Sizing/floor not addressed for this specific bet."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not evidenced."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "unknown",
+     "reason": "No personal regret-threshold narrative stated for this specific problem."
+    }
+   ],
+   "top_strengths": [
+    "thematic-timing-tailwind: EUDR is a genuine regulatory forcing function with working precedent already proven in Indonesia palm oil and Brazil soy/cattle traceability programs.",
+    "trust-infrastructure: the product's entire value proposition IS reducing information asymmetry in a high-stakes category (proof of deforestation-free status gates EU market access) \u2014 this is not bolted-on, it's the core.",
+    "value-as-outcome-and-offer: the outcome is crisp and measurable \u2014 comply or lose EU export access \u2014 with no ambiguity about what the customer is buying."
+   ],
+   "top_gaps": [
+    "survive-constraint-shifts (w3, FAIL): the whole demand engine hinges on one EU regulatory timeline that has already been delayed twice (Dec 2024\u2192Dec 2025\u2192ongoing smallholder-exemption proposals) with no stated fallback demand (e.g. voluntary sustainability certification) if it slips again.",
+    "category-creation (w2, FAIL): EUDR geolocation/traceability compliance is already a crowded global category (Koltiva, Sourcemap, Satelligence, TraceX and others operate this exact model in adjacent geographies) \u2014 this is a narrower entrant, not a new category.",
+    "founder-passion-fit (w3, FAIL): zero stated personal or domain connection to agri-commodities or EU regulation, and the idea sits squarely in the 'compliance/data/verification product' pattern the founder explicitly rejected on the 8-idea PURSUE board as 'forcing [tech] on stuff.'"
+   ],
+   "strategist_verdict": "Real regulatory tailwind and a genuine trust-infrastructure fit, but the entire demand engine leans on an EU deadline that has already slipped twice, the category is already globally crowded by funded incumbents, and it lands in the exact compliance/data-product pattern Ashish explicitly said doesn't interest him \u2014 worth a cheap one-cooperative pre-sell test at most, not a flagship bet."
+  },
+  {
+   "key": "human-red-team-calling-panel-for-voice-agents",
+   "name": "Human Red-Team Calling Panel for Voice Agents",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no payments or customer conversations evidenced."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "Voice-AI adoption is genuinely large/growing, but the AI-agent-testing/eval niche is already forming with funded players (Coval, Hamming.ai, Cekura, Bespoken) \u2014 the gap is narrower than claimed."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "Accent/real-network realism is a genuine synthetic-testing blind spot, but it reads as an added layer on existing agent-eval tooling rather than an unaddressed deep pain."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "A vetted human-calling panel is commodity labor \u2014 India's large BPO industry or synthetic-testing incumbents adding a 'human tier' could replicate this within 12 months; no proprietary tech, data network effect, or regulatory barrier."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "partial",
+     "reason": "Sits inside the already-emerging 'voice-agent testing/eval' category rather than defining a wholly new one; at best a sub-niche (human red-team layer) within it."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "No owned/compounding channel stated; enterprise voice-AI buyers typically require outbound/BD relationships, not shown here."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "Margins/CAC/LTV not modeled in the one-liner."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "No lifetime-value-based acquisition cap calculated."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Pre-revenue, no runway stated."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "A small vetted caller pool + one pilot client tests the core loop for well under $100K, explainable in one sentence."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "fail",
+     "reason": "Value delivery is real human phone labor, which scales roughly linearly in cost \u2014 it structurally lacks the 30-50% unit-cost collapse at 10x volume software/network businesses get."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "'Find where your voice agent breaks before customers do' is a clear one-sentence outcome, naturally packaged as a low-friction pilot-report offer."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "No channels stated."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No direct access to voice-AI eng/product decision-makers evidenced."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no customer feedback loop yet."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "No evidence of delight/referral mechanics."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "Directly serves a high-stakes, reputation/compliance-sensitive category (customer-facing AI voice failures) with genuine verification infrastructure, not just marketplace liquidity."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "Matches the exact 'AI-verification-for-X' pattern Ashish explicitly rejected wholesale on the 2026-07-12 PURSUE board ('you're trying to force AI on stuff'); outside his stated passion lanes (India wisdom/travel/self-mastery/business-edu) and leans on an enterprise B2B sales motion he doesn't run."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Not evaluable pre-launch."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Not evaluable pre-launch."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team yet."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No team yet."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "No hiring evidenced."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no values/culture stated."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "Rides the active enterprise voice-AI-agent adoption wave, with working precedent already funded elsewhere (Coval, Hamming, Cekura)."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "fail",
+     "reason": "The core differentiator ('what synthetic testing can't do') is a closing technology window \u2014 fast-improving voice simulation/TTS realism directly threatens to erase it, with no fallback mechanism."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "No shipping/speed evidence yet."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "Not stated whether Coval/Hamming/Cekura were studied for a concrete execution edge."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "No metrics baselined."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not addressed."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "This is one of a portfolio of test ideas, not evaluated as a flagship commitment."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "No systems/team built yet."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "No bet-sizing stated; founder's loss floor is conviction-led/case-by-case."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not addressed."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "unknown",
+     "reason": "No personal non-consensus insight articulated in the one-liner."
+    }
+   ],
+   "top_strengths": [
+    "low-capex-mvp: a small vetted caller pool + one pilot client tests the loop for well under $100K, one-sentence MVP.",
+    "thematic-timing-tailwind: rides the real, funded enterprise voice-AI-agent adoption wave (Coval, Hamming, Cekura are live precedent).",
+    "trust-infrastructure: naturally fits a high-stakes, reputation/compliance-sensitive category (customer-facing AI voice failures).",
+    "value-as-outcome-and-offer: outcome ('find where your voice agent breaks before customers do') is stateable in one clean sentence with a natural pilot-report offer."
+   ],
+   "top_gaps": [
+    "defensible-moat (fail, w3): a vetted human-calling panel is commodity labor \u2014 India's BPO industry or synthetic-testing incumbents can replicate it within 12 months; no proprietary tech, data flywheel, or regulatory barrier.",
+    "scale-economics (fail, w3): the core cost driver is human phone labor, which scales roughly linearly \u2014 no 10x-volume unit-cost collapse available to software/network businesses.",
+    "survive-constraint-shifts (fail, w3): the entire premise rests on 'what synthetic testing can't do yet' \u2014 a closing technology window, not a durable edge, as voice simulation/TTS realism keeps improving.",
+    "founder-passion-fit (fail, w3): this is another 'AI-verification-for-X' idea in the exact pattern Ashish explicitly rejected on the 2026-07-12 PURSUE board ('forcing AI on stuff'); outside his passion lanes and requires an enterprise B2B sales motion he doesn't run."
+   ],
+   "strategist_verdict": "Pass \u2014 a real, low-capex-testable idea riding a genuine tailwind, but it structurally lacks a defensible moat (BPO-replicable labor panel), lacks scale economics (linear human-labor cost), and its differentiator is a closing tech window rather than a durable edge; combined with a clean founder-passion mismatch (Ashish already rejected this exact 'AI-forced-onto-X' pattern), it doesn't clear the bar as a business worth building, only as one of several cheap demand tests at most."
+  },
+  {
+   "key": "au-domiciled-private-label-program-operator-india-manufactur",
+   "name": "AU-Domiciled Private-Label Program Operator (India manufacturing)",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no payments or customer conversations evidenced yet."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "AU private-label/import trade is real and sizeable, but the 'boutique brand sourcing India specifically' segment is a narrower niche; sector-scale 2x-growth TAM unproven."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "Bundling compliance+QA+freight into one AU-owned program addresses real fragmentation, but overlaps existing sourcing agents, buying houses, and inspection firms (SGS/Bureau Veritas-type) \u2014 not an unaddressed need."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "A trade-facilitation/compliance-agency model has no proprietary tech, data, or network effect \u2014 factory relationships and ACCC compliance registration are structurally copyable by a funded competitor within 12 months."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "partial",
+     "reason": "AU-domiciled liability ownership + ECTA duty leverage is a specific twist, but the underlying model (sourcing/buying house) is an existing category, not new \u2014 India/China buying houses already exist for AU retailers."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "No owned/compounding acquisition channel named; plausible via content/SEO (founder's automation muscle) but unproven for this specific idea."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 margins, CAC, LTV not modeled."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Not calculated."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "partial",
+     "reason": "A narrow pilot (one factory + one compliance program) is plausible under $100K, but the full bundled offer (design+QA+compliance+samples+freight) isn't a single clean loop."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "pass",
+     "reason": "Freight consolidation and factory volume leverage are the explicit premise of the model \u2014 real unit-cost drop at scale."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "Clear stated outcome (compliant, duty-free, AU-liability-owned private label from India) that removes the real friction (compliance/customs risk) between wanting and having."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No named factory or AU retail-buyer relationships yet, though founder's India fluency is a plausible path."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "Pre-launch."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "Category is high-pain-of-reversal and information-asymmetric (AU brand can't vet Indian factories); AU-held samples + owned compliance is literally asymmetry-reducing infrastructure by design."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "pass",
+     "reason": "Direct hit on the founder's explicit AU-India corridor edge and stated preference for physical-trade corridor plays."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Not evidenced for this specific venture."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Not evidenced."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No hiring yet."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No named India-side ops/QA partner yet \u2014 critical given founder is Canberra-based and profile requires a partner for on-ground India ops \u2014 but correctable."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "Not evidenced."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Not evidenced."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "Rides real active tailwinds: India-Australia ECTA tariff concessions, China+1 supply-chain diversification, India's manufacturing/PLI push."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "partial",
+     "reason": "The compliance/QA/design layer retains value if ECTA terms shift, but the 'duty-free consolidated freight' pitch is regulatory-dependent."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no shipped pilot yet."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No named market leaders (existing China/India buying houses, sourcing agents) studied yet."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "Not defined."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not defined."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Founder runs ~7 parallel ventures; whether this gets 70%+ deliberate time is undecided under his current 2-3-cheap-tests portfolio mode."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "Pre-launch."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "Founder's loss floor is explicitly conviction-led/case-by-case, not pre-set for this bet."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "partial",
+     "reason": "Founder explicitly runs a multi-venture portfolio consistent with this mindset, though not proven idea-specific."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "unknown",
+     "reason": "Not articulated for this idea; the underlying model is a known/consensus playbook (sourcing/buying house), not a non-consensus 'experts call it impossible' insight."
+    }
+   ],
+   "top_strengths": [
+    "thematic-timing-tailwind \u2014 real, current tailwind (ECTA duty concessions, China+1 diversification, India's PLI/manufacturing push)",
+    "founder-passion-fit \u2014 direct hit on the founder's explicit AU-India corridor edge and stated preference for physical-trade plays",
+    "trust-infrastructure \u2014 AU-held samples + owned ACCC compliance is a genuine information-asymmetry-reducing structure for a high-stakes, low-trust category",
+    "value-as-outcome-and-offer \u2014 clear, friction-removing outcome (compliant duty-free private label without AU brand doing the compliance/legal work)",
+    "scale-economics \u2014 freight consolidation and factory volume leverage give a real path to 30-50% unit-cost reduction at scale"
+   ],
+   "top_gaps": [
+    "defensible-moat (FAIL, w3) \u2014 this is fundamentally a trading/compliance-agency service with no proprietary tech, data, or network effect; factory relationships and ACCC compliance registration are structurally copyable by a funded competitor within 12 months",
+    "category-creation / latent-unmet-need (partial) \u2014 the model is a variant of the existing sourcing-agent/buying-house playbook already serving AU retailers out of China and increasingly India, not a wholly new or clearly underserved category \u2014 competitive landscape (existing AU-India/AU-China buying houses) hasn't been searched per the firm's own validate-before-recommending rule",
+    "large-growing-market (partial) \u2014 the 'AU boutique brand sourcing India' segment may be niche-of-one-adjacent inside a broader trade-facilitation market; sector-scale, 2x-growing TAM is asserted, not shown",
+    "complete-team-and-cofounder-trust (unknown but load-bearing) \u2014 no named India-side ops/QA partner, yet the founder profile requires on-ground India execution to run via a partner given his Canberra base"
+   ],
+   "strategist_verdict": "Strong corridor-fit and timing (Robbins-style tailwind alignment via ECTA/China+1), but as described it's a moat-less trading/compliance-agency play on an existing playbook (sourcing/buying houses) \u2014 Basesh/Masters Union would withhold conviction until it shows a lock-in (exclusive factory contracts, a compliance-liability underwriting structure, or an owned distribution engine) beyond relationship-based trust; right now it scores on founder-fit and macro timing, not on structural defensibility."
+  },
+  {
+   "key": "creator-cfo-india-content-led-tax-gst-subscription",
+   "name": "Creator CFO India (content-led tax/GST subscription)",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no payments or customer conversations cited yet."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "2-2.5M monetized creators is real and growing, but generic tax/GST fintechs (ClearTax, Quicko, TaxBuddy) already serve freelancers broadly \u2014 the gap is positioning, not an open market."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "194R/barter-valuation confusion is genuine pain, but the core service (GST/TDS filing) is a known category re-packaged for a vertical, not a deeper unaddressed need."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "A CA-partnered, content-led tax subscription has no proprietary tech, data network effect, or exclusive license \u2014 a funded fintech (ClearTax/Quicko/TaxBuddy) can ship a 'creator GST' SKU and clone the positioning within 12 months."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "fail",
+     "reason": "Vertical 'accounting-as-a-service for X' is an established playbook (Bench, Pilot, Collective in the US) \u2014 this is 'a better/narrower CA firm for creators,' not a new category."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "partial",
+     "reason": "Content-led acquisition is the stated GTM and matches a real owned-distribution capability, but no audience or organic ranking exists yet \u2014 unproven."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "No margin/CAC/LTV stated; per-client CA-servicing cost not modeled."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "No lifetime-profit calc or acquisition cap stated."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Pre-revenue; no runway or cliff-survival stated."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "One-sentence MVP (quarterly GST/TDS filing + CA review as a subscription) is launchable cheaply via a CA partner plus a content funnel."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Filing workflows can be tooled up, but core CA review time stays roughly linear per client \u2014 the 10x cost-drop path is unproven."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "partial",
+     "reason": "Outcome ('stay compliant, never miss a filing or notice') is inferable and removes DIY friction, but not explicitly stated as a single measurable promise."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "Only content is named; no CA-network, platform, or agency-referral channel described."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No named CA partners or platform/creator-network relationships yet."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no customer feedback loop described."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "No delight or referral mechanic described."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "partial",
+     "reason": "Tax compliance is genuinely high-pain and information-asymmetric, and CA-partnered review structurally addresses that, but depth of trust infrastructure (audit trail, notice defense) is unstated."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "partial",
+     "reason": "Matches Ashish's explicit fit criteria \u2014 forced-buyer/regulatory demand, India corridor, content-distribution muscle \u2014 but no personal passion for creator-tax specifically is stated, and it sits outside his named lanes (India wisdom/travel/self-mastery/business edu)."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown"
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown"
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown"
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No CA cofounder/partner named yet \u2014 the whole model depends on one, per the founder's own 'partner for on-ground/regulated ops' rule."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown"
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown"
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "Rides two real tailwinds \u2014 explosive Indian creator-economy growth and tightening GST/194R enforcement on creators \u2014 with working precedent in US vertical-CFO services (Bench, Collective)."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "partial",
+     "reason": "If small-creator compliance thresholds are simplified/exempted the value prop shrinks, but broader tax-compliance-as-a-service demand would persist \u2014 not a single fragile constraint."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown"
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No stated benchmarking vs. ClearTax/Quicko/Bench/Collective or a concrete execution edge."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown"
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown"
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Would sit inside the founder's 2-3-idea cheap-test slate, not a committed flagship at this stage."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown"
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown"
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown"
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "unknown",
+     "reason": "No personal non-financial stake in the creator-tax problem articulated."
+    }
+   ],
+   "top_strengths": [
+    "Rides a genuine dual tailwind: explosive Indian creator-economy growth plus tightening GST/TDS-194R enforcement on creators, with working precedent abroad (Bench, Collective, Pilot as vertical CFO-as-a-service).",
+    "Content-led GTM is a credible distribution path that plays directly to the founder's proven owned-distribution/automation muscle (autoposter, YT-shorts, newsletter infra).",
+    "Cheap, clearly-scoped MVP \u2014 a CA partner plus a content funnel can test the core loop without meaningful capex.",
+    "Fits the founder's explicit 'what fits' profile: forced-buyer/regulatory demand (tax/GST is mandated, not discretionary) and an India-corridor play."
+   ],
+   "top_gaps": [
+    "No defensible moat (fail, weight 3) \u2014 a CA-partnered, content-led tax subscription has no proprietary tech, data, network effect, or exclusive license; ClearTax, Quicko, or TaxBuddy could ship a 'creator GST' SKU and clone the positioning within 12 months.",
+    "No category creation (fail, weight 2) \u2014 this repackages the established 'vertical accounting-as-a-service' playbook for a new audience segment; customers would call it 'a better/narrower CA firm for creators,' not a new category.",
+    "No named CA cofounder/partner or platform relationships yet, despite the entire delivery model depending on one \u2014 a structural dependency the one-liner doesn't resolve."
+   ],
+   "strategist_verdict": "Partial pass at best: Robbins/Basesh would like the forced-buyer tailwind and the cheap content-led MVP, but Masters' Union discipline flags the load-bearing gap \u2014 nothing stops ClearTax/Quicko/TaxBuddy from shipping a 'Creator GST' vertical next quarter, so without a real CA-exclusivity, proprietary compliance data, or platform-lock-in angle, this is a distribution race, not yet a defensible business."
+  },
+  {
+   "key": "dwellclaim-working-name-detention-fee-recovery-saas-facility",
+   "name": "DwellClaim (working name) \u2014 detention-fee recovery SaaS + facility detention scorecard",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no payments or customer conversations evidenced yet."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "Detention-fee under-recovery is a real, quantifiable pain across ~500K+ small US carriers, but it's a niche-within-trucking, not clearly growing 2x+, and sits inside a freight sector currently in a multi-year rate recession."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "partial",
+     "reason": "Small carriers genuinely under-invoice detention because it's manual/disputed, but larger TMS and broker platforms already offer partial dwell-time tracking, so it's not fully unaddressed."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "partial",
+     "reason": "Core input (geofenced ELD timestamps) is a commodity any well-funded ELD vendor (Samsara, Motive, Geotab) already owns and could bundle into detention invoicing themselves within 12 months; only the aggregated facility scorecard has a plausible network-effect moat, and that's unproven pre-launch."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "partial",
+     "reason": "FreightWaves SONAR already publishes a market-level dwell-time/detention index, so the facility-scorecard product would launch as a challenger to an existing data category, not the category's originator."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "No owned channel (organic search, owned audience, or viral loop) described yet for reaching fragmented small carriers/dispatchers."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "No margin/CAC/LTV stated; real risk given the target segment (owner-operators/small carriers) is price-sensitive and has high business-mortality/churn."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Lifetime value and acquisition cap not calculated pre-launch."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Pre-revenue; no runway or funding-source stated."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "pass",
+     "reason": "Testable in one sentence \u2014 geofenced ELD timestamps become an invoice \u2014 buildable cheaply on top of existing ELD provider APIs without hardware or manufacturing."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Marginal cost per new customer on an already-integrated ELD vendor is low, but each additional ELD provider is a real fixed integration cost given the fragmented telematics landscape."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "pass",
+     "reason": "Clean, specific outcome \u2014 'get paid for detention automatically, with evidence a broker can't dispute' \u2014 and the offer removes the real friction (manual, disputable claims)."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "No channels described yet."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No stated relationships with carrier/dispatcher decision-makers or ELD vendor partners."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "No customer-feedback process yet \u2014 pre-launch."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "No delight mechanisms or referral evidence yet."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "Detention disputes are genuinely information-asymmetric between carrier and shipper/broker; evidence-grade timestamp data is real trust infrastructure, not just marketplace liquidity."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "US trucking detention-fee recovery has no connection to Ashish's declared lanes (India wisdom, travel, self-mastery, business education) or the India-Australia corridor edge, and no domain knowledge/network in US freight is evidenced."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Generic founder trait, not idea-specific \u2014 no evidence either way."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "Generic founder trait, not idea-specific."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team/hiring process yet \u2014 pre-launch."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "Solo pre-launch idea; no domain expert or cofounder named for the ELD-integration/US-freight-ops gap outside founder's expertise."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "Not stated pre-launch."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Not applicable pre-team."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "partial",
+     "reason": "Telematics/back-office digitization in trucking is a real trend, but the 2023-2025 freight downturn is squeezing small-carrier software budgets at the same time."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "fail",
+     "reason": "The entire product depends on continued third-party API access to ELD vendors (Samsara/Motive/Geotab) who own the raw data and are the most likely entrants to bundle detention-invoicing natively \u2014 losing that access or facing vendor lock-out is an existential, not survivable, shift."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "No shipping cadence evidenced \u2014 pre-launch."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "No competitor study (e.g. vs. SONAR, Motive, DAT) evidenced."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "No metrics/baseline defined yet."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not modeled pre-launch."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Founder runs a large multi-venture portfolio; no stated commitment level for this specific idea."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no systems built."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "No bet-sizing or reserve stated yet."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "fail",
+     "reason": "No evidenced personal, non-financial stake in US trucking/detention-fee recovery \u2014 it doesn't map to any domain Ashish has flagged as regret-worthy, unlike India-travel or corridor plays."
+    }
+   ],
+   "top_strengths": [
+    "low-capex-mvp: buildable cheaply on existing ELD provider APIs, single-sentence testable core loop",
+    "value-as-outcome-and-offer: crisp, specific outcome ('get paid for detention automatically, evidence a broker can't dispute') that removes real friction",
+    "trust-infrastructure: geofenced timestamp evidence genuinely reduces information asymmetry in detention billing disputes, a real trust-infra play not just liquidity"
+   ],
+   "top_gaps": [
+    "founder-passion-fit (w3): zero connection to Ashish's declared lanes (India wisdom/travel/self-mastery/business-edu) or the India-Australia corridor edge \u2014 no domain knowledge or network in US freight",
+    "survive-constraint-shifts (w3): the product is structurally dependent on continued API access to ELD vendors who are the most likely party to bundle detention-invoicing themselves and cut off third parties",
+    "regret-threshold-conviction (w3): no evidenced personal, non-financial stake in this specific problem \u2014 it doesn't sit in any of the founder's regret-worthy domains",
+    "defensible-moat (w3, partial-not-fail but load-bearing): the underlying data (ELD geofence timestamps) is a commodity owned by well-funded incumbents who could replicate the invoicing layer in under 12 months"
+   ],
+   "strategist_verdict": "Mechanically sound \u2014 real pain point, cheap MVP, genuine trust-infrastructure value \u2014 but the strategists would not back Ashish on this specific bet: the moat rides on data owned by ELD vendors who can bundle it themselves, the facility-scorecard angle already has a funded incumbent (FreightWaves SONAR), and the idea has zero founder-passion-fit or regret-threshold conviction against his declared lanes \u2014 a good business for someone else, not a good bet for him."
+  },
+  {
+   "key": "creatorgst-working-name-tax-and-gst-compliance-autopilot-for",
+   "name": "CreatorGST (working name) \u2014 tax and GST compliance autopilot for Indian creators",
+   "item_verdicts": [
+    {
+     "id": "validated-paying-demand",
+     "verdict": "unknown",
+     "reason": "Pre-launch \u2014 no payments or customer conversations stated."
+    },
+    {
+     "id": "large-growing-market",
+     "verdict": "partial",
+     "reason": "2-2.5M creator TAM is real but modest, and generalist GST/accounting SaaS (ClearTax, Zoho Books, Vyapar) already partially cover freelancer/professional tax filing."
+    },
+    {
+     "id": "latent-unmet-need",
+     "verdict": "pass",
+     "reason": "Multi-platform payout reconciliation + TDS credit matching is a genuine, currently manual/CA-dependent pain that generic tools ignore."
+    },
+    {
+     "id": "defensible-moat",
+     "verdict": "fail",
+     "reason": "Payout ingestion + rules-based GST/TDS reconciliation is integration + compliance-logic work, not proprietary tech, network effects, or data compounding \u2014 a funded incumbent (ClearTax already serves freelancers/SMBs) could clone a 'creator mode' well within 12 months."
+    },
+    {
+     "id": "category-creation",
+     "verdict": "partial",
+     "reason": "Reads as 'TurboTax for creators' \u2014 a vertical slice of the existing tax-software category, not a category customers would describe as wholly new."
+    },
+    {
+     "id": "distribution-moat",
+     "verdict": "unknown",
+     "reason": "No owned channel stated."
+    },
+    {
+     "id": "unit-economics",
+     "verdict": "unknown",
+     "reason": "Not modeled at this stage."
+    },
+    {
+     "id": "ltv-driven-acquisition",
+     "verdict": "unknown",
+     "reason": "Not modeled."
+    },
+    {
+     "id": "day-one-cash-and-runway",
+     "verdict": "unknown",
+     "reason": "Not addressed."
+    },
+    {
+     "id": "low-capex-mvp",
+     "verdict": "partial",
+     "reason": "A narrow ingest-and-reconcile slice is agent-buildable cheaply, but the stated scope already bundles ingest + reconcile + file + estimate \u2014 four features, not one loop."
+    },
+    {
+     "id": "scale-economics",
+     "verdict": "partial",
+     "reason": "Typical SaaS cost-curve is plausible for a rules engine but unmodeled/unproven."
+    },
+    {
+     "id": "value-as-outcome-and-offer",
+     "verdict": "partial",
+     "reason": "Outcome (accurate filings, avoided penalties) is clear; frictionless-offer design isn't shown."
+    },
+    {
+     "id": "multiple-acquisition-pillars",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "decision-maker-access",
+     "verdict": "unknown",
+     "reason": "No stated relationships with creator networks, GSTN/GSP access, or platform partnerships."
+    },
+    {
+     "id": "customer-obsession",
+     "verdict": "unknown",
+     "reason": "Pre-launch, no process yet."
+    },
+    {
+     "id": "raving-fans-surprise",
+     "verdict": "unknown",
+     "reason": "Pre-launch."
+    },
+    {
+     "id": "trust-infrastructure",
+     "verdict": "pass",
+     "reason": "The product's entire premise is reducing information asymmetry in a high-stakes, high-pain-of-reversal category (tax penalties, government notices)."
+    },
+    {
+     "id": "founder-passion-fit",
+     "verdict": "fail",
+     "reason": "Sits outside Ashish's declared passion lanes (India wisdom/travel/self-mastery/business edu) and structurally mirrors the AI-compliance board he explicitly rejected ('you're trying to force AI on stuff'); his own AI Compliance Advisory venture is already dormant by decision."
+    },
+    {
+     "id": "emotional-resilience",
+     "verdict": "unknown",
+     "reason": "Not idea-specific; unproven for this venture."
+    },
+    {
+     "id": "low-entitlement-ownership",
+     "verdict": "unknown",
+     "reason": "General founder trait, not idea-specific."
+    },
+    {
+     "id": "hire-for-attitude-and-ownership",
+     "verdict": "unknown",
+     "reason": "No team yet."
+    },
+    {
+     "id": "complete-team-and-cofounder-trust",
+     "verdict": "unknown",
+     "reason": "No team/cofounder stated; would need CA/tax-law domain expertise not currently on hand."
+    },
+    {
+     "id": "hire-experts-and-delegate",
+     "verdict": "unknown",
+     "reason": "Not addressed."
+    },
+    {
+     "id": "culture-as-asset",
+     "verdict": "unknown",
+     "reason": "Pre-launch, solo."
+    },
+    {
+     "id": "thematic-timing-tailwind",
+     "verdict": "pass",
+     "reason": "Rides real tailwinds: booming Indian creator economy plus rising tax-authority scrutiny of influencer income (194-O/194R TDS, GST notices to influencers)."
+    },
+    {
+     "id": "survive-constraint-shifts",
+     "verdict": "fail",
+     "reason": "The entire value proposition depends on tax-code complexity persisting \u2014 a government simplification (expanded presumptive taxation, better free e-filing UX) would existentially gut the product with no pivot path implied."
+    },
+    {
+     "id": "execution-over-idea",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "study-best-then-beat-by-15",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "outcome-driven-measurement",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "three-growth-levers",
+     "verdict": "unknown",
+     "reason": "Not stated."
+    },
+    {
+     "id": "focus-no-plan-b",
+     "verdict": "unknown",
+     "reason": "Ashish runs 7+ ventures; whether this idea would get 70%+ focus isn't stated."
+    },
+    {
+     "id": "systems-replace-founder",
+     "verdict": "unknown",
+     "reason": "Pre-launch."
+    },
+    {
+     "id": "probabilistic-betting-with-reserve",
+     "verdict": "unknown",
+     "reason": "Not sized yet."
+    },
+    {
+     "id": "failure-portfolio-mindset",
+     "verdict": "unknown",
+     "reason": "Not idea-specific."
+    },
+    {
+     "id": "regret-threshold-conviction",
+     "verdict": "fail",
+     "reason": "No evident non-financial personal stake; outside his passion lanes, reads as a spotted compliance niche rather than a mission he'd regret not pursuing."
+    }
+   ],
+   "top_strengths": [
+    "thematic-timing-tailwind \u2014 real regulatory tailwind: creator-economy boom + rising tax-authority scrutiny of influencer income (194-O/194R, GST notices)",
+    "trust-infrastructure \u2014 the core product IS an information-asymmetry reducer in a high-stakes, high-pain-of-reversal category",
+    "latent-unmet-need \u2014 multi-platform payout + TDS reconciliation is a genuine pain currently solved only manually via CAs"
+   ],
+   "top_gaps": [
+    "defensible-moat (fail) \u2014 payout ingestion + rules-based reconciliation is copyable integration work; incumbents like ClearTax could clone a creator mode within 12 months",
+    "survive-constraint-shifts (fail) \u2014 the whole business exists because compliance is complex; a policy simplification wipes out the value prop",
+    "founder-passion-fit (fail) \u2014 outside Ashish's 4 passion lanes and structurally the same 'AI-compliance-for-X' shape he explicitly rejected on the last board",
+    "regret-threshold-conviction (fail) \u2014 no evident personal stake beyond spotting a niche"
+   ],
+   "strategist_verdict": "No \u2014 real regulatory tailwind and a genuine reconciliation pain, but no defensible moat against incumbent GST/tax SaaS, existential exposure to any tax-simplification policy shift, and it repeats almost exactly the 'AI-compliance-for-X' pattern Ashish already rejected as outside his passion lanes."
+  }
+ ]
+}
