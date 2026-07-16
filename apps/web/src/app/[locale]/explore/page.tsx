@@ -35,20 +35,25 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-async function getData() {
+async function getData(locale: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return { destinations: [], states: [], coords: [] };
 
   const supabase = createClient(url, key);
 
+  // Field diet (2026-07-16): this payload serializes into the RSC flight data
+  // for the client grid/map — it was 2MB of HTML. hero_image_url /
+  // vehicle_fit / family_stress had zero consumers; month notes render in a
+  // line-clamp-1 (one visible line) so full editorial text is truncated
+  // below; translations reduce to the two keys the grid reads.
   const fetchAll = () =>
     Promise.all([
       supabase
         .from("destinations")
         .select(`
           id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, eco_tier,
-          hero_image_url, vehicle_fit, family_stress, solo_female_score,
+          solo_female_score,
           state:states(name),
           kids_friendly(suitable, rating),
           destination_months(month, score, note, solo_female_override)
@@ -81,8 +86,32 @@ async function getData() {
     );
   }
 
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  const slim = (destResult.data ?? []).map((d: any) => ({
+    ...d,
+    translations:
+      locale !== "en" && d.translations?.[locale]
+        ? {
+            [locale]: {
+              name: d.translations[locale].name,
+              tagline: d.translations[locale].tagline,
+            },
+          }
+        : null,
+    destination_months: (d.destination_months ?? []).map((m: any) => ({
+      month: m.month,
+      score: m.score,
+      solo_female_override: m.solo_female_override,
+      note:
+        typeof m.note === "string" && m.note.length > 110
+          ? `${m.note.slice(0, 110).trimEnd()}…`
+          : m.note,
+    })),
+  }));
+  /* eslint-enable @typescript-eslint/no-explicit-any */
+
   return {
-    destinations: destResult.data ?? [],
+    destinations: slim,
     states: statesResult.data ?? [],
     coords: coordsResult.data ?? [],
   };
@@ -91,7 +120,7 @@ async function getData() {
 export default async function ExplorePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "explore" });
-  const { destinations, states, coords } = await getData();
+  const { destinations, states, coords } = await getData(locale);
   const issueNum = getIssueNumber();
 
   const schemas = [

@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { ExploreFilters, type FilterState } from "./explore-filters";
 import { CompareButton } from "./compare-tray";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
@@ -63,29 +63,54 @@ export function ExploreGrid({
   const tm = useTranslations("months");
   const te = useTranslations("explore");
   const tu = useTranslations("ui");
-  const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
 
   const currentMonth = currentMonthIST();
 
-  // Use shared filters from parent if provided, otherwise manage own state
+  // Use shared filters from parent if provided, otherwise manage own state.
+  // Defaults here, URL params applied post-mount — useSearchParams would
+  // force the subtree out of static rendering (see explore-with-map.tsx).
   const [localFilters, setLocalFilters] = useState<FilterState>({
-    stateId: searchParams.get("state") ?? "",
-    month: Number(searchParams.get("month")) || currentMonth,
-    kidsOnly: searchParams.get("kids") === "true",
-    soloFemaleOnly: searchParams.get("solof") === "true",
-    ecoOnly: searchParams.get("eco") === "true",
-    sort: searchParams.get("sort") ?? "",
-    difficulty: searchParams.get("difficulty") ?? "",
-    search: searchParams.get("q") ?? "",
+    stateId: "",
+    month: currentMonth,
+    kidsOnly: false,
+    soloFemaleOnly: false,
+    ecoOnly: false,
+    sort: "",
+    difficulty: "",
+    search: "",
   });
+
+  useEffect(() => {
+    if (sharedFilters) return;
+    const sp = new URLSearchParams(window.location.search);
+    if ([...sp.keys()].length === 0) return;
+    setLocalFilters({
+      stateId: sp.get("state") ?? "",
+      month: Number(sp.get("month")) || currentMonth,
+      kidsOnly: sp.get("kids") === "true",
+      soloFemaleOnly: sp.get("solof") === "true",
+      ecoOnly: sp.get("eco") === "true",
+      sort: sp.get("sort") ?? "",
+      difficulty: sp.get("difficulty") ?? "",
+      search: sp.get("q") ?? "",
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const filters = sharedFilters ?? localFilters;
   const setFilters = onFiltersChange ?? setLocalFilters;
 
-  // Sync filters to URL
+  // Sync filters to URL. Skip the first run: initial state is defaults (not
+  // URL-derived anymore), so syncing immediately would strip deep-link
+  // params before the mount effect above applies them.
+  const didSyncRef = useRef(false);
   useEffect(() => {
+    if (!didSyncRef.current) {
+      didSyncRef.current = true;
+      return;
+    }
     const params = new URLSearchParams();
     if (filters.stateId) params.set("state", filters.stateId);
     if (filters.month !== currentMonth) params.set("month", String(filters.month));

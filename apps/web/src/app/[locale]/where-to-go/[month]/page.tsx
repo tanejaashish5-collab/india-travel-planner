@@ -224,7 +224,6 @@ async function getMonthData(monthSlug: string, stateId?: string) {
       verdict,
       skip_reason,
       solo_female_override,
-      solo_female_override_note,
       destination_id,
       destination:destinations!inner(
         id,

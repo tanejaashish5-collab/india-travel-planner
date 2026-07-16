@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useMemo, lazy, Suspense } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useState, useMemo, useEffect, lazy, Suspense } from "react";
 import { useTranslations } from "next-intl";
 import { ExploreGrid } from "./explore-grid";
 import { ExploreFilters, type FilterState } from "./explore-filters";
@@ -50,20 +49,40 @@ export function ExploreWithMap({
 }) {
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const t = useTranslations("nav");
-  const searchParams = useSearchParams();
   const currentMonth = currentMonthIST();
 
-  // Shared filter state — initialized from URL params
+  // Shared filter state. NOT initialized via useSearchParams: reading query
+  // params through that hook forces this whole subtree out of static
+  // rendering on the ISR page (Next ships only the Suspense fallback), so
+  // the 2MB explore HTML contained ZERO crawlable destination links
+  // (2026-07-15 audit). Defaults render statically; deep-link params are
+  // applied in the mount effect below.
   const [filters, setFilters] = useState<FilterState>({
-    stateId: searchParams.get("state") ?? "",
-    month: Number(searchParams.get("month")) || currentMonth,
-    kidsOnly: searchParams.get("kids") === "true",
-    soloFemaleOnly: searchParams.get("solof") === "true",
-    ecoOnly: searchParams.get("eco") === "true",
-    sort: searchParams.get("sort") ?? "",
-    difficulty: searchParams.get("difficulty") ?? "",
-    search: searchParams.get("q") ?? "",
+    stateId: "",
+    month: currentMonth,
+    kidsOnly: false,
+    soloFemaleOnly: false,
+    ecoOnly: false,
+    sort: "",
+    difficulty: "",
+    search: "",
   });
+
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    if ([...sp.keys()].length === 0) return;
+    setFilters({
+      stateId: sp.get("state") ?? "",
+      month: Number(sp.get("month")) || currentMonth,
+      kidsOnly: sp.get("kids") === "true",
+      soloFemaleOnly: sp.get("solof") === "true",
+      ecoOnly: sp.get("eco") === "true",
+      sort: sp.get("sort") ?? "",
+      difficulty: sp.get("difficulty") ?? "",
+      search: sp.get("q") ?? "",
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const ecoCount = useMemo(
     () => destinations.filter((d) => {
