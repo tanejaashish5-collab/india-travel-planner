@@ -3,6 +3,39 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
+// Content-Security-Policy. ISR pages are cached HTML, so nonces are
+// impossible — 'unsafe-inline' for script/style is the ceiling here (Next.js
+// inline bootstrap + the site's inline-style-heavy cinematic components).
+// Every third-party origin is enumerated; adding a new external script/image
+// host REQUIRES extending this list or the resource silently breaks in prod.
+// Origins: GA4 (gtag + beacons), 2 Cloudflare R2 buckets (images/videos),
+// Carto basemaps (Leaflet tiles), cdnjs (Leaflet CSS), Supabase (browser
+// client reads).
+const SUPABASE_ORIGIN = (() => {
+  try {
+    return new URL(process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").origin;
+  } catch {
+    return "https://dudzsdzfvikjjhurxrgc.supabase.co";
+  }
+})();
+
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+  "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
+  "img-src 'self' data: blob: https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://*.basemaps.cartocdn.com https://www.google-analytics.com https://www.googletagmanager.com",
+  "media-src 'self' https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev",
+  "font-src 'self' data:",
+  `connect-src 'self' ${SUPABASE_ORIGIN} https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com`,
+  "worker-src 'self' blob:",
+  "frame-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 const nextConfig: NextConfig = {
   transpilePackages: ["@itp/shared"],
   // Audit cron routes (audit-gsc-alerts, audit-gsc-ga4-correlation, etc.) use
@@ -54,6 +87,7 @@ const nextConfig: NextConfig = {
       {
         source: "/(.*)",
         headers: [
+          { key: "Content-Security-Policy", value: CSP },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

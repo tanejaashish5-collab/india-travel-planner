@@ -163,6 +163,8 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+        integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb"
+        crossOrigin="anonymous"
       />
       <style>{`
         /* Ocean tint — sepia introduces hue into the greyscale tile, hue-rotate
