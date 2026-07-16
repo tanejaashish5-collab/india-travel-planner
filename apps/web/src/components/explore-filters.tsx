@@ -55,6 +55,7 @@ export function ExploreFilters({
         type="text"
         value={filters.search}
         onChange={(e) => update({ search: e.target.value })}
+        aria-label={locale === "hi" ? "जगह खोजें" : "Search destinations"}
         placeholder={locale === "hi" ? "जगह खोजें..." : "Search destinations..."}
         className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
       />
