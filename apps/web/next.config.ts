@@ -23,7 +23,7 @@ const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
-  "img-src 'self' data: blob: https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://*.basemaps.cartocdn.com https://www.google-analytics.com https://www.googletagmanager.com",
+  "img-src 'self' data: blob: https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://*.basemaps.cartocdn.com https://openweathermap.org https://www.google-analytics.com https://www.googletagmanager.com",
   "media-src 'self' https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev",
   "font-src 'self' data:",
   `connect-src 'self' ${SUPABASE_ORIGIN} https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com`,

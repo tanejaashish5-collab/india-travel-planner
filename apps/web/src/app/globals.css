@@ -205,10 +205,14 @@
    range that Fraunces lacks. Without this, the giant italic display titles
    on `/hi` pages fall back to system fonts and break the visual rhythm.
    `unicode-range: U+0900-097F` scopes Tiro to Devanagari only so Latin
-   characters in mixed strings still render in Fraunces. ── */
+   characters in mixed strings still render in Fraunces.
+   SELF-HOSTED (2026-07-16): the previous fonts.gstatic.com /v8/ URLs had
+   silently gone 404 (Google rotates file paths) — the fallback never
+   loaded, and the new CSP made the failure visible. Files live in
+   public/fonts/ (OFL licence), same-origin so font-src stays 'self'. ── */
 @font-face {
   font-family: "TiroDevanagariFallback";
-  src: url("https://fonts.gstatic.com/s/tirodevanagarihindi/v8/55xyezN5UBXN0Y3l4yHGSyz4xx9izv_yqyzVLwM5oU0.woff2") format("woff2");
+  src: url("/fonts/tiro-devanagari-hindi-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -216,7 +220,7 @@
 }
 @font-face {
   font-family: "TiroDevanagariFallback";
-  src: url("https://fonts.gstatic.com/s/tirodevanagarihindi/v8/55xqezN5UBXN0Y3l4yHGSyz4xVK0qg5_g7T39Q.woff2") format("woff2");
+  src: url("/fonts/tiro-devanagari-hindi-regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
