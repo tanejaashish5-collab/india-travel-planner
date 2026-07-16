@@ -51,12 +51,24 @@ function vsCopy(locale: string) {
       hi
         ? `${name} अपने अनोखे अंदाज़ के लिए एक बढ़िया विकल्प है`
         : `${name} is a solid choice for its unique character`,
+    onTheGround: (m: string) => (hi ? `${m} में ज़मीनी हाल` : `${m} on the ground`),
+    verdictLabel: hi ? "फ़ैसला" : "Verdict",
+    bestWindowsLine: (name: string, months: string) =>
+      hi
+        ? `${name} के सबसे अच्छे महीने (8+/10): ${months}।`
+        : `${name}'s strongest window (8+/10): ${months}.`,
+    noStrongWindow: (name: string) =>
+      hi
+        ? `${name} का कोई महीना 8/10 तक नहीं पहुँचता — ऊपर की तालिका देखें।`
+        : `No month reaches 8/10 for ${name} — see the table above.`,
   };
 }
 
 interface MonthScore {
   month: number;
   score: number;
+  note?: string | null;
+  verdict?: string | null;
 }
 
 interface DestData {
@@ -412,6 +424,101 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
           })}
         </div>
       </section>
+
+      {/* Seasonal editorial — each destination's own hand-written note for
+          the current month (real verified content from destination_months;
+          renders only where a note exists) + its strongest-window months
+          computed from the same score data the table above shows. */}
+      {(() => {
+        const cards = [dest1, dest2]
+          .map((d) => {
+            const m = d.months.find((x) => x.month === currentMonth);
+            const windows = d.months
+              .filter((x) => x.score >= 4)
+              .map((x) => monthNames[x.month])
+              .join(locale === "hi" ? ", " : ", ");
+            return { d, note: m?.note ?? null, verdict: m?.verdict ?? null, windows };
+          })
+          .filter((c) => c.note);
+        if (cards.length === 0) return null;
+        return (
+          <section style={{ marginBottom: 48 }}>
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 16,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
+            >
+              {t.onTheGround(monthNames[currentMonth])}
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {cards.map(({ d, note, verdict, windows }) => (
+                <article key={d.id} style={{ padding: 24, background: "var(--paper)" }}>
+                  <h3
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 18,
+                      color: "var(--bone)",
+                      margin: "0 0 8px",
+                    }}
+                  >
+                    {d.name}
+                  </h3>
+                  {verdict && (
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 10,
+                        letterSpacing: "0.22em",
+                        textTransform: "uppercase",
+                        color: "var(--vermillion)",
+                        margin: "0 0 10px",
+                      }}
+                    >
+                      {t.verdictLabel}: {verdict}
+                    </p>
+                  )}
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 14,
+                      lineHeight: 1.7,
+                      color: "var(--bone-dim)",
+                      margin: "0 0 12px",
+                    }}
+                  >
+                    {note}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      color: "var(--bone-faint)",
+                      margin: 0,
+                    }}
+                  >
+                    {windows ? t.bestWindowsLine(d.name, windows) : t.noStrongWindow(d.name)}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Choose X if / Choose Y if */}
       <section

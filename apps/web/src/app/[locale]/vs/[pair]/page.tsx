@@ -50,7 +50,7 @@ async function getVsData(id1: string, id2: string) {
       .select(`
         id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress, tags,
         state:states(name),
-        destination_months(month, score),
+        destination_months(month, score, note, verdict),
         kids_friendly(suitable, rating),
         confidence_cards(safety_rating, network)
       `)
@@ -61,7 +61,7 @@ async function getVsData(id1: string, id2: string) {
       .select(`
         id, name, translations, tagline, difficulty, elevation_m, budget_tier, best_months, daily_cost, family_stress, tags,
         state:states(name),
-        destination_months(month, score),
+        destination_months(month, score, note, verdict),
         kids_friendly(suitable, rating),
         confidence_cards(safety_rating, network)
       `)
@@ -167,7 +167,7 @@ export default async function VsPairPage({
     daily_cost: d.daily_cost,
     family_stress: d.family_stress as string | null,
     state: resolveState(d.state),
-    months: ((d.destination_months as { month: number; score: number }[] | null) ?? []).slice().sort(
+    months: ((d.destination_months as { month: number; score: number; note?: string | null; verdict?: string | null }[] | null) ?? []).slice().sort(
       (a, b) => a.month - b.month,
     ),
     kids: Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : (d.kids_friendly as { suitable: boolean; rating: number } | null),
