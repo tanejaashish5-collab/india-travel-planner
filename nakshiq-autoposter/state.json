@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-16",
     "PdMu0": "2026-07-16",
@@ -41,27 +41,11 @@
     "PdMu0_evening": "2026-07-16",
     "m8EAd_carousel": "2026-07-16",
     "PdMu0_carousel": "2026-07-16",
-    "GAh5p_yt_short": "2026-07-16",
-    "m8EAd_yt_short": "2026-07-16"
+    "GAh5p_yt_short": "2026-07-17",
+    "m8EAd_yt_short": "2026-07-17"
   },
   "last_sync": "2026-07-16T15:51:42.195901+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "alchi",
-      "date": "2026-07-02"
-    },
-    {
-      "destination_id": "ahmedabad",
-      "date": "2026-07-02"
-    },
-    {
-      "destination_id": "adilabad",
-      "date": "2026-07-02"
-    },
-    {
-      "destination_id": "jog-falls",
-      "date": "2026-07-02"
-    },
     {
       "destination_id": "amboli",
       "date": "2026-07-03"
@@ -309,6 +293,10 @@
     {
       "destination_id": "amboli",
       "date": "2026-07-16"
+    },
+    {
+      "destination_id": "hemkund-sahib",
+      "date": "2026-07-17"
     }
   ],
   "posted_formats": {
@@ -5556,6 +5544,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "amboli.mp4"
+    },
+    {
+      "timestamp": "2026-07-17T06:33:41.177663+00:00",
+      "date": "2026-07-17",
+      "platform": "youtube",
+      "post_id": "gCLux",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_hemkund-sahib_en_2026-07-17.mp4"
+    },
+    {
+      "timestamp": "2026-07-17T06:34:26.570553+00:00",
+      "date": "2026-07-17",
+      "platform": "instagram",
+      "post_id": "ydA8j",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_hemkund-sahib_en_2026-07-17.mp4"
     }
   ],
   "theme_usage": {
