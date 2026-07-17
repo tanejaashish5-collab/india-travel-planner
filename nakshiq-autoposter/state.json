@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-16",
@@ -300,6 +300,10 @@
     },
     {
       "destination_id": "kausani",
+      "date": "2026-07-17"
+    },
+    {
+      "destination_id": "shravanabelagola",
       "date": "2026-07-17"
     }
   ],
@@ -5584,6 +5588,24 @@
       "destination": "kausani",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-07-17"
+    },
+    {
+      "timestamp": "2026-07-17T12:52:35.175657+00:00",
+      "date": "2026-07-17",
+      "platform": "youtube",
+      "post_id": "vMETg",
+      "destination": "shravanabelagola",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-07-17.mp4"
+    },
+    {
+      "timestamp": "2026-07-17T12:53:29.295596+00:00",
+      "date": "2026-07-17",
+      "platform": "instagram",
+      "post_id": "cy3KL",
+      "destination": "shravanabelagola",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-07-17.mp4"
     }
   ],
   "theme_usage": {
