@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-16",
-    "PdMu0": "2026-07-16",
-    "m8EAd_evening": "2026-07-16",
-    "PdMu0_evening": "2026-07-16",
+    "m8EAd": "2026-07-17",
+    "PdMu0": "2026-07-17",
+    "m8EAd_evening": "2026-07-17",
+    "PdMu0_evening": "2026-07-17",
     "m8EAd_carousel": "2026-07-17",
     "PdMu0_carousel": "2026-07-17",
     "GAh5p_yt_short": "2026-07-17",
     "m8EAd_yt_short": "2026-07-17"
   },
-  "last_sync": "2026-07-16T15:51:42.195901+00:00",
+  "last_sync": "2026-07-17T15:45:00.698672+00:00",
   "posted_destinations": [
     {
       "destination_id": "amboli",
@@ -305,6 +305,10 @@
     {
       "destination_id": "shravanabelagola",
       "date": "2026-07-17"
+    },
+    {
+      "destination_id": "igatpuri",
+      "date": "2026-07-17"
     }
   ],
   "posted_formats": {
@@ -313,11 +317,11 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -336,11 +340,11 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5606,6 +5610,28 @@
       "destination": "shravanabelagola",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-07-17.mp4"
+    },
+    {
+      "timestamp": "2026-07-17T15:46:07.243345+00:00",
+      "date": "2026-07-17",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "gCflx",
+      "destination": "igatpuri",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "igatpuri.mp4"
+    },
+    {
+      "timestamp": "2026-07-17T15:46:39.305633+00:00",
+      "date": "2026-07-17",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jOlD2",
+      "destination": "igatpuri",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "igatpuri.mp4"
     }
   ],
   "theme_usage": {
@@ -5750,7 +5776,8 @@
         "2026-06-17",
         "2026-06-23",
         "2026-06-26",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-07-17"
       ],
       "gopeshwar": [
         "2026-05-26",
@@ -5841,7 +5868,8 @@
         "2026-06-03",
         "2026-06-06",
         "2026-06-21",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-07-17"
       ],
       "nako": [
         "2026-06-04",
@@ -5938,7 +5966,8 @@
       ],
       "kolad": [
         "2026-07-01",
-        "2026-07-05"
+        "2026-07-05",
+        "2026-07-17"
       ],
       "bhimashankar": [
         "2026-07-01",
@@ -5947,16 +5976,19 @@
       ],
       "khardung-la": [
         "2026-07-01",
-        "2026-07-06"
+        "2026-07-06",
+        "2026-07-17"
       ],
       "khandala": [
         "2026-07-04"
       ],
       "tso-moriri": [
-        "2026-07-07"
+        "2026-07-07",
+        "2026-07-17"
       ],
       "igatpuri": [
-        "2026-07-09"
+        "2026-07-09",
+        "2026-07-17"
       ],
       "zanskar": [
         "2026-07-09",
@@ -6091,7 +6123,8 @@
         "2026-07-13",
         "2026-07-14",
         "2026-07-15",
-        "2026-07-16"
+        "2026-07-16",
+        "2026-07-17"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6327,6 +6360,9 @@
       ],
       "amboli": [
         "2026-07-16"
+      ],
+      "igatpuri": [
+        "2026-07-17"
       ]
     },
     "audience_tags": {
@@ -6354,7 +6390,8 @@
         "2026-06-19",
         "2026-06-26",
         "2026-07-03",
-        "2026-07-10"
+        "2026-07-10",
+        "2026-07-17"
       ]
     },
     "collections": {
@@ -6623,11 +6660,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "leh",
+    "shared_best": "keylong",
     "collection": "best-winter"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-07-09",
+  "data_carousel_floor_last": "2026-07-17",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-07-01",
     "ladakh-manali-biker": "2026-07-03",

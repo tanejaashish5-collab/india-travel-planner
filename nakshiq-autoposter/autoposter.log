@@ -12130,3 +12130,48 @@ Date range: 2026-04-15 → 2026-07-16
 2026-07-17 12:53:29  INFO      YT Short posted: format=did_you_know, music=edm-966
 2026-07-17 12:53:29  INFO      State saved. YT Short run complete.
 2026-07-17 12:53:29  INFO      ════════════════════════════════════════════════════════════
+2026-07-17 15:44:25  INFO      ════════════════════════════════════════════════════════════
+2026-07-17 15:44:25  INFO      Nakshiq Autoposter · EVENING · 2026-07-17 · weekday=4
+2026-07-17 15:44:25  INFO      ════════════════════════════════════════════════════════════
+2026-07-17 15:44:25  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-17 15:45:00  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-17 15:45:00  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-07-17 15:45:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-17 15:45:01  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-17 15:45:01  INFO      Festivals filtered (past/post-window): Harela Festival, Amarnath Yatra Start, Chamba Minjar Fair, Pangong Nomad Festival, Karsha Gustor, Korzok Gustor, Lucknow Muharram Processions, Kanwar Yatra (+12 more)
+2026-07-17 15:45:02  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-17 15:45:17  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-17 15:45:17  INFO      Evening format (weekly carousel floor): data_carousel
+2026-07-17 15:45:17  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: reality_check  ·  Audience: adventurers
+2026-07-17 15:45:17  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 56
+2026-07-17 15:45:17  INFO      Audience filter 'adventurers' → 12 destinations match.
+2026-07-17 15:45:17  INFO      Fingerprint dedup snapshot — 56 dests in 7d · 115 (dest,fmt) pairs in 30d · 256 media in 60d
+2026-07-17 15:45:21  INFO      Shared best destination locked: Keylong
+2026-07-17 15:45:21  INFO      Carousel locked (data_carousel): leh, keylong, kolad, khardung-la, tso-moriri
+2026-07-17 15:45:21  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-17 15:45:21  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-07-17 15:45:21  WARNING   [instagram/nakshiq] data_carousel: leh inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'igatpuri' as score_card to keep the slot live.
+2026-07-17 15:45:21  INFO      [instagram/nakshiq] Caption ready (379 chars, dest=igatpuri)
+2026-07-17 15:45:22  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-17 15:45:22  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/igatpuri.mp4?v=20260524
+2026-07-17 15:45:24  INFO          Brand-stamp applied: igatpuri.mp4 (6,386,673 → 2,786,568 bytes)
+2026-07-17 15:45:24  INFO          Requesting upload URL for igatpuri.mp4 (2,786,568 bytes, video/mp4)
+2026-07-17 15:45:25  INFO          Uploading to R2 (timeout=300s)...
+2026-07-17 15:45:27  INFO          R2 PUT OK. Confirming...
+2026-07-17 15:45:28  INFO          Media ready: bBf5T (2,786,568 bytes · igatpuri.mp4)
+2026-07-17 15:45:28  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-17 15:46:07  INFO      [instagram/nakshiq] ✅ Published · Outstand=gCflx · Platform=17944821015243787
+2026-07-17 15:46:07  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-07-17 15:46:07  WARNING   [facebook/Nakshiq] data_carousel: leh inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'igatpuri' as score_card to keep the slot live.
+2026-07-17 15:46:07  INFO      [facebook/Nakshiq] Caption ready (558 chars, dest=igatpuri)
+2026-07-17 15:46:07  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-17 15:46:07  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/igatpuri.mp4?v=20260524
+2026-07-17 15:46:09  INFO          Brand-stamp applied: igatpuri.mp4 (6,386,673 → 2,786,568 bytes)
+2026-07-17 15:46:09  INFO          Requesting upload URL for igatpuri.mp4 (2,786,568 bytes, video/mp4)
+2026-07-17 15:46:10  INFO          Uploading to R2 (timeout=300s)...
+2026-07-17 15:46:11  INFO          R2 PUT OK. Confirming...
+2026-07-17 15:46:12  INFO          Media ready: 4169i (2,786,568 bytes · igatpuri.mp4)
+2026-07-17 15:46:12  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-17 15:46:39  INFO      [facebook/Nakshiq] ✅ Published · Outstand=jOlD2 · Platform=4613494945545157
+2026-07-17 15:46:39  INFO      State saved. Run complete.
+2026-07-17 15:46:39  INFO      ════════════════════════════════════════════════════════════
