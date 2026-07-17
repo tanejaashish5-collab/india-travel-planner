@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-16",
     "m8EAd_evening": "2026-07-16",
     "PdMu0_evening": "2026-07-16",
-    "m8EAd_carousel": "2026-07-16",
-    "PdMu0_carousel": "2026-07-16",
+    "m8EAd_carousel": "2026-07-17",
+    "PdMu0_carousel": "2026-07-17",
     "GAh5p_yt_short": "2026-07-17",
     "m8EAd_yt_short": "2026-07-17"
   },
@@ -296,6 +296,10 @@
     },
     {
       "destination_id": "hemkund-sahib",
+      "date": "2026-07-17"
+    },
+    {
+      "destination_id": "kausani",
       "date": "2026-07-17"
     }
   ],
@@ -5562,6 +5566,24 @@
       "destination": "hemkund-sahib",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_hemkund-sahib_en_2026-07-17.mp4"
+    },
+    {
+      "timestamp": "2026-07-17T09:26:21.235930+00:00",
+      "date": "2026-07-17",
+      "platform": "instagram",
+      "post_id": "gCGfx",
+      "destination": "kausani",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-17"
+    },
+    {
+      "timestamp": "2026-07-17T09:26:24.061871+00:00",
+      "date": "2026-07-17",
+      "platform": "facebook",
+      "post_id": "TkSV1",
+      "destination": "kausani",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-07-17"
     }
   ],
   "theme_usage": {
@@ -6601,19 +6623,7 @@
       "Karsha Gustor",
       "Korzok Gustor",
       "Lucknow Muharram Processions",
-      "Kanwar Yatra",
-      "Yusmarg Shepherd Festival",
-      "Jageshwar Monsoon Mela",
-      "Kargil Vijay Diwas",
-      "Pandharpur Wari",
-      "Bastille Day Celebration",
-      "Aadi Festival at the Falls",
-      "Godavari Pushkaralu",
-      "Bonalu",
-      "Rath Yatra",
-      "Bahuda Yatra",
-      "Shravani Mela",
-      "Kharchi Puja"
+      "Kanwar Yatra"
     ],
     "collection": [
       "dwadasa-jyotirlinga"
