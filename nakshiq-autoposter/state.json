@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-17",
-    "PdMu0": "2026-07-17",
-    "m8EAd_evening": "2026-07-17",
-    "PdMu0_evening": "2026-07-17",
+    "m8EAd": "2026-07-18",
+    "PdMu0": "2026-07-18",
+    "m8EAd_evening": "2026-07-18",
+    "PdMu0_evening": "2026-07-18",
     "m8EAd_carousel": "2026-07-18",
     "PdMu0_carousel": "2026-07-18",
     "GAh5p_yt_short": "2026-07-18",
     "m8EAd_yt_short": "2026-07-18"
   },
-  "last_sync": "2026-07-17T15:45:00.698672+00:00",
+  "last_sync": "2026-07-18T15:19:40.347435+00:00",
   "posted_destinations": [
     {
       "destination_id": "igatpuri",
@@ -301,6 +301,10 @@
     {
       "destination_id": "lahaul-valley",
       "date": "2026-07-18"
+    },
+    {
+      "destination_id": "khandala",
+      "date": "2026-07-18"
     }
   ],
   "posted_formats": {
@@ -308,11 +312,11 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -331,11 +335,11 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5678,6 +5682,28 @@
       "destination": "lahaul-valley",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_lahaul-valley_hi_2026-07-18.mp4"
+    },
+    {
+      "timestamp": "2026-07-18T15:20:51.476968+00:00",
+      "date": "2026-07-18",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "H9165",
+      "destination": "khandala",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khandala.mp4"
+    },
+    {
+      "timestamp": "2026-07-18T15:21:14.026042+00:00",
+      "date": "2026-07-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "IAQ8X",
+      "destination": "khandala",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khandala.mp4"
     }
   ],
   "theme_usage": {
@@ -6026,7 +6052,8 @@
         "2026-07-17"
       ],
       "khandala": [
-        "2026-07-04"
+        "2026-07-04",
+        "2026-07-18"
       ],
       "tso-moriri": [
         "2026-07-07",
@@ -6170,7 +6197,8 @@
         "2026-07-14",
         "2026-07-15",
         "2026-07-16",
-        "2026-07-17"
+        "2026-07-17",
+        "2026-07-18"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6390,7 +6418,8 @@
         "2026-07-15"
       ],
       "khandala": [
-        "2026-07-04"
+        "2026-07-04",
+        "2026-07-18"
       ],
       "kolad": [
         "2026-07-05"
@@ -6427,7 +6456,8 @@
         "2026-06-06",
         "2026-06-27",
         "2026-07-04",
-        "2026-07-11"
+        "2026-07-11",
+        "2026-07-18"
       ],
       "adventurers": [
         "2026-05-29",
@@ -6692,7 +6722,8 @@
       "zanskar": [
         "2026-07-16"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -6706,7 +6737,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "keylong",
+    "shared_best": "khandala",
     "collection": "best-winter"
   },
   "manual_skip_dests": {},
