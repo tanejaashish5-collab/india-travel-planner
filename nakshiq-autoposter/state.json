@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-17",
@@ -41,31 +41,11 @@
     "PdMu0_evening": "2026-07-17",
     "m8EAd_carousel": "2026-07-17",
     "PdMu0_carousel": "2026-07-17",
-    "GAh5p_yt_short": "2026-07-17",
+    "GAh5p_yt_short": "2026-07-18",
     "m8EAd_yt_short": "2026-07-17"
   },
   "last_sync": "2026-07-17T15:45:00.698672+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "amboli",
-      "date": "2026-07-03"
-    },
-    {
-      "destination_id": "manali",
-      "date": "2026-07-03"
-    },
-    {
-      "destination_id": "kausani",
-      "date": "2026-07-03"
-    },
-    {
-      "destination_id": "likir",
-      "date": "2026-07-03"
-    },
-    {
-      "destination_id": "bhimashankar",
-      "date": "2026-07-03"
-    },
     {
       "destination_id": "igatpuri",
       "date": "2026-07-04"
@@ -309,6 +289,10 @@
     {
       "destination_id": "igatpuri",
       "date": "2026-07-17"
+    },
+    {
+      "destination_id": "belur",
+      "date": "2026-07-18"
     }
   ],
   "posted_formats": {
@@ -5632,6 +5616,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "igatpuri.mp4"
+    },
+    {
+      "timestamp": "2026-07-18T06:23:55.994264+00:00",
+      "date": "2026-07-18",
+      "platform": "youtube",
+      "post_id": "xZGi8",
+      "destination": "belur",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_belur_hi_2026-07-18.mp4"
+    },
+    {
+      "timestamp": "2026-07-18T06:24:48.785845+00:00",
+      "date": "2026-07-18",
+      "platform": "instagram",
+      "post_id": "RlrNH",
+      "destination": "belur",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_belur_hi_2026-07-18.mp4"
     }
   ],
   "theme_usage": {
