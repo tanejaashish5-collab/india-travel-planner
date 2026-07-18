@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-17",
@@ -42,7 +42,7 @@
     "m8EAd_carousel": "2026-07-18",
     "PdMu0_carousel": "2026-07-18",
     "GAh5p_yt_short": "2026-07-18",
-    "m8EAd_yt_short": "2026-07-17"
+    "m8EAd_yt_short": "2026-07-18"
   },
   "last_sync": "2026-07-17T15:45:00.698672+00:00",
   "posted_destinations": [
@@ -296,6 +296,10 @@
     },
     {
       "destination_id": "leh",
+      "date": "2026-07-18"
+    },
+    {
+      "destination_id": "lahaul-valley",
       "date": "2026-07-18"
     }
   ],
@@ -5656,6 +5660,24 @@
       "destination": "leh",
       "format": "carousel.route",
       "media_id": "carousel_route_2026-07-18"
+    },
+    {
+      "timestamp": "2026-07-18T12:42:08.638213+00:00",
+      "date": "2026-07-18",
+      "platform": "youtube",
+      "post_id": "e78mr",
+      "destination": "lahaul-valley",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_lahaul-valley_hi_2026-07-18.mp4"
+    },
+    {
+      "timestamp": "2026-07-18T12:42:50.348211+00:00",
+      "date": "2026-07-18",
+      "platform": "instagram",
+      "post_id": "C6GNF",
+      "destination": "lahaul-valley",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_lahaul-valley_hi_2026-07-18.mp4"
     }
   ],
   "theme_usage": {
