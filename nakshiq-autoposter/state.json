@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-18",
@@ -41,27 +41,11 @@
     "PdMu0_evening": "2026-07-18",
     "m8EAd_carousel": "2026-07-18",
     "PdMu0_carousel": "2026-07-18",
-    "GAh5p_yt_short": "2026-07-18",
-    "m8EAd_yt_short": "2026-07-18"
+    "GAh5p_yt_short": "2026-07-19",
+    "m8EAd_yt_short": "2026-07-19"
   },
   "last_sync": "2026-07-18T15:19:40.347435+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "igatpuri",
-      "date": "2026-07-04"
-    },
-    {
-      "destination_id": "lonavala",
-      "date": "2026-07-04"
-    },
-    {
-      "destination_id": "karla-bhaja-caves",
-      "date": "2026-07-04"
-    },
-    {
-      "destination_id": "khandala",
-      "date": "2026-07-04"
-    },
     {
       "destination_id": "turtuk",
       "date": "2026-07-05"
@@ -305,6 +289,10 @@
     {
       "destination_id": "khandala",
       "date": "2026-07-18"
+    },
+    {
+      "destination_id": "athirapally",
+      "date": "2026-07-19"
     }
   ],
   "posted_formats": {
@@ -5704,6 +5692,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "khandala.mp4"
+    },
+    {
+      "timestamp": "2026-07-19T06:47:38.339006+00:00",
+      "date": "2026-07-19",
+      "platform": "youtube",
+      "post_id": "5yTuD",
+      "destination": "athirapally",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_athirapally_hi_2026-07-19.mp4"
+    },
+    {
+      "timestamp": "2026-07-19T06:48:26.748496+00:00",
+      "date": "2026-07-19",
+      "platform": "instagram",
+      "post_id": "F50xZ",
+      "destination": "athirapally",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_athirapally_hi_2026-07-19.mp4"
     }
   ],
   "theme_usage": {
@@ -6722,8 +6728,7 @@
       "zanskar": [
         "2026-07-16"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
