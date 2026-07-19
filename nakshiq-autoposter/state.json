@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-18",
@@ -296,6 +296,10 @@
     },
     {
       "destination_id": "yusmarg",
+      "date": "2026-07-19"
+    },
+    {
+      "destination_id": "kishtwar",
       "date": "2026-07-19"
     }
   ],
@@ -5732,6 +5736,24 @@
       "destination": "yusmarg",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-07-19"
+    },
+    {
+      "timestamp": "2026-07-19T12:40:04.600801+00:00",
+      "date": "2026-07-19",
+      "platform": "youtube",
+      "post_id": "1sxTG",
+      "destination": "kishtwar",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kishtwar_hi_2026-07-19.mp4"
+    },
+    {
+      "timestamp": "2026-07-19T12:40:55.604398+00:00",
+      "date": "2026-07-19",
+      "platform": "instagram",
+      "post_id": "JXMh3",
+      "destination": "kishtwar",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kishtwar_hi_2026-07-19.mp4"
     }
   ],
   "theme_usage": {
