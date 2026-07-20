@@ -1,7 +1,7 @@
 # Scheduled task — ranking-depth cycle day-14 re-measure (DUE 2026-07-17)
 
 **Due date:** 2026-07-17 (any daily GSC audit run on or after this date should execute this, then mark this file DONE)
-**Status:** PENDING
+**Status:** DONE — run 2026-07-20 (via the weekly `daily-gsc-audit` task; 3 days late, no other qualifying audit ran 07-17–07-19). **Verdict: cycle 1 did NOT show a win.** TARGETS averaged Δposition **+0.62** (worse) over 7/5–7/18 vs the 6/17–6/30 baseline; CONTROLS averaged **−0.38** (better) — the opposite of the hypothesis (targets should have out-improved controls). Only 2/5 targets improved position at all, and the one clear miss (`/en/festivals/month/july`, +2.9) was bigger than any single control move. Full numbers in `data/ranking-depth-cycle/remeasure-2026-07-20.md` and in `gsc-audits/gsc-audit-2026-07-20.md` §5. **Recommend closing cycle 1 as inconclusive/negative rather than scheduling the recurring weekly ranking-depth loop** — per the decision rule below, the gate for scheduling was "targets clearly outperform controls," which did not happen. If the experiment is retried, consider a larger page set or a design less exposed to July seasonality swamping the position signal.
 **Set up:** 2026-07-03, ranking-depth cycle 1 (internal-link intervention)
 
 ---
