@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-19",
@@ -41,27 +41,11 @@
     "PdMu0_evening": "2026-07-19",
     "m8EAd_carousel": "2026-07-19",
     "PdMu0_carousel": "2026-07-19",
-    "GAh5p_yt_short": "2026-07-19",
+    "GAh5p_yt_short": "2026-07-20",
     "m8EAd_yt_short": "2026-07-19"
   },
   "last_sync": "2026-07-19T15:19:12.348386+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "turtuk",
-      "date": "2026-07-05"
-    },
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-07-05"
-    },
-    {
-      "destination_id": "umlingla",
-      "date": "2026-07-05"
-    },
-    {
-      "destination_id": "kolad",
-      "date": "2026-07-05"
-    },
     {
       "destination_id": "kargil",
       "date": "2026-07-06"
@@ -305,6 +289,10 @@
     {
       "destination_id": "kolad",
       "date": "2026-07-19"
+    },
+    {
+      "destination_id": "drass",
+      "date": "2026-07-20"
     }
   ],
   "posted_formats": {
@@ -5780,6 +5768,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "kolad.mp4"
+    },
+    {
+      "timestamp": "2026-07-20T07:34:04.198797+00:00",
+      "date": "2026-07-20",
+      "platform": "youtube",
+      "post_id": "xAct8",
+      "destination": "drass",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_drass_hi_2026-07-20.mp4"
+    },
+    {
+      "timestamp": "2026-07-20T07:34:51.737078+00:00",
+      "date": "2026-07-20",
+      "platform": "instagram",
+      "post_id": "PTUu0",
+      "destination": "drass",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_drass_hi_2026-07-20.mp4"
     }
   ],
   "theme_usage": {
