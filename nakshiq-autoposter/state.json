@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-19",
     "m8EAd_evening": "2026-07-19",
     "PdMu0_evening": "2026-07-19",
-    "m8EAd_carousel": "2026-07-19",
-    "PdMu0_carousel": "2026-07-19",
+    "m8EAd_carousel": "2026-07-20",
+    "PdMu0_carousel": "2026-07-20",
     "GAh5p_yt_short": "2026-07-20",
     "m8EAd_yt_short": "2026-07-19"
   },
@@ -292,6 +292,10 @@
     },
     {
       "destination_id": "drass",
+      "date": "2026-07-20"
+    },
+    {
+      "destination_id": "varanasi",
       "date": "2026-07-20"
     }
   ],
@@ -5786,6 +5790,24 @@
       "destination": "drass",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_drass_hi_2026-07-20.mp4"
+    },
+    {
+      "timestamp": "2026-07-20T10:25:44.420164+00:00",
+      "date": "2026-07-20",
+      "platform": "instagram",
+      "post_id": "cJ3iL",
+      "destination": "varanasi",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-07-20"
+    },
+    {
+      "timestamp": "2026-07-20T10:25:46.822385+00:00",
+      "date": "2026-07-20",
+      "platform": "facebook",
+      "post_id": "Qgxzy",
+      "destination": "varanasi",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-07-20"
     }
   ],
   "theme_usage": {
@@ -6855,7 +6877,8 @@
     ],
     "collection": [
       "dwadasa-jyotirlinga",
-      "adrenaline-rush"
+      "adrenaline-rush",
+      "after-dark-experiences"
     ]
   }
 }
