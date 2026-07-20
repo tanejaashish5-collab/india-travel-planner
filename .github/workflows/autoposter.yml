@@ -99,6 +99,7 @@ on:
           # to publish_* but never calls Outstand. Use to validate that
           # infographic/tourist-map/reel-map/pomelli-visual/flow-story
           # pipelines still work before re-enabling their crons.
+          - dry-run-carousel
           - dry-run-infographic
           - dry-run-tourist-map
           - dry-run-reel-map
@@ -360,7 +361,10 @@ jobs:
                 exit 1
                 ;;
             esac
-            if [ "$INPUT" = "dry-run-infographic" ]; then
+            if [ "$INPUT" = "dry-run-carousel" ]; then
+              echo "args=--dry-run --carousel" >> $GITHUB_OUTPUT
+              echo "Manual mode: --dry-run --carousel (no Outstand POST; validates the editorial renderer on the runner)"
+            elif [ "$INPUT" = "dry-run-infographic" ]; then
               echo "args=--dry-run --infographic" >> $GITHUB_OUTPUT
               echo "Manual mode: --dry-run --infographic (no Outstand POST)"
             elif [ "$INPUT" = "dry-run-tourist-map" ]; then
