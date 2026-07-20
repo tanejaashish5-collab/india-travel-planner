@@ -1,0 +1,63 @@
+{
+  "brand": { "name": "NAKSHIQ", "url": "nakshiq.com", "grain": true },
+  "slides": [
+    {
+      "label": "Save this",
+      "title": "6 numbers that\ncan save your trip.",
+      "kicker": "Most travellers in India don't know which emergency number does what. **This carousel is the whole answer** — every number verified against official government sources.",
+      "rows": [
+        { "icon": "shield", "text": "**No guesswork.** Each number below is cross-checked against 112.gov.in and incredibleindia.gov.in." },
+        { "icon": "bookmark", "text": "**Save it now.** You won't have signal to google this when you actually need it." }
+      ]
+    },
+    {
+      "label": "Why this matters",
+      "title": "Why this\nmatters.",
+      "kicker": "India has **different numbers for different emergencies** — and tourists rarely learn them before something goes wrong.",
+      "rows": [
+        { "icon": "alert", "text": "In the mountains, help can be **hours away**. Calling the right line first matters." },
+        { "icon": "globe", "text": "Foreign SIMs and eSIMs work with these lines — **112 connects even on another carrier's network.**" },
+        { "icon": "clock", "text": "The tourist helpline runs **24×7 in multiple languages**, including English and Hindi." }
+      ],
+      "note": { "text": "signal fades. numbers don't.", "top": 225, "right": 72 }
+    },
+    {
+      "label": "The one to remember",
+      "title": "If you remember\none number.",
+      "bignum": "112",
+      "bignum_label": "All-in-one emergency",
+      "rows": [
+        { "icon": "phone", "text": "**Police, fire and ambulance** — one number, anywhere in India." },
+        { "icon": "info", "text": "When in doubt, **dial 112 first.** The operator routes you." }
+      ]
+    },
+    {
+      "label": "Medical + fire",
+      "title": "Medical and\nfire lines.",
+      "rows": [
+        { "icon": "cross", "text": "**108 — Ambulance.** Free emergency medical response, pan-India." },
+        { "icon": "alert", "text": "**101 — Fire.** The dedicated fire brigade line." },
+        { "icon": "shield", "text": "**100 — Police.** The legacy police line still works everywhere." }
+      ],
+      "note": { "text": "free to call. no SIM credit needed.", "top": 980, "right": 90 }
+    },
+    {
+      "label": "Made for travellers",
+      "title": "Two lines built\nfor travellers.",
+      "rows": [
+        { "icon": "flag", "text": "**1800-11-1363 — Tourist Helpline.** Ministry of Tourism, 24×7, multilingual. Scams, lost documents, guidance." },
+        { "icon": "heart", "text": "**1091 — Women's Helpline.** Dedicated support line for women in distress." },
+        { "icon": "chat", "text": "Every NakshIQ destination page carries **local hospital and rescue contacts** on top of these." }
+      ]
+    },
+    {
+      "label": "Keep it",
+      "title": "Save this.\nHope you never need it.",
+      "kicker": "Screenshot the numbers or tap **save** — future-you with one signal bar says thanks.",
+      "rows": [
+        { "icon": "globe", "text": "**nakshiq.com** — verified safety contacts, road conditions and month-by-month honesty for 500+ Indian destinations." }
+      ],
+      "quote": "The best emergency plan is the one you made before the emergency."
+    }
+  ]
+}
