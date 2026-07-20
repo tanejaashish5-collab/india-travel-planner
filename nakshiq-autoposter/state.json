@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-19",
-    "PdMu0": "2026-07-19",
-    "m8EAd_evening": "2026-07-19",
-    "PdMu0_evening": "2026-07-19",
+    "m8EAd": "2026-07-20",
+    "PdMu0": "2026-07-20",
+    "m8EAd_evening": "2026-07-20",
+    "PdMu0_evening": "2026-07-20",
     "m8EAd_carousel": "2026-07-20",
     "PdMu0_carousel": "2026-07-20",
     "GAh5p_yt_short": "2026-07-20",
     "m8EAd_yt_short": "2026-07-20"
   },
-  "last_sync": "2026-07-19T15:19:12.348386+00:00",
+  "last_sync": "2026-07-20T17:16:55.186372+00:00",
   "posted_destinations": [
     {
       "destination_id": "kargil",
@@ -301,16 +301,20 @@
     {
       "destination_id": "ozar",
       "date": "2026-07-20"
+    },
+    {
+      "destination_id": "kargil",
+      "date": "2026-07-20"
     }
   ],
   "posted_formats": {
     "m8EAd": [
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -329,11 +333,11 @@
     ],
     "PdMu0": [
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5830,6 +5834,28 @@
       "destination": "ozar",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_ozar_hi_2026-07-20.mp4"
+    },
+    {
+      "timestamp": "2026-07-20T17:17:56.350470+00:00",
+      "date": "2026-07-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "lOhlK",
+      "destination": "kargil",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kargil.mp4"
+    },
+    {
+      "timestamp": "2026-07-20T17:18:28.369114+00:00",
+      "date": "2026-07-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "VhuTN",
+      "destination": "kargil",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kargil.mp4"
     }
   ],
   "theme_usage": {
@@ -6082,7 +6108,8 @@
         "2026-06-05",
         "2026-06-06",
         "2026-06-21",
-        "2026-07-02"
+        "2026-07-02",
+        "2026-07-20"
       ],
       "roopkund": [
         "2026-06-04",
@@ -6326,7 +6353,8 @@
         "2026-07-16",
         "2026-07-17",
         "2026-07-18",
-        "2026-07-19"
+        "2026-07-19",
+        "2026-07-20"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6567,6 +6595,9 @@
       ],
       "igatpuri": [
         "2026-07-17"
+      ],
+      "kargil": [
+        "2026-07-20"
       ]
     },
     "audience_tags": {
@@ -6577,7 +6608,8 @@
         "2026-06-22",
         "2026-06-29",
         "2026-07-06",
-        "2026-07-13"
+        "2026-07-13",
+        "2026-07-20"
       ],
       "families": [
         "2026-05-23",
@@ -6865,7 +6897,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kargil",
+    "shared_best": "gurez-valley",
     "collection": "best-winter"
   },
   "manual_skip_dests": {},

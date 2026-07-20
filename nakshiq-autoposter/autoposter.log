@@ -12958,3 +12958,51 @@ Full collection with scores → nakshiq.com
 2026-07-20 13:36:04  INFO      YT Short posted: format=this_vs_that, music=edm-471
 2026-07-20 13:36:04  INFO      State saved. YT Short run complete.
 2026-07-20 13:36:04  INFO      ════════════════════════════════════════════════════════════
+2026-07-20 17:16:16  INFO      ════════════════════════════════════════════════════════════
+2026-07-20 17:16:16  INFO      Nakshiq Autoposter · EVENING · 2026-07-20 · weekday=0
+2026-07-20 17:16:16  INFO      ════════════════════════════════════════════════════════════
+2026-07-20 17:16:16  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-20 17:16:55  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-20 17:16:55  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-07-20 17:16:56  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-20 17:16:56  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-20 17:16:56  INFO      Festivals filtered (past/post-window): Harela Festival, Amarnath Yatra Start, Chamba Minjar Fair, Pangong Nomad Festival, Karsha Gustor, Korzok Gustor, Lucknow Muharram Processions, Kanwar Yatra (+12 more)
+2026-07-20 17:16:56  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-20 17:17:09  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-20 17:17:09  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-07-20 17:17:09  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: festival_alert  ·  Audience: backpackers
+2026-07-20 17:17:09  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 63
+2026-07-20 17:17:09  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-07-20 17:17:09  INFO      Fingerprint dedup snapshot — 63 dests in 7d · 108 (dest,fmt) pairs in 30d · 259 media in 60d
+2026-07-20 17:17:09  INFO      Festivals filtered (past/post-window): Harela Festival, Amarnath Yatra Start, Chamba Minjar Fair, Pangong Nomad Festival, Karsha Gustor, Korzok Gustor, Lucknow Muharram Processions, Kanwar Yatra (+12 more)
+2026-07-20 17:17:09  INFO      Festival locked: Monsoon Festival (5/15 active festivals never featured)
+2026-07-20 17:17:17  INFO      Shared best destination locked: Gurez Valley
+2026-07-20 17:17:17  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-20 17:17:17  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-07-20 17:17:17  INFO      confidence_intel for Gurez Valley: only 0 card rows — SKIPPING
+2026-07-20 17:17:17  WARNING   [instagram/nakshiq] confidence_intel: gurez-valley inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'kargil' as score_card to keep the slot live.
+2026-07-20 17:17:17  INFO      [instagram/nakshiq] Caption ready (327 chars, dest=kargil)
+2026-07-20 17:17:17  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-20 17:17:17  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kargil.mp4?v=20260524
+2026-07-20 17:17:19  INFO          Brand-stamp applied: kargil.mp4 (4,087,488 → 1,778,401 bytes)
+2026-07-20 17:17:19  INFO          Requesting upload URL for kargil.mp4 (1,778,401 bytes, video/mp4)
+2026-07-20 17:17:21  INFO          Uploading to R2 (timeout=300s)...
+2026-07-20 17:17:21  INFO          R2 PUT OK. Confirming...
+2026-07-20 17:17:22  INFO          Media ready: 8b2ZI (1,778,401 bytes · kargil.mp4)
+2026-07-20 17:17:22  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-20 17:17:56  INFO      [instagram/nakshiq] ✅ Published · Outstand=lOhlK · Platform=18219524749327505
+2026-07-20 17:17:56  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-07-20 17:17:56  INFO      confidence_intel for Gurez Valley: only 0 card rows — SKIPPING
+2026-07-20 17:17:56  WARNING   [facebook/Nakshiq] confidence_intel: gurez-valley inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'kargil' as score_card to keep the slot live.
+2026-07-20 17:17:56  INFO      [facebook/Nakshiq] Caption ready (500 chars, dest=kargil)
+2026-07-20 17:17:56  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-20 17:17:56  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kargil.mp4?v=20260524
+2026-07-20 17:17:58  INFO          Brand-stamp applied: kargil.mp4 (4,087,488 → 1,778,401 bytes)
+2026-07-20 17:17:58  INFO          Requesting upload URL for kargil.mp4 (1,778,401 bytes, video/mp4)
+2026-07-20 17:17:59  INFO          Uploading to R2 (timeout=300s)...
+2026-07-20 17:18:00  INFO          R2 PUT OK. Confirming...
+2026-07-20 17:18:01  INFO          Media ready: bKPUT (1,778,401 bytes · kargil.mp4)
+2026-07-20 17:18:01  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-20 17:18:28  INFO      [facebook/Nakshiq] ✅ Published · Outstand=VhuTN · Platform=2118203925785044
+2026-07-20 17:18:28  INFO      State saved. Run complete.
+2026-07-20 17:18:28  INFO      ════════════════════════════════════════════════════════════
