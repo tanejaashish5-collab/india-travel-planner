@@ -44,6 +44,41 @@ R2_IMAGE = "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev"
 WORK = Path("/tmp/nakshiq_carousel"); WORK.mkdir(parents=True, exist_ok=True)
 FF = shutil.which("ffmpeg") or "ffmpeg"
 
+# ── editorial renderer (2026-07-20, founder-approved restyle) ────────────────
+# The cream "carousel essay" style (editorial_slides.py) replaces the dark
+# photo-scrim PIL slides for ALL formats. Data flow is untouched — the format
+# builders below still select every string from verified DB fields; only the
+# painter layer branches. Disable with NAKSHIQ_EDITORIAL_CAROUSEL=0. Any
+# editorial failure (no Chrome, font missing, render error) falls back to the
+# original PIL painter PER SLIDE, so the daily slot can never go dark.
+try:
+    import editorial_slides as _ed
+except Exception:                                   # pragma: no cover
+    _ed = None
+
+_ED_STATE = {}
+
+
+def _use_editorial() -> bool:
+    if "ok" not in _ED_STATE:
+        _ED_STATE["ok"] = (_ed is not None
+                           and os.environ.get("NAKSHIQ_EDITORIAL_CAROUSEL", "1") != "0"
+                           and _ed.available())
+    return _ED_STATE["ok"]
+
+
+def _photo(slug) -> Path | None:
+    """Resolve a slug (or candidate list) to a local photo via the existing
+    R2 video-frame → hero-image chain. None = render without a polaroid."""
+    cands = slug if isinstance(slug, (list, tuple)) else [slug]
+    for s in cands:
+        if s:
+            p = _frame(s)
+            if p:
+                return p
+    return None
+
+
 W, H = 1080, 1350
 BG = (13, 17, 23)
 GOLD = (244, 183, 64); WHITE = (245, 247, 250); MUT = (159, 179, 200)
@@ -185,6 +220,11 @@ def _chip(d, xy, text, font, fg, bg, pad=(18, 10)):
 
 # ── slide painters ───────────────────────────────────────────────────────────
 def _cover_slide(kicker, headline_lines, sub, bg_slug):
+    if _use_editorial():
+        try:
+            return _ed.cover(kicker, headline_lines, sub, _photo(bg_slug))
+        except Exception as e:
+            print(f"[editorial→PIL fallback] cover: {e}")
     c = _bg(bg_slug, darken=0.6, blur=3); d = ImageDraw.Draw(c)
     d.text((70, 120), kicker, font=_F(MONO, 30), fill=GOLD)
     hl = _F(BOLD, 86)
@@ -200,6 +240,14 @@ def _cover_slide(kicker, headline_lines, sub, bg_slug):
 
 
 def _item_slide(idx, total, badge, badge_col, state, name, line, bg_slug):
+    if _use_editorial():
+        try:
+            kind = {GREEN: "go", VERM: "stop"}.get(badge_col, "plain")
+            icon = "flag" if badge_col == GREEN else "pin"
+            return _ed.item(idx, total, badge, kind, state, name, line,
+                            _photo(bg_slug), icon=icon)
+        except Exception as e:
+            print(f"[editorial→PIL fallback] item {idx}: {e}")
     c = _bg(bg_slug, darken=0.5); d = ImageDraw.Draw(c)
     num = f"{idx:02d}/{total:02d}"
     tw = d.textlength(num, font=_F(MONO, 28)); d.text((W - 70 - tw, 80), num, font=_F(MONO, 28), fill=MUT)
@@ -220,6 +268,12 @@ def _item_slide(idx, total, badge, badge_col, state, name, line, bg_slug):
 
 
 def _skip_slide(idx, total, skip_name, skip_reason, go_name, go_reason, bg_slug):
+    if _use_editorial():
+        try:
+            return _ed.skip(idx, total, skip_name, skip_reason, go_name, go_reason,
+                            _photo(bg_slug))
+        except Exception as e:
+            print(f"[editorial→PIL fallback] skip {idx}: {e}")
     c = _bg(bg_slug, darken=0.52); d = ImageDraw.Draw(c)
     num = f"{idx:02d}/{total:02d}"
     tw = d.textlength(num, font=_F(MONO, 28)); d.text((W - 70 - tw, 80), num, font=_F(MONO, 28), fill=MUT)
@@ -242,6 +296,11 @@ def _skip_slide(idx, total, skip_name, skip_reason, go_name, go_reason, bg_slug)
 
 
 def _end_slide(headline_lines, sub, bg_slug):
+    if _use_editorial():
+        try:
+            return _ed.end(headline_lines, sub, _photo(bg_slug))
+        except Exception as e:
+            print(f"[editorial→PIL fallback] end: {e}")
     c = _bg(bg_slug, darken=0.72, blur=6); d = ImageDraw.Draw(c)
     y = 300
     for ln in headline_lines:
@@ -469,6 +528,11 @@ def build_cost(content: dict, mname: str) -> dict | None:
 
 
 def _versus_slide(idx, total, a_name, a_sub, b_name, b_sub, bg_slug):
+    if _use_editorial():
+        try:
+            return _ed.versus(idx, total, a_name, a_sub, b_name, b_sub, _photo(bg_slug))
+        except Exception as e:
+            print(f"[editorial→PIL fallback] versus {idx}: {e}")
     c = _bg(bg_slug, darken=0.55); d = ImageDraw.Draw(c)
     num = f"{idx:02d}/{total:02d}"
     tw = d.textlength(num, font=_F(MONO, 28)); d.text((W - 70 - tw, 80), num, font=_F(MONO, 28), fill=MUT)
