@@ -24,7 +24,8 @@ export type DmTheme =
   | "festival"
   | "weekend"
   | "infra"
-  | "anti_trap";
+  | "anti_trap"
+  | "month_edit";
 
 export interface DmDestination {
   id: string; // slug, e.g. "kasauli"
@@ -42,6 +43,10 @@ const FIXED_KEYWORDS: Record<string, DmTheme> = {
   stays: "stays",
   eat: "eateries",
   food: "eateries",
+  // Editorial-carousel magnet (2026-07-21): "Comment MONSOON" → this month's
+  // verified go/wait/skip page. The route supplies monthSlug/monthName in ctx.
+  monsoon: "month_edit",
+  month: "month_edit",
 };
 
 export interface ResolvedIntent {
@@ -145,6 +150,9 @@ export interface DmBuildContext {
   locale?: "en" | "hi";
   /** Optional activity-affiliate deeplink, appended when present (off by default). */
   affiliate?: { label: string; url: string } | null;
+  /** Current IST month, for the month_edit theme (route passes currentMonthSlugIST/LongIST). */
+  monthSlug?: string | null; // e.g. "july"
+  monthName?: string | null; // e.g. "July"
 }
 
 export interface DmReply {
@@ -157,6 +165,7 @@ function pageUrlFor(theme: DmTheme, dest: DmDestination | null, ctx: DmBuildCont
   const locale = ctx.locale ?? "en";
   const base = ctx.siteUrl.replace(/\/+$/, "");
   const utm = `utm_source=ig&utm_medium=dm&utm_campaign=comment_funnel`;
+  if (theme === "month_edit" && ctx.monthSlug) return `${base}/${locale}/where-to-go/${ctx.monthSlug}?${utm}`;
   if (!dest) return `${base}/${locale}/explore?${utm}`;
   return `${base}/${locale}/destination/${dest.id}?${utm}`;
 }
@@ -198,6 +207,11 @@ export function buildDmReply(theme: DmTheme, dest: DmDestination | null, ctx: Dm
     case "infra":
       lead = `${name}, the practical bits: offline map, fuel stops, network reality 👇\n${url}`;
       break;
+    case "month_edit": {
+      const mn = ctx.monthName || "this month";
+      lead = `Where India is actually at its best in ${mn} — the verified go / wait / skip list, every destination scored for THIS month 👇\n${url}`;
+      break;
+    }
     case "anti_trap":
       lead = dest
         ? `Skip the trap — here's the ${name} alternative that's actually worth your time 👇\n${url}`

@@ -1,4 +1,12 @@
-# Instagram Auto-DM Responder — Setup & Go-Live (2026-06-13)
+# Instagram Auto-DM Responder — Setup & Go-Live (2026-06-13; updated 2026-07-21)
+
+> **2026-07-21 STATUS:** Founder rejected the paid ManyChat path — **Path A (self-hosted, $0) is THE plan.**
+> Already true today: migration 071 APPLIED (social_dm_leads exists in prod), webhook route + engine
+> deployed and safely no-op'ing until the Meta secrets land. NEW: keyword `MONSOON`/`month` →
+> current-month go/wait/skip page (month_edit theme); editorial-carousel captions carry the comment-gate
+> CTA only when `NAKSHIQ_COMMENT_GATE=1` is set on the autoposter (flip it ONLY after Meta go-live, so
+> captions never promise a DM nothing delivers). Remaining work = the founder Meta steps below (dev-mode
+> works on our own account with no App Review).
 
 **Why this exists:** the autoposter captions already promise an auto-DM
 (`comment_cta()` in `autoposter.py`: *"Comment 'kasauli' — I'll DM the 48-hour

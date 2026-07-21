@@ -11009,6 +11009,45 @@ def _carousel_format_order(state: dict) -> list:
     return sorted(cstudio.FORMAT_ROTATION, key=last_posted)
 
 
+# Editorial-series caption labels (2026-07-21, mpaige13 mechanics study): a
+# numbered series manufactures return visits ("Day 6 of 30" pattern). Edition
+# number = distinct days this format has posted (IG+FB = one day) + 1, read
+# from the same race-safe merged log the cadence guards use.
+_CAROUSEL_SERIES_LABELS = {
+    "skip_list": "The Skip List", "festival": "The Festival Calendar",
+    "food": "Where Locals Eat", "best_month": "The Month Edit",
+    "comparison": "This or That", "persona": "Made for You",
+    "cost": "What It Actually Costs", "route": "The Route",
+    "collection": "The Collection",
+}
+
+
+def _carousel_caption_extras(st: dict, fmt: str, caption: str) -> str:
+    """Append the series-number line (default ON; NAKSHIQ_CAROUSEL_SERIES=0 to
+    kill) and the comment-gate CTA (default OFF — flip NAKSHIQ_COMMENT_GATE=1
+    ONLY once the self-hosted DM responder is live, see DM_RESPONDER_SETUP.md;
+    a caption must never promise a DM that nothing delivers). Lines go BEFORE
+    the hashtag block so the tags stay last."""
+    lines = []
+    if os.environ.get("NAKSHIQ_CAROUSEL_SERIES", "1") != "0":
+        label = _CAROUSEL_SERIES_LABELS.get(fmt)
+        if label:
+            n = _format_posted_days(st, 3650, lambda x: x == f"carousel.{fmt}") + 1
+            lines.append(f"📌 {label} · No. {n}")
+    if os.environ.get("NAKSHIQ_COMMENT_GATE", "0") == "1":
+        if fmt == "best_month":
+            lines.append('💬 Comment "MONSOON" and I\'ll DM you this month\'s full go / wait / skip list.')
+        else:
+            lines.append("💬 Comment the place name that caught your eye — I'll DM you the honest read.")
+    if not lines:
+        return caption
+    block = "\n\n" + "\n".join(lines)
+    if "\n\n#" in caption:
+        head, tags = caption.rsplit("\n\n#", 1)
+        return head + block + "\n\n#" + tags
+    return caption + block
+
+
 def _run_carousel(force: bool = False, dry_run: bool = False):
     """Build + publish one verified-data carousel to Instagram + Facebook."""
     import carousel_studio as cstudio
@@ -11066,7 +11105,7 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
 
     fmt = built["fmt"]
     slides = built["slides"]
-    caption = built["caption"]
+    caption = _carousel_caption_extras(st, fmt, built["caption"])
     dest_ids = built.get("dest_ids") or []
     primary_dest_id = dest_ids[0] if dest_ids else None
     log.info(f"Carousel built: fmt={fmt}, {len(slides)} slides, primary={primary_dest_id}")

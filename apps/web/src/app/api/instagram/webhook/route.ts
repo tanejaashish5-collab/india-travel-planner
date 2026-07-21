@@ -23,6 +23,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createHmac, timingSafeEqual } from "crypto";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { getCachedDestinationsIndex } from "@/lib/cached-data";
+import { currentMonthSlugIST, currentMonthLongIST } from "@itp/shared";
 import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
 import {
   sendDirectMessage,
@@ -293,6 +294,8 @@ function ctx() {
     siteUrl: SITE_URL,
     locale: "en" as const,
     affiliate: affiliateLink(),
+    monthSlug: currentMonthSlugIST(),
+    monthName: currentMonthLongIST(),
   };
 }
 
