@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-20",
-    "PdMu0": "2026-07-20",
-    "m8EAd_evening": "2026-07-20",
-    "PdMu0_evening": "2026-07-20",
+    "m8EAd": "2026-07-21",
+    "PdMu0": "2026-07-21",
+    "m8EAd_evening": "2026-07-21",
+    "PdMu0_evening": "2026-07-21",
     "m8EAd_carousel": "2026-07-21",
     "PdMu0_carousel": "2026-07-21",
     "GAh5p_yt_short": "2026-07-21",
     "m8EAd_yt_short": "2026-07-21"
   },
-  "last_sync": "2026-07-20T17:16:55.186372+00:00",
+  "last_sync": "2026-07-21T15:57:18.599575+00:00",
   "posted_destinations": [
     {
       "destination_id": "hanle",
@@ -297,15 +297,19 @@
     {
       "destination_id": "statue-of-unity",
       "date": "2026-07-21"
+    },
+    {
+      "destination_id": "khardung-la",
+      "date": "2026-07-21"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -324,11 +328,11 @@
       "score_card"
     ],
     "PdMu0": [
-      "score_card",
       "data_carousel",
       "score_card",
       "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -5902,6 +5906,28 @@
       "destination": "statue-of-unity",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_statue-of-unity_hi_2026-07-21.mp4"
+    },
+    {
+      "timestamp": "2026-07-21T15:58:28.026870+00:00",
+      "date": "2026-07-21",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "OEFPv",
+      "destination": "khardung-la",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khardung-la.mp4"
+    },
+    {
+      "timestamp": "2026-07-21T15:58:43.365772+00:00",
+      "date": "2026-07-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "yIgBj",
+      "destination": "khardung-la",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khardung-la.mp4"
     }
   ],
   "theme_usage": {
@@ -6047,7 +6073,8 @@
         "2026-06-23",
         "2026-06-26",
         "2026-07-02",
-        "2026-07-17"
+        "2026-07-17",
+        "2026-07-21"
       ],
       "gopeshwar": [
         "2026-05-26",
@@ -6125,7 +6152,8 @@
         "2026-06-16",
         "2026-06-17",
         "2026-06-30",
-        "2026-07-10"
+        "2026-07-10",
+        "2026-07-21"
       ],
       "ukhrul": [
         "2026-06-03",
@@ -6239,7 +6267,8 @@
         "2026-07-01",
         "2026-07-05",
         "2026-07-17",
-        "2026-07-19"
+        "2026-07-19",
+        "2026-07-21"
       ],
       "bhimashankar": [
         "2026-07-01",
@@ -6249,7 +6278,8 @@
       "khardung-la": [
         "2026-07-01",
         "2026-07-06",
-        "2026-07-17"
+        "2026-07-17",
+        "2026-07-21"
       ],
       "khandala": [
         "2026-07-04",
@@ -6266,7 +6296,8 @@
       "zanskar": [
         "2026-07-09",
         "2026-07-12",
-        "2026-07-16"
+        "2026-07-16",
+        "2026-07-21"
       ],
       "lamayuru": [
         "2026-07-09"
@@ -6400,7 +6431,8 @@
         "2026-07-17",
         "2026-07-18",
         "2026-07-19",
-        "2026-07-20"
+        "2026-07-20",
+        "2026-07-21"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6628,7 +6660,8 @@
         "2026-07-19"
       ],
       "khardung-la": [
-        "2026-07-06"
+        "2026-07-06",
+        "2026-07-21"
       ],
       "tso-moriri": [
         "2026-07-07"
@@ -6700,7 +6733,8 @@
         "2026-07-07"
       ],
       "adrenaline-rush": [
-        "2026-05-26"
+        "2026-05-26",
+        "2026-07-21"
       ],
       "ayurveda-wellness": [
         "2026-05-27"
@@ -6844,6 +6878,18 @@
       ],
       "bir-billing": [
         "2026-05-26"
+      ],
+      "pangong-lake": [
+        "2026-07-21"
+      ],
+      "leh": [
+        "2026-07-21"
+      ],
+      "kolad": [
+        "2026-07-21"
+      ],
+      "zanskar": [
+        "2026-07-21"
       ]
     },
     "collection_carousel_dests:best-motorcycle-routes": {
@@ -6943,8 +6989,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurez-valley",
-    "collection": "best-winter"
+    "shared_best": "lonavala",
+    "collection": "adrenaline-rush"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-17",
