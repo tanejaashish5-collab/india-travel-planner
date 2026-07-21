@@ -9,7 +9,7 @@ const url = parse('NEXT_PUBLIC_SUPABASE_URL');
 const key = parse('SUPABASE_SERVICE_ROLE_KEY');
 const sb = createClient(url, key);
 
-const note = 'weekly 2026-06-01';
+const note = 'weekly 2026-07-20';
 const perplexityCheckedIds = [
   'btv-spiti-june','btv-ladakh-july','btv-kerala-monsoon','btv-rajasthan-summer',
   'btv-goa-december','btv-kashmir-april','btv-sikkim-october','btv-tawang-when',
@@ -19,7 +19,7 @@ const aioCheckedIds = [
   'btv-spiti-june','btv-ladakh-july','btv-kerala-monsoon','btv-rajasthan-summer',
   'btv-goa-december','btv-kashmir-april','btv-sikkim-october','btv-tawang-when',
   'btv-hampi-weather','btv-andaman-season','btv-rann-kutch','btv-varanasi-winter',
-  'btv-pondicherry','btv-coorg-august','btv-mahabalipuram','btv-hornbill-festival'
+  'btv-hampi-may','btv-pondicherry','btv-coorg-august','btv-mahabalipuram','btv-hornbill-festival'
 ];
 // all cited=false this run
 const rows = [];
