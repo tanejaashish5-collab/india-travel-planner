@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-20",
@@ -41,31 +41,11 @@
     "PdMu0_evening": "2026-07-20",
     "m8EAd_carousel": "2026-07-20",
     "PdMu0_carousel": "2026-07-20",
-    "GAh5p_yt_short": "2026-07-20",
+    "GAh5p_yt_short": "2026-07-21",
     "m8EAd_yt_short": "2026-07-20"
   },
   "last_sync": "2026-07-20T17:16:55.186372+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kargil",
-      "date": "2026-07-06"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-07-06"
-    },
-    {
-      "destination_id": "lamayuru",
-      "date": "2026-07-06"
-    },
-    {
-      "destination_id": "keylong",
-      "date": "2026-07-06"
-    },
-    {
-      "destination_id": "khardung-la",
-      "date": "2026-07-06"
-    },
     {
       "destination_id": "hanle",
       "date": "2026-07-07"
@@ -305,6 +285,10 @@
     {
       "destination_id": "kargil",
       "date": "2026-07-20"
+    },
+    {
+      "destination_id": "mudumalai",
+      "date": "2026-07-21"
     }
   ],
   "posted_formats": {
@@ -5856,6 +5840,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "kargil.mp4"
+    },
+    {
+      "timestamp": "2026-07-21T06:47:05.534939+00:00",
+      "date": "2026-07-21",
+      "platform": "youtube",
+      "post_id": "rtyC4",
+      "destination": "mudumalai",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mudumalai_hi_2026-07-21.mp4"
+    },
+    {
+      "timestamp": "2026-07-21T06:47:55.941611+00:00",
+      "date": "2026-07-21",
+      "platform": "instagram",
+      "post_id": "uVtwE",
+      "destination": "mudumalai",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mudumalai_hi_2026-07-21.mp4"
     }
   ],
   "theme_usage": {
