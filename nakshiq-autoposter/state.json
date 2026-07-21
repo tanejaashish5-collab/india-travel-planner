@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-20",
@@ -42,7 +42,7 @@
     "m8EAd_carousel": "2026-07-21",
     "PdMu0_carousel": "2026-07-21",
     "GAh5p_yt_short": "2026-07-21",
-    "m8EAd_yt_short": "2026-07-20"
+    "m8EAd_yt_short": "2026-07-21"
   },
   "last_sync": "2026-07-20T17:16:55.186372+00:00",
   "posted_destinations": [
@@ -292,6 +292,10 @@
     },
     {
       "destination_id": "ahmedabad",
+      "date": "2026-07-21"
+    },
+    {
+      "destination_id": "statue-of-unity",
       "date": "2026-07-21"
     }
   ],
@@ -5880,6 +5884,24 @@
       "destination": "ahmedabad",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-07-21"
+    },
+    {
+      "timestamp": "2026-07-21T13:09:55.235290+00:00",
+      "date": "2026-07-21",
+      "platform": "youtube",
+      "post_id": "g7aCx",
+      "destination": "statue-of-unity",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_statue-of-unity_hi_2026-07-21.mp4"
+    },
+    {
+      "timestamp": "2026-07-21T13:10:28.174971+00:00",
+      "date": "2026-07-21",
+      "platform": "instagram",
+      "post_id": "OEVMv",
+      "destination": "statue-of-unity",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_statue-of-unity_hi_2026-07-21.mp4"
     }
   ],
   "theme_usage": {
