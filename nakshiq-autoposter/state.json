@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-20",
     "m8EAd_evening": "2026-07-20",
     "PdMu0_evening": "2026-07-20",
-    "m8EAd_carousel": "2026-07-20",
-    "PdMu0_carousel": "2026-07-20",
+    "m8EAd_carousel": "2026-07-21",
+    "PdMu0_carousel": "2026-07-21",
     "GAh5p_yt_short": "2026-07-21",
     "m8EAd_yt_short": "2026-07-20"
   },
@@ -288,6 +288,10 @@
     },
     {
       "destination_id": "mudumalai",
+      "date": "2026-07-21"
+    },
+    {
+      "destination_id": "ahmedabad",
       "date": "2026-07-21"
     }
   ],
@@ -5858,6 +5862,24 @@
       "destination": "mudumalai",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mudumalai_hi_2026-07-21.mp4"
+    },
+    {
+      "timestamp": "2026-07-21T09:44:45.321833+00:00",
+      "date": "2026-07-21",
+      "platform": "instagram",
+      "post_id": "Q8awy",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-21"
+    },
+    {
+      "timestamp": "2026-07-21T09:44:47.319014+00:00",
+      "date": "2026-07-21",
+      "platform": "facebook",
+      "post_id": "lvLhK",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-21"
     }
   ],
   "theme_usage": {
