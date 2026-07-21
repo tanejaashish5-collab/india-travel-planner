@@ -46,6 +46,8 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 - [[jason-lemkin]] — SaaStr; 20-agent fleet receipts, orchestration-as-headcount economics, enterprise-agent pricing gap
 - [[brian-casel]] — solo bootstrapper; agent-in-a-box template+install+retainer model, night-shift pattern
 - [[aishwarya-srinivasan]] — AI educator, skip-class channel (9th lead-magnet machine); 2 exception reads banked: a16z Acharya (happy-or-sad test, earned secrets, embarrassing-ideas) + FDE market frame (MIT 95%, judgment-is-the-job)
+- [[matt-paige]] — AI-educator for non-devs (42K IG); 10th lead-magnet machine, skip-class for ideas / steal-class for mechanics (comment-gate + series numbering + <24h news-jack); validates JobAgent, loops, model-routing
+- [[nate-b-jones]] — AI-strategy analyst-operator (ex-Amazon product, 3 exits claimed); sharpest on SELLING AI services: outcome-selling, server-on-the-table, 480V line, token-distribution diagnostic; per-episode reads only; 11th lead-magnet machine
 
 ## Tools
 
@@ -56,7 +58,7 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 
 ## Sources (terse, one per ingested doc)
 
-Creator studies: [[src-vaibhav-channel-audit]] · [[src-vaibhav-tools-inventory]] · [[src-vyan-gandhi-findings]] · [[src-doac-jay-research]] · [[src-doac-jay-opportunities]] · [[src-mastersunion-scan]] · [[src-naval-learnings]] · [[src-operators-playbook]] · [[src-ashwin-damera]] · [[src-basesh-gala-scout]] · [[src-nick-screen-watcher]] · [[src-nick-25-websites]] · [[src-nick-justin-lob-20k]] · [[src-nick-agent-workflow-2027]] · [[src-nate-herk-200k-inhouse-ai-job]] · [[src-ganim-ai-assessment]] · [[src-lenny-deep-scrape]] · [[src-aishwarya-a16z-fde]]
+Creator studies: [[src-vaibhav-channel-audit]] · [[src-vaibhav-tools-inventory]] · [[src-vyan-gandhi-findings]] · [[src-doac-jay-research]] · [[src-doac-jay-opportunities]] · [[src-mastersunion-scan]] · [[src-naval-learnings]] · [[src-operators-playbook]] · [[src-ashwin-damera]] · [[src-basesh-gala-scout]] · [[src-nick-screen-watcher]] · [[src-nick-25-websites]] · [[src-nick-justin-lob-20k]] · [[src-nick-agent-workflow-2027]] · [[src-nate-herk-200k-inhouse-ai-job]] · [[src-ganim-ai-assessment]] · [[src-lenny-deep-scrape]] · [[src-aishwarya-a16z-fde]] · [[src-nate-b-jones-selling-ai]]
 Opportunity scouts: [[src-basesh-9industries]] · [[src-wide-opportunity-scout]] · [[src-passion-fit-ideas]] · [[src-opportunities-ledger-doc]] · [[src-fable5-scan]] · [[src-medical-equipment-r1]] · [[src-medical-equipment-r2]] · [[src-next-step-business]] · [[src-pursue-refill-2026-07-12]] · [[src-aristotle-first-principles-run]] · [[src-private-premise-inversion]] · [[src-fresh-eyes-scan-2026-07-14]]
 Frameworks/system: [[src-ratan-tata-gate]] · [[src-strategist-checklist]] · [[src-opportunity-brain]] · [[src-founder-profile]] · [[src-karpathy-llm-wiki]]
 Content/monetisation ops: [[src-content-radar]] · [[src-content-engine-gaps]] · [[src-claude-code-money-gold]] · [[src-reach-diagnosis]] · [[src-monetisation-spec]] · [[src-nate-herk-fable-mode]] · [[src-roman-knox-audit]] · [[src-nate-one-prompt-company]] · [[src-claude-channel-audit]] · [[src-fable-parity-stack-2026-07-14]]

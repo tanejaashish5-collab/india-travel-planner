@@ -1,7 +1,7 @@
 ---
 type: pattern
 sources: [data/research/VAIBHAV-SISINTY-CHANNEL-AUDIT-2026-06-30.md]
-updated: 2026-07-07
+updated: 2026-07-21
 ---
 
 # Owned-audience funnel
@@ -14,6 +14,10 @@ updated: 2026-07-07
 - Every IG post — including personal/lifestyle — ends with the identical CTA: "I share updates like these in my free WhatsApp community. Link in bio."
 - "Comment 'X' and I'll DM you" posts (7/96 in sample) convert algorithm engagement into DM-list leads.
 - The owned layer (1M+ WhatsApp) then feeds B2B training, speaking, courses.
+
+## 10th data point ([[matt-paige]], ingested 2026-07-21)
+- 42K-follower IG where **nearly every post is comment-gated** ("Comment HIRED/LOOP/FABLE…") into DM → Substack; series numbering ("Day 6 of 30 Claude Skills") manufactures return visits; <24h news-jacking cadence; own micro-product (PromptSocial) as proof-of-work.
+- Directly transferable to us: NakshIQ's new editorial carousels (live 2026-07-20) have save-CTAs but **no comment keyword + no DM automation** — the missing conversion layer. Founder-gated: ManyChat (~US$15–25/mo) vs manual DMs, and ONE data-native magnet (e.g. "Comment MONSOON → July go/wait/skip PDF").
 
 ## Status for us (as of 2026-07-01 audit)
 
