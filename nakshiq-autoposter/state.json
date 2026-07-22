@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-21",
@@ -41,27 +41,11 @@
     "PdMu0_evening": "2026-07-21",
     "m8EAd_carousel": "2026-07-21",
     "PdMu0_carousel": "2026-07-21",
-    "GAh5p_yt_short": "2026-07-21",
-    "m8EAd_yt_short": "2026-07-21"
+    "GAh5p_yt_short": "2026-07-22",
+    "m8EAd_yt_short": "2026-07-22"
   },
   "last_sync": "2026-07-21T15:57:18.599575+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hanle",
-      "date": "2026-07-07"
-    },
-    {
-      "destination_id": "lonavala",
-      "date": "2026-07-07"
-    },
-    {
-      "destination_id": "sinthan-top",
-      "date": "2026-07-07"
-    },
-    {
-      "destination_id": "tso-moriri",
-      "date": "2026-07-07"
-    },
     {
       "destination_id": "spiti-valley",
       "date": "2026-07-08"
@@ -301,6 +285,10 @@
     {
       "destination_id": "khardung-la",
       "date": "2026-07-21"
+    },
+    {
+      "destination_id": "dungarpur",
+      "date": "2026-07-22"
     }
   ],
   "posted_formats": {
@@ -5928,6 +5916,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "khardung-la.mp4"
+    },
+    {
+      "timestamp": "2026-07-22T06:47:21.044431+00:00",
+      "date": "2026-07-22",
+      "platform": "youtube",
+      "post_id": "xPcq8",
+      "destination": "dungarpur",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_dungarpur_hi_2026-07-22.mp4"
+    },
+    {
+      "timestamp": "2026-07-22T06:48:02.128839+00:00",
+      "date": "2026-07-22",
+      "platform": "instagram",
+      "post_id": "EbSpA",
+      "destination": "dungarpur",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_dungarpur_hi_2026-07-22.mp4"
     }
   ],
   "theme_usage": {
