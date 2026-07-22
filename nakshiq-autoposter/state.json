@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-21",
@@ -292,6 +292,10 @@
     },
     {
       "destination_id": "lonavala",
+      "date": "2026-07-22"
+    },
+    {
+      "destination_id": "doodhpathri",
       "date": "2026-07-22"
     }
   ],
@@ -5956,6 +5960,24 @@
       "destination": "lonavala",
       "format": "carousel.best_month",
       "media_id": "carousel_best_month_2026-07-22"
+    },
+    {
+      "timestamp": "2026-07-22T13:14:55.232979+00:00",
+      "date": "2026-07-22",
+      "platform": "youtube",
+      "post_id": "80g9I",
+      "destination": "doodhpathri",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_doodhpathri_hi_2026-07-22.mp4"
+    },
+    {
+      "timestamp": "2026-07-22T13:15:45.194504+00:00",
+      "date": "2026-07-22",
+      "platform": "instagram",
+      "post_id": "efI2r",
+      "destination": "doodhpathri",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_doodhpathri_hi_2026-07-22.mp4"
     }
   ],
   "theme_usage": {
