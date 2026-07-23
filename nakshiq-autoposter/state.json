@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-22",
-    "PdMu0": "2026-07-22",
-    "m8EAd_evening": "2026-07-22",
-    "PdMu0_evening": "2026-07-22",
+    "m8EAd": "2026-07-23",
+    "PdMu0": "2026-07-23",
+    "m8EAd_evening": "2026-07-23",
+    "PdMu0_evening": "2026-07-23",
     "m8EAd_carousel": "2026-07-23",
     "PdMu0_carousel": "2026-07-23",
     "GAh5p_yt_short": "2026-07-23",
     "m8EAd_yt_short": "2026-07-23"
   },
-  "last_sync": "2026-07-22T17:10:11.763447+00:00",
+  "last_sync": "2026-07-23T17:12:48.492292+00:00",
   "posted_destinations": [
     {
       "destination_id": "lolab-valley",
@@ -293,13 +293,17 @@
     {
       "destination_id": "bharatpur",
       "date": "2026-07-23"
+    },
+    {
+      "destination_id": "tso-moriri",
+      "date": "2026-07-23"
     }
   ],
   "posted_formats": {
     "m8EAd": [
       "score_card",
-      "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -321,8 +325,8 @@
     ],
     "PdMu0": [
       "score_card",
-      "score_card",
       "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -6050,6 +6054,28 @@
       "destination": "bharatpur",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_bharatpur_hi_2026-07-23.mp4"
+    },
+    {
+      "timestamp": "2026-07-23T17:14:01.589405+00:00",
+      "date": "2026-07-23",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "CauoF",
+      "destination": "tso-moriri",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tso-moriri.mp4"
+    },
+    {
+      "timestamp": "2026-07-23T17:14:30.918420+00:00",
+      "date": "2026-07-23",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "9rjKQ",
+      "destination": "tso-moriri",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tso-moriri.mp4"
     }
   ],
   "theme_usage": {
@@ -6410,7 +6436,8 @@
       ],
       "tso-moriri": [
         "2026-07-07",
-        "2026-07-17"
+        "2026-07-17",
+        "2026-07-23"
       ],
       "igatpuri": [
         "2026-07-09",
@@ -6556,7 +6583,8 @@
         "2026-07-19",
         "2026-07-20",
         "2026-07-21",
-        "2026-07-22"
+        "2026-07-22",
+        "2026-07-23"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6788,7 +6816,8 @@
         "2026-07-21"
       ],
       "tso-moriri": [
-        "2026-07-07"
+        "2026-07-07",
+        "2026-07-23"
       ],
       "zanskar": [
         "2026-07-12"
@@ -6864,7 +6893,8 @@
         "2026-07-21"
       ],
       "ayurveda-wellness": [
-        "2026-05-27"
+        "2026-05-27",
+        "2026-07-23"
       ],
       "dwadasa-jyotirlinga": [
         "2026-05-28"
@@ -7102,7 +7132,8 @@
       "zanskar": [
         "2026-07-16"
       ]
-    }
+    },
+    "collection_carousel_dests:ayurveda-wellness": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -7116,8 +7147,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurez-valley",
-    "collection": "adrenaline-rush"
+    "shared_best": "courtallam",
+    "collection": "ayurveda-wellness"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-17",

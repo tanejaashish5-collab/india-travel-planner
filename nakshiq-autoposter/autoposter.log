@@ -13532,3 +13532,51 @@ Date range: 2026-04-15 → 2026-07-22
 2026-07-23 13:19:20  INFO      YT Short posted: format=this_vs_that, music=fast-679
 2026-07-23 13:19:21  INFO      State saved. YT Short run complete.
 2026-07-23 13:19:21  INFO      ════════════════════════════════════════════════════════════
+2026-07-23 17:12:14  INFO      ════════════════════════════════════════════════════════════
+2026-07-23 17:12:14  INFO      Nakshiq Autoposter · EVENING · 2026-07-23 · weekday=3
+2026-07-23 17:12:14  INFO      ════════════════════════════════════════════════════════════
+2026-07-23 17:12:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-23 17:12:48  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-23 17:12:48  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-07-23 17:12:49  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-23 17:12:49  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-07-23 17:12:49  INFO      Festivals filtered (past/post-window): Harela Festival, Amarnath Yatra Start, Chamba Minjar Fair, Pangong Nomad Festival, Karsha Gustor, Korzok Gustor, Lucknow Muharram Processions, Kanwar Yatra (+12 more)
+2026-07-23 17:12:49  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-23 17:13:03  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-07-23 17:13:03  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-07-23 17:13:03  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: collection_spotlight
+2026-07-23 17:13:03  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 69
+2026-07-23 17:13:03  INFO      Fingerprint dedup snapshot — 69 dests in 7d · 107 (dest,fmt) pairs in 30d · 262 media in 60d
+2026-07-23 17:13:03  INFO      Collection locked: Ayurveda & Wellness Trail — Kerala's Healing Heritage (0/20 never featured)
+2026-07-23 17:13:07  INFO      Shared best destination locked: Courtallam (Kutralam)
+2026-07-23 17:13:07  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-07-23 17:13:07  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-07-23 17:13:07  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-07-23 17:13:07  INFO      confidence_intel for Courtallam (Kutralam): only 0 card rows — SKIPPING
+2026-07-23 17:13:07  WARNING   [instagram/nakshiq] confidence_intel: courtallam inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'tso-moriri' as score_card to keep the slot live.
+2026-07-23 17:13:07  INFO      [instagram/nakshiq] Caption ready (407 chars, dest=tso-moriri)
+2026-07-23 17:13:08  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-23 17:13:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tso-moriri.mp4?v=20260524
+2026-07-23 17:13:09  INFO          Brand-stamp applied: tso-moriri.mp4 (3,715,209 → 1,721,232 bytes)
+2026-07-23 17:13:09  INFO          Requesting upload URL for tso-moriri.mp4 (1,721,232 bytes, video/mp4)
+2026-07-23 17:13:10  INFO          Uploading to R2 (timeout=300s)...
+2026-07-23 17:13:11  INFO          R2 PUT OK. Confirming...
+2026-07-23 17:13:12  INFO          Media ready: BA3Mn (1,721,232 bytes · tso-moriri.mp4)
+2026-07-23 17:13:12  INFO      [instagram/nakshiq] Publishing Reel...
+2026-07-23 17:14:01  INFO          wait_for_publish exhausted 8 polls for post=CauoF (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-07-23 17:14:01  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=CauoF)
+2026-07-23 17:14:01  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-07-23 17:14:01  INFO      confidence_intel for Courtallam (Kutralam): only 0 card rows — SKIPPING
+2026-07-23 17:14:01  WARNING   [facebook/Nakshiq] confidence_intel: courtallam inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'tso-moriri' as score_card to keep the slot live.
+2026-07-23 17:14:01  INFO      [facebook/Nakshiq] Caption ready (592 chars, dest=tso-moriri)
+2026-07-23 17:14:01  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-07-23 17:14:01  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tso-moriri.mp4?v=20260524
+2026-07-23 17:14:03  INFO          Brand-stamp applied: tso-moriri.mp4 (3,715,209 → 1,721,232 bytes)
+2026-07-23 17:14:03  INFO          Requesting upload URL for tso-moriri.mp4 (1,721,232 bytes, video/mp4)
+2026-07-23 17:14:04  INFO          Uploading to R2 (timeout=300s)...
+2026-07-23 17:14:04  INFO          R2 PUT OK. Confirming...
+2026-07-23 17:14:05  INFO          Media ready: xGKZ8 (1,721,232 bytes · tso-moriri.mp4)
+2026-07-23 17:14:05  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-07-23 17:14:30  INFO      [facebook/Nakshiq] ✅ Published · Outstand=9rjKQ · Platform=1571719697886738
+2026-07-23 17:14:30  INFO      State saved. Run complete.
+2026-07-23 17:14:30  INFO      ════════════════════════════════════════════════════════════
