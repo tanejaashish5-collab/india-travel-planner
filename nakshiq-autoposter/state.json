@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-22",
@@ -288,6 +288,10 @@
     },
     {
       "destination_id": "dhanaulti",
+      "date": "2026-07-23"
+    },
+    {
+      "destination_id": "bharatpur",
       "date": "2026-07-23"
     }
   ],
@@ -6028,6 +6032,24 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-07-23"
+    },
+    {
+      "timestamp": "2026-07-23T13:18:32.117822+00:00",
+      "date": "2026-07-23",
+      "platform": "youtube",
+      "post_id": "QrxZy",
+      "destination": "bharatpur",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_bharatpur_hi_2026-07-23.mp4"
+    },
+    {
+      "timestamp": "2026-07-23T13:19:20.996346+00:00",
+      "date": "2026-07-23",
+      "platform": "instagram",
+      "post_id": "rOqM4",
+      "destination": "bharatpur",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_bharatpur_hi_2026-07-23.mp4"
     }
   ],
   "theme_usage": {
