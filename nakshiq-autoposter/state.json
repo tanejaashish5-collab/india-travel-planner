@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-22",
     "m8EAd_evening": "2026-07-22",
     "PdMu0_evening": "2026-07-22",
-    "m8EAd_carousel": "2026-07-22",
-    "PdMu0_carousel": "2026-07-22",
+    "m8EAd_carousel": "2026-07-23",
+    "PdMu0_carousel": "2026-07-23",
     "GAh5p_yt_short": "2026-07-23",
     "m8EAd_yt_short": "2026-07-23"
   },
@@ -284,6 +284,10 @@
     },
     {
       "destination_id": "bhaderwah",
+      "date": "2026-07-23"
+    },
+    {
+      "destination_id": "dhanaulti",
       "date": "2026-07-23"
     }
   ],
@@ -6006,6 +6010,24 @@
       "destination": "bhaderwah",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_bhaderwah_hi_2026-07-23.mp4"
+    },
+    {
+      "timestamp": "2026-07-23T09:42:37.080924+00:00",
+      "date": "2026-07-23",
+      "platform": "instagram",
+      "post_id": "NRnAa",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-07-23"
+    },
+    {
+      "timestamp": "2026-07-23T09:42:40.207350+00:00",
+      "date": "2026-07-23",
+      "platform": "facebook",
+      "post_id": "8tbjI",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-07-23"
     }
   ],
   "theme_usage": {
