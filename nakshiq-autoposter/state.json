@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-22",
@@ -41,31 +41,11 @@
     "PdMu0_evening": "2026-07-22",
     "m8EAd_carousel": "2026-07-22",
     "PdMu0_carousel": "2026-07-22",
-    "GAh5p_yt_short": "2026-07-22",
-    "m8EAd_yt_short": "2026-07-22"
+    "GAh5p_yt_short": "2026-07-23",
+    "m8EAd_yt_short": "2026-07-23"
   },
   "last_sync": "2026-07-22T17:10:11.763447+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "spiti-valley",
-      "date": "2026-07-08"
-    },
-    {
-      "destination_id": "manali",
-      "date": "2026-07-08"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-07-08"
-    },
-    {
-      "destination_id": "pune",
-      "date": "2026-07-08"
-    },
-    {
-      "destination_id": "gurez-valley",
-      "date": "2026-07-08"
-    },
     {
       "destination_id": "lolab-valley",
       "date": "2026-07-09"
@@ -301,6 +281,10 @@
     {
       "destination_id": "keylong",
       "date": "2026-07-22"
+    },
+    {
+      "destination_id": "bhaderwah",
+      "date": "2026-07-23"
     }
   ],
   "posted_formats": {
@@ -6004,6 +5988,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "keylong.mp4"
+    },
+    {
+      "timestamp": "2026-07-23T06:45:11.820442+00:00",
+      "date": "2026-07-23",
+      "platform": "youtube",
+      "post_id": "y4puj",
+      "destination": "bhaderwah",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_bhaderwah_hi_2026-07-23.mp4"
+    },
+    {
+      "timestamp": "2026-07-23T06:45:55.938101+00:00",
+      "date": "2026-07-23",
+      "platform": "instagram",
+      "post_id": "SnFPJ",
+      "destination": "bhaderwah",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_bhaderwah_hi_2026-07-23.mp4"
     }
   ],
   "theme_usage": {
