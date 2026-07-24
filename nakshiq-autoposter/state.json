@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-23",
     "PdMu0": "2026-07-23",
@@ -284,6 +284,10 @@
     },
     {
       "destination_id": "lamayuru",
+      "date": "2026-07-24"
+    },
+    {
+      "destination_id": "konark",
       "date": "2026-07-24"
     }
   ],
@@ -6100,6 +6104,24 @@
       "destination": "lamayuru",
       "format": "carousel.persona",
       "media_id": "carousel_persona_2026-07-24"
+    },
+    {
+      "timestamp": "2026-07-24T13:11:34.132846+00:00",
+      "date": "2026-07-24",
+      "platform": "youtube",
+      "post_id": "IdFSX",
+      "destination": "konark",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_konark_hi_2026-07-24.mp4"
+    },
+    {
+      "timestamp": "2026-07-24T13:12:25.342324+00:00",
+      "date": "2026-07-24",
+      "platform": "instagram",
+      "post_id": "Z1Ygu",
+      "destination": "konark",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_konark_hi_2026-07-24.mp4"
     }
   ],
   "theme_usage": {
