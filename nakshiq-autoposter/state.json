@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-24",
-    "PdMu0": "2026-07-24",
-    "m8EAd_evening": "2026-07-24",
-    "PdMu0_evening": "2026-07-24",
+    "m8EAd": "2026-07-25",
+    "PdMu0": "2026-07-25",
+    "m8EAd_evening": "2026-07-25",
+    "PdMu0_evening": "2026-07-25",
     "m8EAd_carousel": "2026-07-25",
     "PdMu0_carousel": "2026-07-25",
     "GAh5p_yt_short": "2026-07-25",
     "m8EAd_yt_short": "2026-07-25"
   },
-  "last_sync": "2026-07-24T15:47:59.111105+00:00",
+  "last_sync": "2026-07-25T15:23:37.743453+00:00",
   "posted_destinations": [
     {
       "destination_id": "tosamaidan",
@@ -285,11 +285,15 @@
     {
       "destination_id": "deeg",
       "date": "2026-07-25"
+    },
+    {
+      "destination_id": "courtallam",
+      "date": "2026-07-25"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -312,7 +316,7 @@
       "score_card"
     ],
     "PdMu0": [
-      "v2_myth_bust_oneline",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -6194,6 +6198,28 @@
       "destination": "deeg",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_deeg_en_2026-07-25.mp4"
+    },
+    {
+      "timestamp": "2026-07-25T15:24:45.749794+00:00",
+      "date": "2026-07-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "cHvTL",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-07-25T15:25:06.977989+00:00",
+      "date": "2026-07-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "VDxZN",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
     }
   ],
   "theme_usage": {
@@ -6465,7 +6491,8 @@
         "2026-06-07",
         "2026-06-12",
         "2026-06-28",
-        "2026-07-09"
+        "2026-07-09",
+        "2026-07-25"
       ],
       "coorg": [
         "2026-06-05"
@@ -6502,7 +6529,8 @@
       ],
       "lonavala": [
         "2026-06-12",
-        "2026-07-09"
+        "2026-07-09",
+        "2026-07-25"
       ],
       "haridwar": [
         "2026-06-15"
@@ -6524,12 +6552,14 @@
       ],
       "hogenakkal": [
         "2026-07-01",
-        "2026-07-13"
+        "2026-07-13",
+        "2026-07-25"
       ],
       "jog-falls": [
         "2026-07-01",
         "2026-07-02",
-        "2026-07-14"
+        "2026-07-14",
+        "2026-07-25"
       ],
       "kolad": [
         "2026-07-01",
@@ -6573,7 +6603,8 @@
       ],
       "amboli": [
         "2026-07-09",
-        "2026-07-16"
+        "2026-07-16",
+        "2026-07-25"
       ]
     },
     "morning_formats": {
@@ -6704,7 +6735,8 @@
         "2026-07-21",
         "2026-07-22",
         "2026-07-23",
-        "2026-07-24"
+        "2026-07-24",
+        "2026-07-25"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6881,7 +6913,8 @@
       ],
       "courtallam": [
         "2026-06-12",
-        "2026-07-09"
+        "2026-07-09",
+        "2026-07-25"
       ],
       "pahalgam": [
         "2026-06-14"
@@ -6974,7 +7007,8 @@
         "2026-06-27",
         "2026-07-04",
         "2026-07-11",
-        "2026-07-18"
+        "2026-07-18",
+        "2026-07-25"
       ],
       "adventurers": [
         "2026-05-29",
@@ -7254,7 +7288,8 @@
       "zanskar": [
         "2026-07-16"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -7268,11 +7303,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurez-valley",
+    "shared_best": "lonavala",
     "collection": "ayurveda-wellness"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-07-17",
+  "data_carousel_floor_last": "2026-07-25",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-07-01",
     "ladakh-manali-biker": "2026-07-03",
