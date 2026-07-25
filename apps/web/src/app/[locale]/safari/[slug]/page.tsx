@@ -42,7 +42,7 @@ type DestRow = {
   id: string;
   name: string;
   tagline: string | null;
-  state: { name?: string }[] | { name?: string } | null;
+  state: { id?: string; name?: string }[] | { id?: string; name?: string } | null;
   translations?: { hi?: { name?: string } } | null;
 };
 
@@ -55,7 +55,7 @@ async function getParkSafari(
   const [{ data: dest }, { data: safari }] = await Promise.all([
     supabase
       .from("destinations")
-      .select("id, name, tagline, translations, state:states(name)")
+      .select("id, name, tagline, translations, state:states(id, name)")
       .eq("id", slug)
       .maybeSingle(),
     supabase
@@ -72,6 +72,9 @@ async function getParkSafari(
 
 function stateNameOf(dest: DestRow): string {
   return (Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name) ?? "";
+}
+function stateSlugOf(dest: DestRow): string {
+  return (Array.isArray(dest.state) ? dest.state[0]?.id : dest.state?.id) ?? "";
 }
 
 function localizedName(dest: DestRow, locale: string): string {
@@ -201,8 +204,13 @@ export default async function SafariPage({
         ]
   ).filter(Boolean) as { question: string; answer: string }[];
 
+  const stateSlug = stateSlugOf(data.dest);
   const breadcrumbLd = breadcrumbSchema(locale, [
-    { name: isHindi ? `${stateName} सफ़ारी` : `${stateName} wildlife`, path: `/state/${data.dest.id}` },
+    // Only emit the state crumb when we have the real state slug — never fall back to
+    // the destination id, which produces a crawlable /state/<dest> URL that 404s (GSC 07-13→07-25).
+    ...(stateSlug
+      ? [{ name: isHindi ? `${stateName} सफ़ारी` : `${stateName} wildlife`, path: `/state/${stateSlug}` }]
+      : []),
     { name, path: `/safari/${slug}` },
   ]);
   const faqLd = faqPageSchema({ locale, path: `/safari/${slug}`, qa: faq });
