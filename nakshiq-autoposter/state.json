@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-24",
@@ -41,31 +41,11 @@
     "PdMu0_evening": "2026-07-24",
     "m8EAd_carousel": "2026-07-24",
     "PdMu0_carousel": "2026-07-24",
-    "GAh5p_yt_short": "2026-07-24",
+    "GAh5p_yt_short": "2026-07-25",
     "m8EAd_yt_short": "2026-07-24"
   },
   "last_sync": "2026-07-24T15:47:59.111105+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kaza",
-      "date": "2026-07-10"
-    },
-    {
-      "destination_id": "sarahan",
-      "date": "2026-07-10"
-    },
-    {
-      "destination_id": "somnath",
-      "date": "2026-07-10"
-    },
-    {
-      "destination_id": "halebidu",
-      "date": "2026-07-10"
-    },
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-07-10"
-    },
     {
       "destination_id": "tosamaidan",
       "date": "2026-07-11"
@@ -293,6 +273,10 @@
     {
       "destination_id": "gurez-valley",
       "date": "2026-07-24"
+    },
+    {
+      "destination_id": "ambaji",
+      "date": "2026-07-25"
     }
   ],
   "posted_formats": {
@@ -6148,6 +6132,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "gurez-valley.mp4"
+    },
+    {
+      "timestamp": "2026-07-25T06:33:48.110263+00:00",
+      "date": "2026-07-25",
+      "platform": "youtube",
+      "post_id": "jlBj2",
+      "destination": "ambaji",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_ambaji_en_2026-07-25.mp4"
+    },
+    {
+      "timestamp": "2026-07-25T06:34:34.600650+00:00",
+      "date": "2026-07-25",
+      "platform": "instagram",
+      "post_id": "egvir",
+      "destination": "ambaji",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_ambaji_en_2026-07-25.mp4"
     }
   ],
   "theme_usage": {
