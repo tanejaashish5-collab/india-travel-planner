@@ -186,6 +186,37 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/state/${stateId}`, request.url), 301);
   }
 
+  // GSC 404 cleanup 2026-07-23 — inverse of the two rules above:
+  // /(en|hi)/state/{slug} where {slug} is a known DESTINATION, not a state.
+  // `wayanad` (a Kerala destination) sits indexed by Google at /en/state/wayanad
+  // with no matching route → the /state/[stateSlug] page notFound()s (STATE_MAP
+  // miss), serving a hard 404 to inbound links. Flagged in the 2026-07-20 GSC
+  // audit ("/state/<destination-name> routing/internal-link mismatch") and still
+  // 404-ing in prod. There is no `states` row for these slugs and no destination
+  // carries state_id={slug}, so nothing internal generates them — they're
+  // legacy/constructed inbound URLs. 301 the whole class to the real destination
+  // page to recover the equity. STATE_MAP is the authoritative state-slug set
+  // (verified identical to the states table, 36 entries), so
+  // STATE_MAP[slug] === undefined reliably means "not a state"; the
+  // KNOWN_DESTINATION_SLUGS gate keeps this to real destinations. The
+  // STATE_AND_DESTINATION slugs (delhi/chandigarh/puducherry) ARE in STATE_MAP,
+  // so they never reach this branch and keep rendering their state page.
+  // Optional locale prefix so a bare /state/{slug} resolves in one hop (no
+  // 307→/en→/destination 2-hop chain, which Google logs as a Redirect error).
+  const stateAsDestMatch = request.nextUrl.pathname.match(
+    /^(?:\/(en|hi))?\/state\/([^/]+)\/?$/,
+  );
+  if (stateAsDestMatch) {
+    const locale = stateAsDestMatch[1] ?? "en";
+    const slug = stateAsDestMatch[2];
+    if (STATE_MAP[slug] === undefined && KNOWN_DESTINATION_SLUGS.has(slug)) {
+      return NextResponse.redirect(
+        new URL(`/${locale}/destination/${slug}`, request.url),
+        301,
+      );
+    }
+  }
+
   // /region/{stateSlug} → /{locale}/state/{stateSlug}. The /region/ route was
   // the legacy path before /state/ became canonical; some states (kerala,
   // tamil-nadu) never had a flat region row so /region/kerala 404s while

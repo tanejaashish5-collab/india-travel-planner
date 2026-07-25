@@ -33,6 +33,15 @@ test.describe("Destination Detail", () => {
     expect(isRedirected || isValidPage).toBeTruthy();
   });
 
+  test("destination-as-state redirect works (/state/wayanad → /destination/wayanad)", async ({ page }) => {
+    // wayanad is a Kerala destination, not a state; /state/wayanad had no route
+    // and served a hard 404 to inbound links (GSC audit 2026-07-20). Middleware
+    // now 301s the /state/<known-destination> class to the real destination page.
+    const response = await page.goto("/en/state/wayanad");
+    expect(page.url()).toContain("/en/destination/wayanad");
+    expect(response?.status()).toBe(200);
+  });
+
   test("new A&N destination loads", async ({ page }) => {
     await page.goto("/en/destination/havelock-island");
     await expect(page).toHaveTitle(/Havelock/);
