@@ -27,7 +27,7 @@ import {
   type MonthSlug,
 } from "@/lib/best-pages";
 
-export const revalidate = 604800; // 7d — content changes rarely; prewarm cron flushes month routes on rollover; /api/admin/revalidate covers ad-hoc edits
+export const revalidate = 2592000; // 30d (was 7d, cut ISR-write bill 2026-07-25) — content changes rarely; prewarm cron flushes month routes on rollover; /api/admin/revalidate covers ad-hoc edits
 export const dynamicParams = true;
 
 const BASE = "https://www.nakshiq.com";

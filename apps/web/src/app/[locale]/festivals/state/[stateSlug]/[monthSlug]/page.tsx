@@ -12,7 +12,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
-export const revalidate = 604800; // 7d — content changes rarely; prewarm cron flushes month routes on rollover; /api/admin/revalidate covers ad-hoc edits
+export const revalidate = 2592000; // 30d (was 7d, cut ISR-write bill 2026-07-25) — content changes rarely; prewarm cron flushes month routes on rollover; /api/admin/revalidate covers ad-hoc edits
 export const dynamicParams = true;
 
 // Next 16: a dynamic-segment route without generateStaticParams is treated as

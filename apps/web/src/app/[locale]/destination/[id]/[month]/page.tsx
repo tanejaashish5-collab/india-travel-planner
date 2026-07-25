@@ -15,7 +15,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 
-export const revalidate = 604800; // 7d — month-segment URL is rollover-safe; prewarm cron warms next month + /api/admin/revalidate flushes edits. Was 24h.
+export const revalidate = 2592000; // 30d (was 7d, cut ISR-write bill 2026-07-25) — month-segment URL is rollover-safe; prewarm cron warms next month + /api/admin/revalidate flushes edits. Was 24h.
 export const dynamicParams = true;
 
 // 6,060 month pages render on-demand via ISR instead of at build time —
