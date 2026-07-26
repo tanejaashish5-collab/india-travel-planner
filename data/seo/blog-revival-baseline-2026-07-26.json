@@ -42,6 +42,7 @@
     }
   ],
   "method_rules": [
+    "PUBLICATION-DATE CADENCE (founder rule 2026-07-26): never stamp a batch's articles with the same published_at. Continue the timeline from MAX(published_at) at a 3-4 day cadence with varied times of day, never future-dated. Batch 1 was re-stamped Apr 24 / Apr 28 / May 1 / May 5 / May 8 2026, continuing from the Apr 21 dormancy point.",
     "Topics come only from real GSC query rows with impressions — never invented topics.",
     "Never create a topic already served by a /vs page (grep both slug orders) or that would cannibalize a strong dest×month page without adding a distinct question-format angle.",
     "All claims trace to DB rows (destination_months, destination_costs, destinations). Zero fabrication. No stay names unless present in local_stays/destination_stay_picks.",
