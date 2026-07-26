@@ -1,0 +1,52 @@
+{
+  "created": "2026-07-26",
+  "purpose": "Baseline for the weekly blog pipeline approved 2026-07-26. Re-measure ~2026-08-23 (4 weeks). Kill criterion: if blog-page clicks have not moved off the baseline by week 6, stop the pipeline.",
+  "baseline_28d_as_of_2026_07_15": {
+    "blog_pages_with_impressions": 158,
+    "clicks": 11,
+    "impressions": 1792,
+    "source": "site-audit session 2026-07-15 (GSC 28d, /blog/ pages)"
+  },
+  "articles_total_before": 167,
+  "articles_total_after": 172,
+  "batch_1_published_2026_07_26": [
+    {
+      "slug": "is-kolkata-in-august-worth-it",
+      "lang": "en",
+      "target_queries": ["august weather kolkata 2026", "kolkata weather in august 2026", "kolkata in august"],
+      "gsc_evidence": "gsc-audits/gsc-audit-2026-07-25.md top queries #8 (66 imp) + #9 (60 imp); /hi/destination/kolkata/august is the #1 page (743 imp)"
+    },
+    {
+      "slug": "is-doodhpathri-in-august-worth-it",
+      "lang": "en",
+      "target_queries": ["doodhpathri in august"],
+      "gsc_evidence": "gsc-audit-2026-07-25.md top query #3 (2 clicks/10 imp)"
+    },
+    {
+      "slug": "landour-in-september-worth-it",
+      "lang": "en",
+      "target_queries": ["landour weather in september", "landour in september"],
+      "gsc_evidence": "#1 GSC query two consecutive runs (07-20: 4 clicks/34 imp; 07-25: 2/39)"
+    },
+    {
+      "slug": "mussoorie-ghumne-ka-kharcha",
+      "lang": "hi",
+      "target_queries": ["मसूरी घूमने का खर्च"],
+      "gsc_evidence": "gsc-audit-2026-07-25.md query #7 (1 click/91 imp, Hindi query landing on EN /en/cost/mussoorie — unserved Hindi intent)"
+    },
+    {
+      "slug": "ayodhya-ghumne-ka-kharcha",
+      "lang": "hi",
+      "target_queries": ["अयोध्या घूमने का खर्च"],
+      "gsc_evidence": "gsc-audit-2026-07-25.md query #10 (1 click/50 imp)"
+    }
+  ],
+  "method_rules": [
+    "Topics come only from real GSC query rows with impressions — never invented topics.",
+    "Never create a topic already served by a /vs page (grep both slug orders) or that would cannibalize a strong dest×month page without adding a distinct question-format angle.",
+    "All claims trace to DB rows (destination_months, destination_costs, destinations). Zero fabrication. No stay names unless present in local_stays/destination_stay_picks.",
+    "Scores quoted on the displayed 0-10 scale (DB score x 2).",
+    "Every article internally links to its dest×month and/or cost pages.",
+    "Drafts to data/blog-drafts/, SQL via scripts/build-blog-inserts.mjs, verify rendered pages post-insert."
+  ]
+}
