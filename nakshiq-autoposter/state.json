@@ -39,8 +39,8 @@
     "PdMu0": "2026-07-25",
     "m8EAd_evening": "2026-07-25",
     "PdMu0_evening": "2026-07-25",
-    "m8EAd_carousel": "2026-07-25",
-    "PdMu0_carousel": "2026-07-25",
+    "m8EAd_carousel": "2026-07-26",
+    "PdMu0_carousel": "2026-07-26",
     "GAh5p_yt_short": "2026-07-26",
     "m8EAd_yt_short": "2026-07-26"
   },
@@ -276,6 +276,10 @@
     },
     {
       "destination_id": "sambalpur",
+      "date": "2026-07-26"
+    },
+    {
+      "destination_id": "lonavala",
       "date": "2026-07-26"
     }
   ],
@@ -6226,6 +6230,24 @@
       "destination": "sambalpur",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_sambalpur_hi_2026-07-26.mp4"
+    },
+    {
+      "timestamp": "2026-07-26T09:28:07.946059+00:00",
+      "date": "2026-07-26",
+      "platform": "instagram",
+      "post_id": "jQVT2",
+      "destination": "lonavala",
+      "format": "carousel.cost",
+      "media_id": "carousel_cost_2026-07-26"
+    },
+    {
+      "timestamp": "2026-07-26T09:28:09.785657+00:00",
+      "date": "2026-07-26",
+      "platform": "facebook",
+      "post_id": "8gkYI",
+      "destination": "lonavala",
+      "format": "carousel.cost",
+      "media_id": "carousel_cost_2026-07-26"
     }
   ],
   "theme_usage": {
