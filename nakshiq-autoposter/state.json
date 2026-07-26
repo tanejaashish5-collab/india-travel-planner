@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-25",
     "PdMu0": "2026-07-25",
@@ -280,6 +280,10 @@
     },
     {
       "destination_id": "lonavala",
+      "date": "2026-07-26"
+    },
+    {
+      "destination_id": "bhubaneswar",
       "date": "2026-07-26"
     }
   ],
@@ -6248,6 +6252,24 @@
       "destination": "lonavala",
       "format": "carousel.cost",
       "media_id": "carousel_cost_2026-07-26"
+    },
+    {
+      "timestamp": "2026-07-26T12:49:05.092682+00:00",
+      "date": "2026-07-26",
+      "platform": "youtube",
+      "post_id": "4eFKi",
+      "destination": "bhubaneswar",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_bhubaneswar_hi_2026-07-26.mp4"
+    },
+    {
+      "timestamp": "2026-07-26T12:49:46.708807+00:00",
+      "date": "2026-07-26",
+      "platform": "instagram",
+      "post_id": "IxGnX",
+      "destination": "bhubaneswar",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_bhubaneswar_hi_2026-07-26.mp4"
     }
   ],
   "theme_usage": {
