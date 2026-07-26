@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-07-25",
-    "PdMu0": "2026-07-25",
-    "m8EAd_evening": "2026-07-25",
-    "PdMu0_evening": "2026-07-25",
+    "m8EAd": "2026-07-26",
+    "PdMu0": "2026-07-26",
+    "m8EAd_evening": "2026-07-26",
+    "PdMu0_evening": "2026-07-26",
     "m8EAd_carousel": "2026-07-26",
     "PdMu0_carousel": "2026-07-26",
     "GAh5p_yt_short": "2026-07-26",
     "m8EAd_yt_short": "2026-07-26"
   },
-  "last_sync": "2026-07-25T15:23:37.743453+00:00",
+  "last_sync": "2026-07-26T15:33:33.542919+00:00",
   "posted_destinations": [
     {
       "destination_id": "bhandardara",
@@ -284,6 +284,10 @@
     },
     {
       "destination_id": "bhubaneswar",
+      "date": "2026-07-26"
+    },
+    {
+      "destination_id": "pangong-lake",
       "date": "2026-07-26"
     }
   ],
@@ -6270,6 +6274,28 @@
       "destination": "bhubaneswar",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_bhubaneswar_hi_2026-07-26.mp4"
+    },
+    {
+      "timestamp": "2026-07-26T15:34:47.053687+00:00",
+      "date": "2026-07-26",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "uFcPE",
+      "destination": "pangong-lake",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "pangong-lake.mp4"
+    },
+    {
+      "timestamp": "2026-07-26T15:35:00.588467+00:00",
+      "date": "2026-07-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "Lo3pV",
+      "destination": "pangong-lake",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "pangong-lake.mp4"
     }
   ],
   "theme_usage": {
@@ -6495,7 +6521,8 @@
         "2026-06-17",
         "2026-06-30",
         "2026-07-10",
-        "2026-07-21"
+        "2026-07-21",
+        "2026-07-26"
       ],
       "ukhrul": [
         "2026-06-03",
@@ -6786,7 +6813,8 @@
         "2026-07-22",
         "2026-07-23",
         "2026-07-24",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-07-26"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -6929,7 +6957,8 @@
         "2026-06-02",
         "2026-06-06",
         "2026-06-07",
-        "2026-07-10"
+        "2026-07-10",
+        "2026-07-26"
       ],
       "nubra-valley": [
         "2026-06-02",
@@ -7352,7 +7381,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lonavala",
+    "shared_best": "lamayuru",
     "collection": "ayurveda-wellness"
   },
   "manual_skip_dests": {},
