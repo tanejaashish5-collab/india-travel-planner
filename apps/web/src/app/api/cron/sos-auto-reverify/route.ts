@@ -4,7 +4,7 @@ import {
   type PageCache,
   type PageResult,
   type SosRow,
-  extractPhones,
+  extractPageTokens,
   needsHuman,
   stalenessReasons,
   urlsForRow,
@@ -43,13 +43,19 @@ async function fetchPage(url: string): Promise<PageResult> {
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       cache: "no-store",
     });
-    if (!res.ok) return { ok: false, tokens: [], status: res.status };
+    if (!res.ok) return { ok: false, tokens: [], raw: "", status: res.status };
     const html = await res.text();
     // Strip tags first so a number split across markup
     // (<span>0832</span>-2225383) is still one token.
-    return { ok: true, tokens: extractPhones(html.replace(/<[^>]+>/g, " ")), status: res.status };
+    const text = html.replace(/<[^>]+>/g, " ");
+    return {
+      ok: true,
+      tokens: extractPageTokens(text),
+      raw: text.replace(/\D/g, ""),
+      status: res.status,
+    };
   } catch {
-    return { ok: false, tokens: [], status: 0 };
+    return { ok: false, tokens: [], raw: "", status: 0 };
   }
 }
 

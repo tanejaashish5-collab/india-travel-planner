@@ -77,6 +77,53 @@ export function extractPhones(text: string | null | undefined): string[] {
   return [...out];
 }
 
+/**
+ * Phone-shaped runs on a fetched PAGE. Looser than extractPhones on purpose:
+ * pages print bare 6–7 digit local parts, and here a stray pincode costs
+ * nothing because numberMatchesPage guards short matches. Never use this on
+ * stored row text — there a 6-digit pincode inside a hospital address would be
+ * mistaken for a desk line we then demand proof of.
+ */
+export function extractPageTokens(rawText: string): string[] {
+  // Collapse whitespace first. Stripping tags leaves long runs of spaces
+  // between a label and its value, so "…Phone :</td><td>255238…" becomes
+  // "Phone :                    255238" and the label no longer looks adjacent
+  // to the number it labels.
+  const text = rawText.replace(/\s+/g, " ");
+  const out = new Set<string>();
+  const add = (n: string) => {
+    if (n.length >= 3 && n.length <= 12) out.add(normalisePhone(n));
+  };
+  // Work from maximal digit RUNS and join only immediate neighbours. A single
+  // permissive regex over [\d\-\s()] silently welds adjacent numbers together:
+  // "0241-2323844 0241-2356940" came back as one 20-digit blob and matched
+  // nothing, and "02141-222667 2" (a table row index) became a 12-digit value
+  // whose tail no longer lined up. Emitting the parts AND the joined pair
+  // covers both "0241-2323844" and a bare local "2323844".
+  const groups = [...text.matchAll(/\d+/g)];
+  for (let i = 0; i < groups.length; i++) {
+    const g = groups[i];
+    // A bare 6-digit run is ambiguous — it is equally a local phone part or a
+    // PINCODE, and these pages carry both, often the same pincode in several
+    // places. So a 6-digit token only counts when it is explicitly LABELLED as
+    // a phone ("Phone : 255238"). Excluding pincodes by name isn't enough: the
+    // same 6 digits recur unlabelled inside the postal address, and a stored
+    // number whose tail collided with it would "confirm" against the pincode.
+    // Requiring the label is a positive test and cannot be fooled that way.
+    if (g[0].length === 6) {
+      const before = text.slice(Math.max(0, g.index! - 20), g.index!);
+      if (/(phone|tele|tel|contact|mobile|helpline|ph)\s*(no\.?|number)?\s*[:.\-]?\s*$/i.test(before)) add(g[0]);
+    } else {
+      add(g[0]);
+    }
+    const next = groups[i + 1];
+    if (!next) continue;
+    const gap = text.slice(g.index! + g[0].length, next.index!);
+    if (/^[\s\-().]{0,3}$/.test(gap)) add(g[0] + next[0]);
+  }
+  return [...out];
+}
+
 /** Every number in the row, tagged with the field it came from. */
 export function rowPhones(row: SosRow): { digits: string; field: PhoneField }[] {
   const seen = new Set<string>();
@@ -129,8 +176,12 @@ export function stalenessReasons(row: SosRow, now = new Date()): StaleReason[] {
 // Verification
 // ---------------------------------------------------------------------------
 
-/** `tokens` = every phone-shaped run on the page, normalised. */
-export type PageResult = { ok: boolean; tokens: string[]; status: number };
+/**
+ * `tokens` = every phone-shaped run on the page, normalised.
+ * `raw` = the whole page flattened to digits, used ONLY as a corroborating
+ * check for short local-part matches (see numberMatchesPage).
+ */
+export type PageResult = { ok: boolean; tokens: string[]; raw: string; status: number };
 /** url -> fetched page. Caller owns fetching + caching. */
 export type PageCache = Map<string, PageResult>;
 
@@ -147,14 +198,34 @@ export type PageCache = Map<string, PageResult>;
  * is specific enough that a collision inside one district directory isn't a
  * practical concern; short codes must still match exactly.
  */
-export function numberMatchesPage(digits: string, tokens: Iterable<string>): boolean {
-  for (const t of tokens) {
-    if (t === digits) return true;
-  }
+export function numberMatchesPage(
+  digits: string,
+  tokens: Iterable<string>,
+  pageRaw = "",
+  corroboratingDigits = "",
+): boolean {
+  const list = [...tokens];
+  if (list.includes(digits)) return true;
   if (digits.length < 10) return false; // short codes: exact or nothing
-  for (const t of tokens) {
+
+  for (const t of list) {
     if (t.length >= 8 && digits.slice(-8) === t.slice(-8)) return true;
     if (t.length === 7 && digits.endsWith(t)) return true;
+  }
+
+  // 6-digit local parts are common on older Indian exchanges, and NIC facility
+  // pages routinely print just that ("Phone : 255238" for 01951-255238).
+  // But 6 digits is also exactly a PINCODE, and every one of these pages has
+  // one — so a bare 6-digit match can't stand alone. It counts only if the
+  // number's STD code is corroborated: either printed on the same page, or
+  // already established by a SIBLING number in the same row that was itself
+  // confirmed against an official page of that district. Digits alone are
+  // ambiguous; digits plus a known area code are not.
+  const std = digits.slice(0, digits.length - 6);
+  if (std.length >= 3 && (pageRaw.includes(std) || corroboratingDigits.includes(std))) {
+    for (const t of list) {
+      if (t.length === 6 && digits.endsWith(t)) return true;
+    }
   }
   return false;
 }
@@ -200,8 +271,12 @@ export function urlsForRow(row: SosRow): string[] {
 export function verifyRow(row: SosRow, pages: PageCache, today: string): RowVerdict {
   const map: SourceMap = { ...(row.source_map ?? {}) };
   const numbers: NumberVerdict[] = [];
+  const siblings = localPhones(row);
+  // Area codes already established elsewhere in this row — see the 6-digit
+  // branch of numberMatchesPage.
+  const corroborating = siblings.map((p) => p.digits).join(" ");
 
-  for (const { digits, field } of localPhones(row)) {
+  for (const { digits, field } of siblings) {
     const recorded = map[digits];
     const url = recorded?.url ?? row.source_url ?? null;
     if (!url) {
@@ -218,7 +293,7 @@ export function verifyRow(row: SosRow, pages: PageCache, today: string): RowVerd
       });
       continue;
     }
-    if (numberMatchesPage(digits, page.tokens)) {
+    if (numberMatchesPage(digits, page.tokens, page.raw, corroborating)) {
       numbers.push({ digits, field, url, state: "confirmed" });
       map[digits] = { url, field, last_seen: today };
     } else if (recorded) {
