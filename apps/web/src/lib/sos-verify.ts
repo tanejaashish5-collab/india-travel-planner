@@ -49,6 +49,7 @@ export type SosRow = {
   source_url: string | null;
   source_map: SourceMap | null;
   auto_verify_fail_streak?: number | null;
+  auto_verified_at?: string | null;
 } & Partial<Record<PhoneField, string | null>>;
 
 /** Strip everything but digits, then drop a leading +91 country code. */

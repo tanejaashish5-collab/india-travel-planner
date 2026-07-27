@@ -31,9 +31,11 @@ export const maxDuration = 300;
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 const FETCH_TIMEOUT_MS = 25_000;
-const FETCH_CONCURRENCY = 6;
+const FETCH_CONCURRENCY = 8;
 /** Bound the run so one week's backlog can't blow maxDuration. */
-const MAX_URLS_PER_RUN = 80;
+const MAX_URLS_PER_RUN = 120;
+/** Stop starting new fetches past this point, leaving headroom under maxDuration. */
+const SOFT_DEADLINE_MS = 210_000;
 
 async function fetchPage(url: string): Promise<PageResult> {
   try {
@@ -62,8 +64,13 @@ async function fetchPage(url: string): Promise<PageResult> {
 async function fetchAll(urls: string[]): Promise<PageCache> {
   const cache: PageCache = new Map();
   const queue = [...urls];
+  const startedAt = Date.now();
   const workers = Array.from({ length: Math.min(FETCH_CONCURRENCY, queue.length) }, async () => {
     for (;;) {
+      // Several .gov.in hosts sit on the full 25s timeout, so a fixed URL count
+      // can't bound wall-clock on its own. Rows whose URLs don't make it into
+      // the cache are simply skipped and picked up next run.
+      if (Date.now() - startedAt > SOFT_DEADLINE_MS) return;
       const url = queue.shift();
       if (!url) return;
       cache.set(url, await fetchPage(url));
@@ -89,7 +96,8 @@ export async function GET(req: NextRequest) {
   const { data, error } = await supabase
     .from("emergency_sos")
     .select(
-      "destination_id, verified, verified_date, source_url, source_map, auto_verify_fail_streak, " +
+      "destination_id, verified, verified_date, source_url, source_map, " +
+        "auto_verify_fail_streak, auto_verified_at, " +
         "police, ambulance, fire, women_helpline, tourist_helpline, road_accident, " +
         "local_police_station, nearest_hospital, rescue_contact, mountain_rescue",
     );
@@ -101,7 +109,20 @@ export async function GET(req: NextRequest) {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
 
-  const due = rows.filter((r) => stalenessReasons(r, now).length > 0);
+  /**
+   * Least-recently-attempted first. Without this the ordering is stable, so a
+   * backlog larger than one run's URL budget would re-fetch the SAME leading
+   * rows every week and never reach the tail — the queue would look busy and
+   * drain nothing. (First measured run: 400 due, 80 URLs fetched, 275 rows
+   * skipped, and they'd have been the same 275 forever.)
+   */
+  const due = rows
+    .filter((r) => stalenessReasons(r, now).length > 0)
+    .sort(
+      (a, b) =>
+        (a.auto_verified_at ? Date.parse(a.auto_verified_at) : 0) -
+        (b.auto_verified_at ? Date.parse(b.auto_verified_at) : 0),
+    );
 
   // Dedupe URLs across rows — 42 rows collapse to ~24 fetches because whole
   // districts share one disaster-management page.
