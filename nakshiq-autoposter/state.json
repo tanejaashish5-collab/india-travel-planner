@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-07-26",
@@ -41,27 +41,11 @@
     "PdMu0_evening": "2026-07-26",
     "m8EAd_carousel": "2026-07-26",
     "PdMu0_carousel": "2026-07-26",
-    "GAh5p_yt_short": "2026-07-26",
+    "GAh5p_yt_short": "2026-07-27",
     "m8EAd_yt_short": "2026-07-26"
   },
   "last_sync": "2026-07-26T15:33:33.542919+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "bhandardara",
-      "date": "2026-07-12"
-    },
-    {
-      "destination_id": "ahmedabad",
-      "date": "2026-07-12"
-    },
-    {
-      "destination_id": "mandu",
-      "date": "2026-07-12"
-    },
-    {
-      "destination_id": "zanskar",
-      "date": "2026-07-12"
-    },
     {
       "destination_id": "hyderabad",
       "date": "2026-07-13"
@@ -289,6 +273,10 @@
     {
       "destination_id": "pangong-lake",
       "date": "2026-07-26"
+    },
+    {
+      "destination_id": "kabini",
+      "date": "2026-07-27"
     }
   ],
   "posted_formats": {
@@ -6296,6 +6284,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "pangong-lake.mp4"
+    },
+    {
+      "timestamp": "2026-07-27T07:55:42.223669+00:00",
+      "date": "2026-07-27",
+      "platform": "youtube",
+      "post_id": "TbTT1",
+      "destination": "kabini",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kabini_en_2026-07-27.mp4"
+    },
+    {
+      "timestamp": "2026-07-27T07:56:29.495100+00:00",
+      "date": "2026-07-27",
+      "platform": "instagram",
+      "post_id": "SS33J",
+      "destination": "kabini",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kabini_en_2026-07-27.mp4"
     }
   ],
   "theme_usage": {
