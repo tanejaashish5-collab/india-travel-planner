@@ -14616,3 +14616,26 @@ Date range: 2026-04-15 → 2026-07-27
 2026-07-28 09:53:12  INFO      [facebook/Nakshiq] ✅ carousel published (route) · post_id=IrrjM
 2026-07-28 09:53:12  INFO      Carousel run complete (fmt=route, posted=True).
 2026-07-28 09:53:12  INFO      ════════════════════════════════════════════════════════════
+2026-07-28 13:21:18  INFO      ════════════════════════════════════════════════════════════
+2026-07-28 13:21:18  INFO      Nakshiq Autoposter · YT SHORT · 2026-07-28
+2026-07-28 13:21:18  INFO      ════════════════════════════════════════════════════════════
+2026-07-28 13:21:23  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-07-28 13:23:23  INFO      Short rendered: yt_short_this_vs_that_raigad-fort_en_2026-07-28.mp4 (23262 KB, 27.6s, fmt=this_vs_that, music=fast-680)
+2026-07-28 13:23:23  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_raigad-fort_en_2026-07-28.mp4 (23,820,447 bytes, video/mp4)
+2026-07-28 13:23:24  INFO          Uploading to R2 (timeout=300s)...
+2026-07-28 13:23:26  INFO          R2 PUT OK. Confirming...
+2026-07-28 13:23:27  INFO          Media ready: I7qaX (23,820,447 bytes · yt_short_this_vs_that_yt_short_this_vs_that_raigad-fort_en_2026-07-28.mp4)
+2026-07-28 13:23:27  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_raigad-fort_en_2026-07-28.mp4
+2026-07-28 13:23:28  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-28 13:23:28  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-07-28 13:23:28  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-07-28 13:23:31  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Azzbu), waiting for platform confirmation...
+2026-07-28 13:23:38  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=Azzbu · Platform=rk-G_Y_Xihk
+2026-07-28 13:23:38  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-07-28 13:23:38  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-07-28 13:23:40  INFO      [instagram/nakshiq] Outstand accepted (post_id=EWWb7), waiting for platform confirmation...
+2026-07-28 13:24:21  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=EWWb7 · Platform=18107304341021665
+2026-07-28 13:24:21  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-07-28 13:24:21  INFO      YT Short posted: format=this_vs_that, music=fast-680
+2026-07-28 13:24:21  INFO      State saved. YT Short run complete.
+2026-07-28 13:24:21  INFO      ════════════════════════════════════════════════════════════
