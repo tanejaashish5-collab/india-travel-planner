@@ -38,9 +38,13 @@
     "m8EAd_carousel": "2026-07-28",
     "PdMu0_carousel": "2026-07-28",
     "GAh5p_yt_short": "2026-07-28",
-    "m8EAd_yt_short": "2026-07-28"
+    "m8EAd_yt_short": "2026-07-28",
+    "m8EAd": "2026-07-28",
+    "m8EAd_evening": "2026-07-28",
+    "PdMu0": "2026-07-28",
+    "PdMu0_evening": "2026-07-28"
   },
-  "last_sync": "2026-07-26T15:33:33.542919+00:00",
+  "last_sync": "2026-07-28T16:19:35.836786+00:00",
   "posted_destinations": [
     {
       "destination_id": "nako",
@@ -276,6 +280,10 @@
     },
     {
       "destination_id": "raigad-fort",
+      "date": "2026-07-28"
+    },
+    {
+      "destination_id": "nubra-valley",
       "date": "2026-07-28"
     }
   ],
@@ -6401,6 +6409,28 @@
       "destination": "raigad-fort",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_raigad-fort_en_2026-07-28.mp4"
+    },
+    {
+      "timestamp": "2026-07-28T16:20:43.864110+00:00",
+      "date": "2026-07-28",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "eiBsY",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-07-28T16:20:56.493527+00:00",
+      "date": "2026-07-28",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "EWzr2",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -6609,7 +6639,8 @@
         "2026-06-16",
         "2026-06-17",
         "2026-06-30",
-        "2026-07-11"
+        "2026-07-11",
+        "2026-07-28"
       ],
       "tungnath": [
         "2026-06-02"
@@ -6753,7 +6784,8 @@
       "bhimashankar": [
         "2026-07-01",
         "2026-07-03",
-        "2026-07-15"
+        "2026-07-15",
+        "2026-07-28"
       ],
       "khardung-la": [
         "2026-07-01",
@@ -6919,7 +6951,8 @@
         "2026-07-23",
         "2026-07-24",
         "2026-07-25",
-        "2026-07-26"
+        "2026-07-26",
+        "2026-07-28"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -7071,7 +7104,8 @@
         "2026-06-07",
         "2026-06-16",
         "2026-06-30",
-        "2026-07-11"
+        "2026-07-11",
+        "2026-07-28"
       ],
       "tawang": [
         "2026-06-03"
@@ -7237,7 +7271,8 @@
         "2026-07-23"
       ],
       "dwadasa-jyotirlinga": [
-        "2026-05-28"
+        "2026-05-28",
+        "2026-07-28"
       ],
       "budget-under-1000": [
         "2026-06-02"
@@ -7472,6 +7507,11 @@
       "zanskar": [
         "2026-07-16"
       ]
+    },
+    "collection_carousel_dests:dwadasa-jyotirlinga": {
+      "bhimashankar": [
+        "2026-07-28"
+      ]
     }
   },
   "infographic": {
@@ -7486,8 +7526,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lamayuru",
-    "collection": "ayurveda-wellness"
+    "shared_best": "nubra-valley",
+    "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-25",
