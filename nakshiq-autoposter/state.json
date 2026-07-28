@@ -35,8 +35,8 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-07-27",
-    "PdMu0_carousel": "2026-07-27",
+    "m8EAd_carousel": "2026-07-28",
+    "PdMu0_carousel": "2026-07-28",
     "GAh5p_yt_short": "2026-07-28",
     "m8EAd_yt_short": "2026-07-28"
   },
@@ -268,6 +268,10 @@
     },
     {
       "destination_id": "satara",
+      "date": "2026-07-28"
+    },
+    {
+      "destination_id": "leh",
       "date": "2026-07-28"
     }
   ],
@@ -6357,6 +6361,24 @@
       "destination": "satara",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_satara_hi_2026-07-28.mp4"
+    },
+    {
+      "timestamp": "2026-07-28T09:53:09.627333+00:00",
+      "date": "2026-07-28",
+      "platform": "instagram",
+      "post_id": "oVVFe",
+      "destination": "leh",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-07-28"
+    },
+    {
+      "timestamp": "2026-07-28T09:53:12.104086+00:00",
+      "date": "2026-07-28",
+      "platform": "facebook",
+      "post_id": "IrrjM",
+      "destination": "leh",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-07-28"
     }
   ],
   "theme_usage": {
