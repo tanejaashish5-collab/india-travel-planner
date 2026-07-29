@@ -75,8 +75,8 @@
     ],
     "candidate": "Hotel Chitkul",
     "sentence": "The Wanderer's Nest and Hotel Chitkul get decent reviews.",
-    "classification": "MATCH",
-    "reason": "exact + correct destination",
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
     "dbName": null
   },
   {
@@ -155,8 +155,8 @@
     ],
     "candidate": "Hotel Tashi Delek",
     "sentence": "**Mid-range (Rs 2,000-4,000):** Hotel Dekyid, Hotel Tashi Delek, and HPTDC Hotel Chandrabhaga Keylong are the better options.",
-    "classification": "MATCH",
-    "reason": "exact + correct destination",
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
     "dbName": null
   },
   {
@@ -199,8 +199,8 @@
     ],
     "candidate": "Hotel Milam Inn",
     "sentence": "Private guesthouses like Hotel Milam Inn and Panchachuli House offer cleaner rooms with better service.",
-    "classification": "MATCH",
-    "reason": "exact + correct destination",
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
     "dbName": null
   },
   {
@@ -210,9 +210,9 @@
     ],
     "candidate": "Reggie's Camel Camp",
     "sentence": "The camel safari operators (Reggie's Camel Camps is the best known) run their own camps outside town with tents, mattresses, and meals included.",
-    "classification": "CLOSE_DB_MATCH",
-    "reason": "substring of 'reggie's camel camps'",
-    "dbName": "reggie's camel camps"
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
+    "dbName": null
   },
   {
     "slug": "complete-guide-sangla-valley",
@@ -221,9 +221,9 @@
     ],
     "candidate": "Banjara Camp",
     "sentence": "*Mid-range (₹2,000-4,500/night):** Banjara Camp and Retreat Sangla and Retreat Sangla offers riverside cottage tents — one of the better glamping experiences in Himachal. a Chitkul cottage (see [Chitkul stays](/en/destination/chitkul)) and ",
-    "classification": "CLOSE_DB_MATCH",
-    "reason": "substring of 'banjara camp and retreat sangla'",
-    "dbName": "banjara camp and retreat sangla"
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
+    "dbName": null
   },
   {
     "slug": "complete-guide-sangla-valley",
@@ -233,8 +233,8 @@
     "candidate": "Retreat Sangla",
     "sentence": "*Mid-range (₹2,000-4,500/night):** Banjara Camp and Retreat Sangla and Retreat Sangla offers riverside cottage tents — one of the better glamping experiences in Himachal. a Chitkul cottage (see [Chitkul stays](/en/destination/chitkul)) and ",
     "classification": "CLOSE_DB_MATCH",
-    "reason": "substring of 'banjara camp and retreat sangla'",
-    "dbName": "banjara camp and retreat sangla"
+    "reason": "token-subset of 'the sangla orchard retreat'",
+    "dbName": "the sangla orchard retreat"
   },
   {
     "slug": "complete-guide-tawang",
@@ -265,9 +265,9 @@
     ],
     "candidate": "Padma Homestay",
     "sentence": "Padma Homestay (Sonam's Guest House) and similar local homestays: ₹1,000-1,500/night.",
-    "classification": "CLOSE_DB_MATCH",
-    "reason": "substring of 'padma homestay sonam's guest house'",
-    "dbName": "padma homestay sonam's guest house"
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
+    "dbName": null
   },
   {
     "slug": "complete-guide-umlingla",
@@ -276,9 +276,9 @@
     ],
     "candidate": "Sonam's Guest House",
     "sentence": "Padma Homestay (Sonam's Guest House) and similar local homestays: ₹1,000-1,500/night.",
-    "classification": "CLOSE_DB_MATCH",
-    "reason": "substring of 'padma homestay sonam's guest house'",
-    "dbName": "padma homestay sonam's guest house"
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
+    "dbName": null
   },
   {
     "slug": "data-story-hidden-gems",
@@ -310,8 +310,8 @@
     ],
     "candidate": "Goan Corner Guesthouse",
     "sentence": "Mid-range on Hippie Island runs ₹2,000–3,500/night (Goan Corner Guesthouse is our pick — see the [Hampi stays section](/en/destination/hampi) for vetted options).",
-    "classification": "MATCH",
-    "reason": "exact + correct destination",
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
     "dbName": null
   },
   {
@@ -670,8 +670,8 @@
     ],
     "candidate": "Doma's Inn",
     "sentence": "Rokeby Manor, Doma's Inn, the Char Dukan cluster.",
-    "classification": "MATCH",
-    "reason": "exact + correct destination",
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
     "dbName": null
   },
   {
@@ -686,9 +686,9 @@
     ],
     "candidate": "Snow Valley Resort",
     "sentence": "**New Manali side**: Snow Valley Resorts is the reliable pick.",
-    "classification": "CLOSE_DB_MATCH",
-    "reason": "substring of 'snow valley resorts'",
-    "dbName": "snow valley resorts"
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
+    "dbName": null
   },
   {
     "slug": "solo-women-safe-destinations-india",
@@ -722,8 +722,8 @@
     ],
     "candidate": "Goan Corner Guesthouse",
     "sentence": "Mid-range (₹3,000–6,000) is on the north bank — see the [Hampi stays section](/en/destination/hampi) for the vetted shortlist (Goan Corner Guesthouse is our pick).",
-    "classification": "MATCH",
-    "reason": "exact + correct destination",
+    "classification": "UNVERIFIED",
+    "reason": "no DB match",
     "dbName": null
   },
   {
