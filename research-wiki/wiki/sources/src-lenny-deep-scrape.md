@@ -12,7 +12,7 @@ Full triage of @LennysPodcast (362 eps, ~466 hrs) → 24-episode deep-read acros
 
 Lenny = the DOAC of product/growth: practitioner interviews with receipts, worth returning to **per-problem, never as news** — see [[lenny-rachitsky]]. Lemkin = real operator (SaaStr, 20 agents live); his own channel runs short-takes, the Lenny crossover episode is the artifact worth reading — see [[jason-lemkin]]. Casel = solo bootstrapper running his business on Claude Code agents; 3 useful episodes, rest overlaps what we already run — see [[brian-casel]].
 
-## AEO / AI-crawler mechanics (feeds the OPEN OAI-SearchBot item, 07-15)
+## AEO / AI-crawler mechanics (OAI-SearchBot item DECLINED 2026-07-30 — see [[aeo-citations-over-rankings]])
 
 Ethan Smith (Graphite; ex-MasterClass/Webflow): **AEO ≠ ranking — it's citation frequency across sources**, claimed 6x higher LLM-referral conversion vs Google at Webflow (his claim, **UNVERIFIED**, single-speaker). Actionable regardless: split indexing/answer bots from training bots in robots.txt — citable without donating training data. Brian Balfour: "no opting out — unilateral blocking concedes the channel to competitors." Eli Schwartz: top-of-funnel is being absorbed by AI answers, SEO now starts mid-funnel. Full mechanics + our proposed 30-day reconciliation → [[aeo-citations-over-rankings]].
 
