@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-07-28",
     "PdMu0_carousel": "2026-07-28",
-    "GAh5p_yt_short": "2026-07-28",
-    "m8EAd_yt_short": "2026-07-28",
+    "GAh5p_yt_short": "2026-07-29",
+    "m8EAd_yt_short": "2026-07-29",
     "m8EAd": "2026-07-28",
     "m8EAd_evening": "2026-07-28",
     "PdMu0": "2026-07-28",
@@ -46,22 +46,6 @@
   },
   "last_sync": "2026-07-28T16:19:35.836786+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "nako",
-      "date": "2026-07-14"
-    },
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-07-14"
-    },
-    {
-      "destination_id": "mysore",
-      "date": "2026-07-14"
-    },
-    {
-      "destination_id": "jog-falls",
-      "date": "2026-07-14"
-    },
     {
       "destination_id": "bangus-valley",
       "date": "2026-07-15"
@@ -285,6 +269,10 @@
     {
       "destination_id": "nubra-valley",
       "date": "2026-07-28"
+    },
+    {
+      "destination_id": "nashik",
+      "date": "2026-07-29"
     }
   ],
   "posted_formats": {
@@ -6431,6 +6419,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-07-29T06:50:26.733781+00:00",
+      "date": "2026-07-29",
+      "platform": "youtube",
+      "post_id": "VbGpj",
+      "destination": "nashik",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_nashik_hi_2026-07-29.mp4"
+    },
+    {
+      "timestamp": "2026-07-29T06:51:11.520726+00:00",
+      "date": "2026-07-29",
+      "platform": "instagram",
+      "post_id": "KySJf",
+      "destination": "nashik",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_nashik_hi_2026-07-29.mp4"
     }
   ],
   "theme_usage": {
