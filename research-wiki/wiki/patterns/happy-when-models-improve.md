@@ -20,4 +20,6 @@ updated: 2026-07-19
 
 Ask it of every future ledger idea alongside the [[tata-gate]] and [[passion-fit-gate]] — a screening *question*, not (yet) a scored checklist factor. An idea that gets *worse* as models improve needs an extraordinary reason to proceed.
 
+**Independent corroboration 2026-07-27 — [[src-alok-sama-money-trap]]** (Alok Sama, ex-President/CFO SoftBank Group International, Masa Son's ARM/Sprint dealmaker): asked where the billion-dollar opportunities are, his answer is the diffusion-point argument verbatim — *"every business today is an AI business… AI doesn't mean you have to come up with the next OpenAI, **because OpenAI is the next OpenAI**… you have to build on top of that to come up with business models that address problems people have."* He calls AI *"a monumental productivity tool"* and warns *"if you don't [integrate it], somebody will be doing it more efficiently and you will be at a disadvantage."* A Vision-Fund insider landing on the same litmus as the a16z framing — build where a better model makes your customer better off, never where you're patching model limits.
+
 Related: [[verification-as-moat]], [[public-premises-are-pre-arbitraged]], [[retainer-is-the-business]], [[delegation-fails-heuristic]].

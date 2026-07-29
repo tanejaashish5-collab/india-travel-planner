@@ -1,7 +1,7 @@
 ---
 type: person
 sources: [data/research/VAIBHAV-SISINTY-CHANNEL-AUDIT-2026-06-30.md, data/research/VAIBHAV-SISINTY-TOOLS-INVENTORY-2026-07-01.md]
-updated: 2026-07-07
+updated: 2026-07-24
 ---
 
 # Vaibhav Sisinty
@@ -23,4 +23,6 @@ Founder of GrowthSchool (ed-tech, claims 10M+ learners / 150+ countries). Ex-Ube
 - ❌ Podcast-guesting lever — needs an on-camera personality; our format is faceless allegory.
 - ❌ B2B AI-training copycat — his moat (sales team, enterprise clients), crowded market, fails [[passion-fit-gate]].
 
-Related: [[vyan-gandhi]] (same money-is-downstream finding at smaller scale), [[money-is-services-not-adsense]], [[google-free-ai-stack]] (his most-recycled content theme).
+## 2026-07-24 — "money menu" triage (FO376/432/499/514 + masterclass)
+
+Founder brought an 8-item ranked menu distilled from his four Figuring Out episodes + Think School masterclass. **Verdict: ~95% maps onto already-banked verdicts — nothing changed the 07-22 money plan** ([[src-money-plan-2026-07-22]]). Mapping: #1 SMB automation services = money-plan T2 (Canberra receipts: crowded-with-suppliers/empty-of-proof, $110 govt substitute, BA-grade tier on warm trust only); #3 AI-generalist career leverage = T1 exactly (his "54% premium" vs our sector-honest 24% for government); #5 micro-SaaS = T4 do-NOT ([[public-premises-are-pre-arbitraged]] + Sowmay software-dying); #6 content channel = the 13-lead-magnet-machine pattern — and our own scrape MEASURED his engagement decaying −38% ([[ai-content-saturation]]); #7 corporate training = the ❌ above (his moat, fails [[passion-fit-gate]]); #8 autonomous zero-employee = hype tier (the menu itself discounts it). Mild residue: #2 voice-AI agents as an upsell flavor inside T2 (unvalidated for Canberra) and #4 "Executive AI Assistant" as a *positioning label* for the in-house/fractional seat we already hold via [[src-nate-herk-200k-inhouse-ai-job]]. His income claims = funnel framing (the menu says so too — matches our audit).

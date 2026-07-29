@@ -24,4 +24,8 @@ The gap this pattern used to name — 18 scored PURSUE ideas, zero assets to tes
 
 2026-06-23 finding: Ashish's constraint is NOT missing ideas (15+ builds exist) — it's that **not one has a proven KPI or first ₹/USD**. The bridge from idea-surplus to execution is always the cheapest possible test, run to its gate, with the gate honoured. The `/council` skill (from [[nate-herk]]'s gold finding) formalizes exactly this: verdict + cheapest 48-hour test.
 
+## Excess capital is a risk, not a moat (2026-07-27)
+
+[[src-alok-sama-money-trap]] — Alok Sama, who deployed the $100B Vision Fund, asked to choose between an underfunded and an overfunded startup: **"Underfunded any day… you have too much money, you tend to spend it usually not wisely… you lose sense of the value of money, you make bad decisions."** Named mechanism: excess capital drags a **capital-light platform into capital-intensive** operations and destroys the original product-market fit — WeWork (a real-estate business valued as a tech business; the asset-liability mismatch on leases was the killer) and Oyo (started leasing/owning property, then over-expanded into Western markets that already had budget chains). The strongest available argument that our unfunded, $0-tooling discipline is a structural advantage rather than a constraint to escape.
+
 Related: [[reach-before-monetisation]], [[passion-fit-gate]], [[rejected-ideas]].
