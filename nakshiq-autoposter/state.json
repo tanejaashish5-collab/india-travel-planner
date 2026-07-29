@@ -35,8 +35,8 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-07-28",
-    "PdMu0_carousel": "2026-07-28",
+    "m8EAd_carousel": "2026-07-29",
+    "PdMu0_carousel": "2026-07-29",
     "GAh5p_yt_short": "2026-07-29",
     "m8EAd_yt_short": "2026-07-29",
     "m8EAd": "2026-07-28",
@@ -272,6 +272,10 @@
     },
     {
       "destination_id": "nashik",
+      "date": "2026-07-29"
+    },
+    {
+      "destination_id": "tiruparankundram",
       "date": "2026-07-29"
     }
   ],
@@ -6437,6 +6441,24 @@
       "destination": "nashik",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_nashik_hi_2026-07-29.mp4"
+    },
+    {
+      "timestamp": "2026-07-29T09:54:20.645040+00:00",
+      "date": "2026-07-29",
+      "platform": "instagram",
+      "post_id": "AzqHV",
+      "destination": "tiruparankundram",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-07-29"
+    },
+    {
+      "timestamp": "2026-07-29T09:54:22.388199+00:00",
+      "date": "2026-07-29",
+      "platform": "facebook",
+      "post_id": "xX4M7",
+      "destination": "tiruparankundram",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-07-29"
     }
   ],
   "theme_usage": {
@@ -7559,7 +7581,8 @@
     "collection": [
       "dwadasa-jyotirlinga",
       "adrenaline-rush",
-      "after-dark-experiences"
+      "after-dark-experiences",
+      "arupadai-veedu"
     ]
   }
 }
