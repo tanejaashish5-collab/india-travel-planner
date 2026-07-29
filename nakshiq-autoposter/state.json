@@ -39,12 +39,12 @@
     "PdMu0_carousel": "2026-07-29",
     "GAh5p_yt_short": "2026-07-29",
     "m8EAd_yt_short": "2026-07-29",
-    "m8EAd": "2026-07-28",
-    "m8EAd_evening": "2026-07-28",
-    "PdMu0": "2026-07-28",
-    "PdMu0_evening": "2026-07-28"
+    "m8EAd": "2026-07-29",
+    "m8EAd_evening": "2026-07-29",
+    "PdMu0": "2026-07-29",
+    "PdMu0_evening": "2026-07-29"
   },
-  "last_sync": "2026-07-28T16:19:35.836786+00:00",
+  "last_sync": "2026-07-29T16:02:18.490304+00:00",
   "posted_destinations": [
     {
       "destination_id": "bangus-valley",
@@ -280,6 +280,10 @@
     },
     {
       "destination_id": "sangla",
+      "date": "2026-07-29"
+    },
+    {
+      "destination_id": "zanskar",
       "date": "2026-07-29"
     }
   ],
@@ -6481,6 +6485,28 @@
       "destination": "sangla",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_sangla_hi_2026-07-29.mp4"
+    },
+    {
+      "timestamp": "2026-07-29T16:03:56.608909+00:00",
+      "date": "2026-07-29",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "TpZkQ",
+      "destination": "zanskar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "zanskar.mp4"
+    },
+    {
+      "timestamp": "2026-07-29T16:04:25.022490+00:00",
+      "date": "2026-07-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "8eBZM",
+      "destination": "zanskar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "zanskar.mp4"
     }
   ],
   "theme_usage": {
@@ -6860,7 +6886,8 @@
         "2026-07-09",
         "2026-07-12",
         "2026-07-16",
-        "2026-07-21"
+        "2026-07-21",
+        "2026-07-29"
       ],
       "lamayuru": [
         "2026-07-09"
@@ -7002,7 +7029,8 @@
         "2026-07-24",
         "2026-07-25",
         "2026-07-26",
-        "2026-07-28"
+        "2026-07-28",
+        "2026-07-29"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -7242,7 +7270,8 @@
         "2026-07-23"
       ],
       "zanskar": [
-        "2026-07-12"
+        "2026-07-12",
+        "2026-07-29"
       ],
       "amboli": [
         "2026-07-16"
@@ -7576,7 +7605,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nubra-valley",
+    "shared_best": "lamayuru",
     "collection": "dwadasa-jyotirlinga"
   },
   "manual_skip_dests": {},
