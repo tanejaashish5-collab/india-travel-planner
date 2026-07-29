@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-07-29",
     "PdMu0_carousel": "2026-07-29",
@@ -276,6 +276,10 @@
     },
     {
       "destination_id": "tiruparankundram",
+      "date": "2026-07-29"
+    },
+    {
+      "destination_id": "sangla",
       "date": "2026-07-29"
     }
   ],
@@ -6459,6 +6463,24 @@
       "destination": "tiruparankundram",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-07-29"
+    },
+    {
+      "timestamp": "2026-07-29T13:35:48.570245+00:00",
+      "date": "2026-07-29",
+      "platform": "youtube",
+      "post_id": "1Muis",
+      "destination": "sangla",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_sangla_hi_2026-07-29.mp4"
+    },
+    {
+      "timestamp": "2026-07-29T13:36:30.375958+00:00",
+      "date": "2026-07-29",
+      "platform": "instagram",
+      "post_id": "pFAnH",
+      "destination": "sangla",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_sangla_hi_2026-07-29.mp4"
     }
   ],
   "theme_usage": {
