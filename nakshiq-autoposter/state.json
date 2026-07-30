@@ -39,12 +39,12 @@
     "PdMu0_carousel": "2026-07-30",
     "GAh5p_yt_short": "2026-07-30",
     "m8EAd_yt_short": "2026-07-29",
-    "m8EAd": "2026-07-29",
-    "m8EAd_evening": "2026-07-29",
-    "PdMu0": "2026-07-29",
-    "PdMu0_evening": "2026-07-29"
+    "m8EAd": "2026-07-30",
+    "m8EAd_evening": "2026-07-30",
+    "PdMu0": "2026-07-30",
+    "PdMu0_evening": "2026-07-30"
   },
-  "last_sync": "2026-07-29T16:02:18.490304+00:00",
+  "last_sync": "2026-07-30T16:04:24.178332+00:00",
   "posted_destinations": [
     {
       "destination_id": "ananthagiri-hills",
@@ -280,6 +280,10 @@
     },
     {
       "destination_id": "kanchipuram",
+      "date": "2026-07-30"
+    },
+    {
+      "destination_id": "hogenakkal",
       "date": "2026-07-30"
     }
   ],
@@ -6557,6 +6561,28 @@
       "destination": "kanchipuram",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_kanchipuram_hi_2026-07-30.mp4"
+    },
+    {
+      "timestamp": "2026-07-30T16:05:30.550579+00:00",
+      "date": "2026-07-30",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "4njfQ",
+      "destination": "hogenakkal",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "hogenakkal.mp4"
+    },
+    {
+      "timestamp": "2026-07-30T16:05:50.373649+00:00",
+      "date": "2026-07-30",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "cNpkA",
+      "destination": "hogenakkal",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "hogenakkal.mp4"
     }
   ],
   "theme_usage": {
@@ -6892,7 +6918,8 @@
       "hogenakkal": [
         "2026-07-01",
         "2026-07-13",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-07-30"
       ],
       "jog-falls": [
         "2026-07-01",
@@ -7080,7 +7107,8 @@
         "2026-07-25",
         "2026-07-26",
         "2026-07-28",
-        "2026-07-29"
+        "2026-07-29",
+        "2026-07-30"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -7293,7 +7321,8 @@
       ],
       "hogenakkal": [
         "2026-07-01",
-        "2026-07-13"
+        "2026-07-13",
+        "2026-07-30"
       ],
       "jog-falls": [
         "2026-07-02",
@@ -7404,7 +7433,8 @@
         "2026-07-28"
       ],
       "budget-under-1000": [
-        "2026-06-02"
+        "2026-06-02",
+        "2026-07-30"
       ],
       "best-motorcycle-routes": [
         "2026-06-03"
@@ -7641,7 +7671,8 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    }
+    },
+    "collection_carousel_dests:budget-under-1000": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -7655,8 +7686,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lamayuru",
-    "collection": "dwadasa-jyotirlinga"
+    "shared_best": "igatpuri",
+    "collection": "budget-under-1000"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-07-25",
