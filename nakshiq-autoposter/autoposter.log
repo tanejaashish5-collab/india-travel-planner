@@ -14989,3 +14989,42 @@ Date range: 2026-04-15 → 2026-07-29
 2026-07-30 06:47:42  INFO      YT Short posted: format=did_you_know, music=dance-781
 2026-07-30 06:47:42  INFO      State saved. YT Short run complete.
 2026-07-30 06:47:42  INFO      ════════════════════════════════════════════════════════════
+2026-07-30 09:45:44  INFO      ════════════════════════════════════════════════════════════
+2026-07-30 09:45:44  INFO      Nakshiq Autoposter · CAROUSEL · 2026-07-30
+2026-07-30 09:45:44  INFO      ════════════════════════════════════════════════════════════
+2026-07-30 09:45:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-07-30 09:46:22  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-07-30 09:46:35  INFO      Carousel built: fmt=food, 7 slides, primary=ahmedabad
+2026-07-30 09:46:35  INFO          Requesting upload URL for carousel_food_2026-07-30_01.jpg (246,804 bytes, image/jpeg)
+2026-07-30 09:46:37  INFO          Uploading to R2 (timeout=120s)...
+2026-07-30 09:46:38  INFO          R2 PUT OK. Confirming...
+2026-07-30 09:46:39  INFO          Media ready: x0Xs8 (246,804 bytes · carousel_food_2026-07-30_01.jpg)
+2026-07-30 09:46:39  INFO          Requesting upload URL for carousel_food_2026-07-30_02.jpg (255,998 bytes, image/jpeg)
+2026-07-30 09:46:50  WARNING       outstand_post_req /v1/media/upload network error: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-07-30 09:46:50  WARNING       Upload URL failed: {'success': False, 'http_status': 0, 'error': "network: ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"}
+2026-07-30 09:46:50  INFO          Requesting upload URL for carousel_food_2026-07-30_03.jpg (277,992 bytes, image/jpeg)
+2026-07-30 09:46:52  INFO          Uploading to R2 (timeout=120s)...
+2026-07-30 09:46:53  INFO          R2 PUT OK. Confirming...
+2026-07-30 09:46:54  INFO          Media ready: ETWKA (277,992 bytes · carousel_food_2026-07-30_03.jpg)
+2026-07-30 09:46:54  INFO          Requesting upload URL for carousel_food_2026-07-30_04.jpg (269,775 bytes, image/jpeg)
+2026-07-30 09:46:55  INFO          Uploading to R2 (timeout=120s)...
+2026-07-30 09:46:55  INFO          R2 PUT OK. Confirming...
+2026-07-30 09:46:58  INFO          Media ready: Wp0jz (269,775 bytes · carousel_food_2026-07-30_04.jpg)
+2026-07-30 09:46:58  INFO          Requesting upload URL for carousel_food_2026-07-30_05.jpg (279,426 bytes, image/jpeg)
+2026-07-30 09:46:59  INFO          Uploading to R2 (timeout=120s)...
+2026-07-30 09:46:59  INFO          R2 PUT OK. Confirming...
+2026-07-30 09:47:00  INFO          Media ready: GoC4p (279,426 bytes · carousel_food_2026-07-30_05.jpg)
+2026-07-30 09:47:00  INFO          Requesting upload URL for carousel_food_2026-07-30_06.jpg (276,696 bytes, image/jpeg)
+2026-07-30 09:47:01  INFO          Uploading to R2 (timeout=120s)...
+2026-07-30 09:47:02  INFO          R2 PUT OK. Confirming...
+2026-07-30 09:47:03  INFO          Media ready: rdBV4 (276,696 bytes · carousel_food_2026-07-30_06.jpg)
+2026-07-30 09:47:03  INFO          Requesting upload URL for carousel_food_2026-07-30_07.jpg (253,472 bytes, image/jpeg)
+2026-07-30 09:47:05  INFO          Uploading to R2 (timeout=120s)...
+2026-07-30 09:47:06  INFO          R2 PUT OK. Confirming...
+2026-07-30 09:47:07  INFO          Media ready: ub7yE (253,472 bytes · carousel_food_2026-07-30_07.jpg)
+2026-07-30 09:47:07  INFO      Carousel: 6 slides uploaded.
+2026-07-30 09:47:08  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-07-30 09:47:11  INFO      [instagram/nakshiq] ✅ carousel published (food) · post_id=TpE0F
+2026-07-30 09:47:14  INFO      [facebook/Nakshiq] ✅ carousel published (food) · post_id=Sk6cs
+2026-07-30 09:47:14  INFO      Carousel run complete (fmt=food, posted=True).
+2026-07-30 09:47:14  INFO      ════════════════════════════════════════════════════════════

@@ -35,8 +35,8 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-07-29",
-    "PdMu0_carousel": "2026-07-29",
+    "m8EAd_carousel": "2026-07-30",
+    "PdMu0_carousel": "2026-07-30",
     "GAh5p_yt_short": "2026-07-30",
     "m8EAd_yt_short": "2026-07-29",
     "m8EAd": "2026-07-29",
@@ -272,6 +272,10 @@
     },
     {
       "destination_id": "mount-abu",
+      "date": "2026-07-30"
+    },
+    {
+      "destination_id": "ahmedabad",
       "date": "2026-07-30"
     }
   ],
@@ -6513,6 +6517,24 @@
       "destination": "mount-abu",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_mount-abu_en_2026-07-30.mp4"
+    },
+    {
+      "timestamp": "2026-07-30T09:47:11.711273+00:00",
+      "date": "2026-07-30",
+      "platform": "instagram",
+      "post_id": "TpE0F",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-30"
+    },
+    {
+      "timestamp": "2026-07-30T09:47:14.658277+00:00",
+      "date": "2026-07-30",
+      "platform": "facebook",
+      "post_id": "Sk6cs",
+      "destination": "ahmedabad",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-07-30"
     }
   ],
   "theme_usage": {
