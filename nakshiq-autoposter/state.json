@@ -32,36 +32,20 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-07-30",
     "PdMu0_carousel": "2026-07-30",
-    "GAh5p_yt_short": "2026-07-30",
-    "m8EAd_yt_short": "2026-07-29",
+    "GAh5p_yt_short": "2026-07-31",
     "m8EAd": "2026-07-30",
     "m8EAd_evening": "2026-07-30",
     "PdMu0": "2026-07-30",
-    "PdMu0_evening": "2026-07-30"
+    "PdMu0_evening": "2026-07-30",
+    "m8EAd_yt_short": "2026-07-31"
   },
   "last_sync": "2026-07-30T16:04:24.178332+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ananthagiri-hills",
-      "date": "2026-07-16"
-    },
-    {
-      "destination_id": "lonavala",
-      "date": "2026-07-16"
-    },
-    {
-      "destination_id": "srirangapatna",
-      "date": "2026-07-16"
-    },
-    {
-      "destination_id": "amboli",
-      "date": "2026-07-16"
-    },
     {
       "destination_id": "hemkund-sahib",
       "date": "2026-07-17"
@@ -285,6 +269,10 @@
     {
       "destination_id": "hogenakkal",
       "date": "2026-07-30"
+    },
+    {
+      "destination_id": "udaipur",
+      "date": "2026-07-31"
     }
   ],
   "posted_formats": {
@@ -6583,6 +6571,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "hogenakkal.mp4"
+    },
+    {
+      "timestamp": "2026-07-31T07:22:02.083269+00:00",
+      "date": "2026-07-31",
+      "platform": "youtube",
+      "post_id": "gIn1H",
+      "destination": "udaipur",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_udaipur_hi_2026-07-31.mp4"
+    },
+    {
+      "timestamp": "2026-07-31T07:22:43.109784+00:00",
+      "date": "2026-07-31",
+      "platform": "instagram",
+      "post_id": "TpA24",
+      "destination": "udaipur",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_udaipur_hi_2026-07-31.mp4"
     }
   ],
   "theme_usage": {
@@ -7671,8 +7677,7 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    },
-    "collection_carousel_dests:budget-under-1000": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
