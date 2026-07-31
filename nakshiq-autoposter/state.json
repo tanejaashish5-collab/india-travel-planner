@@ -38,13 +38,13 @@
     "m8EAd_carousel": "2026-07-30",
     "PdMu0_carousel": "2026-07-30",
     "GAh5p_yt_short": "2026-07-31",
-    "m8EAd": "2026-07-30",
-    "m8EAd_evening": "2026-07-30",
-    "PdMu0": "2026-07-30",
-    "PdMu0_evening": "2026-07-30",
+    "m8EAd": "2026-07-31",
+    "m8EAd_evening": "2026-07-31",
+    "PdMu0": "2026-07-31",
+    "PdMu0_evening": "2026-07-31",
     "m8EAd_yt_short": "2026-07-31"
   },
-  "last_sync": "2026-07-30T16:04:24.178332+00:00",
+  "last_sync": "2026-07-31T17:24:14.977636+00:00",
   "posted_destinations": [
     {
       "destination_id": "hemkund-sahib",
@@ -276,6 +276,10 @@
     },
     {
       "destination_id": "sonamarg",
+      "date": "2026-07-31"
+    },
+    {
+      "destination_id": "jog-falls",
       "date": "2026-07-31"
     }
   ],
@@ -6611,6 +6615,28 @@
       "destination": "sonamarg",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_sonamarg_hi_2026-07-31.mp4"
+    },
+    {
+      "timestamp": "2026-07-31T17:25:18.134291+00:00",
+      "date": "2026-07-31",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "9js3O",
+      "destination": "jog-falls",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "jog-falls.mp4"
+    },
+    {
+      "timestamp": "2026-07-31T17:25:35.936015+00:00",
+      "date": "2026-07-31",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "23Hwe",
+      "destination": "jog-falls",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "jog-falls.mp4"
     }
   ],
   "theme_usage": {
@@ -6953,7 +6979,8 @@
         "2026-07-01",
         "2026-07-02",
         "2026-07-14",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-07-31"
       ],
       "kolad": [
         "2026-07-01",
@@ -7136,7 +7163,8 @@
         "2026-07-26",
         "2026-07-28",
         "2026-07-29",
-        "2026-07-30"
+        "2026-07-30",
+        "2026-07-31"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -7354,7 +7382,8 @@
       ],
       "jog-falls": [
         "2026-07-02",
-        "2026-07-14"
+        "2026-07-14",
+        "2026-07-31"
       ],
       "bhimashankar": [
         "2026-07-03",
@@ -7423,7 +7452,8 @@
         "2026-07-03",
         "2026-07-10",
         "2026-07-17",
-        "2026-07-24"
+        "2026-07-24",
+        "2026-07-31"
       ]
     },
     "collections": {
@@ -7713,7 +7743,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "igatpuri",
+    "shared_best": "lamayuru",
     "collection": "budget-under-1000"
   },
   "manual_skip_dests": {},
