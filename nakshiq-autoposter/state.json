@@ -36,15 +36,15 @@
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-01",
-    "m8EAd": "2026-07-31",
-    "m8EAd_evening": "2026-07-31",
-    "PdMu0": "2026-07-31",
-    "PdMu0_evening": "2026-07-31",
+    "m8EAd": "2026-08-01",
+    "m8EAd_evening": "2026-08-01",
+    "PdMu0": "2026-08-01",
+    "PdMu0_evening": "2026-08-01",
     "m8EAd_yt_short": "2026-08-01",
     "m8EAd_carousel": "2026-08-01",
     "PdMu0_carousel": "2026-08-01"
   },
-  "last_sync": "2026-07-31T17:24:14.977636+00:00",
+  "last_sync": "2026-08-01T15:23:38.346438+00:00",
   "posted_destinations": [
     {
       "destination_id": "belur",
@@ -276,6 +276,10 @@
     },
     {
       "destination_id": "igatpuri",
+      "date": "2026-08-01"
+    },
+    {
+      "destination_id": "adilabad",
       "date": "2026-08-01"
     }
   ],
@@ -6687,6 +6691,28 @@
       "destination": "igatpuri",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_igatpuri_hi_2026-08-01.mp4"
+    },
+    {
+      "timestamp": "2026-08-01T15:24:48.221069+00:00",
+      "date": "2026-08-01",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "3UL4y",
+      "destination": "adilabad",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "adilabad.mp4"
+    },
+    {
+      "timestamp": "2026-08-01T15:25:09.528692+00:00",
+      "date": "2026-08-01",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jJ5Xq",
+      "destination": "adilabad",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "adilabad.mp4"
     }
   ],
   "theme_usage": {
@@ -7078,6 +7104,9 @@
         "2026-07-09",
         "2026-07-16",
         "2026-07-25"
+      ],
+      "adilabad": [
+        "2026-08-01"
       ]
     },
     "morning_formats": {
@@ -7214,7 +7243,8 @@
         "2026-07-28",
         "2026-07-29",
         "2026-07-30",
-        "2026-07-31"
+        "2026-07-31",
+        "2026-08-01"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -7470,6 +7500,9 @@
       ],
       "keylong": [
         "2026-07-22"
+      ],
+      "adilabad": [
+        "2026-08-01"
       ]
     },
     "audience_tags": {
@@ -7491,7 +7524,8 @@
         "2026-07-04",
         "2026-07-11",
         "2026-07-18",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-08-01"
       ],
       "adventurers": [
         "2026-05-29",
@@ -7779,7 +7813,8 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -7793,7 +7828,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lamayuru",
+    "shared_best": "amboli",
     "collection": "budget-under-1000"
   },
   "manual_skip_dests": {},
