@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-01",
     "m8EAd": "2026-07-31",
@@ -272,6 +272,10 @@
     },
     {
       "destination_id": "hogenakkal",
+      "date": "2026-08-01"
+    },
+    {
+      "destination_id": "igatpuri",
       "date": "2026-08-01"
     }
   ],
@@ -6665,6 +6669,24 @@
       "destination": "hogenakkal",
       "format": "carousel.best_month",
       "media_id": "carousel_best_month_2026-08-01"
+    },
+    {
+      "timestamp": "2026-08-01T12:43:10.831988+00:00",
+      "date": "2026-08-01",
+      "platform": "youtube",
+      "post_id": "TpPmC",
+      "destination": "igatpuri",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_igatpuri_hi_2026-08-01.mp4"
+    },
+    {
+      "timestamp": "2026-08-01T12:43:52.259353+00:00",
+      "date": "2026-08-01",
+      "platform": "instagram",
+      "post_id": "jJ5Vw",
+      "destination": "igatpuri",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_igatpuri_hi_2026-08-01.mp4"
     }
   ],
   "theme_usage": {
