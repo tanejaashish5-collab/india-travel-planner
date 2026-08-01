@@ -48,6 +48,7 @@
     "All claims trace to DB rows (destination_months, destination_costs, destinations). Zero fabrication. No stay names unless present in local_stays/destination_stay_picks.",
     "Scores quoted on the displayed 0-10 scale (DB score x 2).",
     "Every article internally links to its dest×month and/or cost pages.",
-    "Drafts to data/blog-drafts/, SQL via scripts/build-blog-inserts.mjs, verify rendered pages post-insert."
+    "Drafts to data/blog-drafts/, SQL via scripts/build-blog-inserts.mjs, verify rendered pages post-insert.",
+    "Rendered-page verification when the session container cannot reach www.nakshiq.com (cloud runs: proxy denies CONNECT; there is no Vercel URL-fetch MCP tool): probe from inside Postgres via the `http` extension (installed 2026-08-01 in the `extensions` schema, not REST-exposed) — SELECT status, content ILIKE '%<unique phrase>%' FROM extensions.http_get('https://www.nakshiq.com/en/blog/<slug>'). Pick apostrophe-free phrases (React escapes ' to &#x27; in HTML). First-ever request to a new slug is a fresh SSR render, so a green check is meaningful; for re-verification of existing pages the ISR cache-age caveat in CLAUDE.md applies."
   ]
 }
