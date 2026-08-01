@@ -32,36 +32,18 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-07-30",
-    "PdMu0_carousel": "2026-07-30",
-    "GAh5p_yt_short": "2026-07-31",
+    "GAh5p_yt_short": "2026-08-01",
     "m8EAd": "2026-07-31",
     "m8EAd_evening": "2026-07-31",
     "PdMu0": "2026-07-31",
     "PdMu0_evening": "2026-07-31",
-    "m8EAd_yt_short": "2026-07-31"
+    "m8EAd_yt_short": "2026-08-01"
   },
   "last_sync": "2026-07-31T17:24:14.977636+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hemkund-sahib",
-      "date": "2026-07-17"
-    },
-    {
-      "destination_id": "kausani",
-      "date": "2026-07-17"
-    },
-    {
-      "destination_id": "shravanabelagola",
-      "date": "2026-07-17"
-    },
-    {
-      "destination_id": "igatpuri",
-      "date": "2026-07-17"
-    },
     {
       "destination_id": "belur",
       "date": "2026-07-18"
@@ -281,6 +263,10 @@
     {
       "destination_id": "jog-falls",
       "date": "2026-07-31"
+    },
+    {
+      "destination_id": "kaza",
+      "date": "2026-08-01"
     }
   ],
   "posted_formats": {
@@ -6637,6 +6623,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "jog-falls.mp4"
+    },
+    {
+      "timestamp": "2026-08-01T06:45:11.390269+00:00",
+      "date": "2026-08-01",
+      "platform": "youtube",
+      "post_id": "a178V",
+      "destination": "kaza",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kaza_en_2026-08-01.mp4"
+    },
+    {
+      "timestamp": "2026-08-01T06:45:54.766327+00:00",
+      "date": "2026-08-01",
+      "platform": "instagram",
+      "post_id": "MZtiM",
+      "destination": "kaza",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kaza_en_2026-08-01.mp4"
     }
   ],
   "theme_usage": {

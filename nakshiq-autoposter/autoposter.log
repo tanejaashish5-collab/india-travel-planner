@@ -15304,3 +15304,26 @@ Date range: 2026-04-15 → 2026-07-30
 2026-07-31 19:55:39  INFO      
 Date range: 2026-04-15 → 2026-07-31
 2026-07-31 19:55:39  INFO      ════════════════════════════════════════════════════════════
+2026-08-01 06:43:39  INFO      ════════════════════════════════════════════════════════════
+2026-08-01 06:43:39  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-01
+2026-08-01 06:43:39  INFO      ════════════════════════════════════════════════════════════
+2026-08-01 06:43:45  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-01 06:44:57  INFO      Short rendered: yt_short_did_you_know_kaza_en_2026-08-01.mp4 (13792 KB, 21.8s, fmt=did_you_know, music=edm-777)
+2026-08-01 06:44:58  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_kaza_en_2026-08-01.mp4 (14,123,886 bytes, video/mp4)
+2026-08-01 06:44:58  INFO          Uploading to R2 (timeout=300s)...
+2026-08-01 06:44:59  INFO          R2 PUT OK. Confirming...
+2026-08-01 06:45:01  INFO          Media ready: 94iIQ (14,123,886 bytes · yt_short_did_you_know_yt_short_did_you_know_kaza_en_2026-08-01.mp4)
+2026-08-01 06:45:01  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_kaza_en_2026-08-01.mp4
+2026-08-01 06:45:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-01 06:45:01  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-08-01 06:45:01  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-01 06:45:05  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=a178V), waiting for platform confirmation...
+2026-08-01 06:45:11  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=a178V · Platform=NgSCt2VDrfA
+2026-08-01 06:45:11  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-08-01 06:45:11  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-01 06:45:13  INFO      [instagram/nakshiq] Outstand accepted (post_id=MZtiM), waiting for platform confirmation...
+2026-08-01 06:45:54  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=MZtiM · Platform=18109988110952265
+2026-08-01 06:45:54  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-01 06:45:54  INFO      YT Short posted: format=did_you_know, music=edm-777
+2026-08-01 06:45:54  INFO      State saved. YT Short run complete.
+2026-08-01 06:45:54  INFO      ════════════════════════════════════════════════════════════
