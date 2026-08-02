@@ -41,8 +41,9 @@
     "PdMu0": "2026-08-01",
     "PdMu0_evening": "2026-08-01",
     "m8EAd_yt_short": "2026-08-01",
-    "m8EAd_carousel": "2026-08-01",
-    "PdMu0_carousel": "2026-08-01"
+    "m8EAd_carousel": "2026-08-02",
+    "PdMu0_carousel": "2026-08-02",
+    "m8EAd_carousel_story": "2026-08-02"
   },
   "last_sync": "2026-08-01T15:23:38.346438+00:00",
   "posted_destinations": [
@@ -268,6 +269,10 @@
     },
     {
       "destination_id": "karla-bhaja-caves",
+      "date": "2026-08-02"
+    },
+    {
+      "destination_id": "hanle",
       "date": "2026-08-02"
     }
   ],
@@ -6719,6 +6724,33 @@
       "destination": "karla-bhaja-caves",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_karla-bhaja-caves_hi_2026-08-02.mp4"
+    },
+    {
+      "timestamp": "2026-08-02T09:26:34.055621+00:00",
+      "date": "2026-08-02",
+      "platform": "instagram",
+      "post_id": "xXSxt",
+      "destination": "hanle",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-02"
+    },
+    {
+      "timestamp": "2026-08-02T09:26:38.743152+00:00",
+      "date": "2026-08-02",
+      "platform": "instagram",
+      "post_id": "AzXAC",
+      "destination": "hanle",
+      "format": "story.window",
+      "media_id": "story_window_2026-08-02"
+    },
+    {
+      "timestamp": "2026-08-02T09:26:41.300092+00:00",
+      "date": "2026-08-02",
+      "platform": "facebook",
+      "post_id": "RDFRs",
+      "destination": "hanle",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-02"
     }
   ],
   "theme_usage": {
