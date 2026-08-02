@@ -1001,6 +1001,360 @@ def _template_spec_vs(a: dict, b: dict, lang: str = "hi"):
 
 
 # ─────────────────────────────────────────────────────────────────────────
+# 1a-2. FOUR MORE VARIETY ARCS (2026-08-02) — founder: "i dont see any new
+#     formats being posted on instagram ... to me all looks same".
+#
+#     These four story shapes already existed as v1 renderers in yt_shorts_gen.py
+#     (_build_listicle / _build_before_after / _build_mini_guide /
+#     _build_dont_go_here) but the live autoposter never imports that module, so
+#     none had shipped since early June. Ported to the v2 SPEC contract rather
+#     than re-rendered, so they inherit the v2 voice, on-screen hook and publish
+#     path unchanged — and the 08-02 LRU rotation picks them up automatically.
+#
+#     Same discipline as every arc above: every spoken line is a field off the
+#     content API — no runtime LLM, no invented facts — and each returns None the
+#     moment its data is thin, so the rotation falls through to the next arc
+#     instead of narrating a half-empty script.
+# ─────────────────────────────────────────────────────────────────────────
+
+_HI_MONTH = {1: "जनवरी", 2: "फ़रवरी", 3: "मार्च", 4: "अप्रैल", 5: "मई", 6: "जून",
+             7: "जुलाई", 8: "अगस्त", 9: "सितंबर", 10: "अक्टूबर", 11: "नवंबर",
+             12: "दिसंबर"}
+
+
+def _named_clause(d: dict, lang: str, min_len: int = 24) -> str:
+    """'<Name> — <clause>' ready to drop into a list beat, or '' when the row has
+    no usable clause (caller falls back to the score line).
+
+    Two things this handles that a bare f-string does not:
+    * The source copy often OPENS with the destination's own name. Prefixing
+      then double-names it, and stripping the name leaves a dangling verb
+      ("Igatpuri — is where Mumbai's water comes from"). So when the clause
+      already starts with the name it is used whole.
+    * _en_clauses / _hi_clauses split on punctuation and can hand back a stub —
+      "sits on the Leh" — which reads as broken data on screen. Anything under
+      `min_len` is rejected rather than spoken."""
+    name = d.get("name") or ""
+    if lang == "en":
+        cl = _en_clauses(d.get("why_special") or d.get("tagline") or "")
+        c = cl[0].strip().rstrip(".") if cl else ""
+    else:
+        cl = _hi_clauses(d.get("why_special_hi") or d.get("tagline_hi") or "")
+        c = cl[0].strip().rstrip("।") if cl else ""
+    # Measure the INFORMATIVE remainder, not the raw length — a clause that is
+    # mostly the destination's own name passes a naive length test while saying
+    # nothing ("Khardung La sits on the Leh" → 27 chars, 16 of them content).
+    for nm in (name, d.get("name_hi")):
+        if nm and c.lower().startswith(nm.lower()):
+            return c if len(c) - len(nm) >= min_len - 4 else ""
+    if len(c) < min_len:
+        return ""
+    return f"{name} — {c}" if name else c
+
+
+def _reason(note: str, lang: str, hi_max: int = 44) -> str:
+    """First clause of a month `note` — the verified reason a score is what it is.
+
+    `note` is ENGLISH-ONLY in the content API (note_hi is empty on all 100 rows,
+    checked 2026-08-02). Short fragments are ordinary Hinglish and land fine in a
+    Hindi reel — "Peak monsoon", "Monsoon continues" — but a full English
+    sentence spliced into a Hindi line reads as machine output, so anything
+    longer than `hi_max` is dropped and the caller falls back to the score."""
+    note = (note or "").strip()
+    if not note:
+        return ""
+    cl = _en_clauses(note) if lang == "en" else _hi_clauses(note)
+    r = cl[0].strip().rstrip(".।") if cl else re.split(r"[.।]", note)[0].strip()
+    if not (8 <= len(r) <= 110):
+        return ""
+    if lang != "en" and len(r) > hi_max:
+        return ""
+    return r
+
+
+def _score_hi(raw) -> str:
+    """Display score spoken in Hindi ('8 बटा 10') — edge-tts reads a bare '/'
+    as a pause, which is why every Hindi arc converts it."""
+    return _format_score(raw).replace("/", " बटा ")
+
+
+def _template_spec_mini_guide(dest: dict, lang: str = "hi"):
+    """Practical 'before you go' guide built ONLY from the destination's own
+    verified `intel` block — reach, night temperatures, beds, network, hospital
+    distance, the legendary eatery. None when fewer than three beats resolve: a
+    two-line guide isn't a guide.
+
+    The Hindi variant deliberately uses the NUMERIC and proper-noun beats only
+    (temps, price band, bed count, km to hospital, eatery name). The prose intel
+    fields — road_condition, network note — are English-only in the API, and
+    splicing raw English clauses into a Hindi sentence reads as machine output.
+    Numbers carry the value and are language-neutral."""
+    name = dest.get("name") or dest.get("id")
+    it = dest.get("intel") or {}
+    if not name or not it:
+        return None
+    reach = it.get("reach") or {}
+    wx = it.get("weather_night") or {}
+    sleep = it.get("sleep") or {}
+    net = it.get("network") or {}
+    em = it.get("emergency") or {}
+    eat = it.get("legendary_eatery") or {}
+
+    # Each beat is (key, english, hindi); hindi None = English-only prose field.
+    # Assembled in PRIORITY order and cut at 4, so the order below is what
+    # actually decides which beats make the reel. Road first (the thing everyone
+    # asks), then temps, then the eatery — the most watchable beat, and the one
+    # an append-then-truncate order kept dropping.
+    lo, hiT = wx.get("min_temp_c"), wx.get("max_temp_c")
+    gear = (wx.get("gear_needed") or "").strip().rstrip(".")
+    cnt, band = sleep.get("options_count"), (sleep.get("price_range_inr") or "").strip()
+    km = em.get("km")
+    road = (reach.get("road_condition") or reach.get("from_nearest_city") or "").strip()
+    last = (reach.get("last_km_difficulty") or "").strip()
+    note = (net.get("note") or "").strip()
+
+    # difficulty + elevation are top-level fields (100/100 and 98/100 on the live
+    # pool, 2026-08-02) and are language-neutral, unlike the intel PROSE fields.
+    # They exist because the Hindi guide was resolving on only 13% of
+    # destinations without them: intel's night temps and hospital distance — the
+    # two other numeric beats — are populated on just 13/100 rows each.
+    _DIFF_HI = {"easy": "आसान", "moderate": "मध्यम", "easy to moderate": "आसान से मध्यम",
+                "hard": "कठिन", "difficult": "कठिन", "challenging": "कठिन",
+                "strenuous": "कठिन", "very hard": "बहुत कठिन"}
+    diff = (dest.get("difficulty") or "").strip().lower()
+    elev = dest.get("elevation_m")
+
+    beats = []
+    if road:
+        beats.append((f"Getting there: {road.rstrip('.')}"
+                      + (f", last stretch {last}." if last else "."), None))
+    if diff and diff in _DIFF_HI:
+        beats.append((f"Access is rated {diff}.", f"पहुँचना — {_DIFF_HI[diff]}।"))
+    # Only when the altitude is actually part of the story — "8 metres above sea
+    # level" is filler on a coastal town, and filler is what makes reels skippable.
+    if isinstance(elev, (int, float)) and elev >= 500:
+        beats.append((f"You'll be at {int(elev)} metres above sea level.",
+                      f"समुद्र तल से {int(elev)} मीटर की ऊँचाई पर।"))
+    if lo is not None and hiT is not None:
+        beats.append((f"Nights run {lo} to {hiT} degrees" + (f" — {gear.lower()}." if gear else "."),
+                      f"रात का तापमान {lo} से {hiT} डिग्री रहता है।"))
+    if eat.get("name") and eat.get("signature_dish"):
+        beats.append((f"Eat at {eat['name']} — {eat['signature_dish'].strip().rstrip('.')}.",
+                      f"खाने के लिए — {eat['name']}।"))
+    if cnt and band:
+        beats.append((f"About {cnt} places to stay, roughly {band} rupees a night.",
+                      f"रुकने के लगभग {cnt} विकल्प — करीब {band} रुपये प्रति रात।"))
+    if em.get("nearest_hospital") and km is not None:
+        beats.append((f"Nearest hospital is about {km} kilometres out.",
+                      f"सबसे नज़दीकी अस्पताल करीब {km} किलोमीटर दूर है।"))
+    if note:
+        beats.append((f"Signal: {note.rstrip('.')}.", None))
+
+    body = ([b[0] for b in beats] if lang == "en"
+            else [b[1] for b in beats if b[1]])
+    if len(body) < 3:
+        return None
+
+    # The hook is a bare question — a second sentence after it would be collapsed
+    # into a dash run-on by _single_sentence ("Going to X — Sort these first.").
+    # A TERMINAL '?' is left alone, which is why this reads correctly.
+    if lang == "en":
+        seq = [f"Going to {name}?"] + body[:4]
+        seq.append("Full checklist, and the right month to go — on NakshIQ.")
+        lines = [_single_sentence(s) for s in seq]
+        caps = list(lines)
+    else:
+        deva = [f"{name} जा रहे हैं?"] + body[:4]
+        deva.append("पूरी चेकलिस्ट और सही महीना — NakshIQ पे।")
+        lines = [_single_sentence(d) for d in deva]
+        caps = [deva_to_latin(d) for d in deva]
+    return {"lines": lines[:6], "caption_lines": caps[:6],
+            "voice_profile": _profile_for(dest), "arc": "mini_guide",
+            "lang": lang, "generated": True}
+
+
+def _template_spec_listicle(dest: dict, dests: list, month: int, lang: str = "hi"):
+    """'Three worth it this month' — `dest` FIRST (the reel plays its footage, so
+    it has to be the one being named on screen), then the next two highest
+    scorers, each with its own verified clause. None if two peers don't resolve."""
+    name = dest.get("name")
+    if not name:
+        return None
+    peers = [d for d in dests
+             if d.get("id") != dest.get("id") and d.get("name")
+             and (d.get("score") or 0) >= (dest.get("score") or 0) - 1]
+    peers.sort(key=lambda d: -(d.get("score") or 0))
+    picks = [dest] + peers[:2]
+    if len(picks) < 3:
+        return None
+    mname = datetime(2000, month, 1).strftime("%B")
+
+    # Ordinal WORDS, not "1." / "2." — _single_sentence() rewrites a digit-dot
+    # before a capital into a dash ("1. Hogenakkal" → "1 — Hogenakkal"), which
+    # the voice then reads as a pause and the caption keeps as "1.".
+    if lang == "en":
+        ords = ["First up,", "Second,", "Third,"]
+        seq = [f"Three places actually worth it in {mname}."]
+        for o, d in zip(ords, picks):
+            c = _named_clause(d, "en")
+            seq.append(f"{o} {c}." if c
+                       else f"{o} {d['name']}, scoring {_format_score(d.get('score'))}.")
+        seq.append("All three re-scored every month on NakshIQ — no sponsors.")
+        lines = [_single_sentence(s) for s in seq]
+        caps = list(lines)
+    else:
+        ords = ["पहली —", "दूसरी —", "तीसरी —"]
+        deva = [f"{_HI_MONTH.get(month, '')} में जाने लायक तीन जगहें।"]
+        for o, d in zip(ords, picks):
+            c = _named_clause(d, "hi")
+            deva.append(f"{o} {c}।" if c
+                        else f"{o} {d['name']}, स्कोर {_score_hi(d.get('score'))}।")
+        deva.append("तीनों की जाँच हर महीने — NakshIQ पे।")
+        lines = [_single_sentence(d) for d in deva]
+        caps = [deva_to_latin(d) for d in deva]
+    return {"lines": lines[:6], "caption_lines": caps[:6],
+            "voice_profile": _profile_for(dest), "arc": "listicle",
+            "lang": lang, "generated": True}
+
+
+def _template_spec_dont_go_here(dest: dict, month: int, lang: str = "hi"):
+    """The honest 'wait on these' arc — names genuinely low-scoring places for
+    THIS month using their own verified `note` (the monsoon / closure / crowd
+    reason), then points at `dest` as the alternative. The reel plays `dest`'s
+    footage, so the place on screen is always the RECOMMENDED one, never one of
+    the warnings. None when fewer than two low scorers resolve."""
+    name = dest.get("name")
+    if not name:
+        return None
+    bad = [d for d in _fetch_destinations(month, max_score=2)
+           if d.get("name") and d.get("id") != dest.get("id")
+           and (d.get("score") or 9) <= 2]
+    if len(bad) < 2:
+        print("dont_go_here: fewer than 2 low-scoring dests — skipping arc")
+        return None
+    # Deterministic per day so a retry re-renders the same reel.
+    seed = sum(ord(c) for c in (dest.get("id", "") + date.today().isoformat()))
+    bad.sort(key=lambda d: ((d.get("score") or 9), d.get("id", "")))
+    picks = [bad[(seed + i * 7) % len(bad)] for i in range(2)]
+    if picks[0].get("id") == picks[1].get("id"):
+        picks[1] = bad[(seed + 3) % len(bad)]
+        if picks[0].get("id") == picks[1].get("id"):
+            return None
+    mname = datetime(2000, month, 1).strftime("%B")
+
+    if lang == "en":
+        seq = [f"Two places to wait on in {mname} — and where to go instead."]
+        for d in picks:
+            w = _reason(d.get("note"), "en")
+            seq.append(f"{d['name']}: {w}." if w
+                       else f"{d['name']} is scoring only {_format_score(d.get('score'))} right now.")
+        seq.append(f"Go to {name} instead — {_format_score(dest.get('score'))} this month.")
+        seq.append("We publish the low scores too, and that's the whole point of NakshIQ.")
+        lines = [_single_sentence(s) for s in seq]
+        caps = list(lines)
+    else:
+        deva = [f"{_HI_MONTH.get(month, '')} में इन दो जगहों को अभी रहने दीजिए।"]
+        for d in picks:
+            w = _reason(d.get("note"), "hi")
+            deva.append(f"{d['name']} — {w}।" if w
+                        else f"{d['name']} का स्कोर अभी सिर्फ़ {_score_hi(d.get('score'))} है।")
+        deva.append(f"इसकी जगह {name} — इस महीने {_score_hi(dest.get('score'))}।")
+        deva.append("कम स्कोर भी हम बताते हैं — यही NakshIQ है।")
+        lines = [_single_sentence(d) for d in deva]
+        caps = [deva_to_latin(d) for d in deva]
+    return {"lines": lines[:6], "caption_lines": caps[:6],
+            "voice_profile": _profile_for(dest), "arc": "dont_go_here",
+            "lang": lang, "generated": True}
+
+
+def _month_scores(month: int) -> dict:
+    """{slug: score} for `month` — the light payload (no intel) used by the
+    before_after probe, which only needs to compare numbers."""
+    import requests
+    try:
+        url = (f"https://nakshiq.com/api/content?type=destinations&month={month}"
+               f"&min_score=0&limit=400")
+        return {d["id"]: d.get("score")
+                for d in requests.get(url, timeout=25).json().get("data", [])
+                if d.get("id") and isinstance(d.get("score"), (int, float))}
+    except Exception as e:
+        print(f"month-scores fetch failed ({month}): {e}")
+        return {}
+
+
+def _swing_month_for(slug: str, score_now, month: int, probe: int = 4):
+    """(month_number, score, direction) for the FIRST of the next `probe` months
+    where `slug` scores DIFFERENTLY from now — direction 'better' or 'worse'.
+    None when the score never moves inside the window.
+
+    Both directions are real stories and both are needed. build_series_short
+    picks `dest` highest-score-first, so the destination on screen is usually
+    already at peak and can only get WORSE later — a better-month-only probe
+    (the original v1 shape) would have left this arc almost permanently dead.
+    'Worse' becomes the go-now urgency cut; 'better' becomes wait-for-it.
+
+    Probes lazily and stops at the first hit. Measured against the live API on
+    2026-08-02: 34% of destinations resolve a better month on the 1st probe, 62%
+    within 4 — and the API caps each month at 100 rows, which is why this can't
+    be one lookup. A miss is normal and hands the slot to the next arc."""
+    if score_now is None:
+        return None
+    for off in range(1, probe + 1):
+        om = ((month - 1 + off) % 12) + 1
+        s = _month_scores(om).get(slug)
+        if s is None or s == score_now:
+            continue
+        return om, s, ("better" if s > score_now else "worse")
+    return None
+
+
+def _template_spec_before_after(dest: dict, month: int, lang: str = "hi"):
+    """'Same place, different month' — this destination scored now versus the
+    next month its score actually moves, with this month's verified `note` as the
+    reason. Reads as wait-for-it when it improves and as go-now when it drops.
+    None when the score is flat across the probe window, which is the honest
+    outcome: no swing, no before-and-after to narrate."""
+    name = dest.get("name")
+    now = dest.get("score")
+    if not name or now is None:
+        return None
+    hit = _swing_month_for(dest.get("id", ""), now, month)
+    if not hit:
+        return None
+    bmonth, bscore, direction = hit
+    why = _reason(dest.get("note"), lang)
+    mnow = datetime(2000, month, 1).strftime("%B")
+    mthen = datetime(2000, bmonth, 1).strftime("%B")
+    hthen = _HI_MONTH.get(bmonth, mthen)
+
+    if lang == "en":
+        seq = [f"{name} right now: {_format_score(now)}."]
+        if why:
+            seq.append(f"{why}.")
+        seq.append(f"The same place in {mthen}: {_format_score(bscore)}.")
+        seq.append("Same destination, completely different trip.")
+        seq.append(f"Go in {mthen}, not {mnow} — the month is the decision on NakshIQ."
+                   if direction == "better" else
+                   f"So go now, not in {mthen} — the month is the decision on NakshIQ.")
+        lines = [_single_sentence(s) for s in seq]
+        caps = list(lines)
+    else:
+        deva = [f"{name} अभी — स्कोर {_score_hi(now)}।"]
+        if why:
+            deva.append(f"{why}।")
+        deva.append(f"वही जगह {hthen} में — {_score_hi(bscore)}।")
+        deva.append("जगह वही है, सफ़र बिलकुल अलग।")
+        deva.append(f"{hthen} में जाइए, अभी नहीं — महीना ही असली फ़ैसला है, NakshIQ पे।"
+                    if direction == "better" else
+                    f"तो अभी जाइए, {hthen} में नहीं — महीना ही असली फ़ैसला है, NakshIQ पे।")
+        lines = [_single_sentence(d) for d in deva]
+        caps = [deva_to_latin(d) for d in deva]
+    return {"lines": lines[:6], "caption_lines": caps[:6],
+            "voice_profile": _profile_for(dest), "arc": "before_after",
+            "lang": lang, "generated": True}
+
+
+# ─────────────────────────────────────────────────────────────────────────
 # 1b. "LANDING IN INDIA" — arrival-logistics reels for inbound travellers
 #     A SEPARATE content type (NOT a destination score). English, en-IN voice.
 #     Beats are field-gated against data/arrivals/arrivals.json (verified +
@@ -1604,43 +1958,80 @@ def _series_link(slug: str, month_slug: str) -> str:
     return base + "?utm_source=youtube&utm_medium=short&utm_campaign=nakshiq-score"
 
 
+def _hook_line(caps: list, fallback: str) -> str:
+    """First caption line as a properly terminated sentence.
+
+    The old form — `caps[0].rstrip(".")` then f"{hook}." — appended a full stop
+    to a hook that already ended in '?' ("Karla jaa rahe hain?."). Arc hooks are
+    questions now, so termination has to be checked, not assumed."""
+    h = (caps[0] if caps else fallback).strip()
+    return h if h[-1:] in ".?!।" else h + "."
+
+
+# What each NON-score arc is called in the post itself. Without an entry an arc
+# falls through to the score title — which is how a "before you go" reel ended up
+# published as "NakshIQ Score 10/10", the same look-alike failure as the 06-24
+# on-screen-hook bug, one layer up in the caption.
+_ARC_TITLE = {
+    "did_you_know": None,      # None = use the hook line itself as the title
+    "this_vs_that": None,
+    "mini_guide": "{name}: sort these before you go",
+    "listicle": "3 places actually worth it in {month}",
+    "dont_go_here": "Wait on these in {month} — go {name} instead",
+    "before_after": "{name}: same place, different month",
+}
+
+_ARC_BLURB = {
+    "did_you_know": "verified field intel, re-checked monthly. No fluff, no sponsors.",
+    "this_vs_that": "an honest, data-backed call, re-checked every month on NakshIQ.",
+    "mini_guide": "roads, altitude, beds, food and hospital distance — all verified, re-checked monthly.",
+    "listicle": "every place re-scored every month on NakshIQ. No sponsors, no paid placements.",
+    "dont_go_here": "we publish the low scores too — that's the whole point of NakshIQ.",
+    "before_after": "the same place scores differently month to month. We re-check all of it.",
+}
+
+
 def _yt_caption_v2(dest: dict, spec: dict, music_credit: str, month_name: str) -> str:
     name = dest.get("name") or dest.get("id"); state = dest.get("state", "")
     disp = _format_score(dest.get("score"))
     caps = spec.get("caption_lines") or []
-    hook = (caps[0] if caps else f"{name} — {disp}").rstrip(".")
+    hook = _hook_line(caps, f"{name} — {disp}")
     link = _series_link(dest.get("id"), month_name.lower())
     arc = spec.get("arc", "")
-    if arc == "did_you_know":
-        title = hook[:95]
-        body = (f"{hook}.\n\n{name}, {state} — verified field intel, re-checked "
-                f"monthly. No fluff, no sponsors.\n\nFull guide → {link}\n\n{_hashtags(name, state)}")
-    elif arc == "this_vs_that":
-        title = hook[:95]
-        body = (f"{hook}.\n\n{name}, {state} — an honest, data-backed call, "
-                f"re-checked every month on NakshIQ.\n\nFull guide → {link}\n\n{_hashtags(name, state)}")
+    if arc in _ARC_TITLE:
+        tmpl = _ARC_TITLE[arc]
+        title = (tmpl.format(name=name, month=month_name) if tmpl
+                 else hook.rstrip(".")[:95])
+        body = (f"{hook}\n\n{name}, {state} — {_ARC_BLURB[arc]}"
+                f"\n\nFull guide → {link}\n\n{_hashtags(name, state)}")
     else:
         title = f"{name}: {month_name} NakshIQ Score {disp}"
-        body = (f"{hook}.\n\n{name}, {state} — {month_name} score {disp} "
+        body = (f"{hook}\n\n{name}, {state} — {month_name} score {disp} "
                 f"(weather, roads, crowds, hospital & cell signal all checked).\n\n"
                 f"Full verified guide → {link}\n\n{_hashtags(name, state)}")
     if music_credit:
         body += f"\n\n{music_credit}"
-    return title + "\n\n" + body   # _run_yt_short takes the first line as YT title
+    return title[:95] + "\n\n" + body   # _run_yt_short takes the first line as YT title
 
 
 def _ig_caption_v2(dest: dict, spec: dict, music_credit: str, month_name: str) -> str:
     name = dest.get("name") or dest.get("id"); state = dest.get("state", "")
     disp = _format_score(dest.get("score"))
     caps = spec.get("caption_lines") or []
-    hook = (caps[0] if caps else f"{name} — {disp}").rstrip(".")
+    hook = _hook_line(caps, f"{name} — {disp}")
     arc = spec.get("arc", "")
-    if arc in ("did_you_know", "this_vs_that"):
-        body = (f"{hook}.\n\n{name}, {state} — verified, re-checked every month "
-                f"on NakshIQ. No fluff, no sponsors.\n\n\U0001f4be Save this for your "
-                f"{month_name} trip.\n\n{_hashtags(name, state, 16)}")
+    # Same rule as the YouTube caption: a non-score arc must not be sold as a
+    # score post. Instagram is where the founder actually noticed the sameness.
+    save = {"dont_go_here": "Save this before you book.",
+            "before_after": "Save this — the month is the decision.",
+            "listicle": "Save all three for your {m} trip.",
+            "mini_guide": "Save this checklist for {m}."}
+    if arc in _ARC_BLURB:
+        cta = save.get(arc, "Save this for your {m} trip.").format(m=month_name)
+        body = (f"{hook}\n\n{name}, {state} — {_ARC_BLURB[arc]}"
+                f"\n\n\U0001f4be {cta}\n\n{_hashtags(name, state, 16)}")
     else:
-        body = (f"{hook}.\n\n{name}, {state} — {month_name} NakshIQ score {disp}. "
+        body = (f"{hook}\n\n{name}, {state} — {month_name} NakshIQ score {disp}. "
                 f"Real data, no fluff.\n\n\U0001f4be Save this for your {month_name} trip.\n\n"
                 f"{_hashtags(name, state, 16)}")
     if music_credit:
@@ -1679,6 +2070,21 @@ def _arc_hook(fmt: str, name: str) -> Optional[dict]:
     if fmt == "this_vs_that":
         return {"kicker": "THIS OR THAT", "slam": "VS", "badge": "  " + name_uc + "  ",
                 "cta1": "SAVE THIS", "cta2": "honest calls · nakshiq.com"}
+    # 2026-08-02 — the four ported arcs need hooks for the SAME reason the two
+    # above do: without one, build_ass() stamps the score visual and the reel
+    # looks like a score reel no matter what the voice is saying.
+    if fmt == "mini_guide":
+        return {"kicker": "BEFORE YOU GO", "slam": "PREP", "badge": "  " + name_uc + "  ",
+                "cta1": "SAVE THIS", "cta2": "full checklist · nakshiq.com"}
+    if fmt == "listicle":
+        return {"kicker": "WORTH IT NOW", "slam": "TOP 3", "badge": "  " + name_uc + "  ",
+                "cta1": "SAVE ALL 3", "cta2": "re-scored monthly · nakshiq.com"}
+    if fmt == "dont_go_here":
+        return {"kicker": "WAIT ON THESE", "slam": "SKIP", "badge": "  GO: " + name_uc + "  ",
+                "cta1": "CHECK YOUR DATES", "cta2": "we publish low scores · nakshiq.com"}
+    if fmt == "before_after":
+        return {"kicker": "RIGHT PLACE", "slam": "WRONG MONTH", "badge": "  " + name_uc + "  ",
+                "cta1": "SAVE FOR LATER", "cta2": "the month is the call · nakshiq.com"}
     return None
 
 
@@ -1824,7 +2230,27 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
                 return None, "this_vs_that"
             return _template_spec_vs(dest, _other, lang), "this_vs_that"
 
-        ARC_BUILDERS = [("did_you_know", _mk_dyk), ("this_vs_that", _mk_vs)]
+        def _mk_guide():
+            return _template_spec_mini_guide(dest, lang), "mini_guide"
+
+        def _mk_list():
+            return _template_spec_listicle(dest, dests, month, lang), "listicle"
+
+        def _mk_skip():
+            return _template_spec_dont_go_here(dest, month, lang), "dont_go_here"
+
+        def _mk_ba():
+            return _template_spec_before_after(dest, month, lang), "before_after"
+
+        # 2026-08-02 — the pool goes 2 → 6. The four added here are the story
+        # shapes that only ever existed in the v1 renderer (yt_shorts_gen.py),
+        # which the live autoposter has never imported, so they had not shipped
+        # since early June. Any of them may return None on thin data; the loop
+        # below simply moves to the next, and nakshiq_score remains the
+        # never-dark backstop.
+        ARC_BUILDERS = [("did_you_know", _mk_dyk), ("this_vs_that", _mk_vs),
+                        ("mini_guide", _mk_guide), ("listicle", _mk_list),
+                        ("dont_go_here", _mk_skip), ("before_after", _mk_ba)]
         _last = _arc_last_used(days=60)
         # oldest-first; never-used arcs sort first (empty string < any date).
         ordered = sorted(
@@ -1834,7 +2260,16 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
         print(f"series: arc order (least-recently-used first) = "
               f"{[a for a, _ in ordered]}")
         for _name, _build in ordered:
-            cand, _fmt = _build()
+            # Per-arc isolation (2026-08-02): four of the six arcs now hit the
+            # network or index into API rows, so one bad response must cost that
+            # ARC, not the slot. Without this a single raise skips straight past
+            # every remaining arc to the score fallback — re-creating the
+            # monotony this rotation exists to fix.
+            try:
+                cand, _fmt = _build()
+            except Exception as ex:
+                print(f"series: arc {_name} failed ({ex}) — trying next")
+                continue
             if cand:
                 spec, fmt = cand, _fmt
                 break
