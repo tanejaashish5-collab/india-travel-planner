@@ -36,16 +36,17 @@
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-02",
-    "m8EAd": "2026-08-01",
-    "m8EAd_evening": "2026-08-01",
-    "PdMu0": "2026-08-01",
-    "PdMu0_evening": "2026-08-01",
+    "m8EAd": "2026-08-02",
+    "m8EAd_evening": "2026-08-02",
+    "PdMu0": "2026-08-02",
+    "PdMu0_evening": "2026-08-02",
     "m8EAd_yt_short": "2026-08-01",
     "m8EAd_carousel": "2026-08-02",
     "PdMu0_carousel": "2026-08-02",
-    "m8EAd_carousel_story": "2026-08-02"
+    "m8EAd_carousel_story": "2026-08-02",
+    "m8EAd_evening_story": "2026-08-02"
   },
-  "last_sync": "2026-08-01T15:23:38.346438+00:00",
+  "last_sync": "2026-08-02T15:25:25.987714+00:00",
   "posted_destinations": [
     {
       "destination_id": "athirapally",
@@ -278,6 +279,26 @@
     {
       "destination_id": "bhimashankar",
       "date": "2026-08-02"
+    },
+    {
+      "destination_id": "umlingla",
+      "date": "2026-08-02"
+    },
+    {
+      "destination_id": "turtuk",
+      "date": "2026-08-02"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "date": "2026-08-02"
+    },
+    {
+      "destination_id": "khandala",
+      "date": "2026-08-02"
+    },
+    {
+      "destination_id": "amboli",
+      "date": "2026-08-02"
     }
   ],
   "posted_formats": {
@@ -302,7 +323,7 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "data_carousel"
     ],
     "PdMu0": [
       "score_card",
@@ -325,7 +346,7 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -6773,6 +6794,39 @@
       "destination": "bhimashankar",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_bhimashankar_hi_2026-08-02.mp4"
+    },
+    {
+      "timestamp": "2026-08-02T15:27:02.201961+00:00",
+      "date": "2026-08-02",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "dgyAQ",
+      "destination": "umlingla",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-08-02T15:27:27.318251+00:00",
+      "date": "2026-08-02",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "MZvcx",
+      "destination": "khandala",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-08-02T15:28:23.305854+00:00",
+      "date": "2026-08-02",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ilYO5",
+      "destination": "umlingla",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -7094,7 +7148,8 @@
         "2026-06-16"
       ],
       "valley-of-flowers": [
-        "2026-06-19"
+        "2026-06-19",
+        "2026-08-02"
       ],
       "kanatal": [
         "2026-06-19"
@@ -7139,7 +7194,8 @@
       ],
       "khandala": [
         "2026-07-04",
-        "2026-07-18"
+        "2026-07-18",
+        "2026-08-02"
       ],
       "tso-moriri": [
         "2026-07-07",
@@ -7163,10 +7219,17 @@
       "amboli": [
         "2026-07-09",
         "2026-07-16",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-08-02"
       ],
       "adilabad": [
         "2026-08-01"
+      ],
+      "umlingla": [
+        "2026-08-02"
+      ],
+      "turtuk": [
+        "2026-08-02"
       ]
     },
     "morning_formats": {
@@ -7368,7 +7431,8 @@
         "2026-06-13"
       ],
       "data_carousel": [
-        "2026-07-01"
+        "2026-07-01",
+        "2026-08-02"
       ]
     },
     "reels": {
@@ -7563,6 +7627,9 @@
       ],
       "adilabad": [
         "2026-08-01"
+      ],
+      "umlingla": [
+        "2026-08-02"
       ]
     },
     "audience_tags": {
@@ -7887,11 +7954,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "amboli",
+    "shared_best": "turtuk",
     "collection": "budget-under-1000"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-07-25",
+  "data_carousel_floor_last": "2026-08-02",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-07-01",
     "ladakh-manali-biker": "2026-07-03",
