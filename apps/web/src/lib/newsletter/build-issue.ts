@@ -36,6 +36,16 @@ export type IssueOverrides = Partial<{
   opening: string;
   closing: string;
   slug: string;
+  /**
+   * Pin the Weekly Picks window instead of deriving it from "now". Used by
+   * /api/the-window/latest to REPRODUCE an already-sent issue: picks are
+   * deterministic per (month, week, year), so replaying the issue's own window
+   * returns the destinations that issue actually featured, whatever day the
+   * endpoint is called. Weekly cron sends pass nothing and are unaffected.
+   */
+  month: number;
+  week: number;
+  year: number;
 }>;
 
 /**
@@ -47,7 +57,7 @@ export async function buildWindowIssue(overrides?: IssueOverrides): Promise<Issu
   if (!supabase) return { error: "Supabase not configured" };
 
   const now = new Date();
-  const currentMonth = now.getMonth() + 1;
+  const currentMonth = overrides?.month ?? now.getMonth() + 1;
   // Sequential numbering: next issue = (highest issue_number ever sent) + 1.
   // Apr 19 pre-launch row was renumbered to 0 so launch (Apr 24) stays the
   // canonical №01 and the cron-shipped sequence continues №02, №03, …
@@ -65,12 +75,12 @@ export async function buildWindowIssue(overrides?: IssueOverrides): Promise<Issu
     issueNumber = (lastIssue?.issue_number ?? 0) + 1;
   }
   const monthName = MONTH_NAMES[currentMonth];
-  const year = now.getFullYear();
+  const year = overrides?.year ?? now.getFullYear();
   // Alignment contract: newsletter slug matches the Weekly Picks week the
   // landing page will show on the day the email lands. Sunday 07:00 IST
   // sends are inside that week (Mon 00:00 IST → Sun 23:59 IST), so using
   // weekOfMonth(now) keeps newsletter + hero + autoposter on one story.
-  const weeklyWeek = weekOfMonth(now);
+  const weeklyWeek = overrides?.week ?? weekOfMonth(now);
   const slug = overrides?.slug ?? `${year}-${String(currentMonth).padStart(2, "0")}-w${weeklyWeek}`;
 
   // 1. Best score — the #1 Weekly Picks pick for this month + week. Same

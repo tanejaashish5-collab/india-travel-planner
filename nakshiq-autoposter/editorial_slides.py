@@ -210,12 +210,16 @@ def _shoot(html_doc: str) -> Image.Image:
 
 
 # ── public painters (mirror carousel_studio's PIL painters) ──────────────────
-def cover(kicker: str, headline_lines: list, sub: str, photo: Path | None) -> Image.Image:
+def cover(kicker: str, headline_lines: list, sub: str, photo: Path | None,
+          last: bool = False) -> Image.Image:
+    """`last=True` swaps the "swipe →" footer for "save this". Added 2026-08-02
+    for The Window's Story render, which reuses the cover art — a Story has
+    nothing to swipe to, so the default footer is a dead instruction there."""
     body = (_headline(headline_lines)
             + f'<div class="kicker">{_e(sub)}</div>'
             + _polaroid(photo, w=470, h=350, bottom=130, rot=2.5)
             + _note("save this one.", top=H - 560, right=530 if photo else 90))
-    return _shoot(_page(body, 1, kicker or "NakshIQ", "", last=False))
+    return _shoot(_page(body, 1, kicker or "NakshIQ", "", last=last))
 
 
 def _tidy(line: str) -> str:
@@ -246,14 +250,19 @@ def _narrow(inner: str, photo) -> str:
 
 
 def item(idx: int, total: int, badge: str, badge_kind: str, state: str,
-         name: str, line: str, photo: Path | None, icon: str = "pin") -> Image.Image:
+         name: str, line: str, photo: Path | None, icon: str = "pin",
+         label: str | None = None) -> Image.Image:
+    """`label` overrides the "pick N" chip. Added 2026-08-02 for The Window,
+    whose deck mixes ranked picks with a road report — labelling a road status
+    "pick 7" is simply wrong. Omitted everywhere else, so existing decks are
+    byte-identical."""
     kind = badge_kind if badge_kind in ("go", "stop", "plain") else "plain"
     body = ((f'<div class="state">{_e(state)}</div>' if state else "")
             + _headline([name], smaller=len(name or "") > 16)
             + (f'<div class="badge {kind}">{_e(badge)}</div>' if badge else "")
             + (_narrow(_rows([(icon, _leadin(line))]), photo) if line else "")
             + _polaroid(photo, w=430, h=320, cap=name))
-    return _shoot(_page(body, idx + 1, f"pick {idx}", f"{idx}/{total}"))
+    return _shoot(_page(body, idx + 1, label or f"pick {idx}", f"{idx}/{total}"))
 
 
 def skip(idx: int, total: int, skip_name: str, skip_reason: str,
@@ -276,11 +285,17 @@ def versus(idx: int, total: int, a_name: str, a_sub: str,
     return _shoot(_page(body, idx + 1, "this or that", f"{idx}/{total}"))
 
 
-def end(headline_lines: list, sub: str, photo: Path | None) -> Image.Image:
+def end(headline_lines: list, sub: str, photo: Path | None,
+        cta: str | None = None, rows: list | None = None) -> Image.Image:
+    """`cta` overrides the site chip and `rows` the two closing lines. Added
+    2026-08-02 so The Window can close on its own signup ask instead of the
+    generic domain — a newsletter deck whose only CTA is "nakshiq.com" wastes the
+    one slide people reach after deciding they like it. Both default to the
+    existing copy, so every other deck renders unchanged."""
     body = (_headline(headline_lines)
             + f'<div class="kicker">{_e(sub)}</div>'
-            + '<div class="sitechip">nakshiq.com</div>'
-            + _rows([("bookmark", "<b>Save this post</b> so it's there when you plan."),
-                     ("globe", "<b>Every claim above is a verified database field</b> — go / wait / skip for 500+ places, every month.")])
+            + f'<div class="sitechip">{_e(cta or "nakshiq.com")}</div>'
+            + _rows(rows or [("bookmark", "<b>Save this post</b> so it's there when you plan."),
+                             ("globe", "<b>Every claim above is a verified database field</b> — go / wait / skip for 500+ places, every month.")])
             + _note("hope it helps.", top=H - 250, right=100))
     return _shoot(_page(body, "END", "keep it", "", last=True))

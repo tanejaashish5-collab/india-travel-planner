@@ -11182,6 +11182,10 @@ _CAROUSEL_SERIES_LABELS = {
     "comparison": "This or That", "persona": "Made for You",
     "cost": "What It Actually Costs", "route": "The Route",
     "collection": "The Collection",
+    # "window" is intentionally absent: its caption already opens with the REAL
+    # issue number ("THE WINDOW · No. 15"). Adding a label here would stamp a
+    # second, synthetic count derived from post history — two different numbers
+    # for the same issue.
 }
 
 
@@ -11249,6 +11253,24 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
     except Exception as e:
         log.warning(f"festival cadence check skipped: {e}")
 
+    # ── SUNDAY = THE WINDOW EDITION (2026-08-02) ─────────────────────────────
+    # Founder: "every Sunday we can publish exactly like the newsletter". The
+    # issue sends Sun 01:30 UTC; this slot runs 07:17 UTC, so it is already out.
+    #
+    # It REPLACES Sunday's normal carousel rather than adding a post, keeping the
+    # deliberate 2-IG-posts/day cadence from the 2026-05-16 cut (sub-1k accounts
+    # get throttled above that). The rotation simply skips a day — every other
+    # format is oldest-first, so nothing gets starved.
+    #
+    # Prepended, not forced: if the issue is missing or the endpoint blips,
+    # build() returns None and the loop falls straight through to the regular
+    # rotation. A newsletter problem must never cost the Sunday slot.
+    if os.environ.get("NAKSHIQ_WINDOW_CAROUSEL", "1") != "0":
+        _sunday = date.today().weekday() == 6
+        if _sunday and not _format_posted_within(st, 1, lambda x: x == "carousel.window"):
+            order = ["window"] + [f for f in order if f != "window"]
+            log.info("Carousel: Sunday — trying THE WINDOW edition first.")
+
     # Pick the oldest-rotated format that has enough verified data to build.
     # `seen` rotates a format THROUGH its items across posts (fresh set each time).
     built = None
@@ -11308,7 +11330,8 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
 
         post_caption = sanitize(apply_platform_voice(caption, platform))
         if dry_run:
-            log.info(f"[{label}] DRY RUN — would publish carousel ({fmt}, {len(media_list)} slides):\n"
+            _s = " + 1 Story" if (built.get("story") and platform == "instagram") else ""
+            log.info(f"[{label}] DRY RUN — would publish carousel ({fmt}, {len(media_list)} slides{_s}):\n"
                      f"{post_caption[:220]}...")
             posted_any = True
             continue
@@ -11329,16 +11352,53 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
                        post_id=post_id, platform=platform, media_id=media_id)
         log.info(f"[{label}] ✅ carousel published ({fmt}) · post_id={post_id}")
 
+        # ── Companion Story (2026-08-02, founder asked for "posts stories") ──
+        # Instagram only, and only for decks that ship one (currently The
+        # Window). Best-effort by design: the carousel IS the deliverable, so a
+        # Story failure logs and moves on rather than failing the slot. The
+        # story_key is date-scoped so a --force re-run can't double-post it.
+        story_bytes = built.get("story")
+        story_key = acc_id + "_carousel_story"
+        if (story_bytes and platform == "instagram"
+                and st.get("posted_today", {}).get(story_key) != today):
+            try:
+                s_media = upload_media_bytes(
+                    story_bytes, f"story_{fmt}_{today}.jpg", "image/jpeg",
+                    apply_brand_stamp=False)
+                if not s_media:
+                    log.warning(f"[{label}] Story image upload failed — carousel already live, skipping Story.")
+                else:
+                    s_res = publish_story(account, s_media, dry_run=False)
+                    if s_res:
+                        s_id = s_res.get("post", {}).get("id", "unknown")
+                        _mark_posted_today(st, story_key)
+                        record_publish(st, dest_id=primary_dest_id,
+                                       fmt=f"story.{fmt}", post_id=s_id,
+                                       platform=platform, media_id=f"story_{fmt}_{today}")
+                        log.info(f"[{label}] ✅ Story published ({fmt}) · post_id={s_id}")
+                    else:
+                        log.warning(f"[{label}] Story post rejected by API — carousel unaffected.")
+            except Exception as e:
+                log.warning(f"[{label}] Story failed ({e}) — carousel unaffected.")
+
     # Rotation memory: record the items this format just featured so the next
     # time it fires it surfaces a FRESH set. recycled=True means the builder
     # started a new cycle → reset the seen list to just this batch.
-    if posted_any and built.get("item_keys"):
+    if posted_any and built.get("item_keys") and not dry_run:
         cs_seen = st.setdefault("carousel_seen", {})
         prev = [] if built.get("recycled") else (cs_seen.get(fmt) or [])
         cs_seen[fmt] = list(dict.fromkeys(list(prev) + list(built["item_keys"])))
 
-    save_state(st)
-    log.info(f"Carousel run complete (fmt={fmt}, posted={posted_any}).")
+    # A dry run must not persist state. The dry-run branch above sets
+    # posted_any=True (so the run reports what it WOULD do), which meant a
+    # rehearsal stamped carousel_seen and burned festivals out of the rotation
+    # without ever posting them — the real run then skipped that batch. Caught
+    # 2026-08-02 when a single --dry-run consumed 6 of 20 unfeatured festivals.
+    if dry_run:
+        log.info(f"Carousel DRY RUN complete (fmt={fmt}) — state NOT written.")
+    else:
+        save_state(st)
+        log.info(f"Carousel run complete (fmt={fmt}, posted={posted_any}).")
     log.info("═" * 60)
 
 

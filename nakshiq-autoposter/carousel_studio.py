@@ -219,10 +219,10 @@ def _chip(d, xy, text, font, fg, bg, pad=(18, 10)):
 
 
 # ── slide painters ───────────────────────────────────────────────────────────
-def _cover_slide(kicker, headline_lines, sub, bg_slug):
+def _cover_slide(kicker, headline_lines, sub, bg_slug, last=False):
     if _use_editorial():
         try:
-            return _ed.cover(kicker, headline_lines, sub, _photo(bg_slug))
+            return _ed.cover(kicker, headline_lines, sub, _photo(bg_slug), last=last)
         except Exception as e:
             print(f"[editorial→PIL fallback] cover: {e}")
     c = _bg(bg_slug, darken=0.6, blur=3); d = ImageDraw.Draw(c)
@@ -239,13 +239,13 @@ def _cover_slide(kicker, headline_lines, sub, bg_slug):
     return c
 
 
-def _item_slide(idx, total, badge, badge_col, state, name, line, bg_slug):
+def _item_slide(idx, total, badge, badge_col, state, name, line, bg_slug, label=None):
     if _use_editorial():
         try:
             kind = {GREEN: "go", VERM: "stop"}.get(badge_col, "plain")
             icon = "flag" if badge_col == GREEN else "pin"
             return _ed.item(idx, total, badge, kind, state, name, line,
-                            _photo(bg_slug), icon=icon)
+                            _photo(bg_slug), icon=icon, label=label)
         except Exception as e:
             print(f"[editorial→PIL fallback] item {idx}: {e}")
     c = _bg(bg_slug, darken=0.5); d = ImageDraw.Draw(c)
@@ -295,10 +295,10 @@ def _skip_slide(idx, total, skip_name, skip_reason, go_name, go_reason, bg_slug)
     return c
 
 
-def _end_slide(headline_lines, sub, bg_slug):
+def _end_slide(headline_lines, sub, bg_slug, cta=None, rows=None):
     if _use_editorial():
         try:
-            return _ed.end(headline_lines, sub, _photo(bg_slug))
+            return _ed.end(headline_lines, sub, _photo(bg_slug), cta=cta, rows=rows)
         except Exception as e:
             print(f"[editorial→PIL fallback] end: {e}")
     c = _bg(bg_slug, darken=0.72, blur=6); d = ImageDraw.Draw(c)
@@ -746,7 +746,164 @@ def build_route(content: dict, mname: str) -> dict | None:
             "dest_ids": [bg for _, bg, _ in resolved if bg]}
 
 
+# ── THE WINDOW — the newsletter, published as a carousel ─────────────────────
+# 2026-08-02, founder: "why dont we post something for places like hanle, it was
+# featured in today window newsletter — do we have a format that shows our window
+# newsletter in posts/stories, every Sunday we can publish exactly like the
+# newsletter".
+#
+# Hanle was never blocked: it has footage and has posted before. The gap is that
+# the two systems pick independently. The email features the #1 Weekly Pick;
+# autoposter.py never read the weekly-picks API at all, so the Sunday feed showed
+# something unrelated to the issue that landed that morning. This builder ends
+# that by making the issue itself the source — same picks, same skip, same road
+# report, same numbers, in the newsletter's own section order.
+WINDOW_API = "https://nakshiq.com/api/the-window/latest"
+
+
+def fetch_window_issue(timeout: int = 25) -> dict | None:
+    """The most recent SENT issue of The Window, or None.
+
+    None is a normal outcome (no issue yet, API down, deploy in flight) and the
+    caller must fall through to the regular rotation — a Sunday must never go
+    dark just because the newsletter endpoint blipped."""
+    if requests is None:
+        return None
+    try:
+        r = requests.get(WINDOW_API, timeout=timeout)
+        if r.status_code != 200:
+            print(f"window: API returned {r.status_code} — falling back to rotation")
+            return None
+        d = r.json()
+        return d if d.get("picks") else None
+    except Exception as e:
+        print(f"window: fetch failed ({e}) — falling back to rotation")
+        return None
+
+
+def build_window_digest(content: dict, mname: str) -> dict | None:
+    """The Window as a carousel: cover → the ranked picks → skip → road → CTA.
+
+    Reads `content['window']` when present (tests inject it), else fetches the
+    live issue. Returns None whenever the issue is missing or thin, so the caller
+    drops back to the normal carousel rotation."""
+    w = (content or {}).get("window") or fetch_window_issue()
+    if not w:
+        return None
+    picks = [p for p in (w.get("picks") or []) if p.get("name")][:5]
+    if len(picks) < 3:
+        print(f"window: only {len(picks)} usable picks — skipping")
+        return None
+
+    num = w.get("issueNumber")
+    best = w.get("bestScore") or {}
+    feat = best.get("name") or picks[0]["name"]
+    bg = picks[0].get("id")
+    skip = w.get("skip") or {}
+    road = w.get("road") or {}
+    has_skip = bool(skip.get("trapName") and skip.get("alternativeName"))
+    has_road = bool(road.get("title") and road.get("body"))
+    # ONE counter across every content slide. Numbering picks n/5 while the skip
+    # slide said 6/8 gave the same deck two different denominators mid-swipe.
+    total = len(picks) + (1 if has_skip else 0) + (1 if has_road else 0)
+    n = 0
+
+    kicker = f"THE WINDOW · NO. {num}" if num else "THE WINDOW"
+    head = [f"{feat} is the", f"call this week", ""]
+    sub = (best.get("note") or w.get("previewText")
+           or "This week's verified picks — straight from our Sunday newsletter.")
+    slides = [_cover_slide(kicker, head, sub, bg)]
+    # Rendered separately with last=True so the Story doesn't say "swipe →".
+    story_art = _cover_slide(kicker, head, sub, bg, last=True)
+
+    # The ranked picks, in the issue's own order. № 01 is the featured one.
+    for p in picks:
+        n += 1
+        line = (p.get("why_this_week") or "").strip()
+        if not line:
+            line = (p.get("tagline") or "").strip()
+        slides.append(_item_slide(
+            n, total, _score_disp(p.get("score")) or "PICK", GREEN,
+            p.get("state") or "", p["name"], line[:150], p.get("id")))
+
+    if has_skip:
+        n += 1
+        slides.append(_skip_slide(
+            n, total, skip["trapName"], (skip.get("trapReason") or "").strip(),
+            skip["alternativeName"], (skip.get("alternativeReason") or "").strip(),
+            skip.get("alternativeId") or bg))
+
+    if has_road:
+        n += 1
+        # state left blank on purpose — the chip already reads "road report", and
+        # the editorial layout renders BOTH, so filling it double-stamps the slide.
+        slides.append(_item_slide(
+            n, total, "OPEN" if "open" in road["title"].lower() else "ROAD",
+            GOLD, "", road["title"], (road.get("body") or "")[:150],
+            road.get("destinationId") or bg, label="road report"))
+
+    slides.append(_end_slide(
+        ["This went out", "Sunday morning.", "By email, first."],
+        "The Window — one honest read a week: what's peaking, what to skip, what the roads are doing. Free.",
+        picks[-1].get("id") or bg,
+        cta="nakshiq.com/newsletter",
+        rows=[("bookmark", "<b>Subscribers read this on Sunday morning</b> — hours before it reaches the feed."),
+              ("globe", "<b>Every claim above is a verified database field</b> — go / wait / skip for 500+ places, every month.")]))
+
+    pick_lines = "\n".join(
+        f"{i}. {p['name']}, {p.get('state') or 'India'} — {_score_disp(p.get('score'))}"
+        for i, p in enumerate(picks, 1))
+    cap = [f"THE WINDOW · No. {num} 🪟" if num else "THE WINDOW 🪟", ""]
+    cap.append(f"This went out to our email list on Sunday morning. Here it is in full.")
+    cap.append("")
+    cap.append(f"This week's call: {feat}"
+               + (f" — {best.get('note').strip()}" if (best.get("note") or "").strip() else ""))
+    cap.append("")
+    cap.append(pick_lines)
+    if skip.get("trapName") and skip.get("alternativeName"):
+        cap.append("")
+        cap.append(f"❌ Skip {skip['trapName']} → ✅ {skip['alternativeName']} instead")
+    if road.get("title"):
+        cap.append("")
+        cap.append(f"🛣 Road: {road['title']}")
+    cap.append("")
+    # NOT "a day early" — the issue sends 01:30 UTC and this slot runs 07:17 UTC,
+    # so subscribers get it hours ahead, same day. Claim what's true.
+    cap.append("Subscribers got this first, on Sunday morning. Free → nakshiq.com/newsletter")
+    cap.append("")
+    cap.append(_hashtags("indiatravel", f"{mname.lower()}travel", "traveltips",
+                         "incredibleindia", "traveldeeper", "thewindow"))
+    return {"fmt": "window", "slides": [_to_jpeg(s) for s in slides],
+            "caption": "\n".join(cap),
+            "story": _story_from(story_art),
+            "dest_ids": [p.get("id") for p in picks if p.get("id")]}
+
+
+# Editorial cream — the story matte must be the slide's own paper colour, or the
+# 4:5 art sits on a visible rectangle inside the 9:16 frame.
+_STORY_BG = (246, 240, 226)
+
+
+def _story_from(slide: Image.Image) -> bytes:
+    """A 1080x1920 Story from an existing 1080x1350 slide, centred on brand paper.
+
+    Deliberately NOT a new template: the cover is already verified copy at the
+    right width, and Stories are 24h ephemeral — a second layout to keep in sync
+    would cost more than it returns. Padding keeps the safe area clear of IG's
+    top/bottom chrome, which is exactly what crops titles when a 4:5 image is
+    force-fitted to a Story."""
+    canvas = Image.new("RGB", (1080, 1920), _STORY_BG)
+    art = slide.convert("RGB")
+    if art.width != 1080:
+        art = art.resize((1080, round(art.height * 1080 / art.width)), Image.LANCZOS)
+    canvas.paste(art, (0, (1920 - art.height) // 2))
+    buf = io.BytesIO()
+    canvas.save(buf, "JPEG", quality=88)
+    return buf.getvalue()
+
+
 BUILDERS = {
+    "window": build_window_digest,
     "best_month": build_best_month,
     "skip_list": build_skip_list,
     "collection": build_collection,
@@ -759,6 +916,10 @@ BUILDERS = {
 }
 # Rotation order (oldest-posted-first at runtime; this is just the never-posted tiebreak).
 # skip_list first = biggest content gap; then the seasonal + budget levers.
+# "window" is deliberately NOT here: it is date-driven, not rotation-driven — the
+# runner puts it at the front on Sundays only, because it mirrors an issue that
+# went out that morning. Leaving it in the rotation would post a stale issue
+# mid-week and, being never-posted, it would sort first and hijack every slot.
 FORMAT_ROTATION = ["skip_list", "festival", "food", "best_month", "comparison",
                    "persona", "cost", "route", "collection"]
 
