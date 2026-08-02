@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-02",
@@ -273,6 +273,10 @@
     },
     {
       "destination_id": "hanle",
+      "date": "2026-08-02"
+    },
+    {
+      "destination_id": "bhimashankar",
       "date": "2026-08-02"
     }
   ],
@@ -6751,6 +6755,24 @@
       "destination": "hanle",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-08-02"
+    },
+    {
+      "timestamp": "2026-08-02T12:47:18.317815+00:00",
+      "date": "2026-08-02",
+      "platform": "youtube",
+      "post_id": "rBwbb",
+      "destination": "bhimashankar",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_bhimashankar_hi_2026-08-02.mp4"
+    },
+    {
+      "timestamp": "2026-08-02T12:48:10.507931+00:00",
+      "date": "2026-08-02",
+      "platform": "instagram",
+      "post_id": "LazX4",
+      "destination": "bhimashankar",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_bhimashankar_hi_2026-08-02.mp4"
     }
   ],
   "theme_usage": {
