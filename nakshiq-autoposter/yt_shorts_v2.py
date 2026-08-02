@@ -1682,6 +1682,32 @@ def _arc_hook(fmt: str, name: str) -> Optional[dict]:
     return None
 
 
+def _arc_last_used(days: int = 60) -> dict:
+    """arc name → last published date (YYYY-MM-DD) within the trailing window.
+
+    Drives the least-recently-used arc rotation in build_series_short. Arcs
+    missing from the result have not published in the window and therefore sort
+    FIRST (an empty string precedes any ISO date), which is what makes a newly
+    added arc go out on the very next variety slot. Fails to {} — an unreadable
+    log degrades to hash-order variety, never to a crash or a dark slot."""
+    out: dict = {}
+    try:
+        from datetime import timedelta
+        from autoposter import merged_post_log, load_state
+        cut = (date.today() - timedelta(days=days)).isoformat()
+        for e in merged_post_log(load_state()):
+            d = e.get("date") or (e.get("timestamp") or "")[:10]
+            f = e.get("format") or ""
+            if not d or d < cut or not f.startswith("yt_short."):
+                continue
+            arc = f.split(".", 1)[1]
+            if d > out.get(arc, ""):
+                out[arc] = d
+    except Exception as ex:
+        print(f"series: arc-history read failed ({ex}) — using hash order")
+    return out
+
+
 def _score_short_recent(days: int = 7) -> bool:
     """True if a `nakshiq_score` short was published in the trailing `days`,
     read from the autoposter's canonical merged post log. Powers the weekly
@@ -1774,21 +1800,44 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
     score_due = (score_every <= 0) or (not _score_short_recent(score_every))
     fmt, spec = None, None
     if not score_due:
-        # variety-only slot — prefer did_you_know, fall back to this_vs_that.
-        # Deterministic per slug+day so retries are stable.
+        # 2026-08-02 — LEAST-RECENTLY-USED arc rotation (founder: "i dont see
+        # any new formats ... all looks same"). This block used to be a fixed
+        # preference — "prefer did_you_know, fall back to this_vs_that" — with a
+        # coin-flip that only reordered two options. Over 14 days that shipped
+        # did_you_know 14× and this_vs_that 13× and nothing else: the 06-23 fix
+        # for score-monotony created arc-monotony.
+        #
+        # Now: order the arcs by how long since each last published (from the
+        # canonical merged log), so the arc that has been absent longest goes
+        # first and a newly added arc is picked immediately. The slug+day hash
+        # only breaks ties, keeping retries deterministic. Adding an arc to
+        # ARC_BUILDERS is now the ONLY step needed to put it in rotation.
         _vh = sum(ord(c) for c in (slug + "|v|" + date.today().isoformat())) % 100
-        for _kind in (["dyk", "vs"] if _vh % 2 == 0 else ["vs", "dyk"]):
-            if _kind == "dyk":
-                cand = _template_spec_did_you_know(dest, lang)
-                if cand:
-                    spec, fmt = cand, "did_you_know"; break
-            else:
-                _other = next((d for d in dests
-                               if d.get("id") != slug and d.get("name")), None)
-                if _other:
-                    cand = _template_spec_vs(dest, _other, lang)
-                    if cand:
-                        spec, fmt = cand, "this_vs_that"; break
+
+        def _mk_dyk():
+            return _template_spec_did_you_know(dest, lang), "did_you_know"
+
+        def _mk_vs():
+            _other = next((d for d in dests
+                           if d.get("id") != slug and d.get("name")), None)
+            if not _other:
+                return None, "this_vs_that"
+            return _template_spec_vs(dest, _other, lang), "this_vs_that"
+
+        ARC_BUILDERS = [("did_you_know", _mk_dyk), ("this_vs_that", _mk_vs)]
+        _last = _arc_last_used(days=60)
+        # oldest-first; never-used arcs sort first (empty string < any date).
+        ordered = sorted(
+            ARC_BUILDERS,
+            key=lambda ab: (_last.get(ab[0], ""), (_vh + hash(ab[0])) % 100),
+        )
+        print(f"series: arc order (least-recently-used first) = "
+              f"{[a for a, _ in ordered]}")
+        for _name, _build in ordered:
+            cand, _fmt = _build()
+            if cand:
+                spec, fmt = cand, _fmt
+                break
     if spec is None:
         # the weekly score slot, OR a variety-due slot where no arc resolved.
         spec, fmt = _resolve_spec(slug, dest, lang), "nakshiq_score"

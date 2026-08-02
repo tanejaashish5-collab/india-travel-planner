@@ -2091,6 +2091,165 @@ def eligible_csv_formats(content: dict, dests: list) -> list:
     return out
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# SELF-CORRECTING DIVERSITY GUARD (2026-08-02)
+# -----------------------------------------------------------------------------
+# Founder, 2026-08-02: "i dont see any new formats being posted on instagram
+# ... to me all looks same" — and he was right: over 14 days, 4 formats were
+# 76% of Instagram (did_you_know 14 · this_vs_that 13 · score_card 13 ·
+# carousel.* 13).
+#
+# Every prior fix for this was a SINGLE-FORMAT cap bolted on after the
+# complaint (2026-06-23 weekly score budget, 2026-06-23 data-carousel floor).
+# Each capped the one format that had taken over and left the next one free to
+# do the same — score-only became did_you_know/this_vs_that-only.
+#
+# This guard is the general version: instead of naming formats, it MEASURES the
+# mix that actually published and REMOVES whatever is over-served, whatever it
+# happens to be. No new complaint required.
+#
+# Grouping is by VISUAL FAMILY, not format id, because of the banked 2026-06-24
+# lesson: a format/caption change is NOT a visual change. Ten "different"
+# formats that all render the same destination reel with different words still
+# read as one thing while scrolling — which is exactly what the founder sees.
+_DIVERSITY_FAMILY_OVERRIDES = {
+    # Formats whose rendered output looks the same regardless of caption copy.
+    "reel_studio.itinerary": "itinerary_reel",
+}
+
+
+def _visual_family(fmt: str) -> str:
+    """The on-screen shape a format renders as — the unit a scroller perceives.
+
+    Deliberately COARSE: all carousels share one slide template, so they are one
+    family; every score-flavoured surface is one family across feed AND shorts.
+    Unknown feed formats fall back to their pillar (the codebase's own taxonomy)
+    so a newly added format is grouped sanely without touching this map."""
+    f = (fmt or "").strip()
+    if not f:
+        return "unknown"
+    if f in _DIVERSITY_FAMILY_OVERRIDES:
+        return _DIVERSITY_FAMILY_OVERRIDES[f]
+    if f in SCORE_FEED_FORMATS or "nakshiq_score" in f:
+        return "score"
+    if f.startswith("carousel."):
+        return "carousel"
+    if f.startswith("yt_short."):
+        return "short:" + f.split(".", 1)[1]
+    if f.startswith("reel_studio"):
+        return "itinerary_reel"
+    return "pillar:" + (FORMAT_PILLARS.get(f) or f)
+
+
+def recent_family_mix(state: dict, days: int) -> tuple[dict, int]:
+    """(family → count, total) over the last `days` of ACTUALLY PUBLISHED posts.
+
+    Counts one post per (date, format, destination) so the IG+FB pair a single
+    publish writes doesn't double-weight it."""
+    cut = (date.today() - timedelta(days=days)).isoformat()
+    seen, fams = set(), []
+    for e in merged_post_log(state):
+        d = e.get("date") or (e.get("timestamp") or "")[:10]
+        if not d or d < cut:
+            continue
+        key = (d, e.get("format"), e.get("destination"))
+        if key in seen:
+            continue
+        seen.add(key)
+        fams.append(_visual_family(e.get("format") or ""))
+    mix = {}
+    for fam in fams:
+        mix[fam] = mix.get(fam, 0) + 1
+    return mix, len(fams)
+
+
+def _family_last_used(state: dict, days: int = 30) -> dict:
+    """visual family → last published date within the trailing window."""
+    cut = (date.today() - timedelta(days=days)).isoformat()
+    out: dict = {}
+    for e in merged_post_log(state):
+        d = e.get("date") or (e.get("timestamp") or "")[:10]
+        if not d or d < cut:
+            continue
+        fam = _visual_family(e.get("format") or "")
+        if d > out.get(fam, ""):
+            out[fam] = d
+    return out
+
+
+def diversity_filter(state: dict, eligible: list, *, label: str = "feed") -> list:
+    """SELF-CHECK the published mix, SELF-CORRECT the pool. Two independent rules:
+
+      1. COOLDOWN — a visual family that posted within the last
+         NAKSHIQ_DIVERSITY_COOLDOWN_DAYS (default 2) is dropped. This is the
+         literal "don't post something that looks like the last one" rule, and
+         it's what breaks the did_you_know → this_vs_that → did_you_know grind
+         even when no single family is technically dominant.
+      2. SHARE CAP — a family above NAKSHIQ_DIVERSITY_MAX_SHARE (default 0.30)
+         of the trailing NAKSHIQ_DIVERSITY_DAYS window is dropped, catching
+         slow long-run dominance the cooldown alone would let through.
+
+    Rules are applied in that order and each is skipped if it would empty the
+    pool, so the slot NEVER goes dark — the whole point is a different post,
+    not a missing one. A fully-blocked pool logs a WARNING naming the surface,
+    which is the signal that the surface needs more formats rather than more
+    filtering.
+
+    Disable entirely with NAKSHIQ_DIVERSITY_DAYS=0."""
+    days = _env_int("NAKSHIQ_DIVERSITY_DAYS", 7)
+    if days <= 0 or not eligible:
+        return eligible
+    try:
+        max_share = float(os.environ.get("NAKSHIQ_DIVERSITY_MAX_SHARE", "0.30"))
+    except (TypeError, ValueError):
+        max_share = 0.30
+    cooldown = _env_int("NAKSHIQ_DIVERSITY_COOLDOWN_DAYS", 2)
+    try:
+        pool = list(eligible)
+        dropped, blocked = [], []   # dropped = acted on · blocked = would go dark
+
+        def _apply(rule: str, bad: set, detail: str):
+            """Remove `bad` families from pool unless that empties it."""
+            nonlocal pool
+            if not bad:
+                return
+            kept = [f for f in pool if _visual_family(f) not in bad]
+            if len(kept) == len(pool):
+                return                      # nothing in the pool matched — silent
+            if kept:
+                dropped.append(f"{rule} dropped {len(pool) - len(kept)} ({detail})")
+                pool = kept
+            else:
+                blocked.append(f"{rule} would empty the pool ({detail})")
+
+        # ── rule 1: cooldown on recently-seen visual families ──────────────
+        if cooldown > 0:
+            last = _family_last_used(state, max(days, cooldown) + 1)
+            cd_cut = (date.today() - timedelta(days=cooldown - 1)).isoformat()
+            hot = {fam for fam, d in last.items() if d >= cd_cut}
+            _apply("cooldown", hot, f"{', '.join(sorted(hot))} seen <{cooldown}d")
+
+        # ── rule 2: long-run share cap ─────────────────────────────────────
+        mix, total = recent_family_mix(state, days)
+        if total >= max(4, days // 2):
+            over = {fam for fam, n in mix.items() if (n / total) > max_share}
+            _apply("share cap", over,
+                   ", ".join(f"{fam} {mix[fam]}/{total}" for fam in sorted(over)))
+
+        if dropped:
+            log.info(f"[diversity] {label}: {len(eligible)} → {len(pool)} options · "
+                     + " · ".join(dropped))
+            return pool
+        if blocked:
+            log.warning(f"[diversity] {label}: could not diversify — "
+                        + " · ".join(blocked)
+                        + ". This surface needs MORE FORMATS, not more filtering.")
+        return eligible
+    except Exception as e:
+        log.warning(f"[diversity] {label}: check failed ({e}) — pool unchanged")
+        return eligible
+
+
 def _eligible_feed_formats(state: dict, content: dict) -> list:
     """Compute the feed formats whose data preconditions resolve this run — the
     active copy_* MORNING_FORMATS plus every eligible CSV (v2/v3/v4) spec. Shared
@@ -2267,6 +2426,10 @@ def _eligible_feed_formats(state: dict, content: dict) -> list:
 
         if not eligible:
             eligible = ["score_card"]
+
+        # 2026-08-02 — general monotony guard, applied AFTER the named caps so
+        # it catches whatever they don't (see diversity_filter). Fail-open.
+        eligible = diversity_filter(state, eligible, label="feed")
 
         return eligible
     except Exception as e:
