@@ -44,6 +44,16 @@ jobs:
   # the PR branch — catches regressions BEFORE merge instead of post-merge
   # against prod. Visual-regression specs are excluded (prod-baseline
   # screenshots don't match preview content).
+  #
+  # apps/web/vercel-ignore.sh intentionally skips the Vercel build for several
+  # path categories (data/, scripts/, qa/, tests/, .github/, docs, ...) that
+  # this workflow's own paths-ignore doesn't (can't, without duplicating that
+  # script's exact rules and drifting out of sync — see the sos-verify.ts
+  # "one authoritative classifier" precedent for why that's worth avoiding).
+  # So a PR can legitimately have no preview to test against. Treat "wait
+  # timed out because Vercel never built one" as nothing-to-verify rather
+  # than a failure — a real Vercel build failure still surfaces separately
+  # via Vercel's own GitHub check/deployment status on the PR.
   preview-e2e:
     name: E2E vs Vercel preview (PR)
     runs-on: ubuntu-latest
@@ -55,21 +65,29 @@ jobs:
       - uses: actions/checkout@v4
       - name: Wait for Vercel preview deployment
         id: preview
+        continue-on-error: true
         uses: patrickedqvist/wait-for-vercel-preview@v1.3.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 1200 # prod builds run ~13 min; previews are similar
           check_interval: 30
       - uses: actions/setup-node@v4
+        if: steps.preview.outcome == 'success'
         with:
           node-version: 20
           cache: npm
       - run: npm ci
+        if: steps.preview.outcome == 'success'
       - run: npx playwright install chromium
+        if: steps.preview.outcome == 'success'
       - name: Run functional E2E tests against the preview
+        if: steps.preview.outcome == 'success'
         run: npx playwright test --project=mobile --project=desktop --grep-invert="Visual"
         env:
           BASE_URL: ${{ steps.preview.outputs.url }}
+      - name: No preview deployment — nothing to test
+        if: steps.preview.outcome != 'success'
+        run: echo "No Vercel preview appeared within the timeout (commonly because vercel-ignore.sh skipped the build for this diff). Not treating as a test failure."
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
