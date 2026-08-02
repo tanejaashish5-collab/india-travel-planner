@@ -15495,3 +15495,27 @@ Date range: 2026-04-15 → 2026-07-31
 2026-08-01 19:37:01  INFO      
 Date range: 2026-04-15 → 2026-08-01
 2026-08-01 19:37:01  INFO      ════════════════════════════════════════════════════════════
+2026-08-02 06:48:15  INFO      ════════════════════════════════════════════════════════════
+2026-08-02 06:48:15  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-02
+2026-08-02 06:48:15  INFO      ════════════════════════════════════════════════════════════
+2026-08-02 06:48:20  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-02 06:49:22  INFO      Short rendered: yt_short_mini_guide_karla-bhaja-caves_hi_2026-08-02.mp4 (8807 KB, 16.6s, fmt=mini_guide, music=dance-288)
+2026-08-02 06:49:22  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_karla-bhaja-caves_hi_2026-08-02.mp4 (9,018,999 bytes, video/mp4)
+2026-08-02 06:49:23  INFO          Uploading to R2 (timeout=300s)...
+2026-08-02 06:49:25  INFO          R2 PUT OK. Confirming...
+2026-08-02 06:49:26  INFO          Media ready: P7rJ0 (9,018,999 bytes · yt_short_mini_guide_yt_short_mini_guide_karla-bhaja-caves_hi_2026-08-02.mp4)
+2026-08-02 06:49:26  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_karla-bhaja-caves_hi_2026-08-02.mp4
+2026-08-02 06:49:27  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-02 06:49:27  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-08-02 06:49:27  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-02 06:49:30  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=AzIiX), waiting for platform confirmation...
+2026-08-02 06:49:36  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=AzIiX · Platform=PaCKprGRYlg
+2026-08-02 06:49:36  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-08-02 06:49:36  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-02 06:49:39  INFO      [instagram/nakshiq] Outstand accepted (post_id=EW84r), waiting for platform confirmation...
+2026-08-02 06:50:25  INFO          wait_for_publish exhausted 8 polls for post=EW84r (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-08-02 06:50:25  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=EW84r). May have silently failed.
+2026-08-02 06:50:25  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-02 06:50:25  INFO      YT Short posted: format=mini_guide, music=dance-288
+2026-08-02 06:50:25  INFO      State saved. YT Short run complete.
+2026-08-02 06:50:25  INFO      ════════════════════════════════════════════════════════════

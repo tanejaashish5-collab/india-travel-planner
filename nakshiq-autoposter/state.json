@@ -32,10 +32,10 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-01",
+    "GAh5p_yt_short": "2026-08-02",
     "m8EAd": "2026-08-01",
     "m8EAd_evening": "2026-08-01",
     "PdMu0": "2026-08-01",
@@ -46,22 +46,6 @@
   },
   "last_sync": "2026-08-01T15:23:38.346438+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "belur",
-      "date": "2026-07-18"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-07-18"
-    },
-    {
-      "destination_id": "lahaul-valley",
-      "date": "2026-07-18"
-    },
-    {
-      "destination_id": "khandala",
-      "date": "2026-07-18"
-    },
     {
       "destination_id": "athirapally",
       "date": "2026-07-19"
@@ -281,6 +265,10 @@
     {
       "destination_id": "adilabad",
       "date": "2026-08-01"
+    },
+    {
+      "destination_id": "karla-bhaja-caves",
+      "date": "2026-08-02"
     }
   ],
   "posted_formats": {
@@ -6713,6 +6701,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "adilabad.mp4"
+    },
+    {
+      "timestamp": "2026-08-02T06:49:36.422616+00:00",
+      "date": "2026-08-02",
+      "platform": "youtube",
+      "post_id": "AzIiX",
+      "destination": "karla-bhaja-caves",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_karla-bhaja-caves_hi_2026-08-02.mp4"
+    },
+    {
+      "timestamp": "2026-08-02T06:50:25.132170+00:00",
+      "date": "2026-08-02",
+      "platform": "instagram",
+      "post_id": "EW84r",
+      "destination": "karla-bhaja-caves",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_karla-bhaja-caves_hi_2026-08-02.mp4"
     }
   ],
   "theme_usage": {
@@ -7813,8 +7819,7 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
