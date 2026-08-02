@@ -5,14 +5,14 @@ on:
     branches: [main]
     paths-ignore:
       - "nakshiq-autoposter/**"
-      - "*.md"
+      - "**/*.md"
       - "images/**"
       - "videos/**"
   pull_request:
     branches: [main]
     paths-ignore:
       - "nakshiq-autoposter/**"
-      - "*.md"
+      - "**/*.md"
       - "images/**"
       - "videos/**"
   workflow_dispatch:
