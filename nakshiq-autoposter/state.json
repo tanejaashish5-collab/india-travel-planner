@@ -40,8 +40,8 @@
     "m8EAd_evening": "2026-08-02",
     "PdMu0": "2026-08-02",
     "PdMu0_evening": "2026-08-02",
-    "m8EAd_carousel": "2026-08-02",
-    "PdMu0_carousel": "2026-08-02",
+    "m8EAd_carousel": "2026-08-03",
+    "PdMu0_carousel": "2026-08-03",
     "m8EAd_carousel_story": "2026-08-02",
     "m8EAd_evening_story": "2026-08-02",
     "m8EAd_yt_short": "2026-08-03"
@@ -286,6 +286,10 @@
     },
     {
       "destination_id": "kolad",
+      "date": "2026-08-03"
+    },
+    {
+      "destination_id": "bundi",
       "date": "2026-08-03"
     }
   ],
@@ -6822,6 +6826,24 @@
       "destination": "kolad",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_kolad_en_2026-08-03.mp4"
+    },
+    {
+      "timestamp": "2026-08-03T10:56:20.920077+00:00",
+      "date": "2026-08-03",
+      "platform": "instagram",
+      "post_id": "u7rir",
+      "destination": "bundi",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-03"
+    },
+    {
+      "timestamp": "2026-08-03T10:56:22.940232+00:00",
+      "date": "2026-08-03",
+      "platform": "facebook",
+      "post_id": "4nR5H",
+      "destination": "bundi",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-03"
     }
   ],
   "theme_usage": {
@@ -7971,7 +7993,13 @@
       "Karsha Gustor",
       "Korzok Gustor",
       "Lucknow Muharram Processions",
-      "Kanwar Yatra"
+      "Kanwar Yatra",
+      "Kajli Teej",
+      "Nanda Devi Raj Jat Yatra",
+      "Ladarcha Fair",
+      "Gurez Cultural Festival",
+      "Malana Village Fair",
+      "Pang Lhabsol"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
