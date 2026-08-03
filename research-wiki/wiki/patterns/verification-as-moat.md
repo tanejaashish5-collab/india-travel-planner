@@ -59,3 +59,25 @@ Related: [[tata-gate]] (the same integrity discipline as ethics), [[regulatory-f
 ## 2026-07-13 — Independent external confirmation
 
 The official @claude channel audit surfaced an unrelated company independently stating the same principle: Solve Intelligence (patent law) treats **"citations as a first-class citizen"** — in a high-stakes, untestable-output domain, provenance IS the product, not a feature bolted on. Same session also produced the [[delegation-fails-heuristic]], which names NakshIQ's domain shape directly: travel decisions are untestable, entangled, and trust-critical, so the domain resists delegation to a general agent — that's the structural reason verification compounds into a moat here instead of getting commoditized by Cowork-class tools. See [[delegation-fails-heuristic]] and [[src-claude-channel-audit]].
+
+## 2026-08-03 — The industrial form: qualification, not price
+
+Strongest physical-world instance yet, and it prices the moat precisely. Mohit Bajaj (Horizon
+Reclaim, ~₹50cr, tyre recycling) on a customer bank that has not switched in 20 years:
+
+> *"You could give them cheaper, better material and they won't take it. Because they need
+> Horizon's material. **I will not risk my grip.**"*
+
+He derives it from **YKK zips operating at 20–25% margins**: Levi's cannot risk an unknown zip
+failing within a year. **A brand cannot take asymmetric downside.** A tyre's grip elasticity is
+qualified against *his* specific reclaim composition — so the switching cost is
+**re-qualification risk, not price**, and a cheaper-and-better competitor still loses.
+
+Why this sharpens the pattern: everywhere else we've argued verification as *provenance* (show
+the audit trail, cite the source). This is verification as **qualification** — the buyer has
+already spent to validate you against their own product, and that sunk validation, not your
+output, is the lock-in. It is also the first instance where the moat is **priced**: the margin
+premium is the buyer's insurance against their own asymmetric downside.
+
+Directly relevant to NakshIQ only by analogy, but load-bearing for the India question — see
+[[operating-position-not-capital]] and [[src-unorganised-sector-deep-read]].
