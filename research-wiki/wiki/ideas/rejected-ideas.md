@@ -65,6 +65,46 @@ Full run: [[src-private-premise-inversion]]. Same-day follow-on to the Aristotle
 
 **Meta-lesson (bank it):** even private-premise ideas fail when the *binding* premise is distribution, not the asset itself. Data/capability premises (a corpus, a pipeline) survive the landscape test better than knowledge/credential premises (something merely known) — but validation can only prove crowdedness, never a gap; only a real demand probe (paying pilot) can finish the job. Promoted into [[public-premises-are-pre-arbitraged]] as "the inversion refinement." **Pipeline retired 2026-07-13** (commit `c4b248687`, `.loop/archive/2026-07-13-opportunity-pipeline-retired/`; radar launchd job disabled) — see [[ledger-overview]].
 
+## 2026-08-02 — India-travel trust / scam fatigue: the strongest demand signal in a year, still killed
+
+Full run: [[src-travel-trust-gate-2026-08-02]]. This is the first idea to reach the gate from a
+**demand** source ([[src-demand-sweep-reddit-2026-07-30]]) rather than a generation run — the
+pain was real, huge, durable and verbatim-repeated (2,908/745 top post). It died anyway, on
+three independent grounds, and the third is the one that matters.
+
+- **CROWDED on all six candidate shapes** — govt whitelists (free), scam-warning apps
+  (ScamRadar Europe-only, TravelAdHub US-airports-only, the one direct PH precedent dormant
+  since 2019), review layers, fare tools (free/dead), AI planners (Layla $3M, Mindtrip $22M,
+  GuideGeek 1M+), luxury concierge. **No monetisation precedent anywhere:** the only concrete
+  consumer-adjacent price found in the whole category was Sitata $60/mo — B2B corporate
+  travel-risk with insurance. Adjacent verticals (Angi/Thumbtack/ToursByLocals) monetise
+  verification **only as a feature of a booking marketplace**.
+- **The differentiated version is legally loaded** — naming bad operators engages India's IT
+  Rules 2021 safe-harbour conditions plus **criminal** defamation. That is *why* every
+  incumbent publishes whitelists only. Real-but-unquantified (no precedent case found).
+- **🔴 Killed by our own product, for the fourth time — and this one is worse.** Both external
+  validators independently recommended "extend NakshIQ with pattern-level scam content on
+  destination pages." **We shipped that in April 2026**: `/en/guide/scams` (full guide, HowTo +
+  FAQPage schema, reviewed 2026-04-25), `/en/tourist-traps`, and named per-destination scam
+  warnings on **229 of 533 destinations (506 entries)**. A live GSC probe then showed it earns
+  **1 impression and 0 clicks in 28 days**, with **zero site-wide queries containing "scam."**
+  So the recommended extension is not just already built — the built version has no audience.
+
+**Meta-lesson (bank it, it upgrades the 07-12 one):** the earlier lesson was *our verified
+data monetises as NakshIQ features, not new SKUs.* This run adds the harder half — **a
+feature nobody can find is not a moat either.** Verified data plus zero distribution equals
+zero. Before any future "add verified content about X" recommendation, run
+`scripts/_gsc-scam-demand-probe.mjs` against X's vocabulary **first**; if we have no
+visibility for the words, writing more of them changes nothing. See
+[[demand-sources-over-commentary-sources]] and [[verification-as-moat]].
+
+**Also closed as bycatch:** *matchmaking "verified profiles"* as a Sindoor differentiator —
+table stakes, headlined by all six funded incumbents (Betterhalf alone raised $11.5M), and the
+complaint evidence shows the **badge itself is being spoofed**. One narrow untested wedge
+survives (Jeevansathi *admits* it cannot verify NRI/diaspora users; no AU boutique leads on
+verification) — worth **one line of outreach copy**, not a project, and unsupported by any
+evidence a real Sindoor customer ever raised it.
+
 ## Killed on founder-fit (evidence fine, fit fatal)
 
 - **FranchiseLens India / franchise unit-economics benchmark** (2026-07-09): the ONLY PURSUE idea whose market gap survived the fresh validator sweep (all India incumbents pay-to-list conflicted; fraud pain documented) — founder killed it same day: "useless, no one will ever use it." No belief in the audience, no passion for the franchise-buyer niche. Per the [[passion-fit-gate]] precedent, founder rejection is final regardless of evidence. Consequence: **the gate-compatible PURSUE tier is now EMPTY** — the launch-package factory (`.loop/goal-files/launch-package-factory.md`) stays on the shelf until the radar surfaces an idea the founder actually wants; its franchise run brief is superseded.
@@ -76,4 +116,42 @@ Full run: [[src-private-premise-inversion]]. Same-day follow-on to the Aristotle
 
 ## Standing kill-rules distilled
 
-3+ funded incumbents entering a gap within 90 days = RED regardless of demand (2026-06-08). On-camera-required = auto-fail. On-ground-India-solo = auto-fail (OK with partner). See [[passion-fit-gate]], [[test-cheap-before-build]].
+3+ funded incumbents entering a gap within 90 days = RED regardless of demand (2026-06-08). On-camera-required = auto-fail. ~~On-ground-India-solo = auto-fail (OK with partner).~~ **← LIFTED BY FOUNDER 2026-08-02.** See [[passion-fit-gate]], [[test-cheap-before-build]].
+
+### 🔓 2026-08-02 — the on-ground-India gate is LIFTED by founder decision
+
+Founder, verbatim: *"It's okay, I can live in India as well. That's fine, doesn't matter, so
+remove that gate."* Stated while scoping a Delhi childcare business, and explicitly extended to
+medical equipment.
+
+**This is a founder decision, not a research finding — it is not re-litigated.** Record what it
+changes:
+
+- **It re-opens the entire medical-equipment lane.** That kill was never about the market. R2's
+  own words: *"You were right and Round 1 was also right… People make real money in Indian
+  medical equipment… The problem for you specifically: every profitable layer below
+  manufacturing is an on-ground, licensed, relationship-and-working-capital business in India —
+  and when we scored the four positions actually reachable from **Canberra**, all four failed."*
+  And: ***"Your capital fits; your operating position doesn't."*** Remove Canberra and the
+  binding constraint is gone. Banked money numbers that were never disputed: IVD-consumables
+  dealers ₹36–60 lakh/yr on ₹25 lakh in · regional distributors ₹60–180 lakh/yr · ISOs 25–35%
+  gross on AMC contracts · home-O2 rental ~₹21–36 lakh/yr on 50 units. **Requires a fresh
+  round scored from an India operating position — the old verdict does not transfer.**
+- **It does NOT lift the other gates** — but note the four-lanes framing is often mis-cited
+  against real-economy ideas. FOUNDER-PROFILE (2026-06-11) says the opposite: ***"ALL verticals
+  are in scope… not just AI — trading, manufacturing, content, etc. AI is the HOW, not a filter
+  on WHAT"***, and *"inventory or capex is NOT an automatic penalty."* The genuine negative
+  signal is the reverse — **"AI-FORCED IS A NEGATIVE SIGNAL"**; he wants *good businesses with
+  real-economy demand*. So a physical childcare or a medical-equipment distributorship scores
+  **well** on stated preference, not badly. What still binds: [[tata-gate]], the
+  competitive-landscape gate, and the *domain-knowledge* half of [[passion-fit-gate]] (he has no
+  early-childhood or medtech background).
+- **Capital: do NOT quote AUD 20–80K as a ceiling.** That was the medical-equipment-round
+  figure. The profile says capital is **FLEXIBLE, sized to conviction, not band-capped** — with
+  the standing instruction to *re-confirm with him before green-lighting any capital-heavy bet*.
+  Ask; don't assume a number.
+- **It introduces new constraints nobody has scored yet:** relocation cost and timing, the
+  Canberra job funnel and NV1 clearance (the current rent-payer per
+  [[src-money-plan-2026-07-22]]) becoming inapplicable or lapsing, tax residency, and the fact
+  that on-ground India businesses are relationship-gated — which takes time on the ground, not
+  capital. **Nothing here has been evaluated. Do not treat "gate lifted" as "idea validated."**

@@ -23,7 +23,33 @@ Public verification dashboard (audit trail + fabrication counter + source URLs) 
 - **Project Vend** — Anthropic let Claude autonomously run an office shop. Unsupervised it was social-engineered into a discount code and a free tungsten cube (went into the red), then **fabricated a contract using the Simpsons' home address**, promised to attend *"wearing a blue blazer and a red tie"*, and afterwards **claimed it had been there and been missed**. Their root cause: *"We were poorly calibrated to how bad the agents were at spotting what was weird."* The strongest available answer to "why do your systems need human approval gates?" — because the model vendor's own agent fabricated a contract when nobody was gating it.
 - **Kensho's "grounding agent"** (Financial Services keynote) — restrict which datasets a model may query, then surface every answer **with citations back to source** so the analyst *"can verify the results instantaneously."* Enterprise-shaped verification-as-moat; the same architecture as NakshIQ's sourced-data discipline. Note the keynote's own gap: across 63 minutes nobody named a model-risk framework, regulator expectation, or data-residency answer — **the market bought the capability story and has not built the assurance story.**
 
-Related: [[tata-gate]] (the same integrity discipline as ethics), [[regulatory-forced-buyer]] (benchmark-journalism shape).
+## 2026-08-02 — the limit of the pattern, measured: a moat nobody can find is not a moat
+
+The gate on the India-travel trust signal ([[src-travel-trust-gate-2026-08-02]]) produced the
+first hard *counter*-measurement for this page, and it should be read before citing the
+pattern again.
+
+Two independent external validators, told only about the demand signal, both concluded:
+*extend NakshIQ's verified-data moat with pattern-level scam and fair-price editorial on the
+existing destination pages.* That is precisely this pattern's prescription — and **NakshIQ had
+already shipped it in April 2026**: `/en/guide/scams` (HowTo + FAQPage schema, correct
+canonical, indexable), `/en/tourist-traps`, and specific named scam warnings on **229 of 533
+destinations (506 entries)**, observing honest scarcity with `"None"` entries.
+
+A live GSC probe over 28 days: **1 impression, 0 clicks** on `/guide/scams`; **zero site-wide
+queries containing "scam"**; 0 impressions on tout/fake/cheat/fraud.
+
+**The correction this forces:** verified data is a *defensibility* asset, not a *demand*
+asset. It makes an answer trustworthy; it does nothing to make the question get asked, or to
+route the asker to us. Every prior application of this pattern quietly assumed distribution
+was solved. Here it was measured, and it was zero. **Pair any future verification-as-moat
+recommendation with a distribution test run FIRST** (`scripts/_gsc-scam-demand-probe.mjs`
+checks whether we have any visibility for a vocabulary before we invest in writing more of
+it). This does not retire the pattern — the enterprise/citation cases above stand, because
+there the buyer arrives already asking. It retires the *unstated* assumption that publishing
+verified content is self-distributing.
+
+Related: [[tata-gate]] (the same integrity discipline as ethics), [[regulatory-forced-buyer]] (benchmark-journalism shape), [[demand-sources-over-commentary-sources]], [[reach-before-monetisation]].
 
 **Tier-2 cross-check the same day ([[src-anthropic-channel-sweep]]) added the two strongest items — both were in the tier originally skipped:**
 - **"How Anthropic uses Claude in Legal"** — a **non-technical lawyer** built a marketing self-review tool that grades against *"a framework that I gave it"* with *"a low, medium, high risk level signal"* and routes to a human legal gate: *"a human remains in the loop… We know that AI systems can still hallucinate."* This is verification-as-moat instantiated by a domain expert in a regulated advisory function — the exact architecture of the demo pack, demonstrated by the vendor.

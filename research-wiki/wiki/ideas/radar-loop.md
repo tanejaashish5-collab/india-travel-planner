@@ -1,12 +1,19 @@
 ---
 type: idea
 sources: [data/research/OPPORTUNITY-BRAIN.md]
-updated: 2026-07-07
+updated: 2026-08-02
 ---
 
 # Radar loop (the opportunity pipeline system)
 
-The 6-layer system that finds, judges, vetoes, and tracks every business idea — documented in `data/research/OPPORTUNITY-BRAIN.md`, running daily since 2026-06-11.
+> ⚠️ **RETIRED 2026-07-13 — NOT RUNNING.** The daily launchd job is disabled (commit `c4b248687`,
+> archived at `.loop/archive/2026-07-13-opportunity-pipeline-retired/`). This page is kept as a
+> description of how the pipeline worked, not as a statement that it is live. The ledger
+> (`.loop/biz-opportunities-ledger.json`, 101 ideas, last written 2026-06-26) is frozen at its
+> final state. **Do not assume a radar brief is arriving; nothing is harvesting.**
+> Re-enable-or-formally-retire is an open founder decision as of 2026-08-02.
+
+The 6-layer system that found, judged, vetoed, and tracked every business idea — documented in `data/research/OPPORTUNITY-BRAIN.md`. Ran daily 2026-06-11 → 2026-07-13.
 
 ## The layers
 
@@ -16,7 +23,7 @@ The 6-layer system that finds, judges, vetoes, and tracks every business idea �
 3. **Tata gate** — [[tata-gate]] ethics veto, the final word
 4. **Board ranking** — [[ledger-overview]]
 5. **Tripwires** — rot-checks on aging assumptions
-6. **Daily radar** (`/loop-radar`) — 12:03pm launchd daily: 4 Haiku legs (web/Gmail/YouTube/govt) → Sonnet filter → fact-check → merge → brief emailed to founder
+6. **Daily radar** (`/loop-radar`) — *was* 12:03pm launchd daily: 4 Haiku legs (web/Gmail/YouTube/govt) → Sonnet filter → fact-check → merge → brief emailed to founder. **Job disabled 2026-07-13; no brief has been generated since.**
 
 ## Hard rules it encodes
 

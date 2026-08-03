@@ -24,4 +24,24 @@ The original Ganim ingest (2026-07-16, earlier the same day) banked the $999 ass
 
 This generalizes past one project: any future audit/diagnostic/scan offer in the [[ledger-overview]] needs its retainer designed before it needs its tripwire priced. It's the services-side mirror of [[money-is-services-not-adsense]] — that pattern says the visible channel isn't the money; this one says the visible *offer* (the assessment) isn't the money either, one layer further down.
 
-Related: [[src-ganim-ai-assessment]], [[src-lenny-deep-scrape]], [[money-is-services-not-adsense]], [[corey-ganim]], [[jason-lemkin]], [[brian-casel]]
+## 2026-08-02 — the missing scope boundary, and the missing pricing method
+
+Three operators established that the retainer *is* the business, but none of them defined what
+the retainer actually **buys** — which is where these deals get argued. [[src-nate-herk-pricing-ai]]
+supplies it, and it is a one-sentence fix:
+
+> *"That $400 a month isn't for me to bolt on new features every month. It's just me
+> guaranteeing that the build keeps doing what we agreed that it would do."*
+
+**Covered:** breakage, API changes, a new model release, edge cases needing a tweak to keep the
+system meeting the agreed scope. **Not covered: new functionality — a separate conversation.**
+Sanity check: if maintenance on a $30K system would cost you more than the retainer to deliver,
+you cannot charge that retainer.
+
+This pattern also never said how to derive any of its numbers. That is now
+[[price-off-the-clients-own-number]] — price at 10–20% of first-year annualised value, sized
+from the client's own stated cost. **Read the two together:** this page decides the *shape* of
+the offer ladder, that one decides the *numbers* in it, and it carries the standing correction
+that the anti-hourly argument must not be applied to the contract lane.
+
+Related: [[src-ganim-ai-assessment]], [[src-lenny-deep-scrape]], [[money-is-services-not-adsense]], [[corey-ganim]], [[jason-lemkin]], [[brian-casel]], [[price-off-the-clients-own-number]], [[src-nate-herk-pricing-ai]]

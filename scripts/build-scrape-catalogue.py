@@ -8,10 +8,12 @@ session can answer "have we already scraped X?" without walking the tree.
 Usage:  python3 scripts/build-scrape-catalogue.py
 Writes: .scrapes/CATALOGUE-youtube.md  and  .scrapes/CATALOGUE.md
 """
+import collections
 import glob
 import io
 import json
 import os
+import re
 
 ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".scrapes")
 
@@ -33,6 +35,27 @@ def youtube_rows():
             glob.glob(os.path.join(d, "transcript-prose.txt")) or glob.glob(os.path.join(d, "*.vtt"))
         ) else "-"
         rows.append((channel, date, title or "(no metadata)", os.path.basename(d), has_transcript))
+
+    # Canonicalise channel names before grouping. Scrape generations disagree on whether
+    # `channel` holds the @handle ("mastersunion") or the display name ("Masters' Union"),
+    # which silently SPLITS one channel into two rows in the channel table and breaks the
+    # standing "grep the catalogue before re-scraping" rule in both directions.
+    # (Caught 2026-08-02: Masters' Union was listed as 10 + 9.)
+    # Group by an alphanumeric-only key and display the most common variant, tie-broken by
+    # the longest (the display name is more readable than the handle).
+    variants = collections.defaultdict(collections.Counter)
+    for ch, *_ in rows:
+        if ch:
+            variants[re.sub(r"[^a-z0-9]", "", ch.lower())][ch] += 1
+    canonical = {
+        key: max(counter.items(), key=lambda kv: (kv[1], len(kv[0])))[0]
+        for key, counter in variants.items()
+    }
+    rows = [
+        (canonical.get(re.sub(r"[^a-z0-9]", "", ch.lower()), ch), *rest)
+        for ch, *rest in rows
+    ]
+
     rows.sort(key=lambda r: (r[0].lower(), r[1]))
     return rows
 
