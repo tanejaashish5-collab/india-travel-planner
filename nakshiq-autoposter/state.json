@@ -36,17 +36,17 @@
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-03",
-    "m8EAd": "2026-08-02",
-    "m8EAd_evening": "2026-08-02",
-    "PdMu0": "2026-08-02",
-    "PdMu0_evening": "2026-08-02",
+    "m8EAd": "2026-08-03",
+    "m8EAd_evening": "2026-08-03",
+    "PdMu0": "2026-08-03",
+    "PdMu0_evening": "2026-08-03",
     "m8EAd_carousel": "2026-08-03",
     "PdMu0_carousel": "2026-08-03",
     "m8EAd_carousel_story": "2026-08-02",
     "m8EAd_evening_story": "2026-08-02",
     "m8EAd_yt_short": "2026-08-03"
   },
-  "last_sync": "2026-08-02T15:25:25.987714+00:00",
+  "last_sync": "2026-08-03T16:45:30.427590+00:00",
   "posted_destinations": [
     {
       "destination_id": "drass",
@@ -295,6 +295,10 @@
     {
       "destination_id": "tosamaidan",
       "date": "2026-08-03"
+    },
+    {
+      "destination_id": "turtuk",
+      "date": "2026-08-03"
     }
   ],
   "posted_formats": {
@@ -318,8 +322,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
-      "data_carousel"
+      "data_carousel",
+      "score_card"
     ],
     "PdMu0": [
       "score_card",
@@ -341,8 +345,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
-      "data_carousel"
+      "data_carousel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -6866,6 +6870,28 @@
       "destination": "tosamaidan",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_tosamaidan_hi_2026-08-03.mp4"
+    },
+    {
+      "timestamp": "2026-08-03T16:46:49.179776+00:00",
+      "date": "2026-08-03",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "X4YJW",
+      "destination": "turtuk",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "turtuk.mp4"
+    },
+    {
+      "timestamp": "2026-08-03T16:47:05.613220+00:00",
+      "date": "2026-08-03",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "DLPuL",
+      "destination": "turtuk",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "turtuk.mp4"
     }
   ],
   "theme_usage": {
@@ -7268,7 +7294,8 @@
         "2026-08-02"
       ],
       "turtuk": [
-        "2026-08-02"
+        "2026-08-02",
+        "2026-08-03"
       ]
     },
     "morning_formats": {
@@ -7406,7 +7433,8 @@
         "2026-07-29",
         "2026-07-30",
         "2026-07-31",
-        "2026-08-01"
+        "2026-08-01",
+        "2026-08-03"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -7669,6 +7697,9 @@
       ],
       "umlingla": [
         "2026-08-02"
+      ],
+      "turtuk": [
+        "2026-08-03"
       ]
     },
     "audience_tags": {
@@ -7680,7 +7711,8 @@
         "2026-06-29",
         "2026-07-06",
         "2026-07-13",
-        "2026-07-20"
+        "2026-07-20",
+        "2026-08-03"
       ],
       "families": [
         "2026-05-23",
@@ -7993,7 +8025,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "turtuk",
+    "shared_best": "amboli",
     "collection": "budget-under-1000"
   },
   "manual_skip_dests": {},
