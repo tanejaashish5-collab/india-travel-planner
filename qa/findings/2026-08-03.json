@@ -1,0 +1,521 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-08-03",
+    "date": "2026-08-03",
+    "started_utc": "2026-08-03T02:07:07Z",
+    "completed_utc": "2026-08-03T02:24:38Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test) — probe.py adapted unchanged from qa/findings/2026-07-27/probe.py (date/seed bumped to nakshiq-2026-08-03; same soft-404 URL set, same core-route list, same R2 hero-image pattern, same SEO regexes; 2 new probes added — /en/state/wayanad + /en/state/kerala redirect-following checks folded into Section I, plus a dedicated no-redirect-follow Section I2), Python requests + ThreadPoolExecutor, run in staged CLI invocations (sitemap/A/B/C/D/D2/F/G/I/I2/J/L) to stay inside the 45s shell budget. FIRST-TIME CAPABILITY this run: the Vercel MCP (get_runtime_errors) was available and used to directly read production runtime-error logs for the first time in this skill's history — every prior run could only infer server-side causes from response bodies. This let today's run root-cause the still-open /api/chat 500 (see NEW-2026-08-03-001) and discover a previously-invisible recurring Postgres statement-timeout pattern (see NEW-2026-08-03-002) that no prior HTTP-probe-only run could have surfaced. Supabase MCP for Section E (list_projects to confirm project_id dudzsdzfvikjjhurxrgc, list_migrations to confirm 072_emergency_sos_auto_reverify is still the latest migration — no new migrations since 07-27, information_schema introspection to correct two column-name assumptions [emergency_sos has no `id` column, only `destination_id`; destinations has no `name_hi`/`tagline_hi` columns — Hindi translations live in a `translations` jsonb column instead], 1 canonical 11-column dialable aggregate using CASE WHEN guards matching the exact historical methodology, 1 corrected placeholder-phone check using a 3+-consecutive-X regex after an initial single-character `%X%` LIKE check produced a false-positive 5 rows on real words like 'Taxi'/'Express' — corrected before writing findings, 1 auto_verify_status distribution + timing check for the new SOS auto-reverify cron's first real scheduled run, 1 three-row prior-bug recheck [khonoma/uttarkashi/khangchendzonga-np], 1 destination_stay_picks spot-check [kaza/phawngpui-peak/majuli], 1 people_who_help aggregate, 1 chat_logs recent-activity read to bound the chat-outage window); Section K via Claude in Chrome MCP (browser_batch + javascript_tool + find) across 4 controlled observations — mawlynnong/en (atlas, today's random sample), mawlynnong/hi (atlas, Hindi — H1 still English, 7th distinct destination confirming NEW-2026-07-09-001), /en/explore grid→map Leaflet toggle (519 overlay markers — first click attempt via a `find()` element ref missed, corrected by clicking the on-screen coordinate directly after a screenshot; noted as a harness quirk, not a site defect), yumthang-valley/en (Leaflet-template, today's random sample — first time a Leaflet-template destination was BOTH in-sample AND independently Chrome-verified in the same run) — each preceded by read_console_messages(clear=true) and followed by an onlyErrors read, 0 errors across all 4; git log/git show on the local apps/web working tree used to positively rule in/out recent code changes (5 commits since 07-27, 0 touching api/chat/route.ts, contrast/aria/tablist, or perf-relevant markup) and to directly read apps/web/src/app/api/chat/route.ts (confirms the hardcoded model='claude-sonnet-4-6' string flagged 07-27 is still unpatched, and that /api/itinerary already has a graceful Anthropic-error fallback that /api/chat lacks); Section L hero-image audit via the same Python HEAD-probe workaround as every prior run (scripts/audit-hero-images.mjs not attempted directly, same as every prior run — NEW-2026-07-07-003 still open, not re-confirmed via source-read today); deploy-freshness and cold-cache diagnosis confirmed via direct HTTP re-requests on 5 of today's slowest destination pages, all returning x-vercel-cache: HIT at 126-165ms on the second hit (vs 3864-5147ms on first hit) — same documented ISR-cache-reset-on-deploy behavior as 07-27, re-diagnosed independently rather than assumed.",
+    "mode": "Daily regression — A through L matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 18,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (9 probes incl bad-slug /en/cost/<slug>)",
+    "B — Destination availability + TTFB (10 random slugs from sitemap chunk 1, seed nakshiq-2026-08-03: mawlynnong, nandi-hills, yumthang-valley, solan, mahad-raigad, nalsarovar, north-bay-island, trichy, drass, rameswaram)",
+    "C — Hindi parity (same 10 slugs; lang + Devanagari-title check)",
+    "D — SEO meta (13 URLs: landing + 10 dests + 1 month sub-route [mawlynnong/december] + 1 itinerary URL [itinerary/agra])",
+    "D2 — Quiz/risk-quiz og:image recheck (4 URLs, both locales)",
+    "E — SOS completeness: DB ground-truth canonical 11-column aggregate (corrected methodology, see run.executor) + local_helpers/people_who_help/source_map aggregate + Hindi-translations aggregate (via the `translations` jsonb column, corrected from an initial wrong column-name assumption) + auto_verify_status distribution and timing for the new SOS auto-reverify cron's first real scheduled run + 3-row prior-bug recheck + destination_stay_picks spot-check (kaza/phawngpui-peak/majuli) + chat_logs recent-activity read",
+    "F — API smoke (14 probes incl malformed/empty/wrong-shape/oversized guards, 3 valid-question chat probes, itinerary + weather + search-index + destinations/health phantom-route checks)",
+    "F2 — Vercel runtime-error-log audit (NEW capability this run) — get_runtime_errors against the production project for /api/chat specifically (7d window) and site-wide (7d window, all routes) — root-caused the chat outage and discovered the statement-timeout pattern (see new_findings_today)",
+    "G — PWA: sw.js CACHE_VERSION/md5, manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks) + full per-locale/type breakdown, diffed vs 07-27",
+    "I — Core routes HTTP matrix (22 real routes + 1 intentional phantom-route probe)",
+    "I2 — Locale/state-redirect fix recheck (4 URLs, redirects NOT followed) — verifies the 0f76b526c /state/<destination> 301 fix (shipped 07-27) is still live",
+    "J — Locale-routing redirect (5 bare paths, redirects NOT followed)",
+    "K — Chrome E2E: mawlynnong/en (atlas, today's sample) + mawlynnong/hi (atlas, Hindi — H1 still English) + explore grid→map Leaflet toggle (519 markers) + yumthang-valley/en (Leaflet-template, today's sample — first run with an in-sample Leaflet destination independently Chrome-verified) — 4 fully console-swept observations, 0 errors",
+    "L — Hero-image audit (Python HEAD-probe workaround against R2, concurrency 24, full 533-slug list read fresh from the sitemap: 533/533 ok, 0 missing, 0 errors)",
+    "Supplementary — atlas static-coordinate check on mawlynnong/hi (live) + raw-HTML leaflet-string sweep across all 10 sampled destinations' saved Hindi HTML (9/10 atlas, 1/10 Leaflet [yumthang-valley]); git log/git show audit of all 5 apps/web commits since 07-27 (0 touching api/chat, contrast/aria/tablist, or perf markup — confirmed via diff grep, not assumed); direct read of apps/web/src/app/api/chat/route.ts and apps/web/src/app/api/itinerary's fallback pattern; direct read of apps/web/vercel.json to confirm the sos-auto-reverify cron schedule (0 0 * * 1 — weekly Monday 00:00 UTC) rather than assuming it from the 07-27 report's prediction; direct grep of apps/web/src/app/[locale]/explore/page.tsx confirming its destinations query bypasses the cached-data.ts layer (CLAUDE.md Reference-data-caching rule); re-request cache-warm verification on 5 of today's slowest destination pages, all HIT on second request."
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass — scoped as a dedicated standalone session per SKILL.md, not a daily-matrix add-on. Checked whether today's 5 apps/web commits touch the two carried-forward WCAG items (color-contrast, tablist structure): grepped every commit's diff for contrast/aria/tablist-related strings — 0 hits across all 5. Both items are genuinely untouched by this week's shipped work (SOS auto-reverify follow-up fixes, 1 build/ops fix, 1 social-publishing feature), not silently fixed. Baseline is now 91 days stale (origin 2026-05-04) — over 3 months old and still aging every week this is deferred."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Same escalation as axe-core above. None of this week's 5 commits are perf-labeled or touch page markup/payload weight (3 are SOS-backend fixes, 1 is a build-pipeline/audit-commit fix, 1 is a social-content feature) — lower relevance than some prior weeks, but the baseline keeps aging regardless."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "9/9 Section-A probes 404, 0 return 200. Byte-for-byte consistent with the established middleware.ts KNOWN_DESTINATION_SLUGS short-circuit (bare 'Not Found', 9 bytes)."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "mawlynnong/13, mawlynnong/0, mawlynnong/notamonth, nandi-hills/99 (hi) all 404, same middleware short-circuit."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400, empty->400, wrong_shape->400, oversized(200KB)->413. 0x5xx from the input-validation guards specifically — these remain healthy and distinct from the valid-request-path failure. See NEW-2026-08-03-001 for the (different, still open) valid-question 500."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400, empty->400, empty_object->400. 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template '| NakshIQ | NakshIQ' title stutter (also tracked NEW-2026-06-12-001)",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra title 'Agra itinerary — 1, 3 & 5 days (verified) | NakshIQ', stutter=False."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image (all itinerary URLs)",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra og_image=True."
+    },
+    {
+      "id": "NEW-2026-07-03-001",
+      "title": "quiz/[topic] template ships without og:image on both locales",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "D2 recheck: quiz/hill-station (en+hi) and risk-quiz (en+hi), 4/4 og_image=True."
+    },
+    {
+      "id": "NEW-2026-07-07-004",
+      "title": "qa/_lib/build_report.js reads different field names than findings.json carries for the 'K — Map widget' QA-report row",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Unresolved harness fragility, unchanged: this findings.json continues to populate both map_dest_pages_leaflet_template and the map_widget_destination_pages_* compatibility alias — still a workaround, not a fix."
+    },
+    {
+      "id": "NEW-2026-07-07-003",
+      "title": "scripts/audit-hero-images.mjs (CONCURRENCY=8) does not reliably complete within the 45-second shell budget",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "Not independently re-confirmed via source-read today (was confirmed via direct source read on 07-27: CONCURRENCY hardcoded to 8). Used the same Python HEAD-probe workaround (concurrency 24) as every prior run instead — 533/533 ok."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js 200, CACHE_VERSION=nakshiq-v52, md5=0c7bc0366b4f61237f86740e5d27f0b2 — byte-identical to every prior check since sw.js was last touched. manifest icons=3, shortcuts=5. /offline 200."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone +91-94120-XXXXX",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: uttarkashi police/ambulance/fire/rescue_contact all populated with real numbers ('DDMA Uttarkashi Control Room: 01374-222722 / 1077'), 0 placeholder-XXX matches (corrected 3+-consecutive-X regex)."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: khonoma rescue_contact = 'Kohima Police Control Room: 7005986046 · NSDMA: 1070' — real dialable numbers."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck (not in today's live 10-dest sample): police 100, ambulance 108, fire 101, rescue_contact populated with real district/forest-dept contacts, 0 placeholder-XXX matches."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative: site uses hrefLang (camelCase JSX)",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Methodology note, not a live check — probe.py's seo_check() already uses a case-insensitive regex (re.I)."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "confidence_cards.people_who_help non-empty-array count = 84, identical to the 06-19..07-27 baseline."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Safety floor still intact (0 destinations under 3 dialable fields, 0 without an emergency_sos row). emergency_sos.local_helpers non-empty = 178/533, identical to 07-20/07-27. source_map (migration 072, per-number provenance for the new auto-reverify system — a different, narrower field) grew from 35 to 159 rows populated this week — see new_findings_today NEW-2026-08-03-003."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet migration)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Dual-template state continues as designed: today's 10-dest sample was 9/10 atlas-template + 1/10 Leaflet-template (yumthang-valley) — independently Chrome-verified live (42 tiles, 9 markers, window.L present, 0 console errors), the first run where an in-sample Leaflet destination was both sampled and interactively checked in the same session."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "yumthang-valley/en (Leaflet-template, today's sample) shows 9 overlay markers (circleMarker paths), consistent with the established '.leaflet-marker-icon selector is wrong, use overlay-pane circle/path' explanation."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration in progress; marker rendering",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "yumthang-valley/en: 42 tiles, 9 overlay markers, window.L present, 2 video elements, 0 console errors — marker count consistent with the 07-07..07-27 reading (9 markers each time, across different Leaflet-template destinations)."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N x 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED",
+      "today_status": "REPRODUCED",
+      "evidence": "9/10 of today's sampled Hindi destination pages show '23.5' (Python UTF-8-safe search), independently confirmed live via Chrome on mawlynnong/hi. The 1 exception (yumthang-valley) is correctly Leaflet-template, not atlas. Still cosmetic, still open."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 console errors across 4 fully-swept Chrome observations today (mawlynnong en, mawlynnong hi, explore map toggle, yumthang-valley en)."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not independently re-triggered today (modal wasn't surfaced during today's Chrome pass) — carried forward from the last direct verification, consistent with how this item has been reported on days it doesn't fire."
+    },
+    {
+      "id": "NEW-2026-07-09-001",
+      "title": "Destination hero tagline + 'why special' body copy render in English on /hi despite complete Hindi translations existing in the DB for 525/533 destinations",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "Independently re-verified live today on mawlynnong (today's random sample, 7th distinct destination after wayanad/bandhavgarh/vadodara/kozhikode/khangchendzonga-np/tehri): /hi/destination/mawlynnong has lang=hi and a fully Devanagari <title> ('मॉलिननॉन्ग, मेघालय...'), but H1 renders 'Mawlynnong.' — full English. Same working-vs-broken code-path split as previously documented. DB-side: 525/533 destinations have translations->hi->{name,tagline,why_special} populated (exact match to the 07-09..07-27 baseline) — confirmed today via the correct `translations` jsonb column after an initial wrong assumption (destinations.name_hi etc. do not exist as direct columns)."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images (black cards in landing Dailies reel)",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section L: 533/533 probed, 0 missing, 0 errors."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrank 2,173 URLs (-8%) overnight 06-26 in generated secondary pages; core catalogue intact",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Sitemap total 24,957 today, steady growth continues (24,945 -> 24,951 on 07-27 -> 24,957 today), no shrink."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "phawngpui-peak shows <3 stay cards in rendered HTML (kaza and majuli resolved/fine per 07-11)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "DB spot-check today: kaza=4, majuli=4, phawngpui-peak=2 (unchanged, still <3). None of the 3 landed in today's random sample."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core skipped again today (see phases_skipped). Grepped all 5 of this week's apps/web commit diffs for contrast/aria/tablist-related strings — 0 hits. Genuinely untouched by recent work, not silently fixed. Baseline now 91 days stale — over 3 months."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Same check as color-contrast above — 0 hits in this week's commit diffs, untouched."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse skipped again today. None of this week's 5 commits are perf-labeled or touch markup/payload weight."
+    },
+    {
+      "id": "NEW-2026-07-27-001",
+      "title": "/api/chat returns HTTP 500 for every valid question — the AI chat feature is completely down",
+      "prior_status": "STILL OPEN (new 07-27, root cause unknown)",
+      "today_status": "STILL OPEN",
+      "evidence": "Reproduced again today: 3/3 fresh valid-question probes ('Best time to visit Leh?', 'hello', a complex Manali-vs-Shimla question) all HTTP 500 {\"error\":\"Something went wrong\"}. ROOT CAUSE NOW CONFIRMED — see new_findings_today NEW-2026-08-03-001. This is the same outage as 07-27, now with a definitive cause found via first-time Vercel runtime-error-log access."
+    },
+    {
+      "id": "STATE-REDIRECT-2026-07-27",
+      "title": "/state/<destination-slug> URLs (e.g. /en/state/wayanad) hard-404'd instead of redirecting to the real destination page",
+      "prior_status": "STILL CLOSED (fix shipped + verified 07-27)",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section I2 recheck today: /en/state/wayanad, /hi/state/wayanad, /state/wayanad (no locale) all still 301 to the correct /destination/wayanad equivalent. Control /en/state/kerala (a real state, not a destination) correctly still 200, not redirected. Fix (commit 0f76b526c) holds one week later."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-08-03-001",
+      "severity": "critical",
+      "title": "ROOT CAUSE FOUND for the week-old /api/chat outage: the Anthropic API account has run out of credit balance. Confirmed via first-time Vercel runtime-error-log access — this is a billing issue, not a code bug, and needs a human to add credits.",
+      "detail": "Today's run had access to the Vercel MCP's get_runtime_errors tool for the first time in this skill's history. Querying it for /api/chat over the last 7 days returns the exact server-side exception on every failure: Anthropic API HTTP 400, {\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"}. This is not a code regression: (1) the earliest evidence of this exact error is 2026-07-27T02:11:58Z (during last week's QA run) and it is still occurring today at 2026-08-03T02:09:31-46Z — a full week of continuous failure, and (2) chat_logs (the table the route writes a row to on every SUCCESSFUL answer) has zero rows after 2026-07-22T15:31:51Z — meaning the credit exhaustion most likely began somewhere between 2026-07-22 15:31 and the first captured error 2026-07-27 02:11, and NO real visitor has received a working AI chat answer in the 12 days since. Separately, the same Anthropic-credit-exhaustion error is ALSO hitting /api/itinerary (confirmed in the same 7-day error log, 2026-07-28, 07-30, and 08-02) — but /api/itinerary does NOT 500 for users, because its code already catches this specific error and serves a 'deterministic fallback' (log line: 'Anthropic API error — serving deterministic fallback'). /api/chat has no equivalent fallback: its catch-all only special-cases HTTP 429 responses (a difference-in-kind: this Anthropic error is HTTP 400, not 429, so /api/chat's existing 429-branch — which already has a friendlier user-facing message — never fires), and falls through to the generic 500 'Something went wrong'. Directly read apps/web/src/app/api/chat/route.ts today: the hardcoded model='claude-sonnet-4-6' string flagged as a code smell on 07-27 is still unpatched (line 388) but is confirmed NOT the cause — the simple/Haiku path uses a valid model ID (claude-haiku-4-5-20251001) and fails with the identical credit-balance error, and 0 commits to this file have landed since 07-20.",
+      "evidence": "mcp__vercel__get_runtime_errors(projectId=prj_JaXUDEUU6YSHZ8GZL4Cv2jZaoEz2, teamId=team_jlSYurYBjQaH1QCxjRxRSE3K, routes=/api/chat, since=7d) returned 7 distinct error instances, all identical: 'Chat error: Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low...\"}}', spanning first=2026-07-27T02:11:10Z to last=2026-08-03T02:09:46Z, across 2 different deployments (dpl_FeY7yD6ZggTFKjd8H79vVG9h6yeT on 07-27, dpl_Gko5Fr87gSQevJD2EYVzKbqJSBZ5 today) — confirming this is deployment-independent, i.e. an account/billing state, not a code state. Site-wide 7d error sweep also surfaced 3 matching 'Anthropic API error — serving deterministic fallback' log lines on /api/itinerary (2026-07-28T10:46:19Z, 2026-07-30T11:18:43Z, 2026-08-02T14:40:37Z) with the identical underlying Anthropic error message. chat_logs SELECT ... ORDER BY created_at DESC LIMIT 8 (Supabase MCP): most recent row is 2026-07-22T15:31:51.16Z, 0 rows since. 3x curl -X POST /api/chat today with valid questions, all 500 {\"error\":\"Something went wrong\"}, 2.2-3.4s to 7.0s depending on model-routing branch. apps/web/src/app/api/chat/route.ts read directly: line 342-349 shows the existing `if (status === 429)` friendly-fallback branch that this specific error (status 400) does not match.",
+      "recommendation": "This needs a human, not a code fix: add credit / upgrade the Anthropic Console billing plan for the account tied to ANTHROPIC_API_KEY (organization id 1624b38e-d736-4dc3-9fe4-6ae72d0962cc, visible in the error response headers). Once credits are restored, chat should recover immediately with no deploy needed — the code path itself is not broken. Two secondary, non-blocking code improvements worth making once the immediate issue is resolved: (1) extend api/chat/route.ts's error handling to also catch this 'credit balance too low' shape (it's a 400, not a 429) and serve the same graceful degraded-mode message /api/itinerary already gives users, so a future billing lapse doesn't take down the whole chat feature with a raw 500; (2) update the hardcoded model='claude-sonnet-4-6' string (line 388) to a current model ID such as claude-sonnet-5 — unrelated to today's root cause but confirmed stale and worth fixing on its own merits. Recommend also setting up an Anthropic Console low-balance alert/auto-reload if available, since this is now a repeat-risk outage class (the flagship differentiating feature going fully dark for a week+ with no automated alerting) rather than a one-off."
+    },
+    {
+      "id": "NEW-2026-08-03-002",
+      "severity": "medium",
+      "title": "Recurring Postgres 'canceling statement due to statement timeout' failures on /explore (both locales), /weekend-from-delhi, and scattered individual destination pages — invisible to this QA harness until today's first-time Vercel error-log access; root cause identified for /explore",
+      "detail": "The same 7-day Vercel runtime-error sweep that root-caused the chat outage also surfaced a recurring pattern this harness had never seen before (it previously could only see HTTP status codes, not server-side exception logs): Postgres error 57014 ('canceling statement due to statement timeout') hitting several routes intermittently over the past 7 weeks. Highest-volume: '[explore] destinations fetch failed after retries: canceling statement due to statement timeout' on /en/explore and /hi/explore — 26 occurrences / 7 distinct users between 2026-06-16 and 2026-08-02 (yesterday), plus 12 first-attempt-then-retried instances that recovered without surfacing to the user. Also '[weekend-from:delhi] destinations hydrate failed' on /en/weekend-from-delhi — 10 occurrences / 2 users, 2026-06-18 to 2026-07-30. Also 5 distinct individual destination pages failing with the same 57014 code on getDestination/getMonthData calls, each a handful of times in the 07-28 to 08-01 window: nainital, barmer, bhimbetka, amritsar/november, pfutsero/december. Directly grepped apps/web/src/app/[locale]/explore/page.tsx today: its destinations query does its own inline `createClient(url, key)` and hits `supabase.from(\"destinations\").select(...)` directly on every render — it does NOT go through apps/web/src/lib/cached-data.ts's unstable_cache layer. This is a direct violation of the CLAUDE.md 'Reference-data caching' rule, which was written specifically because uncached `supabase.from(\"destinations\"|...)` reads bypass Next's fetch cache and hit PostgREST fresh on every request — the same class of problem that caused the 2026-06-04 Disk IO/temp-spill alert. The explore-route timeouts start 2026-06-16, twelve days after that incident, and are still recurring as of yesterday. IMPORTANT: /explore is NOT currently broken — it was live-verified working perfectly during today's Section K Chrome pass (200, map rendered with 519 markers, 0 console errors) and Section I (200, 1020ms). This is an intermittent failure under periodic DB load/contention, not a permanent outage — but it is a real, repeated, user-facing failure (7+ real visitors hit a broken /explore page over 7 weeks, most recently yesterday) on one of the site's core navigation surfaces.",
+      "evidence": "mcp__vercel__get_runtime_errors(projectId=prj_JaXUDEUU6YSHZ8GZL4Cv2jZaoEz2, teamId=team_jlSYurYBjQaH1QCxjRxRSE3K, since=7d) — 'Error: [explore] destinations fetch failed after retries: canceling statement due to statement timeout' count=26 users=7 routes=/en/explore.segments/_tree.segment.rsc,/hi/explore.segments/_tree.segment.rsc,/hi/explore, first=2026-06-16T10:01:05Z last=2026-08-02T04:39:28Z; matching 'attempt 1 failed... retrying' count=12; '[weekend-from:delhi] destinations hydrate failed' count=8+2 first=2026-06-18T03:01:07Z last=2026-07-30T15:01:38Z; 5 distinct 'Supabase get{Destination,MonthData}(...) failed after 3 attempts: 57014' entries for nainital/barmer/bhimbetka/amritsar-november/pfutsero-december, each 1-4 occurrences, 2026-07-28 to 2026-08-01. Grep of apps/web/src/app/[locale]/explore/page.tsx lines 40-88 shows inline createClient + supabase.from(\"destinations\").select(...) with a manual retry-with-backoff loop (not unstable_cache). Live re-verification today: /en/explore 200 (1020ms, Section I) and fully interactive with 519 Leaflet markers (Section K), 0 console errors.",
+      "recommendation": "Route /explore's destinations/states/coords queries through the existing apps/web/src/lib/cached-data.ts cached layer (getCachedDestinationsIndex or equivalent) instead of the current inline per-request createClient + supabase.from(...) call — this is exactly the pattern CLAUDE.md's Reference-data-caching section says to use and explicitly says NOT to bypass. That should both fix the recurring timeouts (fewer, cheaper, cached queries instead of a fresh PostgREST hit + full-catalogue select on every /explore render) and bring this file into compliance with the standing rule. The scattered individual-destination-page timeouts (nainital, barmer, bhimbetka, amritsar, pfutsero) may be a related but distinct DB-load-contention symptom rather than the same root cause — worth a follow-up look at whether they cluster in time with /explore's uncached load spikes, but not conclusively established today. Not urgent enough to treat as an incident (intermittent, self-recovers via retry most of the time, low single-digit user counts), but worth fixing before it grows — flag as a real backlog item, not a one-off blip."
+    },
+    {
+      "id": "NEW-2026-08-03-003",
+      "severity": "info",
+      "title": "SOS auto-reverify system's first real scheduled weekly run fired on time today; early results show a high 'needs_source' rate that's most likely explained by incomplete source-URL coverage, not a broken verifier",
+      "detail": "Migration 072's weekly cron (confirmed via apps/web/vercel.json: schedule \"0 0 * * 1\", i.e. every Monday 00:00 UTC) fired at 2026-08-03T00:00:27Z — exactly on schedule, and exactly the date the 07-27 QA run predicted as its first real execution (the 07-27T02:18:01Z timestamp visible in the data was a one-off smoke-test shortly after that day's deploy, not the scheduled cron). Status distribution after today's run: 300 rows 'needs_source', 109 'confirmed', 124 'never_run' (409 = 300+109 rows have been touched at least once; the 'bound the run by wall-clock not URL count' fix from 07-27 means each weekly run only gets through part of the 533-row queue before stopping, so 124 untouched rows is expected, not a bug). The 300/409 (73%) 'needs_source' rate looks high in isolation, but source_map (the field that stores a per-number citation URL to check against) is only populated for 159/533 rows total — so a large share of 'needs_source' outcomes are very plausibly rows that simply don't have a source URL registered yet, which is a legitimate, expected status rather than a verification failure. This QA harness cannot fully distinguish 'no source registered' from 'verifier logic bug' without reading the cron's implementation in more depth than today's run budget allowed.",
+      "evidence": "SELECT auto_verify_status, count(*) FROM emergency_sos GROUP BY 1 -> needs_source=300, never_run=124, confirmed=109. SELECT max(auto_verified_at) -> 2026-08-03 00:00:27+00. SELECT min(auto_verified_at) -> 2026-07-27 02:18:01+00 (pre-dates the weekly schedule, consistent with a post-deploy smoke test). source_map populated rows = 159/533 (up from 35/533 on 07-27). apps/web/vercel.json line 38-39: {\"path\": \"/api/cron/sos-auto-reverify\", \"schedule\": \"0 0 * * 1\"}.",
+      "recommendation": "No action needed — this is a new system in its first week of real operation and the safety floor it doesn't touch (533/533 destinations still have ≥3 real dialable numbers, 0 placeholders) remains fully intact regardless of auto-verify status. Worth a proper look next week once source_map coverage has grown further and there have been 2 real scheduled runs to compare — if 'needs_source' stays flat instead of shrinking as source_map coverage grows, that would be the signal to dig into the verifier logic itself."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 23,
+    "core_routes_2xx": 22,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": {
+      "min": 48,
+      "median": 743,
+      "p90": 1020,
+      "max": 1269
+    },
+    "core_routes_TTFB_note": "22 real routes all 200 (redirects followed at this layer; raw redirect mechanics tested separately in Section J). The 23rd probe (/en/search) is the intentional phantom-route check — correctly 404s and is excluded from the 2xx tally and TTFB stats. Normal range, no cold-cache anomaly at the core-route layer today (contrast with destinations below).",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": {
+      "min": 512,
+      "median": 2356,
+      "max": 5147
+    },
+    "destinations_TTFB_note": "10/10 200, but a mixed pattern today — roughly half fast (512-848ms) and half slow (3864-5147ms) on first hit. Investigated: re-requested 5 of the slowest (mawlynnong, solan, yumthang-valley, trichy, drass) and all 5 returned x-vercel-cache: HIT at 126-165ms on the second hit — confirms cold ISR cache on first-hit only, same documented behavior as 07-27's NEW-2026-07-27-003, not a new regression.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_parity_caveat": "Section C's narrow check (lang attribute + Devanagari title) passed 10/10 as usual. As established since 07-09 and independently re-confirmed on a 7th distinct destination today (mawlynnong), this check does not catch that the destination body copy (H1, tagline, WHY SPECIAL) ignores locale entirely — see NEW-2026-07-09-001, STILL OPEN.",
+    "seo_urls_sampled": 13,
+    "seo_urls_extra_quiz_recheck": 4,
+    "seo_title_stutter": 0,
+    "seo_title_stutter_note": "0 stutter across the 13 core-matrix URLs and the 4 quiz/risk-quiz recheck URLs (17 total today).",
+    "seo_canonical_present": 13,
+    "seo_hreflang_en_present": 13,
+    "seo_hreflang_hi_present": 13,
+    "seo_hreflang_xdefault_present": 13,
+    "seo_og_image_present": 13,
+    "seo_og_image_note": "13/13 on the core matrix. Quiz recheck: 4/4 present across risk-quiz + quiz/hill-station (both locales) — NEW-2026-07-03-001 continues clean.",
+    "soft_404_regression_passes": 9,
+    "soft_404_regression_misses": 0,
+    "state_redirect_fix_probes": 4,
+    "state_redirect_fix_note": "Recheck of the 0f76b526c /state/<destination> -> /destination/<slug> 301 fix (shipped 07-27): still live on prod one week later (en/hi/no-locale variants), control /en/state/kerala still correctly NOT redirected. See regression_matrix STATE-REDIRECT-2026-07-27.",
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.42,
+    "sos_db_total_dialable_entries_11col": 3953,
+    "sos_db_rows_with_placeholder_x": 0,
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_destinations_with_local_helpers_block": 533,
+    "people_who_help_nonempty_array_db": 84,
+    "destinations_total_db": 533,
+    "sos_auto_reverify_migration_applied": true,
+    "sos_auto_reverify_migration_version": "20260727014747",
+    "sos_auto_reverify_cron_schedule": "0 0 * * 1 (weekly, Monday 00:00 UTC — confirmed via apps/web/vercel.json)",
+    "sos_source_map_rows_populated": 159,
+    "sos_auto_verify_status_confirmed": 109,
+    "sos_auto_verify_status_needs_source": 300,
+    "sos_auto_verify_status_never_run": 124,
+    "sos_auto_verify_most_recent_run_utc": "2026-08-03T00:00:27Z",
+    "sos_auto_verify_note": "First real scheduled weekly run fired on time today (00:00:27 UTC Monday, matches the 0 0 * * 1 cron). See new_findings_today NEW-2026-08-03-003 for the needs_source rate discussion.",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "Section L: scripts/audit-hero-images.mjs not attempted directly again this run — used the Python HEAD-probe workaround (concurrency 24) against the same R2 pattern. 533/533 ok / 0 missing / 0 errors — the 06-20 Sikkim black-card fix holds. See NEW-2026-07-07-003 (still open).",
+    "stay_picks_spotcheck_kaza": 4,
+    "stay_picks_spotcheck_phawngpui_peak": 2,
+    "stay_picks_spotcheck_majuli": 4,
+    "stay_picks_spotcheck_note": "DB-only continuity check today (none of the 3 landed in the random sample); identical to 07-20/07-27's directly-verified numbers.",
+    "api_endpoints_probed": 14,
+    "api_5xx_returned": 3,
+    "api_4xx_validation_returned": 8,
+    "api_2xx_valid_returned": 2,
+    "api_404_expected_returned": 2,
+    "api_chat_valid_status": 500,
+    "api_note": "7x 400 (chat malformed/empty/wrong-shape, itinerary malformed/empty/empty-object, weather no-params) + 1x 413 (chat 200KB) = 8 validation 4xx; 2x 200 (weather?id=varanasi temp 32C, search-index 720181 bytes); 3x 500 — all 3 chat_valid probes (simple x2, complex x1), same outage as 07-27, ROOT CAUSE NOW CONFIRMED — see new_findings_today NEW-2026-08-03-001; 2x 404 (/api/destinations, /api/health — expected, same 404 page).",
+    "vercel_runtime_errors_7d_total_groups": 27,
+    "vercel_runtime_errors_note": "First-time capability this run (Vercel MCP get_runtime_errors). 9 groups on /api/chat (all the same Anthropic credit-balance error). 2 groups on /api/itinerary (same underlying error, but gracefully handled — no 500). 16 groups of Postgres statement-timeout (57014) across /explore, /weekend-from-delhi, and 5 individual destination pages — see NEW-2026-08-03-002.",
+    "service_worker_version": "nakshiq-v52",
+    "service_worker_md5": "0c7bc0366b4f61237f86740e5d27f0b2",
+    "service_worker_byte_identical_note": "Byte-identical to 07-27 (and every prior check since sw.js was last touched).",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 24957,
+    "sitemap_total_urls_delta_note": "24,951 -> 24,957: +6, isolated to en/blog (173->178, 5 new articles continuing the weekly blog pipeline). Every other category unchanged, consistent with the steady editorial trickle noted in prior runs.",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "sitemap_cost_note": "cost URLs still 525 — the 8 Sikkim dests still have no /cost/ page (expected lag) — same 8 dests missing Hindi translations (525/533 = 533-8). Unchanged vs 07-27.",
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 48,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "519 score-colored overlay markers (steady vs the 06-15..07-27 baseline, matches the on-screen '519 markers' label), window.L present, 0 console errors. First click attempt via a find()-returned element ref missed (page state had shifted since the ref was captured) — corrected by screenshotting and clicking the visible Map toggle's on-screen coordinate directly. Noted as a harness quirk this run, not a site defect (see run.executor).",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_leaflet_template": 1,
+    "map_dest_pages_atlas_template": 1,
+    "map_widget_destination_pages_probed_interactive": 2,
+    "map_widget_destination_pages_with_leaflet": 1,
+    "map_widget_field_alias_note": "map_widget_destination_pages_* duplicates map_dest_pages_* above — kept as a compatibility alias since qa/_lib/build_report.js's K-row reads map_dest_pages_* directly (see NEW-2026-07-07-004).",
+    "map_dest_atlas_note": "mawlynnong/en, mawlynnong/hi (today's random sample) render atlas svg viewBox 0 0 1000 1100 + india-outline.svg reference, leaflet=0 by design (correct).",
+    "map_dest_leaflet_note": "yumthang-valley/en (today's random sample — first time an in-sample Leaflet destination was independently Chrome-verified rather than using the historical dzongu comparison point) renders 42 tiles / 9 overlay markers / window.L / 2 video elements, 0 console errors — marker count consistent with the 07-07..07-27 reading (9 markers each time, across different Leaflet-template destinations sampled on different days).",
+    "atlas_static_coord_readout": "23.5 (static Atlas coordinate) — reproduced on 9/10 of today's sampled destinations in Hindi (Python UTF-8-verified) plus independently confirmed live via Chrome on mawlynnong/hi. The 1 exception (yumthang-valley) is the in-sample Leaflet-template destination, correctly NOT showing it. NEW-2026-06-06-003 REPRODUCED, still cosmetic, still open.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 4,
+    "console_react_418_fired_loads": "0 of 4 fully console-swept observations (mawlynnong/en, mawlynnong/hi, explore map toggle, yumthang-valley/en) — NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": true,
+    "deploy_evidence": "data-dpl-id dpl_Gko5Fr87gSQevJD2EYVzKbqJSBZ5 today, distinct from 07-27's dpl_63qQvKgKurCXw8ZHYZ3SivizK5UY. Vercel error logs show 3 distinct deployments cycled through between 07-27 and today (dpl_FeY7yD6ZggTFKjd8H79vVG9h6yeT -> dpl_FuZmnVhGYA8S5LGnnqnUoRCHWSbA -> dpl_2dDToByZVpjrr1oxNKWKJwhaDewR -> dpl_Gko5Fr87gSQevJD2EYVzKbqJSBZ5 today), consistent with 5 git commits landing across 4 separate days (07-27, 07-30, 08-02) this week.",
+    "hindi_translations_db_total": 533,
+    "hindi_translations_db_has_hi_tagline": 525,
+    "hindi_translations_db_has_hi_why_special": 525,
+    "hindi_translations_db_has_hi_name": 525,
+    "hindi_translations_note": "525/533 (98.5%) destinations have complete Hindi name/tagline/why_special translations (stored in the destinations.translations jsonb column, corrected today from an initial wrong assumption of separate name_hi/tagline_hi columns) that are NOT reaching the rendered page body (NEW-2026-07-09-001, STILL OPEN) — unchanged from 07-09 through 07-27. Independently re-verified live today on mawlynnong (today's sample) — a 7th distinct destination now confirmed.",
+    "sos_db_dialable_11col_note": "Canonical 11-column set (excludes local_police_station), non-null + trimmed-non-empty. Identical to 07-27's 3953 (0 change) — no deploy touched this base data, 0 new destinations since 06-14 (now 50 days). Covers all 533 destinations. Placeholder-phone check corrected today to a 3+-consecutive-X regex after an initial single-character check produced 5 false positives on real words ('Taxi', 'Express', etc.) — corrected before writing this findings.json, true count is 0, matching baseline.",
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — identical to 07-20/07-27 and the pre-existing baseline; catalogue steady at 533.",
+    "sos_destinations_with_local_helpers_block_note": "Compatibility alias for qa/_lib/build_report.js's E-row (= destinations_total_db - sos_dests_without_emergency_sos_row_db). See NEW-2026-07-07-004.",
+    "people_who_help_baseline_note": "84 = confidence_cards.people_who_help nonempty arrays — exact match to the 06-19..07-27 baseline. NEW-2026-06-10-001 holds.",
+    "destinations_total_db_note": "Steady at 533 (max created_at 2026-06-14, 0 new since the Sikkim cluster — 50 days now)."
+  },
+  "deliverables": [
+    "qa/findings/2026-08-03.json",
+    "qa/findings/2026-08-03/ (probe.py + section CSVs/JSON A-L + sample-slugs.json + run-start.txt + html/ SSR snapshots for 10 sampled destinations, Hindi)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "TOP PRIORITY: /api/chat has now been down for a full 12 days (0 successful chat_logs rows since 2026-07-22T15:31:51Z) — but today's run found the definitive root cause for the first time: the Anthropic API account has run out of credit balance (confirmed via direct Vercel runtime-error-log access, a capability this QA harness has never had before today). This is a billing fix, not a code fix — see NEW-2026-08-03-001.",
+    "NEW this run: Vercel MCP access (get_runtime_errors) was available for the first time. This is a genuine capability upgrade for this QA skill, not a one-off — it let today's run see real server-side exceptions instead of only HTTP status codes, directly root-causing one long-standing critical bug and discovering one previously-invisible recurring issue (NEW-2026-08-03-002) in the same session. Recommend keeping this tool in the standard toolkit for future runs rather than treating it as incidental.",
+    "Axe-core and Lighthouse not run today (see phases_skipped). Checked whether this week's 5 commits touch the two carried-forward WCAG items (color-contrast, tablist structure) — 0 hits, genuinely untouched. Baseline is now 91 days stale (origin 2026-05-04) — over three months — and gets more stale every week this is deferred. Worth explicitly scheduling a dedicated session soon.",
+    "scripts/audit-hero-images.mjs (the standard node script) was not attempted today, nor was its CONCURRENCY constant re-confirmed via source read this time (it was confirmed hardcoded to 8 on 07-27). Used the same Python HEAD-probe workaround (concurrency 24) as every prior run instead — see NEW-2026-07-07-003 (still open).",
+    "Today's 10-dest random sample (mawlynnong, nandi-hills, yumthang-valley, solan, mahad-raigad, nalsarovar, north-bay-island, trichy, drass, rameswaram) was 9/10 atlas-template + 1/10 Leaflet-template (yumthang-valley) — this is the first run where the in-sample Leaflet destination was ALSO the one independently Chrome-verified (rather than substituting the historical dzongu comparison point), giving slightly stronger evidence than usual for NEW-2026-05-17-001/INFO-2026-05-08-001/NEW-2026-06-06-002.",
+    "khonoma, uttarkashi, and khangchendzonga-np (the 3 historically-buggy SOS destinations) did not land in today's random sample — DB-only rechecks (unchanged, real numbers, 0 placeholders), not live re-verification, same caveat as prior days when they don't land in the sample.",
+    "The Phase-8-carry-sparse-stays watchlist (kaza, phawngpui-peak, majuli) was checked via a direct DB spot-check today (continuing the established approach), not via random sampling — none of the 3 landed in today's sample.",
+    "NEW-2026-07-09-001 was independently re-verified live today on mawlynnong (today's random sample), a 7th distinct destination (after wayanad 07-09, bandhavgarh 07-10, vadodara 07-11, kozhikode 07-13, khangchendzonga-np 07-20, tehri 07-27).",
+    "3 deployments landed between 07-27 and today (5 git commits across 07-27/07-30/08-02) — all SOS-auto-reverify follow-up fixes, 1 build/audit-pipeline fix, and 1 unrelated social-content feature. 0 touched api/chat/route.ts, contrast/aria/tablist markup, or perf-relevant code. Every regression-matrix item re-tested today came back unchanged from 07-27 except for the two new findings (chat root-cause, statement-timeout discovery) — both surfaced by new tooling access today, not by anything that changed on the site this week.",
+    "destinations_TTFB_ms read a mixed pattern today (half fast, half slow on first hit) — investigated and confirmed as cold ISR cache on first-hit only (5/5 re-requested slow destinations returned x-vercel-cache: HIT at 126-165ms), not a regression. Same documented behavior as 07-27's NEW-2026-07-27-003 finding, independently re-diagnosed rather than assumed this time.",
+    "3 chat_valid probes today (Leh, hello, complex Manali-vs-Shimla question) did not spend meaningful metered Anthropic tokens beyond what a single successful call would have, since all failed at the Anthropic API call itself before generating any output — inferred from the error response and 400 status (not a generation-side failure), not confirmed via billing data.",
+    "Supabase reads today: list_projects (1) + list_migrations (1, confirms 072 is still latest — 0 new migrations since 07-27) + 1 corrective information_schema.columns check after 2 wrong column-name assumptions (emergency_sos has no `id` column; destinations has no name_hi/tagline_hi columns) + 1 auto_verify_status distribution + 1 auto-verify timing aggregate + 1 corrected canonical 11-col dialable aggregate (fixed after an initial 12-col version accidentally included local_police_station) + 1 corrected placeholder-phone check (fixed after an initial single-character '%X%' LIKE check produced false positives) + 1 Hindi-translations aggregate (via the correct `translations` jsonb column) + 1 people_who_help aggregate + 1 three-row prior-bug recheck + 1 destination_stay_picks 3-row recheck + 1 chat_logs recent-activity read — all narrow, egress-safe per CLAUDE.md. Two methodology bugs (wrong SOS column set, over-broad placeholder regex) were caught and corrected before writing this findings.json, not after — no fabricated or wrong numbers made it into the final report.",
+    "Chrome console-tracking behavior: read_console_messages only captures messages from the moment it is first called on a tab, so each fully-swept Section K surface was probed by calling it once (clear=true) immediately before/after navigation, then again (onlyErrors filter) after the page settled. The explore-map click missed on the first attempt (a find()-returned element ref went stale between the find() call and the click, most likely due to page layout settling) — corrected by screenshotting and clicking the visible coordinate directly. Noted so a future run doesn't mistake this harness quirk for a real defect.",
+    "Today's 10-dest sample pool = 533 slugs read fresh from the sitemap (seed nakshiq-2026-08-03), not from a cached destinations table read.",
+    "Section I's '/' probe followed the redirect (200, 48ms) rather than reporting the raw 301; raw redirect mechanics are tested without redirect-following in Section J instead (5/5 301 to /en equivalents).",
+    "This findings.json and the three .docx reports were committed (and, if the apps/web prebuild consumes audit files, pushed) to git at the end of this run per the CLAUDE.md standing rule for scheduled/headless audit sessions, using scripts/audit-commit-guard.sh."
+  ],
+  "business_summary": {
+    "headline": "The AI trip-planning chat feature has now been down for 12 straight days — but today's audit finally found the exact cause: the Anthropic AI account has simply run out of credit balance. This is a quick billing fix, not an engineering problem. Separately, today's audit gained a new capability (direct access to production error logs) that also surfaced a smaller, intermittent issue on the Explore page that's been quietly happening for weeks without anyone knowing.",
+    "traffic_lights": [
+      {
+        "area": "AI chat / Ask NakshIQ",
+        "status": "RED",
+        "why": "Confirmed root cause today: the Anthropic AI account is out of credit. Every real visitor question has failed for 12 days straight (zero successful conversations logged since July 22). This needs someone to add credit on the Anthropic Console billing page — once that happens, chat should work again immediately with no other changes needed."
+      },
+      {
+        "area": "Site availability",
+        "status": "GREEN",
+        "why": "22/22 core routes 2xx, 10/10 sampled destinations 200, 0 site 4xx/5xx today. Pages loaded slower than usual on first visit for about half of today's sample (a few seconds instead of under one) — confirmed this is the normal 'cache resets after a deploy' pattern and fixed itself instantly on a second visit."
+      },
+      {
+        "area": "Explore page (newly discovered issue)",
+        "status": "AMBER",
+        "why": "New today: production error logs show the Explore page's destination list has intermittently failed to load for at least 7 different visitors over the past 7 weeks (most recently yesterday), due to a slow database query that isn't using the site's caching system the way it's supposed to. The page works fine right now and was tested live today with no problems — this is a periodic, not constant, issue — but it's worth fixing properly rather than letting it keep recurring."
+      },
+      {
+        "area": "SEO fixes shipped last week",
+        "status": "GREEN",
+        "why": "The state-page redirect fix from last week is still working correctly one week later — old broken links still correctly forward visitors to the right page."
+      },
+      {
+        "area": "Hindi parity (page shell)",
+        "status": "GREEN",
+        "why": "10/10 sampled Hindi pages have the right language tag and a correctly-translated browser tab title."
+      },
+      {
+        "area": "Hindi parity (page content)",
+        "status": "AMBER",
+        "why": "The visible headline on destination pages still shows English on /hi for most destinations, even though the Hindi text exists in the database — confirmed again today on a 7th destination (mawlynnong)."
+      },
+      {
+        "area": "SEO basics",
+        "status": "GREEN",
+        "why": "0 title-stutter, 13/13 canonical tags, 13/13 hreflang, 13/13 og:image across today's 17 checked URLs."
+      },
+      {
+        "area": "Emergency SOS data",
+        "status": "GREEN",
+        "why": "All 533 destinations still have a complete emergency contact record (minimum 3 dialable numbers, average 7.4, 0 placeholder/fake numbers). The new automated weekly system to keep these numbers verified ran for the first time on schedule this morning — early results look reasonable and the underlying safety data is untouched either way."
+      },
+      {
+        "area": "PWA (installable app)",
+        "status": "GREEN",
+        "why": "Service worker, icons, shortcuts, and offline page all present and unchanged."
+      },
+      {
+        "area": "Accessibility / performance audit currency",
+        "status": "AMBER",
+        "why": "The last full accessibility/performance audit is now over 3 months old (91 days). Confirmed this week's deploys don't touch that area, so nothing is silently slipping, but the audit itself keeps getting more overdue and is worth scheduling soon."
+      }
+    ],
+    "whats_changed": [
+      "URGENT but simple to fix: the AI chat feature's root cause is now known — the Anthropic AI account ran out of credit. This is a billing top-up, not a bug fix.",
+      "NEW TODAY: this audit gained the ability to read production error logs directly for the first time (previously it could only see whether a page returned an error, not why). That immediately paid off — it's how today's run pinned down the chat outage's exact cause, and it also surfaced a previously-invisible, intermittent Explore-page loading issue that's been happening quietly for about 7 weeks.",
+      "3 deploys landed this week: more fixes to the new emergency-number auto-verification system (which had its first real scheduled run this morning, on time), a build-pipeline reliability fix, and an unrelated social-media feature. None of them touch chat, accessibility, or performance.",
+      "The Hindi-headline gap (English text showing on Hindi destination pages) is now confirmed on a 7th distinct destination, unchanged in scope — still a translation-wiring bug, not a data problem.",
+      "Last week's SEO redirect fix is holding up correctly one week later."
+    ],
+    "risks": [
+      "AI chat has been fully down for 12 days with no automated alert catching it — that's the headline risk. The fix itself is simple (add credit), but the bigger risk is that nothing currently pages anyone when this happens, so it could recur and go unnoticed again until the next weekly audit.",
+      "A previously-unknown, intermittent Explore-page failure has been happening for 7 weeks (0 users noticed by anyone until today's audit could finally see the real error logs). It's not urgent — the page works right now — but it's a sign that other quiet failures may also be going unnoticed on other pages, since this audit only just gained the ability to see them.",
+      "The accessibility/performance audit is over 3 months stale. Nothing shipped recently touches that area, so there's no new urgency, but it's worth scheduling before it becomes a bigger gap.",
+      "The Hindi headline/description gap affects the large majority of destination pages (525 of 533 have the Hindi text ready in the database but unused) — a visible quality issue for Hindi-reading visitors, confirmed again on a 7th destination today."
+    ],
+    "bottom_line": [
+      "Do first: add credit / upgrade billing on the Anthropic Console — this single action should bring AI chat back online immediately, no deploy required.",
+      "Worth doing soon: look at why the Explore page occasionally fails to load its destination list (root cause already identified — a database query that should be using the site's caching system isn't) — it's intermittent, not broken right now, but it's been happening quietly for 7 weeks.",
+      "Consider: some kind of low-balance alert on the Anthropic account so a future billing lapse gets caught same-day instead of running for a week+ unnoticed.",
+      "No action needed on this week's other shipped work — the SOS auto-reverify system's first real run went out on schedule and looks healthy; the state-redirect SEO fix is holding.",
+      "Worth scheduling: the overdue accessibility/performance deep-audit (now over 3 months stale) and a fix for the Hindi destination-page headline (translation data already exists — this is a rendering fix, confirmed on 7 destinations now)."
+    ],
+    "coverage": [
+      "10 destinations sampled live (English + Hindi)",
+      "22 core site routes probed",
+      "14 API endpoint checks (3 failing, all the same known chat issue — see above)",
+      "533 destination URLs published in the sitemap, all with working hero images",
+      "533 destinations checked against the DB for complete emergency-contact data",
+      "5 this-week code changes reviewed against the regression matrix and live-verified where testable",
+      "NEW: 7 days of production error logs reviewed directly for the first time, covering every route site-wide"
+    ]
+  }
+}
