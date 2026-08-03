@@ -15851,3 +15851,19 @@ Date range: 2026-04-15 → 2026-08-02
 2026-08-03 13:36:07  INFO      YT Short posted: format=before_after, music=edm-777
 2026-08-03 13:36:07  INFO      State saved. YT Short run complete.
 2026-08-03 13:36:07  INFO      ════════════════════════════════════════════════════════════
+2026-08-03 14:04:50  INFO      ════════════════════════════════════════════════════════════
+2026-08-03 14:04:50  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-03
+2026-08-03 14:04:50  INFO      ════════════════════════════════════════════════════════════
+2026-08-03 14:04:56  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-03 14:06:59  INFO      Short rendered: yt_short_this_vs_that_sinthan-top_hi_2026-08-03.mp4 (26832 KB, 27.0s, fmt=this_vs_that, music=edm-966)
+2026-08-03 14:06:59  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_sinthan-top_hi_2026-08-03.mp4 (27,476,327 bytes, video/mp4)
+2026-08-03 14:07:01  INFO          Uploading to R2 (timeout=300s)...
+2026-08-03 14:07:03  INFO          R2 PUT OK. Confirming...
+2026-08-03 14:07:04  INFO          Media ready: LaNGO (27,476,327 bytes · yt_short_this_vs_that_yt_short_this_vs_that_sinthan-top_hi_2026-08-03.mp4)
+2026-08-03 14:07:04  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_sinthan-top_hi_2026-08-03.mp4
+2026-08-03 14:07:05  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-03 14:07:05  INFO      [instagram/nakshiq] Already posted 2 YT Shorts today — skipping.
+2026-08-03 14:07:05  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-03 14:07:05  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-08-03 14:07:05  INFO      State saved. YT Short run complete.
+2026-08-03 14:07:05  INFO      ════════════════════════════════════════════════════════════
