@@ -15992,3 +15992,23 @@ Date range: 2026-04-15 → 2026-08-03
 2026-08-04 06:47:13  INFO      YT Short posted: format=this_vs_that, music=fast-686
 2026-08-04 06:47:13  INFO      State saved. YT Short run complete.
 2026-08-04 06:47:13  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 09:24:17  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 09:24:17  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-08-04 · weekday=1
+2026-08-04 09:24:17  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 09:24:17  INFO      Tourist Map target: Telangana (TG) · editorial · dark (26/28 states never featured)
+2026-08-04 09:24:17  INFO      Map rendered: tourist_map_TG_dark_editorial.jpg (75 KB)
+2026-08-04 09:24:17  INFO          Requesting upload URL for tourist_map_TG_dark_editorial.jpg (77,321 bytes, image/jpeg)
+2026-08-04 09:24:18  INFO          Uploading to R2 (timeout=120s)...
+2026-08-04 09:24:19  INFO          R2 PUT OK. Confirming...
+2026-08-04 09:24:20  INFO          Media ready: 3UwK5 (77,321 bytes · tourist_map_TG_dark_editorial.jpg)
+2026-08-04 09:24:20  INFO      Map image uploaded: tourist_map_TG_dark_editorial.jpg
+2026-08-04 09:24:21  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-04 09:24:21  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-04 09:24:21  INFO      [instagram/nakshiq] Publishing tourist map for Telangana...
+2026-08-04 09:24:23  INFO      [instagram/nakshiq] Tourist map posted successfully!
+2026-08-04 09:24:23  INFO      [facebook/Nakshiq] Publishing tourist map for Telangana...
+2026-08-04 09:24:25  INFO      [facebook/Nakshiq] Tourist map posted successfully!
+2026-08-04 09:24:25  INFO      [youtube/@naksh-iq] Skipping tourist map (YouTube only accepts video/reels).
+2026-08-04 09:24:25  INFO      Theme tracker updated: TG / TG_editorial_dark
+2026-08-04 09:24:25  INFO      State saved. Tourist Map run complete.
+2026-08-04 09:24:25  INFO      ════════════════════════════════════════════════════════════
