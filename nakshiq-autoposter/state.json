@@ -32,38 +32,20 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-03",
+    "GAh5p_yt_short": "2026-08-04",
     "m8EAd": "2026-08-03",
     "m8EAd_evening": "2026-08-03",
     "PdMu0": "2026-08-03",
     "PdMu0_evening": "2026-08-03",
     "m8EAd_carousel": "2026-08-03",
     "PdMu0_carousel": "2026-08-03",
-    "m8EAd_carousel_story": "2026-08-02",
-    "m8EAd_evening_story": "2026-08-02",
     "m8EAd_yt_short": "2026-08-03"
   },
   "last_sync": "2026-08-03T16:45:30.427590+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "drass",
-      "date": "2026-07-20"
-    },
-    {
-      "destination_id": "varanasi",
-      "date": "2026-07-20"
-    },
-    {
-      "destination_id": "ozar",
-      "date": "2026-07-20"
-    },
-    {
-      "destination_id": "kargil",
-      "date": "2026-07-20"
-    },
     {
       "destination_id": "mudumalai",
       "date": "2026-07-21"
@@ -299,6 +281,10 @@
     {
       "destination_id": "turtuk",
       "date": "2026-08-03"
+    },
+    {
+      "destination_id": "sinthan-top",
+      "date": "2026-08-04"
     }
   ],
   "posted_formats": {
@@ -6892,6 +6878,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "turtuk.mp4"
+    },
+    {
+      "timestamp": "2026-08-04T06:47:04.218199+00:00",
+      "date": "2026-08-04",
+      "platform": "instagram",
+      "post_id": "ilow7",
+      "destination": "sinthan-top",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_sinthan-top_hi_2026-08-04.mp4"
+    },
+    {
+      "timestamp": "2026-08-04T06:47:13.682117+00:00",
+      "date": "2026-08-04",
+      "platform": "youtube",
+      "post_id": "gIwjP",
+      "destination": "sinthan-top",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_sinthan-top_hi_2026-08-04.mp4"
     }
   ],
   "theme_usage": {
