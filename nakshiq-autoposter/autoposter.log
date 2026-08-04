@@ -16077,3 +16077,61 @@ Date range: 2026-04-15 → 2026-08-03
 2026-08-04 13:28:45  INFO      YT Short posted: format=did_you_know, music=hype-305
 2026-08-04 13:28:45  INFO      State saved. YT Short run complete.
 2026-08-04 13:28:45  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 17:37:43  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 17:37:43  INFO      Nakshiq Autoposter · EVENING · 2026-08-04 · weekday=1
+2026-08-04 17:37:43  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 17:37:43  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-04 17:38:24  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-04 17:38:24  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-04 17:38:25  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-04 17:38:25  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-04 17:38:25  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-04 17:38:37  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-04 17:38:37  INFO      [diversity] feed: 36 → 24 options · cooldown dropped 12 (carousel, pillar:discovery, score, short:before_after, short:did_you_know, short:dont_go_here, short:this_vs_that seen <2d)
+2026-08-04 17:38:37  INFO      Evening format (balance→anti_trap): v2_tourist_trap_split [0% vs target 15%] (0/15 never featured)
+2026-08-04 17:38:37  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: collection_spotlight
+2026-08-04 17:38:37  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 57
+2026-08-04 17:38:37  INFO      Fingerprint dedup snapshot — 54 dests in 7d · 101 (dest,fmt) pairs in 30d · 240 media in 60d
+2026-08-04 17:38:37  INFO      Collection locked: Best Motorcycle Routes in India (0/20 never featured)
+2026-08-04 17:38:38  INFO      Shared best destination locked: Valley of Flowers
+2026-08-04 17:38:38  INFO      Carousel locked (collection_spotlight): zanskar
+2026-08-04 17:38:38  INFO      [instagram/nakshiq] Generating v2_tourist_trap_split post...
+2026-08-04 17:38:38  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:38:38  INFO      [instagram/nakshiq] Caption ready (463 chars, dest=madurai)
+2026-08-04 17:38:39  INFO      [instagram/nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-08-04 17:38:39  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/madurai.mp4?v=20260524
+2026-08-04 17:38:42  INFO          Brand-stamp applied: madurai.mp4 (9,231,439 → 4,201,641 bytes)
+2026-08-04 17:38:42  INFO          Requesting upload URL for madurai.mp4 (4,201,641 bytes, video/mp4)
+2026-08-04 17:38:43  INFO          Uploading to R2 (timeout=300s)...
+2026-08-04 17:38:44  INFO          R2 PUT OK. Confirming...
+2026-08-04 17:38:45  INFO          Media ready: mv8LN (4,201,641 bytes · madurai.mp4)
+2026-08-04 17:38:45  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-04 17:39:28  INFO      [instagram/nakshiq] ✅ Published · Outstand=X4DWj · Platform=18113322958985271
+2026-08-04 17:39:28  INFO      [facebook/Nakshiq] Generating v2_tourist_trap_split post...
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: pahalgam.mp4 in 60-day media window — SKIPPING
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: ooty has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: kasol has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: darjeeling has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: manali has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: coorg has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: shimla has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: chopta has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: tungnath has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: achabal has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: mathura has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-04 17:39:28  INFO      [facebook/Nakshiq] Caption ready (468 chars, dest=hampi)
+2026-08-04 17:39:28  INFO      [facebook/Nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-08-04 17:39:28  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/hampi.mp4?v=20260524
+2026-08-04 17:39:31  INFO          Brand-stamp applied: hampi.mp4 (5,836,337 → 2,622,785 bytes)
+2026-08-04 17:39:31  INFO          Requesting upload URL for hampi.mp4 (2,622,785 bytes, video/mp4)
+2026-08-04 17:39:32  INFO          Uploading to R2 (timeout=300s)...
+2026-08-04 17:39:32  INFO          R2 PUT OK. Confirming...
+2026-08-04 17:39:34  INFO          Media ready: AzqsD (2,622,785 bytes · hampi.mp4)
+2026-08-04 17:39:34  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-04 17:39:47  INFO      [facebook/Nakshiq] ✅ Published · Outstand=gI6uj · Platform=4307064189545192
+2026-08-04 17:39:47  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-04 17:39:47  INFO      State saved. Run complete.
+2026-08-04 17:39:47  INFO      ════════════════════════════════════════════════════════════

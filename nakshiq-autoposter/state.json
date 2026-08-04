@@ -36,17 +36,17 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-04",
-    "m8EAd": "2026-08-03",
-    "m8EAd_evening": "2026-08-03",
-    "PdMu0": "2026-08-03",
-    "PdMu0_evening": "2026-08-03",
+    "m8EAd": "2026-08-04",
+    "m8EAd_evening": "2026-08-04",
+    "PdMu0": "2026-08-04",
+    "PdMu0_evening": "2026-08-04",
     "m8EAd_carousel": "2026-08-04",
     "PdMu0_carousel": "2026-08-04",
     "m8EAd_yt_short": "2026-08-04",
     "m8EAd_tourist_map": "2026-08-04",
     "PdMu0_tourist_map": "2026-08-04"
   },
-  "last_sync": "2026-08-03T16:45:30.427590+00:00",
+  "last_sync": "2026-08-04T17:38:24.185535+00:00",
   "posted_destinations": [
     {
       "destination_id": "mudumalai",
@@ -295,6 +295,14 @@
     {
       "destination_id": "saputara",
       "date": "2026-08-04"
+    },
+    {
+      "destination_id": "madurai",
+      "date": "2026-08-04"
+    },
+    {
+      "destination_id": "hampi",
+      "date": "2026-08-04"
     }
   ],
   "posted_formats": {
@@ -317,9 +325,9 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
-      "score_card"
+      "score_card",
+      "v2_tourist_trap_split"
     ],
     "PdMu0": [
       "score_card",
@@ -340,9 +348,9 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
-      "score_card"
+      "score_card",
+      "v2_tourist_trap_split"
     ]
   },
   "post_log": [
@@ -6960,6 +6968,28 @@
       "destination": "saputara",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_saputara_hi_2026-08-04.mp4"
+    },
+    {
+      "timestamp": "2026-08-04T17:39:28.635393+00:00",
+      "date": "2026-08-04",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "X4DWj",
+      "destination": "madurai",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "madurai.mp4"
+    },
+    {
+      "timestamp": "2026-08-04T17:39:47.590127+00:00",
+      "date": "2026-08-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "gI6uj",
+      "destination": "hampi",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "hampi.mp4"
     }
   ],
   "theme_usage": {
@@ -7028,7 +7058,8 @@
       ],
       "madurai": [
         "2026-05-23",
-        "2026-06-05"
+        "2026-06-05",
+        "2026-08-04"
       ],
       "srinagar": [
         "2026-05-23"
@@ -7131,7 +7162,8 @@
         "2026-05-28"
       ],
       "hampi": [
-        "2026-05-28"
+        "2026-05-28",
+        "2026-08-04"
       ],
       "ooty": [
         "2026-05-29"
@@ -7344,7 +7376,8 @@
         "2026-07-12",
         "2026-07-16",
         "2026-07-21",
-        "2026-07-29"
+        "2026-07-29",
+        "2026-08-04"
       ],
       "lamayuru": [
         "2026-07-09"
@@ -7459,7 +7492,8 @@
       "v2_tourist_trap_split": [
         "2026-05-31",
         "2026-06-15",
-        "2026-06-19"
+        "2026-06-19",
+        "2026-08-04"
       ],
       "score_card": [
         "2026-06-01",
@@ -7589,7 +7623,8 @@
       ],
       "madurai": [
         "2026-05-23",
-        "2026-06-05"
+        "2026-06-05",
+        "2026-08-04"
       ],
       "kalimpong": [
         "2026-05-24"
@@ -7622,7 +7657,8 @@
         "2026-05-28"
       ],
       "hampi": [
-        "2026-05-28"
+        "2026-05-28",
+        "2026-08-04"
       ],
       "gurudongmar-lake": [
         "2026-05-29"
@@ -7845,7 +7881,8 @@
         "2026-07-30"
       ],
       "best-motorcycle-routes": [
-        "2026-06-03"
+        "2026-06-03",
+        "2026-08-04"
       ],
       "after-dark-experiences": [
         "2026-06-04"
@@ -8000,6 +8037,9 @@
     "collection_carousel_dests:best-motorcycle-routes": {
       "leh": [
         "2026-06-03"
+      ],
+      "zanskar": [
+        "2026-08-04"
       ]
     },
     "emergency": {
@@ -8099,8 +8139,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "amboli",
-    "collection": "budget-under-1000"
+    "shared_best": "valley-of-flowers",
+    "collection": "best-motorcycle-routes"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-08-02",
