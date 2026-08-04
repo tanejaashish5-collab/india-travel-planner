@@ -15,13 +15,12 @@ const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
 
 export async function POST(req: NextRequest) {
+  // No key is a supported operating mode, not an error. Every non-key failure
+  // path below already serves buildFallbackItinerary(); returning 503 here was
+  // the one case that broke the feature instead of degrading it, which made
+  // "just unset ANTHROPIC_API_KEY to stop metered spend" unsafe. The fallback
+  // is deterministic and DB-driven, so users still get a real itinerary.
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json(
-      { error: "AI itinerary generation is not configured yet. Add ANTHROPIC_API_KEY to enable." },
-      { status: 503 }
-    );
-  }
 
   // Phase 7 deep-QA finding: malformed JSON body / oversized payload returned
   // 500 because req.json() threw and there was no catch wrapper. Now: 413 for
@@ -405,6 +404,13 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
       variant: variantMode,
       _fallback: true,
     };
+  }
+
+  // Metered-spend kill switch: with no key configured we skip the API entirely
+  // and serve the deterministic itinerary. Unsetting ANTHROPIC_API_KEY is now a
+  // safe, instant way to take this route to zero cost with the feature intact.
+  if (!apiKey) {
+    return NextResponse.json({ itinerary: buildFallbackItinerary() });
   }
 
   try {
