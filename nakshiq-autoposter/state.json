@@ -40,8 +40,8 @@
     "m8EAd_evening": "2026-08-03",
     "PdMu0": "2026-08-03",
     "PdMu0_evening": "2026-08-03",
-    "m8EAd_carousel": "2026-08-03",
-    "PdMu0_carousel": "2026-08-03",
+    "m8EAd_carousel": "2026-08-04",
+    "PdMu0_carousel": "2026-08-04",
     "m8EAd_yt_short": "2026-08-03",
     "m8EAd_tourist_map": "2026-08-04",
     "PdMu0_tourist_map": "2026-08-04"
@@ -286,6 +286,10 @@
     },
     {
       "destination_id": "sinthan-top",
+      "date": "2026-08-04"
+    },
+    {
+      "destination_id": "dhanaulti",
       "date": "2026-08-04"
     }
   ],
@@ -6916,6 +6920,24 @@
       "destination": null,
       "format": "tourist_map",
       "media_id": "TG_editorial_dark"
+    },
+    {
+      "timestamp": "2026-08-04T09:55:20.073742+00:00",
+      "date": "2026-08-04",
+      "platform": "instagram",
+      "post_id": "23pcx",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-08-04"
+    },
+    {
+      "timestamp": "2026-08-04T09:55:22.293287+00:00",
+      "date": "2026-08-04",
+      "platform": "facebook",
+      "post_id": "5cqZy",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-08-04"
     }
   ],
   "theme_usage": {
