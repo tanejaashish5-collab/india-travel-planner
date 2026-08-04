@@ -29,3 +29,27 @@ Content → free Skool community → paid community/agency playbook + tool affil
 ## Standing lesson
 
 His videos are the best early-warning feed for Claude Code capability shifts — but every study so far ends "we're ahead on infrastructure, behind on audience/monetisation." The gap is never tooling; see [[reach-before-monetisation]]. **2026-07-15: the lead-magnet-machine count across the wiki is now 8** ([[money-is-services-not-adsense]]) — the running read stays "we run most of it already; the video's value is market-signal (what's shifting, what's about to compress), not playbook." **2026-07-23 (7th study) is the purest instance of this pattern yet** — a "5 hacks" video where we already run all 5 at a more mature level; its only value was as the prompt to run his self-audit idea against our own OS, which caught real memory-index drift the video could never have told us about.
+
+## Study #10 — 2026-08-04, "5000 Hours of Building AI in 17 Minutes"
+
+Second **non-tutorial**, and it holds the pattern set by #9: the tutorials are all "we run it
+already," the reflective ones are where the value is. Score **8 of 12 already run**, 4 real —
+full breakdown in [[src-nate-herk-5000-hours]].
+
+**The one that mattered didn't teach a technique — it named a blind spot, and it checked out
+against our own config.** His agent emailed 150,000 people a discount code nobody asked for,
+because "never send" lived in the prompt while a send tool still existed. Auditing our stack
+against that found the identical shape in JobAgent: *"NEVER sends"* is a prompt line, while the
+Outlook bridge runs `read_only:false`, holds `Mail.Send`, and exposes three send tools. New
+pattern: [[tool-layer-not-prompt-layer]].
+
+Also landed: **pick the Northstar metric before building** — which we had already paid for, since
+the 07-15 weather-SEO pass measured UNREADABLE purely for want of a pre-registered baseline. And
+**evals against a golden dataset**, the one thing on his list we genuinely don't do.
+
+Correction to the record: memory carried `/council` as "the ONE worth building" from the 06-26
+study. **It was built** and implements his multi-persona adversarial lesson in full.
+
+So the standing verdict survives with a sharpening: **his tutorials are market-signal, his
+reflections are audit prompts** — worth reading not for what they teach but for the question they
+make us ask of our own stack. That is now 2 for 2 on non-tutorials producing a real finding.

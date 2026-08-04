@@ -93,6 +93,44 @@ The previous session ran 79 sub-agents in one day and burned 50% of weekly Claud
 - Avoid Playwright screenshots unless visual debugging is critical (each is base64 image data, very expensive)
 - **Run research/scraping sub-agents on Haiku, not Opus.** Pass `model: haiku` to the `Agent` tool (or pick Haiku for `Explore`/`general-purpose`) whenever the task is web research, scraping, log-reading, or data extraction — the heavy token cost is reading sources, and Haiku reads them just as well before returning a short summary. Reserve Opus/Sonnet sub-agents for genuine synthesis/judgement. This is separate from the `curate-stays.mjs` ban (that bans the metered Anthropic API; this is about in-session sub-agent model choice).
 
+## Agent capability rules (added 2026-08-04)
+
+**A rule that lives in a prompt is a suggestion. A rule that lives in the tool layer is a
+restriction.** Any agent with access to a capability must be assumed to use it eventually —
+these models are non-deterministic, so "I told it not to" is not a control. Before trusting any
+"it only drafts / it never publishes / it never sends" claim, **check where the restriction
+actually lives**: the credential scope, the tool allowlist, or an enable-flag — never the prompt.
+
+Concrete audit questions for anything that touches the outside world (email, IG/FB, YouTube,
+Razorpay, Supabase writes): *what can this thing do on its own — can it send, or only draft? Can
+it publish, or only queue?* **If the answer is scary, fix the access, not the prompt.**
+
+Known live example, unresolved (2026-08-04): JobAgent's "never sends email" is enforced only by
+a line in `run-agent.sh` and a runbook comment, while the Outlook bridge runs `read_only: false`
+and therefore holds the `Mail.Send` Graph scope and exposes `outlook_send_message` /
+`outlook_send_draft` / `outlook_send_with_attachments`. The fix is `allow_categories` in
+`~/.outlook-mcp/config.json` (call-time gate, no re-auth needed) — founder must apply it; editing
+that file is blocked for Claude by the auto-mode classifier.
+
+Positive counter-example to copy: Chanakya's auto-publish is gated by `publish.enabled` plus
+native `publishAt` (private-first), which is a real flag, not an instruction.
+
+## Measurement rule — pick the Northstar BEFORE building (added 2026-08-04)
+
+**Every build that is supposed to move a number names that number, its current baseline, and the
+target, before any code is written.** State it as a sentence someone can later agree or disagree
+with: *"X is at N now; if this gets it to M within P weeks, that's a success."*
+
+Born from a scar: the 2026-07-15 weather-SEO title pass was measured on 2026-07-30 and came back
+**UNREADABLE (p=0.227)** — not failed, unreadable — because no baseline or target was agreed
+first, so two pages moving ~36% of treated impressions made the aggregate a seasonal-composition
+artefact rather than a conversion result. A post-hoc metric can always be argued with; a
+pre-registered one cannot. This is the same discipline as the rendered-page verification rule
+below, applied to outcomes instead of output.
+
+Corollary: if no honest number can be named up front, that is itself the finding — say so and
+question whether the build is worth doing, rather than shipping and hoping a metric appears.
+
 ## Supabase egress rules (added 2026-05-23 after the free-tier freeze)
 
 The 2026-05-22 Hindi DB re-pass dumped ~5,800 rows through the REST API and pushed the org past the 5.5 GB free-tier egress cap. The API 402'd for hours, poisoned Vercel's landing-page ISR cache, and cost a $25 Pro upgrade to recover. Rules to keep egress sane (incident memory: `session_2026_05_23_supabase_egress_freeze_and_isr_recovery.md`):
