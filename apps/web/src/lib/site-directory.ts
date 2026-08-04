@@ -87,12 +87,10 @@ export const FOOTER_GROUPS: DirectoryGroup[] = [
 export const OVERLAY_TOOLS_GROUP: DirectoryGroup = {
   titleKey: "tools",
   links: [
-    { href: (l) => `/${l}/ask`, labelKey: "ask" },
     { href: (l) => `/${l}/compare`, labelKey: "compare" },
     { href: (l) => `/${l}/risk-quiz`, labelKey: "riskQuiz" },
     { href: (l) => `/${l}/explore-by-persona`, labelKey: "byPersona" },
     { href: (l) => `/${l}/arrival`, labelKey: "arrival" },
-    { href: (l) => `/${l}/gap-year`, labelKey: "gapYear" },
     { href: (l) => `/${l}/india-vs`, labelKey: "indiaVs" },
     { href: (l) => `/${l}/vs`, labelKey: "vs" },
     { href: (l) => `/${l}/saved`, labelKey: "saved" },

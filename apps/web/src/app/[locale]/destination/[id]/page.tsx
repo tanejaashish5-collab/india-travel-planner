@@ -22,7 +22,6 @@ import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
-import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 import { PeakAlertHook } from "@/components/peak-alert-hook";
 
 export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
@@ -732,8 +731,6 @@ export default async function DestinationPage({
           />
         )}
         <ScrollDepthTracker page="destination" destinationId={id} />
-
-        <AskNakshIQInlineCTA subject={dest.name} />
 
         {comparisons.length > 0 && (
           <section className="mt-12 border-t border-border/50 pt-8">

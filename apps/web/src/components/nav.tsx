@@ -75,7 +75,6 @@ export function Nav() {
     `/${locale}/compare`,
     `/${locale}/cost-index`,
     `/${locale}/explore-by-persona`,
-    `/${locale}/gap-year`,
     `/${locale}/permits`,
     `/${locale}/risk-quiz`,
     `/${locale}/road-conditions`,
@@ -131,7 +130,6 @@ export function Nav() {
     `/${locale}/weekend-from-`,
     // Tier 5 (S54) — planning tools children
     `/${locale}/cost-index/`,
-    `/${locale}/gap-year/`,
     `/${locale}/arrival/`,
     `/${locale}/where-to-go/`,
     `/${locale}/for/`,
@@ -263,7 +261,7 @@ export function Nav() {
       );
     }
     if (panel === "learn") {
-      return ["/india-travel", "/blog", "/tourist-traps", "/guide", "/superlatives", "/nakshiq-100", "/arrival", "/gap-year"].some(
+      return ["/india-travel", "/blog", "/tourist-traps", "/guide", "/superlatives", "/nakshiq-100", "/arrival"].some(
         (p) => pathname.includes(p)
       );
     }

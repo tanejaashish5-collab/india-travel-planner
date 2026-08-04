@@ -6,7 +6,7 @@
     "dev": "next dev",
     "check:env": "node scripts/check-env.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
-    "prebuild": "node scripts/check-env.mjs && node scripts/check-i18n.mjs && node ../../scripts/build-audit-snapshot.mjs",
+    "prebuild": "node scripts/check-env.mjs && node scripts/check-i18n.mjs && node scripts/check-no-metered-ai.mjs && node ../../scripts/build-audit-snapshot.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

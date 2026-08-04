@@ -20,7 +20,6 @@ import "../globals.css";
 // Deferred client chunks — never block first paint or TTI
 const StickyCTA = dynamic(() => import("@/components/sticky-cta").then((m) => ({ default: m.StickyCTA })));
 const PersonalisationQuiz = dynamic(() => import("@/components/personalisation-quiz").then((m) => ({ default: m.PersonalisationQuiz })));
-const AskNakshIQ = dynamic(() => import("@/components/ask-nakshiq").then((m) => ({ default: m.AskNakshIQ })));
 const PWAInstallPrompt = dynamic(() => import("@/components/pwa-install-prompt").then((m) => ({ default: m.PWAInstallPrompt })));
 const OfflineIndicator = dynamic(() => import("@/components/offline-indicator").then((m) => ({ default: m.OfflineIndicator })));
 const SaveListEmailPrompt = dynamic(() => import("@/components/save-list-email-prompt").then((m) => ({ default: m.SaveListEmailPrompt })));
@@ -278,7 +277,6 @@ export default async function LocaleLayout({
               <ScrollToTop />
               <PageTransition>{children}</PageTransition>
               <StickyCTA />
-              <AskNakshIQ hideTrigger />
               <PersonalisationQuiz />
               <MobileTabBar />
               <PWAInstallPrompt />

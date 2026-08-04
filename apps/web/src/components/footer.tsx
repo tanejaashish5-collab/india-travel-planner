@@ -103,7 +103,6 @@ export function Footer({
     `/${locale}/compare`,
     `/${locale}/cost-index`,
     `/${locale}/explore-by-persona`,
-    `/${locale}/gap-year`,
     `/${locale}/permits`,
     `/${locale}/risk-quiz`,
     `/${locale}/road-conditions`,
@@ -147,7 +146,6 @@ export function Footer({
     `/${locale}/weekend-from-`,
     // Tier 5 (S54) — planning tools children
     `/${locale}/cost-index/`,
-    `/${locale}/gap-year/`,
     `/${locale}/arrival/`,
     `/${locale}/where-to-go/`,
     `/${locale}/for/`,

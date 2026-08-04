@@ -87,7 +87,6 @@ import { InternationalInfoSection } from "./international-info";
 import { EmergencySOSSection, SOSFloatingButton } from "./emergency-sos";
 import { DestinationAlerts } from "./destination-alerts";
 import { POISection } from "./poi-section";
-import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 import { SuggestEditButton } from "./suggest-edit-button";
 import { CinematicShareBar } from "./cinematic-share-bar";
 import { CinematicBreadcrumb } from "./cinematic-breadcrumb";
@@ -2972,10 +2971,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {/* Ask NakshIQ inline CTA */}
-            <div style={{ maxWidth: 720, margin: "80px auto 0" }}>
-              <AskNakshIQInlineCTA subject={displayName} />
-            </div>
 
             {/* Editor signature */}
             <div

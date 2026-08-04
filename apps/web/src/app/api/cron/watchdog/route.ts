@@ -24,7 +24,10 @@ const ALERT_TO = "taneja.ashish5@gmail.com";
 // Expected cadence per job. Values are max days between runs before we
 // declare the job overdue. A 1-day buffer is added to absorb cron drift.
 const EXPECTED_CADENCE_DAYS: Record<string, number> = {
-  "refresh-stay-picks": 2,    // daily cron 22:00 UTC
+  // refresh-stay-picks removed 2026-08-04 with the metered Vercel cron. The
+  // refresh now runs as a scheduled Claude Code agent on the Max plan, which
+  // writes its own ops_reports row under the job name "refresh-stay-picks-agent".
+  "refresh-stay-picks-agent": 2,
   "freshness-drift": 8,       // weekly cron Mon 01:00 UTC
   "news-sweep": 32,           // monthly cron 1st 01:00 UTC
   "prewarm-next-month": 32,   // monthly cron 28th 01:00 UTC
@@ -41,7 +44,8 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
 // and watchdog cries MISSING every day. Set to null once the job has fired
 // at least once in production.
 const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
-  "refresh-stay-picks": null,
+  // Grace until the first agent run lands, so the switchover doesn't alert.
+  "refresh-stay-picks-agent": "2026-08-06T00:00:00Z",
   "freshness-drift": null,
   "news-sweep": null,
   "prewarm-next-month": "2026-05-28T01:00:00Z", // first 28th after Apr 30 deploy

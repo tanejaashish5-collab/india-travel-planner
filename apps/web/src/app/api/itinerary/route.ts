@@ -15,12 +15,6 @@ const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
 
 export async function POST(req: NextRequest) {
-  // No key is a supported operating mode, not an error. Every non-key failure
-  // path below already serves buildFallbackItinerary(); returning 503 here was
-  // the one case that broke the feature instead of degrading it, which made
-  // "just unset ANTHROPIC_API_KEY to stop metered spend" unsafe. The fallback
-  // is deterministic and DB-driven, so users still get a real itinerary.
-  const apiKey = process.env.ANTHROPIC_API_KEY;
 
   // Phase 7 deep-QA finding: malformed JSON body / oversized payload returned
   // 500 because req.json() threw and there was no catch wrapper. Now: 413 for
@@ -406,56 +400,12 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
     };
   }
 
-  // Metered-spend kill switch: with no key configured we skip the API entirely
-  // and serve the deterministic itinerary. Unsetting ANTHROPIC_API_KEY is now a
-  // safe, instant way to take this route to zero cost with the feature intact.
-  if (!apiKey) {
-    return NextResponse.json({ itinerary: buildFallbackItinerary() });
-  }
-
-  try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-      },
-      body: JSON.stringify({
-        model: "claude-haiku-4-5-20251001",
-        max_tokens: 4096,
-        messages: [{ role: "user", content: prompt }],
-      }),
-    });
-
-    if (!response.ok) {
-      const err = await response.text();
-      console.error("Anthropic API error — serving deterministic fallback:", response.status, err.slice(0, 500));
-      return NextResponse.json({ itinerary: buildFallbackItinerary() });
-    }
-
-    const result = await response.json();
-    const text = result.content?.[0]?.text ?? "";
-
-    try {
-      const itinerary = JSON.parse(text);
-      return NextResponse.json({ itinerary: enrichWithRationale(itinerary) });
-    } catch {
-      const jsonMatch = text.match(/\{[\s\S]*\}/);
-      if (jsonMatch) {
-        try {
-          const itinerary = JSON.parse(jsonMatch[0]);
-          return NextResponse.json({ itinerary: enrichWithRationale(itinerary) });
-        } catch (parseErr) {
-          console.error("Failed to parse extracted JSON — serving fallback:", parseErr);
-          return NextResponse.json({ itinerary: buildFallbackItinerary() });
-        }
-      }
-      console.error("No JSON in AI response — serving fallback. First 300 chars:", text.slice(0, 300));
-      return NextResponse.json({ itinerary: buildFallbackItinerary() });
-    }
-  } catch (err: any) {
-    console.error("Itinerary generation error — serving fallback:", err?.message ?? err);
-    return NextResponse.json({ itinerary: buildFallbackItinerary() });
-  }
+  // Deterministic-only, 2026-08-04. The Anthropic call that used to sit here was
+  // removed with the rest of NakshIQ's metered API surface: the account bills per
+  // token, an exhausted balance had already silently degraded this route for
+  // weeks, and buildFallbackItinerary() is real DB-driven output rather than a
+  // stub. Enforced by apps/web/scripts/check-no-metered-ai.mjs — if you want
+  // richer sequencing, generate it in a scheduled Claude Code agent and store it,
+  // do not reintroduce a per-request provider call.
+  return NextResponse.json({ itinerary: buildFallbackItinerary() });
 }
