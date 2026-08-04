@@ -32,11 +32,13 @@ const BANNED = [
 ];
 
 // Paths permitted to reference a provider, with the reason. Keep this short.
-const ALLOWLIST = [
-  // Embeddings refresh is invoked manually/monthly and is being migrated to the
-  // agent path; it is not reachable from a user request.
-  "lib/embed-refresh.ts",
-];
+// Currently EMPTY, and that is the goal state — apps/web/src is provider-free.
+// The last entry (lib/embed-refresh.ts) went on 2026-08-04 when the trace showed
+// document_embeddings had zero readers: its only consumer was /api/chat, so the
+// monthly cron was paying OpenAI to rebuild 22k rows nothing queried. Site search
+// uses /api/search-index, never vectors. Adding an entry here should be rare and
+// must name who pays for it.
+const ALLOWLIST = [];
 
 function walk(dir, out = []) {
   for (const entry of readdirSync(dir)) {
