@@ -52,6 +52,14 @@ export async function GET(req: NextRequest) {
     .slice(0, BATCH_SIZE);
 
   let ok = 0, fail = 0, pending = 0;
+  // Why-it-failed, not just how-many. Every failure path below used to be a
+  // bare `fail++`, so the job could fail 20/20 for ten straight nights while
+  // still returning HTTP 200 and logging nothing (2026-07-25 → 08-03).
+  const failReasons: string[] = [];
+  const noteFail = (destId: string, reason: string) => {
+    fail++;
+    if (failReasons.length < 5) failReasons.push(`${destId}: ${reason}`);
+  };
 
   for (const dest of candidates) {
     const stateName = Array.isArray((dest as any).state)
@@ -75,26 +83,45 @@ export async function GET(req: NextRequest) {
           published: (Number(p.confidence) || 0.5) >= 0.6,
           refreshed_at: new Date().toISOString(),
         }));
-      if (rows.length === 0) { fail++; continue; }
+      if (rows.length === 0) {
+        noteFail((dest as any).id, `no valid picks in model output (${picks.length} raw)`);
+        continue;
+      }
       const { error } = await supabase
         .from("destination_stay_picks")
         .upsert(rows, { onConflict: "destination_id,slot" });
-      if (error) { fail++; continue; }
+      if (error) { noteFail((dest as any).id, `upsert: ${error.message}`); continue; }
       ok++;
       if (rows.some((r: any) => !r.published)) pending++;
       await new Promise((r) => setTimeout(r, 250));
-    } catch {
-      fail++;
+    } catch (err: any) {
+      noteFail((dest as any).id, err?.message ?? String(err));
     }
   }
 
+  if (failReasons.length) {
+    console.error(`[refresh-stay-picks] ${fail}/${candidates.length} failed:`, failReasons);
+  }
+
+  // A total wipeout is an outage, not a review queue. ops_reports.ok=false makes
+  // the watchdog classify this "errored" (alertable) instead of "needs_review"
+  // (informational, never wakes anyone) — the exact gap that hid the 10-day break.
+  const totalFailure = candidates.length > 0 && ok === 0;
   await supabase.from("ops_reports").insert({
     job: "refresh-stay-picks",
-    summary: { ok, fail, pending, total: candidates.length, batch_size: BATCH_SIZE },
+    ok: !totalFailure,
+    summary: {
+      ok,
+      fail,
+      pending,
+      total: candidates.length,
+      batch_size: BATCH_SIZE,
+      ...(failReasons.length ? { fail_reasons: failReasons } : {}),
+    },
     alerts_count: fail,
   });
 
-  return NextResponse.json({ ok, fail, pending, total: candidates.length });
+  return NextResponse.json({ ok, fail, pending, total: candidates.length, failReasons });
 }
 
 function buildPrompt(destName: string, stateName?: string): string {
@@ -144,9 +171,23 @@ async function callClaude(apiKey: string, prompt: string): Promise<any> {
       messages: [{ role: "user", content: prompt }],
     }),
   });
-  if (!res.ok) throw new Error(`Anthropic ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`Anthropic ${res.status}: ${body.slice(0, 200)}`);
+  }
   const j = await res.json();
-  const text = j.content?.[0]?.text ?? "";
+  // Take the first *text* block rather than content[0]. Any non-text block
+  // leading the array (thinking, tool_use) made content[0].text undefined,
+  // which silently became "" and then failed JSON parse on every call.
+  const text =
+    (Array.isArray(j.content)
+      ? j.content.find((b: any) => b?.type === "text" && typeof b.text === "string")?.text
+      : undefined) ?? "";
+  if (!text) {
+    throw new Error(
+      `no text block (stop_reason=${j.stop_reason}, blocks=${(j.content ?? []).map((b: any) => b?.type).join(",")})`
+    );
+  }
   try { return JSON.parse(text); } catch {
     const m = text.match(/\{[\s\S]*\}/);
     if (m) return JSON.parse(m[0]);
