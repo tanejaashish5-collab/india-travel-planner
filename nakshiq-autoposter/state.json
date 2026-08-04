@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-04",
     "m8EAd": "2026-08-03",
@@ -42,7 +42,7 @@
     "PdMu0_evening": "2026-08-03",
     "m8EAd_carousel": "2026-08-04",
     "PdMu0_carousel": "2026-08-04",
-    "m8EAd_yt_short": "2026-08-03",
+    "m8EAd_yt_short": "2026-08-04",
     "m8EAd_tourist_map": "2026-08-04",
     "PdMu0_tourist_map": "2026-08-04"
   },
@@ -290,6 +290,10 @@
     },
     {
       "destination_id": "dhanaulti",
+      "date": "2026-08-04"
+    },
+    {
+      "destination_id": "saputara",
       "date": "2026-08-04"
     }
   ],
@@ -6938,6 +6942,24 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-08-04"
+    },
+    {
+      "timestamp": "2026-08-04T13:28:29.848953+00:00",
+      "date": "2026-08-04",
+      "platform": "instagram",
+      "post_id": "Az9Xz",
+      "destination": "saputara",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_saputara_hi_2026-08-04.mp4"
+    },
+    {
+      "timestamp": "2026-08-04T13:28:45.961506+00:00",
+      "date": "2026-08-04",
+      "platform": "youtube",
+      "post_id": "rBowj",
+      "destination": "saputara",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_saputara_hi_2026-08-04.mp4"
     }
   ],
   "theme_usage": {

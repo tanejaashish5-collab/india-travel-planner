@@ -16054,3 +16054,26 @@ Date range: 2026-04-15 → 2026-08-03
 2026-08-04 09:55:22  INFO      [facebook/Nakshiq] ✅ carousel published (comparison) · post_id=5cqZy
 2026-08-04 09:55:22  INFO      Carousel run complete (fmt=comparison, posted=True).
 2026-08-04 09:55:22  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 13:26:17  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 13:26:17  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-04
+2026-08-04 13:26:17  INFO      ════════════════════════════════════════════════════════════
+2026-08-04 13:26:22  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-04 13:27:31  INFO      Short rendered: yt_short_did_you_know_saputara_hi_2026-08-04.mp4 (15157 KB, 20.1s, fmt=did_you_know, music=hype-305)
+2026-08-04 13:27:31  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_saputara_hi_2026-08-04.mp4 (15,521,240 bytes, video/mp4)
+2026-08-04 13:27:32  INFO          Uploading to R2 (timeout=300s)...
+2026-08-04 13:27:34  INFO          R2 PUT OK. Confirming...
+2026-08-04 13:27:36  INFO          Media ready: SkUIv (15,521,240 bytes · yt_short_did_you_know_yt_short_did_you_know_saputara_hi_2026-08-04.mp4)
+2026-08-04 13:27:36  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_saputara_hi_2026-08-04.mp4
+2026-08-04 13:27:37  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-04 13:27:37  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-08-04 13:27:37  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-04 13:27:40  INFO      [instagram/nakshiq] Outstand accepted (post_id=Az9Xz), waiting for platform confirmation...
+2026-08-04 13:28:29  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=Az9Xz · Platform=18360153970242294
+2026-08-04 13:28:29  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-04 13:28:29  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-08-04 13:28:29  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-04 13:28:33  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=rBowj), waiting for platform confirmation...
+2026-08-04 13:28:45  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=rBowj · Platform=2Hc710LfX1A
+2026-08-04 13:28:45  INFO      YT Short posted: format=did_you_know, music=hype-305
+2026-08-04 13:28:45  INFO      State saved. YT Short run complete.
+2026-08-04 13:28:45  INFO      ════════════════════════════════════════════════════════════
