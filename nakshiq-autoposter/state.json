@@ -46,9 +46,11 @@
     "m8EAd_tourist_map": "2026-08-04",
     "PdMu0_tourist_map": "2026-08-04",
     "m8EAd_reel_studio": "2026-08-05",
-    "GAh5p_reel_studio": "2026-08-05"
+    "GAh5p_reel_studio": "2026-08-05",
+    "PdMu0_reel_map": "2026-08-05",
+    "GAh5p_reel_map": "2026-08-05"
   },
-  "last_sync": "2026-08-04T17:38:24.185535+00:00",
+  "last_sync": "2026-08-05T16:18:01.380313+00:00",
   "posted_destinations": [
     {
       "destination_id": "dungarpur",
@@ -7064,6 +7066,33 @@
       "destination": "mandu",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_mandu_hi_2026-08-05.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T16:19:49.520070+00:00",
+      "date": "2026-08-05",
+      "platform": "instagram",
+      "post_id": "HovoL",
+      "destination": null,
+      "format": "reel_map.score_pulse",
+      "media_id": "reel_pomelli_may_master_the_sikkim_logistics.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T16:19:57.984363+00:00",
+      "date": "2026-08-05",
+      "platform": "facebook",
+      "post_id": "v8D82",
+      "destination": null,
+      "format": "reel_map.score_pulse",
+      "media_id": "reel_pomelli_may_master_the_sikkim_logistics.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T16:20:07.130895+00:00",
+      "date": "2026-08-05",
+      "platform": "youtube",
+      "post_id": "n9p95",
+      "destination": null,
+      "format": "reel_map.score_pulse",
+      "media_id": "reel_pomelli_may_master_the_sikkim_logistics.mp4"
     }
   ],
   "theme_usage": {
@@ -7671,7 +7700,8 @@
         "2026-06-12"
       ],
       "reel_map": [
-        "2026-06-13"
+        "2026-06-13",
+        "2026-08-05"
       ],
       "data_carousel": [
         "2026-07-01",
@@ -8148,11 +8178,17 @@
     "reel_map_campaigns": {
       "may_himachal_roads_the_stability_scores": [
         "2026-06-13"
+      ],
+      "may_master_the_sikkim_logistics": [
+        "2026-08-05"
       ]
     },
     "reel_map_formats": {
       "route_trace": [
         "2026-06-13"
+      ],
+      "score_pulse": [
+        "2026-08-05"
       ]
     },
     "collection_carousel_dests:photography-spots": {
