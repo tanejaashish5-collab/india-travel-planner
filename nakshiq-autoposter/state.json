@@ -44,7 +44,9 @@
     "PdMu0_carousel": "2026-08-04",
     "m8EAd_yt_short": "2026-08-05",
     "m8EAd_tourist_map": "2026-08-04",
-    "PdMu0_tourist_map": "2026-08-04"
+    "PdMu0_tourist_map": "2026-08-04",
+    "m8EAd_reel_studio": "2026-08-05",
+    "GAh5p_reel_studio": "2026-08-05"
   },
   "last_sync": "2026-08-04T17:38:24.185535+00:00",
   "posted_destinations": [
@@ -290,6 +292,10 @@
     },
     {
       "destination_id": "khardung-la",
+      "date": "2026-08-05"
+    },
+    {
+      "destination_id": "leh",
       "date": "2026-08-05"
     }
   ],
@@ -6996,6 +7002,24 @@
       "destination": "khardung-la",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_khardung-la_hi_2026-08-05.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T08:14:19.695800+00:00",
+      "date": "2026-08-05",
+      "platform": "instagram",
+      "post_id": "eiVhd",
+      "destination": "leh",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_khardung-la-nubra-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T08:14:27.440718+00:00",
+      "date": "2026-08-05",
+      "platform": "youtube",
+      "post_id": "kwWTo",
+      "destination": "leh",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_khardung-la-nubra-circuit.mp4"
     }
   ],
   "theme_usage": {
@@ -8151,7 +8175,7 @@
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-08-02",
   "reel_studio_routes": {
-    "khardung-la-nubra-circuit": "2026-07-01",
+    "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-07-03",
     "ladakh-express-7d": "2026-07-06",
     "spiti-biker-circuit": "2026-07-08",
