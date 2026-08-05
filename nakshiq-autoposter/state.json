@@ -32,38 +32,22 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-04",
+    "GAh5p_yt_short": "2026-08-05",
     "m8EAd": "2026-08-04",
     "m8EAd_evening": "2026-08-04",
     "PdMu0": "2026-08-04",
     "PdMu0_evening": "2026-08-04",
     "m8EAd_carousel": "2026-08-04",
     "PdMu0_carousel": "2026-08-04",
-    "m8EAd_yt_short": "2026-08-04",
+    "m8EAd_yt_short": "2026-08-05",
     "m8EAd_tourist_map": "2026-08-04",
     "PdMu0_tourist_map": "2026-08-04"
   },
   "last_sync": "2026-08-04T17:38:24.185535+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "mudumalai",
-      "date": "2026-07-21"
-    },
-    {
-      "destination_id": "ahmedabad",
-      "date": "2026-07-21"
-    },
-    {
-      "destination_id": "statue-of-unity",
-      "date": "2026-07-21"
-    },
-    {
-      "destination_id": "khardung-la",
-      "date": "2026-07-21"
-    },
     {
       "destination_id": "dungarpur",
       "date": "2026-07-22"
@@ -303,6 +287,10 @@
     {
       "destination_id": "hampi",
       "date": "2026-08-04"
+    },
+    {
+      "destination_id": "khardung-la",
+      "date": "2026-08-05"
     }
   ],
   "posted_formats": {
@@ -6990,6 +6978,24 @@
       "format": "v2_tourist_trap_split",
       "has_media": true,
       "media_id": "hampi.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T06:47:21.732338+00:00",
+      "date": "2026-08-05",
+      "platform": "instagram",
+      "post_id": "KyGvQ",
+      "destination": "khardung-la",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_khardung-la_hi_2026-08-05.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T06:47:30.628177+00:00",
+      "date": "2026-08-05",
+      "platform": "youtube",
+      "post_id": "X4cPy",
+      "destination": "khardung-la",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_khardung-la_hi_2026-08-05.mp4"
     }
   ],
   "theme_usage": {
