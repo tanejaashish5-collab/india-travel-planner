@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-05",
     "m8EAd": "2026-08-04",
@@ -300,6 +300,10 @@
     },
     {
       "destination_id": "kargil",
+      "date": "2026-08-05"
+    },
+    {
+      "destination_id": "mandu",
       "date": "2026-08-05"
     }
   ],
@@ -7042,6 +7046,24 @@
       "destination": "kargil",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-08-05"
+    },
+    {
+      "timestamp": "2026-08-05T13:25:39.397023+00:00",
+      "date": "2026-08-05",
+      "platform": "instagram",
+      "post_id": "TpiKM",
+      "destination": "mandu",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_mandu_hi_2026-08-05.mp4"
+    },
+    {
+      "timestamp": "2026-08-05T13:25:47.415374+00:00",
+      "date": "2026-08-05",
+      "platform": "youtube",
+      "post_id": "xXoNy",
+      "destination": "mandu",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_mandu_hi_2026-08-05.mp4"
     }
   ],
   "theme_usage": {
