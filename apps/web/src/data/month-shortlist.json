@@ -1,0 +1,467 @@
+{
+  "month": 8,
+  "monthSlug": "august",
+  "monthLong": "August",
+  "generatedAt": "2026-08-06T12:09:42.441Z",
+  "totals": {
+    "destinations": 533,
+    "atTheirBest": 63,
+    "inAMonthToAvoid": 324,
+    "listed": 63
+  },
+  "states": [
+    {
+      "state": "Ladakh",
+      "destinations": [
+        {
+          "id": "alchi",
+          "name": "Alchi",
+          "tagline": "A 1000-year-old Buddhist art gallery hidden in a tiny village — the oldest surviving murals in Ladakh, painted when the Chola dynasty ruled South India.",
+          "type": []
+        },
+        {
+          "id": "drass",
+          "name": "Drass",
+          "tagline": "The second coldest inhabited place on Earth, a war memorial that will make you cry, and -45°C winters.",
+          "type": []
+        },
+        {
+          "id": "hanle",
+          "name": "Hanle",
+          "tagline": "Darkest skies in India — a remote observatory village at 4500m where the Milky Way is visible to the naked eye.",
+          "type": []
+        },
+        {
+          "id": "kargil",
+          "name": "Kargil",
+          "tagline": "The gateway between Kashmir and Ladakh, a war-scarred town finding peace — and the start of the Zanskar road.",
+          "type": []
+        },
+        {
+          "id": "khardung-la",
+          "name": "Khardung La",
+          "tagline": "5,359m pass north of Leh — the gateway to Nubra Valley and a rite of passage for motorcyclists.",
+          "type": []
+        },
+        {
+          "id": "lamayuru",
+          "name": "Lamayuru",
+          "tagline": "The moon landscape monastery — Ladakh at its most alien, with a 1000-year-old gompa perched above a crater of eroded clay.",
+          "type": []
+        },
+        {
+          "id": "leh",
+          "name": "Leh",
+          "tagline": "The town where every road trip to Ladakh begins with 2 mandatory days of doing nothing — and somehow those 2 days become the highlight.",
+          "type": []
+        },
+        {
+          "id": "likir",
+          "name": "Likir",
+          "tagline": "A living monastery where monks still debate, pray, and tend gardens — plus a giant golden Maitreya Buddha visible for miles.",
+          "type": []
+        },
+        {
+          "id": "nubra-valley",
+          "name": "Nubra Valley",
+          "tagline": "Sand dunes at 3000m with double-hump camels, a monastery watching over the valley, and the last Indian village before Pakistan.",
+          "type": []
+        },
+        {
+          "id": "pangong-lake",
+          "name": "Pangong Tso",
+          "tagline": "The most Instagrammed lake in India and the most dangerous for unprepared tourists — 4350m of beauty that punishes anyone who skips acclimatization.",
+          "type": []
+        },
+        {
+          "id": "tso-moriri",
+          "name": "Tso Moriri",
+          "tagline": "Pangong's quieter, wilder twin — where Changpa nomads graze pashmina goats and the lake reflects a sky nobody else is looking at.",
+          "type": []
+        },
+        {
+          "id": "turtuk",
+          "name": "Turtuk",
+          "tagline": "India's last Balti village on the Shyok — opened to visitors in 2010, still feels half-secret.",
+          "type": []
+        },
+        {
+          "id": "umlingla",
+          "name": "Umlingla",
+          "tagline": "World's highest motorable road at 5883m — the ultimate test of altitude, endurance, and vehicle reliability.",
+          "type": []
+        },
+        {
+          "id": "zanskar",
+          "name": "Zanskar Valley",
+          "tagline": "India's most inaccessible inhabited valley — where the river freezes into a walkable sheet and monks live in monasteries hanging from cliffs.",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Maharashtra",
+      "destinations": [
+        {
+          "id": "amboli",
+          "name": "Amboli",
+          "tagline": "Maharashtra's southernmost hill station — Sahyadri waterfalls, king cobras, and monsoon magic",
+          "type": []
+        },
+        {
+          "id": "bhandardara",
+          "name": "Bhandardara",
+          "tagline": "Arthur Lake, fireflies in May, and Kalsubai — Maharashtra's rooftop",
+          "type": []
+        },
+        {
+          "id": "bhimashankar",
+          "name": "Bhimashankar",
+          "tagline": "One of 12 Jyotirlingas — Sahyadri temple, giant Indian squirrel sanctuary, and monsoon treks",
+          "type": []
+        },
+        {
+          "id": "igatpuri",
+          "name": "Igatpuri",
+          "tagline": "Vipassana meditation headquarters, monsoon waterfalls, and Sahyadri treks",
+          "type": []
+        },
+        {
+          "id": "khandala",
+          "name": "Khandala",
+          "tagline": "The twin of Lonavala — Bollywood's favourite ghats, Duke's Nose, and the misty Western Ghats",
+          "type": []
+        },
+        {
+          "id": "kolad",
+          "name": "Kolad",
+          "tagline": "Maharashtra's Rishikesh — white water rafting on the Kundalika River, 2 hours from Mumbai",
+          "type": []
+        },
+        {
+          "id": "kolhapur",
+          "name": "Kolhapur",
+          "tagline": "Mahalaxmi Temple, kushti wrestling, and the spiciest misal pav you'll ever eat",
+          "type": []
+        },
+        {
+          "id": "lonavala",
+          "name": "Lonavala",
+          "tagline": "Mumbai-Pune's favourite monsoon escape — fudge, fog, and fort trails",
+          "type": []
+        },
+        {
+          "id": "nashik",
+          "name": "Nashik",
+          "tagline": "Wine capital of India — Trimbakeshwar Jyotirlinga, Godavari ghats, and Sula vineyards",
+          "type": []
+        },
+        {
+          "id": "pune",
+          "name": "Pune",
+          "tagline": "Oxford of the East — Maratha history, misal pav capital, and India's craft beer hub",
+          "type": []
+        },
+        {
+          "id": "raigad-fort",
+          "name": "Raigad Fort",
+          "tagline": "Shivaji's capital — the coronation site of the Maratha Empire, now UNESCO World Heritage",
+          "type": []
+        },
+        {
+          "id": "shirdi",
+          "name": "Shirdi",
+          "tagline": "Sai Baba's holy town — one of India's top 5 pilgrimage destinations, 40,000 visitors daily",
+          "type": []
+        },
+        {
+          "id": "trimbakeshwar",
+          "name": "Trimbakeshwar",
+          "tagline": "Jyotirlinga and Godavari source — where India's second-longest river begins its 1,465km journey",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Karnataka",
+      "destinations": [
+        {
+          "id": "belur",
+          "name": "Belur",
+          "tagline": "UNESCO Hoysala temple — Chennakesava's soapstone carvings are the most intricate in India",
+          "type": []
+        },
+        {
+          "id": "dharmasthala",
+          "name": "Dharmasthala",
+          "tagline": "The temple that feeds 30,000 people free every day — Dharmasthala's annadana tradition",
+          "type": []
+        },
+        {
+          "id": "halebidu",
+          "name": "Halebidu",
+          "tagline": "UNESCO Hoysala masterpiece — Hoysaleshwara Temple with 240 wall panels of mythological scenes",
+          "type": []
+        },
+        {
+          "id": "jog-falls",
+          "name": "Jog Falls",
+          "tagline": "India's second-highest plunge waterfall — 253 metres of monsoon fury in four cascades",
+          "type": []
+        },
+        {
+          "id": "mysore",
+          "name": "Mysore",
+          "tagline": "The city of palaces — Chamundi Hills, silk saris, sandalwood, and India's grandest Dasara festival",
+          "type": []
+        },
+        {
+          "id": "shravanabelagola",
+          "name": "Shravanabelagola",
+          "tagline": "The 57-foot Bahubali monolith — world's largest free-standing statue, 1,000 years old",
+          "type": []
+        },
+        {
+          "id": "srirangapatna",
+          "name": "Srirangapatna",
+          "tagline": "Tipu Sultan's island fortress on the Kaveri — where the Tiger of Mysore made his last stand",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Telangana",
+      "destinations": [
+        {
+          "id": "adilabad",
+          "name": "Adilabad",
+          "tagline": "Kuntala Falls, tiger reserve, and Gond tribal culture — Telangana's wild north",
+          "type": []
+        },
+        {
+          "id": "ananthagiri-hills",
+          "name": "Ananthagiri Hills",
+          "tagline": "Hyderabad's nearest hill escape — 79km to misty forests and ancient temples",
+          "type": []
+        },
+        {
+          "id": "kolanupaka",
+          "name": "Kolanupaka",
+          "tagline": "2,000-year-old jade Mahaveer statue — Telangana's hidden Jain treasure",
+          "type": []
+        },
+        {
+          "id": "pillalamarri",
+          "name": "Pillalamarri",
+          "tagline": "800-year-old banyan tree — India's 2nd largest, with Sufi tombs underneath",
+          "type": []
+        },
+        {
+          "id": "pochampally",
+          "name": "Pochampally",
+          "tagline": "UNESCO-recognized ikat weaving village — India's first GI-tagged handloom",
+          "type": []
+        },
+        {
+          "id": "ramappa-temple",
+          "name": "Ramappa Temple",
+          "tagline": "UNESCO World Heritage (2021) — the only temple in India named after its sculptor",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Himachal Pradesh",
+      "destinations": [
+        {
+          "id": "chandratal",
+          "name": "Chandratal",
+          "tagline": "Crescent-shaped lake at 4,300m — reachable only in summer, camped beside on borrowed time.",
+          "type": []
+        },
+        {
+          "id": "keylong",
+          "name": "Keylong",
+          "tagline": "Lahaul district HQ — the most important town nobody stops in, gateway to Leh from HP side.",
+          "type": []
+        },
+        {
+          "id": "kinner-kailash",
+          "name": "Kinner Kailash",
+          "tagline": "A natural Shivalingam rock on a 6,055m peak with a challenging 5-day parikrama.",
+          "type": []
+        },
+        {
+          "id": "manimahesh-kailash",
+          "name": "Manimahesh Kailash",
+          "tagline": "An unclimbed sacred peak above Manimahesh Lake, honored by the annual Janmashtami-to-Radha Ashtami yatra.",
+          "type": []
+        },
+        {
+          "id": "shrikhand-mahadev",
+          "name": "Shrikhand Mahadev",
+          "tagline": "One of India's toughest pilgrim treks: a 5-day ordeal with vertical snow pitches and a 75-foot Shivalingam.",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Jammu & Kashmir",
+      "destinations": [
+        {
+          "id": "bangus-valley",
+          "name": "Bangus Valley",
+          "tagline": "A permit-required frontier valley near the LoC that rewards the bureaucratic effort with meadows nobody else is standing in.",
+          "type": []
+        },
+        {
+          "id": "gurez-valley",
+          "name": "Gurez Valley",
+          "tagline": "The most beautiful valley you've never heard of — because it's on the LoC and was closed to civilians until 2007.",
+          "type": []
+        },
+        {
+          "id": "kishtwar",
+          "name": "Kishtwar",
+          "tagline": "Where the Himalaya gets wild — Kishtwar is the adventure frontier that even Ladakh seekers skip.",
+          "type": []
+        },
+        {
+          "id": "sinthan-top",
+          "name": "Sinthan Top",
+          "tagline": "A high pass between Kashmir and Kishtwar where the meadow at the top makes you forget you're on a road.",
+          "type": []
+        },
+        {
+          "id": "tosamaidan",
+          "name": "Tosamaidan",
+          "tagline": "Asia's largest meadow was an army artillery range until 2014. The mines are gone. The beauty was always there.",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Uttarakhand",
+      "destinations": [
+        {
+          "id": "hemkund-sahib",
+          "name": "Hemkund Sahib",
+          "tagline": "Sikh pilgrimage shrine at 4,633m — a 6km walk up from Ghangaria, beside a glacial lake.",
+          "type": []
+        },
+        {
+          "id": "mansarovar-kailash",
+          "name": "Mount Kailash & Mansarovar",
+          "tagline": "The real Mount Kailash (6,638m) and sacred Lake Mansarovar, a 24-day yatra via the Lipulekh Pass.",
+          "type": []
+        },
+        {
+          "id": "valley-of-flowers",
+          "name": "Valley of Flowers",
+          "tagline": "A UNESCO valley that blooms with 500+ wildflower species for exactly 8 weeks a year. Miss the window, miss the point.",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Madhya Pradesh",
+      "destinations": [
+        {
+          "id": "mandu",
+          "name": "Mandu",
+          "tagline": "Romantic medieval citadel at 634m — Jahaz Mahal, Rani Roopmati's love story, and 45 sq km of Afghan-Mughal ruins that most of India has forgotten.",
+          "type": []
+        },
+        {
+          "id": "orchha",
+          "name": "Orchha",
+          "tagline": "A forgotten Bundela kingdom on the Betwa river — grand cenotaphs and palaces with zero crowds and sunset views that rival any fort in India.",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Tamil Nadu",
+      "destinations": [
+        {
+          "id": "courtallam",
+          "name": "Courtallam (Kutralam)",
+          "tagline": "Spa of South India — 9 herb-infused waterfalls with natural healing properties",
+          "type": []
+        },
+        {
+          "id": "hogenakkal",
+          "name": "Hogenakkal Falls",
+          "tagline": "India's Niagara — coracle rides through waterfalls and a 2,000-year-old oil massage tradition",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Andhra Pradesh",
+      "destinations": [
+        {
+          "id": "belum-caves",
+          "name": "Belum Caves",
+          "tagline": "India's 2nd longest cave system — 3.2km of stalactites deep underground",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Chhattisgarh",
+      "destinations": [
+        {
+          "id": "chitrakote-falls",
+          "name": "Chitrakote Falls",
+          "tagline": "India's Niagara, widest waterfall, Bastar tribal region",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Goa",
+      "destinations": [
+        {
+          "id": "ponda-spice",
+          "name": "Spice Plantations (Ponda)",
+          "tagline": "Walk through nutmeg, pepper, and vanilla — Goa's spice plantations are edible education",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Gujarat",
+      "destinations": [
+        {
+          "id": "saputara",
+          "name": "Saputara",
+          "tagline": "Gujarat's only hill station in the Western Ghats — tribal culture meets misty forests",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Kerala",
+      "destinations": [
+        {
+          "id": "athirapally",
+          "name": "Athirapally Falls",
+          "tagline": "Niagara of India — India's largest waterfall by volume flow",
+          "type": []
+        }
+      ]
+    },
+    {
+      "state": "Odisha",
+      "destinations": [
+        {
+          "id": "raghurajpur",
+          "name": "Raghurajpur",
+          "tagline": "India's first Heritage Craft Village — every home is a 1,500-year-old art gallery",
+          "type": []
+        }
+      ]
+    }
+  ]
+}

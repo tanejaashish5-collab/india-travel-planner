@@ -318,14 +318,9 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
               marginBottom: 20,
             }}
           >
-            Stop scrolling. Get the one that&apos;s worth it this week.
+            Most of India is out of season right now. Here&apos;s what isn&apos;t.
           </p>
-          <NewsletterSignup
-            source="explore-end"
-            headline=""
-            subhead="Every Sunday: the single best India destination this week, the honest skip, and what changed on the road. Free. No spam."
-            buttonLabel="Get Sunday's pick"
-          />
+          <NewsletterSignup source="explore-end" headline="" />
         </section>
       </main>
       <Footer />

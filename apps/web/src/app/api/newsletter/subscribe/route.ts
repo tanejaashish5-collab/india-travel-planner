@@ -4,11 +4,13 @@ import { render } from "@react-email/render";
 import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
 import ConfirmSubscription from "@/emails/confirm-subscription";
 import SavedListWelcome from "@/emails/saved-list-welcome";
+import MonthShortlist from "@/emails/month-shortlist";
+import shortlist from "@/data/month-shortlist.json";
 import { syncSavedDestinationAlerts } from "@/lib/newsletter/sync-saved-alerts";
 
 export const runtime = "nodejs";
 
-const ALLOWED_TAGS = ["window", "savelist", "peak_alerts"] as const;
+const ALLOWED_TAGS = ["window", "savelist", "peak_alerts", "month_brief"] as const;
 type AllowedTag = typeof ALLOWED_TAGS[number];
 
 function getSupabase() {
@@ -56,6 +58,11 @@ export async function POST(req: NextRequest) {
 
   let confirmationToken: string;
   let firstTimeSavelist = false;
+  // The month shortlist is the thing the reader actually asked for, so it ships
+  // immediately as a transactional email rather than waiting on double opt-in.
+  // Making someone confirm before they get the artefact breaks the promise the
+  // form made — the confirmation email governs ONGOING sends, not this one.
+  const wantsShortlist = tags.includes("month_brief");
 
   // Merge tags additively so repeat subs don't drop earlier provenance.
   const mergedTags = Array.from(new Set([
@@ -88,6 +95,13 @@ export async function POST(req: NextRequest) {
       // so the cron alerts them before each peaks. Idempotent + best-effort.
       if (savedChanged && nextTags.includes("savelist")) {
         await syncSavedDestinationAlerts(supabase, rawEmail, nextSaved, "savelist-resave");
+      }
+      // Already on the list, but they just asked for the shortlist — send it.
+      // Without this, an existing subscriber who submits the form gets silence
+      // and concludes it's broken.
+      if (wantsShortlist) {
+        const resendClient = getResend();
+        if (resendClient) await sendMonthShortlist(resendClient, rawEmail);
       }
       return NextResponse.json({ ok: true, alreadySubscribed: true });
     }
@@ -187,5 +201,50 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  if (wantsShortlist) {
+    await sendMonthShortlist(resend, rawEmail);
+  }
+
   return NextResponse.json({ ok: true });
+}
+
+/**
+ * Deliver the month shortlist. Transactional: this is the artefact the reader
+ * asked for, so it goes out on submit rather than after double opt-in.
+ * Best-effort — a failure here never fails the subscription.
+ */
+async function sendMonthShortlist(
+  resend: NonNullable<ReturnType<typeof getResend>>,
+  to: string,
+) {
+  try {
+    const { monthLong, totals, states } = shortlist;
+    const html = await render(MonthShortlist({ monthLong, totals, states }));
+    const plain = [
+      `The ${monthLong} shortlist — ${totals.listed} places in India at their best right now.`,
+      `We check ${totals.destinations} destinations against the month you'd actually travel.`,
+      `In ${monthLong}, ${totals.listed} are in their best window and ${totals.inAMonthToAvoid} are in a month we'd tell you to skip.`,
+      "",
+      ...states.flatMap((s) => [
+        `${s.state.toUpperCase()} (${s.destinations.length})`,
+        ...s.destinations.map((d) => `  • ${d.name} — https://www.nakshiq.com/en/destination/${d.id}`),
+        "",
+      ]),
+      "Next month the list changes — most of these close and others open.",
+    ].join("\n");
+
+    await resend.emails.send({
+      from: FROM_ADDRESS,
+      to,
+      replyTo: REPLY_TO,
+      subject: `The ${monthLong} shortlist — ${totals.listed} places at their best`,
+      html,
+      text: plain,
+    });
+  } catch (err: unknown) {
+    console.error(
+      "[newsletter] month shortlist send error:",
+      err instanceof Error ? err.message : String(err),
+    );
+  }
 }

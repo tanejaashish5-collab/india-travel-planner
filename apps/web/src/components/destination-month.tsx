@@ -5,6 +5,7 @@ import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { PeakAlertHook } from "./peak-alert-hook";
 import { destinationImage } from "@/lib/image-url";
+import SHORTLIST from "@/data/month-shortlist-summary.json";
 import { preload } from "react-dom";
 import { videoSrc } from "@/lib/video-url";
 import { DestinationSectionNav } from "./destination-section-nav";
@@ -1025,15 +1026,15 @@ export function DestinationMonth({
         source={`dest-month-${destination.id}-${monthSlug}`}
         headline={
           locale === "hi"
-            ? `अगले ${destination.name} के लिए तैयार रहें`
-            : `Don't miss the next ${destination.name} window`
+            ? `${SHORTLIST.totals.listed} जगहें अभी अपने सबसे अच्छे महीने में हैं`
+            : `${SHORTLIST.totals.listed} places are at their best right now`
         }
         subhead={
           locale === "hi"
-            ? `रविवार को एक ईमेल — कौन सी जगह अगले हफ़्ते जाने लायक है। साथ ही जो जगहें आप सहेजें, उनके पीक से तीन हफ़्ते पहले हेड्स-अप। बिना स्पैम।`
-            : `One Sunday briefing on where to actually go in India, plus a 3-week heads-up before each destination you save hits its peak month. No spam.`
+            ? `भारत की ${SHORTLIST.totals.destinations} जगहों में से ${SHORTLIST.totals.listed} इस समय अपने सही महीने में हैं — और ${SHORTLIST.totals.inAMonthToAvoid} ऐसे महीने में हैं जिनसे हम बचने को कहेंगे। पूरी सूची भेज देते हैं।`
+            : `${SHORTLIST.totals.listed} of ${SHORTLIST.totals.destinations} places in India are in their best month right now — and ${SHORTLIST.totals.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`
         }
-        buttonLabel={locale === "hi" ? "साइन अप करें" : "Get the email"}
+        buttonLabel={locale === "hi" ? "सूची भेजें" : "Send it"}
       />
 
       {/* Divider */}

@@ -152,14 +152,9 @@ export default async function PlanTripPage() {
               marginBottom: 20,
             }}
           >
-            Locked in a trip? Skip the next regret.
+            Before you lock anything in — check it&apos;s the right month.
           </p>
-          <NewsletterSignup
-            source="plan-end"
-            headline=""
-            subhead="Every Sunday: India's best destination this week, the honest skip, road conditions, and what changed. So your next plan starts smart. Free."
-            buttonLabel="Get the Sunday brief"
-          />
+          <NewsletterSignup source="plan-end" headline="" />
         </section>
       </main>
       <Footer />

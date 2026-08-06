@@ -3,15 +3,28 @@
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "./animated-hero";
 import { KEY_EVENTS, track } from "@/lib/analytics";
+import SHORTLIST from "@/data/month-shortlist-summary.json";
 
-// One offer, one voice — defaults match the windowHeadline/windowSubhead/
-// windowSubscribe/windowFootnote i18n keys so every newsletter surface
-// pitches the same sharpened promise.
-const DEFAULT_HEADLINE = "The Window — every Sunday";
+// One offer, one voice.
+//
+// 2026-08-06: the offer changed from "subscribe to The Window, every Sunday"
+// to the month shortlist. The old pitch asked for a COMMITMENT with a vague
+// benefit, from someone mid-decision, and it converted to zero — 918 human
+// sessions/wk, 3 save_prompt_view, **0** emails captured, 13 subscribers in
+// four months. The threshold was already 1 and the form was already on every
+// high-traffic page, so neither gating nor placement was the cause. The offer
+// was. This asks for an email in exchange for one concrete thing, delivered
+// now, that a reader cannot assemble without opening 533 pages.
+//
+// Counts come from month-shortlist-summary.json (regenerated monthly by
+// scripts/build-month-shortlist.mjs) — the tiny client-safe companion to the
+// full shortlist, which stays server-side.
+const DEFAULT_HEADLINE = `The ${SHORTLIST.monthLong} shortlist`;
 const DEFAULT_SUBHEAD =
-  "One score. One skip. Four minutes. The place in India worth your trip this week, the trap to skip, and what's changed on the ground.";
-const DEFAULT_BUTTON = "Subscribe";
-const DEFAULT_FOOTNOTE = "Free. No sponsored picks. Unsubscribe in one click.";
+  `${SHORTLIST.totals.listed} of ${SHORTLIST.totals.destinations} places in India are in their best month right now — and ` +
+  `${SHORTLIST.totals.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`;
+const DEFAULT_BUTTON = "Send it";
+const DEFAULT_FOOTNOTE = "Free, arrives straight away. Nothing sponsored. Unsubscribe in one click.";
 
 export function NewsletterSignup({
   source = "inline-widget",
@@ -64,7 +77,14 @@ export function NewsletterSignup({
       const res = await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim().toLowerCase(), source }),
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          source,
+          // Tells the API to send the shortlist immediately as a transactional
+          // email. Without this tag the reader gets only a confirm-your-email
+          // message, which is not what the form promised.
+          tags: ["month_brief"],
+        }),
       });
 
       if (!res.ok) {
@@ -98,10 +118,11 @@ export function NewsletterSignup({
       <FadeIn>
         <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
           <div className="text-3xl mb-3">{"✉️"}</div>
-          <p className="text-lg font-bold text-emerald-400">Almost there — check your inbox.</p>
+          <p className="text-lg font-bold text-emerald-400">Sent — it&apos;s in your inbox.</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Tap the confirmation link we just sent to {email}. The Window won&apos;t
-            arrive until you do.
+            The {SHORTLIST.monthLong} shortlist is on its way to {email}. There&apos;s
+            also a confirmation link in there — tap it and we&apos;ll send next
+            month&apos;s when the list changes.
           </p>
         </div>
       </FadeIn>
