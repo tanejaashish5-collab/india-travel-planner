@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-06",
     "m8EAd_carousel": "2026-08-06",
@@ -294,6 +294,10 @@
     },
     {
       "destination_id": "igatpuri",
+      "date": "2026-08-06"
+    },
+    {
+      "destination_id": "trimbakeshwar",
       "date": "2026-08-06"
     }
   ],
@@ -7135,6 +7139,24 @@
       "destination": "igatpuri",
       "format": "carousel.persona",
       "media_id": "carousel_persona_2026-08-06"
+    },
+    {
+      "timestamp": "2026-08-06T13:23:07.087818+00:00",
+      "date": "2026-08-06",
+      "platform": "instagram",
+      "post_id": "EWkgp",
+      "destination": "trimbakeshwar",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_trimbakeshwar_hi_2026-08-06.mp4"
+    },
+    {
+      "timestamp": "2026-08-06T13:23:16.151207+00:00",
+      "date": "2026-08-06",
+      "platform": "youtube",
+      "post_id": "GCQqa",
+      "destination": "trimbakeshwar",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_trimbakeshwar_hi_2026-08-06.mp4"
     }
   ],
   "theme_usage": {

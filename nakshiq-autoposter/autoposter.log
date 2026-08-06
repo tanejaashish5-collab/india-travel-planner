@@ -16431,3 +16431,27 @@ Date range: 2026-04-15 → 2026-08-05
 2026-08-06 10:03:10  INFO      [facebook/Nakshiq] ✅ carousel published (persona) · post_id=bGn9E
 2026-08-06 10:03:10  INFO      Carousel run complete (fmt=persona, posted=True).
 2026-08-06 10:03:10  INFO      ════════════════════════════════════════════════════════════
+2026-08-06 13:21:11  INFO      ════════════════════════════════════════════════════════════
+2026-08-06 13:21:11  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-06
+2026-08-06 13:21:11  INFO      ════════════════════════════════════════════════════════════
+2026-08-06 13:21:13  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-06 13:22:31  INFO      Short rendered: yt_short_before_after_trimbakeshwar_hi_2026-08-06.mp4 (12186 KB, 21.0s, fmt=before_after, music=hype-412)
+2026-08-06 13:22:31  INFO          Requesting upload URL for yt_short_before_after_yt_short_before_after_trimbakeshwar_hi_2026-08-06.mp4 (12,478,696 bytes, video/mp4)
+2026-08-06 13:22:32  INFO          Uploading to R2 (timeout=300s)...
+2026-08-06 13:22:34  INFO          R2 PUT OK. Confirming...
+2026-08-06 13:22:35  INFO          Media ready: 235tN (12,478,696 bytes · yt_short_before_after_yt_short_before_after_trimbakeshwar_hi_2026-08-06.mp4)
+2026-08-06 13:22:35  INFO      Video uploaded: yt_short_before_after_yt_short_before_after_trimbakeshwar_hi_2026-08-06.mp4
+2026-08-06 13:22:36  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-06 13:22:36  INFO      [instagram/nakshiq] Publishing YT Short (before_after)...
+2026-08-06 13:22:36  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-06 13:22:38  INFO      [instagram/nakshiq] Outstand accepted (post_id=EWkgp), waiting for platform confirmation...
+2026-08-06 13:22:49  WARNING       wait_for_publish poll #2 for post=EWkgp errored: HTTPError: 500 Server Error: Internal Server Error for url: https://api.outstand.so/v1/posts/EWkgp
+2026-08-06 13:23:07  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=EWkgp · Platform=18082151486275410
+2026-08-06 13:23:07  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-06 13:23:07  INFO      [youtube/@naksh-iq] Publishing YT Short (before_after)...
+2026-08-06 13:23:07  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-06 13:23:10  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=GCQqa), waiting for platform confirmation...
+2026-08-06 13:23:16  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=GCQqa · Platform=q7eyIqFDOoY
+2026-08-06 13:23:16  INFO      YT Short posted: format=before_after, music=hype-412
+2026-08-06 13:23:16  INFO      State saved. YT Short run complete.
+2026-08-06 13:23:16  INFO      ════════════════════════════════════════════════════════════
