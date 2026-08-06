@@ -105,12 +105,11 @@ Concrete audit questions for anything that touches the outside world (email, IG/
 Razorpay, Supabase writes): *what can this thing do on its own — can it send, or only draft? Can
 it publish, or only queue?* **If the answer is scary, fix the access, not the prompt.**
 
-Known live example, unresolved (2026-08-04): JobAgent's "never sends email" is enforced only by
-a line in `run-agent.sh` and a runbook comment, while the Outlook bridge runs `read_only: false`
-and therefore holds the `Mail.Send` Graph scope and exposes `outlook_send_message` /
-`outlook_send_draft` / `outlook_send_with_attachments`. The fix is `allow_categories` in
-`~/.outlook-mcp/config.json` (call-time gate, no re-auth needed) — founder must apply it; editing
-that file is blocked for Claude by the auto-mode classifier.
+Former live example, RESOLVED 2026-08-05: JobAgent's "never sends email" was enforced only by
+a line in `run-agent.sh` while the Outlook bridge held the `Mail.Send` Graph scope and exposed
+three send tools. Founder applied `allow_categories` (six non-send categories) in
+`~/.outlook-mcp/config.json`; verified same day — the send tools are gone from the MCP registry
+entirely and draft create/delete still works. Do not remove `allow_categories` from that file.
 
 Positive counter-example to copy: Chanakya's auto-publish is gated by `publish.enabled` plus
 native `publishAt` (private-first), which is a real flag, not an instruction.
