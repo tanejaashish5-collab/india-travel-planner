@@ -16369,3 +16369,23 @@ Date range: 2026-04-15 → 2026-08-05
 2026-08-06 06:51:22  INFO      YT Short posted: format=dont_go_here, music=hype-305
 2026-08-06 06:51:22  INFO      State saved. YT Short run complete.
 2026-08-06 06:51:22  INFO      ════════════════════════════════════════════════════════════
+2026-08-06 09:30:36  INFO      ════════════════════════════════════════════════════════════
+2026-08-06 09:30:36  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-08-06 · weekday=3
+2026-08-06 09:30:36  INFO      ════════════════════════════════════════════════════════════
+2026-08-06 09:30:36  INFO      Tourist Map target: Mizoram (MZ) · cartographic · dark (25/28 states never featured)
+2026-08-06 09:30:36  INFO      Map rendered: tourist_map_MZ_dark_cartographic.jpg (66 KB)
+2026-08-06 09:30:36  INFO          Requesting upload URL for tourist_map_MZ_dark_cartographic.jpg (68,228 bytes, image/jpeg)
+2026-08-06 09:30:38  INFO          Uploading to R2 (timeout=120s)...
+2026-08-06 09:30:38  INFO          R2 PUT OK. Confirming...
+2026-08-06 09:30:40  INFO          Media ready: 9jseF (68,228 bytes · tourist_map_MZ_dark_cartographic.jpg)
+2026-08-06 09:30:40  INFO      Map image uploaded: tourist_map_MZ_dark_cartographic.jpg
+2026-08-06 09:30:42  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-06 09:30:42  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-06 09:30:42  INFO      [instagram/nakshiq] Publishing tourist map for Mizoram...
+2026-08-06 09:30:45  INFO      [instagram/nakshiq] Tourist map posted successfully!
+2026-08-06 09:30:45  INFO      [facebook/Nakshiq] Publishing tourist map for Mizoram...
+2026-08-06 09:30:47  INFO      [facebook/Nakshiq] Tourist map posted successfully!
+2026-08-06 09:30:47  INFO      [youtube/@naksh-iq] Skipping tourist map (YouTube only accepts video/reels).
+2026-08-06 09:30:47  INFO      Theme tracker updated: MZ / MZ_cartographic_dark
+2026-08-06 09:30:47  INFO      State saved. Tourist Map run complete.
+2026-08-06 09:30:47  INFO      ════════════════════════════════════════════════════════════

@@ -42,7 +42,9 @@
     "m8EAd_reel_studio": "2026-08-05",
     "GAh5p_reel_studio": "2026-08-05",
     "PdMu0_reel_map": "2026-08-05",
-    "GAh5p_reel_map": "2026-08-05"
+    "GAh5p_reel_map": "2026-08-05",
+    "m8EAd_tourist_map": "2026-08-06",
+    "PdMu0_tourist_map": "2026-08-06"
   },
   "last_sync": "2026-08-05T16:18:01.380313+00:00",
   "posted_destinations": [
@@ -7093,6 +7095,24 @@
       "destination": "keylong",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_keylong_hi_2026-08-06.mp4"
+    },
+    {
+      "timestamp": "2026-08-06T09:30:45.299122+00:00",
+      "date": "2026-08-06",
+      "platform": "instagram",
+      "post_id": "ZAS9n",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "MZ_cartographic_dark"
+    },
+    {
+      "timestamp": "2026-08-06T09:30:47.828146+00:00",
+      "date": "2026-08-06",
+      "platform": "facebook",
+      "post_id": "NTiIx",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "MZ_cartographic_dark"
     }
   ],
   "theme_usage": {
@@ -8074,6 +8094,9 @@
       ],
       "TG": [
         "2026-08-04"
+      ],
+      "MZ": [
+        "2026-08-06"
       ]
     },
     "tourist_map_combos": {
@@ -8085,6 +8108,9 @@
       ],
       "TG_editorial_dark": [
         "2026-08-04"
+      ],
+      "MZ_cartographic_dark": [
+        "2026-08-06"
       ]
     },
     "reel_formats": {
