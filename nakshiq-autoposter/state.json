@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-07",
     "m8EAd_carousel": "2026-08-07",
     "PdMu0_carousel": "2026-08-07",
-    "m8EAd_yt_short": "2026-08-06",
+    "m8EAd_yt_short": "2026-08-07",
     "m8EAd_tourist_map": "2026-08-06",
     "PdMu0_tourist_map": "2026-08-06",
     "m8EAd_reel_studio": "2026-08-07",
@@ -292,6 +292,10 @@
     },
     {
       "destination_id": "hogenakkal",
+      "date": "2026-08-07"
+    },
+    {
+      "destination_id": "pune",
       "date": "2026-08-07"
     }
   ],
@@ -7205,6 +7209,24 @@
       "destination": "hogenakkal",
       "format": "carousel.cost",
       "media_id": "carousel_cost_2026-08-07"
+    },
+    {
+      "timestamp": "2026-08-07T12:35:10.281777+00:00",
+      "date": "2026-08-07",
+      "platform": "instagram",
+      "post_id": "LaBDy",
+      "destination": "pune",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_pune_hi_2026-08-07.mp4"
+    },
+    {
+      "timestamp": "2026-08-07T12:35:18.974048+00:00",
+      "date": "2026-08-07",
+      "platform": "youtube",
+      "post_id": "oV4H2",
+      "destination": "pune",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_pune_hi_2026-08-07.mp4"
     }
   ],
   "theme_usage": {
