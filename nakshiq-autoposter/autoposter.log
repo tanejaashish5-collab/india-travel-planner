@@ -16614,3 +16614,49 @@ Date range: 2026-04-15 → 2026-08-06
 2026-08-07 12:35:18  INFO      YT Short posted: format=did_you_know, music=edm-471
 2026-08-07 12:35:18  INFO      State saved. YT Short run complete.
 2026-08-07 12:35:18  INFO      ════════════════════════════════════════════════════════════
+2026-08-07 15:12:27  INFO      ════════════════════════════════════════════════════════════
+2026-08-07 15:12:27  INFO      Nakshiq Autoposter · EVENING · 2026-08-07 · weekday=4
+2026-08-07 15:12:27  INFO      ════════════════════════════════════════════════════════════
+2026-08-07 15:12:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-07 15:12:55  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-07 15:12:55  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-07 15:12:56  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-07 15:12:56  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-07 15:12:56  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-07 15:13:10  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-07 15:13:10  INFO      [diversity] feed: 36 → 24 options · cooldown dropped 12 (carousel, itinerary_reel, pillar:discovery, short:before_after, short:did_you_know, short:dont_go_here, short:this_vs_that seen <2d)
+2026-08-07 15:13:10  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-08-07 15:13:10  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: reality_check  ·  Audience: adventurers
+2026-08-07 15:13:10  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-08-07 15:13:10  INFO      Audience filter 'adventurers' → 11 destinations match.
+2026-08-07 15:13:10  INFO      Fingerprint dedup snapshot — 55 dests in 7d · 107 (dest,fmt) pairs in 30d · 239 media in 60d
+2026-08-07 15:13:10  INFO      Shared best destination locked: Valley of Flowers
+2026-08-07 15:13:10  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-08-07 15:13:10  INFO      confidence_intel for Valley of Flowers: only 0 card rows — SKIPPING
+2026-08-07 15:13:10  WARNING   [instagram/nakshiq] confidence_intel: valley-of-flowers inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'valley-of-flowers' as score_card to keep the slot live.
+2026-08-07 15:13:10  INFO      [instagram/nakshiq] Caption ready (362 chars, dest=valley-of-flowers)
+2026-08-07 15:13:12  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-07 15:13:12  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/valley-of-flowers.mp4?v=20260524
+2026-08-07 15:13:15  INFO          Brand-stamp applied: valley-of-flowers.mp4 (13,154,801 → 7,233,305 bytes)
+2026-08-07 15:13:15  INFO          Requesting upload URL for valley-of-flowers.mp4 (7,233,305 bytes, video/mp4)
+2026-08-07 15:13:16  INFO          Uploading to R2 (timeout=300s)...
+2026-08-07 15:13:16  INFO          R2 PUT OK. Confirming...
+2026-08-07 15:13:17  INFO          Media ready: u7xbG (7,233,305 bytes · valley-of-flowers.mp4)
+2026-08-07 15:13:17  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-07 15:14:00  INFO      [instagram/nakshiq] ✅ Published · Outstand=ilZR1 · Platform=18126071470739135
+2026-08-07 15:14:00  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-08-07 15:14:00  INFO      confidence_intel for Valley of Flowers: only 0 card rows — SKIPPING
+2026-08-07 15:14:00  WARNING   [facebook/Nakshiq] confidence_intel: valley-of-flowers inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'valley-of-flowers' as score_card to keep the slot live.
+2026-08-07 15:14:00  INFO      [facebook/Nakshiq] Caption ready (568 chars, dest=valley-of-flowers)
+2026-08-07 15:14:01  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-07 15:14:01  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/valley-of-flowers.mp4?v=20260524
+2026-08-07 15:14:04  INFO          Brand-stamp applied: valley-of-flowers.mp4 (13,154,801 → 7,233,305 bytes)
+2026-08-07 15:14:04  INFO          Requesting upload URL for valley-of-flowers.mp4 (7,233,305 bytes, video/mp4)
+2026-08-07 15:14:05  INFO          Uploading to R2 (timeout=300s)...
+2026-08-07 15:14:06  INFO          R2 PUT OK. Confirming...
+2026-08-07 15:14:06  INFO          Media ready: kwaKJ (7,233,305 bytes · valley-of-flowers.mp4)
+2026-08-07 15:14:06  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-07 15:14:21  INFO      [facebook/Nakshiq] ✅ Published · Outstand=X4pw1 · Platform=1437030048255918
+2026-08-07 15:14:21  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-07 15:14:21  INFO      State saved. Run complete.
+2026-08-07 15:14:21  INFO      ════════════════════════════════════════════════════════════

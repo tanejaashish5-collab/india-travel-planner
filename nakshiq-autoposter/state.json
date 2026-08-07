@@ -42,9 +42,13 @@
     "m8EAd_tourist_map": "2026-08-06",
     "PdMu0_tourist_map": "2026-08-06",
     "m8EAd_reel_studio": "2026-08-07",
-    "GAh5p_reel_studio": "2026-08-07"
+    "GAh5p_reel_studio": "2026-08-07",
+    "m8EAd": "2026-08-07",
+    "m8EAd_evening": "2026-08-07",
+    "PdMu0": "2026-08-07",
+    "PdMu0_evening": "2026-08-07"
   },
-  "last_sync": "2026-08-05T16:18:01.380313+00:00",
+  "last_sync": "2026-08-07T15:12:55.551110+00:00",
   "posted_destinations": [
     {
       "destination_id": "kumbakonam",
@@ -297,6 +301,10 @@
     {
       "destination_id": "pune",
       "date": "2026-08-07"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "date": "2026-08-07"
     }
   ],
   "posted_formats": {
@@ -318,10 +326,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "score_card"
     ],
     "PdMu0": [
       "score_card",
@@ -341,10 +349,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "score_card"
     ]
   },
   "post_log": [
@@ -7227,6 +7235,28 @@
       "destination": "pune",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_pune_hi_2026-08-07.mp4"
+    },
+    {
+      "timestamp": "2026-08-07T15:14:00.990216+00:00",
+      "date": "2026-08-07",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "ilZR1",
+      "destination": "valley-of-flowers",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "valley-of-flowers.mp4"
+    },
+    {
+      "timestamp": "2026-08-07T15:14:21.150957+00:00",
+      "date": "2026-08-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "X4pw1",
+      "destination": "valley-of-flowers",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "valley-of-flowers.mp4"
     }
   ],
   "theme_usage": {
@@ -7551,7 +7581,8 @@
       ],
       "valley-of-flowers": [
         "2026-06-19",
-        "2026-08-02"
+        "2026-08-02",
+        "2026-08-07"
       ],
       "kanatal": [
         "2026-06-19"
@@ -7773,7 +7804,8 @@
         "2026-07-30",
         "2026-07-31",
         "2026-08-01",
-        "2026-08-03"
+        "2026-08-03",
+        "2026-08-07"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -7963,7 +7995,8 @@
         "2026-06-14"
       ],
       "valley-of-flowers": [
-        "2026-06-19"
+        "2026-06-19",
+        "2026-08-07"
       ],
       "kanatal": [
         "2026-06-19"
@@ -8077,7 +8110,8 @@
         "2026-07-10",
         "2026-07-17",
         "2026-07-24",
-        "2026-07-31"
+        "2026-07-31",
+        "2026-08-07"
       ]
     },
     "collections": {
