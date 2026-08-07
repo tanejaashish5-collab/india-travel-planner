@@ -40,7 +40,9 @@
     "PdMu0_carousel": "2026-08-06",
     "m8EAd_yt_short": "2026-08-06",
     "m8EAd_tourist_map": "2026-08-06",
-    "PdMu0_tourist_map": "2026-08-06"
+    "PdMu0_tourist_map": "2026-08-06",
+    "m8EAd_reel_studio": "2026-08-07",
+    "GAh5p_reel_studio": "2026-08-07"
   },
   "last_sync": "2026-08-05T16:18:01.380313+00:00",
   "posted_destinations": [
@@ -282,6 +284,10 @@
     },
     {
       "destination_id": "tso-moriri",
+      "date": "2026-08-07"
+    },
+    {
+      "destination_id": "manali",
       "date": "2026-08-07"
     }
   ],
@@ -7159,6 +7165,24 @@
       "destination": "tso-moriri",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_tso-moriri_hi_2026-08-07.mp4"
+    },
+    {
+      "timestamp": "2026-08-07T07:00:47.636806+00:00",
+      "date": "2026-08-07",
+      "platform": "instagram",
+      "post_id": "pF2tF",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-biker.mp4"
+    },
+    {
+      "timestamp": "2026-08-07T07:00:56.899545+00:00",
+      "date": "2026-08-07",
+      "platform": "youtube",
+      "post_id": "KyAYc",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-biker.mp4"
     }
   ],
   "theme_usage": {
@@ -8328,7 +8352,7 @@
   "data_carousel_floor_last": "2026-08-02",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
-    "ladakh-manali-biker": "2026-07-03",
+    "ladakh-manali-biker": "2026-08-07",
     "ladakh-express-7d": "2026-07-06",
     "spiti-biker-circuit": "2026-07-08",
     "kinnaur-spiti-circuit": "2026-07-10",
