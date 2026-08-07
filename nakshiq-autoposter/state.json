@@ -36,8 +36,8 @@
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-07",
-    "m8EAd_carousel": "2026-08-06",
-    "PdMu0_carousel": "2026-08-06",
+    "m8EAd_carousel": "2026-08-07",
+    "PdMu0_carousel": "2026-08-07",
     "m8EAd_yt_short": "2026-08-06",
     "m8EAd_tourist_map": "2026-08-06",
     "PdMu0_tourist_map": "2026-08-06",
@@ -288,6 +288,10 @@
     },
     {
       "destination_id": "manali",
+      "date": "2026-08-07"
+    },
+    {
+      "destination_id": "hogenakkal",
       "date": "2026-08-07"
     }
   ],
@@ -7183,6 +7187,24 @@
       "destination": "manali",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_ladakh-manali-biker.mp4"
+    },
+    {
+      "timestamp": "2026-08-07T08:36:15.020043+00:00",
+      "date": "2026-08-07",
+      "platform": "instagram",
+      "post_id": "cNimm",
+      "destination": "hogenakkal",
+      "format": "carousel.cost",
+      "media_id": "carousel_cost_2026-08-07"
+    },
+    {
+      "timestamp": "2026-08-07T08:36:17.387209+00:00",
+      "date": "2026-08-07",
+      "platform": "facebook",
+      "post_id": "lQENb",
+      "destination": "hogenakkal",
+      "format": "carousel.cost",
+      "media_id": "carousel_cost_2026-08-07"
     }
   ],
   "theme_usage": {
