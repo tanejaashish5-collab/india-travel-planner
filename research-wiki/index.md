@@ -34,7 +34,7 @@ Read this first. `[[name]]` links resolve anywhere under `wiki/`. Built 2026-07-
 ## Ideas
 
 - [[ledger-overview]] — UN-RETIRED 2026-07-14 by founder order (was RETIRED 2026-07-13); ledger restored + bizscout light run = 12 new/0 dupes → 101 ideas, 0 GREEN/5 YELLOW/7 RED; radar daily launchd still disabled
-- [[rejected-ideas]] — the graveyard with dated reasons; never re-litigate from scratch. **2026-08-02: the "on-ground-India-solo = auto-fail" kill-rule is LIFTED by founder decision** (he will live in India) — which re-opened medical equipment; latest kills: Delhi childcare, India-travel trust
+- [[rejected-ideas]] — the graveyard with dated reasons; never re-litigate from scratch. **on-ground-India-solo kill-rule: LIFTED 2026-08-02, RE-INSTATED 2026-08-07** — India relocation is opportunity-contingent, not planned; base stays Australia — which re-opened medical equipment; latest kills: Delhi childcare, India-travel trust
 - [[radar-loop]] — the pipeline that fed the ledger; **RETIRED 2026-07-13, not running** (page now says so on its face — it previously read as live)
 
 ## People

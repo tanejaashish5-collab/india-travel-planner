@@ -116,9 +116,23 @@ evidence a real Sindoor customer ever raised it.
 
 ## Standing kill-rules distilled
 
-3+ funded incumbents entering a gap within 90 days = RED regardless of demand (2026-06-08). On-camera-required = auto-fail. ~~On-ground-India-solo = auto-fail (OK with partner).~~ **← LIFTED BY FOUNDER 2026-08-02.** See [[passion-fit-gate]], [[test-cheap-before-build]].
+3+ funded incumbents entering a gap within 90 days = RED regardless of demand (2026-06-08). On-camera-required = auto-fail. **On-ground-India-solo = auto-fail (OK with partner).** ← lifted 2026-08-02, **RE-INSTATED 2026-08-07** (India is opportunity-contingent, not planned; base stays Australia). See [[passion-fit-gate]], [[test-cheap-before-build]].
 
-### 🔓 2026-08-02 — the on-ground-India gate is LIFTED by founder decision
+### 🔒 2026-08-07 — the on-ground-India gate is RE-INSTATED (supersedes the 08-02 lift below)
+
+Founder, verbatim: *"india plan is not concrete we only move to india if we get an opportunity and
+better would be to start something digital - worldwide - australia which would mean i can travel to
+india whenever required."*
+
+**Base is Australia. Relocation is a contingency, not a plan.** Do not score any idea assuming he
+will be on the ground in India, and do not treat medical equipment or Delhi childcare as re-opened
+without a fresh founder decision naming a concrete trigger. Preferred shape: **digital · worldwide ·
+Australia-based**, with travel to India when a business needs presence.
+
+The 08-02 record is kept below because the *capital envelope* and *AU-income-first* parameters it
+captured are still his stated preferences — only the geography premise is withdrawn.
+
+### 🔓 2026-08-02 — the on-ground-India gate was LIFTED (SUPERSEDED — see above)
 
 Founder, verbatim: *"It's okay, I can live in India as well. That's fine, doesn't matter, so
 remove that gate."* Stated while scoping a Delhi childcare business, and explicitly extended to
