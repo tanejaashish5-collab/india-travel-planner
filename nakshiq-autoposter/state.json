@@ -41,12 +41,12 @@
     "m8EAd_yt_short": "2026-08-08",
     "m8EAd_reel_studio": "2026-08-07",
     "GAh5p_reel_studio": "2026-08-07",
-    "m8EAd": "2026-08-07",
-    "m8EAd_evening": "2026-08-07",
-    "PdMu0": "2026-08-07",
-    "PdMu0_evening": "2026-08-07"
+    "m8EAd": "2026-08-08",
+    "m8EAd_evening": "2026-08-08",
+    "PdMu0": "2026-08-08",
+    "PdMu0_evening": "2026-08-08"
   },
-  "last_sync": "2026-08-07T15:12:55.551110+00:00",
+  "last_sync": "2026-08-08T14:53:54.700703+00:00",
   "posted_destinations": [
     {
       "destination_id": "ambaji",
@@ -299,6 +299,10 @@
     {
       "destination_id": "lamayuru",
       "date": "2026-08-08"
+    },
+    {
+      "destination_id": "amboli",
+      "date": "2026-08-08"
     }
   ],
   "posted_formats": {
@@ -319,10 +323,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card"
     ],
     "PdMu0": [
@@ -342,10 +346,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card"
     ]
   },
@@ -7305,6 +7309,28 @@
       "destination": "lamayuru",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_lamayuru_hi_2026-08-08.mp4"
+    },
+    {
+      "timestamp": "2026-08-08T14:55:09.079082+00:00",
+      "date": "2026-08-08",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Vb9Xr",
+      "destination": "amboli",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "amboli.mp4"
+    },
+    {
+      "timestamp": "2026-08-08T14:55:24.342363+00:00",
+      "date": "2026-08-08",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "MZkK3",
+      "destination": "amboli",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "amboli.mp4"
     }
   ],
   "theme_usage": {
@@ -7702,7 +7728,8 @@
         "2026-07-09",
         "2026-07-16",
         "2026-07-25",
-        "2026-08-02"
+        "2026-08-02",
+        "2026-08-08"
       ],
       "adilabad": [
         "2026-08-01"
@@ -7853,7 +7880,8 @@
         "2026-07-31",
         "2026-08-01",
         "2026-08-03",
-        "2026-08-07"
+        "2026-08-07",
+        "2026-08-08"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -8104,7 +8132,8 @@
         "2026-07-29"
       ],
       "amboli": [
-        "2026-07-16"
+        "2026-07-16",
+        "2026-08-08"
       ],
       "igatpuri": [
         "2026-07-17"
@@ -8146,7 +8175,8 @@
         "2026-07-11",
         "2026-07-18",
         "2026-07-25",
-        "2026-08-01"
+        "2026-08-01",
+        "2026-08-08"
       ],
       "adventurers": [
         "2026-05-29",
@@ -8457,7 +8487,8 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -8471,7 +8502,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "valley-of-flowers",
+    "shared_best": "khandala",
     "collection": "best-motorcycle-routes"
   },
   "manual_skip_dests": {},
