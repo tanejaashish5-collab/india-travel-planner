@@ -32,15 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-07",
+    "GAh5p_yt_short": "2026-08-08",
     "m8EAd_carousel": "2026-08-07",
     "PdMu0_carousel": "2026-08-07",
     "m8EAd_yt_short": "2026-08-07",
-    "m8EAd_tourist_map": "2026-08-06",
-    "PdMu0_tourist_map": "2026-08-06",
     "m8EAd_reel_studio": "2026-08-07",
     "GAh5p_reel_studio": "2026-08-07",
     "m8EAd": "2026-08-07",
@@ -50,22 +48,6 @@
   },
   "last_sync": "2026-08-07T15:12:55.551110+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kumbakonam",
-      "date": "2026-07-24"
-    },
-    {
-      "destination_id": "lamayuru",
-      "date": "2026-07-24"
-    },
-    {
-      "destination_id": "konark",
-      "date": "2026-07-24"
-    },
-    {
-      "destination_id": "gurez-valley",
-      "date": "2026-07-24"
-    },
     {
       "destination_id": "ambaji",
       "date": "2026-07-25"
@@ -305,6 +287,10 @@
     {
       "destination_id": "valley-of-flowers",
       "date": "2026-08-07"
+    },
+    {
+      "destination_id": "alchi",
+      "date": "2026-08-08"
     }
   ],
   "posted_formats": {
@@ -7257,6 +7243,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "valley-of-flowers.mp4"
+    },
+    {
+      "timestamp": "2026-08-08T05:16:21.475791+00:00",
+      "date": "2026-08-08",
+      "platform": "instagram",
+      "post_id": "Q2Pdm",
+      "destination": "alchi",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_alchi_en_2026-08-08.mp4"
+    },
+    {
+      "timestamp": "2026-08-08T05:16:31.959788+00:00",
+      "date": "2026-08-08",
+      "platform": "youtube",
+      "post_id": "KyWfg",
+      "destination": "alchi",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_alchi_en_2026-08-08.mp4"
     }
   ],
   "theme_usage": {
