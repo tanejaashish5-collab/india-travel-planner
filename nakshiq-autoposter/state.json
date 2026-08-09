@@ -39,13 +39,13 @@
     "m8EAd_carousel": "2026-08-09",
     "PdMu0_carousel": "2026-08-09",
     "m8EAd_yt_short": "2026-08-09",
-    "m8EAd": "2026-08-08",
-    "m8EAd_evening": "2026-08-08",
-    "PdMu0": "2026-08-08",
-    "PdMu0_evening": "2026-08-08",
+    "m8EAd": "2026-08-09",
+    "m8EAd_evening": "2026-08-09",
+    "PdMu0": "2026-08-09",
+    "PdMu0_evening": "2026-08-09",
     "m8EAd_carousel_story": "2026-08-09"
   },
-  "last_sync": "2026-08-08T14:53:54.700703+00:00",
+  "last_sync": "2026-08-09T14:56:43.855615+00:00",
   "posted_destinations": [
     {
       "destination_id": "sambalpur",
@@ -298,6 +298,10 @@
     {
       "destination_id": "hemkund-sahib",
       "date": "2026-08-09"
+    },
+    {
+      "destination_id": "khandala",
+      "date": "2026-08-09"
     }
   ],
   "posted_formats": {
@@ -317,10 +321,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card"
     ],
@@ -340,10 +344,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card"
     ]
@@ -7389,6 +7393,28 @@
       "destination": "hemkund-sahib",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_hemkund-sahib_en_2026-08-09.mp4"
+    },
+    {
+      "timestamp": "2026-08-09T14:57:51.457545+00:00",
+      "date": "2026-08-09",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "lQPxO",
+      "destination": "khandala",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khandala.mp4"
+    },
+    {
+      "timestamp": "2026-08-09T14:58:05.068233+00:00",
+      "date": "2026-08-09",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "v8GWt",
+      "destination": "khandala",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khandala.mp4"
     }
   ],
   "theme_usage": {
@@ -7760,7 +7786,8 @@
       "khandala": [
         "2026-07-04",
         "2026-07-18",
-        "2026-08-02"
+        "2026-08-02",
+        "2026-08-09"
       ],
       "tso-moriri": [
         "2026-07-07",
@@ -7939,7 +7966,8 @@
         "2026-08-01",
         "2026-08-03",
         "2026-08-07",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-09"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -8171,7 +8199,8 @@
       ],
       "khandala": [
         "2026-07-04",
-        "2026-07-18"
+        "2026-07-18",
+        "2026-08-09"
       ],
       "kolad": [
         "2026-07-05",

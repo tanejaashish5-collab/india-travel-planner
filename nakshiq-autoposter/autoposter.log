@@ -17015,3 +17015,128 @@ Date range: 2026-04-15 → 2026-08-08
 2026-08-09 12:07:18  INFO      YT Short posted: format=before_after, music=dance-1095
 2026-08-09 12:07:18  INFO      State saved. YT Short run complete.
 2026-08-09 12:07:18  INFO      ════════════════════════════════════════════════════════════
+2026-08-09 14:56:06  INFO      ════════════════════════════════════════════════════════════
+2026-08-09 14:56:06  INFO      Nakshiq Autoposter · EVENING · 2026-08-09 · weekday=6
+2026-08-09 14:56:06  INFO      ════════════════════════════════════════════════════════════
+2026-08-09 14:56:06  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-09 14:56:43  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-09 14:56:43  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-09 14:56:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-09 14:56:44  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-09 14:56:44  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-09 14:56:57  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-09 14:56:57  INFO      Evening format (balance→verdict): v2_weekend_escape_map [43% vs target 50%] (0/15 never featured)
+2026-08-09 14:56:57  INFO      Formats — IG: v2_weekend_escape_map  ·  FB: v2_weekend_escape_map  ·  Story: kids_intel
+2026-08-09 14:56:57  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 54
+2026-08-09 14:56:57  INFO      Fingerprint dedup snapshot — 53 dests in 7d · 107 (dest,fmt) pairs in 30d · 239 media in 60d
+2026-08-09 14:56:57  INFO      Kids destination locked: Courtallam (Kutralam)
+2026-08-09 14:56:57  INFO      Shared best destination locked: Khandala
+2026-08-09 14:56:57  INFO      [instagram/nakshiq] Generating v2_weekend_escape_map post...
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: pahalgam.mp4 in 60-day media window — SKIPPING
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: ooty has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: kasol has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: darjeeling has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: gurez-valley.mp4 in 60-day media window — SKIPPING
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: gangtok has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: shimla has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: chopta has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: tungnath has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: achabal has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: mathura has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: tawang has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: munsiyari has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: mussoorie has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: nainital has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: mumbai has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: hogenakkal in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: igatpuri in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: khardung-la in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: kaza in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: karla-bhaja-caves in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: bhimashankar in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: hanle already posted today — SKIPPING dest (same-day guard)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: keylong in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: khandala in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: adilabad in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: turtuk in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: tso-moriri in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: zanskar in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: jog-falls in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: valley-of-flowers in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: amboli in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: courtallam already posted today — SKIPPING dest (same-day guard)
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: lonavala in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: umlingla in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  INFO      v2_weekend_escape_map: kolad in 14-day cooldown — SKIPPING dest
+2026-08-09 14:56:57  WARNING   v2_weekend_escape_map: no eligible dest at render time — falling back to safe format 'score_card'
+2026-08-09 14:56:59  WARNING   [instagram/nakshiq] v2_weekend_escape_map: kaza inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'khandala' as score_card to keep the slot live.
+2026-08-09 14:56:59  INFO      [instagram/nakshiq] Caption ready (362 chars, dest=khandala)
+2026-08-09 14:56:59  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-09 14:56:59  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/khandala.mp4?v=20260524
+2026-08-09 14:57:02  INFO          Brand-stamp applied: khandala.mp4 (6,086,120 → 3,211,646 bytes)
+2026-08-09 14:57:02  INFO          Requesting upload URL for khandala.mp4 (3,211,646 bytes, video/mp4)
+2026-08-09 14:57:04  INFO          Uploading to R2 (timeout=300s)...
+2026-08-09 14:57:05  INFO          R2 PUT OK. Confirming...
+2026-08-09 14:57:07  INFO          Media ready: Jh1bC (3,211,646 bytes · khandala.mp4)
+2026-08-09 14:57:07  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-09 14:57:51  INFO      [instagram/nakshiq] ✅ Published · Outstand=lQPxO · Platform=18085840295661272
+2026-08-09 14:57:51  INFO      [facebook/Nakshiq] Generating v2_weekend_escape_map post...
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: pahalgam.mp4 in 60-day media window — SKIPPING
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: ooty has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: kasol has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: darjeeling has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: gurez-valley.mp4 in 60-day media window — SKIPPING
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: gangtok has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: shimla has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: chopta has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: tungnath has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: achabal has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: mathura has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: tawang has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: munsiyari has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: mussoorie has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: nainital has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: mumbai has no current-month row — SKIPPING (won't render a stale August score/note)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: hogenakkal in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: igatpuri in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: khardung-la in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: kaza in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: karla-bhaja-caves in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: bhimashankar in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: hanle already posted today — SKIPPING dest (same-day guard)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: keylong in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: khandala already posted today — SKIPPING dest (same-day guard)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: adilabad in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: turtuk in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: tso-moriri in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: zanskar in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: jog-falls in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: valley-of-flowers in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: amboli in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: courtallam already posted today — SKIPPING dest (same-day guard)
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: lonavala in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: umlingla in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  INFO      v2_weekend_escape_map: kolad in 14-day cooldown — SKIPPING dest
+2026-08-09 14:57:51  WARNING   v2_weekend_escape_map: no eligible dest at render time — falling back to safe format 'score_card'
+2026-08-09 14:57:51  WARNING   [facebook/Nakshiq] v2_weekend_escape_map: kaza inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'khandala' as score_card to keep the slot live.
+2026-08-09 14:57:51  INFO      [facebook/Nakshiq] Caption ready (541 chars, dest=khandala)
+2026-08-09 14:57:51  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-09 14:57:51  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/khandala.mp4?v=20260524
+2026-08-09 14:57:54  INFO          Brand-stamp applied: khandala.mp4 (6,086,120 → 3,211,646 bytes)
+2026-08-09 14:57:54  INFO          Requesting upload URL for khandala.mp4 (3,211,646 bytes, video/mp4)
+2026-08-09 14:57:54  INFO          Uploading to R2 (timeout=300s)...
+2026-08-09 14:57:55  INFO          R2 PUT OK. Confirming...
+2026-08-09 14:57:56  INFO          Media ready: Ho7Ev (3,211,646 bytes · khandala.mp4)
+2026-08-09 14:57:56  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-09 14:58:05  INFO      [facebook/Nakshiq] ✅ Published · Outstand=v8GWt · Platform=1386088396791165
+2026-08-09 14:58:05  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-09 14:58:05  INFO      State saved. Run complete.
+2026-08-09 14:58:05  INFO      ════════════════════════════════════════════════════════════
