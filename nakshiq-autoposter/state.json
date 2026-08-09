@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-09",
     "m8EAd_carousel": "2026-08-09",
@@ -293,6 +293,10 @@
     },
     {
       "destination_id": "hanle",
+      "date": "2026-08-09"
+    },
+    {
+      "destination_id": "hemkund-sahib",
       "date": "2026-08-09"
     }
   ],
@@ -7367,6 +7371,24 @@
       "destination": "hanle",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-08-09"
+    },
+    {
+      "timestamp": "2026-08-09T12:07:08.976303+00:00",
+      "date": "2026-08-09",
+      "platform": "instagram",
+      "post_id": "7P5Y9",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_hemkund-sahib_en_2026-08-09.mp4"
+    },
+    {
+      "timestamp": "2026-08-09T12:07:18.508142+00:00",
+      "date": "2026-08-09",
+      "platform": "youtube",
+      "post_id": "8eC1D",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_hemkund-sahib_en_2026-08-09.mp4"
     }
   ],
   "theme_usage": {
