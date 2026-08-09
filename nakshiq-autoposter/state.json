@@ -36,13 +36,14 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-09",
-    "m8EAd_carousel": "2026-08-08",
-    "PdMu0_carousel": "2026-08-08",
+    "m8EAd_carousel": "2026-08-09",
+    "PdMu0_carousel": "2026-08-09",
     "m8EAd_yt_short": "2026-08-09",
     "m8EAd": "2026-08-08",
     "m8EAd_evening": "2026-08-08",
     "PdMu0": "2026-08-08",
-    "PdMu0_evening": "2026-08-08"
+    "PdMu0_evening": "2026-08-08",
+    "m8EAd_carousel_story": "2026-08-09"
   },
   "last_sync": "2026-08-08T14:53:54.700703+00:00",
   "posted_destinations": [
@@ -288,6 +289,10 @@
     },
     {
       "destination_id": "courtallam",
+      "date": "2026-08-09"
+    },
+    {
+      "destination_id": "hanle",
       "date": "2026-08-09"
     }
   ],
@@ -7335,6 +7340,33 @@
       "destination": "courtallam",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_courtallam_hi_2026-08-09.mp4"
+    },
+    {
+      "timestamp": "2026-08-09T08:05:59.401131+00:00",
+      "date": "2026-08-09",
+      "platform": "instagram",
+      "post_id": "IrFrv",
+      "destination": "hanle",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-09"
+    },
+    {
+      "timestamp": "2026-08-09T08:06:03.230405+00:00",
+      "date": "2026-08-09",
+      "platform": "instagram",
+      "post_id": "v8G8m",
+      "destination": "hanle",
+      "format": "story.window",
+      "media_id": "story_window_2026-08-09"
+    },
+    {
+      "timestamp": "2026-08-09T08:06:04.862405+00:00",
+      "date": "2026-08-09",
+      "platform": "facebook",
+      "post_id": "cN9ND",
+      "destination": "hanle",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-09"
     }
   ],
   "theme_usage": {
