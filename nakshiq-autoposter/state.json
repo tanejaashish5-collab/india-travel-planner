@@ -32,15 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-08",
+    "GAh5p_yt_short": "2026-08-09",
     "m8EAd_carousel": "2026-08-08",
     "PdMu0_carousel": "2026-08-08",
-    "m8EAd_yt_short": "2026-08-08",
-    "m8EAd_reel_studio": "2026-08-07",
-    "GAh5p_reel_studio": "2026-08-07",
+    "m8EAd_yt_short": "2026-08-09",
     "m8EAd": "2026-08-08",
     "m8EAd_evening": "2026-08-08",
     "PdMu0": "2026-08-08",
@@ -48,22 +46,6 @@
   },
   "last_sync": "2026-08-08T14:53:54.700703+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ambaji",
-      "date": "2026-07-25"
-    },
-    {
-      "destination_id": "puri",
-      "date": "2026-07-25"
-    },
-    {
-      "destination_id": "deeg",
-      "date": "2026-07-25"
-    },
-    {
-      "destination_id": "courtallam",
-      "date": "2026-07-25"
-    },
     {
       "destination_id": "sambalpur",
       "date": "2026-07-26"
@@ -303,6 +285,10 @@
     {
       "destination_id": "amboli",
       "date": "2026-08-08"
+    },
+    {
+      "destination_id": "courtallam",
+      "date": "2026-08-09"
     }
   ],
   "posted_formats": {
@@ -7331,6 +7317,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "amboli.mp4"
+    },
+    {
+      "timestamp": "2026-08-09T05:24:19.995237+00:00",
+      "date": "2026-08-09",
+      "platform": "instagram",
+      "post_id": "AzRD8",
+      "destination": "courtallam",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_courtallam_hi_2026-08-09.mp4"
+    },
+    {
+      "timestamp": "2026-08-09T05:24:29.743822+00:00",
+      "date": "2026-08-09",
+      "platform": "youtube",
+      "post_id": "EW65X",
+      "destination": "courtallam",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_courtallam_hi_2026-08-09.mp4"
     }
   ],
   "theme_usage": {
@@ -8487,8 +8491,7 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,

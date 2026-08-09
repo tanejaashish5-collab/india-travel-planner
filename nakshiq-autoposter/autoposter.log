@@ -16913,3 +16913,26 @@ Date range: 2026-04-15 → 2026-08-07
 2026-08-08 19:01:15  INFO      
 Date range: 2026-04-15 → 2026-08-08
 2026-08-08 19:01:15  INFO      ════════════════════════════════════════════════════════════
+2026-08-09 05:21:26  INFO      ════════════════════════════════════════════════════════════
+2026-08-09 05:21:26  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-09
+2026-08-09 05:21:26  INFO      ════════════════════════════════════════════════════════════
+2026-08-09 05:21:32  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-09 05:23:25  INFO      Short rendered: yt_short_listicle_courtallam_hi_2026-08-09.mp4 (19055 KB, 25.4s, fmt=listicle, music=hype-267)
+2026-08-09 05:23:25  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_courtallam_hi_2026-08-09.mp4 (19,513,321 bytes, video/mp4)
+2026-08-09 05:23:27  INFO          Uploading to R2 (timeout=300s)...
+2026-08-09 05:23:29  INFO          R2 PUT OK. Confirming...
+2026-08-09 05:23:31  INFO          Media ready: Skb6i (19,513,321 bytes · yt_short_listicle_yt_short_listicle_courtallam_hi_2026-08-09.mp4)
+2026-08-09 05:23:31  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_courtallam_hi_2026-08-09.mp4
+2026-08-09 05:23:32  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-09 05:23:32  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-08-09 05:23:32  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-09 05:23:36  INFO      [instagram/nakshiq] Outstand accepted (post_id=AzRD8), waiting for platform confirmation...
+2026-08-09 05:24:19  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=AzRD8 · Platform=18108808319325810
+2026-08-09 05:24:19  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-09 05:24:19  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-08-09 05:24:19  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-09 05:24:23  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=EW65X), waiting for platform confirmation...
+2026-08-09 05:24:29  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=EW65X · Platform=3kHXgCrE6kc
+2026-08-09 05:24:29  INFO      YT Short posted: format=listicle, music=hype-267
+2026-08-09 05:24:29  INFO      State saved. YT Short run complete.
+2026-08-09 05:24:29  INFO      ════════════════════════════════════════════════════════════
