@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-10",
@@ -299,6 +299,10 @@
     },
     {
       "destination_id": "morgaon",
+      "date": "2026-08-10"
+    },
+    {
+      "destination_id": "pangong-lake",
       "date": "2026-08-10"
     }
   ],
@@ -7467,6 +7471,24 @@
       "destination": "morgaon",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-08-10"
+    },
+    {
+      "timestamp": "2026-08-10T12:35:40.890021+00:00",
+      "date": "2026-08-10",
+      "platform": "instagram",
+      "post_id": "LaJ9A",
+      "destination": "pangong-lake",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_pangong-lake_hi_2026-08-10.mp4"
+    },
+    {
+      "timestamp": "2026-08-10T12:35:50.552631+00:00",
+      "date": "2026-08-10",
+      "platform": "youtube",
+      "post_id": "Ir7Co",
+      "destination": "pangong-lake",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_pangong-lake_hi_2026-08-10.mp4"
     }
   ],
   "theme_usage": {
