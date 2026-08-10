@@ -58,19 +58,111 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
   "audit-bot-crawl-rate": "2026-05-28T03:00:00Z",
 };
 
-// Statuses that should trigger the daily alert email. needs_review (cron ran
-// fine but found items to review) and scheduled (monthly cron not yet due)
-// are informational — they show in the Monday digest but never wake anyone up.
-const ALERT_STATUSES = new Set(["errored", "missing", "stale"]);
+// How long a job may sit CONTINUOUSLY in needs_review before it escalates to
+// an alert. Born from the 2026-08-04 scar: refresh-stay-picks wrote ok:true
+// with every item failing, which lands as needs_review — a status that by
+// design never wakes anyone. It stayed broken 10 days. The watchdog could not
+// have caught it: it only ever read the LAST run (limit 1), so "flagged once"
+// and "flagged every run for a fortnight" were indistinguishable.
+//
+// One needs_review is information. A PERSISTENT one is an outage. But the
+// right threshold is per-job, because the status means different things:
+//   - canary-probe needs_review = pages are 500ing. Escalate fast.
+//   - freshness-drift needs_review = editorial review-debt, which it finds most
+//     weeks by design and which has a documented 21-day grace window. Escalating
+//     that on a short fuse is pure noise, and an alert you learn to ignore is
+//     worse than no alert (same reasoning as the first-run suppression below).
+// Jobs absent from this map fall back to DEFAULT_ESCALATION_MULTIPLIER × cadence.
+//
+// ⚠️ canary-probe is PRE-STAGED, not live. It is absent from
+// EXPECTED_CADENCE_DAYS above, and the health loop iterates THAT map — so this
+// entry does nothing until canary-probe is added there. Audited 2026-08-10:
+// EIGHT running crons are unwatched (canary-probe, sos-auto-reverify,
+// sos-verify-reminder, road-conditions-sweep, data-baseline, audit-hero-images,
+// send-destination-alerts, watchdog itself). Six of them do write ops_reports,
+// so they can be watched — but adding a job whose live state is unknown risks a
+// standing MISSING alert every day, which is the alert-fatigue failure this file
+// works hard to avoid. Add them deliberately, one at a time, after checking each
+// one's most recent ops_reports row.
+const NEEDS_REVIEW_ESCALATION_DAYS: Record<string, number> = {
+  "canary-probe": 1,               // PRE-STAGED — see note above; a failing canary is a live 500
+  "audit-cache-headers": 2,        // hourly job; 2 days of violations is real
+  "refresh-stay-picks-agent": 2,   // the job that caused the scar
+  "audit-supabase-advisors": 3,
+  "audit-gsc-alerts": 7,           // findings are advisory, weekly tolerance
+  "audit-gsc-ga4-correlation": 7,
+  "audit-bot-crawl-rate": 7,
+  "freshness-drift": 22,           // review-debt by design; 21-day grace + 1
+};
+const DEFAULT_ESCALATION_MULTIPLIER = 3;
+
+// How many recent runs to read per job. Must be enough to measure the longest
+// escalation window above at that job's cadence — freshness-drift is weekly
+// with a 22-day fuse, so ~4 runs; hourly jobs need far more. 24 covers both
+// without a meaningful query-cost change (one extra page of the same index).
+const HISTORY_LIMIT = 24;
+
+// Statuses that should trigger the daily alert email. Plain needs_review (cron
+// ran fine but found items to review) and scheduled (monthly cron not yet due)
+// stay informational — digest only, never wake anyone up. needs_review_stuck is
+// the escalation of the former once it has persisted past its per-job window.
+const ALERT_STATUSES = new Set(["errored", "missing", "stale", "needs_review_stuck"]);
+
+export type OpsRun = { run_at: string; alerts_count: number | null; ok: boolean | null };
+
+/**
+ * Measure the unbroken run of "flagged but ok" results ending at the newest row.
+ *
+ * Exported (and unit-tested by scripts/test-watchdog-streak.mjs) because this is
+ * the single piece of logic standing between us and another silent outage — the
+ * 2026-08-04 one lasted 10 days precisely because nothing measured persistence.
+ * Logic that exists to catch silent failure must not itself fail silently, and
+ * "it compiles" is not evidence that it fires.
+ *
+ * `rows` MUST be newest-first. Walking stops at the first clean or errored run:
+ * either resets the clock, because the job demonstrably recovered.
+ */
+export function classifyReviewStreak(
+  rows: OpsRun[],
+  now: Date,
+  escalateAfterDays: number
+): { since: string | null; days: number | null; runs: number; stuck: boolean } {
+  let since: string | null = null;
+  let runs = 0;
+  for (const row of rows) {
+    if (row.ok === false || (row.alerts_count ?? 0) === 0) break;
+    since = row.run_at;
+    runs++;
+  }
+  if (runs === 0 || !since) return { since: null, days: null, runs: 0, stuck: false };
+  const days = (now.getTime() - new Date(since).getTime()) / 86400000;
+  // Require 2+ runs as well as elapsed time. A single flagged run on a slow
+  // cadence can be older than the fuse without the job being stuck — we need to
+  // have watched it fail to clear at least once.
+  return { since, days, runs, stuck: days >= escalateAfterDays && runs >= 2 };
+}
 
 type JobHealth = {
   job: string;
   expected_cadence_days: number;
   last_run_at: string | null;
   days_since: number | null;
-  status: "ok" | "stale" | "missing" | "errored" | "needs_review" | "scheduled";
+  status:
+    | "ok"
+    | "stale"
+    | "missing"
+    | "errored"
+    | "needs_review"
+    | "needs_review_stuck"
+    | "scheduled";
   last_alerts_count: number | null;
   last_ok: boolean | null;
+  // Set only while the job is in needs_review / needs_review_stuck: when the
+  // unbroken run of flagged runs began, how long it has lasted, and the fuse.
+  needs_review_since: string | null;
+  needs_review_days: number | null;
+  needs_review_runs: number | null;
+  escalation_after_days: number | null;
 };
 
 type AssetCoverage = {
@@ -143,11 +235,16 @@ export async function GET(req: NextRequest) {
       .select("run_at, alerts_count, ok")
       .eq("job", job)
       .order("run_at", { ascending: false })
-      .limit(1);
+      .limit(HISTORY_LIMIT);
     const last = data?.[0] ?? null;
     const cadence = EXPECTED_CADENCE_DAYS[job];
     let status: JobHealth["status"];
     let daysSince: number | null = null;
+    let reviewSince: string | null = null;
+    let reviewDays: number | null = null;
+    let reviewRuns: number | null = null;
+    const escalateAfter =
+      NEEDS_REVIEW_ESCALATION_DAYS[job] ?? cadence * DEFAULT_ESCALATION_MULTIPLIER;
     if (!last) {
       const earliest = EARLIEST_EXPECTED_FIRST_RUN[job];
       if (earliest && new Date(earliest).getTime() > now.getTime()) status = "scheduled";
@@ -156,8 +253,13 @@ export async function GET(req: NextRequest) {
       daysSince = (now.getTime() - new Date(last.run_at).getTime()) / 86400000;
       if (last.ok === false) status = "errored";
       else if (daysSince > cadence) status = "stale";
-      else if ((last.alerts_count ?? 0) > 0) status = "needs_review";
-      else status = "ok";
+      else if ((last.alerts_count ?? 0) > 0) {
+        const streak = classifyReviewStreak(data ?? [], now, escalateAfter);
+        reviewSince = streak.since;
+        reviewDays = streak.days;
+        reviewRuns = streak.runs;
+        status = streak.stuck ? "needs_review_stuck" : "needs_review";
+      } else status = "ok";
     }
     health.push({
       job,
@@ -167,6 +269,10 @@ export async function GET(req: NextRequest) {
       status,
       last_alerts_count: last?.alerts_count ?? null,
       last_ok: last?.ok ?? null,
+      needs_review_since: reviewSince,
+      needs_review_days: reviewDays === null ? null : Number(reviewDays.toFixed(1)),
+      needs_review_runs: reviewRuns,
+      escalation_after_days: reviewSince ? escalateAfter : null,
     });
   }
 
@@ -210,7 +316,15 @@ export async function GET(req: NextRequest) {
         from: OPS_FROM_ADDRESS,
         to: ALERT_TO,
         replyTo: REPLY_TO,
-        subject: `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s) need attention`,
+        // Name the stuck jobs in the subject. A silently-failing job reporting
+        // ok:true reads as healthy everywhere else, so the subject is the only
+        // place it can announce itself before you open anything.
+        subject: (() => {
+          const stuck = alertable.filter((h) => h.status === "needs_review_stuck");
+          return stuck.length > 0
+            ? `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s), ${stuck.length} silently stuck (${stuck.map((h) => h.job).join(", ")})`
+            : `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s) need attention`;
+        })(),
         html: renderAlertHtml(alertable, health),
         text: renderAlertText(alertable, health),
       });
@@ -271,13 +385,35 @@ export async function GET(req: NextRequest) {
 function statusColour(status: JobHealth["status"]): string {
   if (status === "ok" || status === "scheduled") return "#16a34a";
   if (status === "needs_review") return "#d97706";
-  return "#dc2626"; // errored, missing, stale
+  return "#dc2626"; // errored, missing, stale, needs_review_stuck
+}
+
+// Explains a needs_review streak in the email body. Without this the reader
+// sees the word "needs_review_stuck" and has no idea why today differs from
+// yesterday, which is how an alert becomes wallpaper.
+function reviewSuffix(h: JobHealth): string {
+  if (h.needs_review_days === null || h.needs_review_runs === null) return "";
+  const fuse = h.escalation_after_days;
+  const core = `flagged ${h.needs_review_runs} run(s) in a row over ${h.needs_review_days}d`;
+  return h.status === "needs_review_stuck"
+    ? ` — STUCK: ${core}, past its ${fuse}d limit. Reporting ok:true, so it looks healthy; check whether its items are actually failing.`
+    : ` — ${core} (escalates at ${fuse}d)`;
+}
+
+// HTML twin of reviewSuffix, for the table cell in both email renderers.
+function reviewCell(h: JobHealth, colour: string): string {
+  if (h.needs_review_days === null) return "";
+  const tail =
+    h.status === "needs_review_stuck"
+      ? `(past ${h.escalation_after_days}d limit)`
+      : `(escalates at ${h.escalation_after_days}d)`;
+  return `<br><span style="color:${colour}">flagged ${h.needs_review_runs}× over ${h.needs_review_days}d ${tail}</span>`;
 }
 
 function fmtRow(h: JobHealth): string {
   const last = h.last_run_at ? new Date(h.last_run_at).toISOString().slice(0, 16).replace("T", " ") + " UTC" : "(never)";
   const days = h.days_since === null ? "—" : `${h.days_since}d ago`;
-  return `${h.job} — ${h.status.toUpperCase()} — last ${last} (${days}, expected ≤${h.expected_cadence_days}d)`;
+  return `${h.job} — ${h.status.toUpperCase()} — last ${last} (${days}, expected ≤${h.expected_cadence_days}d)${reviewSuffix(h)}`;
 }
 
 function renderAlertText(alertable: JobHealth[], all: JobHealth[]): string {
@@ -304,7 +440,7 @@ function renderAlertHtml(alertable: JobHealth[], all: JobHealth[]): string {
         <td style="padding:8px 12px;font-family:ui-monospace,monospace;font-size:13px">${h.job}</td>
         <td style="padding:8px 12px;color:${colour};font-weight:600;font-family:ui-monospace,monospace;font-size:13px">${h.status}</td>
         <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${last}</td>
-        <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${h.days_since ?? "—"}d / ≤${h.expected_cadence_days}d</td>
+        <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${h.days_since ?? "—"}d / ≤${h.expected_cadence_days}d${reviewCell(h, colour)}</td>
       </tr>`;
     })
     .join("");
@@ -364,7 +500,7 @@ function renderDigestHtml(
         <td style="padding:8px 12px;font-family:ui-monospace,monospace;font-size:13px">${h.job}</td>
         <td style="padding:8px 12px;color:${c};font-weight:600;font-family:ui-monospace,monospace;font-size:13px">${h.status}</td>
         <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${last}</td>
-        <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${h.days_since ?? "—"}d / ≤${h.expected_cadence_days}d</td>
+        <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${h.days_since ?? "—"}d / ≤${h.expected_cadence_days}d${reviewCell(h, c)}</td>
       </tr>`;
     })
     .join("");
