@@ -17193,3 +17193,26 @@ Date range: 2026-04-15 → 2026-08-08
 2026-08-09 19:03:55  INFO      
 Date range: 2026-04-15 → 2026-08-09
 2026-08-09 19:03:55  INFO      ════════════════════════════════════════════════════════════
+2026-08-10 05:46:41  INFO      ════════════════════════════════════════════════════════════
+2026-08-10 05:46:41  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-10
+2026-08-10 05:46:41  INFO      ════════════════════════════════════════════════════════════
+2026-08-10 05:46:44  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-10 05:47:45  INFO      Short rendered: yt_short_dont_go_here_lonavala_hi_2026-08-10.mp4 (8735 KB, 18.6s, fmt=dont_go_here, music=hype-267)
+2026-08-10 05:47:45  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_lonavala_hi_2026-08-10.mp4 (8,945,628 bytes, video/mp4)
+2026-08-10 05:47:45  INFO          Uploading to R2 (timeout=300s)...
+2026-08-10 05:47:47  INFO          R2 PUT OK. Confirming...
+2026-08-10 05:47:47  INFO          Media ready: gIht5 (8,945,628 bytes · yt_short_dont_go_here_yt_short_dont_go_here_lonavala_hi_2026-08-10.mp4)
+2026-08-10 05:47:47  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_lonavala_hi_2026-08-10.mp4
+2026-08-10 05:47:49  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-10 05:47:49  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
+2026-08-10 05:47:49  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-10 05:47:51  INFO      [instagram/nakshiq] Outstand accepted (post_id=il0u4), waiting for platform confirmation...
+2026-08-10 05:48:31  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=il0u4 · Platform=18099853526621158
+2026-08-10 05:48:31  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-10 05:48:31  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
+2026-08-10 05:48:31  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-10 05:48:34  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=xXuGi), waiting for platform confirmation...
+2026-08-10 05:48:39  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=xXuGi · Platform=2BAf7ci4wDc
+2026-08-10 05:48:39  INFO      YT Short posted: format=dont_go_here, music=hype-267
+2026-08-10 05:48:40  INFO      State saved. YT Short run complete.
+2026-08-10 05:48:40  INFO      ════════════════════════════════════════════════════════════
