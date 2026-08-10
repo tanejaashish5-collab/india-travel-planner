@@ -14,6 +14,15 @@ const ALTITUDE_SENSITIVE_CAP_M = 3000;
 const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
 
+// `typeof null === "object"`, so a bare typeof check JSON.stringify's a null
+// field into the literal string "null" and ships it to the user. Guard
+// truthiness FIRST. Same bug class as the 2026-06-10 confidence_cards render
+// incident and the 2026-07-04 with-kids-content repeat.
+function jsonText(v: unknown): string | null {
+  if (v === null || v === undefined) return null;
+  return typeof v === "object" ? JSON.stringify(v) : String(v);
+}
+
 export async function POST(req: NextRequest) {
 
   // Phase 7 deep-QA finding: malformed JSON body / oversized payload returned
@@ -90,7 +99,7 @@ export async function POST(req: NextRequest) {
       state:states(name),
       destination_months(month, score, note, prose_lead, who_should_go, who_should_avoid, verdict),
       kids_friendly(suitable, rating, reasons, min_recommended_age),
-      confidence_cards(network, medical, transport, safety, best_tip, warning)
+      confidence_cards(network, emergency, safety_notes)
     `);
 
   if (destinationIds?.length > 0) {
@@ -106,6 +115,22 @@ export async function POST(req: NextRequest) {
       alt_dest:destinations!alternative_destination_id(name)
     `).order("rank"),
   ]);
+
+  // NEVER swallow this error. From 2026-04-25 to 2026-08-10 the select above
+  // asked for confidence_cards columns that do not exist (medical, transport,
+  // safety, best_tip, warning); PostgREST rejected the whole query, `.data`
+  // came back null, and `?? []` turned a hard failure into an itinerary with
+  // zero destinations that still returned HTTP 200. The Anthropic call that
+  // used to sit downstream masked it by inventing content from its own
+  // knowledge — once that was removed on 2026-08-04 the response went visibly
+  // empty. An empty plan must fail loudly, not render as a confident blank.
+  if (destResult.error) {
+    console.error("[itinerary] destination query failed:", destResult.error.message);
+    return NextResponse.json(
+      { error: "Could not load destination data" },
+      { status: 503 },
+    );
+  }
 
   const destinations = destResult.data ?? [];
 
@@ -145,10 +170,18 @@ export async function POST(req: NextRequest) {
       kidsRating: kf?.rating ?? null,
       kidsMinAge: kf?.min_recommended_age ?? null,
       soloFemaleScore: d.solo_female_score ?? null,
-      network: typeof cc?.network === "object" ? JSON.stringify(cc.network) : cc?.network ?? null,
-      medical: typeof cc?.medical === "object" ? JSON.stringify(cc.medical) : cc?.medical ?? null,
-      bestTip: cc?.best_tip ?? null,
-      warning: cc?.warning ?? null,
+      network: jsonText(cc?.network),
+      // `medical` was never a column — `emergency` is the real one (525/525
+      // rows populated) and carries the rescue/hospital detail this field
+      // was always meant to hold.
+      medical: jsonText(cc?.emergency),
+      // `best_tip` and `warning` are not columns and never were. `warning`
+      // takes safety_notes (496/525 rows) — real, verified safety copy, which
+      // is what the day-tip line actually wants. `bestTip` has NO honest
+      // source, so it stays null and the generic fallback at the consumer
+      // stands. Honest scarcity over invented content.
+      bestTip: null as string | null,
+      warning: cc?.safety_notes ?? null,
       tags: d.tags,
       isTouristTrap: !!trapMap[d.id],
       betterAlternative: trapMap[d.id] ?? null,
