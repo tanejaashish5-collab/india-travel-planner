@@ -39,15 +39,15 @@
     "m8EAd_carousel": "2026-08-10",
     "PdMu0_carousel": "2026-08-10",
     "m8EAd_yt_short": "2026-08-10",
-    "m8EAd": "2026-08-09",
-    "m8EAd_evening": "2026-08-09",
-    "PdMu0": "2026-08-09",
-    "PdMu0_evening": "2026-08-09",
+    "m8EAd": "2026-08-10",
+    "m8EAd_evening": "2026-08-10",
+    "PdMu0": "2026-08-10",
+    "PdMu0_evening": "2026-08-10",
     "m8EAd_carousel_story": "2026-08-09",
     "m8EAd_reel_studio": "2026-08-10",
     "GAh5p_reel_studio": "2026-08-10"
   },
-  "last_sync": "2026-08-09T14:56:43.855615+00:00",
+  "last_sync": "2026-08-10T15:25:49.503382+00:00",
   "posted_destinations": [
     {
       "destination_id": "kabini",
@@ -304,6 +304,10 @@
     {
       "destination_id": "pangong-lake",
       "date": "2026-08-10"
+    },
+    {
+      "destination_id": "zanskar",
+      "date": "2026-08-10"
     }
   ],
   "posted_formats": {
@@ -322,10 +326,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
@@ -345,10 +349,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
@@ -7489,6 +7493,28 @@
       "destination": "pangong-lake",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_pangong-lake_hi_2026-08-10.mp4"
+    },
+    {
+      "timestamp": "2026-08-10T15:27:19.569656+00:00",
+      "date": "2026-08-10",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Cu5ZT",
+      "destination": "zanskar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "zanskar.mp4"
+    },
+    {
+      "timestamp": "2026-08-10T15:27:43.444122+00:00",
+      "date": "2026-08-10",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "23I36",
+      "destination": "zanskar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "zanskar.mp4"
     }
   ],
   "theme_usage": {
@@ -7778,7 +7804,8 @@
       "kaza": [
         "2026-06-07",
         "2026-06-23",
-        "2026-06-25"
+        "2026-06-25",
+        "2026-08-10"
       ],
       "tosamaidan": [
         "2026-06-09",
@@ -7843,7 +7870,8 @@
         "2026-07-05",
         "2026-07-17",
         "2026-07-19",
-        "2026-07-21"
+        "2026-07-21",
+        "2026-08-10"
       ],
       "bhimashankar": [
         "2026-07-01",
@@ -7855,7 +7883,8 @@
         "2026-07-01",
         "2026-07-06",
         "2026-07-17",
-        "2026-07-21"
+        "2026-07-21",
+        "2026-08-10"
       ],
       "khandala": [
         "2026-07-04",
@@ -7870,7 +7899,8 @@
       ],
       "igatpuri": [
         "2026-07-09",
-        "2026-07-17"
+        "2026-07-17",
+        "2026-08-10"
       ],
       "zanskar": [
         "2026-07-09",
@@ -7878,7 +7908,8 @@
         "2026-07-16",
         "2026-07-21",
         "2026-07-29",
-        "2026-08-04"
+        "2026-08-04",
+        "2026-08-10"
       ],
       "lamayuru": [
         "2026-07-09"
@@ -7899,6 +7930,9 @@
       "turtuk": [
         "2026-08-02",
         "2026-08-03"
+      ],
+      "hanle": [
+        "2026-08-10"
       ]
     },
     "morning_formats": {
@@ -8041,7 +8075,8 @@
         "2026-08-03",
         "2026-08-07",
         "2026-08-08",
-        "2026-08-09"
+        "2026-08-09",
+        "2026-08-10"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -8290,7 +8325,8 @@
       ],
       "zanskar": [
         "2026-07-12",
-        "2026-07-29"
+        "2026-07-29",
+        "2026-08-10"
       ],
       "amboli": [
         "2026-07-16",
@@ -8325,7 +8361,8 @@
         "2026-07-06",
         "2026-07-13",
         "2026-07-20",
-        "2026-08-03"
+        "2026-08-03",
+        "2026-08-10"
       ],
       "families": [
         "2026-05-23",
@@ -8662,11 +8699,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "khandala",
+    "shared_best": "hanle",
     "collection": "best-motorcycle-routes"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-08-02",
+  "data_carousel_floor_last": "2026-08-10",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
