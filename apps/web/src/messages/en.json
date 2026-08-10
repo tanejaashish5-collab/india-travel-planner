@@ -85,7 +85,12 @@
     "poisHeading": "What else to see in {destination}",
     "otherFestivalsHere": "Other festivals in {destination}",
     "fullGuideKicker": "Full guide",
-    "fullGuideTitle": "Plan a trip to {destination}"
+    "fullGuideTitle": "Plan a trip to {destination}",
+    "hubEyebrow": "Same festival, many places",
+    "hubTitle": "{name} is celebrated in {count} places.",
+    "hubTitleMeta": "{name} — celebrated in {count} destinations",
+    "hubIntro": "Pick the destination you're travelling to. Each one has its own dates, host town, and month-by-month verdict.",
+    "hubHeading": "Where it's celebrated"
   },
   "common": {
     "appName": "NakshIQ",
@@ -741,6 +746,9 @@
     "expHeading": "Tours and experiences",
     "expSub": "Treks, safaris and day tours — compare on the platforms below.",
     "disclosure": "We don't take payment to feature any destination, stay or operator. Book through a link here and we may earn a small commission, at no extra cost to you. It never affects our scores or recommendations. <policy>Editorial policy</policy>"
+  },
+  "stayPicks": {
+    "disclosure": "These are our editors' own picks, not paid placements. Some links may earn us a small commission on a booking, at no extra cost to you — it never changes which stay we recommend. <policy>Editorial policy</policy>"
   },
   "hillQuiz": {
     "pageTitle": "Which hill station is right for you?",

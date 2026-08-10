@@ -13,7 +13,8 @@ import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
 import { singleFestivalEventJsonLd, type FestivalRow } from "@/lib/festival-schema";
-import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
+import { buildFestivalSlugMap, collidingBaseSlugs, festivalsForBaseSlug, type FestivalSlugRow } from "@/lib/festival-slug";
+import { FestivalDisambiguation, type FestivalVariant } from "@/components/festival-disambiguation";
 import { festivalHeroSrc, festivalHeroCredit, festivalHeroPhotoSrc, festivalHeroPhotoCredit } from "@/lib/festival-heroes";
 import { destinationImage } from "@/lib/image-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
@@ -203,10 +204,59 @@ async function loadEnriched(
   };
 }
 
+// A festival row carrying just enough to render a disambiguation card.
+type FestivalVariantRow = FestivalSlugRow & {
+  month: number | null;
+  approximate_date: string | null;
+  description: string | null;
+  destinations?: { name?: string; state?: { name?: string } | { name?: string }[] }
+    | { name?: string; state?: { name?: string } | { name?: string }[] }[]
+    | null;
+};
+
+function firstOf<T>(v: T | T[] | null | undefined): T | undefined {
+  return Array.isArray(v) ? v[0] : (v ?? undefined);
+}
+
+// Variants behind a bare colliding slug, e.g. "ganesh-chaturthi" -> 11 rows.
+// Empty when the slug simply does not exist (a real 404).
+async function loadFestivalVariants(base: string): Promise<FestivalVariant[]> {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const { data } = await supabase
+    .from("festivals")
+    .select("id, name, destination_id, month, approximate_date, description, destinations(name, state:states(name))");
+  const rows = (data ?? []) as unknown as FestivalVariantRow[];
+  return festivalsForBaseSlug(rows, base)
+    .map(({ row, slug }) => {
+      const dest = firstOf(row.destinations);
+      const state = firstOf(dest?.state);
+      return {
+        slug,
+        name: row.name,
+        destinationName: dest?.name ?? null,
+        stateName: state?.name ?? null,
+        monthLabel: row.month ? MONTHS_LONG[row.month] : null,
+        approximateDate: row.approximate_date,
+        description: row.description,
+      };
+    })
+    .sort(
+      (a, b) =>
+        (a.destinationName ?? "").localeCompare(b.destinationName ?? ""),
+    );
+}
+
 export async function generateStaticParams() {
   const rows = await loadAllSlugs();
   const slugMap = buildFestivalSlugMap(rows);
-  return Array.from(slugMap.values()).map((festivalSlug) => ({ festivalSlug }));
+  // Bare colliding slugs are pre-rendered too — they are live, previously
+  // indexed URLs that would otherwise 404 (see lib/festival-slug.ts).
+  const slugs = new Set<string>([
+    ...slugMap.values(),
+    ...collidingBaseSlugs(rows),
+  ]);
+  return Array.from(slugs).map((festivalSlug) => ({ festivalSlug }));
 }
 
 export async function generateMetadata({
@@ -214,7 +264,19 @@ export async function generateMetadata({
 }: { params: Promise<{ locale: string; festivalSlug: string }> }): Promise<Metadata> {
   const { locale, festivalSlug } = await params;
   const f = await loadFestivalBySlug(festivalSlug);
-  if (!f) return {};
+  if (!f) {
+    const variants = await loadFestivalVariants(festivalSlug);
+    if (variants.length > 1) {
+      const t = await getTranslations({ locale, namespace: "festivalDetail" });
+      const fName = variants[0].name;
+      return {
+        title: t("hubTitleMeta", { name: fName, count: variants.length }),
+        description: t("hubIntro", { name: fName, count: variants.length }),
+        ...localeAlternates(locale, `/festivals/${festivalSlug}`),
+      };
+    }
+    return {};
+  }
   const destName = (() => {
     const d = f.destinations as { name?: string } | { name?: string }[] | null | undefined;
     if (Array.isArray(d)) return d[0]?.name;
@@ -260,7 +322,29 @@ export default async function FestivalDetailPage({
 }: { params: Promise<{ locale: string; festivalSlug: string }> }) {
   const { locale, festivalSlug } = await params;
   const f = await loadFestivalBySlug(festivalSlug);
-  if (!f) notFound();
+  if (!f) {
+    // Not a dead URL — a bare slug shared by 2+ festivals. Serve the hub.
+    const variants = await loadFestivalVariants(festivalSlug);
+    if (variants.length > 1) {
+      const th = await getTranslations({ locale, namespace: "festivalDetail" });
+      const fName = variants[0].name;
+      const vars = { name: fName, count: variants.length };
+      return (
+        <FestivalDisambiguation
+          locale={locale}
+          name={fName}
+          variants={variants}
+          copy={{
+            eyebrow: th("hubEyebrow"),
+            title: th("hubTitle", vars),
+            intro: th("hubIntro", vars),
+            heading: th("hubHeading"),
+          }}
+        />
+      );
+    }
+    notFound();
+  }
 
   const t = await getTranslations({ locale, namespace: "festivalDetail" });
   const destName = (() => {
