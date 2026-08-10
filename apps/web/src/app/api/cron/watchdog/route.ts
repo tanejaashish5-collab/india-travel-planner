@@ -36,6 +36,24 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   "audit-gsc-ga4-correlation": 2, // daily cron 03:45 UTC
   "audit-supabase-advisors": 0.5, // every 6h
   "audit-bot-crawl-rate": 2,  // daily cron 03:00 UTC
+  // Added 2026-08-10. These six had been RUNNING but UNWATCHED since they were
+  // written — if any had stopped, nothing would have noticed. Cadences are set
+  // from measured history (scripts/probe-cron-health.mjs), not from the cron
+  // expression, so they reflect what the jobs actually do in production.
+  "canary-probe": 0.1,          // every 30 min — measured 30 consecutive clean runs
+  "audit-hero-images": 2,       // daily 03:50 UTC — measured exactly 1.0d apart, 30 runs
+  "data-baseline": 8,           // weekly — measured exactly 7.0d apart, 18 runs
+  "road-conditions-sweep": 8,   // weekly 02:00 UTC — measured 7.0d, 15 runs
+  "sos-auto-reverify": 8,       // weekly — the SOS number safety loop
+  "sos-verify-reminder": 8,     // weekly
+  // DELIBERATELY NOT WATCHED, with reasons:
+  //  - send-destination-alerts: writes no ops_reports row at all, so there is
+  //    nothing to watch. Instrument it first, then add it here.
+  //  - watchdog: watching itself is circular. Its absence is the signal (see the
+  //    header note) and an external heartbeat is the belt-and-braces.
+  //  - refresh-stay-picks: dead job name, superseded by -agent on 2026-08-04.
+  //  - road-sweep-agent: only one run so far (2026-08-10); no cadence can be
+  //    inferred from a single point. Add once it has a few weeks of history.
 };
 
 // Earliest expected first run per job. Monthly crons deployed mid-cycle may
@@ -74,27 +92,30 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
 //     worse than no alert (same reasoning as the first-run suppression below).
 // Jobs absent from this map fall back to DEFAULT_ESCALATION_MULTIPLIER × cadence.
 //
-// ⚠️ canary-probe is PRE-STAGED, not live. It is absent from
-// EXPECTED_CADENCE_DAYS above, and the health loop iterates THAT map — so this
-// entry does nothing until canary-probe is added there. Audited 2026-08-10:
-// EIGHT running crons are unwatched (canary-probe, sos-auto-reverify,
-// sos-verify-reminder, road-conditions-sweep, data-baseline, audit-hero-images,
-// send-destination-alerts, watchdog itself). Six of them do write ops_reports,
-// so they can be watched — but adding a job whose live state is unknown risks a
-// standing MISSING alert every day, which is the alert-fatigue failure this file
-// works hard to avoid. Add them deliberately, one at a time, after checking each
-// one's most recent ops_reports row.
+// ⚠️ OPT-IN, NOT OPT-OUT — and that is the whole point.
+//
+// The first draft of this gave every job a default fuse. Probing the real
+// ops_reports history (scripts/probe-cron-health.mjs, 2026-08-10) showed that
+// would have been wrong, because **alerts_count does not mean the same thing in
+// different jobs**. Two would have fired a false alarm on day one:
+//
+//   - refresh-stay-picks-agent had been "flagged" 3 runs running. Its actual
+//     payload: ok 20, fail 0, total 20, 43 picks written. The alert was HONEST
+//     SCARCITY — the agent declining to invent stays where none exist, which is
+//     the data rule working exactly as intended. Escalating it would punish the
+//     system for being correct.
+//   - audit-gsc-alerts has been flagged 30 runs out of 30. Its own findings say
+//     "Contextual only — this is NOT by itself a regression." It is an advisory
+//     job whose resting state is needs_review; escalating it can never inform.
+//
+// So a job only escalates if listed here, and it is only listed if alerts_count
+// genuinely counts FAILURES. Everywhere else the number counts findings,
+// exceptions, or deliberate honest-scarcity notes, and escalating it would
+// manufacture the alert fatigue this file exists to avoid.
 const NEEDS_REVIEW_ESCALATION_DAYS: Record<string, number> = {
-  "canary-probe": 1,               // PRE-STAGED — see note above; a failing canary is a live 500
-  "audit-cache-headers": 2,        // hourly job; 2 days of violations is real
-  "refresh-stay-picks-agent": 2,   // the job that caused the scar
-  "audit-supabase-advisors": 3,
-  "audit-gsc-alerts": 7,           // findings are advisory, weekly tolerance
-  "audit-gsc-ga4-correlation": 7,
-  "audit-bot-crawl-rate": 7,
-  "freshness-drift": 22,           // review-debt by design; 21-day grace + 1
+  "canary-probe": 1,        // alerts_count = failures.length — pages returning 500
+  "audit-cache-headers": 2, // alerts_count = violations.length — real cache misconfig
 };
-const DEFAULT_ESCALATION_MULTIPLIER = 3;
 
 // How many recent runs to read per job. Must be enough to measure the longest
 // escalation window above at that job's cadence — freshness-drift is weekly
@@ -106,9 +127,53 @@ const HISTORY_LIMIT = 24;
 // ran fine but found items to review) and scheduled (monthly cron not yet due)
 // stay informational — digest only, never wake anyone up. needs_review_stuck is
 // the escalation of the former once it has persisted past its per-job window.
-const ALERT_STATUSES = new Set(["errored", "missing", "stale", "needs_review_stuck"]);
+const ALERT_STATUSES = new Set([
+  "errored",
+  "missing",
+  "stale",
+  "needs_review_stuck",
+  "silent_failure",
+]);
 
-export type OpsRun = { run_at: string; alerts_count: number | null; ok: boolean | null };
+export type OpsRun = {
+  run_at: string;
+  alerts_count: number | null;
+  ok: boolean | null;
+  summary?: unknown;
+};
+
+// Share of a job's own items that must fail before we call it a silent failure
+// even though it reported ok:true. 0.5 = "half or more of the work didn't work".
+const SILENT_FAILURE_RATIO = 0.5;
+
+/**
+ * Detect the 2026-08-04 shape directly: a job that reports ok:true while most of
+ * its OWN items failed.
+ *
+ * This is the precise detector for that incident, and it exists because the
+ * needs_review escalation above turned out NOT to cover it — alerts_count is
+ * semantically overloaded across jobs (see the note on NEEDS_REVIEW_ESCALATION_DAYS),
+ * so it cannot be trusted as a failure signal in general. A job's own
+ * fail/total counters can be.
+ *
+ * Reads whatever the job puts in `summary`, so it costs nothing for jobs that
+ * don't report counters — they simply return null and are unaffected. Today
+ * refresh-stay-picks-agent writes {ok, fail, total}; the old refresh-stay-picks
+ * wrote the same shape while failing every item, which is exactly what went
+ * unnoticed for 10 days.
+ */
+export function detectSilentFailure(
+  run: OpsRun | null
+): { total: number; failed: number; ratio: number } | null {
+  if (!run || run.ok !== true) return null; // ok:false already alerts as "errored"
+  const s = run.summary as Record<string, unknown> | null | undefined;
+  if (!s || typeof s !== "object") return null;
+  const total = typeof s.total === "number" ? s.total : null;
+  const fail = typeof s.fail === "number" ? s.fail : null;
+  if (total === null || fail === null || total <= 0 || fail < 0) return null;
+  const ratio = fail / total;
+  return ratio >= SILENT_FAILURE_RATIO ? { total, failed: fail, ratio } : null;
+}
 
 /**
  * Measure the unbroken run of "flagged but ok" results ending at the newest row.
@@ -154,9 +219,12 @@ type JobHealth = {
     | "errored"
     | "needs_review"
     | "needs_review_stuck"
+    | "silent_failure"
     | "scheduled";
   last_alerts_count: number | null;
   last_ok: boolean | null;
+  // Set only when the job reported ok:true while most of its own items failed.
+  silent_failure: { total: number; failed: number; ratio: number } | null;
   // Set only while the job is in needs_review / needs_review_stuck: when the
   // unbroken run of flagged runs began, how long it has lasted, and the fuse.
   needs_review_since: string | null;
@@ -232,7 +300,7 @@ export async function GET(req: NextRequest) {
   for (const job of jobs) {
     const { data } = await supabase
       .from("ops_reports")
-      .select("run_at, alerts_count, ok")
+      .select("run_at, alerts_count, ok, summary")
       .eq("job", job)
       .order("run_at", { ascending: false })
       .limit(HISTORY_LIMIT);
@@ -243,8 +311,9 @@ export async function GET(req: NextRequest) {
     let reviewSince: string | null = null;
     let reviewDays: number | null = null;
     let reviewRuns: number | null = null;
-    const escalateAfter =
-      NEEDS_REVIEW_ESCALATION_DAYS[job] ?? cadence * DEFAULT_ESCALATION_MULTIPLIER;
+    // undefined = this job never escalates on a needs_review streak (opt-in).
+    const escalateAfter: number | undefined = NEEDS_REVIEW_ESCALATION_DAYS[job];
+    const silent = detectSilentFailure(last);
     if (!last) {
       const earliest = EARLIEST_EXPECTED_FIRST_RUN[job];
       if (earliest && new Date(earliest).getTime() > now.getTime()) status = "scheduled";
@@ -253,12 +322,20 @@ export async function GET(req: NextRequest) {
       daysSince = (now.getTime() - new Date(last.run_at).getTime()) / 86400000;
       if (last.ok === false) status = "errored";
       else if (daysSince > cadence) status = "stale";
+      // Checked BEFORE the alerts_count branch: a job whose own counters say
+      // most of its work failed is broken regardless of what it flagged, and
+      // that reading is far more trustworthy than alerts_count.
+      else if (silent) status = "silent_failure";
       else if ((last.alerts_count ?? 0) > 0) {
-        const streak = classifyReviewStreak(data ?? [], now, escalateAfter);
-        reviewSince = streak.since;
-        reviewDays = streak.days;
-        reviewRuns = streak.runs;
-        status = streak.stuck ? "needs_review_stuck" : "needs_review";
+        // Only measure the streak for jobs that opted in — for everyone else
+        // needs_review is their normal resting state and carries no signal.
+        if (escalateAfter !== undefined) {
+          const streak = classifyReviewStreak(data ?? [], now, escalateAfter);
+          reviewSince = streak.since;
+          reviewDays = streak.days;
+          reviewRuns = streak.runs;
+          status = streak.stuck ? "needs_review_stuck" : "needs_review";
+        } else status = "needs_review";
       } else status = "ok";
     }
     health.push({
@@ -272,7 +349,8 @@ export async function GET(req: NextRequest) {
       needs_review_since: reviewSince,
       needs_review_days: reviewDays === null ? null : Number(reviewDays.toFixed(1)),
       needs_review_runs: reviewRuns,
-      escalation_after_days: reviewSince ? escalateAfter : null,
+      escalation_after_days: reviewSince ? (escalateAfter ?? null) : null,
+      silent_failure: silent,
     });
   }
 
@@ -320,9 +398,11 @@ export async function GET(req: NextRequest) {
         // ok:true reads as healthy everywhere else, so the subject is the only
         // place it can announce itself before you open anything.
         subject: (() => {
-          const stuck = alertable.filter((h) => h.status === "needs_review_stuck");
-          return stuck.length > 0
-            ? `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s), ${stuck.length} silently stuck (${stuck.map((h) => h.job).join(", ")})`
+          const silent = alertable.filter(
+            (h) => h.status === "silent_failure" || h.status === "needs_review_stuck"
+          );
+          return silent.length > 0
+            ? `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s), ${silent.length} FAILING SILENTLY (${silent.map((h) => h.job).join(", ")})`
             : `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s) need attention`;
         })(),
         html: renderAlertHtml(alertable, health),
@@ -392,6 +472,10 @@ function statusColour(status: JobHealth["status"]): string {
 // sees the word "needs_review_stuck" and has no idea why today differs from
 // yesterday, which is how an alert becomes wallpaper.
 function reviewSuffix(h: JobHealth): string {
+  if (h.silent_failure) {
+    const { failed, total, ratio } = h.silent_failure;
+    return ` — SILENT FAILURE: ${failed} of ${total} items failed (${Math.round(ratio * 100)}%) but the job reported ok:true, so every other signal reads healthy. This is the 2026-08-04 shape.`;
+  }
   if (h.needs_review_days === null || h.needs_review_runs === null) return "";
   const fuse = h.escalation_after_days;
   const core = `flagged ${h.needs_review_runs} run(s) in a row over ${h.needs_review_days}d`;
@@ -402,6 +486,10 @@ function reviewSuffix(h: JobHealth): string {
 
 // HTML twin of reviewSuffix, for the table cell in both email renderers.
 function reviewCell(h: JobHealth, colour: string): string {
+  if (h.silent_failure) {
+    const { failed, total } = h.silent_failure;
+    return `<br><span style="color:${colour}">${failed}/${total} items failed, reported ok:true</span>`;
+  }
   if (h.needs_review_days === null) return "";
   const tail =
     h.status === "needs_review_stuck"

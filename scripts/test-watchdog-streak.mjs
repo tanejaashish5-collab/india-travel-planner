@@ -32,8 +32,10 @@ import { join } from "node:path";
 const SRC = "apps/web/src/app/api/cron/watchdog/route.ts";
 const src = readFileSync(SRC, "utf8");
 const fn = src.match(/export function classifyReviewStreak\([\s\S]*?\n\}\n/);
-const ty = src.match(/export type OpsRun = [^\n]*\n/);
-if (!fn || !ty) {
+const sf = src.match(/export function detectSilentFailure\([\s\S]*?\n\}\n/);
+const ty = src.match(/export type OpsRun = \{[\s\S]*?\n\};\n/);
+const ratio = src.match(/const SILENT_FAILURE_RATIO = [^\n]*\n/);
+if (!fn || !ty || !sf || !ratio) {
   console.error(
     `✗ could not locate classifyReviewStreak / OpsRun in ${SRC} — renamed or moved?\n` +
       `  This test is deliberately brittle here: if the function it guards disappears,\n` +
@@ -43,8 +45,8 @@ if (!fn || !ty) {
 }
 const dir = mkdtempSync(join(tmpdir(), "watchdog-streak-"));
 const tmp = join(dir, "streak.ts");
-writeFileSync(tmp, ty[0] + "\n" + fn[0]);
-const { classifyReviewStreak } = await import(tmp);
+writeFileSync(tmp, ty[0] + "\n" + ratio[0] + "\n" + fn[0] + "\n" + sf[0]);
+const { classifyReviewStreak, detectSilentFailure } = await import(tmp);
 
 const NOW = new Date("2026-08-10T02:00:00Z");
 const daysAgo = (d) => new Date(NOW.getTime() - d * 86400000).toISOString();
@@ -139,7 +141,66 @@ for (const c of cases) {
   );
 }
 
-console.log(`\n${cases.length - failed}/${cases.length} passed`);
+// ── detectSilentFailure — the precise 2026-08-04 detector ────────────────────
+// Cases use REAL payload shapes read out of ops_reports on 2026-08-10, so a
+// regression here would have to survive contact with production data.
+console.log("");
+const run = (summary, ok = true) => ({ run_at: daysAgo(0), alerts_count: 0, ok, summary });
+const silentCases = [
+  {
+    name: "THE SCAR — every item failed but ok:true → SILENT FAILURE",
+    run: run({ ok: 0, fail: 20, total: 20 }),
+    expect: true,
+  },
+  {
+    name: "REAL payload, refresh-stay-picks-agent 2026-08-09 (20/20 ok) → clean",
+    run: run({ ok: 20, fail: 0, total: 20, picks_written: 43 }),
+    expect: false,
+  },
+  {
+    name: "half failed → SILENT FAILURE (at the 0.5 threshold)",
+    run: run({ ok: 10, fail: 10, total: 20 }),
+    expect: true,
+  },
+  {
+    name: "a few failed (4/20) → clean, that is normal attrition not an outage",
+    run: run({ ok: 16, fail: 4, total: 20 }),
+    expect: false,
+  },
+  {
+    name: "ok:false already alerts as errored → detector stays out of the way",
+    run: run({ ok: 0, fail: 20, total: 20 }, false),
+    expect: false,
+  },
+  {
+    name: "REAL payload, sos-auto-reverify (no fail/total keys) → ignored safely",
+    run: run({ due: 300, skipped: 138, escalated: 2, urls_failed: 22, total_rows: 533 }),
+    expect: false,
+  },
+  {
+    name: "no summary at all → ignored, no crash",
+    run: run(null),
+    expect: false,
+  },
+  {
+    name: "total 0 → ignored (no division by zero)",
+    run: run({ ok: 0, fail: 0, total: 0 }),
+    expect: false,
+  },
+  { name: "null run → ignored, no crash", run: null, expect: false },
+];
+for (const c of silentCases) {
+  const got = detectSilentFailure(c.run);
+  const ok = !!got === c.expect;
+  if (!ok) failed++;
+  console.log(
+    `${ok ? "\x1b[32m✓\x1b[0m" : "\x1b[31m✗\x1b[0m"} ${c.name}` +
+      (ok ? "" : `\n    expected ${c.expect ? "detected" : "clean"}, got ${JSON.stringify(got)}`)
+  );
+}
+
+const total = cases.length + silentCases.length;
+console.log(`\n${total - failed}/${total} passed`);
 if (failed) {
   console.error(`\n✗ ${failed} case(s) failed — the escalation is NOT safe to ship.`);
   process.exit(1);
