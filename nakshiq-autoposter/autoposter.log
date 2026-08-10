@@ -17216,3 +17216,20 @@ Date range: 2026-04-15 → 2026-08-09
 2026-08-10 05:48:39  INFO      YT Short posted: format=dont_go_here, music=hype-267
 2026-08-10 05:48:40  INFO      State saved. YT Short run complete.
 2026-08-10 05:48:40  INFO      ════════════════════════════════════════════════════════════
+2026-08-10 07:01:29  INFO      ════════════════════════════════════════════════════════════
+2026-08-10 07:01:29  INFO      Nakshiq Autoposter · REEL STUDIO · 2026-08-10
+2026-08-10 07:01:29  INFO      ════════════════════════════════════════════════════════════
+2026-08-10 07:01:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-10 07:02:09  INFO      Synced → 20 destinations · 0 traps · 0 articles · 6 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=505
+2026-08-10 07:02:38  INFO      Reel built: fmt=itinerary, route=ladakh-express-7d, 14.9s, 12055KB
+2026-08-10 07:02:38  INFO          Requesting upload URL for reel_studio_itinerary_ladakh-express-7d.mp4 (12,344,449 bytes, video/mp4)
+2026-08-10 07:02:39  INFO          Uploading to R2 (timeout=300s)...
+2026-08-10 07:02:41  INFO          R2 PUT OK. Confirming...
+2026-08-10 07:02:42  INFO          Media ready: AzntF (12,344,449 bytes · reel_studio_itinerary_ladakh-express-7d.mp4)
+2026-08-10 07:02:43  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-10 07:02:43  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-08-10 07:03:28  INFO      [instagram/nakshiq] ✅ studio reel published · post_id=xXuP2
+2026-08-10 07:03:28  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-08-10 07:03:37  INFO      [youtube/@naksh-iq] ✅ studio reel published · post_id=PtaMi
+2026-08-10 07:03:37  INFO      Reel studio run complete (fmt=itinerary, route=ladakh-express-7d, posted=True).
+2026-08-10 07:03:37  INFO      ════════════════════════════════════════════════════════════
