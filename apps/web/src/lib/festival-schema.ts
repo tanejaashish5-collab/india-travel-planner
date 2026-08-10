@@ -71,7 +71,8 @@ export function festivalsItemListJsonLd(
   yearOverride?: number,
 ) {
   const year = yearOverride ?? new Date().getFullYear();
-  const items = festivals.map((f, i) => {
+  let pos = 0;
+  const items = festivals.flatMap((f) => {
     const stateName = (() => {
       const st = f.destinations?.state;
       if (Array.isArray(st)) return st[0]?.name ?? fallbackStateName ?? "India";
@@ -80,16 +81,17 @@ export function festivalsItemListJsonLd(
 
     const rowMonth = monthNum ?? f.month;
     const validMonth = rowMonth >= 1 && rowMonth <= 12;
+    // Movable/unannounced festivals (month=null in DB) carry no honest startDate.
+    // Emitting an Event without startDate earns GSC "Missing field startDate" —
+    // same policy as singleFestivalEventJsonLd returning null for these cases.
+    if (!validMonth) return [];
+
     const dl = dateLabel(f);
-    const dateRange = dl && validMonth ? tryExtractIsoRange(dl, year, rowMonth) : null;
-    // Festivals with an unconfirmed/movable month (null in the DB) carry no
-    // schema.org date — better to omit than emit an invalid "2026-null".
-    const dates = validMonth
-      ? {
-          startDate: dateRange?.startDate ?? `${year}-${pad2(rowMonth)}`,
-          endDate: dateRange?.endDate ?? `${year}-${pad2(rowMonth)}-${pad2(lastDayOfMonth(year, rowMonth))}`,
-        }
-      : {};
+    const dateRange = dl ? tryExtractIsoRange(dl, year, rowMonth) : null;
+    const dates = {
+      startDate: dateRange?.startDate ?? `${year}-${pad2(rowMonth)}`,
+      endDate: dateRange?.endDate ?? `${year}-${pad2(rowMonth)}-${pad2(lastDayOfMonth(year, rowMonth))}`,
+    };
 
     const event: Record<string, unknown> = {
       "@type": "Event",
@@ -110,11 +112,11 @@ export function festivalsItemListJsonLd(
       ...(dl && { disambiguatingDescription: `Date label: ${dl}` }),
     };
 
-    return {
+    return [{
       "@type": "ListItem",
-      position: i + 1,
+      position: ++pos,
       item: event,
-    };
+    }];
   });
 
   return {
