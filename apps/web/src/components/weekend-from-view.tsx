@@ -92,22 +92,41 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
   const nearby: NearbyRow[] = rpc.data;
   const ids = nearby.map((n) => n.destination_id);
 
-  const { data: full, error: fullError } = await supabase
-    .from("destinations")
-    .select("id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, solo_female_score, state:states(name), kids_friendly(suitable, rating), destination_months(month, score)")
-    .in("id", ids);
+  const currentMonth = currentMonthIST();
+
+  // The destination_months join used to be embedded here, which pulled ALL 12
+  // month rows per destination (~12x the rows) when only the CURRENT month's
+  // score is ever read below. On 2026-08-11 that lateral join tipped over the
+  // Postgres statement timeout and failed the whole production build on
+  // /en/weekend-from-bangalore. Two narrow indexed queries beat one wide join.
+  const [{ data: full, error: fullError }, { data: monthRows, error: monthError }] = await Promise.all([
+    supabase
+      .from("destinations")
+      .select("id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, solo_female_score, state:states(name), kids_friendly(suitable, rating)")
+      .in("id", ids),
+    supabase
+      .from("destination_months")
+      .select("destination_id, score")
+      .in("destination_id", ids)
+      .eq("month", currentMonth),
+  ]);
   // Don't swallow a hydrate error into `full ?? []` — that bakes an empty page.
   if (fullError) {
     throw new Error(`[weekend-from:${city}] destinations hydrate failed: ${fullError.message}`);
   }
+  if (monthError) {
+    throw new Error(`[weekend-from:${city}] month-score hydrate failed: ${monthError.message}`);
+  }
 
-  const currentMonth = currentMonthIST();
+  const scoreMap = new Map<string, number | null>(
+    (monthRows ?? []).map((m: { destination_id: string; score: number | null }) => [m.destination_id, m.score]),
+  );
   const distMap = new Map<string, number>(nearby.map((n) => [n.destination_id, n.distance_km]));
   const hydrated: HydratedDest[] = (full ?? [])
     .map((d: DestRow) => ({
       ...d,
       distance_km: Math.round(distMap.get(d.id) ?? 0),
-      current_month_score: d.destination_months?.find((m) => m.month === currentMonth)?.score ?? null,
+      current_month_score: scoreMap.get(d.id) ?? null,
     }))
     .sort((a, b) => a.distance_km - b.distance_km);
 
