@@ -254,7 +254,7 @@ export default async function WithKidsPage({
     "FAMILY GUIDE",
     stateName?.toUpperCase(),
     kf?.rating ? `KIDS ${formatScoreInline(kf.rating)}` : null,
-    kf?.min_age ? `AGES ${kf.min_age}+` : null,
+    kf?.min_recommended_age ? `AGES ${kf.min_recommended_age}+` : null,
   ]
     .filter(Boolean)
     .join(" · ");

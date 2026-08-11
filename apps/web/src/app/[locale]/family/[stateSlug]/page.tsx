@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 type KidsInfo = {
   suitable?: boolean | null;
   rating?: number | null;
-  min_age?: number | null;
+  min_recommended_age?: number | null;
   reasons?: string[] | null;
 };
 
@@ -57,11 +57,22 @@ export default async function FamilyByStatePage({ params }: { params: Promise<{ 
   const supabase = getSupabase();
   if (!supabase) notFound();
 
-  const { data: destinations } = await supabase
+  // The column is `min_recommended_age`. It was written as `min_age` from this
+  // page's creation until 2026-08-11, so PostgREST rejected the ENTIRE query,
+  // `.data` came back null, and `?? []` below rendered every /family/<state>
+  // page as an empty list with HTTP 200 — hiding 413 kid-suitable rows across
+  // 36 states. Same silent-failure shape as the /api/itinerary bug fixed in
+  // f1a055c0. Never let a query error fall through as plausible emptiness.
+  const { data: destinations, error: destError } = await supabase
     .from("destinations")
-    .select("id, name, tagline, difficulty, elevation_m, state:states(name), kids_friendly(suitable, rating, min_age, reasons)")
+    .select("id, name, tagline, difficulty, elevation_m, state:states(name), kids_friendly(suitable, rating, min_recommended_age, reasons)")
     .eq("state_id", stateSlug)
     .order("name");
+
+  if (destError) {
+    console.error(`[family/${stateSlug}] destination query failed:`, destError.message);
+    throw new Error(`Family page query failed: ${destError.message}`);
+  }
 
   const familyDests: DestRow[] = (destinations ?? [])
     .filter((d: DestRow) => {
@@ -220,7 +231,7 @@ export default async function FamilyByStatePage({ params }: { params: Promise<{ 
                           {d.tagline}
                         </p>
                       )}
-                      {kids?.min_age && (
+                      {kids?.min_recommended_age && (
                         <p
                           style={{
                             fontFamily: "var(--cinema-mono)",
@@ -231,7 +242,7 @@ export default async function FamilyByStatePage({ params }: { params: Promise<{ 
                             margin: "4px 0 0",
                           }}
                         >
-                          Suitable for ages {kids.min_age}+
+                          Suitable for ages {kids.min_recommended_age}+
                         </p>
                       )}
                       {kids?.reasons?.[0] && (
