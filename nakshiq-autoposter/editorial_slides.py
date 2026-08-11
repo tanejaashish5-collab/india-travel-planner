@@ -190,7 +190,7 @@ def _page(body: str, chip_num, chip_label, counter, last=False) -> str:
             f'<span class="swipe">{swipe}</span></div></body></html>')
 
 
-def _shoot(html_doc: str) -> Image.Image:
+def _shoot(html_doc: str, w: int = None, h: int = None) -> Image.Image:
     chrome = _chrome()
     if not chrome:
         raise RuntimeError("no chrome binary")
@@ -199,7 +199,7 @@ def _shoot(html_doc: str) -> Image.Image:
         hp.write_text(html_doc, encoding="utf-8")
         r = subprocess.run([chrome, "--headless=new", "--disable-gpu", "--no-sandbox",
                             "--disable-dev-shm-usage", "--hide-scrollbars",
-                            f"--screenshot={pp}", f"--window-size={W},{H}",
+                            f"--screenshot={pp}", f"--window-size={w or W},{h or H}",
                             "--force-device-scale-factor=1", str(hp)],
                            capture_output=True, timeout=90)
         if not pp.exists():
@@ -299,3 +299,114 @@ def end(headline_lines: list, sub: str, photo: Path | None,
                              ("globe", "<b>Every claim above is a verified database field</b> — go / wait / skip for 500+ places, every month.")])
             + _note("hope it helps.", top=H - 250, right=100))
     return _shoot(_page(body, "END", "keep it", "", last=True))
+
+
+# ── festival greeting card (2026-08-02) ──────────────────────────────────────
+# The ADDITIONAL wish post on major festival days (founder: "a nice, happy
+# Independence Day with a tri-colour ... Happy Holi / Happy Diwali ... with the
+# right image"). Rendered here — NOT in PIL — because the greeting carries a
+# Devanagari line ("शुभ दीपावली") and PIL cannot shape Devanagari matras without
+# libraqm; Chrome + the vendored EdDeva font shapes it correctly, the same
+# reason the reel captions are romanized but these cards need not be.
+#
+# Tricolour note: India's Flag Code restricts commercial use of the actual
+# national flag, so independence/republic cards use tasteful saffron-white-green
+# THEMING with an Ashoka-chakra-inspired spoke motif — standard brand practice —
+# never a literal flag render.
+
+_GREET_THEMES = {
+    "tricolour": {"bg": "#F9F6EE", "fg": "#171310", "sub": "#4A443A", "accent": "#000080"},
+    "diyas":     {"bg": "#160E06", "fg": "#F4B740", "sub": "#C9A468", "accent": "#F4B740"},
+    "splash":    {"bg": "#F6F0E2", "fg": "#171310", "sub": "#4A443A", "accent": "#C05A2E"},
+    "stars":     {"bg": "#0C2418", "fg": "#E9C46A", "sub": "#A8BDA5", "accent": "#E9C46A"},
+    "gold":      {"bg": "#12100C", "fg": "#E9C46A", "sub": "#9C917B", "accent": "#E9C46A"},
+    "plain":     {"bg": "#F6F0E2", "fg": "#171310", "sub": "#4A443A", "accent": "#C05A2E"},
+}
+
+
+def _chakra_svg(size: int, color: str) -> str:
+    """24-spoke Ashoka-chakra-inspired ring (design motif, not a flag)."""
+    import math
+    c = size / 2
+    spokes = "".join(
+        f'<line x1="{c}" y1="{c}" x2="{c + (c - 6) * math.cos(math.radians(a))}" '
+        f'y2="{c + (c - 6) * math.sin(math.radians(a))}"/>'
+        for a in range(0, 360, 15))
+    return (f'<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" '
+            f'fill="none" stroke="{color}" stroke-width="2.5">'
+            f'<circle cx="{c}" cy="{c}" r="{c - 3}"/>'
+            f'<circle cx="{c}" cy="{c}" r="5" fill="{color}"/>{spokes}</svg>')
+
+
+def _greet_decor(mode: str, w: int, h: int, accent: str) -> tuple[str, str]:
+    """(background_layer, inline_motif) for a theme. The motif renders INSIDE
+    the centred text column, above the kicker — absolutely-positioned motifs at
+    fixed percentages landed on top of the text (the first tricolour render put
+    the chakra through 'FROM ALL OF US'), and the collision point moves with
+    the canvas height, so in-flow is the only placement that works for both
+    the 1350 feed and the 1920 story."""
+    if mode == "tricolour":
+        return (
+            f'<div style="position:absolute;top:0;left:0;right:0;height:{int(h*0.26)}px;'
+            f'background:linear-gradient(180deg,#FF9933E6 0%,#FF993355 62%,transparent 100%)"></div>'
+            f'<div style="position:absolute;bottom:0;left:0;right:0;height:{int(h*0.26)}px;'
+            f'background:linear-gradient(0deg,#138808E0 0%,#13880850 62%,transparent 100%)"></div>',
+            f'<div style="margin-bottom:34px">{_chakra_svg(104, "#000080")}</div>')
+    if mode == "diyas":
+        flames = "".join(
+            f'<div style="position:absolute;bottom:{int(h*0.17)}px;left:{pct}%;width:14px;height:14px;'
+            f'border-radius:50%;background:#FFD98A;box-shadow:0 0 26px 13px #F4B74066,0 0 70px 30px #F4B74033">'
+            f'</div>' for pct in (14, 32, 50, 68, 86))
+        return (f'<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 82%,'
+                f'#3A2510AA 0%,transparent 58%)"></div>{flames}'
+                f'<div style="position:absolute;bottom:{int(h*0.145)}px;left:8%;right:8%;height:2px;'
+                f'background:linear-gradient(90deg,transparent,#F4B74055,transparent)"></div>', "")
+    if mode == "splash":
+        dots = [(12, 18, 120, "#E85D2F"), (78, 14, 150, "#B03060"), (55, 26, 90, "#1D6FA5"),
+                (26, 74, 140, "#3D8B37"), (84, 78, 110, "#D4A017"), (8, 52, 80, "#7A4FBF")]
+        return ("".join(
+            f'<div style="position:absolute;left:{x}%;top:{y}%;width:{s}px;height:{s}px;border-radius:50%;'
+            f'background:{c};opacity:.30;filter:blur({int(s/5)}px)"></div>' for x, y, s, c in dots), "")
+    if mode == "stars":
+        pts = [(15, 16), (30, 9), (48, 19), (66, 8), (84, 15), (22, 30), (76, 28), (55, 33), (90, 38), (10, 42)]
+        return ("".join(
+            f'<div style="position:absolute;left:{x}%;top:{y}%;width:5px;height:5px;border-radius:50%;'
+            f'background:#E9C46A;opacity:.85;box-shadow:0 0 9px 2.5px #E9C46A55"></div>' for x, y in pts), "")
+    if mode == "gold":
+        return (f'<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,'
+                f'#E9C46A22 0%,transparent 55%)"></div>', "")
+    return ("", f'<div style="width:180px;height:4px;border-radius:2px;background:{accent};'
+                f'margin-bottom:34px"></div>')
+
+
+def greeting_card(mode: str, greeting_en: str, greeting_hi: str, sub: str,
+                  w: int = 1080, h: int = 1350) -> Image.Image:
+    """Full-bleed festival wish card. `h`=1920 renders the Story variant —
+    identical design, breathing room top and bottom."""
+    t = _GREET_THEMES.get(mode) or _GREET_THEMES["plain"]
+    decor, motif = _greet_decor(mode, w, h, t["accent"])
+    big = 108 if len(greeting_en) <= 18 else (88 if len(greeting_en) <= 26 else 72)
+    html = (
+        f'<html><head><meta charset="utf-8"><style>{CSS}'
+        # CSS pins html/body at the carousel's 1080x1350 — re-pin to THIS render's
+        # size or the 1920 Story centres its content in the top 1350px.
+        f'html,body{{width:{w}px;height:{h}px}}'
+        f'body{{background:{t["bg"]};padding:0}}'
+        f'.gwrap{{position:absolute;inset:0;display:flex;flex-direction:column;'
+        f'align-items:center;justify-content:center;text-align:center;padding:0 90px}}'
+        f'.gfrom{{font-family:"EdSansBold";font-size:26px;letter-spacing:6px;color:{t["sub"]};'
+        f'text-transform:uppercase;margin-bottom:26px}}'
+        f'.gen{{font-family:"EdSansBold","EdDeva";font-size:{big}px;line-height:1.06;'
+        f'letter-spacing:-2px;color:{t["fg"]};margin-bottom:24px}}'
+        f'.ghi{{font-family:"EdDeva";font-size:52px;color:{t["fg"]};opacity:.92;margin-bottom:30px}}'
+        f'.gsub{{font-family:"EdSerif";font-size:36px;color:{t["sub"]}}}'
+        f'.gfoot{{position:absolute;bottom:56px;left:0;right:0;display:flex;justify-content:center;'
+        f'align-items:center;gap:14px;font-family:"EdSansBold";font-size:26px;letter-spacing:3px;'
+        f'color:{t["sub"]}}}'
+        f'</style></head><body>{decor}'
+        f'<div class="gwrap">{motif}<div class="gfrom">From all of us at NakshIQ</div>'
+        f'<div class="gen">{_e(greeting_en)}</div>'
+        + (f'<div class="ghi">{_e(greeting_hi)}</div>' if greeting_hi else "")
+        + (f'<div class="gsub">{_e(sub)}</div>' if sub else "")
+        + f'</div><div class="gfoot">NAKSHIQ &middot; nakshiq.com</div></body></html>')
+    return _shoot(html, w=w, h=h)

@@ -11215,6 +11215,96 @@ def _carousel_caption_extras(st: dict, fmt: str, caption: str) -> str:
     return caption + block
 
 
+def _publish_greeting(st: dict, dry_run: bool = False):
+    """Festival wish post — the ADDITIONAL post on major festival days
+    (founder 2026-08-02: 'an additional post on all the major festival days
+    which wishes the followers'). Publishes the themed greeting card to IG + FB
+    plus an IG Story, then returns so the normal carousel still posts — an
+    extra post on ~12 days a year, never a replacement.
+
+    Runs before the carousel build and saves state immediately after posting,
+    so a later carousel abort (no format had data, uploads failed) can neither
+    block the wish nor lose the posted-marker and double-greet on a retry.
+    Kill switch: NAKSHIQ_GREETING=0."""
+    import carousel_studio as cstudio
+    if os.environ.get("NAKSHIQ_GREETING", "1") == "0":
+        return
+    try:
+        g = cstudio.build_greeting_post()
+    except Exception as e:
+        log.warning(f"greeting: build failed ({e}) — normal carousel continues")
+        return
+    if not g:
+        return
+    today = date.today().isoformat()
+    slug = g["slug"]
+    log.info(f"Greeting day: {g['name']} — publishing the wish post first (additional, "
+             f"not replacing the carousel).")
+
+    media = upload_media_bytes(g["image"], f"greeting_{slug}_{today}.jpg", "image/jpeg",
+                               apply_brand_stamp=False)
+    if not media:
+        log.warning("greeting: feed image upload failed — skipping greeting, carousel continues")
+        return
+
+    accounts = [a for a in get_connected_accounts() if a.get("isActive")]
+    posted = False
+    for account in accounts:
+        platform = account["network"]
+        if platform not in ("instagram", "facebook"):
+            continue
+        acc_id = account["id"]
+        label = f"{platform}/{account.get('username', acc_id)}"
+        key = acc_id + "_greeting"
+        if st.get("posted_today", {}).get(key) == today:
+            log.info(f"[{label}] greeting already posted today — skipping.")
+            continue
+        caption = sanitize(apply_platform_voice(g["caption"], platform))
+        if dry_run:
+            _s = " + 1 Story" if (g.get("story") and platform == "instagram") else ""
+            log.info(f"[{label}] DRY RUN — would publish greeting ({slug}{_s}):\n{caption[:200]}...")
+            continue
+        res = publish_feed_post(
+            caption, account, [media], dry_run=False,
+            dest_id=g.get("primary_dest_id"), fmt=f"greeting.{slug}",
+            media_id=f"greeting_{slug}_{today}",
+            utm_content=build_utm_content(g.get("primary_dest_id"), f"greeting_{slug}"),
+        )
+        if not res:
+            log.warning(f"[{label}] greeting post failed (API rejected).")
+            continue
+        post_id = res.get("post", {}).get("id", "unknown")
+        _mark_posted_today(st, key)
+        posted = True
+        record_publish(st, dest_id=g.get("primary_dest_id"), fmt=f"greeting.{slug}",
+                       post_id=post_id, platform=platform,
+                       media_id=f"greeting_{slug}_{today}")
+        log.info(f"[{label}] ✅ greeting published ({slug}) · post_id={post_id}")
+
+        # Companion IG Story — same wish, 9:16. Best-effort: the feed wish is
+        # the deliverable, a Story failure only logs.
+        story_key = acc_id + "_greeting_story"
+        if (g.get("story") and platform == "instagram"
+                and st.get("posted_today", {}).get(story_key) != today):
+            try:
+                s_media = upload_media_bytes(g["story"], f"story_greeting_{slug}_{today}.jpg",
+                                             "image/jpeg", apply_brand_stamp=False)
+                s_res = publish_story(account, s_media, dry_run=False) if s_media else None
+                if s_res:
+                    _mark_posted_today(st, story_key)
+                    record_publish(st, dest_id=g.get("primary_dest_id"),
+                                   fmt="story.greeting", post_id=s_res.get("post", {}).get("id", "unknown"),
+                                   platform=platform, media_id=f"story_greeting_{slug}_{today}")
+                    log.info(f"[{label}] ✅ greeting Story published ({slug})")
+                else:
+                    log.warning(f"[{label}] greeting Story failed — feed wish unaffected.")
+            except Exception as e:
+                log.warning(f"[{label}] greeting Story failed ({e}) — feed wish unaffected.")
+
+    if posted and not dry_run:
+        save_state(st)
+
+
 def _run_carousel(force: bool = False, dry_run: bool = False):
     """Build + publish one verified-data carousel to Instagram + Facebook."""
     import carousel_studio as cstudio
@@ -11227,6 +11317,9 @@ def _run_carousel(force: bool = False, dry_run: bool = False):
     log.info("═" * 60)
     log.info(f"Nakshiq Autoposter · CAROUSEL · {today}")
     log.info("═" * 60)
+
+    # Festival wish first (additional post on ~12 days/yr, no-op otherwise).
+    _publish_greeting(st, dry_run=dry_run)
 
     content = sync_all_content()
     seen_map = st.get("carousel_seen", {}) or {}

@@ -21,7 +21,7 @@ Formats (v1): best_month · skip_list · collection.  Score shown on the 0-10
 display scale (DB 1-5 × 2), matching the website.
 """
 from __future__ import annotations
-import os, io, subprocess, shutil, hashlib
+import os, io, json, subprocess, shutil, hashlib
 from pathlib import Path
 from datetime import datetime
 
@@ -877,6 +877,106 @@ def build_window_digest(content: dict, mname: str) -> dict | None:
             "caption": "\n".join(cap),
             "story": _story_from(story_art),
             "dest_ids": [p.get("id") for p in picks if p.get("id")]}
+
+
+# ── FESTIVAL GREETINGS (2026-08-02) ──────────────────────────────────────────
+# Founder: "this should be an additional post on all the major festival days
+# which wishes the followers". On a greeting day the daily slot publishes the
+# wish post FIRST, then continues with the normal carousel — an extra post on
+# ~12 days a year, never a replacement.
+#
+# Dates come from data/greetings/greetings.json, a curated calendar of majors,
+# because the festivals DB stores dates as unparseable freeform text. Lunar
+# dates are per-year and verified; when the last one passes, that festival
+# stops firing — fail-silent, never fail-wrong-day.
+GREETINGS_FILE = HERE / "data" / "greetings" / "greetings.json"
+
+
+def _greeting_for_today() -> dict | None:
+    """The greetings.json entry for today (IST), or None.
+
+    IST explicitly: the slot fires 07:17 UTC (12:47 IST) and GHA drift adds
+    1-3h, all safely the same IST date. If drift ever crossed IST midnight the
+    lookup would MISS rather than greet a day late — the correct failure
+    direction. NAKSHIQ_GREETING_DATE=YYYY-MM-DD overrides for testing."""
+    override = (os.environ.get("NAKSHIQ_GREETING_DATE") or "").strip()
+    if override:
+        today = override
+    else:
+        from datetime import timezone, timedelta as _td
+        today = (datetime.now(timezone.utc) + _td(hours=5, minutes=30)).strftime("%Y-%m-%d")
+    try:
+        data = json.loads(GREETINGS_FILE.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"greeting: calendar unreadable ({e})")
+        return None
+    for g in data.get("greetings", []):
+        if g.get("fixed") and today[5:] == g["fixed"]:
+            return g
+        if today in (g.get("dates") or []):
+            return g
+    return None
+
+
+def build_greeting_post() -> dict | None:
+    """The festival wish post for today, or None on ~353 days of the year.
+
+    Returns {slug, name, image (feed JPEG), story (9:16 JPEG), caption,
+    primary_dest_id}. Card rendering needs the editorial (Chrome) pipeline for
+    correct Devanagari shaping — if Chrome is unavailable the card falls back to
+    English-only PIL rather than posting broken matras."""
+    g = _greeting_for_today()
+    if not g:
+        return None
+    theme = g.get("theme") or {}
+    mode = theme.get("mode") or "plain"
+    try:
+        feed = _ed.greeting_card(mode, g["greeting_en"], g.get("greeting_hi") or "",
+                                 g.get("sub") or "", w=1080, h=1350)
+        story = _ed.greeting_card(mode, g["greeting_en"], g.get("greeting_hi") or "",
+                                  g.get("sub") or "", w=1080, h=1920)
+    except Exception as e:
+        print(f"greeting: editorial render failed ({e}) — PIL fallback, English only")
+        feed, story = _greeting_card_pil(g), None
+
+    emoji = g.get("emoji") or ""
+    cap = [f"{g['greeting_en']}{' ' + emoji if emoji else ''}"]
+    if g.get("greeting_hi"):
+        cap.append(g["greeting_hi"] + "।")
+    if g.get("sub"):
+        cap += ["", g["sub"]]
+    where = [x for x in (g.get("where") or []) if x.get("name") and x.get("line")]
+    if where:
+        cap += ["", "Where India celebrates it like nowhere else:"]
+        cap += [f"• {x['name']} — {x['line']}" for x in where[:3]]
+    cap += ["", "— Team NakshIQ", "", _hashtags(*(g.get("hashtags") or ["IncredibleIndia", "NakshIQ"]))]
+
+    return {"slug": g["slug"], "name": g["name"],
+            "image": _to_jpeg(feed),
+            "story": _to_jpeg(story) if story is not None else None,
+            "caption": "\n".join(cap),
+            "primary_dest_id": (where[0]["id"] if where and where[0].get("id") else None)}
+
+
+def _greeting_card_pil(g: dict) -> Image.Image:
+    """English-only emergency fallback (no Chrome). Deliberately carries NO
+    Devanagari — PIL without libraqm renders Hindi matras wrong, and a broken
+    'शुभ दीपावली' is worse than none."""
+    img = Image.new("RGB", (W, H), (246, 240, 226))
+    d = ImageDraw.Draw(img)
+    en = g["greeting_en"]
+    f = _F(BOLD, 96 if len(en) <= 18 else 72)
+    tw = d.textlength(en, font=f)
+    d.text(((W - tw) / 2, H * 0.40), en, font=f, fill=(23, 19, 16))
+    sub = g.get("sub") or ""
+    if sub:
+        fs = _F(SERIF, 40)
+        sw = d.textlength(sub, font=fs)
+        d.text(((W - sw) / 2, H * 0.40 + 130), sub, font=fs, fill=(74, 68, 58))
+    ff = _F(BOLD, 30)
+    fw = d.textlength("NAKSHIQ · nakshiq.com", font=ff)
+    d.text(((W - fw) / 2, H - 110), "NAKSHIQ · nakshiq.com", font=ff, fill=(139, 133, 120))
+    return img
 
 
 # Editorial cream — the story matte must be the slide's own paper colour, or the

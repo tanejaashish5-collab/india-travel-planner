@@ -1,0 +1,213 @@
+{
+  "_readme": [
+    "Festival-greeting calendar — drives the ADDITIONAL wish post on major festival days",
+    "(founder 2026-08-02: 'a nice happy Independence Day with tricolour ... additional post",
+    "on all the major festival days which wishes the followers').",
+    "",
+    "WHY THIS FILE EXISTS: the festivals DB table stores dates as freeform text",
+    "('October/November (lunar calendar)') which cannot be parsed into 'today IS Diwali'.",
+    "Greeting days therefore come from this curated calendar of majors only.",
+    "",
+    "RULES:",
+    " - 'fixed' = MM-DD, fires every year (national/Gregorian days).",
+    " - 'dates' = exact per-year dates for lunar festivals. VERIFIED ONLY — a wrong-day",
+    "   greeting is worse than none. All 2026 dates + Holi/Sankranti 2027 verified",
+    "   2026-08-02 (drikpanchang/calendardate/prokerala cross-check).",
+    " - When the last lunar date passes, that festival simply stops firing (fail-silent,",
+    "   never fail-wrong). REFRESH EACH DECEMBER for the coming year.",
+    " - Eid is deliberately ABSENT: it depends on moon sighting and can shift by a day;",
+    "   add it only with a near-date confirmation step.",
+    " - 'where' lines are verified rows from the festivals DB table — do not invent.",
+    " - subs are wish-language only (no factual claims that would need verification)."
+  ],
+  "greetings": [
+    {
+      "slug": "independence-day",
+      "name": "Independence Day",
+      "fixed": "08-15",
+      "greeting_en": "Happy Independence Day",
+      "greeting_hi": "स्वतंत्रता दिवस की शुभकामनाएं",
+      "sub": "Jai Hind.",
+      "emoji": "🇮🇳",
+      "theme": { "mode": "tricolour" },
+      "where": [
+        { "id": "port-blair", "name": "Port Blair", "line": "Flag hoisting at the Cellular Jail, where the freedom story is carved into the walls" }
+      ],
+      "hashtags": ["HappyIndependenceDay", "IndependenceDay", "JaiHind", "India", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "republic-day",
+      "name": "Republic Day",
+      "fixed": "01-26",
+      "greeting_en": "Happy Republic Day",
+      "greeting_hi": "गणतंत्र दिवस की शुभकामनाएं",
+      "sub": "Jai Hind.",
+      "emoji": "🇮🇳",
+      "theme": { "mode": "tricolour" },
+      "where": [
+        { "id": "delhi", "name": "Delhi", "line": "The Republic Day parade — every state's tableau on one avenue, and the flypast" }
+      ],
+      "hashtags": ["HappyRepublicDay", "RepublicDay", "JaiHind", "India", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "diwali",
+      "name": "Diwali",
+      "dates": ["2026-11-08"],
+      "greeting_en": "Happy Diwali",
+      "greeting_hi": "शुभ दीपावली",
+      "sub": "May the lamps light the way home.",
+      "emoji": "🪔",
+      "theme": { "mode": "diyas" },
+      "where": [
+        { "id": "gangotri", "name": "Gangotri", "line": "The temple closes for winter on Diwali day itself — the deity leaves in a palanquin procession" },
+        { "id": "havelock-island", "name": "Havelock Island", "line": "Diwali on the beach — community bonfire, local sweets, the sea" }
+      ],
+      "hashtags": ["HappyDiwali", "Diwali", "FestivalOfLights", "ShubhDeepavali", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "holi",
+      "name": "Holi",
+      "dates": ["2027-03-23"],
+      "greeting_en": "Happy Holi",
+      "greeting_hi": "होली की शुभकामनाएं",
+      "sub": "Let the colours fly.",
+      "emoji": "🎨",
+      "theme": { "mode": "splash" },
+      "where": [
+        { "id": "mathura", "name": "Mathura", "line": "A week of Braj Holi in Krishna's own towns" },
+        { "id": "vrindavan", "name": "Vrindavan", "line": "Lathmar Holi — Barsana's women, Nandgaon's men, and sticks" },
+        { "id": "panaji", "name": "Panaji", "line": "Shigmo, Goa's Holi — street parades, fugdi and dhalo folk dances" }
+      ],
+      "hashtags": ["HappyHoli", "Holi", "FestivalOfColours", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "raksha-bandhan",
+      "name": "Raksha Bandhan",
+      "dates": ["2026-08-28"],
+      "greeting_en": "Happy Raksha Bandhan",
+      "greeting_hi": "रक्षा बंधन की शुभकामनाएं",
+      "sub": "To the bond that travels with you.",
+      "emoji": "🪢",
+      "theme": { "mode": "plain", "accent": "#C05A2E" },
+      "where": [],
+      "hashtags": ["HappyRakshaBandhan", "RakshaBandhan", "Rakhi", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "onam",
+      "name": "Onam",
+      "dates": ["2026-08-26"],
+      "greeting_en": "Happy Onam",
+      "greeting_hi": "ओणम की शुभकामनाएं",
+      "sub": "Onam Ashamsakal!",
+      "emoji": "🌼",
+      "theme": { "mode": "plain", "accent": "#B8860B" },
+      "where": [
+        { "id": "alleppey", "name": "Alleppey", "line": "Onasadya served aboard a houseboat — 26 dishes on a banana leaf" }
+      ],
+      "hashtags": ["HappyOnam", "Onam", "Kerala", "OnamAshamsakal", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "janmashtami",
+      "name": "Janmashtami",
+      "dates": ["2026-09-04"],
+      "greeting_en": "Happy Janmashtami",
+      "greeting_hi": "जन्माष्टमी की शुभकामनाएं",
+      "sub": "Midnight, and the flute begins.",
+      "emoji": "🦚",
+      "theme": { "mode": "plain", "accent": "#1D6FA5" },
+      "where": [
+        { "id": "mathura", "name": "Mathura", "line": "Midnight in Krishna's birthplace — lakhs of devotees at the Janmabhoomi" },
+        { "id": "dwarka", "name": "Dwarka", "line": "Dahi handi and midnight festivities at Dwarkadhish, his legendary kingdom" }
+      ],
+      "hashtags": ["HappyJanmashtami", "Janmashtami", "Krishna", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "ganesh-chaturthi",
+      "name": "Ganesh Chaturthi",
+      "dates": ["2026-09-14"],
+      "greeting_en": "Happy Ganesh Chaturthi",
+      "greeting_hi": "गणपति बप्पा मोरया",
+      "sub": "May every obstacle step aside.",
+      "emoji": "🐘",
+      "theme": { "mode": "plain", "accent": "#E85D2F" },
+      "where": [
+        { "id": "mumbai", "name": "Mumbai", "line": "Lalbaugcha Raja and ten days of the city at full volume" },
+        { "id": "pune", "name": "Pune", "line": "Where public Ganeshotsav began — Tilak started it here in 1893" }
+      ],
+      "hashtags": ["GaneshChaturthi", "GanpatiBappaMorya", "Ganeshotsav", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "navratri",
+      "name": "Navratri",
+      "dates": ["2026-10-11"],
+      "greeting_en": "Happy Navratri",
+      "greeting_hi": "नवरात्रि की शुभकामनाएं",
+      "sub": "Nine nights of the Goddess.",
+      "emoji": "💃",
+      "theme": { "mode": "plain", "accent": "#B03060" },
+      "where": [
+        { "id": "vadodara", "name": "Vadodara", "line": "Garba nights with 50,000+ dancers — the global capital of Navratri" },
+        { "id": "katra", "name": "Katra", "line": "The nine-day pilgrimage surge to Mata Vaishno Devi" }
+      ],
+      "hashtags": ["HappyNavratri", "Navratri", "Garba", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "dussehra",
+      "name": "Dussehra",
+      "dates": ["2026-10-20"],
+      "greeting_en": "Happy Dussehra",
+      "greeting_hi": "विजयादशमी की शुभकामनाएं",
+      "sub": "Good wins. It always has.",
+      "emoji": "🏹",
+      "theme": { "mode": "plain", "accent": "#8B0000" },
+      "where": [
+        { "id": "mysore", "name": "Mysore", "line": "Mysuru Dasara — the illuminated palace and the Jamboo Savari procession" },
+        { "id": "kullu", "name": "Kullu", "line": "Kullu's Dussehra begins when everyone else's ends — 200+ village deities in procession" },
+        { "id": "jagdalpur", "name": "Jagdalpur", "line": "Bastar Dussehra, India's longest — 75 days of tribal celebration" }
+      ],
+      "hashtags": ["HappyDussehra", "Dussehra", "Vijayadashami", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "christmas",
+      "name": "Christmas",
+      "fixed": "12-25",
+      "greeting_en": "Merry Christmas",
+      "greeting_hi": "क्रिसमस की शुभकामनाएं",
+      "sub": "Peace, and somewhere beautiful to feel it.",
+      "emoji": "🎄",
+      "theme": { "mode": "stars" },
+      "where": [
+        { "id": "medak", "name": "Medak", "line": "Midnight mass at Medak Cathedral, one of Asia's largest churches" },
+        { "id": "port-blair", "name": "Port Blair", "line": "The Marina Park Christmas carnival — church services and community feasts" }
+      ],
+      "hashtags": ["MerryChristmas", "Christmas", "ChristmasInIndia", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "new-year",
+      "name": "New Year",
+      "fixed": "01-01",
+      "greeting_en": "Happy New Year",
+      "greeting_hi": "नए साल की शुभकामनाएं",
+      "sub": "New year. Right months. Better trips.",
+      "emoji": "✨",
+      "theme": { "mode": "gold" },
+      "where": [],
+      "hashtags": ["HappyNewYear", "NewYear", "TravelIndia", "IncredibleIndia", "NakshIQ"]
+    },
+    {
+      "slug": "makar-sankranti-pongal",
+      "name": "Makar Sankranti & Pongal",
+      "dates": ["2027-01-15"],
+      "greeting_en": "Happy Makar Sankranti & Pongal",
+      "greeting_hi": "मकर संक्रांति की शुभकामनाएं",
+      "sub": "The harvest, the kites, the turn of the sun.",
+      "emoji": "🪁",
+      "theme": { "mode": "plain", "accent": "#D4A017" },
+      "where": [
+        { "id": "chennai", "name": "Chennai", "line": "Pots boiling over on open fires to shouts of Pongalo Pongal" },
+        { "id": "vijayawada", "name": "Vijayawada", "line": "Three days of kites, kolam and Kanuma over the Krishna" }
+      ],
+      "hashtags": ["MakarSankranti", "Pongal", "HarvestFestival", "IncredibleIndia", "NakshIQ"]
+    }
+  ]
+}
