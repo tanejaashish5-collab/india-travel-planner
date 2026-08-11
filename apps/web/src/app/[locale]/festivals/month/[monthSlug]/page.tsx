@@ -7,6 +7,7 @@ import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { festivalsItemListJsonLd } from "@/lib/festival-schema";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
+import { getCachedFestivalSlugRows } from "@/lib/cached-data";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
@@ -73,10 +74,9 @@ export default async function FestivalsByMonthPage({ params }: { params: Promise
 
   // Full slug map (across all 331 rows) so each card can link to its
   // per-festival page. Collision-aware: 11 names dup across destinations.
-  const { data: allRows } = await supabase
-    .from("festivals")
-    .select("id, name, destination_id");
-  const slugMap = buildFestivalSlugMap((allRows ?? []) as FestivalSlugRow[]);
+  // Cached — see lib/cached-data.ts; this was a full-table read per month page.
+  const allRows = await getCachedFestivalSlugRows();
+  const slugMap = buildFestivalSlugMap(allRows as FestivalSlugRow[]);
 
   const MONTH_SLUGS = Object.keys(MONTH_MAP);
   const pageUrl = `https://www.nakshiq.com/${locale}/festivals/month/${monthSlug}`;

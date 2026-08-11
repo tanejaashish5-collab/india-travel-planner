@@ -14,6 +14,7 @@ import { WeatherWidget } from "@/components/weather-widget";
 import { localeAlternates } from "@/lib/seo-utils";
 import { singleFestivalEventJsonLd, type FestivalRow } from "@/lib/festival-schema";
 import { buildFestivalSlugMap, collidingBaseSlugs, festivalsForBaseSlug, type FestivalSlugRow } from "@/lib/festival-slug";
+import { getCachedFestivalSlugRows, getCachedFestivalRows } from "@/lib/cached-data";
 import { FestivalDisambiguation, type FestivalVariant } from "@/components/festival-disambiguation";
 import { festivalHeroSrc, festivalHeroCredit, festivalHeroPhotoSrc, festivalHeroPhotoCredit } from "@/lib/festival-heroes";
 import { destinationImage } from "@/lib/image-url";
@@ -104,13 +105,11 @@ function getSupabase() {
   return createClient(url, key);
 }
 
+// Cached: every festival page needs the FULL row set to resolve its own
+// collision-aware slug, so this was one full-table read per page (~720 per
+// build) until 2026-08-11. See lib/cached-data.ts.
 async function loadAllSlugs(): Promise<FestivalSlugRow[]> {
-  const supabase = getSupabase();
-  if (!supabase) return [];
-  const { data } = await supabase
-    .from("festivals")
-    .select("id, name, destination_id");
-  return (data ?? []) as FestivalSlugRow[];
+  return (await getCachedFestivalSlugRows()) as FestivalSlugRow[];
 }
 
 async function loadFestivalBySlug(slug: string): Promise<FestivalDetailRow | null> {
@@ -221,12 +220,7 @@ function firstOf<T>(v: T | T[] | null | undefined): T | undefined {
 // Variants behind a bare colliding slug, e.g. "ganesh-chaturthi" -> 11 rows.
 // Empty when the slug simply does not exist (a real 404).
 async function loadFestivalVariants(base: string): Promise<FestivalVariant[]> {
-  const supabase = getSupabase();
-  if (!supabase) return [];
-  const { data } = await supabase
-    .from("festivals")
-    .select("id, name, destination_id, month, approximate_date, description, destinations(name, state:states(name))");
-  const rows = (data ?? []) as unknown as FestivalVariantRow[];
+  const rows = (await getCachedFestivalRows()) as unknown as FestivalVariantRow[];
   return festivalsForBaseSlug(rows, base)
     .map(({ row, slug }) => {
       const dest = firstOf(row.destinations);

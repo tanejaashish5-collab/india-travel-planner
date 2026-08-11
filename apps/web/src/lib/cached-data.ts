@@ -41,6 +41,7 @@ export const REF_TAGS = {
   collections: "ref-collections",
   states: "ref-states",
   searchIndex: "ref-search-index",
+  festivals: "ref-festivals",
 } as const;
 
 /** All reference tags — bust these after any reference-data write. */
@@ -118,6 +119,61 @@ export const getCachedStates = unstable_cache(
   },
   ["ref-states-v1"],
   { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.states] },
+);
+
+// ── Festivals ───────────────────────────────────────────────────────────────
+// Festival slugs are DERIVED from the full row set (collision-aware, see
+// lib/festival-slug.ts), so every /festivals/* page needs ALL rows just to
+// resolve its own slug. Uncached, that was one full-table read PER PAGE —
+// ~720 per build across ~660 festival pages, the 29 collision hubs, and the
+// month pages. That load showed up as "canceling statement due to statement
+// timeout" plus 60s page-build timeouts in the 2026-08-11 production build.
+// Cached, the whole build shares one read per shape.
+
+export interface CachedFestivalSlugRow {
+  id: string;
+  name: string;
+  destination_id: string | null;
+}
+
+/** Minimal shape for slug-map building — the hot path, used by every festival page. */
+export const getCachedFestivalSlugRows = unstable_cache(
+  async (): Promise<CachedFestivalSlugRow[]> => {
+    const supabase = anonClient();
+    if (!supabase) return [];
+    const { data, error } = await supabase
+      .from("festivals")
+      .select("id, name, destination_id");
+    if (error) throw error; // don't cache an empty result on transient failure
+    return (data as CachedFestivalSlugRow[]) ?? [];
+  },
+  ["ref-festivals-slugs-v1"],
+  { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.festivals] },
+);
+
+export interface CachedFestivalRow extends CachedFestivalSlugRow {
+  month: number | null;
+  approximate_date: string | null;
+  description: string | null;
+  destinations?:
+    | { name?: string; state?: { name?: string } | { name?: string }[] }
+    | { name?: string; state?: { name?: string } | { name?: string }[] }[]
+    | null;
+}
+
+/** Richer shape with the destination join — used by the collision-hub pages. */
+export const getCachedFestivalRows = unstable_cache(
+  async (): Promise<CachedFestivalRow[]> => {
+    const supabase = anonClient();
+    if (!supabase) return [];
+    const { data, error } = await supabase
+      .from("festivals")
+      .select("id, name, destination_id, month, approximate_date, description, destinations(name, state:states(name))");
+    if (error) throw error; // don't cache an empty result on transient failure
+    return (data as unknown as CachedFestivalRow[]) ?? [];
+  },
+  ["ref-festivals-full-v1"],
+  { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.festivals] },
 );
 
 // ── Collections (lightweight index) ─────────────────────────────────────────
