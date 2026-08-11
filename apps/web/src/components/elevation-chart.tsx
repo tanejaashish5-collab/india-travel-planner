@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "@/components/ui/section-label";
 
@@ -28,6 +30,9 @@ export function ElevationChart({
   destinationName: string;
   className?: string;
 }) {
+  // Hook must precede the early return below — a conditional hook throws.
+  const t = useTranslations("destinationSections");
+
   if (!elevationM || elevationM < 1500) return null;
 
   // Visual ceiling: snap to the next major reference above the destination.
@@ -44,7 +49,7 @@ export function ElevationChart({
   return (
     <section id="section-elevation" className={cn("scroll-mt-24", className)}>
       <div className="flex flex-wrap items-center gap-3 mb-4">
-        <h2 className="text-xl font-semibold">Altitude Context</h2>
+        <h2 className="text-xl font-semibold">{t("altitudeContext")}</h2>
         <span className="text-sm text-muted-foreground">
           How high this sits vs places you already know.
         </span>
@@ -145,7 +150,7 @@ export function ElevationChart({
 
         {/* AMS indicator row */}
         <div className={cn("mt-5 rounded-lg border bg-background/40 px-3 py-2 text-xs", amsTone)}>
-          <SectionLabel as="span" tone="muted" className="mr-2">AMS risk</SectionLabel>
+          <SectionLabel as="span" tone="muted" className="mr-2">{t("amsRisk")}</SectionLabel>
           {elevationM >= 3500 && "High — acclimatize at least 2 nights before going higher. Diamox prophylaxis recommended."}
           {elevationM >= 2500 && elevationM < 3500 && "Moderate — sleep one night here before ascending further."}
           {elevationM >= 2100 && elevationM < 2500 && "Low but present — some travelers feel mild effects. Hydrate, go easy on day 1."}

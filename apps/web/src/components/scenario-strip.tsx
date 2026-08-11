@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "@/components/ui/section-label";
 
@@ -25,14 +27,20 @@ function LocaleLink({ to, children, className }: { to: string; children: React.R
 export function ScenarioStrip({
   scenarios,
   locale,
-  title = "If Things Go Wrong",
-  subtitle = "Pre-run these scenarios before you leave — you won't have signal to read them later.",
+  title,
+  subtitle,
 }: {
   scenarios: Scenario[] | null | undefined;
   locale: string;
   title?: string;
   subtitle?: string;
 }) {
+  // Defaults come from the message catalogue, not hardcoded English — these
+  // headings rendered in English on every /hi/ destination page. An explicit
+  // prop still wins; no current caller passes one.
+  const t = useTranslations("destinationSections");
+  const heading = title ?? t("ifThingsGoWrong");
+  const subheading = subtitle ?? t("scenarioSubtitle");
   if (!scenarios || scenarios.length === 0) return null;
 
   // Sort critical → warning → info
@@ -42,8 +50,8 @@ export function ScenarioStrip({
   return (
     <section id="section-scenarios" className="scroll-mt-24">
       <div className="flex flex-wrap items-center gap-3 mb-4">
-        <h2 className="text-xl font-semibold">{title}</h2>
-        <span className="text-sm text-muted-foreground">{subtitle}</span>
+        <h2 className="text-xl font-semibold">{heading}</h2>
+        <span className="text-sm text-muted-foreground">{subheading}</span>
       </div>
 
       {/* Stacked full-width rows — scenario text is dense enough that a
@@ -75,11 +83,11 @@ export function ScenarioStrip({
                   label without breathing room. */}
               <div className="space-y-3">
                 <div>
-                  <SectionLabel className="mb-1">If</SectionLabel>
+                  <SectionLabel className="mb-1">{t("ifLabel")}</SectionLabel>
                   <p className="text-sm leading-relaxed text-foreground/80">{s.if_clause}</p>
                 </div>
                 <div>
-                  <SectionLabel className="mb-1">Then</SectionLabel>
+                  <SectionLabel className="mb-1">{t("thenLabel")}</SectionLabel>
                   <p className={cn("text-sm leading-relaxed font-medium", tone.text)}>{s.then_clause}</p>
                 </div>
               </div>

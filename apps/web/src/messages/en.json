@@ -810,5 +810,17 @@
       "takeAgain": "Take it again"
     },
     "howPool": "The pool right now:"
+  },
+  "destinationSections": {
+    "altitudeContext": "Altitude Context",
+    "amsRisk": "AMS risk",
+    "emergencySos": "Emergency SOS",
+    "ifThingsGoWrong": "If Things Go Wrong",
+    "scenarioSubtitle": "Pre-run these scenarios before you leave — you won't have signal to read them later.",
+    "ifLabel": "If",
+    "thenLabel": "Then",
+    "whySpecial": "Why Special",
+    "whoShouldThinkTwice": "Who should think twice",
+    "questionsAndAnswers": "Questions & answers"
   }
 }

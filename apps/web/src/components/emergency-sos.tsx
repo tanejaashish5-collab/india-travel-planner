@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { getBrowserSupabase } from "@/lib/supabase-browser";
 
@@ -180,6 +181,7 @@ const REPORT_FIELDS = [
 ];
 
 export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySOS | null; destinationName: string }) {
+  const t = useTranslations("destinationSections");
   const [expanded, setExpanded] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
   const [reportField, setReportField] = useState("");
@@ -209,7 +211,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
           </svg>
         </div>
         <div className="flex-1 text-left">
-          <h2 className={`text-lg font-semibold ${expanded ? "text-red-400" : "text-foreground"}`}>Emergency SOS</h2>
+          <h2 className={`text-lg font-semibold ${expanded ? "text-red-400" : "text-foreground"}`}>{t("emergencySos")}</h2>
           {expanded ? (
             <p className="text-xs text-red-300/60">{destinationName} emergency contacts & protocols</p>
           ) : (

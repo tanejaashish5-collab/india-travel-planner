@@ -70,6 +70,7 @@ import { hasSafariGuide } from "@/lib/safari-guide";
 export function DestinationDetail({ dest }: { dest: any }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("destination");
+  const tSec = useTranslations("destinationSections");
   const tm = useTranslations("months");
   // Hero poster is the LCP element (video poster on every dest page) — emit a
   // high-priority preload into <head> during SSR (2026-07-15 audit: lcp-hints).
@@ -190,7 +191,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
     { id: "itinerary", label: "On the Ground", show: hasItinerary },
     { id: "kids", label: t("kids"), show: hasKids },
     { id: "safety", label: t("safety"), show: hasSafety },
-    { id: "scenarios", label: "If Things Go Wrong", show: hasScenarios },
+    { id: "scenarios", label: tSec("ifThingsGoWrong"), show: hasScenarios },
     { id: "personas", label: "If You're…", show: hasPersonas },
     { id: "logistics", label: "How It Works", show: hasLogistics },
     { id: "places", label: t("places"), show: hasPlaces },
@@ -639,14 +640,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
           <section id="section-overview" className="scroll-mt-40 space-y-8">
                 {/* Why Special */}
                 <div>
-                  <h2 className="text-xl font-semibold mb-3">Why Special</h2>
+                  <h2 className="text-xl font-semibold mb-3">{tSec("whySpecial")}</h2>
                   <p className="text-[15px] text-muted-foreground leading-[1.75] max-w-prose">{displayWhySpecial}</p>
                 </div>
 
                 {/* Who Should Skip — anti-brochure honesty */}
                 {travelerFit.notFor.length > 0 && (
                   <section className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-5">
-                    <h2 className="text-lg font-semibold text-orange-300 mb-3">Who should think twice</h2>
+                    <h2 className="text-lg font-semibold text-orange-300 mb-3">{tSec("whoShouldThinkTwice")}</h2>
                     <div className="space-y-2">
                       {travelerFit.notFor.map((reason, i) => (
                         <div key={i} className="flex items-start gap-2 text-[15px] text-orange-200/80">
@@ -1571,7 +1572,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
           {hasQuestions && (
             <section id="section-questions" className="scroll-mt-40 space-y-6">
               <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                <h2 className="text-xl font-semibold">Questions &amp; answers</h2>
+                <h2 className="text-xl font-semibold">{tSec("questionsAndAnswers")}</h2>
                 {answeredQuestions.length > 0 && (
                   <span className="text-xs text-muted-foreground tabular-nums">
                     {answeredQuestions.length} answered
