@@ -42,7 +42,9 @@
     "m8EAd": "2026-08-11",
     "m8EAd_evening": "2026-08-11",
     "PdMu0": "2026-08-11",
-    "PdMu0_evening": "2026-08-11"
+    "PdMu0_evening": "2026-08-11",
+    "m8EAd_reel_studio": "2026-08-12",
+    "GAh5p_reel_studio": "2026-08-12"
   },
   "last_sync": "2026-08-11T15:20:43.777016+00:00",
   "posted_destinations": [
@@ -288,6 +290,10 @@
     },
     {
       "destination_id": "kishtwar",
+      "date": "2026-08-12"
+    },
+    {
+      "destination_id": "manali",
       "date": "2026-08-12"
     }
   ],
@@ -7572,6 +7578,24 @@
       "destination": "kishtwar",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_kishtwar_hi_2026-08-12.mp4"
+    },
+    {
+      "timestamp": "2026-08-12T07:05:24.569218+00:00",
+      "date": "2026-08-12",
+      "platform": "instagram",
+      "post_id": "EWbVO",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_spiti-biker-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-08-12T07:05:33.160655+00:00",
+      "date": "2026-08-12",
+      "platform": "youtube",
+      "post_id": "4ndtw",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_spiti-biker-circuit.mp4"
     }
   ],
   "theme_usage": {
@@ -8769,7 +8793,7 @@
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
     "ladakh-express-7d": "2026-08-10",
-    "spiti-biker-circuit": "2026-07-08",
+    "spiti-biker-circuit": "2026-08-12",
     "kinnaur-spiti-circuit": "2026-07-10",
     "ladakh-manali-route": "2026-07-13"
   },
