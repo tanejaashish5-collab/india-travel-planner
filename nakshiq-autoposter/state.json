@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-12",
     "m8EAd_carousel": "2026-08-12",
     "PdMu0_carousel": "2026-08-12",
-    "m8EAd_yt_short": "2026-08-11",
+    "m8EAd_yt_short": "2026-08-12",
     "m8EAd": "2026-08-11",
     "m8EAd_evening": "2026-08-11",
     "PdMu0": "2026-08-11",
@@ -298,6 +298,10 @@
     },
     {
       "destination_id": "ahmedabad",
+      "date": "2026-08-12"
+    },
+    {
+      "destination_id": "bhandardara",
       "date": "2026-08-12"
     }
   ],
@@ -7618,6 +7622,24 @@
       "destination": "ahmedabad",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-08-12"
+    },
+    {
+      "timestamp": "2026-08-12T12:36:40.353718+00:00",
+      "date": "2026-08-12",
+      "platform": "instagram",
+      "post_id": "eimVh",
+      "destination": "bhandardara",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_bhandardara_en_2026-08-12.mp4"
+    },
+    {
+      "timestamp": "2026-08-12T12:36:49.702826+00:00",
+      "date": "2026-08-12",
+      "platform": "youtube",
+      "post_id": "KyIpc",
+      "destination": "bhandardara",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_bhandardara_en_2026-08-12.mp4"
     }
   ],
   "theme_usage": {
