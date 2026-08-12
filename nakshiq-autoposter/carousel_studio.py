@@ -325,7 +325,9 @@ def _hashtags(*tags):
 # Formats that rotate THROUGH their items across posts (founder 2026-07-01: "we
 # only shared 5 festivals — rotate through them across July"). run_carousel passes
 # `seen` (keys already featured) and stamps the returned item_keys after posting.
-_ROTATING = {"festival", "collection"}
+# "food" joined 2026-08-12 — without it build_food took a deterministic top-5 of
+# a static window and posted the same five eateries in every post it ever made.
+_ROTATING = {"festival", "collection", "food"}
 
 
 def _rotate(items, seen, n, keyfn):
@@ -552,10 +554,10 @@ def _versus_slide(idx, total, a_name, a_sub, b_name, b_sub, bg_slug):
     return c
 
 
-def build_food(content: dict, mname: str) -> dict | None:
+def build_food(content: dict, mname: str, seen=None) -> dict | None:
     eats = _rows(content, "eateries")
     dmap = {d.get("id"): d for d in (_rows(content, "destinations_full") or _rows(content, "destinations"))}
-    picks = []
+    pool = []
     for e in eats:
         nm = (e.get("name") or "").strip()
         did = e.get("destination_id")
@@ -566,10 +568,14 @@ def build_food(content: dict, mname: str) -> dict | None:
         if not nm or not did or not line:
             continue
         dn = (dmap.get(did, {}).get("name") or (e.get("area") or "")).strip()
-        picks.append({"name": nm, "where": dn, "line": line, "bg": did,
-                      "legendary": bool(e.get("is_legendary"))})
-    # legendary first, then cap 5
-    picks = sorted(picks, key=lambda p: not p["legendary"])[:5]
+        pool.append({"name": nm, "where": dn, "line": line, "bg": did,
+                     "legendary": bool(e.get("is_legendary"))})
+    # Legendary-first PRIORITY order in, then rotate through never-featured items
+    # (same _rotate/seen machinery as festival). Before 2026-08-12 this was a
+    # bare sorted()[:5] over a static API window — a deterministic top-5, which
+    # is why all 10 food carousels ever posted opened with the same eatery.
+    pool.sort(key=lambda p: not p["legendary"])
+    picks, item_keys, recycled = _rotate(pool, seen, 5, lambda p: f"{p['name']}|{p['bg']}")
     if len(picks) < 3:
         return None
     slides = [_cover_slide(
@@ -589,7 +595,8 @@ def build_food(content: dict, mname: str) -> dict | None:
                + "\n\nVerified food picks → nakshiq.com\n\n"
                + _hashtags("indianfood", "indiatravel", "foodie", "streetfood", "traveldeeper"))
     return {"fmt": "food", "slides": [_to_jpeg(s) for s in slides], "caption": caption,
-            "dest_ids": [p["bg"] for p in picks if p["bg"]]}
+            "dest_ids": [p["bg"] for p in picks if p["bg"]],
+            "item_keys": item_keys, "recycled": recycled}
 
 
 _PERSONA_KW = {

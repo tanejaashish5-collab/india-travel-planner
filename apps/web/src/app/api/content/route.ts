@@ -353,19 +353,53 @@ export async function GET(req: NextRequest) {
     if (type === "eateries") {
       // Surfaces only legendary / well-verified eateries by default. Caller can
       // pass ?destination_id=<id> to scope to one place.
+      //
+      // ?sample=<int> (2026-08-12): rotating window over the WHOLE table. The
+      // default ordering is fully stable (legendary → oldest established), so a
+      // bare limit=100 returned the IDENTICAL first 100 of ~2,629 rows on every
+      // call — the autoposter's "Where Locals Eat" carousel led with the same
+      // Ahmedabad eatery in all 10 posts it ever published. The seed (the
+      // caller passes its day number) picks a deterministic offset server-side,
+      // where the row count is known; when the tail window comes up short it
+      // wraps to the head so no window is thin. Same seed → same rows, so
+      // retries are stable. No seed → exactly the old behaviour.
       const destId = params.get("destination_id");
-      let query = supabase
-        .from("local_eateries")
-        .select("id, destination_id, name, area, cuisine, category, signature_dish, must_try, price_range, vegetarian, kid_friendly, established_year, why_it_matters, insider_tip, is_legendary, last_verified")
-        .eq("is_active", true)
-        .order("is_legendary", { ascending: false })
-        .order("established_year", { nullsFirst: false })
-        .limit(limit);
-      if (destId) {
-        query = query.eq("destination_id", destId);
+      const sample = Number(params.get("sample") || "");
+      const eatSelect =
+        "id, destination_id, name, area, cuisine, category, signature_dish, must_try, price_range, vegetarian, kid_friendly, established_year, why_it_matters, insider_tip, is_legendary, last_verified";
+      const eatQuery = () => {
+        let q = supabase
+          .from("local_eateries")
+          .select(eatSelect)
+          .eq("is_active", true)
+          .order("is_legendary", { ascending: false })
+          .order("established_year", { nullsFirst: false })
+          .order("id"); // deterministic tiebreak — required for stable paging
+        if (destId) q = q.eq("destination_id", destId);
+        return q;
+      };
+      let rows: any[] | null = null;
+      if (Number.isFinite(sample) && sample > 0 && !destId) {
+        const { count } = await supabase
+          .from("local_eateries")
+          .select("id", { count: "exact", head: true })
+          .eq("is_active", true);
+        const total = count ?? 0;
+        if (total > limit) {
+          const offset = (sample * limit) % total;
+          const { data: page } = await eatQuery().range(offset, offset + limit - 1);
+          rows = page ?? [];
+          if (rows.length < limit) {
+            const { data: head } = await eatQuery().range(0, limit - rows.length - 1);
+            rows = rows.concat(head ?? []);
+          }
+        }
       }
-      const { data } = await query;
-      const items = (data ?? []).map((e: any) => ({
+      if (rows === null) {
+        const { data } = await eatQuery().limit(limit);
+        rows = data ?? [];
+      }
+      const items = rows.map((e: any) => ({
         ...e,
         url: e.destination_id ? `${baseUrl}/en/destination/${e.destination_id}` : `${baseUrl}/en`,
       }));

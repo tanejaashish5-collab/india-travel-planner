@@ -1706,6 +1706,15 @@ def dimension_cycle_status(state: dict, dimension: str, total_catalog: int) -> d
 # NAKSHIQ CONTENT FETCHER
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _ist_day_seed() -> int:
+    """Days since 2020-01-01 in IST — a stable per-day integer that advances at
+    IST midnight, not UTC. Seeds the API's rotating eatery window; same-day
+    retries fetch the same window, so a rebuilt post is identical."""
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+    ist_today = (_dt.now(_tz.utc) + _td(hours=5, minutes=30)).date()
+    return (ist_today - date(2020, 1, 1)).days
+
+
 def nakshiq_fetch(type_: str, extra: dict = {}) -> dict:
     try:
         r = requests.get(NAKSHIQ_BASE, params={"type": type_, **extra}, timeout=15)
@@ -1813,7 +1822,13 @@ def sync_all_content() -> dict:
         # is filtered by the current month server-side where applicable.
         "routes":       nakshiq_fetch("routes",       {"month": month, "limit": 50}),
         "treks":        nakshiq_fetch("treks",        {"month": month, "limit": 50}),
-        "eateries":     nakshiq_fetch("eateries",     {"limit": 100}),
+        # sample = IST day number → the API serves a DIFFERENT 100-row window of
+        # the ~2,629-row eatery table each day (2026-08-12). Without it the
+        # stable legendary/established ordering returned the identical first
+        # 100 forever: every "Where Locals Eat" carousel ever posted led with
+        # the same Ahmedabad eatery, and eateries_pick's never-featured cycle
+        # was rationing the same 4% of the database.
+        "eateries":     nakshiq_fetch("eateries",     {"limit": 100, "sample": _ist_day_seed()}),
         # Tier 6 (2026-05-10) — close coverage gap on stays / emergency / viral
         # eats / camping / hidden gems verticals. Each backed by /api/content
         # types added in the same commit.
