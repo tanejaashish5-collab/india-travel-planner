@@ -21,7 +21,49 @@ export const runtime = "edge";
  *   ?month=4            (filter destinations by current-month score)
  *   ?min_score=4        (only destinations scoring >= this in given month)
  *   ?max_score=2        (only destinations scoring <= this in given month)
+ *   ?sample=2415        (integer day-seed — rotating fetch window, see below)
  */
+
+/**
+ * Rotating fetch window — generalized from the eateries fix.
+ *
+ * The API caps `limit` at 100, so any pool bigger than the limit is invisible
+ * beyond its first page when the ordering is stable — the social autoposter
+ * republished the same rows forever (the static-pool monotony class). `sample`
+ * (any integer; the autoposter passes an IST day number) selects a
+ * deterministic limit-sized window into the FULL filtered set:
+ * offset = (sample * limit) % total, wrapping past the end. A daily seed walks
+ * the entire pool over successive days; same-day retries return identical rows.
+ *
+ * Returns null when `sample` is absent/invalid so callers fall back to their
+ * original default path completely unchanged. Both factories must apply the
+ * SAME filters; makeQuery must carry a fully deterministic ORDER (unique
+ * tiebreak column) or windows can overlap/skip between pages.
+ */
+async function sampleWindow(
+  sampleRaw: string | null,
+  limit: number,
+  makeCount: () => any,
+  makeQuery: () => any,
+): Promise<any[] | null> {
+  if (sampleRaw === null || sampleRaw === "" || Number.isNaN(Number(sampleRaw))) return null;
+  const sample = Math.abs(Math.trunc(Number(sampleRaw)));
+  const { count } = await makeCount();
+  const total = count ?? 0;
+  if (total === 0) return [];
+  if (total <= limit) {
+    const { data } = await makeQuery().limit(limit);
+    return data ?? [];
+  }
+  const offset = (sample * limit) % total;
+  const { data } = await makeQuery().range(offset, offset + limit - 1);
+  let rows: any[] = data ?? [];
+  if (rows.length < limit) {
+    const { data: wrap } = await makeQuery().range(0, limit - rows.length - 1);
+    rows = rows.concat(wrap ?? []);
+  }
+  return rows;
+}
 export async function GET(req: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -221,13 +263,29 @@ export async function GET(req: NextRequest) {
     }
 
     if (type === "traps") {
-      const { data } = await supabase
+      // 109 trap→alternative pairs; the autoposter used to fetch the default
+      // 20 in stable rank order, freezing 82% of the catalog out.
+      // 2026-08-12: the old select referenced `reason`/`alternative_reason`,
+      // columns that DON'T EXIST — PostgREST 400'd, `const { data }` swallowed
+      // the error, and this endpoint served {"count":0} with HTTP 200 forever
+      // (the tourist_trap social format never once fired). Real columns are
+      // `comparison`/`editorial_verdict` (why the trap disappoints) and
+      // `why_better` (the alternative's case); mapped below into the same
+      // response shape the consumer already expects.
+      const trapSelect = "trap_destination_id, comparison, editorial_verdict, alternative_destination_id, why_better, rank, destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name)";
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => supabase.from("tourist_trap_alternatives")
+          .select("trap_destination_id", { count: "exact", head: true }),
+        () => supabase.from("tourist_trap_alternatives")
+          .select(trapSelect)
+          .order("rank").order("trap_destination_id").order("alternative_destination_id"),
+      );
+      const data = sampled ?? (await supabase
         .from("tourist_trap_alternatives")
-        .select(
-          "trap_destination_id, reason, alternative_destination_id, alternative_reason, rank, destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name)"
-        )
+        .select(trapSelect)
         .order("rank")
-        .limit(limit);
+        .limit(limit)).data;
 
       // Also get trap destination names
       const trapIds = [...new Set((data ?? []).map((t: any) => t.trap_destination_id))];
@@ -238,13 +296,18 @@ export async function GET(req: NextRequest) {
 
       const trapNames = Object.fromEntries((trapDests ?? []).map((d: any) => [d.id, d.name]));
 
+      // Some comparison strings are stored fully wrapped in quotes; the social
+      // caption builder takes the first sentence, which would strand the
+      // opening quote — strip symmetric wrapping quotes only.
+      const unquote = (s: string | null) =>
+        s && s.length > 1 && s.startsWith('"') && s.endsWith('"') ? s.slice(1, -1) : s;
       const items = (data ?? []).map((t: any) => ({
         trap: { id: t.trap_destination_id, name: trapNames[t.trap_destination_id] ?? t.trap_destination_id },
-        reason: t.reason,
+        reason: unquote(t.comparison) || t.editorial_verdict || null,
         alternative: {
           id: t.alternative_destination_id,
           name: t.destination?.name ?? t.alternative_destination_id,
-          reason: t.alternative_reason,
+          reason: t.why_better || null,
         },
         url: `${baseUrl}/en/tourist-traps`,
         image: `${baseUrl}/images/destinations/${t.alternative_destination_id}.jpg`,
@@ -254,11 +317,20 @@ export async function GET(req: NextRequest) {
     }
 
     if (type === "collections") {
-      const { data } = await supabase
+      // 105 collections; the autoposter's default-20 fetch in name order only
+      // ever exposed the alphabetical head.
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => supabase.from("collections").select("id", { count: "exact", head: true }),
+        () => supabase.from("collections")
+          .select("id, name, description, items, tags")
+          .order("name").order("id"),
+      );
+      const data = sampled ?? (await supabase
         .from("collections")
         .select("id, name, description, items, tags")
         .order("name")
-        .limit(limit);
+        .limit(limit)).data;
 
       const items = (data ?? []).map((c: any) => ({
         ...c,
@@ -314,19 +386,36 @@ export async function GET(req: NextRequest) {
 
     if (type === "treks") {
       // Solo/group treks. Filter by month and difficulty similar to routes.
+      // Peak months carry up to 164 qualifying treks vs the 100 cap, ordered
+      // by altitude — the low-altitude tail never surfaced without ?sample.
       const difficulty = params.get("difficulty");
-      let query = supabase
-        .from("treks")
-        .select("id, name, destination_id, difficulty, duration_days, max_altitude_m, distance_km, best_months, permits_required, kids_suitable, fitness_level, description, highlights, destinations(name)")
-        .order("max_altitude_m", { ascending: false })
-        .limit(limit);
-      if (month) {
-        query = query.contains("best_months", [month]);
+      const trekSelect = "id, name, destination_id, difficulty, duration_days, max_altitude_m, distance_km, best_months, permits_required, kids_suitable, fitness_level, description, highlights, destinations(name)";
+      const trekFilters = (q: any) => {
+        if (month) q = q.contains("best_months", [month]);
+        if (difficulty) q = q.eq("difficulty", difficulty);
+        return q;
+      };
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => trekFilters(supabase.from("treks").select("id", { count: "exact", head: true })),
+        () => trekFilters(supabase.from("treks").select(trekSelect)
+          .order("max_altitude_m", { ascending: false }).order("id")),
+      );
+      let data = sampled;
+      if (data === null) {
+        let query = supabase
+          .from("treks")
+          .select(trekSelect)
+          .order("max_altitude_m", { ascending: false })
+          .limit(limit);
+        if (month) {
+          query = query.contains("best_months", [month]);
+        }
+        if (difficulty) {
+          query = query.eq("difficulty", difficulty);
+        }
+        data = (await query).data ?? [];
       }
-      if (difficulty) {
-        query = query.eq("difficulty", difficulty);
-      }
-      const { data } = await query;
       const items = (data ?? []).map((t: any) => ({
         id: t.id,
         name: t.name,
@@ -410,13 +499,28 @@ export async function GET(req: NextRequest) {
       // Editor-curated stay picks joined with their parent destination name.
       // Only returns published picks with non-trivial why_nakshiq prose so the
       // social caption has a real differentiation hook.
-      const { data } = await supabase
+      // 1,800+ published picks vs the 100-row cap: without ?sample the window
+      // is "most recently refreshed 100" — a side effect of the refresh cron's
+      // schedule, not a deliberate rotation. The sample path orders by
+      // (destination_id, slot) so the window walk is stable and complete.
+      const staySelect = "destination_id, slot, name, property_type, price_band, why_nakshiq, signature_experience, contact_only, destinations(name, state:states(name))";
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => supabase.from("destination_stay_picks")
+          .select("destination_id", { count: "exact", head: true })
+          .eq("published", true).not("why_nakshiq", "is", null),
+        () => supabase.from("destination_stay_picks")
+          .select(staySelect)
+          .eq("published", true).not("why_nakshiq", "is", null)
+          .order("destination_id").order("slot"),
+      );
+      const data = sampled ?? (await supabase
         .from("destination_stay_picks")
-        .select("destination_id, slot, name, property_type, price_band, why_nakshiq, signature_experience, contact_only, destinations(name, state:states(name))")
+        .select(staySelect)
         .eq("published", true)
         .not("why_nakshiq", "is", null)
         .order("refreshed_at", { ascending: false, nullsFirst: false })
-        .limit(limit);
+        .limit(limit)).data;
       const items = (data ?? []).map((s: any) => ({
         destination_id: s.destination_id,
         destination_name: s.destinations?.name,
@@ -439,13 +543,27 @@ export async function GET(req: NextRequest) {
       // (post the 2026-05-10 placeholder strip ~46 dests landed at `[]`).
       // Filter empties SQL-side via the JSONB length so the limit applies to
       // genuinely-populated rows. Helpers shape: [{name, role, contact, note}]
-      const { data } = await supabase
+      // 178 qualifying rows vs the 100 cap, ordered by verified_date with only
+      // ~3 distinct dates — giant tie-groups in arbitrary order, so the back
+      // ~78 rows rarely surface. The sample path walks (destination_id) order.
+      const sosSelect = "destination_id, police, ambulance, nearest_hospital, nearest_hospital_km, women_helpline, tourist_helpline, mountain_rescue, rescue_contact, local_helpers, source_label, destinations(name, state:states(name))";
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => supabase.from("emergency_sos")
+          .select("destination_id", { count: "exact", head: true })
+          .not("local_helpers", "is", null).gt("local_helpers->>0", ""),
+        () => supabase.from("emergency_sos")
+          .select(sosSelect)
+          .not("local_helpers", "is", null).gt("local_helpers->>0", "")
+          .order("destination_id"),
+      );
+      const data = sampled ?? (await supabase
         .from("emergency_sos")
-        .select("destination_id, police, ambulance, nearest_hospital, nearest_hospital_km, women_helpline, tourist_helpline, mountain_rescue, rescue_contact, local_helpers, source_label, destinations(name, state:states(name))")
+        .select(sosSelect)
         .not("local_helpers", "is", null)
         .gt("local_helpers->>0", "")  // require at least one element in the JSONB array
         .order("verified_date", { ascending: false, nullsFirst: false })
-        .limit(limit * 2);  // over-fetch since post-filter still drops `[]` rows
+        .limit(limit * 2)).data;  // over-fetch since post-filter still drops `[]` rows
       const items = (data ?? [])
         .filter((e: any) => Array.isArray(e.local_helpers) && e.local_helpers.length > 0)
         .slice(0, limit)
@@ -472,16 +590,35 @@ export async function GET(req: NextRequest) {
     if (type === "viral_eats") {
       // Eateries that have gone viral on social — different angle from local_eateries.
       // Caller can pass ?destination_id to scope.
+      // 386 rows vs the 100 cap in stable name order: without ?sample only the
+      // alphabetical head A–C ever surfaced (26% of the table).
       const destId = params.get("destination_id");
-      let query = supabase
-        .from("viral_eats")
-        .select("id, destination_id, name, location, type, famous_for, viral_on, price_range, honest_review, destinations(name, state:states(name))")
-        .order("name")
-        .limit(limit);
-      if (destId) {
-        query = query.eq("destination_id", destId);
+      const viralSelect = "id, destination_id, name, location, type, famous_for, viral_on, price_range, honest_review, destinations(name, state:states(name))";
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => {
+          let q = supabase.from("viral_eats").select("id", { count: "exact", head: true });
+          if (destId) q = q.eq("destination_id", destId);
+          return q;
+        },
+        () => {
+          let q = supabase.from("viral_eats").select(viralSelect).order("name").order("id");
+          if (destId) q = q.eq("destination_id", destId);
+          return q;
+        },
+      );
+      let data = sampled;
+      if (data === null) {
+        let query = supabase
+          .from("viral_eats")
+          .select(viralSelect)
+          .order("name")
+          .limit(limit);
+        if (destId) {
+          query = query.eq("destination_id", destId);
+        }
+        data = (await query).data ?? [];
       }
-      const { data } = await query;
       const items = (data ?? []).map((v: any) => ({
         id: v.id,
         destination_id: v.destination_id,
@@ -538,12 +675,26 @@ export async function GET(req: NextRequest) {
       // High-confidence hidden gems — used for the "nobody talks about" reel angle.
       // confidence_score is INT 1-5 (NOT a 0-1 float). Filter >=4 so we only
       // post gems that survived editorial audit (high confidence).
-      const { data } = await supabase
+      // 1,422 qualifying gems vs a 50-row fetch (3.5% visible) — confidence
+      // ties sit in arbitrary-but-stable order, so the same ~50 gems fed both
+      // the feed format and the reel angle forever. Worst offender of the class.
+      const gemSelect = "id, near_destination_id, name, distance_km, drive_time, why_unknown, why_go, difficulty, social_proof, confidence_score, tags, destinations:destinations!hidden_gems_near_destination_id_fkey(name, state:states(name))";
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => supabase.from("hidden_gems")
+          .select("id", { count: "exact", head: true })
+          .gte("confidence_score", 4),
+        () => supabase.from("hidden_gems")
+          .select(gemSelect)
+          .gte("confidence_score", 4)
+          .order("confidence_score", { ascending: false }).order("id"),
+      );
+      const data = sampled ?? (await supabase
         .from("hidden_gems")
-        .select("id, near_destination_id, name, distance_km, drive_time, why_unknown, why_go, difficulty, social_proof, confidence_score, tags, destinations:destinations!hidden_gems_near_destination_id_fkey(name, state:states(name))")
+        .select(gemSelect)
         .gte("confidence_score", 4)
         .order("confidence_score", { ascending: false })
-        .limit(limit);
+        .limit(limit)).data;
       const items = (data ?? []).map((g: any) => ({
         id: g.id,
         near_destination_id: g.near_destination_id,
@@ -607,16 +758,28 @@ export async function GET(req: NextRequest) {
       // month + their confidence_cards.sleep.price_range_inr field.
       // Filtered to only return dests with at least a price band populated
       // (most have it; some thin-tourism dests will be filtered out).
-      const { data } = await supabase
+      // Peak months hold up to 504 score>=3 rows vs the 100 cap — score ties
+      // in arbitrary order froze the visible slice without ?sample.
+      const ciSelect =
+        "month, score, note, destination_id, " +
+        "destinations(id, name, tagline, elevation_m, state:states(name), confidence_cards(reach, sleep, fuel))";
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => supabase.from("destination_months")
+          .select("destination_id", { count: "exact", head: true })
+          .eq("month", month).gte("score", 3),
+        () => supabase.from("destination_months")
+          .select(ciSelect)
+          .eq("month", month).gte("score", 3)
+          .order("score", { ascending: false }).order("destination_id"),
+      );
+      const data = sampled ?? (await supabase
         .from("destination_months")
-        .select(
-          "month, score, note, destination_id, " +
-            "destinations(id, name, tagline, elevation_m, state:states(name), confidence_cards(reach, sleep, fuel))"
-        )
+        .select(ciSelect)
         .eq("month", month)
         .gte("score", 3)
         .order("score", { ascending: false })
-        .limit(limit);
+        .limit(limit)).data;
       const items = (data ?? [])
         .map((dm: any) => {
           const d = dm.destinations;
@@ -650,16 +813,29 @@ export async function GET(req: NextRequest) {
       //   - solo_female_override (per-month safety override, e.g. a dest
       //     unsafe this month even though baseline is fine)
       // Returns destinations meeting ALL three criteria.
-      const { data } = await supabase
+      // Up to 186 month+solo qualifying rows vs the 100 cap — same frozen
+      // score-tie slice as cost_index without ?sample. The JS solo_female
+      // post-filter may shorten a sampled window; rotation still covers all.
+      const wsSelect =
+        "month, score, note, destination_id, solo_female_override, solo_female_override_note, " +
+        "destinations(id, name, tagline, difficulty, elevation_m, solo_female_score, state:states(name))";
+      const sampled = await sampleWindow(
+        params.get("sample"), limit,
+        () => supabase.from("destination_months")
+          .select("destination_id", { count: "exact", head: true })
+          .eq("month", month).gte("score", 4),
+        () => supabase.from("destination_months")
+          .select(wsSelect)
+          .eq("month", month).gte("score", 4)
+          .order("score", { ascending: false }).order("destination_id"),
+      );
+      const data = sampled ?? (await supabase
         .from("destination_months")
-        .select(
-          "month, score, note, destination_id, solo_female_override, solo_female_override_note, " +
-            "destinations(id, name, tagline, difficulty, elevation_m, solo_female_score, state:states(name))"
-        )
+        .select(wsSelect)
         .eq("month", month)
         .gte("score", 4)
         .order("score", { ascending: false })
-        .limit(limit);
+        .limit(limit)).data;
       const items = (data ?? [])
         .filter((dm: any) => {
           const d = dm.destinations;

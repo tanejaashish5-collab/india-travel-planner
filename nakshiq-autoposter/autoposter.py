@@ -1811,19 +1811,29 @@ def sync_all_content() -> dict:
         # (e.g. Amritsar for Baisakhi, Kedarnath for the May opening, etc.).
         "destinations_full": {"data": fetch_full_destination_catalog()},
         "articles":     nakshiq_fetch("articles",     {"since": since}),
-        "traps":        nakshiq_fetch("traps"),
-        "festivals":    nakshiq_fetch("festivals",    {"month": month}),
+        # sample = IST day number everywhere below (2026-08-12 full sweep of the
+        # static-pool monotony class, after the eateries instance). The API caps
+        # limit at 100; any pool bigger than its fetch in a stable order froze:
+        # the rows past the window could NEVER be posted, however faithfully
+        # pick_oldest_unused cycled the slice it saw. sample rotates the window
+        # daily server-side so the whole table surfaces over time. Pools that
+        # fit under 100 (festivals 63 max/month, camping 90, routes 61) get a
+        # limit bump to 100 instead — complete pool beats rotation, and
+        # festival_alert's date-proximity scan must never miss a festival
+        # because it sat outside today's window.
+        "traps":        nakshiq_fetch("traps",        {"limit": 100, "sample": _ist_day_seed()}),   # 109 pairs
+        "festivals":    nakshiq_fetch("festivals",    {"month": month, "limit": 100}),
         # Next month's festivals — once we're past mid-month the rotation
         # prefers these over (potentially-past) current-month festivals.
-        "festivals_next": nakshiq_fetch("festivals",  {"month": next_month}),
-        "collections":  nakshiq_fetch("collections"),
+        "festivals_next": nakshiq_fetch("festivals",  {"month": next_month, "limit": 100}),
+        "collections":  nakshiq_fetch("collections",  {"limit": 100, "sample": _ist_day_seed()}),   # 105 colls
         # Tier-2 content sources (added 2026-05-05). The /api/content endpoint
         # gained `routes`, `treks`, `eateries` types in the same commit. Each
         # is filtered by the current month server-side where applicable.
-        "routes":       nakshiq_fetch("routes",       {"month": month, "limit": 50}),
-        "treks":        nakshiq_fetch("treks",        {"month": month, "limit": 50}),
+        "routes":       nakshiq_fetch("routes",       {"month": month, "limit": 100}),
+        "treks":        nakshiq_fetch("treks",        {"month": month, "limit": 100, "sample": _ist_day_seed()}),  # 164 max/month
         # sample = IST day number → the API serves a DIFFERENT 100-row window of
-        # the ~2,629-row eatery table each day (2026-08-12). Without it the
+        # the ~3,100-row eatery table each day (2026-08-12). Without it the
         # stable legendary/established ordering returned the identical first
         # 100 forever: every "Where Locals Eat" carousel ever posted led with
         # the same Ahmedabad eatery, and eateries_pick's never-featured cycle
@@ -1832,15 +1842,15 @@ def sync_all_content() -> dict:
         # Tier 6 (2026-05-10) — close coverage gap on stays / emergency / viral
         # eats / camping / hidden gems verticals. Each backed by /api/content
         # types added in the same commit.
-        "stays":        nakshiq_fetch("stays",        {"limit": 100}),
-        "emergency":    nakshiq_fetch("emergency",    {"limit": 100}),
-        "viral_eats":   nakshiq_fetch("viral_eats",   {"limit": 100}),
-        "camping":      nakshiq_fetch("camping",      {"month": month, "limit": 50}),
-        "hidden_gems":  nakshiq_fetch("hidden_gems",  {"limit": 50}),
+        "stays":        nakshiq_fetch("stays",        {"limit": 100, "sample": _ist_day_seed()}),   # 1,802 picks
+        "emergency":    nakshiq_fetch("emergency",    {"limit": 100, "sample": _ist_day_seed()}),   # 178 rows
+        "viral_eats":   nakshiq_fetch("viral_eats",   {"limit": 100, "sample": _ist_day_seed()}),   # 386 rows
+        "camping":      nakshiq_fetch("camping",      {"month": month, "limit": 100}),
+        "hidden_gems":  nakshiq_fetch("hidden_gems",  {"limit": 50, "sample": _ist_day_seed()}),    # 1,422 gems
         # Tier 7 Phase 2 (2026-05-17) — restored variety + 3 new verticals.
         "arrival":      nakshiq_fetch("arrival",      {"limit": 20}),
-        "cost_index":   nakshiq_fetch("cost_index",   {"month": month, "limit": 100}),
-        "women_solo":   nakshiq_fetch("women_solo",   {"month": month, "limit": 100}),
+        "cost_index":   nakshiq_fetch("cost_index",   {"month": month, "limit": 100, "sample": _ist_day_seed()}),  # 504 max/month
+        "women_solo":   nakshiq_fetch("women_solo",   {"month": month, "limit": 100, "sample": _ist_day_seed()}),  # 186 max/month
     }
     # Keep TOTAL_DESTINATIONS in sync with the real catalog size.
     global TOTAL_DESTINATIONS
