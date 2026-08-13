@@ -1,0 +1,542 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-08-13",
+    "date": "2026-08-13",
+    "started_utc": "2026-08-13T12:55:00Z",
+    "completed_utc": "2026-08-13T13:45:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test), following qa/SKILL.md. Sitemap fetched fresh (5 chunks, 24,963 URLs) to seed a reproducible 10-destination random sample (seed 'nakshiq-2026-08-13': yuksom, igatpuri, neemrana, jampui-hills, satara, nubra-valley, haflong, jog-falls, bhoramdeo, gir-national-park). Sections A/B/D/F/G/H/I/J run as staged Python (requests) scripts directly against prod. Section E + DB truths (SOS 11-column dialable aggregate, Hindi-translations aggregate, people_who_help shape aggregate, stay-picks spot-check, security advisors, ops_reports job health) run via Supabase MCP (project dudzsdzfvikjjhurxrgc) with schema re-verified via information_schema before writing queries (emergency_sos and states use destination_id/id as text keys, not 'id' — corrected mid-run after an initial 42703 error). Section K run via Claude-in-Chrome MCP: yuksom en+hi (atlas SVG confirmed, 0 leaflet, 0 console errors both loads), jampui-hills/bhoramdeo (today's 2 non-cinematic sample members) cross-referenced against apps/web/src/lib/cinematic-destinations.ts to resolve a months-old ambiguity — see new_findings_today for the atlas-vs-Leaflet root cause. /en/explore Leaflet toggle (519 markers, 36 tiles, window.L, 0 console errors) and /en/trip (loads clean, 0 console errors). Vercel-like MCP (mcp__47d80bb1...__get_runtime_errors, projectId prj_JaXUDEUU6YSHZ8GZL4Cv2jZaoEz2) used for a 7-day site-wide sweep (50 groups, output too large for direct context — delegated full-file read + structured categorization to a sub-agent, verbatim counts reproduced in new_findings_today) plus an itinerary/family/search-index-scoped call (1 unrelated group, 0 itinerary-specific). scripts/audit-hero-images.mjs run directly (not just Python HEAD-probe workaround): 533/533 ok. Git history read directly (git log/show) for every commit since the 08-10 run to cross-reference source-level fixes against LIVE production behavior — this surfaced the run's central storyline (see new_findings_today NEW-2026-08-13-001) and one self-caught methodology bug (an early live check of /en/family/kerala used the wrong href pattern — /en/destination/ instead of the component's actual /en/with-kids/ — and wrongly read as broken for ~40 minutes of this session before being caught and corrected against a DB cross-check; see honest_caveats).",
+    "mode": "Daily regression — A through L matrix, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 50,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A — Soft-404 regression (9 probes incl bad-slug /en/cost/<slug>, garbage months on today's sample, /en/family/<bad-state>)",
+    "B — Destination availability + TTFB (10 random slugs from a fresh sitemap fetch, seed nakshiq-2026-08-13: yuksom, igatpuri, neemrana, jampui-hills, satara, nubra-valley, haflong, jog-falls, bhoramdeo, gir-national-park)",
+    "C — Hindi parity: lang + Devanagari-title check, PLUS (new this run) a direct check of destinationSections chrome headings (elevation-chart/emergency-sos/scenario-strip, shipped 08-11 in d78f026f) and of H1 language, cross-referenced per-destination against the cinematic-vs-non-cinematic template allowlist",
+    "D — SEO meta (14 URLs: landing en+hi + 10 dests + 1 month sub-route + itinerary/agra)",
+    "E — SOS completeness: DB ground-truth canonical 11-column aggregate (today's specific 10-sample dialable sum computed for real), Hindi-translations aggregate, people_who_help shape aggregate, destination_stay_picks spot-check (kaza/phawngpui-peak/majuli), sos_auto_verify_status distribution, security advisors",
+    "F — API smoke: 5 removed-route 404 confirmations (chat/gap-year-generate/gap-year-regenerate/embed/ask), itinerary malformed/empty/empty-object (400), 3x valid-request content checks with varied params INCLUDING explicit destinationIds (200 + real non-empty content, re-verifying last week's f1a055c0 fix live), weather no-params/valid, search-index, 2 phantom-route 404s",
+    "G — PWA: sw.js CACHE_VERSION (observed live mid-session transition v53→v54, see new_findings_today), manifest icons+shortcuts, /offline",
+    "H — Sitemap integrity (index + 5 chunks, full breakdown, diffed vs 08-10)",
+    "I — Core routes HTTP matrix (22 real routes incl family/state/vs/with-kids/weekend-from surfaces not previously in this list)",
+    "J — Locale-routing redirect (5 bare paths, redirects NOT followed)",
+    "K — Chrome E2E: yuksom en+hi (atlas, today's sample, console-swept both loads), /en/explore Leaflet toggle (519 markers), /en/trip UI reconnaissance — 3 fully console-swept observations, 0 errors",
+    "L — Hero-image audit: node scripts/audit-hero-images.mjs run directly — 533/533 ok, 0 missing, 0 errors",
+    "Supplementary — Full git log/show review of every commit since the 08-10 run (16 commits) to cross-reference claimed source-level fixes against directly-observed live production behavior, rather than trusting commit messages",
+    "Supplementary — Vercel 7-day runtime-error sweep (50 groups) fully categorized via sub-agent (timing-clustered vs steady, per-destination breakdown, comparison to last week's 11 affected destinations)",
+    "Supplementary — ops_reports job-health check (canary-probe, audit-supabase-advisors, audit-hero-images, watchdog full snapshot, refresh-stay-picks-agent, road-sweep-agent, sos-auto-reverify) — surfaced a self-reported verification gap, see new_findings_today",
+    "Supplementary — Atlas-vs-Leaflet destination-page dual-template root-cause resolution: cross-referenced today's 2 non-cinematic sample members (jampui-hills, bhoramdeo) plus the standing yumthang-valley continuity check against apps/web/src/lib/cinematic-destinations.ts"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass — scoped as a dedicated standalone session per SKILL.md. Checked this week's commits for contrast/aria/tablist strings — 0 hits (commits are AI-surface cleanup, i18n, perf, family-page fix, mobile SW/image fix, social-content fixes — none touch that markup). Baseline now 101 days stale (origin 2026-05-04)."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Same escalation as axe-core above. No commits this week are perf-labeled in a way that touches markup/payload weight for the previously-flagged routes."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "9/9 Section-A probes 404 today, 0 return 200."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "yuksom/13, /0, /32, /notamonth, igatpuri/99 (hi), /en/family/not-a-real-state-999 all 404 today."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat still returns a clean 404 today — route remains deleted."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed→400, empty→400, empty_object→400 today, 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template title stutter",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra title has 1 occurrence of 'NakshIQ', 0 stutter, re-checked today."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra og:image present today."
+    },
+    {
+      "id": "NEW-2026-07-03-001",
+      "title": "quiz/[topic] template ships without og:image on both locales",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Only route-availability re-checked today (/en/quiz/hill-station, /hi/quiz/hill-station both 200); og:image not re-probed. No commit this week touches quiz templates (grepped all 16 commit diffs, 0 hits), so no regression signal either way."
+    },
+    {
+      "id": "NEW-2026-07-07-004",
+      "title": "qa/_lib/build_report.js reads different field names than findings.json carries for the 'K — Map widget' QA-report row",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Unresolved, unchanged: build_report.js line 70-71 still reads map_dest_pages_leaflet_template / map_dest_pages_probed_interactive (confirmed via direct read today) — today's findings populates those exact names, so the K-row renders correctly, but this remains a workaround, not a fix at source."
+    },
+    {
+      "id": "NEW-2026-08-10-003",
+      "title": "qa/_lib/build_report.js's 'E — SOS phones' row reads field names findings.json has never natively carried",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Confirmed via direct read today: build_report.js line 59-60 still reads sos_phones_total_across_10_dests / sos_phones_invalid_format / sos_destinations_without_block / sos_no_block_tierA. Today's findings again populates these as compatibility aliases (66 real phones summed across today's specific 10-sample destinations) so the E-row renders correctly, but the source-level fix recommended last week has not been applied."
+    },
+    {
+      "id": "NEW-2026-07-07-003",
+      "title": "scripts/audit-hero-images.mjs (CONCURRENCY=8) does not reliably complete within the 45-second shell budget",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Ran the real script directly again today (node --env-file=apps/web/.env.local scripts/audit-hero-images.mjs): completed well within budget, 533/533 ok, 0 missing, 0 errors. Second consecutive week directly contradicting the original 45s-timeout concern."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN",
+      "today_status": "STILL GREEN",
+      "evidence": "manifest icons=3, shortcuts=5 (unchanged). /offline 200. sw.js 200 throughout — see new_findings_today for the v53→v54 version transition observed live mid-session (routine content update, not a defect)."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Uttarkashi not in today's 10-sample and not individually re-queried; sitewide safety floor (0 rows under 3 dialable, 0 rows without an SOS record) holds and total destination count is unchanged (533, no new/edited rows since 06-14), so no signal of regression either way."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Same caveat as uttarkashi above — not in today's sample, sitewide aggregate shows no regression signal."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Same caveat — not in today's sample."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative methodology note",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "This exact trap was re-encountered live today: this run's own Section D probe initially used a case-sensitive regex and read 0/14 hreflang tags present (a false full-site regression). Direct curl confirmed Next.js renders the attribute as camelCase hrefLang in the raw served HTML; re-running with re.IGNORECASE gave the correct 14/14. Refiling this as confirmed-still-relevant methodology guidance, not a live defect — kept the note SKILL.md already carries, and it caught a real harness bug in THIS run before it reached the findings."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: confidence_cards.people_who_help is 432 array-shape + 93 object-shape (525 total non-null), 84 non-empty arrays — exact match to the 06-19..08-10 baseline, 0 change. No commit this week touches confidence-card.tsx."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Safety floor still intact (0 destinations under 3 dialable fields, 0 without an emergency_sos row, min dialable today = 5). emergency_sos.local_helpers non-empty = 178/533, identical to 07-20..08-10."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet dual-template)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "RESOLVED THE AMBIGUITY THIS RUN: the atlas/Leaflet split is fully explained by the cinematic-vs-non-cinematic content template (apps/web/src/lib/cinematic-destinations.ts, 505 cinematic / 28 non-cinematic), NOT by trek-status or any separate map-specific gate as earlier notes implied. Verified directly: today's sample had 2 non-cinematic members for the first time in several weeks (jampui-hills, bhoramdeo) — both render Leaflet (14 'leaflet' string occurrences each in raw HTML); all 8 cinematic members (incl. yuksom, Chrome-verified) render the atlas SVG with 0 leaflet. The standing yumthang-valley continuity check is also confirmed non-cinematic, consistent. This is a real clarification worth folding into SKILL.md's existing Section K map-type note next time it's edited: 'non-cinematic template → Leaflet; cinematic template → atlas' is a clean, deterministic rule, not per-destination happenstance."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Not independently re-probed today beyond the string-level leaflet check above; no contradicting signal."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration; marker rendering",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "jampui-hills (today's in-sample non-cinematic destination) interactively verified via Chrome: 1 leaflet-container, 28 tiles, 9 overlay markers, window.L present, 0 console errors — the first time this specific check has been satisfied by an in-sample destination rather than the yumthang-valley continuity substitute. Marker count (9) matches the standing yumthang-valley baseline exactly; tile count (28) differs from yumthang-valley's 42, plausibly just a different zoom/bounds for a smaller destination area — not investigated further, not treated as a discrepancy given markers (the more meaningful signal) match."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N x 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED",
+      "today_status": "REPRODUCED",
+      "evidence": "Not re-probed with the specific '23.5' string check this week; carried forward as unchanged since no atlas-related commits landed this week (grepped diffs, 0 hits). Still cosmetic, still open."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 console errors across 3 fully-swept Chrome observations today (yuksom en, yuksom hi, explore, trip)."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not independently re-triggered today (modal did not surface during today's Chrome pass) — same standing caveat as every prior week it doesn't fire."
+    },
+    {
+      "id": "NEW-2026-07-09-001",
+      "title": "Destination hero H1 + body copy render in English on /hi despite complete Hindi translations existing in the DB",
+      "prior_status": "STILL OPEN",
+      "today_status": "PARTIAL",
+      "evidence": "d78f026f (2026-08-11) shipped Hindi translation for the SHARED section chrome (elevation-chart, emergency-sos, scenario-strip, plus the non-cinematic destination-detail renderer) — CONFIRMED LIVE today: 10/10 of today's sampled Hindi destination pages show translated section headings (e.g. आपातकालीन सहायता for Emergency SOS), a genuine, verified fix. HOWEVER the H1 + lede copy specifically was explicitly NOT touched by that commit for the 505 CINEMATIC destinations (94.7% of the catalogue) — confirmed today on yuksom (9th distinct destination reproducing this after great-himalayan-np/wayanad/bandhavgarh/vadodara/kozhikode/khangchendzonga-np/tehri/mawlynnong): /hi/destination/yuksom has lang=hi, a fully Devanagari <title>, Hindi nav and Hindi section headings, but H1 renders 'Yuksom.' and the lede 'First capital of Sikkim...' — both full English. By contrast, today's 2 NON-cinematic sample destinations (jampui-hills, bhoramdeo) show fully Devanagari H1s (जंपुई पहाड़ियां, भोरमदेव) — the non-cinematic renderer was already correct. Net: this is now a precisely-scoped, cinematic-template-only gap (505/533 destinations), not a site-wide one. DB-side unchanged: 533/533 destinations now have translations->hi populated (up from 525/533 last week — the 8 previously-missing Sikkim destinations were backfilled)."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section L: 533/533 probed, 0 missing, 0 errors."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrink regression watch",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Sitemap total 24,963 today — identical to 08-10's 24,963 (not a shrink, but also not the steady weekly growth of prior weeks; en/blog actually dipped 183→182). Not a regression by itself (still ≥ the last several weeks' totals, and destination/cost/festival counts are all stable or DB-explained), but flagged honestly as a stall rather than claiming continued growth. See honest_caveats."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "phawngpui-peak shows <3 stay cards in rendered HTML",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "DB spot-check today: kaza=4, majuli=4, phawngpui-peak=2 (unchanged). None of the 3 landed in today's random sample."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core skipped again (see phases_skipped). Grepped all 16 of this week's commit diffs for contrast/aria/tablist strings — 0 hits. Baseline now 101 days stale."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Same check as color-contrast above — 0 hits in this week's commit diffs."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse skipped again. This week's perf-labeled commits (3ee4aa1a, b05beac7) are build-time/query fixes, not client payload/markup changes."
+    },
+    {
+      "id": "NEW-2026-08-03-002",
+      "title": "Recurring Postgres statement-timeout (57014) on /explore, traced to an uncached query bypassing cached-data.ts",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "Directly re-read apps/web/src/app/[locale]/explore/page.tsx today: still does its own inline createClient() + supabase.from(\"states\")/supabase.from(\"destinations_with_coords\") calls, still 0 matches for cached-data/unstable_cache. Root cause unchanged. See NEW-2026-08-10-002 evidence below for this week's expanded, more nuanced error-log picture (a large partial improvement alongside a big new incident)."
+    },
+    {
+      "id": "NEW-2026-08-10-002",
+      "title": "Postgres statement-timeout pattern breadth — weekly trend",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "7-day Vercel error sweep: 50 distinct groups today vs 35 on 08-10 vs 27 on 08-03 — but a full read of all 50 groups (delegated to a sub-agent for the categorization, counts verified) shows this headline number is misleading read alone: 36 of the 50 groups fall ENTIRELY inside a single ~5-minute window (2026-08-11 04:17–04:22 UTC) hitting 16 destination slugs simultaneously (udaipur, manali, jaipur, rishikesh, srinagar, spiti-valley, leh, varanasi, neil-island, port-blair, valley-of-flowers, plus 5 getMonthData combos) — almost certainly the same event referenced in commit 3ee4aa1a as 'The 2026-08-11 production build ERRORED', i.e. concurrent-prerender DB contention manifesting as both build failures and a runtime error burst together, not steady week-long erosion. Genuine, concrete wins this week: the 3 weekend-from-city timeouts (mumbai/hyderabad/bangalore) that were new last week are GONE (0 occurrences), matching the b05beac7 fix; the fetchAllRows(local_stays)/search-index timeout is also GONE, matching 3ee4aa1a's caching fix. Of last week's 11 affected individual destinations, 7 cleared (kalpa, mandi, mechuka, kumarakom, shantiniketan, kedarnath, netarhat) while 12 new ones appeared (mostly within the 08-11 burst). 2 new failure signatures worth watching separately: a hard 'Vercel Runtime Timeout: 300 seconds' error ballooned from count=3 to count≥34 (route not conclusively identified in the summary, most likely /api/search-index per precedent); and a new 'did not return an initial response within 25s' timeout class on /api/weather (count=22, first seen 06-24 but not previously surfaced). IMPORTANT TOOLING CAVEAT: this 7-day runtime-error log shows NOTHING on 08-12 or 08-13 despite git commits describing build failures on both those days (91cdf789 '...auli prerender hit a transient statement timeout', and f7efea40 describing 71d248e7's deploy erroring at 13:06 today) — get_runtime_errors evidently tracks request-time function errors, not next-build prerender/compile failures, so those 2 build incidents are only visible via git commit messages in this report, not via directly-queried logs. See new_findings_today for the live deploy-freshness consequences of this instability."
+    },
+    {
+      "id": "NEW-2026-08-03-003",
+      "title": "SOS auto-reverify weekly cron — needs_source rate and rollout health",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "auto_verify_status distribution identical to 08-10 (confirmed=109, needs_source=296, never_run=124, source_unreachable=4) — expected, since the cron runs Mondays 00:00 UTC and 08-10 was the most recent Monday; next run is 2026-08-17. Safety floor unaffected (0 destinations under 3 dialable fields)."
+    },
+    {
+      "id": "STATE-REDIRECT-2026-07-27",
+      "title": "/state/<destination-slug> URLs redirecting correctly to the real destination page",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/state/kerala correctly still 200, not redirected (control). Not independently re-probed for the specific wayanad redirect case today; no code in this area changed this week."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-08-13-001",
+      "severity": "medium",
+      "title": "Production deploys failed repeatedly over the past 3 days from build-time Postgres statement timeouts — this run directly observed a stale deploy recover mid-session, confirming 2 already-written fixes (family pages, mobile image loading) are now live",
+      "detail": "Git history shows a rough 3-day stretch of build instability, all tied to the same Postgres-contention-during-concurrent-prerender root cause already tracked under NEW-2026-08-03-002/NEW-2026-08-10-002: the 2026-08-11 production build ERRORED (fixed in two steps by 3ee4aa1a and b05beac7, an uncached festivals full-table read and an oversized weekend-from join); 91cdf789 ('chore: rebuild') on 2026-08-12 notes 'auli prerender hit a transient statement timeout, c97687d7 build died at 605/5464'; and today, commit f7efea40 explicitly states 'the previous deploy of 71d248e7 ERRORED at 13:06 on /hi/quiz/hill-station with a Postgres statement timeout' and retriggers another rebuild, noting the query itself measured a healthy 276ms in isolation — 'it only fails when three build workers prerender 5,464 pages concurrently and the DB saturates.' This run independently confirmed the consequence, not just the git commentary: for roughly the first 40 minutes of this session, the live site (deploy dpl_7eDCgFSnzrD53Kqe1doDCGbjb93s, sw.js CACHE_VERSION=nakshiq-v53) was running code from BEFORE at least one already-committed, already-verified-in-source fix — 71d248e7's mobile image/service-worker fix (see detail below). Partway through this session the live deploy changed (dpl_2CQMZxrUriC7JpBXKoSSrPqJsn1j, sw.js CACHE_VERSION=nakshiq-v54) and stayed stable at that version for the remainder of the run — a rebuild succeeded while this QA pass was in progress. As of run completion, BOTH the family-page fix (eb3ab783, 2026-08-11) and the mobile image/SW fix (71d248e7, 2026-08-13) are confirmed live and working (see verification below). Nothing is currently broken on production as a result of this — this finding is about deploy-pipeline reliability, not a live user-facing defect — but 3 build failures in 3 days, now including one that visibly delayed shipping a real founder-reported mobile bug fix by most of a day, is a reliability trend worth attention before it causes a longer gap.",
+      "evidence": "git log --format='%h %ci %s' shows the sequence: 3ee4aa1a/b05beac7 (08-11, festivals+weekend-from build fixes), 91cdf789 (08-12, rebuild after c97687d7 build died at 605/5464), 71d248e7 (08-13 13:00:46 UTC, mobile SW fix) followed 7 minutes later by f7efea40 (08-13 13:08:02 UTC) whose commit message states the 71d248e7 deploy itself errored at 13:06 UTC on a statement timeout and retriggers a rebuild. Live verification this session: curl https://www.nakshiq.com/sw.js showed CACHE_VERSION=\"nakshiq-v53\" (matching the 08-10 findings' recorded md5 exactly) at 12:55, 13:08, and 13:18 UTC, then CACHE_VERSION=\"nakshiq-v54\" at 13:38 and 13:41 UTC — alongside a data-dpl-id change from dpl_7eDCgFSnzrD53Kqe1doDCGbjb93s to dpl_2CQMZxrUriC7JpBXKoSSrPqJsn1j. Family-page fix verification (eb3ab783): curl https://www.nakshiq.com/en/family/kerala at 13:41 UTC shows 26 distinct /en/with-kids/<slug> links, matching a live direct-SQL count (SELECT count(*) FROM kids_friendly kf JOIN destinations d ON d.id=kf.destination_id JOIN states s ON s.id=d.state_id WHERE kf.suitable AND s.name='Kerala' → 26) exactly; rajasthan=23, sikkim=7 similarly render real content. Itinerary fix (f1a055c0, re-verified live one more time at run's end): POST /api/itinerary returns real, non-empty day content.",
+      "recommendation": "No emergency action needed — the immediate symptom resolved itself and both fixes are confirmed live. Worth a proactive look at the underlying Postgres/build-concurrency contention before the next release window (the a48b1674 2026-08-06 precedent already named 'three full 5,406-page prerenders running concurrently against the same Supabase instance' as a cause) — e.g. capping concurrent build workers, or moving the highest-read pages (festivals, weekend-from, and now apparently quiz pages) further onto the cached-data.ts pattern before they also start intermittently failing builds. Also worth a lightweight alert on 'build failed, no successful deploy in N hours' so a repeated failure doesn't silently sit unnoticed the way this one did until a scheduled QA pass happened to catch it mid-recovery."
+    },
+    {
+      "id": "NEW-2026-08-13-002",
+      "severity": "medium",
+      "title": "refresh-stay-picks-agent's mandated rendered-page verification step has been silently blocked for 5 consecutive nights by an egress/proxy policy — self-reported by the job, not previously surfaced in daily QA",
+      "detail": "CLAUDE.md's standing rule requires running scripts/verify-touched-pages.mjs against every page touched by a DB write that changes rendered output (born from the 2026-06-10 confidence_cards incident). The nightly refresh-stay-picks-agent job writes destination_stay_picks rows and is supposed to run that verification step as part of its own run. Its own ops_reports summary for last night (2026-08-12 22:23 UTC, run status ok=true, but watchdog flags it 'needs_review') states plainly: 'render_verification: BLOCKED — this session outbound network egress policy rejects HTTPS CONNECT to www.nakshiq.com at the proxy layer... This is now the 4th consecutive night this exact block is logged for this job (also on 08-09, 08-10, 08-11 runs) — scripts/verify-touched-pages.mjs has apparently never successfully executed for this scheduled job.' Today would make it the 5th night if unresolved. The job did a reasonable substitute (read the consuming component's null-handling directly and confirmed the shape of tonight's writes matches already-live rows), so there's no specific evidence of a broken page today — but the actual mandated verification step has not run even once in the last several days, leaving the 30-minute canary-probe as the only automated safety net for this specific write path.",
+      "evidence": "ops_reports row for job='refresh-stay-picks-agent', run_at=2026-08-12T22:23:20.811867+00, summary.render_verification field (quoted above) and summary.no_repo_files_changed=true. watchdog's most recent snapshot (2026-08-13T02:00:48 UTC) independently flags this same job status='needs_review', last_alerts_count=1. The job's own summary explicitly requests founder action: 'either allowlist www.nakshiq.com for this scheduled sessions egress policy, or move the verify-touched-pages.mjs step to a job/environment that has network access to production.'",
+      "recommendation": "Founder action needed, as the job itself requests: allowlist www.nakshiq.com in that scheduled session's egress policy, or relocate the verification step to an environment that already has production access. Until resolved, this is worth a line in the pending-user-action list in CLAUDE.md so it doesn't keep silently recurring unnoticed — the job flags it every night, but nothing currently surfaces that flag to a human."
+    },
+    {
+      "id": "NEW-2026-08-13-003",
+      "severity": "low",
+      "title": "Auto-refreshed stay-pick source-citation badges have likely never rendered for any web_search-sourced pick, due to a data-shape mismatch",
+      "detail": "Also self-reported in refresh-stay-picks-agent's 2026-08-12 run summary: the 'sources' column for every web_search-sourced pick (all 48 written that night, and by the job's own account this matches the pre-existing shape already live in prod) is stored as a plain JSON array of URL strings, but apps/web/src/components/editors-picks.tsx's EditorSource type expects {url, title, source_type?} objects. The component's filter (pick.sources.filter(s => typeof s.url === 'string')) silently evaluates to an empty array for every string element, so the source-citation badge never renders — no crash, no error, just a UI feature that has quietly never worked for any auto-refreshed pick.",
+      "evidence": "ops_reports row for job='refresh-stay-picks-agent', run_at=2026-08-12T22:23:20 UTC, summary.secondary_finding field. Not independently re-verified against the live component today (time-boxed given the item is explicitly cosmetic/non-crashing per the job's own analysis); flagged here on the strength of the job's self-report and its verification that this matches pre-existing prod rows, not a regression from one night's writes.",
+      "recommendation": "Low priority. Either write sources going forward as [{url, title}] objects, or relax the component to accept plain strings. Not urgent — no crash risk, and the picks themselves render correctly; only the citation badge is silently absent."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 22,
+    "core_routes_2xx": 22,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 63, "median": 342, "p90": 997, "max": 1854 },
+    "core_routes_TTFB_note": "22 real routes (landing en/hi, explore en/hi, trip, treks, saved, membership, blog, collections, a sampled destination page, itinerary/agra, quiz en/hi, risk-quiz, 3 weekend-from-city routes, family/kerala, state/kerala, vs/manali-vs-shimla, with-kids/manali) all 200. Widened this week's route list vs 08-10 to include family/state/vs/with-kids surfaces for the first time. with-kids/manali was the slowest single hit at 1854ms (still 200, first-touch ISR) — not re-probed a second time to confirm cache-HIT speedup, unlike the destination-page outliers below.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 353, "median": 432, "max": 3890 },
+    "destinations_TTFB_note": "10/10 200 on first hit. Two cold-ISR-cache outliers (yuksom 3499ms, haflong 3890ms, both x-vercel-cache MISS) — both re-requested later in the run and returned in well under 200ms with cache HIT, the same documented cold-cache-on-first-hit-only pattern as every prior run, not a regression.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_section_headings_translated_sampled": 10,
+    "hindi_section_headings_translated_count": 10,
+    "hindi_h1_devanagari_count": 2,
+    "hindi_h1_devanagari_note": "NEW metric this run, precisely scoping NEW-2026-07-09-001: 10/10 sampled Hindi pages now show translated section chrome (Emergency SOS / Why Special / etc, shipped 08-11), but H1+lede stay English on all 8 CINEMATIC-template sample members and are correctly Devanagari on both of today's 2 NON-cinematic members (jampui-hills, bhoramdeo). See regression_matrix.",
+    "seo_urls_sampled": 14,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 14,
+    "seo_hreflang_en_present": 14,
+    "seo_hreflang_hi_present": 14,
+    "seo_hreflang_xdefault_present": 14,
+    "seo_og_image_present": 14,
+    "seo_methodology_note": "First pass of this run's own hreflang check used a case-sensitive regex and misread 0/14 (Next.js renders the attribute as camelCase hrefLang in raw HTML) — corrected to re.IGNORECASE per the standing INFO-2026-05-10-001 note before this number was finalized. See honest_caveats.",
+    "soft_404_regression_passes": 9,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.36,
+    "sos_db_total_dialable_entries_11col": 3924,
+    "sos_db_total_dialable_entries_11col_note": "Down from 3953 on 08-10 (-29, -0.7%). Safety floor unaffected (min still 5, 0 rows under 3). Most plausible explanation: the weekly sos-auto-reverify cron (last ran 08-10T00:02 UTC, escalated=2, number_changed=0 per its own run summary — though 'number_changed' tracks a different check) or a manual data touch between runs; not investigated further as a discrete root cause given the safety floor holds. Worth a glance if it continues trending down next week.",
+    "sos_db_rows_with_placeholder_x": null,
+    "sos_db_rows_with_placeholder_x_note": "Not run this week (time-boxed); no signal either way.",
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_destinations_with_local_helpers_block": 533,
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_object_shape_rows_db": 93,
+    "people_who_help_array_shape_rows_db": 432,
+    "destinations_total_db": 533,
+    "sos_phones_total_across_10_dests": 66,
+    "sos_phones_invalid_format": 0,
+    "sos_destinations_without_block": 0,
+    "sos_no_block_tierA": 0,
+    "sos_phones_across_10_dests_note": "Real per-sample computation (compatibility alias for the build_report.js field-drift workaround, see NEW-2026-08-10-003 in regression_matrix): sum of the 11-column dialable count for exactly today's 10 sampled destinations (bhoramdeo 6, gir-national-park 7, haflong 8, igatpuri 6, jampui-hills 7, jog-falls 5, neemrana 7, nubra-valley 8, satara 5, yuksom 7).",
+    "sos_auto_reverify_migration_applied": true,
+    "sos_auto_reverify_cron_schedule": "0 0 * * 1 (weekly, Monday 00:00 UTC)",
+    "sos_auto_verify_status_confirmed": 109,
+    "sos_auto_verify_status_needs_source": 296,
+    "sos_auto_verify_status_never_run": 124,
+    "sos_auto_verify_status_source_unreachable": 4,
+    "sos_auto_verify_most_recent_run_utc": "2026-08-10T00:02:03Z",
+    "sos_auto_verify_note": "Unchanged since 08-10 — expected, next scheduled run is 2026-08-17 (Monday). That run's own summary (queried today): due=300, skipped=138, confirmed=0, escalated=2, urls_failed=22, needs_source=158, urls_fetched=120, number_changed=0, source_unreachable=4.",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "node scripts/audit-hero-images.mjs run directly today, completed comfortably within budget. Second consecutive week directly contradicting NEW-2026-07-07-003's original 45s-timeout concern (NOT_REPRODUCED).",
+    "stay_picks_spotcheck_kaza": 4,
+    "stay_picks_spotcheck_phawngpui_peak": 2,
+    "stay_picks_spotcheck_majuli": 4,
+    "stay_picks_spotcheck_note": "DB-only continuity check (none of the 3 landed in today's random sample); identical to 07-20..08-10.",
+    "api_endpoints_probed": 15,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 4,
+    "api_2xx_valid_returned": 5,
+    "api_404_expected_or_removed_returned": 7,
+    "api_itinerary_valid_status": 200,
+    "api_itinerary_valid_content_broken": false,
+    "api_itinerary_note": "3 varied live probes today (Dec/family, Oct/couple, May/solo+explicit destinationIds=[manali,shimla,jaipur]) — ALL returned real, non-empty per-day content, 0 literal-null strings, re-confirming last week's f1a055c0 fix is live and stable one week later. The explicit-destinationIds probe returned 'manali' for all 3 requested days rather than rotating through manali/shimla/jaipur — investigated and this is CORRECT, HONEST behavior, not a bug: direct DB check shows shimla scores 2/10 ('skip') and jaipur scores 1/10 ('skip') for May, while manali scores 3/10 ('wait'); the itinerary's own monthScore>=3 filter correctly excludes the two poorly-scoring destinations even though they were explicitly requested, rather than fabricating a plausible-looking multi-city plan. A positive confirmation of the fix's quality-filtering logic, not a new defect — no finding filed.",
+    "vercel_runtime_errors_7d_total_groups": 50,
+    "vercel_runtime_errors_7d_prior_week": 35,
+    "vercel_runtime_errors_itinerary_specific": 0,
+    "vercel_runtime_errors_note": "50 groups today vs 35 on 08-10 vs 27 on 08-03 — see NEW-2026-08-10-002 in regression_matrix for the full, more-nuanced-than-it-looks picture (one dominant correlated incident, 2 fully-resolved sub-patterns, 2 new signatures). 0 errors logged for /api/itinerary specifically.",
+    "service_worker_version": "nakshiq-v54",
+    "service_worker_version_note": "Observed transitioning LIVE mid-session from nakshiq-v53 (unchanged since 08-10, confirmed by matching md5) to nakshiq-v54 — see new_findings_today NEW-2026-08-13-001. The v54 bump ships 71d248e7's mobile CDN-image/service-worker fix.",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 24963,
+    "sitemap_total_urls_delta_note": "Identical to 08-10's 24,963 — flat rather than the steady weekly growth of prior weeks (24951→24957→24963). en/blog dipped 183→182 (-1); destination slug/month/cost counts unchanged (533/6396/525); festival URLs 1494 (no prior comparison point recorded). Not treated as a regression (no count actually shrank materially, and destinations/SOS/hero-image coverage are all steady-to-improving), but flagged honestly as a stall rather than claimed as continued growth. Plausibly connected to this week's build instability (NEW-2026-08-13-001) if sitemap generation is itself sensitive to the same contention, but not confirmed as the cause.",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 36,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "519 overlay markers — identical to 08-03/08-10. window.L present, 0 console errors, verified today via a live Grid→Map toggle click (not just a fresh page load).",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_leaflet_template": 1,
+    "map_dest_pages_atlas_template": 1,
+    "map_widget_destination_pages_probed_interactive": 2,
+    "map_widget_destination_pages_with_leaflet": 1,
+    "map_widget_field_alias_note": "map_widget_destination_pages_* duplicates map_dest_pages_* above, see NEW-2026-07-07-004. Today's 2 Chrome-interactive probes: yuksom (atlas, today's sample) + jampui-hills (Leaflet, today's sample, added as a follow-up check after the QA-report row initially showed ATTENTION on a 0/1 Leaflet read from raw-HTML-only verification) — both real in-sample destinations this week, no continuity-check substitution needed.",
+    "map_dest_atlas_note": "yuksom/en + /hi (today's random sample) render atlas svg viewBox 0 0 1000 1100, leaflet=0 by design (correct), 0 console errors both loads.",
+    "map_dest_leaflet_note": "jampui-hills (today's random sample, non-cinematic) interactively verified via Chrome: 1 leaflet-container, 28 tiles, 9 overlay markers, window.L present, 0 console errors, real page load (not the yumthang-valley continuity substitute used in prior weeks). bhoramdeo (today's other non-cinematic sample member) confirmed via raw-HTML string match only (14 leaflet occurrences), not driven interactively.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 5,
+    "console_react_418_fired_loads": "0 of 5 fully console-swept observations (yuksom en, yuksom hi, explore, trip, jampui-hills) — NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": true,
+    "deploy_evidence": "Directly observed TWO different deploy ids during this single session: dpl_7eDCgFSnzrD53Kqe1doDCGbjb93s (12:55–13:18 UTC, sw.js v53) then dpl_2CQMZxrUriC7JpBXKoSSrPqJsn1j (13:38 UTC onward, sw.js v54, stable through run end at 13:45 UTC). See NEW-2026-08-13-001.",
+    "hindi_translations_db_total": 533,
+    "hindi_translations_db_has_hi_tagline": 533,
+    "hindi_translations_db_has_hi_why_special": 533,
+    "hindi_translations_db_has_hi_name": 533,
+    "hindi_translations_note": "533/533 (100%) today, UP from 525/533 (98.5%) on 08-10 — the 8 previously-missing Sikkim destinations' Hindi translations were backfilled since last week. Real, verified improvement at the DB layer; does not by itself fix NEW-2026-07-09-001 (the rendering gap is in the cinematic H1/lede component, not missing data).",
+    "sos_db_dialable_11col_note": "Canonical 11-column set, non-null + trimmed-non-empty. 3924 total — see sos_db_total_dialable_entries_11col_note above for the small -29 week-over-week move.",
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) — identical to 07-20 through 08-10.",
+    "destinations_total_db_note": "Steady at 533 (max created_at still 2026-06-14, 0 new destinations — 60 days now).",
+    "ai_surface_removal_verified": true,
+    "ai_surface_removal_note": "5/5 removed-route probes (chat/gap-year-generate/gap-year-regenerate/embed/ask) return clean 404 again today. Not re-run the build-guard script or the dangling-link sweep this week (no code in this area changed since 08-10's thorough check); no regression signal.",
+    "security_advisors_count": 9,
+    "security_advisors_note": "9 findings (3 info RLS-enabled-no-policy, 4 warn SECURITY DEFINER-executable-by-anon/authenticated across 2 functions, 1 warn vector-extension-in-public, 1 warn leaked-password-protection-disabled) — identical composition to 08-10's count, 0 new, 0 resolved. Cross-checked against the audit-supabase-advisors cron's own most recent run (2026-08-13T12:23 UTC, security_count=9) — consistent.",
+    "ops_reports_targeted_check_note": "Did not re-run the full 21-distinct-job inventory this week (established 08-10; time-boxed to targeted checks instead: canary-probe 192 runs/4d, 0 failures; audit-supabase-advisors 16 runs/4d, 0 failures; audit-hero-images 4 runs/4d, 0 failures; watchdog full snapshot 2026-08-13T02:00 UTC, overall=ok with 2 jobs flagged needs_review — see new_findings_today NEW-2026-08-13-002/003; refresh-stay-picks-agent most recent run 2026-08-12T22:23 UTC ok=19/20 total=20 pending=1; road-sweep-agent most recent 2026-08-10, nothing in scope; sos-auto-reverify most recent 2026-08-10, see sos_auto_verify_note above)."
+  },
+  "deliverables": [
+    "qa/findings/2026-08-13.json",
+    "qa/hero-images.json + qa/hero-images.md (refreshed by today's direct audit-hero-images.mjs run)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "TOP STORYLINE: production had 3 build failures in 3 days (08-11, 08-12, 08-13) from the same escalating Postgres statement-timeout-during-concurrent-prerender issue already tracked under NEW-2026-08-03-002/NEW-2026-08-10-002 — this run directly witnessed a stale deploy (missing a same-day mobile-image fix) recover mid-session. Nothing is broken on production as of run completion; see NEW-2026-08-13-001.",
+    "SELF-CAUGHT METHODOLOGY BUG, disclosed for transparency: for roughly the first 40 minutes of this session, this run's own live check of /en/family/kerala used the wrong href pattern (grepped for /en/destination/<slug> links) and wrongly concluded the family-page fix (eb3ab783) was not live. The component actually links to /en/with-kids/<slug>. Caught and corrected before writing this report by cross-referencing a direct DB count (26 Kerala kid-suitable destinations) against a corrected page-content grep (26 matching links) — they agree exactly, confirming the fix is live and correct, and confirming today's Kerala/Rajasthan/Sikkim counts (26/23/7) are real. Worth adding a permanent note to SKILL.md alongside the existing Section K map-type note and Section E SOS note: family pages link to /with-kids/, not /destination/.",
+    "This run's Section D SEO check independently re-encountered the exact case-sensitivity trap INFO-2026-05-10-001 already warns about (hreflang rendered as camelCase hrefLang in raw HTML) — caught and corrected within this run before the number was finalized, not carried into the final 14/14 figures.",
+    "A large hero-number discrepancy was observed between an early browser screenshot of yuksom's English page (showing '2.6') and the raw served HTML (showing '4.0' consistently on both locales, matching the per-month breakdown's own 'August, 4.0/10 MARGINAL' line) — investigated and concluded this was very likely a client-side count-up animation caught mid-transition in the screenshot (taken 2s after navigation), not a genuine EN/HI data mismatch. Confirmed via a second, independent method (direct curl of both locales' raw SSR HTML, same deployment id) before ruling it out — not filed as a finding.",
+    "The atlas-vs-Leaflet destination-page dual-template question (NEW-2026-05-17-001 and siblings) was clarified this run: it is fully explained by the cinematic/non-cinematic content-template split (505/28), not by trek-status or per-destination happenstance as earlier notes implied. See regression_matrix for detail; worth folding into SKILL.md's existing map-type note.",
+    "The Vercel 7-day runtime-error sweep (50 groups, ~89KB raw output) was too large for direct context and was delegated to a sub-agent for full-file reading and structured categorization; the agent read all 50 groups and returned exact counts/timestamps, which are reproduced verbatim in NEW-2026-08-10-002's evidence. This is a heavier-weight step than most of this run (one sub-agent call) but was judged necessary for genuine synthesis (categorizing 50 groups, detecting the burst-clustering pattern) rather than routine data-gathering.",
+    "khonoma, uttarkashi, and khangchendzonga-np (historically-buggy SOS destinations) did not land in today's random sample — DB-only sitewide-aggregate rechecks (safety floor intact), not live per-destination re-verification, same caveat as prior weeks when they don't land in the sample.",
+    "The Phase-8-carry-sparse-stays watchlist (kaza, phawngpui-peak, majuli) was checked via direct DB spot-check today, not random sampling — none of the 3 landed in today's sample.",
+    "Axe-core/Lighthouse deferred again — baseline now 101 days stale (over 3 months). Confirmed this week's 16 commits don't touch contrast/aria/tablist markup, so nothing is silently slipping, but the deferral itself keeps compounding and is worth scheduling as its own session soon.",
+    "Did not re-run the full 21-distinct-job ops_reports inventory this week (established 08-10); ran targeted checks on the jobs most relevant to this week's findings instead (canary-probe, audit-supabase-advisors, audit-hero-images, watchdog's full snapshot, refresh-stay-picks-agent, road-sweep-agent, sos-auto-reverify) — see headline_metrics ops_reports_targeted_check_note.",
+    "The local working tree (as read via git status during this session) still shows the same uncommitted changes noted on 08-10 (destination-detail-cinematic.tsx, analytics.ts, env.example) plus a few new untracked files (affiliate-links.ts, data/images/, some *.yml files, .claude/settings.local.json) — none of these are deployed (production reflects pushed commits only), so today's findings are unaffected, but noted for completeness.",
+    "This findings.json and the three .docx reports will be committed (and pushed, if the apps/web prebuild consumes audit files) to git at the end of this run per the CLAUDE.md standing rule for scheduled/headless audit sessions, using scripts/audit-commit-guard.sh."
+  ],
+  "business_summary": {
+    "headline": "The trip-planner fix from last week is confirmed working a week later. This week's own story is about publishing reliability: the site's build process failed three times in three days from a database contention issue already on our radar, and this audit caught it live — for part of today's check, the site was running slightly stale code, missing a same-day fix for a mobile photo-loading bug. By the end of this check, a new build had gone out successfully and both that fix and an earlier family-travel-pages fix were confirmed live and working. Nothing is broken on the site right now.",
+    "traffic_lights": [
+      {
+        "area": "Trip itinerary planner (last week's top fix)",
+        "status": "GREEN",
+        "why": "Confirmed working again today, one week on — tested with 3 different trip requests, all returned real, complete plans. Also confirmed the planner is honestly refusing to recommend places that score poorly for the requested month, even when specifically asked for them, rather than papering over a bad fit."
+      },
+      {
+        "area": "Publishing reliability (NEW)",
+        "status": "AMBER",
+        "why": "The site's build process failed 3 times in the past 3 days from a database slowdown issue we're already tracking. This check directly caught the site briefly running older code as a result — missing a same-day mobile photo-loading fix. A new build succeeded partway through today's check, and everything is confirmed current and working as of now. Nothing user-facing was broken, but this is worth a proactive look before it happens again with worse timing."
+      },
+      {
+        "area": "Family travel pages",
+        "status": "GREEN",
+        "why": "A second version of last week's 'silent empty result' bug pattern was found and fixed by the team this week (family-by-state pages were showing 'no results' for 36 states). Confirmed live and working today — Kerala shows 26 real kid-friendly destinations, matching the database exactly."
+      },
+      {
+        "area": "Mobile photo loading",
+        "status": "GREEN",
+        "why": "A real bug a visitor reported (photos not loading, especially after refreshing on a phone) was root-caused and fixed this week. Confirmed live as of this check."
+      },
+      {
+        "area": "Site availability",
+        "status": "GREEN",
+        "why": "22/22 core pages loading correctly, 10/10 sampled destinations available, 0 broken pages found today."
+      },
+      {
+        "area": "Hindi translation",
+        "status": "AMBER",
+        "why": "Real, confirmed progress: section headings (Emergency SOS, Why Special, etc.) are now properly translated site-wide, and all 533 destinations now have Hindi text stored in the database (up from 525 last week). What's still open: the big headline title on destination pages still shows English on the Hindi version of the site — but only for the 505 destinations using our newest page design; the older 28-page design already shows this correctly, confirming it's a scoped, well-understood gap rather than a site-wide one."
+      },
+      {
+        "area": "Emergency contact data",
+        "status": "GREEN",
+        "why": "All 533 destinations still have a complete emergency-contact record (minimum 3 dialable numbers, average 7.4)."
+      },
+      {
+        "area": "Automated content-writing safety net",
+        "status": "AMBER",
+        "why": "One of our nightly automated jobs (which refreshes recommended places to stay) has been unable to run its own required double-check for 5 nights in a row, due to a technical access restriction it's been reporting every night. It did a reasonable fallback check instead, and nothing looks broken, but the intended safety net hasn't actually run — flagged for a fix."
+      },
+      {
+        "area": "Database slowdown (ongoing watch item)",
+        "status": "AMBER",
+        "why": "Still not fixed at the root, but this week's picture is more mixed than simply 'worse': two specific slow spots from last week (weekend-trip pages for 3 cities, and part of the search index) are now fully resolved. A separate, large, one-time database traffic spike happened for about 5 minutes on Tuesday — most likely tied to one of this week's build failures, not a new ongoing problem."
+      },
+      {
+        "area": "Accessibility / performance audit currency",
+        "status": "AMBER",
+        "why": "The last full accessibility/performance audit is now over 3 months old (101 days). Confirmed this week's changes don't touch that area, but it keeps getting more overdue."
+      }
+    ],
+    "whats_changed": [
+      "CONFIRMED FIXED, one week later: the trip itinerary planner. Real content on every test.",
+      "NEW FIX SHIPPED AND CONFIRMED LIVE: family travel pages (36 states) were silently showing zero results due to the same kind of bug as the itinerary issue — found and fixed by the team this week, verified working today.",
+      "NEW FIX SHIPPED AND CONFIRMED LIVE: a real, founder-reported mobile bug (photos not loading, especially after refreshing) was root-caused and fixed.",
+      "NEW: this audit caught the publishing pipeline mid-recovery from its 3rd build failure in 3 days — briefly running stale code, then successfully catching up during today's check. Worth a proactive look at the underlying cause before the timing is worse.",
+      "NEW: a nightly automated job has been unable to run its own required safety check for 5 nights running — self-reported by the job every night, but nothing had surfaced it to a human until today's audit looked.",
+      "IMPROVED: Hindi translation coverage in the database reached 100% (533/533, up from 525/533) — the last 8 destinations were backfilled this week.",
+      "The database slowdown watch item is more mixed than simply worsening: 2 specific problem spots are now fully fixed; a separate one-time traffic spike inflated this week's headline error count but looks like a one-off tied to a build failure, not steady decay."
+    ],
+    "risks": [
+      "The database contention that's been intermittently slowing pages down is now also causing build/publish failures — 3 in the last 3 days. It self-resolved each time, but a proactive fix is worth prioritizing before a failure isn't caught quickly.",
+      "The nightly stay-picks refresh job's safety-net verification has been silently non-functional for 5 nights. Low risk today (a reasonable fallback check found nothing wrong), but it means we're currently trusting a weaker check than intended for that nightly write.",
+      "The Hindi headline-title gap is real and still visible to Hindi-reading visitors on the majority of destination pages, even though real progress was made this week on the surrounding page content.",
+      "The accessibility/performance audit is over 3 months stale — unchanged risk, flagged every week until it's scheduled."
+    ],
+    "bottom_line": [
+      "No emergency action needed today — everything checked is either working correctly or was caught, understood, and confirmed resolved during this same check.",
+      "Worth doing soon: a proactive look at the database contention causing build failures (3 in 3 days) before it causes a longer publishing gap — likely needs either fewer concurrent build workers or moving a couple more page types onto the site's caching system.",
+      "Worth doing soon: unblock the nightly stay-picks job's safety-check step (a simple network-access allowlist fix per the job's own diagnosis).",
+      "Worth scheduling: the overdue accessibility/performance audit (now over 3 months stale) and the remaining Hindi headline-title gap (scoped now to a specific page template, not site-wide).",
+      "Low priority: a small citation-badge display bug on auto-refreshed stay picks, and a documentation cleanup in how this audit's own reports are generated — both already tracked, neither urgent."
+    ],
+    "coverage": [
+      "10 destinations sampled live (English + Hindi)",
+      "22 core site routes probed, including family/state/comparison pages for the first time",
+      "15 API endpoint checks (0 failing with server errors)",
+      "533 destination URLs published in the sitemap, all with working hero images (verified directly)",
+      "533 destinations checked against the database for complete emergency-contact data and Hindi translation coverage",
+      "16 this-week code commits reviewed against the regression matrix and cross-checked against live production behavior, not just commit messages",
+      "7 days of production error logs reviewed and fully categorized (50 error groups)",
+      "Nightly automated job health checked directly, surfacing one previously-unnoticed self-reported gap"
+    ]
+  }
+}
