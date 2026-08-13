@@ -155,24 +155,6 @@ export function CinematicVerdictStrip({
           >
             Build route
           </Link>
-          <Link
-            href={`/${locale}/ask?topic=${destinationId}`}
-            style={{
-              color: "var(--bone-dim)",
-              textDecoration: "none",
-              transition: "color 160ms ease",
-            }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.color =
-                "var(--vermillion)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.color =
-                "var(--bone-dim)")
-            }
-          >
-            Ask AI
-          </Link>
           {firstNeighbourId && firstNeighbourName && (
             <Link
               href={`/${locale}/compare?compare=${destinationId},${firstNeighbourId}`}

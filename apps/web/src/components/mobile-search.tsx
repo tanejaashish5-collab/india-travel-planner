@@ -138,7 +138,7 @@ export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => 
                   {[
                     { label: "Where to Go", href: `/${locale}/where-to-go`, icon: "📅" },
                     { label: "All States", href: `/${locale}/states`, icon: "🗺️" },
-                    { label: "Ask NakshIQ", href: `/${locale}/ask`, icon: "💬" },
+                    { label: "Festivals", href: `/${locale}/festivals`, icon: "🎪" },
                     { label: "Blog", href: `/${locale}/blog`, icon: "📝" },
                   ].map((link) => (
                     <button

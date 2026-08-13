@@ -120,7 +120,7 @@
 //      celebration video hero (de-watermarked Flow/Veo clips, {slug}.mp4 in
 //      R2) on ~500 /festivals/[slug] pages — markup changed from a static
 //      image to a <video> on the long tail that previously had no clip.
-const CACHE_VERSION = "nakshiq-v53";
+const CACHE_VERSION = "nakshiq-v54";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -243,9 +243,9 @@ self.addEventListener("fetch", (event) => {
   // Never intercept non-GET requests (mutations always go to network).
   if (event.request.method !== "GET") return;
 
-  // Skip cross-origin requests except R2 CDN for videos/images.
+  // Cross-origin assets (R2 CDN images + videos, weather icons) are passed
+  // straight through to the network — see the image block below for why.
   const isOwnOrigin = url.origin === self.location.origin;
-  const isR2Origin = url.hostname.includes("r2.dev") || url.hostname.includes("cloudflare");
 
   // Next internal — let it flow.
   if (url.pathname.startsWith("/_next/")) return;
@@ -254,18 +254,49 @@ self.addEventListener("fetch", (event) => {
   // EXCEPT read-only GET endpoints useful offline (weather, stats). Skip for safety.
   if (url.pathname.startsWith("/api/")) return;
 
-  // Images — Cache First (aggressive, 7-day implicit via browser expiry).
-  if (url.pathname.match(/\.(jpg|jpeg|png|webp|avif|svg|ico)$/i) || url.pathname.includes("/images/")) {
+  // Cross-origin images (R2 CDN, weather icons) — PASS THROUGH, never intercept.
+  //
+  // R2's public endpoint sends no Access-Control-Allow-Origin header, so an
+  // <img> load is a no-cors request and its response is OPAQUE: status 0,
+  // `ok === false`, body unreadable. Two consequences made the old handler
+  // actively harmful on mobile (found 2026-08-13, founder reported images not
+  // loading on his phone):
+  //
+  //   1. `response.ok` is never true for an opaque response, so `cache.put`
+  //      never ran — IMAGE_CACHE measured 0 entries on prod despite the
+  //      "aggressive cache-first" comment. The offline-images feature was
+  //      dead code, not a working cache.
+  //   2. The `.catch(() => new Response("", { status: 404 }))` fallback turned
+  //      any transient fetch failure into a synthetic, EMPTY 404. The browser
+  //      treats that as a valid, authoritative "this image does not exist" and
+  //      paints a permanently broken image — where a real network error would
+  //      simply have failed retryably. On flaky mobile data this manufactured
+  //      broken images out of hiccups, and prod loads showed 20 of 27 landing
+  //      images "404" while every one of those URLs returned 200 to curl.
+  //
+  // We cannot fix the cache without CORS: an opaque 404 from R2 is
+  // indistinguishable from an opaque 200, so caching opaque responses would
+  // risk pinning error bodies forever. R2 already serves these assets with
+  // `Cache-Control: public, max-age=31536000, immutable`, so the browser's own
+  // HTTP cache covers repeat views. Staying out of the path is strictly better.
+  const isImageRequest =
+    url.pathname.match(/\.(jpg|jpeg|png|webp|avif|svg|ico)$/i) || url.pathname.includes("/images/");
+
+  if (isImageRequest && !isOwnOrigin) return;
+
+  // Same-origin images — Cache First. Here the response is NOT opaque, so
+  // `response.ok` is meaningful and errors are never cached.
+  if (isImageRequest) {
     event.respondWith(
       caches.open(IMAGE_CACHE).then((cache) =>
         cache.match(event.request).then((cached) => {
           if (cached) return cached;
           return fetch(event.request).then((response) => {
-            if (response.ok && (isOwnOrigin || isR2Origin)) {
-              cache.put(event.request, response.clone());
+            if (response.ok) {
+              cache.put(event.request, response.clone()).catch(() => {});
             }
             return response;
-          }).catch(() => new Response("", { status: 404 }));
+          }).catch(() => Response.error());
         })
       )
     );

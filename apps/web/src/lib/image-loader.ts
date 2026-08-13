@@ -40,11 +40,16 @@ export default function r2Loader({ src, width }: LoaderArgs): string {
 
   // Only assets under known variant-generating subdirectories (destinations/,
   // collections/, treks/, blog/, etc) have the -w400/-w800/-w1200/-w1600 webp
-  // family on R2. Root-level pngs (icon-192.png, og-image.jpg) don't — they
-  // are uploaded as-is by upload-static-assets.mjs and have no width variants.
-  // Without this guard, /icon-192.png × width=48 was rewritten to
-  // /icon-192-w400.webp which 404s. Falls back to the original asset on R2.
-  if (!/\//.test(normalized)) return `${cdn}/${normalized}`;
+  // family on R2. Root-level files (icon-192.png, icon-512.png, og-image.jpg,
+  // apple-touch-icon.png) have no width variants AND are not on R2 at all —
+  // they ship in apps/web/public and are served from our own origin.
+  //
+  // This previously returned `${cdn}/${normalized}`, sending them to R2 where
+  // all four 404 (verified 2026-08-13: R2 404 / local 200 for every one). The
+  // visible casualty was the PWA install prompt, which renders
+  // <Image src="/icon-192.png"> and so showed a broken icon on every phone.
+  // Return the local path untouched — do not route root assets to the CDN.
+  if (!/\//.test(normalized)) return src;
 
   const stem = m[1];
   const variantW = pickVariantWidth(width);

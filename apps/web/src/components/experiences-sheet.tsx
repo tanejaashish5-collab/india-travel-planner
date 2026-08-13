@@ -16,7 +16,6 @@ const EXPERIENCE_ITEMS = [
   { label: "Permits", count: "32", icon: "📋", href: "/permits", desc: "Required travel permits" },
   { label: "Road Conditions", count: "", icon: "🚗", href: "/road-conditions", desc: "Live road reports" },
   { label: "Records", count: "", icon: "🏆", href: "/superlatives", desc: "Highest, deepest, most remote" },
-  { label: "Ask NakshIQ", count: "AI", icon: "💬", href: "/ask", desc: "AI travel assistant" },
 ];
 
 export function ExperiencesSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
