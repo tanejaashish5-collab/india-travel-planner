@@ -36,8 +36,8 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-13",
-    "m8EAd_carousel": "2026-08-12",
-    "PdMu0_carousel": "2026-08-12",
+    "m8EAd_carousel": "2026-08-13",
+    "PdMu0_carousel": "2026-08-13",
     "m8EAd_yt_short": "2026-08-13",
     "m8EAd": "2026-08-12",
     "m8EAd_evening": "2026-08-12",
@@ -294,6 +294,10 @@
     },
     {
       "destination_id": "srirangam",
+      "date": "2026-08-13"
+    },
+    {
+      "destination_id": "dakor",
       "date": "2026-08-13"
     }
   ],
@@ -7672,6 +7676,24 @@
       "destination": "srirangam",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_srirangam_hi_2026-08-13.mp4"
+    },
+    {
+      "timestamp": "2026-08-13T08:48:57.880745+00:00",
+      "date": "2026-08-13",
+      "platform": "instagram",
+      "post_id": "kwS0S",
+      "destination": "dakor",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-13"
+    },
+    {
+      "timestamp": "2026-08-13T08:49:00.288332+00:00",
+      "date": "2026-08-13",
+      "platform": "facebook",
+      "post_id": "oVHID",
+      "destination": "dakor",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-13"
     }
   ],
   "theme_usage": {
@@ -8904,7 +8926,14 @@
       "Nehru Trophy Boat Race",
       "Janmashtami at Dwarkadhish",
       "Independence Day at Cellular Jail",
-      "Monsoon Festival"
+      "Monsoon Festival",
+      "Janmashtami Festival",
+      "Manimahesh Yatra",
+      "Metemneo Festival",
+      "Neermahal Water Festival - Boat Race",
+      "Tendong Lho Rum Faat",
+      "Krishna Janmashtami (Birth of Krishna)",
+      "Nagara Panchami"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
