@@ -23,6 +23,7 @@ import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
 import { PeakAlertHook } from "@/components/peak-alert-hook";
+import { getCachedNearbyDestinations } from "@/lib/cached-data";
 
 export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
 // dynamicParams=true → pages not pre-rendered at build time ISR-generate on
@@ -210,49 +211,23 @@ async function getDestination(id: string) {
     .eq("id", id)
     .single();
 
-  // Distance-sorted nearby via PostGIS, with same-state fallback when coords are missing.
+  // Distance-sorted nearby via PostGIS, with same-state fallback.
+  //
+  // The PostGIS lookup (RPC + details + map pins) now lives in
+  // lib/cached-data.ts. It was the app's single largest database consumer —
+  // 302,312 calls / 17,814s cumulative, uncached on every render — and the
+  // contention it created is what tripped the 3s statement_timeout on
+  // unrelated queries, 500ing destination pages and killing production builds.
+  //
+  // It throws rather than returning a degraded result, so a transient failure
+  // is never cached for the 24h window: we fall back to the same-state list
+  // for this render only and the next request retries.
   const fetchNearby = async () => {
-    if (coordData?.lat != null && coordData?.lng != null) {
-      const { data: rpcData, error: rpcErr } = await supabase.rpc("find_nearby_destinations", {
-        lat: coordData.lat,
-        lng: coordData.lng,
-        radius_km: 150,
-      });
-      if (!rpcErr && Array.isArray(rpcData) && rpcData.length > 0) {
-        const nearbyIds = rpcData
-          .filter((n: any) => n.destination_id !== id)
-          .slice(0, 8)
-          .map((n: any) => n.destination_id);
-        if (nearbyIds.length > 0) {
-          // Fetch details + coords in parallel. Coords power the enriched
-          // mini-map pins (destination-map.tsx); details feed the textual
-          // "Nearby" section lower on the page.
-          const [{ data: full }, { data: coords }] = await Promise.all([
-            supabase
-              .from("destinations")
-              .select("id, name, difficulty, elevation_m, state:states(name)")
-              .in("id", nearbyIds),
-            supabase
-              .from("destinations_with_coords")
-              .select("id, lat, lng")
-              .in("id", nearbyIds),
-          ]);
-          const distMap = new Map<string, number>(
-            rpcData.map((n: any) => [n.destination_id, n.distance_km])
-          );
-          const coordMap = new Map<string, { lat: number; lng: number }>(
-            (coords ?? []).map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
-          );
-          return { data: (full ?? [])
-            .map((d: any) => ({
-              ...d,
-              distance_km: Math.round(distMap.get(d.id) ?? 0),
-              lat: coordMap.get(d.id)?.lat ?? null,
-              lng: coordMap.get(d.id)?.lng ?? null,
-            }))
-            .sort((a: any, b: any) => a.distance_km - b.distance_km) };
-        }
-      }
+    try {
+      const nearby = await getCachedNearbyDestinations(id);
+      if (nearby.length > 0) return { data: nearby };
+    } catch (err) {
+      console.error(`[destination:${id}] cached nearby failed — same-state fallback:`, err);
     }
     // Fallback: same-state, no distance
     const { data: sameState } = await supabase

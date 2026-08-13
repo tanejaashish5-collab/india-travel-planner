@@ -306,6 +306,109 @@ export const getCachedHillStations = unstable_cache(
   { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.destinations] },
 );
 
+// ── Nearby destinations (PostGIS) ─────────────────────────────────────────
+export interface CachedNearbyDestination {
+  id: string;
+  name: string;
+  difficulty: string | null;
+  elevation_m: number | null;
+  state?: unknown;
+  distance_km: number | null;
+  lat: number | null;
+  lng: number | null;
+}
+
+/**
+ * The single largest database consumer in the whole app. Measured in
+ * pg_stat_statements 2026-08-14: **302,312 calls, 17,814s of cumulative
+ * execution time** — more than twice the next query, and it ran UNCACHED on
+ * every destination-hub render. Each call is really four round-trips: the
+ * coords lookup, the PostGIS RPC, then details + map pins for the matches.
+ *
+ * This is the main lever against the 3s `statement_timeout` cancellations
+ * (57014) that 500'd destination pages and killed production builds. No
+ * individual query was ever slow — getDestination measures 180ms and the
+ * hill-station quiz 276ms, both with every index used. The timeouts are
+ * CONTENTION: a build prerenders 5,464 pages across 3 workers, and this
+ * query alone ran ~1,010 times per build on top of live traffic.
+ *
+ * Nothing here depends on the request — only on `id` and reference data that
+ * changes on backfill — so it belongs in this layer and busts with
+ * `ref-destinations`.
+ *
+ * THROWS on a genuine failure instead of degrading, because `unstable_cache`
+ * would otherwise pin a degraded result for the full 24h window (same reason
+ * as fetchAllRows above). A throw is not cached, so the next request retries;
+ * the caller catches and falls back to a same-state list for that render only.
+ * An absent coords row is a real data state, not a failure, so it returns []
+ * and lets the caller fall back without poisoning anything.
+ */
+export const getCachedNearbyDestinations = unstable_cache(
+  async (id: string): Promise<CachedNearbyDestination[]> => {
+    const supabase = anonClient();
+    if (!supabase) return [];
+
+    const { data: coordData, error: coordErr } = await supabase
+      .from("destinations_with_coords")
+      .select("lat, lng")
+      .eq("id", id)
+      .single();
+    // PGRST116 = no matching row.
+    if (coordErr && coordErr.code !== "PGRST116") {
+      throw new Error(`nearby(${id}) coords: ${coordErr.code} ${coordErr.message}`);
+    }
+    if (coordData?.lat == null || coordData?.lng == null) return [];
+
+    const { data: rpcData, error: rpcErr } = await supabase.rpc("find_nearby_destinations", {
+      lat: coordData.lat,
+      lng: coordData.lng,
+      radius_km: 150,
+    });
+    if (rpcErr) throw new Error(`nearby(${id}) rpc: ${rpcErr.code} ${rpcErr.message}`);
+    if (!Array.isArray(rpcData) || rpcData.length === 0) return [];
+
+    const nearbyIds = (rpcData as { destination_id: string }[])
+      .filter((n) => n.destination_id !== id)
+      .slice(0, 8)
+      .map((n) => n.destination_id);
+    if (nearbyIds.length === 0) return [];
+
+    const [details, pins] = await Promise.all([
+      supabase
+        .from("destinations")
+        .select("id, name, difficulty, elevation_m, state:states(name)")
+        .in("id", nearbyIds),
+      supabase.from("destinations_with_coords").select("id, lat, lng").in("id", nearbyIds),
+    ]);
+    if (details.error) throw new Error(`nearby(${id}) details: ${details.error.message}`);
+    if (pins.error) throw new Error(`nearby(${id}) pins: ${pins.error.message}`);
+
+    const distMap = new Map(
+      (rpcData as { destination_id: string; distance_km: number }[]).map((n) => [
+        n.destination_id,
+        n.distance_km,
+      ]),
+    );
+    const coordMap = new Map(
+      ((pins.data ?? []) as { id: string; lat: number; lng: number }[]).map((c) => [
+        c.id,
+        { lat: c.lat, lng: c.lng },
+      ]),
+    );
+
+    return ((details.data ?? []) as Record<string, unknown>[])
+      .map((d) => ({
+        ...(d as unknown as CachedNearbyDestination),
+        distance_km: Math.round(distMap.get(d.id as string) ?? 0),
+        lat: coordMap.get(d.id as string)?.lat ?? null,
+        lng: coordMap.get(d.id as string)?.lng ?? null,
+      }))
+      .sort((a, b) => (a.distance_km ?? 0) - (b.distance_km ?? 0));
+  },
+  ["ref-nearby-destinations-v1"],
+  { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.destinations] },
+);
+
 // ── Itinerary page allowlist ─────────────────────────────────────────────────
 // Destination ids whose `micro_itineraries` pass the min-content gate in
 // lib/itinerary-page.ts — the ONLY ids /itinerary/[slug] renders (the page
