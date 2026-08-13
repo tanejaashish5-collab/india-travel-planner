@@ -17859,3 +17859,48 @@ Date range: 2026-04-15 → 2026-08-12
 2026-08-13 12:36:27  INFO      YT Short posted: format=before_after, music=edm-966
 2026-08-13 12:36:27  INFO      State saved. YT Short run complete.
 2026-08-13 12:36:27  INFO      ════════════════════════════════════════════════════════════
+2026-08-13 15:18:54  INFO      ════════════════════════════════════════════════════════════
+2026-08-13 15:18:54  INFO      Nakshiq Autoposter · EVENING · 2026-08-13 · weekday=3
+2026-08-13 15:18:54  INFO      ════════════════════════════════════════════════════════════
+2026-08-13 15:18:54  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-13 15:19:34  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-13 15:19:34  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-13 15:19:35  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-13 15:19:35  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-13 15:19:35  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-13 15:19:49  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-13 15:19:49  INFO      Evening format (balance→anti_trap): tourist_trap [0% vs target 15%] (0/15 never featured)
+2026-08-13 15:19:49  INFO      Formats — IG: tourist_trap  ·  FB: tourist_trap  ·  Story: collection_spotlight
+2026-08-13 15:19:49  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 50
+2026-08-13 15:19:49  INFO      Fingerprint dedup snapshot — 50 dests in 7d · 108 (dest,fmt) pairs in 30d · 233 media in 60d
+2026-08-13 15:19:49  INFO      Collection locked: Summer Escapes (Apr-Jun) — Where to Flee the Heat (78/100 never featured)
+2026-08-13 15:19:49  INFO      Tourist trap locked: skip Jaisalmer → go Rann of Kutch (79/79 never featured)
+2026-08-13 15:19:55  INFO      Shared best destination locked: Keylong
+2026-08-13 15:19:55  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-08-13 15:19:55  INFO      [instagram/nakshiq] Generating tourist_trap post...
+2026-08-13 15:19:55  WARNING   [instagram/nakshiq] tourist_trap: keylong inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'adilabad' as score_card to keep the slot live.
+2026-08-13 15:19:55  INFO      [instagram/nakshiq] Caption ready (334 chars, dest=adilabad)
+2026-08-13 15:19:56  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-13 15:19:56  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/adilabad.mp4?v=20260524
+2026-08-13 15:19:58  INFO          Brand-stamp applied: adilabad.mp4 (6,164,220 → 2,667,236 bytes)
+2026-08-13 15:19:58  INFO          Requesting upload URL for adilabad.mp4 (2,667,236 bytes, video/mp4)
+2026-08-13 15:19:59  INFO          Uploading to R2 (timeout=300s)...
+2026-08-13 15:20:00  INFO          R2 PUT OK. Confirming...
+2026-08-13 15:20:01  INFO          Media ready: GCnKO (2,667,236 bytes · adilabad.mp4)
+2026-08-13 15:20:01  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-13 15:20:46  INFO      [instagram/nakshiq] ✅ Published · Outstand=OxmFC · Platform=18030686417659640
+2026-08-13 15:20:46  INFO      [facebook/Nakshiq] Generating tourist_trap post...
+2026-08-13 15:20:46  WARNING   [facebook/Nakshiq] tourist_trap: keylong inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'adilabad' as score_card to keep the slot live.
+2026-08-13 15:20:46  INFO      [facebook/Nakshiq] Caption ready (513 chars, dest=adilabad)
+2026-08-13 15:20:46  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-13 15:20:46  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/adilabad.mp4?v=20260524
+2026-08-13 15:20:48  INFO          Brand-stamp applied: adilabad.mp4 (6,164,220 → 2,667,236 bytes)
+2026-08-13 15:20:48  INFO          Requesting upload URL for adilabad.mp4 (2,667,236 bytes, video/mp4)
+2026-08-13 15:20:48  INFO          Uploading to R2 (timeout=300s)...
+2026-08-13 15:20:49  INFO          R2 PUT OK. Confirming...
+2026-08-13 15:20:50  INFO          Media ready: pFl9i (2,667,236 bytes · adilabad.mp4)
+2026-08-13 15:20:50  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-13 15:21:04  INFO      [facebook/Nakshiq] ✅ Published · Outstand=PtWbW · Platform=1584288066722093
+2026-08-13 15:21:04  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-13 15:21:04  INFO      State saved. Run complete.
+2026-08-13 15:21:04  INFO      ════════════════════════════════════════════════════════════
