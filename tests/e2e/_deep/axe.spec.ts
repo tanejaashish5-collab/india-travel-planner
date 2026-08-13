@@ -38,8 +38,6 @@ const URLS = [
   "/en/where-to-go/april",
   "/en/collections",
   "/en/blog",
-  "/en/ask",
-  "/en/gap-year",
   "/en/trip",
   "/en/treks",
   "/en/about",

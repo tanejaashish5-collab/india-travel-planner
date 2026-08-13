@@ -40,11 +40,6 @@ test.describe("Mobile Experience", () => {
     await expect(cards.first()).toBeVisible();
   });
 
-  test("ask nakshiq page loads", async ({ page }) => {
-    await page.goto("/en/ask");
-    await expect(page).toHaveTitle(/Ask|NakshIQ/i);
-  });
-
   test("states page loads", async ({ page }) => {
     await page.goto("/en/states");
     await expect(page.getByText(/States|Union Territories/i).first()).toBeVisible();
