@@ -36,8 +36,8 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-14",
-    "m8EAd_carousel": "2026-08-13",
-    "PdMu0_carousel": "2026-08-13",
+    "m8EAd_carousel": "2026-08-14",
+    "PdMu0_carousel": "2026-08-14",
     "m8EAd_yt_short": "2026-08-14",
     "m8EAd": "2026-08-13",
     "m8EAd_evening": "2026-08-13",
@@ -298,6 +298,10 @@
     },
     {
       "destination_id": "sarahan",
+      "date": "2026-08-14"
+    },
+    {
+      "destination_id": "corbett-national-park",
       "date": "2026-08-14"
     }
   ],
@@ -7770,6 +7774,24 @@
       "destination": "sarahan",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_kinnaur-spiti-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-08-14T08:42:06.233177+00:00",
+      "date": "2026-08-14",
+      "platform": "instagram",
+      "post_id": "EzPFt",
+      "destination": "corbett-national-park",
+      "format": "carousel.skip_list",
+      "media_id": "carousel_skip_list_2026-08-14"
+    },
+    {
+      "timestamp": "2026-08-14T08:42:08.465639+00:00",
+      "date": "2026-08-14",
+      "platform": "facebook",
+      "post_id": "WqtEO",
+      "destination": "corbett-national-park",
+      "format": "carousel.skip_list",
+      "media_id": "carousel_skip_list_2026-08-14"
     }
   ],
   "theme_usage": {
