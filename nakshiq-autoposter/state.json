@@ -42,7 +42,9 @@
     "m8EAd": "2026-08-13",
     "m8EAd_evening": "2026-08-13",
     "PdMu0": "2026-08-13",
-    "PdMu0_evening": "2026-08-13"
+    "PdMu0_evening": "2026-08-13",
+    "m8EAd_reel_studio": "2026-08-14",
+    "GAh5p_reel_studio": "2026-08-14"
   },
   "last_sync": "2026-08-13T15:19:34.024004+00:00",
   "posted_destinations": [
@@ -292,6 +294,10 @@
     },
     {
       "destination_id": "bangus-valley",
+      "date": "2026-08-14"
+    },
+    {
+      "destination_id": "sarahan",
       "date": "2026-08-14"
     }
   ],
@@ -7746,6 +7752,24 @@
       "destination": "bangus-valley",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_bangus-valley_hi_2026-08-14.mp4"
+    },
+    {
+      "timestamp": "2026-08-14T07:06:33.243522+00:00",
+      "date": "2026-08-14",
+      "platform": "instagram",
+      "post_id": "yJ38m",
+      "destination": "sarahan",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_kinnaur-spiti-circuit.mp4"
+    },
+    {
+      "timestamp": "2026-08-14T07:06:43.064909+00:00",
+      "date": "2026-08-14",
+      "platform": "youtube",
+      "post_id": "iK9fd",
+      "destination": "sarahan",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_kinnaur-spiti-circuit.mp4"
     }
   ],
   "theme_usage": {
@@ -8955,7 +8979,7 @@
     "ladakh-manali-biker": "2026-08-07",
     "ladakh-express-7d": "2026-08-10",
     "spiti-biker-circuit": "2026-08-12",
-    "kinnaur-spiti-circuit": "2026-07-10",
+    "kinnaur-spiti-circuit": "2026-08-14",
     "ladakh-manali-route": "2026-07-13"
   },
   "carousel_seen": {
