@@ -66,10 +66,14 @@ test.describe("Visual — Mobile", () => {
     }
   });
 
-  test("chatbot button not cropped by tab bar", async ({ page }) => {
+  // Renamed 2026-08-14: this guarded the floating chatbot button, which was
+  // deleted with the metered-AI teardown on 2026-08-04. The bottom-of-viewport
+  // region it captures still holds the tab bar, so the check keeps its value —
+  // only the name was describing something that no longer exists.
+  test("bottom tab bar not cropped", async ({ page }) => {
     await page.goto("/en/explore");
     await page.waitForLoadState("networkidle");
-    // Capture the bottom 200px of viewport where chat button + tab bar live
+    // Capture the bottom 200px of viewport where the tab bar lives
     await expect(page).toHaveScreenshot("mobile-chat-button-area.png", {
       maxDiffPixelRatio: 0.03,
       fullPage: false,
@@ -163,7 +167,12 @@ test.describe("Visual — Desktop", () => {
   test("nav bar layout", async ({ page }) => {
     await page.goto("/en");
     await page.waitForLoadState("networkidle");
-    const header = page.locator("header");
+    // `locator("header")` matched 7 elements — the landing page uses <header>
+    // for each editorial section ("IV · The Atlas", "V · Director's Cut", …),
+    // so strict mode failed before any screenshot was taken. Only a top-level
+    // <header> carries the implicit `banner` role; the section ones are nested
+    // and do not.
+    const header = page.getByRole("banner").first();
     await expect(header).toHaveScreenshot("desktop-nav.png", {
       maxDiffPixelRatio: 0.01,
     });

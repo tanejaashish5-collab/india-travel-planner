@@ -8,9 +8,12 @@ test.describe("Destination Detail", () => {
     await expect(page.locator("video, img[alt]").first()).toBeVisible();
     // Name and tagline
     await expect(page.getByText("Varanasi").first()).toBeVisible();
-    // Month scores section — the cinematic template labels it
-    // "month-by-month" / "Best months" instead of "Monthly".
-    await expect(page.getByText(/month-by-month|best months/i).first()).toBeVisible();
+    // Month scores section. The cinematic template's heading is "Month by
+    // month" (spaces) — the old regex only allowed the hyphenated form, so it
+    // matched nothing on the rendered page even though the section was there.
+    // Every other occurrence of the hyphenated spelling on this page is inside
+    // JSON-LD or the i18n payload, which getByText cannot see.
+    await expect(page.getByText(/month[- ]by[- ]month|best months/i).first()).toBeVisible();
   });
 
   test("confidence cards render", async ({ page }) => {

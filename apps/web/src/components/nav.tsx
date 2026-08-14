@@ -372,20 +372,13 @@ export function Nav() {
                   <path d="m21 21-4.3-4.3" />
                 </svg>
               </button>
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new Event("asknakshiq:open"))}
-                aria-label="Ask NakshIQ"
-                title="Ask NakshIQ"
-                className="p-2 text-[#F5F1E8]/75 hover:text-[#F5F1E8] transition-colors"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                  <path d="M9.5 9h.01" />
-                  <path d="M14.5 9h.01" />
-                  <path d="M9 13a3 3 0 0 0 6 0" />
-                </svg>
-              </button>
+              {/* The "Ask NakshIQ" chat-bubble button was removed 2026-08-14.
+                  It dispatched `asknakshiq:open`, and the widget that listened
+                  for that event was deleted with the metered-AI teardown on
+                  2026-08-04 — a repo-wide grep found three dispatchers and
+                  ZERO listeners. It rendered on every page and did nothing at
+                  all when tapped, which is worse than a dead link: a 404 at
+                  least tells you something happened. */}
               {/* Language toggle — minimal cream-on-dark variant. Mobile menu
                   still uses the default LanguageToggle component. */}
               <button
@@ -470,16 +463,8 @@ export function Nav() {
                 >
                   Search
                 </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    window.dispatchEvent(new Event("asknakshiq:open"));
-                  }}
-                  className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] border border-white/15 rounded-full px-4 py-2 transition-colors"
-                >
-                  Ask
-                </button>
+                {/* "Ask" pill removed 2026-08-14 — dispatched asknakshiq:open,
+                    which has had no listener since the 2026-08-04 AI teardown. */}
                 <button
                   type="button"
                   onClick={() => {
@@ -628,29 +613,8 @@ export function Nav() {
               <path d="m21 21-4.3-4.3" />
             </svg>
           </button>
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new Event("asknakshiq:open"))}
-            className="rounded-lg p-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="Ask NakshIQ — AI assistant"
-            title="Ask NakshIQ"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              <path d="M9.5 9h.01" />
-              <path d="M14.5 9h.01" />
-              <path d="M9 13a3 3 0 0 0 6 0" />
-            </svg>
-          </button>
+          {/* Third and last "Ask NakshIQ" chat-bubble removed 2026-08-14 —
+              same dead asknakshiq:open dispatcher as the two above. */}
           <LanguageToggle />
           <span className="hidden md:inline-flex"><UserButton /></span>
         </div>

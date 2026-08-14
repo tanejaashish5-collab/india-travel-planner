@@ -99,11 +99,26 @@ export function SaveListEmailPrompt({ locale }: Props) {
   // Derive visibility from inputs — no setState-in-effect needed
   const visible = useMemo(() => {
     if (onSavedPage) return false;
-    if (status === "success") return false;
+    // NOTE: deliberately NOT hidden on `status === "success"`. That condition
+    // used to live here and made the success branch below (line ~224)
+    // unreachable dead code: the moment the subscribe call resolved, `visible`
+    // flipped false, `if (!visible) return null` fired, and the whole dialog
+    // VANISHED without ever showing "✓ Saved. Check your inbox." — a fully
+    // built, styled, en+hi confirmation that had never once rendered.
+    //
+    // That silence is costly, not cosmetic: the newsletter is double opt-in, so
+    // a subscriber only counts after clicking the link in their email. A user
+    // who submits and sees the box disappear is never told to check their
+    // inbox, so they never confirm. Caught by the conversion.spec.ts assertion
+    // on /check your inbox/i, which was correct all along.
+    //
+    // The prompt stays put for the rest of this page-load showing the
+    // confirmation; SUCCESS_KEY (set on success, 365d) keeps it from returning
+    // on the next load via `cookieSubscribed` below.
     if (cookieSubscribed) return false;
     if (cookieDismissed) return false;
     return savedIds.length >= THRESHOLD;
-  }, [onSavedPage, status, cookieSubscribed, cookieDismissed, savedIds.length]);
+  }, [onSavedPage, cookieSubscribed, cookieDismissed, savedIds.length]);
 
   // Fire impression once per session when first becoming visible
   useEffect(() => {

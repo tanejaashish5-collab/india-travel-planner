@@ -81,11 +81,19 @@ export function SavedListCapture({
   const viewedFiredRef = useRef(false);
 
   const visible = useMemo(() => {
-    if (status === "success") return false;
+    // Second instance of the same bug fixed in save-list-email-prompt.tsx:
+    // hiding on `status === "success"` made the success branch below
+    // unreachable, so submitting an email made this capture vanish without
+    // ever showing "✓ On its way. Check your inbox to confirm." The newsletter
+    // is double opt-in, so a user who is never told to check their inbox never
+    // confirms and never becomes a subscriber. This is the PRIMARY capture on
+    // /saved, so it mattered more here than on the global prompt.
+    // SUCCESS_KEY (365d) still suppresses it on subsequent loads via
+    // `alreadySubscribed`.
     if (alreadySubscribed) return false;
     if (dismissed) return false;
     return savedIds.length >= 1;
-  }, [status, alreadySubscribed, dismissed, savedIds.length]);
+  }, [alreadySubscribed, dismissed, savedIds.length]);
 
   // Fire impression once when first visible.
   useEffect(() => {
