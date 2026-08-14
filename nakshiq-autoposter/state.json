@@ -32,38 +32,20 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-13",
+    "GAh5p_yt_short": "2026-08-14",
     "m8EAd_carousel": "2026-08-13",
     "PdMu0_carousel": "2026-08-13",
-    "m8EAd_yt_short": "2026-08-13",
+    "m8EAd_yt_short": "2026-08-14",
     "m8EAd": "2026-08-13",
     "m8EAd_evening": "2026-08-13",
     "PdMu0": "2026-08-13",
-    "PdMu0_evening": "2026-08-13",
-    "m8EAd_reel_studio": "2026-08-12",
-    "GAh5p_reel_studio": "2026-08-12"
+    "PdMu0_evening": "2026-08-13"
   },
   "last_sync": "2026-08-13T15:19:34.024004+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "mount-abu",
-      "date": "2026-07-30"
-    },
-    {
-      "destination_id": "ahmedabad",
-      "date": "2026-07-30"
-    },
-    {
-      "destination_id": "kanchipuram",
-      "date": "2026-07-30"
-    },
-    {
-      "destination_id": "hogenakkal",
-      "date": "2026-07-30"
-    },
     {
       "destination_id": "udaipur",
       "date": "2026-07-31"
@@ -307,6 +289,10 @@
     {
       "destination_id": "adilabad",
       "date": "2026-08-13"
+    },
+    {
+      "destination_id": "bangus-valley",
+      "date": "2026-08-14"
     }
   ],
   "posted_formats": {
@@ -7742,6 +7728,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "adilabad.mp4"
+    },
+    {
+      "timestamp": "2026-08-14T05:52:29.345494+00:00",
+      "date": "2026-08-14",
+      "platform": "instagram",
+      "post_id": "CEAsg",
+      "destination": "bangus-valley",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_bangus-valley_hi_2026-08-14.mp4"
+    },
+    {
+      "timestamp": "2026-08-14T05:52:39.919567+00:00",
+      "date": "2026-08-14",
+      "platform": "youtube",
+      "post_id": "rnlAY",
+      "destination": "bangus-valley",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_bangus-valley_hi_2026-08-14.mp4"
     }
   ],
   "theme_usage": {
@@ -8927,9 +8931,7 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    },
-    "tourist_trap_alts": {},
-    "collection_carousel_dests:summer-escapes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
