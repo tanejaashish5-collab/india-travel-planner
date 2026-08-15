@@ -18347,3 +18347,49 @@ Date range: 2026-04-15 → 2026-08-14
 2026-08-15 12:00:48  INFO      YT Short posted: format=listicle, music=fast-676
 2026-08-15 12:00:48  INFO      State saved. YT Short run complete.
 2026-08-15 12:00:48  INFO      ════════════════════════════════════════════════════════════
+2026-08-15 14:43:19  INFO      ════════════════════════════════════════════════════════════
+2026-08-15 14:43:19  INFO      Nakshiq Autoposter · EVENING · 2026-08-15 · weekday=5
+2026-08-15 14:43:19  INFO      ════════════════════════════════════════════════════════════
+2026-08-15 14:43:19  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-15 14:43:56  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-15 14:43:56  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-15 14:43:57  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-15 14:43:57  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-15 14:43:57  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+17 more)
+2026-08-15 14:43:58  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-15 14:44:09  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-15 14:44:09  INFO      Evening format (balance→moment): arrival_intel [0% vs target 5%] (0/15 never featured)
+2026-08-15 14:44:09  INFO      Formats — IG: arrival_intel  ·  FB: arrival_intel  ·  Story: route_spotlight  ·  Audience: families
+2026-08-15 14:44:09  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 53
+2026-08-15 14:44:09  INFO      Audience filter 'families' → 7 destinations match.
+2026-08-15 14:44:09  INFO      Fingerprint dedup snapshot — 53 dests in 7d · 112 (dest,fmt) pairs in 30d · 232 media in 60d
+2026-08-15 14:44:09  INFO      Route locked: Manali to Leh Motorcycle Expedition
+2026-08-15 14:44:09  INFO      Arrival locked: DEL (Delhi) (8/8 never featured)
+2026-08-15 14:44:12  INFO      Shared best destination locked: Lonavala
+2026-08-15 14:44:12  INFO      [instagram/nakshiq] Generating arrival_intel post...
+2026-08-15 14:44:12  WARNING   [instagram/nakshiq] arrival_intel: lonavala inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'umlingla' as score_card to keep the slot live.
+2026-08-15 14:44:12  INFO      [instagram/nakshiq] Caption ready (453 chars, dest=umlingla)
+2026-08-15 14:44:13  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-15 14:44:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/umlingla.mp4?v=20260524
+2026-08-15 14:44:16  INFO          Brand-stamp applied: umlingla.mp4 (9,658,088 → 5,542,190 bytes)
+2026-08-15 14:44:16  INFO          Requesting upload URL for umlingla.mp4 (5,542,190 bytes, video/mp4)
+2026-08-15 14:44:17  INFO          Uploading to R2 (timeout=300s)...
+2026-08-15 14:44:18  INFO          R2 PUT OK. Confirming...
+2026-08-15 14:44:20  INFO          Media ready: 8eaOH (5,542,190 bytes · umlingla.mp4)
+2026-08-15 14:44:20  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-15 14:45:14  INFO      [instagram/nakshiq] ✅ Published · Outstand=5LGFH · Platform=18112542556769142
+2026-08-15 14:45:14  INFO      [facebook/Nakshiq] Generating arrival_intel post...
+2026-08-15 14:45:14  WARNING   [facebook/Nakshiq] arrival_intel: lonavala inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'umlingla' as score_card to keep the slot live.
+2026-08-15 14:45:14  INFO      [facebook/Nakshiq] Caption ready (632 chars, dest=umlingla)
+2026-08-15 14:45:14  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-15 14:45:14  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/umlingla.mp4?v=20260524
+2026-08-15 14:45:17  INFO          Brand-stamp applied: umlingla.mp4 (9,658,088 → 5,542,190 bytes)
+2026-08-15 14:45:17  INFO          Requesting upload URL for umlingla.mp4 (5,542,190 bytes, video/mp4)
+2026-08-15 14:45:18  INFO          Uploading to R2 (timeout=300s)...
+2026-08-15 14:45:19  INFO          R2 PUT OK. Confirming...
+2026-08-15 14:45:20  INFO          Media ready: PtYAs (5,542,190 bytes · umlingla.mp4)
+2026-08-15 14:45:20  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-15 14:45:34  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ShHLs · Platform=1448269663827636
+2026-08-15 14:45:34  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-15 14:45:34  INFO      State saved. Run complete.
+2026-08-15 14:45:34  INFO      ════════════════════════════════════════════════════════════

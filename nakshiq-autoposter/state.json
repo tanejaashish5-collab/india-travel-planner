@@ -39,17 +39,17 @@
     "m8EAd_carousel": "2026-08-15",
     "PdMu0_carousel": "2026-08-15",
     "m8EAd_yt_short": "2026-08-15",
-    "m8EAd": "2026-08-14",
-    "m8EAd_evening": "2026-08-14",
-    "PdMu0": "2026-08-14",
-    "PdMu0_evening": "2026-08-14",
+    "m8EAd": "2026-08-15",
+    "m8EAd_evening": "2026-08-15",
+    "PdMu0": "2026-08-15",
+    "PdMu0_evening": "2026-08-15",
     "m8EAd_reel_studio": "2026-08-14",
     "GAh5p_reel_studio": "2026-08-14",
     "m8EAd_greeting": "2026-08-15",
     "m8EAd_greeting_story": "2026-08-15",
     "PdMu0_greeting": "2026-08-15"
   },
-  "last_sync": "2026-08-14T16:50:33.225136+00:00",
+  "last_sync": "2026-08-15T14:43:56.590044+00:00",
   "posted_destinations": [
     {
       "destination_id": "kaza",
@@ -318,6 +318,10 @@
     {
       "destination_id": "athirapally",
       "date": "2026-08-15"
+    },
+    {
+      "destination_id": "umlingla",
+      "date": "2026-08-15"
     }
   ],
   "posted_formats": {
@@ -331,10 +335,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -354,10 +358,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -7928,6 +7932,28 @@
       "destination": "athirapally",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_athirapally_hi_2026-08-15.mp4"
+    },
+    {
+      "timestamp": "2026-08-15T14:45:14.132219+00:00",
+      "date": "2026-08-15",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "5LGFH",
+      "destination": "umlingla",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "umlingla.mp4"
+    },
+    {
+      "timestamp": "2026-08-15T14:45:34.252891+00:00",
+      "date": "2026-08-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ShHLs",
+      "destination": "umlingla",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "umlingla.mp4"
     }
   ],
   "theme_usage": {
@@ -8342,7 +8368,8 @@
         "2026-08-13"
       ],
       "umlingla": [
-        "2026-08-02"
+        "2026-08-02",
+        "2026-08-15"
       ],
       "turtuk": [
         "2026-08-02",
@@ -8497,7 +8524,8 @@
         "2026-08-11",
         "2026-08-12",
         "2026-08-13",
-        "2026-08-14"
+        "2026-08-14",
+        "2026-08-15"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -8769,7 +8797,8 @@
         "2026-08-13"
       ],
       "umlingla": [
-        "2026-08-02"
+        "2026-08-02",
+        "2026-08-15"
       ],
       "turtuk": [
         "2026-08-03"
@@ -8801,7 +8830,8 @@
         "2026-07-18",
         "2026-07-25",
         "2026-08-01",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-15"
       ],
       "adventurers": [
         "2026-05-29",
@@ -9117,7 +9147,9 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    }
+    },
+    "routes": {},
+    "arrival_intel": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -9131,7 +9163,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tso-moriri",
+    "shared_best": "lonavala",
     "collection": "summer-escapes"
   },
   "manual_skip_dests": {},
