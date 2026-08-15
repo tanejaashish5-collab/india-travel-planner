@@ -36,15 +36,18 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-15",
-    "m8EAd_carousel": "2026-08-14",
-    "PdMu0_carousel": "2026-08-14",
+    "m8EAd_carousel": "2026-08-15",
+    "PdMu0_carousel": "2026-08-15",
     "m8EAd_yt_short": "2026-08-15",
     "m8EAd": "2026-08-14",
     "m8EAd_evening": "2026-08-14",
     "PdMu0": "2026-08-14",
     "PdMu0_evening": "2026-08-14",
     "m8EAd_reel_studio": "2026-08-14",
-    "GAh5p_reel_studio": "2026-08-14"
+    "GAh5p_reel_studio": "2026-08-14",
+    "m8EAd_greeting": "2026-08-15",
+    "m8EAd_greeting_story": "2026-08-15",
+    "PdMu0_greeting": "2026-08-15"
   },
   "last_sync": "2026-08-14T16:50:33.225136+00:00",
   "posted_destinations": [
@@ -302,6 +305,14 @@
     },
     {
       "destination_id": "gurez-valley",
+      "date": "2026-08-15"
+    },
+    {
+      "destination_id": "port-blair",
+      "date": "2026-08-15"
+    },
+    {
+      "destination_id": "hogenakkal",
       "date": "2026-08-15"
     }
   ],
@@ -7850,6 +7861,51 @@
       "destination": "gurez-valley",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_gurez-valley_hi_2026-08-15.mp4"
+    },
+    {
+      "timestamp": "2026-08-15T07:47:59.684801+00:00",
+      "date": "2026-08-15",
+      "platform": "instagram",
+      "post_id": "XiQJ8",
+      "destination": "port-blair",
+      "format": "greeting.independence-day",
+      "media_id": "greeting_independence-day_2026-08-15"
+    },
+    {
+      "timestamp": "2026-08-15T07:48:04.353458+00:00",
+      "date": "2026-08-15",
+      "platform": "instagram",
+      "post_id": "2k6oj",
+      "destination": "port-blair",
+      "format": "story.greeting",
+      "media_id": "story_greeting_independence-day_2026-08-15"
+    },
+    {
+      "timestamp": "2026-08-15T07:48:07.784245+00:00",
+      "date": "2026-08-15",
+      "platform": "facebook",
+      "post_id": "5L1F5",
+      "destination": "port-blair",
+      "format": "greeting.independence-day",
+      "media_id": "greeting_independence-day_2026-08-15"
+    },
+    {
+      "timestamp": "2026-08-15T07:49:20.877819+00:00",
+      "date": "2026-08-15",
+      "platform": "instagram",
+      "post_id": "O8iQ8",
+      "destination": "hogenakkal",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-08-15"
+    },
+    {
+      "timestamp": "2026-08-15T07:49:23.512409+00:00",
+      "date": "2026-08-15",
+      "platform": "facebook",
+      "post_id": "yJsD3",
+      "destination": "hogenakkal",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-08-15"
     }
   ],
   "theme_usage": {
