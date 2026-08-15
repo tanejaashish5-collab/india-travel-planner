@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-14",
+    "GAh5p_yt_short": "2026-08-15",
     "m8EAd_carousel": "2026-08-14",
     "PdMu0_carousel": "2026-08-14",
-    "m8EAd_yt_short": "2026-08-14",
+    "m8EAd_yt_short": "2026-08-15",
     "m8EAd": "2026-08-14",
     "m8EAd_evening": "2026-08-14",
     "PdMu0": "2026-08-14",
@@ -48,18 +48,6 @@
   },
   "last_sync": "2026-08-14T16:50:33.225136+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "udaipur",
-      "date": "2026-07-31"
-    },
-    {
-      "destination_id": "sonamarg",
-      "date": "2026-07-31"
-    },
-    {
-      "destination_id": "jog-falls",
-      "date": "2026-07-31"
-    },
     {
       "destination_id": "kaza",
       "date": "2026-08-01"
@@ -311,6 +299,10 @@
     {
       "destination_id": "bhimashankar",
       "date": "2026-08-14"
+    },
+    {
+      "destination_id": "gurez-valley",
+      "date": "2026-08-15"
     }
   ],
   "posted_formats": {
@@ -7840,6 +7832,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "bhimashankar.mp4"
+    },
+    {
+      "timestamp": "2026-08-15T04:52:13.521764+00:00",
+      "date": "2026-08-15",
+      "platform": "instagram",
+      "post_id": "CEPMQ",
+      "destination": "gurez-valley",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_gurez-valley_hi_2026-08-15.mp4"
+    },
+    {
+      "timestamp": "2026-08-15T04:52:24.541603+00:00",
+      "date": "2026-08-15",
+      "platform": "youtube",
+      "post_id": "Kjklu",
+      "destination": "gurez-valley",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_gurez-valley_hi_2026-08-15.mp4"
     }
   ],
   "theme_usage": {
