@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-15",
     "m8EAd_carousel": "2026-08-15",
@@ -313,6 +313,10 @@
     },
     {
       "destination_id": "hogenakkal",
+      "date": "2026-08-15"
+    },
+    {
+      "destination_id": "athirapally",
       "date": "2026-08-15"
     }
   ],
@@ -7906,6 +7910,24 @@
       "destination": "hogenakkal",
       "format": "carousel.best_month",
       "media_id": "carousel_best_month_2026-08-15"
+    },
+    {
+      "timestamp": "2026-08-15T12:00:40.860772+00:00",
+      "date": "2026-08-15",
+      "platform": "instagram",
+      "post_id": "gXnmE",
+      "destination": "athirapally",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_athirapally_hi_2026-08-15.mp4"
+    },
+    {
+      "timestamp": "2026-08-15T12:00:48.739773+00:00",
+      "date": "2026-08-15",
+      "platform": "youtube",
+      "post_id": "WqvEq",
+      "destination": "athirapally",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_athirapally_hi_2026-08-15.mp4"
     }
   ],
   "theme_usage": {
