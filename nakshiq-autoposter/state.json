@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-16",
     "m8EAd_carousel": "2026-08-16",
@@ -312,6 +312,10 @@
     },
     {
       "destination_id": "tso-moriri",
+      "date": "2026-08-16"
+    },
+    {
+      "destination_id": "ranjangaon",
       "date": "2026-08-16"
     }
   ],
@@ -7990,6 +7994,24 @@
       "destination": "tso-moriri",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-08-16"
+    },
+    {
+      "timestamp": "2026-08-16T12:01:22.383401+00:00",
+      "date": "2026-08-16",
+      "platform": "instagram",
+      "post_id": "j35vW",
+      "destination": "ranjangaon",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_ranjangaon_hi_2026-08-16.mp4"
+    },
+    {
+      "timestamp": "2026-08-16T12:01:33.169806+00:00",
+      "date": "2026-08-16",
+      "platform": "youtube",
+      "post_id": "mgnGN",
+      "destination": "ranjangaon",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_ranjangaon_hi_2026-08-16.mp4"
     }
   ],
   "theme_usage": {
