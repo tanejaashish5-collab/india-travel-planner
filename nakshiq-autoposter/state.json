@@ -36,8 +36,8 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-16",
-    "m8EAd_carousel": "2026-08-15",
-    "PdMu0_carousel": "2026-08-15",
+    "m8EAd_carousel": "2026-08-16",
+    "PdMu0_carousel": "2026-08-16",
     "m8EAd_yt_short": "2026-08-16",
     "m8EAd": "2026-08-15",
     "m8EAd_evening": "2026-08-15",
@@ -45,7 +45,8 @@
     "PdMu0_evening": "2026-08-15",
     "m8EAd_greeting": "2026-08-15",
     "m8EAd_greeting_story": "2026-08-15",
-    "PdMu0_greeting": "2026-08-15"
+    "PdMu0_greeting": "2026-08-15",
+    "m8EAd_carousel_story": "2026-08-16"
   },
   "last_sync": "2026-08-15T14:43:56.590044+00:00",
   "posted_destinations": [
@@ -307,6 +308,10 @@
     },
     {
       "destination_id": "ponda-spice",
+      "date": "2026-08-16"
+    },
+    {
+      "destination_id": "tso-moriri",
       "date": "2026-08-16"
     }
   ],
@@ -7958,6 +7963,33 @@
       "destination": "ponda-spice",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_ponda-spice_en_2026-08-16.mp4"
+    },
+    {
+      "timestamp": "2026-08-16T07:50:16.446103+00:00",
+      "date": "2026-08-16",
+      "platform": "instagram",
+      "post_id": "708zr",
+      "destination": "tso-moriri",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-16"
+    },
+    {
+      "timestamp": "2026-08-16T07:50:21.316871+00:00",
+      "date": "2026-08-16",
+      "platform": "instagram",
+      "post_id": "I42eh",
+      "destination": "tso-moriri",
+      "format": "story.window",
+      "media_id": "story_window_2026-08-16"
+    },
+    {
+      "timestamp": "2026-08-16T07:50:23.519398+00:00",
+      "date": "2026-08-16",
+      "platform": "facebook",
+      "post_id": "Z7OEX",
+      "destination": "tso-moriri",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-16"
     }
   ],
   "theme_usage": {
