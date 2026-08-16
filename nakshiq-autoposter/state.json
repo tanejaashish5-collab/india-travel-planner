@@ -39,16 +39,16 @@
     "m8EAd_carousel": "2026-08-16",
     "PdMu0_carousel": "2026-08-16",
     "m8EAd_yt_short": "2026-08-16",
-    "m8EAd": "2026-08-15",
-    "m8EAd_evening": "2026-08-15",
-    "PdMu0": "2026-08-15",
-    "PdMu0_evening": "2026-08-15",
+    "m8EAd": "2026-08-16",
+    "m8EAd_evening": "2026-08-16",
+    "PdMu0": "2026-08-16",
+    "PdMu0_evening": "2026-08-16",
     "m8EAd_greeting": "2026-08-15",
     "m8EAd_greeting_story": "2026-08-15",
     "PdMu0_greeting": "2026-08-15",
     "m8EAd_carousel_story": "2026-08-16"
   },
-  "last_sync": "2026-08-15T14:43:56.590044+00:00",
+  "last_sync": "2026-08-16T14:43:19.591648+00:00",
   "posted_destinations": [
     {
       "destination_id": "karla-bhaja-caves",
@@ -317,6 +317,10 @@
     {
       "destination_id": "ranjangaon",
       "date": "2026-08-16"
+    },
+    {
+      "destination_id": "turtuk",
+      "date": "2026-08-16"
     }
   ],
   "posted_formats": {
@@ -329,10 +333,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -352,10 +356,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8012,6 +8016,28 @@
       "destination": "ranjangaon",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_ranjangaon_hi_2026-08-16.mp4"
+    },
+    {
+      "timestamp": "2026-08-16T14:44:18.872481+00:00",
+      "date": "2026-08-16",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "iKUn8",
+      "destination": "turtuk",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "turtuk.mp4"
+    },
+    {
+      "timestamp": "2026-08-16T14:44:34.728306+00:00",
+      "date": "2026-08-16",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xejXI",
+      "destination": "turtuk",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "turtuk.mp4"
     }
   ],
   "theme_usage": {
@@ -8431,7 +8457,8 @@
       ],
       "turtuk": [
         "2026-08-02",
-        "2026-08-03"
+        "2026-08-03",
+        "2026-08-16"
       ],
       "hanle": [
         "2026-08-10"
@@ -8583,7 +8610,8 @@
         "2026-08-12",
         "2026-08-13",
         "2026-08-14",
-        "2026-08-15"
+        "2026-08-15",
+        "2026-08-16"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -8859,7 +8887,8 @@
         "2026-08-15"
       ],
       "turtuk": [
-        "2026-08-03"
+        "2026-08-03",
+        "2026-08-16"
       ],
       "kaza": [
         "2026-08-12"
@@ -9219,7 +9248,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "lonavala",
+    "shared_best": "keylong",
     "collection": "summer-escapes"
   },
   "manual_skip_dests": {},
