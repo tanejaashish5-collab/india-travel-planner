@@ -43,7 +43,9 @@
     "m8EAd_evening": "2026-08-16",
     "PdMu0": "2026-08-16",
     "PdMu0_evening": "2026-08-16",
-    "m8EAd_carousel_story": "2026-08-16"
+    "m8EAd_carousel_story": "2026-08-16",
+    "m8EAd_reel_studio": "2026-08-17",
+    "GAh5p_reel_studio": "2026-08-17"
   },
   "last_sync": "2026-08-16T14:43:19.591648+00:00",
   "posted_destinations": [
@@ -289,6 +291,10 @@
     },
     {
       "destination_id": "shravanabelagola",
+      "date": "2026-08-17"
+    },
+    {
+      "destination_id": "manali",
       "date": "2026-08-17"
     }
   ],
@@ -8025,6 +8031,24 @@
       "destination": "shravanabelagola",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-08-17.mp4"
+    },
+    {
+      "timestamp": "2026-08-17T06:27:11.847173+00:00",
+      "date": "2026-08-17",
+      "platform": "instagram",
+      "post_id": "8rJNw",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-route.mp4"
+    },
+    {
+      "timestamp": "2026-08-17T06:27:19.638236+00:00",
+      "date": "2026-08-17",
+      "platform": "youtube",
+      "post_id": "APXk2",
+      "destination": "manali",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_ladakh-manali-route.mp4"
     }
   ],
   "theme_usage": {
@@ -9240,7 +9264,7 @@
     "ladakh-express-7d": "2026-08-10",
     "spiti-biker-circuit": "2026-08-12",
     "kinnaur-spiti-circuit": "2026-08-14",
-    "ladakh-manali-route": "2026-07-13"
+    "ladakh-manali-route": "2026-08-17"
   },
   "carousel_seen": {
     "festival": [
