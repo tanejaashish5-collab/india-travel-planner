@@ -32,56 +32,21 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-16",
+    "GAh5p_yt_short": "2026-08-17",
     "m8EAd_carousel": "2026-08-16",
     "PdMu0_carousel": "2026-08-16",
-    "m8EAd_yt_short": "2026-08-16",
+    "m8EAd_yt_short": "2026-08-17",
     "m8EAd": "2026-08-16",
     "m8EAd_evening": "2026-08-16",
     "PdMu0": "2026-08-16",
     "PdMu0_evening": "2026-08-16",
-    "m8EAd_greeting": "2026-08-15",
-    "m8EAd_greeting_story": "2026-08-15",
-    "PdMu0_greeting": "2026-08-15",
     "m8EAd_carousel_story": "2026-08-16"
   },
   "last_sync": "2026-08-16T14:43:19.591648+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "karla-bhaja-caves",
-      "date": "2026-08-02"
-    },
-    {
-      "destination_id": "hanle",
-      "date": "2026-08-02"
-    },
-    {
-      "destination_id": "bhimashankar",
-      "date": "2026-08-02"
-    },
-    {
-      "destination_id": "umlingla",
-      "date": "2026-08-02"
-    },
-    {
-      "destination_id": "turtuk",
-      "date": "2026-08-02"
-    },
-    {
-      "destination_id": "valley-of-flowers",
-      "date": "2026-08-02"
-    },
-    {
-      "destination_id": "khandala",
-      "date": "2026-08-02"
-    },
-    {
-      "destination_id": "amboli",
-      "date": "2026-08-02"
-    },
     {
       "destination_id": "kolad",
       "date": "2026-08-03"
@@ -321,6 +286,10 @@
     {
       "destination_id": "turtuk",
       "date": "2026-08-16"
+    },
+    {
+      "destination_id": "shravanabelagola",
+      "date": "2026-08-17"
     }
   ],
   "posted_formats": {
@@ -8038,13 +8007,28 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "turtuk.mp4"
+    },
+    {
+      "timestamp": "2026-08-17T05:04:15.832114+00:00",
+      "date": "2026-08-17",
+      "platform": "instagram",
+      "post_id": "gX2YB",
+      "destination": "shravanabelagola",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-08-17.mp4"
+    },
+    {
+      "timestamp": "2026-08-17T05:04:25.341075+00:00",
+      "date": "2026-08-17",
+      "platform": "youtube",
+      "post_id": "B9YVk",
+      "destination": "shravanabelagola",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_shravanabelagola_hi_2026-08-17.mp4"
     }
   ],
   "theme_usage": {
     "destinations": {
-      "hyderabad": [
-        "2026-05-18"
-      ],
       "bir-billing": [
         "2026-05-18",
         "2026-05-26"
@@ -8681,9 +8665,6 @@
       ]
     },
     "reels": {
-      "bir-billing": [
-        "2026-05-18"
-      ],
       "achabal": [
         "2026-05-19",
         "2026-06-01"
