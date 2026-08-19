@@ -38,9 +38,13 @@
     "GAh5p_yt_short": "2026-08-19",
     "m8EAd_carousel": "2026-08-19",
     "PdMu0_carousel": "2026-08-19",
-    "m8EAd_yt_short": "2026-08-19"
+    "m8EAd_yt_short": "2026-08-19",
+    "m8EAd": "2026-08-19",
+    "m8EAd_evening": "2026-08-19",
+    "PdMu0": "2026-08-19",
+    "PdMu0_evening": "2026-08-19"
   },
-  "last_sync": "2026-08-17T14:49:32.765708+00:00",
+  "last_sync": "2026-08-19T15:01:02.263708+00:00",
   "posted_destinations": [
     {
       "destination_id": "khardung-la",
@@ -289,6 +293,10 @@
     {
       "destination_id": "spiti-valley",
       "date": "2026-08-19"
+    },
+    {
+      "destination_id": "khardung-la",
+      "date": "2026-08-19"
     }
   ],
   "posted_formats": {
@@ -299,10 +307,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -322,10 +330,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8208,6 +8216,28 @@
       "destination": "spiti-valley",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_spiti-valley_hi_2026-08-19.mp4"
+    },
+    {
+      "timestamp": "2026-08-19T15:02:19.987916+00:00",
+      "date": "2026-08-19",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Wqj62",
+      "destination": "khardung-la",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khardung-la.mp4"
+    },
+    {
+      "timestamp": "2026-08-19T15:02:41.600610+00:00",
+      "date": "2026-08-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "3wum0",
+      "destination": "khardung-la",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khardung-la.mp4"
     }
   ],
   "theme_usage": {
@@ -8446,7 +8476,8 @@
         "2026-06-21",
         "2026-07-02",
         "2026-07-17",
-        "2026-07-22"
+        "2026-07-22",
+        "2026-08-19"
       ],
       "nako": [
         "2026-06-04",
@@ -8478,7 +8509,8 @@
         "2026-06-12",
         "2026-06-28",
         "2026-07-09",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-08-19"
       ],
       "coorg": [
         "2026-06-05"
@@ -8518,7 +8550,8 @@
       "lonavala": [
         "2026-06-12",
         "2026-07-09",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-08-19"
       ],
       "haridwar": [
         "2026-06-15"
@@ -8544,7 +8577,8 @@
         "2026-07-01",
         "2026-07-13",
         "2026-07-25",
-        "2026-07-30"
+        "2026-07-30",
+        "2026-08-19"
       ],
       "jog-falls": [
         "2026-07-01",
@@ -8575,7 +8609,8 @@
         "2026-07-06",
         "2026-07-17",
         "2026-07-21",
-        "2026-08-10"
+        "2026-08-10",
+        "2026-08-19"
       ],
       "khandala": [
         "2026-07-04",
@@ -8586,7 +8621,8 @@
       "tso-moriri": [
         "2026-07-07",
         "2026-07-17",
-        "2026-07-23"
+        "2026-07-23",
+        "2026-08-19"
       ],
       "igatpuri": [
         "2026-07-09",
@@ -8769,7 +8805,8 @@
         "2026-08-14",
         "2026-08-15",
         "2026-08-16",
-        "2026-08-17"
+        "2026-08-17",
+        "2026-08-19"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9010,7 +9047,8 @@
       ],
       "khardung-la": [
         "2026-07-06",
-        "2026-07-21"
+        "2026-07-21",
+        "2026-08-19"
       ],
       "tso-moriri": [
         "2026-07-07",
@@ -9391,11 +9429,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tso-moriri",
+    "shared_best": "keylong",
     "collection": "summer-escapes"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-08-10",
+  "data_carousel_floor_last": "2026-08-19",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",

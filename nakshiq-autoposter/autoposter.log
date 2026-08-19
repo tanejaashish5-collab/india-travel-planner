@@ -19122,3 +19122,48 @@ Date range: 2026-04-15 → 2026-08-17
 2026-08-19 12:05:39  INFO      YT Short posted: format=before_after, music=dance-288
 2026-08-19 12:05:39  INFO      State saved. YT Short run complete.
 2026-08-19 12:05:39  INFO      ════════════════════════════════════════════════════════════
+2026-08-19 15:00:18  INFO      ════════════════════════════════════════════════════════════
+2026-08-19 15:00:18  INFO      Nakshiq Autoposter · EVENING · 2026-08-19 · weekday=2
+2026-08-19 15:00:18  INFO      ════════════════════════════════════════════════════════════
+2026-08-19 15:00:18  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-19 15:01:02  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-19 15:01:02  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-19 15:01:03  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-19 15:01:03  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-19 15:01:03  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-19 15:01:03  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-19 15:01:17  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-19 15:01:17  INFO      Evening format (weekly carousel floor): data_carousel
+2026-08-19 15:01:17  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: blog_promo
+2026-08-19 15:01:17  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 61
+2026-08-19 15:01:17  INFO      Fingerprint dedup snapshot — 61 dests in 7d · 113 (dest,fmt) pairs in 30d · 230 media in 60d
+2026-08-19 15:01:18  INFO      Shared best destination locked: Keylong
+2026-08-19 15:01:18  INFO          Skipped (no image) → karla-bhaja-caves
+2026-08-19 15:01:18  INFO      Carousel locked (data_carousel): keylong, tso-moriri, lonavala, courtallam, hogenakkal
+2026-08-19 15:01:18  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-08-19 15:01:18  WARNING   [instagram/nakshiq] data_carousel: keylong inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'khardung-la' as score_card to keep the slot live.
+2026-08-19 15:01:18  INFO      [instagram/nakshiq] Caption ready (386 chars, dest=khardung-la)
+2026-08-19 15:01:18  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-19 15:01:18  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/khardung-la.mp4?v=20260524
+2026-08-19 15:01:22  INFO          Brand-stamp applied: khardung-la.mp4 (11,853,824 → 6,877,715 bytes)
+2026-08-19 15:01:22  INFO          Requesting upload URL for khardung-la.mp4 (6,877,715 bytes, video/mp4)
+2026-08-19 15:01:23  INFO          Uploading to R2 (timeout=300s)...
+2026-08-19 15:01:24  INFO          R2 PUT OK. Confirming...
+2026-08-19 15:01:26  INFO          Media ready: 4nzWL (6,877,715 bytes · khardung-la.mp4)
+2026-08-19 15:01:26  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-19 15:02:19  INFO      [instagram/nakshiq] ✅ Published · Outstand=Wqj62 · Platform=18164647003474658
+2026-08-19 15:02:19  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-08-19 15:02:19  WARNING   [facebook/Nakshiq] data_carousel: keylong inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'khardung-la' as score_card to keep the slot live.
+2026-08-19 15:02:19  INFO      [facebook/Nakshiq] Caption ready (574 chars, dest=khardung-la)
+2026-08-19 15:02:20  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-19 15:02:20  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/khardung-la.mp4?v=20260524
+2026-08-19 15:02:22  INFO          Brand-stamp applied: khardung-la.mp4 (11,853,824 → 6,877,715 bytes)
+2026-08-19 15:02:22  INFO          Requesting upload URL for khardung-la.mp4 (6,877,715 bytes, video/mp4)
+2026-08-19 15:02:23  INFO          Uploading to R2 (timeout=300s)...
+2026-08-19 15:02:24  INFO          R2 PUT OK. Confirming...
+2026-08-19 15:02:25  INFO          Media ready: ZAHRQ (6,877,715 bytes · khardung-la.mp4)
+2026-08-19 15:02:25  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-19 15:02:41  INFO      [facebook/Nakshiq] ✅ Published · Outstand=3wum0 · Platform=1729514118270230
+2026-08-19 15:02:41  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-19 15:02:41  INFO      State saved. Run complete.
+2026-08-19 15:02:41  INFO      ════════════════════════════════════════════════════════════
