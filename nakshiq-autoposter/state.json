@@ -36,8 +36,8 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-19",
-    "m8EAd_carousel": "2026-08-18",
-    "PdMu0_carousel": "2026-08-18",
+    "m8EAd_carousel": "2026-08-19",
+    "PdMu0_carousel": "2026-08-19",
     "m8EAd_yt_short": "2026-08-19"
   },
   "last_sync": "2026-08-17T14:49:32.765708+00:00",
@@ -280,6 +280,10 @@
     },
     {
       "destination_id": "theur",
+      "date": "2026-08-19"
+    },
+    {
+      "destination_id": "bundi",
       "date": "2026-08-19"
     }
   ],
@@ -8164,6 +8168,24 @@
       "destination": "theur",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_theur_hi_2026-08-19.mp4"
+    },
+    {
+      "timestamp": "2026-08-19T08:02:31.940918+00:00",
+      "date": "2026-08-19",
+      "platform": "instagram",
+      "post_id": "B9VmV",
+      "destination": "bundi",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-19"
+    },
+    {
+      "timestamp": "2026-08-19T08:02:35.654742+00:00",
+      "date": "2026-08-19",
+      "platform": "facebook",
+      "post_id": "8rRW5",
+      "destination": "bundi",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-19"
     }
   ],
   "theme_usage": {
@@ -9362,38 +9384,12 @@
   },
   "carousel_seen": {
     "festival": [
-      "Harela Festival",
-      "Amarnath Yatra Start",
-      "Chamba Minjar Fair",
-      "Pangong Nomad Festival",
-      "Karsha Gustor",
-      "Korzok Gustor",
-      "Lucknow Muharram Processions",
-      "Kanwar Yatra",
       "Kajli Teej",
       "Nanda Devi Raj Jat Yatra",
       "Ladarcha Fair",
       "Gurez Cultural Festival",
       "Malana Village Fair",
-      "Pang Lhabsol",
-      "Munshi Aziz Bhat Memorial Festival",
-      "Janmashtami",
-      "Ganesh Chaturthi",
-      "Ganesh Chaturthi (Ganeshotsav)",
-      "Kumbh Mela",
-      "Nag Panchami (Battis Shirala)",
-      "Bonderam Festival",
-      "Nehru Trophy Boat Race",
-      "Janmashtami at Dwarkadhish",
-      "Independence Day at Cellular Jail",
-      "Monsoon Festival",
-      "Janmashtami Festival",
-      "Manimahesh Yatra",
-      "Metemneo Festival",
-      "Neermahal Water Festival - Boat Race",
-      "Tendong Lho Rum Faat",
-      "Krishna Janmashtami (Birth of Krishna)",
-      "Nagara Panchami"
+      "Pang Lhabsol"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
