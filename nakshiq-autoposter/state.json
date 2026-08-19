@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-19",
     "m8EAd_carousel": "2026-08-19",
@@ -284,6 +284,10 @@
     },
     {
       "destination_id": "bundi",
+      "date": "2026-08-19"
+    },
+    {
+      "destination_id": "spiti-valley",
       "date": "2026-08-19"
     }
   ],
@@ -8186,6 +8190,24 @@
       "destination": "bundi",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-08-19"
+    },
+    {
+      "timestamp": "2026-08-19T12:05:29.723221+00:00",
+      "date": "2026-08-19",
+      "platform": "instagram",
+      "post_id": "nQasE",
+      "destination": "spiti-valley",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_spiti-valley_hi_2026-08-19.mp4"
+    },
+    {
+      "timestamp": "2026-08-19T12:05:39.293016+00:00",
+      "date": "2026-08-19",
+      "platform": "youtube",
+      "post_id": "921R0",
+      "destination": "spiti-valley",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_spiti-valley_hi_2026-08-19.mp4"
     }
   ],
   "theme_usage": {
