@@ -32,42 +32,16 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-18",
+    "GAh5p_yt_short": "2026-08-19",
     "m8EAd_carousel": "2026-08-18",
     "PdMu0_carousel": "2026-08-18",
-    "m8EAd_yt_short": "2026-08-18",
-    "m8EAd": "2026-08-17",
-    "m8EAd_evening": "2026-08-17",
-    "PdMu0": "2026-08-17",
-    "PdMu0_evening": "2026-08-17",
-    "m8EAd_reel_studio": "2026-08-17",
-    "GAh5p_reel_studio": "2026-08-17"
+    "m8EAd_yt_short": "2026-08-19"
   },
   "last_sync": "2026-08-17T14:49:32.765708+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "sinthan-top",
-      "date": "2026-08-04"
-    },
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-08-04"
-    },
-    {
-      "destination_id": "saputara",
-      "date": "2026-08-04"
-    },
-    {
-      "destination_id": "madurai",
-      "date": "2026-08-04"
-    },
-    {
-      "destination_id": "hampi",
-      "date": "2026-08-04"
-    },
     {
       "destination_id": "khardung-la",
       "date": "2026-08-05"
@@ -303,6 +277,10 @@
     {
       "destination_id": "srirangapatna",
       "date": "2026-08-18"
+    },
+    {
+      "destination_id": "theur",
+      "date": "2026-08-19"
     }
   ],
   "posted_formats": {
@@ -8168,6 +8146,24 @@
       "destination": "srirangapatna",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_srirangapatna_hi_2026-08-18.mp4"
+    },
+    {
+      "timestamp": "2026-08-19T04:57:58.390706+00:00",
+      "date": "2026-08-19",
+      "platform": "instagram",
+      "post_id": "4lcao",
+      "destination": "theur",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_theur_hi_2026-08-19.mp4"
+    },
+    {
+      "timestamp": "2026-08-19T04:58:08.263249+00:00",
+      "date": "2026-08-19",
+      "platform": "youtube",
+      "post_id": "oNmgg",
+      "destination": "theur",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_theur_hi_2026-08-19.mp4"
     }
   ],
   "theme_usage": {
@@ -8205,9 +8201,6 @@
         "2026-05-20",
         "2026-05-27",
         "2026-06-14"
-      ],
-      "havelock-island": [
-        "2026-05-20"
       ],
       "bhandardara": [
         "2026-05-20",
@@ -8593,14 +8586,6 @@
       ]
     },
     "morning_formats": {
-      "arrival_intel": [
-        "2026-05-18",
-        "2026-05-20"
-      ],
-      "cost_index_card": [
-        "2026-05-19",
-        "2026-05-20"
-      ],
       "v2_pov_slow_morning": [
         "2026-05-20",
         "2026-05-21",
@@ -9078,9 +9063,6 @@
         "2026-05-20",
         "2026-07-09"
       ],
-      "borders-worth-visiting": [
-        "2026-05-20"
-      ],
       "andaman-diving-snorkeling": [
         "2026-05-20",
         "2026-07-07"
@@ -9141,17 +9123,6 @@
       ],
       "summer-escapes": [
         "2026-08-13"
-      ]
-    },
-    "collection_carousel_dests:birding-hotspots": {
-      "chopta": [
-        "2026-05-19",
-        "2026-05-20"
-      ]
-    },
-    "collection_carousel_dests:best-honeymoon": {
-      "pahalgam": [
-        "2026-05-20"
       ]
     },
     "festivals": {
