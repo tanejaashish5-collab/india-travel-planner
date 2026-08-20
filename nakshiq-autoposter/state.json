@@ -39,12 +39,12 @@
     "m8EAd_carousel": "2026-08-19",
     "PdMu0_carousel": "2026-08-19",
     "m8EAd_yt_short": "2026-08-20",
-    "m8EAd": "2026-08-19",
-    "m8EAd_evening": "2026-08-19",
-    "PdMu0": "2026-08-19",
-    "PdMu0_evening": "2026-08-19"
+    "m8EAd": "2026-08-20",
+    "m8EAd_evening": "2026-08-20",
+    "PdMu0": "2026-08-20",
+    "PdMu0_evening": "2026-08-20"
   },
-  "last_sync": "2026-08-19T15:01:02.263708+00:00",
+  "last_sync": "2026-08-20T16:24:05.167795+00:00",
   "posted_destinations": [
     {
       "destination_id": "keylong",
@@ -289,6 +289,10 @@
     {
       "destination_id": "chandratal",
       "date": "2026-08-20"
+    },
+    {
+      "destination_id": "keylong",
+      "date": "2026-08-20"
     }
   ],
   "posted_formats": {
@@ -298,10 +302,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -321,10 +325,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8266,6 +8270,28 @@
       "destination": "chandratal",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_chandratal_hi_2026-08-20.mp4"
+    },
+    {
+      "timestamp": "2026-08-20T16:25:29.539936+00:00",
+      "date": "2026-08-20",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "O8REj",
+      "destination": "keylong",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "keylong.mp4"
+    },
+    {
+      "timestamp": "2026-08-20T16:25:51.276900+00:00",
+      "date": "2026-08-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xeDWV",
+      "destination": "keylong",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "keylong.mp4"
     }
   ],
   "theme_usage": {
@@ -8505,7 +8531,8 @@
         "2026-07-02",
         "2026-07-17",
         "2026-07-22",
-        "2026-08-19"
+        "2026-08-19",
+        "2026-08-20"
       ],
       "nako": [
         "2026-06-04",
@@ -8834,7 +8861,8 @@
         "2026-08-15",
         "2026-08-16",
         "2026-08-17",
-        "2026-08-19"
+        "2026-08-19",
+        "2026-08-20"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9098,7 +9126,8 @@
         "2026-07-20"
       ],
       "keylong": [
-        "2026-07-22"
+        "2026-07-22",
+        "2026-08-20"
       ],
       "adilabad": [
         "2026-08-01",
@@ -9233,6 +9262,9 @@
       ],
       "summer-escapes": [
         "2026-08-13"
+      ],
+      "french-india-trail": [
+        "2026-08-20"
       ]
     },
     "festivals": {
@@ -9440,7 +9472,9 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    }
+    },
+    "tourist_trap_alts": {},
+    "collection_carousel_dests:french-india-trail": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -9454,8 +9488,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "keylong",
-    "collection": "summer-escapes"
+    "shared_best": "valley-of-flowers",
+    "collection": "french-india-trail"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-08-19",
