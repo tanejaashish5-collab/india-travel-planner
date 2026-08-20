@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-20",
     "m8EAd_carousel": "2026-08-19",
@@ -284,6 +284,10 @@
     },
     {
       "destination_id": "kargil",
+      "date": "2026-08-20"
+    },
+    {
+      "destination_id": "chandratal",
       "date": "2026-08-20"
     }
   ],
@@ -8244,6 +8248,24 @@
       "destination": "kargil",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_kargil_hi_2026-08-20.mp4"
+    },
+    {
+      "timestamp": "2026-08-20T12:06:22.430363+00:00",
+      "date": "2026-08-20",
+      "platform": "instagram",
+      "post_id": "WqJtM",
+      "destination": "chandratal",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_chandratal_hi_2026-08-20.mp4"
+    },
+    {
+      "timestamp": "2026-08-20T12:06:31.474520+00:00",
+      "date": "2026-08-20",
+      "platform": "youtube",
+      "post_id": "3w7sS",
+      "destination": "chandratal",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_chandratal_hi_2026-08-20.mp4"
     }
   ],
   "theme_usage": {
