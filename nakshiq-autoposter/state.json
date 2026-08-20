@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-19",
+    "GAh5p_yt_short": "2026-08-20",
     "m8EAd_carousel": "2026-08-19",
     "PdMu0_carousel": "2026-08-19",
-    "m8EAd_yt_short": "2026-08-19",
+    "m8EAd_yt_short": "2026-08-20",
     "m8EAd": "2026-08-19",
     "m8EAd_evening": "2026-08-19",
     "PdMu0": "2026-08-19",
@@ -46,22 +46,6 @@
   },
   "last_sync": "2026-08-19T15:01:02.263708+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "khardung-la",
-      "date": "2026-08-05"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-08-05"
-    },
-    {
-      "destination_id": "kargil",
-      "date": "2026-08-05"
-    },
-    {
-      "destination_id": "mandu",
-      "date": "2026-08-05"
-    },
     {
       "destination_id": "keylong",
       "date": "2026-08-06"
@@ -297,6 +281,10 @@
     {
       "destination_id": "khardung-la",
       "date": "2026-08-19"
+    },
+    {
+      "destination_id": "kargil",
+      "date": "2026-08-20"
     }
   ],
   "posted_formats": {
@@ -8238,6 +8226,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "khardung-la.mp4"
+    },
+    {
+      "timestamp": "2026-08-20T04:59:49.544818+00:00",
+      "date": "2026-08-20",
+      "platform": "instagram",
+      "post_id": "3wARh",
+      "destination": "kargil",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kargil_hi_2026-08-20.mp4"
+    },
+    {
+      "timestamp": "2026-08-20T04:59:57.384763+00:00",
+      "date": "2026-08-20",
+      "platform": "youtube",
+      "post_id": "oNv1a",
+      "destination": "kargil",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kargil_hi_2026-08-20.mp4"
     }
   ],
   "theme_usage": {
@@ -9208,9 +9214,6 @@
       ]
     },
     "festivals": {
-      "0f01501a-f637-4999-9537-bca5db2d6947": [
-        "2026-05-21"
-      ],
       "5d32b61b-1a92-4869-a212-6a71b7394138": [
         "2026-05-25"
       ],
