@@ -37,14 +37,14 @@
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-21",
     "m8EAd_yt_short": "2026-08-21",
-    "m8EAd": "2026-08-20",
-    "m8EAd_evening": "2026-08-20",
-    "PdMu0": "2026-08-20",
-    "PdMu0_evening": "2026-08-20",
+    "m8EAd": "2026-08-21",
+    "m8EAd_evening": "2026-08-21",
+    "PdMu0": "2026-08-21",
+    "PdMu0_evening": "2026-08-21",
     "m8EAd_carousel": "2026-08-21",
     "PdMu0_carousel": "2026-08-21"
   },
-  "last_sync": "2026-08-20T16:24:05.167795+00:00",
+  "last_sync": "2026-08-21T14:58:30.676426+00:00",
   "posted_destinations": [
     {
       "destination_id": "tso-moriri",
@@ -293,6 +293,10 @@
     {
       "destination_id": "mysore",
       "date": "2026-08-21"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "date": "2026-08-21"
     }
   ],
   "posted_formats": {
@@ -301,10 +305,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -324,10 +328,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8346,6 +8350,28 @@
       "destination": "mysore",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_mysore_hi_2026-08-21.mp4"
+    },
+    {
+      "timestamp": "2026-08-21T14:59:43.334861+00:00",
+      "date": "2026-08-21",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "8rVuE",
+      "destination": "valley-of-flowers",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "valley-of-flowers.mp4"
+    },
+    {
+      "timestamp": "2026-08-21T15:00:06.879531+00:00",
+      "date": "2026-08-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "CEy6N",
+      "destination": "valley-of-flowers",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "valley-of-flowers.mp4"
     }
   ],
   "theme_usage": {
@@ -8668,7 +8694,8 @@
       "valley-of-flowers": [
         "2026-06-19",
         "2026-08-02",
-        "2026-08-07"
+        "2026-08-07",
+        "2026-08-21"
       ],
       "kanatal": [
         "2026-06-19"
@@ -8913,7 +8940,8 @@
         "2026-08-16",
         "2026-08-17",
         "2026-08-19",
-        "2026-08-20"
+        "2026-08-20",
+        "2026-08-21"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9101,7 +9129,8 @@
       ],
       "valley-of-flowers": [
         "2026-06-19",
-        "2026-08-07"
+        "2026-08-07",
+        "2026-08-21"
       ],
       "kanatal": [
         "2026-06-19"
@@ -9235,7 +9264,8 @@
         "2026-07-24",
         "2026-07-31",
         "2026-08-07",
-        "2026-08-14"
+        "2026-08-14",
+        "2026-08-21"
       ]
     },
     "collections": {
@@ -9531,7 +9561,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "valley-of-flowers",
+    "shared_best": "hanle",
     "collection": "french-india-trail"
   },
   "manual_skip_dests": {},
