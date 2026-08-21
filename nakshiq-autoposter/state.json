@@ -32,11 +32,11 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-21",
-    "m8EAd_yt_short": "2026-08-20",
+    "m8EAd_yt_short": "2026-08-21",
     "m8EAd": "2026-08-20",
     "m8EAd_evening": "2026-08-20",
     "PdMu0": "2026-08-20",
@@ -288,6 +288,10 @@
     },
     {
       "destination_id": "kargil",
+      "date": "2026-08-21"
+    },
+    {
+      "destination_id": "mysore",
       "date": "2026-08-21"
     }
   ],
@@ -8324,6 +8328,24 @@
       "destination": "kargil",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-08-21"
+    },
+    {
+      "timestamp": "2026-08-21T12:05:42.372955+00:00",
+      "date": "2026-08-21",
+      "platform": "instagram",
+      "post_id": "nQMc7",
+      "destination": "mysore",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_mysore_hi_2026-08-21.mp4"
+    },
+    {
+      "timestamp": "2026-08-21T12:05:50.251950+00:00",
+      "date": "2026-08-21",
+      "platform": "youtube",
+      "post_id": "92ZNt",
+      "destination": "mysore",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_mysore_hi_2026-08-21.mp4"
     }
   ],
   "theme_usage": {
