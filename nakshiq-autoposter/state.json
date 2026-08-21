@@ -40,7 +40,9 @@
     "m8EAd": "2026-08-20",
     "m8EAd_evening": "2026-08-20",
     "PdMu0": "2026-08-20",
-    "PdMu0_evening": "2026-08-20"
+    "PdMu0_evening": "2026-08-20",
+    "m8EAd_carousel": "2026-08-21",
+    "PdMu0_carousel": "2026-08-21"
   },
   "last_sync": "2026-08-20T16:24:05.167795+00:00",
   "posted_destinations": [
@@ -282,6 +284,10 @@
     },
     {
       "destination_id": "ananthagiri-hills",
+      "date": "2026-08-21"
+    },
+    {
+      "destination_id": "kargil",
       "date": "2026-08-21"
     }
   ],
@@ -8300,6 +8306,24 @@
       "destination": "ananthagiri-hills",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_ananthagiri-hills_hi_2026-08-21.mp4"
+    },
+    {
+      "timestamp": "2026-08-21T08:01:48.451633+00:00",
+      "date": "2026-08-21",
+      "platform": "instagram",
+      "post_id": "dxHpt",
+      "destination": "kargil",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-21"
+    },
+    {
+      "timestamp": "2026-08-21T08:01:50.045099+00:00",
+      "date": "2026-08-21",
+      "platform": "facebook",
+      "post_id": "aG43V",
+      "destination": "kargil",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-21"
     }
   ],
   "theme_usage": {
@@ -9505,7 +9529,15 @@
       "Ladarcha Fair",
       "Gurez Cultural Festival",
       "Malana Village Fair",
-      "Pang Lhabsol"
+      "Pang Lhabsol",
+      "Munshi Aziz Bhat Memorial Festival",
+      "Janmashtami",
+      "Ganesh Chaturthi",
+      "Ganesh Chaturthi (Ganeshotsav)",
+      "Kumbh Mela",
+      "Nag Panchami (Battis Shirala)",
+      "Bonderam Festival",
+      "Nehru Trophy Boat Race"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
