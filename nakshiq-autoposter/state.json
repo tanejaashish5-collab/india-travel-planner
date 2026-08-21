@@ -32,12 +32,10 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-20",
-    "m8EAd_carousel": "2026-08-19",
-    "PdMu0_carousel": "2026-08-19",
+    "GAh5p_yt_short": "2026-08-21",
     "m8EAd_yt_short": "2026-08-20",
     "m8EAd": "2026-08-20",
     "m8EAd_evening": "2026-08-20",
@@ -46,18 +44,6 @@
   },
   "last_sync": "2026-08-20T16:24:05.167795+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "keylong",
-      "date": "2026-08-06"
-    },
-    {
-      "destination_id": "igatpuri",
-      "date": "2026-08-06"
-    },
-    {
-      "destination_id": "trimbakeshwar",
-      "date": "2026-08-06"
-    },
     {
       "destination_id": "tso-moriri",
       "date": "2026-08-07"
@@ -293,6 +279,10 @@
     {
       "destination_id": "keylong",
       "date": "2026-08-20"
+    },
+    {
+      "destination_id": "ananthagiri-hills",
+      "date": "2026-08-21"
     }
   ],
   "posted_formats": {
@@ -8292,6 +8282,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "keylong.mp4"
+    },
+    {
+      "timestamp": "2026-08-21T04:59:47.788096+00:00",
+      "date": "2026-08-21",
+      "platform": "instagram",
+      "post_id": "FAyX5",
+      "destination": "ananthagiri-hills",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_ananthagiri-hills_hi_2026-08-21.mp4"
+    },
+    {
+      "timestamp": "2026-08-21T04:59:55.566212+00:00",
+      "date": "2026-08-21",
+      "platform": "youtube",
+      "post_id": "B9G5x",
+      "destination": "ananthagiri-hills",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_ananthagiri-hills_hi_2026-08-21.mp4"
     }
   ],
   "theme_usage": {
@@ -8343,9 +8351,6 @@
         "2026-06-10",
         "2026-06-15",
         "2026-06-29"
-      ],
-      "dwarka": [
-        "2026-05-22"
       ],
       "munsiyari": [
         "2026-05-23",
@@ -9297,9 +9302,6 @@
       ]
     },
     "tourist_map_states": {
-      "TN": [
-        "2026-05-22"
-      ],
       "UK": [
         "2026-06-15"
       ],
@@ -9311,9 +9313,6 @@
       ]
     },
     "tourist_map_combos": {
-      "TN_cartographic_dark": [
-        "2026-05-22"
-      ],
       "UK_editorial_dark": [
         "2026-06-15"
       ],
@@ -9472,9 +9471,7 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    },
-    "tourist_trap_alts": {},
-    "collection_carousel_dests:french-india-trail": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
