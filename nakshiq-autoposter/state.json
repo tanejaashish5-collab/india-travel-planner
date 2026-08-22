@@ -32,11 +32,11 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-21",
-    "m8EAd_yt_short": "2026-08-21",
+    "GAh5p_yt_short": "2026-08-22",
+    "m8EAd_yt_short": "2026-08-22",
     "m8EAd": "2026-08-21",
     "m8EAd_evening": "2026-08-21",
     "PdMu0": "2026-08-21",
@@ -46,26 +46,6 @@
   },
   "last_sync": "2026-08-21T14:58:30.676426+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "tso-moriri",
-      "date": "2026-08-07"
-    },
-    {
-      "destination_id": "manali",
-      "date": "2026-08-07"
-    },
-    {
-      "destination_id": "hogenakkal",
-      "date": "2026-08-07"
-    },
-    {
-      "destination_id": "pune",
-      "date": "2026-08-07"
-    },
-    {
-      "destination_id": "valley-of-flowers",
-      "date": "2026-08-07"
-    },
     {
       "destination_id": "alchi",
       "date": "2026-08-08"
@@ -297,6 +277,10 @@
     {
       "destination_id": "valley-of-flowers",
       "date": "2026-08-21"
+    },
+    {
+      "destination_id": "likir",
+      "date": "2026-08-22"
     }
   ],
   "posted_formats": {
@@ -8372,6 +8356,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "valley-of-flowers.mp4"
+    },
+    {
+      "timestamp": "2026-08-22T04:54:14.841500+00:00",
+      "date": "2026-08-22",
+      "platform": "instagram",
+      "post_id": "rnGVJ",
+      "destination": "likir",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_likir_hi_2026-08-22.mp4"
+    },
+    {
+      "timestamp": "2026-08-22T04:54:23.443416+00:00",
+      "date": "2026-08-22",
+      "platform": "youtube",
+      "post_id": "Lb4x7",
+      "destination": "likir",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_likir_hi_2026-08-22.mp4"
     }
   ],
   "theme_usage": {
@@ -8433,9 +8435,6 @@
         "2026-05-23",
         "2026-06-05",
         "2026-08-04"
-      ],
-      "srinagar": [
-        "2026-05-23"
       ],
       "morgaon": [
         "2026-05-24"
@@ -9397,26 +9396,6 @@
       ],
       "MZ_cartographic_dark": [
         "2026-08-06"
-      ]
-    },
-    "reel_formats": {
-      "seasonal_shift": [
-        "2026-05-23"
-      ]
-    },
-    "reel_seasonal_dests": {
-      "mudumalai": [
-        "2026-05-23"
-      ]
-    },
-    "canva_categories": {
-      "activities": [
-        "2026-05-23"
-      ]
-    },
-    "canva_images": {
-      "activities/surfing_01.jpg": [
-        "2026-05-23"
       ]
     },
     "collection_series": {
