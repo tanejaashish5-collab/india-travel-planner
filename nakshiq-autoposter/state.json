@@ -41,8 +41,8 @@
     "m8EAd_evening": "2026-08-21",
     "PdMu0": "2026-08-21",
     "PdMu0_evening": "2026-08-21",
-    "m8EAd_carousel": "2026-08-21",
-    "PdMu0_carousel": "2026-08-21"
+    "m8EAd_carousel": "2026-08-22",
+    "PdMu0_carousel": "2026-08-22"
   },
   "last_sync": "2026-08-21T14:58:30.676426+00:00",
   "posted_destinations": [
@@ -280,6 +280,10 @@
     },
     {
       "destination_id": "likir",
+      "date": "2026-08-22"
+    },
+    {
+      "destination_id": "gulbarga",
       "date": "2026-08-22"
     }
   ],
@@ -8374,6 +8378,24 @@
       "destination": "likir",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_likir_hi_2026-08-22.mp4"
+    },
+    {
+      "timestamp": "2026-08-22T07:50:15.741896+00:00",
+      "date": "2026-08-22",
+      "platform": "instagram",
+      "post_id": "bplYv",
+      "destination": "gulbarga",
+      "format": "carousel.cost",
+      "media_id": "carousel_cost_2026-08-22"
+    },
+    {
+      "timestamp": "2026-08-22T07:50:17.931558+00:00",
+      "date": "2026-08-22",
+      "platform": "facebook",
+      "post_id": "mgDZ3",
+      "destination": "gulbarga",
+      "format": "carousel.cost",
+      "media_id": "carousel_cost_2026-08-22"
     }
   ],
   "theme_usage": {
