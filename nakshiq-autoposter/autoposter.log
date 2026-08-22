@@ -19501,3 +19501,49 @@ Date range: 2026-04-15 → 2026-08-17
 2026-08-22 12:02:01  INFO      YT Short posted: format=did_you_know, music=fast-680
 2026-08-22 12:02:01  INFO      State saved. YT Short run complete.
 2026-08-22 12:02:01  INFO      ════════════════════════════════════════════════════════════
+2026-08-22 14:41:55  INFO      ════════════════════════════════════════════════════════════
+2026-08-22 14:41:55  INFO      Nakshiq Autoposter · EVENING · 2026-08-22 · weekday=5
+2026-08-22 14:41:55  INFO      ════════════════════════════════════════════════════════════
+2026-08-22 14:41:55  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-22 14:42:37  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-22 14:42:37  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-22 14:42:38  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-22 14:42:38  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-22 14:42:38  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-22 14:42:38  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-22 14:42:54  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-22 14:42:54  INFO      Evening format (balance→anti_trap): tourist_trap [0% vs target 15%] (0/15 never featured)
+2026-08-22 14:42:54  INFO      Formats — IG: tourist_trap  ·  FB: tourist_trap  ·  Story: route_spotlight  ·  Audience: families
+2026-08-22 14:42:54  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 67
+2026-08-22 14:42:54  INFO      Audience filter 'families' → 7 destinations match.
+2026-08-22 14:42:54  INFO      Fingerprint dedup snapshot — 67 dests in 7d · 111 (dest,fmt) pairs in 30d · 226 media in 60d
+2026-08-22 14:42:54  INFO      Route locked: Manali to Leh Highway (12 days)
+2026-08-22 14:42:54  INFO      Tourist trap locked: skip Mumbai → go Elephanta Caves (78/78 never featured)
+2026-08-22 14:42:56  INFO      Shared best destination locked: Amboli
+2026-08-22 14:42:56  INFO      [instagram/nakshiq] Generating tourist_trap post...
+2026-08-22 14:42:56  WARNING   [instagram/nakshiq] tourist_trap: amboli inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'amboli' as score_card to keep the slot live.
+2026-08-22 14:42:56  INFO      [instagram/nakshiq] Caption ready (365 chars, dest=amboli)
+2026-08-22 14:42:57  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-22 14:42:57  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/amboli.mp4?v=20260524
+2026-08-22 14:42:59  INFO          Brand-stamp applied: amboli.mp4 (7,598,404 → 4,504,624 bytes)
+2026-08-22 14:42:59  INFO          Requesting upload URL for amboli.mp4 (4,504,624 bytes, video/mp4)
+2026-08-22 14:43:00  INFO          Uploading to R2 (timeout=300s)...
+2026-08-22 14:43:02  INFO          R2 PUT OK. Confirming...
+2026-08-22 14:43:04  INFO          Media ready: 8etru (4,504,624 bytes · amboli.mp4)
+2026-08-22 14:43:04  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-22 14:43:51  INFO      [instagram/nakshiq] ✅ Published · Outstand=2kPIU · Platform=18109974941030210
+2026-08-22 14:43:51  INFO      [facebook/Nakshiq] Generating tourist_trap post...
+2026-08-22 14:43:51  WARNING   [facebook/Nakshiq] tourist_trap: amboli inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'amboli' as score_card to keep the slot live.
+2026-08-22 14:43:51  INFO      [facebook/Nakshiq] Caption ready (538 chars, dest=amboli)
+2026-08-22 14:43:51  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-22 14:43:51  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/amboli.mp4?v=20260524
+2026-08-22 14:43:53  INFO          Brand-stamp applied: amboli.mp4 (7,598,404 → 4,504,624 bytes)
+2026-08-22 14:43:53  INFO          Requesting upload URL for amboli.mp4 (4,504,624 bytes, video/mp4)
+2026-08-22 14:43:54  INFO          Uploading to R2 (timeout=300s)...
+2026-08-22 14:43:55  INFO          R2 PUT OK. Confirming...
+2026-08-22 14:43:57  INFO          Media ready: eidBf (4,504,624 bytes · amboli.mp4)
+2026-08-22 14:43:57  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-22 14:44:13  INFO      [facebook/Nakshiq] ✅ Published · Outstand=bpKwm · Platform=998979686530694
+2026-08-22 14:44:13  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-22 14:44:13  INFO      State saved. Run complete.
+2026-08-22 14:44:13  INFO      ════════════════════════════════════════════════════════════

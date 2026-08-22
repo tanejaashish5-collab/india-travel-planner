@@ -37,14 +37,14 @@
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-22",
     "m8EAd_yt_short": "2026-08-22",
-    "m8EAd": "2026-08-21",
-    "m8EAd_evening": "2026-08-21",
-    "PdMu0": "2026-08-21",
-    "PdMu0_evening": "2026-08-21",
+    "m8EAd": "2026-08-22",
+    "m8EAd_evening": "2026-08-22",
+    "PdMu0": "2026-08-22",
+    "PdMu0_evening": "2026-08-22",
     "m8EAd_carousel": "2026-08-22",
     "PdMu0_carousel": "2026-08-22"
   },
-  "last_sync": "2026-08-21T14:58:30.676426+00:00",
+  "last_sync": "2026-08-22T14:42:37.043813+00:00",
   "posted_destinations": [
     {
       "destination_id": "alchi",
@@ -289,6 +289,10 @@
     {
       "destination_id": "thrissur",
       "date": "2026-08-22"
+    },
+    {
+      "destination_id": "amboli",
+      "date": "2026-08-22"
     }
   ],
   "posted_formats": {
@@ -296,10 +300,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -319,10 +323,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8418,6 +8422,28 @@
       "destination": "thrissur",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_thrissur_hi_2026-08-22.mp4"
+    },
+    {
+      "timestamp": "2026-08-22T14:43:51.449493+00:00",
+      "date": "2026-08-22",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "2kPIU",
+      "destination": "amboli",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "amboli.mp4"
+    },
+    {
+      "timestamp": "2026-08-22T14:44:13.789336+00:00",
+      "date": "2026-08-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "bpKwm",
+      "destination": "amboli",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "amboli.mp4"
     }
   ],
   "theme_usage": {
@@ -8822,7 +8848,8 @@
         "2026-07-16",
         "2026-07-25",
         "2026-08-02",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-22"
       ],
       "adilabad": [
         "2026-08-01",
@@ -8984,7 +9011,8 @@
         "2026-08-17",
         "2026-08-19",
         "2026-08-20",
-        "2026-08-21"
+        "2026-08-21",
+        "2026-08-22"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9240,7 +9268,8 @@
       ],
       "amboli": [
         "2026-07-16",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-22"
       ],
       "igatpuri": [
         "2026-07-17"
@@ -9293,7 +9322,8 @@
         "2026-07-25",
         "2026-08-01",
         "2026-08-08",
-        "2026-08-15"
+        "2026-08-15",
+        "2026-08-22"
       ],
       "adventurers": [
         "2026-05-29",
@@ -9570,7 +9600,9 @@
       "bhimashankar": [
         "2026-07-28"
       ]
-    }
+    },
+    "routes": {},
+    "tourist_trap_alts": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -9584,7 +9616,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "hanle",
+    "shared_best": "amboli",
     "collection": "french-india-trail"
   },
   "manual_skip_dests": {},
