@@ -41,8 +41,9 @@
     "m8EAd_evening": "2026-08-22",
     "PdMu0": "2026-08-22",
     "PdMu0_evening": "2026-08-22",
-    "m8EAd_carousel": "2026-08-22",
-    "PdMu0_carousel": "2026-08-22"
+    "m8EAd_carousel": "2026-08-23",
+    "PdMu0_carousel": "2026-08-23",
+    "m8EAd_carousel_story": "2026-08-23"
   },
   "last_sync": "2026-08-22T14:42:37.043813+00:00",
   "posted_destinations": [
@@ -280,6 +281,10 @@
     },
     {
       "destination_id": "nubra-valley",
+      "date": "2026-08-23"
+    },
+    {
+      "destination_id": "zanskar",
       "date": "2026-08-23"
     }
   ],
@@ -8450,6 +8455,33 @@
       "destination": "nubra-valley",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_nubra-valley_hi_2026-08-23.mp4"
+    },
+    {
+      "timestamp": "2026-08-23T07:52:45.034326+00:00",
+      "date": "2026-08-23",
+      "platform": "instagram",
+      "post_id": "Lbl1U",
+      "destination": "zanskar",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-23"
+    },
+    {
+      "timestamp": "2026-08-23T07:52:49.491978+00:00",
+      "date": "2026-08-23",
+      "platform": "instagram",
+      "post_id": "3wdYn",
+      "destination": "zanskar",
+      "format": "story.window",
+      "media_id": "story_window_2026-08-23"
+    },
+    {
+      "timestamp": "2026-08-23T07:52:52.004602+00:00",
+      "date": "2026-08-23",
+      "platform": "facebook",
+      "post_id": "1C2Zo",
+      "destination": "zanskar",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-23"
     }
   ],
   "theme_usage": {
