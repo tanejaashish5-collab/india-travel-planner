@@ -304,28 +304,14 @@ async function main() {
       record("membership", "submit creates row", mb.status === 200 && mbRow ? "PASS" : "FAIL", `status ${mb.status}, row ${!!mbRow}`);
     });
 
-    // ── 7. Quiz match + export ────────────────────────────────────────────
-    await section("quiz+export", async () => {
+    // ── 7. Quiz match ─────────────────────────────────────────────────────
+    await section("quiz-match", async () => {
       const qm = await apiFetch(page, "/api/quiz-match", post({ group: "couple", duration: "week", priority: "nature", comfort: "mid", month: 11 }));
       const n = qm.json?.results?.length ?? 0;
       record("quiz-match", `returns matches (${n})`, qm.status === 200 && n > 0 ? "PASS" : "FAIL", `status ${qm.status}`);
 
-      const ex = await apiFetch(page, "/api/export-trip", post({
-        items: [{ destinationId: "tungnath", days: 2 }, { destinationId: "kasol", days: 3 }],
-        month: 5, travelers: 2, budget: "budget", tripName: "verify",
-      }));
-      const okBody = ex.status === 200 && /tungnath/i.test(ex.text) && /STOP 1/.test(ex.text);
-      record("export-trip", "returns real file content", okBody ? "PASS" : "FAIL", `status ${ex.status}, bytes ${ex.text?.length}`);
-
-      // Adversarial: items that resolve to NO destinations must not produce a
-      // 200 "export" containing zero stops (empty-200 class).
-      const exGhost = await apiFetch(page, "/api/export-trip", post({
-        items: [{ destinationId: "zz-not-real-zz", days: 2 }], month: 5, travelers: 2, budget: "budget", tripName: "ghost",
-      }));
-      const ghostEmpty = exGhost.status === 200 && !/STOP 1/.test(exGhost.text);
-      if (exGhost.status >= 400) record("export-trip", "unresolvable items rejected", "PASS", `status ${exGhost.status}`);
-      else if (ghostEmpty) record("export-trip", "unresolvable items → 200 with ZERO-stop export", "FLAG", "empty-200 class: user downloads a trip file with no stops and ₹0 total, no error shown");
-      else record("export-trip", "unresolvable items behaviour", "FLAG", `status ${exGhost.status}, bytes ${exGhost.text?.length}`);
+      // /api/export-trip was removed 2026-08-23 (orphaned route, zero live
+      // consumers) — its checks died with it.
     });
   } finally {
     // ── Cleanup: remove every row this run created (path-scoped) ──────────
