@@ -134,6 +134,18 @@ export async function POST(req: NextRequest) {
 
   const destinations = destResult.data ?? [];
 
+  // Same empty-200 class as the incident above, via a different door: a caller
+  // naming destinationIds that resolve to ZERO rows (stale saved trip, deleted
+  // destination) used to fall through to a 200 itinerary of pure generic filler
+  // days — placeholder content for a place we never found. Fail loudly instead.
+  // Found by scripts/adversarial-ui-verify.mjs, 2026-08-23.
+  if (destinationIds?.length > 0 && destinations.length === 0) {
+    return NextResponse.json(
+      { error: "None of the requested destinations exist" },
+      { status: 404 },
+    );
+  }
+
   const trapMap: Record<string, { altId: string; altName: string; reason: string }> = {};
   for (const t of (trapResult.data ?? [])) {
     if (!trapMap[t.trap_destination_id]) {

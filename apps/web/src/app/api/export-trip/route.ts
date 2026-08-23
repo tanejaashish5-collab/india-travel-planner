@@ -30,6 +30,13 @@ export async function POST(req: NextRequest) {
 
   if (!dests) return NextResponse.json({ error: "Failed to fetch data" }, { status: 500 });
 
+  // No item resolved to a real destination → the export would be a header,
+  // "0 stops · ₹0", and a footer served as a successful download. Empty-200
+  // class — fail loudly instead. Found by scripts/adversarial-ui-verify.mjs.
+  if (dests.length === 0) {
+    return NextResponse.json({ error: "No matching destinations found" }, { status: 404 });
+  }
+
   const MONTH_NAMES = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
 
   // Build a clean text export (printable/shareable)
