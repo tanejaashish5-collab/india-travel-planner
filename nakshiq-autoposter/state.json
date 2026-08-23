@@ -37,15 +37,15 @@
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-23",
     "m8EAd_yt_short": "2026-08-23",
-    "m8EAd": "2026-08-22",
-    "m8EAd_evening": "2026-08-22",
-    "PdMu0": "2026-08-22",
-    "PdMu0_evening": "2026-08-22",
+    "m8EAd": "2026-08-23",
+    "m8EAd_evening": "2026-08-23",
+    "PdMu0": "2026-08-23",
+    "PdMu0_evening": "2026-08-23",
     "m8EAd_carousel": "2026-08-23",
     "PdMu0_carousel": "2026-08-23",
     "m8EAd_carousel_story": "2026-08-23"
   },
-  "last_sync": "2026-08-22T14:42:37.043813+00:00",
+  "last_sync": "2026-08-23T14:43:57.606945+00:00",
   "posted_destinations": [
     {
       "destination_id": "courtallam",
@@ -290,16 +290,20 @@
     {
       "destination_id": "belur",
       "date": "2026-08-23"
+    },
+    {
+      "destination_id": "hanle",
+      "date": "2026-08-23"
     }
   ],
   "posted_formats": {
     "m8EAd": [
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -319,10 +323,10 @@
     "PdMu0": [
       "score_card",
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8504,6 +8508,28 @@
       "destination": "belur",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_belur_hi_2026-08-23.mp4"
+    },
+    {
+      "timestamp": "2026-08-23T14:45:08.631241+00:00",
+      "date": "2026-08-23",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "QS0Uh",
+      "destination": "hanle",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "hanle.mp4"
+    },
+    {
+      "timestamp": "2026-08-23T14:45:27.913833+00:00",
+      "date": "2026-08-23",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "dxarK",
+      "destination": "hanle",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "hanle.mp4"
     }
   ],
   "theme_usage": {
@@ -8919,7 +8945,8 @@
         "2026-08-16"
       ],
       "hanle": [
-        "2026-08-10"
+        "2026-08-10",
+        "2026-08-23"
       ]
     },
     "morning_formats": {
@@ -9063,7 +9090,8 @@
         "2026-08-19",
         "2026-08-20",
         "2026-08-21",
-        "2026-08-22"
+        "2026-08-22",
+        "2026-08-23"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9340,6 +9368,9 @@
       ],
       "kaza": [
         "2026-08-12"
+      ],
+      "hanle": [
+        "2026-08-23"
       ]
     },
     "audience_tags": {
@@ -9656,7 +9687,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "amboli",
+    "shared_best": "khandala",
     "collection": "french-india-trail"
   },
   "manual_skip_dests": {},
