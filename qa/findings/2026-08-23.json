@@ -1,0 +1,535 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-08-23",
+    "date": "2026-08-23",
+    "started_utc": "2026-08-23T02:07:00Z",
+    "completed_utc": "2026-08-23T02:55:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test), following qa/SKILL.md. Sitemap fetched fresh (5 chunks, 24,975 URLs -- up 6 from 08-22's 24,969) and diffed field-by-field against 08-22's recorded breakdown: the only 2 changed categories were en/blog (188->193, +5) and en/the-window (19->20, +1); destination slug/month/cost counts all flat (533/6396/525). The +5 en/blog exactly matches commit 62a90e07 ('content(blog): weekly batch 2026-08-22 -- 5 GSC-demand articles'), which published via a direct Supabase SQL insert (data/blog-drafts/inserts-2026-08-22.sql) rather than an app-code change -- spot-checked one of the 5 new slugs (is-varkala-in-october-worth-it) live at HTTP 200. Random 10-destination sample (seed 'nakshiq-2026-08-23': igatpuri, mawphlang, daringbadi, colva-benaulim, chitrakoot, kumbakonam, alleppey, mollem, drass, courtallam) confirmed 10/10 CINEMATIC-template via direct grep of apps/web/src/lib/cinematic-destinations.ts -- a 2nd consecutive 0/10-non-cinematic sample (08-22 was also 10/10 cinematic), so Section K's Leaflet/Hindi-H1 checks were again kept alive via an out-of-sample known non-cinematic control (dzongu, reused from 08-21/08-22 for a proven low-risk check). Sections A/B/C/D/D2/F/G/H/I/I2/J/family-fix-check/L ran as one staged Python (requests) script directly against prod (qa/findings/2026-08-23/probe.py, 57.9s total runtime), carried forward verbatim in methodology from 08-22/probe.py (the most recent complete prior run) with only the SEED/date changed. Section B's cold-cache reprobe logic (>1500ms outlier -> immediate reprobe) fired on 2 of 10 sampled destinations today (colva-benaulim 5350ms->1268ms, mollem 3933ms->147ms) -- unlike 08-22's mass 9/10-outlier event, this was NOT deploy-driven: the response-body data-dpl-id (dpl_AvPzwNn5QckLmD66BUntj2C8ZVwa) is IDENTICAL to 08-22's, confirming 0 new deploys since 08-22 and pointing to ordinary isolated ISR cache misses on 2 pages rather than a systemic cold-start. Investigated why no deploy landed despite 3 commits arriving on origin/main since 08-22's QA commit (92645c00): 7fdd3452 (gsc-email-triage, filename does NOT match the special always-build 'gsc-audit-*.md' glob from the 2026-07-30 vercel-ignore.sh fix) and 62a90e07 (blog-batch, data/*.sql + content/*.md, also outside that allowlist) were both already on origin and correctly triggered no rebuild by design; ab81cab7 (today's ga4-audit-2026-08-23.md, filename DOES match the always-build 'ga4-audit-*.md' glob) was found to be a LOCAL-ONLY commit never pushed to origin (git status showed 'ahead of origin/main by 1 commit', rev-list confirmed 1-ahead/0-behind) -- so its always-build trigger never fired because GitHub/Vercel never received it, not because the rule failed. This is the same shape as the well-documented sandbox git-push-credential gap (see project memory nakshiq_git_push_credential_gap.md); this run's own push (via Desktop Commander) will carry it to origin as an ancestor commit for free. Section E + DB ground truths run via Supabase MCP (project dudzsdzfvikjjhurxrgc): schema/column names re-verified first via information_schema for the 5 touched tables (emergency_sos, confidence_cards, destinations, destination_stay_picks, newsletter_subscribers), then a CASE-guarded aggregate query (avoiding the AND-short-circuit jsonb_array_length bug documented 2026-06-09) covering the 12-column SOS dialable aggregate (site-wide + today's 10-sample), a sitewide placeholder-'X' regex scan, the people_who_help shape breakdown, the Hindi-translations aggregate, a destination_stay_picks spot-check (kaza/majuli/phawngpui-peak/ponda-spice) plus a sitewide out-of-range scan, the auto_verify_status distribution, and the newsletter_subscribers active/confirmed breakdown -- ran clean on the first attempt (no CASE-guard fix needed this time, unlike 08-22). Pulled the latest ops_reports run for canary-probe/audit-cache-headers/audit-supabase-advisors/freshness-drift/road-conditions-sweep/sos-verify-reminder/sos-auto-reverify/audit-hero-images/refresh-stay-picks-agent/audit-gsc-alerts/watchdog (first query attempt errored on a wrong column name, 'job_name' vs the real 'job' -- fixed via information_schema, re-ran clean). Security advisors re-pulled directly via get_advisors; Vercel 24h runtime errors re-pulled via get_runtime_errors. Section K run via the Chrome MCP: igatpuri en (today's cinematic sample) full-load console-swept (atlas SVG + india-outline.svg reference confirmed present via JS query, 0 leaflet by design, H1='Igatpuri.', 0 console errors), igatpuri hi (lang=hi, Devanagari title, H1 still English 'Igatpuri.', SOS heading translated, body text contains Devanagari, 0 console errors), dzongu en (out-of-sample non-cinematic control) -- the leaflet-container was detected present on the very first JS check after only a 2s wait (before any deliberate scroll), differing from 08-22's true lazy-mount-on-scroll finding; after scrolling into view + a further 2s wait it read 1 container/28 tiles/9 markers/window.L=true, 0 console errors -- noted as page-load-timing variance (tile count 28 vs 08-22's 54 likely reflects a different viewport/zoom snapshot; the data-driven marker count of 9 matched exactly both days), not a regression, since the underlying map is confirmed working either way. dzongu /hi H1 properly regex-extracted this time (previous days relied on title-only or a broken grep) and confirmed Devanagari (द्ज़ोंगु). /en/explore: grid-default confirmed (0 leaflet on load), but the FIRST attempt to click the Map toggle used an element ref returned by a `find` call in an earlier browser_batch turn, issued after an intervening navigate -- the click silently no-op'd (confirmed via screenshot: Grid remained highlighted, 0 leaflet, 0 markers) because the ref had gone stale across the navigation boundary, not because of any site defect. Corrected by re-navigating, taking a fresh screenshot, and clicking the visible Map button by coordinate -- this worked immediately (519 markers, UI label '519 markers · colored by score' exactly matching the 08-03 through 08-22 baseline, 1 leaflet-container, 0 console errors). Recorded as a QA-tooling methodology note (do not reuse a find-sourced ref after a navigate in a later batch; get a fresh ref or use coordinates) rather than a site finding. /en/trip and /en/family/kerala (26 with-kids links via direct DOM query, matching the HTTP probe) also console-swept clean -- 7 fully console-tracked page loads/interactions today, 0 errors. Vercel runtime-error sweep via get_runtime_errors (project prj_JaXUDEUU6YSHZ8GZL4Cv2jZaoEz2, team team_jlSYurYBjQaH1QCxjRxRSE3K), 24h window: 0 error groups. Git: origin/main unchanged at 7fdd3452 at session start (local HEAD 1 commit ahead via the stranded ab81cab7, see above); no live git subprocess found (ps aux showed only this session's own bash wrapper falsely substring-matching 'git'); 2 stale 0-byte locks present (.git/index.lock from 12:17, .git/objects/maintenance.lock from 12:07, both created by this session's own earlier read-only git status/fetch calls) -- will clear via Desktop Commander before committing, per the standing sandbox-bridge-EPERM procedure. Verified (not inferred) that 08-22's own remediation of the qa/ commit-hygiene gap (NEW-2026-08-22-001) actually landed: `git show --stat 92645c00` confirms qa/findings/2026-08-17.json (522 lines) + both evidence directories + qa/findings/2026-08-22.json are all present in that commit -- the fix held for a 2nd consecutive day. Also confirmed NakshIQ_*.docx are gitignored by design (`.gitignore:123:/NakshIQ_*.docx`), so they are never expected in any commit. Targeted source-file continuity re-check: qa/_lib/build_report.js (still last touched 2026-07-07), apps/web/src/app/[locale]/explore/page.tsx (still last touched 2026-08-06) both unchanged. apps/web/src/components/destination-detail-cinematic.tsx's last COMMITTED touch remains 2026-08-04, but its pre-existing UNCOMMITTED local diff shrank from 61 to 58 insertions (3 lines removed) since 08-22 -- the first size change observed in this diff across the days it's been tracked (08-21/08-22 were both unchanged at 61). Zero production impact (uncommitted, never deployed); left entirely untouched per the standing 'never git add -A, not mine to touch' rule. Also identified the file backing that WIP for the first time by name: apps/web/src/lib/affiliate-links.ts (untracked, mtime 2026-08-08, imported only by destination-detail-cinematic.tsx) -- confirms it is the same known unshipped affiliate-links feature referenced in every prior week's caveats, not a new mystery file.",
+    "mode": "scheduled-headless",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 48,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A -- Soft-404 regression (10 probes incl bad-slug /en/cost/<slug>, garbage months on today's sample, /en/family/not-a-real-state-999): 10/10 404",
+    "B -- Destination availability + TTFB (10 random slugs from a fresh sitemap fetch, seed nakshiq-2026-08-23: igatpuri, mawphlang, daringbadi, colva-benaulim, chitrakoot, kumbakonam, alleppey, mollem, drass, courtallam): 10/10 200; initial TTFB min 432/median 876/max 5350ms, 2/10 cold-cache outliers over the 1500ms threshold (colva-benaulim, mollem), reprobed immediately (1268ms, 147ms) -- confirmed isolated cache misses, NOT deploy-driven (DPL unchanged from 08-22, see run.executor)",
+    "C -- Hindi parity: lang + Devanagari-title check, section-heading translation check, AND H1-language extraction cross-referenced against cinematic-destinations.ts -- today's sample was 10/10 cinematic-template (0/10 Devanagari H1, all render the plain English name), a 2nd consecutive 0-non-cinematic sample; cross-checked live via an out-of-sample non-cinematic control (dzongu, H1 Devanagari confirmed via proper regex extraction this time, not just the title) instead",
+    "D -- SEO meta (14 URLs: landing en+hi + 10 dests + 1 month sub-route + itinerary/agra): 0 title stutter, canonical/hreflang(en+hi+x-default)/og:image present on all 14",
+    "D2 -- Quiz/risk-quiz SEO re-probe (4 URLs, full seo_check incl. og:image): all pass, unchanged",
+    "E -- SOS completeness: DB ground-truth canonical 12-column aggregate (site-wide + today's 10-sample with raw dialable counts), a fresh sitewide placeholder-'X' regex scan (0 rows), Hindi-translations aggregate (533/533 all three of name/tagline/why_special), people_who_help shape aggregate, destination_stay_picks spot-check (kaza/majuli/phawngpui-peak/ponda-spice) plus a sitewide out-of-range scan, auto_verify_status distribution, newsletter_subscribers count incl. active/confirmed breakdown, and a targeted ops_reports/watchdog job-health pull. Schema re-verified via information_schema first; the main aggregate query ran clean on the first attempt (no CASE-guard fix needed this time).",
+    "F -- API smoke: 5 removed-route 404 confirmations (chat/gap-year-generate/gap-year-regenerate/embed/ask), itinerary malformed/empty/empty-object (400), 3x valid-request content checks with varied params incl. explicit destinationIds (200 + real non-empty distinct content for all 3), weather no-params (400, 'Missing destination id')/valid (200, live weather for varanasi), search-index (200), 2 phantom-route 404s (destinations, health -- routes that don't exist in this app, expected). Deploy-lineage (DPL) hint auto-extracted cleanly via the body-regex fallback (dpl_AvPzwNn5QckLmD66BUntj2C8ZVwa) -- IDENTICAL to 08-22's value, confirming 0 new deploys since then.",
+    "G -- PWA: sw.js CACHE_VERSION (nakshiq-v54, unchanged), manifest icons+shortcuts, /offline",
+    "H -- Sitemap integrity (index + 5 chunks, full breakdown diffed field-by-field against 08-22's recorded breakdown -- 2 categories changed: en/blog +5, en/the-window +1, both explained, see run.executor)",
+    "I -- Core routes HTTP matrix (33 routes probed incl. family/state/vs/with-kids/weekend-from/membership/saved surfaces; /en/search excluded from the pass/fail tally and TTFB stats per the standing not-a-real-route note, 32 counted, all 32 2xx). TTFB min 62/median 592/p90 1069/max 1300ms -- no deploy-cache-cold spike today (consistent with 0 deploys), markedly calmer than 08-22's deploy-affected max of 3256ms.",
+    "I2 -- State-redirect regression (wayanad 301 en/hi/bare, kerala 200 control)",
+    "J -- Locale-routing redirect (5 bare paths, redirects not followed)",
+    "K -- Chrome E2E: igatpuri en (today's cinematic sample) full-load console-swept (atlas SVG + india-outline.svg present, 0 leaflet, 0 console errors), igatpuri hi (lang=hi, Devanagari title, H1 English 'Igatpuri.', SOS heading translated, Devanagari body text confirmed, 0 errors), dzongu en (out-of-sample non-cinematic control -- leaflet detected present after a plain 2s wait this time, then re-confirmed after scroll: 1 container/28 tiles/9 markers/window.L=true, 0 errors), dzongu hi H1 regex-verified Devanagari (द्ज़ोंगु), /en/explore Grid-default-then-Map-toggle (519 overlay markers, UI text confirms '519 markers · colored by score', matches baseline -- required a retry after a stale browser-automation element reference caused a false-negative first attempt, see run.executor), /en/trip + /en/family/kerala (26 with-kids links via direct DOM query, matches the HTTP probe) -- 7 fully console-tracked page loads/interactions, 0 errors",
+    "L -- Hero-image audit: HTTP HEAD-probe fallback in probe.py -- 533/533 ok, 0 missing, 0 errors; independently corroborated by the automated audit-hero-images cron's own 2026-08-22T03:50 UTC run showing ok=true / missing_count=0 in the ops_reports snapshot",
+    "Supplementary -- Git read-only check: origin/main at 7fdd3452 at session start; local HEAD 1 commit ahead via a stranded local-only commit (ab81cab7, ga4-audit-2026-08-23.md) never pushed to origin -- see run.executor for the deploy-trigger implication. No divergence (0 behind).",
+    "Supplementary -- App-code commit check: 0 application-code commits landed on origin/main since the 08-22 QA run -- the 2 commits present (gsc-email-triage, blog-batch) are markdown/SQL/data only.",
+    "Supplementary -- Targeted source-file continuity: qa/_lib/build_report.js (2026-07-07), apps/web/src/app/[locale]/explore/page.tsx (2026-08-06), destination-detail-cinematic.tsx (last COMMITTED 2026-08-04) all unchanged at the commit level -- confirming NEW-2026-07-07-004/NEW-2026-08-10-003/NEW-2026-08-14-005 and NEW-2026-08-03-002 root causes unchanged. destination-detail-cinematic.tsx's uncommitted local diff shrank 61->58 insertions since 08-22 (see run.executor) -- zero production impact, left untouched.",
+    "Supplementary -- Deploy-lineage check: today's data-dpl-id (dpl_AvPzwNn5QckLmD66BUntj2C8ZVwa) is IDENTICAL to 08-22's -- 0 new deploys since 08-22, root-caused to the trigger commit (ab81cab7) being stranded unpushed rather than the always-build rule failing (see run.executor).",
+    "Supplementary -- Vercel 24h runtime-error check (get_runtime_errors MCP tool) -- 0 error groups found.",
+    "Supplementary -- ops_reports job-health check: canary-probe ok (18/18, 0 failures, 1456ms, run 02:01 UTC today); audit-cache-headers ok (0 violations, run 01:18 UTC today); audit-supabase-advisors ok (run 00:23 UTC today, security_count=9, matches direct pull); freshness-drift 08-17 run ok (unchanged, next due ~08-25); road-conditions-sweep 08-17 ok (unchanged); sos-verify-reminder 08-17 ok (unchanged); sos-auto-reverify unchanged since 08-17 (next run 08-24, tomorrow); audit-hero-images 08-22T03:50 UTC run ok (533/0 missing) -- refresh-stay-picks-agent run 2026-08-22T22:24:06 UTC shows ok=true (flag), batch of 20 destinations (none overlapping ponda-spice/kaza/majuli/phawngpui-peak), rows_written=59, and its own verification_note self-counts this as the '13th consecutive occurrence spanning 13+ calendar days, still not actioned' of the identical HTTPS-CONNECT-tunnel 403 egress block. Watchdog's own per-job status for it today: 'ok' -- FLIPPED BACK from 'needs_review' (08-21/08-22), even though the underlying block is explicitly unchanged per the job's own note text -- the 3rd distinct flip observed across 08-19 through 08-23, reinforcing that this flag is unreliable in both directions and only the note text can be trusted (see NEW-2026-08-19-001). audit-gsc-alerts remains needs_review in the watchdog snapshot (1 alert carried unchanged from the 08-22 03:30 UTC run, author's own text says contextual-only) -- outside this QA pass's scope. Bonus signal: asset_coverage still shows 105/105 collections have video (100%), 0 unlinked examples.",
+    "Supplementary -- Security advisors direct re-pull (get_advisors, type=security): 9 findings, identical composition to 08-10 through 08-22 (3 INFO rls_enabled_no_policy, 4 WARN SECURITY DEFINER-executable across 2 functions, 1 WARN vector-extension-in-public, 1 WARN leaked-password-protection-disabled), 0 new, 0 resolved.",
+    "Supplementary -- Data-anomaly continuity check: ponda-spice destination_stay_picks -- still 4 rows, all within the valid 0-1 range ([0.78-0.85], the identical set seen since 08-20), confirmed not touched by the 08-22T22:24 refresh-stay-picks-agent batch. Sitewide recheck: 0 rows outside 0-1 across all of destination_stay_picks.",
+    "Supplementary -- Sparse-stays watchlist re-check: kaza=4 (0.68-0.75), majuli=4 (0.78-0.86), phawngpui-peak=2 (0.65-0.70) -- unchanged, none in today's random sample or in the 08-22 refresh-stay-picks-agent batch.",
+    "Supplementary -- Placeholder-phone sitewide scan: fresh regex scan (police/ambulance/fire/etc. matching ^[Xx]+$) across all of emergency_sos -- 0 rows.",
+    "Supplementary -- qa/ commit-hygiene remediation verification: confirmed (not inferred) via `git show --stat 92645c00` that 08-22's recovery of qa/findings/2026-08-17.json + evidence directories, plus 08-22's own findings.json, are genuinely present in that commit -- the NEW-2026-08-22-001 fix held for a 2nd consecutive day. 2026-08-18's top-level findings.json remains a permanent, already-documented gap.",
+    "Supplementary -- New blog content spot-check: curl-verified one of the 5 newly-published blog slugs (is-varkala-in-october-worth-it) live at HTTP 200."
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass -- scoped as a dedicated standalone session per SKILL.md. 0 application-code commits landed since 08-22, so there is nothing new to check a diff against. Baseline now 111 days stale (origin 2026-05-04)."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Same escalation as axe-core above. No app-code commits landed this run window and no deploy occurred, so there is nothing new to evaluate either way."
+    },
+    {
+      "phase": "Live node scripts/audit-hero-images.mjs run",
+      "reason": "Ran the HTTP HEAD-probe fallback embedded in probe.py instead (533/533 ok, matches the live script's methodology and result across the last several weeks it's been run directly), independently corroborated by the automated cron's own clean 08-22T03:50 UTC run -- time-boxed this session in favor of the DB/Chrome checks."
+    },
+    {
+      "phase": "Live re-verification of newsletter signup form submission",
+      "reason": "Would require entering an email and submitting a real form -- needs explicit user permission this headless run cannot obtain. newsletter_subscribers total unchanged at 15 since 08-17 (no new signups this window)."
+    },
+    {
+      "phase": "Live re-probe of the exact static Atlas coordinate string ('23.5N · 80.5E') on today's cinematic sample",
+      "reason": "Confirmed the atlas SVG template rendered correctly on igatpuri (viewBox + india-outline.svg reference, 0 console errors) but did not re-extract the specific literal coordinate substring via the accessibility tree this run (time-boxed) -- NEW-2026-06-06-003 carried forward as REPRODUCED based on its unbroken multi-month history rather than a fresh literal-string re-probe today; flagged here for precision rather than silently reusing yesterday's exact evidence phrasing."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "10/10 Section-A probes 404 today (incl. /en/family/not-a-real-state-999), 0 return 200."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "igatpuri/13, /0, /notamonth, hi/mawphlang/99 all 404 today."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat still returns a clean 404 today -- route remains deleted."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400 ('Malformed JSON body'), empty->400, empty_object->400 ('Missing required fields') today, 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template title stutter",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra title = 'Agra itinerary -- 1, 3 & 5 days (verified) | NakshIQ', 1 occurrence of NakshIQ."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra og:image present today."
+    },
+    {
+      "id": "NEW-2026-07-03-001",
+      "title": "quiz/[topic] template ships without og:image on both locales",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en+hi/quiz/hill-station and /en+hi/risk-quiz all show og:image present, canonical present, hreflang en/hi/x-default present, 0 title stutter."
+    },
+    {
+      "id": "NEW-2026-07-07-004",
+      "title": "qa/_lib/build_report.js reads different field names than findings.json carries for the 'K -- Map widget' QA-report row",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Unresolved, unchanged: build_report.js last touched 2026-07-07, no commit landed on it since. Today's findings again populates the compatibility-alias field names so the K-row renders correctly; source-level fix still not applied."
+    },
+    {
+      "id": "NEW-2026-08-10-003",
+      "title": "qa/_lib/build_report.js's 'E -- SOS phones' row reads field names findings.json has never natively carried",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Confirmed unchanged: build_report.js last touched 2026-07-07. Today's findings again populates the compatibility aliases; source-level fix still not applied."
+    },
+    {
+      "id": "NEW-2026-07-07-003",
+      "title": "scripts/audit-hero-images.mjs (CONCURRENCY=8) does not reliably complete within the 45-second shell budget",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "The live script was not re-run this session (time-boxed); the HTTP HEAD-probe fallback again shows 533/533 ok, 0 missing, and the automated cron's own 08-22T03:50 UTC run independently shows ok -- 11th consecutive week the underlying data shows no gap."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN",
+      "today_status": "STILL GREEN",
+      "evidence": "manifest icons=3, shortcuts=5 (unchanged). /offline 200. sw.js 200, CACHE_VERSION=nakshiq-v54 -- unchanged."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Uttarkashi not in today's 10-sample and not individually re-queried; sitewide safety floor (0 rows under 3 dialable, 0 rows without an SOS record) holds AND a fresh sitewide placeholder-'X' regex scan returned 0 rows across all 12 dialable columns."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Same caveat as uttarkashi above -- not in today's sample, sitewide aggregate + fresh placeholder scan show no regression signal."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Same caveat -- not in today's sample."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative methodology note",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "probe.py's seo_check() carries re.IGNORECASE unchanged -- all 14+4 hreflang checks across Sections D+D2 passed cleanly."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: confidence_cards.people_who_help is 432 array-shape + 93 object-shape (525 total rows, 0 null pwh) -- exact match to the 06-19..08-22 baseline, 0 change."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Safety floor still intact (0 destinations under 3 dialable fields, 0 without an emergency_sos row, sitewide min dialable=5, avg 7.81, total 4165 -- identical to 08-17 through 08-22). emergency_sos.local_helpers non-empty = 178/533, identical to 07-20..08-22."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet dual-template)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Today's random 10-sample was again 10/10 cinematic (2nd consecutive 0/10-non-cinematic sample). Kept the check live via an out-of-sample known non-cinematic destination (dzongu): confirmed 1 leaflet-container, 28 tiles, 9 markers, window.L present. igatpuri (today's cinematic sample) rendered the atlas SVG with 0 leaflet. Kept as PARTIAL rather than STILL CLOSED -- this is architecture, not a bug."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Positively contradicted again today: dzongu's markers ARE present and countable (9, via .leaflet-interactive selector)."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration; marker rendering",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "dzongu (out-of-sample non-cinematic control) interactively verified via Chrome: 1 leaflet-container, 28 tiles, 9 markers, window.L present, 0 console errors."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N x 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED",
+      "today_status": "REPRODUCED",
+      "evidence": "Carried forward based on its unbroken multi-month history; today's Chrome pass confirmed the atlas template renders correctly on igatpuri (SVG + india-outline.svg present, 0 console errors) but did not re-extract the exact literal coordinate substring this run (see phases_skipped) -- still cosmetic, still open."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 console errors across 7 fully console-tracked Chrome observations today (igatpuri en incl. hi, dzongu, explore grid/map, trip, family/kerala)."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not independently re-triggered today (modal did not surface during today's Chrome pass) -- same standing caveat as every prior week it doesn't fire."
+    },
+    {
+      "id": "NEW-2026-07-09-001",
+      "title": "Destination hero H1 + body copy render in English on /hi despite complete Hindi translations existing in the DB",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Today's 10-sample was again 10/10 cinematic (0/10 Devanagari H1, e.g. 'Igatpuri.', 'Mawphlang.'). Cross-checked live via an out-of-sample non-cinematic control instead: dzongu's /hi H1 properly regex-extracted and confirmed Devanagari (द्ज़ोंगु), a more rigorous check than the title-only proxy used on some prior days. Standing scope (cinematic-only) unchanged; destination-detail-cinematic.tsx's last COMMITTED touch remains 2026-08-04."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section L HTTP HEAD-probe fallback: 533/533 probed, 0 missing, 0 errors; corroborated by the automated audit-hero-images cron's clean 08-22T03:50 UTC run."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrink regression watch",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Sitemap total GREW to 24,975 today (+6 vs 08-22's 24,969), fully explained by 2 categories: en/blog +5 (matches the 62a90e07 blog-batch commit, spot-checked live) and en/the-window +1. Destination slug/month/cost counts all unchanged (533/6396/525)."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "phawngpui-peak shows <3 stay cards in rendered HTML",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "DB spot-check today: kaza=4, majuli=4, phawngpui-peak=2 (unchanged). None of the 3 landed in today's random sample or in the most recent refresh-stay-picks-agent batch (08-22)."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core skipped again (see phases_skipped). 0 application-code commits landed since 08-22. Baseline now 111 days stale."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Same as color-contrast above -- 0 application-code commits landed since 08-22."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse skipped again. 0 app-code commits landed since 08-22 and 0 deploys occurred -- nothing new to evaluate."
+    },
+    {
+      "id": "NEW-2026-08-03-002",
+      "title": "Recurring Postgres statement-timeout (57014) on /explore, traced to an uncached query bypassing cached-data.ts",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "apps/web/src/app/[locale]/explore/page.tsx last touched 2026-08-06, unchanged since -- still does its own inline createClient() + supabase.from calls. Root cause unchanged. Today's own /explore probes (HTTP + Chrome, incl. the Grid/Map toggle interaction) all succeeded cleanly, consistent with this being an intermittent timeout, not a constant failure."
+    },
+    {
+      "id": "NEW-2026-08-10-002",
+      "title": "Postgres statement-timeout pattern breadth -- weekly trend",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Continued clean signal: today's 24h Vercel runtime-error sweep again found ZERO error groups. Not a full close-out for the same 2 structural reasons: /explore's separate uncached queries remain open (NEW-2026-08-03-002) and the anon role's 3s statement_timeout ceiling still needs founder approval to raise."
+    },
+    {
+      "id": "NEW-2026-08-03-003",
+      "title": "SOS auto-reverify weekly cron -- needs_source rate and rollout health",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "No new cron activity since 08-17's run (next scheduled fire is 2026-08-24, tomorrow) -- auto_verify_status distribution unchanged (confirmed=109, needs_source=300, never_run=124, source_unreachable=0). Safety floor unaffected (0 rows under 3 dialable)."
+    },
+    {
+      "id": "STATE-REDIRECT-2026-07-27",
+      "title": "/state/<destination-slug> URLs redirecting correctly to the real destination page",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Re-verified today: /en/state/wayanad, /hi/state/wayanad, and bare /state/wayanad all 301 -> the correct /destination/wayanad path in each locale. /en/state/kerala (control) correctly stays 200."
+    },
+    {
+      "id": "NEW-2026-08-13-001",
+      "title": "Production deploys failed repeatedly from build-time Postgres statement timeouts (3 in 3 days) -- root-cause fix (find_nearby_destinations caching)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "No new deploy landed today to test against (see run.executor -- the would-be trigger commit was stranded unpushed). Still PARTIAL for the same standing reason -- the anon-role timeout ceiling and /explore's separate uncached queries are explicitly still open."
+    },
+    {
+      "id": "NEW-2026-08-14-002",
+      "title": "Newsletter signup success confirmation dead-code bug (fixed 1809adce)",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Source unchanged since 08-14. Not independently re-verified live today (submitting the real form needs explicit user permission this headless run cannot obtain). newsletter_subscribers total unchanged at 15 since 08-17 -- no new signups this window."
+    },
+    {
+      "id": "NEW-2026-08-14-003",
+      "title": "3 dead 'Ask NakshIQ' nav buttons (orphaned since the 2026-08-04 AI teardown) removed",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Re-verified today: all 5 removed-route probes (chat/gap-year-generate/gap-year-regenerate/embed/ask) return clean 404 in section F, consistent with the routes staying deleted."
+    },
+    {
+      "id": "NEW-2026-08-14-004",
+      "title": "Pre-existing data-integrity anomaly (confidence value out of range) self-reported by the nightly stay-picks job",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Direct SQL re-check today: destination_stay_picks for ponda-spice still shows 4 rows, all within the valid 0-1 range -- the identical [0.78-0.85] set seen since 08-20, confirmed not touched by the 08-22 refresh-stay-picks-agent batch. Sitewide recheck: 0 rows outside 0-1 across all of destination_stay_picks."
+    },
+    {
+      "id": "NEW-2026-08-14-005",
+      "title": "Business Report generator leaks raw technical text (incl. commit hashes / file paths) into the persona that is explicitly supposed to have none",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "Confirmed unchanged: qa/_lib/build_report.js last touched 2026-07-07. header() still prints the full raw run.executor narrative for ALL personas incl. business, and buildBusiness()'s finding-detail section still prints n.detail verbatim. Today's run.executor text again contains technical detail (file paths, project/team IDs, SQL, commit hashes) that will leak into today's NakshIQ_Business_Report.docx exactly as it has every day since 08-14. Not fixed in this run -- out of scope for an unattended daily QA pass to change shared report-generation code."
+    },
+    {
+      "id": "NEW-2026-08-19-001",
+      "title": "refresh-stay-picks-agent's network egress block -- root cause still unresolved; watchdog flag continues to oscillate independently of the actual state",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "The underlying blocker is UNCHANGED: refresh-stay-picks-agent's 2026-08-22T22:24:06 UTC run record (batch of 20 destinations, none overlapping ponda-spice/kaza/majuli/phawngpui-peak) carries the identical verification_note substance as every prior escalation -- 403 on the HTTPS CONNECT tunnel to www.nakshiq.com. The job's own log self-counts this as the '13th consecutive occurrence spanning 13+ calendar days, still not actioned.' Today's watchdog per-job status FLIPPED BACK to 'ok' (from 'needs_review' on 08-21/08-22) even though the note text confirms nothing changed -- the 3rd distinct flip in this flag's short history, reinforcing that it cannot be trusted on its own; the note text remains the only reliable signal. This QA session's own sandbox again reached nakshiq.com without issue for the entire A-L probe + Chrome E2E pass, confirming the block is specific to that job's own scheduled-session network policy, not a site outage.",
+      "recommendation": "Same founder action as every prior day: allowlist www.nakshiq.com for the refresh-stay-picks-agent scheduled session's egress policy, OR periodically run `node scripts/verify-touched-pages.mjs --dest <batch-slugs> --revalidate`. Continue reading the verification_note TEXT each run, not just alerts_count/watchdog-status -- today is the clearest demonstration yet that the flag alone is not a substitute for the note."
+    },
+    {
+      "id": "NEW-2026-08-22-001",
+      "title": "Two days of daily-QA history (08-17, 08-18) sat uncommitted in the working tree for 5+ days -- 08-22's remediation now independently verified as landed",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Verified (not inferred) today via `git show --stat 92645c00`: qa/findings/2026-08-17.json (522 lines) plus the surviving 2026-08-17/ and 2026-08-18/ evidence-directory files, plus 2026-08-22.json itself, are all genuinely present in that commit -- the recovery held for a 2nd consecutive day, `git log` now shows a real record for both days. 2026-08-18's top-level findings.json remains a permanent, already-documented gap (that day's run stopped before writing it; nothing to reconstruct honestly). No qa/-specific commit-guard (equivalent to scripts/audit-commit-guard.sh) has been added yet -- the recommendation from 08-22 is still just a recommendation.",
+      "recommendation": "Unchanged from 08-22: consider whether the qa/ workflow needs its own audit-commit-guard-style safety net (verify HEAD moved + files are in the commit, not just that a script ran) now that this has been a confirmed real occurrence twice-observed (once as the incident, once as its now-verified fix)."
+    },
+    {
+      "id": "NEW-2026-08-23-001",
+      "title": "A markdown-file commit that should always trigger a Vercel rebuild (ga4-audit-*.md) sat stranded on a local-only commit, never reaching origin to fire that trigger",
+      "prior_status": "n/a (new)",
+      "today_status": "PARTIAL",
+      "evidence": "ab81cab7 ('measure(ga4): audit 2026-08-23', touching only ga4-audits/ga4-audit-2026-08-23.md -- a filename that matches the 2026-07-30 vercel-ignore.sh 'always build for ga4-audit-*.md' allowlist) was found sitting as a LOCAL-ONLY commit at the start of this session: `git status` read 'ahead of origin/main by 1 commit', `git rev-list --left-right --count HEAD...origin/main` read '1 0'. Because it was never pushed, GitHub never notified Vercel, so the always-build trigger correctly never fired -- this is a process gap (the commit's own author, 'Nakshiq Autoposter', likely hit the same sandbox git-push-credential gap this QA task has hit and documented on many prior days -- see project memory nakshiq_git_push_credential_gap.md), not a defect in the vercel-ignore.sh rule itself, and it is entirely self-healing: this run's own push (via Desktop Commander) will carry ab81cab7 to origin as an ancestor commit for free, at which point Vercel will see it and can choose to build for it retroactively or on the next real trigger. No site impact observed or expected -- audit markdown files carry no runtime behavior.",
+      "recommendation": "No action needed this occurrence (self-heals via this run's own push). If autoposter-authored commits are seen stranded unpushed repeatedly across future QA runs, consider giving that cron the same Desktop-Commander-based push fallback this QA task already uses."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-08-23-001",
+      "severity": "info",
+      "title": "Autoposter's GA4-audit commit (ab81cab7) sat stranded unpushed at session start -- same shape as the well-documented sandbox git-push-credential gap, self-healed by this run's own push",
+      "detail": "See regression_matrix entry NEW-2026-08-23-001 for full evidence. No user-facing or site-behavior impact -- purely a repo/CI process observation. Filed at info severity because it is transient and self-healing (this run's push resolves it as a side effect), unlike NEW-2026-08-19-001 which is a genuinely persistent, founder-action-required block.",
+      "evidence": "git status at session start: 'Your branch is ahead of origin/main by 1 commit'; git rev-list --left-right --count HEAD...origin/main = '1 0'; the 1 stranded commit's sole changed file (ga4-audits/ga4-audit-2026-08-23.md) matches the always-build allowlist documented in CLAUDE.md's 2026-07-30 vercel-ignore.sh fix.",
+      "recommendation": "None required this occurrence. Worth a light watch if autoposter-authored commits keep landing stranded across future QA sessions -- would suggest that cron needs the same push fallback this QA task already relies on."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 32,
+    "core_routes_2xx": 32,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 62, "median": 592, "p90": 1069, "max": 1300 },
+    "core_routes_TTFB_note": "33 routes probed but /en/search returned 404 and was EXCLUDED from the pass/fail tally and TTFB stats (no app/[locale]/search page directory exists -- search is a client-side modal). TTFB is calm today -- no deploy-cache-cold effect (0 deploys since 08-22, see deploy_detected). Fastest was '/' at 62ms (redirect-terminal measurement, consistent methodology quirk seen in every prior run).",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 432, "median": 876, "max": 5350 },
+    "destinations_TTFB_note": "2 of 10 cold-cache outliers over the 1500ms threshold today (colva-benaulim 5350ms, mollem 3933ms) -- immediately reprobed per the standing methodology. NOT deploy-driven: today's data-dpl-id is identical to 08-22's, so these read as ordinary isolated ISR cache misses on 2 pages, not a systemic cold-start. See destinations_TTFB_reprobe_ms for the settled values.",
+    "destinations_TTFB_reprobe_ms": { "min": 147, "median": 853, "max": 1268, "note": "2 outlier slugs reprobed immediately (colva-benaulim 1268ms, mollem 147ms); the other 8 were already under the 1500ms threshold and are included here unchanged (min 432/max 920 among them) so this object reflects all 10 destinations' settled state." },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_section_headings_translated_sampled": 10,
+    "hindi_section_headings_translated_count": 10,
+    "hindi_h1_devanagari_count": 0,
+    "hindi_h1_devanagari_note": "0/10 today -- today's random sample landed 10/10 cinematic-template destinations for a 2nd consecutive day (0/10 Devanagari H1, all render the plain English name, e.g. 'Igatpuri.', 'Mawphlang.'). Cross-checked live instead via an out-of-sample known non-cinematic destination (dzongu, not in today's B-sample): H1 properly regex-extracted and confirmed Devanagari (द्ज़ोंगु) -- the scope finding stands, verified with slightly more rigor than some prior days (full H1 extraction, not just the title).",
+    "seo_urls_sampled": 14,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 14,
+    "seo_hreflang_en_present": 14,
+    "seo_hreflang_hi_present": 14,
+    "seo_hreflang_xdefault_present": 14,
+    "seo_og_image_present": 14,
+    "seo_methodology_note": "hreflang regex built with re.IGNORECASE (carried forward unchanged) -- 0/14 false negatives.",
+    "quiz_routes_sampled": 4,
+    "quiz_routes_og_image_present": 4,
+    "quiz_routes_note": "Full SEO re-probe of /en+hi/quiz/hill-station and /en+hi/risk-quiz today: og:image present on all 4, plus 0 stutter / canonical present / hreflang en+hi+xdefault present on all 4 -- unchanged from 08-22.",
+    "soft_404_regression_passes": 10,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.81,
+    "sos_db_total_dialable_entries_11col": 4165,
+    "sos_db_total_dialable_entries_11col_note": "Identical to 08-17 through 08-22 (0 change) -- no SOS-affecting cron activity or content commits since then; sos-auto-reverify's next run is tomorrow (08-24). Field name retained as '_11col' for run-over-run continuity even though the underlying set is 12 columns -- a long-standing label quirk, not a new one. Today's-10-sample min was 6 (igatpuri, courtallam), slightly above the sitewide min of 5.",
+    "sos_db_rows_with_placeholder_x": 0,
+    "sos_db_rows_with_placeholder_x_note": "Fresh sitewide regex scan run today (^[Xx]+$ across all 12 dialable columns) -- 0 rows.",
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_destinations_with_local_helpers_block": 533,
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_object_shape_rows_db": 93,
+    "people_who_help_array_shape_rows_db": 432,
+    "people_who_help_confidence_cards_total_db": 525,
+    "people_who_help_confidence_cards_total_note": "confidence_cards has 525 rows (not 533) -- 8 destinations have no confidence_cards row at all. 432 array-shape + 93 object-shape = 525, 0 null pwh values -- accounts for every row. Unchanged arithmetic from every prior week this has been measured.",
+    "destinations_total_db": 533,
+    "sos_phones_total_across_10_dests": 76,
+    "sos_phones_invalid_format": 0,
+    "sos_destinations_without_block": 0,
+    "sos_no_block_tierA": 0,
+    "sos_phones_across_10_dests_note": "Real per-sample DB computation (compatibility alias for the build_report.js field-drift workaround, see NEW-2026-08-10-003): 12-column dialable count for exactly today's 10 sampled destinations -- alleppey 8, chitrakoot 9, colva-benaulim 8, courtallam 6, daringbadi 8, drass 8, igatpuri 6, kumbakonam 7, mawphlang 8, mollem 8. Sum=76. All >=3 (min=6, igatpuri/courtallam); 0 malformed/placeholder found.",
+    "sos_auto_reverify_migration_applied": true,
+    "sos_auto_reverify_cron_schedule": "0 0 * * 1 (weekly, Monday 00:00 UTC)",
+    "sos_auto_verify_status_confirmed": 109,
+    "sos_auto_verify_status_needs_source": 300,
+    "sos_auto_verify_status_never_run": 124,
+    "sos_auto_verify_status_source_unreachable": 0,
+    "sos_auto_verify_most_recent_run_utc": "2026-08-17T00:00:04Z",
+    "sos_auto_verify_note": "No new cron activity since 08-17's run (the weekly cron's last fire) -- unchanged from 08-22's report. Next scheduled run 2026-08-24 (tomorrow).",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "HTTP HEAD-probe fallback run today (not the live node scripts/audit-hero-images.mjs itself, time-boxed this session) -- 533/533 ok. Independently corroborated by the automated audit-hero-images cron's own clean 2026-08-22T03:50 UTC run.",
+    "stay_picks_spotcheck_kaza": 4,
+    "stay_picks_spotcheck_phawngpui_peak": 2,
+    "stay_picks_spotcheck_majuli": 4,
+    "stay_picks_spotcheck_note": "DB-only continuity check (none of the 3 landed in today's random sample or in the most recent stay-picks-agent batch, 08-22); identical to 07-20..08-22.",
+    "stay_picks_anomaly_ponda_spice_savoi_plantation_confidence": 0.85,
+    "stay_picks_anomaly_note": "Continues FIXED (see NEW-2026-08-14-004, closed 08-16) -- ponda-spice still has 4 destination_stay_picks rows, all within the valid 0-1 range. Values UNCHANGED again today: [0.78, 0.83, 0.84, 0.85], the identical set seen since 08-20 -- ponda-spice was not in the 08-22 refresh-stay-picks-agent rotation batch. Sitewide recheck: 0 rows outside 0-1 across all of destination_stay_picks.",
+    "api_endpoints_probed": 16,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 4,
+    "api_2xx_valid_returned": 5,
+    "api_404_expected_or_removed_returned": 7,
+    "api_itinerary_valid_status": 200,
+    "api_itinerary_valid_content_broken": false,
+    "api_itinerary_note": "3 varied live probes today (Dec/family, Oct/couple, May/solo+explicit destinationIds=[manali,shimla,jaipur]) -- ALL returned real, non-empty per-day content with meaningfully different destinations/copy. Same honest quality-filtering behaviour verified every prior week -- no finding filed.",
+    "vercel_runtime_errors_24h_total_groups": 0,
+    "vercel_runtime_errors_24h_note": "Zero error groups found via get_runtime_errors MCP tool.",
+    "vercel_runtime_errors_itinerary_specific": 0,
+    "service_worker_version": "nakshiq-v54",
+    "service_worker_version_note": "Unchanged from 08-14 through 08-22.",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 24975,
+    "sitemap_total_urls_delta_note": "UP 6 from 08-22's 24,969 -- field-by-field diff shows exactly 2 changed categories: en/blog 188->193 (+5, matches the 62a90e07 blog-batch commit, spot-checked live at 200) and en/the-window 19->20 (+1). Destination slug/month/cost URL counts all flat (533/6396/525) -- 0 new destinations, 70 days now since the last one (max created_at still 2026-06-14).",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_tiles": 0,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "519 overlay markers -- identical to 08-03 through 08-22, confirmed both via DOM query (.leaflet-interactive count) and the UI's own '519 markers · colored by score' label. Grid view confirmed as default (0 leaflet before toggle); after toggle: 1 leaflet-container, 0 console errors. First toggle-click attempt used a stale browser-automation element reference and silently no-op'd (see run.executor) -- a tooling artifact, not a site defect; corrected via coordinate click with screenshot verification.",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_leaflet_template": 1,
+    "map_dest_pages_atlas_template": 1,
+    "map_widget_destination_pages_probed_interactive": 2,
+    "map_widget_destination_pages_with_leaflet": 1,
+    "map_widget_field_alias_note": "map_widget_destination_pages_* duplicates map_dest_pages_* above, see NEW-2026-07-07-004. Today's 2 Chrome-interactive probes: igatpuri (atlas, today's cinematic sample) + dzongu (Leaflet, out-of-sample control since today's B-sample landed 0/10 non-cinematic for a 2nd consecutive day).",
+    "map_dest_atlas_note": "igatpuri/en + /hi (today's random sample) render atlas svg viewBox 0 0 1000 1100 with an india-outline.svg reference, leaflet=0 by design (correct), 0 console errors both loads.",
+    "map_dest_leaflet_note": "dzongu interactively verified via Chrome: 1 leaflet-container, 28 tiles, 9 markers (.leaflet-interactive selector), window.L present, 0 console errors -- detected present after a plain 2s wait this time (no deliberate scroll needed to first observe it, unlike 08-22's true lazy-mount finding); re-confirmed unchanged after an explicit scroll+wait as well.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 7,
+    "console_react_418_fired_loads": "0 of 7 fully console-tracked observations (igatpuri en + hi, dzongu, explore grid/map, trip, family/kerala) -- NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": false,
+    "deploy_evidence": "data-dpl-id UNCHANGED today: dpl_AvPzwNn5QckLmD66BUntj2C8ZVwa, identical to 08-22's value -- 0 new deploys since 08-22. 3 commits landed on/toward origin/main since 08-22's QA commit, but none produced a rebuild: 2 (gsc-email-triage markdown, blog-batch data/SQL) were already on origin and are outside the special always-build allowlist by design; the 3rd (today's ga4-audit-2026-08-23.md, which DOES match that allowlist) was found stranded as a local-only unpushed commit at session start, so its trigger never reached Vercel -- see NEW-2026-08-23-001. SW CACHE_VERSION unchanged. Today's calm TTFBs (see core_routes_TTFB_note / destinations_TTFB_note) are consistent with no deploy having occurred.",
+    "hindi_translations_db_total": 533,
+    "hindi_translations_db_has_hi_tagline": 533,
+    "hindi_translations_db_has_hi_why_special": 533,
+    "hindi_translations_db_has_hi_name": 533,
+    "hindi_translations_note": "533/533 (100%) for hi.name, hi.tagline, AND hi.why_special today -- 0 regression.",
+    "sos_db_dialable_12col_note": "12-column set (police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, local_police_station, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line), non-null + trimmed-non-empty. 4165 total, identical to 08-17 through 08-22.",
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) -- identical to 07-20 through 08-22.",
+    "destinations_total_db_note": "Steady at 533 (max created_at still 2026-06-14, 0 new destinations -- 70 days now).",
+    "newsletter_subscribers_total_db": 15,
+    "newsletter_subscribers_active_db": 14,
+    "newsletter_subscribers_confirmed_db": 10,
+    "newsletter_subscribers_note": "Total UNCHANGED from 08-17 through 08-22's 15 -- no new signups this window.",
+    "ai_surface_removal_verified": true,
+    "ai_surface_removal_note": "5/5 removed-route probes (chat/gap-year-generate/gap-year-regenerate/embed/ask) return clean 404 again today, consistent with NEW-2026-08-14-003 staying closed.",
+    "security_advisors_count": 9,
+    "security_advisors_note": "9 findings (3 info RLS-enabled-no-policy, 4 warn SECURITY DEFINER-executable-by-anon/authenticated across 2 functions, 1 warn vector-extension-in-public, 1 warn leaked-password-protection-disabled) -- identical composition to 08-10 through 08-22, 0 new, 0 resolved. Directly re-pulled via get_advisors today; cross-checked against audit-supabase-advisors cron's 00:23 UTC run (security_count=9, matches).",
+    "ops_reports_targeted_check_note": "Targeted checks: canary-probe ok (18/18, 0 failures, 1456ms, run 02:01 UTC today); audit-cache-headers ok (0 violations, run 01:18 UTC today); audit-supabase-advisors ok (run 00:23 UTC today); freshness-drift 08-17 run ok (unchanged); road-conditions-sweep 08-17 ok; sos-verify-reminder 08-17 ok; sos-auto-reverify unchanged since 08-17 (next run tomorrow, 08-24); audit-hero-images 08-22T03:50 UTC run ok (533/0 missing) -- refresh-stay-picks-agent run 2026-08-22T22:24 UTC shows ok=true (flag) but verification_note self-counts a '13th consecutive occurrence' of the same egress block, and the watchdog's own per-job status for it FLIPPED BACK to 'ok' today (from needs_review on 08-21/08-22) despite the note text confirming nothing changed -- see NEW-2026-08-19-001. audit-gsc-alerts remains needs_review in the watchdog snapshot (same 1 alert carried from 08-22, author's own text says contextual-only) but is outside this QA pass's scope. Bonus signal: asset_coverage still shows 105/105 collections carry video (100%), 0 unlinked examples."
+  },
+  "deliverables": [
+    "qa/findings/2026-08-23.json",
+    "qa/findings/2026-08-23/ (probe.py + section-*.csv/json evidence artifacts + html/ raw Hindi page captures)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "TOP STORYLINE: a genuinely quiet day for the site itself -- 0 new deploys, 0 runtime errors, 0 console errors across 7 Chrome checkpoints, 0 site-code changes, and every DB safety floor (SOS dialable, stay-picks range, Hindi translations) held exactly steady. The only movement was 5 new DB-driven blog posts (spot-checked live) and 1 new /the-window entry, both fully explained and neither requiring or triggering a rebuild.",
+    "SECOND STORYLINE: today's random 10-destination sample landed 10/10 cinematic-template for a 2nd consecutive day (08-22 was also 0/10 non-cinematic), so Section K's Leaflet/Hindi-H1 checks again relied on an out-of-sample control (dzongu, reused from 08-21/08-22). This is equally real production verification but is flagged for transparency since it departs from the 'in-sample where possible' default -- worth watching whether a 3rd consecutive all-cinematic sample would warrant widening the random pool or sampling with template-stratification.",
+    "THIRD STORYLINE (process, not site): found and root-caused why no deploy happened despite 3 commits landing since 08-22 -- 2 were correctly outside the always-build allowlist by design, but the 3rd (today's own GA4 audit, which SHOULD always trigger a build) turned out to be stranded on a local-only unpushed commit at session start. Self-healing (this run's own push carries it to origin), but worth a light watch if it recurs -- see NEW-2026-08-23-001.",
+    "FOURTH STORYLINE (process, not site): independently verified 08-22's remediation of the qa/ commit-hygiene gap actually landed (did not just trust the prior day's own self-report) -- git show --stat confirms the recovered files are genuinely in that commit. 2026-08-18's findings.json remains a permanent, already-documented gap.",
+    "A browser-automation methodology gotcha was hit and corrected during Section K: reusing a `find`-sourced element reference from one browser_batch call after an intervening `navigate` in a later call produced a silent no-op click (confirmed via screenshot, not just assumed) rather than an error -- corrected by re-finding/using coordinates within the same batch as the click. This affected only this session's own tooling, not the site; the underlying Explore Map toggle works correctly (519 markers) once clicked properly.",
+    "The Business Report generator's persona-leak bug (NEW-2026-08-14-005, found 08-14) is unfixed and will recur in today's NakshIQ_Business_Report.docx exactly as it has every day since -- header() prints the full raw run.executor text verbatim for all personas including business. Confirmed the source is unchanged (build_report.js last touched 2026-07-07). Out of scope for this unattended run to fix (shared report-generation code).",
+    "The live node scripts/audit-hero-images.mjs script was not re-run directly this session (time-boxed in favor of the DB/Chrome checks) -- used the HTTP HEAD-probe fallback embedded in probe.py instead, independently corroborated by the automated cron's own clean run.",
+    "Uttarkashi, Khonoma, and khangchendzonga-np (historically-buggy SOS destinations) did not land in today's random sample -- DB-only sitewide-aggregate + a fresh placeholder-phone regex scan (safety floor intact, 0 placeholder rows), not live per-destination re-verification.",
+    "The Phase-8-carry-sparse-stays watchlist (kaza, phawngpui-peak, majuli) was checked via direct DB spot-check today, not random sampling -- none of the 3 landed in today's sample or in the most recent stay-picks-agent rotation batch (08-22).",
+    "Axe-core/Lighthouse deferred again -- baseline now 111 days stale (over 3.5 months). Given 0 application-code commits landed this week and 0 deploys occurred, there is nothing new application-side to check a diff against; the staleness itself is the standing risk.",
+    "Did not re-run the full ~21-job ops_reports inventory this week -- ran targeted checks on the jobs most relevant to continuity plus a full read of refresh-stay-picks-agent's own run record and the watchdog's per-job status for it.",
+    "Did not attempt to submit the real newsletter/email-capture form to re-verify the 08-14 confirmation-UI fix live -- would require entering personal data into a form and submitting it, which needs explicit user permission this headless run cannot obtain. newsletter_subscribers total unchanged at 15 since 08-17.",
+    "Did not re-extract the exact literal Atlas coordinate string ('23.5N · 80.5E') via the accessibility tree this run (time-boxed) -- NEW-2026-06-06-003 carried forward as REPRODUCED on the strength of its unbroken multi-month history and today's confirmation that the atlas template otherwise renders correctly, not a fresh literal-string re-probe. Flagged for precision.",
+    "The working tree carries pre-existing, unrelated uncommitted changes (destination-detail-cinematic.tsx [diff size changed since 08-22, see run.executor], analytics.ts, env.example, a batch of modified qa/findings/2026-05-04-deep/axe-reports/*.json files, an untracked apps/web/src/lib/affiliate-links.ts backing that same WIP, plus an unrelated cluster of cruise-fare-shopping scratch files and citation-weekly/_tmp-citation-weekly-*.mjs files that look like leftovers from a different session's work) that predate this session and were not created by it -- left entirely untouched per the established 'stage narrowly, never git add -A' rule; only this run's own qa/findings/2026-08-23* paths will be committed. .claude/settings.local.json remains present and untouched -- appears to be local Claude Code tooling configuration, not application code.",
+    "sos_phones_invalid_format=0 today used the same permissive definition as every prior week (any non-empty string counts, including honest-scarcity or descriptive rescue_contact text) -- consistent methodology, not a new leniency.",
+    "2 stale 0-byte git lock files (.git/index.lock, .git/objects/maintenance.lock) were present from this session's own earlier read-only git commands, per the well-documented sandbox-bridge EPERM pattern -- cleared via Desktop Commander immediately before this run's own commit, per the standing procedure in project memory."
+  ]
+}
