@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-23",
     "m8EAd_yt_short": "2026-08-23",
@@ -285,6 +285,10 @@
     },
     {
       "destination_id": "zanskar",
+      "date": "2026-08-23"
+    },
+    {
+      "destination_id": "belur",
       "date": "2026-08-23"
     }
   ],
@@ -8482,6 +8486,24 @@
       "destination": "zanskar",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-08-23"
+    },
+    {
+      "timestamp": "2026-08-23T12:01:22.023850+00:00",
+      "date": "2026-08-23",
+      "platform": "instagram",
+      "post_id": "aGQJ6",
+      "destination": "belur",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_belur_hi_2026-08-23.mp4"
+    },
+    {
+      "timestamp": "2026-08-23T12:01:31.421336+00:00",
+      "date": "2026-08-23",
+      "platform": "youtube",
+      "post_id": "XiME8",
+      "destination": "belur",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_belur_hi_2026-08-23.mp4"
     }
   ],
   "theme_usage": {
