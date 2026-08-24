@@ -37,15 +37,15 @@
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-24",
     "m8EAd_yt_short": "2026-08-24",
-    "m8EAd": "2026-08-23",
-    "m8EAd_evening": "2026-08-23",
-    "PdMu0": "2026-08-23",
-    "PdMu0_evening": "2026-08-23",
+    "m8EAd": "2026-08-24",
+    "m8EAd_evening": "2026-08-24",
+    "PdMu0": "2026-08-24",
+    "PdMu0_evening": "2026-08-24",
     "m8EAd_carousel": "2026-08-24",
     "PdMu0_carousel": "2026-08-24",
     "m8EAd_carousel_story": "2026-08-23"
   },
-  "last_sync": "2026-08-23T14:43:57.606945+00:00",
+  "last_sync": "2026-08-24T15:06:24.170700+00:00",
   "posted_destinations": [
     {
       "destination_id": "lonavala",
@@ -290,15 +290,19 @@
     {
       "destination_id": "pattadakal",
       "date": "2026-08-24"
+    },
+    {
+      "destination_id": "khandala",
+      "date": "2026-08-24"
     }
   ],
   "posted_formats": {
     "m8EAd": [
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -318,10 +322,10 @@
     ],
     "PdMu0": [
       "score_card",
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8580,6 +8584,28 @@
       "destination": "pattadakal",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_pattadakal_hi_2026-08-24.mp4"
+    },
+    {
+      "timestamp": "2026-08-24T15:07:24.450164+00:00",
+      "date": "2026-08-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "JUgMR",
+      "destination": "khandala",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khandala.mp4"
+    },
+    {
+      "timestamp": "2026-08-24T15:07:52.465241+00:00",
+      "date": "2026-08-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "eBEH6",
+      "destination": "khandala",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "khandala.mp4"
     }
   ],
   "theme_usage": {
@@ -8936,7 +8962,8 @@
         "2026-07-04",
         "2026-07-18",
         "2026-08-02",
-        "2026-08-09"
+        "2026-08-09",
+        "2026-08-24"
       ],
       "tso-moriri": [
         "2026-07-07",
@@ -9114,7 +9141,8 @@
         "2026-08-20",
         "2026-08-21",
         "2026-08-22",
-        "2026-08-23"
+        "2026-08-23",
+        "2026-08-24"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9341,7 +9369,8 @@
       "khandala": [
         "2026-07-04",
         "2026-07-18",
-        "2026-08-09"
+        "2026-08-09",
+        "2026-08-24"
       ],
       "kolad": [
         "2026-07-05",
@@ -9408,7 +9437,8 @@
         "2026-07-20",
         "2026-08-03",
         "2026-08-10",
-        "2026-08-17"
+        "2026-08-17",
+        "2026-08-24"
       ],
       "families": [
         "2026-05-23",
@@ -9698,7 +9728,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "khandala",
+    "shared_best": "igatpuri",
     "collection": "french-india-trail"
   },
   "manual_skip_dests": {},
