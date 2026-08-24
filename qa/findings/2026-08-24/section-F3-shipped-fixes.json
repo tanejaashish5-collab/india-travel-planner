@@ -1,0 +1,19 @@
+{
+  "itinerary_unresolvable_destids": {
+    "status": 404,
+    "body": "{\"error\":\"None of the requested destinations exist\"}"
+  },
+  "export_trip_get": {
+    "status": 404,
+    "bytes": 27551
+  },
+  "export_trip_post": {
+    "status": 404,
+    "bytes": 27551
+  },
+  "itinerary_normal_control": {
+    "status": 200,
+    "bytes": 2600,
+    "has_days": true
+  }
+}
