@@ -41,8 +41,8 @@
     "m8EAd_evening": "2026-08-24",
     "PdMu0": "2026-08-24",
     "PdMu0_evening": "2026-08-24",
-    "m8EAd_carousel": "2026-08-24",
-    "PdMu0_carousel": "2026-08-24"
+    "m8EAd_carousel": "2026-08-25",
+    "PdMu0_carousel": "2026-08-25"
   },
   "last_sync": "2026-08-24T15:06:24.170700+00:00",
   "posted_destinations": [
@@ -276,6 +276,10 @@
     },
     {
       "destination_id": "morgaon",
+      "date": "2026-08-25"
+    },
+    {
+      "destination_id": "chitkul",
       "date": "2026-08-25"
     }
   ],
@@ -8607,6 +8611,24 @@
       "destination": "morgaon",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_morgaon_hi_2026-08-25.mp4"
+    },
+    {
+      "timestamp": "2026-08-25T08:02:49.003994+00:00",
+      "date": "2026-08-25",
+      "platform": "instagram",
+      "post_id": "eB7Ga",
+      "destination": "chitkul",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-08-25"
+    },
+    {
+      "timestamp": "2026-08-25T08:02:51.008807+00:00",
+      "date": "2026-08-25",
+      "platform": "facebook",
+      "post_id": "CE6Sy",
+      "destination": "chitkul",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-08-25"
     }
   ],
   "theme_usage": {
@@ -9723,7 +9745,8 @@
       "adrenaline-rush",
       "after-dark-experiences",
       "arupadai-veedu",
-      "astavinayak-yatra"
+      "astavinayak-yatra",
+      "last-villages-of-india"
     ]
   }
 }
