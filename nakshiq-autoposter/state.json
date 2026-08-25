@@ -32,11 +32,11 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-25",
-    "m8EAd_yt_short": "2026-08-24",
+    "m8EAd_yt_short": "2026-08-25",
     "m8EAd": "2026-08-24",
     "m8EAd_evening": "2026-08-24",
     "PdMu0": "2026-08-24",
@@ -280,6 +280,10 @@
     },
     {
       "destination_id": "chitkul",
+      "date": "2026-08-25"
+    },
+    {
+      "destination_id": "chittorgarh",
       "date": "2026-08-25"
     }
   ],
@@ -8629,6 +8633,24 @@
       "destination": "chitkul",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-08-25"
+    },
+    {
+      "timestamp": "2026-08-25T12:07:49.600956+00:00",
+      "date": "2026-08-25",
+      "platform": "instagram",
+      "post_id": "aGkdO",
+      "destination": "chittorgarh",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_chittorgarh_hi_2026-08-25.mp4"
+    },
+    {
+      "timestamp": "2026-08-25T12:08:00.804490+00:00",
+      "date": "2026-08-25",
+      "platform": "youtube",
+      "post_id": "yJvaz",
+      "destination": "chittorgarh",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_chittorgarh_hi_2026-08-25.mp4"
     }
   ],
   "theme_usage": {
