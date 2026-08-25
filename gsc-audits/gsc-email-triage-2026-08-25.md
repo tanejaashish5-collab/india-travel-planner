@@ -1,0 +1,24 @@
+# GSC Email Triage — 2026-08-25
+
+Run date: 2026-08-25 ~10:38 UTC  
+Prior triage: `gsc-email-triage-2026-08-24.md`
+
+---
+
+## Emails seen (sc-noreply@google.com, newer_than:2d)
+
+**None.** Gmail search returned zero results for both:
+- `from:sc-noreply@google.com newer_than:2d`
+- `from:ops@nakshiq.com subject:GSC newer_than:2d`
+
+---
+
+## Verdict: clean run — no new Search Console emails. No action.
+
+No code changes. No deploy.
+
+---
+
+## What the founder should do in GSC
+
+Nothing — no new alerts to action.
