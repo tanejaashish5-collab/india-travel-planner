@@ -20092,3 +20092,50 @@ Date range: 2026-04-15 → 2026-08-24
 2026-08-25 12:08:00  INFO      YT Short posted: format=did_you_know, music=fast-1085
 2026-08-25 12:08:00  INFO      State saved. YT Short run complete.
 2026-08-25 12:08:00  INFO      ════════════════════════════════════════════════════════════
+2026-08-25 15:12:40  INFO      ════════════════════════════════════════════════════════════
+2026-08-25 15:12:40  INFO      Nakshiq Autoposter · EVENING · 2026-08-25 · weekday=1
+2026-08-25 15:12:40  INFO      ════════════════════════════════════════════════════════════
+2026-08-25 15:12:40  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-25 15:13:23  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-25 15:13:23  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-25 15:13:23  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-25 15:13:23  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-25 15:13:24  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-25 15:13:24  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-25 15:13:39  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-25 15:13:39  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-08-25 15:13:39  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: collection_spotlight
+2026-08-25 15:13:39  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 73
+2026-08-25 15:13:39  INFO      Fingerprint dedup snapshot — 73 dests in 7d · 110 (dest,fmt) pairs in 30d · 226 media in 60d
+2026-08-25 15:13:39  INFO      Collection locked: North India's Most Beautiful Rivers and Lakes (77/100 never featured)
+2026-08-25 15:13:41  INFO      Shared best destination locked: Zanskar Valley
+2026-08-25 15:13:41  INFO      Carousel locked (collection_spotlight): tso-moriri
+2026-08-25 15:13:41  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-08-25 15:13:41  INFO      confidence_intel for Zanskar Valley: only 0 card rows — SKIPPING
+2026-08-25 15:13:41  WARNING   [instagram/nakshiq] confidence_intel: zanskar inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'courtallam' as score_card to keep the slot live.
+2026-08-25 15:13:41  INFO      [instagram/nakshiq] Caption ready (405 chars, dest=courtallam)
+2026-08-25 15:13:41  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-25 15:13:41  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/courtallam.mp4?v=20260524
+2026-08-25 15:13:45  INFO          Brand-stamp applied: courtallam.mp4 (7,348,941 → 4,210,184 bytes)
+2026-08-25 15:13:45  INFO          Requesting upload URL for courtallam.mp4 (4,210,184 bytes, video/mp4)
+2026-08-25 15:13:46  INFO          Uploading to R2 (timeout=300s)...
+2026-08-25 15:13:48  INFO          R2 PUT OK. Confirming...
+2026-08-25 15:13:49  INFO          Media ready: pZCvw (4,210,184 bytes · courtallam.mp4)
+2026-08-25 15:13:49  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-25 15:14:41  INFO      [instagram/nakshiq] ✅ Published · Outstand=gXZOl · Platform=18390433726167921
+2026-08-25 15:14:41  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-08-25 15:14:41  INFO      confidence_intel for Zanskar Valley: only 0 card rows — SKIPPING
+2026-08-25 15:14:41  WARNING   [facebook/Nakshiq] confidence_intel: zanskar inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'courtallam' as score_card to keep the slot live.
+2026-08-25 15:14:41  INFO      [facebook/Nakshiq] Caption ready (601 chars, dest=courtallam)
+2026-08-25 15:14:42  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-25 15:14:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/courtallam.mp4?v=20260524
+2026-08-25 15:14:45  INFO          Brand-stamp applied: courtallam.mp4 (7,348,941 → 4,210,184 bytes)
+2026-08-25 15:14:45  INFO          Requesting upload URL for courtallam.mp4 (4,210,184 bytes, video/mp4)
+2026-08-25 15:14:45  INFO          Uploading to R2 (timeout=300s)...
+2026-08-25 15:14:47  INFO          R2 PUT OK. Confirming...
+2026-08-25 15:14:48  INFO          Media ready: zt0nO (4,210,184 bytes · courtallam.mp4)
+2026-08-25 15:14:48  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-25 15:14:57  INFO      [facebook/Nakshiq] ✅ Published · Outstand=APcuQ · Platform=2231170657725466
+2026-08-25 15:14:57  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-25 15:14:57  INFO      State saved. Run complete.
+2026-08-25 15:14:57  INFO      ════════════════════════════════════════════════════════════

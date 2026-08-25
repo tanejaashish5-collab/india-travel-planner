@@ -37,14 +37,14 @@
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-25",
     "m8EAd_yt_short": "2026-08-25",
-    "m8EAd": "2026-08-24",
-    "m8EAd_evening": "2026-08-24",
-    "PdMu0": "2026-08-24",
-    "PdMu0_evening": "2026-08-24",
+    "m8EAd": "2026-08-25",
+    "m8EAd_evening": "2026-08-25",
+    "PdMu0": "2026-08-25",
+    "PdMu0_evening": "2026-08-25",
     "m8EAd_carousel": "2026-08-25",
     "PdMu0_carousel": "2026-08-25"
   },
-  "last_sync": "2026-08-24T15:06:24.170700+00:00",
+  "last_sync": "2026-08-25T15:13:23.077461+00:00",
   "posted_destinations": [
     {
       "destination_id": "halebidu",
@@ -285,14 +285,18 @@
     {
       "destination_id": "chittorgarh",
       "date": "2026-08-25"
+    },
+    {
+      "destination_id": "courtallam",
+      "date": "2026-08-25"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -312,10 +316,10 @@
       "score_card"
     ],
     "PdMu0": [
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -8651,6 +8655,28 @@
       "destination": "chittorgarh",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_chittorgarh_hi_2026-08-25.mp4"
+    },
+    {
+      "timestamp": "2026-08-25T15:14:41.581854+00:00",
+      "date": "2026-08-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "gXZOl",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-08-25T15:14:57.396439+00:00",
+      "date": "2026-08-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "APcuQ",
+      "destination": "courtallam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "courtallam.mp4"
     }
   ],
   "theme_usage": {
@@ -8880,7 +8906,8 @@
         "2026-06-28",
         "2026-07-09",
         "2026-07-25",
-        "2026-08-19"
+        "2026-08-19",
+        "2026-08-25"
       ],
       "coorg": [
         "2026-06-05"
@@ -8994,7 +9021,8 @@
         "2026-07-07",
         "2026-07-17",
         "2026-07-23",
-        "2026-08-19"
+        "2026-08-19",
+        "2026-08-25"
       ],
       "igatpuri": [
         "2026-07-09",
@@ -9161,7 +9189,8 @@
         "2026-08-21",
         "2026-08-22",
         "2026-08-23",
-        "2026-08-24"
+        "2026-08-24",
+        "2026-08-25"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9330,7 +9359,8 @@
       "courtallam": [
         "2026-06-12",
         "2026-07-09",
-        "2026-07-25"
+        "2026-07-25",
+        "2026-08-25"
       ],
       "pahalgam": [
         "2026-06-14"
@@ -9561,6 +9591,9 @@
       ],
       "french-india-trail": [
         "2026-08-20"
+      ],
+      "rivers-and-lakes": [
+        "2026-08-25"
       ]
     },
     "festivals": {
@@ -9718,6 +9751,11 @@
       "bhimashankar": [
         "2026-07-28"
       ]
+    },
+    "collection_carousel_dests:rivers-and-lakes": {
+      "tso-moriri": [
+        "2026-08-25"
+      ]
     }
   },
   "infographic": {
@@ -9732,8 +9770,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "igatpuri",
-    "collection": "french-india-trail"
+    "shared_best": "zanskar",
+    "collection": "rivers-and-lakes"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-08-19",
