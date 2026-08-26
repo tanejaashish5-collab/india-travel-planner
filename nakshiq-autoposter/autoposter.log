@@ -20247,3 +20247,45 @@ Date range: 2026-04-15 → 2026-08-24
 2026-08-26 12:07:46  INFO      YT Short posted: format=this_vs_that, music=dance-740
 2026-08-26 12:07:46  INFO      State saved. YT Short run complete.
 2026-08-26 12:07:46  INFO      ════════════════════════════════════════════════════════════
+2026-08-26 15:57:25  INFO      ════════════════════════════════════════════════════════════
+2026-08-26 15:57:25  INFO      Nakshiq Autoposter · EVENING · 2026-08-26 · weekday=2
+2026-08-26 15:57:25  INFO      ════════════════════════════════════════════════════════════
+2026-08-26 15:57:25  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-26 15:57:59  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-26 15:57:59  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-26 15:58:00  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-26 15:58:00  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-26 15:58:00  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-26 15:58:00  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-26 15:58:12  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-26 15:58:12  INFO      Evening format (balance→moment): arrival_intel [0% vs target 15%] (0/15 never featured)
+2026-08-26 15:58:12  INFO      Formats — IG: arrival_intel  ·  FB: arrival_intel  ·  Story: blog_promo
+2026-08-26 15:58:12  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 76
+2026-08-26 15:58:12  INFO      Fingerprint dedup snapshot — 76 dests in 7d · 112 (dest,fmt) pairs in 30d · 227 media in 60d
+2026-08-26 15:58:12  INFO      Arrival locked: HYD (Hyderabad) (8/8 never featured)
+2026-08-26 15:58:16  INFO      Shared best destination locked: Igatpuri
+2026-08-26 15:58:16  INFO      [instagram/nakshiq] Generating arrival_intel post...
+2026-08-26 15:58:16  INFO      [instagram/nakshiq] Caption ready (539 chars, dest=hyderabad)
+2026-08-26 15:58:16  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-26 15:58:16  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/hyderabad.mp4?v=20260524
+2026-08-26 15:58:20  INFO          Brand-stamp applied: hyderabad.mp4 (8,552,928 → 4,581,076 bytes)
+2026-08-26 15:58:20  INFO          Requesting upload URL for hyderabad.mp4 (4,581,076 bytes, video/mp4)
+2026-08-26 15:58:21  INFO          Uploading to R2 (timeout=300s)...
+2026-08-26 15:58:21  INFO          R2 PUT OK. Confirming...
+2026-08-26 15:58:23  INFO          Media ready: pZuNm (4,581,076 bytes · hyderabad.mp4)
+2026-08-26 15:58:23  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-26 15:59:07  INFO      [instagram/nakshiq] ✅ Published · Outstand=RojhA · Platform=18102274073191573
+2026-08-26 15:59:07  INFO      [facebook/Nakshiq] Generating arrival_intel post...
+2026-08-26 15:59:07  INFO      [facebook/Nakshiq] Caption ready (704 chars, dest=hyderabad)
+2026-08-26 15:59:08  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-26 15:59:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/hyderabad.mp4?v=20260524
+2026-08-26 15:59:10  INFO          Brand-stamp applied: hyderabad.mp4 (8,552,928 → 4,581,076 bytes)
+2026-08-26 15:59:10  INFO          Requesting upload URL for hyderabad.mp4 (4,581,076 bytes, video/mp4)
+2026-08-26 15:59:11  INFO          Uploading to R2 (timeout=300s)...
+2026-08-26 15:59:12  INFO          R2 PUT OK. Confirming...
+2026-08-26 15:59:13  INFO          Media ready: 8r4ms (4,581,076 bytes · hyderabad.mp4)
+2026-08-26 15:59:13  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-26 15:59:29  INFO      [facebook/Nakshiq] ✅ Published · Outstand=LbhRg · Platform=1088792340471671
+2026-08-26 15:59:29  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-26 15:59:29  INFO      State saved. Run complete.
+2026-08-26 15:59:29  INFO      ════════════════════════════════════════════════════════════

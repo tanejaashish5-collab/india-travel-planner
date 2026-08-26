@@ -37,17 +37,17 @@
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-26",
     "m8EAd_yt_short": "2026-08-26",
-    "m8EAd": "2026-08-25",
-    "m8EAd_evening": "2026-08-25",
-    "PdMu0": "2026-08-25",
-    "PdMu0_evening": "2026-08-25",
+    "m8EAd": "2026-08-26",
+    "m8EAd_evening": "2026-08-26",
+    "PdMu0": "2026-08-26",
+    "PdMu0_evening": "2026-08-26",
     "m8EAd_carousel": "2026-08-26",
     "PdMu0_carousel": "2026-08-26",
     "m8EAd_greeting": "2026-08-26",
     "m8EAd_greeting_story": "2026-08-26",
     "PdMu0_greeting": "2026-08-26"
   },
-  "last_sync": "2026-08-25T15:13:23.077461+00:00",
+  "last_sync": "2026-08-26T15:57:59.083168+00:00",
   "posted_destinations": [
     {
       "destination_id": "kishtwar",
@@ -296,11 +296,14 @@
     {
       "destination_id": "tirupati",
       "date": "2026-08-26"
+    },
+    {
+      "destination_id": "hyderabad",
+      "date": "2026-08-26"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
       "score_card",
@@ -320,10 +323,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "arrival_intel"
     ],
     "PdMu0": [
-      "data_carousel",
       "score_card",
       "v2_tourist_trap_split",
       "score_card",
@@ -343,7 +346,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "arrival_intel"
     ]
   },
   "post_log": [
@@ -8765,6 +8769,28 @@
       "destination": "tirupati",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_tirupati_hi_2026-08-26.mp4"
+    },
+    {
+      "timestamp": "2026-08-26T15:59:07.770019+00:00",
+      "date": "2026-08-26",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "RojhA",
+      "destination": "hyderabad",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "hyderabad.mp4"
+    },
+    {
+      "timestamp": "2026-08-26T15:59:29.990438+00:00",
+      "date": "2026-08-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "LbhRg",
+      "destination": "hyderabad",
+      "format": "arrival_intel",
+      "has_media": true,
+      "media_id": "hyderabad.mp4"
     }
   ],
   "theme_usage": {
@@ -9146,6 +9172,9 @@
       "hanle": [
         "2026-08-10",
         "2026-08-23"
+      ],
+      "hyderabad": [
+        "2026-08-26"
       ]
     },
     "morning_formats": {
@@ -9332,6 +9361,9 @@
       "data_carousel": [
         "2026-07-01",
         "2026-08-02"
+      ],
+      "arrival_intel": [
+        "2026-08-26"
       ]
     },
     "reels": {
@@ -9538,6 +9570,9 @@
       ],
       "hanle": [
         "2026-08-23"
+      ],
+      "hyderabad": [
+        "2026-08-26"
       ]
     },
     "audience_tags": {
@@ -9828,7 +9863,8 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    }
+    },
+    "arrival_intel": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -9842,7 +9878,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "zanskar",
+    "shared_best": "igatpuri",
     "collection": "rivers-and-lakes"
   },
   "manual_skip_dests": {},
