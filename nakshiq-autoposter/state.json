@@ -41,8 +41,11 @@
     "m8EAd_evening": "2026-08-25",
     "PdMu0": "2026-08-25",
     "PdMu0_evening": "2026-08-25",
-    "m8EAd_carousel": "2026-08-25",
-    "PdMu0_carousel": "2026-08-25"
+    "m8EAd_carousel": "2026-08-26",
+    "PdMu0_carousel": "2026-08-26",
+    "m8EAd_greeting": "2026-08-26",
+    "m8EAd_greeting_story": "2026-08-26",
+    "PdMu0_greeting": "2026-08-26"
   },
   "last_sync": "2026-08-25T15:13:23.077461+00:00",
   "posted_destinations": [
@@ -280,6 +283,14 @@
     },
     {
       "destination_id": "bhaderwah",
+      "date": "2026-08-26"
+    },
+    {
+      "destination_id": "alleppey",
+      "date": "2026-08-26"
+    },
+    {
+      "destination_id": "jagdalpur",
       "date": "2026-08-26"
     }
   ],
@@ -8687,6 +8698,51 @@
       "destination": "bhaderwah",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_bhaderwah_hi_2026-08-26.mp4"
+    },
+    {
+      "timestamp": "2026-08-26T08:05:41.455045+00:00",
+      "date": "2026-08-26",
+      "platform": "instagram",
+      "post_id": "FAogB",
+      "destination": "alleppey",
+      "format": "greeting.onam",
+      "media_id": "greeting_onam_2026-08-26"
+    },
+    {
+      "timestamp": "2026-08-26T08:05:47.111350+00:00",
+      "date": "2026-08-26",
+      "platform": "instagram",
+      "post_id": "O8uyY",
+      "destination": "alleppey",
+      "format": "story.greeting",
+      "media_id": "story_greeting_onam_2026-08-26"
+    },
+    {
+      "timestamp": "2026-08-26T08:05:50.328973+00:00",
+      "date": "2026-08-26",
+      "platform": "facebook",
+      "post_id": "yJ8oC",
+      "destination": "alleppey",
+      "format": "greeting.onam",
+      "media_id": "greeting_onam_2026-08-26"
+    },
+    {
+      "timestamp": "2026-08-26T08:07:08.200072+00:00",
+      "date": "2026-08-26",
+      "platform": "instagram",
+      "post_id": "4ltwm",
+      "destination": "jagdalpur",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-08-26"
+    },
+    {
+      "timestamp": "2026-08-26T08:07:10.978517+00:00",
+      "date": "2026-08-26",
+      "platform": "facebook",
+      "post_id": "LbkWw",
+      "destination": "jagdalpur",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-08-26"
     }
   ],
   "theme_usage": {
@@ -9801,6 +9857,13 @@
       "arupadai-veedu",
       "astavinayak-yatra",
       "last-villages-of-india"
+    ],
+    "food": [
+      "Keshloor Dhaba|jagdalpur",
+      "Lambasingi Bamboo Chicken & Roadside Stalls|lambasingi",
+      "M3 Cafe & Restaurant|ayodhya",
+      "Maihang Restaurant Kaziranga|kaziranga",
+      "Jade Dragon — Taj Dal View|srinagar"
     ]
   }
 }
