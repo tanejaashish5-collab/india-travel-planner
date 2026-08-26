@@ -32,11 +32,11 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-25",
-    "m8EAd_yt_short": "2026-08-25",
+    "GAh5p_yt_short": "2026-08-26",
+    "m8EAd_yt_short": "2026-08-26",
     "m8EAd": "2026-08-25",
     "m8EAd_evening": "2026-08-25",
     "PdMu0": "2026-08-25",
@@ -46,18 +46,6 @@
   },
   "last_sync": "2026-08-25T15:13:23.077461+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "halebidu",
-      "date": "2026-08-11"
-    },
-    {
-      "destination_id": "dwarka",
-      "date": "2026-08-11"
-    },
-    {
-      "destination_id": "jog-falls",
-      "date": "2026-08-11"
-    },
     {
       "destination_id": "kishtwar",
       "date": "2026-08-12"
@@ -289,6 +277,10 @@
     {
       "destination_id": "courtallam",
       "date": "2026-08-25"
+    },
+    {
+      "destination_id": "bhaderwah",
+      "date": "2026-08-26"
     }
   ],
   "posted_formats": {
@@ -8677,6 +8669,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "courtallam.mp4"
+    },
+    {
+      "timestamp": "2026-08-26T05:01:31.010582+00:00",
+      "date": "2026-08-26",
+      "platform": "instagram",
+      "post_id": "eBP0K",
+      "destination": "bhaderwah",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_bhaderwah_hi_2026-08-26.mp4"
+    },
+    {
+      "timestamp": "2026-08-26T05:02:00.804073+00:00",
+      "date": "2026-08-26",
+      "platform": "youtube",
+      "post_id": "xeA79",
+      "destination": "bhaderwah",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_bhaderwah_hi_2026-08-26.mp4"
     }
   ],
   "theme_usage": {
@@ -8726,10 +8736,6 @@
         "2026-05-23",
         "2026-06-05",
         "2026-08-04"
-      ],
-      "kabini": [
-        "2026-05-24",
-        "2026-05-27"
       ],
       "mathura": [
         "2026-05-24",
@@ -8786,9 +8792,6 @@
       "yamunotri": [
         "2026-05-27",
         "2026-05-30"
-      ],
-      "gangtok": [
-        "2026-05-27"
       ],
       "sangla": [
         "2026-05-28",
@@ -9097,12 +9100,6 @@
         "2026-05-24",
         "2026-06-19"
       ],
-      "v2_women_solo_brief_video": [
-        "2026-05-27"
-      ],
-      "v4_dw_local_historian_spotlight": [
-        "2026-05-27"
-      ],
       "v4_dw_architecture_detail_deep_dive": [
         "2026-05-28"
       ],
@@ -9289,9 +9286,6 @@
       "leh": [
         "2026-05-27",
         "2026-06-26"
-      ],
-      "gangtok": [
-        "2026-05-27"
       ],
       "nainital": [
         "2026-05-28"

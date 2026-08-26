@@ -20139,3 +20139,26 @@ Date range: 2026-04-15 → 2026-08-24
 2026-08-25 15:14:57  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
 2026-08-25 15:14:57  INFO      State saved. Run complete.
 2026-08-25 15:14:57  INFO      ════════════════════════════════════════════════════════════
+2026-08-26 04:59:04  INFO      ════════════════════════════════════════════════════════════
+2026-08-26 04:59:04  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-26
+2026-08-26 04:59:04  INFO      ════════════════════════════════════════════════════════════
+2026-08-26 04:59:10  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-26 05:00:36  INFO      Short rendered: yt_short_mini_guide_bhaderwah_hi_2026-08-26.mp4 (18355 KB, 23.8s, fmt=mini_guide, music=edm-371)
+2026-08-26 05:00:36  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_bhaderwah_hi_2026-08-26.mp4 (18,796,503 bytes, video/mp4)
+2026-08-26 05:00:37  INFO          Uploading to R2 (timeout=300s)...
+2026-08-26 05:00:40  INFO          R2 PUT OK. Confirming...
+2026-08-26 05:00:41  INFO          Media ready: 8reg8 (18,796,503 bytes · yt_short_mini_guide_yt_short_mini_guide_bhaderwah_hi_2026-08-26.mp4)
+2026-08-26 05:00:41  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_bhaderwah_hi_2026-08-26.mp4
+2026-08-26 05:00:43  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-26 05:00:43  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-08-26 05:00:43  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-26 05:00:47  INFO      [instagram/nakshiq] Outstand accepted (post_id=eBP0K), waiting for platform confirmation...
+2026-08-26 05:01:31  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=eBP0K · Platform=18111574415075398
+2026-08-26 05:01:31  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-26 05:01:31  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-08-26 05:01:31  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-26 05:01:36  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=xeA79), waiting for platform confirmation...
+2026-08-26 05:02:00  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=xeA79 · Platform=4M9oDtarTao
+2026-08-26 05:02:00  INFO      YT Short posted: format=mini_guide, music=edm-371
+2026-08-26 05:02:00  INFO      State saved. YT Short run complete.
+2026-08-26 05:02:00  INFO      ════════════════════════════════════════════════════════════
