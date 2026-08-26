@@ -1,6 +1,6 @@
 # GSC Email Triage — 2026-08-26
 
-Run date: 2026-08-26 ~10:38 UTC  
+Run date: 2026-08-26 ~10:38 UTC (morning) + ~22:37 UTC (evening)  
 Prior triage: `gsc-email-triage-2026-08-25.md`
 
 ---
