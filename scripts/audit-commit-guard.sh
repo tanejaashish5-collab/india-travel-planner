@@ -28,6 +28,12 @@
 
 set -uo pipefail
 
+# This script is called from cron, whose PATH is minimal. `git push` here goes
+# through `credential.helper = !gh auth git-credential`, so `gh` must resolve
+# or the push dies with "could not read Username". Homebrew on Apple Silicon
+# is /opt/homebrew/bin — absent from cron's default PATH. (2026-08-26)
+export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT" || { echo "FATAL: cannot cd to repo root"; exit 1; }
 
@@ -135,6 +141,26 @@ if [ "$DO_PUSH" -eq 0 ]; then
 fi
 
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+# Preflight the credential helper. Without this the failure surfaces only as
+# git's generic "could not read Username for 'https://github.com'", which reads
+# like an auth/token problem and sent four days of debugging down the wrong
+# path. If the helper is a bare command, it must be resolvable on PATH.
+HELPER="$(git config --get credential.helper 2>/dev/null || true)"
+case "$HELPER" in
+  "!"*)
+    HELPER_BIN="$(printf '%s' "${HELPER#!}" | awk '{print $1}')"
+    case "$HELPER_BIN" in
+      /*) [ -x "$HELPER_BIN" ] || fail "credential helper '$HELPER_BIN' is not executable" \
+            "git cannot authenticate to push. Fix the path in .git/config." ;;
+      *)  command -v "$HELPER_BIN" >/dev/null 2>&1 || fail \
+            "credential helper '$HELPER_BIN' is not on PATH — git cannot authenticate to push" \
+            "PATH starts: $(printf '%s' "$PATH" | cut -d: -f1-6)
+   Fix: add the directory holding '$HELPER_BIN' to the PATH line at the top of this script." ;;
+    esac
+    ;;
+esac
+
 git push -q origin "$BRANCH" || fail "push failed" \
   "Commit is safe locally at ${HEAD_AFTER:0:8}. Resolve and re-push; do not re-run this script."
 

@@ -47,8 +47,15 @@
 
 set -uo pipefail
 
-# cron gets a minimal PATH — node and git must be found by absolute location.
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# cron gets a minimal PATH, and it must cover more than node and git.
+# git is configured with `credential.helper = !gh auth git-credential`, so a
+# `git push` to https://github.com needs `gh` on PATH too. Homebrew on Apple
+# Silicon installs to /opt/homebrew/bin, which cron's default PATH does not
+# include. That single omission broke the push on four consecutive days
+# (2026-08-23 → 08-26); each run committed fine and then died with
+# "gh: command not found" / "could not read Username for 'https://github.com'",
+# leaving the commit stranded locally. Do not trim this list.
+export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT" || { echo "FATAL: cannot cd to $REPO_ROOT"; exit 1; }
@@ -110,6 +117,7 @@ done < <(
 )
 
 # --------------------------------------------------------- 4. commit + push
+GUARD_FAILED=0
 if [ ${#PENDING[@]} -gt 0 ]; then
   say "found ${#PENDING[@]} uncommitted audit file(s):"
   printf '    %s\n' "${PENDING[@]}"
@@ -133,24 +141,44 @@ if [ ${#PENDING[@]} -gt 0 ]; then
   if bash scripts/audit-commit-guard.sh -m "$MSG" "${PENDING[@]}"; then
     say "✓ committed and pushed"
   else
-    say "❌ audit-commit-guard failed — see its output above."
-    say "   Tomorrow's run will retry; if it keeps failing, this needs a human."
-    exit 1
+    GUARD_FAILED=1
+    say "⚠️  audit-commit-guard did not complete — see its output above."
+    say "    Falling through to the stranded-commit heal below."
   fi
 else
   say "no uncommitted audit files"
+fi
 
-  # Heal a previously-failed push: committed locally but never landed on origin.
-  AHEAD="$(git rev-list --count "origin/$BRANCH..HEAD" 2>/dev/null || echo 0)"
-  if [ "${AHEAD:-0}" -gt 0 ]; then
-    say "⚠️  $AHEAD local commit(s) never pushed — pushing now"
-    if git push -q origin "$BRANCH"; then
-      say "✓ pushed $AHEAD previously-stranded commit(s)"
+# ------------------------------------------- 4b. heal stranded local commits
+# This block USED TO LIVE inside the `else` above, which made it dead code:
+# the audit writes a file every single day, so PENDING was never empty and the
+# heal never ran. When the guard's push then failed, the script exited 1 right
+# there and the commit sat local forever — the exact failure that repeated for
+# four days (2026-08-23 → 08-26) while a "self-healing" branch sat unreachable
+# a few lines below it. It now runs unconditionally, after either path.
+AHEAD="$(git rev-list --count "origin/${BRANCH}..HEAD" 2>/dev/null || echo 0)"
+if [ "${AHEAD:-0}" -gt 0 ]; then
+  say "⚠️  $AHEAD local commit(s) not on origin/${BRANCH} — pushing now"
+  if git push -q origin "$BRANCH"; then
+    # Never infer a push landed — verify the remote actually moved to HEAD.
+    git fetch -q origin "$BRANCH" 2>/dev/null
+    if [ "$(git rev-parse HEAD 2>/dev/null)" = "$(git rev-parse "origin/${BRANCH}" 2>/dev/null)" ]; then
+      say "✓ pushed $AHEAD previously-stranded commit(s) — origin/${BRANCH} verified at HEAD"
+      GUARD_FAILED=0
     else
-      say "❌ push failed — repo needs a human"
+      say "❌ push reported success but origin/${BRANCH} is not at HEAD — needs a human"
       exit 1
     fi
+  else
+    say "❌ push failed — $AHEAD commit(s) still stranded locally. Needs a human."
+    exit 1
   fi
+fi
+
+if [ "$GUARD_FAILED" -ne 0 ]; then
+  say "❌ audit-commit-guard failed and there was nothing left to heal."
+  say "   Tomorrow's run will retry; if it keeps failing, this needs a human."
+  exit 1
 fi
 
 # ------------------------------------------------------- 5. staleness check
