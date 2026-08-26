@@ -135,6 +135,7 @@ async function handle(req: NextRequest) {
 
   // 5. Send in batches of 100 (Resend batch API limit)
   let sent = 0;
+  let failed = 0;
   const errors: string[] = [];
 
   for (let i = 0; i < recipients.length; i += 100) {
@@ -159,11 +160,43 @@ async function handle(req: NextRequest) {
       const result = await resend.batch.send(emails as any);
       if ((result as any).error) {
         errors.push((result as any).error.message ?? "batch error");
-      } else {
-        sent += batch.length;
+        failed += batch.length;
+        continue;
+      }
+
+      // Count the EMAILS Resend accepted, not the batch call. Resend returns one
+      // id per accepted message, positionally matching the input array — a short
+      // array means some addresses were rejected inside a "successful" batch.
+      // Counting batch.length here is what made recipient_count unfalsifiable
+      // when a subscriber reported a missing issue on 2026-08-27.
+      const ids: Array<{ id?: string }> = (result as any).data?.data ?? (result as any).data ?? [];
+      const accepted = Array.isArray(ids) ? ids.length : 0;
+      sent += accepted;
+      if (accepted < batch.length) {
+        failed += batch.length - accepted;
+        errors.push(`batch ${i / 100}: ${batch.length - accepted} of ${batch.length} not accepted`);
+      }
+
+      // Ledger: which Resend id went to which address, so a later delivery
+      // webhook resolves back to a subscriber and an issue.
+      if (!testEmail && Array.isArray(ids) && accepted > 0) {
+        const rows = ids
+          .map((entry, idx) => ({
+            resend_email_id: entry?.id,
+            email: batch[idx]?.email,
+            issue_slug: issue.slug,
+          }))
+          .filter((r) => r.resend_email_id && r.email);
+        if (rows.length > 0) {
+          const { error: ledgerError } = await supabase
+            .from("newsletter_sends")
+            .upsert(rows, { onConflict: "resend_email_id" });
+          if (ledgerError) errors.push(`ledger: ${ledgerError.message}`);
+        }
       }
     } catch (err: any) {
       errors.push(err?.message ?? "send failed");
+      failed += batch.length;
     }
   }
 
@@ -182,8 +215,14 @@ async function handle(req: NextRequest) {
       issue_number: issue.props.issueNumber,
       sent_at: new Date().toISOString(),
       recipient_count: sent,
+      failed_count: failed,
     });
   }
 
-  return NextResponse.json({ ok: true, sent, errors, slug: issue.slug });
+  // ok reflects the ITEMS, not the call: a send where nothing was accepted must
+  // not report success (the ok:true-with-total-item-failure class).
+  return NextResponse.json(
+    { ok: sent > 0, sent, failed, errors, slug: issue.slug },
+    { status: sent > 0 ? 200 : 500 },
+  );
 }
