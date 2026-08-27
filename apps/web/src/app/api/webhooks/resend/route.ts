@@ -37,37 +37,74 @@ function getSupabase(): SupabaseClient | null {
 }
 
 /**
+ * Why a rejection reason exists at all: on 2026-08-27 this route returned an
+ * identical bare 401 for a missing secret, a stale timestamp and a genuine
+ * signature mismatch. A propagating redeploy was therefore indistinguishable
+ * from a wrong secret, and half an hour went into a hypothesis built on a stale
+ * observation. The signal must name itself.
+ *
+ * The REASON is logged, never returned — an unauthenticated caller still sees
+ * one opaque 401, so this diagnoses our config without telling an attacker
+ * which wall they hit.
+ */
+type VerifyFailure =
+  | "secret-unset"
+  | "missing-headers"
+  | "malformed-timestamp"
+  | "stale-timestamp"
+  | "signature-mismatch";
+
+type VerifyResult = { ok: true } | { ok: false; reason: VerifyFailure; detail?: string };
+
+/**
  * Svix signature check. `svix-signature` is a space-delimited list of
  * `v1,<base64>` entries; any match passes. The secret is `whsec_<base64>` and it
  * is the DECODED bytes that key the HMAC.
  */
-function verifySignature(req: NextRequest, rawBody: string): boolean {
+function verifySignature(req: NextRequest, rawBody: string): VerifyResult {
   const secret = process.env.RESEND_WEBHOOK_SECRET;
-  if (!secret) return false;
+  if (!secret) return { ok: false, reason: "secret-unset" };
 
   const id = req.headers.get("svix-id");
   const timestamp = req.headers.get("svix-timestamp");
   const signature = req.headers.get("svix-signature");
-  if (!id || !timestamp || !signature) return false;
+  if (!id || !timestamp || !signature) {
+    const missing = [
+      !id && "svix-id",
+      !timestamp && "svix-timestamp",
+      !signature && "svix-signature",
+    ].filter(Boolean).join(",");
+    return { ok: false, reason: "missing-headers", detail: missing };
+  }
 
   const ts = Number(timestamp);
-  if (!Number.isFinite(ts)) return false;
-  if (Math.abs(Date.now() / 1000 - ts) > REPLAY_WINDOW_SECONDS) return false;
+  if (!Number.isFinite(ts)) return { ok: false, reason: "malformed-timestamp" };
+
+  const skew = Date.now() / 1000 - ts;
+  if (Math.abs(skew) > REPLAY_WINDOW_SECONDS) {
+    // Signed clock skew is the tell: a large positive value is a replay or a
+    // slow retry, a large negative one is our own clock running behind.
+    return { ok: false, reason: "stale-timestamp", detail: `skew=${Math.round(skew)}s` };
+  }
 
   const key = Buffer.from(secret.replace(/^whsec_/, ""), "base64");
   const expected = createHmac("sha256", key)
     .update(`${id}.${timestamp}.${rawBody}`)
     .digest();
 
+  let candidates = 0;
   for (const part of signature.split(" ")) {
     const [version, value] = part.split(",");
     if (version !== "v1" || !value) continue;
+    candidates += 1;
     const provided = Buffer.from(value, "base64");
     if (provided.length === expected.length && timingSafeEqual(provided, expected)) {
-      return true;
+      return { ok: true };
     }
   }
-  return false;
+  // No secret material here — just how many v1 signatures were offered, which
+  // separates "sent nothing usable" from "sent a real but wrong signature".
+  return { ok: false, reason: "signature-mismatch", detail: `v1_candidates=${candidates}` };
 }
 
 /** Resend nests the address differently per event; `to` may be string or array. */
@@ -84,7 +121,14 @@ export async function POST(req: NextRequest) {
   // the HMAC.
   const rawBody = await req.text();
 
-  if (!verifySignature(req, rawBody)) {
+  const verified = verifySignature(req, rawBody);
+  if (!verified.ok) {
+    console.warn(
+      `[resend-webhook] rejected: ${verified.reason}` +
+        (verified.detail ? ` (${verified.detail})` : "") +
+        ` svix-id=${req.headers.get("svix-id") ?? "none"}`,
+    );
+    // Same opaque body for every reason — the detail goes to the log, not the caller.
     return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
   }
 
