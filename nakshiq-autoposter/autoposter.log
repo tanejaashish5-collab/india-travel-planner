@@ -20399,3 +20399,76 @@ Date range: 2026-04-15 → 2026-08-26
 2026-08-27 18:22:58  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=1Cc0w
 2026-08-27 18:22:58  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-08-27 18:22:58  INFO      ════════════════════════════════════════════════════════════
+2026-08-27 23:55:18  INFO      ════════════════════════════════════════════════════════════
+2026-08-27 23:55:18  INFO      Nakshiq Autoposter · EVENING · 2026-08-27 · weekday=3
+2026-08-27 23:55:18  INFO      ════════════════════════════════════════════════════════════
+2026-08-27 23:55:18  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-27 23:55:59  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-27 23:55:59  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-27 23:56:00  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-27 23:56:00  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-27 23:56:00  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-27 23:56:00  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-27 23:56:13  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-27 23:56:13  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:greeting.onam, pillar:moment, pillar:story.greeting, short:mini_guide, short:this_vs_that seen <2d)
+2026-08-27 23:56:13  INFO      Evening format (balance→discovery): v3_tl_editorial_listicle [0% vs target 15%] (0/15 never featured)
+2026-08-27 23:56:13  INFO      Formats — IG: v3_tl_editorial_listicle  ·  FB: v3_tl_editorial_listicle  ·  Story: collection_spotlight
+2026-08-27 23:56:13  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 77
+2026-08-27 23:56:13  INFO      Fingerprint dedup snapshot — 77 dests in 7d · 109 (dest,fmt) pairs in 30d · 225 media in 60d
+2026-08-27 23:56:13  INFO      Collection locked: Pancha Bhoota Stalams — The 5 Element Shiva Temples (76/100 never featured)
+2026-08-27 23:56:19  INFO      Shared best destination locked: Zanskar Valley
+2026-08-27 23:56:19  INFO      Carousel locked (v3_tl_editorial_listicle): zanskar
+2026-08-27 23:56:19  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-08-27 23:56:19  INFO      [instagram/nakshiq] Generating v3_tl_editorial_listicle post...
+2026-08-27 23:56:19  INFO      [instagram/nakshiq] Caption ready (437 chars, dest=mumbai)
+2026-08-27 23:56:19  INFO      [instagram/nakshiq] dynamic render: 1 slide(s) for v3_tl_editorial_listicle → uploading...
+2026-08-27 23:56:19  INFO          Requesting upload URL for v3_tl_editorial_listicle-mumbai.png (86,249 bytes, image/png)
+2026-08-27 23:56:20  INFO          Uploading to R2 (timeout=120s)...
+2026-08-27 23:56:21  INFO          R2 PUT OK. Confirming...
+2026-08-27 23:56:22  INFO          Media ready: 70vJb (86,249 bytes · v3_tl_editorial_listicle-mumbai.png)
+2026-08-27 23:56:22  INFO      [instagram/nakshiq] Publishing 1-slide carousel...
+2026-08-27 23:56:51  INFO      [instagram/nakshiq] ✅ Published · Outstand=nQXsJ · Platform=18112914190999665
+2026-08-27 23:56:51  INFO      [instagram/nakshiq] Uploading Story image (kanchipuram.jpg)...
+2026-08-27 23:56:51  INFO          Using branded image: kanchipuram_story_bold-cinematic_footer-bar.jpg (340,540 bytes)
+2026-08-27 23:56:51  INFO          Requesting upload URL for kanchipuram.jpg (340,540 bytes, image/jpeg)
+2026-08-27 23:56:53  INFO          Uploading to R2 (timeout=120s)...
+2026-08-27 23:56:53  INFO          R2 PUT OK. Confirming...
+2026-08-27 23:56:55  INFO          Media ready: lyhpB (340,540 bytes · kanchipuram.jpg)
+2026-08-27 23:56:55  INFO      [instagram/nakshiq] Publishing Story · format=collection_spotlight · dest=kanchipuram
+2026-08-27 23:57:17  INFO      [instagram/nakshiq] ✅ Story live · ID=18129750730674865
+2026-08-27 23:57:17  INFO      [facebook/Nakshiq] Generating v3_tl_editorial_listicle post...
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: hogenakkal in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: igatpuri in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: khardung-la in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: kaza in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: karla-bhaja-caves in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: bhimashankar in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: hanle in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: keylong in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: khandala in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: adilabad in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: turtuk in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: tso-moriri in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: zanskar in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: jog-falls in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: valley-of-flowers in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: amboli in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: courtallam in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: lonavala in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: umlingla in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  INFO      v3_tl_editorial_listicle: kolad in 14-day cooldown — SKIPPING dest
+2026-08-27 23:57:17  WARNING   v3_tl_editorial_listicle: no eligible dest at render time — falling back to safe format 'score_card'
+2026-08-27 23:57:17  WARNING   [facebook/Nakshiq] v3_tl_editorial_listicle: tso-moriri inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'lonavala' as score_card to keep the slot live.
+2026-08-27 23:57:17  INFO      [facebook/Nakshiq] Caption ready (563 chars, dest=lonavala)
+2026-08-27 23:57:17  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-27 23:57:17  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/lonavala.mp4?v=20260524
+2026-08-27 23:57:19  INFO          Brand-stamp applied: lonavala.mp4 (4,819,012 → 2,384,788 bytes)
+2026-08-27 23:57:19  INFO          Requesting upload URL for lonavala.mp4 (2,384,788 bytes, video/mp4)
+2026-08-27 23:57:20  INFO          Uploading to R2 (timeout=300s)...
+2026-08-27 23:57:21  INFO          R2 PUT OK. Confirming...
+2026-08-27 23:57:22  INFO          Media ready: dxiH8 (2,384,788 bytes · lonavala.mp4)
+2026-08-27 23:57:22  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-27 23:57:32  INFO      [facebook/Nakshiq] ✅ Published · Outstand=8rm2R · Platform=840865642448539
+2026-08-27 23:57:32  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-27 23:57:32  INFO      State saved. Run complete.
+2026-08-27 23:57:32  INFO      ════════════════════════════════════════════════════════════

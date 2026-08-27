@@ -37,17 +37,18 @@
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-08-26",
     "m8EAd_yt_short": "2026-08-26",
-    "m8EAd": "2026-08-26",
-    "m8EAd_evening": "2026-08-26",
-    "PdMu0": "2026-08-26",
-    "PdMu0_evening": "2026-08-26",
+    "m8EAd": "2026-08-27",
+    "m8EAd_evening": "2026-08-27",
+    "PdMu0": "2026-08-27",
+    "PdMu0_evening": "2026-08-27",
     "m8EAd_carousel": "2026-08-27",
     "PdMu0_carousel": "2026-08-27",
     "m8EAd_greeting": "2026-08-26",
     "m8EAd_greeting_story": "2026-08-26",
-    "PdMu0_greeting": "2026-08-26"
+    "PdMu0_greeting": "2026-08-26",
+    "m8EAd_evening_story": "2026-08-27"
   },
-  "last_sync": "2026-08-26T15:57:59.083168+00:00",
+  "last_sync": "2026-08-27T23:55:59.232685+00:00",
   "posted_destinations": [
     {
       "destination_id": "srirangam",
@@ -284,11 +285,18 @@
     {
       "destination_id": "dwarka",
       "date": "2026-08-27"
+    },
+    {
+      "destination_id": "mumbai",
+      "date": "2026-08-27"
+    },
+    {
+      "destination_id": "lonavala",
+      "date": "2026-08-27"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "v2_tourist_trap_split",
       "score_card",
       "score_card",
@@ -308,10 +316,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "arrival_intel"
+      "arrival_intel",
+      "v3_tl_editorial_listicle"
     ],
     "PdMu0": [
-      "score_card",
       "v2_tourist_trap_split",
       "score_card",
       "score_card",
@@ -331,7 +339,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "arrival_intel"
+      "arrival_intel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -8793,6 +8802,39 @@
       "destination": "dwarka",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-08-27"
+    },
+    {
+      "timestamp": "2026-08-27T23:56:51.916915+00:00",
+      "date": "2026-08-27",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "nQXsJ",
+      "destination": "mumbai",
+      "format": "v3_tl_editorial_listicle",
+      "has_media": true,
+      "media_id": "v3_tl_editorial_listicle-mumbai.png"
+    },
+    {
+      "timestamp": "2026-08-27T23:57:17.219220+00:00",
+      "date": "2026-08-27",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "yJB5V",
+      "destination": "kanchipuram",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-08-27T23:57:32.824331+00:00",
+      "date": "2026-08-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "8rm2R",
+      "destination": "lonavala",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "lonavala.mp4"
     }
   ],
   "theme_usage": {
@@ -9054,7 +9096,8 @@
         "2026-06-12",
         "2026-07-09",
         "2026-07-25",
-        "2026-08-19"
+        "2026-08-19",
+        "2026-08-27"
       ],
       "haridwar": [
         "2026-06-15"
@@ -9142,7 +9185,8 @@
         "2026-07-21",
         "2026-07-29",
         "2026-08-04",
-        "2026-08-10"
+        "2026-08-10",
+        "2026-08-27"
       ],
       "lamayuru": [
         "2026-07-09"
@@ -9171,6 +9215,12 @@
       "hanle": [
         "2026-08-10",
         "2026-08-23"
+      ],
+      "mumbai": [
+        "2026-08-27"
+      ],
+      "kanchipuram": [
+        "2026-08-27"
       ]
     },
     "morning_formats": {
@@ -9292,7 +9342,8 @@
         "2026-08-22",
         "2026-08-23",
         "2026-08-24",
-        "2026-08-25"
+        "2026-08-25",
+        "2026-08-27"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9359,6 +9410,9 @@
       "data_carousel": [
         "2026-07-01",
         "2026-08-02"
+      ],
+      "v3_tl_editorial_listicle": [
+        "2026-08-27"
       ]
     },
     "reels": {
@@ -9565,6 +9619,12 @@
       ],
       "hyderabad": [
         "2026-08-26"
+      ],
+      "mumbai": [
+        "2026-08-27"
+      ],
+      "lonavala": [
+        "2026-08-27"
       ]
     },
     "audience_tags": {
@@ -9693,6 +9753,9 @@
       ],
       "rivers-and-lakes": [
         "2026-08-25"
+      ],
+      "pancha-bhoota-stalams": [
+        "2026-08-27"
       ]
     },
     "festivals": {
@@ -9855,7 +9918,8 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    }
+    },
+    "collection_carousel_dests:pancha-bhoota-stalams": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -9869,8 +9933,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "igatpuri",
-    "collection": "rivers-and-lakes"
+    "shared_best": "zanskar",
+    "collection": "pancha-bhoota-stalams"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-08-19",
