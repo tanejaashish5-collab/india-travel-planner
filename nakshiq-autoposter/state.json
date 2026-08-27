@@ -41,34 +41,14 @@
     "m8EAd_evening": "2026-08-26",
     "PdMu0": "2026-08-26",
     "PdMu0_evening": "2026-08-26",
-    "m8EAd_carousel": "2026-08-26",
-    "PdMu0_carousel": "2026-08-26",
+    "m8EAd_carousel": "2026-08-27",
+    "PdMu0_carousel": "2026-08-27",
     "m8EAd_greeting": "2026-08-26",
     "m8EAd_greeting_story": "2026-08-26",
     "PdMu0_greeting": "2026-08-26"
   },
   "last_sync": "2026-08-26T15:57:59.083168+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kishtwar",
-      "date": "2026-08-12"
-    },
-    {
-      "destination_id": "manali",
-      "date": "2026-08-12"
-    },
-    {
-      "destination_id": "ahmedabad",
-      "date": "2026-08-12"
-    },
-    {
-      "destination_id": "bhandardara",
-      "date": "2026-08-12"
-    },
-    {
-      "destination_id": "kaza",
-      "date": "2026-08-12"
-    },
     {
       "destination_id": "srirangam",
       "date": "2026-08-13"
@@ -300,6 +280,10 @@
     {
       "destination_id": "hyderabad",
       "date": "2026-08-26"
+    },
+    {
+      "destination_id": "dwarka",
+      "date": "2026-08-27"
     }
   ],
   "posted_formats": {
@@ -8791,10 +8775,32 @@
       "format": "arrival_intel",
       "has_media": true,
       "media_id": "hyderabad.mp4"
+    },
+    {
+      "timestamp": "2026-08-27T18:22:54.894878+00:00",
+      "date": "2026-08-27",
+      "platform": "instagram",
+      "post_id": "3w9L8",
+      "destination": "dwarka",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-27"
+    },
+    {
+      "timestamp": "2026-08-27T18:22:58.129272+00:00",
+      "date": "2026-08-27",
+      "platform": "facebook",
+      "post_id": "1Cc0w",
+      "destination": "dwarka",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-27"
     }
   ],
   "theme_usage": {
     "destinations": {
+      "hyderabad": [
+        "2026-05-18",
+        "2026-08-26"
+      ],
       "hemkund-sahib": [
         "2026-05-19",
         "2026-06-08"
@@ -8851,10 +8857,6 @@
         "2026-05-24",
         "2026-06-03"
       ],
-      "nainital": [
-        "2026-05-25",
-        "2026-05-28"
-      ],
       "sonamarg": [
         "2026-05-25",
         "2026-06-15",
@@ -8901,9 +8903,6 @@
         "2026-05-28",
         "2026-06-23",
         "2026-06-28"
-      ],
-      "somnath": [
-        "2026-05-28"
       ],
       "hampi": [
         "2026-05-28",
@@ -9172,12 +9171,14 @@
       "hanle": [
         "2026-08-10",
         "2026-08-23"
-      ],
-      "hyderabad": [
-        "2026-08-26"
       ]
     },
     "morning_formats": {
+      "arrival_intel": [
+        "2026-05-18",
+        "2026-05-20",
+        "2026-08-26"
+      ],
       "v2_pov_slow_morning": [
         "2026-05-20",
         "2026-05-21",
@@ -9206,9 +9207,6 @@
       "v4_dw_heritage_reel_sensory_pov": [
         "2026-05-24",
         "2026-06-19"
-      ],
-      "v4_dw_architecture_detail_deep_dive": [
-        "2026-05-28"
       ],
       "v3_tl_world_best_india": [
         "2026-05-29",
@@ -9361,9 +9359,6 @@
       "data_carousel": [
         "2026-07-01",
         "2026-08-02"
-      ],
-      "arrival_intel": [
-        "2026-08-26"
       ]
     },
     "reels": {
@@ -9396,9 +9391,6 @@
       "leh": [
         "2026-05-27",
         "2026-06-26"
-      ],
-      "nainital": [
-        "2026-05-28"
       ],
       "hampi": [
         "2026-05-28",
@@ -9863,8 +9855,7 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    },
-    "arrival_intel": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -9906,7 +9897,15 @@
       "Kumbh Mela",
       "Nag Panchami (Battis Shirala)",
       "Bonderam Festival",
-      "Nehru Trophy Boat Race"
+      "Nehru Trophy Boat Race",
+      "Janmashtami at Dwarkadhish",
+      "Independence Day at Cellular Jail",
+      "Monsoon Festival",
+      "Janmashtami Festival",
+      "Manimahesh Yatra",
+      "Metemneo Festival",
+      "Neermahal Water Festival - Boat Race",
+      "Tendong Lho Rum Faat"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
