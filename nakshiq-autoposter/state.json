@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-08-27",
@@ -281,6 +281,10 @@
     },
     {
       "destination_id": "neil-island",
+      "date": "2026-08-28"
+    },
+    {
+      "destination_id": "kuttanad",
       "date": "2026-08-28"
     }
   ],
@@ -8849,6 +8853,24 @@
       "destination": "neil-island",
       "format": "carousel.skip_list",
       "media_id": "carousel_skip_list_2026-08-28"
+    },
+    {
+      "timestamp": "2026-08-28T21:37:32.778805+00:00",
+      "date": "2026-08-28",
+      "platform": "instagram",
+      "post_id": "bpNlk",
+      "destination": "kuttanad",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_kuttanad_hi_2026-08-28.mp4"
+    },
+    {
+      "timestamp": "2026-08-28T21:37:41.425465+00:00",
+      "date": "2026-08-28",
+      "platform": "youtube",
+      "post_id": "RoYxS",
+      "destination": "kuttanad",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_kuttanad_hi_2026-08-28.mp4"
     }
   ],
   "theme_usage": {
