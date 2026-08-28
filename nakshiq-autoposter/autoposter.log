@@ -20614,3 +20614,49 @@ Date range: 2026-04-15 → 2026-08-27
 2026-08-28 21:37:41  INFO      YT Short posted: format=dont_go_here, music=fast-679
 2026-08-28 21:37:41  INFO      State saved. YT Short run complete.
 2026-08-28 21:37:41  INFO      ════════════════════════════════════════════════════════════
+2026-08-28 23:36:38  INFO      ════════════════════════════════════════════════════════════
+2026-08-28 23:36:38  INFO      Nakshiq Autoposter · EVENING · 2026-08-28 · weekday=4
+2026-08-28 23:36:38  INFO      ════════════════════════════════════════════════════════════
+2026-08-28 23:36:38  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-28 23:37:17  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-28 23:37:17  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-28 23:37:18  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-28 23:37:18  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-28 23:37:18  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-28 23:37:19  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-28 23:37:33  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-28 23:37:33  INFO      [diversity] feed: 37 → 25 options · cooldown dropped 12 (carousel, pillar:discovery, score, short:before_after, short:dont_go_here seen <2d)
+2026-08-28 23:37:33  INFO      Evening format (weekly carousel floor): data_carousel
+2026-08-28 23:37:33  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: reality_check  ·  Audience: adventurers
+2026-08-28 23:37:33  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 80
+2026-08-28 23:37:33  INFO      Audience filter 'adventurers' → 11 destinations match.
+2026-08-28 23:37:33  INFO      Fingerprint dedup snapshot — 80 dests in 7d · 111 (dest,fmt) pairs in 30d · 227 media in 60d
+2026-08-28 23:37:37  INFO      Shared best destination locked: Igatpuri
+2026-08-28 23:37:37  INFO      Carousel locked (data_carousel): igatpuri, kaza, bhimashankar, umlingla, kolad
+2026-08-28 23:37:37  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-08-28 23:37:37  WARNING   [instagram/nakshiq] data_carousel: igatpuri inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'jog-falls' as score_card to keep the slot live.
+2026-08-28 23:37:37  INFO      [instagram/nakshiq] Caption ready (401 chars, dest=jog-falls)
+2026-08-28 23:37:37  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-28 23:37:37  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jog-falls.mp4?v=20260524
+2026-08-28 23:37:40  INFO          Brand-stamp applied: jog-falls.mp4 (5,145,247 → 2,513,658 bytes)
+2026-08-28 23:37:40  INFO          Requesting upload URL for jog-falls.mp4 (2,513,658 bytes, video/mp4)
+2026-08-28 23:37:42  INFO          Uploading to R2 (timeout=300s)...
+2026-08-28 23:37:43  INFO          R2 PUT OK. Confirming...
+2026-08-28 23:37:45  INFO          Media ready: nQYXb (2,513,658 bytes · jog-falls.mp4)
+2026-08-28 23:37:45  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-28 23:38:38  INFO      [instagram/nakshiq] ✅ Published · Outstand=5LHL5 · Platform=18107600708586756
+2026-08-28 23:38:38  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-08-28 23:38:38  WARNING   [facebook/Nakshiq] data_carousel: igatpuri inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'jog-falls' as score_card to keep the slot live.
+2026-08-28 23:38:38  INFO      [facebook/Nakshiq] Caption ready (583 chars, dest=jog-falls)
+2026-08-28 23:38:38  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-28 23:38:38  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jog-falls.mp4?v=20260524
+2026-08-28 23:38:40  INFO          Brand-stamp applied: jog-falls.mp4 (5,145,247 → 2,513,658 bytes)
+2026-08-28 23:38:40  INFO          Requesting upload URL for jog-falls.mp4 (2,513,658 bytes, video/mp4)
+2026-08-28 23:38:41  INFO          Uploading to R2 (timeout=300s)...
+2026-08-28 23:38:43  INFO          R2 PUT OK. Confirming...
+2026-08-28 23:38:44  INFO          Media ready: gXjt1 (2,513,658 bytes · jog-falls.mp4)
+2026-08-28 23:38:44  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-28 23:39:00  INFO      [facebook/Nakshiq] ✅ Published · Outstand=iK49k · Platform=1074501841634834
+2026-08-28 23:39:00  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-28 23:39:00  INFO      State saved. Run complete.
+2026-08-28 23:39:00  INFO      ════════════════════════════════════════════════════════════
