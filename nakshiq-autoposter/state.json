@@ -32,40 +32,21 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-08-26",
-    "m8EAd_yt_short": "2026-08-26",
     "m8EAd": "2026-08-27",
     "m8EAd_evening": "2026-08-27",
     "PdMu0": "2026-08-27",
     "PdMu0_evening": "2026-08-27",
     "m8EAd_carousel": "2026-08-27",
     "PdMu0_carousel": "2026-08-27",
-    "m8EAd_greeting": "2026-08-26",
-    "m8EAd_greeting_story": "2026-08-26",
-    "PdMu0_greeting": "2026-08-26",
-    "m8EAd_evening_story": "2026-08-27"
+    "m8EAd_evening_story": "2026-08-27",
+    "m8EAd_yt_short": "2026-08-28",
+    "GAh5p_yt_short": "2026-08-28"
   },
   "last_sync": "2026-08-27T23:55:59.232685+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "srirangam",
-      "date": "2026-08-13"
-    },
-    {
-      "destination_id": "dakor",
-      "date": "2026-08-13"
-    },
-    {
-      "destination_id": "chettinad",
-      "date": "2026-08-13"
-    },
-    {
-      "destination_id": "adilabad",
-      "date": "2026-08-13"
-    },
     {
       "destination_id": "bangus-valley",
       "date": "2026-08-14"
@@ -293,6 +274,10 @@
     {
       "destination_id": "lonavala",
       "date": "2026-08-27"
+    },
+    {
+      "destination_id": "mount-abu",
+      "date": "2026-08-28"
     }
   ],
   "posted_formats": {
@@ -8815,17 +8800,6 @@
       "media_id": "v3_tl_editorial_listicle-mumbai.png"
     },
     {
-      "timestamp": "2026-08-27T23:57:17.219220+00:00",
-      "date": "2026-08-27",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "yJB5V",
-      "destination": "kanchipuram",
-      "format": "collection_spotlight",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-08-27T23:57:32.824331+00:00",
       "date": "2026-08-27",
       "platform": "facebook",
@@ -8835,6 +8809,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "lonavala.mp4"
+    },
+    {
+      "timestamp": "2026-08-28T16:49:56.109803+00:00",
+      "date": "2026-08-28",
+      "platform": "instagram",
+      "post_id": "ShyEP",
+      "destination": "mount-abu",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_mount-abu_en_2026-08-28.mp4"
+    },
+    {
+      "timestamp": "2026-08-28T16:50:07.830279+00:00",
+      "date": "2026-08-28",
+      "platform": "youtube",
+      "post_id": "rnINm",
+      "destination": "mount-abu",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_mount-abu_en_2026-08-28.mp4"
     }
   ],
   "theme_usage": {
@@ -8859,6 +8851,11 @@
         "2026-05-19",
         "2026-06-01",
         "2026-06-16"
+      ],
+      "mumbai": [
+        "2026-05-20",
+        "2026-05-26",
+        "2026-08-27"
       ],
       "pahalgam": [
         "2026-05-20",
@@ -8950,15 +8947,9 @@
         "2026-05-28",
         "2026-08-04"
       ],
-      "ooty": [
-        "2026-05-29"
-      ],
       "har-ki-doon": [
         "2026-05-29",
         "2026-05-31"
-      ],
-      "gurudongmar-lake": [
-        "2026-05-29"
       ],
       "tirthan-valley": [
         "2026-05-30"
@@ -9216,9 +9207,6 @@
         "2026-08-10",
         "2026-08-23"
       ],
-      "mumbai": [
-        "2026-08-27"
-      ],
       "kanchipuram": [
         "2026-08-27"
       ]
@@ -9258,12 +9246,13 @@
         "2026-05-24",
         "2026-06-19"
       ],
+      "v3_tl_editorial_listicle": [
+        "2026-05-25",
+        "2026-08-27"
+      ],
       "v3_tl_world_best_india": [
         "2026-05-29",
         "2026-06-04"
-      ],
-      "v2_route_animated_map": [
-        "2026-05-29"
       ],
       "weekend_escape": [
         "2026-05-30",
@@ -9410,9 +9399,6 @@
       "data_carousel": [
         "2026-07-01",
         "2026-08-02"
-      ],
-      "v3_tl_editorial_listicle": [
-        "2026-08-27"
       ]
     },
     "reels": {
@@ -9442,6 +9428,10 @@
         "2026-05-24",
         "2026-06-03"
       ],
+      "mumbai": [
+        "2026-05-26",
+        "2026-08-27"
+      ],
       "leh": [
         "2026-05-27",
         "2026-06-26"
@@ -9449,9 +9439,6 @@
       "hampi": [
         "2026-05-28",
         "2026-08-04"
-      ],
-      "gurudongmar-lake": [
-        "2026-05-29"
       ],
       "yamunotri": [
         "2026-05-30"
@@ -9619,9 +9606,6 @@
       ],
       "hyderabad": [
         "2026-08-26"
-      ],
-      "mumbai": [
-        "2026-08-27"
       ],
       "lonavala": [
         "2026-08-27"
@@ -9918,8 +9902,7 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    },
-    "collection_carousel_dests:pancha-bhoota-stalams": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
