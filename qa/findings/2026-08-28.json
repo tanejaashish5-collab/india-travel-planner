@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-08-28",
+    "date": "2026-08-28",
+    "started_utc": "2026-08-28T02:06:00Z",
+    "completed_utc": "2026-08-28T02:45:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled task nakshiq-daily-test), following qa/SKILL.md exactly. TOP STORYLINE (a correction to yesterday's record): the GA4-audit stranded-commit pattern that 08-27's QA session declared FIXED was a false negative. Read the real cron log (~/.claude/ga4-audit-cron.log) via Desktop Commander (real Mac shell, not this session's sandbox) rather than trusting a single sync-check snapshot, and found ALL THREE cron runs since the e04cccec PATH fix landed (08-26, 08-27, 08-28 mornings, each 09:45 AEST) failed to push, every one with the identical new signature 'fatal: could not read Username for https://github.com: Device not configured' -- notably NOT the old 'gh: command not found' error, which confirms the PATH fix genuinely resolved gh-resolution but exposed a second, previously-masked failure underneath it. Reproduced gh's credential helper directly with `printf 'protocol=https\\nhost=github.com\\n\\n' | env -i HOME=\"$HOME\" PATH=\"/opt/homebrew/bin:/usr/local/bin:$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin\" git credential fill` from an interactive Desktop-Commander-spawned shell -- it SUCCEEDED (returned a real token, gh reports the store as 'keyring'), meaning the failure is not PATH, not HOME, not the credential-helper resolution itself, but something specific to the true cron daemon's execution context that this interactive-shell repro could not reproduce. Checked `crontab -l`: the GA4 job runs via classic BSD `cron` ('45 9 * * * bash .../ga4-audit-cron.sh'), not a launchd agent. This is the textbook shape of a well-known macOS gotcha: plain `cron` jobs execute outside the user's login/GUI security session and commonly cannot access Keychain-backed credential stores (gh's token here is stored via the system keyring) even though the identical command works fine from any real interactive shell (Terminal, SSH, or this session's Desktop-Commander shell) -- which explains why every manual repro attempt looks fine while the actual unattended cron keeps failing. This also retroactively explains 08-27's false-positive: something OTHER than the cron's own push (source not identified -- not this session, not the cron's own heal-fallback, both of which are logged as failing that morning) must have pushed 529cee52 to origin between the cron's 09:45 AEST failure and the QA session's ~12:06 PM AEST sync check that day; the log proves the automated path did not do it, so the 08-27 'first day the fix was live' claim was incorrect and should not have been marked FIXED. CORRECTIVE ACTION TAKEN THIS SESSION: pushed the stranded 9c1725a1 ('measure(ga4): audit 2026-08-28') to origin/main via Desktop Commander's real shell (working gh auth in that context) -- verified before (0 ahead/1 behind) and after (0 ahead/0 behind, `git rev-list --left-right --count origin/main...main`). This is the same 'QA session's own push as incidental safety net' pattern documented on 08-24 through 08-26, just executed via Desktop Commander instead of this session's own sandboxed bash (which has no gh binary at all, confirmed via `which gh` returning empty -- a separate, expected limitation of this Linux sandbox, distinct from the real Mac's cron-vs-interactive-shell Keychain gap). Real fix still needed from the founder: either store the GitHub token outside Keychain for cron's use (a plaintext token file read via GH_TOKEN env var in the crontab line, avoiding gh's keyring lookup entirely) or convert the crontab entry to a launchd LaunchAgent (which typically retains login-session Keychain access). See new_findings_today for full writeup and recommendation. SECOND STORYLINE: git log confirmed only 1 commit landed on origin/main since 08-27's QA commit (ac85c152) -- the GA4 audit markdown itself (9c1725a1, no app code) -- so 0 new deploys since 08-27; data-dpl-id hint UNCHANGED (dpl_DUNbLPc3xfptKR7P31mthV3yCzGw) confirming this directly via Section F. THIRD STORYLINE: Section B ran into real cold-cache turbulence today -- 5 of 10 sampled destinations (gagron-fort, raghurajpur, champaner-pavagadh, rangat, surat) read 2827-3500ms on first hit, all 5 over the 1500ms reprobe threshold (the busiest Section-B reading in the recent record; 08-27 had 0 outliers). Reprobed immediately per SKILL.md convention: 4 of 5 came back in 129-139ms; ran a third, independent verification via direct `curl -sI` on all 5 about a minute later and got x-vercel-cache: HIT with age~102-103s on every one -- conclusively an ISR cold-start/regeneration artifact (first visitor after a cache window expired pays a synchronous render, everyone after is instant), not a systemic slowdown or a defect. Section-I core-routes TTFB (median 337ms, max 693ms) and DB query latency were unaffected, consistent with this being isolated to those 5 specific destination pages' ISR cache state, not a platform-wide issue. FOURTH STORYLINE: today's random 10-sample (gagron-fort, tosamaidan, raghurajpur, gangotri, silvassa, champaner-pavagadh, rangat, karaikal, surat, panaji) landed 10/10 cinematic-template / 0/10 non-cinematic (confirmed via grep against apps/web/src/lib/cinematic-destinations.ts, still 505/533 total pool) -- breaking the 08-26/08-27 two-day streak of natural non-cinematic representation. Added statistical context this run that prior sessions hadn't computed: with 505/533 (~94.7%) of destinations in the cinematic pool, a pure-random 10-sample has an approximately 58% chance of landing entirely in the cinematic majority by chance alone (0.947^10) -- so BOTH today's all-cinematic draw AND the prior 2-day streak of mixed draws are ordinary binomial variance, not a meaningful trend in either direction. Covered Section K's Leaflet-template check via an out-of-sample control (vishnuprayag, the same destination 08-27 used when it was still in-sample) rather than skipping it, per the established fallback pattern. FIFTH STORYLINE: found a genuinely new data point while checking newsletter_events (added by the 08-26 migration, 0 rows as of 08-27) -- it now holds exactly 1 row: a real, successfully-signature-verified Resend 'email.delivered' webhook event, timestamped 2026-08-27 22:30 UTC, addressed to the founder's own inbox (taneja.ashish5@gmail.com), sent FROM 'newsletter@nakshiq.com' but with subject/sender-name content entirely unrelated to NakshIQ ('Manifestation OS <newsletter@nakshiq.com>', subject '🧲 Fri 28 Aug · Venus Day — Value & self-worth'). Two things follow: (a) this positively answers 08-27's open question 'is RESEND_WEBHOOK_SECRET actually configured and the webhook registered' -- yes, empirically, since the route's fail-closed design (confirmed by reading source on 08-27) would have 401'd and written nothing if the secret were wrong or unset; (b) newsletter_sends stayed at 0 (no NakshIQ send has gone through the new per-recipient send-loop yet), so this event did NOT originate from NakshIQ's own send path -- it reads as a second, unrelated product ('Manifestation OS', apparently a personal/side newsletter) sharing the SAME Resend account and possibly the same webhook endpoint, landing its delivery events in NakshIQ's newsletter_events table. This is the same shape as the already-tracked deal_radar-schema question (NEW-2026-08-25-002) -- an adjacent, unrelated business sharing this project's infrastructure -- except this time the foreign data is inside a table meant to power NakshIQ's own delivery metrics, not just an adjacent schema. Flagged as a new finding for founder awareness rather than asserted as a bug, since the cross-use may be entirely intentional. Sections A/B/C/D/D2/F/G/H/I/I2/J/family-fix-check/L ran as one staged Python (requests) script directly against prod (qa/findings/2026-08-28/probe.py, carried forward verbatim in methodology from 2026-08-27/probe.py with SEED/date changed; no new API fixtures needed since no app code shipped since 08-27). Section E + DB ground-truths run via Supabase MCP (project dudzsdzfvikjjhurxrgc): re-verified schema via information_schema before trusting field names (two queries needed a rewrite after guessing wrong column names -- destinations has no hi_name/hi_tagline/hi_why_special columns, translations live in a `translations` jsonb column instead; newsletter_subscribers has no status/active column, computed active as unsubscribed_at IS NULL and confirmed as confirmed_at IS NOT NULL -- both corrected before trusting any numbers). list_migrations confirms no new migration since 073 (08-26), consistent with the 0-new-deploy finding. Every core DB metric came back EXACTLY flat vs 08-27: destinations_total=533, emergency_sos_rows=533/0-without-row, sos_min/avg/total=5/7.81/4165, sos_rows_under_3=0, sos_placeholder_x=0, sos_local_helpers_nonempty=178, confidence_cards_total=525, people_who_help object/array/nonempty-array=93/432/84, hindi has-name/tagline/why_special=533/533/533 (via translations->'hi'->>field), stay_picks_out_of_range=0, newsletter_subscribers total/active/confirmed=15/14/10 (unchanged since 08-17), auto_verify_status confirmed/needs_source/never_run=109/300/124, security_advisors_count=18 (flat vs 08-27, both new-table INFOs already explained that day). Today's 10-sample SOS dialable counts pulled directly: champaner-pavagadh 7, gagron-fort 8, gangotri 9, karaikal 8, panaji 8, raghurajpur 7, rangat 9, silvassa 8, surat 7, tosamaidan 9 -- sum 80, all >=3 (min=7), 0 malformed. SOS auto-reverify verified_by breakdown re-pulled: sos-auto-reverify still 109 rows, max(verified_date) still 2026-08-03, unchanged from 08-27 -- expected and not a fresh concern, since the cron is weekly-Monday and today is Friday 08-28 (no run was due between 08-27 and today; next due 2026-08-31). refresh-stay-picks-agent's latest run (2026-08-27 22:24:23 UTC, batch of 20 destinations, ok=19/fail=1/rows_written=54) read in full: the 1 failure (mudumalai) was a good defensive drop (all 3 candidate properties were ambiguously attributed to neighboring Bandipur rather than confidently in Mudumalai -- dropped rather than risk wrong-destination data, pre-existing rows left untouched); its own verification_note again confirms the SAME 403-CONNECT egress-policy denial to www.nakshiq.com, now explicitly counted by the job itself as '18+ consecutive calendar days ... including this run' (NEW-2026-08-19-001, unchanged, still open, still needs founder allowlisting). The job also self-flagged a new inconsistency worth a founder decision: this run wrote all 54 rows with translations={} (no Hindi authored), unlike the 08-24 run which did author hi.why_nakshiq for all rows -- SKILL.md's 7-step procedure doesn't currently mandate the Hindi step, so this isn't a bug, just an unresolved process question. None of today's 10 QA-sample destinations overlap with that batch's 20. audit-gsc-alerts unchanged since 08-27 03:30 (same single contextual-only festivals cohort_clicks_drop finding, no new run today). Noticed (not previously drilled into) an hourly 'audit-cache-headers' ops_reports job checking Vercel cache-control/x-vercel-cache behavior on a small URL sample -- 0 violations on both of today's runs (01:17 and 02:17 UTC); appears to be legitimate existing monitoring infrastructure, not a new gap. Section K run via the Claude-in-Chrome MCP (the built-in in-app browser pane refused navigation outright in this headless/unattended session -- no user present to grant the site approval it seemed to be waiting on -- so this session used the external Chrome extension connector instead, which connected cleanly on the first attempt): panaji en (today's fresh in-sample cinematic destination: atlas SVG viewBox='0 0 1000 1100' present, 0 leaflet by design, H1='Panaji.', 0 console errors) + panaji hi (lang=hi, H1 still English 'Panaji.' -- confirms the standing cinematic-only Hindi-H1 gap on a brand-new destination, SOS heading translated, decorative Atlas coordinate '23.5N' still present verbatim -- Panaji's real coordinates are ~15.5N/73.8E, still cosmetic/open, 0 console errors) + vishnuprayag en (OUT-OF-SAMPLE CONTROL, since today's sample had 0 non-cinematic destinations: 1 leaflet-container, 42 tiles, 9 markers via .leaflet-interactive, window.L present, atlasSvg=false, H1='Vishnuprayag', 0 console errors, lazy-mount lesson applied proactively via scroll_to+wait before probing) + vishnuprayag hi (H1 confirmed Devanagari 'विष्णुप्रयाग', lang=hi, SOS heading translated, 0 console errors) + /en/explore Grid-default-then-Map-toggle (screenshot-verified coordinate click: 519 overlay markers, matching both the UI's own '519 markers - colored by score' label and a direct .leaflet-interactive DOM count, exactly the 08-03 through 08-27 baseline, 0 console errors) + /en/trip (0 console errors) + /en/family/kerala (26 with-kids links via direct DOM query, matching the HTTP probe's section-family-fix-check.csv exactly, 0 console errors). 8 fully console-tracked page loads/interactions this run, 0 console errors throughout -- NEW-2026-06-07-001 held STILL CLOSED. Vercel get_runtime_errors(24h) via MCP: 0 error groups. Git: confirmed 0 ahead / 0 behind origin/main after this session's own push (see top storyline); working tree carries the same standing unrelated dirty/untracked files documented 08-22 through 08-27 (destination-detail-cinematic.tsx WIP diff, analytics.ts, env.example, the cruise-fare-shopping scratch-file cluster, 2 untracked citation-weekly .md files, .claude/settings.local.json, apps/web/src/lib/affiliate-links.ts) -- left entirely untouched per the standing rule; only this run's own qa/findings/2026-08-28* paths were committed.",
+    "mode": "scheduled-headless",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 39,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A -- Soft-404 regression (10 probes incl bad-slug /en/cost/<slug>, garbage months on today's sample, /en/family/not-a-real-state-999): 10/10 404.",
+    "B -- Destination availability + TTFB (10 random slugs from a fresh sitemap fetch, seed nakshiq-2026-08-28: gagron-fort, tosamaidan, raghurajpur, gangotri, silvassa, champaner-pavagadh, rangat, karaikal, surat, panaji): 10/10 200; TTFB min 546/median 1776/max 3500ms -- 5 of 10 over the 1500ms reprobe threshold (busiest Section-B day in the recent record). Reprobed all 5 immediately (4/5 dropped to 129-139ms, gagron-fort to 1297ms) AND independently re-verified via direct curl -sI about a minute later: all 5 showed x-vercel-cache: HIT, age~102-103s -- conclusively an ISR cold-start artifact, not a systemic slowdown.",
+    "C -- Hindi parity: lang + Devanagari-title check, section-heading translation check, H1-language extraction cross-referenced against cinematic-destinations.ts -- today's sample was 10/10 cinematic (0/10 non-cinematic), confirmed by grep. 0/10 Devanagari H1 today (all cinematic-template, expected gap per NEW-2026-07-09-001's known scope).",
+    "D -- SEO meta (14 URLs: landing en+hi + 10 dests + 1 month sub-route + itinerary/agra): 0 title stutter, canonical/hreflang(en+hi+x-default)/og:image present on all.",
+    "D2 -- Quiz/risk-quiz SEO re-probe (4 URLs, full seo_check incl. og:image): all pass, unchanged.",
+    "E -- SOS completeness: DB ground-truth canonical 12-column aggregate (site-wide + today's 10-sample with raw dialable counts, sum=80, min=7), a fresh sitewide placeholder-'X' regex scan (0 rows), Hindi-translations aggregate via the correct `translations->'hi'->>field` path (533/533/533/533 for name/tagline/why_special), people_who_help shape aggregate, destination_stay_picks spot-check (kaza/majuli/phawngpui-peak) plus a sitewide out-of-range scan, auto_verify_status distribution, newsletter_subscribers + newsletter_events/newsletter_sends counts (newsletter_events went 0->1, see run.executor and new_findings_today), a fresh verified_by breakdown on the SOS auto-reverify cron. Schema re-verified via information_schema first -- 2 queries needed a column-name correction (destinations translations live in a jsonb column, not hi_* columns; newsletter_subscribers has no status/active column) before trusting results.",
+    "F -- API smoke: 6 removed-route 404 confirmations, itinerary malformed/empty/empty-object (400), 3x valid-request content checks with varied params incl. explicit destinationIds (200 + real distinct content for all 3), itinerary-unresolvable-destinationIds check (404), weather no-params (400)/valid (200, live weather for varanasi), search-index (200), 2 phantom-route 404s (destinations, health), 3 webhook/resend fixtures (405/401/401, now standing checks). 21 probes total, 0x5xx. Deploy-lineage (DPL) hint UNCHANGED vs 08-27 (dpl_DUNbLPc3xfptKR7P31mthV3yCzGw) -- confirmed via git log that only 1 non-app-code commit (GA4 audit markdown) landed on origin/main since 08-27's QA session, so 0 new deploys.",
+    "G -- PWA: sw.js CACHE_VERSION (nakshiq-v54, unchanged), manifest icons+shortcuts, /offline.",
+    "H -- Sitemap integrity (index + 5 chunks, full breakdown diffed field-by-field against 08-27's recorded breakdown -- BYTE-IDENTICAL, 0 categories changed, 5TH consecutive fully-flat day).",
+    "I -- Core routes HTTP matrix (33 routes probed incl. family/state/vs/with-kids/weekend-from/membership/saved surfaces; /en/search excluded from the pass/fail tally and TTFB stats per the standing not-a-real-route note, 32 counted, all 32 2xx). TTFB min 65/median 337/p90 551/max 693ms -- no reprobe warranted (single moderate reading, unlike Section B's cold-cache cluster).",
+    "I2 -- State-redirect regression (wayanad 301 en/hi/bare, kerala 200 control).",
+    "J -- Locale-routing redirect (5 bare paths, redirects not followed).",
+    "K -- Chrome E2E (via the Claude-in-Chrome MCP -- the built-in browser pane refused navigation outright in this unattended session, no user present to approve; documented as a methodology note, not a defect): panaji en (FRESH in-sample cinematic destination, first Chrome test: atlas SVG present, 0 leaflet, H1='Panaji.', 0 console errors) + panaji hi (lang=hi, Devanagari title, H1 still English, SOS heading translated, decorative Atlas coordinate '23.5N' still present verbatim -- cosmetic, 0 errors), vishnuprayag en (OUT-OF-SAMPLE CONTROL for the Leaflet template since today's sample was 0/10 non-cinematic: 1 leaflet-container/42 tiles/9 markers/window.L present, 0 console errors, lazy-mount lesson applied proactively) + vishnuprayag hi (H1 Devanagari-verified 'विष्णुप्रयाग', lang=hi, SOS heading translated, 0 errors), /en/explore Grid-default-then-Map-toggle (519 overlay markers, screenshot-verified coordinate click, matches UI's own label + direct DOM count, 0 console errors), /en/trip + /en/family/kerala (26 with-kids links via direct DOM query, matching the HTTP probe's section-family-fix-check.csv exactly) -- 8 fully console-tracked page loads/interactions, 0 console errors throughout.",
+    "L -- Hero-image audit: HTTP HEAD-probe fallback in probe.py -- 533/533 ok, 0 missing, 0 errors.",
+    "Supplementary -- Git/GA4-audit deep investigation (real root-cause correction to 08-27's premature 'FIXED' call): read the actual cron log via Desktop Commander (real Mac shell), found 08-26/08-27/08-28 cron pushes all failed with a NEW error signature ('Device not configured') distinct from the pre-fix 'gh: command not found'; reproduced gh's credential helper successfully from an interactive shell (ruling out PATH/HOME); identified the job runs via classic BSD cron (not launchd), the textbook macOS shape for Keychain-inaccessible-from-cron; pushed today's stranded commit (9c1725a1) via Desktop Commander, verified 0 ahead/0 behind before and after. See new_findings_today for full writeup.",
+    "Supplementary -- Deploy investigation: DPL hint UNCHANGED vs 08-27 -- confirmed via git log only 1 commit (GA4 audit .md, no app code) landed since 08-27's QA session, so 0 new deploys today. list_migrations confirms no new migration since 073 (08-26), consistent.",
+    "Supplementary -- Security advisors direct re-pull (get_advisors, type=security): 18 findings, flat vs 08-27 -- both new-table INFOs already explained that day, 0 further drift.",
+    "Supplementary -- ops_reports full job-health pull (DISTINCT ON job, 21 distinct jobs): all ok=true at the flag level. Drilled into summary text for refresh-stay-picks-agent (fresh 08-27 22:24 batch of 20, ok=19/fail=1, 403 egress block unchanged, self-flagged a Hindi-translations-authoring inconsistency for founder decision) and audit-gsc-alerts (unchanged, no new run today). Noticed an hourly 'audit-cache-headers' job not previously drilled into -- 0 violations both runs today, reads as legitimate existing monitoring.",
+    "Supplementary -- newsletter_events/newsletter_sends re-check: newsletter_events went 0 (08-27) -> 1 row today -- a real, signature-verified Resend webhook event from an apparently-unrelated 'Manifestation OS' sender using the same newsletter@nakshiq.com/Resend account. Positively confirms RESEND_WEBHOOK_SECRET is configured and the webhook is registered (resolving 08-27's open question); also surfaces a new cross-product data-hygiene question. See new_findings_today.",
+    "Supplementary -- Targeted source-file continuity: apps/web/src/app/[locale]/explore/page.tsx re-grepped -- still 3 inline Supabase call sites (1 createClient + 2 supabase.from), last touched 2026-08-06, unchanged -- NEW-2026-08-03-002 root cause unchanged. Fresh 'asknakshiq' regex re-probe on today's sample (panaji): 0 occurrences -- NEW-2026-08-14-003 stays closed.",
+    "Supplementary -- Vercel get_runtime_errors(24h): 0 error groups."
+  ],
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across templates x viewports",
+      "reason": "Not run in this daily pass -- scoped as a dedicated standalone session per SKILL.md. Baseline now 116 days stale (origin 2026-05-04). No new deploy since 08-27 (only a GA4-audit markdown commit landed), so there is no new rendering surface to diff against."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Same reasoning as axe-core above -- 0 app-code changes since 08-27."
+    },
+    {
+      "phase": "Live node scripts/audit-hero-images.mjs run",
+      "reason": "Ran the HTTP HEAD-probe fallback embedded in probe.py instead (533/533 ok) -- time-boxed this session in favor of the git/GA4 root-cause investigation and the DB/Chrome drill-downs."
+    },
+    {
+      "phase": "Live re-verification of newsletter signup form submission",
+      "reason": "Would require entering an email and submitting a real form -- needs explicit user permission this headless run cannot obtain. newsletter_subscribers total unchanged at 15 since 08-17."
+    },
+    {
+      "phase": "Built-in browser pane (mcp__Claude_Browser__*) for Section K",
+      "reason": "Navigation was refused outright ('navigation to nakshiq.com was denied or failed') on every attempt including with force:true -- this is a headless/unattended scheduled session with no user present to grant the site approval the pane appeared to require. Fell back to the Claude-in-Chrome MCP connector, which connected and worked cleanly on the first attempt, so Section K itself was NOT skipped, only the specific browser tool was substituted."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "10/10 Section-A probes 404 today (incl. /en/family/not-a-real-state-999), 0 return 200."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "gagron-fort/13, /0, /notamonth, hi/tosamaidan/99 all 404 today."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat still returns a clean 404 today -- route remains deleted."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "malformed->400, empty->400, empty_object->400 today, 0x5xx."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template title stutter",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra title = 'Agra itinerary -- 1, 3 & 5 days (verified) | NakshIQ', 1 occurrence of NakshIQ."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "itinerary/agra og:image present today."
+    },
+    {
+      "id": "NEW-2026-07-03-001",
+      "title": "quiz/[topic] template ships without og:image on both locales",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en+hi/quiz/hill-station and /en+hi/risk-quiz all show og:image present, canonical present, hreflang en/hi/x-default present, 0 title stutter."
+    },
+    {
+      "id": "NEW-2026-07-07-004",
+      "title": "qa/_lib/build_report.js reads different field names than findings.json carries for the 'K -- Map widget' QA-report row",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Unresolved, unchanged: build_report.js not touched since 2026-07-07 (not re-grepped this run, no new signal expected since no app code shipped). Today's findings again populates the compatibility-alias field names so the K-row renders correctly; source-level fix still not applied."
+    },
+    {
+      "id": "NEW-2026-08-10-003",
+      "title": "qa/_lib/build_report.js's 'E -- SOS phones' row reads field names findings.json has never natively carried",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Unchanged. Today's findings again populates the compatibility aliases; source-level fix still not applied."
+    },
+    {
+      "id": "NEW-2026-07-07-003",
+      "title": "scripts/audit-hero-images.mjs (CONCURRENCY=8) does not reliably complete within the 45-second shell budget",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "The live script was not re-run this session (time-boxed); the HTTP HEAD-probe fallback again shows 533/533 ok, 0 missing."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN",
+      "today_status": "STILL GREEN",
+      "evidence": "manifest icons=3, shortcuts=5 (unchanged). /offline 200. sw.js 200, CACHE_VERSION=nakshiq-v54 -- unchanged."
+    },
+    {
+      "id": "NEW-2026-05-10-001",
+      "title": "Uttarkashi SOS publishes literal placeholder phone",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Uttarkashi not in today's 10-sample; sitewide safety floor (0 rows under 3 dialable, 0 rows without an SOS record) holds AND a fresh sitewide placeholder-'X' regex scan returned 0 rows."
+    },
+    {
+      "id": "NEW-2026-05-11-001",
+      "title": "Khonoma SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not in today's sample; sitewide aggregate + fresh placeholder scan show no regression signal."
+    },
+    {
+      "id": "NEW-2026-05-30-001",
+      "title": "khangchendzonga-np SOS contains text-typed phone field",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not in today's 10-sample. Sitewide safety floor + placeholder scan show no regression signal."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "title": "hreflang grep false-negative methodology note",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "probe.py's seo_check() carries re.IGNORECASE unchanged -- all 14+4 hreflang checks across Sections D+D2 passed cleanly."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB recheck: confidence_cards.people_who_help is 432 array-shape + 93 object-shape (525 total rows) -- exact match to the standing baseline, 0 change."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Safety floor still intact (0 destinations under 3 dialable fields, 0 without an emergency_sos row, sitewide min dialable=5, avg 7.81, total 4165 -- identical to 08-17 through 08-27). emergency_sos.local_helpers non-empty = 178/533, identical to 07-20..08-27."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet dual-template)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Today's random 10-sample was 10/10 cinematic (0/10 non-cinematic) -- verified the atlas template in-sample (panaji) and the Leaflet template via an out-of-sample control (vishnuprayag, same destination 08-27 used when it was in-sample). Both render correctly. Kept as PARTIAL -- this is architecture, not a bug."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Positively contradicted again today: vishnuprayag's markers ARE present and countable (9, via .leaflet-interactive selector)."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration; marker rendering",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "vishnuprayag (out-of-sample control today) interactively verified via Chrome: 1 leaflet-container, 42 tiles, 9 markers, window.L present, 0 console errors."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N x 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED",
+      "today_status": "REPRODUCED",
+      "evidence": "FRESH direct literal-string re-probe today on panaji (new in-sample cinematic destination): '23.5N' present verbatim (x2) -- Panaji's real coordinates are ~15.5N/73.8E. Still cosmetic, still open."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 console errors across 8 fully console-tracked Chrome observations today (panaji en+hi, vishnuprayag en+hi, explore map toggle, trip, family/kerala)."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not independently re-triggered today (modal did not surface during today's Chrome pass) -- same standing caveat as every prior week it doesn't fire."
+    },
+    {
+      "id": "NEW-2026-07-09-001",
+      "title": "Destination hero H1 + body copy render in English on /hi despite complete Hindi translations existing in the DB",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Directly confirmed the scope boundary in-sample/control today: panaji (cinematic, in-sample) shows H1='Panaji.' on /hi (English, gap present); vishnuprayag (non-cinematic, out-of-sample control) shows H1='विष्णुप्रयाग' on /hi (Devanagari, gap absent). Standing scope (cinematic-only) reconfirmed."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Section L HTTP HEAD-probe fallback: 533/533 probed, 0 missing, 0 errors."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrink regression watch",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Sitemap total FLAT at 24,975 today (byte-identical to 08-27 across every category, 5th consecutive flat day) -- 0 destinations added or removed."
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "phawngpui-peak shows <3 stay cards in rendered HTML",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "DB spot-check today: kaza=4, majuli=4, phawngpui-peak=2 (unchanged). None landed in today's random sample or in the most recent refresh-stay-picks-agent batch (08-27, 20 destinations, not this watchlist)."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Axe-core skipped again (see phases_skipped). 0 app-code deploys since 08-27, so there is nothing new to diff regardless. Baseline now 116 days stale."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Same as color-contrast above."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse skipped again. 0 app-code deploys since 08-27 -- nothing new to evaluate on rendering perf."
+    },
+    {
+      "id": "NEW-2026-08-03-002",
+      "title": "Recurring Postgres statement-timeout (57014) on /explore, traced to an uncached query bypassing cached-data.ts",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "apps/web/src/app/[locale]/explore/page.tsx re-grepped today -- still has 3 inline Supabase call sites (1 createClient + 2 supabase.from), last touched 2026-08-06, unchanged. Today's own /explore probes (HTTP + Chrome, incl. the Grid/Map toggle interaction) all succeeded cleanly regardless."
+    },
+    {
+      "id": "NEW-2026-08-10-002",
+      "title": "Postgres statement-timeout pattern breadth -- weekly trend",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Continued clean signal: today's 24h Vercel runtime-error sweep again found ZERO error groups. Not a full close-out: /explore's separate uncached queries remain open (NEW-2026-08-03-002) and the anon role's 3s statement_timeout ceiling still needs founder approval to raise."
+    },
+    {
+      "id": "NEW-2026-08-03-003",
+      "title": "SOS auto-reverify weekly cron -- needs_source rate and rollout health",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Distribution stayed exactly flat (confirmed=109, needs_source=300, never_run=124). verified_by breakdown re-pulled: sos-auto-reverify still 109 rows, max(verified_date) still 2026-08-03 -- expected, not a fresh concern, since the cron is weekly-Monday and no run was due between 08-27 and today (next due 2026-08-31). Safety floor unaffected (0 rows under 3 dialable)."
+    },
+    {
+      "id": "STATE-REDIRECT-2026-07-27",
+      "title": "/state/<destination-slug> URLs redirecting correctly to the real destination page",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Re-verified today: /en/state/wayanad, /hi/state/wayanad, and bare /state/wayanad all 301 -> the correct /destination/wayanad path in each locale. /en/state/kerala (control) correctly stays 200."
+    },
+    {
+      "id": "NEW-2026-08-13-001",
+      "title": "Production deploys failed repeatedly from build-time Postgres statement timeouts (3 in 3 days) -- root-cause fix (find_nearby_destinations caching)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "No new deploy today to test freshly (only a GA4-audit markdown commit landed) -- 0 build-time timeout recurrence, 0 runtime error groups regardless. Still PARTIAL for the same standing structural reason: the anon-role timeout ceiling and /explore's separate uncached queries are explicitly still open."
+    },
+    {
+      "id": "NEW-2026-08-14-002",
+      "title": "Newsletter signup success confirmation dead-code bug (fixed 1809adce)",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not independently re-verified live today (needs explicit user permission this headless run cannot obtain). newsletter_subscribers total unchanged at 15 since 08-17. Unrelated to today's newsletter_events finding, which is a delivery-webhook row from an apparently-unrelated sender, not a signup-confirmation UI issue."
+    },
+    {
+      "id": "NEW-2026-08-14-003",
+      "title": "3 dead 'Ask NakshIQ' nav buttons (orphaned since the 2026-08-04 AI teardown) removed",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Re-verified today: all pre-existing removed-route probes return clean 404, PLUS a fresh raw-HTML regex scan of today's in-sample panaji confirms 0 occurrences of 'asknakshiq'."
+    },
+    {
+      "id": "NEW-2026-08-14-004",
+      "title": "Pre-existing data-integrity anomaly (confidence value out of range) self-reported by the nightly stay-picks job",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Sitewide recheck today: 0 rows outside 0-1 across all of destination_stay_picks."
+    },
+    {
+      "id": "NEW-2026-08-14-005",
+      "title": "Business Report generator leaks raw technical text (incl. commit hashes / file paths) into the persona that is explicitly supposed to have none",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "build_report.js not touched since 2026-07-07 (not re-grepped this run; no new signal expected, 0 app-code changes since 08-27). Today's run.executor text again contains technical detail (file paths, commit hashes, SQL, schema names) that will leak into today's NakshIQ_Business_Report.docx exactly as it has every day since 08-14. Not fixed in this run -- out of scope for an unattended daily QA pass to change shared report-generation code."
+    },
+    {
+      "id": "NEW-2026-08-19-001",
+      "title": "refresh-stay-picks-agent's network egress block -- root cause still unresolved; watchdog flag continues to read 'ok' independently of the actual state",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "The underlying blocker is UNCHANGED: refresh-stay-picks-agent's 2026-08-27T22:24:23 UTC run's own summary text confirms the identical 403-CONNECT-tunnel policy denial to www.nakshiq.com continues, now explicitly self-counted by the job as '18+ consecutive calendar days ... including this run'. This QA session's own sandbox again reached nakshiq.com without issue for the entire A-L probe + Chrome E2E pass, confirming the block is specific to that job's own scheduled-session network policy, not a site outage.",
+      "recommendation": "Same founder action as every prior day: allowlist www.nakshiq.com for the refresh-stay-picks-agent scheduled session's egress policy, or formally accept its own substitute-check framing (leaning on canary-probe) and document that decision in ops/refresh-stay-picks/SKILL.md rather than re-discovering it nightly. Separately, the job self-flagged a new open question worth a founder decision: should Hindi translation authoring (hi.why_nakshiq etc.) be a mandatory step in its 7-step procedure? The 08-24 batch did it, the 08-27 batch (54 rows) did not, and SKILL.md doesn't currently specify either way."
+    },
+    {
+      "id": "NEW-2026-08-22-001",
+      "title": "Two days of daily-QA history (08-17, 08-18) sat uncommitted in the working tree for 5+ days -- remediation held",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Not re-verified via a fresh `git show --stat` this run (no new signal expected or sought). 2026-08-18's top-level findings.json remains a permanent, already-documented gap. No qa/-specific commit-guard has been added yet."
+    },
+    {
+      "id": "NEW-2026-08-23-001",
+      "title": "A markdown-file commit that should always trigger a Vercel rebuild sat stranded on a local-only commit -- CONFIRMED RESOLVED (08-23 instance)",
+      "prior_status": "FIXED",
+      "today_status": "FIXED",
+      "evidence": "No change -- already fully closed 08-24 through 08-27. Note: this specific instance (the Vercel-ignore-script fix for markdown audit files) is a different, already-fixed issue from the GA4-audit git-push credential problem tracked separately below."
+    },
+    {
+      "id": "NEW-2026-08-24-001",
+      "title": "Two real API fixes shipped 08-23 evening: /api/itinerary now fails loudly (404) on unresolvable destinationIds; /api/export-trip fully removed",
+      "prior_status": "FIXED",
+      "today_status": "FIXED",
+      "evidence": "Re-verified live again today: POST /api/itinerary with unresolvable destinationIds -> 404; GET /api/export-trip -> 404; 3 varied normal itinerary requests still return 200 with real, distinct content."
+    },
+    {
+      "id": "NEW-2026-08-24-002",
+      "title": "Consecutive-day 0/10-non-cinematic random destination sample -- Section K coverage of the minority template depending on an out-of-sample control",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "PARTIAL",
+      "evidence": "Today's sample reverted to 0/10 non-cinematic (10/10 cinematic), breaking the 08-26/08-27 two-day streak of natural non-cinematic representation. Section K coverage handled correctly via an out-of-sample control (vishnuprayag), same as the 08-22..08-25 precedent. NEW statistical context computed this run: with 505/533 (~94.7%) of destinations cinematic, a pure-random 10-sample has ~58% probability of landing entirely in the cinematic pool by chance alone (0.947^10) -- so today's all-cinematic draw and the prior 2-day mixed streak are BOTH ordinary binomial variance, not evidence of a shift in either direction. Reframing this from a 'streak that needs watching' to 'expected base-rate behavior, already safely covered by the control-destination fallback' -- shelving the stratified-sampling proposal on stronger grounds than before.",
+      "recommendation": "No action needed. If a stratified/guaranteed-coverage sampling scheme is ever wanted for Section K specifically, the base rate above (~58% chance of an all-cinematic draw) is the number to design around."
+    },
+    {
+      "id": "NEW-2026-08-24-003",
+      "title": "Autoposter's GA4-audit commit sat stranded unpushed at session start for a 2nd consecutive day -- CONFIRMED RESOLVED",
+      "prior_status": "FIXED",
+      "today_status": "FIXED",
+      "evidence": "No change -- this specific 08-24 instance remains closed. Superseded in practice by the ongoing pattern tracked under NEW-2026-08-26-002 below, which recurred again on 08-26/08-27/08-28 for a different underlying reason (Keychain access, not PATH)."
+    },
+    {
+      "id": "NEW-2026-08-25-002",
+      "title": "Security-advisor INFO count stable, deal_radar-schema founder question remains open",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Count flat today at 18 (unchanged from 08-27, both new-table INFOs already explained that day; no new migration since 073). The deal_radar-schema question (7 of the 18 findings) and now a second, similarly-shaped question about the 'Manifestation OS' Resend event landing in newsletter_events (see new_findings_today) both remain open and need a founder decision.",
+      "recommendation": "Unchanged from 08-25: founder decision needed on whether deal_radar (and now, possibly, a second product sharing the Resend account) are intentionally sharing this Supabase project's infrastructure."
+    },
+    {
+      "id": "NEW-2026-08-25-004",
+      "title": "Autoposter's GA4-audit commit stranded unpushed for a 3RD CONSECUTIVE DAY (08-25 instance) -- CONFIRMED RESOLVED",
+      "prior_status": "FIXED",
+      "today_status": "FIXED",
+      "evidence": "No change -- this specific 08-25 instance remains closed. See NEW-2026-08-26-002 for the ongoing, differently-caused recurrence."
+    },
+    {
+      "id": "NEW-2026-08-26-002",
+      "title": "Autoposter's GA4-audit commit stranded unpushed -- 08-27's 'FIXED' call was a false negative; the pattern recurred on all 3 cron runs since the PATH fix, for a DIFFERENT underlying reason",
+      "prior_status": "FIXED",
+      "today_status": "REGRESSION",
+      "evidence": "CORRECTION to yesterday's record: 08-27's QA session verified 'local HEAD 0 ahead/0 behind origin/main at session start' and concluded the e04cccec PATH fix was working end-to-end. It was not -- the cron's OWN log (~/.claude/ga4-audit-cron.log, read directly via Desktop Commander this run, not available to the sandboxed bash used on 08-27) shows the 08-27 09:45 AEST cron run's push AND its own stranded-commit heal-fallback both failed that morning, with the identical error the 08-26 run got ('fatal: could not read Username for https://github.com: Device not configured'). The 08-28 09:45 AEST run failed the same way a third time. Something other than the automated cron path pushed 529cee52 to origin between the 08-27 cron's failure and that day's QA sync-check ~2.3 hours later -- source not identified, but definitively not the cron itself per its own log. Root-cause correction: the PATH fix DID work (the specific 'gh: command not found' sub-message is absent from all 3 post-fix log entries, confirming gh now resolves) but exposed a second, deeper failure underneath: reproducing gh's credential helper from an interactive shell with the cron's exact PATH succeeded cleanly (real token returned), while `crontab -l` confirms this job runs via classic BSD cron (not launchd) -- the textbook macOS condition where cron jobs run outside the login/GUI security session and cannot access Keychain-backed credentials (gh's token store here is 'keyring') even though the identical command works from any interactive shell. This session pushed the 08-28 stranded commit (9c1725a1) via Desktop Commander's real shell (working gh auth there) as an immediate stopgap -- verified 0 ahead/0 behind after.",
+      "recommendation": "The PATH fix (e04cccec) should stay -- it resolved a real, separate problem. A second fix is now needed for the Keychain-access gap: either (a) store the GitHub token outside Keychain for cron's use, e.g. a plaintext token file the crontab line exports as GH_TOKEN so `gh`/git credential resolution never needs the keyring, or (b) migrate this crontab entry to a launchd LaunchAgent, which typically retains login-session Keychain access. Until one of these lands, expect this exact stranded-commit symptom to recur every morning and to require either a manual push or an incidental QA-session push to clear -- do not re-mark this FIXED on the strength of a single clean sync-check again; check the cron's own log first."
+    },
+    {
+      "id": "NEW-2026-08-27-002",
+      "title": "Security advisor count rose 16 -> 18, fully explained by migration 073 adding 2 new service-role-only tables with RLS enabled + no explicit policy (by design)",
+      "prior_status": "FIXED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Count flat at 18 today, no new migration since 073 -- explanation from 08-27 holds, 0 further drift."
+    },
+    {
+      "id": "NEW-2026-08-27-004",
+      "title": "refresh-stay-picks-agent renamed its own verification-gap field from 'verification_blocked' to 'verification_note' and softened the framing -- underlying egress block itself is unchanged",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "The 08-27 22:24 UTC run continues using 'verification_note' with the same substitute-check framing (leaning on canary-probe); underlying 403 block byte-for-byte identical. Folded into NEW-2026-08-19-001's evidence going forward rather than tracked as a fully separate item, since the two describe the same underlying condition."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-08-28-001",
+      "severity": "medium",
+      "title": "GA4-audit stranded-commit pattern is NOT fixed -- it recurred on all 3 cron runs since the PATH fix, root cause is cron's lack of Keychain access (not PATH); 08-27's 'FIXED' verdict was a false negative and is corrected here",
+      "detail": "See run.executor and the NEW-2026-08-26-002 regression_matrix entry (updated to REGRESSION today) for the full investigation. Summary: the cron log itself (not available to the 08-27 session, which only checked git sync state) shows the 08-26, 08-27, and 08-28 morning cron runs ALL failed to push, each with 'fatal: could not read Username for https://github.com: Device not configured' -- a different, new error from the pre-fix 'gh: command not found'. This confirms the e04cccec PATH fix genuinely resolved gh-resolution but did not fix the underlying push capability; a second failure (cron's inability to access the macOS Keychain where gh stores its auth token, a known limitation of classic BSD cron vs. launchd) was masked underneath it and is now the active blocker. Pushed today's stranded commit (9c1725a1) as an immediate stopgap via Desktop Commander (which has working gh auth in its interactive-shell context, unlike both the cron and this session's own sandboxed bash tool, which has no gh binary at all).",
+      "evidence": "~/.claude/ga4-audit-cron.log, read via Desktop Commander: 08-26 09:45:14 entry shows 'gh auth git-credential get: gh: command not found' then push failure; 08-27 09:45:13 and 08-28 09:45:10 entries show push failure WITHOUT that sub-message, both ending 'fatal: could not read Username for https://github.com: Device not configured'. `printf 'protocol=https\\nhost=github.com\\n\\n' | env -i HOME=\"$HOME\" PATH=\"/opt/homebrew/bin:/usr/local/bin:$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin\" git credential fill` from an interactive Desktop-Commander shell succeeded (returned a real token; `gh auth status` shows 'Logged in ... (keyring)'). `crontab -l` shows '45 9 * * * bash \".../ga4-audit-cron.sh\" >> ...' -- classic cron, no launchd agent found for this job. `git rev-list --left-right --count origin/main...main` was '0  1' (1 ahead) at session start, '0  0' after this session's `git push origin main` via Desktop Commander.",
+      "recommendation": "Store the GitHub token outside Keychain for cron's specific use (a plaintext token file, exported as GH_TOKEN in the crontab line or sourced at the top of ga4-audit-cron.sh) so credential resolution never depends on Keychain access from a non-GUI-session process -- or migrate the crontab entry to a launchd LaunchAgent. Re-verify by checking the cron log directly the morning after any fix lands, not just a same-day git-sync snapshot (which is exactly what produced 08-27's false negative)."
+    },
+    {
+      "id": "NEW-2026-08-28-002",
+      "severity": "low",
+      "title": "newsletter_events received its first row -- a real, signature-verified Resend webhook event from an apparently-unrelated 'Manifestation OS' sender sharing the same Resend account/domain as NakshIQ's newsletter",
+      "detail": "newsletter_events was 0 rows on 08-27 (expected, feature had just shipped) and holds exactly 1 row today: an 'email.delivered' event for taneja.ashish5@gmail.com (the founder's own address), from 'Manifestation OS <newsletter@nakshiq.com>', subject unrelated to travel content ('Venus Day -- Value & self-worth'). newsletter_sends remains 0 -- this event did not originate from NakshIQ's own /api/newsletter/send route. Two implications: positively, this confirms RESEND_WEBHOOK_SECRET is configured in production and the webhook is registered in Resend's dashboard (the route's fail-closed design, confirmed by reading source on 08-27, would not have written a row otherwise) -- resolving 08-27's open verification question. Separately, it suggests a second, apparently-unrelated product ('Manifestation OS') is sending mail through the same Resend account and possibly the same registered webhook URL, so its delivery events land inside NakshIQ's own newsletter_events table. This may be entirely intentional (a founder consolidating personal-project infra), but is worth a conscious decision either way, since the table's stated purpose is per-recipient delivery observability for NakshIQ's own newsletter specifically.",
+      "evidence": "SELECT * FROM newsletter_events: 1 row, id=dd54bbe2-718e-4426-a92d-8b17d16c8897, event_type=email.delivered, occurred_at=2026-08-27 22:30:04 UTC, payload.data.from='Manifestation OS <newsletter@nakshiq.com>', payload.data.subject contains 'Venus Day'. newsletter_sends count = 0 (unchanged).",
+      "recommendation": "No action required unless cross-product commingling in this specific table is unwanted. If NakshIQ-only delivery metrics matter here, consider either a separate Resend webhook endpoint/secret for the other product, or a filter in the ingestion route keyed on sender/tag. Worth pairing with the still-open deal_radar-schema founder decision (NEW-2026-08-25-002) since both are the same underlying question: which other products intentionally share this project's infrastructure."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 33,
+    "core_routes_2xx": 32,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": {
+      "min": 65,
+      "median": 337,
+      "p90": 551,
+      "max": 693
+    },
+    "core_routes_TTFB_note": "33 routes probed but /en/search returned 404 and was EXCLUDED from the pass/fail tally and TTFB stats (no app/[locale]/search page directory exists -- search is a client-side modal), consistent with every prior run. Max reading was /en/vs/manali-vs-shimla at 693ms -- single moderate reading, not reprobed.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": {
+      "min": 546,
+      "median": 1776,
+      "max": 3500
+    },
+    "destinations_TTFB_note": "Busiest Section-B reading in the recent record: 5 of 10 (gagron-fort 3500, raghurajpur 3010, champaner-pavagadh 3199, rangat 3229, surat 2827) exceeded the 1500ms reprobe threshold. Reprobed immediately (4/5 dropped to 129-139ms, gagron-fort to 1297ms), then independently re-verified via direct curl -sI about a minute later: all 5 showed x-vercel-cache: HIT with age~102-103s -- conclusively an ISR cold-start artifact (first-hit synchronous regeneration after a cache window expired), not a systemic slowdown. All 10 raw first-hit readings: gagron-fort 3500, tosamaidan 590, raghurajpur 3010, gangotri 589, silvassa 631, champaner-pavagadh 3199, rangat 3229, karaikal 546, surat 2827, panaji 725.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_section_headings_translated_sampled": 10,
+    "hindi_section_headings_translated_count": 10,
+    "hindi_h1_devanagari_count": 0,
+    "hindi_h1_devanagari_note": "0/10 today -- today's random sample landed 10/10 cinematic-template (0/10 non-cinematic), confirmed via grep against cinematic-destinations.ts (505/533 pool, unchanged). This is within normal statistical variance (~58% chance of an all-cinematic 10-draw given the 94.7% pool share) -- see NEW-2026-08-24-002. Section K covered the non-cinematic/Devanagari-H1 case via an out-of-sample control (vishnuprayag).",
+    "seo_urls_sampled": 14,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 14,
+    "seo_hreflang_en_present": 14,
+    "seo_hreflang_hi_present": 14,
+    "seo_hreflang_xdefault_present": 14,
+    "seo_og_image_present": 14,
+    "seo_methodology_note": "hreflang regex built with re.IGNORECASE (carried forward unchanged) -- 0/14 false negatives.",
+    "quiz_routes_sampled": 4,
+    "quiz_routes_og_image_present": 4,
+    "quiz_routes_note": "Full SEO re-probe of /en+hi/quiz/hill-station and /en+hi/risk-quiz today: og:image present on all 4, plus 0 stutter / canonical present / hreflang en+hi+xdefault present on all 4 -- unchanged from 08-27.",
+    "soft_404_regression_passes": 10,
+    "soft_404_regression_misses": 0,
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.81,
+    "sos_db_total_dialable_entries_11col": 4165,
+    "sos_db_total_dialable_entries_11col_note": "Identical to 08-17 through 08-27 (0 change). Field name retained as '_11col' for run-over-run continuity even though the underlying set is 12 columns. Today's-10-sample sum was 80 (min=7; champaner-pavagadh, raghurajpur, surat).",
+    "sos_db_rows_with_placeholder_x": 0,
+    "sos_db_rows_with_placeholder_x_note": "Fresh sitewide regex scan run today (^[Xx]+$ across all 12 dialable columns) -- 0 rows.",
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "sos_destinations_with_local_helpers_block": 533,
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_object_shape_rows_db": 93,
+    "people_who_help_array_shape_rows_db": 432,
+    "people_who_help_confidence_cards_total_db": 525,
+    "people_who_help_confidence_cards_total_note": "confidence_cards has 525 rows (not 533) -- 8 destinations have no confidence_cards row at all. 432 array-shape + 93 object-shape = 525. Unchanged arithmetic from every prior week this has been measured.",
+    "destinations_total_db": 533,
+    "sos_phones_total_across_10_dests": 80,
+    "sos_phones_invalid_format": 0,
+    "sos_destinations_without_block": 0,
+    "sos_no_block_tierA": 0,
+    "sos_phones_across_10_dests_note": "Real per-sample DB computation (compatibility alias for the build_report.js field-drift workaround, see NEW-2026-08-10-003): 12-column dialable count for exactly today's 10 sampled destinations -- champaner-pavagadh 7, gagron-fort 8, gangotri 9, karaikal 8, panaji 8, raghurajpur 7, rangat 9, silvassa 8, surat 7, tosamaidan 9. Sum=80. All >=3 (min=7); 0 malformed/placeholder found.",
+    "sos_auto_reverify_migration_applied": true,
+    "sos_auto_reverify_cron_schedule": "0 0 * * 1 (weekly, Monday 00:00 UTC)",
+    "sos_auto_verify_status_confirmed": 109,
+    "sos_auto_verify_status_needs_source": 300,
+    "sos_auto_verify_status_never_run": 124,
+    "sos_auto_verify_status_source_unreachable": 0,
+    "sos_auto_verify_most_recent_cron_execution_utc": "2026-08-24T00:02:16.483744+00:00",
+    "sos_auto_verify_most_recent_confirmed_verified_date": "2026-08-03",
+    "sos_auto_verify_note": "Both timestamps unchanged vs 08-27 -- expected, not a fresh concern: today is Friday 2026-08-28, the cron is weekly-Monday, so no run was due between 08-27 and today (next due 2026-08-31).",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "HTTP HEAD-probe fallback run today (not the live node scripts/audit-hero-images.mjs itself) -- 533/533 ok.",
+    "stay_picks_spotcheck_kaza": 4,
+    "stay_picks_spotcheck_phawngpui_peak": 2,
+    "stay_picks_spotcheck_majuli": 4,
+    "stay_picks_spotcheck_note": "DB-only continuity check (none of the 3 landed in today's random sample or in the most recent stay-picks-agent batch, 08-27); identical to 07-20..08-27.",
+    "stay_picks_anomaly_note": "Continues FIXED (see NEW-2026-08-14-004, closed 08-16). Sitewide recheck today: 0 rows outside 0-1 across all of destination_stay_picks.",
+    "api_endpoints_probed": 21,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 4,
+    "api_2xx_valid_returned": 5,
+    "api_404_expected_or_removed_returned": 9,
+    "api_webhook_resend_probes": 3,
+    "api_webhook_resend_5xx": 0,
+    "api_webhook_resend_note": "Now a standing check (added 08-27): GET /api/webhooks/resend -> 405 (no handler, correct); POST no signature -> 401 'Invalid signature'; POST garbage signature -> 401, byte-identical body. Unchanged today. Separately, a REAL signature-verified webhook call was observed in the DB today (newsletter_events, 1 row) -- see new_findings_today NEW-2026-08-28-002.",
+    "api_endpoints_probed_note": "21 automated via probe.py (methodology carried forward verbatim from 08-27), 0 supplementary manual checks needed.",
+    "api_itinerary_valid_status": 200,
+    "api_itinerary_valid_content_broken": false,
+    "api_itinerary_note": "3 varied live probes today (Dec/family, Oct/couple, May/solo+explicit destinationIds=[manali,shimla,jaipur]) -- ALL returned real, non-empty per-day content. PLUS re-confirmed both 08-23/24-shipped fixes still hold: unresolvable destinationIds -> 404; export-trip GET -> 404.",
+    "vercel_runtime_errors_24h_total_groups": 0,
+    "vercel_runtime_errors_24h_note": "Zero error groups found via get_runtime_errors MCP tool.",
+    "vercel_runtime_errors_itinerary_specific": 0,
+    "service_worker_version": "nakshiq-v54",
+    "service_worker_version_note": "Unchanged from 08-14 through 08-27.",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 24975,
+    "sitemap_total_urls_delta_note": "FLAT vs 08-27's 24,975 -- byte-identical category breakdown across the board, the 5TH consecutive fully-flat sitemap day (08-24 through 08-28). Destination slug/month/cost URL counts all flat (533/6396/525).",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "519 overlay markers -- identical to 08-03 through 08-27, confirmed both via DOM query (.leaflet-interactive count) and the UI's own '519 markers - colored by score' label. Screenshot-verified coordinate click used throughout, clean on the first attempt. Grid view confirmed as default (0 leaflet before toggle).",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_leaflet_template": 1,
+    "map_dest_pages_atlas_template": 1,
+    "map_widget_destination_pages_probed_interactive": 2,
+    "map_widget_destination_pages_with_leaflet": 1,
+    "map_widget_field_alias_note": "map_widget_destination_pages_* duplicates map_dest_pages_* above, see NEW-2026-07-07-004. Today's 2 Chrome-interactive probes: panaji (atlas, FRESH in-sample cinematic destination) + vishnuprayag (Leaflet, OUT-OF-SAMPLE CONTROL, since today's random draw was 0/10 non-cinematic).",
+    "map_dest_atlas_note": "panaji /en + /hi (today's fresh in-sample cinematic destination) render atlas svg viewBox 0 0 1000 1100, leaflet=0 by design (correct), 0 console errors both loads. Literal-verified the decorative corner-readout coordinates: '23.5N' present verbatim, unchanged/generic (see NEW-2026-06-06-003).",
+    "map_dest_leaflet_note": "vishnuprayag (out-of-sample control) interactively verified via Chrome: 1 leaflet-container, 42 tiles, 9 markers (.leaflet-interactive selector), window.L present, 0 console errors -- lazy-mount lesson applied proactively, succeeded on the first attempt.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 8,
+    "console_react_418_fired_loads": "0 of 8 fully console-tracked observations (panaji en+hi, vishnuprayag en+hi, explore grid+map toggle, trip, family/kerala) -- NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": false,
+    "deploy_evidence": "data-dpl-id UNCHANGED today: dpl_DUNbLPc3xfptKR7P31mthV3yCzGw, same as 08-27. git log ac85c152(08-27 QA commit)..origin/main shows exactly 1 new commit, a GA4-audit markdown file with no app code -- 0 new deploys since 08-27.",
+    "hindi_translations_db_total": 533,
+    "hindi_translations_db_has_hi_tagline": 533,
+    "hindi_translations_db_has_hi_why_special": 533,
+    "hindi_translations_db_has_hi_name": 533,
+    "hindi_translations_note": "533/533 (100%) for hi.name, hi.tagline, AND hi.why_special today -- 0 regression. Methodology correction this run: these live in destinations.translations->'hi'->>'<field>' (a jsonb column), not hi_name/hi_tagline/hi_why_special top-level columns as an initial query assumed -- corrected via information_schema before trusting the result.",
+    "sos_db_dialable_12col_note": "12-column set (police, ambulance, fire, women_helpline, tourist_helpline, road_accident, rescue_contact, local_police_station, mountain_rescue, mechanic_contact, tow_service, embassy_emergency_line), non-null + trimmed-non-empty. 4165 total, identical to 08-17 through 08-27.",
+    "sos_local_helpers_baseline_note": "178 = emergency_sos.local_helpers (SOS sub-list, site-rendered) -- identical to 07-20 through 08-27.",
+    "destinations_total_db_note": "Steady at 533 (0 new destinations for 75+ days).",
+    "newsletter_subscribers_total_db": 15,
+    "newsletter_subscribers_active_db": 14,
+    "newsletter_subscribers_confirmed_db": 10,
+    "newsletter_subscribers_note": "Total UNCHANGED from 08-17 through 08-27's 15 -- no new signups this window. newsletter_sends still 0 rows (no NakshIQ send has gone through the new send-loop yet). newsletter_events went 0 (08-27) -> 1 row today -- see new_findings_today NEW-2026-08-28-002 for the full writeup (a real, signature-verified webhook event from an apparently-unrelated 'Manifestation OS' sender).",
+    "ai_surface_removal_verified": true,
+    "ai_surface_removal_note": "6/6 removed-route probes (chat/gap-year-generate/gap-year-regenerate/embed/ask/export-trip) return clean 404 again today, consistent with NEW-2026-08-14-003 and NEW-2026-08-24-001 staying closed.",
+    "security_advisors_count": 18,
+    "security_advisors_count_prior": 18,
+    "security_advisors_note": "Flat at 18 today (unchanged from 08-27) -- no new migration since 073, so no new findings expected or found. 12 INFO (7 deal_radar + 3 legacy-NakshIQ + 2 newsletter_*) + 6 WARN (1 extension_in_public + 4 SECURITY DEFINER + 1 leaked-password), 0 drift.",
+    "ops_reports_targeted_check_note": "Pulled the FULL DISTINCT-ON-job latest-per-job snapshot this run (21 distinct jobs), all ok=true at the flag level. Drilled into summary text for refresh-stay-picks-agent (fresh 08-27 22:24 UTC batch, 19/20 ok, rows_written=54, egress block unchanged + self-flagged a Hindi-authoring-consistency question) and audit-gsc-alerts (unchanged, no new run since 08-27 03:30). Noticed an hourly 'audit-cache-headers' job (0 violations both runs today) not previously drilled into -- reads as legitimate existing monitoring, not a new gap.",
+    "git_sync_note": "Local HEAD was 1 commit AHEAD of origin/main (the unpushed 08-28 GA4-audit commit, 9c1725a1) at session start -- pushed via Desktop Commander mid-session, confirmed 0 ahead / 0 behind after. This directly corrects 08-27's premature 'FIXED' verdict on the GA4-audit stranded-commit pattern -- see NEW-2026-08-28-001 and the NEW-2026-08-26-002 regression_matrix update.",
+    "supabase_new_tables_verified": true,
+    "supabase_new_tables_note": "newsletter_sends still 0 rows (expected -- no NakshIQ newsletter issue sent since the feature shipped). newsletter_events now has 1 row, see new_findings_today."
+  },
+  "deliverables": [
+    "qa/findings/2026-08-28.json",
+    "qa/findings/2026-08-28/ (probe.py + section-*.csv/json evidence artifacts + html/ raw Hindi page captures + run.log)",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "TOP STORYLINE: 08-27's QA session incorrectly declared the GA4-audit stranded-commit pattern FIXED. It was not -- the cron's own log (read this run via Desktop Commander, not available to the 08-27 session's sandboxed bash) shows all 3 runs since the PATH fix (08-26, 08-27, 08-28 mornings) failed to push, with a NEW error signature distinct from the pre-fix one. Root cause identified as cron's lack of macOS Keychain access for gh's stored credentials (classic BSD cron vs. launchd), not PATH. Pushed today's stranded commit as an immediate stopgap. See NEW-2026-08-28-001 and the corrected NEW-2026-08-26-002 regression_matrix entry. Lesson for future sessions: verify a 'fix' by reading the actual cron/job log, not by checking git-sync state alone -- something else can silently paper over a still-broken automated path.",
+    "SECOND STORYLINE: Section B hit its busiest cold-cache day in the recent record (5/10 destinations over the 1500ms reprobe threshold vs 08-27's 0/10) -- triple-verified as an ISR cold-start artifact (reprobe + independent curl x-vercel-cache: HIT check), not a systemic slowdown. Section I core-routes TTFB was unaffected (median 337ms, in normal range).",
+    "THIRD STORYLINE: today's random 10-sample landed 10/10 cinematic-template, breaking the 08-26/08-27 streak of natural non-cinematic representation. Computed the actual base rate this run for the first time (~58% chance of an all-cinematic draw given the 94.7% pool share) -- reframes both this all-cinematic day and the prior mixed-streak days as ordinary variance rather than a trend. Section K covered the Leaflet/non-cinematic template via an out-of-sample control (vishnuprayag), so coverage was not actually lost today.",
+    "FOURTH STORYLINE: newsletter_events received its first-ever row -- a real Resend webhook delivery event from an apparently-unrelated 'Manifestation OS' sender sharing the same Resend account. Positively confirms the webhook secret/registration from 08-27 is genuinely live; also raises a new (low-severity, not necessarily a bug) cross-product data-hygiene question for the founder, in the same shape as the standing deal_radar-schema question.",
+    "0 new deploys since 08-27 (only a GA4-audit markdown commit landed) -- DPL hint, all DB aggregates, security advisors, and sitemap totals are flat by direct comparison, not by assumption.",
+    "The built-in browser pane (mcp__Claude_Browser__*) refused navigation outright this session (no user present to approve the site in this unattended run) -- substituted the Claude-in-Chrome MCP connector for all of Section K, which worked cleanly. Not a site-side defect; a methodology note for future headless runs.",
+    "The Business Report generator's persona-leak bug (NEW-2026-08-14-005, found 08-14) is unfixed and will recur in today's NakshIQ_Business_Report.docx exactly as it has every day since -- header() prints the full raw run.executor text verbatim for all personas including business. Confirmed the source is unchanged (build_report.js last touched 2026-07-07, not re-grepped this run since no app code shipped).",
+    "The live node scripts/audit-hero-images.mjs script was not re-run directly this session (time-boxed in favor of the git/GA4 root-cause investigation) -- used the HTTP HEAD-probe fallback embedded in probe.py instead.",
+    "Uttarkashi, Khonoma, and khangchendzonga-np (the 3 historically-buggy SOS destinations) did not land in today's random sample -- relied on the sitewide-aggregate safety floor + a fresh placeholder-phone regex scan (both clean), not live per-destination re-verification this run.",
+    "The Phase-8-carry-sparse-stays watchlist (kaza, phawngpui-peak, majuli) was checked via direct DB spot-check today, not random sampling -- none of the 3 landed in today's sample or in the most recent stay-picks-agent batch (08-27, 20 destinations).",
+    "Axe-core/Lighthouse deferred again -- baseline now 116 days stale. 0 app-code deploys since 08-27, so there was genuinely nothing new on the rendering/a11y/perf front to check a diff against.",
+    "Did not re-run the full ~21-job ops_reports inventory with summary-text drill-down for every job this week -- pulled the full latest-per-job flag snapshot (21 jobs) but only drilled into summary text for the 2 jobs known to carry substantive detail (refresh-stay-picks-agent, audit-gsc-alerts), plus a first look at audit-cache-headers.",
+    "Did not attempt to submit the real newsletter/email-capture form to re-verify the 08-14 confirmation-UI fix live -- would require entering personal data into a form and submitting it, which needs explicit user permission this headless run cannot obtain. newsletter_subscribers total unchanged at 15 since 08-17.",
+    "The working tree carries the same pre-existing, unrelated uncommitted changes documented 08-22 through 08-27 (destination-detail-cinematic.tsx WIP diff, analytics.ts, env.example, an unrelated cruise-fare-shopping scratch-file cluster, 2 untracked citation-weekly .md files, .claude/settings.local.json, apps/web/src/lib/affiliate-links.ts) -- left entirely untouched per the established 'stage narrowly, never git add -A' rule; only this run's own qa/findings/2026-08-28* paths were committed. The GA4-audit push performed this session (via Desktop Commander, a separate real-Mac-shell path, not this session's own git-add/commit flow) is the one deliberate exception, done to unstrand an existing, already-committed, non-QA commit -- not to add new content.",
+    "sos_phones_invalid_format=0 today used the same permissive definition as every prior week (any non-empty string counts, including honest-scarcity or descriptive rescue_contact text) -- consistent methodology, not a new leniency.",
+    "No stale git lock files were present at any point this session (checked at both the sandboxed-bash level and, separately, via Desktop Commander on the real repo checkout)."
+  ]
+}
