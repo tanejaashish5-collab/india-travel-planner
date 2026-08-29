@@ -20816,3 +20816,50 @@ Date range: 2026-04-15 → 2026-08-28
 2026-08-29 15:50:55  INFO      YT Short posted: format=did_you_know, music=dance-740
 2026-08-29 15:50:55  INFO      State saved. YT Short run complete.
 2026-08-29 15:50:55  INFO      ════════════════════════════════════════════════════════════
+2026-08-29 17:47:21  INFO      ════════════════════════════════════════════════════════════
+2026-08-29 17:47:21  INFO      Nakshiq Autoposter · EVENING · 2026-08-29 · weekday=5
+2026-08-29 17:47:21  INFO      ════════════════════════════════════════════════════════════
+2026-08-29 17:47:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-29 17:48:03  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-29 17:48:03  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-29 17:48:04  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-29 17:48:04  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-29 17:48:04  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-29 17:48:04  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-29 17:48:19  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-29 17:48:19  INFO      Evening format (balance→verification): confidence_intel [0% vs target 20%] (0/15 never featured)
+2026-08-29 17:48:19  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: route_spotlight  ·  Audience: families
+2026-08-29 17:48:19  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 82
+2026-08-29 17:48:19  INFO      Audience filter 'families' → 7 destinations match.
+2026-08-29 17:48:19  INFO      Fingerprint dedup snapshot — 82 dests in 7d · 111 (dest,fmt) pairs in 30d · 225 media in 60d
+2026-08-29 17:48:19  INFO      Route locked: Kinnaur–Spiti Grand Circuit
+2026-08-29 17:48:20  INFO      Shared best destination locked: Hogenakkal Falls
+2026-08-29 17:48:20  INFO      [instagram/nakshiq] Generating confidence_intel post...
+2026-08-29 17:48:20  INFO      confidence_intel for Hogenakkal Falls: only 0 card rows — SKIPPING
+2026-08-29 17:48:21  WARNING   [instagram/nakshiq] confidence_intel: hogenakkal inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'kaza' as score_card to keep the slot live.
+2026-08-29 17:48:21  INFO      [instagram/nakshiq] Caption ready (390 chars, dest=kaza)
+2026-08-29 17:48:22  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-29 17:48:22  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kaza.mp4?v=20260524
+2026-08-29 17:48:25  INFO          Brand-stamp applied: kaza.mp4 (6,210,443 → 2,897,074 bytes)
+2026-08-29 17:48:25  INFO          Requesting upload URL for kaza.mp4 (2,897,074 bytes, video/mp4)
+2026-08-29 17:48:26  INFO          Uploading to R2 (timeout=300s)...
+2026-08-29 17:48:28  INFO          R2 PUT OK. Confirming...
+2026-08-29 17:48:29  INFO          Media ready: ztnu2 (2,897,074 bytes · kaza.mp4)
+2026-08-29 17:48:29  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-29 17:49:15  INFO      [instagram/nakshiq] ✅ Published · Outstand=84rXV · Platform=18096922142572457
+2026-08-29 17:49:15  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-08-29 17:49:15  INFO      confidence_intel for Hogenakkal Falls: only 0 card rows — SKIPPING
+2026-08-29 17:49:15  WARNING   [facebook/Nakshiq] confidence_intel: hogenakkal inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'kaza' as score_card to keep the slot live.
+2026-08-29 17:49:15  INFO      [facebook/Nakshiq] Caption ready (557 chars, dest=kaza)
+2026-08-29 17:49:15  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-29 17:49:15  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kaza.mp4?v=20260524
+2026-08-29 17:49:17  INFO          Brand-stamp applied: kaza.mp4 (6,210,443 → 2,897,074 bytes)
+2026-08-29 17:49:17  INFO          Requesting upload URL for kaza.mp4 (2,897,074 bytes, video/mp4)
+2026-08-29 17:49:18  INFO          Uploading to R2 (timeout=300s)...
+2026-08-29 17:49:19  INFO          R2 PUT OK. Confirming...
+2026-08-29 17:49:21  INFO          Media ready: TMdLy (2,897,074 bytes · kaza.mp4)
+2026-08-29 17:49:21  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-29 17:49:31  INFO      [facebook/Nakshiq] ✅ Published · Outstand=V1Tay · Platform=2105178300111565
+2026-08-29 17:49:31  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-29 17:49:31  INFO      State saved. Run complete.
+2026-08-29 17:49:31  INFO      ════════════════════════════════════════════════════════════

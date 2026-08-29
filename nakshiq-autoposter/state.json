@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-08-28",
-    "m8EAd_evening": "2026-08-28",
-    "PdMu0": "2026-08-28",
-    "PdMu0_evening": "2026-08-28",
+    "m8EAd": "2026-08-29",
+    "m8EAd_evening": "2026-08-29",
+    "PdMu0": "2026-08-29",
+    "PdMu0_evening": "2026-08-29",
     "m8EAd_carousel": "2026-08-29",
     "PdMu0_carousel": "2026-08-29",
     "m8EAd_yt_short": "2026-08-28",
     "GAh5p_yt_short": "2026-08-29"
   },
-  "last_sync": "2026-08-28T23:37:17.615469+00:00",
+  "last_sync": "2026-08-29T17:48:03.281262+00:00",
   "posted_destinations": [
     {
       "destination_id": "gurez-valley",
@@ -281,6 +281,10 @@
     {
       "destination_id": "ambaji",
       "date": "2026-08-29"
+    },
+    {
+      "destination_id": "kaza",
+      "date": "2026-08-29"
     }
   ],
   "posted_formats": {
@@ -302,9 +306,9 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "v3_tl_editorial_listicle",
+      "score_card",
       "score_card"
     ],
     "PdMu0": [
@@ -325,8 +329,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
+      "score_card",
       "score_card",
       "score_card"
     ]
@@ -8942,6 +8946,28 @@
       "destination": "ambaji",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_ambaji_en_2026-08-29.mp4"
+    },
+    {
+      "timestamp": "2026-08-29T17:49:15.060413+00:00",
+      "date": "2026-08-29",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "84rXV",
+      "destination": "kaza",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kaza.mp4"
+    },
+    {
+      "timestamp": "2026-08-29T17:49:31.833757+00:00",
+      "date": "2026-08-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "V1Tay",
+      "destination": "kaza",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kaza.mp4"
     }
   ],
   "theme_usage": {
@@ -9162,7 +9188,8 @@
         "2026-06-25",
         "2026-08-10",
         "2026-08-12",
-        "2026-08-28"
+        "2026-08-28",
+        "2026-08-29"
       ],
       "tosamaidan": [
         "2026-06-09",
@@ -9439,7 +9466,8 @@
         "2026-08-24",
         "2026-08-25",
         "2026-08-27",
-        "2026-08-28"
+        "2026-08-28",
+        "2026-08-29"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9701,7 +9729,8 @@
         "2026-08-16"
       ],
       "kaza": [
-        "2026-08-12"
+        "2026-08-12",
+        "2026-08-29"
       ],
       "hanle": [
         "2026-08-23"
@@ -9740,7 +9769,8 @@
         "2026-08-01",
         "2026-08-08",
         "2026-08-15",
-        "2026-08-22"
+        "2026-08-22",
+        "2026-08-29"
       ],
       "adventurers": [
         "2026-05-29",
@@ -10005,7 +10035,8 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10019,7 +10050,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "igatpuri",
+    "shared_best": "hogenakkal",
     "collection": "pancha-bhoota-stalams"
   },
   "manual_skip_dests": {},
