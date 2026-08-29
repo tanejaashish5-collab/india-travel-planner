@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-08-28",
@@ -41,32 +41,11 @@
     "PdMu0_evening": "2026-08-28",
     "m8EAd_carousel": "2026-08-28",
     "PdMu0_carousel": "2026-08-28",
-    "m8EAd_evening_story": "2026-08-27",
     "m8EAd_yt_short": "2026-08-28",
-    "GAh5p_yt_short": "2026-08-28"
+    "GAh5p_yt_short": "2026-08-29"
   },
   "last_sync": "2026-08-28T23:37:17.615469+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "bangus-valley",
-      "date": "2026-08-14"
-    },
-    {
-      "destination_id": "sarahan",
-      "date": "2026-08-14"
-    },
-    {
-      "destination_id": "corbett-national-park",
-      "date": "2026-08-14"
-    },
-    {
-      "destination_id": "drass",
-      "date": "2026-08-14"
-    },
-    {
-      "destination_id": "bhimashankar",
-      "date": "2026-08-14"
-    },
     {
       "destination_id": "gurez-valley",
       "date": "2026-08-15"
@@ -290,6 +269,10 @@
     {
       "destination_id": "jog-falls",
       "date": "2026-08-28"
+    },
+    {
+      "destination_id": "kumbakonam",
+      "date": "2026-08-29"
     }
   ],
   "posted_formats": {
@@ -8897,6 +8880,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "jog-falls.mp4"
+    },
+    {
+      "timestamp": "2026-08-29T11:11:32.432671+00:00",
+      "date": "2026-08-29",
+      "platform": "instagram",
+      "post_id": "DNcq8",
+      "destination": "kumbakonam",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_kumbakonam_hi_2026-08-29.mp4"
+    },
+    {
+      "timestamp": "2026-08-29T11:11:42.554871+00:00",
+      "date": "2026-08-29",
+      "platform": "youtube",
+      "post_id": "4KBDd",
+      "destination": "kumbakonam",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_kumbakonam_hi_2026-08-29.mp4"
     }
   ],
   "theme_usage": {
@@ -8985,10 +8986,6 @@
         "2026-05-25",
         "2026-06-07"
       ],
-      "manikaran": [
-        "2026-05-25",
-        "2026-05-30"
-      ],
       "leh": [
         "2026-05-25",
         "2026-05-27",
@@ -8999,14 +8996,6 @@
         "2026-07-02",
         "2026-07-17",
         "2026-07-21"
-      ],
-      "gopeshwar": [
-        "2026-05-26",
-        "2026-05-30"
-      ],
-      "yamunotri": [
-        "2026-05-27",
-        "2026-05-30"
       ],
       "sangla": [
         "2026-05-28",
@@ -9020,9 +9009,6 @@
       "har-ki-doon": [
         "2026-05-29",
         "2026-05-31"
-      ],
-      "tirthan-valley": [
-        "2026-05-30"
       ],
       "devprayag": [
         "2026-05-31"
@@ -9516,12 +9502,6 @@
       "hampi": [
         "2026-05-28",
         "2026-08-04"
-      ],
-      "yamunotri": [
-        "2026-05-30"
-      ],
-      "gopeshwar": [
-        "2026-05-30"
       ],
       "har-ki-doon": [
         "2026-05-31"
