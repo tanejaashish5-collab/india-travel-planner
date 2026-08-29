@@ -39,8 +39,8 @@
     "m8EAd_evening": "2026-08-28",
     "PdMu0": "2026-08-28",
     "PdMu0_evening": "2026-08-28",
-    "m8EAd_carousel": "2026-08-28",
-    "PdMu0_carousel": "2026-08-28",
+    "m8EAd_carousel": "2026-08-29",
+    "PdMu0_carousel": "2026-08-29",
     "m8EAd_yt_short": "2026-08-28",
     "GAh5p_yt_short": "2026-08-29"
   },
@@ -272,6 +272,10 @@
     },
     {
       "destination_id": "kumbakonam",
+      "date": "2026-08-29"
+    },
+    {
+      "destination_id": "mathura",
       "date": "2026-08-29"
     }
   ],
@@ -8898,6 +8902,24 @@
       "destination": "kumbakonam",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_kumbakonam_hi_2026-08-29.mp4"
+    },
+    {
+      "timestamp": "2026-08-29T13:15:11.254932+00:00",
+      "date": "2026-08-29",
+      "platform": "instagram",
+      "post_id": "LTNUC",
+      "destination": "mathura",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-29"
+    },
+    {
+      "timestamp": "2026-08-29T13:15:14.079112+00:00",
+      "date": "2026-08-29",
+      "platform": "facebook",
+      "post_id": "kYUnc",
+      "destination": "mathura",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-08-29"
     }
   ],
   "theme_usage": {
@@ -9990,28 +10012,14 @@
   },
   "carousel_seen": {
     "festival": [
+      "Krishna Janmashtami (Birth of Krishna)",
+      "Nagara Panchami",
       "Kajli Teej",
       "Nanda Devi Raj Jat Yatra",
       "Ladarcha Fair",
       "Gurez Cultural Festival",
       "Malana Village Fair",
-      "Pang Lhabsol",
-      "Munshi Aziz Bhat Memorial Festival",
-      "Janmashtami",
-      "Ganesh Chaturthi",
-      "Ganesh Chaturthi (Ganeshotsav)",
-      "Kumbh Mela",
-      "Nag Panchami (Battis Shirala)",
-      "Bonderam Festival",
-      "Nehru Trophy Boat Race",
-      "Janmashtami at Dwarkadhish",
-      "Independence Day at Cellular Jail",
-      "Monsoon Festival",
-      "Janmashtami Festival",
-      "Manimahesh Yatra",
-      "Metemneo Festival",
-      "Neermahal Water Festival - Boat Race",
-      "Tendong Lho Rum Faat"
+      "Pang Lhabsol"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
