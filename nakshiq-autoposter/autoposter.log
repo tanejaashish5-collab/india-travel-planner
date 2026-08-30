@@ -21065,3 +21065,131 @@ Date range: 2026-04-15 → 2026-08-29
 2026-08-30 18:10:19  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
 2026-08-30 18:10:19  INFO      State saved. Run complete.
 2026-08-30 18:10:19  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 21:08:53  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 21:08:53  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-08-30
+2026-08-30 21:08:53  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 21:09:08  ERROR     Analytics sync failed: HTTPSConnectionPool(host='api.outstand.so', port=443): Read timed out. (read timeout=15)
+2026-08-30 21:09:08  ERROR     Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1443, in getresponse
+    response.begin()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 337, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 298, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 718, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.outstand.so', port=443): Read timed out. (read timeout=15)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/autoposter.py", line 11740, in run_analytics
+    r = outstand_get(f"/v1/posts?limit=50&page={page}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/autoposter.py", line 5825, in outstand_get
+    r = requests.get(f"{OUTSTAND_BASE}{path}", headers=_headers(), timeout=15)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/requests/api.py", line 87, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.outstand.so', port=443): Read timed out. (read timeout=15)
+
+2026-08-30 21:09:08  INFO      Synced 0 new posts (total: 1098)
+2026-08-30 21:09:08  INFO      ── Analytics Summary ──
+2026-08-30 21:09:08  INFO      Total posts tracked: 1098
+2026-08-30 21:09:08  INFO      Successfully published: 1032 | Failed: 57
+2026-08-30 21:09:08  INFO      
+2026-08-30 21:09:08  INFO      By content type:
+2026-08-30 21:09:08  INFO        feed_post: 499
+2026-08-30 21:09:08  INFO        yt_short: 458
+2026-08-30 21:09:08  INFO        reel: 95
+2026-08-30 21:09:08  INFO        tourist_map: 16
+2026-08-30 21:09:08  INFO        canva_visual: 14
+2026-08-30 21:09:08  INFO        infographic: 10
+2026-08-30 21:09:08  INFO        pomelli_visual: 6
+2026-08-30 21:09:08  INFO      
+2026-08-30 21:09:08  INFO      By format:
+2026-08-30 21:09:08  INFO        feed_post:unknown: 499
+2026-08-30 21:09:08  INFO        yt_short:did: 120
+2026-08-30 21:09:08  INFO        yt_short:this: 114
+2026-08-30 21:09:08  INFO        yt_short:nakshiq: 90
+2026-08-30 21:09:08  INFO        yt_short:listicle: 38
+2026-08-30 21:09:08  INFO        yt_short:mini: 35
+2026-08-30 21:09:08  INFO        yt_short:before: 33
+2026-08-30 21:09:08  INFO        yt_short:dont: 28
+2026-08-30 21:09:08  INFO        reel:studio: 24
+2026-08-30 21:09:08  INFO        reel:seasonal: 23
+2026-08-30 21:09:08  INFO        reel:destination: 21
+2026-08-30 21:09:08  INFO        tourist_map:unknown: 16
+2026-08-30 21:09:08  INFO        reel:map: 15
+2026-08-30 21:09:08  INFO        canva_visual:unknown: 14
+2026-08-30 21:09:08  INFO        infographic:unknown: 10
+2026-08-30 21:09:08  INFO        reel:score: 6
+2026-08-30 21:09:08  INFO        pomelli_visual:unknown: 6
+2026-08-30 21:09:08  INFO        reel:pomelli: 6
+2026-08-30 21:09:08  INFO      
+2026-08-30 21:09:08  INFO      By platform:
+2026-08-30 21:09:08  INFO        instagram: 556
+2026-08-30 21:09:08  INFO        youtube: 274
+2026-08-30 21:09:08  INFO        facebook: 259
+2026-08-30 21:09:08  INFO      
+2026-08-30 21:09:08  INFO      YT Short format distribution:
+2026-08-30 21:09:08  INFO        did: 120 (26%)
+2026-08-30 21:09:08  INFO        this: 114 (25%)
+2026-08-30 21:09:08  INFO        nakshiq: 90 (20%)
+2026-08-30 21:09:08  INFO        listicle: 38 (8%)
+2026-08-30 21:09:08  INFO        mini: 35 (8%)
+2026-08-30 21:09:08  INFO        before: 33 (7%)
+2026-08-30 21:09:08  INFO        dont: 28 (6%)
+2026-08-30 21:09:08  INFO      
+Date range: 2026-04-15 → 2026-08-29
+2026-08-30 21:09:08  INFO      ════════════════════════════════════════════════════════════
