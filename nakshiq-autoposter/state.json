@@ -39,9 +39,10 @@
     "m8EAd_evening": "2026-08-29",
     "PdMu0": "2026-08-29",
     "PdMu0_evening": "2026-08-29",
-    "m8EAd_carousel": "2026-08-29",
-    "PdMu0_carousel": "2026-08-29",
-    "GAh5p_yt_short": "2026-08-30"
+    "m8EAd_carousel": "2026-08-30",
+    "PdMu0_carousel": "2026-08-30",
+    "GAh5p_yt_short": "2026-08-30",
+    "m8EAd_carousel_story": "2026-08-30"
   },
   "last_sync": "2026-08-29T17:48:03.281262+00:00",
   "posted_destinations": [
@@ -267,6 +268,10 @@
     },
     {
       "destination_id": "hogenakkal",
+      "date": "2026-08-30"
+    },
+    {
+      "destination_id": "kaza",
       "date": "2026-08-30"
     }
   ],
@@ -8969,6 +8974,33 @@
       "destination": "hogenakkal",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_hogenakkal_hi_2026-08-30.mp4"
+    },
+    {
+      "timestamp": "2026-08-30T12:59:15.011574+00:00",
+      "date": "2026-08-30",
+      "platform": "instagram",
+      "post_id": "enKee",
+      "destination": "kaza",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-30"
+    },
+    {
+      "timestamp": "2026-08-30T12:59:21.226396+00:00",
+      "date": "2026-08-30",
+      "platform": "instagram",
+      "post_id": "mxXOg",
+      "destination": "kaza",
+      "format": "story.window",
+      "media_id": "story_window_2026-08-30"
+    },
+    {
+      "timestamp": "2026-08-30T12:59:23.792315+00:00",
+      "date": "2026-08-30",
+      "platform": "facebook",
+      "post_id": "PmvqO",
+      "destination": "kaza",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-08-30"
     }
   ],
   "theme_usage": {
