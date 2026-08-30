@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-08-29",
@@ -41,31 +41,10 @@
     "PdMu0_evening": "2026-08-29",
     "m8EAd_carousel": "2026-08-29",
     "PdMu0_carousel": "2026-08-29",
-    "m8EAd_yt_short": "2026-08-28",
-    "GAh5p_yt_short": "2026-08-29"
+    "GAh5p_yt_short": "2026-08-30"
   },
   "last_sync": "2026-08-29T17:48:03.281262+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "gurez-valley",
-      "date": "2026-08-15"
-    },
-    {
-      "destination_id": "port-blair",
-      "date": "2026-08-15"
-    },
-    {
-      "destination_id": "hogenakkal",
-      "date": "2026-08-15"
-    },
-    {
-      "destination_id": "athirapally",
-      "date": "2026-08-15"
-    },
-    {
-      "destination_id": "umlingla",
-      "date": "2026-08-15"
-    },
     {
       "destination_id": "ponda-spice",
       "date": "2026-08-16"
@@ -285,6 +264,10 @@
     {
       "destination_id": "kaza",
       "date": "2026-08-29"
+    },
+    {
+      "destination_id": "hogenakkal",
+      "date": "2026-08-30"
     }
   ],
   "posted_formats": {
@@ -8968,6 +8951,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "kaza.mp4"
+    },
+    {
+      "timestamp": "2026-08-30T10:02:13.899276+00:00",
+      "date": "2026-08-30",
+      "platform": "instagram",
+      "post_id": "JwYMI",
+      "destination": "hogenakkal",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_hogenakkal_hi_2026-08-30.mp4"
+    },
+    {
+      "timestamp": "2026-08-30T10:02:22.547259+00:00",
+      "date": "2026-08-30",
+      "platform": "youtube",
+      "post_id": "rl95r",
+      "destination": "hogenakkal",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_hogenakkal_hi_2026-08-30.mp4"
     }
   ],
   "theme_usage": {
@@ -9048,10 +9049,6 @@
         "2026-06-16",
         "2026-06-24"
       ],
-      "pithoragarh": [
-        "2026-05-25",
-        "2026-05-31"
-      ],
       "puri": [
         "2026-05-25",
         "2026-06-07"
@@ -9075,13 +9072,6 @@
       "hampi": [
         "2026-05-28",
         "2026-08-04"
-      ],
-      "har-ki-doon": [
-        "2026-05-29",
-        "2026-05-31"
-      ],
-      "devprayag": [
-        "2026-05-31"
       ],
       "yusmarg": [
         "2026-06-01",
@@ -9575,12 +9565,6 @@
         "2026-05-28",
         "2026-08-04"
       ],
-      "har-ki-doon": [
-        "2026-05-31"
-      ],
-      "pithoragarh": [
-        "2026-05-31"
-      ],
       "kasol": [
         "2026-06-01"
       ],
@@ -9876,9 +9860,6 @@
       ]
     },
     "festivals": {
-      "0bc01854-4a77-46c6-b967-044b067071f0": [
-        "2026-05-31"
-      ],
       "7a46a2ee-37e3-49c5-97d1-465da0861dd9": [
         "2026-06-01"
       ],
@@ -10035,8 +10016,7 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,

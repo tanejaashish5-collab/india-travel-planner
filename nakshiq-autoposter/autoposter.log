@@ -20916,3 +20916,27 @@ Date range: 2026-04-15 → 2026-08-28
 2026-08-29 20:58:31  INFO      
 Date range: 2026-04-15 → 2026-08-29
 2026-08-29 20:58:31  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 09:59:36  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 09:59:36  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-30
+2026-08-30 09:59:36  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 09:59:38  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-30 10:01:22  INFO      Short rendered: yt_short_mini_guide_hogenakkal_hi_2026-08-30.mp4 (21902 KB, 23.0s, fmt=mini_guide, music=fast-680)
+2026-08-30 10:01:22  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_hogenakkal_hi_2026-08-30.mp4 (22,428,614 bytes, video/mp4)
+2026-08-30 10:01:23  INFO          Uploading to R2 (timeout=300s)...
+2026-08-30 10:01:24  INFO          R2 PUT OK. Confirming...
+2026-08-30 10:01:25  INFO          Media ready: iKoRl (22,428,614 bytes · yt_short_mini_guide_yt_short_mini_guide_hogenakkal_hi_2026-08-30.mp4)
+2026-08-30 10:01:25  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_hogenakkal_hi_2026-08-30.mp4
+2026-08-30 10:01:26  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-30 10:01:26  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-08-30 10:01:26  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-30 10:01:28  INFO      [instagram/nakshiq] Outstand accepted (post_id=JwYMI), waiting for platform confirmation...
+2026-08-30 10:02:13  INFO          wait_for_publish exhausted 8 polls for post=JwYMI (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-08-30 10:02:13  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=JwYMI). May have silently failed.
+2026-08-30 10:02:13  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-30 10:02:13  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-08-30 10:02:13  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-30 10:02:16  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=rl95r), waiting for platform confirmation...
+2026-08-30 10:02:22  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=rl95r · Platform=sgUsJwztSbU
+2026-08-30 10:02:22  INFO      YT Short posted: format=mini_guide, music=fast-680
+2026-08-30 10:02:22  INFO      State saved. YT Short run complete.
+2026-08-30 10:02:22  INFO      ════════════════════════════════════════════════════════════
