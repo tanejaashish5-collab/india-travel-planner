@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
+import { currentMonthIST } from "@itp/shared";
 import { localeAlternates } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
@@ -22,10 +23,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 type Metrics = {
   totalDests: number;
   reviewedPct90d: number;
-  oldestUnreviewed: { id: string; name: string; state: string | null; age: string } | null;
+  oldestUnreviewed: { id: string; name: string; state: string | null } | null;
   staysTotal: number;
   staysRefreshedPct30d: number;
-  lastRuns: Record<string, { run_at: string; summary: Record<string, unknown>; alerts: number } | null>;
+  monthRows: number;
+  lastRuns: Record<string, { run_at: string; alerts: number } | null>;
   botHits30d: Array<{ bot_name: string; count: number }>;
   botHitsTotal30d: number;
 };
@@ -37,74 +39,104 @@ async function getMetrics(): Promise<Metrics | null> {
 
   const supabase = createClient(url, key);
 
-  const ninetyDaysAgo = Date.now() - 90 * 86400000;
-  const thirtyDaysAgo = Date.now() - 30 * 86400000;
+  const ninetyDaysAgoISO = new Date(Date.now() - 90 * 86400000).toISOString();
+  const thirtyDaysAgoISO = new Date(Date.now() - 30 * 86400000).toISOString();
 
-  const { data: dests } = await supabase
-    .from("destinations")
-    .select("id, name, content_reviewed_at, state:states(name)");
-  const total = dests?.length ?? 0;
-  const reviewed90 = (dests ?? []).filter(
-    (d) => d.content_reviewed_at && new Date(d.content_reviewed_at).getTime() >= ninetyDaysAgo
-  ).length;
-  const reviewedPct90d = total ? Math.round((reviewed90 / total) * 100) : 0;
+  // Exact head-counts, not row reads: PostgREST caps un-ranged reads at 1000
+  // rows, which silently truncated these metrics once tables outgrew the cap
+  // (stay picks showed "of 1000" when 1,908 were published).
+  const [
+    { count: total },
+    { count: reviewed90 },
+    { count: staysTotal },
+    { count: staysRefreshed30 },
+    { count: monthRows },
+    { data: unreviewedRows },
+  ] = await Promise.all([
+    supabase.from("destinations").select("*", { count: "exact", head: true }),
+    supabase.from("destinations").select("*", { count: "exact", head: true }).gte("content_reviewed_at", ninetyDaysAgoISO),
+    supabase.from("destination_stay_picks").select("*", { count: "exact", head: true }),
+    supabase.from("destination_stay_picks").select("*", { count: "exact", head: true }).gte("refreshed_at", thirtyDaysAgoISO),
+    supabase.from("destination_months").select("*", { count: "exact", head: true }),
+    supabase
+      .from("destinations")
+      .select("id, name, state:states(name)")
+      .is("content_reviewed_at", null)
+      .order("id")
+      .limit(1),
+  ]);
 
-  const unreviewed = (dests ?? [])
-    .filter((d) => !d.content_reviewed_at)
-    .sort((a, b) => String(a.id).localeCompare(String(b.id)));
-  const oldestUnreviewed = unreviewed[0]
-    ? (() => {
-        const d = unreviewed[0];
-        const stateName = Array.isArray(d.state) ? d.state[0]?.name ?? null : (d.state as { name: string } | null)?.name ?? null;
-        return { id: d.id as string, name: d.name as string, state: stateName, age: "never" };
-      })()
+  const totalDests = total ?? 0;
+  const reviewedPct90d = totalDests ? Math.round(((reviewed90 ?? 0) / totalDests) * 100) : 0;
+  const staysTotalCount = staysTotal ?? 0;
+  const staysRefreshedPct30d = staysTotalCount ? Math.round(((staysRefreshed30 ?? 0) / staysTotalCount) * 100) : 0;
+
+  const first = unreviewedRows?.[0];
+  const oldestUnreviewed = first
+    ? {
+        id: first.id as string,
+        name: first.name as string,
+        state: Array.isArray(first.state)
+          ? first.state[0]?.name ?? null
+          : (first.state as { name: string } | null)?.name ?? null,
+      }
     : null;
 
-  const { data: picks } = await supabase.from("destination_stay_picks").select("refreshed_at");
-  const staysTotal = picks?.length ?? 0;
-  const staysRefreshed30 = (picks ?? []).filter(
-    (p) => p.refreshed_at && new Date(p.refreshed_at).getTime() >= thirtyDaysAgo
-  ).length;
-  const staysRefreshedPct30d = staysTotal ? Math.round((staysRefreshed30 / staysTotal) * 100) : 0;
-
-  const { data: reports } = await supabase
-    .from("ops_reports")
-    .select("job, run_at, summary, alerts_count")
-    .order("run_at", { ascending: false })
-    .limit(30);
-
-  const jobs = ["refresh-stay-picks", "freshness-drift", "news-sweep"];
+  // Latest run per card, queried per job name. A shared "last 30 rows" scan
+  // can never surface weekly/monthly jobs — canary-probe alone writes 48
+  // rows/day, so it always owned the whole window and every card read "never".
+  // Stay picks moved to a cloud agent 2026-08-04 and logs under -agent since.
+  const jobNames: Record<string, string[]> = {
+    "stay-picks": ["refresh-stay-picks-agent", "refresh-stay-picks"],
+    "freshness-drift": ["freshness-drift"],
+    "news-sweep": ["news-sweep"],
+  };
   const lastRuns: Metrics["lastRuns"] = {};
-  for (const job of jobs) {
-    const row = (reports ?? []).find((r) => r.job === job);
-    lastRuns[job] = row
-      ? { run_at: row.run_at as string, summary: (row.summary ?? {}) as Record<string, unknown>, alerts: (row.alerts_count ?? 0) as number }
-      : null;
-  }
+  await Promise.all(
+    Object.entries(jobNames).map(async ([card, names]) => {
+      const { data } = await supabase
+        .from("ops_reports")
+        .select("run_at, alerts_count")
+        .in("job", names)
+        .order("run_at", { ascending: false })
+        .limit(1);
+      const row = data?.[0];
+      lastRuns[card] = row
+        ? { run_at: row.run_at as string, alerts: (row.alerts_count ?? 0) as number }
+        : null;
+    })
+  );
 
-  // Bot-traffic metrics — last 30 days, grouped by bot_name
-  const thirtyDaysAgoISO = new Date(thirtyDaysAgo).toISOString();
-  const { data: botVisits } = await supabase
-    .from("bot_visits")
-    .select("bot_name")
-    .gte("hit_at", thirtyDaysAgoISO);
+  // Bot-traffic metrics — last 30 days, grouped by bot_name. Paged in ordered
+  // 1000-row ranges so counts stay correct past the PostgREST cap.
   const botCountsMap = new Map<string, number>();
-  for (const row of botVisits ?? []) {
-    const name = (row as { bot_name: string }).bot_name;
-    botCountsMap.set(name, (botCountsMap.get(name) ?? 0) + 1);
+  let botHitsTotal30d = 0;
+  for (let page = 0; page < 10; page++) {
+    const { data: chunk } = await supabase
+      .from("bot_visits")
+      .select("bot_name")
+      .gte("hit_at", thirtyDaysAgoISO)
+      .order("hit_at", { ascending: true })
+      .range(page * 1000, page * 1000 + 999);
+    for (const row of chunk ?? []) {
+      const name = (row as { bot_name: string }).bot_name;
+      botCountsMap.set(name, (botCountsMap.get(name) ?? 0) + 1);
+    }
+    botHitsTotal30d += chunk?.length ?? 0;
+    if (!chunk || chunk.length < 1000) break;
   }
   const botHits30d = Array.from(botCountsMap.entries())
     .map(([bot_name, count]) => ({ bot_name, count }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 15);
-  const botHitsTotal30d = botVisits?.length ?? 0;
 
   return {
-    totalDests: total,
+    totalDests,
     reviewedPct90d,
     oldestUnreviewed,
-    staysTotal,
+    staysTotal: staysTotalCount,
     staysRefreshedPct30d,
+    monthRows: monthRows ?? 0,
     lastRuns,
     botHits30d,
     botHitsTotal30d,
@@ -133,17 +165,22 @@ export default async function FreshnessDashboardPage({
   const now = new Date();
   const asOf = now.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 
-  // Dataset schema — makes NakshIQ's 491×12×6 dimension claim machine-readable
-  // for search engines + answer engines. Treats the live scoring corpus as a
-  // citeable dataset so AI can cite us as a data source, not just a text blog.
+  // Live counts feed the structured data below; the fallbacks only fire when
+  // Supabase env vars are absent (never in prod).
+  const destCount = m?.totalDests ?? 533;
+  const verdictRows = m?.monthRows ?? destCount * 12;
+  const istYear = new Intl.DateTimeFormat("en", { timeZone: "Asia/Kolkata", year: "numeric" }).format(now);
+
+  // Dataset schema — makes the destination×month×dimension coverage claim
+  // machine-readable for search engines + answer engines. Treats the live
+  // scoring corpus as a citeable dataset so AI can cite us as a data source.
   const datasetLd = {
     "@context": "https://schema.org",
     "@type": "Dataset",
     "@id": "https://www.nakshiq.com/en/methodology/freshness#dataset",
     name: "NakshIQ India Destination Scoring Dataset",
     alternateName: "NakshIQ Monthly Destination Verdicts",
-    description:
-      "Human-curated dataset of monthly go/wait/skip verdicts and 0–10 suitability scores for 491 Indian destinations across 36 states and union territories. Each destination × month pair is scored across 6 dimensions: weather, access, crowd, cost, safety, and kids-suitability. Total coverage: 5,856 verdict rows. Updated on a rolling 90-day review cadence.",
+    description: `Human-curated dataset of monthly go/wait/skip verdicts and 0–10 suitability scores for ${destCount} Indian destinations across 36 states and union territories. Each destination × month pair is scored across 6 dimensions: weather, access, crowd, cost, safety, and kids-suitability. Total coverage: ${verdictRows.toLocaleString("en-IN")} verdict rows. Updated on a rolling 90-day review cadence.`,
     url: "https://www.nakshiq.com/en/methodology/freshness",
     keywords: [
       "India travel",
@@ -196,7 +233,7 @@ export default async function FreshnessDashboardPage({
       },
     ],
     dateModified: now.toISOString(),
-    version: "2026.04",
+    version: `${istYear}.${String(currentMonthIST()).padStart(2, "0")}`,
   };
 
   // CreativeWork — the methodology + freshness page itself as a citeable work
@@ -205,8 +242,7 @@ export default async function FreshnessDashboardPage({
     "@type": "TechArticle",
     "@id": "https://www.nakshiq.com/en/methodology/freshness#article",
     headline: "NakshIQ data freshness — review cadence and scheduled jobs",
-    description:
-      "How NakshIQ keeps its 491-destination dataset current: rolling 90-day editorial review, nightly stay-refresh cron, weekly freshness-drift alerting, monthly news-sweep.",
+    description: `How NakshIQ keeps its ${destCount}-destination dataset current: rolling 90-day editorial review, nightly stay-pick refresh, weekly freshness-drift alerting, monthly news-sweep.`,
     author: { "@id": "https://www.nakshiq.com#organization" },
     publisher: { "@id": "https://www.nakshiq.com#organization" },
     dateModified: now.toISOString(),
@@ -379,13 +415,13 @@ export default async function FreshnessDashboardPage({
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">Scheduled jobs</h2>
           <p className="text-sm text-muted-foreground mb-4">
-            Three cron jobs maintain data currency. Each writes a run log; the latest run is shown below.
+            Three scheduled jobs maintain data currency. Each writes a run log; the latest run is shown below.
           </p>
           <div className="space-y-3">
             {[
-              { job: "refresh-stay-picks", label: "Stay picks", cadence: "Nightly", schedule: "03:30 IST", summaryKey: "ok" },
-              { job: "freshness-drift", label: "Freshness drift", cadence: "Weekly (Mon)", schedule: "06:30 IST", summaryKey: "fresh_pct_90d" },
-              { job: "news-sweep", label: "News sweep", cadence: "Monthly (1st)", schedule: "06:30 IST", summaryKey: "flagged" },
+              { job: "stay-picks", label: "Stay picks", cadence: "Nightly", schedule: "~03:50 IST" },
+              { job: "freshness-drift", label: "Freshness drift", cadence: "Weekly (Mon)", schedule: "06:30 IST" },
+              { job: "news-sweep", label: "News sweep", cadence: "Monthly (1st)", schedule: "06:30 IST" },
             ].map((row) => {
               const last = m?.lastRuns[row.job] ?? null;
               return (
