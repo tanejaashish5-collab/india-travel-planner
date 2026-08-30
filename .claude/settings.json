@@ -14,6 +14,15 @@
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/loop-guard.mjs\""
           }
         ]
+      },
+      {
+        "matcher": "mcp__outlook__outlook_(create_draft|update_draft|attach_to_draft)|mcp__claude_ai_Gmail__(create_draft|update_draft|send_message|reply|forward)|mcp__claude_ai_Microsoft_365__outlook_(create_draft|create_reply_draft|create_reply_all_draft|update_draft|send_mail|forward_mail)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/ashishtaneja/.claude/skills/anti-ai/hooks/pre-send-anti-ai.py"
+          }
+        ]
       }
     ]
   }
