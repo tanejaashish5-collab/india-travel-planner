@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-08-29",
-    "m8EAd_evening": "2026-08-29",
-    "PdMu0": "2026-08-29",
-    "PdMu0_evening": "2026-08-29",
+    "m8EAd": "2026-08-30",
+    "m8EAd_evening": "2026-08-30",
+    "PdMu0": "2026-08-30",
+    "PdMu0_evening": "2026-08-30",
     "m8EAd_carousel": "2026-08-30",
     "PdMu0_carousel": "2026-08-30",
     "GAh5p_yt_short": "2026-08-30",
     "m8EAd_carousel_story": "2026-08-30"
   },
-  "last_sync": "2026-08-29T17:48:03.281262+00:00",
+  "last_sync": "2026-08-30T18:08:30.932947+00:00",
   "posted_destinations": [
     {
       "destination_id": "ponda-spice",
@@ -277,6 +277,10 @@
     {
       "destination_id": "katra",
       "date": "2026-08-30"
+    },
+    {
+      "destination_id": "adilabad",
+      "date": "2026-08-30"
     }
   ],
   "posted_formats": {
@@ -297,9 +301,9 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "v3_tl_editorial_listicle",
+      "score_card",
       "score_card",
       "score_card"
     ],
@@ -320,8 +324,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
@@ -9023,6 +9027,28 @@
       "destination": "katra",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_katra_hi_2026-08-30.mp4"
+    },
+    {
+      "timestamp": "2026-08-30T18:09:51.728183+00:00",
+      "date": "2026-08-30",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "HLbcO",
+      "destination": "adilabad",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "adilabad.mp4"
+    },
+    {
+      "timestamp": "2026-08-30T18:10:19.859905+00:00",
+      "date": "2026-08-30",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "rlynZ",
+      "destination": "adilabad",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "adilabad.mp4"
     }
   ],
   "theme_usage": {
@@ -9368,7 +9394,8 @@
       ],
       "adilabad": [
         "2026-08-01",
-        "2026-08-13"
+        "2026-08-13",
+        "2026-08-30"
       ],
       "umlingla": [
         "2026-08-02",
@@ -9511,7 +9538,8 @@
         "2026-08-25",
         "2026-08-27",
         "2026-08-28",
-        "2026-08-29"
+        "2026-08-29",
+        "2026-08-30"
       ],
       "v2_festival_alert_sensory": [
         "2026-06-01"
@@ -9756,7 +9784,8 @@
       ],
       "adilabad": [
         "2026-08-01",
-        "2026-08-13"
+        "2026-08-13",
+        "2026-08-30"
       ],
       "umlingla": [
         "2026-08-02",
@@ -10070,7 +10099,8 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    }
+    },
+    "route_spotlight_short": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10084,7 +10114,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "hogenakkal",
+    "shared_best": "adilabad",
     "collection": "pancha-bhoota-stalams"
   },
   "manual_skip_dests": {},

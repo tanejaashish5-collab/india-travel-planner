@@ -21020,3 +21020,48 @@ Date range: 2026-04-15 → 2026-08-29
 2026-08-30 15:34:26  INFO      YT Short posted: format=this_vs_that, music=edm-471
 2026-08-30 15:34:26  INFO      State saved. YT Short run complete.
 2026-08-30 15:34:26  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 18:07:45  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 18:07:45  INFO      Nakshiq Autoposter · EVENING · 2026-08-30 · weekday=6
+2026-08-30 18:07:45  INFO      ════════════════════════════════════════════════════════════
+2026-08-30 18:07:45  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-30 18:08:30  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-30 18:08:30  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-30 18:08:32  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-30 18:08:32  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-30 18:08:32  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+23 more)
+2026-08-30 18:08:32  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-30 18:08:50  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-30 18:08:50  INFO      Evening format (balance→discovery): route_spotlight_short [7% vs target 15%] (0/15 never featured)
+2026-08-30 18:08:50  INFO      Formats — IG: route_spotlight_short  ·  FB: route_spotlight_short  ·  Story: kids_intel
+2026-08-30 18:08:50  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 82
+2026-08-30 18:08:50  INFO      Fingerprint dedup snapshot — 82 dests in 7d · 112 (dest,fmt) pairs in 30d · 227 media in 60d
+2026-08-30 18:08:50  INFO      Kids destination locked: Courtallam (Kutralam)
+2026-08-30 18:08:50  INFO      Route short locked: Khardung La & Nubra Loop (6/6 never featured)
+2026-08-30 18:08:57  INFO      Shared best destination locked: Adilabad
+2026-08-30 18:08:57  INFO      [instagram/nakshiq] Generating route_spotlight_short post...
+2026-08-30 18:08:57  WARNING   [instagram/nakshiq] route_spotlight_short: adilabad inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'adilabad' as score_card to keep the slot live.
+2026-08-30 18:08:57  INFO      [instagram/nakshiq] Caption ready (334 chars, dest=adilabad)
+2026-08-30 18:08:57  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-30 18:08:57  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/adilabad.mp4?v=20260524
+2026-08-30 18:09:00  INFO          Brand-stamp applied: adilabad.mp4 (6,164,220 → 2,667,236 bytes)
+2026-08-30 18:09:00  INFO          Requesting upload URL for adilabad.mp4 (2,667,236 bytes, video/mp4)
+2026-08-30 18:09:01  INFO          Uploading to R2 (timeout=300s)...
+2026-08-30 18:09:03  INFO          R2 PUT OK. Confirming...
+2026-08-30 18:09:04  INFO          Media ready: Hc0ho (2,667,236 bytes · adilabad.mp4)
+2026-08-30 18:09:04  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-30 18:09:51  INFO      [instagram/nakshiq] ✅ Published · Outstand=HLbcO · Platform=18131647000646781
+2026-08-30 18:09:51  INFO      [facebook/Nakshiq] Generating route_spotlight_short post...
+2026-08-30 18:09:51  WARNING   [facebook/Nakshiq] route_spotlight_short: adilabad inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'adilabad' as score_card to keep the slot live.
+2026-08-30 18:09:51  INFO      [facebook/Nakshiq] Caption ready (513 chars, dest=adilabad)
+2026-08-30 18:09:52  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-30 18:09:52  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/adilabad.mp4?v=20260524
+2026-08-30 18:09:54  INFO          Brand-stamp applied: adilabad.mp4 (6,164,220 → 2,667,236 bytes)
+2026-08-30 18:09:54  INFO          Requesting upload URL for adilabad.mp4 (2,667,236 bytes, video/mp4)
+2026-08-30 18:09:54  INFO          Uploading to R2 (timeout=300s)...
+2026-08-30 18:09:56  INFO          R2 PUT OK. Confirming...
+2026-08-30 18:09:57  INFO          Media ready: FAibB (2,667,236 bytes · adilabad.mp4)
+2026-08-30 18:09:57  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-30 18:10:19  INFO      [facebook/Nakshiq] ✅ Published · Outstand=rlynZ · Platform=1425020009499639
+2026-08-30 18:10:19  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-30 18:10:19  INFO      State saved. Run complete.
+2026-08-30 18:10:19  INFO      ════════════════════════════════════════════════════════════
