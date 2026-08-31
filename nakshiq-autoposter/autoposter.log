@@ -21291,3 +21291,50 @@ Date range: 2026-04-15 → 2026-08-29
 2026-08-31 18:13:34  INFO      YT Short posted: format=before_after, music=edm-471
 2026-08-31 18:13:34  INFO      State saved. YT Short run complete.
 2026-08-31 18:13:34  INFO      ════════════════════════════════════════════════════════════
+2026-08-31 20:09:37  INFO      ════════════════════════════════════════════════════════════
+2026-08-31 20:09:37  INFO      Nakshiq Autoposter · EVENING · 2026-08-31 · weekday=0
+2026-08-31 20:09:37  INFO      ════════════════════════════════════════════════════════════
+2026-08-31 20:09:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-08-31 20:10:16  INFO      Synced → 20 destinations · 100 traps · 0 articles · 6 routes · 55 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 26 camping · 50 gems · total catalog=533
+2026-08-31 20:10:16  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-08-31 20:10:18  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-31 20:10:18  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-08-31 20:10:18  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+24 more)
+2026-08-31 20:10:19  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-31 20:10:34  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-08-31 20:10:34  INFO      Evening format (balance→anti_trap): tourist_trap [0% vs target 15%] (0/15 never featured)
+2026-08-31 20:10:34  INFO      Formats — IG: tourist_trap  ·  FB: tourist_trap  ·  Story: festival_alert  ·  Audience: backpackers
+2026-08-31 20:10:34  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 84
+2026-08-31 20:10:34  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-08-31 20:10:34  INFO      Fingerprint dedup snapshot — 84 dests in 7d · 112 (dest,fmt) pairs in 30d · 226 media in 60d
+2026-08-31 20:10:34  INFO      Festivals filtered (past/post-window): Kajli Teej, Nanda Devi Raj Jat Yatra, Ladarcha Fair, Gurez Cultural Festival, Malana Village Fair, Pang Lhabsol, Pang Lhabsol, Nanda Devi Raj Jat Yatra (+24 more)
+2026-08-31 20:10:34  INFO      Festival locked: Phulaich (Festival of Flowers) (19/22 active festivals never featured)
+2026-08-31 20:10:34  INFO      Tourist trap locked: skip Puducherry (Pondicherry) → go Karaikal (74/74 never featured)
+2026-08-31 20:10:41  INFO      Shared best destination locked: Turtuk
+2026-08-31 20:10:41  INFO      [instagram/nakshiq] Generating tourist_trap post...
+2026-08-31 20:10:41  WARNING   [instagram/nakshiq] tourist_trap: turtuk inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'bhimashankar' as score_card to keep the slot live.
+2026-08-31 20:10:41  INFO      [instagram/nakshiq] Caption ready (364 chars, dest=bhimashankar)
+2026-08-31 20:10:42  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-31 20:10:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhimashankar.mp4?v=20260524
+2026-08-31 20:10:45  INFO          Brand-stamp applied: bhimashankar.mp4 (11,427,609 → 5,724,311 bytes)
+2026-08-31 20:10:45  INFO          Requesting upload URL for bhimashankar.mp4 (5,724,311 bytes, video/mp4)
+2026-08-31 20:10:47  INFO          Uploading to R2 (timeout=300s)...
+2026-08-31 20:10:48  INFO          R2 PUT OK. Confirming...
+2026-08-31 20:10:50  INFO          Media ready: oNvgd (5,724,311 bytes · bhimashankar.mp4)
+2026-08-31 20:10:50  INFO      [instagram/nakshiq] Publishing Reel...
+2026-08-31 20:11:40  INFO      [instagram/nakshiq] ✅ Published · Outstand=CAtc8 · Platform=18058505840612373
+2026-08-31 20:11:40  INFO      [facebook/Nakshiq] Generating tourist_trap post...
+2026-08-31 20:11:40  WARNING   [facebook/Nakshiq] tourist_trap: turtuk inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'bhimashankar' as score_card to keep the slot live.
+2026-08-31 20:11:40  INFO      [facebook/Nakshiq] Caption ready (555 chars, dest=bhimashankar)
+2026-08-31 20:11:40  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-08-31 20:11:40  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhimashankar.mp4?v=20260524
+2026-08-31 20:11:43  INFO          Brand-stamp applied: bhimashankar.mp4 (11,427,609 → 5,724,311 bytes)
+2026-08-31 20:11:43  INFO          Requesting upload URL for bhimashankar.mp4 (5,724,311 bytes, video/mp4)
+2026-08-31 20:11:45  INFO          Uploading to R2 (timeout=300s)...
+2026-08-31 20:11:46  INFO          R2 PUT OK. Confirming...
+2026-08-31 20:11:48  INFO          Media ready: HcmdI (5,724,311 bytes · bhimashankar.mp4)
+2026-08-31 20:11:48  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-08-31 20:12:08  INFO      [facebook/Nakshiq] ✅ Published · Outstand=apAYg · Platform=28220581880911665
+2026-08-31 20:12:08  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-08-31 20:12:08  INFO      State saved. Run complete.
+2026-08-31 20:12:08  INFO      ════════════════════════════════════════════════════════════

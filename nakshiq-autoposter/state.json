@@ -35,17 +35,17 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-08-30",
-    "m8EAd_evening": "2026-08-30",
-    "PdMu0": "2026-08-30",
-    "PdMu0_evening": "2026-08-30",
+    "m8EAd": "2026-08-31",
+    "m8EAd_evening": "2026-08-31",
+    "PdMu0": "2026-08-31",
+    "PdMu0_evening": "2026-08-31",
     "m8EAd_carousel": "2026-08-31",
     "PdMu0_carousel": "2026-08-31",
     "GAh5p_yt_short": "2026-08-31",
     "m8EAd_carousel_story": "2026-08-30",
     "m8EAd_yt_short": "2026-08-31"
   },
-  "last_sync": "2026-08-30T18:08:30.932947+00:00",
+  "last_sync": "2026-08-31T20:10:16.050105+00:00",
   "posted_destinations": [
     {
       "destination_id": "shravanabelagola",
@@ -278,6 +278,10 @@
     {
       "destination_id": "raghurajpur",
       "date": "2026-08-31"
+    },
+    {
+      "destination_id": "bhimashankar",
+      "date": "2026-08-31"
     }
   ],
   "posted_formats": {
@@ -297,9 +301,9 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "v3_tl_editorial_listicle",
+      "score_card",
       "score_card",
       "score_card",
       "score_card"
@@ -320,8 +324,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -9100,6 +9104,28 @@
       "destination": "raghurajpur",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_raghurajpur_hi_2026-08-31.mp4"
+    },
+    {
+      "timestamp": "2026-08-31T20:11:40.283820+00:00",
+      "date": "2026-08-31",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "CAtc8",
+      "destination": "bhimashankar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bhimashankar.mp4"
+    },
+    {
+      "timestamp": "2026-08-31T20:12:08.638039+00:00",
+      "date": "2026-08-31",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "apAYg",
+      "destination": "bhimashankar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bhimashankar.mp4"
     }
   ],
   "theme_usage": {
@@ -9392,7 +9418,8 @@
         "2026-07-15",
         "2026-07-28",
         "2026-08-14",
-        "2026-08-28"
+        "2026-08-28",
+        "2026-08-31"
       ],
       "khardung-la": [
         "2026-07-01",
@@ -9590,7 +9617,8 @@
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
-        "2026-08-30"
+        "2026-08-30",
+        "2026-08-31"
       ],
       "v2_score_card_pov": [
         "2026-06-02"
@@ -9781,7 +9809,8 @@
       "bhimashankar": [
         "2026-07-03",
         "2026-07-15",
-        "2026-08-14"
+        "2026-08-14",
+        "2026-08-31"
       ],
       "khandala": [
         "2026-07-04",
@@ -9863,7 +9892,8 @@
         "2026-08-03",
         "2026-08-10",
         "2026-08-17",
-        "2026-08-24"
+        "2026-08-24",
+        "2026-08-31"
       ],
       "families": [
         "2026-05-23",
@@ -10137,7 +10167,8 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    }
+    },
+    "tourist_trap_alts": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10151,7 +10182,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "adilabad",
+    "shared_best": "turtuk",
     "collection": "pancha-bhoota-stalams"
   },
   "manual_skip_dests": {},
