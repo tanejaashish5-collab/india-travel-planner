@@ -21193,3 +21193,26 @@ requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.outstand.so', por
 2026-08-30 21:09:08  INFO      
 Date range: 2026-04-15 → 2026-08-29
 2026-08-30 21:09:08  INFO      ════════════════════════════════════════════════════════════
+2026-08-31 10:54:15  INFO      ════════════════════════════════════════════════════════════
+2026-08-31 10:54:15  INFO      Nakshiq Autoposter · YT SHORT · 2026-08-31
+2026-08-31 10:54:15  INFO      ════════════════════════════════════════════════════════════
+2026-08-31 10:54:17  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-08-31 10:55:48  INFO      Short rendered: yt_short_dont_go_here_kanheri-caves_en_2026-08-31.mp4 (18421 KB, 22.2s, fmt=dont_go_here, music=edm-1001)
+2026-08-31 10:55:48  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_kanheri-caves_en_2026-08-31.mp4 (18,864,101 bytes, video/mp4)
+2026-08-31 10:55:49  INFO          Uploading to R2 (timeout=300s)...
+2026-08-31 10:55:51  INFO          R2 PUT OK. Confirming...
+2026-08-31 10:55:52  INFO          Media ready: 921la (18,864,101 bytes · yt_short_dont_go_here_yt_short_dont_go_here_kanheri-caves_en_2026-08-31.mp4)
+2026-08-31 10:55:52  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_kanheri-caves_en_2026-08-31.mp4
+2026-08-31 10:55:52  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-08-31 10:55:52  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
+2026-08-31 10:55:52  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-08-31 10:55:55  INFO      [instagram/nakshiq] Outstand accepted (post_id=enjUJ), waiting for platform confirmation...
+2026-08-31 10:56:36  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=enjUJ · Platform=18132460099646322
+2026-08-31 10:56:36  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-08-31 10:56:36  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
+2026-08-31 10:56:36  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-08-31 10:56:39  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Wtg4Q), waiting for platform confirmation...
+2026-08-31 10:56:45  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=Wtg4Q · Platform=O4yGIzk7JLc
+2026-08-31 10:56:45  INFO      YT Short posted: format=dont_go_here, music=edm-1001
+2026-08-31 10:56:45  INFO      State saved. YT Short run complete.
+2026-08-31 10:56:45  INFO      ════════════════════════════════════════════════════════════
