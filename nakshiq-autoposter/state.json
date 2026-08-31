@@ -39,8 +39,8 @@
     "m8EAd_evening": "2026-08-30",
     "PdMu0": "2026-08-30",
     "PdMu0_evening": "2026-08-30",
-    "m8EAd_carousel": "2026-08-30",
-    "PdMu0_carousel": "2026-08-30",
+    "m8EAd_carousel": "2026-08-31",
+    "PdMu0_carousel": "2026-08-31",
     "GAh5p_yt_short": "2026-08-31",
     "m8EAd_carousel_story": "2026-08-30",
     "m8EAd_yt_short": "2026-08-31"
@@ -269,6 +269,10 @@
     },
     {
       "destination_id": "kanheri-caves",
+      "date": "2026-08-31"
+    },
+    {
+      "destination_id": "hogenakkal",
       "date": "2026-08-31"
     }
   ],
@@ -9056,6 +9060,24 @@
       "destination": "kanheri-caves",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_kanheri-caves_en_2026-08-31.mp4"
+    },
+    {
+      "timestamp": "2026-08-31T15:12:18.046007+00:00",
+      "date": "2026-08-31",
+      "platform": "instagram",
+      "post_id": "84QnX",
+      "destination": "hogenakkal",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-08-31"
+    },
+    {
+      "timestamp": "2026-08-31T15:12:21.370879+00:00",
+      "date": "2026-08-31",
+      "platform": "facebook",
+      "post_id": "i93jK",
+      "destination": "hogenakkal",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-08-31"
     }
   ],
   "theme_usage": {
