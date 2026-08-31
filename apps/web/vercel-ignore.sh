@@ -3,7 +3,19 @@
 # the deployed web app. Cuts deploy volume ~50-60% during heavy autoposter
 # activity. Vercel runs this from the project root; exit 0 = skip, 1 = build.
 
-CHANGED=$(git diff --name-only HEAD^ HEAD 2>/dev/null)
+# A push can carry several commits but Vercel runs this once, at HEAD.
+# Diffing HEAD^..HEAD meant a push whose FINAL commit was trivial silently
+# dropped every code commit beneath it: on 2026-08-31 the mobile-layout fix
+# (b5c0d187) never deployed because a tests-only commit (e9f344c6) rode on
+# top of it in the same push. Vercel exposes the SHA of the last
+# successfully deployed commit for exactly this case — diff against it when
+# it exists in the (shallow) clone; otherwise fall back to HEAD^, and an
+# empty diff still builds-to-be-safe below.
+if [ -n "$VERCEL_GIT_PREVIOUS_SHA" ] && git cat-file -e "$VERCEL_GIT_PREVIOUS_SHA" 2>/dev/null; then
+  CHANGED=$(git diff --name-only "$VERCEL_GIT_PREVIOUS_SHA" HEAD 2>/dev/null)
+else
+  CHANGED=$(git diff --name-only HEAD^ HEAD 2>/dev/null)
+fi
 
 # Initial commit, rebase, or shallow clone — always build to be safe.
 if [ -z "$CHANGED" ]; then
