@@ -1,0 +1,17 @@
+{
+  "itinerary_valid_dec_family": {
+    "status": 200,
+    "has_content": true,
+    "snippet_head": "{\"itinerary\":{\"title\":\"December \u00b7 5-day family trip from Delhi\",\"summary\":\"A 5-day route through destinations that score well in December. We've prioritised places with good weather, open roads, and honest infrastructure this month.\",\"totalDistance\":\"750\u20131250 km\",\"bestFor\":[\"family\",\"mid-range\"],\"da"
+  },
+  "itinerary_valid_oct_couple": {
+    "status": 200,
+    "has_content": true,
+    "snippet_head": "{\"itinerary\":{\"title\":\"October \u00b7 4-day couple trip from Delhi\",\"summary\":\"A 4-day route through destinations that score well in October. We've prioritised places with good weather, open roads, and honest infrastructure this month.\",\"totalDistance\":\"600\u20131000 km\",\"bestFor\":[\"couple\",\"luxury\"],\"days\":["
+  },
+  "itinerary_valid_may_solo_explicit_ids": {
+    "status": 200,
+    "has_content": true,
+    "snippet_head": "{\"itinerary\":{\"title\":\"May \u00b7 3-day solo trip from Delhi\",\"summary\":\"A 3-day route through destinations that score well in May. We've prioritised places with good weather, open roads, and honest infrastructure this month.\",\"totalDistance\":\"450\u2013750 km\",\"bestFor\":[\"solo\",\"budget\"],\"days\":[{\"day\":1,\"tit"
+  }
+}
