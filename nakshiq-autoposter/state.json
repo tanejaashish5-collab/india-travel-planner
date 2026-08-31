@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-08-30",
     "m8EAd_evening": "2026-08-30",
@@ -273,6 +273,10 @@
     },
     {
       "destination_id": "hogenakkal",
+      "date": "2026-08-31"
+    },
+    {
+      "destination_id": "raghurajpur",
       "date": "2026-08-31"
     }
   ],
@@ -9078,6 +9082,24 @@
       "destination": "hogenakkal",
       "format": "carousel.best_month",
       "media_id": "carousel_best_month_2026-08-31"
+    },
+    {
+      "timestamp": "2026-08-31T18:13:26.302219+00:00",
+      "date": "2026-08-31",
+      "platform": "instagram",
+      "post_id": "MEqJf",
+      "destination": "raghurajpur",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_raghurajpur_hi_2026-08-31.mp4"
+    },
+    {
+      "timestamp": "2026-08-31T18:13:34.499245+00:00",
+      "date": "2026-08-31",
+      "platform": "youtube",
+      "post_id": "5Vprz",
+      "destination": "raghurajpur",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_raghurajpur_hi_2026-08-31.mp4"
     }
   ],
   "theme_usage": {
