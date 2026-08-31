@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { difficultyExplainer } from "@/lib/difficulty-copy";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { PeakAlertHook } from "./peak-alert-hook";
@@ -259,6 +260,14 @@ export function DestinationMonth({
               </span>
             )}
           </div>
+
+          {/* The difficulty grade alone ("Hard") tells the reader nothing —
+              hard to reach? hard to walk? Spell out what it means. */}
+          {difficultyExplainer(destination.difficulty, locale) && (
+            <p className="mt-2 max-w-prose text-xs leading-relaxed text-zinc-500">
+              {difficultyExplainer(destination.difficulty, locale)}
+            </p>
+          )}
         </div>
       </FadeIn>
     );

@@ -65,6 +65,7 @@ import { Footer } from "./footer";
 import { StickyDestinationHeader } from "./sticky-destination-header";
 import { POISection } from "./poi-section";
 import { DIFFICULTY_BG } from "@/lib/design-tokens";
+import { difficultyExplainer } from "@/lib/difficulty-copy";
 import { hasSafariGuide } from "@/lib/safari-guide";
 
 export function DestinationDetail({ dest }: { dest: any }) {
@@ -373,6 +374,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 difficulty={dest.difficulty}
               />
             </a>
+
+            {/* The difficulty grade alone ("hard") tells the reader nothing —
+                hard to reach? hard to walk? Spell out what it means. */}
+            {difficultyExplainer(dest.difficulty, locale) && (
+              <p className="mt-2 max-w-prose text-xs leading-relaxed text-muted-foreground">
+                {difficultyExplainer(dest.difficulty, locale)}
+              </p>
+            )}
 
             <MethodologyStrip
               locale={locale}

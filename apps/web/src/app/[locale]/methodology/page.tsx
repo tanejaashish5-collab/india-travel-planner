@@ -5,6 +5,7 @@ import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
+import { DIFFICULTY_EXPLAINER } from "@/lib/difficulty-copy";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { SCORE_BANDS, VERDICT_COLOR, verdictTier, type VerdictTier } from "@itp/shared";
@@ -403,6 +404,32 @@ export default async function MethodologyPage({
                 key={f.label}
                 title={f.label}
                 body={f.desc}
+              />
+            ))}
+          </div>
+          <Prose>
+            <p style={{ marginTop: 48 }}>
+              Every destination also carries an effort grade — easy, moderate,
+              hard, or extreme. It rates how demanding the trip itself is —
+              access, altitude, infrastructure — not how good the destination
+              is. A place can score 10/10 for August and still be hard to
+              reach.
+            </p>
+          </Prose>
+          <div
+            style={{
+              maxWidth: 720,
+              margin: "32px auto 0",
+              display: "flex",
+              flexDirection: "column",
+              gap: 0,
+            }}
+          >
+            {(["easy", "moderate", "hard", "extreme"] as const).map((k) => (
+              <EditorialEntry
+                key={k}
+                title={k.charAt(0).toUpperCase() + k.slice(1)}
+                body={DIFFICULTY_EXPLAINER[k].en.replace(/^[^:]+:\s*/, "")}
               />
             ))}
           </div>

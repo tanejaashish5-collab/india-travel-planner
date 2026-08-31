@@ -35,6 +35,7 @@ import {
 // Cinematic chrome
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { renderDisplayName } from "@/lib/display-name";
+import { difficultyExplainer } from "@/lib/difficulty-copy";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { DestinationGuideToc } from "@/components/landing-cinema/destination-guide-toc";
@@ -750,13 +751,30 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 Sits flush under the GO/WAIT/SKIP rail so the reader sees
                 the verdict and the supporting numbers in one beat. */}
             {displayScore != null && (
-              <CinematicScorecard
-                kidsRating={kf?.rating ?? null}
-                soloFemaleScore={dest.solo_female_score ?? null}
-                crowdLevel={crowdLevel}
-                budgetTier={dest.budget_tier ?? null}
-                difficulty={dest.difficulty ?? null}
-              />
+              <>
+                <CinematicScorecard
+                  kidsRating={kf?.rating ?? null}
+                  soloFemaleScore={dest.solo_female_score ?? null}
+                  crowdLevel={crowdLevel}
+                  budgetTier={dest.budget_tier ?? null}
+                  difficulty={dest.difficulty ?? null}
+                />
+                {/* EFFORT cell shows a bare grade ("HARD") — spell out what
+                    it means so the reader doesn't have to guess. */}
+                {difficultyExplainer(dest.difficulty, locale) && (
+                  <p
+                    style={{
+                      maxWidth: 720,
+                      margin: "10px auto 0",
+                      fontSize: 12,
+                      lineHeight: 1.6,
+                      color: "var(--bone-faint)",
+                    }}
+                  >
+                    {difficultyExplainer(dest.difficulty, locale)}
+                  </p>
+                )}
+              </>
             )}
 
             {/* Inline alerts removed — the cinematic-variant alerts strip

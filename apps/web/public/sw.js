@@ -120,7 +120,7 @@
 //      celebration video hero (de-watermarked Flow/Veo clips, {slug}.mp4 in
 //      R2) on ~500 /festivals/[slug] pages — markup changed from a static
 //      image to a <video> on the long tail that previously had no clip.
-const CACHE_VERSION = "nakshiq-v54";
+const CACHE_VERSION = "nakshiq-v55";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
