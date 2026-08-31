@@ -17,22 +17,6 @@ test.describe("Mobile Experience", () => {
     await expect(page.getByText("Plan AI")).toBeVisible();
   });
 
-  test("destination detail has sticky section tabs on scroll", async ({ page }) => {
-    // The cinematic destination template (destination-detail-cinematic.tsx)
-    // removed the [data-section] sticky tab strip entirely (replaced by the
-    // act indicator + scroll rail, both hidden under md). Feature is gone on
-    // mobile — test needs a redesign, not a selector fix.
-    test.fixme(true, "[data-section] sticky tabs removed by cinematic dest redesign; no mobile equivalent");
-    await page.goto("/en/destination/varanasi");
-    await page.evaluate(() => window.scrollTo(0, 400));
-    await page.waitForTimeout(500);
-    // Section tabs should be visible (Overview, Monthly, etc.)
-    const tabs = page.locator("[data-section]");
-    // At least some section tabs should exist
-    const count = await tabs.count();
-    expect(count).toBeGreaterThan(0);
-  });
-
   test("explore page loads on mobile", async ({ page }) => {
     await page.goto("/en/explore");
     // Destination cards visible
