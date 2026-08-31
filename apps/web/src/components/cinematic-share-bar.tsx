@@ -170,7 +170,11 @@ export function CinematicShareBar({
   };
 
   return (
-    <div style={containerStyle} aria-label="Share and save">
+    <div
+      style={containerStyle}
+      className={position === "hero" ? "nq-share-hero" : "nq-share-sticky"}
+      aria-label="Share and save"
+    >
       <button
         type="button"
         onClick={toggleSave}

@@ -624,6 +624,103 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
   }
 }
 
+/* ── Destination-page mobile corrections (2026-08-31). The cinematic
+   destination template is styled inline for desktop; these classes exist
+   only so this block can reach the broken elements, so every override
+   needs !important. Desktop >767px is untouched by construction. */
+@media (max-width: 767px) {
+  /* 1. Fixed chrome that collides with the mobile action bar / hamburger.
+     The guide TOC alone covered the right ~236px of a 390px viewport and
+     intercepted touches. The action bar already carries Save + WA + Plan. */
+  .nakshiq-cinema .nq-guide-toc,
+  .nakshiq-cinema .nq-verdict-strip,
+  .nakshiq-cinema .nq-share-sticky,
+  .nakshiq-cinema .nq-share-hero {
+    display: none !important;
+  }
+
+  /* 2. Hero: stack dispatch metadata over a left-aligned smaller score
+     instead of a colliding two-column row; breadcrumb ships inline
+     line-height:1 so wrapped crumbs overlapped the title. */
+  .nakshiq-cinema section[id="dest-act-1"] {
+    padding: 96px 20px 96px !important;
+  }
+  .nakshiq-cinema .nq-hero-top {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+  .nakshiq-cinema .nq-hero-score {
+    text-align: left !important;
+  }
+  .nakshiq-cinema .nq-hero-score > div:first-child {
+    font-size: 52px !important; /* score numeral; JSX: score div, label div */
+  }
+  .nakshiq-cinema section[id="dest-act-1"] nav[aria-label="Breadcrumb"] {
+    line-height: 1.8 !important;
+  }
+  .nakshiq-cinema section[id="dest-act-1"] .nq-display {
+    font-size: clamp(40px, 12vw, 56px) !important;
+    line-height: 1.02 !important;
+  }
+  .nakshiq-cinema section[id="dest-act-1"] .nq-display + p:not([class]) {
+    font-size: 17px !important; /* tagline (unclassed p right after the h1) */
+    line-height: 1.5 !important;
+  }
+
+  /* 3. 12-month strips → 6×2 so all twelve months are on screen at once
+     (repeat(12,1fr) overflowed the viewport and html's overflow-x:clip
+     made JUL–DEC unreachable). Mirrors the solo-female grid-cols-6 phone
+     treatment. */
+  .nakshiq-cinema .nq-month-strip {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 4px !important;
+  }
+  .nakshiq-cinema .nq-month-strip > a {
+    padding: 12px 2px !important;
+  }
+  .nakshiq-cinema .nq-month-strip > a > div + div {
+    font-size: 16px !important; /* score numeral; JSX: label div, score div, sr-span */
+  }
+  .nakshiq-cinema .nq-crowd-strip {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 3px !important;
+  }
+  .nakshiq-cinema .nq-crowd-strip > div {
+    padding: 10px 2px !important;
+  }
+
+  /* 4. Rigid desktop grids → single column (auto-fit grids self-collapse
+     and are untouched). GO/WAIT/SKIP keeps its 3 columns — the order IS
+     the verdict scale — with tighter cells. */
+  .nakshiq-cinema .nq-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .nakshiq-cinema .nq-family-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .nakshiq-cinema .nq-eatery-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .nakshiq-cinema .nq-verdict-rail > div {
+    padding: 20px 6px !important;
+    font-size: 12px !important;
+    letter-spacing: 0.18em !important;
+  }
+  /* 5-cell scorecard: desktop cell padding makes "10.0/10" cells overflow
+     a 390px viewport by ~5px (the page's whole residual scrollWidth). */
+  .nakshiq-cinema .nq-scorecard > div {
+    padding: 16px 2px !important;
+    min-height: 76px !important;
+  }
+  .nakshiq-cinema .nq-scorecard > div > div:last-child {
+    font-size: 13px !important; /* cell value; JSX: label div, value div */
+  }
+}
+
 /* ── Animated chapter divider — coral dot + line that draws in left→right
    on viewport entry. Used inside SectionLabel via .nq-divider class. */
 .nakshiq-cinema .nq-divider-line {

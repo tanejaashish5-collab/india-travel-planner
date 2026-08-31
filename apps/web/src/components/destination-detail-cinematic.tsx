@@ -378,6 +378,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
           {/* Top row: dispatch metadata · score */}
           <div
+            className="nq-hero-top"
             style={{
               position: "relative",
               zIndex: 2,
@@ -407,7 +408,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </p>
             </div>
             {displayScore != null && (
-              <div style={{ textAlign: "right" }}>
+              <div className="nq-hero-score" style={{ textAlign: "right" }}>
                 <div
                   className="nq-mono"
                   style={{
@@ -595,6 +596,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             )}
 
             <div
+              className="nq-cols-2"
               style={{
                 display: "grid",
                 gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)",
@@ -661,6 +663,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             {/* Decision rail — Go / Wait / Skip for current month */}
             {displayScore != null && (
               <div
+                className="nq-verdict-rail"
                 style={{
                   maxWidth: 720,
                   margin: "60px auto 0",
@@ -821,6 +824,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
             {/* 12-month strip */}
             <div
+              className="nq-month-strip"
               style={{
                 maxWidth: 1100,
                 margin: "48px auto 0",
@@ -947,6 +951,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
             {/* Weather + elevation chart — keep both */}
             <div
+              className="nq-cols-2"
               style={{
                 maxWidth: 1100,
                 margin: "60px auto 0",
@@ -1192,6 +1197,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                   KIDS · FAMILY READ
                 </p>
                 <div
+                  className="nq-family-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "minmax(200px, 240px) 1fr",
@@ -1967,6 +1973,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                   WHAT CROWDS LOOK LIKE
                 </p>
                 <div
+                  className="nq-crowd-strip"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(12, 1fr)",
@@ -2190,6 +2197,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     renderItem={(e: any, i: number, total: number) => (
                     <div
                       key={e.id ?? e.name}
+                      className="nq-eatery-row"
                       style={{
                         display: "grid",
                         gridTemplateColumns: "120px 1fr auto",
@@ -3369,6 +3377,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           )}
 
           <div
+            className="nq-cols-2"
             style={{
               maxWidth: 1100,
               margin: "80px auto 0",

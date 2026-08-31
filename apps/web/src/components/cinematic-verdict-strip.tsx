@@ -74,6 +74,7 @@ export function CinematicVerdictStrip({
     <div
       role="complementary"
       aria-label="Verdict at a glance"
+      className="nq-verdict-strip"
       style={{
         position: "fixed",
         bottom: 0,

@@ -94,6 +94,7 @@ export function DestinationGuideToc({ items }: { items: TocItem[] }) {
   return (
     <nav
       aria-label="In-guide jump navigation"
+      className="nq-guide-toc"
       style={{
         position: "fixed",
         top: "50%",

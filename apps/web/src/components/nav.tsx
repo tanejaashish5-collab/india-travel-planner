@@ -405,7 +405,7 @@ export function Nav() {
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
               aria-expanded={mobileMenuOpen}
-              className="md:hidden flex flex-col items-end gap-[5px] p-2 -mr-2"
+              className="md:hidden flex flex-col items-end justify-center gap-[5px] p-2 -mr-2 min-h-[44px] min-w-[44px]"
             >
               <span className="block h-[2px] w-6 bg-[#F5F1E8]" />
               <span className="block h-[2px] w-4 bg-[#F5F1E8]" />

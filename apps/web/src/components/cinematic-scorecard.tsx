@@ -110,6 +110,7 @@ export function CinematicScorecard({
 
   return (
     <div
+      className="nq-scorecard"
       style={{
         maxWidth: 720,
         margin: "32px auto 0",
