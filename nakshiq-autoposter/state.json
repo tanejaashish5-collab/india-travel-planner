@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-08-31",
@@ -268,6 +268,10 @@
     },
     {
       "destination_id": "dhanaulti",
+      "date": "2026-09-01"
+    },
+    {
+      "destination_id": "bir-billing",
       "date": "2026-09-01"
     }
   ],
@@ -9149,6 +9153,24 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-09-01"
+    },
+    {
+      "timestamp": "2026-09-01T15:41:00.971315+00:00",
+      "date": "2026-09-01",
+      "platform": "instagram",
+      "post_id": "CAdv6",
+      "destination": "bir-billing",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_bir-billing_hi_2026-09-01.mp4"
+    },
+    {
+      "timestamp": "2026-09-01T15:41:12.295422+00:00",
+      "date": "2026-09-01",
+      "platform": "youtube",
+      "post_id": "gey2g",
+      "destination": "bir-billing",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_bir-billing_hi_2026-09-01.mp4"
     }
   ],
   "theme_usage": {
