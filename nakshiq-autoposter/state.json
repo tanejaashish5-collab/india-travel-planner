@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-08-31",
     "m8EAd_evening": "2026-08-31",
@@ -41,32 +41,11 @@
     "PdMu0_evening": "2026-08-31",
     "m8EAd_carousel": "2026-08-31",
     "PdMu0_carousel": "2026-08-31",
-    "GAh5p_yt_short": "2026-08-31",
-    "m8EAd_carousel_story": "2026-08-30",
-    "m8EAd_yt_short": "2026-08-31"
+    "GAh5p_yt_short": "2026-09-01",
+    "m8EAd_yt_short": "2026-09-01"
   },
   "last_sync": "2026-08-31T20:10:16.050105+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "shravanabelagola",
-      "date": "2026-08-17"
-    },
-    {
-      "destination_id": "manali",
-      "date": "2026-08-17"
-    },
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-08-17"
-    },
-    {
-      "destination_id": "nako",
-      "date": "2026-08-17"
-    },
-    {
-      "destination_id": "kolad",
-      "date": "2026-08-17"
-    },
     {
       "destination_id": "trichy",
       "date": "2026-08-18"
@@ -282,6 +261,10 @@
     {
       "destination_id": "bhimashankar",
       "date": "2026-08-31"
+    },
+    {
+      "destination_id": "lolab-valley",
+      "date": "2026-09-01"
     }
   ],
   "posted_formats": {
@@ -9126,6 +9109,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "bhimashankar.mp4"
+    },
+    {
+      "timestamp": "2026-09-01T09:30:21.048019+00:00",
+      "date": "2026-09-01",
+      "platform": "instagram",
+      "post_id": "Ii2yc",
+      "destination": "lolab-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lolab-valley_en_2026-09-01.mp4"
+    },
+    {
+      "timestamp": "2026-09-01T09:30:29.355788+00:00",
+      "date": "2026-09-01",
+      "platform": "youtube",
+      "post_id": "d8lBp",
+      "destination": "lolab-valley",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_lolab-valley_en_2026-09-01.mp4"
     }
   ],
   "theme_usage": {
@@ -9137,14 +9138,6 @@
       "hemkund-sahib": [
         "2026-05-19",
         "2026-06-08"
-      ],
-      "chopta": [
-        "2026-05-19",
-        "2026-05-20",
-        "2026-05-21",
-        "2026-05-23",
-        "2026-05-26",
-        "2026-06-02"
       ],
       "achabal": [
         "2026-05-19",
@@ -9234,10 +9227,6 @@
         "2026-06-01",
         "2026-06-21"
       ],
-      "kasol": [
-        "2026-06-01",
-        "2026-06-02"
-      ],
       "nubra-valley": [
         "2026-06-01",
         "2026-06-02",
@@ -9251,9 +9240,6 @@
         "2026-06-30",
         "2026-07-11",
         "2026-07-28"
-      ],
-      "tungnath": [
-        "2026-06-02"
       ],
       "pangong-lake": [
         "2026-06-02",
@@ -9619,9 +9605,6 @@
         "2026-08-29",
         "2026-08-30",
         "2026-08-31"
-      ],
-      "v2_score_card_pov": [
-        "2026-06-02"
       ],
       "v2_local_knows": [
         "2026-06-02",
@@ -10167,8 +10150,7 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    },
-    "tourist_trap_alts": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
