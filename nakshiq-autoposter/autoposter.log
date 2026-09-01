@@ -21480,3 +21480,46 @@ Date range: 2026-04-15 → 2026-08-31
 2026-09-01 15:41:12  INFO      YT Short posted: format=listicle, music=hype-267
 2026-09-01 15:41:12  INFO      State saved. YT Short run complete.
 2026-09-01 15:41:12  INFO      ════════════════════════════════════════════════════════════
+2026-09-01 17:57:33  INFO      ════════════════════════════════════════════════════════════
+2026-09-01 17:57:33  INFO      Nakshiq Autoposter · EVENING · 2026-09-01 · weekday=1
+2026-09-01 17:57:33  INFO      ════════════════════════════════════════════════════════════
+2026-09-01 17:57:33  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-01 17:58:11  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-01 17:58:11  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-01 17:58:12  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-01 17:58:12  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-09-01 17:58:12  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-01 17:58:25  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-01 17:58:25  INFO      Evening format (balance→anti_trap): tourist_trap [0% vs target 15%] (0/15 never featured)
+2026-09-01 17:58:25  INFO      Formats — IG: tourist_trap  ·  FB: tourist_trap  ·  Story: collection_spotlight
+2026-09-01 17:58:25  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 54
+2026-09-01 17:58:25  INFO      Fingerprint dedup snapshot — 54 dests in 7d · 112 (dest,fmt) pairs in 30d · 226 media in 60d
+2026-09-01 17:58:25  INFO      Collection locked: The Complete Buddhist Circuit (75/100 never featured)
+2026-09-01 17:58:25  INFO      Tourist trap locked: skip Kasol → go Barot Valley (80/80 never featured)
+2026-09-01 17:58:30  INFO      Shared best destination locked: Jibhi
+2026-09-01 17:58:30  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-09-01 17:58:30  INFO      [instagram/nakshiq] Generating tourist_trap post...
+2026-09-01 17:58:30  INFO      [instagram/nakshiq] Caption ready (442 chars, dest=jibhi)
+2026-09-01 17:58:30  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-01 17:58:30  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jibhi.mp4?v=20260524
+2026-09-01 17:58:34  INFO          Brand-stamp applied: jibhi.mp4 (15,357,687 → 7,853,482 bytes)
+2026-09-01 17:58:34  INFO          Requesting upload URL for jibhi.mp4 (7,853,482 bytes, video/mp4)
+2026-09-01 17:58:35  INFO          Uploading to R2 (timeout=300s)...
+2026-09-01 17:58:37  INFO          R2 PUT OK. Confirming...
+2026-09-01 17:58:39  INFO          Media ready: EzSrz (7,853,482 bytes · jibhi.mp4)
+2026-09-01 17:58:39  INFO      [instagram/nakshiq] Publishing Reel...
+2026-09-01 17:59:27  INFO      [instagram/nakshiq] ✅ Published · Outstand=XBJEY · Platform=18202343806373275
+2026-09-01 17:59:27  INFO      [facebook/Nakshiq] Generating tourist_trap post...
+2026-09-01 17:59:27  INFO      [facebook/Nakshiq] Caption ready (563 chars, dest=jibhi)
+2026-09-01 17:59:27  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-01 17:59:27  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jibhi.mp4?v=20260524
+2026-09-01 17:59:31  INFO          Brand-stamp applied: jibhi.mp4 (15,357,687 → 7,853,482 bytes)
+2026-09-01 17:59:31  INFO          Requesting upload URL for jibhi.mp4 (7,853,482 bytes, video/mp4)
+2026-09-01 17:59:31  INFO          Uploading to R2 (timeout=300s)...
+2026-09-01 17:59:33  INFO          R2 PUT OK. Confirming...
+2026-09-01 17:59:34  INFO          Media ready: I4VUh (7,853,482 bytes · jibhi.mp4)
+2026-09-01 17:59:34  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-01 17:59:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=RcMnl · Platform=964479383356678
+2026-09-01 17:59:52  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-09-01 17:59:52  INFO      State saved. Run complete.
+2026-09-01 17:59:52  INFO      ════════════════════════════════════════════════════════════

@@ -35,16 +35,16 @@
     "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-08-31",
-    "m8EAd_evening": "2026-08-31",
-    "PdMu0": "2026-08-31",
-    "PdMu0_evening": "2026-08-31",
+    "m8EAd": "2026-09-01",
+    "m8EAd_evening": "2026-09-01",
+    "PdMu0": "2026-09-01",
+    "PdMu0_evening": "2026-09-01",
     "m8EAd_carousel": "2026-09-01",
     "PdMu0_carousel": "2026-09-01",
     "GAh5p_yt_short": "2026-09-01",
     "m8EAd_yt_short": "2026-09-01"
   },
-  "last_sync": "2026-08-31T20:10:16.050105+00:00",
+  "last_sync": "2026-09-01T17:58:11.409985+00:00",
   "posted_destinations": [
     {
       "destination_id": "trichy",
@@ -273,11 +273,14 @@
     {
       "destination_id": "bir-billing",
       "date": "2026-09-01"
+    },
+    {
+      "destination_id": "jibhi",
+      "date": "2026-09-01"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -297,10 +300,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "tourist_trap"
     ],
     "PdMu0": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -320,7 +323,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "tourist_trap"
     ]
   },
   "post_log": [
@@ -9171,6 +9175,28 @@
       "destination": "bir-billing",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_bir-billing_hi_2026-09-01.mp4"
+    },
+    {
+      "timestamp": "2026-09-01T17:59:27.361898+00:00",
+      "date": "2026-09-01",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XBJEY",
+      "destination": "jibhi",
+      "format": "tourist_trap",
+      "has_media": true,
+      "media_id": "jibhi.mp4"
+    },
+    {
+      "timestamp": "2026-09-01T17:59:52.465796+00:00",
+      "date": "2026-09-01",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "RcMnl",
+      "destination": "jibhi",
+      "format": "tourist_trap",
+      "has_media": true,
+      "media_id": "jibhi.mp4"
     }
   ],
   "theme_usage": {
@@ -9521,6 +9547,9 @@
       ],
       "kanchipuram": [
         "2026-08-27"
+      ],
+      "jibhi": [
+        "2026-09-01"
       ]
     },
     "morning_formats": {
@@ -9709,6 +9738,9 @@
       "data_carousel": [
         "2026-07-01",
         "2026-08-02"
+      ],
+      "tourist_trap": [
+        "2026-09-01"
       ]
     },
     "reels": {
@@ -9904,6 +9936,9 @@
       ],
       "lonavala": [
         "2026-08-27"
+      ],
+      "jibhi": [
+        "2026-09-01"
       ]
     },
     "audience_tags": {
@@ -10038,6 +10073,9 @@
       ],
       "pancha-bhoota-stalams": [
         "2026-08-27"
+      ],
+      "buddhist-circuit-complete": [
+        "2026-09-01"
       ]
     },
     "festivals": {
@@ -10194,7 +10232,9 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    }
+    },
+    "tourist_trap_alts": {},
+    "collection_carousel_dests:buddhist-circuit-complete": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10208,8 +10248,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "turtuk",
-    "collection": "pancha-bhoota-stalams"
+    "shared_best": "jibhi",
+    "collection": "buddhist-circuit-complete"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-08-28",
