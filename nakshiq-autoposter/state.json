@@ -39,8 +39,8 @@
     "m8EAd_evening": "2026-09-01",
     "PdMu0": "2026-09-01",
     "PdMu0_evening": "2026-09-01",
-    "m8EAd_carousel": "2026-09-01",
-    "PdMu0_carousel": "2026-09-01",
+    "m8EAd_carousel": "2026-09-02",
+    "PdMu0_carousel": "2026-09-02",
     "GAh5p_yt_short": "2026-09-02",
     "m8EAd_yt_short": "2026-09-01",
     "m8EAd_reel_studio": "2026-09-02",
@@ -274,6 +274,10 @@
     },
     {
       "destination_id": "delhi",
+      "date": "2026-09-02"
+    },
+    {
+      "destination_id": "kinnaur",
       "date": "2026-09-02"
     }
   ],
@@ -9231,6 +9235,24 @@
       "destination": "delhi",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_nainital-weekend-4d.mp4"
+    },
+    {
+      "timestamp": "2026-09-02T12:11:42.310413+00:00",
+      "date": "2026-09-02",
+      "platform": "instagram",
+      "post_id": "IikoW",
+      "destination": "kinnaur",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-09-02"
+    },
+    {
+      "timestamp": "2026-09-02T12:11:44.441586+00:00",
+      "date": "2026-09-02",
+      "platform": "facebook",
+      "post_id": "cbWgk",
+      "destination": "kinnaur",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-09-02"
     }
   ],
   "theme_usage": {
