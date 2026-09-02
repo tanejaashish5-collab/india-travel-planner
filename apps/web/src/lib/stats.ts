@@ -14,9 +14,11 @@ export interface AppStats {
   campingSpots: number;
 }
 
-// Fallback values if DB is unavailable — keep these updated (May 2026, post pilgrimage-circuits expansion: 14 new dests + 11 new collections)
+// Fallback values if DB is unavailable — keep these updated (destinations
+// refreshed 2026-09-02 to the live 533; others last confirmed May 2026, post
+// pilgrimage-circuits expansion: 14 new dests + 11 new collections)
 export const FALLBACK: AppStats = {
-  destinations: 505,
+  destinations: 533,
   places: 1158,
   routes: 75,
   festivals: 331,

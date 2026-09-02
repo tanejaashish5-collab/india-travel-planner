@@ -158,6 +158,18 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
+  // Live counts for the sitewide JSON-LD below. These were hardcoded ("505
+  // destinations, 5,856 monthly verdicts") and went stale as the corpus grew
+  // to 533 — the same lying-numbers class the freshness page fixed on
+  // 2026-08-31 (NEW-2026-08-31-002). getAppStats is unstable_cache'd, so
+  // this costs one head-count query per revalidation, not per render. Every
+  // destination carries exactly 12 month rows, so verdicts = dests × 12.
+  const { getAppStats } = await import("@/lib/stats");
+  const stats = await getAppStats();
+  const destCount = stats.destinations;
+  const stateCount = stats.states;
+  const verdictCount = (destCount * 12).toLocaleString("en-US");
+
   return (
     <html
       lang={locale}
@@ -210,7 +222,7 @@ export default async function LocaleLayout({
                 // page; Google accepts both, so the string is the zero-risk shape.
                 logo: "https://www.nakshiq.com/icon-512.png",
                 description:
-                  "Travel intelligence for India. 505 destinations across 36 states, each scored month-by-month for go/wait/skip verdicts, kids-suitability, solo-female safety, and altitude risk. Citation-first editorial — no fabricated prices, phone numbers, or stays.",
+                  `Travel intelligence for India. ${destCount} destinations across ${stateCount} states, each scored month-by-month for go/wait/skip verdicts, kids-suitability, solo-female safety, and altitude risk. Citation-first editorial — no fabricated prices, phone numbers, or stays.`,
                 foundingDate: "2026",
                 areaServed: { "@type": "Country", name: "India" },
                 knowsAbout: [
@@ -256,7 +268,7 @@ export default async function LocaleLayout({
                 url: "https://www.nakshiq.com",
                 name: "NakshIQ",
                 description:
-                  "Travel intelligence for India — 505 destinations, 5,856 monthly verdicts, citation-first editorial.",
+                  `Travel intelligence for India — ${destCount} destinations, ${verdictCount} monthly verdicts, citation-first editorial.`,
                 publisher: { "@id": "https://www.nakshiq.com#organization" },
                 inLanguage: ["en-IN", "hi-IN"],
                 potentialAction: {
