@@ -1,5 +1,9 @@
 "use client";
 
+// Bundled same-origin — see explore-map.tsx for why the old cdnjs <link>
+// was silently killed by the service worker + connect-src CSP interaction.
+import "leaflet/dist/leaflet.css";
+
 import { useEffect, useRef } from "react";
 import { useLocale } from "next-intl";
 
@@ -81,19 +85,18 @@ export function DestinationMap({
         tilePane.setAttribute("role", "presentation");
       }
 
-      // Two-layer Carto: base tiles get the ocean tint filter, label tiles
-      // sit on a separate pane (no filter) so place names stay crisp white
-      // instead of tinted blue. Without this, the filter applied to dark_all
-      // tinted everything — water, land AND labels — and labels became hard
-      // to read against the now-blueish backdrop.
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; OSM &copy; CARTO',
+      // Two-layer Esri dark canvas (CARTO revoked keyless raster access
+      // 2026-08): base tiles get the ocean tint filter, label tiles sit on a
+      // separate pane (no filter) so place names stay crisp instead of tinted
+      // blue. Esri tile paths are {z}/{y}/{x} — y before x, unlike CARTO/OSM.
+      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: 'Powered by <a href="https://www.esri.com/">Esri</a> &copy; OSM contributors',
         maxZoom: 16,
       }).addTo(map);
       map.createPane("labels");
       map.getPane("labels")!.style.zIndex = "250";
       map.getPane("labels")!.style.pointerEvents = "none";
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png", {
+      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
         pane: "labels",
         maxZoom: 16,
       }).addTo(map);
@@ -172,26 +175,11 @@ export function DestinationMap({
 
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
-        integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb"
-        crossOrigin="anonymous"
-      />
       <style>{`
-        /* Carto dark_all tiles render water as slightly-lighter grey on dark
-           land — the difference reads as nothing on screen. Sepia first
-           introduces hue into the greyscale, hue-rotate shifts it to ocean
-           blue. Scoped to .leaflet-tile-pane so markers, popups, controls,
-           and our overlay pins keep their native colours.
-           Labels live on a separate pane so they bypass this filter and
-           stay crisp. */
-        .leaflet-tile-pane {
-          filter: sepia(0.85) hue-rotate(195deg) saturate(2) brightness(1.05);
-        }
-        .leaflet-pane.leaflet-labels-pane {
-          filter: none;
-        }
+        /* No tile filter: the old sepia/hue-rotate ocean tint existed because
+           CARTO dark rendered water invisibly close to land. Esri dark gray
+           differentiates water natively, and the filter turned its lighter
+           land tone lavender. */
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;
           border: 1px solid #333;

@@ -120,7 +120,7 @@
 //      celebration video hero (de-watermarked Flow/Veo clips, {slug}.mp4 in
 //      R2) on ~500 /festivals/[slug] pages — markup changed from a static
 //      image to a <video> on the long tail that previously had no clip.
-const CACHE_VERSION = "nakshiq-v56";
+const CACHE_VERSION = "nakshiq-v57";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -243,9 +243,19 @@ self.addEventListener("fetch", (event) => {
   // Never intercept non-GET requests (mutations always go to network).
   if (event.request.method !== "GET") return;
 
-  // Cross-origin assets (R2 CDN images + videos, weather icons) are passed
-  // straight through to the network — see the image block below for why.
+  // Cross-origin — NEVER intercept, for two compounding reasons (both scars):
+  //   1. Opaque/no-cors responses can't be validated, so caching them risks
+  //      pinning error bodies (see the image-block comment below, 2026-08-13).
+  //   2. A SW's own fetch() is governed by the CSP's connect-src, which lists
+  //      only first-party + analytics origins. A cross-origin subresource that
+  //      the browser WOULD allow under its own directive (the Leaflet
+  //      stylesheet under style-src) got re-issued here, CSP-blocked, and the
+  //      catch-all turned it into a fabricated 503 "Offline" — every Leaflet
+  //      map rendered blank with panes in normal flow (NEW-2026-09-01-001,
+  //      root-caused 2026-09-02). Staying out of the path lets the browser
+  //      load each resource under its correct CSP directive.
   const isOwnOrigin = url.origin === self.location.origin;
+  if (!isOwnOrigin) return;
 
   // Next internal — let it flow.
   if (url.pathname.startsWith("/_next/")) return;
@@ -279,10 +289,11 @@ self.addEventListener("fetch", (event) => {
   // risk pinning error bodies forever. R2 already serves these assets with
   // `Cache-Control: public, max-age=31536000, immutable`, so the browser's own
   // HTTP cache covers repeat views. Staying out of the path is strictly better.
+  // (Cross-origin images are already covered by the blanket cross-origin
+  // pass-through above; the comment stays because it documents WHY opaque
+  // responses must never be cached.)
   const isImageRequest =
     url.pathname.match(/\.(jpg|jpeg|png|webp|avif|svg|ico)$/i) || url.pathname.includes("/images/");
-
-  if (isImageRequest && !isOwnOrigin) return;
 
   // Same-origin images — Cache First. Here the response is NOT opaque, so
   // `response.ok` is meaningful and errors are never cached.

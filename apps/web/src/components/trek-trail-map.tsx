@@ -1,5 +1,9 @@
 "use client";
 
+// Bundled same-origin — see explore-map.tsx for why the old cdnjs <link>
+// was silently killed by the service worker + connect-src CSP interaction.
+import "leaflet/dist/leaflet.css";
+
 import { useEffect, useRef } from "react";
 
 interface TrailPoint {
@@ -49,16 +53,18 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
         tilePane.setAttribute("aria-hidden", "true");
         tilePane.setAttribute("role", "presentation");
       }
-      // Two-layer Carto: base tiles get the ocean tint filter, label tiles
-      // sit on a separate pane (no filter) so place names stay crisp.
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; OSM &copy; CARTO',
+      // Two-layer Esri dark canvas (CARTO revoked keyless raster access
+      // 2026-08): base tiles get the ocean tint filter, label tiles sit on a
+      // separate pane (no filter) so place names stay crisp. Esri tile paths
+      // are {z}/{y}/{x} — y before x, unlike CARTO/OSM.
+      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: 'Powered by <a href="https://www.esri.com/">Esri</a> &copy; OSM contributors',
         maxZoom: 16,
       }).addTo(map);
       map.createPane("labels");
       map.getPane("labels")!.style.zIndex = "250";
       map.getPane("labels")!.style.pointerEvents = "none";
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png", {
+      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
         pane: "labels",
         maxZoom: 16,
       }).addTo(map);
@@ -162,20 +168,9 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
 
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
-        integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb"
-        crossOrigin="anonymous"
-      />
       <style>{`
-        /* Ocean tint — sepia introduces hue into the greyscale tile, hue-rotate
-           shifts it to blue. Scoped to .leaflet-tile-pane so trail polylines
-           and pins stay in their native colours. Labels are on a separate
-           pane and bypass the filter. See destination-map.tsx for rationale. */
-        .leaflet-tile-pane {
-          filter: sepia(0.85) hue-rotate(195deg) saturate(2) brightness(1.05);
-        }
+        /* No tile filter — see destination-map.tsx: the CARTO-era ocean tint
+           turned Esri's lighter land tone lavender. */
         .leaflet-pane.leaflet-labels-pane {
           filter: none;
         }

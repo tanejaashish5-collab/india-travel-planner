@@ -6,8 +6,12 @@ test.describe("Destination Detail", () => {
     await expect(page).toHaveTitle(/Varanasi/);
     // Hero image
     await expect(page.locator("video, img[alt]").first()).toBeVisible();
-    // Name and tagline
-    await expect(page.getByText("Varanasi").first()).toBeVisible();
+    // Name and tagline. getByText(...).first() broke on mobile after the
+    // 2026-08-31 fix hid desktop-only fixed chrome (share bar / verdict strip)
+    // ≤767px — the DOM-first "Varanasi" span now sits inside display:none
+    // chrome there. The H1 is the element that must be visible on every
+    // viewport, so assert that.
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(/Varanasi/);
     // Month scores section. The cinematic template's heading is "Month by
     // month" (spaces) — the old regex only allowed the hyphenated form, so it
     // matched nothing on the rendered page even though the section was there.

@@ -1,5 +1,13 @@
 "use client";
 
+// Bundled same-origin. Was a cdnjs <link> until 2026-09-02: the service worker
+// re-issues intercepted subresource loads as fetch(), which the CSP governs
+// under connect-src (NOT style-src, which allowed the link) — the SW fetch was
+// CSP-blocked and fabricated a 503, so Leaflet's CSS never loaded and every
+// pane rendered in normal flow thousands of px below the container
+// (NEW-2026-09-01-001).
+import "leaflet/dist/leaflet.css";
+
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { formatScoreInline } from "@itp/shared";
@@ -47,9 +55,6 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         zoomControl: true,
       });
 
-      // dark_all (labelled) — state/district/city names help travelers
-      // orient at a glance. Trade-off: Chinese-script labels appear near
-      // the AP/Ladakh border (CartoDB quirk); accepted for orientation value.
       // BUG-113: hide the tile pane from the a11y tree. Pane-level is O(1) and
       // covers future tiles on zoom/pan; per-tile tileload races with sync tileadd.
       const tilePane = map.getPane("tilePane");
@@ -57,18 +62,21 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         tilePane.setAttribute("aria-hidden", "true");
         tilePane.setAttribute("role", "presentation");
       }
-      // Two-layer Carto: base tiles get the ocean tint filter, label tiles
-      // sit on a separate pane (no filter) so place names stay crisp.
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        maxZoom: 19,
+      // Two-layer Esri dark canvas (CARTO revoked keyless raster access
+      // 2026-08 — tiles became "API KEY REQUIRED" placeholders): base tiles
+      // get the ocean tint filter, label tiles sit on a separate pane (no
+      // filter) so place names stay crisp. Esri tile paths are {z}/{y}/{x} —
+      // y before x, unlike CARTO/OSM. Dark Gray Canvas tops out at zoom 16.
+      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: 'Powered by <a href="https://www.esri.com/">Esri</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors',
+        maxZoom: 16,
       }).addTo(map);
       map.createPane("labels");
       map.getPane("labels")!.style.zIndex = "250";
       map.getPane("labels")!.style.pointerEvents = "none";
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png", {
+      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
         pane: "labels",
-        maxZoom: 19,
+        maxZoom: 16,
       }).addTo(map);
 
       // Style map attribution for dark theme readability
@@ -160,23 +168,11 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
 
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
-        integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb"
-        crossOrigin="anonymous"
-      />
       <style>{`
-        /* Ocean tint — sepia introduces hue into the greyscale tile, hue-rotate
-           shifts it to blue. Scoped to .leaflet-tile-pane so our markers stay
-           in their native colours. Labels are on a separate pane and bypass
-           the filter. See destination-map.tsx for full rationale. */
-        .leaflet-tile-pane {
-          filter: sepia(0.85) hue-rotate(195deg) saturate(2) brightness(1.05);
-        }
-        .leaflet-pane.leaflet-labels-pane {
-          filter: none;
-        }
+        /* No tile filter: the old sepia/hue-rotate ocean tint existed because
+           CARTO dark rendered water invisibly close to land. Esri dark gray
+           differentiates water natively, and the filter turned its lighter
+           land tone lavender. */
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;
           border: 1px solid #333;

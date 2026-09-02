@@ -9,8 +9,12 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // Every third-party origin is enumerated; adding a new external script/image
 // host REQUIRES extending this list or the resource silently breaks in prod.
 // Origins: GA4 (gtag + beacons), 2 Cloudflare R2 buckets (images/videos),
-// Carto basemaps (Leaflet tiles), cdnjs (Leaflet CSS), Supabase (browser
-// client reads).
+// Esri arcgisonline (Leaflet basemap tiles; replaced Carto 2026-09-02 after
+// CARTO revoked keyless raster access), Supabase (browser client reads).
+// Leaflet CSS is bundled same-origin since 2026-09-02 — do NOT reintroduce a
+// cross-origin <link>: the service worker re-issues intercepted subresources
+// as fetch(), which this CSP governs under connect-src, silently killing any
+// cross-origin stylesheet/script the SW touches (NEW-2026-09-01-001).
 const SUPABASE_ORIGIN = (() => {
   try {
     return new URL(process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").origin;
@@ -22,8 +26,8 @@ const SUPABASE_ORIGIN = (() => {
 const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
-  "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
-  "img-src 'self' data: blob: https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://*.basemaps.cartocdn.com https://openweathermap.org https://www.google-analytics.com https://www.googletagmanager.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://server.arcgisonline.com https://openweathermap.org https://www.google-analytics.com https://www.googletagmanager.com",
   "media-src 'self' https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev",
   "font-src 'self' data:",
   `connect-src 'self' ${SUPABASE_ORIGIN} https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com`,
