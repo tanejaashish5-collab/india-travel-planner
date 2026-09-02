@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-09-01",
@@ -41,23 +41,11 @@
     "PdMu0_evening": "2026-09-01",
     "m8EAd_carousel": "2026-09-01",
     "PdMu0_carousel": "2026-09-01",
-    "GAh5p_yt_short": "2026-09-01",
+    "GAh5p_yt_short": "2026-09-02",
     "m8EAd_yt_short": "2026-09-01"
   },
   "last_sync": "2026-09-01T17:58:11.409985+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "trichy",
-      "date": "2026-08-18"
-    },
-    {
-      "destination_id": "igatpuri",
-      "date": "2026-08-18"
-    },
-    {
-      "destination_id": "srirangapatna",
-      "date": "2026-08-18"
-    },
     {
       "destination_id": "theur",
       "date": "2026-08-19"
@@ -277,6 +265,10 @@
     {
       "destination_id": "jibhi",
       "date": "2026-09-01"
+    },
+    {
+      "destination_id": "yusmarg",
+      "date": "2026-09-02"
     }
   ],
   "posted_formats": {
@@ -9197,6 +9189,24 @@
       "format": "tourist_trap",
       "has_media": true,
       "media_id": "jibhi.mp4"
+    },
+    {
+      "timestamp": "2026-09-02T08:52:41.028031+00:00",
+      "date": "2026-09-02",
+      "platform": "instagram",
+      "post_id": "mx9WC",
+      "destination": "yusmarg",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_yusmarg_hi_2026-09-02.mp4"
+    },
+    {
+      "timestamp": "2026-09-02T08:52:50.174613+00:00",
+      "date": "2026-09-02",
+      "platform": "youtube",
+      "post_id": "PmiZp",
+      "destination": "yusmarg",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_yusmarg_hi_2026-09-02.mp4"
     }
   ],
   "theme_usage": {
@@ -9254,10 +9264,6 @@
         "2026-05-26",
         "2026-06-11"
       ],
-      "shimla": [
-        "2026-05-24",
-        "2026-06-03"
-      ],
       "sonamarg": [
         "2026-05-25",
         "2026-06-15",
@@ -9272,6 +9278,10 @@
       "puri": [
         "2026-05-25",
         "2026-06-07"
+      ],
+      "jibhi": [
+        "2026-05-25",
+        "2026-09-01"
       ],
       "leh": [
         "2026-05-25",
@@ -9329,9 +9339,6 @@
       "ukhrul": [
         "2026-06-03",
         "2026-06-22"
-      ],
-      "tawang": [
-        "2026-06-03"
       ],
       "keylong": [
         "2026-06-03",
@@ -9547,9 +9554,6 @@
       ],
       "kanchipuram": [
         "2026-08-27"
-      ],
-      "jibhi": [
-        "2026-09-01"
       ]
     },
     "morning_formats": {
@@ -9684,12 +9688,6 @@
         "2026-06-16",
         "2026-06-21"
       ],
-      "v2_weekend_escape_map": [
-        "2026-06-03"
-      ],
-      "v2_texture_macro": [
-        "2026-06-03"
-      ],
       "v2_hidden_gem_reveal_atmo": [
         "2026-06-04"
       ],
@@ -9762,10 +9760,6 @@
         "2026-05-24",
         "2026-06-11"
       ],
-      "shimla": [
-        "2026-05-24",
-        "2026-06-03"
-      ],
       "mumbai": [
         "2026-05-26",
         "2026-08-27"
@@ -9793,9 +9787,6 @@
         "2026-06-30",
         "2026-07-11",
         "2026-07-28"
-      ],
-      "tawang": [
-        "2026-06-03"
       ],
       "lahaul-valley": [
         "2026-06-04",
@@ -10131,9 +10122,6 @@
       ]
     },
     "collection_carousel_dests:best-motorcycle-routes": {
-      "leh": [
-        "2026-06-03"
-      ],
       "zanskar": [
         "2026-08-04"
       ]
@@ -10232,9 +10220,7 @@
       "tso-moriri": [
         "2026-08-25"
       ]
-    },
-    "tourist_trap_alts": {},
-    "collection_carousel_dests:buddhist-circuit-complete": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
