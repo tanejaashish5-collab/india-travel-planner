@@ -42,7 +42,9 @@
     "m8EAd_carousel": "2026-09-01",
     "PdMu0_carousel": "2026-09-01",
     "GAh5p_yt_short": "2026-09-02",
-    "m8EAd_yt_short": "2026-09-01"
+    "m8EAd_yt_short": "2026-09-01",
+    "m8EAd_reel_studio": "2026-09-02",
+    "GAh5p_reel_studio": "2026-09-02"
   },
   "last_sync": "2026-09-01T17:58:11.409985+00:00",
   "posted_destinations": [
@@ -268,6 +270,10 @@
     },
     {
       "destination_id": "yusmarg",
+      "date": "2026-09-02"
+    },
+    {
+      "destination_id": "delhi",
       "date": "2026-09-02"
     }
   ],
@@ -9207,6 +9213,24 @@
       "destination": "yusmarg",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_yusmarg_hi_2026-09-02.mp4"
+    },
+    {
+      "timestamp": "2026-09-02T10:03:07.845656+00:00",
+      "date": "2026-09-02",
+      "platform": "instagram",
+      "post_id": "nyRQu",
+      "destination": "delhi",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_nainital-weekend-4d.mp4"
+    },
+    {
+      "timestamp": "2026-09-02T10:03:16.445444+00:00",
+      "date": "2026-09-02",
+      "platform": "youtube",
+      "post_id": "XBhiF",
+      "destination": "delhi",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_nainital-weekend-4d.mp4"
     }
   ],
   "theme_usage": {
@@ -10245,7 +10269,8 @@
     "ladakh-express-7d": "2026-08-10",
     "spiti-biker-circuit": "2026-08-12",
     "kinnaur-spiti-circuit": "2026-08-14",
-    "ladakh-manali-route": "2026-08-17"
+    "ladakh-manali-route": "2026-08-17",
+    "nainital-weekend-4d": "2026-09-02"
   },
   "carousel_seen": {
     "festival": [

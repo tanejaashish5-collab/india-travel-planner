@@ -21600,3 +21600,21 @@ Date range: 2026-04-15 → 2026-09-01
 2026-09-02 08:52:50  INFO      YT Short posted: format=did_you_know, music=hype-412
 2026-09-02 08:52:50  INFO      State saved. YT Short run complete.
 2026-09-02 08:52:50  INFO      ════════════════════════════════════════════════════════════
+2026-09-02 10:01:10  INFO      ════════════════════════════════════════════════════════════
+2026-09-02 10:01:10  INFO      Nakshiq Autoposter · REEL STUDIO · 2026-09-02
+2026-09-02 10:01:10  INFO      ════════════════════════════════════════════════════════════
+2026-09-02 10:01:10  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-02 10:01:46  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-02 10:02:14  INFO      Reel built: fmt=itinerary, route=nainital-weekend-4d, 18.0s, 7267KB
+2026-09-02 10:02:14  INFO          Requesting upload URL for reel_studio_itinerary_nainital-weekend-4d.mp4 (7,442,197 bytes, video/mp4)
+2026-09-02 10:02:15  INFO          Uploading to R2 (timeout=300s)...
+2026-09-02 10:02:16  INFO          R2 PUT OK. Confirming...
+2026-09-02 10:02:17  INFO          Media ready: Shz8o (7,442,197 bytes · reel_studio_itinerary_nainital-weekend-4d.mp4)
+2026-09-02 10:02:18  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-02 10:02:18  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-09-02 10:03:07  WARNING       Platform error for post=nyRQu: Error publishing Instagram post: Failed to publish Instagram container: unknown - "Container processing failed: ERROR"
+2026-09-02 10:03:07  INFO      [instagram/nakshiq] ⚠️ studio reel queued_unconfirmed · post_id=nyRQu
+2026-09-02 10:03:07  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-09-02 10:03:16  INFO      [youtube/@naksh-iq] ✅ studio reel published · post_id=XBhiF
+2026-09-02 10:03:16  INFO      Reel studio run complete (fmt=itinerary, route=nainital-weekend-4d, posted=True).
+2026-09-02 10:03:16  INFO      ════════════════════════════════════════════════════════════
