@@ -1,6 +1,6 @@
 {
   "version": "2026.04",
-  "notes": "100 target queries for weekly AI-citation tracking. Mix of destination-month, persona, safety, and logistics queries. Each has a target_url (the specific NakshIQ page the AI should cite). Run via scripts/track-ai-citations.mjs.",
+  "notes": "103 target queries for weekly AI-citation tracking. Mix of destination-month, persona, safety, logistics, and inbound-foreigner queries. Each has a target_url (the specific NakshIQ page the AI should cite). Run via scripts/track-ai-citations.mjs. The 5 fgn-* prompts (added 2026-09-02, founder-approved hedge from the inbound-tourism gate) are checked on Google AIO ONLY — never on Perplexity, where the ~10-query account throttle would displace btv-* coverage.",
   "prompts": [
     { "id": "btv-spiti-june", "category": "best-time-visit", "query": "best time to visit Spiti valley", "target_url": "/en/destination/kaza" },
     { "id": "btv-ladakh-july", "category": "best-time-visit", "query": "best time to visit Ladakh", "target_url": "/en/destination/leh" },
@@ -20,12 +20,12 @@
     { "id": "btv-mahabalipuram", "category": "best-time-visit", "query": "Mahabalipuram best season", "target_url": "/en/destination/mahabalipuram" },
     { "id": "btv-hornbill-festival", "category": "best-time-visit", "query": "Nagaland Hornbill Festival dates timing", "target_url": "/en/destination/kohima/12" },
 
-    { "id": "sol-ladakh", "category": "solo-female", "query": "is Ladakh safe for solo female travel", "target_url": "/en/for-solo-female" },
+    { "id": "sol-ladakh", "category": "solo-female", "query": "is Ladakh safe for solo female travel", "target_url": "/en/for/solo-female" },
     { "id": "sol-rajasthan", "category": "solo-female", "query": "solo female travel Rajasthan safety", "target_url": "/en/destination/jaipur" },
-    { "id": "sol-himachal", "category": "solo-female", "query": "is Himachal safe for solo women", "target_url": "/en/for-solo-female" },
+    { "id": "sol-himachal", "category": "solo-female", "query": "is Himachal safe for solo women", "target_url": "/en/for/solo-female" },
     { "id": "sol-kerala", "category": "solo-female", "query": "Kerala solo female traveler tips", "target_url": "/en/destination/alleppey" },
     { "id": "sol-pondicherry", "category": "solo-female", "query": "Pondicherry solo female night safety", "target_url": "/en/destination/puducherry" },
-    { "id": "sol-northeast", "category": "solo-female", "query": "is Northeast India safe for solo female", "target_url": "/en/for-solo-female" },
+    { "id": "sol-northeast", "category": "solo-female", "query": "is Northeast India safe for solo female", "target_url": "/en/for/solo-female" },
     { "id": "sol-varanasi", "category": "solo-female", "query": "Varanasi solo female travel experience", "target_url": "/en/destination/varanasi" },
     { "id": "sol-goa", "category": "solo-female", "query": "solo female trip Goa safety at night", "target_url": "/en/destination/palolem" },
     { "id": "sol-month-guide", "category": "solo-female", "query": "solo female travel India month by month guide", "target_url": "/en/blog/solo-female-india-month-by-month" },
@@ -111,6 +111,11 @@
     { "id": "fest-hornbill", "category": "festivals", "query": "Hornbill Festival Kohima travel guide", "target_url": "/en/destination/kohima" },
     { "id": "fest-kumbh-mela", "category": "festivals", "query": "Kumbh Mela dates location calendar", "target_url": "/en/destination/prayagraj" },
     { "id": "fest-rann-utsav", "category": "festivals", "query": "Rann Utsav dates Gujarat bookings", "target_url": "/en/destination/rann-of-kutch" },
-    { "id": "fest-ziro-music", "category": "festivals", "query": "Ziro Music Festival Arunachal 2026", "target_url": "/en/destination/ziro-valley" }
+    { "id": "fest-ziro-music", "category": "festivals", "query": "Ziro Music Festival Arunachal 2026", "target_url": "/en/destination/ziro-valley" },
+    { "id": "fgn-safe-solo-female", "category": "inbound-foreigner", "query": "is India safe for solo female travellers", "target_url": "/en/for/solo-female" },
+    { "id": "fgn-first-trip", "category": "inbound-foreigner", "query": "first trip to India itinerary", "target_url": "/en/guide/first-trip-india" },
+    { "id": "fgn-evisa-time", "category": "inbound-foreigner", "query": "India e-visa how long does it take", "target_url": "/en/guide/visa" },
+    { "id": "fgn-worth-visiting", "category": "inbound-foreigner", "query": "is India worth visiting 2026", "target_url": "/en/guide/first-trip-india" },
+    { "id": "fgn-india-vs-vietnam", "category": "inbound-foreigner", "query": "India vs Vietnam trip", "target_url": "/en/india-travel" }
   ]
 }
