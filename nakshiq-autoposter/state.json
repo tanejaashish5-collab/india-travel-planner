@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd": "2026-09-01",
@@ -42,7 +42,7 @@
     "m8EAd_carousel": "2026-09-02",
     "PdMu0_carousel": "2026-09-02",
     "GAh5p_yt_short": "2026-09-02",
-    "m8EAd_yt_short": "2026-09-01",
+    "m8EAd_yt_short": "2026-09-02",
     "m8EAd_reel_studio": "2026-09-02",
     "GAh5p_reel_studio": "2026-09-02"
   },
@@ -278,6 +278,10 @@
     },
     {
       "destination_id": "kinnaur",
+      "date": "2026-09-02"
+    },
+    {
+      "destination_id": "parvati-valley",
       "date": "2026-09-02"
     }
   ],
@@ -9253,6 +9257,24 @@
       "destination": "kinnaur",
       "format": "carousel.persona",
       "media_id": "carousel_persona_2026-09-02"
+    },
+    {
+      "timestamp": "2026-09-02T15:23:49.971088+00:00",
+      "date": "2026-09-02",
+      "platform": "instagram",
+      "post_id": "uzIMZ",
+      "destination": "parvati-valley",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_parvati-valley_hi_2026-09-02.mp4"
+    },
+    {
+      "timestamp": "2026-09-02T15:23:59.656206+00:00",
+      "date": "2026-09-02",
+      "platform": "youtube",
+      "post_id": "IikgQ",
+      "destination": "parvati-valley",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_parvati-valley_hi_2026-09-02.mp4"
     }
   ],
   "theme_usage": {
