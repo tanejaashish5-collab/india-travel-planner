@@ -133,6 +133,15 @@ The three .docx outputs target different audiences:
 
 All three reports are generated from the **same** `findings.json` — the generators select different fields and wording, never recompute or re-probe.
 
+### Populating `business_summary` (required for the Business Report to render cleanly, added 2026-09-03)
+
+`buildBusiness()` in `qa/_lib/build_report.js` renders ONLY from `findings.json`'s top-level `business_summary` object (plus a couple of sibling top-level objects below) — it deliberately does NOT render the raw `regression_matrix`, the flattened `headline_metrics`, or `new_findings_today[].detail`, because those are written for a developer/QA audience and routinely contain file paths, function names, and commit hashes (NEW-2026-08-14-005, closed 2026-09-03 after two attempts — the first, data-only fix looked sufficient by reading the code and was proven insufficient by reading the generated .docx). Every findings.json from now on must populate:
+
+- `run.executor` — keep this to 1-2 plain sentences. It is rendered verbatim as a header line on **all three** personas (`header()` is shared). This is the one field that leaks if you let it get technical again — put the rich technical narrative in `phases_completed[]` / `honest_caveats[]` instead, which only the Developer/QA reports render.
+- `business_summary.headline`, `.traffic_lights[]` (`[area, status, why]`), `.whats_changed[]`, `.risks[]`, `.bottom_line[]`, `.coverage[]` — all plain-language, no code/paths/hashes/finding-IDs.
+- Optional but recommended to comfortably clear the 10KB floor: `business_summary.context[]`, `business_summary.tomorrow[]`, and the sibling top-level objects `business_fix_timeline`, `business_tracked_minor_items`, `business_detailed_measurements`, `business_about_this_report` (each `{ note, items[] }`) — see `qa/findings/2026-09-03.json` for a worked example of all of these.
+- **Verify by scanning the generated .docx text, not by re-reading the generator code.** A quick check: `unzip -p NakshIQ_Business_Report.docx word/document.xml | python3 -c "import sys,re,html; print(re.sub('<[^>]+>',' ',html.unescape(sys.stdin.read())))"` and eyeball/grep for file extensions, hex-looking tokens, or `NEW-2026-` IDs. This is the same discipline as the rendered-page-verification rule elsewhere in this repo, applied to a generated document instead of a web page.
+
 ## Failure modes (and what to do)
 
 - **Chrome MCP not connected** → skip section K, set `phases_skipped` entry, continue.
