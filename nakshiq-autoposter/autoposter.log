@@ -21825,3 +21825,46 @@ Date range: 2026-04-15 → 2026-09-02
 2026-09-03 15:16:34  INFO      YT Short posted: format=dont_go_here, music=hype-738
 2026-09-03 15:16:34  INFO      State saved. YT Short run complete.
 2026-09-03 15:16:34  INFO      ════════════════════════════════════════════════════════════
+2026-09-03 17:55:51  INFO      ════════════════════════════════════════════════════════════
+2026-09-03 17:55:51  INFO      Nakshiq Autoposter · EVENING · 2026-09-03 · weekday=3
+2026-09-03 17:55:51  INFO      ════════════════════════════════════════════════════════════
+2026-09-03 17:55:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-03 17:56:25  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-03 17:56:25  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-03 17:56:26  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-03 17:56:26  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-09-03 17:56:27  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-03 17:56:40  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-03 17:56:40  INFO      Evening format (balance→discovery): route_spotlight_short [8% vs target 15%] (0/15 never featured)
+2026-09-03 17:56:40  INFO      Formats — IG: route_spotlight_short  ·  FB: route_spotlight_short  ·  Story: collection_spotlight
+2026-09-03 17:56:40  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-09-03 17:56:40  INFO      Fingerprint dedup snapshot — 55 dests in 7d · 115 (dest,fmt) pairs in 30d · 228 media in 60d
+2026-09-03 17:56:40  INFO      Collection locked: The Deccan Food Trail — Biryani, Haleem & Beyond (74/100 never featured)
+2026-09-03 17:56:40  INFO      Route short locked: Rishikesh Weekend (22/22 never featured)
+2026-09-03 17:56:42  INFO      Shared best destination locked: Kalpa
+2026-09-03 17:56:42  INFO      Carousel locked (collection_spotlight): tirupati
+2026-09-03 17:56:42  INFO      [instagram/nakshiq] Generating route_spotlight_short post...
+2026-09-03 17:56:42  INFO      [instagram/nakshiq] Caption ready (309 chars, dest=kalpa)
+2026-09-03 17:56:42  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-03 17:56:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kalpa.mp4?v=20260524
+2026-09-03 17:56:45  INFO          Brand-stamp applied: kalpa.mp4 (3,584,723 → 2,065,428 bytes)
+2026-09-03 17:56:45  INFO          Requesting upload URL for kalpa.mp4 (2,065,428 bytes, video/mp4)
+2026-09-03 17:56:46  INFO          Uploading to R2 (timeout=300s)...
+2026-09-03 17:56:46  INFO          R2 PUT OK. Confirming...
+2026-09-03 17:56:49  INFO          Media ready: dxN1u (2,065,428 bytes · kalpa.mp4)
+2026-09-03 17:56:49  INFO      [instagram/nakshiq] Publishing Reel...
+2026-09-03 17:57:32  INFO      [instagram/nakshiq] ✅ Published · Outstand=TCgru · Platform=18098066501632213
+2026-09-03 17:57:32  INFO      [facebook/Nakshiq] Generating route_spotlight_short post...
+2026-09-03 17:57:32  INFO      [facebook/Nakshiq] Caption ready (575 chars, dest=kalpa)
+2026-09-03 17:57:32  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-03 17:57:32  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kalpa.mp4?v=20260524
+2026-09-03 17:57:34  INFO          Brand-stamp applied: kalpa.mp4 (3,584,723 → 2,065,428 bytes)
+2026-09-03 17:57:34  INFO          Requesting upload URL for kalpa.mp4 (2,065,428 bytes, video/mp4)
+2026-09-03 17:57:36  INFO          Uploading to R2 (timeout=300s)...
+2026-09-03 17:57:37  INFO          R2 PUT OK. Confirming...
+2026-09-03 17:57:38  INFO          Media ready: vIbpW (2,065,428 bytes · kalpa.mp4)
+2026-09-03 17:57:38  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-03 17:58:02  INFO      [facebook/Nakshiq] ✅ Published · Outstand=jkTF6 · Platform=2075092730062526
+2026-09-03 17:58:02  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-09-03 17:58:02  INFO      State saved. Run complete.
+2026-09-03 17:58:02  INFO      ════════════════════════════════════════════════════════════

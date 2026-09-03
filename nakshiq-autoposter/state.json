@@ -40,9 +40,13 @@
     "GAh5p_yt_short": "2026-09-03",
     "m8EAd_yt_short": "2026-09-03",
     "m8EAd_reel_studio": "2026-09-02",
-    "GAh5p_reel_studio": "2026-09-02"
+    "GAh5p_reel_studio": "2026-09-02",
+    "m8EAd": "2026-09-03",
+    "m8EAd_evening": "2026-09-03",
+    "PdMu0": "2026-09-03",
+    "PdMu0_evening": "2026-09-03"
   },
-  "last_sync": "2026-09-01T17:58:11.409985+00:00",
+  "last_sync": "2026-09-03T17:56:25.132957+00:00",
   "posted_destinations": [
     {
       "destination_id": "kargil",
@@ -275,11 +279,14 @@
     {
       "destination_id": "verinag",
       "date": "2026-09-03"
+    },
+    {
+      "destination_id": "kalpa",
+      "date": "2026-09-03"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -299,10 +306,10 @@
       "score_card",
       "score_card",
       "score_card",
-      "tourist_trap"
+      "tourist_trap",
+      "route_spotlight_short"
     ],
     "PdMu0": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -322,7 +329,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "tourist_trap"
+      "tourist_trap",
+      "route_spotlight_short"
     ]
   },
   "post_log": [
@@ -9321,6 +9329,28 @@
       "destination": "verinag",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_verinag_hi_2026-09-03.mp4"
+    },
+    {
+      "timestamp": "2026-09-03T17:57:32.457320+00:00",
+      "date": "2026-09-03",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "TCgru",
+      "destination": "kalpa",
+      "format": "route_spotlight_short",
+      "has_media": true,
+      "media_id": "kalpa.mp4"
+    },
+    {
+      "timestamp": "2026-09-03T17:58:02.407190+00:00",
+      "date": "2026-09-03",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jkTF6",
+      "destination": "kalpa",
+      "format": "route_spotlight_short",
+      "has_media": true,
+      "media_id": "kalpa.mp4"
     }
   ],
   "theme_usage": {
@@ -9668,6 +9698,12 @@
       ],
       "kanchipuram": [
         "2026-08-27"
+      ],
+      "tirupati": [
+        "2026-09-03"
+      ],
+      "kalpa": [
+        "2026-09-03"
       ]
     },
     "morning_formats": {
@@ -9846,6 +9882,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "route_spotlight_short": [
+        "2026-09-03"
       ]
     },
     "reels": {
@@ -10037,6 +10076,9 @@
       ],
       "jibhi": [
         "2026-09-01"
+      ],
+      "kalpa": [
+        "2026-09-03"
       ]
     },
     "audience_tags": {
@@ -10174,6 +10216,9 @@
       ],
       "buddhist-circuit-complete": [
         "2026-09-01"
+      ],
+      "deccan-food-trail": [
+        "2026-09-03"
       ]
     },
     "festivals": {
@@ -10327,6 +10372,12 @@
       "tso-moriri": [
         "2026-08-25"
       ]
+    },
+    "route_spotlight_short": {},
+    "collection_carousel_dests:deccan-food-trail": {
+      "tirupati": [
+        "2026-09-03"
+      ]
     }
   },
   "infographic": {
@@ -10341,8 +10392,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "jibhi",
-    "collection": "buddhist-circuit-complete"
+    "shared_best": "kalpa",
+    "collection": "deccan-food-trail"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-08-28",
