@@ -32,38 +32,18 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd": "2026-09-01",
-    "m8EAd_evening": "2026-09-01",
-    "PdMu0": "2026-09-01",
-    "PdMu0_evening": "2026-09-01",
     "m8EAd_carousel": "2026-09-02",
     "PdMu0_carousel": "2026-09-02",
-    "GAh5p_yt_short": "2026-09-02",
+    "GAh5p_yt_short": "2026-09-03",
     "m8EAd_yt_short": "2026-09-02",
     "m8EAd_reel_studio": "2026-09-02",
     "GAh5p_reel_studio": "2026-09-02"
   },
   "last_sync": "2026-09-01T17:58:11.409985+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "theur",
-      "date": "2026-08-19"
-    },
-    {
-      "destination_id": "bundi",
-      "date": "2026-08-19"
-    },
-    {
-      "destination_id": "spiti-valley",
-      "date": "2026-08-19"
-    },
-    {
-      "destination_id": "khardung-la",
-      "date": "2026-08-19"
-    },
     {
       "destination_id": "kargil",
       "date": "2026-08-20"
@@ -283,6 +263,10 @@
     {
       "destination_id": "parvati-valley",
       "date": "2026-09-02"
+    },
+    {
+      "destination_id": "kolad",
+      "date": "2026-09-03"
     }
   ],
   "posted_formats": {
@@ -9275,6 +9259,24 @@
       "destination": "parvati-valley",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_parvati-valley_hi_2026-09-02.mp4"
+    },
+    {
+      "timestamp": "2026-09-03T09:02:41.815272+00:00",
+      "date": "2026-09-03",
+      "platform": "instagram",
+      "post_id": "GZgcD",
+      "destination": "kolad",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_kolad_en_2026-09-03.mp4"
+    },
+    {
+      "timestamp": "2026-09-03T09:02:50.353237+00:00",
+      "date": "2026-09-03",
+      "platform": "youtube",
+      "post_id": "3sGKy",
+      "destination": "kolad",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_kolad_en_2026-09-03.mp4"
     }
   ],
   "theme_usage": {
@@ -9663,10 +9665,6 @@
         "2026-05-25",
         "2026-08-27"
       ],
-      "v3_tl_world_best_india": [
-        "2026-05-29",
-        "2026-06-04"
-      ],
       "weekend_escape": [
         "2026-05-30",
         "2026-06-05"
@@ -9755,9 +9753,6 @@
         "2026-06-02",
         "2026-06-16",
         "2026-06-21"
-      ],
-      "v2_hidden_gem_reveal_atmo": [
-        "2026-06-04"
       ],
       "v4_dw_counter_narrative_myth_bust": [
         "2026-06-05"
