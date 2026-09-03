@@ -21802,3 +21802,26 @@ Date range: 2026-04-15 → 2026-09-02
 2026-09-03 12:10:55  INFO      [facebook/Nakshiq] ✅ carousel published (cost) · post_id=MEIv6
 2026-09-03 12:10:55  INFO      Carousel run complete (fmt=cost, posted=True).
 2026-09-03 12:10:55  INFO      ════════════════════════════════════════════════════════════
+2026-09-03 15:13:57  INFO      ════════════════════════════════════════════════════════════
+2026-09-03 15:13:57  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-03
+2026-09-03 15:13:57  INFO      ════════════════════════════════════════════════════════════
+2026-09-03 15:14:00  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-03 15:15:33  INFO      Short rendered: yt_short_dont_go_here_verinag_hi_2026-09-03.mp4 (13826 KB, 23.9s, fmt=dont_go_here, music=hype-738)
+2026-09-03 15:15:33  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_verinag_hi_2026-09-03.mp4 (14,158,777 bytes, video/mp4)
+2026-09-03 15:15:34  INFO          Uploading to R2 (timeout=300s)...
+2026-09-03 15:15:36  INFO          R2 PUT OK. Confirming...
+2026-09-03 15:15:38  INFO          Media ready: 4lZQm (14,158,777 bytes · yt_short_dont_go_here_yt_short_dont_go_here_verinag_hi_2026-09-03.mp4)
+2026-09-03 15:15:38  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_verinag_hi_2026-09-03.mp4
+2026-09-03 15:15:39  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-03 15:15:39  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
+2026-09-03 15:15:39  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-09-03 15:15:42  INFO      [instagram/nakshiq] Outstand accepted (post_id=5VzwO), waiting for platform confirmation...
+2026-09-03 15:16:22  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=5VzwO · Platform=18624403705051433
+2026-09-03 15:16:22  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-09-03 15:16:22  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
+2026-09-03 15:16:22  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-09-03 15:16:27  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=en6vZ), waiting for platform confirmation...
+2026-09-03 15:16:34  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=en6vZ · Platform=BXDV0udrt64
+2026-09-03 15:16:34  INFO      YT Short posted: format=dont_go_here, music=hype-738
+2026-09-03 15:16:34  INFO      State saved. YT Short run complete.
+2026-09-03 15:16:34  INFO      ════════════════════════════════════════════════════════════

@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-03",
     "PdMu0_carousel": "2026-09-03",
     "GAh5p_yt_short": "2026-09-03",
-    "m8EAd_yt_short": "2026-09-02",
+    "m8EAd_yt_short": "2026-09-03",
     "m8EAd_reel_studio": "2026-09-02",
     "GAh5p_reel_studio": "2026-09-02"
   },
@@ -270,6 +270,10 @@
     },
     {
       "destination_id": "rajkot",
+      "date": "2026-09-03"
+    },
+    {
+      "destination_id": "verinag",
       "date": "2026-09-03"
     }
   ],
@@ -9299,6 +9303,24 @@
       "destination": "rajkot",
       "format": "carousel.cost",
       "media_id": "carousel_cost_2026-09-03"
+    },
+    {
+      "timestamp": "2026-09-03T15:16:22.284348+00:00",
+      "date": "2026-09-03",
+      "platform": "instagram",
+      "post_id": "5VzwO",
+      "destination": "verinag",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_verinag_hi_2026-09-03.mp4"
+    },
+    {
+      "timestamp": "2026-09-03T15:16:34.420733+00:00",
+      "date": "2026-09-03",
+      "platform": "youtube",
+      "post_id": "en6vZ",
+      "destination": "verinag",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_verinag_hi_2026-09-03.mp4"
     }
   ],
   "theme_usage": {
