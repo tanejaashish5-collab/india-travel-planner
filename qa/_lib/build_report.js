@@ -66,7 +66,7 @@ function sectionResults(m) {
       `${m.sitemap_chunks || 0} chunks; ${m.sitemap_total_urls || 0} URLs; ${m.sitemap_total_destination_slug_urls || 0} slug + ${m.sitemap_total_destination_month_urls || 0} month`],
     ['I — Core routes', verdict((m.core_routes_4xx_or_5xx || 0) === 0),
       `${m.core_routes_2xx || 0}/${m.core_routes_probed || 0} 2xx; TTFB min ${tt.min}/median ${tt.median}/p90 ${tt.p90}/max ${tt.max} ms`],
-    ['J — Locale redirects', 'PASS', 'bare paths 301 → /en/<path> (see section-J-locale.csv)'],
+    ['J — Locale redirects', 'PASS', 'bare paths redirect to the correct language-prefixed URL'],
     ['K — Map widget (Chrome E2E)', verdict((m.map_dest_pages_leaflet_template || 0) > 0),
       `Leaflet present on ${m.map_dest_pages_leaflet_template || 0}/${m.map_dest_pages_probed_interactive || 0} surfaces probed`]
   ];
@@ -189,6 +189,7 @@ function buildBusiness(b, f) {
 
   b.h2('Headline');
   b.p(bs.headline || 'Daily QA pass completed — see traffic-light snapshot below.');
+  if (bs.context && bs.context.length) for (const p of bs.context) b.p(p);
 
   b.h2('Traffic-light snapshot');
   const tl = bs.traffic_lights && bs.traffic_lights.length
@@ -220,18 +221,27 @@ function buildBusiness(b, f) {
   if (!risks.length) b.p('No risks flagged today.');
   for (const r of risks) b.bullet(r);
 
-  if (f.new_findings_today && f.new_findings_today.length) {
-    b.h2('Detail on today’s findings');
-    for (const n of f.new_findings_today) {
-      b.h3(`${n.id} [${n.severity}] — ${n.title}`);
-      if (n.detail) b.p(n.detail);
-      if (n.recommendation) b.prich([{ text: 'Recommended: ', bold: true }, { text: n.recommendation }]);
-    }
-  }
-
+  // NOTE (2026-09-03, NEW-2026-08-14-005): this persona must carry no code,
+  // no commit hashes, no file paths (see SKILL.md's persona definitions).
+  // A prior version of this function unconditionally dumped raw
+  // new_findings_today[].detail, the fully-flattened headline_metrics object,
+  // and the raw regression_matrix table (titles/evidence are written for a
+  // developer/QA audience and routinely contain file paths, script names, and
+  // commit hashes) below this point. That was the actual leak vector — not
+  // run.executor, which is only ever a single header line. Removed rather
+  // than gated, because there is no business-safe subset of raw finding
+  // detail/metric-notes/regression-evidence to show; the curated
+  // business_summary fields above (whats_changed, risks, bottom_line,
+  // coverage) are the intended replacement. sectionResults(m) below is kept
+  // because it is already human-language with no technical references.
   if (bs.bottom_line && bs.bottom_line.length) {
     b.h2('Bottom line — recommended actions');
     for (const a of bs.bottom_line) b.bullet(a);
+  }
+
+  if (bs.tomorrow && bs.tomorrow.length) {
+    b.h2('What tomorrow’s check will look at');
+    for (const a of bs.tomorrow) b.bullet(a);
   }
 
   b.h2('Coverage at a glance');
@@ -243,18 +253,47 @@ function buildBusiness(b, f) {
   ];
   for (const c of cov) b.bullet(c);
 
+  if (bs.checks_confirmed_healthy && bs.checks_confirmed_healthy.length) {
+    b.h2('Everything else we checked and confirmed healthy');
+    for (const c of bs.checks_confirmed_healthy) b.bullet(c);
+  }
+
+  const detailed = f.business_detailed_measurements;
+  if (detailed && Array.isArray(detailed.items) && detailed.items.length) {
+    b.h2('A few specific numbers behind today’s checks');
+    if (detailed.note) b.p(detailed.note);
+    for (const c of detailed.items) b.bullet(c);
+  }
+
+  const timeline = f.business_fix_timeline;
+  if (timeline && Array.isArray(timeline.items) && timeline.items.length) {
+    b.h2('How long today’s fixed issues had been open');
+    if (timeline.note) b.p(timeline.note);
+    for (const c of timeline.items) b.bullet(c);
+  }
+
+  const tracked = f.business_tracked_minor_items;
+  if (tracked && Array.isArray(tracked.items) && tracked.items.length) {
+    b.h2('Smaller items we’re tracking (none urgent)');
+    if (tracked.note) b.p(tracked.note);
+    for (const c of tracked.items) b.bullet(c);
+  }
+
   b.h2('By the numbers (today’s measured results)');
   b.table(['Section', 'Verdict', 'Detail'], sectionResults(m));
-  b.p('Full metric set:');
-  b.table(['Metric', 'Value'], flattenMetrics(m));
 
-  b.h2('Every prior issue we re-checked today');
-  b.p('Plain-language status of the full regression list (what was previously flagged, and whether it is holding):');
-  b.table(['Issue', 'What it is', 'Status today'],
-    (f.regression_matrix || []).map(x => [x.id, x.title, x.today_status || '']));
+  const about = f.business_about_this_report;
+  if (about && Array.isArray(about.items) && about.items.length) {
+    b.h2('About this report');
+    if (about.note) b.p(about.note);
+    for (const c of about.items) b.bullet(c);
+  }
 
-  b.h2('Honest caveats');
-  for (const c of f.honest_caveats || []) b.bullet(c);
+  // NOTE (2026-09-03, NEW-2026-08-14-005): f.honest_caveats is shared with the
+  // Developer/QA personas and routinely names specific files/functions/commit
+  // hashes — exactly what this persona must not show (see SKILL.md). The
+  // business_summary.risks section above is the intended business-safe
+  // equivalent; deliberately not rendering raw honest_caveats here.
 }
 
 const BUILDERS = { developer: buildDeveloper, qa: buildQA, business: buildBusiness };
