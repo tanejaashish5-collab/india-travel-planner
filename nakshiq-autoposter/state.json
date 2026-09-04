@@ -35,8 +35,8 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-09-03",
-    "PdMu0_carousel": "2026-09-03",
+    "m8EAd_carousel": "2026-09-04",
+    "PdMu0_carousel": "2026-09-04",
     "GAh5p_yt_short": "2026-09-04",
     "m8EAd_yt_short": "2026-09-04",
     "m8EAd": "2026-09-03",
@@ -44,7 +44,10 @@
     "PdMu0": "2026-09-03",
     "PdMu0_evening": "2026-09-03",
     "m8EAd_reel_studio": "2026-09-04",
-    "GAh5p_reel_studio": "2026-09-04"
+    "GAh5p_reel_studio": "2026-09-04",
+    "m8EAd_greeting": "2026-09-04",
+    "m8EAd_greeting_story": "2026-09-04",
+    "PdMu0_greeting": "2026-09-04"
   },
   "last_sync": "2026-09-03T17:56:25.132957+00:00",
   "posted_destinations": [
@@ -278,6 +281,14 @@
     },
     {
       "destination_id": "rishikesh",
+      "date": "2026-09-04"
+    },
+    {
+      "destination_id": "mathura",
+      "date": "2026-09-04"
+    },
+    {
+      "destination_id": "leh",
       "date": "2026-09-04"
     }
   ],
@@ -9383,6 +9394,51 @@
       "destination": "rishikesh",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_uttarakhand-passes-biker.mp4"
+    },
+    {
+      "timestamp": "2026-09-04T12:12:28.800033+00:00",
+      "date": "2026-09-04",
+      "platform": "instagram",
+      "post_id": "mxhlf",
+      "destination": "mathura",
+      "format": "greeting.janmashtami",
+      "media_id": "greeting_janmashtami_2026-09-04"
+    },
+    {
+      "timestamp": "2026-09-04T12:12:35.403850+00:00",
+      "date": "2026-09-04",
+      "platform": "instagram",
+      "post_id": "xr62I",
+      "destination": "mathura",
+      "format": "story.greeting",
+      "media_id": "story_greeting_janmashtami_2026-09-04"
+    },
+    {
+      "timestamp": "2026-09-04T12:12:39.078898+00:00",
+      "date": "2026-09-04",
+      "platform": "facebook",
+      "post_id": "Pm24t",
+      "destination": "mathura",
+      "format": "greeting.janmashtami",
+      "media_id": "greeting_janmashtami_2026-09-04"
+    },
+    {
+      "timestamp": "2026-09-04T12:14:09.975453+00:00",
+      "date": "2026-09-04",
+      "platform": "instagram",
+      "post_id": "4KcU6",
+      "destination": "leh",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-09-04"
+    },
+    {
+      "timestamp": "2026-09-04T12:14:12.509055+00:00",
+      "date": "2026-09-04",
+      "platform": "facebook",
+      "post_id": "7qQXB",
+      "destination": "leh",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-09-04"
     }
   ],
   "theme_usage": {
@@ -10435,7 +10491,15 @@
       "Ladarcha Fair",
       "Gurez Cultural Festival",
       "Malana Village Fair",
-      "Pang Lhabsol"
+      "Pang Lhabsol",
+      "Ladakh Festival",
+      "Ganesh Chaturthi at Trinetra Ganesh Temple",
+      "Nubra Valley Festival",
+      "Nako Lake Festival",
+      "Champawat Nanda Devi Fair",
+      "Mata Murti Ka Mela",
+      "Urs of Sheikh Salim Chishti",
+      "Nanda Devi Mela"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
