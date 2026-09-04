@@ -22031,3 +22031,27 @@ Date range: 2026-04-15 → 2026-09-03
 2026-09-04 12:14:12  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=7qQXB
 2026-09-04 12:14:12  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-09-04 12:14:12  INFO      ════════════════════════════════════════════════════════════
+2026-09-04 15:09:04  INFO      ════════════════════════════════════════════════════════════
+2026-09-04 15:09:04  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-04
+2026-09-04 15:09:04  INFO      ════════════════════════════════════════════════════════════
+2026-09-04 15:09:07  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-04 15:10:32  INFO      Short rendered: yt_short_did_you_know_munsiyari_hi_2026-09-04.mp4 (11535 KB, 24.2s, fmt=did_you_know, music=fast-676)
+2026-09-04 15:10:32  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_munsiyari_hi_2026-09-04.mp4 (11,812,373 bytes, video/mp4)
+2026-09-04 15:10:34  INFO          Uploading to R2 (timeout=300s)...
+2026-09-04 15:10:35  INFO          R2 PUT OK. Confirming...
+2026-09-04 15:10:37  INFO          Media ready: 70DvE (11,812,373 bytes · yt_short_did_you_know_yt_short_did_you_know_munsiyari_hi_2026-09-04.mp4)
+2026-09-04 15:10:37  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_munsiyari_hi_2026-09-04.mp4
+2026-09-04 15:10:38  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-04 15:10:38  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-09-04 15:10:38  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-09-04 15:10:40  INFO      [instagram/nakshiq] Outstand accepted (post_id=4KcPA), waiting for platform confirmation...
+2026-09-04 15:11:27  INFO          wait_for_publish exhausted 8 polls for post=4KcPA (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-09-04 15:11:27  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=4KcPA). May have silently failed.
+2026-09-04 15:11:27  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-09-04 15:11:27  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-09-04 15:11:27  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-09-04 15:11:29  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=purYR), waiting for platform confirmation...
+2026-09-04 15:11:35  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=purYR · Platform=dLAv3vTtYtY
+2026-09-04 15:11:35  INFO      YT Short posted: format=did_you_know, music=fast-676
+2026-09-04 15:11:35  INFO      State saved. YT Short run complete.
+2026-09-04 15:11:35  INFO      ════════════════════════════════════════════════════════════
