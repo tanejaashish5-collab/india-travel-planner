@@ -39,17 +39,18 @@
     "PdMu0_carousel": "2026-09-04",
     "GAh5p_yt_short": "2026-09-04",
     "m8EAd_yt_short": "2026-09-04",
-    "m8EAd": "2026-09-03",
-    "m8EAd_evening": "2026-09-03",
-    "PdMu0": "2026-09-03",
-    "PdMu0_evening": "2026-09-03",
+    "m8EAd": "2026-09-04",
+    "m8EAd_evening": "2026-09-04",
+    "PdMu0": "2026-09-04",
+    "PdMu0_evening": "2026-09-04",
     "m8EAd_reel_studio": "2026-09-04",
     "GAh5p_reel_studio": "2026-09-04",
     "m8EAd_greeting": "2026-09-04",
     "m8EAd_greeting_story": "2026-09-04",
-    "PdMu0_greeting": "2026-09-04"
+    "PdMu0_greeting": "2026-09-04",
+    "m8EAd_evening_story": "2026-09-04"
   },
-  "last_sync": "2026-09-03T17:56:25.132957+00:00",
+  "last_sync": "2026-09-04T17:45:39.504450+00:00",
   "posted_destinations": [
     {
       "destination_id": "ananthagiri-hills",
@@ -294,11 +295,18 @@
     {
       "destination_id": "munsiyari",
       "date": "2026-09-04"
+    },
+    {
+      "destination_id": "achabal",
+      "date": "2026-09-04"
+    },
+    {
+      "destination_id": "ooty",
+      "date": "2026-09-04"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -318,10 +326,10 @@
       "score_card",
       "score_card",
       "tourist_trap",
-      "route_spotlight_short"
+      "route_spotlight_short",
+      "v4_dw_local_historian_spotlight"
     ],
     "PdMu0": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -341,7 +349,8 @@
       "score_card",
       "score_card",
       "tourist_trap",
-      "route_spotlight_short"
+      "route_spotlight_short",
+      "v4_dw_local_historian_spotlight"
     ]
   },
   "post_log": [
@@ -9461,6 +9470,39 @@
       "destination": "munsiyari",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_munsiyari_hi_2026-09-04.mp4"
+    },
+    {
+      "timestamp": "2026-09-04T17:47:21.065209+00:00",
+      "date": "2026-09-04",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "BQNs8",
+      "destination": "achabal",
+      "format": "v4_dw_local_historian_spotlight",
+      "has_media": true,
+      "media_id": "v4_dw_local_historian_spotlight-achabal_01_cover.png"
+    },
+    {
+      "timestamp": "2026-09-04T17:47:45.637343+00:00",
+      "date": "2026-09-04",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "i9Vwe",
+      "destination": "barot-valley",
+      "format": "reality_check",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-09-04T17:48:32.289770+00:00",
+      "date": "2026-09-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xrRSr",
+      "destination": "ooty",
+      "format": "v4_dw_local_historian_spotlight",
+      "has_media": true,
+      "media_id": "v4_dw_local_historian_spotlight-ooty_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -9476,7 +9518,8 @@
       "achabal": [
         "2026-05-19",
         "2026-06-01",
-        "2026-06-16"
+        "2026-06-16",
+        "2026-09-04"
       ],
       "mumbai": [
         "2026-05-20",
@@ -9610,7 +9653,8 @@
         "2026-06-11",
         "2026-06-15",
         "2026-06-16",
-        "2026-06-29"
+        "2026-06-29",
+        "2026-09-04"
       ],
       "kargil": [
         "2026-06-04",
@@ -9811,6 +9855,12 @@
       ],
       "kalpa": [
         "2026-09-03"
+      ],
+      "barot-valley": [
+        "2026-09-04"
+      ],
+      "ooty": [
+        "2026-09-04"
       ]
     },
     "morning_formats": {
@@ -9986,6 +10036,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v4_dw_local_historian_spotlight": [
+        "2026-09-04"
       ]
     },
     "reels": {
@@ -10177,6 +10230,12 @@
       ],
       "kalpa": [
         "2026-09-03"
+      ],
+      "achabal": [
+        "2026-09-04"
+      ],
+      "ooty": [
+        "2026-09-04"
       ]
     },
     "audience_tags": {
@@ -10224,7 +10283,8 @@
         "2026-08-07",
         "2026-08-14",
         "2026-08-21",
-        "2026-08-28"
+        "2026-08-28",
+        "2026-09-04"
       ]
     },
     "collections": {
@@ -10489,7 +10549,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kalpa",
+    "shared_best": "nako",
     "collection": "deccan-food-trail"
   },
   "manual_skip_dests": {},
