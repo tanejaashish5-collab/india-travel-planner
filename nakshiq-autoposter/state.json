@@ -32,15 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-03",
     "PdMu0_carousel": "2026-09-03",
-    "GAh5p_yt_short": "2026-09-03",
-    "m8EAd_yt_short": "2026-09-03",
-    "m8EAd_reel_studio": "2026-09-02",
-    "GAh5p_reel_studio": "2026-09-02",
+    "GAh5p_yt_short": "2026-09-04",
+    "m8EAd_yt_short": "2026-09-04",
     "m8EAd": "2026-09-03",
     "m8EAd_evening": "2026-09-03",
     "PdMu0": "2026-09-03",
@@ -48,18 +46,6 @@
   },
   "last_sync": "2026-09-03T17:56:25.132957+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kargil",
-      "date": "2026-08-20"
-    },
-    {
-      "destination_id": "chandratal",
-      "date": "2026-08-20"
-    },
-    {
-      "destination_id": "keylong",
-      "date": "2026-08-20"
-    },
     {
       "destination_id": "ananthagiri-hills",
       "date": "2026-08-21"
@@ -283,6 +269,10 @@
     {
       "destination_id": "kalpa",
       "date": "2026-09-03"
+    },
+    {
+      "destination_id": "tosamaidan",
+      "date": "2026-09-04"
     }
   ],
   "posted_formats": {
@@ -9351,6 +9341,24 @@
       "format": "route_spotlight_short",
       "has_media": true,
       "media_id": "kalpa.mp4"
+    },
+    {
+      "timestamp": "2026-09-04T08:56:42.990432+00:00",
+      "date": "2026-09-04",
+      "platform": "instagram",
+      "post_id": "vXwTx",
+      "destination": "tosamaidan",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_tosamaidan_hi_2026-09-04.mp4"
+    },
+    {
+      "timestamp": "2026-09-04T08:56:53.317765+00:00",
+      "date": "2026-09-04",
+      "platform": "youtube",
+      "post_id": "846pU",
+      "destination": "tosamaidan",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_tosamaidan_hi_2026-09-04.mp4"
     }
   ],
   "theme_usage": {
@@ -9527,9 +9535,6 @@
         "2026-07-25",
         "2026-08-19",
         "2026-08-25"
-      ],
-      "coorg": [
-        "2026-06-05"
       ],
       "gulmarg": [
         "2026-06-06",
@@ -9745,9 +9750,9 @@
         "2026-05-25",
         "2026-08-27"
       ],
-      "weekend_escape": [
-        "2026-05-30",
-        "2026-06-05"
+      "route_spotlight_short": [
+        "2026-05-25",
+        "2026-09-03"
       ],
       "v2_hindi_score_card": [
         "2026-05-30",
@@ -9834,9 +9839,6 @@
         "2026-06-16",
         "2026-06-21"
       ],
-      "v4_dw_counter_narrative_myth_bust": [
-        "2026-06-05"
-      ],
       "v2_myth_bust_oneline": [
         "2026-06-06",
         "2026-06-17",
@@ -9882,9 +9884,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "route_spotlight_short": [
-        "2026-09-03"
       ]
     },
     "reels": {
@@ -9937,9 +9936,6 @@
       "lahaul-valley": [
         "2026-06-04",
         "2026-06-23"
-      ],
-      "coorg": [
-        "2026-06-05"
       ],
       "nako": [
         "2026-06-10",
@@ -10373,7 +10369,6 @@
         "2026-08-25"
       ]
     },
-    "route_spotlight_short": {},
     "collection_carousel_dests:deccan-food-trail": {
       "tirupati": [
         "2026-09-03"
