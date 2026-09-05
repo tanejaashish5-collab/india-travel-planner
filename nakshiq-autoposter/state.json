@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-04",
     "PdMu0_carousel": "2026-09-04",
-    "GAh5p_yt_short": "2026-09-04",
-    "m8EAd_yt_short": "2026-09-04",
+    "GAh5p_yt_short": "2026-09-05",
+    "m8EAd_yt_short": "2026-09-05",
     "m8EAd": "2026-09-04",
     "m8EAd_evening": "2026-09-04",
     "PdMu0": "2026-09-04",
@@ -52,22 +52,6 @@
   },
   "last_sync": "2026-09-04T17:45:39.504450+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ananthagiri-hills",
-      "date": "2026-08-21"
-    },
-    {
-      "destination_id": "kargil",
-      "date": "2026-08-21"
-    },
-    {
-      "destination_id": "mysore",
-      "date": "2026-08-21"
-    },
-    {
-      "destination_id": "valley-of-flowers",
-      "date": "2026-08-21"
-    },
     {
       "destination_id": "likir",
       "date": "2026-08-22"
@@ -303,6 +287,10 @@
     {
       "destination_id": "ooty",
       "date": "2026-09-04"
+    },
+    {
+      "destination_id": "mysore",
+      "date": "2026-09-05"
     }
   ],
   "posted_formats": {
@@ -9483,17 +9471,6 @@
       "media_id": "v4_dw_local_historian_spotlight-achabal_01_cover.png"
     },
     {
-      "timestamp": "2026-09-04T17:47:45.637343+00:00",
-      "date": "2026-09-04",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "i9Vwe",
-      "destination": "barot-valley",
-      "format": "reality_check",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-09-04T17:48:32.289770+00:00",
       "date": "2026-09-04",
       "platform": "facebook",
@@ -9503,6 +9480,24 @@
       "format": "v4_dw_local_historian_spotlight",
       "has_media": true,
       "media_id": "v4_dw_local_historian_spotlight-ooty_01_cover.png"
+    },
+    {
+      "timestamp": "2026-09-05T08:29:06.512329+00:00",
+      "date": "2026-09-05",
+      "platform": "instagram",
+      "post_id": "Iio5c",
+      "destination": "mysore",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-09-05.mp4"
+    },
+    {
+      "timestamp": "2026-09-05T08:29:16.392023+00:00",
+      "date": "2026-09-05",
+      "platform": "youtube",
+      "post_id": "QJMGz",
+      "destination": "mysore",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-09-05.mp4"
     }
   ],
   "theme_usage": {
@@ -9599,6 +9594,10 @@
       "hampi": [
         "2026-05-28",
         "2026-08-04"
+      ],
+      "ooty": [
+        "2026-05-29",
+        "2026-09-04"
       ],
       "yusmarg": [
         "2026-06-01",
@@ -9858,9 +9857,6 @@
       ],
       "barot-valley": [
         "2026-09-04"
-      ],
-      "ooty": [
-        "2026-09-04"
       ]
     },
     "morning_formats": {
@@ -9906,9 +9902,9 @@
         "2026-05-25",
         "2026-09-03"
       ],
-      "v2_hindi_score_card": [
-        "2026-05-30",
-        "2026-06-06"
+      "v4_dw_local_historian_spotlight": [
+        "2026-05-27",
+        "2026-09-04"
       ],
       "festival_alert": [
         "2026-05-31",
@@ -10036,12 +10032,14 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v4_dw_local_historian_spotlight": [
-        "2026-09-04"
       ]
     },
     "reels": {
+      "achabal": [
+        "2026-05-19",
+        "2026-06-01",
+        "2026-09-04"
+      ],
       "sissu": [
         "2026-05-21",
         "2026-06-10",
@@ -10230,9 +10228,6 @@
       ],
       "kalpa": [
         "2026-09-03"
-      ],
-      "achabal": [
-        "2026-09-04"
       ],
       "ooty": [
         "2026-09-04"
