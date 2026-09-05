@@ -35,8 +35,8 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-09-04",
-    "PdMu0_carousel": "2026-09-04",
+    "m8EAd_carousel": "2026-09-05",
+    "PdMu0_carousel": "2026-09-05",
     "GAh5p_yt_short": "2026-09-05",
     "m8EAd_yt_short": "2026-09-05",
     "m8EAd": "2026-09-04",
@@ -290,6 +290,10 @@
     },
     {
       "destination_id": "mysore",
+      "date": "2026-09-05"
+    },
+    {
+      "destination_id": "delhi",
       "date": "2026-09-05"
     }
   ],
@@ -9498,6 +9502,24 @@
       "destination": "mysore",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_mysore_hi_2026-09-05.mp4"
+    },
+    {
+      "timestamp": "2026-09-05T11:20:23.922457+00:00",
+      "date": "2026-09-05",
+      "platform": "instagram",
+      "post_id": "geHtR",
+      "destination": "delhi",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-09-05"
+    },
+    {
+      "timestamp": "2026-09-05T11:20:26.746637+00:00",
+      "date": "2026-09-05",
+      "platform": "facebook",
+      "post_id": "TCrcr",
+      "destination": "delhi",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-09-05"
     }
   ],
   "theme_usage": {
