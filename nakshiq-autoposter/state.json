@@ -39,18 +39,18 @@
     "PdMu0_carousel": "2026-09-05",
     "GAh5p_yt_short": "2026-09-05",
     "m8EAd_yt_short": "2026-09-05",
-    "m8EAd": "2026-09-04",
-    "m8EAd_evening": "2026-09-04",
-    "PdMu0": "2026-09-04",
-    "PdMu0_evening": "2026-09-04",
+    "m8EAd": "2026-09-05",
+    "m8EAd_evening": "2026-09-05",
+    "PdMu0": "2026-09-05",
+    "PdMu0_evening": "2026-09-05",
     "m8EAd_reel_studio": "2026-09-04",
     "GAh5p_reel_studio": "2026-09-04",
     "m8EAd_greeting": "2026-09-04",
     "m8EAd_greeting_story": "2026-09-04",
     "PdMu0_greeting": "2026-09-04",
-    "m8EAd_evening_story": "2026-09-04"
+    "m8EAd_evening_story": "2026-09-05"
   },
-  "last_sync": "2026-09-04T17:45:39.504450+00:00",
+  "last_sync": "2026-09-05T16:53:29.619037+00:00",
   "posted_destinations": [
     {
       "destination_id": "likir",
@@ -303,11 +303,18 @@
     {
       "destination_id": "barot-valley",
       "date": "2026-09-05"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-09-05"
+    },
+    {
+      "destination_id": "pahalgam",
+      "date": "2026-09-05"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -327,10 +334,10 @@
       "score_card",
       "tourist_trap",
       "route_spotlight_short",
-      "v4_dw_local_historian_spotlight"
+      "v4_dw_local_historian_spotlight",
+      "v4_dw_architecture_detail_deep_dive"
     ],
     "PdMu0": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -350,7 +357,8 @@
       "score_card",
       "tourist_trap",
       "route_spotlight_short",
-      "v4_dw_local_historian_spotlight"
+      "v4_dw_local_historian_spotlight",
+      "v4_dw_architecture_detail_deep_dive"
     ]
   },
   "post_log": [
@@ -9555,6 +9563,39 @@
       "destination": "barot-valley",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_barot-valley_hi_2026-09-05.mp4"
+    },
+    {
+      "timestamp": "2026-09-05T16:54:50.245807+00:00",
+      "date": "2026-09-05",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XBLvw",
+      "destination": "chopta",
+      "format": "v4_dw_architecture_detail_deep_dive",
+      "has_media": true,
+      "media_id": "v4_dw_architecture_detail_deep_dive-chopta_01_cover.png"
+    },
+    {
+      "timestamp": "2026-09-05T16:55:17.411722+00:00",
+      "date": "2026-09-05",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "84odV",
+      "destination": "chandigarh",
+      "format": "route_spotlight",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-09-05T16:55:54.758719+00:00",
+      "date": "2026-09-05",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "punaV",
+      "destination": "pahalgam",
+      "format": "v4_dw_architecture_detail_deep_dive",
+      "has_media": true,
+      "media_id": "v4_dw_architecture_detail_deep_dive-pahalgam_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -9581,7 +9622,8 @@
       "pahalgam": [
         "2026-05-20",
         "2026-05-27",
-        "2026-06-14"
+        "2026-06-14",
+        "2026-09-05"
       ],
       "bhandardara": [
         "2026-05-20",
@@ -9914,6 +9956,15 @@
       ],
       "barot-valley": [
         "2026-09-04"
+      ],
+      "kasol": [
+        "2026-09-05"
+      ],
+      "chopta": [
+        "2026-09-05"
+      ],
+      "chandigarh": [
+        "2026-09-05"
       ]
     },
     "morning_formats": {
@@ -10089,6 +10140,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v4_dw_architecture_detail_deep_dive": [
+        "2026-09-05"
       ]
     },
     "reels": {
@@ -10166,7 +10220,8 @@
         "2026-08-25"
       ],
       "pahalgam": [
-        "2026-06-14"
+        "2026-06-14",
+        "2026-09-05"
       ],
       "valley-of-flowers": [
         "2026-06-19",
@@ -10288,6 +10343,9 @@
       ],
       "ooty": [
         "2026-09-04"
+      ],
+      "chopta": [
+        "2026-09-05"
       ]
     },
     "audience_tags": {
@@ -10319,7 +10377,8 @@
         "2026-08-08",
         "2026-08-15",
         "2026-08-22",
-        "2026-08-29"
+        "2026-08-29",
+        "2026-09-05"
       ],
       "adventurers": [
         "2026-05-29",
@@ -10587,7 +10646,8 @@
       "tirupati": [
         "2026-09-03"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10601,7 +10661,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nako",
+    "shared_best": "kasol",
     "collection": "deccan-food-trail"
   },
   "manual_skip_dests": {},

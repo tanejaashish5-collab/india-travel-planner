@@ -22296,3 +22296,109 @@ Date range: 2026-04-15 → 2026-09-04
 2026-09-05 14:06:21  INFO      YT Short posted: format=mini_guide, music=dance-781
 2026-09-05 14:06:21  INFO      State saved. YT Short run complete.
 2026-09-05 14:06:21  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 16:52:55  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 16:52:55  INFO      Nakshiq Autoposter · EVENING · 2026-09-05 · weekday=5
+2026-09-05 16:52:55  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 16:52:55  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-05 16:53:29  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-05 16:53:29  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-05 16:53:30  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-05 16:53:30  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-09-05 16:53:30  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-05 16:53:43  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-05 16:53:43  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, itinerary_reel, pillar:greeting.janmashtami, pillar:moment, pillar:story.greeting, short:did_you_know, short:dont_go_here, short:listicle, short:mini_guide, short:this_vs_that seen <2d)
+2026-09-05 16:53:43  INFO      Evening format (balance→verification): v4_dw_architecture_detail_deep_dive [0% vs target 20%] (0/15 never featured)
+2026-09-05 16:53:43  INFO      Formats — IG: v4_dw_architecture_detail_deep_dive  ·  FB: v4_dw_architecture_detail_deep_dive  ·  Story: route_spotlight  ·  Audience: families
+2026-09-05 16:53:43  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-09-05 16:53:43  INFO      Audience filter 'families' → 11 destinations match.
+2026-09-05 16:53:43  INFO      Fingerprint dedup snapshot — 58 dests in 7d · 122 (dest,fmt) pairs in 30d · 235 media in 60d
+2026-09-05 16:53:43  INFO      Route locked: HP Family Easy
+2026-09-05 16:53:43  INFO      Shared best destination locked: Kasol
+2026-09-05 16:53:43  INFO      Carousel locked (v4_dw_architecture_detail_deep_dive): kasol
+2026-09-05 16:53:43  INFO      [instagram/nakshiq] Generating v4_dw_architecture_detail_deep_dive post...
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: mussoorie has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: hampi has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: madurai has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: coorg has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: manali has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: munnar has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: anandpur-sahib has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: gurez-valley.mp4 in 60-day media window — SKIPPING
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: old-goa has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: darjeeling has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      v4_dw_architecture_detail_deep_dive: gangtok has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:53:43  INFO      [instagram/nakshiq] Caption ready (560 chars, dest=chopta)
+2026-09-05 16:53:50  INFO      [instagram/nakshiq] dynamic render: 5 slide(s) for v4_dw_architecture_detail_deep_dive → uploading...
+2026-09-05 16:53:50  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-chopta_01_cover.png (1,640,344 bytes, image/png)
+2026-09-05 16:53:50  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:53:51  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:53:52  INFO          Media ready: 70Vcj (1,640,344 bytes · v4_dw_architecture_detail_deep_dive-chopta_01_cover.png)
+2026-09-05 16:53:52  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-chopta_02.png (1,637,035 bytes, image/png)
+2026-09-05 16:53:53  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:53:54  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:53:54  INFO          Media ready: I47Eo (1,637,035 bytes · v4_dw_architecture_detail_deep_dive-chopta_02.png)
+2026-09-05 16:53:54  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-chopta_03.png (1,656,969 bytes, image/png)
+2026-09-05 16:53:55  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:53:56  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:53:57  INFO          Media ready: Z7DHQ (1,656,969 bytes · v4_dw_architecture_detail_deep_dive-chopta_03.png)
+2026-09-05 16:53:57  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-chopta_04.png (1,667,579 bytes, image/png)
+2026-09-05 16:53:57  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:53:58  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:53:59  INFO          Media ready: N1kJe (1,667,579 bytes · v4_dw_architecture_detail_deep_dive-chopta_04.png)
+2026-09-05 16:53:59  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-chopta_05_cta.png (45,644 bytes, image/png)
+2026-09-05 16:53:59  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:54:00  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:54:01  INFO          Media ready: 8rAuL (45,644 bytes · v4_dw_architecture_detail_deep_dive-chopta_05_cta.png)
+2026-09-05 16:54:01  INFO      [instagram/nakshiq] Publishing 5-slide carousel...
+2026-09-05 16:54:50  INFO          wait_for_publish exhausted 8 polls for post=XBLvw (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-09-05 16:54:50  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=XBLvw)
+2026-09-05 16:54:50  INFO      [instagram/nakshiq] Uploading Story image (chandigarh.jpg)...
+2026-09-05 16:54:50  INFO          Using branded image: chandigarh_story_bold-cinematic_watermark.jpg (509,390 bytes)
+2026-09-05 16:54:50  INFO          Requesting upload URL for chandigarh.jpg (509,390 bytes, image/jpeg)
+2026-09-05 16:54:50  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:54:51  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:54:52  INFO          Media ready: dxCpG (509,390 bytes · chandigarh.jpg)
+2026-09-05 16:54:52  INFO      [instagram/nakshiq] Publishing Story · format=route_spotlight · dest=chandigarh
+2026-09-05 16:55:17  INFO      [instagram/nakshiq] ✅ Story live · ID=18072776837549446
+2026-09-05 16:55:17  INFO      [facebook/Nakshiq] Generating v4_dw_architecture_detail_deep_dive post...
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: mussoorie has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: hampi has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: madurai has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: coorg has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: manali has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: munnar has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: anandpur-sahib has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: gurez-valley.mp4 in 60-day media window — SKIPPING
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: old-goa has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: darjeeling has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: gangtok has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: tungnath has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: tawang has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      v4_dw_architecture_detail_deep_dive: nainital has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-05 16:55:17  INFO      [facebook/Nakshiq] Caption ready (646 chars, dest=pahalgam)
+2026-09-05 16:55:24  INFO      [facebook/Nakshiq] dynamic render: 5 slide(s) for v4_dw_architecture_detail_deep_dive → uploading...
+2026-09-05 16:55:24  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-pahalgam_01_cover.png (1,697,322 bytes, image/png)
+2026-09-05 16:55:24  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:55:25  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:55:26  INFO          Media ready: 8rAEr (1,697,322 bytes · v4_dw_architecture_detail_deep_dive-pahalgam_01_cover.png)
+2026-09-05 16:55:26  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-pahalgam_02.png (1,706,540 bytes, image/png)
+2026-09-05 16:55:26  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:55:27  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:55:28  INFO          Media ready: eBzWn (1,706,540 bytes · v4_dw_architecture_detail_deep_dive-pahalgam_02.png)
+2026-09-05 16:55:28  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-pahalgam_03.png (1,720,344 bytes, image/png)
+2026-09-05 16:55:29  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:55:30  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:55:31  INFO          Media ready: iKq0Q (1,720,344 bytes · v4_dw_architecture_detail_deep_dive-pahalgam_03.png)
+2026-09-05 16:55:31  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-pahalgam_04.png (1,723,630 bytes, image/png)
+2026-09-05 16:55:31  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:55:32  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:55:33  INFO          Media ready: bpUhF (1,723,630 bytes · v4_dw_architecture_detail_deep_dive-pahalgam_04.png)
+2026-09-05 16:55:33  INFO          Requesting upload URL for v4_dw_architecture_detail_deep_dive-pahalgam_05_cta.png (45,644 bytes, image/png)
+2026-09-05 16:55:33  INFO          Uploading to R2 (timeout=120s)...
+2026-09-05 16:55:34  INFO          R2 PUT OK. Confirming...
+2026-09-05 16:55:35  INFO          Media ready: mgMpX (45,644 bytes · v4_dw_architecture_detail_deep_dive-pahalgam_05_cta.png)
+2026-09-05 16:55:35  INFO      [facebook/Nakshiq] Publishing 5-slide carousel...
+2026-09-05 16:55:54  INFO      [facebook/Nakshiq] ✅ Published · Outstand=punaV · Platform=1040562729145369_122121187850700092
+2026-09-05 16:55:54  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-09-05 16:55:54  INFO      State saved. Run complete.
+2026-09-05 16:55:54  INFO      ════════════════════════════════════════════════════════════
