@@ -22252,3 +22252,27 @@ Date range: 2026-04-15 → 2026-09-04
 2026-09-05 11:20:26  INFO      [facebook/Nakshiq] ✅ carousel published (route) · post_id=TCrcr
 2026-09-05 11:20:26  INFO      Carousel run complete (fmt=route, posted=True).
 2026-09-05 11:20:26  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 13:38:15  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 13:38:15  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-05
+2026-09-05 13:38:15  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 13:38:21  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-05 13:39:42  INFO      Short rendered: yt_short_dont_go_here_nako_en_2026-09-05.mp4 (11473 KB, 22.2s, fmt=dont_go_here, music=edm-1001)
+2026-09-05 13:39:42  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_nako_en_2026-09-05.mp4 (11,748,932 bytes, video/mp4)
+2026-09-05 13:39:43  INFO          Uploading to R2 (timeout=300s)...
+2026-09-05 13:39:45  INFO          R2 PUT OK. Confirming...
+2026-09-05 13:39:47  INFO          Media ready: GFYFj (11,748,932 bytes · yt_short_dont_go_here_yt_short_dont_go_here_nako_en_2026-09-05.mp4)
+2026-09-05 13:39:47  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_nako_en_2026-09-05.mp4
+2026-09-05 13:39:48  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-05 13:39:48  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
+2026-09-05 13:39:48  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-09-05 13:39:51  INFO      [instagram/nakshiq] Outstand accepted (post_id=F79vR), waiting for platform confirmation...
+2026-09-05 13:40:41  INFO          wait_for_publish exhausted 8 polls for post=F79vR (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-09-05 13:40:41  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=F79vR). May have silently failed.
+2026-09-05 13:40:41  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-09-05 13:40:41  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
+2026-09-05 13:40:41  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-09-05 13:40:45  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=jkZo4), waiting for platform confirmation...
+2026-09-05 13:40:51  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=jkZo4 · Platform=svqEc75EDMA
+2026-09-05 13:40:51  INFO      YT Short posted: format=dont_go_here, music=edm-1001
+2026-09-05 13:40:51  INFO      State saved. YT Short run complete.
+2026-09-05 13:40:51  INFO      ════════════════════════════════════════════════════════════
