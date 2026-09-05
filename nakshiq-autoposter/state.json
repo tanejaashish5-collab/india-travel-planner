@@ -33,7 +33,7 @@
   ],
   "posted_today": {
     "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 1,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-05",
     "PdMu0_carousel": "2026-09-05",
@@ -298,6 +298,10 @@
     },
     {
       "destination_id": "nako",
+      "date": "2026-09-05"
+    },
+    {
+      "destination_id": "barot-valley",
       "date": "2026-09-05"
     }
   ],
@@ -9542,6 +9546,15 @@
       "destination": "nako",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_nako_en_2026-09-05.mp4"
+    },
+    {
+      "timestamp": "2026-09-05T14:06:21.356684+00:00",
+      "date": "2026-09-05",
+      "platform": "instagram",
+      "post_id": "pungO",
+      "destination": "barot-valley",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_barot-valley_hi_2026-09-05.mp4"
     }
   ],
   "theme_usage": {

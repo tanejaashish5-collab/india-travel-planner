@@ -22276,3 +22276,23 @@ Date range: 2026-04-15 → 2026-09-04
 2026-09-05 13:40:51  INFO      YT Short posted: format=dont_go_here, music=edm-1001
 2026-09-05 13:40:51  INFO      State saved. YT Short run complete.
 2026-09-05 13:40:51  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 14:03:36  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 14:03:36  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-05
+2026-09-05 14:03:36  INFO      ════════════════════════════════════════════════════════════
+2026-09-05 14:03:42  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-05 14:05:29  INFO      Short rendered: yt_short_mini_guide_barot-valley_hi_2026-09-05.mp4 (22099 KB, 23.2s, fmt=mini_guide, music=dance-781)
+2026-09-05 14:05:29  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_barot-valley_hi_2026-09-05.mp4 (22,629,997 bytes, video/mp4)
+2026-09-05 14:05:30  INFO          Uploading to R2 (timeout=300s)...
+2026-09-05 14:05:32  INFO          R2 PUT OK. Confirming...
+2026-09-05 14:05:34  INFO          Media ready: GFYA3 (22,629,997 bytes · yt_short_mini_guide_yt_short_mini_guide_barot-valley_hi_2026-09-05.mp4)
+2026-09-05 14:05:34  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_barot-valley_hi_2026-09-05.mp4
+2026-09-05 14:05:35  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-05 14:05:35  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-09-05 14:05:35  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-09-05 14:05:38  INFO      [instagram/nakshiq] Outstand accepted (post_id=pungO), waiting for platform confirmation...
+2026-09-05 14:06:21  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=pungO · Platform=17865197298660589
+2026-09-05 14:06:21  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-09-05 14:06:21  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-09-05 14:06:21  INFO      YT Short posted: format=mini_guide, music=dance-781
+2026-09-05 14:06:21  INFO      State saved. YT Short run complete.
+2026-09-05 14:06:21  INFO      ════════════════════════════════════════════════════════════
