@@ -35,15 +35,16 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-09-05",
-    "PdMu0_carousel": "2026-09-05",
+    "m8EAd_carousel": "2026-09-06",
+    "PdMu0_carousel": "2026-09-06",
     "GAh5p_yt_short": "2026-09-06",
     "m8EAd_yt_short": "2026-09-06",
     "m8EAd": "2026-09-05",
     "m8EAd_evening": "2026-09-05",
     "PdMu0": "2026-09-05",
     "PdMu0_evening": "2026-09-05",
-    "m8EAd_evening_story": "2026-09-05"
+    "m8EAd_evening_story": "2026-09-05",
+    "m8EAd_carousel_story": "2026-09-06"
   },
   "last_sync": "2026-09-05T16:53:29.619037+00:00",
   "posted_destinations": [
@@ -293,6 +294,10 @@
     },
     {
       "destination_id": "kargil",
+      "date": "2026-09-06"
+    },
+    {
+      "destination_id": "kaza",
       "date": "2026-09-06"
     }
   ],
@@ -9586,6 +9591,33 @@
       "destination": "kargil",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_kargil_hi_2026-09-06.mp4"
+    },
+    {
+      "timestamp": "2026-09-06T11:44:00.142922+00:00",
+      "date": "2026-09-06",
+      "platform": "instagram",
+      "post_id": "zfUL0",
+      "destination": "kaza",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-09-06"
+    },
+    {
+      "timestamp": "2026-09-06T11:44:04.858875+00:00",
+      "date": "2026-09-06",
+      "platform": "instagram",
+      "post_id": "9SZfj",
+      "destination": "kaza",
+      "format": "story.window",
+      "media_id": "story_window_2026-09-06"
+    },
+    {
+      "timestamp": "2026-09-06T11:44:06.981173+00:00",
+      "date": "2026-09-06",
+      "platform": "facebook",
+      "post_id": "XBaEi",
+      "destination": "kaza",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-09-06"
     }
   ],
   "theme_usage": {
