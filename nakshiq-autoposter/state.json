@@ -32,42 +32,21 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-05",
     "PdMu0_carousel": "2026-09-05",
-    "GAh5p_yt_short": "2026-09-05",
-    "m8EAd_yt_short": "2026-09-05",
+    "GAh5p_yt_short": "2026-09-06",
+    "m8EAd_yt_short": "2026-09-06",
     "m8EAd": "2026-09-05",
     "m8EAd_evening": "2026-09-05",
     "PdMu0": "2026-09-05",
     "PdMu0_evening": "2026-09-05",
-    "m8EAd_reel_studio": "2026-09-04",
-    "GAh5p_reel_studio": "2026-09-04",
-    "m8EAd_greeting": "2026-09-04",
-    "m8EAd_greeting_story": "2026-09-04",
-    "PdMu0_greeting": "2026-09-04",
     "m8EAd_evening_story": "2026-09-05"
   },
   "last_sync": "2026-09-05T16:53:29.619037+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "likir",
-      "date": "2026-08-22"
-    },
-    {
-      "destination_id": "gulbarga",
-      "date": "2026-08-22"
-    },
-    {
-      "destination_id": "thrissur",
-      "date": "2026-08-22"
-    },
-    {
-      "destination_id": "amboli",
-      "date": "2026-08-22"
-    },
     {
       "destination_id": "nubra-valley",
       "date": "2026-08-23"
@@ -311,6 +290,10 @@
     {
       "destination_id": "pahalgam",
       "date": "2026-09-05"
+    },
+    {
+      "destination_id": "kargil",
+      "date": "2026-09-06"
     }
   ],
   "posted_formats": {
@@ -9576,17 +9559,6 @@
       "media_id": "v4_dw_architecture_detail_deep_dive-chopta_01_cover.png"
     },
     {
-      "timestamp": "2026-09-05T16:55:17.411722+00:00",
-      "date": "2026-09-05",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "84odV",
-      "destination": "chandigarh",
-      "format": "route_spotlight",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
       "timestamp": "2026-09-05T16:55:54.758719+00:00",
       "date": "2026-09-05",
       "platform": "facebook",
@@ -9596,6 +9568,24 @@
       "format": "v4_dw_architecture_detail_deep_dive",
       "has_media": true,
       "media_id": "v4_dw_architecture_detail_deep_dive-pahalgam_01_cover.png"
+    },
+    {
+      "timestamp": "2026-09-06T08:45:18.522809+00:00",
+      "date": "2026-09-06",
+      "platform": "instagram",
+      "post_id": "cbXE0",
+      "destination": "kargil",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_kargil_hi_2026-09-06.mp4"
+    },
+    {
+      "timestamp": "2026-09-06T08:45:27.632467+00:00",
+      "date": "2026-09-06",
+      "platform": "youtube",
+      "post_id": "K2F61",
+      "destination": "kargil",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_kargil_hi_2026-09-06.mp4"
     }
   ],
   "theme_usage": {
@@ -9607,6 +9597,15 @@
       "hemkund-sahib": [
         "2026-05-19",
         "2026-06-08"
+      ],
+      "chopta": [
+        "2026-05-19",
+        "2026-05-20",
+        "2026-05-21",
+        "2026-05-23",
+        "2026-05-26",
+        "2026-06-02",
+        "2026-09-05"
       ],
       "achabal": [
         "2026-05-19",
@@ -9666,10 +9665,6 @@
         "2026-06-16",
         "2026-06-24"
       ],
-      "puri": [
-        "2026-05-25",
-        "2026-06-07"
-      ],
       "jibhi": [
         "2026-05-25",
         "2026-09-01"
@@ -9701,6 +9696,11 @@
       "yusmarg": [
         "2026-06-01",
         "2026-06-21"
+      ],
+      "kasol": [
+        "2026-06-01",
+        "2026-06-02",
+        "2026-09-05"
       ],
       "nubra-valley": [
         "2026-06-01",
@@ -9957,12 +9957,6 @@
       "barot-valley": [
         "2026-09-04"
       ],
-      "kasol": [
-        "2026-09-05"
-      ],
-      "chopta": [
-        "2026-09-05"
-      ],
       "chandigarh": [
         "2026-09-05"
       ]
@@ -10014,9 +10008,9 @@
         "2026-05-27",
         "2026-09-04"
       ],
-      "festival_alert": [
-        "2026-05-31",
-        "2026-06-07"
+      "v4_dw_architecture_detail_deep_dive": [
+        "2026-05-28",
+        "2026-09-05"
       ],
       "v2_tourist_trap_split": [
         "2026-05-31",
@@ -10100,9 +10094,6 @@
         "2026-06-17",
         "2026-07-04"
       ],
-      "v3_tl_first_person_essay": [
-        "2026-06-07"
-      ],
       "v2_cost_index_handwritten": [
         "2026-06-08"
       ],
@@ -10140,9 +10131,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v4_dw_architecture_detail_deep_dive": [
-        "2026-09-05"
       ]
     },
     "reels": {
@@ -10491,9 +10479,6 @@
       ]
     },
     "festivals": {
-      "8f7f0ac4-df40-4853-a502-bc89d2606bcc": [
-        "2026-06-07"
-      ],
       "6b063adc-f716-4192-87a5-c3e15b941377": [
         "2026-06-08"
       ],
@@ -10646,8 +10631,7 @@
       "tirupati": [
         "2026-09-03"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
