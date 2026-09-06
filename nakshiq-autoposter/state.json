@@ -32,8 +32,8 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-06",
     "PdMu0_carousel": "2026-09-06",
@@ -298,6 +298,10 @@
     },
     {
       "destination_id": "kaza",
+      "date": "2026-09-06"
+    },
+    {
+      "destination_id": "kasol",
       "date": "2026-09-06"
     }
   ],
@@ -9618,6 +9622,24 @@
       "destination": "kaza",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-09-06"
+    },
+    {
+      "timestamp": "2026-09-06T14:29:05.964886+00:00",
+      "date": "2026-09-06",
+      "platform": "instagram",
+      "post_id": "3s0Yj",
+      "destination": "kasol",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kasol_hi_2026-09-06.mp4"
+    },
+    {
+      "timestamp": "2026-09-06T14:29:17.032334+00:00",
+      "date": "2026-09-06",
+      "platform": "youtube",
+      "post_id": "4KGQn",
+      "destination": "kasol",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_kasol_hi_2026-09-06.mp4"
     }
   ],
   "theme_usage": {
