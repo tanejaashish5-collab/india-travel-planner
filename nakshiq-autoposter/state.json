@@ -39,14 +39,14 @@
     "PdMu0_carousel": "2026-09-06",
     "GAh5p_yt_short": "2026-09-06",
     "m8EAd_yt_short": "2026-09-06",
-    "m8EAd": "2026-09-05",
-    "m8EAd_evening": "2026-09-05",
-    "PdMu0": "2026-09-05",
-    "PdMu0_evening": "2026-09-05",
+    "m8EAd": "2026-09-06",
+    "m8EAd_evening": "2026-09-06",
+    "PdMu0": "2026-09-06",
+    "PdMu0_evening": "2026-09-06",
     "m8EAd_evening_story": "2026-09-05",
     "m8EAd_carousel_story": "2026-09-06"
   },
-  "last_sync": "2026-09-05T16:53:29.619037+00:00",
+  "last_sync": "2026-09-06T17:07:24.700032+00:00",
   "posted_destinations": [
     {
       "destination_id": "nubra-valley",
@@ -303,11 +303,14 @@
     {
       "destination_id": "kasol",
       "date": "2026-09-06"
+    },
+    {
+      "destination_id": "nubra-valley",
+      "date": "2026-09-06"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -327,10 +330,10 @@
       "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
-      "v4_dw_architecture_detail_deep_dive"
+      "v4_dw_architecture_detail_deep_dive",
+      "score_card"
     ],
     "PdMu0": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -350,7 +353,8 @@
       "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
-      "v4_dw_architecture_detail_deep_dive"
+      "v4_dw_architecture_detail_deep_dive",
+      "score_card"
     ]
   },
   "post_log": [
@@ -9640,6 +9644,28 @@
       "destination": "kasol",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_kasol_hi_2026-09-06.mp4"
+    },
+    {
+      "timestamp": "2026-09-06T17:08:29.204078+00:00",
+      "date": "2026-09-06",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "CAj2Y",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-09-06T17:08:47.978279+00:00",
+      "date": "2026-09-06",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "V14iS",
+      "destination": "nubra-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "nubra-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -9695,7 +9721,8 @@
       "munsiyari": [
         "2026-05-23",
         "2026-05-29",
-        "2026-06-14"
+        "2026-06-14",
+        "2026-09-06"
       ],
       "madurai": [
         "2026-05-23",
@@ -9768,7 +9795,8 @@
         "2026-06-17",
         "2026-06-30",
         "2026-07-11",
-        "2026-07-28"
+        "2026-07-28",
+        "2026-09-06"
       ],
       "pangong-lake": [
         "2026-06-02",
@@ -10013,6 +10041,18 @@
       ],
       "chandigarh": [
         "2026-09-05"
+      ],
+      "verinag": [
+        "2026-09-06"
+      ],
+      "mysore": [
+        "2026-09-06"
+      ],
+      "kinnaur": [
+        "2026-09-06"
+      ],
+      "parvati-valley": [
+        "2026-09-06"
       ]
     },
     "morning_formats": {
@@ -10136,7 +10176,8 @@
         "2026-08-28",
         "2026-08-29",
         "2026-08-30",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-06"
       ],
       "v2_local_knows": [
         "2026-06-02",
@@ -10237,7 +10278,8 @@
         "2026-06-16",
         "2026-06-30",
         "2026-07-11",
-        "2026-07-28"
+        "2026-07-28",
+        "2026-09-06"
       ],
       "lahaul-valley": [
         "2026-06-04",
@@ -10699,11 +10741,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kasol",
+    "shared_best": "kinnaur",
     "collection": "deccan-food-trail"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-08-28",
+  "data_carousel_floor_last": "2026-09-06",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",

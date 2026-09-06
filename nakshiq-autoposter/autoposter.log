@@ -22558,3 +22558,49 @@ Date range: 2026-04-15 → 2026-09-05
 2026-09-06 14:29:17  INFO      YT Short posted: format=did_you_know, music=dance-288
 2026-09-06 14:29:17  INFO      State saved. YT Short run complete.
 2026-09-06 14:29:17  INFO      ════════════════════════════════════════════════════════════
+2026-09-06 17:06:52  INFO      ════════════════════════════════════════════════════════════
+2026-09-06 17:06:52  INFO      Nakshiq Autoposter · EVENING · 2026-09-06 · weekday=6
+2026-09-06 17:06:52  INFO      ════════════════════════════════════════════════════════════
+2026-09-06 17:06:52  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-06 17:07:24  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-06 17:07:24  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-06 17:07:26  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-06 17:07:26  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-09-06 17:07:27  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-06 17:07:38  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-06 17:07:38  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:story.window, pillar:verification, short:did_you_know, short:dont_go_here, short:listicle, short:mini_guide, short:this_vs_that seen <2d)
+2026-09-06 17:07:38  INFO      Evening format (weekly carousel floor): data_carousel
+2026-09-06 17:07:38  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: kids_intel
+2026-09-06 17:07:38  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-09-06 17:07:38  INFO      Fingerprint dedup snapshot — 58 dests in 7d · 124 (dest,fmt) pairs in 30d · 238 media in 60d
+2026-09-06 17:07:38  INFO      Kids destination locked: Tirupati
+2026-09-06 17:07:41  INFO      Shared best destination locked: Kinnaur
+2026-09-06 17:07:41  INFO          Skipped (no image) → ozar, morgaon
+2026-09-06 17:07:41  INFO      Carousel locked (data_carousel): verinag, mysore, kinnaur, parvati-valley, munsiyari
+2026-09-06 17:07:41  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-09-06 17:07:41  WARNING   [instagram/nakshiq] data_carousel: verinag inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'nubra-valley' as score_card to keep the slot live.
+2026-09-06 17:07:41  INFO      [instagram/nakshiq] Caption ready (401 chars, dest=nubra-valley)
+2026-09-06 17:07:41  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-06 17:07:41  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nubra-valley.mp4?v=20260524
+2026-09-06 17:07:44  INFO          Brand-stamp applied: nubra-valley.mp4 (6,874,272 → 3,028,202 bytes)
+2026-09-06 17:07:44  INFO          Requesting upload URL for nubra-valley.mp4 (3,028,202 bytes, video/mp4)
+2026-09-06 17:07:44  INFO          Uploading to R2 (timeout=300s)...
+2026-09-06 17:07:45  INFO          R2 PUT OK. Confirming...
+2026-09-06 17:07:46  INFO          Media ready: EzaSF (3,028,202 bytes · nubra-valley.mp4)
+2026-09-06 17:07:46  INFO      [instagram/nakshiq] Publishing Reel...
+2026-09-06 17:08:29  INFO      [instagram/nakshiq] ✅ Published · Outstand=CAj2Y · Platform=18099902510018172
+2026-09-06 17:08:29  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-09-06 17:08:29  WARNING   [facebook/Nakshiq] data_carousel: verinag inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'nubra-valley' as score_card to keep the slot live.
+2026-09-06 17:08:29  INFO      [facebook/Nakshiq] Caption ready (592 chars, dest=nubra-valley)
+2026-09-06 17:08:29  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-06 17:08:29  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nubra-valley.mp4?v=20260524
+2026-09-06 17:08:31  INFO          Brand-stamp applied: nubra-valley.mp4 (6,874,272 → 3,028,202 bytes)
+2026-09-06 17:08:31  INFO          Requesting upload URL for nubra-valley.mp4 (3,028,202 bytes, video/mp4)
+2026-09-06 17:08:32  INFO          Uploading to R2 (timeout=300s)...
+2026-09-06 17:08:33  INFO          R2 PUT OK. Confirming...
+2026-09-06 17:08:33  INFO          Media ready: Wq1kA (3,028,202 bytes · nubra-valley.mp4)
+2026-09-06 17:08:33  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-06 17:08:47  INFO      [facebook/Nakshiq] ✅ Published · Outstand=V14iS · Platform=28193222416987393
+2026-09-06 17:08:47  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-09-06 17:08:47  INFO      State saved. Run complete.
+2026-09-06 17:08:47  INFO      ════════════════════════════════════════════════════════════
