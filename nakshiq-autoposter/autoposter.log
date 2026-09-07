@@ -22754,3 +22754,46 @@ Date range: 2026-04-15 → 2026-09-06
 2026-09-07 13:36:43  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=oa4TH
 2026-09-07 13:36:43  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-09-07 13:36:43  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 16:04:50  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 16:04:50  INFO      Nakshiq Autoposter · EVENING · 2026-09-07 · weekday=0
+2026-09-07 16:04:50  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 16:04:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-07 16:05:26  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-07 16:05:26  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-07 16:05:29  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-07 16:05:29  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-09-07 16:05:29  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-07 16:05:43  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-07 16:05:43  INFO      Evening format (balance→verdict): festival_alert [33% vs target 50%] (0/15 never featured)
+2026-09-07 16:05:43  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: festival_alert  ·  Audience: backpackers
+2026-09-07 16:05:43  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 58
+2026-09-07 16:05:43  WARNING   Audience filter 'backpackers' → only 1 match (floor=3). Dropping filter to avoid same-dest spam.
+2026-09-07 16:05:43  INFO      Fingerprint dedup snapshot — 58 dests in 7d · 125 (dest,fmt) pairs in 30d · 238 media in 60d
+2026-09-07 16:05:43  INFO      Festival locked: Kishtwar Saffron Festival (57/58 active festivals never featured)
+2026-09-07 16:05:47  INFO      Shared best destination locked: Yusmarg
+2026-09-07 16:05:47  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-09-07 16:05:47  INFO      [instagram/nakshiq] Caption ready (392 chars, dest=kishtwar)
+2026-09-07 16:05:47  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-07 16:05:47  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kishtwar.mp4?v=20260524
+2026-09-07 16:05:49  INFO          Brand-stamp applied: kishtwar.mp4 (10,867,467 → 4,881,091 bytes)
+2026-09-07 16:05:49  INFO          Requesting upload URL for kishtwar.mp4 (4,881,091 bytes, video/mp4)
+2026-09-07 16:05:50  INFO          Uploading to R2 (timeout=300s)...
+2026-09-07 16:05:52  INFO          R2 PUT OK. Confirming...
+2026-09-07 16:05:53  INFO          Media ready: PfFGv (4,881,091 bytes · kishtwar.mp4)
+2026-09-07 16:05:53  INFO      [instagram/nakshiq] Publishing Reel...
+2026-09-07 16:06:43  INFO          wait_for_publish exhausted 8 polls for post=nyuCm (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-09-07 16:06:43  WARNING   [instagram/nakshiq] ⚠️  Queued Unconfirmed (ID=nyuCm)
+2026-09-07 16:06:43  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-09-07 16:06:43  INFO      [facebook/Nakshiq] Caption ready (520 chars, dest=kishtwar)
+2026-09-07 16:06:44  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-07 16:06:44  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kishtwar.mp4?v=20260524
+2026-09-07 16:06:46  INFO          Brand-stamp applied: kishtwar.mp4 (10,867,467 → 4,881,091 bytes)
+2026-09-07 16:06:46  INFO          Requesting upload URL for kishtwar.mp4 (4,881,091 bytes, video/mp4)
+2026-09-07 16:06:47  INFO          Uploading to R2 (timeout=300s)...
+2026-09-07 16:06:48  INFO          R2 PUT OK. Confirming...
+2026-09-07 16:06:49  INFO          Media ready: 8rtzo (4,881,091 bytes · kishtwar.mp4)
+2026-09-07 16:06:49  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-07 16:07:03  INFO      [facebook/Nakshiq] ✅ Published · Outstand=2h0WB · Platform=1017606511335550
+2026-09-07 16:07:03  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-09-07 16:07:03  INFO      State saved. Run complete.
+2026-09-07 16:07:03  INFO      ════════════════════════════════════════════════════════════

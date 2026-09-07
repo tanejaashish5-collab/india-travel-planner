@@ -39,15 +39,15 @@
     "PdMu0_carousel": "2026-09-07",
     "GAh5p_yt_short": "2026-09-07",
     "m8EAd_yt_short": "2026-09-06",
-    "m8EAd": "2026-09-06",
-    "m8EAd_evening": "2026-09-06",
-    "PdMu0": "2026-09-06",
-    "PdMu0_evening": "2026-09-06",
+    "m8EAd": "2026-09-07",
+    "m8EAd_evening": "2026-09-07",
+    "PdMu0": "2026-09-07",
+    "PdMu0_evening": "2026-09-07",
     "m8EAd_carousel_story": "2026-09-06",
     "m8EAd_reel_studio": "2026-09-07",
     "GAh5p_reel_studio": "2026-09-07"
   },
-  "last_sync": "2026-09-06T17:07:24.700032+00:00",
+  "last_sync": "2026-09-07T16:05:26.921203+00:00",
   "posted_destinations": [
     {
       "destination_id": "ozar",
@@ -304,11 +304,14 @@
     {
       "destination_id": "roopkund",
       "date": "2026-09-07"
+    },
+    {
+      "destination_id": "kishtwar",
+      "date": "2026-09-07"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -328,10 +331,10 @@
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
-      "score_card"
+      "score_card",
+      "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -351,7 +354,8 @@
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
-      "score_card"
+      "score_card",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -9717,6 +9721,28 @@
       "destination": "roopkund",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-09-07"
+    },
+    {
+      "timestamp": "2026-09-07T16:06:43.692110+00:00",
+      "date": "2026-09-07",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "nyuCm",
+      "destination": "kishtwar",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "kishtwar.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T16:07:03.819114+00:00",
+      "date": "2026-09-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "2h0WB",
+      "destination": "kishtwar",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "kishtwar.mp4"
     }
   ],
   "theme_usage": {
@@ -10100,6 +10126,9 @@
       ],
       "parvati-valley": [
         "2026-09-06"
+      ],
+      "kishtwar": [
+        "2026-09-07"
       ]
     },
     "morning_formats": {
@@ -10270,6 +10299,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "festival_alert": [
+        "2026-09-07"
       ]
     },
     "reels": {
@@ -10474,6 +10506,9 @@
       ],
       "chopta": [
         "2026-09-05"
+      ],
+      "kishtwar": [
+        "2026-09-07"
       ]
     },
     "audience_tags": {
@@ -10490,7 +10525,8 @@
         "2026-08-10",
         "2026-08-17",
         "2026-08-24",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-07"
       ],
       "families": [
         "2026-05-23",
@@ -10621,6 +10657,9 @@
     "festivals": {
       "3d26d374-6231-4254-b2f7-bb353e859e06": [
         "2026-06-15"
+      ],
+      "be940991-410a-4a77-9c71-e41c890a71a4": [
+        "2026-09-07"
       ]
     },
     "tourist_map_states": {
@@ -10782,7 +10821,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kinnaur",
+    "shared_best": "yusmarg",
     "collection": "deccan-food-trail"
   },
   "manual_skip_dests": {},
