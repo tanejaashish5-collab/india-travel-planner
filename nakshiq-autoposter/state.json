@@ -32,38 +32,21 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-06",
     "PdMu0_carousel": "2026-09-06",
-    "GAh5p_yt_short": "2026-09-06",
+    "GAh5p_yt_short": "2026-09-07",
     "m8EAd_yt_short": "2026-09-06",
     "m8EAd": "2026-09-06",
     "m8EAd_evening": "2026-09-06",
     "PdMu0": "2026-09-06",
     "PdMu0_evening": "2026-09-06",
-    "m8EAd_evening_story": "2026-09-05",
     "m8EAd_carousel_story": "2026-09-06"
   },
   "last_sync": "2026-09-06T17:07:24.700032+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "nubra-valley",
-      "date": "2026-08-23"
-    },
-    {
-      "destination_id": "zanskar",
-      "date": "2026-08-23"
-    },
-    {
-      "destination_id": "belur",
-      "date": "2026-08-23"
-    },
-    {
-      "destination_id": "hanle",
-      "date": "2026-08-23"
-    },
     {
       "destination_id": "ozar",
       "date": "2026-08-24"
@@ -307,6 +290,10 @@
     {
       "destination_id": "nubra-valley",
       "date": "2026-09-06"
+    },
+    {
+      "destination_id": "gopeshwar",
+      "date": "2026-09-07"
     }
   ],
   "posted_formats": {
@@ -9666,6 +9653,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "nubra-valley.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T09:26:47.878365+00:00",
+      "date": "2026-09-07",
+      "platform": "instagram",
+      "post_id": "ME2QR",
+      "destination": "gopeshwar",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_gopeshwar_hi_2026-09-07.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T09:26:58.833001+00:00",
+      "date": "2026-09-07",
+      "platform": "youtube",
+      "post_id": "i9CGf",
+      "destination": "gopeshwar",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_gopeshwar_hi_2026-09-07.mp4"
     }
   ],
   "theme_usage": {
@@ -9673,10 +9678,6 @@
       "hyderabad": [
         "2026-05-18",
         "2026-08-26"
-      ],
-      "hemkund-sahib": [
-        "2026-05-19",
-        "2026-06-08"
       ],
       "chopta": [
         "2026-05-19",
@@ -10189,9 +10190,6 @@
         "2026-06-17",
         "2026-07-04"
       ],
-      "v2_cost_index_handwritten": [
-        "2026-06-08"
-      ],
       "emergency_intel": [
         "2026-06-09"
       ],
@@ -10575,9 +10573,6 @@
       ]
     },
     "festivals": {
-      "6b063adc-f716-4192-87a5-c3e15b941377": [
-        "2026-06-08"
-      ],
       "3d26d374-6231-4254-b2f7-bb353e859e06": [
         "2026-06-15"
       ]
