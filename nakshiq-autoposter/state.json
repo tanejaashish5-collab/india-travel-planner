@@ -32,13 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short_count": 2,
+    "GAh5p_yt_short_count": 2,
+    "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-07",
     "PdMu0_carousel": "2026-09-07",
     "GAh5p_yt_short": "2026-09-07",
-    "m8EAd_yt_short": "2026-09-06",
+    "m8EAd_yt_short": "2026-09-07",
     "m8EAd": "2026-09-07",
     "m8EAd_evening": "2026-09-07",
     "PdMu0": "2026-09-07",
@@ -307,6 +307,10 @@
     },
     {
       "destination_id": "kishtwar",
+      "date": "2026-09-07"
+    },
+    {
+      "destination_id": "lahaul-valley",
       "date": "2026-09-07"
     }
   ],
@@ -9743,6 +9747,24 @@
       "format": "festival_alert",
       "has_media": true,
       "media_id": "kishtwar.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T16:46:48.691669+00:00",
+      "date": "2026-09-07",
+      "platform": "instagram",
+      "post_id": "Ii1FF",
+      "destination": "lahaul-valley",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_lahaul-valley_hi_2026-09-07.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T16:46:59.459636+00:00",
+      "date": "2026-09-07",
+      "platform": "youtube",
+      "post_id": "enpuz",
+      "destination": "lahaul-valley",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_lahaul-valley_hi_2026-09-07.mp4"
     }
   ],
   "theme_usage": {
@@ -10182,6 +10204,11 @@
         "2026-05-28",
         "2026-09-05"
       ],
+      "festival_alert": [
+        "2026-05-31",
+        "2026-06-07",
+        "2026-09-07"
+      ],
       "v2_tourist_trap_split": [
         "2026-05-31",
         "2026-06-15",
@@ -10299,9 +10326,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "festival_alert": [
-        "2026-09-07"
       ]
     },
     "reels": {
