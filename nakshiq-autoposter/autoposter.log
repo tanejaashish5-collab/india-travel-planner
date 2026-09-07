@@ -22681,3 +22681,21 @@ Date range: 2026-04-15 → 2026-09-06
 2026-09-07 09:26:58  INFO      YT Short posted: format=dont_go_here, music=hype-445
 2026-09-07 09:26:58  INFO      State saved. YT Short run complete.
 2026-09-07 09:26:58  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 10:49:28  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 10:49:28  INFO      Nakshiq Autoposter · REEL STUDIO · 2026-09-07
+2026-09-07 10:49:28  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 10:49:28  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-07 10:50:14  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-07 10:50:43  INFO      Reel built: fmt=itinerary, route=mughal-road-biker, 21.1s, 17826KB
+2026-09-07 10:50:43  INFO          Requesting upload URL for reel_studio_itinerary_mughal-road-biker.mp4 (18,254,572 bytes, video/mp4)
+2026-09-07 10:50:44  INFO          Uploading to R2 (timeout=300s)...
+2026-09-07 10:50:46  INFO          R2 PUT OK. Confirming...
+2026-09-07 10:50:47  INFO          Media ready: 92Xmm (18,254,572 bytes · reel_studio_itinerary_mughal-road-biker.mp4)
+2026-09-07 10:50:48  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-07 10:50:48  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-09-07 10:51:43  INFO          wait_for_publish exhausted 8 polls for post=IiTA7 (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-09-07 10:51:43  INFO      [instagram/nakshiq] ⚠️ studio reel queued_unconfirmed · post_id=IiTA7
+2026-09-07 10:51:43  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-09-07 10:51:52  INFO      [youtube/@naksh-iq] ✅ studio reel published · post_id=ljufg
+2026-09-07 10:51:52  INFO      Reel studio run complete (fmt=itinerary, route=mughal-road-biker, posted=True).
+2026-09-07 10:51:52  INFO      ════════════════════════════════════════════════════════════

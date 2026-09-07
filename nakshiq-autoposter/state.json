@@ -43,7 +43,9 @@
     "m8EAd_evening": "2026-09-06",
     "PdMu0": "2026-09-06",
     "PdMu0_evening": "2026-09-06",
-    "m8EAd_carousel_story": "2026-09-06"
+    "m8EAd_carousel_story": "2026-09-06",
+    "m8EAd_reel_studio": "2026-09-07",
+    "GAh5p_reel_studio": "2026-09-07"
   },
   "last_sync": "2026-09-06T17:07:24.700032+00:00",
   "posted_destinations": [
@@ -293,6 +295,10 @@
     },
     {
       "destination_id": "gopeshwar",
+      "date": "2026-09-07"
+    },
+    {
+      "destination_id": "srinagar",
       "date": "2026-09-07"
     }
   ],
@@ -9671,6 +9677,24 @@
       "destination": "gopeshwar",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_gopeshwar_hi_2026-09-07.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T10:51:43.136808+00:00",
+      "date": "2026-09-07",
+      "platform": "instagram",
+      "post_id": "IiTA7",
+      "destination": "srinagar",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_mughal-road-biker.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T10:51:52.267419+00:00",
+      "date": "2026-09-07",
+      "platform": "youtube",
+      "post_id": "ljufg",
+      "destination": "srinagar",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_mughal-road-biker.mp4"
     }
   ],
   "theme_usage": {
@@ -10749,7 +10773,8 @@
     "kinnaur-spiti-circuit": "2026-08-14",
     "ladakh-manali-route": "2026-08-17",
     "nainital-weekend-4d": "2026-09-02",
-    "uttarakhand-passes-biker": "2026-09-04"
+    "uttarakhand-passes-biker": "2026-09-04",
+    "mughal-road-biker": "2026-09-07"
   },
   "carousel_seen": {
     "festival": [
