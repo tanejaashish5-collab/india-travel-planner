@@ -35,8 +35,8 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 2,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-09-06",
-    "PdMu0_carousel": "2026-09-06",
+    "m8EAd_carousel": "2026-09-07",
+    "PdMu0_carousel": "2026-09-07",
     "GAh5p_yt_short": "2026-09-07",
     "m8EAd_yt_short": "2026-09-06",
     "m8EAd": "2026-09-06",
@@ -299,6 +299,10 @@
     },
     {
       "destination_id": "srinagar",
+      "date": "2026-09-07"
+    },
+    {
+      "destination_id": "roopkund",
       "date": "2026-09-07"
     }
   ],
@@ -9695,6 +9699,24 @@
       "destination": "srinagar",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_mughal-road-biker.mp4"
+    },
+    {
+      "timestamp": "2026-09-07T13:36:39.018155+00:00",
+      "date": "2026-09-07",
+      "platform": "instagram",
+      "post_id": "1FyuN",
+      "destination": "roopkund",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-09-07"
+    },
+    {
+      "timestamp": "2026-09-07T13:36:43.557038+00:00",
+      "date": "2026-09-07",
+      "platform": "facebook",
+      "post_id": "oa4TH",
+      "destination": "roopkund",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-09-07"
     }
   ],
   "theme_usage": {
@@ -10793,7 +10815,15 @@
       "Champawat Nanda Devi Fair",
       "Mata Murti Ka Mela",
       "Urs of Sheikh Salim Chishti",
-      "Nanda Devi Mela"
+      "Nanda Devi Mela",
+      "Nanda Ashtami Trek Gathering",
+      "Nanda Devi Mahotsav",
+      "Chitkul Pahari Fair",
+      "Phulech Festival",
+      "Ziro Music Festival",
+      "Kaas Plateau Wildflower Bloom",
+      "Alleppey Houseboat Onam",
+      "Neelakurinji Bloom"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
