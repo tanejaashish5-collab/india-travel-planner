@@ -22820,3 +22820,26 @@ Date range: 2026-04-15 → 2026-09-06
 2026-09-07 16:46:59  INFO      YT Short posted: format=this_vs_that, music=hype-305
 2026-09-07 16:46:59  INFO      State saved. YT Short run complete.
 2026-09-07 16:46:59  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 18:47:37  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 18:47:37  INFO      Nakshiq Autoposter · EVENING · 2026-09-07 · weekday=0
+2026-09-07 18:47:37  INFO      ════════════════════════════════════════════════════════════
+2026-09-07 18:47:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-07 18:48:13  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-07 18:48:13  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-07 18:48:14  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-07 18:48:14  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-09-07 18:48:14  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-07 18:48:30  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-07 18:48:30  INFO      [diversity] feed: 37 → 34 options · cooldown dropped 3 (carousel, itinerary_reel, pillar:story.window, pillar:verdict, score, short:did_you_know, short:dont_go_here, short:listicle, short:this_vs_that seen <2d)
+2026-09-07 18:48:30  INFO      Evening format (balance→verification): v2_cost_index_handwritten [14% vs target 20%] (0/15 never featured)
+2026-09-07 18:48:30  INFO      Formats — IG: v2_cost_index_handwritten  ·  FB: v2_cost_index_handwritten  ·  Story: festival_alert  ·  Audience: backpackers
+2026-09-07 18:48:30  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 60
+2026-09-07 18:48:30  WARNING   Audience filter 'backpackers' → only 1 match (floor=3). Dropping filter to avoid same-dest spam.
+2026-09-07 18:48:30  INFO      Fingerprint dedup snapshot — 60 dests in 7d · 127 (dest,fmt) pairs in 30d · 240 media in 60d
+2026-09-07 18:48:30  INFO      Festival locked: Diwali Beach Celebration (55/57 active festivals never featured)
+2026-09-07 18:48:36  INFO      Shared best destination locked: Tosamaidan
+2026-09-07 18:48:36  INFO      [instagram/nakshiq] Already posted today (evening) — skipping.
+2026-09-07 18:48:36  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-09-07 18:48:36  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-09-07 18:48:36  INFO      State saved. Run complete.
+2026-09-07 18:48:36  INFO      ════════════════════════════════════════════════════════════
