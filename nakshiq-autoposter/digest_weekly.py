@@ -256,6 +256,36 @@ def render_report(snaps: list[dict[str, Any]], days: int,
         lines.append(f"- **Engagement rate (eng / reach):** {eng_rate:.2f}%")
     lines.append("")
 
+    # ── Pre-registered target (2026-09-08, founder option A) ──
+    # Baseline on 2026-09-08: 18 followers, median IG reel reach 108 (all-time)
+    # / 23 (last 30 days), 0 comments lifetime. Changes shipped that day: IG
+    # capped to 1 reel/day, carousel + evening image slots paused, hashtags
+    # 18 → 4, Facebook mirror off, founder seeding 15 min/day for 30 days.
+    # Success = 100 real followers AND median IG reel reach >= 500 by
+    # 2026-10-20. Miss = stop IG posting, keep YouTube (option C).
+    # Follower count is not exposed by Outstand analytics — read it off the
+    # profile; the reach half is derived here from the week's snapshots.
+    ig_reel_reach = sorted(
+        int((s.get("metrics") or {}).get("reach") or 0)
+        for s in snaps
+        if s.get("network") == "instagram"
+        and str(s.get("format") or "").startswith(("yt_short", "reel"))
+    )
+    lines.append("## Target check (pre-registered 2026-09-08 · decision date 2026-10-20)")
+    lines.append("")
+    if ig_reel_reach:
+        med = ig_reel_reach[len(ig_reel_reach) // 2]
+        verdict = "ON TRACK" if med >= 500 else "BELOW target"
+        lines.append(f"- **Median IG reel reach this week:** {med} "
+                     f"(baseline 108 · target 500) — {verdict}")
+        lines.append(f"- **IG reels this week:** {len(ig_reel_reach)} "
+                     f"(cap is 1/day — more than {days} means the cap failed)")
+    else:
+        lines.append("- **Median IG reel reach this week:** no IG reel snapshots pulled")
+    lines.append("- **Followers:** read off instagram.com/nakshiq (baseline 18 · target 100)")
+    lines.append("- **Miss on 2026-10-20 → option C:** stop IG, keep YouTube Shorts")
+    lines.append("")
+
     # ── Owned audience — ABSOLUTE counts ──
     # Deliberately absolute, never percentage-only: a percentage on a base of
     # 6 subscribers reads healthy and hides the real problem. If a number

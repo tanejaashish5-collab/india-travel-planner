@@ -49,12 +49,13 @@ if not GH_TOKEN:
 # new watchdog dispatch re-ran with --force and re-published the same dest.
 # The non-force variants still attach the correct slot flag (--evening etc.)
 # but leave the dedup gates active so a successful late fire blocks repeats.
+# 2026-09-08 (founder option A): morning / reel / evening slots removed — their
+# crons are paused in autoposter.yml and a watchdog catch-up must never
+# resurrect a paused slot. Only the two YT-short slots remain (YT + 1 IG reel;
+# the IG side is capped to 1/day inside autoposter.py).
 DAILY_SLOTS = [
-    ("morning",     3, 17, "",          None),  # 08:47 IST · IG+FB
-    ("yt-short-1",  4, 17, "yt-short",  None),  # 09:47 IST · YT
-    ("reel",        5, 47, "reel",      None),  # 11:17 IST · IG+FB
-    ("yt-short-2", 11, 47, "yt-short",  None),  # 17:17 IST · YT
-    ("evening",    14, 17, "evening",   None),  # 19:47 IST · IG+FB (shifted +1h on 2026-05-15)
+    ("yt-short-1",  4, 17, "yt-short",  None),  # 09:47 IST · YT + IG reel
+    ("yt-short-2", 11, 47, "yt-short",  None),  # 17:17 IST · YT (IG capped)
 ]
 
 # 13:17 IST = 07:47 UTC — visual rotation by weekday (see autoposter.yml mode-detection)

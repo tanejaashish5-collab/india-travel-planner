@@ -591,13 +591,14 @@ _IG_CATEGORY_POOL = {
 def _build_ig_hashtags(dest_name: str | None = None,
                        state_name: str | None = None,
                        category: str | None = None,
-                       max_tags: int = 18) -> str:
-    """Build a 15-20 tag hashtag block for Instagram captions.
+                       max_tags: int = 4) -> str:
+    """Build a 3-5 tag hashtag block for Instagram captions.
 
-    Tier 1 (2026-05-10): expands from 5 → ~18 niche/branded tags to improve IG
-    discoverability.  Pool order: dest-specific → state-specific → category
-    niche → safe broad-Indian-travel → branded.  Broad tags like #travel are
-    intentionally absent (sanitiser strips them; brand rule).
+    2026-09-08 (founder option A): cut from ~18 back to 4. Instagram's own
+    guidance since 2025 is 3-5 tags; a 20-tag wall on an 18-follower account
+    is a spam pattern, and 222 IG posts with the 18-tag block produced
+    0 comments / 12 saves. Order: dest → category → one niche → brand.
+    Broad tags like #travel stay absent (sanitiser strips them; brand rule).
     """
     tags: list[str] = []
 
@@ -607,37 +608,31 @@ def _build_ig_hashtags(dest_name: str | None = None,
         if t not in tags and len(tags) < max_tags:
             tags.append(t)
 
-    # 1. Destination-specific (up to 3)
+    # 1. Destination-specific (1)
     if dest_name and dest_name not in ("India", "STATE_SHOWCASE", "EDITORIAL", "GENERIC"):
         clean = dest_name.replace(" ", "").replace("-", "").replace("&", "").replace(",", "")
         if clean:
             _push(clean)
-            _push(f"{clean}Travel")
-            _push(f"Visit{clean}")
 
-    # 2. State-specific (up to 3)
+    # 2. Category niche (1)
+    cat_key = (category or "").lower()
+    for t in _IG_CATEGORY_POOL.get(cat_key, [])[:1]:
+        _push(t)
+
+    # 3. State-specific (1) — fills the slot when there is no category tag
     if state_name and state_name not in ("India", "STATE_SHOWCASE", "EDITORIAL", "GENERIC"):
         clean_state = state_name.replace(" ", "").replace("&", "And").replace("-", "")
-        if clean_state:
+        if clean_state and len(tags) < max_tags - 1:
             _push(clean_state)
-            _push(f"{clean_state}Travel")
-            _push(f"{clean_state}Tourism")
 
-    # 3. Category niche (up to 3)
-    cat_key = (category or "").lower()
-    cat_tags = _IG_CATEGORY_POOL.get(cat_key, [])
-    for t in cat_tags[:3]:
-        _push(t)
+    # 4. One safe niche-Indian-travel tag, rotating by destination so the
+    #    block is not byte-identical across posts
+    if len(tags) < max_tags - 1:
+        i = sum(ord(c) for c in (dest_name or "")) % len(_IG_NICHE_POOL)
+        _push(_IG_NICHE_POOL[i])
 
-    # 4. Safe niche-Indian-travel pool (top up to ~14)
-    for t in _IG_NICHE_POOL:
-        if len(tags) >= max_tags - 4:
-            break
-        _push(t)
-
-    # 5. Branded (last 4 slots)
-    for t in _IG_BRAND_POOL:
-        _push(t)
+    # 5. Brand (last slot)
+    _push(_IG_BRAND_POOL[0])
 
     return " ".join(f"#{t}" for t in tags[:max_tags])
 
@@ -1052,6 +1047,46 @@ def destinations_posted_today_jsonl() -> tuple[set, set]:
         if m:
             media.add(m)
     return dests, media
+
+
+def ig_posts_today_jsonl() -> int:
+    """Fresh count of Instagram FEED/REEL publishes logged today (stories excluded).
+
+    2026-09-08 (founder option A): the account was shipping 4.4 IG posts/day
+    into 18 followers — the strongest spam signal an account can send. Reach
+    data from post_engagement.json: carousels/images median reach 2, reels
+    median reach 108. So IG now gets ONE reel a day, enforced here at the
+    publish layer (not the schedule) so no slot, drift, or watchdog catch-up
+    can exceed it. Cap via NAKSHIQ_IG_DAILY_CAP (default 1)."""
+    today = date.today().isoformat()
+    n = 0
+    for e in load_post_log_jsonl():
+        if (e.get("date") or "") != today:
+            continue
+        if (e.get("platform") or "") != "instagram":
+            continue
+        if str(e.get("format") or "").startswith("story"):
+            continue
+        n += 1
+    return n
+
+
+def ig_daily_cap() -> int:
+    try:
+        return int(os.environ.get("NAKSHIQ_IG_DAILY_CAP", "1") or 1)
+    except ValueError:
+        return 1
+
+
+def _ig_cap_blocks(platform: str, label: str, dry_run: bool) -> bool:
+    """True when an Instagram feed/reel publish must be skipped for the cap."""
+    if platform != "instagram" or dry_run:
+        return False
+    n, cap = ig_posts_today_jsonl(), ig_daily_cap()
+    if n >= cap:
+        log.info(f"[{label}] IG daily cap reached ({n}/{cap}) — skipping publish.")
+        return True
+    return False
 
 
 def load_theme_usage_jsonl() -> dict:
@@ -5894,6 +5929,15 @@ def get_connected_accounts() -> list:
         log.error(f"Could not fetch accounts: {e}")
         return []
     allowed = [a for a in accounts if a.get("id") in NAKSHIQ_ACCOUNT_IDS]
+    # 2026-09-08 (founder option A): Facebook mirror OFF by default. 14 posts →
+    # 8 likes lifetime, and byte-identical cross-posts are fingerprinted as
+    # unoriginal on IG. Re-enable deliberately with NAKSHIQ_FB_ENABLED=1.
+    if os.environ.get("NAKSHIQ_FB_ENABLED", "0") != "1":
+        fb = [a for a in allowed if a.get("network") == "facebook"]
+        if fb:
+            log.info("Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping "
+                     + ", ".join(a.get("username", a.get("id")) for a in fb))
+        allowed = [a for a in allowed if a.get("network") != "facebook"]
     for a in accounts:
         if a.get("id") not in NAKSHIQ_ACCOUNT_IDS and a.get("isActive"):
             log.warning(
@@ -6594,6 +6638,9 @@ def publish_feed_post(caption: str, account: dict, media,
     """
     username = account.get("username", account["id"])
     platform = account["network"]
+
+    if _ig_cap_blocks(platform, f"{platform}/{account.get('username', account['id'])}", dry_run):
+        return None
     # Sanitize caption BEFORE any platform call (banned tags + length cap)
     caption = _sanitize_caption(caption, platform=platform)
     # Email-capture CTA (1-in-N rotation, see _append_email_cta). After the
@@ -6788,6 +6835,9 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     """Post an Instagram/Facebook Reel or YouTube Short (vertical video)."""
     username = account.get("username", account["id"])
     platform = account["network"]
+
+    if _ig_cap_blocks(platform, f"{platform}/{account.get('username', account['id'])}", dry_run):
+        return None
     # Sanitize caption BEFORE any platform call (banned tags + length cap)
     caption = _sanitize_caption(caption, platform=platform)
     # Email-capture CTA: YouTube descriptions get the standing newsletter line
