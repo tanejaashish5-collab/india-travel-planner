@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-07",
@@ -298,6 +298,10 @@
     },
     {
       "destination_id": "ozar",
+      "date": "2026-09-08"
+    },
+    {
+      "destination_id": "astavinayak-circuit",
       "date": "2026-09-08"
     }
   ],
@@ -9770,6 +9774,15 @@
       "destination": "ozar",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_ozar_hi_2026-09-08.mp4"
+    },
+    {
+      "timestamp": "2026-09-08T13:51:28.630659+00:00",
+      "date": "2026-09-08",
+      "platform": "youtube",
+      "post_id": "ny7UL",
+      "destination": "astavinayak-circuit",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_astavinayak-circuit_hi_2026-09-08.mp4"
     }
   ],
   "theme_usage": {

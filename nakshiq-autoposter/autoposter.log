@@ -22920,3 +22920,25 @@ Date range: 2026-04-15 → 2026-09-07
 2026-09-08 08:59:30  INFO      YT Short posted: format=mini_guide, music=fast-1085
 2026-09-08 08:59:30  INFO      State saved. YT Short run complete.
 2026-09-08 08:59:30  INFO      ════════════════════════════════════════════════════════════
+2026-09-08 13:49:37  INFO      ════════════════════════════════════════════════════════════
+2026-09-08 13:49:37  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-08
+2026-09-08 13:49:37  INFO      ════════════════════════════════════════════════════════════
+2026-09-08 13:49:40  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-08 13:51:08  INFO      Short rendered: yt_short_did_you_know_astavinayak-circuit_hi_2026-09-08.mp4 (15227 KB, 22.7s, fmt=did_you_know, music=edm-1001)
+2026-09-08 13:51:08  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_astavinayak-circuit_hi_2026-09-08.mp4 (15,593,445 bytes, video/mp4)
+2026-09-08 13:51:10  INFO          Uploading to R2 (timeout=300s)...
+2026-09-08 13:51:11  INFO          R2 PUT OK. Confirming...
+2026-09-08 13:51:13  INFO          Media ready: iKIud (15,593,445 bytes · yt_short_did_you_know_yt_short_did_you_know_astavinayak-circuit_hi_2026-09-08.mp4)
+2026-09-08 13:51:13  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_astavinayak-circuit_hi_2026-09-08.mp4
+2026-09-08 13:51:13  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-08 13:51:13  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-08 13:51:13  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
+2026-09-08 13:51:13  INFO      [instagram/nakshiq] IG daily cap reached (1/1) — skipping publish.
+2026-09-08 13:51:13  WARNING   [instagram/nakshiq] YT Short post failed (API rejected).
+2026-09-08 13:51:13  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
+2026-09-08 13:51:13  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-09-08 13:51:22  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=ny7UL), waiting for platform confirmation...
+2026-09-08 13:51:28  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=ny7UL · Platform=NEiiEeHFwV8
+2026-09-08 13:51:28  INFO      YT Short posted: format=did_you_know, music=edm-1001
+2026-09-08 13:51:28  INFO      State saved. YT Short run complete.
+2026-09-08 13:51:28  INFO      ════════════════════════════════════════════════════════════
