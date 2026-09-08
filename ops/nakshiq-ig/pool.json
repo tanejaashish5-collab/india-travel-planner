@@ -1,0 +1,559 @@
+{
+  "_note": "Handles verified live 2026-09-08 via public profile pages. states = state_id values in the NakshIQ DB used to pick a relevant verdict for the comment draft. Add new handles here; daily-brief.mjs re-verifies every handle it serves.",
+  "accounts": [
+    {
+      "handle": "nomadsofspiti",
+      "niche": "Spiti Valley",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "incredible_kinnaur",
+      "niche": "Kinnaur",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "visit__himachal",
+      "niche": "Himachal",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "exploring_himachal_",
+      "niche": "Himachal",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "himachaltravelclub",
+      "niche": "Himachal community",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "travelmykashmir",
+      "niche": "Kashmir",
+      "states": [
+        "jammu-kashmir",
+        "ladakh"
+      ]
+    },
+    {
+      "handle": "ladakh_trip_maker",
+      "niche": "Ladakh",
+      "states": [
+        "ladakh"
+      ]
+    },
+    {
+      "handle": "awesome_arunachal",
+      "niche": "Arunachal planner",
+      "states": [
+        "arunachal-pradesh"
+      ]
+    },
+    {
+      "handle": "nthadventure",
+      "niche": "Arunachal adventure",
+      "states": [
+        "arunachal-pradesh"
+      ]
+    },
+    {
+      "handle": "travelnortheast_",
+      "niche": "Northeast local",
+      "states": [
+        "meghalaya",
+        "assam",
+        "nagaland"
+      ]
+    },
+    {
+      "handle": "northeast.tourism",
+      "niche": "Northeast",
+      "states": [
+        "meghalaya",
+        "assam"
+      ]
+    },
+    {
+      "handle": "thenortheastjournal_",
+      "niche": "Northeast stories",
+      "states": [
+        "assam",
+        "meghalaya"
+      ]
+    },
+    {
+      "handle": "sikkim.in",
+      "niche": "Sikkim",
+      "states": [
+        "sikkim",
+        "west-bengal"
+      ]
+    },
+    {
+      "handle": "himalayantrekkers",
+      "niche": "Himalayan treks",
+      "states": [
+        "uttarakhand",
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "indiatreks",
+      "niche": "India trekking",
+      "states": [
+        "uttarakhand",
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "himalyantrekking",
+      "niche": "Trekking guides",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "tourhimalayas",
+      "niche": "Himalayan family tours",
+      "states": [
+        "uttarakhand",
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "familytravelervlogs",
+      "niche": "Family travel",
+      "states": [
+        "kerala",
+        "karnataka",
+        "goa"
+      ]
+    },
+    {
+      "handle": "rajasthantourplanner",
+      "niche": "Rajasthan",
+      "states": [
+        "rajasthan"
+      ]
+    },
+    {
+      "handle": "rajasthan_touring",
+      "niche": "Rajasthan",
+      "states": [
+        "rajasthan"
+      ]
+    },
+    {
+      "handle": "divsigupta",
+      "niche": "Offbeat India creator",
+      "states": [
+        "maharashtra",
+        "karnataka"
+      ]
+    },
+    {
+      "handle": "aforaditii",
+      "niche": "Solo India creator",
+      "states": [
+        "himachal-pradesh",
+        "goa"
+      ]
+    },
+    {
+      "handle": "spitivalleytours",
+      "niche": "Spiti tours",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "discoverkinnaurspiti",
+      "niche": "Kinnaur and Spiti",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "india.trail",
+      "niche": "Mountain road trips",
+      "states": [
+        "himachal-pradesh",
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "him_trek",
+      "niche": "Himachal trekking",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "shimla_manali_tourism",
+      "niche": "Shimla and Manali",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "kheergangatreks",
+      "niche": "Kheerganga treks",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "dharamshalatravel",
+      "niche": "Dharamshala",
+      "states": [
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "uttarakhandtourtravels",
+      "niche": "Uttarakhand packages",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "gonomadadventures",
+      "niche": "Uttarakhand trekking",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "touristcareuttarakhand",
+      "niche": "Uttarakhand",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "nagtibba_trek_",
+      "niche": "Nag Tibba trek",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "nainitaltourism",
+      "niche": "Nainital",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "nainital.india",
+      "niche": "Nainital lakes",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "choptatravels",
+      "niche": "Chopta treks",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "chopta.official",
+      "niche": "Chopta tours",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "adventurerishikeshindia",
+      "niche": "Rishikesh adventure",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "kedarnath_trip",
+      "niche": "Kedarnath, Chardham",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "essenceofnature.in",
+      "niche": "Ranikhet retreat",
+      "states": [
+        "uttarakhand"
+      ]
+    },
+    {
+      "handle": "travelling_ladakh",
+      "niche": "Ladakh",
+      "states": [
+        "ladakh"
+      ]
+    },
+    {
+      "handle": "leh.ladakh",
+      "niche": "Ladakh",
+      "states": [
+        "ladakh"
+      ]
+    },
+    {
+      "handle": "ladakhtravelco",
+      "niche": "Ladakh custom tours",
+      "states": [
+        "ladakh"
+      ]
+    },
+    {
+      "handle": "heavenridersindia",
+      "niche": "Himalayan expeditions",
+      "states": [
+        "ladakh",
+        "himachal-pradesh"
+      ]
+    },
+    {
+      "handle": "kashmirtravelport",
+      "niche": "Kashmir",
+      "states": [
+        "jammu-kashmir"
+      ]
+    },
+    {
+      "handle": "kashmiradventureseekers",
+      "niche": "Kashmir adventure",
+      "states": [
+        "jammu-kashmir"
+      ]
+    },
+    {
+      "handle": "yathranest",
+      "niche": "Kerala backwaters",
+      "states": [
+        "kerala"
+      ]
+    },
+    {
+      "handle": "munnarstories",
+      "niche": "Munnar hills",
+      "states": [
+        "kerala"
+      ]
+    },
+    {
+      "handle": "tourismwayanad",
+      "niche": "Wayanad trekking",
+      "states": [
+        "kerala"
+      ]
+    },
+    {
+      "handle": "kumarakomhouseboat",
+      "niche": "Kumarakom backwaters",
+      "states": [
+        "kerala"
+      ]
+    },
+    {
+      "handle": "keralahouseboatcruises",
+      "niche": "Kerala backwaters",
+      "states": [
+        "kerala"
+      ]
+    },
+    {
+      "handle": "trip_to_coorg",
+      "niche": "Coorg",
+      "states": [
+        "karnataka"
+      ]
+    },
+    {
+      "handle": "coorgtourism",
+      "niche": "Coorg",
+      "states": [
+        "karnataka"
+      ]
+    },
+    {
+      "handle": "trekup_karnataka",
+      "niche": "Karnataka trekking",
+      "states": [
+        "karnataka"
+      ]
+    },
+    {
+      "handle": "indianbackpackers_",
+      "niche": "South India backpacking",
+      "states": [
+        "kerala",
+        "karnataka"
+      ]
+    },
+    {
+      "handle": "rajasthan_tours_n_travels",
+      "niche": "Jaipur tours",
+      "states": [
+        "rajasthan"
+      ]
+    },
+    {
+      "handle": "deserttrailskhuri",
+      "niche": "Thar desert",
+      "states": [
+        "rajasthan"
+      ]
+    },
+    {
+      "handle": "rajputanadesertcamps",
+      "niche": "Jaisalmer camps",
+      "states": [
+        "rajasthan"
+      ]
+    },
+    {
+      "handle": "z.in.morjim",
+      "niche": "Morjim, Goa",
+      "states": [
+        "goa"
+      ]
+    },
+    {
+      "handle": "that_goan_backpacker",
+      "niche": "Goa travel",
+      "states": [
+        "goa"
+      ]
+    },
+    {
+      "handle": "kodaikanal_tripadvisor",
+      "niche": "Kodaikanal",
+      "states": [
+        "tamil-nadu"
+      ]
+    },
+    {
+      "handle": "richtimeholidays.ind",
+      "niche": "TN hill stations",
+      "states": [
+        "tamil-nadu"
+      ]
+    },
+    {
+      "handle": "sahyadri_adventure_club",
+      "niche": "Sahyadri trekking",
+      "states": [
+        "maharashtra"
+      ]
+    },
+    {
+      "handle": "sahyadritrekkers",
+      "niche": "Sahyadri trekking",
+      "states": [
+        "maharashtra"
+      ]
+    },
+    {
+      "handle": "maharashtra_hikes",
+      "niche": "Maharashtra hiking",
+      "states": [
+        "maharashtra"
+      ]
+    },
+    {
+      "handle": "trarail_tours",
+      "niche": "Gujarat circuits",
+      "states": [
+        "gujarat"
+      ]
+    },
+    {
+      "handle": "gujarat_travels",
+      "niche": "Gujarat tours",
+      "states": [
+        "gujarat"
+      ]
+    },
+    {
+      "handle": "exploremeghalaya",
+      "niche": "Meghalaya",
+      "states": [
+        "meghalaya"
+      ]
+    },
+    {
+      "handle": "dkhardalanki",
+      "niche": "Meghalaya creator",
+      "states": [
+        "meghalaya"
+      ]
+    },
+    {
+      "handle": "travelling_shillong",
+      "niche": "Shillong",
+      "states": [
+        "meghalaya"
+      ]
+    },
+    {
+      "handle": "escape_to_meghalaya",
+      "niche": "Meghalaya",
+      "states": [
+        "meghalaya"
+      ]
+    },
+    {
+      "handle": "northeast_guide",
+      "niche": "Assam and Northeast",
+      "states": [
+        "assam",
+        "meghalaya"
+      ]
+    },
+    {
+      "handle": "darjeelingwalks",
+      "niche": "Darjeeling walks",
+      "states": [
+        "west-bengal",
+        "sikkim"
+      ]
+    },
+    {
+      "handle": "darjeelingtimes",
+      "niche": "Darjeeling",
+      "states": [
+        "west-bengal",
+        "sikkim"
+      ]
+    },
+    {
+      "handle": "familycantravel",
+      "niche": "Family travel",
+      "states": [
+        "kerala",
+        "karnataka",
+        "goa"
+      ]
+    },
+    {
+      "handle": "travelinggraces",
+      "niche": "Family travel",
+      "states": [
+        "kerala",
+        "goa"
+      ]
+    }
+  ]
+}

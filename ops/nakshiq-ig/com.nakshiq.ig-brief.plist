@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.nakshiq.ig-brief</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Automation/nakshiq-ig/run-brief.sh</string>
+  </array>
+
+  <!-- PATH must cover the tools' tools, not just what we call by name.
+       Scar: 2026-08-26, ga4-audit-cron pushed fine by hand and failed for four
+       days under cron because git's credential helper needed gh on PATH. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ashishtaneja/bin</string>
+  </dict>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/ashishtaneja/Automation/nakshiq-ig</string>
+
+  <!-- Two fire times. A single daily fire drops the day on network loss;
+       the script is idempotent per date, so a second run just refreshes. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>17</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Hour</key><integer>20</integer><key>Minute</key><integer>10</integer></dict>
+  </array>
+
+  <key>StandardOutPath</key>
+  <string>/Users/ashishtaneja/Automation/nakshiq-ig/logs/launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/ashishtaneja/Automation/nakshiq-ig/logs/launchd.log</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>
