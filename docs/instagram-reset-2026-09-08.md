@@ -84,3 +84,27 @@ Dead handles dropped: spitiindia, thehimachal, tristravel_meghalaya (profile una
 Comment formula that works: destination plus month plus one number from nakshiq.com. Example on a Spiti post: "Went via Kaza in early October, Kunzum was still open but the score for late October drops to 5/10 for road risk."
 
 Ask me each evening for the next day's list. I will pull 20 fresh accounts and check they are live before you see them.
+
+## The daily brief is automated (2026-09-08)
+
+`~/Automation/nakshiq-ig/` holds a launchd job, `com.nakshiq.ig-brief`, that fires at 17:30 and 20:10 local. Two fire times because a single daily fire drops the day on network loss. Every run:
+
+1. Rotates the account pool least-recently-served first.
+2. Re-verifies each handle against its public profile page. No login, no session, read only. Dead handles are dropped and named in the brief.
+3. Drafts a comment line per starred target from a cached pack of 625 verified NakshIQ month verdicts, with em-dashes stripped and the "Go in September" verdict opener removed so ten comments do not all read like the same advert.
+4. Renders the dark-theme PDF to `~/Automation/nakshiq-ig/briefs/`, mirrors it to `~/Desktop/Reports/`, and posts a clickable notification.
+
+What it does not do, by design: log in, follow, comment, like, or DM. Instagram bans engagement automation and enforces on the account, not the script. Those taps stay human.
+
+### Four bugs found while building it, all fixed
+
+1. **The first version reported success while every item failed.** An Instagram description-format change made all 22 handles read as "unreadable" and the job still logged "brief ready" and wrote a PDF containing zero accounts. Total item failure now exits non-zero, posts a failure notification, and leaves the served dates untouched so tomorrow retries the same accounts.
+2. **The description parser was too strict.** Instagram serves both "18 Followers, 21 Following, 675 Posts" and "8,079 followers, 259 following, 446 posts" and swaps without notice. The matcher is now case-insensitive and accepts either dash.
+3. **The plist re-ran the whole job on failure.** `node script || /opt/homebrew/bin/node script` was meant as "if that binary is missing, try the other" but means "if the job fails, run it again". Interpreter selection moved into `run-brief.sh`, which picks a node and runs it exactly once.
+4. **Clicking the notification opened an empty Script Editor.** A notification posted by bare `osascript` is owned by Script Editor. `NakshIQ-Brief.app` now owns them: it carries a `CFBundleIdentifier` that `osacompile` does not write, and because `--args` never reaches an applet's argv, the job hands over the path in a file. Marker file present means post the notification; absent means the user clicked, so open the brief.
+
+### Standing maintenance
+
+- **The pool is 22 accounts and the brief serves 20 a day, so it barely rotates.** It needs expanding to about 60 before the rotation is real. Ask me to refresh it; discovery needs judgement, so it is a session job, not a cron job.
+- The verdict pack in `data/verdicts.json` covers September, October and November. Refresh it before December.
+- Logs: `~/Automation/nakshiq-ig/logs/`. A failed run says FATAL and notifies.
