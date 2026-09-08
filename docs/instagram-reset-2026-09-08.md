@@ -47,3 +47,40 @@ Success by 2026-10-20: 100 real followers AND median IG reel reach at or above 5
 Miss on 2026-10-20: option C. Stop Instagram posting, keep YouTube Shorts, save the compute.
 
 Where to read it: the Sunday digest at `data/research/social-engagement-week-*.md` prints the reach half automatically. Followers are read off the profile.
+
+## Day-one target list (verified live 2026-09-08 via public profile pages)
+
+Why this is a list and not a bot: Meta's API only allows replying on our own posts. Following and commenting on other accounts requires a logged-in browser session, which is the exact pattern Instagram fingerprints and action-blocks, fastest on accounts under 100 followers. So the research is automated, the taps are yours.
+
+Follow all 22 today (under 30 seconds each). Comment on the 10 marked with a star, on their newest post, one sentence with a fact.
+
+| Handle | Niche | Followers | Comment today |
+|---|---|---|---|
+| @nomadsofspiti | Spiti Valley | 8,079 | ★ |
+| @incredible_kinnaur | Kinnaur | 23K | ★ |
+| @visit__himachal | Himachal | 12K | ★ |
+| @travelmykashmir | Kashmir | 9,380 | ★ |
+| @awesome_arunachal | Arunachal planner | 20K | ★ |
+| @travelnortheast_ | Northeast local | 4,283 | ★ |
+| @northeast.tourism | Northeast | 8,295 | ★ |
+| @himalayantrekkers | Himalayan treks | 3,760 | ★ |
+| @indiatreks | India trekking | 2,564 | ★ |
+| @familytravelervlogs | Family travel | 15K | ★ |
+| @rajasthantourplanner | Rajasthan | 3,670 | |
+| @rajasthan_touring | Rajasthan | 1,088 | |
+| @tourhimalayas | Himalayan family tours | 4,194 | |
+| @sikkim.in | Sikkim | 30K | |
+| @nthadventure | Arunachal adventure | 10K | |
+| @thenortheastjournal_ | Northeast stories | 2,426 | |
+| @himalyantrekking | Trekking guides | 525 | |
+| @ladakh_trip_maker | Ladakh | 1,041 | |
+| @himachaltravelclub | Himachal community | 1,005 | |
+| @divsigupta | Offbeat India creator | 54K | |
+| @aforaditii | Solo India creator | 44K | |
+| @exploring_himachal_ | Himachal | 50K | |
+
+Dead handles dropped: spitiindia, thehimachal, tristravel_meghalaya (profile unavailable).
+
+Comment formula that works: destination plus month plus one number from nakshiq.com. Example on a Spiti post: "Went via Kaza in early October, Kunzum was still open but the score for late October drops to 5/10 for road risk."
+
+Ask me each evening for the next day's list. I will pull 20 fresh accounts and check they are live before you see them.
