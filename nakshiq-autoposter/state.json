@@ -32,39 +32,22 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_carousel": "2026-09-07",
     "PdMu0_carousel": "2026-09-07",
-    "GAh5p_yt_short": "2026-09-07",
+    "GAh5p_yt_short": "2026-09-08",
     "m8EAd_yt_short": "2026-09-07",
     "m8EAd": "2026-09-07",
     "m8EAd_evening": "2026-09-07",
     "PdMu0": "2026-09-07",
     "PdMu0_evening": "2026-09-07",
-    "m8EAd_carousel_story": "2026-09-06",
     "m8EAd_reel_studio": "2026-09-07",
     "GAh5p_reel_studio": "2026-09-07"
   },
   "last_sync": "2026-09-07T18:48:13.334209+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ozar",
-      "date": "2026-08-24"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-08-24"
-    },
-    {
-      "destination_id": "pattadakal",
-      "date": "2026-08-24"
-    },
-    {
-      "destination_id": "khandala",
-      "date": "2026-08-24"
-    },
     {
       "destination_id": "morgaon",
       "date": "2026-08-25"
@@ -312,6 +295,10 @@
     {
       "destination_id": "lahaul-valley",
       "date": "2026-09-07"
+    },
+    {
+      "destination_id": "ozar",
+      "date": "2026-09-08"
     }
   ],
   "posted_formats": {
@@ -9765,6 +9752,24 @@
       "destination": "lahaul-valley",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_lahaul-valley_hi_2026-09-07.mp4"
+    },
+    {
+      "timestamp": "2026-09-08T08:59:19.776495+00:00",
+      "date": "2026-09-08",
+      "platform": "instagram",
+      "post_id": "puJyX",
+      "destination": "ozar",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_ozar_hi_2026-09-08.mp4"
+    },
+    {
+      "timestamp": "2026-09-08T08:59:30.723787+00:00",
+      "date": "2026-09-08",
+      "platform": "youtube",
+      "post_id": "cbnrr",
+      "destination": "ozar",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_ozar_hi_2026-09-08.mp4"
     }
   ],
   "theme_usage": {
@@ -10292,12 +10297,6 @@
         "2026-06-17",
         "2026-07-04"
       ],
-      "emergency_intel": [
-        "2026-06-09"
-      ],
-      "infographic": [
-        "2026-06-09"
-      ],
       "v2_cost_vs_feeling": [
         "2026-06-10"
       ],
@@ -10730,11 +10729,6 @@
     "collection_carousel_dests:best-motorcycle-routes": {
       "zanskar": [
         "2026-08-04"
-      ]
-    },
-    "emergency": {
-      "kiphire": [
-        "2026-06-09"
       ]
     },
     "eateries": {
