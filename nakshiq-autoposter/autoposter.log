@@ -23077,3 +23077,21 @@ Date range: 2026-04-15 → 2026-09-08
 2026-09-09 13:57:21  INFO      YT Short posted: format=listicle, music=hype-267
 2026-09-09 13:57:21  INFO      State saved. YT Short run complete.
 2026-09-09 13:57:21  INFO      ════════════════════════════════════════════════════════════
+2026-09-09 15:20:22  INFO      ════════════════════════════════════════════════════════════
+2026-09-09 15:20:22  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-09
+2026-09-09 15:20:22  INFO      ════════════════════════════════════════════════════════════
+2026-09-09 15:20:26  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-09 15:22:00  INFO      Short rendered: yt_short_dont_go_here_lamayuru_hi_2026-09-09.mp4 (15852 KB, 21.3s, fmt=dont_go_here, music=fast-679)
+2026-09-09 15:22:00  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_lamayuru_hi_2026-09-09.mp4 (16,232,490 bytes, video/mp4)
+2026-09-09 15:22:02  INFO          Uploading to R2 (timeout=300s)...
+2026-09-09 15:22:04  INFO          R2 PUT OK. Confirming...
+2026-09-09 15:22:06  INFO          Media ready: FAMVc (16,232,490 bytes · yt_short_dont_go_here_yt_short_dont_go_here_lamayuru_hi_2026-09-09.mp4)
+2026-09-09 15:22:06  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_lamayuru_hi_2026-09-09.mp4
+2026-09-09 15:22:07  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-09 15:22:07  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-09 15:22:07  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
+2026-09-09 15:22:07  INFO      [instagram/nakshiq] IG daily cap reached (1/1) — skipping publish.
+2026-09-09 15:22:07  WARNING   [instagram/nakshiq] YT Short post failed (API rejected).
+2026-09-09 15:22:07  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-09-09 15:22:07  INFO      State saved. YT Short run complete.
+2026-09-09 15:22:07  INFO      ════════════════════════════════════════════════════════════
