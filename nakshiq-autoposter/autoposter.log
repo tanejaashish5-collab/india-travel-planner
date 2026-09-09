@@ -23037,3 +23037,21 @@ Date range: 2026-04-15 → 2026-09-08
 2026-09-09 09:04:18  INFO      YT Short posted: format=nakshiq_score, music=fast-686
 2026-09-09 09:04:18  INFO      State saved. YT Short run complete.
 2026-09-09 09:04:18  INFO      ════════════════════════════════════════════════════════════
+2026-09-09 10:12:17  INFO      ════════════════════════════════════════════════════════════
+2026-09-09 10:12:17  INFO      Nakshiq Autoposter · REEL STUDIO · 2026-09-09
+2026-09-09 10:12:17  INFO      ════════════════════════════════════════════════════════════
+2026-09-09 10:12:17  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-09 10:12:49  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-09 10:13:34  INFO      Reel built: fmt=itinerary, route=kinnaur-biker, 21.1s, 20852KB
+2026-09-09 10:13:34  INFO          Requesting upload URL for reel_studio_itinerary_kinnaur-biker.mp4 (21,353,366 bytes, video/mp4)
+2026-09-09 10:13:35  INFO          Uploading to R2 (timeout=300s)...
+2026-09-09 10:13:37  INFO          R2 PUT OK. Confirming...
+2026-09-09 10:13:38  INFO          Media ready: yJ9Uw (21,353,366 bytes · reel_studio_itinerary_kinnaur-biker.mp4)
+2026-09-09 10:13:39  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-09 10:13:39  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-09 10:13:39  INFO      [instagram/nakshiq] IG daily cap reached (1/1) — skipping publish.
+2026-09-09 10:13:39  WARNING   [instagram/nakshiq] studio reel post failed (API rejected).
+2026-09-09 10:13:39  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-09-09 10:13:47  INFO      [youtube/@naksh-iq] ✅ studio reel published · post_id=cb9xO
+2026-09-09 10:13:47  INFO      Reel studio run complete (fmt=itinerary, route=kinnaur-biker, posted=True).
+2026-09-09 10:13:47  INFO      ════════════════════════════════════════════════════════════
