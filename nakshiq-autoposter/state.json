@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-09-09",
@@ -286,6 +286,10 @@
     },
     {
       "destination_id": "shimla",
+      "date": "2026-09-09"
+    },
+    {
+      "destination_id": "pali-raigad",
       "date": "2026-09-09"
     }
   ],
@@ -9794,6 +9798,15 @@
       "destination": "shimla",
       "format": "reel_studio.itinerary",
       "media_id": "itinerary_kinnaur-biker.mp4"
+    },
+    {
+      "timestamp": "2026-09-09T13:57:21.647083+00:00",
+      "date": "2026-09-09",
+      "platform": "youtube",
+      "post_id": "enuOO",
+      "destination": "pali-raigad",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_pali-raigad_hi_2026-09-09.mp4"
     }
   ],
   "theme_usage": {
