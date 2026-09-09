@@ -32,38 +32,13 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "m8EAd_carousel": "2026-09-07",
-    "PdMu0_carousel": "2026-09-07",
-    "GAh5p_yt_short": "2026-09-08",
-    "m8EAd_yt_short": "2026-09-07",
-    "m8EAd": "2026-09-07",
-    "m8EAd_evening": "2026-09-07",
-    "PdMu0": "2026-09-07",
-    "PdMu0_evening": "2026-09-07",
-    "m8EAd_reel_studio": "2026-09-07",
-    "GAh5p_reel_studio": "2026-09-07"
+    "GAh5p_yt_short": "2026-09-09"
   },
   "last_sync": "2026-09-07T18:48:13.334209+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "morgaon",
-      "date": "2026-08-25"
-    },
-    {
-      "destination_id": "chitkul",
-      "date": "2026-08-25"
-    },
-    {
-      "destination_id": "chittorgarh",
-      "date": "2026-08-25"
-    },
-    {
-      "destination_id": "courtallam",
-      "date": "2026-08-25"
-    },
     {
       "destination_id": "bhaderwah",
       "date": "2026-08-26"
@@ -303,6 +278,10 @@
     {
       "destination_id": "astavinayak-circuit",
       "date": "2026-09-08"
+    },
+    {
+      "destination_id": "morgaon",
+      "date": "2026-09-09"
     }
   ],
   "posted_formats": {
@@ -9783,6 +9762,24 @@
       "destination": "astavinayak-circuit",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_astavinayak-circuit_hi_2026-09-08.mp4"
+    },
+    {
+      "timestamp": "2026-09-09T09:04:06.002394+00:00",
+      "date": "2026-09-09",
+      "platform": "instagram",
+      "post_id": "mxbJA",
+      "destination": "morgaon",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_morgaon_hi_2026-09-09.mp4"
+    },
+    {
+      "timestamp": "2026-09-09T09:04:18.136186+00:00",
+      "date": "2026-09-09",
+      "platform": "youtube",
+      "post_id": "PmcQu",
+      "destination": "morgaon",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_morgaon_hi_2026-09-09.mp4"
     }
   ],
   "theme_usage": {
@@ -10310,12 +10307,6 @@
         "2026-06-17",
         "2026-07-04"
       ],
-      "v2_cost_vs_feeling": [
-        "2026-06-10"
-      ],
-      "v2_series_episode": [
-        "2026-06-10"
-      ],
       "eateries_pick": [
         "2026-06-11"
       ],
@@ -10640,9 +10631,6 @@
       "after-dark-experiences": [
         "2026-06-04",
         "2026-08-11"
-      ],
-      "arupadai-veedu": [
-        "2026-06-10"
       ],
       "best-stargazing-spots": [
         "2026-06-11"
