@@ -23148,3 +23148,27 @@ Date range: 2026-04-15 → 2026-09-08
 2026-09-09 20:59:31  INFO      
 Date range: 2026-04-15 → 2026-09-09
 2026-09-09 20:59:31  INFO      ════════════════════════════════════════════════════════════
+2026-09-10 09:00:17  INFO      ════════════════════════════════════════════════════════════
+2026-09-10 09:00:17  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-10
+2026-09-10 09:00:17  INFO      ════════════════════════════════════════════════════════════
+2026-09-10 09:00:19  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-10 09:01:50  INFO      Short rendered: yt_short_this_vs_that_tirupati_hi_2026-09-10.mp4 (17283 KB, 24.5s, fmt=this_vs_that, music=edm-777)
+2026-09-10 09:01:50  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_tirupati_hi_2026-09-10.mp4 (17,698,394 bytes, video/mp4)
+2026-09-10 09:01:51  INFO          Uploading to R2 (timeout=300s)...
+2026-09-10 09:01:52  INFO          R2 PUT OK. Confirming...
+2026-09-10 09:01:53  INFO          Media ready: 8r8WU (17,698,394 bytes · yt_short_this_vs_that_yt_short_this_vs_that_tirupati_hi_2026-09-10.mp4)
+2026-09-10 09:01:53  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_tirupati_hi_2026-09-10.mp4
+2026-09-10 09:01:54  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-10 09:01:54  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-10 09:01:54  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-09-10 09:01:54  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-09-10 09:01:56  INFO      [instagram/nakshiq] Outstand accepted (post_id=ljq4X), waiting for platform confirmation...
+2026-09-10 09:02:42  INFO          wait_for_publish exhausted 8 polls for post=ljq4X (no platform confirmation in 40s) — caller will log as queued_unconfirmed
+2026-09-10 09:02:42  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=ljq4X). May have silently failed.
+2026-09-10 09:02:42  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-09-10 09:02:42  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-09-10 09:02:45  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=apJca), waiting for platform confirmation...
+2026-09-10 09:02:51  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=apJca · Platform=7UtbgyqjRgI
+2026-09-10 09:02:51  INFO      YT Short posted: format=this_vs_that, music=edm-777
+2026-09-10 09:02:51  INFO      State saved. YT Short run complete.
+2026-09-10 09:02:51  INFO      ════════════════════════════════════════════════════════════

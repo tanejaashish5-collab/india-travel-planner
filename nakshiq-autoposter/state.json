@@ -32,34 +32,14 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-09",
+    "GAh5p_yt_short": "2026-09-10",
     "GAh5p_reel_studio": "2026-09-09"
   },
   "last_sync": "2026-09-07T18:48:13.334209+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "bhaderwah",
-      "date": "2026-08-26"
-    },
-    {
-      "destination_id": "alleppey",
-      "date": "2026-08-26"
-    },
-    {
-      "destination_id": "jagdalpur",
-      "date": "2026-08-26"
-    },
-    {
-      "destination_id": "tirupati",
-      "date": "2026-08-26"
-    },
-    {
-      "destination_id": "hyderabad",
-      "date": "2026-08-26"
-    },
     {
       "destination_id": "dwarka",
       "date": "2026-08-27"
@@ -291,6 +271,10 @@
     {
       "destination_id": "pali-raigad",
       "date": "2026-09-09"
+    },
+    {
+      "destination_id": "tirupati",
+      "date": "2026-09-10"
     }
   ],
   "posted_formats": {
@@ -9807,6 +9791,24 @@
       "destination": "pali-raigad",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_pali-raigad_hi_2026-09-09.mp4"
+    },
+    {
+      "timestamp": "2026-09-10T09:02:42.851137+00:00",
+      "date": "2026-09-10",
+      "platform": "instagram",
+      "post_id": "ljq4X",
+      "destination": "tirupati",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_tirupati_hi_2026-09-10.mp4"
+    },
+    {
+      "timestamp": "2026-09-10T09:02:51.597229+00:00",
+      "date": "2026-09-10",
+      "platform": "youtube",
+      "post_id": "apJca",
+      "destination": "tirupati",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_tirupati_hi_2026-09-10.mp4"
     }
   ],
   "theme_usage": {
@@ -9865,12 +9867,6 @@
         "2026-05-23",
         "2026-06-05",
         "2026-08-04"
-      ],
-      "mathura": [
-        "2026-05-24",
-        "2026-05-25",
-        "2026-05-26",
-        "2026-06-11"
       ],
       "sonamarg": [
         "2026-05-25",
@@ -10026,12 +10022,6 @@
         "2026-06-24",
         "2026-07-08",
         "2026-07-24"
-      ],
-      "panaji": [
-        "2026-06-11"
-      ],
-      "darjeeling": [
-        "2026-06-11"
       ],
       "lonavala": [
         "2026-06-12",
@@ -10334,12 +10324,6 @@
         "2026-06-17",
         "2026-07-04"
       ],
-      "eateries_pick": [
-        "2026-06-11"
-      ],
-      "v3_tl_poll_reel": [
-        "2026-06-11"
-      ],
       "stays_pick": [
         "2026-06-12"
       ],
@@ -10377,10 +10361,6 @@
         "2026-05-23",
         "2026-06-05",
         "2026-08-04"
-      ],
-      "mathura": [
-        "2026-05-24",
-        "2026-06-11"
       ],
       "mumbai": [
         "2026-05-26",
@@ -10420,9 +10400,6 @@
         "2026-06-15",
         "2026-06-16",
         "2026-06-29"
-      ],
-      "darjeeling": [
-        "2026-06-11"
       ],
       "bhandardara": [
         "2026-06-12"
@@ -10659,9 +10636,6 @@
         "2026-06-04",
         "2026-08-11"
       ],
-      "best-stargazing-spots": [
-        "2026-06-11"
-      ],
       "budget-under-5000": [
         "2026-06-16"
       ],
@@ -10757,25 +10731,6 @@
     "collection_carousel_dests:best-motorcycle-routes": {
       "zanskar": [
         "2026-08-04"
-      ]
-    },
-    "eateries": {
-      "670b0e93-d216-47e0-b24c-59abad77d6b6": [
-        "2026-06-11"
-      ]
-    },
-    "collection_carousel_dests:best-stargazing-spots": {
-      "tosamaidan": [
-        "2026-06-11"
-      ],
-      "gurez-valley": [
-        "2026-06-11"
-      ],
-      "pangong-lake": [
-        "2026-06-11"
-      ],
-      "nako": [
-        "2026-06-11"
       ]
     },
     "stays": {
