@@ -23194,3 +23194,21 @@ Date range: 2026-04-15 → 2026-09-09
 2026-09-10 13:53:00  INFO      YT Short posted: format=dont_go_here, music=fast-676
 2026-09-10 13:53:00  INFO      State saved. YT Short run complete.
 2026-09-10 13:53:00  INFO      ════════════════════════════════════════════════════════════
+2026-09-10 15:11:58  INFO      ════════════════════════════════════════════════════════════
+2026-09-10 15:11:58  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-10
+2026-09-10 15:11:58  INFO      ════════════════════════════════════════════════════════════
+2026-09-10 15:12:01  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-10 15:13:35  INFO      Short rendered: yt_short_mini_guide_pangong-lake_hi_2026-09-10.mp4 (11678 KB, 24.0s, fmt=mini_guide, music=edm-471)
+2026-09-10 15:13:35  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_pangong-lake_hi_2026-09-10.mp4 (11,958,496 bytes, video/mp4)
+2026-09-10 15:13:36  INFO          Uploading to R2 (timeout=300s)...
+2026-09-10 15:13:37  INFO          R2 PUT OK. Confirming...
+2026-09-10 15:13:40  INFO          Media ready: GZMU1 (11,958,496 bytes · yt_short_mini_guide_yt_short_mini_guide_pangong-lake_hi_2026-09-10.mp4)
+2026-09-10 15:13:40  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_pangong-lake_hi_2026-09-10.mp4
+2026-09-10 15:13:41  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-10 15:13:41  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-10 15:13:41  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-09-10 15:13:41  INFO      [instagram/nakshiq] IG daily cap reached (1/1) — skipping publish.
+2026-09-10 15:13:41  WARNING   [instagram/nakshiq] YT Short post failed (API rejected).
+2026-09-10 15:13:41  INFO      [youtube/@naksh-iq] Already posted 2 YT Shorts today — skipping.
+2026-09-10 15:13:41  INFO      State saved. YT Short run complete.
+2026-09-10 15:13:41  INFO      ════════════════════════════════════════════════════════════
