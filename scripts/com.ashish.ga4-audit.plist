@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ashish.ga4-audit</string>
+  <!-- Runs via /bin/bash DELIBERATELY: TCC is per-executable, and /bin/bash already holds
+       Full Disk Access on this machine (probed 2026-09-10) while /usr/bin/python3 does not.
+       That is what lets this LaunchAgent read the repo under ~/Desktop, which cron could
+       also do — but cron CANNOT git-push, because `gh` keeps its token in the login
+       keychain and cron has no keychain session. launchd does. Hence the move. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/ga4-audit-cron.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>45</integer></dict>
+    <dict><key>Hour</key><integer>14</integer><key>Minute</key><integer>45</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/ga4-audit-cron.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/ga4-audit-cron.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>

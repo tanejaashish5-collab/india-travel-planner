@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ashish.demand-gaps</string>
+  <!-- /bin/bash on purpose: TCC is per-executable and /bin/bash holds Full Disk Access
+       here, which is what lets a LaunchAgent read this repo under ~/Desktop.
+       Moved off cron 2026-09-10: cron skips a run outright if the Mac is asleep at the
+       scheduled minute, and this is weekly — one sleep = one missed week. launchd runs
+       a missed StartCalendarInterval job on wake. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/demand-gaps-cron.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string></dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>50</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/demand-gaps-cron.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/demand-gaps-cron.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
