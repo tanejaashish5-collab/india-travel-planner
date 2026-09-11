@@ -23235,3 +23235,21 @@ Date range: 2026-04-15 → 2026-09-09
 2026-09-11 09:01:13  INFO      YT Short posted: format=did_you_know, music=fast-686
 2026-09-11 09:01:13  INFO      State saved. YT Short run complete.
 2026-09-11 09:01:13  INFO      ════════════════════════════════════════════════════════════
+2026-09-11 10:05:48  INFO      ════════════════════════════════════════════════════════════
+2026-09-11 10:05:48  INFO      Nakshiq Autoposter · REEL STUDIO · 2026-09-11
+2026-09-11 10:05:48  INFO      ════════════════════════════════════════════════════════════
+2026-09-11 10:05:48  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-11 10:06:37  INFO      Synced → 20 destinations · 100 traps · 0 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-11 10:07:20  INFO      Reel built: fmt=itinerary, route=tn-nilgiris-circuit, 21.1s, 26157KB
+2026-09-11 10:07:20  INFO          Requesting upload URL for reel_studio_itinerary_tn-nilgiris-circuit.mp4 (26,784,822 bytes, video/mp4)
+2026-09-11 10:07:21  INFO          Uploading to R2 (timeout=300s)...
+2026-09-11 10:07:23  INFO          R2 PUT OK. Confirming...
+2026-09-11 10:07:25  INFO          Media ready: 2hkfE (26,784,822 bytes · reel_studio_itinerary_tn-nilgiris-circuit.mp4)
+2026-09-11 10:07:25  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-11 10:07:25  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-11 10:07:25  INFO      [instagram/nakshiq] IG daily cap reached (1/1) — skipping publish.
+2026-09-11 10:07:25  WARNING   [instagram/nakshiq] studio reel post failed (API rejected).
+2026-09-11 10:07:25  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-09-11 10:07:34  INFO      [youtube/@naksh-iq] ✅ studio reel published · post_id=MERBK
+2026-09-11 10:07:34  INFO      Reel studio run complete (fmt=itinerary, route=tn-nilgiris-circuit, posted=True).
+2026-09-11 10:07:34  INFO      ════════════════════════════════════════════════════════════

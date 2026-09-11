@@ -36,7 +36,8 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-09-11",
-    "m8EAd_yt_short": "2026-09-11"
+    "m8EAd_yt_short": "2026-09-11",
+    "GAh5p_reel_studio": "2026-09-11"
   },
   "last_sync": "2026-09-07T18:48:13.334209+00:00",
   "posted_destinations": [
@@ -270,6 +271,10 @@
     },
     {
       "destination_id": "pangong-lake",
+      "date": "2026-09-11"
+    },
+    {
+      "destination_id": "coimbatore",
       "date": "2026-09-11"
     }
   ],
@@ -9832,6 +9837,15 @@
       "destination": "pangong-lake",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_pangong-lake_hi_2026-09-11.mp4"
+    },
+    {
+      "timestamp": "2026-09-11T10:07:34.674840+00:00",
+      "date": "2026-09-11",
+      "platform": "youtube",
+      "post_id": "MERBK",
+      "destination": "coimbatore",
+      "format": "reel_studio.itinerary",
+      "media_id": "itinerary_tn-nilgiris-circuit.mp4"
     }
   ],
   "theme_usage": {
@@ -10846,7 +10860,8 @@
     "nainital-weekend-4d": "2026-09-02",
     "uttarakhand-passes-biker": "2026-09-04",
     "mughal-road-biker": "2026-09-07",
-    "kinnaur-biker": "2026-09-09"
+    "kinnaur-biker": "2026-09-09",
+    "tn-nilgiris-circuit": "2026-09-11"
   },
   "carousel_seen": {
     "festival": [
