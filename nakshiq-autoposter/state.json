@@ -32,26 +32,14 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-10",
-    "GAh5p_reel_studio": "2026-09-09"
+    "GAh5p_yt_short": "2026-09-11",
+    "m8EAd_yt_short": "2026-09-11"
   },
   "last_sync": "2026-09-07T18:48:13.334209+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "dwarka",
-      "date": "2026-08-27"
-    },
-    {
-      "destination_id": "mumbai",
-      "date": "2026-08-27"
-    },
-    {
-      "destination_id": "lonavala",
-      "date": "2026-08-27"
-    },
     {
       "destination_id": "mount-abu",
       "date": "2026-08-28"
@@ -279,6 +267,10 @@
     {
       "destination_id": "lamayuru",
       "date": "2026-09-10"
+    },
+    {
+      "destination_id": "pangong-lake",
+      "date": "2026-09-11"
     }
   ],
   "posted_formats": {
@@ -9822,6 +9814,24 @@
       "destination": "lamayuru",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_lamayuru_hi_2026-09-10.mp4"
+    },
+    {
+      "timestamp": "2026-09-11T09:01:04.982046+00:00",
+      "date": "2026-09-11",
+      "platform": "instagram",
+      "post_id": "ljmc6",
+      "destination": "pangong-lake",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_pangong-lake_hi_2026-09-11.mp4"
+    },
+    {
+      "timestamp": "2026-09-11T09:01:13.083837+00:00",
+      "date": "2026-09-11",
+      "platform": "youtube",
+      "post_id": "OIF3L",
+      "destination": "pangong-lake",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_pangong-lake_hi_2026-09-11.mp4"
     }
   ],
   "theme_usage": {
@@ -10337,12 +10347,6 @@
         "2026-06-17",
         "2026-07-04"
       ],
-      "stays_pick": [
-        "2026-06-12"
-      ],
-      "v2_wildlife_moment": [
-        "2026-06-12"
-      ],
       "reel_map": [
         "2026-06-13",
         "2026-08-05"
@@ -10413,9 +10417,6 @@
         "2026-06-15",
         "2026-06-16",
         "2026-06-29"
-      ],
-      "bhandardara": [
-        "2026-06-12"
       ],
       "courtallam": [
         "2026-06-12",
@@ -10744,11 +10745,6 @@
     "collection_carousel_dests:best-motorcycle-routes": {
       "zanskar": [
         "2026-08-04"
-      ]
-    },
-    "stays": {
-      "lonavala": [
-        "2026-06-12"
       ]
     },
     "reel_map_campaigns": {
