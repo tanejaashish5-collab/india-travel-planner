@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-09-12",
@@ -267,6 +267,10 @@
     },
     {
       "destination_id": "jog-falls",
+      "date": "2026-09-12"
+    },
+    {
+      "destination_id": "ranjangaon",
       "date": "2026-09-12"
     }
   ],
@@ -9865,6 +9869,15 @@
       "destination": "jog-falls",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_jog-falls_hi_2026-09-12.mp4"
+    },
+    {
+      "timestamp": "2026-09-12T13:48:16.955441+00:00",
+      "date": "2026-09-12",
+      "platform": "youtube",
+      "post_id": "ge7wa",
+      "destination": "ranjangaon",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_ranjangaon_hi_2026-09-12.mp4"
     }
   ],
   "theme_usage": {
