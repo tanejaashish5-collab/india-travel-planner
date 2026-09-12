@@ -32,31 +32,15 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-11",
-    "m8EAd_yt_short": "2026-09-11",
+    "GAh5p_yt_short": "2026-09-12",
+    "m8EAd_yt_short": "2026-09-12",
     "GAh5p_reel_studio": "2026-09-11"
   },
   "last_sync": "2026-09-07T18:48:13.334209+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "mount-abu",
-      "date": "2026-08-28"
-    },
-    {
-      "destination_id": "neil-island",
-      "date": "2026-08-28"
-    },
-    {
-      "destination_id": "kuttanad",
-      "date": "2026-08-28"
-    },
-    {
-      "destination_id": "jog-falls",
-      "date": "2026-08-28"
-    },
     {
       "destination_id": "kumbakonam",
       "date": "2026-08-29"
@@ -280,6 +264,10 @@
     {
       "destination_id": "landour",
       "date": "2026-09-11"
+    },
+    {
+      "destination_id": "jog-falls",
+      "date": "2026-09-12"
     }
   ],
   "posted_formats": {
@@ -9859,6 +9847,24 @@
       "destination": "landour",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_landour_hi_2026-09-11.mp4"
+    },
+    {
+      "timestamp": "2026-09-12T08:43:43.547030+00:00",
+      "date": "2026-09-12",
+      "platform": "instagram",
+      "post_id": "EPVNX",
+      "destination": "jog-falls",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_jog-falls_hi_2026-09-12.mp4"
+    },
+    {
+      "timestamp": "2026-09-12T08:43:53.617621+00:00",
+      "date": "2026-09-12",
+      "platform": "youtube",
+      "post_id": "rlqt6",
+      "destination": "jog-falls",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_jog-falls_hi_2026-09-12.mp4"
     }
   ],
   "theme_usage": {
@@ -10775,17 +10781,11 @@
       ]
     },
     "reel_map_campaigns": {
-      "may_himachal_roads_the_stability_scores": [
-        "2026-06-13"
-      ],
       "may_master_the_sikkim_logistics": [
         "2026-08-05"
       ]
     },
     "reel_map_formats": {
-      "route_trace": [
-        "2026-06-13"
-      ],
       "score_pulse": [
         "2026-08-05"
       ]
