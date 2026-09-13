@@ -1,4 +1,12 @@
-# NakshIQ Social Playbook
+# NakshIQ Social Playbook — SUPERSEDED 2026-09-13
+
+> **This document is no longer the operating strategy.** It was written
+> 2026-05-11 around 24 formats and 8 daily slots. Measurement since then killed
+> most of it: carousels reached a median of 2-3 people (n=84), Facebook 0
+> (n=94), and reach fell every month May to August. The current strategy, with
+> the evidence behind every change, is
+> [docs/social-strategy-2026-09-13.md](social-strategy-2026-09-13.md).
+> Kept for the pillar definitions and voice rules, which still hold.
 > One-page operating doc for Instagram / Facebook / YouTube Shorts / Reels.
 > Built on the existing `nakshiq-autoposter/` system. Tightens voice + pillar discipline; does not replace any existing code.
 > Last updated 2026-05-11.
