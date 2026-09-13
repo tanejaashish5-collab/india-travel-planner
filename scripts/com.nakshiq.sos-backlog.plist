@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.sos-backlog</string>
+  <!-- Weekly emergency-SOS provenance backlog. Local LaunchAgent via /bin/bash
+       because the cloud routine could not open ANY .gov.in page and so failed
+       five consecutive weeks with zero writes (see scripts/sos-backlog-weekly.sh).
+       Both fire times are on SUNDAY and land before the Monday 00:00 UTC
+       sos-auto-reverify cron: 08:00 Canberra = Sat 22:00 UTC, 20:00 Canberra =
+       Sun 10:00 UTC. The second is the single-fire-drops-a-week safeguard and
+       no-ops via the ISO-week marker once the week is done.
+       Both MUST sit in the same ISO week for that marker to work: a Sunday fire
+       and the next Monday's fire are weeks N and N+1, so a Sun/Mon pair would
+       double-run the whole job every week instead of falling back.
+       Install: cp scripts/com.nakshiq.sos-backlog.plist ~/Library/LaunchAgents/ &&
+                launchctl load ~/Library/LaunchAgents/com.nakshiq.sos-backlog.plist -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/sos-backlog-weekly.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/.local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>0</integer><key>Hour</key><integer>8</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>0</integer><key>Hour</key><integer>20</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/sos-backlog.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/sos-backlog.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>

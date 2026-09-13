@@ -1,0 +1,3 @@
+{
+  "_doc": "Extra hosts accepted as official sources by scripts/sos-source-map-insert.mjs. That script accepts .gov.in / .nic.in / .edu.in by construction and REFUSES everything else, so a genuinely official source on another domain (a state police site on .com, a government medical college on .org) must be listed here by a human, with a reason, before it can ever be written. Deliberately empty: every entry widens what an autonomous run is allowed to trust, so each one should be added deliberately and not in bulk. Format: \"hostname\": \"why this is official\"."
+}
