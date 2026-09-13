@@ -205,6 +205,66 @@ def _fmt_int(n: Any) -> str:
     return f"{int(n):,}"
 
 
+
+
+# ── Format-test scorecards (2026-09-13) ─────────────────────────────────
+TESTS = [
+    # arm, label, metric, target, kill, n_needed, how
+    ("T1-founder-voice", "T1 · founder voice over real footage", "reach", 300, 150, 15,
+     "median reach (baseline 115, n=129)"),
+    ("T2-road-reel", "T2 · Friday road reel", "shares", 5, 1, 6,
+     "median sends/shares per reel (baseline 0 recorded anywhere)"),
+    ("T3-shorts-retention", "T3 · YouTube Shorts, 3 formats, 1/day", "views", 60, 20, 15,
+     "median views as a retention proxy until averageViewPercentage is wired "
+     "(YT median was 10-21, n=217)"),
+]
+
+
+def _arm_of(snap: dict) -> str:
+    """Arm for a snapshot. Prefers the stamped value; falls back to the format
+    so posts made before the stamp existed still score."""
+    arm = snap.get("test_arm")
+    if arm:
+        return arm
+    fmt = str(snap.get("format") or "")
+    if fmt.startswith("voice_vs"):
+        return "T1-founder-voice"
+    if fmt.startswith("road_status"):
+        return "T2-road-reel"
+    if fmt.startswith("yt_short"):
+        return "T3-shorts-retention"
+    return "control"
+
+
+def _median(xs: list[int]) -> int:
+    xs = sorted(xs)
+    return xs[len(xs) // 2] if xs else 0
+
+
+def _test_scorecards(snaps: list[dict]) -> list[str]:
+    out = ["## Format tests (pre-registered 2026-09-13 · mid-check 2026-10-04)", ""]
+    out.append("| Test | n this week | Median | Target | Kill | Reading |")
+    out.append("|---|---:|---:|---:|---:|---|")
+    for arm, label, metric, target, kill, n_needed, how in TESTS:
+        vals = [int((s.get("metrics") or {}).get(metric) or 0)
+                for s in snaps if _arm_of(s) == arm]
+        med = _median(vals)
+        if not vals:
+            reading = "no posts in this arm yet"
+        elif len(vals) < n_needed:
+            reading = f"too early — needs {n_needed}, judged at the mid-check"
+        elif med >= target:
+            reading = "**MEETS target**"
+        elif med < kill:
+            reading = "**BELOW kill line — stop this arm**"
+        else:
+            reading = "running, under target"
+        out.append(f"| {label} | {len(vals)} | {med} | {target} | {kill} | {reading} |")
+    out.append("")
+    out.append("Metrics: " + " · ".join(f"{a.split('-')[0]} = {h}" for a, _l, _m, _t, _k, _n, h in TESTS))
+    out.append("")
+    return out
+
 def render_report(snaps: list[dict[str, Any]], days: int,
                   audience: dict[str, int | None] | None = None) -> str:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -285,6 +345,14 @@ def render_report(snaps: list[dict[str, Any]], days: int,
     lines.append("- **Followers:** read off instagram.com/nakshiq (baseline 18 · target 100)")
     lines.append("- **Miss on 2026-10-20 → option C:** stop IG, keep YouTube Shorts")
     lines.append("")
+
+    # ── Three pre-registered format tests (strategy 2026-09-13) ──────────
+    # Each arm is stamped on the row by _log_post_outcome's `test_arm`, so a
+    # post scores itself and nobody has to remember which reel was which.
+    # Numbers below are the ONLY ones that decide the 10-04 mid-check. They are
+    # not to be edited after the fact; a miss is a finding.
+    lines.extend(_test_scorecards(snaps))
+
 
     # ── Owned audience — ABSOLUTE counts ──
     # Deliberately absolute, never percentage-only: a percentage on a base of

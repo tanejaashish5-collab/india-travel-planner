@@ -53,9 +53,12 @@ if not GH_TOKEN:
 # crons are paused in autoposter.yml and a watchdog catch-up must never
 # resurrect a paused slot. Only the two YT-short slots remain (YT + 1 IG reel;
 # the IG side is capped to 1/day inside autoposter.py).
+# 2026-09-13: one reel a day, at noon IST. Our ledger puts IG reel reach at a
+# median of 142 at 12:00 IST vs 109 at 18:00; YouTube's 2-3/day earned a median
+# of 10-21 views, so cadence was never the lever there.
+# See docs/social-strategy-2026-09-13.md.
 DAILY_SLOTS = [
-    ("yt-short-1",  4, 17, "yt-short",  None),  # 09:47 IST · YT + IG reel
-    ("yt-short-2", 11, 47, "yt-short",  None),  # 17:17 IST · YT (IG capped)
+    ("yt-short-1",  6, 47, "yt-short",  None),  # 12:17 IST · YT + IG reel
 ]
 
 # 13:17 IST = 07:47 UTC — visual rotation by weekday (see autoposter.yml mode-detection)
@@ -167,9 +170,13 @@ def main() -> None:
     print(f"Runs today: {len(runs)} (excluding watchdog)")
 
     slots: list[tuple[str, int, int, str, set | None]] = list(DAILY_SLOTS)
-    vmode = WEEKDAY_VISUAL_MODE.get(dow)
-    if vmode:
-        slots.append(("visual", 7, 47, vmode, None))
+    # 2026-09-13: the visual slot is NOT appended any more. Its cron has been
+    # paused since 2026-05-16, so the watchdog was the only thing that could
+    # still dispatch it — a catch-up for a slot nothing schedules. Instagram is
+    # one reel a day now; a visual catch-up would be dropped by the daily cap
+    # anyway, or worse, consume it. Re-enable only by restoring the cron AND
+    # this append together.
+    _ = WEEKDAY_VISUAL_MODE  # kept for reference; see docs/social-strategy-2026-09-13.md
 
     # Sort by expected fire time so earliest missing slot fires first
     slots.sort(key=lambda s: s[1] * 60 + s[2])

@@ -147,3 +147,11 @@ data/festivals/_tmp_*.json
 # 2026-07-01 trendy/calm music pools — canonical in R2, keep out of repo (bloat)
 nakshiq-autoposter/assets/music_trendy/
 nakshiq-autoposter/assets/music_calm/
+
+# Founder voice notes + rendered reels (2026-09-13 social tests). The audio is
+# personal and the mp4s are 25MB each; the queue JSON is runtime state that the
+# autoposter-state branch already carries.
+nakshiq-autoposter/data/voice_audio/
+nakshiq-autoposter/data/voice_reels/
+nakshiq-autoposter/data/road_reels/
+nakshiq-autoposter/data/voice_queue.json

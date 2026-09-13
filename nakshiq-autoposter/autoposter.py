@@ -6523,11 +6523,35 @@ _BAD_URL_QUEUE_PATH = Path(__file__).parent / "data" / "bad-url-queue.jsonl"
 _POST_OUTCOMES_PATH = Path(__file__).parent / "data" / "post_outcomes.jsonl"
 
 
+# 2026-09-13: the three pre-registered social tests are scored off these rows,
+# so the arm has to be ON the row. The 989-post ledger could not answer "did the
+# Hindi ones do better" because language, audio and duration were never stored —
+# post_log.jsonl carries no caption at all. Anything not passed defaults to the
+# old behaviour, so existing callsites keep working unchanged.
+TEST_ARMS = {
+    "voice_vs":    "T1-founder-voice",   # founder audio over real footage
+    "road_status": "T2-road-reel",       # Friday sadak-ka-haal, share-shaped
+}
+
+
+def _test_arm_for(fmt: str | None) -> str:
+    if not fmt:
+        return "control"
+    if fmt in TEST_ARMS:
+        return TEST_ARMS[fmt]
+    if fmt.startswith("yt_short"):
+        return "T3-shorts-retention"
+    return "control"
+
+
 def _log_post_outcome(*, post_id: str | None, dest_id: str | None,
                       fmt: str | None, media_id: str | None,
                       account: dict, caption: str, cta_url: str | None,
                       utm_content: str | None,
-                      status: str = "published"):
+                      status: str = "published",
+                      duration_s: float | None = None,
+                      audio_type: str | None = None,
+                      language: str | None = None):
     """Append a structured outcome row to data/post_outcomes.jsonl after every
     publish attempt. Foundation for the weekly engagement digest (Tier 3) —
     join `utm_content` against GA4 to compute per-post CTR.
@@ -6554,6 +6578,14 @@ def _log_post_outcome(*, post_id: str | None, dest_id: str | None,
             "utm_content":   utm_content,
             "caption_hash":  hashlib.sha256((caption or "").encode("utf-8")).hexdigest()[:12],
             "caption_preview": (caption or "")[:160],
+            # Test instrumentation (2026-09-13). `language` is detected from the
+            # caption when not passed: any Devanagari codepoint means Hindi.
+            "test_arm":      _test_arm_for(fmt),
+            "duration_s":    duration_s,
+            "audio_type":    audio_type,
+            "language":      language or ("hi" if any("\u0900" <= ch <= "\u097f" for ch in (caption or "")) else "en"),
+            "hashtag_count": (caption or "").count("#"),
+            "caption_chars": len(caption or ""),
         }
         with open(_POST_OUTCOMES_PATH, "a", encoding="utf-8") as f:
             f.write(json.dumps(record, ensure_ascii=False) + "\n")

@@ -75,7 +75,21 @@ FONT_CRIMSON = str(FONT_DIR / "CrimsonPro-BoldItalic.ttf") if FONT_DIR.exists() 
 FONT_JETBRAINS = str(FONT_DIR / "JetBrainsMono-Bold.ttf") if FONT_DIR.exists() else ""
 
 # ── Formats ───────────────────────────────────────────────────────────
-YT_SHORT_FORMATS = ["listicle", "before_after", "mini_guide", "did_you_know", "this_vs_that", "dont_go_here"]
+# 2026-09-13 strategy: rotation cut from 6 formats to the 4 the 989-post ledger
+# actually supports. ONE render is cross-posted to BOTH YouTube and Instagram,
+# so the pool has to win on both surfaces, not one.
+#   did_you_know   IG median 128 (n=34) · YT max 581  — best on both
+#   this_vs_that   IG median 117 (n=31) · YT median 21 (best YT median)
+#   listicle       YT max 980 (all-time #1) · IG median 33 (thin, n=5)
+# (nakshiq_score also scores well — IG ~120, YT max 765 — but it is built by
+#  yt_shorts_v2.py, the narrated series, not by this rotation.)
+# Dropped: before_after (IG 89 / YT median 14), mini_guide (YT median 20, n=14),
+# dont_go_here (negative hook does NOT beat positive: 104 vs 109 pooled).
+# Evidence: data/research/social-ledger-deep-dive-2026-09-13.md
+YT_SHORT_FORMATS = ["did_you_know", "this_vs_that", "listicle"]
+# Formats retired from rotation but still buildable by name (--format) so the
+# builders stay reachable for a deliberate test.
+YT_SHORT_FORMATS_RETIRED = ["before_after", "mini_guide", "dont_go_here"]
 
 # ── Nakshiq API ───────────────────────────────────────────────────────
 NAKSHIQ_API = "https://nakshiq.com/api/content"
@@ -1847,7 +1861,7 @@ def build_yt_short(
     # CSV-defined YT formats (Phase 2) post a pre-rendered .mp4 from
     # social_image_library/ — no music, no segment building. Branch out
     # before the native build pipeline.
-    if fmt not in YT_SHORT_FORMATS:
+    if fmt not in YT_SHORT_FORMATS + YT_SHORT_FORMATS_RETIRED:
         csv_result = _build_csv_yt_short(fmt, destinations, st, dry_run, preview)
         if csv_result:
             return csv_result
@@ -2038,7 +2052,7 @@ def build_yt_short(
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="NakshIQ YT Shorts Generator")
-    parser.add_argument("--format", choices=YT_SHORT_FORMATS,
+    parser.add_argument("--format", choices=YT_SHORT_FORMATS + YT_SHORT_FORMATS_RETIRED,
                         help="Force a specific format")
     parser.add_argument("--dry-run", action="store_true",
                         help="Generate but don't update state")

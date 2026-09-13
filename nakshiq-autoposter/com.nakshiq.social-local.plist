@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.social-local</string>
+  <!-- The founder-voice reel (T1) and the Friday road reel (T2), 2026-09-13
+       strategy. Local because the voice notes live on this Mac and CI cannot
+       see them. Fires 16:05 Canberra = 11:35 IST, ~40 min BEFORE the GitHub
+       12:17 IST slot, so a founder-voice reel takes the day's single IG slot
+       and the automated one is dropped by NAKSHIQ_IG_DAILY_CAP. The 16:35 fire
+       is the single-fire-drops-a-day safeguard; both runs are idempotent.
+       Install: cp nakshiq-autoposter/com.nakshiq.social-local.plist ~/Library/LaunchAgents/ &&
+                launchctl load ~/Library/LaunchAgents/com.nakshiq.social-local.plist -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/nakshiq-autoposter/run-social-local.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/.local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>5</integer></dict>
+    <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>35</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/social-local.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/social-local.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
