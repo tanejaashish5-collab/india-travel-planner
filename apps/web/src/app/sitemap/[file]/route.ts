@@ -184,6 +184,8 @@ async function buildChunk(id: string): Promise<Entry[]> {
       "arrival", "arrival/del", "arrival/bom", "arrival/blr", "arrival/maa",
       "arrival/ccu", "arrival/hyd", "arrival/cok", "arrival/goi", "arrival/amd",
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
+      // Dated road-conditions feed, one page per region (lib/road-updates.ts).
+      ...["himachal-pradesh","ladakh","jammu-kashmir","uttarakhand","sikkim","arunachal-pradesh","meghalaya","rajasthan"].map((r) => `road-conditions/${r}`),
     ];
 
     const staticEntries = staticPages.flatMap((page) => entry(
