@@ -77,3 +77,17 @@ const regions = [...new Set(clean.map((r) => r.region_id))];
 const summary = { candidates: run.candidates ?? clean.length, inserted, duplicates: clean.length - inserted, dropped_date_check: run.dropped_date_check ?? 0, dropped_unsourced: run.dropped_unsourced ?? 0, regions_with_rows: regions, note: run.note ?? null, runner: "local-launchagent" };
 await s.from("ops_reports").insert({ job: "road-updates-daily", summary, alerts_count: 0, ok: true });
 console.log("inserted", inserted, "duplicates", clean.length - inserted, "regions", regions.join(","));
+
+// ISR: the feed pages revalidate hourly; after a real insert, purge them now so
+// a fresh entry never waits behind a cached page (the 09-13 seed showed a
+// region page serving "first entries pending" after the row existed).
+if (inserted > 0 && process.env.NEWSLETTER_SEND_SECRET) {
+  const paths = [];
+  for (const l of ["en", "hi"]) { paths.push(`/${l}/road-conditions`); for (const r of regions) paths.push(`/${l}/road-conditions/${r}`); }
+  for (const path of paths) {
+    try {
+      const r = await fetch(`https://www.nakshiq.com/api/admin/revalidate?path=${encodeURIComponent(path)}`, { method: "POST", headers: { Authorization: `Bearer ${process.env.NEWSLETTER_SEND_SECRET}` } });
+      console.log("revalidate", path, r.status);
+    } catch (e) { console.log("revalidate failed", path, e.message); }
+  }
+}

@@ -37,5 +37,9 @@ if [ ! -f "$ROWS" ]; then
 fi
 # Belt and braces: the session should have inserted; this re-run is a no-op on duplicates
 # and guarantees the ops_reports row exists even if the session died after writing rows.json.
-node --env-file=apps/web/.env.local scripts/road-updates-insert.mjs "$ROWS" || { say "❌ insert refused"; exit 1; }
+if grep -q "^INSERTED [0-9]" "$WORK/run-$TODAY.log"; then
+  say "session inserted itself: $(grep -o '^INSERTED [0-9]*' "$WORK/run-$TODAY.log" | tail -1)"
+else
+  node --env-file=apps/web/.env.local scripts/road-updates-insert.mjs "$ROWS" || { say "❌ insert refused"; exit 1; }
+fi
 say "=== road-updates-daily end ==="
