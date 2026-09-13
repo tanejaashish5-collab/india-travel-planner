@@ -62,7 +62,12 @@ export function BookingHandoff({
         ))}
       </div>
 
-      {/* Tours & experiences — 30-day-cookie affiliates, see experience-links.ts */}
+      {/* Tours & experiences — 30-day-cookie affiliates, see experience-links.ts.
+          Rendered ONLY where a partner provably sells something in this
+          destination. Most offbeat destinations have no coverage, and for those
+          the whole section is dropped rather than shown empty or, worse, filled
+          with a search link that returns another continent. */}
+      {experienceLinks.length > 0 && (
       <div className="mt-6 border-t border-border/60 pt-5">
         <h3 className="text-base font-bold sm:text-lg">{t("expHeading")}</h3>
         <p className="mt-1 text-xs text-muted-foreground sm:text-sm">{t("expSub")}</p>
@@ -88,6 +93,7 @@ export function BookingHandoff({
           ))}
         </div>
       </div>
+      )}
 
       {/* Affiliate disclosure — mandated by Master Playbook §4.5 */}
       <p className="mt-5 text-[11px] leading-relaxed text-muted-foreground/80">

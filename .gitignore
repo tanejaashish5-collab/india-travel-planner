@@ -155,3 +155,6 @@ nakshiq-autoposter/data/voice_audio/
 nakshiq-autoposter/data/voice_reels/
 nakshiq-autoposter/data/road_reels/
 nakshiq-autoposter/data/voice_queue.json
+
+# Partner-response cache for scripts/verify-experience-inventory.mjs (regenerable)
+.cache/
