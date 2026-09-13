@@ -39,8 +39,8 @@ not clicked, because it sits at the bottom of page 1. Coverage is not the constr
 | `/hi/cost/mussoorie` clicks / 28d | 9 (2,152 imp, pos 6.5) | 40 |
 | "जैसलमेर घूमने का खर्चा" position | 8.3 | ≤ 5 |
 | "मसूरी घूमने का खर्च" position | 7.1 | ≤ 5 |
-| All `/hi/cost/*` pages in push set (31) — clicks / 28d | sum from JSON | 2× |
-| Rail cohort (54 Sep+Oct dest×month pages) — avg position | from JSON | −1.5 positions |
+| All `/hi/cost/*` pages with impressions (77) — clicks / 28d | 191 | 382 (2×) |
+| Rail cohort (72 pages matched in the generated list) — impression-weighted avg position | 8.5 (221 clicks) | ≤ 7.0 (−1.5) |
 
 ## How to read the result on 2026-10-20
 
@@ -52,3 +52,13 @@ not clicked, because it sits at the bottom of page 1. Coverage is not the constr
 - Misses are findings, not failures to explain away. If `/hi/cost/*` does not move, the
   colloquial-title hypothesis is wrong for this page family. If the rail cohort does not move,
   two hub pages are not enough internal-link weight and the next step is state hubs.
+
+## How the check runs
+
+Automated, not promised: LaunchAgent `com.nakshiq.ranking-push-check` (plist in `scripts/`) fires
+2026-10-20 09:17 local with a 10-21 retry, runs `scripts/ranking-push-check.sh` → `ranking-push-check.mjs`,
+writes `gsc-audits/ranking-push-check-2026-10-20.md`, renders the dark PDF to `~/Desktop/Reports/`,
+notifies through the NakshIQ-Brief applet (click opens the PDF), and commits via the guard. It is a
+LaunchAgent via /bin/bash because the GSC secrets are local-only and launchd has the keychain for push.
+Dry-run on 2026-09-13 reproduced the baseline exactly (0% change, 72 + 77 pages matched).
+

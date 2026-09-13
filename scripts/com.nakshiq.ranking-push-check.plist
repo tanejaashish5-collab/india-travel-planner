@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.ranking-push-check</string>
+  <!-- One-shot measurement of the 2026-09-13 ranking push, pre-registered for
+       2026-10-20. A LaunchAgent via /bin/bash for the same reasons as
+       com.ashish.ga4-audit: the GSC secrets are local-only (no cloud routine can
+       measure this), /bin/bash has Full Disk Access, launchd has the keychain
+       for git push. Fires 20 Oct and again 21 Oct as the single-fire-drops-a-day
+       safeguard; the script is idempotent per date. Install:
+         cp scripts/com.nakshiq.ranking-push-check.plist ~/Library/LaunchAgents/
+         launchctl load ~/Library/LaunchAgents/com.nakshiq.ranking-push-check.plist
+       It will re-fire every October until unloaded; unload after the 2026 read. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/ranking-push-check.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Month</key><integer>10</integer><key>Day</key><integer>20</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>17</integer></dict>
+    <dict><key>Month</key><integer>10</integer><key>Day</key><integer>21</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>17</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/ranking-push-check.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/ranking-push-check.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
