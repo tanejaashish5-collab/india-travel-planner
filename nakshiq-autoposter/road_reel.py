@@ -255,12 +255,30 @@ def caption(rows: list[dict]) -> str:
     )
 
 
+
+# ── Publish gate (added 2026-09-13, after a test note published for real) ──
+# A LaunchAgent was loaded while a TEST voice note sat in the production queue;
+# it fired 25 minutes later and published a synthetic-voice reel to @nakshiq.
+# The lesson is the repo's standing one: a rule that lives in a comment is a
+# suggestion, a flag is a restriction. Publishing is now OFF unless the founder
+# turns it on, exactly like NAKSHIQ_FB_ENABLED.
+#   export NAKSHIQ_VOICE_REEL_ENABLED=1   (in nakshiq-autoposter/.env.local)
+def _publish_enabled(kind: str) -> bool:
+    if os.environ.get("NAKSHIQ_VOICE_REEL_ENABLED", "0") == "1":
+        return True
+    print(f"[{kind}] PUBLISH DISABLED — rendered only. "
+          f"Set NAKSHIQ_VOICE_REEL_ENABLED=1 in nakshiq-autoposter/.env.local to go live.",
+          flush=True)
+    return False
+
 def publish(meta: dict, dry_run: bool = False) -> bool:
     import autoposter as ap
     cap = caption(meta["rows"])
     if dry_run:
         _log("DRY RUN — caption would be:\n" + cap)
         return True
+    if not _publish_enabled("road-reel"):
+        return False
     accounts = [a for a in ap.get_connected_accounts() if a.get("network") == "instagram"]
     if not accounts:
         _log("no Instagram account connected")
