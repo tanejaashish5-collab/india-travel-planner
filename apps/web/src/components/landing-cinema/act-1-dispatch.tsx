@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
-import { currentMonthLongIST, verdictFor } from "@itp/shared";
+import { currentMonthIST, currentMonthLongIST, verdictFor } from "@itp/shared";
 import { Kinetic, useClock } from "./helpers";
 
 /* ============================================================
@@ -33,6 +33,9 @@ export type DispatchHero = {
 export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
   const t = useTranslations("cinema");
   const monthLong = currentMonthLongIST();
+  // Localised month for the h1 (the kicker keeps the English dateline by design).
+  const tm = useTranslations("months");
+  const monthLocal = tm(String(currentMonthIST()));
   const [idx, setIdx] = useState(0);
   const now = useClock();
 
@@ -242,7 +245,7 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
             "Chamba." on the next. The name is now an h2 (same styling); this
             line carries the query the page actually answers. */}
         <h1 className="nq-kicker" style={{ margin: 0, fontSize: "inherit", fontWeight: "inherit", color: "var(--bone)" }}>
-          {t("dispatchH1", { month: monthLong })}
+          {t("dispatchH1", { month: monthLocal })}
         </h1>
         <div className="nq-meta" style={{ color: "var(--bone-dim)" }}>
           {hero.state.toUpperCase()}
