@@ -54,6 +54,20 @@ listed in `apps/web/src/lib/road-updates.ts` (`ROAD_REGIONS[].blurb`) and in
    disaster. Any row whose source date cannot be confirmed is dropped, not
    hedged. A social post with no date is not a source.
 
+2b. **Three things that ARE entries (the first run dropped all three by mistake):**
+   - A dated official or press count of roads blocked in a state ("28 roads still
+     blocked in Himachal, HP PWD, 12 Sep") → one row, `segment` = "Statewide: N
+     roads blocked (HP PWD count)", `status = blocked`. Regional counts are what
+     journalists cite.
+   - A dated traffic advisory with time windows, one-way or convoy rules (NH-44
+     Jammu–Srinagar timings, Mughal Road one-way, Rohtang permits) → `restricted`.
+     Routine does not mean irrelevant; the reader driving tomorrow needs it.
+   - A reopening or closure order up to 7 days old **when the region has no row
+     in the feed for the last 7 days** (backfill rule). Still date-checked;
+     `update_date` = the order's own date, not today.
+   Not entries: weather forecasts, event-only closures (a marathon), accidents
+   with no road-status consequence.
+
 3. **Status vocabulary** (the table's CHECK constraint): `open` (reopened after a
    closure, or authority confirms open), `slow` (one-way / convoy / long delays),
    `risky` (open but authority warns: landslide-prone, shooting stones, night ban
