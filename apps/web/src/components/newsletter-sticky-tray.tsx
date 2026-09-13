@@ -51,7 +51,7 @@ export function NewsletterStickyTray() {
         const scrolled = window.scrollY;
         const height = document.documentElement.scrollHeight - window.innerHeight;
         const ratio = height > 0 ? scrolled / height : 0;
-        setVisible(ratio > 0.4);
+        setVisible(ratio > 0.25); // was 0.4 — 09-13 audit: the ask sat 11 screens down on mobile, 0 captures/wk
         ticking = false;
       });
     }

@@ -237,6 +237,13 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
         <div className="nq-kicker">
           {t("dispatchKicker", { month: monthLong, year: (now ?? new Date()).getFullYear() })}
         </div>
+        {/* The page's one <h1>. Until 09-13 the rotating destination name was
+            the h1, so the homepage told Google "Achabal." on one load and
+            "Chamba." on the next. The name is now an h2 (same styling); this
+            line carries the query the page actually answers. */}
+        <h1 className="nq-kicker" style={{ margin: 0, fontSize: "inherit", fontWeight: "inherit", color: "var(--bone)" }}>
+          {t("dispatchH1", { month: monthLong })}
+        </h1>
         <div className="nq-meta" style={{ color: "var(--bone-dim)" }}>
           {hero.state.toUpperCase()}
           <br />
@@ -299,7 +306,7 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
           zIndex: 5,
         }}
       >
-        <h1
+        <h2
           className="nq-display"
           style={{
             fontSize: "clamp(48px, 8vw, 128px)",
@@ -310,7 +317,7 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
               always retriggers the per-character stagger animation. */}
           <Kinetic key={hero.id} text={hero.name} on={true} stagger={28} />
           <span className="dot">.</span>
-        </h1>
+        </h2>
         {hero.tagline && (
           <p
             style={{

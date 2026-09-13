@@ -109,6 +109,57 @@ export default async function NewsletterPage({ params }: { params: Promise<{ loc
         </header>
 
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          {/* Subscribe form — first, above the benefits. 09-13 audit: the
+              form needed two full mobile screens of scrolling on the one page
+              whose entire job is the form; captures were 0/week. */}
+          <section
+            style={{
+              padding: 32,
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.04)",
+              marginBottom: 40,
+              textAlign: "center",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                margin: "0 0 12px",
+              }}
+            >
+              Subscribe
+            </p>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: "clamp(22px, 3vw, 28px)",
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 8px",
+              }}
+            >
+              Get The Window every Sunday.
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 13,
+                lineHeight: 1.6,
+                color: "var(--bone-dim)",
+                margin: "0 0 24px",
+              }}
+            >
+              Free. No spam. Unsubscribe anytime. We don&apos;t sell your email.
+            </p>
+            <NewsletterForm />
+          </section>
+
           {/* Benefits grid */}
           <section style={{ marginBottom: 48 }}>
             <p
@@ -173,55 +224,6 @@ export default async function NewsletterPage({ params }: { params: Promise<{ loc
                 </div>
               ))}
             </div>
-          </section>
-
-          {/* Subscribe form */}
-          <section
-            style={{
-              padding: 32,
-              border: "1px solid var(--vermillion)",
-              background: "rgba(229, 86, 66, 0.04)",
-              marginBottom: 32,
-              textAlign: "center",
-            }}
-          >
-            <p
-              style={{
-                fontFamily: "var(--cinema-mono)",
-                fontSize: 10,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "var(--vermillion)",
-                margin: "0 0 12px",
-              }}
-            >
-              Subscribe
-            </p>
-            <h2
-              style={{
-                fontFamily: "var(--cinema-display)",
-                fontStyle: "italic",
-                fontWeight: 500,
-                fontSize: "clamp(22px, 3vw, 28px)",
-                lineHeight: 1.2,
-                color: "var(--bone)",
-                margin: "0 0 8px",
-              }}
-            >
-              Get The Window every Sunday.
-            </h2>
-            <p
-              style={{
-                fontFamily: "var(--cinema-ui)",
-                fontSize: 13,
-                lineHeight: 1.6,
-                color: "var(--bone-dim)",
-                margin: "0 0 24px",
-              }}
-            >
-              Free. No spam. Unsubscribe anytime. We don&apos;t sell your email.
-            </p>
-            <NewsletterForm />
           </section>
 
           {/* Trust note */}

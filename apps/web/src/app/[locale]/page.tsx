@@ -42,7 +42,7 @@ export async function generateMetadata({
   };
 }
 
-async function getFeaturedData() {
+async function getFeaturedData(locale: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return { destinations: [], collections: [], routes: [], festivals: [], mapPins: [] as any[], dispatchHeroes: [] as DispatchHero[], skipList: [] as SkipEntry[], scenes: [] as SceneEntry[], atlasPins: [] as AtlasPin[], verdictMap: {} as VerdictMap, fieldNote: null as FieldNote | null, dailies: [] as DailyEntry[], dailiesStats: { totalVerified: 0, totalSkipListed: 0, freshDestinationsThisMonth: 0 } as DailiesStats, stats: { places: 0, destinations: 0, states: 0, routes: 0, festivals: 0, collections: 0, treks: 0, traps: 0, permits: 0, campingSpots: 0 } };
@@ -63,7 +63,7 @@ async function getFeaturedData() {
     // rotation seed produces stable picks across renders.
     supabase
       .from("destination_months")
-      .select("destination_id, score, why_go, destinations(id, name, tagline, difficulty, elevation_m, content_reviewed_at, state:states(name))")
+      .select("destination_id, score, why_go, destinations(id, name, tagline, translations, difficulty, elevation_m, content_reviewed_at, state:states(name))")
       .eq("month", currentMonth)
       .gte("score", 4)
       .order("score", { ascending: false })
@@ -149,12 +149,15 @@ async function getFeaturedData() {
     .map((row: any) => {
       const d = row.destinations;
       const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+      // 09-13 audit: the /hi hero rendered the English name + tagline while
+      // the chrome around it was Hindi. 533 destinations carry translations.hi.
+      const tr = locale !== "en" ? d?.translations?.[locale] : null;
       return {
         id: d?.id ?? "",
-        name: d?.name ?? "",
+        name: tr?.name || d?.name || "",
         state: stateName ?? "",
         score: row.score ?? 0,
-        tagline: d?.tagline ?? null,
+        tagline: tr?.tagline || d?.tagline || null,
         why_go: row.why_go ?? null,
         verified_at: d?.content_reviewed_at ?? null,
         elevation_m: d?.elevation_m ?? null,
@@ -173,12 +176,13 @@ async function getFeaturedData() {
     .map((row: any) => {
       const d = row.destinations;
       const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+      const tr = locale !== "en" ? d?.translations?.[locale] : null;
       return {
         id: d?.id ?? "",
-        name: d?.name ?? "",
+        name: tr?.name || d?.name || "",
         state: stateName ?? "",
         score: row.score ?? 0,
-        tagline: d?.tagline ?? null,
+        tagline: tr?.tagline || d?.tagline || null,
         why: row.why_go ?? null,
         elevation_m: d?.elevation_m ?? null,
         difficulty: d?.difficulty ?? null,
@@ -376,9 +380,10 @@ async function getFeaturedData() {
   };
 }
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const { collections, dispatchHeroes, skipList, scenes, atlasPins, verdictMap, fieldNote, dailies, dailiesStats } =
-    await getFeaturedData();
+    await getFeaturedData(locale);
 
   return (
     <>

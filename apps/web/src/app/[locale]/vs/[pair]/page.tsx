@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { VsComparison } from "@/components/vs-comparison";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
@@ -88,9 +89,12 @@ export async function generateMetadata({
 
   const name1 = localizedName(data.dest1, locale);
   const name2 = localizedName(data.dest2, locale);
+  // 09-13 audit: the old title ran 80-90 chars on every pair (truncated in
+  // every SERP); GSC shows the query form is "X or Y which is better". p90 of
+  // the new form is 53 chars across all 1,580 pairs; 12 pairs still exceed 60.
   const title = locale === "hi"
-    ? `${name1} बनाम ${name2}: कौन बेहतर? मौसम, खर्च और परिवार के लिहाज़ से तुलना`
-    : `${name1} vs ${name2}: Which Is Better? Weather, Cost & Kid-Friendliness Compared`;
+    ? `${name1} बनाम ${name2}: कौन बेहतर है? (2026)`
+    : `${name1} vs ${name2}: which is better? (2026)`;
   const description = (locale === "hi"
     ? `${name1} बनाम ${name2} — महीने-दर-महीने मौसम स्कोर, बजट, कठिनाई, बच्चों की सुरक्षा और सुविधाओं की आमने-सामने तुलना। सही चुनाव करें।`
     : `${name1} vs ${name2} — side-by-side data on monthly weather scores, budget, difficulty, kids safety, and infrastructure. Make the right choice, no sponsored spin.`).slice(0, 160);
@@ -311,6 +315,18 @@ export default async function VsPairPage({
           </Link>
         </section>
       )}
+
+      {/* Email ask. 09-13 audit: /vs is the best-CTR family on the site
+          (1.84%, position 5.7) with the second-longest dwell, and had no
+          capture surface at all — the only above-fold ask was on /plan.
+          Pre-registered: captures 0/wk -> >=5/wk by 2026-10-13. */}
+      <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px 64px" }}>
+        <NewsletterSignup
+          source="vs-page"
+          headline={locale === "hi" ? "तय हो गया? हर रविवार इसी तरह की एक तुलना, ईमेल पर।" : `Decided between ${name1} and ${name2}? Get one comparison like this every Sunday.`}
+          subhead={locale === "hi" ? "एक स्कोर, एक स्किप, एक सड़क अपडेट। मुफ़्त, चार मिनट।" : "One score, one skip, one road update. Free, four minutes."}
+        />
+      </section>
 
       <CinematicRelatedRail />
       <Footer />

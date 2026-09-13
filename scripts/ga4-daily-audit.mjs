@@ -158,6 +158,44 @@ const topPages = pageRows.map((r) => ({
   avgSec: Math.round(Number(r.metricValues[1].value)),
 }));
 
+// 4b) Page FAMILIES (engaged, excludes Direct). Added 2026-09-13: /cost/* is
+// ~20% of GSC impressions and had never appeared in any top-10 table, so its
+// engagement was simply unknown. Pulls up to 5,000 paths and buckets them.
+const FAMILY_RULES = [
+  ["hi:*", (p) => p.startsWith("/hi/")],
+  ["cost", (p) => /^\/(en|hi)\/cost\//.test(p)],
+  ["vs", (p) => /^\/(en|hi)\/vs\//.test(p)],
+  ["destination/month", (p) => /^\/(en|hi)\/destination\/[^/]+\/[a-z]+$/.test(p)],
+  ["destination hub", (p) => /^\/(en|hi)\/destination\/[^/]+$/.test(p)],
+  ["treks", (p) => /^\/(en|hi)\/treks\//.test(p)],
+  ["blog", (p) => /^\/(en|hi)\/blog\//.test(p)],
+  ["plan", (p) => /^\/(en|hi)\/plan/.test(p)],
+  ["explore", (p) => /^\/(en|hi)\/explore/.test(p)],
+];
+const familyRows = await runReport({
+  dimensions: [{ name: "pagePath" }],
+  metrics: [{ name: "engagedSessions" }, { name: "averageSessionDuration" }],
+  dateRanges: dateRange,
+  dimensionFilter: {
+    notExpression: {
+      filter: { fieldName: "sessionDefaultChannelGroup", stringFilter: { value: "Direct" } },
+    },
+  },
+  limit: 5000,
+});
+const families = {};
+for (const r of familyRows) {
+  const path = r.dimensionValues[0].value;
+  const engaged = Number(r.metricValues[0].value);
+  const sec = Number(r.metricValues[1].value);
+  for (const [name, test] of FAMILY_RULES) {
+    if (!test(path)) continue;
+    const f = (families[name] ??= { engaged: 0, secWeighted: 0, pages: 0 });
+    f.engaged += engaged; f.secWeighted += sec * engaged; f.pages += 1;
+    if (name !== "hi:*") break; // hi:* is a locale total, the rest are exclusive
+  }
+}
+
 // 5) Conversion + key events
 const eventRows = await runReport({
   dimensions: [{ name: "eventName" }],
@@ -351,6 +389,17 @@ topPages.forEach((pg, i) => {
   const disp = pg.page.length > 52 ? pg.page.slice(0, 49) + "..." : pg.page;
   L(`| ${i + 1} | \`${disp}\` | ${pg.engaged} | ${pg.avgSec} |`);
 });
+L("");
+
+L(`## Page families (engaged sessions, excludes Direct)`);
+L("");
+L(`| Family | Engaged | Avg sec | Pages seen |`);
+L(`|---|---:|---:|---:|`);
+for (const [name] of FAMILY_RULES) {
+  const f = families[name];
+  if (!f) { L(`| ${name} | 0 | — | 0 |`); continue; }
+  L(`| ${name} | ${f.engaged} | ${f.engaged ? Math.round(f.secWeighted / f.engaged) : 0} | ${f.pages} |`);
+}
 L("");
 
 L(`## Conversion suite (key events, ${WINDOW_DAYS}-day)`);
