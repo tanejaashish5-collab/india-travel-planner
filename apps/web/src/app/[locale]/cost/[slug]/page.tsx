@@ -97,8 +97,16 @@ export async function generateMetadata({
 
   // <title> omits " | NakshIQ" — the locale layout's title.template appends
   // it. ogTitle carries the brand inline (the template skips OG/twitter).
+  //
+  // Hindi wording is the COLLOQUIAL query form, not the formal one. GSC 28d
+  // to 2026-09-11: every real query is "X घूमने का खर्चा" / "X jane ka
+  // kharcha" / "X ghumne me kitna kharcha aata hai"; none is "यात्रा खर्च".
+  // With the formal title, Devanagari queries ranked 7-8 while romanised ones
+  // on the same page ranked 3-5, and /hi/cost/jaisalmer turned 6,299
+  // impressions into 18 clicks. Google bolds matched words; match the words
+  // people type.
   const title = isHindi
-    ? `${name} यात्रा खर्च (2026): 2–10 दिन का बजट`
+    ? `${name} घूमने का खर्चा (2026): कितना खर्च आता है, 2–10 दिन का बजट`
     : `${name} trip cost (2026): budget for 2–10 days`;
   const ogTitle = `${title} | NakshIQ`;
   // Destination-level OG image (slug = destination id) — same resolver as the
@@ -106,7 +114,7 @@ export async function generateMetadata({
   const ogImage = isCinematicDestination(slug)
     ? `${BASE}/api/og/destination/${slug}?locale=${locale}`
     : destinationImage(slug);
-  const ogAlt = isHindi ? `${name} यात्रा खर्च` : `${name} trip cost`;
+  const ogAlt = isHindi ? `${name} घूमने का खर्चा` : `${name} trip cost`;
 
   const description = isHindi
     ? `${name} की यात्रा का असली खर्च — दो लोगों के 4 दिन के लिए मध्यम बजट लगभग ${inr(t.mid.total)} (≈ ${inr(t.mid.perDay)}/दिन)। बैकपैकर ${inr(t.budget.total)} से लग्ज़री ${inr(t.luxury.total)} तक। मौसम के अनुसार, स्रोत-सहित।`
@@ -202,7 +210,7 @@ export default async function CostPage({
   const articleLd = articleSchema({
     locale,
     path: `/cost/${slug}`,
-    headline: isHindi ? `${name} यात्रा खर्च 2026` : `${name} trip cost 2026`,
+    headline: isHindi ? `${name} घूमने का खर्चा 2026` : `${name} trip cost 2026`,
     description: isHindi
       ? `${name} की मौसम-अनुसार यात्रा-खर्च गणना — ठहरना, भोजन, परिवहन, परमिट।`
       : `Season-adjusted trip cost for ${name} — stay, food, transport, activities and permits.`,
@@ -220,7 +228,7 @@ export default async function CostPage({
           {isHindi ? "यात्रा खर्च · 2026" : "Trip cost · 2026"}
         </p>
         <h1 className="mt-3 font-serif text-3xl font-bold leading-tight sm:text-4xl">
-          {isHindi ? `${name} यात्रा का खर्च` : `What a trip to ${name} costs`}
+          {isHindi ? `${name} घूमने का खर्चा: कितना खर्च आता है` : `What a trip to ${name} costs`}
         </h1>
         <p className="mt-4 text-base leading-relaxed text-muted-foreground">
           {isHindi
