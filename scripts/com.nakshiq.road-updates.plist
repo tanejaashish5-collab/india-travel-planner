@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.road-updates</string>
+  <!-- Daily dated road-conditions feed. Local LaunchAgent via /bin/bash because
+       the cloud routine's sandbox cannot open any news/government page (see
+       ops/road-updates/SKILL.md). Two fire times: the second is the
+       single-fire-drops-a-day safeguard; the insert script is idempotent.
+       14:00 / 20:00 Canberra = 09:30 / 15:30 IST (AEST).
+       Install: cp scripts/com.nakshiq.road-updates.plist ~/Library/LaunchAgents/ &&
+                launchctl load ~/Library/LaunchAgents/com.nakshiq.road-updates.plist -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/road-updates-daily.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/.local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>14</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>20</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/road-updates.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/road-updates.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>

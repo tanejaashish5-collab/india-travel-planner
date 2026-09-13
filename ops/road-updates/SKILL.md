@@ -9,8 +9,18 @@ description: Daily, autonomous, dated road-status log for Indian mountain and de
 log: one row per dated, sourced event. The log is what a journalist or a forum
 links to, so the rules below exist to keep every row defensible.
 
-Runs on the Claude Max plan. **No metered API calls.** Supabase project
-`dudzsdzfvikjjhurxrgc`, write via the Supabase MCP.
+Runs on the Claude Max plan. **No metered API calls.**
+
+**Runner (settled 2026-09-13): a LOCAL LaunchAgent, `com.nakshiq.road-updates`,
+not a cloud routine.** The first cloud run proved the cloud sandbox can search
+but cannot open a single news or government page (egress policy 403 on Tribune,
+ANI, BRO, every state PWD), so it can never date-check a source. The local Mac
+has the network. `scripts/road-updates-daily.sh` drives a headless `claude -p`
+session with this skill; the session writes `rows.json` and the ONLY write path
+into the database is `scripts/road-updates-insert.mjs`, which validates every
+row (region, status, URL, source date within 3 days) and refuses the whole
+file on any invalid row. The cloud routine `trig_01GE9q728KdmPCnkEy7ctxjs` is
+kept disabled as a record.
 
 ## Scope: the 8 regions
 
@@ -51,30 +61,30 @@ listed in `apps/web/src/lib/road-updates.ts` (`ROAD_REGIONS[].blurb`) and in
    convoy-only), `blocked` (temporarily cut: landslide, snow, flood, expected to
    reopen), `closed` (seasonal or indefinite closure, pass shut). Pick one.
 
-4. **Write via Supabase MCP.** `INSERT INTO road_updates (update_date, region_id,
-   segment, road_report_id, status, headline, body, source_url, source_label,
-   source_published_at) VALUES (...) ON CONFLICT DO NOTHING`. `update_date` is the
-   IST date the condition applied (usually today or yesterday). If the corridor
-   matches a `road_reports.segment`, set `road_report_id` and also update that
-   row's `status`, `report`, `source_url`, `source_label`, `reported_at = now()`,
-   `last_reviewed_at = now()` so the snapshot agrees with the log. A reopening is
-   an entry too (`status = 'open'`): reopenings are half the value of the feed.
+4. **Write `rows.json`, then run the insert script.** Shape:
+   `{ "rows": [ {update_date, region_id, segment, status, headline, body,
+   source_url, source_label, source_published_at} ], "run": {candidates,
+   dropped_date_check, dropped_unsourced, note} }`. `update_date` is the IST
+   date the condition applied (today or yesterday). Then
+   `node --env-file=apps/web/.env.local scripts/road-updates-insert.mjs rows.json`.
+   It inserts with duplicates ignored, mirrors the status onto the matching
+   `road_reports` row so the snapshot agrees with the log, and logs
+   `ops_reports`. If it REFUSES, fix the rows it names; never bypass it. A
+   reopening is an entry too (`status = 'open'`): reopenings are half the value
+   of the feed.
 
 5. **No-news days are normal.** In a quiet week a region may get zero rows. Never
    invent an "all clear" entry to fill the day; the page already explains that
    no entry means no verified change. Do not log weather forecasts, only
    announced or reported road status.
 
-6. **Log the run** to `ops_reports` as job `road-updates-daily` with
-   `{candidates, inserted, dropped_date_check, dropped_unsourced, regions_with_rows}`,
-   `ok = true` unless the run itself failed. If the run inserted 0 rows for 7
-   consecutive days across ALL regions during Jun-Oct, set `ok = false` with a
-   note: that is a collection failure, not a quiet mountain.
+6. **Zero rows is still a run.** Write `rows.json` with an empty `rows` array
+   and a `run.note` saying what was searched, and run the insert script so
+   `ops_reports` records the day. 0 rows for 7 consecutive days across ALL
+   regions during Jun-Oct is a collection failure, not a quiet mountain.
 
-7. Rendered-page verification (`scripts/verify-touched-pages.mjs --url
-   /en/road-conditions`) is desirable but this cloud environment cannot reach
-   www.nakshiq.com (egress policy, seen 2026-08-24). Skip it and say so in the
-   ops_reports note; the local canary probe covers rendering.
+7. Rendered-page check after a non-empty insert:
+   `node scripts/verify-touched-pages.mjs --url /en/road-conditions`.
 
 ## Escalate by email (taneja.ashish5@gmail.com) only for
 
