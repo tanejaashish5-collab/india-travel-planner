@@ -32,30 +32,14 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-13",
-    "m8EAd_yt_short": "2026-09-13"
+    "GAh5p_yt_short": "2026-09-14",
+    "m8EAd_yt_short": "2026-09-14"
   },
   "last_sync": "2026-09-07T18:48:13.334209+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hogenakkal",
-      "date": "2026-08-30"
-    },
-    {
-      "destination_id": "kaza",
-      "date": "2026-08-30"
-    },
-    {
-      "destination_id": "katra",
-      "date": "2026-08-30"
-    },
-    {
-      "destination_id": "adilabad",
-      "date": "2026-08-30"
-    },
     {
       "destination_id": "kanheri-caves",
       "date": "2026-08-31"
@@ -263,6 +247,10 @@
     {
       "destination_id": "khardung-la",
       "date": "2026-09-13"
+    },
+    {
+      "destination_id": "hemkund-sahib",
+      "date": "2026-09-14"
     }
   ],
   "posted_formats": {
@@ -9896,6 +9884,24 @@
       "destination": "khardung-la",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_khardung-la_hi_2026-09-13.mp4"
+    },
+    {
+      "timestamp": "2026-09-14T10:16:50.210911+00:00",
+      "date": "2026-09-14",
+      "platform": "instagram",
+      "post_id": "IimBP",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_hemkund-sahib_en_2026-09-14.mp4"
+    },
+    {
+      "timestamp": "2026-09-14T10:17:01.026906+00:00",
+      "date": "2026-09-14",
+      "platform": "youtube",
+      "post_id": "V1RG5",
+      "destination": "hemkund-sahib",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_hemkund-sahib_en_2026-09-14.mp4"
     }
   ],
   "theme_usage": {
@@ -10117,9 +10123,6 @@
         "2026-08-19",
         "2026-08-27"
       ],
-      "haridwar": [
-        "2026-06-15"
-      ],
       "dharamshala": [
         "2026-06-16"
       ],
@@ -10282,17 +10285,9 @@
         "2026-05-22",
         "2026-06-22"
       ],
-      "tourist_map": [
-        "2026-05-22",
-        "2026-06-15"
-      ],
       "v2_budget_receipt": [
         "2026-05-23",
         "2026-06-16"
-      ],
-      "v2_thali_close_up": [
-        "2026-05-23",
-        "2026-06-15"
       ],
       "collection_series": [
         "2026-05-24",
@@ -10423,11 +10418,6 @@
         "2026-05-19",
         "2026-06-01",
         "2026-09-04"
-      ],
-      "sissu": [
-        "2026-05-21",
-        "2026-06-10",
-        "2026-06-15"
       ],
       "madurai": [
         "2026-05-23",
@@ -10749,17 +10739,11 @@
       ]
     },
     "festivals": {
-      "3d26d374-6231-4254-b2f7-bb353e859e06": [
-        "2026-06-15"
-      ],
       "be940991-410a-4a77-9c71-e41c890a71a4": [
         "2026-09-07"
       ]
     },
     "tourist_map_states": {
-      "UK": [
-        "2026-06-15"
-      ],
       "TG": [
         "2026-08-04"
       ],
@@ -10768,9 +10752,6 @@
       ]
     },
     "tourist_map_combos": {
-      "UK_editorial_dark": [
-        "2026-06-15"
-      ],
       "TG_editorial_dark": [
         "2026-08-04"
       ],
