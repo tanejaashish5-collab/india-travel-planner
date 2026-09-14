@@ -32,7 +32,7 @@
     "27_lofi_temples"
   ],
   "posted_today": {
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-09-14",
@@ -250,6 +250,10 @@
     },
     {
       "destination_id": "hemkund-sahib",
+      "date": "2026-09-14"
+    },
+    {
+      "destination_id": "theur",
       "date": "2026-09-14"
     }
   ],
@@ -9902,6 +9906,15 @@
       "destination": "hemkund-sahib",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_hemkund-sahib_en_2026-09-14.mp4"
+    },
+    {
+      "timestamp": "2026-09-14T13:26:03.594029+00:00",
+      "date": "2026-09-14",
+      "platform": "youtube",
+      "post_id": "4KgNl",
+      "destination": "theur",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_theur_hi_2026-09-14.mp4"
     }
   ],
   "theme_usage": {
