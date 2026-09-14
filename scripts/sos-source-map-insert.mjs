@@ -28,6 +28,7 @@
  * so it always means "a fetch confirmed this", never "an agent said so".
  */
 import { readFileSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { createClient } from "@supabase/supabase-js";
 import { extractPageTokens, numberMatchesPage, normalisePhone, rowPhones, PHONE_FIELDS } from "../apps/web/src/lib/sos-verify.ts";
 
@@ -39,10 +40,40 @@ const DENY = ["justdial", "practo", "sulekha", "medindia", "hospitalkhoj", "indi
 
 /** Official by construction. Anything else must be listed in the allow file. */
 const OFFICIAL_SUFFIX = [".gov.in", ".nic.in", ".edu.in"];
+/**
+ * The allow file widens what an autonomous run may trust, so it must not be
+ * readable from the working tree: the session that calls this script has Bash
+ * and can simply edit the file, which is exactly what happened on the first run
+ * (it added 3 hosts and then used them). An in-repo file is not a gate against
+ * a process that can write in-repo files.
+ *
+ * So we read it from a git ref pinned by the CALLER before the session started
+ * (SOS_ALLOW_REF, set by sos-backlog-weekly.sh to HEAD at launch). The session
+ * cannot retroactively change what that commit contains, so widening the list
+ * genuinely requires a human commit landing before the next run. With no ref
+ * set we fall back to the working tree and say so, because a human running this
+ * by hand is the case the gate is not protecting against.
+ */
 const ALLOW_FILE = "data/sos-source-hosts-allow.json";
-const extraAllow = existsSync(ALLOW_FILE)
-  ? new Set(Object.keys(JSON.parse(readFileSync(ALLOW_FILE, "utf8"))).filter((k) => !k.startsWith("_")))
-  : new Set();
+const ALLOW_REF = process.env.SOS_ALLOW_REF || "";
+let allowRaw = "{}", allowFrom = "";
+if (ALLOW_REF) {
+  try {
+    allowRaw = execFileSync("git", ["show", `${ALLOW_REF}:${ALLOW_FILE}`], { encoding: "utf8" });
+    allowFrom = `${ALLOW_REF.slice(0, 8)} (pinned before the run)`;
+  } catch {
+    console.error(`REFUSED: SOS_ALLOW_REF=${ALLOW_REF} is set but ${ALLOW_FILE} could not be read from it.`);
+    process.exit(1);
+  }
+} else if (existsSync(ALLOW_FILE)) {
+  allowRaw = readFileSync(ALLOW_FILE, "utf8");
+  allowFrom = "working tree (UNPINNED — no SOS_ALLOW_REF)";
+}
+/** "www." is not identity: an allow entry for gujarattourism.com must cover
+ *  www.gujarattourism.com, or a legitimate source is dropped over a prefix. */
+const bare = (h) => h.toLowerCase().replace(/^www\./, "");
+const extraAllow = new Set(Object.keys(JSON.parse(allowRaw)).filter((k) => !k.startsWith("_")).map(bare));
+if (extraAllow.size) console.log(`allow-list: ${extraAllow.size} extra host(s) from ${allowFrom}`);
 
 const [file, ...flags] = process.argv.slice(2);
 const DRY = flags.includes("--dry");
@@ -71,7 +102,7 @@ const staged = entries.map((e, i) => {
   } catch { err("url unparseable"); }
   if (host) {
     if (DENY.some((d) => host.includes(d))) err(`host ${host} is a denied source type`);
-    else if (!OFFICIAL_SUFFIX.some((s) => host.endsWith(s)) && !extraAllow.has(host))
+    else if (!OFFICIAL_SUFFIX.some((s) => host.endsWith(s)) && !extraAllow.has(bare(host)))
       err(`host ${host} is not .gov.in/.nic.in/.edu.in and is not in ${ALLOW_FILE} — add it there with a reason if it is genuinely official`);
   }
   return { digits, url: e.url, field: e.field, host };
@@ -157,7 +188,9 @@ for (const row of rows) {
   rowsTouched++; pairs += Object.keys(additions).length;
 }
 
-const summary = { candidates: run.candidates ?? staged.length, confirmed: confirmed.length,
+const viaAllowList = confirmed.filter((c) => !OFFICIAL_SUFFIX.some((x) => c.host.endsWith(x))).map((c) => c.host);
+const summary = { allow_list_hosts_used: [...new Set(viaAllowList)], allow_list_source: allowFrom || "none",
+  candidates: run.candidates ?? staged.length, confirmed: confirmed.length,
   rows_touched: rowsTouched, number_row_pairs: pairs, dropped: run.dropped ?? 0, note: run.note ?? null, runner: "local-launchagent" };
 await s.from("ops_reports").insert({ job: "sos-backlog", summary, alerts_count: 0, ok: true });
 console.log(`\nSOURCED ${confirmed.length} numbers across ${rowsTouched} rows (${pairs} number-row pairs).`);

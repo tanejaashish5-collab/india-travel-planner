@@ -17,10 +17,27 @@
 # Fires twice, both BEFORE the Monday 00:00 UTC sos-auto-reverify cron, so
 # anything sourced is available to that week's re-verification. The second fire
 # is the single-fire-drops-a-week safeguard and no-ops once the week is done.
+# The whole body is inside a brace group ON PURPOSE. bash reads a script
+# incrementally from a byte offset as it executes, so editing this file while a
+# run is in flight makes the running shell resume at a stale offset and parse
+# garbage. That happened on 2026-09-14: the claude session finished its work
+# correctly (sourced=10) but the wrapper then died with a bogus "syntax error
+# near unexpected token" on the commit line, skipping the commit and the week
+# marker. A brace group forces bash to parse the entire block before running any
+# of it, so a mid-run edit can no longer corrupt the tail of the job.
+{
 set -uo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT" || { echo "FATAL: cannot cd to $REPO_ROOT"; exit 1; }
+
+# Pin the source-host allow list to the commit as it stands BEFORE the session
+# starts. The session has Bash and can edit (and commit) that file, so reading it
+# from the working tree is no gate at all — the first run proved it by adding 3
+# hosts and then trusting them. Pinned here, widening the list requires a human
+# commit that landed before this run.
+START_SHA="$(git rev-parse HEAD 2>/dev/null || echo '')"
+export SOS_ALLOW_REF="$START_SHA"
 
 TODAY="$(date +%F)"
 WEEK="$(date +%G-W%V)"                      # ISO week — the two fire times share one marker
@@ -76,8 +93,23 @@ fi
 # stale locks, rebases onto origin first (cloud routines push to main on their
 # own schedule), verifies HEAD moved and the file is IN the commit, and pushes.
 RESULT_LINE="$(grep -o '^RESULT sourced=[0-9]* changed=[0-9]* unconfirmed=[0-9]*' "$WORK/run-$TODAY.log" | tail -1)"
-bash scripts/audit-commit-guard.sh -m "audit(sos): backlog run $TODAY — ${RESULT_LINE:-see note}" "$NOTE" \
-  || { say "❌ commit guard failed"; notify "SOS backlog ran but could not commit its note."; exit 1; }
+# The session is told not to commit, but it has Bash and the first run committed
+# anyway — so check before calling the guard rather than letting it fail on an
+# empty diff. A prompt instruction is not a control.
+if git diff --quiet HEAD -- "$NOTE" 2>/dev/null && git ls-files --error-unmatch "$NOTE" >/dev/null 2>&1; then
+  say "note already committed by the session — pushing if needed"
+  git push -q origin HEAD 2>/dev/null || true
+else
+  bash scripts/audit-commit-guard.sh -m "audit(sos): backlog run $TODAY — ${RESULT_LINE:-see note}" "$NOTE" \
+    || { say "❌ commit guard failed"; notify "SOS backlog ran but could not commit its note."; exit 1; }
+fi
+
+# Widening the trusted-host list is a human decision, so surface it rather than
+# letting it pass silently inside a routine commit.
+if ! git diff --quiet "$START_SHA" HEAD -- data/sos-source-hosts-allow.json 2>/dev/null; then
+  say "⚠️  the source-host allow list changed during this run"
+  notify "SOS backlog: the run changed the trusted-source host list. Review before next week."
+fi
 
 # Escalate ONLY when a stored emergency number turned out to be wrong on a live
 # page. That is the one case the procedure says is worth his attention; a quiet
@@ -90,3 +122,6 @@ fi
 
 printf '%s %s' "$TODAY" "${RESULT_LINE:-completed}" > "$MARKER"
 say "=== sos-backlog end (${RESULT_LINE:-no RESULT line}) ==="
+
+exit 0
+}
