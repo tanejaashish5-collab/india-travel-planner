@@ -61,16 +61,15 @@ fi
 #    counts; the marker makes the rest no-ops. Do NOT collapse this to a single
 #    fire — see feedback_single_fire_jobs_drop_a_day_on_network_loss.
 #    DORMANT BY DEFAULT — set NAKSHIQ_LOCAL_DAILY_REEL=1 to arm it, and comment
-#    out the GHA cron in the same change. The blocker is state: the workflow
-#    pulls state.json / post_log.jsonl / posted_today.jsonl from the
-#    autoposter-state branch BEFORE running and merges them back AFTER, and
-#    this script does neither yet. Publishing without that would (a) run dedup
-#    against a post_log.jsonl that is months stale — the Uttarakhand
-#    triple-publish class, 2026-05-25 — and (b) strand every local post outside
-#    the ledger that engagement_pull reads, so the reel would publish and then
-#    be invisible to every measurement we have.
-#    NOTE: voice_reel.py and road_reel.py above have the SAME gap today. It has
-#    never bitten only because neither has ever published.
+#    out the GHA cron in the same change. They must never both be live.
+#
+#    State is handled by scripts/autoposter-state-sync.sh (added 2026-09-15),
+#    which mirrors the workflow's two steps: pull the ledger from the
+#    autoposter-state branch before the run, merge and push it after. Without
+#    that, dedup runs on a post_log.jsonl that is months stale — the
+#    Uttarakhand triple-publish class, 2026-05-25 — and every local post lands
+#    outside the ledger engagement_pull reads, publishing into a blind spot.
+#    A failed PULL is fatal for the slot: we skip rather than publish blind.
 if [ "${NAKSHIQ_LOCAL_DAILY_REEL:-0}" != "1" ]; then
   say "daily reel: DORMANT (NAKSHIQ_LOCAL_DAILY_REEL!=1) — GitHub Actions still owns this slot"
 else
@@ -79,13 +78,38 @@ else
   MARK_DIR="$HOME/.nakshiq/social-local"
   mkdir -p "$MARK_DIR"
   MARKER="$MARK_DIR/reel-$IST_DATE.done"
+  PENDING="$MARK_DIR/push-pending"
   LOG_JSONL="nakshiq-autoposter/data/post_log.jsonl"
+
+  # HEAL A STRANDED LEDGER FIRST. If a previous fire published but its push
+  # failed, re-running the autoposter cannot fix it: dedup blocks the repeat,
+  # post_log does not grow, and the push branch below is never reached — the
+  # row stays local forever, invisible to engagement_pull. Same shape as the
+  # GA4 scar where a failed push left a commit no uncommitted-file scan could
+  # ever find again. So retry the push on its own, before anything else.
+  if [ -f "$PENDING" ]; then
+    say "daily reel: a previous run published but failed to push — retrying the push alone"
+    if bash scripts/autoposter-state-sync.sh push; then
+      rm -f "$PENDING"
+      say "daily reel: stranded state pushed"
+      bash scripts/autoposter-state-sync.sh restore
+    else
+      say "⚠️  daily reel: stranded state STILL not pushed"
+    fi
+  fi
 
   if [ -f "$MARKER" ]; then
     say "daily reel: already published for IST $IST_DATE — skipping"
   elif [ "$((10#$IST_HHMM))" -lt 1130 ]; then
     say "daily reel: IST $IST_HHMM is before the 11:30 gate — waiting for a later fire"
   else
+    # 3a. Pull the ledger FIRST. A failure here means dedup would run on stale
+    #     state, so we skip the slot entirely rather than risk a repeat publish.
+    if ! bash scripts/autoposter-state-sync.sh pull; then
+      say "⚠️  daily reel: state pull FAILED — skipping the slot rather than publishing on stale dedup data"
+      exit 1
+    fi
+
     say "daily reel: IST $IST_HHMM → running autoposter --yt-short"
     # --allow-local is REQUIRED: autoposter.py refuses to run off GitHub Actions
     # without it AND EXITS 0 when it refuses, so a wrapper that trusts the exit
@@ -97,8 +121,20 @@ else
     if [ -n "$DRY" ]; then
       say "daily reel: dry run, no marker written"
     elif [ "$AFTER" -gt "$BEFORE" ]; then
+      # 3b. Push BEFORE the marker. If the ledger never reaches the branch the
+      #     post is invisible to engagement_pull, so the day is not "done".
+      # The marker is written EITHER WAY: the reel really did publish, so a
+      # later fire must not publish a second one. A failed push is recorded
+      # separately in $PENDING and healed at the top of the next fire.
       date -u +%FT%TZ > "$MARKER"
-      say "daily reel: published ($((AFTER - BEFORE)) new ledger row(s))"
+      if bash scripts/autoposter-state-sync.sh push; then
+        rm -f "$PENDING"
+        say "daily reel: published ($((AFTER - BEFORE)) new ledger row(s)) and state pushed"
+        bash scripts/autoposter-state-sync.sh restore
+      else
+        date -u +%FT%TZ > "$PENDING"
+        say "⚠️  daily reel: PUBLISHED but state push FAILED — flagged for retry at the next fire"
+      fi
     else
       say "⚠️  daily reel: post_log did not grow — nothing published. No marker; will retry at the next fire."
     fi
