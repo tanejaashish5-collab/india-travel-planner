@@ -80,7 +80,41 @@ VOICE_PROFILES = {
     "en_bright_m":   {"voice": "en-IN-PrabhatNeural",           "rate": "+10%", "pitch": "+0Hz"},
     # "Landing in India" arrival reels — Neerja, clear + brisk (info reel, keep it tight).
     "en_arrival":    {"voice": "en-IN-NeerjaNeural",           "rate": "+16%", "pitch": "+0Hz"},
+    # ── Kokoro Hindi (2026-09-15) — LOCAL, $0, offline ────────────────────
+    # edge-tts ships exactly two Hindi voices (Madhur, Swara) and we already
+    # used both, so every Hindi reel we have ever posted is one of two voices.
+    # Kokoro v1.0 adds four more that are already on this Mac. They run through
+    # a separate venv (see KOKORO_PY); when that venv is absent — GitHub Actions
+    # — _synth_kokoro returns [] and the caller falls back to edge-tts, so the
+    # rotation degrades to today's behaviour instead of failing.
+    "kok_f_alpha_bright": {"engine": "kokoro", "kvoice": "hf_alpha", "speed": 1.15,
+                           "voice": "hi-IN-SwaraNeural",  "rate": "+21%", "pitch": "+26Hz"},
+    "kok_f_alpha_deep":   {"engine": "kokoro", "kvoice": "hf_alpha", "speed": 0.95,
+                           "voice": "hi-IN-SwaraNeural",  "rate": "+12%", "pitch": "-5Hz"},
+    "kok_f_beta_bright":  {"engine": "kokoro", "kvoice": "hf_beta",  "speed": 1.15,
+                           "voice": "hi-IN-SwaraNeural",  "rate": "+21%", "pitch": "+26Hz"},
+    "kok_f_beta_deep":    {"engine": "kokoro", "kvoice": "hf_beta",  "speed": 0.95,
+                           "voice": "hi-IN-SwaraNeural",  "rate": "+12%", "pitch": "-5Hz"},
+    "kok_m_omega_bright": {"engine": "kokoro", "kvoice": "hm_omega", "speed": 1.15,
+                           "voice": "hi-IN-MadhurNeural", "rate": "+21%", "pitch": "+22Hz"},
+    "kok_m_omega_deep":   {"engine": "kokoro", "kvoice": "hm_omega", "speed": 0.95,
+                           "voice": "hi-IN-MadhurNeural", "rate": "+12%", "pitch": "-9Hz"},
+    "kok_m_psi_bright":   {"engine": "kokoro", "kvoice": "hm_psi",   "speed": 1.15,
+                           "voice": "hi-IN-MadhurNeural", "rate": "+21%", "pitch": "+22Hz"},
+    "kok_m_psi_deep":     {"engine": "kokoro", "kvoice": "hm_psi",   "speed": 0.95,
+                           "voice": "hi-IN-MadhurNeural", "rate": "+12%", "pitch": "-9Hz"},
 }
+
+# Kokoro runtime lives in its own venv so this module never has to import
+# onnxruntime. Absent venv/model = feature off, not an error.
+KOKORO_HOME   = Path.home() / "Desktop" / "VoiceClone" / "kokoro"
+KOKORO_PY     = KOKORO_HOME / "env" / "bin" / "python"
+KOKORO_MODEL  = KOKORO_HOME / "kokoro-v1.0.onnx"
+KOKORO_VOICES = KOKORO_HOME / "voices-v1.0.bin"
+
+
+def kokoro_available() -> bool:
+    return KOKORO_PY.exists() and KOKORO_MODEL.exists() and KOKORO_VOICES.exists()
 
 # ── Optional ElevenLabs premium voice ─────────────────────────────────
 # When ELEVENLABS_API_KEY + a voice id (ELEVEN_VOICE_ID env, script meta
@@ -157,9 +191,33 @@ def _profile_for(dest: dict) -> str:
     # fire at raw>=3, so they all get the hype voice; warn/wait force deep
     # themselves regardless. Energy is about the discovery, not a score claim —
     # the receipt still states the honest score.
-    if raw >= 3:
-        return "swara_bright" if even else "madhur_bright"
-    return "swara_deep" if even else "madhur_deep"
+    # 2026-09-15: the pool goes 4 -> 12. edge-tts ships only Madhur and Swara,
+    # so every Hindi reel we had ever posted was one of two voices with four
+    # rate/pitch tunings. Kokoro adds four more voices locally at $0. Band
+    # semantics are unchanged (DEEP still carries warnings); the voice within a
+    # band rotates by day so consecutive reels do not sound identical.
+    # Kokoro entries fall back to their edge-tts twin when the venv is absent.
+    band = "bright" if raw >= 3 else "deep"
+    gender = "f" if even else "m"
+    pool = _VOICE_POOL[(band, gender)]
+    return pool[date.today().toordinal() % len(pool)]
+
+
+_VOICE_POOL = {
+    ("bright", "f"): ["swara_bright", "kok_f_alpha_bright", "kok_f_beta_bright"],
+    ("bright", "m"): ["madhur_bright", "kok_m_omega_bright", "kok_m_psi_bright"],
+    ("deep",   "f"): ["swara_deep", "kok_f_alpha_deep", "kok_f_beta_deep"],
+    ("deep",   "m"): ["madhur_deep", "kok_m_omega_deep", "kok_m_psi_deep"],
+}
+
+
+def _deep_profile(even: bool) -> str:
+    """The DEEP-band voice for today. The warn/wait arcs force deep regardless
+    of score, and used to hardcode swara_deep/madhur_deep — which would have
+    kept every warning reel on the same two edge-tts voices after the pool
+    widened. Route them through the same rotation."""
+    pool = _VOICE_POOL[("deep", "f" if even else "m")]
+    return pool[date.today().toordinal() % len(pool)]
 
 
 # ── Devanagari → Latin (for CAPTIONS only) ───────────────────────────────
@@ -544,11 +602,11 @@ def _template_spec(dest: dict) -> dict:
         # Hook → Tension → Payoff → Turn (score folded into the turn as earned).
         if raw <= 2:                                # WAIT
             arc, kind = "wait", "wait"
-            profile = "swara_deep" if even else "madhur_deep"
+            profile = _deep_profile(even)
             body = [b_hook("wait"), b_wait_reason(), b_when_wait(), b_turn("wait")]
         elif is_risky:                              # WARN (go prepared)
             arc, kind = "warn", "warn"
-            profile = "swara_deep" if even else "madhur_deep"
+            profile = _deep_profile(even)
             body = [b_hook("warn"), b_why(punchy=False) or b_tag(), b_warn_rule(), b_warn_extra(), b_turn("warn")]
         elif dish and eatery and raw >= 4:          # FOOD
             arc, kind = "food", "gem"
@@ -576,11 +634,11 @@ def _template_spec(dest: dict) -> dict:
     else:
         if raw <= 2:                                   # DON'T-GO / WAIT (score leads)
             arc, kind = "wait", "wait"
-            profile = "swara_deep" if even else "madhur_deep"
+            profile = _deep_profile(even)
             body = [b_hook("wait"), b_shock(), b_wait_reason()]
         elif is_risky:                                  # WARN-then-WHY (go prepared)
             arc, kind = "warn", "warn"
-            profile = "swara_deep" if even else "madhur_deep"
+            profile = _deep_profile(even)
             body = [b_hook("warn"), b_why(), b_fuel() or b_network() or b_cold(), b_emergency()]
         elif dish and eatery and raw >= 4:              # FOOD-ANCHOR
             arc, kind = "food", "gem"
@@ -1460,6 +1518,79 @@ async def _synth(text: str, out_mp3: Path, voice: str = VOICE, rate: str = VOICE
     return bounds
 
 
+def _synth_kokoro(lines: list, out_mp3: Path, kvoice: str, speed: float = 1.05) -> list:
+    """Kokoro (local ONNX) TTS. Writes mp3 and returns per-sentence bounds
+    [(start_s, dur_s, sentence)] so the caption pipeline works unchanged.
+
+    Renders ONE LINE AT A TIME deliberately. Kokoro gives no word or sentence
+    boundaries, so synthesising the whole script in one pass would force us to
+    estimate caption timing from character counts (what the edge-tts path does
+    for words). Rendering per line makes every sentence boundary an exact
+    measured duration instead of an estimate — better timing than the default
+    path, not worse.
+
+    Returns [] on ANY failure, which is the caller's signal to fall back to
+    edge-tts. A missing venv (GitHub Actions) is the normal case for [].
+    """
+    if not kokoro_available():
+        return []
+    texts = [ln for ln in lines if (ln or "").strip()]
+    if not texts:
+        return []
+    with tempfile.TemporaryDirectory() as td:
+        tdp = Path(td)
+        payload = json.dumps({
+            "model": str(KOKORO_MODEL), "voices": str(KOKORO_VOICES),
+            "voice": kvoice, "speed": speed,
+            "out_dir": str(tdp), "lines": texts,
+        })
+        script = (
+            "import json,sys,soundfile as sf\n"
+            "from kokoro_onnx import Kokoro\n"
+            "a=json.loads(sys.stdin.read())\n"
+            "k=Kokoro(a['model'],a['voices'])\n"
+            "durs=[]\n"
+            "for i,t in enumerate(a['lines']):\n"
+            "    au,sr=k.create(t,voice=a['voice'],speed=a['speed'],lang='hi')\n"
+            "    p=a['out_dir']+'/seg%03d.wav'%i\n"
+            "    sf.write(p,au,sr); durs.append(len(au)/sr)\n"
+            "print(json.dumps(durs))\n"
+        )
+        try:
+            r = subprocess.run([str(KOKORO_PY), "-c", script], input=payload,
+                               capture_output=True, text=True, timeout=300)
+        except Exception as e:
+            print(f"Kokoro: subprocess failed ({e}) — falling back to edge-tts")
+            return []
+        if r.returncode != 0:
+            print(f"Kokoro: exit {r.returncode} — falling back to edge-tts\n{r.stderr[-400:]}")
+            return []
+        try:
+            durs = json.loads(r.stdout.strip().splitlines()[-1])
+        except Exception as e:
+            print(f"Kokoro: unreadable duration output ({e}) — falling back to edge-tts")
+            return []
+        segs = sorted(tdp.glob("seg*.wav"))
+        if len(segs) != len(texts) or len(durs) != len(texts):
+            print("Kokoro: segment count mismatch — falling back to edge-tts")
+            return []
+        listing = tdp / "segs.txt"
+        listing.write_text("".join(f"file '{s_}'\n" for s_ in segs))
+        try:
+            subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0",
+                            "-i", str(listing), "-c:a", "libmp3lame", "-b:a", "192k",
+                            str(out_mp3)], capture_output=True, check=True, timeout=120)
+        except Exception as e:
+            print(f"Kokoro: concat failed ({e}) — falling back to edge-tts")
+            return []
+        bounds, cursor = [], 0.0
+        for txt, d in zip(texts, durs):
+            bounds.append((round(cursor, 2), round(max(0.05, d), 2), txt))
+            cursor += d
+        print(f"Voice: kokoro {kvoice} speed={speed} ({len(bounds)} lines, {cursor:.1f}s)")
+        return bounds
+
+
 def _synth_eleven(text: str, lines: list, voice_id: str, api_key: str,
                   out_mp3: Path) -> list:
     """ElevenLabs TTS with char-level timestamps. Writes mp3 and returns
@@ -1814,10 +1945,19 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         # ElevenLabs only if a key + voice id are configured (off by default).
         eleven_id = eleven_override or spec.get("eleven_voice_id") or os.environ.get("ELEVEN_VOICE_ID")
         eleven_key = os.environ.get("ELEVENLABS_API_KEY", "")
+        bounds = []
         if eleven_id and eleven_key and not voice_override:
             print(f"Voice: ElevenLabs {eleven_id}")
             bounds = _synth_eleven(script_text, lines, eleven_id, eleven_key, voice_mp3)
-        else:
+        elif prof.get("engine") == "kokoro" and not voice_override:
+            # Local Kokoro. [] means the venv/model is missing or the render
+            # failed; either way we fall through to edge-tts below rather than
+            # dropping the day's reel.
+            bounds = _synth_kokoro(lines, voice_mp3, prof.get("kvoice", "hf_alpha"),
+                                   float(prof.get("speed", 1.05)))
+            if not bounds:
+                print("Kokoro unavailable — using edge-tts for this reel")
+        if not bounds:
             print(f"Voice: edge-tts {voice} rate={rate} pitch={pitch}")
             bounds = asyncio.run(_synth(script_text, voice_mp3, voice, rate, pitch))
         v_dur = _audio_dur(voice_mp3)

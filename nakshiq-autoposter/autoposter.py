@@ -12088,10 +12088,17 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Sandbox / unauthorized-scheduler guard.
-    # GHA cron is the only authorized scheduler. Local Mac terminal runs must
-    # pass --allow-local explicitly. Anything else (Cowork sandbox tasks, IDE
-    # subshells, accidental cron) exits cleanly before touching state.json so a
-    # 45s sandbox kill cannot corrupt the canonical state on autoposter-state.
+    # Two authorized schedulers since 2026-09-15: GitHub Actions (analytics,
+    # engagement pull, weekly digest) and the com.nakshiq.social-local
+    # LaunchAgent, which owns the daily reel and passes --allow-local. Anything
+    # else (Cowork sandbox tasks, IDE subshells, accidental cron) exits cleanly
+    # before touching state.json so a 45s sandbox kill cannot corrupt the
+    # canonical state on autoposter-state.
+    #
+    # NOTE the exit code below is 0, deliberately — an unauthorized caller is
+    # not a failure. Any WRAPPER must therefore verify that a post actually
+    # landed rather than trusting exit 0; run-social-local.sh §3 counts
+    # post_log.jsonl before and after for exactly this reason.
     if not os.environ.get("GITHUB_ACTIONS") and not args.allow_local:
         sys.stderr.write(
             "[autoposter] ABORT: not running on GitHub Actions and --allow-local "
