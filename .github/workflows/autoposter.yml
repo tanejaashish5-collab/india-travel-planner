@@ -29,23 +29,60 @@ on:
     # Moved 2026-09-13 from 09:47 IST. Our own ledger: IG reels posted at noon
     # IST reach a median of 142 (n=18) vs 109 at 18:00 (n=27) and 115 pooled.
     #
-    # 2026-09-15 — KNOWN DEFECT, still here on purpose. This cron does NOT hit
-    # 12:17 IST: GitHub delays scheduled workflows, and 09-08..09-14 all landed
-    # 08:43-10:16 UTC = 14:13-15:46 IST, 2 to 3.5 hours late every day. The
-    # noon lever is real and the scheduler is throwing it away.
+    # 2026-09-15 — FIRE EARLY, THEN WAIT. Measured, not assumed: over
+    # 09-07..09-15 the daily reel published at 14:56, 14:29, 14:34, 14:32,
+    # 14:31, 14:13, 15:29, 15:46 and 15:16 IST. Not once at noon. GitHub
+    # delays this repo's scheduled workflows by a median of ~2h10m, with two
+    # days at 5h30m and 6h30m (n=9 first-fires of this cron), and the watchdog
+    # catch-up — which is what actually publishes on most days — is delayed
+    # the same way. Our own ledger puts IG reel reach at a median of 142 at
+    # 12:00 IST vs 109 at 18:00, so the scheduler was throwing away the
+    # best-evidenced lever we own.
     #
-    # The fix is to publish from the com.nakshiq.social-local LaunchAgent, which
-    # fires on time and is also the only place the local Kokoro Hindi voices
-    # exist. That move is BUILT but DORMANT behind NAKSHIQ_LOCAL_DAILY_REEL=1
-    # (run-social-local.sh §3) because it first needs the state pull/push this
-    # workflow does in "Sync latest autoposter state…" and "Commit updated state
-    # …". Publishing locally without that would run dedup on 3-month-stale state
-    # — the Uttarakhand triple-publish class (2026-05-25) — and would strand
-    # every post outside the ledger engagement_pull reads.
+    # Moving the cron alone CANNOT fix this. The delay is variable (94–680
+    # min observed), so an earlier cron just relocates the same spread. The
+    # fix is to make the delay irrelevant: fire early at 02:47 UTC
+    # (08:17 IST) and let the `gate` job below hold the run until 06:30 UTC
+    # = 12:00 IST exactly, then publish. A run that arrives after 12:00 IST
+    # publishes immediately — so the worst case is what we already have.
     #
-    # WHEN that sync exists: set the flag, then comment this cron out. They must
-    # never both be live. Same collision rule as the ga4-audit crontab line.
-    - cron: "47 6 * * *"
+    # Why 02:47 rather than something tighter: the delay is not the same for
+    # every workflow in this repo, and it is getting WORSE. quality-gate
+    # (cron "0 2") landed at 06:37-07:30 UTC on 14 consecutive days — 4.6 to
+    # 5.5h late. db-backup (cron "30 2 * * 0") landed at 03:27/03:29 in
+    # mid-August and 07:15/07:36 in September. So 02:47 buys the biggest
+    # margin that still leaves a short hold on a good day, and idle runner
+    # time is free here: this repo is PUBLIC, so Actions minutes are
+    # unmetered. MAX_HOLD in the gate stops that becoming an all-day idle if
+    # a cron ever fires early.
+    #
+    # HONEST LIMIT, measured: on that evidence GitHub may not start this
+    # repo's early-UTC runs before ~06:30 UTC at all, in which case the gate
+    # has nothing to hold and publishes on arrival — no worse than today, but
+    # no better either. The gate can only improve the timing, never worsen
+    # it, and it starts delivering noon the day GitHub's scheduler recovers.
+    # Pinning noon regardless needs an external nudge: workflow_dispatch is
+    # NOT delayed (watchdog dispatches reach publish in ~7 min), so a Vercel
+    # or Cloudflare cron calling the dispatch API at 06:23 UTC would be
+    # exact. That needs a `workflow`-scoped token placed outside GitHub —
+    # a founder decision, not a code change.
+    #
+    # IST has no DST: 06:30 UTC is 12:00 IST every day of the year. The
+    # four-fire AEST/AEDT dance in run-social-local.sh is a LOCAL-clock
+    # problem and has no equivalent here.
+    #
+    # Why this did NOT move to the Mac (founder decision 2026-09-15): the
+    # LaunchAgent fires on time but publishes nothing when the machine is
+    # asleep at 16:30 AEST. run-social-local.sh §3 stays DORMANT
+    # (NAKSHIQ_LOCAL_DAILY_REEL=0). GitHub keeps the slot; the gate fixes
+    # the timing. Never arm both — same collision rule as the ga4-audit
+    # crontab line.
+    - cron: "47 2 * * *"
+    # Retired 2026-09-15 — the old reel slot (12:17 IST nominal). Out of the
+    # schedule, but still MAPPED in "Set run mode" below so a fire of it that
+    # GitHub is holding when this ships routes to --yt-short instead of
+    # falling through to wall-clock dispatch.
+    # - cron: "47 6 * * *"
     # Reel slot 1: PAUSED 2026-05-16 — was 11:17 IST. Resume after 1k followers.
     # - cron: "47 5 * * *"
     # Visual slot: PAUSED 2026-05-16 — was 13:17 IST (moat/tourist-map/canva/
@@ -119,6 +156,9 @@ on:
           - flow-story
           - reel-map
           - yt-short
+          # Skips the gate job's 12:00 IST hold. Use when you want the reel
+          # out NOW; plain `yt-short` waits for noon IST like the cron does.
+          - yt-short-now
           - analytics
           # Phase C 2026-05-26: dry-run variants for dark/paused formats.
           # Routes to `--dry-run --<format>` so the full pipeline runs up
@@ -145,7 +185,170 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
+  # ── PUBLISH-TIME GATE (2026-09-15) ───────────────────────────────────────
+  # GitHub decides when this workflow STARTS. This job decides when it
+  # PUBLISHES. It is the whole point of the early 03:47 UTC cron above: it
+  # absorbs the scheduler's 2-6h delay by holding until 06:30 UTC (12:00 IST)
+  # and only then letting `post` run.
+  #
+  # It also closes a SECOND defect, found in the ledger the same day: YouTube
+  # was still getting 2 shorts a day (09-11 got three) months after the
+  # 2026-09-13 strategy cut it to one. Cause: the watchdog catch-up publishes
+  # around 14:00 IST, then the delayed cron arrives hours later and publishes
+  # AGAIN. Instagram survives that only because autoposter.py caps it
+  # (NAKSHIQ_IG_DAILY_CAP, default 1) — YouTube has no such cap. The
+  # already-published check below is that missing cap, applied at the
+  # workflow level so it covers every surface and every trigger.
+  #
+  # Why a separate job: `post` carries timeout-minutes: 15 to kill a hung apt
+  # mirror (2026-05-07). That ceiling protects a real failure mode and must
+  # not be raised just to make room for a sleep.
+  gate:
+    runs-on: ubuntu-latest
+    # The 5h hold ceiling below, plus slack. GitHub's own per-job cap is 6h.
+    timeout-minutes: 330
+    outputs:
+      proceed: ${{ steps.hold.outputs.proceed }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Hold the daily reel until 12:00 IST
+        id: hold
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHED: ${{ github.event.schedule }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+        run: |
+          set -uo pipefail
+          set +e   # several checks below are MEANT to return non-zero; we branch on it
+
+          # Fail LOUD rather than silently skipping the day. Every path below
+          # writes a decision and exits — but if one ever crashes without
+          # writing, `post` would be skipped while the run still went green,
+          # and watchdog.py's slot_covered() would count that green run as
+          # covering the slot. The reel would then never go out, and nothing
+          # would say so. Same shape as the cron-ok:true-while-everything-
+          # failed class. Exiting non-zero makes the slot look uncovered, so
+          # the watchdog dispatches a catch-up.
+          gate_exit() {
+            local rc=$?
+            if [ "$rc" -eq 0 ] && ! grep -q '^proceed=' "$GITHUB_OUTPUT" 2>/dev/null; then
+              echo "::error::gate exited 0 without writing a decision — failing the run so the watchdog dispatches a catch-up"
+              exit 1
+            fi
+          }
+          trap gate_exit EXIT
+          TARGET_UTC="06:30"   # 12:00 IST. IST has no DST, so this is fixed year-round.
+          MAX_HOLD=18000       # 5h ceiling — a wildly early fire must not idle a runner all day.
+
+          # ── 1. Is this the daily reel? ──────────────────────────────────
+          # Everything else (analytics, engagement pull, weekly digest, dry
+          # runs, sync-only) passes straight through. Those have no
+          # publish-time to protect and must never be delayed by this gate.
+          IS_REEL=0
+          if [ "$EVENT" = "schedule" ]; then
+            case "$SCHED" in
+              "47 2 * * *"|"47 6 * * *") IS_REEL=1 ;;
+            esac
+          elif [ "$EVENT" = "workflow_dispatch" ] && [ "$INPUT_MODE" = "yt-short" ]; then
+            # The watchdog's catch-up path. On most days this is what ACTUALLY
+            # publishes, so it has to hold too — gating only the cron would be
+            # theatre. `yt-short-now` deliberately does not match: that is the
+            # manual publish-immediately override.
+            IS_REEL=1
+          fi
+          if [ "$IS_REEL" -ne 1 ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            echo "Not the daily reel (event=$EVENT schedule='$SCHED' mode='$INPUT_MODE') — no hold, no dedup check."
+            exit 0
+          fi
+
+          published_today() {
+            # origin/autoposter-state is the only real ledger — the copy on
+            # main froze in April. A fetch failure here must NOT block the
+            # publish: this check exists to stop a DUPLICATE, while the `post`
+            # job runs its own state sync that hard-fails when the branch is
+            # unreachable. Fail-open here, fail-closed there.
+            if ! git fetch origin autoposter-state --depth=1 -q 2>/dev/null; then
+              echo "  state branch unreachable — skipping the duplicate check (the post job's own sync is the hard gate)"
+              return 1
+            fi
+            HIT="$(git show origin/autoposter-state:nakshiq-autoposter/data/post_log.jsonl 2>/dev/null | python3 nakshiq-autoposter/scripts/reel_published_today.py)"
+            RC=$?
+            if [ "$RC" -eq 10 ]; then
+              echo "  today's reel is already in the ledger: $HIT"
+              return 0
+            fi
+            return 1
+          }
+
+          # ── 2. Already out today? Then this is a duplicate trigger ───────
+          # Exactly the shape that was giving YouTube 2-3 shorts a day.
+          if published_today; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "Daily reel already published — standing this trigger down."
+            exit 0
+          fi
+
+          # ── 3. Hold until 12:00 IST ─────────────────────────────────────
+          # python3 rather than GNU date's -d flag, which is GNU-only. The
+          # runner is Ubuntu so either works there, but nobody could exercise
+          # this branch on a Mac — and an untestable branch is exactly how a
+          # hold silently becomes a no-op. Keeping it portable is what let the
+          # hold loop be tested before it shipped.
+          NOW=$(date -u +%s)
+          TARGET=$(python3 -c "import datetime as dt, sys; h, m = sys.argv[1].split(':'); n = dt.datetime.now(dt.timezone.utc); print(int(n.replace(hour=int(h), minute=int(m), second=0, microsecond=0).timestamp()))" "$TARGET_UTC")
+          case "$TARGET" in
+            ''|*[!0-9]*)
+              # Without this, the arithmetic below runs on an empty string and
+              # falls through to "publishing immediately" with a nonsense
+              # minutes-late figure — a broken clock reading as a late run.
+              echo "::error::could not compute the 12:00 IST target from TARGET_UTC='$TARGET_UTC' — failing rather than guessing a publish time"
+              exit 1
+              ;;
+          esac
+          if [ "$NOW" -lt "$TARGET" ]; then
+            WAIT=$((TARGET - NOW))
+            if [ "$WAIT" -gt "$MAX_HOLD" ]; then
+              echo "::warning::Hold of ${WAIT}s exceeds the ${MAX_HOLD}s ceiling — capping it. A run arriving this early is unexpected; check the cron."
+              WAIT=$MAX_HOLD
+            fi
+            echo "Holding ${WAIT}s — publishing at ${TARGET_UTC} UTC = 12:00 IST."
+            REMAIN=$WAIT
+            while [ "$REMAIN" -gt 0 ]; do
+              CHUNK=300
+              [ "$REMAIN" -lt 300 ] && CHUNK=$REMAIN
+              sleep "$CHUNK"
+              REMAIN=$((REMAIN - CHUNK))
+              echo "  … $((REMAIN / 60)) min to 12:00 IST"
+            done
+          else
+            echo "::warning::This run reached the gate $(( (NOW - TARGET) / 60 )) min AFTER 12:00 IST — publishing immediately rather than losing the day. If that happens every day, the cron has to move earlier again."
+          fi
+
+          # ── 4. Re-check before opening ──────────────────────────────────
+          # Catches a publish that happened DURING the hold from outside this
+          # workflow — a local run, or run-social-local.sh §3 if it is ever
+          # armed. Runs of this workflow serialise through the `autoposter`
+          # concurrency group, so those are already caught at step 2.
+          if published_today; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "Something else published while this run was holding — standing down."
+            exit 0
+          fi
+
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
+          echo "Gate open at $(date -u '+%H:%M UTC') — publishing the daily reel."
+
   post:
+    needs: gate
+    # gate returns false ONLY when today's reel is already in the ledger.
+    # A skipped `post` still leaves the run itself successful, which is what
+    # watchdog.py's slot_covered() reads — so a stood-down duplicate
+    # correctly counts as "the slot fired" instead of triggering another
+    # catch-up.
+    if: needs.gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -330,9 +533,9 @@ jobs:
                 echo "Cron-expression dispatch: morning post (UTC ${HOUR}:${MINUTE}, drift-tolerant)"
                 exit 0
                 ;;
-              "47 6 * * *")
+              "47 2 * * *"|"47 6 * * *")
                 echo "args=--yt-short" >> $GITHUB_OUTPUT
-                echo "Cron-expression dispatch: --yt-short, the single daily reel (UTC ${HOUR}:${MINUTE} = 12:17 IST, drift-tolerant)"
+                echo "Cron-expression dispatch: --yt-short, the single daily reel. The gate job has already held this run until 12:00 IST (now UTC ${HOUR}:${MINUTE}). '47 6' is the slot retired 2026-09-15, still mapped so a late fire of it routes here rather than to wall-clock."
                 exit 0
                 ;;
               # Retired 2026-09-13 — kept so a late fire of an old cron still
@@ -407,6 +610,11 @@ jobs:
             elif [ "$INPUT" = "dry-run-flow-story" ]; then
               echo "args=--dry-run --flow-story" >> $GITHUB_OUTPUT
               echo "Manual mode: --dry-run --flow-story (no Outstand POST)"
+            elif [ "$INPUT" = "yt-short-now" ]; then
+              # The gate job recognises this mode and skips its hold, so we
+              # just map it onto the ordinary reel flag here.
+              echo "args=--yt-short" >> $GITHUB_OUTPUT
+              echo "Manual mode: --yt-short (publish-now override — the 12:00 IST hold was skipped)"
             elif [ -n "$INPUT" ]; then
               echo "args=--${INPUT}" >> $GITHUB_OUTPUT
               echo "Manual mode: --${INPUT}"

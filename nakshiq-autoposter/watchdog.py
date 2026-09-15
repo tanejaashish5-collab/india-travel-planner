@@ -57,8 +57,16 @@ if not GH_TOKEN:
 # median of 142 at 12:00 IST vs 109 at 18:00; YouTube's 2-3/day earned a median
 # of 10-21 views, so cadence was never the lever there.
 # See docs/social-strategy-2026-09-13.md.
+# 2026-09-15: the slot's expected time follows the cron, which moved to 02:47
+# UTC so the workflow's `gate` job can hold the run until 12:00 IST exactly.
+# The watchdog is UNCHANGED in purpose — it still only asks "did anything
+# cover this slot today" — but the time it measures from has to match, or it
+# would judge the slot missed 4 hours early and dispatch a needless catch-up.
+# A catch-up it does dispatch is harmless now: the gate stands a duplicate
+# down against the ledger (see reel_published_today.py), which is also what
+# finally caps YouTube at one short a day.
 DAILY_SLOTS = [
-    ("yt-short-1",  6, 47, "yt-short",  None),  # 12:17 IST · YT + IG reel
+    ("yt-short-1",  2, 47, "yt-short",  None),  # publishes 12:00 IST via the gate
 ]
 
 # 13:17 IST = 07:47 UTC — visual rotation by weekday (see autoposter.yml mode-detection)

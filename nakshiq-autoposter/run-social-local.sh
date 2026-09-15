@@ -1,11 +1,12 @@
 #!/bin/bash
 # run-social-local.sh — the local half of the 2026-09-13 social strategy.
 #
-# ALL THREE reels are rendered and published from THIS Mac (2026-09-15 —
-# the automated reel moved off GitHub Actions; see section 3 for why):
+# TWO reels are rendered and published from THIS Mac:
 #   T1 voice reel — the founder's voice note lives here, not in CI.
 #   T2 road reel  — Fridays, from road_updates.
-#   the daily automated reel — IST-gated, marker-guarded, section 3.
+# The daily automated reel is NOT one of them. Section 3 can run it, but it
+# is DORMANT and GitHub Actions still owns that slot — founder decision
+# 2026-09-15, see section 3.
 # Order matters: the voice/road reel runs FIRST, so when one is waiting it
 # takes the day's single Instagram slot and NAKSHIQ_IG_DAILY_CAP=1 keeps the
 # automated reel to YouTube only.
@@ -60,8 +61,18 @@ fi
 #    four times spanning both offsets and the IST gate below decides which one
 #    counts; the marker makes the rest no-ops. Do NOT collapse this to a single
 #    fire — see feedback_single_fire_jobs_drop_a_day_on_network_loss.
-#    DORMANT BY DEFAULT — set NAKSHIQ_LOCAL_DAILY_REEL=1 to arm it, and comment
-#    out the GHA cron in the same change. They must never both be live.
+#    DORMANT, AND STAYING THAT WAY — founder decision 2026-09-15. Noon IST is
+#    16:30 in Canberra, so the Mac is usually awake; the objection was not the
+#    hour but the dependency — an asleep or offline Mac publishes nothing, and
+#    GitHub does not care. So the slot stayed on GitHub Actions and the timing
+#    was fixed there instead: the workflow's `gate` job now fires the cron
+#    early (02:47 UTC) and holds the run until 06:30 UTC = 12:00 IST exactly.
+#
+#    If this is ever armed: set NAKSHIQ_LOCAL_DAILY_REEL=1 AND comment out the
+#    "47 2 * * *" cron in autoposter.yml in the SAME change. They must never
+#    both be live — same collision rule as the ga4-audit crontab line. The
+#    gate's ledger check would catch a same-day double publish, but only after
+#    the render, and only if the local run pushed its state first.
 #
 #    State is handled by scripts/autoposter-state-sync.sh (added 2026-09-15),
 #    which mirrors the workflow's two steps: pull the ledger from the
