@@ -46,6 +46,10 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   "road-conditions-sweep": 8,   // weekly 02:00 UTC — measured 7.0d, 15 runs
   "sos-auto-reverify": 8,       // weekly — the SOS number safety loop
   "sos-verify-reminder": 8,     // weekly
+  // Added 2026-09-17 after the 2026-08-29 silent miss: the blog batch routine
+  // fired, hit the seven-day Claude usage limit, exited in 53s having written
+  // nothing, and reported "success". Saturdays 09:40 UTC, 6h after the batch.
+  "audit-blog-batch": 8,        // weekly
   // DELIBERATELY NOT WATCHED, with reasons:
   //  - send-destination-alerts: writes no ops_reports row at all, so there is
   //    nothing to watch. Instrument it first, then add it here.
@@ -74,6 +78,8 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
   "audit-gsc-ga4-correlation": "2026-05-28T03:45:00Z",
   "audit-supabase-advisors": "2026-05-27T18:23:00Z",
   "audit-bot-crawl-rate": "2026-05-28T03:00:00Z",
+  // First Saturday check after the 2026-09-17 deploy. Set to null once it fires.
+  "audit-blog-batch": "2026-09-19T09:40:00Z",
 };
 
 // How long a job may sit CONTINUOUSLY in needs_review before it escalates to

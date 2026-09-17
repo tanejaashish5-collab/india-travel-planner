@@ -77,6 +77,10 @@
     {
       "path": "/api/cron/audit-hero-images",
       "schedule": "50 3 * * *"
+    },
+    {
+      "path": "/api/cron/audit-blog-batch",
+      "schedule": "40 9 * * 6"
     }
   ]
 }
