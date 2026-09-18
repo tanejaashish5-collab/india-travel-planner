@@ -35,27 +35,11 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-17",
-    "m8EAd_yt_short": "2026-09-17"
+    "GAh5p_yt_short": "2026-09-18",
+    "m8EAd_yt_short": "2026-09-18"
   },
   "last_sync": "2026-09-15T10:18:46.034686+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kolad",
-      "date": "2026-09-03"
-    },
-    {
-      "destination_id": "rajkot",
-      "date": "2026-09-03"
-    },
-    {
-      "destination_id": "verinag",
-      "date": "2026-09-03"
-    },
-    {
-      "destination_id": "kalpa",
-      "date": "2026-09-03"
-    },
     {
       "destination_id": "tosamaidan",
       "date": "2026-09-04"
@@ -219,6 +203,10 @@
     {
       "destination_id": "kinnaur",
       "date": "2026-09-17"
+    },
+    {
+      "destination_id": "spiti-valley",
+      "date": "2026-09-18"
     }
   ],
   "posted_formats": {
@@ -9933,6 +9921,24 @@
       "destination": "kinnaur",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_kinnaur_hi_2026-09-17.mp4"
+    },
+    {
+      "timestamp": "2026-09-18T07:45:41.966502+00:00",
+      "date": "2026-09-18",
+      "platform": "instagram",
+      "post_id": "zmm4q",
+      "destination": "spiti-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_spiti-valley_hi_2026-09-18.mp4"
+    },
+    {
+      "timestamp": "2026-09-18T07:45:52.248766+00:00",
+      "date": "2026-09-18",
+      "platform": "youtube",
+      "post_id": "Xnnkn",
+      "destination": "spiti-valley",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_spiti-valley_hi_2026-09-18.mp4"
     }
   ],
   "theme_usage": {
@@ -10101,10 +10107,6 @@
         "2026-07-02",
         "2026-07-20"
       ],
-      "roopkund": [
-        "2026-06-04",
-        "2026-06-19"
-      ],
       "lahaul-valley": [
         "2026-06-04",
         "2026-06-23"
@@ -10159,9 +10161,6 @@
         "2026-08-02",
         "2026-08-07",
         "2026-08-21"
-      ],
-      "kanatal": [
-        "2026-06-19"
       ],
       "manali": [
         "2026-06-22"
@@ -10316,10 +10315,6 @@
       "collection_series": [
         "2026-05-24",
         "2026-06-27"
-      ],
-      "v4_dw_heritage_reel_sensory_pov": [
-        "2026-05-24",
-        "2026-06-19"
       ],
       "v3_tl_editorial_listicle": [
         "2026-05-25",
@@ -10501,9 +10496,6 @@
         "2026-06-19",
         "2026-08-07",
         "2026-08-21"
-      ],
-      "kanatal": [
-        "2026-06-19"
       ],
       "yusmarg": [
         "2026-06-21"
