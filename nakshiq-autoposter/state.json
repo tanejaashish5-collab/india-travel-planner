@@ -35,39 +35,11 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-18",
-    "m8EAd_yt_short": "2026-09-18"
+    "GAh5p_yt_short": "2026-09-19",
+    "m8EAd_yt_short": "2026-09-19"
   },
   "last_sync": "2026-09-15T10:18:46.034686+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "tosamaidan",
-      "date": "2026-09-04"
-    },
-    {
-      "destination_id": "rishikesh",
-      "date": "2026-09-04"
-    },
-    {
-      "destination_id": "mathura",
-      "date": "2026-09-04"
-    },
-    {
-      "destination_id": "leh",
-      "date": "2026-09-04"
-    },
-    {
-      "destination_id": "munsiyari",
-      "date": "2026-09-04"
-    },
-    {
-      "destination_id": "achabal",
-      "date": "2026-09-04"
-    },
-    {
-      "destination_id": "ooty",
-      "date": "2026-09-04"
-    },
     {
       "destination_id": "mysore",
       "date": "2026-09-05"
@@ -207,6 +179,10 @@
     {
       "destination_id": "spiti-valley",
       "date": "2026-09-18"
+    },
+    {
+      "destination_id": "leh",
+      "date": "2026-09-19"
     }
   ],
   "posted_formats": {
@@ -9939,6 +9915,24 @@
       "destination": "spiti-valley",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_spiti-valley_hi_2026-09-18.mp4"
+    },
+    {
+      "timestamp": "2026-09-19T07:41:08.385049+00:00",
+      "date": "2026-09-19",
+      "platform": "instagram",
+      "post_id": "3YH5Z",
+      "destination": "leh",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_leh_en_2026-09-19.mp4"
+    },
+    {
+      "timestamp": "2026-09-19T07:41:18.084123+00:00",
+      "date": "2026-09-19",
+      "platform": "youtube",
+      "post_id": "HVbTe",
+      "destination": "leh",
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_leh_en_2026-09-19.mp4"
     }
   ],
   "theme_usage": {
