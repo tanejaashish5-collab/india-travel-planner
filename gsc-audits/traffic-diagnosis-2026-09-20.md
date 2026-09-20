@@ -55,7 +55,7 @@ are structurally zero-click, so there was never a result to find.
 
 ## 3. Why even our top-3 rankings underconvert
 
-An AI Overview appeared on **12 of 12** queries probed, pushing the first organic
+An AI Overview appeared on **every** query probed (8 of 8 in the control-validated run, 13 of 13 in a wider unvalidated batch), pushing the first organic
 link **628–940px** down the page. Site-wide, NakshIQ holds position 1-3 on 3,016
 queries and converts them at **1.39%**.
 
@@ -110,7 +110,8 @@ useful copy — but it is **not** a growth lever and is not presented as one.
    Re-score with `--measure`. A miss is a finding: it would mean position is not
    the binding constraint and the next hypothesis is demand seasonality.
 
-3. **AI Overview citation tracker**
+3. **AI Overview citation tracker** — baseline **0 of 8 cited**, control passed.
+   
    (`scripts/ai-overview-citation-probe.mjs` + `ai-citation-probe-cron.sh` +
    `com.ashish.ai-citation.plist`, weekly Mon 10:20). Records whether the AI
    Overview quotes nakshiq.com. Three honesty rules are in the tool, not the
