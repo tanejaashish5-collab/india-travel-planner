@@ -1689,7 +1689,8 @@ def _ass_color(hex6: str) -> str:
     return f"&H00{b}{g}{r}".upper()
 
 
-def build_ass(cues, score_disp, name, total_dur, out_ass: Path, hook: dict = None):
+def build_ass(cues, score_disp, name, total_dur, out_ass: Path, hook: dict = None,
+              month: int = None):
     W = _ass_color(BONE); V = _ass_color(VERMILLION); S = _ass_color(SAFFRON)
     INK = _ass_color(INK_DEEP)
     vermillion_bg = (VERMILLION[4:6] + VERMILLION[2:4] + VERMILLION[0:2]).upper()  # BGR for ASS box
@@ -1714,6 +1715,7 @@ Style: CTA,Instrument Sans,120,{W},{W},&H00000000,&H64000000,-1,0,0,0,100,100,1,
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = []
+    reveal_txt = ""
 
     def dlg(start, end, style, text, layer=0):
         ev.append(f"Dialogue: {layer},{_ass_time(start)},{_ass_time(end)},{style},,0,0,0,,{text}")
@@ -1732,14 +1734,25 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         kicker_txt = hook.get("kicker", "FIRST HOUR IN INDIA")
         slam_txt = hook.get("slam", "")
         badge_txt = hook.get("badge", "")
-        cta1_txt = hook.get("cta1", "SAVE THIS")
+        cta1_txt = hook.get("cta1", "SEND THIS")
         cta2_txt = hook.get("cta2", "nakshiq.com")
+        reveal_txt = hook.get("reveal", "")
     else:
-        kicker_txt = "JUNE  •  NAKSHIQ SCORE"
-        slam_txt = score_disp.replace("/", " / ")
-        badge_txt = "  " + name.upper() + "   " + score_disp + "  "
-        cta1_txt = "SAVE THIS"
-        cta2_txt = "roz naye scores · nakshiq.com"
+        # 2026-09-20: this kicker read "JUNE" on EVERY score reel regardless of
+        # the actual month, because the string was hardcoded and _arc_hook
+        # returns None for nakshiq_score so nothing ever overrode it. On the one
+        # format whose whole claim is WHICH MONTH, that is the worst possible
+        # word to get wrong. Derive it.
+        _m = month or date.today().month
+        kicker_txt = datetime(2000, _m, 1).strftime("%B").upper() + "  •  NAKSHIQ SCORE"
+        # Payoff withheld: the name slams first, the SCORE lands at the end
+        # (see the reveal below). Printing the score at second 0 answered the
+        # question before the viewer had a reason to stay.
+        slam_txt = name.upper()
+        badge_txt = "  " + name.upper() + "  "
+        cta1_txt = "SEND THIS"
+        cta2_txt = "to whoever is booking · nakshiq.com"
+        reveal_txt = score_disp.replace("/", " / ")
 
     hook_end = LEAD + 1.6
     dlg(0.40, hook_end, "Kicker",
@@ -1761,6 +1774,13 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         # instead of overflowing the screen edges. \\pos would disable wrapping.
         anim = "{\\fad(45,40)\\fscx82\\fscy82\\t(0,120,\\fscx104\\fscy104)\\t(120,200,\\fscx100\\fscy100)}"
         dlg(s2, e2, "Cap", anim + _ass_escape(txt))
+
+    # THE REVEAL — the score lands here, as the payoff, not in frame one.
+    if reveal_txt:
+        dlg(voice_end - 0.85, voice_end + 0.75, "Score",
+            "{\\an5\\pos(540,760)\\fad(90,140)\\fscx30\\fscy30"
+            "\\t(0,260,\\fscx118\\fscy118)\\t(260,430,\\fscx100\\fscy100)}"
+            + reveal_txt)
 
     # CTA hold at the end (after the voice finishes)
     dlg(voice_end + 0.05, total_dur, "CTA",
@@ -1802,16 +1822,214 @@ def _find_clip(slug: str) -> Optional[Path]:
     return None
 
 
+def _find_clips(slug: str) -> list:
+    """Every clip available for this slug, for multi-shot cutting.
+
+    Falls back to whatever `_find_clip` resolves (local file or today's R2
+    variant) so a destination with no manifest entry still returns one clip
+    rather than nothing. Order is stable: base file first.
+    """
+    found = []
+    try:
+        from r2_videos import fetch_all as _r2_all
+        found = [Path(x) for x in _r2_all(slug, VIDEOS_DIR)]
+    except Exception:
+        found = []
+    found = [c for c in found if c.exists() and c.stat().st_size > 0]
+    if not found:
+        one = _find_clip(slug)
+        if one:
+            found = [one]
+    return found
+
+
+def _clip_dur(path: Path) -> float:
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                        "-of", "csv=p=0", str(path)], capture_output=True, text=True)
+    try:
+        return float(r.stdout.strip())
+    except ValueError:
+        return 0.0
+
+
+def _shot_list(clips: list, total_dur: float) -> list:
+    """(clip, start, dur) tuples covering total_dur, cutting every 1.8-2.4s.
+
+    Two rules matter and both come from the 2026-09-20 diagnosis, where every
+    reel was ONE 8s clip looped 3-4x:
+      * consecutive shots never come from the same source file while more than
+        one file exists, so the cut always reads as a cut;
+      * a (file, offset) pair is never reused until every other pair has been
+        spent, so an 8s clip yields 3-4 DISTINCT shots instead of the same
+        8 seconds returning at 0:08 and 0:16.
+    """
+    SEG = (2.4, 1.8, 2.2, 1.9)          # varied so the rhythm is not a metronome
+    MIN_TAKE = 1.6
+    pools = []                           # one queue of start-offsets per clip
+    for c in clips:
+        d = _clip_dur(c)
+        if d < MIN_TAKE:
+            continue
+        offs, t = [], 0.0
+        while t + MIN_TAKE <= d:
+            offs.append(round(t, 2))
+            t += 2.4
+        pools.append([c, offs, 0])       # [path, offsets, cursor]
+    if not pools:
+        return []
+
+    shots, filled, i, guard = [], 0.0, 0, 0
+    while filled < total_dur and guard < 400:
+        guard += 1
+        pool = pools[i % len(pools)]
+        i += 1
+        clip, offs, cur = pool
+        if cur >= len(offs):             # exhausted: restart, offset by half a
+            pool[2] = cur = 0            # segment so pass 2 is not pass 1 again
+            offs = [round(o + 1.2, 2) for o in offs]
+            pool[1] = offs
+        start = offs[cur]
+        pool[2] = cur + 1
+        dur = SEG[len(shots) % len(SEG)]
+        dur = min(dur, total_dur - filled)
+        if dur < 0.5:
+            break
+        shots.append((clip, start, round(dur, 2)))
+        filled += dur
+    return shots
+
+
 def _ff() -> str:
     return shutil.which("ffmpeg") or "/usr/bin/ffmpeg"
 
 
-def _build_background(clip: Optional[Path], total_dur: float, out: Path) -> Optional[Path]:
-    """Hook (0..LEAD): zoom-burst on a freeze frame. Body: the clip cropped to
-    9:16, looped to fill, with a light top+bottom scrim for caption legibility.
-    Returns a silent mp4 of length total_dur."""
+SCRIM = ("drawbox=x=0:y=0:w=iw:h=300:color=black@0.50:t=fill,"
+         "drawbox=x=0:y=ih-720:w=iw:h=240:color=black@0.18:t=fill,"
+         "drawbox=x=0:y=ih-480:w=iw:h=480:color=black@0.42:t=fill,"
+         "drawbox=x=0:y=0:w=iw:h=ih:color=black@0.10:t=fill")
+
+
+def _storyboard_shots(sb: dict, total_dur: float) -> list:
+    """(clip, start, dur) in BEAT order, from a storyboard.
+
+    This is what separates a reel from a slideshow: shot N is the shot the
+    narration at second N is talking about, because one beat owns the line, the
+    caption and the prompt. Round-robin `_shot_list` cannot do that, and every
+    reel before 2026-09-20 was round-robin at best.
+
+    A beat whose clip has not been generated yet is skipped and its time is
+    redistributed, so a half-filled queue degrades to a shorter shot list rather
+    than a failed render.
+    """
+    try:
+        import storyboard as _sb
+    except Exception:
+        return []
+    plan, shots = _sb.scale_beats(sb, total_dur), []
+    resolved = []
+    for name, secs in plan:
+        local = VIDEOS_DIR / name
+        if not (local.exists() and local.stat().st_size > 0):
+            try:
+                from r2_videos import fetch_named as _fn
+                local = _fn(name, VIDEOS_DIR)
+            except Exception:
+                local = None
+        if local and Path(local).exists():
+            resolved.append((Path(local), secs))
+    if not resolved:
+        return []
+    # Redistribute the time of any beat whose clip is still missing.
+    got = sum(s for _, s in resolved)
+    if got > 0 and abs(got - total_dur) > 0.05:
+        resolved = [(c, round(s * total_dur / got, 2)) for c, s in resolved]
+    # A BEAT IS A STORY UNIT, NOT A SHOT. Four beats over a 17s reel would mean
+    # 4+ second holds, which is the slow pacing the 09-20 rebuild exists to kill.
+    # So a beat longer than MAX_HOLD is sub-cut into 2-3 shots taken from
+    # DIFFERENT parts of that beat's own clip: the narrative stays in step with
+    # the voice, the cut rate stays at reel pace.
+    MAX_HOLD = 2.6
+    for clip, secs in resolved:
+        d = _clip_dur(clip)
+        n = max(1, min(3, int(secs // MAX_HOLD) + (1 if secs % MAX_HOLD > 0.6 else 0)))
+        piece = secs / n
+        # Spread the sub-shots across the clip, avoiding the first and last
+        # ~0.4s where Veo warp is worst.
+        usable = max(0.6, d - 0.8)
+        for k in range(n):
+            if d <= piece:
+                start = 0.0
+            else:
+                span = max(0.0, usable - piece)
+                start = round(0.4 + (span * k / max(1, n - 1) if n > 1 else span / 2), 2)
+            shots.append((clip, start, round(piece, 2)))
+    return shots
+
+
+def _build_multishot(clips: list, total_dur: float, out: Path,
+                     storyboard: dict = None) -> Optional[Path]:
+    """Cut total_dur of background from several distinct shots, no freeze frame.
+
+    Returns None on any failure so the caller can fall back to the old
+    single-clip path — a render that drops the day's reel is worse than a
+    render that looks like last week's.
+    """
+    shots = _storyboard_shots(storyboard, total_dur) if storyboard else []
+    if shots:
+        print(f"multishot: storyboard '{storyboard.get('format')}' "
+              f"({len(shots)} beats with clips)")
+    else:
+        if storyboard:
+            print("multishot: storyboard has no generated clips yet — "
+                  "falling back to round-robin b-roll")
+        shots = _shot_list(clips, total_dur)
+    if len(shots) < 2:
+        return None
+    ff = _ff(); td = out.parent
+    parts = []
+    for n, (clip, start, dur) in enumerate(shots):
+        seg = td / f"shot_{n:02d}.mp4"
+        vf = (f"crop=ih*9/16:ih:iw/2-ih*9/16/2:0,scale={REEL_W}:{REEL_H}:flags=lanczos,"
+              f"setsar=1,{SCRIM}")
+        r = subprocess.run([ff, "-y", "-ss", f"{start}", "-t", f"{dur}", "-i", str(clip),
+                            "-vf", vf, "-c:v", "libx264", "-preset", "fast", "-crf", "21",
+                            "-pix_fmt", "yuv420p", "-r", str(FPS), "-an", str(seg)],
+                           capture_output=True, text=True)
+        if r.returncode != 0 or not seg.exists() or seg.stat().st_size == 0:
+            print(f"multishot: segment {n} failed, falling back")
+            return None
+        parts.append(seg)
+    lst = td / "shots.txt"
+    lst.write_text("".join(f"file '{p}'\n" for p in parts))
+    r = subprocess.run([ff, "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
+                        "-c:v", "libx264", "-preset", "fast", "-crf", "21",
+                        "-pix_fmt", "yuv420p", "-r", str(FPS), "-t", f"{total_dur}",
+                        str(out)], capture_output=True, text=True)
+    if r.returncode != 0:
+        print("multishot concat failed:", r.stderr[-400:])
+        return None
+    srcs = len({str(c) for c, _, _ in shots})
+    print(f"multishot: {len(shots)} shots from {srcs} clip(s), "
+          f"avg {total_dur/len(shots):.1f}s per shot")
+    return out
+
+
+def _build_background(clip, total_dur: float, out: Path,
+                      storyboard: dict = None) -> Optional[Path]:
+    """Background for the reel. Accepts a single clip (legacy) or a list.
+
+    Multi-shot is the default since 2026-09-20; NAKSHIQ_MULTISHOT=0 reverts to
+    the looped single clip without a code change, because a flag is a control
+    and a comment is not.
+    """
     ff = _ff()
     td = out.parent
+    clips = [c for c in (clip if isinstance(clip, (list, tuple)) else [clip]) if c]
+    if clips and os.environ.get("NAKSHIQ_MULTISHOT", "1") != "0":
+        hit = _build_multishot(clips, total_dur, out, storyboard=storyboard)
+        if hit:
+            return hit
+    clip = clips[0] if clips else None
 
     if clip is None:
         # brand-colour fallback (rare in prod; never for preview here)
@@ -1842,10 +2060,7 @@ def _build_background(clip: Optional[Path], total_dur: float, out: Path) -> Opti
     # gentle scrim: darken top + bottom thirds so white captions/brand read,
     # keep the middle bright so the footage shows (v1 used a flat 45% which
     # killed the footage). gradient via two stacked boxes.
-    scrim = (f"drawbox=x=0:y=0:w=iw:h=300:color=black@0.50:t=fill,"
-             f"drawbox=x=0:y=ih-720:w=iw:h=240:color=black@0.18:t=fill,"
-             f"drawbox=x=0:y=ih-480:w=iw:h=480:color=black@0.42:t=fill,"
-             f"drawbox=x=0:y=0:w=iw:h=ih:color=black@0.10:t=fill")
+    scrim = SCRIM
     vf = (f"loop=loop={loops}:size={FPS*8}:start=0,"
           f"trim=duration={body_dur},setpts=PTS-STARTPTS,"
           f"crop=ih*9/16:ih:iw/2-ih*9/16/2:0,scale={REEL_W}:{REEL_H}:flags=lanczos,"
@@ -1923,7 +2138,8 @@ def _pick_music() -> Optional[Path]:
 def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
           voice_override: str = None, rate_override: str = None,
           pitch_override: str = None, eleven_override: str = None,
-          lang: str = "hi", spec: dict = None, hook: dict = None) -> Optional[dict]:
+          lang: str = "hi", spec: dict = None, hook: dict = None,
+          month: int = None, storyboard: dict = None) -> Optional[dict]:
     score_disp = _format_score(dest.get("score"))
     name = dest.get("name") or slug
 
@@ -1970,10 +2186,13 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         cues = _word_cues(bounds, cap_lines)
 
         # 3. ASS
-        ass = build_ass(cues, score_disp, name, total, tdp / "subs.ass", hook=hook)
+        ass = build_ass(cues, score_disp, name, total, tdp / "subs.ass", hook=hook,
+                        month=month)
         # 4. background
-        clip = _find_clip(slug)
-        bg = _build_background(clip, total, tdp / "bg.mp4")
+        clips = _find_clips(slug)
+        clip = clips[0] if clips else None
+        bg = _build_background(clips, total, tdp / "bg.mp4",
+                               storyboard=storyboard)
         if not bg:
             print("background build failed"); return None
         # 5. audio
@@ -2206,25 +2425,25 @@ def _arc_hook(fmt: str, name: str) -> Optional[dict]:
     name_uc = (name or "").upper()
     if fmt == "did_you_know":
         return {"kicker": "DID YOU KNOW", "slam": "?", "badge": "  " + name_uc + "  ",
-                "cta1": "SAVE THIS", "cta2": "more on nakshiq.com"}
+                "cta1": "SEND THIS", "cta2": "to someone who needs it · nakshiq.com"}
     if fmt == "this_vs_that":
         return {"kicker": "THIS OR THAT", "slam": "VS", "badge": "  " + name_uc + "  ",
-                "cta1": "SAVE THIS", "cta2": "honest calls · nakshiq.com"}
+                "cta1": "SEND THIS", "cta2": "settle the argument · nakshiq.com"}
     # 2026-08-02 — the four ported arcs need hooks for the SAME reason the two
     # above do: without one, build_ass() stamps the score visual and the reel
     # looks like a score reel no matter what the voice is saying.
     if fmt == "mini_guide":
         return {"kicker": "BEFORE YOU GO", "slam": "PREP", "badge": "  " + name_uc + "  ",
-                "cta1": "SAVE THIS", "cta2": "full checklist · nakshiq.com"}
+                "cta1": "SEND THIS", "cta2": "to whoever is packing · nakshiq.com"}
     if fmt == "listicle":
         return {"kicker": "WORTH IT NOW", "slam": "TOP 3", "badge": "  " + name_uc + "  ",
-                "cta1": "SAVE ALL 3", "cta2": "re-scored monthly · nakshiq.com"}
+                "cta1": "SEND ALL 3", "cta2": "re-scored monthly · nakshiq.com"}
     if fmt == "dont_go_here":
         return {"kicker": "WAIT ON THESE", "slam": "SKIP", "badge": "  GO: " + name_uc + "  ",
-                "cta1": "CHECK YOUR DATES", "cta2": "we publish low scores · nakshiq.com"}
+                "cta1": "SEND THIS", "cta2": "before they book · nakshiq.com"}
     if fmt == "before_after":
         return {"kicker": "RIGHT PLACE", "slam": "WRONG MONTH", "badge": "  " + name_uc + "  ",
-                "cta1": "SAVE FOR LATER", "cta2": "the month is the call · nakshiq.com"}
+                "cta1": "SEND THIS", "cta2": "the month is the call · nakshiq.com"}
     return None
 
 
@@ -2428,7 +2647,8 @@ def build_series_short(dry_run: bool = False, preview: bool = False,
 
     final_name = f"yt_short_{fmt}_{slug}_{lang}_{date.today().isoformat()}.mp4"
     out = (HERE / final_name) if preview else (Path(tempfile.gettempdir()) / final_name)
-    res = build(slug, dest, out, music=music, lang=lang, spec=spec, hook=hook)
+    res = build(slug, dest, out, music=music, lang=lang, spec=spec, hook=hook,
+                month=month)
     if not res:
         print("series: render failed")
         return None
@@ -2534,8 +2754,8 @@ def _arrival_hook(airport: dict) -> dict:
         "kicker": "FIRST HOUR IN INDIA",
         "slam": code,
         "badge": f"  {city}  ·  {code}  ",
-        "cta1": "SAVE THIS",
-        "cta2": "your first hour in India · nakshiq.com",
+        "cta1": "SEND THIS",
+        "cta2": "to whoever is landing · nakshiq.com",
     }
 
 

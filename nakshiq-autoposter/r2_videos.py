@@ -117,3 +117,88 @@ def fetch(slug: str, videos_dir: Path) -> Optional[Path]:
             return target
     except requests.RequestException:
         return None
+
+
+def variant_names(slug: str) -> list:
+    """Every clip filename this slug has in R2, base first.
+
+    The daily rotation (`variant_filename`) deliberately returns ONE file so a
+    re-run on the same day is stable. Multi-shot reels need the whole set at
+    once, which is a different question and gets its own function rather than a
+    flag on that one.
+    """
+    if not slug:
+        return []
+    try:
+        n = int(_variants().get(slug, 1))
+    except (TypeError, ValueError):
+        n = 1
+    if n <= 1:
+        return [f"{slug}.mp4"]
+    return [f"{slug}.mp4"] + [f"{slug}-{i}.mp4" for i in range(2, n + 1)]
+
+
+def fetch_all(slug: str, videos_dir: Path) -> list:
+    """Fetch every variant this slug has, returning the local paths that exist.
+
+    A missing variant is skipped, not fatal: the manifest can over-count if an
+    upload failed after the count was written (same hazard `fetch` guards). An
+    empty list means the destination has no clip at all, which callers must
+    treat exactly as `fetch` returning None.
+    """
+    import requests
+    if not slug:
+        return []
+    videos_dir.mkdir(parents=True, exist_ok=True)
+    out = []
+    for name in variant_names(slug):
+        target = videos_dir / name
+        if target.exists() and target.stat().st_size > 0:
+            out.append(target)
+            continue
+        try:
+            with requests.get(f"{R2_VIDEO_BASE}/{name}", stream=True,
+                              timeout=DOWNLOAD_TIMEOUT_SEC) as r:
+                if r.status_code == 404:
+                    continue
+                r.raise_for_status()
+                tmp = target.with_suffix(".mp4.tmp")
+                with open(tmp, "wb") as f:
+                    for chunk in r.iter_content(chunk_size=1 << 16):
+                        if chunk:
+                            f.write(chunk)
+                tmp.replace(target)
+                out.append(target)
+        except requests.RequestException:
+            continue
+    return out
+
+
+def fetch_named(name: str, videos_dir: Path) -> Optional[Path]:
+    """Fetch one clip by its exact R2 filename.
+
+    Storyboard beats address clips by beat name (`<slug>__<format>__b3.mp4`),
+    not by the slug rotation, so they need a lookup that does not go through
+    `variant_filename`.
+    """
+    import requests
+    if not name:
+        return None
+    videos_dir.mkdir(parents=True, exist_ok=True)
+    target = videos_dir / name
+    if target.exists() and target.stat().st_size > 0:
+        return target
+    try:
+        with requests.get(f"{R2_VIDEO_BASE}/{name}", stream=True,
+                          timeout=DOWNLOAD_TIMEOUT_SEC) as resp:
+            if resp.status_code != 200:
+                return None
+            tmp = target.with_suffix(".mp4.tmp")
+            with open(tmp, "wb") as f:
+                for chunk in resp.iter_content(chunk_size=1 << 16):
+                    if chunk:
+                        f.write(chunk)
+            tmp.replace(target)
+            return target
+    except requests.RequestException:
+        return None
