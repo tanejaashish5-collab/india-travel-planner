@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ashish.supabase-recovery-watch</string>
+
+  <!-- Runs via /bin/bash DELIBERATELY, same reasoning as com.ashish.ga4-audit:
+       TCC is per-executable and /bin/bash already holds Full Disk Access on
+       this machine, so it can read the repo under ~/Desktop; and launchd has a
+       login-keychain session, so `gh` can supply the git credentials this job
+       needs to push. cron gets the files but not the keychain. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/supabase-recovery-watch.sh</string>
+  </array>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <!-- Every 15 minutes. StartInterval rather than StartCalendarInterval
+       because this is a "wait for an external thing to recover" job, not a
+       scheduled report, and Supabase said the fix rolls out across the whole
+       weekend. It fires ONCE on recovery and then unloads itself, so a short
+       interval costs nothing after that. -->
+  <key>StartInterval</key><integer>900</integer>
+
+  <!-- Run on load so the first reading is immediate rather than 15 minutes
+       away; the script is a no-op while Supabase is still degraded. -->
+  <key>RunAtLoad</key><true/>
+
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/supabase-recovery-watch.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/supabase-recovery-watch.log</string>
+</dict>
+</plist>
