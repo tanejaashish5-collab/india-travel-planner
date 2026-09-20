@@ -397,8 +397,12 @@ export default async function FestivalDetailPage({
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
       { "@type": "ListItem", position: 2, name: "Festivals", item: `https://www.nakshiq.com/${locale}/festivals` },
-      { "@type": "ListItem", position: 3, name: monthName, item: `https://www.nakshiq.com/${locale}/festivals/month/${monthName.toLowerCase()}` },
-      { "@type": "ListItem", position: 4, name: f.name, item: pageUrl },
+      // Only include the month crumb when monthName is non-empty — f.month=0 or null produces
+      // monthName="" which GSC rejects as "name should be specified".
+      ...(monthName
+        ? [{ "@type": "ListItem", position: 3, name: monthName, item: `https://www.nakshiq.com/${locale}/festivals/month/${monthName.toLowerCase()}` }]
+        : []),
+      { "@type": "ListItem", position: monthName ? 4 : 3, name: f.name, item: pageUrl },
     ],
   };
 
