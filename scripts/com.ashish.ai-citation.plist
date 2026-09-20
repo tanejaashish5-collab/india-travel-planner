@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ashish.ai-citation</string>
+
+  <!-- Runs via /bin/bash DELIBERATELY, for the same two reasons as
+       com.ashish.ga4-audit: TCC is per-executable and /bin/bash already holds
+       Full Disk Access on this machine (so it can read the repo under
+       ~/Desktop), and launchd has a login-keychain session so `gh` can supply
+       git credentials for the push. cron has the files but not the keychain.
+
+       There is a THIRD reason specific to this job: Google captchas headless
+       Chromium, so the probe runs HEADFUL and needs a real window server.
+       A LaunchAgent in the user's Aqua session has one; cron does not. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/ai-citation-probe-cron.sh</string>
+  </array>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <!-- Weekly, Monday 10:20. Deliberately NOT daily: Google rate-limits bursts
+       from one IP (observed 2026-09-20 — a second run minutes after a 12-query
+       run came back 100% blocked), and citation rates move on the timescale of
+       content and links, not hours. Monday morning also puts the reading in
+       front of the week's SEO decisions. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>10</integer><key>Minute</key><integer>20</integer></dict>
+  </array>
+
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/ai-citation-probe.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/ai-citation-probe.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
