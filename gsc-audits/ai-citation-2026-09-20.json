@@ -2,12 +2,12 @@
   "ok": true,
   "date": "2026-09-20",
   "controlQuery": "lansdowne vs kasauli",
-  "controlStatus": "blocked",
-  "probed": 14,
-  "succeeded": 13,
-  "blocked": 2,
+  "controlStatus": "pass",
+  "probed": 8,
+  "succeeded": 8,
+  "blocked": 0,
   "errored": 0,
-  "withAiOverview": 13,
+  "withAiOverview": 8,
   "citedCount": 0,
   "citationRate": 0,
   "results": [
@@ -17,7 +17,24 @@
       "impressions": null,
       "position": null,
       "isControl": true,
-      "status": "blocked"
+      "status": "ok",
+      "hasAiOverview": true,
+      "citedInAiOverview": true,
+      "citedSources": [
+        "Lansdowne"
+      ],
+      "firstOrganicY": 478,
+      "pageHeight": 2909,
+      "organicRankVisible": 2,
+      "topOrganic": [
+        "AI Mode replied:",
+        "Lansdowne vs Kasauli: Which Is Better? Weather, Cost ...",
+        "AI Mode replied:",
+        "Which is better for scenic beauty, Kasauli or Lansdowne, ...",
+        "Hello Guys any suggestions where to visit in May Kasauli ...",
+        "Lansdowne to Kasauli - 6 ways to travel via train, taxi, bus ..."
+      ],
+      "aiOverviewExcerpt": "AI Overview Kasauli and Lansdowne are both quiet, colonial-era cantonment towns, but the better choice depends on whether you want a quieter, less commercial escape or easier access and charm. Facebook ·The Himalayan Club +2 Overview and Location Kasauli: Located in the Solan district of Himachal Pradesh. It sits at an altitude of about 1,900 meters and is easily accessed via Chandigarh or Delhi. "
     },
     {
       "query": "जैसलमेर घूमने का खर्चा",
@@ -25,7 +42,25 @@
       "impressions": 678,
       "position": 8.6,
       "isControl": false,
-      "status": "blocked"
+      "status": "ok",
+      "hasAiOverview": true,
+      "citedInAiOverview": false,
+      "citedSources": [
+        "YouTube",
+        "10"
+      ],
+      "firstOrganicY": 1206,
+      "pageHeight": 3497,
+      "organicRankVisible": 8,
+      "topOrganic": [
+        "AI Mode replied:",
+        "AI Mode replied:",
+        "जैसलमेर घूमने का खर्चा 5 लोगों का सिर्फ 7000 ही आया, यहां ...",
+        "जैसलमेर की बजट यात्रा 2026: संपूर्ण लागत गाइड",
+        "Jaisalmer Budget Trip 2026: Complete Cost Guide",
+        "जैसलमेर टूर पैकेज मात्र ₹800 से शुरू | किला और हवेली भ्रमण"
+      ],
+      "aiOverviewExcerpt": "AI Overview जैसलमेर घूमने का 3 दिन का कुल खर्च प्रति व्यक्ति लगभग ₹5,000 से ₹10,000 के बीच आता है, जो आपके रहने और खाने के तरीके पर निर्भर करता है। JCR Desert Safari Camp +1 प्रमुख खर्चों का विवरण रहना (Accommodation): जैसलमेर में सामान्य होटल ₹1,000 से ₹3,000 प्रति रात और रेगिस्तान के कैंप (साम सैंड ड्यून्स) ₹1,200 से ₹3,000 प्रति व्यक्ति (खाने और सांस्कृतिक कार्यक्रमों सहित) मिल जाते हैं। YouTub"
     },
     {
       "query": "मसूरी घूमने का खर्च",
@@ -36,17 +71,23 @@
       "status": "ok",
       "hasAiOverview": true,
       "citedInAiOverview": false,
-      "citedSources": [],
-      "firstOrganicY": 1787,
-      "pageHeight": 3670,
-      "organicRankVisible": 6,
+      "citedSources": [
+        "स्वॉन टूर्स",
+        "अमर उजाला",
+        "4m",
+        "YouTube",
+        "10"
+      ],
+      "firstOrganicY": 1637,
+      "pageHeight": 3520,
+      "organicRankVisible": 7,
       "topOrganic": [
+        "AI Mode replied:",
         "AI Mode replied:",
         "मसूरी में 3 रातें 4 दिन का पैकेज",
         "3 Nights 4 Days Package in Mussoorie - Swan Tours",
         "मसूरी, ऋषिकेश और हरिद्वार की बजट यात्रा",
-        "Budget Trip to Mussoorie, Rishikesh Haridwar - Tripoto",
-        "मसूरी यात्रा खर्च (2026): 2–10 दिन का बजट"
+        "Budget Trip to Mussoorie, Rishikesh Haridwar - Tripoto"
       ],
       "aiOverviewExcerpt": "AI Overview मसूरी घूमने का कुल खर्च आपके यात्रा के तरीके और बजट पर निर्भर करता है, जो प्रति व्यक्ति लगभग ₹2,500 से लेकर ₹15,000 या अधिक हो सकता है। Wander Nova +1 खर्च का विवरण (प्रति दिन / प्रति व्यक्ति) रहना (होटल/हॉस्टल): बजट हॉस्टल या गेस्टहाउस ₹300 से ₹1,000 प्रति रात में मिल जाते हैं। सामान्य होटल ₹1,500 से ₹2,500 तक होते हैं। YouTube ·Distance between +2 आना-जाना (परिवहन): देहरादून से मसूरी"
     },
@@ -61,18 +102,21 @@
       "citedInAiOverview": false,
       "citedSources": [
         "India 2-1",
-        "▸ 3:21"
+        "Match recap·14:14",
+        "Match recap·3:21",
+        "YouTube",
+        "10"
       ],
-      "firstOrganicY": 1428,
-      "pageHeight": 3634,
-      "organicRankVisible": 6,
+      "firstOrganicY": 1363,
+      "pageHeight": 3563,
+      "organicRankVisible": 5,
       "topOrganic": [
         "AI Mode replied:",
         "Vietnam vs India live score, H2H and lineups",
         "Country comparison: India / Vietnam",
         "Vietnam 2-1 India (4 Mar, 2026) Final Score",
-        "VIETNAM snatch opener in stoppage time! | Vietnam - India ...",
-        "India vs Vietnam — Honest Comparison for Travelers ..."
+        "India vs Vietnam — Honest Comparison for Travelers ...",
+        "Size of Vietnam compared to India"
       ],
       "aiOverviewExcerpt": "AI Overview Vietnam defeated India 2-1 in their opening match of Group C at the AFC Women's Asian Cup on March 4, 2026. YouTube ·Indian Football +1 Match Summary Date: March 4, 2026 Location: Perth Rectangular Stadium, Perth, Australia Final Score: Vietnam 2, India 1 Goals for Vietnam: Nguyen Thi Van Su (30', 90+4') Goal for India: Sanfida Nongrum (52') YouTube ·Indian Football Country Comparison "
     },
@@ -86,10 +130,12 @@
       "hasAiOverview": true,
       "citedInAiOverview": false,
       "citedSources": [
-        "India 2-1"
+        "India 2-1",
+        "YouTube",
+        "10"
       ],
-      "firstOrganicY": 628,
-      "pageHeight": 3012,
+      "firstOrganicY": 478,
+      "pageHeight": 2862,
       "organicRankVisible": 5,
       "topOrganic": [
         "AI Mode replied:",
@@ -110,14 +156,20 @@
       "status": "ok",
       "hasAiOverview": true,
       "citedInAiOverview": false,
-      "citedSources": [],
-      "firstOrganicY": 628,
-      "pageHeight": 3356,
+      "citedSources": [
+        "MakeMyTrip Jaisalmer Packages",
+        "Thrillophilia Jaisalmer Tours",
+        "Jaisalmer Fort",
+        "Jaisalmer Tour Packages",
+        "10"
+      ],
+      "firstOrganicY": 769,
+      "pageHeight": 2667,
       "organicRankVisible": null,
       "topOrganic": [
         "AI Mode replied:",
-        "Jaisalmer Tour Packages Starts 𝐚𝐭 ₹12038 𝘽𝙤𝙤𝙠 𝙉𝙤𝙬!",
         "AI Mode replied:",
+        "Jaisalmer Tour Packages Starts 𝐚𝐭 ₹12038 𝘽𝙤𝙤𝙠 𝙉𝙤𝙬!",
         "Jaisalmer Tour Packages",
         "Jaisalmer Tour Package for Couple: Best Price starts @7599",
         "Book Jaisalmer Tour Packages Online - Rs. 7500/PP"
@@ -133,17 +185,20 @@
       "status": "ok",
       "hasAiOverview": true,
       "citedInAiOverview": false,
-      "citedSources": [],
-      "firstOrganicY": 1832,
-      "pageHeight": 3433,
-      "organicRankVisible": 7,
+      "citedSources": [
+        "YouTube",
+        "10"
+      ],
+      "firstOrganicY": 1682,
+      "pageHeight": 3283,
+      "organicRankVisible": 8,
       "topOrganic": [
+        "AI Mode replied:",
         "AI Mode replied:",
         "जैसलमेर घूमने के लिए कम्पलीट टूर प्लान ! Jaisalmer Tour",
         "जैसलमेर की बजट यात्रा 2026: संपूर्ण लागत गाइड",
         "Jaisalmer Budget Trip 2026: Complete Cost Guide",
-        "जैसलमेर घूमने का खर्चा 5 लोगों का सिर्फ 7000 ही आया, यहां ...",
-        "Jaisalmer Girls Trip:दो दिन की जैसलमेर ट्रिप पर है जाना? जानिए ..."
+        "जैसलमेर घूमने का खर्चा 5 लोगों का सिर्फ 7000 ही आया, यहां ..."
       ],
       "aiOverviewExcerpt": "AI Overview जैसलमेर घूमने का 3 दिन का कुल खर्च प्रति व्यक्ति लगभग ₹5,000 से ₹10,000 के बीच आता है, जो आपके रहने और खाने के तरीके पर निर्भर करता है। JCR Desert Safari Camp +1 प्रमुख खर्चों का विवरण रहना (Accommodation): जैसलमेर में सामान्य होटल ₹1,000 से ₹3,000 प्रति रात और रेगिस्तान के कैंप (साम सैंड ड्यून्स) ₹1,200 से ₹3,000 प्रति व्यक्ति (खाने और सांस्कृतिक कार्यक्रमों सहित) मिल जाते हैं। YouTub"
     },
@@ -157,10 +212,10 @@
       "hasAiOverview": true,
       "citedInAiOverview": false,
       "citedSources": [
-        "Nagpur vs Pune"
+        "Which is a better city Pune or Nagpur?"
       ],
-      "firstOrganicY": 628,
-      "pageHeight": 2912,
+      "firstOrganicY": 478,
+      "pageHeight": 2762,
       "organicRankVisible": 11,
       "topOrganic": [
         "AI Mode replied:",
@@ -184,8 +239,8 @@
       "citedSources": [
         "Shimla"
       ],
-      "firstOrganicY": 628,
-      "pageHeight": 3429,
+      "firstOrganicY": 478,
+      "pageHeight": 3279,
       "organicRankVisible": 8,
       "topOrganic": [
         "AI Mode replied:",
@@ -196,155 +251,6 @@
         "Manali vs Shimla vs Mussoorie: Which Hill Station You ..."
       ],
       "aiOverviewExcerpt": "AI Overview Choose Shimla for a large colonial city with a wide sightseeing circuit, or Mussoorie for a compact resort town focused on quiet walks, valley views, and cafés. Travel Coffee Key Differences Vibe: Shimla feels like a bustling hill capital with grand historic buildings, large pedestrian promenades, and structured sightseeing. Mussoorie feels like a laid-back ridge town known for scenic "
-    },
-    {
-      "query": "manali jane ka kharcha",
-      "page": "/hi/cost/manali",
-      "impressions": 84,
-      "position": 10,
-      "isControl": false,
-      "status": "ok",
-      "hasAiOverview": true,
-      "citedInAiOverview": false,
-      "citedSources": [
-        "8,500 रुपये से 18,000 रुपये",
-        "YouTube"
-      ],
-      "firstOrganicY": 1787,
-      "pageHeight": 3410,
-      "organicRankVisible": null,
-      "topOrganic": [
-        "AI Mode replied:",
-        "2026 में मनाली यात्रा की लागत कितनी है - बजाज फाइनेंस",
-        "मनाली की यात्रा में कितना खर्च आता है?",
-        "How Much Does a Manali Trip Cost? - SOTC",
-        "Manali Trip Budget 2026 – Complete Expense Guide ...",
-        "मनाली ट्रिप का कितना खर्चा आएगा? (4 दिन) : r/india_tourism"
-      ],
-      "aiOverviewExcerpt": "AI Overview मनाली घूमने का 4-5 दिन का प्रति व्यक्ति खर्च आमतौर पर 8,500 रुपये से 18,000 रुपये तक आता है। Bajaj Finserv मुख्य खर्चे आवास (होटल/स्टे): बजट रूम 500 से 1,000 रुपये प्रति रात, और 3-स्टार होटल 3,500 से 6,000 रुपये प्रति रात तक मिलते हैं। YouTube ·MukuBom +2 आना-जाना (परिवहन): दिल्ली या चंडीगढ़ से वोल्वो बस का किराया दोनों तरफ का लगभग 1,000 से 2,000 रुपये होता है। YouTube ·MukuBom खाना-पी"
-    },
-    {
-      "query": "jaisalmer ghumne me kitna kharcha aayega",
-      "page": "/hi/cost/jaisalmer",
-      "impressions": 80,
-      "position": 5.4,
-      "isControl": false,
-      "status": "ok",
-      "hasAiOverview": true,
-      "citedInAiOverview": false,
-      "citedSources": [],
-      "firstOrganicY": 1509,
-      "pageHeight": 3475,
-      "organicRankVisible": 4,
-      "topOrganic": [
-        "AI Mode replied:",
-        "जैसलमेर की बजट यात्रा 2026: संपूर्ण लागत गाइड",
-        "Jaisalmer Budget Trip 2026: Complete Cost Guide",
-        "जैसलमेर यात्रा खर्च (2026): 2–10 दिन का बजट",
-        "जैसलमेर का 3 रात 4 दिन का टूर पैकेज - यात्रा की शुरुआत ₹7999",
-        "3 Nights 4 Days Jaisalmer Tour Package - Trip Starts Rs.7999/-"
-      ],
-      "aiOverviewExcerpt": "AI Overview जैसलमेर घूमने का 3 दिन का कुल खर्च प्रति व्यक्ति लगभग ₹5,000 से ₹10,000 के बीच आता है, जो आपके रहने और खाने के तरीके पर निर्भर करता है। JCR Desert Safari Camp +1 प्रमुख खर्चों का विवरण रहना (Accommodation): जैसलमेर में सामान्य होटल ₹1,000 से ₹3,000 प्रति रात और रेगिस्तान के कैंप (साम सैंड ड्यून्स) ₹1,200 से ₹3,000 प्रति व्यक्ति (खाने और सांस्कृतिक कार्यक्रमों सहित) मिल जाते हैं। YouTub"
-    },
-    {
-      "query": "mussoorie vs shimla",
-      "page": "/en/vs/shimla-vs-mussoorie",
-      "impressions": 75,
-      "position": 8.2,
-      "isControl": false,
-      "status": "ok",
-      "hasAiOverview": true,
-      "citedInAiOverview": false,
-      "citedSources": [
-        "Shimla"
-      ],
-      "firstOrganicY": 1356,
-      "pageHeight": 3141,
-      "organicRankVisible": 7,
-      "topOrganic": [
-        "AI Mode replied:",
-        "Shimla vs Mussoorie in 2026: Which Hill Station Is Better?",
-        "Shimla Vs Mussourie - Which of them has better Mall Road?",
-        "Which is better Manali, Shimla, Mussoorie, Kausani or ...",
-        "Manali vs Shimla vs Mussoorie: Which Hill Station You ...",
-        "Shimla or Mussoorie: Essential Guide for Remote Work"
-      ],
-      "aiOverviewExcerpt": "AI Overview Choose Shimla for a large colonial city with a wide sightseeing circuit, or Mussoorie for a compact resort town focused on quiet walks, valley views, and cafés. Travel Coffee Key Differences Vibe: Shimla feels like a bustling hill capital with grand historic buildings, large pedestrian promenades, and structured sightseeing. Mussoorie feels like a laid-back ridge town known for scenic "
-    },
-    {
-      "query": "shimla or mussoorie which is better",
-      "page": "/en/vs/shimla-vs-mussoorie",
-      "impressions": 73,
-      "position": 7.7,
-      "isControl": false,
-      "status": "ok",
-      "hasAiOverview": true,
-      "citedInAiOverview": false,
-      "citedSources": [
-        "Travel Coffee"
-      ],
-      "firstOrganicY": 628,
-      "pageHeight": 3212,
-      "organicRankVisible": null,
-      "topOrganic": [
-        "AI Mode replied:",
-        "Shimla vs Mussoorie in 2026: Which Hill Station Is Better?",
-        "AI Mode replied:",
-        "Which one is most beautiful Shimla or Mussoorie?",
-        "Shimla or Mussoorie: Essential Guide for Remote Work",
-        "Manali vs Shimla vs Mussoorie: Which Hill Station You ..."
-      ],
-      "aiOverviewExcerpt": "AI Overview Neither hill station is objectively better, because Shimla offers rich colonial heritage and toy train rides, while Mussoorie provides a closer and quieter valley retreat. You can read a complete breakdown on Travel Coffee. Choose Shimla If You Want: Colonial Heritage: Beautiful British-era buildings and a grand pedestrian zone along the Ridge and Mall Road. Travel Coffee +1 The Toy Tr"
-    },
-    {
-      "query": "manali jane ka kharcha kitna hai",
-      "page": "/hi/cost/manali",
-      "impressions": 72,
-      "position": 9.8,
-      "isControl": false,
-      "status": "ok",
-      "hasAiOverview": true,
-      "citedInAiOverview": false,
-      "citedSources": [
-        "8,500 रुपये से 18,000 रुपये"
-      ],
-      "firstOrganicY": 1356,
-      "pageHeight": 3471,
-      "organicRankVisible": null,
-      "topOrganic": [
-        "AI Mode replied:",
-        "2026 में मनाली यात्रा की लागत कितनी है - बजाज फाइनेंस",
-        "मनाली की यात्रा में कितना खर्च आता है?",
-        "How Much Does a Manali Trip Cost? - SOTC",
-        "Manali Tour Packages Starts 𝐚𝐭 ₹6275 𝘽𝙤𝙤𝙠 𝙉𝙤𝙬!",
-        "Manali Trip Budget 2026 – Complete Expense Guide ..."
-      ],
-      "aiOverviewExcerpt": "AI Overview मनाली घूमने का 4-5 दिन का प्रति व्यक्ति खर्च आमतौर पर 8,500 रुपये से 18,000 रुपये तक आता है। Bajaj Finserv मुख्य खर्चे आवास (होटल/स्टे): बजट रूम 500 से 1,000 रुपये प्रति रात, और 3-स्टार होटल 3,500 से 6,000 रुपये प्रति रात तक मिलते हैं। YouTube ·MukuBom +2 आना-जाना (परिवहन): दिल्ली या चंडीगढ़ से वोल्वो बस का किराया दोनों तरफ का लगभग 1,000 से 2,000 रुपये होता है। YouTube ·MukuBom खाना-पी"
-    },
-    {
-      "query": "is vietnam better than india",
-      "page": "/en/india-vs/vietnam",
-      "impressions": 64,
-      "position": 6.8,
-      "isControl": false,
-      "status": "ok",
-      "hasAiOverview": true,
-      "citedInAiOverview": false,
-      "citedSources": [
-        "Worlddata.info Country Comparison"
-      ],
-      "firstOrganicY": 628,
-      "pageHeight": 3190,
-      "organicRankVisible": 9,
-      "topOrganic": [
-        "AI Mode replied:",
-        "We need to have every Indian travel to a “lesser developed ...",
-        "AI Mode replied:",
-        "Why does Vietnam look much more modern and ...",
-        "Country comparison: India / Vietnam",
-        "The India vs Vietnam Question"
-      ],
-      "aiOverviewExcerpt": "AI Overview Whether Vietnam or India is better depends on what you want as a traveler, investor, or job seeker, as you can see on data portals like Worlddata.info Country Comparison. Both countries offer rich cultures and growing economies, but they provide very different daily experiences and structural advantages. Travel and Tourism Vietnam: Offers cleaner streets, a calmer and more organized pu"
     }
   ]
 }
