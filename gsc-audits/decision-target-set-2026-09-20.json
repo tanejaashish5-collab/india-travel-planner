@@ -1,0 +1,4312 @@
+{
+  "createdAt": "2026-09-20T11:20:23.605Z",
+  "window": {
+    "startDate": "2026-08-21",
+    "endDate": "2026-09-17"
+  },
+  "definition": "decision-intent queries at GSC position 5.1-10.0 in the 28d window ending 2026-09-17",
+  "baseline": {
+    "queries": 381,
+    "pages": 151,
+    "impressions": 6516,
+    "clicks": 21,
+    "ctr": 0.322,
+    "avgPosition": 7.54
+  },
+  "reference": {
+    "decisionTop3Ctr": 4.24,
+    "clicksIfCohortReachedTop3": 276
+  },
+  "preRegistered": {
+    "target": "clicks >= 100 AND avg position <= 4.5",
+    "by": "2026-11-15",
+    "note": "A miss is a finding, not a failure: it would mean position is not the binding constraint on this cohort, and the next hypothesis is query-level demand seasonality."
+  },
+  "targets": [
+    {
+      "query": "जैसलमेर घूमने का खर्चा",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 678,
+      "clicks": 2,
+      "position": 8.6
+    },
+    {
+      "query": "मसूरी घूमने का खर्च",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 284,
+      "clicks": 1,
+      "position": 7.2
+    },
+    {
+      "query": "vietnam vs india",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 250,
+      "clicks": 3,
+      "position": 7.3
+    },
+    {
+      "query": "india vs vietnam",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 112,
+      "clicks": 1,
+      "position": 5.9
+    },
+    {
+      "query": "jaisalmer trip cost",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 100,
+      "clicks": 0,
+      "position": 9.6
+    },
+    {
+      "query": "jaisalmer ghumne ka kharcha",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 96,
+      "clicks": 0,
+      "position": 6.3
+    },
+    {
+      "query": "nagpur vs pune",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 92,
+      "clicks": 0,
+      "position": 7.5
+    },
+    {
+      "query": "shimla vs mussoorie",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 90,
+      "clicks": 0,
+      "position": 8.8
+    },
+    {
+      "query": "manali jane ka kharcha",
+      "page": "/hi/cost/manali",
+      "impressions": 84,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "jaisalmer ghumne me kitna kharcha aayega",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 80,
+      "clicks": 1,
+      "position": 5.4
+    },
+    {
+      "query": "mussoorie vs shimla",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 75,
+      "clicks": 0,
+      "position": 8.2
+    },
+    {
+      "query": "shimla or mussoorie which is better",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 73,
+      "clicks": 0,
+      "position": 7.7
+    },
+    {
+      "query": "manali jane ka kharcha kitna hai",
+      "page": "/hi/cost/manali",
+      "impressions": 72,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "is vietnam better than india",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 64,
+      "clicks": 0,
+      "position": 6.8
+    },
+    {
+      "query": "coorg vs kodaikanal",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 61,
+      "clicks": 1,
+      "position": 6.6
+    },
+    {
+      "query": "pune vs nagpur",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 59,
+      "clicks": 0,
+      "position": 7.9
+    },
+    {
+      "query": "coorg or kodaikanal which is better",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 58,
+      "clicks": 0,
+      "position": 6.9
+    },
+    {
+      "query": "manali jane me kitna kharcha aayega",
+      "page": "/hi/cost/manali",
+      "impressions": 56,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "mussoorie vs nainital",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 54,
+      "clicks": 0,
+      "position": 9.7
+    },
+    {
+      "query": "haflong trip cost",
+      "page": "/en/cost/haflong",
+      "impressions": 51,
+      "clicks": 1,
+      "position": 5.6
+    },
+    {
+      "query": "morocco vs india",
+      "page": "/en/india-vs/morocco",
+      "impressions": 50,
+      "clicks": 0,
+      "position": 7.8
+    },
+    {
+      "query": "udupi vs mangalore",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 47,
+      "clicks": 1,
+      "position": 7.4
+    },
+    {
+      "query": "pune vs nagpur which is better",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 47,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "kalpa trip budget",
+      "page": "/en/cost/kalpa",
+      "impressions": 46,
+      "clicks": 0,
+      "position": 5.2
+    },
+    {
+      "query": "mangalore vs udupi",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 44,
+      "clicks": 1,
+      "position": 7
+    },
+    {
+      "query": "manali ghumne me kitna kharcha aayega",
+      "page": "/hi/cost/manali",
+      "impressions": 44,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "alleppey or varkala which is better",
+      "page": "/en/vs/varkala-vs-alleppey",
+      "impressions": 43,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "vijayawada vs visakhapatnam",
+      "page": "/en/vs/visakhapatnam-vs-vijayawada",
+      "impressions": 43,
+      "clicks": 0,
+      "position": 6.3
+    },
+    {
+      "query": "alleppey vs varkala",
+      "page": "/en/vs/varkala-vs-alleppey",
+      "impressions": 41,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "varkala vs pondicherry",
+      "page": "/en/vs/varkala-vs-pondicherry",
+      "impressions": 40,
+      "clicks": 1,
+      "position": 5.3
+    },
+    {
+      "query": "coorg or sakleshpur which is better",
+      "page": "/en/vs/coorg-vs-sakleshpur",
+      "impressions": 40,
+      "clicks": 0,
+      "position": 7.5
+    },
+    {
+      "query": "mussoorie or shimla which is better",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 39,
+      "clicks": 0,
+      "position": 8.5
+    },
+    {
+      "query": "mussoorie trip cost for 3 days",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 39,
+      "clicks": 0,
+      "position": 8.9
+    },
+    {
+      "query": "shimla vs mussoorie which is better",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 39,
+      "clicks": 0,
+      "position": 7.6
+    },
+    {
+      "query": "gandikota best time to visit",
+      "page": "/en/destination/gandikota",
+      "impressions": 38,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "kodaikanal vs coorg",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 38,
+      "clicks": 0,
+      "position": 7.1
+    },
+    {
+      "query": "cuttack vs bhubaneswar",
+      "page": "/en/vs/cuttack-vs-bhubaneswar",
+      "impressions": 37,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "jaisalmer ghumne mein kitna kharcha aata hai",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 37,
+      "clicks": 0,
+      "position": 5.4
+    },
+    {
+      "query": "coimbatore vs trichy",
+      "page": "/en/vs/trichy-vs-coimbatore",
+      "impressions": 36,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "mussoorie trip cost for 5 days",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 36,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "nainital or shimla which is better",
+      "page": "/en/vs/shimla-vs-nainital",
+      "impressions": 36,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "shimla vs nainital",
+      "page": "/en/vs/shimla-vs-nainital",
+      "impressions": 35,
+      "clicks": 0,
+      "position": 5.6
+    },
+    {
+      "query": "best time to visit bihar",
+      "page": "/en/blog/best-time-to-visit-bihar",
+      "impressions": 34,
+      "clicks": 0,
+      "position": 9.9
+    },
+    {
+      "query": "pachmarhi trip cost for 2 days",
+      "page": "/hi/cost/pachmarhi",
+      "impressions": 34,
+      "clicks": 0,
+      "position": 8.9
+    },
+    {
+      "query": "पचमढ़ी घूमने का खर्चा",
+      "page": "/hi/cost/pachmarhi",
+      "impressions": 33,
+      "clicks": 0,
+      "position": 6.8
+    },
+    {
+      "query": "meghalaya or darjeeling which is better",
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "impressions": 32,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "mussoorie trip cost",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 32,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "varkala or pondicherry which is better",
+      "page": "/en/vs/varkala-vs-pondicherry",
+      "impressions": 32,
+      "clicks": 0,
+      "position": 5.8
+    },
+    {
+      "query": "darjeeling or meghalaya which is better",
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "impressions": 31,
+      "clicks": 1,
+      "position": 7.3
+    },
+    {
+      "query": "jaisalmer ghumne mein kitna kharcha aaega",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 31,
+      "clicks": 0,
+      "position": 5.1
+    },
+    {
+      "query": "jaisalmer trip cost for 5 days",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 31,
+      "clicks": 0,
+      "position": 8.4
+    },
+    {
+      "query": "sakleshpur or coorg which is better",
+      "page": "/en/vs/coorg-vs-sakleshpur",
+      "impressions": 31,
+      "clicks": 0,
+      "position": 7.1
+    },
+    {
+      "query": "kodaikanal or coorg which is better",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 29,
+      "clicks": 0,
+      "position": 7.1
+    },
+    {
+      "query": "sakleshpur vs coorg",
+      "page": "/en/vs/coorg-vs-sakleshpur",
+      "impressions": 29,
+      "clicks": 0,
+      "position": 7.9
+    },
+    {
+      "query": "shimla or nainital which is better",
+      "page": "/en/vs/shimla-vs-nainital",
+      "impressions": 28,
+      "clicks": 1,
+      "position": 5.1
+    },
+    {
+      "query": "coorg vs sakleshpur",
+      "page": "/en/vs/coorg-vs-sakleshpur",
+      "impressions": 28,
+      "clicks": 0,
+      "position": 7.9
+    },
+    {
+      "query": "mussoorie ghumne ka kharcha",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 28,
+      "clicks": 0,
+      "position": 5.8
+    },
+    {
+      "query": "bikaner or jaisalmer which is better",
+      "page": "/en/vs/jaisalmer-vs-bikaner",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 8.1
+    },
+    {
+      "query": "india vs egypt",
+      "page": "/en/india-vs/egypt",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 8.7
+    },
+    {
+      "query": "jaisalmer kharcha kitna aata hai",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 5
+    },
+    {
+      "query": "thrissur vs kozhikode",
+      "page": "/en/vs/kozhikode-vs-thrissur",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 7.3
+    },
+    {
+      "query": "which is better shimla or mussoorie",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 7.7
+    },
+    {
+      "query": "jaisalmer ka kharcha",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 26,
+      "clicks": 0,
+      "position": 6.6
+    },
+    {
+      "query": "mangalore or udupi which is better",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 26,
+      "clicks": 0,
+      "position": 6.3
+    },
+    {
+      "query": "nainital vs mussoorie which is better",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 26,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "netarhat trip budget for 2 days",
+      "page": "/en/cost/netarhat",
+      "impressions": 26,
+      "clicks": 0,
+      "position": 7.3
+    },
+    {
+      "query": "जैसलमेर घूमने में कितना खर्चा आएगा",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 26,
+      "clicks": 0,
+      "position": 6.9
+    },
+    {
+      "query": "bikaner vs jaisalmer",
+      "page": "/en/vs/jaisalmer-vs-bikaner",
+      "impressions": 25,
+      "clicks": 0,
+      "position": 8.6
+    },
+    {
+      "query": "manali jane me kitna kharcha aata hai",
+      "page": "/hi/cost/manali",
+      "impressions": 25,
+      "clicks": 0,
+      "position": 9.6
+    },
+    {
+      "query": "mussoorie vs nainital which is better",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 25,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "nainital vs shimla which is better",
+      "page": "/en/vs/shimla-vs-nainital",
+      "impressions": 25,
+      "clicks": 0,
+      "position": 5.8
+    },
+    {
+      "query": "badami vs hampi",
+      "page": "/en/vs/hampi-vs-badami",
+      "impressions": 24,
+      "clicks": 0,
+      "position": 8.2
+    },
+    {
+      "query": "kollam or alleppey which is better",
+      "page": "/en/vs/alleppey-vs-kollam",
+      "impressions": 24,
+      "clicks": 0,
+      "position": 7.2
+    },
+    {
+      "query": "जैसलमेर का खर्चा कितना है",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 24,
+      "clicks": 0,
+      "position": 6.2
+    },
+    {
+      "query": "ayodhya jane ka kharcha",
+      "page": "/hi/cost/ayodhya",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 8.3
+    },
+    {
+      "query": "jaisalmer jane ke liye kitna paisa lagta hai",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "mussoorie vs shimla height",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 6.2
+    },
+    {
+      "query": "mussoorie vs shimla which is better",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 7.6
+    },
+    {
+      "query": "pondicherry vs varkala",
+      "page": "/en/vs/varkala-vs-pondicherry",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 5.9
+    },
+    {
+      "query": "shimla height vs mussoorie height",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "ऊटी यात्रा का कितना खर्चा आएगा",
+      "page": "/hi/cost/ooty",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 8.7
+    },
+    {
+      "query": "bandipur or mudumalai which is better",
+      "page": "/en/vs/mudumalai-vs-bandipur",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 8.8
+    },
+    {
+      "query": "kalpa budget trip",
+      "page": "/en/cost/kalpa",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 8.9
+    },
+    {
+      "query": "lachung or pelling which is better",
+      "page": "/en/vs/pelling-vs-lachung",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "udupi vs mangalore which is better",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 21,
+      "clicks": 1,
+      "position": 6.6
+    },
+    {
+      "query": "delhi vs lucknow which is better",
+      "page": "/en/vs/delhi-vs-lucknow",
+      "impressions": 21,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "kasol or mussoorie which is better",
+      "page": "/en/vs/kasauli-vs-mussoorie",
+      "impressions": 21,
+      "clicks": 0,
+      "position": 5.6
+    },
+    {
+      "query": "meghalaya vs darjeeling",
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "impressions": 21,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "pelling or lachung which is better",
+      "page": "/en/vs/pelling-vs-lachung",
+      "impressions": 21,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "pelling vs gangtok",
+      "page": "/en/vs/gangtok-vs-pelling",
+      "impressions": 21,
+      "clicks": 0,
+      "position": 7.1
+    },
+    {
+      "query": "gandikota budget",
+      "page": "/en/destination/gandikota",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 7.5
+    },
+    {
+      "query": "kodaikanal vs chikmagalur",
+      "page": "/en/vs/chikmagalur-vs-kodaikanal",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "munsiyari trip cost",
+      "page": "/en/cost/munsiyari",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 7.8
+    },
+    {
+      "query": "mussoorie trip budget",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 9.7
+    },
+    {
+      "query": "nagpur or pune which is better",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "udupi or mangalore which is better",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "varkala or alleppey which is better",
+      "page": "/en/vs/varkala-vs-alleppey",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "bhubaneswar vs cuttack",
+      "page": "/en/vs/cuttack-vs-bhubaneswar",
+      "impressions": 19,
+      "clicks": 0,
+      "position": 6.3
+    },
+    {
+      "query": "delhi or lucknow which is better",
+      "page": "/en/vs/delhi-vs-lucknow",
+      "impressions": 19,
+      "clicks": 0,
+      "position": 5.2
+    },
+    {
+      "query": "haflong itinerary for 2 days",
+      "page": "/en/itinerary/haflong",
+      "impressions": 19,
+      "clicks": 0,
+      "position": 8.9
+    },
+    {
+      "query": "kalpa itinerary",
+      "page": "/en/itinerary/kalpa",
+      "impressions": 19,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "mussoorie trip cost per person",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 19,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "darjeeling vs shillong",
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "impressions": 18,
+      "clicks": 1,
+      "position": 5.1
+    },
+    {
+      "query": "best time to visit jampui hills",
+      "page": "/en/destination/jampui-hills",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 8.7
+    },
+    {
+      "query": "kanatal itinerary for 3 days",
+      "page": "/en/itinerary/kanatal",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 7.6
+    },
+    {
+      "query": "lansdowne or mussoorie which is better",
+      "page": "/en/vs/mussoorie-vs-lansdowne",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 5.1
+    },
+    {
+      "query": "pachmarhi trip cost",
+      "page": "/hi/cost/pachmarhi",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "trivandrum vs kochi",
+      "page": "/en/vs/kochi-vs-trivandrum",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 9.7
+    },
+    {
+      "query": "varkala vs alleppey",
+      "page": "/en/vs/varkala-vs-alleppey",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 6.2
+    },
+    {
+      "query": "which is better bandipur or mudumalai",
+      "page": "/en/vs/mudumalai-vs-bandipur",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 8.9
+    },
+    {
+      "query": "agra jane me kitna kharcha aata hai",
+      "page": "/hi/cost/agra",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 6.8
+    },
+    {
+      "query": "kochi vs trivandrum",
+      "page": "/en/vs/kochi-vs-trivandrum",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "landour vs mussoorie",
+      "page": "/en/vs/mussoorie-vs-landour",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 7.1
+    },
+    {
+      "query": "mandu itinerary",
+      "page": "/en/itinerary/mandu",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 9.6
+    },
+    {
+      "query": "singapore or india which is better",
+      "page": "/en/india-vs/singapore",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "which is better coorg or kodaikanal",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "जयपुर यात्रा का खर्च",
+      "page": "/hi/cost/jaipur",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 7.2
+    },
+    {
+      "query": "badrinath budget",
+      "page": "/en/cost/badrinath",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "darjeeling vs meghalaya which is better",
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 7.3
+    },
+    {
+      "query": "hampi or badami which is better",
+      "page": "/en/vs/hampi-vs-badami",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 6.8
+    },
+    {
+      "query": "lucknow vs delhi which is better",
+      "page": "/en/vs/delhi-vs-lucknow",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "mudumalai or bandipur which is better",
+      "page": "/en/vs/mudumalai-vs-bandipur",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 8.3
+    },
+    {
+      "query": "pondicherry or varkala which is better",
+      "page": "/en/vs/varkala-vs-pondicherry",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 5.9
+    },
+    {
+      "query": "sri lanka vs tamil nadu size",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "haflong itinerary",
+      "page": "/en/itinerary/haflong",
+      "impressions": 15,
+      "clicks": 1,
+      "position": 9.3
+    },
+    {
+      "query": "jaisalmer ghumne ke liye kitna kharcha aayega",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 15,
+      "clicks": 1,
+      "position": 5.1
+    },
+    {
+      "query": "morocco or india which is better",
+      "page": "/en/india-vs/morocco",
+      "impressions": 15,
+      "clicks": 1,
+      "position": 7.4
+    },
+    {
+      "query": "bikaner vs jodhpur",
+      "page": "/en/vs/jodhpur-vs-bikaner",
+      "impressions": 15,
+      "clicks": 0,
+      "position": 5.9
+    },
+    {
+      "query": "jaisalmer vs bikaner",
+      "page": "/en/vs/jaisalmer-vs-bikaner",
+      "impressions": 15,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "kodaikanal vs coorg which is better",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 15,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "landour trip budget",
+      "page": "/en/cost/landour",
+      "impressions": 15,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "india vs world",
+      "page": "/en/india-vs",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 5.2
+    },
+    {
+      "query": "is kashmir safe for solo female travellers",
+      "page": "/en/blog/kashmir-for-solo-female-what-matters",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 8.1
+    },
+    {
+      "query": "jaisalmer jaane ka kharcha",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "kanatal or mussoorie which is better",
+      "page": "/en/vs/mussoorie-vs-kanatal",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "landour or mussoorie which is better",
+      "page": "/en/vs/mussoorie-vs-landour",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 7.4
+    },
+    {
+      "query": "mangalore vs udupi which is better",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "mudumalai vs bandipur",
+      "page": "/en/vs/mudumalai-vs-bandipur",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 8.2
+    },
+    {
+      "query": "nagpur vs pune which is better",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 5.6
+    },
+    {
+      "query": "netarhat trip budget",
+      "page": "/en/cost/netarhat",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 6.4
+    },
+    {
+      "query": "india or singapore which is better",
+      "page": "/en/india-vs/singapore",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 9.6
+    },
+    {
+      "query": "india vs morocco",
+      "page": "/en/india-vs/morocco",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 8.7
+    },
+    {
+      "query": "india vs sri lanka comparison",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "kalpa trip cost",
+      "page": "/en/cost/kalpa",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 7.4
+    },
+    {
+      "query": "manali ka kharcha kitna aata hai",
+      "page": "/hi/cost/manali",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "pondicherry or kerala which is better",
+      "page": "/en/vs/varkala-vs-pondicherry",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "shimla vs mussoorie height",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 5.8
+    },
+    {
+      "query": "vijayawada or visakhapatnam which is better",
+      "page": "/en/vs/visakhapatnam-vs-vijayawada",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 5.8
+    },
+    {
+      "query": "which is better mangalore or udupi",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "which is better mudumalai or bandipur",
+      "page": "/en/vs/mudumalai-vs-bandipur",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 7.9
+    },
+    {
+      "query": "which is better shimla or nainital",
+      "page": "/en/vs/shimla-vs-nainital",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 5.2
+    },
+    {
+      "query": "which is better udupi or mangalore",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "ziro valley itinerary",
+      "page": "/en/itinerary/ziro-valley",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "शिलांग घूमने का खर्च",
+      "page": "/hi/cost/shillong",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "india vs foreign countries",
+      "page": "/en/india-vs",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 5.1
+    },
+    {
+      "query": "kanatal vs mussoorie",
+      "page": "/en/vs/mussoorie-vs-kanatal",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "landour trip cost",
+      "page": "/en/cost/landour",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "landour trip cost for 2 days",
+      "page": "/en/cost/landour",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 7.6
+    },
+    {
+      "query": "manali me kitna kharcha aata hai",
+      "page": "/hi/cost/manali",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "morocco vs india which is better",
+      "page": "/en/india-vs/morocco",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "mount abu ghumne ka kharcha",
+      "page": "/hi/cost/mount-abu",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 5.9
+    },
+    {
+      "query": "munsiyari trip budget",
+      "page": "/en/cost/munsiyari",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 6.3
+    },
+    {
+      "query": "which is better darjeeling or shillong",
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "araku valley budget",
+      "page": "/en/cost/araku-valley",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "barot valley itinerary",
+      "page": "/en/itinerary/barot-valley",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 7.9
+    },
+    {
+      "query": "is morocco better than india",
+      "page": "/en/india-vs/morocco",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 7.5
+    },
+    {
+      "query": "jodhpur vs bikaner",
+      "page": "/en/vs/jodhpur-vs-bikaner",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "kalpa budget",
+      "page": "/en/cost/kalpa",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "landour budget",
+      "page": "/en/cost/landour",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "landour budget trip",
+      "page": "/en/cost/landour",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "lonavala jane ka kharcha",
+      "page": "/hi/cost/lonavala",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 6.2
+    },
+    {
+      "query": "pune vs nagpur area",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 8.5
+    },
+    {
+      "query": "is nagpur better than pune",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 6.2
+    },
+    {
+      "query": "jaisalmer trip cost for 2 days",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "lonavala cost per person",
+      "page": "/en/cost/lonavala",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "manali jane ke liye kitna paisa lagta hai",
+      "page": "/hi/cost/manali",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "sakleshpur vs coorg which is better",
+      "page": "/en/vs/coorg-vs-sakleshpur",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "shrikhand kailash yatra me kitna kharcha aata hai",
+      "page": "/hi/cost/shrikhand-mahadev",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "coonoor or kodaikanal which is better",
+      "page": "/en/vs/coonoor-vs-kodaikanal",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 5.6
+    },
+    {
+      "query": "egypt vs india",
+      "page": "/en/india-vs/egypt",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 8.4
+    },
+    {
+      "query": "ind vs morocco",
+      "page": "/en/india-vs/morocco",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 6.8
+    },
+    {
+      "query": "india vs sri lanka country comparison",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 6.4
+    },
+    {
+      "query": "jampui hills best time to visit",
+      "page": "/en/destination/jampui-hills",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 7.2
+    },
+    {
+      "query": "marine national park jamnagar best time to visit",
+      "page": "/en/destination/marine-national-park",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 9.7
+    },
+    {
+      "query": "meghalaya ghumne ka kharcha",
+      "page": "/hi/cost/shillong",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 8.2
+    },
+    {
+      "query": "mussoorie trip budget for 3 days",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "pelling vs lachung",
+      "page": "/en/vs/pelling-vs-lachung",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "bandipur national park or mudumalai which is better",
+      "page": "/en/vs/mudumalai-vs-bandipur",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 8.5
+    },
+    {
+      "query": "best time to visit gandikota canyon",
+      "page": "/en/destination/gandikota",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "coorg vs coonoor which is better",
+      "page": "/en/vs/coonoor-vs-coorg",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 6.1
+    },
+    {
+      "query": "ganpatipule itinerary",
+      "page": "/en/itinerary/ganpatipule",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "haflong budget",
+      "page": "/en/cost/haflong",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 7.1
+    },
+    {
+      "query": "hampi vs badami",
+      "page": "/en/vs/hampi-vs-badami",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 7.6
+    },
+    {
+      "query": "kodaikanal vs coonoor",
+      "page": "/en/vs/coonoor-vs-kodaikanal",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "manali ghumne mein kitna kharcha aaega",
+      "page": "/hi/cost/manali",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 9.1
+    },
+    {
+      "query": "munnar vs vagamon",
+      "page": "/en/vs/munnar-vs-vagamon",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 8.8
+    },
+    {
+      "query": "mussoorie budget",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 7.1
+    },
+    {
+      "query": "which is better mussoorie or nainital",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "indien vs vietnam standort",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "jaisalmer 2 days 1 night package price",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "jaisalmer ghumne me kitna kharcha aata hai",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 6.9
+    },
+    {
+      "query": "kanatal itinerary",
+      "page": "/en/itinerary/kanatal",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 9.6
+    },
+    {
+      "query": "mussorie vs shimla",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 8.6
+    },
+    {
+      "query": "sri lanka vs kerala size",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 7.9
+    },
+    {
+      "query": "varkala vs alleppey which is better",
+      "page": "/en/vs/varkala-vs-alleppey",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 6.3
+    },
+    {
+      "query": "which is better shillong or darjeeling",
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "chakrata itinerary for 3 days",
+      "page": "/en/itinerary/chakrata",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 7.8
+    },
+    {
+      "query": "how many days required to see orchha",
+      "page": "/en/itinerary/orchha",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "kozhikode vs trivandrum",
+      "page": "/en/vs/kozhikode-vs-trivandrum",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 6.2
+    },
+    {
+      "query": "manali jaane mein kitna kharcha aata hai",
+      "page": "/hi/cost/manali",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "morni hills itinerary",
+      "page": "/en/destination/morni-hills",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 7.8
+    },
+    {
+      "query": "mussoorie budget for 5 days",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "mussoorie or landour which is better",
+      "page": "/en/vs/mussoorie-vs-landour",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "udupi or mangalore which is better for tourist",
+      "page": "/en/vs/mangalore-vs-udupi",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "best time to visit belum caves",
+      "page": "/en/destination/belum-caves/november",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "darjeeling with kids",
+      "page": "/en/with-kids/darjeeling",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 8.8
+    },
+    {
+      "query": "dharamshala vs mcleodganj",
+      "page": "/en/vs/dharamshala-vs-mcleodganj",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 8.8
+    },
+    {
+      "query": "mussoorie vs landour",
+      "page": "/en/vs/mussoorie-vs-landour",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "mussorie vs nainital",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 9.2
+    },
+    {
+      "query": "pachmarhi jane ke liye kitna paisa lagta hai",
+      "page": "/hi/cost/pachmarhi",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 5.6
+    },
+    {
+      "query": "palampur itinerary",
+      "page": "/en/itinerary/palampur",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "puri jane ka kharcha",
+      "page": "/hi/cost/puri",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 5.4
+    },
+    {
+      "query": "sri lanka vs india country comparison",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 9.4
+    },
+    {
+      "query": "vizag vs vijayawada",
+      "page": "/en/vs/visakhapatnam-vs-vijayawada",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 6.4
+    },
+    {
+      "query": "south india vs sri lanka",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 4,
+      "clicks": 1,
+      "position": 7.8
+    },
+    {
+      "query": "best time to visit belum caves",
+      "page": "/en/destination/belum-caves/september",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "best time to visit parvati valley",
+      "page": "/en/destination/parvati-valley/october",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 9.8
+    },
+    {
+      "query": "gandikota canyon best time to visit",
+      "page": "/en/destination/gandikota",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 6.8
+    },
+    {
+      "query": "hampi vs badami which is better",
+      "page": "/en/vs/hampi-vs-badami",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "hemkund sahib itinerary",
+      "page": "/en/itinerary/hemkund-sahib",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7.3
+    },
+    {
+      "query": "india versus morocco",
+      "page": "/en/india-vs/morocco",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "kolhapur itinerary for 3 days",
+      "page": "/en/itinerary/kolhapur",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7.3
+    },
+    {
+      "query": "mussoorie budget for 5 days",
+      "page": "/en/cost/mussoorie",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "nashik vs sambhaji nagar",
+      "page": "/en/vs/nashik-vs-aurangabad",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "pachmarhi total budget",
+      "page": "/hi/cost/pachmarhi",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 6.8
+    },
+    {
+      "query": "patna itinerary",
+      "page": "/en/itinerary/patna",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "sangla or chitkul which is better",
+      "page": "/en/vs/sangla-vs-chitkul",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "srilanka size vs tamil nadu",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "badrinath vs kedarnath",
+      "page": "/en/vs/kedarnath-vs-badrinath",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9.7
+    },
+    {
+      "query": "cochin or trivandrum which is better",
+      "page": "/en/vs/kochi-vs-trivandrum",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "dhanaulti or chakrata which is better",
+      "page": "/en/vs/chakrata-vs-dhanaulti",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5.3
+    },
+    {
+      "query": "hemkund sahib trek how many days",
+      "page": "/en/itinerary/hemkund-sahib",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "ind vs vietnam",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 6.7
+    },
+    {
+      "query": "india versus vietnam",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "indian vs vietnam",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "jaisalmer jaane mein kitna kharcha lagega",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "kolhapur itinerary",
+      "page": "/en/itinerary/kolhapur",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "manali ghumne ke liye kitna kharcha aayega",
+      "page": "/hi/cost/manali",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "manali ka kharcha kitna hai",
+      "page": "/hi/cost/manali",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9.3
+    },
+    {
+      "query": "manali ka kitna kharcha aata hai",
+      "page": "/hi/cost/manali",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8.3
+    },
+    {
+      "query": "mawsynram vs cherrapunji",
+      "page": "/en/vs/cherrapunji-vs-mawsynram",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9.7
+    },
+    {
+      "query": "mcleodganj or dharamshala which is better",
+      "page": "/en/vs/dharamshala-vs-mcleodganj",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8.7
+    },
+    {
+      "query": "meghalaya jane ka kharcha",
+      "page": "/hi/cost/shillong",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8.7
+    },
+    {
+      "query": "mumbai jane ka kharcha kitna hai",
+      "page": "/hi/cost/mumbai",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9.7
+    },
+    {
+      "query": "nainital vs mussoorie height",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "per person cost",
+      "page": "/en/cost/kolkata",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "shillong budget",
+      "page": "/en/cost/shillong",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "shillong trip budget",
+      "page": "/en/cost/shillong",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5.7
+    },
+    {
+      "query": "auroville cost",
+      "page": "/en/cost/auroville",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "bangaram island trip cost",
+      "page": "/en/cost/bangaram",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "budget for valley of flowers",
+      "page": "/en/cost/valley-of-flowers",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "chandratal trip budget",
+      "page": "/en/cost/chandratal",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "dharamshala or mcleodganj which is better",
+      "page": "/en/vs/dharamshala-vs-mcleodganj",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "dharmasthala best time to visit",
+      "page": "/en/destination/dharmasthala",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "egypt vs india which is better",
+      "page": "/en/india-vs/egypt",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "girnar itinerary",
+      "page": "/en/itinerary/girnar",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "landour trip cost for 3 days",
+      "page": "/en/cost/landour",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "manali ka kharcha",
+      "page": "/hi/cost/manali",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "mangalore vs vizag",
+      "page": "/en/vs/mangalore-vs-visakhapatnam",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "mumbai jane ka kharcha",
+      "page": "/hi/cost/mumbai",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "munnar vs alleppey",
+      "page": "/en/vs/alleppey-vs-munnar",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "mussoorie vs nainital height",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "nagaland best time to visit",
+      "page": "/en/blog/best-time-to-visit-nagaland",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 7.5
+    },
+    {
+      "query": "nagarjuna sagar dam vs srisailam dam",
+      "page": "/en/vs/nagarjuna-sagar-vs-srisailam",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "pachmarhi ghumne ka kharcha kitna hai",
+      "page": "/hi/cost/pachmarhi",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "pelling or gangtok which is better",
+      "page": "/en/vs/gangtok-vs-pelling",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "ranikhet itinerary",
+      "page": "/en/itinerary/ranikhet",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "shillong ghumne ka kharcha",
+      "page": "/hi/cost/shillong",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 6.5
+    },
+    {
+      "query": "sri lanka area vs tamil nadu area",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "udupi vs varkala",
+      "page": "/en/vs/mangalore-vs-varkala",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "vagamon or wayanad which is better",
+      "page": "/en/vs/vagamon-vs-wayanad",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "vietnam versus india",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "vs which country",
+      "page": "/en/india-vs",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "wayanad vs vagamon",
+      "page": "/en/vs/vagamon-vs-wayanad",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 5.5
+    },
+    {
+      "query": "which is better ranthambore or jim corbett",
+      "page": "/en/vs/ranthambore-vs-corbett-national-park",
+      "impressions": 2,
+      "clicks": 0,
+      "position": 9.5
+    },
+    {
+      "query": "1 day 1 night",
+      "page": "/en/destination/morni-hills",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "a 3 day trip",
+      "page": "/en/routes/tn-coromandel-coast",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "araku hotels lowest price for family",
+      "page": "/en/cost/araku-valley",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "avg budget",
+      "page": "/en/cost/orchha",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "badrinath vs kedarnath height",
+      "page": "/en/vs/kedarnath-vs-badrinath",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "bandipur vs nagarhole which is better",
+      "page": "/en/vs/nagarhole-vs-bandipur",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "best time to go to gandikota",
+      "page": "/en/destination/gandikota",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "best time to go?",
+      "page": "/en/destination/morni-hills",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "best time to visit",
+      "page": "/en/destination/champhai",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "best time to visit arunachal pradesh",
+      "page": "/en/destination/dirang",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "best time to visit pasighat",
+      "page": "/en/destination/pasighat",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "budget",
+      "page": "/en/cost/landour",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "budget?",
+      "page": "/en/cost/kalpa",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "chitrakote falls best time to visit",
+      "page": "/en/destination/chitrakote-falls",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "cost",
+      "page": "/en/safari/nagarhole",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "costing",
+      "page": "/en/cost/simlipal",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "daman trip cost",
+      "page": "/en/cost/daman",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "dharamshala vs dalhousie",
+      "page": "/en/vs/dalhousie-vs-dharamshala",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "gangtok per person budget",
+      "page": "/en/cost/gangtok",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "gokarna or murudeshwar which is better",
+      "page": "/en/vs/gokarna-vs-murudeshwar",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "gulmarg or pahalgam which is better",
+      "page": "/en/vs/gulmarg-vs-pahalgam",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "gulmarg vs pahalgam",
+      "page": "/en/vs/gulmarg-vs-pahalgam",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "hanle ladakh best time to visit",
+      "page": "/en/destination/hanle",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "how much budget",
+      "page": "/en/cost/mysore",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "how much does it cost",
+      "page": "/en/cost/bangaram",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "how much does that cost",
+      "page": "/en/cost/mawsynram",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "how much would it cost",
+      "page": "/en/cost/haflong",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "how much would it cost ?",
+      "page": "/en/cost/bangaram",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "in vs vietnam",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "india versus egypt",
+      "page": "/en/india-vs/egypt",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "india vs sri lanka in which country",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "is it better than india?",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "is it safe for girls",
+      "page": "/en/destination/koraput",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "is lucknow better than delhi",
+      "page": "/en/vs/delhi-vs-lucknow",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "jaipur ghumne me kitna kharcha aata hai",
+      "page": "/hi/cost/jaipur",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "jibhi 2 nights 3 days package",
+      "page": "/en/cost/jibhi",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "jibhi budget",
+      "page": "/en/cost/jibhi",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "jim corbett national park vs ranthambore",
+      "page": "/en/vs/ranthambore-vs-corbett-national-park",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "kalimpong trip cost",
+      "page": "/en/cost/kalimpong",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "kasauli vs morni hills",
+      "page": "/en/destination/morni-hills",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "kasauli vs shimla",
+      "page": "/en/vs/shimla-vs-kasauli",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "kashmir with kids",
+      "page": "/en/blog/kashmir-with-kids-family-guide",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "kasol itinerary for 5 days",
+      "page": "/en/itinerary/kasol",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "kedarnath vs badrinath height",
+      "page": "/en/vs/kedarnath-vs-badrinath",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "kharcha",
+      "page": "/en/cost/lucknow",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "kitna kharch aata hai",
+      "page": "/hi/cost/gandikota",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "kitna kharch hoga",
+      "page": "/hi/cost/ayodhya",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "kitna kharcha ayega",
+      "page": "/hi/cost/corbett-national-park",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "kitna khrcha aa jayega",
+      "page": "/en/cost/mcleodganj",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "kitna price hai",
+      "page": "/hi/cost/somnath",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "lachung vs pelling",
+      "page": "/en/vs/pelling-vs-lachung",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "landour vs lansdowne",
+      "page": "/en/vs/mussoorie-vs-lansdowne",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "mcleodganj vs dharamshala",
+      "page": "/en/vs/dharamshala-vs-mcleodganj",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "mount abu cost per person",
+      "page": "/en/cost/mount-abu",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "munnar or alleppey which is better",
+      "page": "/en/vs/alleppey-vs-munnar",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "mussoorie cost",
+      "page": "/en/cost/mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "mussoorie cost",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "mussoorie cost per person",
+      "page": "/en/cost/mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "mussoorie trip budget",
+      "page": "/en/cost/mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "mussoorie trip cost",
+      "page": "/en/cost/mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "mussoorie trip cost for couple",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "ooty or coonoor which is better",
+      "page": "/en/vs/ooty-vs-coonoor",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "pachmarhi budget for 3 days",
+      "page": "/hi/cost/pachmarhi",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "plan a gandhinagar trip itinerary",
+      "page": "/en/itinerary/gandhinagar",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "plan a mandav fort exploration itinerary",
+      "page": "/en/itinerary/mandu",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "pondicherry budget plan",
+      "page": "/en/cost/puducherry",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "pondicherry with kids",
+      "page": "/en/with-kids/pondicherry",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "rajgir trip cost",
+      "page": "/hi/cost/rajgir",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "rishikesh best time to visit",
+      "page": "/en/blog/best-time-to-visit-rishikesh",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "rishikesh visit best time",
+      "page": "/en/blog/best-time-to-visit-rishikesh",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "rishikesh with kids",
+      "page": "/en/with-kids/rishikesh",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "shrikhand mahadev trek budget",
+      "page": "/en/destination/shrikhand-mahadev",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "sri lanka vs india comparison",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "sri lanka vs south india",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "sri lanka vs tamil nadu",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "srilanka vs tamilnadu area",
+      "page": "/en/india-vs/sri-lanka",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "ticket price kitna hai",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "tiruchirappalli vs trichy",
+      "page": "/en/vs/trichy-vs-coimbatore",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "tirupati jane ka kharcha",
+      "page": "/hi/cost/tirupati",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "total budget",
+      "page": "/en/cost/morni-hills",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "travel cost",
+      "page": "/en/cost/kolkata",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "trivandrum or ernakulam which is better",
+      "page": "/en/vs/kochi-vs-trivandrum",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "uttarakhand ghumne me kitna kharcha aayega",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "vagamon vs wayanad",
+      "page": "/en/vs/vagamon-vs-wayanad",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "valparai itinerary",
+      "page": "/en/itinerary/valparai",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "valparai or munnar which is better",
+      "page": "/en/vs/valparai-vs-munnar",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "vietnam vs indi",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "what will be the budget",
+      "page": "/en/cost/araku-valley",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "what's the budget?",
+      "page": "/en/cost/gurez-valley",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 9
+    },
+    {
+      "query": "when is the best time to go to kerala",
+      "page": "/en/destination/varkala",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "which is better kodaikanal or chikmagalur",
+      "page": "/en/vs/chikmagalur-vs-kodaikanal",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    },
+    {
+      "query": "which is better mcleodganj or dharamshala",
+      "page": "/en/vs/dharamshala-vs-mcleodganj",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 8
+    },
+    {
+      "query": "which is better mussoorie or shimla",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "which is costlier",
+      "page": "/en/vs/kollam-vs-trivandrum",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 7
+    },
+    {
+      "query": "with kids which is better",
+      "page": "/en/with-kids/mukteshwar",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 10
+    },
+    {
+      "query": "टोटल खर्च",
+      "page": "/en/cost/badrinath",
+      "impressions": 1,
+      "clicks": 0,
+      "position": 6
+    }
+  ],
+  "pages": [
+    {
+      "page": "/hi/cost/jaisalmer",
+      "queries": 19,
+      "impressions": 1236,
+      "clicks": 4,
+      "topQueries": [
+        "जैसलमेर घूमने का खर्चा",
+        "jaisalmer trip cost",
+        "jaisalmer ghumne ka kharcha"
+      ],
+      "avgPosition": 7.8
+    },
+    {
+      "page": "/hi/cost/mussoorie",
+      "queries": 13,
+      "impressions": 484,
+      "clicks": 1,
+      "topQueries": [
+        "मसूरी घूमने का खर्च",
+        "mussoorie trip cost for 3 days",
+        "mussoorie trip cost for 5 days"
+      ],
+      "avgPosition": 7.8
+    },
+    {
+      "page": "/en/india-vs/vietnam",
+      "queries": 11,
+      "impressions": 447,
+      "clicks": 4,
+      "topQueries": [
+        "vietnam vs india",
+        "india vs vietnam",
+        "is vietnam better than india"
+      ],
+      "avgPosition": 6.9
+    },
+    {
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "queries": 12,
+      "impressions": 433,
+      "clicks": 0,
+      "topQueries": [
+        "shimla vs mussoorie",
+        "mussoorie vs shimla",
+        "shimla or mussoorie which is better"
+      ],
+      "avgPosition": 7.9
+    },
+    {
+      "page": "/hi/cost/manali",
+      "queries": 14,
+      "impressions": 341,
+      "clicks": 0,
+      "topQueries": [
+        "manali jane ka kharcha",
+        "manali jane ka kharcha kitna hai",
+        "manali jane me kitna kharcha aayega"
+      ],
+      "avgPosition": 9.7
+    },
+    {
+      "page": "/en/vs/nagpur-vs-pune",
+      "queries": 7,
+      "impressions": 253,
+      "clicks": 0,
+      "topQueries": [
+        "nagpur vs pune",
+        "pune vs nagpur",
+        "pune vs nagpur which is better"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "queries": 6,
+      "impressions": 218,
+      "clicks": 1,
+      "topQueries": [
+        "coorg vs kodaikanal",
+        "coorg or kodaikanal which is better",
+        "kodaikanal vs coorg"
+      ],
+      "avgPosition": 6.8
+    },
+    {
+      "page": "/en/vs/mangalore-vs-udupi",
+      "queries": 9,
+      "impressions": 204,
+      "clicks": 3,
+      "topQueries": [
+        "udupi vs mangalore",
+        "mangalore vs udupi",
+        "mangalore or udupi which is better"
+      ],
+      "avgPosition": 6.9
+    },
+    {
+      "page": "/en/vs/coorg-vs-sakleshpur",
+      "queries": 5,
+      "impressions": 138,
+      "clicks": 0,
+      "topQueries": [
+        "coorg or sakleshpur which is better",
+        "sakleshpur or coorg which is better",
+        "sakleshpur vs coorg"
+      ],
+      "avgPosition": 7.5
+    },
+    {
+      "page": "/en/vs/shimla-vs-nainital",
+      "queries": 5,
+      "impressions": 137,
+      "clicks": 1,
+      "topQueries": [
+        "nainital or shimla which is better",
+        "shimla vs nainital",
+        "shimla or nainital which is better"
+      ],
+      "avgPosition": 5.5
+    },
+    {
+      "page": "/en/vs/shillong-vs-darjeeling",
+      "queries": 7,
+      "impressions": 137,
+      "clicks": 2,
+      "topQueries": [
+        "meghalaya or darjeeling which is better",
+        "darjeeling or meghalaya which is better",
+        "meghalaya vs darjeeling"
+      ],
+      "avgPosition": 6.5
+    },
+    {
+      "page": "/en/vs/varkala-vs-alleppey",
+      "queries": 5,
+      "impressions": 129,
+      "clicks": 0,
+      "topQueries": [
+        "alleppey or varkala which is better",
+        "alleppey vs varkala",
+        "varkala or alleppey which is better"
+      ],
+      "avgPosition": 6.3
+    },
+    {
+      "page": "/en/vs/varkala-vs-pondicherry",
+      "queries": 5,
+      "impressions": 124,
+      "clicks": 1,
+      "topQueries": [
+        "varkala vs pondicherry",
+        "varkala or pondicherry which is better",
+        "pondicherry vs varkala"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "queries": 7,
+      "impressions": 123,
+      "clicks": 0,
+      "topQueries": [
+        "mussoorie vs nainital",
+        "nainital vs mussoorie which is better",
+        "mussoorie vs nainital which is better"
+      ],
+      "avgPosition": 9.4
+    },
+    {
+      "page": "/en/india-vs/morocco",
+      "queries": 7,
+      "impressions": 114,
+      "clicks": 1,
+      "topQueries": [
+        "morocco vs india",
+        "morocco or india which is better",
+        "india vs morocco"
+      ],
+      "avgPosition": 7.9
+    },
+    {
+      "page": "/hi/cost/pachmarhi",
+      "queries": 7,
+      "impressions": 97,
+      "clicks": 0,
+      "topQueries": [
+        "pachmarhi trip cost for 2 days",
+        "पचमढ़ी घूमने का खर्चा",
+        "pachmarhi trip cost"
+      ],
+      "avgPosition": 7.9
+    },
+    {
+      "page": "/en/cost/kalpa",
+      "queries": 5,
+      "impressions": 93,
+      "clicks": 0,
+      "topQueries": [
+        "kalpa trip budget",
+        "kalpa budget trip",
+        "kalpa trip cost"
+      ],
+      "avgPosition": 6.4
+    },
+    {
+      "page": "/en/vs/mudumalai-vs-bandipur",
+      "queries": 6,
+      "impressions": 91,
+      "clicks": 0,
+      "topQueries": [
+        "bandipur or mudumalai which is better",
+        "which is better bandipur or mudumalai",
+        "mudumalai or bandipur which is better"
+      ],
+      "avgPosition": 8.5
+    },
+    {
+      "page": "/en/destination/gandikota",
+      "queries": 5,
+      "impressions": 71,
+      "clicks": 0,
+      "topQueries": [
+        "gandikota best time to visit",
+        "gandikota budget",
+        "best time to visit gandikota canyon"
+      ],
+      "avgPosition": 8.8
+    },
+    {
+      "page": "/en/vs/jaisalmer-vs-bikaner",
+      "queries": 3,
+      "impressions": 67,
+      "clicks": 0,
+      "topQueries": [
+        "bikaner or jaisalmer which is better",
+        "bikaner vs jaisalmer",
+        "jaisalmer vs bikaner"
+      ],
+      "avgPosition": 8.3
+    },
+    {
+      "page": "/en/india-vs/sri-lanka",
+      "queries": 13,
+      "impressions": 65,
+      "clicks": 1,
+      "topQueries": [
+        "sri lanka vs tamil nadu size",
+        "india vs sri lanka comparison",
+        "india vs sri lanka country comparison"
+      ],
+      "avgPosition": 8.7
+    },
+    {
+      "page": "/en/cost/landour",
+      "queries": 7,
+      "impressions": 64,
+      "clicks": 0,
+      "topQueries": [
+        "landour trip budget",
+        "landour trip cost",
+        "landour trip cost for 2 days"
+      ],
+      "avgPosition": 7.3
+    },
+    {
+      "page": "/en/vs/visakhapatnam-vs-vijayawada",
+      "queries": 3,
+      "impressions": 61,
+      "clicks": 0,
+      "topQueries": [
+        "vijayawada vs visakhapatnam",
+        "vijayawada or visakhapatnam which is better",
+        "vizag vs vijayawada"
+      ],
+      "avgPosition": 6.2
+    },
+    {
+      "page": "/en/cost/haflong",
+      "queries": 3,
+      "impressions": 60,
+      "clicks": 1,
+      "topQueries": [
+        "haflong trip cost",
+        "haflong budget",
+        "how much would it cost"
+      ],
+      "avgPosition": 5.9
+    },
+    {
+      "page": "/en/vs/delhi-vs-lucknow",
+      "queries": 4,
+      "impressions": 57,
+      "clicks": 0,
+      "topQueries": [
+        "delhi vs lucknow which is better",
+        "delhi or lucknow which is better",
+        "lucknow vs delhi which is better"
+      ],
+      "avgPosition": 5.4
+    },
+    {
+      "page": "/en/vs/cuttack-vs-bhubaneswar",
+      "queries": 2,
+      "impressions": 56,
+      "clicks": 0,
+      "topQueries": [
+        "cuttack vs bhubaneswar",
+        "bhubaneswar vs cuttack"
+      ],
+      "avgPosition": 7.4
+    },
+    {
+      "page": "/en/vs/pelling-vs-lachung",
+      "queries": 4,
+      "impressions": 53,
+      "clicks": 0,
+      "topQueries": [
+        "lachung or pelling which is better",
+        "pelling or lachung which is better",
+        "pelling vs lachung"
+      ],
+      "avgPosition": 6.1
+    },
+    {
+      "page": "/en/vs/hampi-vs-badami",
+      "queries": 4,
+      "impressions": 52,
+      "clicks": 0,
+      "topQueries": [
+        "badami vs hampi",
+        "hampi or badami which is better",
+        "hampi vs badami"
+      ],
+      "avgPosition": 7.7
+    },
+    {
+      "page": "/en/vs/mussoorie-vs-landour",
+      "queries": 4,
+      "impressions": 42,
+      "clicks": 0,
+      "topQueries": [
+        "landour vs mussoorie",
+        "landour or mussoorie which is better",
+        "mussoorie or landour which is better"
+      ],
+      "avgPosition": 7.3
+    },
+    {
+      "page": "/en/cost/netarhat",
+      "queries": 2,
+      "impressions": 40,
+      "clicks": 0,
+      "topQueries": [
+        "netarhat trip budget for 2 days",
+        "netarhat trip budget"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/india-vs/egypt",
+      "queries": 4,
+      "impressions": 39,
+      "clicks": 0,
+      "topQueries": [
+        "india vs egypt",
+        "egypt vs india",
+        "egypt vs india which is better"
+      ],
+      "avgPosition": 8.6
+    },
+    {
+      "page": "/en/vs/kochi-vs-trivandrum",
+      "queries": 4,
+      "impressions": 39,
+      "clicks": 0,
+      "topQueries": [
+        "trivandrum vs kochi",
+        "kochi vs trivandrum",
+        "cochin or trivandrum which is better"
+      ],
+      "avgPosition": 9.5
+    },
+    {
+      "page": "/en/vs/trichy-vs-coimbatore",
+      "queries": 2,
+      "impressions": 37,
+      "clicks": 0,
+      "topQueries": [
+        "coimbatore vs trichy",
+        "tiruchirappalli vs trichy"
+      ],
+      "avgPosition": 5.4
+    },
+    {
+      "page": "/en/blog/best-time-to-visit-bihar",
+      "queries": 1,
+      "impressions": 34,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit bihar"
+      ],
+      "avgPosition": 9.9
+    },
+    {
+      "page": "/en/itinerary/haflong",
+      "queries": 2,
+      "impressions": 34,
+      "clicks": 1,
+      "topQueries": [
+        "haflong itinerary for 2 days",
+        "haflong itinerary"
+      ],
+      "avgPosition": 9.1
+    },
+    {
+      "page": "/en/cost/munsiyari",
+      "queries": 2,
+      "impressions": 32,
+      "clicks": 0,
+      "topQueries": [
+        "munsiyari trip cost",
+        "munsiyari trip budget"
+      ],
+      "avgPosition": 7.2
+    },
+    {
+      "page": "/en/india-vs/singapore",
+      "queries": 2,
+      "impressions": 30,
+      "clicks": 0,
+      "topQueries": [
+        "singapore or india which is better",
+        "india or singapore which is better"
+      ],
+      "avgPosition": 9.7
+    },
+    {
+      "page": "/en/india-vs",
+      "queries": 3,
+      "impressions": 28,
+      "clicks": 0,
+      "topQueries": [
+        "india vs world",
+        "india vs foreign countries",
+        "vs which country"
+      ],
+      "avgPosition": 5.5
+    },
+    {
+      "page": "/en/vs/kozhikode-vs-thrissur",
+      "queries": 1,
+      "impressions": 27,
+      "clicks": 0,
+      "topQueries": [
+        "thrissur vs kozhikode"
+      ],
+      "avgPosition": 7.3
+    },
+    {
+      "page": "/en/destination/jampui-hills",
+      "queries": 2,
+      "impressions": 27,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit jampui hills",
+        "jampui hills best time to visit"
+      ],
+      "avgPosition": 8.2
+    },
+    {
+      "page": "/hi/cost/shillong",
+      "queries": 4,
+      "impressions": 27,
+      "clicks": 0,
+      "topQueries": [
+        "शिलांग घूमने का खर्च",
+        "meghalaya ghumne ka kharcha",
+        "meghalaya jane ka kharcha"
+      ],
+      "avgPosition": 7.6
+    },
+    {
+      "page": "/en/vs/jodhpur-vs-bikaner",
+      "queries": 2,
+      "impressions": 26,
+      "clicks": 0,
+      "topQueries": [
+        "bikaner vs jodhpur",
+        "jodhpur vs bikaner"
+      ],
+      "avgPosition": 5.8
+    },
+    {
+      "page": "/en/vs/mussoorie-vs-kanatal",
+      "queries": 2,
+      "impressions": 26,
+      "clicks": 0,
+      "topQueries": [
+        "kanatal or mussoorie which is better",
+        "kanatal vs mussoorie"
+      ],
+      "avgPosition": 5.5
+    },
+    {
+      "page": "/en/itinerary/kanatal",
+      "queries": 2,
+      "impressions": 25,
+      "clicks": 0,
+      "topQueries": [
+        "kanatal itinerary for 3 days",
+        "kanatal itinerary"
+      ],
+      "avgPosition": 8.2
+    },
+    {
+      "page": "/en/vs/alleppey-vs-kollam",
+      "queries": 1,
+      "impressions": 24,
+      "clicks": 0,
+      "topQueries": [
+        "kollam or alleppey which is better"
+      ],
+      "avgPosition": 7.2
+    },
+    {
+      "page": "/hi/cost/ayodhya",
+      "queries": 2,
+      "impressions": 24,
+      "clicks": 0,
+      "topQueries": [
+        "ayodhya jane ka kharcha",
+        "kitna kharch hoga"
+      ],
+      "avgPosition": 8.2
+    },
+    {
+      "page": "/hi/cost/ooty",
+      "queries": 1,
+      "impressions": 23,
+      "clicks": 0,
+      "topQueries": [
+        "ऊटी यात्रा का कितना खर्चा आएगा"
+      ],
+      "avgPosition": 8.7
+    },
+    {
+      "page": "/en/vs/gangtok-vs-pelling",
+      "queries": 2,
+      "impressions": 23,
+      "clicks": 0,
+      "topQueries": [
+        "pelling vs gangtok",
+        "pelling or gangtok which is better"
+      ],
+      "avgPosition": 7.1
+    },
+    {
+      "page": "/en/vs/kasauli-vs-mussoorie",
+      "queries": 1,
+      "impressions": 21,
+      "clicks": 0,
+      "topQueries": [
+        "kasol or mussoorie which is better"
+      ],
+      "avgPosition": 5.6
+    },
+    {
+      "page": "/en/vs/chikmagalur-vs-kodaikanal",
+      "queries": 2,
+      "impressions": 21,
+      "clicks": 0,
+      "topQueries": [
+        "kodaikanal vs chikmagalur",
+        "which is better kodaikanal or chikmagalur"
+      ],
+      "avgPosition": 5.5
+    },
+    {
+      "page": "/en/itinerary/kalpa",
+      "queries": 1,
+      "impressions": 19,
+      "clicks": 0,
+      "topQueries": [
+        "kalpa itinerary"
+      ],
+      "avgPosition": 9.8
+    },
+    {
+      "page": "/en/vs/mussoorie-vs-lansdowne",
+      "queries": 2,
+      "impressions": 19,
+      "clicks": 0,
+      "topQueries": [
+        "lansdowne or mussoorie which is better",
+        "landour vs lansdowne"
+      ],
+      "avgPosition": 5.3
+    },
+    {
+      "page": "/en/itinerary/mandu",
+      "queries": 2,
+      "impressions": 18,
+      "clicks": 0,
+      "topQueries": [
+        "mandu itinerary",
+        "plan a mandav fort exploration itinerary"
+      ],
+      "avgPosition": 9.4
+    },
+    {
+      "page": "/hi/cost/jaipur",
+      "queries": 2,
+      "impressions": 18,
+      "clicks": 0,
+      "topQueries": [
+        "जयपुर यात्रा का खर्च",
+        "jaipur ghumne me kitna kharcha aata hai"
+      ],
+      "avgPosition": 7.1
+    },
+    {
+      "page": "/hi/cost/agra",
+      "queries": 1,
+      "impressions": 17,
+      "clicks": 0,
+      "topQueries": [
+        "agra jane me kitna kharcha aata hai"
+      ],
+      "avgPosition": 6.8
+    },
+    {
+      "page": "/en/cost/badrinath",
+      "queries": 2,
+      "impressions": 17,
+      "clicks": 0,
+      "topQueries": [
+        "badrinath budget",
+        "टोटल खर्च"
+      ],
+      "avgPosition": 5.3
+    },
+    {
+      "page": "/en/vs/coonoor-vs-kodaikanal",
+      "queries": 2,
+      "impressions": 17,
+      "clicks": 0,
+      "topQueries": [
+        "coonoor or kodaikanal which is better",
+        "kodaikanal vs coonoor"
+      ],
+      "avgPosition": 5.5
+    },
+    {
+      "page": "/en/blog/kashmir-for-solo-female-what-matters",
+      "queries": 1,
+      "impressions": 14,
+      "clicks": 0,
+      "topQueries": [
+        "is kashmir safe for solo female travellers"
+      ],
+      "avgPosition": 8.1
+    },
+    {
+      "page": "/en/itinerary/ziro-valley",
+      "queries": 1,
+      "impressions": 13,
+      "clicks": 0,
+      "topQueries": [
+        "ziro valley itinerary"
+      ],
+      "avgPosition": 5.7
+    },
+    {
+      "page": "/en/cost/araku-valley",
+      "queries": 3,
+      "impressions": 13,
+      "clicks": 0,
+      "topQueries": [
+        "araku valley budget",
+        "araku hotels lowest price for family",
+        "what will be the budget"
+      ],
+      "avgPosition": 8.7
+    },
+    {
+      "page": "/hi/cost/mount-abu",
+      "queries": 1,
+      "impressions": 12,
+      "clicks": 0,
+      "topQueries": [
+        "mount abu ghumne ka kharcha"
+      ],
+      "avgPosition": 5.9
+    },
+    {
+      "page": "/en/vs/dharamshala-vs-mcleodganj",
+      "queries": 5,
+      "impressions": 12,
+      "clicks": 0,
+      "topQueries": [
+        "dharamshala vs mcleodganj",
+        "mcleodganj or dharamshala which is better",
+        "dharamshala or mcleodganj which is better"
+      ],
+      "avgPosition": 8.6
+    },
+    {
+      "page": "/en/itinerary/barot-valley",
+      "queries": 1,
+      "impressions": 11,
+      "clicks": 0,
+      "topQueries": [
+        "barot valley itinerary"
+      ],
+      "avgPosition": 7.9
+    },
+    {
+      "page": "/hi/cost/lonavala",
+      "queries": 1,
+      "impressions": 11,
+      "clicks": 0,
+      "topQueries": [
+        "lonavala jane ka kharcha"
+      ],
+      "avgPosition": 6.2
+    },
+    {
+      "page": "/en/cost/lonavala",
+      "queries": 1,
+      "impressions": 10,
+      "clicks": 0,
+      "topQueries": [
+        "lonavala cost per person"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/hi/cost/shrikhand-mahadev",
+      "queries": 1,
+      "impressions": 10,
+      "clicks": 0,
+      "topQueries": [
+        "shrikhand kailash yatra me kitna kharcha aata hai"
+      ],
+      "avgPosition": 5.3
+    },
+    {
+      "page": "/en/destination/marine-national-park",
+      "queries": 1,
+      "impressions": 9,
+      "clicks": 0,
+      "topQueries": [
+        "marine national park jamnagar best time to visit"
+      ],
+      "avgPosition": 9.7
+    },
+    {
+      "page": "/en/destination/morni-hills",
+      "queries": 4,
+      "impressions": 9,
+      "clicks": 0,
+      "topQueries": [
+        "morni hills itinerary",
+        "1 day 1 night",
+        "best time to go?"
+      ],
+      "avgPosition": 7.9
+    },
+    {
+      "page": "/en/vs/coonoor-vs-coorg",
+      "queries": 1,
+      "impressions": 8,
+      "clicks": 0,
+      "topQueries": [
+        "coorg vs coonoor which is better"
+      ],
+      "avgPosition": 6.1
+    },
+    {
+      "page": "/en/itinerary/ganpatipule",
+      "queries": 1,
+      "impressions": 8,
+      "clicks": 0,
+      "topQueries": [
+        "ganpatipule itinerary"
+      ],
+      "avgPosition": 9.5
+    },
+    {
+      "page": "/en/vs/munnar-vs-vagamon",
+      "queries": 1,
+      "impressions": 8,
+      "clicks": 0,
+      "topQueries": [
+        "munnar vs vagamon"
+      ],
+      "avgPosition": 8.8
+    },
+    {
+      "page": "/en/cost/mussoorie",
+      "queries": 5,
+      "impressions": 8,
+      "clicks": 0,
+      "topQueries": [
+        "mussoorie budget for 5 days",
+        "mussoorie cost",
+        "mussoorie cost per person"
+      ],
+      "avgPosition": 8.5
+    },
+    {
+      "page": "/en/itinerary/hemkund-sahib",
+      "queries": 2,
+      "impressions": 7,
+      "clicks": 0,
+      "topQueries": [
+        "hemkund sahib itinerary",
+        "hemkund sahib trek how many days"
+      ],
+      "avgPosition": 6.6
+    },
+    {
+      "page": "/en/itinerary/kolhapur",
+      "queries": 2,
+      "impressions": 7,
+      "clicks": 0,
+      "topQueries": [
+        "kolhapur itinerary for 3 days",
+        "kolhapur itinerary"
+      ],
+      "avgPosition": 7.6
+    },
+    {
+      "page": "/en/itinerary/chakrata",
+      "queries": 1,
+      "impressions": 6,
+      "clicks": 0,
+      "topQueries": [
+        "chakrata itinerary for 3 days"
+      ],
+      "avgPosition": 7.8
+    },
+    {
+      "page": "/en/itinerary/orchha",
+      "queries": 1,
+      "impressions": 6,
+      "clicks": 0,
+      "topQueries": [
+        "how many days required to see orchha"
+      ],
+      "avgPosition": 6.7
+    },
+    {
+      "page": "/en/vs/kozhikode-vs-trivandrum",
+      "queries": 1,
+      "impressions": 6,
+      "clicks": 0,
+      "topQueries": [
+        "kozhikode vs trivandrum"
+      ],
+      "avgPosition": 6.2
+    },
+    {
+      "page": "/en/cost/shillong",
+      "queries": 2,
+      "impressions": 6,
+      "clicks": 0,
+      "topQueries": [
+        "shillong budget",
+        "shillong trip budget"
+      ],
+      "avgPosition": 6.9
+    },
+    {
+      "page": "/en/destination/belum-caves/november",
+      "queries": 1,
+      "impressions": 5,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit belum caves"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/with-kids/darjeeling",
+      "queries": 1,
+      "impressions": 5,
+      "clicks": 0,
+      "topQueries": [
+        "darjeeling with kids"
+      ],
+      "avgPosition": 8.8
+    },
+    {
+      "page": "/en/itinerary/palampur",
+      "queries": 1,
+      "impressions": 5,
+      "clicks": 0,
+      "topQueries": [
+        "palampur itinerary"
+      ],
+      "avgPosition": 9.8
+    },
+    {
+      "page": "/hi/cost/puri",
+      "queries": 1,
+      "impressions": 5,
+      "clicks": 0,
+      "topQueries": [
+        "puri jane ka kharcha"
+      ],
+      "avgPosition": 5.4
+    },
+    {
+      "page": "/en/vs/kedarnath-vs-badrinath",
+      "queries": 3,
+      "impressions": 5,
+      "clicks": 0,
+      "topQueries": [
+        "badrinath vs kedarnath",
+        "badrinath vs kedarnath height",
+        "kedarnath vs badrinath height"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/hi/cost/mumbai",
+      "queries": 2,
+      "impressions": 5,
+      "clicks": 0,
+      "topQueries": [
+        "mumbai jane ka kharcha kitna hai",
+        "mumbai jane ka kharcha"
+      ],
+      "avgPosition": 8.6
+    },
+    {
+      "page": "/en/vs/vagamon-vs-wayanad",
+      "queries": 3,
+      "impressions": 5,
+      "clicks": 0,
+      "topQueries": [
+        "vagamon or wayanad which is better",
+        "wayanad vs vagamon",
+        "vagamon vs wayanad"
+      ],
+      "avgPosition": 5.6
+    },
+    {
+      "page": "/en/destination/belum-caves/september",
+      "queries": 1,
+      "impressions": 4,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit belum caves"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/destination/parvati-valley/october",
+      "queries": 1,
+      "impressions": 4,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit parvati valley"
+      ],
+      "avgPosition": 9.8
+    },
+    {
+      "page": "/en/vs/nashik-vs-aurangabad",
+      "queries": 1,
+      "impressions": 4,
+      "clicks": 0,
+      "topQueries": [
+        "nashik vs sambhaji nagar"
+      ],
+      "avgPosition": 9.5
+    },
+    {
+      "page": "/en/itinerary/patna",
+      "queries": 1,
+      "impressions": 4,
+      "clicks": 0,
+      "topQueries": [
+        "patna itinerary"
+      ],
+      "avgPosition": 9.3
+    },
+    {
+      "page": "/en/vs/sangla-vs-chitkul",
+      "queries": 1,
+      "impressions": 4,
+      "clicks": 0,
+      "topQueries": [
+        "sangla or chitkul which is better"
+      ],
+      "avgPosition": 5.5
+    },
+    {
+      "page": "/en/cost/kolkata",
+      "queries": 2,
+      "impressions": 4,
+      "clicks": 0,
+      "topQueries": [
+        "per person cost",
+        "travel cost"
+      ],
+      "avgPosition": 7.5
+    },
+    {
+      "page": "/en/cost/bangaram",
+      "queries": 3,
+      "impressions": 4,
+      "clicks": 0,
+      "topQueries": [
+        "bangaram island trip cost",
+        "how much does it cost",
+        "how much would it cost ?"
+      ],
+      "avgPosition": 7.8
+    },
+    {
+      "page": "/en/vs/chakrata-vs-dhanaulti",
+      "queries": 1,
+      "impressions": 3,
+      "clicks": 0,
+      "topQueries": [
+        "dhanaulti or chakrata which is better"
+      ],
+      "avgPosition": 5.3
+    },
+    {
+      "page": "/en/vs/cherrapunji-vs-mawsynram",
+      "queries": 1,
+      "impressions": 3,
+      "clicks": 0,
+      "topQueries": [
+        "mawsynram vs cherrapunji"
+      ],
+      "avgPosition": 9.7
+    },
+    {
+      "page": "/en/vs/alleppey-vs-munnar",
+      "queries": 2,
+      "impressions": 3,
+      "clicks": 0,
+      "topQueries": [
+        "munnar vs alleppey",
+        "munnar or alleppey which is better"
+      ],
+      "avgPosition": 7.3
+    },
+    {
+      "page": "/en/vs/ranthambore-vs-corbett-national-park",
+      "queries": 2,
+      "impressions": 3,
+      "clicks": 0,
+      "topQueries": [
+        "which is better ranthambore or jim corbett",
+        "jim corbett national park vs ranthambore"
+      ],
+      "avgPosition": 9.3
+    },
+    {
+      "page": "/en/cost/auroville",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "auroville cost"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/cost/valley-of-flowers",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "budget for valley of flowers"
+      ],
+      "avgPosition": 6.5
+    },
+    {
+      "page": "/en/cost/chandratal",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "chandratal trip budget"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/destination/dharmasthala",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "dharmasthala best time to visit"
+      ],
+      "avgPosition": 9.5
+    },
+    {
+      "page": "/en/itinerary/girnar",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "girnar itinerary"
+      ],
+      "avgPosition": 6.5
+    },
+    {
+      "page": "/en/vs/mangalore-vs-visakhapatnam",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "mangalore vs vizag"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/en/blog/best-time-to-visit-nagaland",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "nagaland best time to visit"
+      ],
+      "avgPosition": 7.5
+    },
+    {
+      "page": "/en/vs/nagarjuna-sagar-vs-srisailam",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "nagarjuna sagar dam vs srisailam dam"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/itinerary/ranikhet",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "ranikhet itinerary"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/en/vs/mangalore-vs-varkala",
+      "queries": 1,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "udupi vs varkala"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/vs/gulmarg-vs-pahalgam",
+      "queries": 2,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "gulmarg or pahalgam which is better",
+        "gulmarg vs pahalgam"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/cost/jibhi",
+      "queries": 2,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "jibhi 2 nights 3 days package",
+        "jibhi budget"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/blog/best-time-to-visit-rishikesh",
+      "queries": 2,
+      "impressions": 2,
+      "clicks": 0,
+      "topQueries": [
+        "rishikesh best time to visit",
+        "rishikesh visit best time"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/routes/tn-coromandel-coast",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "a 3 day trip"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/cost/orchha",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "avg budget"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/vs/nagarhole-vs-bandipur",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "bandipur vs nagarhole which is better"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/destination/champhai",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/destination/dirang",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit arunachal pradesh"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/destination/pasighat",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "best time to visit pasighat"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/destination/chitrakote-falls",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "chitrakote falls best time to visit"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/safari/nagarhole",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "cost"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/cost/simlipal",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "costing"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/cost/daman",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "daman trip cost"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/vs/dalhousie-vs-dharamshala",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "dharamshala vs dalhousie"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/cost/gangtok",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "gangtok per person budget"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/vs/gokarna-vs-murudeshwar",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "gokarna or murudeshwar which is better"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/destination/hanle",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "hanle ladakh best time to visit"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/cost/mysore",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "how much budget"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/cost/mawsynram",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "how much does that cost"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/destination/koraput",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "is it safe for girls"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/cost/kalimpong",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kalimpong trip cost"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/vs/shimla-vs-kasauli",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kasauli vs shimla"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/en/blog/kashmir-with-kids-family-guide",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kashmir with kids"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/itinerary/kasol",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kasol itinerary for 5 days"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/cost/lucknow",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kharcha"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/hi/cost/gandikota",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kitna kharch aata hai"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/hi/cost/corbett-national-park",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kitna kharcha ayega"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/en/cost/mcleodganj",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kitna khrcha aa jayega"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/hi/cost/somnath",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "kitna price hai"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/cost/mount-abu",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "mount abu cost per person"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/vs/ooty-vs-coonoor",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "ooty or coonoor which is better"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/itinerary/gandhinagar",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "plan a gandhinagar trip itinerary"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/cost/puducherry",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "pondicherry budget plan"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/with-kids/pondicherry",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "pondicherry with kids"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/hi/cost/rajgir",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "rajgir trip cost"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/with-kids/rishikesh",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "rishikesh with kids"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/destination/shrikhand-mahadev",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "shrikhand mahadev trek budget"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/hi/cost/tirupati",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "tirupati jane ka kharcha"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/cost/morni-hills",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "total budget"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/en/itinerary/valparai",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "valparai itinerary"
+      ],
+      "avgPosition": 10
+    },
+    {
+      "page": "/en/vs/valparai-vs-munnar",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "valparai or munnar which is better"
+      ],
+      "avgPosition": 6
+    },
+    {
+      "page": "/en/cost/gurez-valley",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "what's the budget?"
+      ],
+      "avgPosition": 9
+    },
+    {
+      "page": "/en/destination/varkala",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "when is the best time to go to kerala"
+      ],
+      "avgPosition": 8
+    },
+    {
+      "page": "/en/vs/kollam-vs-trivandrum",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "which is costlier"
+      ],
+      "avgPosition": 7
+    },
+    {
+      "page": "/en/with-kids/mukteshwar",
+      "queries": 1,
+      "impressions": 1,
+      "clicks": 0,
+      "topQueries": [
+        "with kids which is better"
+      ],
+      "avgPosition": 10
+    }
+  ]
+}
