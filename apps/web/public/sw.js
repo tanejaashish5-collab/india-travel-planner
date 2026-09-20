@@ -120,7 +120,16 @@
 //      celebration video hero (de-watermarked Flow/Veo clips, {slug}.mp4 in
 //      R2) on ~500 /festivals/[slug] pages — markup changed from a static
 //      image to a <video> on the long tail that previously had no clip.
-const CACHE_VERSION = "nakshiq-v59";
+// v60: 2026-09-20 /vs/ quick-verdict rewrite. The verdict paragraph is the
+//      first prose on every comparison page and Google lifts it as the SERP
+//      snippet; on ~49% of pairs it rendered "Both destinations score equally
+//      right now (X/10)" — no winner, and at the low end it read as "both
+//      places are bad" with no season context. It now always resolves to a
+//      direction, breaking current-month ties on year-round score → kids
+//      rating → difficulty → safety, and adds the strongest-window months when
+//      the current month is weak. Changes text on all 1,674 /vs/ pages in both
+//      locales, and /vs/ HTML is runtime-cached, so the bump purges v59 copies.
+const CACHE_VERSION = "nakshiq-v60";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

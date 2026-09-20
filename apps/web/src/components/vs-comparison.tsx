@@ -1,8 +1,17 @@
 import Link from "next/link";
-import { currentMonthIST, formatScoreInline } from "@itp/shared";
+import { currentMonthIST, displayScore, formatScoreInline } from "@itp/shared";
 
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MONTH_SHORT_HI = ["", "जन", "फ़र", "मार्च", "अप्रैल", "मई", "जून", "जुल", "अग", "सित", "अक्तू", "नव", "दिस"];
+
+// Full month names are used ONLY in the quick-verdict sentence. That paragraph
+// is the first prose on the page and Google lifts it as the SERP snippet, so it
+// has to read as prose ("September is off-season for both"), not as a table
+// cell ("Sep is off-season for both"). Everywhere else keeps the short forms.
+const MONTH_LONG = ["", "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+const MONTH_LONG_HI = ["", "जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून",
+  "जुलाई", "अगस्त", "सितंबर", "अक्तूबर", "नवंबर", "दिसंबर"];
 
 // Bilingual display copy for the comparison surface. Devanagari follows the
 // same inline-Hindi-map pattern as STATE_NAME_HI in lib/seo-maps.ts.
@@ -28,10 +37,34 @@ function vsCopy(locale: string) {
       hi
         ? `${name} इस महीने ${a} बनाम ${b} के स्कोर के साथ थोड़ा आगे है।`
         : `${name} edges ahead this month with a score of ${a} vs ${b}.`,
-    bothEqual: (s: string) =>
+    // Tie handling. The old copy rendered a bare "Both destinations score
+    // equally right now (2.0/10)." — which Google lifted verbatim as the
+    // snippet on ~49% of /vs/ pages (scores are integers 0–5, so ties are
+    // structurally common). That sentence names no winner and, at the low end,
+    // reads as "both places are bad" with no season context. These strings
+    // always resolve to a direction plus a reason drawn from data already on
+    // the page. See resolveTie() below.
+    tieOpenPeak: (m: string, s: string) =>
+      hi ? `${m} में दोनों अपने चरम पर हैं — दोनों ${s}।` : `Both peak in ${m} — ${s} each.`,
+    tieOpenFair: (m: string, s: string) =>
       hi
-        ? `दोनों जगहें इस समय बराबरी पर हैं (${s})।`
-        : `Both destinations score equally right now (${s}).`,
+        ? `${m} में दोनों ठीक-ठाक हैं — दोनों ${s}।`
+        : `Both are a fair pick in ${m} — ${s} each.`,
+    tieOpenOff: (m: string, s: string) =>
+      hi
+        ? `${m} दोनों के लिए ऑफ़-सीज़न है — दोनों ${s}।`
+        : `${m} is off-season for both — ${s} each.`,
+    tieWinner: (name: string, reason: string) =>
+      hi ? `फिर भी कुल मिलाकर ${name} आगे है: ${reason}।` : `${name} still takes it overall: ${reason}.`,
+    tieReasonMoreMonths: hi ? "साल भर में ज़्यादा अच्छे महीने" : "more good months across the year",
+    tieReasonKids: hi ? "बच्चों के साथ बेहतर रेटिंग" : "it rates better with kids",
+    tieReasonEasier: hi ? "यात्रा ज़्यादा आसान है" : "it's the easier trip",
+    tieReasonSafer: hi ? "सुरक्षा रेटिंग बेहतर है" : "it carries the better safety rating",
+    tieInterchangeable: hi
+      ? "हमारे डेटा के हिसाब से इस महीने दोनों में कोई असली फ़र्क नहीं — जहाँ से चल रहे हैं, वहाँ से यात्रा का समय देखकर चुनें।"
+      : "On our data they're genuinely interchangeable this month — pick on travel time from where you start.",
+    strongestWindow: (name: string, months: string) =>
+      hi ? `${name} के सबसे अच्छे महीने: ${months}।` : `${name}'s strongest window is ${months}.`,
     overallBetter: (name: string) =>
       hi
         ? `कुल मिलाकर, साल भर में ${name} के ज़्यादा महीने घूमने के अनुकूल रहते हैं।`
@@ -106,6 +139,40 @@ function winner(val1: number | null, val2: number | null): "left" | "right" | "t
   return "tie";
 }
 
+/**
+ * Break a current-month score tie using data already shown on the page.
+ *
+ * Ordered by how much a traveller actually cares, and every axis is real
+ * verified data — no invented differentiator. Returns null when the two are
+ * genuinely indistinguishable, which is itself an honest, useful verdict.
+ */
+function resolveTie(
+  d1: DestData,
+  d2: DestData,
+  totalScore1: number,
+  totalScore2: number,
+  t: ReturnType<typeof vsCopy>,
+): { side: "left" | "right"; reason: string } | null {
+  const numericSafety = (d: DestData): number | null => {
+    const v = d.confidence?.safety_rating;
+    return typeof v === "number" ? v : null;
+  };
+  const EASE: Record<string, number> = { easy: 3, moderate: 2, hard: 1, extreme: 0 };
+
+  const axes: { v1: number | null; v2: number | null; reason: string }[] = [
+    { v1: totalScore1, v2: totalScore2, reason: t.tieReasonMoreMonths },
+    { v1: d1.kids?.rating ?? null, v2: d2.kids?.rating ?? null, reason: t.tieReasonKids },
+    { v1: EASE[d1.difficulty] ?? null, v2: EASE[d2.difficulty] ?? null, reason: t.tieReasonEasier },
+    { v1: numericSafety(d1), v2: numericSafety(d2), reason: t.tieReasonSafer },
+  ];
+
+  for (const a of axes) {
+    if (a.v1 == null || a.v2 == null || a.v1 === a.v2) continue;
+    return { side: a.v1 > a.v2 ? "left" : "right", reason: a.reason };
+  }
+  return null;
+}
+
 function formatSafety(v: number | string | null | undefined): string {
   if (v == null) return "—";
   if (typeof v === "number") return formatScoreInline(v);
@@ -175,6 +242,7 @@ const tableValueCell = (isWinner: boolean): React.CSSProperties => ({
 export function VsComparison({ dest1, dest2, locale }: Props) {
   const t = vsCopy(locale);
   const monthNames = locale === "hi" ? MONTH_SHORT_HI : MONTH_SHORT;
+  const monthNamesLong = locale === "hi" ? MONTH_LONG_HI : MONTH_LONG;
   const currentMonth = currentMonthIST();
   const score1 = getMonthScore(dest1.months, currentMonth);
   const score2 = getMonthScore(dest2.months, currentMonth);
@@ -229,6 +297,75 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
   const totalScore1 = dest1.months.reduce((s, m) => s + m.score, 0);
   const totalScore2 = dest2.months.reduce((s, m) => s + m.score, 0);
   const currentWin = winner(score1, score2);
+
+  // ---- Quick-verdict sentence -------------------------------------------
+  // This paragraph is the first prose on the page, so Google lifts it as the
+  // SERP snippet. It must always name a direction. Measured 2026-09-20: /vs/
+  // is 15.5% of impressions but 27% of clicks, so this block is the highest-
+  // read copy on the site.
+  const strongWindow = (d: DestData): string =>
+    d.months.filter((m) => m.score >= 4).map((m) => monthNames[m.month]).join(", ");
+
+  const verdictParts: string[] = [];
+
+  if (currentWin === "tie") {
+    const displayed = displayScore(score1);
+    const month = monthNamesLong[currentMonth];
+    // winner() returns "tie" when BOTH scores are missing, not just when they
+    // are equal. Emitting a score sentence then would render "— each", so the
+    // no-data case skips the opener and goes straight to the tie-break, which
+    // reads on year-round data that does exist.
+    if (displayed != null) {
+      const shared = formatScoreInline(score1);
+      verdictParts.push(
+        displayed >= 8 ? t.tieOpenPeak(month, shared)
+          : displayed <= 4 ? t.tieOpenOff(month, shared)
+            : t.tieOpenFair(month, shared),
+      );
+    }
+
+    const broke = resolveTie(dest1, dest2, totalScore1, totalScore2, t);
+    if (broke) {
+      const champ = broke.side === "left" ? dest1 : dest2;
+      // "still takes it overall" only reads correctly after a scored opener.
+      // With no current-month data there is no "still" to contrast against.
+      verdictParts.push(
+        displayed != null ? t.tieWinner(champ.name, broke.reason) : t.overallBetter(champ.name),
+      );
+      // An off-season tie is only actionable with the alternative window.
+      const w = strongWindow(champ);
+      if (displayed != null && displayed <= 4 && w) verdictParts.push(t.strongestWindow(champ.name, w));
+    } else {
+      verdictParts.push(t.tieInterchangeable);
+    }
+  } else {
+    const champ = currentWin === "left" ? dest1 : dest2;
+    const champScore = currentWin === "left" ? score1 : score2;
+    const otherScore = currentWin === "left" ? score2 : score1;
+    verdictParts.push(
+      t.edgesAhead(
+        champ.name,
+        formatScoreInline(champScore!),
+        otherScore != null ? formatScoreInline(otherScore) : "—",
+      ),
+    );
+    verdictParts.push(
+      totalScore1 > totalScore2
+        ? t.overallBetter(dest1.name)
+        : totalScore2 > totalScore1
+          ? t.overallBetter(dest2.name)
+          : t.overallSimilar,
+    );
+    // "X edges ahead with 4.0/10 vs 2.0/10" is a win nobody wants. When even
+    // the winner is weak this month, say when to actually go instead.
+    const champDisplayed = displayScore(champScore);
+    const w = strongWindow(champ);
+    if (champDisplayed != null && champDisplayed <= 4 && w) {
+      verdictParts.push(t.strongestWindow(champ.name, w));
+    }
+  }
+
+  const verdictLine = verdictParts.join(" ");
 
   // Choose-if reasons
   const choose1: string[] = [];
@@ -285,16 +422,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
             margin: 0,
           }}
         >
-          {currentWin === "left"
-            ? t.edgesAhead(dest1.name, formatScoreInline(score1!), score2 != null ? formatScoreInline(score2) : "—")
-            : currentWin === "right"
-              ? t.edgesAhead(dest2.name, formatScoreInline(score2!), score1 != null ? formatScoreInline(score1) : "—")
-              : t.bothEqual(score1 != null ? formatScoreInline(score1) : "—")}{" "}
-          {totalScore1 > totalScore2
-            ? t.overallBetter(dest1.name)
-            : totalScore2 > totalScore1
-              ? t.overallBetter(dest2.name)
-              : t.overallSimilar}
+          {verdictLine}
         </p>
       </section>
 
