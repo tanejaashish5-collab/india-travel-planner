@@ -24046,3 +24046,26 @@ Date range: 2026-04-15 → 2026-09-18
 2026-09-19 20:45:55  INFO      
 Date range: 2026-04-15 → 2026-09-19
 2026-09-19 20:45:55  INFO      ════════════════════════════════════════════════════════════
+2026-09-20 08:02:56  INFO      ════════════════════════════════════════════════════════════
+2026-09-20 08:02:56  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-20
+2026-09-20 08:02:56  INFO      ════════════════════════════════════════════════════════════
+2026-09-20 08:03:00  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-20 08:04:54  INFO      Short rendered: yt_short_mini_guide_achabal_hi_2026-09-20.mp4 (25778 KB, 23.9s, fmt=mini_guide, music=edm-777)
+2026-09-20 08:04:54  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_achabal_hi_2026-09-20.mp4 (26,397,300 bytes, video/mp4)
+2026-09-20 08:04:55  INFO          Uploading to R2 (timeout=300s)...
+2026-09-20 08:04:58  INFO          R2 PUT OK. Confirming...
+2026-09-20 08:05:00  INFO          Media ready: xrccj (26,397,300 bytes · yt_short_mini_guide_yt_short_mini_guide_achabal_hi_2026-09-20.mp4)
+2026-09-20 08:05:00  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_achabal_hi_2026-09-20.mp4
+2026-09-20 08:05:01  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-20 08:05:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-20 08:05:01  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-09-20 08:05:01  INFO          Caption sanitizer: stripped 2 banned tags: ['#IncredibleIndia', '#India']
+2026-09-20 08:05:06  INFO      [instagram/nakshiq] Outstand accepted (post_id=5NpcS), waiting for platform confirmation...
+2026-09-20 08:05:50  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=5NpcS · Platform=18116669686966671
+2026-09-20 08:05:50  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-09-20 08:05:50  INFO          Caption sanitizer: stripped 1 banned tags: ['#IncredibleIndia']
+2026-09-20 08:05:55  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Sw5k9), waiting for platform confirmation...
+2026-09-20 08:06:01  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=Sw5k9 · Platform=_HoZjtduEqA
+2026-09-20 08:06:01  INFO      YT Short posted: format=mini_guide, music=edm-777
+2026-09-20 08:06:01  INFO      State saved. YT Short run complete.
+2026-09-20 08:06:01  INFO      ════════════════════════════════════════════════════════════

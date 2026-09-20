@@ -35,35 +35,11 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-19",
-    "m8EAd_yt_short": "2026-09-19"
+    "GAh5p_yt_short": "2026-09-20",
+    "m8EAd_yt_short": "2026-09-20"
   },
   "last_sync": "2026-09-15T10:18:46.034686+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "mysore",
-      "date": "2026-09-05"
-    },
-    {
-      "destination_id": "delhi",
-      "date": "2026-09-05"
-    },
-    {
-      "destination_id": "nako",
-      "date": "2026-09-05"
-    },
-    {
-      "destination_id": "barot-valley",
-      "date": "2026-09-05"
-    },
-    {
-      "destination_id": "chopta",
-      "date": "2026-09-05"
-    },
-    {
-      "destination_id": "pahalgam",
-      "date": "2026-09-05"
-    },
     {
       "destination_id": "kargil",
       "date": "2026-09-06"
@@ -183,6 +159,10 @@
     {
       "destination_id": "leh",
       "date": "2026-09-19"
+    },
+    {
+      "destination_id": "achabal",
+      "date": "2026-09-20"
     }
   ],
   "posted_formats": {
@@ -9933,6 +9913,24 @@
       "destination": "leh",
       "format": "yt_short.dont_go_here",
       "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_leh_en_2026-09-19.mp4"
+    },
+    {
+      "timestamp": "2026-09-20T08:05:50.549473+00:00",
+      "date": "2026-09-20",
+      "platform": "instagram",
+      "post_id": "5NpcS",
+      "destination": "achabal",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_achabal_hi_2026-09-20.mp4"
+    },
+    {
+      "timestamp": "2026-09-20T08:06:01.546189+00:00",
+      "date": "2026-09-20",
+      "platform": "youtube",
+      "post_id": "Sw5k9",
+      "destination": "achabal",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_achabal_hi_2026-09-20.mp4"
     }
   ],
   "theme_usage": {
@@ -10030,10 +10028,6 @@
       "ooty": [
         "2026-05-29",
         "2026-09-04"
-      ],
-      "yusmarg": [
-        "2026-06-01",
-        "2026-06-21"
       ],
       "kasol": [
         "2026-06-01",
@@ -10404,11 +10398,6 @@
         "2026-08-31",
         "2026-09-06"
       ],
-      "v2_local_knows": [
-        "2026-06-02",
-        "2026-06-16",
-        "2026-06-21"
-      ],
       "v2_myth_bust_oneline": [
         "2026-06-06",
         "2026-06-17",
@@ -10490,9 +10479,6 @@
         "2026-06-19",
         "2026-08-07",
         "2026-08-21"
-      ],
-      "yusmarg": [
-        "2026-06-21"
       ],
       "ukhrul": [
         "2026-06-22"
