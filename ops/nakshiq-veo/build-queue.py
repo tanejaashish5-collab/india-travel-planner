@@ -38,8 +38,13 @@ PACK = Path.home() / "Automation" / "nakshiq-ig" / "data" / "verdicts.json"
 QUEUE = HERE / "veo_queue.json"
 LEDGER = HERE / "generated.json"          # slug+format -> last generated date
 
-DAILY_CLIP_BUDGET = 28                    # 7 whole 4-beat storyboards; of 30,
-                                          # leaving 20 credits to finish a partial
+DAILY_CLIP_BUDGET = 30                    # 6 accounts x 50 credits / 10 per clip.
+                                          # Founder, 09-21: use all 30 every day.
+# Storyboards are 3 or 4 clips and must stay WHOLE (a reel missing one beat
+# renders nothing), so the queue cannot simply stop at 30: it has to LAND on 30.
+# Every whole number is a sum of 3s and 4s except 1, 2 and 5, so a storyboard is
+# only accepted if the budget it leaves behind is still fillable.
+_UNFILLABLE = {1, 2, 5}
 # No format may take more than this many storyboards in one run. sos_rescue
 # needs no per-destination data since the 09-21 honesty rewrite, so it passes
 # for EVERY destination; with it first in FORMATS, an uncapped run would be
@@ -155,7 +160,18 @@ def main() -> int:
         return 0
 
     queued, clips, skipped = [], 0, {}
+    # Seed the cap from what is ALREADY pending, not from zero. The job runs at
+    # 09:20 and again at 14:20; a cap counted per-run let the second run add two
+    # more of a format the first run had already maxed (seen 09-21: four
+    # sos_rescue in one day's queue with a cap of two).
     per_fmt: dict = {}
+    try:
+        _pend = {(r["slug"], r["format"]) for r in json.loads(QUEUE.read_text())
+                 if r.get("status") == "pending"}
+        for _slug, _fmt in _pend:
+            per_fmt[_fmt] = per_fmt.get(_fmt, 0) + 1
+    except Exception:
+        pass
     for d in order:
         if clips >= budget:
             break
@@ -179,6 +195,7 @@ def main() -> int:
                 continue                          # variety: try the next format
             try:
                 kw = {}
+                remaining = budget - clips
                 if fmt == "two_places":
                     partner = next((o for o in order
                                     if o["id"] != d["id"]
@@ -194,6 +211,10 @@ def main() -> int:
                 skipped.setdefault(str(e).split(":")[1].strip()[:44], 0)
                 skipped[str(e).split(":")[1].strip()[:44]] += 1
                 continue
+            size = len(SB.queue_rows(sb))
+            left = remaining - size
+            if size > remaining or left in _UNFILLABLE:
+                continue                          # would overshoot or strand credits
             n = SB.enqueue(sb, QUEUE)
             if n:
                 queued.append((d["id"], fmt, n))

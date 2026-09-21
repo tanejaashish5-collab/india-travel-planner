@@ -662,13 +662,18 @@ def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
     return _scenario(
         dest, month,
         character=_character(dest.get("id"), "a young couple"),
-        trouble=("A small hatchback is stopped at the side of an empty mountain "
-                 "road at dusk with its hazard lights blinking, bonnet up, the "
-                 "couple standing beside it looking down the empty road in both "
-                 "directions."),
+        # NO TERRAIN. This format needs no per-destination data, so it runs for
+        # every destination -- coast, desert, plains and hills alike. It used to
+        # say "empty mountain road ... the valley below", which on its first
+        # honest queue put a mountain road into Alibaug (a flat coastal town) and
+        # Alleppey's backwaters. The scene asserts only what is true anywhere: an
+        # empty road, dusk, no signal.
+        trouble=("A small hatchback is stopped at the side of an empty road at "
+                 "dusk with its hazard lights blinking, bonnet up, the couple "
+                 "standing beside it looking down the road in both directions."),
         helpless=("One of them holds a phone up at arm's length, turning slowly, "
-                  "searching for a signal that is not there while the light goes "
-                  "and the valley below fills with shadow."),
+                  "searching for a signal that is not there while the light fades "
+                  "and the road stays empty."),
         lookup=("Close on their hands opening a saved page on the phone that "
                 "loads with no signal at all, then one of them walking a little "
                 "way up the road holding the phone high until it finds a single "
@@ -697,12 +702,15 @@ def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
     return _scenario(
         dest, month,
         character=_character(dest.get("id"), "two friends on a road trip"),
-        trouble=("Close on a car dashboard at altitude, the low-fuel light coming "
-                 "on amber, the road ahead through the windscreen completely empty "
-                 "and climbing."),
+        # No terrain. This said "at altitude ... nothing but rock and sky", and
+        # its first real pick was Ambaji, a ~480 m temple town in Gujarat -- the
+        # same fabrication class as Aihole's invented deodars. The fuel-light
+        # story is true on any empty road, so the scene asserts only that.
+        trouble=("Close on a car dashboard, the low-fuel light coming on amber, "
+                 "the road ahead through the windscreen long and completely empty."),
         helpless=("The driver glances at the passenger, then back at the empty "
-                  "road, nothing but rock and sky in every direction and no "
-                  "buildings at all."),
+                  "road, no fuel station, no buildings and no other car in "
+                  "sight."),
         lookup=("The passenger's hands open a saved page on a phone that loads "
                 "with no signal, and their finger stops on a line partway down."),
         resolve=("The car pulls into a small roadside fuel pump with a hand-painted "
