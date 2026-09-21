@@ -1690,7 +1690,7 @@ def _ass_color(hex6: str) -> str:
 
 
 def build_ass(cues, score_disp, name, total_dur, out_ass: Path, hook: dict = None,
-              month: int = None):
+              month: int = None, storyboard: dict = None):
     W = _ass_color(BONE); V = _ass_color(VERMILLION); S = _ass_color(SAFFRON)
     INK = _ass_color(INK_DEEP)
     vermillion_bg = (VERMILLION[4:6] + VERMILLION[2:4] + VERMILLION[0:2]).upper()  # BGR for ASS box
@@ -1737,6 +1737,18 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         cta1_txt = hook.get("cta1", "SEND THIS")
         cta2_txt = hook.get("cta2", "nakshiq.com")
         reveal_txt = hook.get("reveal", "")
+    elif storyboard:
+        # A SCENARIO IS NOT A SCORE REEL. Until now build_ass was called without
+        # the storyboard, so a rescue scenario inherited the score furniture and
+        # ended on a burned-in "10 / 10" — a month-verdict answer stamped over a
+        # story about reaching help, which is both a non-sequitur and a claim the
+        # reel never made. Seen on the first real render, 2026-09-21.
+        kicker_txt = "DRAMATISED  •  REAL DATA"
+        slam_txt = name.upper()
+        badge_txt = "  " + name.upper() + "  "
+        cta1_txt = "SEND THIS"
+        cta2_txt = "to whoever is driving · nakshiq.com"
+        reveal_txt = ""          # no score: this format never earned one
     else:
         # 2026-09-20: this kicker read "JUNE" on EVERY score reel regardless of
         # the actual month, because the string was hardcoded and _arc_hook
@@ -1765,6 +1777,32 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     # arrival "<CITY> · <CODE>" — stays on screen to anchor the reel.
     dlg(hook_end - 0.1, voice_end, "Badge",
         "{\\an8\\pos(540,150)\\fad(180,0)}" + badge_txt)
+
+    # The founder-approved on-screen label, persistent like the brand bar. The
+    # scene is illustrative and must never read as documentary footage of a real
+    # emergency — that is the failure mode that turns an audience and draws
+    # platform enforcement, so the mark stays up for the whole reel, not just
+    # the hook.
+    if storyboard:
+        dlg(hook_end - 0.1, voice_end, "Kicker",
+            "{\\an8\\pos(540,248)\\fad(180,0)\\fscx55\\fscy55\\alpha&H60&}"
+            + "DRAMATISED  •  REAL DATA")
+
+    # NO DIGITS ON SCREEN, EVER, on a scenario. The prompt validator already
+    # stops Veo rendering a number (_NUMBER_ASSERT); the burned-in overlay was
+    # never held to the same rule, and a plausible-but-wrong emergency number on
+    # screen is the most dangerous thing this repo could publish. Refuse rather
+    # than print it: a reel that fails to build is recoverable, a published one
+    # is not.
+    if storyboard:
+        _digits = re.compile(r"\\d[\\d\\s\\-]{4,}\\d")
+        for _t in [kicker_txt, slam_txt, badge_txt, cta1_txt, cta2_txt,
+                   *(c[2] for c in cues)]:
+            if _digits.search(str(_t)):
+                raise ValueError(
+                    f"scenario overlay would print a number-like string: {_t!r}. "
+                    "Scenario reels show that the number IS there and loads "
+                    "offline, never the digits themselves.")
 
     # WORD CAPTIONS — big, low (in the bottom scrim), pop-in, synced to voice.
     for (s, e, txt) in cues:
@@ -2187,6 +2225,7 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
 
         # 3. ASS
         ass = build_ass(cues, score_disp, name, total, tdp / "subs.ass", hook=hook,
+                        storyboard=storyboard,
                         month=month)
         # 4. background
         clips = _find_clips(slug)

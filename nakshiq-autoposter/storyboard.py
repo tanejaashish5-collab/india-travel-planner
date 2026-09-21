@@ -80,6 +80,20 @@ STYLE = ("Shot on a 35mm lens at a shallow stop, photorealistic documentary "
 
 _TEXT_ASK = re.compile(r"\b(text|caption|title|subtitle|lettering|words on)\b", re.I)
 
+# Physical features a template must NEVER assert, because we hold no per
+# destination terrain field and a wrong one renders a confident lie about a real
+# place. Caught 2026-09-20 when two_places gave Aihole, a Deccan temple site,
+# deodar trees and colonial tin roofs.
+# A scenario shows a phone being used. It must NEVER ask Veo to render the
+# number: text comes out garbled, and a plausible-but-wrong emergency number is
+# the most dangerous thing this repo could publish. The real value is burned in
+# post from the DB, or it is not shown at all.
+_NUMBER_ASSERT = re.compile(r"(\+?\d[\d\s\-]{6,}\d)|\b(dials?|types?) (the )?number\b", re.I)
+
+_TERRAIN_ASSERT = re.compile(
+    r"\b(deodar|pine|palm|terraces?|ridgeline|glacier|dune|backwater|tin roofs?|"
+    r"colonial-era|paddy|ice shelves|spindrift|snow-capped)\b", re.I)
+
 
 class StoryboardError(ValueError):
     """Raised when a storyboard cannot be built HONESTLY from the data given."""
@@ -110,6 +124,21 @@ def _require(dest: dict, fields: tuple, fmt: str) -> None:
             f"refusing to invent it")
 
 
+def _first_sentence(t: str) -> str:
+    """The first sentence of editorial prose.
+
+    Verdict `sentence` / `note` text is written for a page, not a reel, and some
+    rows carry two sentences — which the one-sentence beat rule (rightly)
+    rejects. Trimming beats refusing: the opening clause is the call, and the
+    rest is detail the page already carries.
+    """
+    t = (t or "").strip()
+    if not t:
+        return ""
+    parts = re.split(r"(?<=[.!?])\s+", t)
+    return parts[0].strip()
+
+
 def _place(dest: dict) -> str:
     """'Chitkul in Himachal Pradesh' — the specificity anchor that keeps a
     prompt from producing generic mountain wallpaper."""
@@ -118,16 +147,27 @@ def _place(dest: dict) -> str:
     return f"{name} in {state}" if state else name
 
 
+# A month only counts as the turn if the verdict itself says stay away. "Lower
+# score" is not enough: in a catalogue where 88% of verdicts are 8/10 or better,
+# the lowest month is usually still a "go".
+_NOT_GO = {"wait", "skip", "avoid", "no"}
+
+
 def _worst_month(months: dict) -> Optional[int]:
-    """The month this place scores LOWEST. That is the turn: the reel exists to
-    say 'not then'. Returns None when the data cannot support the claim."""
+    """The month this place genuinely says DON'T GO, or None.
+
+    Returns None when no month qualifies — and the caller then refuses to build,
+    which is the correct outcome. A reel that says "not November" about a month
+    our own data rates 8/10 is a reel that lies.
+    """
     if not months:
         return None
-    scored = [(m, v.get("score")) for m, v in months.items()
-              if isinstance(v.get("score"), (int, float))]
-    if len(scored) < 2:
+    bad = [(m, v.get("score")) for m, v in months.items()
+           if isinstance(v.get("score"), (int, float))
+           and (str(v.get("label") or "").lower() in _NOT_GO or v.get("score") <= 2)]
+    if not bad:
         return None
-    return min(scored, key=lambda x: x[1])[0]
+    return min(bad, key=lambda x: x[1])[0]
 
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -144,40 +184,43 @@ def _fmt_wrong_month(dest: dict, month: int, months: dict) -> list:
     bad = _worst_month(months)
     if bad is None:
         raise StoryboardError(
-            "wrong_month: need scores for 2+ months to name a worse one")
-    if months.get(bad, {}).get("score") >= months.get(month, {}).get("score", 0):
+            f"wrong_month: {dest.get('id')} has no month our data actually says "
+            f"to avoid — refusing to invent a bad month")
+    if bad == month:
         raise StoryboardError(
-            f"wrong_month: {dest.get('id')} has no month worse than {month}")
+            f"wrong_month: {dest.get('id')}'s worst month IS {month}")
 
     place = _place(dest)
     good_n, bad_n = _month_name(month), _month_name(bad)
-    frame = (f"{place}, the village and its valley filling the middle distance "
-             f"with the ridgeline behind")
-    bad_line = (months.get(bad, {}).get("sentence") or "").strip()
+    # The subject is the PLACE, named and nothing more. No invented terrain.
+    frame = f"{place}, framed wide so the whole setting is in shot"
+    bad_line = _first_sentence(months.get(bad, {}).get("sentence"))
+    # The turn SHOWS the reason the data gives, rather than a winter this format
+    # assumed. A destination can score badly for monsoon, heat, haze or crowds.
+    bad_cond = bad_line if bad_line.endswith(".") else (bad_line + ".")
 
     return [
         {"role": "hook", "dur": DEFAULT_DURS["hook"],
          "say": f"This is {dest['name']} in {good_n}.",
          "caption": f"{dest['name']}, {good_n}",
          "veo": (f"Locked-off wide shot on a tripod with no camera movement of {frame}, "
-                 f"at its {good_n} best: full colour in the terraces, clear air, "
-                 f"low afternoon sun raking across the slope. Nothing moves but the "
-                 f"light and the grass. {STYLE}")},
+                 f"as it is at its {good_n} best: clear air, full seasonal colour, "
+                 f"low afternoon sun raking across it. Nothing moves but the light "
+                 f"and whatever the wind touches. {STYLE}")},
         {"role": "build", "dur": DEFAULT_DURS["build"],
          "say": "Same frame, same camera, watch the year turn.",
          "caption": "same frame, same camera",
          "veo": (f"The identical locked-off framing of {frame}, the season shifting "
-                 f"forward continuously without the camera moving: green giving way "
-                 f"to gold and rust, the light going lower and colder, the first "
-                 f"thin snow settling on the roofs. {STYLE}")},
+                 f"forward continuously without the camera moving: colour draining "
+                 f"toward gold and rust, the light going lower and colder, the first "
+                 f"hard weather of the season arriving. {STYLE}")},
         {"role": "turn", "dur": DEFAULT_DURS["turn"],
          "say": f"This is the same place in {bad_n}.",
          "caption": f"{dest['name']}, {bad_n}",
-         "veo": (f"The identical locked-off framing of {frame}, now in deep {bad_n}: "
-                 f"the road buried and untracked, the river running black between "
-                 f"ice shelves, houses shuttered to the windowsills, flat grey light "
-                 f"and blowing spindrift. No people, no vehicles, no movement but "
-                 f"weather. {STYLE}")},
+         "veo": (f"The identical locked-off framing of {frame}, now in {bad_n}, "
+                 f"showing exactly the condition that makes it a bad month: "
+                 f"{bad_cond} Unflattering light, the place at its least "
+                 f"appealing, few or no visitors in frame. {STYLE}")},
         {"role": "payoff", "dur": DEFAULT_DURS["payoff"],
          "say": bad_line or f"{good_n} is the call, not {bad_n}.",
          "caption": f"{good_n}: {_disp(dest.get('score'))}",
@@ -194,7 +237,7 @@ def _fmt_crowd_pullback(dest: dict, month: int, months: dict) -> list:
          "say": "This is the shot you saved.",
          "caption": "the shot you saved",
          "veo": (f"Tight, perfectly composed postcard framing of the main landmark at "
-                 f"{place} at first light, completely empty, soft gold on the stone, "
+                 f"{place} at first light, completely empty, soft gold light on it, "
                  f"mist still sitting low. The camera is almost still. {STYLE}")},
         {"role": "build", "dur": DEFAULT_DURS["build"],
          "say": "Now let the camera step back.",
@@ -212,7 +255,7 @@ def _fmt_crowd_pullback(dest: dict, month: int, months: dict) -> list:
                  f"foreground, hard midday light. Real crowd density and body "
                  f"language. {STYLE}")},
         {"role": "payoff", "dur": DEFAULT_DURS["payoff"],
-         "say": (dest.get("note") or "").strip(),
+         "say": _first_sentence(dest.get("note")),
          "caption": f"{dest['name']}: {_disp(dest.get('score'))}",
          "veo": None},
     ]
@@ -234,25 +277,25 @@ def _fmt_two_places(dest: dict, month: int, months: dict, dest_b: dict = None) -
         {"role": "hook", "dur": DEFAULT_DURS["hook"],
          "say": f"{dest['name']} or {dest_b['name']} this {_month_name(month)}?",
          "caption": f"{dest['name']} or {dest_b['name']}?",
-         "veo": (f"Locked-off frame of a single hill road: deodar trees, colonial-era "
-                 f"buildings with tin roofs, a low stone wall on the right. This is "
-                 f"{a}, quiet, two walkers, no traffic, late afternoon. {STYLE}")},
+         "veo": (f"Locked-off wide shot of the main approach to {a} on an ordinary "
+                 f"afternoon, held completely still, quiet, only a couple of people "
+                 f"in frame and no traffic. {STYLE}")},
         {"role": "build", "dur": DEFAULT_DURS["build"],
          "say": "Same lens, same hour, same week.",
          "caption": "same lens, same hour",
-         "veo": (f"The identical framing and exposure begins to morph seamlessly, the "
-                 f"empty road at {a} filling with detail: shopfronts resolving, "
-                 f"signage appearing, parked cars sliding into the verge. {STYLE}")},
+         "veo": (f"The same framing and exposure begins to morph seamlessly, the "
+                 f"quiet approach at {a} filling in: more people arriving at the "
+                 f"edges, vehicles appearing, the space closing up. {STYLE}")},
         {"role": "turn", "dur": DEFAULT_DURS["turn"],
          "say": f"That is {dest_b['name']}.",
          "caption": dest_b["name"],
-         "veo": (f"The morph completes into {b} at the same hour: the road packed "
-                 f"shoulder to shoulder with people, stalls, hoardings, horns, "
-                 f"vehicles nose to tail, matched lens and exposure so only the "
-                 f"place has changed. {STYLE}")},
+         "veo": (f"The morph completes into the main approach to {b} at the same "
+                 f"hour of the same week: packed shoulder to shoulder with people "
+                 f"and vehicles nose to tail, matched lens and exposure so that "
+                 f"only the place has changed. {STYLE}")},
         {"role": "payoff", "dur": DEFAULT_DURS["payoff"],
-         "say": (months.get(month, {}).get("sentence") or "").strip()
-                or "Same score. Completely different week.",
+         "say": (_first_sentence(months.get(month, {}).get("sentence"))
+                 or "Same score, completely different week."),
          "caption": f"{dest['name']} {_disp(dest.get('score'))}  ·  "
                     f"{dest_b['name']} {_disp(dest_b.get('score'))}",
          "veo": None},
@@ -333,7 +376,18 @@ def validate(sb: dict) -> None:
             raise StoryboardError(
                 f"{b['id']}: prompt is {len(p.split())} words — Veo adherence "
                 f"needs 100-150, this will render generic")
-        if _TEXT_ASK.search(p.replace(STYLE, "")):
+        body = p.replace(STYLE, "")
+        if _TERRAIN_ASSERT.search(body):
+            raise StoryboardError(
+                f"{b['id']}: prompt asserts terrain we have no field for "
+                f"({_TERRAIN_ASSERT.search(body).group(0)!r}) — name the place "
+                f"and the condition, never invent what it looks like")
+        if _NUMBER_ASSERT.search(body):
+            raise StoryboardError(
+                f"{b['id']}: prompt puts a phone number or a dialled number in "
+                f"frame — Veo garbles text and a wrong emergency number is the "
+                f"worst thing we could render; burn it in post from the DB")
+        if _TEXT_ASK.search(body):
             raise StoryboardError(
                 f"{b['id']}: prompt asks Veo for on-screen text; Veo renders "
                 f"text badly and every overlay is burned in post")
@@ -413,3 +467,229 @@ if __name__ == "__main__":
     ap.add_argument("--month", type=int, default=datetime.now().month)
     a = ap.parse_args()
     print(f"(demo only — real runs are fed a dest dict by the render path)")
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# SCENARIO FORMATS (founder direction, 2026-09-20)
+# ─────────────────────────────────────────────────────────────────────────
+# "rather than just empty villages ... a couple or a solo traveller getting
+#  stuck and then opening their nakshiq offline app to check the emergency
+#  number and dialing and someone comes to rescue them ... thats what sells
+#  the site, the experiences."
+#
+# He is right, and it is a better use of the data than the landscape formats
+# above. A pretty valley shows a PLACE; a scenario shows the PRODUCT working,
+# and the product is the only thing we have that nobody else does.
+#
+# VERIFIED BEFORE BUILDING, because the whole premise is a capability claim:
+# apps/web/public/sw.js (CACHE_VERSION nakshiq-v60) precaches "/en/sos" and
+# "/hi/sos" as an explicit offline-first feature. Someone with the PWA saved
+# really can open the SOS page with no signal. If that had not been true these
+# formats would be a false advertisement and would not exist.
+#
+# FOUR SAFETY RULES, in code below, not in a comment:
+#   1. A scenario NEVER asks Veo to render a phone number. Veo renders text
+#      badly, and a plausible-but-wrong emergency number on screen is the most
+#      dangerous thing this repo could publish. The real number is burned in
+#      post from the DB, or it is not shown.
+#   2. A format REFUSES for any destination whose relevant intel is missing.
+#      No invented helper, no invented pump, no invented hospital.
+#   3. People are shot from behind, over-shoulder, hands-and-phone, or at middle
+#      distance — never a face in close-up. This both dodges Veo's face
+#      consistency problem across beats and keeps the reel from reading as an
+#      AI persona.
+#   4. The resolution shows help being REACHED, never a medical outcome.
+
+# A dramatised character in a scene is ordinary footage. This is deliberately
+# NOT a recurring AI presenter: Instagram's 31-Aug-2026 rule attaches the
+# "AI-generated profile" label to accounts whose CREATOR is an AI person, and
+# building one of those is a different decision with a different disclosure.
+PEOPLE = ("Shot from behind or over the shoulder, or framed on hands and the "
+          "phone screen, or at middle distance — no face in close-up, no one "
+          "addressing the camera. The phone screen is visible only as glow and "
+          "shape, never legible. ")
+
+
+def _intel(dest: dict, *path):
+    cur = dest.get("intel") or {}
+    for k in path:
+        cur = (cur or {}).get(k) if isinstance(cur, dict) else None
+    return cur
+
+
+def _scenario(dest: dict, month: int, *, trouble: str, helpless: str,
+              lookup: str, resolve: str, says: tuple, caps: tuple,
+              payoff_say: str, payoff_cap: str) -> list:
+    """Shared four-beat shape for every scenario: trouble, helplessness, the
+    lookup (the turn — this is the product), and help arriving."""
+    place = _place(dest)
+    return [
+        {"role": "hook", "dur": DEFAULT_DURS["hook"], "say": says[0],
+         "caption": caps[0],
+         "veo": f"{trouble} Near {place}. {PEOPLE}{STYLE}"},
+        {"role": "build", "dur": DEFAULT_DURS["build"], "say": says[1],
+         "caption": caps[1],
+         "veo": f"{helpless} Near {place}. {PEOPLE}{STYLE}"},
+        {"role": "turn", "dur": DEFAULT_DURS["turn"], "say": says[2],
+         "caption": caps[2],
+         "veo": f"{lookup} Near {place}. {PEOPLE}{STYLE}"},
+        {"role": "payoff", "dur": DEFAULT_DURS["payoff"], "say": payoff_say,
+         "caption": payoff_cap,
+         "veo": f"{resolve} Near {place}. {PEOPLE}{STYLE}"},
+    ]
+
+
+def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
+    """Broken down, no signal, opens the offline SOS page, help arrives."""
+    _require(dest, ("name",), "sos_rescue")
+    sos = _intel(dest, "sos") or {}
+    helper = sos.get("local_helper") if isinstance(sos.get("local_helper"), dict) else {}
+    if not (helper.get("name") or sos.get("safety_contact")):
+        raise StoryboardError(
+            f"sos_rescue: {dest.get('id')} has no verified local helper or safety "
+            f"contact — refusing to dramatise a rescue we cannot back up")
+    return _scenario(
+        dest, month,
+        trouble=("A small hatchback is stopped at the side of an empty mountain "
+                 "road at dusk with its hazard lights blinking, bonnet up, a "
+                 "young couple standing beside it looking down the empty road in "
+                 "both directions."),
+        helpless=("One of them holds a phone up at arm's length, turning slowly, "
+                  "searching for a signal that is not there while the light goes "
+                  "and the valley below fills with shadow."),
+        lookup=("Close on their hands as they open a saved page on the phone that "
+                "loads instantly with no signal bars at all, scroll once, and "
+                "press call — the glow of the screen lighting their hands in the "
+                "dark."),
+        resolve=("Headlights swing around the bend behind them and a local pickup "
+                 "pulls in, a man steps out with a torch, and the two of them "
+                 "walk toward it."),
+        says=("Your car stops here, and there is no signal.",
+              "No bars, no one on the road, and the light is going.",
+              "The page you saved still opens with no signal."),
+        caps=("no signal", "no one coming", "saved. still opens."),
+        payoff_say="Every destination on NakshIQ carries a verified local contact.",
+        payoff_cap="verified local contact")
+
+
+def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
+    """The fuel light, on the stretch where it actually matters."""
+    _require(dest, ("name",), "fuel_gap")
+    fuel = _intel(dest, "fuel")
+    if not fuel:
+        raise StoryboardError(
+            f"fuel_gap: {dest.get('id')} has no verified fuel intel — refusing "
+            f"to invent where the pumps are")
+    return _scenario(
+        dest, month,
+        trouble=("Close on a car dashboard at altitude, the low-fuel light coming "
+                 "on amber, the road ahead through the windscreen completely empty "
+                 "and climbing."),
+        helpless=("The driver glances at the passenger, then back at the empty "
+                  "road, nothing but rock and sky in every direction and no "
+                  "buildings at all."),
+        lookup=("The passenger's hands open a saved page on a phone that loads "
+                "with no signal, and their finger stops on a line partway down."),
+        resolve=("The car pulls into a small roadside fuel pump with a hand-painted "
+                 "sign, an attendant already walking over with the nozzle."),
+        says=("The fuel light comes on right about here.",
+              "There is nothing ahead for a long time.",
+              "NakshIQ tells you where the last pump actually is."),
+        caps=("fuel light", "nothing ahead", "where the last pump is"),
+        payoff_say=_first_sentence(str(fuel)) if isinstance(fuel, str) else
+                   "We check the fuel stretch for every road destination.",
+        payoff_cap="fuel, verified")
+
+
+def _fmt_road_closed(dest: dict, month: int, months: dict) -> list:
+    """The family who checked BEFORE leaving. Founder's own example."""
+    _require(dest, ("name",), "road_closed")
+    return _scenario(
+        dest, month,
+        trouble=("A family loading bags into a car outside a house early in the "
+                 "morning, kids half asleep, the boot open, everything ready to go."),
+        helpless=("A wider shot of the same road hours ahead of them: a landslide "
+                  "has taken half the carriageway, a line of stopped trucks, "
+                  "nobody moving in either direction."),
+        lookup=("Back at the car, a parent stands with the boot still open and "
+                "checks a page on their phone, then closes the boot without "
+                "hurrying."),
+        resolve=("The same family eating breakfast unhurried at a table, the car "
+                 "still parked outside, going nowhere today and entirely fine "
+                 "about it."),
+        says=("This family was leaving at six.",
+              "The road ahead had gone overnight.",
+              "They checked the road page before loading the car."),
+        caps=("leaving at six", "the road had gone", "they checked first"),
+        payoff_say="Road conditions update daily on NakshIQ, sourced and dated.",
+        payoff_cap="road status, daily")
+
+
+def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
+    """Altitude and a child. Shows reaching help, never an outcome."""
+    _require(dest, ("name",), "hospital_run")
+    sos = _intel(dest, "sos") or {}
+    if not sos:
+        raise StoryboardError(
+            f"hospital_run: {dest.get('id')} has no verified SOS intel — refusing "
+            f"to dramatise a medical emergency without it")
+    return _scenario(
+        dest, month,
+        trouble=("A parent kneeling beside a child wrapped in a blanket on a "
+                 "guesthouse bed at high altitude, a hand on the child's forehead, "
+                 "the window behind them showing thin cold light."),
+        helpless=("The parent stands at the window holding a phone up, no signal, "
+                  "the settlement outside small and scattered and a long way from "
+                  "anywhere."),
+        lookup=("Hands on the phone opening a saved page that loads without a "
+                "signal, the parent already reaching for a jacket with the other "
+                "hand."),
+        resolve=("A vehicle pulling up outside a small district clinic with its "
+                 "lights on, a staff member opening the door as the parent carries "
+                 "the child in."),
+        says=("Altitude hits children faster than adults.",
+              "There is no signal and no hospital in sight.",
+              "The nearest medical help is on the page you saved."),
+        caps=("altitude, and a child", "no signal", "nearest help, saved"),
+        payoff_say="Nearest hospital and altitude risk are on every destination page.",
+        payoff_cap="hospital + altitude, verified")
+
+
+def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
+    """The eatery that is actually worth stopping for."""
+    _require(dest, ("name",), "food_find")
+    eat = _intel(dest, "legendary_eatery") or {}
+    ename = (eat.get("name") if isinstance(eat, dict) else None) or dest.get("eatery_name")
+    if not ename:
+        raise StoryboardError(
+            f"food_find: {dest.get('id')} has no verified eatery — refusing to "
+            f"send anyone to a restaurant we made up")
+    dish = dest.get("hero_dish") or ""
+    return _scenario(
+        dest, month,
+        trouble=("A traveller standing on a busy street looking at a row of almost "
+                 "identical restaurant fronts, every one of them with a tout "
+                 "waving a menu."),
+        helpless=("They hesitate, take a step toward one, then stop, clearly "
+                  "unsure, the street noise and the hawkers pressing in."),
+        lookup=("Hands on a phone opening a saved page, one name on it, and they "
+                "turn and walk away from the row of fronts down a narrower lane."),
+        resolve=("A plate arriving on a scratched steel table in a small plain "
+                 "room that is completely full of local families eating, steam "
+                 "coming off it."),
+        says=("Twenty places, all claiming to be the famous one.",
+              "You have one meal here and no way to tell.",
+              f"We name the one that is actually worth it: {ename}."),
+        caps=("twenty identical fronts", "one meal, no way to tell", ename),
+        payoff_say=(f"{dish} at {ename}, verified against three sources."
+                    if dish else f"{ename}, verified against three sources."),
+        payoff_cap=ename)
+
+
+FORMATS.update({
+    "sos_rescue": _fmt_sos_rescue,
+    "fuel_gap": _fmt_fuel_gap,
+    "road_closed": _fmt_road_closed,
+    "hospital_run": _fmt_hospital_run,
+    "food_find": _fmt_food_find,
+})
