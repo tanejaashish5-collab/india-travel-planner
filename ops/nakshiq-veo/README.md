@@ -119,6 +119,26 @@ verdicts.json ─► build-queue.py ─► veo_queue.json
 | `run-veo.sh` | The wrapper the LaunchAgent runs. |
 | `com.nakshiq.veo-daily.plist` | 09:20 and 14:20 daily. |
 
+## Daily automation — Claude Cowork (set up 2026-09-21)
+
+Playwright cannot drive Flow (see the table above), but a **Cowork scheduled task
+can**, because it operates the founder's own signed-in Chrome. First run: 28/28
+clips, all Veo 3.1 Lite, 9:16, prompts verified verbatim.
+
+| When | What | Who |
+|---|---|---|
+| 09:20 | ingest inbox → top up queue → write `today-tasks.json` + HTML pack | LaunchAgent `com.nakshiq.veo-daily` |
+| 10:00 | generate every clip, save under exact `save_as` into `inbox/` | Cowork task `nakshiq-veo-daily` |
+| 14:20 | ingest inbox → R2, verified to SERVE | LaunchAgent |
+
+The task lives at `~/Documents/Claude/Scheduled/nakshiq-veo-daily/SKILL.md`.
+That folder is not in git, so its canonical copy is `cowork-task.SKILL.md` here.
+**Edit here, then copy it there.**
+
+Ingest runs FIRST in `run-veo.sh`. The other order re-lists clips that were
+generated but not yet ingested (they still read `pending`), and the next session
+generates them a second time: a straight double spend.
+
 ## The one thing a human must do every day
 
 Open the pack, paste 28-30 prompts into Flow in a normal Chrome, download, then

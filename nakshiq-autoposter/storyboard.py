@@ -348,10 +348,37 @@ def build_storyboard(fmt: str, dest: dict, month: int, months: dict = None,
     return sb
 
 
+# WORDS A REEL MAY NOT SAY. Every one of these was in shipped copy on
+# 2026-09-21 and every one was false: "every destination ... carries a verified
+# local contact" (we have no local contacts to promise -- founder: never claim
+# it), "every road destination", "every destination page", "update daily" about
+# roads we never tracked, "verified against three sources" about data whose
+# provenance was never proven. A claim that is true for SOME destinations is a
+# lie when a reel says it about ALL of them, so universal quantifiers and
+# verification words are refused outright; a format that genuinely has proof
+# names the specific place instead ("the nearest pump for Kaza is on its page").
+_OVERCLAIM = re.compile(
+    r"\bevery\s+(destination|place|road|page|trip|town|village)"
+    r"|\ball\s+(destinations|places|roads)"
+    r"|\bverified\b|\bguarantee"
+    r"|\blocal\s+(contact|helper|guide)s?\b"
+    r"|\bupdated?\s+daily\b|\breal[- ]time\b|\blive\s+(updates?|status)\b",
+    re.I)
+
+
 def validate(sb: dict) -> None:
     beats = sb.get("beats") or []
     if len(beats) < 3:
         raise StoryboardError("a storyboard needs at least 3 beats")
+
+    for b in beats:
+        for field in ("say", "caption"):
+            hit = _OVERCLAIM.search(b.get(field) or "")
+            if hit:
+                raise StoryboardError(
+                    f"{sb.get('format')}: beat {b.get('id')} {field} claims "
+                    f"{hit.group(0)!r} — {b.get(field)!r}. A reel may only say "
+                    f"what the data proves for THIS destination.")
 
     turns = [b for b in beats if b.get("role") == "turn"]
     if len(turns) != 1:
@@ -411,8 +438,12 @@ def validate(sb: dict) -> None:
 # ─────────────────────────────────────────────────────────────────────────
 
 def queue_rows(sb: dict) -> list:
+    # `character` rides on every row so the Flow session can put the SAME text in
+    # Flow's character field for every beat of one storyboard. Formats with no
+    # people (the landscape ones) simply carry an empty string.
     return [{"clip": b["clip"], "prompt": b["veo"], "slug": sb["slug"],
              "format": sb["format"], "beat": b["id"], "role": b["role"],
+             "character": b.get("character", ""),
              "seconds": 8, "status": "pending"}
             for b in sb["beats"] if b.get("veo")]
 
@@ -531,13 +562,28 @@ _WARDROBE = ("a navy quilted jacket and a mustard wool shawl",
 _VEHICLE = ("a dusty white hatchback with a roof rack",
             "a silver compact hatchback",
             "a mud-streaked pale grey hatchback")
+_KIDS = ("the children in bright red and yellow knitted jumpers",
+         "the children in matching blue raincoats",
+         "the children in orange and teal puffer jackets")
 
 
-def _cast(slug: str) -> str:
+def _character(slug: str, who: str, *, car: bool = True, kids: bool = False) -> str:
+    """ONE description of the people in a storyboard, identical in every beat.
+
+    Flow has a character field for exactly this, and the Cowork brief puts this
+    string in it; it also rides in each prompt so the rule holds even if that
+    field is unavailable. Chosen deterministically from the slug, so a beat
+    regenerated later still matches the ones already on R2 — and different
+    reels get different people, while one reel keeps the same ones.
+    """
     import zlib
     h = zlib.crc32((slug or "x").encode())
-    return (f"The same two travellers appear in every shot, in "
-            f"{_WARDROBE[h % len(_WARDROBE)]}, with {_VEHICLE[(h >> 8) % len(_VEHICLE)]}. ")
+    bits = [f"{who}, the adults in {_WARDROBE[h % len(_WARDROBE)]}"]
+    if kids:
+        bits.append(_KIDS[(h >> 4) % len(_KIDS)])
+    if car:
+        bits.append(f"travelling in {_VEHICLE[(h >> 8) % len(_VEHICLE)]}")
+    return "Same people in every shot: " + ", ".join(bits) + ". "
 
 
 PEOPLE = ("Shot from behind or over the shoulder, or framed on hands and the "
@@ -555,14 +601,14 @@ def _intel(dest: dict, *path):
 
 def _scenario(dest: dict, month: int, *, trouble: str, helpless: str,
               lookup: str, resolve: str, says: tuple, caps: tuple,
-              payoff_say: str, payoff_cap: str) -> list:
+              payoff_say: str, payoff_cap: str, character: str) -> list:
     """Shared four-beat shape for every scenario: trouble, helplessness, the
     lookup (the turn — this is the product), and help arriving."""
     place = _place(dest)
-    cast = _cast(dest.get("id"))
+    cast = character
     # SCREEN goes only on the turn: it is the beat that shows the page, and
     # describing a screen in a shot that has none invites Veo to add one.
-    return [
+    beats = [
         {"role": "hook", "dur": DEFAULT_DURS["hook"], "say": says[0],
          "caption": caps[0],
          "veo": f"{trouble} Near {place}. {cast}{PEOPLE}{STYLE}"},
@@ -576,51 +622,81 @@ def _scenario(dest: dict, month: int, *, trouble: str, helpless: str,
          "caption": payoff_cap,
          "veo": f"{resolve} Near {place}. {cast}{PEOPLE}{STYLE}"},
     ]
+    for b in beats:
+        b["character"] = character.strip()
+    return beats
+
+
+# Regions the road feed actually covers (road_updates.region_id, verified
+# 2026-09-21: J&K 30, Sikkim 20, HP 10, Uttarakhand 7, Ladakh 4, Arunachal 1).
+# road_closed used to require ONLY a destination name, so on its first real run
+# it made five reels -- Agonda, Ahmedabad, Aihole, Ajanta, Ajmer -- each saying
+# "road conditions update daily on NakshIQ" about roads we have never tracked.
+ROAD_REGIONS = {"jammu-kashmir", "sikkim", "himachal-pradesh", "uttarakhand",
+                "ladakh", "arunachal-pradesh"}
+_REGION_ALIASES = {"jammu-and-kashmir": "jammu-kashmir"}
+
+# The altitude narrative only makes sense where there is altitude. Below this
+# a child-at-altitude reel is fiction about the place.
+HIGH_ALTITUDE_M = 2500
 
 
 def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
-    """Broken down, no signal, opens the offline SOS page, help arrives."""
+    """Broken down, no signal, the SOS page still opens, help is reached.
+
+    THE CLAIM, and why it is this one. The old payoff said "every destination on
+    NakshIQ carries a verified local contact". We do not have that, and the
+    founder was explicit: never promise it. What IS true everywhere is that the
+    /sos page carries India's official emergency numbers (ministry-sourced
+    constants, correct in every state) and that the service worker precaches it
+    (sw.js, "offline-first upgrade"), so it opens with no signal.
+
+    THE STORY, and why it changed. No bars -> open page -> press call is a lie:
+    the page opens offline, but nobody places a call with literally no signal.
+    So the numbers are found offline, and the call is made once a bar comes back.
+    Help arriving is an emergency vehicle, because that is what those numbers
+    dispatch -- not "a local", which only made sense beside the false claim.
+    Needs no per-destination data, so it runs anywhere.
+    """
     _require(dest, ("name",), "sos_rescue")
-    sos = _intel(dest, "sos") or {}
-    helper = sos.get("local_helper") if isinstance(sos.get("local_helper"), dict) else {}
-    if not (helper.get("name") or sos.get("safety_contact")):
-        raise StoryboardError(
-            f"sos_rescue: {dest.get('id')} has no verified local helper or safety "
-            f"contact — refusing to dramatise a rescue we cannot back up")
     return _scenario(
         dest, month,
+        character=_character(dest.get("id"), "a young couple"),
         trouble=("A small hatchback is stopped at the side of an empty mountain "
-                 "road at dusk with its hazard lights blinking, bonnet up, a "
-                 "young couple standing beside it looking down the empty road in "
-                 "both directions."),
+                 "road at dusk with its hazard lights blinking, bonnet up, the "
+                 "couple standing beside it looking down the empty road in both "
+                 "directions."),
         helpless=("One of them holds a phone up at arm's length, turning slowly, "
                   "searching for a signal that is not there while the light goes "
                   "and the valley below fills with shadow."),
-        lookup=("Close on their hands as they open a saved page on the phone that "
-                "loads instantly with no signal bars at all, scroll once, and "
-                "press call — the glow of the screen lighting their hands in the "
-                "dark."),
-        resolve=("Headlights swing around the bend behind them and a local pickup "
-                 "pulls in, a man steps out with a torch, and the two of them "
-                 "walk toward it."),
+        lookup=("Close on their hands opening a saved page on the phone that "
+                "loads with no signal at all, then one of them walking a little "
+                "way up the road holding the phone high until it finds a single "
+                "bar, and lifting it to their ear."),
+        resolve=("Blue and red lights sweep around the bend behind them and an "
+                 "emergency vehicle pulls in, and the couple walk toward it."),
         says=("Your car stops here, and there is no signal.",
               "No bars, no one on the road, and the light is going.",
-              "The page you saved still opens with no signal."),
-        caps=("no signal", "no one coming", "saved. still opens."),
-        payoff_say="Every destination on NakshIQ carries a verified local contact.",
-        payoff_cap="verified local contact")
+              "The page you saved still opens, numbers and all."),
+        caps=("no signal", "no one coming", "the numbers, offline"),
+        payoff_say="India's emergency numbers are saved on NakshIQ, and the page opens offline.",
+        payoff_cap="emergency numbers · offline")
 
 
 def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
     """The fuel light, on the stretch where it actually matters."""
     _require(dest, ("name",), "fuel_gap")
-    fuel = _intel(dest, "fuel")
-    if not fuel:
+    fuel = _intel(dest, "fuel") or {}
+    pump = fuel.get("nearest_petrol_pump") if isinstance(fuel, dict) else None
+    if not pump:
         raise StoryboardError(
-            f"fuel_gap: {dest.get('id')} has no verified fuel intel — refusing "
-            f"to invent where the pumps are")
+            f"fuel_gap: {dest.get('id')} has no nearest_petrol_pump — refusing "
+            f"to claim we know where the pumps are")
+    has_next = isinstance(fuel, dict) and bool(fuel.get("next_after_that"))
+    name = dest.get("name")
     return _scenario(
         dest, month,
+        character=_character(dest.get("id"), "two friends on a road trip"),
         trouble=("Close on a car dashboard at altitude, the low-fuel light coming "
                  "on amber, the road ahead through the windscreen completely empty "
                  "and climbing."),
@@ -633,48 +709,76 @@ def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
                  "sign, an attendant already walking over with the nozzle."),
         says=("The fuel light comes on right about here.",
               "There is nothing ahead for a long time.",
-              "NakshIQ tells you where the last pump actually is."),
-        caps=("fuel light", "nothing ahead", "where the last pump is"),
-        payoff_say=_first_sentence(str(fuel)) if isinstance(fuel, str) else
-                   "We check the fuel stretch for every road destination.",
-        payoff_cap="fuel, verified")
+              f"NakshIQ lists the nearest pump for {name}."),
+        caps=("fuel light", "nothing ahead", "the nearest pump"),
+        payoff_say=(f"The nearest pump for {name}, and the one after it, are on its page."
+                    if has_next else f"The nearest pump for {name} is on its page."),
+        payoff_cap="nearest pump, listed")
 
 
 def _fmt_road_closed(dest: dict, month: int, months: dict) -> list:
-    """The family who checked BEFORE leaving. Founder's own example."""
+    """The family who checked BEFORE leaving. Founder's own example.
+
+    Runs ONLY where the road feed runs. See ROAD_REGIONS."""
     _require(dest, ("name",), "road_closed")
+    sid = (dest.get("state_id") or "").strip().lower()
+    sid = _REGION_ALIASES.get(sid, sid)
+    if sid not in ROAD_REGIONS:
+        raise StoryboardError(
+            f"road_closed: {dest.get('id')} is in {sid or 'an unknown state'}, "
+            f"which the road feed does not cover — refusing to claim we track "
+            f"its roads")
+    state = dest.get("state") or "these"
     return _scenario(
         dest, month,
-        trouble=("A family loading bags into a car outside a house early in the "
-                 "morning, kids half asleep, the boot open, everything ready to go."),
-        helpless=("A wider shot of the same road hours ahead of them: a landslide "
-                  "has taken half the carriageway, a line of stopped trucks, "
-                  "nobody moving in either direction."),
+        character=_character(dest.get("id"), "a family of four, two parents and two children", kids=True),
+        trouble=("The family loading bags into a car outside a house early in the "
+                 "morning, the children half asleep, the boot open, everything "
+                 "ready to go."),
+        helpless=("A wider shot of the mountain road hours ahead of them: a "
+                  "landslide has taken half the carriageway, a line of stopped "
+                  "trucks, nobody moving in either direction."),
         lookup=("Back at the car, a parent stands with the boot still open and "
                 "checks a page on their phone, then closes the boot without "
                 "hurrying."),
-        resolve=("The same family eating breakfast unhurried at a table, the car "
-                 "still parked outside, going nowhere today and entirely fine "
-                 "about it."),
+        resolve=("The family eating breakfast unhurried at a table, the car still "
+                 "parked outside, going nowhere today and entirely fine about it."),
         says=("This family was leaving at six.",
               "The road ahead had gone overnight.",
               "They checked the road page before loading the car."),
         caps=("leaving at six", "the road had gone", "they checked first"),
-        payoff_say="Road conditions update daily on NakshIQ, sourced and dated.",
-        payoff_cap="road status, daily")
+        payoff_say=f"NakshIQ tracks road closures across {state}, dated and sourced.",
+        payoff_cap="closures, dated + sourced")
 
 
 def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
-    """Altitude and a child. Shows reaching help, never an outcome."""
+    """Altitude and a child. Shows reaching help, never an outcome.
+
+    Needs a NAMED nearest hospital (so "the nearest help is on the page" is
+    true) and real altitude (so the story is about this place)."""
     _require(dest, ("name",), "hospital_run")
+    emerg = _intel(dest, "emergency") or {}
     sos = _intel(dest, "sos") or {}
-    if not sos:
+    hosp = ((emerg.get("nearest_hospital") if isinstance(emerg, dict) else None)
+            or (sos.get("nearest_hospital") if isinstance(sos, dict) else None))
+    if not hosp:
         raise StoryboardError(
-            f"hospital_run: {dest.get('id')} has no verified SOS intel — refusing "
-            f"to dramatise a medical emergency without it")
+            f"hospital_run: {dest.get('id')} has no named nearest hospital — "
+            f"refusing to dramatise a medical emergency without one")
+    elev = dest.get("elevation_m")
+    try:
+        elev = float(elev)
+    except (TypeError, ValueError):
+        elev = None
+    if not elev or elev < HIGH_ALTITUDE_M:
+        raise StoryboardError(
+            f"hospital_run: {dest.get('id')} is at {elev or 'unknown'} m, below "
+            f"{HIGH_ALTITUDE_M} m — an altitude story would be fiction here")
+    name = dest.get("name")
     return _scenario(
         dest, month,
-        trouble=("A parent kneeling beside a child wrapped in a blanket on a "
+        character=_character(dest.get("id"), "a parent and a young child", car=False),
+        trouble=("The parent kneeling beside the child wrapped in a blanket on a "
                  "guesthouse bed at high altitude, a hand on the child's forehead, "
                  "the window behind them showing thin cold light."),
         helpless=("The parent stands at the window holding a phone up, no signal, "
@@ -686,12 +790,15 @@ def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
         resolve=("A vehicle pulling up outside a small district clinic with its "
                  "lights on, a staff member opening the door as the parent carries "
                  "the child in."),
-        says=("Altitude hits children faster than adults.",
+        # Not "altitude hits children faster" -- that is a medical claim we
+        # cannot source. What is defensible is that a young child cannot tell
+        # you it is happening.
+        says=("A small child cannot tell you the altitude is getting to them.",
               "There is no signal and no hospital in sight.",
-              "The nearest medical help is on the page you saved."),
-        caps=("altitude, and a child", "no signal", "nearest help, saved"),
-        payoff_say="Nearest hospital and altitude risk are on every destination page.",
-        payoff_cap="hospital + altitude, verified")
+              "The nearest hospital is on the page you saved."),
+        caps=("altitude, and a child", "no signal", "nearest hospital, saved"),
+        payoff_say=f"The nearest hospital to {name} is named on its NakshIQ page.",
+        payoff_cap="nearest hospital, named")
 
 
 def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
@@ -701,14 +808,15 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
     ename = (eat.get("name") if isinstance(eat, dict) else None) or dest.get("eatery_name")
     if not ename:
         raise StoryboardError(
-            f"food_find: {dest.get('id')} has no verified eatery — refusing to "
+            f"food_find: {dest.get('id')} has no named eatery — refusing to "
             f"send anyone to a restaurant we made up")
     dish = dest.get("hero_dish") or ""
     return _scenario(
         dest, month,
-        trouble=("A traveller standing on a busy street looking at a row of almost "
-                 "identical restaurant fronts, every one of them with a tout "
-                 "waving a menu."),
+        character=_character(dest.get("id"), "a solo traveller", car=False),
+        trouble=("The traveller standing on a busy street looking at a row of "
+                 "almost identical restaurant fronts, every one of them with a "
+                 "tout waving a menu."),
         helpless=("They hesitate, take a step toward one, then stop, clearly "
                   "unsure, the street noise and the hawkers pressing in."),
         lookup=("Hands on a phone opening a saved page, one name on it, and they "
@@ -718,10 +826,12 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
                  "coming off it."),
         says=("Twenty places, all claiming to be the famous one.",
               "You have one meal here and no way to tell.",
-              f"We name the one that is actually worth it: {ename}."),
+              f"NakshIQ names the one: {ename}."),
         caps=("twenty identical fronts", "one meal, no way to tell", ename),
-        payoff_say=(f"{dish} at {ename}, verified against three sources."
-                    if dish else f"{ename}, verified against three sources."),
+        # Was "verified against three sources". The three-source rule governed
+        # the local_eateries backfill; legendary_eatery's provenance is not
+        # proven to be the same, so the reel does not claim it.
+        payoff_say=(f"Ask for the {dish} at {ename}." if dish else f"{ename}."),
         payoff_cap=ename)
 
 

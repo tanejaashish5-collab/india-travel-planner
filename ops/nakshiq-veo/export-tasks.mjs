@@ -57,6 +57,7 @@ const doc = {
     "Switch accounts in-app: avatar -> 'Switch account'. flow.google.com/?authuser=N does NOT switch accounts, it redirects to the marketing page.",
     "Generate each prompt, download the clip, and save it into save_to using EXACTLY the save_as filename.",
     "Nothing is verified by order: matching is by filename, so a clip saved under the wrong name is the only way to get wrong footage on a beat.",
+    "CHARACTER CONSISTENCY: every clip carries a 'character' string, identical for every beat of one storyboard. Put that exact text in Flow's character field for each of that storyboard's beats. Different storyboards get different people; within one storyboard the people must be the same. The same text is also inside each prompt, so if the field is unavailable the prompt still carries it.",
     "A reel is cut from a WHOLE storyboard. Clips sharing a 'storyboard' value belong together, and 'beats_in_storyboard' says how many it needs. A storyboard missing even one beat renders nothing.",
     "So: if you cannot finish a storyboard, prefer to skip it entirely rather than produce some of its beats. Half a storyboard is wasted credits.",
     "And if you have spare credits, spend them COMPLETING a partial storyboard before starting a new one. Beats straddle accounts because 4-beat storyboards do not divide into 5 clips per account.",
@@ -75,6 +76,7 @@ const doc = {
     clips: todo.slice(i * PER_ACCOUNT, (i + 1) * PER_ACCOUNT).map((r) => ({
       save_as: r.clip,
       storyboard: `${r.slug}__${r.format}`,
+      character: r.character || "",
       beats_in_storyboard: beatCount.get(`${r.slug}__${r.format}`) || null,
       seconds: r.seconds,
       beat_role: r.role,

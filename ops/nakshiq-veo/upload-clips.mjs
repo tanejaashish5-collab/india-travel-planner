@@ -15,6 +15,25 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, "clips");
 const QUEUE = join(HERE, "veo_queue.json");
 const BUCKET = "nakshiq-videos";
+// The PUBLIC base the renderer actually fetches from (r2_videos.py R2_VIDEO_BASE).
+// A HEAD against the S3 API is not proof of anything the renderer can use.
+const PUBLIC = process.env.R2_VIDEO_BASE
+  || "https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev";
+
+/** Does the object actually SERVE? A matching ContentLength does not mean it
+ *  does: on 2026-09-21 achabal__sos_rescue__b2.mp4 HEADed at the correct 1618271
+ *  bytes and returned HTTP 500 from r2.dev on every request, so the renderer
+ *  silently dropped that beat and cut the reel from 3 clips instead of 4. A
+ *  re-PUT of the identical bytes fixed it. Verify the thing the consumer uses,
+ *  not the thing that is convenient to check. */
+const serves = async (Key, size) => {
+  try {
+    const r = await fetch(`${PUBLIC}/${encodeURIComponent(Key)}`, { method: "GET" });
+    if (!r.ok) return `HTTP ${r.status}`;
+    const got = (await r.arrayBuffer()).byteLength;
+    return got === size ? true : `served ${got} of ${size} bytes`;
+  } catch (e) { return String(e).slice(0, 60); }
+};
 
 // Credentials come from the process environment, handed over by the wrapper via
 // `node --env-file`. This file never reads or prints the env file itself.
@@ -37,7 +56,7 @@ const head = async (Key) => {
 
 const files = existsSync(OUT) ? readdirSync(OUT).filter((f) => f.endsWith(".mp4")) : [];
 const q = existsSync(QUEUE) ? JSON.parse(readFileSync(QUEUE, "utf-8")) : [];
-let up = 0, skip = 0;
+let up = 0, skip = 0; const bad = [];
 
 for (const f of files) {
   const body = readFileSync(join(OUT, f));
@@ -48,18 +67,33 @@ for (const f of files) {
   // footage was actually serving (observed 2026-09-21). A status that
   // under-reports reality is how a working thing gets redone.
   if (h && Number(h.ContentLength) === body.length) {
-    skip++;
-    const done = q.find((r) => r.clip === f);
-    if (done && done.status !== "live") done.status = "live";
-    continue;
+    const ok = await serves(f, body.length);
+    if (ok === true) {
+      skip++;
+      const done = q.find((r) => r.clip === f);
+      if (done && done.status !== "live") done.status = "live";
+      continue;
+    }
+    // Right size, will not serve. Re-PUT the same bytes; that is what fixed it.
+    console.log(`[upload] ${f} is the right size but does not serve (${ok}) — re-uploading`);
   }
   await client.send(new PutObjectCommand({
     Bucket: BUCKET, Key: f, Body: body, ContentType: "video/mp4",
   }));
   up++;
-  console.log(`[upload] ${f} (${(body.length / 1e6).toFixed(1)} MB)`);
+  const ok = await serves(f, body.length);
+  console.log(`[upload] ${f} (${(body.length / 1e6).toFixed(1)} MB) ` +
+              (ok === true ? "serving" : `NOT SERVING: ${ok}`));
   const row = q.find((r) => r.clip === f);
-  if (row) row.status = "live";
+  // "live" means the renderer can fetch it. Anything else stays "collected" so
+  // the next run retries rather than reporting a clip that is not there.
+  if (row && ok === true) row.status = "live";
+  if (ok !== true) bad.push(f);
 }
 if (q.length) writeFileSync(QUEUE, JSON.stringify(q, null, 2));
 console.log(`[upload] uploaded ${up}, already current ${skip}`);
+if (bad.length) {
+  console.log(`[upload] ⚠️  ${bad.length} clip(s) are in the bucket but do NOT serve:`);
+  for (const f of bad) console.log(`   ${f}`);
+  process.exitCode = 1;   // a clip the renderer cannot fetch is a failed upload
+}

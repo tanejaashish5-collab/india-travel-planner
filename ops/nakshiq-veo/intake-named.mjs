@@ -20,6 +20,7 @@ const INBOX = process.env.VEO_INBOX || join(HERE, "inbox");
 const OUT = join(HERE, "clips");
 const QUEUE = join(HERE, "veo_queue.json");
 const DRY = process.argv.includes("--dry");
+const SETTLE_S = Number(process.env.VEO_SETTLE_S || 90);
 
 mkdirSync(OUT, { recursive: true });
 mkdirSync(INBOX, { recursive: true });
@@ -47,11 +48,17 @@ const files = readdirSync(INBOX).filter((f) => f.endsWith(".mp4"));
 
 if (!files.length) { console.log(`[named] no .mp4 in ${INBOX}`); process.exit(0); }
 
-let ok = 0; const unknown = [], empty = [];
+let ok = 0; const unknown = [], empty = [], settling = [];
 for (const f of files) {
   const row = byClip.get(f);
   if (!row) { unknown.push(f); continue; }
-  if (statSync(join(INBOX, f)).size < 10000) { empty.push(f); continue; }
+  const st = statSync(join(INBOX, f));
+  if (st.size < 10000) { empty.push(f); continue; }
+  // Still being written? A scheduled ingest can fire while the Flow session is
+  // mid-download, and a half-written file already carrying its final name
+  // would be moved, uploaded and marked live. Leave anything touched in the
+  // last SETTLE_S seconds for the next run.
+  if (Date.now() - st.mtimeMs < SETTLE_S * 1000) { settling.push(f); continue; }
   console.log(`[named] ${DRY ? "would take" : "take"} ${f}  (${row.role}, ${row.seconds}s)`);
   if (!DRY) {
     try { renameSync(join(INBOX, f), join(OUT, f)); }
@@ -68,6 +75,7 @@ if (unknown.length) {
 }
 if (empty.length) console.log(`[named] ${empty.length} file(s) under 10KB, left alone: ${empty.slice(0,5).join(", ")}`);
 
+if (settling.length) console.log(`[named] ${settling.length} file(s) still settling (<${SETTLE_S}s old), left for the next run: ${settling.slice(0,5).join(", ")}`);
 if (DRY) { console.log("\n[named] --dry: nothing written"); process.exit(0); }
 writeFileSync(QUEUE, JSON.stringify(q, null, 2));
 console.log(`\n[named] ${ok} clip(s) named and ready to upload`);

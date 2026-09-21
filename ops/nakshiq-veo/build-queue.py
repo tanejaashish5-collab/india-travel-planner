@@ -38,7 +38,13 @@ PACK = Path.home() / "Automation" / "nakshiq-ig" / "data" / "verdicts.json"
 QUEUE = HERE / "veo_queue.json"
 LEDGER = HERE / "generated.json"          # slug+format -> last generated date
 
-DAILY_CLIP_BUDGET = 27                    # of 30; headroom for one retry
+DAILY_CLIP_BUDGET = 28                    # 7 whole 4-beat storyboards; of 30,
+                                          # leaving 20 credits to finish a partial
+# No format may take more than this many storyboards in one run. sos_rescue
+# needs no per-destination data since the 09-21 honesty rewrite, so it passes
+# for EVERY destination; with it first in FORMATS, an uncapped run would be
+# seven copies of the same rescue story in seven places.
+PER_FORMAT_CAP = 2
 # Order is priority. Scenarios first (they show the product working), landscape
 # formats as the fallback for destinations whose intel cannot support one.
 FORMATS = ("sos_rescue", "road_closed", "fuel_gap", "hospital_run", "food_find",
@@ -103,7 +109,10 @@ def load_pack() -> dict:
             continue
         d = dests.setdefault(r["id"], {
             "id": r["id"], "name": r["name"],
-            "state": _pretty_state(r.get("state_id")), "months": {},
+            "state": _pretty_state(r.get("state_id")),
+            # raw slug too: road_closed gates on it (the road feed only covers
+            # six Himalayan regions, so the pretty name is not enough)
+            "state_id": r.get("state_id") or "", "months": {},
         })
         d["months"][r["month"]] = {"score": r["score"], "label": r.get("label"),
                                    "sentence": r.get("sentence") or ""}
@@ -146,11 +155,13 @@ def main() -> int:
         return 0
 
     queued, clips, skipped = [], 0, {}
+    per_fmt: dict = {}
     for d in order:
         if clips >= budget:
             break
         live = intel.get(d["id"]) or {}
         dest = {"id": d["id"], "name": d["name"], "state": d["state"],
+                "state_id": d["state_id"],
                 "score": d["months"].get(month, {}).get("score"),
                 "note": d["months"].get(month, {}).get("sentence"),
                 # everything the scenario formats read; absent -> they refuse
@@ -164,6 +175,8 @@ def main() -> int:
             key = f"{d['id']}::{fmt}"
             if led.get(key):                      # already generated, ever
                 continue
+            if per_fmt.get(fmt, 0) >= PER_FORMAT_CAP:
+                continue                          # variety: try the next format
             try:
                 kw = {}
                 if fmt == "two_places":
@@ -184,6 +197,7 @@ def main() -> int:
             n = SB.enqueue(sb, QUEUE)
             if n:
                 queued.append((d["id"], fmt, n))
+                per_fmt[fmt] = per_fmt.get(fmt, 0) + 1
                 clips += n
                 led[key] = today.isoformat()
                 led[d["id"]] = today.isoformat()

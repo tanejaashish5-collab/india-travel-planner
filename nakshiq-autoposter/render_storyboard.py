@@ -48,12 +48,13 @@ def _pretty_state(state_id: str) -> str:
 
 def load_dest(slug: str, month: int) -> tuple[dict, dict]:
     rows = json.loads(PACK.read_text())
-    months, name, state = {}, None, ""
+    months, name, state, state_id = {}, None, "", ""
     for r in rows:
         if r.get("id") != slug or not isinstance(r.get("score"), int):
             continue
         name = r["name"]
         state = _pretty_state(r.get("state_id"))
+        state_id = r.get("state_id") or ""
         months[r["month"]] = {"score": r["score"], "label": r.get("label"),
                               "sentence": r.get("sentence") or ""}
     if not name:
@@ -72,7 +73,7 @@ def load_dest(slug: str, month: int) -> tuple[dict, dict]:
         print(f"[render] intel unavailable ({type(e).__name__}) — "
               f"a scenario format will refuse rather than invent")
 
-    dest = {"id": slug, "name": name, "state": state,
+    dest = {"id": slug, "name": name, "state": state, "state_id": state_id,
             "score": months.get(month, {}).get("score"),
             "note": months.get(month, {}).get("sentence"),
             "intel": live.get("intel") or {},
