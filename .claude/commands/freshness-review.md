@@ -35,8 +35,10 @@ changed" check, not a rewrite.
 - Prefer official ones: state tourism boards, district (`*.nic.in`) sites, `*.gov.in`,
   NHAI/BRO/state PWD, SDMA/IMD advisories, AAI, Indian Railways, forest departments.
   Reputable news (national/regional dailies) counts for closures.
-- **At least 2 sources from 2 different hosts per confirmed destination.** nakshiq.com never
-  counts. The wrapper re-opens them; a destination whose sources cannot be opened is not
+- **At least 2 sources from 2 different hosts per confirmed destination, and at least ONE of
+  them official (`*.gov.in`, `*.nic.in`) or a named news outlet** (the list is `NEWS_HOSTS` in
+  `scripts/freshness-review.mjs`). Wikipedia, rome2rio, travel blogs and aggregators may support
+  but never carry a verdict alone. nakshiq.com never counts. The wrapper re-opens them; a destination whose sources cannot be opened is not
   stamped.
 - These hosts are slow and often need a retry — a timeout is not evidence a page is missing.
 - **Never state a fact you did not see on a page.** If you could not find enough to confirm a

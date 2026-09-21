@@ -48,6 +48,7 @@ if [ -f "$MARKER" ]; then
 fi
 say "=== freshness-review start ($TODAY, week $WEEK, batch $BATCH_SIZE) ==="
 
+START_SHA="$(git rev-parse HEAD)"
 $NODE scripts/freshness-review.mjs pick --n "$BATCH_SIZE" --out "$BATCH" \
   || { say "❌ pick failed"; notify "Freshness review could not pick this week's batch."; exit 1; }
 BATCH_SHA="$(shasum -a 256 "$BATCH" | cut -d' ' -f1)"
@@ -81,9 +82,17 @@ if [ ! -f "$ENTRIES" ] || [ ! -f "$NOTE" ]; then
   exit 1
 fi
 
-$NODE scripts/freshness-review.mjs apply --batch "$BATCH" --entries "$ENTRIES" --commit \
+# Run the validator AS IT STOOD before the session: the session has Bash and
+# could edit scripts/freshness-review.mjs (e.g. widen the source rules) and
+# then pass its own gate. Pinned copy sits in scripts/ so module resolution
+# still finds node_modules.
+PINNED="scripts/.freshness-review.pinned-$$.mjs"
+git show "$START_SHA:scripts/freshness-review.mjs" > "$PINNED" \
+  || { say "❌ cannot read pinned validator at $START_SHA"; rm -f "$PINNED"; notify "Freshness review: could not load its pinned validator."; exit 1; }
+$NODE "$PINNED" apply --batch "$BATCH" --entries "$ENTRIES" --commit \
   > "$WORK/apply-$TODAY.log" 2>&1
 APPLY_RC=$?
+rm -f "$PINNED"
 cat "$WORK/apply-$TODAY.log"
 RESULT_LINE="$(grep -o '^RESULT .*' "$WORK/apply-$TODAY.log" | tail -1)"
 if [ $APPLY_RC -ne 0 ] || [ -z "$RESULT_LINE" ]; then

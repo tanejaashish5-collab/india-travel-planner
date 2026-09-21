@@ -79,6 +79,27 @@ const batch = JSON.parse(readFileSync(arg("batch"), "utf8"));
 const allowed = new Set(batch.destinations.map((d) => d.id));
 const { reviews = [] } = JSON.parse(readFileSync(arg("entries"), "utf8"));
 
+// At least one source per confirmed destination must be official or a named
+// news outlet. Born from the first test run (2026-09-21): Chopta was confirmed
+// on wikipedia + rome2rio alone, which passed the 2-host rule while proving
+// nothing current. Extend this list by human commit only — the wrapper runs
+// the copy of this file pinned at the pre-session commit.
+const NEWS_HOSTS = new Set([
+  "thehindu.com", "indianexpress.com", "timesofindia.indiatimes.com", "hindustantimes.com",
+  "ndtv.com", "indiatoday.in", "tribuneindia.com", "deccanherald.com", "newindianexpress.com",
+  "livemint.com", "business-standard.com", "theprint.in", "scroll.in", "thewire.in",
+  "etvbharat.com", "garhwalpost.in", "amarujala.com", "jagran.com", "bhaskar.com",
+  "aninews.in", "ptinews.com", "telegraphindia.com", "deccanchronicle.com", "thehansindia.com",
+  "news18.com", "moneycontrol.com", "economictimes.indiatimes.com", "sentinelassam.com",
+  "eastmojo.com", "nagalandpost.com", "arunachaltimes.in", "kashmirobserver.net",
+  "greaterkashmir.com", "dailyexcelsior.com", "onmanorama.com", "mathrubhumi.com",
+]);
+function isAuthoritative(host) {
+  if (/(^|\.)(gov|nic)\.in$/.test(host) || host.endsWith(".gov")) return true;
+  for (const n of NEWS_HOSTS) if (host === n || host.endsWith(`.${n}`)) return true;
+  return false;
+}
+
 async function reachable(u) {
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
@@ -106,6 +127,10 @@ for (const r of reviews) {
   const hosts = new Set(sources.map((s) => new URL(s).hostname.replace(/^www\./, "")));
   hosts.delete("nakshiq.com");
   if (hosts.size < 2) { dropped.push({ id: r.id, why: "needs 2+ independent source hosts (nakshiq.com does not count)" }); continue; }
+  if (![...hosts].some(isAuthoritative)) {
+    dropped.push({ id: r.id, why: "needs 1+ official (.gov.in/.nic.in) or named news source — wikipedia/aggregators/travel blogs alone don't count" });
+    continue;
+  }
 
   let ok = false;
   for (const s of sources) if (await reachable(s)) { ok = true; break; }
