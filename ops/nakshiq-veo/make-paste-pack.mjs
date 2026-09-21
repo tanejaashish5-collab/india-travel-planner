@@ -36,6 +36,41 @@ const QUEUE = join(HERE, "veo_queue.json");
 const ACCOUNTS = join(HERE, "accounts.json");
 const PER_ACCOUNT = Number(process.env.VEO_PER_ACCOUNT || 5);
 const OUTDIR = join(os.homedir(), "Desktop", "Reports");
+const INBOX = join(HERE, "inbox");
+const TASKS = join(HERE, "today-tasks.json");
+
+// The brief a Cowork agent gets. It points at today-tasks.json rather than
+// inlining 28 prompts, so the agent reads one authoritative file and the brief
+// stays short enough to check by eye. Every rule in it is something that was
+// actually observed going wrong on 2026-09-21, not a precaution.
+const BRIEF = `Generate today's NakshIQ Veo clips in Google Flow, using my signed-in Chrome.
+
+TASK LIST: ${TASKS}
+It gives, per account, the exact prompt and the exact filename to save as.
+
+RULES
+1. Open flow.google.com in my normal, signed-in Chrome. An automation-controlled
+   browser cannot sign in to Google, and launching one against a signed-in
+   profile destroys that session.
+2. In EVERY project pick the model "Veo 3.1 Lite" (10 credits). Flow defaults to
+   Omni 1.1 Flash at 12 credits, which is 20% more and yields 4 clips per account
+   instead of 5. If you cannot select Veo 3.1 Lite, STOP and tell me. Do not
+   generate on the default.
+3. 9:16 vertical.
+4. Turn OFF "Visible watermarking" in the account panel. The prompts also say no
+   text, no captions, no on-screen writing: keep it that way.
+5. Paste each prompt VERBATIM. Do not rewrite, shorten or "improve" it. They are
+   validated against our own data and must not assert anything extra.
+6. Switch accounts in-app: avatar -> "Switch account". Do NOT use
+   flow.google.com/?authuser=N, it redirects to the marketing page.
+7. Work account by account: 5 clips each, 50 credits each.
+8. Download each clip into ${INBOX} and save it under EXACTLY the "save_as"
+   filename from the task list. The filename is how a clip is matched to its
+   beat, so a renamed file is the only way to get wrong footage onto a beat.
+   Never tidy the names.
+9. When finished, run: bash ${join(HERE, "intake.sh")} --named
+10. Report which "save_as" names you did NOT produce, and why. A missing clip
+    just shortens a shot; a wrong one is a lie on the page.`;
 
 const esc = (s) => String(s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -111,6 +146,15 @@ h1{font-size:22px;margin:0 0 4px}
 .copy{background:#1d242c;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer}
 .copy:hover{border-color:var(--acc)}.copy.ok{background:var(--acc);color:#04120d;border-color:var(--acc)}
 .prompt{margin:0;padding:12px;border-top:1px solid var(--line);background:#0e1216;font-family:var(--mono);font-size:12px;white-space:pre-wrap;word-break:break-word;color:#b9c5d1;max-height:150px;overflow:auto}
+.cw{border-color:rgba(94,194,160,.4)}
+.cwhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.cwhead .big{margin-left:auto;padding:8px 16px}
+.cwp{color:var(--dim);font-size:12.5px;margin:6px 0 10px}
+.brief{margin:0;padding:12px;border:1px solid var(--line);border-radius:8px;background:#0e1216;font-family:var(--mono);font-size:11.5px;white-space:pre-wrap;word-break:break-word;color:#b9c5d1;max-height:200px;overflow:auto}
+details.how summary{cursor:pointer;list-style:none}
+details.how summary::-webkit-details-marker{display:none}
+details.how summary::before{content:"▸  ";color:var(--dim)}
+details.how[open] summary::before{content:"▾  "}
 .tick input{display:none}
 .tick span{display:block;width:18px;height:18px;border:1.5px solid var(--line);border-radius:5px;cursor:pointer}
 .tick input:checked+span{background:var(--acc);border-color:var(--acc)}
@@ -119,14 +163,21 @@ h1{font-size:22px;margin:0 0 4px}
 <h1>Veo paste pack &middot; ${today}</h1>
 <div class="sub">${todo.length} clips &middot; ${todo.length * 10} credits &middot; ${groups.length} accounts</div>
 
-<div class="how"><strong>How to run it</strong>
+<div class="how cw"><div class="cwhead"><strong>Hand this to Claude Cowork</strong>
+<button class="copy big" id="brief">Copy brief</button></div>
+<p class="cwp">Cowork drives your real, signed-in Chrome, so it is not subject to the block that stopped the Playwright job. It reads <code>${esc(TASKS)}</code> for the prompts and the exact filenames, saves into <code>${esc(INBOX)}</code>, and finishes by running intake itself.</p>
+<pre class="brief" id="brieftext">${esc(BRIEF)}</pre></div>
+
+<details class="how"><summary><strong>Or paste them yourself</strong> &mdash; the manual fallback</summary>
 <ol>
 <li>Open <code>flow.google.com</code> in your <strong>normal Chrome</strong>. Automation cannot sign in, so this part is manual by necessity, not by choice.</li>
 <li>Pick <strong>Veo 3.1 Lite (10 credits)</strong>. Flow defaults to Omni 1.1 Flash at 12, which is 20% more and gives 4 clips per account instead of 5.</li>
 <li>Work <strong>top to bottom</strong>. Copy, paste, generate, download. Order matters: clips are paired to beats by order.</li>
 <li>Switch account with avatar &rarr; <strong>Switch account</strong> when credits run out.</li>
-<li>When done, run <code>bash ~/Automation/nakshiq-veo/intake.sh</code> &mdash; it names every clip and ships it to R2.</li>
-</ol></div>
+<li>When done, run <code>bash ~/Automation/nakshiq-veo/intake.sh</code> &mdash; it pairs clips to beats <strong>by order</strong> and ships them to R2. Add <code>--dry</code> first to see the mapping without writing anything.</li>
+</ol>
+<p class="cwp">This path pairs by order because Flow names its downloads after prompt content. The Cowork path above matches by filename instead, which is safer &mdash; order stops mattering entirely.</p>
+</details>
 
 <div class="bar"><div class="track"><div class="fill" id="fill"></div></div>
 <div class="stat"><span id="pct">0 of ${todo.length} done</span><span id="cred">${todo.length * 10} credits left to spend</span></div></div>
@@ -162,6 +213,17 @@ document.querySelectorAll('.copy').forEach(btn => btn.addEventListener('click', 
   if (!box.checked) { box.checked = true; done[box.dataset.k] = true; save(); paint(); }
   setTimeout(() => { btn.textContent = was; btn.classList.remove('ok'); }, 1200);
 }));
+const briefBtn = document.getElementById('brief');
+briefBtn.addEventListener('click', async () => {
+  const txt = document.getElementById('brieftext').textContent;
+  try { await navigator.clipboard.writeText(txt); }
+  catch (e) {
+    const t = document.createElement('textarea'); t.value = txt;
+    document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove();
+  }
+  briefBtn.textContent = 'Copied'; briefBtn.classList.add('ok');
+  setTimeout(() => { briefBtn.textContent = 'Copy brief'; briefBtn.classList.remove('ok'); }, 1400);
+});
 paint();
 </script></body></html>`;
 

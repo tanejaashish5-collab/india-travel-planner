@@ -12,10 +12,21 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE" || exit 1
 say() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
 
-node intake-manual.mjs "$@" || { say "intake failed"; exit 1; }
+# Two intake paths, deliberately separate:
+#   --named : files already saved as <slug>__<format>__b<N>.mp4 (a Cowork agent
+#             driving a real browser can do this). Matched BY NAME, so order is
+#             irrelevant and a clip cannot land on the wrong beat.
+#   default : files named by Flow after prompt content (the human paste-pack
+#             path). Paired BY ORDER, which is why that path has a --dry check.
+case " $* " in
+  *" --named "*)
+    node intake-named.mjs "$@" || { say "named intake failed"; exit 1; } ;;
+  *)
+    node intake-manual.mjs "$@" || { say "intake failed"; exit 1; }
+    case " $* " in *" --dry "*) exit 0;; esac
+    node collect-clips.mjs || say "WARN collect failed" ;;
+esac
 case " $* " in *" --dry "*) exit 0;; esac
-
-node collect-clips.mjs || say "WARN collect failed"
 
 # R2 credentials reach the uploader through node --env-file only (standing rule:
 # this script never reads or echoes the env file).
