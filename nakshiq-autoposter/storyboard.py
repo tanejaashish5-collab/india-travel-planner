@@ -380,6 +380,26 @@ def validate(sb: dict) -> None:
                     f"{hit.group(0)!r} — {b.get(field)!r}. A reel may only say "
                     f"what the data proves for THIS destination.")
 
+    # A PERSON MAY NEVER APPEAR UNDESCRIBED. Veo has no memory between beats, so
+    # "same people" or a bare "the couple" gets new people every time. Any beat
+    # whose prompt shows a person must carry at least one full cast description.
+    _PERSON = re.compile(r"\b(man|woman|couple|family|parent|child|children|"
+                         r"traveller|driver|passenger|people|he|she|they)\b", re.I)
+    for b in beats:
+        v = b.get("veo") or ""
+        if re.search(r"same (people|two|couple|family)", v, re.I):
+            raise StoryboardError(
+                f"{sb.get('format')}: beat {b.get('id')} says 'same people' -- Veo "
+                f"cannot resolve that; describe each person in full instead")
+        fulls = b.get("cast_full") or []
+        # Case-insensitive: a sentence that OPENS with a person capitalises the
+        # description ("A man in his late twenties..."), which a case-sensitive
+        # match missed -- it failed every solo food_find beat.
+        if fulls and _PERSON.search(v) and not any(f.lower() in v.lower() for f in fulls):
+            raise StoryboardError(
+                f"{sb.get('format')}: beat {b.get('id')} shows a person without "
+                f"their full description -- Veo would invent a new one")
+
     turns = [b for b in beats if b.get("role") == "turn"]
     if len(turns) != 1:
         raise StoryboardError(
@@ -555,35 +575,76 @@ SCREEN = ("The phone screen shows a simple vertical list of dark rows on a pale 
 # every beat of one storyboard names the same wardrobe and the same car, chosen
 # deterministically from the slug so a beat regenerated later still matches the
 # ones already sitting on R2.
-_WARDROBE = ("a navy quilted jacket and a mustard wool shawl",
-             "a rust-red fleece and a grey hooded sweatshirt",
-             "an olive field jacket and a cream shawl",
-             "a black puffer jacket and a deep green scarf")
-_VEHICLE = ("a dusty white hatchback with a roof rack",
+# THE CAST — described IN FULL, every time a person appears in a prompt.
+#
+# Founder, 2026-09-21: "you can't say 'same people'. It will not take 'same
+# people'. You need to have the character details properly attached every time
+# you mention the people." Correct, and it is the mechanism, not a style point:
+# Veo generates each beat as an independent prompt with no memory of the others,
+# so a line like "same people in every shot" is meaningless to it, and a bare
+# "the couple" gets a newly invented couple in every beat. The earlier version
+# was also ambiguous on its own terms ("the adults in a rust-red fleece and a
+# grey hooded sweatshirt" never said who wore which).
+#
+# So each person is a fixed description — age, hair, one named garment in one
+# named colour — assigned to ONE person, and every beat that shows them repeats
+# it verbatim. Deterministic from the slug: a beat regenerated later matches the
+# ones already on R2, and different reels get different people.
+_MEN = ("a man in his late twenties with short black hair and a trimmed beard",
+        "a man in his early thirties with close-cropped hair and a thin moustache",
+        "a man in his mid twenties with wavy black hair down to his collar")
+_WOMEN = ("a woman in her late twenties with a single long dark braid",
+          "a woman in her early thirties with short curly black hair",
+          "a woman in her mid twenties with her hair tied up in a high bun")
+_TOP_M = ("a rust-red fleece jacket", "a navy blue quilted jacket",
+          "an olive green field jacket", "a black puffer jacket")
+_TOP_W = ("a grey hooded sweatshirt", "a mustard yellow wool shawl",
+          "a cream cable-knit jumper", "a deep green windcheater")
+_KIDS = ("two children of about six and nine, both in bright red knitted jumpers",
+         "two children of about five and eight, both in blue hooded raincoats",
+         "two children of about seven and ten, both in orange puffer jackets")
+_CHILD = ("a small child of about four, wrapped in a red and white checked blanket",
+          "a small child of about three, wrapped in a thick blue woollen blanket")
+_VEHICLE = ("a dusty white hatchback with a black roof rack",
             "a silver compact hatchback",
-            "a mud-streaked pale grey hatchback")
-_KIDS = ("the children in bright red and yellow knitted jumpers",
-         "the children in matching blue raincoats",
-         "the children in orange and teal puffer jackets")
+            "a pale grey hatchback with mud on its doors")
 
 
-def _character(slug: str, who: str, *, car: bool = True, kids: bool = False) -> str:
-    """ONE description of the people in a storyboard, identical in every beat.
+def _rest(desc: str) -> str:
+    """'a navy blue quilted jacket' -> 'navy blue quilted jacket'."""
+    return desc.split(" ", 1)[1]
 
-    Flow has a character field for exactly this, and the Cowork brief puts this
-    string in it; it also rides in each prompt so the rule holds even if that
-    field is unavailable. Chosen deterministically from the slug, so a beat
-    regenerated later still matches the ones already on R2 — and different
-    reels get different people, while one reel keeps the same ones.
-    """
+
+def _cap(t: str) -> str:
+    return t[:1].upper() + t[1:]
+
+
+def _cast(slug: str) -> dict:
+    """Every person and the car, fully described, for one storyboard."""
     import zlib
     h = zlib.crc32((slug or "x").encode())
-    bits = [f"{who}, the adults in {_WARDROBE[h % len(_WARDROBE)]}"]
-    if kids:
-        bits.append(_KIDS[(h >> 4) % len(_KIDS)])
-    if car:
-        bits.append(f"travelling in {_VEHICLE[(h >> 8) % len(_VEHICLE)]}")
-    return "Same people in every shot: " + ", ".join(bits) + ". "
+    tm, tw = _TOP_M[(h >> 6) % len(_TOP_M)], _TOP_W[(h >> 9) % len(_TOP_W)]
+    car = _VEHICLE[(h >> 12) % len(_VEHICLE)]
+    c = {
+        "A": f"{_MEN[h % len(_MEN)]}, wearing {tm}",
+        "B": f"{_WOMEN[(h >> 3) % len(_WOMEN)]}, wearing {tw}",
+        "K": _KIDS[(h >> 15) % len(_KIDS)],
+        "C": _CHILD[(h >> 18) % len(_CHILD)],
+        "car": car, "car_s": "the " + _rest(car),
+    }
+    c.update({"A_cap": _cap(c["A"]), "B_cap": _cap(c["B"]), "car_cap": _cap(car)})
+    # A solo traveller is one of the two, chosen by the slug too.
+    c["S"] = c["A"] if (h >> 21) % 2 == 0 else c["B"]
+    c["S_cap"] = _cap(c["S"])
+    return c
+
+
+def _sheet(c: dict, *who: str) -> str:
+    """The character sheet for Flow's character field: the SAME full text the
+    prompts carry inline, one line per person, so the two can never disagree."""
+    label = {"A": "MAN", "B": "WOMAN", "K": "CHILDREN", "C": "CHILD",
+             "S": "TRAVELLER", "car": "CAR"}
+    return " | ".join(f"{label[k]}: {c[k]}" for k in who)
 
 
 PEOPLE = ("Shot from behind or over the shoulder, or framed on hands and the "
@@ -599,33 +660,39 @@ def _intel(dest: dict, *path):
     return cur
 
 
-def _scenario(dest: dict, month: int, *, trouble: str, helpless: str,
-              lookup: str, resolve: str, says: tuple, caps: tuple,
-              payoff_say: str, payoff_cap: str, character: str) -> list:
-    """Shared four-beat shape for every scenario: trouble, helplessness, the
-    lookup (the turn — this is the product), and help arriving."""
+def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
+              helpless: str, lookup: str, resolve: str, says: tuple, caps: tuple,
+              payoff_say: str, payoff_cap: str) -> list:
+    """Shared four-beat shape: trouble, helplessness, the lookup (the turn --
+    this is the product), and help reached.
+
+    Scene text is written with {A} {B} {K} {C} {S} {car} placeholders and filled
+    here, so every mention of a person in every beat carries that person's FULL
+    description. Nothing depends on Veo remembering an earlier beat: it cannot."""
     place = _place(dest)
-    cast = character
-    # SCREEN goes only on the turn: it is the beat that shows the page, and
-    # describing a screen in a shot that has none invites Veo to add one.
+    fill = lambda t: t.format(**cast)
+    sheet = _sheet(cast, *who)
+    fulls = [cast[k] for k in who if k != "car"]
     beats = [
         {"role": "hook", "dur": DEFAULT_DURS["hook"], "say": says[0],
          "caption": caps[0],
-         "veo": f"{trouble} Near {place}. {cast}{PEOPLE}{STYLE}"},
+         "veo": f"{fill(trouble)} Near {place}. {PEOPLE}{STYLE}"},
         {"role": "build", "dur": DEFAULT_DURS["build"], "say": says[1],
          "caption": caps[1],
-         "veo": f"{helpless} Near {place}. {cast}{PEOPLE}{STYLE}"},
+         "veo": f"{fill(helpless)} Near {place}. {PEOPLE}{STYLE}"},
+        # SCREEN only on the turn: describing a screen in a shot that has none
+        # is an invitation to add one.
         {"role": "turn", "dur": DEFAULT_DURS["turn"], "say": says[2],
          "caption": caps[2],
-         "veo": f"{lookup} Near {place}. {cast}{SCREEN}{PEOPLE}{STYLE}"},
+         "veo": f"{fill(lookup)} Near {place}. {SCREEN}{PEOPLE}{STYLE}"},
         {"role": "payoff", "dur": DEFAULT_DURS["payoff"], "say": payoff_say,
          "caption": payoff_cap,
-         "veo": f"{resolve} Near {place}. {cast}{PEOPLE}{STYLE}"},
+         "veo": f"{fill(resolve)} Near {place}. {PEOPLE}{STYLE}"},
     ]
-    for b in beats:
-        b["character"] = character.strip()
+    for bt in beats:
+        bt["character"] = sheet
+        bt["cast_full"] = fulls
     return beats
-
 
 # Regions the road feed actually covers (road_updates.region_id, verified
 # 2026-09-21: J&K 30, Sikkim 20, HP 10, Uttarakhand 7, Ladakh 4, Arunachal 1).
@@ -661,25 +728,25 @@ def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
     _require(dest, ("name",), "sos_rescue")
     return _scenario(
         dest, month,
-        character=_character(dest.get("id"), "a young couple"),
+        cast=_cast(dest.get("id")), who=("A", "B", "car"),
         # NO TERRAIN. This format needs no per-destination data, so it runs for
         # every destination -- coast, desert, plains and hills alike. It used to
         # say "empty mountain road ... the valley below", which on its first
         # honest queue put a mountain road into Alibaug (a flat coastal town) and
         # Alleppey's backwaters. The scene asserts only what is true anywhere: an
         # empty road, dusk, no signal.
-        trouble=("A small hatchback is stopped at the side of an empty road at "
-                 "dusk with its hazard lights blinking, bonnet up, the couple "
-                 "standing beside it looking down the road in both directions."),
-        helpless=("One of them holds a phone up at arm's length, turning slowly, "
-                  "searching for a signal that is not there while the light fades "
-                  "and the road stays empty."),
-        lookup=("Close on their hands opening a saved page on the phone that "
-                "loads with no signal at all, then one of them walking a little "
-                "way up the road holding the phone high until it finds a single "
-                "bar, and lifting it to their ear."),
-        resolve=("Blue and red lights sweep around the bend behind them and an "
-                 "emergency vehicle pulls in, and the couple walk toward it."),
+        trouble=("{car_cap} is stopped at the side of an empty road at dusk with "
+                 "its hazard lights blinking and its bonnet up. Beside it stand "
+                 "{A}, and {B}, both looking down the road in both directions."),
+        helpless=("{A_cap}, holds a phone up at arm's length, turning slowly, "
+                  "searching for a signal that is not there, while {B}, waits "
+                  "beside {car_s} as the light fades and the road stays empty."),
+        lookup=("Close on the hands of {A}, opening a saved page on a phone that "
+                "loads with no signal at all; then he walks a little way up the "
+                "road holding the phone high until it finds a single bar, and "
+                "lifts it to his ear."),
+        resolve=("Blue and red lights sweep around the bend behind {car_s} and an "
+                 "emergency vehicle pulls in, and {A}, and {B}, walk toward it."),
         says=("Your car stops here, and there is no signal.",
               "No bars, no one on the road, and the light is going.",
               "The page you saved still opens, numbers and all."),
@@ -701,20 +768,23 @@ def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
     name = dest.get("name")
     return _scenario(
         dest, month,
-        character=_character(dest.get("id"), "two friends on a road trip"),
+        cast=_cast(dest.get("id")), who=("A", "B", "car"),
         # No terrain. This said "at altitude ... nothing but rock and sky", and
         # its first real pick was Ambaji, a ~480 m temple town in Gujarat -- the
         # same fabrication class as Aihole's invented deodars. The fuel-light
         # story is true on any empty road, so the scene asserts only that.
-        trouble=("Close on a car dashboard, the low-fuel light coming on amber, "
-                 "the road ahead through the windscreen long and completely empty."),
-        helpless=("The driver glances at the passenger, then back at the empty "
-                  "road, no fuel station, no buildings and no other car in "
-                  "sight."),
-        lookup=("The passenger's hands open a saved page on a phone that loads "
-                "with no signal, and their finger stops on a line partway down."),
-        resolve=("The car pulls into a small roadside fuel pump with a hand-painted "
-                 "sign, an attendant already walking over with the nozzle."),
+        trouble=("Close on the dashboard of {car}, the low-fuel light coming on "
+                 "amber, the road ahead through the windscreen long and completely "
+                 "empty; at the wheel is {A}."),
+        helpless=("{A_cap}, driving {car_s}, glances at {B}, in the passenger "
+                  "seat, then back at the empty road, no fuel station, no "
+                  "buildings and no other car in sight."),
+        lookup=("In the passenger seat of {car_s}, {B}, opens a saved page on a "
+                "phone that loads with no signal, and her finger stops on a line "
+                "partway down."),
+        resolve=("{car_cap} pulls into a small roadside fuel pump with a "
+                 "hand-painted sign as an attendant walks over with the nozzle, "
+                 "and {A}, steps out of the driver's side."),
         says=("The fuel light comes on right about here.",
               "There is nothing ahead for a long time.",
               f"NakshIQ lists the nearest pump for {name}."),
@@ -739,18 +809,18 @@ def _fmt_road_closed(dest: dict, month: int, months: dict) -> list:
     state = dest.get("state") or "these"
     return _scenario(
         dest, month,
-        character=_character(dest.get("id"), "a family of four, two parents and two children", kids=True),
-        trouble=("The family loading bags into a car outside a house early in the "
-                 "morning, the children half asleep, the boot open, everything "
-                 "ready to go."),
+        cast=_cast(dest.get("id")), who=("A", "B", "K", "car"),
+        trouble=("Early morning outside a house: {A}, and {B}, load bags into the "
+                 "open boot of {car}, while {K}, stand half asleep beside it."),
         helpless=("A wider shot of the mountain road hours ahead of them: a "
                   "landslide has taken half the carriageway, a line of stopped "
                   "trucks, nobody moving in either direction."),
-        lookup=("Back at the car, a parent stands with the boot still open and "
-                "checks a page on their phone, then closes the boot without "
-                "hurrying."),
-        resolve=("The family eating breakfast unhurried at a table, the car still "
-                 "parked outside, going nowhere today and entirely fine about it."),
+        lookup=("Beside {car_s} with its boot still open, {B}, checks a page on "
+                "her phone, then closes the boot without hurrying while {A}, "
+                "lifts the bags back out."),
+        resolve=("{A_cap}, {B}, and {K}, eat breakfast unhurried at a table, "
+                 "{car_s} still parked outside the window, going nowhere today "
+                 "and entirely fine about it."),
         says=("This family was leaving at six.",
               "The road ahead had gone overnight.",
               "They checked the road page before loading the car."),
@@ -785,19 +855,19 @@ def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
     name = dest.get("name")
     return _scenario(
         dest, month,
-        character=_character(dest.get("id"), "a parent and a young child", car=False),
-        trouble=("The parent kneeling beside the child wrapped in a blanket on a "
-                 "guesthouse bed at high altitude, a hand on the child's forehead, "
-                 "the window behind them showing thin cold light."),
-        helpless=("The parent stands at the window holding a phone up, no signal, "
-                  "the settlement outside small and scattered and a long way from "
-                  "anywhere."),
-        lookup=("Hands on the phone opening a saved page that loads without a "
-                "signal, the parent already reaching for a jacket with the other "
+        cast=_cast(dest.get("id")), who=("B", "C"),
+        trouble=("In a guesthouse room at high altitude, {B}, kneels beside the "
+                 "bed where {C}, lies, her hand on the child's forehead, the window "
+                 "behind them showing thin cold light."),
+        helpless=("{B_cap}, stands at the window holding a phone up with no "
+                  "signal, the small scattered settlement outside a long way from "
+                  "anywhere, and {C}, still in the bed behind her."),
+        lookup=("Close on the hands of {B}, opening a saved page on a phone that "
+                "loads without a signal, as she reaches for a coat with her other "
                 "hand."),
-        resolve=("A vehicle pulling up outside a small district clinic with its "
-                 "lights on, a staff member opening the door as the parent carries "
-                 "the child in."),
+        resolve=("A vehicle pulls up outside a small district clinic with its "
+                 "lights on, and a staff member opens the door as {B}, carries "
+                 "{C}, inside."),
         # Not "altitude hits children faster" -- that is a medical claim we
         # cannot source. What is defensible is that a young child cannot tell
         # you it is happening.
@@ -821,17 +891,18 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
     dish = dest.get("hero_dish") or ""
     return _scenario(
         dest, month,
-        character=_character(dest.get("id"), "a solo traveller", car=False),
-        trouble=("The traveller standing on a busy street looking at a row of "
-                 "almost identical restaurant fronts, every one of them with a "
-                 "tout waving a menu."),
-        helpless=("They hesitate, take a step toward one, then stop, clearly "
-                  "unsure, the street noise and the hawkers pressing in."),
-        lookup=("Hands on a phone opening a saved page, one name on it, and they "
-                "turn and walk away from the row of fronts down a narrower lane."),
-        resolve=("A plate arriving on a scratched steel table in a small plain "
-                 "room that is completely full of local families eating, steam "
-                 "coming off it."),
+        cast=_cast(dest.get("id")), who=("S",),
+        trouble=("{S_cap}, stands on a busy street looking at a row of almost "
+                 "identical restaurant fronts, every one of them with a tout "
+                 "waving a menu."),
+        helpless=("{S_cap}, hesitates, takes a step toward one, then stops, "
+                  "clearly unsure, as the street noise and the hawkers press in."),
+        lookup=("Close on the hands of {S}, opening a saved page on a phone with "
+                "one name on it, before turning away from the row of fronts down "
+                "a narrower lane."),
+        resolve=("A plate is set down in front of {S}, at a scratched steel table "
+                 "in a small plain room completely full of local families eating, "
+                 "steam coming off it."),
         says=("Twenty places, all claiming to be the famous one.",
               "You have one meal here and no way to tell.",
               f"NakshIQ names the one: {ename}."),
