@@ -43,34 +43,19 @@ const TASKS = join(HERE, "today-tasks.json");
 // inlining 28 prompts, so the agent reads one authoritative file and the brief
 // stays short enough to check by eye. Every rule in it is something that was
 // actually observed going wrong on 2026-09-21, not a precaution.
-const BRIEF = `Generate today's NakshIQ Veo clips in Google Flow, using my signed-in Chrome.
+// ONE brief, maintained in one place. This page used to carry its own copy of
+// the Cowork brief, which went stale the same day (it still said to save into
+// inbox/ and run intake). The scheduled task reads cowork-task.SKILL.md on every
+// run; this page just points at it.
+const BRIEF = `This runs automatically. The Cowork scheduled task "nakshiq-veo-daily"
+generates today's clips at 10:00 from ${TASKS}
+and saves them into ~/Downloads/nakshiq-veo-inbox/. The 14:20 LaunchAgent
+collects, names, uploads and checks them.
 
-TASK LIST: ${TASKS}
-It gives, per account, the exact prompt and the exact filename to save as.
+The brief it follows is the single maintained copy:
+${join(HERE, "cowork-task.SKILL.md")}
 
-RULES
-1. Open flow.google.com in my normal, signed-in Chrome. An automation-controlled
-   browser cannot sign in to Google, and launching one against a signed-in
-   profile destroys that session.
-2. In EVERY project pick the model "Veo 3.1 Lite" (10 credits). Flow defaults to
-   Omni 1.1 Flash at 12 credits, which is 20% more and yields 4 clips per account
-   instead of 5. If you cannot select Veo 3.1 Lite, STOP and tell me. Do not
-   generate on the default.
-3. 9:16 vertical.
-4. Turn OFF "Visible watermarking" in the account panel. The prompts also say no
-   text, no captions, no on-screen writing: keep it that way.
-5. Paste each prompt VERBATIM. Do not rewrite, shorten or "improve" it. They are
-   validated against our own data and must not assert anything extra.
-6. Switch accounts in-app: avatar -> "Switch account". Do NOT use
-   flow.google.com/?authuser=N, it redirects to the marketing page.
-7. Work account by account: 5 clips each, 50 credits each.
-8. Download each clip into ${INBOX} and save it under EXACTLY the "save_as"
-   filename from the task list. The filename is how a clip is matched to its
-   beat, so a renamed file is the only way to get wrong footage onto a beat.
-   Never tidy the names.
-9. When finished, run: bash ${join(HERE, "intake.sh")} --named
-10. Report which "save_as" names you did NOT produce, and why. A missing clip
-    just shortens a shot; a wrong one is a lie on the page.`;
+Only use the manual route below if the scheduled task did not run.`;
 
 const esc = (s) => String(s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -163,9 +148,9 @@ details.how[open] summary::before{content:"▾  "}
 <h1>Veo paste pack &middot; ${today}</h1>
 <div class="sub">${todo.length} clips &middot; ${todo.length * 10} credits &middot; ${groups.length} accounts</div>
 
-<div class="how cw"><div class="cwhead"><strong>Hand this to Claude Cowork</strong>
+<div class="how cw"><div class="cwhead"><strong>Automated daily by Claude Cowork</strong>
 <button class="copy big" id="brief">Copy brief</button></div>
-<p class="cwp">Cowork drives your real, signed-in Chrome, so it is not subject to the block that stopped the Playwright job. It reads <code>${esc(TASKS)}</code> for the prompts and the exact filenames, saves into <code>${esc(INBOX)}</code>, and finishes by running intake itself.</p>
+<p class="cwp">Nothing to do here on a normal day. This page is the fallback if the 10:00 task did not run.</p>
 <pre class="brief" id="brieftext">${esc(BRIEF)}</pre></div>
 
 <details class="how"><summary><strong>Or paste them yourself</strong> &mdash; the manual fallback</summary>
@@ -173,7 +158,7 @@ details.how[open] summary::before{content:"▾  "}
 <li>Open <code>flow.google.com</code> in your <strong>normal Chrome</strong>. Automation cannot sign in, so this part is manual by necessity, not by choice.</li>
 <li>Pick <strong>Veo 3.1 Lite (10 credits)</strong>. Flow defaults to Omni 1.1 Flash at 12, which is 20% more and gives 4 clips per account instead of 5.</li>
 <li>Work <strong>top to bottom</strong>. Copy, paste, generate, download. Order matters: clips are paired to beats by order.</li>
-<li>Switch account with avatar &rarr; <strong>Switch account</strong> when credits run out.</li>
+<li>Switch account by opening <code>flow.google.com/u/N/</code> (N = 0, 1, 2&hellip;) and checking the email shown. Chrome's first account is a cancelled Workspace where Flow does not load, and <code>?authuser=N</code> does not switch accounts.</li>
 <li>When done, run <code>bash ~/Automation/nakshiq-veo/intake.sh</code> &mdash; it pairs clips to beats <strong>by order</strong> and ships them to R2. Add <code>--dry</code> first to see the mapping without writing anything.</li>
 </ol>
 <p class="cwp">This path pairs by order because Flow names its downloads after prompt content. The Cowork path above matches by filename instead, which is safer &mdash; order stops mattering entirely.</p>

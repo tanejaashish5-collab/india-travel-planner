@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rename
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { execFileSync } from "child_process";
+import os from "os";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const INBOX = process.env.VEO_INBOX || join(HERE, "inbox");
@@ -22,8 +23,36 @@ const QUEUE = join(HERE, "veo_queue.json");
 const DRY = process.argv.includes("--dry");
 const SETTLE_S = Number(process.env.VEO_SETTLE_S || 90);
 
+// THE DROP FOLDER. The Cowork session can write into ~/Downloads (through
+// Desktop Commander) but cannot reach this folder, while its linked-folder
+// access is the reverse -- found by its own pre-flight, 2026-09-21. No single
+// tool it has can move a clip from Downloads into inbox/, so it does not try:
+// it saves each clip, under its exact name, into DROP, and this LaunchAgent run
+// (/bin/bash holds Full Disk Access, so it reads both) collects them.
+const DROP = process.env.VEO_DROP || join(os.homedir(), "Downloads", "nakshiq-veo-inbox");
+
 mkdirSync(OUT, { recursive: true });
 mkdirSync(INBOX, { recursive: true });
+mkdirSync(DROP, { recursive: true });
+
+{
+  const known = new Set(JSON.parse(readFileSync(QUEUE, "utf-8")).map((r) => r.clip));
+  const gathered = [], strangers = [], waiting = [];
+  for (const f of readdirSync(DROP)) {
+    if (!f.toLowerCase().endsWith(".mp4")) continue;
+    if (!known.has(f)) { strangers.push(f); continue; }         // never guessed at
+    const st = statSync(join(DROP, f));
+    if (Date.now() - st.mtimeMs < SETTLE_S * 1000) { waiting.push(f); continue; }
+    if (!DRY) {
+      try { renameSync(join(DROP, f), join(INBOX, f)); }
+      catch { copyFileSync(join(DROP, f), join(INBOX, f)); unlinkSync(join(DROP, f)); }
+    }
+    gathered.push(f);
+  }
+  if (gathered.length) console.log(`[named] ${DRY ? "would gather" : "gathered"} ${gathered.length} clip(s) from ${DROP}`);
+  if (waiting.length) console.log(`[named] ${waiting.length} clip(s) in the drop folder still settling, left for the next run`);
+  if (strangers.length) console.log(`[named] ${strangers.length} .mp4 in the drop folder match no queued clip — LEFT IN PLACE: ${strangers.slice(0, 5).join(", ")}`);
+}
 
 // Flow's batch zips break `unzip`; python's zipfile does not care. Inner names
 // are preserved here because under this contract the NAME is the identity.

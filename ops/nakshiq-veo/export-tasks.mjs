@@ -18,11 +18,14 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import os from "os";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const QUEUE = join(HERE, "veo_queue.json");
 const ACCOUNTS = join(HERE, "accounts.json");
-const INBOX = join(HERE, "inbox");
+// Where the session SAVES. Inside ~/Downloads because that is the only place
+// its Desktop Commander access reaches; the LaunchAgent collects from here.
+const INBOX = join(os.homedir(), "Downloads", "nakshiq-veo-inbox");
 const OUT = join(HERE, "today-tasks.json");
 const PER_ACCOUNT = Number(process.env.VEO_PER_ACCOUNT || 5);
 
@@ -54,20 +57,19 @@ const doc = {
     "In EVERY project, pick model 'Veo 3.1 Lite' (10 credits). Flow defaults to Omni 1.1 Flash at 12 credits, which is 20% more and yields 4 clips per account instead of 5. If the Lite option cannot be selected, STOP rather than generate on the default.",
     "The account assignment is a SUGGESTION, not a constraint: this file is written without knowing any account's remaining balance. Matching downstream is by filename only, so any account with credits can produce any clip. If an account is out of credits or signed out, move the clip to one that has them.",
     "Never enter a password. If an account shows 'Signed out', skip it and report which clips that stranded.",
-    "Switch accounts in-app: avatar -> 'Switch account'. flow.google.com/?authuser=N does NOT switch accounts, it redirects to the marketing page.",
+    "ACCOUNTS: use ONLY the emails listed under accounts[]. Chrome's first Google account is a cancelled Workspace where Flow shows 'Service Not Allowed', so the in-app switcher is not reachable from there. Open Flow per account at https://flow.google.com/u/N/ and READ the signed-in email before doing anything; if it is not one of ours, try the next N. Never use any account that is not in accounts[], and never any account that is not a Gmail address.",
     "Generate each prompt, download the clip, and save it into save_to using EXACTLY the save_as filename.",
     "Nothing is verified by order: matching is by filename, so a clip saved under the wrong name is the only way to get wrong footage on a beat.",
     "CHARACTER CONSISTENCY: every prompt already describes each person IN FULL, identically across all beats of one storyboard, because Veo has no memory between clips. Do NOT use Flow's character field and do not add descriptions of your own; a second description can conflict and produce different people. The character value is for reference only.",
     "A reel is cut from a WHOLE storyboard. Clips sharing a 'storyboard' value belong together, and 'beats_in_storyboard' says how many it needs. A storyboard missing even one beat renders nothing.",
     "So: if you cannot finish a storyboard, prefer to skip it entirely rather than produce some of its beats. Half a storyboard is wasted credits.",
     "And if you have spare credits, spend them COMPLETING a partial storyboard before starting a new one. Beats straddle accounts because 4-beat storyboards do not divide into 5 clips per account.",
-    "When finished, run then_run.",
   ],
   model: "Veo 3.1 Lite",
   credits_per_clip: 10,
   aspect: "9:16 vertical",
   save_to: INBOX,
-  then_run: `bash ${join(HERE, "intake.sh")} --named`,
+  ingest: "Automatic. The 14:20 LaunchAgent collects save_to, names each clip to its beat, uploads it and checks it plays. Do NOT run anything.",
   total_clips: todo.length,
   total_credits: todo.length * 10,
   accounts: accounts.map((a, i) => ({
