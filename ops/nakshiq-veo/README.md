@@ -74,12 +74,16 @@ verdicts.json ─► build-queue.py ─► veo_queue.json
                                             upload-clips.mjs  ─► R2
 ```
 
-`accounts.json` sets the roster and the order. **Four of the six listed are
-Chanakya's live Veo accounts** (`wealthmythic`, `humanityunboxedmanager`,
-`starterpodsite`, plus `kiddiequestmanager` if added) — credits spent here are
-credits Chanakya cannot spend. They are listed because the founder signed all
-six in and stated the budget as 6 × 50; delete any row to stop using it. The
-pack labels them so the cost is visible at the moment of spending.
+`accounts.json` sets the roster and the order. **It is never mirrored to the
+repo** — `india-travel-planner` is PUBLIC and that file names real Google
+accounts. It lives only here, under `~/Automation/nakshiq-veo/`.
+
+Each entry carries an `owner`. Some accounts belong to the Chanakya project, and
+credits spent here are credits that project cannot spend; the pack labels those
+rows so the cost is visible at the moment of spending. Remove a row to stop
+using that account. Account addresses must not appear in this file either — it
+IS mirrored, and on 2026-09-21 four of them reached the public repo exactly that
+way.
 
 **Order is load-bearing.** Downloads pair to beats by order, so the pack is
 numbered and must be worked top to bottom. `bash intake.sh --dry` prints the
