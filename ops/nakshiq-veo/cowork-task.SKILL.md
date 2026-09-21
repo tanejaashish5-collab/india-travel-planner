@@ -36,7 +36,7 @@ ACCOUNTS
 Six free accounts are signed into Chrome. Switch in-app: avatar (top right) → Switch account → pick the next. Do NOT use flow.google.com/?authuser=N: it redirects to the marketing page. A "Signed out" account leads to a password prompt: skip it and report which clips that stranded. Never buy credits or upgrade. Four of the six belong to the Chanakya project (the task file marks `owner: chanakya`); the founder has authorised spending them.
 
 GENERATING
-Flow is at flow.google.com. New project → confirm settings (rules 1 to 4) → set the character (rule 6) → type the prompt (rule 5) → submit. Queue up to 5 per account and let them render (about 1 to 3 minutes).
+Flow is at flow.google.com. New project → confirm settings (rules 1 to 4) → leave the character field empty (rule 6) → type the prompt verbatim (rule 5) → submit. Queue up to 5 per account and let them render (about 1 to 3 minutes).
 
 VEO FAILURE MODES (all refund the credit)
 - Stuck at 99% / "taking longer than expected": retry once or twice. If it stalls about 3 times, note it and move on. Do NOT reword: these prompts are data-validated, and rewording is how an unbacked claim gets into a reel.
