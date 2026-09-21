@@ -504,6 +504,42 @@ if __name__ == "__main__":
 # NOT a recurring AI presenter: Instagram's 31-Aug-2026 rule attaches the
 # "AI-generated profile" label to accounts whose CREATOR is an AI person, and
 # building one of those is a different decision with a different disclosure.
+# WHAT THE SCREEN IS NOT. "Visible only as glow and shape, never legible" tells
+# Veo what NOT to resolve but nothing about what the thing IS, so on the first
+# real render (achabal, 2026-09-21) the turn beat — the one shot that carries the
+# entire product claim — came back as a CAMERA app, green viewfinder and shutter
+# button included, over the line "the page you saved still opens with no signal".
+# The most important second of the reel showed the wrong product. Describe the
+# shape of the page without making it readable, and name the UIs that must not
+# appear, because those are what Veo reaches for by default.
+SCREEN = ("The phone screen shows a simple vertical list of dark rows on a pale "
+          "background, too small and too soft to read: no camera viewfinder, no "
+          "shutter button, no map, no video call, no photo gallery, no keyboard. ")
+
+# Veo does not hold a face across separate generations, and the four beats of a
+# storyboard ARE four separate generations. The achabal reel came back as three
+# unrelated sets of people in eighteen seconds — a couple, a lone man, two men in
+# shawls — which reads as a montage, not a story. Keeping faces out of shot was
+# already handled; what was missing was anything ELSE to recognise them by. So
+# every beat of one storyboard names the same wardrobe and the same car, chosen
+# deterministically from the slug so a beat regenerated later still matches the
+# ones already sitting on R2.
+_WARDROBE = ("a navy quilted jacket and a mustard wool shawl",
+             "a rust-red fleece and a grey hooded sweatshirt",
+             "an olive field jacket and a cream shawl",
+             "a black puffer jacket and a deep green scarf")
+_VEHICLE = ("a dusty white hatchback with a roof rack",
+            "a silver compact hatchback",
+            "a mud-streaked pale grey hatchback")
+
+
+def _cast(slug: str) -> str:
+    import zlib
+    h = zlib.crc32((slug or "x").encode())
+    return (f"The same two travellers appear in every shot, in "
+            f"{_WARDROBE[h % len(_WARDROBE)]}, with {_VEHICLE[(h >> 8) % len(_VEHICLE)]}. ")
+
+
 PEOPLE = ("Shot from behind or over the shoulder, or framed on hands and the "
           "phone screen, or at middle distance — no face in close-up, no one "
           "addressing the camera. The phone screen is visible only as glow and "
@@ -523,19 +559,22 @@ def _scenario(dest: dict, month: int, *, trouble: str, helpless: str,
     """Shared four-beat shape for every scenario: trouble, helplessness, the
     lookup (the turn — this is the product), and help arriving."""
     place = _place(dest)
+    cast = _cast(dest.get("id"))
+    # SCREEN goes only on the turn: it is the beat that shows the page, and
+    # describing a screen in a shot that has none invites Veo to add one.
     return [
         {"role": "hook", "dur": DEFAULT_DURS["hook"], "say": says[0],
          "caption": caps[0],
-         "veo": f"{trouble} Near {place}. {PEOPLE}{STYLE}"},
+         "veo": f"{trouble} Near {place}. {cast}{PEOPLE}{STYLE}"},
         {"role": "build", "dur": DEFAULT_DURS["build"], "say": says[1],
          "caption": caps[1],
-         "veo": f"{helpless} Near {place}. {PEOPLE}{STYLE}"},
+         "veo": f"{helpless} Near {place}. {cast}{PEOPLE}{STYLE}"},
         {"role": "turn", "dur": DEFAULT_DURS["turn"], "say": says[2],
          "caption": caps[2],
-         "veo": f"{lookup} Near {place}. {PEOPLE}{STYLE}"},
+         "veo": f"{lookup} Near {place}. {cast}{SCREEN}{PEOPLE}{STYLE}"},
         {"role": "payoff", "dur": DEFAULT_DURS["payoff"], "say": payoff_say,
          "caption": payoff_cap,
-         "veo": f"{resolve} Near {place}. {PEOPLE}{STYLE}"},
+         "veo": f"{resolve} Near {place}. {cast}{PEOPLE}{STYLE}"},
     ]
 
 
