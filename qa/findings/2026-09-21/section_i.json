@@ -1,0 +1,107 @@
+[
+  {
+    "path": "/en",
+    "status": 200,
+    "ttfb_ms": 177
+  },
+  {
+    "path": "/hi",
+    "status": 200,
+    "ttfb_ms": 171
+  },
+  {
+    "path": "/en/explore",
+    "status": 200,
+    "ttfb_ms": 1369
+  },
+  {
+    "path": "/hi/explore",
+    "status": 200,
+    "ttfb_ms": 1221
+  },
+  {
+    "path": "/en/trip",
+    "status": 200,
+    "ttfb_ms": 1047
+  },
+  {
+    "path": "/en/plan",
+    "status": 200,
+    "ttfb_ms": 1069
+  },
+  {
+    "path": "/en/ask",
+    "status": 404,
+    "ttfb_ms": 808
+  },
+  {
+    "path": "/en/sos",
+    "status": 200,
+    "ttfb_ms": 795
+  },
+  {
+    "path": "/en/blog",
+    "status": 200,
+    "ttfb_ms": 1527
+  },
+  {
+    "path": "/en/itinerary/agra",
+    "status": 200,
+    "ttfb_ms": 409
+  },
+  {
+    "path": "/en/quiz/hill-station",
+    "status": 200,
+    "ttfb_ms": 822
+  },
+  {
+    "path": "/en/risk-quiz",
+    "status": 200,
+    "ttfb_ms": 1041
+  },
+  {
+    "path": "/en/treks",
+    "status": 200,
+    "ttfb_ms": 1214
+  },
+  {
+    "path": "/en/states",
+    "status": 200,
+    "ttfb_ms": 702
+  },
+  {
+    "path": "/en/family/kerala",
+    "status": 200,
+    "ttfb_ms": 2288
+  },
+  {
+    "path": "/en/with-kids/manali",
+    "status": 200,
+    "ttfb_ms": 2171
+  },
+  {
+    "path": "/en/vs/manali-vs-shimla",
+    "status": 200,
+    "ttfb_ms": 1132
+  },
+  {
+    "path": "/en/weekend-from-hyderabad",
+    "status": 200,
+    "ttfb_ms": 1289
+  },
+  {
+    "path": "/en/membership",
+    "status": 200,
+    "ttfb_ms": 842
+  },
+  {
+    "path": "/en/saved",
+    "status": 200,
+    "ttfb_ms": 1258
+  },
+  {
+    "path": "/offline",
+    "status": 200,
+    "ttfb_ms": 932
+  }
+]

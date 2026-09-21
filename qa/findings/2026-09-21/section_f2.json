@@ -1,0 +1,37 @@
+[
+  {
+    "label": "itinerary-valid-0",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 200,
+    "body_snip": "{\"itinerary\":{\"title\":\"December \u00b7 5-day family trip from Delhi\",\"summary\":\"A 5-day route through destinations that score well in December. We've prioritised places with good weather, open roads, and honest infrastructure this month.\",\"totalDistance\":\"750\u20131250 km\",\"bestFor\":[\"family\",\"mid-range\"],\"da"
+  },
+  {
+    "label": "itinerary-valid-1",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 200,
+    "body_snip": "{\"itinerary\":{\"title\":\"October \u00b7 3-day couple trip from Delhi\",\"summary\":\"A 3-day route through destinations that score well in October. We've prioritised places with good weather, open roads, and honest infrastructure this month.\",\"totalDistance\":\"450\u2013750 km\",\"bestFor\":[\"couple\",\"mid-range\"],\"days\""
+  },
+  {
+    "label": "itinerary-valid-2",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 200,
+    "body_snip": "{\"itinerary\":{\"title\":\"May \u00b7 7-day solo trip from Delhi\",\"summary\":\"A 7-day route through destinations that score well in May. We've prioritised places with good weather, open roads, and honest infrastructure this month.\",\"totalDistance\":\"1050\u20131750 km\",\"bestFor\":[\"solo\",\"mid-range\"],\"days\":[{\"day\":1"
+  },
+  {
+    "label": "itinerary-unresolvable",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 404,
+    "body_snip": "{\"error\":\"None of the requested destinations exist\"}"
+  },
+  {
+    "label": "weather-valid-id",
+    "url": "https://www.nakshiq.com/api/weather?id=manali",
+    "method": "GET",
+    "status": 200,
+    "body_snip": "{\"temp\":14,\"feels_like\":12,\"humidity\":51,\"description\":\"clear sky\",\"icon\":\"01d\",\"wind_speed\":11,\"visibility\":10,\"clouds\":0,\"updated\":\"2026-09-21T02:12:19.964Z\"}"
+  }
+]

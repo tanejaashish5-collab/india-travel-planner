@@ -1,0 +1,51 @@
+[
+  {
+    "label": "bad-slug-en",
+    "url": "https://www.nakshiq.com/en/destination/nonexistent-slug-qa-2026",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  },
+  {
+    "label": "bad-slug-hi",
+    "url": "https://www.nakshiq.com/hi/destination/nonexistent-slug-qa-2026",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  },
+  {
+    "label": "garbage-month-champhai-en",
+    "url": "https://www.nakshiq.com/en/destination/champhai/99",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  },
+  {
+    "label": "garbage-month-munsiyari-en",
+    "url": "https://www.nakshiq.com/en/destination/munsiyari/13",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  },
+  {
+    "label": "garbage-month-satara-en-nonnumeric",
+    "url": "https://www.nakshiq.com/en/destination/satara/abc",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  },
+  {
+    "label": "garbage-month-kurukshetra-hi",
+    "url": "https://www.nakshiq.com/hi/destination/kurukshetra/99",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  },
+  {
+    "label": "garbage-month-karwar-en-zero",
+    "url": "https://www.nakshiq.com/en/destination/karwar/0",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  }
+]

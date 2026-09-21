@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/",
+    "status": 301,
+    "location": "/en"
+  },
+  {
+    "path": "/destination/champhai",
+    "status": 301,
+    "location": "/en/destination/champhai"
+  },
+  {
+    "path": "/explore",
+    "status": 301,
+    "location": "/en/explore"
+  },
+  {
+    "path": "/itinerary/agra",
+    "status": 301,
+    "location": "/en/itinerary/agra"
+  },
+  {
+    "path": "/sos",
+    "status": 301,
+    "location": "/en/sos"
+  }
+]

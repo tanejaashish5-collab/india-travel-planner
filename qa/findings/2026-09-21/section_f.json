@@ -1,0 +1,142 @@
+[
+  {
+    "label": "removed-/api/chat",
+    "url": "https://www.nakshiq.com/api/chat",
+    "method": "GET",
+    "status": 404,
+    "body_snip": "<!DOCTYPE html><html data-dpl-id=\"dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fe"
+  },
+  {
+    "label": "removed-/api/gap-year-generate",
+    "url": "https://www.nakshiq.com/api/gap-year-generate",
+    "method": "GET",
+    "status": 404,
+    "body_snip": "<!DOCTYPE html><html data-dpl-id=\"dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fe"
+  },
+  {
+    "label": "removed-/api/gap-year-regenerate",
+    "url": "https://www.nakshiq.com/api/gap-year-regenerate",
+    "method": "GET",
+    "status": 404,
+    "body_snip": "<!DOCTYPE html><html data-dpl-id=\"dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fe"
+  },
+  {
+    "label": "removed-/api/embed",
+    "url": "https://www.nakshiq.com/api/embed",
+    "method": "GET",
+    "status": 404,
+    "body_snip": "<!DOCTYPE html><html data-dpl-id=\"dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fe"
+  },
+  {
+    "label": "removed-/api/export-trip",
+    "url": "https://www.nakshiq.com/api/export-trip",
+    "method": "GET",
+    "status": 404,
+    "body_snip": "<!DOCTYPE html><html data-dpl-id=\"dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fe"
+  },
+  {
+    "label": "itinerary-malformed",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 400,
+    "body_snip": "{\"error\":\"Malformed JSON body\"}"
+  },
+  {
+    "label": "itinerary-empty",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 400,
+    "body_snip": "{\"error\":\"Malformed JSON body\"}"
+  },
+  {
+    "label": "itinerary-empty-object",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 400,
+    "body_snip": "{\"error\":\"Missing required fields\"}"
+  },
+  {
+    "label": "itinerary-valid-0",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 400,
+    "body_snip": "{\"error\":\"Missing required fields\"}"
+  },
+  {
+    "label": "itinerary-valid-1",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 400,
+    "body_snip": "{\"error\":\"Missing required fields\"}"
+  },
+  {
+    "label": "itinerary-valid-2",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 400,
+    "body_snip": "{\"error\":\"Missing required fields\"}"
+  },
+  {
+    "label": "itinerary-unresolvable",
+    "url": "https://www.nakshiq.com/api/itinerary",
+    "method": "POST",
+    "status": 400,
+    "body_snip": "{\"error\":\"Missing required fields\"}"
+  },
+  {
+    "label": "weather-noparams",
+    "url": "https://www.nakshiq.com/api/weather",
+    "method": "GET",
+    "status": 400,
+    "body_snip": "{\"error\":\"Missing destination id\"}"
+  },
+  {
+    "label": "weather-valid",
+    "url": "https://www.nakshiq.com/api/weather?destination=manali&month=may",
+    "method": "GET",
+    "status": 400,
+    "body_snip": "{\"error\":\"Missing destination id\"}"
+  },
+  {
+    "label": "search-index",
+    "url": "https://www.nakshiq.com/api/search-index",
+    "method": "GET",
+    "status": 200,
+    "body_snip": "{\"destinations\":[{\"id\":\"aalo\",\"name\":\"Aalo\",\"state\":{\"name\":\"Arunachal Pradesh\"},\"difficulty\":\"moderate\",\"tags\":[\"offbeat\",\"northeast\",\"transit-town\",\"siang-valley\",\"galo-tribe\",\"base-town\"]},{\"id\":\"a"
+  },
+  {
+    "label": "phantom-destinations",
+    "url": "https://www.nakshiq.com/api/destinations",
+    "method": "GET",
+    "status": 404,
+    "body_snip": "<!DOCTYPE html><html data-dpl-id=\"dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fe"
+  },
+  {
+    "label": "phantom-health",
+    "url": "https://www.nakshiq.com/api/health",
+    "method": "GET",
+    "status": 404,
+    "body_snip": "<!DOCTYPE html><html data-dpl-id=\"dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fe"
+  },
+  {
+    "label": "webhook-resend-get",
+    "url": "https://www.nakshiq.com/api/webhooks/resend",
+    "method": "GET",
+    "status": 405,
+    "body_snip": ""
+  },
+  {
+    "label": "webhook-resend-post-nosig",
+    "url": "https://www.nakshiq.com/api/webhooks/resend",
+    "method": "POST",
+    "status": 401,
+    "body_snip": "{\"error\":\"Invalid signature\"}"
+  },
+  {
+    "label": "webhook-resend-post-badsig",
+    "url": "https://www.nakshiq.com/api/webhooks/resend",
+    "method": "POST",
+    "status": 401,
+    "body_snip": "{\"error\":\"Invalid signature\"}"
+  }
+]
