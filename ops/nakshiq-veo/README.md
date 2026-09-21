@@ -139,6 +139,30 @@ Ingest runs FIRST in `run-veo.sh`. The other order re-lists clips that were
 generated but not yet ingested (they still read `pending`), and the next session
 generates them a second time: a straight double spend.
 
+## The tone mix (founder-approved 2026-09-21)
+
+"Can't be all serious." Two storyboards per tone per day, 8 storyboards, landing
+on exactly 30 clips. No two reels in a day built on the same feature.
+
+| Tone | Formats | Feature / data point |
+|---|---|---|
+| tense | sos_rescue, road_closed, fuel_gap, hospital_run | offline SOS page, road feed (6 regions), pump data, named hospital + >=2500 m |
+| useful | how_hard, which_two, real_cost, two_places | trek distance/altitude/days, /vs/ pairs + this month's scores, cost days by season |
+| warm | food_find, wrong_month | named eatery, month verdicts |
+| awe | quiet_month, crowd_pullback | crowd calendar x full-year verdicts |
+
+The lighter formats read `data/reel-data.json` (treks, crowd, cost days, full-year
+verdicts, /vs/ pairs). `scripts/export-reel-data.mjs` refreshes it weekly over
+DIRECT Postgres (the costs table is 12,693 rows; REST is forbidden over 500). It
+needs `SUPABASE_DB_URL` in `apps/web/.env.local`, which is NOT there as of
+2026-09-21 — until it is, the job uses the snapshot taken that day and warns
+once it is 30 days old. `data/` is never mirrored to the public repo.
+
+Every reel says only what the data proves for THAT destination. `validate()`
+refuses "every destination", "verified", "local contact", "updated daily" and
+similar, and refuses any recurring character shown without their full
+description (Veo has no memory between clips).
+
 ## The one thing a human must do every day
 
 Open the pack, paste 28-30 prompts into Flow in a normal Chrome, download, then

@@ -383,8 +383,12 @@ def validate(sb: dict) -> None:
     # A PERSON MAY NEVER APPEAR UNDESCRIBED. Veo has no memory between beats, so
     # "same people" or a bare "the couple" gets new people every time. Any beat
     # whose prompt shows a person must carry at least one full cast description.
+    # Recurring characters only. Anonymous crowds ("visitors", "walkers") are
+    # extras, not characters -- nobody has to recognise them in the next shot --
+    # so "people" is deliberately NOT here: it blocked every crowd shot in
+    # quiet_month (seen 09-21).
     _PERSON = re.compile(r"\b(man|woman|couple|family|parent|child|children|"
-                         r"traveller|driver|passenger|people|he|she|they)\b", re.I)
+                         r"traveller|driver|passenger|he|she|they)\b", re.I)
     for b in beats:
         v = b.get("veo") or ""
         if re.search(r"same (people|two|couple|family)", v, re.I):
@@ -662,7 +666,7 @@ def _intel(dest: dict, *path):
 
 def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
               helpless: str, lookup: str, resolve: str, says: tuple, caps: tuple,
-              payoff_say: str, payoff_cap: str) -> list:
+              payoff_say: str, payoff_cap: str, screen: bool = True) -> list:
     """Shared four-beat shape: trouble, helplessness, the lookup (the turn --
     this is the product), and help reached.
 
@@ -684,7 +688,7 @@ def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
         # is an invitation to add one.
         {"role": "turn", "dur": DEFAULT_DURS["turn"], "say": says[2],
          "caption": caps[2],
-         "veo": f"{fill(lookup)} Near {place}. {SCREEN}{PEOPLE}{STYLE}"},
+         "veo": f"{fill(lookup)} Near {place}. {SCREEN if screen else ''}{PEOPLE}{STYLE}"},
         {"role": "payoff", "dur": DEFAULT_DURS["payoff"], "say": payoff_say,
          "caption": payoff_cap,
          "veo": f"{fill(resolve)} Near {place}. {PEOPLE}{STYLE}"},
@@ -921,3 +925,221 @@ FORMATS.update({
     "hospital_run": _fmt_hospital_run,
     "food_find": _fmt_food_find,
 })
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# LIGHTER FORMATS (founder-approved slate, 2026-09-21)
+# ─────────────────────────────────────────────────────────────────────────
+# "Can't be all serious, so it has to be different functions. Different
+# features, different data points." Correct, and our own evidence agrees: the
+# most-searched thing on NakshIQ is "girnar 10,000 steps in km", then which
+# month, X vs Y and cost -- pre-trip curiosity, not emergencies. Each of these
+# uses a different feature and a different data point, and each has its OWN
+# story shape instead of borrowing the rescue arc:
+#   how_hard     useful  the question -> the rumour -> the real numbers -> who it suits
+#   which_two    useful  the stalemate -> both look perfect -> this month's scores -> the call
+#   real_cost    useful  the question -> the first price -> the real day -> what it buys
+#   quiet_month  awe     the crowd -> the crush -> the same place, empty -> it is still good
+# Every number these speak comes straight from reel-data.json; none is typed here.
+
+def _km(x) -> str:
+    x = float(x)
+    return f"{int(x)}" if x == int(x) else f"{x:.1f}"
+
+
+def _fmt_how_hard(dest: dict, month: int, months: dict) -> list:
+    """The single most-searched question on the site, answered with the trek's
+    real distance, altitude, days and our difficulty rating. No step counts:
+    the treks table has none, so the reel may not claim any."""
+    _require(dest, ("name",), "how_hard")
+    treks = dest.get("treks") or []
+    if not treks:
+        raise StoryboardError(f"how_hard: {dest.get('id')} has no trek data")
+    t = treks[0]
+    name, days = t["name"], int(t["duration_days"])
+    span = "in a single day" if days <= 1 else f"over {days} days"
+    return _scenario(
+        dest, month, cast=_cast(dest.get("id")), who=("A", "B"),
+        trouble=("At the start of a walking trail at first light, {A}, tightens "
+                 "the straps of a small daypack while {B}, looks up at the path "
+                 "climbing away from them."),
+        helpless=("{A_cap}, and {B}, pass a group of walkers resting on rocks "
+                  "beside the path, one of them waving a hand vaguely uphill, as "
+                  "the trail keeps climbing ahead."),
+        lookup=("At a rest stop partway up the trail, {B}, holds a phone with a "
+                "saved page open, then lowers it and nods to {A}, before they "
+                "both set off again at a steadier pace."),
+        resolve=("{A_cap}, and {B}, reach an open viewpoint at the top of the "
+                 "trail and stand side by side taking it in, packs still on, "
+                 "breathing hard and grinning."),
+        says=(f"How hard is the {name}, really?",
+              "Everyone you ask gives you a different answer.",
+              f"It is {_km(t['distance_km'])} kilometres, up to {int(t['max_altitude_m']):,} metres, {span}."),
+        caps=("how hard, really?", "everyone says something else",
+              f"{_km(t['distance_km'])} km · {int(t['max_altitude_m']):,} m · {days} day{'s' if days != 1 else ''}"),
+        payoff_say=f"NakshIQ rates it {t['difficulty']}, for {t['fitness_level']} fitness.",
+        payoff_cap=f"{t['difficulty']} · {t['fitness_level']} fitness")
+
+
+def _fmt_which_two(dest: dict, month: int, months: dict, dest_b: dict = None) -> list:
+    """The /vs/ decision, made with THIS month's scores for both places. Only
+    pairs that already have a live /vs/ page are ever offered here. A tie is
+    said out loud as a tie -- inventing a winner would be the lie."""
+    _require(dest, ("name",), "which_two")
+    if not dest_b or not dest_b.get("name"):
+        raise StoryboardError(f"which_two: {dest.get('id')} has no /vs/ partner")
+    sa, sb_ = dest.get("score"), dest_b.get("score")
+    if not isinstance(sa, int) or not isinstance(sb_, int):
+        raise StoryboardError(f"which_two: missing a {_month_name(month)} score")
+    a, b = dest["name"], dest_b["name"]
+    da, db = int(round(sa * 2)), int(round(sb_ * 2))
+    mon = _month_name(month)
+    la = (months.get(month) or {}).get("label")
+    lb = dest_b.get("label")
+    # Its first sample recommended "a genuine tie, pick the one you love" for
+    # Agonda vs Alibaug in September -- both 4/10, both monsoon. A reel that ends
+    # on "go" must only ever point at a month our own verdict says to go.
+    if da == db and not (la == "go" and lb == "go"):
+        raise StoryboardError(
+            f"which_two: {a} and {b} tie at {da}/10 in {mon} but are not both a "
+            f"'go' — refusing to recommend either")
+    if da != db and ((la if da > db else lb) != "go"):
+        raise StoryboardError(
+            f"which_two: the higher of {a}/{b} in {mon} is still not a 'go' — "
+            f"refusing to recommend it")
+    if da == db:
+        call_say, call_cap = f"In {mon} it is a genuine tie, so pick the one you love.", "a genuine tie"
+        win = a
+    else:
+        win = a if da > db else b
+        call_say, call_cap = f"This {mon}, go to {win}.", f"this {mon}: {win}"
+    return _scenario(
+        dest, month, cast=_cast(dest.get("id")), who=("A", "B"),
+        trouble=("At a small cafe table covered in a folded paper map, {A}, and "
+                 "{B}, each put a finger on a different spot and look up at each "
+                 "other, both laughing at the stalemate."),
+        helpless=(f"{{B_cap}}, walks slowly through {a} in soft light while "
+                  f"{{A}}, walks through {b} in the same light, the two scenes "
+                  f"feeling equally inviting."),
+        lookup=("Back at the cafe table, {B}, holds up a phone with a saved page "
+                "open and turns it toward {A}, who leans in, then sits back and "
+                "nods."),
+        resolve=(f"{{A_cap}}, and {{B}}, walk together through {win} in warm "
+                 f"late light, small bags over their shoulders, clearly pleased "
+                 f"with the choice."),
+        says=(f"{a} or {b}, in {mon}?",
+              "Both of them look perfect in the photos.",
+              f"This month NakshIQ scores {a} {da} out of ten, and {b} {db}."),
+        caps=(f"{a} or {b}?", "both look perfect", f"{a} {da}/10 · {b} {db}/10"),
+        payoff_say=call_say, payoff_cap=call_cap)
+
+
+def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
+    """What a day actually costs, in THIS season: a mid-range room + a day of
+    food + a day's taxi, straight from the cost table. Only where all three
+    exist for a season covering this month; never an estimate stitched from
+    two seasons."""
+    _require(dest, ("name",), "real_cost")
+    # destination_costs rows carry NO months (the array is empty in every row),
+    # so "in September" cannot be read from the cost table. The season is chosen
+    # from this destination's own crowd calendar (peak months -> peak, quiet ->
+    # low, otherwise shoulder), and the voice-over names the SEASON, which the
+    # cost row states directly, rather than claiming a month it does not.
+    crowd = dest.get("crowd") or {}
+    if not crowd:
+        raise StoryboardError(f"real_cost: {dest.get('id')} has no crowd calendar to place {_month_name(month)} in a season")
+    season = ("peak" if month in (crowd.get("peak_months") or [])
+              else "low" if month in (crowd.get("quiet_months") or []) else "shoulder")
+    row = next((r for r in (dest.get("costs") or []) if r.get("season") == season
+                and all(r.get(k) for k in ("hotel_mid", "food_day", "taxi_day"))), None)
+    if not row:
+        raise StoryboardError(
+            f"real_cost: {dest.get('id')} has no complete {season}-season cost day")
+    h, f, t = int(row["hotel_mid"]), int(row["food_day"]), int(row["taxi_day"])
+    day = int(round((h + f + t) / 100.0) * 100)
+    name, mon = dest["name"], _month_name(month)
+    return _scenario(
+        dest, month, cast=_cast(dest.get("id")), who=("A", "B"),
+        trouble=(f"At a small hotel reception desk in {name}, {{A}}, and {{B}}, "
+                 f"listen to the receptionist, and {{B}}, raises her eyebrows at "
+                 f"whatever has just been said."),
+        helpless=("{A_cap}, stands beside a line of parked taxis talking to a "
+                  "driver, both of them shaking their heads and smiling, while "
+                  "{B}, waits with the bags."),
+        lookup=("At a simple cafe table with two cups of tea steaming, {B}, holds "
+                "a phone with a saved page open and slides it across to {A}, who "
+                "reads it and relaxes."),
+        resolve=("{A_cap}, and {B}, sit at a plain local eatery with full plates "
+                 "in front of them, laughing, the day clearly going to plan."),
+        says=(f"What does a day in {name} actually cost?",
+              "The first price you hear is rarely the real one.",
+              f"In its {'off' if season == 'low' else season} season, a mid-range day runs about {day:,} rupees."),
+        caps=("what a day really costs", "the first price you hear",
+              f"about ₹{day:,} a day · {'off' if season == 'low' else season} season"),
+        payoff_say="That is a mid-range room, food and a taxi, from its NakshIQ cost page.",
+        payoff_cap=f"room ₹{h:,} · food ₹{f:,} · taxi ₹{t:,}")
+
+
+def _fmt_quiet_month(dest: dict, month: int, months: dict) -> list:
+    """Awe, with a use: the month that is BOTH quiet and still a good month.
+    crowd_calendar is seasonal, and a quiet month is often quiet because the
+    place is shut ('summer and monsoon prohibit visits' is a real note), so a
+    quiet month only qualifies if our verdict for it is 'go'. Without that
+    intersection this reel would send people to a closed site."""
+    _require(dest, ("name",), "quiet_month")
+    crowd = dest.get("crowd") or {}
+    peak = [m for m in (crowd.get("peak_months") or []) if isinstance(m, int)]
+    quiet = [m for m in (crowd.get("quiet_months") or []) if isinstance(m, int)]
+    go = lambda m: (months.get(m) or {}).get("label") == "go"
+    # Strict first: a month that is quiet AND a go (69 of 525 destinations).
+    # Otherwise a go month that is simply not a peak-crowd month (387 of 525),
+    # and then the copy only claims "fewer people than peak", never "empty".
+    strict = [m for m in quiet if go(m)]
+    soft = [m for m in range(1, 13) if go(m) and m not in peak and m not in quiet]
+    if not peak or not (strict or soft):
+        raise StoryboardError(
+            f"quiet_month: {dest.get('id')} has no go month outside its peak — "
+            f"refusing to send anyone somewhere shut")
+    is_strict = bool(strict)
+    pk, qm = _month_name(peak[0]), _month_name((strict or soft)[0])
+    name = dest["name"]
+    return _scenario(
+        dest, month, cast=_cast(dest.get("id")), who=("S",), screen=False,
+        trouble=(f"At the height of the season at {name}, dense crowds of "
+                 f"visitors fill the frame around the main sight, shoulder to "
+                 f"shoulder, phones raised, a steady noise of voices."),
+        helpless=(f"A slow sideways pass along a long queue of visitors waiting "
+                  f"in hot sun at {name}, visitors fanning themselves and shifting "
+                  f"from foot to foot."),
+        lookup=((f"The same main sight at {name}, almost empty in soft early "
+                 f"light, and far off in the distance a single figure, {{S}}, "
+                 f"walking slowly toward it alone.") if is_strict else
+                (f"The same main sight at {name} in soft light with only a few "
+                 f"unhurried visitors, and among them {{S}}, walking slowly "
+                 f"toward it with room to breathe.")),
+        resolve=(f"{{S_cap}}, sits on a low stone wall at {name} with no one "
+                 f"else around, simply taking it in."),
+        says=(f"This is {name} in {pk}.",
+              "Queues, crowds, and everyone here at once.",
+              f"This is the same place in {qm}."),
+        caps=(f"{name}, {pk}", "everyone at once", f"{name}, {qm}"),
+        payoff_say=("Quiet, and still a month NakshIQ says to go." if is_strict
+                    else "Fewer people than peak, and still a month NakshIQ says to go."),
+        payoff_cap=(f"{qm}: quiet, and a go" if is_strict else f"{qm}: fewer crowds, still a go"))
+
+
+FORMATS.update({
+    "how_hard": _fmt_how_hard,
+    "which_two": _fmt_which_two,
+    "real_cost": _fmt_real_cost,
+    "quiet_month": _fmt_quiet_month,
+})
+
+# THE TONE MIX, enforced by build-queue.py: two storyboards per tone per day.
+# 25% tense, 75% everything else. No two reels in a day on the same feature.
+TONES = {
+    "tense":  ("sos_rescue", "road_closed", "fuel_gap", "hospital_run"),
+    "useful": ("how_hard", "which_two", "real_cost", "two_places"),
+    "warm":   ("food_find", "wrong_month"),
+    "awe":    ("quiet_month", "crowd_pullback"),
+}

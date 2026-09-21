@@ -57,7 +57,7 @@ const doc = {
     "Switch accounts in-app: avatar -> 'Switch account'. flow.google.com/?authuser=N does NOT switch accounts, it redirects to the marketing page.",
     "Generate each prompt, download the clip, and save it into save_to using EXACTLY the save_as filename.",
     "Nothing is verified by order: matching is by filename, so a clip saved under the wrong name is the only way to get wrong footage on a beat.",
-    "CHARACTER CONSISTENCY: every clip carries a 'character' string, identical for every beat of one storyboard. Put that exact text in Flow's character field for each of that storyboard's beats. Different storyboards get different people; within one storyboard the people must be the same. The same text is also inside each prompt, so if the field is unavailable the prompt still carries it.",
+    "CHARACTER CONSISTENCY: every prompt already describes each person IN FULL, identically across all beats of one storyboard, because Veo has no memory between clips. Do NOT use Flow's character field and do not add descriptions of your own; a second description can conflict and produce different people. The character value is for reference only.",
     "A reel is cut from a WHOLE storyboard. Clips sharing a 'storyboard' value belong together, and 'beats_in_storyboard' says how many it needs. A storyboard missing even one beat renders nothing.",
     "So: if you cannot finish a storyboard, prefer to skip it entirely rather than produce some of its beats. Half a storyboard is wasted credits.",
     "And if you have spare credits, spend them COMPLETING a partial storyboard before starting a new one. Beats straddle accounts because 4-beat storyboards do not divide into 5 clips per account.",

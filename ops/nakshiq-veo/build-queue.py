@@ -37,6 +37,9 @@ REPO = Path.home() / "Desktop" / "India Travel Planner" / "nakshiq-autoposter"
 PACK = Path.home() / "Automation" / "nakshiq-ig" / "data" / "verdicts.json"
 QUEUE = HERE / "veo_queue.json"
 LEDGER = HERE / "generated.json"          # slug+format -> last generated date
+# Facts for the lighter formats (treks, crowd calendar, cost days, full-year
+# verdicts, /vs/ pairs). Written by scripts/export-reel-data.mjs; see its header.
+REEL_DATA = HERE / "data" / "reel-data.json"
 
 DAILY_CLIP_BUDGET = 30                    # 6 accounts x 50 credits / 10 per clip.
                                           # Founder, 09-21: use all 30 every day.
@@ -50,6 +53,12 @@ _UNFILLABLE = {1, 2, 5}
 # for EVERY destination; with it first in FORMATS, an uncapped run would be
 # seven copies of the same rescue story in seven places.
 PER_FORMAT_CAP = 2
+# THE TONE MIX (founder-approved 2026-09-21): two storyboards per tone per day,
+# so a day is 25% tense and 75% useful / warm / awe, never seven rescue stories.
+# The tones and their formats live in storyboard.TONES.
+PER_TONE = 2
+import os as _os
+DEBUG = _os.environ.get("VEO_DEBUG") == "1"
 # Order is priority. Scenarios first (they show the product working), landscape
 # formats as the fallback for destinations whose intel cannot support one.
 FORMATS = ("sos_rescue", "road_closed", "fuel_gap", "hospital_run", "food_find",
@@ -124,6 +133,21 @@ def load_pack() -> dict:
     return dests
 
 
+def load_reel_data() -> dict:
+    """Best effort, like intel: a missing snapshot makes the formats that need it
+    refuse (visible in the log), it never stops the run."""
+    try:
+        d = json.loads(REEL_DATA.read_text())
+        print(f"[build-queue] reel-data from {d.get('generated_at', '?')[:10]}: "
+              f"{len(d.get('treks', {}))} trek dests, {len(d.get('costs', {}))} cost dests, "
+              f"{len(d.get('months', {}))} full-year dests, {len(d.get('vs_pairs', []))} /vs/ pairs")
+        return d
+    except Exception as e:
+        print(f"[build-queue] reel-data unavailable ({type(e).__name__}) — "
+              f"how_hard / which_two / real_cost / quiet_month will refuse")
+        return {}
+
+
 def load_ledger() -> dict:
     try:
         return json.loads(LEDGER.read_text())
@@ -140,6 +164,20 @@ def main() -> int:
     month = today.month
     dests = load_pack()
     intel = load_intel()
+    reel = load_reel_data()
+    # Full-year verdicts: the IG pack only spans the brief's look-ahead window
+    # (Sep-Nov, 2.2 months per destination), which starved quiet_month. Keep the
+    # pack's editorial sentence where it exists; take score + label for every
+    # month from destination_months.
+    for d in dests.values():
+        for m, v in (reel.get("months", {}).get(d["id"]) or {}).items():
+            d["months"].setdefault(int(m), {"sentence": ""}).update(
+                {"score": v.get("score"), "label": v.get("label")})
+    vs_partner: dict = {}
+    for a_, b_ in reel.get("vs_pairs", []):
+        vs_partner.setdefault(a_, []).append(b_)
+        vs_partner.setdefault(b_, []).append(a_)
+    tone_of = {f: t for t, fs in SB.TONES.items() for f in fs}
     led = load_ledger()
 
     # Least-recently-generated first. Never seen -> "" sorts first, so the
@@ -165,11 +203,13 @@ def main() -> int:
     # more of a format the first run had already maxed (seen 09-21: four
     # sos_rescue in one day's queue with a cap of two).
     per_fmt: dict = {}
+    per_tone: dict = {}
     try:
         _pend = {(r["slug"], r["format"]) for r in json.loads(QUEUE.read_text())
                  if r.get("status") == "pending"}
         for _slug, _fmt in _pend:
             per_fmt[_fmt] = per_fmt.get(_fmt, 0) + 1
+            per_tone[tone_of.get(_fmt)] = per_tone.get(tone_of.get(_fmt), 0) + 1
     except Exception:
         pass
     for d in order:
@@ -184,8 +224,19 @@ def main() -> int:
                 "intel": live.get("intel") or {},
                 "hero_dish": live.get("hero_dish"),
                 "eatery_name": live.get("eatery_name"),
-                "elevation_m": live.get("elevation_m")}
-        for fmt in FORMATS:
+                "elevation_m": live.get("elevation_m"),
+                "treks": reel.get("treks", {}).get(d["id"]),
+                "crowd": reel.get("crowd", {}).get(d["id"]),
+                "costs": reel.get("costs", {}).get(d["id"])}
+        # Try the tones furthest below quota first, so the day fills evenly
+        # instead of whichever format happens to be listed first.
+        want = sorted((t for t in SB.TONES if per_tone.get(t, 0) < PER_TONE),
+                      key=lambda t: per_tone.get(t, 0))
+        # Filter against storyboard's registry, NOT this file's old FORMATS tuple:
+        # that tuple predates the lighter formats, and filtering on it silently
+        # dropped all four before they were ever tried (09-21, found by trace).
+        order_fmts = [f for t in want for f in SB.TONES[t] if f in SB.FORMATS]
+        for fmt in order_fmts:
             if clips >= budget:
                 break
             key = f"{d['id']}::{fmt}"
@@ -193,9 +244,19 @@ def main() -> int:
                 continue
             if per_fmt.get(fmt, 0) >= PER_FORMAT_CAP:
                 continue                          # variety: try the next format
+            if per_tone.get(tone_of.get(fmt), 0) >= PER_TONE:
+                continue                          # this tone is full today
             try:
                 kw = {}
                 remaining = budget - clips
+                if fmt == "which_two":
+                    partner = next((x for x in vs_partner.get(d["id"], [])
+                                    if x in dests and month in dests[x]["months"]), None)
+                    if not partner:
+                        raise SB.StoryboardError("which_two: no /vs/ partner with a score this month")
+                    pm = dests[partner]["months"][month]
+                    kw["dest_b"] = {"id": partner, "name": dests[partner]["name"],
+                                    "score": pm.get("score"), "label": pm.get("label")}
                 if fmt == "two_places":
                     partner = next((o for o in order
                                     if o["id"] != d["id"]
@@ -208,17 +269,22 @@ def main() -> int:
                                     "score": partner["months"][month]["score"]}
                 sb = SB.build_storyboard(fmt, dest, month, d["months"], **kw)
             except SB.StoryboardError as e:
+                if DEBUG:
+                    print(f"    [debug] {d['id']:<16} {fmt:<14} refused: {str(e)[:90]}")
                 skipped.setdefault(str(e).split(":")[1].strip()[:44], 0)
                 skipped[str(e).split(":")[1].strip()[:44]] += 1
                 continue
             size = len(SB.queue_rows(sb))
             left = remaining - size
             if size > remaining or left in _UNFILLABLE:
+                if DEBUG:
+                    print(f"    [debug] {d['id']:<16} {fmt:<14} skipped: size {size} leaves {left} of {remaining}")
                 continue                          # would overshoot or strand credits
             n = SB.enqueue(sb, QUEUE)
             if n:
                 queued.append((d["id"], fmt, n))
                 per_fmt[fmt] = per_fmt.get(fmt, 0) + 1
+                per_tone[tone_of.get(fmt)] = per_tone.get(tone_of.get(fmt), 0) + 1
                 clips += n
                 led[key] = today.isoformat()
                 led[d["id"]] = today.isoformat()

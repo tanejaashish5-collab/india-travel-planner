@@ -23,7 +23,7 @@ DEST="$REPO/ops/nakshiq-veo"
 mkdir -p "$DEST"
 
 rsync -a --delete \
-  --exclude 'profile/' --exclude 'downloads/' --exclude 'clips/' --exclude 'inbox/' \
+  --exclude 'profile/' --exclude 'downloads/' --exclude 'clips/' --exclude 'inbox/' --exclude 'data/' \
   --exclude 'node_modules/' --exclude 'veo_queue.json' --exclude 'generated.json' \
   --exclude 'accounts.json' --exclude 'today-tasks.json' \
   "$HERE/" "$DEST/"

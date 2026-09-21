@@ -24,6 +24,23 @@ say "=== veo-daily start ==="
 #    clip under its exact beat name, so matching is by filename, never order.
 bash intake.sh --named || say "WARN intake failed"
 
+# 0b. Refresh the facts the lighter formats use (treks, crowd, costs, full-year
+#     verdicts, /vs/ pairs), weekly, over DIRECT Postgres -- the costs table is
+#     12,693 rows and the standing rule forbids REST for anything over 500. It
+#     needs SUPABASE_DB_URL in apps/web/.env.local; until that exists the refresh
+#     fails and the job uses the last snapshot, which is safe because these facts
+#     change slowly -- but a snapshot older than 30 days is flagged every run.
+REPO="$HOME/Desktop/India Travel Planner"
+if [ "$(date +%u)" = "1" ] || [ ! -f data/reel-data.json ]; then
+  if node --env-file="$REPO/apps/web/.env.local" "$REPO/scripts/export-reel-data.mjs" >/dev/null 2>&1; then
+    say "reel-data refreshed"
+  else
+    say "WARN reel-data refresh failed (SUPABASE_DB_URL missing?) — using the existing snapshot"
+  fi
+fi
+AGE=$(python3 -c "import json,datetime as d;g=json.load(open('data/reel-data.json'))['generated_at'];print((d.datetime.now(d.timezone.utc)-d.datetime.fromisoformat(g)).days)" 2>/dev/null || echo 999)
+[ "$AGE" -gt 30 ] && say "WARN reel-data snapshot is ${AGE} days old — add SUPABASE_DB_URL so it can refresh"
+
 # 1. Top up the queue from today's data. Safe to run repeatedly: enqueue()
 #    dedupes on clip name and the ledger stops a destination repeating.
 python3 build-queue.py || say "WARN build-queue exited non-zero"
