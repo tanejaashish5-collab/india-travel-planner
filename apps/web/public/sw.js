@@ -129,7 +129,7 @@
 //      rating → difficulty → safety, and adds the strongest-window months when
 //      the current month is weak. Changes text on all 1,674 /vs/ pages in both
 //      locales, and /vs/ HTML is runtime-cached, so the bump purges v59 copies.
-const CACHE_VERSION = "nakshiq-v60";
+const CACHE_VERSION = "nakshiq-v61";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

@@ -504,7 +504,11 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                   : ""}
               </p>
             )}
-            {/* Trust kicker — VERIFIED date + Issue Nº. Quiet line under
+            {/* Trust kicker — VERIFIED date only. Issue Nº was dropped from
+                this line 2026-09-21: it is a month counter that ticks every
+                month, so "VERIFIED JUN 2026 · ISSUE Nº 51" read as a
+                contradiction. Issue Nº stays in the nav, footer and the
+                DISPATCH kicker. Quiet line under
                 the dispatch metadata that gives early readers the proof
                 signal production exposes near the verdict (was buried
                 in the Coda before this round). */}
@@ -524,7 +528,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       month: "short",
                       year: "numeric",
                     })
-                    .toUpperCase()} · ISSUE Nº ${issueNum}`
+                    .toUpperCase()}`
                 : `ISSUE Nº ${issueNum}`}
             </p>
             {/* Read-time + skim-to-verdict — busy readers get a quiet
@@ -3021,7 +3025,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </p>
               <EditorialCaption align="right">
                 <span style={{ display: "inline-block", marginTop: 6 }}>
-                  ISSUE Nº {issueNum} ·{" "}
                   {dest.content_reviewed_at
                     ? `REVIEWED ${new Date(
                         dest.content_reviewed_at,
@@ -3492,7 +3495,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 color: "var(--vermillion)",
               }}
             >
-              ISSUE Nº {issueNum} ·{" "}
               {dest.content_reviewed_at
                 ? `VERIFIED ${new Date(dest.content_reviewed_at)
                     .toLocaleDateString("en-IN", {
@@ -3500,7 +3502,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       year: "numeric",
                     })
                     .toUpperCase()}`
-                : `${currentMonthName.toUpperCase()} 2026`}
+                : `ISSUE Nº ${issueNum}`}
             </p>
             <p
               style={{
