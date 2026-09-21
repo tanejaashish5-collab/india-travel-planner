@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.nakshiq.veo-daily</string>
+
+  <!-- /bin/bash deliberately: it already holds Full Disk Access on this Mac, so
+       the job can read the storyboard code in the repo under ~/Desktop. launchd
+       through a non-FDA interpreter cannot (scar 2026-09-10), and cron cannot
+       unlock the login keychain. This combination is the only one that gets
+       both. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Automation/nakshiq-veo/run-veo.sh</string>
+  </array>
+
+  <!-- TWO fire times, not one. A single daily fire drops the whole day if the
+       Mac is asleep or offline at that moment (scar:
+       feedback_single_fire_jobs_drop_a_day_on_network_loss). The second is a
+       no-op when the first succeeded, because the queue will be empty. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>20</integer></dict>
+    <dict><key>Hour</key><integer>14</integer><key>Minute</key><integer>20</integer></dict>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/ashishtaneja/Automation/nakshiq-veo</string>
+  <key>StandardOutPath</key>
+  <string>/Users/ashishtaneja/.claude/veo-daily.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/ashishtaneja/.claude/veo-daily.log</string>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>ProcessType</key>
+  <string>Background</string>
+</dict>
+</plist>
