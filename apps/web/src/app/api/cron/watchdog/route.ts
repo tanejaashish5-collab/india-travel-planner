@@ -29,7 +29,15 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   // writes its own ops_reports row under the job name "refresh-stay-picks-agent".
   "refresh-stay-picks-agent": 2,
   "freshness-drift": 8,       // weekly cron Mon 01:00 UTC
-  "news-sweep": 32,           // monthly cron 1st 01:00 UTC
+  // news-sweep removed 2026-09-21: its keyword match hit the search page's own
+  // echo of the query, it never re-checked the other 483 pages, and it flagged
+  // 0/50 through peak monsoon. Superseded by freshness-review below.
+  // Added 2026-09-21. freshness-review = local LaunchAgent, Saturdays
+  // (scripts/freshness-review-weekly.sh); freshness-coverage = written by the
+  // Monday freshness-drift cron, alerts only when reviewed-in-90d share is
+  // below 80% AND not recovering.
+  "freshness-review": 8,        // weekly (Sat)
+  "freshness-coverage": 8,      // weekly (Mon, with freshness-drift)
   "prewarm-next-month": 32,   // monthly cron 28th 01:00 UTC
   "audit-cache-headers": 0.1, // hourly cron — 2h max gap before suspicious
   "audit-gsc-alerts": 2,      // daily cron 03:30 UTC
@@ -69,7 +77,8 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
   // Grace until the first agent run lands, so the switchover doesn't alert.
   "refresh-stay-picks-agent": "2026-08-06T00:00:00Z",
   "freshness-drift": null,
-  "news-sweep": null,
+  "freshness-review": "2026-09-26T10:00:00Z",   // first Saturday after deploy (both fire times)
+  "freshness-coverage": "2026-09-28T02:00:00Z", // first Monday freshness-drift after deploy
   "prewarm-next-month": "2026-05-28T01:00:00Z", // first 28th after Apr 30 deploy
   // M1-M7 monitors — first-run grace until 2026-05-28 03:00 UTC, after which
   // they should have all fired at least once.
@@ -121,6 +130,7 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
 const NEEDS_REVIEW_ESCALATION_DAYS: Record<string, number> = {
   "canary-probe": 1,        // alerts_count = failures.length — pages returning 500
   "audit-cache-headers": 2, // alerts_count = violations.length — real cache misconfig
+  "freshness-coverage": 1,  // alerts_count = 1 only when coverage < 80% AND not climbing — the review has stopped
 };
 
 // How many recent runs to read per job. Must be enough to measure the longest

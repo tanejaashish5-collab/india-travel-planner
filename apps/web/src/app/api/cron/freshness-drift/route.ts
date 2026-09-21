@@ -51,14 +51,10 @@ export async function GET(req: NextRequest) {
     return new Date(r.updated_at) > new Date(r.content_reviewed_at) && isOldEnough(r.updated_at);
   }).length;
   const ninetyDaysAgo = Date.now() - 90 * 86400000;
-  const freshPct = total
-    ? Math.round(
-        (rows.filter((r) => r.content_reviewed_at && new Date(r.content_reviewed_at).getTime() >= ninetyDaysAgo)
-          .length /
-          total) *
-          100
-      )
-    : 0;
+  const freshCount = rows.filter(
+    (r) => r.content_reviewed_at && new Date(r.content_reviewed_at).getTime() >= ninetyDaysAgo
+  ).length;
+  const freshPct = total ? Math.round((freshCount / total) * 100) : 0;
 
   const summary = { total, never_reviewed: neverReviewed, drift_count: drift, fresh_pct_90d: freshPct, grace_days: GRACE_DAYS };
   const alerts = neverReviewed + drift;
@@ -69,5 +65,44 @@ export async function GET(req: NextRequest) {
     alerts_count: alerts,
   });
 
-  return NextResponse.json({ ok: true, summary, alerts });
+  // Coverage alarm — "are pages being re-verified at all?". drift_count above
+  // only sees EDITS that skipped review; it is blind to pages simply ageing.
+  // That blindness let the 90-day reviewed share fall 100% → 5% (Apr → Sep
+  // 2026) while every Monday reported 0 alerts. Written as its own job so the
+  // watchdog can escalate it (alerts_count here genuinely means failure).
+  //
+  // Fires only when coverage is below the floor AND did not climb by at least
+  // MIN_WEEKLY_GAIN since last week. A bare "below 80%" would alert daily for
+  // the ~10 weeks the weekly review (scripts/freshness-review-weekly.sh, 41
+  // pages/wk) needs to drain the Sep 2026 backlog — an alarm you learn to
+  // ignore. Below-floor-and-not-recovering means the review has stopped.
+  const FLOOR_PCT = 80;
+  const MIN_WEEKLY_GAIN = 30;
+  const { data: prevRows } = await supabase
+    .from("ops_reports")
+    .select("summary")
+    .eq("job", "freshness-coverage")
+    .order("run_at", { ascending: false })
+    .limit(1);
+  const prevCount = (prevRows?.[0]?.summary as { fresh_count?: number } | undefined)?.fresh_count;
+  const gain = typeof prevCount === "number" ? freshCount - prevCount : null;
+  // No previous row = baseline week; nothing to compare against yet.
+  const coverageFailing = freshPct < FLOOR_PCT && gain !== null && gain < MIN_WEEKLY_GAIN;
+  const coverage = {
+    fresh_count: freshCount,
+    fresh_pct_90d: freshPct,
+    total,
+    prev_fresh_count: prevCount ?? null,
+    weekly_gain: gain,
+    floor_pct: FLOOR_PCT,
+    min_weekly_gain: MIN_WEEKLY_GAIN,
+    failing: coverageFailing,
+  };
+  await supabase.from("ops_reports").insert({
+    job: "freshness-coverage",
+    summary: coverage,
+    alerts_count: coverageFailing ? 1 : 0,
+  });
+
+  return NextResponse.json({ ok: true, summary, alerts, coverage });
 }

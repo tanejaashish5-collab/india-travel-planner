@@ -89,7 +89,7 @@ async function getMetrics(): Promise<Metrics | null> {
   const jobNames: Record<string, string[]> = {
     "stay-picks": ["refresh-stay-picks-agent", "refresh-stay-picks"],
     "freshness-drift": ["freshness-drift"],
-    "news-sweep": ["news-sweep"],
+    "freshness-review": ["freshness-review"],
   };
   const lastRuns: Metrics["lastRuns"] = {};
   await Promise.all(
@@ -242,7 +242,7 @@ export default async function FreshnessDashboardPage({
     "@type": "TechArticle",
     "@id": "https://www.nakshiq.com/en/methodology/freshness#article",
     headline: "NakshIQ data freshness — review cadence and scheduled jobs",
-    description: `How NakshIQ keeps its ${destCount}-destination dataset current: rolling 90-day editorial review, nightly stay-pick refresh, weekly freshness-drift alerting, monthly news-sweep.`,
+    description: `How NakshIQ keeps its ${destCount}-destination dataset current: rolling 90-day editorial review, nightly stay-pick refresh, weekly re-verification of the stalest destinations, weekly freshness-drift alerting.`,
     author: { "@id": "https://www.nakshiq.com#organization" },
     publisher: { "@id": "https://www.nakshiq.com#organization" },
     dateModified: now.toISOString(),
@@ -421,7 +421,7 @@ export default async function FreshnessDashboardPage({
             {[
               { job: "stay-picks", label: "Stay picks", cadence: "Nightly", schedule: "~03:50 IST" },
               { job: "freshness-drift", label: "Freshness drift", cadence: "Weekly (Mon)", schedule: "06:30 IST" },
-              { job: "news-sweep", label: "News sweep", cadence: "Monthly (1st)", schedule: "06:30 IST" },
+              { job: "freshness-review", label: "Destination re-verification (stalest 41)", cadence: "Weekly (Sat)", schedule: "~02:30 IST" },
             ].map((row) => {
               const last = m?.lastRuns[row.job] ?? null;
               return (

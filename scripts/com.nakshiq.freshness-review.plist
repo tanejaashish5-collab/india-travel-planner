@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.freshness-review</string>
+  <!-- Weekly destination freshness review (scripts/freshness-review-weekly.sh).
+       Local LaunchAgent via /bin/bash for the same reasons as com.nakshiq.sos-backlog:
+       the cloud sandbox cannot open .gov.in, cron cannot reach the keychain to push.
+       Fires SATURDAY so it never overlaps the Sunday sos-backlog headless session.
+       Both times are Saturday = same ISO week, so the week marker makes the 19:00
+       fire a no-op once the 07:00 one has completed (single-fire safeguard).
+       Install: cp scripts/com.nakshiq.freshness-review.plist ~/Library/LaunchAgents/ &&
+                launchctl load ~/Library/LaunchAgents/com.nakshiq.freshness-review.plist -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/freshness-review-weekly.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/.local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/freshness-review.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/freshness-review.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
