@@ -29,6 +29,9 @@ import storyboard as SB              # noqa: E402
 from yt_shorts_v2 import build       # noqa: E402
 
 PACK = Path.home() / "Automation" / "nakshiq-ig" / "data" / "verdicts.json"
+# The lighter formats' facts. Must be the SAME snapshot build-queue.py used, or a
+# rebuilt storyboard would say different numbers from the clips it is cutting.
+REEL_DATA = Path.home() / "Automation" / "nakshiq-veo" / "data" / "reel-data.json"
 
 
 def _pretty_state(state_id: str) -> str:
@@ -73,7 +76,19 @@ def load_dest(slug: str, month: int) -> tuple[dict, dict]:
         print(f"[render] intel unavailable ({type(e).__name__}) — "
               f"a scenario format will refuse rather than invent")
 
+    try:
+        reel = json.loads(REEL_DATA.read_text())
+    except Exception:
+        reel = {}
+    # full-year verdicts, exactly as build-queue.py merges them
+    for m, v in (reel.get("months", {}).get(slug) or {}).items():
+        months.setdefault(int(m), {"sentence": ""}).update(
+            {"score": v.get("score"), "label": v.get("label")})
+
     dest = {"id": slug, "name": name, "state": state, "state_id": state_id,
+            "treks": reel.get("treks", {}).get(slug),
+            "crowd": reel.get("crowd", {}).get(slug),
+            "costs": reel.get("costs", {}).get(slug),
             "score": months.get(month, {}).get("score"),
             "note": months.get(month, {}).get("sentence"),
             "intel": live.get("intel") or {},
@@ -93,8 +108,20 @@ def main() -> int:
     a = ap.parse_args()
 
     dest, months = load_dest(a.slug, a.month)
+    kw = {}
+    if a.format == "which_two":
+        reel = json.loads(REEL_DATA.read_text())
+        pack = json.loads(PACK.read_text())
+        named = {r["id"]: r["name"] for r in pack}
+        for x, y in reel.get("vs_pairs", []):
+            other = y if x == a.slug else x if y == a.slug else None
+            pm = (reel.get("months", {}).get(other) or {}).get(str(a.month)) if other else None
+            if other and other in named and pm:
+                kw["dest_b"] = {"id": other, "name": named[other],
+                                "score": pm.get("score"), "label": pm.get("label")}
+                break
     try:
-        sb = SB.build_storyboard(a.format, dest, a.month, months)
+        sb = SB.build_storyboard(a.format, dest, a.month, months, **kw)
     except SB.StoryboardError as e:
         sys.exit(f"[render] storyboard refused: {e}")
 
