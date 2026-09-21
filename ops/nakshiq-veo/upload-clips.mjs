@@ -42,7 +42,17 @@ let up = 0, skip = 0;
 for (const f of files) {
   const body = readFileSync(join(OUT, f));
   const h = await head(f);
-  if (h && Number(h.ContentLength) === body.length) { skip++; continue; }
+  // Already on R2 at the same byte size. Mark the row live ANYWAY: the object
+  // being present is what "live" means, and the previous version only set it on
+  // the PUT path, so a re-run left 20 of 25 rows saying "collected" while the
+  // footage was actually serving (observed 2026-09-21). A status that
+  // under-reports reality is how a working thing gets redone.
+  if (h && Number(h.ContentLength) === body.length) {
+    skip++;
+    const done = q.find((r) => r.clip === f);
+    if (done && done.status !== "live") done.status = "live";
+    continue;
+  }
   await client.send(new PutObjectCommand({
     Bucket: BUCKET, Key: f, Body: body, ContentType: "video/mp4",
   }));
