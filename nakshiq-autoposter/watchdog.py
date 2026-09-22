@@ -67,6 +67,9 @@ if not GH_TOKEN:
 # finally caps YouTube at one short a day.
 DAILY_SLOTS = [
     ("yt-short-1",  2, 47, "yt-short",  None),  # publishes 12:00 IST via the gate
+    # 2026-09-22: evening restored as a FACEBOOK-ONLY slot (autoposter.py sets
+    # NAKSHIQ_FB_ONLY for it), so a catch-up can never touch Instagram.
+    ("evening",    14, 17, "evening",   None),  # 19:47 IST · FB only
 ]
 
 # 13:17 IST = 07:47 UTC — visual rotation by weekday (see autoposter.yml mode-detection)

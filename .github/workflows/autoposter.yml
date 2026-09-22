@@ -103,7 +103,10 @@ on:
     # median of 2 people each (post_engagement.json, May 25-Sep 7) — only the
     # founder's own accounts. IG is reels-only, 1/day, until the account
     # escapes cold start (target: 100 real followers by 2026-10-20).
-    # - cron: "17 7 * * *"
+    # 2026-09-22 RESTORED for FACEBOOK ONLY (founder: "keep facebook separate
+    # as before"). autoposter.py sets NAKSHIQ_FB_ONLY for --carousel, so IG
+    # stays reels-only 1/day and this slot cannot consume IG's daily slot.
+    - cron: "17 7 * * *"
     # Reel Studio: PAUSED 2026-09-13. The IG cap is 1 reel/day and that slot now
     # belongs to the founder-voice test (T1, rendered + published locally by
     # com.nakshiq.voice-reel). A second render would be silently dropped by
@@ -114,7 +117,8 @@ on:
     # posts reach ~2 people (see carousel note above). The IG cap of 1 reel/day
     # is ALSO enforced inside autoposter.py (NAKSHIQ_IG_DAILY_CAP), so a
     # drifted cron or a watchdog catch-up cannot exceed it.
-    # - cron: "17 14 * * *"
+    # 2026-09-22 RESTORED for FACEBOOK ONLY (same as the carousel above).
+    - cron: "17 14 * * *"
     # Reel slot 2: REMOVED 2026-05-10 (Tier 3 cadence cut: 6→4 IG posts/day to
     # respect IG's algorithmic penalty for sub-10K-follower accounts posting >3/day).
     # Analytics sync: 23:47 IST (18:17 UTC) — internal
@@ -183,6 +187,9 @@ concurrency:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  # 2026-09-22 (founder): Facebook back on, as its own strategy — carousel +
+  # evening slots, FB-only. Instagram is unchanged (1 reel/day cap).
+  NAKSHIQ_FB_ENABLED: "1"
 
 jobs:
   # ── PUBLISH-TIME GATE (2026-09-15) ───────────────────────────────────────

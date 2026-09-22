@@ -5938,6 +5938,12 @@ def get_connected_accounts() -> list:
             log.info("Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping "
                      + ", ".join(a.get("username", a.get("id")) for a in fb))
         allowed = [a for a in allowed if a.get("network") != "facebook"]
+    # 2026-09-22 (founder): Facebook runs its OWN strategy — the pre-09-08
+    # carousel + evening slots, unchanged — while Instagram stays 1 reel/day.
+    # Those slots set NAKSHIQ_FB_ONLY in main(), so a delayed carousel/evening
+    # run can never take Instagram's single daily slot ahead of the noon reel.
+    if os.environ.get("NAKSHIQ_FB_ONLY", "0") == "1":
+        allowed = [a for a in allowed if a.get("network") == "facebook"]
     for a in accounts:
         if a.get("id") not in NAKSHIQ_ACCOUNT_IDS and a.get("isActive"):
             log.warning(
@@ -12109,6 +12115,15 @@ if __name__ == "__main__":
     exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.carousel, args.reel_studio, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
     if exclusive > 1:
         parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --carousel, --reel-studio, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
+    # FB-only slots (see get_connected_accounts): carousel, evening, and the
+    # default feed run (morning drift). Reels / YT shorts are untouched.
+    if args.carousel or (not any([args.moat, args.tourist_map, args.canva_visual,
+                                  args.pomelli_visual, args.flow_story, args.reel,
+                                  args.reel_map, args.reel_studio, args.infographic,
+                                  args.yt_short, args.analytics, args.engagement_pull,
+                                  args.digest_weekly, args.strategy, args.sync_only])):
+        os.environ["NAKSHIQ_FB_ONLY"] = "1"
+        log.info("Facebook-only slot — Instagram is excluded from this run.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
