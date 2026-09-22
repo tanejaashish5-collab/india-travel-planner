@@ -40,7 +40,7 @@
     "PdMu0": "2026-09-22",
     "PdMu0_evening": "2026-09-22"
   },
-  "last_sync": "2026-09-22T17:20:09.838692+00:00",
+  "last_sync": "2026-09-22T18:28:08.101290+00:00",
   "posted_destinations": [
     {
       "destination_id": "ozar",
@@ -10049,6 +10049,11 @@
         "2026-05-29",
         "2026-09-04"
       ],
+      "yusmarg": [
+        "2026-06-01",
+        "2026-06-21",
+        "2026-09-22"
+      ],
       "kasol": [
         "2026-06-01",
         "2026-06-02",
@@ -10301,9 +10306,6 @@
       ],
       "kishtwar": [
         "2026-09-07"
-      ],
-      "yusmarg": [
-        "2026-09-22"
       ]
     },
     "morning_formats": {
@@ -10730,6 +10732,9 @@
       ],
       "jyotirlinga-pilgrimage": [
         "2026-09-22"
+      ],
+      "kakatiya-heritage-circuit": [
+        "2026-09-22"
       ]
     },
     "festivals": {
@@ -10818,7 +10823,7 @@
         "2026-09-03"
       ]
     },
-    "collection_carousel_dests:jyotirlinga-pilgrimage": {}
+    "collection_carousel_dests:kakatiya-heritage-circuit": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10832,8 +10837,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "yusmarg",
-    "collection": "jyotirlinga-pilgrimage"
+    "shared_best": "jog-falls",
+    "collection": "kakatiya-heritage-circuit"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-09-22",
