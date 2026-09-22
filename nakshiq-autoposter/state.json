@@ -36,9 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "GAh5p_yt_short": "2026-09-21",
-    "m8EAd_yt_short": "2026-09-22"
+    "m8EAd_yt_short": "2026-09-22",
+    "PdMu0": "2026-09-22",
+    "PdMu0_evening": "2026-09-22"
   },
-  "last_sync": "2026-09-15T10:18:46.034686+00:00",
+  "last_sync": "2026-09-22T17:20:09.838692+00:00",
   "posted_destinations": [
     {
       "destination_id": "ozar",
@@ -135,6 +137,10 @@
     {
       "destination_id": "turtuk",
       "date": "2026-09-22"
+    },
+    {
+      "destination_id": "jibhi",
+      "date": "2026-09-22"
     }
   ],
   "posted_formats": {
@@ -170,7 +176,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "score_card",
       "score_card",
@@ -182,7 +187,8 @@
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "score_card",
-      "festival_alert"
+      "festival_alert",
+      "score_card"
     ]
   },
   "post_log": [
@@ -9939,6 +9945,17 @@
       "destination": "turtuk",
       "format": "yt_short.this_vs_that",
       "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_turtuk_hi_2026-09-22.mp4"
+    },
+    {
+      "timestamp": "2026-09-22T17:21:14.365145+00:00",
+      "date": "2026-09-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "IBkfn",
+      "destination": "jibhi",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "jibhi.mp4"
     }
   ],
   "theme_usage": {
@@ -10005,7 +10022,8 @@
       ],
       "jibhi": [
         "2026-05-25",
-        "2026-09-01"
+        "2026-09-01",
+        "2026-09-22"
       ],
       "leh": [
         "2026-05-25",
@@ -10091,7 +10109,8 @@
         "2026-06-06",
         "2026-06-21",
         "2026-07-02",
-        "2026-07-20"
+        "2026-07-20",
+        "2026-09-22"
       ],
       "courtallam": [
         "2026-06-05",
@@ -10121,7 +10140,8 @@
         "2026-06-09",
         "2026-06-11",
         "2026-06-23",
-        "2026-06-26"
+        "2026-06-26",
+        "2026-09-22"
       ],
       "gurez-valley": [
         "2026-06-10",
@@ -10152,7 +10172,8 @@
         "2026-07-13",
         "2026-07-25",
         "2026-07-30",
-        "2026-08-19"
+        "2026-08-19",
+        "2026-09-22"
       ],
       "jog-falls": [
         "2026-07-01",
@@ -10171,7 +10192,8 @@
         "2026-07-21",
         "2026-08-10",
         "2026-08-17",
-        "2026-08-28"
+        "2026-08-28",
+        "2026-09-22"
       ],
       "bhimashankar": [
         "2026-07-01",
@@ -10279,6 +10301,9 @@
       ],
       "kishtwar": [
         "2026-09-07"
+      ],
+      "yusmarg": [
+        "2026-09-22"
       ]
     },
     "morning_formats": {
@@ -10383,7 +10408,8 @@
         "2026-08-29",
         "2026-08-30",
         "2026-08-31",
-        "2026-09-06"
+        "2026-09-06",
+        "2026-09-22"
       ],
       "v2_myth_bust_oneline": [
         "2026-06-06",
@@ -10562,7 +10588,8 @@
         "2026-08-27"
       ],
       "jibhi": [
-        "2026-09-01"
+        "2026-09-01",
+        "2026-09-22"
       ],
       "kalpa": [
         "2026-09-03"
@@ -10700,6 +10727,9 @@
       ],
       "deccan-food-trail": [
         "2026-09-03"
+      ],
+      "jyotirlinga-pilgrimage": [
+        "2026-09-22"
       ]
     },
     "festivals": {
@@ -10787,7 +10817,8 @@
       "tirupati": [
         "2026-09-03"
       ]
-    }
+    },
+    "collection_carousel_dests:jyotirlinga-pilgrimage": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10801,11 +10832,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tosamaidan",
-    "collection": "deccan-food-trail"
+    "shared_best": "yusmarg",
+    "collection": "jyotirlinga-pilgrimage"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-09-06",
+  "data_carousel_floor_last": "2026-09-22",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
