@@ -904,9 +904,21 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
         lookup=("Close on the hands of {S}, opening a saved page on a phone with "
                 "one name on it, before turning away from the row of fronts down "
                 "a narrower lane."),
-        resolve=("A plate is set down in front of {S}, at a scratched steel table "
-                 "in a small plain room completely full of local families eating, "
-                 "steam coming off it."),
+        # The plate used to be unnamed, so Veo filled it with whatever it liked:
+        # the first champawat render had the voice say "bal mithai", a sweet,
+        # over a close-up of a bowl of noodles (2026-09-23). The reel's whole
+        # claim is WHICH dish at WHICH place, so the dish has to be on the
+        # plate. Named when we have it, and never a stand-in when we do not.
+        resolve=(("A plate of " + dish + " is set down in front of {S}, at a "
+                  "scratched steel table in a small plain room completely full "
+                  "of local families eating, steam coming off it. The food on "
+                  "the plate is " + dish + " and nothing else: no noodles, no "
+                  "pasta, no burger, no pizza.")
+                 if dish else
+                 ("A plate of local food is set down in front of {S}, at a "
+                  "scratched steel table in a small plain room completely full "
+                  "of local families eating, steam coming off it. Indian food "
+                  "only: no noodles, no pasta, no burger, no pizza.")),
         says=("Twenty places, all claiming to be the famous one.",
               "You have one meal here and no way to tell.",
               f"NakshIQ names the one: {ename}."),

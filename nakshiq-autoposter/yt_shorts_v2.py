@@ -1747,7 +1747,19 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         slam_txt = name.upper()
         badge_txt = "  " + name.upper() + "  "
         cta1_txt = "SEND THIS"
-        cta2_txt = "to whoever is driving · nakshiq.com"
+        # The send line has to name the person this reel is actually FOR. A food
+        # reel telling you to send it "to whoever is driving" reads as a stray
+        # line from the rescue format, and the send is the whole conversion
+        # (Current Psychology 2025: relevance to a specific person is what
+        # drives a DM share). Seen on the first food_find render, 2026-09-23.
+        _fmt = (storyboard.get("format") or "")
+        if _fmt in ("sos_rescue", "road_closed", "fuel_gap", "hospital_run"):
+            _who = "to whoever is driving"
+        elif _fmt in ("food_find", "wrong_month"):
+            _who = "to whoever you are going with"
+        else:
+            _who = "to whoever is booking"
+        cta2_txt = _who + " · nakshiq.com"
         reveal_txt = ""          # no score: this format never earned one
     else:
         # 2026-09-20: this kicker read "JUNE" on EVERY score reel regardless of
@@ -1769,9 +1781,16 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     hook_end = LEAD + 1.6
     dlg(0.40, hook_end, "Kicker",
         "{\\an5\\pos(540,560)\\fad(150,80)}" + kicker_txt)
+    # The slam is 250px JetBrains Mono: it fits about 10 characters across 1080.
+    # "CALANGUTE-BAGA" ran off both edges on the first real scenario render
+    # (2026-09-23) — a destination name cut in half is worse than a small one,
+    # so shrink to fit rather than clip. Derived from the name, never hardcoded.
+    _fit = 100 if len(slam_txt) <= 10 else max(42, int(100 * 10 / len(slam_txt)))
+    _over = int(_fit * 1.2)
     dlg(0.12, hook_end, "Score",
-        "{\\an5\\pos(540,800)\\fad(60,120)\\fscx26\\fscy26\\t(0,240,\\fscx120\\fscy120)\\t(240,440,\\fscx100\\fscy100)}"
-        + slam_txt)
+        "{\\an5\\pos(540,800)\\fad(60,120)\\fscx26\\fscy26"
+        f"\\t(0,240,\\fscx{_over}\\fscy{_over})\\t(240,440,\\fscx{_fit}\\fscy{_fit})"
+        "}" + slam_txt)
 
     # Persistent top badge (after the hook): destination "<NAME> · 10/10", or for
     # arrival "<CITY> · <CODE>" — stays on screen to anchor the reel.
