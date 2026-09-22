@@ -19446,7 +19446,55 @@
           "posted_url": ""
         }
       ]
+    },
+    {
+      "post_id": "IBkfn",
+      "created_at": "2026-09-22T17:20:47.034Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "RLFgg",
+      "created_at": "2026-09-22T08:06:36.088Z",
+      "content_type": "yt_short",
+      "format": "this",
+      "campaign": "nakshiq-score",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "failed",
+          "error": "Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - \"{\\\"error\\\":{\\\"code\\\":401,\\\"message\\\":\\\"Unauthorized\\\",\\\"errors\\\":[{\\\"message\\\":\\\"Unauthorized\\\",\\\"domain\\\":\\\"youtube.header\\\",\\\"reason\\\":\\\"youtubeSignupRequired\\\",\\\"location\\\":\\\"Authorization\\\",\\\"locationType\\\":\\\"header\\\"}]}}\"",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "jhc7T",
+      "created_at": "2026-09-22T08:05:46.211Z",
+      "content_type": "yt_short",
+      "format": "this",
+      "campaign": "email_cta",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
     }
   ],
-  "last_sync": "2026-09-21T22:09:26.767950"
+  "last_sync": "2026-09-22T21:31:10.713568"
 }
