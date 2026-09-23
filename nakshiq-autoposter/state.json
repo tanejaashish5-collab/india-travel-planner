@@ -37,7 +37,8 @@
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-09-22",
     "PdMu0": "2026-09-22",
-    "PdMu0_evening": "2026-09-22"
+    "PdMu0_evening": "2026-09-22",
+    "PdMu0_carousel": "2026-09-23"
   },
   "last_sync": "2026-09-22T18:28:08.101290+00:00",
   "posted_destinations": [
@@ -135,6 +136,10 @@
     },
     {
       "destination_id": "tso-moriri",
+      "date": "2026-09-23"
+    },
+    {
+      "destination_id": "alleppey",
       "date": "2026-09-23"
     }
   ],
@@ -9969,6 +9974,15 @@
       "destination": "tso-moriri",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_tso-moriri_hi_2026-09-23.mp4"
+    },
+    {
+      "timestamp": "2026-09-23T12:55:13.230987+00:00",
+      "date": "2026-09-23",
+      "platform": "facebook",
+      "post_id": "49RSR",
+      "destination": "alleppey",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-09-23"
     }
   ],
   "theme_usage": {
@@ -10884,7 +10898,13 @@
       "Ziro Music Festival",
       "Kaas Plateau Wildflower Bloom",
       "Alleppey Houseboat Onam",
-      "Neelakurinji Bloom"
+      "Neelakurinji Bloom",
+      "Aranmula Boat Race",
+      "Solung Festival",
+      "Srivari Brahmotsavam",
+      "Bhadarvi Poonam Mela",
+      "Phulaich (Festival of Flowers)",
+      "Ganesh Chaturthi"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
