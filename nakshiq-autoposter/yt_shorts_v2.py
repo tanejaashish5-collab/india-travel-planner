@@ -1716,13 +1716,22 @@ def _word_cues(bounds: list, caption_texts: list = None, max_words: int = 2) -> 
             d = dur * wgt / total
             wt.append((t, t + d, w))
             t += d
-        # group within the sentence
-        i = 0
-        while i < len(wt):
-            chunk = wt[i:i + max_words]
+        # GROUP ON PUNCTUATION, NOT ON A FIXED COUNT. Slicing every N words put
+        # "past. Does not" on screen as one caption (seen 2026-09-23): the line
+        # ends mid-thought and the next one opens on the tail of the last. A
+        # chunk now closes at a full stop or a comma, or at max_words if the
+        # clause runs long.
+        chunk = []
+        for w in wt:
+            chunk.append(w)
+            ends_clause = w[2].rstrip('"\'')[-1:] in ".,!?;:"
+            if ends_clause or len(chunk) >= max_words:
+                cues.append((round(chunk[0][0], 2), round(chunk[-1][1], 2),
+                             " ".join(c[2] for c in chunk)))
+                chunk = []
+        if chunk:
             cues.append((round(chunk[0][0], 2), round(chunk[-1][1], 2),
                          " ".join(c[2] for c in chunk)))
-            i += max_words
     return cues
 
 
@@ -2051,24 +2060,23 @@ def _storyboard_shots(sb: dict, total_dur: float) -> list:
             want = [alt, name]        # founder picked the alternate for this beat
         else:
             want = [name, alt]        # alternate is the fallback
-        local = None
+        have = []
         for cand in want:
             here = VIDEOS_DIR / cand
             if here.exists() and here.stat().st_size > 0:
-                local = here
-                break
+                have.append(here)
+                continue
             try:
                 from r2_videos import fetch_named as _fn
                 got = _fn(cand, VIDEOS_DIR)
             except Exception:
                 got = None
             if got and Path(got).exists():
-                local = Path(got)
-                break
-        if local and Path(local).exists():
-            if local.name != name:
+                have.append(Path(got))
+        if have:
+            if have[0].name != name:
                 print(f"multishot: {_beat_of.get(name) or name} uses the alternate take")
-            resolved.append((Path(local), secs))
+            resolved.append((have, secs))
     if not resolved:
         return []
     # Redistribute the time of any beat whose clip is still missing.
@@ -2084,20 +2092,29 @@ def _storyboard_shots(sb: dict, total_dur: float) -> list:
     # and sub-cutting an 8s Veo clip into 2s pieces threw away three quarters of
     # footage that cost 10 credits (founder, 2026-09-23: "too short ... not
     # showing an end-to-end proper reel"). Score reels keep the brisk 2.6s.
-    MAX_HOLD = 4.2 if (sb or {}).get("format") else 2.6
-    for clip, secs in resolved:
-        d = _clip_dur(clip)
-        n = max(1, min(3, int(secs // MAX_HOLD) + (1 if secs % MAX_HOLD > 0.6 else 0)))
+    # 4-5 SECONDS PER SHOT, AND THE CUT HAS TO CHANGE THE PICTURE. Founder,
+    # 2026-09-23: "i can see the reels stuck on one frame ... cant we use 5sec
+    # frames rather than 8 sec". A Veo clip is often near-static, so a beat held
+    # for 8s reads as a freeze, and sub-cutting the SAME clip barely helps —
+    # the second piece looks like the first. Where a beat has both takes, its
+    # sub-shots ALTERNATE between them: same beat, same characters, genuinely
+    # different footage, which is what the second take is for.
+    MAX_HOLD = 4.5 if (sb or {}).get("format") else 2.6
+    for takes, secs in resolved:
+        n = max(1, min(3, int(secs // MAX_HOLD) + (1 if secs % MAX_HOLD > 0.8 else 0)))
         piece = secs / n
-        # Spread the sub-shots across the clip, avoiding the first and last
-        # ~0.4s where Veo warp is worst.
-        usable = max(0.6, d - 0.8)
         for k in range(n):
+            clip = takes[k % len(takes)]
+            d = _clip_dur(clip)
+            # Spread within a clip only when the same clip is reused; avoid the
+            # first and last ~0.4s where Veo warp is worst.
+            reuse = k // len(takes)
+            usable = max(0.6, d - 0.8)
             if d <= piece:
                 start = 0.0
             else:
                 span = max(0.0, usable - piece)
-                start = round(0.4 + (span * k / max(1, n - 1) if n > 1 else span / 2), 2)
+                start = round(0.4 + (span * min(1.0, reuse / 1.0) if span else 0), 2)
             shots.append((clip, start, round(piece, 2)))
     return shots
 
@@ -2322,7 +2339,18 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         cap_lines = spec.get("caption_lines")
         if cap_lines and len(cap_lines) != len(bounds):
             print(f"WARN: caption_lines ({len(cap_lines)}) != sentences ({len(bounds)}) — captions may drift")
-        if storyboard:
+        if storyboard and spec.get("lang") == "hi":
+            # Hindi reads Devanagari and SHOWS Hinglish: libass breaks
+            # Devanagari conjuncts, so captioning the spoken words (what the
+            # English path now does) would render garbage.
+            cues = _word_cues(bounds, cap_lines, max_words=3)
+        elif storyboard:
+            # NO CAPTIONS ON THE ENGLISH REEL (founder, 2026-09-23). The voice is
+            # already English, so burnt-in words are the same information twice
+            # and they cover the picture we spent credits on. Hindi keeps them,
+            # because there they are a translation.
+            cues = []
+        elif False:
             # A SCENARIO CAPTIONS WHAT IS SPOKEN. Until now a beat's caption was
             # a separate short phrase ("twenty identical fronts") shown while the
             # voice said something else entirely ("Twenty places, all claiming to

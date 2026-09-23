@@ -418,11 +418,24 @@ def validate(sb: dict) -> None:
 
     for b in beats:
         say = (b.get("say") or "").strip()
-        if say and len(re.findall(r"[.!?](?:\s|$)", say)) > 1:
+        if say and len(re.findall(r"[.!?](?:\s|$)", say)) > 3:
             raise StoryboardError(
-                f"{b['id']}: `say` must be ONE sentence — the TTS splits on "
-                f"sentence boundaries, so a multi-sentence beat drifts its "
-                f"captions out of step with the picture")
+                f"{b['id']}: `say` is more than three sentences — one beat is "
+                f"one thought, and a fourth belongs to the next beat")
+        # HOW IT SOUNDS IS PART OF WHETHER IT WORKS (founder, 2026-09-23: "how to
+        # make these scripts more hip"). Two rules, in code so they cannot rot:
+        # a beat is short enough to say in one breath, and nobody narrates.
+        if say and len(say.split()) > 16:
+            raise StoryboardError(
+                f"{b['id']}: `say` is {len(say.split())} words — a reel line is "
+                f"16 or fewer, or it reads as narration")
+        _narrator = re.compile(
+            r"\b(clearly|plainly|genuinely|simply|entirely|rather|indeed|"
+            r"somewhat|quite frankly|it is worth noting)\b", re.I)
+        if say and _narrator.search(say):
+            raise StoryboardError(
+                f"{b['id']}: `say` uses a narrator word "
+                f"({_narrator.search(say).group(0)!r}) — say the thing instead")
         if b.get("role") not in BEAT_ROLES:
             raise StoryboardError(f"unknown beat role {b.get('role')!r}")
         p = b.get("veo")
@@ -525,12 +538,31 @@ def scale_beats(sb: dict, total_dur: float, lead: float = 0.0) -> list:
     return [(b["clip"], round(span * b["dur"] / w, 2)) for b in usable]
 
 
-def spec_from_storyboard(sb: dict) -> dict:
+def spec_from_storyboard(sb: dict, lang: str = "en") -> dict:
     """The `spec` build() wants: narration lines + matching on-screen captions.
     One beat, one line, one caption — which is what keeps picture and voice in
     step instead of drifting."""
-    lines = [b["say"] for b in sb["beats"] if (b.get("say") or "").strip()]
-    caps = [b["caption"] for b in sb["beats"] if (b.get("say") or "").strip()]
+    _b = [b for b in sb["beats"] if (b.get("say") or "").strip()]
+    if lang == "hi":
+        missing = [b["id"] for b in _b if not (b.get("say_hi") or "").strip()]
+        if missing:
+            raise StoryboardError(
+                f"{sb['format']}: no Hindi narration for {', '.join(missing)} — "
+                f"refusing to read English lines in a Hindi voice")
+        return {"lines": [b["say_hi"] for b in _b],
+                # ENGLISH CAPTIONS OVER HINDI VOICE (founder, 2026-09-23). The
+                # spoken line and the written line are the same sentence in two
+                # languages, beat for beat, so they cannot drift. This also
+                # sidesteps Devanagari, which libass does not shape, and the
+                # romanised Hinglish it was replacing.
+                "caption_lines": [b["say"] for b in _b],
+                # Voice named directly, NOT via a profile: a profile's own rate
+                # wins over the spec's, and swara_deep's +12% is the brisk pace
+                # this rewrite exists to slow down.
+                "voice": "hi-IN-SwaraNeural", "rate": "+2%", "pitch": "-4Hz",
+                "storyboard": sb["format"], "slug": sb["slug"], "lang": "hi"}
+    lines = [b["say"] for b in _b]
+    caps = [b["caption"] for b in _b]
     # Scenarios are narrated slower than score reels. +14% reads as brisk, which
     # is the opposite of tense (founder, 2026-09-23: "need more tension").
     return {"lines": lines, "caption_lines": caps, "rate": "+2%",
@@ -691,6 +723,8 @@ def _intel(dest: dict, *path):
 def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
               escalate: str, helpless: str, lookup: str, act: str, resolve: str,
               says: tuple, caps: tuple, payoff_say: str, payoff_cap: str,
+              says_hi: tuple = None, caps_hi: tuple = None,
+              payoff_say_hi: str = None, payoff_cap_hi: str = None,
               screen: bool = True) -> list:
     """Shared SIX-beat shape: trouble, it gets worse, no way out, the lookup
     (the turn -- this is the product), acting on what the page said, and the
@@ -734,6 +768,19 @@ def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
          "caption": payoff_cap,
          "veo": f"{fill(resolve)} Near {place}. {PEOPLE}{STYLE}"},
     ]
+    # HINDI IS A SECOND SCRIPT OVER THE SAME PICTURE, not a second shoot. Same
+    # beats, same clips, same claims; only the narration changes, so a Hindi
+    # reel costs no extra credits. Captions carry the ROMANISED line, never
+    # Devanagari: libass breaks Devanagari conjuncts (long-standing rule here),
+    # so the voice reads Devanagari and the screen shows Hinglish.
+    if says_hi:
+        hi_say = list(says_hi) + [payoff_say_hi or ""]
+        hi_cap = list(caps_hi or ()) + [payoff_cap_hi or ""]
+        for i, bt in enumerate(beats):
+            if i < len(hi_say) and hi_say[i]:
+                bt["say_hi"] = hi_say[i]
+            if i < len(hi_cap) and hi_cap[i]:
+                bt["caption_hi"] = hi_cap[i]
     for bt in beats:
         bt["character"] = sheet
         bt["cast_full"] = fulls
@@ -798,15 +845,29 @@ def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
              "ear, while {B}, watches from beside the car."),
         resolve=("Blue and red lights sweep around the bend behind {car_s} and an "
                  "emergency vehicle pulls in, and {A}, and {B}, walk toward it."),
-        says=("Your car stops on a road like this one, and the phone finds no signal at all.",
-              "One truck goes past without slowing, and then the road is quiet again.",
-              "The light is nearly gone, there is nobody to flag down, and you know no number by heart.",
-              "The page you saved still opens with no signal, and the numbers are all on it.",
-              "You walk up the road until one bar comes back, and then you make the call."),
+        says=("Car dead. Empty road. Phone says no service.",
+              "One truck goes past. Does not even slow down.",
+              "Light is going, nobody to flag down, and no number you know by heart.",
+              "The page you saved opens anyway. No signal needed.",
+              "Walk till one bar comes back, then make the call."),
         caps=("no signal", "nobody stopping", "no one coming",
               "the numbers, offline", "one bar, and a call"),
-        payoff_say="India's emergency numbers are saved on NakshIQ, and the page opens offline.",
-        payoff_cap="emergency numbers · offline")
+        # Hinglish, the way this is actually said out loud. Shuddh Hindi
+        # ("आपातकालीन", "मुमकिन") is how a news bulletin says it, not a reel.
+        says_hi=("गाड़ी बंद, सुनसान सड़क, और फ़ोन में एक भी बार नहीं।",
+                 "एक ट्रक आया. रुका तक नहीं।",
+                 "अंधेरा हो रहा है, कोई रोकने वाला नहीं, नंबर भी याद नहीं।",
+                 "सेव किया हुआ पेज बिना सिग्नल के खुल जाता है।",
+                 "थोड़ा आगे चलो, एक बार सिग्नल आया, कॉल लग गई।"),
+        caps_hi=("Gaadi band, sunsaan sadak, signal zero",
+                 "Ek truck aaya, ruka tak nahin",
+                 "Andhera ho raha hai, koi nahin, number bhi yaad nahin",
+                 "Save kiya page bina signal ke khul jaata hai",
+                 "Thoda aage chalo, ek bar signal, call lag gayi"),
+        payoff_say="India's emergency numbers, saved on NakshIQ, open offline.",
+        payoff_cap="emergency numbers · offline",
+        payoff_say_hi="भारत के इमरजेंसी नंबर NakshIQ पर सेव हैं, ऑफ़लाइन भी खुलते हैं।",
+        payoff_cap_hi="Emergency numbers · offline")
 
 
 def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
@@ -1006,13 +1067,29 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
         act=("{S_cap}, walks away from the bright main street down a narrower "
              "lane, past a shuttered front and a parked scooter, checking the "
              "phone once and then putting it away."),
-        says=("Twenty fronts in a row, and every one of them claims to be the famous one.",
-              "A tout steps in front of you with a menu, and two more wave from their doorways.",
-              "You get one meal in this town, and no way at all to tell which door is right.",
-              f"The saved page names one place here, and it is {ename}.",
-              "So you walk away from the bright street and down a lane instead."),
+        says=("Twenty shops in a row. Every one says it is the famous one.",
+              "Menu in your face, and two more shouting from their doorways.",
+              "One meal in this town, and no way to pick the right door.",
+              f"The page you saved names one place: {ename}.",
+              "So you leave the bright street and take the lane."),
         caps=("twenty identical fronts", "everyone wants you", "one meal, no way to tell",
               ename, "down a quieter lane"),
+        says_hi=("बीस दुकानें, और हर कोई बोल रहा है कि फेमस हम ही हैं।",
+                 "एक बंदा मेन्यू लेकर सामने, दो और दरवाज़े से बुला रहे हैं।",
+                 "खाना एक ही बार खाना है, और सही दुकान पहचानने का कोई तरीका नहीं।",
+                 f"सेव किए पेज पर सिर्फ़ एक नाम है, {ename}।",
+                 "तो मेन बाज़ार छोड़ो और गली में निकल जाओ।"),
+        caps_hi=("Bees dukaanein, sab bol rahe hain famous hum hain",
+                 "Ek banda menu lekar saamne, do aur bula rahe hain",
+                 "Khaana ek hi baar, aur sahi dukaan pehchaanne ka tareeka nahin",
+                 f"Save kiye page par sirf ek naam: {ename}",
+                 "Main bazaar chhodo, gali mein niklo"),
+        # The eatery and the dish keep their own names: transliterating an
+        # arbitrary proper noun into Devanagari is exactly the kind of guess
+        # that puts a wrong name on screen.
+        payoff_say_hi=(f"{ename} पहुँचो, और {dish} ज़रूर माँगना।" if dish
+                       else f"यहाँ की एक ही जगह है, {ename}।"),
+        payoff_cap_hi=ename,
         # Was "verified against three sources". The three-source rule governed
         # the local_eateries backfill; legendary_eatery's provenance is not
         # proven to be the same, so the reel does not claim it.

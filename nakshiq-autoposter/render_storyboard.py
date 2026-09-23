@@ -139,7 +139,7 @@ def main() -> int:
     out = Path(a.out) if a.out else HERE / "out" / f"{a.slug}__{a.format}.mp4"
     out.parent.mkdir(parents=True, exist_ok=True)
 
-    res = build(a.slug, dest, out, spec=SB.spec_from_storyboard(sb),
+    res = build(a.slug, dest, out, spec=SB.spec_from_storyboard(sb, a.lang),
                 storyboard=sb, lang=a.lang, month=a.month)
     if not res:
         sys.exit("[render] build returned nothing")
