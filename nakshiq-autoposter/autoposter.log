@@ -24444,3 +24444,24 @@ Date range: 2026-04-15 → 2026-09-22
 2026-09-23 17:34:33  INFO      [facebook/Nakshiq] ✅ Published · Outstand=8iUmC · Platform=1092015229978038
 2026-09-23 17:34:33  INFO      State saved. Run complete.
 2026-09-23 17:34:33  INFO      ════════════════════════════════════════════════════════════
+2026-09-23 18:30:22  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-09-23 18:30:22  INFO      ════════════════════════════════════════════════════════════
+2026-09-23 18:30:22  INFO      Nakshiq Autoposter · EVENING · 2026-09-23 · weekday=2
+2026-09-23 18:30:22  INFO      ════════════════════════════════════════════════════════════
+2026-09-23 18:30:22  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-23 18:31:01  INFO      Synced → 20 destinations · 100 traps · 2 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-23 18:31:01  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-23 18:31:06  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-23 18:31:06  INFO      Active accounts: ['facebook/Nakshiq']
+2026-09-23 18:31:06  INFO      Festivals filtered (past/post-window): Ladakh Festival, Ganesh Chaturthi at Trinetra Ganesh Temple, Nubra Valley Festival, Nako Lake Festival, Champawat Nanda Devi Fair, Mata Murti Ka Mela, Urs of Sheikh Salim Chishti, Nanda Devi Mela (+22 more)
+2026-09-23 18:31:06  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-23 18:31:23  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-23 18:31:23  INFO      Evening format (balance→verification): v2_arrival_intel_video [0% vs target 20%] (2/15 never featured)
+2026-09-23 18:31:23  INFO      Formats — IG: v2_arrival_intel_video  ·  FB: v2_arrival_intel_video  ·  Story: blog_promo
+2026-09-23 18:31:23  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 48
+2026-09-23 18:31:23  INFO      Fingerprint dedup snapshot — 48 dests in 7d · 95 (dest,fmt) pairs in 30d · 214 media in 60d
+2026-09-23 18:31:23  INFO      Article locked: माउंट आबू घूमने का खर्च — सीज़न के हिसाब से असली आंकड़े (2/2 never featured)
+2026-09-23 18:31:29  INFO      Shared best destination locked: Jog Falls
+2026-09-23 18:31:29  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-09-23 18:31:29  INFO      State saved. Run complete.
+2026-09-23 18:31:29  INFO      ════════════════════════════════════════════════════════════
