@@ -231,7 +231,9 @@ def caption_for(row: dict) -> tuple[str, str]:
         return cap, f"{name} | NakshIQ"
     cap = (f"{hook}\n\nEverything we know about {name}, month by month: {url}\n\n"
            f"{disclose}\n\n#{tag} #indiatravel #NakshIQ")
-    title = f"{hook[:80].rstrip('.')} | {name}"
+    head = hook[:80].rstrip('.')
+    # A hook that already names the place would say it twice ("...Calangute-Baga... | Calangute-Baga").
+    title = head if name.lower() in head.lower() else f"{head} | {name}"
     return cap, title[:100]
 
 
