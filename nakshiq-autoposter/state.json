@@ -35,21 +35,12 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "GAh5p_yt_short": "2026-09-21",
     "m8EAd_yt_short": "2026-09-22",
     "PdMu0": "2026-09-22",
     "PdMu0_evening": "2026-09-22"
   },
   "last_sync": "2026-09-22T18:28:08.101290+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ozar",
-      "date": "2026-09-08"
-    },
-    {
-      "destination_id": "astavinayak-circuit",
-      "date": "2026-09-08"
-    },
     {
       "destination_id": "morgaon",
       "date": "2026-09-09"
@@ -141,6 +132,10 @@
     {
       "destination_id": "jibhi",
       "date": "2026-09-22"
+    },
+    {
+      "destination_id": "tso-moriri",
+      "date": "2026-09-23"
     }
   ],
   "posted_formats": {
@@ -9956,6 +9951,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "jibhi.mp4"
+    },
+    {
+      "timestamp": "2026-09-23T08:07:28.827669+00:00",
+      "date": "2026-09-23",
+      "platform": "instagram",
+      "post_id": "elsuV",
+      "destination": "tso-moriri",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_tso-moriri_hi_2026-09-23.mp4"
+    },
+    {
+      "timestamp": "2026-09-23T08:07:40.338101+00:00",
+      "date": "2026-09-23",
+      "platform": "youtube",
+      "post_id": "x4kMN",
+      "destination": "tso-moriri",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_tso-moriri_hi_2026-09-23.mp4"
     }
   ],
   "theme_usage": {
@@ -10014,11 +10027,6 @@
         "2026-05-23",
         "2026-06-05",
         "2026-08-04"
-      ],
-      "lolab-valley": [
-        "2026-05-25",
-        "2026-06-16",
-        "2026-06-24"
       ],
       "jibhi": [
         "2026-05-25",
@@ -10700,9 +10708,6 @@
         "2026-06-04",
         "2026-08-11"
       ],
-      "best-beaches-india": [
-        "2026-06-24"
-      ],
       "astavinayak-yatra": [
         "2026-06-25"
       ],
@@ -10822,8 +10827,7 @@
       "tirupati": [
         "2026-09-03"
       ]
-    },
-    "collection_carousel_dests:kakatiya-heritage-circuit": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
