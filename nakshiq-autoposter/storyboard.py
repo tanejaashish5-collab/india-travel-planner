@@ -60,11 +60,16 @@ from typing import Optional
 HERE = Path(__file__).resolve().parent
 VEO_QUEUE = HERE / "data" / "veo_queue.json"
 
-BEAT_ROLES = ("hook", "build", "turn", "payoff")
+BEAT_ROLES = ("hook", "escalate", "build", "turn", "act", "payoff")
 
 # Beat durations. The turn gets the longest hold because it is the moment the
 # reel is actually for; the hook is short because a slow open is a swipe.
-DEFAULT_DURS = {"hook": 2.6, "build": 2.2, "turn": 3.4, "payoff": 2.4}
+# One Veo clip is 8 seconds, so a beat is 8 seconds. These are WEIGHTS: the
+# narration's real length decides the reel's length and these only set the
+# proportions (scale_beats). Holding them equal is deliberate — the turn used to
+# be weighted longest, which on an 8s clip meant re-cutting the same shot.
+DEFAULT_DURS = {"hook": 8.0, "escalate": 8.0, "build": 8.0,
+                "turn": 8.0, "act": 8.0, "payoff": 8.0}
 
 # Style suffix shared by every prompt, so "cinematic" is a property of the
 # system rather than something each prompt has to remember. It deliberately says
@@ -510,7 +515,9 @@ def spec_from_storyboard(sb: dict) -> dict:
     step instead of drifting."""
     lines = [b["say"] for b in sb["beats"] if (b.get("say") or "").strip()]
     caps = [b["caption"] for b in sb["beats"] if (b.get("say") or "").strip()]
-    return {"lines": lines, "caption_lines": caps,
+    # Scenarios are narrated slower than score reels. +14% reads as brisk, which
+    # is the opposite of tense (founder, 2026-09-23: "need more tension").
+    return {"lines": lines, "caption_lines": caps, "rate": "+2%",
             "storyboard": sb["format"], "slug": sb["slug"]}
 
 
@@ -636,7 +643,8 @@ def _cast(slug: str) -> dict:
         "C": _CHILD[(h >> 18) % len(_CHILD)],
         "car": car, "car_s": "the " + _rest(car),
     }
-    c.update({"A_cap": _cap(c["A"]), "B_cap": _cap(c["B"]), "car_cap": _cap(car)})
+    c.update({"A_cap": _cap(c["A"]), "B_cap": _cap(c["B"]), "car_cap": _cap(car),
+              "K_cap": _cap(c["K"]), "C_cap": _cap(c["C"])})
     # A solo traveller is one of the two, chosen by the slug too.
     c["S"] = c["A"] if (h >> 21) % 2 == 0 else c["B"]
     c["S_cap"] = _cap(c["S"])
@@ -665,10 +673,21 @@ def _intel(dest: dict, *path):
 
 
 def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
-              helpless: str, lookup: str, resolve: str, says: tuple, caps: tuple,
-              payoff_say: str, payoff_cap: str, screen: bool = True) -> list:
-    """Shared four-beat shape: trouble, helplessness, the lookup (the turn --
-    this is the product), and help reached.
+              escalate: str, helpless: str, lookup: str, act: str, resolve: str,
+              says: tuple, caps: tuple, payoff_say: str, payoff_cap: str,
+              screen: bool = True) -> list:
+    """Shared SIX-beat shape: trouble, it gets worse, no way out, the lookup
+    (the turn -- this is the product), acting on what the page said, and the
+    outcome.
+
+    WHY SIX AND NOT FOUR (2026-09-23). Four beats of narration came to ~11
+    seconds, so a 4-clip storyboard -- 32 seconds of footage that cost 40
+    credits -- was cut down to a 16-second reel and three quarters of it was
+    thrown away. The founder watched the first two and said it plainly: "not
+    showing an end-to-end proper reel, and it's too short as well." Six beats at
+    roughly eight seconds each is one Veo clip per beat used nearly whole, a
+    48-second reel, and a story with a middle: the thing gets worse before the
+    page fixes it, and you see the fix being ACTED ON, not just looked up.
 
     Scene text is written with {A} {B} {K} {C} {S} {car} placeholders and filled
     here, so every mention of a person in every beat carries that person's FULL
@@ -681,14 +700,20 @@ def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
         {"role": "hook", "dur": DEFAULT_DURS["hook"], "say": says[0],
          "caption": caps[0],
          "veo": f"{fill(trouble)} Near {place}. {PEOPLE}{STYLE}"},
-        {"role": "build", "dur": DEFAULT_DURS["build"], "say": says[1],
+        {"role": "escalate", "dur": DEFAULT_DURS["escalate"], "say": says[1],
          "caption": caps[1],
+         "veo": f"{fill(escalate)} Near {place}. {PEOPLE}{STYLE}"},
+        {"role": "build", "dur": DEFAULT_DURS["build"], "say": says[2],
+         "caption": caps[2],
          "veo": f"{fill(helpless)} Near {place}. {PEOPLE}{STYLE}"},
         # SCREEN only on the turn: describing a screen in a shot that has none
         # is an invitation to add one.
-        {"role": "turn", "dur": DEFAULT_DURS["turn"], "say": says[2],
-         "caption": caps[2],
+        {"role": "turn", "dur": DEFAULT_DURS["turn"], "say": says[3],
+         "caption": caps[3],
          "veo": f"{fill(lookup)} Near {place}. {SCREEN if screen else ''}{PEOPLE}{STYLE}"},
+        {"role": "act", "dur": DEFAULT_DURS["act"], "say": says[4],
+         "caption": caps[4],
+         "veo": f"{fill(act)} Near {place}. {PEOPLE}{STYLE}"},
         {"role": "payoff", "dur": DEFAULT_DURS["payoff"], "say": payoff_say,
          "caption": payoff_cap,
          "veo": f"{fill(resolve)} Near {place}. {PEOPLE}{STYLE}"},
@@ -742,19 +767,28 @@ def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
         trouble=("{car_cap} is stopped at the side of an empty road at dusk with "
                  "its hazard lights blinking and its bonnet up. Beside it stand "
                  "{A}, and {B}, both looking down the road in both directions."),
+        escalate=("A single truck goes past {car_s} without slowing, its lights "
+                  "sweeping over {A}, and {B}, who are left standing at the "
+                  "roadside in the dust as the sound of it fades and the road "
+                  "goes quiet again."),
         helpless=("{A_cap}, holds a phone up at arm's length, turning slowly, "
                   "searching for a signal that is not there, while {B}, waits "
                   "beside {car_s} as the light fades and the road stays empty."),
         lookup=("Close on the hands of {A}, opening a saved page on a phone that "
-                "loads with no signal at all; then he walks a little way up the "
-                "road holding the phone high until it finds a single bar, and "
-                "lifts it to his ear."),
+                "loads with no signal at all, the screen lighting his hands in "
+                "the dark."),
+        act=("{A_cap}, walks a little way up the road away from {car_s}, holding "
+             "the phone high until it finds a single bar, and lifts it to his "
+             "ear, while {B}, watches from beside the car."),
         resolve=("Blue and red lights sweep around the bend behind {car_s} and an "
                  "emergency vehicle pulls in, and {A}, and {B}, walk toward it."),
-        says=("Your car stops here, and there is no signal.",
-              "No bars, no one on the road, and the light is going.",
-              "The page you saved still opens, numbers and all."),
-        caps=("no signal", "no one coming", "the numbers, offline"),
+        says=("Your car stops on a road like this one, and the phone finds no signal at all.",
+              "One truck goes past without slowing, and then the road is quiet again.",
+              "The light is nearly gone, there is nobody to flag down, and you know no number by heart.",
+              "The page you saved still opens with no signal, and the numbers are all on it.",
+              "You walk up the road until one bar comes back, and then you make the call."),
+        caps=("no signal", "nobody stopping", "no one coming",
+              "the numbers, offline", "one bar, and a call"),
         payoff_say="India's emergency numbers are saved on NakshIQ, and the page opens offline.",
         payoff_cap="emergency numbers · offline")
 
@@ -780,19 +814,29 @@ def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
         trouble=("Close on the dashboard of {car}, the low-fuel light coming on "
                  "amber, the road ahead through the windscreen long and completely "
                  "empty; at the wheel is {A}."),
+        escalate=("Through the windscreen of {car}, a shuttered roadside fuel "
+                  "pump goes by with its hoses coiled and nobody there, and the "
+                  "road beyond it runs straight and empty again; at the wheel is "
+                  "{A}, and beside him sits {B}."),
         helpless=("{A_cap}, driving {car_s}, glances at {B}, in the passenger "
                   "seat, then back at the empty road, no fuel station, no "
                   "buildings and no other car in sight."),
         lookup=("In the passenger seat of {car_s}, {B}, opens a saved page on a "
                 "phone that loads with no signal, and her finger stops on a line "
                 "partway down."),
+        act=("{B_cap}, holds the phone where {A}, can see it as he drives "
+             "{car_s}, and he nods once and keeps going without turning back, "
+             "the empty road still running ahead of them."),
         resolve=("{car_cap} pulls into a small roadside fuel pump with a "
                  "hand-painted sign as an attendant walks over with the nozzle, "
                  "and {A}, steps out of the driver's side."),
-        says=("The fuel light comes on right about here.",
-              "There is nothing ahead for a long time.",
-              f"NakshIQ lists the nearest pump for {name}."),
-        caps=("fuel light", "nothing ahead", "the nearest pump"),
+        says=("The fuel light comes on somewhere along a stretch that looks exactly like this.",
+              "The first pump you pass is shuttered, and the road beyond it is empty again.",
+              "There are no buildings, no other cars, and nothing ahead for a long time.",
+              f"The saved page loads without a signal and names the nearest pump to {name}.",
+              "You keep going instead of turning back, because now you know what is ahead."),
+        caps=("fuel light", "shuttered, nobody there", "nothing ahead",
+              "the nearest pump", "keep going"),
         payoff_say=(f"The nearest pump for {name}, and the one after it, are on its page."
                     if has_next else f"The nearest pump for {name} is on its page."),
         payoff_cap="nearest pump, listed")
@@ -816,19 +860,29 @@ def _fmt_road_closed(dest: dict, month: int, months: dict) -> list:
         cast=_cast(dest.get("id")), who=("A", "B", "K", "car"),
         trouble=("Early morning outside a house: {A}, and {B}, load bags into the "
                  "open boot of {car}, while {K}, stand half asleep beside it."),
-        helpless=("A wider shot of the mountain road hours ahead of them: a "
+        escalate=("A wider shot of the mountain road hours ahead of them: a "
                   "landslide has taken half the carriageway, a line of stopped "
                   "trucks, nobody moving in either direction."),
+        helpless=("A line of cars sits nose to tail at a barrier on that same "
+                  "mountain road with their engines off, families standing "
+                  "about on the verge with nothing to do and nowhere to turn "
+                  "around."),
         lookup=("Beside {car_s} with its boot still open, {B}, checks a page on "
-                "her phone, then closes the boot without hurrying while {A}, "
-                "lifts the bags back out."),
+                "her phone while {A}, waits with a bag in each hand and {K}, "
+                "lean against the car."),
+        act=("{B_cap}, closes the boot of {car_s} without hurrying as {A}, "
+             "lifts the bags back out and sets them down by the door, and {K}, "
+             "head back inside the house."),
         resolve=("{A_cap}, {B}, and {K}, eat breakfast unhurried at a table, "
                  "{car_s} still parked outside the window, going nowhere today "
                  "and entirely fine about it."),
-        says=("This family was leaving at six.",
-              "The road ahead had gone overnight.",
-              "They checked the road page before loading the car."),
-        caps=("leaving at six", "the road had gone", "they checked first"),
+        says=("This family had the car loaded and were leaving at six in the morning.",
+              "Hours up that road, a landslide had taken half the carriageway overnight.",
+              "The cars that left early are parked at a barrier with nowhere to turn around.",
+              "She checked the road page before they pulled out of the driveway.",
+              "The bags came back out, and the day became something else instead."),
+        caps=("leaving at six", "the road had gone", "nowhere to turn around",
+              "she checked first", "bags back inside"),
         payoff_say=f"NakshIQ tracks road closures across {state}, dated and sourced.",
         payoff_cap="closures, dated + sourced")
 
@@ -863,22 +917,32 @@ def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
         trouble=("In a guesthouse room at high altitude, {B}, kneels beside the "
                  "bed where {C}, lies, her hand on the child's forehead, the window "
                  "behind them showing thin cold light."),
+        escalate=("{C_cap}, sits up on the edge of the bed with a blanket "
+                  "round the shoulders and will not take the glass of water "
+                  "{B}, is holding out, and {B}, puts the back of her hand "
+                  "against the child's cheek again."),
         helpless=("{B_cap}, stands at the window holding a phone up with no "
                   "signal, the small scattered settlement outside a long way from "
                   "anywhere, and {C}, still in the bed behind her."),
         lookup=("Close on the hands of {B}, opening a saved page on a phone that "
                 "loads without a signal, as she reaches for a coat with her other "
                 "hand."),
+        act=("{B_cap}, wraps {C}, in a blanket and carries the child out "
+             "through a doorway into thin cold morning light, a bag over one "
+             "shoulder and the phone still in her hand."),
         resolve=("A vehicle pulls up outside a small district clinic with its "
                  "lights on, and a staff member opens the door as {B}, carries "
                  "{C}, inside."),
         # Not "altitude hits children faster" -- that is a medical claim we
         # cannot source. What is defensible is that a young child cannot tell
         # you it is happening.
-        says=("A small child cannot tell you the altitude is getting to them.",
-              "There is no signal and no hospital in sight.",
-              "The nearest hospital is on the page you saved."),
-        caps=("altitude, and a child", "no signal", "nearest hospital, saved"),
+        says=("A small child cannot tell you that the altitude is getting to them.",
+              "She will not take the water, and she is not herself at all.",
+              "There is no signal in the room and no hospital anywhere in sight.",
+              "The page you saved opens without a signal, and the nearest hospital is named on it.",
+              "You are out of the door with her before you have finished reading it."),
+        caps=("altitude, and a child", "not herself", "no signal",
+              "nearest hospital, saved", "out the door"),
         payoff_say=f"The nearest hospital to {name} is named on its NakshIQ page.",
         payoff_cap="nearest hospital, named")
 
@@ -899,6 +963,10 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
         trouble=("{S_cap}, stands on a busy street looking at a row of almost "
                  "identical restaurant fronts, every one of them with a tout "
                  "waving a menu."),
+        escalate=("A tout steps in front of {S}, holding a laminated menu open "
+                  "at arm's length, and behind him two more wave from their own "
+                  "doorways, all of them pointing at boards that say more or "
+                  "less the same thing."),
         helpless=("{S_cap}, hesitates, takes a step toward one, then stops, "
                   "clearly unsure, as the street noise and the hawkers press in."),
         lookup=("Close on the hands of {S}, opening a saved page on a phone with "
@@ -919,10 +987,16 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
                   "scratched steel table in a small plain room completely full "
                   "of local families eating, steam coming off it. Indian food "
                   "only: no noodles, no pasta, no burger, no pizza.")),
-        says=("Twenty places, all claiming to be the famous one.",
-              "You have one meal here and no way to tell.",
-              f"NakshIQ names the one: {ename}."),
-        caps=("twenty identical fronts", "one meal, no way to tell", ename),
+        act=("{S_cap}, walks away from the bright main street down a narrower "
+             "lane, past a shuttered front and a parked scooter, checking the "
+             "phone once and then putting it away."),
+        says=("Twenty fronts in a row, and every one of them claims to be the famous one.",
+              "A tout steps in front of you with a menu, and two more wave from their doorways.",
+              "You get one meal in this town, and no way at all to tell which door is right.",
+              f"The saved page names one place here, and it is {ename}.",
+              "So you walk away from the bright street and down a lane instead."),
+        caps=("twenty identical fronts", "everyone wants you", "one meal, no way to tell",
+              ename, "down a quieter lane"),
         # Was "verified against three sources". The three-source rule governed
         # the local_eateries backfill; legendary_eatery's provenance is not
         # proven to be the same, so the reel does not claim it.
@@ -975,20 +1049,29 @@ def _fmt_how_hard(dest: dict, month: int, months: dict) -> list:
         trouble=("At the start of a walking trail at first light, {A}, tightens "
                  "the straps of a small daypack while {B}, looks up at the path "
                  "climbing away from them."),
-        helpless=("{A_cap}, and {B}, pass a group of walkers resting on rocks "
+        escalate=("{A_cap}, and {B}, pass a group of walkers resting on rocks "
                   "beside the path, one of them waving a hand vaguely uphill, as "
                   "the trail keeps climbing ahead."),
+        helpless=("Higher up the same trail, {B}, stops with hands on knees "
+                  "while {A}, waits a few steps above, and above them both the "
+                  "path keeps going up around another shoulder of the hill with "
+                  "no top in sight."),
         lookup=("At a rest stop partway up the trail, {B}, holds a phone with a "
-                "saved page open, then lowers it and nods to {A}, before they "
-                "both set off again at a steadier pace."),
+                "saved page open and turns it so {A}, can read it too."),
+        act=("{A_cap}, and {B}, set off uphill again at a steadier, slower "
+             "pace, shortening their strides on the steep part instead of "
+             "pushing, the path climbing away ahead of them."),
         resolve=("{A_cap}, and {B}, reach an open viewpoint at the top of the "
                  "trail and stand side by side taking it in, packs still on, "
                  "breathing hard and grinning."),
-        says=(f"How hard is the {name}, really?",
-              "Everyone you ask gives you a different answer.",
-              f"It is {_km(t['distance_km'])} kilometres, up to {int(t['max_altitude_m']):,} metres, {span}."),
-        caps=("how hard, really?", "everyone says something else",
-              f"{_km(t['distance_km'])} km · {int(t['max_altitude_m']):,} m · {days} day{'s' if days != 1 else ''}"),
+        says=(f"So how hard is the {name}, really, when you are actually standing at the bottom of it?",
+              "Everyone you ask on the way up gives you a completely different answer.",
+              "An hour in, the path is still climbing and there is no top in sight.",
+              f"It is {_km(t['distance_km'])} kilometres, up to {int(t['max_altitude_m']):,} metres, {span}.",
+              "Knowing that, you stop pushing and settle into a pace you can hold."),
+        caps=("how hard, really?", "everyone says something else", "still climbing",
+              f"{_km(t['distance_km'])} km · {int(t['max_altitude_m']):,} m · {days} day{'s' if days != 1 else ''}",
+              "a pace you can hold"),
         payoff_say=f"NakshIQ rates it {t['difficulty']}, for {t['fitness_level']} fitness.",
         payoff_cap=f"{t['difficulty']} · {t['fitness_level']} fitness")
 
@@ -1030,19 +1113,27 @@ def _fmt_which_two(dest: dict, month: int, months: dict, dest_b: dict = None) ->
         trouble=("At a small cafe table covered in a folded paper map, {A}, and "
                  "{B}, each put a finger on a different spot and look up at each "
                  "other, both laughing at the stalemate."),
-        helpless=(f"{{B_cap}}, walks slowly through {a} in soft light while "
+        escalate=(f"{{B_cap}}, walks slowly through {a} in soft light while "
                   f"{{A}}, walks through {b} in the same light, the two scenes "
                   f"feeling equally inviting."),
-        lookup=("Back at the cafe table, {B}, holds up a phone with a saved page "
-                "open and turns it toward {A}, who leans in, then sits back and "
-                "nods."),
+        helpless=("Back at the cafe table the tea has gone cold and the map is "
+                  "still folded open between them, and {A}, and {B}, sit back "
+                  "on opposite sides of it, no closer to deciding than before."),
+        lookup=("Still at the cafe table, {B}, holds up a phone with a saved "
+                "page open and turns it toward {A}, who leans in to read it."),
+        act=(f"{{A_cap}}, folds the paper map away and {{B}}, picks up a small "
+             f"bag from beside the cafe table, the two of them already moving "
+             f"as they stand."),
         resolve=(f"{{A_cap}}, and {{B}}, walk together through {win} in warm "
                  f"late light, small bags over their shoulders, clearly pleased "
                  f"with the choice."),
-        says=(f"{a} or {b}, in {mon}?",
-              "Both of them look perfect in the photos.",
-              f"This month NakshIQ scores {a} {da} out of ten, and {b} {db}."),
-        caps=(f"{a} or {b}?", "both look perfect", f"{a} {da}/10 · {b} {db}/10"),
+        says=(f"{a} or {b}, this {mon}, and you have to pick one of them.",
+              "Both of them look perfect in every photo you can find.",
+              "The tea goes cold and you are no closer to deciding than when you sat down.",
+              f"This month NakshIQ scores {a} {da} out of ten, and {b} {db}.",
+              "The map gets folded away, and you go."),
+        caps=(f"{a} or {b}?", "both look perfect", "still no closer",
+              f"{a} {da}/10 · {b} {db}/10", "decided"),
         payoff_say=call_say, payoff_cap=call_cap)
 
 
@@ -1075,19 +1166,29 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
         trouble=(f"At a small hotel reception desk in {name}, {{A}}, and {{B}}, "
                  f"listen to the receptionist, and {{B}}, raises her eyebrows at "
                  f"whatever has just been said."),
-        helpless=("{A_cap}, stands beside a line of parked taxis talking to a "
+        escalate=("{A_cap}, stands beside a line of parked taxis talking to a "
                   "driver, both of them shaking their heads and smiling, while "
                   "{B}, waits with the bags."),
+        helpless=("{A_cap}, and {B}, stand at the edge of a busy street with "
+                  "their bags at their feet, looking from the taxis back "
+                  "towards the hotel they have just come out of, plainly "
+                  "working out whether any of it is a fair price."),
         lookup=("At a simple cafe table with two cups of tea steaming, {B}, holds "
                 "a phone with a saved page open and slides it across to {A}, who "
-                "reads it and relaxes."),
+                "reads it."),
+        act=("{A_cap}, hands the phone back to {B}, and turns to the taxi "
+             "driver waiting beside them, saying something short and easy while "
+             "{B}, picks up a bag."),
         resolve=("{A_cap}, and {B}, sit at a plain local eatery with full plates "
                  "in front of them, laughing, the day clearly going to plan."),
-        says=(f"What does a day in {name} actually cost?",
-              "The first price you hear is rarely the real one.",
-              f"In its {'off' if season == 'low' else season} season, a mid-range day runs about {day:,} rupees."),
-        caps=("what a day really costs", "the first price you hear",
-              f"about ₹{day:,} a day · {'off' if season == 'low' else season} season"),
+        says=(f"What does one ordinary day in {name} actually cost you?",
+              "The first price you hear at the desk is rarely the real one.",
+              "So you stand on the street with your bags, guessing what is fair and what is not.",
+              f"In its {'off' if season == 'low' else season} season, a mid-range day here runs about {day:,} rupees.",
+              "You stop guessing, and the conversation with the driver gets very short."),
+        caps=("what a day really costs", "the first price you hear", "guessing what is fair",
+              f"about ₹{day:,} a day · {'off' if season == 'low' else season} season",
+              "no more guessing"),
         payoff_say="That is a mid-range room, food and a taxi, from its NakshIQ cost page.",
         payoff_cap=f"room ₹{h:,} · food ₹{f:,} · taxi ₹{t:,}")
 
@@ -1120,21 +1221,31 @@ def _fmt_quiet_month(dest: dict, month: int, months: dict) -> list:
         trouble=(f"At the height of the season at {name}, dense crowds of "
                  f"visitors fill the frame around the main sight, shoulder to "
                  f"shoulder, phones raised, a steady noise of voices."),
-        helpless=(f"A slow sideways pass along a long queue of visitors waiting "
+        escalate=(f"A slow sideways pass along a long queue of visitors waiting "
                   f"in hot sun at {name}, visitors fanning themselves and shifting "
                   f"from foot to foot."),
+        helpless=(f"Inside the crowd at {name} at the height of the season, "
+                  f"the whole mass of visitors edges forward one shuffled step "
+                  f"at a time between raised phones and shoulders, with nowhere "
+                  f"to stand still and no clear view of the main sight."),
         lookup=((f"The same main sight at {name}, almost empty in soft early "
                  f"light, and far off in the distance a single figure, {{S}}, "
                  f"walking slowly toward it alone.") if is_strict else
                 (f"The same main sight at {name} in soft light with only a few "
                  f"unhurried visitors, and among them {{S}}, walking slowly "
                  f"toward it with room to breathe.")),
+        act=(f"{{S_cap}}, walks the last stretch up to the main sight at "
+             f"{name} without stopping or queueing, hands in pockets, the space "
+             f"ahead open all the way to it."),
         resolve=(f"{{S_cap}}, sits on a low stone wall at {name} with no one "
                  f"else around, simply taking it in."),
-        says=(f"This is {name} in {pk}.",
-              "Queues, crowds, and everyone here at once.",
-              f"This is the same place in {qm}."),
-        caps=(f"{name}, {pk}", "everyone at once", f"{name}, {qm}"),
+        says=(f"This is {name} in {pk}, when everybody who is coming has come.",
+              "Queues in the sun, and the whole place moving one shuffled step at a time.",
+              "You edge forward between raised phones and never really see the thing you came for.",
+              f"And this is the same place in {qm}.",
+              "You walk straight up to it, and nobody is in your way."),
+        caps=(f"{name}, {pk}", "queues in the sun", "one step at a time",
+              f"{name}, {qm}", "nobody in the way"),
         payoff_say=("Quiet, and still a month NakshIQ says to go." if is_strict
                     else "Fewer people than peak, and still a month NakshIQ says to go."),
         payoff_cap=(f"{qm}: quiet, and a go" if is_strict else f"{qm}: fewer crowds, still a go"))

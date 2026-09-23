@@ -1518,6 +1518,59 @@ async def _synth(text: str, out_mp3: Path, voice: str = VOICE, rate: str = VOICE
     return bounds
 
 
+async def _synth_lines(lines: list, out_mp3: Path, voice: str = VOICE,
+                       rate: str = VOICE_RATE, pitch: str = "+0Hz",
+                       gap: float = 0.75):
+    """Synthesise ONE LINE AT A TIME and join them with a real pause.
+
+    Two things this buys that the single-pass path cannot (2026-09-23):
+
+    1. EXACT sentence timing. edge-tts returns SentenceBoundary events only for
+       these voices — verified: two events for two sentences, no WordBoundary —
+       so a whole-script synth leaves caption timing to be estimated. One line
+       per call makes every line's start a measured number.
+    2. AIR. A scenario is 8-second shots; wall-to-wall narration over them reads
+       as a trailer, not as tension. The gap holds the picture between beats,
+       which is the whole reason the shots are 8 seconds long.
+    """
+    import edge_tts
+    seg_files, bounds, t = [], [], 0.0
+    td = out_mp3.parent
+    for i, ln in enumerate([l for l in lines if (l or "").strip()]):
+        c = edge_tts.Communicate(ln, voice, rate=rate, pitch=pitch)
+        audio = bytearray()
+        async for ch in c.stream():
+            if ch["type"] == "audio":
+                audio += ch["data"]
+        seg = td / f"vo_{i:02d}.mp3"
+        seg.write_bytes(bytes(audio))
+        d = _audio_dur(seg)
+        if d <= 0:
+            return []
+        bounds.append((round(t, 2), round(d, 2), ln))
+        seg_files.append(seg)
+        t += d + gap
+    if not seg_files:
+        return []
+    ff = _ff()
+    parts = []
+    sil = td / "gap.mp3"
+    subprocess.run([ff, "-y", "-f", "lavfi", "-t", str(gap),
+                    "-i", "anullsrc=r=24000:cl=mono", str(sil)],
+                   capture_output=True, text=True)
+    for i, f in enumerate(seg_files):
+        parts.append(f)
+        if i < len(seg_files) - 1 and sil.exists():
+            parts.append(sil)
+    lst = td / "vo_list.txt"
+    lst.write_text("".join(f"file '{x}'\n" for x in parts))
+    r = subprocess.run([ff, "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
+                        "-c", "copy", str(out_mp3)], capture_output=True, text=True)
+    if r.returncode != 0 or not out_mp3.exists():
+        return []
+    return bounds
+
+
 def _synth_kokoro(lines: list, out_mp3: Path, kvoice: str, speed: float = 1.05) -> list:
     """Kokoro (local ONNX) TTS. Writes mp3 and returns per-sentence bounds
     [(start_s, dur_s, sentence)] so the caption pipeline works unchanged.
@@ -2005,7 +2058,11 @@ def _storyboard_shots(sb: dict, total_dur: float) -> list:
     # So a beat longer than MAX_HOLD is sub-cut into 2-3 shots taken from
     # DIFFERENT parts of that beat's own clip: the narrative stays in step with
     # the voice, the cut rate stays at reel pace.
-    MAX_HOLD = 2.6
+    # A scenario earns longer holds than a score reel: the tension IS the hold,
+    # and sub-cutting an 8s Veo clip into 2s pieces threw away three quarters of
+    # footage that cost 10 credits (founder, 2026-09-23: "too short ... not
+    # showing an end-to-end proper reel"). Score reels keep the brisk 2.6s.
+    MAX_HOLD = 4.2 if (sb or {}).get("format") else 2.6
     for clip, secs in resolved:
         d = _clip_dur(clip)
         n = max(1, min(3, int(secs // MAX_HOLD) + (1 if secs % MAX_HOLD > 0.6 else 0)))
@@ -2230,6 +2287,9 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
                                    float(prof.get("speed", 1.05)))
             if not bounds:
                 print("Kokoro unavailable — using edge-tts for this reel")
+        if not bounds and storyboard:
+            print(f"Voice: edge-tts {voice} rate={rate} pitch={pitch} (per beat, with pauses)")
+            bounds = asyncio.run(_synth_lines(lines, voice_mp3, voice, rate, pitch))
         if not bounds:
             print(f"Voice: edge-tts {voice} rate={rate} pitch={pitch}")
             bounds = asyncio.run(_synth(script_text, voice_mp3, voice, rate, pitch))
@@ -2240,7 +2300,19 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         cap_lines = spec.get("caption_lines")
         if cap_lines and len(cap_lines) != len(bounds):
             print(f"WARN: caption_lines ({len(cap_lines)}) != sentences ({len(bounds)}) — captions may drift")
-        cues = _word_cues(bounds, cap_lines)
+        if storyboard:
+            # A SCENARIO CAPTIONS WHAT IS SPOKEN. Until now a beat's caption was
+            # a separate short phrase ("twenty identical fronts") shown while the
+            # voice said something else entirely ("Twenty places, all claiming to
+            # be the famous one"), so the two could never line up — the founder
+            # caught it on the first watch, 2026-09-23. Caption the spoken words.
+            # edge-tts returns SENTENCE boundaries only for these voices (checked
+            # 2026-09-23: 2 events for 2 sentences, no WordBoundary), so word
+            # times inside a sentence stay length-weighted estimates; what this
+            # fixes is captions showing DIFFERENT WORDS from the voice.
+            cues = _word_cues(bounds, None, max_words=3)
+        else:
+            cues = _word_cues(bounds, cap_lines)
 
         # 3. ASS
         ass = build_ass(cues, score_disp, name, total, tdp / "subs.ass", hook=hook,
