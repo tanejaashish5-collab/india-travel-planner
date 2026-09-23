@@ -202,6 +202,13 @@ def _fmt_wrong_month(dest: dict, month: int, months: dict) -> list:
     bad_line = _first_sentence(months.get(bad, {}).get("sentence"))
     # The turn SHOWS the reason the data gives, rather than a winter this format
     # assumed. A destination can score badly for monsoon, heat, haze or crowds.
+    # An empty note left "makes it a bad month: ." in a live prompt (chail,
+    # 2026-09-23, caught by the Flow session). A bad month with no stated reason
+    # is a verdict we cannot show, so refuse rather than emit a blank.
+    if not (bad_line or "").strip():
+        raise StoryboardError(
+            f"wrong_month: {dest.get('id')} has no note saying WHY {_month_name(bad)} "
+            f"is bad — refusing to render a bad month with no reason")
     bad_cond = bad_line if bad_line.endswith(".") else (bad_line + ".")
 
     return [
