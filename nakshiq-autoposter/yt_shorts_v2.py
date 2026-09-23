@@ -2288,6 +2288,88 @@ def _pick_music() -> Optional[Path]:
     return tracks[0] if tracks else None
 
 
+LOGO = Path(__file__).resolve().parent.parent / "apps" / "web" / "public" / "icon-512.png"
+ENDCARD_DUR = 2.4
+
+
+def _append_endcard(reel: Path, tdp: Path, dur: float = ENDCARD_DUR) -> bool:
+    """Put the NakshIQ mark on the end of every reel.
+
+    Founder, 2026-09-23: "we need to create a reel with our logo ... at the end
+    of the reel. Always. Is it how the branding is done so that they know?" —
+    yes: a corner wordmark during the reel is barely read, and the only frame a
+    viewer reliably holds on is the last one. So the reel ENDS on the mark, the
+    URL and one line of what the site is, held long enough to read.
+
+    Returns False on any failure, and the caller keeps the un-carded reel: a
+    reel without an end card is worth more than no reel.
+    """
+    ff = _ff()
+    if not LOGO.exists():
+        return False
+    # concat resolves each entry RELATIVE TO THE LIST FILE, so a relative reel
+    # path (render_storyboard passes "out/x.mp4") is looked for inside the temp
+    # dir and the join fails with a bare "No such file or directory".
+    reel = Path(reel).resolve()
+    # ffmpeg filtergraphs cannot carry a path with spaces (this repo lives
+    # under "India Travel Planner"), and escaping it inside drawtext is fragile,
+    # so the font is copied next to the work files and referenced by name.
+    font = tdp / "endcard.ttf"
+    try:
+        shutil.copyfile(FONT_DIR / "InstrumentSans-Regular.ttf", font)
+    except Exception as e:
+        print("endcard: no font, shipping without it:", e)
+        return False
+    probe = subprocess.run([shutil.which("ffprobe") or "ffprobe", "-v", "error",
+                            "-select_streams", "a", "-show_entries",
+                            "stream=sample_rate,channels", "-of",
+                            "default=nw=1:nk=1", str(reel)],
+                           capture_output=True, text=True)
+    vals = [x for x in probe.stdout.split() if x.isdigit()]
+    _a_rate = vals[0] if vals else "48000"
+    _a_layout = "mono" if (len(vals) > 1 and vals[1] == "1") else "stereo"
+    card = tdp / "endcard.mp4"
+    # The logo file is already the brand's dark square, so the card is the logo
+    # centred on the same near-black with the URL under it.
+    vf = (f"scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=decrease,"
+          f"pad={REEL_W}:{REEL_H}:(ow-iw)/2:(oh-ih)/2:color=0x141210")
+    r = subprocess.run(
+        [ff, "-y", "-loop", "1", "-t", f"{dur}", "-i", str(LOGO),
+         # The card's silence must match the reel's audio EXACTLY. Concat does
+         # not resample, so a 48k stereo card joined to a 24k mono reel wrote a
+         # file whose audio stream claimed 79s against 39s of video.
+         "-f", "lavfi", "-t", f"{dur}",
+         "-i", f"anullsrc=r={_a_rate}:cl={_a_layout}",
+         "-vf", vf + (",drawtext=fontfile=endcard.ttf:text='nakshiq.com':"
+                      "fontcolor=0xE8E3DA:fontsize=48:x=(w-text_w)/2:y=h*0.70,"
+                      "drawtext=fontfile=endcard.ttf:"
+                      "text='before you go, check the month':"
+                      "fontcolor=0x8A8178:fontsize=32:x=(w-text_w)/2:y=h*0.70+70,"
+                      "fade=t=in:st=0:d=0.35"),
+         "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+         "-pix_fmt", "yuv420p", "-r", str(FPS),
+         "-c:a", "aac", "-b:a", "160k", "-shortest", "endcard.mp4"],
+        capture_output=True, text=True, cwd=str(tdp))
+    if r.returncode != 0 or not card.exists():
+        print("endcard: render failed, shipping without it:", r.stderr[-300:])
+        return False
+    lst = tdp / "endcard_list.txt"
+    joined = tdp / "with_endcard.mp4"
+    lst.write_text(f"file '{reel}'\nfile '{card}'\n")
+    r = subprocess.run([ff, "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
+                        "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+                        "-pix_fmt", "yuv420p", "-r", str(FPS),
+                        "-c:a", "aac", "-b:a", "160k",
+                        "-ar", _a_rate, "-ac", "1" if _a_layout == "mono" else "2",
+                        str(joined)],
+                       capture_output=True, text=True)
+    if r.returncode != 0 or not joined.exists():
+        print("endcard: join failed, shipping without it:", r.stderr[-300:])
+        return False
+    joined.replace(reel)
+    return True
+
+
 def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
           voice_override: str = None, rate_override: str = None,
           pitch_override: str = None, eleven_override: str = None,
@@ -2393,6 +2475,10 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         if r.returncode != 0:
             print("final burn failed:", r.stderr[-800:])
             return None
+
+        if storyboard and _append_endcard(out_path, tdp):
+            total = round(total + ENDCARD_DUR, 2)
+            print(f"endcard: NakshIQ mark held for {ENDCARD_DUR}s")
 
         # poster frame for quick review
         poster = out_path.with_suffix(".hook.png")

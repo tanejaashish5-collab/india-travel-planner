@@ -425,10 +425,15 @@ def validate(sb: dict) -> None:
         # HOW IT SOUNDS IS PART OF WHETHER IT WORKS (founder, 2026-09-23: "how to
         # make these scripts more hip"). Two rules, in code so they cannot rot:
         # a beat is short enough to say in one breath, and nobody narrates.
-        if say and len(say.split()) > 16:
+        # A ceiling, not a style. The first version of this rule capped a beat
+        # at 16 words and produced telegraphese ("Car dead. Empty road.") that
+        # the founder rejected on sight: short is not the same as spoken. 20
+        # words is roughly one breath, which is the real limit; sounding like a
+        # person is a writing job, not something a word count can enforce.
+        if say and len(say.split()) > 20:
             raise StoryboardError(
-                f"{b['id']}: `say` is {len(say.split())} words — a reel line is "
-                f"16 or fewer, or it reads as narration")
+                f"{b['id']}: `say` is {len(say.split())} words — past one "
+                f"breath, so it will read as narration")
         _narrator = re.compile(
             r"\b(clearly|plainly|genuinely|simply|entirely|rather|indeed|"
             r"somewhat|quite frankly|it is worth noting)\b", re.I)
@@ -845,20 +850,24 @@ def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
              "ear, while {B}, watches from beside the car."),
         resolve=("Blue and red lights sweep around the bend behind {car_s} and an "
                  "emergency vehicle pulls in, and {A}, and {B}, walk toward it."),
-        says=("Car dead. Empty road. Phone says no service.",
-              "One truck goes past. Does not even slow down.",
-              "Light is going, nobody to flag down, and no number you know by heart.",
-              "The page you saved opens anyway. No signal needed.",
-              "Walk till one bar comes back, then make the call."),
+        # GENERIC IS A WASTED MENTION. "The page you saved" could be anyone's
+        # page; the turn is the one second of the reel where the viewer is
+        # looking for what solved it, so it says NakshIQ by name (founder,
+        # 2026-09-23: "why are you being generic and not specific").
+        says=("This is the part nobody plans for. Car dead, middle of nowhere.",
+              "And the one truck that passes? Not stopping for you.",
+              "So what do you do with no signal and no number in your head?",
+              "Here's the thing. The NakshIQ page you saved opens without a network.",
+              "Walk till you catch one bar, and make the call."),
         caps=("no signal", "nobody stopping", "no one coming",
               "the numbers, offline", "one bar, and a call"),
         # Hinglish, the way this is actually said out loud. Shuddh Hindi
         # ("आपातकालीन", "मुमकिन") is how a news bulletin says it, not a reel.
-        says_hi=("गाड़ी बंद, सुनसान सड़क, और फ़ोन में एक भी बार नहीं।",
-                 "एक ट्रक आया. रुका तक नहीं।",
-                 "अंधेरा हो रहा है, कोई रोकने वाला नहीं, नंबर भी याद नहीं।",
-                 "सेव किया हुआ पेज बिना सिग्नल के खुल जाता है।",
-                 "थोड़ा आगे चलो, एक बार सिग्नल आया, कॉल लग गई।"),
+        says_hi=("यही वो सिचुएशन है जिसकी कोई प्लानिंग नहीं करता। गाड़ी बंद, और आसपास कुछ नहीं।",
+                 "जो एक ट्रक निकला, वो आपके लिए रुकने वाला नहीं है।",
+                 "अब बिना सिग्नल और बिना नंबर याद किए आप करोगे क्या?",
+                 "यहीं काम आता है NakshIQ का सेव किया हुआ पेज, बिना नेटवर्क के खुलता है।",
+                 "थोड़ा आगे चलो, एक बार सिग्नल पकड़ो, और कॉल लगाओ।"),
         caps_hi=("Gaadi band, sunsaan sadak, signal zero",
                  "Ek truck aaya, ruka tak nahin",
                  "Andhera ho raha hai, koi nahin, number bhi yaad nahin",
@@ -910,7 +919,7 @@ def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
         says=("The fuel light comes on somewhere along a stretch that looks exactly like this.",
               "The first pump you pass is shuttered, and the road beyond it is empty again.",
               "There are no buildings, no other cars, and nothing ahead for a long time.",
-              f"The saved page loads without a signal and names the nearest pump to {name}.",
+              f"Your saved NakshIQ page loads with no signal, and names the nearest pump to {name}.",
               "You keep going instead of turning back, because now you know what is ahead."),
         caps=("fuel light", "shuttered, nobody there", "nothing ahead",
               "the nearest pump", "keep going"),
@@ -956,7 +965,7 @@ def _fmt_road_closed(dest: dict, month: int, months: dict) -> list:
         says=("This family had the car loaded and were leaving at six in the morning.",
               "Hours up that road, a landslide had taken half the carriageway overnight.",
               "The cars that left early are parked at a barrier with nowhere to turn around.",
-              "She checked the road page before they pulled out of the driveway.",
+              "She checked NakshIQ's road page before the car ever left the driveway.",
               "The bags came back out, and the day became something else instead."),
         caps=("leaving at six", "the road had gone", "nowhere to turn around",
               "she checked first", "bags back inside"),
@@ -1016,7 +1025,7 @@ def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
         says=("A small child cannot tell you that the altitude is getting to them.",
               "She will not take the water, and she is not herself at all.",
               "There is no signal in the room and no hospital anywhere in sight.",
-              "The page you saved opens without a signal, and the nearest hospital is named on it.",
+              "Your saved NakshIQ page opens with no signal, and it names the nearest hospital.",
               "You are out of the door with her before you have finished reading it."),
         caps=("altitude, and a child", "not herself", "no signal",
               "nearest hospital, saved", "out the door"),
@@ -1067,18 +1076,18 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
         act=("{S_cap}, walks away from the bright main street down a narrower "
              "lane, past a shuttered front and a parked scooter, checking the "
              "phone once and then putting it away."),
-        says=("Twenty shops in a row. Every one says it is the famous one.",
-              "Menu in your face, and two more shouting from their doorways.",
-              "One meal in this town, and no way to pick the right door.",
-              f"The page you saved names one place: {ename}.",
-              "So you leave the bright street and take the lane."),
+        says=("Twenty shops in a row, and every single one says it is the famous one.",
+              "Menu in your face, two more shouting at you from their doorways.",
+              "You get one meal in this town. So which door do you pick?",
+              f"NakshIQ names one place here, and it is {ename}.",
+              "So you leave the bright street and take the lane instead."),
         caps=("twenty identical fronts", "everyone wants you", "one meal, no way to tell",
               ename, "down a quieter lane"),
-        says_hi=("बीस दुकानें, और हर कोई बोल रहा है कि फेमस हम ही हैं।",
-                 "एक बंदा मेन्यू लेकर सामने, दो और दरवाज़े से बुला रहे हैं।",
-                 "खाना एक ही बार खाना है, और सही दुकान पहचानने का कोई तरीका नहीं।",
-                 f"सेव किए पेज पर सिर्फ़ एक नाम है, {ename}।",
-                 "तो मेन बाज़ार छोड़ो और गली में निकल जाओ।"),
+        says_hi=("बीस दुकानें एक लाइन में, और हर एक बोल रही है कि फेमस हम ही हैं।",
+                 "एक बंदा मेन्यू लेकर सामने, दो और दरवाज़े से आवाज़ लगा रहे हैं।",
+                 "खाना यहाँ एक ही बार खाना है। तो जाओ किस दुकान में?",
+                 f"NakshIQ यहाँ एक ही नाम देता है, {ename}।",
+                 "तो मेन बाज़ार छोड़ो, और गली वाली तरफ़ निकल जाओ।"),
         caps_hi=("Bees dukaanein, sab bol rahe hain famous hum hain",
                  "Ek banda menu lekar saamne, do aur bula rahe hain",
                  "Khaana ek hi baar, aur sahi dukaan pehchaanne ka tareeka nahin",
@@ -1160,7 +1169,7 @@ def _fmt_how_hard(dest: dict, month: int, months: dict) -> list:
         says=(f"So how hard is the {name}, really, when you are actually standing at the bottom of it?",
               "Everyone you ask on the way up gives you a completely different answer.",
               "An hour in, the path is still climbing and there is no top in sight.",
-              f"It is {_km(t['distance_km'])} kilometres, up to {int(t['max_altitude_m']):,} metres, {span}.",
+              f"NakshIQ has the real numbers: {_km(t['distance_km'])} kilometres, up to {int(t['max_altitude_m']):,} metres, {span}.",
               "Knowing that, you stop pushing and settle into a pace you can hold."),
         caps=("how hard, really?", "everyone says something else", "still climbing",
               f"{_km(t['distance_km'])} km · {int(t['max_altitude_m']):,} m · {days} day{'s' if days != 1 else ''}",
@@ -1277,7 +1286,7 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
         says=(f"What does one ordinary day in {name} actually cost you?",
               "The first price you hear at the desk is rarely the real one.",
               "So you stand on the street with your bags, guessing what is fair and what is not.",
-              f"In its {'off' if season == 'low' else season} season, a mid-range day here runs about {day:,} rupees.",
+              f"NakshIQ puts a mid-range day here at about {day:,} rupees in its {'off' if season == 'low' else season} season.",
               "You stop guessing, and the conversation with the driver gets very short."),
         caps=("what a day really costs", "the first price you hear", "guessing what is fair",
               f"about ₹{day:,} a day · {'off' if season == 'low' else season} season",
@@ -1335,7 +1344,7 @@ def _fmt_quiet_month(dest: dict, month: int, months: dict) -> list:
         says=(f"This is {name} in {pk}, when everybody who is coming has come.",
               "Queues in the sun, and the whole place moving one shuffled step at a time.",
               "You edge forward between raised phones and never really see the thing you came for.",
-              f"And this is the same place in {qm}.",
+              f"NakshIQ says go in {qm}, and this is the same place then.",
               "You walk straight up to it, and nobody is in your way."),
         caps=(f"{name}, {pk}", "queues in the sun", "one step at a time",
               f"{name}, {qm}", "nobody in the way"),
