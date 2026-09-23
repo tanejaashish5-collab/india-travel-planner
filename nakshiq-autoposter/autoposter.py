@@ -1078,13 +1078,39 @@ def ig_daily_cap() -> int:
         return 1
 
 
+def yt_posts_today_jsonl() -> int:
+    """YouTube publishes logged today. YouTube only takes video, so every row
+    is a Short."""
+    today = date.today().isoformat()
+    return sum(1 for e in load_post_log_jsonl()
+               if (e.get("date") or "") == today and (e.get("platform") or "") == "youtube")
+
+
+def yt_daily_cap() -> int:
+    try:
+        return int(os.environ.get("NAKSHIQ_YT_DAILY_CAP", "1") or 1)
+    except ValueError:
+        return 1
+
+
 def _ig_cap_blocks(platform: str, label: str, dry_run: bool) -> bool:
-    """True when an Instagram feed/reel publish must be skipped for the cap."""
-    if platform != "instagram" or dry_run:
+    """True when a feed/reel publish must be skipped for the platform's cap.
+
+    YouTube joined the cap 2026-09-23. The day's scenario reel now publishes
+    from the Mac at ~11:35 IST and the GitHub slot still fires at 12:00; the
+    Instagram cap already made the second one step aside, YouTube had no cap
+    and would have taken two Shorts a day. Same ledger, same rule.
+    """
+    if dry_run:
         return False
-    n, cap = ig_posts_today_jsonl(), ig_daily_cap()
+    if platform == "instagram":
+        n, cap = ig_posts_today_jsonl(), ig_daily_cap()
+    elif platform == "youtube":
+        n, cap = yt_posts_today_jsonl(), yt_daily_cap()
+    else:
+        return False
     if n >= cap:
-        log.info(f"[{label}] IG daily cap reached ({n}/{cap}) — skipping publish.")
+        log.info(f"[{label}] {platform} daily cap reached ({n}/{cap}) — skipping publish.")
         return True
     return False
 
@@ -6869,7 +6895,7 @@ def publish_story(account: dict, media: dict, dry_run: bool = False) -> dict | N
 
 
 def publish_reel(caption: str, account: dict, video_media: dict,
-                 dry_run: bool = False) -> dict | None:
+                 dry_run: bool = False, yt_title: str | None = None) -> dict | None:
     """Post an Instagram/Facebook Reel or YouTube Short (vertical video)."""
     username = account.get("username", account["id"])
     platform = account["network"]
@@ -6928,7 +6954,7 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     if platform == "youtube":
         try:
             # Extract a title from the caption (first line, max 100 chars)
-            yt_title = caption.split("\n")[0].strip()
+            yt_title = (yt_title or caption.split("\n")[0]).strip()
             # Remove emoji and leading symbols for a cleaner title
             yt_title = yt_title.lstrip("📍🏔️🎯⚠️🌊 ").strip()
             if len(yt_title) > 100:

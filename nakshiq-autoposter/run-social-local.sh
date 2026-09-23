@@ -48,6 +48,36 @@ else
   run_py voice_reel.py $DRY
   RC=$?
 fi
+# 2b. THE SCENARIO REELS (added 2026-09-23). One Hindi reel to Instagram and
+#     one English reel to YouTube, cut earlier by the Veo job. Runs BEFORE the
+#     GitHub slot (12:00 IST) and writes to the SAME shared ledger, so the
+#     per-surface cap makes that slot step aside on any surface this covered.
+#     OFF until the founder turns it on: NAKSHIQ_SCENARIO_PUBLISH=1 in
+#     nakshiq-autoposter/.env.local. Off, it only logs what it would post.
+SC_IST="$(TZ=Asia/Kolkata date '+%H%M')"
+if [ "$((10#$SC_IST))" -lt 1100 ] || [ "$((10#$SC_IST))" -ge 1200 ]; then
+  say "scenario reels: IST $SC_IST is outside 11:00-12:00 — not this fire"
+elif ! bash scripts/autoposter-state-sync.sh pull; then
+  say "⚠️  scenario reels: state pull FAILED — skipping rather than publishing on stale caps"
+else
+  SC_LOG="nakshiq-autoposter/data/post_log.jsonl"
+  SC_BEFORE=$(wc -l < "$SC_LOG" 2>/dev/null || echo 0)
+  node --env-file=apps/web/.env.local --env-file=nakshiq-autoposter/.env.local -e '
+    const {spawnSync}=require("child_process");
+    process.exit(spawnSync("python3",["scenario_daily.py","publish"],
+      {stdio:"inherit",cwd:"nakshiq-autoposter",env:process.env}).status ?? 1);' \
+    || say "⚠️  scenario publish exited non-zero"
+  SC_AFTER=$(wc -l < "$SC_LOG" 2>/dev/null || echo 0)
+  if [ "$SC_AFTER" -gt "$SC_BEFORE" ]; then
+    if bash scripts/autoposter-state-sync.sh push; then
+      say "scenario reels: published $((SC_AFTER - SC_BEFORE)), ledger pushed before the GitHub slot"
+    else
+      say "⚠️  scenario reels: PUBLISHED but ledger push FAILED — GitHub slot may double-post"
+    fi
+  fi
+  bash scripts/autoposter-state-sync.sh restore
+fi
+
 # 3. The day's automated reel — MOVED HERE FROM GITHUB ACTIONS 2026-09-15.
 #    Why: the GHA cron was "47 6 * * *" (12:17 IST) but GitHub fires scheduled
 #    workflows 2-3.5h late, so every reel actually landed 14:13-15:46 IST. Our

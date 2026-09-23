@@ -24,6 +24,20 @@ say "=== veo-daily start ==="
 #    clip under its exact beat name, so matching is by filename, never order.
 bash intake.sh --named || say "WARN intake failed"
 
+# 0a. CUT THE REELS (added 2026-09-23, founder: "make it fully automated").
+#     Every storyboard whose clips are all in AND were generated from today's
+#     prompts is cut in one language: Hindi for Instagram, English for YouTube,
+#     keeping two ready per language. Publishing is a separate step at the
+#     day's slot (run-social-local.sh), so a slow cut never delays a post.
+#     Runs in the repo so the renderer reads the same storyboard code that
+#     wrote the prompts.
+( cd "$HOME/Desktop/India Travel Planner" && \
+  node --env-file=apps/web/.env.local -e '
+    const {spawnSync}=require("child_process");
+    process.exit(spawnSync("python3",["scenario_daily.py","render"],
+      {stdio:"inherit",cwd:"nakshiq-autoposter",env:process.env}).status ?? 1);' ) \
+  || say "WARN reel cut failed"
+
 # 0b. Refresh the facts the lighter formats use (treks, crowd, costs, full-year
 #     verdicts, /vs/ pairs), weekly, over DIRECT Postgres -- the costs table is
 #     12,693 rows and the standing rule forbids REST for anything over 500. It

@@ -886,7 +886,10 @@ def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
         # page; the turn is the one second of the reel where the viewer is
         # looking for what solved it, so it says NakshIQ by name (founder,
         # 2026-09-23: "why are you being generic and not specific").
-        says=("We were supposed to reach the beach before dark. We did not.",
+        # The destination by NAME, never its terrain: this line said "the
+        # beach" (written against Calangute) and would have told a Chikmagalur
+        # audience their hill town was a beach.
+        says=(f"We were supposed to reach {dest.get('name')} before dark. We did not.",
               "The car just stopped, and my phone had nothing. Not one bar.",
               "He kept holding his up like that would change something.",
               "Then I remembered the NakshIQ page I had saved. It opened. No network.",
