@@ -543,6 +543,31 @@ def scale_beats(sb: dict, total_dur: float, lead: float = 0.0) -> list:
     return [(b["clip"], round(span * b["dur"] / w, 2)) for b in usable]
 
 
+# THE HINDI REEL OPENS ON THE OUTCOME (founder pick, 2026-09-23: "for hindi,
+# reverse is good to finalise"). Same six clips, different order under the
+# voice: the payoff shot first as the open loop, then the story, then the payoff
+# again. The escalate beat's clip is not used in Hindi; its line is folded into
+# the build. Indices are into the storyboard's beat list.
+HI_CLIP_ORDER = (5, 0, 2, 3, 4, 5)
+
+
+def for_lang(sb: dict, lang: str) -> dict:
+    """A copy of the storyboard whose beats carry the clip that plays under
+    each line IN THAT LANGUAGE. English keeps the shot order; Hindi is reordered
+    per HI_CLIP_ORDER. Prompts, ids and characters are untouched, so this never
+    changes what gets generated, only what gets cut."""
+    import copy
+    out = copy.deepcopy(sb)
+    if lang != "hi":
+        return out
+    src = sb["beats"]
+    if len(src) != len(HI_CLIP_ORDER):
+        return out                      # a landscape format: leave it alone
+    for beat, idx in zip(out["beats"], HI_CLIP_ORDER):
+        beat["clip"] = src[idx].get("clip")
+    return out
+
+
 def spec_from_storyboard(sb: dict, lang: str = "en") -> dict:
     """The `spec` build() wants: narration lines + matching on-screen captions.
     One beat, one line, one caption — which is what keeps picture and voice in
@@ -556,11 +581,11 @@ def spec_from_storyboard(sb: dict, lang: str = "en") -> dict:
                 f"refusing to read English lines in a Hindi voice")
         return {"lines": [b["say_hi"] for b in _b],
                 # ENGLISH CAPTIONS OVER HINDI VOICE (founder, 2026-09-23). The
-                # spoken line and the written line are the same sentence in two
-                # languages, beat for beat, so they cannot drift. This also
-                # sidesteps Devanagari, which libass does not shape, and the
-                # romanised Hinglish it was replacing.
-                "caption_lines": [b["say"] for b in _b],
+                # Hindi reel has its own structure (it opens on the outcome), so
+                # its caption is an English rendering of THAT line, written
+                # alongside it as caption_hi, not the English reel's line for
+                # the same slot. Falls back to the English line if none.
+                "caption_lines": [b.get("caption_hi") or b["say"] for b in _b],
                 # Voice named directly, NOT via a profile: a profile's own rate
                 # wins over the spec's, and swara_deep's +12% is the brisk pace
                 # this rewrite exists to slow down.
@@ -854,29 +879,30 @@ def _fmt_sos_rescue(dest: dict, month: int, months: dict) -> list:
         # page; the turn is the one second of the reel where the viewer is
         # looking for what solved it, so it says NakshIQ by name (founder,
         # 2026-09-23: "why are you being generic and not specific").
-        says=("This is the part nobody plans for. Car dead, middle of nowhere.",
-              "And the one truck that passes? Not stopping for you.",
-              "So what do you do with no signal and no number in your head?",
-              "Here's the thing. The NakshIQ page you saved opens without a network.",
-              "Walk till you catch one bar, and make the call."),
-        caps=("no signal", "nobody stopping", "no one coming",
-              "the numbers, offline", "one bar, and a call"),
-        # Hinglish, the way this is actually said out loud. Shuddh Hindi
-        # ("आपातकालीन", "मुमकिन") is how a news bulletin says it, not a reel.
-        says_hi=("यही वो सिचुएशन है जिसकी कोई प्लानिंग नहीं करता। गाड़ी बंद, और आसपास कुछ नहीं।",
-                 "जो एक ट्रक निकला, वो आपके लिए रुकने वाला नहीं है।",
-                 "अब बिना सिग्नल और बिना नंबर याद किए आप करोगे क्या?",
-                 "यहीं काम आता है NakshIQ का सेव किया हुआ पेज, बिना नेटवर्क के खुलता है।",
-                 "थोड़ा आगे चलो, एक बार सिग्नल पकड़ो, और कॉल लगाओ।"),
-        caps_hi=("Gaadi band, sunsaan sadak, signal zero",
-                 "Ek truck aaya, ruka tak nahin",
-                 "Andhera ho raha hai, koi nahin, number bhi yaad nahin",
-                 "Save kiya page bina signal ke khul jaata hai",
-                 "Thoda aage chalo, ek bar signal, call lag gayi"),
-        payoff_say="India's emergency numbers, saved on NakshIQ, open offline.",
+        says=("We were supposed to reach the beach before dark. We did not.",
+              "The car just stopped, and my phone had nothing. Not one bar.",
+              "He kept holding his up like that would change something.",
+              "Then I remembered the NakshIQ page I had saved. It opened. No network.",
+              "He walked up the road till one bar came back, and made the call."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=("ये एम्बुलेंस दो लोगों तक पहुँची, बिना सिग्नल के। कैसे, देखो।",
+                 "चालीस मिनट पहले गाड़ी बंद हो गई, और फ़ोन पर नो सर्विस।",
+                 "वही किया जो सब करते हैं। फ़ोन ऊपर उठाया, घूमे, कुछ नहीं मिला।",
+                 "फिर उसने NakshIQ खोला। सेव किया हुआ पेज ज़ीरो बार पर भी खुल गया।",
+                 "वो चलता रहा जब तक एक बार आया, और वहीं से नंबर मिलाया।"),
+        caps_hi=("This ambulance found two people with no signal. Here is how.",
+                 "Forty minutes earlier the car died, and the phone said no service.",
+                 "They did the usual thing. Held it up, walked around, got nothing.",
+                 "Then she opened NakshIQ. The saved page loaded on zero bars.",
+                 "He walked till one bar showed, and dialled straight off it."),
+        payoff_say="I never used to think about emergency numbers. Now they are saved on NakshIQ, offline.",
         payoff_cap="emergency numbers · offline",
-        payoff_say_hi="भारत के इमरजेंसी नंबर NakshIQ पर सेव हैं, ऑफ़लाइन भी खुलते हैं।",
-        payoff_cap_hi="Emergency numbers · offline")
+        payoff_say_hi="भारत के सारे इमरजेंसी नंबर, NakshIQ पर, ऑफ़लाइन सेव।",
+        payoff_cap_hi="Every emergency number in India, on NakshIQ, saved offline.")
 
 
 def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
@@ -916,16 +942,30 @@ def _fmt_fuel_gap(dest: dict, month: int, months: dict) -> list:
         resolve=("{car_cap} pulls into a small roadside fuel pump with a "
                  "hand-painted sign as an attendant walks over with the nozzle, "
                  "and {A}, steps out of the driver's side."),
-        says=("The fuel light comes on somewhere along a stretch that looks exactly like this.",
-              "The first pump you pass is shuttered, and the road beyond it is empty again.",
-              "There are no buildings, no other cars, and nothing ahead for a long time.",
-              f"Your saved NakshIQ page loads with no signal, and names the nearest pump to {name}.",
-              "You keep going instead of turning back, because now you know what is ahead."),
-        caps=("fuel light", "shuttered, nobody there", "nothing ahead",
-              "the nearest pump", "keep going"),
-        payoff_say=(f"The nearest pump for {name}, and the one after it, are on its page."
-                    if has_next else f"The nearest pump for {name} is on its page."),
-        payoff_cap="nearest pump, listed")
+        says=("The fuel light came on with nothing around us. He said it was fine.",
+              "The first pump we passed was shuttered. Then the road went empty again.",
+              "No buildings, no cars, and neither of us saying the obvious thing.",
+              f"So I opened the NakshIQ page for {name}. No signal, and it still loaded.",
+              "It named the nearest pump, so we kept going instead of turning back."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=(f"ये पंप हमें {name} के पास मिला, जब टैंक में बस दो-तीन लीटर बचे थे। कैसे, देखो।",
+                 "आधे घंटे पहले फ़्यूल लाइट जली, और आसपास कुछ भी नहीं था।",
+                 "पहला पंप बंद मिला, और उसके बाद सड़क फिर खाली।",
+                 f"फिर मैंने NakshIQ पर {name} का पेज खोला। बिना सिग्नल के, फिर भी खुला।",
+                 "उसपर सबसे नज़दीकी पंप लिखा था, तो हम वापस नहीं मुड़े, आगे बढ़े।"),
+        caps_hi=(f"We found this pump near {name} with almost nothing in the tank. Here is how.",
+                 "Half an hour earlier the fuel light came on, with nothing around.",
+                 "The first pump was shuttered, then the road went empty again.",
+                 f"Then I opened the NakshIQ page for {name}. No signal, still loaded.",
+                 "It named the nearest pump, so we kept going instead of turning back."),
+        payoff_say=f"The nearest pump for {name} is on its NakshIQ page. I check it before every empty stretch now.",
+        payoff_cap="nearest pump, listed",
+        payoff_say_hi=f"{name} का सबसे नज़दीकी पंप, NakshIQ के पेज पर।",
+        payoff_cap_hi=f"The nearest pump for {name}, on its NakshIQ page.")
 
 
 def _fmt_road_closed(dest: dict, month: int, months: dict) -> list:
@@ -962,15 +1002,30 @@ def _fmt_road_closed(dest: dict, month: int, months: dict) -> list:
         resolve=("{A_cap}, {B}, and {K}, eat breakfast unhurried at a table, "
                  "{car_s} still parked outside the window, going nowhere today "
                  "and entirely fine about it."),
-        says=("This family had the car loaded and were leaving at six in the morning.",
-              "Hours up that road, a landslide had taken half the carriageway overnight.",
-              "The cars that left early are parked at a barrier with nowhere to turn around.",
-              "She checked NakshIQ's road page before the car ever left the driveway.",
-              "The bags came back out, and the day became something else instead."),
-        caps=("leaving at six", "the road had gone", "nowhere to turn around",
-              "she checked first", "bags back inside"),
-        payoff_say=f"NakshIQ tracks road closures across {state}, dated and sourced.",
-        payoff_cap="closures, dated + sourced")
+        says=("We had the car loaded at six. Kids half asleep, bags in the boot.",
+              "Hours up that road, a landslide had taken half of it overnight.",
+              "The families who left early were stuck at a barrier with nowhere to turn.",
+              "I checked NakshIQ's road page before we pulled out of the driveway.",
+              "So the bags came back inside, and the day turned into breakfast instead."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=("ये फ़ैमिली आज कहीं नहीं गई, और यही सबसे अच्छा फ़ैसला था। क्यों, देखो।",
+                 "छह बजे गाड़ी लोड थी, बच्चे आधे सोए हुए, बैग डिक्की में।",
+                 "उस सड़क पर कई घंटे आगे, रात में लैंडस्लाइड आधी सड़क ले गई थी।",
+                 "निकलने से पहले उसने NakshIQ का रोड पेज चेक किया।",
+                 "बैग वापस अंदर गए, और दिन ब्रेकफ़ास्ट में बदल गया।"),
+        caps_hi=("This family went nowhere today, and that was the best call. Here is why.",
+                 "At six the car was loaded, kids half asleep, bags in the boot.",
+                 "Hours up that road, a landslide had taken half of it overnight.",
+                 "Before leaving, she checked NakshIQ's road page.",
+                 "The bags came back inside, and the day became breakfast."),
+        payoff_say=f"NakshIQ tracks road closures across {state}, dated and sourced. We check it before every drive now.",
+        payoff_cap="closures, dated + sourced",
+        payoff_say_hi=f"{state} की रोड क्लोज़र, तारीख़ और सोर्स के साथ, NakshIQ पर।",
+        payoff_cap_hi=f"Road closures across {state}, dated and sourced, on NakshIQ.")
 
 
 def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
@@ -1022,15 +1077,30 @@ def _fmt_hospital_run(dest: dict, month: int, months: dict) -> list:
         # Not "altitude hits children faster" -- that is a medical claim we
         # cannot source. What is defensible is that a young child cannot tell
         # you it is happening.
-        says=("A small child cannot tell you that the altitude is getting to them.",
-              "She will not take the water, and she is not herself at all.",
-              "There is no signal in the room and no hospital anywhere in sight.",
-              "Your saved NakshIQ page opens with no signal, and it names the nearest hospital.",
-              "You are out of the door with her before you have finished reading it."),
-        caps=("altitude, and a child", "not herself", "no signal",
-              "nearest hospital, saved", "out the door"),
-        payoff_say=f"The nearest hospital to {name} is named on its NakshIQ page.",
-        payoff_cap="nearest hospital, named")
+        says=("She woke up quiet, and she is never quiet. That was the first thing.",
+              "She would not take the water, and her cheek was hot against my hand.",
+              "No signal in the room, and no hospital anywhere I could see.",
+              "The NakshIQ page I had saved opened with no signal, and it named the nearest hospital.",
+              "I had her wrapped and out of the door before I finished reading it."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=("ये क्लिनिक हमें मिला, बिना सिग्नल के, बच्चे के साथ। कैसे, देखो।",
+                 "सुबह वो चुप उठी, और वो कभी चुप नहीं रहती।",
+                 "पानी नहीं लिया, गाल गरम, और कमरे में सिग्नल ज़ीरो।",
+                 "NakshIQ का सेव किया पेज बिना सिग्नल खुला, और उसपर सबसे नज़दीकी हॉस्पिटल का नाम था।",
+                 "पढ़ना पूरा होने से पहले मैं उसे लेकर दरवाज़े से बाहर थी।"),
+        caps_hi=("We found this clinic, no signal, with a child. Here is how.",
+                 "She woke up quiet, and she is never quiet.",
+                 "Would not take water, cheek hot, and zero signal in the room.",
+                 "The saved NakshIQ page opened offline, and named the nearest hospital.",
+                 "I was out of the door with her before I finished reading it."),
+        payoff_say=f"The nearest hospital to {name} is named on its NakshIQ page. Save it before you go up.",
+        payoff_cap="nearest hospital, named",
+        payoff_say_hi=f"{name} का सबसे नज़दीकी हॉस्पिटल, नाम के साथ, NakshIQ पर।",
+        payoff_cap_hi=f"The nearest hospital to {name}, named, on NakshIQ.")
 
 
 def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
@@ -1076,34 +1146,30 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
         act=("{S_cap}, walks away from the bright main street down a narrower "
              "lane, past a shuttered front and a parked scooter, checking the "
              "phone once and then putting it away."),
-        says=("Twenty shops in a row, and every single one says it is the famous one.",
-              "Menu in your face, two more shouting at you from their doorways.",
-              "You get one meal in this town. So which door do you pick?",
-              f"NakshIQ names one place here, and it is {ename}.",
-              "So you leave the bright street and take the lane instead."),
-        caps=("twenty identical fronts", "everyone wants you", "one meal, no way to tell",
-              ename, "down a quieter lane"),
-        says_hi=("बीस दुकानें एक लाइन में, और हर एक बोल रही है कि फेमस हम ही हैं।",
-                 "एक बंदा मेन्यू लेकर सामने, दो और दरवाज़े से आवाज़ लगा रहे हैं।",
-                 "खाना यहाँ एक ही बार खाना है। तो जाओ किस दुकान में?",
-                 f"NakshIQ यहाँ एक ही नाम देता है, {ename}।",
-                 "तो मेन बाज़ार छोड़ो, और गली वाली तरफ़ निकल जाओ।"),
-        caps_hi=("Bees dukaanein, sab bol rahe hain famous hum hain",
-                 "Ek banda menu lekar saamne, do aur bula rahe hain",
-                 "Khaana ek hi baar, aur sahi dukaan pehchaanne ka tareeka nahin",
-                 f"Save kiye page par sirf ek naam: {ename}",
-                 "Main bazaar chhodo, gali mein niklo"),
-        # The eatery and the dish keep their own names: transliterating an
-        # arbitrary proper noun into Devanagari is exactly the kind of guess
-        # that puts a wrong name on screen.
-        payoff_say_hi=(f"{ename} पहुँचो, और {dish} ज़रूर माँगना।" if dish
-                       else f"यहाँ की एक ही जगह है, {ename}।"),
-        payoff_cap_hi=ename,
-        # Was "verified against three sources". The three-source rule governed
-        # the local_eateries backfill; legendary_eatery's provenance is not
-        # proven to be the same, so the reel does not claim it.
-        payoff_say=(f"Ask for the {dish} at {ename}." if dish else f"{ename}."),
-        payoff_cap=ename)
+        says=("Twenty shops in a row, and every one of them said it was the famous one.",
+              "A menu in my face, two more men calling from their doorways.",
+              "I had one meal in this town, and no idea which door was right.",
+              f"So I opened NakshIQ. It named one place here: {ename}.",
+              "I left the bright street and walked down a lane instead."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=(f"ये प्लेट {ename} की है, और इस शहर में यही एक जगह सही थी। कैसे पता चला, देखो।",
+                 "बीस दुकानें एक लाइन में, हर एक बोल रही थी कि फेमस हम ही हैं।",
+                 "एक बंदा मेन्यू लेकर सामने, दो और दरवाज़े से आवाज़ लगा रहे थे।",
+                 f"फिर मैंने NakshIQ खोला। यहाँ का एक ही नाम था, {ename}।",
+                 "मेन बाज़ार छोड़ा, और गली में निकल गई।"),
+        caps_hi=(f"This plate is from {ename}, the one right place in town. Here is how I knew.",
+                 "Twenty shops in a row, every one claiming to be the famous one.",
+                 "A menu in my face, two more calling from their doorways.",
+                 f"Then I opened NakshIQ. One name for this town: {ename}.",
+                 "I left the main bazaar and took the lane."),
+        payoff_say=(f"Ask for the {dish} at {ename}. I did." if dish else f"{ename}. Go."),
+        payoff_cap=ename,
+        payoff_say_hi=(f"{ename} पहुँचो, और {dish} ज़रूर माँगना।" if dish else f"यहाँ की एक ही जगह है, {ename}।"),
+        payoff_cap_hi=(f"Get to {ename}, and ask for the {dish}." if dish else f"The one place here: {ename}."))
 
 
 FORMATS.update({
@@ -1146,6 +1212,7 @@ def _fmt_how_hard(dest: dict, month: int, months: dict) -> list:
     t = treks[0]
     name, days = t["name"], int(t["duration_days"])
     span = "in a single day" if days <= 1 else f"over {days} days"
+    span_hi = "एक ही दिन में" if days <= 1 else f"{days} दिन में"
     return _scenario(
         dest, month, cast=_cast(dest.get("id")), who=("A", "B"),
         trouble=("At the start of a walking trail at first light, {A}, tightens "
@@ -1166,16 +1233,30 @@ def _fmt_how_hard(dest: dict, month: int, months: dict) -> list:
         resolve=("{A_cap}, and {B}, reach an open viewpoint at the top of the "
                  "trail and stand side by side taking it in, packs still on, "
                  "breathing hard and grinning."),
-        says=(f"So how hard is the {name}, really, when you are actually standing at the bottom of it?",
-              "Everyone you ask on the way up gives you a completely different answer.",
-              "An hour in, the path is still climbing and there is no top in sight.",
-              f"NakshIQ has the real numbers: {_km(t['distance_km'])} kilometres, up to {int(t['max_altitude_m']):,} metres, {span}.",
-              "Knowing that, you stop pushing and settle into a pace you can hold."),
-        caps=("how hard, really?", "everyone says something else", "still climbing",
-              f"{_km(t['distance_km'])} km · {int(t['max_altitude_m']):,} m · {days} day{'s' if days != 1 else ''}",
-              "a pace you can hold"),
-        payoff_say=f"NakshIQ rates it {t['difficulty']}, for {t['fitness_level']} fitness.",
-        payoff_cap=f"{t['difficulty']} · {t['fitness_level']} fitness")
+        says=(f"Everyone told us something different about the {name}. So we just started.",
+              "An hour in, the path was still climbing and there was no top in sight.",
+              "I stopped with my hands on my knees, wondering if we had misjudged it.",
+              f"Then I checked NakshIQ: {_km(t['distance_km'])} kilometres, up to {int(t['max_altitude_m']):,} metres, {span}.",
+              "Knowing the real numbers, we stopped pushing and found a pace we could hold."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=(f"ये {name} का टॉप है, और हम यहाँ बिना थके पहुँचे। कैसे, देखो।",
+                 "नीचे हर कोई अलग बात बता रहा था, तो हम बस चल पड़े।",
+                 "एक घंटे बाद भी रास्ता चढ़ता ही जा रहा था, टॉप कहीं नहीं।",
+                 f"फिर NakshIQ देखा: {_km(t['distance_km'])} किलोमीटर, {int(t['max_altitude_m']):,} मीटर तक, {span_hi}।",
+                 "असली नंबर पता थे, तो ज़ोर लगाना छोड़ा और अपनी रफ़्तार पकड़ी।"),
+        caps_hi=(f"This is the top of the {name}, and we got here without burning out. Here is how.",
+                 "At the bottom everyone said something different, so we just started.",
+                 "An hour in, the path was still climbing, no top in sight.",
+                 f"Then NakshIQ: {_km(t['distance_km'])} km, up to {int(t['max_altitude_m']):,} m, {span}.",
+                 "Knowing the real numbers, we stopped pushing and found our pace."),
+        payoff_say=f"NakshIQ rates it {t['difficulty']}, for {t['fitness_level']} fitness. It was right.",
+        payoff_cap=f"{t['difficulty']} · {t['fitness_level']} fitness",
+        payoff_say_hi=f"NakshIQ इसे {t['difficulty']} बताता है, {t['fitness_level']} फ़िटनेस के लिए। सही था।",
+        payoff_cap_hi=f"NakshIQ rates it {t['difficulty']}, for {t['fitness_level']} fitness. It was right.")
 
 
 def _fmt_which_two(dest: dict, month: int, months: dict, dest_b: dict = None) -> list:
@@ -1205,11 +1286,13 @@ def _fmt_which_two(dest: dict, month: int, months: dict, dest_b: dict = None) ->
             f"which_two: the higher of {a}/{b} in {mon} is still not a 'go' — "
             f"refusing to recommend it")
     if da == db:
-        call_say, call_cap = f"In {mon} it is a genuine tie, so pick the one you love.", "a genuine tie"
+        call_say, call_cap = f"In {mon} it is a genuine tie, so we picked the one we loved.", "a genuine tie"
+        call_say_hi = f"{mon} में दोनों बराबर हैं, तो जो दिल कहे वहाँ जाओ।"
         win = a
     else:
         win = a if da > db else b
-        call_say, call_cap = f"This {mon}, go to {win}.", f"this {mon}: {win}"
+        call_say, call_cap = f"This {mon}, go to {win}. We did.", f"this {mon}: {win}"
+        call_say_hi = f"इस {mon} में {win} जाओ। हम गए।"
     return _scenario(
         dest, month, cast=_cast(dest.get("id")), who=("A", "B"),
         trouble=("At a small cafe table covered in a folded paper map, {A}, and "
@@ -1229,14 +1312,30 @@ def _fmt_which_two(dest: dict, month: int, months: dict, dest_b: dict = None) ->
         resolve=(f"{{A_cap}}, and {{B}}, walk together through {win} in warm "
                  f"late light, small bags over their shoulders, clearly pleased "
                  f"with the choice."),
-        says=(f"{a} or {b}, this {mon}, and you have to pick one of them.",
-              "Both of them look perfect in every photo you can find.",
-              "The tea goes cold and you are no closer to deciding than when you sat down.",
-              f"This month NakshIQ scores {a} {da} out of ten, and {b} {db}.",
-              "The map gets folded away, and you go."),
-        caps=(f"{a} or {b}?", "both look perfect", "still no closer",
-              f"{a} {da}/10 · {b} {db}/10", "decided"),
-        payoff_say=call_say, payoff_cap=call_cap)
+        says=(f"{a} or {b}. We had one week in {mon} and could not agree.",
+              "Both looked perfect in every photo either of us could find.",
+              "The tea went cold and we were no closer than when we sat down.",
+              f"So I checked NakshIQ for this month. {a} {da} out of ten, {b} {db}.",
+              "The map got folded away, and we went."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=(f"हम {win} पहुँच गए, और ये सही फ़ैसला था। कैसे लिया, देखो।",
+                 f"{a} या {b}। {mon} में एक हफ़्ता, और हम दोनों की राय अलग।",
+                 "दोनों हर फ़ोटो में परफ़ेक्ट लग रहे थे। चाय ठंडी हो गई।",
+                 f"फिर NakshIQ पर इस महीने का स्कोर देखा। {a} दस में {da}, {b} {db}।",
+                 "नक़्शा बंद किया, और निकल पड़े।"),
+        caps_hi=(f"We made it to {win}, and it was the right call. Here is how we made it.",
+                 f"{a} or {b}. One week in {mon}, and we could not agree.",
+                 "Both looked perfect in every photo. The tea went cold.",
+                 f"Then NakshIQ, this month: {a} {da} out of ten, {b} {db}.",
+                 "Map folded, and we went."),
+        payoff_say=call_say,
+        payoff_cap=call_cap,
+        payoff_say_hi=call_say_hi,
+        payoff_cap_hi=call_say)
 
 
 def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
@@ -1263,6 +1362,8 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
     h, f, t = int(row["hotel_mid"]), int(row["food_day"]), int(row["taxi_day"])
     day = int(round((h + f + t) / 100.0) * 100)
     name, mon = dest["name"], _month_name(month)
+    seas = "off" if season == "low" else season
+    seas_hi = {"peak": "पीक", "low": "ऑफ़", "shoulder": "शोल्डर"}[season]
     return _scenario(
         dest, month, cast=_cast(dest.get("id")), who=("A", "B"),
         trouble=(f"At a small hotel reception desk in {name}, {{A}}, and {{B}}, "
@@ -1283,16 +1384,30 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
              "{B}, picks up a bag."),
         resolve=("{A_cap}, and {B}, sit at a plain local eatery with full plates "
                  "in front of them, laughing, the day clearly going to plan."),
-        says=(f"What does one ordinary day in {name} actually cost you?",
-              "The first price you hear at the desk is rarely the real one.",
-              "So you stand on the street with your bags, guessing what is fair and what is not.",
-              f"NakshIQ puts a mid-range day here at about {day:,} rupees in its {'off' if season == 'low' else season} season.",
-              "You stop guessing, and the conversation with the driver gets very short."),
-        caps=("what a day really costs", "the first price you hear", "guessing what is fair",
-              f"about ₹{day:,} a day · {'off' if season == 'low' else season} season",
-              "no more guessing"),
-        payoff_say="That is a mid-range room, food and a taxi, from its NakshIQ cost page.",
-        payoff_cap=f"room ₹{h:,} · food ₹{f:,} · taxi ₹{t:,}")
+        says=(f"The first price we heard in {name} made him raise an eyebrow at me.",
+              "The taxi driver's number was not much better. Everyone smiling, nobody budging.",
+              "So we stood on the street with our bags, guessing what was fair.",
+              f"Then I checked NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees.",
+              "The next conversation with the driver was very short."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=(f"{name} में हमारा दिन बजट में निकला, बिना बहस के। कैसे, देखो।",
+                 "रिसेप्शन पर पहला दाम सुना, और उसने मेरी तरफ़ देखा।",
+                 "टैक्सी वाले का नंबर भी कुछ बेहतर नहीं था। सब मुस्कुरा रहे थे, कोई हिल नहीं रहा था।",
+                 f"फिर NakshIQ देखा। यहाँ {seas_hi} सीज़न में मिड-रेंज दिन लगभग {day:,} रुपये।",
+                 "ड्राइवर से अगली बात बहुत छोटी रही।"),
+        caps_hi=(f"Our day in {name} came in on budget, no arguing. Here is how.",
+                 "The first price at the desk, and he looked at me.",
+                 "The taxi driver's number was no better. Everyone smiling, nobody moving.",
+                 f"Then NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees.",
+                 "The next conversation with the driver was very short."),
+        payoff_say="That is a mid-range room, food and a taxi, from its NakshIQ cost page. Check it before you haggle.",
+        payoff_cap=f"room ₹{h:,} · food ₹{f:,} · taxi ₹{t:,}",
+        payoff_say_hi="कमरा, खाना और टैक्सी, सब NakshIQ के कॉस्ट पेज पर। बहस से पहले देख लो।",
+        payoff_cap_hi="Room, food and taxi, all on the NakshIQ cost page. Check before you haggle.")
 
 
 def _fmt_quiet_month(dest: dict, month: int, months: dict) -> list:
@@ -1341,16 +1456,30 @@ def _fmt_quiet_month(dest: dict, month: int, months: dict) -> list:
              f"ahead open all the way to it."),
         resolve=(f"{{S_cap}}, sits on a low stone wall at {name} with no one "
                  f"else around, simply taking it in."),
-        says=(f"This is {name} in {pk}, when everybody who is coming has come.",
-              "Queues in the sun, and the whole place moving one shuffled step at a time.",
-              "You edge forward between raised phones and never really see the thing you came for.",
-              f"NakshIQ says go in {qm}, and this is the same place then.",
-              "You walk straight up to it, and nobody is in your way."),
-        caps=(f"{name}, {pk}", "queues in the sun", "one step at a time",
-              f"{name}, {qm}", "nobody in the way"),
-        payoff_say=("Quiet, and still a month NakshIQ says to go." if is_strict
-                    else "Fewer people than peak, and still a month NakshIQ says to go."),
-        payoff_cap=(f"{qm}: quiet, and a go" if is_strict else f"{qm}: fewer crowds, still a go"))
+        says=(f"The first time I came to {name} was in {pk}. Everybody else had come too.",
+              "Queues in the sun, and the whole place shuffling one step at a time.",
+              "I never really saw the thing I had travelled for. Just phones and shoulders.",
+              f"Then NakshIQ told me {qm} is still a go here. So I came back.",
+              "I walked straight up to it. Nobody in my way."),
+        caps=("",
+              "",
+              "",
+              "",
+              ""),
+        says_hi=(f"ये {name} है, और यहाँ मैं अकेली थी। कैसे, देखो।",
+                 f"पहली बार {pk} में आई थी। सब लोग भी उसी महीने आए थे।",
+                 "धूप में लाइनें, और पूरी जगह एक-एक क़दम सरकती हुई।",
+                 f"फिर NakshIQ ने बताया कि {qm} में भी यहाँ जाना सही है। तो वापस आई।",
+                 "सीधा चलकर पहुँची। सामने कोई नहीं।"),
+        caps_hi=(f"This is {name}, and I had it to myself. Here is how.",
+                 f"The first time I came was in {pk}. So had everyone else.",
+                 "Queues in the sun, the whole place shuffling one step at a time.",
+                 f"Then NakshIQ said {qm} is still a go here. So I came back.",
+                 "Walked straight up to it. Nobody in my way."),
+        payoff_say=("Quiet, and still a month NakshIQ says to go." if is_strict else "Fewer people than peak, and still a month NakshIQ says to go."),
+        payoff_cap=(f"{qm}: quiet, and a go" if is_strict else f"{qm}: fewer crowds, still a go"),
+        payoff_say_hi=(f"{qm}: शांत, और NakshIQ के हिसाब से जाने का सही महीना।" if is_strict else f"{qm}: पीक से कम भीड़, और फिर भी जाने का सही महीना।"),
+        payoff_cap_hi=(f"{qm}: quiet, and still a month NakshIQ says to go." if is_strict else f"{qm}: fewer people than peak, and still a go."))
 
 
 FORMATS.update({

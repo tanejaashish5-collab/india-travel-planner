@@ -139,8 +139,9 @@ def main() -> int:
     out = Path(a.out) if a.out else HERE / "out" / f"{a.slug}__{a.format}.mp4"
     out.parent.mkdir(parents=True, exist_ok=True)
 
+    sb_l = SB.for_lang(sb, a.lang)      # Hindi opens on the outcome shot
     res = build(a.slug, dest, out, spec=SB.spec_from_storyboard(sb, a.lang),
-                storyboard=sb, lang=a.lang, month=a.month)
+                storyboard=sb_l, lang=a.lang, month=a.month)
     if not res:
         sys.exit("[render] build returned nothing")
     print(f"[render] wrote {out}")
