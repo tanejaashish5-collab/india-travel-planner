@@ -19494,7 +19494,71 @@
           "posted_url": ""
         }
       ]
+    },
+    {
+      "post_id": "8iUmC",
+      "created_at": "2026-09-23T17:34:13.052Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "49RSR",
+      "created_at": "2026-09-23T12:55:11.459Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "x4kMN",
+      "created_at": "2026-09-23T08:07:32.039Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "nakshiq-score",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "failed",
+          "error": "Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - \"{\\\"error\\\":{\\\"code\\\":401,\\\"message\\\":\\\"Unauthorized\\\",\\\"errors\\\":[{\\\"message\\\":\\\"Unauthorized\\\",\\\"domain\\\":\\\"youtube.header\\\",\\\"reason\\\":\\\"youtubeSignupRequired\\\",\\\"location\\\":\\\"Authorization\\\",\\\"locationType\\\":\\\"header\\\"}]}}\"",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "elsuV",
+      "created_at": "2026-09-23T08:06:36.045Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "email_cta",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
     }
   ],
-  "last_sync": "2026-09-22T21:31:10.713568"
+  "last_sync": "2026-09-23T21:42:47.642832"
 }
