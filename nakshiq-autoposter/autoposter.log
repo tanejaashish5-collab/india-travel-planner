@@ -24410,3 +24410,37 @@ Date range: 2026-04-15 → 2026-09-22
 2026-09-23 12:55:13  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=49RSR
 2026-09-23 12:55:13  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-09-23 12:55:13  INFO      ════════════════════════════════════════════════════════════
+2026-09-23 17:32:35  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-09-23 17:32:35  INFO      ════════════════════════════════════════════════════════════
+2026-09-23 17:32:35  INFO      Nakshiq Autoposter · EVENING · 2026-09-23 · weekday=2
+2026-09-23 17:32:35  INFO      ════════════════════════════════════════════════════════════
+2026-09-23 17:32:35  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-23 17:33:24  INFO      Synced → 20 destinations · 100 traps · 2 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-23 17:33:24  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-23 17:33:26  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-23 17:33:26  INFO      Active accounts: ['facebook/Nakshiq']
+2026-09-23 17:33:26  INFO      Festivals filtered (past/post-window): Ladakh Festival, Ganesh Chaturthi at Trinetra Ganesh Temple, Nubra Valley Festival, Nako Lake Festival, Champawat Nanda Devi Fair, Mata Murti Ka Mela, Urs of Sheikh Salim Chishti, Nanda Devi Mela (+22 more)
+2026-09-23 17:33:26  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-23 17:33:44  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-23 17:33:44  INFO      Evening format (balance→discovery): v2_hidden_gem_reveal_atmo [0% vs target 15%] (2/15 never featured)
+2026-09-23 17:33:44  INFO      Formats — IG: v2_hidden_gem_reveal_atmo  ·  FB: v2_hidden_gem_reveal_atmo  ·  Story: blog_promo
+2026-09-23 17:33:44  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 48
+2026-09-23 17:33:44  INFO      Fingerprint dedup snapshot — 48 dests in 7d · 94 (dest,fmt) pairs in 30d · 213 media in 60d
+2026-09-23 17:33:44  INFO      Article locked: Is Kukke Subramanya worth visiting for Nagara Panchami? (2/2 never featured)
+2026-09-23 17:33:51  INFO      Shared best destination locked: Tirupati
+2026-09-23 17:33:51  INFO      [facebook/Nakshiq] Generating v2_hidden_gem_reveal_atmo post...
+2026-09-23 17:33:51  INFO      [csv_formats] endpoint-anchored: v2_hidden_gem_reveal_atmo → hidden_gems (50 candidates)
+2026-09-23 17:33:51  WARNING   v2_hidden_gem_reveal_atmo: no endpoint candidate passed eligibility — falling back to safe format 'score_card'
+2026-09-23 17:33:51  WARNING   [facebook/Nakshiq] v2_hidden_gem_reveal_atmo: tirupati inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'yusmarg' as score_card to keep the slot live.
+2026-09-23 17:33:51  INFO      [facebook/Nakshiq] Caption ready (601 chars, dest=yusmarg)
+2026-09-23 17:33:52  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-23 17:33:52  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/yusmarg.mp4?v=20260915
+2026-09-23 17:33:59  INFO          Brand-stamp applied: yusmarg.mp4 (12,771,993 → 6,137,047 bytes)
+2026-09-23 17:33:59  INFO          Requesting upload URL for yusmarg.mp4 (6,137,047 bytes, video/mp4)
+2026-09-23 17:34:01  INFO          Uploading to R2 (timeout=300s)...
+2026-09-23 17:34:02  INFO          R2 PUT OK. Confirming...
+2026-09-23 17:34:07  INFO          Media ready: 2hOaW (6,137,047 bytes · yusmarg.mp4)
+2026-09-23 17:34:07  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-23 17:34:33  INFO      [facebook/Nakshiq] ✅ Published · Outstand=8iUmC · Platform=1092015229978038
+2026-09-23 17:34:33  INFO      State saved. Run complete.
+2026-09-23 17:34:33  INFO      ════════════════════════════════════════════════════════════

@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "m8EAd_yt_short": "2026-09-22",
-    "PdMu0": "2026-09-22",
-    "PdMu0_evening": "2026-09-22",
+    "PdMu0": "2026-09-23",
+    "PdMu0_evening": "2026-09-23",
     "PdMu0_carousel": "2026-09-23"
   },
-  "last_sync": "2026-09-22T18:28:08.101290+00:00",
+  "last_sync": "2026-09-23T17:33:24.794319+00:00",
   "posted_destinations": [
     {
       "destination_id": "morgaon",
@@ -141,6 +141,10 @@
     {
       "destination_id": "alleppey",
       "date": "2026-09-23"
+    },
+    {
+      "destination_id": "yusmarg",
+      "date": "2026-09-23"
     }
   ],
   "posted_formats": {
@@ -175,7 +179,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "score_card",
       "score_card",
@@ -188,6 +191,7 @@
       "v4_dw_architecture_detail_deep_dive",
       "score_card",
       "festival_alert",
+      "score_card",
       "score_card"
     ]
   },
@@ -9983,6 +9987,17 @@
       "destination": "alleppey",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-09-23"
+    },
+    {
+      "timestamp": "2026-09-23T17:34:33.503670+00:00",
+      "date": "2026-09-23",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "8iUmC",
+      "destination": "yusmarg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "yusmarg.mp4"
     }
   ],
   "theme_usage": {
@@ -10074,7 +10089,8 @@
       "yusmarg": [
         "2026-06-01",
         "2026-06-21",
-        "2026-09-22"
+        "2026-09-22",
+        "2026-09-23"
       ],
       "kasol": [
         "2026-06-01",
@@ -10433,7 +10449,8 @@
         "2026-08-30",
         "2026-08-31",
         "2026-09-06",
-        "2026-09-22"
+        "2026-09-22",
+        "2026-09-23"
       ],
       "v2_myth_bust_oneline": [
         "2026-06-06",
@@ -10626,6 +10643,9 @@
       ],
       "kishtwar": [
         "2026-09-07"
+      ],
+      "yusmarg": [
+        "2026-09-23"
       ]
     },
     "audience_tags": {
@@ -10841,7 +10861,8 @@
       "tirupati": [
         "2026-09-03"
       ]
-    }
+    },
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10855,7 +10876,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "jog-falls",
+    "shared_best": "tirupati",
     "collection": "kakatiya-heritage-circuit"
   },
   "manual_skip_dests": {},
