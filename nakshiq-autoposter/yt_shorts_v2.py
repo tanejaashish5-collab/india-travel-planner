@@ -2328,6 +2328,11 @@ def _append_endcard(reel: Path, tdp: Path, dur: float = ENDCARD_DUR) -> bool:
     vals = [x for x in probe.stdout.split() if x.isdigit()]
     _a_rate = vals[0] if vals else "48000"
     _a_layout = "mono" if (len(vals) > 1 and vals[1] == "1") else "stereo"
+    # A follow prompt beats a tagline here (founder, 2026-09-23). The handle
+    # differs per surface — Instagram is @nakshiq, YouTube is @naksh-iq — so it
+    # is set by the caller rather than hardcoded to one that is wrong half the
+    # time. Never a handle with an apostrophe: it would break the filtergraph.
+    _cta = (os.environ.get("NAKSHIQ_ENDCARD_CTA") or "follow @nakshiq").replace("'", "")
     card = tdp / "endcard.mp4"
     # The logo file is already the brand's dark square, so the card is the logo
     # centred on the same near-black with the URL under it.
@@ -2342,9 +2347,8 @@ def _append_endcard(reel: Path, tdp: Path, dur: float = ENDCARD_DUR) -> bool:
          "-i", f"anullsrc=r={_a_rate}:cl={_a_layout}",
          "-vf", vf + (",drawtext=fontfile=endcard.ttf:text='nakshiq.com':"
                       "fontcolor=0xE8E3DA:fontsize=48:x=(w-text_w)/2:y=h*0.70,"
-                      "drawtext=fontfile=endcard.ttf:"
-                      "text='before you go, check the month':"
-                      "fontcolor=0x8A8178:fontsize=32:x=(w-text_w)/2:y=h*0.70+70,"
+                      f"drawtext=fontfile=endcard.ttf:text='{_cta}':"
+                      "fontcolor=0x8A8178:fontsize=34:x=(w-text_w)/2:y=h*0.70+70,"
                       "fade=t=in:st=0:d=0.35"),
          "-c:v", "libx264", "-preset", "medium", "-crf", "20",
          "-pix_fmt", "yuv420p", "-r", str(FPS),
