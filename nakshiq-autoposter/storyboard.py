@@ -757,6 +757,15 @@ def _intel(dest: dict, *path):
     return cur
 
 
+# What a named dish looks like, for dishes Veo would otherwise guess at.
+# Descriptions only, never claims; add a line when a food reel names a new sweet.
+_DISH_LOOK = {
+    "bal mithai": "dark brown fudge-like squares of roasted khoya, each one "
+                  "coated all over in tiny white sugar balls",
+}
+_DRY_SWEETS = {"bal mithai"}
+
+
 def _scenario(dest: dict, month: int, *, cast: dict, who: tuple, trouble: str,
               escalate: str, helpless: str, lookup: str, act: str, resolve: str,
               says: tuple, caps: tuple, payoff_say: str, payoff_cap: str,
@@ -1143,11 +1152,16 @@ def _fmt_food_find(dest: dict, month: int, months: dict) -> list:
         # over a close-up of a bowl of noodles (2026-09-23). The reel's whole
         # claim is WHICH dish at WHICH place, so the dish has to be on the
         # plate. Named when we have it, and never a stand-in when we do not.
-        resolve=(("A plate of " + dish + " is set down in front of {S}, at a "
-                  "scratched steel table in a small plain room completely full "
-                  "of local families eating, steam coming off it. The food on "
-                  "the plate is " + dish + " and nothing else: no noodles, no "
-                  "pasta, no burger, no pizza.")
+        # Veo does not know most regional dishes by name, and "steam coming off
+        # it" turned a dry sweet into a hot bowl. Say what it LOOKS like when we
+        # know, and only add steam when the dish is not a sweet.
+        resolve=(("A plate of " + dish + (" (" + _DISH_LOOK[dish.lower()] + ")"
+                  if dish.lower() in _DISH_LOOK else "") + " is set down in "
+                  "front of {S}, at a scratched steel table in a small plain room "
+                  "completely full of local families eating"
+                  + ("" if dish.lower() in _DRY_SWEETS else ", steam coming off it")
+                  + ". The food on the plate is " + dish + " and nothing else: "
+                  "no noodles, no pasta, no burger, no pizza, no soup, no bowl.")
                  if dish else
                  ("A plate of local food is set down in front of {S}, at a "
                   "scratched steel table in a small plain room completely full "
