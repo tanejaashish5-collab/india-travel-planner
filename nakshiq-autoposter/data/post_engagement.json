@@ -592,10 +592,10 @@
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 0,
+      "average_engagement_rate": 0.9523809523809524,
       "total_comments": 0,
       "total_impressions": 0,
-      "total_likes": 0,
+      "total_likes": 1,
       "total_reach": 105,
       "total_shares": 0,
       "total_views": 112
@@ -606,7 +606,7 @@
       "comments": 0,
       "engagement_total": 0,
       "impressions": 0,
-      "likes": 0,
+      "likes": 1,
       "reach": 105,
       "saves": 0,
       "shares": 0,
@@ -616,7 +616,7 @@
     "platform_post_id": "18630909280037468",
     "post_id": "3YH5Z",
     "published_at": "2026-09-19T07:41:03.113Z",
-    "pulled_at": "2026-09-22T23:41:58.469897+00:00",
+    "pulled_at": "2026-09-23T23:48:56.348932+00:00",
     "utm_content": "leh-yt_short-20260919"
   },
   "3s0Yj": {
@@ -990,6 +990,37 @@
     "published_at": "2026-07-02T10:20:30.268Z",
     "pulled_at": "2026-07-08T22:21:01.728866+00:00",
     "utm_content": "ahmedabad-carousel_food-20260702"
+  },
+  "49RSR": {
+    "account": "Nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 1,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 0
+    },
+    "destination": "alleppey",
+    "format": "carousel.festival",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 1,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 0
+    },
+    "network": "facebook",
+    "platform_post_id": "1040562729145369_122123042144700092",
+    "post_id": "49RSR",
+    "published_at": "2026-09-23T12:55:36.553Z",
+    "pulled_at": "2026-09-23T23:49:07.274406+00:00",
+    "utm_content": "alleppey-carousel_festival-20260923"
   },
   "4CF6i": {
     "account": "Nakshiq",
@@ -1646,10 +1677,10 @@
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 0,
+      "average_engagement_rate": 3.571428571428571,
       "total_comments": 0,
       "total_impressions": 0,
-      "total_likes": 0,
+      "total_likes": 1,
       "total_reach": 28,
       "total_shares": 0,
       "total_views": 32
@@ -1660,7 +1691,7 @@
       "comments": 0,
       "engagement_total": 0,
       "impressions": 0,
-      "likes": 0,
+      "likes": 1,
       "reach": 28,
       "saves": 0,
       "shares": 0,
@@ -1670,7 +1701,7 @@
     "platform_post_id": "18116669686966671",
     "post_id": "5NpcS",
     "published_at": "2026-09-20T08:05:45.346Z",
-    "pulled_at": "2026-09-22T23:42:01.999388+00:00",
+    "pulled_at": "2026-09-23T23:48:59.673257+00:00",
     "utm_content": "achabal-yt_short-20260920"
   },
   "5VbOE": {
@@ -2507,7 +2538,7 @@
     "platform_post_id": "17918988144439157",
     "post_id": "8ieai",
     "published_at": "2026-09-17T08:08:52.490Z",
-    "pulled_at": "2026-09-22T23:41:50.399020+00:00",
+    "pulled_at": "2026-09-23T23:48:48.900781+00:00",
     "utm_content": "kinnaur-yt_short-20260917"
   },
   "8moGI": {
@@ -3884,7 +3915,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 28
+      "total_views": 31
     },
     "destination": "kaza",
     "format": "yt_short.listicle",
@@ -3896,13 +3927,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 28
+      "views": 31
     },
     "network": "youtube",
     "platform_post_id": "WxpBOiywqxs",
     "post_id": "E0g1C",
     "published_at": "2026-09-21T08:21:53.814Z",
-    "pulled_at": "2026-09-22T23:42:07.140615+00:00",
+    "pulled_at": "2026-09-23T23:49:04.085230+00:00",
     "utm_content": "kaza-yt_short-20260921"
   },
   "E4L6A": {
@@ -4429,7 +4460,7 @@
     "platform_post_id": "oXppnn18P6U",
     "post_id": "HVbTe",
     "published_at": "2026-09-19T07:41:15.511Z",
-    "pulled_at": "2026-09-22T23:41:59.942791+00:00",
+    "pulled_at": "2026-09-23T23:48:58.168181+00:00",
     "utm_content": "leh-yt_short-20260919"
   },
   "Hsb95": {
@@ -8069,7 +8100,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 13
+      "total_views": 15
     },
     "destination": "achabal",
     "format": "yt_short.mini_guide",
@@ -8081,13 +8112,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 13
+      "views": 15
     },
     "network": "youtube",
     "platform_post_id": "_HoZjtduEqA",
     "post_id": "Sw5k9",
     "published_at": "2026-09-20T08:05:58.579Z",
-    "pulled_at": "2026-09-22T23:42:03.479807+00:00",
+    "pulled_at": "2026-09-23T23:49:00.971289+00:00",
     "utm_content": "achabal-yt_short-20260920"
   },
   "TCrcr": {
@@ -9296,7 +9327,7 @@
     "platform_post_id": "outw10DB1DQ",
     "post_id": "Xnnkn",
     "published_at": "2026-09-18T07:45:48.652Z",
-    "pulled_at": "2026-09-22T23:41:56.993288+00:00",
+    "pulled_at": "2026-09-23T23:48:54.395090+00:00",
     "utm_content": "spiti-valley-yt_short-20260918"
   },
   "Xos7e": {
@@ -12217,13 +12248,13 @@
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 0.7352941176470588,
+      "average_engagement_rate": 1.4598540145985401,
       "total_comments": 0,
       "total_impressions": 0,
-      "total_likes": 1,
-      "total_reach": 136,
+      "total_likes": 2,
+      "total_reach": 137,
       "total_shares": 0,
-      "total_views": 146
+      "total_views": 147
     },
     "destination": "kaza",
     "format": "yt_short.listicle",
@@ -12231,17 +12262,17 @@
       "comments": 0,
       "engagement_total": 0,
       "impressions": 0,
-      "likes": 1,
-      "reach": 136,
+      "likes": 2,
+      "reach": 137,
       "saves": 0,
       "shares": 0,
-      "views": 146
+      "views": 147
     },
     "network": "instagram",
     "platform_post_id": "18117054013952279",
     "post_id": "iQhgf",
     "published_at": "2026-09-21T08:21:41.468Z",
-    "pulled_at": "2026-09-22T23:42:05.738162+00:00",
+    "pulled_at": "2026-09-23T23:49:02.343318+00:00",
     "utm_content": "kaza-yt_short-20260921"
   },
   "iTHuB": {
@@ -12775,13 +12806,13 @@
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 4.878048780487805,
+      "average_engagement_rate": 6.976744186046512,
       "total_comments": 0,
       "total_impressions": 0,
-      "total_likes": 1,
-      "total_reach": 41,
+      "total_likes": 2,
+      "total_reach": 43,
       "total_shares": 0,
-      "total_views": 47
+      "total_views": 49
     },
     "destination": "turtuk",
     "format": "yt_short.this_vs_that",
@@ -12789,17 +12820,17 @@
       "comments": 0,
       "engagement_total": 0,
       "impressions": 0,
-      "likes": 1,
-      "reach": 41,
+      "likes": 2,
+      "reach": 43,
       "saves": 1,
       "shares": 0,
-      "views": 47
+      "views": 49
     },
     "network": "instagram",
     "platform_post_id": "18016767557933252",
     "post_id": "jhc7T",
     "published_at": "2026-09-22T08:06:27.506Z",
-    "pulled_at": "2026-09-22T23:42:08.869982+00:00",
+    "pulled_at": "2026-09-23T23:49:05.563185+00:00",
     "utm_content": "turtuk-yt_short-20260922"
   },
   "jjR52": {
@@ -14969,7 +15000,7 @@
     "platform_post_id": "-WB5cVFeI0g",
     "post_id": "rKBGh",
     "published_at": "2026-09-17T08:09:04.901Z",
-    "pulled_at": "2026-09-22T23:41:52.778660+00:00",
+    "pulled_at": "2026-09-23T23:48:50.569835+00:00",
     "utm_content": "kinnaur-yt_short-20260917"
   },
   "rbDG4": {
@@ -17201,7 +17232,7 @@
     "platform_post_id": "18328521436302309",
     "post_id": "zmm4q",
     "published_at": "2026-09-18T07:45:39.974Z",
-    "pulled_at": "2026-09-22T23:41:55.452814+00:00",
+    "pulled_at": "2026-09-23T23:48:53.142297+00:00",
     "utm_content": "spiti-valley-yt_short-20260918"
   },
   "zqU7r": {
