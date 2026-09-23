@@ -2036,16 +2036,38 @@ def _storyboard_shots(sb: dict, total_dur: float) -> list:
     except Exception:
         return []
     plan, shots = _sb.scale_beats(sb, total_dur), []
+    # EVERY BEAT IS SHOT TWICE (see storyboard.queue_rows). The second take is
+    # the same prompt under an `alt` filename. Take 1 is used unless this beat
+    # is named in NAKSHIQ_ALT_TAKES ("b3,b5"), or take 1 never arrived — Veo
+    # ignoring part of a prompt is common enough that the alternate is the
+    # difference between a reel today and a reel tomorrow.
+    _alt = {x.strip() for x in os.environ.get("NAKSHIQ_ALT_TAKES", "").split(",") if x.strip()}
+    _beat_of = {b.get("clip"): b.get("id") for b in sb.get("beats", []) if b.get("clip")}
     resolved = []
     for name, secs in plan:
-        local = VIDEOS_DIR / name
-        if not (local.exists() and local.stat().st_size > 0):
+        want = [name]
+        alt = name.replace(".mp4", "alt.mp4")
+        if _beat_of.get(name) in _alt:
+            want = [alt, name]        # founder picked the alternate for this beat
+        else:
+            want = [name, alt]        # alternate is the fallback
+        local = None
+        for cand in want:
+            here = VIDEOS_DIR / cand
+            if here.exists() and here.stat().st_size > 0:
+                local = here
+                break
             try:
                 from r2_videos import fetch_named as _fn
-                local = _fn(name, VIDEOS_DIR)
+                got = _fn(cand, VIDEOS_DIR)
             except Exception:
-                local = None
+                got = None
+            if got and Path(got).exists():
+                local = Path(got)
+                break
         if local and Path(local).exists():
+            if local.name != name:
+                print(f"multishot: {_beat_of.get(name) or name} uses the alternate take")
             resolved.append((Path(local), secs))
     if not resolved:
         return []

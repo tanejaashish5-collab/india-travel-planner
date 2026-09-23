@@ -16,6 +16,7 @@ naming contract.
 from __future__ import annotations
 
 import argparse
+import os
 import json
 import sys
 import urllib.request
@@ -105,7 +106,11 @@ def main() -> int:
     ap.add_argument("--month", type=int, default=date.today().month)
     ap.add_argument("--lang", default="en", choices=["en", "hi"])
     ap.add_argument("--out", default=None)
+    ap.add_argument("--alt", default="",
+                    help="beats to take from the SECOND take, e.g. b3,b5")
     a = ap.parse_args()
+    if a.alt:
+        os.environ["NAKSHIQ_ALT_TAKES"] = a.alt
 
     dest, months = load_dest(a.slug, a.month)
     kw = {}

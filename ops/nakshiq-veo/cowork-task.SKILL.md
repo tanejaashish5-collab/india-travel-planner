@@ -11,7 +11,7 @@ A LaunchAgent (com.nakshiq.veo-daily, 09:20 and 14:20) builds each day's storybo
 SOURCE OF TRUTH (read this FIRST, every run, always the latest version)
 /Users/ashishtaneja/Automation/nakshiq-veo/today-tasks.json
 (Connect the folder with request_cowork_directory if it is not already connected.)
-- `accounts[]` → each has `clips[]`. Every clip has: `save_as` (the exact filename), `storyboard`, `beats_in_storyboard`, `character`, `beat_role`, `prompt`.
+- `accounts[]` → each has `clips[]`. Every clip has: `save_as` (the exact filename), `storyboard`, `clips_in_storyboard`, `take`, `character`, `beat_role`, `prompt`.
 - `how[]` restates these rules. If it and this file ever disagree, the JSON wins: it is regenerated daily and this file is not.
 - If `total_clips` is 0 or the file is missing, send a one-line notification ("NakshIQ Veo: nothing queued today") and STOP.
 
@@ -29,9 +29,13 @@ HARD RULES
 4. WATERMARK: "Visible watermarking" OFF (avatar → account panel). Check it once per account.
 5. PROMPT VERBATIM, as a single line. Do not rewrite, shorten, translate or "improve" it: every prompt is validated against our own data and must not assert anything extra. A newline submits the composer early. After typing, read the text back out of the input box and compare its length to the task file before submitting.
 6. SAME PEOPLE WITHIN A REEL. Veo has no memory between clips, so a person is only the same person if they are described the same way every time. Every prompt already carries each person's FULL description inline (age, hair, the exact garment and colour) and the car's, identical across all beats of one storyboard. Do NOT use Flow's character field and do NOT add any description of your own: a second description can conflict with the one in the prompt and produce different people. The `character` value in the task file is for reference only.
-7. WHOLE STORYBOARDS. A reel is cut from a whole storyboard (all clips sharing a `storyboard` value; `beats_in_storyboard` says how many). A storyboard missing even one beat renders NOTHING.
+7. WHOLE STORYBOARDS. A reel is cut from a whole storyboard (all clips sharing a `storyboard` value; `clips_in_storyboard` says how many). A storyboard missing even one beat renders NOTHING.
    - If you cannot finish a storyboard, prefer skipping it entirely over producing some of its beats.
    - Spare credits go to COMPLETING a partial storyboard before starting a new one.
+8. TWO TAKES PER BEAT, AND BOTH ARE WANTED. Every beat appears TWICE with the SAME prompt: `<beat>.mp4` (`take` 1) and `<beat>alt.mp4` (`take` 2). Generate the prompt twice and save both files. They are NOT duplicates:
+   - Veo renders the same prompt differently each time, and take 2 is what rescues a beat when take 1 ignores part of the prompt (on 2026-09-22 it served a bowl of noodles for a named sweet).
+   - NEVER copy one file to the other name. That would cut a reel from the same shot twice and nothing downstream could tell.
+   - If credits run short, finish every take 1 first, then come back for the alt takes.
 8. ACCOUNT ASSIGNMENT IS ADVISORY. The task file is written without knowing any account's balance, and matching is by filename only, so any account with credits can produce any clip. Move clips off an account that is out of credits or signed out.
 
 ACCOUNTS

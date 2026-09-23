@@ -41,22 +41,29 @@ LEDGER = HERE / "generated.json"          # slug+format -> last generated date
 # verdicts, /vs/ pairs). Written by scripts/export-reel-data.mjs; see its header.
 REEL_DATA = HERE / "data" / "reel-data.json"
 
-DAILY_CLIP_BUDGET = 30                    # 6 accounts x 50 credits / 10 per clip.
-                                          # Founder, 09-21: use all 30 every day.
-# Storyboards are 3 or 4 clips and must stay WHOLE (a reel missing one beat
-# renders nothing), so the queue cannot simply stop at 30: it has to LAND on 30.
-# Every whole number is a sum of 3s and 4s except 1, 2 and 5, so a storyboard is
-# only accepted if the budget it leaves behind is still fillable.
-_UNFILLABLE = {1, 2, 5}
+# 6 accounts x 50 credits / 10 per clip = 30 clips a day.
+#
+# SPENT ON DEPTH, NOT ON COUNT (founder call, 2026-09-23). Posting is capped at
+# one reel a day per surface, so eight short reels a day was five times more
+# than could ever go out. The same 30 clips now buy TWO six-beat reels shot
+# TWICE over (2 x 6 x 2 = 24), leaving 6 clips as the day's reserve for redoing
+# a beat Veo got wrong — which it does often enough to matter: it served a bowl
+# of noodles for a named sweet on 09-22.
+DAILY_CLIP_BUDGET = 24
+TAKES = 2                                 # every beat generated twice
+STORYBOARDS_PER_DAY = 2
+# A storyboard is 6 beats x TAKES clips and must stay WHOLE (a reel missing a
+# beat renders nothing), so the budget has to land exactly on a multiple of it.
+_UNFILLABLE = set(range(1, 12))
 # No format may take more than this many storyboards in one run. sos_rescue
 # needs no per-destination data since the 09-21 honesty rewrite, so it passes
 # for EVERY destination; with it first in FORMATS, an uncapped run would be
 # seven copies of the same rescue story in seven places.
-PER_FORMAT_CAP = 2
+PER_FORMAT_CAP = 1
 # THE TONE MIX (founder-approved 2026-09-21): two storyboards per tone per day,
 # so a day is 25% tense and 75% useful / warm / awe, never seven rescue stories.
 # The tones and their formats live in storyboard.TONES.
-PER_TONE = 2
+PER_TONE = 1
 import os as _os
 DEBUG = _os.environ.get("VEO_DEBUG") == "1"
 # Order is priority. Scenarios first (they show the product working), landscape
@@ -230,8 +237,15 @@ def main() -> int:
                 "costs": reel.get("costs", {}).get(d["id"])}
         # Try the tones furthest below quota first, so the day fills evenly
         # instead of whichever format happens to be listed first.
-        want = sorted((t for t in SB.TONES if per_tone.get(t, 0) < PER_TONE),
-                      key=lambda t: per_tone.get(t, 0))
+        # Two reels a day against four tones means two tones sit out, so the
+        # pair ROTATES by date: tense+useful one day, warm+awe the next. Without
+        # this the same two tones would win every day, because the deficit sort
+        # is a tie on a fresh queue and ties fall back to dict order.
+        _tones = list(SB.TONES)
+        _roll = today.toordinal() % len(_tones)
+        _tones = _tones[_roll:] + _tones[:_roll]
+        want = sorted((t for t in _tones if per_tone.get(t, 0) < PER_TONE),
+                      key=lambda t: (per_tone.get(t, 0), _tones.index(t)))
         # Filter against storyboard's registry, NOT this file's old FORMATS tuple:
         # that tuple predates the lighter formats, and filtering on it silently
         # dropped all four before they were ever tried (09-21, found by trace).
@@ -274,13 +288,13 @@ def main() -> int:
                 skipped.setdefault(str(e).split(":")[1].strip()[:44], 0)
                 skipped[str(e).split(":")[1].strip()[:44]] += 1
                 continue
-            size = len(SB.queue_rows(sb))
+            size = len(SB.queue_rows(sb, takes=TAKES))
             left = remaining - size
             if size > remaining or left in _UNFILLABLE:
                 if DEBUG:
                     print(f"    [debug] {d['id']:<16} {fmt:<14} skipped: size {size} leaves {left} of {remaining}")
                 continue                          # would overshoot or strand credits
-            n = SB.enqueue(sb, QUEUE)
+            n = SB.enqueue(sb, QUEUE, takes=TAKES)
             if n:
                 queued.append((d["id"], fmt, n))
                 per_fmt[fmt] = per_fmt.get(fmt, 0) + 1

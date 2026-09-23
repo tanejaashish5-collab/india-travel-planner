@@ -466,18 +466,34 @@ def validate(sb: dict) -> None:
 # the Veo queue — what a Flow session actually works through
 # ─────────────────────────────────────────────────────────────────────────
 
-def queue_rows(sb: dict) -> list:
-    # `character` rides on every row so the Flow session can put the SAME text in
-    # Flow's character field for every beat of one storyboard. Formats with no
-    # people (the landscape ones) simply carry an empty string.
-    return [{"clip": b["clip"], "prompt": b["veo"], "slug": sb["slug"],
-             "format": sb["format"], "beat": b["id"], "role": b["role"],
-             "character": b.get("character", ""),
-             "seconds": 8, "status": "pending"}
-            for b in sb["beats"] if b.get("veo")]
+def queue_rows(sb: dict, takes: int = 1) -> list:
+    """One row per beat, or per beat PER TAKE when takes > 1.
+
+    WHY TAKES (founder call, 2026-09-23). Publishing is capped at one reel a day
+    per surface, so 30 clips a day was five times more reels than could ever go
+    out. The same budget buys two reels a day shot TWICE instead: Veo ignores
+    part of a prompt often enough that a single take is a coin toss (it served a
+    bowl of noodles for a named sweet on 09-22), and a second take of the same
+    beat is the only insurance that does not cost a day's delay.
+
+    The alternate take is the SAME prompt with an `alt` suffix on the filename,
+    because the filename is the only contract between the queue, the Flow
+    session and the renderer.
+    """
+    rows = []
+    for b in sb["beats"]:
+        if not b.get("veo"):
+            continue
+        for t in range(max(1, takes)):
+            clip = b["clip"] if t == 0 else b["clip"].replace(".mp4", "alt.mp4")
+            rows.append({"clip": clip, "prompt": b["veo"], "slug": sb["slug"],
+                         "format": sb["format"], "beat": b["id"], "role": b["role"],
+                         "character": b.get("character", ""), "take": t + 1,
+                         "seconds": 8, "status": "pending"})
+    return rows
 
 
-def enqueue(sb: dict, path: Path = None) -> int:
+def enqueue(sb: dict, path: Path = None, takes: int = 1) -> int:
     """Append this storyboard's prompts to the Veo queue, skipping any clip
     already queued or generated. Returns how many rows were added."""
     path = path or VEO_QUEUE
@@ -487,7 +503,7 @@ def enqueue(sb: dict, path: Path = None) -> int:
     except Exception:
         q = []
     have = {r.get("clip") for r in q}
-    new = [r for r in queue_rows(sb) if r["clip"] not in have]
+    new = [r for r in queue_rows(sb, takes=takes) if r["clip"] not in have]
     if new:
         path.write_text(json.dumps(q + new, indent=2, ensure_ascii=False))
     return len(new)
@@ -1260,9 +1276,13 @@ FORMATS.update({
 
 # THE TONE MIX, enforced by build-queue.py: two storyboards per tone per day.
 # 25% tense, 75% everything else. No two reels in a day on the same feature.
+# two_places, wrong_month and crowd_pullback are LANDSCAPE formats and still
+# three or four beats, so on the six-beat rule (2026-09-23) they would cut a
+# short reel out of a long one. They stay in FORMATS — nothing is deleted — but
+# they are out of the daily rotation until they are rewritten to six beats.
 TONES = {
     "tense":  ("sos_rescue", "road_closed", "fuel_gap", "hospital_run"),
-    "useful": ("how_hard", "which_two", "real_cost", "two_places"),
-    "warm":   ("food_find", "wrong_month"),
-    "awe":    ("quiet_month", "crowd_pullback"),
+    "useful": ("how_hard", "which_two", "real_cost"),
+    "warm":   ("food_find",),
+    "awe":    ("quiet_month",),
 }
