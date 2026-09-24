@@ -29,6 +29,7 @@
       #s1 .name { position: absolute; left: 80px; top: 300px; font-size: 330px; color: var(--fg); }
       #s1 .line { position: absolute; left: 84px; top: 640px; width: 900px; font-size: 64px; font-weight: 700; line-height: 1.12; }
       #s1 .line b { color: var(--skip); white-space: nowrap; }
+      #s1 .line em { font-style: normal; color: var(--accent); white-space: nowrap; }
 
       /* 2 chart */
       #s2 .panel { position: absolute; left: 60px; right: 60px; top: 330px; height: 1080px; background: rgba(16,13,10,.82); border-radius: 28px; padding: 56px 48px 40px; }
@@ -84,7 +85,7 @@
       <section id="s2" class="scene clip" data-start="3" data-duration="5.5" data-track-index="1">
         <div class="panel" id="s2-panel">
           <div class="title">{{CHART_TITLE}}</div>
-          <div class="sub">NakshIQ score out of 10, for every month.</div>
+          <div class="sub">{{SUB}}</div>
           {{TAGS}}
           <div class="bars" id="s2-bars"></div>
           <div class="months"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
@@ -93,8 +94,8 @@
 
       <section id="s3" class="scene clip" data-start="8.5" data-duration="3.5" data-track-index="1">
         <div class="card" id="s3-card" style="top:320px;height:800px"></div>
-        <div class="kicker" id="s3-kicker">The sweet spot</div>
-        <div class="month display" id="s3-month">{{BEST}}</div>
+        <div class="kicker" id="s3-kicker">The next good window</div>
+        <div class="month display" id="s3-month" style="font-size:{{MONTH_PX}}px">{{BEST}}</div>
         <div class="facts" id="s3-facts">
 {{FACTS}}
         </div>
@@ -134,7 +135,7 @@
         tl.fromTo(`#val${i}`, { opacity: 0 }, { opacity: 1, duration: 0.25 }, 3.75 + i * 0.09);
       });
       tl.to({{DIM}}, { opacity: 0.35, duration: 0.4 }, 5.4);
-      tl.fromTo({{SKIPS}}, { scaleX: 1 }, { scaleX: 1.12, duration: 0.25, yoyo: true, repeat: 1 }, 5.5);
+      tl.fromTo({{PULSE}}, { scaleX: 1 }, { scaleX: 1.12, duration: 0.25, yoyo: true, repeat: 1 }, 5.5);
       tl.fromTo("#s2 .tag", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 5.5);
       tl.to("#s2-panel", { opacity: 0, y: -40, duration: 0.3, ease: "power2.in" }, 8.2);
       // 3 sweet spot

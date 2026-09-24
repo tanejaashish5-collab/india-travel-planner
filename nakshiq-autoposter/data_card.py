@@ -12,8 +12,8 @@ clips already on disk, 15 seconds. Built from the 2026-09-24 HyperFrames test
 
 EVERY NUMBER ON SCREEN comes from reel-data.json (the Supabase snapshot the
 scenario reels use). A destination that cannot fill a card honestly refuses:
-no skip month (the reel's whole point), no cost rows, or fewer than three
-usable clips.
+no month scoring 8+ in the next three, no cost rows, or fewer than three
+usable clips. The card is about the NEXT THREE MONTHS (see facts()).
 """
 from __future__ import annotations
 
@@ -22,6 +22,7 @@ import json
 import shutil
 import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -79,23 +80,28 @@ def _inr(n: float) -> str:
     return "₹" + f"{int(round(n)):,}"
 
 
-def facts(slug: str, d: dict | None = None) -> dict:
-    """Everything the card says, derived and checked. Raises Refuse."""
+def facts(slug: str, d: dict | None = None, today: date | None = None) -> dict:
+    """Everything the card says, derived and checked. Raises Refuse.
+
+    Anchored on the NEXT THREE MONTHS, not the whole year (founder, 2026-09-24:
+    a September reel saying "go in March" gives nobody a reason to care). The
+    card answers "where can I go soon, and exactly when"; a place with no month
+    scoring 8+ in that window refuses."""
     d = d or _load(DATA, {})
+    today = today or date.today()
     m = d.get("months", {}).get(slug)
     if not m or len(m) < 12:
         raise Refuse("no 12-month scores")
     scores = [int(m[str(i)]["score"]) * 2 for i in range(1, 13)]
     labels = [m[str(i)]["label"] for i in range(1, 13)]
-    skips = [i for i, l in enumerate(labels) if l == "skip"]
-    if not skips:
-        raise Refuse("no skip month: nothing to warn about")
-    top = max(scores)
+    window = [(today.month - 1 + k) % 12 for k in (1, 2, 3)]
     crowd = d.get("crowd", {}).get(slug) or {}
     quiet = set(crowd.get("quiet_months") or [])
     peak_m = set(crowd.get("peak_months") or [])
-    best_candidates = [i for i, s in enumerate(scores) if s == top]
-    best = next((i for i in best_candidates if i + 1 in quiet), best_candidates[0])
+    best = max(window, key=lambda i: (scores[i], i + 1 in quiet, -window.index(i)))
+    if scores[best] < 8:
+        raise Refuse(f"nothing scores 8+ in {', '.join(MONTHS[i] for i in window)}")
+    worst = min(window, key=lambda i: (scores[i], window.index(i)))
     costs = {c["season"]: c for c in (d.get("costs", {}).get(slug) or [])}
     lo, hi = (costs.get("low") or {}).get("hotel_mid"), (costs.get("peak") or {}).get("hotel_mid")
     if not lo or not hi or lo >= hi:
@@ -104,23 +110,31 @@ def facts(slug: str, d: dict | None = None) -> dict:
     if len(clips) < 3:
         raise Refuse(f"only {len(clips)} usable background clip(s)")
 
-    good = sum(1 for s in scores if s >= 8)
-    low_score = min(scores)
-    n_low = scores.count(low_score)
-    hook = (f"{NUMBER_WORDS[good]} months here score 8 or more. "
-            f"{NUMBER_WORDS[n_low]} score <b>{low_score} out of 10.</b>")
-    fact_lines = [f"Scores <em>{top} out of 10</em>"]
+    B, W = MONTHS[best], MONTHS[worst]
+    if scores[worst] <= 6 and worst != best:
+        hook = f"{B} scores <em>{scores[best]} out of 10.</em> {W} scores <b>{scores[worst]}.</b>"
+    else:
+        tail = ("Every one of the next three months scores 10." if scores[worst] == 10
+                else f"The next three months all score {scores[worst]} or more.")
+        hook = f"{B} scores <em>{scores[best]} out of 10.</em> {tail}"
+    fact_lines = [f"Scores <em>{scores[best]} out of 10</em>"]
     if best + 1 in quiet:
         fact_lines.append("And it is one of the <em>quiet months</em>")
     elif best + 1 in peak_m:
-        fact_lines.append("Also a <em>peak crowd month</em>, so book early")
-    ratio = lo / hi
-    note = ("Same town. Less than half the price." if ratio <= 0.5
-            else f"Same town. {round((1 - ratio) * 100)}% less.")
+        fact_lines.append("Also a <em>peak crowd month</em>")
+    if best + 1 in quiet:
+        note = f"{B} is a quiet month here."
+    elif best + 1 in peak_m:
+        note = f"{B} is peak season. Book now, or wait for the low season."
+    else:
+        note = "Same town, peak season vs low."
+    skips = [i for i, l in enumerate(labels) if l == "skip" and i in window]
     return {"slug": slug, "name": _name(slug), "scores": scores, "labels": labels,
-            "skips": skips, "best": MONTHS[best], "hook": hook, "facts": fact_lines,
-            "peak": _inr(hi), "low": _inr(lo), "note": note, "clips": clips,
-            "snapshot": (d.get("generated_at") or "")[:10]}
+            "skips": skips, "window": window, "best_i": best, "best": B, "hook": hook,
+            "facts": fact_lines, "peak": _inr(hi), "low": _inr(lo), "note": note,
+            "clips": clips, "snapshot": (d.get("generated_at") or "")[:10],
+            "sub": f"NakshIQ score out of 10. {MONTHS[window[0]][:3]} to {MONTHS[window[-1]][:3]} highlighted.",
+            "rank": (window.index(best), best + 1 not in quiet, -scores[best])}
 
 
 def _html(f: dict, follow: str, music_name: str) -> str:
@@ -129,28 +143,26 @@ def _html(f: dict, follow: str, music_name: str) -> str:
     # SKIP tag sits over the middle skip month, above its bar (bar area: 640px
     # tall, top at 330px inside the panel; columns 12 across 864px, 14px gaps).
     col = (864 - 11 * 14) / 12
-    runs, cur = [], []                     # one SKIP tag per run of skip months
-    for i in f["skips"]:
-        if cur and i != cur[-1] + 1:
-            runs.append(cur); cur = []
-        cur.append(i)
-    runs.append(cur)
-    tags = []
-    for run in runs:
-        center = 48 + (run[0] + run[-1]) / 2 * (col + 14) + col / 2
-        top = int(330 + 640 * (1 - max(f["scores"][i] for i in run) / 10) - 110)
-        tags.append(f'<div class="tag" style="left:{int(center - 50)}px;top:{top}px">SKIP</div>')
-    dim = [f"#bar{i}" for i in range(12) if i not in f["skips"]]
+    def tag(i, text, colour):
+        center = 48 + i * (col + 14) + col / 2
+        top = int(330 + 640 * (1 - f["scores"][i] / 10) - 110)
+        return (f'<div class="tag" style="left:{int(center - 50)}px;top:{top}px;'
+                f'color:var(--{colour})">{text}</div>')
+    tags = [tag(f["best_i"], "GO", "accent")] + [tag(i, "SKIP", "skip") for i in f["skips"]]
+    dim = [f"#bar{i}" for i in range(12) if i not in f["window"]]
     rep = {
         "{{CHART_TITLE}}": f["name"] + (", by month" if n > 12 else ", month by month"),
         "{{NAME}}": f["name"], "{{SNAPSHOT}}": f["snapshot"], "{{MUSIC}}": music_name,
         "{{NAME_PX}}": str(name_px), "{{LINE_TOP}}": str(int(300 + name_px * 0.9 + 43)),
         "{{HOOK}}": f["hook"], "{{TAGS}}": "".join(tags),
         "{{BEST}}": f["best"],
+        # League Gothic runs ~0.40em a capital; the card is 920px wide inside.
+        "{{MONTH_PX}}": str(int(min(360, 880 / (0.40 * len(f["best"]))))),
         "{{FACTS}}": "\n".join(f"          <div>{x}</div>" for x in f["facts"]),
         "{{PEAK}}": f["peak"], "{{LOW}}": f["low"], "{{NOTE}}": f["note"], "{{FOLLOW}}": follow,
         "{{SCORES}}": json.dumps(f["scores"]), "{{LABELS}}": json.dumps(f["labels"]),
-        "{{DIM}}": json.dumps(dim), "{{SKIPS}}": json.dumps([f"#bar{i}" for i in f["skips"]]),
+        "{{DIM}}": json.dumps(dim), "{{PULSE}}": json.dumps([f"#bar{f['best_i']}"]),
+        "{{SUB}}": f["sub"],
     }
     s = TEMPLATE.read_text()
     for k, v in rep.items():
@@ -193,11 +205,10 @@ def candidates() -> list[str]:
     ok = []
     for slug in sorted(d.get("months", {})):
         try:
-            facts(slug, d)
-            ok.append(slug)
+            ok.append((facts(slug, d)["rank"], slug))
         except Refuse:
             pass
-    return ok
+    return [s for _, s in sorted(ok)]          # next month + quiet first
 
 
 if __name__ == "__main__":
