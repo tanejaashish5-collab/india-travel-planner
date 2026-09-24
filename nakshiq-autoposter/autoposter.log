@@ -24518,3 +24518,14 @@ Date range: 2026-04-15 → 2026-09-22
 2026-09-23 21:42:47  INFO      
 Date range: 2026-04-15 → 2026-09-23
 2026-09-23 21:42:47  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 16:05:11  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-24 16:05:11  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-24 16:05:15  INFO          Requesting upload URL for calangute-baga__sos_rescue__hi.mp4 (26,766,357 bytes, video/mp4)
+2026-09-24 16:05:17  INFO          Uploading to R2 (timeout=300s)...
+2026-09-24 16:05:29  INFO          R2 PUT OK. Confirming...
+2026-09-24 16:05:32  INFO          Media ready: GZwAU (26,766,357 bytes · calangute-baga__sos_rescue__hi.mp4)
+2026-09-24 16:06:27  INFO          Requesting upload URL for calangute-baga__sos_rescue__en.mp4 (22,812,588 bytes, video/mp4)
+2026-09-24 16:06:29  INFO          Uploading to R2 (timeout=300s)...
+2026-09-24 16:06:40  INFO          R2 PUT OK. Confirming...
+2026-09-24 16:06:42  INFO          Media ready: oay1h (22,812,588 bytes · calangute-baga__sos_rescue__en.mp4)
+2026-09-24 16:06:59  WARNING       Platform error for post=9JNxc: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Unauthorized\",\"errors\":[{\"message\":\"Unauthorized\",\"domain\":\"youtube.header\",\"reason\":\"youtubeSignupRequired\",\"location\":\"Authorization\",\"locationType\":\"header\"}]}}"
