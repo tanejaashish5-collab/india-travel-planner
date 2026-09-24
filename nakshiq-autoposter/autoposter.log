@@ -24529,3 +24529,23 @@ Date range: 2026-04-15 → 2026-09-23
 2026-09-24 16:06:40  INFO          R2 PUT OK. Confirming...
 2026-09-24 16:06:42  INFO          Media ready: oay1h (22,812,588 bytes · calangute-baga__sos_rescue__en.mp4)
 2026-09-24 16:06:59  WARNING       Platform error for post=9JNxc: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Unauthorized\",\"errors\":[{\"message\":\"Unauthorized\",\"domain\":\"youtube.header\",\"reason\":\"youtubeSignupRequired\",\"location\":\"Authorization\",\"locationType\":\"header\"}]}}"
+2026-09-24 07:56:03  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 07:56:03  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-24
+2026-09-24 07:56:03  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 07:56:07  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-24 07:57:24  INFO      Short rendered: yt_short_dont_go_here_auli_hi_2026-09-24.mp4 (12419 KB, 19.1s, fmt=dont_go_here, music=dance-781)
+2026-09-24 07:57:24  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_auli_hi_2026-09-24.mp4 (12,717,174 bytes, video/mp4)
+2026-09-24 07:57:25  INFO          Uploading to R2 (timeout=300s)...
+2026-09-24 07:57:26  INFO          R2 PUT OK. Confirming...
+2026-09-24 07:57:28  INFO          Media ready: geFjD (12,717,174 bytes · yt_short_dont_go_here_yt_short_dont_go_here_auli_hi_2026-09-24.mp4)
+2026-09-24 07:57:28  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_auli_hi_2026-09-24.mp4
+2026-09-24 07:57:29  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-24 07:57:29  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
+2026-09-24 07:57:29  INFO      [instagram/nakshiq] instagram daily cap reached (1/1) — skipping publish.
+2026-09-24 07:57:29  WARNING   [instagram/nakshiq] YT Short post failed (API rejected).
+2026-09-24 07:57:29  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-09-24 07:57:29  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
+2026-09-24 07:57:29  INFO      [youtube/@naksh-iq] youtube daily cap reached (1/1) — skipping publish.
+2026-09-24 07:57:29  WARNING   [youtube/@naksh-iq] YT Short post failed (API rejected).
+2026-09-24 07:57:29  INFO      State saved. YT Short run complete.
+2026-09-24 07:57:29  INFO      ════════════════════════════════════════════════════════════
