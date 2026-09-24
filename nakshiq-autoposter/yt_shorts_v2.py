@@ -124,7 +124,11 @@ def kokoro_available() -> bool:
 # live/commercial use needs the ~$5/mo Starter plan (commercial license, no
 # forced "elevenlabs.io" title tag). Key/voice id live in .env.local (gitignored).
 ELEVEN_TTS_URL = "https://api.elevenlabs.io/v1/text-to-speech/{vid}/with-timestamps"
-ELEVEN_MODEL = "eleven_multilingual_v2"   # supports Hindi; turbo_v2_5 = half-credits, lower quality
+# Founder's working ElevenLabs settings (2026-09-24, "almost perfect Hindi VO"):
+# voice Cs.V10 Fast, model Eleven v3, stability at the middle (v3's "Natural",
+# 0.5), language override off, no audio effects, MP3 44.1 kHz 128 kbps.
+ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL", "eleven_v3")
+ELEVEN_STABILITY = float(os.environ.get("ELEVEN_STABILITY", "0.5"))
 
 
 def _load_env_local():
@@ -1644,6 +1648,33 @@ def _synth_kokoro(lines: list, out_mp3: Path, kvoice: str, speed: float = 1.05) 
         return bounds
 
 
+def _synth_eleven_lines(lines: list, voice_id: str, api_key: str, out_mp3: Path,
+                        tdp: Path, gap: float = 0.75) -> list:
+    """ElevenLabs one line at a time, joined with a real pause: exact per-beat
+    timing and air between beats, same contract as _synth_lines. [] if any
+    line fails, so the caller falls back whole rather than mixing voices."""
+    parts, bounds, t = [], [], 0.0
+    for i, ln in enumerate(lines):
+        mp3 = tdp / f"el_{i}.mp3"
+        if not _synth_eleven(ln, [ln], voice_id, api_key, mp3):
+            return []
+        d = _audio_dur(mp3)
+        bounds.append((round(t, 3), round(d, 3), ln))
+        parts.append(mp3)
+        t += d + gap
+    ff = _ff()
+    ins, fc = [], []
+    for i, mp3 in enumerate(parts):
+        ins += ["-i", str(mp3)]
+        pad = f",apad=pad_dur={gap}" if i < len(parts) - 1 else ""
+        fc.append(f"[{i}:a]aresample=44100,aformat=channel_layouts=stereo{pad}[a{i}]")
+    fc.append("".join(f"[a{i}]" for i in range(len(parts))) + f"concat=n={len(parts)}:v=0:a=1[out]")
+    r = subprocess.run([ff, "-y", *ins, "-filter_complex", ";".join(fc), "-map", "[out]",
+                        "-c:a", "libmp3lame", "-b:a", "192k", str(out_mp3)],
+                       capture_output=True, text=True)
+    return bounds if r.returncode == 0 and out_mp3.exists() else []
+
+
 def _synth_eleven(text: str, lines: list, voice_id: str, api_key: str,
                   out_mp3: Path) -> list:
     """ElevenLabs TTS with char-level timestamps. Writes mp3 and returns
@@ -1656,7 +1687,8 @@ def _synth_eleven(text: str, lines: list, voice_id: str, api_key: str,
         r = requests.post(
             url, params={"output_format": "mp3_44100_128"},
             headers={"xi-api-key": api_key, "Content-Type": "application/json"},
-            json={"text": text, "model_id": ELEVEN_MODEL}, timeout=90)
+            json={"text": text, "model_id": ELEVEN_MODEL,
+                  "voice_settings": {"stability": ELEVEN_STABILITY}}, timeout=90)
     except Exception as e:
         print(f"ElevenLabs request error: {e}")
         return []
@@ -2398,12 +2430,21 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         script_text = " ".join(lines)
         voice_mp3 = tdp / "voice.mp3"
         # ElevenLabs only if a key + voice id are configured (off by default).
-        eleven_id = eleven_override or spec.get("eleven_voice_id") or os.environ.get("ELEVEN_VOICE_ID")
+        # Per-language voice first (ELEVEN_VOICE_ID_HI / _EN): the English script
+        # is a woman speaking in the first person; the Hindi voice may not fit it.
+        eleven_id = (eleven_override or spec.get("eleven_voice_id")
+                     or os.environ.get(f"ELEVEN_VOICE_ID_{(spec.get('lang') or lang or 'en').upper()}")
+                     or os.environ.get("ELEVEN_VOICE_ID"))
         eleven_key = os.environ.get("ELEVENLABS_API_KEY", "")
         bounds = []
         if eleven_id and eleven_key and not voice_override:
-            print(f"Voice: ElevenLabs {eleven_id}")
-            bounds = _synth_eleven(script_text, lines, eleven_id, eleven_key, voice_mp3)
+            print(f"Voice: ElevenLabs {eleven_id} model={ELEVEN_MODEL}"
+                  + (" (per beat, with pauses)" if storyboard else ""))
+            bounds = (_synth_eleven_lines(lines, eleven_id, eleven_key, voice_mp3, tdp)
+                      if storyboard else
+                      _synth_eleven(script_text, lines, eleven_id, eleven_key, voice_mp3))
+            if not bounds:
+                print("ElevenLabs failed — falling back to edge-tts for this reel")
         elif prof.get("engine") == "kokoro" and not voice_override:
             # Local Kokoro. [] means the venv/model is missing or the render
             # failed; either way we fall through to edge-tts below rather than
