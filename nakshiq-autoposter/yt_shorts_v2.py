@@ -2448,10 +2448,17 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         if eleven_id and eleven_key and not voice_override:
             print(f"Voice: ElevenLabs {eleven_id} model={ELEVEN_MODEL}"
                   + (" (per beat, with pauses)" if storyboard else ""))
-            bounds = (_synth_eleven_lines(lines, eleven_id, eleven_key, voice_mp3, tdp,
-                                          gaps=spec.get("gaps"))
-                      if storyboard else
-                      _synth_eleven(script_text, lines, eleven_id, eleven_key, voice_mp3))
+            # ONE PASS (founder, 2026-09-24, option B: "shorter, crisper, sounds
+            # better"): the whole script in a single call, beats separated by a
+            # blank line so v3 paces it itself; per-beat timing comes back from
+            # the character timestamps. Per-line synthesis stays available for
+            # a script that sets explicit gaps.
+            if storyboard and spec.get("gaps"):
+                bounds = _synth_eleven_lines(lines, eleven_id, eleven_key, voice_mp3, tdp,
+                                             gaps=spec.get("gaps"))
+            else:
+                bounds = _synth_eleven("\n\n".join(lines) if storyboard else script_text,
+                                       lines, eleven_id, eleven_key, voice_mp3)
             if not bounds:
                 print("ElevenLabs failed — falling back to edge-tts for this reel")
         elif prof.get("engine") == "kokoro" and not voice_override:
