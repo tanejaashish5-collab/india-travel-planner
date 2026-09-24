@@ -37,22 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "PdMu0": "2026-09-23",
     "PdMu0_evening": "2026-09-23",
-    "PdMu0_carousel": "2026-09-23"
+    "PdMu0_carousel": "2026-09-24"
   },
   "last_sync": "2026-09-23T18:31:01.626917+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "morgaon",
-      "date": "2026-09-09"
-    },
-    {
-      "destination_id": "shimla",
-      "date": "2026-09-09"
-    },
-    {
-      "destination_id": "pali-raigad",
-      "date": "2026-09-09"
-    },
     {
       "destination_id": "tirupati",
       "date": "2026-09-10"
@@ -144,6 +132,10 @@
     {
       "destination_id": "yusmarg",
       "date": "2026-09-23"
+    },
+    {
+      "destination_id": "darjeeling",
+      "date": "2026-09-24"
     }
   ],
   "posted_formats": {
@@ -10015,6 +10007,24 @@
       "destination": "calangute-baga",
       "format": "scenario_sos_rescue",
       "media_id": "oay1h"
+    },
+    {
+      "timestamp": "2026-09-24T08:49:51.361766+00:00",
+      "date": "2026-09-24",
+      "platform": "youtube",
+      "post_id": "1Z8Az",
+      "destination": "calangute-baga",
+      "format": "scenario_sos_rescue",
+      "media_id": "CA6Ix"
+    },
+    {
+      "timestamp": "2026-09-24T12:54:09.286571+00:00",
+      "date": "2026-09-24",
+      "platform": "facebook",
+      "post_id": "ykTx1",
+      "destination": "darjeeling",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-09-24"
     }
   ],
   "theme_usage": {
@@ -10939,7 +10949,8 @@
       "after-dark-experiences",
       "arupadai-veedu",
       "astavinayak-yatra",
-      "last-villages-of-india"
+      "last-villages-of-india",
+      "weekend-from-kolkata"
     ],
     "food": [
       "Keshloor Dhaba|jagdalpur",
