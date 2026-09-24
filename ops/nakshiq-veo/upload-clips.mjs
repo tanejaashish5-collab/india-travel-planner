@@ -59,6 +59,16 @@ const q = existsSync(QUEUE) ? JSON.parse(readFileSync(QUEUE, "utf-8")) : [];
 let up = 0, skip = 0; const bad = [];
 
 for (const f of files) {
+  // A row still "pending" was never taken in this cycle (intake sets
+  // "collected" first), so a file under its name is OLD footage left over from
+  // an earlier storyboard with the same clip name. Marking it live would pass
+  // stale footage off as the new prompt: on 2026-09-24 the old champawat noodle
+  // clips satisfied four freshly re-queued bal mithai rows this way.
+  const pend = q.find((r) => r.clip === f && r.status === "pending");
+  if (pend) {
+    console.log(`[upload] ${f} is on disk but its row is still pending — stale file, ignored`);
+    continue;
+  }
   const body = readFileSync(join(OUT, f));
   const h = await head(f);
   // Already on R2 at the same byte size. Mark the row live ANYWAY: the object
