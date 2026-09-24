@@ -24597,3 +24597,33 @@ Date range: 2026-04-15 → 2026-09-23
 2026-09-24 12:54:09  INFO      [facebook/Nakshiq] ✅ carousel published (collection) · post_id=ykTx1
 2026-09-24 12:54:09  INFO      Carousel run complete (fmt=collection, posted=True).
 2026-09-24 12:54:09  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 17:51:16  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-09-24 17:51:17  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 17:51:17  INFO      Nakshiq Autoposter · EVENING · 2026-09-24 · weekday=3
+2026-09-24 17:51:17  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 17:51:17  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-24 17:51:55  INFO      Synced → 20 destinations · 100 traps · 2 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-24 17:51:55  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-24 17:51:58  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-24 17:51:58  INFO      Active accounts: ['facebook/Nakshiq']
+2026-09-24 17:51:58  INFO      Festivals filtered (past/post-window): Ladakh Festival, Ganesh Chaturthi at Trinetra Ganesh Temple, Nubra Valley Festival, Nako Lake Festival, Champawat Nanda Devi Fair, Mata Murti Ka Mela, Urs of Sheikh Salim Chishti, Nanda Devi Mela (+22 more)
+2026-09-24 17:51:58  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-24 17:52:19  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-24 17:52:19  INFO      Evening format (balance→anti_trap): v2_local_knows [0% vs target 15%] (2/15 never featured)
+2026-09-24 17:52:19  INFO      Formats — IG: v2_local_knows  ·  FB: v2_local_knows  ·  Story: collection_spotlight
+2026-09-24 17:52:19  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 50
+2026-09-24 17:52:19  INFO      Fingerprint dedup snapshot — 50 dests in 7d · 93 (dest,fmt) pairs in 30d · 215 media in 60d
+2026-09-24 17:52:19  INFO      Collection locked: Borders Worth Visiting (79/100 never featured)
+2026-09-24 17:52:24  INFO      Shared best destination locked: Tirupati
+2026-09-24 17:52:24  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-09-24 17:52:24  INFO      [facebook/Nakshiq] Generating v2_local_knows post...
+2026-09-24 17:52:24  INFO      [facebook/Nakshiq] Caption ready (561 chars, dest=chopta)
+2026-09-24 17:52:26  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-09-24 17:52:26  INFO          Requesting upload URL for v2_local_knows-chopta.png (1,684,962 bytes, image/png)
+2026-09-24 17:52:28  INFO          Uploading to R2 (timeout=120s)...
+2026-09-24 17:52:29  INFO          R2 PUT OK. Confirming...
+2026-09-24 17:52:32  INFO          Media ready: 7qLbU (1,684,962 bytes · v2_local_knows-chopta.png)
+2026-09-24 17:52:32  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-09-24 17:52:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ByLTJ · Platform=1040562729145369_122123192396700092
+2026-09-24 17:52:52  INFO      State saved. Run complete.
+2026-09-24 17:52:52  INFO      ════════════════════════════════════════════════════════════

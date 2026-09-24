@@ -35,11 +35,11 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "PdMu0": "2026-09-23",
-    "PdMu0_evening": "2026-09-23",
+    "PdMu0": "2026-09-24",
+    "PdMu0_evening": "2026-09-24",
     "PdMu0_carousel": "2026-09-24"
   },
-  "last_sync": "2026-09-23T18:31:01.626917+00:00",
+  "last_sync": "2026-09-24T17:51:55.896095+00:00",
   "posted_destinations": [
     {
       "destination_id": "tirupati",
@@ -136,6 +136,10 @@
     {
       "destination_id": "darjeeling",
       "date": "2026-09-24"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-09-24"
     }
   ],
   "posted_formats": {
@@ -169,7 +173,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "score_card",
       "score_card",
@@ -183,7 +186,8 @@
       "score_card",
       "festival_alert",
       "score_card",
-      "score_card"
+      "score_card",
+      "v2_local_knows"
     ]
   },
   "post_log": [
@@ -10025,6 +10029,17 @@
       "destination": "darjeeling",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-09-24"
+    },
+    {
+      "timestamp": "2026-09-24T17:52:52.144233+00:00",
+      "date": "2026-09-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ByLTJ",
+      "destination": "chopta",
+      "format": "v2_local_knows",
+      "has_media": true,
+      "media_id": "v2_local_knows-chopta.png"
     }
   ],
   "theme_usage": {
@@ -10040,7 +10055,8 @@
         "2026-05-23",
         "2026-05-26",
         "2026-06-02",
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-24"
       ],
       "achabal": [
         "2026-05-19",
@@ -10489,6 +10505,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v2_local_knows": [
+        "2026-09-24"
       ]
     },
     "reels": {
@@ -10662,7 +10681,8 @@
         "2026-09-04"
       ],
       "chopta": [
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-24"
       ],
       "kishtwar": [
         "2026-09-07"
@@ -10791,6 +10811,9 @@
       ],
       "kakatiya-heritage-circuit": [
         "2026-09-22"
+      ],
+      "borders-worth-visiting": [
+        "2026-09-24"
       ]
     },
     "festivals": {
@@ -10878,7 +10901,8 @@
       "tirupati": [
         "2026-09-03"
       ]
-    }
+    },
+    "collection_carousel_dests:borders-worth-visiting": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10892,8 +10916,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "jog-falls",
-    "collection": "kakatiya-heritage-circuit"
+    "shared_best": "tirupati",
+    "collection": "borders-worth-visiting"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-09-22",
