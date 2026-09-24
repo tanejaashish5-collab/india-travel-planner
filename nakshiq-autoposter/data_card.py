@@ -129,16 +129,23 @@ def _html(f: dict, follow: str, music_name: str) -> str:
     # SKIP tag sits over the middle skip month, above its bar (bar area: 640px
     # tall, top at 330px inside the panel; columns 12 across 864px, 14px gaps).
     col = (864 - 11 * 14) / 12
-    mid = f["skips"][len(f["skips"]) // 2]
-    center = 48 + mid * (col + 14) + col / 2
-    tallest = max(f["scores"][i] for i in f["skips"])
-    tag_top = int(330 + 640 * (1 - tallest / 10) - 110)
+    runs, cur = [], []                     # one SKIP tag per run of skip months
+    for i in f["skips"]:
+        if cur and i != cur[-1] + 1:
+            runs.append(cur); cur = []
+        cur.append(i)
+    runs.append(cur)
+    tags = []
+    for run in runs:
+        center = 48 + (run[0] + run[-1]) / 2 * (col + 14) + col / 2
+        top = int(330 + 640 * (1 - max(f["scores"][i] for i in run) / 10) - 110)
+        tags.append(f'<div class="tag" style="left:{int(center - 50)}px;top:{top}px">SKIP</div>')
     dim = [f"#bar{i}" for i in range(12) if i not in f["skips"]]
     rep = {
         "{{CHART_TITLE}}": f["name"] + (", by month" if n > 12 else ", month by month"),
         "{{NAME}}": f["name"], "{{SNAPSHOT}}": f["snapshot"], "{{MUSIC}}": music_name,
         "{{NAME_PX}}": str(name_px), "{{LINE_TOP}}": str(int(300 + name_px * 0.9 + 43)),
-        "{{HOOK}}": f["hook"], "{{TAG_LEFT}}": str(int(center - 50)), "{{TAG_TOP}}": str(tag_top),
+        "{{HOOK}}": f["hook"], "{{TAGS}}": "".join(tags),
         "{{BEST}}": f["best"],
         "{{FACTS}}": "\n".join(f"          <div>{x}</div>" for x in f["facts"]),
         "{{PEAK}}": f["peak"], "{{LOW}}": f["low"], "{{NOTE}}": f["note"], "{{FOLLOW}}": follow,

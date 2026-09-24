@@ -85,7 +85,7 @@
         <div class="panel" id="s2-panel">
           <div class="title">{{CHART_TITLE}}</div>
           <div class="sub">NakshIQ score out of 10, for every month.</div>
-          <div class="tag" id="s2-tag" style="left:{{TAG_LEFT}}px;top:{{TAG_TOP}}px">SKIP</div>
+          {{TAGS}}
           <div class="bars" id="s2-bars"></div>
           <div class="months"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
         </div>
@@ -135,7 +135,7 @@
       });
       tl.to({{DIM}}, { opacity: 0.35, duration: 0.4 }, 5.4);
       tl.fromTo({{SKIPS}}, { scaleX: 1 }, { scaleX: 1.12, duration: 0.25, yoyo: true, repeat: 1 }, 5.5);
-      tl.fromTo("#s2-tag", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 5.5);
+      tl.fromTo("#s2 .tag", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 5.5);
       tl.to("#s2-panel", { opacity: 0, y: -40, duration: 0.3, ease: "power2.in" }, 8.2);
       // 3 sweet spot
       tl.fromTo("#s3-card", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 8.5);
