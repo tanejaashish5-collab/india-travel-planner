@@ -1,0 +1,5 @@
+Paused 2026-09-24 (founder: no more substandard reels; rebuild generation first).
+While this file exists run-veo.sh still INGESTS whatever lands in the inbox, but
+does not cut reels, top up the queue, or export a task file. Cowork runs the
+PROBE task (cowork-task.SKILL.md) instead of the daily generation.
+Remove only when the rebuilt pipeline is approved.

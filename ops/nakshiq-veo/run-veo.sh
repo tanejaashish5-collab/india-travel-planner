@@ -24,6 +24,13 @@ say "=== veo-daily start ==="
 #    clip under its exact beat name, so matching is by filename, never order.
 bash intake.sh --named || say "WARN intake failed"
 
+# PAUSE (2026-09-24): ingest above still runs; nothing below does.
+if [ -f "$HERE/PAUSED" ]; then
+  say "PAUSED ($HERE/PAUSED) — ingested only; no cut, no queue top-up, no task export"
+  say "=== veo-daily end (exit=0) ==="
+  exit 0
+fi
+
 # 0a. CUT THE REELS (added 2026-09-23, founder: "make it fully automated").
 #     Every storyboard whose clips are all in AND were generated from today's
 #     prompts is cut in one language: Hindi for Instagram, English for YouTube,

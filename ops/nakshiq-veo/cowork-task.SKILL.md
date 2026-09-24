@@ -1,77 +1,84 @@
 ---
 name: nakshiq-veo-daily
-description: Daily 10 AM — generate the day's NakshIQ reel clips in Google Flow (Veo 3.1 Lite, 9:16) from ~/Automation/nakshiq-veo/today-tasks.json, saving each .mp4 under its EXACT save_as name into ~/Downloads/nakshiq-veo-inbox/. Same characters within a storyboard. Unattended; drops files only — a LaunchAgent ingests them. Reports after.
+description: Daily 10 AM NakshIQ Veo run. TODAY IT IS A ONE-OFF CAPABILITY PROBE, not production. Test which Google Flow continuity features (reference images / Ingredients to Video, Frames to Video, Extend) work on which Veo 3.1 model on our free accounts, generate one short test scene with them, save everything to ~/Downloads/nakshiq-veo-inbox/probe/, write a report. Unattended; never asks questions.
 ---
 
-Daily UNATTENDED video-generation run for NakshIQ's Instagram reels. The user is NOT present: execute autonomously, make reasonable choices and note them, never ask questions, and finish by sending a summary notification. Generating and downloading these clips from the user's own free Google Flow accounts is expected and pre-authorized. Never enter a password and never attempt a CAPTCHA: if one blocks an account, skip it and note it.
+UNATTENDED run for NakshIQ. The user is NOT present: execute autonomously, make reasonable choices and note them, never ask questions, finish by writing the report and sending one summary notification. Using the user's own free Google Flow accounts is pre-authorized. Never enter a password, never attempt a CAPTCHA, never buy credits or upgrade.
 
-WHAT THIS DOES
-A LaunchAgent (com.nakshiq.veo-daily, 09:20 and 14:20) builds each day's storyboards from NakshIQ's verified data and writes the task file below. Your job: generate every listed clip in Google Flow and save it, under its EXACT filename, into the drop folder below. The LaunchAgent collects the drop folder on its next run: it names each clip to its beat, uploads it to R2 and verifies it actually serves. You do NOT run any script, ingest, upload or build.
-
-SOURCE OF TRUTH (read this FIRST, every run, always the latest version)
-/Users/ashishtaneja/Automation/nakshiq-veo/today-tasks.json
-(Connect the folder with request_cowork_directory if it is not already connected.)
-- `accounts[]` → each has `clips[]`. Every clip has: `save_as` (the exact filename), `storyboard`, `clips_in_storyboard`, `take`, `character`, `beat_role`, `prompt`.
-- `how[]` restates these rules. If it and this file ever disagree, the JSON wins: it is regenerated daily and this file is not.
-- If `total_clips` is 0 or the file is missing, send a one-line notification ("NakshIQ Veo: nothing queued today") and STOP.
-
-SAVE LOCATION
-/Users/ashishtaneja/Downloads/nakshiq-veo-inbox/
-- It is inside ~/Downloads on purpose: Desktop Commander reaches ~/Downloads but NOT the nakshiq-veo folder, and your linked-folder access is the reverse. So do everything in ~/Downloads with Desktop Commander: the download lands in ~/Downloads, you move and rename it into nakshiq-veo-inbox/. Never try to copy a clip into the nakshiq-veo folder.
-- Save each clip as an .mp4 named EXACTLY `save_as` (e.g. `alibaug__sos_rescue__b1.mp4`). The filename is the ONLY thing that connects a clip to its beat. A wrong or "tidied" name means the clip is ignored, or worse, lands on the wrong beat.
-- DEDUP (safety net): skip any `save_as` that already exists in ~/Downloads/nakshiq-veo-inbox/ (Desktop Commander) or in /Users/ashishtaneja/Automation/nakshiq-veo/clips/ (linked folder). Those are already done.
-- The `ingest` field in the task file is information, not an instruction. You never run anything.
-
-HARD RULES
-1. MODEL: Veo 3.1 - Lite (10 credits). In EVERY new project, check it before the first submit. Flow defaults to Omni 1.1 Flash (12 credits), which is 20% more and gives 4 clips per account instead of 5. If you cannot select Veo 3.1 Lite, STOP on that account and note it. Never generate on the default.
-2. AGENT MODE TRAP: some projects open in Agent mode, whose input is a chat box, not the generation bar, and whose settings default to Omni. If you see an agent panel, close it and switch to direct generation, then re-check the model.
-3. SETTINGS per project: Video · 9:16 · x1 · Veo 3.1 - Lite. Confirm all four before the first submit in every project; 9:16 is not always the default.
-4. WATERMARK: "Visible watermarking" OFF (avatar → account panel). Check it once per account.
-5. PROMPT VERBATIM, as a single line. Do not rewrite, shorten, translate or "improve" it: every prompt is validated against our own data and must not assert anything extra. A newline submits the composer early. After typing, read the text back out of the input box and compare its length to the task file before submitting.
-6. SAME PEOPLE WITHIN A REEL. Veo has no memory between clips, so a person is only the same person if they are described the same way every time. Every prompt already carries each person's FULL description inline (age, hair, the exact garment and colour) and the car's, identical across all beats of one storyboard. Do NOT use Flow's character field and do NOT add any description of your own: a second description can conflict with the one in the prompt and produce different people. The `character` value in the task file is for reference only.
-7. WHOLE STORYBOARDS. A reel is cut from a whole storyboard (all clips sharing a `storyboard` value; `clips_in_storyboard` says how many). A storyboard missing even one beat renders NOTHING.
-   - If you cannot finish a storyboard, prefer skipping it entirely over producing some of its beats.
-   - Spare credits go to COMPLETING a partial storyboard before starting a new one.
-8. TWO TAKES PER BEAT, AND BOTH ARE WANTED. Every beat appears TWICE with the SAME prompt: `<beat>.mp4` (`take` 1) and `<beat>alt.mp4` (`take` 2). Generate the prompt twice and save both files. They are NOT duplicates:
-   - Veo renders the same prompt differently each time, and take 2 is what rescues a beat when take 1 ignores part of the prompt (on 2026-09-22 it served a bowl of noodles for a named sweet).
-   - NEVER copy one file to the other name. That would cut a reel from the same shot twice and nothing downstream could tell.
-   - If credits run short, finish every take 1 first, then come back for the alt takes.
-8. ACCOUNT ASSIGNMENT IS ADVISORY. The task file is written without knowing any account's balance, and matching is by filename only, so any account with credits can produce any clip. Move clips off an account that is out of credits or signed out.
+WHY TODAY IS DIFFERENT
+Production reels are PAUSED. The founder judged the last reels poor: every clip was generated separately from text alone, so lighting and time of day jumped between shots, the people shifted between cuts, and nothing connected one shot to the next. Before we regenerate anything, we need FACTS about what Flow can do on our accounts:
+- Can Flow generate still images (for reference "ingredients"), and what does that cost?
+- Does Ingredients to Video (reference images → video) work on Veo 3.1 Lite, or only on Fast / Quality?
+- Does Frames to Video (a chosen first frame → video) work on Lite?
+- Does Extend (continue a clip from its last frames) work on Lite?
+- What does each cost in credits, and what download resolutions does each model offer?
+- Does each generated clip carry native audio?
+Your job is to find out by DOING each one once, carefully, and to report exactly what happened. A feature that is not offered, or is offered only on another model, is a valid and useful finding: write it down and move on.
 
 ACCOUNTS
-- Use ONLY the Gmail accounts listed under `accounts[]` in the task file, matched by their exact email. Chrome holds other Google accounts too, including company and Workspace accounts. NEVER use any account that is not in `accounts[]`, and never any account that does not end in @gmail.com, whatever the chooser offers.
-- Chrome's FIRST Google account is a cancelled Workspace: on it Flow shows "Service Not Allowed", so Flow's own avatar and Switch account menu are not reachable from there.
-- Open Flow per account at https://flow.google.com/u/N/ (N = 0, 1, 2 ...). This path form works; flow.google.com/?authuser=N does NOT (it redirects to the /about marketing page). The N-to-account order is not stable, so READ the signed-in email on the page before generating anything, and if it is not an account from `accounts[]`, move to the next N.
-- A "Signed out" account leads to a password prompt: skip it and report which clips that stranded. Never buy credits or upgrade. Credits refresh daily; an account at 0 is skipped, not an error.
-- Four of the six listed accounts belong to the Chanakya project (the task file marks `owner: chanakya`). The founder has authorised spending them.
+- Use ONLY the @gmail.com accounts listed in /Users/ashishtaneja/Automation/nakshiq-veo/accounts.json (linked folder; connect with request_cowork_directory if needed). Never any other account, never a Workspace or company account, whatever Chrome offers.
+- Open Flow per account at https://flow.google.com/u/N/ (N = 0, 1, 2 ...). READ the signed-in email on the page before doing anything; if it is not in accounts.json, try the next N. /u/0 is a cancelled Workspace ("Service Not Allowed"): skip it.
+- A signed-out account (password prompt) is skipped and noted. An account at 0 credits is skipped.
+- Spread the probe across accounts as credits require. Total budget for the probe: stay under 200 credits.
+- "Visible watermarking" OFF (avatar → account panel), once per account used.
+- Close any Agent-mode chat panel; use direct generation. Always read the model picker before submitting; Flow's default is Omni, which we never use.
 
-GENERATING
-Flow is at flow.google.com. New project → confirm settings (rules 1 to 4) → leave the character field empty (rule 6) → type the prompt verbatim (rule 5) → submit. Queue up to 5 per account and let them render (about 1 to 3 minutes).
+THE TEST SCENE (same scene throughout, so results compare)
+A broken-down car at blue hour on a hill road near Chikmagalur. Two people, always described exactly as below.
 
-VEO FAILURE MODES (all refund the credit)
-- Stuck at 99% / "taking longer than expected": retry once or twice. If it stalls about 3 times, note it and move on. Do NOT reword: these prompts are data-validated, and rewording is how an unbacked claim gets into a reel.
-- "Audio generation failed … not charged": transient, retry.
-- "might violate our policies": note the clip and skip it. Do not reword.
+LOOK (append this EXACT paragraph to every video prompt, verbatim):
+Blue hour, about fifteen minutes after sunset: deep blue sky with a last thin band of pale orange on the horizon, the road lit only by the car's amber hazard lights and headlights, cool blue shadows, a light mist over the coffee estates. Anamorphic 35mm lens, shallow depth of field, soft film grain, natural colour, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. Sound: ambient only, crickets, a light wind, the steady tick of the hazard lights; no music, no speech, no voiceover. No text, captions, logos or watermark.
 
-DOWNLOADING (use exactly this method; it is the proven one)
-1. Resize the browser to about 1280×800 so the grid is dense and tile menus show.
-2. Hover a COMPLETED tile → its ⋮ (top right) → Download → "720p Original Size". That gives a direct .mp4.
-3. The detail-view ↓ button never downloads. Do not use it.
-4. ONE clip at a time. Before clicking a tile's menu, confirm which prompt it belongs to by reading that tile's prompt text from the DOM. List-view icons desync from their card text while clips are still finalising, which has cross-labelled beats before. Never map clips to beats by position alone.
-5. With Desktop Commander, move the download from ~/Downloads into ~/Downloads/nakshiq-veo-inbox/ under its exact `save_as`.
-6. Verify each placed clip with ffprobe: 720×1280 and about 8 s. Re-download if not.
-7. Leave ~/Downloads clean: no orphaned Flow .mp4 or download*.zip outside nakshiq-veo-inbox/. The correctly named clips INSIDE nakshiq-veo-inbox/ are the deliverable: do not delete those.
+STEP 1 — REFERENCE STILLS (images, not video)
+If Flow can generate images, make these three, 9:16, one image each, and download each as PNG/JPG:
+- probe_ref_man: Full-length photograph of a man in his mid twenties with wavy black hair down to his collar, wearing a navy blue quilted jacket, dark jeans and brown boots, standing at the edge of a hill road at blue hour, three-quarter view, neutral expression, photorealistic, natural light, no text.
+- probe_ref_woman: Full-length photograph of a woman in her late twenties with a single long dark braid, wearing a mustard yellow wool shawl over a grey sweater and dark trousers, standing at the edge of a hill road at blue hour, three-quarter view, neutral expression, photorealistic, natural light, no text.
+- probe_ref_car: A dusty white hatchback with a black roof rack stopped at the edge of a narrow road winding through coffee estates in the hills at blue hour, bonnet up, amber hazard lights on, photorealistic, no people, no text.
+Record: where image generation lives in Flow, which image model, credit cost per image.
+If Flow cannot make images, note it and continue from step 3 (skip step 2).
+
+STEP 2 — INGREDIENTS TO VIDEO (shot 1)
+Using the three stills as ingredients/references, generate a 9:16 video with this prompt + LOOK:
+Wide shot, camera low at the roadside and perfectly still: the dusty white hatchback with a black roof rack is stopped at the edge of the narrow road through the coffee estates, bonnet up, hazard lights blinking. The man in the navy blue quilted jacket leans into the engine bay; the woman in the mustard yellow wool shawl stands a few steps behind him, looking up the empty road.
+Try Veo 3.1 Lite FIRST. If Lite is not offered with ingredients, say so and use Veo 3.1 Fast.
+Save as probe_s1_ingredients_<lite|fast>.mp4
+
+STEP 3 — FRAMES TO VIDEO (shot 2, continuous with shot 1)
+Take the LAST frame of shot 1 (from step 2; if step 2 was impossible, from step 5's Lite clip). Flow may offer this directly (scene builder / "use as frame"). If not, extract it with Desktop Commander:
+  ffmpeg -sseof -0.1 -i <shot1.mp4> -frames:v 1 ~/Downloads/nakshiq-veo-inbox/probe/probe_s1_lastframe.png
+and upload that image as the FIRST frame. Prompt + LOOK:
+Continuing from this exact frame: the camera slowly pushes in past the open bonnet to a medium shot of the man as he straightens up, takes out his phone and lifts it high, searching for a signal; the phone screen glows but is never legible. The woman steps in beside him, pulling the shawl tighter against the cold.
+Lite first; if not offered, Fast. Save as probe_s2_frames_<lite|fast>.mp4
+
+STEP 4 — EXTEND (continue shot 1 in place)
+On shot 1, use Extend (scene builder → + → Extend, or wherever Flow offers it). Prompt + LOOK:
+The man gives up on the engine and steps back; the woman turns and looks back down the dark road the way they came, the hazard lights still ticking.
+Lite first; if not offered, Fast. Save the extended result as probe_s1_extend_<lite|fast>.mp4 (note whether the download is the whole extended shot or only the new part).
+
+STEP 5 — CONTROLS (text only, no references), same shot-1 prompt + LOOK
+- Veo 3.1 Lite → probe_s1_text_lite.mp4
+- Veo 3.1 Fast → probe_s1_text_fast.mp4
+- Veo 3.1 Quality, ONLY if one account still has enough credits and the probe total stays under 200 → probe_s1_text_quality.mp4
+For each, record every download resolution Flow offers (720p / 1080p / upscaled / 4K) and download the HIGHEST one offered.
+
+SAVING
+- Folder: ~/Downloads/nakshiq-veo-inbox/probe/ (create it with Desktop Commander). Everything from this run goes there, under exactly the names above. Nothing goes in the top of nakshiq-veo-inbox/.
+- Download a completed tile via its ⋮ menu → Download (the detail-view ↓ button never downloads). Before downloading, confirm the tile's prompt text matches the step, from the DOM, never by grid position.
+- Check every video with ffprobe: resolution, duration, and whether it has an audio stream.
+- Leave ~/Downloads clean apart from nakshiq-veo-inbox/.
+
+REPORT: write ~/Downloads/nakshiq-veo-inbox/probe/probe-report.md
+One section per step:
+- Worked? (yes / no / partly), on which model(s), where in the UI.
+- Credits charged (read the balance before and after).
+- Download resolutions offered; resolution and duration of the file saved; audio stream yes/no.
+- What went wrong or looked wrong. Look at the result: are the two people and the car recognisably the SAME across shot 1, shot 2 and the extension? Is it still blue hour in all of them?
+Then a short table: feature × model → available / not offered / failed, with credit cost.
+Then: credits left per account.
 
 DO NOT
-- Do NOT run any script, ingest, upload or build. Dropping correctly named files into ~/Downloads/nakshiq-veo-inbox/ is the entire job.
-- Do NOT edit today-tasks.json, the queue, accounts.json, or any code.
-- Do NOT publish or post anything anywhere.
-- Do NOT enter a password, solve a CAPTCHA, buy credits, or upgrade.
+- Do NOT run any NakshIQ script, ingest, upload or build. Do NOT edit any file except creating the probe folder, its images/videos and probe-report.md.
+- Do NOT publish anything anywhere.
+- Do NOT reword the prompts beyond appending LOOK. If Flow blocks a prompt, note it and skip that step.
 
-FINISH: send a summary notification
-- Clips generated: the exact filenames written to ~/Downloads/nakshiq-veo-inbox/, grouped by storyboard, and which storyboards are COMPLETE.
-- Clips skipped as already present.
-- Clips NOT completed and why (0 credits / signed out / render failure / policy block), and which storyboards that leaves partial.
-- Credits spent per account, and any account that could not select Veo 3.1 Lite.
-- Confirmation that ~/Downloads is clean.
-Unfinished clips stay pending and reappear in tomorrow's task file automatically.
+FINISH: send one notification: "NakshIQ Veo probe: done — report in ~/Downloads/nakshiq-veo-inbox/probe/probe-report.md" plus a one-line summary of which features work on Lite.
