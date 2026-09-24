@@ -5942,7 +5942,7 @@ def outstand_post_req(path: str, payload: dict, timeout: int = 30) -> dict:
 # Chanakya YouTube channel. Only the ids below may EVER receive a NakshIQ post.
 # Connecting a new NakshIQ account? Add its id here DELIBERATELY — fail-closed.
 NAKSHIQ_ACCOUNT_IDS = {
-    "GAh5p",  # youtube   @naksh-iq
+    "JMl93",  # youtube   @naksh-iq (UCtdHDxeU0URYJNXQ_uznz_g) via Brand Account "NakshIQ TEMP", reconnected 2026-09-24; was GAh5p until the 09-21 move broke it
     "m8EAd",  # instagram nakshiq
     "PdMu0",  # facebook  Nakshiq
 }
