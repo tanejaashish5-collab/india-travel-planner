@@ -1649,10 +1649,14 @@ def _synth_kokoro(lines: list, out_mp3: Path, kvoice: str, speed: float = 1.05) 
 
 
 def _synth_eleven_lines(lines: list, voice_id: str, api_key: str, out_mp3: Path,
-                        tdp: Path, gap: float = 0.75) -> list:
+                        tdp: Path, gap: float = 0.75, gaps: list | None = None) -> list:
     """ElevenLabs one line at a time, joined with a real pause: exact per-beat
     timing and air between beats, same contract as _synth_lines. [] if any
     line fails, so the caller falls back whole rather than mixing voices."""
+    # Rhythm (founder, 2026-09-24: "no rhythm, they just rush through"): a
+    # script may set the silence after each line; the default is the old 0.75.
+    def _gap(i):
+        return float(gaps[i]) if gaps and i < len(gaps) else gap
     parts, bounds, t = [], [], 0.0
     for i, ln in enumerate(lines):
         mp3 = tdp / f"el_{i}.mp3"
@@ -1661,12 +1665,12 @@ def _synth_eleven_lines(lines: list, voice_id: str, api_key: str, out_mp3: Path,
         d = _audio_dur(mp3)
         bounds.append((round(t, 3), round(d, 3), ln))
         parts.append(mp3)
-        t += d + gap
+        t += d + _gap(i)
     ff = _ff()
     ins, fc = [], []
     for i, mp3 in enumerate(parts):
         ins += ["-i", str(mp3)]
-        pad = f",apad=pad_dur={gap}" if i < len(parts) - 1 else ""
+        pad = f",apad=pad_dur={_gap(i)}" if i < len(parts) - 1 else ""
         fc.append(f"[{i}:a]aresample=44100,aformat=channel_layouts=stereo{pad}[a{i}]")
     fc.append("".join(f"[a{i}]" for i in range(len(parts))) + f"concat=n={len(parts)}:v=0:a=1[out]")
     r = subprocess.run([ff, "-y", *ins, "-filter_complex", ";".join(fc), "-map", "[out]",
@@ -2432,15 +2436,20 @@ def build(slug: str, dest: dict, out_path: Path, music: Optional[Path] = None,
         # ElevenLabs only if a key + voice id are configured (off by default).
         # Per-language voice first (ELEVEN_VOICE_ID_HI / _EN): the English script
         # is a woman speaking in the first person; the Hindi voice may not fit it.
+        # Founder, 2026-09-24: Cs.V10 (ELEVEN_VOICE_ID_HI) voices BOTH languages
+        # for the Indian audience; Mythic Wealth (ELEVEN_VOICE_ID_EN, American)
+        # is kept for content aimed at foreign travellers (spec audience=foreign).
         eleven_id = (eleven_override or spec.get("eleven_voice_id")
-                     or os.environ.get(f"ELEVEN_VOICE_ID_{(spec.get('lang') or lang or 'en').upper()}")
+                     or (os.environ.get("ELEVEN_VOICE_ID_EN") if spec.get("audience") == "foreign" else None)
+                     or os.environ.get("ELEVEN_VOICE_ID_HI")
                      or os.environ.get("ELEVEN_VOICE_ID"))
         eleven_key = os.environ.get("ELEVENLABS_API_KEY", "")
         bounds = []
         if eleven_id and eleven_key and not voice_override:
             print(f"Voice: ElevenLabs {eleven_id} model={ELEVEN_MODEL}"
                   + (" (per beat, with pauses)" if storyboard else ""))
-            bounds = (_synth_eleven_lines(lines, eleven_id, eleven_key, voice_mp3, tdp)
+            bounds = (_synth_eleven_lines(lines, eleven_id, eleven_key, voice_mp3, tdp,
+                                          gaps=spec.get("gaps"))
                       if storyboard else
                       _synth_eleven(script_text, lines, eleven_id, eleven_key, voice_mp3))
             if not bounds:
