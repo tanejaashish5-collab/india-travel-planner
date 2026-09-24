@@ -251,9 +251,10 @@ def publish(dry: bool = False) -> int:
     today = datetime.now(timezone.utc).date().isoformat()
     published = 0
     accounts = {a.get("network"): a for a in ap.get_connected_accounts()}
+    _settle_unconfirmed(ap, led)
     for lang, surf in SURFACE.items():
         plat = surf["platform"]
-        if any(v.get("platform") == plat and v.get("status") == "published"
+        if any(v.get("platform") == plat and v.get("status") in ("published", "unconfirmed")
                and (v.get("published_at") or "").startswith(today) for v in led.values()):
             _log(f"{plat}: already published a scenario reel today")
             continue
@@ -282,9 +283,18 @@ def publish(dry: bool = False) -> int:
             _log(f"{plat}: publish refused (cap reached or Outstand error) — stays ready")
             continue
         post_id = (res.get("post") or {}).get("id") or res.get("id")
-        confirmed = ap.wait_for_publish(post_id, timeout=90) if post_id else None
-        status = "published" if confirmed else "queued_unconfirmed"
+        # A YouTube upload takes minutes, and a REJECTED post used to be logged
+        # the same as a slow one: 22-24 Sep every YouTube post died on a 401
+        # after the Brand Account move while the ledger said "published".
+        w = (ap.wait_for_publish(post_id, timeout=240, detail=True) if post_id
+             else {"status": "rejected", "error": "no post id"})
         now = datetime.now(timezone.utc).isoformat()
+        if w["status"] == "rejected":
+            row.update(failed_post_id=post_id, last_error=str(w["error"])[:300], failed_at=now)
+            _save_ledger(led)
+            _alert(f"{plat} REJECTED {row['slug']}: {str(w['error'])[:160]}")
+            continue                           # stays ready; not logged as a post
+        status = "published" if w["status"] == "published" else "queued_unconfirmed"
         ap.append_post_log_entry({
             "timestamp": now, "date": today, "platform": plat, "post_id": post_id,
             "destination": row["slug"], "format": f"scenario_{row['format']}",
@@ -296,11 +306,38 @@ def publish(dry: bool = False) -> int:
                              cta_url=f"https://www.nakshiq.com/en/destination/{row['slug']}",
                              utm_content=f"scenario_{row['format']}", status=status,
                              audio_type="tts", language=row["lang"])
-        row.update(status="published", post_id=post_id, published_at=now, confirm=status)
+        row.update(status="published" if status == "published" else "unconfirmed",
+                   post_id=post_id, published_at=now, confirm=status)
         _save_ledger(led)
         published += 1
         _log(f"{plat}: {status} {Path(row['file']).name} (post {post_id})")
     return 0
+
+
+def _alert(msg: str) -> None:
+    """Loud, local, exception-only: a macOS notification plus the log line."""
+    _log("ALERT " + msg)
+    try:
+        subprocess.run(["osascript", "-e", f'display notification {json.dumps(msg[:200])} '
+                        f'with title "NakshIQ reel failed"'], timeout=10)
+    except Exception:
+        pass
+
+
+def _settle_unconfirmed(ap, led: dict) -> None:
+    """Resolve yesterday's slow posts before today's: confirmed -> published,
+    rejected -> ready again (with an alert), still pending -> left alone."""
+    for row in led.values():
+        if row.get("status") != "unconfirmed" or not row.get("post_id"):
+            continue
+        w = ap.wait_for_publish(row["post_id"], timeout=10, detail=True)
+        if w["status"] == "published":
+            row["status"] = "published"
+        elif w["status"] == "rejected":
+            row.update(status="ready", failed_post_id=row.pop("post_id"),
+                       last_error=str(w["error"])[:300], published_at=None)
+            _alert(f"{row.get('platform')} REJECTED {row.get('slug')}: {str(w['error'])[:160]}")
+    _save_ledger(led)
 
 
 def status() -> int:
