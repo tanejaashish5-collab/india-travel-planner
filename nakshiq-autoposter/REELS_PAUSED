@@ -1,0 +1,10 @@
+Paused 2026-09-24 by the founder: "wait on all reels for now ... we need to generate
+properly before we put another substandard reel on ... they need to be really
+cinematic and perfect with perfect voiceover."
+
+While this file exists, autoposter.publish_reel() refuses EVERY reel / Short on
+every platform (GitHub yt-short slot, scenario_daily, data-card fallback,
+voice_reel, road_reel). Carousels, stories and feed posts are unaffected.
+
+Delete this file (and commit) only when the founder has watched a rebuilt reel
+and approved it.

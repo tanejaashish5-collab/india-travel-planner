@@ -6899,6 +6899,11 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     """Post an Instagram/Facebook Reel or YouTube Short (vertical video)."""
     username = account.get("username", account["id"])
     platform = account["network"]
+    # Founder pause, 2026-09-24: every reel path funnels through here, so one
+    # committed file stops all of them (GitHub slot included) until it is removed.
+    if (Path(__file__).resolve().parent / "REELS_PAUSED").exists():
+        log.info(f"[{platform}/{username}] REELS PAUSED (nakshiq-autoposter/REELS_PAUSED) — not publishing")
+        return None
 
     if _ig_cap_blocks(platform, f"{platform}/{account.get('username', account['id'])}", dry_run):
         return None

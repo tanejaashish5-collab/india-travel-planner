@@ -289,6 +289,9 @@ def publish(dry: bool = False) -> int:
 
     The caller (run-social-local.sh) pulls the shared ledger before this and
     pushes it after, so the GitHub slot and the caps see this post."""
+    if (HERE / "REELS_PAUSED").exists() and not dry:
+        _log("REELS PAUSED by founder (REELS_PAUSED) — nothing published, nothing rendered")
+        return 0
     if os.environ.get("NAKSHIQ_SCENARIO_PUBLISH", "0") != "1" and not dry:
         _log("PUBLISH DISABLED (NAKSHIQ_SCENARIO_PUBLISH!=1) — reels stay 'ready'")
         return 0
