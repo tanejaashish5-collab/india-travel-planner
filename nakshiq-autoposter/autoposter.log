@@ -24627,3 +24627,27 @@ Date range: 2026-04-15 → 2026-09-23
 2026-09-24 17:52:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ByLTJ · Platform=1040562729145369_122123192396700092
 2026-09-24 17:52:52  INFO      State saved. Run complete.
 2026-09-24 17:52:52  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 18:32:27  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-09-24 18:32:27  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 18:32:27  INFO      Nakshiq Autoposter · EVENING · 2026-09-24 · weekday=3
+2026-09-24 18:32:27  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 18:32:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-24 18:33:02  INFO      Synced → 20 destinations · 100 traps · 2 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-24 18:33:02  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-24 18:33:06  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-24 18:33:06  INFO      Active accounts: ['facebook/Nakshiq']
+2026-09-24 18:33:06  INFO      Festivals filtered (past/post-window): Ladakh Festival, Ganesh Chaturthi at Trinetra Ganesh Temple, Nubra Valley Festival, Nako Lake Festival, Champawat Nanda Devi Fair, Mata Murti Ka Mela, Urs of Sheikh Salim Chishti, Nanda Devi Mela (+22 more)
+2026-09-24 18:33:06  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-24 18:33:18  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-24 18:33:18  INFO      [diversity] feed: 37 → 33 options · cooldown dropped 4 (carousel, pillar:anti_trap, pillar:scenario_sos_rescue, score, short:did_you_know seen <2d)
+2026-09-24 18:33:18  INFO      Evening format (balance→verification): emergency_intel [0% vs target 20%] (1/15 never featured)
+2026-09-24 18:33:18  INFO      Formats — IG: emergency_intel  ·  FB: emergency_intel  ·  Story: collection_spotlight
+2026-09-24 18:33:18  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 51
+2026-09-24 18:33:18  INFO      Fingerprint dedup snapshot — 51 dests in 7d · 94 (dest,fmt) pairs in 30d · 216 media in 60d
+2026-09-24 18:33:18  INFO      Collection locked: Offbeat Romantic Getaways — Not Manali, Not Shimla (78/100 never featured)
+2026-09-24 18:33:18  INFO      SOS locked: Uttarkashi (91/91 never featured)
+2026-09-24 18:33:20  INFO      Shared best destination locked: Jog Falls
+2026-09-24 18:33:20  INFO      Carousel locked (collection_spotlight): munsiyari
+2026-09-24 18:33:20  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-09-24 18:33:20  INFO      State saved. Run complete.
+2026-09-24 18:33:20  INFO      ════════════════════════════════════════════════════════════
