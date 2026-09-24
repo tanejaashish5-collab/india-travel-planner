@@ -1525,3 +1525,38 @@ TONES = {
     "warm":   ("food_find",),
     "awe":    ("quiet_month",),
 }
+
+# Music bed by tone (Mixkit, fetched 2026-09-24; licence: commercial social use,
+# no attribution, see assets/music_travel/LICENSE-mixkit.json). Picked by TITLE,
+# not by ear: horror, wedding and novelty titles are left out on purpose. Until
+# 09-24 scenario reels took a RANDOM track from the April library, so a rescue
+# could land on something cheerful.
+MUSIC_DIR = Path(__file__).resolve().parent / "assets" / "music_travel"
+MUSIC_BY_TONE = {
+    "tense":  ("cinematic-silent-descent-871", "cinematic-epical-drums-03-88",
+               "cinematic-epical-drums-05-466", "cinematic-vastness-759",
+               "cinematic-drawing-the-sky-797", "cinematic-the-journey-543",
+               "adventure-epical-drums-05-677"),
+    "useful": ("travel-just-keep-walking-339", "uplifting-driving-ambition-682",
+               "travel-traveling-along-669", "travel-feel-alive-3",
+               "uplifting-just-keep-walking-834", "travel-like-a-loop-machine-351"),
+    "warm":   ("travel-i-39-m-hungry-1025", "travel-happy-home-13",
+               "travel-easy-monday-974", "travel-a-special-feeling-1166",
+               "travel-that-39-s-the-way-of-life-780", "travel-slow-pop-840"),
+    "awe":    ("cinematic-rising-sun-892", "cinematic-relaxing-in-nature-609",
+               "cinematic-river-flow-64", "travel-serene-view-839",
+               "uplifting-mountains-952", "travel-indian-meditations-876",
+               "travel-wind-leaves-808"),
+}
+
+
+def pick_music(fmt: str, slug: str):
+    """The tone's track for this reel. Stable per (slug, format), so a re-render
+    keeps its music, and spread across the list so consecutive reels differ.
+    None when nothing is on disk, which lets the renderer fall back."""
+    import zlib
+    tone = next((t for t, fs in TONES.items() if fmt in fs), None)
+    names = [n for n in MUSIC_BY_TONE.get(tone, ()) if (MUSIC_DIR / f"{n}.mp3").exists()]
+    if not names:
+        return None
+    return MUSIC_DIR / f"{names[zlib.crc32(f'{slug}:{fmt}'.encode()) % len(names)]}.mp3"

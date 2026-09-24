@@ -106,6 +106,7 @@ def main() -> int:
     ap.add_argument("--month", type=int, default=date.today().month)
     ap.add_argument("--lang", default="en", choices=["en", "hi"])
     ap.add_argument("--out", default=None)
+    ap.add_argument("--music", default=None, help="override the tone's music bed")
     ap.add_argument("--alt", default="",
                     help="beats to take from the SECOND take, e.g. b3,b5")
     a = ap.parse_args()
@@ -140,8 +141,10 @@ def main() -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
 
     sb_l = SB.for_lang(sb, a.lang)      # Hindi opens on the outcome shot
+    music = Path(a.music) if a.music else SB.pick_music(a.format, a.slug)
+    print(f"[render] music: {music.name if music else '(fallback)'}")
     res = build(a.slug, dest, out, spec=SB.spec_from_storyboard(sb, a.lang),
-                storyboard=sb_l, lang=a.lang, month=a.month)
+                storyboard=sb_l, lang=a.lang, month=a.month, music=music)
     if not res:
         sys.exit("[render] build returned nothing")
     print(f"[render] wrote {out}")
