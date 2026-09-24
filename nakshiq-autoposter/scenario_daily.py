@@ -151,7 +151,8 @@ def render(dry: bool = False) -> int:
     used = {v["storyboard"] for v in led.values()}
     made = 0
     for lang, surf in SURFACE.items():
-        ready = [v for v in led.values() if v["lang"] == lang and v["status"] == "ready"]
+        ready = [v for v in led.values() if v["lang"] == lang and v["status"] == "ready"
+                 and v.get("kind") != "data_card"]
         need = BUFFER - len(ready)
         if need <= 0:
             continue
@@ -214,11 +215,57 @@ def _lines(slug: str, fmt: str, lang: str) -> list[str]:
         return []
 
 
+DATA_CARD_REPEAT_DAYS = 30
+
+
+def _data_card_row(plat: str, surf: dict, led: dict, dry: bool):
+    """The fallback (founder, 2026-09-24, option 1): a day with no scenario reel
+    ready posts a HyperFrames data card instead of the old template Short, so
+    the one-reel cap is unchanged. Top-ranked place (next month, quiet first)
+    not carded in the last 30 days; rendered now with this surface's handle."""
+    import data_card as DC
+    from datetime import timedelta
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=DATA_CARD_REPEAT_DAYS)).isoformat()
+    recent = {v.get("slug") for v in led.values()
+              if v.get("kind") == "data_card" and (v.get("rendered_at") or "") >= cutoff}
+    for slug in DC.candidates():
+        if slug in recent:
+            continue
+        out = REELS / f"{slug}__data_card__{plat}.mp4"
+        _log(f"{plat}: no scenario reel ready — data card for {slug}")
+        if dry:
+            return None
+        try:
+            DC.render(slug, out, follow=surf["cta"])
+        except Exception as e:
+            _log(f"  data card {slug} failed: {str(e)[:200]}")
+            continue
+        f = DC.facts(slug)
+        row = {"storyboard": f"{slug}__data_card", "slug": slug, "format": "data_card",
+               "kind": "data_card", "lang": "en", "platform": plat, "file": str(out),
+               "status": "ready", "six_beat": False,
+               "rendered_at": datetime.now(timezone.utc).isoformat(),
+               "best": f["best"], "best_score": f["scores"][f["best_i"]], "name": f["name"]}
+        led[f"{slug}__data_card__{plat}"] = row
+        _save_ledger(led)
+        return row
+    return None
+
+
 def caption_for(row: dict) -> tuple[str, str]:
     """(caption, youtube_title). The first line is the reel's own hook, so the
     caption reads as the same voice as the video. Disclosure is in the text:
     the people in these scenes are AI-generated, and saying so costs nothing
     and keeps the account out of the undisclosed-AI-people class."""
+    if row.get("kind") == "data_card":
+        name, best, sc = row["name"], row["best"], row["best_score"]
+        url = f"https://www.nakshiq.com/en/destination/{row['slug']}"
+        tag = row["slug"].replace("-", "")
+        cap = (f"{name} in {best}: {sc} out of 10. Here is every month, and what the "
+               f"same hotel costs in and out of season.\n\n{name}, month by month: {url}\n\n"
+               f"Background footage is AI-generated. Scores and prices are NakshIQ's real data."
+               f"\n\n#{tag} #indiatravel #NakshIQ")
+        return cap, f"{name} in {best}: {sc}/10 | NakshIQ"
     name = _dest_name(row["slug"])
     lines = _lines(row["slug"], row["format"], row["lang"])
     hook = lines[0] if lines else name
@@ -259,11 +306,15 @@ def publish(dry: bool = False) -> int:
             _log(f"{plat}: already published a scenario reel today")
             continue
         ready = sorted((v for v in led.values() if v["lang"] == lang and v["status"] == "ready"
+                        and v.get("kind") != "data_card"
                         and Path(v["file"]).exists()),
                        key=lambda v: (not v.get("six_beat"), v["rendered_at"]))
         if not ready:
-            _log(f"{plat}: nothing ready in {lang} — the GitHub slot keeps the day")
-            continue
+            dc = _data_card_row(plat, surf, led, dry)
+            if not dc:
+                _log(f"{plat}: nothing ready and no data card — the GitHub slot keeps the day")
+                continue
+            ready = [dc]
         row = ready[0]
         acct = accounts.get(plat)
         if not acct:
