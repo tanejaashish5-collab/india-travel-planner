@@ -24549,3 +24549,10 @@ Date range: 2026-04-15 → 2026-09-23
 2026-09-24 07:57:29  WARNING   [youtube/@naksh-iq] YT Short post failed (API rejected).
 2026-09-24 07:57:29  INFO      State saved. YT Short run complete.
 2026-09-24 07:57:29  INFO      ════════════════════════════════════════════════════════════
+2026-09-24 18:49:12  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-24 18:49:12  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-24 18:49:12  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@nakshiq (pXLVM)
+2026-09-24 18:49:18  INFO          Requesting upload URL for calangute-baga__sos_rescue__en.mp4 (22,785,744 bytes, video/mp4)
+2026-09-24 18:49:20  INFO          Uploading to R2 (timeout=300s)...
+2026-09-24 18:49:31  INFO          R2 PUT OK. Confirming...
+2026-09-24 18:49:33  INFO          Media ready: CA6Ix (22,785,744 bytes · calangute-baga__sos_rescue__en.mp4)
