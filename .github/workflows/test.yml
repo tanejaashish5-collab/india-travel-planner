@@ -15,6 +15,8 @@ on:
       - "*.md"
       - "images/**"
       - "videos/**"
+  schedule:
+    - cron: "30 20 * * 6" # Sat 20:30 UTC = Sun 06:30 AEST, weekly prod E2E/visual/lighthouse
   workflow_dispatch:
     inputs:
       update_snapshots:
@@ -82,7 +84,11 @@ jobs:
   playwright-e2e:
     name: E2E Tests (Playwright)
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    # Weekly + manual only. These suites drive headless Chrome against LIVE prod;
+    # on every push they were ~25K requests/run (58% of all site traffic on
+    # 2026-09-24, Azure ASN 8075) and have been red on main since July, so they
+    # cost money without gating anything. Lint & TypeCheck still runs on push.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     needs: lint-and-typecheck
     steps:
       - uses: actions/checkout@v4
@@ -106,7 +112,11 @@ jobs:
   visual-regression:
     name: Visual Regression
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    # Weekly + manual only. These suites drive headless Chrome against LIVE prod;
+    # on every push they were ~25K requests/run (58% of all site traffic on
+    # 2026-09-24, Azure ASN 8075) and have been red on main since July, so they
+    # cost money without gating anything. Lint & TypeCheck still runs on push.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     needs: lint-and-typecheck
     steps:
       - uses: actions/checkout@v4
@@ -136,7 +146,11 @@ jobs:
   lighthouse-audit:
     name: Lighthouse Audit
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    # Weekly + manual only. These suites drive headless Chrome against LIVE prod;
+    # on every push they were ~25K requests/run (58% of all site traffic on
+    # 2026-09-24, Azure ASN 8075) and have been red on main since July, so they
+    # cost money without gating anything. Lint & TypeCheck still runs on push.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     needs: lint-and-typecheck
     steps:
       - uses: actions/checkout@v4
