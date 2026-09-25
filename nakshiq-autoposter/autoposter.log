@@ -24778,3 +24778,37 @@ Date range: 2026-04-15 → 2026-09-24
 2026-09-25 12:57:11  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=AqQo3
 2026-09-25 12:57:11  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-09-25 12:57:11  INFO      ════════════════════════════════════════════════════════════
+2026-09-25 17:36:43  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-09-25 17:36:43  INFO      ════════════════════════════════════════════════════════════
+2026-09-25 17:36:43  INFO      Nakshiq Autoposter · EVENING · 2026-09-25 · weekday=4
+2026-09-25 17:36:43  INFO      ════════════════════════════════════════════════════════════
+2026-09-25 17:36:43  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-25 17:37:26  INFO      Synced → 20 destinations · 100 traps · 1 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-25 17:37:26  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-25 17:37:27  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-25 17:37:27  INFO      Active accounts: ['facebook/Nakshiq']
+2026-09-25 17:37:27  INFO      Festivals filtered (past/post-window): Ladakh Festival, Ganesh Chaturthi at Trinetra Ganesh Temple, Nubra Valley Festival, Nako Lake Festival, Champawat Nanda Devi Fair, Mata Murti Ka Mela, Urs of Sheikh Salim Chishti, Nanda Devi Mela (+22 more)
+2026-09-25 17:37:27  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-25 17:37:42  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-25 17:37:42  INFO      [diversity] feed: 37 → 33 options · cooldown dropped 4 (carousel, pillar:anti_trap, pillar:scenario_sos_rescue seen <2d)
+2026-09-25 17:37:42  INFO      Evening format (balance→moment): cost_index_card [0% vs target 15%] (1/15 never featured)
+2026-09-25 17:37:42  INFO      Formats — IG: cost_index_card  ·  FB: cost_index_card  ·  Story: reality_check  ·  Audience: adventurers
+2026-09-25 17:37:42  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 52
+2026-09-25 17:37:42  INFO      Audience filter 'adventurers' → 5 destinations match.
+2026-09-25 17:37:42  INFO      Fingerprint dedup snapshot — 52 dests in 7d · 91 (dest,fmt) pairs in 30d · 213 media in 60d
+2026-09-25 17:37:42  INFO      Cost index dest locked: Nashik (91/91 never featured)
+2026-09-25 17:37:44  INFO      Shared best destination locked: Tirupati
+2026-09-25 17:37:44  INFO      [facebook/Nakshiq] Generating cost_index_card post...
+2026-09-25 17:37:44  INFO      [facebook/Nakshiq] Caption ready (520 chars, dest=nashik)
+2026-09-25 17:37:44  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-09-25 17:37:44  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/nashik.mp4?v=20260915
+2026-09-25 17:37:47  INFO          Brand-stamp applied: nashik.mp4 (9,451,207 → 5,111,135 bytes)
+2026-09-25 17:37:47  INFO          Requesting upload URL for nashik.mp4 (5,111,135 bytes, video/mp4)
+2026-09-25 17:37:48  INFO          Uploading to R2 (timeout=300s)...
+2026-09-25 17:37:50  INFO          R2 PUT OK. Confirming...
+2026-09-25 17:37:51  INFO          Media ready: en0tQ (5,111,135 bytes · nashik.mp4)
+2026-09-25 17:37:51  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-25 17:37:51  INFO      [facebook/Nakshiq] REELS PAUSED (nakshiq-autoposter/REELS_PAUSED) — not publishing
+2026-09-25 17:37:51  ERROR     [facebook/Nakshiq] ❌ Publish failed.
+2026-09-25 17:37:51  INFO      State saved. Run complete.
+2026-09-25 17:37:51  INFO      ════════════════════════════════════════════════════════════
