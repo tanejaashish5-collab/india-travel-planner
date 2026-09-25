@@ -22,33 +22,56 @@ if [ -z "$CHANGED" ]; then
   exit 1
 fi
 
-# Audit files are an EXCEPTION to the doc/markdown skip below, and must be
-# tested BEFORE it. The apps/web prebuild runs scripts/build-audit-snapshot.mjs,
-# which reads gsc-audits/gsc-audit-*.md and ga4-audits/ga4-audit-*.md and writes
-# apps/web/src/data/audit-snapshots.json from COMMITTED audit files only. Those
-# paths also match the generic `.*\.md$` / `gsc-audits/` excludes, so an
-# audit-only commit was silently skipped and the GSC/GA4 snapshot froze while
-# every signal reported success. Past audits only ever built by riding along on
-# an unrelated code commit. Bit us 2026-06-11, 2026-07-13, and 2026-07-29
-# (deployment dpl_DwScN69 skipped; snapshot stale two days).
-# Cost of this exception: one extra build on days an audit lands. Deliberate —
-# a wasted build is cheaper than a silently frozen snapshot.
-AUDITS=$(echo "$CHANGED" | grep -E '^(gsc-audits/gsc-audit|ga4-audits/ga4-audit)-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$' || true)
+NON_TRIVIAL=$(echo "$CHANGED" | grep -vE '^(nakshiq-autoposter/|ops/|videos/|images/|\.claude/|\.expo/|\.playwright-mcp/|\.match_ashish\.py$|data/|scripts/|qa/|tests/|\.loop/|\.github/|\.gitignore$|supabase/seed/|gsc-audits/|Web Res reports/|Branding/|.*\.docx$|.*\.md$|MEMORY\.md|[^/]+\.png$|.*\.csv$)' || true)
 
-if [ -n "$AUDITS" ]; then
-  echo "Building — audit files changed (prebuild must refresh audit-snapshots.json):"
-  echo "$AUDITS" | sed 's/^/  /'
+if [ -n "$NON_TRIVIAL" ]; then
+  echo "Building — code changes detected:"
+  echo "$NON_TRIVIAL" | sed 's/^/  /'
   exit 1
 fi
 
-NON_TRIVIAL=$(echo "$CHANGED" | grep -vE '^(nakshiq-autoposter/|videos/|images/|\.claude/|\.expo/|\.playwright-mcp/|\.match_ashish\.py$|data/|scripts/|qa/|tests/|\.loop/|\.github/|\.gitignore$|supabase/seed/|gsc-audits/|Web Res reports/|Branding/|.*\.docx$|.*\.md$|MEMORY\.md|[^/]+\.png$|.*\.csv$)' || true)
+# Audit files are an EXCEPTION to the doc/markdown skip above. The apps/web
+# prebuild runs scripts/build-audit-snapshot.mjs, which reads
+# gsc-audits/gsc-audit-*.md and ga4-audits/ga4-audit-*.md and writes
+# apps/web/src/data/audit-snapshots.json from COMMITTED audit files only. When
+# audit-only commits were always skipped, the snapshot froze while every signal
+# reported success (2026-06-11, 2026-07-13, 2026-07-29 — dpl_DwScN69 skipped).
+#
+# But building on EVERY audit commit cost real money: 42 of 85 production builds
+# in Aug 24–Sep 23 2026 were audit-only, and every deploy starts with an empty
+# ISR cache that crawlers then refill (~6.5K page regenerations/day, the whole
+# ISR-writes + origin-transfer line on the Vercel bill). The only consumers of
+# the snapshot are the once-daily audit-gsc-alerts / audit-gsc-ga4-correlation
+# crons, so ONE audit build per day is enough.
+#
+# Rule: an audit-only change builds only if the last deployed commit is at
+# least AUDIT_BUILD_MIN_HOURS old (or unknown — build to be safe). A skipped
+# audit is not lost: VERCEL_GIT_PREVIOUS_SHA stays put, so the next build diffs
+# against it and picks up every audit committed since.
+AUDIT_BUILD_MIN_HOURS=20
+AUDITS=$(echo "$CHANGED" | grep -E '^(gsc-audits/gsc-audit|ga4-audits/ga4-audit)-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$' || true)
 
-if [ -z "$NON_TRIVIAL" ]; then
-  echo "Skipping build — only autoposter / media / docs changed:"
-  echo "$CHANGED" | sed 's/^/  /'
+if [ -n "$AUDITS" ]; then
+  PREV_TS=""
+  if [ -n "$VERCEL_GIT_PREVIOUS_SHA" ] && git cat-file -e "$VERCEL_GIT_PREVIOUS_SHA" 2>/dev/null; then
+    PREV_TS=$(git show -s --format=%ct "$VERCEL_GIT_PREVIOUS_SHA" 2>/dev/null)
+  fi
+  if [ -z "$PREV_TS" ]; then
+    echo "Building — audit files changed and last deployed commit is unknown:"
+    echo "$AUDITS" | sed 's/^/  /'
+    exit 1
+  fi
+  AGE_H=$(( ($(date +%s) - PREV_TS) / 3600 ))
+  if [ "$AGE_H" -ge "$AUDIT_BUILD_MIN_HOURS" ]; then
+    echo "Building — audit files changed, last deployed commit is ${AGE_H}h old:"
+    echo "$AUDITS" | sed 's/^/  /'
+    exit 1
+  fi
+  echo "Skipping build — audit-only change, last deployed commit is ${AGE_H}h old (< ${AUDIT_BUILD_MIN_HOURS}h); it rides the next build:"
+  echo "$AUDITS" | sed 's/^/  /'
   exit 0
 fi
 
-echo "Building — code changes detected:"
-echo "$NON_TRIVIAL" | sed 's/^/  /'
-exit 1
+echo "Skipping build — only autoposter / media / docs changed:"
+echo "$CHANGED" | sed 's/^/  /'
+exit 0
