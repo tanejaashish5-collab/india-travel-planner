@@ -37,18 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "PdMu0": "2026-09-24",
     "PdMu0_evening": "2026-09-24",
-    "PdMu0_carousel": "2026-09-24"
+    "PdMu0_carousel": "2026-09-25"
   },
   "last_sync": "2026-09-24T18:33:02.349572+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "tirupati",
-      "date": "2026-09-10"
-    },
-    {
-      "destination_id": "lamayuru",
-      "date": "2026-09-10"
-    },
     {
       "destination_id": "pangong-lake",
       "date": "2026-09-11"
@@ -140,6 +132,10 @@
     {
       "destination_id": "chopta",
       "date": "2026-09-24"
+    },
+    {
+      "destination_id": "kiphire",
+      "date": "2026-09-25"
     }
   ],
   "posted_formats": {
@@ -10040,6 +10036,15 @@
       "format": "v2_local_knows",
       "has_media": true,
       "media_id": "v2_local_knows-chopta.png"
+    },
+    {
+      "timestamp": "2026-09-25T12:57:11.495866+00:00",
+      "date": "2026-09-25",
+      "platform": "facebook",
+      "post_id": "AqQo3",
+      "destination": "kiphire",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-09-25"
     }
   ],
   "theme_usage": {
@@ -10944,36 +10949,14 @@
   },
   "carousel_seen": {
     "festival": [
-      "Krishna Janmashtami (Birth of Krishna)",
-      "Nagara Panchami",
-      "Kajli Teej",
-      "Nanda Devi Raj Jat Yatra",
-      "Ladarcha Fair",
-      "Gurez Cultural Festival",
-      "Malana Village Fair",
-      "Pang Lhabsol",
+      "Mongmong Festival",
+      "Mitthe Shah Dargah Urs Fair",
       "Ladakh Festival",
       "Ganesh Chaturthi at Trinetra Ganesh Temple",
       "Nubra Valley Festival",
       "Nako Lake Festival",
       "Champawat Nanda Devi Fair",
-      "Mata Murti Ka Mela",
-      "Urs of Sheikh Salim Chishti",
-      "Nanda Devi Mela",
-      "Nanda Ashtami Trek Gathering",
-      "Nanda Devi Mahotsav",
-      "Chitkul Pahari Fair",
-      "Phulech Festival",
-      "Ziro Music Festival",
-      "Kaas Plateau Wildflower Bloom",
-      "Alleppey Houseboat Onam",
-      "Neelakurinji Bloom",
-      "Aranmula Boat Race",
-      "Solung Festival",
-      "Srivari Brahmotsavam",
-      "Bhadarvi Poonam Mela",
-      "Phulaich (Festival of Flowers)",
-      "Ganesh Chaturthi"
+      "Mata Murti Ka Mela"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
