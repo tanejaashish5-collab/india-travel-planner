@@ -24704,3 +24704,23 @@ Date range: 2026-04-15 → 2026-09-23
 2026-09-24 21:52:04  INFO      
 Date range: 2026-04-15 → 2026-09-24
 2026-09-24 21:52:04  INFO      ════════════════════════════════════════════════════════════
+2026-09-25 08:18:33  INFO      ════════════════════════════════════════════════════════════
+2026-09-25 08:18:33  INFO      Nakshiq Autoposter · YT SHORT · 2026-09-25
+2026-09-25 08:18:33  INFO      ════════════════════════════════════════════════════════════
+2026-09-25 08:18:35  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-25 08:20:07  INFO      Short rendered: yt_short_nakshiq_score_auli_hi_2026-09-25.mp4 (16675 KB, 27.8s, fmt=nakshiq_score, music=dance-781)
+2026-09-25 08:20:07  INFO          Requesting upload URL for yt_short_nakshiq_score_yt_short_nakshiq_score_auli_hi_2026-09-25.mp4 (17,076,044 bytes, video/mp4)
+2026-09-25 08:20:08  INFO          Uploading to R2 (timeout=300s)...
+2026-09-25 08:20:10  INFO          R2 PUT OK. Confirming...
+2026-09-25 08:20:11  INFO          Media ready: xrA72 (17,076,044 bytes · yt_short_nakshiq_score_yt_short_nakshiq_score_auli_hi_2026-09-25.mp4)
+2026-09-25 08:20:11  INFO      Video uploaded: yt_short_nakshiq_score_yt_short_nakshiq_score_auli_hi_2026-09-25.mp4
+2026-09-25 08:20:12  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-25 08:20:12  INFO      [instagram/nakshiq] Publishing YT Short (nakshiq_score)...
+2026-09-25 08:20:12  INFO      [instagram/nakshiq] REELS PAUSED (nakshiq-autoposter/REELS_PAUSED) — not publishing
+2026-09-25 08:20:12  WARNING   [instagram/nakshiq] YT Short post failed (API rejected).
+2026-09-25 08:20:12  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-09-25 08:20:12  INFO      [youtube/@naksh-iq] Publishing YT Short (nakshiq_score)...
+2026-09-25 08:20:12  INFO      [youtube/@naksh-iq] REELS PAUSED (nakshiq-autoposter/REELS_PAUSED) — not publishing
+2026-09-25 08:20:12  WARNING   [youtube/@naksh-iq] YT Short post failed (API rejected).
+2026-09-25 08:20:12  INFO      State saved. YT Short run complete.
+2026-09-25 08:20:12  INFO      ════════════════════════════════════════════════════════════
