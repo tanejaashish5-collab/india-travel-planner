@@ -34,6 +34,9 @@ const pending = JSON.parse(readFileSync(QUEUE, "utf-8")).filter((r) => r.status 
 if (!pending.length) { console.log("[export] nothing pending"); process.exit(0); }
 
 const accounts = JSON.parse(readFileSync(ACCOUNTS, "utf-8")).accounts;
+// v3 storyboards go first and are never split by the per-account slicing
+// below in a way that matters: the task says how to carry refs across accounts.
+pending.sort((a, b) => (b.pipeline === "v3") - (a.pipeline === "v3"));
 const todo = pending.slice(0, accounts.length * PER_ACCOUNT);
 
 // A reel is cut from a WHOLE storyboard, so a half-finished one renders nothing.
@@ -49,10 +52,19 @@ for (const r of JSON.parse(readFileSync(QUEUE, "utf-8"))) {
 }
 mkdirSync(INBOX, { recursive: true });
 
+// v3 has its own rules; the v2 lines below (two takes, text-only character
+// descriptions) would contradict them, so a v3 day ships only these.
+const HOW_V3 = [
+  "v3 METHOD (2026-09-25): never generate a reel shot from text alone. kind 'ref' rows are STILL IMAGES (Nano Banana, 9:16). kind 'shot' rows are videos on Veo 3.1 Lite: mode 'ingredients' = attach exactly the stills named in refs; mode 'extend' = Extend the shot named in extend_of, in the SAME Flow project.",
+  "Make rows in the order listed: a storyboard's refs, then its shots. One take per shot; redo only a failed shot.",
+  "Save every file under EXACTLY its save_as name in save_to. Matching downstream is by filename only.",
+  "Use ONLY the @gmail.com accounts in accounts[]; read the signed-in email before generating. Account assignment is advisory: carry the saved stills to another account by uploading them as ingredients.",
+  "Prompts verbatim, one line. They carry the fixed look and soundscape that make the shots match.",
+];
 const doc = {
   date: new Date().toISOString().slice(0, 10),
   generated_by: "export-tasks.mjs",
-  how: [
+  how: todo.some((r) => r.pipeline === "v3") ? HOW_V3 : [
     "Open flow.google.com in a REAL signed-in Chrome. Automation-controlled browsers cannot sign in and their launch invalidates an existing session.",
     "In EVERY project, pick model 'Veo 3.1 Lite' (10 credits). Flow defaults to Omni 1.1 Flash at 12 credits, which is 20% more and yields 4 clips per account instead of 5. If the Lite option cannot be selected, STOP rather than generate on the default.",
     "The account assignment is a SUGGESTION, not a constraint: this file is written without knowing any account's remaining balance. Matching downstream is by filename only, so any account with credits can produce any clip. If an account is out of credits or signed out, move the clip to one that has them.",
@@ -86,6 +98,14 @@ const doc = {
       seconds: r.seconds,
       beat_role: r.role,
       prompt: r.prompt,
+      // v3 (2026-09-25): reference stills, Ingredients to Video, Extend.
+      ...(r.pipeline === "v3" ? {
+        pipeline: "v3",
+        kind: r.kind,                       // "ref" (an image) or "shot" (a video)
+        mode: r.mode || null,               // "ingredients" | "extend"
+        refs: r.refs || null,               // stills to attach, by their save_as names
+        extend_of: r.extend_of || null,     // the shot this one continues, same Flow project
+      } : {}),
     })),
   })).filter((g) => g.clips.length),
 };

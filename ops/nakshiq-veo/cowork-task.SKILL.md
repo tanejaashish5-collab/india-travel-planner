@@ -1,84 +1,61 @@
 ---
 name: nakshiq-veo-daily
-description: Daily 10 AM NakshIQ Veo run. TODAY IT IS A ONE-OFF CAPABILITY PROBE, not production. Test which Google Flow continuity features (reference images / Ingredients to Video, Frames to Video, Extend) work on which Veo 3.1 model on our free accounts, generate one short test scene with them, save everything to ~/Downloads/nakshiq-veo-inbox/probe/, write a report. Unattended; never asks questions.
+description: Daily 10 AM — generate NakshIQ reel footage in Google Flow with the v3 method (reference stills → Ingredients to Video on Veo 3.1 Lite, Extend for continuous shots), from ~/Automation/nakshiq-veo/today-tasks.json, saving every file under its EXACT save_as name into ~/Downloads/nakshiq-veo-inbox/. First, a short probe part 2. Unattended; drops files only.
 ---
 
-UNATTENDED run for NakshIQ. The user is NOT present: execute autonomously, make reasonable choices and note them, never ask questions, finish by writing the report and sending one summary notification. Using the user's own free Google Flow accounts is pre-authorized. Never enter a password, never attempt a CAPTCHA, never buy credits or upgrade.
+UNATTENDED run for NakshIQ. The user is NOT present: execute autonomously, make reasonable choices and note them, never ask questions, finish with one summary notification. Using the user's own free Google Flow accounts is pre-authorized. Never enter a password, never attempt a CAPTCHA, never buy credits or upgrade.
 
-WHY TODAY IS DIFFERENT
-Production reels are PAUSED. The founder judged the last reels poor: every clip was generated separately from text alone, so lighting and time of day jumped between shots, the people shifted between cuts, and nothing connected one shot to the next. Before we regenerate anything, we need FACTS about what Flow can do on our accounts:
-- Can Flow generate still images (for reference "ingredients"), and what does that cost?
-- Does Ingredients to Video (reference images → video) work on Veo 3.1 Lite, or only on Fast / Quality?
-- Does Frames to Video (a chosen first frame → video) work on Lite?
-- Does Extend (continue a clip from its last frames) work on Lite?
-- What does each cost in credits, and what download resolutions does each model offer?
-- Does each generated clip carry native audio?
-Your job is to find out by DOING each one once, carefully, and to report exactly what happened. A feature that is not offered, or is offered only on another model, is a valid and useful finding: write it down and move on.
+WHAT CHANGED (2026-09-25) AND WHY
+The founder rejected the old reels: every clip was generated from text alone, so the people, the car and the light changed at every cut. Yesterday's probe proved the fix on our accounts: three reference STILLS, then every shot made with INGREDIENTS TO VIDEO using those stills, on Veo 3.1 Lite (10 credits). That kept the same man, woman, car and blue hour. EXTEND continued a shot seamlessly. Text-only generation drifted every time. So:
+- NEVER generate a reel shot from text alone any more. Every shot is Ingredients (with its listed refs) or Extend.
+- There are no "two takes" any more. One take per shot; redo a shot only if it fails or ignores the prompt (wrong people, wrong car, text on screen, daylight).
+
+ORDER OF TODAY'S RUN
+PART A — probe part 2 (budget under 40 credits; do it first, it is quick):
+  A1. Frames to Video, for real: upload ~/Downloads/nakshiq-veo-inbox/probe/step3_shot1-last-frame_f191.png as the FIRST frame, 9:16, Veo 3.1 Lite, with this prompt:
+      Continuing from this exact frame: the camera slowly pushes in past the open bonnet to a medium shot of the man as he straightens up, takes out his phone and lifts it high, searching for a signal; the phone screen glows but is never legible. The woman steps in beside him, pulling the shawl tighter against the cold. Blue hour, cool blue shadows, amber hazard lights, light mist, anamorphic 35mm, photorealistic, cinematic. No music, no speech, no text.
+      Choosing Frames can silently switch the model to Fast (20 credits): reselect Veo 3.1 Lite and confirm it quotes 10 before submitting. Save as ~/Downloads/nakshiq-veo-inbox/probe/probe_s2_frames_lite.mp4
+  A2. In Flow, open the two text-only tiles from 2026-09-25 ("Car breakdown by coffee estates", "Car breakdown at roadside") and note which model each ran on. Nothing to generate.
+  A3. Write ~/Downloads/nakshiq-veo-inbox/probe/probe-report.md: for A1, does it start exactly where shot 1 ended and keep the same man, woman, car and blue hour? Model and credits charged. For A2, the two models. Also: credits charged per Nano Banana still if you can read it.
+PART B — production (everything in today-tasks.json).
+
+SOURCE OF TRUTH FOR PART B
+/Users/ashishtaneja/Automation/nakshiq-veo/today-tasks.json (linked folder; connect with request_cowork_directory if needed).
+- Every row has `save_as` (exact filename), `storyboard`, `prompt`. v3 rows also have:
+  - `kind`: "ref" = a STILL IMAGE to generate; "shot" = a video.
+  - `mode` (shots): "ingredients" = attach the stills named in `refs` and generate; "extend" = extend the shot named in `extend_of`.
+- Rows are listed in the order to make them: a storyboard's refs first, then its shots. An extend always comes after its source.
+- If `total_clips` is 0 or the file is missing, do Part A only and say so.
+
+HOW TO MAKE ONE STORYBOARD (v3)
+1. ONE Flow project per storyboard. Settings: 9:16, x1. Close any Agent-mode panel.
+2. REFS (kind "ref"): switch the project to image generation (Nano Banana), 9:16, paste the prompt verbatim, generate ONE image. Download it and save it as its exact `save_as` (a .jpg) in ~/Downloads/nakshiq-veo-inbox/. Flow downloads images as a zip: extract it with Desktop Commander (python3 zipfile; `unzip` chokes on Flow zips) and rename the image inside. Keep the stills in the project too: the shots use them.
+3. SHOTS, mode "ingredients": video mode, model Veo 3.1 - Lite (confirm it quotes 10 credits). Add as ingredients EXACTLY the stills listed in `refs` (from this project, or upload the saved .jpg files if you are on another account). Paste the prompt verbatim as ONE line. Generate. Download the 720p file, save as `save_as`.
+4. SHOTS, mode "extend": in the SAME project as the shot named in `extend_of` (an extend cannot cross projects or accounts), open that shot → Extend (scene builder "+" → Extend), Veo 3.1 Lite, paste the prompt verbatim, generate. Download the WHOLE extended shot (about 15 s) and save it as `save_as`. The source shot keeps its own file too.
+5. Check every video with ffprobe: 720x1280, about 8 s (about 15 s for an extend), has an audio stream. LOOK at the first and last frame of each: same man (navy blue quilted jacket), same woman (mustard yellow shawl), same car, still blue hour, no text on screen, no black bars. If a shot fails that, generate it once more; if it fails twice, note it and move on.
+6. Credits: a storyboard costs about 3 stills + 6 shots x 10 = 60+ credits, more than one account holds (50). Plan it: generate the refs and the source shot + its extend on ONE account (20 credits for the pair), then continue the remaining shots on the next account by uploading the saved stills as ingredients. Finish one storyboard completely before starting another.
 
 ACCOUNTS
-- Use ONLY the @gmail.com accounts listed in /Users/ashishtaneja/Automation/nakshiq-veo/accounts.json (linked folder; connect with request_cowork_directory if needed). Never any other account, never a Workspace or company account, whatever Chrome offers.
-- Open Flow per account at https://flow.google.com/u/N/ (N = 0, 1, 2 ...). READ the signed-in email on the page before doing anything; if it is not in accounts.json, try the next N. /u/0 is a cancelled Workspace ("Service Not Allowed"): skip it.
-- A signed-out account (password prompt) is skipped and noted. An account at 0 credits is skipped.
-- Spread the probe across accounts as credits require. Total budget for the probe: stay under 200 credits.
+- Use ONLY the @gmail.com accounts listed in /Users/ashishtaneja/Automation/nakshiq-veo/accounts.json. Never any other account, never a Workspace or company account, whatever Chrome offers.
+- Open Flow per account at https://flow.google.com/u/N/ (N = 0, 1, 2 ...). READ the signed-in email on the page before doing anything. The EMAIL CHECK always wins: if the signed-in email is not an @gmail.com address listed in accounts.json, move on without generating, whatever N it is. /u/0 is a cancelled Workspace ("Service Not Allowed").
+- A Google marketing/research/"help improve" consent dialog is NOT a reason to skip a listed Gmail account: close it or choose no/decline (never opt in) and carry on. A warning badge on the avatar is not a reason to skip either. Only a real password prompt is: skip that account and note it.
+- Accounts marked owner "chanakya" in accounts.json may be used; the founder authorised it. Skip any account marked "rest": true in accounts.json.
 - "Visible watermarking" OFF (avatar → account panel), once per account used.
-- Close any Agent-mode chat panel; use direct generation. Always read the model picker before submitting; Flow's default is Omni, which we never use.
 
-THE TEST SCENE (same scene throughout, so results compare)
-A broken-down car at blue hour on a hill road near Chikmagalur. Two people, always described exactly as below.
+PROMPTS
+- VERBATIM, as a single line. Do not rewrite, shorten, translate or "improve" them: they carry the fixed look (blue hour, lens, grain) and the soundscape that make the shots match. After typing, read the text back from the input box and compare its length to the task file before submitting.
+- Flow blocks a prompt ("might violate our policies"): note it and skip that item. Do not reword.
+- Stuck at 99% / "taking longer than expected" / "audio generation failed … not charged": retry up to twice.
 
-LOOK (append this EXACT paragraph to every video prompt, verbatim):
-Blue hour, about fifteen minutes after sunset: deep blue sky with a last thin band of pale orange on the horizon, the road lit only by the car's amber hazard lights and headlights, cool blue shadows, a light mist over the coffee estates. Anamorphic 35mm lens, shallow depth of field, soft film grain, natural colour, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. Sound: ambient only, crickets, a light wind, the steady tick of the hazard lights; no music, no speech, no voiceover. No text, captions, logos or watermark.
-
-STEP 1 — REFERENCE STILLS (images, not video)
-If Flow can generate images, make these three, 9:16, one image each, and download each as PNG/JPG:
-- probe_ref_man: Full-length photograph of a man in his mid twenties with wavy black hair down to his collar, wearing a navy blue quilted jacket, dark jeans and brown boots, standing at the edge of a hill road at blue hour, three-quarter view, neutral expression, photorealistic, natural light, no text.
-- probe_ref_woman: Full-length photograph of a woman in her late twenties with a single long dark braid, wearing a mustard yellow wool shawl over a grey sweater and dark trousers, standing at the edge of a hill road at blue hour, three-quarter view, neutral expression, photorealistic, natural light, no text.
-- probe_ref_car: A dusty white hatchback with a black roof rack stopped at the edge of a narrow road winding through coffee estates in the hills at blue hour, bonnet up, amber hazard lights on, photorealistic, no people, no text.
-Record: where image generation lives in Flow, which image model, credit cost per image.
-If Flow cannot make images, note it and continue from step 3 (skip step 2).
-
-STEP 2 — INGREDIENTS TO VIDEO (shot 1)
-Using the three stills as ingredients/references, generate a 9:16 video with this prompt + LOOK:
-Wide shot, camera low at the roadside and perfectly still: the dusty white hatchback with a black roof rack is stopped at the edge of the narrow road through the coffee estates, bonnet up, hazard lights blinking. The man in the navy blue quilted jacket leans into the engine bay; the woman in the mustard yellow wool shawl stands a few steps behind him, looking up the empty road.
-Try Veo 3.1 Lite FIRST. If Lite is not offered with ingredients, say so and use Veo 3.1 Fast.
-Save as probe_s1_ingredients_<lite|fast>.mp4
-
-STEP 3 — FRAMES TO VIDEO (shot 2, continuous with shot 1)
-Take the LAST frame of shot 1 (from step 2; if step 2 was impossible, from step 5's Lite clip). Flow may offer this directly (scene builder / "use as frame"). If not, extract it with Desktop Commander:
-  ffmpeg -sseof -0.1 -i <shot1.mp4> -frames:v 1 ~/Downloads/nakshiq-veo-inbox/probe/probe_s1_lastframe.png
-and upload that image as the FIRST frame. Prompt + LOOK:
-Continuing from this exact frame: the camera slowly pushes in past the open bonnet to a medium shot of the man as he straightens up, takes out his phone and lifts it high, searching for a signal; the phone screen glows but is never legible. The woman steps in beside him, pulling the shawl tighter against the cold.
-Lite first; if not offered, Fast. Save as probe_s2_frames_<lite|fast>.mp4
-
-STEP 4 — EXTEND (continue shot 1 in place)
-On shot 1, use Extend (scene builder → + → Extend, or wherever Flow offers it). Prompt + LOOK:
-The man gives up on the engine and steps back; the woman turns and looks back down the dark road the way they came, the hazard lights still ticking.
-Lite first; if not offered, Fast. Save the extended result as probe_s1_extend_<lite|fast>.mp4 (note whether the download is the whole extended shot or only the new part).
-
-STEP 5 — CONTROLS (text only, no references), same shot-1 prompt + LOOK
-- Veo 3.1 Lite → probe_s1_text_lite.mp4
-- Veo 3.1 Fast → probe_s1_text_fast.mp4
-- Veo 3.1 Quality, ONLY if one account still has enough credits and the probe total stays under 200 → probe_s1_text_quality.mp4
-For each, record every download resolution Flow offers (720p / 1080p / upscaled / 4K) and download the HIGHEST one offered.
-
-SAVING
-- Folder: ~/Downloads/nakshiq-veo-inbox/probe/ (create it with Desktop Commander). Everything from this run goes there, under exactly the names above. Nothing goes in the top of nakshiq-veo-inbox/.
-- Download a completed tile via its ⋮ menu → Download (the detail-view ↓ button never downloads). Before downloading, confirm the tile's prompt text matches the step, from the DOM, never by grid position.
-- Check every video with ffprobe: resolution, duration, and whether it has an audio stream.
-- Leave ~/Downloads clean apart from nakshiq-veo-inbox/.
-
-REPORT: write ~/Downloads/nakshiq-veo-inbox/probe/probe-report.md
-One section per step:
-- Worked? (yes / no / partly), on which model(s), where in the UI.
-- Credits charged (read the balance before and after).
-- Download resolutions offered; resolution and duration of the file saved; audio stream yes/no.
-- What went wrong or looked wrong. Look at the result: are the two people and the car recognisably the SAME across shot 1, shot 2 and the extension? Is it still blue hour in all of them?
-Then a short table: feature × model → available / not offered / failed, with credit cost.
-Then: credits left per account.
+DOWNLOADING
+- Hover a COMPLETED tile → its ⋮ → Download → 720p original. The detail-view ↓ button never downloads.
+- One file at a time. Before downloading, confirm the tile's prompt text from the DOM matches the row; never map by grid position.
+- Move it from ~/Downloads into ~/Downloads/nakshiq-veo-inbox/ under its exact `save_as` with Desktop Commander. Leave ~/Downloads clean apart from that folder.
 
 DO NOT
-- Do NOT run any NakshIQ script, ingest, upload or build. Do NOT edit any file except creating the probe folder, its images/videos and probe-report.md.
+- Do NOT run any NakshIQ script, ingest, upload or build. Do NOT edit today-tasks.json, the queue, accounts.json or any code or task file.
 - Do NOT publish anything anywhere.
-- Do NOT reword the prompts beyond appending LOOK. If Flow blocks a prompt, note it and skip that step.
 
-FINISH: send one notification: "NakshIQ Veo probe: done — report in ~/Downloads/nakshiq-veo-inbox/probe/probe-report.md" plus a one-line summary of which features work on Lite.
+FINISH: one notification
+- Part A: the one-line Frames-to-Video answer and where the report is.
+- Part B: files written to ~/Downloads/nakshiq-veo-inbox/ grouped by storyboard, which storyboards are COMPLETE, anything skipped and why, credits spent per account.

@@ -39,7 +39,7 @@ mkdirSync(DROP, { recursive: true });
   const known = new Set(JSON.parse(readFileSync(QUEUE, "utf-8")).map((r) => r.clip));
   const gathered = [], strangers = [], waiting = [];
   for (const f of readdirSync(DROP)) {
-    if (!f.toLowerCase().endsWith(".mp4")) continue;
+    if (!/\.(mp4|jpe?g|png)$/i.test(f)) continue;   // v3 reference stills are images
     if (!known.has(f)) { strangers.push(f); continue; }         // never guessed at
     const st = statSync(join(DROP, f));
     if (Date.now() - st.mtimeMs < SETTLE_S * 1000) { waiting.push(f); continue; }
@@ -73,7 +73,7 @@ for n in z.namelist():
 
 const q = JSON.parse(readFileSync(QUEUE, "utf-8"));
 const byClip = new Map(q.map((r) => [r.clip, r]));
-const files = readdirSync(INBOX).filter((f) => f.endsWith(".mp4"));
+const files = readdirSync(INBOX).filter((f) => /\.(mp4|jpe?g|png)$/i.test(f));
 
 if (!files.length) { console.log(`[named] no .mp4 in ${INBOX}`); process.exit(0); }
 
@@ -82,7 +82,7 @@ for (const f of files) {
   const row = byClip.get(f);
   if (!row) { unknown.push(f); continue; }
   const st = statSync(join(INBOX, f));
-  if (st.size < 10000) { empty.push(f); continue; }
+  if (st.size < 10000) { empty.push(f); continue; }   // (a real still is >100KB too)
   // Still being written? A scheduled ingest can fire while the Flow session is
   // mid-download, and a half-written file already carrying its final name
   // would be moved, uploaded and marked live. Leave anything touched in the
