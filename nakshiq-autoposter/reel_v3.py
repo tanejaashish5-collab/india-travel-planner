@@ -293,7 +293,9 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         raise SystemExit("ffmpeg failed:\n" + r.stderr[-1500:])
-    os.environ.setdefault("NAKSHIQ_ENDCARD_CTA", "follow @nakshiq")
+    # English goes to YouTube (@naksh-iq), Hindi to Instagram (@nakshiq).
+    os.environ.setdefault("NAKSHIQ_ENDCARD_CTA",
+                          "follow @naksh-iq" if lang == "en" else "follow @nakshiq")
     if Y._append_endcard(out, tdp):
         mixed = tdp / "mixed.mp4"
         r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(out), "-i", str(full_wav),
