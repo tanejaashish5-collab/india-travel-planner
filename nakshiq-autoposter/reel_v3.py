@@ -2,8 +2,9 @@
 """reel_v3.py — spec-driven cinematic reels (2026-09-25 rebuild).
 
     python3 reel_v3.py check   reel_specs/chikmagalur__sos_rescue.json
-    python3 reel_v3.py enqueue reel_specs/chikmagalur__sos_rescue.json
+    python3 reel_v3.py enqueue reel_specs/chikmagalur__sos_rescue.json [--stills-only]
     python3 reel_v3.py status  reel_specs/chikmagalur__sos_rescue.json
+    python3 reel_v3.py sheet   reel_specs/chikmagalur__sos_keyframe.json   # contact sheet of the stills, for approval
     python3 reel_v3.py render  reel_specs/chikmagalur__sos_rescue.json --lang en [--out x.mp4]
                                [--clip s1x=/path.mp4 ...]   # stand-in footage for editing tests
 
@@ -27,6 +28,21 @@ SO A REEL IS NOW A HAND-WRITTEN SPEC (reel_specs/*.json), not a template:
 This module turns a spec into Veo queue rows for Cowork, and cuts the reel:
 picture changes on the voice, one colour grade over everything, native Veo
 ambience ducked under ElevenLabs VO, no bars, the logo end card.
+
+KEYFRAME MODE (2026-09-26, from probe part 2 of 09-25, measured from the files):
+  - Flow's image mode takes ingredients and costs 0 credits (2b), so every beat
+    can be composed as a STILL from the refs before a credit is spent.
+  - Frames to Video on Veo 3.1 Lite (10 cr) starts on the exact supplied frame
+    (A1, PSNR 37.9 dB) and, given an END frame too, lands on it (A3, 25.5 dB).
+    The end still was itself a free image edit of the start still.
+  - A short Extend prompt held the look as well as the long look paragraph (A4,
+    source intact at 47.4 dB), so Extend and Frames prompts carry the motion,
+    the sound and the negatives only: the frames already pin the look.
+  So a spec may add `keyframes` (stills composed from refs and earlier
+  keyframes) and shots of mode "frames" with a `start` still and an optional
+  `end` still. The stills are queued first; `enqueue --stills-only` queues ONLY
+  them, so a day can be spent making the storyboard for free, `sheet` lays them
+  out for the founder, and the shots are queued once he approves.
 """
 from __future__ import annotations
 
@@ -55,6 +71,9 @@ MIN_SPEED = 0.82   # slow a shot down at most this much before holding its last 
 AMBIENCE = 0.55    # native Veo sound level under the bed
 MUSIC = 0.09
 DISCLOSE = "Dramatised · AI footage"
+# What a motion-only prompt still has to forbid. Ingredients shots get the whole
+# look paragraph instead (they have no source frames to inherit it from).
+NEGATIVES = "No music, no speech, no text, no captions."
 
 
 # ─── spec ────────────────────────────────────────────────────────────────
@@ -65,13 +84,32 @@ def load(path) -> dict:
 
 
 def clip_name(spec: dict, key: str) -> str:
-    ext = ".jpg" if key.startswith("ref_") else ".mp4"
+    ext = ".jpg" if key.startswith(("ref_", "kf_")) else ".mp4"
     return f"{spec['id']}__{key}{ext}"
+
+
+def stills(spec: dict) -> dict:
+    """name -> still entry, refs first then keyframes, in generation order."""
+    out = {r["name"]: r for r in spec["refs"]}
+    for k in spec.get("keyframes") or []:
+        out[k["name"]] = k
+    return out
 
 
 def veo_prompt(spec: dict, shot: dict) -> str:
     sound = f" Sound: {shot['sound']}" if shot.get("sound") else ""
-    return f"{shot['prompt']}{sound} {spec['look']}"
+    if shot["mode"] == "ingredients":
+        return f"{shot['prompt']}{sound} {spec['look']}"
+    # extend / frames: the source frames carry the look. Probe A4 (09-25) measured
+    # the short prompt against the long one and could not tell them apart, and a
+    # look paragraph is one more place for a prompt to contradict its own frames.
+    return f"{shot['prompt']}{sound} {spec.get('negatives') or NEGATIVES}"
+
+
+def still_prompt(spec: dict, kf: dict) -> str:
+    """A keyframe is an image, so it needs the look in words (no frames to
+    inherit from) but not the soundscape."""
+    return f"{kf['prompt']} {spec['look']}"
 
 
 def check(spec: dict) -> list[str]:
@@ -80,6 +118,21 @@ def check(spec: dict) -> list[str]:
     errs = []
     shots = {s["id"]: s for s in spec["shots"]}
     refs = {r["name"] for r in spec["refs"]}
+    for r in spec["refs"]:
+        if not r["name"].startswith("ref_"):
+            errs.append(f"ref {r['name']!r} must be named ref_*")
+    # Keyframes may be composed from the refs and from EARLIER keyframes (an end
+    # still is an edit of its start still, probe A3), never from a later one.
+    seen = set(refs)
+    for k in spec.get("keyframes") or []:
+        if not k["name"].startswith("kf_"):
+            errs.append(f"keyframe {k['name']!r} must be named kf_*")
+        missing = set(k.get("refs") or []) - seen
+        if not k.get("refs") or missing:
+            errs.append(f"{k['name']}: keyframe needs refs from {sorted(seen)}")
+        if SB._NUMBER_ASSERT.search(k["prompt"]):
+            errs.append(f"{k['name']}: prompt would put a phone number on screen")
+        seen.add(k["name"])
     for s in spec["shots"]:
         if s["mode"] == "ingredients":
             missing = set(s.get("refs") or []) - refs
@@ -88,6 +141,13 @@ def check(spec: dict) -> list[str]:
         elif s["mode"] == "extend":
             if s.get("of") not in shots:
                 errs.append(f"{s['id']}: extends unknown shot {s.get('of')!r}")
+        elif s["mode"] == "frames":
+            if s.get("start") not in seen:
+                errs.append(f"{s['id']}: frames shot needs a start still from {sorted(seen)}")
+            if s.get("end") is not None and s["end"] not in seen:
+                errs.append(f"{s['id']}: end still {s['end']!r} is not a ref or keyframe")
+            if s.get("end") == s.get("start"):
+                errs.append(f"{s['id']}: start and end are the same still")
         else:
             errs.append(f"{s['id']}: unknown mode {s['mode']!r}")
         if SB._NUMBER_ASSERT.search(s["prompt"]):
@@ -104,20 +164,30 @@ def check(spec: dict) -> list[str]:
     return errs
 
 
-def queue_rows(spec: dict) -> list[dict]:
-    """Rows for veo_queue.json. Refs first, then shots in spec order, which is
-    the order Cowork must generate them in (an extend needs its source)."""
+def queue_rows(spec: dict, stills_only: bool = False) -> list[dict]:
+    """Rows for veo_queue.json. Refs, then keyframes, then shots in spec order,
+    which is the order Cowork must generate them in (a keyframe needs its refs,
+    an extend needs its source, a frames shot needs its stills)."""
     base = {"slug": spec["slug"], "format": spec["id"], "pipeline": "v3",
             "storyboard": spec["id"], "status": "pending", "take": 1}
     rows = []
     for r in spec["refs"]:
         rows.append(dict(base, clip=clip_name(spec, r["name"]), kind="ref",
-                         role=r["name"], prompt=r["prompt"], seconds=0))
+                         role=r["name"], prompt=r["prompt"], seconds=0, credits=0))
+    for k in spec.get("keyframes") or []:
+        rows.append(dict(base, clip=clip_name(spec, k["name"]), kind="keyframe",
+                         role=k["name"], prompt=still_prompt(spec, k), seconds=0, credits=0,
+                         refs=[clip_name(spec, r) for r in k["refs"]]))
+    if stills_only:
+        return rows
     for s in spec["shots"]:
         row = dict(base, clip=clip_name(spec, s["id"]), kind="shot", mode=s["mode"],
-                   role=s["id"], prompt=veo_prompt(spec, s), seconds=8)
+                   role=s["id"], prompt=veo_prompt(spec, s), seconds=8, credits=10)
         if s["mode"] == "ingredients":
             row["refs"] = [clip_name(spec, r) for r in s["refs"]]
+        elif s["mode"] == "frames":
+            row["start_frame"] = clip_name(spec, s["start"])
+            row["end_frame"] = clip_name(spec, s["end"]) if s.get("end") else None
         else:
             row["extend_of"] = clip_name(spec, s["of"])
             row["seconds"] = 15
@@ -125,13 +195,43 @@ def queue_rows(spec: dict) -> list[dict]:
     return rows
 
 
-def enqueue(spec: dict) -> int:
+def enqueue(spec: dict, stills_only: bool = False) -> int:
     q = json.loads(QUEUE.read_text()) if QUEUE.exists() else []
     have = {r["clip"] for r in q}
-    new = [r for r in queue_rows(spec) if r["clip"] not in have]
+    new = [r for r in queue_rows(spec, stills_only) if r["clip"] not in have]
     if new:
         QUEUE.write_text(json.dumps(q + new, indent=2, ensure_ascii=False))
     return len(new)
+
+
+def sheet(spec: dict, out: Path) -> Path:
+    """Contact sheet of every ref and keyframe already in clips/, labelled, four
+    to a row: the thing the founder approves before any shot is generated."""
+    names = [n for n in stills(spec) if (CLIPS / clip_name(spec, n)).exists()]
+    if not names:
+        raise SystemExit("no stills in clips/ yet for this spec")
+    W, H, COLS = 360, 640, 4
+    rows_n = -(-len(names) // COLS)
+    ins, fc = [], []
+    for i, n in enumerate(names):
+        ins += ["-i", str(CLIPS / clip_name(spec, n))]
+        fc.append(f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=decrease,"
+                  f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:black,"
+                  f"drawtext=text='{_esc(n)}':fontsize=26:fontcolor=white:box=1:"
+                  f"boxcolor=black@0.55:boxborderw=8:x=12:y=12[p{i}]")
+    pad = rows_n * COLS - len(names)
+    for j in range(pad):
+        fc.append(f"color=c=black:s={W}x{H}:d=1[p{len(names) + j}]")
+    n_all = len(names) + pad
+    layout = "|".join(f"{(i % COLS) * W}_{(i // COLS) * H}" for i in range(n_all))
+    fc.append("".join(f"[p{i}]" for i in range(n_all)) + f"xstack=inputs={n_all}:layout={layout}[out]")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    r = subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", ";".join(fc),
+                        "-map", "[out]", "-frames:v", "1", "-update", "1", str(out)],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        raise SystemExit("ffmpeg failed:\n" + r.stderr[-1500:])
+    return out
 
 
 def status(spec: dict) -> dict:
@@ -310,11 +410,13 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["check", "enqueue", "status", "render"])
+    ap.add_argument("cmd", choices=["check", "enqueue", "status", "render", "sheet"])
     ap.add_argument("spec")
     ap.add_argument("--lang", default="en")
     ap.add_argument("--out")
     ap.add_argument("--music")
+    ap.add_argument("--stills-only", action="store_true",
+                    help="enqueue only the refs and keyframes (0 credits); shots later, once approved")
     ap.add_argument("--clip", action="append", default=[],
                     help="stand-in footage for an editing test: SHOT=/path.mp4")
     a = ap.parse_args()
@@ -326,10 +428,14 @@ if __name__ == "__main__":
     if errs:
         raise SystemExit("spec has problems:\n" + "\n".join(errs))
     if a.cmd == "enqueue":
-        print(f"queued {enqueue(spec)} new row(s)")
+        print(f"queued {enqueue(spec, a.stills_only)} new row(s)"
+              + (" (stills only)" if a.stills_only else ""))
     elif a.cmd == "status":
         for k, v in status(spec).items():
             print(f"{v:<12} {k}")
+    elif a.cmd == "sheet":
+        out = Path(a.out) if a.out else VEO / "reels" / f"{spec['id']}__stills.jpg"
+        print(f"[reel_v3] wrote {sheet(spec, out)}")
     else:
         import storyboard as SB
         stand = dict(x.split("=", 1) for x in a.clip)

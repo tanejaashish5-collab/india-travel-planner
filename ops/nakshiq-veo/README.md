@@ -190,6 +190,32 @@ the session it would create is destroyed the moment Playwright touches it.
   queueing a fresh 27 on every fire would build a backlog that 30/day can never
   clear (observed: 27 to 54 in two runs).
 
+## Keyframe mode (2026-09-26)
+
+Probe part 2 (2026-09-25, measured from the files, not from the run's report)
+changed the shape of a storyboard:
+
+| Finding | Measured | Consequence |
+|---|---|---|
+| Image mode takes ingredients at 0 credits | 2b: s1 still composed from the 3 refs | every beat is a free still first |
+| Frames to Video starts on the exact still | A1: PSNR 37.9 dB against the supplied frame | animate the approved still, do not re-describe it |
+| Start + end still accepted on Lite, 10 credits | A3: lands on the end still, 25.5 dB | beats that must land somewhere get an end still (a free edit of the start still) |
+| Short Extend prompt = long one | A4: source intact 47.4 dB, frames indistinguishable | Extend and Frames prompts carry motion + sound + negatives only |
+| "Three shots in one clip" | A5: one hard cut, 2 pieces | montage only for cutaways; not used in specs |
+
+In the spec: `keyframes[]` (name `kf_*`, `refs` = refs or earlier keyframes,
+`prompt` = composition; the look paragraph is appended) and shots of `mode:
+"frames"` with `start` and optional `end`. `reel_v3.py enqueue --stills-only`
+queues only refs + keyframes (a 0-credit day), `reel_v3.py sheet` builds the
+contact sheet the founder approves, then plain `enqueue` adds the shots.
+`export-tasks.mjs` fills accounts by credits (stills cost 0) and ships
+`start_frame` / `end_frame`; the Cowork task has steps 2k (keyframe) and 3f
+(frames). Choosing Frames can switch the model to Fast: the task makes the agent
+read the 10-credit chip back before submitting. First spec on the new method:
+`nakshiq-autoposter/reel_specs/chikmagalur__sos_keyframe.json` (same approved
+script as the v3 storyboard). `queue-keyframe-stills-once.sh` was the one-shot
+LaunchAgent that queued its stills day on 26 Sep after 13:00.
+
 ## Mirror rule
 
 `~/Automation` is **not** a git repo. This directory is mirrored to

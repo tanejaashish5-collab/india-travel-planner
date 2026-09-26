@@ -25,7 +25,7 @@ mkdir -p "$DEST"
 rsync -a --delete \
   --exclude 'profile/' --exclude 'downloads/' --exclude 'clips/' --exclude 'inbox/' --exclude 'data/' \
   --exclude 'node_modules/' --exclude 'veo_queue.json' --exclude 'generated.json' \
-  --exclude 'accounts.json' --exclude 'today-tasks.json' --exclude 'reels/' \
+  --exclude 'accounts.json' --exclude 'today-tasks*.json' --exclude 'reels/' --exclude '_backups/' \
   "$HERE/" "$DEST/"
 
 # Any address-shaped string, plus every local-part on the live roster.

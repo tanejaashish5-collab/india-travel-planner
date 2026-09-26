@@ -1,0 +1,84 @@
+{
+  "id": "chikmagalur__sos_kf",
+  "slug": "chikmagalur",
+  "format": "sos_rescue",
+  "tone": "tense",
+  "script_approved": "2026-09-24 founder wrote the English script and approved the Hindi adaptation (one-pass, Cs.V10). Same script as chikmagalur__sos_v3; only the shooting method differs.",
+  "method": "KEYFRAME-FIRST (2026-09-26). Every beat is composed as a free Nano Banana still from the three refs (probe 2b: image mode takes ingredients, 0 credits), the founder approves the contact sheet (reel_v3.py sheet), and only then is each beat animated with Frames to Video on Veo 3.1 Lite (10 credits) from its still (probe A1: starts on the exact frame) and, where the beat must land somewhere, to an end still that is a free edit of the start still (probe A3). Shot 1 carries on with an Extend whose prompt is motion + sound only (probe A4: the look paragraph added nothing). Camera moves are not asked for: in Frames mode Lite kept the still's framing and ignored a push-in (A1).",
+  "setting_basis": "Chikmagalur is Karnataka's coffee-growing hill district; coffee estates on the hill roads are the ordinary view, not a claim about a specific road.",
+
+  "look": "Blue hour, about fifteen minutes after sunset: deep blue sky with a last thin band of pale orange on the horizon, the road lit only by the car's amber hazard lights and headlights, cool blue shadows, a light mist over the coffee estates on the hills near Chikmagalur. Anamorphic 35mm lens, shallow depth of field, soft film grain, natural colour, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. The phone screen is only a soft glow, never legible. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+
+  "refs": [
+    {"name": "ref_man", "prompt": "Full-length photograph of a man in his mid twenties with wavy black hair down to his collar, wearing a navy blue quilted jacket, dark jeans and brown boots, standing at the edge of a hill road at blue hour, three-quarter view, neutral expression, photorealistic, natural light, no text."},
+    {"name": "ref_woman", "prompt": "Full-length photograph of a woman in her late twenties with a single long dark braid, wearing a mustard yellow wool shawl over a grey sweater and dark trousers, standing at the edge of a hill road at blue hour, three-quarter view, neutral expression, photorealistic, natural light, no text."},
+    {"name": "ref_car", "prompt": "A dusty white hatchback with a black roof rack stopped at the edge of a narrow road winding through coffee estates in the hills at blue hour, bonnet up, amber hazard lights on, photorealistic, no people, no text."}
+  ],
+
+  "keyframes": [
+    {"name": "kf_s1", "refs": ["ref_man", "ref_woman", "ref_car"],
+     "prompt": "Wide shot, camera low at the roadside: the dusty white hatchback with a black roof rack is stopped at the edge of the narrow road through the coffee estates, bonnet up, hazard lights blinking. The man in the navy blue quilted jacket leans into the engine bay; the woman in the mustard yellow wool shawl stands a few steps behind him, looking up the empty road."},
+    {"name": "kf_s3", "refs": ["ref_man", "ref_woman", "ref_car"],
+     "prompt": "Medium shot from behind and slightly to one side of the man: he holds his phone up at arm's length above his head, searching for a signal. The woman stands a step behind him beside the car, pulling her shawl tight against the cold, the open bonnet and the amber hazard lights beside them."},
+    {"name": "kf_s4", "refs": ["ref_man", "ref_car"],
+     "prompt": "Close shot over the man's shoulder on his hands and his phone held low in front of him, a saved page open on the screen as only a soft glow, the amber hazard light pulsing on the sleeve of his navy jacket, the dark engine bay behind."},
+    {"name": "kf_s5", "refs": ["ref_man", "ref_woman", "ref_car"],
+     "prompt": "Wide shot from behind: the man walks alone up the dark road away from the car, phone held high. Far behind him the car's amber hazard lights blink and the woman waits beside it."},
+    {"name": "kf_s5_end", "refs": ["kf_s5"],
+     "prompt": "Same scene, same man, same car and the same blue-hour light as the reference, a few seconds later: the man has stopped further up the dark road and holds the phone to his ear. Far behind him the car's amber hazard lights blink and the woman waits beside it."},
+    {"name": "kf_s6", "refs": ["ref_man", "ref_woman", "ref_car"],
+     "prompt": "Wide shot from behind the woman standing by the car: far up the road, blue and red emergency lights glow around the bend ahead. The man stands in the road between her and the bend, turned toward the lights."},
+    {"name": "kf_s6_end", "refs": ["kf_s6"],
+     "prompt": "Same scene, same two people, same car and the same blue-hour light as the reference, a few seconds later: an ambulance with its blue and red lights on has pulled in on the road ahead of the car. The man walks back toward it and the woman steps forward to meet it."}
+  ],
+
+  "shots": [
+    {"id": "s1", "mode": "frames", "start": "kf_s1",
+     "prompt": "The camera holds perfectly still. The man works in the engine bay; the woman glances up the empty road and back to him; the hazard lights keep blinking.",
+     "sound": "Crickets, a light wind through the coffee bushes, the steady tick of the hazard lights, the engine ticking as it cools."},
+    {"id": "s1x", "mode": "extend", "of": "s1",
+     "prompt": "The man straightens up and steps back from the engine, rubbing the back of his neck; the woman turns and looks back down the empty road the way they came, the hazard lights still blinking.",
+     "sound": "Crickets, wind, the hazard lights ticking, a long exhale."},
+    {"id": "s3", "mode": "frames", "start": "kf_s3",
+     "prompt": "The camera holds still. The man turns slowly on the spot with the phone held high, searching for a signal; the woman pulls her shawl tighter and looks up the road.",
+     "sound": "Wind, crickets, the faint tick of the hazard lights behind them."},
+    {"id": "s4", "mode": "frames", "start": "kf_s4",
+     "prompt": "The camera holds still. His thumb slowly scrolls the list on the screen, which stays a soft glow; the amber hazard light pulses across his sleeve.",
+     "sound": "A soft screen tap, wind, crickets."},
+    {"id": "s5", "mode": "frames", "start": "kf_s5", "end": "kf_s5_end",
+     "prompt": "The camera holds still. The man walks on up the dark road, phone held high, then stops and brings the phone to his ear.",
+     "sound": "Footsteps on the gravel road, wind, crickets, a faint phone ringing tone."},
+    {"id": "s6", "mode": "frames", "start": "kf_s6", "end": "kf_s6_end",
+     "prompt": "The camera holds still. The emergency lights come around the bend and the ambulance pulls in slowly on the road; the man walks back toward it and the woman steps forward to meet it.",
+     "sound": "A siren approaching and then winding down, tyres on gravel, crickets."}
+  ],
+
+  "beats": [
+    {"shot": "s1x", "from": 0.0},
+    {"shot": "s1x", "from": 7.6},
+    {"shot": "s3", "from": 0.5},
+    {"shot": "s4", "from": 0.3},
+    {"shot": "s5", "from": 0.0},
+    {"shot": "s6", "from": 0.0}
+  ],
+
+  "vo": {
+    "en": [
+      "We were supposed to reach Chikmagalur before dark.\nWe didn't.",
+      "The car stopped.\nNo network.\nNo calls.\nNothing.",
+      "I kept checking my phone anyway.",
+      "Then I remembered I'd saved NakshIQ.\nEmergency numbers.\nOffline.",
+      "I walked up the road until one bar came back.\nMade the call.",
+      "And that's when I understood...\nA travel guide tells you where to go.\nTravel intelligence tells you what to do when things go wrong.\nNakshIQ."
+    ],
+    "hi": [
+      "हमें अँधेरा होने से पहले चिकमगलूर पहुँचना था।\nनहीं पहुँचे।",
+      "गाड़ी रुक गई।\nनेटवर्क नहीं।\nकॉल नहीं।\nकुछ नहीं।",
+      "मैं फिर भी फ़ोन देखता रहा।",
+      "फिर याद आया, मैंने NakshIQ सेव किया था।\nइमरजेंसी नंबर।\nऑफ़लाइन।",
+      "मैं सड़क पर आगे चलता गया, जब तक एक बार नहीं आया।\nकॉल लगाई।",
+      "और तब समझ आया...\nट्रैवल गाइड बताती है, कहाँ जाना है।\nट्रैवल इंटेलिजेंस बताती है, जब कुछ गलत हो जाए, तब क्या करना है।\nNakshIQ."
+    ]
+  },
+  "captions": {"hi": "en"}
+}
