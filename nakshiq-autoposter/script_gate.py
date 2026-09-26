@@ -32,6 +32,7 @@ from storyboard import _OVERCLAIM, _NUMBER_ASSERT, _TERRAIN_ASSERT  # noqa: E402
 
 DATA = Path.home() / "Automation" / "nakshiq-veo" / "data" / "reel-data.json"
 WORDS = (55, 80)            # ~24-32 s at the Cs.V10 one-pass pace
+MAX_LINES = 17        # founder picked 13-16-line scripts over 20-line ones 3/3 (2026-09-26)
 DASHES = re.compile(r"[–—]")     # founder: no em/en dashes in anything public
 DIGITS = re.compile(r"\d")
 
@@ -96,6 +97,8 @@ def check(script: dict, d: dict | None = None) -> list[str]:
         problems.append('English must end on the line "NakshIQ."')
     if "travel intelligence" not in en.lower():
         problems.append('English must carry the "travel intelligence" line before the sign-off')
+    if len(lines) > MAX_LINES:
+        problems.append(f"English has {len(lines)} lines; max {MAX_LINES} (over-chopped scripts lost the blind test)")
     long = [l for l in lines if len(l.split()) > 14]
     if long:
         problems.append(f"{len(long)} line(s) over 14 words; the house style is one idea per line: {long[0]!r}")
