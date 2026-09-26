@@ -1,0 +1,84 @@
+{
+  "id": "triund__first_trek_kf",
+  "slug": "dharamshala",
+  "format": "first_trek",
+  "tone": "warm",
+  "script_approved": "2026-09-26 founder picked this script in blind test round 2 (Claude writer); passed script_gate against reel-data.json (Triund trek: difficulty easy, fitness low, 1 day; Dharamshala November = go).",
+  "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat composed from the refs, then Frames to Video on Veo 3.1 Lite from each still (s5 lands on an end still). Motion + sound prompts only; the stills carry the look.",
+  "setting_basis": "Triund is a one-day ridge trek above McLeodganj near Dharamshala; the footage shows a generic pine trail and an open grassy ridge with mountains, not a claim about a specific view.",
+
+  "look": "Early morning in the Himalayan foothills, soft low sunlight, cool blue shadows, pine trees, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+
+  "refs": [
+    {"name": "ref_man", "prompt": "Full-length photograph of a man in his late twenties with short black hair and a trimmed beard, wearing an olive green puffer jacket, dark trekking trousers and brown trekking shoes, a small grey backpack, standing on a pine forest trail in early morning light, three-quarter view, neutral expression, photorealistic, natural light, no text."},
+    {"name": "ref_woman", "prompt": "Full-length photograph of a woman in her late twenties with long dark hair in a low ponytail, wearing a rust red fleece jacket, black trekking trousers, a grey knitted beanie and new white and grey trekking shoes, standing on a pine forest trail in early morning light, three-quarter view, neutral expression, photorealistic, natural light, no text."},
+    {"name": "ref_trail", "prompt": "A narrow stony trail climbing through a pine forest on a Himalayan hillside in soft early morning sunlight, then opening onto a wide grassy ridge with mountains in the distance, photorealistic, no people, no text."}
+  ],
+
+  "keyframes": [
+    {"name": "kf_s1", "refs": ["ref_man", "ref_woman"],
+     "prompt": "Medium shot inside a small wooden guesthouse room in soft early morning window light: the woman in the rust red fleece sits on the edge of the bed lacing her new white and grey trekking shoes, looking down, unsure. The man in the olive green puffer jacket sits beside her, watching her."},
+    {"name": "kf_s2", "refs": ["kf_s1"],
+     "prompt": "Same room, same two people and the same morning light as the reference, moments later: the man holds his phone out between them, its screen only a soft glow, and the woman leans in to read it, a small smile starting."},
+    {"name": "kf_s3", "refs": ["ref_man", "ref_woman", "ref_trail"],
+     "prompt": "Wide shot from behind: the woman in the rust red fleece and grey beanie and the man in the olive green puffer jacket set off up the narrow stony trail through the pine forest, she a step ahead of him, soft morning sunlight between the trees."},
+    {"name": "kf_s4", "refs": ["ref_man", "ref_woman", "ref_trail"],
+     "prompt": "Medium shot from the side on the stony pine trail: the woman in the rust red fleece has stopped with one hand on her knee, catching her breath; the man in the olive green puffer jacket waits a step below her, patient, smiling."},
+    {"name": "kf_s5", "refs": ["ref_man", "ref_woman", "ref_trail"],
+     "prompt": "Wide shot: the woman in the rust red fleece steps out of the pine trees onto a wide open grassy ridge in soft morning sunlight, mountains in the distance, the man in the olive green puffer jacket a few steps behind her."},
+    {"name": "kf_s5_end", "refs": ["kf_s5"],
+     "prompt": "Same ridge, same two people and the same morning light as the reference, a few seconds later: the woman stands on the open grass with both hands on top of her beanie, laughing, the man beside her grinning, mountains in the distance."},
+    {"name": "kf_s6", "refs": ["ref_man", "ref_woman", "ref_trail"],
+     "prompt": "Wide shot from behind: the woman in the rust red fleece and the man in the olive green puffer jacket sit side by side on a large rock at the edge of the grassy ridge, looking out at the mountains in soft morning sunlight."}
+  ],
+
+  "shots": [
+    {"id": "s1", "mode": "frames", "start": "kf_s1",
+     "prompt": "The camera holds still. She slowly pulls the laces tight and pauses, unsure; he watches her quietly.",
+     "sound": "Quiet room tone, a bird outside the window, the soft pull of shoelaces."},
+    {"id": "s2", "mode": "frames", "start": "kf_s2",
+     "prompt": "The camera holds still. She reads the phone, her smile grows, and she looks up at him and nods.",
+     "sound": "Quiet room tone, a bird outside, a soft exhale of relief."},
+    {"id": "s3", "mode": "frames", "start": "kf_s3",
+     "prompt": "The camera holds still as they walk away up the stony trail between the pines, she a step ahead.",
+     "sound": "Footsteps on stones, birdsong, a light breeze in the pines."},
+    {"id": "s4", "mode": "frames", "start": "kf_s4",
+     "prompt": "The camera holds still. She breathes, straightens up and starts climbing again; he follows just behind her.",
+     "sound": "Steady breathing, footsteps on stones, birdsong."},
+    {"id": "s5", "mode": "frames", "start": "kf_s5", "end": "kf_s5_end",
+     "prompt": "The camera holds still. She walks out onto the open ridge, stops, puts both hands on her head and laughs; he comes up beside her.",
+     "sound": "A breeze over open grass, her laugh, footsteps on grass."},
+    {"id": "s6", "mode": "frames", "start": "kf_s6",
+     "prompt": "The camera holds still. They sit side by side on the rock; she leans her shoulder against his and they look out at the mountains.",
+     "sound": "A soft breeze over the ridge, distant birds."}
+  ],
+
+  "beats": [
+    {"shot": "s1", "from": 0.0},
+    {"shot": "s2", "from": 0.0},
+    {"shot": "s3", "from": 0.0},
+    {"shot": "s4", "from": 0.0},
+    {"shot": "s5", "from": 0.0},
+    {"shot": "s6", "from": 0.0}
+  ],
+
+  "vo": {
+    "en": [
+      "She had never done a trek.\nTriund was my idea.\nShe wasn't sure she could.",
+      "So we checked NakshIQ together.\nIt said easy.\nLow fitness level.\nUp and back the same day.\nNovember said go.",
+      "She looked at me and said, okay.\nThen we just started walking.",
+      "She went slow. I stayed with her.",
+      "At the top, she laughed out loud.\nShe'd done it.",
+      "Travel intelligence is knowing you're ready before you start.\nNakshIQ."
+    ],
+    "hi": [
+      "उसने कभी ट्रेक नहीं किया था।\nत्रिउंड मेरा आइडिया था।\nउसे यकीन नहीं था कि वो कर पाएगी।",
+      "तो हमने साथ बैठकर NakshIQ देखा।\nलिखा था, आसान।\nफिटनेस, कम चाहिए।\nउसी दिन ऊपर जाकर वापस।\nनवंबर में, गो।",
+      "उसने मेरी तरफ़ देखा और बोली, चलो।\nफिर हम बस चल पड़े।",
+      "वो धीरे चली। मैं उसके साथ रहा।",
+      "ऊपर पहुँचकर वो ज़ोर से हँस पड़ी।\nउसने कर दिखाया।",
+      "ट्रैवल इंटेलिजेंस मतलब, शुरू करने से पहले जान लेना कि आप तैयार हो।\nNakshIQ."
+    ]
+  },
+  "captions": {"hi": "en"}
+}

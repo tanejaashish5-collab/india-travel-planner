@@ -269,6 +269,11 @@ def caption_for(row: dict) -> tuple[str, str]:
     name = _dest_name(row["slug"])
     lines = _lines(row["slug"], row["format"], row["lang"])
     hook = lines[0] if lines else name
+    # A v3 reel is cut from its own hand-written spec, not the v2 storyboard, so its
+    # row carries its hook (and title) from that script. The v2 fallback once put
+    # "the ambulance reached them without signal" under a reel whose script says
+    # he walked until one bar came back (2026-09-26).
+    hook = row.get("caption_hook") or hook
     url = f"https://www.nakshiq.com/en/destination/{row['slug']}"
     tag = row["slug"].replace("-", "")
     disclose = "Dramatised scene, AI-generated footage. The facts are NakshIQ's real data."
@@ -281,7 +286,7 @@ def caption_for(row: dict) -> tuple[str, str]:
     head = hook[:80].rstrip('.')
     # A hook that already names the place would say it twice ("...Calangute-Baga... | Calangute-Baga").
     title = head if name.lower() in head.lower() else f"{head} | {name}"
-    return cap, title[:100]
+    return cap, (row.get("yt_title") or title)[:100]
 
 
 def publish(dry: bool = False) -> int:
