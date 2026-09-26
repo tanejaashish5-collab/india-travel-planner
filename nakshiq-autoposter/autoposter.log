@@ -24920,3 +24920,17 @@ Date range: 2026-04-15 → 2026-09-25
 2026-09-26 08:08:04  WARNING   [youtube/@naksh-iq] YT Short post failed (API rejected).
 2026-09-26 08:08:04  INFO      State saved. YT Short run complete.
 2026-09-26 08:08:04  INFO      ════════════════════════════════════════════════════════════
+2026-09-26 19:29:49  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-26 19:29:49  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-26 19:30:36  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-26 19:30:36  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-26 19:31:19  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-09-26 19:31:19  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-26 19:31:21  INFO          Requesting upload URL for chikmagalur__sos_v3__hi.mp4 (43,916,267 bytes, video/mp4)
+2026-09-26 19:31:23  INFO          Uploading to R2 (timeout=300s)...
+2026-09-26 19:31:43  INFO          R2 PUT OK. Confirming...
+2026-09-26 19:31:46  INFO          Media ready: 4KmE6 (43,916,267 bytes · chikmagalur__sos_v3__hi.mp4)
+2026-09-26 19:32:43  INFO          Requesting upload URL for chikmagalur__sos_v3__en.mp4 (38,260,841 bytes, video/mp4)
+2026-09-26 19:32:45  INFO          Uploading to R2 (timeout=300s)...
+2026-09-26 19:33:04  INFO          R2 PUT OK. Confirming...
+2026-09-26 19:33:06  INFO          Media ready: apYj9 (38,260,841 bytes · chikmagalur__sos_v3__en.mp4)
