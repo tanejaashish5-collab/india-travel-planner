@@ -35,22 +35,10 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "PdMu0_carousel": "2026-09-25"
+    "PdMu0_carousel": "2026-09-26"
   },
   "last_sync": "2026-09-25T18:45:26.317633+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "pangong-lake",
-      "date": "2026-09-11"
-    },
-    {
-      "destination_id": "coimbatore",
-      "date": "2026-09-11"
-    },
-    {
-      "destination_id": "landour",
-      "date": "2026-09-11"
-    },
     {
       "destination_id": "jog-falls",
       "date": "2026-09-12"
@@ -134,6 +122,10 @@
     {
       "destination_id": "kiphire",
       "date": "2026-09-25"
+    },
+    {
+      "destination_id": "cherai",
+      "date": "2026-09-26"
     }
   ],
   "posted_formats": {
@@ -10043,6 +10035,33 @@
       "destination": "kiphire",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-09-25"
+    },
+    {
+      "timestamp": "2026-09-26T09:32:42.183887+00:00",
+      "date": "2026-09-26",
+      "platform": "instagram",
+      "post_id": "iQaOh",
+      "destination": "chikmagalur",
+      "format": "scenario_sos_rescue",
+      "media_id": "4KmE6"
+    },
+    {
+      "timestamp": "2026-09-26T09:33:21.792112+00:00",
+      "date": "2026-09-26",
+      "platform": "youtube",
+      "post_id": "OX67k",
+      "destination": "chikmagalur",
+      "format": "scenario_sos_rescue",
+      "media_id": "apYj9"
+    },
+    {
+      "timestamp": "2026-09-26T12:24:21.296273+00:00",
+      "date": "2026-09-26",
+      "platform": "facebook",
+      "post_id": "VGIA8",
+      "destination": "cherai",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-09-26"
     }
   ],
   "theme_usage": {
@@ -10948,7 +10967,12 @@
       "Lambasingi Bamboo Chicken & Roadside Stalls|lambasingi",
       "M3 Cafe & Restaurant|ayodhya",
       "Maihang Restaurant Kaziranga|kaziranga",
-      "Jade Dragon — Taj Dal View|srinagar"
+      "Jade Dragon — Taj Dal View|srinagar",
+      "Chilliout Cafe Cherai Beach|cherai",
+      "Kanji Sweets|jaipur",
+      "Mayur Hotel & Restaurant|lansdowne",
+      "The Bonfire Eat Drink And Love|nubra-valley",
+      "White Mountain View Hotel & Restaurant|drass"
     ]
   }
 }
