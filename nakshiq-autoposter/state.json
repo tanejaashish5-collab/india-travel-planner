@@ -37,9 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "PdMu0_carousel": "2026-09-26",
     "PdMu0": "2026-09-26",
-    "PdMu0_evening": "2026-09-26"
+    "PdMu0_evening": "2026-09-26",
+    "PdMu0_tourist_map": "2026-09-26"
   },
-  "last_sync": "2026-09-26T16:47:31.962141+00:00",
+  "last_sync": "2026-09-26T17:52:57.860488+00:00",
   "posted_destinations": [
     {
       "destination_id": "jog-falls",
@@ -10079,6 +10080,15 @@
       "format": "v2_budget_receipt",
       "has_media": true,
       "media_id": "v2_budget_receipt-gurez-valley.png"
+    },
+    {
+      "timestamp": "2026-09-26T17:53:30.002293+00:00",
+      "date": "2026-09-26",
+      "platform": "facebook",
+      "post_id": "elVeF",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "KL_cartographic_dark"
     }
   ],
   "theme_usage": {
@@ -10421,6 +10431,16 @@
         "2026-05-20",
         "2026-08-26"
       ],
+      "tourist_map": [
+        "2026-05-22",
+        "2026-06-15",
+        "2026-09-26"
+      ],
+      "v2_budget_receipt": [
+        "2026-05-23",
+        "2026-06-16",
+        "2026-09-26"
+      ],
       "v3_tl_editorial_listicle": [
         "2026-05-25",
         "2026-08-27"
@@ -10538,9 +10558,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v2_budget_receipt": [
-        "2026-09-26"
       ]
     },
     "reels": {
@@ -10859,6 +10876,9 @@
       ],
       "MZ": [
         "2026-08-06"
+      ],
+      "KL": [
+        "2026-09-26"
       ]
     },
     "tourist_map_combos": {
@@ -10867,6 +10887,9 @@
       ],
       "MZ_cartographic_dark": [
         "2026-08-06"
+      ],
+      "KL_cartographic_dark": [
+        "2026-09-26"
       ]
     },
     "collection_carousel_dests:adrenaline-rush": {
@@ -10933,8 +10956,7 @@
       "munsiyari": [
         "2026-09-24"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
