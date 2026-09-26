@@ -35,9 +35,11 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "PdMu0_carousel": "2026-09-26"
+    "PdMu0_carousel": "2026-09-26",
+    "PdMu0": "2026-09-26",
+    "PdMu0_evening": "2026-09-26"
   },
-  "last_sync": "2026-09-25T18:45:26.317633+00:00",
+  "last_sync": "2026-09-26T16:47:31.962141+00:00",
   "posted_destinations": [
     {
       "destination_id": "jog-falls",
@@ -126,6 +128,10 @@
     {
       "destination_id": "cherai",
       "date": "2026-09-26"
+    },
+    {
+      "destination_id": "gurez-valley",
+      "date": "2026-09-26"
     }
   ],
   "posted_formats": {
@@ -158,7 +164,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "score_card",
       "score_card",
@@ -173,7 +178,8 @@
       "festival_alert",
       "score_card",
       "score_card",
-      "v2_local_knows"
+      "v2_local_knows",
+      "v2_budget_receipt"
     ]
   },
   "post_log": [
@@ -10062,6 +10068,17 @@
       "destination": "cherai",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-09-26"
+    },
+    {
+      "timestamp": "2026-09-26T16:48:09.752734+00:00",
+      "date": "2026-09-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "Aq21s",
+      "destination": "gurez-valley",
+      "format": "v2_budget_receipt",
+      "has_media": true,
+      "media_id": "v2_budget_receipt-gurez-valley.png"
     }
   ],
   "theme_usage": {
@@ -10246,7 +10263,8 @@
         "2026-06-17",
         "2026-06-24",
         "2026-07-08",
-        "2026-07-24"
+        "2026-07-24",
+        "2026-09-26"
       ],
       "lonavala": [
         "2026-06-12",
@@ -10520,6 +10538,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v2_budget_receipt": [
+        "2026-09-26"
       ]
     },
     "reels": {
@@ -10586,7 +10607,8 @@
       "gurez-valley": [
         "2026-06-24",
         "2026-07-08",
-        "2026-07-24"
+        "2026-07-24",
+        "2026-09-26"
       ],
       "sangla": [
         "2026-06-28"
@@ -10724,7 +10746,8 @@
         "2026-08-15",
         "2026-08-22",
         "2026-08-29",
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-26"
       ],
       "adventurers": [
         "2026-05-29",
@@ -10910,7 +10933,8 @@
       "munsiyari": [
         "2026-09-24"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -10924,7 +10948,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "nako",
+    "shared_best": "jog-falls",
     "collection": "offbeat-romantic"
   },
   "manual_skip_dests": {},
