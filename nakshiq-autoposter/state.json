@@ -40,7 +40,7 @@
     "PdMu0_evening": "2026-09-27",
     "PdMu0_tourist_map": "2026-09-26"
   },
-  "last_sync": "2026-09-27T17:20:49.373593+00:00",
+  "last_sync": "2026-09-27T18:32:16.541625+00:00",
   "posted_destinations": [
     {
       "destination_id": "alchi",
@@ -10577,6 +10577,10 @@
         "2026-06-21",
         "2026-09-24"
       ],
+      "v2_weekend_escape_map": [
+        "2026-06-03",
+        "2026-09-27"
+      ],
       "v2_myth_bust_oneline": [
         "2026-06-06",
         "2026-06-17",
@@ -10592,9 +10596,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v2_weekend_escape_map": [
-        "2026-09-27"
       ]
     },
     "reels": {
@@ -11005,7 +11006,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kalpa",
+    "shared_best": "jog-falls",
     "collection": "offbeat-romantic"
   },
   "manual_skip_dests": {},
