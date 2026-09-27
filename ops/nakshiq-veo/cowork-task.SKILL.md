@@ -53,6 +53,10 @@ DOWNLOADING
 - One file at a time. Before downloading, confirm the tile's prompt text from the DOM matches the row; never map by grid position.
 - Move it from ~/Downloads into ~/Downloads/nakshiq-veo-inbox/ under its exact `save_as` with Desktop Commander. Leave ~/Downloads clean apart from that folder.
 
+UPLOADING A SAVED STILL (another account, or a frames shot whose still is not in this project)
+- Flow's upload button opens a native macOS file picker, which cannot be driven. What worked on 2026-09-27: stage the saved .jpg into the session, build a File from it in the page, and dispatch a synthetic drop onto the project canvas; Flow accepted it as 9:16 and it could be picked as the start frame. A local http server does NOT work (Flow's CSP blocks the fetch).
+- After the drop, check the byte size or dimensions match the saved still before using it as a frame.
+
 DO NOT
 - Do NOT run any NakshIQ script, ingest, upload or build. Do NOT edit today-tasks.json, the queue, accounts.json or any code or task file.
 - Do NOT publish anything anywhere.
