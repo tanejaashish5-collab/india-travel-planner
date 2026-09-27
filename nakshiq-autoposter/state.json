@@ -35,21 +35,13 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "PdMu0_carousel": "2026-09-26",
+    "PdMu0_carousel": "2026-09-27",
     "PdMu0": "2026-09-26",
     "PdMu0_evening": "2026-09-26",
     "PdMu0_tourist_map": "2026-09-26"
   },
   "last_sync": "2026-09-26T17:52:57.860488+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "jog-falls",
-      "date": "2026-09-12"
-    },
-    {
-      "destination_id": "ranjangaon",
-      "date": "2026-09-12"
-    },
     {
       "destination_id": "alchi",
       "date": "2026-09-13"
@@ -133,6 +125,10 @@
     {
       "destination_id": "gurez-valley",
       "date": "2026-09-26"
+    },
+    {
+      "destination_id": "hanle",
+      "date": "2026-09-27"
     }
   ],
   "posted_formats": {
@@ -10107,6 +10103,15 @@
       "destination": "dharamshala",
       "format": "scenario_first_trek",
       "media_id": "vXPGs"
+    },
+    {
+      "timestamp": "2026-09-27T13:16:54.859560+00:00",
+      "date": "2026-09-27",
+      "platform": "facebook",
+      "post_id": "IBN55",
+      "destination": "hanle",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-09-27"
     }
   ],
   "theme_usage": {
