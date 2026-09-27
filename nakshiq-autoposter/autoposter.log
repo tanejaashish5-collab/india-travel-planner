@@ -25171,3 +25171,48 @@ Date range: 2026-04-15 → 2026-09-26
 2026-09-27 13:16:54  INFO      [facebook/Nakshiq] ✅ carousel published (window) · post_id=IBN55
 2026-09-27 13:16:54  INFO      Carousel run complete (fmt=window, posted=True).
 2026-09-27 13:16:54  INFO      ════════════════════════════════════════════════════════════
+2026-09-27 17:20:04  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-09-27 17:20:04  INFO      ════════════════════════════════════════════════════════════
+2026-09-27 17:20:04  INFO      Nakshiq Autoposter · EVENING · 2026-09-27 · weekday=6
+2026-09-27 17:20:04  INFO      ════════════════════════════════════════════════════════════
+2026-09-27 17:20:04  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-27 17:20:49  INFO      Synced → 20 destinations · 100 traps · 5 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-27 17:20:49  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-27 17:20:50  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-27 17:20:50  INFO      Active accounts: ['facebook/Nakshiq']
+2026-09-27 17:20:50  INFO      Festivals filtered (past/post-window): Ladakh Festival, Ganesh Chaturthi at Trinetra Ganesh Temple, Nubra Valley Festival, Nako Lake Festival, Champawat Nanda Devi Fair, Mata Murti Ka Mela, Urs of Sheikh Salim Chishti, Nanda Devi Mela (+22 more)
+2026-09-27 17:20:50  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-27 17:21:06  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-27 17:21:06  INFO      [diversity] feed: 37 → 16 options · cooldown dropped 21 (carousel, pillar:discovery, pillar:scenario_first_trek, pillar:scenario_sos_rescue, pillar:verification seen <2d)
+2026-09-27 17:21:06  INFO      Evening format (balance→verdict): v2_weekend_escape_map [40% vs target 50%] (0/15 never featured)
+2026-09-27 17:21:06  INFO      Formats — IG: v2_weekend_escape_map  ·  FB: v2_weekend_escape_map  ·  Story: kids_intel
+2026-09-27 17:21:06  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 57
+2026-09-27 17:21:06  INFO      Fingerprint dedup snapshot — 57 dests in 7d · 88 (dest,fmt) pairs in 30d · 214 media in 60d
+2026-09-27 17:21:06  INFO      Kids destination locked: Tirupati
+2026-09-27 17:21:12  INFO      Shared best destination locked: Kalpa
+2026-09-27 17:21:12  INFO      [facebook/Nakshiq] Generating v2_weekend_escape_map post...
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: manali has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: tawang has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: mumbai has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: hampi has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: mussoorie has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: mathura has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: tungnath has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: nainital has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: madurai has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale September score/note)
+2026-09-27 17:21:12  INFO      [facebook/Nakshiq] Caption ready (663 chars, dest=ooty)
+2026-09-27 17:21:13  INFO      [facebook/Nakshiq] CSV video format (v2_weekend_escape_map) — using dest Ken Burns clip as fallback
+2026-09-27 17:21:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/ooty.mp4?v=20260915
+2026-09-27 17:21:16  INFO          Brand-stamp applied: ooty.mp4 (7,697,909 → 3,639,117 bytes)
+2026-09-27 17:21:16  INFO          Requesting upload URL for ooty.mp4 (3,639,117 bytes, video/mp4)
+2026-09-27 17:21:17  INFO          Uploading to R2 (timeout=300s)...
+2026-09-27 17:21:18  INFO          R2 PUT OK. Confirming...
+2026-09-27 17:21:20  INFO          Media ready: QJiGs (3,639,117 bytes · ooty.mp4)
+2026-09-27 17:21:20  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-27 17:21:32  INFO      [facebook/Nakshiq] ✅ Published · Outstand=bCnZh · Platform=2652437841820742
+2026-09-27 17:21:32  INFO      State saved. Run complete.
+2026-09-27 17:21:32  INFO      ════════════════════════════════════════════════════════════

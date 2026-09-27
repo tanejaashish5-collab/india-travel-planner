@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "PdMu0_carousel": "2026-09-27",
-    "PdMu0": "2026-09-26",
-    "PdMu0_evening": "2026-09-26",
+    "PdMu0": "2026-09-27",
+    "PdMu0_evening": "2026-09-27",
     "PdMu0_tourist_map": "2026-09-26"
   },
-  "last_sync": "2026-09-26T17:52:57.860488+00:00",
+  "last_sync": "2026-09-27T17:20:49.373593+00:00",
   "posted_destinations": [
     {
       "destination_id": "alchi",
@@ -129,6 +129,10 @@
     {
       "destination_id": "hanle",
       "date": "2026-09-27"
+    },
+    {
+      "destination_id": "ooty",
+      "date": "2026-09-27"
     }
   ],
   "posted_formats": {
@@ -160,7 +164,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "score_card",
       "score_card",
@@ -176,7 +179,8 @@
       "score_card",
       "score_card",
       "v2_local_knows",
-      "v2_budget_receipt"
+      "v2_budget_receipt",
+      "v2_weekend_escape_map"
     ]
   },
   "post_log": [
@@ -10112,6 +10116,17 @@
       "destination": "hanle",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-09-27"
+    },
+    {
+      "timestamp": "2026-09-27T17:21:32.419236+00:00",
+      "date": "2026-09-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "bCnZh",
+      "destination": "ooty",
+      "format": "v2_weekend_escape_map",
+      "has_media": true,
+      "media_id": "ooty.mp4"
     }
   ],
   "theme_usage": {
@@ -10188,7 +10203,8 @@
       ],
       "ooty": [
         "2026-05-29",
-        "2026-09-04"
+        "2026-09-04",
+        "2026-09-27"
       ],
       "yusmarg": [
         "2026-06-01",
@@ -10576,6 +10592,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v2_weekend_escape_map": [
+        "2026-09-27"
       ]
     },
     "reels": {
@@ -10737,7 +10756,8 @@
         "2026-09-03"
       ],
       "ooty": [
-        "2026-09-04"
+        "2026-09-04",
+        "2026-09-27"
       ],
       "chopta": [
         "2026-09-05",
@@ -10985,7 +11005,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "jog-falls",
+    "shared_best": "kalpa",
     "collection": "offbeat-romantic"
   },
   "manual_skip_dests": {},
