@@ -31,6 +31,17 @@ else
   MSG="🔍 <b>Demand gaps</b> — queries you're visible for but not capturing%0A%0A${P2}%0A${NC}%0A${BIG}%0A%0A<b>Top shown-but-never-clicked</b> (query — impr — pos):%0A$(echo "$TOP" | sed 's/$/%0A/' | tr -d '\n')%0A<i>${FILE}</i>"
 fi
 
+# Blog topic snapshot (2026-09-27): the cloud blog routine cannot reach GSC, so it
+# picks topics from this committed file. data/ is in vercel-ignore, so no deploy.
+# Isolated from RC: a failure only leaves the snapshot stale, and the routine
+# reports STALE SNAPSHOT when it is >14 days old.
+if node scripts/blog-topic-demand.mjs; then
+  bash scripts/audit-commit-guard.sh -m "data(seo): refresh blog topic demand snapshot $(date +%F)" data/seo/blog-topic-demand.json \
+    || echo "[$(date '+%F %T')] blog-topic-demand commit FAILED" >&2
+else
+  echo "[$(date '+%F %T')] blog-topic-demand.mjs FAILED" >&2
+fi
+
 TOKEN=$(grep -E '^TELEGRAM_BOT_TOKEN=' "$HOME/Automation/.telegram-bot.env" | cut -d= -f2-)
 if [ -n "$TOKEN" ]; then
   code=$(curl -sS -o /tmp/dg-tg.json -w "%{http_code}" -X POST \
