@@ -108,8 +108,16 @@ def veo_prompt(spec: dict, shot: dict) -> str:
 
 def still_prompt(spec: dict, kf: dict) -> str:
     """A keyframe is an image, so it needs the look in words (no frames to
-    inherit from) but not the soundscape."""
-    return f"{kf['prompt']} {spec['look']}"
+    inherit from) but not the soundscape.
+
+    TONE FIRST (2026-09-27, founder yes). Tungare's master prompt opens with the
+    emotional tone ([tone] + [visual ref] + [subject] + [composition] +
+    [lighting] + [camera]); ours covered every part but that one. A beat's
+    `tone` leads its still prompt, where it shapes pose, expression and framing
+    for free and shows on the contact sheet before a credit is spent. Motion
+    prompts stay short (probe A4): the still already carries the feeling."""
+    tone = f"Mood: {kf['tone'].rstrip('.')}. " if kf.get("tone") else ""
+    return f"{tone}{kf['prompt']} {spec['look']}"
 
 
 def check(spec: dict) -> list[str]:
@@ -132,6 +140,10 @@ def check(spec: dict) -> list[str]:
             errs.append(f"{k['name']}: keyframe needs refs from {sorted(seen)}")
         if SB._NUMBER_ASSERT.search(k["prompt"]):
             errs.append(f"{k['name']}: prompt would put a phone number on screen")
+        if not k.get("tone") and not spec.get("_tone_warned"):
+            print(f"[reel_v3] note: keyframes without a `tone` line (first: {k['name']}); "
+                  "new specs should give every keyframe one", file=sys.stderr)
+            spec["_tone_warned"] = True
         seen.add(k["name"])
     for s in spec["shots"]:
         if s["mode"] == "ingredients":
@@ -196,11 +208,23 @@ def queue_rows(spec: dict, stills_only: bool = False) -> list[dict]:
 
 
 def enqueue(spec: dict, stills_only: bool = False) -> int:
+    """Add missing rows; also bring the prompt of any row not yet GENERATED
+    (pending / parked) up to the spec, so a spec edit (e.g. a tone line added
+    2026-09-27) reaches rows queued earlier. Generated rows are never touched:
+    their file already exists under that name."""
     q = json.loads(QUEUE.read_text()) if QUEUE.exists() else []
+    want = {r["clip"]: r for r in queue_rows(spec, stills_only)}
+    refreshed = 0
+    for r in q:
+        w = want.get(r["clip"])
+        if w and r.get("status") in ("pending", "parked") and r.get("prompt") != w["prompt"]:
+            r["prompt"] = w["prompt"]; refreshed += 1
     have = {r["clip"] for r in q}
-    new = [r for r in queue_rows(spec, stills_only) if r["clip"] not in have]
-    if new:
+    new = [r for c, r in want.items() if c not in have]
+    if new or refreshed:
         QUEUE.write_text(json.dumps(q + new, indent=2, ensure_ascii=False))
+    if refreshed:
+        print(f"[reel_v3] refreshed the prompt of {refreshed} not-yet-generated row(s)")
     return len(new)
 
 
