@@ -1,0 +1,171 @@
+{
+  "id": "manali__not_this_time_kf",
+  "slug": "manali",
+  "format": "not_this_time",
+  "tone": "warm",
+  "script_approved": "2026-09-26 founder: 'i like the script' (reel_scripts/manali__not_this_time.json); passes script_gate against reel-data.json (Spiti Valley November = skip, Manali November = go, Spiti October = go).",
+  "method": "KEYFRAME-FIRST, same as triund__first_trek_kf: refs, then a free Nano Banana still per beat composed from the refs, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only; the stills carry the look.",
+  "setting_basis": "The footage shows an ordinary home bedroom, then a generic wooden guesthouse balcony and a quiet lane among deodar trees in a Himalayan valley. It makes no claim about Spiti weather or roads; the script's only facts are the month verdicts.",
+  "look": "Soft natural morning light, cool mountain air, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+  "refs": [
+    {
+      "name": "ref_woman",
+      "prompt": "Full-length photograph of a woman in her late twenties with shoulder-length dark hair, wearing a mustard yellow knitted sweater, blue jeans and white sneakers, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, natural light, no text."
+    },
+    {
+      "name": "ref_man",
+      "prompt": "Full-length photograph of a man in his late twenties with short black hair and light stubble, wearing a navy blue hooded jacket, grey trousers and brown boots, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, natural light, no text."
+    },
+    {
+      "name": "ref_valley",
+      "prompt": "A wooden guesthouse balcony in a Himalayan valley in soft early morning light, tall deodar trees on the slopes, distant mountains with a little snow on the highest peaks, thin mist, photorealistic, no people, no text."
+    }
+  ],
+  "keyframes": [
+    {
+      "name": "kf_s1",
+      "refs": [
+        "ref_woman",
+        "ref_man"
+      ],
+      "prompt": "Medium shot in a small city apartment bedroom in soft morning window light: the woman in the mustard yellow sweater kneels beside a half-packed backpack on the floor, folding a woollen jacket into it; the man in the navy hooded jacket sits on the bed behind her holding a map, smiling.",
+      "tone": "excited, hopeful anticipation"
+    },
+    {
+      "name": "kf_s2",
+      "refs": [
+        "kf_s1"
+      ],
+      "prompt": "Same bedroom, same two people and the same light as the reference, moments later: the woman sits back on her heels holding her phone, its screen only a soft glow, her face falling slightly as she reads; the man leans forward to look.",
+      "tone": "quiet disappointment"
+    },
+    {
+      "name": "kf_s3",
+      "refs": [
+        "kf_s1"
+      ],
+      "prompt": "Same bedroom, same two people and the same light as the reference: the man sits on the floor beside her and they both look at the phone together, she is nodding slowly, a small accepting smile, the backpack between them.",
+      "tone": "gentle acceptance, a decision made together"
+    },
+    {
+      "name": "kf_s4",
+      "refs": [
+        "ref_woman",
+        "ref_valley"
+      ],
+      "prompt": "Medium shot from the side on the wooden guesthouse balcony in soft early morning light: the woman in the mustard yellow sweater with a grey shawl round her shoulders holds a steaming glass of chai in both hands, deodar trees and misty mountains behind her.",
+      "tone": "calm, peaceful, cold fresh morning"
+    },
+    {
+      "name": "kf_s5",
+      "refs": [
+        "ref_woman",
+        "ref_man",
+        "ref_valley"
+      ],
+      "prompt": "Wide shot from behind on the wooden balcony: the woman with the grey shawl and the man in the navy hooded jacket stand side by side at the railing holding chai, looking out at the deodar slopes and the distant mountains in thin morning mist.",
+      "tone": "warm contentment, quiet certainty"
+    },
+    {
+      "name": "kf_s6",
+      "refs": [
+        "ref_woman",
+        "ref_man",
+        "ref_valley"
+      ],
+      "prompt": "Wide shot from behind: the woman in the mustard yellow sweater and grey shawl and the man in the navy hooded jacket walk slowly side by side down a quiet lane between tall deodar trees in soft morning light, mountains in the distance.",
+      "tone": "relaxed, unhurried ease"
+    }
+  ],
+  "shots": [
+    {
+      "id": "s1",
+      "mode": "frames",
+      "start": "kf_s1",
+      "prompt": "The camera holds still. She folds the jacket and presses it into the backpack; he turns the map and smiles.",
+      "sound": "Quiet room tone, the rustle of fabric, a distant city bird."
+    },
+    {
+      "id": "s2",
+      "mode": "frames",
+      "start": "kf_s2",
+      "prompt": "The camera holds still. She reads the phone and goes quiet; he leans in to see.",
+      "sound": "Quiet room tone, a soft sigh."
+    },
+    {
+      "id": "s3",
+      "mode": "frames",
+      "start": "kf_s3",
+      "prompt": "The camera holds still. They look at each other, she nods, and he gently squeezes her shoulder.",
+      "sound": "Quiet room tone, a soft exhale."
+    },
+    {
+      "id": "s4",
+      "mode": "frames",
+      "start": "kf_s4",
+      "prompt": "The camera holds still. Steam rises from the chai; she lifts the glass, sips, and breathes out slowly into the cold air.",
+      "sound": "Morning birds in the trees, a light breeze, the faint clink of a glass."
+    },
+    {
+      "id": "s5",
+      "mode": "frames",
+      "start": "kf_s5",
+      "prompt": "The camera holds still. They stand at the railing; she leans her head on his shoulder as the mist drifts across the slopes.",
+      "sound": "A soft breeze through deodar trees, distant birds."
+    },
+    {
+      "id": "s6",
+      "mode": "frames",
+      "start": "kf_s6",
+      "prompt": "The camera holds still as they walk slowly away down the lane between the deodars.",
+      "sound": "Footsteps on a quiet lane, birdsong, a light breeze."
+    }
+  ],
+  "beats": [
+    {
+      "shot": "s1",
+      "from": 0.0
+    },
+    {
+      "shot": "s2",
+      "from": 0.0
+    },
+    {
+      "shot": "s3",
+      "from": 0.0
+    },
+    {
+      "shot": "s4",
+      "from": 0.0
+    },
+    {
+      "shot": "s5",
+      "from": 0.0
+    },
+    {
+      "shot": "s6",
+      "from": 0.0
+    }
+  ],
+  "vo": {
+    "en": [
+      "I wanted Spiti.\nWe'd saved the trip all year.\nBags were half packed.",
+      "Then I checked NakshIQ.\nSpiti.\nNovember.\nSkip.",
+      "So we changed the plan.\nManali instead.",
+      "One quiet morning.\nCold air.\nHot chai in my hands.",
+      "And I knew we'd made the right call.\nSpiti wasn't cancelled.\nIt was waiting.",
+      "Because travel intelligence is knowing the right place, at the right time.\nNakshIQ."
+    ],
+    "hi": [
+      "मुझे स्पीति जाना था।\nपूरे साल इस ट्रिप का इंतज़ार किया था।\nबैग आधे पैक हो चुके थे।",
+      "फिर मैंने NakshIQ चेक किया।\nस्पीति।\nनवंबर।\nस्किप।",
+      "तो हमने प्लान बदल दिया।\nमनाली चले गए।",
+      "एक शांत सुबह।\nठंडी हवा।\nहाथ में गरम चाय।",
+      "और लगा, हमने सही फ़ैसला लिया।\nस्पीति कैंसल नहीं हुई थी।\nवो बस इंतज़ार कर रही थी।",
+      "क्योंकि ट्रैवल इंटेलिजेंस यानी सही जगह, सही समय पर।\nNakshIQ."
+    ]
+  },
+  "captions": {
+    "hi": "en"
+  }
+}
