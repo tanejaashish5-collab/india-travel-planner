@@ -38,18 +38,12 @@
     "PdMu0_carousel": "2026-09-27",
     "PdMu0": "2026-09-27",
     "PdMu0_evening": "2026-09-27",
-    "PdMu0_tourist_map": "2026-09-26"
+    "m8EAd_yt_short": "2026-09-28",
+    "JMl93_yt_short": "2026-09-28",
+    "JMl93_yt_short_count": 1
   },
   "last_sync": "2026-09-27T18:32:16.541625+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "alchi",
-      "date": "2026-09-13"
-    },
-    {
-      "destination_id": "khardung-la",
-      "date": "2026-09-13"
-    },
     {
       "destination_id": "hemkund-sahib",
       "date": "2026-09-14"
@@ -133,6 +127,10 @@
     {
       "destination_id": "ooty",
       "date": "2026-09-27"
+    },
+    {
+      "destination_id": "auli",
+      "date": "2026-09-28"
     }
   ],
   "posted_formats": {
@@ -10127,6 +10125,24 @@
       "format": "v2_weekend_escape_map",
       "has_media": true,
       "media_id": "ooty.mp4"
+    },
+    {
+      "timestamp": "2026-09-28T09:07:27.456048+00:00",
+      "date": "2026-09-28",
+      "platform": "instagram",
+      "post_id": "iQC95",
+      "destination": "auli",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_auli_hi_2026-09-28.mp4"
+    },
+    {
+      "timestamp": "2026-09-28T09:07:37.368456+00:00",
+      "date": "2026-09-28",
+      "platform": "youtube",
+      "post_id": "OXLIH",
+      "destination": "auli",
+      "format": "yt_short.nakshiq_score",
+      "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_auli_hi_2026-09-28.mp4"
     }
   ],
   "theme_usage": {
@@ -10161,13 +10177,6 @@
         "2026-05-27",
         "2026-06-14",
         "2026-09-05"
-      ],
-      "sissu": [
-        "2026-05-21",
-        "2026-05-25",
-        "2026-06-10",
-        "2026-06-15",
-        "2026-06-29"
       ],
       "munsiyari": [
         "2026-05-23",
@@ -10633,12 +10642,6 @@
         "2026-07-11",
         "2026-07-28",
         "2026-09-06"
-      ],
-      "nako": [
-        "2026-06-10",
-        "2026-06-15",
-        "2026-06-16",
-        "2026-06-29"
       ],
       "courtallam": [
         "2026-06-12",
