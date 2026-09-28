@@ -35,7 +35,7 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "PdMu0_carousel": "2026-09-27",
+    "PdMu0_carousel": "2026-09-28",
     "PdMu0": "2026-09-27",
     "PdMu0_evening": "2026-09-27",
     "m8EAd_yt_short": "2026-09-28",
@@ -130,6 +130,10 @@
     },
     {
       "destination_id": "auli",
+      "date": "2026-09-28"
+    },
+    {
+      "destination_id": "vagator",
       "date": "2026-09-28"
     }
   ],
@@ -10143,6 +10147,15 @@
       "destination": "auli",
       "format": "yt_short.nakshiq_score",
       "media_id": "yt_short_nakshiq_score_yt_short_nakshiq_score_auli_hi_2026-09-28.mp4"
+    },
+    {
+      "timestamp": "2026-09-28T16:02:46.566426+00:00",
+      "date": "2026-09-28",
+      "platform": "facebook",
+      "post_id": "IB1Qn",
+      "destination": "vagator",
+      "format": "carousel.skip_list",
+      "media_id": "carousel_skip_list_2026-09-28"
     }
   ],
   "theme_usage": {
