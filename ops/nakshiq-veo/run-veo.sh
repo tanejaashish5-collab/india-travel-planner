@@ -31,7 +31,8 @@ if [ -f "$HERE/PAUSED" ]; then
   exit 0
 fi
 
-# 0a. CUT THE REELS (added 2026-09-23, founder: "make it fully automated").
+# 0a. CUT THE REELS (v3 only since 2026-09-28: v3_daily.py render, cuts land as
+#     status "review" so nothing publishes unwatched; added 2026-09-23, founder: "make it fully automated").
 #     Every storyboard whose clips are all in AND were generated from today's
 #     prompts is cut in one language: Hindi for Instagram, English for YouTube,
 #     keeping two ready per language. Publishing is a separate step at the
@@ -41,7 +42,7 @@ fi
 ( cd "$HOME/Desktop/India Travel Planner" && \
   node --env-file=apps/web/.env.local -e '
     const {spawnSync}=require("child_process");
-    process.exit(spawnSync("python3",["scenario_daily.py","render"],
+    process.exit(spawnSync("python3",["v3_daily.py","render"],
       {stdio:"inherit",cwd:"nakshiq-autoposter",env:process.env}).status ?? 1);' ) \
   || say "WARN reel cut failed"
 
@@ -64,7 +65,10 @@ AGE=$(python3 -c "import json,datetime as d;g=json.load(open('data/reel-data.jso
 
 # 1. Top up the queue from today's data. Safe to run repeatedly: enqueue()
 #    dedupes on clip name and the ledger stops a destination repeating.
-python3 build-queue.py || say "WARN build-queue exited non-zero"
+# v3 only (2026-09-28): build-queue.py wrote v2 text-only rows, the output the
+# 24 Sep pause was about. The queue now fills from reel_specs/*.json marked "auto".
+( cd "$HOME/Desktop/India Travel Planner/nakshiq-autoposter" && python3 v3_daily.py topup ) \
+  || say "WARN v3 topup failed"
 
 PENDING=$(python3 -c "import json,os;p='veo_queue.json';print(sum(1 for r in (json.load(open(p)) if os.path.exists(p) else []) if r.get('status')=='pending'))" 2>/dev/null || echo 0)
 say "pending clips: $PENDING"
@@ -90,21 +94,8 @@ fi
 #    calling it would burn six sign-in checks to produce nothing, which is how
 #    the previous gap stayed invisible.
 node export-tasks.mjs || say "WARN export-tasks failed"
-node make-paste-pack.mjs
-RC=$?
-if [ $RC -ne 0 ]; then
-  say "⚠️  paste pack failed (exit=$RC)"
-  say "=== veo-daily end (exit=$RC) ==="
-  exit $RC
-fi
-
-PACK="$HOME/Desktop/Reports/NakshIQ-Veo-Paste-Pack-$(date +%F).html"
-if [ -f "$PACK" ]; then
-  say "pack ready: $PACK"
-  # One notification, because a pack nobody opens is the same as no pack.
-  osascript -e "display notification \"$PENDING clips ready to paste into Flow\" with title \"NakshIQ Veo\" sound name \"Ping\"" >/dev/null 2>&1 || true
-fi
-
+# The v2 paste pack (manual pasting into Flow) was retired 2026-09-28: Cowork
+# generates from today-tasks.json, and the pack listed v2 rows it would never make.
 
 say "=== veo-daily end (exit=0) ==="
 exit 0
