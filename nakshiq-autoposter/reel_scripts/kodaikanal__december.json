@@ -1,0 +1,38 @@
+{
+ "id": "kodaikanal__december",
+ "lang_en": "We'd planned Kodaikanal for November.\nI'd already applied for leave.\nThen I checked NakshIQ.\nNovember was a go.\nBut it was peak crowd month.\nDecember was a go too.\nWithout the peak.\nSo I moved my leave to December.\nDecember came.\nFilter coffee by the window.\nOur whole day, at our own pace.\nSame place. Same plan.\nJust a better month for us.\nTravel intelligence is seeing past the first yes.\nNakshIQ.",
+ "lang_hi": "हमने नवंबर में कोडाइकनाल जाने का सोचा था।\nमैंने छुट्टी के लिए अप्लाई भी कर दिया था।\nफिर मैंने NakshIQ देखा।\nनवंबर, गो था।\nपर वो भीड़ का पीक महीना था।\nदिसंबर भी गो था।\nऔर भीड़ का पीक नहीं।\nतो मैंने छुट्टी दिसंबर में कर ली।\nदिसंबर आया।\nखिड़की के पास फ़िल्टर कॉफ़ी।\nपूरा दिन, अपने हिसाब से।\nवही जगह। वही प्लान।\nबस हमारे लिए बेहतर महीना।\nट्रैवल इंटेलिजेंस मतलब, पहली हाँ के आगे भी देखना।\nNakshIQ.",
+ "facts": [
+  {
+   "kind": "crowd",
+   "slug": "kodaikanal",
+   "month": 11,
+   "is": "peak"
+  },
+  {
+   "kind": "crowd",
+   "slug": "kodaikanal",
+   "month": 12,
+   "is": "not_peak"
+  },
+  {
+   "kind": "month",
+   "slug": "kodaikanal",
+   "month": 11,
+   "label": "go"
+  },
+  {
+   "kind": "month",
+   "slug": "kodaikanal",
+   "month": 12,
+   "label": "go"
+  },
+  {
+   "kind": "product",
+   "claim": "month_scores_go_wait_skip"
+  }
+ ],
+ "allowed_numbers": [],
+ "status": "approved 2026-09-26 (founder's blind pick, round 2)",
+ "origin": "Claude writer, blind test round 2"
+}

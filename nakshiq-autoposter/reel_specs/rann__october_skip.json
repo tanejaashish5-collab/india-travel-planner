@@ -1,0 +1,171 @@
+{
+  "id": "rann__october_skip_kf",
+  "slug": "rann-of-kutch",
+  "format": "month_later",
+  "tone": "warm",
+  "script_approved": "2026-09-26 founder's blind pick, round 2 (reel_scripts/rann__october_skip.json); passes script_gate against reel-data.json.",
+  "method": "KEYFRAME-FIRST, same as triund__first_trek_kf: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+  "setting_basis": "Home interior, then a wide flat white salt plain at sunrise. The footage makes no claim about why October is a skip (no water, heat or festival imagery); the script's only facts are the month verdicts.",
+  "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone or laptop screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+  "refs": [
+    {
+      "name": "ref_man",
+      "prompt": "Full-length photograph of a man in his early thirties with short black hair and a neat moustache, wearing a charcoal grey zip jacket over a white t-shirt, dark jeans and tan shoes, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+    },
+    {
+      "name": "ref_woman",
+      "prompt": "Full-length photograph of a woman in her late twenties with long dark hair in a loose braid, wearing a teal green cardigan over a cream kurta, blue jeans and brown sandals, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+    },
+    {
+      "name": "ref_salt",
+      "prompt": "A vast flat white salt plain stretching to a straight horizon at sunrise, soft pink and gold sky, cracked white salt crust underfoot, photorealistic, no people, no text."
+    }
+  ],
+  "keyframes": [
+    {
+      "name": "kf_s1",
+      "refs": [
+        "ref_man",
+        "ref_woman"
+      ],
+      "tone": "eager, about to commit",
+      "prompt": "Medium shot in a small home living room in soft evening lamp light: the man in the charcoal grey jacket sits on the sofa with a laptop on his knees, its screen only a soft glow, his finger over the trackpad; the woman in the teal cardigan sits beside him, leaning in, excited."
+    },
+    {
+      "name": "kf_s2",
+      "refs": [
+        "kf_s1"
+      ],
+      "tone": "a pause, reconsidering",
+      "prompt": "Same living room, same two people and the same lamp light as the reference, moments later: the man has picked up his phone and is reading it, its screen only a soft glow, his brow slightly furrowed; the woman looks at the phone over his shoulder."
+    },
+    {
+      "name": "kf_s3",
+      "refs": [
+        "kf_s1"
+      ],
+      "tone": "calm agreement",
+      "prompt": "Same living room, same two people and the same lamp light as the reference: the man slowly closes the laptop lid and the woman smiles and nods, both relaxed, the decision made."
+    },
+    {
+      "name": "kf_s4",
+      "refs": [
+        "ref_man",
+        "ref_woman",
+        "ref_salt"
+      ],
+      "tone": "arrival, quiet wonder",
+      "prompt": "Wide shot from behind: the man in the charcoal grey jacket and the woman in the teal cardigan with a grey shawl walk out onto the vast flat white salt plain at sunrise, soft pink and gold sky, the horizon straight and empty."
+    },
+    {
+      "name": "kf_s5",
+      "refs": [
+        "ref_man",
+        "ref_salt"
+      ],
+      "tone": "stillness, awe",
+      "prompt": "Medium shot from the side: the man in the charcoal grey jacket stands still on the white salt plain at sunrise with both hands pushed into his jacket pockets, looking out at the horizon, soft golden light on his face in profile."
+    },
+    {
+      "name": "kf_s6",
+      "refs": [
+        "ref_man",
+        "ref_woman",
+        "ref_salt"
+      ],
+      "tone": "contentment, being proved right",
+      "prompt": "Wide shot from behind: the man in the charcoal grey jacket and the woman in the teal cardigan and grey shawl walk slowly side by side across the white salt plain toward the rising sun, long soft shadows behind them."
+    }
+  ],
+  "shots": [
+    {
+      "id": "s1",
+      "mode": "frames",
+      "start": "kf_s1",
+      "prompt": "The camera holds still. He moves the cursor, about to click; she leans in, smiling.",
+      "sound": "Quiet room tone, a soft trackpad click, a ceiling fan."
+    },
+    {
+      "id": "s2",
+      "mode": "frames",
+      "start": "kf_s2",
+      "prompt": "The camera holds still. He reads the phone and pauses; she leans closer to see.",
+      "sound": "Quiet room tone, a ceiling fan, a soft hum."
+    },
+    {
+      "id": "s3",
+      "mode": "frames",
+      "start": "kf_s3",
+      "prompt": "The camera holds still. He closes the laptop gently; she nods and rests her head on his shoulder.",
+      "sound": "Quiet room tone, the soft click of a laptop closing, a small exhale."
+    },
+    {
+      "id": "s4",
+      "mode": "frames",
+      "start": "kf_s4",
+      "prompt": "The camera holds still as they walk slowly out across the salt, the sky brightening.",
+      "sound": "Footsteps crunching on salt crust, a light breeze, distant birds."
+    },
+    {
+      "id": "s5",
+      "mode": "frames",
+      "start": "kf_s5",
+      "prompt": "The camera holds still. He stands with his hands in his pockets and breathes out slowly, watching the horizon.",
+      "sound": "A light breeze over open ground, near silence."
+    },
+    {
+      "id": "s6",
+      "mode": "frames",
+      "start": "kf_s6",
+      "prompt": "The camera holds still as they walk away side by side toward the rising sun.",
+      "sound": "Soft footsteps on salt crust, a light breeze."
+    }
+  ],
+  "beats": [
+    {
+      "shot": "s1",
+      "from": 0.0
+    },
+    {
+      "shot": "s2",
+      "from": 0.0
+    },
+    {
+      "shot": "s3",
+      "from": 0.0
+    },
+    {
+      "shot": "s4",
+      "from": 0.0
+    },
+    {
+      "shot": "s5",
+      "from": 0.0
+    },
+    {
+      "shot": "s6",
+      "from": 0.0
+    }
+  ],
+  "vo": {
+    "en": [
+      "We had picked October.\nThe trip was nearly booked.",
+      "Then I checked NakshIQ.\nRann of Kutch.\nOctober said skip.\nDecember said go.",
+      "So we waited.\nNo change of destination.\nJust a change of month.",
+      "December came.\nWe went.",
+      "I stood there,\nhands inside my jacket.",
+      "And NakshIQ had been right.\nTravel intelligence is knowing when a good trip needs a better time.\nNakshIQ."
+    ],
+    "hi": [
+      "हमने अक्टूबर चुना था।\nट्रिप लगभग बुक हो चुकी थी।",
+      "फिर मैंने NakshIQ चेक किया।\nरण ऑफ़ कच्छ।\nअक्टूबर में, स्किप।\nदिसंबर में, गो।",
+      "तो हमने इंतज़ार किया।\nजगह नहीं बदली।\nबस महीना बदल दिया।",
+      "दिसंबर आया।\nहम गए।",
+      "मैं वहाँ खड़ा था,\nहाथ जैकेट में थे।",
+      "और NakshIQ सही था।\nट्रैवल इंटेलिजेंस मतलब, जानना कि अच्छी ट्रिप को सही समय कब चाहिए।\nNakshIQ."
+    ]
+  },
+  "captions": {
+    "hi": "en"
+  }
+}

@@ -1,0 +1,26 @@
+{
+ "id": "rann__october_skip",
+ "lang_en": "We had picked October.\nThe trip was nearly booked.\nThen I checked NakshIQ.\nRann of Kutch.\nOctober said skip.\nDecember said go.\nSo we waited.\nNo change of destination.\nJust a change of month.\nDecember came.\nWe went.\nI stood there,\nhands inside my jacket.\nAnd NakshIQ had been right.\nTravel intelligence is knowing when a good trip needs a better time.\nNakshIQ.",
+ "lang_hi": "हमने अक्टूबर चुना था।\nट्रिप लगभग बुक हो चुकी थी।\nफिर मैंने NakshIQ चेक किया।\nरण ऑफ़ कच्छ।\nअक्टूबर में, स्किप।\nदिसंबर में, गो।\nतो हमने इंतज़ार किया।\nजगह नहीं बदली।\nबस महीना बदल दिया।\nदिसंबर आया।\nहम गए।\nमैं वहाँ खड़ा था,\nहाथ जैकेट में थे।\nऔर NakshIQ सही था।\nट्रैवल इंटेलिजेंस मतलब, जानना कि अच्छी ट्रिप को सही समय कब चाहिए।\nNakshIQ.",
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "rann-of-kutch",
+   "month": 10,
+   "label": "skip"
+  },
+  {
+   "kind": "month",
+   "slug": "rann-of-kutch",
+   "month": 12,
+   "label": "go"
+  },
+  {
+   "kind": "product",
+   "claim": "month_scores_go_wait_skip"
+  }
+ ],
+ "allowed_numbers": [],
+ "status": "approved 2026-09-26 (founder's blind pick, round 2)",
+ "origin": "ChatGPT draft, blind test round 2"
+}
