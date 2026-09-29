@@ -42,7 +42,7 @@
     "PdMu0": "2026-09-29",
     "PdMu0_evening": "2026-09-29"
   },
-  "last_sync": "2026-09-29T18:47:57.136391+00:00",
+  "last_sync": "2026-09-29T19:33:03.416856+00:00",
   "posted_destinations": [
     {
       "destination_id": "hogenakkal",
@@ -10484,7 +10484,8 @@
         "2026-09-03"
       ],
       "kalpa": [
-        "2026-09-03"
+        "2026-09-03",
+        "2026-09-29"
       ],
       "barot-valley": [
         "2026-09-04",
@@ -10527,6 +10528,11 @@
         "2026-05-23",
         "2026-06-16",
         "2026-09-26"
+      ],
+      "v4_dw_heritage_reel_sensory_pov": [
+        "2026-05-24",
+        "2026-06-19",
+        "2026-09-29"
       ],
       "v3_tl_editorial_listicle": [
         "2026-05-25",
@@ -10649,9 +10655,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v4_dw_heritage_reel_sensory_pov": [
-        "2026-09-29"
       ]
     },
     "reels": {
@@ -10952,6 +10955,9 @@
       ],
       "monsoon-magic": [
         "2026-09-29"
+      ],
+      "photography-spots": [
+        "2026-09-29"
       ]
     },
     "festivals": {
@@ -11056,6 +11062,11 @@
       "jibhi": [
         "2026-09-29"
       ]
+    },
+    "collection_carousel_dests:photography-spots": {
+      "kalpa": [
+        "2026-09-29"
+      ]
     }
   },
   "infographic": {
@@ -11070,8 +11081,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tirupati",
-    "collection": "monsoon-magic"
+    "shared_best": "jog-falls",
+    "collection": "photography-spots"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-09-22",
