@@ -435,8 +435,9 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     if r.returncode != 0:
         raise SystemExit("ffmpeg failed:\n" + r.stderr[-1500:])
     # English goes to YouTube (@naksh-iq), Hindi to Instagram (@nakshiq).
-    os.environ.setdefault("NAKSHIQ_ENDCARD_CTA",
-                          "follow @naksh-iq" if lang == "en" else "follow @nakshiq")
+    # Assigned, never setdefault: one process cuts HI then EN (v3_daily), and
+    # setdefault let the English cut inherit "@nakshiq" (Manali, 2026-09-29).
+    os.environ["NAKSHIQ_ENDCARD_CTA"] = "follow @naksh-iq" if lang == "en" else "follow @nakshiq"
     if Y._append_endcard(out, tdp):
         mixed = tdp / "mixed.mp4"
         r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(out), "-i", str(full_wav),
