@@ -1,91 +1,177 @@
 #!/usr/bin/env python3
 """reel_cover.py — the cover image for a v3 reel (Instagram grid + Reels tab).
 
-    python3 reel_cover.py reel_specs/triund__first_trek.json --lang hi [--out x.jpg]
+    python3 reel_cover.py reel_specs/triund__first_trek.json [--style box|bold] [--out x.jpg]
 
-WHY (founder, 2026-09-29: "why dont we have any proper thumbnails"): nothing
-sent a cover, so Instagram used frame 0 of every reel and the grid read as
-anonymous stock photos. Outstand takes `instagram.reelCoverUrl`.
+WHY (founder, 2026-09-29): nothing sent a cover, so the grid showed frame 0 and
+read as stock photos; the first plain-text redesign was "very plain boring".
+This copies what the highest-viewed Indian travel covers do (checked on their
+Reels tabs 2026-09-29):
+  box   @framesnflights (2M-9.7M views): white rounded box, bold black text,
+        the key words in red, a contrarian or first-person hook.
+  bold  @tanyakhanijow (1.4M-47M views): big white outlined words, one word in
+        colour, short first-person drama ("I got robbed").
+  logo  @curly.tales: the brand mark in the top corner of every cover.
+English on every cover, the Hindi reel included (founder). The grid shows the
+MIDDLE 3:4 of a 9:16 reel (y 240..1680 at 1920), so text and logo sit inside it.
 
-The spec's "cover" block names the still and two short lines per language:
-  "cover": {"still": "kf_s5_end", "en": ["Her first trek.", "NakshIQ said easy."],
-            "hi": [...]}
-The grid shows the MIDDLE 3:4 of a 9:16 reel (y 240..1680 at 1920), so every
-word sits inside that band. Built with ffmpeg because its drawtext shapes
-Devanagari (HarfBuzz); Pillow here has no raqm and breaks the matras.
-The cover makes the same claims as the script and no others.
+Spec block: "cover": {"still": "kf_s5_end" | "frame": ["s3", 4.0],
+                      "hook": "She said she *couldn't* do this trek."}
+*asterisks* mark the highlighted words. The hook claims nothing the script does not.
 """
 from __future__ import annotations
 
 import argparse
-import json
+import re
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import reel_v3 as R  # noqa: E402
 
-FONTS = HERE / "assets" / "fonts"
-FONT = {"en": FONTS / "InstrumentSans-Bold.ttf", "hi": FONTS / "NotoSansDevanagari-Bold.ttf"}
-BRAND = FONTS / "InstrumentSans-Bold.ttf"
+# Heavy weight, like the covers it copies; falls back to the brand sans off this Mac.
+HEAVY = ("/System/Library/Fonts/Avenir Next.ttc", 8)
+FALLBACK = HERE / "assets" / "fonts" / "InstrumentSans-Bold.ttf"
+SERIF = HERE / "assets" / "fonts" / "CrimsonPro-BoldItalic.ttf"
+INK, VERMILLION, VERMILLION_BRIGHT, YELLOW = (14, 14, 12), (212, 63, 42), (229, 86, 66), (255, 210, 63)
 
 
-def _esc(t: str) -> str:
-    return t.replace("\\", "\\\\").replace("'", "’").replace(":", "\\:").replace("%", "\\%")
+def _font(size: int):
+    try:
+        return ImageFont.truetype(HEAVY[0], size, index=HEAVY[1])
+    except OSError:
+        return ImageFont.truetype(str(FALLBACK), size)
 
 
-def _size(text: str, big: int) -> int:
-    """Shrink long lines so they fit the 1080 width with a margin."""
-    return big if len(text) <= 16 else int(big * 16 / len(text) * 1.15)
+def _logo(d: int = 150) -> Image.Image:
+    """The profile-picture mark: ink circle, white serif-italic N, vermillion dot."""
+    k = 4                                    # draw big, then downsample for clean edges
+    im = Image.new("RGBA", (d * k, d * k), (0, 0, 0, 0))
+    g = ImageDraw.Draw(im)
+    g.ellipse((0, 0, d * k - 1, d * k - 1), fill=(255, 255, 255, 235))
+    g.ellipse((5 * k, 5 * k, d * k - 5 * k - 1, d * k - 5 * k - 1), fill=INK + (255,))
+    f = ImageFont.truetype(str(SERIF), int(d * k * 0.62))
+    bb = g.textbbox((0, 0), "N", font=f)
+    nw, nh = bb[2] - bb[0], bb[3] - bb[1]
+    x, y = (d * k - nw) / 2 - bb[0] - d * k * 0.05, (d * k - nh) / 2 - bb[1]
+    g.text((x, y), "N", font=f, fill=(245, 241, 232))
+    r = d * k * 0.055
+    cx, cy = x + bb[2] + r * 1.2, y + bb[3] - r
+    g.ellipse((cx - r, cy - r, cx + r, cy + r), fill=VERMILLION_BRIGHT)
+    return im.resize((d, d), Image.LANCZOS)
+W, H = 1080, 1920
 
 
-def make(spec: dict, lang: str, out: Path) -> Path:
-    c = spec.get("cover") or {}
-    lines = c.get(lang) or c.get("en")
-    if not lines:
-        raise SystemExit(f"{spec['id']}: no cover lines for {lang}")
-    out.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory() as td:
-        if c.get("frame"):             # ["s3", 4.0]: a frame of a shot, for specs without keyframe stills
-            shot, at = c["frame"]
-            still = Path(td) / "frame.jpg"
-            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(at), "-i",
-                            str(R.CLIPS / R.clip_name(spec, shot)), "-frames:v", "1", "-q:v", "2",
-                            str(still)], check=True)
+def _tokens(hook: str) -> list[tuple[str, bool]]:
+    """Words, with each *highlighted phrase* kept whole so it never breaks across lines."""
+    out = []
+    for i, part in enumerate(re.split(r"\*", hook)):
+        if i % 2:
+            out.append((part.strip(), True))
         else:
-            kfs = spec.get("keyframes") or [{}]
-            still = R.CLIPS / f"{spec['id']}__{c.get('still', kfs[-1].get('name'))}.jpg"
-        if not still.exists():
-            raise SystemExit(f"missing still {still}")
-        # Copy fonts: drawtext paths with spaces ("India Travel Planner") need no escaping this way.
-        f_main, f_brand = Path(td) / "m.ttf", Path(td) / "b.ttf"
-        f_main.write_bytes(FONT[lang].read_bytes()); f_brand.write_bytes(BRAND.read_bytes())
-        head, sub = lines[0], (lines[1] if len(lines) > 1 else "")
-        vf = [
-            "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
-            # a soft dark fade under the text (stepped boxes, no hard edge)
-            *[f"drawbox=x=0:y={1120 + i * 40}:w=1080:h={800 - i * 40}:color=black@0.06:t=fill"
-              for i in range(12)],
-            f"drawtext=fontfile={f_brand}:text='NakshIQ':fontsize=64:fontcolor=white:"
-            f"x=(w-text_w)/2:y=290:shadowcolor=black@0.6:shadowx=2:shadowy=2",
-            f"drawtext=fontfile={f_main}:text='{_esc(head)}':fontsize={_size(head, 132)}:"
-            f"fontcolor=white:x=(w-text_w)/2:y=1330:shadowcolor=black@0.8:shadowx=3:shadowy=3",
-        ]
-        if sub:
-            vf.append(f"drawtext=fontfile={f_main}:text='{_esc(sub)}':fontsize={_size(sub, 76)}:fontcolor=0xFFD166:"
-                      f"x=(w-text_w)/2:y=1520:shadowcolor=black@0.7:shadowx=2:shadowy=2")
-        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(still), "-vf", ",".join(vf),
-                        "-frames:v", "1", "-q:v", "3", "-pix_fmt", "yuvj420p", str(out)], check=True)
+            out += [(w, False) for w in part.split()]
+    return out
+
+
+def _wrap(toks, font, maxw):
+    lines, cur = [], []
+    for t in toks:
+        trial = " ".join(w for w, _ in cur + [t])
+        if cur and font.getlength(trial) > maxw:
+            lines.append(cur); cur = [t]
+        else:
+            cur.append(t)
+    return lines + ([cur] if cur else [])
+
+
+def _draw_line(d, line, font, x, y, base, hi, stroke=0):
+    space = font.getlength(" ")
+    for w, is_hi in line:
+        d.text((x, y), w, font=font, fill=hi if is_hi else base,
+               stroke_width=stroke, stroke_fill=(0, 0, 0))
+        x += font.getlength(w) + space
+
+
+def _still(spec: dict, c: dict, td: str) -> Path:
+    if c.get("frame"):
+        shot, at = c["frame"]
+        p = Path(td) / "frame.jpg"
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(at), "-i",
+                        str(R.CLIPS / R.clip_name(spec, shot)), "-frames:v", "1", "-q:v", "2", str(p)],
+                       check=True)
+        return p
+    kfs = spec.get("keyframes") or [{}]
+    return R.CLIPS / f"{spec['id']}__{c.get('still', kfs[-1].get('name'))}.jpg"
+
+
+def make(spec: dict, out: Path, style: str = "bold") -> Path:
+    c = spec.get("cover") or {}
+    if not c.get("hook"):
+        raise SystemExit(f"{spec['id']}: spec has no cover.hook")
+    with tempfile.TemporaryDirectory() as td:
+        src = _still(spec, c, td)
+        if not src.exists():
+            raise SystemExit(f"missing still {src}")
+        im = Image.open(src).convert("RGB")
+    s = max(W / im.width, H / im.height)
+    im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
+    im = im.crop(((im.width - W) // 2, (im.height - H) // 2, (im.width - W) // 2 + W, (im.height - H) // 2 + H))
+    toks = _tokens(c["hook"])
+
+    if style == "bold":
+        # darken the top of the grid band a touch so outlined white words pop anywhere
+        shade = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(shade).rectangle((0, 0, W, 900), fill=90)
+        im = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), im, shade.filter(ImageFilter.GaussianBlur(120)))
+        d = ImageDraw.Draw(im)
+        size = 132
+        while True:
+            font = _font(size)
+            lines = _wrap(toks, font, 900)
+            if len(lines) <= 3 or size <= 90:
+                break
+            size -= 6
+        y = 450                          # below the logo (268..418)
+        for line in lines:
+            lw = font.getlength(" ".join(w for w, _ in line))
+            _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=7)
+            y += int(size * 1.12)
+    else:
+        font = _font(86)
+        lines = _wrap(toks, font, 860)
+        lh = int(86 * 1.2)
+        bw = max(font.getlength(" ".join(w for w, _ in l)) for l in lines) + 88
+        bh = lh * len(lines) + 64
+        bx, by = (W - bw) / 2, 1180 - bh / 2
+        shadow = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(shadow).rounded_rectangle((bx + 6, by + 12, bx + bw + 6, by + bh + 12), 34, fill=120)
+        im = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), im, shadow.filter(ImageFilter.GaussianBlur(18)))
+        d = ImageDraw.Draw(im)
+        d.rounded_rectangle((bx, by, bx + bw, by + bh), 34, fill=(255, 255, 255))
+        y = by + 30
+        for line in lines:
+            lw = font.getlength(" ".join(w for w, _ in line))
+            _draw_line(d, line, font, (W - lw) / 2, y, INK, VERMILLION)
+            y += lh
+
+    # logo: the same mark as the profile picture, top right, inside the grid band
+    logo = _logo(150)
+    im.paste(logo, (W - 150 - 50, 268), logo)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    im.save(out, "JPEG", quality=90)
     return out
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("spec"); ap.add_argument("--lang", default="en"); ap.add_argument("--out")
+    ap.add_argument("spec"); ap.add_argument("--style", default="bold", choices=["box", "bold"])
+    ap.add_argument("--out")
     a = ap.parse_args()
     s = R.load(a.spec)
-    o = Path(a.out) if a.out else R.VEO / "reels" / f"{s['id']}__{a.lang}__cover.jpg"
-    print(f"[cover] wrote {make(s, a.lang, o)}")
+    o = Path(a.out) if a.out else R.VEO / "reels" / f"{s['id']}__cover.jpg"
+    print(f"[cover] wrote {make(s, o, a.style)}")

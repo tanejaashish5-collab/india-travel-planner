@@ -70,7 +70,7 @@ def render() -> int:
             if s.get("cover"):
                 try:
                     import reel_cover
-                    cover = str(reel_cover.make(s, lang, R.VEO / "reels" / f"{key}__cover.jpg"))
+                    cover = str(reel_cover.make(s, R.VEO / "reels" / f"{s['id']}__cover.jpg"))  # English, both cuts
                 except (Exception, SystemExit) as e:   # a missing cover never blocks the reel
                     print(f"[v3_daily] {key} cover failed: {e}")
             first = [l for l in s["vo"]["en"][0].splitlines() if l.strip()]
