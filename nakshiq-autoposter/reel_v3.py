@@ -58,6 +58,7 @@ import tempfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+HOOK_SECS = 2.6        # the cover hook sits over the opening, then fades
 VEO = Path.home() / "Automation" / "nakshiq-veo"
 QUEUE = VEO / "veo_queue.json"
 CLIPS = VEO / "clips"
@@ -367,6 +368,19 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     if music and Path(music).exists():
         ins += ["-i", str(music)]
         mi = vi + 1
+    # The cover hook over the opening seconds (2026-09-29 growth plan: the first
+    # 3 s decide distribution, and a v3 reel opened on a quiet shot with nothing
+    # on screen). Same words and style as the cover, fading out by HOOK_SECS.
+    hk = None
+    try:
+        import reel_cover
+        hp = reel_cover.hook_overlay(spec, tdp / "hook.png")
+    except Exception as e:                     # a hook must never cost the reel
+        print(f"[reel_v3] hook overlay skipped: {e}")
+        hp = None
+    if hp:
+        hk = sum(1 for x in ins if x == "-i")
+        ins += ["-loop", "1", "-framerate", "30", "-t", f"{HOOK_SECS}", "-i", str(hp)]
 
     # Text: the disclosure, and (Hindi reel only) English captions, 1-3 words
     # at a time, bold white with a soft shadow, no box.
@@ -391,7 +405,10 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     # One grade over the whole reel: shots from different generations sit together.
     fc += (";[vc]eq=contrast=1.05:saturation=0.94:gamma=0.97,"
            "unsharp=5:5:0.35,noise=alls=5:allf=t,vignette=angle=PI/5,"
-           + ",".join(draw) + "[vout]")
+           + ",".join(draw) + ("[vg]" if hk is not None else "[vout]"))
+    if hk is not None:
+        fc += (f";[{hk}:v]format=rgba,fade=t=out:st={HOOK_SECS - 0.5:.2f}:d=0.5:alpha=1[hk]"
+               f";[vg][hk]overlay=0:0:eof_action=pass[vout]")
     fc += (";" + "".join(f"[a{i}]" for i in range(vi)) + f"concat=n={vi}:v=0:a=1,volume={AMBIENCE},"
            f"afade=t=out:st={total - 0.6:.2f}:d=0.6,apad=whole_dur={full:.3f}[amb]")
     fc += (f";[{vi}:a]aresample=48000,aformat=channel_layouts=stereo,"

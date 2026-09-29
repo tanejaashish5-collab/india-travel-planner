@@ -121,6 +121,63 @@ def _still(spec: dict, c: dict, td: str) -> Path:
     return R.CLIPS / f"{spec['id']}__{c.get('still', kfs[-1].get('name'))}.jpg"
 
 
+def _bold_layer(hook: str) -> Image.Image:
+    """The bold-style hook on a transparent 1080x1920 layer: a soft dark fade over
+    the top band plus the outlined words. The cover lays it on a still; the reel
+    lays it over its first seconds (reel_v3.render), so both open on the same line."""
+    toks = _tokens(hook)
+    shade = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(shade).rectangle((0, 0, W, 900), fill=90)
+    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    lay.putalpha(shade.filter(ImageFilter.GaussianBlur(120)))
+    d = ImageDraw.Draw(lay)
+    if "|" in hook:
+        # each forced line sized on its own: the short punch line gets the biggest type
+        segs, cur = [], []
+        for tk in toks:
+            if tk == ("|", False):
+                segs.append(cur); cur = []
+            else:
+                cur.append(tk)
+        segs.append(cur)
+        y = 450                          # below the logo (268..418)
+        for line in segs:
+            size = 170 if any(h for _, h in line) else 128
+            while size > 60 and _font(size).getlength(" ".join(w for w, _ in line)) > 940:
+                size -= 4
+            font = _font(size)
+            lw = font.getlength(" ".join(w for w, _ in line))
+            _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=max(5, size // 18))
+            y += int(size * 1.12)
+    else:
+        size = 132
+        while True:
+            font = _font(size)
+            lines = _wrap(toks, font, 900)
+            widest = max(font.getlength(" ".join(w for w, _ in l)) for l in lines)
+            if (len(lines) <= 3 and widest <= 940) or size <= 70:
+                break
+            size -= 6
+        y = 450
+        for line in lines:
+            lw = font.getlength(" ".join(w for w, _ in line))
+            _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=7)
+            y += int(size * 1.12)
+    return lay
+
+
+def hook_overlay(spec: dict, out: Path) -> Path | None:
+    """PNG of the cover hook for the reel's opening seconds; None if the spec has no hook.
+    Coaches' data: the first 3 seconds decide distribution, and our v3 reels opened
+    on a quiet establishing shot with nothing on screen (founder plan, 2026-09-29)."""
+    hook = (spec.get("cover") or {}).get("hook")
+    if not hook:
+        return None
+    out.parent.mkdir(parents=True, exist_ok=True)
+    _bold_layer(hook).save(out, "PNG")
+    return out
+
+
 def make(spec: dict, out: Path, style: str = "bold") -> Path:
     c = spec.get("cover") or {}
     if not c.get("hook"):
@@ -136,44 +193,7 @@ def make(spec: dict, out: Path, style: str = "bold") -> Path:
     toks = _tokens(c["hook"])
 
     if style == "bold":
-        # darken the top of the grid band a touch so outlined white words pop anywhere
-        shade = Image.new("L", (W, H), 0)
-        ImageDraw.Draw(shade).rectangle((0, 0, W, 900), fill=90)
-        im = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), im, shade.filter(ImageFilter.GaussianBlur(120)))
-        d = ImageDraw.Draw(im)
-        if "|" in c["hook"]:
-            # each forced line sized on its own: the short punch line gets the biggest type
-            segs, cur = [], []
-            for tk in toks:
-                if tk == ("|", False):
-                    segs.append(cur); cur = []
-                else:
-                    cur.append(tk)
-            segs.append(cur)
-            y = 450                          # below the logo (268..418)
-            for line in segs:
-                cap = 170 if any(h for _, h in line) else 128
-                size = cap
-                while size > 60 and _font(size).getlength(" ".join(w for w, _ in line)) > 940:
-                    size -= 4
-                font = _font(size)
-                lw = font.getlength(" ".join(w for w, _ in line))
-                _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=max(5, size // 18))
-                y += int(size * 1.12)
-        else:
-            size = 132
-            while True:
-                font = _font(size)
-                lines = _wrap(toks, font, 900)
-                widest = max(font.getlength(" ".join(w for w, _ in l)) for l in lines)
-                if (len(lines) <= 3 and widest <= 940) or size <= 70:
-                    break
-                size -= 6
-            y = 450
-            for line in lines:
-                lw = font.getlength(" ".join(w for w, _ in line))
-                _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=7)
-                y += int(size * 1.12)
+        im = Image.alpha_composite(im.convert("RGBA"), _bold_layer(c["hook"])).convert("RGB")
     else:
         font = _font(86)
         lines = _wrap(toks, font, 860)
