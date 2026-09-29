@@ -25424,3 +25424,36 @@ Date range: 2026-04-15 → 2026-09-28
 2026-09-29 16:07:00  INFO          R2 PUT OK. Confirming...
 2026-09-29 16:07:03  INFO          Media ready: uzZLt (31,131,766 bytes · manali__not_this_time_kf__en.mp4)
 2026-09-29 09:14:04  INFO      LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down
+2026-09-29 18:47:08  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-09-29 18:47:08  INFO      ════════════════════════════════════════════════════════════
+2026-09-29 18:47:08  INFO      Nakshiq Autoposter · EVENING · 2026-09-29 · weekday=1
+2026-09-29 18:47:08  INFO      ════════════════════════════════════════════════════════════
+2026-09-29 18:47:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-09-29 18:47:57  INFO      Synced → 20 destinations · 100 traps · 5 articles · 22 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 37 camping · 50 gems · total catalog=533
+2026-09-29 18:47:57  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-09-29 18:48:04  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-09-29 18:48:04  INFO      Active accounts: ['facebook/Nakshiq']
+2026-09-29 18:48:04  INFO      Festivals filtered (past/post-window): Ladakh Festival, Ganesh Chaturthi at Trinetra Ganesh Temple, Nubra Valley Festival, Nako Lake Festival, Champawat Nanda Devi Fair, Mata Murti Ka Mela, Urs of Sheikh Salim Chishti, Nanda Devi Mela (+22 more)
+2026-09-29 18:48:04  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-09-29 18:48:20  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-09-29 18:48:20  INFO      Evening format (balance→moment): v4_dw_heritage_reel_sensory_pov [0% vs target 15%] (0/15 never featured)
+2026-09-29 18:48:20  INFO      Formats — IG: v4_dw_heritage_reel_sensory_pov  ·  FB: v4_dw_heritage_reel_sensory_pov  ·  Story: collection_spotlight
+2026-09-29 18:48:20  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 61
+2026-09-29 18:48:20  INFO      Fingerprint dedup snapshot — 61 dests in 7d · 84 (dest,fmt) pairs in 30d · 212 media in 60d
+2026-09-29 18:48:20  INFO      Collection locked: Monsoon Magic (Jul-Sep) (78/100 never featured)
+2026-09-29 18:48:26  INFO      Shared best destination locked: Tirupati
+2026-09-29 18:48:26  INFO      Carousel locked (collection_spotlight): tosamaidan, barot-valley, jibhi
+2026-09-29 18:48:26  INFO      [facebook/Nakshiq] Generating v4_dw_heritage_reel_sensory_pov post...
+2026-09-29 18:48:26  INFO      [csv_formats] endpoint-anchored: v4_dw_heritage_reel_sensory_pov → festivals (30 candidates)
+2026-09-29 18:48:26  INFO      [facebook/Nakshiq] Caption ready (471 chars, dest=ranthambore)
+2026-09-29 18:48:26  INFO      [facebook/Nakshiq] CSV video format (v4_dw_heritage_reel_sensory_pov) — using dest Ken Burns clip as fallback
+2026-09-29 18:48:26  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/ranthambore.mp4?v=20260915
+2026-09-29 18:48:29  INFO          Brand-stamp applied: ranthambore.mp4 (6,139,592 → 2,947,075 bytes)
+2026-09-29 18:48:29  INFO          Requesting upload URL for ranthambore.mp4 (2,947,075 bytes, video/mp4)
+2026-09-29 18:48:31  INFO          Uploading to R2 (timeout=300s)...
+2026-09-29 18:48:32  INFO          R2 PUT OK. Confirming...
+2026-09-29 18:48:37  INFO          Media ready: yk2Od (2,947,075 bytes · ranthambore.mp4)
+2026-09-29 18:48:37  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-09-29 18:48:58  INFO      [facebook/Nakshiq] ✅ Published · Outstand=XnCOQ · Platform=2658792977914536
+2026-09-29 18:48:58  INFO      State saved. Run complete.
+2026-09-29 18:48:58  INFO      ════════════════════════════════════════════════════════════

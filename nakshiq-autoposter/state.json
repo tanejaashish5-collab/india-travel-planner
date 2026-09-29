@@ -36,22 +36,14 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "PdMu0_carousel": "2026-09-28",
-    "PdMu0": "2026-09-27",
-    "PdMu0_evening": "2026-09-27",
     "m8EAd_yt_short": "2026-09-28",
     "JMl93_yt_short": "2026-09-28",
-    "JMl93_yt_short_count": 1
+    "JMl93_yt_short_count": 1,
+    "PdMu0": "2026-09-29",
+    "PdMu0_evening": "2026-09-29"
   },
-  "last_sync": "2026-09-27T18:32:16.541625+00:00",
+  "last_sync": "2026-09-29T18:47:57.136391+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hemkund-sahib",
-      "date": "2026-09-14"
-    },
-    {
-      "destination_id": "theur",
-      "date": "2026-09-14"
-    },
     {
       "destination_id": "hogenakkal",
       "date": "2026-09-15"
@@ -135,6 +127,10 @@
     {
       "destination_id": "vagator",
       "date": "2026-09-28"
+    },
+    {
+      "destination_id": "ranthambore",
+      "date": "2026-09-29"
     }
   ],
   "posted_formats": {
@@ -165,7 +161,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "arrival_intel",
       "score_card",
       "score_card",
@@ -182,7 +177,8 @@
       "score_card",
       "v2_local_knows",
       "v2_budget_receipt",
-      "v2_weekend_escape_map"
+      "v2_weekend_escape_map",
+      "v4_dw_heritage_reel_sensory_pov"
     ]
   },
   "post_log": [
@@ -10156,6 +10152,35 @@
       "destination": "vagator",
       "format": "carousel.skip_list",
       "media_id": "carousel_skip_list_2026-09-28"
+    },
+    {
+      "timestamp": "2026-09-29T06:06:40.350490+00:00",
+      "date": "2026-09-29",
+      "platform": "instagram",
+      "post_id": "grTIs",
+      "destination": "manali",
+      "format": "scenario_not_this_time",
+      "media_id": "PmzTP"
+    },
+    {
+      "timestamp": "2026-09-29T06:07:19.770542+00:00",
+      "date": "2026-09-29",
+      "platform": "youtube",
+      "post_id": "TFjpr",
+      "destination": "manali",
+      "format": "scenario_not_this_time",
+      "media_id": "uzZLt"
+    },
+    {
+      "timestamp": "2026-09-29T18:48:58.904295+00:00",
+      "date": "2026-09-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "XnCOQ",
+      "destination": "ranthambore",
+      "format": "v4_dw_heritage_reel_sensory_pov",
+      "has_media": true,
+      "media_id": "ranthambore.mp4"
     }
   ],
   "theme_usage": {
@@ -10206,7 +10231,8 @@
       "jibhi": [
         "2026-05-25",
         "2026-09-01",
-        "2026-09-22"
+        "2026-09-22",
+        "2026-09-29"
       ],
       "leh": [
         "2026-05-25",
@@ -10321,7 +10347,8 @@
         "2026-06-11",
         "2026-06-23",
         "2026-06-26",
-        "2026-09-22"
+        "2026-09-22",
+        "2026-09-29"
       ],
       "gurez-valley": [
         "2026-06-10",
@@ -10460,7 +10487,8 @@
         "2026-09-03"
       ],
       "barot-valley": [
-        "2026-09-04"
+        "2026-09-04",
+        "2026-09-29"
       ],
       "chandigarh": [
         "2026-09-05"
@@ -10479,6 +10507,9 @@
       ],
       "kishtwar": [
         "2026-09-07"
+      ],
+      "ranthambore": [
+        "2026-09-29"
       ]
     },
     "morning_formats": {
@@ -10618,6 +10649,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v4_dw_heritage_reel_sensory_pov": [
+        "2026-09-29"
       ]
     },
     "reels": {
@@ -10782,6 +10816,9 @@
       ],
       "kishtwar": [
         "2026-09-07"
+      ],
+      "ranthambore": [
+        "2026-09-29"
       ]
     },
     "audience_tags": {
@@ -10883,9 +10920,6 @@
         "2026-06-04",
         "2026-08-11"
       ],
-      "budget-under-2000": [
-        "2026-06-30"
-      ],
       "best-dhabas-on-highways": [
         "2026-07-02"
       ],
@@ -10915,6 +10949,9 @@
       ],
       "offbeat-romantic": [
         "2026-09-24"
+      ],
+      "monsoon-magic": [
+        "2026-09-29"
       ]
     },
     "festivals": {
@@ -11008,6 +11045,17 @@
       "munsiyari": [
         "2026-09-24"
       ]
+    },
+    "collection_carousel_dests:monsoon-magic": {
+      "tosamaidan": [
+        "2026-09-29"
+      ],
+      "barot-valley": [
+        "2026-09-29"
+      ],
+      "jibhi": [
+        "2026-09-29"
+      ]
     }
   },
   "infographic": {
@@ -11022,8 +11070,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "jog-falls",
-    "collection": "offbeat-romantic"
+    "shared_best": "tirupati",
+    "collection": "monsoon-magic"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-09-22",
