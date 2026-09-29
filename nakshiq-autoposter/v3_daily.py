@@ -12,8 +12,12 @@ nothing else.
 
 A spec enters the daily loop only when it carries "auto": true, so an old or
 parked spec (chikmagalur__sos_keyframe) is never re-queued by accident.
-A cut lands in the ledger as status "review", never "ready": publish() only
-posts "ready" rows, so nothing goes out until the founder has watched it.
+A cut lands in the ledger as "ready" and publish() posts it in the next slot
+(founder, 2026-09-29: "switch the pipeline to auto-publish every reel that
+passes the check"). The check is qa(): a cut missing its audio or video, or
+running outside 15-60s, lands as "review" instead, with the reason in "held".
+Touch HOLD_FOR_REVIEW (next to this file) to send every new cut to "review"
+again; delete it to go back to auto-publish.
 """
 from __future__ import annotations
 
@@ -29,6 +33,28 @@ import reel_v3 as R  # noqa: E402
 SPECS = HERE / "reel_specs"
 LEDGER = Path.home() / "Automation" / "nakshiq-veo" / "data" / "reels.json"
 SURFACE = {"hi": "instagram", "en": "youtube"}
+HOLD = HERE / "HOLD_FOR_REVIEW"
+
+
+def qa(path: Path) -> str:
+    """Return why this cut must not auto-publish, or "" when it may."""
+    import subprocess
+    if not path.exists() or path.stat().st_size < 500_000:
+        return "file missing or under 0.5 MB"
+    try:
+        out = subprocess.run(["ffprobe", "-v", "error", "-show_entries",
+                              "stream=codec_type:format=duration", "-of", "json", str(path)],
+                             capture_output=True, text=True, timeout=60).stdout
+        info = json.loads(out)
+    except Exception as e:  # noqa: BLE001
+        return f"ffprobe failed: {e}"
+    kinds = {st.get("codec_type") for st in info.get("streams", [])}
+    if not {"video", "audio"} <= kinds:
+        return f"streams {sorted(kinds)}, need video + audio"
+    dur = float(info.get("format", {}).get("duration") or 0)
+    if not 15 <= dur <= 60:
+        return f"duration {dur:.1f}s outside 15-60s"
+    return ""
 
 
 def auto_specs():
@@ -74,14 +100,17 @@ def render() -> int:
                 except (Exception, SystemExit) as e:   # a missing cover never blocks the reel
                     print(f"[v3_daily] {key} cover failed: {e}")
             first = [l for l in s["vo"]["en"][0].splitlines() if l.strip()]
+            held = "HOLD_FOR_REVIEW file present" if HOLD.exists() else qa(out)
             led[key] = {"storyboard": s["id"], "slug": s["slug"], "format": s.get("format"),
-                        "status": "review", "six_beat": True, "pipeline": "v3",
+                        "status": "review" if held else "ready", "six_beat": True, "pipeline": "v3",
                         "rendered_at": datetime.now(timezone.utc).isoformat(),
                         "caption_hook": " ".join(first[:2]), "lang": lang, "platform": platform,
                         "file": str(out), "cover": cover}
+            if held:
+                led[key]["held"] = held
             LEDGER.write_text(json.dumps(led, ensure_ascii=False, indent=1))
             made += 1
-            print(f"[v3_daily] cut {key} -> {out} (status review)")
+            print(f"[v3_daily] cut {key} -> {out} (status {led[key]['status']}{': ' + held if held else ''})")
     print(f"[v3_daily] render: {made} cut(s)")
     return 0
 
