@@ -252,6 +252,30 @@ def _data_card_row(plat: str, surf: dict, led: dict, dry: bool):
     return None
 
 
+# Comment-keyword -> DM (growth plan 2026-09-29; Maria Wendt's main engine).
+# The DM is a Meta Business Suite "Comment to message" automation on @nakshiq
+# (keywords NOVEMBER/November/november/Nov/नवंबर -> /en/where-to-go/november with
+# utm_campaign=comment_november). A caption may only promise the DM while that
+# automation is live, so each CTA carries an end date and simply stops after it.
+# To rotate: create the next month's automation in Business Suite, then add a row.
+COMMENT_CTAS = [
+    {"until": "2026-11-25", "keyword": "NOVEMBER",
+     "en": "Comment NOVEMBER and we'll DM you where to go this November (and what to skip).",
+     "hi": "कमेंट करो NOVEMBER, हम DM में भेजेंगे कि नवंबर में कहाँ जाएँ (और कहाँ नहीं)।"},
+]
+
+
+def _comment_cta(lang: str, platform: str) -> str:
+    # Instagram only: YouTube has no DMs, so the promise could not be kept there.
+    if platform != "instagram":
+        return ""
+    today = datetime.now(timezone.utc).date().isoformat()
+    for c in COMMENT_CTAS:
+        if today <= c["until"]:
+            return c["hi" if lang == "hi" else "en"] + "\n\n"
+    return ""
+
+
 def caption_for(row: dict) -> tuple[str, str]:
     """(caption, youtube_title). The first line is the reel's own hook, so the
     caption reads as the same voice as the video. Disclosure is in the text:
@@ -263,7 +287,8 @@ def caption_for(row: dict) -> tuple[str, str]:
         tag = row["slug"].replace("-", "")
         cap = (f"{name} in {best}: {sc} out of 10. Here is every month, and what the "
                f"same hotel costs in and out of season.\n\n"
-               f"Send this to whoever's planning the trip with you.\n\n{name}, month by month: {url}\n\n"
+               f"Send this to whoever's planning the trip with you.\n\n{_comment_cta('en', row.get('platform', ''))}"
+               f"{name}, month by month: {url}\n\n"
                f"Background footage is AI-generated. Scores and prices are NakshIQ's real data."
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{name} in {best}: {sc}/10 | NakshIQ"
@@ -282,11 +307,11 @@ def caption_for(row: dict) -> tuple[str, str]:
     # (Mosseri; growth plan 2026-09-29), and these reels are about deciding a
     # trip WITH someone, so the second line asks for exactly that.
     if row["lang"] == "hi":
-        cap = (f"{hook}\n\nये उसे भेजो जिसके साथ ट्रिप प्लान कर रहे हो।\n\n"
+        cap = (f"{hook}\n\nये उसे भेजो जिसके साथ ट्रिप प्लान कर रहे हो।\n\n{_comment_cta('hi', row.get('platform', ''))}"
                f"{name} का पूरा हाल, महीने के हिसाब से: {url}\n\n"
                f"{disclose}\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{name} | NakshIQ"
-    cap = (f"{hook}\n\nSend this to whoever you're going with.\n\n"
+    cap = (f"{hook}\n\nSend this to whoever you're going with.\n\n{_comment_cta('en', row.get('platform', ''))}"
            f"Everything we know about {name}, month by month: {url}\n\n"
            f"{disclose}\n\n#{tag} #indiatravel #NakshIQ")
     head = hook[:80].rstrip('.')
