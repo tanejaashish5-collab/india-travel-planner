@@ -75,6 +75,15 @@ def topup() -> int:
     return 0
 
 
+def yt_title(s: dict) -> str | None:
+    """The YouTube title: the spec's "yt_title", else the cover hook (the line
+    written to open a question), never the bare "<Place> | NakshIQ" default."""
+    if s.get("yt_title"):
+        return s["yt_title"]
+    hook = " ".join((s.get("cover") or {}).get("hook", "").replace("*", "").replace("|", " ").split())
+    return f"{hook} | NakshIQ" if hook else None
+
+
 def render() -> int:
     import storyboard as SB
     led = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
@@ -108,6 +117,8 @@ def render() -> int:
                         "file": str(out), "cover": cover}
             if held:
                 led[key]["held"] = held
+            if platform == "youtube" and yt_title(s):
+                led[key]["yt_title"] = yt_title(s)
             LEDGER.write_text(json.dumps(led, ensure_ascii=False, indent=1))
             made += 1
             print(f"[v3_daily] cut {key} -> {out} (status {led[key]['status']}{': ' + held if held else ''})")
