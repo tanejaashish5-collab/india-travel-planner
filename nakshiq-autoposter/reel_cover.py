@@ -17,7 +17,14 @@ MIDDLE 3:4 of a 9:16 reel (y 240..1680 at 1920), so text and logo sit inside it.
 
 Spec block: "cover": {"still": "kf_s5_end" | "frame": ["s3", 4.0],
                       "hook": "She said she *couldn't* do this trek."}
-*asterisks* mark the highlighted words. The hook claims nothing the script does not.
+*asterisks* mark the highlighted words; "|" forces a line break.
+The hook claims nothing the script does not.
+
+THE HOOK MUST OPEN A QUESTION, not narrate (founder 2026-09-29: "She said she
+couldn't do this trek" was "plain boring flat ... needs to be more tense, arouse
+curiosity"). Stakes, a surprise or a withheld answer: "Car dead. No signal.
+What now?", "Don't book Rann in October". And the still must not give the
+ending away: the struggle, not the summit.
 """
 from __future__ import annotations
 
@@ -74,13 +81,18 @@ def _tokens(hook: str) -> list[tuple[str, bool]]:
         if i % 2:
             out.append((part.strip(), True))
         else:
-            out += [(w, False) for w in part.split()]
+            out += [(w, False) for w in part.replace("|", " | ").split()]
     return out
 
 
 def _wrap(toks, font, maxw):
     lines, cur = [], []
     for t in toks:
+        if t == ("|", False):                 # a forced break from the hook
+            if cur:
+                lines.append(cur)
+            cur = []
+            continue
         trial = " ".join(w for w, _ in cur + [t])
         if cur and font.getlength(trial) > maxw:
             lines.append(cur); cur = [t]
@@ -129,18 +141,39 @@ def make(spec: dict, out: Path, style: str = "bold") -> Path:
         ImageDraw.Draw(shade).rectangle((0, 0, W, 900), fill=90)
         im = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), im, shade.filter(ImageFilter.GaussianBlur(120)))
         d = ImageDraw.Draw(im)
-        size = 132
-        while True:
-            font = _font(size)
-            lines = _wrap(toks, font, 900)
-            if len(lines) <= 3 or size <= 90:
-                break
-            size -= 6
-        y = 450                          # below the logo (268..418)
-        for line in lines:
-            lw = font.getlength(" ".join(w for w, _ in line))
-            _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=7)
-            y += int(size * 1.12)
+        if "|" in c["hook"]:
+            # each forced line sized on its own: the short punch line gets the biggest type
+            segs, cur = [], []
+            for tk in toks:
+                if tk == ("|", False):
+                    segs.append(cur); cur = []
+                else:
+                    cur.append(tk)
+            segs.append(cur)
+            y = 450                          # below the logo (268..418)
+            for line in segs:
+                cap = 170 if any(h for _, h in line) else 128
+                size = cap
+                while size > 60 and _font(size).getlength(" ".join(w for w, _ in line)) > 940:
+                    size -= 4
+                font = _font(size)
+                lw = font.getlength(" ".join(w for w, _ in line))
+                _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=max(5, size // 18))
+                y += int(size * 1.12)
+        else:
+            size = 132
+            while True:
+                font = _font(size)
+                lines = _wrap(toks, font, 900)
+                widest = max(font.getlength(" ".join(w for w, _ in l)) for l in lines)
+                if (len(lines) <= 3 and widest <= 940) or size <= 70:
+                    break
+                size -= 6
+            y = 450
+            for line in lines:
+                lw = font.getlength(" ".join(w for w, _ in line))
+                _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=7)
+                y += int(size * 1.12)
     else:
         font = _font(86)
         lines = _wrap(toks, font, 860)
