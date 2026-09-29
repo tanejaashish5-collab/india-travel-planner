@@ -6895,7 +6895,8 @@ def publish_story(account: dict, media: dict, dry_run: bool = False) -> dict | N
 
 
 def publish_reel(caption: str, account: dict, video_media: dict,
-                 dry_run: bool = False, yt_title: str | None = None) -> dict | None:
+                 dry_run: bool = False, yt_title: str | None = None,
+                 cover_url: str | None = None) -> dict | None:
     """Post an Instagram/Facebook Reel or YouTube Short (vertical video)."""
     username = account.get("username", account["id"])
     platform = account["network"]
@@ -6964,23 +6965,35 @@ def publish_reel(caption: str, account: dict, video_media: dict,
             yt_title = yt_title.lstrip("📍🏔️🎯⚠️🌊 ").strip()
             if len(yt_title) > 100:
                 yt_title = yt_title[:97] + "..."
-            payload["networkOverrideConfiguration"] = {
-                "youtubeConfiguration": {
-                    "isShort": True,
-                    "privacyStatus": "public",
-                    "madeForKids": False,
-                    "categoryId": "19",  # Travel & Events
-                    "title": yt_title,
-                    "tags": ["india", "travel", "nakshiq", "shorts"],
-                }
+            # Platform config is a TOP-LEVEL key named after the network (Outstand
+            # docs, configurations/youtube). `networkOverrideConfiguration` is the
+            # RESPONSE shape; sent as a request it is silently dropped, which is
+            # why every Short until 2026-09-29 went up under the caption's first
+            # line, with no category and no tags (verified on posts dIHRC, OX67k).
+            payload["youtube"] = {
+                "isShort": True,
+                "privacyStatus": "public",
+                "madeForKids": False,
+                "categoryId": "19",  # Travel & Events
+                "title": yt_title,
+                "tags": ["india", "travel", "nakshiq", "shorts"],
             }
         except Exception:
             pass  # If metadata extraction fails, post without overrides
+
+    # Reel cover (2026-09-29): without one Instagram shows frame 0 on the grid.
+    # Reels only; a cover on any other post type is an error.
+    if platform == "instagram" and cover_url:
+        payload["instagram"] = {"reelCoverUrl": cover_url}
 
     result = outstand_post_req("/v1/posts/", payload)
     if not result.get("success"):
         log.warning(f"    Reel publish failed: {result}")
         return None
+    # Outstand drops keys it does not recognise and says so here; a dropped
+    # setting must be loud, not a silent default (see the youtube note above).
+    if result.get("warnings"):
+        log.warning(f"[{platform}/{username}] Outstand warnings: {result['warnings']}")
     return result
 
 

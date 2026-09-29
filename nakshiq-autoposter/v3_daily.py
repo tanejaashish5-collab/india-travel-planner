@@ -66,12 +66,19 @@ def render() -> int:
             except Exception as e:  # one bad cut must not stop the others
                 print(f"[v3_daily] {key} failed: {e}")
                 continue
+            cover = None
+            if s.get("cover"):
+                try:
+                    import reel_cover
+                    cover = str(reel_cover.make(s, lang, R.VEO / "reels" / f"{key}__cover.jpg"))
+                except (Exception, SystemExit) as e:   # a missing cover never blocks the reel
+                    print(f"[v3_daily] {key} cover failed: {e}")
             first = [l for l in s["vo"]["en"][0].splitlines() if l.strip()]
             led[key] = {"storyboard": s["id"], "slug": s["slug"], "format": s.get("format"),
                         "status": "review", "six_beat": True, "pipeline": "v3",
                         "rendered_at": datetime.now(timezone.utc).isoformat(),
                         "caption_hook": " ".join(first[:2]), "lang": lang, "platform": platform,
-                        "file": str(out)}
+                        "file": str(out), "cover": cover}
             LEDGER.write_text(json.dumps(led, ensure_ascii=False, indent=1))
             made += 1
             print(f"[v3_daily] cut {key} -> {out} (status review)")

@@ -337,7 +337,14 @@ def publish(dry: bool = False) -> int:
         if not media:
             _log(f"{plat}: upload failed")
             continue
-        res = ap.publish_reel(cap, acct, media, dry_run=False, yt_title=title)
+        cover_url = None
+        cov = Path(row.get("cover") or "")
+        if plat == "instagram" and row.get("cover") and cov.exists():
+            cm = ap.upload_media_bytes(cov.read_bytes(), cov.name, content_type="image/jpeg")
+            cover_url = (cm or {}).get("url")
+            if not cover_url:
+                _log(f"{plat}: cover upload failed, posting with Instagram's default frame")
+        res = ap.publish_reel(cap, acct, media, dry_run=False, yt_title=title, cover_url=cover_url)
         if not res:
             _log(f"{plat}: publish refused (cap reached or Outstand error) — stays ready")
             continue
