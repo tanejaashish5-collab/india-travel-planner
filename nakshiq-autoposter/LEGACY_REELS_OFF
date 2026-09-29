@@ -1,0 +1,4 @@
+Legacy template reels (--yt-short, --reel-studio) are retired (founder, 2026-09-29).
+The daily reel is the v3 story reel or, on a gap day, the HyperFrames data card,
+both published by the Mac slot (scenario_daily.py via run-social-local.sh).
+Delete this file to bring the legacy generators back.

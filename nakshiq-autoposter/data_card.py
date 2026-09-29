@@ -183,6 +183,10 @@ def render(slug: str, out: Path, follow: str = "follow @nakshiq") -> Path:
     (w / "assets").mkdir(parents=True)
     for fn in ("package.json", "hyperframes.json"):
         shutil.copy(PROJECT / fn, w / fn)
+    # GSAP ships with the project, not from a CDN: on 28 Sep the Mac lost DNS for
+    # an hour, every card render failed on the CDN fetch, and the legacy GitHub
+    # reel took the slot. A card must render with no network at all.
+    shutil.copy(PROJECT / "gsap.min.js", w / "assets" / "gsap.min.js")
     for i, c in enumerate(f["clips"], 1):
         shutil.copy(c, w / "assets" / f"bg{i}.mp4")
     if music:
@@ -196,7 +200,9 @@ def render(slug: str, out: Path, follow: str = "follow @nakshiq") -> Path:
     r = subprocess.run(["npx", "--yes", HF, "render", str(w), "-o", str(out), "--quiet",
                         "--no-best-effort"], capture_output=True, text=True)
     if r.returncode != 0 or not out.exists():
-        raise RuntimeError("hyperframes render failed: " + (r.stderr or r.stdout)[-600:])
+        txt = r.stderr or r.stdout or ""
+        errs = [l for l in txt.splitlines() if any(k in l.lower() for k in ("error", "fail", "timeout", "net::"))]
+        raise RuntimeError("hyperframes render failed: " + (" | ".join(errs)[:500] or txt[-400:]))
     return out
 
 

@@ -11275,6 +11275,14 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
 
 def run_yt_short(force: bool = False, dry_run: bool = False):
     """Entry point for YT Short mode with its own lock file."""
+    # Founder 2026-09-29 ("why is it not following our newest format"): the
+    # legacy template reels are retired. The daily reel is the v3 story reel or,
+    # on a gap day, the HyperFrames data card, both from the Mac slot
+    # (scenario_daily.py). While LEGACY_REELS_OFF exists this generator posts
+    # nothing; delete the file to bring it back.
+    if (Path(__file__).resolve().parent / "LEGACY_REELS_OFF").exists():
+        log.info("LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down")
+        return
     if not OUTSTAND_API_KEY:
         log.error("OUTSTAND_API_KEY not set. Exiting.")
         sys.exit(1)
@@ -11765,6 +11773,14 @@ def _run_reel_studio(force: bool = False, dry_run: bool = False):
 
 def run_reel_studio(force: bool = False, dry_run: bool = False):
     """Entry point for reel-studio mode with its own lock file (isolated slot)."""
+    # Founder 2026-09-29 ("why is it not following our newest format"): the
+    # legacy template reels are retired. The daily reel is the v3 story reel or,
+    # on a gap day, the HyperFrames data card, both from the Mac slot
+    # (scenario_daily.py). While LEGACY_REELS_OFF exists this generator posts
+    # nothing; delete the file to bring it back.
+    if (Path(__file__).resolve().parent / "LEGACY_REELS_OFF").exists():
+        log.info("LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --reel-studio stands down")
+        return
     global LOCK_FILE
     original_lock = LOCK_FILE
     LOCK_FILE = REEL_STUDIO_LOCK_FILE
