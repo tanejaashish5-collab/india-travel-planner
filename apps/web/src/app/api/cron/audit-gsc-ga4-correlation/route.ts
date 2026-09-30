@@ -29,7 +29,7 @@ export const maxDuration = 60;
 // under-alerts on thin snapshots rather than crying wolf on truncation
 // noise. Deeper improvement (capture more rows per audit) tracked separately.
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 
 const RATIO_LOW_THRESHOLD = 0.3;
 const RATIO_HIGH_THRESHOLD = 3.0;

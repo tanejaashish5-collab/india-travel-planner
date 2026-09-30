@@ -27,21 +27,21 @@ The Vercel cache states are noise (these are non-canonical URLs, mostly uncached
 I could not complete the URL Inspection / "Request Indexing" step. The property-owning Google account is not signed in to Chrome on this machine.
 
 **Account state (from Chrome AccountChooser):**
-- `flowcommandmanager@gmail.com` — signed in
-- `taneja.ashish5@gmail.com` — signed in
-- `wealthmythic@gmail.com` — signed in (authuser=5; GSC returns "Oops, you don't have access to this property")
-- `starterpodsite@gmail.com` — signed in
-- `humanityunboxedmanager@gmail.com` — signed in
-- `kiddiequestmanager@gmail.com` — signed in
-- **`ashish@forgevoice.studio` — SIGNED OUT** ← this is the property owner per memory (`feedback_google_account_for_nakshiq.md`)
+- `[veo-account]` — signed in
+- `[owner-account]` — signed in
+- `[veo-account]` — signed in (authuser=5; GSC returns "Oops, you don't have access to this property")
+- `[veo-account]` — signed in
+- `[veo-account]` — signed in
+- `[veo-account]` — signed in
+- **`[retired-account]` — SIGNED OUT** ← this is the property owner per memory (`feedback_google_account_for_nakshiq.md`)
 
-Probed `search.google.com/u/0/...` and `/u/5/...` — `u/0` bounces to the GSC marketing splash (no properties), `u/5` (wealthmythic) returns the explicit no-access page. Did not probe every authuser index to keep the run cheap, but the signal is clear: the only account that owns `sc-domain:nakshiq.com` is signed out.
+Probed `search.google.com/u/0/...` and `/u/5/...` — `u/0` bounces to the GSC marketing splash (no properties), `u/5` ([veo-account]) returns the explicit no-access page. Did not probe every authuser index to keep the run cheap, but the signal is clear: the only account that owns `sc-domain:nakshiq.com` is signed out.
 
 **Sign-in is a `prohibited` action for me** (password entry into any field). I cannot complete this autonomously.
 
 ### Manual action for the user (≤3 min)
 
-1. Open Chrome → account avatar → **sign in to `ashish@forgevoice.studio`** (Chrome remembers it; just enter the password).
+1. Open Chrome → account avatar → **sign in to `[retired-account]`** (Chrome remembers it; just enter the password).
 2. Open this URL (it auto-routes to the right authuser once signed in): https://search.google.com/search-console?resource_id=sc-domain%3Anakshiq.com
 3. For each of the 5 URLs below, paste into the top URL Inspection bar, wait for the report, click **"REQUEST INDEXING"** if not already consolidated:
    - https://www.nakshiq.com/destination/kumbhalgarh/may
@@ -67,7 +67,7 @@ After signing in (step 1 above), the URL is: https://search.google.com/search-co
 
 ## 4. Memory note worth correcting
 
-`feedback_google_account_for_nakshiq.md` says "Always use ashish@forgevoice.studio (authuser=5)". On this Chrome profile today, **authuser=5 = wealthmythic@gmail.com**, not ashish@forgevoice.studio. The authuser index is per-profile and depends on sign-in order — don't hard-code it. The reliable selector is the email itself (use the account picker, or `accounts.google.com/AccountChooser`).
+`feedback_google_account_for_nakshiq.md` says "Always use [retired-account] (authuser=5)". On this Chrome profile today, **authuser=5 = [veo-account]**, not [retired-account]. The authuser index is per-profile and depends on sign-in order — don't hard-code it. The reliable selector is the email itself (use the account picker, or `accounts.google.com/AccountChooser`).
 
 ---
 

@@ -86,6 +86,6 @@ Top-impressions queries in the 7d window for context (none of them are the snipp
 
 ## Data accuracy notes
 
-- Task brief said `taneja.ashish5@gmail.com` doesn't have direct access. The actual Chrome session was already authenticated to nakshiq.com property — no auth blocker.
+- Task brief said `[owner-account]` doesn't have direct access. The actual Chrome session was already authenticated to nakshiq.com property — no auth blocker.
 - All 5 non-prefixed URLs were inspected interactively in URL Inspection (live tool); 1 indexing request was submitted. Quota usage: 1 of ~10/day.
 - Performance data lag: GSC populates daily metrics with a ~3-day delay; today (Apr 29) shows data through Apr 26.

@@ -2,7 +2,7 @@
 
 **Scheduled task run.** 48 hours after the April 27 GSC snippet rewrite + cache prewarm deploy.
 
-**GSC account used:** `taneja.ashish5@gmail.com` (note in task said this account "doesn't have direct access" — it does, the property loaded normally for sc-domain:nakshiq.com).
+**GSC account used:** `[owner-account]` (note in task said this account "doesn't have direct access" — it does, the property loaded normally for sc-domain:nakshiq.com).
 
 ---
 

@@ -5,13 +5,13 @@
 ## Per-account result
 | acct | Email | New clips |
 |---|---|---|
-| 7 | ashish@forgevoice.studio | 5/5 |
-| 1 | taneja.ashish5@gmail.com | 5/5 |
-| 2 | wealthmythic@gmail.com | 5/5 |
-| 3 | starterpodsite@gmail.com | 5/5 |
-| 4 | kiddiequestmanager@gmail.com | 5/5 |
-| 5 | flowcommandmanager@gmail.com | 5/5 |
-| 6 | humanityunboxedmanager@gmail.com | 5/5 |
+| 7 | [retired-account] | 5/5 |
+| 1 | [owner-account] | 5/5 |
+| 2 | [veo-account] | 5/5 |
+| 3 | [veo-account] | 5/5 |
+| 4 | [veo-account] | 5/5 |
+| 5 | [veo-account] | 5/5 |
+| 6 | [veo-account] | 5/5 |
 
 All 7 accounts drained 50 → 0 credits as expected.
 

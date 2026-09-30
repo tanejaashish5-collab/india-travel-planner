@@ -2,7 +2,7 @@
 
 Scheduled task run, 14 days after the Apr 27 GSC snippet rewrite + cache prewarm deploy.
 
-GSC property accessed via Chrome `authuser=0` (ashish@forgevoice.studio). Memory note about authuser=5 was outdated — corrected for next run.
+GSC property accessed via Chrome `authuser=0` ([retired-account]). Memory note about authuser=5 was outdated — corrected for next run.
 
 ## TL;DR
 
@@ -64,6 +64,6 @@ The sibling-query CTRs (0.6–14.3%) prove the underlying pages do attract click
 
 ## Methodology notes
 
-- Account: GSC accessed via `authuser=0` in the user's Chrome (signed in as ashish@forgevoice.studio). Memory entry that says authuser=5 is stale for this Chrome profile.
+- Account: GSC accessed via `authuser=0` in the user's Chrome (signed in as [retired-account]). Memory entry that says authuser=5 is stale for this Chrome profile.
 - Date window: 28 days for per-query CTR (covers full pre/post Apr 27 split). 3-month view for property-wide context.
 - Branded queries excluded by virtue of the `*<destname>` filter (no nakshiq-branded queries in any cluster).

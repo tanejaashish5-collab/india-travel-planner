@@ -21,7 +21,7 @@ export const maxDuration = 60;
 // Fix when this fires: source a real, place-accurate, license-clean image →
 // apps/web/public/images/destinations/<slug>.jpg → node scripts/upload-images.mjs.
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 const CONCURRENCY = 12;
 
 type Dest = { id: string; name: string };

@@ -1,7 +1,7 @@
 # GSC Audit Follow-up — 2026-05-16 (late-day refresh)
 
 **Property:** https://www.nakshiq.com/
-**Run by:** Daily scheduled task (taneja.ashish5@gmail.com)
+**Run by:** Daily scheduled task ([owner-account])
 **Performance data last update:** 3 hours ago (most recent date in series: **5/14/26** — one day newer than the morning audit)
 **Indexing data last update:** 5/11/26 (still unchanged — now 5 days behind)
 

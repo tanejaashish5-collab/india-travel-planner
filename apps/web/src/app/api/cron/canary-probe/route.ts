@@ -23,7 +23,7 @@ export const maxDuration = 120;
 // previous run's failure set (no 48-email storms while something is down) +
 // a recovery email when a failing canary goes green again.
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 const BASE = "https://www.nakshiq.com";
 
 type Probe = {

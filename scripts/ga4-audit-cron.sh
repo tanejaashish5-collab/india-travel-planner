@@ -120,6 +120,22 @@ fi
 # A commit that depends on a model remembering is a suggestion; this is the
 # control. Next morning's run picks up the previous evening's GSC file.
 GUARD_FAILED=0
+
+# Redact before committing. This repo is PUBLIC and the Cowork audit has written
+# personal Gmail addresses into reports (2026-08/09). The pre-commit hook
+# (scripts/privacy-guard.sh) would refuse such a file, and a refused commit
+# freezes audit-snapshots.json, so scrub instead of failing: every address
+# except system senders (google.com, nakshiq.com), plus every literal in the
+# gitignored .secrets/never-publish.txt, becomes [account].
+redact_audit_file() {
+  perl -pi -e 's/[A-Za-z0-9._%+-]+@(?!(?:google\.com|nakshiq\.com)\b)[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/[account]/g' "$1"
+  if [ -s .secrets/never-publish.txt ]; then
+    NP_LIST=.secrets/never-publish.txt perl -pi -e '
+      BEGIN { open my $f, "<", $ENV{NP_LIST} or die; @w = grep { length } map { s/^\s+|\s+$//gr } grep { !/^\s*#/ } <$f>; }
+      for my $w (@w) { s/\Q$w\E/[account]/gi }' "$1"
+  fi
+}
+
 commit_family() {  # $1 label  $2 dir  $3 anchored ERE for the path  $4 msg prefix
   local label="$1" dir="$2" re="$3" prefix="$4"
   local pending=() f dates first last msg
@@ -137,6 +153,7 @@ commit_family() {  # $1 label  $2 dir  $3 anchored ERE for the path  $4 msg pref
   fi
   say "found ${#pending[@]} uncommitted $label file(s):"
   printf '    %s\n' "${pending[@]}"
+  for f in "${pending[@]}"; do redact_audit_file "$f"; done
 
   # Name the span in the message so a catch-up run is obvious in git log.
   # Derived with head/tail rather than array indices on purpose: bash indexes

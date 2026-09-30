@@ -17,7 +17,7 @@ PICKS = os.path.join(ROOT, sys.argv[1]) if len(sys.argv) > 1 else os.path.join(R
 NS = sys.argv[2] if len(sys.argv) > 2 else "obscure"
 RAW = os.path.join(ROOT, ".scrapes", "festival-footage", f"{NS}-raw")
 SHEETS = os.path.join(ROOT, ".scrapes", "festival-footage", f"{NS}-sheets")
-UA = "NakshIQ/1.0 (taneja.ashish5@gmail.com)"
+UA = "NakshIQ/1.0 (ops@nakshiq.com)"
 os.makedirs(RAW, exist_ok=True); os.makedirs(SHEETS, exist_ok=True)
 
 picks = json.load(open(PICKS))

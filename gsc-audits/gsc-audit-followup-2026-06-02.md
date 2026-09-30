@@ -4,7 +4,7 @@ Property: `https://www.nakshiq.com/`
 Performance window: **2026-05-25 → 2026-05-31** (7-day, GSC dashboard, last update 4 hours ago)
 Indexing window: **last refreshed 2026-05-29** (no fresher data yet)
 Pulled via Claude-in-Chrome MCP against GSC UI. Complements this morning's API-driven run ([gsc-audit-2026-06-02.md](gsc-audit-2026-06-02.md)) — same date, this one **adds the live indexing dashboard breakdown** the API can't see.
-Account: taneja.ashish5@gmail.com
+Account: [owner-account]
 
 ---
 

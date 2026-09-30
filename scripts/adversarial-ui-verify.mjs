@@ -28,7 +28,9 @@ import { chromium } from "@playwright/test";
 import { createClient } from "@supabase/supabase-js";
 
 const BASE = "https://www.nakshiq.com";
-const TEST_EMAIL = "taneja.ashish5+advtest@gmail.com";
+const TEST_EMAIL = process.env.ADV_TEST_EMAIL
+  ?? (process.env.ADMIN_EMAIL ? process.env.ADMIN_EMAIL.replace("@", "+advtest@") : "");
+if (!TEST_EMAIL) { console.error("Set ADMIN_EMAIL (or ADV_TEST_EMAIL) in apps/web/.env.local; the address is never hardcoded (public repo)."); process.exit(1); }
 const MARKER = "ADVERSARIAL-VERIFY test row — safe to delete";
 const HP_MARKER = "ADVERSARIAL-VERIFY-HONEYPOT — this row must never exist";
 

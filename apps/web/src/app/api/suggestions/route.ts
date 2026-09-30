@@ -11,7 +11,7 @@ const RATE_LIMIT_PER_HOUR = 10;
 // Where contact-form submissions are delivered. Defaults to the editor's
 // verified gmail so messages land in a real inbox even before nakshiq.com
 // MX records are set up to receive direct mail at editor@/hello@/press@.
-const CONTACT_FORWARD_TO = process.env.CONTACT_FORWARD_TO ?? "taneja.ashish5@gmail.com";
+const CONTACT_FORWARD_TO = process.env.CONTACT_FORWARD_TO ?? process.env.ADMIN_EMAIL ?? "";
 
 // Topic → friendly desk label (for the email subject) and the marketing-facing
 // reply-to address that the recipient sees. Actual delivery goes to

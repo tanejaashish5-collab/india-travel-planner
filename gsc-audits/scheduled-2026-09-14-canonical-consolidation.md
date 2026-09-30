@@ -85,7 +85,7 @@ This is now a 3.5-month-old standing recommendation with no change in the underl
 
 ## Notes on autonomous decisions
 
-- No Chrome/dashboard needed — the OAuth-authenticated `gsc-inspect-sweep.mjs` handles URL Inspection directly. The task brief's note about `taneja.ashish5@gmail.com` lacking property access is moot for this automated path (same as every prior run).
+- No Chrome/dashboard needed — the OAuth-authenticated `gsc-inspect-sweep.mjs` handles URL Inspection directly. The task brief's note about `[owner-account]` lacking property access is moot for this automated path (same as every prior run).
 - Did not submit Request Indexing on any of the 5 URLs — all already correctly consolidated, so the action would be a no-op that spends part of the daily quota.
 - Wrote the read fresh against this week's actual numbers rather than reusing last week's template — vrindavan hit a new series-best, yercaud kept declining (still the headline finding, now 5 weeks), chakrata/darjeeling read identically (flagged as a likely window-overlap artifact rather than a real "no change").
 - New script `scripts/_gsc-ctr-check-2026-09-14.mjs` added following the existing `_gsc-ctr-*.mjs` one-off convention, changing only the RECENT window per prior runs' pattern (Aug 18–Sep 14, 28d).

@@ -120,7 +120,7 @@
     "_autoSendNote": "true = the daily brief is DELIVERED autonomously (founder's 2026-06-11 daily-presentation request = standing approval). Flip to false to fall back to pending-actions.md.",
     "delivery": {
       "primary": "email",
-      "emailTo": "taneja.ashish5@gmail.com",
+      "emailTo": "ADMIN_EMAIL (apps/web/.env.local)",
       "emailVia": "node --env-file=apps/web/.env.local scripts/_loop/send-radar-brief.mjs --file <brief.md>",
       "_note": "EMAIL IS PRIMARY (founder 2026-06-11: 'I did not receive any email. It should be sent to me at a Gmail account' — the noon iMessage landed in his notification-less self-chat). iMessage = best-effort secondary.",
       "briefsDir": ".loop/radar-briefs"

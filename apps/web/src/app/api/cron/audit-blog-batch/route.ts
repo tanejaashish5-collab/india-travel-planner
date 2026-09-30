@@ -40,7 +40,7 @@ export const maxDuration = 60;
 // article is edited for any other reason — so it is reported as a diagnostic
 // and never used as the pass/fail signal.
 const JOB = "audit-blog-batch";
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 
 // The routine publishes 5 per batch. Anything less means it was interrupted.
 const EXPECTED_MIN_NEW = 5;

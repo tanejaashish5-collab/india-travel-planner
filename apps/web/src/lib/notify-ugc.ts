@@ -1,7 +1,7 @@
 import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
 import { formatScoreInline } from "@itp/shared";
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "taneja.ashish5@gmail.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "";
 
 const TYPE_LABEL: Record<string, { label: string; adminPath: string; ackHeadline: string }> = {
   trip_report: {

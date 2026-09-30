@@ -10,7 +10,7 @@ Usage: python3 scripts/_pick-obscure-festival-photos.py [LIMIT]
 import json, urllib.parse, urllib.request, re, sys, time, os, csv
 
 API = "https://commons.wikimedia.org/w/api.php"
-UA = "NakshIQ-festival-photo-sourcing/1.0 (taneja.ashish5@gmail.com)"
+UA = "NakshIQ-festival-photo-sourcing/1.0 (ops@nakshiq.com)"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV = os.path.join(ROOT, "data", "festivals", "festival-celebration-prompts.csv")
 MAP = os.path.join(ROOT, "apps", "web", "src", "lib", "festival-footage-map.ts")

@@ -20,7 +20,7 @@ export const maxDuration = 60;
  *   4. Top 5 GSC queries with biggest impression delta vs prior week
  *   5. ZERO-key-events alarm — fires if no key events were recorded
  */
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "taneja.ashish5@gmail.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "";
 
 function escapeHtml(s: string): string {
   return s

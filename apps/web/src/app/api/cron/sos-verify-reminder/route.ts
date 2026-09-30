@@ -24,7 +24,7 @@ export const maxDuration = 60;
  *
  * Triggered from vercel.json crons.
  */
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "taneja.ashish5@gmail.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "";
 const SITE_URL = "https://www.nakshiq.com";
 
 function escapeHtml(s: string): string {

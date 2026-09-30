@@ -5,7 +5,7 @@ Auto-picks the first free-licensed bitmap with width>=1100 and landscape-ish AR.
 import json, urllib.parse, urllib.request, sys
 
 API = "https://commons.wikimedia.org/w/api.php"
-UA = "NakshIQ-festival-photo-sourcing/1.0 (taneja.ashish5@gmail.com)"
+UA = "NakshIQ-festival-photo-sourcing/1.0 (ops@nakshiq.com)"
 
 # family -> search term (visual of the celebration)
 TERMS = {

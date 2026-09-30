@@ -37,12 +37,12 @@ Notably, the non-prefixed versions did not surface in any query — so Google ha
 ## Why I couldn't complete the GSC steps
 
 1. **Chrome extension wasn't reachable** during this run (`Claude in Chrome is not connected` on two retries).
-2. Even if it had been, the task notes that **`taneja.ashish5@gmail.com` doesn't have direct access to the GSC property**. Per saved memory ("Google account for NakshIQ"), the right account is **`ashish@forgevoice.studio`** (authuser=5).
+2. Even if it had been, the task notes that **`[owner-account]` doesn't have direct access to the GSC property**. Per saved memory ("Google account for NakshIQ"), the right account is **`[retired-account]`** (authuser=5).
 3. Performance dashboard CTR analysis requires the same GSC access.
 
 ## ⏩ User actions required
 
-Open Chrome signed in as **`ashish@forgevoice.studio`** (authuser=5) and:
+Open Chrome signed in as **`[retired-account]`** (authuser=5) and:
 
 ### 1. URL Inspection — paste each in turn
 GSC URL Inspection: https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Fwww.nakshiq.com%2F

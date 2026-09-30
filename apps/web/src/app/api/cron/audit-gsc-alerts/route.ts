@@ -33,7 +33,7 @@ export const maxDuration = 60;
 //       (smoothed/sustained) — it ALSO collapsed during the real 2026-05
 //       ISR regression, so demoting M3 loses no genuine coverage.
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 
 const ANALYSIS_WINDOW_DAYS = 14;
 // Indexed-pages drop, smoothed. The indexed counts are stratified-sample

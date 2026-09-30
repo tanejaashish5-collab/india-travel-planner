@@ -18,7 +18,8 @@ const val = (f, d = null) => { const i = argv.indexOf(f); return i > -1 ? argv[i
 const file = val('--file');
 if (!file || !fs.existsSync(file)) { console.error('usage: send-radar-brief.mjs --file <brief.md> [--subject s] [--to email]'); process.exit(1); }
 const md = fs.readFileSync(file, 'utf8');
-const to = val('--to', 'taneja.ashish5@gmail.com');
+const to = val('--to', process.env.ADMIN_EMAIL ?? '');
+if (!to) { console.error('No recipient: set ADMIN_EMAIL in apps/web/.env.local or pass --to'); process.exit(1); }
 const subject = val('--subject', `NakshIQ Opportunity Radar — ${new Date().toISOString().slice(0, 10)}`);
 const FROM = 'NakshIQ Ops <ops@nakshiq.com>'; // mirrors OPS_FROM_ADDRESS in apps/web/src/lib/resend.ts
 const KEY = process.env.RESEND_API_KEY;

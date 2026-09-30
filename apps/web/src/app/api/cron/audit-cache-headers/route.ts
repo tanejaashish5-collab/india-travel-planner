@@ -18,10 +18,10 @@ export const maxDuration = 60;
 // days while every other audit reported green. See commit c1f126d6 and
 // .scrapes/audit-gap-investigation-2026-05-27.md (blind spot B1).
 //
-// Alerts via Resend to taneja.ashish5@gmail.com when violations >= 2 routes
+// Alerts via Resend to ADMIN_EMAIL when violations >= 2 routes
 // (one transient cold cache is OK; two simultaneous is structural).
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 
 // One URL per dynamic-route family. Keep this list short and stable —
 // adding URLs here multiplies cost; the goal is one canary per shape.

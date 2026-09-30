@@ -19,7 +19,7 @@ export const maxDuration = 60;
 // row's absence is itself a signal — surface on /methodology/freshness.
 // External heartbeat (Healthchecks.io) is the recommended belt-and-braces.
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 
 // Expected cadence per job. Values are max days between runs before we
 // declare the job overdue. A 1-day buffer is added to absorb cron drift.

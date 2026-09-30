@@ -100,7 +100,7 @@ listed in `apps/web/src/lib/road-updates.ts` (`ROAD_REGIONS[].blurb`) and in
 7. Rendered-page check after a non-empty insert:
    `node scripts/verify-touched-pages.mjs --url /en/road-conditions`.
 
-## Escalate by email (taneja.ashish5@gmail.com) only for
+## Escalate by email (to the founder: send to the Gmail account your Gmail connector is signed in as) only for
 
 - A corridor moving to `closed` or `blocked` on a route with a live `road_reports`
   row that still says `open`, when you could not update the row.

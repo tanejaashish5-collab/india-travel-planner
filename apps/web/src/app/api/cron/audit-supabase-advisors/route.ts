@@ -22,7 +22,7 @@ export const maxDuration = 60;
 // Auth: Supabase Management API personal access token (SUPABASE_PAT env).
 // Without it, the cron will skip with a clear error instead of failing.
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 const PROJECT_REF = "dudzsdzfvikjjhurxrgc";
 
 // Cache keys of known false positives or intentional design choices we

@@ -25,7 +25,7 @@ All 5 `/en/` counterparts inspected and confirmed **"Submitted and indexed"**, p
 The scheduled task asked to click "REQUEST INDEXING" in the GSC dashboard. Two reasons it wasn't actioned:
 
 1. **The objective is already met.** Each URL's googleCanonical is the /en/ version. Re-crawl wouldn't change anything — Google already crawled, saw the 301 + canonical tag, and selected the /en/ version.
-2. **Note in the task file (`taneja.ashish5@gmail.com` lacks property access) is also stale.** The URL Inspection API (run with the founder's OAuth refresh token) returns the same data the dashboard does, so no Chrome session was required.
+2. **Note in the task file (`[owner-account]` lacks property access) is also stale.** The URL Inspection API (run with the founder's OAuth refresh token) returns the same data the dashboard does, so no Chrome session was required.
 
 Per the CLAUDE.md "Pending user-action items" list, this category of canonical-consolidation check is now handled by `scripts/gsc-inspect-sweep.mjs --url <url>`. Nothing on the user's plate.
 

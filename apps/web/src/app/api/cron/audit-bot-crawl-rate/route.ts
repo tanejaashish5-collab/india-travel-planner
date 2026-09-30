@@ -29,7 +29,7 @@ export const maxDuration = 60;
 // comparison windows are fully in the 1%-era; ops_reports still records.
 const SAMPLING_STABLE_DATE = "2026-07-09T00:00:00Z";
 
-const ALERT_TO = "taneja.ashish5@gmail.com";
+const ALERT_TO = process.env.ADMIN_EMAIL ?? "";
 
 const CRAWL_DROP_PCT = 50;     // family loses >50% WoW = alert
 const MIN_HITS_PER_FAMILY = 30; // below this, sample too noisy (raw, post-sampling so true ~3000+)
