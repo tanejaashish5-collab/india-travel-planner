@@ -208,6 +208,11 @@ def queue_rows(spec: dict, stills_only: bool = False) -> list[dict]:
     return rows
 
 
+# Outstand warned on the first covered post (Manali, 2026-09-29): "instagram
+# rejects videos containing edit lists". ffmpeg writes one per track by default.
+NO_EDITLIST = ["-use_editlist", "0", "-movflags", "+faststart+negative_cts_offsets"]
+
+
 def enqueue(spec: dict, stills_only: bool = False) -> int:
     """Add missing rows; also bring the prompt of any row not yet GENERATED
     (pending / parked) up to the spec, so a spec edit (e.g. a tone line added
@@ -429,7 +434,7 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     cmd = ["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fc,
            "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", "slow",
            "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
-           "-ar", "48000", "-movflags", "+faststart", "-t", f"{total:.3f}", str(out),
+           "-ar", "48000", *NO_EDITLIST, "-t", f"{total:.3f}", str(out),
            "-map", "[afull]", "-c:a", "pcm_s16le", str(full_wav)]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
@@ -442,7 +447,7 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
         mixed = tdp / "mixed.mp4"
         r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(out), "-i", str(full_wav),
                             "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac",
-                            "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(mixed)],
+                            "-b:a", "192k", "-shortest", *NO_EDITLIST, str(mixed)],
                            capture_output=True, text=True)
         if r.returncode == 0:
             shutil.move(str(mixed), str(out))

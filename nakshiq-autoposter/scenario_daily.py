@@ -320,6 +320,24 @@ def caption_for(row: dict) -> tuple[str, str]:
     return cap, (row.get("yt_title") or title)[:100]
 
 
+def _without_editlist(path: Path) -> Path:
+    """Instagram rejects MP4s with edit lists (Outstand warning, 2026-09-29).
+    Remux losslessly without them, in place; on any failure keep the original."""
+    if b"elst" not in path.read_bytes():
+        return path
+    tmp = path.with_suffix(".noelst.mp4")
+    r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(path), "-map", "0", "-c", "copy",
+                        "-use_editlist", "0", "-movflags", "+faststart+negative_cts_offsets", str(tmp)],
+                       capture_output=True, text=True)
+    if r.returncode == 0 and tmp.exists() and b"elst" not in tmp.read_bytes():
+        tmp.replace(path)
+        _log(f"stripped MP4 edit lists from {path.name}")
+    else:
+        tmp.unlink(missing_ok=True)
+        _log(f"could not strip edit lists from {path.name}: {r.stderr[-300:]}")
+    return path
+
+
 def publish(dry: bool = False) -> int:
     """Publish the oldest ready reel for each surface that has not had one today.
 
@@ -363,8 +381,8 @@ def publish(dry: bool = False) -> int:
         if dry:
             _log(f"DRY {plat} ← {Path(row['file']).name}\n  title: {title}\n{cap}")
             continue
-        media = ap.upload_media_bytes(Path(row["file"]).read_bytes(), Path(row["file"]).name,
-                                      content_type="video/mp4")
+        media = ap.upload_media_bytes(_without_editlist(Path(row["file"])).read_bytes(),
+                                      Path(row["file"]).name, content_type="video/mp4")
         if not media:
             _log(f"{plat}: upload failed")
             continue

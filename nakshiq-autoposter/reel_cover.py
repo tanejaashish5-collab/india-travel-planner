@@ -212,9 +212,10 @@ def make(spec: dict, out: Path, style: str = "bold") -> Path:
             _draw_line(d, line, font, (W - lw) / 2, y, INK, VERMILLION)
             y += lh
 
-    # logo: the same mark as the profile picture, top right, inside the grid band
+    # logo: the same mark as the profile picture, top LEFT, inside the grid band.
+    # Top right sat under Instagram's own reel badge on the grid (Manali, 2026-09-29).
     logo = _logo(150)
-    im.paste(logo, (W - 150 - 50, 268), logo)
+    im.paste(logo, (50, 268), logo)
     out.parent.mkdir(parents=True, exist_ok=True)
     im.save(out, "JPEG", quality=90)
     return out
