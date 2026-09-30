@@ -35,19 +35,13 @@
     "GAh5p_yt_short_count": 1,
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
-    "PdMu0_carousel": "2026-09-28",
-    "m8EAd_yt_short": "2026-09-28",
-    "JMl93_yt_short": "2026-09-28",
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-09-29",
-    "PdMu0_evening": "2026-09-29"
+    "PdMu0_evening": "2026-09-29",
+    "PdMu0_carousel": "2026-09-30"
   },
   "last_sync": "2026-09-29T19:33:03.416856+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hogenakkal",
-      "date": "2026-09-15"
-    },
     {
       "destination_id": "chandratal",
       "date": "2026-09-16"
@@ -131,6 +125,10 @@
     {
       "destination_id": "ranthambore",
       "date": "2026-09-29"
+    },
+    {
+      "destination_id": "yusmarg",
+      "date": "2026-09-30"
     }
   ],
   "posted_formats": {
@@ -10181,6 +10179,33 @@
       "format": "v4_dw_heritage_reel_sensory_pov",
       "has_media": true,
       "media_id": "ranthambore.mp4"
+    },
+    {
+      "timestamp": "2026-09-30T06:06:36.037603+00:00",
+      "date": "2026-09-30",
+      "platform": "instagram",
+      "post_id": "7t5JB",
+      "destination": "rann-of-kutch",
+      "format": "scenario_month_later",
+      "media_id": "C7ErZ"
+    },
+    {
+      "timestamp": "2026-09-30T06:07:12.651399+00:00",
+      "date": "2026-09-30",
+      "platform": "youtube",
+      "post_id": "eluNa",
+      "destination": "rann-of-kutch",
+      "format": "scenario_month_later",
+      "media_id": "9J2aY"
+    },
+    {
+      "timestamp": "2026-09-30T14:03:45.477870+00:00",
+      "date": "2026-09-30",
+      "platform": "facebook",
+      "post_id": "497fF",
+      "destination": "yusmarg",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-09-30"
     }
   ],
   "theme_usage": {
@@ -10923,6 +10948,10 @@
         "2026-06-04",
         "2026-08-11"
       ],
+      "photography-spots": [
+        "2026-06-17",
+        "2026-09-29"
+      ],
       "best-dhabas-on-highways": [
         "2026-07-02"
       ],
@@ -10954,9 +10983,6 @@
         "2026-09-24"
       ],
       "monsoon-magic": [
-        "2026-09-29"
-      ],
-      "photography-spots": [
         "2026-09-29"
       ]
     },
@@ -11016,6 +11042,11 @@
         "2026-08-05"
       ]
     },
+    "collection_carousel_dests:photography-spots": {
+      "kalpa": [
+        "2026-09-29"
+      ]
+    },
     "collection_carousel_dests:best-dhabas-on-highways": {
       "leh": [
         "2026-07-02"
@@ -11060,11 +11091,6 @@
         "2026-09-29"
       ],
       "jibhi": [
-        "2026-09-29"
-      ]
-    },
-    "collection_carousel_dests:photography-spots": {
-      "kalpa": [
         "2026-09-29"
       ]
     }
