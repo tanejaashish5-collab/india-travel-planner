@@ -15,6 +15,11 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // cross-origin <link>: the service worker re-issues intercepted subresources
 // as fetch(), which this CSP governs under connect-src, silently killing any
 // cross-origin stylesheet/script the SW touches (NEW-2026-09-01-001).
+// connect-src carries https://*.google.com because gtag sends a second GA4 hit
+// to www.google.com/g/collect; Google's "GA4 without Ads features" CSP lists it
+// (developers.google.com/tag-platform/security/guides/csp). Without it every
+// page logged a CSP violation and that hit was dropped (found 2026-09-30).
+// Ads-only origins (*.google.<TLD>, *.g.doubleclick.net) are deliberately absent.
 const SUPABASE_ORIGIN = (() => {
   try {
     return new URL(process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").origin;
@@ -30,7 +35,7 @@ const CSP = [
   "img-src 'self' data: blob: https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://server.arcgisonline.com https://openweathermap.org https://www.google-analytics.com https://www.googletagmanager.com",
   "media-src 'self' https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev",
   "font-src 'self' data:",
-  `connect-src 'self' ${SUPABASE_ORIGIN} https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com`,
+  `connect-src 'self' ${SUPABASE_ORIGIN} https://*.google-analytics.com https://*.analytics.google.com https://*.google.com https://www.googletagmanager.com`,
   "worker-src 'self' blob:",
   "frame-src 'self'",
   "object-src 'none'",
