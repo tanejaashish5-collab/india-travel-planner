@@ -103,51 +103,70 @@ else
   fi
 fi
 
-# ------------------------------- 3. collect EVERY uncommitted GA4 audit file
+# ---------------------- 3+4. commit EVERY uncommitted audit file, per family
 # Untracked (never committed) + modified (committed then rewritten). Restricted
-# to the dated filename pattern so nothing else in the directory is swept in.
-PENDING=()
-while IFS= read -r f; do
-  [ -n "$f" ] && PENDING+=("$f")
-done < <(
-  {
-    git ls-files --others --exclude-standard -- ga4-audits/
-    git diff --name-only -- ga4-audits/
-  } | grep -E '^ga4-audits/ga4-audit-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$' | sort -u
-)
-
-# --------------------------------------------------------- 4. commit + push
+# to dated filename patterns so nothing else in a directory is swept in.
+#
+# Two families, one commit each so git log stays readable:
+#   ga4-audits/ga4-audit-*.md    written by ga4-daily-audit.mjs above
+#   gsc-audits/gsc-audit-*.md    written ~21:15 by the Cowork "daily-gsc-audit"
+#                                task (~/Documents/Claude/Scheduled/), which has
+#                                NO commit step
+#   gsc-audits/demand-gaps-*.md  written Mondays by com.ashish.demand-gaps, which
+#                                commits only its JSON
+# (2026-09-30) The Cowork GSC session committed its file on its own initiative
+# until 09-24, then silently stopped: 09-25 → 09-29 sat untracked, freezing the
+# GSC half of audit-snapshots.json — the same bug this script fixed for GA4.
+# A commit that depends on a model remembering is a suggestion; this is the
+# control. Next morning's run picks up the previous evening's GSC file.
 GUARD_FAILED=0
-if [ ${#PENDING[@]} -gt 0 ]; then
-  say "found ${#PENDING[@]} uncommitted audit file(s):"
-  printf '    %s\n' "${PENDING[@]}"
+commit_family() {  # $1 label  $2 dir  $3 anchored ERE for the path  $4 msg prefix
+  local label="$1" dir="$2" re="$3" prefix="$4"
+  local pending=() f dates first last msg
+  while IFS= read -r f; do
+    [ -n "$f" ] && pending+=("$f")
+  done < <(
+    {
+      git ls-files --others --exclude-standard -- "$dir"
+      git diff --name-only -- "$dir"
+    } | grep -E "$re" | sort -u
+  )
+  if [ ${#pending[@]} -eq 0 ]; then
+    say "no uncommitted $label files"
+    return 0
+  fi
+  say "found ${#pending[@]} uncommitted $label file(s):"
+  printf '    %s\n' "${pending[@]}"
 
   # Name the span in the message so a catch-up run is obvious in git log.
   # Derived with head/tail rather than array indices on purpose: bash indexes
   # arrays from 0 and zsh from 1, and this file should not silently produce a
   # wrong commit message if someone ever runs it under a different shell.
-  DATES="$(printf '%s\n' "${PENDING[@]}" | sed -E 's#.*/ga4-audit-([0-9]{4}-[0-9]{2}-[0-9]{2})\.md#\1#' | sort)"
-  FIRST_DATE="$(printf '%s\n' "$DATES" | head -1)"
-  LAST_DATE="$(printf '%s\n' "$DATES" | tail -1)"
-  if [ "$FIRST_DATE" = "$LAST_DATE" ]; then
-    MSG="measure(ga4): audit $FIRST_DATE"
+  dates="$(printf '%s\n' "${pending[@]}" | sed -E 's#.*-([0-9]{4}-[0-9]{2}-[0-9]{2})\.md$#\1#' | sort)"
+  first="$(printf '%s\n' "$dates" | head -1)"
+  last="$(printf '%s\n' "$dates" | tail -1)"
+  if [ "$first" = "$last" ] && [ ${#pending[@]} -eq 1 ]; then
+    msg="$prefix $first"
   else
-    MSG="measure(ga4): audit files $FIRST_DATE → $LAST_DATE (catch-up, ${#PENDING[@]} days)"
+    msg="$prefix files $first → $last (catch-up, ${#pending[@]} files)"
   fi
 
   # The guard does the work that matters: clears provably-stale locks, verifies
   # HEAD actually moved, verifies the files are IN the commit, verifies the
   # remote advanced. Never replace this with a bare `git commit`.
-  if bash scripts/audit-commit-guard.sh -m "$MSG" "${PENDING[@]}"; then
-    say "✓ committed and pushed"
+  if bash scripts/audit-commit-guard.sh -m "$msg" "${pending[@]}"; then
+    say "✓ $label committed and pushed"
   else
     GUARD_FAILED=1
-    say "⚠️  audit-commit-guard did not complete — see its output above."
+    say "⚠️  audit-commit-guard did not complete for $label — see its output above."
     say "    Falling through to the stranded-commit heal below."
   fi
-else
-  say "no uncommitted audit files"
-fi
+}
+
+commit_family "GA4 audit" ga4-audits/ \
+  '^ga4-audits/ga4-audit-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$' "measure(ga4): audit"
+commit_family "GSC audit" gsc-audits/ \
+  '^gsc-audits/(gsc-audit|demand-gaps)-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$' "chore(gsc): audit"
 
 # ------------------------------------------- 4b. heal stranded local commits
 # This block USED TO LIVE inside the `else` above, which made it dead code:
