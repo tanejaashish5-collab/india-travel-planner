@@ -129,7 +129,10 @@
 //      rating → difficulty → safety, and adds the strongest-window months when
 //      the current month is weak. Changes text on all 1,674 /vs/ pages in both
 //      locales, and /vs/ HTML is runtime-cached, so the bump purges v59 copies.
-const CACHE_VERSION = "nakshiq-v61";
+//   v62 (2026-09-30): Supabase key rotation. The browser bundle now carries the
+//      publishable key; the legacy anon key is being disabled, so cached pages
+//      and chunks that embed it must be purged or their data calls would fail.
+const CACHE_VERSION = "nakshiq-v62";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
