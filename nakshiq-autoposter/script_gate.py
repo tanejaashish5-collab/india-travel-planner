@@ -144,8 +144,10 @@ PRODUCT = {
 }
 
 
-def check(script: dict, d: dict | None = None, legacy: bool = False) -> list[str]:
-    """legacy=True skips the BRIEF v2 story rules (only for re-checking v1 scripts)."""
+def check(script: dict, d: dict | None = None, legacy: bool = True) -> list[str]:
+    """legacy=False adds the BRIEF v2 story rules (`--v2`). They are opt-in since the
+    founder's blind test on 2026-10-01 picked the v1 script in 4 of 6 pairs (v2 won 1,
+    neither 1); the pre-registered rule was "2 or fewer v2 wins = keep v1 and revisit"."""
     d = d or json.loads(DATA.read_text())
     problems = []
     en = script.get("lang_en") or ""
@@ -191,9 +193,9 @@ def check(script: dict, d: dict | None = None, legacy: bool = False) -> list[str
 
 
 if __name__ == "__main__":
-    args = [a for a in sys.argv[1:] if a != "--v1"]
+    args = [a for a in sys.argv[1:] if a not in ("--v1", "--v2")]
     p = Path(args[0])
-    probs = check(json.loads(p.read_text()), legacy="--v1" in sys.argv)
+    probs = check(json.loads(p.read_text()), legacy="--v2" not in sys.argv)
     if probs:
         print(f"[script_gate] REFUSED {p.name}:")
         for x in probs:

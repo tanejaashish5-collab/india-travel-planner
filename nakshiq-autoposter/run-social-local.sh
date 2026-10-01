@@ -54,9 +54,16 @@ fi
 #     per-surface cap makes that slot step aside on any surface this covered.
 #     OFF until the founder turns it on: NAKSHIQ_SCENARIO_PUBLISH=1 in
 #     nakshiq-autoposter/.env.local. Off, it only logs what it would post.
+#     SLOT MOVED 2026-10-01 from 11:00-12:00 to 13:00-14:00 IST (founder: "earlier
+#     we were posting at a later time when India was coming to scroll"). Meta
+#     Business Suite, Sep reels by India post time: 13-14 IST median reach 104
+#     (n=9), 14-15 IST 34 (n=11), 15-16:30 IST 63 (n=5); no reel had ever gone
+#     out at 11-13 IST before the story reels (median 17 there, n=3). The plist
+#     fires at 17:35/18:05/18:35/19:05 local so 13:05 IST is hit under AEST and
+#     AEDT (from 4 Oct); the first in-window fire publishes, the rest no-op.
 SC_IST="$(TZ=Asia/Kolkata date '+%H%M')"
-if [ "$((10#$SC_IST))" -lt 1100 ] || [ "$((10#$SC_IST))" -ge 1200 ]; then
-  say "scenario reels: IST $SC_IST is outside 11:00-12:00 — not this fire"
+if [ "$((10#$SC_IST))" -lt 1300 ] || [ "$((10#$SC_IST))" -ge 1400 ]; then
+  say "scenario reels: IST $SC_IST is outside 13:00-14:00 — not this fire"
 elif ! bash scripts/autoposter-state-sync.sh pull; then
   say "⚠️  scenario reels: state pull FAILED — skipping rather than publishing on stale caps"
 else

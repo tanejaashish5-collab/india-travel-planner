@@ -1,0 +1,67 @@
+{
+ "read_at": "2026-10-01, Artifact db picks/p1..p6",
+ "tally": {
+  "v1": 4,
+  "v2": 1,
+  "neither": 1
+ },
+ "pre_registered_rule": "v2 >= 4 of 6 adopt; 3 inconclusive; <= 2 keep v1 and revisit",
+ "decision": "v2 NOT adopted: BRIEF.md restored to v1, v2 kept as BRIEF.v2.md, gate story rules opt-in (--v2)",
+ "note_on_speed": "pairs 3-6 were picked 7-16 s apart, so they were judged mostly on cover + opening lines",
+ "pairs": [
+  {
+   "pair": "p1",
+   "id": "gulmarg_pahalgam__december",
+   "picked_side": "A",
+   "winner": "v1",
+   "at": "2026-10-01T04:43:30Z",
+   "cover_v1": "She said Gulmarg. |I said *Pahalgam*.",
+   "cover_v2": "It was her turn to pick. | I said *no* anyway."
+  },
+  {
+   "pair": "p2",
+   "id": "girnar__december",
+   "picked_side": "N",
+   "winner": "neither",
+   "at": "2026-10-01T04:47:56Z",
+   "cover_v1": "I bet *10,000 steps* |was an easy morning.",
+   "cover_v2": "She called *10,000 steps* | an easy morning."
+  },
+  {
+   "pair": "p3",
+   "id": "leh__new_year",
+   "picked_side": "A",
+   "winner": "v1",
+   "at": "2026-10-01T04:48:07Z",
+   "cover_v1": "New Year in Leh? |We *almost* booked it.",
+   "cover_v2": "Her thumb was on the *pay button* | for Leh."
+  },
+  {
+   "pair": "p4",
+   "id": "brahmatal__december",
+   "picked_side": "B",
+   "winner": "v1",
+   "at": "2026-10-01T04:48:23Z",
+   "cover_v1": "I bet this trek |was *beyond us*.",
+   "cover_v2": "I bet her we'd *turn back* | on a Himalayan trek."
+  },
+  {
+   "pair": "p5",
+   "id": "tawang__december",
+   "picked_side": "B",
+   "winner": "v2",
+   "at": "2026-10-01T04:48:35Z",
+   "cover_v1": "We almost booked Tawang |in the *wrong month*.",
+   "cover_v2": "My boss signed my Tawang leave. | Then I *had to go back*."
+  },
+  {
+   "pair": "p6",
+   "id": "manali_kasol__december",
+   "picked_side": "B",
+   "winner": "v1",
+   "at": "2026-10-01T04:48:42Z",
+   "cover_v1": "Kasol or Manali |this *December*?",
+   "cover_v2": "I *laughed* when | she said Manali."
+  }
+ ]
+}
