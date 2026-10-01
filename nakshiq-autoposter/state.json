@@ -36,16 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-09-30",
-    "PdMu0_evening": "2026-09-30",
+    "PdMu0": "2026-10-01",
+    "PdMu0_evening": "2026-10-01",
     "PdMu0_carousel": "2026-09-30"
   },
-  "last_sync": "2026-09-30T19:33:32.288317+00:00",
+  "last_sync": "2026-10-01T17:15:34.123750+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "chandratal",
-      "date": "2026-09-16"
-    },
     {
       "destination_id": "kinnaur",
       "date": "2026-09-17"
@@ -133,6 +129,26 @@
     {
       "destination_id": "parvati-valley",
       "date": "2026-09-30"
+    },
+    {
+      "destination_id": "kurukshetra",
+      "date": "2026-10-01"
+    },
+    {
+      "destination_id": "mukteshwar",
+      "date": "2026-10-01"
+    },
+    {
+      "destination_id": "chamba",
+      "date": "2026-10-01"
+    },
+    {
+      "destination_id": "nandi-hills",
+      "date": "2026-10-01"
+    },
+    {
+      "destination_id": "puri",
+      "date": "2026-10-01"
     }
   ],
   "posted_formats": {
@@ -161,7 +177,6 @@
     ],
     "PdMu0": [
       "score_card",
-      "score_card",
       "arrival_intel",
       "score_card",
       "score_card",
@@ -180,7 +195,8 @@
       "v2_budget_receipt",
       "v2_weekend_escape_map",
       "v4_dw_heritage_reel_sensory_pov",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -10221,6 +10237,53 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "parvati-valley.mp4"
+    },
+    {
+      "timestamp": "2026-10-01T07:36:40.162945+00:00",
+      "date": "2026-10-01",
+      "platform": "instagram",
+      "post_id": "3YXFw",
+      "destination": "kodaikanal",
+      "format": "scenario_month_later",
+      "media_id": "8in5m"
+    },
+    {
+      "timestamp": "2026-10-01T07:37:18.362136+00:00",
+      "date": "2026-10-01",
+      "platform": "youtube",
+      "post_id": "veFwR",
+      "destination": "kodaikanal",
+      "format": "scenario_month_later",
+      "media_id": "ve46m"
+    },
+    {
+      "timestamp": "2026-10-01T14:36:45.926596+00:00",
+      "date": "2026-10-01",
+      "platform": "instagram",
+      "post_id": "x4EYf",
+      "destination": "kodaikanal",
+      "format": "scenario_month_later",
+      "media_id": "zmvYB"
+    },
+    {
+      "timestamp": "2026-10-01T14:37:23.099158+00:00",
+      "date": "2026-10-01",
+      "platform": "youtube",
+      "post_id": "Q3v1L",
+      "destination": "kodaikanal",
+      "format": "scenario_month_later",
+      "media_id": "iQ2CC"
+    },
+    {
+      "timestamp": "2026-10-01T17:16:46.839794+00:00",
+      "date": "2026-10-01",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jhxB5",
+      "destination": "kurukshetra",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -10552,6 +10615,21 @@
       ],
       "ranthambore": [
         "2026-09-29"
+      ],
+      "puri": [
+        "2026-10-01"
+      ],
+      "kurukshetra": [
+        "2026-10-01"
+      ],
+      "mukteshwar": [
+        "2026-10-01"
+      ],
+      "chamba": [
+        "2026-10-01"
+      ],
+      "nandi-hills": [
+        "2026-10-01"
       ]
     },
     "morning_formats": {
@@ -10693,7 +10771,8 @@
       ],
       "data_carousel": [
         "2026-07-01",
-        "2026-08-02"
+        "2026-08-02",
+        "2026-10-01"
       ],
       "tourist_trap": [
         "2026-09-01"
@@ -10867,6 +10946,9 @@
       ],
       "parvati-valley": [
         "2026-09-30"
+      ],
+      "kurukshetra": [
+        "2026-10-01"
       ]
     },
     "audience_tags": {
@@ -10972,9 +11054,6 @@
         "2026-06-17",
         "2026-09-29"
       ],
-      "best-dhabas-on-highways": [
-        "2026-07-02"
-      ],
       "summer-escapes": [
         "2026-08-13"
       ],
@@ -11004,6 +11083,9 @@
       ],
       "monsoon-magic": [
         "2026-09-29"
+      ],
+      "odisha-golden-triangle": [
+        "2026-10-01"
       ]
     },
     "festivals": {
@@ -11067,17 +11149,6 @@
         "2026-09-29"
       ]
     },
-    "collection_carousel_dests:best-dhabas-on-highways": {
-      "leh": [
-        "2026-07-02"
-      ],
-      "kargil": [
-        "2026-07-02"
-      ],
-      "keylong": [
-        "2026-07-02"
-      ]
-    },
     "collection_carousel_dests:best-winter": {
       "zanskar": [
         "2026-07-16"
@@ -11114,7 +11185,11 @@
         "2026-09-29"
       ]
     },
-    "articles": {}
+    "collection_carousel_dests:odisha-golden-triangle": {
+      "puri": [
+        "2026-10-01"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11128,11 +11203,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tirupati",
-    "collection": "photography-spots"
+    "shared_best": "kurukshetra",
+    "collection": "odisha-golden-triangle"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-09-22",
+  "data_carousel_floor_last": "2026-10-01",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
