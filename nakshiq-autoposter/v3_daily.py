@@ -14,8 +14,10 @@ A spec enters the daily loop only when it carries "auto": true, so an old or
 parked spec (chikmagalur__sos_keyframe) is never re-queued by accident.
 A cut lands in the ledger as "ready" and publish() posts it in the next slot
 (founder, 2026-09-29: "switch the pipeline to auto-publish every reel that
-passes the check"). The check is qa(): a cut missing its audio or video, or
-running outside 15-60s, lands as "review" instead, with the reason in "held".
+passes the check"). The check is qa(): a cut missing its audio or video,
+running outside 15-60s, or showing the same picture in two beats (look_alike,
+added 2026-10-01 after Kodaikanal), lands as "review" instead, with the reason
+in "held".
 Touch HOLD_FOR_REVIEW (next to this file) to send every new cut to "review"
 again; delete it to go back to auto-publish.
 """
@@ -54,6 +56,16 @@ def qa(path: Path) -> str:
     dur = float(info.get("format", {}).get("duration") or 0)
     if not 15 <= dur <= 60:
         return f"duration {dur:.1f}s outside 15-60s"
+    # The same picture twice (Kodaikanal 2026-10-01: beats 1 and 3 were one
+    # desk, one pose, 15 s of the opening). Fails closed: no beat map, no publish.
+    try:
+        same = R.look_alike(path)
+    except Exception as e:  # noqa: BLE001
+        return f"repeated-shot check could not run: {e}"
+    if same:
+        i, j, v = same[0]
+        return (f"beats {i + 1} and {j + 1} look like the same shot ({v:.2f} >= {R.SAME_SHOT}); "
+                "give one a zoom/focus in the spec, or regenerate it")
     return ""
 
 

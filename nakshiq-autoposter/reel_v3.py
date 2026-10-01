@@ -7,6 +7,8 @@
     python3 reel_v3.py sheet   reel_specs/chikmagalur__sos_keyframe.json   # contact sheet of the stills, for approval
     python3 reel_v3.py render  reel_specs/chikmagalur__sos_rescue.json --lang en [--out x.mp4]
                                [--clip s1x=/path.mp4 ...]   # stand-in footage for editing tests
+    python3 reel_v3.py repeats reel_specs/kodaikanal__december.json --lang hi [--out x.mp4]
+                               # how alike every pair of beats in the cut looks (qa holds >= SAME_SHOT)
 
 WHY THIS EXISTS. The founder called the v2 reels "pathetic" (2026-09-24) and he
 was right on every count we could measure:
@@ -69,6 +71,18 @@ LEAD = 0.45        # picture before the first word
 TAIL = 1.4         # hold after the last word, before the end card
 CUT_EARLY = 0.18   # picture changes just before the next line lands
 MIN_SPEED = 0.82   # slow a shot down at most this much before holding its last frame
+MAX_ZOOM = 1.7     # punch-in ceiling: Veo Lite is 720x1280, past this it goes soft
+# Two beats of a cut whose pictures match this closely read as the same shot
+# played twice. Kodaikanal (2026-10-01, founder: "repeats visuals a lot at the
+# front") had beats 1 and 3 at 0.84 / 0.86 (HI / EN); the highest pair in every
+# other v3 cut was 0.71 (Triund, Manali, Rann, measured on the posted files).
+SAME_SHOT = 0.78
+# Shot sizes a keyframe prompt can name. A keyframe composed from an earlier
+# keyframe with no size of its own comes back as a copy of it (Kodaikanal
+# kf_s3 was kf_s1 again: same desk, same pose, same hand on the shoulder).
+FRAMING = re.compile(r"\b(extreme wide|wide|medium close[- ]?up|medium|close[- ]?up|"
+                     r"over[- ]the[- ]shoulder|insert|detail|overhead|top[- ]down|"
+                     r"low[- ]angle|high[- ]angle)\b", re.I)
 AMBIENCE = 0.55    # native Veo sound level under the bed
 MUSIC = 0.09
 DISCLOSE = "Dramatised · AI footage"
@@ -133,7 +147,24 @@ def check(spec: dict) -> list[str]:
     # Keyframes may be composed from the refs and from EARLIER keyframes (an end
     # still is an edit of its start still, probe A3), never from a later one.
     seen = set(refs)
+    kfs = {k["name"]: k for k in spec.get("keyframes") or []}
+    ends = {s.get("end") for s in spec["shots"] if s.get("end")}
+
+    def size(k):
+        m = FRAMING.search(k["prompt"])
+        return re.sub(r"[- ]", "", m.group(1).lower()) if m else None
     for k in spec.get("keyframes") or []:
+        # Only for stills not made yet: the rule is there to save the credits.
+        # An END still is meant to be its start still, edited (probe A3); exempt.
+        derived = [r for r in k.get("refs") or [] if r in kfs]
+        if derived and k["name"] not in ends and not (CLIPS / clip_name(spec, k["name"])).exists():
+            if not size(k):
+                errs.append(f"{k['name']}: built from {derived[0]}, so it must name its own shot size "
+                            "(wide / medium / close-up / over-the-shoulder / insert), "
+                            "or it comes back as a copy")
+            for r in derived:
+                if size(k) and size(k) == size(kfs[r]):
+                    errs.append(f"{k['name']}: same shot size ({size(k)}) as {r}, which it is built from")
         if not k["name"].startswith("kf_"):
             errs.append(f"keyframe {k['name']!r} must be named kf_*")
         missing = set(k.get("refs") or []) - seen
@@ -168,6 +199,10 @@ def check(spec: dict) -> list[str]:
     for b in spec["beats"]:
         if b["shot"] not in shots:
             errs.append(f"beat uses unknown shot {b['shot']!r}")
+        if not 1.0 <= float(b.get("zoom", 1.0)) <= MAX_ZOOM:
+            errs.append(f"beat on {b['shot']}: zoom {b.get('zoom')} outside 1.0-{MAX_ZOOM}")
+        if not all(0.0 <= float(v) <= 1.0 for v in b.get("focus", [0.5, 0.5])):
+            errs.append(f"beat on {b['shot']}: focus {b.get('focus')} must be fractions 0-1")
     for lang, lines in spec["vo"].items():
         if len(lines) != len(spec["beats"]):
             errs.append(f"vo.{lang}: {len(lines)} lines for {len(spec['beats'])} beats")
@@ -315,6 +350,74 @@ def _esc(t: str) -> str:
     return t.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace("%", "\\%")
 
 
+def _size(p: Path) -> tuple[int, int]:
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                        "stream=width,height", "-of", "csv=p=0", str(p)], capture_output=True, text=True)
+    w, h = r.stdout.strip().split(",")[:2]
+    return int(w), int(h)
+
+
+def _punch(src: Path, beat: dict) -> str:
+    """A crop for the beat's "zoom" (1.0 = the full frame) around its "focus"
+    [x, y], given as fractions of the frame (default the centre). It lets two
+    beats from one room read as two shots, wide then closer, without spending
+    a credit on a new generation."""
+    z = float(beat.get("zoom", 1.0))
+    if z <= 1.0:
+        return ""
+    w, h = _size(src)
+    cw, ch = int(w / z) // 2 * 2, int(h / z) // 2 * 2
+    fx, fy = beat.get("focus", [0.5, 0.5])
+    x = min(max(0, round(fx * w - cw / 2)), w - cw)
+    y = min(max(0, round(fy * h - ch / 2)), h - ch)
+    return f"crop={cw}:{ch}:{x}:{y},"
+
+
+def _gray(path: Path, t: float, w: int = 90, h: int = 160):
+    import numpy as np
+    r = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.2f}", "-i", str(path), "-frames:v", "1",
+                        "-vf", f"scale={w}:{h},format=gray", "-f", "rawvideo", "-"], capture_output=True)
+    return np.frombuffer(r.stdout, np.uint8).reshape(h, w).astype(np.float64)
+
+
+def _ssim(a, b) -> float:
+    """Mean SSIM over 8x8 windows, stride 4, on small grey frames: 1.0 is the
+    same picture. Small frames on purpose, so grain and captions barely count."""
+    import numpy as np
+    from numpy.lib.stride_tricks import sliding_window_view as win
+    p, q = win(a, (8, 8))[::4, ::4], win(b, (8, 8))[::4, ::4]
+    mp, mq = p.mean((-1, -2)), q.mean((-1, -2))
+    vp, vq = p.var((-1, -2)), q.var((-1, -2))
+    cov = ((p - mp[..., None, None]) * (q - mq[..., None, None])).mean((-1, -2))
+    c1, c2 = (0.01 * 255) ** 2, (0.03 * 255) ** 2
+    return float(np.mean(((2 * mp * mq + c1) * (2 * cov + c2)) / ((mp ** 2 + mq ** 2 + c1) * (vp + vq + c2))))
+
+
+def beat_map(out: Path) -> Path:
+    return out.with_name(out.stem + ".beats.json")
+
+
+def look_alike(cut: Path, every: bool = False) -> list[tuple[int, int, float]]:
+    """Pairs of beats in a finished CUT whose pictures match at SAME_SHOT or
+    above, most alike first (every=True: all pairs). Reads the cut itself, at
+    60% into each beat (past the hook card on the first), using the beat map
+    render() writes beside it. A beat that carries on the previous beat's shot
+    (same shot, later "from") is a continuation, not a repeat, and is skipped."""
+    beats = json.loads(beat_map(cut).read_text())["beats"]
+    frames = [_gray(cut, max(b["start"] + 0.6 * b["dur"], HOOK_SECS + 0.2 if i == 0 else 0))
+              for i, b in enumerate(beats)]
+    pairs = []
+    for i in range(len(beats)):
+        for j in range(i + 1, len(beats)):
+            a, b = beats[i], beats[j]
+            if j == i + 1 and a["shot"] == b["shot"] and b["from"] > a["from"]:
+                continue
+            v = _ssim(frames[i], frames[j])
+            if every or v >= SAME_SHOT:
+                pairs.append((i, j, v))
+    return sorted(pairs, key=lambda p: -p[2])
+
+
 def _chunks(line: str, n: int = 3) -> list[str]:
     out = []
     for frag in [f.strip() for f in re.split(r"(?<=[.!?…])\s+|\n", line) if f.strip()]:
@@ -357,7 +460,7 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
         k = i
         # Scale to 1080x1920 first so every shot shares one grade and grain.
         vf.append(f"[{k}:v]trim=start={frm:.3f}:duration={min(avail, seg * speed):.3f},"
-                  f"setpts=(PTS-STARTPTS)/{speed:.4f},fps=30,"
+                  f"setpts=(PTS-STARTPTS)/{speed:.4f},fps=30,{_punch(src, b)}"
                   f"scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,"
                   f"crop=1080:1920,tpad=stop_mode=clone:stop_duration={seg:.3f},"
                   f"trim=duration={seg:.3f},setpts=PTS-STARTPTS,format=yuv420p[v{i}]")
@@ -439,6 +542,10 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         raise SystemExit("ffmpeg failed:\n" + r.stderr[-1500:])
+    # Where each beat sits in the cut, so qa can look at the finished picture.
+    beat_map(out).write_text(json.dumps({"beats": [
+        {"shot": b["shot"], "from": float(b.get("from", 0.0)), "zoom": float(b.get("zoom", 1.0)),
+         "start": round(st, 3), "dur": round(du, 3)} for b, (st, du) in zip(spec["beats"], segs)]}))
     # English goes to YouTube (@naksh-iq), Hindi to Instagram (@nakshiq).
     # Assigned, never setdefault: one process cuts HI then EN (v3_daily), and
     # setdefault let the English cut inherit "@nakshiq" (Manali, 2026-09-29).
@@ -457,7 +564,7 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["check", "enqueue", "status", "render", "sheet"])
+    ap.add_argument("cmd", choices=["check", "enqueue", "status", "render", "sheet", "repeats"])
     ap.add_argument("spec")
     ap.add_argument("--lang", default="en")
     ap.add_argument("--out")
@@ -480,6 +587,10 @@ if __name__ == "__main__":
     elif a.cmd == "status":
         for k, v in status(spec).items():
             print(f"{v:<12} {k}")
+    elif a.cmd == "repeats":
+        cut = Path(a.out) if a.out else VEO / "reels" / f"{spec['id']}__{a.lang}.mp4"
+        for i, j, v in look_alike(cut, every=True):
+            print(f"beat {i + 1} vs {j + 1}: {v:.2f}" + ("  <- same shot" if v >= SAME_SHOT else ""))
     elif a.cmd == "sheet":
         out = Path(a.out) if a.out else VEO / "reels" / f"{spec['id']}__stills.jpg"
         print(f"[reel_v3] wrote {sheet(spec, out)}")

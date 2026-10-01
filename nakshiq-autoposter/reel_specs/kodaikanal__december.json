@@ -129,11 +129,21 @@
     },
     {
       "shot": "s2",
-      "from": 0.0
+      "from": 0.0,
+      "zoom": 1.45,
+      "focus": [
+        0.52,
+        0.44
+      ]
     },
     {
       "shot": "s3",
-      "from": 0.0
+      "from": 2.0,
+      "zoom": 1.6,
+      "focus": [
+        0.34,
+        0.52
+      ]
     },
     {
       "shot": "s4",
@@ -172,5 +182,6 @@
   "cover": {
     "hook": "Everyone goes in November.|*We didn't.*",
     "still": "kf_s2"
-  }
+  },
+  "recut": "2026-10-01: beats 2-3 punched in (zoom/focus) after the founder saw the same desk shot three times in the first 15 s; s3 had come back as a copy of s1 (look_alike 0.84/0.86)."
 }
