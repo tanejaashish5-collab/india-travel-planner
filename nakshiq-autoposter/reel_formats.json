@@ -1,0 +1,79 @@
+{
+  "_why": "Founder 2026-10-01: 'we need some variety in the clips like older friends, older couple, group of friends, solo travellers, pilgrimage... doesnt only talk about nov dec... just do a round robin and use all angles before repetition so everyday there is new stuff'. Every reel spec carries one of these angle ids; scenario_daily.publish posts the ready reel whose angle was used longest ago, so no angle repeats until every other angle has had a day. Facts come from scripts/reel-fact-pack.mjs (one JSON per destination); script_gate checks each claim against that pack.",
+  "_narrator": "One ElevenLabs voice narrates every reel, so the narrator is always a man telling what happened: the son, the brother, the father, one of the friends. The women, parents and children are on screen, never in close-up, no one looks at the camera.",
+  "rotation": ["parents", "friends_swap", "eatery", "pilgrimage", "solo_woman", "kids", "hidden_gem", "friends_cost", "month"],
+  "angles": {
+    "month": {
+      "name": "Right place, wrong month",
+      "cast": "a couple, late 20s",
+      "narrator": "the man",
+      "data": ["months", "crowd_calendar"],
+      "fact_kinds": ["month", "crowd"],
+      "shape": "They had a month fixed; the verdict or the crowd month moved it; the same place, a better month."
+    },
+    "parents": {
+      "name": "Taking the parents",
+      "cast": "a son in his 30s and his parents in their 60s",
+      "narrator": "the son",
+      "data": ["persona_blocks.elderly", "destination.elevation_m", "months", "emergency.nearest_hospital (only if nameable)"],
+      "fact_kinds": ["persona", "month", "elevation"],
+      "shape": "The family wanted one place for the parents' trip; the elderly verdict said no or said be careful; a place that suits them, or the way to do the first one safely."
+    },
+    "friends_swap": {
+      "name": "The famous place or the swap",
+      "cast": "four friends, late 20s, two men and two women",
+      "narrator": "one of the friends",
+      "data": ["trap_swaps", "months"],
+      "fact_kinds": ["trap", "month"],
+      "shape": "The group is set on the famous place; one friend finds the swap; the honest catch about who the swap is not for."
+    },
+    "eatery": {
+      "name": "The meal worth the detour",
+      "cast": "two friends, a man and a woman, late 20s",
+      "narrator": "the man",
+      "data": ["eateries (is_legendary first)", "months"],
+      "fact_kinds": ["eatery", "month"],
+      "shape": "Twenty identical fronts, hungry and arguing; the one place with a reason, and its insider tip. The voice names the dish and the area; the eatery's name goes in the caption, and the footage never pretends to be its real interior."
+    },
+    "pilgrimage": {
+      "name": "Yatra with family",
+      "cast": "a son in his 30s and his mother in her 60s",
+      "narrator": "the son",
+      "data": ["pilgrimage (distance, duration, access_modes, pitfalls, best_months)", "months"],
+      "fact_kinds": ["pilgrimage", "month"],
+      "shape": "Mother wants the yatra; the son worries about the climb; the route facts (distance, hours, pony or palki or helicopter, the registration rule) make it possible. Temple exteriors and paths only; no deity, no sanctum, no crowd scenes."
+    },
+    "solo_woman": {
+      "name": "Her first solo trip",
+      "cast": "a woman in her late 20s travelling alone; her brother is the voice",
+      "narrator": "her brother",
+      "data": ["destination.solo_female_score", "destination.solo_female_note", "persona_blocks.solo_female", "months"],
+      "fact_kinds": ["solo_female", "persona", "month"],
+      "shape": "She booked alone; the family argued; the brother checked and read the score and the note out loud. Positive only: no dramatised danger, ever."
+    },
+    "kids": {
+      "name": "With a small child",
+      "cast": "parents in their 30s with a child of 2 to 4",
+      "narrator": "the father",
+      "data": ["kids (rating, min_recommended_age, best_age_group, stroller_accessible, family_verdict, concerns)", "months"],
+      "fact_kinds": ["kids", "month"],
+      "shape": "Friends recommended a place; the kids verdict (age, pram, the one concern) sent them somewhere that works for a child that age."
+    },
+    "hidden_gem": {
+      "name": "The place nobody posts",
+      "cast": "a man in his 30s travelling alone",
+      "narrator": "him",
+      "data": ["hidden_gems (distance_km, drive_time, why_unknown, why_go, difficulty)", "destination.crowd_level", "crowd_calendar"],
+      "fact_kinds": ["gem", "crowd"],
+      "shape": "The famous place is packed; a short drive away is the place with no signboard; why nobody goes is the point."
+    },
+    "friends_cost": {
+      "name": "Four friends, one budget",
+      "cast": "four friends, late 20s, two men and two women",
+      "narrator": "one of the friends",
+      "data": ["costs (hotel-mid per night, food per day, taxi per day, by season)", "crowd_calendar", "months"],
+      "fact_kinds": ["cost", "month", "crowd"],
+      "shape": "The group budget versus the season's real prices; the month that makes the numbers work, said in words, exactly as the data has them."
+    }
+  }
+}

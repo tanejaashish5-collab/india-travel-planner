@@ -122,7 +122,7 @@ def render() -> int:
                     print(f"[v3_daily] {key} cover failed: {e}")
             first = [l for l in s["vo"]["en"][0].splitlines() if l.strip()]
             held = "HOLD_FOR_REVIEW file present" if HOLD.exists() else qa(out)
-            led[key] = {"storyboard": s["id"], "slug": s["slug"], "format": s.get("format"),
+            led[key] = {"storyboard": s["id"], "slug": s["slug"], "format": s.get("format"), "angle": s.get("angle") or "month",
                         "status": "review" if held else "ready", "six_beat": True, "pipeline": "v3",
                         "rendered_at": datetime.now(timezone.utc).isoformat(),
                         "caption_hook": " ".join(first[:2]), "lang": lang, "platform": platform,

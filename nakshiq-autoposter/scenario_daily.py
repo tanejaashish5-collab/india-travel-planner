@@ -362,10 +362,19 @@ def publish(dry: bool = False) -> int:
                and (v.get("published_at") or "").startswith(today) for v in led.values()):
             _log(f"{plat}: already published a scenario reel today")
             continue
+        # ROUND ROBIN (founder 2026-10-01: "use all angles before repetition so
+        # everyday there is new stuff"): the ready reel whose angle was published
+        # longest ago goes first; an angle never used yet goes before any that has.
+        # Rows without an angle (the early v3 specs) count as the "month" angle.
+        last = {}
+        for v in led.values():
+            if v.get("status") in ("published", "unconfirmed") and v.get("platform") == plat:
+                a = v.get("angle") or "month"
+                last[a] = max(last.get(a, ""), v.get("published_at") or "")
         ready = sorted((v for v in led.values() if v["lang"] == lang and v["status"] == "ready"
                         and v.get("kind") != "data_card"
                         and Path(v["file"]).exists()),
-                       key=lambda v: (not v.get("six_beat"), v["rendered_at"]))
+                       key=lambda v: (last.get(v.get("angle") or "month", ""), not v.get("six_beat"), v["rendered_at"]))
         if not ready:
             dc = _data_card_row(plat, surf, led, dry)
             if not dc:
