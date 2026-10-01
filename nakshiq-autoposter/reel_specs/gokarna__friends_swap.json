@@ -1,0 +1,182 @@
+{
+ "auto": false,
+ "id": "gokarna__friends_swap",
+ "slug": "gokarna",
+ "angle": "friends_swap",
+ "format": "friends_swap",
+ "tone": "warm",
+ "script_approved": "draft",
+ "script_file": "reel_scripts/_round1_2026-10-01/gokarna__friends_swap.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "four friends, late 20s, two men and two women",
+ "narrator": "one of the friends",
+ "setting_basis": "An afternoon in a friend's flat, then a near-empty beach at Karwar in the same afternoon light; Gokarna is only talked about and never shown, and the footage makes no crowd, price or month claim of its own.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_friends",
+   "prompt": "Full-length photograph of four Indian friends in their late twenties standing in a loose row: a lean man with curly black hair in an olive linen shirt and rolled cream trousers; a broad man with a buzz cut in a plain white t-shirt and denim shorts; a woman with long straight hair in a mustard cotton kurta top and white jeans; a woman with a short pixie cut in a black tank top under an open blue striped shirt and khaki shorts; all barefoot or in sandals, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_beach",
+   "prompt": "A long, wide, near-empty sandy beach in soft afternoon light, gentle surf, a line of casuarina trees behind the sand, low green hills at the far end and a single wooden fishing boat pulled up on the sand, photorealistic, no people, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_friends"
+   ],
+   "tone": "settled, cheerful, mind made up",
+   "prompt": "Wide shot from behind in a small flat's living room in soft afternoon window light: the four friends sit on the floor on cushions around one phone, its screen only a soft glow, the man in the white t-shirt mid-laugh with an arm round the woman in the striped shirt."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "one quiet holdout",
+   "prompt": "Medium shot from the side on the flat's small balcony, same afternoon light as the reference: the man in the olive linen shirt sits apart on the low balcony wall, phone in hand, its screen only a soft glow, looking away over the rooftops; the other three are soft and out of focus through the doorway behind him."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "ref_friends",
+    "ref_beach"
+   ],
+   "tone": "surprise at how empty it is",
+   "prompt": "Wide shot from behind in soft afternoon light: the four friends walk along the waterline of the long, empty beach in a loose line, small in the frame, the casuarina trees and the lone fishing boat ahead of them."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "kf_s3"
+   ],
+   "tone": "easy, no question about it",
+   "prompt": "Insert on four pairs of bare feet at the edge of the surf, same beach and same afternoon light as the reference, trouser hems rolled up, a thin sheet of foam washing over their toes."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_friends",
+    "ref_beach"
+   ],
+   "tone": "the honest catch, a little wry",
+   "prompt": "Medium shot from behind on the empty beach in soft afternoon light: the man in the olive shirt and the woman in the mustard top sit calmly on the sand facing the sea; behind them the man in the white t-shirt and the woman in the striped shirt stand with hands on hips, looking restlessly down the empty shore."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_friends",
+    "ref_beach"
+   ],
+   "tone": "warm, teasing, no regrets",
+   "prompt": "Wide shot, high angle from the rocks at the end of the beach in late afternoon light: the long curve of empty sand, the four friends small in the frame sitting in a row near the waterline, the man in the white t-shirt leaning over to nudge the man in the olive shirt."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. They lean in over the phone and laugh.",
+   "sound": "A ceiling fan turning, quiet room tone, a scooter passing on the street below."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "Slow push-in. He scrolls with his thumb and keeps looking out over the rooftops.",
+   "sound": "Distant street traffic, a crow calling from a rooftop, a light breeze on the balcony."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera follows slowly behind them along the waterline.",
+   "sound": "Waves breaking softly on the shore, bare footsteps on wet sand, a light sea breeze."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still as the wave washes in over their feet and draws back.",
+   "sound": "Foam hissing over wet sand, small waves breaking, open beach tone."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. The two standing shift their weight and look down the shore; the two sitting do not move.",
+   "sound": "Waves breaking steadily, wind across the open beach, a distant gull."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "Slow drift down toward the sand. He nudges his friend, who shoves him back.",
+   "sound": "Distant waves rolling in, wind over the rocks, a gull calling."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "The four of us had Gokarna locked in for December, and nobody wanted to change it.",
+   "Nikhil still wanted a beach where we could hear the waves, so he kept looking.",
+   "NakshIQ gave him a swap called Karwar, with Gokarna packed in season and Karwar nearly empty.",
+   "December was a go for both, so the month was never the question.",
+   "But it was honest about the catch: Gokarna is the backpacker party, Karwar a quiet coastal town.",
+   "So we went quiet, and the two who wanted a party still bring it up.\nTravel intelligence is knowing what the swap costs.\nNakshIQ."
+  ],
+  "hi": [
+   "हम चारों ने दिसंबर के लिए गोकर्ण पक्का कर रखा था, और कोई बदलना नहीं चाहता था।",
+   "निखिल को फिर भी ऐसा बीच चाहिए था जहाँ लहरों की आवाज़ सुनाई दे, तो वो ढूँढता रहा।",
+   "NakshIQ ने उसे कारवार सुझाया, सीज़न में गोकर्ण के बीच भरे रहते हैं और कारवार के लगभग खाली।",
+   "दिसंबर दोनों जगह के लिए गो था, तो महीना कभी मसला था ही नहीं।",
+   "पर उसने कमी भी साफ़ बताई: गोकर्ण बैकपैकर पार्टी है, कारवार एक शांत समुद्री कस्बा।",
+   "तो हमने शांति चुनी, और जिन दो को पार्टी चाहिए थी वो आज भी ताना मारते हैं।\nट्रैवल इंटेलिजेंस है ये जानना कि बदलाव की कीमत क्या है।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "The four of us had Gokarna locked in for December, | and *nobody wanted to change it*.",
+  "still": "kf_s2"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Four friends in their late 20s, two men and two women, sit on a hostel floor in the afternoon around one phone, seen from behind.",
+  "One man sits apart on a low wall, phone in hand, looking out toward the sea, shot from the side.",
+  "Afternoon on a wide empty Karwar beach: the four walk along the waterline in a loose line, small in the frame, backs to camera.",
+  "Close on bare feet at the edge of the surf as a small wave washes over them.",
+  "Two of the friends sit on the sand facing the sea while the other two stand behind them, faces turned away.",
+  "Wide shot of the empty beach in late afternoon light, the four small figures far down the shore."
+ ]
+}

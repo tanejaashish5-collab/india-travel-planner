@@ -1,0 +1,51 @@
+{
+  "id": "gangtok__solo_woman",
+  "angle": "solo_woman",
+  "slug": "gangtok",
+  "lang_en": "My sister booked her first solo trip, Gangtok, and dinner turned into an argument.\nMum had already phoned a cousin to go with her, and Dad kept asking about evenings.\nI opened NakshIQ, and Gangtok scored five out of five for solo women.\nIt called MG Marg the most female-walkable hill town, with CCTV and women's police.\nEvening walks are comfortable until ten at night, so Mum called the cousin back.\nHer one mistake was December, a wait month, when November was a go.\nSo she moved to November, and Dad liked every photo she sent.\nTravel intelligence is answering a worry with facts.\nNakshIQ.",
+  "lang_hi": "मेरी बहन ने अपनी पहली सोलो ट्रिप बुक की, गंगटोक, और डिनर पर बहस छिड़ गई।\nमम्मी तो एक कज़िन को फ़ोन करके साथ भेजने की बात भी कर चुकी थीं, और पापा बार बार शाम के बारे में पूछ रहे थे।\nमैंने NakshIQ खोला, और अकेली औरतों के लिए गंगटोक को पाँच में से पाँच मिले।\nउसमें लिखा था कि एमजी मार्ग औरतों के पैदल घूमने के लिए सबसे अच्छा हिल टाउन है, सीसीटीवी और महिला पुलिस के साथ।\nवहाँ शाम की सैर रात दस बजे तक आराम से होती है, तो मम्मी ने कज़िन को फिर फ़ोन करके मना कर दिया।\nउसकी बस एक गलती थी दिसंबर, वो रुकने वाला महीना है, जबकि नवंबर में जाओ लिखा था।\nतो उसने ट्रिप नवंबर में कर दी, और पापा ने उसकी हर फ़ोटो लाइक की।\nट्रैवल इंटेलिजेंस का मतलब है, चिंता का जवाब तथ्यों से देना।\nNakshIQ.",
+  "cover": {
+    "hook": "My sister booked her *first solo trip*, Gangtok, | and dinner turned into an *argument*."
+  },
+  "facts": [
+    {
+      "kind": "solo_female",
+      "slug": "gangtok",
+      "score": 5,
+      "quote": "female-walkable"
+    },
+    {
+      "kind": "solo_female",
+      "slug": "gangtok",
+      "quote": "local women's police"
+    },
+    {
+      "kind": "persona",
+      "slug": "gangtok",
+      "key": "solo_female",
+      "quote": "comfortable until 10pm"
+    },
+    {
+      "kind": "month",
+      "slug": "gangtok",
+      "month": 12,
+      "label": "wait"
+    },
+    {
+      "kind": "month",
+      "slug": "gangtok",
+      "month": 11,
+      "label": "go"
+    }
+  ],
+  "allowed_numbers": [],
+  "shots": [
+    "Family dinner table at home in the evening, parents in their 60s and a woman in her late 20s seen from behind, plates half eaten under a warm lamp.",
+    "A man's hands holding a phone above the dinner table, warm lamp light, screen turned away from camera.",
+    "The mother's hand setting a fork down on a steel plate, evening lamp light.",
+    "The woman in her late 20s walking alone along a clean pedestrian hill-town street in the evening, wide shot from behind, street almost empty.",
+    "She pauses at a railing on the lit pedestrian street, looking out over hill-town lights, seen from the side at a distance.",
+    "She lifts her phone to photograph the evening street, seen over her shoulder, screen not visible."
+  ],
+  "status": "draft"
+}

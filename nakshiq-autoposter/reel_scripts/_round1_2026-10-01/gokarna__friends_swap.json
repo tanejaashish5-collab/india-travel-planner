@@ -1,0 +1,72 @@
+{
+  "id": "gokarna__friends_swap",
+  "angle": "friends_swap",
+  "slug": "gokarna",
+  "lang_en": "The four of us had Gokarna locked in for December, and nobody wanted to change it.\nNikhil still wanted a beach where we could hear the waves, so he kept looking.\nNakshIQ gave him a swap called Karwar, with Gokarna packed in season and Karwar nearly empty.\nDecember was a go for both, so the month was never the question.\nBut it was honest about the catch: Gokarna is the backpacker party, Karwar a quiet coastal town.\nSo we went quiet, and the two who wanted a party still bring it up.\nTravel intelligence is knowing what the swap costs.\nNakshIQ.",
+  "lang_hi": "हम चारों ने दिसंबर के लिए गोकर्ण पक्का कर रखा था, और कोई बदलना नहीं चाहता था।\nनिखिल को फिर भी ऐसा बीच चाहिए था जहाँ लहरों की आवाज़ सुनाई दे, तो वो ढूँढता रहा।\nNakshIQ ने उसे कारवार सुझाया, सीज़न में गोकर्ण के बीच भरे रहते हैं और कारवार के लगभग खाली।\nदिसंबर दोनों जगह के लिए गो था, तो महीना कभी मसला था ही नहीं।\nपर उसने कमी भी साफ़ बताई: गोकर्ण बैकपैकर पार्टी है, कारवार एक शांत समुद्री कस्बा।\nतो हमने शांति चुनी, और जिन दो को पार्टी चाहिए थी वो आज भी ताना मारते हैं।\nट्रैवल इंटेलिजेंस है ये जानना कि बदलाव की कीमत क्या है।\nNakshIQ.",
+  "cover": {
+    "hook": "The four of us had Gokarna locked in for December, | and *nobody wanted to change it*."
+  },
+  "facts": [
+    {
+      "kind": "month",
+      "slug": "gokarna",
+      "month": 12,
+      "label": "go"
+    },
+    {
+      "kind": "month",
+      "slug": "karwar",
+      "month": 12,
+      "label": "go"
+    },
+    {
+      "kind": "crowd",
+      "slug": "gokarna",
+      "month": 12,
+      "is": "peak"
+    },
+    {
+      "kind": "trap",
+      "slug": "gokarna",
+      "trap": "gokarna",
+      "alt": "karwar",
+      "field": "crowd_difference",
+      "quote": "Gokarna beaches packed in season"
+    },
+    {
+      "kind": "trap",
+      "slug": "gokarna",
+      "trap": "gokarna",
+      "alt": "karwar",
+      "field": "crowd_difference",
+      "quote": "Karwar beaches nearly empty"
+    },
+    {
+      "kind": "trap",
+      "slug": "gokarna",
+      "trap": "gokarna",
+      "alt": "karwar",
+      "field": "vibe_difference",
+      "quote": "Gokarna is backpacker party"
+    },
+    {
+      "kind": "trap",
+      "slug": "gokarna",
+      "trap": "gokarna",
+      "alt": "karwar",
+      "field": "vibe_difference",
+      "quote": "Karwar is quiet coastal town"
+    }
+  ],
+  "allowed_numbers": [],
+  "shots": [
+    "Four friends in their late 20s, two men and two women, sit on a hostel floor in the afternoon around one phone, seen from behind.",
+    "One man sits apart on a low wall, phone in hand, looking out toward the sea, shot from the side.",
+    "Afternoon on a wide empty Karwar beach: the four walk along the waterline in a loose line, small in the frame, backs to camera.",
+    "Close on bare feet at the edge of the surf as a small wave washes over them.",
+    "Two of the friends sit on the sand facing the sea while the other two stand behind them, faces turned away.",
+    "Wide shot of the empty beach in late afternoon light, the four small figures far down the shore."
+  ],
+  "status": "draft"
+}

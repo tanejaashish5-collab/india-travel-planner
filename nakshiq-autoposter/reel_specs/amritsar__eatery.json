@@ -1,0 +1,188 @@
+{
+ "auto": false,
+ "id": "amritsar__eatery",
+ "slug": "amritsar",
+ "angle": "eatery",
+ "format": "eatery",
+ "tone": "warm",
+ "script_approved": "draft",
+ "script_file": "reel_scripts/_round1_2026-10-01/amritsar__eatery.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "two friends, a man and a woman, late 20s",
+ "narrator": "the man",
+ "setting_basis": "A narrow old-city lane at night and a plain open-air dhaba bench with a copper pot of dal on a wood fire; the footage shows no real eatery, interior, name or signage, and makes no claim beyond what the script says.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_man",
+   "prompt": "Full-length photograph of an Indian man in his late twenties with short wavy black hair and light stubble, wearing a dark green quilted jacket over a grey t-shirt, black jeans and white sneakers, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_woman",
+   "prompt": "Full-length photograph of an Indian woman in her late twenties with shoulder-length dark hair in a loose braid, wearing a rust-coloured wool shawl over a cream kurta, blue jeans and tan juttis, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_lane",
+   "prompt": "A narrow old brick lane at night lit by bare warm bulbs, carved wooden balconies overhead, a row of small open food counters with blank boards and steam rising, and at the end a plain open-air dhaba with a long wooden bench, a plain steel table and a large copper pot on a wood fire, photorealistic, no people, no text, no signage, no logos."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_man",
+    "ref_woman",
+    "ref_lane"
+   ],
+   "tone": "hungry, a little overwhelmed",
+   "prompt": "Wide shot from behind at night: the man in the green jacket and the woman in the rust shawl walk side by side down the empty narrow lane, rows of small lit food counters with blank boards and rising steam on both sides, warm bulbs overhead."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "a friendly argument",
+   "prompt": "Medium shot from the side at a corner of the same lane, same night light as the reference: the woman points ahead toward an empty bench, the man holds his phone, its screen only a soft glow, shaking his head; both faces turned away from camera."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "found it, a small spark",
+   "prompt": "Over-the-shoulder from behind the man, same corner and same night light as the reference: he reads his phone, its screen only a soft glow, and the woman leans in at his elbow to look."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_lane"
+   ],
+   "tone": "slow, patient, worth the wait",
+   "prompt": "Close-up of a dark, well-worn copper pot of dal simmering over a low wood fire at night, thick steam rising into warm bulb light, a long iron ladle resting on the rim."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_man",
+    "ref_lane"
+   ],
+   "tone": "prepared, doing it right",
+   "prompt": "Insert on a plain steel table at night: the man's hand in the green jacket sleeve counts a few folded banknotes, nothing legible, beside an empty steel thali, warm bulb light."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_man",
+    "ref_woman",
+    "ref_lane"
+   ],
+   "tone": "one spoonful settles it",
+   "prompt": "Medium shot from behind and to the side on the long wooden dhaba bench at night: the woman in the rust shawl lifts a spoonful of dark creamy dal from a steel bowl, the man beside her watching with a grin, their faces turned away from camera, the copper pot steaming soft in the background."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera follows slowly behind them down the lane, steam drifting through the bulb light.",
+   "sound": "Footsteps on old brick, a steel ladle scraping a pan nearby, sizzling oil, quiet night lane tone."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. She points again; he lifts the phone and shakes his head.",
+   "sound": "Sizzling oil from a counter nearby, a distant scooter horn, quiet night lane tone."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "Slow push-in over his shoulder as she leans closer to read.",
+   "sound": "A tawa sizzling nearby, a stray dog padding past out of frame, quiet night lane tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still as the dal bubbles slowly and the steam rises.",
+   "sound": "The thick dal bubbling and popping, wood crackling in the fire, quiet night tone."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. His fingers count the notes and set them down beside the thali.",
+   "sound": "The rustle of paper notes, a steel tumbler set down on the steel table, quiet night tone."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "Slow push-in. She tastes the dal and nods; he laughs and leans back.",
+   "sound": "A steel spoon against a steel bowl, wood crackling in the fire, quiet night tone."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "One November evening we left the Golden Temple lanes starving, and twenty fronts promised the best dal.",
+   "Meera would take any free table, but I held out for a reason.",
+   "The reason was on NakshIQ: a family making the same dal since nineteen sixteen, in Amritsar since Partition.",
+   "In Chowk Passian their dal makhani simmers in a copper pot for eight to twelve hours.",
+   "The tip said cash only, no AC, and before one or after eight to dodge the queue.",
+   "We came just after eight with cash, and Meera stopped arguing after one spoonful.\nTravel intelligence is one reason among twenty signs.\nNakshIQ."
+  ],
+  "hi": [
+   "नवंबर की एक शाम हम स्वर्ण मंदिर की गलियों से भूखे निकले, और बीस दुकानें सबसे अच्छी दाल का दावा कर रही थीं।",
+   "मीरा किसी भी खाली टेबल पर बैठ जाती, पर मैं एक वजह पर अड़ा रहा।",
+   "वजह NakshIQ पर मिली: एक परिवार जो उन्नीस सौ सोलह से वही दाल बना रहा है, बँटवारे के बाद से अमृतसर में।",
+   "चौक पसियां में उनकी दाल मखनी तांबे के बर्तन में आठ से बारह घंटे पकती है।",
+   "टिप में लिखा था सिर्फ़ कैश, AC नहीं, और लाइन से बचना है तो एक बजे से पहले या आठ के बाद आओ।",
+   "हम आठ के ठीक बाद कैश लेकर पहुँचे, और पहले चम्मच के बाद मीरा ने बहस बंद कर दी।\nट्रैवल इंटेलिजेंस है बीस बोर्डों के बीच एक सही वजह।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "One November evening we left the Golden Temple lanes starving, | and *twenty fronts* promised *the best dal*.",
+  "still": "kf_s2"
+ },
+ "caption_name": "Kesar Da Dhaba",
+ "shot_notes": [
+  "Evening in an old Amritsar lane near the Golden Temple: a man and a woman in their late 20s walk side by side, seen from behind, the lane otherwise empty.",
+  "The pair pause at a corner lit by warm shopfront bulbs, the woman gesturing ahead, faces turned away, no readable signage.",
+  "Close on a dark copper pot of dal simmering over a wood fire, steam rising.",
+  "The man's hand counts a few folded rupee notes beside a steel thali on a plain table.",
+  "Over-the-shoulder shot of the woman lifting a spoonful of dal makhani from a steel bowl, her face out of frame.",
+  "Wide shot of the two walking back down the quiet lane, small in the frame, warm evening light."
+ ]
+}

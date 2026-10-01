@@ -1,0 +1,52 @@
+{
+ "id": "gangtok__solo_woman_her",
+ "angle": "solo_woman",
+ "slug": "gangtok",
+ "lang_en": "I booked my first solo trip, Gangtok, and dinner turned into an argument.\nMum had already phoned a cousin to come along, and Dad kept asking about evenings.\nSo I opened NakshIQ, and Gangtok scored five out of five for solo women.\nIt called MG Marg the most female-walkable hill town, with CCTV and women's police.\nEvening walks are comfortable until ten at night, so Mum called the cousin back.\nMy one mistake was December, a wait month, when November was a go.\nSo I moved it to November, and Dad liked every photo I sent.\nTravel intelligence is answering a worry with facts.\nNakshIQ.",
+ "lang_hi": "मैंने अपनी पहली सोलो ट्रिप बुक की, गंगटोक, और घर पर डिनर बहस में बदल गया।\nमम्मी ने तो मेरे साथ चलने के लिए एक कज़िन को फ़ोन भी कर दिया था, और पापा बार बार शाम के बारे में पूछ रहे थे।\nतो मैंने वहीं टेबल पर NakshIQ खोला, और गंगटोक को सोलो महिलाओं के लिए पाँच में से पाँच मिले थे।\nउसने MG Marg को सबसे ज़्यादा महिलाओं के पैदल चलने लायक हिल टाउन बताया, CCTV और महिला पुलिस के साथ।\nशाम की सैर रात दस बजे तक आराम से हो जाती है, तो मम्मी ने कज़िन को वापस फ़ोन कर दिया।\nमेरी एक ही गलती थी दिसंबर, जो वेट वाला महीना था, जबकि नवंबर गो था।\nतो मैंने ट्रिप नवंबर में कर ली, और पापा ने मेरी हर फ़ोटो पसंद की।\nट्रैवल इंटेलिजेंस मतलब, एक चिंता का जवाब तथ्यों से देना।\nNakshIQ.",
+ "cover": {
+  "hook": "I booked my first solo trip, Gangtok,|and dinner turned into *an argument*."
+ },
+ "facts": [
+  {
+   "kind": "solo_female",
+   "slug": "gangtok",
+   "score": 5,
+   "quote": "female-walkable"
+  },
+  {
+   "kind": "solo_female",
+   "slug": "gangtok",
+   "quote": "local women's police"
+  },
+  {
+   "kind": "persona",
+   "slug": "gangtok",
+   "key": "solo_female",
+   "quote": "comfortable until 10pm"
+  },
+  {
+   "kind": "month",
+   "slug": "gangtok",
+   "month": 12,
+   "label": "wait"
+  },
+  {
+   "kind": "month",
+   "slug": "gangtok",
+   "month": 11,
+   "label": "go"
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "Family dinner table at home in the evening, parents in their 60s and a woman in her late 20s seen from behind, plates half eaten under a warm lamp.",
+  "A man's hands holding a phone above the dinner table, warm lamp light, screen turned away from camera.",
+  "The mother's hand setting a fork down on a steel plate, evening lamp light.",
+  "The woman in her late 20s walking alone along a clean pedestrian hill-town street in the evening, wide shot from behind, street almost empty.",
+  "She pauses at a railing on the lit pedestrian street, looking out over hill-town lights, seen from the side at a distance.",
+  "She lifts her phone to photograph the evening street, seen over her shoulder, screen not visible."
+ ],
+ "status": "draft",
+ "narrator": "her"
+}

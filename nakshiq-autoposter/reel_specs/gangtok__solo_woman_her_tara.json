@@ -1,0 +1,187 @@
+{
+ "auto": false,
+ "id": "gangtok__solo_woman_her_tara",
+ "slug": "gangtok",
+ "angle": "solo_woman",
+ "format": "solo_woman",
+ "tone": "warm",
+ "script_approved": "draft",
+ "script_file": "reel_scripts/_round1_2026-10-01/gangtok__solo_woman_her.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "a woman in her late 20s travelling alone; her brother is the voice",
+ "narrator": "her",
+ "setting_basis": "A family dinner at home in the evening, then a generic clean pedestrian hill-town street at dusk where she walks alone and takes a photo. The footage makes no score, police, CCTV, curfew or month claim of its own; those facts are the script's.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_woman",
+   "prompt": "Full-length photograph of a woman in her late twenties with long black hair in a low braid, wearing an olive quilted jacket open over a cream cable-knit sweater, dark blue jeans and brown ankle boots, a small tan backpack on one shoulder, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_parents",
+   "prompt": "Full-length photograph of an Indian couple in their fifties standing side by side: the man with greying short hair and a neat moustache in a grey V-neck sweater over a checked collared shirt and dark trousers; the woman with her hair in a bun, wearing a maroon salwar kameez with a beige shawl over her shoulders. Soft window light, three-quarter view, neutral expressions, photorealistic, no text."
+  },
+  {
+   "name": "ref_street",
+   "prompt": "A clean, empty pedestrian hill-town street at dusk, paved in grey stone, wooden benches and flower planters down the centre, warm street lamps just switched on, low buildings with wooden balconies on both sides, a metal railing at the far end overlooking a valley of town lights, green hills fading into blue dusk, photorealistic, no people, no signboards, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_woman",
+    "ref_parents"
+   ],
+   "tone": "a loving family argument",
+   "prompt": "Wide shot of a home dining table in the evening under a warm hanging lamp: the woman with the long braid sits with her back to the camera, her olive jacket hung on her chair; across the table her father in the grey sweater gestures with one hand and her mother in the maroon kameez leans forward, steel plates of rice and dal half eaten, steel tumblers of water. No one looks at the camera."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "worried, but loving",
+   "prompt": "Medium shot of the same table in the same warm lamp light, seen from the side: the mother in the maroon kameez rests her hand on her daughter's forearm and turns towards her; the father in the grey sweater sits back with his arms folded, thinking. Faces in soft profile, no one looks at the camera."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "the room leans in",
+   "prompt": "Insert of the middle of the same dinner table in the same warm lamp light: a phone lies face up between the steel plates, its screen only a soft glow, and the father's hand in a grey sleeve and the mother's hand with a maroon cuff both reach towards it."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_woman",
+    "ref_street"
+   ],
+   "tone": "calm, at ease",
+   "prompt": "Wide shot from behind at dusk: the woman in the olive jacket and cream sweater walks alone and unhurried down the middle of the empty stone-paved pedestrian street, warm street lamps glowing, planters and benches along the centre, green hills fading into blue dusk ahead."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "kf_s4"
+   ],
+   "tone": "quiet, content",
+   "prompt": "Medium shot from the side and slightly behind: the woman in the olive jacket rests both hands on the metal railing at the end of the same street at dusk and looks out over the valley of warm town lights, her braid over one shoulder, her face turned away from the camera."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "kf_s4"
+   ],
+   "tone": "a small happy moment to share",
+   "prompt": "Over-the-shoulder from behind the woman in the olive jacket on the same lamp-lit street at dusk: she holds up her phone to photograph the empty street and the hills, its screen only a soft glow, the street lamps soft and out of focus beyond."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. The father gestures with his hand as the mother shakes her head gently; the daughter shrugs.",
+   "sound": "Cutlery scraping on steel plates, a wooden chair creaking, quiet room tone."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "A slow push in. The mother squeezes her daughter's forearm; the father unfolds his arms and nods slowly.",
+   "sound": "A steel tumbler set down on a wooden table, quiet room tone."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. The father's hand draws the phone a little closer as the mother's hand comes to rest beside it.",
+   "sound": "A phone sliding across a wooden table, a spoon against a steel plate, quiet room tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "A slow tracking shot follows her from behind at walking pace as the street lamps glow.",
+   "sound": "Her boot heels on stone paving, a light evening breeze, a distant dog barking in the valley."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. She leans on the railing and breathes out as more lights come on across the valley.",
+   "sound": "Her jacket sleeve brushing a metal railing, a light evening breeze, faint wind chimes from a balcony."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "The camera holds steady over her shoulder. She takes a photo, lowers the phone and walks on.",
+   "sound": "The soft shutter click of a phone camera, boot heels on stone paving, a light evening breeze."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "I booked my first solo trip, Gangtok, and dinner turned into an argument.",
+   "Mum had already phoned a cousin to come along, and Dad kept asking about evenings.",
+   "So I opened NakshIQ, and Gangtok scored five out of five for solo women.",
+   "It called MG Marg the most female-walkable hill town, with CCTV and women's police.",
+   "Evening walks are comfortable until ten at night, so Mum called the cousin back.\nMy one mistake was December, a wait month, when November was a go.",
+   "So I moved it to November, and Dad liked every photo I sent.\nTravel intelligence is answering a worry with facts.\nNakshIQ."
+  ],
+  "hi": [
+   "मैंने अपनी पहली सोलो ट्रिप बुक की, गंगटोक, और घर पर डिनर बहस में बदल गया।",
+   "मम्मी ने तो मेरे साथ चलने के लिए एक कज़िन को फ़ोन भी कर दिया था, और पापा बार बार शाम के बारे में पूछ रहे थे।",
+   "तो मैंने वहीं टेबल पर NakshIQ खोला, और गंगटोक को सोलो महिलाओं के लिए पाँच में से पाँच मिले थे।",
+   "उसने MG Marg को सबसे ज़्यादा महिलाओं के पैदल चलने लायक हिल टाउन बताया, CCTV और महिला पुलिस के साथ।",
+   "शाम की सैर रात दस बजे तक आराम से हो जाती है, तो मम्मी ने कज़िन को वापस फ़ोन कर दिया।\nमेरी एक ही गलती थी दिसंबर, जो वेट वाला महीना था, जबकि नवंबर गो था।",
+   "तो मैंने ट्रिप नवंबर में कर ली, और पापा ने मेरी हर फ़ोटो पसंद की।\nट्रैवल इंटेलिजेंस मतलब, एक चिंता का जवाब तथ्यों से देना।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "I booked my first solo trip, Gangtok,|and dinner turned into *an argument*.",
+  "still": "kf_s2"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Family dinner table at home in the evening, parents in their 60s and a woman in her late 20s seen from behind, plates half eaten under a warm lamp.",
+  "A man's hands holding a phone above the dinner table, warm lamp light, screen turned away from camera.",
+  "The mother's hand setting a fork down on a steel plate, evening lamp light.",
+  "The woman in her late 20s walking alone along a clean pedestrian hill-town street in the evening, wide shot from behind, street almost empty.",
+  "She pauses at a railing on the lit pedestrian street, looking out over hill-town lights, seen from the side at a distance.",
+  "She lifts her phone to photograph the evening street, seen over her shoulder, screen not visible."
+ ],
+ "voice_id": "tA6LGZpsqStKtSaGiXND",
+ "voice_name": "Tara, Hindi Reels Explainer Style (founder pick)"
+}

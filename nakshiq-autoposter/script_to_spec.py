@@ -84,7 +84,14 @@ if __name__ == "__main__":
     src = Path(sys.argv[1])
     spec = build(json.loads(src.read_text()))
     out = HERE / "reel_specs" / f"{spec['id']}.json"
-    if out.exists() and "--force" not in sys.argv:
-        raise SystemExit(f"{out} exists; pass --force to overwrite")
+    if out.exists() and "--refresh-vo" in sys.argv:
+        # A revised script: keep the visual pass (refs/keyframes/shots), replace the words.
+        cur = json.loads(out.read_text())
+        for k in ("vo", "caption_name", "shot_notes", "script_approved"):
+            cur[k] = spec[k]
+        cur["cover"]["hook"] = spec["cover"]["hook"]     # the visual pass chose the still; keep it
+        spec = cur
+    elif out.exists() and "--force" not in sys.argv:
+        raise SystemExit(f"{out} exists; pass --force to overwrite or --refresh-vo to keep the visuals")
     out.write_text(json.dumps(spec, ensure_ascii=False, indent=1) + "\n")
     print(f"[script_to_spec] {out}: beats {[len(b.splitlines()) for b in spec['vo']['en']]} en / {[len(b.splitlines()) for b in spec['vo']['hi']]} hi")

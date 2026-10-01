@@ -1,0 +1,84 @@
+{
+  "id": "katra__pilgrimage",
+  "angle": "pilgrimage",
+  "slug": "katra",
+  "lang_en": "When my cousin's family got back from Vaishno Devi in June, Maa asked why we never went.\nI had postponed it once for work, and now she took our stairs slowly.\nThen NakshIQ laid the route out: thirteen kilometres from Katra, five to eight hours on foot.\nPonies and palkis run on the traditional route, and a helicopter covers part of it.\nEvery pilgrim needs the free RFID yatra card, so we collected ours in Katra first.\nWe went in November, a best month on its list, and Maa rode a pony while I walked.\nTravel intelligence is turning a worry into a plan.\nNakshIQ.",
+  "lang_hi": "जून में जब मेरे कज़िन का परिवार वैष्णो देवी से लौटा, तो माँ ने पूछा कि हम क्यों नहीं गए।\nकाम की वजह से मैं एक बार टाल चुका था, और अब वो घर की सीढ़ियाँ धीरे-धीरे चढ़ती थीं।\nफिर NakshIQ ने पूरा रास्ता खोलकर रखा: कटरा से तेरह किलोमीटर, पैदल पाँच से आठ घंटे।\nपुराने रास्ते पर घोड़े और पालकी चलते हैं, और कुछ हिस्से के लिए हेलीकॉप्टर भी है।\nहर यात्री को मुफ़्त RFID यात्रा कार्ड चाहिए, तो हमने पहले कटरा में ही ले लिया।\nहम नवंबर में गए, जो उसकी लिस्ट के सबसे अच्छे महीनों में है, और माँ घोड़े पर चलीं, मैं पैदल।\nट्रैवल इंटेलिजेंस है फ़िक्र को प्लान में बदलना।\nNakshIQ.",
+  "cover": {
+    "hook": "When my cousin's family got back from Vaishno Devi in June, | Maa asked *why we never went*."
+  },
+  "facts": [
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "total_distance_km",
+      "value": 13
+    },
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "access_modes",
+      "quote": "13 km from Katra to Bhawan, typically 5-8 hours"
+    },
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "access_modes",
+      "quote": "pony"
+    },
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "access_modes",
+      "quote": "palki"
+    },
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "access_modes",
+      "quote": "traditional route"
+    },
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "access_modes",
+      "quote": "Helicopter service Katra to Sanjichhat helipad"
+    },
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "pitfalls",
+      "quote": "Every pilgrim MUST register and collect a free RFID-based Yatra Access Card"
+    },
+    {
+      "kind": "pilgrimage",
+      "slug": "katra",
+      "route": "vaishno-devi",
+      "field": "best_months",
+      "quote": "10, 11"
+    },
+    {
+      "kind": "month",
+      "slug": "katra",
+      "month": 11,
+      "label": "go"
+    }
+  ],
+  "allowed_numbers": [],
+  "shots": [
+    "Morning at the Katra base: a son in his 30s and his mother in her 60s stand at the start of the stone path, seen from behind.",
+    "Close on the son's hand holding two blank plastic yatra cards on a lanyard, nothing legible.",
+    "The mother sits on a calm pony on an empty, railed mountain path while the son walks alongside holding the rein, shot from the side.",
+    "Their feet on wide stone steps with a metal handrail, morning light across the path.",
+    "The two pause at a railing looking across forested hills, backs to camera.",
+    "Wide shot of the empty winding path climbing the hillside in morning light, the two small figures on it."
+  ],
+  "status": "draft"
+}

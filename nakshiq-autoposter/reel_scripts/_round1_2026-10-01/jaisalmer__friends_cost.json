@@ -1,0 +1,81 @@
+{
+  "id": "jaisalmer__friends_cost",
+  "angle": "friends_cost",
+  "slug": "jaisalmer",
+  "lang_en": "Four of us wanted Jaisalmer in December, until we added it up.\nRiya had a spreadsheet, Kabir had a budget, and they never agreed.\nNakshIQ put a peak season mid-range hotel at six thousand one hundred a night.\nWith a taxi at four thousand eight hundred a day, the spreadsheet stopped working.\nSummer hotels were two thousand seven hundred, but forty-eight degrees keeps everyone away.\nSo we picked March, still a go, with hotels at four thousand two hundred.\nThe taxi dropped to three thousand three hundred a day, so all four of us went.\nTravel intelligence is finding the month your budget fits.\nNakshIQ.",
+  "lang_hi": "हम चारों दिसंबर में जैसलमेर जाना चाहते थे, जब तक हमने हिसाब नहीं जोड़ा।\nरिया के पास स्प्रेडशीट थी, कबीर के पास बजट, और दोनों की कभी नहीं बनी।\nNakshIQ पर पीक सीज़न में मिड रेंज होटल छह हज़ार एक सौ रुपये रात का था।\nऊपर से टैक्सी चार हज़ार आठ सौ रोज़ की, और स्प्रेडशीट वहीं बैठ गई।\nगर्मियों में होटल दो हज़ार सात सौ के थे, पर अड़तालीस डिग्री में कोई जाता ही नहीं।\nतो हमने मार्च चुना, जो अब भी जाने लायक था, और होटल चार हज़ार दो सौ के।\nटैक्सी तीन हज़ार तीन सौ रोज़ पर आ गई, तो हम चारों गए।\nट्रैवल इंटेलिजेंस का मतलब है, वो महीना ढूँढना जिसमें बजट फ़िट हो जाए।\nNakshIQ.",
+  "cover": {
+    "hook": "Four of us wanted *Jaisalmer in December*, | until we *added it up*."
+  },
+  "facts": [
+    {
+      "kind": "cost",
+      "slug": "jaisalmer",
+      "season": "peak",
+      "category": "hotel-mid",
+      "value": 6100
+    },
+    {
+      "kind": "cost",
+      "slug": "jaisalmer",
+      "season": "peak",
+      "category": "transport-taxi-day",
+      "value": 4800
+    },
+    {
+      "kind": "cost",
+      "slug": "jaisalmer",
+      "season": "low",
+      "category": "hotel-mid",
+      "value": 2700
+    },
+    {
+      "kind": "crowd",
+      "slug": "jaisalmer",
+      "is": "note",
+      "quote": "48°C+ keeps everyone away"
+    },
+    {
+      "kind": "month",
+      "slug": "jaisalmer",
+      "month": 3,
+      "label": "go"
+    },
+    {
+      "kind": "cost",
+      "slug": "jaisalmer",
+      "season": "shoulder",
+      "category": "hotel-mid",
+      "value": 4200
+    },
+    {
+      "kind": "cost",
+      "slug": "jaisalmer",
+      "season": "shoulder",
+      "category": "transport-taxi-day",
+      "value": 3300
+    },
+    {
+      "kind": "month",
+      "slug": "jaisalmer",
+      "month": 12,
+      "label": "go"
+    },
+    {
+      "kind": "crowd",
+      "slug": "jaisalmer",
+      "month": 12,
+      "is": "peak"
+    }
+  ],
+  "allowed_numbers": [],
+  "shots": [
+    "Four friends in their late 20s, two men and two women, around a low table on a guesthouse rooftop in late afternoon, seen from behind.",
+    "A woman's hand tapping a pen on a closed notebook, warm late afternoon light.",
+    "Wide shot from the rooftop of a golden sandstone fort wall in late afternoon sun, the four friends small in the foreground, seen from behind.",
+    "The four walking single file down a narrow empty golden sandstone lane in late afternoon, shot from behind.",
+    "Two of them laughing on a carved stone balcony, faces turned away from camera, warm light.",
+    "All four sitting on the rooftop parapet watching the fort wall turn amber, seen from behind."
+  ],
+  "status": "draft"
+}

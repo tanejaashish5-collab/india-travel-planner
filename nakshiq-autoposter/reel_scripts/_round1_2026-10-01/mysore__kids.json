@@ -1,0 +1,82 @@
+{
+  "id": "mysore__kids",
+  "angle": "kids",
+  "slug": "mysore",
+  "lang_en": "I was about to pay the Coorg deposit when my wife asked about our two-year-old.\nEvery friend had said Coorg, but she insisted on one check first.\nOur daughter gets sick on long drives, so the roads mattered more than the hotel.\nCoorg's kids row on NakshIQ said minimum age three, and car sickness was possible on winding roads.\nIt wasn't stroller accessible either, and she still naps in one.\nMysore rated five for kids from age two, stroller accessible, with the palace and zoo.\nNovember was a go there, so we booked Mysore.\nTravel intelligence is letting a toddler set the route.\nNakshIQ.",
+  "lang_hi": "मैं कूर्ग का एडवांस भरने ही वाला था, तभी मेरी पत्नी ने हमारी दो साल की बेटी के बारे में पूछा।\nसब दोस्तों ने कूर्ग ही कहा था, पर वो एक बार चेक करने पर अड़ गई।\nलंबे सफ़र में बेटी की तबीयत बिगड़ जाती है, तो होटल से ज़्यादा रास्ते मायने रखते थे।\nNakshIQ पर कूर्ग के बच्चों वाले हिस्से में लिखा था कम से कम तीन साल, और घुमावदार सड़कों पर कार में जी मिचला सकता है।\nवहाँ स्ट्रोलर भी नहीं चल पाता, और बेटी अब भी उसी में सोती है।\nमैसूर को बच्चों के लिए पाँच मिले, दो साल से ही, स्ट्रोलर चल जाता है, और पैलेस और ज़ू भी है।\nनवंबर वहाँ जाने लायक महीना था, तो हमने मैसूर बुक कर लिया।\nट्रैवल इंटेलिजेंस का मतलब है, रास्ता बच्चे के हिसाब से चुनना।\nNakshIQ.",
+  "cover": {
+    "hook": "I was about to pay the *Coorg deposit* | when my wife asked about our *two-year-old*."
+  },
+  "facts": [
+    {
+      "kind": "kids",
+      "slug": "coorg",
+      "field": "min_recommended_age",
+      "value": 3
+    },
+    {
+      "kind": "kids",
+      "slug": "coorg",
+      "field": "concerns",
+      "quote": "car sickness possible"
+    },
+    {
+      "kind": "kids",
+      "slug": "coorg",
+      "field": "concerns",
+      "quote": "Winding roads"
+    },
+    {
+      "kind": "kids",
+      "slug": "coorg",
+      "field": "stroller_accessible",
+      "value": false
+    },
+    {
+      "kind": "kids",
+      "slug": "mysore",
+      "field": "rating",
+      "value": 5
+    },
+    {
+      "kind": "kids",
+      "slug": "mysore",
+      "field": "min_recommended_age",
+      "value": 2
+    },
+    {
+      "kind": "kids",
+      "slug": "mysore",
+      "field": "stroller_accessible",
+      "value": true
+    },
+    {
+      "kind": "kids",
+      "slug": "mysore",
+      "field": "family_verdict",
+      "quote": "Mysore Palace"
+    },
+    {
+      "kind": "kids",
+      "slug": "mysore",
+      "field": "family_verdict",
+      "quote": "the zoo"
+    },
+    {
+      "kind": "month",
+      "slug": "mysore",
+      "month": 11,
+      "label": "go"
+    }
+  ],
+  "allowed_numbers": [],
+  "shots": [
+    "A couple in their 30s at a kitchen table in the morning, a toddler on the mother's lap, seen from the side, faces not in close-up.",
+    "The father's hands unfolding a small stroller by the front door, soft morning light.",
+    "Wide shot of the family walking along a broad paved path toward a large palace exterior in the morning, stroller in front, grounds empty.",
+    "Low shot of the stroller wheels rolling smoothly over flat stone paving, morning light.",
+    "The mother crouching beside the stroller and pointing up at the palace domes, the toddler seen from behind.",
+    "The toddler asleep in the stroller in the shade of a tree on the palace lawn, the parents on a bench beside it, seen from behind."
+  ],
+  "status": "draft"
+}

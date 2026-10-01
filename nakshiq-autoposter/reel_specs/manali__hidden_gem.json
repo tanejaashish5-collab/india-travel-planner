@@ -1,0 +1,187 @@
+{
+ "auto": false,
+ "id": "manali__hidden_gem",
+ "slug": "manali",
+ "angle": "hidden_gem",
+ "format": "hidden_gem",
+ "tone": "warm",
+ "script_approved": "draft",
+ "script_file": "reel_scripts/_round1_2026-10-01/manali__hidden_gem.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "a man in his 30s travelling alone",
+ "narrator": "him",
+ "setting_basis": "A snowy mountain road with one queue of stopped cars, an unmarked side road through deodar forest and an empty snowfield above a small Buddhist village with prayer flags. The footage does not show or name the real village and makes no distance, drive-time or crowd claim; those facts are the script's.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_man",
+   "prompt": "Full-length photograph of an Indian man in his mid thirties with short black hair and light stubble, wearing a dark green insulated jacket, a grey knit beanie, charcoal trousers, brown leather snow boots and a small black backpack, standing in soft daylight, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_car",
+   "prompt": "A small plain white hatchback parked on the snowy shoulder of a mountain road in soft morning light, no badge, no logo, no number plate visible, deodar trees and snow behind, photorealistic, no people, no text."
+  },
+  {
+   "name": "ref_village",
+   "prompt": "An empty untouched snowfield sloping down to a small Himalayan village of stone and timber houses with flat roofs, strings of faded prayer flags between the houses, deodar trees and white peaks behind, soft morning light, photorealistic, no people, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_man",
+    "ref_car"
+   ],
+   "tone": "hopeful, on his own",
+   "prompt": "Wide shot in soft morning light: the man in the green jacket and grey beanie stands beside the small white car on the snowy shoulder of a mountain road, looking up at white peaks and deodar forest, seen from behind at a slight angle."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "ref_man",
+    "ref_car"
+   ],
+   "tone": "stuck, mildly fed up",
+   "prompt": "Over-the-shoulder from the back seat of the small white car in soft morning light: the man in the green jacket and grey beanie sits at the wheel, hands resting on it, and through the slightly fogged windscreen a line of stopped cars stretches ahead along a snowy road between pines. Only cars, no people, no number plates legible."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "a small discovery",
+   "prompt": "Insert of the man's gloved hand holding a phone against the steering wheel of the same car in the same morning light, the screen only a soft glow, the fogged windscreen soft and out of focus beyond."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_car",
+    "ref_village"
+   ],
+   "tone": "quiet, a secret turn",
+   "prompt": "Wide shot in soft morning light of a narrow unmarked side road turning off a snowy mountain road and climbing into snow-dusted deodar forest, no signboard, milestone or marker of any kind, the small white car alone, slowing at the turn."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "a simple, decisive move",
+   "prompt": "Close-up of the man's gloved hands turning the steering wheel of the same car to the left in the same soft morning light, the green jacket cuffs in frame, the snowy forest blurred through the windscreen."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_man",
+    "ref_village"
+   ],
+   "tone": "wide open, all his",
+   "prompt": "Wide shot from behind in soft morning light: the man in the green jacket and grey beanie walks alone across the empty untouched snowfield towards the small village, prayer flags strung between the stone and timber houses, white peaks beyond. Only his footprints in the snow."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. He shades his eyes and looks up at the peaks, breath misting in the cold.",
+   "sound": "Boots crunching on roadside snow, a cold mountain wind, a river rushing far below."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. He drums his fingers on the wheel; the line of cars ahead does not move.",
+   "sound": "A car engine idling, a single windscreen wiper squeak, a distant car horn."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "A slow push in on the phone in his hand as his thumb scrolls once and stops.",
+   "sound": "A car engine idling, the creak of a leather glove on the steering wheel, quiet car interior tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still as the car slows and turns off onto the side road and climbs into the trees.",
+   "sound": "Tyres crunching on packed snow, an engine slowing, wind in the deodars."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. His hands turn the wheel steadily to the left.",
+   "sound": "The steady tick of a car indicator, leather gloves sliding on a steering wheel, tyres on snow."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "A slow push in as he walks away across the snowfield and the prayer flags move in the wind.",
+   "sound": "Boots crunching through fresh snow, prayer flags flapping in the wind, a far-off dog barking."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "I went to Manali alone in December for the snow, and so had everyone else.",
+   "By day two I had spent more time in traffic than in snow.",
+   "NakshIQ called Manali overrun, with December a peak month, but it also listed Sethan Village.",
+   "It's twelve kilometres away, thirty minutes by road, and nobody goes because there's no signboard.",
+   "You just take a left turn nobody tells you about, so that's what I did.",
+   "I found an empty snowfield where locals snowboard, and a Buddhist village with zero tourists.\nTravel intelligence is finding the turn the crowd drives past.\nNakshIQ."
+  ],
+  "hi": [
+   "मैं दिसंबर में बर्फ़ के लिए अकेला मनाली गया, और बाकी सब भी यही सोचकर आए थे।",
+   "दूसरे दिन तक मैं बर्फ़ से ज़्यादा ट्रैफ़िक में बैठ चुका था।",
+   "NakshIQ ने मनाली को भीड़ से लदा बताया, दिसंबर पीक महीना, पर उसमें सेथन गाँव भी था।",
+   "बारह किलोमीटर दूर, सड़क से तीस मिनट, और कोई नहीं जाता क्योंकि मेन रोड पर कोई बोर्ड नहीं है।",
+   "बस एक बायाँ मोड़ है जिसके बारे में कोई नहीं बताता, तो मैंने वही मोड़ लिया।",
+   "वहाँ बर्फ़ का खाली मैदान था जहाँ लोकल लोग स्नोबोर्ड करते हैं, और एक बौद्ध गाँव जहाँ एक भी टूरिस्ट नहीं।\nट्रैवल इंटेलिजेंस का मतलब है, वो मोड़ ढूँढना जिसे भीड़ पार कर जाती है।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "I went to Manali *alone in December* for the snow, | and *so had everyone else*.",
+  "still": "kf_s2"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "A man in his 30s alone at the wheel of a stopped car on a mountain road in the morning, seen from the back seat, fogged windscreen.",
+  "His hands turning the steering wheel left onto a narrow unmarked side road, morning light.",
+  "Wide shot of a small car parked at the edge of an empty snow-covered slope in the morning, no people.",
+  "The man walking alone across untouched snow toward a small village, wide shot from behind.",
+  "A lone distant snowboarder carving down the empty slope while the man watches from the side.",
+  "Prayer flags strung between village houses moving in the morning wind, the man standing below, seen from behind."
+ ]
+}

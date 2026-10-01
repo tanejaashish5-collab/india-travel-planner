@@ -1,0 +1,89 @@
+{
+  "id": "manali__hidden_gem",
+  "angle": "hidden_gem",
+  "slug": "manali",
+  "lang_en": "I went to Manali alone in December for the snow, and so had everyone else.\nBy day two I had spent more time in traffic than in snow.\nNakshIQ called Manali overrun, with December a peak month, but it also listed Sethan Village.\nIt's twelve kilometres away, thirty minutes by road, and nobody goes because there's no signboard.\nYou just take a left turn nobody tells you about, so that's what I did.\nI found an empty snowfield where locals snowboard, and a Buddhist village with zero tourists.\nTravel intelligence is finding the turn the crowd drives past.\nNakshIQ.",
+  "lang_hi": "मैं दिसंबर में बर्फ़ के लिए अकेला मनाली गया, और बाकी सब भी यही सोचकर आए थे।\nदूसरे दिन तक मैं बर्फ़ से ज़्यादा ट्रैफ़िक में बैठ चुका था।\nNakshIQ ने मनाली को भीड़ से लदा बताया, दिसंबर पीक महीना, पर उसमें सेथन गाँव भी था।\nबारह किलोमीटर दूर, सड़क से तीस मिनट, और कोई नहीं जाता क्योंकि मेन रोड पर कोई बोर्ड नहीं है।\nबस एक बायाँ मोड़ है जिसके बारे में कोई नहीं बताता, तो मैंने वही मोड़ लिया।\nवहाँ बर्फ़ का खाली मैदान था जहाँ लोकल लोग स्नोबोर्ड करते हैं, और एक बौद्ध गाँव जहाँ एक भी टूरिस्ट नहीं।\nट्रैवल इंटेलिजेंस का मतलब है, वो मोड़ ढूँढना जिसे भीड़ पार कर जाती है।\nNakshIQ.",
+  "cover": {
+    "hook": "I went to Manali *alone in December* for the snow, | and *so had everyone else*."
+  },
+  "facts": [
+    {
+      "kind": "crowd",
+      "slug": "manali",
+      "is": "level",
+      "value": "overrun"
+    },
+    {
+      "kind": "crowd",
+      "slug": "manali",
+      "month": 12,
+      "is": "peak"
+    },
+    {
+      "kind": "gem",
+      "slug": "manali",
+      "name": "Sethan Village",
+      "field": "distance_km",
+      "value": 12
+    },
+    {
+      "kind": "gem",
+      "slug": "manali",
+      "name": "Sethan Village",
+      "field": "drive_time",
+      "quote": "30min"
+    },
+    {
+      "kind": "gem",
+      "slug": "manali",
+      "name": "Sethan Village",
+      "field": "why_unknown",
+      "quote": "No signboard on main road"
+    },
+    {
+      "kind": "gem",
+      "slug": "manali",
+      "name": "Sethan Village",
+      "field": "why_unknown",
+      "quote": "Left turn nobody tells you about"
+    },
+    {
+      "kind": "gem",
+      "slug": "manali",
+      "name": "Sethan Village",
+      "field": "why_go",
+      "quote": "Empty snowfield"
+    },
+    {
+      "kind": "gem",
+      "slug": "manali",
+      "name": "Sethan Village",
+      "field": "why_go",
+      "quote": "locals snowboard here"
+    },
+    {
+      "kind": "gem",
+      "slug": "manali",
+      "name": "Sethan Village",
+      "field": "why_go",
+      "quote": "Buddhist village, zero tourists"
+    },
+    {
+      "kind": "month",
+      "slug": "manali",
+      "month": 12,
+      "label": "go"
+    }
+  ],
+  "allowed_numbers": [],
+  "shots": [
+    "A man in his 30s alone at the wheel of a stopped car on a mountain road in the morning, seen from the back seat, fogged windscreen.",
+    "His hands turning the steering wheel left onto a narrow unmarked side road, morning light.",
+    "Wide shot of a small car parked at the edge of an empty snow-covered slope in the morning, no people.",
+    "The man walking alone across untouched snow toward a small village, wide shot from behind.",
+    "A lone distant snowboarder carving down the empty slope while the man watches from the side.",
+    "Prayer flags strung between village houses moving in the morning wind, the man standing below, seen from behind."
+  ],
+  "status": "draft"
+}

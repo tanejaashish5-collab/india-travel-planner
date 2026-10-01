@@ -1,0 +1,180 @@
+{
+ "auto": false,
+ "id": "mysore__kids",
+ "slug": "mysore",
+ "angle": "kids",
+ "format": "kids",
+ "tone": "warm",
+ "script_approved": "draft",
+ "script_file": "reel_scripts/_round1_2026-10-01/mysore__kids.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "parents in their 30s with a child of 2 to 4",
+ "narrator": "the father",
+ "setting_basis": "A family home in the morning, then a generic broad palace garden path and lawn where the parents walk with their daughter in a pushchair. The footage makes no claim about Coorg roads, age ratings, stroller access, the zoo or the month; those facts are the script's.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_family",
+   "prompt": "Full-length photograph of an Indian couple in their thirties standing behind a grey folding pushchair: the man with short black hair and a trimmed beard in a light blue linen shirt, khaki trousers and brown loafers; the woman with shoulder-length hair tied back in a mustard cotton kurta, white trousers and tan sandals; a little girl of about two in a pink cotton frock sits in the pushchair, seen at a distance. Soft daylight, three-quarter view, neutral expressions, photorealistic, no text."
+  },
+  {
+   "name": "ref_palace",
+   "prompt": "A broad empty stone-paved garden path leading to a large ornate cream and ochre palace with domes and arches in soft morning light, clipped green lawns, flower beds and tall shade trees, a wooden bench beneath one tree, photorealistic, no people, no signboards, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_family"
+   ],
+   "tone": "a normal busy family morning",
+   "prompt": "Wide shot of a sunny home kitchen table in the morning, seen from the side: the man in the light blue shirt sits at a laptop, its screen only a soft glow, a cup of tea beside it; the woman in the mustard kurta sits next to him with the little girl in the pink frock on her lap, seen from behind. No one looks at the camera."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "one careful pause",
+   "prompt": "Over-the-shoulder from behind the man in the light blue shirt at the same table in the same morning light: the laptop screen is only a soft glow, and the woman's hand rests gently on the edge of the laptop lid as she leans in beside him."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "tender, protective",
+   "prompt": "Medium shot of the woman in the mustard kurta standing by the kitchen window in the same morning light, holding the little girl on her hip and rubbing her back, seen from behind at a slight angle; the man in the light blue shirt stands beside them with a hand on her shoulder."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_family"
+   ],
+   "tone": "decided, getting ready",
+   "prompt": "Insert of the man's hands in light blue cuffs unfolding the grey pushchair by a wooden front door in soft morning light, a small cloth bag hanging from the handle."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_family",
+    "ref_palace"
+   ],
+   "tone": "easy, unhurried",
+   "prompt": "Wide shot from behind in soft morning light: the man in the light blue shirt pushes the grey pushchair along the broad empty paved garden path towards the domed palace, the woman in the mustard kurta walking beside him with one hand on the handle, the little girl a small shape in the pushchair, lawns and tall trees on both sides."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "kf_s5"
+   ],
+   "tone": "a peaceful, easy day",
+   "prompt": "Medium shot from behind of the man in the light blue shirt and the woman in the mustard kurta sitting on the wooden bench in the shade of a tall tree on the palace lawn, the grey pushchair parked right beside them with its canopy half down, the little girl asleep inside seen only from the side, the palace domes soft in the background."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. He scrolls on the laptop while she bounces the little girl gently on her lap.",
+   "sound": "A teaspoon tapping a china cup, a laptop key tap, morning birdsong outside the window."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still over his shoulder. Her hand comes down softly on the laptop lid and he turns his head towards her.",
+   "sound": "The faint creak of a laptop hinge, quiet room tone, morning birdsong outside."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "A slow push in. She sways and rubs her daughter's back; he squeezes her shoulder.",
+   "sound": "A cotton curtain stirring in a morning breeze, distant birdsong, quiet room tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still. His hands snap the pushchair open and lock the frame.",
+   "sound": "The click of a pushchair frame locking open, a wooden door latch, quiet hallway tone."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "A slow tracking shot follows them from behind as the pushchair rolls steadily along the smooth path.",
+   "sound": "A pushchair wheel rolling on smooth stone paving, soft footsteps, morning birdsong in the trees."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "The camera holds still. Leaves stir overhead and she rests her head on his shoulder.",
+   "sound": "Leaves rustling in a light breeze, the creak of a wooden bench, morning birdsong."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "I was about to pay the Coorg deposit when my wife asked about our two-year-old.",
+   "Every friend had said Coorg, but she insisted on one check first.",
+   "Our daughter gets sick on long drives, so the roads mattered more than the hotel.",
+   "Coorg's kids row on NakshIQ said minimum age three, and car sickness was possible on winding roads.",
+   "It wasn't stroller accessible either, and she still naps in one.\nMysore rated five for kids from age two, stroller accessible, with the palace and zoo.",
+   "November was a go there, so we booked Mysore.\nTravel intelligence is letting a toddler set the route.\nNakshIQ."
+  ],
+  "hi": [
+   "मैं कूर्ग का एडवांस भरने ही वाला था, तभी मेरी पत्नी ने हमारी दो साल की बेटी के बारे में पूछा।",
+   "सब दोस्तों ने कूर्ग ही कहा था, पर वो एक बार चेक करने पर अड़ गई।",
+   "लंबे सफ़र में बेटी की तबीयत बिगड़ जाती है, तो होटल से ज़्यादा रास्ते मायने रखते थे।",
+   "NakshIQ पर कूर्ग के बच्चों वाले हिस्से में लिखा था कम से कम तीन साल, और घुमावदार सड़कों पर कार में जी मिचला सकता है।",
+   "वहाँ स्ट्रोलर भी नहीं चल पाता, और बेटी अब भी उसी में सोती है।\nमैसूर को बच्चों के लिए पाँच मिले, दो साल से ही, स्ट्रोलर चल जाता है, और पैलेस और ज़ू भी है।",
+   "नवंबर वहाँ जाने लायक महीना था, तो हमने मैसूर बुक कर लिया।\nट्रैवल इंटेलिजेंस का मतलब है, रास्ता बच्चे के हिसाब से चुनना।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "I was about to pay the *Coorg deposit* | when my wife asked about our *two-year-old*.",
+  "still": "kf_s2"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "A couple in their 30s at a kitchen table in the morning, a toddler on the mother's lap, seen from the side, faces not in close-up.",
+  "The father's hands unfolding a small stroller by the front door, soft morning light.",
+  "Wide shot of the family walking along a broad paved path toward a large palace exterior in the morning, stroller in front, grounds empty.",
+  "Low shot of the stroller wheels rolling smoothly over flat stone paving, morning light.",
+  "The mother crouching beside the stroller and pointing up at the palace domes, the toddler seen from behind.",
+  "The toddler asleep in the stroller in the shade of a tree on the palace lawn, the parents on a bench beside it, seen from behind."
+ ]
+}

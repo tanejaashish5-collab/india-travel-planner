@@ -1,0 +1,187 @@
+{
+ "auto": false,
+ "id": "katra__pilgrimage",
+ "slug": "katra",
+ "angle": "pilgrimage",
+ "format": "pilgrimage",
+ "tone": "warm",
+ "script_approved": "draft",
+ "script_file": "reel_scripts/_round1_2026-10-01/katra__pilgrimage.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "a son in his 30s and his mother in her 60s",
+ "narrator": "the son",
+ "setting_basis": "A morning at home, then the empty paved yatra path with metal railings in forested hills, a pony on the path and a blank yatra card in hand; no deity, sanctum, temple interior or crowd is shown, and the footage makes no distance, time or rule claim of its own.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_son",
+   "prompt": "Full-length photograph of an Indian man in his mid thirties with short black hair and a light beard, wearing a navy fleece jacket over a white shirt, dark track pants and grey walking shoes, a small backpack on one shoulder, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_mother",
+   "prompt": "Full-length photograph of an Indian woman in her mid sixties with grey hair in a long plait, slightly stooped, wearing a pale green cotton salwar suit, a red woollen shawl around her shoulders and black walking shoes, holding a small cloth bag, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_path",
+   "prompt": "An empty wide paved mountain path in soft morning light, metal railings along the edge, wide stone steps on a steep section, forested hills falling away into light haze, photorealistic, no people, no buildings, no shrine, no text, no signage."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_son",
+    "ref_mother"
+   ],
+   "tone": "her longing, his hesitation",
+   "prompt": "Medium shot in a home bedroom in soft morning window light: the mother sits on the edge of the bed folding her red shawl into a small cloth bag; the son stands in the doorway behind her, one hand on the frame, hesitant; both faces turned away from camera."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "ref_path"
+   ],
+   "tone": "the climb he keeps imagining",
+   "prompt": "Wide shot of the steep section of the empty paved yatra path in soft morning light: wide stone steps climbing away between metal railings, the slope rising above, nobody on it."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "the worry becomes a plan",
+   "prompt": "Over-the-shoulder from behind the son, same bedroom and same morning light as the reference: he sits beside his mother on the bed holding his phone, its screen only a soft glow, and she leans in to look."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_son",
+    "ref_mother",
+    "ref_path"
+   ],
+   "tone": "calm, unhurried, looked after",
+   "prompt": "Medium shot from the side on the empty railed path in soft morning light: the mother in the red shawl sits on a calm brown pony with a woven saddle cloth, the son in the navy fleece walks alongside holding the rein, forested hills behind."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "kf_s4"
+   ],
+   "tone": "ready, nothing left to chance",
+   "prompt": "Insert on the son's hand holding two blank plastic cards on plain lanyards, nothing printed or legible, same path and same morning light as the reference, the metal railing soft in the background."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "kf_s4",
+    "ref_path"
+   ],
+   "tone": "quiet joy, together",
+   "prompt": "Wide shot from behind and above in soft morning light: the empty paved path winds up the forested hillside, the mother on the brown pony and the son walking beside her small in the frame."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. She folds the shawl into the bag; he stays in the doorway.",
+   "sound": "The soft rustle of wool, a pressure cooker whistle far off in the house, quiet morning room tone."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "Slow push-in up the empty slope, the steps climbing out of frame.",
+   "sound": "Wind through the trees, a distant bird call, quiet mountain morning tone."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. He tilts the phone toward her; she nods slowly.",
+   "sound": "A bedsheet rustling, morning birdsong through the window, quiet room tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera tracks slowly alongside them at walking pace.",
+   "sound": "A pony's bell jingling, hooves on the paved path, the son's footsteps, a light mountain breeze."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. His thumb turns the cards over once in his hand.",
+   "sound": "The plastic cards clicking together, a pony's bell nearby, light mountain breeze."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "The camera holds still as they move slowly up the winding path.",
+   "sound": "A pony's bell faint in the distance, wind through the forest, birdsong."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "When my cousin's family got back from Vaishno Devi in June, Maa asked why we never went.",
+   "I had postponed it once for work, and now she took our stairs slowly.",
+   "Then NakshIQ laid the route out: thirteen kilometres from Katra, five to eight hours on foot.",
+   "Ponies and palkis run on the traditional route, and a helicopter covers part of it.",
+   "Every pilgrim needs the free RFID yatra card, so we collected ours in Katra first.",
+   "We went in November, a best month on its list, and Maa rode a pony while I walked.\nTravel intelligence is turning a worry into a plan.\nNakshIQ."
+  ],
+  "hi": [
+   "जून में जब मेरे कज़िन का परिवार वैष्णो देवी से लौटा, तो माँ ने पूछा कि हम क्यों नहीं गए।",
+   "काम की वजह से मैं एक बार टाल चुका था, और अब वो घर की सीढ़ियाँ धीरे-धीरे चढ़ती थीं।",
+   "फिर NakshIQ ने पूरा रास्ता खोलकर रखा: कटरा से तेरह किलोमीटर, पैदल पाँच से आठ घंटे।",
+   "पुराने रास्ते पर घोड़े और पालकी चलते हैं, और कुछ हिस्से के लिए हेलीकॉप्टर भी है।",
+   "हर यात्री को मुफ़्त RFID यात्रा कार्ड चाहिए, तो हमने पहले कटरा में ही ले लिया।",
+   "हम नवंबर में गए, जो उसकी लिस्ट के सबसे अच्छे महीनों में है, और माँ घोड़े पर चलीं, मैं पैदल।\nट्रैवल इंटेलिजेंस है फ़िक्र को प्लान में बदलना।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "When my cousin's family got back from Vaishno Devi in June, | Maa asked *why we never went*.",
+  "still": "kf_s2"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Morning at the Katra base: a son in his 30s and his mother in her 60s stand at the start of the stone path, seen from behind.",
+  "Close on the son's hand holding two blank plastic yatra cards on a lanyard, nothing legible.",
+  "The mother sits on a calm pony on an empty, railed mountain path while the son walks alongside holding the rein, shot from the side.",
+  "Their feet on wide stone steps with a metal handrail, morning light across the path.",
+  "The two pause at a railing looking across forested hills, backs to camera.",
+  "Wide shot of the empty winding path climbing the hillside in morning light, the two small figures on it."
+ ]
+}

@@ -315,8 +315,11 @@ def voice(spec: dict, lang: str, tdp: Path):
     re-cut never spends quota twice. Returns (mp3, [(start, dur, line)])."""
     import yt_shorts_v2 as Y
     lines = spec["vo"][lang]
-    vid = (os.environ.get("ELEVEN_VOICE_ID_EN") if spec.get("audience") == "foreign"
-           else os.environ.get("ELEVEN_VOICE_ID_HI"))
+    # A spec may name its own narrator (founder 2026-10-01: a woman's story in her own
+    # voice, "to make it more authentic"); else the house voice per audience.
+    vid = (spec.get("voice_id")
+           or (os.environ.get("ELEVEN_VOICE_ID_EN") if spec.get("audience") == "foreign"
+               else os.environ.get("ELEVEN_VOICE_ID_HI")))
     key = os.environ.get("ELEVENLABS_API_KEY")
     if not (vid and key):
         raise SystemExit("ElevenLabs key/voice missing — run through node --env-file (see module doc)")

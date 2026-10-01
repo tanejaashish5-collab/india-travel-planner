@@ -1,0 +1,185 @@
+{
+ "auto": false,
+ "id": "jaisalmer__friends_cost",
+ "slug": "jaisalmer",
+ "angle": "friends_cost",
+ "format": "friends_cost",
+ "tone": "warm",
+ "script_approved": "draft",
+ "script_file": "reel_scripts/_round1_2026-10-01/jaisalmer__friends_cost.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "four friends, late 20s, two men and two women",
+ "narrator": "one of the friends",
+ "setting_basis": "A generic golden sandstone rooftop where four friends plan around a laptop and a notebook in late-afternoon light, then an empty desert road at the same hour. The footage shows no prices, season, month or temperature and makes no claim the script does not.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_friends",
+   "prompt": "Full-length photograph of four Indian friends in their late twenties standing together: a tall man with curly hair in a rust linen shirt and beige trousers; a man with short hair and round glasses in a white kurta and olive trousers; a woman with long wavy hair in a mustard cotton dress; a woman with a short bob in a teal shirt and white jeans with a canvas tote. Soft daylight, three-quarter view, neutral expressions, photorealistic, no text."
+  },
+  {
+   "name": "ref_rooftop",
+   "prompt": "A golden sandstone rooftop terrace with a carved stone parapet, a low wooden table with floor cushions around it, a tall sandstone fort wall glowing beyond, warm late-afternoon light, photorealistic, no people, no signboards, no text."
+  },
+  {
+   "name": "ref_road",
+   "prompt": "A straight empty two-lane desert road running into the distance between low golden sand dunes and scattered dry shrubs, warm late-afternoon light, long soft shadows, photorealistic, no people, no vehicles, no signboards, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_friends",
+    "ref_rooftop"
+   ],
+   "tone": "excited plans, about to get real",
+   "prompt": "Wide shot from behind and to one side in warm late-afternoon light: the four friends sit on floor cushions around the low wooden table on the sandstone rooftop, a laptop and a notebook on the table, cups of tea, the fort wall glowing beyond. No one looks at the camera."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "two planners, two methods",
+   "prompt": "Medium shot of the same table in the same warm light, seen from the side: the woman in the teal shirt has the laptop open in front of her, its screen only a soft glow; the man in round glasses beside her taps a pen on a small closed notebook, both turned towards each other, faces in soft profile."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "the number lands",
+   "prompt": "Insert of the low wooden table in the same warm light: the open laptop, its screen only a soft glow, a woman's hand with a silver ring resting on the trackpad, and beside it a man's hand tapping a pen on a closed notebook."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "deflated, half laughing",
+   "prompt": "Over-the-shoulder from behind the curly-haired man in the rust shirt at the same rooftop table in the same warm light: across the table the woman in the mustard dress leans back with both hands on her head in mock defeat, the other two looking at the laptop glow, faces turned away from the camera."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "a plan everyone can afford",
+   "prompt": "Close-up of four hands meeting in a high five above the closed laptop on the low wooden table, a rust sleeve, a white kurta sleeve, a mustard sleeve and a teal cuff, warm late-afternoon light."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_friends",
+    "ref_road"
+   ],
+   "tone": "free, all four together",
+   "prompt": "Wide shot from behind in warm late-afternoon light: the four friends walk side by side along the edge of the empty desert road between low golden dunes, the woman in the mustard dress with her arm through the curly-haired man's, long soft shadows stretching ahead of them."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. They lean over the table and sip their tea as the light warms the fort wall.",
+   "sound": "Teacups clinking on a wooden table, a pigeon's wings on the parapet, a warm rooftop breeze."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "A slow push in. She types and turns the laptop slightly; he keeps tapping the pen and shakes his head.",
+   "sound": "Laptop keys tapping, a pen tapping a notebook, a warm rooftop breeze."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. Her finger stops on the trackpad and the pen stops tapping.",
+   "sound": "A trackpad click, a pen set down on a notebook, a light breeze."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still over his shoulder. She drops her hands and laughs silently as the others shrug.",
+   "sound": "A notebook slapped shut on a wooden table, a pigeon cooing, a warm rooftop breeze."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. The four hands meet in a high five and pull apart.",
+   "sound": "The sharp clap of hands meeting, a laptop lid clicking shut, a warm rooftop breeze."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "A slow tracking shot follows them from behind as they walk along the road edge.",
+   "sound": "Footsteps on a sandy road shoulder, desert wind over the dunes, a distant bird call."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "Four of us wanted Jaisalmer in December, until we added it up.",
+   "Riya had a spreadsheet, Kabir had a budget, and they never agreed.",
+   "NakshIQ put a peak season mid-range hotel at six thousand one hundred a night.",
+   "With a taxi at four thousand eight hundred a day, the spreadsheet stopped working.",
+   "Summer hotels were two thousand seven hundred, but forty-eight degrees keeps everyone away.\nSo we picked March, still a go, with hotels at four thousand two hundred.",
+   "The taxi dropped to three thousand three hundred a day, so all four of us went.\nTravel intelligence is finding the month your budget fits.\nNakshIQ."
+  ],
+  "hi": [
+   "हम चारों दिसंबर में जैसलमेर जाना चाहते थे, जब तक हमने हिसाब नहीं जोड़ा।",
+   "रिया के पास स्प्रेडशीट थी, कबीर के पास बजट, और दोनों की कभी नहीं बनी।",
+   "NakshIQ पर पीक सीज़न में मिड रेंज होटल छह हज़ार एक सौ रुपये रात का था।",
+   "ऊपर से टैक्सी चार हज़ार आठ सौ रोज़ की, और स्प्रेडशीट वहीं बैठ गई।",
+   "गर्मियों में होटल दो हज़ार सात सौ के थे, पर अड़तालीस डिग्री में कोई जाता ही नहीं।\nतो हमने मार्च चुना, जो अब भी जाने लायक था, और होटल चार हज़ार दो सौ के।",
+   "टैक्सी तीन हज़ार तीन सौ रोज़ पर आ गई, तो हम चारों गए।\nट्रैवल इंटेलिजेंस का मतलब है, वो महीना ढूँढना जिसमें बजट फ़िट हो जाए।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "Four of us wanted *Jaisalmer in December*, | until we *added it up*.",
+  "still": "kf_s2"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Four friends in their late 20s, two men and two women, around a low table on a guesthouse rooftop in late afternoon, seen from behind.",
+  "A woman's hand tapping a pen on a closed notebook, warm late afternoon light.",
+  "Wide shot from the rooftop of a golden sandstone fort wall in late afternoon sun, the four friends small in the foreground, seen from behind.",
+  "The four walking single file down a narrow empty golden sandstone lane in late afternoon, shot from behind.",
+  "Two of them laughing on a carved stone balcony, faces turned away from camera, warm light.",
+  "All four sitting on the rooftop parapet watching the fort wall turn amber, seen from behind."
+ ]
+}
