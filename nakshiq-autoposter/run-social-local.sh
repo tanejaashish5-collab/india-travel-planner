@@ -58,12 +58,24 @@ fi
 #     we were posting at a later time when India was coming to scroll"). Meta
 #     Business Suite, Sep reels by India post time: 13-14 IST median reach 104
 #     (n=9), 14-15 IST 34 (n=11), 15-16:30 IST 63 (n=5); no reel had ever gone
-#     out at 11-13 IST before the story reels (median 17 there, n=3). The plist
-#     fires at 17:35/18:05/18:35/19:05 local so 13:05 IST is hit under AEST and
-#     AEDT (from 4 Oct); the first in-window fire publishes, the rest no-op.
+#     out at 11-13 IST before the story reels (median 17 there, n=3).
+#     SLOT MOVED AGAIN 2026-10-01, same evening, to 20:00-21:00 IST (founder:
+#     "it posted during the day but we discussed about it": he meant India's
+#     evening scroll, not 13:00). Outside evidence agrees on evenings: Buffer
+#     (9.6M posts) has Reels peaking 6-11 PM local; Indian agency guides most
+#     often name 8-10 PM IST. Our own Sep data leaned the other way (legacy
+#     evening posts 19-24 IST median reach 47.5, n=10, vs 104 at 13-14), but
+#     those were different reels in a different month: the next reels settle it.
+#     20:05 IST is 00:35 AEST / 01:35 AEDT (from 4 Oct). The plist fires at
+#     00:35/01:05/01:35/02:05 local, so two fires land in the window under
+#     either offset (20:05 + a 20:35 retry); the first publishes, the second
+#     sees "already published today" and no-ops. The Mac does not sleep at
+#     night (pmset log, 24 Sep-1 Oct: no sleep between 22:00 and 08:28).
+#     The GitHub reel slot is off (LEGACY_REELS_OFF, 29 Sep), so nothing else
+#     posts a reel and the evening slot collides with nothing.
 SC_IST="$(TZ=Asia/Kolkata date '+%H%M')"
-if [ "$((10#$SC_IST))" -lt 1300 ] || [ "$((10#$SC_IST))" -ge 1400 ]; then
-  say "scenario reels: IST $SC_IST is outside 13:00-14:00 — not this fire"
+if [ "$((10#$SC_IST))" -lt 2000 ] || [ "$((10#$SC_IST))" -ge 2100 ]; then
+  say "scenario reels: IST $SC_IST is outside 20:00-21:00 — not this fire"
 elif ! bash scripts/autoposter-state-sync.sh pull; then
   say "⚠️  scenario reels: state pull FAILED — skipping rather than publishing on stale caps"
 else

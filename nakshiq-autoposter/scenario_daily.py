@@ -2,7 +2,7 @@
 """scenario_daily.py — the last two steps of the Veo reel pipeline: cut, then publish.
 
     python3 scenario_daily.py render      # after clips land (run-veo.sh, 09:20 + 14:20)
-    python3 scenario_daily.py publish     # the day's slot (run-social-local.sh, ~13:05 IST)
+    python3 scenario_daily.py publish     # the day's slot (run-social-local.sh, ~20:05 IST)
     python3 scenario_daily.py status
 
 WHY THIS EXISTS (founder, 2026-09-23: "just make it fully automated now that we
