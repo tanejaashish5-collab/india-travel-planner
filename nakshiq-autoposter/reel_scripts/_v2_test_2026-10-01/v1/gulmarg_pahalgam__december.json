@@ -1,0 +1,36 @@
+{
+ "id": "gulmarg_pahalgam__december",
+ "status": "draft",
+ "brief": "v1",
+ "origin": "claude-opus writer, BRIEF v1, 2026-10-01",
+ "lang_en": "We had a week off in December.\nI wanted Pahalgam.\nShe wanted Gulmarg.\nNeither of us budged.\nSo she opened NakshIQ.\nAnd turned the phone to me.\nGulmarg in December. Ten out of ten.\nIts busiest month, too.\nPahalgam. Skip.\nGulmarg it was.\nFirst morning, her hand in my jacket pocket.\nI told her she was right.\nJust the once.\nTravel intelligence is an answer you can just show.\nNakshIQ.",
+ "lang_hi": "दिसंबर में हमारे पास एक हफ़्ते की छुट्टी थी।\nमुझे पहलगाम जाना था।\nउसे गुलमर्ग।\nदोनों में से कोई नहीं माना।\nतो उसने NakshIQ खोला।\nऔर फ़ोन मेरी तरफ़ घुमा दिया।\nदिसंबर में गुलमर्ग। दस में से दस।\nऔर सबसे भीड़ वाला महीना भी।\nपहलगाम। स्किप।\nतो गुलमर्ग तय हुआ।\nपहली सुबह, उसका हाथ मेरी जैकेट की जेब में।\nमैंने मान लिया कि वो सही थी।\nबस एक बार।\nट्रैवल इंटेलिजेंस मतलब, ऐसा जवाब जो बस दिखा दो।\nNakshIQ.",
+ "cover": {
+  "hook": "She said Gulmarg. |I said *Pahalgam*."
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "gulmarg",
+   "month": 12,
+   "label": "go",
+   "score10": 10
+  },
+  {
+   "kind": "month",
+   "slug": "pahalgam",
+   "month": 12,
+   "label": "skip",
+   "score10": 4
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Apartment living room, morning: the man and woman (late 20s) on a sofa, each holding a phone and shaking their head at the other, a half-smiling standoff.",
+  "s2: Close-up, same room: the woman taps her phone, screen glow on her face, the screen never visible to camera.",
+  "s3: She turns the phone toward him, screen out of focus; his stubborn look softens into a reluctant grin.",
+  "s4: Gulmarg, morning: the two step out of a wooden hotel door in winter jackets onto open mountain slopes, no one else in frame.",
+  "s5: Close-up: her gloved hand slips into his jacket pocket and his hand closes around it.",
+  "s6: Wide: the two stand side by side facing the Gulmarg mountains; he says something, she laughs and nudges his shoulder."
+ ]
+}

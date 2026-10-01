@@ -1,0 +1,43 @@
+{
+ "id": "leh__new_year",
+ "status": "draft",
+ "brief": "v2",
+ "origin": "claude-opus writer, BRIEF v2, 2026-10-01",
+ "structure": "B. THE NEAR MISS",
+ "lang_en": "Her thumb was on the pay button for Leh.\nTickets out on New Year's Day.\nThe hotel was already paid.\nI said, wait.\nShe said I always say wait.\nShe wasn't wrong.\nI held up NakshIQ: Leh, January, skip.\nTwo out of ten.\nManali, go. Eight out of ten, and not its busy month.\nWe lost the hotel money.\nLeft for Manali on New Year's Day.\nSometimes travel intelligence is just saying wait.\nNakshIQ.",
+ "lang_hi": "उसका अंगूठा लेह के पे बटन पर था।\nटिकटें नए साल वाले दिन की थीं।\nहोटल की पेमेंट पहले ही हो चुकी थी।\nमैंने कहा, रुको।\nवो बोली, तुम हमेशा रुको ही बोलते हो।\nग़लत भी नहीं थी।\nमैंने NakshIQ दिखाया: लेह, जनवरी, स्किप।\nदस में से दो।\nमनाली, गो। दस में से आठ, और भीड़ वाला महीना भी नहीं।\nहोटल का पैसा डूब गया।\nनए साल वाले दिन, हम मनाली के लिए निकल गए।\nकभी-कभी ट्रैवल इंटेलिजेंस का मतलब बस रुको कहना होता है।\nNakshIQ.",
+ "cover": {
+  "hook": "Her thumb was on the *pay button* | for Leh."
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "leh",
+   "month": 1,
+   "label": "skip",
+   "score10": 2
+  },
+  {
+   "kind": "month",
+   "slug": "manali",
+   "month": 1,
+   "label": "go",
+   "score10": 8
+  },
+  {
+   "kind": "crowd",
+   "slug": "manali",
+   "month": 1,
+   "is": "not_peak"
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Night, their living room. Close on her thumb hovering over her phone, screen away from camera; he sits beside her on the sofa. (covers lines 1-3)",
+  "s2: He puts his hand gently over her phone; she turns to him, exasperated, eyebrows raised. (covers lines 4-6)",
+  "s3: He holds up his own phone to her, screen away from camera; she reads it and her shoulders drop. (covers lines 7-8)",
+  "s4: She lowers her phone onto the cushion and presses her lips together; he rubs the back of his neck. (covers line 9)",
+  "s5: She shrugs, then gives him a small, reluctant smile and stands up. (covers line 10)",
+  "s6: At their front door, same night, bags packed; she pulls the door open and he follows her out. (covers lines 11-13)"
+ ]
+}

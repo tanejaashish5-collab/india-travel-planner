@@ -1,0 +1,37 @@
+{
+ "id": "gulmarg_pahalgam__december",
+ "status": "draft",
+ "brief": "v2",
+ "origin": "claude-opus writer, BRIEF v2, 2026-10-01",
+ "structure": "A. THE ARGUMENT",
+ "lang_en": "It was her turn to pick. I said no anyway.\nShe wanted Pahalgam. I wanted Gulmarg.\nShe said her turn, her call.\nI said not if it's wrong.\nDecember leave approved. Flights by Friday.\nNakshIQ, December: Gulmarg is a go.\nTen out of ten.\nPahalgam is a skip. Four out of ten.\nShe went quiet. Then said fine.\nShe booked Gulmarg herself.\nAnd took my next turn as payment.\nTravel intelligence doesn't care whose turn it is.\nNakshIQ.",
+ "lang_hi": "चुनने की बारी उसकी थी। मैंने फिर भी मना कर दिया।\nउसे पहलगाम चाहिए था। मुझे गुलमर्ग।\nउसने कहा, बारी मेरी, तो फ़ैसला भी मेरा।\nमैंने कहा, फ़ैसला ग़लत हो तो नहीं।\nदिसंबर की छुट्टी मंज़ूर थी। शुक्रवार तक फ़्लाइट बुक करनी थी।\nNakshIQ पर दिसंबर: गुलमर्ग, गो।\nदस में से दस।\nपहलगाम, स्किप। दस में से चार।\nवो चुप हो गई। फिर बोली, ठीक है।\nगुलमर्ग उसने ख़ुद बुक किया।\nऔर बदले में मेरी अगली बारी ले ली।\nट्रैवल इंटेलिजेंस को फ़र्क नहीं पड़ता कि बारी किसकी है।\nNakshIQ.",
+ "cover": {
+  "hook": "It was her turn to pick. | I said *no* anyway."
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "gulmarg",
+   "month": 12,
+   "label": "go",
+   "score10": 10
+  },
+  {
+   "kind": "month",
+   "slug": "pahalgam",
+   "month": 12,
+   "label": "skip",
+   "score10": 4
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Night, a small apartment living room. She sits cross-legged on the sofa with a laptop; he stands behind the sofa, arms folded, shaking his head. (covers lines 1-2)",
+  "s2: Close on her turning to face him, hand on her chest, firm; he leans on the sofa back, unmoved. (covers lines 3-4)",
+  "s3: He paces by the window, phone face down in his hand; she watches him, jaw set. (covers line 5)",
+  "s4: Both side by side on the sofa, faces lit by the laptop, its screen turned away from camera; his eyebrows lift, she goes still. (covers lines 6-8)",
+  "s5: Close on her: a long breath, a small nod, then she pulls the laptop onto her knees and types. (covers lines 9-10)",
+  "s6: She shuts the laptop, turns and taps his chest with a finger; he raises both hands in surrender, laughing. (covers lines 11-13)"
+ ]
+}

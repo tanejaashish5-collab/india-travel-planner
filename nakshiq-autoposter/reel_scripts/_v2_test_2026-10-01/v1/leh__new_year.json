@@ -1,0 +1,42 @@
+{
+ "id": "leh__new_year",
+ "status": "draft",
+ "brief": "v1",
+ "origin": "claude-opus writer, BRIEF v1, 2026-10-01",
+ "lang_en": "New Year in Leh. That was the plan.\nLeave approved. Flights in the cart.\nBefore paying, I opened NakshIQ.\nLeh in January. Skip.\nManali in January. Eight out of ten.\nAnd not its busiest month.\nI closed the tab.\nSame week off. Different mountains.\nNew Year's morning in Manali.\nHer first photo of the year?\nUs, wrapped in the same blanket.\nTravel intelligence is starting the year in the right place.\nNakshIQ.",
+ "lang_hi": "नया साल लेह में। यही प्लान था।\nछुट्टी मंज़ूर। फ़्लाइट बुक करने ही वाले थे।\nपेमेंट से पहले, मैंने NakshIQ खोला।\nजनवरी में लेह। स्किप।\nजनवरी में मनाली। दस में से आठ।\nऔर सबसे भीड़ वाला महीना भी नहीं।\nमैंने वो टैब बंद कर दिया।\nवही छुट्टी। बस पहाड़ दूसरे।\nनए साल की सुबह, मनाली में।\nसाल की उसकी पहली फ़ोटो?\nहम दोनों, एक ही कंबल में लिपटे हुए।\nट्रैवल इंटेलिजेंस मतलब, साल की शुरुआत सही जगह से।\nNakshIQ.",
+ "cover": {
+  "hook": "New Year in Leh? |We *almost* booked it."
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "leh",
+   "month": 1,
+   "label": "skip",
+   "score10": 2
+  },
+  {
+   "kind": "month",
+   "slug": "manali",
+   "month": 1,
+   "label": "go",
+   "score10": 8
+  },
+  {
+   "kind": "crowd",
+   "slug": "manali",
+   "month": 1,
+   "is": "not_peak"
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Apartment, morning: the man (late 20s) at a desk with a laptop, the woman (late 20s) leaning over his shoulder, a packed duffel bag by the door.",
+  "s2: Close-up: his hand pauses over the laptop; he checks his phone instead, screen glow on his face, the screen never visible.",
+  "s3: He shows her the phone; she reads and nods, and he closes the laptop.",
+  "s4: Manali, morning: the two step onto a wooden guesthouse balcony in winter jackets, mountains beyond, no one else in frame.",
+  "s5: Close-up: wrapped together in a thick wool blanket on the balcony, she holds her phone out for a selfie of the two of them, screen not visible.",
+  "s6: She lowers the phone and they both laugh; the camera drifts out to the mountain view."
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "id": "girnar__december",
+ "status": "draft",
+ "brief": "v2",
+ "origin": "claude-opus writer, BRIEF v2, 2026-10-01",
+ "structure": "C. THE BET",
+ "lang_en": "She called 10,000 steps an easy morning.\nI said she takes the lift at work.\nShe said loser carries both bags.\nI shook on it fast.\nShe booked it for December the same night.\nGirnar on NakshIQ: hard.\nFitness level: high.\nDecember, a go. Ten out of ten.\nShe said, they're just stairs.\nBy the top, she'd stopped talking.\nAnd she carried both bags. Up and down.\nHard means hard. That's travel intelligence.\nNakshIQ.",
+ "lang_hi": "उसने कहा, 10,000 सीढ़ियाँ तो बस सुबह की सैर है।\nमैंने कहा, ऑफ़िस में तो तुम लिफ़्ट लेती हो।\nवो बोली, जो हारेगा, दोनों बैग वही उठाएगा।\nमैंने झट से हाथ मिला लिया।\nउसी रात उसने दिसंबर की बुकिंग कर दी।\nNakshIQ पर गिरनार: मुश्किल।\nफ़िटनेस लेवल: हाई।\nदिसंबर में, गो। दस में से दस।\nवो बोली, सीढ़ियाँ ही तो हैं।\nऊपर पहुँचते-पहुँचते, उसकी बोलती बंद थी।\nऔर दोनों बैग उसी ने उठाए। ऊपर भी, नीचे भी।\nमुश्किल मतलब मुश्किल। यही ट्रैवल इंटेलिजेंस है।\nNakshIQ.",
+ "cover": {
+  "hook": "She called *10,000 steps* | an easy morning."
+ },
+ "facts": [
+  {
+   "kind": "trek",
+   "slug": "girnar",
+   "field": "difficulty",
+   "value": "hard"
+  },
+  {
+   "kind": "trek",
+   "slug": "girnar",
+   "field": "fitness_level",
+   "value": "high"
+  },
+  {
+   "kind": "month",
+   "slug": "girnar",
+   "month": 12,
+   "label": "go",
+   "score10": 10
+  }
+ ],
+ "allowed_numbers": [
+  "10,000"
+ ],
+ "shots": [
+  "s1: Morning, their apartment hallway. She ties her shoelaces, waving a hand like it is nothing; he leans on the doorframe, smirking. (covers lines 1-2)",
+  "s2: She points at two backpacks on the floor, then at him; he grabs her hand and shakes it fast. (covers lines 3-4)",
+  "s3: She taps her phone and turns it toward him, screen away from camera, triumphant. (covers line 5)",
+  "s4: He holds his phone out to her, screen away from camera; she glances, rolls her eyes and waves it off. (covers lines 6-9)",
+  "s5: Morning light on a long plain stone stairway outdoors, no signs or markers in frame: she climbs with a backpack on each shoulder, breathing hard, silent; he walks beside her, grinning. (covers lines 10-11)",
+  "s6: They sit on a stone step; she drops both backpacks at his feet, he laughs and hands her a water bottle. (covers lines 12-13)"
+ ]
+}

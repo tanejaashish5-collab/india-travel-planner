@@ -1,0 +1,37 @@
+{
+ "id": "tawang__december",
+ "status": "draft",
+ "brief": "v2",
+ "origin": "claude-opus writer, BRIEF v2, 2026-10-01",
+ "structure": "B. THE NEAR MISS",
+ "lang_en": "My boss signed my Tawang leave. Then I had to go back.\nDecember. Work handed over.\nMy out of office was ready.\nShe paused.\nAre we sure about December?\nI said it's signed. We're sure.\nNakshIQ's answer: Tawang in December, skip.\nTwo out of ten.\nNovember: go. Eight out of ten.\nNovember was next month.\nYour boss, your problem, she said.\nMy boss moved it to November.\nI owe him a weekend.\nA signed form isn't travel intelligence.\nNakshIQ.",
+ "lang_hi": "बॉस ने मेरी तवांग की छुट्टी साइन कर दी। फिर मुझे दोबारा उनके पास जाना पड़ा।\nदिसंबर। काम भी हैंडओवर हो चुका था।\nआउट ऑफ़ ऑफ़िस मेल भी तैयार था।\nवो रुक गई।\nदिसंबर पक्का ठीक है?\nमैंने कहा, छुट्टी साइन हो चुकी है। पक्का।\nNakshIQ का जवाब: दिसंबर में तवांग, स्किप।\nदस में से दो।\nनवंबर: गो। दस में से आठ।\nनवंबर तो अगला ही महीना था।\nवो बोली, बॉस तुम्हारे, प्रॉब्लम भी तुम्हारी।\nबॉस ने छुट्टी नवंबर में कर दी।\nबदले में, एक वीकेंड उनका उधार है।\nसाइन किया हुआ फ़ॉर्म, ट्रैवल इंटेलिजेंस नहीं होता।\nNakshIQ.",
+ "cover": {
+  "hook": "My boss signed my Tawang leave. | Then I *had to go back*."
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "tawang",
+   "month": 12,
+   "label": "skip",
+   "score10": 2
+  },
+  {
+   "kind": "month",
+   "slug": "tawang",
+   "month": 11,
+   "label": "go",
+   "score10": 8
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Evening, their living room. He walks in holding a folded sheet of paper up like a trophy; she sits on the sofa with a laptop. (covers lines 1-2)",
+  "s2: He drops onto the sofa beside her and snaps his own laptop shut with a satisfied nod; her hand stops above her trackpad. (covers lines 3-4)",
+  "s3: She turns to him, unsure; he waves the folded paper, confident. (covers lines 5-6)",
+  "s4: Both look at her laptop, screen turned away from camera; his smile drops. (covers lines 7-10)",
+  "s5: She holds out his phone and points at the balcony door, eyebrows raised; he takes it, defeated. (covers line 11)",
+  "s6: On the balcony, same evening, he paces with the phone to his ear, then nods slowly; behind the glass door she watches, grinning. (covers lines 12-15)"
+ ]
+}

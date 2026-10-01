@@ -1,0 +1,62 @@
+[
+ {
+  "id": "gulmarg_pahalgam__december",
+  "strongest_line": "I told her she was right. / Just the once.",
+  "weakest_line": "Its busiest month, so we booked early.",
+  "fixes": [
+   "1. 'Its busiest month, so we booked early' invents a causal story beat the fact doesn't support — the fact only says Gulmarg's December is its peak crowd month, nothing about when they booked. Keep the fact, cut the invented consequence: let it stand alone as 'Its busiest month, too.'",
+   "2. Hindi 'भीड़ का पीक महीना था' leans on the English loanword 'पीक' where a plainer, more natural phrase already exists — use 'सबसे भीड़ वाला महीना था' (also keeps phrasing consistent with the Manali/Kasol sibling script, which uses this exact wording).",
+   "3. The closing line ('ends the argument before the trip begins') lands on almost the same idea as the Manali/Kasol script's closing line ('turns a debate into a booking') — both are ARGUMENT-structure scripts likely to post close together. Anchor this one to the specific image already in the script (her turning the phone to him) instead of the generic argument-resolution frame."
+  ]
+ },
+ {
+  "id": "manali_kasol__december",
+  "strongest_line": "She read it again, slowly.",
+  "weakest_line": "So we sorted our stay first.",
+  "fixes": [
+   "1. 'So we sorted our stay first' invents a logistics beat (booking accommodation) that isn't in the given facts — the facts give only a month go/skip score and a crowd fact, nothing about staying arrangements. Cut it; let 'December was Manali's busiest month' stand alone.",
+   "2. The stake in lines 1-2 ('We both got December leave. / Then the argument started.') never names a destination — unlike every house example and four of the five sibling scripts, which get a place name into line 1 or 2. Pull 'Kasol'/'Manali' into the opener so the personal stake is concrete immediately, not generic.",
+   "3. The closing line ('turns a debate into a booking') duplicates the Gulmarg/Pahalgam script's closing idea ('ends the argument before the trip begins'). Differentiate using this story's own image (the stolen scarf, the quiet week) rather than the shared argument-resolution frame."
+  ]
+ },
+ {
+  "id": "tawang__december",
+  "strongest_line": "She said, check NakshIQ first.",
+  "weakest_line": "November came fast.",
+  "fixes": [
+   "1. 'November came fast' is a generic, almost stock time-skip line that does no story-specific work. Replace with a beat concrete to this trip (something packed, something circled) rather than a transition cliché.",
+   "2. Hindi 'तवांग, आख़िरकार हमारे सामने।' drops the verb and reads like a clipped translation, not something a speaker would say — reorder and restore it: 'और आख़िरकार तवांग हमारे सामने था।'",
+   "3. 'That meant going a month sooner' is the narrator explaining the math rather than 'saying what happened' (the brief's own rule). Tighten to a flatter fragment that shows the action instead of interpreting it, e.g. 'A month sooner, then,' folded into the booking beat."
+  ]
+ },
+ {
+  "id": "leh__new_year",
+  "strongest_line": "Leave approved. Flights in the cart.",
+  "weakest_line": "So we switched.",
+  "fixes": [
+   "1. The resolution shape (a near-miss destination swapped for a cozy Manali payoff) tracks the brief's own Example 2 (Spiti to Manali, cold air/hot chai) very closely, down to landing on the same destination. Differentiate the emotional payoff so this doesn't read as a reskin of the reference script.",
+   "2. Hindi 'फ़्लाइट्स कार्ट में' is a literal transplant of a checkout-UI term nobody says aloud — use natural spoken phrasing instead: 'फ़्लाइट बुक करने ही वाले थे।'",
+   "3. Hindi 'भीड़ का पीक महीना भी नहीं' → 'सबसे भीड़ वाला महीना भी नहीं' for naturalness and to match the phrasing already used in the Manali/Kasol sibling script."
+  ]
+ },
+ {
+  "id": "brahmatal__december",
+  "strongest_line": "On the trail, her red beanie bobbing just ahead.",
+  "weakest_line": "It starts from Auli.",
+  "fixes": [
+   "1. Two lines run well past the brief's 3-6-word rhythm ('I said winter would be too hard for us' and the strongest line itself, 'On the trail, her red beanie bobbing just ahead', both 9 words) — this is exactly the over-length pattern the founder flagged on 2026-09-26. Split each into two fragments, e.g. 'I said winter. / Too hard for us.'",
+   "2. Score clarity: 'December there? Ten out of ten' — 'there' is ambiguous since the trek is Brahmatal but the scored place in the data is Auli. Say 'December in Auli? Ten out of ten' so the listener can't misread which place the 10/10 belongs to.",
+   "3. 'It starts from Auli' is a dry, purely functional exposition line, the flattest in the script — fold it into the preceding line ('She found the Brahmatal trek on NakshIQ, from Auli') instead of running two low-content lines back to back."
+  ]
+ },
+ {
+  "id": "girnar__december",
+  "strongest_line": "I stopped laughing.",
+  "weakest_line": "I bet her 10,000 steps was an easy morning.",
+  "fixes": [
+   "1. This line runs 9 words against the brief's 3-6-word rhythm (as does 'Her hand, pulling me up the next step' at 8). Split both, e.g. 'I bet her. / 10,000 steps, an easy morning' and 'Her hand. / Pulling me up the next step.'",
+   "2. Hindi closing line 'चढ़ने से पहले चढ़ाई को जानना' repeats the चढ़/चढ़ाई root back to back and reads as a translated pun rather than something a speaker would actually say — rework to plain phrasing without the repeated root.",
+   "3. The closing insight ('knows the climb before you do') lands on the same 'know your own capability' idea as Brahmatal's closing line ('knowing what you can actually do') — both are BET-structure scripts likely to post close together. Sharpen this one to the stairs/steps training specifically, rather than the generic self-knowledge angle used next door."
+  ]
+ }
+]

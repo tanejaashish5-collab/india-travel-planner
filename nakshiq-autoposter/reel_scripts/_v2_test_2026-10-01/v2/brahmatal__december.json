@@ -1,0 +1,35 @@
+{
+ "id": "brahmatal__december",
+ "status": "draft",
+ "brief": "v2",
+ "origin": "claude-opus writer, BRIEF v2, 2026-10-01",
+ "structure": "C. THE BET",
+ "lang_en": "I bet her we'd turn back on a Himalayan trek.\nLoser does the dishes till March.\nShe called it an excuse.\nI said we drive to the corner shop.\nWe shook on it. The trek: Brahmatal.\nNakshIQ took her side: Brahmatal, easy.\nFitness level: easy.\nI said, easy for who?\nShe led the whole way.\nNobody turned back.\nI've been doing the dishes since.\nTravel intelligence settles the bet at home.\nNakshIQ.",
+ "lang_hi": "मैंने उससे शर्त लगाई कि हिमालय के ट्रेक से हम बीच रास्ते लौट आएँगे।\nहारने वाला मार्च तक बर्तन धोएगा।\nउसने कहा, ये बस बहाना है।\nमैंने कहा, हम तो नुक्कड़ की दुकान तक गाड़ी से जाते हैं।\nहाथ मिलाया। ट्रेक: ब्रह्मताल।\nNakshIQ ने उसका साथ दिया: ब्रह्मताल, आसान।\nफ़िटनेस लेवल: आसान।\nमैंने कहा, आसान किसके लिए?\nपूरे रास्ते वो आगे रही।\nकोई नहीं लौटा।\nतब से बर्तन मैं ही धो रहा हूँ।\nट्रैवल इंटेलिजेंस, शर्त घर पर ही निपटा देती है।\nNakshIQ.",
+ "cover": {
+  "hook": "I bet her we'd *turn back* | on a Himalayan trek."
+ },
+ "facts": [
+  {
+   "kind": "trek",
+   "slug": "auli",
+   "field": "difficulty",
+   "value": "easy"
+  },
+  {
+   "kind": "trek",
+   "slug": "auli",
+   "field": "fitness_level",
+   "value": "easy"
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Daytime, a small kitchen. He points at a sink full of dishes; she laughs, arms crossed. (covers lines 1-2)",
+  "s2: She jabs a finger at his chest; he shrugs and mimes turning a steering wheel. (covers lines 3-4)",
+  "s3: They shake hands over the kitchen counter, both grinning, neither letting go. (covers line 5)",
+  "s4: She holds her phone up to his face, screen away from camera, triumphant; he squints and shrugs. (covers lines 6-8)",
+  "s5: Daylight on a hiking trail: she walks ahead with trekking poles, glances back and waves him on; he follows, smiling despite himself. (covers lines 9-10)",
+  "s6: Back in the kitchen, he stands at the sink washing a plate; she leans on the counter beside him, grinning. (covers lines 11-13)"
+ ]
+}

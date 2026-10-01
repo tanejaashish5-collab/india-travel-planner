@@ -1,0 +1,43 @@
+{
+ "id": "girnar__december",
+ "status": "draft",
+ "brief": "v1",
+ "origin": "claude-opus writer, BRIEF v1, 2026-10-01",
+ "lang_en": "Girnar was on our December trip.\nI bet her 10,000 steps\nwas an easy morning.\nShe pulled it up on NakshIQ.\nDifficulty, hard.\nFitness level, high.\nI stopped laughing.\nBut December? Ten out of ten.\nSo we didn't cancel. We trained.\nOur building's stairs, every morning.\nHer hand in mine.\nPulling me up the next step.\nI lost the bet. We still made it.\nTravel intelligence tells you which climbs to train for.\nNakshIQ.",
+ "lang_hi": "हमारी दिसंबर ट्रिप में गिरनार भी था।\nमैंने शर्त लगाई, 10,000 सीढ़ियाँ\nतो सुबह का खेल हैं।\nउसने NakshIQ पर गिरनार खोला।\nट्रेक, मुश्किल।\nफ़िटनेस लेवल, हाई।\nमेरी हँसी रुक गई।\nपर दिसंबर? दस में से दस।\nतो हमने कैंसल नहीं किया। तैयारी की।\nहर सुबह, अपनी बिल्डिंग की सीढ़ियाँ।\nउसका हाथ मेरे हाथ में।\nमुझे अगली सीढ़ी पर खींचता हुआ।\nमैं शर्त हार गया। पर हम पहुँच गए।\nट्रैवल इंटेलिजेंस मतलब, पता होना कि किस चढ़ाई के लिए तैयारी चाहिए।\nNakshIQ.",
+ "cover": {
+  "hook": "I bet *10,000 steps* |was an easy morning."
+ },
+ "facts": [
+  {
+   "kind": "trek",
+   "slug": "girnar",
+   "field": "difficulty",
+   "value": "hard"
+  },
+  {
+   "kind": "trek",
+   "slug": "girnar",
+   "field": "fitness_level",
+   "value": "high"
+  },
+  {
+   "kind": "month",
+   "slug": "girnar",
+   "month": 12,
+   "label": "go",
+   "score10": 10
+  }
+ ],
+ "allowed_numbers": [
+  "10,000"
+ ],
+ "shots": [
+  "s1: Apartment, morning: the man (late 20s) laughs and holds out his hand for a bet; the woman (late 20s) shakes it with a raised eyebrow.",
+  "s2: Close-up: she turns her phone toward him, screen glow on his face, the screen never visible; his grin fades.",
+  "s3: Apartment building stairwell, morning: the two climb concrete stairs in workout clothes, her a step ahead, him breathing hard.",
+  "s4: Girnar, morning: from behind, the two start up a long stone stairway on a hill in Gujarat, no one else on the steps.",
+  "s5: Close-up on the stone steps: her hand grips his and pulls him up the next step; both breathe hard and smile.",
+  "s6: Higher up the stairway, the two sit on a step catching their breath; he raises his hands in surrender and she laughs."
+ ]
+}

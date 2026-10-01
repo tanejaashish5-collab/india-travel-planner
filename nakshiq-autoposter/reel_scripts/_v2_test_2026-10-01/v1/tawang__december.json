@@ -1,0 +1,36 @@
+{
+ "id": "tawang__december",
+ "status": "draft",
+ "brief": "v1",
+ "origin": "claude-opus writer, BRIEF v1, 2026-10-01",
+ "lang_en": "Tawang had been on our list for years.\nWe'd finally picked December.\nI was about to pay.\nShe said, check NakshIQ first.\nTawang in December. Skip.\nNovember. Eight out of ten.\nTawang's busiest month, too.\nA month sooner, then. We booked November.\nShe circled it on our calendar.\nAnd then we were standing in Tawang.\nHer camera clicking, again and again.\nTravel intelligence sometimes means going sooner, not later.\nNakshIQ.",
+ "lang_hi": "तवांग सालों से हमारी लिस्ट में था।\nआख़िरकार दिसंबर फ़ाइनल हुआ था।\nमैं पेमेंट करने ही वाला था।\nउसने कहा, पहले NakshIQ देख लो।\nदिसंबर में तवांग। स्किप।\nनवंबर। दस में से आठ।\nऔर तवांग का सबसे भीड़ वाला महीना भी।\nयानी एक महीना पहले। हमने नवंबर बुक किया।\nउसने कैलेंडर पर नवंबर पर गोला बना दिया।\nऔर फिर हम तवांग में खड़े थे।\nउसका कैमरा, बार-बार क्लिक करता हुआ।\nट्रैवल इंटेलिजेंस का मतलब, कभी-कभी देर नहीं, जल्दी जाना।\nNakshIQ.",
+ "cover": {
+  "hook": "We almost booked Tawang |in the *wrong month*."
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "tawang",
+   "month": 12,
+   "label": "skip",
+   "score10": 2
+  },
+  {
+   "kind": "month",
+   "slug": "tawang",
+   "month": 11,
+   "label": "go",
+   "score10": 8
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Apartment, morning: the man (late 20s) at a laptop with his wallet out, about to pay, screen not visible.",
+  "s2: The woman (late 20s) rests her hand on his and holds up her phone; he stops.",
+  "s3: Close-up: both read her phone, screen glow on their faces, the screen never visible; he nods and closes the laptop.",
+  "s4: Tawang, morning: the two in warm jackets on a hillside road looking out over the town and the mountains, no one else in frame.",
+  "s5: Close-up: the woman raises her camera and shoots, the shutter clicking again and again.",
+  "s6: The two side by side; she shows him a photo on the camera's back screen, he smiles and puts an arm around her."
+ ]
+}

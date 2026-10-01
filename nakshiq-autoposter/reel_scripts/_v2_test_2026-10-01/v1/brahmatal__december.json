@@ -1,0 +1,34 @@
+{
+ "id": "brahmatal__december",
+ "status": "draft",
+ "brief": "v1",
+ "origin": "claude-opus writer, BRIEF v1, 2026-10-01",
+ "lang_en": "Our leave was booked.\nShe wanted our first Himalayan trek.\nI said we weren't ready.\nSo we made a bet.\nLoser buys dinner.\nShe found the Brahmatal trek on NakshIQ.\nDifficulty, easy.\nFitness level, easy.\nI had nothing left to argue.\nOn the trail, her red beanie\nbobbing just ahead of me.\nThat night, I bought dinner.\nTravel intelligence knows you're more ready than you think.\nNakshIQ.",
+ "lang_hi": "छुट्टी बुक हो चुकी थी।\nउसे हिमालय में हमारा पहला ट्रेक करना था।\nमैंने कहा, हम अभी तैयार नहीं हैं।\nतो हमने शर्त लगा ली।\nहारने वाला डिनर खिलाएगा।\nउसने NakshIQ पर ब्रह्मताल ट्रेक ढूँढा।\nट्रेक, आसान।\nफ़िटनेस लेवल भी, आसान।\nमेरे पास कहने को कुछ नहीं बचा।\nट्रेल पर, उसकी लाल टोपी,\nबस कुछ कदम आगे, उछलती हुई।\nउस रात, डिनर मैंने खिलाया।\nट्रैवल इंटेलिजेंस मतलब, ये जानना कि आप सोच से ज़्यादा तैयार हैं।\nNakshIQ.",
+ "cover": {
+  "hook": "I bet this trek |was *beyond us*."
+ },
+ "facts": [
+  {
+   "kind": "trek",
+   "slug": "auli",
+   "field": "difficulty",
+   "value": "easy"
+  },
+  {
+   "kind": "trek",
+   "slug": "auli",
+   "field": "fitness_level",
+   "value": "easy"
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Apartment, morning: the woman (late 20s) shows the man (late 20s) something on her laptop, screen not visible; he shakes his head, grinning, and they shake hands on a bet.",
+  "s2: Close-up: she scrolls her phone, screen glow on her face, the screen never visible, then turns it to him with a raised eyebrow.",
+  "s3: At the start of the Brahmatal trail, morning: the two in warm jackets with trekking poles, no one else around.",
+  "s4: On the Brahmatal trail, from behind the man: the woman in a red beanie walks a few steps ahead, the beanie bobbing.",
+  "s5: Close-up: she looks back at him and laughs; he smiles and lifts his hands in surrender.",
+  "s6: Wide: the two walk on together along the trail, small against the mountains, same morning light."
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "manali_kasol__december",
+ "status": "draft",
+ "brief": "v2",
+ "origin": "claude-opus writer, BRIEF v2, 2026-10-01",
+ "structure": "A. THE ARGUMENT",
+ "lang_en": "I laughed when she said Manali.\nToo obvious, I said. Kasol was cooler.\nI'd told my friends: Kasol, December.\nShe'd told hers: Manali.\nOur friends started taking sides.\nSomebody was going to look silly.\nNakshIQ ended it: Manali, December, go.\nEight out of ten.\nKasol, skip. Four out of ten.\nI told our friends I was wrong.\nManali it was. Its busiest month, too.\nShe still calls it the cooler pick.\nTravel intelligence is checking before you laugh.\nNakshIQ.",
+ "lang_hi": "उसने मनाली कहा, तो मैं हँस पड़ा।\nबहुत कॉमन है, मैंने कहा। कसोल ज़्यादा कूल है।\nमैं दोस्तों को बोल भी चुका था: कसोल, दिसंबर।\nवो अपनी सहेलियों को बोल चुकी थी: मनाली।\nदोस्त भी साइड लेने लगे।\nकिसी एक का मज़ाक बनना तय था।\nNakshIQ ने बात ख़त्म कर दी: मनाली, दिसंबर, गो।\nदस में से आठ।\nकसोल, स्किप। दस में से चार।\nदोस्तों को मैंने ख़ुद बताया कि मैं ग़लत था।\nमनाली ही गए। वो भी उसके सबसे भीड़ वाले महीने में।\nवो आज भी कहती है, कूल पिक तो मनाली ही थी।\nट्रैवल इंटेलिजेंस मतलब, हँसने से पहले चेक करना।\nNakshIQ.",
+ "cover": {
+  "hook": "I *laughed* when | she said Manali."
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "manali",
+   "month": 12,
+   "label": "go",
+   "score10": 8
+  },
+  {
+   "kind": "month",
+   "slug": "kasol",
+   "month": 12,
+   "label": "skip",
+   "score10": 4
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Evening, an apartment balcony. She holds out her phone, screen away from camera; he throws his head back, laughing. (covers lines 1-2)",
+  "s2: They stand at opposite ends of the balcony, each typing fast on a phone, not looking at each other. (covers lines 3-4)",
+  "s3: Both phones keep buzzing; she smirks at hers, he frowns at his. (covers lines 5-6)",
+  "s4: Shoulder to shoulder over his phone, screen turned away from camera; his grin fades, she straightens up. (covers lines 7-9)",
+  "s5: He stands alone at the railing, phone to his ear, rubbing his forehead as he talks. (covers line 10)",
+  "s6: Their bedroom, same evening, two bags half packed on the bed; she tosses him a folded shirt, grinning, and he catches it and shakes his head. (covers lines 11-14)"
+ ]
+}

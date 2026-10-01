@@ -1,0 +1,74 @@
+[
+ {
+  "id": "gulmarg_pahalgam__december",
+  "scores": {"R1": 2, "R2": 2, "R3": 2, "R4": 2, "R5": 2, "R6": 2, "R7": 1, "R8": 2, "R9": 1, "R10": 2},
+  "total": 18,
+  "verdict": "PASS",
+  "weakest_line": "Pahalgam is a skip. Four.",
+  "fixes": [
+   "1. Line 8 'Pahalgam is a skip. Four.' drops the scale after fully stating it for Gulmarg two lines earlier ('Ten out of ten'). Say 'Pahalgam is a skip. Four out of ten.' so a listener can't mishear a bare number.",
+   "2. Mirror the fix in Hindi line 8: 'पहलगाम, स्किप। चार।' -> 'पहलगाम, स्किप। दस में से चार।'"
+  ],
+  "notes": "R7=1: 'Pahalgam is a skip. Four.' is over-chopped to the point of ambiguity -- it breaks the parallel structure set by 'Ten out of ten' for Gulmarg, and a bare one-word number is exactly the kind of score a listener can misread or mishear. R9=1: the Hindi carries the identical flaw -- 'पहलगाम, स्किप। चार।' -- a bare 'चार' with no 'दस में से' anchor, inconsistent with 'दस में से दस' said in full for Gulmarg two lines earlier. All other lines in both languages are natural and the escalation (whose-turn authority clash -> deadline: 'December leave approved. Flights by Friday.') is real, so this is otherwise a strong script."
+ },
+ {
+  "id": "manali_kasol__december",
+  "scores": {"R1": 2, "R2": 2, "R3": 2, "R4": 2, "R5": 2, "R6": 2, "R7": 1, "R8": 2, "R9": 1, "R10": 2},
+  "total": 18,
+  "verdict": "PASS",
+  "weakest_line": "Kasol, skip. Four.",
+  "fixes": [
+   "1. Line 9 'Kasol, skip. Four.' should state the scale: 'Kasol, skip. Four out of ten.' -- it currently sits right after 'Eight out of ten' said in full for Manali, so the bare 'Four' reads/sounds like a dropped word, not a score.",
+   "2. Mirror the fix in Hindi line 9: 'कसोल, स्किप। चार।' -> 'कसोल, स्किप। दस में से चार।'"
+  ],
+  "notes": "R7=1 and R9=1 both rest on the same bare-number line: 'Kasol, skip. Four.' / 'कसोल, स्किप। चार।' -- a listener who just heard the full 'Eight out of ten' / 'दस में से आठ' for Manali has no scale to anchor the lone 'Four' / 'चार' to. Everything else here is genuinely strong: the friends-taking-sides escalation (R2) is the most developed of the six scripts, the payoff gives her the last word ('She still calls it the cooler pick'), and the Hindi elsewhere is natural and well code-switched ('सहेलियों' distinguishing her friends from his is a nice native touch)."
+ },
+ {
+  "id": "tawang__december",
+  "scores": {"R1": 2, "R2": 2, "R3": 2, "R4": 1, "R5": 2, "R6": 2, "R7": 1, "R8": 2, "R9": 2, "R10": 2},
+  "total": 18,
+  "verdict": "PASS",
+  "weakest_line": "He moved it to November.",
+  "fixes": [
+   "1. 'He moved it to November.' leaves 'he' resolvable only by recalling 'my boss' from line 1, ten lines earlier, right after 'she' was the most recent third person on screen. Say 'My boss moved it to November.' to remove the ambiguity.",
+   "2. Her only two lines ('She paused. / Are we sure about December?') land in the first third of the script and she never speaks again -- the resolution runs entirely between 'I' and the boss. Give her one beat after the reveal (a line, not just the silent knee-pat in shot s6) so the two-person dynamic carries through the payoff like it does in the other five scripts."
+  ],
+  "notes": "R4=1: 'She paused. / Are we sure about December?' is her entire spoken contribution; lines 10-15 (the back half -- going back, the boss moving the leave, owing him a weekend) involve only the narrator and the unseen boss. She returns only visually in shot s6, not in the VO, which is thinner than every other script's two-person arc. R7=1: 'He moved it to November.' is ambiguous on first listen in English -- quoted above. Hindi (R9=2) actually resolves this better than the English: it uses the respectful plural 'उन्होंने' for the boss, distinct from the singular 'वो' used for the partner, so a native Hindi listener disambiguates the referent that an English listener can't."
+ },
+ {
+  "id": "leh__new_year",
+  "scores": {"R1": 2, "R2": 2, "R3": 2, "R4": 2, "R5": 2, "R6": 2, "R7": 2, "R8": 2, "R9": 2, "R10": 2},
+  "total": 20,
+  "verdict": "PASS",
+  "weakest_line": "Not its busy month, either.",
+  "fixes": [
+   "1. 'Not its busy month, either.' is the one line that reads as a spec sheet rather than speech -- fold it into the prior line for rhythm, e.g. 'Manali, go. Eight out of ten, not even its busy month.' and cut the standalone sentence.",
+   "2. Minor shoot note: shots s1 and s3 each put a phone screen toward a character ('screen away from camera' is specified both times, correctly) -- worth a reminder on set since two separate device-reveal shots doubles the chance one slips into frame."
+  ],
+  "notes": "No score below 2. Clean escalation (ticket date -> sunk hotel cost -> the relational pattern 'I always say wait' plus her own 'She wasn't wrong'), the crowd fact is correctly attached to Manali and not Leh, and the Hindi ('लेह के पे बटन पर' as 'the pay button for Leh') is a normal spoken-Hindi possessive, not a translation artifact. 'Not its busy month, either.' is the single flattest line but doesn't cost a point on its own."
+ },
+ {
+  "id": "brahmatal__december",
+  "scores": {"R1": 2, "R2": 2, "R3": 2, "R4": 2, "R5": 2, "R6": 2, "R7": 2, "R8": 2, "R9": 1, "R10": 2},
+  "total": 19,
+  "verdict": "PASS",
+  "weakest_line": "मैंने उससे शर्त लगाई, हिमालय के ट्रेक से हम बीच रास्ते लौट आएँगे।",
+  "fixes": [
+   "1. Add the connective 'कि' that spoken Hindi wants here: 'मैंने उससे शर्त लगाई कि हिमालय के ट्रेक से हम बीच रास्ते लौट आएँगे।' -- as written it reads like a translated sentence rather than something a person would say aloud.",
+   "2. The trek/location dual-naming (Brahmatal for the trek, Auli for the month verdict) is correct per the data but worth a line of context for the voice actor, since the switch from 'Brahmatal' to 'Auli' happens inside two consecutive lines with no explicit link."
+  ],
+  "notes": "R9=1: the opening Hindi line ('मैंने उससे शर्त लगाई, हिमालय के ट्रेक से हम बीच रास्ते लौट आएँगे।') is the one stiff, literal-sounding line in the whole set of six scripts -- missing the 'कि' a native speaker would use, it reads as translated English rather than spoken Hindi. Everything else in this script is strong: the bet frame is a real escalation (stakes, her accusation, the handshake), the fact attribution (Brahmatal's difficulty/fitness vs. Auli's month score) correctly mirrors how the assignment itself splits the two names, and 'easy for who?' into 'she led the whole way' is a clean, earned payoff."
+ },
+ {
+  "id": "girnar__december",
+  "scores": {"R1": 2, "R2": 2, "R3": 2, "R4": 2, "R5": 2, "R6": 2, "R7": 2, "R8": 2, "R9": 2, "R10": 2},
+  "total": 20,
+  "verdict": "PASS",
+  "weakest_line": "We went in December.",
+  "fixes": [
+   "1. 'We went in December.' is pure connective tissue with no color or tension -- tighten by merging it into the surrounding beat, e.g. drop it and let 'By the top, she'd stopped talking' carry the month implicitly.",
+   "2. Minor shoot note: shot s5 shows her carrying 'a backpack on each shoulder' on an outdoor stone stairway -- confirm the location has no trail signage, step-count markers or other visible text in frame, since the whole joke rests on the '10,000 steps' number living only in the VO."
+  ],
+  "notes": "No score below 2. The hard/high fitness claims and the December go/10-out-of-10 verdict are correctly attributed to Girnar throughout, the only allowed number ('10,000') is used exactly as licensed, the bet frame is the clearest escalation of the six (mockery -> stakes -> same-night booking), and the Hindi idiom 'बोलती बंद थी' for 'stopped talking' is better than a literal rendering would be. 'We went in December.' is the flattest line but not a scoring issue."
+ }
+]

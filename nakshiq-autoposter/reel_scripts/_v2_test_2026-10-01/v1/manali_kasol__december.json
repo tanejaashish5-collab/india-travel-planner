@@ -1,0 +1,36 @@
+{
+ "id": "manali_kasol__december",
+ "status": "draft",
+ "brief": "v1",
+ "origin": "claude-opus writer, BRIEF v1, 2026-10-01",
+ "lang_en": "We both got leave for December.\nShe wanted Kasol. I wanted Manali.\nWe argued for days.\nSo we settled it on NakshIQ.\nManali, December. Eight out of ten.\nAnd its busiest month.\nKasol, December. Skip.\nShe read it again, slowly.\nThen she started packing for Manali.\nIn Manali, she stole my scarf.\nOur only fight all week.\nTravel intelligence settles the big stuff before you leave.\nNakshIQ.",
+ "lang_hi": "हम दोनों को दिसंबर की छुट्टी मिल गई।\nउसे कसोल जाना था। मुझे मनाली।\nकई दिन बहस चली।\nतो हमने NakshIQ पर फ़ैसला किया।\nमनाली, दिसंबर। दस में से आठ।\nऔर सबसे भीड़ वाला महीना भी।\nकसोल, दिसंबर। स्किप।\nउसने दोबारा पढ़ा, आराम से।\nफिर मनाली के लिए पैकिंग शुरू कर दी।\nमनाली में, उसने मेरा मफ़लर चुरा लिया।\nपूरे हफ़्ते बस यही एक झगड़ा हुआ।\nट्रैवल इंटेलिजेंस मतलब, बड़े फ़ैसले निकलने से पहले ही तय।\nNakshIQ.",
+ "cover": {
+  "hook": "Kasol or Manali |this *December*?"
+ },
+ "facts": [
+  {
+   "kind": "month",
+   "slug": "manali",
+   "month": 12,
+   "label": "go",
+   "score10": 8
+  },
+  {
+   "kind": "month",
+   "slug": "kasol",
+   "month": 12,
+   "label": "skip",
+   "score10": 4
+  }
+ ],
+ "allowed_numbers": [],
+ "shots": [
+  "s1: Apartment, evening: the man and woman (late 20s) at a dining table, each pointing at their own laptop, arguing playfully, screens not visible.",
+  "s2: Close-up: the man holds his phone between them and both lean in, screen glow on their faces, the screen never visible.",
+  "s3: The woman takes the phone, reads it again slowly, shrugs, and starts folding sweaters into a backpack.",
+  "s4: Manali, evening: the two walk down a hillside lane in winter jackets, warm lights in the windows, no one else in frame.",
+  "s5: Close-up: she tugs the scarf from his neck and wraps it around her own, grinning, while he pretends to protest.",
+  "s6: A guesthouse balcony in Manali, same evening: the two sit close, her head on his shoulder, both relaxed."
+ ]
+}
