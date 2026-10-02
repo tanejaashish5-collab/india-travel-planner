@@ -25887,3 +25887,35 @@ Date range: 2026-04-15 → 2026-10-01
 2026-10-03 00:37:58  INFO          Uploading to R2 (timeout=300s)...
 2026-10-03 00:38:19  INFO          R2 PUT OK. Confirming...
 2026-10-03 00:38:21  INFO          Media ready: m8B1b (45,048,859 bytes · amritsar__eatery__en.mp4)
+2026-10-02 19:26:59  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-02 19:26:59  INFO      ════════════════════════════════════════════════════════════
+2026-10-02 19:26:59  INFO      Nakshiq Autoposter · EVENING · 2026-10-02 · weekday=4
+2026-10-02 19:26:59  INFO      ════════════════════════════════════════════════════════════
+2026-10-02 19:26:59  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-02 19:27:41  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-02 19:27:41  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-10-02 19:27:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-02 19:27:44  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-02 19:27:44  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-02 19:27:59  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-02 19:27:59  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:moment, pillar:scenario_eatery, pillar:scenario_month_later seen <2d)
+2026-10-02 19:27:59  INFO      Evening format (balance→anti_trap): v2_myth_bust_oneline [0% vs target 15%] (0/15 never featured)
+2026-10-02 19:27:59  INFO      Formats — IG: v2_myth_bust_oneline  ·  FB: v2_myth_bust_oneline  ·  Story: reality_check  ·  Audience: adventurers
+2026-10-02 19:27:59  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 33
+2026-10-02 19:27:59  INFO      Audience filter 'adventurers' → 4 destinations match.
+2026-10-02 19:27:59  INFO      Fingerprint dedup snapshot — 29 dests in 7d · 81 (dest,fmt) pairs in 30d · 215 media in 60d
+2026-10-02 19:28:00  INFO      Shared best destination locked: Dzukou Valley
+2026-10-02 19:28:00  INFO      [facebook/Nakshiq] Generating v2_myth_bust_oneline post...
+2026-10-02 19:28:00  INFO      v2_myth_bust_oneline: tawang has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-02 19:28:00  INFO      [facebook/Nakshiq] Caption ready (504 chars, dest=pahalgam)
+2026-10-02 19:28:02  INFO      [facebook/Nakshiq] CSV video format (v2_myth_bust_oneline) — using dest Ken Burns clip as fallback
+2026-10-02 19:28:02  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260915
+2026-10-02 19:28:05  INFO          Brand-stamp applied: pahalgam.mp4 (11,691,764 → 5,895,696 bytes)
+2026-10-02 19:28:05  INFO          Requesting upload URL for pahalgam.mp4 (5,895,696 bytes, video/mp4)
+2026-10-02 19:28:06  INFO          Uploading to R2 (timeout=300s)...
+2026-10-02 19:28:07  INFO          R2 PUT OK. Confirming...
+2026-10-02 19:28:09  INFO          Media ready: elJuG (5,895,696 bytes · pahalgam.mp4)
+2026-10-02 19:28:09  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-02 19:28:32  INFO      [facebook/Nakshiq] ✅ Published · Outstand=SwiRp · Platform=2607124559728054
+2026-10-02 19:28:32  INFO      State saved. Run complete.
+2026-10-02 19:28:32  INFO      ════════════════════════════════════════════════════════════
