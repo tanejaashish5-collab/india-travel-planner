@@ -309,6 +309,45 @@ def ready(spec: dict) -> bool:
     return all((CLIPS / clip_name(spec, s["id"])).exists() for s in spec["shots"])
 
 
+# ─── stand-ins (founder 2026-10-02: "cant miss a day that is the rule") ──
+STAND_IN_MAX = 1   # at most this many shots may play as a still per reel
+
+def missing_shots(spec: dict) -> list[str]:
+    return [s["id"] for s in spec["shots"] if not (CLIPS / clip_name(spec, s["id"])).exists()]
+
+
+def stand_ins(spec: dict) -> dict | None:
+    """shot -> keyframe-still mp4 for a storyboard that is one clip short.
+
+    Flow fails a clip now and then ("Audio generation failed", 4 of 25 on 10-01)
+    and the retry only lands the next day, which would have left the slot
+    empty. Every shot's keyframe still exists before its clip is attempted, so
+    the missing beat plays its own still with a slow push-in, silent under the
+    voice and music. Returns None when the storyboard needs more than
+    STAND_IN_MAX stand-ins or a keyframe is missing too."""
+    miss = missing_shots(spec)
+    if not miss or len(miss) > STAND_IN_MAX:
+        return None
+    out = {}
+    for sid in miss:
+        kf = CLIPS / clip_name(spec, f"kf_{sid}")
+        if not kf.exists():
+            return None
+        mp4 = CLIPS / f"{spec['id']}__{sid}__standin.mp4"
+        if not mp4.exists():
+            # 8 s, 30 fps, 1080x1920, a 6% push-in; no audio stream (render pads silence).
+            vf = ("scale=1296:2304:force_original_aspect_ratio=increase,crop=1296:2304,"
+                  "zoompan=z='min(1+0.06*on/240,1.06)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+                  ":d=240:s=1080x1920:fps=30,format=yuv420p")
+            r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", str(kf),
+                                "-vf", vf, "-t", "8", "-an", "-c:v", "libx264", "-preset", "fast",
+                                "-crf", "18", str(mp4)], capture_output=True, text=True)
+            if r.returncode or not mp4.exists():
+                return None
+        out[sid] = str(mp4)
+    return out
+
+
 # ─── voice ───────────────────────────────────────────────────────────────
 def voice(spec: dict, lang: str, tdp: Path):
     """ElevenLabs one pass (founder's pick), cached on disk by exact text so a

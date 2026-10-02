@@ -101,15 +101,27 @@ def render() -> int:
     led = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
     made = 0
     for p, s in auto_specs():
+        stand = None
         if not R.ready(s):
-            continue
+            # One clip short: cut it anyway with the beat's keyframe still standing in
+            # (founder 2026-10-02: a reel posts every day). The ledger row records which
+            # shot, so the clip's late arrival can trigger a re-cut later.
+            stand = R.stand_ins(s)
+            if not stand:
+                continue
+            print(f"[v3_daily] {s['id']}: stand-in still for {', '.join(stand)}")
         for lang, platform in SURFACE.items():
             key = f"{s['id']}__{lang}"
             if key in led:
-                continue
+                # A stand-in cut whose real clip has since landed, and not yet posted:
+                # cut it again properly and drop the note. Anything else is final.
+                if not (led[key].get("stand_in") and led[key].get("status") == "ready" and not stand):
+                    continue
+                print(f"[v3_daily] {key}: real clip arrived, re-cutting without the stand-in")
+                led[key].pop("stand_in", None)
             out = R.VEO / "reels" / f"{key}.mp4"
             try:
-                R.render(s, lang, out, None, SB.pick_music(s.get("format", ""), s["slug"]))
+                R.render(s, lang, out, stand, SB.pick_music(s.get("format", ""), s["slug"]))
             except Exception as e:  # one bad cut must not stop the others
                 print(f"[v3_daily] {key} failed: {e}")
                 continue
@@ -129,6 +141,8 @@ def render() -> int:
                         "file": str(out), "cover": cover}
             if held:
                 led[key]["held"] = held
+            if stand:
+                led[key]["stand_in"] = sorted(stand)
             if platform == "youtube" and yt_title(s):
                 led[key]["yt_title"] = yt_title(s)
             LEDGER.write_text(json.dumps(led, ensure_ascii=False, indent=1))
