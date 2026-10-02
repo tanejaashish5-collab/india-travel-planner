@@ -24,6 +24,18 @@ say "=== veo-daily start ==="
 #    clip under its exact beat name, so matching is by filename, never order.
 bash intake.sh --named || say "WARN intake failed"
 
+# 0b. COWORK'S OWN REPORT (added 2026-10-02). The generation session ends with a
+#     notification nobody reads unless the founder pastes it into a chat. The
+#     task now also writes _report-<date>.md into the inbox; file it and echo it
+#     here so the per-shot failure reasons ("Audio generation failed" etc.) are
+#     in this log, next to the render, where the 14:50 check-in reads them.
+mkdir -p data/cowork-reports
+for rep in "$HOME"/Downloads/nakshiq-veo-inbox/_report-*.md; do
+  [ -f "$rep" ] || continue
+  mv "$rep" data/cowork-reports/ && say "cowork report filed: $(basename "$rep")"
+  say "----- cowork report -----"; cat "data/cowork-reports/$(basename "$rep")"; say "----- end report -----"
+done
+
 # PAUSE (2026-09-24): ingest above still runs; nothing below does.
 if [ -f "$HERE/PAUSED" ]; then
   say "PAUSED ($HERE/PAUSED) — ingested only; no cut, no queue top-up, no task export"

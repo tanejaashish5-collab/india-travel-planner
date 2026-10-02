@@ -48,18 +48,30 @@ PROMPTS
 - Flow blocks a prompt ("might violate our policies"): note it and skip that item. Do not reword.
 - Stuck at 99% / "taking longer than expected" / "audio generation failed … not charged": retry up to twice.
 
+PICKING A STILL IN THE ASSET OR FRAME PICKER
+- Set the picker's sort control (top right of the picker) to Oldest. The list is then in exact creation order — the storyboard's refs, then kf_s1 ... kf_s6 — so a row can be taken by position. The default "Recent" order reshuffles as items get used and is not safe to count on.
+- Never pick by search text alone: "Man standing" also matches "Woman standing indoors", and two keyframes can share one truncated title (two "Man and woman walking..." rows in rann). Read the preview before committing.
+- A frame is only set once "Add to prompt" is clicked; confirm the Start slot shows the thumbnail, and the ingredient chips show the right stills, before submitting.
+
 DOWNLOADING
 - Hover a COMPLETED tile → its ⋮ → Download → 720p original. The detail-view ↓ button never downloads.
 - One file at a time. Before downloading, confirm the tile's prompt text from the DOM matches the row; never map by grid position.
 - Move it from ~/Downloads into ~/Downloads/nakshiq-veo-inbox/ under its exact `save_as` with Desktop Commander. Leave ~/Downloads clean apart from that folder.
 
 UPLOADING A SAVED STILL (another account, or a frames shot whose still is not in this project)
-- Flow's upload button opens a native macOS file picker, which cannot be driven. What worked on 2026-09-27: stage the saved .jpg into the session, build a File from it in the page, and dispatch a synthetic drop onto the project canvas; Flow accepted it as 9:16 and it could be picked as the start frame. A local http server does NOT work (Flow's CSP blocks the fetch).
-- After the drop, check the byte size or dimensions match the saved still before using it as a frame.
+- Flow's upload button opens a native macOS file picker, and it CAN be driven (proved 2026-09-29). The picker only opens for a VISIBLE tab: first make the Flow tab the active tab of a fronted browser window (AppleScript on the browser: set active tab index of its window, then set index of that window to 1), then click Upload media in the frame/asset picker and drive the dialog with System Events — Cmd+Shift+G, type the full path to the saved .jpg, Return, Return.
+- The first upload to an account may show a one-time "Rights to use this image" dialog. It covers stills this run generated in our own accounts: accept it, carry on, and say so in the report. Anything beyond that (a password prompt, a CAPTCHA, a purchase) is still a hard stop.
+- The 2026-09-27 synthetic-drop workaround is no longer needed. A local http server still does NOT work (Flow's CSP blocks the fetch).
+- After the upload, check the dimensions match the saved still before using it as a frame.
 
 DO NOT
 - Do NOT run any NakshIQ script, ingest, upload or build. Do NOT edit today-tasks.json, the queue, accounts.json or any code or task file.
 - Do NOT publish anything anywhere.
 
-FINISH: one notification
-- Files written to ~/Downloads/nakshiq-veo-inbox/ grouped by storyboard (stills and videos), which storyboards are COMPLETE, anything skipped and why, credits spent per account.
+FINISH: verify, clean up, then one notification
+1. VERIFY: every `save_as` for the day is in ~/Downloads/nakshiq-veo-inbox/ under its exact name, each still 9:16 and each video 720x1280, about 8 s (about 15 s for an extend), with an audio stream.
+2. LEAVE ~/Downloads CLEAN: nothing from this run outside ~/Downloads/nakshiq-veo-inbox/ — no leftover download*.zip, no loose .mp4, no extracted stray. Check before finishing, not only as you go.
+3. CLOSE THE BROWSER TAB this run opened, and leave the window showing the tab that was active before the run (the Flow tab is only fronted so the native file picker will open).
+4. KEEP the Flow projects this run created — they hold the keyframes a later retry needs. Never delete a Flow project, this run's or any other.
+5. ONE NOTIFICATION: files written to ~/Downloads/nakshiq-veo-inbox/ grouped by storyboard (stills and videos), which storyboards are COMPLETE, anything skipped and why, credits spent per account.
+6. WRITE THE SAME REPORT TO A FILE before the notification: ~/Downloads/nakshiq-veo-inbox/_report-<YYYY-MM-DD>.md (today's date, Canberra). Same content as the notification, plain text. For every file NOT delivered, one line: `FAILED <save_as>: <exact error text> (<n> attempts)` or `SKIPPED <save_as>: <reason>`. The afternoon render job reads this file; the notification alone reaches nobody.
