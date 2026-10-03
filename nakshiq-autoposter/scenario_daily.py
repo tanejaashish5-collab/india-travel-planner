@@ -286,11 +286,16 @@ def caption_for(row: dict) -> tuple[str, str]:
         name, mon = row["name"], GR.MONTHS[row["month"]]
         url = f"https://www.nakshiq.com/en/destination/{row['slug']}"
         tag = row["slug"].replace("-", "")
-        cap = (f"{name} in {mon}: 10/10, go. The whole trip in one reel: who it suits, who should skip it, "
-               f"where to eat, the quiet spot nearby and what {mon} really costs.\n\n"
+        photo_credits = "".join(
+            f"\nPhoto: {c['title'].rsplit('.', 1)[0]}, {c['author']}, {c['licence']}, Wikimedia Commons"
+            for c in GR.credits(row["slug"], row["month"]))
+        cap = (f"{name} in {mon}: 10/10, but skip what everyone posts. The hidden spots and why people "
+               f"miss them, the local dish worth finding, the quieter swap, who should skip it and what "
+               f"{mon} really costs.\n\n"
                f"Save this for the trip. Send it to whoever's coming with you.\n\n"
                f"Full {name} guide, month by month: {url}\n\n"
-               f"Images are AI-generated. Every fact on screen is NakshIQ's real data."
+               f"Every fact on screen is NakshIQ's real data. Some images are AI-generated."
+               f"{photo_credits}"
                f"\n\n#{tag} #indiatravel #{mon.lower()}travel #NakshIQ")
         return cap, f"{name} in {mon}: the whole guide in {int(round(row.get('seconds') or 45))} seconds | NakshIQ"
     if row.get("kind") == "data_card":

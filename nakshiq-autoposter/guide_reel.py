@@ -117,34 +117,73 @@ def load_pack(slug: str) -> dict | None:
     return json.loads(p.read_text()) if p.exists() else None
 
 
+# Every slide shows a DIFFERENT kind of scene (founder 2026-10-03: "a couple sitting
+# on the desk can't be sitting on the desk with a different angle ... it shouldn't
+# be repeated"). People are rare: at most one small figure, never a returning cast.
+SCENES = {
+    "hook": "a wide landscape photograph, no people",
+    "time": "the landmark itself at that hour, no crowd, at most one tiny distant figure",
+    "gem": "the place itself as a landscape or architecture photograph, no people",
+    "eat": "an overhead close-up of the single dish on a plain table, no people, no hands",
+    "swap": "a wide valley or village landscape photograph, no people",
+    "skip": "an empty atmospheric detail of the place (weather, road, light), no people",
+    "cost": "an empty, simple guesthouse room interior with a window view, no people",
+    "kids": "one small child seen from far behind on an open path, tiny in the frame",
+}
+LOCAL_FOOD = ("himachali", "kashmiri", "local", "pahadi", "garhwali", "kumaoni", "rajasthani", "bengali",
+              "street", "dhaba", "thali", "south-indian", "andhra", "chettinad", "punjabi", "awadhi", "tibetan")
+
+
+def _fit(s: str, n: int) -> str:
+    """Whole sentences while they fit; else the first clause that fits; never a
+    sentence chopped mid-way (10-03: "At 4:30AM", "The 200-acre park next door has")."""
+    s = _clean(s)
+    if len(s) <= n:
+        return s
+    parts = re.split(r"(?<=[.!?;])\s+", s)
+    acc = ""
+    for ptxt in parts:
+        nxt = f"{acc} {ptxt}".strip()
+        if len(nxt) > n:
+            break
+        acc = nxt
+    if acc:
+        return acc.rstrip(";").rstrip()
+    first = parts[0]
+    cut = first[:n]
+    i = max(cut.rfind(", "), cut.rfind(": "), cut.rfind(" - "))
+    return (cut[:i] if i > n * 0.4 else _short(first, n)).rstrip(" ,:;")
+
+
+def _first_sentence(s: str, n: int = 110) -> str:
+    s = _clean(s)
+    m = re.match(r"(.+?[.!?])(\s|$)", s)
+    return _short(m.group(1) if m else s, n)
+
+
 def slides(pack: dict, month: int) -> list[dict]:
-    """[{kind, eyebrow, title, body, prompt}] — only facts the pack proves."""
+    """[{kind, eyebrow, title, body, prompt, place}] — only facts the pack proves,
+    ordered around what a typical reel about the place does not say: our honest
+    verdict, the hidden spots and why people miss them, the insider timing, the
+    local dish with its tip, the quieter swap, who should skip it, the real cost."""
     d = pack["destination"]
     name = d["name"]
     mon = MONTHS[month]
-    place = ", ".join(x for x in [d.get("region"), (d.get("state_id") or "").replace("-", " ").title()] if x)
+    state = (d.get("state_id") or "").replace("-", " ").title()
+    place = ", ".join(x for x in [d.get("region"), state] if x)
     mrow = next((m for m in pack.get("months") or [] if m.get("month") == month), None)
     if not mrow or mrow.get("score") != 5:
         raise SystemExit(f"{name}: {mon} is not a 10/10 month in the pack")
     out = []
 
-    def add(kind, eyebrow, title, body, subject):
+    def add(kind, scene, eyebrow, title, body, subject, place_q=None):
         title, body = _clean(title), _clean(body)
         if not title:
             return
         out.append({"kind": kind, "eyebrow": eyebrow.upper(), "title": title, "body": body,
-                    "prompt": f"{subject} {STYLE}"})
+                    "place": place_q,
+                    "prompt": f"{subject} Composition: {SCENES[scene]}. {STYLE}"})
 
-    verdict = mrow.get("go_or_skip_verdict") or ""
-    why = _tail(verdict) or verdict
-    add("hook", f"{mon} verdict", f"{name} in {mon}? 10/10. Go.", "",
-        f"A wide establishing view of {name}, {place}, India, in {mon}: {_short(why, 160)}.")
-    add("why", f"Why {mon}", _season_line(why), f"{d['elevation_m']:,} m above sea level" if d.get("elevation_m") else "",
-        f"{name}, {place}, India in {mon}: {_short(why, 160)}. A landscape detail that shows the season.")
-
-    # Who should go: a line naming a trek whose own record excludes this month is a
-    # contradiction inside our data (Manali Oct names Bhrigu Lake; its trek row says
-    # May, Jun, Sep). Drop the line rather than choose between them.
     treks = pack.get("treks") or []
     def contradicts(line: str) -> bool:
         for t in treks:
@@ -152,40 +191,76 @@ def slides(pack: dict, month: int) -> list[dict]:
             if key and key.lower() in line.lower() and month not in (t.get("best_months") or []):
                 return True
         return False
-    go = [x for x in (mrow.get("who_should_go") or []) if not contradicts(x)]
-    if go:
-        heads = [h for h in (_head(x) for x in go) if len(h) <= 22][:3] or [_short(_head(go[0]), 22)]
-        add("who_go", "Who should go", " · ".join(heads), _cap(_short(_tail(go[0]), 90)),
-            f"Travellers seen from behind enjoying {name} in {mon}: {_short(_tail(go[0]) or heads[0], 120)}.")
-    avoid = [x for x in (mrow.get("who_should_avoid") or []) if not contradicts(x)]
-    if avoid:
-        add("who_skip", "Who should skip it", _head(avoid[0]), _cap(_short(_tail(avoid[0]), 100)),
-            f"A quiet scene in {name} in {mon} that hints at the catch: {_short(_tail(avoid[0]), 120)}.")
 
-    for i, e in enumerate((pack.get("eateries") or [])[:2]):
-        pr = _range_head(e.get("price_per_head_inr"))
-        body = ", ".join(x for x in [_clean(e.get("signature_dish", "")).capitalize(),
-                                       f"{_inr(pr[0])} to {_inr(pr[1])} a head" if pr else ""] if x)
-        add(f"eat{i + 1}", "Where to eat" if i == 0 else "And this one", f"{e['name']}, {e.get('area') or name}",
-            body, f"A close-up of {e.get('signature_dish') or 'a local dish'} on a table in a small local "
-                  f"eatery in {name}, {place}, warm light, the room softly blurred behind.")
+    # 1. Hook: our own honest line beats the brochure line when we have one.
+    honest = _fit(d.get("why_special") or "", 150)
+    verdict_why = _tail(mrow.get("go_or_skip_verdict") or "")
+    add("hook", "hook", f"{mon} verdict: 10/10", f"{name} in {mon}. Skip what everyone posts.",
+        honest or _cap(_short(verdict_why, 100)),
+        f"{name}, {place}, India in {mon}, a view away from the town centre: {_short(verdict_why, 140)}.", (f"{name} {state}", name))
 
-    gems = [g for g in (pack.get("hidden_gems") or []) if g.get("why_go")]
-    if gems:
-        g = gems[0]
+    # 2. Insider timing from the photographer note ("Hadimba at 7am (no tourists...)").
+    ph = ((d.get("persona_blocks") or {}).get("photographer") or "")
+    m = re.match(r"([A-Z][\w' ]{2,30}? at \d{1,2}(?::\d\d)?\s?(?:am|pm))\s*\(([^)]+)\)", ph)
+    if m and not contradicts(ph):
+        spot = re.sub(r"\s+at\s+\d.*$", "", m.group(1)).strip()
+        add("time", "time", "Go at this hour", m.group(1), _cap(_short(m.group(2), 80)),
+            f"{spot} in {name}, {place}, India, early morning, soft light, empty.")
+
+    # 3-5. Hidden gems, with WHY people miss them (the part nobody else has).
+    # Never point people at a river swim or a jump (Rishikesh's list has a "pre-dawn
+    # swim" at Triveni Ghat while its own kids note says the river is genuinely dangerous).
+    risky = re.compile(r"\b(swim|swimming|dip|cliff jump|jumping)\b", re.I)
+    gems = [g for g in (pack.get("hidden_gems") or []) if g.get("why_go") and not contradicts(g.get("why_go", ""))
+            and not risky.search(f"{g.get('name', '')} {g.get('why_unknown', '')}")]
+    gems.sort(key=lambda g: -(g.get("confidence_score") or 0))
+    # Three DIFFERENT places: Rishikesh's list has Kunjapuri twice (sunrise, caves).
+    STOP = {"temple", "village", "valley", "lake", "trek", "walk", "view", "point", "fort", "sunrise", "sunset",
+            "meadow", "falls", "waterfall", "the", "and", "ghat", "cave", "caves", "meditation"}
+    picked, seen = [], set()
+    for g in gems:
+        keys = {w for w in re.findall(r"[a-z]+", g["name"].lower()) if len(w) > 3 and w not in STOP}
+        if keys & seen:
+            continue
+        picked.append(g); seen |= keys
+    gems = picked
+    for i, g in enumerate(gems[:3]):
+        miss = _fit(g.get("why_unknown") or "", 110)
         dist = f"{g['distance_km']} km away" if g.get("distance_km") else ""
-        add("gem", "Hidden gem", g["name"], " · ".join(x for x in [dist, _cap(_short(g["why_go"], 70))] if x),
-            f"{_short(g['why_go'], 170)}. Near {name}, {place}, India.")
+        add(f"gem{i + 1}", "gem", "Hidden gem" if i == 0 else "Another one", g["name"],
+            " · ".join(x for x in [dist, _cap(miss) if miss else _cap(_short(g["why_go"], 70))] if x),
+            f"{g['name']}, near {name}, {place}, India: {_short(g['why_go'], 160)}.", (f"{g['name']} {state}", g["name"]))
 
+    # 6. Eat: local food and the insider tip first, the pizza places last.
+    eats = sorted(pack.get("eateries") or [], key=lambda e: (
+        -any(k in " ".join(e.get("cuisine") or []).lower() for k in LOCAL_FOOD),
+        -bool(e.get("insider_tip")), -bool(e.get("is_legendary"))))
+    if eats:
+        e = eats[0]
+        tip = _fit(e.get("insider_tip") or "", 110)
+        pr = _range_head(e.get("price_per_head_inr"))
+        body = " · ".join(x for x in [_cap(e.get("signature_dish") or ""), tip or (f"{_inr(pr[0])} to {_inr(pr[1])} a head" if pr else "")] if x)
+        add("eat", "eat", "Eat here", f"{e['name']}, {e.get('area') or name}", body,
+            f"{_cap(e.get('signature_dish') or 'a local dish')}, as served in {name}, {place}, India.")
+
+    # 7. The quieter swap.
     swaps = ((pack.get("trap_swaps") or {}).get("as_trap") or [])
     if swaps:
         s = swaps[0]
         alt = s["alternative_destination_id"].replace("-", " ").title()
-        add("swap", "Skip the crowd", f"Try {alt}",
-            " · ".join(x for x in [f"{s['distance_km']} km" if s.get("distance_km") else "",
-                                     s.get("drive_time") or "", _cap(_short(s.get("crowd_difference") or "", 60))] if x),
-            f"An uncrowded valley at {alt}, near {name}, {place}, India: {_short(s.get('why_better') or '', 140)}.")
+        add("swap", "swap", "Skip the crowd", f"Try {alt} instead",
+            " · ".join(x for x in [f"{s['distance_km']} km" if s.get("distance_km") else "", s.get("drive_time") or "",
+                                     _cap(_fit(re.split(r"\s[—–-]\s", s.get("why_better") or "")[0], 80))] if x),
+            f"{alt}, {state}, India: {_short(s.get('why_better') or '', 140)}. {_short(s.get('vibe_difference') or '', 80)}.",
+            (f"{alt} {state}", alt))
 
+    # 8. Who should skip it (honest).
+    avoid = [x for x in (mrow.get("who_should_avoid") or []) if not contradicts(x)]
+    if avoid:
+        add("skip", "skip", "Who should skip it", _head(avoid[0]), _cap(_short(_tail(avoid[0]), 100)),
+            f"{name}, {place}, India in {mon}, a detail that shows this: {_short(_tail(avoid[0]), 120)}.")
+
+    # 9. What the month really costs.
     season = next((k for k, v in (pack.get("costs") or {}).items()
                    if any(month in (c.get("months") or []) for c in v.values())), None)
     if season:
@@ -195,15 +270,112 @@ def slides(pack: dict, month: int) -> list[dict]:
         if c.get("food-per-day"): parts.append(f"food {_inr(c['food-per-day']['typical_inr'])} a day")
         if c.get("transport-taxi-day"): parts.append(f"taxi {_inr(c['transport-taxi-day']['typical_inr'])} a day")
         if parts:
-            add("cost", f"What {mon} costs", parts[0], ", ".join(parts[1:]).capitalize(),
-                f"A cosy mid-range hotel room in {name}, {place}, with a window onto the view, morning light.")
+            add("cost", "cost", f"What {mon} really costs", parts[0], ", ".join(parts[1:]).capitalize(),
+                f"A simple mid-range guesthouse room in {name}, {place}, India.")
 
+    # 10. Kids, only if there is still room.
     k = pack.get("kids") or {}
-    if k.get("suitable") is not None and k.get("rating"):
-        concern = _short((k.get("concerns") or [""])[0], 80)
-        add("kids", "With kids", f"{k['rating']}/5 for families" + (f", ages {k['best_age_group']}" if k.get("best_age_group") else ""),
-            concern, f"A family with two young children seen from behind, exploring {name}, {place}, India in {mon}.")
-    return out
+    if len(out) < 10 and k.get("rating"):
+        add("kids", "kids", "With kids", f"{k['rating']}/5 for families" + (f", ages {k['best_age_group']}" if k.get("best_age_group") else ""),
+            _short((k.get("concerns") or [""])[0], 80), f"An open path in {name}, {place}, India in {mon}.")
+    return out[:10]
+
+
+# ─── real photos of named places (Wikimedia Commons) ─────────────────────
+# Founder 2026-10-03: "when you say Barot Valley, you need to show a picture of the
+# Barot Valley". A named place gets a REAL photo when Commons has one whose TITLE
+# names it (a "Lama Dugh" search returned Barot's "Lamba Dug", a different meadow),
+# under a licence that allows reuse with credit. Otherwise an AI still is made.
+PHOTOS = VEO / "data" / "guide_photos"
+LICENCE_RANK = [("cc0", 0), ("public domain", 0), ("pd", 0), ("cc by 4", 1), ("cc by 3", 1), ("cc by 2", 1),
+                ("cc by-sa", 2)]
+UA = {"User-Agent": "NakshIQ-guide/1.0 (https://www.nakshiq.com)"}
+
+
+def _lic_rank(lic: str) -> int | None:
+    l = (lic or "").lower()
+    for k, r in LICENCE_RANK:
+        if l.startswith(k) or k in l:
+            return r
+    return None
+
+
+REJECT = HERE / "guide_photo_reject.json"   # Commons titles rejected on sight (plaques, crowds, wrong place)
+
+
+def commons_photo(query: str, must: str, dest: Path, used: set) -> dict | None:
+    import urllib.request, urllib.parse, html as H
+    words = [w for w in re.findall(r"[a-z]+", must.lower()) if len(w) > 2]
+    if not words:
+        return None
+    u = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
+        "action": "query", "format": "json", "generator": "search", "gsrsearch": f"{query} filetype:bitmap",
+        "gsrnamespace": 6, "gsrlimit": 20, "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 1400})
+    try:
+        r = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=30))
+    except Exception:
+        return None
+    cands = []
+    for pg in (r.get("query", {}).get("pages") or {}).values():
+        title = pg["title"][5:]
+        norm = re.sub(r"[^a-z]+", " ", title.lower())
+        rejected = json.loads(REJECT.read_text()).get("titles", []) if REJECT.exists() else []
+        if not all(re.search(rf"\b{w}", norm) for w in words) or title in used or title in rejected:
+            continue
+        ii = pg["imageinfo"][0]; m = ii.get("extmetadata", {})
+        lic = (m.get("LicenseShortName") or {}).get("value", "")
+        rank = _lic_rank(lic)
+        if rank is None or min(ii["width"], ii["height"]) < 900:
+            continue
+        artist = re.sub(r"<[^>]+>", "", H.unescape((m.get("Artist") or {}).get("value", ""))).strip()[:60] or "unknown"
+        portrait = ii["height"] >= ii["width"]
+        cands.append((rank, not portrait, -ii["width"] * ii["height"], title, ii, lic, artist))
+    if not cands:
+        return None
+    rank, _, _, title, ii, lic, artist = sorted(cands)[0]
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        data = urllib.request.urlopen(urllib.request.Request(ii.get("thumburl") or ii["url"], headers=UA), timeout=60).read()
+    except Exception:
+        return None
+    dest.write_bytes(data)
+    used.add(title)
+    meta = {"file": str(dest), "title": title, "licence": lic, "author": artist,
+            "page": ii.get("descriptionurl"), "share_alike": rank == 2}
+    dest.with_suffix(".json").write_text(json.dumps(meta, ensure_ascii=False, indent=1))
+    return meta
+
+
+def photo_path(slug: str, month: int, i: int) -> Path:
+    return PHOTOS / sb_id(slug, month) / f"g{i:02d}.jpg"
+
+
+def fetch_photos(slug: str, month: int, sl: list[dict]) -> int:
+    used, got = set(), 0
+    for i, s in enumerate(sl, 1):
+        if not s.get("place") or (s["kind"] == "hook" and hero(slug)):
+            continue
+        dest = photo_path(slug, month, i)
+        if dest.exists():
+            got += 1; continue
+        if s["kind"] == "swap":
+            # A whole destination: our own site photo of it beats a name-matched Commons
+            # file (10-03: "Chandigarh" matched a portrait of two people).
+            alt = re.sub(r"[^a-z0-9]+", "-", s["place"][1].lower()).strip("-")
+            if hero(alt):
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy(hero(alt), dest)
+                got += 1; continue
+            continue                       # no site photo: an AI still, never a guessed Commons file
+        query, must = s["place"]
+        if commons_photo(query, must, dest, used):
+            got += 1
+    return got
+
+
+def credits(slug: str, month: int) -> list[dict]:
+    d = PHOTOS / sb_id(slug, month)
+    return [json.loads(p.read_text()) for p in sorted(d.glob("g*.json"))] if d.exists() else []
 
 
 # ─── queue (stills for Cowork) ───────────────────────────────────────────
@@ -234,7 +406,7 @@ def queue(slug: str, month: int, sl: list[dict]) -> int:
         if s["kind"] == "hook" and hero(slug):
             continue                       # the real hero photo opens the reel
         name = still_name(slug, month, i)
-        if name in have:
+        if name in have or photo_path(slug, month, i).exists():
             continue
         rows.append({"slug": slug, "format": "guide", "pipeline": "v3", "storyboard": sb_id(slug, month),
                      "status": "pending", "take": 1, "clip": name, "kind": "ref",
@@ -251,6 +423,8 @@ def images(slug: str, month: int, sl: list[dict]) -> tuple[list[Path | None], in
     out, missing = [], 0
     for i, s in enumerate(sl, 1):
         p = CLIPS / still_name(slug, month, i)
+        if photo_path(slug, month, i).exists():
+            p = photo_path(slug, month, i)
         if s["kind"] == "hook" and hero(slug):
             p = hero(slug)
         if p.exists():
@@ -390,7 +564,10 @@ def render(slug: str, month: int, out: Path, sl: list[dict], imgs: list[Path | N
     for f in ("InstrumentSans-Bold.ttf", "InstrumentSans-Regular.ttf"):
         shutil.copy(FONTS / f, tdp / f)
     shutil.copy(LOGO, tdp / "logo.png")
-    fallback = next((p for p in imgs if p), None)
+    # A slide with no image is a plain brand card, never a second use of another photo.
+    from PIL import Image as _I
+    _I.new("RGB", (W, H), (20, 18, 16)).save(tdp / "card.png")
+    fallback = tdp / "card.png"
     # bottom gradient so the words always read
     from PIL import Image
     g = Image.new("L", (W, H), 0)
@@ -417,7 +594,7 @@ def render(slug: str, month: int, out: Path, sl: list[dict], imgs: list[Path | N
     for k, (s, p) in enumerate(zip(sl, imgs)):
         dur = (B[k + 1] - B[k]) + (TD if k else 0)
         fr = int(dur * FPS)
-        blur = "" if p else ",gblur=sigma=18,eq=brightness=-0.12"
+        blur = ""
         drift = "" if k % 2 == 0 else f"+(iw*0.03)*on/{fr}"
         text_png(s, k, n, tdp / f"txt{k}.png")
         lead = TD if k else 0
@@ -489,6 +666,41 @@ def fact_pack(slug: str) -> dict | None:
 HOLD = HERE / "HOLD_FOR_REVIEW"     # same kill switch as the story reels
 
 
+LOOKALIKE_SSIM = 0.55      # stills are cut-free, so a lower bar than the story reels' 0.78
+LOOKALIKE_HIST = 0.97
+
+
+def look_alike_images(imgs: list[Path | None]) -> list[tuple[int, int, float, float]]:
+    """Slide pairs whose pictures are too alike: grey SSIM at 90x160, or colour
+    histograms nearly identical while SSIM is still moderate. Heuristic thresholds
+    (2026-10-03), backed by the daily visual check before the post window."""
+    import numpy as np
+    from PIL import Image
+    sys.path.insert(0, str(HERE))
+    import reel_v3 as R
+    g, h = {}, {}
+    for i, p in enumerate(imgs):
+        if not p:
+            continue
+        im = Image.open(p).convert("RGB")
+        if im.width > im.height * 9 / 16:
+            cw = im.height * 9 // 16
+            im = im.crop(((im.width - cw) // 2, 0, (im.width + cw) // 2, im.height))
+        im = im.resize((90, 160))
+        g[i] = np.asarray(im.convert("L"), np.float64)
+        hist = np.concatenate([np.histogram(np.asarray(im)[..., c], 16, (0, 255))[0] for c in range(3)]).astype(float)
+        h[i] = hist / hist.sum()
+    out = []
+    keys = sorted(g)
+    for a in range(len(keys)):
+        for b in range(a + 1, len(keys)):
+            i, j = keys[a], keys[b]
+            s = R._ssim(g[i], g[j]); c = float(np.corrcoef(h[i], h[j])[0, 1])
+            if s >= LOOKALIKE_SSIM or (c >= LOOKALIKE_HIST and s >= 0.40):
+                out.append((i + 1, j + 1, round(s, 2), round(c, 3)))
+    return out
+
+
 def qa(path: Path, expect: float) -> str:
     """'' when the cut is postable, else the reason it is held."""
     if not path.exists() or path.stat().st_size < 500_000:
@@ -518,7 +730,9 @@ def cut(slug: str, month: int, led: dict) -> bool:
         return False
     out = OUTDIR / f"{sb_id(slug, month)}.mp4"
     total = render(slug, month, out, sl, imgs)
-    held = "HOLD_FOR_REVIEW file present" if HOLD.exists() else qa(out, total)
+    same = look_alike_images(imgs)
+    held = ("HOLD_FOR_REVIEW file present" if HOLD.exists() else qa(out, total)
+            or (f"slides look alike: {same}" if same else ""))
     now = datetime.now(timezone.utc).isoformat()
     for plat in PLATFORMS:
         led[f"{sb_id(slug, month)}__{plat}"] = {
@@ -569,7 +783,9 @@ def daily() -> int:
             print(f"[guide] {slug}: {e}"); continue
         if len(sl) < 7:
             print(f"[guide] {slug}: only {len(sl)} slides prove out, skipped"); continue
+        ph = fetch_photos(slug, month, sl)
         n = queue(slug, month, sl)
+        print(f"[guide] {slug}: {ph} real photo(s) from Wikimedia Commons")
         print(f"[guide] queued {sb_id(slug, month)}: {len(sl)} slides, {n} stills for Cowork")
         want -= 1
     return 0
