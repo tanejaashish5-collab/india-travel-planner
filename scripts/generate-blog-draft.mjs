@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 /**
- * generate-blog-draft.mjs — produce a grounded markdown draft for the
+ * generate-blog-draft.mjs — produce a grounded WRITING BRIEF for the
  * 3 strategic blog formats: month-specific vs, verdict, ranked-data.
- * Output goes to data/blog-drafts/<slug>.md for Ashish review before
- * manual INSERT into the articles table.
+ *
+ * Makes no model call. NakshIQ does not pay per token (2026-08-04, see
+ * apps/web/scripts/check-no-metered-ai.mjs): the prose is written by a
+ * Claude Code session on the Max plan ($0 marginal), the same way the
+ * weekly blog routine works. This script does the part a model shouldn't:
+ * pulling the real numbers from Supabase and fixing the structure + rules.
  *
  * Usage:
  *   node scripts/generate-blog-draft.mjs --type vs --a gurez-valley --b sonmarg --month may
@@ -12,9 +16,10 @@
  *
  * Each run:
  *   1. Pulls grounded data from Supabase for the subject(s)
- *   2. Prompts Claude Sonnet for the draft
- *   3. Writes markdown + suggested title/slug/category/callouts to
- *      data/blog-drafts/<slug>.md with YAML front-matter
+ *   2. Writes the brief (grounding + structure + hard rules) to
+ *      data/blog-drafts/briefs/<slug>.brief.md, review_status: needs_writing
+ *   3. In a Claude Code session: "write the draft from <brief path>" →
+ *      data/blog-drafts/<slug>.md. build-blog-inserts.mjs refuses briefs.
  *   4. Does NOT insert into DB — that's a manual step after review.
  *
  * Never invents facts. All claims must trace to data we pulled.
@@ -23,7 +28,6 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { dirname } from "path";
 import { createClient } from "@supabase/supabase-js";
-import Anthropic from "@anthropic-ai/sdk";
 
 const args = process.argv.slice(2);
 function flag(name, fallback = null) {
@@ -42,31 +46,14 @@ function loadEnv() {
   const env = {};
   for (const line of readFileSync("apps/web/.env.local", "utf-8").split("\n")) {
     const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.+)$/);
-    if (m) env[m[1]] = m[2].replace(/^["']|["']$/g, "");
+    // `vercel env pull` can leave a literal \n inside the quotes; left in, the
+    // Supabase URL is unreachable and every query silently returns null.
+    if (m) env[m[1]] = m[2].replace(/^["']|["']$/g, "").replace(/\\n$/, "").trim();
   }
   return env;
 }
 const env = loadEnv();
 const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
-const claude = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
-
-// Sonnet 5.5 always runs adaptive thinking, and thinking tokens count toward
-// max_tokens, so leave headroom well above the ~1,100-word target. Effort
-// "low" is the recommended start for content generation.
-async function draftMarkdown(prompt) {
-  const res = await claude.messages.create({
-    model: "claude-sonnet-5-5",
-    max_tokens: 16000,
-    output_config: { effort: "low" },
-    messages: [{ role: "user", content: prompt }],
-  });
-  if (res.stop_reason !== "end_turn") {
-    // A refusal or a max_tokens cut would otherwise write a blank/truncated draft.
-    console.error(`Claude stopped with stop_reason=${res.stop_reason}; no draft written.`);
-    process.exit(1);
-  }
-  return res.content.find((b) => b.type === "text")?.text ?? "";
-}
 
 const MONTH_NUMBER = {
   january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
@@ -118,7 +105,7 @@ function groundingBlock(dest, monthNum) {
   }, null, 2);
 }
 
-let slug, title, category, markdown;
+let slug, title, category, brief;
 
 if (type === "vs") {
   const a = flag("a"), b = flag("b"), month = flag("month");
@@ -154,7 +141,7 @@ HARD RULES:
 - No generic travel-brochure language. No "breathtaking", "unforgettable", etc.
 - Total length: 500–800 words.
 - Output ONLY the markdown. No preamble.`;
-  markdown = await draftMarkdown(prompt);
+  brief = prompt;
 } else if (type === "verdict") {
   const dest = flag("dest");
   if (!dest) { console.error("--type verdict needs --dest <id>"); process.exit(1); }
@@ -189,7 +176,7 @@ HARD RULES:
 - No filler, no padding, no adjectives without evidence.
 - 600–900 words total.
 - Output ONLY the markdown.`;
-  markdown = await draftMarkdown(prompt);
+  brief = prompt;
 } else {
   // ranked
   const state = flag("state"), month = flag("month"), topN = Number(flag("n") ?? 7);
@@ -243,21 +230,27 @@ HARD RULES:
 - Every claim anchored in the data.
 - 700–1100 words.
 - Output ONLY the markdown.`;
-  markdown = await draftMarkdown(prompt);
+  brief = prompt;
 }
 
-// ── Write draft with front-matter ─────────────────────────────
+// ── Write brief with front-matter ─────────────────────────────
+// Kept out of data/blog-drafts/*.md (subdir + .brief.md) so a glob over
+// finished drafts never picks it up; build-blog-inserts.mjs also refuses
+// review_status: needs_writing.
 const frontMatter = `---
 slug: ${slug}
 title: ${JSON.stringify(title)}
 category: ${category}
-generated_at: ${new Date().toISOString()}
-review_status: draft
+brief_generated_at: ${new Date().toISOString()}
+review_status: needs_writing
+draft_path: data/blog-drafts/${slug}.md
 ---
 
 `;
-const outFile = `data/blog-drafts/${slug}.md`;
+const outFile = `data/blog-drafts/briefs/${slug}.brief.md`;
 mkdirSync(dirname(outFile), { recursive: true });
-writeFileSync(outFile, frontMatter + markdown);
-console.log(`\n✓ Draft written → ${outFile}`);
+writeFileSync(outFile, frontMatter + brief + "\n");
+console.log(`\n✓ Brief written → ${outFile}`);
+console.log(`Next, in a Claude Code session (Max plan, no API cost):`);
+console.log(`  "Write the draft from ${outFile} and save it to data/blog-drafts/${slug}.md"`);
 console.log(`Review it, edit inline, then INSERT into articles table with published_at=NOW() to ship.\n`);
