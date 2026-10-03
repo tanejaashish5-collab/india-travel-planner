@@ -26028,3 +26028,36 @@ Date range: 2026-04-15 → 2026-10-02
 2026-10-04 00:37:08  INFO          Uploading to R2 (timeout=300s)...
 2026-10-04 00:37:28  INFO          R2 PUT OK. Confirming...
 2026-10-04 00:37:30  INFO          Media ready: TFtit (41,991,792 bytes · gokarna__friends_swap__en.mp4)
+2026-10-03 16:45:21  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-03 16:45:21  INFO      ════════════════════════════════════════════════════════════
+2026-10-03 16:45:21  INFO      Nakshiq Autoposter · EVENING · 2026-10-03 · weekday=5
+2026-10-03 16:45:21  INFO      ════════════════════════════════════════════════════════════
+2026-10-03 16:45:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-03 16:46:09  INFO      Synced → 20 destinations · 100 traps · 6 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-03 16:46:09  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-10-03 16:46:10  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-03 16:46:10  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-03 16:46:11  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-03 16:46:26  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-03 16:46:26  INFO      [diversity] feed: 37 → 33 options · cooldown dropped 4 (carousel, pillar:anti_trap, pillar:scenario_eatery, pillar:scenario_friends_swap seen <2d)
+2026-10-03 16:46:26  INFO      Evening format (balance→verification): eateries_pick [14% vs target 20%] (0/15 never featured)
+2026-10-03 16:46:26  INFO      Formats — IG: eateries_pick  ·  FB: eateries_pick  ·  Story: route_spotlight  ·  Audience: families
+2026-10-03 16:46:26  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 35
+2026-10-03 16:46:26  INFO      Audience filter 'families' → 15 destinations match.
+2026-10-03 16:46:26  INFO      Fingerprint dedup snapshot — 31 dests in 7d · 80 (dest,fmt) pairs in 30d · 216 media in 60d
+2026-10-03 16:46:26  INFO      Route locked: Uttarakhand Spiritual + Adventure
+2026-10-03 16:46:26  INFO      Eatery locked: Bomra's (90/90 never featured)
+2026-10-03 16:46:28  INFO      Shared best destination locked: Bengaluru
+2026-10-03 16:46:28  INFO      [facebook/Nakshiq] Generating eateries_pick post...
+2026-10-03 16:46:28  INFO      [facebook/Nakshiq] Caption ready (649 chars, dest=bengaluru)
+2026-10-03 16:46:29  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-10-03 16:46:29  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bengaluru.mp4?v=20260915
+2026-10-03 16:46:31  INFO          Brand-stamp applied: bengaluru.mp4 (5,463,085 → 2,540,447 bytes)
+2026-10-03 16:46:31  INFO          Requesting upload URL for bengaluru.mp4 (2,540,447 bytes, video/mp4)
+2026-10-03 16:46:32  INFO          Uploading to R2 (timeout=300s)...
+2026-10-03 16:46:34  INFO          R2 PUT OK. Confirming...
+2026-10-03 16:46:35  INFO          Media ready: 9J5iZ (2,540,447 bytes · bengaluru.mp4)
+2026-10-03 16:46:35  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-03 16:46:57  INFO      [facebook/Nakshiq] ✅ Published · Outstand=cTYNk · Platform=2088937021708192
+2026-10-03 16:46:57  INFO      State saved. Run complete.
+2026-10-03 16:46:57  INFO      ════════════════════════════════════════════════════════════

@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-02",
-    "PdMu0_evening": "2026-10-02",
+    "PdMu0": "2026-10-03",
+    "PdMu0_evening": "2026-10-03",
     "PdMu0_carousel": "2026-10-03"
   },
-  "last_sync": "2026-10-02T19:27:41.635985+00:00",
+  "last_sync": "2026-10-03T16:46:09.200806+00:00",
   "posted_destinations": [
     {
       "destination_id": "leh",
@@ -153,6 +153,10 @@
     {
       "destination_id": "dhanaulti",
       "date": "2026-10-03"
+    },
+    {
+      "destination_id": "bengaluru",
+      "date": "2026-10-03"
     }
   ],
   "posted_formats": {
@@ -180,7 +184,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "arrival_intel",
       "score_card",
       "score_card",
       "score_card",
@@ -200,7 +203,8 @@
       "v4_dw_heritage_reel_sensory_pov",
       "score_card",
       "data_carousel",
-      "v2_myth_bust_oneline"
+      "v2_myth_bust_oneline",
+      "eateries_pick"
     ]
   },
   "post_log": [
@@ -10335,6 +10339,35 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-10-03"
+    },
+    {
+      "timestamp": "2026-10-03T14:37:04.698278+00:00",
+      "date": "2026-10-03",
+      "platform": "instagram",
+      "post_id": "2UBO8",
+      "destination": "gokarna",
+      "format": "scenario_friends_swap",
+      "media_id": "JsNAg"
+    },
+    {
+      "timestamp": "2026-10-03T14:37:47.024693+00:00",
+      "date": "2026-10-03",
+      "platform": "youtube",
+      "post_id": "bC5Ja",
+      "destination": "gokarna",
+      "format": "scenario_friends_swap",
+      "media_id": "TFtit"
+    },
+    {
+      "timestamp": "2026-10-03T16:46:57.247379+00:00",
+      "date": "2026-10-03",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "cTYNk",
+      "destination": "bengaluru",
+      "format": "eateries_pick",
+      "has_media": true,
+      "media_id": "bengaluru.mp4"
     }
   ],
   "theme_usage": {
@@ -10684,6 +10717,9 @@
       ],
       "nandi-hills": [
         "2026-10-01"
+      ],
+      "bengaluru": [
+        "2026-10-03"
       ]
     },
     "morning_formats": {
@@ -10831,6 +10867,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "eateries_pick": [
+        "2026-10-03"
       ]
     },
     "reels": {
@@ -11005,6 +11044,9 @@
       ],
       "kurukshetra": [
         "2026-10-01"
+      ],
+      "bengaluru": [
+        "2026-10-03"
       ]
     },
     "audience_tags": {
@@ -11039,7 +11081,8 @@
         "2026-08-22",
         "2026-08-29",
         "2026-09-05",
-        "2026-09-26"
+        "2026-09-26",
+        "2026-10-03"
       ],
       "adventurers": [
         "2026-05-29",
@@ -11246,6 +11289,12 @@
       "puri": [
         "2026-10-01"
       ]
+    },
+    "routes": {},
+    "eateries": {
+      "6928f615-bad2-4b7e-93d8-56483deb33f1": [
+        "2026-10-03"
+      ]
     }
   },
   "infographic": {
@@ -11260,7 +11309,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "dzukou-valley",
+    "shared_best": "bengaluru",
     "collection": "odisha-golden-triangle"
   },
   "manual_skip_dests": {},
