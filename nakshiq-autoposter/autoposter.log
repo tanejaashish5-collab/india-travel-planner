@@ -26061,3 +26061,26 @@ Date range: 2026-04-15 → 2026-10-02
 2026-10-03 16:46:57  INFO      [facebook/Nakshiq] ✅ Published · Outstand=cTYNk · Platform=2088937021708192
 2026-10-03 16:46:57  INFO      State saved. Run complete.
 2026-10-03 16:46:57  INFO      ════════════════════════════════════════════════════════════
+2026-10-03 18:03:53  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-03 18:03:53  INFO      ════════════════════════════════════════════════════════════
+2026-10-03 18:03:53  INFO      Nakshiq Autoposter · EVENING · 2026-10-03 · weekday=5
+2026-10-03 18:03:53  INFO      ════════════════════════════════════════════════════════════
+2026-10-03 18:03:53  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-03 18:04:35  INFO      Synced → 20 destinations · 100 traps · 6 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-03 18:04:35  INFO      brand_stamp: registered 439 destinations for overlay lookup
+2026-10-03 18:04:36  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-03 18:04:36  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-03 18:04:36  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-03 18:04:52  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-03 18:04:52  INFO      [diversity] feed: 37 → 24 options · cooldown dropped 13 (carousel, pillar:anti_trap, pillar:scenario_eatery, pillar:scenario_friends_swap, pillar:verification seen <2d)
+2026-10-03 18:04:52  INFO      Evening format (balance→discovery): hidden_gem_reveal [12% vs target 20%] (0/15 never featured)
+2026-10-03 18:04:52  INFO      Formats — IG: hidden_gem_reveal  ·  FB: hidden_gem_reveal  ·  Story: route_spotlight  ·  Audience: families
+2026-10-03 18:04:52  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 36
+2026-10-03 18:04:52  INFO      Audience filter 'families' → 15 destinations match.
+2026-10-03 18:04:52  INFO      Fingerprint dedup snapshot — 32 dests in 7d · 81 (dest,fmt) pairs in 30d · 217 media in 60d
+2026-10-03 18:04:52  INFO      Route locked: Manali Long Weekend
+2026-10-03 18:04:52  INFO      Hidden gem locked: Sogam-Chandigam walnut & apple belt — Kashmir's densest walnut cluster (near Lolab Valley) (48/48 never featured)
+2026-10-03 18:04:53  INFO      Shared best destination locked: Rudraprayag
+2026-10-03 18:04:53  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-10-03 18:04:53  INFO      State saved. Run complete.
+2026-10-03 18:04:53  INFO      ════════════════════════════════════════════════════════════
