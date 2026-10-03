@@ -50,6 +50,24 @@ const env = loadEnv();
 const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
 const claude = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
 
+// Sonnet 5.5 always runs adaptive thinking, and thinking tokens count toward
+// max_tokens, so leave headroom well above the ~1,100-word target. Effort
+// "low" is the recommended start for content generation.
+async function draftMarkdown(prompt) {
+  const res = await claude.messages.create({
+    model: "claude-sonnet-5-5",
+    max_tokens: 16000,
+    output_config: { effort: "low" },
+    messages: [{ role: "user", content: prompt }],
+  });
+  if (res.stop_reason !== "end_turn") {
+    // A refusal or a max_tokens cut would otherwise write a blank/truncated draft.
+    console.error(`Claude stopped with stop_reason=${res.stop_reason}; no draft written.`);
+    process.exit(1);
+  }
+  return res.content.find((b) => b.type === "text")?.text ?? "";
+}
+
 const MONTH_NUMBER = {
   january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
   july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
@@ -136,12 +154,7 @@ HARD RULES:
 - No generic travel-brochure language. No "breathtaking", "unforgettable", etc.
 - Total length: 500–800 words.
 - Output ONLY the markdown. No preamble.`;
-  const res = await claude.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 3000,
-    messages: [{ role: "user", content: prompt }],
-  });
-  markdown = res.content.find((b) => b.type === "text")?.text ?? "";
+  markdown = await draftMarkdown(prompt);
 } else if (type === "verdict") {
   const dest = flag("dest");
   if (!dest) { console.error("--type verdict needs --dest <id>"); process.exit(1); }
@@ -176,12 +189,7 @@ HARD RULES:
 - No filler, no padding, no adjectives without evidence.
 - 600–900 words total.
 - Output ONLY the markdown.`;
-  const res = await claude.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 3500,
-    messages: [{ role: "user", content: prompt }],
-  });
-  markdown = res.content.find((b) => b.type === "text")?.text ?? "";
+  markdown = await draftMarkdown(prompt);
 } else {
   // ranked
   const state = flag("state"), month = flag("month"), topN = Number(flag("n") ?? 7);
@@ -235,12 +243,7 @@ HARD RULES:
 - Every claim anchored in the data.
 - 700–1100 words.
 - Output ONLY the markdown.`;
-  const res = await claude.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 4000,
-    messages: [{ role: "user", content: prompt }],
-  });
-  markdown = res.content.find((b) => b.type === "text")?.text ?? "";
+  markdown = await draftMarkdown(prompt);
 }
 
 // ── Write draft with front-matter ─────────────────────────────
