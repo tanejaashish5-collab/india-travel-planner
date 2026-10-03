@@ -259,15 +259,11 @@
   transition: transform 0.5s ease-out;
 }
 
-/* Smooth page transitions */
-main {
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* No page-load fade on <main> (removed 2026-10-03). `main { animation: fadeIn }`
+   started every page's content at opacity 0, so the headline/hero was not an
+   LCP candidate during the fade and Lighthouse/PageSpeed scored the small nav
+   logo as LCP instead (explore mobile 69, LCP 4.8s). Content now paints at
+   full opacity on the first frame. */
 
 /* Hide scrollbar utility */
 .scrollbar-none {

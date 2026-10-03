@@ -3,7 +3,7 @@
 import { m as motion, AnimatePresence } from "framer-motion";
 // All links use <a> tags to avoid RSC streaming conflicts when mega menu unmounts
 import { useLocale, useTranslations } from "next-intl";
-import { FALLBACK } from "@/lib/stats";
+import { FALLBACK } from "@/lib/stats-fallback";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 import { currentMonthLongIST, currentMonthSlugIST } from "@itp/shared";
 
