@@ -38,14 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-02",
     "PdMu0_evening": "2026-10-02",
-    "PdMu0_carousel": "2026-10-02"
+    "PdMu0_carousel": "2026-10-03"
   },
   "last_sync": "2026-10-02T19:27:41.635985+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "spiti-valley",
-      "date": "2026-09-18"
-    },
     {
       "destination_id": "leh",
       "date": "2026-09-19"
@@ -153,6 +149,10 @@
     {
       "destination_id": "pahalgam",
       "date": "2026-10-02"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-10-03"
     }
   ],
   "posted_formats": {
@@ -10326,6 +10326,15 @@
       "format": "v2_myth_bust_oneline",
       "has_media": true,
       "media_id": "pahalgam.mp4"
+    },
+    {
+      "timestamp": "2026-10-03T12:43:51.623440+00:00",
+      "date": "2026-10-03",
+      "platform": "facebook",
+      "post_id": "NpRxC",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-10-03"
     }
   ],
   "theme_usage": {
