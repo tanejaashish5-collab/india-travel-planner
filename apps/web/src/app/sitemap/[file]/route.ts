@@ -44,13 +44,14 @@ const TAGS = [
   "hill-station", "border", "desert", "valley", "monastery", "waterfall",
 ];
 
-type Freq = "daily" | "weekly" | "monthly";
-
+// <lastmod> only where we hold a real modification date (2026-10-03). Every
+// URL used to carry lastmod=new Date(), so all ~25K URLs claimed "changed this
+// second" on every fetch — Google ignores lastmod site-wide once it proves
+// unreliable. <changefreq>/<priority> dropped too: Google ignores both, and
+// they were ~45% of the bytes (chunk 1 was 3.2 MB).
 type Entry = {
   url: string;
-  lastModified: Date;
-  changeFrequency: Freq;
-  priority: number;
+  lastModified?: string | null;
 };
 
 // Mirror of middleware.ts (lines 305-312) noindex rule: these /hi path
@@ -70,15 +71,13 @@ function isHiNoindexed(path: string): boolean {
   return HI_NOINDEX_PREFIXES.some((p) => path === p || path.startsWith(`${p}/`));
 }
 
-function entry(path: string, freq: Freq, priority: number): Entry[] {
+function entry(path: string, lastModified?: string | null): Entry[] {
   return LOCALES.flatMap((locale) => {
     // Skip the /hi variant of noindex'd English-duplicate families.
     if (locale === "hi" && isHiNoindexed(path)) return [];
     return [{
       url: `${BASE}/${locale}${path ? `/${path}` : ""}`,
-      lastModified: new Date(),
-      changeFrequency: freq,
-      priority,
+      lastModified,
     }];
   });
 }
@@ -96,25 +95,24 @@ async function getDestinationIds(): Promise<string[]> {
   return (await getCachedDestinationsIndex()).map((d) => d.id);
 }
 
+/** id → content_reviewed_at (the page's VERIFIED stamp), same cached list. */
+async function getDestinationReviewedAt(): Promise<Map<string, string | null>> {
+  return new Map((await getCachedDestinationsIndex()).map((d) => [d.id, d.content_reviewed_at]));
+}
+
 // Destinations that carry destination_costs rows — only these get a /cost/[slug]
-// page (the rest notFound()), so we never sitemap a 404. Paginated dedupe.
+// page (the rest notFound()), so we never sitemap a 404. One inner-join query
+// with the embed capped at 1 row: it used to page all ~12.7K cost rows over
+// REST (13 sequential round trips, ~5s) just to dedupe 525 ids.
 async function getCostDestinationIds(): Promise<string[]> {
   const supabase = getSupabase();
   if (!supabase) return [];
-  const ids = new Set<string>();
-  const page = 1000;
-  let from = 0;
-  while (true) {
-    const { data, error } = await supabase
-      .from("destination_costs")
-      .select("destination_id")
-      .range(from, from + page - 1);
-    if (error || !data) break;
-    for (const r of data as { destination_id: string }[]) ids.add(r.destination_id);
-    if (data.length < page) break;
-    from += page;
-  }
-  return Array.from(ids).sort();
+  const { data, error } = await supabase
+    .from("destinations")
+    .select("id, destination_costs!inner(destination_id)")
+    .limit(1, { referencedTable: "destination_costs" });
+  if (error || !data) return [];
+  return (data as { id: string }[]).map((r) => r.id).sort();
 }
 
 // Destinations that carry a published park_safaris row — only these get a
@@ -152,8 +150,9 @@ function escapeXml(s: string): string {
 
 function toUrlsetXml(entries: Entry[]): string {
   const urls = entries.map((e) => {
-    const lastmod = (e.lastModified instanceof Date ? e.lastModified : new Date(e.lastModified)).toISOString();
-    return `  <url>\n    <loc>${escapeXml(e.url)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${e.changeFrequency}</changefreq>\n    <priority>${e.priority.toFixed(2)}</priority>\n  </url>`;
+    const t = e.lastModified ? new Date(e.lastModified) : null;
+    const lastmod = t && !Number.isNaN(t.getTime()) ? `<lastmod>${t.toISOString()}</lastmod>` : "";
+    return `  <url><loc>${escapeXml(e.url)}</loc>${lastmod}</url>`;
   }).join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
@@ -188,56 +187,53 @@ async function buildChunk(id: string): Promise<Entry[]> {
       ...["himachal-pradesh","ladakh","jammu-kashmir","uttarakhand","sikkim","arunachal-pradesh","meghalaya","rajasthan"].map((r) => `road-conditions/${r}`),
     ];
 
-    const staticEntries = staticPages.flatMap((page) => entry(
-      page,
-      page === "" ? "daily" : "weekly",
-      page === "" ? 1.0 : page === "explore" || page === "india-travel" ? 0.9 : 0.7,
-    ));
+    const staticEntries = staticPages.flatMap((page) => entry(page));
 
     const whereToGoEntries = MONTH_SLUGS.flatMap((month) =>
-      entry(`where-to-go/${month}`, "weekly", 0.85),
+      entry(`where-to-go/${month}`),
     );
 
     // /best/[slug] — persona × month + evergreen persona pages.
     // Scope locked by Move A validation (persona+month bucket = YELLOW; n-days
     // / weekend / generic-month buckets RED + dropped). 65 slugs × 2 locales.
     const bestEntries = allBestSlugs().flatMap((slug) =>
-      entry(`best/${slug}`, "monthly", 0.7),
+      entry(`best/${slug}`),
     );
 
     return [...staticEntries, ...whereToGoEntries, ...bestEntries];
   }
 
   if (id === "1") {
-    const destIds = await getDestinationIds();
+    const reviewedAt = await getDestinationReviewedAt();
+    const destIds = Array.from(reviewedAt.keys());
     if (!destIds.length) return [];
 
     const destEntries = destIds.flatMap((dId) =>
-      entry(`destination/${dId}`, "weekly", 0.8),
+      entry(`destination/${dId}`, reviewedAt.get(dId)),
     );
 
     const destMonthEntries = destIds.flatMap((dId) =>
-      MONTH_SLUGS.flatMap((month) => entry(`destination/${dId}/${month}`, "monthly", 0.7)),
+      MONTH_SLUGS.flatMap((month) => entry(`destination/${dId}/${month}`, reviewedAt.get(dId))),
     );
 
-    // /cost/[slug] — per-destination trip-cost calculator (only dests that
-    // carry destination_costs rows; count varies as coverage grows).
-    const costIds = await getCostDestinationIds();
-    const costEntries = costIds.flatMap((dId) => entry(`cost/${dId}`, "monthly", 0.7));
-
-    // /safari/[slug] — per-park safari-booking guide (only dests with a
-    // published park_safaris row).
-    const safariIds = await getSafariDestinationIds();
-    const safariEntries = safariIds.flatMap((dId) => entry(`safari/${dId}`, "monthly", 0.7));
-
-    // /pilgrimage/[slug] — verified yatra/parikrama routing (only published rows).
-    const pilgrimageSlugs = await getPilgrimageSlugs();
-    const pilgrimageEntries = pilgrimageSlugs.flatMap((slug) => entry(`pilgrimage/${slug}`, "monthly", 0.7));
-
-    // /itinerary/[slug] — 1/3/5-day plans. Same cached allowlist the page's
-    // generateStaticParams + notFound() use, so we never sitemap a 404.
-    const itinerarySlugs = await getCachedItinerarySlugs();
-    const itineraryEntries = itinerarySlugs.flatMap((dId) => entry(`itinerary/${dId}`, "monthly", 0.7));
+    // Independent lookups — run in parallel, not one round trip after another.
+    const [costIds, safariIds, pilgrimageSlugs, itinerarySlugs] = await Promise.all([
+      // /cost/[slug] — per-destination trip-cost calculator (only dests that
+      // carry destination_costs rows; count varies as coverage grows).
+      getCostDestinationIds(),
+      // /safari/[slug] — per-park safari-booking guide (only dests with a
+      // published park_safaris row).
+      getSafariDestinationIds(),
+      // /pilgrimage/[slug] — verified yatra/parikrama routing (only published rows).
+      getPilgrimageSlugs(),
+      // /itinerary/[slug] — 1/3/5-day plans. Same cached allowlist the page's
+      // generateStaticParams + notFound() use, so we never sitemap a 404.
+      getCachedItinerarySlugs(),
+    ]);
+    const costEntries = costIds.flatMap((dId) => entry(`cost/${dId}`));
+    const safariEntries = safariIds.flatMap((dId) => entry(`safari/${dId}`));
+    const pilgrimageEntries = pilgrimageSlugs.flatMap((slug) => entry(`pilgrimage/${slug}`));
+    const itineraryEntries = itinerarySlugs.flatMap((dId) => entry(`itinerary/${dId}`));
 
     return [...destEntries, ...destMonthEntries, ...costEntries, ...safariEntries, ...pilgrimageEntries, ...itineraryEntries];
   }
@@ -249,54 +245,54 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const [collResult, routeResult, articleResult, trekResult, issueResult] = await Promise.all([
       supabase.from("collections").select("id").order("id"),
       supabase.from("routes").select("id").order("id"),
-      supabase.from("articles").select("slug").order("published_at", { ascending: false }),
+      supabase.from("articles").select("slug, updated_at, published_at").order("published_at", { ascending: false }),
       supabase.from("treks").select("id").order("id"),
       supabase.from("newsletter_issues").select("slug").not("sent_at", "is", null).order("sent_at", { ascending: false }),
     ]);
 
     const collEntries = (collResult.data ?? []).flatMap((c: any) =>
-      entry(`collections/${c.id}`, "monthly", 0.6),
+      entry(`collections/${c.id}`),
     );
 
     const routeEntries = (routeResult.data ?? []).flatMap((r: any) =>
-      entry(`routes/${r.id}`, "monthly", 0.6),
+      entry(`routes/${r.id}`),
     );
 
     const articleEntries = (articleResult.data ?? []).flatMap((a: any) =>
-      entry(`blog/${a.slug}`, "weekly", 0.8),
+      entry(`blog/${a.slug}`, a.updated_at ?? a.published_at),
     );
 
     const trekEntries = (trekResult.data ?? []).flatMap((t: any) =>
-      entry(`treks/${t.id}`, "monthly", 0.7),
+      entry(`treks/${t.id}`),
     );
 
     const issueEntries = (issueResult.data ?? []).flatMap((i: any) =>
-      entry(`the-window/${i.slug}`, "monthly", 0.7),
+      entry(`the-window/${i.slug}`),
     );
 
     return [...collEntries, ...routeEntries, ...articleEntries, ...trekEntries, ...issueEntries];
   }
 
   if (id === "3") {
-    const exploreState = STATE_SLUGS.flatMap((s) => entry(`explore/state/${s}`, "weekly", 0.8));
+    const exploreState = STATE_SLUGS.flatMap((s) => entry(`explore/state/${s}`));
     const exploreStateMonth = STATE_SLUGS.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`explore/state/${s}/${m}`, "monthly", 0.7)),
+      MONTH_SLUGS.flatMap((m) => entry(`explore/state/${s}/${m}`)),
     );
-    const exploreDiff = DIFFICULTIES.flatMap((d) => entry(`explore/difficulty/${d}`, "monthly", 0.7));
-    const exploreTag = TAGS.flatMap((t) => entry(`explore/tag/${t}`, "monthly", 0.7));
-    const trekState = TREK_STATES.flatMap((s) => entry(`treks/state/${s}`, "monthly", 0.7));
+    const exploreDiff = DIFFICULTIES.flatMap((d) => entry(`explore/difficulty/${d}`));
+    const exploreTag = TAGS.flatMap((t) => entry(`explore/tag/${t}`));
+    const trekState = TREK_STATES.flatMap((s) => entry(`treks/state/${s}`));
     const trekStateMonth = TREK_STATES.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`treks/state/${s}/${m}`, "monthly", 0.65)),
+      MONTH_SLUGS.flatMap((m) => entry(`treks/state/${s}/${m}`)),
     );
-    const trekDiff = DIFFICULTIES.flatMap((d) => entry(`treks/difficulty/${d}`, "monthly", 0.7));
-    const campState = CAMP_STATES.flatMap((s) => entry(`camping/state/${s}`, "monthly", 0.7));
-    const festMonth = MONTH_SLUGS.flatMap((m) => entry(`festivals/month/${m}`, "monthly", 0.75));
-    const festState = STATE_SLUGS.flatMap((s) => entry(`festivals/state/${s}`, "monthly", 0.7));
+    const trekDiff = DIFFICULTIES.flatMap((d) => entry(`treks/difficulty/${d}`));
+    const campState = CAMP_STATES.flatMap((s) => entry(`camping/state/${s}`));
+    const festMonth = MONTH_SLUGS.flatMap((m) => entry(`festivals/month/${m}`));
+    const festState = STATE_SLUGS.flatMap((s) => entry(`festivals/state/${s}`));
     const festStateMonth = STATE_SLUGS.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`festivals/state/${s}/${m}`, "monthly", 0.65)),
+      MONTH_SLUGS.flatMap((m) => entry(`festivals/state/${s}/${m}`)),
     );
-    const staysState = STATE_SLUGS.flatMap((s) => entry(`stays/state/${s}`, "monthly", 0.7));
-    const familyState = FAMILY_STATES.flatMap((s) => entry(`family/${s}`, "monthly", 0.7));
+    const staysState = STATE_SLUGS.flatMap((s) => entry(`stays/state/${s}`));
+    const familyState = FAMILY_STATES.flatMap((s) => entry(`family/${s}`));
     // NOTE: `where-to-go/<state>-in-<month>` URLs are deliberately NOT listed —
     // every one 301-redirects to `/where-to-go/<month>` (middleware.ts lines
     // 272-281, legacy URL consolidation). Listing redirect-source URLs in a
@@ -328,13 +324,13 @@ async function buildChunk(id: string): Promise<Entry[]> {
       const pair = `${p.id1}-vs-${p.id2}`;
       if (seenPairs.has(pair)) return [];
       seenPairs.add(pair);
-      return entry(`vs/${pair}`, "monthly", 0.8);
+      return entry(`vs/${pair}`);
     });
     const trapVsEntries = (trapResult.data ?? []).flatMap((t: any) => {
       const pair = `${t.trap_destination_id}-vs-${t.alternative_destination_id}`;
       if (seenPairs.has(pair)) return [];
       seenPairs.add(pair);
-      return entry(`vs/${pair}`, "monthly", 0.7);
+      return entry(`vs/${pair}`);
     });
     const vsEntries = [...curatedVsEntries, ...trapVsEntries];
 
@@ -342,15 +338,15 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const skipEntries = (trapResult.data ?? []).flatMap((t: any) => {
       if (seenTraps.has(t.trap_destination_id)) return [];
       seenTraps.add(t.trap_destination_id);
-      return entry(`skip-list/${t.trap_destination_id}`, "monthly", 0.7);
+      return entry(`skip-list/${t.trap_destination_id}`);
     });
 
     const kidsEntries = destIds.flatMap((dId) =>
-      entry(`with-kids/${dId}`, "monthly", 0.6),
+      entry(`with-kids/${dId}`),
     );
 
     const regionMonthEntries = (regionResult.data ?? []).flatMap((r: any) =>
-      MONTH_SLUGS.flatMap((month) => entry(`region/${r.id}/${month}`, "monthly", 0.7)),
+      MONTH_SLUGS.flatMap((month) => entry(`region/${r.id}/${month}`)),
     );
 
     // Per-festival pages — 331 rows × 2 locales ≈ 662 URLs. Collision-aware
@@ -360,7 +356,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
       .select("id, name, destination_id");
     const festivalSlugMap = buildFestivalSlugMap((festivalRows ?? []) as FestivalSlugRow[]);
     const festivalEntries = Array.from(festivalSlugMap.values()).flatMap((slug) =>
-      entry(`festivals/${slug}`, "monthly", 0.75),
+      entry(`festivals/${slug}`),
     );
 
     // Per-luxury-experience pages — ~30 rows × 2 locales ≈ 60 URLs.
@@ -370,7 +366,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
       .eq("published", true)
       .order("id");
     const luxuryEntries = (luxuryRows ?? []).flatMap((r: { id: string }) =>
-      entry(`luxury/${r.id}`, "monthly", 0.75),
+      entry(`luxury/${r.id}`),
     );
 
     return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries, ...festivalEntries, ...luxuryEntries];
@@ -390,9 +386,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
     return (data ?? []).flatMap((q: { destination_id: string; slug: string; answered_at: string }) =>
       LOCALES.map((locale) => ({
         url: `${BASE}/${locale}/destination/${q.destination_id}/q/${q.slug}`,
-        lastModified: q.answered_at ? new Date(q.answered_at) : new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.65,
+        lastModified: q.answered_at,
       })),
     );
   }

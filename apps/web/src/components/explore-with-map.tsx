@@ -20,7 +20,6 @@ interface DestinationData {
   difficulty: string;
   elevation_m: number | null;
   tags: string[];
-  best_months: number[];
   translations: Record<string, Record<string, string>> | null;
   state: { name: string } | Array<{ name: string }> | null;
   state_id: string;
@@ -29,10 +28,22 @@ interface DestinationData {
     | Array<{ suitable: boolean; rating: number }>
     | null;
   destination_months:
-    | Array<{ month: number; score: number; note: string }>
+    | Array<{ month: number; score: number; note: string; solo_female_override?: number | null }>
     | null;
   coords: { lat: number; lng: number } | null;
 }
+
+/**
+ * Wire shape from explore/page.tsx (lib/explore-catalog compactMonths): 12
+ * scores Jan..Dec in `ms`, optional per-month solo-female overrides in `sfo`,
+ * and only the `notesMonth` note in `n`. Expanded back to destination_months
+ * below so ExploreGrid / the map keep their existing shape.
+ */
+type CompactDestination = Omit<DestinationData, "destination_months"> & {
+  ms: (number | null)[];
+  sfo?: (number | null)[];
+  n?: string;
+};
 
 function getStateName(d: DestinationData): string {
   if (!d.state) return "";
@@ -41,11 +52,13 @@ function getStateName(d: DestinationData): string {
 }
 
 export function ExploreWithMap({
-  destinations,
+  destinations: compact,
   states,
+  notesMonth,
 }: {
-  destinations: DestinationData[];
+  destinations: CompactDestination[];
   states: Array<{ id: string; name: string }>;
+  notesMonth: number;
 }) {
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const t = useTranslations("nav");
@@ -83,6 +96,37 @@ export function ExploreWithMap({
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Notes for months other than notesMonth, fetched on demand (month → id → note).
+  const [extraNotes, setExtraNotes] = useState<Record<number, Record<string, string>>>({});
+  useEffect(() => {
+    const m = filters.month;
+    if (!m || m === notesMonth || extraNotes[m]) return;
+    let cancelled = false;
+    fetch(`/api/explore-notes?month=${m}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (!cancelled && j?.notes) setExtraNotes((prev) => ({ ...prev, [m]: j.notes }));
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [filters.month, notesMonth, extraNotes]);
+
+  const destinations: DestinationData[] = useMemo(
+    () =>
+      compact.map(({ ms, sfo, n, ...d }) => ({
+        ...d,
+        destination_months: ms.flatMap((score, i) => {
+          if (score == null) return [];
+          const month = i + 1;
+          const note = month === notesMonth ? n : extraNotes[month]?.[d.id];
+          return [{ month, score, solo_female_override: sfo?.[i] ?? null, note: note ?? "" }];
+        }),
+      })),
+    [compact, notesMonth, extraNotes],
+  );
 
   const ecoCount = useMemo(
     () => destinations.filter((d) => {
@@ -200,6 +244,7 @@ export function ExploreWithMap({
       {/* Content */}
       {viewMode === "grid" ? (
         <ExploreGrid
+          priorityCount={0}
           destinations={destinations}
           states={states}
           sharedFilters={filters}

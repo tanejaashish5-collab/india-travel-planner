@@ -30,7 +30,6 @@ interface DestinationData {
   difficulty: string;
   elevation_m: number | null;
   tags: string[];
-  best_months: number[];
   budget_tier?: string | null;
   translations: Record<string, Record<string, string>> | null;
   state: { name: string } | Array<{ name: string }> | null;
@@ -51,12 +50,17 @@ export function ExploreGrid({
   sharedFilters,
   onFiltersChange,
   ecoCount,
+  priorityCount = 4,
 }: {
   destinations: DestinationData[];
   states: Array<{ id: string; name: string }>;
   sharedFilters?: FilterState;
   onFiltersChange?: (filters: FilterState) => void;
   ecoCount?: number;
+  /** Cards whose image is preloaded. /explore passes 0: its grid sits below
+   *  the fold at every breakpoint, so preloading 4 card photos (~300 KB) only
+   *  competed with the text LCP on mobile (Lighthouse 2026-10-03). */
+  priorityCount?: number;
 }) {
   const locale = useLocale();
   const ts = useTranslations("score");
@@ -286,7 +290,7 @@ export function ExploreGrid({
           <StaggerItem key={dest.id} className={isDefaultView && index === 0 ? "sm:col-span-2" : ""}>
             <HoverCard>
               <DestinationCard
-                cardIndex={index}
+                priority={index < priorityCount}
                 dest={dest}
                 locale={locale}
                 selectedMonth={filters.month}
@@ -352,7 +356,7 @@ function DestinationCard({
   te,
   tu,
   featured = false,
-  cardIndex = 0,
+  priority = false,
 }: {
   dest: DestinationData;
   locale: string;
@@ -362,7 +366,7 @@ function DestinationCard({
   te: (key: string) => string;
   tu: (key: string) => string;
   featured?: boolean;
-  cardIndex?: number;
+  priority?: boolean;
 }) {
   const kf = Array.isArray(dest.kids_friendly)
     ? dest.kids_friendly[0]
@@ -424,8 +428,8 @@ function DestinationCard({
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover ken-burns"
-          priority={cardIndex < 4}
-          loading={cardIndex < 4 ? undefined : "lazy"}
+          priority={priority}
+          loading={priority ? undefined : "lazy"}
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         {/* Gradient overlay — lighter to keep images visible */}

@@ -207,28 +207,31 @@ export interface CachedDestinationIndexRow {
   difficulty: string | null;
   tags: string[] | null;
   region: string | null;
+  /** Last verified-content date (the page's VERIFIED stamp) — sitemap <lastmod>. */
+  content_reviewed_at: string | null;
 }
 
 export const getCachedDestinationsIndex = unstable_cache(
   async (): Promise<CachedDestinationIndexRow[]> => {
     const supabase = anonClient();
     if (!supabase) return [];
-    const rows = await fetchAllRows(supabase, "destinations", "id, name, region, difficulty, tags, state:states(name)");
+    const rows = await fetchAllRows(supabase, "destinations", "id, name, region, difficulty, tags, content_reviewed_at, state:states(name)");
     return rows
       .map((r) => {
-        const d = r as { id: string; name: string; region: string | null; difficulty: string | null; tags: string[] | null; state: unknown };
+        const d = r as { id: string; name: string; region: string | null; difficulty: string | null; tags: string[] | null; content_reviewed_at: string | null; state: unknown };
         return {
           id: d.id,
           name: d.name,
           region: d.region,
           difficulty: d.difficulty,
           tags: d.tags,
+          content_reviewed_at: d.content_reviewed_at,
           state_name: stateName(d.state),
         };
       })
       .sort((a, b) => a.name.localeCompare(b.name));
   },
-  ["ref-destinations-index-v1"],
+  ["ref-destinations-index-v2"],
   { revalidate: REVALIDATE_SECONDS, tags: [REF_TAGS.destinations] },
 );
 

@@ -16,10 +16,12 @@ const BASE = "https://www.nakshiq.com";
 // the moderation queue starts shipping answered Q&As.
 const CHUNK_IDS = ["0", "1", "2", "3", "4"] as const;
 
+// No <lastmod> per chunk: it was new Date() on every request, i.e. always
+// "changed now" — a false signal (2026-10-03). Per-URL lastmods inside the
+// chunks carry the real dates.
 export async function GET() {
-  const now = new Date().toISOString();
   const sitemaps = CHUNK_IDS.map(
-    (id) => `  <sitemap>\n    <loc>${BASE}/sitemap/${id}.xml</loc>\n    <lastmod>${now}</lastmod>\n  </sitemap>`,
+    (id) => `  <sitemap><loc>${BASE}/sitemap/${id}.xml</loc></sitemap>`,
   ).join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemaps}\n</sitemapindex>\n`;
