@@ -443,9 +443,14 @@ def pick_track(seed: str) -> tuple[Path, list[float], float]:
     import numpy as np, librosa
     cache = VEO / "data" / "guide_music.json"
     info = json.loads(cache.read_text()) if cache.exists() else {}
-    tracks = sorted(MUSIC_DIR.glob("house-*.mp3"))
-    if not info:
+    tracks = sorted(MUSIC_DIR.glob("house-*.mp3")) + sorted((HERE / "assets/music_nakshiq").glob("guide*.mp3"))
+    forced = os.environ.get("GUIDE_TRACK")
+    if forced:
+        tracks.append(Path(forced))
+    if any(t.name not in info for t in tracks):
         for t in tracks:
+            if t.name in info:
+                continue
             y, sr = librosa.load(str(t), sr=22050, mono=True, duration=150)
             tempo, bf = librosa.beat.beat_track(y=y, sr=sr, start_bpm=120)
             bt = librosa.frames_to_time(bf, sr=sr)
@@ -454,16 +459,23 @@ def pick_track(seed: str) -> tuple[Path, list[float], float]:
             off = [float(np.min(np.abs(kicks - b))) for b in bt] if len(kicks) else [1.0]
             rms = librosa.feature.rms(y=y)[0]; rt = librosa.times_like(rms, sr=sr)
             # start where the full beat is in: first beat after which 8 s of energy stay high
-            lvl = np.percentile(rms, 70)
+            lvl = 0.8 * np.percentile(rms, 70)   # an even-energy track otherwise "starts" late (theme B: 29 s)
             start = next((float(b) for b in bt if rms[(rt >= b) & (rt < b + 8)].mean() >= lvl), float(bt[0]))
             info[t.name] = {"bpm": float(np.atleast_1d(tempo)[0]), "kick_ms": float(np.median(off) * 1000),
                             "start": start, "dur": len(y) / sr}
         cache.write_text(json.dumps(info, indent=1))
-    ok = [n for n, v in info.items() if 110 <= v["bpm"] <= 130 and v["kick_ms"] <= 25 and v["dur"] - v["start"] > 60]
+    path_of = {t.name: t for t in tracks}
+    ok = [n for n, v in info.items() if n in path_of and 110 <= v["bpm"] <= 130 and v["kick_ms"] <= 25 and v["dur"] - v["start"] > 45]
     if not ok:
         raise SystemExit("no house track with a steady kick in range")
-    name = ok[sum(map(ord, seed)) % len(ok)]
-    t = MUSIC_DIR / name
+    own = [n for n in ok if n.startswith("guide")]      # the NakshIQ guide theme, once picked, is the sound
+    if forced and Path(forced).name in ok:
+        name = Path(forced).name
+    elif own:
+        name = own[sum(map(ord, seed)) % len(own)]
+    else:
+        name = ok[sum(map(ord, seed)) % len(ok)]
+    t = path_of[name]
     y, sr = librosa.load(str(t), sr=22050, mono=True)
     _, bf = librosa.beat.beat_track(y=y, sr=sr, start_bpm=120)
     bt = librosa.frames_to_time(bf, sr=sr)
