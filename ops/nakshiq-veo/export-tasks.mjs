@@ -54,8 +54,15 @@ const todo = [];
 let gi = 0;
 for (const r of pending) {
   const c = cost(r);
+  // A free still (0 credits) always rides along, even once every account's credits
+  // are spoken for: guide-reel stills queue behind the videos and were being dropped
+  // by a plain break here (2026-10-03). It joins the account with the fewest rows.
+  if (c === 0) {
+    const g = (gi < groups.length) ? groups[gi] : groups.reduce((a, b) => (b.rows.length < a.rows.length ? b : a));
+    g.rows.push(r); todo.push(r); continue;
+  }
   while (gi < groups.length && groups[gi].credits + c > ACCOUNT_CREDITS) gi++;
-  if (gi >= groups.length) break;
+  if (gi >= groups.length) continue;      // no credits left today; later free stills still ride
   groups[gi].rows.push(r); groups[gi].credits += c; todo.push(r);
 }
 

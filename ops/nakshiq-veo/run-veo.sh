@@ -82,6 +82,17 @@ AGE=$(python3 -c "import json,datetime as d;g=json.load(open('data/reel-data.jso
 ( cd "$HOME/Desktop/India Travel Planner/nakshiq-autoposter" && python3 v3_daily.py topup ) \
   || say "WARN v3 topup failed"
 
+# 1b. DESTINATION GUIDES (founder 2026-10-03: a second daily post). Cuts any guide
+#     whose stills arrived (intake above), then keeps 3 guides queued for the
+#     month's 10/10 places. Its stills are free Nano Banana rows in the same
+#     queue, so the export below hands them to tomorrow's Cowork run. The fact
+#     pack reads Supabase, so this goes through the env file like the cut.
+( cd "$HOME/Desktop/India Travel Planner" && node --env-file=apps/web/.env.local -e '
+    const {spawnSync}=require("child_process");
+    process.exit(spawnSync("python3",["guide_reel.py","daily"],
+      {stdio:"inherit",cwd:"nakshiq-autoposter",env:process.env}).status ?? 1);' ) \
+  || say "WARN guide daily failed"
+
 PENDING=$(python3 -c "import json,os;p='veo_queue.json';print(sum(1 for r in (json.load(open(p)) if os.path.exists(p) else []) if r.get('status')=='pending'))" 2>/dev/null || echo 0)
 say "pending clips: $PENDING"
 if [ "$PENDING" -eq 0 ]; then

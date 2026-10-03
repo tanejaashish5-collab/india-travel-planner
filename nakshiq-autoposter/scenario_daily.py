@@ -281,6 +281,18 @@ def caption_for(row: dict) -> tuple[str, str]:
     caption reads as the same voice as the video. Disclosure is in the text:
     the people in these scenes are AI-generated, and saying so costs nothing
     and keeps the account out of the undisclosed-AI-people class."""
+    if row.get("kind") == "guide":
+        import guide_reel as GR
+        name, mon = row["name"], GR.MONTHS[row["month"]]
+        url = f"https://www.nakshiq.com/en/destination/{row['slug']}"
+        tag = row["slug"].replace("-", "")
+        cap = (f"{name} in {mon}: 10/10, go. The whole trip in one reel: who it suits, who should skip it, "
+               f"where to eat, the quiet spot nearby and what {mon} really costs.\n\n"
+               f"Save this for the trip. Send it to whoever's coming with you.\n\n"
+               f"Full {name} guide, month by month: {url}\n\n"
+               f"Images are AI-generated. Every fact on screen is NakshIQ's real data."
+               f"\n\n#{tag} #indiatravel #{mon.lower()}travel #NakshIQ")
+        return cap, f"{name} in {mon}: the whole guide in {int(round(row.get('seconds') or 45))} seconds | NakshIQ"
     if row.get("kind") == "data_card":
         name, best, sc = row["name"], row["best"], row["best_score"]
         url = f"https://www.nakshiq.com/en/destination/{row['slug']}"
@@ -338,8 +350,13 @@ def _without_editlist(path: Path) -> Path:
     return path
 
 
-def publish(dry: bool = False) -> int:
+def publish(dry: bool = False, kind: str = "story") -> int:
     """Publish the oldest ready reel for each surface that has not had one today.
+
+    kind "story" = the 20:05 IST scenario reel (one per platform per day).
+    kind "guide" = the 13:05 IST destination guide (guide_reel.py; founder
+    2026-10-03: "a second daily post"). Each kind has its OWN once-a-day
+    check, so the guide never uses up the story reel's day or the reverse.
 
     The caller (run-social-local.sh) pulls the shared ledger before this and
     pushes it after, so the GitHub slot and the caps see this post."""
@@ -356,11 +373,32 @@ def publish(dry: bool = False) -> int:
     published = 0
     accounts = {a.get("network"): a for a in ap.get_connected_accounts()}
     _settle_unconfirmed(ap, led)
+    is_guide = kind == "guide"
+    if is_guide:
+        # autoposter's own per-platform cap (default 1/day, Mac-local date) would
+        # refuse the day's second reel; the guide is that second reel by design.
+        os.environ["NAKSHIQ_IG_DAILY_CAP"] = "2"
+        os.environ["NAKSHIQ_YT_DAILY_CAP"] = "2"
+    mine = (lambda v: v.get("kind") == "guide") if is_guide else (lambda v: v.get("kind") != "guide")
     for lang, surf in SURFACE.items():
         plat = surf["platform"]
-        if any(v.get("platform") == plat and v.get("status") in ("published", "unconfirmed")
+        if any(mine(v) and v.get("platform") == plat and v.get("status") in ("published", "unconfirmed")
                and (v.get("published_at") or "").startswith(today) for v in led.values()):
-            _log(f"{plat}: already published a scenario reel today")
+            _log(f"{plat}: already published a {kind} reel today")
+            continue
+        if is_guide:
+            ready = sorted((v for v in led.values() if v.get("kind") == "guide" and v.get("platform") == plat
+                            and v["status"] == "ready" and Path(v["file"]).exists()),
+                           key=lambda v: v["rendered_at"])
+            if not ready:
+                _log(f"{plat}: no guide reel ready")
+                continue
+            row = ready[0]
+            acct = accounts.get(plat)
+            if not acct:
+                _log(f"{plat}: account not connected — skipping")
+                continue
+            published += _post(ap, led, row, plat, acct, today, dry)
             continue
         # ROUND ROBIN (founder 2026-10-01: "use all angles before repetition so
         # everyday there is new stuff"): the ready reel whose angle was published
@@ -372,7 +410,7 @@ def publish(dry: bool = False) -> int:
                 a = v.get("angle") or "month"
                 last[a] = max(last.get(a, ""), v.get("published_at") or "")
         ready = sorted((v for v in led.values() if v["lang"] == lang and v["status"] == "ready"
-                        and v.get("kind") != "data_card"
+                        and v.get("kind") not in ("data_card", "guide")
                         and Path(v["file"]).exists()),
                        key=lambda v: (last.get(v.get("angle") or "month", ""), not v.get("six_beat"), v["rendered_at"]))
         if not ready:
@@ -386,56 +424,61 @@ def publish(dry: bool = False) -> int:
         if not acct:
             _log(f"{plat}: account not connected — skipping")
             continue
-        cap, title = caption_for(row)
-        if dry:
-            _log(f"DRY {plat} ← {Path(row['file']).name}\n  title: {title}\n{cap}")
-            continue
-        media = ap.upload_media_bytes(_without_editlist(Path(row["file"])).read_bytes(),
-                                      Path(row["file"]).name, content_type="video/mp4")
-        if not media:
-            _log(f"{plat}: upload failed")
-            continue
-        cover_url = None
-        cov = Path(row.get("cover") or "")
-        if plat == "instagram" and row.get("cover") and cov.exists():
-            cm = ap.upload_media_bytes(cov.read_bytes(), cov.name, content_type="image/jpeg")
-            cover_url = (cm or {}).get("url")
-            if not cover_url:
-                _log(f"{plat}: cover upload failed, posting with Instagram's default frame")
-        res = ap.publish_reel(cap, acct, media, dry_run=False, yt_title=title, cover_url=cover_url)
-        if not res:
-            _log(f"{plat}: publish refused (cap reached or Outstand error) — stays ready")
-            continue
-        post_id = (res.get("post") or {}).get("id") or res.get("id")
-        # A YouTube upload takes minutes, and a REJECTED post used to be logged
-        # the same as a slow one: 22-24 Sep every YouTube post died on a 401
-        # after the Brand Account move while the ledger said "published".
-        w = (ap.wait_for_publish(post_id, timeout=240, detail=True) if post_id
-             else {"status": "rejected", "error": "no post id"})
-        now = datetime.now(timezone.utc).isoformat()
-        if w["status"] == "rejected":
-            row.update(failed_post_id=post_id, last_error=str(w["error"])[:300], failed_at=now)
-            _save_ledger(led)
-            _alert(f"{plat} REJECTED {row['slug']}: {str(w['error'])[:160]}")
-            continue                           # stays ready; not logged as a post
-        status = "published" if w["status"] == "published" else "queued_unconfirmed"
-        ap.append_post_log_entry({
-            "timestamp": now, "date": today, "platform": plat, "post_id": post_id,
-            "destination": row["slug"], "format": f"scenario_{row['format']}",
-            "media_id": media.get("id"),
-        })
-        ap._log_post_outcome(post_id=post_id, dest_id=row["slug"],
-                             fmt=f"scenario_{row['format']}", media_id=media.get("id"),
-                             account=acct, caption=cap,
-                             cta_url=f"https://www.nakshiq.com/en/destination/{row['slug']}",
-                             utm_content=f"scenario_{row['format']}", status=status,
-                             audio_type="tts", language=row["lang"])
-        row.update(status="published" if status == "published" else "unconfirmed",
-                   post_id=post_id, published_at=now, confirm=status)
-        _save_ledger(led)
-        published += 1
-        _log(f"{plat}: {status} {Path(row['file']).name} (post {post_id})")
+        published += _post(ap, led, row, plat, acct, today, dry)
     return 0
+
+
+def _post(ap, led: dict, row: dict, plat: str, acct: dict, today: str, dry: bool) -> int:
+    """Upload, publish, confirm and log one reel. Returns 1 if it posted."""
+    cap, title = caption_for(row)
+    if dry:
+        _log(f"DRY {plat} ← {Path(row['file']).name}\n  title: {title}\n{cap}")
+        return 0
+    media = ap.upload_media_bytes(_without_editlist(Path(row["file"])).read_bytes(),
+                                  Path(row["file"]).name, content_type="video/mp4")
+    if not media:
+        _log(f"{plat}: upload failed")
+        return 0
+    cover_url = None
+    cov = Path(row.get("cover") or "")
+    if plat == "instagram" and row.get("cover") and cov.exists():
+        cm = ap.upload_media_bytes(cov.read_bytes(), cov.name, content_type="image/jpeg")
+        cover_url = (cm or {}).get("url")
+        if not cover_url:
+            _log(f"{plat}: cover upload failed, posting with Instagram's default frame")
+    res = ap.publish_reel(cap, acct, media, dry_run=False, yt_title=title, cover_url=cover_url)
+    if not res:
+        _log(f"{plat}: publish refused (cap reached or Outstand error) — stays ready")
+        return 0
+    post_id = (res.get("post") or {}).get("id") or res.get("id")
+    # A YouTube upload takes minutes, and a REJECTED post used to be logged
+    # the same as a slow one: 22-24 Sep every YouTube post died on a 401
+    # after the Brand Account move while the ledger said "published".
+    w = (ap.wait_for_publish(post_id, timeout=240, detail=True) if post_id
+         else {"status": "rejected", "error": "no post id"})
+    now = datetime.now(timezone.utc).isoformat()
+    if w["status"] == "rejected":
+        row.update(failed_post_id=post_id, last_error=str(w["error"])[:300], failed_at=now)
+        _save_ledger(led)
+        _alert(f"{plat} REJECTED {row['slug']}: {str(w['error'])[:160]}")
+        return 0                           # stays ready; not logged as a post
+    status = "published" if w["status"] == "published" else "queued_unconfirmed"
+    ap.append_post_log_entry({
+        "timestamp": now, "date": today, "platform": plat, "post_id": post_id,
+        "destination": row["slug"], "format": f"scenario_{row['format']}",
+        "media_id": media.get("id"),
+    })
+    ap._log_post_outcome(post_id=post_id, dest_id=row["slug"],
+                         fmt=f"scenario_{row['format']}", media_id=media.get("id"),
+                         account=acct, caption=cap,
+                         cta_url=f"https://www.nakshiq.com/en/destination/{row['slug']}",
+                         utm_content=f"scenario_{row['format']}", status=status,
+                         audio_type="music" if row.get("kind") == "guide" else "tts", language=row["lang"])
+    row.update(status="published" if status == "published" else "unconfirmed",
+               post_id=post_id, published_at=now, confirm=status)
+    _save_ledger(led)
+    _log(f"{plat}: {status} {Path(row['file']).name} (post {post_id})")
+    return 1
 
 
 def _alert(msg: str) -> None:
@@ -477,9 +520,11 @@ def status() -> int:
 
 if __name__ == "__main__":
     ap_ = argparse.ArgumentParser()
-    ap_.add_argument("cmd", choices=["render", "publish", "status"])
+    ap_.add_argument("cmd", choices=["render", "publish", "publish-guide", "status"])
     ap_.add_argument("--dry", action="store_true")
     a = ap_.parse_args()
     if a.cmd == "status":
         raise SystemExit(status())
+    if a.cmd == "publish-guide":
+        raise SystemExit(publish(a.dry, kind="guide"))
     raise SystemExit((render if a.cmd == "render" else publish)(a.dry))

@@ -97,6 +97,37 @@ else
   bash scripts/autoposter-state-sync.sh restore
 fi
 
+# 2b. DESTINATION GUIDE REEL — the second daily post (founder 2026-10-03: "a second
+#     daily post, start now"). One destination, ~10 data slides on a house track,
+#     cut by guide_reel.py at the 14:20 Veo job. 13:00-14:00 IST: our September
+#     reels posted 13-14 IST had the best median reach of any window (104, n=11,
+#     see the story-slot note above), and it keeps clear of the 20:05 story reel.
+#     13:05 IST is 17:35 AEST / 18:35 AEDT; the plist fires at both. Its own
+#     once-a-day check (publish-guide) never touches the story reel's.
+GD_IST="$(TZ=Asia/Kolkata date '+%H%M')"
+if [ "$((10#$GD_IST))" -lt 1300 ] || [ "$((10#$GD_IST))" -ge 1400 ]; then
+  say "guide reel: IST $GD_IST is outside 13:00-14:00 — not this fire"
+elif ! bash scripts/autoposter-state-sync.sh pull; then
+  say "⚠️  guide reel: state pull FAILED — skipping rather than publishing on stale caps"
+else
+  GD_LOG="nakshiq-autoposter/data/post_log.jsonl"
+  GD_BEFORE=$(wc -l < "$GD_LOG" 2>/dev/null || echo 0)
+  node --env-file=apps/web/.env.local --env-file=nakshiq-autoposter/.env.local -e '
+    const {spawnSync}=require("child_process");
+    process.exit(spawnSync("python3",["scenario_daily.py","publish-guide"],
+      {stdio:"inherit",cwd:"nakshiq-autoposter",env:process.env}).status ?? 1);' \
+    || say "⚠️  guide publish exited non-zero"
+  GD_AFTER=$(wc -l < "$GD_LOG" 2>/dev/null || echo 0)
+  if [ "$GD_AFTER" -gt "$GD_BEFORE" ]; then
+    if bash scripts/autoposter-state-sync.sh push; then
+      say "guide reel: published $((GD_AFTER - GD_BEFORE)), ledger pushed"
+    else
+      say "⚠️  guide reel: PUBLISHED but ledger push FAILED"
+    fi
+  fi
+  bash scripts/autoposter-state-sync.sh restore
+fi
+
 # 3. The day's automated reel — MOVED HERE FROM GITHUB ACTIONS 2026-09-15.
 #    Why: the GHA cron was "47 6 * * *" (12:17 IST) but GitHub fires scheduled
 #    workflows 2-3.5h late, so every reel actually landed 14:13-15:46 IST. Our
