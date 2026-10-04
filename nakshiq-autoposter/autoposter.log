@@ -26213,3 +26213,35 @@ Date range: 2026-04-15 → 2026-10-03
 2026-10-05 01:37:26  INFO          Uploading to R2 (timeout=300s)...
 2026-10-05 01:37:45  INFO          R2 PUT OK. Confirming...
 2026-10-05 01:37:47  INFO          Media ready: 2UbHX (41,548,932 bytes · manali__hidden_gem__en.mp4)
+2026-10-04 17:05:23  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-04 17:05:23  INFO      ════════════════════════════════════════════════════════════
+2026-10-04 17:05:23  INFO      Nakshiq Autoposter · EVENING · 2026-10-04 · weekday=6
+2026-10-04 17:05:23  INFO      ════════════════════════════════════════════════════════════
+2026-10-04 17:05:23  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-04 17:06:01  INFO      Synced → 20 destinations · 100 traps · 5 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-04 17:06:01  INFO      brand_stamp: registered 442 destinations for overlay lookup
+2026-10-04 17:06:03  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-04 17:06:03  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-04 17:06:03  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-04 17:06:16  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-04 17:06:16  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:scenario_friends_swap, pillar:scenario_guide, pillar:scenario_hidden_gem, pillar:verification seen <2d)
+2026-10-04 17:06:16  INFO      Evening format (balance→verdict): weekend_escape [33% vs target 35%] (0/15 never featured)
+2026-10-04 17:06:16  INFO      Formats — IG: weekend_escape  ·  FB: weekend_escape  ·  Story: kids_intel
+2026-10-04 17:06:16  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 37
+2026-10-04 17:06:16  INFO      Fingerprint dedup snapshot — 33 dests in 7d · 80 (dest,fmt) pairs in 30d · 216 media in 60d
+2026-10-04 17:06:16  INFO      Kids destination locked: Sravasti
+2026-10-04 17:06:16  INFO      Weekend Escape: Rudraprayag
+2026-10-04 17:06:19  INFO      Shared best destination locked: Sarahan
+2026-10-04 17:06:19  INFO      [facebook/Nakshiq] Generating weekend_escape post...
+2026-10-04 17:06:19  INFO      [facebook/Nakshiq] Caption ready (550 chars, dest=rudraprayag)
+2026-10-04 17:06:19  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-10-04 17:06:19  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/rudraprayag.mp4?v=20260915
+2026-10-04 17:06:23  INFO          Brand-stamp applied: rudraprayag.mp4 (10,361,427 → 4,791,586 bytes)
+2026-10-04 17:06:23  INFO          Requesting upload URL for rudraprayag.mp4 (4,791,586 bytes, video/mp4)
+2026-10-04 17:06:24  INFO          Uploading to R2 (timeout=300s)...
+2026-10-04 17:06:25  INFO          R2 PUT OK. Confirming...
+2026-10-04 17:06:27  INFO          Media ready: m82GD (4,791,586 bytes · rudraprayag.mp4)
+2026-10-04 17:06:27  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-04 17:06:45  INFO      [facebook/Nakshiq] ✅ Published · Outstand=vefwe · Platform=1424462452969325
+2026-10-04 17:06:45  INFO      State saved. Run complete.
+2026-10-04 17:06:45  INFO      ════════════════════════════════════════════════════════════

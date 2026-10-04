@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-03",
-    "PdMu0_evening": "2026-10-03",
+    "PdMu0": "2026-10-04",
+    "PdMu0_evening": "2026-10-04",
     "PdMu0_carousel": "2026-10-04"
   },
-  "last_sync": "2026-10-03T18:04:35.001766+00:00",
+  "last_sync": "2026-10-04T17:06:01.456846+00:00",
   "posted_destinations": [
     {
       "destination_id": "achabal",
@@ -157,6 +157,10 @@
     {
       "destination_id": "almora",
       "date": "2026-10-04"
+    },
+    {
+      "destination_id": "rudraprayag",
+      "date": "2026-10-04"
     }
   ],
   "posted_formats": {
@@ -188,7 +192,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
@@ -204,7 +207,8 @@
       "score_card",
       "data_carousel",
       "v2_myth_bust_oneline",
-      "eateries_pick"
+      "eateries_pick",
+      "weekend_escape"
     ]
   },
   "post_log": [
@@ -10395,6 +10399,35 @@
       "destination": "almora",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-10-04"
+    },
+    {
+      "timestamp": "2026-10-04T14:37:21.371549+00:00",
+      "date": "2026-10-04",
+      "platform": "instagram",
+      "post_id": "vetqa",
+      "destination": "manali",
+      "format": "scenario_hidden_gem",
+      "media_id": "IBwy6"
+    },
+    {
+      "timestamp": "2026-10-04T14:38:04.176773+00:00",
+      "date": "2026-10-04",
+      "platform": "youtube",
+      "post_id": "MAbaD",
+      "destination": "manali",
+      "format": "scenario_hidden_gem",
+      "media_id": "2UbHX"
+    },
+    {
+      "timestamp": "2026-10-04T17:06:45.778119+00:00",
+      "date": "2026-10-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "vefwe",
+      "destination": "rudraprayag",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "rudraprayag.mp4"
     }
   ],
   "theme_usage": {
@@ -10747,6 +10780,9 @@
       ],
       "bengaluru": [
         "2026-10-03"
+      ],
+      "rudraprayag": [
+        "2026-10-04"
       ]
     },
     "morning_formats": {
@@ -10898,6 +10934,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "weekend_escape": [
+        "2026-10-04"
       ]
     },
     "reels": {
@@ -11075,6 +11114,9 @@
       ],
       "bengaluru": [
         "2026-10-03"
+      ],
+      "rudraprayag": [
+        "2026-10-04"
       ]
     },
     "audience_tags": {
@@ -11336,7 +11378,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "rudraprayag",
+    "shared_best": "sarahan",
     "collection": "odisha-golden-triangle"
   },
   "manual_skip_dests": {},
