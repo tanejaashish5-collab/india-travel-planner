@@ -57,7 +57,9 @@ PICKING A STILL IN THE ASSET OR FRAME PICKER
 
 DOWNLOADING
 - Hover a COMPLETED tile → its ⋮ → Download → 720p original. The detail-view ↓ button never downloads.
-- DOWNLOADS FROM flow.google.com ARE ALLOWED by policy in Comet (set 2026-10-03; Flow moved from labs.google, and the old permission did not carry over, so downloads stopped after the first four). If downloads still produce no file, open comet://settings/content/automaticDownloads in a new tab, add https://flow.google.com under Allowed, close that tab, and continue. That is a browser setting in our own session, not a purchase or login.
+- DOWNLOADS FROM flow.google.com: the 10-03 policy did NOT take (Comet ignores user-level policy). An overnight job (com.nakshiq.comet-allow-flow) writes the site exception into the Comet profile while Comet is closed; check comet://settings/content/automaticDownloads shows https://flow.google.com under Allowed. If it is missing, ADD IT YOURSELF there (a browser setting in our own session, not a purchase or login; approved by the founder's standing rule), then continue.
+- CLICK COORDINATES (your 10-04 finding, keep using it): the screenshot frame is smaller than the CSS pixel frame, so scale every DOM rect centre by screenshotWidth/innerWidth and screenshotHeight/innerHeight, and re-read the rect right before each click (the feed reflows).
+- GUIDE STILLS: most guide slides now use real photos; only the rows still in the task file need a still.
 - One file at a time. Before downloading, confirm the tile's prompt text from the DOM matches the row; never map by grid position.
 - Move it from ~/Downloads into ~/Downloads/nakshiq-veo-inbox/ under its exact `save_as` with Desktop Commander. Leave ~/Downloads clean apart from that folder.
 
