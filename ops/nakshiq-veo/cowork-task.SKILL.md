@@ -57,7 +57,7 @@ PICKING A STILL IN THE ASSET OR FRAME PICKER
 
 DOWNLOADING
 - Hover a COMPLETED tile → its ⋮ → Download → 720p original. The detail-view ↓ button never downloads.
-- DOWNLOADS FROM flow.google.com: the 10-03 policy did NOT take (Comet ignores user-level policy). An overnight job (com.nakshiq.comet-allow-flow) writes the site exception into the Comet profile while Comet is closed; check comet://settings/content/automaticDownloads shows https://flow.google.com under Allowed. If it is missing, ADD IT YOURSELF there (a browser setting in our own session, not a purchase or login; approved by the founder's standing rule), then continue.
+- DOWNLOADS (your 10-04 finding): download every tile through hover -> its ⋮ menu -> Download -> "Original size" (image) or "720p / Original size" (video). The row's direct download icon gets suppressed after ~10 files; the ⋮ route worked every time on every account. The Comet allow-list was not the cause; leave it as it is.
 - CLICK COORDINATES (your 10-04 finding, keep using it): the screenshot frame is smaller than the CSS pixel frame, so scale every DOM rect centre by screenshotWidth/innerWidth and screenshotHeight/innerHeight, and re-read the rect right before each click (the feed reflows).
 - GUIDE STILLS: most guide slides now use real photos; only the rows still in the task file need a still.
 - One file at a time. Before downloading, confirm the tile's prompt text from the DOM matches the row; never map by grid position.
