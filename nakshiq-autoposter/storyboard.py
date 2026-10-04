@@ -1550,12 +1550,23 @@ MUSIC_BY_TONE = {
 }
 
 
+# The NakshIQ story theme (Eleven Music, founder pick 2026-10-04: "a and B both are good,
+# can be used interchangeably so that all of them don't have the same music"). It is dark
+# and tense, so the soft warm/awe formats keep their beds; every other story reel gets it
+# (the v3 formats, eatery/solo_woman/month_later..., had no tone and so no music at all).
+THEME_DIR = Path(__file__).resolve().parent / "assets" / "music_nakshiq"
+SOFT_TONES = ("warm", "awe")
+
+
 def pick_music(fmt: str, slug: str):
     """The tone's track for this reel. Stable per (slug, format), so a re-render
     keeps its music, and spread across the list so consecutive reels differ.
     None when nothing is on disk, which lets the renderer fall back."""
     import zlib
     tone = next((t for t, fs in TONES.items() if fmt in fs), None)
+    themes = sorted(THEME_DIR.glob("story_theme_*.mp3"))
+    if tone not in SOFT_TONES and themes:
+        return themes[zlib.crc32(f"{slug}:{fmt}".encode()) % len(themes)]
     names = [n for n in MUSIC_BY_TONE.get(tone, ()) if (MUSIC_DIR / f"{n}.mp3").exists()]
     if not names:
         return None

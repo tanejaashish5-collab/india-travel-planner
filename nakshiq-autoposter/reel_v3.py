@@ -85,6 +85,7 @@ FRAMING = re.compile(r"\b(extreme wide|wide|medium close[- ]?up|medium|close[- ]
                      r"low[- ]angle|high[- ]angle)\b", re.I)
 AMBIENCE = 0.55    # native Veo sound level under the bed
 MUSIC = 0.09
+SONIC_LOGO = Path(__file__).resolve().parent / "assets" / "music_nakshiq" / "logo.mp3"
 DISCLOSE = "Dramatised · AI footage"
 # What a motion-only prompt still has to forbid. Ingredients shots get the whole
 # look paragraph instead (they have no source frames to inherit it from).
@@ -518,6 +519,11 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     if music and Path(music).exists():
         ins += ["-i", str(music)]
         mi = vi + 1
+    # Sonic logo (founder pick 10-04, logo B) lands as the end card appears.
+    li = None
+    if SONIC_LOGO.exists():
+        li = sum(1 for x in ins if x == "-i")
+        ins += ["-i", str(SONIC_LOGO)]
     # The cover hook over the opening seconds (2026-09-29 growth plan: the first
     # 3 s decide distribution, and a v3 reel opened on a quiet shot with nothing
     # on screen). Same words and style as the cover, fading out by HOOK_SECS.
@@ -566,12 +572,18 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     bed = "[amb]"
     if mi is not None:
         fc += (f";[{mi}:a]aresample=48000,aformat=channel_layouts=stereo,aloop=loop=-1:size=2e9,"
-               f"atrim=duration={full:.3f},afade=t=in:d=1.0,afade=t=out:st={full - 2.2:.2f}:d=2.2,"
-               f"volume={MUSIC}[mus];[amb][mus]amix=inputs=2:normalize=0[bedmix]")
+               f"atrim=duration={full:.3f},afade=t=in:d=1.0,"
+               + (f"afade=t=out:st={total - 0.4:.2f}:d=0.9," if li is not None else f"afade=t=out:st={full - 2.2:.2f}:d=2.2,")
+               + f"volume={MUSIC}[mus];[amb][mus]amix=inputs=2:normalize=0[bedmix]")
         bed = "[bedmix]"
     # Native sound and music duck under the voice, then everything is levelled.
-    fc += (f";{bed}[key]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[duck]"
-           f";[vo][duck]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,"
+    fc += f";{bed}[key]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[duck]"
+    if li is not None:
+        fc += (f";[{li}:a]aresample=48000,aformat=channel_layouts=stereo,volume=0.55,"
+               f"adelay={int(total * 1000)}|{int(total * 1000)},afade=t=out:st={full - 0.35:.3f}:d=0.35,"
+               f"apad=whole_dur={full:.3f}[logo]")
+    fc += (f";[vo][duck]{'[logo]' if li is not None else ''}amix=inputs={3 if li is not None else 2}:normalize=0,"
+           f"loudnorm=I=-14:TP=-1.5:LRA=11,"
            f"atrim=duration={full:.3f},asplit=2[aout][afull]")
 
     out.parent.mkdir(parents=True, exist_ok=True)

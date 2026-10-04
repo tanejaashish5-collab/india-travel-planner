@@ -286,16 +286,24 @@ def caption_for(row: dict) -> tuple[str, str]:
         name, mon = row["name"], GR.MONTHS[row["month"]]
         url = f"https://www.nakshiq.com/en/destination/{row['slug']}"
         tag = row["slug"].replace("-", "")
+        cr = GR.credits(row["slug"], row["month"])
         photo_credits = "".join(
-            f"\nPhoto: {c['title'].rsplit('.', 1)[0]}, {c['author']}, {c['licence']}, Wikimedia Commons"
-            for c in GR.credits(row["slug"], row["month"]))
-        cap = (f"{name} in {mon}: 10/10, but skip what everyone posts. The hidden spots and why people "
-               f"miss them, the local dish worth finding, the quieter swap, who should skip it and what "
-               f"{mon} really costs.\n\n"
+            f"\nPhoto: {c['title'].rsplit('.', 1)[0]}, {c['author']}, {c['licence']}, Wikimedia Commons" for c in cr)
+        if any(c.get("share_alike") for c in cr):
+            photo_credits += "\nThis reel is shared under CC BY-SA 4.0, as its share-alike photos require."
+        kinds = row.get("kinds") or ["gem1", "eat", "swap", "skip", "cost"]
+        said = [t for k, t in (("gem1", "the hidden spots and why people miss them"), ("time", "the hour to go"),
+                               ("eat", "the local dish worth finding"), ("swap", "the quieter swap"),
+                               ("skip", "who should skip it"), ("cost", f"what {mon} really costs"),
+                               ("kids", "how it works with kids")) if k in kinds]
+        said = (", ".join(said[:-1]) + " and " + said[-1]) if len(said) > 1 else "".join(said)
+        ai = (row.get("sources") or {}).get("ai", 1)
+        cap = (f"{name} in {mon}: 10/10, but skip what everyone posts. {said[:1].upper() + said[1:]}.\n\n"
                f"Save this for the trip. Send it to whoever's coming with you.\n\n"
                f"Full {name} guide, month by month: {url}\n\n"
-               f"Every fact on screen is NakshIQ's real data. Some images are AI-generated."
-               f"{photo_credits}"
+               f"Every fact on screen is NakshIQ's real data. "
+               + ("Some images are AI-generated, and say so on screen." if ai else "Photo credits below.")
+               + f"{photo_credits}"
                f"\n\n#{tag} #indiatravel #{mon.lower()}travel #NakshIQ")
         return cap, f"{name} in {mon}: the whole guide in {int(round(row.get('seconds') or 45))} seconds | NakshIQ"
     if row.get("kind") == "data_card":
