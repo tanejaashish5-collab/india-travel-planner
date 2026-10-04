@@ -38,14 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-03",
     "PdMu0_evening": "2026-10-03",
-    "PdMu0_carousel": "2026-10-03"
+    "PdMu0_carousel": "2026-10-04"
   },
   "last_sync": "2026-10-03T18:04:35.001766+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "leh",
-      "date": "2026-09-19"
-    },
     {
       "destination_id": "achabal",
       "date": "2026-09-20"
@@ -157,6 +153,10 @@
     {
       "destination_id": "bengaluru",
       "date": "2026-10-03"
+    },
+    {
+      "destination_id": "almora",
+      "date": "2026-10-04"
     }
   ],
   "posted_formats": {
@@ -10368,6 +10368,33 @@
       "format": "eateries_pick",
       "has_media": true,
       "media_id": "bengaluru.mp4"
+    },
+    {
+      "timestamp": "2026-10-04T07:37:10.261924+00:00",
+      "date": "2026-10-04",
+      "platform": "instagram",
+      "post_id": "k6y3z",
+      "destination": "delhi",
+      "format": "scenario_guide",
+      "media_id": "496kw"
+    },
+    {
+      "timestamp": "2026-10-04T07:37:43.582502+00:00",
+      "date": "2026-10-04",
+      "platform": "youtube",
+      "post_id": "IBd8G",
+      "destination": "delhi",
+      "format": "scenario_guide",
+      "media_id": "1ZO0v"
+    },
+    {
+      "timestamp": "2026-10-04T13:24:59.066378+00:00",
+      "date": "2026-10-04",
+      "platform": "facebook",
+      "post_id": "DaYjc",
+      "destination": "almora",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-10-04"
     }
   ],
   "theme_usage": {
@@ -11295,9 +11322,7 @@
       "puri": [
         "2026-10-01"
       ]
-    },
-    "routes": {},
-    "hidden_gem_reveal": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
