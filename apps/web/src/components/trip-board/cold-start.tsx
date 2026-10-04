@@ -17,6 +17,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { currentMonthIST, formatScoreInline } from "@itp/shared";
+import { destinationImage } from "@/lib/image-url";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -59,7 +60,7 @@ const CURATED = [
     name: "The North Loop",
     sub: "Spiti × Kalpa × Parvati · 14 days · July",
     desc: "Trans-Himalayan moonscape, Kinner Kailash, hot springs. Best done in one direction across one open-pass window.",
-    img: "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/destinations/spiti-valley-w1600.webp",
+    img: destinationImage("spiti-valley", 1600),
     seed: {
       month: 7,
       stops: [
@@ -74,7 +75,7 @@ const CURATED = [
     name: "South Slow",
     sub: "Mysore · 3 days · October",
     desc: "Dasara week — palace illumination, Chamundi Hills, silk markets. Booked-out unless you plan 60 days ahead.",
-    img: "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/destinations/mysore-w1600.webp",
+    img: destinationImage("mysore", 1600),
     seed: {
       month: 10,
       stops: [{ slug: "mysore", startDay: dayFromMonth(9, 2), days: 3 }],
@@ -85,7 +86,7 @@ const CURATED = [
     name: "Northeast Frontier",
     sub: "Mechuka × Lunglei · 10 days · October",
     desc: "McMahon-Line villages, Mizo highlands. Permits required; signal fades after the second day.",
-    img: "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/destinations/mechuka-w1600.webp",
+    img: destinationImage("mechuka", 1600),
     seed: {
       month: 10,
       stops: [

@@ -1,10 +1,8 @@
 import { videoSrc } from "./video-url";
+import { imageUrl } from "./image-url";
 import { FESTIVAL_FOOTAGE, FOOTAGE_CREDIT, FESTIVAL_PHOTO, PHOTO_CREDIT } from "./festival-footage-map";
 import { FESTIVAL_CLIPS } from "./festival-clips";
 
-// R2 image origin (same bucket family as destination images). Festival photos
-// are stored as famphoto-<family>.jpg.
-const IMAGE_BASE = "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev";
 
 /**
  * Real-footage hero clips for /festivals/[festivalSlug].
@@ -56,7 +54,8 @@ export function festivalHeroCredit(slug: string): string {
  */
 export function festivalHeroPhotoSrc(slug: string): string {
   const family = FESTIVAL_PHOTO[slug];
-  return family ? `${IMAGE_BASE}/festivals/famphoto-${family}.jpg` : "";
+  // Festival photos live in the image bucket as festivals/famphoto-<family>.jpg.
+  return family ? imageUrl(`festivals/famphoto-${family}.jpg`) : "";
 }
 
 /** Visible attribution for a festival photo (CC BY-SA families), or "". */
