@@ -5,10 +5,7 @@ import { DestinationDetailCinematic } from "@/components/destination-detail-cine
 
 // Cinematic-template allowlist now lives in lib/cinematic-destinations
 // so the OG image route can share it.
-import {
-  CINEMATIC_DESTINATIONS,
-  isCinematicDestination,
-} from "@/lib/cinematic-destinations";
+import { isCinematicDestination } from "@/lib/cinematic-destinations";
 import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import Link from "next/link";
@@ -584,7 +581,7 @@ export default async function DestinationPage({
     publisher: { "@id": "https://www.nakshiq.com#organization" },
   }));
 
-  const isCinematic = CINEMATIC_DESTINATIONS.has(id);
+  const isCinematic = isCinematicDestination(id);
 
   // Peak month for the alert hook — derived from destination_months on dest.
   // Mirror getPeakMonth() logic: MAX(score), ties broken by lowest month_num,
@@ -605,7 +602,7 @@ export default async function DestinationPage({
       }
     : null;
 
-  // ── Cinematic template (currently allowlisted to one slug for live test).
+  // ── Cinematic template (default for every known destination since 2026-10-04).
   // SEO/JSON-LD blocks are duplicated above the new component so structured
   // data parity stays intact — Google sees the same Schema.org payload as
   // the production design.

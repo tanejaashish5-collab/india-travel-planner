@@ -44,80 +44,33 @@ const supabase = createClient(
   { auth: { persistSession: false } }
 );
 
-// Supabase server-caps .select() at 1000 rows. Page through with range().
-async function selectAll(table, columns, filterFn) {
-  const PAGE = 1000;
-  let from = 0;
-  const all = [];
-  while (true) {
-    let q = supabase.from(table).select(columns).range(from, from + PAGE - 1);
-    if (filterFn) q = filterFn(q);
-    const { data, error } = await q;
-    if (error) throw new Error(`${table}: ${error.message}`);
-    all.push(...data);
-    if (data.length < PAGE) break;
-    from += PAGE;
-  }
-  return all;
-}
-
 console.log("cinematic-readiness · scoring all destinations\n");
 
-const destQuery = (q) => (STATE_FILTER ? q.eq("state_id", STATE_FILTER) : q);
-const dests = await selectAll(
-  "destinations",
-  "id, name, state_id, tagline, why_special, honest_scarcity",
-  destQuery
-);
-
-// Map from the scorer's thin-widget key (in `missing`) to the slot name used
-// in destinations.honest_scarcity (eats → eateries; the others match).
+// Counts come from the cinematic_readiness_counts() Postgres function
+// (migration 078): one RPC returning only the destinations BELOW tier A,
+// instead of paging ~13K rows over the metered REST API (2026-10-04).
 const SLOT_FROM_GAP = { gems: "gems", eats: "eateries", stays: "stays" };
 function isSlotHsConfirmed(hs, gapKey) {
   const slot = SLOT_FROM_GAP[gapKey];
   return !!(hs && hs[slot] && hs[slot].confirmed === true);
 }
-console.log(`destinations: ${dests.length}`);
-
-const months = await selectAll(
-  "destination_months",
-  "destination_id, month, score, prose_lead",
-  null
-);
-console.log(`destination_months rows: ${months.length}`);
-
-const gems = await selectAll("hidden_gems", "near_destination_id", null);
-console.log(`hidden_gems rows: ${gems.length}`);
-
-const eats = await selectAll("local_eateries", "destination_id", null);
-console.log(`local_eateries rows: ${eats.length}`);
-
-const stays = await selectAll("destination_stay_picks", "destination_id", null);
-console.log(`destination_stay_picks rows: ${stays.length}\n`);
-
-// Aggregate per destination
-const monthsByDest = new Map();
-for (const m of months) {
-  const v = monthsByDest.get(m.destination_id) || { scored: 0, prose: 0 };
-  if (m.score != null) v.scored += 1;
-  if (m.prose_lead && m.prose_lead.trim().length > 0) v.prose += 1;
-  monthsByDest.set(m.destination_id, v);
-}
-const gemsByDest = new Map();
-for (const g of gems) {
-  if (!g.near_destination_id) continue;
-  gemsByDest.set(g.near_destination_id, (gemsByDest.get(g.near_destination_id) || 0) + 1);
-}
-const eatsByDest = new Map();
-for (const e of eats) {
-  if (!e.destination_id) continue;
-  eatsByDest.set(e.destination_id, (eatsByDest.get(e.destination_id) || 0) + 1);
-}
-const staysByDest = new Map();
-for (const s of stays) {
-  if (!s.destination_id) continue;
-  staysByDest.set(s.destination_id, (staysByDest.get(s.destination_id) || 0) + 1);
-}
+let countQ = supabase.from("destinations").select("id", { count: "exact", head: true });
+if (STATE_FILTER) countQ = countQ.eq("state_id", STATE_FILTER);
+const { count: totalDests, error: countErr } = await countQ;
+if (countErr) throw new Error(`destinations count: ${countErr.message}`);
+const { data: gapRowsRaw, error: rpcErr } = await supabase.rpc("cinematic_readiness_counts", { only_gaps: true });
+if (rpcErr) throw new Error(`cinematic_readiness_counts: ${rpcErr.message}`);
+const gapDests = gapRowsRaw.filter((r) => !STATE_FILTER || r.state_id === STATE_FILTER);
+const dests = gapDests.map((r) => ({
+  id: r.id, name: r.name, state_id: r.state_id,
+  tagline: r.has_tagline ? "y" : "", why_special: r.has_why_special ? "y" : "",
+  honest_scarcity: r.honest_scarcity,
+}));
+const monthsByDest = new Map(gapDests.map((r) => [r.id, { scored: r.months_scored, prose: r.months_prose }]));
+const gemsByDest = new Map(gapDests.map((r) => [r.id, r.gems]));
+const eatsByDest = new Map(gapDests.map((r) => [r.id, r.eats]));
+const staysByDest = new Map(gapDests.map((r) => [r.id, r.stays]));
+console.log(`destinations: ${totalDests} · below tier A: ${dests.length}\n`);
 
 const scored = [];
 for (const d of dests) {
@@ -176,6 +129,7 @@ for (const d of dests) {
 // Tally
 const tally = { A: 0, "HS-B": 0, B: 0, C: 0 };
 for (const r of scored) tally[r.tier] += 1;
+tally.A = totalDests - scored.length; // only below-A rows are fetched
 
 // State totals
 const byState = new Map();
@@ -206,7 +160,8 @@ mkdirSync(outDir, { recursive: true });
 
 const json = {
   generated_at: new Date().toISOString(),
-  totals: { ...tally, total: scored.length },
+  totals: { ...tally, total: totalDests },
+  note: "destinations[] lists only destinations below tier A; tier A ones are counted, not listed.",
   thresholds: { GEMS_MIN, EATS_MIN, STAYS_MIN },
   by_state: stateRows,
   gap_counts: gapRows.map(([field, count]) => ({ field, count })),
@@ -222,7 +177,7 @@ writeFileSync(jsonPath, JSON.stringify(json, null, 2));
 const lines = [];
 lines.push(`# Cinematic readiness — ${stamp}`);
 lines.push("");
-lines.push(`Total: **${scored.length}** dests · A=**${tally.A}** · HS-B=**${tally["HS-B"]}** · B=**${tally.B}** · C=**${tally.C}**`);
+lines.push(`Total: **${totalDests}** dests · A=**${tally.A}** · HS-B=**${tally["HS-B"]}** · B=**${tally.B}** · C=**${tally.C}**`);
 lines.push("");
 lines.push(`Cinematic-eligible (A + HS-B): **${tally.A + tally["HS-B"]}**`);
 lines.push("");
@@ -234,7 +189,7 @@ lines.push("| Field | Dests blocked |");
 lines.push("|---|---:|");
 for (const [field, count] of gapRows) lines.push(`| ${field} | ${count} |`);
 lines.push("");
-lines.push("## By state");
+lines.push("## By state (destinations below tier A only)");
 lines.push("");
 lines.push("| State | A | HS-B | B | C | Total |");
 lines.push("|---|---:|---:|---:|---:|---:|");
@@ -264,17 +219,11 @@ for (const r of scored.filter((x) => x.tier === "HS-B")) {
   lines.push(`| ${r.name} (${r.id}) | ${r.state} | ${r.hs_confirmed.join(" · ")} |`);
 }
 lines.push("");
-lines.push("## Tier A destinations (magazine-ready)");
-lines.push("");
-lines.push("| Dest | State |");
-lines.push("|---|---|");
-for (const r of scored.filter((x) => x.tier === "A")) {
-  lines.push(`| ${r.name} (${r.id}) | ${r.state} |`);
-}
+lines.push(`## Tier A destinations (magazine-ready): ${tally.A}`);
 const mdPath = `${outDir}/cinematic-readiness.md`;
 writeFileSync(mdPath, lines.join("\n") + "\n");
 
-console.log(`tier counts: A=${tally.A}  HS-B=${tally["HS-B"]}  B=${tally.B}  C=${tally.C}  (total ${scored.length})`);
+console.log(`tier counts: A=${tally.A}  HS-B=${tally["HS-B"]}  B=${tally.B}  C=${tally.C}  (total ${totalDests})`);
 console.log(`cinematic-eligible (A + HS-B): ${tally.A + tally["HS-B"]}`);
 console.log(`wrote: ${jsonPath}`);
 console.log(`wrote: ${mdPath}`);

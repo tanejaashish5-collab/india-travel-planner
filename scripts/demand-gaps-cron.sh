@@ -42,6 +42,17 @@ else
   echo "[$(date '+%F %T')] blog-topic-demand.mjs FAILED" >&2
 fi
 
+# Destination content readiness (2026-10-04): every destination now renders the
+# new design by default, so this flags THIN CONTENT (month intros, gems, eateries,
+# stays) for new or decaying destinations. Committed report only, deliberately NOT
+# added to the Telegram message (that chat is JobAgent's; no new senders).
+if node scripts/cinematic-readiness.mjs; then
+  bash scripts/audit-commit-guard.sh -m "qa: weekly destination readiness $(date +%F)" qa/cinematic-readiness.json qa/cinematic-readiness.md \
+    || echo "[$(date '+%F %T')] cinematic-readiness commit FAILED" >&2
+else
+  echo "[$(date '+%F %T')] cinematic-readiness.mjs FAILED" >&2
+fi
+
 TOKEN=$(grep -E '^TELEGRAM_BOT_TOKEN=' "$HOME/Automation/.telegram-bot.env" | cut -d= -f2-)
 if [ -n "$TOKEN" ]; then
   code=$(curl -sS -o /tmp/dg-tg.json -w "%{http_code}" -X POST \

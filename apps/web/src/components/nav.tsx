@@ -11,7 +11,7 @@ import { InternationalBanner } from "./international-banner";
 import { CinematicMoreOverlay } from "./cinematic-more-overlay";
 import { m as motion } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { CINEMATIC_DESTINATIONS } from "@/lib/cinematic-destinations";
+import { isCinematicDestination as isCinematicSlug } from "@/lib/cinematic-destinations";
 
 export function Nav() {
   const locale = useLocale();
@@ -146,11 +146,10 @@ export function Nav() {
   // the magazine-style full-bleed nav, so the chrome matches the body.
   // Without this, the destination page rendered the production mega-menu
   // which clashes with the editorial dispatch feel.
-  const isCinematicDestination = Array.from(CINEMATIC_DESTINATIONS).some(
-    (slug) =>
-      pathname === `/${locale}/destination/${slug}` ||
-      pathname.startsWith(`/${locale}/destination/${slug}/`),
-  );
+  const destSlug = pathname.startsWith(`/${locale}/destination/`)
+    ? pathname.slice(`/${locale}/destination/`.length).split("/")[0]
+    : null;
+  const isCinematicDestination = !!destSlug && isCinematicSlug(destSlug);
   const isCinematic = isLandingRoot || isCinematicPage || isCinematicDestination;
 
   // /festivals/[festivalSlug] detail pages got a full-bleed 100vh video hero

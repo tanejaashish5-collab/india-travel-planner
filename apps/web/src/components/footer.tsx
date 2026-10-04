@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import { CINEMATIC_DESTINATIONS } from "@/lib/cinematic-destinations";
+import { isCinematicDestination as isCinematicSlug } from "@/lib/cinematic-destinations";
 import {
   FOOTER_GROUPS,
   FOOTER_LEGAL_LINKS,
@@ -165,11 +165,10 @@ export function Footer({
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||
     CINEMATIC_PAGE_PREFIXES.some((p) => pathname.startsWith(p));
-  const isCinematicDestination = Array.from(CINEMATIC_DESTINATIONS).some(
-    (slug) =>
-      pathname === `/${locale}/destination/${slug}` ||
-      pathname.startsWith(`/${locale}/destination/${slug}/`),
-  );
+  const destSlug = pathname.startsWith(`/${locale}/destination/`)
+    ? pathname.slice(`/${locale}/destination/`.length).split("/")[0]
+    : null;
+  const isCinematicDestination = !!destSlug && isCinematicSlug(destSlug);
   const isCinematic = isCinematicPage || isCinematicDestination;
 
   if (isCinematic) {
