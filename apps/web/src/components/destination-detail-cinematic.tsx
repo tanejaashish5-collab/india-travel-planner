@@ -1079,7 +1079,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                   </div>
                 )}
               </div>
-              {dest.elevation_m != null && (
+              {/* ElevationChart renders nothing below 1500m; gate the kicker the same way or it floats over an empty column. */}
+              {(dest.elevation_m ?? 0) >= 1500 && (
                 <div>
                   <p
                     className="nq-kicker"

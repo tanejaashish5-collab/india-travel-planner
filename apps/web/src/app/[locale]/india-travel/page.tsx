@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createClient } from "@supabase/supabase-js";
+import { articleCoverSrc } from "@/lib/article-cover";
 import { CinematicListPage } from "@/components/cinematic-list-page";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { localeAlternates } from "@/lib/seo-utils";
@@ -47,6 +48,7 @@ type Article = {
   reading_time: number | null;
   cover_image_url: string | null;
   tags: string[] | null;
+  destinations: string[] | null;
   featured: boolean | null;
 };
 
@@ -59,22 +61,11 @@ async function getInternationalArticles(): Promise<Article[]> {
   const { data } = await supabase
     .from("articles")
     .select(
-      "id, slug, title, subtitle, category, excerpt, published_at, reading_time, cover_image_url, tags, featured",
+      "id, slug, title, subtitle, category, excerpt, published_at, reading_time, cover_image_url, tags, destinations, featured",
     )
     .eq("category", "international")
     .order("published_at", { ascending: false });
   return (data as Article[]) ?? [];
-}
-
-function articleImageSrc(a: Article): string | null {
-  if (a.cover_image_url && a.cover_image_url.startsWith("/images/")) {
-    return a.cover_image_url;
-  }
-  if (a.tags && a.tags.length > 0) {
-    const slug = a.tags[0].toLowerCase().replace(/\s+/g, "-");
-    return `/images/destinations/${slug}.jpg`;
-  }
-  return null;
 }
 
 function formatDateMeta(iso: string) {
@@ -94,7 +85,7 @@ export default async function IndiaTravel({
   const issueNum = getIssueNumber();
 
   const cards = articles.map((a) => {
-    const img = articleImageSrc(a);
+    const img = articleCoverSrc(a);
     const meta = [
       formatDateMeta(a.published_at),
       a.reading_time ? `${a.reading_time} min read` : null,

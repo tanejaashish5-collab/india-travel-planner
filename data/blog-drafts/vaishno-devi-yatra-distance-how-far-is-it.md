@@ -7,6 +7,7 @@ category: guide
 depth: brief
 tags: ["guide", "vaishno-devi", "katra", "pilgrimage", "jammu-kashmir"]
 destinations: ["katra"]
+cover_image_url: /images/destinations/katra.jpg
 seo_title: Vaishno Devi yatra distance — 13km leg by leg, and how long it takes
 seo_description: The Vaishno Devi yatra from Katra to the Bhawan shrine is 13km on foot. Full leg-by-leg breakdown — Banganga, Charan Paduka, Adhkuwari, Sanjichhat — plus duration and the best months to walk it.
 excerpt: The Vaishno Devi yatra is a verified 13km foot route from Katra to the Bhawan shrine. Here is the leg-by-leg distance breakdown, how many days it actually takes, and when the trail is worth walking rather than riding.

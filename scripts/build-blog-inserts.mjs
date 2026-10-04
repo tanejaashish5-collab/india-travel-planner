@@ -73,9 +73,10 @@ for (const file of files) {
   const category = fm.category;
   const depth = fm.depth || "brief";
   const readingTime = Number(fm.reading_time) || Math.max(2, Math.round(body.split(/\s+/).length / 220));
-  const coverUrl = fm.cover_image_url || null;
   const tags = Array.isArray(fm.tags) ? fm.tags : [];
   const destinations = Array.isArray(fm.destinations) ? fm.destinations : [];
+  // A draft without a cover line shipped a broken card (vaishno-devi, 10-03): default to its first destination.
+  const coverUrl = fm.cover_image_url || (destinations[0] ? `/images/destinations/${destinations[0]}.jpg` : null);
   const seoTitle = fm.seo_title || fm.title;
   const seoDescription = fm.seo_description || fm.excerpt || null;
   const excerpt = fm.excerpt || null;
