@@ -48,8 +48,21 @@ changed" check, not a rewrite.
 ## Verdicts
 - `confirmed` — nothing material has changed; the rendered facts are still true.
 - `needs_correction` — something the site states is now wrong. Give each wrong field with
-  `current` (what we show), `proposed` (what's true now) and `source` (URL + a short quote in
-  `notes`). These are NOT stamped and NOT applied automatically — a human session applies them.
+  `current` (exactly what the batch shows), `proposed` (what's true now) and `source` (the URL
+  first, then a short quote). These are NOT stamped and NOT applied automatically.
+  - A correction to `nearest_airport`, `nearest_railhead`, `permit_required`, `permit_type` or
+    `permit_lead_days` with an official or named-news source is QUEUED and emailed to the founder
+    with an Approve button. He reads your `proposed` text and publishes it word for word, so it
+    must be the final wording: short, one line, in the same style as the current value.
+  - **Field formats (a wrong shape is not queued, it is escalated for manual research):**
+    `permit_required` is the sentence the page shows, never `true`/`false`
+    (e.g. "Forest Department entry permit at the Ghangaria check-post: ₹200 Indian, ₹800 foreign.").
+    `permit_type` is one code: `none`, `ilp`, `rap`, `pap`, `ilp_rap`. Park/forest entry permits
+    stay `none` (the code is for border-area permits only). `permit_lead_days` is a whole number.
+    Airport/railhead: "Name — ~Nkm / Alternate — Nkm"; take distances from the district `.nic.in`
+    "How to reach" page where one exists, never estimate them.
+  - Any other field (best_months, daily_cost, local_logistics …) is escalated for a manual edit.
+  - Use the official name as the authority publishes it today; a proposed or former name is wrong.
 
 ## Working method
 - Split the batch across at most 3 parallel Haiku sub-agents (≈14 destinations each) for the

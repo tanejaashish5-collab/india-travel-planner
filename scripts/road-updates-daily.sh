@@ -18,7 +18,17 @@ ROWS="$WORK/rows-$TODAY.json"
 say() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
 say "=== road-updates-daily start (IST $TODAY) ==="
 
-PROMPT="You are running the NakshIQ daily road updates job for IST date $TODAY. Read ops/road-updates/SKILL.md first and follow it exactly; read CLAUDE.md for project rules. Work in this repo. Use WebSearch and WebFetch (and Playwright via node if a site blocks plain fetches) to collect road closures, restrictions and reopenings announced in the last 48 hours for the 8 regions; open every source and confirm its own dateline. Dispatch at most 3 parallel Haiku sub-agents grouped by region. Then write $ROWS in the exact shape the skill gives (empty rows array is fine on a quiet day, with a run.note) and run: node --env-file=apps/web/.env.local scripts/road-updates-insert.mjs $ROWS . If it refuses, fix the rows it names and re-run it. Do not write to the database any other way. Do not commit anything. Finish with one line: INSERTED <n>."
+# Regions with no dated row for 3+ days get their OWN search before the grouped
+# ones (2026-10-04: Ladakh shared a group with J&K and logged 0 rows in 14 days
+# while J&K logged 44). See scripts/road-coverage.mjs.
+QUIET="$(node --no-warnings --env-file=apps/web/.env.local scripts/road-coverage.mjs stale 2>>"$WORK/coverage.err")"
+PRIORITY=""
+if [ -n "$QUIET" ]; then
+  say "quiet regions (no row in 3+ days): $QUIET"
+  PRIORITY=" PRIORITY FIRST: these regions have had no dated row for 3+ days: $QUIET. Before the grouped sweep, give each of them its own dedicated search (its own Haiku agent if you need one; still at most 3 in parallel) across its issuing authorities and regional papers, and apply the skill's 7-day backfill rule to them. If one still has nothing verifiable, say so in run.note with what you searched. Never invent an entry."
+fi
+
+PROMPT="You are running the NakshIQ daily road updates job for IST date $TODAY. Read ops/road-updates/SKILL.md first and follow it exactly; read CLAUDE.md for project rules. Work in this repo. Use WebSearch and WebFetch (and Playwright via node if a site blocks plain fetches) to collect road closures, restrictions and reopenings announced in the last 48 hours for the 8 regions;$PRIORITY Open every source and confirm its own dateline. Dispatch at most 3 parallel Haiku sub-agents grouped by region. Then write $ROWS in the exact shape the skill gives (empty rows array is fine on a quiet day, with a run.note) and run: node --env-file=apps/web/.env.local scripts/road-updates-insert.mjs $ROWS . If it refuses, fix the rows it names and re-run it. Do not write to the database any other way. Do not commit anything. Finish with one line: INSERTED <n>."
 
 # Alias pinned (never a full model id — aliases resolve against the binary's own table).
 claude -p "$PROMPT" --model sonnet \
@@ -42,4 +52,5 @@ if grep -q "^INSERTED [0-9]" "$WORK/run-$TODAY.log"; then
 else
   node --env-file=apps/web/.env.local scripts/road-updates-insert.mjs "$ROWS" || { say "❌ insert refused"; exit 1; }
 fi
+node --no-warnings --env-file=apps/web/.env.local scripts/road-coverage.mjs report || say "❌ coverage report failed"
 say "=== road-updates-daily end ==="

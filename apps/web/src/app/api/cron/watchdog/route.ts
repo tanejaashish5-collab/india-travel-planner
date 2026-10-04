@@ -36,7 +36,7 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   // (scripts/freshness-review-weekly.sh); freshness-coverage = written by the
   // Monday freshness-drift cron, alerts only when reviewed-in-90d share is
   // below 80% AND not recovering.
-  "freshness-review": 8,        // weekly (Sat)
+  "freshness-review": 8,        // weekly (Sat) + Wed catch-up while a backlog exists
   "freshness-coverage": 8,      // weekly (Mon, with freshness-drift)
   "prewarm-next-month": 32,   // monthly cron 28th 01:00 UTC
   "audit-cache-headers": 0.1, // hourly cron — 2h max gap before suspicious
@@ -58,6 +58,11 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   // fired, hit the seven-day Claude usage limit, exited in 53s having written
   // nothing, and reported "success". Saturdays 09:40 UTC, 6h after the batch.
   "audit-blog-batch": 8,        // weekly
+  // Added 2026-10-04. road-updates-daily is the producer behind /road-conditions
+  // (local LaunchAgent, 2 runs/day) and had never been watched; road-coverage is
+  // written by the same wrapper after each run (scripts/road-updates-daily.sh).
+  "road-updates-daily": 2,
+  "road-coverage": 2,
   // DELIBERATELY NOT WATCHED, with reasons:
   //  - send-destination-alerts: writes no ops_reports row at all, so there is
   //    nothing to watch. Instrument it first, then add it here.
@@ -89,6 +94,7 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
   "audit-bot-crawl-rate": "2026-05-28T03:00:00Z",
   // First Saturday check after the 2026-09-17 deploy. Set to null once it fires.
   "audit-blog-batch": "2026-09-19T09:40:00Z",
+  "road-coverage": "2026-10-06T00:00:00Z", // first wrapper run after the 10-04 deploy
 };
 
 // How long a job may sit CONTINUOUSLY in needs_review before it escalates to
@@ -131,6 +137,14 @@ const NEEDS_REVIEW_ESCALATION_DAYS: Record<string, number> = {
   "canary-probe": 1,        // alerts_count = failures.length — pages returning 500
   "audit-cache-headers": 2, // alerts_count = violations.length — real cache misconfig
   "freshness-coverage": 1,  // alerts_count = 1 only when coverage < 80% AND not climbing — the review has stopped
+  // Added 2026-10-04. alerts_count = OPEN pages that may state something wrong and
+  // could not be queued for one-click approval (bad shape / weak source), counted
+  // across a 21-day hold, so it stays up until a human fixes the row.
+  "freshness-review": 3,
+  // alerts_count = Himalayan regions with no dated row for 7+ days in Apr–Nov,
+  // AFTER that run searched them first. One quiet day is news scarcity; a week in
+  // season is the collector failing (Ladakh sat at 0 rows for 14 days in Oct 2026).
+  "road-coverage": 1,
 };
 
 // How many recent runs to read per job. Must be enough to measure the longest
@@ -247,6 +261,9 @@ type JobHealth = {
   needs_review_days: number | null;
   needs_review_runs: number | null;
   escalation_after_days: number | null;
+  // Human sentence a job can put in summary.detail (what is wrong, which pages).
+  // Shown in the alert so the email says what to do, not only which job.
+  detail: string | null;
 };
 
 type AssetCoverage = {
@@ -367,6 +384,10 @@ export async function GET(req: NextRequest) {
       needs_review_runs: reviewRuns,
       escalation_after_days: reviewSince ? (escalateAfter ?? null) : null,
       silent_failure: silent,
+      detail:
+        last && typeof (last.summary as Record<string, unknown> | null)?.detail === "string"
+          ? ((last.summary as Record<string, unknown>).detail as string)
+          : null,
     });
   }
 
@@ -517,7 +538,7 @@ function reviewCell(h: JobHealth, colour: string): string {
 function fmtRow(h: JobHealth): string {
   const last = h.last_run_at ? new Date(h.last_run_at).toISOString().slice(0, 16).replace("T", " ") + " UTC" : "(never)";
   const days = h.days_since === null ? "—" : `${h.days_since}d ago`;
-  return `${h.job} — ${h.status.toUpperCase()} — last ${last} (${days}, expected ≤${h.expected_cadence_days}d)${reviewSuffix(h)}`;
+  return `${h.job} — ${h.status.toUpperCase()} — last ${last} (${days}, expected ≤${h.expected_cadence_days}d)${reviewSuffix(h)}${h.detail && h.status !== "ok" ? `\n      ${h.detail}` : ""}`;
 }
 
 function renderAlertText(alertable: JobHealth[], all: JobHealth[]): string {
@@ -545,7 +566,7 @@ function renderAlertHtml(alertable: JobHealth[], all: JobHealth[]): string {
         <td style="padding:8px 12px;color:${colour};font-weight:600;font-family:ui-monospace,monospace;font-size:13px">${h.status}</td>
         <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${last}</td>
         <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${h.days_since ?? "—"}d / ≤${h.expected_cadence_days}d${reviewCell(h, colour)}</td>
-      </tr>`;
+      </tr>${h.detail && h.status !== "ok" ? `<tr><td colspan="4" style="padding:0 12px 10px;font-size:13px;color:#171717">${h.detail.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!)}</td></tr>` : ""}`;
     })
     .join("");
   return `<!doctype html><html><body style="font-family:ui-sans-serif,system-ui,sans-serif;color:#171717;max-width:640px;margin:0 auto;padding:24px">

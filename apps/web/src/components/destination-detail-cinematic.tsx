@@ -18,6 +18,7 @@
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { isReviewStale } from "@/lib/review-freshness";
 import { destinationImage } from "@/lib/image-url";
 import { HeroMedia } from "./hero-media";
 import {
@@ -520,7 +521,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       month: "short",
                       year: "numeric",
                     })
-                    .toUpperCase()}`
+                    .toUpperCase()}${isReviewStale(dest.content_reviewed_at) ? " · RE-CHECKING" : ""}`
                 : `ISSUE Nº ${issueNum}`}
             </p>
             {/* Read-time + skim-to-verdict — busy readers get a quiet
@@ -3495,7 +3496,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       month: "short",
                       year: "numeric",
                     })
-                    .toUpperCase()}`
+                    .toUpperCase()}${isReviewStale(dest.content_reviewed_at) ? " · RE-CHECKING" : ""}`
                 : `ISSUE Nº ${issueNum}`}
             </p>
             <p

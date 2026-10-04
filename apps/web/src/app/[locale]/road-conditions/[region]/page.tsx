@@ -10,7 +10,7 @@ import { localeAlternates } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
-import { ROAD_REGIONS, getRoadUpdates, getRoadReports, summarise, fmtDate, daysAgoISO } from "@/lib/road-updates";
+import { ROAD_REGIONS, getRoadUpdates, getRoadReports, summarise, fmtDate, daysAgoISO, QUIET_DAYS } from "@/lib/road-updates";
 
 export const revalidate = 3600;
 const SITE = "https://www.nakshiq.com";
@@ -43,6 +43,10 @@ export default async function RoadRegionPage({ params }: { params: Promise<{ loc
   const [updates, reports] = await Promise.all([getRoadUpdates({ region, days: 60 }), getRoadReports(region)]);
   const cutoff = daysAgoISO(30);
   const sum = summarise(updates.filter((u) => u.update_date >= cutoff));
+  // Latest over the full 60 days, so a region quiet for 30+ days still shows its
+  // last real date rather than "first entries pending".
+  const latest = updates[0]?.update_date ?? null;
+  const quiet = !latest || latest < daysAgoISO(QUIET_DAYS);
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -64,7 +68,11 @@ export default async function RoadRegionPage({ params }: { params: Promise<{ loc
           <p className="nq-kicker" style={{ color: "var(--vermillion)", marginBottom: 20, letterSpacing: "0.22em" }}>
             <Link href={`/${locale}/road-conditions`} style={{ color: "inherit", textDecoration: "none" }}>{hi ? "सड़कों का हाल" : "ROAD CONDITIONS"}</Link>
             {" · "}
-            {sum.latest ? (hi ? `${fmtDate(sum.latest, "hi")} तक` : `AS OF ${fmtDate(sum.latest, "en").toUpperCase()}`) : (hi ? "पहली प्रविष्टि जल्द" : "FIRST ENTRIES PENDING")}
+            {!latest
+              ? (hi ? "60 दिन में कोई सत्यापित रिपोर्ट नहीं" : "NO VERIFIED REPORT IN 60 DAYS")
+              : quiet
+                ? (hi ? `${fmtDate(latest, "hi")} के बाद कोई नई रिपोर्ट नहीं` : `NO NEW REPORT SINCE ${fmtDate(latest, "en").toUpperCase()}`)
+                : (hi ? `${fmtDate(latest, "hi")} तक` : `AS OF ${fmtDate(latest, "en").toUpperCase()}`)}
           </p>
           <Title as="h1" className="nq-display" style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(36px, 6vw, 76px)", lineHeight: 1.0, letterSpacing: "-0.022em", margin: 0, textWrap: "balance" }}>
             {hi ? `${r.hi} की सड़कें.` : `${r.en} roads.`}

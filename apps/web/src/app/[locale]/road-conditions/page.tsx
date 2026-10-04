@@ -9,7 +9,7 @@ import { localeAlternates } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
-import { ROAD_REGIONS, getRoadUpdates, getRoadReports, summarise, fmtDate } from "@/lib/road-updates";
+import { ROAD_REGIONS, getRoadUpdates, getRoadReports, summarise, fmtDate, daysAgoISO, QUIET_DAYS } from "@/lib/road-updates";
 
 // Was 86400. The dated feed is written daily by the road-updates routine, so
 // an hour is the longest a fresh entry should wait to appear.
@@ -36,6 +36,7 @@ export default async function RoadConditionsPage({ params }: { params: Promise<{
   const hi = locale === "hi";
   const [updates, reports] = await Promise.all([getRoadUpdates({ days: 30 }), getRoadReports()]);
   const sum = summarise(updates);
+  const quietCutoff = daysAgoISO(QUIET_DAYS);
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -98,7 +99,7 @@ export default async function RoadConditionsPage({ params }: { params: Promise<{
                   <p style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontSize: 19, color: "var(--bone)", margin: "0 0 4px" }}>{hi ? r.hi : r.en} →</p>
                   <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--bone-dim)", margin: "0 0 8px", lineHeight: 1.5 }}>{r.blurb}</p>
                   <p style={{ fontFamily: "var(--cinema-mono)", fontSize: 11, letterSpacing: "0.1em", color: s ? "var(--bone-dim)" : "var(--bone-faint)", margin: 0 }}>
-                    {s ? `${s.total} ${hi ? "प्रविष्टियाँ" : "entries"} · ${s.closures} ${hi ? "बंद" : "closures"} · ${s.latest}` : (hi ? "30 दिन में कोई प्रविष्टि नहीं" : "no entries in 30 days")}
+                    {s ? `${s.total} ${hi ? "प्रविष्टियाँ" : "entries"} · ${s.closures} ${hi ? "बंद" : "closures"} · ${s.latest && s.latest < quietCutoff ? (hi ? `${s.latest} के बाद कोई नई रिपोर्ट नहीं` : `no new report since ${s.latest}`) : s.latest}` : (hi ? "30 दिन में कोई प्रविष्टि नहीं" : "no entries in 30 days")}
                   </p>
                 </Link>
               );

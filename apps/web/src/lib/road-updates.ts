@@ -111,6 +111,14 @@ export function summarise(updates: RoadUpdate[]) {
   return { total: updates.length, closures, latest: updates[0]?.update_date ?? null, byRegion };
 }
 
+/**
+ * A region with no dated row for this many days is shown as "no new report
+ * since <date>" instead of "as of <date>", which read as current when Ladakh
+ * had nothing for 14 days (2026-10-04). Same threshold as scripts/road-coverage.mjs,
+ * which also makes the daily job search such regions first.
+ */
+export const QUIET_DAYS = 3;
+
 /** ISO date (YYYY-MM-DD) n days ago, IST-agnostic; kept out of components for the react-hooks/purity rule. */
 export function daysAgoISO(n: number): string {
   return new Date(Date.now() - n * 86400_000).toISOString().slice(0, 10);

@@ -42,6 +42,7 @@ import { DestinationDecisionRail } from "./destination-decision-rail";
 import { CollapsibleDetails } from "./collapsible-details";
 import { DataSignalBadge } from "./data-signal-badge";
 import { SectionFreshness } from "./section-freshness";
+import { isReviewStale } from "@/lib/review-freshness";
 import { SectionLabel } from "./ui/section-label";
 import { MicroItinerarySection } from "./micro-itinerary-section";
 import { LogisticsChecklist } from "./logistics-checklist";
@@ -507,7 +508,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             {/* Data freshness + methodology */}
             <div className="mt-3 text-xs text-muted-foreground/50">
               {dest.content_reviewed_at
-                ? `Last reviewed: ${new Date(dest.content_reviewed_at).toLocaleDateString("en-IN", { month: "long", year: "numeric" })}`
+                ? `Last reviewed: ${new Date(dest.content_reviewed_at).toLocaleDateString("en-IN", { month: "long", year: "numeric" })}${isReviewStale(dest.content_reviewed_at) ? " · re-checking now" : ""}`
                 : "Review pending"}
               {" · Scores based on weather, road access, crowd levels, infrastructure, safety conditions · "}
               Kids ratings factor in: medical access, ATM availability, phone signal, altitude, road safety

@@ -5,8 +5,15 @@
 # WHY IT EXISTS
 # Every "VERIFIED <month>" on a destination page is content_reviewed_at. After
 # the Apr–Jun 2026 backfills nothing re-checked pages, and by 2026-09-21 only
-# 5% had been reviewed in 90 days. This re-checks the stalest 41 a week
-# (533 / 13 weeks), so every page is re-verified at least quarterly.
+# 5% had been reviewed in 90 days. This re-checks the stalest 41 every
+# Saturday (533 / 13 weeks), so every page is re-verified at least quarterly.
+# CATCH-UP (2026-10-04): it also fires Wednesdays, but a Wednesday run only picks
+# rows older than 84 days, so it switches itself off once the backlog is gone
+# (409 of 533 pages were 90-180 days old that day).
+#
+# CORRECTIONS go to an approval queue (destination_corrections, migration 077)
+# and are emailed with one-click Approve links via /api/admin/corrections/notify.
+# Nothing a review proposes reaches a page without the founder's click.
 #
 # WHY LOCAL, VIA /bin/bash — same reasons as sos-backlog-weekly.sh: the cloud
 # routine sandbox blocks outbound web (it cannot open .gov.in / .nic.in), cron
@@ -30,7 +37,7 @@ BATCH_SIZE="${FRESHNESS_BATCH_SIZE:-41}"
 TODAY="$(date +%F)"
 WEEK="$(date +%G-W%V)"
 WORK="$HOME/.claude/freshness-review"; mkdir -p "$WORK"
-MARKER="$WORK/done-$WEEK"
+MARKER="$WORK/done-$TODAY"   # per day: the 19:00 slot is a retry of the 07:00 one
 BATCH="$WORK/batch-$TODAY.json"
 ENTRIES="$WORK/entries-$TODAY.json"
 NOTE="data/audits/freshness-review-$TODAY.md"
@@ -43,14 +50,21 @@ notify() {
 }
 
 if [ -f "$MARKER" ]; then
-  say "week $WEEK already completed ($(cat "$MARKER")) — nothing to do"
+  say "$TODAY already completed ($(cat "$MARKER")) — nothing to do"
   exit 0
 fi
+MIN_AGE_ARGS=()
+[ "$(date +%u)" != "6" ] && MIN_AGE_ARGS=(--min-age-days 84)   # non-Saturday = catch-up only
 say "=== freshness-review start ($TODAY, week $WEEK, batch $BATCH_SIZE) ==="
 
 START_SHA="$(git rev-parse HEAD)"
-$NODE scripts/freshness-review.mjs pick --n "$BATCH_SIZE" --out "$BATCH" \
+$NODE scripts/freshness-review.mjs pick --n "$BATCH_SIZE" --out "$BATCH" ${MIN_AGE_ARGS[@]+"${MIN_AGE_ARGS[@]}"} \
   || { say "❌ pick failed"; notify "Freshness review could not pick this week's batch."; exit 1; }
+if [ "$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).destinations.length)' "$BATCH")" = "0" ]; then
+  say "nothing older than the catch-up threshold — backlog clear, skipping"
+  printf '%s skipped: backlog clear' "$TODAY" > "$MARKER"
+  exit 0
+fi
 BATCH_SHA="$(shasum -a 256 "$BATCH" | cut -d' ' -f1)"
 rm -f "$ENTRIES"
 
@@ -107,12 +121,24 @@ fi
 bash scripts/audit-commit-guard.sh -m "audit(freshness): weekly review $TODAY — $RESULT_LINE" "$NOTE" \
   || { say "❌ commit guard failed"; notify "Freshness review stamped pages but could not commit its note."; }
 
-# Exception-only: a quiet week never pages him. A proposed correction means a
-# live page states something that is no longer true.
-CORR="$(printf '%s' "$RESULT_LINE" | sed -nE 's/.*corrections=([0-9]+).*/\1/p')"
-if [ -n "${CORR:-}" ] && [ "$CORR" -gt 0 ] 2>/dev/null; then
-  say "escalating: $CORR destination(s) have facts that are now wrong"
-  notify "Freshness review: $CORR destination page(s) state something no longer true. Click for the note." "$REPO_ROOT/$NOTE"
+# Exception-only: a quiet week never pages him.
+# Queued corrections → one email with an Approve button per fix (sent by the
+# deployment, which holds the Resend key). Escalations (wrong shape, weak
+# source) → desktop note now, and the watchdog emails if they stay open 3 days.
+QUEUED="$(printf '%s' "$RESULT_LINE" | sed -nE 's/.*queued=([0-9]+).*/\1/p')"
+if [ -n "${QUEUED:-}" ] && [ "$QUEUED" -gt 0 ] 2>/dev/null; then
+  SECRET="$(sed -nE 's/^NEWSLETTER_SEND_SECRET=//p' apps/web/.env.local | tr -d '"')"
+  if curl -sf -X POST -H "Authorization: Bearer $SECRET" https://www.nakshiq.com/api/admin/corrections/notify > "$WORK/notify-$TODAY.json"; then
+    say "approval email sent: $(cat "$WORK/notify-$TODAY.json")"
+  else
+    say "❌ approval email failed"
+    notify "Freshness review queued $QUEUED fix(es) but the approval email failed. Click for the note." "$REPO_ROOT/$NOTE"
+  fi
+fi
+ESC="$(printf '%s' "$RESULT_LINE" | sed -nE 's/.*escalated=([0-9]+).*/\1/p')"
+if [ -n "${ESC:-}" ] && [ "$ESC" -gt 0 ] 2>/dev/null; then
+  say "escalating: $ESC destination(s) may be wrong but need research by hand"
+  notify "Freshness review: $ESC page(s) may state something no longer true and need a manual check. Click for the note." "$REPO_ROOT/$NOTE"
 fi
 
 printf '%s %s' "$TODAY" "$RESULT_LINE" > "$MARKER"

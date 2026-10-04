@@ -24,6 +24,9 @@
   <array>
     <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
+    <!-- Wednesday catch-up (2026-10-04): only picks rows older than 84 days, so it goes quiet once the backlog clears -->
+    <dict><key>Weekday</key><integer>3</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>3</integer><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
   </array>
   <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/freshness-review.log</string>
   <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/freshness-review.log</string>
