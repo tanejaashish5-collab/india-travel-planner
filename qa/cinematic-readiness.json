@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-04T08:20:02.888Z",
+  "generated_at": "2026-10-04T22:51:23.115Z",
   "totals": {
-    "A": 345,
+    "A": 348,
     "HS-B": 29,
-    "B": 159,
+    "B": 156,
     "C": 0,
     "total": 533
   },
@@ -226,9 +226,9 @@
       "state": "sikkim",
       "A": 0,
       "HS-B": 3,
-      "B": 7,
+      "B": 5,
       "C": 0,
-      "total": 10
+      "total": 8
     },
     {
       "state": "tamil-nadu",
@@ -274,9 +274,9 @@
       "state": "west-bengal",
       "A": 0,
       "HS-B": 0,
-      "B": 2,
+      "B": 1,
       "C": 0,
-      "total": 2
+      "total": 1
     }
   ],
   "gap_counts": [
@@ -286,7 +286,7 @@
     },
     {
       "field": "stays",
-      "count": 48
+      "count": 45
     },
     {
       "field": "gems",
@@ -2280,27 +2280,6 @@
       ]
     },
     {
-      "id": "namchi",
-      "name": "Namchi",
-      "state": "sikkim",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "nandaprayag",
       "name": "Nandaprayag",
       "state": "uttarakhand",
@@ -2573,27 +2552,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "pelling",
-      "name": "Pelling",
-      "state": "sikkim",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "stays:2/3"
       ]
     },
     {
@@ -3270,27 +3228,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "sundarbans",
-      "name": "Sundarbans",
-      "state": "west-bengal",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "stays:2/3"
       ]
     },
     {

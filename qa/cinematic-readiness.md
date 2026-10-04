@@ -1,8 +1,8 @@
 # Cinematic readiness — 2026-10-04
 
-Total: **533** dests · A=**345** · HS-B=**29** · B=**159** · C=**0**
+Total: **533** dests · A=**348** · HS-B=**29** · B=**156** · C=**0**
 
-Cinematic-eligible (A + HS-B): **374**
+Cinematic-eligible (A + HS-B): **377**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -11,7 +11,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Field | Dests blocked |
 |---|---:|
 | eats | 152 |
-| stays | 48 |
+| stays | 45 |
 | gems | 8 |
 
 ## By state (destinations below tier A only)
@@ -44,13 +44,13 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | odisha | 0 | 0 | 15 | 0 | 15 |
 | puducherry | 0 | 0 | 2 | 0 | 2 |
 | rajasthan | 0 | 0 | 3 | 0 | 3 |
-| sikkim | 0 | 3 | 7 | 0 | 10 |
+| sikkim | 0 | 3 | 5 | 0 | 8 |
 | tamil-nadu | 0 | 0 | 12 | 0 | 12 |
 | telangana | 0 | 0 | 11 | 0 | 11 |
 | tripura | 0 | 0 | 1 | 0 | 1 |
 | uttar-pradesh | 0 | 1 | 0 | 0 | 1 |
 | uttarakhand | 0 | 0 | 8 | 0 | 8 |
-| west-bengal | 0 | 0 | 2 | 0 | 2 |
+| west-bengal | 0 | 0 | 1 | 0 | 1 |
 
 ## Tier C destinations (must backfill)
 
@@ -155,7 +155,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Nagarhole National Park (nagarhole) | karnataka | eats:3/5 |
 | Nagarjuna Konda (nagarjuna-konda) | telangana | stays:2/3 |
 | Nalsarovar Bird Sanctuary (nalsarovar) | gujarat | eats:2/5 · stays:1/3 |
-| Namchi (namchi) | sikkim | stays:2/3 |
 | Nandaprayag (nandaprayag) | uttarakhand | gems:2/3 |
 | Nandi Hills (nandi-hills) | karnataka | eats:4/5 |
 | Neemrana (neemrana) | rajasthan | stays:2/3 |
@@ -169,7 +168,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Pali (Raigad) (pali-raigad) | maharashtra | eats:3/5 |
 | Palitana (palitana) | gujarat | eats:4/5 |
 | Pazhamudircholai (pazhamudircholai) | tamil-nadu | eats:0/5 |
-| Pelling (pelling) | sikkim | stays:2/3 |
 | Pench National Park (pench-maharashtra) | maharashtra | eats:3/5 |
 | Phodong (phodong) | sikkim | eats:0/5 |
 | Pithoragarh (pithoragarh) | uttarakhand | stays:2/3 |
@@ -202,7 +200,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Sirpur (sirpur) | chhattisgarh | eats:3/5 · stays:2/3 |
 | Srikalahasti (srikalahasti) | andhra-pradesh | eats:3/5 |
 | Srirangam (srirangam) | tamil-nadu | eats:4/5 |
-| Sundarbans (sundarbans) | west-bengal | stays:2/3 |
 | Swamimalai (swamimalai) | tamil-nadu | eats:1/5 |
 | Tadoba-Andhari Tiger Reserve (tadoba) | maharashtra | eats:4/5 |
 | Talasari (talasari) | odisha | eats:2/5 |
@@ -255,4 +252,4 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Tsomgo Lake (tsomgo-lake) | sikkim | eats |
 | Umlingla (umlingla) | ladakh | eats |
 
-## Tier A destinations (magazine-ready): 345
+## Tier A destinations (magazine-ready): 348
