@@ -132,7 +132,7 @@
 //   v62 (2026-09-30): Supabase key rotation. The browser bundle now carries the
 //      publishable key; the legacy anon key is being disabled, so cached pages
 //      and chunks that embed it must be purged or their data calls would fail.
-const CACHE_VERSION = "nakshiq-v62";
+const CACHE_VERSION = "nakshiq-v63";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

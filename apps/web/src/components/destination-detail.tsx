@@ -19,9 +19,7 @@ import { formatScoreInline } from "@itp/shared";
 import { DistanceBadge } from "./distance-badge";
 import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
-import { destinationImage } from "@/lib/image-url";
-import { preload } from "react-dom";
-import { videoSrc } from "@/lib/video-url";
+import { HeroMedia } from "./hero-media";
 import { getRegionNameForState, getStateName } from "@/lib/seo-maps";
 
 const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ default: mod.DestinationMap })));
@@ -73,9 +71,6 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const t = useTranslations("destination");
   const tSec = useTranslations("destinationSections");
   const tm = useTranslations("months");
-  // Hero poster is the LCP element (video poster on every dest page) — emit a
-  // high-priority preload into <head> during SSR (2026-07-15 audit: lcp-hints).
-  preload(destinationImage(dest.id, 1600), { as: "image", fetchPriority: "high" });
 
   const [saved, setSaved] = useState(false);
 
@@ -255,31 +250,21 @@ export function DestinationDetail({ dest }: { dest: any }) {
         {/* Cinematic Hero — video where available. Full-bleed at lg+ (Ferrari / Aman /
             Four Seasons pattern). Mobile + tablet stay within the container padding for
             rounded-corner warmth; lg+ breaks out to 100vw for the theatrical hero moment. */}
-        <FadeIn>
-          <div
-            className="mb-6 relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
-            style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}
-          >
-            {/* Video hero — attempts video, falls back to poster image */}
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-              poster={destinationImage(dest.id, 1600)}
-            >
-              <source src={videoSrc(dest.id)} type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
-            {/* Floating difficulty badge */}
-            <div className="absolute top-4 left-4">
-              <span className={`inline-block rounded-lg px-3 py-1.5 text-xs font-semibold capitalize backdrop-blur-md ${DIFFICULTY_BG[dest.difficulty] ?? "bg-muted/80"}`}>
-                {dest.difficulty}
-              </span>
-            </div>
+        {/* Not wrapped in FadeIn: its opacity:0 start hid the LCP photo until hydration. */}
+        <div
+          className="mb-6 relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
+          style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}
+        >
+          {/* Photo paints first; the video fades in after page load (see HeroMedia). */}
+          <HeroMedia id={dest.id} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
+          {/* Floating difficulty badge */}
+          <div className="absolute top-4 left-4">
+            <span className={`inline-block rounded-lg px-3 py-1.5 text-xs font-semibold capitalize backdrop-blur-md ${DIFFICULTY_BG[dest.difficulty] ?? "bg-muted/80"}`}>
+              {dest.difficulty}
+            </span>
           </div>
-        </FadeIn>
+        </div>
 
         {/* Sticky mobile header — appears after scrolling past hero */}
         <StickyDestinationHeader

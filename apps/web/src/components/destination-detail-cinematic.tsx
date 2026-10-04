@@ -19,7 +19,7 @@ import Link from "next/link";
 import { useState, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
-import { videoSrc } from "@/lib/video-url";
+import { HeroMedia } from "./hero-media";
 import {
   currentMonthIST,
   currentMonthLongIST,
@@ -321,13 +321,11 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             color: "var(--bone)",
           }}
         >
-          {/* Hero — video where R2 has it, poster image always rendered as
-              fallback. Same source-of-truth as the production hero so the
-              same destinations show motion (videoSrc resolves to the R2
-              CDN URL or null). Wrapped in CinematicHeroParallax so the
-              cover drifts ~3% slower than scroll while still in view —
-              NYT longform pattern. Inner Ken Burns animation continues
-              independently on the <video> element. */}
+          {/* Hero — photo paints first (responsive, preloaded), the video
+              fades in after page load where R2 has one (see HeroMedia).
+              Wrapped in CinematicHeroParallax so the cover drifts ~3% slower
+              than scroll while still in view — NYT longform pattern. The Ken
+              Burns animation runs on both photo and video so they stay in step. */}
           <CinematicHeroParallax strength={0.03}>
             <div
               aria-hidden
@@ -337,21 +335,15 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 overflow: "hidden",
               }}
             >
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster={destinationImage(dest.id, 2400)}
+              <HeroMedia
+                id={dest.id}
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                   animation: "nq-kb-1 22s ease-out forwards",
                 }}
-              >
-                <source src={videoSrc(dest.id)} type="video/mp4" />
-              </video>
+              />
             </div>
           </CinematicHeroParallax>
           <div
@@ -3437,6 +3429,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           src={destinationImage(dest.id, 2400)}
           alt=""
           aria-hidden
+          loading="lazy"
         />
         <div
           className="nq-outro-veil"

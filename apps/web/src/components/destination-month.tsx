@@ -5,10 +5,8 @@ import { difficultyExplainer } from "@/lib/difficulty-copy";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { PeakAlertHook } from "./peak-alert-hook";
-import { destinationImage } from "@/lib/image-url";
 import SHORTLIST from "@/data/month-shortlist-summary.json";
-import { preload } from "react-dom";
-import { videoSrc } from "@/lib/video-url";
+import { HeroMedia } from "./hero-media";
 import { DestinationSectionNav } from "./destination-section-nav";
 import { SectionLabel } from "./ui/section-label";
 import { BookingHandoff } from "./booking-handoff";
@@ -95,9 +93,6 @@ export function DestinationMonth({
   const confidence = Array.isArray(destination.confidence_cards)
     ? destination.confidence_cards[0]
     : destination.confidence_cards;
-  // Hero poster is the LCP element on dest×month pages — preload it with high
-  // priority during SSR (2026-07-15 audit: lcp-hints / lcp-fetchpriority).
-  preload(destinationImage(destination.id, 1600), { as: "image", fetchPriority: "high" });
 
   // ── Helpers ────────────────────────────────────────────────
 
@@ -120,31 +115,20 @@ export function DestinationMonth({
   // a text wall. Same video source + poster fallback pattern, so a
   // destination without a video file still shows its image.
 
+  // No FadeIn here or on ScoreHero: FadeIn renders opacity:0 until the JS
+  // bundle hydrates, so the hero photo (the LCP element) could not paint on a
+  // slow phone until seconds after it arrived. HeroMedia preloads the photo.
   const MediaHero = () => (
-    <FadeIn>
-      <div
-        className="relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
-        style={{
-          background:
-            "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))",
-        }}
-      >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          poster={destinationImage(destination.id, 1600)}
-        >
-          <source
-            src={videoSrc(destination.id)}
-            type="video/mp4"
-          />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
-      </div>
-    </FadeIn>
+    <div
+      className="relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
+      style={{
+        background:
+          "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))",
+      }}
+    >
+      <HeroMedia id={destination.id} className="w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
+    </div>
   );
 
   // ── 1. Score Hero ──────────────────────────────────────────
@@ -171,105 +155,103 @@ export function DestinationMonth({
       null;
 
     return (
-      <FadeIn>
-        <div
-          className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br ${SCORE_BG[score]} p-6 sm:p-8 md:p-10 lg:p-12`}
-        >
-          {/* Decorative glow */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/5 blur-3xl" />
+      <div
+        className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br ${SCORE_BG[score]} p-6 sm:p-8 md:p-10 lg:p-12`}
+      >
+        {/* Decorative glow */}
+        <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/5 blur-3xl" />
 
-          {/* Top row — verdict stamp on the left, score pill on the right.
-              Stacks on small screens so neither element crushes. */}
-          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-baseline sm:justify-between">
-            {tone ? (
-              <div className="flex items-baseline gap-3">
-                <span
-                  className={`font-serif italic font-medium text-5xl sm:text-6xl lg:text-7xl leading-none tracking-tight ${tone.stamp}`}
-                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif", color: tone.accent }}
-                >
-                  {verdictLabel[verdictKey!]}
-                </span>
-                <SectionLabel as="span" className="text-zinc-300 opacity-70">
-                  in {monthName}
-                </SectionLabel>
-              </div>
-            ) : (
-              <div />
-            )}
-            <div className="flex items-baseline gap-2 whitespace-nowrap">
-              <span className={`text-4xl sm:text-5xl font-black tracking-tight tabular-nums ${scoreInfo.color}`}>
-                {formatScore(score)}
+        {/* Top row — verdict stamp on the left, score pill on the right.
+            Stacks on small screens so neither element crushes. */}
+        <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-baseline sm:justify-between">
+          {tone ? (
+            <div className="flex items-baseline gap-3">
+              <span
+                className={`font-serif italic font-medium text-5xl sm:text-6xl lg:text-7xl leading-none tracking-tight ${tone.stamp}`}
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif", color: tone.accent }}
+              >
+                {verdictLabel[verdictKey!]}
               </span>
-              <span className="text-xl text-zinc-500 font-light">/{SCORE_MAX}</span>
-              <span className={`ml-2 text-sm font-semibold ${scoreInfo.color}`}>
-                {scoreInfo.label}
-              </span>
+              <SectionLabel as="span" className="text-zinc-300 opacity-70">
+                in {monthName}
+              </SectionLabel>
             </div>
-          </div>
-
-          {/* Title */}
-          <h1 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl lg:tracking-tight">
-            {destination.name} in {monthName}
-          </h1>
-          {stateName && (
-            <p className="mt-1 text-sm sm:text-base text-zinc-400">{stateName}, India</p>
+          ) : (
+            <div />
           )}
-
-          {/* The actual answer — verdict prose, no longer hidden below the fold */}
-          {verdictProse && (
-            <p className="mt-6 text-base sm:text-lg leading-relaxed text-white/90 max-w-prose">
-              {verdictProse}
-            </p>
-          )}
-
-          {/* Peak-crowd caveat — the score rates conditions, not crowd. When THIS
-              month is in the destination's verified peak_months, flag it so a high
-              score never reads as "empty and perfect". Mirrors the cinematic hub
-              caveat; shows nothing when we lack crowd data (honest scarcity). */}
-          {(() => {
-            const cal = (destination as any).crowd_calendar;
-            const isPeak =
-              cal && typeof cal === "object" && Array.isArray(cal.peak_months) &&
-              cal.peak_months.includes(monthNum);
-            if (!isPeak) return null;
-            return (
-              <div className="mt-6 max-w-prose rounded-xl border border-[#E55642]/40 bg-[#E55642]/10 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#E55642]">
-                  Peak crowds
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-white/85">
-                  {`${monthName} is one of ${destination.name}'s busiest months. The score rates conditions — weather, access, value — not how many people you'll share them with.${cal.note ? ` ${cal.note}` : ""}`}
-                </p>
-              </div>
-            );
-          })()}
-
-          {/* Meta chips */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {destination.elevation_m && (
-              <span className="rounded-lg border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-sm text-zinc-300">
-                {destination.elevation_m.toLocaleString()}m
-              </span>
-            )}
-            <span className={`rounded-lg border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-sm capitalize ${DIFFICULTY_COLORS[destination.difficulty] ?? "text-zinc-300"}`}>
-              {destination.difficulty}
+          <div className="flex items-baseline gap-2 whitespace-nowrap">
+            <span className={`text-4xl sm:text-5xl font-black tracking-tight tabular-nums ${scoreInfo.color}`}>
+              {formatScore(score)}
             </span>
-            {destination.budget_tier && (
-              <span className="rounded-lg border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-sm text-zinc-300">
-                {destination.budget_tier}
-              </span>
-            )}
+            <span className="text-xl text-zinc-500 font-light">/{SCORE_MAX}</span>
+            <span className={`ml-2 text-sm font-semibold ${scoreInfo.color}`}>
+              {scoreInfo.label}
+            </span>
           </div>
+        </div>
 
-          {/* The difficulty grade alone ("Hard") tells the reader nothing —
-              hard to reach? hard to walk? Spell out what it means. */}
-          {difficultyExplainer(destination.difficulty, locale) && (
-            <p className="mt-2 max-w-prose text-xs leading-relaxed text-zinc-500">
-              {difficultyExplainer(destination.difficulty, locale)}
-            </p>
+        {/* Title */}
+        <h1 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl lg:tracking-tight">
+          {destination.name} in {monthName}
+        </h1>
+        {stateName && (
+          <p className="mt-1 text-sm sm:text-base text-zinc-400">{stateName}, India</p>
+        )}
+
+        {/* The actual answer — verdict prose, no longer hidden below the fold */}
+        {verdictProse && (
+          <p className="mt-6 text-base sm:text-lg leading-relaxed text-white/90 max-w-prose">
+            {verdictProse}
+          </p>
+        )}
+
+        {/* Peak-crowd caveat — the score rates conditions, not crowd. When THIS
+            month is in the destination's verified peak_months, flag it so a high
+            score never reads as "empty and perfect". Mirrors the cinematic hub
+            caveat; shows nothing when we lack crowd data (honest scarcity). */}
+        {(() => {
+          const cal = (destination as any).crowd_calendar;
+          const isPeak =
+            cal && typeof cal === "object" && Array.isArray(cal.peak_months) &&
+            cal.peak_months.includes(monthNum);
+          if (!isPeak) return null;
+          return (
+            <div className="mt-6 max-w-prose rounded-xl border border-[#E55642]/40 bg-[#E55642]/10 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#E55642]">
+                Peak crowds
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-white/85">
+                {`${monthName} is one of ${destination.name}'s busiest months. The score rates conditions — weather, access, value — not how many people you'll share them with.${cal.note ? ` ${cal.note}` : ""}`}
+              </p>
+            </div>
+          );
+        })()}
+
+        {/* Meta chips */}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {destination.elevation_m && (
+            <span className="rounded-lg border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-sm text-zinc-300">
+              {destination.elevation_m.toLocaleString()}m
+            </span>
+          )}
+          <span className={`rounded-lg border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-sm capitalize ${DIFFICULTY_COLORS[destination.difficulty] ?? "text-zinc-300"}`}>
+            {destination.difficulty}
+          </span>
+          {destination.budget_tier && (
+            <span className="rounded-lg border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-sm text-zinc-300">
+              {destination.budget_tier}
+            </span>
           )}
         </div>
-      </FadeIn>
+
+        {/* The difficulty grade alone ("Hard") tells the reader nothing —
+            hard to reach? hard to walk? Spell out what it means. */}
+        {difficultyExplainer(destination.difficulty, locale) && (
+          <p className="mt-2 max-w-prose text-xs leading-relaxed text-zinc-500">
+            {difficultyExplainer(destination.difficulty, locale)}
+          </p>
+        )}
+      </div>
     );
   };
 
