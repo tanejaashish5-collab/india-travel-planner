@@ -26137,3 +26137,13 @@ Date range: 2026-04-15 → 2026-10-02
 2026-10-03 21:19:52  INFO      
 Date range: 2026-04-15 → 2026-10-03
 2026-10-03 21:19:52  INFO      ════════════════════════════════════════════════════════════
+2026-10-04 18:35:14  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-10-04 18:35:14  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-04 18:35:15  INFO          Requesting upload URL for delhi__guide_m10.mp4 (25,120,104 bytes, video/mp4)
+2026-10-04 18:35:16  INFO          Uploading to R2 (timeout=300s)...
+2026-10-04 18:35:29  INFO          R2 PUT OK. Confirming...
+2026-10-04 18:35:31  INFO          Media ready: 496kw (25,120,104 bytes · delhi__guide_m10.mp4)
+2026-10-04 18:37:10  INFO          Requesting upload URL for delhi__guide_m10.mp4 (25,120,104 bytes, video/mp4)
+2026-10-04 18:37:11  INFO          Uploading to R2 (timeout=300s)...
+2026-10-04 18:37:24  INFO          R2 PUT OK. Confirming...
+2026-10-04 18:37:27  INFO          Media ready: 1ZO0v (25,120,104 bytes · delhi__guide_m10.mp4)
