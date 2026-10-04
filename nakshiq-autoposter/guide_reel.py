@@ -377,7 +377,7 @@ MONTH_NAMES = {m.lower()[:3]: i for i, m in enumerate(MONTHS) if m}
 NOT_A_PLACE = re.compile(r"\b(people|crew|minister|chairperson|modi|gandhi|portrait|selfie|woman|women|man|men|"
                          r"girl|boy|family|couple|board|notice|notices|map|plaque|description|sign|signboard|menu|"
                          r"ticket|labour|restriction|enumeration|report|book|stamp|logo|poster|visiting|crowd|"
-                         r"selling|wedding|festival|procession|accident|construction)\b", re.I)
+                         r"selling|wedding|festival|procession|accident|construction|detail|ceiling|interior|roof|figure|statue|railway|platform)\b", re.I)
 
 
 def _shot_month(m: dict) -> int | None:
@@ -400,7 +400,8 @@ def _month_gap(a: int, b: int) -> int:
     return min(d, 12 - d)
 
 
-def commons_photo(query: str, must: str, dest: Path, used: set, month: int, need_month: bool = True) -> dict | None:
+def commons_photo(query: str, must: str, dest: Path, used: set, month: int, need_month: bool = True,
+                  max_gap: int = 1) -> dict | None:
     """A real photo whose TITLE names the place and whose capture month is within one
     month of the reel's (founder 10-04: an October Manali reel showed winter snow).
     `must` words may carry spelling variants as "hadimba/hidimba"."""
@@ -432,7 +433,7 @@ def commons_photo(query: str, must: str, dest: Path, used: set, month: int, need
             continue
         sm = _shot_month(m)
         gap = _month_gap(sm, month) if sm else None
-        if (gap is None and need_month) or (gap is not None and gap > 1):
+        if (gap is None and need_month) or (gap is not None and gap > max_gap):
             continue
         artist = re.sub(r"<[^>]+>", "", H.unescape((m.get("Artist") or {}).get("value", ""))).strip()
         artist = re.sub(r"^(this )?photo( was)? taken by\s*", "", artist, flags=re.I)
@@ -787,7 +788,7 @@ def render(slug: str, month: int, out: Path, sl: list[dict], imgs: list[tuple[Pa
     li = txt0 + n
     ins += ["-loop", "1", "-t", str(END), "-i", "logo.png"]
     url = f"nakshiq.com/{slug}"
-    (tdp / "url.txt").write_text(f"Full {sl[0]['title'].split(' in ')[0]} guide")
+    (tdp / "url.txt").write_text(sl[0].get("endline") or f"Full {sl[0]['title'].split(' in ')[0]} guide")
     fc.append(f"[{li}:v]scale=420:420,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2-160:color=0x141210,fps={FPS},"
               f"drawtext=fontfile=InstrumentSans-Regular.ttf:textfile=url.txt:fontcolor=0xE8E3DA:"
               f"fontsize=50:x=(w-text_w)/2:y=h*0.62,"

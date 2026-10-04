@@ -281,6 +281,9 @@ def caption_for(row: dict) -> tuple[str, str]:
     caption reads as the same voice as the video. Disclosure is in the text:
     the people in these scenes are AI-generated, and saying so costs nothing
     and keeps the account out of the undisclosed-AI-people class."""
+    if row.get("format") == "longweekend":
+        import longweekend_reel as LW
+        return LW.caption(row)
     if row.get("kind") == "guide":
         import guide_reel as GR
         name, mon = row["name"], GR.MONTHS[row["month"]]
@@ -400,9 +403,14 @@ def publish(dry: bool = False, kind: str = "story") -> int:
             _log(f"{plat}: already published a {kind} reel today")
             continue
         if is_guide:
+            # A dated post (long-weekend forecast, founder 10-05) waits for its day and then
+            # goes first; a destination guide fills every other day, oldest first.
+            from zoneinfo import ZoneInfo
+            ist = datetime.now(ZoneInfo("Asia/Kolkata")).date().isoformat()
             ready = sorted((v for v in led.values() if v.get("kind") == "guide" and v.get("platform") == plat
-                            and v["status"] == "ready" and Path(v["file"]).exists()),
-                           key=lambda v: v["rendered_at"])
+                            and v["status"] == "ready" and Path(v["file"]).exists()
+                            and (v.get("post_on") or "") <= ist),
+                           key=lambda v: (v.get("post_on") != ist, v["rendered_at"]))
             if not ready:
                 _log(f"{plat}: no guide reel ready")
                 continue
