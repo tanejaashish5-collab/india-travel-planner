@@ -125,15 +125,15 @@ bash scripts/audit-commit-guard.sh -m "audit(freshness): weekly review $TODAY �
 # Queued corrections → one email with an Approve button per fix (sent by the
 # deployment, which holds the Resend key). Escalations (wrong shape, weak
 # source) → desktop note now, and the watchdog emails if they stay open 3 days.
-QUEUED="$(printf '%s' "$RESULT_LINE" | sed -nE 's/.*queued=([0-9]+).*/\1/p')"
-if [ -n "${QUEUED:-}" ] && [ "$QUEUED" -gt 0 ] 2>/dev/null; then
-  SECRET="$(sed -nE 's/^NEWSLETTER_SEND_SECRET=//p' apps/web/.env.local | tr -d '"')"
-  if curl -sf -X POST -H "Authorization: Bearer $SECRET" https://www.nakshiq.com/api/admin/corrections/notify > "$WORK/notify-$TODAY.json"; then
-    say "approval email sent: $(cat "$WORK/notify-$TODAY.json")"
-  else
-    say "❌ approval email failed"
-    notify "Freshness review queued $QUEUED fix(es) but the approval email failed. Click for the note." "$REPO_ROOT/$NOTE"
-  fi
+# Called after EVERY run, not only when this run queued something: fixes queued
+# by hand or left unanswered get re-sent twice a week until decided. The endpoint
+# sends nothing when the queue is empty.
+SECRET="$(sed -nE 's/^NEWSLETTER_SEND_SECRET=//p' apps/web/.env.local | tr -d '"')"
+if curl -sf -X POST -H "Authorization: Bearer $SECRET" https://www.nakshiq.com/api/admin/corrections/notify > "$WORK/notify-$TODAY.json"; then
+  say "approval queue: $(cat "$WORK/notify-$TODAY.json")"
+else
+  say "❌ approval email failed"
+  notify "Freshness review: the approval email for queued page fixes failed. Click for the note." "$REPO_ROOT/$NOTE"
 fi
 ESC="$(printf '%s' "$RESULT_LINE" | sed -nE 's/.*escalated=([0-9]+).*/\1/p')"
 if [ -n "${ESC:-}" ] && [ "$ESC" -gt 0 ] 2>/dev/null; then
