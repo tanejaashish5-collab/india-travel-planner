@@ -40,7 +40,7 @@
     "PdMu0_evening": "2026-10-04",
     "PdMu0_carousel": "2026-10-04"
   },
-  "last_sync": "2026-10-04T17:06:01.456846+00:00",
+  "last_sync": "2026-10-04T18:16:50.851026+00:00",
   "posted_destinations": [
     {
       "destination_id": "achabal",
@@ -10822,6 +10822,11 @@
         "2026-05-28",
         "2026-09-05"
       ],
+      "weekend_escape": [
+        "2026-05-30",
+        "2026-06-05",
+        "2026-10-04"
+      ],
       "festival_alert": [
         "2026-05-31",
         "2026-06-07",
@@ -10934,9 +10939,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "weekend_escape": [
-        "2026-10-04"
       ]
     },
     "reels": {
@@ -11364,7 +11366,8 @@
       "puri": [
         "2026-10-01"
       ]
-    }
+    },
+    "women_solo_brief": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11378,7 +11381,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sarahan",
+    "shared_best": "kolhapur",
     "collection": "odisha-golden-triangle"
   },
   "manual_skip_dests": {},

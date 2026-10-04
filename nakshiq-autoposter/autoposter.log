@@ -26245,3 +26245,25 @@ Date range: 2026-04-15 → 2026-10-03
 2026-10-04 17:06:45  INFO      [facebook/Nakshiq] ✅ Published · Outstand=vefwe · Platform=1424462452969325
 2026-10-04 17:06:45  INFO      State saved. Run complete.
 2026-10-04 17:06:45  INFO      ════════════════════════════════════════════════════════════
+2026-10-04 18:16:16  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-04 18:16:16  INFO      ════════════════════════════════════════════════════════════
+2026-10-04 18:16:16  INFO      Nakshiq Autoposter · EVENING · 2026-10-04 · weekday=6
+2026-10-04 18:16:16  INFO      ════════════════════════════════════════════════════════════
+2026-10-04 18:16:16  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-04 18:16:50  INFO      Synced → 20 destinations · 100 traps · 5 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-04 18:16:50  INFO      brand_stamp: registered 442 destinations for overlay lookup
+2026-10-04 18:16:52  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-04 18:16:52  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-04 18:16:52  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-04 18:17:06  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-04 18:17:06  INFO      [diversity] feed: 37 → 25 options · cooldown dropped 12 (carousel, pillar:scenario_friends_swap, pillar:scenario_guide, pillar:scenario_hidden_gem, pillar:verdict, pillar:verification seen <2d)
+2026-10-04 18:17:06  INFO      Evening format (balance→discovery): women_solo_brief [0% vs target 20%] (0/15 never featured)
+2026-10-04 18:17:06  INFO      Formats — IG: women_solo_brief  ·  FB: women_solo_brief  ·  Story: kids_intel
+2026-10-04 18:17:06  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 38
+2026-10-04 18:17:06  INFO      Fingerprint dedup snapshot — 34 dests in 7d · 81 (dest,fmt) pairs in 30d · 217 media in 60d
+2026-10-04 18:17:06  INFO      Kids destination locked: Sravasti
+2026-10-04 18:17:06  INFO      Women-solo dest locked: Mangalore (37/37 never featured)
+2026-10-04 18:17:06  INFO      Shared best destination locked: Kolhapur
+2026-10-04 18:17:06  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-10-04 18:17:06  INFO      State saved. Run complete.
+2026-10-04 18:17:06  INFO      ════════════════════════════════════════════════════════════
