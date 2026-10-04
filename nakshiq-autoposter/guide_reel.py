@@ -554,6 +554,9 @@ def usable(slug: str, month: int, sl: list[dict]) -> tuple[list[dict], list[tupl
 
 
 # ─── music: a house track with a steady kick ─────────────────────────────
+THEME_WEIGHT = {"guide_theme_e.mp3": 2}   # founder preference, 10-04
+
+
 def seed_sb(seed: str) -> str:
     """render() seeds with slug + month digits; map back to the storyboard id."""
     m = re.match(r"(.+?)(\d{1,2})$", seed)
@@ -607,7 +610,17 @@ def pick_track(seed: str) -> tuple[Path, list[float], float]:
                 last[json.loads(j.read_text()).get("track")] = j.stat().st_mtime
             except Exception:
                 pass
-        name = sorted(own, key=lambda n: (last.get(n, 0), (sum(map(ord, seed + n))) % 97))[0]
+        # founder 10-04: "D and E both sound good.. prefer E" -> E plays twice as often
+        uses = {}
+        for j in sorted(OUTDIR.glob("*__guide_m*.json"), key=lambda f: f.stat().st_mtime)[-12:]:
+            try:
+                t = json.loads(j.read_text()).get("track"); uses[t] = uses.get(t, 0) + 1
+            except Exception:
+                pass
+        prev = max(last, key=last.get) if last else None
+        pool = [n for n in own if n != prev] or own          # never the same theme twice in a row
+        name = sorted(pool, key=lambda n: (uses.get(n, 0) / THEME_WEIGHT.get(n, 1), last.get(n, 0),
+                                          (sum(map(ord, seed + n))) % 97))[0]
     else:
         name = ok[sum(map(ord, seed)) % len(ok)]
     t = path_of[name]
