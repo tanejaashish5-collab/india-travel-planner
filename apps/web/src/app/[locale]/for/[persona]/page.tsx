@@ -4,7 +4,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
-import { localeAlternates } from "@/lib/seo-utils";
+import { localeAlternates, DEFAULT_OG_IMAGE } from "@/lib/seo-utils";
 import {
   PERSONAS,
   PERSONA_ORDER,
@@ -47,6 +47,7 @@ export async function generateMetadata({
       url: `${BASE_URL}/${locale}/for/${persona}`,
       siteName: "NakshIQ",
       locale: isHindi ? "hi_IN" : "en_IN",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

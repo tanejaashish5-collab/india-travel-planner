@@ -13,6 +13,7 @@ import {
   collectionPageSchema,
   itemListSchema,
   localeAlternates,
+  DEFAULT_OG_IMAGE,
 } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: `${t("metaTitle")} | NakshIQ`,
       description: t("metaDescription"),
       url: `https://www.nakshiq.com/${locale}/explore`,
+      images: [DEFAULT_OG_IMAGE],
     },
     ...localeAlternates(locale, "/explore"),
   };

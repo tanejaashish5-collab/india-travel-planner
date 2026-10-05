@@ -4,7 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { localeAlternates, breadcrumbSchema, itemListSchema } from "@/lib/seo-utils";
+import { localeAlternates, breadcrumbSchema, itemListSchema, DEFAULT_OG_IMAGE } from "@/lib/seo-utils";
 import { type PilgrimageRow, localizePilgrimage, formatKm } from "@/lib/pilgrimage-guide";
 
 export const revalidate = 604800; // 7d
@@ -50,7 +50,7 @@ export async function generateMetadata({
     title,
     description,
     ...localeAlternates(locale, `/pilgrimage`),
-    openGraph: { title: ogTitle, description, type: "website", url: `${BASE}/${locale}/pilgrimage`, siteName: "NakshIQ", locale: isHindi ? "hi_IN" : "en_IN" },
+    openGraph: { title: ogTitle, description, type: "website", url: `${BASE}/${locale}/pilgrimage`, siteName: "NakshIQ", locale: isHindi ? "hi_IN" : "en_IN", images: [DEFAULT_OG_IMAGE] },
     twitter: { card: "summary_large_image", title: ogTitle, description },
   };
 }

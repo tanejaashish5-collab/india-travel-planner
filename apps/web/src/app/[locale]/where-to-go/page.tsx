@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo-utils";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -48,7 +49,7 @@ export async function generateMetadata({
         "x-default": `${SITE}/en/where-to-go`,
       },
     },
-    openGraph: { title, description, url: canonical, type: "website" },
+    openGraph: { title, description, url: canonical, type: "website", images: [DEFAULT_OG_IMAGE] },
   };
 }
 

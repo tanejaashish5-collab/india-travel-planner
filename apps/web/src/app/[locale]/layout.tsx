@@ -120,8 +120,8 @@ export async function generateMetadata({
       images: [
         {
           url: "https://www.nakshiq.com/og-image.jpg",
-          width: 800,
-          height: 450,
+          width: 1200,
+          height: 630,
           alt: title,
         },
       ],

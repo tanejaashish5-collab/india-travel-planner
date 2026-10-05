@@ -8,6 +8,17 @@ const BASE = "https://www.nakshiq.com";
 export const ORG_ID = `${BASE}#organization`;
 export const WEBSITE_ID = `${BASE}#website`;
 
+/** Branded 1200×630 share card (~116 KB). Next merges metadata SHALLOWLY, so a
+ *  page that sets its own `openGraph` drops the layout's image and shares as a
+ *  bare link on WhatsApp — such pages must pass this in `openGraph.images`.
+ *  Keep any og:image under 600 KB: WhatsApp silently drops larger ones. */
+export const DEFAULT_OG_IMAGE = {
+  url: `${BASE}/og-image.jpg`,
+  width: 1200,
+  height: 630,
+  alt: "NakshIQ — Travel Intelligence for India",
+};
+
 /**
  * Generate locale-aware canonical + hreflang alternates for any page.
  * Use in generateMetadata() for pages that need proper SEO.

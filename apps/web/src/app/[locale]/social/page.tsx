@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { localeAlternates } from "@/lib/seo-utils";
+import { localeAlternates, DEFAULT_OG_IMAGE } from "@/lib/seo-utils";
 import { currentMonthSlugIST, currentMonthLongIST } from "@itp/shared";
 import { getTranslations } from "next-intl/server";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
@@ -61,6 +61,7 @@ export async function generateMetadata({
       title: t("metaTitle"),
       description: t("metaDescription"),
       type: "website",
+      images: [DEFAULT_OG_IMAGE],
     },
     ...localeAlternates(locale, "/social"),
   };

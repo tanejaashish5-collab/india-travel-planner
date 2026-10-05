@@ -11,15 +11,19 @@ import {
 } from "@itp/shared";
 import { destinationImage } from "@/lib/image-url";
 import { isCinematicDestination } from "@/lib/cinematic-destinations";
+import sharp from "sharp";
 
-export const runtime = "edge";
+// Node, not edge: the satori PNG of a full-bleed photo is ~1.5 MB, and
+// WhatsApp silently drops any og:image over 600 KB (shared links showed no
+// preview). sharp re-encodes to a ~150-250 KB JPEG; it ships with next.
+export const runtime = "nodejs";
 
 // Cinematic OG card — hero photo + giant italic dest name + score badge +
 // Issue Nº kicker. Mirrors the on-page hero composition so the share preview
 // reads the same as the page itself.
 //
 // Route: /api/og/destination/[id]?locale=en|hi
-// Returns: 1200×630 PNG via next/og ImageResponse
+// Returns: 1200×630 JPEG (next/og ImageResponse PNG, re-encoded by sharp)
 
 const LAUNCH_DATE = new Date("2022-07-01T00:00:00Z");
 function getIssueNumber(now: Date = new Date()): number {
@@ -89,7 +93,7 @@ export async function GET(
   const stateBlurb =
     [stateName, region].filter(Boolean).join(" · ").toUpperCase() || "INDIA";
 
-  return new ImageResponse(
+  const png = new ImageResponse(
     (
       <div
         style={{
@@ -293,13 +297,18 @@ export async function GET(
         </div>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-      headers: {
-        "Cache-Control":
-          "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
-      },
-    },
+    { width: 1200, height: 630 },
   );
+
+  if (!png.ok) return png;
+  const jpeg = await sharp(Buffer.from(await png.arrayBuffer()))
+    .jpeg({ quality: 80, mozjpeg: true })
+    .toBuffer();
+  return new Response(new Uint8Array(jpeg), {
+    headers: {
+      "Content-Type": "image/jpeg",
+      "Cache-Control":
+        "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
+    },
+  });
 }
