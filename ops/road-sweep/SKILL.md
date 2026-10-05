@@ -39,6 +39,19 @@ whose `expires_at` has passed, plus any row with a NULL `source_url`.
    order on live pages as present fact. Confirm the publication year of every
    article, and confirm that any regulation window quoted has not expired.
 
+   **"Unreachable" from this sandbox is not "gone dark".** Many Indian state
+   portals are geo-fenced and silently time out from outside India. On 2026-10-05,
+   items escalated for 2 months were both reachable: `rohtangpermits.hp.gov.in`
+   returns 200 from India (fees/quota live at `/Home/InformatoryScreen`), and
+   `hpkinnaur.nic.in` had posted successor orders under NEW slugs ("Extension of
+   Traffic Regulatory Arrangements…"), not at the cited URL. Before escalating a
+   source as dark: (a) test from an Indian node via
+   `https://check-host.net/check-http?host=<url>&node=in1.node.check-host.net`
+   then `/check-result/<request_id>`; (b) read content through a search index
+   (`WebSearch` with `allowed_domains` set to the portal) or a Wayback `id_`
+   snapshot; (c) for district orders, scan the homepage notice list and
+   `<site>/?s=<place name>` for successor or extension orders.
+
 4. **Write only what you verified.**
    - Claim still accurate → bump `last_reviewed_at = now()`, leave the text.
    - Facts changed → rewrite the `report`, update `source_url` / `source_label` to
