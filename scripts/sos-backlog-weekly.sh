@@ -57,7 +57,7 @@ PROMPT="You are running the NakshIQ emergency-SOS provenance backlog for $TODAY.
 
 You are running LOCALLY, not in the cloud sandbox that blocked the last five runs, so WebFetch and curl do reach .gov.in and .nic.in. Those hosts are slow and often need a retry before they answer — a timeout is not evidence the page is missing.
 
-Follow the procedure's steps. Dispatch at most 3 parallel Haiku sub-agents for discovery. Then confirm every candidate YOURSELF before it counts.
+Follow the procedure's steps. Dispatch at most 3 parallel Sonnet sub-agents (model: sonnet) for discovery. Then confirm every candidate YOURSELF before it counts.
 
 KNOWN DEAD ENDS — do not spend time on these three. Each was researched twice and the official sites simply do not publish a phone for the facility: 03803-222253 (District Hospital Roing), 04545-240581 (Government Hospital Palani), 04172-232538 (Govt HQ Hospital Walajah). Leave them unconfirmed and say so in the note.
 

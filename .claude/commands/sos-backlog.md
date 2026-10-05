@@ -53,7 +53,7 @@ that's a live safety signal. `needs_source` is routine backlog.
 Dedupe by NUMBER, not by row: one hospital line is typically shared by 3–6 destinations, so
 sourcing it once clears all of them.
 
-## Step 2 — Discover (max 3 parallel Haiku agents, per the repo's max-3-parallel rule)
+## Step 2 — Discover (max 3 parallel Sonnet agents, `model: "sonnet"`, per the repo's max-3-parallel rule)
 
 Split the distinct numbers into at most 3 batches. Give each agent the number, the facility
 name, the district and the state, and an explicit OUTPUT CONTRACT returning JSON only:

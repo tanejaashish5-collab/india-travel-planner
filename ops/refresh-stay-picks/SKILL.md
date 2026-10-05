@@ -33,7 +33,7 @@ one of `local_stays` / `web_search` / `manual` (CHECK constraint). `name`,
    - `location` — the stay whose position wins (walkable to the sights, on the best beach).
    - `xfactor` — the specific, memorable one. Treehouses, farmstays, houseboats.
 
-   Use WebSearch/WebFetch. Dispatch at most **3 parallel Haiku agents** (founder
+   Use WebSearch/WebFetch. Dispatch at most **3 parallel Sonnet agents** (spawn with `model: "sonnet"`) (founder
    rule). Real, currently-operating properties only — a plausible-sounding invented
    hotel is the worst possible output here.
 
@@ -68,6 +68,6 @@ Nightly. The watchdog expects a run every 2 days under the job name
 
 ## Cost rules
 
-Haiku for research legs, Opus/Sonnet only for judgement. Never `curate-stays.mjs`
+Sonnet for research legs (founder 2026-10-05: never Haiku; Haiku venue research failed source checks 10-04), Opus only where judgement needs it. Never `curate-stays.mjs`
 (banned 2026-04-28 — metered API). Never a metered provider call; the build guard
 `apps/web/scripts/check-no-metered-ai.mjs` enforces this for the app.

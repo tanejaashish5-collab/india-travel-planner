@@ -2,7 +2,7 @@
 name: rendered-page-verifier
 description: Read-only post-write safety check for NakshIQ. Use proactively AFTER any database write that changes rendered pages — destinations, confidence_cards, festivals, costs, SOS — to confirm the actual RENDERED page is healthy (not just the data). Trigger on "verify the rendered pages", "did the page render", "check touched pages", "is it live". Runs scripts/verify-touched-pages.mjs, reads the consuming component's null-handling, checks cache age. Reports GREEN/RED per page. Never edits, deploys, or fixes anything.
 tools: Read, Grep, Glob, Bash
-model: haiku
+model: sonnet
 color: cyan
 ---
 

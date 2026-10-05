@@ -65,7 +65,7 @@ changed" check, not a rewrite.
   - Use the official name as the authority publishes it today; a proposed or former name is wrong.
 
 ## Working method
-- Split the batch across at most 3 parallel Haiku sub-agents (≈14 destinations each) for the
+- Split the batch across at most 3 parallel Sonnet sub-agents (`model: "sonnet"`) (≈14 destinations each) for the
   searching. Then read their findings and decide each verdict YOURSELF — sub-agents propose,
   you confirm.
 - Write the entries file (path in your prompt) in this shape:

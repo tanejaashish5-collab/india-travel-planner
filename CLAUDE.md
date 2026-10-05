@@ -65,7 +65,7 @@ BASE_URL=http://localhost:3000 npx playwright test -g "<title>"
 
 - **Name the number before building:** "X is at N now; M within P weeks is success." If no honest number exists, say so and question the build.
 - **A restriction in a prompt is a suggestion; in the tool layer it is a control.** For anything that can send, publish, pay or write (email, IG/FB, YouTube, Razorpay, Supabase), check the credential scope/allowlist/enable-flag. JobAgent's Outlook `allow_categories` removes send tools: keep it. Chanakya publish is gated by `publish.enabled` + private-first `publishAt`.
-- **Sub-agents:** research/scraping/extraction on Haiku; Sonnet/Opus only for judgement. Prefer 1 agent for 5–8 items over many parallel agents (max 3 in parallel). Use Bash/grep/jq when no LLM is needed. Avoid screenshots unless visual debugging needs them.
+- **Sub-agents:** research/scraping/extraction on Sonnet (`model: "sonnet"`), never Haiku (founder 2026-10-05; Haiku research failed source checks); Opus for judgement. Prefer 1 agent for 5–8 items over many parallel agents (max 3 in parallel). Use Bash/grep/jq when no LLM is needed. Avoid screenshots unless visual debugging needs them.
 - Eateries/stays backfill is complete (see [docs/sprint-history.md](docs/sprint-history.md)); if reopened, research via WebFetch/WebSearch agents, **never `curate-stays.mjs`** (metered API).
 - Sprint history and old decisions: [docs/sprint-history.md](docs/sprint-history.md). Monetisation sprints gated until 100K MUV + 2K email list.
 - **Research wiki** lives at `~/Desktop/Claude OS/research-wiki/` (read `index.md` first for any "what do we know about X"); findings written to `data/research/` get ingested there and committed in the Claude OS repo.

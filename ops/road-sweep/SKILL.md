@@ -29,7 +29,7 @@ whose `expires_at` has passed, plus any row with a NULL `source_url`.
    Project Himank, state PWD, district DDMA / district administration, SDMA) →
    dated news from the last 3 weeks (Tribune India, ANI, Hindustan Times).
 
-   Dispatch at most **3 parallel Haiku agents**, grouped by region, never more
+   Dispatch at most **3 parallel Sonnet agents** (spawn with `model: "sonnet"`), grouped by region, never more
    (founder rule, 2026-06-10). Give each agent the current claim text and tell it
    to return UNCHANGED / UPDATE / CANNOT VERIFY with a source URL and a dated quote.
 
@@ -95,5 +95,5 @@ exception-only contract as the SOS re-verify loop.
 
 ## Cost rules
 
-Haiku for the research legs, Opus/Sonnet only for synthesis. Never
+Sonnet for research legs (founder 2026-10-05: never Haiku; Haiku venue research failed source checks 10-04), Opus only where judgement needs it. Never
 `curate-stays.mjs`. Never a metered provider call.

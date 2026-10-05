@@ -33,7 +33,7 @@ listed in `apps/web/src/lib/road-updates.ts` (`ROAD_REGIONS[].blurb`) and in
 ## Procedure (every run, ~09:00 IST)
 
 1. **Collect candidates for the last 48 hours.** Dispatch at most **3 parallel
-   Haiku agents** (founder rule), grouped: (a) HP + Uttarakhand, (b) Ladakh + J&K,
+   Sonnet agents** (`model: "sonnet"`, founder rule; never Haiku since 2026-10-05), grouped: (a) HP + Uttarakhand, (b) Ladakh + J&K,
    (c) Sikkim + Arunachal + Meghalaya + Rajasthan. Sources, in priority order:
    - Issuing authorities: BRO Project Himank / Deepak / Vartak / Swastik notices,
      state PWD (hppwd.hp.gov.in, jkpcc.nic.in, pwd.uk.gov.in), district
