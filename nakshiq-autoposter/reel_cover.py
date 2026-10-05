@@ -141,21 +141,27 @@ def _bold_layer(hook: str) -> Image.Image:
                 cur.append(tk)
         segs.append(cur)
         y = 450                          # below the logo (268..418)
-        for line in segs:
-            size = 170 if any(h for _, h in line) else 128
-            while size > 60 and _font(size).getlength(" ".join(w for w, _ in line)) > 940:
+        for seg in segs:
+            size = 170 if any(h for _, h in seg) else 128
+            # shrink to a readable floor, then WRAP rather than run off the frame
+            # (10-06: 17-word hooks overflowed both edges on four covers)
+            while size > 96 and _font(size).getlength(" ".join(w for w, _ in seg)) > 900:
                 size -= 4
             font = _font(size)
-            lw = font.getlength(" ".join(w for w, _ in line))
-            _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=max(5, size // 18))
-            y += int(size * 1.12)
+            if font.getlength(" ".join(w for w, _ in seg)) > 900:
+                # a highlighted phrase is kept whole only while it fits; split it into words
+                seg = [(w, h) for t, h in seg for w in t.split()]
+            for line in _wrap(seg, font, 900):
+                lw = font.getlength(" ".join(w for w, _ in line))
+                _draw_line(d, line, font, (W - lw) / 2, y, (255, 255, 255), YELLOW, stroke=max(5, size // 18))
+                y += int(size * 1.12)
     else:
         size = 132
         while True:
             font = _font(size)
             lines = _wrap(toks, font, 900)
             widest = max(font.getlength(" ".join(w for w, _ in l)) for l in lines)
-            if (len(lines) <= 3 and widest <= 940) or size <= 70:
+            if (len(lines) <= 3 and widest <= 940) or size <= 96:
                 break
             size -= 6
         y = 450
@@ -187,6 +193,17 @@ def make(spec: dict, out: Path, style: str = "bold") -> Path:
         if not src.exists():
             raise SystemExit(f"missing still {src}")
         im = Image.open(src).convert("RGB")
+    return _compose(im, c["hook"], out, style)
+
+
+def from_image(src: Path, hook: str, out: Path) -> Path:
+    """The same bold cover on any picture (guide and long-weekend reels, 10-06: they
+    posted with Instagram's default frame, which caught the title before it faded in)."""
+    return _compose(Image.open(src).convert("RGB"), hook, out, "bold")
+
+
+def _compose(im: Image.Image, hook: str, out: Path, style: str) -> Path:
+    c = {"hook": hook}
     s = max(W / im.width, H / im.height)
     im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
     im = im.crop(((im.width - W) // 2, (im.height - H) // 2, (im.width - W) // 2 + W, (im.height - H) // 2 + H))

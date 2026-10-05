@@ -140,6 +140,11 @@ def check(spec: dict) -> list[str]:
     """Problems that must block a spec. Empty list = good to queue."""
     import storyboard as SB
     errs = []
+    # A cover is read in a grid tile in under a second (founder 10-06: "the thumbnail text
+    # is too long and unreadable"); the short hooks that read well were 3-6 words.
+    hook = (spec.get("cover") or {}).get("hook") or ""
+    if len(re.sub(r"[*|]", " ", hook).split()) > 8:
+        errs.append(f"cover hook is {len(re.sub(r'[*|]', ' ', hook).split())} words; keep it to 8 or fewer")
     shots = {s["id"]: s for s in spec["shots"]}
     refs = {r["name"] for r in spec["refs"]}
     for r in spec["refs"]:

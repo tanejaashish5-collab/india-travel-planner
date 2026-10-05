@@ -137,6 +137,7 @@ def cut(eid: str) -> bool:
     same = G.look_alike_images(imgs)
     out = G.OUTDIR / f"{eid}.mp4"
     total = G.render(eid, ev["month"], out, sl, imgs)
+    cover = G.make_cover(out, imgs[0][0], f"{ev['title']}:|*{len(sl) - 1} places that jam*")
     held = ("HOLD_FOR_REVIEW file present" if G.HOLD.exists() else G.qa(out, total)
             or (f"slides look alike: {same}" if same else ""))
     led = G._led()
@@ -147,7 +148,7 @@ def cut(eid: str) -> bool:
             "month": ev["month"], "name": ev["title"], "lang": "en", "platform": plat,
             "status": "review" if held else "ready", "pipeline": "guide", "post_on": ev["post_on"],
             **({"held": held} if held else {}),
-            "rendered_at": now, "file": str(out), "seconds": round(total, 1), "slides": len(sl),
+            "rendered_at": now, "file": str(out), "seconds": round(total, 1), "slides": len(sl), "cover": cover,
             "pairs": [{"trap": s["trap"], "alt": s["alt"], "alt_name": s["alt_name"], "how": s["how"]}
                       for s in sl if s["kind"] == "swap"],
             "sources": {k: sum(1 for _, x in imgs if x == k) for k in ("photo", "hero", "ai")}}

@@ -901,6 +901,17 @@ def qa(path: Path, expect: float) -> str:
     return ""
 
 
+def make_cover(out: Path, img: Path, hook: str) -> str:
+    """Bold cover (same style as the story reels) over the reel's opening picture; the
+    hook stays at 8 words or fewer so it reads in a grid tile."""
+    import reel_cover as RC
+    try:
+        return str(RC.from_image(img, hook, out.with_name(out.stem + "__cover.jpg")))
+    except Exception as e:                      # a cover must never cost the reel
+        print(f"[guide] cover skipped: {e}")
+        return ""
+
+
 def cut(slug: str, month: int, led: dict) -> bool:
     pack = load_pack(slug)
     sl = slides(pack, month)
@@ -916,6 +927,7 @@ def cut(slug: str, month: int, led: dict) -> bool:
         print(f"[guide] {sb_id(slug, month)}: the same picture is on two slides, refusing"); return False
     out = OUTDIR / f"{sb_id(slug, month)}.mp4"
     total = render(slug, month, out, sl, imgs)
+    cover = make_cover(out, imgs[0][0], f"{pack['destination']['name']} in {MONTHS[month]}?|*Skip what everyone posts*")
     same = look_alike_images(imgs)
     held = ("HOLD_FOR_REVIEW file present" if HOLD.exists() else qa(out, total)
             or (f"slides look alike: {same}" if same else ""))
@@ -926,7 +938,7 @@ def cut(slug: str, month: int, led: dict) -> bool:
             "angle": "guide", "month": month, "name": pack["destination"]["name"], "lang": "en",
             "platform": plat, "status": "review" if held else "ready", "six_beat": False, "pipeline": "guide",
             **({"held": held} if held else {}),
-            "rendered_at": now, "file": str(out), "seconds": round(total, 1),
+            "rendered_at": now, "file": str(out), "seconds": round(total, 1), "cover": cover,
             "slides": len(sl), "dropped_slides": missing, "kinds": [x["kind"] for x in sl],
             "sources": {k: sum(1 for _, x in imgs if x == k) for k in ("photo", "hero", "ai")}}
     _save(led)
