@@ -145,7 +145,7 @@ def _bold_layer(hook: str) -> Image.Image:
             size = 170 if any(h for _, h in seg) else 128
             # shrink to a readable floor, then WRAP rather than run off the frame
             # (10-06: 17-word hooks overflowed both edges on four covers)
-            while size > 96 and _font(size).getlength(" ".join(w for w, _ in seg)) > 900:
+            while size > 80 and _font(size).getlength(" ".join(w for w, _ in seg)) > 900:
                 size -= 4
             font = _font(size)
             if font.getlength(" ".join(w for w, _ in seg)) > 900:
