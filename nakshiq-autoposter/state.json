@@ -38,14 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-04",
     "PdMu0_evening": "2026-10-04",
-    "PdMu0_carousel": "2026-10-04"
+    "PdMu0_carousel": "2026-10-05"
   },
   "last_sync": "2026-10-04T18:16:50.851026+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "achabal",
-      "date": "2026-09-20"
-    },
     {
       "destination_id": "kaza",
       "date": "2026-09-21"
@@ -161,6 +157,10 @@
     {
       "destination_id": "rudraprayag",
       "date": "2026-10-04"
+    },
+    {
+      "destination_id": "prayagraj",
+      "date": "2026-10-05"
     }
   ],
   "posted_formats": {
@@ -10428,6 +10428,51 @@
       "format": "weekend_escape",
       "has_media": true,
       "media_id": "rudraprayag.mp4"
+    },
+    {
+      "timestamp": "2026-10-05T07:36:39.134589+00:00",
+      "date": "2026-10-05",
+      "platform": "instagram",
+      "post_id": "IBx5i",
+      "destination": "manali",
+      "format": "scenario_guide",
+      "media_id": "obqDN"
+    },
+    {
+      "timestamp": "2026-10-05T07:37:11.513921+00:00",
+      "date": "2026-10-05",
+      "platform": "youtube",
+      "post_id": "njiaH",
+      "destination": "manali",
+      "format": "scenario_guide",
+      "media_id": "8isxQ"
+    },
+    {
+      "timestamp": "2026-10-05T14:36:46.939207+00:00",
+      "date": "2026-10-05",
+      "platform": "instagram",
+      "post_id": "x4goA",
+      "destination": "jaisalmer",
+      "format": "scenario_friends_cost",
+      "media_id": "bCxGY"
+    },
+    {
+      "timestamp": "2026-10-05T14:37:34.025641+00:00",
+      "date": "2026-10-05",
+      "platform": "youtube",
+      "post_id": "obDx5",
+      "destination": "jaisalmer",
+      "format": "scenario_friends_cost",
+      "media_id": "k6ZsY"
+    },
+    {
+      "timestamp": "2026-10-05T16:17:09.095090+00:00",
+      "date": "2026-10-05",
+      "platform": "facebook",
+      "post_id": "3YJnN",
+      "destination": "prayagraj",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-10-05"
     }
   ],
   "theme_usage": {
@@ -11366,8 +11411,7 @@
       "puri": [
         "2026-10-01"
       ]
-    },
-    "women_solo_brief": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11416,7 +11460,15 @@
       "Lansdowne Autumn Festival",
       "Bhimakali Dussehra",
       "Chamba Dussehra",
-      "Hanle Stargazing Festival"
+      "Hanle Stargazing Festival",
+      "Prayagraj Rasa Leela",
+      "Chitrakoot Deepotsav",
+      "Kishtwar Saffron Festival",
+      "Wildlife Week",
+      "Gangotri Diwali (Temple Closing)",
+      "Tihar (Deepawali)",
+      "Nainital Autumn Festival",
+      "Kinnaur Dussehra (Fulaich)"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
