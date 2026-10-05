@@ -58,7 +58,7 @@ for (const slug of slugs) {
     .eq("near_destination_id", slug).order("confidence_score", { ascending: false, nullsFirst: false }).limit(6));
   const trapOf = await q("tourist_trap_alternatives", t => t.select(
     "trap_destination_id,alternative_destination_id,distance_km,drive_time,why_better,crowd_difference,infrastructure_difference,family_difference,vibe_difference,alt_better_for,pain_points,common_complaints,editorial_verdict")
-    .eq("trap_destination_id", slug).limit(4));
+    .eq("trap_destination_id", slug).order("rank", { ascending: true, nullsFirst: false }).limit(8));
   const altOf = await q("tourist_trap_alternatives", t => t.select(
     "trap_destination_id,alternative_destination_id,distance_km,drive_time,why_better,crowd_difference,infrastructure_difference,family_difference,vibe_difference,alt_better_for")
     .eq("alternative_destination_id", slug).limit(4));

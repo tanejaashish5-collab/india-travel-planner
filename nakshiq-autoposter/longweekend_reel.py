@@ -40,6 +40,8 @@ def _sentence(s: str, n: int = 70, prefer: str = r"long weekend|weekend|holiday"
     note ('Weekends crowded with Bangalore traffic'), else its first sentence."""
     parts = [x.strip().rstrip(".") for x in re.split(r"(?<=[.!])\s+|\s[—–]\s", G._clean(s or "")) if x.strip()]
     hit = next((x for x in parts if re.search(prefer, x, re.I)), parts[0] if parts else "")
+    if ":" in hit and re.search(prefer, hit.split(":")[0], re.I):
+        hit = hit.split(":")[0]                    # 'Packed on long weekends: on the ... weekend' -> the claim
     return G._short(hit, n)
 
 
@@ -83,7 +85,7 @@ def slides(ev: dict) -> list[dict]:
         why = re.split(r",\s|\s(?:with|but|and|minus)\s", why)[0] if len(why) > 70 else why   # a whole clause, never a cut word
         out.append({"kind": "swap", "eyebrow": f"Skip {d['name'].split(' (')[0]}".upper(),
                     "title": f"{alt} instead",
-                    "body": " · ".join(x for x in [f"{d['name'].split(' (')[0]}: {_sentence(cc.get('note'), 60)}",
+                    "body": " · ".join(x for x in [f"{d['name'].split(' (')[0]}: {_sentence(cc.get('note'), 75)}",
                                                    f"{alt}: {how}" if how else G._cap(why)] if x),
                     "trap": d["id"], "alt": sw["alternative_destination_id"], "alt_name": alt,
                     "how": how, "why": why, "trap_note": _sentence(cc.get("note"), 90),

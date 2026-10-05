@@ -377,7 +377,7 @@ MONTH_NAMES = {m.lower()[:3]: i for i, m in enumerate(MONTHS) if m}
 NOT_A_PLACE = re.compile(r"\b(people|crew|minister|chairperson|modi|gandhi|portrait|selfie|woman|women|man|men|"
                          r"girl|boy|family|couple|board|notice|notices|map|plaque|description|sign|signboard|menu|"
                          r"ticket|labour|restriction|enumeration|report|book|stamp|logo|poster|visiting|crowd|"
-                         r"selling|wedding|festival|procession|accident|construction|detail|ceiling|interior|roof|figure|statue|railway|platform)\b", re.I)
+                         r"selling|wedding|festival|procession|accident|construction|detail|ceiling|interior|roof|figure|statue|railway|platform|university|campus|college|school|hospital|office)\b", re.I)
 
 
 def _shot_month(m: dict) -> int | None:
