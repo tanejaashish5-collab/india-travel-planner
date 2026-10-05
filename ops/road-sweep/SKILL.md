@@ -70,7 +70,12 @@ whose `expires_at` has passed, plus any row with a NULL `source_url`.
 5. **Verify the rendered pages.** After any write:
    `node scripts/verify-touched-pages.mjs --dest <slugs>` for every touched
    destination. A green check on a CACHED page proves nothing — pass
-   `--revalidate` or check the AGE column.
+   `--revalidate` or check the AGE column. The cloud routine CAN reach
+   nakshiq.com (environment set to Full network 2026-10-05) but has no
+   `NEWSLETTER_SEND_SECRET`, so `--revalidate` fails there: run without it and
+   re-run until AGE is younger than your write (road-conditions pages refresh
+   hourly). Also check `/en/road-conditions/<region>`: road_reports text renders
+   there, not on the destination page.
 
 6. **Sweep for the same claim elsewhere.** If you corrected a fact (not just a
    date), grep every table for it before closing — the same wrong claim usually
