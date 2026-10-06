@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug";
 import { allBestSlugs } from "@/lib/best-pages";
+import { allVillagePaths } from "@/lib/village-slugs";
 import { getCachedDestinationsIndex, getCachedItinerarySlugs } from "@/lib/cached-data";
 
 // Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
@@ -200,7 +201,13 @@ async function buildChunk(id: string): Promise<Entry[]> {
       entry(`best/${slug}`),
     );
 
-    return [...staticEntries, ...whereToGoEntries, ...bestEntries];
+    // Village pages (/destination/<parent>/<village>, 2026-10-06). English
+    // only: the /hi copy is noindexed and canonicals to /en.
+    const villageEntries: Entry[] = allVillagePaths().map(({ parentId, slug }) => ({
+      url: `${BASE}/en/destination/${parentId}/${slug}`,
+    }));
+
+    return [...staticEntries, ...whereToGoEntries, ...bestEntries, ...villageEntries];
   }
 
   if (id === "1") {

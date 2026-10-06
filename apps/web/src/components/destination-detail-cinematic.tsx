@@ -16,6 +16,7 @@
    ============================================================ */
 
 import Link from "next/link";
+import { isKnownVillage } from "@/lib/village-slugs";
 import { useState, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { isReviewStale } from "@/lib/review-freshness";
@@ -1505,7 +1506,16 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                             lineHeight: 1.2,
                           }}
                         >
-                          {sub.name}
+                          {sub.slug && isKnownVillage(dest.id, sub.slug) ? (
+                            <Link
+                              href={`/${locale}/destination/${dest.id}/${sub.slug}`}
+                              style={{ color: "inherit", textDecoration: "none" }}
+                            >
+                              {sub.name} →
+                            </Link>
+                          ) : (
+                            sub.name
+                          )}
                         </Title>
                         {sub.elevation_m && (
                           <span

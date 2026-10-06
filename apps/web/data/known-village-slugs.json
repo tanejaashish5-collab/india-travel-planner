@@ -1,0 +1,6 @@
+{
+  "generated_at": "2026-10-06T00:00:00.000Z",
+  "source": "sub_destinations where page_published_at is not null (scripts/gen-known-village-slugs.mjs)",
+  "count": 0,
+  "villages": {}
+}

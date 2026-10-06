@@ -14,6 +14,8 @@ import { formatScoreInline } from "@itp/shared";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
+import { VillagePage } from "@/components/village-page";
+import { getVillage } from "@/lib/villages";
 
 export const revalidate = 2592000; // 30d (was 7d, cut ISR-write bill 2026-07-25) — month-segment URL is rollover-safe; prewarm cron warms next month + /api/admin/revalidate flushes edits. Was 24h.
 export const dynamicParams = true;
@@ -60,7 +62,22 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id, locale, month } = await params;
 
-  if (!VALID_MONTHS.includes(month as any)) return {};
+  // Non-month segment = village page (/destination/<parent>/<village>, 2026-10-06).
+  if (!VALID_MONTHS.includes(month as any)) {
+    setRequestLocale(locale);
+    const village = await getVillage(id, month);
+    if (!village) return {};
+    const p = village.page;
+    const elev = p.elevation_m?.value ? `, ${p.elevation_m.value} m` : "";
+    const enUrl = `https://www.nakshiq.com/en/destination/${id}/${month}`;
+    return {
+      title: `${village.name}, near ${village.parentName}: how to reach, stay, best time`,
+      description: (p.one_line ? `${p.one_line} ` : "") + `Verified guide to ${village.name}${elev}: getting there, permits, honest downsides and when to go.`.slice(0, 160),
+      // English-only content: /hi is noindexed by middleware and canonicals to /en.
+      alternates: { canonical: enUrl, languages: { en: enUrl, "x-default": enUrl } },
+      openGraph: { title: `${village.name}, near ${village.parentName}`, url: enUrl, type: "article" },
+    };
+  }
 
   // Same setRequestLocale rationale as the page handler — the metadata pass
   // is a separate render context.
@@ -484,8 +501,13 @@ export default async function DestinationMonthPage({
   // 6,840 month pages at build time).
   setRequestLocale(locale);
 
-  // Validate month slug
-  if (!VALID_MONTHS.includes(month as any)) notFound();
+  // Non-month segment: a published village page, else 404 (middleware already
+  // filters unknown segments against data/known-village-slugs.json).
+  if (!VALID_MONTHS.includes(month as any)) {
+    const [village, villageEditor] = await Promise.all([getVillage(id, month), getPrimaryEditor()]);
+    if (!village) notFound();
+    return <VillagePage village={village} locale={locale} editor={villageEditor} />;
+  }
 
   const [data, editor] = await Promise.all([
     getMonthData(id, month),

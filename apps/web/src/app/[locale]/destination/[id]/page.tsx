@@ -178,7 +178,7 @@ async function getDestination(id: string) {
         kids_friendly(*),
         confidence_cards(*),
         destination_months(*),
-        sub_destinations(*),
+        sub_destinations(id, parent_id, name, coords, elevation_m, type, tagline, why_visit, highlights, kids_ok, kids_note, time_needed, distance_from_parent_km, best_months, tags, translations, slug, page_published_at),
         local_legends(*),
         viral_eats(*),
         destination_costs(count)
