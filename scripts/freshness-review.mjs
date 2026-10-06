@@ -140,10 +140,18 @@ const NEWS_HOSTS = new Set([
   "news18.com", "moneycontrol.com", "economictimes.indiatimes.com", "sentinelassam.com",
   "eastmojo.com", "nagalandpost.com", "arunachaltimes.in", "kashmirobserver.net",
   "greaterkashmir.com", "dailyexcelsior.com", "onmanorama.com", "mathrubhumi.com",
+  // West + South regional dailies (added 2026-10-07: the 10-07 batch was Karnataka,
+  // Maharashtra, Goa and the South, and stamped 6 of 41 because none of these counted).
+  "freepressjournal.in", "mid-day.com", "lokmat.com", "loksatta.com", "pudhari.news",
+  "starofmysore.com", "udayavani.com", "navhindtimes.in", "heraldgoa.in",
+  "thenewsminute.com", "dtnext.in",
 ]);
 // Government bodies that publish outside .gov.in (added 2026-10-04: the 10-03
-// run cited aai.aero for an airport fact and it did not count).
-const OFFICIAL_HOSTS = new Set(["aai.aero", "konkanrailway.com", "irctc.co.in", "bro.gov.in"]);
+// run cited aai.aero for an airport fact and it did not count). The two state
+// tourism departments were added 2026-10-07; both sites name "Department of
+// Tourism, Government of <state>" in their footer.
+const OFFICIAL_HOSTS = new Set(["aai.aero", "konkanrailway.com", "irctc.co.in", "bro.gov.in",
+  "karnatakatourism.org", "keralatourism.org"]);
 function isAuthoritative(host) {
   if (/(^|\.)(gov|nic)\.in$/.test(host) || host.endsWith(".gov")) return true;
   for (const o of OFFICIAL_HOSTS) if (host === o || host.endsWith(`.${o}`)) return true;

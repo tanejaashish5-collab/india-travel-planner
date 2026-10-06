@@ -36,8 +36,14 @@ changed" check, not a rewrite.
   NHAI/BRO/state PWD, SDMA/IMD advisories, AAI, Indian Railways, forest departments.
   Reputable news (national/regional dailies) counts for closures.
 - **At least 2 sources from 2 different hosts per confirmed destination, and at least ONE of
-  them official (`*.gov.in`, `*.nic.in`) or a named news outlet** (the list is `NEWS_HOSTS` in
-  `scripts/freshness-review.mjs`). Wikipedia, rome2rio, travel blogs and aggregators may support
+  them official (`*.gov.in`, `*.nic.in`, or a body in `OFFICIAL_HOSTS`, which includes the
+  Karnataka and Kerala tourism departments at karnatakatourism.org and keralatourism.org) or a named
+  news outlet** (the list is `NEWS_HOSTS` in `scripts/freshness-review.mjs`; read both lists before
+  you start, they cover the regional dailies too).
+- **A quiet place is the normal case, not a failure.** Most destinations have no news at all.
+  The official page that describes the place today (state tourism department, district `.nic.in`,
+  forest department) plus a second host, after a search for recent closures that found nothing,
+  IS a confirmation. Say in `notes` what you searched for and that it found nothing. Wikipedia, rome2rio, travel blogs and aggregators may support
   but never carry a verdict alone. nakshiq.com never counts. The wrapper re-opens them; a destination whose sources cannot be opened is not
   stamped.
 - These hosts are slow and often need a retry — a timeout is not evidence a page is missing.
@@ -65,9 +71,14 @@ changed" check, not a rewrite.
   - Use the official name as the authority publishes it today; a proposed or former name is wrong.
 
 ## Working method
-- Split the batch across at most 3 parallel Sonnet sub-agents (`model: "sonnet"`) (≈14 destinations each) for the
-  searching. Then read their findings and decide each verdict YOURSELF — sub-agents propose,
-  you confirm.
+- Split the batch into chunks of **at most 7 destinations** and give each chunk to a Sonnet
+  sub-agent (`model: "sonnet"`), at most 3 running at a time (so 41 = 6 chunks in 2 waves).
+  14 per sub-agent was too many: on 2026-10-07 whole states were never searched. Then read
+  their findings and decide each verdict YOURSELF — sub-agents propose, you confirm.
+- **Every id in the batch must be accounted for.** Before you finish, list each id you are
+  leaving out in the run note with its own one-line reason (what you searched, what was
+  missing). "and remaining destinations" is not a reason; if you ran out of time, say which
+  ids were never searched.
 - Write the entries file (path in your prompt) in this shape:
   `{"reviews":[{"id","verdict","sources":[…],"notes","corrections":[{"field","current","proposed","source"}]}]}`
 - Validate it (no write): `node --env-file=apps/web/.env.local scripts/freshness-review.mjs apply --batch $BATCH --entries $ENTRIES`
