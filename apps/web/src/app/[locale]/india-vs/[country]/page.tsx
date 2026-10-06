@@ -8,6 +8,7 @@ import { localeAlternates } from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { FEATURES } from "@/lib/features";
 
 export const revalidate = 86400;
 
@@ -581,7 +582,7 @@ export default async function IndiaVsCountryPage({
                 </p>
               </Link>
               <Link
-                href={`/${locale}/plan`}
+                href={FEATURES.aiPlanner ? `/${locale}/plan` : `/${locale}/where-to-go`}
                 style={{
                   display: "block",
                   padding: 20,
@@ -599,7 +600,7 @@ export default async function IndiaVsCountryPage({
                     margin: "0 0 6px",
                   }}
                 >
-                  Plan your trip
+                  {FEATURES.aiPlanner ? "Plan your trip" : "Where to go, by month"}
                 </p>
                 <p
                   style={{
@@ -610,7 +611,9 @@ export default async function IndiaVsCountryPage({
                     margin: 0,
                   }}
                 >
-                  The AI itinerary planner — tell it your dates and constraints.
+                  {FEATURES.aiPlanner
+                    ? "The AI itinerary planner — tell it your dates and constraints."
+                    : "Every destination scored for every month, so you pick the right season."}
                 </p>
               </Link>
             </div>

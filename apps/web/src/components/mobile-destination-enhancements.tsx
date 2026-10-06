@@ -6,6 +6,7 @@ import Link from "next/link";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 import { getSavedIds, isSaved, toggleSaved } from "@/lib/saved-destinations";
+import { FEATURES } from "@/lib/features";
 
 /* ── Sticky Section Tabs ──
    Floats above content on mobile, tracks scroll position to highlight active section.
@@ -173,15 +174,17 @@ export function BottomCTABar({ destId, destName }: { destId: string; destName: s
           style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
         >
           <div className="flex items-center gap-2.5 px-4 pt-3">
+            {FEATURES.aiPlanner && (
             <Link
               href={`/${locale}/plan?dest=${destId}`}
               className="flex-1 rounded-xl bg-[#E55642] py-3 text-center text-sm font-bold text-white shadow-lg shadow-[#E55642]/20 active:scale-[0.98] transition-transform"
             >
               Plan This Trip
             </Link>
+            )}
             <button
               onClick={toggleSave}
-              className={`rounded-xl px-4 py-3 border transition-all active:scale-95 ${
+              className={`${FEATURES.aiPlanner ? "" : "flex-1 "}rounded-xl px-4 py-3 border transition-all active:scale-95 ${
                 saved
                   ? "bg-red-500/10 border-red-500/30 text-red-400"
                   : "bg-muted/50 border-border/50 text-muted-foreground"
@@ -189,6 +192,7 @@ export function BottomCTABar({ destId, destName }: { destId: string; destName: s
               aria-label={saved ? "Remove from saved" : "Save destination"}
             >
               <span aria-hidden="true">{saved ? "♥" : "♡"}</span>
+              {!FEATURES.aiPlanner && <span className="ml-2 text-sm font-semibold">{saved ? "Saved" : "Save"}</span>}
             </button>
             <button
               onClick={handleShare}

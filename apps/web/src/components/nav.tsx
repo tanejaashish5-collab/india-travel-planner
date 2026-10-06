@@ -12,6 +12,7 @@ import { CinematicMoreOverlay } from "./cinematic-more-overlay";
 import { m as motion } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { isCinematicDestination as isCinematicSlug } from "@/lib/cinematic-destinations";
+import { FEATURES } from "@/lib/features";
 
 export function Nav() {
   const locale = useLocale();
@@ -284,7 +285,9 @@ export function Nav() {
     const cinemaItems: { label: string; href: string }[] = [
       { label: t("destinations"), href: `/${locale}/explore` },
       { label: t("collections"), href: `/${locale}/collections` },
-      { label: t("planLabel"), href: `/${locale}/plan` },
+      FEATURES.aiPlanner
+        ? { label: t("planLabel"), href: `/${locale}/plan` }
+        : { label: t("whereToGoLabel"), href: `/${locale}/where-to-go` },
       // SKIP LIST points at /tourist-traps (the existing analog).
       // THE WINDOW points at /the-window (the newsletter archive index).
       { label: "SKIP LIST", href: `/${locale}/tourist-traps` },
@@ -579,7 +582,8 @@ export function Nav() {
             <span aria-hidden="true">♥</span>
           </Link>
 
-          {/* AI Plan CTA */}
+          {/* AI Plan CTA (hidden while FEATURES.aiPlanner is off) */}
+          {FEATURES.aiPlanner && (
           <Link
             href={`/${locale}/plan`}
             data-tour="plan-cta"
@@ -588,6 +592,7 @@ export function Nav() {
             <span>{t("aiPlan")}</span>
             <span className="rounded bg-white/20 px-1 py-0.5 text-[10px] font-bold leading-none">{t("new")}</span>
           </Link>
+          )}
         </nav>
 
         {/* Right side */}

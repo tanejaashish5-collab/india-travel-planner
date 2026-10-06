@@ -7,6 +7,7 @@ import {
   guideProse,
   GuideFaqList,
 } from "@/components/cinematic-guide-helpers";
+import { FEATURES } from "@/lib/features";
 
 export const revalidate = 86400;
 
@@ -237,9 +238,15 @@ export default async function FirstTripIndiaPage({
           <CinematicButton variant="primary" href={`/${locale}/explore`}>
             Browse all 505 destinations
           </CinematicButton>
-          <CinematicButton variant="secondary" href={`/${locale}/plan`}>
-            AI trip planner
-          </CinematicButton>
+          {FEATURES.aiPlanner ? (
+            <CinematicButton variant="secondary" href={`/${locale}/plan`}>
+              AI trip planner
+            </CinematicButton>
+          ) : (
+            <CinematicButton variant="secondary" href={`/${locale}/where-to-go`}>
+              Where to go, by month
+            </CinematicButton>
+          )}
           <CinematicButton variant="secondary" href={`/${locale}/guide/permits`}>
             Permits & paperwork
           </CinematicButton>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 const MONTH_NAMES = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const MONTH_FULL = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -253,12 +254,14 @@ export function RouteBuilder({ destinations }: { destinations: any[] }) {
                 >
                   Share on WhatsApp
                 </button>
+                {FEATURES.aiPlanner && (
                 <Link
                   href={`/${locale}/plan?destinations=${selected.join(",")}&month=${month}`}
                   className="flex-1 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-center hover:bg-muted transition-colors"
                 >
                   Generate AI Itinerary
                 </Link>
+                )}
               </div>
             </div>
           )}

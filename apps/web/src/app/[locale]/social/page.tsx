@@ -8,6 +8,7 @@ import { getTranslations } from "next-intl/server";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { FEATURES } from "@/lib/features";
 
 // ISR-cached daily — the destination cards are static-ish but the
 // month-keyed Dhanaulti card needs to roll over with currentMonthSlugIST.
@@ -36,7 +37,7 @@ function cards(monthSlug: string): Card[] {
     { key: "honest_avoid", href: "/tourist-traps",                       utm_campaign: "social-traps" },
     { key: "festivals",  href: "/festivals",                             utm_campaign: "social-festivals" },
     { key: "methodology", href: "/methodology",                          utm_campaign: "social-method" },
-    { key: "plan",       href: "/plan",                                  utm_campaign: "social-plan" },
+    ...(FEATURES.aiPlanner ? [{ key: "plan" as const, href: "/plan", utm_campaign: "social-plan" }] : []),
   ];
 }
 

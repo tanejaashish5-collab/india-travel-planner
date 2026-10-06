@@ -11,6 +11,7 @@ import {
   currentMonthLongIST,
   type VerdictTier,
 } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 // Mini verdict strip pinned to the bottom edge of the viewport — appears
 // after the reader scrolls past the hero, hides on the Coda, and
@@ -139,7 +140,7 @@ export function CinematicVerdictStrip({
           }}
         >
           <Link
-            href={`/${locale}/plan?destination=${destinationId}`}
+            href={FEATURES.aiPlanner ? `/${locale}/plan?destination=${destinationId}` : `/${locale}/build-route`}
             style={{
               color: "var(--bone-dim)",
               textDecoration: "none",

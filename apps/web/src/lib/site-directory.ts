@@ -1,3 +1,5 @@
+import { FEATURES } from "@/lib/features";
+
 /* ============================================================
    Site directory — single source of truth for the cinematic footer
    sitemap + the cinematic MORE overlay. Both render the same 4
@@ -28,7 +30,7 @@ export const FOOTER_GROUPS: DirectoryGroup[] = [
   {
     titleKey: "plan",
     links: [
-      { href: (l) => `/${l}/plan`, labelKey: "plan" },
+      ...(FEATURES.aiPlanner ? [{ href: (l: string) => `/${l}/plan`, labelKey: "plan" }] : []),
       { href: (l) => `/${l}/build-route`, labelKey: "buildRoute" },
       { href: (l) => `/${l}/trip`, labelKey: "myTrip" },
       { href: (l) => `/${l}/cost-index`, labelKey: "costIndex" },

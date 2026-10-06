@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { SectionLabel } from "./ui/section-label";
 import { SCORE_LABELS } from "@/lib/design-tokens";
 import { formatScore, SCORE_MAX } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 type Verdict = "go" | "wait" | "skip";
 
@@ -257,17 +258,19 @@ export function DestinationDecisionRail({
           {/* CTAs */}
           <div className="space-y-2">
             <a
-              href={`/${locale}/plan?seed=${destinationId}`}
+              href={FEATURES.aiPlanner ? `/${locale}/plan?seed=${destinationId}` : `/${locale}/build-route`}
               className="block rounded-lg border border-primary/40 bg-primary/10 px-3 py-2 text-center text-xs font-semibold text-primary hover:bg-primary/20 transition-colors"
             >
               Build route with this &rarr;
             </a>
+            {FEATURES.aiPlanner && (
             <a
               href={`/${locale}/plan?seed=${destinationId}&month=${monthSlug}#ai`}
               className="block rounded-lg border border-border bg-background/40 px-3 py-2 text-center text-xs font-semibold text-foreground hover:border-primary/40 transition-colors"
             >
               Ask AI about this &rarr;
             </a>
+            )}
             {compareWithId && compareWithName && (
               <a
                 href={`/${locale}/vs/${destinationId}-vs-${compareWithId}`}

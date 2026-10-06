@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 import { isSaved, toggleSaved } from "@/lib/saved-destinations";
+import { FEATURES } from "@/lib/features";
 
 // Mobile bottom-action bar — three buttons pinned to the bottom edge on
 // phones only. Replaces the desktop floating Plan-AI pill on mobile so we
@@ -95,6 +96,7 @@ export function CinematicMobileActionBar({
       className="nq-mobile-action-bar"
       aria-label="Quick actions"
       style={{
+        gridTemplateColumns: FEATURES.aiPlanner ? "1fr 1fr 1fr" : "1fr 1fr",
         position: "fixed",
         left: 0,
         right: 0,
@@ -111,6 +113,7 @@ export function CinematicMobileActionBar({
         pointerEvents: hidden ? "none" : "auto",
       }}
     >
+      {FEATURES.aiPlanner && (
       <Link
         href={`/${locale}/plan?destination=${destinationId}`}
         style={cell}
@@ -129,6 +132,7 @@ export function CinematicMobileActionBar({
         </svg>
         <span>Plan AI</span>
       </Link>
+      )}
       <button type="button" onClick={toggleSave} style={cell}>
         <svg
           width="18"

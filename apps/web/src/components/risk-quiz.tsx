@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { formatScoreInline } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 type Group = "solo" | "couple" | "family-kids" | "friends" | "parents";
 type Duration = "weekend" | "week" | "two-weeks" | "long";
@@ -171,12 +172,14 @@ export function RiskQuiz({ locale }: { locale: string }) {
           >
             Take again
           </button>
+          {FEATURES.aiPlanner && (
           <Link
             href={`/${locale}/plan`}
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
           >
             Full AI planner
           </Link>
+          )}
         </div>
       </div>
     );

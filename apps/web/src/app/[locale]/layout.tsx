@@ -16,6 +16,7 @@ import { GA4RouteTracker } from "@/components/ga4-route-tracker";
 import { MotionProvider } from "@/components/motion-provider";
 import { getSameAsUrls } from "@/lib/social";
 import "../globals.css";
+import { FEATURES } from "@/lib/features";
 
 // Deferred client chunks — never block first paint or TTI
 const StickyCTA = dynamic(() => import("@/components/sticky-cta").then((m) => ({ default: m.StickyCTA })));
@@ -73,11 +74,11 @@ export async function generateMetadata({
     ? "NakshIQ — भारत के लिए यात्रा इंटेलिजेंस"
     : "NakshIQ — Travel Intelligence for India";
   const description = isHindi
-    ? `${d}+ गंतव्य, ${p}+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा, और AI-संचालित यात्रा कार्यक्रम। भारत को समझदारी से देखने का साधन।`
-    : `${d}+ destinations, ${p}+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.`;
+    ? `${d}+ गंतव्य, ${p}+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा और ईमानदार राय। भारत को समझदारी से देखने का साधन।`
+    : `${d}+ destinations, ${p}+ places with monthly suitability scores, kids ratings, safety data and honest verdicts. The confidence engine for exploring India.`;
   const ogShortDesc = isHindi
     ? `${d}+ गंतव्य, ${p}+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा।`
-    : `${d}+ destinations, ${p}+ places with monthly scores, kids ratings, safety data, and AI itineraries.`;
+    : `${d}+ destinations, ${p}+ places with monthly scores, kids ratings and safety data.`;
 
   return {
     metadataBase: new URL("https://www.nakshiq.com"),
@@ -288,7 +289,7 @@ export default async function LocaleLayout({
             <CompareProvider>
               <ScrollToTop />
               <PageTransition>{children}</PageTransition>
-              <StickyCTA />
+              {FEATURES.aiPlanner && <StickyCTA />}
               <PersonalisationQuiz />
               <MobileTabBar />
               <PWAInstallPrompt />

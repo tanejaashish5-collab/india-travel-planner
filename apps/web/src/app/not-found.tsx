@@ -54,7 +54,7 @@ export default function RootNotFound() {
             </Link>
             <div className="nf-nav">
               <Link href="/en/explore">Explore</Link>
-              <Link href="/en/plan" className="nf-cta">AI Plan</Link>
+              <Link href="/en/where-to-go" className="nf-cta">Where to go</Link>
             </div>
           </div>
         </header>
@@ -80,8 +80,8 @@ export default function RootNotFound() {
               <Link href="/en/explore" className="nf-btn-primary">
                 Explore Destinations
               </Link>
-              <Link href="/en/plan" className="nf-btn-secondary">
-                Plan a Trip
+              <Link href="/en/where-to-go" className="nf-btn-secondary">
+                Where to go this month
               </Link>
             </div>
 

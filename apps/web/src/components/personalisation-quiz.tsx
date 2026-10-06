@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { currentMonthIST } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 interface QuizAnswers {
   travelerType: string;
@@ -140,7 +141,7 @@ export function PersonalisationQuiz() {
 
     setResults([
       `/${locale}/explore?${params.toString()}`,
-      `/${locale}/plan`,
+      ...(FEATURES.aiPlanner ? [`/${locale}/plan`] : []),
     ]);
 
     localStorage.setItem("quizSeen", "true");
@@ -217,6 +218,7 @@ export function PersonalisationQuiz() {
                 >
                   Show me my matches →
                 </Link>
+                {FEATURES.aiPlanner && results[1] && (
                 <Link
                   href={results[1]}
                   onClick={dismiss}
@@ -224,6 +226,7 @@ export function PersonalisationQuiz() {
                 >
                   Or build an AI itinerary
                 </Link>
+                )}
               </div>
             </motion.div>
           ) : (
@@ -347,6 +350,7 @@ export function PersonalisationQuiz() {
                   >
                     Show me my matches →
                   </Link>
+                  {FEATURES.aiPlanner && results[1] && (
                   <Link
                     href={results[1]}
                     onClick={dismiss}
@@ -354,6 +358,7 @@ export function PersonalisationQuiz() {
                   >
                     Or build an AI itinerary
                   </Link>
+                  )}
                 </div>
               </motion.div>
             ) : (

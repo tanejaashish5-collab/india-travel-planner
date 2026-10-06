@@ -8,6 +8,7 @@ import { useInView } from "./use-in-view";
 import { getIssueNumber } from "./helpers";
 import { NewsletterSignup } from "../newsletter-signup";
 import { currentMonthLongIST } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 /* ============================================================
    ACT IX — The Coda
@@ -238,6 +239,7 @@ export function Act9Coda({
               >
                 {t("openMonthAtlas", { month: monthLong })}
               </Link>
+              {FEATURES.aiPlanner && (
               <Link
                 href={`/${locale}/plan`}
                 style={{
@@ -259,6 +261,7 @@ export function Act9Coda({
               >
                 {t("tellUsYourTrip")}
               </Link>
+              )}
             </div>
           </div>
         </div>

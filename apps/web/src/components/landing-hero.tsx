@@ -30,6 +30,7 @@ import { AnimatedCounter } from "./animated-counter";
 import { resolveCover } from "@/lib/collection-covers";
 import { destinationImage } from "@/lib/image-url";
 import { currentMonthIST } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400",
@@ -198,12 +199,14 @@ export function LandingHero({
                   transition={{ duration: 0.5 }}
                 />
               </Link>
+              {FEATURES.aiPlanner && (
               <Link
                 href={`/${locale}/plan`}
                 className="rounded-full border border-border px-8 py-4 text-sm font-semibold text-foreground hover:bg-muted hover:border-muted-foreground/30 hover:-translate-y-0.5 transition-all duration-200"
               >
                 {tn("planTrip")}
               </Link>
+              )}
             </div>
             <div className="flex justify-center pt-3">
               <a

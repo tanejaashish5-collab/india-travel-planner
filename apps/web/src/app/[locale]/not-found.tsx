@@ -28,10 +28,10 @@ export default function NotFound() {
               Explore destinations
             </Link>
             <Link
-              href="/en/plan"
+              href="/en/where-to-go"
               className="rounded-full border border-border px-8 py-3 text-sm font-semibold hover:bg-muted hover:-translate-y-0.5 transition-all duration-200"
             >
-              Plan a trip
+              Where to go this month
             </Link>
             <Link
               href="/en"

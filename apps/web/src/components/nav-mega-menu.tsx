@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats-fallback";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 import { currentMonthLongIST, currentMonthSlugIST } from "@itp/shared";
+import { FEATURES } from "@/lib/features";
 
 export type PanelType = "explore" | "plan" | "learn" | null;
 
@@ -371,7 +372,8 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
           <MenuItem href={`/${locale}/road-conditions`} icon={RoadIcon} label={t("roads")} desc="Latest road status" onNavigate={onNavigate} />
         </div>
       </div>
-      {/* AI Plan highlight */}
+      {/* Highlight card: AI planner when enabled, otherwise the live road feed */}
+      {FEATURES.aiPlanner ? (
       <div className="col-span-2 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-5 flex flex-col justify-between">
         <div>
           <span className="text-primary"><AiSparkleIcon /></span>
@@ -388,6 +390,24 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
           Start Planning
         </a>
       </div>
+      ) : (
+      <div className="col-span-2 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-5 flex flex-col justify-between">
+        <div>
+          <span className="text-primary"><RoadIcon /></span>
+          <h4 className="text-base font-bold text-foreground mt-2">Road conditions, daily</h4>
+          <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+            Which mountain roads and passes are open, closed or risky, updated every morning from official sources.
+          </p>
+        </div>
+        <a
+          href={`/${locale}/road-conditions`}
+          onClick={onNavigate}
+          className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Check the roads
+        </a>
+      </div>
+      )}
     </motion.div>
   );
 }

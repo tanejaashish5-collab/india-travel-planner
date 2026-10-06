@@ -5,6 +5,7 @@ import { buildFestivalSlugMap, type FestivalSlugRow } from "@/lib/festival-slug"
 import { allBestSlugs } from "@/lib/best-pages";
 import { allVillagePaths } from "@/lib/village-slugs";
 import { getCachedDestinationsIndex, getCachedItinerarySlugs } from "@/lib/cached-data";
+import { FEATURES } from "@/lib/features";
 
 // Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
 // generateSitemaps() convention because its auto-generated /sitemap.xml
@@ -161,7 +162,8 @@ function toUrlsetXml(entries: Entry[]): string {
 async function buildChunk(id: string): Promise<Entry[]> {
   if (id === "0") {
     const staticPages = [
-      "", "explore", "states", "collections", "routes", "treks", "plan",
+      "", "explore", "states", "collections", "routes", "treks",
+      ...(FEATURES.aiPlanner ? ["plan"] : []),
       "camping", "permits", "road-conditions", "superlatives",
       "stays", "festivals", "luxury", "tourist-traps",
       "saved", "about", "methodology", "blog", "more",

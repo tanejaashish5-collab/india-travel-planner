@@ -48,8 +48,8 @@ export function MobileTabBar() {
     {
       id: "experiences",
       label: "Discover",
-      active: isActive(["/collections", "/routes", "/treks", "/camping", "/festivals", "/stays", "/where-to-go", "/permits", "/tourist-traps", "/superlatives"]),
-      action: () => setExperiencesOpen(true),
+      active: isActive(["/collections", "/routes", "/treks", "/camping", "/festivals", "/stays", "/where-to-go", "/permits", "/tourist-traps", "/superlatives", "/road-conditions", "/blog"]),
+      action: () => setExperiencesOpen((v) => !v),
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -62,7 +62,7 @@ export function MobileTabBar() {
     {
       id: "trip",
       label: "My Trip",
-      active: isActive(["/saved", "/trip", "/compare", "/plan"]),
+      active: isActive(["/saved", "/trip", "/compare"]),
       action: () => router.push(`/${locale}/saved`),
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

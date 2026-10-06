@@ -9,11 +9,14 @@ import { localeAlternates } from "@/lib/seo-utils";
 import { getAppStats } from "@/lib/stats";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
+import { redirect } from "next/navigation";
+import { FEATURES } from "@/lib/features";
 
 export const revalidate = 21600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  if (!FEATURES.aiPlanner) return { robots: { index: false, follow: true } };
   const stats = await getAppStats();
   return {
     title: "Plan Your Trip — Smart Destination Matcher",
@@ -50,7 +53,13 @@ async function getAllDestinations() {
   };
 }
 
-export default async function PlanTripPage() {
+export default async function PlanTripPage({ params }: { params: Promise<{ locale: string }> }) {
+  // Hidden 2026-10-06 (FEATURES.aiPlanner): old links and bookmarks land on
+  // Where to Go instead of a dead page. Flip the flag to bring /plan back.
+  if (!FEATURES.aiPlanner) {
+    const { locale } = await params;
+    redirect(`/${locale}/where-to-go`);
+  }
   const { destinations, states } = await getAllDestinations();
   const issueNum = getIssueNumber();
 
