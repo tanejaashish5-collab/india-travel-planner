@@ -30,6 +30,9 @@ export type VillagePageData = {
   faqs?: { q: string; a: string }[];
   nearby_villages?: string[];
   sources?: { url: string; used_for?: string | null }[];
+  // Wikimedia Commons photos (scripts/upload-village-photos.mjs). `hero` only when
+  // the photo shows the village itself; captions name the real place shown.
+  photos?: { src: string; caption: string; hero: boolean; author: string; licence: string; source_url: string }[];
 };
 
 export type Village = {

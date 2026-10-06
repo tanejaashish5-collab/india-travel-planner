@@ -6,7 +6,7 @@ import { DestinationMonth } from "@/components/destination-month";
 import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
-import { destinationImage } from "@/lib/image-url";
+import { destinationImage, imageUrl as absImageUrl } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
@@ -70,12 +70,18 @@ export async function generateMetadata({
     const p = village.page;
     const elev = p.elevation_m?.value ? `, ${p.elevation_m.value} m` : "";
     const enUrl = `https://www.nakshiq.com/en/destination/${id}/${month}`;
+    const heroPhoto = (p.photos ?? []).find((ph) => ph.hero);
     return {
       title: `${village.name}, near ${village.parentName}: how to reach, stay, best time`,
       description: (p.one_line ? `${p.one_line} ` : "") + `Verified guide to ${village.name}${elev}: getting there, permits, honest downsides and when to go.`.slice(0, 160),
       // English-only content: /hi is noindexed by middleware and canonicals to /en.
       alternates: { canonical: enUrl, languages: { en: enUrl, "x-default": enUrl } },
-      openGraph: { title: `${village.name}, near ${village.parentName}`, url: enUrl, type: "article" },
+      openGraph: {
+        title: `${village.name}, near ${village.parentName}`,
+        url: enUrl,
+        type: "article",
+        ...(heroPhoto ? { images: [{ url: absImageUrl(heroPhoto.src), alt: heroPhoto.caption }] } : {}),
+      },
     };
   }
 

@@ -2,6 +2,7 @@
 // Renders a verified sub_destinations.page payload. Every section is skipped when
 // its data is empty: an honest gap beats an invented fill (CLAUDE.md data rules).
 import Link from "next/link";
+import Image from "next/image";
 import type { CSSProperties, ReactNode } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -9,6 +10,7 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { AuthorByline } from "@/components/author-byline";
 import type { Village } from "@/lib/villages";
 import type { getPrimaryEditor } from "@/lib/editor";
+import { imageUrl } from "@/lib/image-url";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const BASE = "https://www.nakshiq.com";
@@ -43,6 +45,20 @@ function SourceLink({ url }: { url?: string | null }) {
   );
 }
 
+type Photo = NonNullable<Village["page"]["photos"]>[number];
+
+function Credit({ ph }: { ph: Photo }) {
+  return (
+    <p style={{ ...mono, textTransform: "none", letterSpacing: "0.02em", margin: "8px 0 0", lineHeight: 1.5 }}>
+      <span style={{ color: "var(--bone-dim)" }}>{ph.caption}</span>
+      {" · "}
+      <a href={ph.source_url} target="_blank" rel="nofollow noopener noreferrer" style={{ color: "var(--bone-faint)", textDecoration: "underline" }}>
+        Photo: {ph.author}, {ph.licence}, via Wikimedia Commons
+      </a>
+    </p>
+  );
+}
+
 function monthLabel(ms?: number[]) {
   return (ms ?? []).filter((m) => m >= 1 && m <= 12).map((m) => MONTHS[m - 1]).join(", ");
 }
@@ -58,6 +74,8 @@ export function villageJsonLd(v: Village, locale: string) {
     description: p.one_line ?? undefined,
     containedInPlace: { "@type": "Place", name: v.parentName, url: `${BASE}/${locale}/destination/${v.parentId}` },
   };
+  const heroLd = (p.photos ?? []).find((ph) => ph.hero);
+  if (heroLd) place.image = imageUrl(heroLd.src);
   if (p.coords?.lat != null && p.coords?.lng != null) {
     place.geo = { "@type": "GeoCoordinates", latitude: p.coords.lat, longitude: p.coords.lng, ...(p.elevation_m?.value ? { elevation: p.elevation_m.value } : {}) };
   }
@@ -90,6 +108,9 @@ export function VillagePage({ village: v, locale, editor }: { village: Village; 
   const faqs = (p.faqs ?? []).filter((f) => f.q && f.a);
   const downsides = (p.honest_downsides ?? []).filter(Boolean);
   const sources = p.sources ?? [];
+  const photos = p.photos ?? [];
+  const hero = photos.find((ph) => ph.hero) ?? null;
+  const gallery = photos.filter((ph) => ph !== hero);
   const status = p.status_2025_2026?.detail && !/^none found/i.test(p.status_2025_2026.detail) ? p.status_2025_2026 : null;
 
   const facts: [string, string][] = [];
@@ -140,6 +161,15 @@ export function VillagePage({ village: v, locale, editor }: { village: Village; 
             </div>
           )}
         </header>
+
+        {hero && (
+          <figure style={{ maxWidth: 1100, margin: "0 auto 56px" }}>
+            <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9", overflow: "hidden", border: "1px solid var(--hair)" }}>
+              <Image src={hero.src} alt={hero.caption} fill priority sizes="(max-width: 1100px) 100vw, 1100px" style={{ objectFit: "cover" }} />
+            </div>
+            <figcaption><Credit ph={hero} /></figcaption>
+          </figure>
+        )}
 
         {status && (
           <Section id="status" label="CURRENT STATUS">
@@ -254,6 +284,21 @@ export function VillagePage({ village: v, locale, editor }: { village: Village; 
                 </div>
               ))}
             </Grid>
+          </Section>
+        )}
+
+        {gallery.length > 0 && (
+          <Section id="photos" label={hero ? "MORE PHOTOS" : "PHOTOS"}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
+              {gallery.map((ph) => (
+                <figure key={ph.src} style={{ margin: 0 }}>
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 2", overflow: "hidden", border: "1px solid var(--hair)" }}>
+                    <Image src={ph.src} alt={ph.caption} fill sizes="(max-width: 640px) 100vw, 360px" style={{ objectFit: "cover" }} />
+                  </div>
+                  <figcaption><Credit ph={ph} /></figcaption>
+                </figure>
+              ))}
+            </div>
           </Section>
         )}
 
