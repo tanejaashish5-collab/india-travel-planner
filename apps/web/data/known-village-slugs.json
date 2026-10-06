@@ -1,6 +1,52 @@
 {
-  "generated_at": "2026-10-06T00:00:00.000Z",
+  "generated_at": "2026-10-06T04:16:42.593Z",
   "source": "sub_destinations where page_published_at is not null (scripts/gen-known-village-slugs.mjs)",
-  "count": 0,
-  "villages": {}
+  "count": 19,
+  "villages": {
+    "almora": [
+      "kasar-devi"
+    ],
+    "badrinath": [
+      "mana"
+    ],
+    "chopta": [
+      "deoria-tal",
+      "tungnath"
+    ],
+    "dharamshala": [
+      "dharamkot",
+      "naddi"
+    ],
+    "jibhi": [
+      "shoja"
+    ],
+    "keylong": [
+      "jispa"
+    ],
+    "manali": [
+      "naggar",
+      "sethan"
+    ],
+    "munsiyari": [
+      "khaliya-top"
+    ],
+    "pahalgam": [
+      "aru-valley"
+    ],
+    "parvati-valley": [
+      "kalga-pulga",
+      "kheerganga",
+      "malana",
+      "tosh"
+    ],
+    "patnitop": [
+      "nathatop"
+    ],
+    "shimla": [
+      "mashobra"
+    ],
+    "valley-of-flowers": [
+      "ghangaria"
+    ]
+  }
 }

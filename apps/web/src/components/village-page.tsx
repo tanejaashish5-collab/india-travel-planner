@@ -96,7 +96,9 @@ export function VillagePage({ village: v, locale, editor }: { village: Village; 
   if (elev) facts.push(["Altitude", `${elev.toLocaleString("en-IN")} m`]);
   if (p.time_needed) facts.push(["Time needed", p.time_needed]);
   if (p.best_months?.length) facts.push(["Best months", monthLabel(p.best_months)]);
-  if (p.permits?.needed != null) facts.push(["Permit", p.permits.needed ? (p.permits.fee_inr ? `Yes, Rs ${p.permits.fee_inr}` : "Yes") : "Not needed"]);
+  const fee = p.permits?.fee_inr;
+  const feeLabel = fee == null || fee === "" ? null : /^\s*(rs\.?|₹|inr)/i.test(String(fee)) ? String(fee) : `Rs ${fee}`;
+  if (p.permits?.needed != null) facts.push(["Permit", p.permits.needed ? (feeLabel ? `Yes, ${feeLabel}` : "Yes") : "Not needed"]);
   if (p.kids_ok != null) facts.push(["With kids", p.kids_ok ? "OK" : "Not ideal"]);
 
   return (
