@@ -32,12 +32,13 @@ for (const slug of slugs) {
   const file = path.join(DIR, `${slug}.json`);
   let v;
   try { v = JSON.parse(readFileSync(file, "utf8")); } catch { console.log(`HOLD ${slug}: no research file`); held++; continue; }
+  if (v.hold) { console.log(`HOLD ${slug}: ${v.hold}`); held++; continue; }
   const r = check.report.find((x) => x.slug === slug);
   if (!r) { console.log(`HOLD ${slug}: not in source check`); held++; continue; }
   if (statSync(file).mtimeMs > checkedAt) { console.log(`HOLD ${slug}: edited after the last source check`); held++; continue; }
   if (r.failed > 0) { console.log(`HOLD ${slug}: ${r.failed} failed source(s)`); held++; continue; }
 
-  const { slug: _s, name, parent_id, state, researched_at, ...page } = v;
+  const { slug: _s, name, parent_id, state, researched_at, aliases, manual_checks, hold, ...page } = v;
   const reviewed = new Date(`${researched_at}T00:00:00Z`).toISOString();
   const card = {
     tagline: v.one_line ?? null,

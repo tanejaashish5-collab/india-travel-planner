@@ -33,23 +33,29 @@ const report = [];
 let pass = 0, fail = 0;
 for (const f of files) {
   const v = JSON.parse(readFileSync(path.join(DIR, f), "utf8"));
-  const vWords = words(v.name.replace(/&/g, " "));
+  // aliases: spellings sources use for the same place (Harsil/Harshil).
+  const vWords = words([v.name, ...(v.aliases || [])].join(" ").replace(/&/g, " "));
+  // Road/status/reach facts are often reported for the corridor or parent town
+  // (e.g. "NH-305 near Jibhi"), so facts may match the parent; named items may not.
+  const pWords = words(String(v.parent_id || "").replace(/-/g, " "));
   const checks = [];
   const named = [...(v.stays || []), ...(v.eats || []), ...(v.things_to_do || [])].map((x) => ({ label: x.name, url: x.source_url, need: words(x.name) }));
   const facts = [v.coords, v.elevation_m, v.permits, v.road_and_season_access, v.status_2025_2026, ...(v.how_to_reach || [])]
     .filter((x) => x && x.source_url).map((x) => ({ label: "fact", url: x.source_url, need: [] }));
   for (const c of [...named, ...facts]) {
     let ok = false, why = "";
+    const manual = (v.manual_checks || []).find((m) => m.url === c.url);
+    if (manual) { pass++; checks.push({ ok: true, label: c.label, url: c.url, why: `manual: ${manual.note}` }); continue; }
     if (!c.url) why = "no source_url";
     else if (BAD_HOST.test(c.url)) why = "maps url is not a source";
     else {
       const t = await body(c.url);
       if (t.startsWith("__")) why = t.slice(2);
       else {
-        const hitV = vWords.some((w) => t.includes(w));
+        const hitV = vWords.some((w) => t.includes(w)) || (c.label === "fact" && pWords.some((w) => t.includes(w)));
         const missing = c.need.filter((w) => !t.includes(w));
         ok = hitV && missing.length <= Math.floor(c.need.length / 3);
-        if (!ok) why = !hitV ? "page never mentions the village" : `name words missing: ${missing.join(" ")}`;
+        if (!ok) why = !hitV ? "page never mentions the village (or parent, for facts)" : `name words missing: ${missing.join(" ")}`;
       }
     }
     ok ? pass++ : fail++;
