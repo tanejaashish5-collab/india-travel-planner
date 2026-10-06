@@ -36,9 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-06"
+    "PdMu0_carousel": "2026-10-06",
+    "PdMu0": "2026-10-06",
+    "PdMu0_evening": "2026-10-06"
   },
-  "last_sync": "2026-10-04T18:16:50.851026+00:00",
+  "last_sync": "2026-10-06T20:08:47.690015+00:00",
   "posted_destinations": [
     {
       "destination_id": "turtuk",
@@ -159,6 +161,10 @@
     {
       "destination_id": "sarahan",
       "date": "2026-10-06"
+    },
+    {
+      "destination_id": "shantiniketan",
+      "date": "2026-10-06"
     }
   ],
   "posted_formats": {
@@ -189,7 +195,6 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card",
       "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
@@ -206,7 +211,8 @@
       "data_carousel",
       "v2_myth_bust_oneline",
       "eateries_pick",
-      "weekend_escape"
+      "weekend_escape",
+      "v2_women_solo_brief_video"
     ]
   },
   "post_log": [
@@ -10491,6 +10497,24 @@
       "media_id": "8iHzo"
     },
     {
+      "timestamp": "2026-10-06T14:37:00.126638+00:00",
+      "date": "2026-10-06",
+      "platform": "instagram",
+      "post_id": "xiXhN",
+      "destination": "mysore",
+      "format": "scenario_kids",
+      "media_id": "Gu4zC"
+    },
+    {
+      "timestamp": "2026-10-06T14:37:45.358013+00:00",
+      "date": "2026-10-06",
+      "platform": "youtube",
+      "post_id": "Wm0n6",
+      "destination": "mysore",
+      "format": "scenario_kids",
+      "media_id": "k6Ao5"
+    },
+    {
       "timestamp": "2026-10-06T14:40:37.035551+00:00",
       "date": "2026-10-06",
       "platform": "facebook",
@@ -10498,6 +10522,17 @@
       "destination": "sarahan",
       "format": "carousel.persona",
       "media_id": "carousel_persona_2026-10-06"
+    },
+    {
+      "timestamp": "2026-10-06T20:09:35.036293+00:00",
+      "date": "2026-10-06",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "InrGn",
+      "destination": "shantiniketan",
+      "format": "v2_women_solo_brief_video",
+      "has_media": true,
+      "media_id": "shantiniketan.mp4"
     }
   ],
   "theme_usage": {
@@ -10853,6 +10888,9 @@
       ],
       "rudraprayag": [
         "2026-10-04"
+      ],
+      "shantiniketan": [
+        "2026-10-06"
       ]
     },
     "morning_formats": {
@@ -11009,6 +11047,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v2_women_solo_brief_video": [
+        "2026-10-06"
       ]
     },
     "reels": {
@@ -11189,6 +11230,9 @@
       ],
       "rudraprayag": [
         "2026-10-04"
+      ],
+      "shantiniketan": [
+        "2026-10-06"
       ]
     },
     "audience_tags": {
@@ -11324,6 +11368,9 @@
       ],
       "odisha-golden-triangle": [
         "2026-10-01"
+      ],
+      "andaman-diving-snorkeling": [
+        "2026-10-06"
       ]
     },
     "festivals": {
@@ -11432,7 +11479,8 @@
       "puri": [
         "2026-10-01"
       ]
-    }
+    },
+    "collection_carousel_dests:andaman-diving-snorkeling": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11446,8 +11494,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kolhapur",
-    "collection": "odisha-golden-triangle"
+    "shared_best": "vrindavan",
+    "collection": "andaman-diving-snorkeling"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-01",

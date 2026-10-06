@@ -26504,3 +26504,35 @@ Date range: 2026-04-15 → 2026-10-05
 2026-10-06 14:40:37  INFO      [facebook/Nakshiq] ✅ carousel published (persona) · post_id=oTVP2
 2026-10-06 14:40:37  INFO      Carousel run complete (fmt=persona, posted=True).
 2026-10-06 14:40:37  INFO      ════════════════════════════════════════════════════════════
+2026-10-06 20:08:02  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-06 20:08:02  INFO      ════════════════════════════════════════════════════════════
+2026-10-06 20:08:02  INFO      Nakshiq Autoposter · EVENING · 2026-10-06 · weekday=1
+2026-10-06 20:08:02  INFO      ════════════════════════════════════════════════════════════
+2026-10-06 20:08:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-06 20:08:47  INFO      Synced → 20 destinations · 100 traps · 4 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-06 20:08:47  INFO      brand_stamp: registered 442 destinations for overlay lookup
+2026-10-06 20:08:49  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-06 20:08:49  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-06 20:08:49  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-06 20:09:06  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-06 20:09:06  INFO      Evening format (balance→discovery): v2_women_solo_brief_video [0% vs target 20%] (0/15 never featured)
+2026-10-06 20:09:06  INFO      Formats — IG: v2_women_solo_brief_video  ·  FB: v2_women_solo_brief_video  ·  Story: collection_spotlight
+2026-10-06 20:09:06  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 41
+2026-10-06 20:09:06  INFO      Fingerprint dedup snapshot — 37 dests in 7d · 73 (dest,fmt) pairs in 30d · 218 media in 60d
+2026-10-06 20:09:06  INFO      Collection locked: Andaman Diving & Snorkeling (77/100 never featured)
+2026-10-06 20:09:10  INFO      Shared best destination locked: Vrindavan
+2026-10-06 20:09:10  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-10-06 20:09:10  INFO      [facebook/Nakshiq] Generating v2_women_solo_brief_video post...
+2026-10-06 20:09:10  INFO      [csv_formats] endpoint-anchored: v2_women_solo_brief_video → women_solo (38 candidates)
+2026-10-06 20:09:10  INFO      [facebook/Nakshiq] Caption ready (612 chars, dest=shantiniketan)
+2026-10-06 20:09:11  INFO      [facebook/Nakshiq] CSV video format (v2_women_solo_brief_video) — using dest Ken Burns clip as fallback
+2026-10-06 20:09:11  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/shantiniketan.mp4?v=20260915
+2026-10-06 20:09:14  INFO          Brand-stamp applied: shantiniketan.mp4 (7,414,979 → 3,575,618 bytes)
+2026-10-06 20:09:14  INFO          Requesting upload URL for shantiniketan.mp4 (3,575,618 bytes, video/mp4)
+2026-10-06 20:09:15  INFO          Uploading to R2 (timeout=300s)...
+2026-10-06 20:09:16  INFO          R2 PUT OK. Confirming...
+2026-10-06 20:09:18  INFO          Media ready: HVfgB (3,575,618 bytes · shantiniketan.mp4)
+2026-10-06 20:09:18  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-06 20:09:35  INFO      [facebook/Nakshiq] ✅ Published · Outstand=InrGn · Platform=2179677939639148
+2026-10-06 20:09:35  INFO      State saved. Run complete.
+2026-10-06 20:09:35  INFO      ════════════════════════════════════════════════════════════
