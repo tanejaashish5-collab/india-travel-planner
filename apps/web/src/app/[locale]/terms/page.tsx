@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "Terms of Service",
     description:
-      "Terms of Service for NakshIQ, operated by Impresa de Artiste Pty Ltd. Covers editorial content, AI itineraries, affiliate links, and user responsibilities.",
+      "Terms of Service for NakshIQ, operated by Impresa de Artiste Pty Ltd. Covers editorial content, trip-planning tools, affiliate links, and user responsibilities.",
     ...localeAlternates(locale, "/terms"),
   };
 }
@@ -84,7 +84,7 @@ export default async function TermsPage({
               letterSpacing: "0.18em",
             }}
           >
-            LAST UPDATED · APRIL 10, 2026
+            LAST UPDATED · OCTOBER 7, 2026
           </p>
           <p
             className="nq-meta"
@@ -136,17 +136,17 @@ export default async function TermsPage({
           </Prose>
         </section>
 
-        {/* III — AI itineraries */}
+        {/* III — Trip-planning tools (was "AI itineraries" until 2026-10-07) */}
         <section style={sectionStyle}>
-          <SectionLabel num="III" name="AI ITINERARIES" />
+          <SectionLabel num="III" name="TRIP-PLANNING TOOLS" />
           <Prose>
             <p>
-              NakshIQ offers AI-generated itinerary suggestions. These are
-              generated based on our destination data, seasonal scores, and
-              travel patterns. They are suggestions — not guarantees of
-              availability, pricing, road conditions, or experience quality.
-              Treat them as a starting point for your own planning, not a
-              finished plan.
+              NakshIQ offers planning tools such as month-by-month
+              recommendations, the route builder and suggested itineraries.
+              These are built from our destination data and seasonal scores.
+              They are suggestions, not guarantees of availability, pricing, road
+              conditions, or experience quality. Treat them as a starting point
+              for your own planning, not a finished plan.
             </p>
           </Prose>
         </section>
@@ -268,8 +268,8 @@ export default async function TermsPage({
               indirect, incidental, consequential, or special damages arising
               from your use of this website or reliance on its content. This
               includes, without limitation, damages arising from travel
-              decisions made based on our content, scores, AI-generated
-              itineraries, or infrastructure data.
+              decisions made based on our content, scores, planning tools,
+              suggested itineraries, or infrastructure data.
             </p>
             <p>
               Nothing in these terms excludes or limits liability that cannot
