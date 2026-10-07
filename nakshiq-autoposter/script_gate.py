@@ -46,6 +46,21 @@ FLOW_JOINERS = re.compile(r"\b(and|but|so|because|which|until|when|then|while|th
 FLOW_JOINED_MIN = 3         # at least this many lines carry a joining word
 FRAGMENT_STACK = re.compile(r"\b\w+\.\s+\w+(\s\w+)?\.\s")   # "Same place. Same plan. Just" inside one line
 DASHES = re.compile(r"[–—]")     # founder: no em/en dashes in anything public
+# Founder 2026-10-07 (Coorg reel): viewers do not relate to scores, so a script never speaks
+# one ("rated five", "scored five out of five", "3/5") and uses at most 3 numbers a person feels.
+_RATING = re.compile(r"\b(rated|scored|scores|rating|out of (one|two|three|four|five|ten|\d+))\b|\b\d+\s*/\s*(5|10)\b"
+                     r"|(रेटिंग|स्कोर|में से|अंक मिले|पाँच मिले|नंबर मिले)", re.I)
+_NUMWORD = re.compile(r"\b(\d[\d,]*|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
+                      r"fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|"
+                      r"ninety|hundred|thousand|lakh)\b", re.I)
+_RANGE = re.compile(r"\b(\w+)\s+(to|or|-)\s+(\w+)\b")
+MAX_NUMBERS = 3
+
+
+def _numbers_spoken(en: str) -> int:
+    """English number words a listener hears, a range ("five to eight") counting once."""
+    collapsed = _RANGE.sub(lambda m: m.group(1) if _NUMWORD.fullmatch(m.group(1)) and _NUMWORD.fullmatch(m.group(3)) else m.group(0), en)
+    return len(_NUMWORD.findall(collapsed))
 DIGITS = re.compile(r"\d")
 
 # STORY rules (BRIEF v2, 2026-10-01). Measured on the posted reels: NakshIQ was first
@@ -340,6 +355,11 @@ def check(script: dict, d: dict | None = None, legacy: bool = True, flow: bool =
             m = rx.search(body)
             if m:
                 problems.append(f"{lang} {why}: {m.group(0)!r}")
+        m = _RATING.search(body)
+        if m:
+            problems.append(f"{lang} speaks a score/rating {m.group(0)!r}: say what it means in words (founder 2026-10-07)")
+        if lang == "lang_en" and _numbers_spoken(body) > MAX_NUMBERS:
+            problems.append(f"lang_en speaks {_numbers_spoken(body)} numbers; keep it to {MAX_NUMBERS} a listener feels (founder 2026-10-07)")
         allowed = set(script.get("allowed_numbers") or [])
         for n in re.findall(r"[\d][\d,]*", body):
             if n not in allowed:
