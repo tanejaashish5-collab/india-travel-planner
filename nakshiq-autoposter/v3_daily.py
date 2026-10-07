@@ -69,6 +69,24 @@ def qa(path: Path) -> str:
     return ""
 
 
+def clip_glitches(storyboard: str) -> str:
+    """People appearing, vanishing or doubling INSIDE a Veo clip (founder 2026-10-07: the Coorg
+    reel shipped a ghost copy of the mother). Runs clip_qa.py in its own venv; fails closed."""
+    import subprocess
+    import clip_qa
+    if not clip_qa.PY.exists():
+        return "clip people-check could not run (no ~/Automation/nakshiq-veo/.venv-qa)"
+    try:
+        r = subprocess.run([str(clip_qa.PY), str(HERE / "clip_qa.py"), storyboard],
+                           capture_output=True, text=True, timeout=900)
+    except Exception as e:  # noqa: BLE001
+        return f"clip people-check failed: {e}"
+    flags = [l[5:].split("  ")[0] for l in r.stdout.splitlines() if l.startswith("FLAG ")]
+    if r.returncode not in (0, 1) or (r.returncode == 1 and not flags):
+        return f"clip people-check failed: {(r.stderr or r.stdout)[-200:]}"
+    return "; ".join(flags)
+
+
 def auto_specs():
     for p in sorted(SPECS.glob("*.json")):
         s = R.load(p)
@@ -110,6 +128,7 @@ def render() -> int:
             if not stand:
                 continue
             print(f"[v3_daily] {s['id']}: stand-in still for {', '.join(stand)}")
+        glitch = None   # computed once per storyboard, only when a cut is actually made
         for lang, platform in SURFACE.items():
             key = f"{s['id']}__{lang}"
             if key in led:
@@ -133,7 +152,9 @@ def render() -> int:
                 except (Exception, SystemExit) as e:   # a missing cover never blocks the reel
                     print(f"[v3_daily] {key} cover failed: {e}")
             first = [l for l in s["vo"]["en"][0].splitlines() if l.strip()]
-            held = "HOLD_FOR_REVIEW file present" if HOLD.exists() else qa(out)
+            if glitch is None:
+                glitch = clip_glitches(s["id"])
+            held = "HOLD_FOR_REVIEW file present" if HOLD.exists() else (qa(out) or glitch)
             led[key] = {"storyboard": s["id"], "slug": s["slug"], "format": s.get("format"), "angle": s.get("angle") or "month",
                         "status": "review" if held else "ready", "six_beat": True, "pipeline": "v3",
                         "rendered_at": datetime.now(timezone.utc).isoformat(),

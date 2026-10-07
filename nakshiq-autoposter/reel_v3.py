@@ -90,6 +90,17 @@ DISCLOSE = "Dramatised · AI footage"
 # What a motion-only prompt still has to forbid. Ingredients shots get the whole
 # look paragraph instead (they have no source frames to inherit it from).
 NEGATIVES = "No music, no speech, no text, no captions."
+# Founder 2026-10-07: the Coorg reel's last clip showed a second copy of the mother walking in
+# and merging into the seated one, opened on a leaf double-exposure, and an earlier reel had the
+# wrong head count. Every Veo prompt now pins the cast to the opening frame.
+# A shot where someone enters, joins, steps out of view or vanishes behind something is where
+# Veo duplicates or deletes people (Udaipur s5 "the parents step in", 2026-10-07). "walks away"
+# stays allowed: the person stays in frame, only smaller.
+_COMES_OR_GOES = re.compile(r"\b(steps? (in|out|through|inside)|walks? (in|into|out|off|through)|enters?|exits?|"
+                            r"comes? (up|in|into)|joins?|arrives?|disappears?|leaves the (frame|room|shot)|"
+                            r"shut behind|(goes|moves|slips|walks) out of (frame|view|sight))\b", re.I)
+CAST_LOCK = ("Only the people already in the frame appear, the same number from start to end: "
+             "nobody enters, leaves, appears twice or changes face. One continuous take, no dissolve.")
 
 
 # ─── spec ────────────────────────────────────────────────────────────────
@@ -115,11 +126,11 @@ def stills(spec: dict) -> dict:
 def veo_prompt(spec: dict, shot: dict) -> str:
     sound = f" Sound: {shot['sound']}" if shot.get("sound") else ""
     if shot["mode"] == "ingredients":
-        return f"{shot['prompt']}{sound} {spec['look']}"
+        return f"{shot['prompt']}{sound} {CAST_LOCK} {spec['look']}"
     # extend / frames: the source frames carry the look. Probe A4 (09-25) measured
     # the short prompt against the long one and could not tell them apart, and a
     # look paragraph is one more place for a prompt to contradict its own frames.
-    return f"{shot['prompt']}{sound} {spec.get('negatives') or NEGATIVES}"
+    return f"{shot['prompt']}{sound} {CAST_LOCK} {spec.get('negatives') or NEGATIVES}"
 
 
 def still_prompt(spec: dict, kf: dict) -> str:
@@ -202,6 +213,10 @@ def check(spec: dict) -> list[str]:
             errs.append(f"{s['id']}: unknown mode {s['mode']!r}")
         if SB._NUMBER_ASSERT.search(s["prompt"]):
             errs.append(f"{s['id']}: prompt would put a phone number on screen")
+        m = _COMES_OR_GOES.search(s["prompt"])
+        if m and not spec.get("_legacy_cast_ok"):
+            errs.append(f"{s['id']}: someone joins or leaves the scene ({m.group(0)!r}); Veo turns that into "
+                        "a ghost or a vanishing person. Keep the same people in frame start to end")
     for b in spec["beats"]:
         if b["shot"] not in shots:
             errs.append(f"beat uses unknown shot {b['shot']!r}")
