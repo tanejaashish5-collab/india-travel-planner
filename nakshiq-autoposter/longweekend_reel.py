@@ -163,9 +163,8 @@ def caption(row: dict) -> tuple[str, str]:
     lines = "\n".join(f"{i}. Skip {_name(p['trap'])}, go to {p['alt_name']}" + (f" ({p['how']})" if p.get("how") else "")
                       for i, p in enumerate(row.get("pairs") or [], 1))
     cr = credits(ev)
-    photo = "".join(f"\nPhoto: {c['title'].rsplit('.', 1)[0]}, {c['author']}, {c['licence']}, Wikimedia Commons" for c in cr)
-    if any(c.get("share_alike") for c in cr):
-        photo += "\nThis reel is shared under CC BY-SA 4.0, as its share-alike photos require."
+    import guide_reel as GR
+    photo = GR.caption_credits(cr)     # one line, authors kept (founder 2026-10-07: the per-photo list looked bad)
     cap = (f"{ev['title']}, {ev['dates']}: {len(row.get('pairs') or [])} places that jam every long weekend, "
            f"and where to go instead.\n\n{lines}\n\n"
            f"Send this to whoever is driving.\n\n"

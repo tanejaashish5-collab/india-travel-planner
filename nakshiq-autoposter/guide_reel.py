@@ -493,6 +493,25 @@ def credits(slug: str, month: int) -> list[dict]:
     return [m for m in (json.loads(p.read_text()) for p in sorted(d.glob("g*.json"))) if m.get("title")] if d.exists() else []
 
 
+def caption_credits(cr: list[dict]) -> str:
+    """One caption line for the Commons photos (founder 2026-10-07, the Srinagar caption: one
+    "Photo:" line per picture, with file names like "- panoramio" and a username "::::=UT=::::",
+    looked bad). Authors stay, because the CC licences need them; file titles go."""
+    names = []
+    for c in cr:
+        a = re.sub(r"[^\w .,'&()-]+", " ", c.get("author") or "").strip(" .,-")
+        a = re.sub(r"\s+", " ", a)
+        if a and a not in names:
+            names.append(a)
+    if not cr:
+        return ""
+    lic = sorted({(c.get("licence") or "").strip() for c in cr} - {""})
+    line = "\nPhotos via Wikimedia Commons" + (f": {', '.join(names)}" if names else "") + (f" ({', '.join(lic)})" if lic else "") + "."
+    if any(c.get("share_alike") for c in cr):
+        line += " This reel is CC BY-SA 4.0."
+    return line
+
+
 # ─── queue (stills for Cowork) ───────────────────────────────────────────
 def still_name(slug: str, month: int, i: int) -> str:
     return f"{sb_id(slug, month)}__g{i:02d}.jpg"
