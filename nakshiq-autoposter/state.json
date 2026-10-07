@@ -37,19 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-06",
-    "PdMu0": "2026-10-06",
-    "PdMu0_evening": "2026-10-06"
+    "PdMu0": "2026-10-07",
+    "PdMu0_evening": "2026-10-07"
   },
-  "last_sync": "2026-10-06T20:08:47.690015+00:00",
+  "last_sync": "2026-10-07T17:50:40.782662+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "turtuk",
-      "date": "2026-09-22"
-    },
-    {
-      "destination_id": "jibhi",
-      "date": "2026-09-22"
-    },
     {
       "destination_id": "tso-moriri",
       "date": "2026-09-23"
@@ -165,6 +157,10 @@
     {
       "destination_id": "shantiniketan",
       "date": "2026-10-06"
+    },
+    {
+      "destination_id": "madurai",
+      "date": "2026-10-07"
     }
   ],
   "posted_formats": {
@@ -194,7 +190,6 @@
     "PdMu0": [
       "score_card",
       "score_card",
-      "score_card",
       "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
@@ -212,7 +207,8 @@
       "v2_myth_bust_oneline",
       "eateries_pick",
       "weekend_escape",
-      "v2_women_solo_brief_video"
+      "v2_women_solo_brief_video",
+      "v2_cost_vs_feeling"
     ]
   },
   "post_log": [
@@ -10533,6 +10529,53 @@
       "format": "v2_women_solo_brief_video",
       "has_media": true,
       "media_id": "shantiniketan.mp4"
+    },
+    {
+      "timestamp": "2026-10-07T07:36:45.266227+00:00",
+      "date": "2026-10-07",
+      "platform": "instagram",
+      "post_id": "LGbty",
+      "destination": "srinagar",
+      "format": "scenario_guide",
+      "media_id": "l21yR"
+    },
+    {
+      "timestamp": "2026-10-07T07:37:15.684775+00:00",
+      "date": "2026-10-07",
+      "platform": "youtube",
+      "post_id": "HNcWU",
+      "destination": "srinagar",
+      "format": "scenario_guide",
+      "media_id": "zmJtJ"
+    },
+    {
+      "timestamp": "2026-10-07T14:37:22.796332+00:00",
+      "date": "2026-10-07",
+      "platform": "instagram",
+      "post_id": "g4eaV",
+      "destination": "chakrata",
+      "format": "scenario_data_card",
+      "media_id": "JsAmm"
+    },
+    {
+      "timestamp": "2026-10-07T14:38:42.138394+00:00",
+      "date": "2026-10-07",
+      "platform": "youtube",
+      "post_id": "IniG9",
+      "destination": "candolim",
+      "format": "scenario_data_card",
+      "media_id": "TF4SP"
+    },
+    {
+      "timestamp": "2026-10-07T17:51:32.665984+00:00",
+      "date": "2026-10-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "36Yhp",
+      "destination": "madurai",
+      "format": "v2_cost_vs_feeling",
+      "has_media": true,
+      "media_id": "v2_cost_vs_feeling-madurai_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -10579,7 +10622,8 @@
       "madurai": [
         "2026-05-23",
         "2026-06-05",
-        "2026-08-04"
+        "2026-08-04",
+        "2026-10-07"
       ],
       "puri": [
         "2026-05-25",
@@ -10891,6 +10935,9 @@
       ],
       "shantiniketan": [
         "2026-10-06"
+      ],
+      "sravasti": [
+        "2026-10-07"
       ]
     },
     "morning_formats": {
@@ -10921,6 +10968,10 @@
       "route_spotlight_short": [
         "2026-05-25",
         "2026-09-03"
+      ],
+      "v2_women_solo_brief_video": [
+        "2026-05-27",
+        "2026-10-06"
       ],
       "v4_dw_local_historian_spotlight": [
         "2026-05-27",
@@ -11048,8 +11099,8 @@
       "tourist_trap": [
         "2026-09-01"
       ],
-      "v2_women_solo_brief_video": [
-        "2026-10-06"
+      "v2_cost_vs_feeling": [
+        "2026-10-07"
       ]
     },
     "reels": {
@@ -11061,7 +11112,8 @@
       "madurai": [
         "2026-05-23",
         "2026-06-05",
-        "2026-08-04"
+        "2026-08-04",
+        "2026-10-07"
       ],
       "mumbai": [
         "2026-05-26",
@@ -11308,6 +11360,11 @@
         "2026-05-20",
         "2026-09-24"
       ],
+      "andaman-diving-snorkeling": [
+        "2026-05-20",
+        "2026-07-07",
+        "2026-10-06"
+      ],
       "adrenaline-rush": [
         "2026-05-26",
         "2026-07-21"
@@ -11368,9 +11425,6 @@
       ],
       "odisha-golden-triangle": [
         "2026-10-01"
-      ],
-      "andaman-diving-snorkeling": [
-        "2026-10-06"
       ]
     },
     "festivals": {
@@ -11480,7 +11534,7 @@
         "2026-10-01"
       ]
     },
-    "collection_carousel_dests:andaman-diving-snorkeling": {}
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11494,7 +11548,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "vrindavan",
+    "shared_best": "sravasti",
     "collection": "andaman-diving-snorkeling"
   },
   "manual_skip_dests": {},

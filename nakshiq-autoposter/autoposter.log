@@ -26614,3 +26614,56 @@ Date range: 2026-04-15 → 2026-10-06
 2026-10-08 01:38:16  INFO          Uploading to R2 (timeout=300s)...
 2026-10-08 01:38:24  INFO          R2 PUT OK. Confirming...
 2026-10-08 01:38:26  INFO          Media ready: TF4SP (12,850,700 bytes · candolim__data_card__youtube.mp4)
+2026-10-07 17:50:06  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-07 17:50:06  INFO      ════════════════════════════════════════════════════════════
+2026-10-07 17:50:06  INFO      Nakshiq Autoposter · EVENING · 2026-10-07 · weekday=2
+2026-10-07 17:50:06  INFO      ════════════════════════════════════════════════════════════
+2026-10-07 17:50:06  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-07 17:50:40  INFO      Synced → 20 destinations · 100 traps · 4 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-07 17:50:40  INFO      brand_stamp: registered 442 destinations for overlay lookup
+2026-10-07 17:50:41  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-07 17:50:41  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-07 17:50:42  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-07 17:50:56  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-07 17:50:56  INFO      [diversity] feed: 37 → 25 options · cooldown dropped 12 (carousel, pillar:discovery, pillar:scenario_data_card, pillar:scenario_guide, pillar:scenario_kids seen <2d)
+2026-10-07 17:50:56  INFO      Evening format (balance→verification): v2_cost_vs_feeling [17% vs target 20%] (0/15 never featured)
+2026-10-07 17:50:56  INFO      Formats — IG: v2_cost_vs_feeling  ·  FB: v2_cost_vs_feeling  ·  Story: blog_promo
+2026-10-07 17:50:56  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 43
+2026-10-07 17:50:56  INFO      Fingerprint dedup snapshot — 39 dests in 7d · 72 (dest,fmt) pairs in 30d · 219 media in 60d
+2026-10-07 17:50:56  INFO      Article locked: How far is the Vaishno Devi yatra? The real distance, leg by leg (4/4 never featured)
+2026-10-07 17:50:58  INFO      Shared best destination locked: Sravasti
+2026-10-07 17:50:58  INFO      Carousel locked (v2_cost_vs_feeling): sravasti
+2026-10-07 17:50:58  INFO      [facebook/Nakshiq] Generating v2_cost_vs_feeling post...
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: achabal has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: mumbai has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: leh has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: hampi has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: mussoorie has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: munnar has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: mathura has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: anandpur-sahib has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: old-goa has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: kasol has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      v2_cost_vs_feeling: nainital has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-07 17:50:58  INFO      [facebook/Nakshiq] Caption ready (316 chars, dest=madurai)
+2026-10-07 17:51:04  INFO      [facebook/Nakshiq] dynamic render: 4 slide(s) for v2_cost_vs_feeling → uploading...
+2026-10-07 17:51:04  INFO          Requesting upload URL for v2_cost_vs_feeling-madurai_01_cover.png (1,771,502 bytes, image/png)
+2026-10-07 17:51:05  INFO          Uploading to R2 (timeout=120s)...
+2026-10-07 17:51:06  INFO          R2 PUT OK. Confirming...
+2026-10-07 17:51:08  INFO          Media ready: ykZsf (1,771,502 bytes · v2_cost_vs_feeling-madurai_01_cover.png)
+2026-10-07 17:51:08  INFO          Requesting upload URL for v2_cost_vs_feeling-madurai_02.png (1,811,686 bytes, image/png)
+2026-10-07 17:51:08  INFO          Uploading to R2 (timeout=120s)...
+2026-10-07 17:51:09  INFO          R2 PUT OK. Confirming...
+2026-10-07 17:51:11  INFO          Media ready: grDnM (1,811,686 bytes · v2_cost_vs_feeling-madurai_02.png)
+2026-10-07 17:51:11  INFO          Requesting upload URL for v2_cost_vs_feeling-madurai_03.png (1,785,289 bytes, image/png)
+2026-10-07 17:51:12  INFO          Uploading to R2 (timeout=120s)...
+2026-10-07 17:51:13  INFO          R2 PUT OK. Confirming...
+2026-10-07 17:51:14  INFO          Media ready: TFiAk (1,785,289 bytes · v2_cost_vs_feeling-madurai_03.png)
+2026-10-07 17:51:14  INFO          Requesting upload URL for v2_cost_vs_feeling-madurai_04_cta.png (59,757 bytes, image/png)
+2026-10-07 17:51:14  INFO          Uploading to R2 (timeout=120s)...
+2026-10-07 17:51:15  INFO          R2 PUT OK. Confirming...
+2026-10-07 17:51:16  INFO          Media ready: SwARx (59,757 bytes · v2_cost_vs_feeling-madurai_04_cta.png)
+2026-10-07 17:51:16  INFO      [facebook/Nakshiq] Publishing 4-slide carousel...
+2026-10-07 17:51:32  INFO      [facebook/Nakshiq] ✅ Published · Outstand=36Yhp · Platform=1040562729145369_122124777002700092
+2026-10-07 17:51:32  INFO      State saved. Run complete.
+2026-10-07 17:51:32  INFO      ════════════════════════════════════════════════════════════
