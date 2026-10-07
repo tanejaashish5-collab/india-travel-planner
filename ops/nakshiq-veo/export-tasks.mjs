@@ -92,7 +92,7 @@ const HOW_V3 = [
   "Ingredients prompts are long and verbatim, one line: they carry the fixed look and soundscape that make the shots match.",
 ];
 const doc = {
-  date: new Date().toISOString().slice(0, 10),
+  date: new Date().toLocaleDateString("en-CA"),   // local (Canberra) date; UTC read as "yesterday" before 11:00 (Cowork 2026-10-07)
   generated_by: "export-tasks.mjs",
   how: todo.some((r) => r.pipeline === "v3") ? HOW_V3 : [
     "Open flow.google.com in a REAL signed-in Chrome. Automation-controlled browsers cannot sign in and their launch invalidates an existing session.",
