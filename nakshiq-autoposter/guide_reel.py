@@ -254,7 +254,8 @@ def slides(pack: dict, month: int) -> list[dict]:
     # 1. Hook: our own honest line beats the brochure line when we have one.
     honest = _fit(d.get("why_special") or "", 150)
     verdict_why = _tail(mrow.get("go_or_skip_verdict") or "")
-    add("hook", "hook", f"{mon} verdict: 10/10", f"{name} in {mon}. Skip what everyone posts.",
+    line = hook_line(d.get("id") or "", month, name, mon)
+    add("hook", "hook", f"{name} · {mon}".upper(), line,
         honest or _cap(_short(verdict_why, 100)),
         f"{name}, {place}, India in {mon}, a view away from the town centre: {_short(verdict_why, 140)}.", [(f"{name} {state}", name)])
 
@@ -899,6 +900,20 @@ def qa(path: Path, expect: float) -> str:
     if abs(dur - expect) > 0.5:
         return f"length {dur:.1f}s, expected {expect:.1f}s"
     return ""
+
+
+HOOKS = HERE / "guide_hooks.json"
+
+
+def hook_line(slug: str, month: int, name: str, mon: str) -> str:
+    """The guide's opening line. Founder 2026-10-07: no bare score ("10/10") and no flat "it's a go":
+    open like a story (style study of Kanishk Gupta's travel films). Hand-written per place and month
+    in guide_hooks.json; the fallback is a plain invitation with no number in it."""
+    try:
+        h = (json.loads(HOOKS.read_text()).get(slug) or {}).get(str(month))
+    except (OSError, ValueError):
+        h = None
+    return h or f"{name} in {mon}, before everyone else finds it."
 
 
 def make_cover(out: Path, img: Path, hook: str) -> str:

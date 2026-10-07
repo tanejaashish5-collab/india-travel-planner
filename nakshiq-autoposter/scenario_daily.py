@@ -301,7 +301,8 @@ def caption_for(row: dict) -> tuple[str, str]:
                                ("kids", "how it works with kids")) if k in kinds]
         said = (", ".join(said[:-1]) + " and " + said[-1]) if len(said) > 1 else "".join(said)
         ai = (row.get("sources") or {}).get("ai", 1)
-        cap = (f"{name} in {mon}: 10/10, but skip what everyone posts. {said[:1].upper() + said[1:]}.\n\n"
+        opener = GR.hook_line(row["slug"], int(row.get("month") or 0), name, mon)
+        cap = (f"{opener}\n\nInside: {said}.\n\n"
                f"Save this for the trip. Send it to whoever's coming with you.\n\n"
                f"Full {name} guide, month by month: {url}\n\n"
                f"Every fact on screen is NakshIQ's real data. "
