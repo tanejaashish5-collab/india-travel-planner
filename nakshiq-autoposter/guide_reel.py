@@ -258,6 +258,8 @@ def slides(pack: dict, month: int) -> list[dict]:
     add("hook", "hook", f"{name} · {mon}".upper(), line,
         honest or _cap(_short(verdict_why, 100)),
         f"{name}, {place}, India in {mon}, a view away from the town centre: {_short(verdict_why, 140)}.", [(f"{name} {state}", name)])
+    if out:
+        out[-1]["endline"] = f"Full {name} guide"   # the end card; the hook line is too long for it
 
     # 2. Insider timing from the photographer note ("Hadimba at 7am (no tourists...)").
     ph = ((d.get("persona_blocks") or {}).get("photographer") or "")
@@ -344,7 +346,10 @@ def slides(pack: dict, month: int) -> list[dict]:
         hl = next((h for h in (k.get("kid_highlights") or []) if in_season(h, month)), "")
         spot = _spot(hl)
         body = " · ".join(x for x in [_cap(_short(hl, 60)), _cap(_short((k.get("concerns") or [""])[0], 70))] if x)
-        add("kids", "kids", "With kids", f"{k['rating']}/5 for families" + (f", ages {k['best_age_group']}" if k.get("best_age_group") else ""),
+        # Founder 2026-10-07: no bare scores on screen; the rating becomes words.
+        verdict = KIDS_WORDS.get(int(k["rating"]), "Works with kids")
+        ages = (k.get("best_age_group") or "").strip()
+        add("kids", "kids", "With kids", verdict + (f", {ages.lower()}" if ages.lower() == "all ages" else (f", ages {ages}" if ages else "")),
             body, f"{spot or 'An open path'} in {name}, {place}, India in {mon}.",
             [(f"{spot} {name}", _alias(spot)), (f"{spot} {state}", _alias(spot))] if spot else [])
     return out[:10]
@@ -377,7 +382,7 @@ MONTH_NAMES = {m.lower()[:3]: i for i, m in enumerate(MONTHS) if m}
 # portrait of two people under "Chandigarh"; 10-04 probe: ministers at the Atal Tunnel).
 NOT_A_PLACE = re.compile(r"\b(people|crew|minister|chairperson|modi|gandhi|portrait|selfie|woman|women|man|men|"
                          r"girl|boy|family|couple|board|notice|notices|map|plaque|description|sign|signboard|menu|"
-                         r"ticket|labour|restriction|enumeration|report|book|stamp|logo|poster|visiting|crowd|"
+                         r"ticket|labour|soldiers?|army|troops|tourists|restriction|enumeration|report|book|stamp|logo|poster|visiting|crowd|"
                          r"selling|wedding|festival|procession|accident|construction|detail|ceiling|interior|roof|figure|statue|railway|platform|university|campus|college|school|hospital|office)\b", re.I)
 
 
@@ -902,6 +907,7 @@ def qa(path: Path, expect: float) -> str:
     return ""
 
 
+KIDS_WORDS = {5: "Great with kids", 4: "Good with kids", 3: "Fine with kids, with care", 2: "Hard with small kids", 1: "Not for small kids"}
 HOOKS = HERE / "guide_hooks.json"
 
 

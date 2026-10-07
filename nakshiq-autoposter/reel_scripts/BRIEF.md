@@ -30,6 +30,14 @@ THE CAST AND THE NARRATOR come from the angle (reel_formats.json). One ElevenLab
 
 FACTS: claim ONLY what is in the fact pack you are given (the fields for your angle). Quote verdicts in the data's own sense, numbers in words and only the ones the brief allows, no invented weather, roads, prices, crowd figures or events. Every factual sentence must map to a `facts` entry the gate can check. Eateries: the voice says the dish and the area; the eatery's name goes in the caption field. Pilgrimage: paths, steps and temple exteriors only; no deity, no sanctum.
 
+CINEMATIC FEEL (founder 2026-10-07: "dramatic cinematic drama tense feel good all comes together", like Kanishk Gupta's films; style study of 11 of his videos in .scrapes/youtube, e.g. yt-eXM-RBTtAsI Dal Lake, yt--F_aUhe0bgQ Drass):
+- Open on the thing, name the place last. He starts wide ("We live in a country where we are used to streets and lanes...") and the name is the payoff ("This is the Dal Lake of Kashmir").
+- Make scale felt through the viewer's own life, never a bare number ("Just one day of rain here is more than a year of rain in Delhi").
+- One sound or silence marks the turn ("Only the sound of the Indian flag fluttering").
+- Tension is "what happens next", never "is this good". A score kills it.
+- Land on a short line a viewer could repeat; our "travel intelligence is..." line is that slot, so make it earn it.
+Facts still come only from the fact pack; drama is in the order and the words, never in invented events.
+
 NUMBERS (founder 2026-10-07, after the Coorg reel): viewers do not relate to numbers, so use them sparingly. Never speak a score or rating ("rated five", "scored five out of five", "3/5", "10 out of 10"): say what it means in plain words instead ("NakshIQ showed it as kid-friendly", "marked safe for women walking alone", "November was a go"). At most 3 numbers in the whole script, and only ones a person feels: a child's age, kilometres, hours on foot, rupees. A range like "five to eight hours" counts as one.
 
 HARD CONSTRAINTS: no phone numbers, no "every destination", "verified", "real-time", "local contact". No real brands or named businesses in the voice (eatery name in caption only). No em dashes. Hindi is everyday spoken Devanagari a person would say, same flow, NakshIQ stays in Latin letters, lines parallel to the English within 2.
