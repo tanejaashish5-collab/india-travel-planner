@@ -1,189 +1,195 @@
 {
- "auto": true,
- "id": "udaipur__parents",
- "slug": "udaipur",
- "angle": "parents",
- "format": "parents",
- "tone": "warm",
- "script_approved": "2026-10-01 founder approved on the round-1 page (Artifact dc72efad, collection round1)",
- "script_file": "reel_scripts/_round1_2026-10-01/udaipur__parents.json",
- "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
- "cast": "a son in his 30s and his parents in their 60s",
- "narrator": "the son",
- "setting_basis": "An evening at a family home, then an old lakeside city lane, a small heritage hotel lift and a flat stone ghat in Udaipur; Leh is only talked about and never shown, and the footage makes no altitude, health, price or hotel claim of its own.",
- "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
- "refs": [
-  {
-   "name": "ref_son",
-   "prompt": "Full-length photograph of an Indian man in his mid thirties with short black hair and a trimmed beard, wearing a light blue cotton shirt with rolled sleeves, grey trousers and brown loafers, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
-  },
-  {
-   "name": "ref_parents",
-   "prompt": "Full-length photograph of an Indian couple in their mid sixties standing side by side: the father has thinning grey hair, a grey moustache and slightly stooped shoulders, wearing a beige half-sleeve shirt, brown trousers and sandals; the mother has grey hair tied in a low bun and reading glasses on a cord, wearing a maroon cotton salwar suit with a cream shawl and flat sandals, holding his arm, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
-  },
-  {
-   "name": "ref_lake",
-   "prompt": "An empty flat stone ghat beside a still lake in warm early evening light, pale old lime-washed houses with carved stone balconies along the water, a narrow flat lane leading away between them, photorealistic, no people, no text, no signage."
-  }
- ],
- "keyframes": [
-  {
-   "name": "kf_s1",
-   "refs": [
-    "ref_son",
-    "ref_parents"
-   ],
-   "tone": "excited planning, a son proud of his idea",
-   "prompt": "Medium shot from behind at a home dining table in warm lamp-lit evening light: the man in the light blue shirt sits at an open laptop, its screen only a soft glow, his father on his left and his mother in the maroon suit on his right, both leaning in to look."
-  },
-  {
-   "name": "kf_s2",
-   "refs": [
-    "kf_s1"
-   ],
-   "tone": "a mother's quiet worry",
-   "prompt": "Close-up on the table beside the laptop, same room and same evening light as the reference: the mother's hands rest on the tablecloth, one thumb turning a gold bangle on her wrist, the son's hand still on the trackpad; faces are out of frame."
-  },
-  {
-   "name": "kf_s3",
-   "refs": [
-    "kf_s1"
-   ],
-   "tone": "reading carefully, the answer is no",
-   "prompt": "Over-the-shoulder from behind the father, same room and same evening light as the reference: the son holds up his phone, its screen only a soft glow, reading; the mother leans in from the other side, her hand on his arm."
-  },
-  {
-   "name": "kf_s4",
-   "refs": [
-    "ref_son",
-    "ref_parents",
-    "ref_lake"
-   ],
-   "tone": "slow, easy, nothing to climb",
-   "prompt": "Wide shot from behind in warm early evening light: the son and his parents walk slowly down an empty flat lane of pale old houses, the mother's arm through the son's, the father a step ahead with his hands behind his back."
-  },
-  {
-   "name": "kf_s5",
-   "refs": [
-    "ref_son",
-    "ref_parents"
-   ],
-   "tone": "relief, looked after",
-   "prompt": "Medium shot from the side inside a small heritage hotel lobby in warm early evening light: the father and mother step into an old lift with a brass folding grille, the son holding the grille open for them; dark wood panelling, no signs."
-  },
-  {
-   "name": "kf_s6",
-   "refs": [
-    "ref_son",
-    "ref_parents",
-    "ref_lake"
-   ],
-   "tone": "contentment at the end of the day",
-   "prompt": "Wide shot from behind at dusk: the son and his parents walk slowly along the empty flat stone ghat beside the still lake, small in the frame, the mother's arm through the son's, the pale old houses glowing across the water."
-  }
- ],
- "shots": [
-  {
-   "id": "s1",
-   "mode": "frames",
-   "start": "kf_s1",
-   "prompt": "The camera holds still. He scrolls on the trackpad; his parents lean in a little closer.",
-   "sound": "A wall clock ticking, soft trackpad clicks, quiet room tone."
-  },
-  {
-   "id": "s2",
-   "mode": "frames",
-   "start": "kf_s2",
-   "prompt": "Slow push-in. Her thumb turns the bangle once, then stops; his hand leaves the trackpad.",
-   "sound": "A gold bangle tapping softly on the wooden table, quiet room tone, a ceiling fan turning."
-  },
-  {
-   "id": "s3",
-   "mode": "frames",
-   "start": "kf_s3",
-   "prompt": "The camera holds still. He reads, then lowers the phone; the mother pats his arm.",
-   "sound": "The faint creak of a wooden chair, a wall clock ticking, quiet room tone."
-  },
-  {
-   "id": "s4",
-   "mode": "frames",
-   "start": "kf_s4",
-   "prompt": "The camera follows slowly behind them at walking pace down the lane.",
-   "sound": "Slow footsteps and sandals on flat stone, pigeons fluttering off a ledge, quiet outdoor evening tone."
-  },
-  {
-   "id": "s5",
-   "mode": "frames",
-   "start": "kf_s5",
-   "prompt": "The camera holds still. The parents step in and the son slides the brass grille shut behind them.",
-   "sound": "The brass lift grille sliding shut with a metal clatter, the lift motor's low hum, quiet lobby tone."
-  },
-  {
-   "id": "s6",
-   "mode": "frames",
-   "start": "kf_s6",
-   "prompt": "Slow lateral dolly alongside the ghat as they walk, the light fading over the water.",
-   "sound": "Water lapping against the stone steps, evening birds, a light breeze off the lake."
-  }
- ],
- "beats": [
-  {
-   "shot": "s1",
-   "from": 0.0
-  },
-  {
-   "shot": "s2",
-   "from": 0.0
-  },
-  {
-   "shot": "s3",
-   "from": 0.0
-  },
-  {
-   "shot": "s4",
-   "from": 0.0
-  },
-  {
-   "shot": "s5",
-   "from": 0.0
-  },
-  {
-   "shot": "s6",
-   "from": 0.0
-  }
- ],
- "vo": {
-  "en": [
-   "I wanted my parents' first trip with me to be Leh, in November.",
-   "Mummy asked if it would be hard on them, so I looked it up properly.",
-   "NakshIQ had a note for older travellers, and Leh was a hard no for heart or lung conditions.",
-   "Even fit people their age needed three days to acclimatise, and November there was a skip.",
-   "Udaipur was very suitable, a flat old city with lifts in most heritage hotels, and November a go.",
-   "So we walked the old city slowly, and the only climbing was in a lift.\nTravel intelligence is planning for whoever is actually coming.\nNakshIQ."
+  "auto": true,
+  "id": "udaipur__parents",
+  "slug": "udaipur",
+  "angle": "parents",
+  "format": "parents",
+  "tone": "warm",
+  "script_approved": "2026-10-01 founder approved on the round-1 page (Artifact dc72efad, collection round1)",
+  "script_file": "reel_scripts/_round1_2026-10-01/udaipur__parents.json",
+  "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+  "cast": "a son in his 30s and his parents in their 60s",
+  "narrator": "the son",
+  "setting_basis": "An evening at a family home, then an old lakeside city lane, a small heritage hotel lift and a flat stone ghat in Udaipur; Leh is only talked about and never shown, and the footage makes no altitude, health, price or hotel claim of its own.",
+  "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+  "refs": [
+    {
+      "name": "ref_son",
+      "prompt": "Full-length photograph of an Indian man in his mid thirties with short black hair and a trimmed beard, wearing a light blue cotton shirt with rolled sleeves, grey trousers and brown loafers, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+    },
+    {
+      "name": "ref_parents",
+      "prompt": "Full-length photograph of an Indian couple in their mid sixties standing side by side: the father has thinning grey hair, a grey moustache and slightly stooped shoulders, wearing a beige half-sleeve shirt, brown trousers and sandals; the mother has grey hair tied in a low bun and reading glasses on a cord, wearing a maroon cotton salwar suit with a cream shawl and flat sandals, holding his arm, standing indoors in soft window light, three-quarter view, neutral expression, photorealistic, no text."
+    },
+    {
+      "name": "ref_lake",
+      "prompt": "An empty flat stone ghat beside a still lake in warm early evening light, pale old lime-washed houses with carved stone balconies along the water, a narrow flat lane leading away between them, photorealistic, no people, no text, no signage."
+    }
   ],
-  "hi": [
-   "मैं चाहता था कि मम्मी-पापा के साथ मेरी पहली ट्रिप लेह हो, नवंबर में।",
-   "मम्मी ने पूछा कि उनके लिए मुश्किल तो नहीं होगी, तो मैंने ठीक से देखा।",
-   "NakshIQ पर बुज़ुर्गों के लिए अलग नोट था, और दिल या फेफड़ों की तकलीफ़ वालों के लिए लेह साफ़ मना था।",
-   "फ़िट लोगों को भी वहाँ की हवा की आदत डालने में तीन दिन लगते, और नवंबर तो वहाँ स्किप ही था।",
-   "उदयपुर बिल्कुल सही था, पुराना शहर समतल, ज़्यादातर हेरिटेज होटलों में लिफ़्ट, और नवंबर भी गो।",
-   "तो हम पुराने शहर में आराम से घूमे, और चढ़ाई सिर्फ़ लिफ़्ट में हुई।\nट्रैवल इंटेलिजेंस है उनके हिसाब से प्लान करना जो सच में साथ आ रहे हैं।\nNakshIQ."
+  "keyframes": [
+    {
+      "name": "kf_s1",
+      "refs": [
+        "ref_son",
+        "ref_parents"
+      ],
+      "tone": "excited planning, a son proud of his idea",
+      "prompt": "Medium shot from behind at a home dining table in warm lamp-lit evening light: the man in the light blue shirt sits at an open laptop, its screen only a soft glow, his father on his left and his mother in the maroon suit on his right, both leaning in to look."
+    },
+    {
+      "name": "kf_s2",
+      "refs": [
+        "kf_s1"
+      ],
+      "tone": "a mother's quiet worry",
+      "prompt": "Close-up on the table beside the laptop, same room and same evening light as the reference: the mother's hands rest on the tablecloth, one thumb turning a gold bangle on her wrist, the son's hand still on the trackpad; faces are out of frame."
+    },
+    {
+      "name": "kf_s3",
+      "refs": [
+        "kf_s1"
+      ],
+      "tone": "reading carefully, the answer is no",
+      "prompt": "Over-the-shoulder from behind the father, same room and same evening light as the reference: the son holds up his phone, its screen only a soft glow, reading; the mother leans in from the other side, her hand on his arm."
+    },
+    {
+      "name": "kf_s4",
+      "refs": [
+        "ref_son",
+        "ref_parents",
+        "ref_lake"
+      ],
+      "tone": "slow, easy, nothing to climb",
+      "prompt": "Wide shot from behind in warm early evening light: the son and his parents walk slowly down an empty flat lane of pale old houses, the mother's arm through the son's, the father a step ahead with his hands behind his back."
+    },
+    {
+      "name": "kf_s5",
+      "refs": [
+        "ref_son",
+        "ref_parents"
+      ],
+      "tone": "relief, looked after",
+      "prompt": "Medium shot from the side inside a small heritage hotel lobby in warm early evening light: the son and his parents stand together inside an old lift whose brass folding grille is folded open, the mother's arm through the son's, the son's other hand on the brass button panel, the father beside them; dark wood panelling, no signs."
+    },
+    {
+      "name": "kf_s6",
+      "refs": [
+        "ref_son",
+        "ref_parents",
+        "ref_lake"
+      ],
+      "tone": "contentment at the end of the day",
+      "prompt": "Wide shot from behind at dusk: the son and his parents walk slowly along the empty flat stone ghat beside the still lake, small in the frame, the mother's arm through the son's, the pale old houses glowing across the water."
+    }
+  ],
+  "shots": [
+    {
+      "id": "s1",
+      "mode": "frames",
+      "start": "kf_s1",
+      "prompt": "The camera holds still. He scrolls on the trackpad; his parents lean in a little closer.",
+      "sound": "A wall clock ticking, soft trackpad clicks, quiet room tone."
+    },
+    {
+      "id": "s2",
+      "mode": "frames",
+      "start": "kf_s2",
+      "prompt": "Slow push-in. Her thumb turns the bangle once, then stops; his hand leaves the trackpad.",
+      "sound": "A gold bangle tapping softly on the wooden table, quiet room tone, a ceiling fan turning."
+    },
+    {
+      "id": "s3",
+      "mode": "frames",
+      "start": "kf_s3",
+      "prompt": "The camera holds still. He reads, then lowers the phone; the mother pats his arm.",
+      "sound": "The faint creak of a wooden chair, a wall clock ticking, quiet room tone."
+    },
+    {
+      "id": "s4",
+      "mode": "frames",
+      "start": "kf_s4",
+      "prompt": "The camera follows slowly behind them at walking pace down the lane.",
+      "sound": "Slow footsteps and sandals on flat stone, pigeons fluttering off a ledge, quiet outdoor evening tone."
+    },
+    {
+      "id": "s5",
+      "mode": "frames",
+      "start": "kf_s5",
+      "prompt": "The camera holds still. All three stay inside the open lift; the son presses the brass button and the mother smiles at him.",
+      "sound": "A soft brass button click, the lift motor's low hum starting, quiet lobby tone."
+    },
+    {
+      "id": "s6",
+      "mode": "frames",
+      "start": "kf_s6",
+      "prompt": "The camera holds still as the three of them walk slowly along the ghat, the light fading over the water.",
+      "sound": "Water lapping against the stone steps, evening birds, a light breeze off the lake."
+    }
+  ],
+  "beats": [
+    {
+      "shot": "s1",
+      "from": 0.0
+    },
+    {
+      "shot": "s2",
+      "from": 0.0
+    },
+    {
+      "shot": "s3",
+      "from": 0.0
+    },
+    {
+      "shot": "s4",
+      "from": 0.0
+    },
+    {
+      "shot": "s5",
+      "from": 0.0
+    },
+    {
+      "shot": "s6",
+      "from": 0.0
+    }
+  ],
+  "vo": {
+    "en": [
+      "I wanted my parents' first trip with me to be Leh, in November.",
+      "Mummy asked if it would be hard on them, so I looked it up properly.",
+      "NakshIQ had a note for older travellers, and Leh was a hard no for heart or lung conditions.",
+      "Even fit people their age needed three days to acclimatise, and November there was a skip.",
+      "Udaipur was very suitable, a flat old city with lifts in most heritage hotels, and November a go.",
+      "So we walked the old city slowly, and the only climbing was in a lift.\nTravel intelligence is planning for whoever is actually coming.\nNakshIQ."
+    ],
+    "hi": [
+      "मैं चाहता था कि मम्मी-पापा के साथ मेरी पहली ट्रिप लेह हो, नवंबर में।",
+      "मम्मी ने पूछा कि उनके लिए मुश्किल तो नहीं होगी, तो मैंने ठीक से देखा।",
+      "NakshIQ पर बुज़ुर्गों के लिए अलग नोट था, और दिल या फेफड़ों की तकलीफ़ वालों के लिए लेह साफ़ मना था।",
+      "फ़िट लोगों को भी वहाँ की हवा की आदत डालने में तीन दिन लगते, और नवंबर तो वहाँ स्किप ही था।",
+      "उदयपुर बिल्कुल सही था, पुराना शहर समतल, ज़्यादातर हेरिटेज होटलों में लिफ़्ट, और नवंबर भी गो।",
+      "तो हम पुराने शहर में आराम से घूमे, और चढ़ाई सिर्फ़ लिफ़्ट में हुई।\nट्रैवल इंटेलिजेंस है उनके हिसाब से प्लान करना जो सच में साथ आ रहे हैं।\nNakshIQ."
+    ]
+  },
+  "captions": {
+    "hi": "en"
+  },
+  "cover": {
+    "hook": "Parents' first trip:|*Leh, in November?*",
+    "still": "kf_s3"
+  },
+  "caption_name": null,
+  "shot_notes": [
+    "A son in his 30s and his parents in their 60s sit at a home dining table in the evening, a laptop open, seen from behind.",
+    "The mother's hands rest on the table beside the laptop while the son scrolls, faces out of frame.",
+    "Evening in Udaipur's old city: the three walk slowly down an empty flat lane of pale old houses, seen from behind.",
+    "The father and mother step into a small heritage hotel lift with an old metal grille, the son holding the door, shot from the side.",
+    "The parents stand at a stone balcony looking out over a still lake at dusk, backs to camera.",
+    "Wide shot of the three walking along the empty lakeside path at dusk, small in the frame."
+  ],
+  "retakes": [
+    {
+      "date": "2026-10-07",
+      "why": "founder pulled Coorg; clip check found glitches/wrong place here"
+    }
   ]
- },
- "captions": {
-  "hi": "en"
- },
- "cover": {
-  "hook": "Parents' first trip:|*Leh, in November?*",
-  "still": "kf_s3"
- },
- "caption_name": null,
- "shot_notes": [
-  "A son in his 30s and his parents in their 60s sit at a home dining table in the evening, a laptop open, seen from behind.",
-  "The mother's hands rest on the table beside the laptop while the son scrolls, faces out of frame.",
-  "Evening in Udaipur's old city: the three walk slowly down an empty flat lane of pale old houses, seen from behind.",
-  "The father and mother step into a small heritage hotel lift with an old metal grille, the son holding the door, shot from the side.",
-  "The parents stand at a stone balcony looking out over a still lake at dusk, backs to camera.",
-  "Wide shot of the three walking along the empty lakeside path at dusk, small in the frame."
- ]
 }
