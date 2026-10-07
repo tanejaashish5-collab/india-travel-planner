@@ -1,0 +1,182 @@
+{
+ "auto": true,
+ "id": "chandipur__friends_swap",
+ "slug": "chandipur",
+ "angle": "friends_swap",
+ "format": "friends_swap",
+ "tone": "warm",
+ "script_approved": "2026-10-07 founder approved on the round-2 page (Artifact 1b0e1b75, collection round2)",
+ "script_file": "reel_scripts/chandipur__friends_swap.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "four friends, late 20s, two men and two women",
+ "narrator": "one of the friends",
+ "setting_basis": "A small city flat in the afternoon, then the tidal flats of Chandipur on the Odisha coast at low tide in the same late-afternoon light: a vast, almost perfectly flat expanse of wet grey-brown sand with fine ripples and shallow pools, a low line of casuarina trees at the back of the beach, the sea only a thin bright line far out. No resort, no shacks, no palm-fringed Goa beach. Goa is only talked about and never shown, and the footage makes no distance, crowd or tide-time claim of its own.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_friends",
+   "prompt": "Full-length photograph of four Indian friends in their late twenties standing in a loose row: a tall man with a short side-parted haircut in a navy polo shirt and grey chinos; a stocky man with long hair tied back in a maroon t-shirt and cargo shorts; a woman with a long single braid in a white cotton shirt and rolled olive trousers; a woman with a shoulder-length bob in a yellow sleeveless top and blue jeans; all in sandals, standing indoors in soft afternoon window light, three-quarter view, neutral expressions, photorealistic, no text."
+  },
+  {
+   "name": "ref_seabed",
+   "prompt": "A vast, almost perfectly flat tidal beach at low tide on the Odisha coast in late-afternoon light: wet grey-brown sand with fine ripples and shallow pools stretching far out, the sea only a thin bright line at the horizon, a low line of casuarina trees at the back of the beach, no buildings, no shacks, no people, photorealistic, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_seabed"
+   ],
+   "tone": "strange, vast, empty",
+   "prompt": "Extreme wide shot at low tide in late-afternoon light: bare wet seabed stretching far out to a thin bright line of sea at the horizon, ripples and small pools catching the light, casuarina trees small at the edge of frame, no people."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "ref_friends"
+   ],
+   "tone": "plans almost made",
+   "prompt": "Wide shot from behind in a small flat's living room in soft late-afternoon window light: the four friends sit on a sofa and on the floor around one open laptop, its screen turned away from camera."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "wait, look at this",
+   "prompt": "Medium shot from the side in the same flat and light: the man in the navy polo holds his phone out toward the others, its screen only a soft glow, while the woman with the long braid beside him has stopped typing on the laptop; faces turned away from camera."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_friends",
+    "ref_seabed"
+   ],
+   "tone": "small in a huge place",
+   "prompt": "Wide shot from behind in late-afternoon light: the four friends walk slowly side by side across the empty wet seabed toward the far thin line of sea, small in the frame, their reflections in the wet sand."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_friends",
+    "ref_seabed"
+   ],
+   "tone": "the doubter goes quiet",
+   "prompt": "Wide shot from behind in late-afternoon light: the woman with the long braid stands alone and still on the exposed wet seabed, wind moving her braid and white shirt, the other three small and far behind her."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_friends",
+    "ref_seabed"
+   ],
+   "tone": "it was worth it",
+   "prompt": "Extreme wide shot in late-afternoon light: the four friends stand small and far out on the empty wet seabed, the woman with the long braid furthest ahead, the sea a thin bright line beyond them, nobody else anywhere in frame."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still as the late light shimmers on the wet sand and a thin film of water slides across the ripples.",
+   "sound": "Wind over open flats, the faint hiss of very distant surf, one gull far away."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. The four lean in toward the laptop; the woman with the braid types.",
+   "sound": "A quiet flat, a ceiling fan turning, keyboard taps, traffic far below the window."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. He holds the phone out a little further and her hands stop above the keyboard.",
+   "sound": "A ceiling fan turning, a laptop fan whirring, a quiet room."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still as the four walk slowly side by side across the wet sand, all four staying in frame.",
+   "sound": "Bare feet on wet sand, wind across the flats, distant surf."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. The wind moves her braid and shirt as she stands quite still, looking out at the thin line of the sea.",
+   "sound": "Only wind across the open flats, very faint surf."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "A slow push in as the late light glints on the wet sand around the four of them.",
+   "sound": "Wind, a far-off gull, the distant hiss of the sea."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "There's a beach where the sea walks away, and four of us nearly picked Goa.",
+   "Ira wanted a party, so Goa was half booked when Kabir said wait.",
+   "He'd found one on NakshIQ where you walk up to five kilometres of seabed.",
+   "Goa would be packed, it said, and out there you might be alone.",
+   "That meant no shacks, no party, so Ira nearly said no.\nThen she stood where the sea had been, heard only wind, and went quiet.",
+   "She walked out furthest, and for an hour Odisha's Chandipur felt like ours.\nTravel intelligence is knowing what you give up, and going anyway.\nNakshIQ."
+  ],
+  "hi": [
+   "एक बीच है जहाँ समंदर पीछे चला जाता है, और हम चारों लगभग गोवा चुन चुके थे।",
+   "इरा को पार्टी चाहिए थी, तो गोवा की आधी बुकिंग हो चुकी थी, तभी कबीर बोला रुको।",
+   "NakshIQ पर उसे ऐसा बीच मिला, जहाँ पानी उतरे तो पाँच किलोमीटर तक अंदर पैदल जा सकते हो।",
+   "लिखा था गोवा में भीड़ मिलेगी, और वहाँ शायद तुम अकेले होगे।",
+   "मतलब न शैक, न पार्टी, तो इरा ने लगभग मना ही कर दिया था।\nफिर वो वहाँ खड़ी हुई जहाँ समंदर था, बस हवा की आवाज़ थी, और वो चुप हो गई।",
+   "सबसे दूर तक वही गई, और कुछ देर के लिए ओडिशा का चांदीपुर बस हमारा था।\nट्रैवल इंटेलिजेंस है, पता हो कि क्या छोड़ रहे हो, और फिर भी चल पड़ो।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "Goa, or the beach where|*the sea leaves?*",
+  "still": "kf_s1"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Late afternoon at low tide: a very wide shot of bare wet seabed stretching out to a thin line of sea at the horizon, no people.",
+  "Late afternoon in a small flat: four friends in their late 20s, two men and two women, sit on a sofa and the floor around one laptop, seen from behind, the screen turned away from camera.",
+  "Medium shot from the side in the same flat, late afternoon: one of the men raises a hand toward the laptop as the woman beside him stops typing, both faces turned away.",
+  "Wide shot from behind in late afternoon: one woman stands alone and still on the exposed wet seabed, wind moving her hair and scarf, the other three small and far behind her.",
+  "Close on her bare feet in rippled wet sand as a thin film of water slides past them, late afternoon light, no one else in frame.",
+  "Very wide in late afternoon: the four friends stand far out on the wet seabed, the woman furthest ahead, the sea a thin bright line beyond them, nobody else in frame."
+ ]
+}

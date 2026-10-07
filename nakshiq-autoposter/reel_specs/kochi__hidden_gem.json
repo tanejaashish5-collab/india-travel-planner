@@ -1,0 +1,189 @@
+{
+ "auto": true,
+ "id": "kochi__hidden_gem",
+ "slug": "kochi",
+ "angle": "hidden_gem",
+ "format": "hidden_gem",
+ "tone": "warm",
+ "script_approved": "2026-10-07 founder approved on the round-2 page (Artifact 1b0e1b75, collection round2)",
+ "script_file": "reel_scripts/kochi__hidden_gem.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "a man in his 30s travelling alone",
+ "narrator": "him",
+ "setting_basis": "Morning on the Fort Kochi waterfront with its cantilevered Chinese fishing nets of teak poles, ropes and stone counterweights against a pale sky, then the Kumbalangi backwaters nearby: narrow mangrove channels, still brown-green water, a small wooden canoe, a Chinese net at the village edge, coconut palms. Not a beach resort, not a hill station. The footage makes no crowd, distance or award claim of its own; those are the script's.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_man",
+   "prompt": "Full-length photograph of an Indian man in his mid thirties with short wavy black hair and a neat moustache, in a faded sky-blue linen shirt with the sleeves rolled, beige cotton trousers and brown sandals, a mirrorless camera on a black strap round his neck, standing in soft morning light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_net",
+   "prompt": "A cantilevered Chinese fishing net on the Kochi waterfront in early morning light: a tall frame of teak poles and ropes with heavy stone counterweights, the wide square net raised and dripping over still grey water, a pale sky, no people, photorealistic, no text."
+  },
+  {
+   "name": "ref_backwater",
+   "prompt": "A narrow mangrove channel in the Kumbalangi backwaters near Kochi in soft morning light: still brown-green water, dense mangrove roots on both banks, coconut palms beyond, a small wooden canoe at the edge, a Chinese fishing net standing at the far bend, no people, photorealistic, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_man",
+    "ref_net"
+   ],
+   "tone": "one simple wish",
+   "prompt": "Wide shot in soft morning light from behind: the man in the sky-blue linen shirt stands alone on the Fort Kochi shore looking up at a tall Chinese fishing net raised against a pale sky, his camera hanging at his chest."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "ref_man",
+    "ref_net"
+   ],
+   "tone": "frustrated",
+   "prompt": "Close-up in morning light of the man's hands lowering his camera, its screen turned away from camera, the Chinese net soft and out of focus behind; his face out of frame."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "ref_man",
+    "ref_net"
+   ],
+   "tone": "so close, still spoiled",
+   "prompt": "Over-the-shoulder at first light: the man raises his camera toward the Chinese net on the Fort Kochi shore, and one blurred stranger's shoulder in a dark t-shirt fills the near corner of the frame."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_man"
+   ],
+   "tone": "a small discovery",
+   "prompt": "Insert in morning light of the man's hand holding a phone beside his camera strap, the screen only a soft glow, the grey water soft and out of focus beyond."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_man",
+    "ref_backwater"
+   ],
+   "tone": "silence",
+   "prompt": "Wide shot from behind in soft morning light: the man alone in a small wooden canoe gliding along a narrow mangrove channel, still water, mangrove roots close on both sides."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_man",
+    "ref_backwater",
+    "ref_net"
+   ],
+   "tone": "the photo, at last",
+   "prompt": "Wide shot in morning light: a Chinese fishing net lifting out of still backwater at the village edge with nobody in front of it, coconut palms behind, the man small on the bank in the near corner, seen from behind, camera raised."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. He looks up at the net as a breeze moves the ropes.",
+   "sound": "Water lapping at the shore, ropes creaking on the net frame, crows calling."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still as his hands lower the camera slowly to his chest.",
+   "sound": "Water lapping, crows calling, a ferry horn far off."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. He keeps the camera raised while the blurred shoulder in the corner stays where it is.",
+   "sound": "Early morning water lapping, a crow, the click of a camera shutter."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "A slow push in on the phone in his hand as his thumb scrolls once and stops.",
+   "sound": "Water lapping, a ferry horn far off, crows."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still as the canoe glides slowly along the channel and his paddle dips once into the still water.",
+   "sound": "Only a paddle dipping into still water, a drip, a kingfisher call far off."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "The camera holds still as the net rises slowly out of the still water, dripping, and he holds his camera steady.",
+   "sound": "Water dripping from the rising net, ropes creaking, a soft camera shutter click."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "All I wanted in Kochi was one photo of a Chinese fishing net with nobody in front of it.",
+   "But January is peak season, and someone was always posing under the Fort Kochi nets.",
+   "I went back at first light and still caught a stranger's shoulder.",
+   "NakshIQ said what I'd missed: most Kochi tourists never leave Fort Kochi.",
+   "So I went fifteen kilometres out, and in the mangroves the only sound was my paddle.",
+   "There a net rose from still water with nobody in front, and that's my photo from Kumbalangi.\nTravel intelligence is knowing where the empty frame still is.\nNakshIQ."
+  ],
+  "hi": [
+   "कोच्चि में मुझे बस एक फ़ोटो चाहिए थी, चाइनीज़ फ़िशिंग नेट की, जिसके आगे कोई खड़ा न हो।",
+   "पर जनवरी यहाँ पीक सीज़न है, और फ़ोर्ट कोच्चि के नेट के आगे हमेशा कोई न कोई पोज़ दे रहा होता था।",
+   "मैं अगली सुबह तड़के फिर गया, और फिर भी फ़्रेम में किसी अजनबी का कंधा आ गया।",
+   "NakshIQ ने वो बताया जो मुझसे छूट गया था: कोच्चि आने वाले ज़्यादातर टूरिस्ट फ़ोर्ट कोच्चि से बाहर निकलते ही नहीं।",
+   "तो मैं पंद्रह किलोमीटर दूर एक गाँव गया, और वहाँ मैंग्रोव में बस मेरे चप्पू की आवाज़ थी।",
+   "वहाँ एक नेट शांत पानी से ऊपर उठा, आगे कोई नहीं, और कुंबलंगी की वो फ़ोटो आज मेरे पास है।\nट्रैवल इंटेलिजेंस है ये जानना कि खाली फ़्रेम अब भी कहाँ मिलता है।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "One net, nobody in front.|*Where in Kochi?*",
+  "still": "kf_s3"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Early morning on the Fort Kochi shore: a Chinese fishing net against a pale sky, one blurred stranger's shoulder filling the near corner of the frame, a man in his 30s seen from behind holding up a camera.",
+  "Close in early morning light on the man's hands lowering the camera, its screen turned away, his face out of frame.",
+  "Wide shot from behind in the morning: the man alone in a small wooden canoe gliding through a narrow mangrove channel, the water still.",
+  "Close on his paddle dipping into still water between mangrove roots in morning light, ripples spreading, no one else in frame.",
+  "Wide in the morning: a Chinese fishing net lifting out of still water at the village edge with nobody in front of it, the man small on the bank behind his camera, seen from behind.",
+  "Wide in the morning: the man sits alone on the bank beside the raised net, camera resting in his lap, seen from behind, the water still."
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "auto": true,
+ "id": "ahmedabad__eatery",
+ "slug": "ahmedabad",
+ "angle": "eatery",
+ "format": "eatery",
+ "tone": "warm",
+ "script_approved": "2026-10-07 founder approved on the round-2 page (Artifact 1b0e1b75, collection round2)",
+ "script_file": "reel_scripts/ahmedabad__eatery.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "two friends, a man and a woman, late 20s",
+ "narrator": "the man",
+ "setting_basis": "A narrow food lane in Ahmedabad's walled old city near Teen Darwaza at night: old two- and three-storey houses with carved wooden balconies and shutters, small open-fronted eateries with clay tandoors set into their counters, steel pots, bare bulbs on wires, a wet stone lane. No mall, no market square, no readable signboards. The footage shows no real eatery's name or interior and makes no time, price or history claim of its own; those are the script's.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_friends",
+   "prompt": "Full-length photograph of two Indian friends in their late twenties standing a clear step apart: a man with short black hair and a trimmed beard in a rust-coloured cotton shirt, dark jeans, white sneakers and a canvas sling bag across his chest; a woman with shoulder-length wavy hair tied in a loose bun, in a teal cotton kurta over black trousers with small silver earrings and a denim jacket over one arm; soft evening street light, three-quarter view, neutral expressions, photorealistic, no text."
+  },
+  {
+   "name": "ref_lane",
+   "prompt": "A narrow old-city food lane in Ahmedabad at night: old two- and three-storey houses with carved wooden balconies and shutters, small open-fronted eateries on both sides with clay tandoors set into their counters, steel cooking pots, bare bulbs hanging on wires, the stone lane wet and shining, no readable signboards, no people, photorealistic, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_friends",
+    "ref_lane"
+   ],
+   "tone": "arrived too early, unsure",
+   "prompt": "Wide shot from behind at night: the two friends stand a clear step apart in the wet lane in front of a row of cold clay tandoors with their lids on and no flame, the eateries only half lit by bare bulbs."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "ref_friends",
+    "ref_lane"
+   ],
+   "tone": "hungry, ready to give up",
+   "prompt": "Medium shot from the side at night in the same wet lane: the woman in the teal kurta has half turned back the way they came, her phone in hand, while the man in the rust shirt still faces the cold tandoors; both faces turned from camera, dim yellow bulb light."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "a small discovery",
+   "prompt": "Insert at night of the man's hand holding a phone low by his sling bag, the screen only a soft glow, the wet lane and a cold tandoor soft and out of focus beyond."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_lane"
+   ],
+   "tone": "the moment it wakes",
+   "prompt": "Close-up at night on the open mouth of one clay tandoor set into a stall counter, dark inside with the first orange glow of embers at the bottom, wet stones and a bare bulb soft behind, no people."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_friends",
+    "ref_lane"
+   ],
+   "tone": "won over",
+   "prompt": "Over-the-shoulder at night at an open-air stall counter: two steel plates, one of tava biryani and one of red chicken angara, in front of the woman in the teal kurta, her hand drawing the second plate closer, her face out of frame, tandoor glow behind."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_friends",
+    "ref_lane"
+   ],
+   "tone": "the lane alive, warm",
+   "prompt": "Wide shot at night: the two friends sit a little apart at a lit open-air stall counter with steel plates in front of them, tandoor fire glowing and smoke drifting under bare bulbs behind them, several stalls lit down the wet lane, nobody else in frame."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. The two friends stand looking at the cold tandoors; a bulb above them flickers once.",
+   "sound": "A quiet lane at night, water dripping from a balcony, a distant autorickshaw horn, a dog barking far off."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. She keeps her face turned back down the lane while he stays facing the tandoors.",
+   "sound": "Distant traffic beyond the old walls, water dripping, a radio playing faintly from an upstairs window."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "A slow push in on the phone in his hand as his thumb scrolls once and stops.",
+   "sound": "A quiet lane at night, a ceiling fan turning somewhere inside, a far-off horn."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still as the first flames catch inside the tandoor and sparks lift into the dark.",
+   "sound": "A low roar as the tandoor catches, crackling charcoal, a soft rush of air."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still. Her hand draws the second steel plate closer and lifts a spoonful of biryani.",
+   "sound": "A spoon on a steel plate, a tava sizzling, the tandoor roaring behind."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "A slow push in as smoke drifts across the lit lane behind the two friends at the counter.",
+   "sound": "Tandoors roaring, a tava sizzling, steel plates clinking, the warm hum of a lane come alive."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  }
+ ],
+ "vo": {
+  "en": [
+   "The tandoors were still cold when my friend Tanvi and I reached the lane.",
+   "She was hungry, so she turned back toward Teen Darwaja to eat anywhere else.",
+   "Then I read the NakshIQ note I'd skipped: don't walk in before nine.",
+   "We waited on wet stones until the first tandoor caught with a low roar.",
+   "Over tava biryani and chicken angara, Tanvi, who had wanted to leave, asked for seconds.\nTheir families have cooked here since they fed the sultan who founded this city.",
+   "This is Bhatiyar Gali, and the city is Ahmedabad.\nTravel intelligence is knowing when a place wakes up.\nNakshIQ."
+  ],
+  "hi": [
+   "जब मैं और मेरी दोस्त तन्वी उस गली में पहुँचे, तो तंदूर अभी ठंडे पड़े थे।",
+   "उसे भूख लगी थी, तो वो कहीं और खाने के लिए तीन दरवाज़ा की तरफ़ वापस मुड़ गई।",
+   "फिर मैंने NakshIQ का वो नोट पढ़ा जो छोड़ दिया था: नौ बजे से पहले मत आना।",
+   "हम गीले पत्थरों पर रुके रहे, जब तक पहला तंदूर भक से जल नहीं उठा।",
+   "तवा बिरयानी और चिकन अंगारा आया, और जो तन्वी वापस जाना चाहती थी, उसी ने दोबारा मँगाया।\nइनके परिवार तब से यहाँ खाना बना रहे हैं, जब इन्होंने इस शहर को बसाने वाले सुल्तान को खिलाया था।",
+   "ये है भटियार गली, और शहर है अहमदाबाद।\nट्रैवल इंटेलिजेंस है ये जानना कि कोई जगह कब जागती है।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "Ahmedabad's food lane, cold.|*What did we miss?*",
+  "still": "kf_s1"
+ },
+ "caption_name": "Bhatiyar Gali (Akbari Hotel for first-timers)",
+ "shot_notes": [
+  "Night, close on a row of cold clay tandoors along a narrow Old City lane, lids on, no flame, wet stones shining under a bare bulb, no people, no readable signage.",
+  "Wide shot from behind at night: two friends in their late 20s, a man and a woman, walk up the wet lane a clear step apart, each with hands in their own pockets, already in frame, no readable signage.",
+  "Medium shot from the side at night: the woman stands a little apart from the man with her phone in hand, half turned back the way they came, both faces turned from camera.",
+  "Close at night on one clay tandoor as the first flame catches inside it and sparks lift into the dark, no people in frame.",
+  "Over-the-shoulder at an open-air stall counter at night: steel plates of tava biryani and chicken angara, the woman's hand pulling a second plate toward her, her face out of frame.",
+  "Wide at night: the two friends sit a little apart at a lit open-air stall counter with steel plates in front of them, tandoor fire glowing and smoke drifting under bare bulbs behind them, several stalls lit down the lane, nobody else in frame."
+ ]
+}
