@@ -47,13 +47,19 @@ function SourceLink({ url }: { url?: string | null }) {
 
 type Photo = NonNullable<Village["page"]["photos"]>[number];
 
+// Where the photo was published, from its source_url (Commons or Flickr).
+function via(url: string) {
+  try { if (new URL(url).hostname.endsWith("flickr.com")) return "Flickr"; } catch { /* not a URL */ }
+  return "Wikimedia Commons";
+}
+
 function Credit({ ph }: { ph: Photo }) {
   return (
     <p style={{ ...mono, textTransform: "none", letterSpacing: "0.02em", margin: "8px 0 0", lineHeight: 1.5 }}>
       <span style={{ color: "var(--bone-dim)" }}>{ph.caption}</span>
       {" · "}
       <a href={ph.source_url} target="_blank" rel="nofollow noopener noreferrer" style={{ color: "var(--bone-faint)", textDecoration: "underline" }}>
-        Photo: {ph.author}, {ph.licence}, via Wikimedia Commons
+        Photo: {ph.author}, {ph.licence}, via {via(ph.source_url)}
       </a>
     </p>
   );
