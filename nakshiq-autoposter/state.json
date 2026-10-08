@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-07",
-    "PdMu0_evening": "2026-10-07",
+    "PdMu0": "2026-10-08",
+    "PdMu0_evening": "2026-10-08",
     "PdMu0_carousel": "2026-10-08"
   },
-  "last_sync": "2026-10-07T17:50:40.782662+00:00",
+  "last_sync": "2026-10-08T20:05:32.941225+00:00",
   "posted_destinations": [
     {
       "destination_id": "darjeeling",
@@ -153,6 +153,10 @@
     {
       "destination_id": "bekal",
       "date": "2026-10-08"
+    },
+    {
+      "destination_id": "shimla",
+      "date": "2026-10-08"
     }
   ],
   "posted_formats": {
@@ -181,7 +185,6 @@
     ],
     "PdMu0": [
       "score_card",
-      "score_card",
       "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
@@ -200,7 +203,8 @@
       "eateries_pick",
       "weekend_escape",
       "v2_women_solo_brief_video",
-      "v2_cost_vs_feeling"
+      "v2_cost_vs_feeling",
+      "v2_score_card_pov"
     ]
   },
   "post_log": [
@@ -10595,6 +10599,17 @@
       "destination": "bekal",
       "format": "carousel.cost",
       "media_id": "carousel_cost_2026-10-08"
+    },
+    {
+      "timestamp": "2026-10-08T20:06:32.307324+00:00",
+      "date": "2026-10-08",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "GE7LZ",
+      "destination": "shimla",
+      "format": "v2_score_card_pov",
+      "has_media": true,
+      "media_id": "shimla.mp4"
     }
   ],
   "theme_usage": {
@@ -10954,6 +10969,12 @@
       ],
       "sravasti": [
         "2026-10-07"
+      ],
+      "kolhapur": [
+        "2026-10-08"
+      ],
+      "shimla": [
+        "2026-10-08"
       ]
     },
     "morning_formats": {
@@ -11118,6 +11139,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v2_score_card_pov": [
+        "2026-10-08"
       ]
     },
     "reels": {
@@ -11302,6 +11326,9 @@
       ],
       "shantiniketan": [
         "2026-10-06"
+      ],
+      "shimla": [
+        "2026-10-08"
       ]
     },
     "audience_tags": {
@@ -11438,6 +11465,9 @@
       ],
       "odisha-golden-triangle": [
         "2026-10-01"
+      ],
+      "fort-trail-maharashtra": [
+        "2026-10-08"
       ]
     },
     "festivals": {
@@ -11546,6 +11576,11 @@
       "puri": [
         "2026-10-01"
       ]
+    },
+    "collection_carousel_dests:fort-trail-maharashtra": {
+      "kolhapur": [
+        "2026-10-08"
+      ]
     }
   },
   "infographic": {
@@ -11560,8 +11595,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "sravasti",
-    "collection": "andaman-diving-snorkeling"
+    "shared_best": "dzukou-valley",
+    "collection": "fort-trail-maharashtra"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-01",
