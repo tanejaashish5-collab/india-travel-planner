@@ -26683,3 +26683,20 @@ Date range: 2026-04-15 → 2026-10-06
 2026-10-08 18:36:58  INFO          Media ready: veoHZ (15,113,214 bytes · mussoorie__guide_m10.mp4)
 2026-10-08 18:37:14  WARNING       Platform error for post=zddzO: YouTube could not complete the video upload. [youtube_upload_error:provider_error; providerReason=authError]
 2026-10-08 09:37:01  INFO      LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down
+2026-10-09 01:35:10  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-10-09 01:35:10  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-09 01:35:14  INFO          Requesting upload URL for ahmedabad__eatery__hi.mp4 (52,581,120 bytes, video/mp4)
+2026-10-09 01:35:16  INFO          Uploading to R2 (timeout=300s)...
+2026-10-09 01:35:40  INFO          R2 PUT OK. Confirming...
+2026-10-09 01:35:42  INFO          Media ready: C7jJH (52,581,120 bytes · ahmedabad__eatery__hi.mp4)
+2026-10-09 01:35:42  INFO          Requesting upload URL for ahmedabad__eatery__cover.jpg (551,785 bytes, image/jpeg)
+2026-10-09 01:35:43  INFO          Uploading to R2 (timeout=120s)...
+2026-10-09 01:35:47  INFO          R2 PUT OK. Confirming...
+2026-10-09 01:35:50  INFO          Media ready: iQpF8 (551,785 bytes · ahmedabad__eatery__cover.jpg)
+2026-10-09 01:36:05  WARNING   [instagram/nakshiq] Outstand warnings: ['Could not inspect video https://media.outstand.so/0XeFVbIRO5o8Z8lwNljn3LJiuLULfLa1/cd5e32e8-5c0a-437e-87b2-c9e67b705567/ahmedabad__eatery__hi.mp4: Container returned 500: Error proxying request to container: Container is taking too long to accept the connection; the application could be overwhelmed with load. It will be published as-is.']
+2026-10-09 01:37:23  INFO          Requesting upload URL for ahmedabad__eatery__en.mp4 (44,338,571 bytes, video/mp4)
+2026-10-09 01:37:25  INFO          Uploading to R2 (timeout=300s)...
+2026-10-09 01:37:45  INFO          R2 PUT OK. Confirming...
+2026-10-09 01:37:47  INFO          Media ready: elTM2 (44,338,571 bytes · ahmedabad__eatery__en.mp4)
+2026-10-09 01:38:02  WARNING   [youtube/@naksh-iq] Outstand warnings: ['Could not inspect video https://media.outstand.so/0XeFVbIRO5o8Z8lwNljn3LJiuLULfLa1/27117caf-90e5-452d-be3d-eb2f5fa66808/ahmedabad__eatery__en.mp4: Container returned 500: Error proxying request to container: Container is taking too long to accept the connection; the application could be overwhelmed with load. It will be published as-is.']
+2026-10-09 01:38:10  WARNING       Platform error for post=36R3b: YouTube could not complete the video upload. [youtube_upload_error:provider_error; providerReason=authError]
