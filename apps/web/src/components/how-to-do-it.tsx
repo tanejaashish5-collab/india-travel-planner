@@ -10,7 +10,7 @@ type Props = {
   months: MonthRow[];
   reach?: { road_condition?: string | null; from_nearest_city?: string | null } | null;
   emergency?: { ambulance?: string | null; nearest_hospital?: string | null } | null;
-  sleep?: { price_range_inr?: string | null; options_count?: number | null } | null;
+  sleep?: { price_range_inr?: string | null; options_count?: number | null; booking_method?: string | null } | null;
   stateId?: string | null;
   currentMonth?: number;
 };
@@ -44,9 +44,14 @@ export default function HowToDoIt({
   const emergencyLine = emergency?.ambulance && emergency?.nearest_hospital
     ? `${emergency.ambulance} · ${emergency.nearest_hospital}`
     : emergency?.ambulance ?? emergency?.nearest_hospital ?? null;
-  const sleepLine = sleep?.price_range_inr
-    ? `₹${sleep.price_range_inr}/night${sleep.options_count ? ` · ${sleep.options_count} options` : ""}`
-    : null;
+  // price_range_inr is free text in the DB ("N/A", hotel names, "N/A — day visit").
+  // Only a value containing a digit is a price; day-trip places show how to stay nearby.
+  const hasPrice = !!sleep?.price_range_inr && /\d/.test(sleep.price_range_inr);
+  const sleepLine = hasPrice
+    ? `₹${sleep!.price_range_inr}/night${sleep!.options_count ? ` · ${sleep!.options_count} options` : ""}`
+    : sleep?.options_count === 0 && sleep.booking_method
+      ? sleep.booking_method
+      : null;
   const permitRequired = stateId ? PERMIT_STATES.has(stateId) : false;
 
   const fieldCount = [accessLine, emergencyLine, sleepLine].filter(Boolean).length + (months?.length ? 1 : 0);
