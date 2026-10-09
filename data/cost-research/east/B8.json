@@ -1,0 +1,574 @@
+{
+ "batch": "B8",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "shillong": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3163,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-heiga-2875990?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4597744?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-phoenix-residency-3974265?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-relyn-suite-4067147?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-saad-hotel-4278831?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-indiana-3914636?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1491,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4531838?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4532472?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/oyo-19292-55-pillars-house-2876634?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5062362?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1686,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/phibha-villa-3989560?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671264?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/anant-home-stay-4279038?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/nalgre-guest-house-1358214?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 650,
+    "dorm_n": 3,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Shillong?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax, cheapest room (Heiga 3234, Jessica Residency 3091, Phoenix Residency 3514, ReLyn Suite 3024, Saad 3358, Indiana 2139; median 3163). Budget: Cleartrip 18-19 Nov 2026 pre-tax (Super Hotel O Rynjah 1386, Super Hotel O Lapalang 1595, Pillars House 1195, M J Towers 2246; median 1491). Homestay: Cleartrip 18-19 Nov 2026 pre-tax (Phibha Villa 1610, SAY Hill Side Villa 1071, Anant Home Stay 1762, Lily Guest House 2331; median 1686). Dorm: Hostelworld 'Dorms from' per bed, undated (Zostel 879, XTSY 549, Stargaze 650; median 650).",
+    "notes": "The Saiom Hotel showed a single room at 8100 (excluded as an outlier vs 3645 on its 13 Nov list price) and Best Holiday Home 4210 (guest house) was left out of the homestay median. Shillong Club, Am Bed and Breakfast and Bellevue Homestay showed sold out on 18 Nov. Hostelworld lists Isabella Travellers Hostel dorms from 2800, excluded as an outlier for a dorm bed."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2900,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Cherrapunji (sedan, one way drop, Jagnish Tours 2026-27 chart)",
+      "inr": 1400
+     },
+     {
+      "route": "Shillong to Cherrapunji (sedan, Shillong Travel Taxi day trip)",
+      "inr": 2899
+     },
+     {
+      "route": "Shillong to Dawki sightseeing (sedan, Shillong Travel Taxi)",
+      "inr": 3700
+     },
+     {
+      "route": "Shillong to Mawlynnong (sedan, one way drop, Jagnish Tours)",
+      "inr": 2500
+     },
+     {
+      "route": "Shillong to Mawphlang (sedan, one way drop, Jagnish Tours)",
+      "inr": 1200
+     }
+    ],
+    "basis": "Shillong city sightseeing, sedan: Shillong Travel Taxi (Lumparing, Shillong) 2900; Jagnish Tours 2026-27 rate list 2500 (8hrs/80km); Meghalaya Tour Cabs (Golf Links, Shillong) sedan per day 3499 non-AC. Median of the three 2900. No union rate card found; all are operator pages, undated apart from the 2026-27 label.",
+    "sources": [
+     "https://shillongtraveltaxi.in/car-rental-fares/",
+     "https://www.jagnishtours.com/taxi-fare-in-shillong",
+     "https://www.meghalayatourcabs.com/car-rental-rates/"
+    ],
+    "notes": "Meghalaya metered city fare (26 first km, 13 per km after) not verified on a primary page, so not used."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 850,
+    "basis": "Cost for two printed per place: Trattoria 200 (TravelTriangle Apr 2024) or 300 (Oddessemania Oct 2023), Jadoh 300, The Wok 400, Bistro Pure Veg 400 = about 100-200 per person per meal, x3 = 450. Sit-down: Qzine 500, Ginger 500, Madras Cafe 500, Cafe Shillong 600, Lamee 600-750, City Hut Family Dhaba 600 = about 250-375 per person per meal; 850 allows a cheaper breakfast. TripGuruGo (Jul 2026) regional range 400-600 budget and 800-1,200 mid-range per day agrees.",
+    "sources": [
+     "https://traveltriangle.com/blog/restaurants-in-shillong/",
+     "https://oddessemania.in/restaurants-in-shillong/",
+     "https://www.tripgurugo.com/meghalaya-trip-cost/"
+    ],
+    "notes": "Cost-for-two figures are 2023-24 and likely 10-15 percent low for Nov 2026."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Shillong taxi association rate chart (none published online)",
+    "Per-km outstation rate",
+    "Zomato and Swiggy restaurant pages blocked, so food rests on dated blog cost-for-two figures"
+   ]
+  },
+  "cherrapunji": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4858,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4269973?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sulawado-resort-4486051?c=18112026|19112026&r=2,0",
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3",
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204"
+    ],
+    "budget_hotel_median_inr": 2730,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204",
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "homestay_median_inr": 2170,
+    "homestay_n": 6,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026 pre-tax (San Nael La Resort 5243, Sulawado Resort 5336) plus Booking.com search 18-19 Nov 2026 tax-inclusive 'Includes taxes and charges' (Aisha Guest House 3150, Me Me Ai Haven 4473); median 4858. Budget: Booking.com 18-19 Nov 2026 tax-inclusive (D Cloud Guesthouse 1680, SORIA Guest House 2520, Vibgyor Hotel 2940, Sunset View Guest House 3674; median 2730). Homestay: Booking.com 18-19 Nov 2026 tax-inclusive (Joyous Rooms 2399, Zinnia 1785, Green Hills 2100, Odyssey's Latara 2248, Odyssey's Pateng 2135, Adoreen 2205; median 2170).",
+    "notes": "Booking prices were read on 9 Oct 2026 and can move by up to about 10 percent between loads. Booking tiers are tax-inclusive (roughly 5 percent GST) and Cleartrip pre-tax, so the mid median is slightly mixed. Cleartrip showed Crescent Hotel, Bell's Bigxa, Vista by La Kupar, La Kupar Inn, Latara and Marfar sold out on 18 Nov. Sulawado Resort shows 13335 for a Deluxe Triple on Booking, but Cleartrip's cheapest room is 5336. Polo Resort (5-star on Cleartrip) and Sacred Grove (21830) excluded as luxury. No hostel on Hostelworld in Cherrapunji was checked."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Cherrapunji (sedan, one way, Gozo before GST)",
+      "inr": 2573
+     },
+     {
+      "route": "Shillong to Cherrapunji (sedan, Shillong Travel Taxi)",
+      "inr": 2899
+     },
+     {
+      "route": "Shillong to Cherrapunji (sedan, one way drop, Jagnish Tours 2026-27)",
+      "inr": 1400
+     },
+     {
+      "route": "Shillong to Cherrapunji round trip same day (sedan, Jagnish Tours)",
+      "inr": 2200
+     }
+    ],
+    "basis": "No Sohra taxi-stand rate card found online. All figures are Shillong-based operators quoting Shillong to Cherrapunji; the spread (1400 drop to 2899) reflects drop vs full-day sightseeing. Local sightseeing within Sohra left null.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/shillong-cherrapunji",
+     "https://shillongtraveltaxi.in/car-rental-fares/",
+     "https://www.jagnishtours.com/taxi-fare-in-shillong"
+    ],
+    "notes": "Meghalaya Tour Cabs (Golf Links, Shillong) lists Shillong to Cherrapunji full day 3999 non-AC, not vehicle-specific."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 800,
+    "basis": "Holidify prints INR 500 (label does not say for two or per person) for both Orange Roots (vegetarian thali place) and Chef Cherrapunjee. TripGuruGo (17 Jul 2026) Meghalaya-wide: budget 400-600 per day, mid-range 800-1,200, Khasi thali 150-250. Lower bound of each used because Sohra has few cafes and set-meal eateries dominate.",
+    "sources": [
+     "https://www.holidify.com/places/cherrapunjee/restaurants-places-to-eat-local-cuisine.html",
+     "https://www.tripgurugo.com/meghalaya-trip-cost/"
+    ],
+    "notes": "No Sohra-specific menu or Zomato page reached (Tripadvisor returned 403, Zomato blocked). Regional blog range, not observed menus."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Sohra local taxi-stand rate card",
+    "Zomato/Swiggy/Tripadvisor restaurant prices (blocked)",
+    "Dorm beds"
+   ]
+  },
+  "mawsynram": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Shillong (61 km) or Cherrapunji",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2520,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Mawsynram%2C%20Meghalaya%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com search 18-19 Nov 2026, tax-inclusive: Mawlyngbna home stay (River trekking and Adventure guide), Double Room 2520, listed 7.7 km from the Mawsynram centre. n=1.",
+    "notes": "Only one Mawsynram-area listing with a dated price; other results in that search are Cherrapunji properties. Cleartrip has no Mawsynram hotels. Treat as indicative; most visitors base in Shillong or Cherrapunji (see Cherrapunji and Shillong figures)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Mawsynram (sedan, one way, Gozo before GST, about 61 km)",
+      "inr": 2914
+     }
+    ],
+    "basis": "Gozo Cabs one-way fares before GST for Shillong to Mawsynram: compact 2349, sedan 2914, Ertiga 3423, Innova 4872. No local Mawsynram union rate found.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/shillong-mawsynram"
+    ],
+    "notes": "No local sightseeing rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 800,
+    "basis": "TripGuruGo (17 Jul 2026), Meghalaya-wide: budget food 400-600 per day, mid-range 800-1,200, Khasi thali 150-250. Lower bound used because villages have only set-meal homestay and dhaba options. No village-specific menu or Zomato page found.",
+    "sources": [
+     "https://www.tripgurugo.com/meghalaya-trip-cost/"
+    ],
+    "notes": "Regional blog range, not observed village menus."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Local Mawsynram taxi rate",
+    "Mawsynram-specific food prices",
+    "More than one dated stay"
+   ]
+  },
+  "nongriat": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Tyrna (road end, then a walk of 3,000+ steps)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1568,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Cherrapunji&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com search 18-19 Nov 2026, tax-inclusive: Odyssey Stays Nongriat '3Kms trek from Main Road', Double Room with Shared Bathroom 1568. n=1. Undated cross-checks: Odyssey Stays site lists Nongriat double room 1400 (discounted from 1700); a March 2019 trek guide lists Serene Homestay private double 800 and dorm 300 per person.",
+    "notes": "Foot access only, so few properties. Cozyo Stays Boutique Home Nongriat is listed on Booking with no price shown for these dates. The 2019 and Odyssey-site figures are undated or old and are not used in the median."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No private cab goes to Nongriat: it is reached on foot from the road end at Tyrna. A March 2019 trek guide gives shared Sumo Shillong Bara Bazaar to Cherrapunjee INR 70 and Sohra to Tyrna INR 40 per seat (old). Day cars to Tyrna: see Cherrapunji.",
+    "sources": [
+     "https://www.monkeyrockworld.com/nongriat-trek-guide/"
+    ],
+    "notes": "Shared-seat fares from 2019, not a private-cab rate."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only dated food price found: Serene Homestay dinner thali INR 130 extra (2019 trek guide); no 2026 menu. Left null.",
+    "sources": [
+     "https://www.monkeyrockworld.com/nongriat-trek-guide/"
+    ],
+    "notes": "Meals are set meals at the homestay; no restaurant data."
+   },
+   "confidence": "low",
+   "unverified": [
+    "More than one dated stay",
+    "Current homestay meal prices",
+    "Private cab rate to Tyrna"
+   ]
+  },
+  "mawlynnong": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1664,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Mawlynnong&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.cleartrip.com/hotels/details/jongki-khun-stay-inn-5267024?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com search 18-19 Nov 2026 tax-inclusive (Odyssey Stays Mawlynnong 1568, Travellers Hut Homestay 1607, Hep stay inn 2100, Riwai Root Bridge homestay 4473) plus Cleartrip detail page 18-19 Nov 2026 pre-tax (Jongki khun stay inn 1664); median 1664.",
+    "notes": "Eight other Cleartrip Mawlynnong listings (Embok, Kharmawshun, Pumpkin StreamSide, Shaiti, Stream side, Sylvan's, etc.) showed sold out on 18 Nov. No hotel-grade property exists in the village in the data seen, so mid and budget are null. Booking prices can drift about 10 percent between loads."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Mawlynnong (sedan, one way drop, Jagnish Tours 2026-27)",
+      "inr": 2500
+     },
+     {
+      "route": "Shillong to Mawlynnong round trip (sedan, Jagnish Tours 2026-27)",
+      "inr": 4000
+     }
+    ],
+    "basis": "Jagnish Tours 2026-27 rate list: Shillong to Mawlynnong (Cleanest Village) sedan 2500, round trip 4000. No local-village rate found.",
+    "sources": [
+     "https://www.jagnishtours.com/taxi-fare-in-shillong"
+    ],
+    "notes": "Operator page prints no address, only a phone number."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 800,
+    "basis": "TripGuruGo (17 Jul 2026), Meghalaya-wide: budget food 400-600 per day, mid-range 800-1,200, Khasi thali 150-250. Lower bound used because villages have only set-meal homestay and dhaba options. No village-specific menu or Zomato page found.",
+    "sources": [
+     "https://www.tripgurugo.com/meghalaya-trip-cost/"
+    ],
+    "notes": "Regional blog range, not observed village menus."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Mawlynnong thali or homestay meal prices",
+    "Second source for the taxi quote",
+    "Budget or mid hotels (none found)"
+   ]
+  },
+  "dawki": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Shnongpdeng riverside camps (2-3 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1050,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dawki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "homestay_median_inr": 3150,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dawki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: Booking.com search 18-19 Nov 2026 tax-inclusive: River - Paradise Camps double room with shared bathroom 1050, Serene Shnongpdeng Camp double room 1050. Homestay/resort rooms: Booking.com same search: Hills view homestay Kudeng Thymmai 1575, REACH Destination Riverside Resort 2310, Syrwan Homestay and Camping 3990, Aurala homestay 4305; median 3150.",
+    "notes": "Spread is wide and n is small. Riverside tents on the same search are 1050 (Rickson, Tribe Riverbank, Joel Adventure) to 1155 (Sunset Riverside Camping) per night. Cleartrip's Dawki hotels (Sanmala, Jaflong Point, Jaflong Green) were all sold out on 18 Nov. Odyssey Stays Shnongpdeng twin tent 2300 includes breakfast and dinner for two (undated)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Dawki sightseeing (sedan, Shillong Travel Taxi)",
+      "inr": 3700
+     },
+     {
+      "route": "Shillong to Dawki (sedan, one way drop, Jagnish Tours 2026-27)",
+      "inr": 2800
+     },
+     {
+      "route": "Shillong to Dawki round trip same day (sedan, Jagnish Tours 2026-27)",
+      "inr": 4500
+     }
+    ],
+    "basis": "Shillong Travel Taxi (Lumparing, Shillong) 'Shillong to Dawki Sightseeing' sedan 3700; Jagnish Tours 2026-27 Dawki drop 2800 and same-day round trip 4500. Meghalaya Tour Cabs lists Cherrapunji to Dawki full day 3999 and Dawki to Shillong 2499 (not vehicle-specific).",
+    "sources": [
+     "https://shillongtraveltaxi.in/car-rental-fares/",
+     "https://www.jagnishtours.com/taxi-fare-in-shillong",
+     "https://www.meghalayatourcabs.com/car-rental-rates/"
+    ],
+    "notes": "No local Dawki union rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 800,
+    "basis": "TripGuruGo (17 Jul 2026), Meghalaya-wide: budget food 400-600 per day, mid-range 800-1,200, Khasi thali 150-250. Lower bound used because villages have only set-meal homestay and dhaba options. No village-specific menu or Zomato page found.",
+    "sources": [
+     "https://www.tripgurugo.com/meghalaya-trip-cost/"
+    ],
+    "notes": "Regional blog range, not observed village menus."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Local Dawki taxi rate",
+    "Dawki-specific food prices (Holidify Dawki restaurant list is empty)",
+    "Dorm beds"
+   ]
+  },
+  "shnongpdeng": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Dawki (2-3 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1050,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dawki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "homestay_median_inr": 3150,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dawki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Same Booking.com Dawki search, 18-19 Nov 2026, tax-inclusive; properties listed 1.8-2.7 km from Dawki centre are the Shnongpdeng riverside camps. Budget: River - Paradise Camps 1050, Serene Shnongpdeng Camp 1050. Rooms: Hills view homestay 1575, REACH Destination Riverside Resort 2310, Syrwan Homestay and Camping 3990, Aurala homestay 4305; median 3150.",
+    "notes": "Mostly tents: Rickson Riverside, Tribe Riverbank and Joel Adventure tents 1050, Sunset Riverside Camping 1155, Breathe and Bloom Camp tent 2982. Odyssey Stays Shnongpdeng twin tent 2300 incl breakfast and dinner for two (undated page). Hills view and Aurala are not confirmed to be in the village itself."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Dawki sightseeing (sedan, Shillong Travel Taxi; Shnongpdeng is 2-3 km beyond Dawki)",
+      "inr": 3700
+     },
+     {
+      "route": "Shillong to Dawki (sedan, one way drop, Jagnish Tours 2026-27)",
+      "inr": 2800
+     }
+    ],
+    "basis": "No Shnongpdeng-specific cab rate; use the Shillong to Dawki quotes. Shillong Travel Taxi sedan 3700; Jagnish Tours drop 2800.",
+    "sources": [
+     "https://shillongtraveltaxi.in/car-rental-fares/",
+     "https://www.jagnishtours.com/taxi-fare-in-shillong"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 800,
+    "basis": "TripGuruGo (17 Jul 2026), Meghalaya-wide: budget food 400-600 per day, mid-range 800-1,200, Khasi thali 150-250. Lower bound used because villages have only set-meal homestay and dhaba options. No village-specific menu or Zomato page found.",
+    "sources": [
+     "https://www.tripgurugo.com/meghalaya-trip-cost/"
+    ],
+    "notes": "Regional blog range, not observed village menus."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Camp meal prices as separate line items",
+    "Local taxi rate",
+    "Dorm beds"
+   ]
+  },
+  "mawphlang": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Shillong",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 3308,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Mawphlang&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com search 18-19 Nov 2026 tax-inclusive, 'Mawphlang: 3 properties found': Immaculate Homestay double room private bathroom 2100, Cozy corner Homestay economy double 3308, The old space inn double with pool access 5460; median 3308.",
+    "notes": "n=3 and very spread. Cleartrip has no Mawphlang hotels."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Mawphlang Sacred Forest (sedan, one way drop, Jagnish Tours 2026-27)",
+      "inr": 1200
+     }
+    ],
+    "basis": "Jagnish Tours 2026-27 rate list: Shillong to Mawphlang Sacred Forest sedan 1200.",
+    "sources": [
+     "https://www.jagnishtours.com/taxi-fare-in-shillong"
+    ],
+    "notes": "Single operator; no address printed."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 800,
+    "basis": "TripGuruGo (17 Jul 2026), Meghalaya-wide: budget food 400-600 per day, mid-range 800-1,200, Khasi thali 150-250. Lower bound used because villages have only set-meal homestay and dhaba options. No village-specific menu or Zomato page found.",
+    "sources": [
+     "https://www.tripgurugo.com/meghalaya-trip-cost/"
+    ],
+    "notes": "Regional blog range, not observed village menus."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Second taxi source",
+    "Mawphlang food prices"
+   ]
+  },
+  "tura": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2076,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4597358?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-rikman-continental-3964900?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1353,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4695375?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 4771,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tura%2C%20Meghalaya%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026 pre-tax (Hotel C&C 2692, Hotel Rikman Continental 1459; median 2076). Budget: Cleartrip 18-19 Nov 2026 pre-tax (Hotel Uphar 1353, 2-star). Homestay: Booking.com search 18-19 Nov 2026 tax-inclusive (Dongrama Homestay deluxe room 4771).",
+    "notes": "n is 1-2 per tier. Booking also lists IaDoRa Sojourn 5775 and UPHAR deluxe 2100. Odyssey Stays site lists a Tura double room at 2100 (undated). Rikman Continental page shows other rooms at 2839 and 4357."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Shillong to Tura (sedan, Shillong Travel Taxi)",
+      "inr": 7400
+     },
+     {
+      "route": "Shillong to Tura (sedan, one way drop, Jagnish Tours 2026-27)",
+      "inr": 6000
+     }
+    ],
+    "basis": "Long intercity fares only: Shillong Travel Taxi sedan 7400; Jagnish Tours 2026-27 sedan drop 6000. MakeMyTrip and Tripadvisor Tura pages would not load, so no local Tura day rate was observed.",
+    "sources": [
+     "https://shillongtraveltaxi.in/car-rental-fares/",
+     "https://www.jagnishtours.com/taxi-fare-in-shillong"
+    ],
+    "notes": "Local day rate for Tura left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Tura or Garo Hills food price found on any fetched page; the Holidify Tura restaurant page lists dishes without prices. Left null rather than reuse the Khasi Hills range.",
+    "sources": [
+     "https://www.holidify.com/places/tura/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Tura local taxi rate",
+    "Tura food prices",
+    "More than 1-2 properties per tier",
+    "Dorm beds"
+   ]
+  }
+ }
+}

@@ -1,0 +1,424 @@
+{
+  "batch": "B9",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "bomdila": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2815,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.kayak.co.in/hotels/Bomdila,Arunachal-Pradesh,India-c322351/2026-11-18/2026-11-19/2adults"
+        ],
+        "budget_hotel_median_inr": 2576,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4673026?c=18112026|19112026&r=2,0",
+          "https://www.booking.com/searchresults.html?ss=Bomdila&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+        ],
+        "homestay_median_inr": 4469,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.kayak.co.in/hotels/Bomdila,Arunachal-Pradesh,India-c322351/2026-11-18/2026-11-19/2adults",
+          "https://www.booking.com/searchresults.html?ss=Bomdila&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR",
+          "https://www.cleartrip.com/hotels/details/5421168?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "All tiers priced for Wed 18 Nov to Thu 19 Nov 2026, 1 room 2 adults. Mid: Kayak search page dated 18-19 Nov, price shown includes taxes and fees (Hotel Nambrog 3-star 2,834; Hotel Bonsai 3-star 2,796). Budget: Cleartrip detail page 18-19 Nov pre-tax (Hotel Snowland 2-star 2,507) and Booking.com search dated 18-19 Nov, tax-inclusive (Himland House 2,646; Kayak shows 2,644). Homestay: Kayak 18-19 Nov tax-inclusive (Lungta Homes 4,528 also on Booking; The Blooming Tulip homestay 4,469) and Cleartrip 18-19 Nov pre-tax (NT Riverview Homestay 3,762, +446 taxes). Tiers mix pre-tax and tax-inclusive figures as noted. The Booking and Kayak pages are JavaScript pages: set the dates 18-19 Nov, 2 adults if the page opens undated.",
+        "notes": "Thin market for that date: Cleartrip shows Hotel Elysium, Hilsan Residency, Hotel Jamyang, Hotel Dilli Phu, DKT Homestay all sold out on 18 Nov, and Booking says 75% of Bomdila stays are unavailable for the date. EaseMyTrip (undated) lists Hotel Elysium 2,350 and Hotel Nambrog 2,375 pre-tax, i.e. lower than the Kayak 18 Nov figure for Nambrog. Bomdila homestays priced above the 3-star hotels here because only two premium homestays had rooms. Dorm: none found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bomdila to Tawang shared Sumo, per seat (~170 km)",
+            "inr": 500,
+            "range": "about 500 per seat, 2022 figure from The Stupid Bear; likely higher now"
+          },
+          {
+            "route": "Bomdila to Dirang shared Sumo, per seat",
+            "inr": 150,
+            "range": "150 per seat, 2022 figure from The Stupid Bear"
+          },
+          {
+            "route": "Tezpur to Bomdila shared Sumo, per seat (~154 km)",
+            "inr": 650,
+            "range": "550-750 per seat range for Tezpur to Bomdila/Dirang/Bhalukpong, 2022 figure from The Stupid Bear, leg not clearly specified"
+          },
+          {
+            "route": "Tezpur to Bomdila reserved sedan (154 km)",
+            "inr": 3800,
+            "range": "CabBazar route page, AC sedan, undated; hatchback 3,700, SUV 5,000"
+          },
+          {
+            "route": "Bomdila to Tezpur reserved sedan (~153 km)",
+            "inr": 5888,
+            "range": "Gozocabs indicative one-way sedan fare before GST, undated"
+          },
+          {
+            "route": "Bomdila to Guwahati cab (263 km)",
+            "inr": 8878,
+            "range": "MakeMyTrip Bomdila city page, cab class not stated on page, plus 849 taxes and charges"
+          }
+        ],
+        "basis": "No Bomdila local-sightseeing day rate was found on any union card, tourism tariff or dated blog (searched Bomdila, Dirang, Tawang rate charts). Only intercity fares exist, so the local figure is null. Bomdila-Tawang road fares are quoted per seat by the Sumo stand and per vehicle by aggregators.",
+        "sources": [
+          "https://www.thestupidbear.com/how-to-reach-tawang-arunachal-pradesh/",
+          "https://cabbazar.com/taxi/cab/tezpur-to-bomdila",
+          "https://www.gozocabs.com/book-taxi/bomdila-tezpur",
+          "https://www.makemytrip.com/car-rental/bomdila-city-cabs.html"
+        ],
+        "notes": "The Stupid Bear Sumo fares are stated as 2022 research. CabBazar and Gozocabs pages carry no date and show dynamic route fares."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu, thali or cost-for-two figure found for a Bomdila restaurant on Zomato, Swiggy, Holidify, TravelTriangle or FTD (Zomato has no Bomdila page; Justdial returned 403 and was not retried). Left null.",
+        "sources": [],
+        "notes": "Tripadvisor lists Elegant Restaurant, L.K. Restaurant, Pokchi Hotel but with price bands only."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local sightseeing taxi day rate",
+        "Food prices",
+        "Dorm beds",
+        "3-star median is n=2 (Elysium and DKT sold out for 18 Nov)"
+      ]
+    },
+    "dirang": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 2293,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4270403?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/mudita-hotel-5298150?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 2599,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.booking.com/searchresults.html?ss=Dirang%2C+Arunachal+Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "All tiers priced for Wed 18 Nov to Thu 19 Nov 2026, 1 room 2 adults. Budget hotel: Cleartrip detail pages 18-19 Nov, pre-tax (Hotel Norbuling 3-star 1,859 + 112 taxes; Mudita Hotel 2-star 2,727 + 240 taxes). Homestay: Booking.com search dated 18-19 Nov, price includes taxes and charges (Vista Valley View homestay 2,310; RINCHIN TG Home Stay 2,573; Daisy Homestay Dirang 2,625; Divine Homestay Dirang 2,625). Booking page is JavaScript-rendered: confirm the dates read Wed 18 Nov to Thu 19 Nov.",
+        "notes": "Mid left null: only two Cleartrip 3-stars had rooms on 18 Nov and they are far apart (Hotel Norbuling 1,859 pre-tax, Dirang Buddha Hotel 6,126 + 1,713 taxes); Pemaling Lords Inn, Hotel Zambala, Awoo Resort, Hotel 7 Eleven were sold out. Booking shows Hotel Norbuling at 3,359 tax-inclusive for the same date, 80% above Cleartrip's pre-tax 1,859 (different channel/room), so Norbuling's price is uncertain. Other Booking homestays 18 Nov (tax-incl): Anna 1,785, Kalden 2,100, JC 2,100, Karkha Rivulet 2,100, Accomoon 2,554, Valley of Pines 2,499, M C P 2,625, Taleries 2,792, Kharjap 3,192, Bluebird Riverside 3,528 (Booking reports 33 properties; the first 15 cards were read, the rest not loaded)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Dirang to Tawang reserved sedan (140 km)",
+            "inr": 2900,
+            "range": "CabBazar route page, AC sedan, undated; hatchback 2,800, SUV 4,000"
+          },
+          {
+            "route": "Tezpur to Dirang reserved sedan (196 km)",
+            "inr": 4100,
+            "range": "CabBazar route page, AC sedan, undated; hatchback 4,000, SUV 5,200"
+          },
+          {
+            "route": "Bomdila to Dirang shared Sumo, per seat",
+            "inr": 150,
+            "range": "150 per seat, 2022 figure from The Stupid Bear"
+          }
+        ],
+        "basis": "No Dirang local-sightseeing day rate (Sangti Valley, hot spring, Thembang) found on a union card or dated operator page, so the local figure is null. Point-to-point only.",
+        "sources": [
+          "https://cabbazar.com/taxi/cab/dirang-to-tawang",
+          "https://cabbazar.com/taxi/cab/tezpur-to-dirang",
+          "https://www.thestupidbear.com/how-to-reach-tawang-arunachal-pradesh/"
+        ],
+        "notes": "CabBazar route pages are undated aggregator fares."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Dirang rupee menu, thali price or cost-for-two figure found (Holidify Dirang food section empty; Tripadvisor shows price bands only). Left null.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "3-star (mid) median",
+        "Local sightseeing taxi day rate",
+        "Food prices",
+        "Dorm beds"
+      ]
+    },
+    "bhalukpong": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "No price for 18-19 Nov 2026: Cleartrip lists Waii International Hotel, Prashaanti Cottage and Orchid Guest House as sold out for 18-19 Nov (list dated 13-14 Nov also sold out); Kayak 18-19 Nov shows 'Rate unavailable' for all 7 stays (Hotel SDC, Hotel Druk, Orchid Guest House, Waii International, Hotel Lhasa, Wangatsang Residency, Pop Yeshi Homestay); Booking.com has no Bhalukpong search results.",
+        "notes": "Lodging exists (7 stays listed on Kayak), but no dated rate could be read. Undated sources only: search-result snippets quote Waii International about 3,299 (Yatra) and Hotel SDC from 2,248 (EaseMyTrip), not verified on a page here, so not used."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Tezpur to Bhalukpong reserved sedan (58 km)",
+            "inr": 2200,
+            "range": "CabBazar route page, AC sedan, undated; hatchback 2,100, SUV 3,300"
+          },
+          {
+            "route": "Bhalukpong to Guwahati cab (245 km)",
+            "inr": 5249,
+            "range": "MakeMyTrip Bhalukpong city page, cab class not stated on page, plus 731 taxes and charges"
+          },
+          {
+            "route": "Guwahati to Bhalukpong cab (245 km)",
+            "inr": 5722,
+            "range": "MakeMyTrip Bhalukpong city page, cab class not stated, plus 697 taxes and charges"
+          }
+        ],
+        "basis": "Bhalukpong is a transit stop on the NH13 entry to Arunachal; no local sightseeing hire rate exists on any source found. Point-to-point only.",
+        "sources": [
+          "https://cabbazar.com/taxi/cab/tezpur-to-bhalukpong",
+          "https://www.makemytrip.com/car-rental/bhalukpong-city-cabs.html"
+        ],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee food source found for Bhalukpong (no Zomato page). Left null.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "All stay tiers (no dated rate)",
+        "Local taxi",
+        "Food",
+        "Dorm beds"
+      ]
+    },
+    "tawang": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 5000,
+        "vehicle": "SUV/cab, class not stated",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Tawang to Bumla Pass, Madhuri Lake and PT Tso, private round trip",
+            "inr": 5500,
+            "range": "5,500-6,000 private vehicle 2022 (The Stupid Bear); about 5,500 cab (Thrilling Travel, 29 Mar 2025); only Tawang-registered taxis allowed, DC permit needed a day before"
+          },
+          {
+            "route": "Tawang to Bumla, shared vehicle per seat",
+            "inr": 1500,
+            "range": "about 1,500 per ride/seat shared with 3-5 others, 2022-2025 sources, plus 100 per vehicle taxi union charge"
+          },
+          {
+            "route": "Bomdila to Tawang shared Sumo, per seat (~170 km)",
+            "inr": 500,
+            "range": "about 500 per seat, 2022 figure (The Stupid Bear)"
+          },
+          {
+            "route": "Tezpur to Tawang shared Sumo, per seat (~330 km)",
+            "inr": 1050,
+            "range": "1,000-1,100 per seat, 2022 figure (The Stupid Bear)"
+          },
+          {
+            "route": "Tezpur to Tawang reserved sedan (330 km)",
+            "inr": 6300,
+            "range": "CabBazar route page AC sedan, undated; ONE Cabs guide (Mar 2026, updated Aug 2026) also says sedans start at 6,300; SUV 8,500"
+          },
+          {
+            "route": "Guwahati to Tawang cab (420 km)",
+            "inr": 16171,
+            "range": "MakeMyTrip Tawang city page, cab class not stated, plus 867 taxes and charges"
+          }
+        ],
+        "basis": "ONE Cabs (onenortheastcabs.in, article published 3 Mar 2026, updated 24 Aug 2026) quotes a daily Tawang package of 5,000 per day, cab and driver for the day with no meter. Cross-checks: Staz Travel Diary (23 Apr 2026) paid 4,000 for a Day-1 local sightseeing cab in Tawang; Thrilling Travel (29 Mar 2025) quotes about 5,500 for a private cab on the Bum La and Madhuri Lake circuit. Median of 4,000, 5,000 and 5,500 = 5,000.",
+        "sources": [
+          "https://www.onenortheastcabs.in/blog/taxi-fare-from-tezpur-to-tawang",
+          "https://www.staztraveldiary.in/2026/04/tawang-travel-guide-itinerary-cost.html?m=1",
+          "https://thrillingtravel.in/travel-guide-tawang-trip-itinerary.html",
+          "https://www.thestupidbear.com/day-trip-to-bum-la-pass-from-tawang/",
+          "https://www.thestupidbear.com/how-to-reach-tawang-arunachal-pradesh/",
+          "https://cabbazar.com/taxi/cab/tezpur-to-tawang",
+          "https://www.makemytrip.com/car-rental/tawang-city-cabs.html"
+        ],
+        "notes": "No taxi union rate card was found online. ONE Cabs publishes a WhatsApp number but no street address. Tour Babari (22 Aug 2025) gives a much lower 2,500-3,500 for Bum La taxis and 500-1,500 per day for local cabs; treated as an outlier. Outside cabs are not allowed to do local sightseeing in Tawang (union rule), so operators arrange local vehicles."
+      },
+      "food_per_person_day": {
+        "budget_inr": 490,
+        "standard_inr": 600,
+        "basis": "Cost for two midpoints: TravelTriangle (page updated 28 Aug 2024) Yangke's Cafe 400, Dragon Restaurant 200-400, Northeast Flavours 300-400, Dharma Coffee House 400-600, Phun's Cafe 600-800, Chotton Restaurant 400-500, Taste of Tawang 400-600; Holidify (undated) Orange Bar & Restaurant 300, Dragon Restaurant 350. Standard = 3 meals x median of all nine midpoints (400) / 2 = 600. Budget = 3 x median of the four cheapest (Orange 300, Dragon 300, Dragon 350, Northeast Flavours 350 = 325) / 2 = 488, rounded to 490.",
+        "sources": [
+          "https://traveltriangle.com/blog/restaurants-in-tawang/",
+          "https://www.holidify.com/places/tawang/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Source prices are 2024 or older and undated respectively; expect current prices to be higher. No thali or momo menu prices found."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union-printed rate card",
+        "Current 2026 menu prices"
+      ]
+    },
+    "ziro-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3374,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4290132?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5680902?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hq-resort-5294810?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561596?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1539,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-blue-pine-2893808?c=18112026|19112026&r=2,0",
+          "https://www.booking.com/searchresults.html?ss=Ziro%2C+Arunachal+Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+        ],
+        "homestay_median_inr": 3098,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.booking.com/searchresults.html?ss=Ziro%2C+Arunachal+Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "All tiers priced for Wed 18 Nov to Thu 19 Nov 2026, 1 room 2 adults. Mid: Cleartrip detail pages 18-19 Nov, pre-tax (Ziro Palace Inn 2,224; Hotel Zimin Zero 3,222; HQ Resort 3,525; Hotel Horizon 4,341; all listed 3-star). Budget: Cleartrip 18-19 Nov pre-tax (Hotel Blue Pine 2-star 1,472) and Booking.com 18-19 Nov tax-inclusive (Hotel Zirora 1,606). Homestay: Booking.com search dated 18-19 Nov, tax-inclusive (Dilang Homestay 2,499; Nemi Homestay and Cottages 3,045; Miiring Homestay 3,150; Pigey Poro Homestay 3,150). Booking page is JavaScript-rendered: confirm dates read Wed 18 Nov to Thu 19 Nov.",
+        "notes": "Cleartrip also shows Ziro Palace Inn under two other listings (2894130 at 3,286 and 'A Boutique Hotel' 4487899 at 2,384) and Kasa Resort at 2,988; these may be duplicates of one property so only one Ziro Palace Inn listing was counted. Sold out on 18 Nov: Ziro Valley Resort, Hotel Zimin Ziro, Ziro Camps. Booking tax-inclusive 3-rated: Accomoon hotel 2,405, Hotel Zimin Ziro 2,469. Booking's Ziro homestay prices cluster at 3,150 (several properties show an identical price). Dorm: Hostelworld Ziro page returned 404."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 9,
+        "point_to_point": [
+          {
+            "route": "Naharlagun to Ziro reserved sedan (102 km)",
+            "inr": 2100,
+            "range": "CabBazar route page AC sedan, undated; Gozocabs shows 3,086 before GST for a Dzire (111 km); hatchback 2,000, SUV 2,800"
+          },
+          {
+            "route": "Itanagar to Ziro reserved sedan",
+            "inr": 4700,
+            "range": "CabBazar route page AC sedan, undated; SUV 5,900"
+          },
+          {
+            "route": "Naharlagun to Ziro shared Sumo, per seat",
+            "inr": 500,
+            "range": "about 400-600 per seat, undated blog (The Land of Wanderlust, image path April 2025)"
+          }
+        ],
+        "basis": "No Ziro or Hapoli local-sightseeing day rate found: ne.cab says it has a Ziro fare list but publishes no figures (book@ne.cab). Local figure left null. The outstation 9 per km is CabBazar's 'starting from' rate on its Ziro route pages.",
+        "sources": [
+          "https://cabbazar.com/taxi/cab/naharlagun-to-ziro",
+          "https://cabbazar.com/taxi/cab/itanagar-to-ziro",
+          "https://www.gozocabs.com/book-taxi/naharlagun-ziro",
+          "https://thelandofwanderlust.com/how-to-experience-ziro-valley-on-a-budget/",
+          "https://www.ne.cab/ziro-car-rental"
+        ],
+        "notes": "Splainer (15 Nov 2025) says a full taxi from the airport starts at 5,000 and shared taxis 500-600 per person, route not clear."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No restaurant menu or cost-for-two found for Ziro or Hapoli. Only fragments: Splainer (15 Nov 2025) says a meal at Ziro/Siiro resort restaurants 'could cost approx. Rs 600 and above'; The Land of Wanderlust gives thali 100-150 and street food under 80 (undated). Not enough for a per-day figure, left null.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Local sightseeing taxi day rate",
+        "Food per day",
+        "Dorm beds",
+        "Whether the three Ziro Palace Inn listings are one hotel"
+      ]
+    },
+    "pasighat": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1748,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/5425692?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5218271?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1083,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/5221152?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 3087,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.booking.com/searchresults.html?ss=Pasighat%2C+Arunachal+Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "All tiers priced for Wed 18 Nov to Thu 19 Nov 2026, 1 room 2 adults. Mid and budget: Cleartrip detail pages 18-19 Nov, pre-tax (Hotel Airport View 3-star 1,889 + 226 taxes; Hotel paaying regency 3-star 1,607 + 193 taxes; Hotel Amy 2-star 1,083 + 135 taxes). Homestay: Booking.com search dated 18-19 Nov, tax-inclusive (Tsering's Homestay Oyan 3,087, in Oyan about 20 km from Pasighat centre). Booking page is JavaScript-rendered: confirm dates read Wed 18 Nov to Thu 19 Nov.",
+        "notes": "Only four hotels have a rate on Cleartrip for the date (Hotel Abo Tani sold out). Booking.com shows 3 Pasighat properties for the date: The Gulmohar Grove 2,410 and The Siiying 3,675 (types not confirmed, not used) plus Tsering's Homestay. Homestay figure is a single property 20 km out, treat as indicative."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pasighat to Along (Aalo) reserved sedan (~105 km)",
+            "inr": 2961,
+            "range": "Gozocabs indicative one-way sedan fare before GST, undated"
+          }
+        ],
+        "basis": "No Pasighat local-sightseeing day rate found. CabBazar's Pasighat city page shows an identical rate table to its Tawang page (1,400/1,500/2,000), i.e. a template, so it was not used.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/pasighat-along"
+        ],
+        "notes": "A Tripadvisor reviewer reportedly paid about 2,500 all-in for a Daying Ering sanctuary visit (guide, forest fees, boat), not a cab rate; not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "Budget: TravelTriangle (page updated 5 Aug 2024) 'Price for 2' at April's Cafe 300-400, Moody Bliss 200-400, C V Restaurant 200-400, Naga Kitchen 200-400 (midpoints 350, 300, 300, 300; median 300 for two = 150 per meal) x3 meals = 450. Standard: Zomato Pasighat 'for one' at sit-down places Mughal Delight 250, Baane Dumbang 250, Naga Kitchen 400, Treat Corner 200 (median 250 per meal) x3 = 750. Zomato fast-food listings (Sonu Restaurant, Hotel Airport View, Deli FC, Kerala Kitchen, KFC) show 100 for one.",
+        "sources": [
+          "https://traveltriangle.com/blog/restaurants-in-pasighat/",
+          "https://www.zomato.com/pasighat/restaurants"
+        ],
+        "notes": "Budget uses a 2024 blog; standard uses the live Zomato listing (delivery-app 'for one' prices). Methods differ between the two tiers."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Local sightseeing taxi day rate",
+        "Homestay median is n=1",
+        "Dorm beds"
+      ]
+    }
+  }
+}

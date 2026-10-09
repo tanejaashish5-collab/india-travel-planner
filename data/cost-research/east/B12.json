@@ -1,0 +1,396 @@
+{
+  "batch": "B12",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "imphal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1997,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/aurora-boutique-hotel-imphal-3989863?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561829?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-sangai-hotel-3929820?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561993?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4595147?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5218281?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4562626?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1083,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4674558?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4695228?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561988?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4595102?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4671707?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 1,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax, cheapest room per property (Aurora 2737, Daani Continental 2646, Padma 2251, Sangai 1997, Imolesh 1971, Yaiphabaa 1907, Orchid 1827); several are non-AC or room-only cheapest rooms. Budget: same date, Cleartrip pre-tax (Phou-Oi-Bee 1380, Tantra 1087, Cheklaa 1083, City Centre 1015, Pi Hotel 1015). Hotel Imphal showed no rooms on the dates, excluded.",
+        "notes": "Only one Cleartrip homestay (Shalom Farm House, 3014 on 18-19 Nov, https://www.cleartrip.com/hotels/details/shalom-farm-house-4286501?c=18112026|19112026&r=2,0) so no homestay median. Hostelworld lists Cheklaa dorms but page shows no INR price without a search, so dorm left null."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "sedan/SUV",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Imphal to Loktak Lake (one way, private cab)",
+            "inr": 2000
+          }
+        ],
+        "basis": "Blog quotes, not a union chart: Dream and Travel (published 1 Jun 2026) says private full-day cabs average Rs 2,500 to 3,500 (median 3,000); AllBlogs (28 Oct 2025) says Imphal to Loktak one-way taxi 1,500 to 2,500 (median 2,000). No Manipur union rate card found online.",
+        "sources": [
+          "https://www.dreamandtravel.com/loktak-lake",
+          "https://allblogs.in/post/loktak-lake-keibul-lamjao-manipur-travel-guide-phumdis-boat-routes-homestays-wildlife-birding"
+        ],
+        "notes": "Operator sites in search (hurryupcabs, cabbazar, imphalcabs.com) are templates and not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "Derived: Holidify Imphal list prints Luxmi Kitchen approx Rs 160 per person and Happy Belly Rs 200; Slurrp (updated Jun 2022) prints Chakluk Paona Bazar approx Rs 500 for two (Rs 250 pp). Budget = ~3 meals at 130-170; standard = ~3 meals at ~250. Unit of other Holidify figures (Naoba's 400, Ok Hotel 400, Classic Cafe 500-700) is not stated.",
+        "sources": [
+          "https://www.holidify.com/places/imphal/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.slurrp.com/article/eromba-the-mainstay-of-manipuri-cuisine-5-traditional-lunch-places-in-imphal-1650592844733"
+        ],
+        "notes": "Zomato and Justdial pages timed out or returned 403, so no cost-for-two sample of 4-6 places."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "homestay median",
+        "dorm INR price",
+        "taxi union rate card",
+        "food from a 4-6 restaurant cost-for-two sample"
+      ]
+    },
+    "loktak-lake": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4950,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.classicgroupofhotels.com/sendra-resort/"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 3516,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.homestaysofindia.com/manipur-loktak-keibul-homestay/",
+          "https://en.wikivoyage.org/wiki/Floating_restaurants_and_homestays_in_the_Loktak_Lake"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Sendra Park & Resort by The Classic, official tariff card, Deluxe room double 4,950 (Cottage 7,499), Continental Plan, exclusive of tax, rates valid 1 Apr 2026 to 31 Mar 2027 (not a dated 18-19 Nov quote). Homestay: Keibul Homestay (floating, on lake) tariff card, Classic Room 3,000 (solo 2,100), includes breakfast, dinner, teas and boat transfer, undated, 'not applicable during festivals'; Loktak Aqua Inn Floating Homestay 4,032/night on Wikivoyage (undated, inclusions not stated). Median of the two is 3,516.",
+        "notes": "Only two floating stays print a rate. Blog ranges (floating homestay 500-1,500; Sendra Guest House ~2,500; Forest Rest House 1,500-2,500, bestofnortheast.com, Mar 2026) are ranges not listings and not used. Booking.com, Tripadvisor and homestay.com pages blocked or empty."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Imphal to Loktak Lake one way, private taxi (Mar 2026 guide, range 2,500-3,000, median)",
+            "inr": 2750
+          },
+          {
+            "route": "Imphal to Loktak Lake one way, private cab (Oct 2025 guide, range 1,500-2,500, median)",
+            "inr": 2000
+          }
+        ],
+        "basis": "Blog ranges only, no union chart found. bestofnortheast.com (updated Mar 2026): taxi to Loktak 2,500-3,000, shared taxi 100-200. allblogs.in (28 Oct 2025): one-way 1,500-2,500.",
+        "sources": [
+          "https://bestofnortheast.com/loktak-lake-travel-guide-floating-huts-stay/",
+          "https://allblogs.in/post/loktak-lake-keibul-lamjao-manipur-travel-guide-phumdis-boat-routes-homestays-wildlife-birding"
+        ],
+        "notes": "No local 8h rate found; visitors reach the lake from Imphal."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 900,
+        "basis": "Thin: allblogs.in (Oct 2025) says homestay food 200-500 per meal when not on a meal plan; Keibul Homestay tariff card prints lunch Rs 250 veg / 300 non-veg. Budget = 3 x 200 (low end of blog range); standard = 3 x 300 (Keibul non-veg lunch). Derived, not a menu sample.",
+        "sources": [
+          "https://allblogs.in/post/loktak-lake-keibul-lamjao-manipur-travel-guide-phumdis-boat-routes-homestays-wildlife-birding",
+          "https://www.homestaysofindia.com/manipur-loktak-keibul-homestay/"
+        ],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "dated 18-19 Nov homestay rates",
+        "budget hotel tier",
+        "local taxi day",
+        "restaurant cost-for-two sample"
+      ]
+    },
+    "moreh": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No price found for Moreh on any fetchable page.",
+        "notes": "Moreh has lodging (Elora Hotel, Ward 9, listed on trip.com with an 8.0 guest rating but no price without a date search; northeastadvisor.in names Moreh Tourist Lodge, Hotel Green Hill, The Blue Orchid Hotel). Cleartrip Moreh pages return no listings; Tripadvisor and Justdial-type pages returned 403 and were not worked around. Search-result snippets of Rs 3,132-3,900 for Elora were not on any page I could open, so not used."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No local day rate found. Operator pages that appeared for Imphal-Moreh are template cab sites and were not used. An eNidhi blog (June 2019) says a private taxi Imphal to Moreh (100 km) 'could cost anywhere between INR 5000 to 10000' and shared transport about 600-800 per person; too old and too wide to publish.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Moreh restaurant prices found on a fetchable page.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "all stay tiers",
+        "taxi",
+        "food"
+      ]
+    },
+    "ukhrul": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No dated or current price opened for Ukhrul.",
+        "notes": "Lodging exists (Magen Hills, Hotel Iceland, 25 Degree North Hotel, Ngashan Inn, Oasis Hotel). Cleartrip has no Ukhrul listings; Tripadvisor, HECT and planetofhotels pages returned 403 and Booking.com returned an empty page. Wikivoyage prints 2017-era rates (25 Degree North Rs 600 single / 900 double, Oasis 400-800) which are too old to publish."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No local day or union rate found. Wikivoyage (https://en.wikivoyage.org/wiki/Ukhrul, undated) prints a shared taxi/minivan from Imphal Interstate Bus Station at Rs 150 per seat (not a private cab). Private-cab figures seen only on template cab sites, not used; Gozocabs page shows placeholder 'from 0' fares.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or cost-for-two figure found for Ukhrul; Tripadvisor and Restaurant Guru show only price bands.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "all stay tiers",
+        "taxi",
+        "food"
+      ]
+    },
+    "tamenglong": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No price found on any opened page.",
+        "notes": "Small homestays/guesthouses exist (e.g. Asomi Singson Rural Homestay is listed on Holidify with a price in A$ only, no INR, so not used). Cleartrip has no Tamenglong listings; Airbnb 'Tamenglong' page shows only Imphal listings with no prices; Tripadvisor 403."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "SUV",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Imphal to Tamenglong one way, private taxi (indicative range 4,000-6,500, median)",
+            "inr": 5250
+          },
+          {
+            "route": "Tamenglong to Tharon Cave reserved vehicle (indicative range 1,000-2,500, median)",
+            "inr": 1750
+          }
+        ],
+        "basis": "travelladda.com Tamenglong guide, undated indicative estimates, not a union chart: 'approximately Rs 4,000-6,500 one way' Imphal to Tamenglong; 'approximately Rs 1,000-2,500' Tamenglong to Tharon Cave. No local 8h day rate found.",
+        "sources": [
+          "https://www.travelladda.com/best-places-to-visit-in-tamenglong"
+        ],
+        "notes": "Low reliability: single undated blog."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or cost-for-two figure found for Tamenglong.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "all stay tiers",
+        "local taxi day",
+        "food"
+      ]
+    },
+    "aizawl": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1991,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/emerald-hotel-4485476?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-grand-hotel-3911490?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4674555?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5429930?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5421184?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5682381?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5065295?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1522,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4670301?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4670313?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4597122?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/rt-mutbu-4681552?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5429929?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1754,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/the-1998-homestay-double-room-5730745?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 200,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://mizoramtourism.com/lodge-detail/59"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax, cheapest room per property (Quality Inn 2510, Jay Jay 2143, Mystic Hill 2136, JIT 1991, Emerald 1952, Grand 1932, Platinum Zarkawt 1816; several cheapest rooms are non-AC or room-only). Budget: same date, Cleartrip pre-tax (Delight Inn 1820, RT Mutbu 1573 quad room, Rest Inn 1522, Corporate Guest House 1071 shared bath, Hotel Ransam 541). Homestay: The 1998 Homestay apartment, Cleartrip 18-19 Nov 2026 pre-tax 1754.",
+        "notes": "Homestay n=1. Dorm: Mizoram Tourism Berawtlang Tourist Complex (Zemabawk, Aizawl) tariff card, undated, Dormitory Rs 200 per bed (listed 'for Boys', 0 available when fetched)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No local day rate found on an opened page. Aizawl has a State Transport Authority taxi-stand fare chart (Scribd 'Aizawl Taxi Fare', Mizo language) but the preview shows no fares. MakeMyTrip and ne.cab pages did not load or show no prices; cabbazar-type sites are templates and were not used.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 600,
+        "basis": "Derived from Zomato 'cost for one' figures seen in search results for Aizawl: Mizo restaurants Alpha Laphing 100, Zotei 100, M&N Foods 150, Becky's Kitchen 150, House of Food 200, Flavor Box 200, Lenglerh 250, Dara Choka 300; others Nepali Authentic Food 250, Hotel Platinum 400. Budget = 3 x ~125 (average of the four cheapest); standard = 3 x 200 (median of all 11 figures, 200). The Zomato page timed out on direct fetch, so these come from the search snippet.",
+        "sources": [
+          "https://www.zomato.com/aizawl/restaurants/mizo",
+          "https://www.zomato.com/aizawl/restaurants"
+        ],
+        "notes": "Low reliability: derived from per-meal 'for one' figures, not menus."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "local taxi day rate",
+        "dorm",
+        "homestay beyond n=1",
+        "food from a fetched Zomato page"
+      ]
+    },
+    "champhai": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1000,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://mizoramtourism.com/lodge-detail/64"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 200,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://mizoramtourism.com/lodge-detail/64"
+        ],
+        "price_basis": "Mizoram Tourism (govt) Champhai Tourist Lodge tariff card, undated: Double Room (2 pax) Non-AC Rs 1,000, Cottage Rs 1,500, Double Deluxe Rs 2,000, Dormitory Rs 200 per bed (0 available when fetched). Not a dated 18-19 Nov quote.",
+        "notes": "Only the govt lodge printed a rate. District site lists Hotel Holiday Home, Hotel Hranga Plaza, Hotel Chawngthu with no tariff; OTA pages (Cleartrip 404, Agoda empty) gave no prices. A Feb 2026 guide gives homestays 'around Rs 2,000-6,000' as a broad range (https://wildhilladventure.com/aizawl-to-champhai-travel-guide-2026/), not a listing, so not used."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Aizawl to Champhai one way, private sedan (Feb 2026 guide range 4,000-5,000, median)",
+            "inr": 4500
+          },
+          {
+            "route": "Aizawl to Champhai shared sumo per person (Feb 2026 guide)",
+            "inr": 700
+          }
+        ],
+        "basis": "wildhilladventure.com guide published 2 Feb 2026: sumo fare Aizawl to Champhai Rs 700 per person; private sedans Rs 4,000-5,000 one way. No local Champhai day rate or Zokhawthar fare given.",
+        "sources": [
+          "https://wildhilladventure.com/aizawl-to-champhai-travel-guide-2026/"
+        ],
+        "notes": "Single blog source."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Champhai menu or cost-for-two figure found on a fetched page. The Feb 2026 guide prints a thali at ~Rs 250 at '5 Sisters Restaurant' without clearly placing it in Champhai, so not used.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "mid-range hotel price",
+        "homestay price",
+        "local taxi day",
+        "food"
+      ]
+    }
+  }
+}

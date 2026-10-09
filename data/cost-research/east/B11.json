@@ -1,0 +1,422 @@
+{
+ "batch": "B11",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "kohima": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 5041,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-lavisto-5280839?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/la-colline-resort-4481424?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1969,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4940792?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-palm-guest-house-4287332?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 4490,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/akim-homestay-4063479?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax (taxes extra). Mid: Hotel Lavisto 3-star Standard Room room-only 4,213 and La Colline Resort 4-star Deluxe (breakfast included) 5,869; median of 2 = 5,041. Budget: The Guardian Hotel 2-star Double room-only 2,030 and The Palm Guest House 2-star Double room-only 1,908; median of 2 = 1,969. Homestay: Akim Homestay Twin Room with breakfast 4,490 (n=1, cheapest listed room, dearer than the budget hotels). No hostel dorm found.",
+    "notes": "Of 15 Kohima properties on Cleartrip, 10 showed 'No rooms available' for 18-19 Nov 2026 (Japfu, de Oriental Grand, Vivor, Kohima Camp by TUTC, Goroomgo x3, Kohima Homestay, Niraamaya, Camp Hornbill), so n is small. Anamoa Suites (apartments, 5,377-11,222) and Camp David Kigwema camp cottage (5,204 room-only, Zakhama near Kisama) were priced but not used as hotel medians. Booking.com and Hostelworld pages did not load."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Dimapur to Kohima private cab (range 2,500-4,500; midpoint)",
+      "inr": 3500
+     },
+     {
+      "route": "Kohima to Khonoma round trip with waiting (hired car, Oct 2023 traveller)",
+      "inr": 1300
+     },
+     {
+      "route": "PR Hill, Kohima to Kisama (ANTA fare, Nov 2024)",
+      "inr": 500
+     },
+     {
+      "route": "ISBT Kohima to Kisama (ANTA fare, Nov 2024)",
+      "inr": 700
+     }
+    ],
+    "basis": "Dimapur-Kohima: Nagaland food/travel guide (Mar 2026) says private cabs range roughly 2,500-4,500 by vehicle, season, pickup; 3,500 is the midpoint of that range. Khonoma: Daily Star traveller account updated 7 Oct 2023: 'We hired a car for Rs 1,300 for a round trip'. Kisama: DC Kohima notice of ANTA (All Nagaland Taxi Association) fares dated 28 Nov 2024, published for Hornbill 2024, so festival-period rationalised fares. No local 8-hour sightseeing rate found.",
+    "sources": [
+     "https://allblogs.in/post/nagaland-food-guide-for-travelers-kohima-kisama-village-homestays",
+     "https://www.thedailystar.net/star-holiday/news/trip-kohima-and-khonoma-3436666",
+     "https://ipr.nagaland.gov.in/REVISED-TAXI-FARES-ANNOUNCED-FOR-HORNBILL-FESTIVAL-IN-KOHIMA"
+    ],
+    "notes": "Local day rate left null: only template cab sites show one."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 1000,
+    "basis": "Kohima restaurant guide (18 Feb 2026) prints: local simple meal INR 120-250, Naga specialty dish INR 250-500, hotel restaurant meal INR 300-700. Budget = 3 simple meals at about 150 each; standard = cafe breakfast about 250 plus 2 specialty or hotel meals at about 375 each. Derived by us from these ranges, not from per-restaurant menus.",
+    "sources": [
+     "https://trekgo.in/blog/restaurants-kohima"
+    ],
+    "notes": "Zomato Kohima pages timed out, so no per-restaurant figures."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Local 8-hour sightseeing taxi rate",
+    "Hostel dorm price",
+    "More than 2 mid and 2 budget Kohima priced properties for 18-19 Nov (most sold out)",
+    "Per-restaurant menu or Zomato cost-for-two figures",
+    "Official non-festival ANTA fare chart"
+   ]
+  },
+  "khonoma": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2000,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.homestaysofindia.com/nagaland-kohima-khonoma-happy-hues-homestay/",
+     "https://unpaqd.com/blog/khonoma-village/"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "UNDATED, not an 18-19 Nov quote. Homestay: Happy Hues Homestay tariff card 2,550 for Classic Room up to 2 people incl. breakfast (card says tariff does not apply during festivals and holidays); Unpaqd blog dated 29 Dec 2025: Dovipie Inn Rs 800 per night (budget) and The Morung Lodge Rs 2,000 per night (mid-range). Median of 800, 2,000, 2,550 = 2,000, n=3.",
+    "notes": "Cross-checks, not in the median: Nexplore (updated 16 Jun 2026) says a homestay costs Rs 2000 - Rs 3000 per night; Tripoto (undated) says Rs 1000 to Rs 2000; Xplro (3 Jul 2025) says most charge 1,500-3,000. Nagaland Tourism homestay list page (tourism.nagaland.gov.in/homestay/) timed out so no official tariff. Cleartrip has no Khonoma list; Booking.com pages did not load. No hotels in the village."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Kohima to Khonoma private car one-way (Dec 2025 blog)",
+      "inr": 1500
+     },
+     {
+      "route": "Kohima to Khonoma round trip hired car (Oct 2023 traveller)",
+      "inr": 1300
+     },
+     {
+      "route": "Kohima to Khonoma shared taxi per head (Dec 2025 blog)",
+      "inr": 100
+     }
+    ],
+    "basis": "Unpaqd blog (29 Dec 2025): 'Private, one-way: Rs 1,500', shared Kohima to Khonoma 'Rs 100 per head'. Daily Star (updated 7 Oct 2023): 'We hired a car for Rs 1,300 for a round trip'. The two disagree (one-way dearer than round trip); both shown. Khonoma is a walking village, no local-day cab rate found.",
+    "sources": [
+     "https://unpaqd.com/blog/khonoma-village/",
+     "https://www.thedailystar.net/star-holiday/news/trip-kohima-and-khonoma-3436666"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No own source: pages give only single items (lunch Rs 100 at Kene's Kitchen, noodles Rs 50) and homestay rates often include meals. Left null rather than borrowing Kohima's figure.",
+    "sources": [
+     "https://unpaqd.com/blog/khonoma-village/"
+    ],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated 18-19 Nov homestay price",
+    "Official Nagaland Tourism homestay tariffs",
+    "Food cost per day",
+    "Local-day cab rate",
+    "Hostel dorm"
+   ]
+  },
+  "dzukou-valley": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Viswema (road trailhead) or Zakhama/Kohima; the valley itself has a government rest house with dorms",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "NOT PRICED: sources disagree about 8x and no official tariff page was found. Allblogs (28 Oct 2025): 'Rs 300-500 for dorm bed per person' and 'Rs 800-1500-ish for private rooms when available'. Muddie Trails (6 Dec 2023): 'dormitory accommodation is priced at 50 Rs per person', 'private rooms are available for 300 Rs per room'. Twobirdsbreakingfree (undated): floor space in either dorm 50 rupees per night. The ETLR blog (6 Jul 2021): INR 50 dormitory, INR 300 private rooms. Left null so the auditor can choose.",
+    "notes": "Rest house has dorms and a few private rooms, spot booking, bedding extra (Rs 50 per item per ETLR blog 2021). Entry fee Rs 100 domestic (twobirds undated). Camping Rs 500-800 tent rental (allblogs 2025)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sumo",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Viswema village gate to Dzukou trailhead (Trekker's Point) by chartered Sumo; page range 1,000-1,500, midpoint",
+      "inr": 1250
+     }
+    ],
+    "basis": "Twobirdsbreakingfree guide (undated, December visit): 'Expect to pay 1,000 to 1,500 INR for this service' (charter a Sumo, Viswema gate to Trekker's Point). The ETLR blog (Jul 2021) says about INR 1500 for the 8 km motorable stretch and about INR 50 for a shared Sumo seat Kohima to Viswema. Dzukou is a trek, so no local sightseeing day.",
+    "sources": [
+     "https://www.twobirdsbreakingfree.com/dzukou-valley-nagaland-complete-guide",
+     "https://theetlrblog.com/dzukou-valley-trek-guide/"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": 470,
+    "standard_inr": null,
+    "basis": "Derived from rest-house kitchen prices in the Twobirdsbreakingfree guide (undated): plain Maggie 50, vegetarian meal 200, red tea 20. Budget day = Maggie 50 + tea 20 for breakfast, then two vegetarian meals at 200 = 470. Allblogs (Oct 2025) gives 'Food at rest house: Rs 150-400'; Muddie Trails (Dec 2023) says dinner 200 rupees per serving.",
+    "sources": [
+     "https://www.twobirdsbreakingfree.com/dzukou-valley-nagaland-complete-guide",
+     "https://allblogs.in/post/dzukou-valley-trek-manipur-nagaland-season-permits-campsites"
+    ],
+    "notes": "Standard tier does not exist at the valley (rest house kitchen only)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Official rest house tariff (dorm and rooms)",
+    "Current dorm rate (50 vs 300-500 conflict)",
+    "Dated taxi quote"
+   ]
+  },
+  "pfutsero": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 800,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://footloosedev.com/pfutsero-nagaland/"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "UNDATED single-property blog quote (no publication date on the page): The Mini Tourist Lodge 'charged us 800 Rs for a double bedroom per night'. Not an 18-19 Nov quote.",
+    "notes": "Cleartrip has no Pfutsero page (hotels-in-pfutsero returned 404). No tariff found for any other Pfutsero property."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Pfutsero to Tsupfume by hired taxi, per trip",
+      "inr": 800
+     }
+    ],
+    "basis": "Same blog (undated): hired taxi Pfutsero to Tsupfume 'costs around 800 Rupees per trip'; shared taxi Kohima to Pfutsero 'around 200 Rupees per person per journey' (a seat, not a cab). No local 8-hour rate found.",
+    "sources": [
+     "https://footloosedev.com/pfutsero-nagaland/"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": 520,
+    "standard_inr": null,
+    "basis": "Same blog (undated): 'Meals were charged 120 and 200 for breakfast and lunch/dinner respectively'. Budget day = 120 + 200 + 200 = 520 at the lodge.",
+    "sources": [
+     "https://footloosedev.com/pfutsero-nagaland/"
+    ],
+    "notes": "Single lodge, single traveller report."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Any dated 18-19 Nov price",
+    "Second and third property for a median",
+    "Local-day cab rate",
+    "Standard-tier food"
+   ]
+  },
+  "mokokchung": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2000,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://traveltriangle.com/blog/hotels-in-mokokchung/"
+    ],
+    "budget_hotel_median_inr": 1350,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://traveltriangle.com/blog/hotels-in-mokokchung/"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "UNDATED printed price RANGES from one listicle updated 19 Aug 2024 (no 18-19 Nov quote; Cleartrip has no property list for Mokokchung and Booking/Yatra/MMT pages timed out or were empty). Figure = midpoint of each range, then median. Mid: Whispering Winds Rs 1,000-2,800 (mid 1,900), Hotel Tairas Rs 1,200-3,000 (mid 2,100) -> 2,000. Budget: The Magnus Rs 500-2,000 (1,250), Hotel Marvel Guest House Rs 700-2,200 (1,450), Hotel Towncentre Rs 1,200-1,500 (1,350) -> 1,350.",
+    "notes": "Hotel Fairmount (Rs 1,500-2,500) excluded: its listed address is at 7th Mile, Chumoukedima, not Mokokchung. Star classes are not stated by the listicle for Tairas; Whispering Winds is treated as the mid tier by name only. Ranges are wide, so confidence is low."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union or operator rate found. Only aggregator pages (CabBazar, Gozocabs) came up in search and are not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Mokokchung-specific food prices found; not borrowed from Kohima.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated Nov 2026 hotel prices",
+    "Local taxi rate",
+    "Food",
+    "Homestays",
+    "Dorm"
+   ]
+  },
+  "mon": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1250,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://beyondwildplaces.com/how-to-get-to-longwa-in-nagaland/",
+     "https://allblogs.in/post/longwa-village-indo-myanmar-border-nagaland-konyak-tribe"
+    ],
+    "homestay_median_inr": 1000,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://beyondwildplaces.com/how-to-get-to-longwa-in-nagaland/",
+     "https://travelshoebum.com/2022/01/12/two-days-in-longwa-nagaland/",
+     "https://allblogs.in/post/longwa-village-indo-myanmar-border-nagaland-konyak-tribe"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "UNDATED / old blog quotes, not 18-19 Nov. Budget hotels in Mon town: Beyond Wild Places (updated 5 Dec 2021) paid Rs 1,000 at Helsa's Cottage and Rs 1,000 at Paramount Guesthouse; Allblogs (28 Oct 2025) prints Mon Tourist Lodge Rs 1,200-1,800 (mid 1,500) and Paramount Guest House Rs 1,500-2,500 (mid 2,000); median of 1,000, 1,000, 1,500, 2,000 = 1,250. Homestay (Longwa village, 40+ km from Mon): Longsha's Rs 1,000 per room (Beyond Wild Places 2021), a homestay booked at INR 800 per room (Travelshoebum, 2022 trip), Longwa Village Homestay Rs 1,500-2,500 incl simple meals (Allblogs 2025, mid 2,000); median = 1,000.",
+    "notes": "Mon town has few formal hotels; Cleartrip has no Mon page; EaseMyTrip 'Mon' results are in Sonari, Assam and were ignored. Footloosedev also gives Jeilei's homestay at about Rs 600 per bed per person (undated)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Mon to Longwa and back, private taxi for the day (page range 2,500-4,000, midpoint)",
+      "inr": 3250
+     },
+     {
+      "route": "Mon to Longwa shared sumo, per seat (page range 150-250)",
+      "inr": 200
+     }
+    ],
+    "basis": "Allblogs Longwa guide (28 Oct 2025): 'Private taxi for the day costs Rs 2,500-4,000' and shared sumo 'fare Rs 150-250 per seat'; the same page elsewhere says Rs 300-500 per seat and 2,500-3,500 return, so it contradicts itself. Older reports: Rs 150 per seat (Beyond Wild Places 2021, 2 hours), INR 170 per seat (Travelshoebum 2022). No union rate card found.",
+    "sources": [
+     "https://allblogs.in/post/longwa-village-indo-myanmar-border-nagaland-konyak-tribe",
+     "https://beyondwildplaces.com/how-to-get-to-longwa-in-nagaland/",
+     "https://travelshoebum.com/2022/01/12/two-days-in-longwa-nagaland/"
+    ],
+    "notes": "Local-day figure left null: the Mon-Longwa day trip is the only common cab use and is recorded as point_to_point."
+   },
+   "food_per_person_day": {
+    "budget_inr": 540,
+    "standard_inr": null,
+    "basis": "Longwa homestay meals (not Mon town restaurants): Footloosedev (undated) 'Rs 180 and 200 per person per meal for vegetarians and non-vegetarians'. Budget day = 3 vegetarian meals at 180 = 540. Beyond Wild Places (2021): about 150 rupees per meal; Travelshoebum (2022): 200 INR per meal.",
+    "sources": [
+     "https://footloosedev.com/longwa-mon-nagland/",
+     "https://beyondwildplaces.com/how-to-get-to-longwa-in-nagaland/",
+     "https://travelshoebum.com/2022/01/12/two-days-in-longwa-nagaland/"
+    ],
+    "notes": "Homestay prices can be per-bed-with-meals; check double counting with the stay figure."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated Nov 2026 prices",
+    "Mon town restaurant prices",
+    "Official taxi union rates",
+    "Hostel dorm"
+   ]
+  },
+  "kiphire": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "NOT PRICED: no rate found for any Kiphire town property. Named guest houses (GA Rest House, Tsatongse Anar Memorial Guest House) print no tariff. Allblogs (8 Jan 2026) prints Pungro Government Guest House / Circuit House Rs 1,000-2,000 per night and Thanamir homestays Rs 800-1,500 per person per night including basic meals, but Pungro and Thanamir are different villages.",
+    "notes": "Kiphire has lodging (government guest houses), only the price is missing."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sumo",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Full-day vehicle from Kiphire side to Thanamir (page range 3,500-5,000, midpoint)",
+      "inr": 4250
+     },
+     {
+      "route": "Pungro to Thanamir whole vehicle if seats unfilled",
+      "inr": 3000
+     }
+    ],
+    "basis": "Allblogs Saramati guide (8 Jan 2026): 'budget around 3,500-5,000 for the vehicle' for a full day from Kiphire side to Thanamir. Gypsy Chiring (updated 17 Aug 2026): Pungro to Thanamir whole vehicle 'Rs 3000' if seats go unfilled; shared sumo to Thanamir (2023) 'Rs 250 per seat'.",
+    "sources": [
+     "https://allblogs.in/post/mt-saramati-base-camp-trek-nagaland-highest-peak-guide",
+     "https://thegypsychiring.com/mount-saramati-peak-trek-nagaland/"
+    ],
+    "notes": "No local sightseeing rate for Kiphire town."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Kiphire meal prices found; Thanamir homestay rate includes meals but is not split.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Any Kiphire town lodging tariff",
+    "Local taxi rate",
+    "Food prices"
+   ]
+  }
+ }
+}

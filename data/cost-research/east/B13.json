@@ -1,0 +1,378 @@
+{
+ "batch": "B13",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "agartala": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2632,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4265572?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sonar-tori-2045354?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671186?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4764539?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5220221?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-welcome-palace-2884780?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2014,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/airdrop-hotel-4273434?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/executive-inn-3931656?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-himalaya-4291518?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5421186?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1428,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/agartala-homestay-agartala-5253754?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5429763?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": null,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax (Ginger 3932, Sonar Tori 2531, Elite 2707, Ektara Sutra 2557, Hotel Star 4551, Welcome Palace 2145). Budget: same dates, Airdrop 2064, Executive Inn 1963, Himalaya 2118, Epar Bangla 1692 (median of 4 = 2013.5). Homestay: same dates, Agartala Homestay 1601, Vaishnav Cottage 1255. All hotels taken from Cleartrip's 3-star-hotels-in-agartala list; mid/budget split is by price (>=2500 mid), not by individual star label. Rimi International had no rooms on the dates.",
+    "notes": "Hotels sit in a narrow band, so budget/mid separation is thin. Homestay n=2 only. No Hostelworld dorm found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union rate chart, TTDCL car-hire tariff or Savaari/MakeMyTrip city page with a printed local-day rate could be loaded. Only a blog planning range (private car with driver 2,500-4,500+ per day, any route, GuavaTrips updated 17 Sep 2026) was found; not used as a figure because it is an author estimate, not a quote.",
+    "sources": [
+     "https://www.guavatrips.com/domestic-itineraries/a-4-day-tripura-itinerary-the-unexplored-northeast"
+    ],
+    "notes": "Blog gives local auto rides 50-300 and shared Battala-Melaghar 30-50 (June 2025)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 375,
+    "standard_inr": 750,
+    "basis": "Zomato Agartala listing 'for two' costs: budget places Devi Fast Food 250, Frespresso 250, Wow Momo 300 (median 250 for two = 125 a meal x3 = 375); Zomato veg-thali delivery listings show thalis at 100-200 for one. Standard: Chutney 450, Sherowali 350, Daya Hari Chatpata 500, Kalila Tea & Coffee House 600, Steamin Mugs 1000 (median 500 for two = 250 a meal x3 = 750). Exclusive of taxes.",
+    "sources": [
+     "https://www.zomato.com/agartala/restaurants",
+     "https://www.zomato.com/agartala/chutney-dhaleswar-agartala",
+     "https://www.zomato.com/agartala/sherowali-restaurant-cafe-krishna-nagar-agartala",
+     "https://www.zomato.com/agartala/delivery/dish-veg-thali"
+    ],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "local sightseeing taxi day rate (no union/tourism/Savaari source)",
+    "hostel dorm bed",
+    "Rimi International, Parkline hotels not priced (sold out)"
+   ]
+  },
+  "neermahal": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": null,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": null,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": null,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": null,
+    "dorm_sources": [],
+    "price_basis": "No dated price obtained. Lodging exists at Melaghar (Neermahal): Sagarmahal Tourist Lodge (Tripura Tourism) and Lake Side Resort Neermahal. Lake Side Resort showed 'No rooms available' on Cleartrip for both 13-14 Nov and 18-19 Nov 2026. EaseMyTrip shows undated Lake Side prices (3,779-4,799 + tax) that disagree with other sites (Goibibo 1,888+452 via search snippet), so none used. Sagarmahal official tariff page (tripuratourism.gov.in/sagarmahal) could not be loaded from here (connection refused); two search-snippet readings of it disagreed (double AC 700 vs 800, deluxe AC 950 in both), so no figure is given.",
+    "notes": "Govt lodge AC doubles are reportedly in the Rs 700-950 band (tariff card, undated, unverified here)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism-department or Savaari/MakeMyTrip quote found for Agartala to Neermahal (only template aggregator pages, not used). Public transport only: shared auto Battala to Melaghar 30-50, Melaghar to Rudrasagar ghat about 20, motorboat to Neermahal 30-50 per person (as of June 2025).",
+    "sources": [
+     "https://www.guavatrips.com/domestic-itineraries/a-4-day-tripura-itinerary-the-unexplored-northeast"
+    ],
+    "notes": "Neermahal is a boat trip; no local cab day applies. Agartala is about 50 km."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Neermahal-specific menu or Zomato 'for two' source found; not borrowed from Agartala.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "all stay tiers (no dated price; lodges sold out or tariff page unreachable)",
+    "taxi",
+    "food"
+   ]
+  },
+  "unakoti": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Kailashahar (Unakoti Tourist Lodge, Tripura Tourism, 8 km from the Unakoti site)",
+    "mid_median_inr": null,
+    "mid_n": null,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 800,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://tripuratourism.gov.in/unakoti"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": null,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": null,
+    "dorm_sources": [],
+    "price_basis": "Budget: Tripura Tourism tariff card for Unakoti Tourist Lodge, Kailashahar: Double bedded AC room Rs 800 incl 0% GST (Deluxe AC 950, Suite AC 1792 incl 12% GST). Tariff card, undated; read from a search-result snippet because the government site refused connections from here. A Tripadvisor guest review also says two AC twin rooms at Rs 800 each. The tourism booking portal reportedly lists the lodge 'from 1,344' (not loadable here), so this may understate current online price. No OTA dated price found for 18-19 Nov.",
+    "notes": "Unakoti itself (rock-cut sculptures) has no lodging; stay is in Kailashahar, about 8 km away. Basic government lodge, Tripadvisor 2/5."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Only template cab-aggregator fares exist for Agartala to Unakoti; no union or tourism-department quote found. A GuavaTrips-type planning range is not used.",
+    "sources": [],
+    "notes": "Agartala to Kailashahar is about 5 hours each way (GuavaTrips, updated 17 Sep 2026)."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Kailashahar/Unakoti menu or Zomato cost-for-two source found; not borrowed from Agartala.",
+    "sources": [],
+    "notes": "Lodge food must be ordered in advance and is basic (Tripadvisor reviews)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "dated online stay price",
+    "taxi",
+    "food"
+   ]
+  },
+  "jampui-hills": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": null,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1680,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://tripuratourism.gov.in/eaden",
+     "https://tourism.tripura.gov.in/hotel/eden-tourist-lodge"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": null,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": null,
+    "dorm_sources": [],
+    "price_basis": "Budget: Eden Tourist Lodge, Vanghmun (Tripura Tourism), tariff card: Double-bedded AC room Rs 1,680 (30 rooms); Triple-bedded AC room Rs 1,904; four-bedded non-AC Rs 2,128; page last updated 22-Dec-2023. Booking portal listing reads 'from 1,680/night'. Tariff card, undated for the stay; read from search-result snippets because both government sites refused connections from here. No OTA dated price exists.",
+    "notes": "Eden Tourist Lodge is described as the only resort lodging in the area; private homestays exist (Orange Valley, MJ, SS) but no page printing a tariff was found. A blog quotes 1,200-1,600 for a homestay but is internally inconsistent, so not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "suv",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union/tourism quote found; one blog's Agartala to Vanghmun 5,500-7,500 and car hire 4,500-6,000/day are internally inconsistent author estimates, not used.",
+    "sources": [],
+    "notes": "Reached by train to Dharmanagar plus shared jeeps; Agartala to Jampui is a long outstation run."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No menu or cost-for-two source found; Eden Lodge dining is fixed-menu meals only (Tripadvisor reviews).",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay tariff",
+    "taxi",
+    "food",
+    "mid tier"
+   ]
+  },
+  "diu": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 5001,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/the-grand-highness-1361516?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-prince-3919304?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-apaar-387335?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-ankur-383934?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-the-tulip-4482548?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2440,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-cidade-de-diu-2431650?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4271366?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292490?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292489?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": null,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": null,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip detail pages, 18-19 Nov 2026, 2 adults, cheapest room pre-tax. Mid (n=5): Grand Highness 4270, Apaar 3416, Prince 5001, Ankur 5004, Tulip 6054. Budget (n=4): Cidade de Diu 2309, Rainbow Resort & Spa 2510 (pool-view standard double), Hotel Laabh 2410, Golden Paying Guest House 2470 (a 'Jackpot Deal', list 4900). Mid/budget split by price. At least 8 other Diu hotels showed 'No rooms available' for these dates.",
+    "notes": "Sold-out hotels suggest the post-Diwali week is still busy; the dated price is the 18-19 Nov midweek rate. No dorm hostels in Diu on Hostelworld."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3212,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Somnath to Diu return with full-day Diu local sightseeing (sedan; Ertiga 4,560, Innova 5,900)",
+      "inr": 3900
+     }
+    ],
+    "basis": "MakeMyTrip Diu city cab page, 8 hr / 80 km rental, sedan 'starts at 3,212' (SUV from 4,447), taxes extra; figure read from a search-result snippet because the MakeMyTrip page timed out/failed TLS here. Point-to-point: Shreeji Tours & Travels (Somnath operator) page prices a Somnath-Diu return with Diu local sightseeing. No Diu taxi-stand union chart found; cheaper template-site quotes (about 1,500) not used.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/diu-city-cabs.html",
+     "https://www.shreejitourstravels.com/vehicle-rental/taxi-package/somnath-to-diu-return-taxicab-service-with-diu-local-sightseeing"
+    ],
+    "notes": "Local figure unverified by direct page load; auditor may drop it."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 675,
+    "basis": "Zomato Diu restaurant list, 'for one' per-meal costs: Dream Vision 100, Apana Hotel 200, Rasoi Open Restaurant 200, Hotel Alishan 250. Budget = 3 meals x 150 (median of cheaper two, 100 and 200); standard = 3 meals x 225 (median of upper two, 200 and 250). Zomato 'for one' is a delivery-style per-person meal cost; sit-down seafood and beachside meals cost more.",
+    "sources": [
+     "https://www.zomato.com/diu/restaurants"
+    ],
+    "notes": "n=4; likely understates beachside seafood meals."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "taxi local day rate not directly loaded",
+    "homestay tier",
+    "dorm (no Diu hostels on Hostelworld)",
+    "sit-down seafood meal prices"
+   ]
+  },
+  "daman": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4094,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/nest-beacon-resort-daman-4281726?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/raspberry-breeze-daman-4283592?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/presidency-landmark-3924752?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sagar-presidency-165627?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-reevanta-1330216?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1960,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-gurukripa-159362?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-ambica-3947445?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670113?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 3468,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/damannest-homestay-5735114?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 1168,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/asia/india/daman/?currency=INR"
+    ],
+    "price_basis": "Cleartrip detail pages, 18-19 Nov 2026, 2 adults, cheapest room pre-tax. Mid (n=5): Nest Beacon 3500, Presidency Landmark 3105 (with breakfast), Sagar Presidency 4094, Reevanta 4232, Raspberry Breeze 5888; VITS Daman Devka Beach (9,750) excluded as a premium resort. Budget (n=3): Gurukripa 2290, Ambica 1339, Parqotel 1960. Homestay (n=1): DamanNest Homestay, an apartment, room only 3468; Hasmukh Villa (7,474, two-bedroom villa) excluded. Dorm: Moustache Daman 'from Rs1168' on Hostelworld, undated. Emerald, Cidade de Daman, Sandy Resort, Silver Resort had no rooms.",
+    "notes": "Prices are the midweek 18-19 Nov rate; Diwali-week weekend prices are much higher (13-14 Nov list prices ran 20-40% above)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 1680,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "M.S. Tour & Travels (Shop 412/9, Opp. Win Tree Hotel, Silvassa-Naroli Road, Athal, Silvassa 396230) Daman cab page: local sightseeing 80 km / 8 hrs, New Swift Dzire 1,680 incl 5% GST (Etios 1,785, Ertiga 2,100, Innova 2,415, Innova Crysta 2,625); 40 km / 4 hrs Dzire 1,050. Page undated.",
+    "sources": [
+     "https://mstravelssilvassa.com/online-cab-booking/daman"
+    ],
+    "notes": "Operator is Silvassa-based; the page sets the packages for Daman. Single operator, no union chart found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 600,
+    "basis": "Zomato Daman restaurant list, 'for one' per-meal costs for non-chain places: The Vada Pav Adda 100, Ajay's 100, Aahar Food Parlour 150, 7Slices Kitchen 150, Manya Restaurant 200, Food Zone Restaurant 200. Budget = 3 x 100 (median of cheaper three: 100,100,150); standard = 3 x 200 (median of upper three: 150,200,200). Zomato 'for one' is a delivery-style per-person meal cost.",
+    "sources": [
+     "https://www.zomato.com/daman/restaurants"
+    ],
+    "notes": "n=6; fast-food heavy list, likely understates sit-down and seafood meals."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "taxi union rate chart",
+    "sit-down restaurant and seafood meal prices"
+   ]
+  },
+  "silvassa": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4692,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-red-chillee-restro-4009038?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2222,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/pioneer-hotel-327323?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/yatri-niwas-by-hotel-suraj-inn-5279864?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": null,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": null,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip detail pages, 18-19 Nov 2026, 2 adults, cheapest room pre-tax. Mid (n=1): Hotel Red Chillee Restro 4692; Praveg Rezort (8,762 resort) excluded. Budget (n=2): Pioneer Hotel 2385, Yatri Niwas by Suraj Inn 2058 (median 2221.5). Le Royale, Soubhagya Inn, Damanganga Valley Resort had no rooms.",
+    "notes": "Very small sample, only 7 properties on Cleartrip's Silvassa list."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 1575,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 11,
+    "point_to_point": [],
+    "basis": "M.S. Tour & Travels (Shop 412/9, Opp. Win Tree Hotel, Silvassa-Naroli Road, Athal, Silvassa 396230) Silvassa page: local sightseeing 80 km / 8 hrs, New Swift Dzire 1,575 incl 5% GST (Ertiga 2,100, Innova Crysta 2,625); sedan per-km 'Rs 10 to 12' (midpoint 11). Page undated.",
+    "sources": [
+     "https://mstravelssilvassa.com/online-cab-booking/silvassa"
+    ],
+    "notes": "Single local operator with a real address."
+   },
+   "food_per_person_day": {
+    "budget_inr": 375,
+    "standard_inr": 900,
+    "basis": "Zomato Silvassa restaurant list, 'for one' per-meal costs, non-chain places: Burger Singh 100, Shree Brahmani Fast Food 150, SFC Dhaba 150, The Roasters 200, The Veg Kutty's Restaurant 400. Budget = 3 x 125 (median of 100 and 150); standard = 3 x 300 (median of 200 and 400). Delivery-style per-person meal cost.",
+    "sources": [
+     "https://www.zomato.com/silvassa/restaurants"
+    ],
+    "notes": "n=5 and a wide spread; low confidence."
+   },
+   "confidence": "low",
+   "unverified": [
+    "taxi union chart",
+    "sit-down restaurant meal prices",
+    "homestay and dorm tiers"
+   ]
+  }
+ }
+}

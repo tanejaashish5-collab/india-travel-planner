@@ -1,0 +1,570 @@
+{
+ "batch": "B6",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "sambalpur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2154,
+    "mid_n": 10,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4531252?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670326?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292277?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4561134?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/regenta-inn-sambalpur-farm-road-3943300?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5679622?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5681869?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/tribeni-hotel-3963041?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4700448?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/ambient-rooms-4488633?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2575,
+    "budget_n": 7,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-sheela-towers-871054?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4561162?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-saket-3931654?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670646?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4563446?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-harjit-residency-3963030?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4694826?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid and Budget: Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price shown (taxes extra). Mid = 3-star listings, Budget = 2-star listings from Cleartrip's Sambalpur homestay/budget lists.",
+    "notes": "Mid (n=10, 3-star): Royal Retreat 2,810; Mehfil Marriage Palace 1,272 (marriage-hall hotel); Narmada Residency 2,739; The Mandarin 2,887; Regenta Inn Farm Road 3,316; Shree Satyam 1,449; Swagat Residency 1,708; Tribeni 1,757; Pearl Orchid 2,096; Ambient Rooms 2,212. Sold out for 18 Nov and excluded: Welcome Resorts and Spa, Grand Siba, Li-N-Ja, Royal Retreat Business and Leisure, OYO Pramod, Pearl Orchid (2nd listing). Budget (n=7, 2-star): Sheela Towers 2,663; Upahar Palace 1,887; Saket 1,480; Dolphin 2,930; Bhama Inn 2,575; Harjit Residency 2,162; The Anant 2,733. Cleartrip 2-star prices run close to or above its 3-star prices here, so budget median exceeds mid median; treat budget as a ceiling. No true homestay was bookable for 18 Nov (Ritika's Homestay units 1 and 2 sold out). No Hostelworld dorm found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2400,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "Sambalpur to Jharsuguda (80 km)",
+      "inr": 1646,
+      "range": "MakeMyTrip Sambalpur city page, 80 km included, extra Rs 20.25/km, Rs 1,646 shown before Rs 713 taxes and charges; car-type tab not stated in page text, viewed 2026-10-09"
+     },
+     {
+      "route": "Sambalpur to Raipur (272 km)",
+      "inr": 4787,
+      "range": "MakeMyTrip, 272 km included, extra Rs 15/km, before Rs 624 taxes and charges; car type not stated"
+     },
+     {
+      "route": "Sambalpur to Hirakud (84 km included)",
+      "inr": 2030,
+      "range": "EaseMyTrip route page, Dzire or equivalent sedan, Rs 2,030 listed (Rs 1,875 after EMTCAB coupon) plus Rs 97 taxes, 84 km included then Rs 15/km; viewed 2026-10-09"
+     },
+     {
+      "route": "Bhubaneswar to Sambalpur (274 km included)",
+      "inr": 4383,
+      "range": "EaseMyTrip, sedan one-way, Rs 4,383 listed (Rs 4,083 after coupon), plus Rs 209 taxes, 274 km included then Rs 13.5/km"
+     }
+    ],
+    "basis": "Patra Travels Pvt. Ltd. (Bhubaneswar-registered Odisha operator, own per-town rate card; its Daringbadi, Koraput and Sambalpur cards differ) 'Local taxi rental price in Sambalpur': AC Swift Dzire 8 hours/80 km Rs 2,400, 12 h/120 km Rs 2,900, extra Rs 14/km, Rs 150/hr, night Rs 250; Innova 8h/80km Rs 3,300. Viewed 2026-10-09, undated. Savaari lists an 8hr/80km package without a price.",
+    "sources": [
+     "https://www.patratravels.com/cab-rental/car-hire-in-sambalpur",
+     "https://www.savaari.com/sambalpur/book-taxi",
+     "https://www.makemytrip.com/car-rental/sambalpur-city-cabs.html",
+     "https://www.easemytrip.com/cabs/sambalpur-to-hirakud-cab-booking/",
+     "https://www.easemytrip.com/cabs/bhubaneswar-to-sambalpur-cab-booking/"
+    ],
+    "notes": "Samaleswari, Hirakud, Huma, Debrigarh are all within about 40 km."
+   },
+   "food_per_person_day": {
+    "budget_inr": 350,
+    "standard_inr": 600,
+    "basis": "Zomato Sambalpur listing, 'for one' per meal: Dosa Plaza 100, Nirmal Halwai 100, Tandoor Nama 100, Amazing Bakers 150, Garlic Restro Cafe 150, Double D's Cafe 200, Domino's 200, KFC 200. Budget = 3 meals at about Rs 100-120; standard = about Rs 200 per meal for 3 meals. Derived by multiplication, not a quoted day price.",
+    "sources": [
+     "https://www.zomato.com/sambalpur/restaurants"
+    ],
+    "notes": "Zomato delivery listing; dine-in thali prices not seen."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Homestay and dorm prices for 18 Nov",
+    "Dine-in thali prices",
+    "Rate card is operator-published, not a union chart"
+   ]
+  },
+  "bhitarkanika": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3800,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://odishatour.in/dangamal-nature-camp-bhitarkanika-kendrapara/",
+     "https://www.ecotourodisha.com/stays-camps"
+    ],
+    "budget_hotel_median_inr": 1345,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.otdc.in/chandbali.htm"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 450,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.otdc.in/chandbali.htm"
+    ],
+    "price_basis": "Mid (n=6): Dangamal Nature Camp (5 cottages, tariff card) plus Gupti Nature Camp 'From Rs 3,600 / night' on the official EcoTour Odisha stays list (ecotourodisha.com/stays-camps, viewed 2026-10-09, undated 'from' price). Dangamal (Odisha forest department eco-tourism camp) tariff card as printed on odishatour.in, undated (page shows only a 2025 copyright), per night for 2 adults, excluding tax, ALL-INCLUSIVE of breakfast, lunch, dinner and a one-time creek boating charge. Not a 18-19 Nov Cleartrip price. Budget and dorm: OTDC Aranyanivas Chandbali (Odisha tourism corporation, gateway town for Bhitarkanika boat trips) published tariff 1 Oct-30 Jun, undated beyond that: AC double Rs 1,700, non-AC double Rs 990 (median 1,345, n=2 room types of one property), dormitory Rs 450 per bed (8-bed room); bed tea and breakfast included, GST extra. otdc.in did not load in my browser (timeouts), so these figures come from a search-result extract of that page; re-check.",
+    "notes": "Six values: 3,500; 3,500; 3,600 (Gupti, official 'from'); 4,000; 4,000; 4,000; median 3,800. Tariff card: Bani Bhawan AC double 4,000; Hental House AC 3-bed 4,000; Sundari Bhawan AC double 3,500; Heron House AC double 4,000; Cheetal Cottage AC double 3,500; extra person 4-18 yrs 1,000. Because meals and boating are bundled, do not add food on top for the nights spent here. ecotourodisha.com (official portal) lists the same cottages and confirms 'All Bhitarkanika tariffs are all-inclusive meals' but shows 'Price unavailable' without a booking session. Cleartrip: SandPebbles Bhitarkanika Jungle Resorts and Chukapahad Farm Resort (Rajnagar) both returned 'No rooms available' for 18-19 Nov 2026, so no dated OTA price. Private resort figures seen but not used (undated or other dates): Jungle Avengers (Khola) 'prices start at 2,900'; Tripadvisor 18-19 Oct dates show Sand Pebbles from 6,195. Boat transfer from Gupti or Khola is mandatory to reach Dangamal."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13.5,
+    "point_to_point": [
+     {
+      "route": "Bhubaneswar to Bhitarkanika (155 km included)",
+      "inr": 2688,
+      "range": "EaseMyTrip route page, Dzire or equivalent sedan one-way, Rs 2,688 listed (Rs 2,483 after EMTCAB coupon) plus Rs 128 taxes, 155 km included then Rs 13.5/km; viewed 2026-10-09"
+     }
+    ],
+    "basis": "No local sightseeing rate found; access inside the park is by forest-department boat, not cab. Per-km is EaseMyTrip's sedan rate beyond 155 km included.",
+    "sources": [
+     "https://www.easemytrip.com/cabs/bhubaneswar-to-bhitarkanika-cab-booking/"
+    ],
+    "notes": "Cabs go to Rajnagar/Khola/Gupti; Dangamal and creek visits need a boat (boat fares not found)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 350,
+    "standard_inr": 600,
+    "basis": "No eateries inside the park; camps bundle meals. Proxy: Zomato Kendrapara (nearest listed town, tens of km away), 'for one' per meal: Rice N Roll 100, Cafe & Crumbs 100, Cafe Down Town 150, Bournvill 150, Tryst 200, Binayak Palace 250. Budget = 3 meals at about Rs 115; standard = 3 meals at about Rs 200. Derived by multiplication.",
+    "sources": [
+     "https://www.zomato.com/kendrapara/restaurants"
+    ],
+    "notes": "Proxy town, not the park; Dangamal/Gupti stays are all-inclusive."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated 18-19 Nov price for any Bhitarkanika property",
+    "Budget and homestay tier",
+    "Local day cab and creek boat hire rates",
+    "Eatery prices at Rajnagar/Khola",
+    "OTDC Chandbali tariff page could not be opened directly (search extract only)"
+   ]
+  },
+  "gahirmatha": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Dangamal / Gupti (Bhitarkanika Nature Camps), about 4 km from Gahirmatha per a travel guide; see bhitarkanika entry for prices",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No lodging at Gahirmatha: 'There are no such accommodation options at Gahirmatha but you have Govt. resthouses and private hotels in nearby towns' (animeshmitra.in). Official portal lists Gahirmatha Marine Sanctuary as a 'nearby' attraction of Dangamal Nature Camp.",
+    "notes": "Marine sanctuary reached by boat via Chandbali, Rajnagar or Gupti. Nearest bookable stay: Dangamal Nature Camp (Bhitarkanika).",
+    "no_lodging_sources": [
+     "https://animeshmitra.in/theme/tours/gahirmatha-orissa-305-kms-from-kolkata/",
+     "https://www.ecotourodisha.com/stays-camps/bhitarkanika-destination/bhitarkanika-nature-camps-dangmal"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13.5,
+    "point_to_point": [
+     {
+      "route": "Bhubaneswar to Bhitarkanika (155 km included)",
+      "inr": 2688,
+      "range": "EaseMyTrip route page, Dzire or equivalent sedan one-way, Rs 2,688 listed (Rs 2,483 after EMTCAB coupon) plus Rs 128 taxes, 155 km included then Rs 13.5/km; viewed 2026-10-09"
+     }
+    ],
+    "basis": "Cab goes to Bhitarkanika (Rajnagar/Khola area); the sanctuary itself is reached by boat. Same Bhubaneswar fare as the Bhitarkanika entry.",
+    "sources": [
+     "https://www.easemytrip.com/cabs/bhubaneswar-to-bhitarkanika-cab-booking/",
+     "https://animeshmitra.in/theme/tours/gahirmatha-orissa-305-kms-from-kolkata/"
+    ],
+    "notes": "Boat fares not found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No eateries at Gahirmatha found; use the Bhitarkanika base.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Boat fare to Gahirmatha",
+    "Food at the site",
+    "Whether any private lodging operates on Ekakula (not found)"
+   ]
+  },
+  "satkosia": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3400,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.ecotourodisha.com/stays-camps"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Odisha forest department EcoTour Odisha official stays list, 'From Rs / night' prices for the four Satkosia Tiger Reserve camps, viewed 2026-10-09, undated (no stay date; booking pages show 'Price unavailable' without a session). Option labels on camp pages read 'All Inclusive'. No Cleartrip/OTA listing exists for Satkosia.",
+    "notes": "Baghamunda Nature Camp 3,400; Chhotkei 3,400; Purunakote 3,400; Tarava 3,500 (official 'from' prices). Cross-check from tariff cards, excl tax, meals for two included: Tikarpada Nature Camp non-AC tent 3,000, AC tent 4,000, AC eco cottage 3,000 (odishatour.in, undated); Satkosia Sands Resort Badmul sandbar tent 3,000, AC tent 3,500, AC cottage 4,000 base before 10% transaction charge and tax (odtravels.in, year not stated; sandbar tents run only from 15 Nov). Meals bundled, so do not add a food day on top. No budget hotel or homestay found nearby.",
+    "extra_sources": [
+     "https://odishatour.in/tikarpada-nature-camp-satkosia-angul/",
+     "https://www.odtravels.in/satkosia-sands-resort-badmul"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13.5,
+    "point_to_point": [
+     {
+      "route": "Bhubaneswar to Satkosia (165 km included)",
+      "inr": 3111,
+      "range": "EaseMyTrip route page, Dzire or equivalent sedan one-way, Rs 3,111 listed (Rs 2,893 after EMTCAB coupon) plus Rs 148 taxes, then Rs 13.5/km; viewed 2026-10-09"
+     }
+    ],
+    "basis": "No local sightseeing day rate found; gorge boating is booked at the camp jetty. Per-km from EaseMyTrip sedan rate beyond included km.",
+    "sources": [
+     "https://www.easemytrip.com/cabs/bhubaneswar-to-satkosia-cab-booking/"
+    ],
+    "notes": "Official page: Bhubaneswar to Satkosia Sands (Badmul) 113 km, 2 hr 58 min."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No eatery prices found in the area; camp tariffs include breakfast, lunch and dinner.",
+    "sources": [],
+    "notes": "Zomato Angul returned no results; Nayagarh lists one restaurant only."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated 18-19 Nov price",
+    "Budget/homestay tier",
+    "Local day cab rate",
+    "Food prices outside camps",
+    "Boating fee"
+   ]
+  },
+  "daringbadi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4500,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4668079?c=18112026|19112026&r=2,0",
+     "https://odishatour.in/daringbadi-kandhamal/"
+    ],
+    "budget_hotel_median_inr": 969,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4595109?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid (n=3, mixed basis): Utopia Resort Daringbadi 5,189 room-only from Cleartrip detail page dated 18-19 Nov 2026 (pre-tax, 1 room 2 adults); plus the two Daringbadi Nature Camp cottages from the forest department tariff card on odishatour.in, undated, per day excl tax, with breakfast lunch and dinner included: Tribal Cottage 4,000, Eco Cottage 4,500. Budget (n=1): The Turmeric Hotel 969 (2-star) Cleartrip 18-19 Nov 2026 pre-tax.",
+    "notes": "Cleartrip 18-19 Nov returned implausible placeholder rates for other Daringbadi listings and they were excluded: Hotel Goura 94,000; Hotel Hill Top 7,523/7,525; Hotel Mid Town 7,524. Sold out for 18 Nov: Hotel Swadhin, Royal Plaza Homestay, Deers Eco Home Resort, Hotel Mid Town Daringbadi. Official ecotourodisha.com shows the Daringbadi Nature Camp (Premium Cottages, Tribal Cottages, 'All Inclusive') with 'Price unavailable'.",
+    "extra_sources": [
+     "https://www.ecotourodisha.com/destination/daringbadi"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2000,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Bhubaneswar to Daringbadi (248 km included)",
+      "inr": 4009,
+      "range": "EaseMyTrip route page, Dzire or equivalent sedan one-way, Rs 4,009 listed (Rs 3,709 after EMTCAB coupon) plus Rs 191 taxes, then Rs 13.5/km; viewed 2026-10-09"
+     }
+    ],
+    "basis": "Patra Travels Pvt. Ltd. (Bhubaneswar-registered Odisha operator) 'Local taxi rental price in Daringbadi': AC Swift Dzire 8 hours/80 km Rs 2,000, 12 h/120 km Rs 2,500, extra Rs 13/km, Rs 150/hr, night Rs 250; Innova 8h/80km Rs 3,000. Operator rate card, undated, viewed 2026-10-09.",
+    "sources": [
+     "https://www.patratravels.com/cab-rental/car-hire-in-daringbadi",
+     "https://www.easemytrip.com/cabs/bhubaneswar-to-daringbadi-cab-booking/"
+    ],
+    "notes": "Operator's own card, not a union chart."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato/Swiggy listing for Daringbadi and no menu or thali price with a rupee figure found; camp tariff includes meals.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Food prices (nothing with a rupee figure found)",
+    "Credible 18 Nov prices for most Daringbadi hotels (placeholders or sold out)",
+    "Homestay and dorm tiers"
+   ]
+  },
+  "koraput": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2549,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-sabar-inn-5601111?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4534083?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5528137?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-signature-4566088?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/roots-guesthouse-and-homestay-4685965?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-hello-jeypore-3966661?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1802,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4674169?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-lemon-castle-4291763?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4534082?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5066644?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-princess-4282195?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sri-sai-krishna-5288610?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 4130,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/deomali-desia-eco-stays-4286270?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid, Budget, Homestay: Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price shown. Mid = 3-star listings, Budget = 2-star listings, homestay = the one bookable 3-star homestay. Koraput town has few listings, so Jeypore (about 20 km, the district's commercial town) hotels are included.",
+    "notes": "Mid (n=6): Koraput: Hotel Sabar Inn 2,685. Jeypore: Hotel The Square 1,809; JCN Comforts 4,357; Hotel Signature 1,856; Roots Guesthouse and Homestay 3,318; Hotel Hello Resort 2,413. Budget (n=6, 2-star): Aurovalley 1,502; Lemon Castle 1,862 (Koraput); Udaya Palace 1,824; Hotel Hello 1,779; Hotel Princess 925; Sri Sai Krishna 3,133 (Jeypore). Homestay: Deomali Desia Eco Stays 4,130 (Cleartrip locality Koraput). Sold out for 18 Nov: Raj Residency, Maitree Hotel, Balkrishna Palace, Hotel Apsara, Sabar Inn (2nd listing). Kuidoo Homestay returned 9,657 and was excluded as implausible. Forest dept Koraput Pine Forest Camp (3 km from town): AC cottage or AC Swiss tent Rs 5,000/day excl tax with all meals, tariff card on odishatour.in, undated."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2000,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Visakhapatnam to Koraput (207 km included), hatchback",
+      "inr": 5206,
+      "range": "EaseMyTrip route page, Wagon R or equivalent compact (sedan row not shown), Rs 5,206 listed (Rs 4,906 after coupon) plus Rs 248 taxes, then Rs 13.5/km; viewed 2026-10-09"
+     }
+    ],
+    "basis": "Patra Travels Pvt. Ltd. (Bhubaneswar-registered Odisha operator) 'Local taxi rental price in Koraput': AC Swift Dzire 8 hours/80 km Rs 2,000, 12 h/120 km Rs 2,500, extra Rs 13/km, Rs 150/hr, night Rs 250; Innova 8h/80km Rs 3,000. Operator rate card, undated, viewed 2026-10-09.",
+    "sources": [
+     "https://www.patratravels.com/cab-rental/car-hire-in-koraput",
+     "https://www.easemytrip.com/cabs/visakhapatnam-to-koraput-cab-booking/"
+    ],
+    "notes": "Koraput sights (Jagannath temple, Pine Garden 3 km; Raniduduma 50 km; Gupteswar 85 km per the official page) fit a day only for the nearer ones."
+   },
+   "food_per_person_day": {
+    "budget_inr": 350,
+    "standard_inr": 600,
+    "basis": "Zomato Koraput listing, 'for one' per meal: Rihan Food Express 100, Ghar Ka Khana 100, Bite Zone 100, Laziz Pizza 150, Desi Delice 150, Kruti Coffee 200, Foodtech 200, Blissful Bites 200, Hotel Darbar Palace 250; Zomato Jeypore: Fresh Bakes 100, Signature Cafe 150, Siazza 150, Blue Heaven 200, Hotel Madhumati 200. Budget = 3 meals at about Rs 115; standard = 3 meals at about Rs 200. Derived by multiplication; delivery-listing figures, dine-in thali prices not seen.",
+    "sources": [
+     "https://www.zomato.com/koraput/restaurants",
+     "https://www.zomato.com/jeypore/restaurants"
+    ],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Dorm bed price",
+    "Union/tourism taxi chart",
+    "Dine-in thali prices"
+   ]
+  },
+  "deomali": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Koraput (60 km, 1 hr 42 min per the official page)",
+    "mid_median_inr": 4565,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/deomali-desia-eco-stays-4286270?c=18112026|19112026&r=2,0",
+     "https://odishatour.in/deomali-nature-camp-eco-cottage-koraput/"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 4130,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/deomali-desia-eco-stays-4286270?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Deomali Desia Eco Stays 4,130: Cleartrip detail page dated 18-19 Nov 2026, pre-tax (locality shown as Koraput; name indicates Deomali). Deomali Nature Camp (forest dept) non-AC double cottage Rs 5,000/day excl tax with breakfast, lunch and dinner included, tariff card on odishatour.in, undated. Mid = median of those two (n=2, mixed basis).",
+    "notes": "Same tariff card lists a non-AC 5-bed dormitory room at Rs 8,000/day (not a per-bed dorm price). Official ecotourodisha.com shows Deomali Nature Camp 'Luxurious Cottages' and 'Premium Dormitory', 'All Inclusive', price unavailable without a session. No other OTA listing at Deomali; tourmyodisha.com gives conflicting ranges (Rs 1,000-2,500 vs 5,000-15,000) and was not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [],
+    "basis": "No published Koraput-to-Deomali fare found. Koraput to Deomali is 60 km, 1 hr 42 min per the official page, so a return day exceeds the 80 km local package (Patra Koraput card: Dzire 8h/80km Rs 2,000, extra Rs 13/km).",
+    "sources": [
+     "https://www.ecotourodisha.com/destination/deomali",
+     "https://www.patratravels.com/cab-rental/car-hire-in-koraput"
+    ],
+    "notes": "Local day left null rather than derived."
+   },
+   "food_per_person_day": {
+    "budget_inr": 350,
+    "standard_inr": 600,
+    "basis": "Nearest listed town proxy (Koraput, 60 km away); camp tariff includes all meals. Zomato Koraput listing, 'for one' per meal: Rihan Food Express 100, Ghar Ka Khana 100, Bite Zone 100, Laziz Pizza 150, Desi Delice 150, Kruti Coffee 200, Foodtech 200, Blissful Bites 200, Hotel Darbar Palace 250; Zomato Jeypore: Fresh Bakes 100, Signature Cafe 150, Siazza 150, Blue Heaven 200, Hotel Madhumati 200. Budget = 3 meals at about Rs 115; standard = 3 meals at about Rs 200. Derived by multiplication; delivery-listing figures, dine-in thali prices not seen.",
+    "sources": [
+     "https://www.zomato.com/koraput/restaurants",
+     "https://www.zomato.com/jeypore/restaurants"
+    ],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated price for the forest camp",
+    "Koraput to Deomali cab fare",
+    "Food at the peak itself"
+   ]
+  },
+  "taptapani": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2475,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.otdc.in/taptapani.html"
+    ],
+    "budget_hotel_median_inr": 1400,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.otdc.in/taptapani.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "OTDC Taptapani (Taptapani Springs Resort, ex Panthanivas) published tariff for 1 Oct to 30 Jun, per night, GST extra, bed tea and breakfast included. Not dated to 18-19 Nov and not from Cleartrip (no OTA listing for Taptapani found). n counts room categories of the one property, not separate properties.",
+    "notes": "Mid (AC, n=4): AC double 1,500; AC family room 2,100; log house 2,850; deluxe suite (hot sulphur water bathroom) 3,600. Budget (non-AC, n=2): non-AC double 1,200; non-AC family room 1,600. 1 Jul-30 Sep rates are lower (AC double 1,300, deluxe suite 3,300, log house 2,600). otdc.in did not load in my browser (timeouts) so figures are from a search-result extract of that page plus a 2012 blog (oditour.wordpress.com: non-AC double 900, family 1,250, log house 2,500) showing the same structure; a 2021 blog (eastindiantraveller.com) quotes AC suite 3,500, 4-bed non-AC family room 1,500, wooden cottages 2,000-3,000. Re-check on otdc.in.",
+    "extra_sources": [
+     "https://oditour.wordpress.com/2012/05/21/odisha-toursim-panthanivas-taptapani/",
+     "https://eastindiantraveller.com/2021/06/26/otdctaptapani/"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14,
+    "point_to_point": [],
+    "basis": "Taptapani is about 50 km from Berhampur (OTDC page), so a Berhampur-based day exceeds the 80 km local package. Patra Travels Berhampur card (Dzire 8h/80km Rs 2,300, 12h/120km Rs 2,800, extra Rs 14/km) is given as per-km reference only. EaseMyTrip route pages for 'Taptapani' resolve to the Arunachal place and were not used.",
+    "sources": [
+     "https://www.patratravels.com/cab-rental/car-hire-in-berhampur"
+    ],
+    "notes": "No Taptapani-specific fare found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": 600,
+    "basis": "Blog (eastindiantraveller.com, Feb 2021 visit): 'Food costs around Rs. 200 per person per meal' at the OTDC resort; standard = 3 meals x 200 (breakfast is free with the room, so lower in practice). No budget source.",
+    "sources": [
+     "https://eastindiantraveller.com/2021/06/26/otdctaptapani/"
+    ],
+    "notes": "2021 figure, single source."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Cleartrip/OTA price (none listed)",
+    "Direct page access to the OTDC tariff",
+    "Taptapani local cab rate",
+    "Budget food"
+   ]
+  },
+  "nrusinghanath-harishankar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Bargarh town (hotels below); on site there is a temple-trust guest house and a Mission Shakti Panthanivas per Tripadvisor reviews, no tariff found",
+    "mid_median_inr": 1177,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5639474?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kohinoor-garden-restaurant-5282147?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1445,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4563036?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5061620?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-vinayak-2898542?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-jay-jagannath-2890476?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-the-residency-2898250?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price, for hotels in Bargarh (nearest town with listings; the shrines are in the hills, Nrusinghanath near Paikmal, Harishankar in Balangir district).",
+    "notes": "Mid (3-star, n=2): Hotel Mangalam Palace 1,030; Kohinoor Garden Restaurant 1,323. Budget (2-star, n=5): Nikki's Residency 1,961; Hotel Swastik 698; Hotel Vinayak 618; Hotel Jay Jagannath 1,445; Hotel The Residency 1,744. Sold out for 18 Nov: OYO VD Palace, Hotel Royal Palace, OYO J J Residency. No listing for Paikmal, Padampur or Harishankar on Cleartrip. Tripadvisor reviewers mention a temple-trust guest house (one undated review: Rs 300) and temple food; no current tariff seen.",
+    "extra_sources": [
+     "https://www.tripadvisor.in/Attraction_Review-g297660-d1380628-Reviews-Harishankar-Odisha.html"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "hatchback",
+    "outstation_per_km_inr": 13.5,
+    "point_to_point": [
+     {
+      "route": "Sambalpur to Bargarh (45 km included), hatchback",
+      "inr": 2087,
+      "range": "EaseMyTrip route page, Wagon R or equivalent compact (sedan row not shown), Rs 2,087 listed (Rs 1,927 after EMTCAB coupon) plus Rs 99 taxes, then Rs 13.5/km; viewed 2026-10-09"
+     }
+    ],
+    "basis": "No published local or Bargarh-to-temple fare found (Patra Travels has no Bargarh/Paikmal tariff; EaseMyTrip has no Paikmal route page). Only the Sambalpur to Bargarh leg is shown.",
+    "sources": [
+     "https://www.easemytrip.com/cabs/sambalpur-to-bargarh-cab-booking/"
+    ],
+    "notes": "Local day left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato listing for Bargarh/Paikmal (Zomato Bargarh: no results); temple food described only as free and paid, with no rupee figure.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Mid-tier (only 2 hotels)",
+    "Temple-trust guest house and Panthanivas tariffs",
+    "Local cab rate",
+    "Food prices"
+   ]
+  }
+ }
+}

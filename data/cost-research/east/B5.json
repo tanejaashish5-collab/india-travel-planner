@@ -1,0 +1,596 @@
+{
+ "batch": "B5",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "bhubaneswar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2653,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-kumud-plaza-3908536?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-seetal-388216?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4595130?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mango-hotels-prangan-bhubaneshwar-1331676?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/zoris-boutique-hotel-4291202?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/cozzet-victoria-4275159?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1328,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-sambit-palace-384494?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4533584?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sm-hives-3989773?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-venus-inn-378248?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-priya-378249?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1298,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/goroomgo-ssj-premium-bhubaneswar-4486257?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-classic-crown-5252890?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/nandighosh-lagoon-guest-house-4680978?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax, cheapest room, room only: Kumud Plaza 1,969; Hotel Seetal 2,412; Hotel Belford 2,546; Mango Hotels Prangan 2,760; Zoris Boutique 3,469; Cozzet Victoria 3,784 (all labelled 3-star); median = mean of 2,546 and 2,760. Budget: Cleartrip 18-19 Nov 2026 pre-tax room only: Sambit Palace 950, SM Residency 1,125, SM Hives 1,328, Venus Inn 1,782, Hotel Priya 1,944. Homestay: Cleartrip 18-19 Nov 2026 pre-tax, properties Cleartrip lists as homestays: Nandighosh Lagoon Guest House 1,114, Classic Crown 1,298 (breakfast included), Goroomgo SSJ Premium 1,630.",
+    "notes": "Other 3-star detail pages on 18 Nov not used in the median: Treebo The Aura 3,257 (breakfast included), Treebo Lazystay Elite 3,882 (breakfast included), Swosti Grand 4,503. Ginger is rated 4-star (4,631) so excluded. Hotel Urmee and Saraswati Retreat showed No rooms available on 18 Nov. Cleartrip's Bhubaneswar homestays are OYO/Goroomgo-managed budget rooms, not owner-run homestays. Dorm: Hostelworld Bhubaneswar page shows 0 hostels (no dorm figure)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Bhubaneswar to Puri (about 68 km)",
+      "inr": 973,
+      "range": "Gozo sedan one-way 973 before GST, indicative; puritaxi.in Bhubaneswar to Puri drop from 1,300"
+     },
+     {
+      "route": "Puri to Bhubaneswar airport via Konark (drop)",
+      "inr": 2500,
+      "range": "puritaxi.in one-way, confirmed on WhatsApp"
+     },
+     {
+      "route": "Puri to Cuttack (84 km)",
+      "inr": 1499,
+      "range": "puritaxi.in AC sedan one-way excl GST and tolls (hatchback 1,399, SUV 1,749)"
+     }
+    ],
+    "basis": "Bhubaneswar full-day city circuit (Lingaraj, Mukteshwar-Rajarani, Dhauli, Khandagiri-Udayagiri, Nandankanan): Shree Kshetra Travels (Dakhinasahi, Puri) sedan 2,500-3,000 incl driver allowance, parking, toll, page undated; odishataxi.in (Plot 1472 Shastrinagar Road, Bhubaneswar) one-day Bhubaneswar tour 2,500 per vehicle incl driver allowance, toll and parking, page undated; puritaxi.in (Berhampur and Puri hub) Dzire starting fare 2,199, page reviewed 1 Oct 2026, toll/parking may be extra. Figure used = 2,500, matched by two operators. OTDC conducted coach tours are per head (Rs 465 for Bhubaneswar-Pipili-Konark-Puri) not a cab rate. No union rate card found.",
+    "sources": [
+     "https://www.shreekshetratravels.com/destination/details/bhubaneswar-sightseeing-taxi-booking-best-city-tour-packages",
+     "https://www.puritaxi.in/pages/packages/bhubaneswar-local-sightseeing-taxi",
+     "https://www.gozocabs.com/book-taxi/bhubaneswar-puri",
+     "https://www.puritaxi.in/",
+     "https://www.puritaxi.in/pages/routes/puri-to-cuttack-taxi",
+     "https://www.odishataxi.in/tourpackage/one-day-bhubaneswar-tour"
+    ],
+    "notes": "Operator pages show starting or indicative fares; MakeMyTrip and Savaari pages would not load, so no third corroboration."
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "Derived: Budget = breakfast 80 (low end of 80-150 stated by odishatravelhub) + Abadha temple-style thali 110 (100-120, mypuritour Mar 2025) + simple Odia thali dinner 175 (Dalma Puri cost for two 300-400 per tourandtravellers May 2025, halved). Standard = breakfast 150 + Dalma veg thali 253 + casual dinner 250 (cost for two 400-600: Wildgrass, Agarwals, Chung Wah, same article, halved) = about 650-700. Bhubaneswar cross-checks: ebhubaneswar.com (Jun 2022, stale) cost for two Dalma 500, Odisha Hotel 600, Regal Food Park 400; trekgo.in (14 Dec 2025) Odia thali restaurants 200-400 per person, pure veg 150-350 per person. Puri-based figures reused for Bhubaneswar.",
+    "sources": [
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/",
+     "https://trekgo.in/blog/restaurants-bhubaneswar",
+     "https://ebhubaneswar.com/explore-city/10-most-authentic-odia-cuisine-restaurants-in-bhubaneswar-city/"
+    ],
+    "notes": "No current Zomato or Tripadvisor cost-for-two page would load (403 or timeout)."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Union or association taxi rate card for Bhubaneswar",
+    "Hostel dorm beds (none listed on Hostelworld)",
+    "Current Zomato or Tripadvisor cost for two",
+    "MakeMyTrip and Savaari local rental rates (pages did not load)"
+   ]
+  },
+  "dhauli": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Bhubaneswar (about 8 to 9 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1500,
+    "budget_n": 1,
+    "budget_sources": [
+     "http://www.otdc.in/dhauli.html",
+     "https://web.archive.org/web/2026/http://www.otdc.in/dhauli.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: OTDC Panthika Dhauli tariff card, undated (archived copy dated 2020-04-30 via web.archive.org; the live otdc.in page is script-rendered and did not load as text), AC double room Rs 1,500 for 1 Oct to 30 Jun, includes bed tea and breakfast, GST as applicable; non-AC double Rs 990. Not a dated 18-19 Nov price.",
+    "notes": "Dhauli has one government lodging: OTDC Panthika Dhauli, 3 rooms / 6 beds in total (2 AC double, 1 non-AC double), per the same OTDC page. No other lodging found in Dhauli itself; every other bed is in Bhubaneswar. Not on Cleartrip as far as searched. Treat the tariff as indicative: it is an old card and the property is tiny."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Dhauli is a stop on the Bhubaneswar full-day city circuit (Lingaraj, Mukteshwar-Rajarani, Dhauli, Khandagiri-Udayagiri, Nandankanan): Shree Kshetra Travels sedan 2,500-3,000 incl toll and parking; puritaxi.in Dzire starting fare 2,199. No Dhauli-only cab fare found on a page that shows one, so the local figure is left null; use the Bhubaneswar figure for the circuit.",
+    "sources": [
+     "https://www.shreekshetratravels.com/destination/details/bhubaneswar-sightseeing-taxi-booking-best-city-tour-packages",
+     "https://www.puritaxi.in/pages/packages/bhubaneswar-local-sightseeing-taxi"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "No eateries researched at Dhauli itself; visitors eat in Bhubaneswar (8-9 km). Figures are the Bhubaneswar derivation: budget = breakfast 80 + thali 110 + simple Odia thali dinner 175; standard = breakfast 150 + Dalma veg thali 253 + casual dinner 250. See Bhubaneswar entry for inputs.",
+    "sources": [
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "Base-city figure, not Dhauli-specific."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Current dated price at OTDC Panthika Dhauli",
+    "Dhauli-only cab fare",
+    "Food prices at Dhauli itself"
+   ]
+  },
+  "cuttack": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2596,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-mahabir-galaxy-3920106?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5681281?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/oyo-11547-royal-treat-2877940?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4562405?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4290116?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1353,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/5528105?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4266896?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5424936?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/ambica-residency-761268?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-seetal-cuttack-726022?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax, cheapest room (all listed 3-star): Mahabir Galaxy 1,518 (breakfast included), Palette Hotel Jagatpur 2,402, Hotel O Royal Treat 2,596, Krishna's Courtyard 3,643, Pipul Padmaja Pride 4,936. Budget: Cleartrip 18-19 Nov 2026 pre-tax room only: Palette Badambadi 915, Hotel O Maitry 984, Hotel Triple 555 1,353 (Cleartrip lists it 3-star), Ambica Residency 1,686, Hotel Seetal Cuttack 1,954.",
+    "notes": "Grand Residency, Hotel Ashoka and The Marwar showed No rooms available on 18 Nov. Cleartrip's Cuttack budget list page is dated 11-12 Oct; its 3-star list is 13-14 Nov; only the detail pages above are 18-19 Nov. Toshali Pushpagiri detail page 404. Cleartrip has no Cuttack homestay list found. Hostelworld has no Cuttack hostel page. Bali Jatra (Kartik Purnima, 24 Nov) is outside the priced night."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Cuttack to Bhubaneswar (about 26 km)",
+      "inr": 722,
+      "range": "Gozo sedan one-way 722 before GST, indicative"
+     },
+     {
+      "route": "Puri to Cuttack (84 km)",
+      "inr": 1499,
+      "range": "puritaxi.in AC sedan one-way excl GST and tolls (hatchback 1,399, SUV 1,749)"
+     }
+    ],
+    "basis": "No usable Cuttack local-sightseeing rate: ODCAR (Laxmisagar, Bhubaneswar) lists an 8hr/80km package with no price; transrentals.in shows Get Quote; onedaytrip.in shows 3,599 sedan but gives no operator address, so it is not used. Local figure left null.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/cuttack-bhubaneswar",
+     "https://www.puritaxi.in/pages/routes/puri-to-cuttack-taxi",
+     "https://www.odcar.in/cuttack-car-rentals"
+    ],
+    "notes": "odcar.in per-km: FAQ says sedan Rs 8.5-9.5/km but vehicle cards say from 12/km, so per-km left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "Odisha regional derivation (budget = breakfast 80 + thali 110 + simple Odia thali dinner 175; standard = breakfast 150 + veg thali 253 + casual dinner 250; inputs in the Bhubaneswar entry). Cuttack cost for two per Slurrp (updated 28 Feb 2024): Arnapurna Kitchen khichdi 150, Vanakkam Cuttack dalma 500, Kalia Sahu bara ghuguni 150, Raghu dahi bara aloo dum 200, Mahaveer Tiffin biri chakuli 150; these street and snack prices sit inside the budget figure.",
+    "sources": [
+     "https://www.slurrp.com/article/planning-a-trip-to-cuttack-try-these-7-delicious-specialties-1709115695686",
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "No Cuttack thali menu or Zomato page found; regional basis."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Cuttack local sightseeing cab rate",
+    "Cuttack-specific thali and restaurant menu prices",
+    "Homestays and dorms in Cuttack"
+   ]
+  },
+  "konark": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1907,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/okaasan-guest-house-restaurant-5418509?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sand-castle-4485440?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-bay-inn-4481534?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/lotus-resort-konark-377059?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1400,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://web.archive.org/web/2026/http://www.otdc.in/konark.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax, cheapest room, all four listed 3-star: Okaasan Guest House 1,557 (room only), Sand Castle 1,807 (room only), The Bay Inn 2,006 (room only), Lotus Eco Resort 6,499 (Forest Eco Cottage, breakfast included); median = mean of 1,807 and 2,006. Budget: OTDC Yatrinivas Konark tariff card, undated (archived copy via web.archive.org), AC double room Rs 1,400 for 1 Oct to 30 Jun, includes breakfast, GST extra; the card is old and the live otdc.odisha.gov.in page did not load.",
+    "notes": "Konark has no true 3-star market: three of the four Cleartrip 3-stars price at budget level (1,557-2,006), and only Lotus Eco Resort is resort-priced. Treat 1,907 as an in-between figure; the resort tier starts near 6,500. Surya Inn showed No rooms available on 18 Nov. Panthanivas Konark (OTDC) archived card shows AC double 1,000 but is clearly older and is not used. Cleartrip Konark homestay page listed no properties; no Hostelworld page for Konark."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Puri to Konark and back (round trip, sedan)",
+      "inr": 1699,
+      "range": "puritaxi.in sedan/Dzire starting fare, fare last updated 2026-05-25; sunrise-view variant 1,999; Ertiga 2,000; Innova 2,300"
+     },
+     {
+      "route": "Puri to Bhubaneswar airport via Konark (one way)",
+      "inr": 2500,
+      "range": "puritaxi.in, confirmed on WhatsApp before booking"
+     }
+    ],
+    "basis": "Konark is a half-day stop, normally done as a Puri or Bhubaneswar round trip, so no local 8-hour rate exists to quote. Round trip from Puri to Konark: puritaxi.in (Berhampur office, Puri hub near the railway station). OTDC runs per-head coach tours instead (Bhubaneswar-Pipili-Konark-Puri Rs 465 per head, per a Tripadvisor/OTDC summary) but that is not a cab rate.",
+    "sources": [
+     "https://www.puritaxi.in/pages/packages/puri-to-konark-roundtrip",
+     "https://www.puritaxi.in/"
+    ],
+    "notes": "Single operator; no second source for the Konark fare."
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "Odisha regional derivation, not Konark-specific (budget = breakfast 80 + thali 110 + simple Odia thali dinner 175; standard = breakfast 150 + veg thali 253 + casual dinner 250; inputs in the Bhubaneswar entry, Puri restaurant cost-for-two from tourandtravellers May 2025). Konark has few restaurants; most visitors eat at Puri.",
+    "sources": [
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "No Konark restaurant menu found."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Konark-specific restaurant and thali prices",
+    "Dated 18-19 Nov OTDC Yatrinivas / Panthanivas tariff",
+    "Local Konark cab rate",
+    "Homestays"
+   ]
+  },
+  "puri": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2700,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Puri to Konark (35 km, one way)",
+      "inr": 1095,
+      "range": "Gozo sedan one-way 1,095 before GST, indicative; puritaxi.in Puri-Konark round trip from 1,699 (sunrise variant 1,999)"
+     },
+     {
+      "route": "Puri to Bhubaneswar (about 65 to 68 km, one way)",
+      "inr": 973,
+      "range": "Gozo sedan one-way 973 before GST, indicative; puritaxi.in from 1,300"
+     },
+     {
+      "route": "Puri to Chilika (Satapada) and back",
+      "inr": 1600,
+      "range": "puritaxi.in sedan round trip starting fare; Shree Kshetra Travels Puri to Chilika from 2,000"
+     },
+     {
+      "route": "Puri to Cuttack (84 km, one way)",
+      "inr": 1499,
+      "range": "puritaxi.in AC sedan excl GST and tolls (hatchback 1,399, SUV 1,749)"
+     }
+    ],
+    "basis": "Puri full-day local sightseeing (Jagannath, Puri Beach, Sudarshan Crafts Museum, Markandeshwar, Narendra Pokhari, about 8 hours, includes parking, toll and driver batta): Shree Kshetra Travels (Dakhinasahi, Puri) 2,700, page undated; the same operator's other page says starting from 2,500. Lower reference: puritaxi.in Puri local Dzire starting fare 1,999, but that page prices a 5-hour reference, reviewed 1 Oct 2026, fare confirmed on WhatsApp. Figure used = 2,700 as the only explicit 8-hour package.",
+    "sources": [
+     "https://www.shreekshetratravels.com/tourpackage/puri-local-sightseeing",
+     "https://www.puritaxi.in/pages/packages/1-day-puri-sightseeing-taxi",
+     "https://www.gozocabs.com/book-taxi/puri-konark",
+     "https://www.gozocabs.com/book-taxi/bhubaneswar-puri",
+     "https://www.puritaxi.in/pages/packages/puri-to-konark-roundtrip",
+     "https://www.puritaxi.in/pages/packages/puri-to-chilika-roundtrip",
+     "https://www.puritaxi.in/pages/routes/puri-to-cuttack-taxi"
+    ],
+    "notes": "No Puri taxi association or union rate chart found. Gozo fares are indicative."
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "Puri derivation: budget = breakfast 80 (low end of 80-150 per odishatravelhub) + Abadha temple thali 110 (stated 100-120, mypuritour, 28 Mar 2025) + simple Odia thali dinner 175 (Dalma Puri cost for two 300-400, halved, tourandtravellers 25 May 2025). Standard = breakfast 150 + Dalma Puri veg thali 253 (chicken thali 336) + casual dinner 250 (cost for two 400-600: Wildgrass 400-600, Agarwals Veg 400-500, Chung Wah 350-500, halved) = about 650-700. Higher-end Puri places exist (Fisherman's Kitchen 800-1200 for two, Peace 900, Samudra 1650) and are not in the standard figure.",
+    "sources": [
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "Breakfast figures are from a regional guide, not a Puri menu. Tripadvisor and Zomato pages for Puri would not load."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Puri taxi association rate chart",
+    "Puri-specific breakfast prices",
+    "Zomato/Swiggy cost for two"
+   ]
+  },
+  "raghurajpur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Puri (about 10 to 14 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No price found for any lodging in the village.",
+    "notes": "Outlook Traveller says accommodation in Raghurajpur is limited, with Heritage Villa Raghurajpur and some artist families offering homestays; neither it nor Odisha Heritage gives a tariff, and no OTA page with a price was found. Most visitors stay in Puri or Bhubaneswar and visit for a few hours. Use Puri stay prices for trip planning. Sources: https://www.outlooktraveller.com/experiences/heritage/raghurajpur-the-heritage-crafts-village-of-odisha and https://odishaheritage.com/culture/raghurajpur-the-land-beyond-arts-and-crafts/"
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Puri to Konark day trip including Raghurajpur and Marine Drive villages (full day, round trip)",
+      "inr": 2299,
+      "range": "Shree Kshetra Travels (Dakhinasahi, Puri) 'starting from 2,299' incl vehicle, fuel and driver; the same page also says starting from 2,999; vehicle type not stated"
+     }
+    ],
+    "basis": "Raghurajpur is a 10-14 km hop from Puri visited as a stop on Puri or Konark days; no standalone cab fare on a page that shows one (ccabstravel Raghurajpur page shows no fare; odishataxiservice.com package prices are a 2020-dated page and not used). Local figure left null.",
+    "sources": [
+     "https://www.shreekshetratravels.com/tourpackage/konark-sun-temple-tour"
+    ],
+    "notes": "Puri local day is 2,700 in the Puri entry."
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "Puri-based regional derivation (see Puri entry); no Raghurajpur restaurant data. Visitors eat in Puri.",
+    "sources": [
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "Base-city figure."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Any Raghurajpur lodging tariff (Heritage Villa, artist homestays)",
+    "Standalone Raghurajpur cab fare",
+    "Raghurajpur eateries"
+   ]
+  },
+  "chilika-lake": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4489,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4671268?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/swosti-chilika-resort-2050660?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4674031?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1175,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/chilika-heritage-resort-4265534?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax, cheapest room: Om Leisure Resort Satapada 2,048 (breakfast included), Swosti Chilika Resort 4,489 (Midlake County, breakfast included), Kutumb Farmhouse Resort 6,426 (breakfast plus lunch or dinner included); median = Swosti. Budget: Cleartrip 18-19 Nov 2026, Sambit Chilika Resorts, Barkul, AC double room only 1,175 (n=1).",
+    "notes": "Chilika is spread over Barkul, Balugaon, Rambha, Satapada and Rajhans Island and Cleartrip lists only a handful. The mid figure has n=3 with a wide spread (2,048 to 6,426), so treat it as indicative. Rambha Palace, OTDC Panthanivas Rambha and OYO Kasturi (Balugaon) showed No rooms available for 18 Nov. OTDC Panthanivas Barkul had no Cleartrip page; MakeMyTrip snippets suggest about 2,000 but no dated page was opened. No homestay or dorm data."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Puri to Chilika (Satapada) and back, sedan",
+      "inr": 1600,
+      "range": "puritaxi.in starting fare; boat hire extra. Shree Kshetra Travels (Puri) lists Puri to Chilika cab from 2,000"
+     },
+     {
+      "route": "Bhubaneswar to Chilika Lake",
+      "inr": 2700,
+      "range": "Shree Kshetra Travels 'cab fare starts 2,700', vehicle and one-way or return not stated"
+     }
+    ],
+    "basis": "Chilika visits are a Puri or Bhubaneswar day trip plus boat, so there is no local 8-hour cab rate; local figure left null. Both fares are starting fares from single operators.",
+    "sources": [
+     "https://www.puritaxi.in/pages/packages/puri-to-chilika-roundtrip",
+     "https://www.shreekshetratravels.com/destination/details/puri-sightseeing-taxi-booking-best-city-tour-packages"
+    ],
+    "notes": "puritaxi.in says boat hire is separate and gives no boat price."
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "Odisha regional derivation, not Chilika-specific (see Bhubaneswar and Puri entries). No Chilika restaurant or seafood menu prices found; resort restaurants at Chilika will cost more than these figures.",
+    "sources": [
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "Regional proxy."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Chilika restaurant and seafood menu prices",
+    "OTDC Panthanivas Barkul and Rambha dated tariffs",
+    "Local cab rate",
+    "Homestays and dorms"
+   ]
+  },
+  "diamond-triangle": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Jajpur town (Cleartrip lists nothing closer); Cuttack and Bhubaneswar for a day trip",
+    "mid_median_inr": 5334,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/jajati-courtyard-5403864?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1270,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/arnnapurna-hotels-resorts-4279106?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Both figures are for Jajpur town, not the sites. Mid: Cleartrip Jajati Courtyard (3-star, Jajpur 755001) 18-19 Nov 2026, pre-tax, Double Executive, breakfast included, 5,334, n=1. Budget: Cleartrip Arnnapurna Hotels & Resorts (listed 2-star apartment, Jajpur 755001) 18-19 Nov 2026, pre-tax, Basic Double/Twin with breakfast 1,270, n=1.",
+    "notes": "The only lodging at the sites is Toshali Ratnagiri Resort (16 rooms, opposite the Ratnagiri archaeological museum per Trip.com and Wikivoyage). No tariff is published on any page opened and its operating status is unconfirmed (Wikivoyage gives no price or status; a blog says it closed after Covid), so it is not priced. Tulasi Resort (Jajpur) showed No rooms available on 18 Nov. Most visitors do the Diamond Triangle as a day trip from Bhubaneswar or Cuttack (about 250 km round trip from Bhubaneswar per Wikivoyage). Sources: https://en.wikivoyage.org/wiki/Diamond_Triangle_(Odisha) and https://nz.trip.com/hotels/jajpur-hotel-detail-9996709/toshali-ratnagiri-resort"
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "A Diamond Triangle day is an outstation round trip from Bhubaneswar or Cuttack (about 250 km). The only operator page naming the circuit (odishataxi.in, Plot 1472 Shastrinagar Road, Bhubaneswar) shows no fare; a snippet-only sedan price of 2,800 / 3,800 from odishataxiservice.com is on a page dated 2020 and is not used. Left null rather than guess.",
+    "sources": [
+     "https://www.odishataxi.in/destination/details/odisha-golden-triangle-tour-by-cab-explore-lalitgiri-ratnagiri-udayagiri"
+    ],
+    "notes": "Bhubaneswar one-day city tour at that operator is 2,500 per vehicle, but that is a different, local circuit."
+   },
+   "food_per_person_day": {
+    "budget_inr": 370,
+    "standard_inr": 700,
+    "basis": "Odisha regional proxy (see Bhubaneswar and Puri entries); Wikivoyage says there are hardly any places to eat near the sites and advises carrying dry food, so meals are taken in Jajpur, Cuttack or Bhubaneswar.",
+    "sources": [
+     "https://en.wikivoyage.org/wiki/Diamond_Triangle_(Odisha)",
+     "https://www.tourandtravellers.com/10-best-restaurants-in-puri-odisha-where-to-eat-by-the-sea",
+     "https://www.mypuritour.com/blog/puri-famous-food/",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "Proxy, not Diamond Triangle prices."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Toshali Ratnagiri Resort tariff and whether it is open",
+    "Cab fare for a Diamond Triangle day",
+    "Any food prices near the sites"
+   ]
+  },
+  "gopalpur-on-sea": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3402,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/swosti-palm-resort-gopalpur-3965146?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670479?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/saanaira-resort-spa-4277072?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1449,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://web.archive.org/web/2026/http://www.otdc.in/gopalpur.html",
+     "https://www.cleartrip.com/hotels/details/hotel-city-palace-739522?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4291768?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 450,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://web.archive.org/web/2026/http://www.otdc.in/gopalpur.html"
+    ],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax, cheapest room, room only: Swosti Palm Resort 2,538 (3-star), Gopalpur Resort 3,402 (3-star), Saanaira Resorts & Spa 4,049 (listed 2-star, beach access, Brahmapur postcode); median = Gopalpur Resort. Budget: AC double Rs 1,300 on the OTDC Panthanivas Gopalpur tariff card (undated, archived copy, includes breakfast, GST extra); Cleartrip 18-19 Nov 2026 pre-tax room only: Hotel City Palace 1,449 and Ganesh Bhavan 1,918, both in Brahmapur town about 15 km inland. Dorm: same OTDC card, 6-bed dormitory Rs 450 per bed (undated card).",
+    "notes": "Resort tier is far higher: Pramod Lands End 6,471 and Mayfair Palm Beach 8,882 (both 5-star, 18-19 Nov, room only) are not in the 3-star median. Hotel Song of the Sea (the main budget beach hotel) detail page returned 404, so it is not priced. The OTDC card is old; treat the 1,300 and 450 as indicative. Hostelworld has no Gopalpur page opened. No homestays found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 1200,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 10,
+    "point_to_point": [
+     {
+      "route": "Berhampur to Gopalpur on Sea (about 16 km, one way)",
+      "inr": 699,
+      "range": "CCabs sedan one-way offer price (22 km included, 13 per km after)"
+     },
+     {
+      "route": "Berhampur to Tara Tarini and Gopalpur, return",
+      "inr": 1700,
+      "range": "Carlens Trips & Holidays 4-seater package, 6-seater 2,300"
+     },
+     {
+      "route": "Puri to Gopalpur (175 to 185 km)",
+      "inr": 3850,
+      "range": "puritaxi.in 'from' Executive AC Sedan, priced per km"
+     }
+    ],
+    "basis": "Gopalpur day hire with return to Berhampur, 10 hours / 40 km: CCabs (CCABS Technologies, Niladri Vihar 2nd Lane, Berhampur) sedan 1,200, page shows (c) 2024 only; Carlens Trips & Holidays Berhampur-Gopalpur-Berhampur 4-seater 1,200 incl driver and parking (page (c) 2023, no address). Extra km 10 per km (CCabs round trip), tolls and parking extra. Cabs are based in Berhampur, 16 km away. No Gopalpur union chart found.",
+    "sources": [
+     "https://www.ccabstravel.com/berhampur-page/Gopalpur-Package.html",
+     "https://carlensholiday.in/taxipackagepricebam",
+     "https://www.puritaxi.in/pages/routes/puri-to-gopalpur-taxi"
+    ],
+    "notes": "Both local sources are undated operator pages from Berhampur; expect actual quotes at the beach to be higher in season."
+   },
+   "food_per_person_day": {
+    "budget_inr": 390,
+    "standard_inr": 790,
+    "basis": "Derived from TripMall (16 Aug 2025) per-person meal ranges: Annapurna 100-200, Khaati Odia 150-300, Hotel Sea Pearl 150-350, Chilika Dhaba 200-500, Hotel Song of the Sea 250-400, New Gopalpur Beach Restaurant 250-400, Sunrise Beach 250-450, Mayfair resort restaurant 500-800; Odisha Fast Food Centre snacks 30-100, Shree Jagannath Bhojanalaya from 100 per thali. Budget = snack breakfast 65 + thali 100 + Khaati Odia dinner 225 (midpoint) = 390. Standard = breakfast 150 (odishatravelhub 80-150 range upper end) + beach lunch 313 + dinner 325 (midpoints of the four 250-450 beach places) = 790.",
+    "sources": [
+     "https://tripmall.in/news/must-try-local-foods-and-restaurants-in-gopalpur",
+     "https://odishatravelhub.com/odisha-trip-cost-complete-budget-guide-2026/"
+    ],
+    "notes": "Ranges are from a B2B travel blog, not menus; the arithmetic is mine. Excludes the Mayfair resort restaurant."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Hotel Song of the Sea and other beach-front budget hotel prices",
+    "Dated OTDC Panthanivas Gopalpur tariff",
+    "Taxi association rate chart at Gopalpur",
+    "Homestays"
+   ]
+  }
+ }
+}

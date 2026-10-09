@@ -1,0 +1,452 @@
+{
+ "batch": "B7",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "guwahati": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2835,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-livin-hub-3980530?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/click-hotel-guwahati-4063876?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/pragati-manor-171025?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/treebo-trend-hotel-mobi-vip-airport-3973761?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4293452?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-swagatam-inn-3974336?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1398,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-lilawati-grand-381513?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-knight-inn-airport-4291300?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5424880?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/richie-s-retreat-5262157?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1350,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/eagle-nest-homestay-2046996?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5425163?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4289552?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5680969?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 400,
+    "dorm_n": 17,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Guwahati?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026 pre-tax, cheapest room (Livin Hub 2948, Click Hotel 2116, Pragati Manor 3976, Treebo Mobi 2191, Apollo Grand 2815, Swagatam Inn 2854; median 2835). Budget: Cleartrip 18-19 Nov 2026 pre-tax (Lilawati Grand 1650, Knight Inn Airport 1354, Royal Majestic 1442, Richie's Retreat 1259; median 1398). Homestay: Cleartrip 18-19 Nov 2026 pre-tax (Eagle Nest 1511, Palaash Bon 1188, USC 1106, SKB 1584; median 1350). Dorm: Hostelworld 'dorms from' prices for 17 hostels, undated (median 400, range 299-600).",
+    "notes": "Hotel Hornbill showed 'No rooms available' on 18 Nov, so excluded. Several Cleartrip rooms are non-AC or small standard rooms (cheapest room rule)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 1575,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Guwahati to Shillong (one-way sedan, Gozo 'from' price before GST)",
+      "inr": 2337
+     }
+    ],
+    "basis": "Savaari Guwahati car-rental page: full-day (8 hr/80 km package) AC sedan 'starts at Rs 1575', Innova Rs 2206; the same page quotes Rs 1800 to Rs 3000 for a chauffeur-driven car in Ganeshguri, so 1575 is a floor, not a typical quote. No union chart found. Gozo Cabs lists Guwahati to Shillong from Rs 2,337 before GST; Savaari FAQ gives Guwahati to Shillong Rs 2200 to Rs 6000 by car type.",
+    "sources": [
+     "https://www.savaari.com/guwahati/car-rental",
+     "https://www.gozocabs.com/car-rental/guwahati"
+    ],
+    "notes": "Undated operator pages. Realistic sedan day quote probably 1800-2500; only 1575 is a printed sedan figure. Kaziranga is about 215 km, an outstation trip, not priced."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 900,
+    "basis": "Zomato cost for two (search-result snippets, ex taxes): Authentic Thali Paltan Bazaar 300, Shree Maa Hotel 300, Tirumala Dhaba 400, Raju Hotel 400 give about 150-200 per person per meal, x3 = 450. Standard: Nabhoj Pan Bazaar 600, PK Da Dhaba Dispur 600, Bhojan Griha 500, Mising Kitchen 800 = 250-400 per person per meal, median about 300, x3 = 900. Tripadvisor review quotes Khorikaa Assamese thali Rs 180.",
+    "sources": [
+     "https://www.zomato.com/guwahati/paltan-bazaar-restaurants/assamese",
+     "https://www.zomato.com/guwahati/nabhoj-restaurant-pan-bazaar",
+     "https://www.zomato.com/guwahati/authentic-thali-paltan-bazaar",
+     "https://www.zomato.com/guwahati/best-assamese-restaurants",
+     "https://www.tripadvisor.in/ShowUserReviews-g503692-d2357688-r275699021-KHORIKAA-Guwahati_Kamrup_Metropolitan_District_Assam.html"
+    ],
+    "notes": "Zomato pages timed out on direct fetch; figures are from search-result snippets."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Union/association taxi chart for Guwahati not found",
+    "Local 8h sedan quote above the Savaari 'starts at' floor not found"
+   ]
+  },
+  "jorhat": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2182,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4293478?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-gulmohar-grand-2883978?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/gk-palace-3950603?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/md-continental-746012?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-bliss-jorhat-3989643?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4673523?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1660,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-earl-grey-4264937?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/grand-palace-3909999?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-jora-palace-747390?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5707258?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026 pre-tax, cheapest room (D Royal Palm 2053, Gulmohar Grand 1976, GK Palace 2027, MD's Continental 2364, Bliss 2363, Ivy Grand 2310; median 2182). Budget: Cleartrip 18-19 Nov 2026 pre-tax (Earl Grey 1188, Grand Palace 1518, Jora Palace 1801, Rudraksh Villa 1901; median 1660).",
+    "notes": "Cleartrip's 3 Jorhat homestays (Wings The Pride, Samriddhi, Morning Mist) show 'No rooms available' for 18-19 Nov, so no homestay price. No Hostelworld page for Jorhat (404). Some budget-tier rooms include breakfast."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Jorhat to Majuli (one-way sedan, Gozo, ~45 km, before GST)",
+      "inr": 2759
+     },
+     {
+      "route": "Jorhat to Dibrugarh (one-way sedan, Gozo 'from', before GST)",
+      "inr": 3146
+     }
+    ],
+    "basis": "Gozo Cabs Jorhat page says 'No indicative local package fares are currently available'; no union or tourism-department local rate found. Only outstation 'from' fares recorded.",
+    "sources": [
+     "https://www.gozocabs.com/car-rental/jorhat",
+     "https://www.gozocabs.com/book-taxi/jorhat-majuli"
+    ],
+    "notes": "Gozo fares are indicative and exclude GST. MakeMyTrip Jorhat page timed out."
+   },
+   "food_per_person_day": {
+    "budget_inr": 375,
+    "standard_inr": 650,
+    "basis": "Zomato Jorhat Assamese listings as shown in search results (listed per person): Pakghar, Foodie Assamese Kitchen and Majuli Pakghar about Rs 100, Nova Akhol and Jimpi's Kitchen Rs 150 (median about Rs 125 x 3 = 375); Mejankari and Mayurish Kitchen Rs 200 per person and Assamese Thali (District) Rs 450 for two = 225 per person (about Rs 215 x 3 = 650). Tripadvisor mention: Chouka veg thali Rs 100.",
+    "sources": [
+     "https://www.zomato.com/jorhat/restaurants/assamese",
+     "https://www.district.in/dining/jorhat/assamese-thali-jorhat-locality-jorhat",
+     "https://www.tripadvisor.in/Restaurants-g1155926-Jorhat_Jorhat_District_Assam.html"
+    ],
+    "notes": "Zomato figures read from search-result snippets; pages not opened individually."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Local sedan day rate for Jorhat",
+    "Homestay and dorm prices (all homestays sold out 18-19 Nov; no hostel page)",
+    "Chouka thali Rs 100 is from an undated review"
+   ]
+  },
+  "sivasagar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3133,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4534066?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-hue-house-5579921?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-brahmaputra-shivsagar-3966561?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2238,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/heritage-homestay-5305095?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026 pre-tax, cheapest room (White IBIS 3102, The Hue House 3133, Brahmputra Shiv Sagar 3275; median 3133). Homestay: Cleartrip 18-19 Nov 2026 pre-tax, Heritage Homestay Deluxe Double with breakfast 2238 (n=1).",
+    "notes": "Cleartrip lists 12 Sivasagar properties; for 18-19 Nov 7 show 'No rooms available' (Hotel Brahmaputra x2, Holiday Palace, Brahmputra Nazira, Shiva Palace, Heritage Homestays of Sivasagar, Puhor Inn). A second 'White IBIS A Boutique Hotel' listing (3581) looks like a duplicate of White IBIS and was excluded. No priced budget hotel found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Sivasagar to Dibrugarh (one-way, Gozo 'from', before GST)",
+      "inr": 2642
+     }
+    ],
+    "basis": "Gozo Cabs Sivasagar page says 'No indicative local package fares are currently available'. ne.cab page references a fare list but prints no rupee figures. No union or tourism rate found.",
+    "sources": [
+     "https://www.gozocabs.com/car-rental/sivasagar"
+    ],
+    "notes": "Charaideo is about 28-30 km from Sivasagar town; Rang Ghar and Talatal Ghar are 3-4 km. MakeMyTrip page timed out."
+   },
+   "food_per_person_day": {
+    "budget_inr": 375,
+    "standard_inr": 750,
+    "basis": "Zomato Sivasagar listings as shown in search results (listed per person): Khar Vat, Choki Dhani, Na Aahar Rs 100; Pick Me Hotel, Bhogjora Rs 150 (about Rs 125 x 3 = 375). Pakghar, Randhoni, New Jangphai, Kareng Rs 200; Hotel Brahmaputra Rs 350; Cafe Brahmaputra Rs 400; Sky Chef Rs 600 for two = 300 per person (median about Rs 250 x 3 = 750).",
+    "sources": [
+     "https://www.zomato.com/sivasagar/delivery/dish-veg-thali",
+     "https://www.zomato.com/sivasagar/restaurants",
+     "https://www.holidify.com/places/sibsagar/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Read from search-result snippets; Zomato pages not opened individually."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget hotel price",
+    "Dorm",
+    "Local sedan day rate",
+    "Only 3 mid hotels priced (7 of 12 Cleartrip properties sold out for 18-19 Nov)"
+   ]
+  },
+  "haflong": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2208,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/landmark-hotel-2043894?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail page 18-19 Nov 2026 pre-tax, The Landmark Hotel Deluxe Room with breakfast Rs 2208 (n=1, rated 2-star on Cleartrip).",
+    "notes": "Cleartrip's Haflong list holds only this one property. Other hotels named in a TravelTriangle article (Oct 2024) are 'Rs 2000 onwards' with no verifiable room price, so not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 15,
+    "point_to_point": [
+     {
+      "route": "Haflong to Guwahati (~327 km, MakeMyTrip, plus taxes)",
+      "inr": 8300
+     }
+    ],
+    "basis": "MakeMyTrip Haflong city cabs page as shown in search results: Haflong to Guwahati Rs 8,300 for 327 km, extra Rs 15/km. No local day rate or taxi-union chart found.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/haflong-city-cabs.html"
+    ],
+    "notes": "MakeMyTrip page was not opened (timeouts); figure comes from a search-result snippet."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 500,
+    "basis": "Zomato Haflong listings as shown in search results (listed per person): Amati Fast Food, Dreamland, Punjabi Rasoi, Tribal Bites about Rs 100 (3 x 100 = 300); We2 Restaurant, Priya Restaurant, Fast Food Centre Rs 150 and Sweety Luu Rs 200 (about Rs 165 x 3 = 500). TravelTriangle gives Rs 200-400 for two at Himalayan, Priya, Dreamland.",
+    "sources": [
+     "https://www.zomato.com/haflong/haflong-locality-restaurants",
+     "https://www.zomato.com/haflong/haflong-city-restaurants",
+     "https://traveltriangle.com/blog/restaurants-in-haflong/"
+    ],
+    "notes": "Search-result snippets only."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only one hotel priced",
+    "Budget, homestay, dorm",
+    "Local taxi day rate",
+    "Road to Haflong is landslide-prone (Jatinga closures)"
+   ]
+  },
+  "majuli": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3135,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://luithotel.com/",
+     "https://www.goibibo.com/hotels/dekasang-majuli-hotel-in-majuli-4043487196347278912/"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1200,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.homestaysofindia.com/assam-majuli-homestay/",
+     "https://majuliriverisland.wordpress.com/resorts-and-homestays/"
+    ],
+    "dorm_median_inr": 750,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.homestaysofindia.com/assam-majuli-homestay/"
+    ],
+    "price_basis": "UNDATED, none priced for 18-19 Nov 2026 (Cleartrip, Booking and Kayak have no usable Majuli listing). Mid: Luit Hotel official tariff, Deluxe Room Rs 3360 (page gives no date or tax note); Dekasang Majuli Deluxe Room Rs 2910 before taxes on Goibibo as shown in a search-result snippet. Homestay: Majuli Homestay tariff card Classic Room Rs 2150 (Solo 1900, Superior Bamboo 2300), Okegiga Homes 'tariffs starting at INR 1,200', La Lolat Eco Camp Rs 400-500 per cottage (blog, undated, about 2021 or older); median 1200. Dorm: Majuli Homestay dormitory Rs 750 per bed (tariff card, undated).",
+    "notes": "Majuli Homestay's own page says its tariffs 'do not apply during festivals and holidays'. Majuli Raas (24 Nov 2026, Kartik Purnima) week was not priced, and no source here is dated to it. The Goibibo page timed out on direct fetch; the Rs 2910 comes from the search snippet. Nothing here was dated to the stay week, so treat as a rough level, not a dated price."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Jorhat to Majuli (one-way sedan, Gozo, ~45 km, before GST; ferry not included)",
+      "inr": 2759
+     }
+    ],
+    "basis": "No local day rate for the island found. Gozo Cabs Jorhat to Majuli sedan Rs 2,759 before GST for about 45 km. Nimati Ghat ferry fares (about Rs 15 per person, vehicle about Rs 800) come from search results only and sources disagree; not used as a figure.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/jorhat-majuli"
+    ],
+    "notes": "Visitors mostly hire a vehicle or scooter on the island via the homestay; no printed rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 350,
+    "standard_inr": null,
+    "basis": "La Lolat Eco Camp page: veg thali INR 100, non-veg thali INR 150 (blog, undated); 3 meals at about Rs 100-150 = about Rs 350. Majuli Homestay includes breakfast. No source for a sit-down standard.",
+    "sources": [
+     "https://majuliriverisland.wordpress.com/resorts-and-homestays/"
+    ],
+    "notes": "Single old blog source."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Any 18-19 Nov price (no OTA listing)",
+    "Budget hotel",
+    "Local taxi day on the island",
+    "Standard food",
+    "Raas week deliberately not priced"
+   ]
+  },
+  "kaziranga": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 17,
+    "point_to_point": [
+     {
+      "route": "Guwahati to Kaziranga (one-way sedan, Gozo, ~193 km, before GST)",
+      "inr": 5434
+     }
+    ],
+    "basis": "Gozo Cabs Guwahati to Kaziranga sedan Rs 5,434 one way before GST (Ertiga Rs 6,919, Innova Rs 11,440), reference rate from Rs 17/km. No local taxi rate for Kohora or Bagori found.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/guwahati-kaziranga"
+    ],
+    "notes": "Safari jeep (not a taxi day, recorded for context only): Kohora and Bagori Rs 4,200 per jeep, Agaratoli Rs 5,000, Burapahar Rs 5,500, up to 5-6 people, undated third-party page https://assaminfo.com/general-knowledge-assam/kaziranga-jeep-safari-price-updated-cost-zones-and-booking-details-for-indians-foreigners"
+   },
+   "food_per_person_day": {
+    "budget_inr": 500,
+    "standard_inr": 950,
+    "basis": "Derived from Tripoto per-meal figures for two (about 7 years old): Assamese thali place on highway under Rs 500 for two (about Rs 250 per person), restaurant near Kohora gate Rs 800 for two (Rs 400), Iora Scarlet Flame Rs 1200 for two (Rs 600); highway stall breakfast about Rs 100 for two. Justdial: Bhatbaan (Iora) Rs 1600 for two. Budget = about 50 breakfast + 2 x 250; standard = about 100 breakfast + 2 x 400-450.",
+    "sources": [
+     "https://www.tripoto.com/kaziranga/trips/top-places-to-eat-in-kaziranga-5c9ef8320c46c",
+     "https://www.justdial.com/Kaziranga/Restaurants-in-Kohora/nct-10408936"
+    ],
+    "notes": "Tripoto prices are old and probably understate today; Justdial Rs 1600 comes from a search snippet."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Local taxi day rate",
+    "Food figures are old (about 2019) and derived",
+    "Stay omitted (stay_observed true)"
+   ]
+  },
+  "manas-national-park": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2500,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://manasnationalparkassam.wordpress.com/resorts-and-cottages-at-manas-2/"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "UNDATED 'starts at' tariffs per room per day from a blog page (no date printed): Bansbari Lodge 3000, MUSA Jungle Retreat 4500, Manas Maozigendri Ecotourism Society 2500, Florican Cottages 2500, Manas Motel Tourist Lodge 2000; median 2500. Not priced for 18-19 Nov 2026.",
+    "notes": "These are floor rates and likely out of date: a Tripadvisor listing snippet shows MUSA Jungle Retreat at about Rs 6,510-8,851 for its checked dates. Meals are often extra at the lodges. Park jeep safaris run Oct to May."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No taxi or union rate found for Barpeta Road to Bansbari (about 20-23 km) or a local day.",
+    "sources": [],
+    "notes": "Jeep safari (not a taxi day, context only): Bansbari zone Rs 4,500 per jeep for Indians, Bhuyanpara Rs 8,500 (musa.co.in, all-inclusive, page footer dated 9 Oct 2026, https://www.musa.co.in/manas-jeep-safari); assaminfo shows Rs 4,500 and Rs 5,900 (undated), max 5 people."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No current rupee menu found. Only old figures: Outlook Traveller lists Bansbari Lodge breakfast Rs 158, lunch/dinner Rs 289 (about 9 years old) and a Tripadvisor review of Mathanguri canteen Rs 80 breakfast, Rs 120 veg meal (about 12 years old). Not used.",
+    "sources": [],
+    "notes": "Meals are normally pre-booked with the lodge."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated 18-19 Nov stay prices",
+    "Budget, homestay, dorm",
+    "Taxi",
+    "Food"
+   ]
+  },
+  "charaideo": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Sivasagar (about 28-30 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No lodging at the Charaideo Moidams site itself. Tripadvisor's Charaideo Maidams page and visitor reviews put it about 28-30 km from Sivasagar town (https://www.tripadvisor.in/Attraction_Review-g12006905-d4171789-Reviews-Charaideo_Maidams-Nazira_Sivsagar_District_Assam.html); Tripadvisor lists only a handful of small hotels in Charaideo district (https://www.tripadvisor.com/Hotels-g12379585-Charaideo_District_Assam-Hotels.html), the nearest being The Mist Blew Sonari Hotel, about 4.5 km away, with no verified price. Use Sivasagar prices for a stay.",
+    "notes": "Sivasagar mid median 3133 (3 hotels, Cleartrip 18-19 Nov 2026) is the base reference. Those two Tripadvisor pages returned 403 on direct fetch, so the claims come from search-result snippets."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No rate found. Base is Sivasagar (about 28-30 km each way); see sivasagar entry. Entry fee Rs 30 per Indian visitor is noted in search results only.",
+    "sources": [],
+    "notes": "Not priced."
+   },
+   "food_per_person_day": {
+    "budget_inr": 375,
+    "standard_inr": 750,
+    "basis": "Taken from Sivasagar town, the base: Zomato Sivasagar listings per person Rs 100-150 at budget places, Rs 200-300 at sit-down places (x3 meals). No eateries priced at the site.",
+    "sources": [
+     "https://www.zomato.com/sivasagar/delivery/dish-veg-thali",
+     "https://www.zomato.com/sivasagar/restaurants",
+     "https://www.holidify.com/places/sibsagar/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Search-result snippets only."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Taxi",
+    "Prices at Sonari hotels",
+    "Direct pages for Tripadvisor claims (403)"
+   ]
+  }
+ }
+}
