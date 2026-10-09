@@ -170,8 +170,8 @@ export async function generateMetadata({
   const isHindi = locale === "hi";
   const title = isHindi ? resolved.titleHindi : resolved.title;
   const description = isHindi
-    ? `${resolved.titleHindi} — सत्यापित स्कोर, ईमानदार चेतावनियाँ, बिना अनुग्रहित। 505 स्थलों में से चुने हुए।`
-    : `${resolved.title} — verified scores, honest catches, no sponsored picks. Drawn from 505 destinations and ranked for what the trip actually needs.`;
+    ? `${resolved.titleHindi} — सत्यापित स्कोर, ईमानदार चेतावनियाँ, बिना अनुग्रहित। 533 स्थलों में से चुने हुए।`
+    : `${resolved.title} — verified scores, honest catches, no sponsored picks. Drawn from 533 destinations and ranked for what the trip actually needs.`;
   const canonicalUrl = `${BASE}/${locale}/best/${slug}`;
 
   return {

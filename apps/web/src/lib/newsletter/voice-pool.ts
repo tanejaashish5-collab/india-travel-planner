@@ -9,7 +9,7 @@ export const OPENINGS: string[] = [
   "The monsoon's moved. The scores have shifted. This is what the data says about right now.",
   "A good trip is 80% timing. Here's what's in season, and what to ignore no matter what Instagram says.",
   "Honest week. Fewer tourists than you think, better weather than most people know. Let's go.",
-  "This week: one place scoring 5/5, one place you should actively avoid, one road that just opened.",
+  "This week: one place scoring 10/10, one place you should actively avoid, one road that just opened.",
   "If you had one weekend to go somewhere in India right now, this is where the data points.",
   "Clear skies somewhere. Landslides somewhere else. The week's intelligence, filtered.",
   "The Window — four things that changed in the last seven days, and why one of them matters for your next trip.",

@@ -141,7 +141,7 @@ export default async function RiskQuizPage({ params }: { params: Promise<{ local
               }}
             >
               Your answers map to a persona (family / solo / couple / adventure /
-              wellness), then query the 5,856-row destination-month score table
+              wellness), then query the 6,396-row destination-month score table
               filtered by the month and comfort tier you selected. Top 5
               highest-scored matches land here. No remote API call — the matcher
               runs on the live NakshIQ scoring database.

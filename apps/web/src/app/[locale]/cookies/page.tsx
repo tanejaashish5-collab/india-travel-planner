@@ -290,7 +290,7 @@ export default async function CookiesPage({
               margin: 0,
             }}
           >
-            — Impresa de Artiste Pty Ltd
+            — NakshIQ
           </p>
           <p
             className="nq-meta"

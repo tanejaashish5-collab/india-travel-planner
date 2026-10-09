@@ -144,9 +144,8 @@ export default async function PrivacyPage({
           <SectionLabel num="II" name="WHO WE ARE" />
           <Prose>
             <p>
-              NakshIQ is operated by Impresa de Artiste Pty Ltd, registered in
-              the Australian Capital Territory, Australia. For privacy matters,
-              contact us at{" "}
+              NakshIQ is an independent India travel publication. For privacy
+              matters, contact us at{" "}
               <a
                 href="mailto:hello@nakshiq.com"
                 style={{
