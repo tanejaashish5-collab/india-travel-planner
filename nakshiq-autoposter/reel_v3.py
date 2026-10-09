@@ -71,6 +71,12 @@ LEAD = 0.45        # picture before the first word
 TAIL = 1.4         # hold after the last word, before the end card
 CUT_EARLY = 0.18   # picture changes just before the next line lands
 MIN_SPEED = 0.82   # slow a shot down at most this much before holding its last frame
+# After the slow-down a shot may hold its last frame this long, no more. Amritsar
+# (posted 2026-10-02) held the final frame of s6 for 3.4 s in Hindi: the last line
+# ran 13 s on an 8 s clip and the viewer saw the picture stop dead. Over this the
+# cut FAILS and the spec must give that line its own beat (a later "from" on the
+# same shot with a zoom reads as a new angle) or a longer clip.
+FREEZE_MAX = 0.6
 MAX_ZOOM = 1.7     # punch-in ceiling: Veo Lite is 720x1280, past this it goes soft
 # Two beats of a cut whose pictures match this closely read as the same shot
 # played twice. Kodaikanal (2026-10-01, founder: "repeats visuals a lot at the
@@ -519,6 +525,12 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
         frm = float(b.get("from", 0.0))
         avail = max(0.1, _dur(src) - frm)
         speed = 1.0 if avail >= seg else max(MIN_SPEED, avail / seg)
+        short = seg - avail / speed
+        if short > FREEZE_MAX:
+            raise SystemExit(
+                f"beat {i + 1} ({b['shot']} from {frm:.1f}s, {lang}) needs {seg:.1f}s of picture but the clip "
+                f"gives {avail / speed:.1f}s even slowed to {speed:.2f}x: the last frame would freeze for "
+                f"{short:.1f}s (limit {FREEZE_MAX}s). Split the line into two beats or use a longer clip")
         ins += ["-i", str(src)]
         k = i
         # Scale to 1080x1920 first so every shot shares one grade and grain.

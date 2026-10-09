@@ -429,7 +429,7 @@ def publish(dry: bool = False, kind: str = "story") -> int:
                 last[a] = max(last.get(a, ""), v.get("published_at") or "")
         ready = sorted((v for v in led.values() if v["lang"] == lang and v["status"] == "ready"
                         and v.get("kind") not in ("data_card", "guide")
-                        and Path(v["file"]).exists()),
+                        and Path(v["file"]).exists() and _cleared(v)),
                        key=lambda v: (last.get(v.get("angle") or "month", ""), not v.get("six_beat"), v["rendered_at"]))
         if not ready:
             dc = _data_card_row(plat, surf, led, dry)
@@ -444,6 +444,34 @@ def publish(dry: bool = False, kind: str = "story") -> int:
             continue
         published += _post(ap, led, row, plat, acct, today, dry)
     return 0
+
+
+def _cleared(row: dict) -> bool:
+    """A v3 story reel posts only with proof the checks ran on this exact file
+    (founder 2026-10-09, after Amritsar): v3_daily's qa_passed stamp (machine checks:
+    streams, duration, repeated shot, frozen picture, people glitches) AND the daily
+    clip check's clips_eyeballed stamp (a person looked at every clip's frames).
+    The stamps are about the file: a re-cut needs both again. A row that is not
+    cleared is logged and skipped, never posted; the data card fills the day."""
+    if row.get("pipeline") != "v3":
+        return True
+    qa = row.get("qa_passed") or {}
+    why = []
+    try:
+        mtime = int(Path(row["file"]).stat().st_mtime)
+    except OSError:
+        return False
+    if not qa:
+        why.append("no qa_passed stamp (run v3_daily.py requalify)")
+    elif qa.get("file_mtime") != mtime:
+        why.append("qa_passed is for an older cut of this file")
+    if not row.get("clips_eyeballed"):
+        why.append("clips not eyeballed yet (daily 15:41 clip check)")
+    elif row.get("rendered_at", "")[:10] > str(row["clips_eyeballed"])[:10]:
+        why.append("re-cut after the clips were eyeballed")
+    if why:
+        _log(f"{row.get('platform')}: {row['storyboard']} ready but NOT cleared: {'; '.join(why)}")
+    return not why
 
 
 def _post(ap, led: dict, row: dict, plat: str, acct: dict, today: str, dry: bool) -> int:

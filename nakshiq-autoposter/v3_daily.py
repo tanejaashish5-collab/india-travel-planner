@@ -20,6 +20,16 @@ added 2026-10-01 after Kodaikanal), lands as "review" instead, with the reason
 in "held".
 Touch HOLD_FOR_REVIEW (next to this file) to send every new cut to "review"
 again; delete it to go back to auto-publish.
+
+2026-10-09 (founder, after the Amritsar reel shipped a frozen last frame, a still
+standing in for a shot, and a man falling off a bench inside a Veo clip): "ready"
+alone no longer posts. publish() wants two stamps on the row, both for THIS file:
+  qa_passed       written here when every check passes (qa + clip_qa people check,
+                  now incl. a freeze check); `python3 v3_daily.py requalify` re-runs
+                  them on every ready row (run it whenever a check is added)
+  clips_eyeballed written by the daily 15:41 clip check once a person has looked
+                  at every clip's frames (cron a18dd2ee; renew weekly)
+A stand-in still now lands as "review", not "ready".
 """
 from __future__ import annotations
 
@@ -66,7 +76,39 @@ def qa(path: Path) -> str:
         i, j, v = same[0]
         return (f"beats {i + 1} and {j + 1} look like the same shot ({v:.2f} >= {R.SAME_SHOT}); "
                 "give one a zoom/focus in the spec, or regenerate it")
+    # The picture stopping dead (Amritsar 2026-10-02: 3.4 s on one frame while the
+    # voice ran on; Kochi/Ahmedabad Hindi cuts 1.1-1.3 s). Catches both the cutter
+    # holding a last frame and a Veo clip that froze on its own. Fails closed.
+    fz = frozen(path, dur)
+    if fz is None:
+        return "freeze check could not run"
+    if fz:
+        t, d = fz[0]
+        return f"picture frozen {d:.1f}s at {t:.1f}s (limit {FREEZE_HOLD}s): the shot is shorter than its line"
     return ""
+
+
+FREEZE_HOLD = 1.0   # a frozen picture this long in a story reel is a visible stop
+
+
+def frozen(path: Path, dur: float) -> list[tuple[float, float]] | None:
+    """(start, length) of every frozen stretch >= FREEZE_HOLD before the end card;
+    None when ffmpeg could not say. freezedetect's noise floor -50 dB ignores grain."""
+    import re
+    import subprocess
+    try:
+        r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-vf",
+                            f"freezedetect=n=-50dB:d={FREEZE_HOLD}", "-an", "-f", "null", "-"],
+                           capture_output=True, text=True, timeout=300)
+    except Exception:  # noqa: BLE001
+        return None
+    if r.returncode != 0:
+        return None
+    starts = [float(x) for x in re.findall(r"freeze_start: ([\d.]+)", r.stderr)]
+    lens = [float(x) for x in re.findall(r"freeze_duration: ([\d.]+)", r.stderr)]
+    import yt_shorts_v2 as Y
+    card = dur - Y.ENDCARD_DUR - 0.2   # the logo card is meant to hold still
+    return [(s, d) for s, d in zip(starts, lens) if s < card]
 
 
 def clip_glitches(storyboard: str) -> str:
@@ -134,10 +176,11 @@ def render() -> int:
             if key in led:
                 # A stand-in cut whose real clip has since landed, and not yet posted:
                 # cut it again properly and drop the note. Anything else is final.
-                if not (led[key].get("stand_in") and led[key].get("status") == "ready" and not stand):
+                if not (led[key].get("stand_in") and led[key].get("status") in ("ready", "review") and not stand):
                     continue
                 print(f"[v3_daily] {key}: real clip arrived, re-cutting without the stand-in")
                 led[key].pop("stand_in", None)
+                led[key].pop("clips_eyeballed", None)   # new clip: a person must look again
             out = R.VEO / "reels" / f"{key}.mp4"
             try:
                 R.render(s, lang, out, stand, SB.pick_music(s.get("format", ""), s["slug"]))
@@ -154,7 +197,11 @@ def render() -> int:
             first = [l for l in s["vo"]["en"][0].splitlines() if l.strip()]
             if glitch is None:
                 glitch = clip_glitches(s["id"])
-            held = "HOLD_FOR_REVIEW file present" if HOLD.exists() else (qa(out) or glitch)
+            # A stand-in still is a visible stop (founder 2026-10-09 on Amritsar: "a bit
+            # of stoppage"). It is still cut, so the day is not lost, but it goes to review:
+            # the founder releases it or the real clip lands and it is re-cut.
+            held = "HOLD_FOR_REVIEW file present" if HOLD.exists() else (
+                qa(out) or glitch or (f"{', '.join(sorted(stand))} plays as a still (clip not generated yet)" if stand else ""))
             led[key] = {"storyboard": s["id"], "slug": s["slug"], "format": s.get("format"), "angle": s.get("angle") or "month",
                         "status": "review" if held else "ready", "six_beat": True, "pipeline": "v3",
                         "rendered_at": datetime.now(timezone.utc).isoformat(),
@@ -162,6 +209,11 @@ def render() -> int:
                         "file": str(out), "cover": cover}
             if held:
                 led[key]["held"] = held
+            else:
+                # The stamp publish() requires (scenario_daily): a row is never posted on
+                # "ready" alone, only with proof the checks ran on THIS file.
+                led[key]["qa_passed"] = {"at": datetime.now(timezone.utc).isoformat(),
+                                         "file_mtime": int(out.stat().st_mtime), "checks": QA_CHECKS}
             if stand:
                 led[key]["stand_in"] = sorted(stand)
             if platform == "youtube" and yt_title(s):
@@ -173,6 +225,42 @@ def render() -> int:
     return 0
 
 
+QA_CHECKS = ["file", "streams", "duration", "look_alike", "freeze", "clip_people"]
+
+
+def requalify() -> int:
+    """Re-run every check on every v3 story row that is "ready" and stamp qa_passed, or
+    hold it. For the day a check is added (freeze, 2026-10-09): cuts made under the old
+    rules do not get to post on an old pass."""
+    led = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
+    glitch_cache: dict[str, str] = {}
+    n_hold = 0
+    for key, row in led.items():
+        if row.get("pipeline") != "v3" or row.get("kind") in ("guide", "data_card"):
+            continue
+        if row.get("status") != "ready":
+            continue
+        out = Path(row["file"])
+        sb = row["storyboard"]
+        if sb not in glitch_cache:
+            glitch_cache[sb] = clip_glitches(sb)
+        held = qa(out) or glitch_cache[sb] or (
+            f"{', '.join(row['stand_in'])} plays as a still (clip not generated yet)" if row.get("stand_in") else "")
+        if held:
+            row["status"] = "review"
+            row["held"] = f"requalify {datetime.now(timezone.utc).date()}: {held}"
+            row.pop("qa_passed", None)
+            n_hold += 1
+            print(f"[v3_daily] HOLD {key}: {held}")
+        else:
+            row["qa_passed"] = {"at": datetime.now(timezone.utc).isoformat(),
+                                "file_mtime": int(out.stat().st_mtime), "checks": QA_CHECKS}
+            print(f"[v3_daily] pass {key}")
+    LEDGER.write_text(json.dumps(led, ensure_ascii=False, indent=1))
+    print(f"[v3_daily] requalify: {n_hold} held")
+    return 0
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
-    raise SystemExit({"topup": topup, "render": render}.get(cmd, lambda: print(__doc__) or 2)())
+    raise SystemExit({"topup": topup, "render": render, "requalify": requalify}.get(cmd, lambda: print(__doc__) or 2)())

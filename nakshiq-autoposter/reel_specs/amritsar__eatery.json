@@ -78,7 +78,7 @@
     "ref_lane"
    ],
    "tone": "one spoonful settles it",
-   "prompt": "Medium shot from behind and to the side on the long wooden dhaba bench at night: the woman in the rust shawl lifts a spoonful of dark creamy dal from a steel bowl, the man beside her watching with a grin, their faces turned away from camera, the copper pot steaming soft in the background."
+   "prompt": "Medium shot from behind and to the side on the long wooden dhaba bench at night: the man in the green jacket and the woman in the rust shawl sit side by side with their backs to the camera, facing the steel table in front of them; on the table before her a small steel bowl of dark creamy dal with a steel spoon resting in it, her hands in her lap, his hands on the table; nobody is eating yet; the copper pot steaming soft in the background."
   }
  ],
  "shots": [
@@ -121,7 +121,7 @@
    "id": "s6",
    "mode": "frames",
    "start": "kf_s6",
-   "prompt": "Slow push-in. She tastes the dal and nods; he laughs and leans back.",
+   "prompt": "Slow push-in. Both stay seated with their backs to the camera the whole time. She picks up the spoon from the bowl on the table, lifts one spoonful of dal to her mouth, sets the spoon back in the bowl and nods once. He keeps his hands on the table and tilts his head toward her. Nobody turns to the camera, nobody stands, nobody leans back.",
    "sound": "A steel spoon against a steel bowl, wood crackling in the fire, quiet night tone."
   }
  ],
@@ -149,6 +149,12 @@
   {
    "shot": "s6",
    "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 1.5,
+   "zoom": 1.35,
+   "focus": [0.66, 0.42]
   }
  ],
  "vo": {
@@ -158,7 +164,8 @@
    "The reason was on NakshIQ: a family making the same dal since nineteen sixteen, in Amritsar since Partition.",
    "In Chowk Passian their dal makhani simmers in a copper pot for eight to twelve hours.",
    "The tip said cash only, no AC, and before one or after eight to dodge the queue.",
-   "We came just after eight with cash, and Meera stopped arguing after one spoonful.\nTravel intelligence is one reason among twenty signs.\nNakshIQ."
+   "We came just after eight with cash, and Meera stopped arguing after one spoonful.",
+   "Travel intelligence is one reason among twenty signs.\nNakshIQ."
   ],
   "hi": [
    "नवंबर की एक शाम हम स्वर्ण मंदिर की गलियों से भूखे निकले, और बीस दुकानें सबसे अच्छी दाल का दावा कर रही थीं।",
@@ -166,7 +173,8 @@
    "वजह NakshIQ पर मिली: एक परिवार जो उन्नीस सौ सोलह से वही दाल बना रहा है, बँटवारे के बाद से अमृतसर में।",
    "चौक पसियां में उनकी दाल मखनी तांबे के बर्तन में आठ से बारह घंटे पकती है।",
    "टिप में लिखा था सिर्फ़ कैश, AC नहीं, और लाइन से बचना है तो एक बजे से पहले या आठ के बाद आओ।",
-   "हम आठ के ठीक बाद कैश लेकर पहुँचे, और पहले चम्मच के बाद मीरा ने बहस बंद कर दी।\nट्रैवल इंटेलिजेंस है बीस बोर्डों के बीच एक सही वजह।\nNakshIQ."
+   "हम आठ के ठीक बाद कैश लेकर पहुँचे, और पहले चम्मच के बाद मीरा ने बहस बंद कर दी।",
+   "ट्रैवल इंटेलिजेंस है बीस बोर्डों के बीच एक सही वजह।\nNakshIQ."
   ]
  },
  "captions": {
@@ -177,6 +185,7 @@
   "still": "kf_s2"
  },
  "caption_name": "Kesar Da Dhaba",
+ "retake_2026_10_09": "Founder pulled the 2 Oct post: s6 had the woman eating from a bowl held at her chest, the man turning to camera and falling backwards off the bench; s2 played as a still; the last line froze 3.4 s on one frame. kf_s6 + s6 regenerated (bowl on the table, nobody eating at the start, nobody turns or leans back); the closing line is its own beat (s6 from 1.5 s, punched in on her).",
  "shot_notes": [
   "Evening in an old Amritsar lane near the Golden Temple: a man and a woman in their late 20s walk side by side, seen from behind, the lane otherwise empty.",
   "The pair pause at a corner lit by warm shopfront bulbs, the woman gesturing ahead, faces turned away, no readable signage.",
