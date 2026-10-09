@@ -118,3 +118,22 @@ East and North-East pass (2026-10-09)
 - No-lodging candidates need a source: lakes and passes (Tsomgo, Gurudongmar, Zuluk has homestays), archaeological
   sites (Dhauli, Nalanda, Pawapuri, Vaishali, Charaideo, Unakoti), sanctuaries with only a forest rest house. A
   forest or tourism rest house that takes public bookings IS lodging: price it if a tariff is shown.
+
+South India, Central India and Islands pass (2026-10-10)
+- Same stay date and method as East: Wed 18 to Thu 19 Nov 2026, hotel detail page `?c=18112026|19112026&r=2,0`,
+  "18-19 Nov 2026" written tier by tier in `price_basis`. Never price 7-16 Nov (Diwali week).
+- Files are in `data/cost-research/south/` (Andhra Pradesh, Karnataka, Kerala, Puducherry, Tamil Nadu, Telangana)
+  and `data/cost-research/central-islands/` (Madhya Pradesh, Chhattisgarh, Andaman, Lakshadweep). Use the
+  `_scope.json` and `_batches.json` in the folder named in your task.
+- Pilgrim and festival crowding can move prices on 18-19 Nov: Sabarimala's season (Pathanamthitta, Pamba, Erumely),
+  Tiruvannamalai's Karthigai Deepam, Tirupati, Kartik Purnima (24 Nov). If a place is affected, say so in `notes`
+  and still price 18-19 Nov; do not skip to a different date.
+- Andaman and Lakshadweep: lodging is often sold only as a package or through a government tariff. Price a
+  room only where a page prints a room rate; a package price is never a room price. Lakshadweep needs a permit:
+  record the permit in `notes` if a source shows it.
+- Madhya Pradesh tiger reserves (Kanha, Bandhavgarh, Pench, Satpura): lodges are often all-inclusive (meals and
+  safaris). Use room-only rates; if only a full-board price exists, say so and leave the 3-star median null.
+- Hill and beach places in the South have union or association taxi rate charts (Munnar, Ooty, Kodaikanal,
+  Coorg, Varkala, Kovalam). A fare from the base to a far sight is `point_to_point`, not the local day.
+- Never reuse one food figure across several places. A state-wide or region-wide blog range is not a place's
+  food cost; leave the place null instead.
