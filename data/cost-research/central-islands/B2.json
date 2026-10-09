@@ -239,6 +239,228 @@
     "Homestay and dorm prices",
     "Budget food from more than one restaurant"
    ]
+  },
+  "chitrakote-falls": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "jagdalpur",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No dated or printed room tariff found for Chitrakote's own lodging.",
+    "notes": "Own lodging exists: Dandami Madiya Resort (Chhattisgarh Tourism cottages/tents, Chitrakote, Lohandiguda; listed at https://bastar.gov.in/en/tourism/accommodation/ without a tariff) and a PWD rest house. Not priced: Cleartrip has no Chitrakote listing, Goibibo/Tripadvisor/Expedia pages were blocked or did not show a rate, a private resort site (dandamiluxuryresort.in) says only 'call for quote', a third-party seller (Ocean6 Holidays) prints a 2-night package of unclear basis, and a blog (explorechhattisgarh.in) gives unsourced ranges. Jagdalpur hotel prices were deliberately not copied."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No named Bastar operator or tourism tariff with a printed rate found; only template cab sites and undated blogs.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Chitrakote-specific restaurant menu or cost-for-two found; Jagdalpur figures not reused.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dandami Madiya Resort tariff (call Chhattisgarh Tourism)",
+    "Local taxi rate",
+    "Food prices at the falls"
+   ]
+  },
+  "barnawapara": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3000,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://serviceonline.gov.in/chhattisgarh/serviceLinkHome.html?serviceToken=GRdn6COhmL791"
+    ],
+    "budget_hotel_median_inr": 1500,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://serviceonline.gov.in/chhattisgarh/serviceLinkHome.html?serviceToken=GRdn6COhmL791"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 250,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://serviceonline.gov.in/chhattisgarh/serviceLinkHome.html?serviceToken=GRdn6COhmL791"
+    ],
+    "price_basis": "Tariff card, undated (Chhattisgarh government service portal, Barnawapara Paryatak Gram, Forest Department): rate per room, page does not say 'per night'. Mid = Machan, 12 rooms, double bed, A.C. = 3,000 (the only AC category, n=1). Budget = median of five non-AC double room categories 800 / 1,000 / 1,500 / 2,000 / 2,500 (2(A,B,C), 6A&6B, Bar Safari, 7AB/8AB, N Series) = 1,500. Dorm = 250 per bed (8-bed room 2,000).",
+    "notes": "Single forest-department property, so n counts room categories, not separate hotels. Heritage 2-bedroom unit 6,000 not used. Page shows tour timings 1 Nov to 28/29 Feb and 1 Mar to 30 Jun; online booking opens 60 days before stay. Tariff has no taxes line. Private lodges nearby (e.g. Muba's Machan) not priced."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No operator or tourism tariff found. The portal's vehicle (gypsy) charge column is blank.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No restaurant or canteen price found.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Taxi or gypsy hire rate",
+    "Food prices",
+    "Private lodge rates",
+    "Whether the portal rate is per night (assumed, as a per-room stay rate)"
+   ]
+  },
+  "sirpur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2000,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.chhattisgarhtourism.co.in/hotels-in-sirpur-chhattisgarh.html"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Tariff card, undated (Chhattisgarh Tourism page, 'Johar Resort Sirpur', 12 air-conditioned rooms, behind Tourist Information Centre): CP plan (plan not defined on page, likely breakfast) double 2,000, single 1,500; MAP double 3,600. Page states 'Taxes Included', so 2,000 is tax-inclusive. Mid = the CP double (n=1).",
+    "notes": "The district site (https://mahasamund.gov.in/en/tourism/accommodation/, last updated 2018) lists the government resort at the same address as 'Hiuen Tsiang Tourist Resort' with no tariff, so 'Johar Resort' may be the same property under another name (not confirmed). Soumya Resorts on Cleartrip showed no rooms for 18-19 Nov. Tripadvisor lists Aloha Nature Stay near Barnawapara/Sirpur at a much higher range; not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No operator or tourism tariff found.",
+    "sources": [],
+    "notes": "Left null. Raipur is the practical base (Sirpur is about 80 km from Raipur)."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Sirpur restaurant price found.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Whether Johar Resort and Hiuen Tsiang Tourist Resort are the same property",
+    "Taxi rate",
+    "Food prices",
+    "Budget lodge tariffs"
+   ]
+  },
+  "bhoramdeo": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Kawardha",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No room-only rate found for lodging inside Bhoramdeo.",
+    "notes": "Bhoramdeo's own lodging is Bhoramdeo Jungle Retreat (private award-winning homestay, five rooms in three cottages), sold only full board: Responsible Tourism India prints 'Rs 5,500 per person per night; includes all meals and activities that do not involve car transport' (https://www.responsibletourismindia.com/stay/bhoramdeo-jungle-retreat/197, undated). Not a room price, so no median. No forest or tourism rest-house tariff found. Kawardha town hotels (about 15-20 km, not verified) were not priced."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No operator or tourism tariff found.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Bhoramdeo restaurant price found.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Room-only rate at Bhoramdeo Jungle Retreat",
+    "Forest rest house tariff",
+    "Taxi rate",
+    "Food prices"
+   ]
+  },
+  "agatti": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No room-only rate found; Agatti stays are listed with meals or as packages.",
+    "notes": "Listing sites print per-night prices for Agatti stays (e.g. lakshadweep-hotels.com/island/agatti/: homestays 4,000-5,500, beachside 6,500-10,500), but the page says almost all Agatti accommodation includes meals, usually all three, and does not state occupancy or inclusions per listing, so these are not room prices and were not used. Entry permit: agattitourism.com (operator, part of Lakshadweep Adventures) says it will help visitors get an entry permit for Agatti, Bangaram and Kavaratti; fees not shown there."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "none",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No taxi, auto or bike-hire rate found (agattitourism.com lists none).",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No restaurant or menu price found; meals are normally bundled with stays.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Room-only stay rates",
+    "Official permit fee and process (epermit.utl.gov.in not opened)",
+    "Taxi or bike hire",
+    "Food prices"
+   ]
   }
  }
 }

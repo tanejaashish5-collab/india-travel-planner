@@ -1,0 +1,464 @@
+{
+  "batch": "B4",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "ujjain": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2418,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/mpt-ujjaini-2632432?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-royal-palace-2425336?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4563057?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-embassy-4058377?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-rudhav-palace-4480594?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4674026?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1586,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-midland-2421854?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/shiv-palace-3957591?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-satyam-inn-near-mahakal-2874206?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, pre-tax cheapest room, room only: Hotel Rudhav Palace 2254, MPT Ujjaini 2260, Hotel Shiva Palace 2379, Hotel Royal Palace 2456, Hotel Embassy 2621, Byke Boutique Mahakal Aangan 2688 (all labelled 3-star by Cleartrip); median of 6 = 2418. Budget: same method, 18-19 Nov 2026: Shiv Palace 1430, Midland 1586, Satyug Inn 1849 (also Cleartrip-labelled 3-star but the cheapest tier). Excluded from mid: MPT Shipra Residency 3533 (price shown is for a room with breakfast plan).",
+        "notes": "Ujjain is a large temple-town market. Dates 18-19 Nov are two days after the Chhath week but before Kartik Purnima (24 Nov); no visible crowding premium on the 18-19 Nov pages vs the 13-14 Nov list prices (list prices for the same hotels were within a few percent). Mahakal crowds can raise prices on weekends and festivals. No homestay or hostel listing found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Ujjain to Omkareshwar",
+            "inr": 3000
+          },
+          {
+            "route": "Ujjain to Indore",
+            "inr": 2150
+          }
+        ],
+        "basis": "Ujjain Ride (6 Sandipani Nagar, Ujjain) Ujjain Darshan package 'starts @ Rs 2500', AC cab 7-8 hours, fares vary by date and vehicle; Ujjain Travel Assistant local-transport guide (2026) gives full-day taxi Rs 2,000-3,000 (midpoint 2,500), Ujjain to Omkareshwar Rs 2,500-3,500 (midpoint 3,000), Ujjain to Indore Rs 1,800-2,500 (midpoint 2,150). No taxi-union rate list found online.",
+        "sources": [
+          "https://ujjainride.in/ujjain-darshan-taxi",
+          "https://ujjaintravelassistant.com/ujjain-local-transport-guide/"
+        ],
+        "notes": "Operator quotes, not a union chart. Point-to-point figures are midpoints of printed ranges."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 600,
+        "basis": "Zomato Ujjain cost for two (listing page, as shown): budget places Angara Restaurant 200, Ramble 200, Shree Ganga 300, Kulcha Lal Parantha Das 300 (median 250 => ~125 per person per meal); casual sit-down Damruwala 350, Rajkumar Restaurant 400, Ramayana Restaurant and Cafe 400, New Food Restaurant 450, Shreenathji Bakers 450, Bafna's 400 (median 400 => ~200 per person per meal). Day = 3 meals x per-meal figure: 3x125=375, 3x200=600. Thali Rs 80-150 per ujjaintravel.com is consistent with the budget meal.",
+        "sources": [
+          "https://www.zomato.com/ujjain/restaurants",
+          "https://www.zomato.com/ujjain/bafnas-1-pawapuri-colony",
+          "https://www.zomato.com/ujjain/mahakal-food-cafe-restaurant-malipura",
+          "https://www.ujjaintravel.com/blogs/minimum-budget-for-ujjain-trip"
+        ],
+        "notes": "Cost-for-two figures read on Zomato pages 2026-10-10 (exclusive of taxes). Breakfast is usually cheaper than lunch/dinner, so the day figure is on the generous side."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "homestay prices",
+        "hostel dorm prices (Hostelworld has no Ujjain page)",
+        "taxi union rate chart"
+      ]
+    },
+    "jabalpur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2211,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-bk-castles-710804?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-delite-grand-2881858?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4303034?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-delite-palladium-3925391?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-samrat-2045274?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4296639?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/playotel-inn-anmol-classic-3975147?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1322,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-the-grand-3989759?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-datt-residency-3943022?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 675,
+        "dorm_n": 2,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Jabalpur?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, pre-tax cheapest room, room only, AC, all in Jabalpur city: Playotel Inn Anmol Classic 1771, White Pearl 1797, Hotel BK Castles 2086, Hotel Rishi Regency 2211, Hotel Delite Palladium 2282, Hotel Delite Grand 2721, Hotel Samrat 2872; median of 7 = 2211. Excluded: Vijan Business Hotel 3318 and MPT Kalchuri Residency 4222 (cheapest rate includes breakfast), MPT Marble Rocks (Bhedaghat, not Jabalpur), Hotel Trio Max and Royal Orbit (no rooms available 18-19 Nov). Budget: Cleartrip 18-19 Nov 2026 non-AC room only: Hotel The Grand 1459, Hotel Datt Residency 1184; median of 2 = 1322. Dorm: Hostelworld dorm 'from' prices, undated: The Bunkyard 650, Hotel Anmol Era 700; median 675.",
+        "notes": "Only 2 budget properties priced and 2 dorms: thin. The Cleartrip budget-hotels list page for Jabalpur served unrelated cities and was not used. No homestay found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Jabalpur to Bhedaghat (Marble Rocks), half-day with waiting",
+            "inr": 1150
+          }
+        ],
+        "basis": "goasia.cc local transport guide (page updated 11 June 2026) prints 'half-day taxi with waiting time about 800 to 1500 rupees, negotiated' for Bhedaghat (about 20 km); 1150 is the midpoint. No taxi union rate chart or local operator with a printed address and local-day rate was found; cab-aggregator pages (CabBazar 403, template sites) not used.",
+        "sources": [
+          "https://goasia.cc/en/india/jabalpur-to-jabalpur"
+        ],
+        "notes": "Page calls its prices 'indicative, not live quotes'. Local 8h figure left null."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "Zomato Jabalpur cost for two as shown. Budget (median 300 => 150 per person per meal): Sagar Gaire Fast Food Corner 250, Manmohan Veg Restaurant and Thali 300, Friend & Friends 300, The Food Villa 300, Z-7 Food 350. Standard (median 500 => 250 per person per meal): Haldiram's 400, Indian Coffee House 450, Nani Ki Rasoi 500, Traffic Jam Food Junction 600, OTT One Two Three 700. Day = 3 meals x per-meal figure.",
+        "sources": [
+          "https://www.zomato.com/jabalpur/civil-lines-restaurants",
+          "https://www.zomato.com/jabalpur/manmohan-veg-restaurant-and-thali-civil-lines",
+          "https://www.zomato.com/jabalpur/friend-friends-civil-lines",
+          "https://www.zomato.com/jabalpur/the-food-villa-civil-lines",
+          "https://www.zomato.com/jabalpur/z-7-food-sadar-bazar"
+        ],
+        "notes": "Zomato cost for two is exclusive of taxes. Breakfast is usually cheaper, so day figures lean generous."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "local 8-hour taxi rate (no union chart or local operator rate found)",
+        "homestay prices",
+        "a third budget hotel and more dorms",
+        "Hotel Trio Max and Royal Orbit show no rooms on 18-19 Nov"
+      ]
+    },
+    "pachmarhi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3562,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4290044?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ark-resorts-740349?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/natraj-hotel-160526?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/rudra-residency-5248891?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5679650?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 2095,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/townhouse-arvind-marg-pachamarhi-4596178?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4596175?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-satpura-safari-778496?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-utkarsh-729416?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid (private 3-star, MP Tourism excluded): Cleartrip detail pages 18-19 Nov 2026, 2 adults, pre-tax cheapest ROOM-ONLY rate: Rudra Residency 2211, Hotel Natraj 2471, Neelam Foresteria Resort 3562, Ark Resorts 3969, Hotel Rock View 4450; median of 5 = 3562. Breakfast-plan-only rates excluded from the median (Serenity The Villa 2505, Hotel Indraprastha Luxuria 2659); including them the 7-hotel median would be 2659. Ark Residency: no rooms 18-19 Nov. Budget: Cleartrip 18-19 Nov 2026 room only, Cleartrip 2-star: Townhouse Arvind Marg 1217, Collection O Arvind Marg 1493, Satpura Safari (Deluxe Non AC) 2697, Hotel Utkarsh (Standard AC) 2936; median of 4 = 2095.",
+        "notes": "Wide spread in private 3-star prices (2211-4450). MP Tourism properties (Highlands, Club View, Karnikar etc.) not used for the mid tier as instructed. No visible festival crowding effect; 13-14 Nov list prices were similar."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 5750,
+        "vehicle": "gypsy (up to 6 people)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pachmarhi waterfall route (Bee Fall, Apsara Vihar, Rajat Prapat, Panchali Kund)",
+            "inr": 2750
+          },
+          {
+            "route": "Pachmarhi temple route (Jata Shankar, Bade Mahadev, Gupt Mahadev, Chauragarh trek point)",
+            "inr": 2350
+          },
+          {
+            "route": "Pachmarhi Dhoopgarh sunset route",
+            "inr": 2000
+          }
+        ],
+        "basis": "PlaNexTrip (Near Rudransh Hospital, Patel Nagar, Bhopal) Pachmarhi gypsy charges page, rates labelled '2025 (Updated)': full-day combo of three routes (excl. Chauragarh trek) Rs 5,500-6,000 (midpoint 5,750); waterfall route 2,500-3,000; temple route 2,200-2,500; sunset route 1,800-2,200; midpoints used. Per gypsy for up to 6 tourists; forest entry/guide fees (Rs 300-700) are extra. Page says charges are fixed by the Forest Department/gypsy union; the official union list itself was not found.",
+        "sources": [
+          "https://planextrip.com/pachmarhi-gypsy-charges/"
+        ],
+        "notes": "Gypsies are mandatory for the restricted forest circuits, so the route/full-day gypsy fare is the 'local day'. Tripadvisor forum posters report Rs 2,000-3,450 for a day plus forest fees (page itself 403 to fetch, not used). Single source."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 900,
+        "basis": "Zomato Pachmarhi cost for two as shown: Jain Delight Restro & Cafe 300, South Indian Coffee House 300, The Frypan 350, Jain Restaurant 400, City Inn Hotel Natraj restaurant 800, Hotel Pachmarhi Restaurant 850. Budget = lowest three (300, 300, 350), median 300 => 150 per person per meal x3 = 450. Standard = upper four (350, 400, 800, 850), median 600 => 300 per person per meal x3 = 900.",
+        "sources": [
+          "https://www.zomato.com/pachmarhi/restaurants"
+        ],
+        "notes": "Only 7 Zomato listings in Pachmarhi; spread is wide (hotel restaurants 800-850 vs cafes 300-400). Cost for two excludes taxes. Standard figure leans high because it includes two hotel dining rooms."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "official Pachmarhi gypsy union rate chart (only a 2025 operator page)",
+        "homestay and dorm prices",
+        "MP Tourism properties not priced as per instruction"
+      ]
+    },
+    "omkareshwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3038,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/5217583?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-manyavar-palace-5063097?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-manyavar-inn-restaurant-5065559?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5170807?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1725,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/narmada-hills-resort-3980582?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4670271?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-shri-radhe-krishna-3931519?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid (private 3-star, MP Tourism excluded; MPT Temple View had no rooms 18-19 Nov): Cleartrip detail pages 18-19 Nov 2026, 2 adults, pre-tax room only: Hotel The Shankara View 2580, Hotel Manyavar Palace (AC) 2938, Hotel Manyavar Inn 3137, Namami Retreat 4521; median of 4 = 3038. Excluded: Hotel Sanskar Palace 4378 (a 2-bedroom unit), Panchvati Elite, Trinetra, Bhavsar Residency (no rooms). Budget: Cleartrip 18-19 Nov 2026 room only: Narmada Hills Resort 1512, Hotel Bholenath (non-AC) 1725, Shri Radhekrishna (non-AC) 1766; median 1725.",
+        "notes": "Cleartrip's Omkareshwar page is the Mandhata/Omkareshwar town; several properties sold out on 13-14 Nov but had rooms on 18-19 Nov. Omkareshwar fills on weekends and amavasya days; 18-19 Nov is a Wed-Thu. No homestay or dorm found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Ujjain to Omkareshwar and back, sedan 12-hour package (150 km each way, tolls included)",
+            "inr": 3800
+          },
+          {
+            "route": "Indore to Omkareshwar one way, sedan (79 km)",
+            "inr": 1120
+          }
+        ],
+        "basis": "Ujjain Ride (6 Sandipani Nagar, Ujjain) Ujjain-to-Omkareshwar page: sedan round trip from Rs 3,800, 12-hour package, tolls included, fares vary by date. MakeMyTrip Indore to Omkareshwar page (default pickup 13 Oct 2026): Dzire/Etios sedan Rs 1,120 one way, pre-tax, extra km Rs 18/km after 79 km.",
+        "sources": [
+          "https://ujjainride.in/ujjain-to-omkareshwar",
+          "https://www.makemytrip.com/car-rental/indore-omkareshwar-cab-services.html"
+        ],
+        "notes": "Omkareshwar is a walking/boat/e-rickshaw town, no union rate chart found; local 8h figure left null."
+      },
+      "food_per_person_day": {
+        "budget_inr": 280,
+        "standard_inr": 400,
+        "basis": "TripMall Omkareshwar food guide (dated 16 Aug 2025) prices: poha-jalebi stalls Rs 30-50 (40), satvik thali at Bhole Ki Rasoi Rs 100-130, fixed veg thali at Shri Radhe Krishna Bhojnalay Rs 100-150. Budget = breakfast 40 + two thalis ~120 each = ~280. Standard = paratha with curd (Sadguru Restaurant) Rs 70-120 (~95) + North Indian meals at Hotel Aarti Dining Hall Rs 120-180 (~150) x2 = ~395.",
+        "sources": [
+          "https://tripmall.in/news/must-try-local-foods-and-restaurants-in-omkareshwar"
+        ],
+        "notes": "Single travel-blog source with printed rupee prices, 14 months old at most; Zomato has no Omkareshwar listings. Lower confidence."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "local 8h taxi rate",
+        "homestay and dorm prices",
+        "a second independent food source"
+      ]
+    },
+    "sanchi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2218,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4561403?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sanghamitra-retreat-and-resort-sanchi-4281022?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, pre-tax: MPT Gateway Retreat Sanchi 2452 (cheapest rate is Room with Breakfast), Sanghamitra Retreat and Resort (Dhakna Chapna, Sanchi) 1983 room only; median of 2 = 2218. Utopia Resort Sanchi and Vedaanvi Palace show 'No rooms available' for 18-19 Nov; Hotel Sambodhi shows Rs 14,552 for a Standard Room, an implausible placeholder rate, so excluded.",
+        "notes": "Only 5 hotels exist on Cleartrip for Sanchi; n=2 is thin. MP Tourism property (Gateway Retreat) included because it is the main hotel in Sanchi and no other private priced property was available. No budget, homestay or dorm found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bhopal to Sanchi one way, sedan (49 km)",
+            "inr": 915
+          }
+        ],
+        "basis": "MakeMyTrip Bhopal to Sanchi page (default pickup 13 Oct 2026): Dzire/Etios diesel sedan Rs 915 one way pre-tax, extra km Rs 18.5/km after 49 km.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/bhopal-sanchi-cab-services.html"
+        ],
+        "notes": "No Sanchi taxi union/operator rate chart found; local day left null. Sanchi/Udaygiri/Vidisha is usually done from Bhopal."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Only one Sanchi restaurant with a printed figure: Gateway Cafeteria (Gateway Retreat, NH 86) INR 200-250 for two per Holidify. One restaurant is not enough for a day figure.",
+        "sources": [
+          "https://www.holidify.com/places/sanchi/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Zomato/Swiggy have no Sanchi-town listings."
+      },
+      "confidence": "low",
+      "unverified": [
+        "3-star n=2 only",
+        "budget, homestay, dorm",
+        "local taxi rate",
+        "food per day"
+      ]
+    },
+    "kanha": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3212,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/tribal-wood-resort-3933647?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kingfisher-resort-4532293?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/taal-tiger-resort-5271847?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/tuli-tiger-resort-50060?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/krishna-jungle-lodge-kanha-by-beyond-stay-3958993?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/bhil-s-kabeela-4684004?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, pre-tax cheapest ROOM-ONLY rate (these lodges also list breakfast / half-board / full-board plans on the same page; only the room-only line is used): Tribal Wood Resort 1931 (Standard Room), Kingfisher Resort 2895 (Deluxe), Taal Tiger Resort 3133, Tuli Tiger Resort 3290 (Cottage), Krishna Jungle Resort 3895 (Executive), Bhil's Kabeela guest house 4273 (Garden View King); median of 6 = 3212. Excluded: MPT Baghira Jungle Resort (only full-board rates, from 6586 including all meals), Windsor Tiger Resort (room-only 66,200 looks like a placeholder), and Rosewood, Jungle King, Bhil's Kabeela Resort and Spa, Nature's Sprout, MPT Safari Lodge, Infinity Kanha Wilderness (no rooms 18-19 Nov).",
+        "notes": "Properties are in the villages at Kanha's gates (Mocha, Khatia, Kanha). Six of 15 listed lodges were sold out on 18-19 Nov and one more was priced as a placeholder, so availability is tight even mid-week. Safari fees (jeep, guide, permit) are NOT in these room rates. No budget, homestay or dorm listings found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No union chart or local-operator rate with a printed address was found for Kanha. Only template cab sites and a 7-year-old Tripadvisor thread (Rs 2,500-4,200 for Jabalpur to Khatia gate) turned up, which are not usable.",
+        "sources": [],
+        "notes": "In Kanha the local 'vehicle' is the park gypsy booked through MP Forest; safari fees are a permit cost, not a taxi day, so left out."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or cost-for-two figure found for Kanha's gate villages; most lodges include meals.",
+        "sources": [],
+        "notes": "Kamlesh Dhaba (Khatia gate) is in the lowest price band but no rupee figure is printed."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "taxi (all)",
+        "food (all)",
+        "budget/homestay/dorm tiers",
+        "MP Tourism Baghira and Safari Lodge room-only rates"
+      ]
+    },
+    "bhimbetka": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Bhopal",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No tier priced. Bhimbetka's only lodging is MPT Highway Treat on the highway (3 AC rooms): MP Tourism tariff card lists AC rooms, CP plan, INR 2,490 base rate, GST extra, undated, not valid on festivals and weekends; the column (single/double) is unclear, so no median is claimed.",
+        "notes": "Rock shelters are a day trip; most visitors base in Bhopal (about 45 km). Contrary to the brief, one 3-room MP Tourism roadside hotel exists, so no_lodging is set false and tiers left null; caller may choose to treat it as effectively no lodging market."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bhopal to Bhimbetka one way, Uber (about 45 km)",
+            "inr": 700
+          },
+          {
+            "route": "Bhopal to Bhimbetka with driver waiting, Bhojeshwar Temple and return to Bhopal",
+            "inr": 1000
+          }
+        ],
+        "basis": "Sailingstone Travel first-person blog: Uber one-way 'about Rs 700'; negotiated driver waiting, Bhojeshwar Temple and return Rs 1000. Blog is undated.",
+        "sources": [
+          "https://sailingstonetravel.com/rock-shelters-of-bhimbetka/"
+        ],
+        "notes": "Single undated blog; no union chart."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee food source for Bhimbetka itself; visitors eat in Bhopal.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "lodging tiers",
+        "food",
+        "local taxi"
+      ]
+    },
+    "mandu": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Mandu union rate or local operator rate found. Indore to Mandu results came only from template cab sites (CabBazar, DDcab, Rajputana Cabs etc.), and the MakeMyTrip and Savaari Indore-Mandu pages did not load a fare.",
+        "sources": [],
+        "notes": "Local autos and taxis are negotiated at the Mandu bus stand or via MPTDC Malwa Resort; no printed rate found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 263,
+        "standard_inr": 375,
+        "basis": "Holidify Mandu restaurants page cost for two as printed: Relax Point 150, Malwar Retreat Cafeteria 200, Shivani Restaurant 250, Malwa Resort 250. Budget = lowest two (median 175 => ~88 per person per meal x3 = 263). Standard = the two at 250 (=> 125 per person per meal x3 = 375).",
+        "sources": [
+          "https://www.holidify.com/places/mandu/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Only 4 priced restaurants, undated aggregator figures; probably low for a thali meal. Zomato has no Mandu listings."
+      },
+      "confidence": "low",
+      "unverified": [
+        "taxi (all)",
+        "food is 4 undated Holidify figures",
+        "stay omitted (stay_observed)"
+      ]
+    }
+  }
+}

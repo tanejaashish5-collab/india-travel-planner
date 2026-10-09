@@ -1,0 +1,243 @@
+{
+ "_doc": "Fresh-context audit verdicts (data-fabrication-auditor, Sonnet, 2026-10-10) for South India. Taxi loads ONLY with KEEP/CORRECT. Food: every food figure with a tier was audited, so unaudited food is skipped. A CORRECT food verdict with standard null is budget-only, and the loader skips it.",
+ "food_unaudited": "skip",
+ "taxi": {
+  "bengaluru": {
+   "verdict": "UNVERIFIABLE",
+   "note": "MakeMyTrip page timed out; other Bengaluru operators quote 1,595-2,729."
+  },
+  "chennai": {
+   "verdict": "KEEP",
+   "value": 2300,
+   "note": "citytaxi.co.in (Chennai address) Chennai Local Sedan 8h/80km Rs 2,300; one operator, others lower."
+  },
+  "coimbatore": {
+   "verdict": "KEEP",
+   "value": 2520,
+   "note": "coimbatoretaxi.com local duty Dzire 8hr/80km 2,400 + GST 2,520."
+  },
+  "coonoor": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "travel2ooty.com sedan from Rs 2,200 for a 1-day Coonoor tour; a floor price."
+  },
+  "coorg": {
+   "verdict": "KEEP",
+   "value": 3000,
+   "note": "coorgsrtravels.com Local Full Day Tour 8hrs/80km sedan AC 3000."
+  },
+  "gokarna": {
+   "verdict": "DROP",
+   "note": "Aggregator snippet only, against 1,500-1,600 at other operators."
+  },
+  "guruvayur": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "taxiguruvayur.in Daily Hire 100 km / 10 hrs sedan 2,500 (not 80 km / 8 hrs)."
+  },
+  "hampi": {
+   "verdict": "DROP",
+   "note": "A 7-hour tuk-tuk tour, not a cab; sedan day tour is 3,175 for 10 hours."
+  },
+  "hyderabad": {
+   "verdict": "KEEP",
+   "value": 2350,
+   "note": "taxigk.com 8hr/80km 2000 and harishcabshyderabad.com 2700; 2,350 is the midpoint of two operators."
+  },
+  "kochi": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "bcabs.com sedan 8-hour package Rs 2,200; keralataxis.com Rs 2,300 per day with 80 km."
+  },
+  "kodaikanal": {
+   "verdict": "DROP",
+   "note": "Fixed-itinerary picnic tour packages, no 8h/80km local rate."
+  },
+  "kumarakom": {
+   "verdict": "KEEP",
+   "value": 2300,
+   "note": "kumarakomtaxies.com Dzire per day 2300, 100 km included; Kumarakom operator."
+  },
+  "madurai": {
+   "verdict": "KEEP",
+   "value": 2450,
+   "note": "maduraicitycabs.in sedan 8hr/80km 2400; maduraitaxi.com 2,500 base plus GST."
+  }
+ },
+ "food": {
+  "adilabad": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 675,
+   "note": "Zomato snippets confirm 4 of 7 rows; weak evidence."
+  },
+  "alleppey": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato page timed out; none of the 9 rows matched."
+  },
+  "araku-valley": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Only one Araku price confirmed."
+  },
+  "bengaluru": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; snippets contradict some rows."
+  },
+  "bhadrachalam": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Only 2 of 9 rows confirmed."
+  },
+  "bidar": {
+   "verdict": "KEEP",
+   "budget": 375,
+   "standard": 675,
+   "note": "Zomato snippets confirm 6 of 6 budget and 7 of 8 standard rows."
+  },
+  "bijapur": {
+   "verdict": "KEEP",
+   "budget": 488,
+   "standard": 938,
+   "note": "Zomato snippets confirm the key rows; medians 325 and 625 for two."
+  },
+  "chennai": {
+   "verdict": "KEEP",
+   "budget": 600,
+   "standard": 900,
+   "note": "Slurrp Anna Nagar cost for two 200-850; arithmetic holds; all in Anna Nagar."
+  },
+  "chettinad": {
+   "verdict": "CORRECT",
+   "budget": 300,
+   "standard": null,
+   "note": "Zomato Karaikudi snippets median 200 for two; no standard source. Budget-only, so the loader skips it."
+  },
+  "chidambaram": {
+   "verdict": "CORRECT",
+   "budget": 450,
+   "standard": null,
+   "note": "Zomato snippets median 150 for one; no standard source. Budget-only, so the loader skips it."
+  },
+  "chikmagalur": {
+   "verdict": "CORRECT",
+   "budget": 300,
+   "standard": null,
+   "note": "Zomato snippets confirm budget 100 per meal; standard contradicted. Budget-only, so the loader skips it."
+  },
+  "chitradurga": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 600,
+   "note": "Zomato snippets, 100-200 for one; weak evidence."
+  },
+  "coimbatore": {
+   "verdict": "KEEP",
+   "budget": 475,
+   "standard": 900,
+   "note": "Treebo blog price for two 200-650; arithmetic holds; single blog."
+  },
+  "coorg": {
+   "verdict": "KEEP",
+   "budget": 400,
+   "standard": 600,
+   "note": "Zomato Madikeri snippets 100-400; weak evidence."
+  },
+  "gokarna": {
+   "verdict": "CORRECT",
+   "budget": null,
+   "standard": 900,
+   "note": "Blog supports standard about 900; budget rests on one place, null. The loader needs both tiers, so it skips this row."
+  },
+  "gulbarga": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 600,
+   "note": "Zomato snippets 100-200 for one; weak evidence."
+  },
+  "hyderabad": {
+   "verdict": "KEEP",
+   "budget": 525,
+   "standard": 1400,
+   "note": "LBB cost-for-two 150-700 and Zomato snippets 850-1,000; median 475 per meal for standard."
+  },
+  "kanchipuram": {
+   "verdict": "DROP",
+   "budget": null,
+   "standard": null,
+   "note": "Holidify units unlabelled; single undated source."
+  },
+  "kanyakumari": {
+   "verdict": "KEEP",
+   "budget": 350,
+   "standard": 675,
+   "note": "Frenzy Holidays (Apr 2026) approx cost for two 100-700; single blog with ranges."
+  },
+  "karaikal": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; snippets unconfirmable."
+  },
+  "karwar": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; delivery view only."
+  },
+  "kochi": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; medians over 105 listings cannot be reproduced."
+  },
+  "kodaikanal": {
+   "verdict": "KEEP",
+   "budget": 425,
+   "standard": 525,
+   "note": "tripatini.com (Sep 2022) cost for two 250-400; single four-year-old blog."
+  },
+  "kollam": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; listing prints cost for one."
+  },
+  "konaseema": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Snippets only; pages not retrievable."
+  },
+  "kozhikode": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; delivery-view medians."
+  },
+  "kumbakonam": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Single undated vegetarian blog with unlabelled units."
+  },
+  "machilipatnam": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; totals loosely rounded."
+  },
+  "madurai": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 600,
+   "note": "holidify cost for two 200-400 approx; undated page."
+  }
+ }
+}

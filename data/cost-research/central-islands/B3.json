@@ -1,1 +1,482 @@
-{"batch":"B3","researched_on":"2026-10-10","destinations":{}}
+{
+  "batch": "B3",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "bangaram": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Not used for the median: the only printed room rates are undated and sit above the loader's plausible range. lakshadweep-hotels.com/island/bangaram/ prints per-night rates of Bangaram AC Cottage 18,000 and Wooden Hut Resort 24,000 (+5% GST), Praveg Cocoon 25,000 and Shell 30,000 (+18% GST); no stay date and no meal plan stated.",
+        "notes": "Bangaram has only a few luxury or government resorts (no 3-star market), so mid is left null. Printed rates (undated) range 18,000 to 30,000 per night. Page does not state whether meals are included; the same site says most Lakshadweep rates include meals, so these may not be room-only. Entry permit required and Bangaram must be named on it (foreign nationals need a special permit, apply 2-3 months ahead). Boat transfer from Agatti is extra (amount not verified)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Uninhabited resort island with no roads or cabs; none applicable.",
+        "sources": [],
+        "notes": "No road transport on Bangaram."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Only the resorts serve food; no rupee menu found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dated 18-19 Nov 2026 room price",
+        "Whether the printed rates include meals",
+        "Any local food or taxi price"
+      ]
+    },
+    "kavaratti": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 9450,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://lakshadweep-hotels.com/island/kavaratti/"
+        ],
+        "budget_hotel_median_inr": 4100,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://lakshadweep-hotels.com/island/kavaratti/"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "All UNDATED printed per-night room rates on the lakshadweep-hotels.com Kavaratti listing (no stay date). Mid = four 'Beachside Stays' rows: SK Paradise 8,600, Dweep Nivas 9,000, Al Bee Sunrise 9,900, Sea Shells 11,500; median = (9,000+9,900)/2 = 9,450. Budget = the two 'AC Rooms' rows: Mabrouk 4,000, Sithsyan Residency 4,200; median 4,100. Not 18-19 Nov 2026 prices; OTAs (Cleartrip, Booking) do not list Kavaratti guesthouses.",
+        "notes": "Page does not say whether meals are included (it says most Lakshadweep stays include meals, and Kavaratti has little restaurant scene), so these may not be room-only. Entry permit required for every traveller incl. children, and Kavaratti must be named on it. The government Kavaratti Island Resort is sold only as a meal-inclusive package (not used). Tiny market, n is 2 and 4."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No published day-hire rate for Kavaratti found; island transport is a few buses, rented bikes and informal autos.",
+        "sources": [],
+        "notes": "Package operators include local transport."
+      },
+      "food_per_person_day": {
+        "budget_inr": 1050,
+        "standard_inr": 1500,
+        "basis": "Curly Tales web story, cost for two on Kavaratti: Akshaya Mess 700, Z Corner 800, Al Barath 800, Cafe De Saina 1,000, Heavens Treat 1,000 (undated). Per meal per person 350-500; budget = 3 x 350, standard = 3 x 500. Upper bound because breakfast usually costs less.",
+        "sources": [
+          "https://curlytales.com/web-stories/5-best-restaurants-to-visit-in-lakshadweep/"
+        ],
+        "notes": "One source, undated, probably a few years old."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dated 18-19 Nov 2026 room prices",
+        "Whether stay rates include meals",
+        "Taxi or auto day rate",
+        "Homestay and dorm prices"
+      ]
+    },
+    "kadmat": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No room-only rate found. lakshadweepcruise.com/kadmat_island_beach_resort.html prints Deluxe AC Rs 9,000 'per day for 2 persons' (extra person 4,000) but with all meals and teas included, on a page marked copyright 2008-2018, so left out.",
+        "notes": "Kadmat Island Beach Resort is the government resort sold as a meal-inclusive package. lakshadweep-hotels.com lists zero Kadmat hotels. Entry permit required for Lakshadweep (Kadmat usually reached via Agatti by boat transfer)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No cab service found for Kadmat.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Kadmat restaurant prices found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Room-only rate",
+        "Taxi",
+        "Food"
+      ]
+    },
+    "minicoy": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Only one source: lakshadweepcruise.com/minicoy_island_beach_resort.html prints AC Deluxe 9,000 double and AC Standard 7,000 double, but the page carries 2019 sailing dates, does not say per night or meals, so not used.",
+        "notes": "Minicoy Island Beach Resort is the only listed property (government). lakshadweep-hotels.com lists zero Minicoy hotels. Entry permit required for Lakshadweep."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No cab rate found.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Minicoy restaurant prices found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Current room-only rate",
+        "Taxi",
+        "Food"
+      ]
+    },
+    "orchha": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2473,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/the-orchha-resort-by-river-side-2884614?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-rajwada-palace-4291444?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4672150?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292452?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5065524?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4672796?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 865,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4672825?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hardik-resort-726713?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4672956?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 999,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/5170818?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 199,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Orchha?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest Room Only rate: The Orchha Resort (riverside) 4802, Hotel Rajwada Palace 4416, Janki Vilas 2696, Orchha Club & Resort 2250, Siyavar Palace 2037, The Ortus Stays 1465; median = (2250+2696)/2. Budget: same method, 18-19 Nov 2026, Room Only: Hotel King Rama 623, Hardik Resort 865, Hotel Kamla Heritage (2-star, AC) 1188. Homestay: Mirdul Homestay 999, 18-19 Nov 2026, Room Only (n=1). Dorm: Hostelworld 'Dorms From' Rs 199 at Hotel Sunset Orchha, undated, page does not say per night (n=1).",
+        "notes": "Excluded from mid because only a breakfast-inclusive rate is shown: MPT Betwa Retreat (Swiss tent, 3607 with breakfast) and Aadhya Hotel (2179 with breakfast). Monarch Rama (2670) and Monarch Rama Palace (3026) are 'Standard Non AC' rooms so were left out. Hardik at 865 and King Rama at 623 are unusually low discounted prices (King Rama room title says non-AC but features list AC). Orchha has 4-5 star heritage options (Rajmahal The Palace, MPT Sheesh Mahal, Bundelkhand Riverside) that were not priced for 18-19 Nov. Hotel Sunset Orchha and Farms Greens View were sold out on 13-14 Nov list."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Jhansi to Orchha, sedan (Dzire/Xcent), 20 km limit, extra km Rs 10",
+            "inr": 800
+          }
+        ],
+        "basis": "No Orchha local day rate found. jhansicab.com (registered office MPTOP Travels, Nandanpura, Jhansi) prints Rs 800 for Jhansi to Orchha with a 20 km limit; undated.",
+        "sources": [
+          "https://jhansicab.com/cab-taxi/jhansi-to-orchha-cab/"
+        ],
+        "notes": "Orchha is walkable; autos/e-rickshaws not priced."
+      },
+      "food_per_person_day": {
+        "budget_inr": 290,
+        "standard_inr": 655,
+        "basis": "Zomato delivery menus, Orchha (undated, fetched 2026-10-10). Budget at Ramraja Restaurant: Poha 50 + Simple Thali 120 (2 sabzi, dal, rice, roti) twice = 290. Standard at Open Sky Restaurant: Veg Sandwich 130 + Masala Chai 35, Plain Thali 160, Paneer Butter Masala 290 + 2 Butter Roti 20 each = 655. Delivery-app menus can sit a little above dine-in. Two restaurants only.",
+        "sources": [
+          "https://www.zomato.com/orchha/ramraja-restaurant-orchha-locality/order",
+          "https://www.zomato.com/orchha/open-sky-restaurant-orchha-locality/order"
+        ],
+        "notes": "Both are vegetarian-leaning menus; Orchha is a vegetarian-religious town."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Local sightseeing cab or auto day rate",
+        "Rooms at Orchha's 4-5 star heritage hotels for 18-19 Nov",
+        "Dated dorm price",
+        "More than two restaurants for food"
+      ]
+    },
+    "khajuraho": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No union or local-operator rate with a printed Khajuraho price found; only national aggregator and template pages show fares, which are not used.",
+        "sources": [],
+        "notes": "Khajuraho temple groups are partly walkable/cycle-able; autos not priced."
+      },
+      "food_per_person_day": {
+        "budget_inr": 430,
+        "standard_inr": 730,
+        "basis": "One Zomato delivery menu (Food Hub, Jain Temple Road, Khajuraho), undated, fetched 2026-10-10. Budget: Bread Butter 60 + India Tea 50, Simple Thali 160 (dal, aloo matar, 4 chapati, rice, salad) twice = 430. Standard: Vegetable Grilled Sandwich 140 + Masala Tea 60, Special Thali 250, VIP Thali 280 = 730. Single restaurant, delivery-app prices.",
+        "sources": [
+          "https://www.zomato.com/khajuraho/food-hub-khajuraho-locality/order"
+        ],
+        "notes": "Only one Khajuraho restaurant with printed rupee menu was found; Holidify ranges and Tripadvisor bands were not used."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Taxi day rate (no usable non-template source)",
+        "Second and third restaurant menus",
+        "Cost-for-two figures for Khajuraho restaurants"
+      ]
+    },
+    "bhopal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1853,
+        "mid_n": 10,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-jalsa-3923728?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-hubstreet-hotel-3946231?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4562827?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-amer-palace-40187?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-shubh-inn-1361290?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-golden-bliss-3980087?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-suraj-palace-3928885?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-emerald-3990682?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-reva-regency-171443?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-jewel-palace-2876550?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1209,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4269673?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4532025?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest Room Only AC rate of the 3-star hotels in Cleartrip's Bhopal 3-star list: Jalsa 1850, Hubstreet 1856, Varshish Inn 2617, Amer Palace 2310, Shubh Inn 3931, Golden Bliss 1945, Suraj Palace 1830, Emerald 1686, Reva Regency 1257, Jewel Palace 1008; median of 10 = (1850+1856)/2. Budget: same method, 18-19 Nov 2026, Room Only: Emerald Inn 901 (Standard Non AC Room), Treebo Kamal Regency 1517 (2-star, AC); n=2.",
+        "notes": "Excluded: Hotel Regal Grand (no rooms 18-19 Nov), MPT Wind N Waves (only breakfast-inclusive 4680), 4-star The Residency (2399) and Enrise by Sayaji (5083). All four Cleartrip homestays were sold out on 18-19 Nov except Staeg 2BHK (2524, a whole 2BHK flat, not a room, so not used). Hostelworld has no Bhopal page. Many 3-star prices are deeply discounted from list (e.g. Treebo Kamal 68% off)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1525,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Bhopal to Sanchi (48 km), Dzire",
+            "inr": 2750
+          },
+          {
+            "route": "Bhopal to Ujjain (188 km), Dzire",
+            "inr": 4400
+          },
+          {
+            "route": "Bhopal to Pachmarhi (210 km), Dzire",
+            "inr": 4400
+          }
+        ],
+        "basis": "8 hr / 80 km sedan packages from two Bhopal operators with postal addresses (undated, 2025-26 pages): taxibhopal.com (A-772, New Ashoka Garden) Dzire 1,650; bhopaltaxiservices.in (Mahakali Society, Trilanga) sedan 1,400 (extra Rs 100/hr, Rs 10/km). Median of the two. Outstation Rs 11/km (Dzire) and point-to-point fares from taxibhopal.com.",
+        "sources": [
+          "https://taxibhopal.com/service-rates/",
+          "https://bhopaltaxiservices.in/rate.php"
+        ],
+        "notes": "No official union chart found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 490,
+        "standard_inr": 1050,
+        "basis": "Zomato cost for two, Bhopal (undated, fetched 2026-10-10). Budget places: Manohar Dairy 200, Black N White Cafe 300, Sagar Gaire Kolar 350, Tiffin Box 400; median 325 / 2 = 162 per meal x 3 = 490 (rounded). Standard places: Bapu Ki Kutia TT Nagar 600, Naveen's Bapu Ki Kutia 700, Hakeem's 1,000; median 700 / 2 = 350 per meal x 3 = 1,050.",
+        "sources": [
+          "https://www.zomato.com/bhopal/manohar-dairy-1-tt-nagar",
+          "https://www.zomato.com/bhopal/black-n-white-cafe-arera-colony",
+          "https://www.zomato.com/bhopal/sagar-gaire-fast-food-kolar-kolar",
+          "https://www.zomato.com/bhopal/tiffin-box-arera-colony",
+          "https://www.zomato.com/bhopal/bapu-ki-kutia-tt-nagar",
+          "https://www.zomato.com/bhopal/naveens-bapu-ki-kutia-bhel",
+          "https://www.zomato.com/bhopal/hakeems-arera-colony"
+        ],
+        "notes": "Upper-bound style: assumes each meal costs a full cost-for-two share; breakfast usually costs less."
+      },
+      "confidence": "high",
+      "unverified": [
+        "Homestay price (sold out or whole-flat only)",
+        "Dorm price",
+        "Official taxi union tariff"
+      ]
+    },
+    "gwalior": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2106,
+        "mid_n": 11,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4670237?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4687796?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4687795?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-grace-314060?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-sudarshan-1360476?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-bellevue-gwalior-867638?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5502823?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-vinayak-423288?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4670242?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4293500?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ramaya-hotel-2045298?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest Room Only rate of 3-star hotels in Cleartrip's Gwalior 3-star list: Sunbeam 815, Sugar Palm 1043, Jageswari Inn 1438, Hotel Grace 1496, Sudarshan 1629, Bellevue 2106, Fortunaa Avenue 3413, The Vinayak 4262, Scarlet 4322, Ambience 5019, Ramaya 10394; median of 11 = 2106 (10-hotel median without Ramaya = 1868).",
+        "notes": "AC not stated on the page for Vinayak and Ramaya. Excluded: Mk Vivanta and Prabha International (no rooms 18-19 Nov), MPT Tansen Residency (only breakfast-inclusive 2481), Suruchi (3220, standard room is a fan room), Golden Palace (818 'non AC', 2-hour room). Cleartrip's Gwalior 'homestays' page lists no actual homestays. Hostelworld has no Gwalior page. Budget tier left null: the cheapest listings are already inside the 3-star list."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2400,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [],
+        "basis": "8 hr / 80 km Dzire-class sedan packages from two Gwalior operators with postal addresses (undated): Radhe Taxi Service (Anand Nagar, Bahodapur) Rs 2,300, extra Rs 12/km and Rs 150/hr; TripCar (Chavai Market, Shatabdipuram) 5-seater Rs 2,500, extra Rs 10/km. Median of the two = 2,400.",
+        "sources": [
+          "https://radhetaxiservices.com/",
+          "https://tripcar.in/"
+        ],
+        "notes": "Aggregators (CabBazar 1,500, SoloCabs) show lower figures but were not used. outstation_per_km is Radhe's extra-km rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "Zomato cost for two, Gwalior (undated, fetched 2026-10-10). Budget: Bansiwala 300, 25x7 Thali 300, Punjabi Rasoi 300, Choice Family Restaurant 300 -> 150 per meal x 3 = 450. Standard: Happiness 400, Alfanzo 500, Param Food Complex 500, Panchvati 500, Shere Punjab 600, Raj Bhoj 800; median 500 / 2 = 250 per meal x 3 = 750.",
+        "sources": [
+          "https://www.zomato.com/gwalior/bansiwala-city-center",
+          "https://www.zomato.com/gwalior/25x7-thali-city-center",
+          "https://www.zomato.com/gwalior/punjabi-rasoi-city-center",
+          "https://www.zomato.com/gwalior/choice-family-restaurant-lashkar",
+          "https://www.zomato.com/gwalior/happiness-lashkar",
+          "https://www.zomato.com/gwalior/alfanzo-city-center",
+          "https://www.zomato.com/gwalior/param-food-complex-lashkar",
+          "https://www.zomato.com/gwalior/panchvati-gaurav-city-center",
+          "https://www.zomato.com/gwalior/shere-punjab-restaurant-1-city-center",
+          "https://www.zomato.com/gwalior/raj-bhoj-city-center"
+        ],
+        "notes": "Assumes each meal costs a full cost-for-two share; breakfast usually costs less."
+      },
+      "confidence": "high",
+      "unverified": [
+        "Budget hotel tier",
+        "Homestay and dorm prices",
+        "Point-to-point fares"
+      ]
+    },
+    "bandhavgarh": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4842,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.booking.com/hotel/in/royal-jungle-kothi.en-gb.html?checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR",
+          "https://www.booking.com/hotel/in/maharaja-kothi-resort-bandhavgarh-mhaaraajaa-kotthii-rij-onrtt-baandhvgddh.en-gb.html?checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR",
+          "https://www.booking.com/hotel/in/grand-narmada-greens-homestay-tala.en-gb.html?checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR",
+          "https://www.booking.com/hotel/in/tiger-heaven-resort-bandhavgarh1.en-gb.html?checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Booking.com hotel pages for Tala (the Bandhavgarh gate village) with check-in Wed 18 Nov 2026, check-out Thu 19 Nov 2026, 2 adults 1 room, cheapest room rate WITHOUT meals, TAX-INCLUSIVE ('Includes taxes and charges', Booking does not show a pre-tax figure): Royal Jungle Kothi Deluxe Double 3,780 (breakfast optional Rs 300), Maharaja Kothi by Alivaa Standard Queen 4,696, Grand Narmada Jungle Homestay Resort Deluxe Quadruple 4,988 (breakfast optional Rs 250), Tiger Heaven Resort Deluxe Suite 16,815; median of 4 = (4,696+4,988)/2. Cleartrip has no priceable Bandhavgarh inventory (only the Oberoi, sold out).",
+        "notes": "Most Bandhavgarh lodges only sell meal-inclusive rates, so room-only n is small. Excluded: MPT White Tiger Forest Lodge (MP Tourism prints INR 3090-4990 with no meal plan; EaseMyTrip shows breakfast+lunch+dinner at 4,990 and 6,190), Tiger Trails and Wildlife Retreat (price shown is a sign-in members-only price), Spree Maati / Lazymojo / Olive (only breakfast-included rates), Atulya Kanchi, Aranyak, Bandhavgarh Jungle Lodge, Monsoon Forest, Tree of Life, Oberoi (all-inclusive or dinner included), Jungle Palace Resort (Umaria) and Citrus Prime (Parasi), which are not in Tala. Tiger Heaven is a premium outlier; without it the median of 3 is 4,696. Safari fees are separate and not in any price. No budget, homestay or dorm prices found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Umaria (35 km) to Bandhavgarh",
+            "inr": 1200
+          },
+          {
+            "route": "Katni (100 km) to Bandhavgarh",
+            "inr": 2500
+          }
+        ],
+        "basis": "Golbro Tiger View Resort (Bandhavgarh National Park, M.P.) taxi page, undated: Umaria 35 km 1,200; Katni 100 km 2,500; per-km Tata Indica Rs 12 with a 250 km/day minimum, plus 13.5% tax and 10% service charge on top. No local sightseeing day rate is printed. Resort gives no street address.",
+        "sources": [
+          "https://gtvresort.com/taxi_booking-services-car-rental-bandhavgarh.htm"
+        ],
+        "notes": "Local movement inside the park is by safari jeep (separate forest-department fee), not taxi."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or cost-for-two figure found for Tala restaurants (Tripadvisor shows only price tiers; most lodges serve meals in-house).",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay and dorm prices",
+        "Local taxi day rate",
+        "Food prices",
+        "Pre-tax room prices (Booking shows tax-inclusive only)"
+      ]
+    }
+  }
+}
