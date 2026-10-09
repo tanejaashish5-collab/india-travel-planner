@@ -1,0 +1,505 @@
+{
+ "batch": "B8",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "kochi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1909,
+    "mid_n": 8,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-aiswarya-312922?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671720?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-south-regency-ernakulam-742730?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sapphire-club-metro-3973973?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4289709?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/bharat-hotel-40758?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/treebo-trend-petals-suites-ernakulam-town-3934161?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4265052?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1241,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/lazar-residency-homestay-3942909?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sapphire-hotel-apartment-3928280?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/geo-holiday-home-fort-kochi-741054?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 350,
+    "dorm_n": 4,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/asia/india/cochin/?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room, 2 adults; 8 city-area 3-star hotels (Pallimukku, Ernakulam, Ernakulam South, Fort Kochi): 1216, 1385, 1572, 1851, 1967, 2490, 2879, 3320. Airport (Nedumbassery), Aluva, Angamaly, Cherai, Maradu hotels excluded. Homestay: Cleartrip detail pages 18-19 Nov 2026 pre-tax: Geo Holiday Home Fort Kochi 1200, Sapphire Hotel Apartment 1241, Lazar Residency Homestay Fort Kochi 1485. Dorm: Hostelworld undated 'Dorms From' per bed: Santa Maria 300, Hope 300, Hosteller Fort Kochi 400, Hosteller Ocean Edge 629.",
+    "notes": "Several Fort Kochi homestays showed no price for 18-19 Nov on Cleartrip (sold out or unlisted for the dates); only the three with a printed rate are used. Budget-hotel tier not priced: Cleartrip detail pages for that tier rate-limited."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2200,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Kochi to Alleppey (sedan)",
+      "inr": 3600
+     },
+     {
+      "route": "Kochi to Thrissur (sedan)",
+      "inr": 2800
+     },
+     {
+      "route": "Kochi to Munnar (sedan)",
+      "inr": 4100
+     }
+    ],
+    "basis": "BCabs (BTransport Solutions Pvt Ltd, Palarivattom, Kochi) rate list: Dzire/Etios/Aspire sedan 8-hour package Rs 2,200, extra hour 200, extra km 18, excl. toll, parking, GST (page undated, (c) 2024). Corroboration: KeralaTaxis.com (Kaloor, Kochi) Kochi sedan Rs 2,300/day 80 km, 17/km extra, valid till 30 Sept 2026 (so may be revised); point-to-point fares from that page.",
+    "sources": [
+     "https://bcabs.com/kochi-taxi-rates",
+     "https://keralataxis.com/kochi-taxi-service/"
+    ],
+    "notes": "Local figure is the 8h/80 km package. Point-to-point fares are from the KeralaTaxis page, which says its rates do not apply in the festive season."
+   },
+   "food_per_person_day": {
+    "budget_inr": 600,
+    "standard_inr": 1200,
+    "basis": "Zomato Fort Kochi/Kochi listing, 105 restaurants showing a cost-for-two figure: 35 priced Rs 250-600 for two (median Rs 400, so Rs 200 per person per meal, x3 meals = 600); 51 priced Rs 700-1,500 for two (median Rs 1,000, so Rs 500 per person per meal). Standard = one budget-priced breakfast (200) + two sit-down meals (2 x 500) = 1,200.",
+    "sources": [
+     "https://www.zomato.com/kochi/fort-kochi-restaurants"
+    ],
+    "notes": "Listing spans Fort Kochi, Ernakulam, Mattancherry and Willingdon Island; tourist-area Fort Kochi cafes run higher than the city median."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "budget-hotel tier (Cleartrip budget pages rate-limited)",
+    "KeralaTaxis rates expired 30 Sept 2026; BCabs page undated"
+   ]
+  },
+  "kozhikode": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2085,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-park-residency-palayam-2881342?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/queens-hotel-3907674?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4293522?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sasthapuri-3912934?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/treebo-trend-casino-2906098?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-marina-residency-380266?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/emarald-calicut-3951989?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1424,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/be-my-guest-5249705?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/twinn-waves-3990166?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 450,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/asia/india/calicut/?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room, 2 adults; 7 city-centre 3-star hotels (Palayam, Mananchira, Vellayil, Arayidathupalam): 1480, 1822, 1958, 2085, 2097, 2208, 2264. Suburban Ramanattukara/Tazhekkod hotels excluded. Homestay: Cleartrip detail pages 18-19 Nov 2026 pre-tax: Twinn Waves 1423, Be My Guest 1424 (n=2). Dorm: Hostelworld undated 'Dorms From' per bed, one hostel (Tokyo Dorms) 450.",
+    "notes": "Budget-hotel tier not priced (no budget list page was pulled). Only two homestays showed a rate for the dates."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No dated, place-specific Kozhikode cab tariff with an operator address found. calicuttaxi.in (Fastway Travels) prints Dzire 8h/80 km Rs 2,700 but is footer-dated 2015 with no address; MakeMyTrip Calicut page prints a Dzire/Etios sedan 'Rs 3000 onwards' without naming the package; Savaari Calicut page lists the 80 km/8 h package with no price. None used.",
+    "sources": [],
+    "notes": "Left null rather than guess. For orientation only: Kochi union-style operator sedan day is 2,200-2,300 (see kochi entry)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 600,
+    "standard_inr": 900,
+    "basis": "Zomato Kozhikode listing (delivery view prints 'for one'; no dine-in 'for two' page exists for Kozhikode): 105 restaurants, 68 priced Rs 100-200 for one (median Rs 200 per meal, x3 = 600); 36 priced Rs 250-600 for one (median Rs 350). Standard = one budget meal (200) + two meals at 350 = 900.",
+    "sources": [
+     "https://www.zomato.com/kozhikode/restaurants"
+    ],
+    "notes": "Per-person figure is Zomato's 'for one' order estimate, not a 'for two' dine-in cost; treat as indicative."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "local taxi day rate (no dated place-specific source)",
+    "budget-hotel tier",
+    "dine-in cost for two (only Zomato 'for one' delivery figures available)"
+   ]
+  },
+  "thrissur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1914,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/aura-residency-4280601?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-eden-palace-5063894?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4561485?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/casino-hotels-thrissur-742668?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-peninsula-719494?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4474219?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4672554?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1657,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/lalys-residency-3957283?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-green-plaza-3927090?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room, 2 adults; 7 in-city 3-star hotels (Thekkinkadu Maidan, Veliyannur, Naikkanal, central Thrissur): 1479, 1511, 1620, 1914, 2021, 2346, 2360. Homestay: Cleartrip detail pages 18-19 Nov 2026 pre-tax: Lalys Residency 1595, Green Plaza Tourist Home 1719 (both listed as 2-star homestays; n=2).",
+    "notes": "Budget-hotel tier not priced. No Hostelworld listing for Thrissur (page 404)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2200,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 17,
+    "point_to_point": [
+     {
+      "route": "Thrissur to Kochi (sedan, page's airport tariff)",
+      "inr": 2200
+     },
+     {
+      "route": "Thrissur to Calicut (sedan, page's airport tariff)",
+      "inr": 4300
+     }
+    ],
+    "basis": "Taxi Cabs, Railway Station Road, Thrissur 680012: Dzire/Etios 8 hrs/80 km Rs 2,200, 4h/40 km Rs 1,400, extra km 18, extra hour 150; outstation Rs 17/km, 200 km minimum; driver batta, toll, parking extra. Page undated.",
+    "sources": [
+     "https://taxicabthrissur.com/"
+    ],
+    "notes": "Operator page undated; independent search snippets of two other Thrissur operators show Rs 2,000-2,200 for the same package."
+   },
+   "food_per_person_day": {
+    "budget_inr": 600,
+    "standard_inr": 1200,
+    "basis": "Zomato Thrissur listing, 105 restaurants with a cost-for-two figure: 79 priced Rs 250-600 for two (median Rs 400, so Rs 200 per person per meal, x3 = 600); 23 priced Rs 700-1,500 (median Rs 1,000, so Rs 500 per meal). Standard = one budget-priced breakfast (200) + two sit-down meals (2 x 500) = 1,200.",
+    "sources": [
+     "https://www.zomato.com/thrissur/restaurants"
+    ],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "budget-hotel tier",
+    "dorm beds (none listed)",
+    "taxi page undated"
+   ]
+  },
+  "trivandrum": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2263,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/grand-chaithram-ktdc-3981241?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/saj-luciya-2627808?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/ariya-nivaas-a-vegetarian-hotel-4265237?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/ranga-maalika-3981240?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-town-tower-718897?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-padma-3964240?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-horizon-3964201?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1973,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/indeevaram-residency-2628380?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hill-view-homes-trivandrum-5256817?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/oyo-flagship-home-78601-pop-tavern-4060468?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/vallimony-luxury-stays-padmanabhaswamy-temple-5255242?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room, 2 adults; 7 city-centre 3-star hotels (Thampanoor, Pazhavangadi, Palayam): 1901, 2145, 2228, 2263, 2536, 2844, 3378. Homestay: Cleartrip detail pages 18-19 Nov 2026 pre-tax: Hotel O Pop Tavern 1068, Hill View Homes 1606, Indeevaram Residency 2340, Vallimony Luxury Stays 4153 (median of 4 = 1973; wide spread).",
+    "notes": "Hostelworld Trivandrum page shows no dorm beds ('No Dorms Available'). Budget-hotel tier not priced."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2200,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Vintage Tours and Travels (TrivandrumTaxi), TC 23/1883 Jawahar Nagar Rd, Kowdiar, Thiruvananthapuram 695003: Etios/Dzire A/c 8 hrs/80 km Rs 2,200, extra km 16, extra hour 225; page undated, subject to fuel price changes. Trivandrum Cabs lists the same Rs 2,200 sedan package in search results.",
+    "sources": [
+     "https://www.trivandrumtaxi.in/"
+    ],
+    "notes": "Page lists no point-to-point fares (only 'Get Fare' links)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 675,
+    "standard_inr": 1225,
+    "basis": "Zomato Trivandrum listing, 93 restaurants with a cost-for-two figure: 47 priced Rs 250-600 for two (median Rs 450, so Rs 225 per person per meal, x3 = 675); 33 priced Rs 700-1,500 (median Rs 1,000, so Rs 500 per meal). Standard = one budget-priced breakfast (225) + two sit-down meals (2 x 500) = 1,225.",
+    "sources": [
+     "https://www.zomato.com/trivandrum/restaurants"
+    ],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "budget-hotel tier",
+    "dorm beds (none listed)",
+    "point-to-point fares"
+   ]
+  },
+  "sabarimala": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Pathanamthitta (district town; Ranni and Erumely are the closer roadside bases)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No private lodging priced. Sannidhanam rooms are run by the Travancore Devaswom Board (400 rooms bookable online for the Thulam pujas, the rest allotted at the Sannidhanam Accommodation Office); this is a separate devaswom tier, not hotels. Reference only, base-town not the shrine: Cleartrip 18-19 Nov 2026 pre-tax cheapest room, Pathanamthitta 3-star Hotel Amala 1595 and 24 Inn Residency 1517 (n=2, not a median).",
+    "notes": "Mandalam pilgrim season starts about 17 Nov; expect crowding and higher or sold-out base-town rooms on 18-19 Nov (several Pathanamthitta 3-stars showed SOLD OUT on Cleartrip's 13-14 Nov list). Shrine rooms need a verified devotee profile on the TDB portal; no rupee tariff was printed on the fetched news page. Base-town hotels are not the shrine's own lodging.",
+    "no_lodging_sources": [
+     "https://thenewsmill.com/2026/10/travancore-devaswom-board-to-offer-400-online-bookable-rooms-for-sabarimala-thulam-pujas/",
+     "https://www.cleartrip.com/hotels/details/5217869?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4594045?c=18112026|19112026&r=2,0"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Pilgrim place, not a local-sightseeing cab town: vehicles stop at Nilakkal and pilgrims take the KSRTC shuttle to Pamba. Only fares found are a 2021 tariff (sabarimalataxi.com, Kottayam: Kochi to Pamba sedan Rs 6,800) and a Nov 2021 blog (Kochi airport to Pamba Rs 5,650-6,500); both 5 years old, not used.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No place-specific rupee menu source found (shrine food is devaswom canteen).",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Devaswom room tariff (portal onlinetdb.com not fetched)",
+    "taxi fares (only 2021 data)",
+    "food",
+    "crowding effect on 18-19 Nov base-town rates"
+   ]
+  },
+  "munnar": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Munnar to Kochi airport (sedan A/C)",
+      "inr": 2800
+     },
+     {
+      "route": "Munnar to Kochi Ernakulam (sedan A/C)",
+      "inr": 3300
+     },
+     {
+      "route": "Munnar town day to Marayoor direction (Etios/Dzire)",
+      "inr": 3000
+     },
+     {
+      "route": "Munnar town day to Anakulam direction (Etios/Dzire)",
+      "inr": 3500
+     }
+    ],
+    "basis": "Munnar Sightseeing Cabs, 45 AM Road, Pothamdeu, Pallivasal, Munnar 685612: full-day local sightseeing, Mattupatty direction, Etios/Dzire (4 person) Rs 2,500, Innova Rs 3,000, jeep Rs 3,500; pick and drop Munnar town. Page undated (footer 2026). Not a union chart (page does not mention a union).",
+    "sources": [
+     "https://munnarsightseeingcabs.com/"
+    ],
+    "notes": "No printed Munnar taxi union chart was found; search snippets of other Munnar operators show Top Station day tours at Rs 2,200-2,699 for a sedan."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": null,
+    "basis": "Zomato Munnar listing (delivery view prints 'for one'): 16 restaurants, 14 priced Rs 100-200 for one (median Rs 150 per meal, x3 = 450); only 2 priced above Rs 200, too few for a standard figure.",
+    "sources": [
+     "https://www.zomato.com/munnar/restaurants"
+    ],
+    "notes": "Indicative: Zomato 'for one' delivery estimate, not dine-in cost for two. Standard tier left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "taxi union rate chart (not found)",
+    "standard food tier",
+    "dine-in cost for two"
+   ]
+  },
+  "thekkady": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 5528,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Thekkady&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1707,
+    "homestay_n": 6,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Thekkady&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com search results with explicit dates 18-19 Nov 2026, 2 adults 1 room, 1 night, prices shown 'Includes taxes and charges' (TAX-INCLUSIVE, unlike the Cleartrip tiers elsewhere). Mid: 5 properties Booking rates 3-star: Haven Woods 2625, Chrissie's Hotel 5198, Lush Acres 5528, Spice Villa 7350, Wildernest 7560. Homestay: 6 properties named homestay: Kerala Spices Homestay 1365, GMSquare 1523, Mountain View Homestay 1575, Wild Window Forest View Homestay 1838, Misty Morning Homestay 1890, Oriole Homestay 2048.",
+    "notes": "Mid spread is wide (2,625 to 7,560): Thekkady 3-stars are mostly jungle lodges; Cleartrip 18-19 Nov also shows Snow Hills Nature Resort 3-star 2,371 pre-tax. Cleartrip Thekkady inventory is mostly sold out for the dates. Budget-hotel tier not separated; no hostels on Hostelworld (404)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3500,
+    "vehicle": "jeep",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Thekkady to Vagamon (union jeep, 7 AM-5 PM)",
+      "inr": 6000
+     },
+     {
+      "route": "Thekkady Gavi Jungle Safari (union jeep, 5:30 AM-4 PM)",
+      "inr": 4000
+     }
+    ],
+    "basis": "Thekkady Jeep Safari All Trade Union tariff, per jeep (2-6 persons), effective/verified 01-06-2026: Kerala and Tamilnadu sightseeing (8 point) 4 hrs Rs 3,500; Kerala sightseeing (4 point) 2 hrs Rs 2,000; Gavi Jungle Safari Rs 4,000; Vagamon Rs 6,000. The union has no 8-hour sightseeing line; 3,500 is its widest sightseeing package (4 hrs).",
+    "sources": [
+     "https://thekkadyguide.com/jeep-safari/"
+    ],
+    "notes": "Jeep, not sedan. Sedan taxi chart not found: thekkadyhomestays.com prints a 2021-22 dated daily rate only."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato dine-in page for Thekkady/Kumily; Justdial returned 403 (not bypassed); no rupee menu source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "food (no rupee source)",
+    "sedan taxi day",
+    "pre-tax stay prices (Booking figures are tax-inclusive)"
+   ]
+  },
+  "ponmudi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2150,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.ktdc.com/golden-peak"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: KTDC Golden Peak, Ponmudi tariff card (undated within validity 1 Apr 2026 to 31 Mar 2027): Normal tariff June-March except weekends and holidays, cheapest room Deluxe Rs 2,150 (Hill view 3,500). Tariff is marked CP, GST extra. 18 Nov 2026 is a Wednesday. Single property, n=1.",
+    "notes": "Peak tariff Deluxe 2,500 applies on weekends/holidays. Homestays listed on Booking for 'Ponmudi' are in Kallar about 6 km below the hill, so not priced as Ponmudi's own. No budget hotels or dorms on the hill found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Thiruvananthapuram to Ponmudi one way (sedan Dzire/Etios, cheapest listed; MakeMyTrip pick-up date 13 Oct 2026)",
+      "inr": 1411
+     }
+    ],
+    "basis": "MakeMyTrip Thiruvananthapuram to Ponmudi page: Dzire/Etios sedan Rs 1,411 + Rs 95 taxes (a second sedan tier Rs 2,357), extra km 12/km after 40 km. No Ponmudi union chart found; hill is a day trip from Trivandrum, local day left null.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/thiruvananthapuram-ponmudi-cab-services.html"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato page for Ponmudi; no rupee source found. KTDC Golden Peak prints meal rates (breakfast 200, lunch/dinner 380 per person + GST) but that is a single resort restaurant, not used as place food.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "budget hotel, homestay and dorm tiers on the hill",
+    "local taxi day",
+    "food"
+   ]
+  },
+  "nelliyampathy": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Not priced. Booking.com (18-19 Nov 2026) lists only one property located in Nelliyampathy itself: VANYA by Citrine, 4-star, Rs 6,825 tax-inclusive (above the mid tier). Other results are in Kollengode, Palakkad or Nemmara, 6-25 km away, and were not priced as Nelliyampathy's own. Cleartrip has no Nelliyampathy list page.",
+    "notes": "Reference only, not a tier median: 4-star VANYA by Citrine Rs 6,825 on Booking 18-19 Nov 2026."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "jeep",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No current jeep/taxi union chart found; only a 2015 Wikivoyage figure for the Seethargundu jeep, not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato page or rupee menu source for Nelliyampathy.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "stay tiers",
+    "taxi/jeep rates",
+    "food"
+   ]
+  }
+ }
+}

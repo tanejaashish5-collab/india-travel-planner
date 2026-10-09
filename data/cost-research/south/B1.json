@@ -1,0 +1,499 @@
+{
+ "batch": "B1",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "araku-valley": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3106,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4670262?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/valley-springs-resorts-4479813?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5681439?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/casa-woods-resort-araku-valley-5395970?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1672,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/araku-ushodaya-resort-721606?c=18112026|19112026&r=2,0",
+     "https://yatradham.org/araku-haritha-hill-resort-mayuri.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026 pre-tax cheapest room, Casa Woods 2760, Valley Springs 5115, FabHotel B Square Valley 3452, Casa Woods Resort 2055. Budget: Ushodaya Resorts 1672 (Cleartrip 18-19 Nov 2026, non-AC room), plus APTDC Haritha Hill Resort (Mayuri) tariff card, undated, 'starting at' pre-tax: Craft Centre Non AC 1500 and Standard AC 2000 (yatradham.org).",
+    "notes": "Other Cleartrip Araku hotels (Vihar Holiday Resorts, Itsy Abhitej Inn, Vistara, Pramani) showed sold out for 18-19 Nov so were not priced. Sumitel Araku camping resort (2-star Swiss camp) 3311 on 18-19 Nov was left out of the budget median as it is a camp. No homestay or dorm listing found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Visakhapatnam to Araku one-way sedan (about 115 km), midpoint of Rs 2,500-3,500",
+      "inr": 3000
+     },
+     {
+      "route": "Visakhapatnam to Araku full-day sightseeing package incl. travel, sedan, midpoint of Rs 4,500-6,500",
+      "inr": 5500
+     }
+    ],
+    "basis": "ArakuTrip.in, 'operated by the Local Team in Araku Valley', 2026 fare guide (undated page): sedan one-way Rs 2,500-3,500, full-day sightseeing package Rs 4,500-6,500. No separate within-Araku local day rate found on any non-template source.",
+    "sources": [
+     "https://arakutrip.in/vizag-to-araku-cab-fare/"
+    ],
+    "notes": "Local sightseeing day rate left null: only undated Tripadvisor forum anecdotes (about Rs 2000) exist."
+   },
+   "food_per_person_day": {
+    "budget_inr": 525,
+    "standard_inr": 1050,
+    "basis": "Only 2 priced restaurants: Star Annapurna Rs 350 for two (Justdial), Athidhi Devo Bhava Rs 700 for two (EazyDiner, Andhra). Per meal per person 175 / 350, times 3 meals.",
+    "sources": [
+     "https://www.justdial.com/Araku/Star-Annapurna-Restaurant-Near-Hotel-Vashishta-Inn-Near-Railway-Station-Araku-Valley-Araku-Railway-Station/0891PX891-X891-160426063231-H9Z8_BZDET",
+     "https://www.eazydiner.com/visakhapatnam/restaurants/araku-valley"
+    ],
+    "notes": "n=2 restaurants; Justdial page blocked direct fetch (403) so the Rs 350 figure comes from a search-result snippet."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay and dorm prices",
+    "within-Araku local taxi day rate",
+    "food from more than 2 restaurants",
+    "18-19 Nov price for hotels sold out on the date"
+   ]
+  },
+  "ahobilam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 978,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/5680757?c=18112026|19112026&r=2,0",
+     "https://yatradham.org/ahobilam-sri-malolan-guest-house-sri-ahobila-math.html",
+     "https://yatradham.org/ahobilam-srimad-ahobila-aryvysya-nitya-annasatram.html"
+    ],
+    "homestay_median_inr": 1757,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/ahobilam-sri-lakshmi-home-stay-5396112?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: Pavana Guest House AC double 978 (Cleartrip 18-19 Nov 2026, pre-tax); Sri Malolan Guest House (Ahobila Mutt) 2-bed non-AC 900 and Srimad Ahobila Aryavysya Nitya Annasatram 2-bed non-AC 1000, both 'starting at' tariff cards via yatradham.org, undated, pre-tax. Homestay: Ahobilam Sri Lakshmi Home Stay 1757 (Cleartrip 18-19 Nov 2026, pre-tax), n=1.",
+    "notes": "Lower Ahobilam is a small pilgrim village: no true 3-star exists (Cleartrip tags Pavana Guest House '3-star' at Rs 978 but it is a guest house), so mid is left null. Temple-trust guesthouses sell rooms by phone/on-spot allotment."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Nandyal to Ahobilam one-way sedan (about 62 km)",
+      "inr": 3000
+     }
+    ],
+    "basis": "Vishnu Travels (ahobilamtourpackage.in, Ahobilam local operator, phone and email only, no street address, 'estimated' fares, undated): sedan one-way 3000, round trip 3500; SUV 4000 / 4500. No local-sightseeing or Upper Ahobilam jeep rate was printed anywhere found.",
+    "sources": [
+     "https://ahobilamtourpackage.in/tour/nandyal-to-ahobilam-taxi/"
+    ],
+    "notes": "Upper Ahobilam needs local jeeps (forest entry); no price found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or Zomato/Swiggy cost-for-two found for any Ahobilam eatery. The Rs 500/day guesthouse home-food package was deliberately not used (meal-plan add-on).",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "food prices",
+    "local sightseeing taxi rate and Upper Ahobilam jeep fare",
+    "true 3-star mid tier (none exists)",
+    "dorm"
+   ]
+  },
+  "horsley-hills": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4200,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://yatradham.org/horsley-hills-haritha-hill-resort-aptdc.html"
+    ],
+    "budget_hotel_median_inr": 1850,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4533263?c=18112026|19112026&r=2,0",
+     "https://yatradham.org/horsley-hills-haritha-hill-resort-aptdc.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: APTDC Haritha Hill Resort AC rooms, tariff card undated, 'starting at' pre-tax (yatradham.org): Governor Bungalow AC 4000, Governor Bungalow Deluxe AC 4200, Wild Winds AC 4250. Budget (non-AC): VSR Wind Wave 3-star resort Standard Non-AC with breakfast 1994 (Cleartrip 18-19 Nov 2026, pre-tax) plus Haritha non-AC tariff card undated: 2 Bed Cottages 1600, Wind Knock 1800, Wind Whistle 1850, Whisper Winds 2200 (all five give median 1850).",
+    "notes": "Cleartrip lists only two Horsley Hills properties; Horsley Hills Holiday Homes was sold out on 18-19 Nov. Haritha tariff card is the main stay on the hill; the tariff page says booking not open for chosen dates, so those numbers are undated."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13.5,
+    "point_to_point": [
+     {
+      "route": "Madanapalle to Horsley Hills one-way sedan (about 27 km)",
+      "inr": 1867
+     }
+    ],
+    "basis": "Gozocabs route page: sedan (Dzire or equivalent) one-way 1867 before GST, from 13.50/km reference rate; page undated.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/madanapalle-horsley_hills"
+    ],
+    "notes": "No local sightseeing day rate with a visible rupee figure on a non-template source."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only reviewer anecdotes (Haritha buffet Rs 150-200) and a price-band listing were found; no menu board or cost-for-two number fetched.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "food",
+    "homestay and dorm",
+    "local sightseeing taxi day rate",
+    "dated 18-19 Nov price for the Haritha rooms"
+   ]
+  },
+  "gandikota": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1500,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://yatradham.org/gandikota-hotel-haritha-aptdc.html",
+     "https://gandikotaresort.com/"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget (AC room, room only): APTDC Hotel Haritha Gandikota 2 Bed AC Room 'starting at' 1500 + 75 tax (yatradham.org tariff card, undated); gandikotaresort.com AC room weekdays Mon-Fri 1500 per room, no meals (operator tariff, undated; 18 Nov 2026 is a Wednesday). Tents are cheaper: Haritha non-AC tent for 2 starts at 1000 + 50 tax; resort tent 1000 per tent.",
+    "notes": "No 3-star exists at Gandikota: Cleartrip has no Gandikota list, and the nearest star resort, The Royal County Resort Club (Proddatur, 34 km), showed No rooms available for 18-19 Nov so was not priced. Both budget figures are weekday card rates; weekend (Saturday) AC room is 2500 at gandikotaresort.com. Haritha dormitory is listed as 1500 for an 8-guest room, not per bed, so no dorm figure."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Gandikota to Kadapa one-way sedan (about 93 km)",
+      "inr": 2246
+     }
+    ],
+    "basis": "Gozocabs route page: sedan (Dzire or equivalent) one-way 2246 before GST, about 93 km; page undated.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/gandikota-kadapa"
+    ],
+    "notes": "Gandikota is a fort-and-canyon village, seen on foot; no local day rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No menu or cost-for-two found; camp/resort rates found bundle dinner into a package price and were not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "food",
+    "local taxi rate",
+    "dated 18-19 Nov price (all tariffs undated)",
+    "3-star mid tier (none within reach)",
+    "dorm per-bed price"
+   ]
+  },
+  "lepakshi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 995,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://yatradham.org/lepakshi-hotel-haritha.html",
+     "https://yatradham.org/lepakshi-rjh-rooms.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget (2-bed AC room, 'starting at', pre-tax, tariff cards undated): APTDC Hotel Haritha Lepakshi 990 + 49.50 tax; RJH Rooms 1000 + 50 tax. RJH 2-bed non-AC is 800.",
+    "notes": "Lepakshi is a village of a few hundred metres around the temple: no 3-star, no Cleartrip listing, Hindupur (about 12-15 km) is the larger base. RJH also has a 30-person community hall at 100 per person with mattresses and a shared bath; it is not a hostel dorm so no dorm figure. Both tariff pages say booking is not open for chosen dates, so no dated price."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No usable rate found. The only figure seen, a Gozocabs one-way sedan Hindupur to Lepakshi of about 12 km at 2293, is an inflated one-way quote on a short hop and was not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only an undated blog thali price (Rs 92 at the APTDC restaurant) and Restaurant Guru price bands were found; neither used.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "taxi",
+    "food",
+    "dated 18-19 Nov price",
+    "3-star mid tier (none in the village)"
+   ]
+  },
+  "lambasingi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3000,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://ocean6holidays.com/tour/lambasingi-haritha-resort/"
+    ],
+    "budget_hotel_median_inr": 2000,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://ocean6holidays.com/tour/lambasingi-haritha-resort/",
+     "https://www.bestbus.in/hotels/category-details/andhra-pradesh-tourism-aptdc-haritha-hotels-and-resorts/lambasingi-haritha-resort"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Both tiers are APTDC Lambasingi Haritha Resort, the only priced property found; tariff card, undated, pre-tax. Mid: AC Deluxe weekday 3000 (Ocean6 Holidays, Kolkata operator page, weekday price; 12% tax extra; 18 Nov 2026 is a Wednesday). Budget: Non-AC Tented Cottage weekday 2000 (Ocean6 Holidays; bestbus.in also shows 2000).",
+    "notes": "Bestbus shows AC Deluxe at 4000 (no weekday split), disagreeing with 3000; the official aptourismresorts.in page prints no rupee tariff. Cleartrip has no Lambasingi list; EaseMyTrip/MakeMyTrip lists were undated and jumbled so no private-resort median. n=1 per tier."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14.5,
+    "point_to_point": [
+     {
+      "route": "Visakhapatnam to Lambasingi one-way sedan (page shows 212 km included)",
+      "inr": 3378
+     }
+    ],
+    "basis": "EaseMyTrip cabs route page: sedan (Dzire or equivalent) one-way 3378 after a 279 discount from 3657, plus 174 taxes and charges; 212 km included, 14.5/km after. Page undated.",
+    "sources": [
+     "https://www.easemytrip.com/cabs/visakhapatnam-to-lambasingi-cab-booking/"
+    ],
+    "notes": "CabBazar route pages show lower fares (about 2300 from Vizag, about 2000 from Araku) but blocked direct fetch, so they were not used."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No menu, thali price or cost-for-two found for any Lambasingi eatery.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "food",
+    "private resort or homestay prices",
+    "local sightseeing taxi",
+    "dated 18-19 Nov price"
+   ]
+  },
+  "belum-caves": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Tadipatri (about 30 km) or Banaganapalle (about 20 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Nothing priced. The only lodging found at the caves is an APTDC Haritha dormitory known from old reviews and a stale Google Sites page; the official AP Tourism tariff page (aptourismhotels.in/moreinfo) does not list Belum, and no current rate was found.",
+    "notes": "Cleartrip has no Belum list; the one Tadipatri hotel it holds (OYO Flagship Maruthi Residency, 2-star) showed No rooms available for 18-19 Nov 2026. Belum is a half-day cave visit usually done from Tadipatri, Kurnool or Gandikota."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No published fare to Belum Caves found; only Rome2Rio estimates and extrapolations, not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No menu or cost-for-two found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "all stay tiers",
+    "taxi",
+    "food"
+   ]
+  },
+  "konaseema": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2095,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5421227?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/avalon-suites-hotels-5414072?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/cvr-s-hotel-glass-bird-5291700?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room, all in Ravulapalem (Konaseema district gateway): Sunrise Resorts 3-star 1715, Avalon Suites & Hotels (star not shown) 2095, CVR's Hotel Glass Bird 3-star 2647. SVS Grands Vadapalli showed No rooms available.",
+    "notes": "Konaseema is a delta region, not one town: Cleartrip has no Amalapuram or Konaseema list, so Ravulapalem is the only dated source. APTDC Haritha Coconut Country Resort, Dindi, prints Standard AC 2799 / Deluxe AC 3584 / Suite AC 5600 'including taxes and breakfast' (konaseematourism.com, undated); not mixed into the pre-tax median. 4-star RVR Sarovar Dindi starts at 6500 + taxes. No budget or homestay price found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14.5,
+    "point_to_point": [
+     {
+      "route": "Rajahmundry to Amalapuram one-way sedan (about 66 km)",
+      "inr": 2116
+     }
+    ],
+    "basis": "EaseMyTrip cabs route page: sedan (Dzire or equivalent) one-way 2116 after discount (2269 before), plus 108 taxes and charges; 66 km included, 14.5/km after. Page undated.",
+    "sources": [
+     "https://www.easemytrip.com/cabs/rajahmundry-to-amalapuram-cab-booking/"
+    ],
+    "notes": "No local sightseeing day rate found for the delta."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 490,
+    "basis": "Amalapuram (Konaseema HQ) Zomato price per person for one meal: Rambabu Gari Inti Bhojanam 100, Maruthi Tiffins 100, Multi Kitchen 150, Gheetas The Taste Of Konaseema 150, Ganapathi Food House 250; Justdial pure veg Hotel Kokas AC 350 for two (175 each). Budget = 100 x 3 meals. Standard = median of 150, 150, 175, 250 = 162.5 per meal x 3.",
+    "sources": [
+     "https://www.zomato.com/amalapuram/amalapuram-city-restaurants/andhra",
+     "https://www.zomato.com/amalapuram/amalapuram-locality-restaurants?order-online=1",
+     "https://www.justdial.com/Amalapuram/Pure-Veg-Restaurants/nct-10396867"
+    ],
+    "notes": "Zomato and Justdial pages timed out or returned 403 on direct fetch, so these figures come from search-result snippets and an auditor may not be able to reopen them. Breakfast tiffin is cheaper than 100 so budget may be slightly high."
+   },
+   "confidence": "low",
+   "unverified": [
+    "budget hotel and homestay prices",
+    "local sightseeing taxi",
+    "food figures not confirmed on a fetched page"
+   ]
+  },
+  "amaravati": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Guntur (about 33 km); Vijayawada is about 35 km",
+    "mid_median_inr": 2293,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/ostin-viceroy-grand-3913159?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/geetha-regency-2632850?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4265759?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-woodland-3920592?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sindoori-3990596?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-v-royal-park-2046428?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1386,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4597334?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4597340?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5681211?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5681762?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5764204?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Priced in GUNTUR, the base town (Amaravati temple town has almost no rooms). Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room. Mid (3-star, n=6): Ostin Viceroy Grand 2176, Geetha Regency 3034, Hotel Brundavan International 2352, Hotel Woodland 2150, Hotel Sindoori 2233, V Royal Park 2553. Budget (Cleartrip also tags these 3-star but they price lower, n=5): S V Royal Luxury Rooms 1420, The Embassy Hotel 1386, Hotel Aditya Grand INN 1335, Hotel Siddveer Grand 1578, Hotel O Koritepadu Cheruvu Lakeview 1131.",
+    "notes": "These are Guntur prices, not Amaravati prices. Cleartrip's only Amaravathi listing (Hotel O CDR Grand, 2-star) showed No rooms available for 18-19 Nov. An APTDC Haritha hotel exists in Amaravati but no reliable tariff was found (sources disagree 1100 to 4520), so none used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 32.5,
+    "point_to_point": [
+     {
+      "route": "Guntur to Amaravati one-way sedan (about 33 km)",
+      "inr": 1509
+     }
+    ],
+    "basis": "EaseMyTrip cabs route page: sedan one-way 1509 plus 72 taxes and charges; 33 km included, 32.5/km after. Page undated. Its hourly rental options (2 to 12 hours) show no prices.",
+    "sources": [
+     "https://www.easemytrip.com/cabs/guntur-to-amaravati-cab-booking/"
+    ],
+    "notes": "No local day rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Amaravati-specific menu or cost-for-two found; Guntur food was not substituted.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "food",
+    "local sightseeing taxi",
+    "homestay",
+    "Amaravati-town lodging tariff"
+   ]
+  }
+ }
+}

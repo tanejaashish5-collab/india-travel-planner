@@ -1,0 +1,519 @@
+{
+ "batch": "B5",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "mysore": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2883,
+    "mid_n": 9,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-roopa-41114?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-lok-sagar-mysore-2048980?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-le-grandeur-4278514?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sandesh-pride-2051072?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mannars-residency-386797?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-president-hotel-mysore-42430?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sunflower-mysore-3975543?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4265607?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4290364?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1422,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/the-presidency-hotel-741240?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-airlines-709544?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-kalyani-713810?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-viceroy-comforts-319311?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4290345?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/oyo-1998-hotel-nityotsava-residency-3938781?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 2233,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/mauve-orchid-377486?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/deeya-guest-house-a-luxury-home-stay-4484734?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 500,
+    "dorm_n": 4,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Mysore?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room pre-tax, 3-star hotels rated 4.1+ (1599, 2256, 2294, 2760, 2883, 2920, 3792, 3901, 4414). Budget: Cleartrip 18-19 Nov 2026 pre-tax, 2-star/3-star-labelled basic hotels rated under 4.0 (696, 1326, 1406, 1437, 1602, 1620). Homestay: Cleartrip 18-19 Nov 2026 pre-tax (Mauve Orchid 1422, Deeya Guest House 3043); few Mysore homestays were bookable so n=2. Dorm: Hostelworld 'dorms from' for the first four hostels listed (499, 499, 500, 619), undated.",
+    "notes": "Cheapest room per hotel can be a small standard room; Cleartrip lists many Mysore homestays as sold out for these dates."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2200,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [],
+    "basis": "Taxi Service in Mysore (Shop 4 Maharaja Shopping Complex, opp. KSRTC Bus Stand, B.N. Road, Nazarbad, Mysuru): Swift Dzire 8 hrs/80 km Rs 2,200 (Etios Liva Rs 2,000, 10 hrs/100 km Dzire Rs 2,500); booking form lists Dzire Rs 12/km. Toll, parking and entry fees extra. Page undated.",
+    "sources": [
+     "https://taxiserviceinmysore.com/local-sightseeing-taxi/"
+    ],
+    "notes": "Operator rate card, not a union tariff. Another Mysore operator (inmysore.com) quotes from Rs 3,000 for a 08:00-21:00 city + Srirangapatna + Brindavan Gardens day, a longer itinerary."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 900,
+    "basis": "Zomato 'cost for two' /2 = one meal, x3 meals. Budget: 8 tiffin/mess places, cost for two 100-300, median 200 (Hotel Mylari Original 100, Venkatesh Bhavan 150, Shree Dosa Point 150, TKS Iyengars 200, Hotel Rajesh 200, Bhairava Mess 200, Hotel Harihara 250, Bhatra Mane 300) = Rs 100/meal. Standard: 7 sit-down places, cost for two 400-700, median 600 (Hotel RRR 400, Just Nati 500, Hotel Hanumanthu 550, VB Food Court 600, Bopy's 700, Chinese Wok 700, Tashan 700) = Rs 300/meal.",
+    "sources": [
+     "https://www.zomato.com/mysore/restaurants/south-indian",
+     "https://www.zomato.com/mysore/restaurants",
+     "https://www.zomato.com/mysore/hotel-rrr-mandi-mohalla",
+     "https://www.zomato.com/mysore/hotel-mylari-original-doora"
+    ],
+    "notes": "Zomato list pages re-sort by location and time; the restaurant pages and the South Indian category page carry the same cost-for-two figures."
+   },
+   "confidence": "high",
+   "unverified": [
+    "No union or association taxi card found for Mysore; operator card used.",
+    "Homestay median rests on only 2 bookable properties."
+   ]
+  },
+  "bidar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3317,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-bidar-gateway-4264563?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5392983?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4273337?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/blackbuck-resort-by-jungle-lodges-4286427?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1172,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/kasturi-international-3935058?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sai-baba-palace-lodging-and-boarding-5556272?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/shiva-international-717782?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-mayura-3924929?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room pre-tax (Hotel Bidar Gateway 3-star 2835, The Crown Town 3-star 3044, Mastiff Select 4-star 3589, Blackbuck Resort by Jungle Lodges 4-star 5403). Budget: Cleartrip 18-19 Nov 2026 pre-tax (Kasturi International 897, Hotel Mayura 929, Sai Baba Palace Lodging 1414, Hotel Shiva International 1555).",
+    "notes": "Bidar has few 3-star hotels; two of the four mid properties are 4-star because the other 3-star listings (Spree Ashodev, Tulip Inn) showed no rate for these dates. No homestays or hostels found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Bidar to Gulbarga (114 km, one-way, car type not labelled on page)",
+      "inr": 2750
+     },
+     {
+      "route": "Bidar to Hyderabad Airport (147 km, one-way, car type not labelled on page)",
+      "inr": 3382
+     }
+    ],
+    "basis": "MakeMyTrip Bidar city cabs page one-way fares (included km shown on page).",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/bidar-city-cabs.html"
+    ],
+    "notes": "No local sightseeing (8 hr/80 km) rate found on an accepted source: cabbazar city pages repeat one template across towns, bijapurcabs.com is suspended, Savaari and MakeMyTrip rental pages did not show a price."
+   },
+   "food_per_person_day": {
+    "budget_inr": 375,
+    "standard_inr": 675,
+    "basis": "Zomato Bidar delivery listing, rupee 'for one' per meal, x3 meals. Budget: darshini/tiffin places 100,100,100,150,150,200 (Shree Veerabhadreshwar Lingayata Bhojanalaya 100, Shri Krishna Govind Tiffins 100, Siddhivinayaka Darshini 100, Shree Siddhi Vinayak Darshini Udupi 150, Shastri Bhavan 150, Kamat Hotel 200), median 125. Standard: family restaurants 150-350 (H.M Retreat 150, Hotel Ashoka 200, Veggies Nation 200, Rohit 200, Sitara 250, Satkar 250, Royal Anmol 250, Hotel Mayura 350), median 225.",
+    "sources": [
+     "https://www.zomato.com/bidar/restaurants"
+    ],
+    "notes": "Delivery-listing 'for one' figures, rounded to Rs 50; dine-in cost for two was not shown for Bidar."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Local 8-hour taxi rate",
+    "Homestay and dorm prices"
+   ]
+  },
+  "bijapur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2235,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-town-palace-3963630?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/vov-vijayapura-by-fidato-hotels-4189032?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/unnati-stay-inn-vijayapura-by-hrg-4290860?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kyriad-hotel-vijayapura-by-othpl-2436970?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-fern-residency-vijayapura-3911702?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1620,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/shubhashree-comfort-lodging-739168?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-pleasant-stay-3930495?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-vishram-4671036?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room pre-tax, 3-star hotels rated 4.1+ (874, 1802, 2235, 2344, 4029). Budget: Cleartrip 18-19 Nov 2026 pre-tax, 2-star hotels (1327, 1620, 1680).",
+    "notes": "Median of all 11 priced 3-star hotels on the Cleartrip list is also 2235. Unnati Stay Inn's 874 is its cheapest room."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Bijapur to Gulbarga (152 km, one-way, car type not labelled on page)",
+      "inr": 3015
+     }
+    ],
+    "basis": "MakeMyTrip Bijapur city cabs page one-way fare.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/bijapur-city-cabs.html"
+    ],
+    "notes": "No local sightseeing (8 hr/80 km) rate found on an accepted source: cabbazar city pages repeat one template across towns, bijapurcabs.com is suspended, Savaari and MakeMyTrip rental pages did not show a price."
+   },
+   "food_per_person_day": {
+    "budget_inr": 488,
+    "standard_inr": 938,
+    "basis": "Zomato Bijapur 'cost for two' /2 per meal, x3. Budget: Shree Yadiyur Siddalingeshwar Bhojanalaya 200, One Bite 250, Hotel Blue Diamond 300, Hotel Udupi Vaibhav 350, Bilal Hotel 350, Shubhashree Pure Veg 350, median 325 for two. Standard: Suburb Cafe 400, Oviya 400, Hotel Town Palace 500, Qaswa Hills 600, artha Coffee 650, Hotel Spicy Bite 800, Niyaaz 1,000, Hotel Ramkrishna Palace 1,000, median 625 for two.",
+    "sources": [
+     "https://www.zomato.com/bijapur/restaurants"
+    ],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Local 8-hour taxi rate",
+    "Homestay and dorm prices"
+   ]
+  },
+  "gulbarga": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2192,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4296521?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4535135?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292946?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-new-centro-4279116?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/heritage-inn-384314?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5065017?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1431,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4563082?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670158?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4597922?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/golden-regency-744384?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room pre-tax, first six 3-star hotels on the Cleartrip list (The Oaks Elite 2100, Hotel Tulips Inn 3025, ANS Hotel 2284, Hotel New Centro 1817, Hotel Heritage Inn 1925, Enrise by Sayaji 3784). Budget: Cleartrip 18-19 Nov 2026 pre-tax, 2-star hotels (783, 1189, 1672, 1703).",
+    "notes": "Median of all 8 priced 3-star hotels is 2340."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Gulbarga to Bidar (114 km, one-way, car type not labelled on page)",
+      "inr": 2675
+     },
+     {
+      "route": "Gulbarga to Hyderabad Airport (237 km, one-way, car type not labelled on page)",
+      "inr": 5114
+     }
+    ],
+    "basis": "MakeMyTrip Gulbarga city cabs page one-way fares.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/gulbarga-city-cabs.html"
+    ],
+    "notes": "No local sightseeing (8 hr/80 km) rate found on an accepted source: cabbazar city pages repeat one template across towns, bijapurcabs.com is suspended, Savaari and MakeMyTrip rental pages did not show a price."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 600,
+    "basis": "Zomato Gulbarga delivery listing, rupee 'for one' per meal, x3. Budget: Subhan Hotel, Pallavi Restaurant, Kamat Hotel, Anna Idli, Pallavi Hotel, Mahesh Family Restaurant all listed 100. Standard: Annapurna Family 150, Hanumant Hotel 200, Venkatgiri 200, Chaddi Hotel 200, Amogha Family 200, JDP Residency 200, Sridevi Family 250, Awadh Restaurant 400, median 200.",
+    "sources": [
+     "https://www.zomato.com/gulbarga/restaurants"
+    ],
+    "notes": "Delivery-listing 'for one' figures, rounded to Rs 50."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Local 8-hour taxi rate",
+    "Homestay and dorm prices"
+   ]
+  },
+  "chitradurga": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1450,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4271280?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4534178?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4597118?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4705053?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4695437?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mourya-deluxe-a-c-lodge-2053150?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1862,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/amulya-homestay-chitradurga-5737768?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/nithyotsava-stay-5423438?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room pre-tax, 2-star hotels and guest house (981, 1082, 1170, 1730, 1922, 2459). Homestay: Cleartrip 18-19 Nov 2026 pre-tax, two 2-star villas listed as stays (1601, 2122).",
+    "notes": "The Cleartrip 3-star listings (Chindanur Comforts, KSTDC Mayura Durg, OYO Amogha, Fort Heaven) showed no rate for 18-19 Nov, so mid is null rather than relabelling 2-star hotels."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Chitradurga to Bangalore (231 km, one-way, car type not labelled on page)",
+      "inr": 3064
+     }
+    ],
+    "basis": "MakeMyTrip Chitradurga city cabs page one-way fare.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/chitradurga-city-cabs.html"
+    ],
+    "notes": "No local sightseeing (8 hr/80 km) rate found on an accepted source: cabbazar city pages repeat one template across towns, bijapurcabs.com is suspended, Savaari and MakeMyTrip rental pages did not show a price."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 600,
+    "basis": "Zomato Chitradurga delivery listing, rupee 'for one' per meal, x3. Budget: Srishylam Veg, Sri Shiva Sagara, Hotel Old Delux, De Grand Delux, Sri Guru Kottureshwara Benne Dose Hotel, Hotel Sri Durgaparmeshwari all listed 100. Standard: Prasadam 150, Masala Hut 150, Sri Ragavendra 150, Ruchi's 200, Hotel Durgada Siri 200, Empire Family Resto 200, Mutha's Kitchen 200, Hotel Aradhya Pure Veg 200, median 200.",
+    "sources": [
+     "https://www.zomato.com/chitradurga/restaurants"
+    ],
+    "notes": "Delivery-listing 'for one' figures, rounded to Rs 50."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Mid-range (3-star) price: no 3-star rate shown for 18-19 Nov",
+    "Local 8-hour taxi rate",
+    "Dorm prices"
+   ]
+  },
+  "belur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1131,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/sunshine-international-boarding-lodging-4264568?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5218032?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670133?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 877,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4563423?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/staymaker-guru-comforts-belur-3908167?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/manjunatha-lodge-5733533?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room pre-tax, the three priced 3-star hotels in Belur (Samanvi International 973, Sunshine International 1131, Saroja Palace 1672). Budget: Cleartrip 18-19 Nov 2026 pre-tax (Pushpagiri Comforts 2-star 787, STAYMAKER Guru Comforts 2-star 877, Manjunatha Lodge 1-star 1271).",
+    "notes": "KSTDC Mayura Velapuri (4.2) showed no rate on Cleartrip for these dates. Three 3-star villas/apartments (Aqua Terra, Anthara, Belur Houses, 3215-3280) look like whole-unit rentals, so no homestay median."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Belur to Chikmagalur (61 km, one-way, car type not labelled on page)",
+      "inr": 1144
+     },
+     {
+      "route": "Belur to Bangalore (184 km, one-way, car type not labelled on page)",
+      "inr": 2668
+     }
+    ],
+    "basis": "MakeMyTrip Belur city cabs page one-way fares.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/belur-city-cabs.html"
+    ],
+    "notes": "No local sightseeing (8 hr/80 km) rate found on an accepted source: cabbazar city pages repeat one template across towns, bijapurcabs.com is suspended, Savaari and MakeMyTrip rental pages did not show a price. No Belur-Halebidu day rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "",
+    "sources": [],
+    "notes": "Zomato has no Belur page; no menu or cost-for-two figure with a rupee number found on an accepted source."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Food",
+    "Local taxi day rate",
+    "Homestay and dorm prices"
+   ]
+  },
+  "halebidu": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Belur (about 15 km) has more lodging",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1502,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.booking.com/hotel/in/mayura-shantala-halebeedu.en-gb.html?checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: Booking.com detail page 18-19 Nov 2026, 2 adults 1 room, cheapest room Deluxe Double Rs 1,502 TAX-INCLUSIVE ('Includes taxes and charges'), KSTDC Hotel Mayura Shantala, the only property Booking.com lists in Halebidu itself (guest score 6.0, 47 reviews).",
+    "notes": "Booking.com search for Halebidu on these dates: 'Halebid: 1 property found'; all other results are in Belur (about 15 km) or Chikmagalur. n=1, so treat as indicative.",
+    "no_lodging_sources": [
+     "https://www.booking.com/searchresults.html?ss=Halebidu&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "",
+    "sources": [],
+    "notes": "No Halebidu-specific taxi rate found. Hassan and Belur operator pages quote only per-km outstation rates."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "",
+    "sources": [],
+    "notes": "Zomato has no Halebidu page; no rupee menu or cost-for-two figure found."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Mid-range price",
+    "Taxi",
+    "Food",
+    "Homestay and dorm prices"
+   ]
+  },
+  "pattadakal": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Badami (about 14 km; Booking.com lists Badami hotels at 10.6-17 km from Pattadakal)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No lodging priced: Booking.com search for 18-19 Nov 2026 returns 'No properties found' for Pattadakal; every nearby result is a Badami property.",
+    "notes": "Heritage village with no lodging of its own on Booking.com or Cleartrip (Cleartrip has no Pattadakal list page). Stay in Badami.",
+    "no_lodging_sources": [
+     "https://www.booking.com/searchresults.html?ss=Pattadakal%2C+Karnataka%2C+India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Hampi to Badami, Aihole and Pattadkal day tour, private AC sedan (4 pax), 12 hours, return",
+      "inr": 6035
+     }
+    ],
+    "basis": "Trodly operator listing, per vehicle, offer valid to 31 Dec 2026 (list price 6,990).",
+    "sources": [
+     "https://www.trodly.com/activity-3649-badami-aihole-and-pattadkal-day-tour-from-hampi-in-private-cab"
+    ],
+    "notes": "No Badami-based local day rate found; a 2023 blog (enidhi.net) says there are no tourist taxis in Badami and a Bagalkot taxi for Aihole, Pattadakal and more cost about Rs 2,000 in Dec 2023 (not used as a figure)."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "",
+    "sources": [],
+    "notes": "No restaurant page for Pattadakal itself found; guides say have meals in Badami."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Food",
+    "Local taxi day rate"
+   ]
+  },
+  "hampi": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2160,
+    "vehicle": "auto",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Hampi to Badami, Aihole and Pattadkal day tour, private AC sedan (4 pax), 12 hours, return",
+      "inr": 6035
+     }
+    ],
+    "basis": "Trodly operator listing: Hampi Tuk Tuk (auto-rickshaw) sightseeing tour, 7 hours, Rs 2,160 per vehicle (max 3 people; list Rs 2,500; offer valid to 31 Dec 2026). Same site lists a private AC sedan Hampi city day tour (10 hours) at Rs 3,175 and AC SUV Rs 4,075.",
+    "sources": [
+     "https://www.trodly.com/activity-1233-hampi-tour-by-tuk-tuk-auto-rickshaw",
+     "https://www.trodly.com/activity-3061-hampi-city-local-sightseeing-day-tour",
+     "https://www.trodly.com/activity-3649-badami-aihole-and-pattadkal-day-tour-from-hampi-in-private-cab"
+    ],
+    "notes": "Operator-booked tour price, likely above what a driver at the Hampi auto stand charges on the spot; no union rate card found (hampi.in has a TLS error and was not used). Hampi is usually seen by auto, cycle or on foot."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "",
+    "sources": [],
+    "notes": "Zomato shows no restaurants for Hampi; only blog estimates found, so left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Food",
+    "Union auto rate card"
+   ]
+  }
+ }
+}

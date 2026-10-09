@@ -1,0 +1,483 @@
+{
+  "batch": "B9",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "vagamon": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2719,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/ceecee-grand-resort-3974664?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/adrak-summer-sand-hill-resort-vagamon-2044150?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kudaram-county-resorts-4565408?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/falcon-crest-743228?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vaga-nakshathra-suites-4276786?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561726?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": 2691,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/vagamon-hill-chimes-4278647?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/mount-tales-vagamon-4284989?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, 3-star: Cee Cee Grand Resort 2213, The Autumn by Maat 2531, Kudaram County 2549, Adrak Summer Sand Hill 2889, Falcon Crest 3023, Vaga Nakshathra Suites 3551; median 2719. Homestay: Cleartrip 18-19 Nov 2026 pre-tax, Vagamon Hill Chimes 1502 and Mount Tales 3880 (n=2); 7 other homestays showed No rooms available for those dates and one private villa (5648) was excluded.",
+        "notes": "Only two homestays had a bookable 18-19 Nov price, so the homestay median is thin (spread 1502 to 3880). No budget-hotel or dorm source with a dated price found (Cleartrip budget list shows one hotel at a non-target date)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 18,
+        "point_to_point": [],
+        "basis": "Vagamon Jeep Safari (Elappara, Vagamon 685503) cab page: Swift Dzire / Etios 2500 per day incl 100 km, extra Rs 18/km; Ertiga 3000, Innova 3500. Page undated (copyright 2025).",
+        "sources": [
+          "https://jeepsafarivagamon.co.in/cabs/"
+        ],
+        "notes": "Operator rate, not a union chart; vehicle hire day with 100 km cap."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Vagamon restaurant page with a rupee cost-for-two or menu price found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "medium",
+      "unverified": [
+        "budget hotel and dorm prices",
+        "food",
+        "union taxi chart or point-to-point fares"
+      ]
+    },
+    "wayanad": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2176,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/bonita-banasura-3927917?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/green-gates-hotel-41578?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-wilton-3980406?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4598104?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/karapuzha-village-resort-159811?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sky-sierra-wayanad-4264283?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-great-jubilee-3980104?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": 1953,
+        "homestay_n": 6,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/nivaasana-bed-breakfast-3989552?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/chembra-adobe-3921794?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/misty-heights-by-the-sanihara-4479877?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/green-peace-home-3958668?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/aldora-holiday-homes-3989378?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5679265?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, 3-star properties across Wayanad district: Bonita Banasura 1800, Green Gates Hotel 1967, Sky Sierra 2144, Mesta Hotel 2176, Bay View Suites Vythiri 3026, Karapuzha Village Resort 4390, Hotel Wilton 4420; median 2176. Homestay: Cleartrip 18-19 Nov 2026 pre-tax: Nivaasana B&B 1510, Misty Heights 1921, Green Peace Home 1929, Aldora Holiday Homes 1976, Enteveedu Homestay 2056, Chembra Adobe 4062; median 1953.",
+        "notes": "Wayanad is a district: properties are spread over Vythiri, Kalpetta, Sultan Bathery, Padinjarathara and Karapuzha. Budget-hotel detail pages for Kalpetta-area old-ID listings returned 404 on the dated URL, so no budget median; no dorm source found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 18,
+        "point_to_point": [],
+        "basis": "Wayanad Cabs (Kannamuzha house, near Krishibhavan, Old Vythiri, Vythiri 673576): sedan base fare 2500 incl 100 km, extra Rs 18/km; Innova 3500 (Rs 22/km). Page undated; its own text says to call for a sightseeing quote, so the figure is the 100 km day base fare.",
+        "sources": [
+          "https://www.wayanadcabs.in/"
+        ],
+        "notes": "Operator rate, not a union chart. Wayanad Taxi's rate list shows 'Wayanad sightseeing tour, Ertiga, starting fare 2500' (https://wayanadtaxi.com/wayanad-taxi-tariff/) which agrees."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Only scattered Kalpetta cost-for-two figures found (Holidify: By-the-Way 200-500, Jubilee 300; EazyDiner: Augusta Heights 1500); too few for a daily derivation.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "medium",
+      "unverified": [
+        "budget hotel prices",
+        "dorm",
+        "union taxi chart",
+        "food"
+      ]
+    },
+    "athirapally": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3234,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/athirappilly-riverine-suites-2876136?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/744150?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, 3-star: Hydel Palace 2656, Athirappilly Riverine Suites 3811 (with breakfast); median 3234 (n=2). On the same dates Athirapilly Clirind Resort, Silver Storm Resorts and Willow Heights (all 3-star) showed No rooms available.",
+        "notes": "Only two 3-star properties had a bookable 18-19 Nov price, so the median is thin. 4-star resorts excluded (Anchorage 4705, Sterling 6192, Casa Rio 6413, Green Trees 20000). No homestay, budget or dorm source with a dated price found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Chalakudy to Athirappilly, Vazhachal and Charpa day tour and back (private AC car, up to 4 people, driver-guide)",
+            "inr": 1800
+          },
+          {
+            "route": "Cochin Airport day tour to Athirappilly, Vazhachal, Charpa and back (up to 4)",
+            "inr": 2300
+          }
+        ],
+        "basis": "Athirapally Tourism (operator Tripenticer) one-day private tour page: from Chalakudy 1800 up to 4 passengers (2500 up to 7); from Cochin Airport 2300 up to 4 (3000 up to 7). Undated page. No local-within-Athirappilly day rate found.",
+        "sources": [
+          "https://www.athirapallytourism.org/home/athirapally-packages/athirapally-day-sightseeing-tour"
+        ],
+        "notes": "Day package from a base town to the falls, so recorded as point_to_point, not a local day."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Athirappilly restaurant page with rupee prices found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "homestay/budget/dorm stays",
+        "local taxi day rate",
+        "food",
+        "union taxi chart"
+      ]
+    },
+    "beypore": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Kozhikode (Calicut) city, roughly 9-11 km",
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "No Beypore-own property priced. Trip.com's list of hotels near Beypore Beach shows the nearest hotels at 4.5-12 km, all in Kozhikode city or Ramanattukara (https://in.trip.com/hotels/kozhikode-beypore-beach/hotels-c5025m6751639/); pricing those as Beypore's own would be wrong.",
+        "notes": "Beypore is a port and shipbuilding suburb of Kozhikode; visitors normally base in Kozhikode. For reference only, not used as Beypore figures: Cleartrip 18-19 Nov 2026 Nexstay River Mouth (Ramanattukara, 3-star) 1555 and Hotel Blue Bell (Govindapuram, Kozhikode, 3-star) 2365 pre-tax."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Beypore or Kozhikode union/tourism rate chart found; Kozhikode city pages found were template cab sites or showed no local package price (gozocabs says no indicative local fares).",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Beypore restaurant source with rupee prices found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "stay (no Beypore-own dated price)",
+        "taxi",
+        "food"
+      ]
+    },
+    "idukki": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2273,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/gee-resort-heights-4275886?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4533296?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": 3442,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/coffee-camp-home-stay-with-tree-house-5249324?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/panchami-homestay-5258132?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, Thankamony/Calvary Mount, Idukki: Arabian Holiday Resort Calvary Mount (hotel, 3-star) 1598 with breakfast, GEE Resorts and Heights (resort, 3-star) 2948; median 2273 (n=2). Homestay: Cleartrip 18-19 Nov 2026 pre-tax: Coffee Camp home stay with tree house (Ayyappancoil, listed as villa) 1580, Panchami Homestay (Idukki, villa listed as homestay) 5304; median 3442 (n=2).",
+        "notes": "Very thin and wide: Idukki has few listed properties; 4 more 3-star listings and all 3 Cleartrip homestays were sold out on the 13-14 Nov list view. Other Idukki-list entries were villas at 6,586-25,675 or named for Vagamon and were not used."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Idukki taxi union or operator rate found; search turned up only generic Kerala cab sites.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Idukki restaurant source with rupee prices found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "budget hotels",
+        "dorm",
+        "taxi",
+        "food"
+      ]
+    },
+    "kannur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2648,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/royal-omars-707471?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/malabar-residency-707980?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/clyford-inn-1330376?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5420736?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292675?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5066489?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1520,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/green-park-residency-707649?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5220544?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1715,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/5170999?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/mayflowerhomestay-4684764?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, 3-star Kannur city hotels: Royal Omars 2060 (non-AC), Grand Plaza Inn 2067, Clyford Inn 2429, Malabar Residency 2866, Hotel Grand Benale 3135, Hotel Skypearl 3301; median 2648. Budget: Cleartrip 18-19 Nov 2026 pre-tax: Harley Residency (Manal) 1298, Green Park Residency (2-star) 1741; median 1520 (n=2). Homestay: Cleartrip 18-19 Nov 2026 pre-tax: Rozana Retreats BeachVibe 2224, MayFlowerHomeStay (2-star) 1205; median 1715 (n=2).",
+        "notes": "Kannur town/city properties only; Parassinikadavu and beach-resort properties excluded. No dorm source found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Only undated operator pages with no address (kannurtaxibooking.com shows copyright 2020) or template cab sites were found, so no figure is used.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Zomato/Justdial Kannur pages timed out or were blocked; scattered biryani prices only.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "medium",
+      "unverified": [
+        "dorm",
+        "taxi",
+        "food"
+      ]
+    },
+    "poovar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3166,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/5066678?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4479504?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, 3-star: Phoenix Island Resort Poovar 2516 (with breakfast), Royal Empire Resort 3815 (with breakfast); median 3166 (n=2).",
+        "notes": "Poovar is a small resort-led backwater place. On 18-19 Nov Cleartrip showed No rooms available at Phoenix Island Resort (Kulathoor listing), Poovar Island Resort (4-star), Ocean Queen Palace, Blessing Homestay 3B and The Coral Nest Homestay, so no homestay median. Isola Di Cocco (5-star) 9576 pre-tax was excluded as luxury. Possible Nov crowding: these were sold out."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Thiruvananthapuram to Poovar one way, sedan (Dzire), about 34 km",
+            "inr": 1099
+          }
+        ],
+        "basis": "Gozo Cabs indicative one-way fare before GST, sedan 1099, compact 1022, small SUV 1429, large SUV 2189; page undated. No local Poovar day rate found.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/thiruvananthapuram-poovar"
+        ],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Poovar restaurant source with rupee prices found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "budget hotel",
+        "homestay (all sold out on target dates)",
+        "dorm",
+        "local taxi day",
+        "food"
+      ]
+    },
+    "chinnar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Marayoor / Munnar (Munnar is roughly 60 km)",
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "No room-only tier priced. The only lodging is Kerala Forest Department log houses and tree huts inside the sanctuary (Thoovanam, Jellimala, Koottar, Churulipetty, Pambaar, Periyakombu per https://www.chinnar.in/). Kerala Tourism prints the log-house tariff as Rs 4000 for two persons, Rs 1000 per extra person, stay includes dinner and breakfast, entrance fee extra (https://www.keralatourism.org/ecotourism/trekking-programs/thoovanam-marayoor-trek/34), tariff card, undated.",
+        "notes": "Forest log house Rs 4000 for two incl. dinner and breakfast is a meals-included price, so it is not entered as a room-only tier. The official booking portal (booking.munnarwildlife.com) now redirects to munnarwildlife.com, which shows no tariffs; third-party pages disagree (Rs 3000-4000 for two). Booked through the Wildlife Warden's Office, Munnar, +91 4865 231587. No private hotel or dorm tariff found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 18,
+        "point_to_point": [
+          {
+            "route": "Munnar to Chinnar direction (sightseeing day trip), sedan",
+            "inr": 2500
+          },
+          {
+            "route": "Munnar to Chinnar direction, Innova",
+            "inr": 3000
+          }
+        ],
+        "basis": "Munnar Tourist Taxi Driver's Association rate chart on Munnar Travel Planners (1st Floor, PWD Complex, Nadayar Road, Munnar): Chinnar direction sedan 2500, Tavera/Xylo 2800, Innova 3000; running km Rs 18 sedan. Undated page (footer 2026). Toll, parking, inter-state permit extra.",
+        "sources": [
+          "https://www.munnartravelplanners.in/taxi-service.html"
+        ],
+        "notes": "Fare is from Munnar (about 60 km away), so a point-to-point day trip, not a local day."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Chinnar-specific restaurant or menu prices found; forest stay meals are bundled in the log-house tariff.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "current official forest log-house tariff (booking portal redirects)",
+        "room-only price",
+        "dorm (only a 2017 article gives Rs 150 per bed)",
+        "local taxi day",
+        "food"
+      ]
+    },
+    "eravikulam": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Munnar (about 13-15 km from the Rajamala tourism zone)",
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "No lodging inside the park. The park's own booking site lists only entry tickets and no stay (https://eravikulamnationalpark.in/); Holidify places lodging in Munnar-area camps and resorts 7-9 km away, and the park about 15 km from Munnar (https://www.holidify.com/places/munnar/eravikulam-rajamalai-national-park-sightseeing-2895.html).",
+        "notes": "The one forest-department stay linked to the park is Lakkom Log House on the Munnar-Marayoor road, near Lakkom Falls and not shown to be inside the park: Rs 3000 for two Indians, Rs 4000 foreigners, Rs 1000 extra person (https://munnartourism.co.in/eravikulam-national-park-munnar, undated). Park closed for calving season roughly Feb-Mar."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 18,
+        "point_to_point": [
+          {
+            "route": "Munnar to Rajamalai (Eravikulam) and Tea Museum, sedan",
+            "inr": 1500
+          },
+          {
+            "route": "Munnar to Rajamalai and Tea Museum, Innova",
+            "inr": 2500
+          }
+        ],
+        "basis": "Munnar Tourist Taxi Driver's Association rate chart on Munnar Travel Planners (1st Floor, PWD Complex, Nadayar Road, Munnar): Rajamalai & Tea Museum sedan 1500, Tavera/Xylo 2000, Innova 2500; daily rent min 80 km sedan 2200. Undated page (footer 2026). Park entry is separate and private cars cannot enter the tourism zone.",
+        "sources": [
+          "https://www.munnartravelplanners.in/taxi-service.html"
+        ],
+        "notes": "Base-to-sight fare from Munnar, so point_to_point."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Eravikulam-specific restaurant prices found; visitors eat in Munnar.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "medium",
+      "unverified": [
+        "food"
+      ]
+    }
+  }
+}

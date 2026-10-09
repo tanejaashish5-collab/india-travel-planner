@@ -1,0 +1,497 @@
+{
+ "batch": "B6",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "alleppey": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2070,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/dazzle-dew-memories-724846?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4534050?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4265865?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/lakeway-resorts-4008189?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/triveny-river-palace-2427222?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2185,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/homestay-dgh-5258874?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mrina-rosh-inn-4686196?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/tharavad-heritage-3975519?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/tulsi-kayal-retreat-4683897?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 375,
+    "dorm_n": 10,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Alleppey?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax room-only, cheapest room: Dazzle Dew Memories 1335, Arcadia Magnet 1406, Venice Iva Residency 2070, Lakeway Resorts 2118, Triveny Camelot Resort 3560 (all listed 3-star, Alleppey town area). Homestay: Cleartrip detail pages 18-19 Nov 2026, pre-tax room-only: Homestay DGH 1667, Mrina Rosh Inn 2150, Tharavad Heritage 2220, Tulsi Kayal Retreat 3005. Dorm: Hostelworld 'from' bed prices for 10 hostels (250-910), undated, INR.",
+    "notes": "Excluded as not Alleppey town or breakfast-only or houseboats: Flamingo Boutique (5447 with breakfast, Ambalapuzha), Kurialacherry House (5472 with breakfast, Kuttanad), Glancy's (Haripad), Seclude By the Lake (Muhamma), Marari/Mararikulam properties. Several listings showed 'No rooms available' on 18 Nov (Sunny Days Homestay, Lake Gardens, Cosy Regency). No dated budget-hotel tier found (budget list pages are locked to the search date and many detail pages 404), so budget left null. Houseboats are a separate product and are NOT in any median; Cleartrip list page (13-14 Nov 2026, not 18 Nov) printed houseboat listings at Kerala Houseboats 4670, Southern Panorama Cruises 6458, My Trip Houseboat 8707 per night pre-tax (https://www.cleartrip.com/hotels/3-star-hotels-in-alleppey). Alleppey is pre-Sabarimala-season pilgrim traffic; prices shown are for 18-19 Nov regardless."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No usable source: Jagnish Tours chart page now returns 404, Tripadvisor and MakeMyTrip blocked/timed out, remaining hits are template cab aggregators or a 2021 homestay tariff.",
+    "sources": [],
+    "notes": "Left null rather than guess."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 600,
+    "basis": "Zomato Alappuzha city page, 9 restaurants shown with cost for two: 200, 200, 250, 350, 400, 450, 500, 500, 1000 (median 400 = 200 per person per meal). Budget = 3 meals x about 100 (cost-for-two 200 South Indian/Kerala/thattukada places). Standard = 3 meals x 200 (median cost-for-two 400).",
+    "sources": [
+     "https://www.zomato.com/alappuzha"
+    ],
+    "notes": "Zomato delivery-city listing; includes Arabic/mandi places that skew the high end."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "local taxi day rate (no valid source)",
+    "dated budget-hotel tier",
+    "houseboat prices for 18-19 Nov (only 13-14 Nov list prices seen)"
+   ]
+  },
+  "kollam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2280,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-sea-pearl-717000?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/chandra-inn-4291206?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sea-palace-722958?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/terratone-boutique-business-hotel-4682030?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-harisree-kollam-4487929?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax, room-only, cheapest room: Hotel Sea Pearl 2100, Chandra Inn 2192, Sea Palace 2280, Terratone Boutique Business Hotel 3412, Hotel Harisree 3719 (all listed 3-star, Kollam city).",
+    "notes": "KTDC Aqua Land (2273) and Prasanthi Hotel (4865) priced only with breakfast, so left out of the room-only median. SEAPARK, Global Backwater Resort and Hotel Shah International showed 'No rooms available' on 18 Nov. Cleartrip homestay list page showed no properties and Hostelworld has no Kollam page (404), so homestay and dorm tiers are null; no dated budget-hotel tier found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Full-day Kollam sightseeing tour package (11-12 hr, 6 am to 9 pm; Thangassery Lighthouse, Ashtamudi, Palaruvi Falls, Kottukkal, Jatayu Earth Centre, Thenmala), sedan Dzire/Etios/Amaze",
+      "inr": 3450
+     }
+    ],
+    "basis": "Tour Keeda one-day Kollam sightseeing package page (URL dated 2024/12, price table by vehicle: sedan 3450, Ertiga 4400, Innova 4900). This is a 11-12 hour multi-district tour, not an 8 hour local hire, so the local figure is left null.",
+    "sources": [
+     "https://www.tourkeeda.com/2024/12/One-Day-kollam-Sightseeing-Tour-Package-By-Cab.html?m=1"
+    ],
+    "notes": "No union rate chart or 8hr/80km local rate found from a non-template source."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 750,
+    "basis": "Zomato Kollam city page, 9 restaurants shown with cost for two: 300, 300, 400, 450, 500, 500, 800, 800, 1000 (median 500 = 250 per person per meal). Budget = 3 meals x 150 (cost for two 300). Standard = 3 meals x 250 (median).",
+    "sources": [
+     "https://www.zomato.com/kollam"
+    ],
+    "notes": "Zomato delivery-city listing; includes chains (KFC) and mandi/shawarma places."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "local 8h taxi rate",
+    "budget hotel, homestay and dorm tiers"
+   ]
+  },
+  "bandipur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 11206,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/bandipura-khans-resort-4284852?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-mangifera-3930157?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/dholes-den-bandipur-159335?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mc-resort-bandipur-5600209?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, pre-tax, cheapest ROOM WITH BREAKFAST (no room-only rate printed) for the four properties listed 3-star: Bandipura Khans Resort 2194, The Mangifera 9806, Dholes Den Bandipur 12607, MC Resort Bandipur 12903. Median of 4 = 11206.",
+    "notes": "Bandipur lodging is bimodal: one budget-style lodge near 2200 versus jungle resorts at 9800-12900 with breakfast. Median of 4 sits between and is not a typical single price; treat the range 2194-12903 as the real picture. Windflower (5-star), Serai (5-star, 18000-30000 breakfast), MC Resort Wildlife (4-star, 7290 full board), Country Club (4-star, 13524 full board) and Dhole's Den (4-star; room-only 12514) excluded as not 3-star or full-board. Jungle Lodges Bandipur Safari Lodge is a stay+meals+2 safaris package per person (not a room price) so not used; its Cleartrip page was sold out. Vana Vihar showed no rooms on 18 Nov. No budget, homestay or dorm tier found with a dated price."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": 12.75,
+    "point_to_point": [
+     {
+      "route": "Mysuru to Bandipur one-way (about 79 km), sedan",
+      "inr": 1825
+     }
+    ],
+    "basis": "Gozocabs indicative one-way fare before GST: sedan 1825, small SUV 2860, large SUV 4643; round-trip reference rate 12.75/km. No local 8hr rate (safaris run on forest-dept jeeps, not private cabs).",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/mysore-bandipur"
+    ],
+    "notes": "Aggregator quote, no union chart found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No own rupee menu or Zomato/Swiggy cost-for-two source found for Bandipur village (food is mostly inside resorts, often full-board).",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "room-only rates (none printed except 4-star Dhole's Den)",
+    "local taxi day rate",
+    "food",
+    "budget/homestay/dorm tiers"
+   ]
+  },
+  "kabini": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 5880,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4292440?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail page 18-19 Nov 2026, pre-tax, AC Earthern Cottage with breakfast 5880 (also breakfast+one meal 6384, full board 6888; lake-view A-frame with breakfast 8400). Only one 3-star property exists on Cleartrip for Kabini (n=1).",
+    "notes": "Cleartrip lists just two Kabini hotels (the other, Regenta Kabini Springs, is 5-star and was sold out). Other Kabini lodges (Kabini River Lodge by Jungle Lodges, Evolve Back, Serai, Waterwoods) are 4-5 star or all-inclusive safari packages priced per person and are not used. No room-only rate printed on the 3-star page, so 5880 is a room-with-breakfast price. No budget, homestay or dorm tier found with a dated price."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Mysore to Kabini one-way (about 62 km), sedan Dzire/Verna",
+      "inr": 1109
+     }
+    ],
+    "basis": "Mysore Wheels (Mysore operator) Mysore to Kabini car rental page, undated ('Packages 2026' title): sedan 1109 one-way incl taxes, extra km 13/km after 62 km; Innova 1617.",
+    "sources": [
+     "https://mysorewheels.com/mysore-to-kabini-car-rental/"
+    ],
+    "notes": "Safaris use forest-dept or resort jeeps, so no local private-cab day rate was found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No own rupee source found for Kabini (meals sold inside resorts as packages).",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "more than one 3-star price",
+    "room-only rate",
+    "local taxi day",
+    "food",
+    "budget/homestay/dorm"
+   ]
+  },
+  "nagarhole": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1024,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4289783?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: Cleartrip detail page 18-19 Nov 2026, pre-tax room-only, Coorg Hill Residency, Kutta (2-star guest house, Kodagu-side gate village of Nagarhole): Non-AC double 1024, AC 1280, family non-AC 1638 (n=1; cheapest room used).",
+    "notes": "3-star median left null: the only 3-star-listed Nagarhole-area properties on Cleartrip (Sunrise Homestay Nagarahole, STAYMAKER Turtle Pond Estate) showed 'No rooms available' on 18 Nov, and the resorts (Machaan, Coorg Wild Walk, JLR Kings Sanctuary) are 4-5 star or all-inclusive safari packages priced per person, not room rates. Forest-dept Gangothri/dormitory tariffs were seen only in search snippets (portal tickets.nagaraholetigerreserve.com unreachable), so not used. Veeranahosahalli (Hunsur gate) side had no Cleartrip listings; the Kutta-side guest house price does not represent it."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Mysore to Nagarhole one-way (about 81 km), sedan Dzire/Verna",
+      "inr": 1368
+     }
+    ],
+    "basis": "Mysore Wheels (Mysore operator) Mysore to Nagarhole page, undated: sedan 1368 one-way incl taxes, extra km 13/km after 81 km; Innova 2016.",
+    "sources": [
+     "https://mysorewheels.com/mysore-to-nagarhole-car-rental/"
+    ],
+    "notes": "Safaris run on forest-dept jeeps, so no private-cab local day rate."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No own rupee source found.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "3-star price",
+    "homestay",
+    "dorm",
+    "local taxi day",
+    "food",
+    "forest-dept room tariff"
+   ]
+  },
+  "dandeli": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4139,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4264239?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1345,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/dandeli-river-resort-5595203?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/premkunj-homestay-5581841?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail page 18-19 Nov 2026, pre-tax, ROOM ONLY, Century Resort / Regenta Century Dandeli (3-star, Bada Kanshirada) all three tent/cottage types 4139 (n=1). Budget: Cleartrip 18-19 Nov 2026 pre-tax room-only: Dandeli River Resort (listed 3-star) Basic Tent 1343; PremKunj Homestay (listed 2-star) Deluxe Non-AC 1346 (n=2).",
+    "notes": "Most Dandeli 3-star/5-star jungle resorts are all-inclusive and were NOT used: Wild Kasarwadi 7209-10416 (breakfast, lunch and dinner), Whistling Woodzs 9402-16910 (all meals, snacks and drinks), Sharavathi/Jungle Lodges camps are packages. Dandeli Wild River Resort, Ave Maria, Townhouse Oak, Cheetah Farms, Bison River Resort, Dandeli Rangers Camp and Dandeli Resorts Booking all showed 'No rooms available' on 18 Nov. The Cleartrip list page (13-14 Nov) showed every Dandeli property sold out. Mid n=1 so treat as indicative."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No usable source: only template aggregator pages (CabBazar, DDcab, HurryUpCabs) and a Savaari page that does not render.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato page for Dandeli; only one Dandeli-town restaurant (cost for two 350) found, too thin. Resort stays are mostly all-meals.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "more than one room-only 3-star price",
+    "taxi",
+    "food",
+    "homestay",
+    "dorm"
+   ]
+  },
+  "jog-falls": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3000,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://kstdc.co/hotels/hotel-mayura-gerusoppa-jogfalls/"
+    ],
+    "budget_hotel_median_inr": 1920,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://kstdc.co/hotels/hotel-mayura-gerusoppa-jogfalls/"
+    ],
+    "homestay_median_inr": 1752,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/jog-falls-ruby-home-stay-4682148?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/ruby-home-stay-5290131?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hills-view-stay-3989490?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: KSTDC Hotel Mayura Gerusoppa tariff card, undated, weekday base rate excl GST: AC Semi Deluxe 2760 and AC Deluxe 3239, median of the two AC rooms 3000 (n=1 property). Budget: same KSTDC card, Standard Non-AC (Tunga Block) weekday 1920. Homestay: Cleartrip 18-19 Nov 2026 pre-tax room-only: Ruby Home Stay 1718, Jog Falls Ruby Home Stay 1752, Hills View Stay 2475 (median 1752).",
+    "notes": "Only one 3-star-type lodge exists at Jog Falls (KSTDC Mayura Gerusoppa); Cleartrip shows it only on a landmark page with no dated price. Sharavathi Adventure Camp (Jungle Lodges) is a package with all meals (6877 on 18 Nov, breakfast+lunch+dinner) so not used. Weekend KSTDC rates are 2990 (AC semi deluxe) and 3509 (AC deluxe); 18 Nov is a Wednesday. Ruby listings are marked 2-star hotels on Cleartrip but are home-run stays; Hills View Stay is a 2-star homestay."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": 12.75,
+    "point_to_point": [
+     {
+      "route": "Sagara to Jog Falls one-way (about 37 km), sedan",
+      "inr": 2315
+     }
+    ],
+    "basis": "Gozocabs indicative one-way fare before GST: sedan 2315, large SUV 3932; round-trip reference 12.75/km. Jog Falls is a viewpoint town with no local cab sightseeing day.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/sagara-jog_falls"
+    ],
+    "notes": "Aggregator quote only."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato/Swiggy/menu source for Jog Falls found.",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "dated mid price (KSTDC is an undated tariff card)",
+    "local taxi",
+    "food",
+    "dorm"
+   ]
+  },
+  "srirangapatna": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3470,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://kstdc.co/hotels/hotel-mayura-riverview-srirangapatna/"
+    ],
+    "budget_hotel_median_inr": 2750,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://kstdc.co/hotels/hotel-mayura-riverview-srirangapatna/"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "KSTDC Hotel Mayura Riverview Srirangapatna tariff card, undated, weekday base rates excl 5% GST: AC Executive Double 3200, AC Double 3470, AC Cottage 3740 (mid = median 3470, n=1 property); Non-AC Double 2750 (budget, n=1); weekend AC Double 3635, Non-AC 2875.",
+    "notes": "Cleartrip has no dated Srirangapatna list: its 'Srirangapatna' pages (13-14 Nov) list Mysore city hotels, and the Srirangapatna-locality detail pages (Mayura River View, Cute Resort, Atrium, Kings L Den, Sunflower) returned 404 for 18-19 Nov, so those were not used. White Orchid Resorts and HM Resort resolve to Mysore/Palahalli on their detail pages and were not used either. No dated Srirangapatna price found; this is a government tariff card. Srirangapatna is normally visited as a day trip from Mysore (18 km)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Mysore to Srirangapatna one-way (about 18 km), sedan Dzire",
+      "inr": 508
+     }
+    ],
+    "basis": "Mysore Wheels (Mysore operator) Mysore to Srirangapatna page, undated: sedan 508 one-way incl taxes, extra km 13/km after 18 km; Innova 693. The page's 8-hour local package prices were not shown.",
+    "sources": [
+     "https://mysorewheels.com/mysore-to-srirangapatna-car-rental/"
+    ],
+    "notes": "No Srirangapatna-own local day rate; Mysore local rates deliberately not substituted."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No own rupee source found (no Zomato page for Srirangapatna).",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "any dated 18-19 Nov price",
+    "homestay",
+    "dorm",
+    "local taxi day",
+    "food"
+   ]
+  },
+  "shravanabelagola": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 840,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://yatradham.org/shravanbela-gola-hotel-raghu.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: Hotel Raghu (near Jain Mandir, Shravanabela Gola) listed tariffs on yatradham.org, undated, billing period not stated: 2-bed Non-AC 840, 3-bed Non-AC 945, 2-bed AC 1575. Budget figure = the basic Non-AC double (n=1).",
+    "notes": "No 3-star lodging exists in Shravanabelagola and no dated OTA price could be loaded: Cleartrip has no Shravanabelagola page (404); Kayak shows Shravanabelagola OYO-type hotels dated 10-11 Oct only (O Royal Stay 1450, Super Hotel O New Rock 1740, OYO Daivik Comforts 2803, not 18 Nov so not used); Booking.com shows SDK Residency (2-star) with no price. Pilgrims also use Jain Math guest houses (no tariff found). Mid left null."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Mysore to Shravanabelagola one-way (about 84 km), sedan Dzire",
+      "inr": 1409
+     }
+    ],
+    "basis": "Mysore Wheels (Mysore operator) Mysore to Shravanabelagola page, undated: sedan 1409 one-way incl taxes, extra km 13/km after 84 km; Innova 2079.",
+    "sources": [
+     "https://mysorewheels.com/mysore-to-shravanabelagola-car-rental/"
+    ],
+    "notes": "Town is visited as a drive-in day trip; no local day rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No own rupee source found (no Zomato page for Shravanabelagola).",
+    "sources": [],
+    "notes": "Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "any dated price",
+    "mid tier",
+    "homestay",
+    "dorm",
+    "local taxi day",
+    "food"
+   ]
+  }
+ }
+}

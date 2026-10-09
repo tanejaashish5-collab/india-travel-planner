@@ -1,0 +1,497 @@
+{
+ "batch": "B7",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "kumarakom": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4258,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/lilly-ribera-residency-4277231?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kumarakom-heritage-resort-3981233?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5635688?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/doves-goldfieldd-lake-resort-3989866?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/cocobay-resort-160162?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/shanthitheeram-lakeside-heritage-resort-3944872?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1972,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/dubai-hotel-kumarakom-934532?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/ushas-homestay-4686700?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest bookable room, 6 Cleartrip 3-star properties with a Kumarakom address: Lilly Ribera Residency 1613 (room only), Kumarakom Heritage Resort 3827 (with breakfast), Lake Vechoor Villas 4005 (room only), Goldfield Club & Lake Resort 4511 (room only), Cocobay Resort 5544 (with breakfast), Shantitheeram Ayurveda Lakeside Heritage Resort 5580; median 4258, n=6. Homestay: same method, 2 properties (Dubai Hotel Kumarakom, Cleartrip 'homestay', cheapest Standard Non AC Room 1126; Ushas Homestay 2817); median 1972, n=2.",
+    "notes": "Many Kumarakom properties were sold out on 18-19 Nov (Paradise Resort, Royal Riviera, Kumarakom Tharavadu, ama Lily Pad, Coconut Creek, Garggi, Lovedale, AquaLillies, Anandam). Excluded: Aquarius Hotel Vaikom (a Vaikom address, not Kumarakom) and Spin & stay (a two-bedroom whole unit at 4920, not a room price). Houseboats not priced. Kumarakom Heritage Resort and Lake Vechoor Villas are in Vechoor, which Cleartrip files under Kumarakom. No Cleartrip budget list was usable."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2300,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 18,
+    "point_to_point": [],
+    "basis": "Kumarakom Taxies (local operator, near the government boat jetty, Illiparambil, Kumarakom P.O.) tariff page, undated: Etios / Swift Dzire Rs 2300 per day with 100 km included, extra km Rs 18 (Ertiga 2600, Innova 3000). Tolls, parking and permits extra. It is a per-day rate with 100 km, not an explicit 8-hour package.",
+    "sources": [
+     "https://kumarakomtaxies.com/taxi-tariff.html"
+    ],
+    "notes": "No taxi association rate card found online; this is a single operator's undated tariff."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato/Swiggy/menu page with rupee prices would load for Kumarakom (Zomato timed out, Swiggy empty). A blog roundup printed cost for two for only two casual places, which is too few to derive a day figure.",
+    "sources": [],
+    "notes": "Left null rather than derived from a blog or from resort buffets."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget hotel and dorm tiers",
+    "Homestay sample is n=2 only",
+    "Food (no rupee source loaded)",
+    "Taxi association rate card",
+    "Crowding: Sabarimala season starts mid-Nov; no visible crowding effect seen in the page prices"
+   ]
+  },
+  "bekal": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2970,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/halifax-inn-4489611?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-bekal-palace-4265252?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/shrigo-bekal-fort-resort-spa-3943218?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 929,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4671724?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 2643,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/bekal-homestay-and-resorts-2625050?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 3 Cleartrip 3-star properties (Halifax Inn 2970 Deluxe room only, Hotel Bekal Palace 3241 Executive room only, ShriGo Bekal Fort Resort & Spa 2363 Deluxe room only); median 2970, n=3. Budget: Cleartrip 18-19 Nov 2026, Bekalfort Inn (2-star) Standard Non AC Room 929, n=1. Homestay: Cleartrip 18-19 Nov 2026, Bekal Homestay and Resorts (Cleartrip 'guest house', 3-star) Deluxe Double Room room only 2643, n=1.",
+    "notes": "Excluded from mid: Naalakam Ayuryoga (Cleartrip 3-star, but a 14418 Ayurveda resort, an outlier). Sold out on 18-19 Nov: Oaks Residency, Bekal Home Stay And Resorts (Udma), Bekal Village Homestay (two listings), Relax at Riverside Retreat. 5-star Taj Bekal, Gateway and Lalit not priced. Thin supply, so single-property tiers are low-evidence."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union or operator rate card with a printed fare was found that loaded. Savaari and MakeMyTrip Bekal pages did not render (blank or timeout); the only per-km chart found (CarOnRentals) shows no postal address and was not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee food source for Bekal was found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Local taxi day rate and point-to-point fares",
+    "Food",
+    "Dorm tier",
+    "Budget and homestay tiers are n=1",
+    "Mid tier n=3"
+   ]
+  },
+  "kovalam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 6083,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-samudra-ktdc-3981259?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 3773,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/home-city-homestay-ayurvedic-clinic-5601208?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kovalam-beach-house-room102-5690946?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail page 18-19 Nov 2026, 1 room 2 adults, pre-tax: Hotel Samudra KTDC (Cleartrip 3-star) Premium Pool View with breakfast 6083, the only room type shown; n=1. Homestay: Cleartrip 18-19 Nov 2026 pre-tax cheapest room: Home City Homestay & Ayurvedic Clinic Comfort Single Room with breakfast 2148; Kovalam Beach house room102 (Cleartrip 3-star villa, room only) 5397; median 3773, n=2.",
+    "notes": "Thin supply on Cleartrip for 18-19 Nov: sold out were The Byke Heritage Puja Samudra, Itsy Waters Edge, Jeevan Beach Resort, Searock Beach Resort, Hotel Rock and Beach, Lyba Homestay, Banyan Tree Samudra, Bougainvillea Homestay. NeelaHouse Villa (7159) excluded as a whole private villa, not a room. Several older Cleartrip Light House Beach pages (Sagara, Hill and Sea View, Pappukutty, Neelakanta, Soma Palmshore) returned 404 so could not be dated. The single mid price is a government (KTDC) beachfront property with breakfast and likely sits above a true 3-star median. The KTDC tariff page prints no overnight room rate. Diwali holidays for KTDC are 8-14 Nov, not 18-19 Nov."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No usable current Kovalam taxi association or operator rate card found. The only per-day tariff with a printed rate (kovalamhomestays.com) states validity 1 Mar to 30 Sep 2017, so it was not used. Savaari and MakeMyTrip pages did not render for fetching.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Zomato pages for Kovalam timed out; no rupee menu or cost-for-two source loaded.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "3-star median rests on one KTDC property",
+    "Budget and dorm tiers",
+    "Local taxi day rate and point-to-point fares",
+    "Food"
+   ]
+  },
+  "varkala": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3046,
+    "mid_n": 9,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/akhil-beach-resort-711240?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4265863?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/clafouti-beach-resort-711287?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/black-beach-resort-711462?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/boho-s-hotel-2882610?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4563135?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-sanctum-spring-beach-resort-3908454?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/raja-park-beach-resort-3975502?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/nikhil-ayurvedic-heritage-724464?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1757,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4519418?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/akhil-beach-resort-711240?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/raja-park-beach-resort-3975502?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/nikhil-ayurvedic-heritage-724464?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 2114,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/aryavilla-heritage-3923834?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671762?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5062287?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/gypsy-walker-4067451?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 500,
+    "dorm_n": 20,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Varkala?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest AC room, 9 Cleartrip 3-star Varkala properties: Akhil Beach Resort 2138 (Standard A/C), InDa Stay 2334, Rajapark Beach Resort 2645 (Standard A/C), Nikhil Ayurvedic Heritage 2645 (Standard A/C), Black Beach Resort 3046 (Standard AC with breakfast), S cliff Black Beach Resort 3698, Sanctum Spring Beach Resort 3793, Clafouti Beach Resort 4087 (Standard A/C), Nebo Hotel 4620; median 3046, n=9. Budget: Cleartrip 18-19 Nov 2026 pre-tax cheapest non-AC room at four resorts (Rachana's Black Beach Resort 1141, Akhil 1568, Rajapark 1945, Nikhil 1945); median 1757, n=4. Homestay: Cleartrip 18-19 Nov 2026 pre-tax cheapest room (Gouri's Homestay 1036 non-AC, Pearl House Residency 1337 non-AC, Gypsy Walker guesthouse 2891 AC, Aryavilla Heritage 4187 AC); median 2114, n=4. Dorm: Hostelworld Varkala 'Dorms From' per bed, undated, 20 hostels (350 to 1000, one outlier 9999), median 500.",
+    "notes": "Skylar Seaview (8786 on the 13-14 Nov list) and Sunview Beach Resort were not re-priced for 18-19 Nov; Wavealokam (Vettakada) excluded as outside Varkala town. Many homestay listings were sold out on 13-14 Nov and were not re-checked. Cleartrip's own Zostel Varkala page shows dorm beds 1623 to 2293 for 18-19 Nov (1 guest), well above Hostelworld's undated 933.9, so the dorm figure may be low for the date."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3500,
+    "vehicle": "car (4 people, type not stated)",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Renjith Cabs, Nadakkamukku, Varkala, Thiruvananthapuram 695141, Package 1 (Jatayu Earth Centre, Kaveri Elephant Park, Mangrove Adventure Park, Kappil Beach): Rs 3500 for 4 people, Rs 4500 for more than 4 people, extra hour Rs 150. Hours and km included are not stated; undated (site shows copyright 2026).",
+    "sources": [
+     "https://renjithcabs.com/package/package-1/"
+    ],
+    "notes": "This is a four-sight package that includes Jatayu Earth Centre (a long run from Varkala), so it is above a plain town-and-beach day. No union rate card found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Zomato for Varkala timed out. Holidify's undated restaurant list prints cost for two for only some places and looks stale; not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Food",
+    "Union or association taxi rate card",
+    "Dorm price for 18-19 Nov (Hostelworld is undated)"
+   ]
+  },
+  "guruvayur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2388,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-brahmaputhra-2874234?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sopanam-heritage-718423?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292989?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/bhavanam-regency-guruvayoor-3918987?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/srivar-hotels-2874256?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671824?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1585,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/sopanam-heritage-718423?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4514833?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-brahmaputhra-2874234?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292989?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1149,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/krishnagiri-homes-4684105?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest AC room, 6 Cleartrip 3-star Guruvayur hotels: Srivar Hotels 2049 (Executive Double), Sopanam Heritage 2174 (Double Club, room only), Bhavanam Regency 2384, Inn Temple Town 2392, Sree Bhadra Residency 2430, Hotel Brahmaputhra 2753 (Deluxe AC); median 2388, n=6. Budget: same method, cheapest room at four hotels (Sopanam Heritage Double Deluxe Non AC 1190, Hotel Pankaj Residency 2-star Standard AC 1558, Brahmaputhra Standard Non AC 1612, Sree Bhadra Deluxe Non AC 1619); median 1585, n=4. Homestay: Cleartrip 18-19 Nov 2026 pre-tax cheapest room at KRISHNAGIRI homes (2-star homestay, Muthuvattoor) 1149, n=1.",
+    "notes": "Two other Guruvayur homestays (Guruvayur Nest, Illam Hertage) were sold out 18-19 Nov. Devaswom guesthouse tariffs (Sreevalsam main 2-bed deluxe Rs 1600 + GST, Sreevalsam Annex 2-bed AC Rs 2000 + GST, 2-bed non-AC Rs 1200 + tax + reservation charge) appear on a non-official site (guruvayurtemple.org says it is not the Devaswom's official site) with no date, and sources disagree with an older Devaswom listing, so they are not in the medians. No visible Sabarimala-season crowding effect in the page prices."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 18,
+    "point_to_point": [
+     {
+      "route": "Guruvayur local circuit: Punnathur Anakkotta, Chavakkad Beach, Mammiyoor and Parthasarathy temples, sedan",
+      "inr": 1250
+     },
+     {
+      "route": "Guruvayur to Cherai Beach, sedan",
+      "inr": 2600
+     },
+     {
+      "route": "Guruvayur to Kumarakom (backwaters), sedan",
+      "inr": 5400
+     },
+     {
+      "route": "Guruvayur to Alappuzha (drop), sedan",
+      "inr": 5400
+     }
+    ],
+    "basis": "Sajith Travels (Inner Ring Rd, East Nada, Guruvayur 680101) rate page, undated: Daily Hire (100 km / 10 hrs) sedan Rs 2500 (Ertiga 2700, Innova 3000), extra Rs 18/km; km counted Guruvayur-to-Guruvayur. Fixed local circuits and outstation fares as listed.",
+    "sources": [
+     "https://taxiguruvayur.in/"
+    ],
+    "notes": "The day rate is 100 km / 10 hrs, not 80 km / 8 hrs. Rates may change in peak season per the page. Single operator, no union card found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee food source (menu, thali board, Zomato/Swiggy cost) loaded for Guruvayur.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Food",
+    "Dorm tier (Devaswom dormitory is priced per dorm, not per bed)",
+    "Dated Devaswom guesthouse tariff",
+    "Homestay n=1"
+   ]
+  },
+  "marari": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3532,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/marari-beach-palace-4275294?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2249,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/marari-hopes-5264614?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/achayans-homestay-3942054?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/yani-s-marari-5252861?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/marari-sea-scape-villa-4479190?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4elementis-beach-homestay-5248554?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail page 18-19 Nov 2026, 1 room 2 adults, pre-tax: Marari Beach Palace (Cleartrip 3-star resort, Mararikulam) Deluxe Garden View Room with breakfast 3532; n=1 (the only Cleartrip 3-star resort at Marari that loaded). Homestay: Cleartrip 18-19 Nov 2026 pre-tax cheapest room at five Mararikulam homestays: Marari Hopes 887, Achayans Homestay 1777 (Double Room Basic), Yani's Marari 2249, Marari Sea Scape Villa 2379 (Deluxe AC, with breakfast), 4Elementis Beach Homestay 3010; median 2249, n=5.",
+    "notes": "Beach luxury resorts (Marari Beach CGH Earth, Xandari Pearl, Tree of Life/Seclude Kerala Marari Sands 4-star at 9212, Abad Turtle Beach, Carnoustie) are 4-5 star and not in the mid tier. Cleartrip pages for Mayas Beach House and Karapuram Residency returned 404. No budget-hotel tier found separately from homestays."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Local operators with a Mararikulam address (Marari Taxi Service, Thekkathayil, Mararikulam North P.O; Marari Beach Taxi Service) print no rates on their sites. Aggregator figures not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee food source loaded for Marari.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "3-star median rests on one property",
+    "Budget and dorm tiers",
+    "Local taxi rate",
+    "Food"
+   ]
+  },
+  "cherai": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2163,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/holiday-hotel-3951134?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/cherai-beach-resorts-42808?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sapphire-club-cherai-beach-villa-2433652?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1508,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/mare-blu-resort-2047144?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, room only: Sapphire Club Cherai Beach Villa (3-star, Kuzhuppilly) Deluxe Queen 1655; Holiday Hotel (Cherai; shown as 4-star on its page, 3-star elsewhere on Cleartrip) Deluxe Double 2163; Cherai Beach Resorts (3-star, Kuzhuppilly) Sunrise Villa 4006; median 2163, n=3. Budget: Mare Blu Resort (2-star, Kuzhuppilly) Standard Room 1508, n=1.",
+    "notes": "Sold out on 18-19 Nov: Club Mahindra Cherai Beach, Indriya Sands (Vypin), Kuzhupilly Beach House, Ambadi's Villas. Sea Lagoon Health Resort (4-star) 8095 not in mid. Several older Cleartrip Cherai pages (Renai Blue Waters, Angel Garden Beach Homestay, Kadalkkara, Kadaloram) returned 404 so no homestay price. Cleartrip has no dedicated Cherai city page; properties were found through its Cherai Beach landmark/locality pages."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 11,
+    "point_to_point": [],
+    "basis": "Cherai Tours (45RP+476, Cherai Beach Rd, Cherai, North Paravur 683514) site, undated (footer 2026): sedan 4+1 Rs 11 per km for airport and intercity trips, toll and parking extra. Its 'One Day Trip Rs 3000' package does not state hours, km or vehicle, so it is not used as a local day rate.",
+    "sources": [
+     "https://cheraitours.com/"
+    ],
+    "notes": "No local 8-hour rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee food source loaded for Cherai.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay and dorm tiers",
+    "Local taxi day rate",
+    "Food",
+    "Mid n=3 and one label discrepancy"
+   ]
+  },
+  "kuttanad": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3659,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/triveny-river-palace-2427222?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mira-s-pmc-lakeshore-resort-2878514?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 4527,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/kurialacherry-house-739774?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kallupurackal-heritage-island-home-by-lexstays-5254184?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room: Triveny Camelot Resort & Spa (3-star, Kuttanad Taluk) 3560; Mira's PMC Lakeshore Resort (Kainakary North; 3-star in Cleartrip's Alleppey list, shown as 4-star on its own page) Lakeview Deluxe room only 3757; median 3659, n=2. Homestay: same method, Kurialacherry House (3-star homestay, Kuttanad Taluk, pool view with breakfast) 5472; Kallupurackal Heritage Island Home (3-star homestay) Standard Room 3581; median 4527, n=2.",
+    "notes": "Kuttanad is a rural lake-and-paddy region (Kainakary, Champakulam, Nedumudi) with few Cleartrip properties. Sunny Days Homestay sold out 18-19 Nov. Paloma Backwater Resort (4-star, Kainakary South) 6402 and Ayana's Homestay (an outlier listing) not used. Houseboats are a separate product and not priced. Cleartrip files Triveny, Kurialacherry and others under 'Kuttanad Taluk', a district label, not a single village."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Kuttanad or Kainakary operator or association rate card found.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee food source loaded for Kuttanad.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget and dorm tiers",
+    "Mid n=2 and homestay n=2",
+    "Local taxi",
+    "Food"
+   ]
+  },
+  "kumbalangi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Kochi (Fort Kochi)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No dated price found. Cleartrip has no Kumbalangi city or homestay page; its one Kumbalangi/Chellanam listing, Aquatic Island by Poppys Kochi (a floating resort), showed no rooms for 18-19 Nov 2026. Goibibo, MakeMyTrip and Hotels.com Kumbalangi pages timed out, and the homestay sites found (Kerala Tourism listing for Kumbalanghi Nights Homestay, Thanal Homestay, kumbalangy.com) print no room rates.",
+    "notes": "Kumbalangi is a village with roughly ten homestays rather than hotels; supply is real (Kerala Tourism lists Kumbalanghi Nights Homestay, Kallanchery, Gold House category) but no rate was verifiable."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "auto",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union or operator rate card for Kumbalangi found; the village is reached by auto or taxi from Fort Kochi and sold mainly as guided day tours.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee food source loaded for Kumbalangi.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "All stay tiers",
+    "Taxi",
+    "Food"
+   ]
+  }
+ }
+}

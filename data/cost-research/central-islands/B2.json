@@ -1,0 +1,244 @@
+{
+ "batch": "B2",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "port-blair": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2574,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/j-hotel-387363?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-shompen-42623?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sampat-regency-4481669?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/f-hotel-port-blair-andaman-4277136?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sea-port-4066869?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/olive-hotel-suites-4284427?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-shreesh-160606?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1739,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-islands-tourister-4066875?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-diviyum-manor-3908359?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mahira-residency-3924643?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1463,
+    "homestay_n": 7,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/4273196?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/andaman-ocean-breeze-4277449?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/drizzle-days-4486550?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/aj-s-homes-4279288?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sunnyvale-andaman-2435734?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/cinnamon-grove-4277763?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/evara-homestay-4684601?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 3-star hotel detail pages, 18-19 Nov 2026, 1 room 2 adults, cheapest room pre-tax (J Hotel 2562, Hotel Shompen 2413, Sampat Regency 2026, F Hotel 3212, Hotel Sea Port 3320, Olive Hotel and Suites 4456, Hotel Shreesh 2574; several are room-with-breakfast rates). Budget: Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room (Islands Tourister 1701, Diviyum Manor 1896, Mahira Residency 1739). Homestay: Cleartrip detail pages 18-19 Nov 2026 for properties Cleartrip labels homestay, pre-tax cheapest room (Sweet Mango Tree 738, Andaman Ocean Breeze 957, Drizzle Days 1427, AJ's Homes 1463, Sunnyvale Andaman 1571, Cinnamon Grove 1626, Evara Homestay 1678).",
+    "notes": "Reef Atlantis and Palm Grove Eco Resort showed no rooms for 18-19 Nov and were excluded. Cleartrip detail pages for Hotel Royal Palace, Andaman Residency, Hotel Marine View, Hotel Hill View and Kevins B&B returned 404 and were not used. Hotel Rajadeepam showed an implausible 7,533 for a non-AC room and was excluded. Cleartrip labels many small hotels 'homestay', so budget vs homestay split follows Cleartrip's own label. No Hostelworld dorm page found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3200,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Port Blair to Chidiya Tapu (Sedan AC)",
+      "inr": 1100
+     },
+     {
+      "route": "Corbyn's Cove round trip (Sedan AC)",
+      "inr": 600
+     },
+     {
+      "route": "Port Blair to Mount Harriet round trip (Sedan AC)",
+      "inr": 2500
+     },
+     {
+      "route": "Port Blair to Baratang round trip (Sedan AC)",
+      "inr": 3900
+     }
+    ],
+    "basis": "Andaman Emerald Travels (Office 03, Near Dugnabad School, Port Blair): full day local sightseeing 8 hours sedan 3,200, SUV 4,500, '2025 season rates'. Point-to-point from Andaman Tourism (andamantourism.org, Delanipur, Port Blair) Sedan AC list, undated. Same page lists a per-day charge of 5,400 for 10 hours / 200 km, not used as the local figure.",
+    "sources": [
+     "https://andamanemeraldtravels.com/blog/andaman-cab-price-list/",
+     "https://www.andamantourism.org/cab-services-in-port-blair/"
+    ],
+    "notes": "Rates are operator lists, not a union card; other Port Blair operators quote Chidiya Tapu 1,200 and Baratang 3,500-4,500."
+   },
+   "food_per_person_day": {
+    "budget_inr": 525,
+    "standard_inr": 1275,
+    "basis": "Go2Andaman 'Best Restaurants in Port Blair' (updated 13 Mar 2026) price for two: Javitri 250, Sadia's Kitchen 300, Rajasthani Bhojnalay 400, Annapurna 500 -> per-person meal 125/150/200/250, median 175 x3 meals = 525. Standard: Icy Spicy 600, Ophelia Bistro 800, Frywings 800, Lazeez 900, Anju Coco 1200, Buzzing Bee 1200 -> per-person meal median 425 x3 = 1275. Page prints 'price for two' with no currency symbol; assumed INR.",
+    "sources": [
+     "https://go2andaman.com/best-restaurants-port-blair/"
+    ],
+    "notes": "Single source; Zomato/Justdial listings show similar cost-for-two (Annapurna 500-750, Icy Spicy 500-800) but were not opened directly."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Hostel dorm price",
+    "Union/prepaid taxi card (govt PDF unreachable)",
+    "Hotels with 404 detail pages"
+   ]
+  },
+  "rangat": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2793,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4296645?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4484361?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1007,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-avis-5259143?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, cheapest room pre-tax: Yogu's Woodside (3-star resort listing) 2720 and Yogu's Woodside (3-star hotel listing) 2865; median of the two = 2792.5, rounded to 2793. Budget: Cleartrip detail page 18-19 Nov 2026, Hotel Avis (2-star) Semi Deluxe 1007 pre-tax.",
+    "notes": "The two 'Yogu's Woodside' listings may be one property listed twice, so mid is effectively n=1 to 2. Hotel O by OYO Matri Smriti and Hotel Ross & Smith showed no rooms on 18-19 Nov. Government lodges (UK Nest, R.G. Lodge, APWD Guest House, PLS Lodge, Sea Shore Lodge) are listed at northmiddle.andaman.nic.in/accommodation/ with phone numbers but no tariff, so not priced."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Port Blair to Rangat, sedan 1N2D trip (Andaman Sea Hawk Travels, Brich Gunj, Port Blair; multi-day, not a one-way drop)",
+      "inr": 10000
+     }
+    ],
+    "basis": "Andaman Sea Hawk Travels cab price list 2026 (undated) lists 'Rangat (Middle Andaman) 1N2D' at 10,000. No local Rangat cab rate card found; blogs give only unsourced ranges.",
+    "sources": [
+     "https://www.andamanseahawktravels.com/andaman-cab-price-list/"
+    ],
+    "notes": "Local day left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": 475,
+    "standard_inr": null,
+    "basis": "Rangat guide (Andaman Tour Packages, undated, 2025-26): breakfast INR 60-150 per person (midpoint 105) + veg thali INR 120-250 (midpoint 185) x2 meals = 475. These are the page's general Rangat ranges, not per-restaurant menus.",
+    "sources": [
+     "https://eandamantourism.com/restaurants-in-rangat-andaman/"
+    ],
+    "notes": "No named-restaurant cost-for-two page could be opened (WanderOn rate-limited), so standard is null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Government lodge tariffs",
+    "Local Rangat taxi rate",
+    "Standard food cost",
+    "Dorm and homestay prices"
+   ]
+  },
+  "ross-island": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "port-blair",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No lodging.",
+    "notes": "Holidify's Ross Island page says 'get the return ticket as well as there is no stay at the island'. Day visit by boat from Aberdeen Jetty, Port Blair. Stay in Port Blair. Source: https://www.holidify.com/places/andaman-nicobar-islands/ross-island-sightseeing-1192.html",
+    "no_lodging_sources": [
+     "https://www.holidify.com/places/andaman-nicobar-islands/ross-island-sightseeing-1192.html"
+    ]
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "none",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Island reached by boat from Aberdeen Jetty, Port Blair; no cabs on the island. Cab to Aberdeen jetty is a Port Blair fare.",
+    "sources": [],
+    "notes": "Not applicable."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No restaurant menu or cost-for-two found for the island (Holidify mentions a rebuilt bakery and local stores but no food prices).",
+    "sources": [],
+    "notes": "Eat in Port Blair."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Food prices on the island",
+    "Second page confirming no overnight stay (Lonely Planet page body did not load)"
+   ]
+  },
+  "jagdalpur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2366,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-akanksha-4065507?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5639570?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-soumya-sarovar-5062654?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-devansh-residency-3949862?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4672195?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1231,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4686839?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4672601?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 3-star hotel detail pages, 18-19 Nov 2026, 1 room 2 adults, cheapest room pre-tax: Hotel Akanksha 2366 (with breakfast), Hotel Nemi Residency 2225, Hotel Soumya Sarovar 2632, Hotel Devansh Residency 2334 (with breakfast), M M Prestige 2487. Budget: Cleartrip detail pages 18-19 Nov 2026, pre-tax cheapest room: Naman Heights 1354, Hotel Parth Inn 1108 (non-AC); median of 2 = 1231.",
+    "notes": "Ham Residency showed no rooms on 18-19 Nov. Cleartrip's homestay list for Jagdalpur returned only hotels, so no homestay figure. Budget n=2 only."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No acceptable source: only template/aggregator sites (DDcab, HurryUp, CabBazar), an unnamed 2023 listing, and undated blogs. Nothing from a named Jagdalpur operator with a printed rate.",
+    "sources": [],
+    "notes": "Left null rather than guess."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 750,
+    "basis": "magicpin Jagdalpur restaurant list, 'for two': Shivam Bhojnalay 200 -> 100 per person per meal x3 = 300 (single data point). Standard: Chamunda Marwadi Thali 800, Thakur Bhojnalay 800, Mahek Family Restaurant 500, Rajasthani Thali Restaurant 500, Ghar Ka Swad 500, Hotel Noibedya 500 -> median 500 for two = 250 per person per meal x3 = 750.",
+    "sources": [
+     "https://magicpin.in/india/Jagdalpur/All/Restaurant"
+    ],
+    "notes": "magicpin prints many restaurants at a flat 500 for two, so the standard figure is coarse. Zomato and Justdial pages timed out or returned 403 and were not used."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Taxi rate from a named Jagdalpur operator",
+    "Homestay and dorm prices",
+    "Budget food from more than one restaurant"
+   ]
+  }
+ }
+}

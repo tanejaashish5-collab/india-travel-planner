@@ -1,0 +1,475 @@
+{
+ "batch": "B14",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "tiruvannamalai": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2551,
+    "mid_n": 11,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/ramana-towers-3939322?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4533860?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4533908?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-ramakrishna-743694?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/thaai-residency-4291761?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5424791?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5681233?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/athena-hotel-2443130?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/aashreya-suites-tiruvannamalai-4284718?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4535525?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4271150?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 790,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/5219698?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1372,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/sri-krishna-palace-4682728?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 1 room 2 adults, cheapest room, pre-tax, 11 hotels tagged 3-star: Ananda Residency 1546, Ramana Towers 1950, Hotel Royal inn 2064, La woods village resorts 2125, Hotel Ramakrishna 2205, Thaai Residency 2551, Aura Suites 2964, Bliss Giriya 3158, Athena Hotel 3484, Ashreya Suites 3623 (Family Suite, cheapest shown), Anantharaa 3839; median 2551. Budget: Collection O Tiruvannamalai (Saver Double) 790, Cleartrip 18-19 Nov 2026 pre-tax, n=1. Homestay: Sri Krishna Palace (Private Elite Room) 1372, Cleartrip 18-19 Nov 2026 pre-tax, n=1.",
+    "notes": "Karthigai Deepam is around 24 Nov. On 18-19 Nov Cleartrip showed 'No rooms available' for 3 of the 16 listed 3-star hotels (Fortune Residency, Hotel Seasons, Adikesh Residency): early crowding sign, so these three are excluded from the median. Old budget-hotel pages (Ammayi, Aakaash, Pandurangan, Trishul, Sai Murugan, Ramana Residency) return 404, so budget tier is n=1. No dorm source found (Hostelworld 404)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2400,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14,
+    "point_to_point": [],
+    "basis": "RP Tiruvannamalai & Trivandrum Travels (RPTVM Travels, Iyyankulam Street, Thiruvannamalai 606601), tariff undated: Etios/Dzire 8 hrs/80 km Rs 2,400; 5 hrs/50 km Rs 1,500; extra hour Rs 300; extra km Rs 14; outstation min 300 km Rs 4,600.",
+    "sources": [
+     "https://rptvmtravels.com/tariff.php"
+    ],
+    "notes": "Pre-GST/toll/parking as printed. Outstation per-km 14 is the printed extra-km rate."
+   },
+   "food_per_person_day": {
+    "budget_inr": 330,
+    "standard_inr": 650,
+    "basis": "Wanderlog Tiruvannamalai list (review text, undated): Rudraksh veg restaurant unlimited meal Rs 150, dosa Rs 90 -> budget day = dosa 90 + meal 150 + dosa 90 = 330. Standard: Saatvik Veg 'Appx 300-400 (for 2)' = 175/meal, Adyar Ananda Bhavan (A2B) about Rs 520 for two biryanis = 260/meal; mean ~218 x 3 = ~650. Holidify (undated) shows lower figures (Sri Arul Jothi 100-120 for two, Tasty Cafe 200-250 for two) which look dated.",
+    "sources": [
+     "https://wanderlog.com/list/geoCategory/198441/where-to-eat-best-restaurants-in-tiruvannamalai",
+     "https://www.holidify.com/places/thiruvannamalai/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Zomato and Justdial were not readable (timeout / 403). Basis is review text, so approximate."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "dorm",
+    "budget tier beyond n=1",
+    "homestay beyond n=1",
+    "Zomato/Swiggy cost-for-two for current food figures",
+    "point-to-point fares"
+   ]
+  },
+  "tiruchendur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4621,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5424789?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5217636?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sri-senthoor-velavan-palace-ssv-palace-5403982?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5424812?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/aalago-5596974?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 1 room 2 adults, cheapest room, pre-tax, private 3-star-tagged hotels: New City Inn (AC Double Bed) 1422, Hotel Aalayam Thiruchendur (Deluxe AC) 1513, SSV Palace (1 Bedroom Superior) 4621, La Antaraa (Deluxe) 4643, AalaGo (Deluxe Double) 7936; median 4621.",
+    "notes": "Very wide spread (1,422 to 7,936) so the median is soft. On the 18-19 Nov detail pages 8 of 13 listed 3-star hotels show 'No rooms available' (Anandha Grand Lodge, Udhayam International, GRB Resort, Vairavel Residency, Saravanas Lodge, FabHotel Gayathri, Hotel SR, KSM Muthra; SSV Palace's other listing too), and on the 13-14 Nov list page 10 of 13 were SOLD OUT: heavy pilgrim demand. HTM/trust guesthouses are a separate tier and not priced. Budget pages for Balamurugan Residency and Shasti Bhavan return 404 on detail, so budget tier is null."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Tiruchendur to Kanyakumari (90 km)",
+      "inr": 1926
+     },
+     {
+      "route": "Tiruchendur to Tirunelveli (54 km)",
+      "inr": 1311
+     },
+     {
+      "route": "Tiruchendur to Thoothukudi (38 km)",
+      "inr": 969
+     }
+    ],
+    "basis": "MakeMyTrip Tiruchendur city cabs page (accessed 10 Oct 2026, pick-up date shown 11 Oct 2026), SEDAN tab selected: discounted one-way fares shown 1926 / 1311 / 969 (struck prices 2294 / 1564 / 1168), plus taxes & charges 459-625; extra fare 18/km after included km (26.25/km Thoothukudi). The page opens on the HATCHBACK tab, so click SEDAN to see these.",
+    "sources": [
+     "https://www.makemytrip.com/car-rental/tiruchendur-city-cabs.html"
+    ],
+    "notes": "No local 8h/80km rate found. thiruchendurtaxi.com prints 'Madurai City Local' on its local tariff (template, not Tiruchendur), so it was not used. MMT page has no local package."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 600,
+    "basis": "Zomato Tiruchendur restaurants page (read 10 Oct 2026), 'cost for one' per meal: Amutha Mess 100, Hotel Nanbenda 100, Jacob's Cafe 100 (budget, 3 meals = 300); A1 Hotel 200, Hotel Somuthra Kitchen 200, New Bethel Restaurant 200, Hotel Mani Iyer 250 (standard, median 200 x 3 = 600).",
+    "sources": [
+     "https://www.zomato.com/tiruchendur/restaurants"
+    ],
+    "notes": "Delivery-platform cost-for-one; temple-area meals may differ."
+   },
+   "confidence": "low",
+   "unverified": [
+    "budget tier",
+    "homestay",
+    "dorm",
+    "local 8h/80km taxi package",
+    "trust guesthouse tariff (separate tier, not priced)"
+   ]
+  },
+  "tiruparankundram": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Madurai",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier priced. Cleartrip has no Thiruparankundram city page; the only Thiruparankundram-addressed property found there is Hotel Vaani Villa (3-star tag, address Thiruparankundram, Madurai 625005), whose cheapest room on 18-19 Nov 2026 is a 'Superior Triple Room with Fan' at 2,132 pre-tax: not a double AC room and n=1, so not used as a median.",
+    "notes": "Tiny lodging cluster of basic lodges near the temple (search results name Hotel Alps Residency, MK Lodge, Dorm Nest) but none had a dated priced page that could be opened. Use Madurai as the base for lodging; Madurai figures are not copied here."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Tiruparankundram-specific rate found; it sits inside Madurai, whose cab rates are not copied.",
+    "sources": [],
+    "notes": "Reachable by auto/cab from central Madurai; see Madurai entry."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Zomato has no Thiruparankundram city page (404) and Swiggy's Thiruparankundram page shows no prices and lists Madurai restaurants; nothing own to the place. Left null.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "all lodging tiers (only Hotel Vaani Villa, a triple fan room 2,132, found with a dated price)",
+    "taxi",
+    "food"
+   ]
+  },
+  "tiruttani": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3471,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5679326?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-skanda-palace-4483388?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2745,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/the-vp-residency-towerrs-5063806?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/rsk-guest-house-5609479?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip Thiruthani detail pages 18-19 Nov 2026, 1 room 2 adults, cheapest room, pre-tax. Mid (3-star tag): Farmshaala (Standard Neon Room) 2350, Hotel Skanda Palace (Club King, Erular Colony) 4592; median 3471, n=2. Budget (2-star tag): RSK Guest House (Deluxe Room) 2342, The VP Residency Towerrs (Deluxe Room) 3148; median 2745, n=2.",
+    "notes": "Tiruttani has its own lodging (8 hotels on Cleartrip under Thiruthani). Regency Tiruttani by GRT (4-star, Superior Room) 3921 excluded from mid as 4-star. On 18-19 Nov The VP Residency Towers, Ambika Residency & Mahal and Mount View Residency show 'No rooms available'. Budget median is a 2-star median and not much below mid: the town has few cheap dated listings."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism or local-operator rate chart found; aggregator pages for Tiruttani (MakeMyTrip) returned empty content, HJ Cabs/CabBazar are template aggregators and were not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 525,
+    "basis": "Zomato Tiruttani restaurants page (read 10 Oct 2026), 'cost for one' per meal: Amman Mess 100, Hotel Saravana Bhavan 100 (budget, 3 meals = 300); Hotel Amirtham 150, Sree Rangayaas Food Zone 150, Urban Punjabi Dhaba 200, The Tiruttani Kitchen 200 (standard, median 175 x 3 = 525).",
+    "sources": [
+     "https://www.zomato.com/tiruttani/restaurants"
+    ],
+    "notes": "Delivery-platform cost-for-one."
+   },
+   "confidence": "low",
+   "unverified": [
+    "taxi",
+    "homestay",
+    "dorm",
+    "more than 2 properties per tier"
+   ]
+  },
+  "adilabad": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1776,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4535540?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5424027?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kakaku-the-guest-house-4282812?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 572,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-ravi-teja-3933501?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip Adilabad detail pages 18-19 Nov 2026, 1 room 2 adults, cheapest room, pre-tax. Mid: Hotel RK Residency (Luxury Room A/C, 3-star) 1184, Kakaku The Guest House (Deluxe Double, no star shown, rating 3.9) 1776, Hotel GK Classic (Luxury Room, 3-star) 1934; median 1776, n=3. Budget: Hotel Ravi Teja (Non AC Room, 1-star) 572, n=1.",
+    "notes": "Rajveer Residency (3-star) and Hotel Sai Panchvati (2-star) show 'No rooms available' for 18-19 Nov. Only 6 hotels on Cleartrip for the town."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism or local-operator rate chart found. CabBazar/ddcab-type aggregator pages repeat the same template for every town and were not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 675,
+    "basis": "Zomato Adilabad restaurants page (read 10 Oct 2026), 'cost for one' per meal: Alhamdulillah Hotel 100, Sri Village China Fast Food 100, RG's Motu & Patlu Momos 100 (budget, 3 meals = 300); sit-down: Lotus Grand Family Restaurant 100, KMC Hotel 150, PK Maharaja Family Restaurant & Mandi 300, Peacock Kitchen 300 (median 225 x 3 = 675).",
+    "sources": [
+     "https://www.zomato.com/adilabad/restaurants"
+    ],
+    "notes": "Delivery-platform cost-for-one."
+   },
+   "confidence": "low",
+   "unverified": [
+    "taxi",
+    "homestay",
+    "dorm",
+    "budget beyond n=1"
+   ]
+  },
+  "bhadrachalam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2061,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5061451?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1090,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4671114?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671115?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sri-sudharsana-residency-714912?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4974223?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/srinidhi-residency-2877904?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671116?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip Bhadrachalam detail pages 18-19 Nov 2026, 1 room 2 adults, cheapest room, pre-tax. Mid (only 3-star with a room): Hotel VR Grand (Deluxe Room, river/temple view) 2061, n=1. Budget (2-star tag): Thirumala Residency (Non AC) 780, Vashistha Residency (Deluxe Non AC) 1043, Sri Sudharsana Residency (Non AC) 1069, Samrat Residency (Deluxe AC) 1111, Srinidhi Residency (Deluxe Non AC) 1220, Sri Bhavya Residency (Double AC) 1617; median 1090, n=6, mostly non-AC.",
+    "notes": "Cleartrip labels the town Andhra Pradesh (old state label); PIN 507111 is Bhadrachalam town. On 18-19 Nov Sitaram Inn, SPOT ON Sri Venkateswara Hotel and both Katyayani Serenity homestay units show 'No rooms available'; Jaya Sri Rama Lodge sold out on the list page: tight inventory. Temple trust cottages/guesthouses and Telangana Tourism Haritha Hotel are a separate tier, not priced (tourism.telangana.gov.in failed TLS, not retried)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Bhadrachalam to Khammam (115 km, one-way sedan, from)",
+      "inr": 2604
+     }
+    ],
+    "basis": "Savaari Bhadrachalam page (read 10 Oct 2026): AC Sedan Rs 13/km (outstation round trip), hatchback Rs 12/km, SUV large Rs 17/km; one-way sedan from Rs 2,604 to Khammam, 115 km included. Page says 4h/40km, 8h/80km and 12h/120km local packages exist but prints no local price.",
+    "sources": [
+     "https://www.savaari.com/bhadrachalam/book-taxi"
+    ],
+    "notes": "No local 8h rate printed, so local figure left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 600,
+    "basis": "Zomato Bhadrachalam restaurants page (read 10 Oct 2026), 'cost for one' per meal: Hot N Chill 100, Tea Time 150, Naga Satya Biryani 150, Foodie Spot Family Restaurant 150, SVB Mini Plaza 150 (budget median 150 x 3 = 450); Ramya Sree Spicy 200, Anil Family Restaurant 200, Abhiruchi 200, Dawath Spicy Biryani 250 (standard median 200 x 3 = 600).",
+    "sources": [
+     "https://www.zomato.com/bhadrachalam/restaurants"
+    ],
+    "notes": "Delivery-platform cost-for-one; budget has few true thali places listed."
+   },
+   "confidence": "low",
+   "unverified": [
+    "3-star mid beyond n=1",
+    "homestay",
+    "dorm",
+    "local 8h taxi package",
+    "Haritha / temple trust tariffs"
+   ]
+  },
+  "basara": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Nirmal (about 47 km, per a travel-guide search result)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier priced. Cleartrip lists two Basar properties, both 'No rooms available' for 18-19 Nov 2026: Lords Hrim Akshara Resort (3-star) and Lords Hrim Akshara Resort Basar (4-star).",
+    "notes": "Basara is a temple town: Devasthanam guesthouses and choultries (separate tier, not priced) and about 20 private lodges. basaratemple.org (copyright 2016, undated tariffs) prints private lodges as AC Rs 1,200-1,800 and non-AC Rs 800-1,000 per night, and temple guest houses Rs 100-1,500; too old and unnamed to use as a median. Telangana Tourism's Haritha Hotel Basara tariff could not be read (tourism.telangana.gov.in fails TLS, telanganatourism.gov.in refuses connection), so not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No local rate chart found; the place is a one-temple town reached by cab from Nizamabad, Nirmal or Hyderabad.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Zomato has no Basara/Basar page (404) and no source with rupee meal prices was found. Left null.",
+    "sources": [],
+    "notes": "Temple town is vegetarian; annadanam (free meals) offered per a travel-guide search result."
+   },
+   "confidence": "low",
+   "unverified": [
+    "all lodging tiers",
+    "taxi",
+    "food",
+    "Haritha Hotel Basara tariff"
+   ]
+  },
+  "alampur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Kurnool (about 24 km, per a travel-guide search result)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 1400,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://yatradham.org/alampur-brs-grand-luxury-lodge.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: BRS Grand Luxury Lodge (KK Plaza, opp. Haritha Tourism, Alampur 509152), 2 Bed AC Room 'Starting at Rs 1,400 + Rs 70 taxes' (non-AC 1,200), yatradham.org third-party listing, UNDATED (page shows reviews stayed Nov 2025), n=1. No dated 18-19 Nov price exists: Cleartrip has no Telangana Alampur listings (its Alampur search returns Himachal and Haryana hotels).",
+    "notes": "Other lodging exists (Telangana Tourism Haritha Hotel Alampur, Padma Hotel & Residency, temple rooms) but no readable tariff: tourism sites fail TLS or refuse connection. Haritha not priced. Third-party figure is undated and may be a starting rate."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No rate chart found for Alampur.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Zomato has no Alampur page (404); no other rupee source found. Left null.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "mid tier",
+    "dated price for any tier",
+    "Haritha Alampur tariff",
+    "taxi",
+    "food"
+   ]
+  },
+  "ananthagiri-hills": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Vikarabad",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier priced. Cleartrip has no Ananthagiri city page and its Vikarabad list has two properties: Heaven's Luxury Lakeview Resorts (Gudupally, 3-star) 'No rooms available' on 18-19 Nov 2026, and ROS Villa (Vikarabad, 3-star) Private Villa 7,761 pre-tax on 18-19 Nov 2026, a whole villa and not a room, so not used.",
+    "notes": "Resorts and camps exist (Haritha Valley View, Penguin Resort, Hills & Valley, Grass Walk, Infinite Adventure Club camping) but Thrillophilia's rates are undated and in mixed units (per person vs unstated), Telangana Tourism pages failed TLS, Infinite Adventure Club's site is under construction, and Booking.com did not return results. Nothing safe to publish."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No rate chart found.",
+    "sources": [],
+    "notes": "Visitors usually drive from Hyderabad; not priced."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Zomato/Swiggy page for the hills and no rupee menu source found. Left null.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "all lodging tiers",
+    "taxi",
+    "food"
+   ]
+  }
+ }
+}

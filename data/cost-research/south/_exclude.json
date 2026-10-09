@@ -1,1 +1,20 @@
-{ "_doc": "South India load rules. holiday window 7-16 Nov (Diwali, Chhath); stays are priced 18-19 Nov. Per-destination exclusions/anchors added after review.", "holiday": { "from": 7, "to": 16, "unmeasured": "hold" }, "stay": {}, "anchor": {} }
+{
+ "_doc": "South India load rules. holiday window 7-16 Nov (Diwali, Chhath); stays are priced 18-19 Nov. Per-destination exclusions/anchors added after review.",
+ "holiday": {
+  "from": 7,
+  "to": 16,
+  "unmeasured": "hold"
+ },
+ "stay": {
+  "undavalli-caves": {
+   "hotel-mid": "hotels are in Vijayawada, 6 km away; not this place's market"
+  },
+  "bandipur": {
+   "hotel-mid": "jungle-resort rooms with breakfast, spread 2,194-12,903; not like-for-like 3-star"
+  },
+  "kabini": {
+   "hotel-mid": "n=1 jungle resort with breakfast"
+  }
+ },
+ "anchor": {}
+}

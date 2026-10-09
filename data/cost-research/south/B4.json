@@ -1,0 +1,622 @@
+{
+  "batch": "B4",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "mangalore": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2068,
+        "mid_n": 9,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4533822?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-plaza-heights-4275916?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4273275?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4271424?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/treebo-trend-the-horizon-kankanady-hospital-3953060?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/srinivas-saffron-hotel-297950?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-karuna-residency-2882162?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ginger-hotel-mangalore-211860?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/metro-plaza-hotel-386375?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1445,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-surya-301036?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ganga-sagar-4284393?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-citywalk-residency-2049036?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 9 properties Cleartrip labels 3-star (Treebo Horizon Kankanady 1666, Heraa International 1674, Karuna Residency 1972, Aurelia Comforts 2053, Srinivas Saffron 2068, Plaza Heights 2203, Shoolin Palace 2361, Ginger 3495, Metro Plaza 3650); median 2068. Budget: same dated pages, 18-19 Nov 2026: Hotel Surya 983 (non-AC double), Ganga Sagar 1445 (premium non-AC), Citywalk Residency 1801 (Deluxe double, 3-star label but basic); median 1445.",
+        "notes": "Budget n=3 only: Poonja International, Mangalore International, Woodside showed no rooms for 18-19 Nov; Kumar's International detail page 404. Homestay left null: of 4 Cleartrip homestays opened for 18-19 Nov only Kudla Villa had a price (Deluxe Double 3,367 pre-tax; Beach Heaven and Cordel Farms sold out), n=1 too thin. No dorm source found (Hostelworld Mangalore page 404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Mangalore to Udupi-Manipal (airport or railway station pickup, sedan)",
+            "inr": 2000
+          },
+          {
+            "route": "Mangalore to Dharmasthala (sedan)",
+            "inr": 3000
+          },
+          {
+            "route": "Mangalore to Kukke Subramanya (sedan)",
+            "inr": 3500
+          },
+          {
+            "route": "Mangalore to Coorg/Madikeri (sedan)",
+            "inr": 3900
+          },
+          {
+            "route": "Mangalore to Murudeshwar (sedan)",
+            "inr": 5000
+          }
+        ],
+        "basis": "Mangalore operator tariff (Presidency Zone-1, Bendoorwell, Kankanady, Mangalore 575002): sedan 8 hr/80 km 2200, 4 hr/40 km 1200, full day 3600, 12/km; MUV 3200 for 8hr/80km. Point-to-point from the operator's airport-taxi page (undated). Both pages undated; tolls, parking extra.",
+        "sources": [
+          "https://mangaloretaxis.com/best-call-taxi-tariff-in-mangalore/",
+          "https://mangaloretravelscorporation.com/mangalore-airport-taxi-fare-charges/"
+        ],
+        "notes": "Local operator, not a union rate card (no Mangalore association tariff found). Other quotes seen: MakeMyTrip 'from 1385' and CabBazar 1800 (not used)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 900,
+        "basis": "Zomato cost for two (approx, excl taxes): Panchami Tiffins 150, Udupi Sri Krishna Bhavan 200, Pai Tiffins 200, Hotel Divyashree 250, Kadri Cafe 300, Avenue Cafe 300. Median ~225 for two = ~112 per meal x 3 = ~340, rounded 350. Standard: Machali 800, Maharaja 700, Dhriti's 700, Toast 600, TLC 500, Mangalore Baking Co 500; median 650 for two = 325 per meal; breakfast 150 (Avenue Cafe 300/2) + lunch 375 + dinner 375 = 900.",
+        "sources": [
+          "https://www.zomato.com/mangalore/udupi-sri-krishna-bhavan-bhavathi",
+          "https://www.zomato.com/mangalore/pai-tiffins-kodailbail",
+          "https://www.zomato.com/mangalore/kadri-cafe-1-kadri",
+          "https://www.zomato.com/mangalore/avenue-cafe-lalbagh",
+          "https://www.zomato.com/mangalore/kodailbail-restaurants",
+          "https://www.zomato.com/mangalore/toast-kapikad",
+          "https://www.zomato.com/mangalore/restaurants/cafes"
+        ],
+        "notes": "Zomato pages timed out for direct fetch; figures read from search-result snippets of those Zomato pages (Zomato listings are dated, some years old). Panchami, Dhriti's, Maharaja, TLC, Mangalore Baking Co figures appear on the Zomato Lalbagh/Kadri/Balmatta listing pages, not individually fetched."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay tier (only 1 priced)",
+        "dorm beds",
+        "union/association taxi tariff",
+        "food figures from search snippets of Zomato not direct page fetch"
+      ]
+    },
+    "udupi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2346,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-durga-international-3969188?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ashlesh-724526?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-sri-ram-residency-870778?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4514849?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-sharada-international-374942?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-udupi-residency-354481?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-udupi-inn-3975408?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 3097,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/sks-homestay-premium-1-bhk-5683135?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/udupi-temple-inn-4681214?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/udupi-comforts-4479656?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 7 town-centre properties Cleartrip labels 3-star (Durga International 2115, Ashlesh 2156, Sri Ram Residency 2300, Diana 2346, Sharada International 2385, Udupi Residency 3254, Udupi Inn 4195); median 2346. Homestay: same dated pages 18-19 Nov 2026 (SKS Homestay Premium 1 BHK 2033, Udupi Temple Inn Superior Double 3097, Udupi Comforts Deluxe 5061); median 3097.",
+        "notes": "Cheapest room at Ashlesh, Sri Ram, Durga and Sharada is Non-AC, so the mid median is a mix of AC and non-AC cheapest rooms. Manipal and Malpe hotels excluded (different base). Homestay n=3 with a wide spread (2033-5061), treat as low confidence; 6 other Cleartrip homestays showed no rooms for 18-19 Nov. Budget tier not priced; no dorm source."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Mangalore airport/railway station to Udupi-Manipal (sedan)",
+            "inr": 2000
+          }
+        ],
+        "basis": "Reeta Travels (Near Krishna Math, Car Street, Udupi 576101) lists sedan Dzire/Etios Rs 13/km, minimum fare Rs 300 for Udupi city; no 8hr/80km package shown. Mangalore operator airport-taxi page (Bendoorwell, Kankanady, Mangalore) lists Udupi-Manipal 2000, undated.",
+        "sources": [
+          "https://www.reetatravels.com/",
+          "https://mangaloretravelscorporation.com/mangalore-airport-taxi-fare-charges/"
+        ],
+        "notes": "No local 8hr/80km rate found from a union or a local operator with an address; Savaari and MakeMyTrip Udupi pages would not load. Aggregator quotes (DDcab, CabBazar, OneWay.Cab) deliberately not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 700,
+        "basis": "Zomato cost for two (approx, excl taxes), Udupi: Hotel Badagumalige 100, Hotel Triveni 150, Machali Restaurant 150, Pai Tiffins 200, Thimappa Fish Meals 200, Naivedya 250, MTR 1924 300; median 200 for two = 100 per meal x 3 = 300. Standard: Swadisht 400, New Shanthi Sagar 400, Woodlands 450, Pancharatna Paradise 500, Narayans Sea Shell 600, Mitra Samaj 700; median 475 for two = ~237 per meal x 3 = ~710, rounded 700.",
+        "sources": [
+          "https://www.zomato.com/manipal/udupi-restaurants/south-indian",
+          "https://www.zomato.com/manipal/ambalpadi-restaurants",
+          "https://www.zomato.com/manipal/pai-tiffins-brahmagiri-udupi",
+          "https://www.zomato.com/manipal/woodlands-restaurant-maruthi-veethika-udupi",
+          "https://www.zomato.com/manipal/mitra-samaj-maruthi-veethika-udupi"
+        ],
+        "notes": "Zomato pages timed out on direct fetch; figures taken from search-result snippets of these Zomato pages. Listing pages are dated and some are years old."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "local 8hr/80km sedan rate",
+        "budget hotel tier",
+        "dorm",
+        "Zomato figures from search snippets"
+      ]
+    },
+    "murudeshwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3168,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/rns-residency-sea-view-739862?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4940890?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5218295?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5681247?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5221204?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/aes-residency-5607320?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/cr7-stay-rooms-and-homestay-5592833?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 7 properties Cleartrip labels 3-star (CR7 Stay Rooms 1168, Ocean View Residency 1317, Canara Vibes 3040, Kamath Yatri Nivas Plus 3168, GP Golden Palm Meadows 4058, AES Residency 4441, RNS Residency 4998); median 3168.",
+        "notes": "Wide spread (1168-4998): sea-view and temple-side hotels versus basic Matadahitlu rooms. AES Residency cheapest room is Deluxe Non-AC. Murdeshwar Comforts (Double Non AC) 846 priced on 18-19 Nov but left out of mid; budget tier null because n=1. Sun & Sand Luxury Stays and The Ocean Front showed no rooms 18-19 Nov. Blue Pearl Beach Guest House (homestay) 4685 priced, but homestay n<2 so left null."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Murudeshwar to Honnavar (25 km, sedan)",
+            "inr": 800
+          },
+          {
+            "route": "Murudeshwar to Idagunji (35 km, sedan)",
+            "inr": 1000
+          },
+          {
+            "route": "Murudeshwar to Gokarna (80 km, sedan)",
+            "inr": 2000
+          },
+          {
+            "route": "Murudeshwar to Udupi (115 km, sedan)",
+            "inr": 3000
+          }
+        ],
+        "basis": "Book Murudeshwar (Sea View Road, Near Murudeshwar Temple 581350), page published 3 Jan 2026, updated 17 Feb 2026: local sedan 8 hrs 'starts from' 2000 (4 hrs from 1200); route fares 'start from'. Floor prices, final depends on route and waiting.",
+        "sources": [
+          "https://murudeshwar.co.in/blog/taxi-rental-murudeshwar-complete-guide",
+          "https://murudeshwar.co.in/taxi-murudeshwar"
+        ],
+        "notes": "Local operator with address, 'starts from' wording, single source; no union rate card found. Per-km rate not listed."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": 750,
+        "basis": "Cost for two 500 at Kamat Restaurant (Temple Road, pure veg) and 500 at Prarthana Hotel on Magicpin; Justdial figure for Kamat 350 (quoted on murudeshwar.co.in). 500 for two = 250 per meal x 3 = 750. Prarthana prints Kulcha 45, Mix Veg 140, Chicken Biryani 130.",
+        "sources": [
+          "https://magicpin.in/Murdeshwar/Murdeshwar/Restaurant/Kamat-Restaurant/store/ca057c",
+          "https://magicpin.in/Murdeshwar/Murdeshwar/Restaurant/Prarthana-Hotel/store/bb1707/menu",
+          "https://murudeshwar.co.in/blog/best-restaurants-in-murudeshwar"
+        ],
+        "notes": "Only 2 restaurants with a cost-for-two figure; thin. Zomato pages for Murdeshwar timed out. No breakfast or thali price verified, so budget left null."
+      },
+      "confidence": "low",
+      "unverified": [
+        "budget hotel tier",
+        "homestay tier",
+        "dorm",
+        "union taxi tariff",
+        "budget food and thali prices",
+        "food standard rests on two restaurants"
+      ]
+    },
+    "kukke-subramanya": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 2671,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-dwara-1361210?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/slr-residency-1337148?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, both 2-star AC rooms: Hotel Dwara Deluxe AC 2562, SLR Residency 2 Bed AC 2780; median 2671 (n=2).",
+        "notes": "Mid tier null: the only 3-star on Cleartrip, De Royale Montana (6 km from the temple), showed no rooms for 18-19 Nov; V Sadana Lodge detail page 404. Bhramari Nest 3-star appears at 2,976 on EaseMyTrip but with no stay dates, so not used. Karthika month (Nov) is a peak pilgrim month here, which may explain few open rooms. Temple guest houses (Anagha, Akshara, Ashlesha) are cheaper but the only tariff found is an unofficial guide (kukkedevasthanam.org.in/accommodation, updated 22 Sep 2026, says it is not the temple's website): non-AC rooms from 300, dorm beds 50-100; not used as a figure."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Mangalore (airport/station) to Kukke Subramanya (sedan, one way)",
+            "inr": 3500
+          },
+          {
+            "route": "Mangalore to Dharmasthala (sedan, for context)",
+            "inr": 3000
+          }
+        ],
+        "basis": "Mangalore operator airport-taxi page (Presidency Zone-1, Bendoorwell, Kankanady, Mangalore 575002), undated.",
+        "sources": [
+          "https://mangaloretravelscorporation.com/mangalore-airport-taxi-fare-charges/"
+        ],
+        "notes": "Town is walkable around the temple; no local taxi union or local operator with an address found. Aggregator one-way quotes (CabBazar, GetMeCab) not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": null,
+        "sources": [],
+        "notes": "No rupee menu, thali or cost-for-two figure found for Subrahmanya restaurants (Zomato has no listing; Restaurant Guru and Holidify only give bands). Temple annadana is free to devotees, price not applicable."
+      },
+      "confidence": "low",
+      "unverified": [
+        "3-star median",
+        "temple guest house tariff (no official source)",
+        "homestays",
+        "dorm",
+        "local taxi day rate",
+        "food"
+      ]
+    },
+    "coorg": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2201,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/treebo-trend-alaka-rester-homestay-2862666?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/imarat-2044698?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vasathi-2050276?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4271368?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-madikeri-heritage-709170?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/jungle-hill-resort-coorg-1361080?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/red-bricks-inn-3990869?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-altitude-coorg-3974205?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 2368,
+        "homestay_n": 6,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/coorg-vismaya-4008987?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/coorg-mystere-4488844?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5687002?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/wooden-pearl-homestay-4686692?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/coorg-red-stone-villas-4481127?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/mountain-breeze-coorg-4685940?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 575,
+        "dorm_n": 8,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Coorg?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 8 Madikeri-area properties Cleartrip labels 3-star (Alaka Rester 1521, Coorg Imarat 1610, Vasathi 2030, Fort Mercara 2091, Madikeri Heritage 2310, Jungle Hill Resort 2415, Red Bricks Inn 2480, Hotel Altitude 5424); median 2201. Homestay: same dated pages 18-19 Nov 2026 (Coorg Vismaya 1164, Coorg Mystere 1848, Orchid Villa 1876, Wooden Pearl 2859, Red Stone Villas 3242, Mountain Breeze 3343); median 2368. Dorm: Hostelworld 'from' prices, undated (Secret Ashram 380, goSTOPS 499, Abode 500, Hosteller 550, Hosteller Rainforest 599, beNomadic 745, Hosteller Bam 749, Zostel 824); median 575.",
+        "notes": "Vasathi, Jungle Hill and Madikeri Heritage cheapest rooms are Non-AC. Homestay list includes Cleartrip 'homestay' tagged villas and guest rooms, not plantation estate stays; estate/plantation stays priced 7,000-18,000 on the list page (13-14 Nov) were left out as outliers. Budget tier not separately priced."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "AC sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Madikeri to Talacauvery and Bhagamandala and back (5 hrs, 100 km tour, AC sedan)",
+            "inr": 2400
+          },
+          {
+            "route": "Madikeri to Dubare elephant camp tour (5 hrs, 80 km, AC sedan)",
+            "inr": 2400
+          },
+          {
+            "route": "Madikeri to Kushalnagar: Dubare, Nisargadhama, Golden Temple day (AC sedan)",
+            "inr": 3000
+          },
+          {
+            "route": "Madikeri local 4 hrs / 40 km (AC sedan)",
+            "inr": 1700
+          },
+          {
+            "route": "Mangalore to Coorg/Madikeri (sedan, one way)",
+            "inr": 3900
+          }
+        ],
+        "basis": "Coorg SR Travels sightseeing tariff, undated: Local Full Day Tour 8 hrs / 80 km non-AC sedan 2700, AC sedan 3000, Innova 3500; extra km 12 sedan. Cross-check: Classic Cabs Coorg full-day sightseeing sedan 2500, 4-hr local 1800. Mangalore fare from the Mangalore operator airport-taxi page, undated.",
+        "sources": [
+          "https://coorgsrtravels.com/index.php/coorg-sightseeing-tariff/",
+          "https://classiccabscoorg.com/",
+          "https://mangaloretravelscorporation.com/mangalore-airport-taxi-fare-charges/"
+        ],
+        "notes": "No Madikeri taxi association chart found. Coorg SR Travels page lists phone only, no street address; Classic Cabs also no address. Rates may change without notice, parking/entry extra."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 600,
+        "basis": "Zomato Madikeri listings, cost per person for one (as shown): Hotel SR 100, Coorg Bufiya 100, The Wildlife Coorg Ethnic Food 200 with Veg Meal 180 and Pandi Pork Curry 260 on its menu, The Coorg Food House 200, The Fort Mercara 200, Paakashala 400, 29 Bar and Restaurant 400. Budget = breakfast 100 + veg meal 180 + dinner 100 = 380, rounded 400. Standard = median 200 per meal x 3 = 600.",
+        "sources": [
+          "https://www.zomato.com/madikeri/restaurants",
+          "https://www.zomato.com/madikeri/madikeri-locality-restaurants",
+          "https://www.zomato.com/madikeri/the-wildlife-coorg-ethnic-food-madikeri-locality/order"
+        ],
+        "notes": "Read from search snippets of the Zomato pages (direct Zomato fetches time out). Zomato shows per-person here, not cost for two."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "union/association taxi tariff",
+        "operator street address",
+        "budget hotel tier",
+        "plantation stay rates (list prices were 13-14 Nov only)",
+        "food from search snippets"
+      ]
+    },
+    "chikmagalur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2263,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/the-grand-krishna-luxury-hotel-715370?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/maharaja-inn-chikmagalur-3974782?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kalarava-4586961?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-blue-pearl-2179650?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/treebo-3c-comforts-4264103?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-the-royal-shalimar-boutique-stay-4188783?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-aadrika-3909653?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-spectrum-resort-chikmagalur-708262?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 6770,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/4270899?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4672398?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4687747?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/villa-vaasa-homestay-5254844?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 599,
+        "dorm_n": 3,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Chikmagalur?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 8 town properties Cleartrip labels 3-star (Grand Krishna 1727, Maharaja Inn 1903, Kalarava 1993, Blue Pearl 2244, Treebo Sky Vista 2282, Royal Shalimar 2347, Aadrika 3239, Spectrum Resort 4050); median 2263. Homestay: same dated pages 18-19 Nov 2026 (SScoconest service apartments 2368, Village Stay Non-AC 6430, Blue Mount Retreat suite 7110, Villa Vaasa 7620); median 6770. Dorm: Hostelworld 'from' prices, undated (Innbox Bunker 400, Da Java 18 599, Samarya 1143; The Hosteller at 99 looked like a promotional floor and was excluded); median 599.",
+        "notes": "Dorm n=3 after excluding The Hosteller's 99 floor. Grand Krishna cheapest room is Non-AC. Homestay spread is wide (2368-7620): the plantation-style homestays sit at 6,400-7,600, the one low value is a city service apartment; treat as low confidence. Jhari Eco Stay (tent, includes all meals, 4805) and The Nature's Nest (tent, 3950) excluded as tents/full board. Budget tier not priced."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No verified local rate card: local resort guide (7 Heaven Villas & Resorts, Allampura, Chikmagalur 577101, undated) gives only a planning range of 3,000-5,000 for a full-day sightseeing cab, not tied to a vehicle.",
+        "sources": [
+          "https://www.7heavenvillasandresorts.com/post/chikmagalur-local-transport-guide"
+        ],
+        "notes": "No taxi association chart found. Chikkamagaluru Tours and Travels page would not load its prices. Aggregator and Bangalore-based operator quotes (CabBazar, SDM Cabs, OneDay.Travel) deliberately not used. Range 3,000-5,000 is from the local guide above."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 700,
+        "basis": "Zomato Chikmagalur listings, cost for one person as shown: Hotel Chandan Paradise 100, Shekar Canteen 100, Mayura Delux 200, Chikpete Donne Biriyani House 200, Mamtha's 86 Kitchen 200, Town Tables 400, Kailash Parbat 400, Hashtag 400. Budget = 3 meals x 100 = 300. Standard = breakfast 100 + lunch and dinner at median 300 (of 200,200,200,400,400,400) = 700.",
+        "sources": [
+          "https://www.zomato.com/chikmagalur/restaurants",
+          "https://www.zomato.com/chikmagalur/chikmagalur-city-restaurants?category=2"
+        ],
+        "notes": "From search snippets of Zomato pages (direct fetch times out). Zomato shows cost for one here."
+      },
+      "confidence": "low",
+      "unverified": [
+        "local taxi day rate",
+        "budget hotel tier",
+        "homestay tier is wide (n=4)",
+        "food from search snippets"
+      ]
+    },
+    "sakleshpur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4900,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/staymaker-cs-county-resort-4279434?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4293477?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-vana-valley-retreat-3910702?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 6348,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/5420334?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/highland-estate-heritage-homestay-5285030?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kanive-eco-stay-4671680?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/water-view-holiday-retreat-3933524?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 3 Cleartrip 3-star resort/hotel properties (Staymaker CS County Resort 2305 Non-AC fan room, Neervana Resort 4900 with breakfast, Vana Valley Retreat 6107 with breakfast); median 4900, n=3. Homestay: same dated pages 18-19 Nov 2026 (Ossoor Homestay 3145 room only, Highland Estate Heritage Homestay 6266 with breakfast, Kanive Eco Stay 6430 with breakfast, Water View Holiday Retreat 6454 with breakfast); median 6348.",
+        "notes": "Plantation resort market: 8 of 15 Cleartrip 3-star listings were sold out for 13-14 Nov and Aroha's Eco Hill, Green Tree Resort, Abbi Valley, Eka Resort and Hotel Durga International (2-star) showed no rooms for 18-19 Nov, so n is small. Several prices include breakfast. No budget lodge priced (Cleartrip budget list is dated Oct, and its only budget-type entry had no rooms). No dorm source."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [],
+        "basis": "sakleshpurtaxi.com lists Swift Rs 12/km (Ertiga 14, Innova 16); page footer shows Copyright 2023, no address.",
+        "sources": [
+          "http://sakleshpurtaxi.com/"
+        ],
+        "notes": "Local day left null: the same page lists a 'Sakleshpur' sightseeing package of Rs 2999 with no vehicle, hours or km, so it is not usable as an 8 hr/80 km rate. MakeMyTrip Sakleshpur page timed out. No taxi association tariff found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 500,
+        "basis": "Zomato Sakleshpur listings, cost for one as shown: Paaka Kendra 100, Hotel Heritage Classic 100, Arabian Biryani House 100, Mythri 150, New Naidu Hotel 150, Sri Gandha 150 (plate meal 104, Dal Fry 117), Cafe Hot Pizza 200, Surabhi's 200 (idli 45, Akki Roti breakfast 99), Hotel Royal Dine 200, Town Square 200. Budget = 3 x 100 = 300. Standard = breakfast 100 + lunch 200 + dinner 200 = 500.",
+        "sources": [
+          "https://www.zomato.com/sakleshpur/sakleshpur-locality-restaurants?sort=best",
+          "https://www.zomato.com/sakleshpur/sakleshpur-city-restaurants",
+          "https://www.zomato.com/sakleshpur/sri-gandha-restaurant-sakleshpur-locality/order",
+          "https://www.zomato.com/sakleshpur/surabhis-restaurant-sakleshpur-locality/order"
+        ],
+        "notes": "From search snippets of Zomato pages (direct fetch times out). Zomato shows cost for one here."
+      },
+      "confidence": "low",
+      "unverified": [
+        "local taxi 8hr rate",
+        "budget lodge tier",
+        "dorm",
+        "mid n=3 only",
+        "food from search snippets"
+      ]
+    },
+    "badami": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3436,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4711265?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-rajsangam-international-711640?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5425258?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-badami-court-4277792?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4491787?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/shettar-s-kusum-resort-5256376?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/krishna-heritage-3964930?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 7 properties Cleartrip labels 3-star (Sanman Deluxe 1634 Non-AC, Rajsangam International 1965 Non-AC, Antilia Inn 3026, Badami Court 3436 AC, Grand Clarks Inn 3810, Shettar's Kusum Resort 3999 with breakfast, Krishna Heritage 4940 with breakfast); median 3436.",
+        "notes": "Small market: Badami Heritage Resort, The Heritage Resort, Hotel Grand Heritage and KSTDC Hotel Mayura Chalukya showed no rooms for 18-19 Nov. The Cleartrip homestay list for Badami was mostly the same hotels plus StayVista villas (sold out or 6,840+), so homestay left null. No budget or dorm source found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Badami Rural to Aihole (about 34 km, sedan, one way, before GST, indicative)",
+            "inr": 1650
+          }
+        ],
+        "basis": "Gozocabs route page Badami Rural to Aihole: sedan one-way 1650 before GST, 'indicative'; no date.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/badami_rural_karnataka-aihole_karnataka"
+        ],
+        "notes": "No taxi association chart or local 8hr/80km rate found for Badami. MakeMyTrip Badami page timed out. KSTDC runs a daily Badami-Aihole-Pattadakal sightseeing tour from Hotel Mayura Chalukya but its page prints no price."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": null,
+        "sources": [],
+        "notes": "No rupee menu, thali or cost-for-two figure found for Badami restaurants (Zomato has no Badami listings in search; Restaurant Guru gives only a price band; Menuweb per-person bands unverified)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "local taxi day rate",
+        "budget and homestay tiers",
+        "dorm",
+        "food"
+      ]
+    },
+    "aihole": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Badami (about 34 km by road)",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No tier priced. The only Aihole property on Cleartrip, Wada 1 (4-star, inside the temple complex area), showed 'No rooms available' for 18-19 Nov 2026.",
+        "notes": "Aihole has very few rooms; visitors mostly sleep in Badami (see Badami figures) or Pattadakal. A July 2024 TravelTriangle page lists Wada 1 from 7,529 (undated season, not used)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Aihole to Badami Rural (about 34 km, sedan, one way, before GST, indicative)",
+            "inr": 1650
+          }
+        ],
+        "basis": "Gozocabs route page Badami Rural to Aihole, sedan one-way 1650 before GST, indicative, undated (same distance reverse).",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/badami_rural_karnataka-aihole_karnataka"
+        ],
+        "notes": "Aihole is seen on a Badami-Aihole-Pattadakal day loop, so cabs are hired from Badami; no local day rate or union chart found."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": null,
+        "sources": [],
+        "notes": "Village with a handful of eateries; no rupee menu or cost-for-two source found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "all stay tiers",
+        "local taxi day rate",
+        "food"
+      ]
+    }
+  }
+}

@@ -1,0 +1,521 @@
+{
+  "batch": "B2",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "tirupati": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2255,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/treebo-trend-sls-grand-3939343?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/springs-hotel-3975359?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kvp-golden-inn-4484347?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/treebo-trend-sripadha-residency-3957363?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/bhimas-deluxe-hotel-377372?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-minerva-grand-tirupati-382830?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/fortune-kences-810446?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1320,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4671055?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4562399?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/fabhotel-lotus-grand-2860624?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292158?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1852,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/4292271?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4597155?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/svi-homestay-with-ac-bedrooms-4487230?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292268?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, cheapest room pre-tax, room only, private 3-star hotels (1586, 1698, 1903, 2255, 2735, 3699, 4050), TTD/temple-trust rooms excluded. Budget: Cleartrip 18-19 Nov 2026 pre-tax (896 Vaamana non-AC, 1215 Sri Nilayam Inn 2-star, 1426 Lotus Grand, 1728 Woodside Prestige); Cleartrip star labels are loose so budget = the cheapest listed private hotels. Homestay: Cleartrip 18-19 Nov 2026 pre-tax (1490, 1841, 1863, 2029).",
+        "notes": "Pilgrim town, rooms fill around Karthika masam weekends; the dated prices above are what Cleartrip showed for Wed 18 Nov. No Hostelworld listing for Tirupati (page 404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2600,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Tirupati to Tirumala drop (Indica/Vista 4-seater)",
+            "inr": 1250
+          },
+          {
+            "route": "Tirupati to Srikalahasti round trip (standard taxi, listed range 2300-2600)",
+            "inr": 2450
+          },
+          {
+            "route": "Tirupati to Chandragiri Fort round trip (standard taxi, listed range 1400-1600)",
+            "inr": 1500
+          }
+        ],
+        "basis": "Tirupati Balaji Tours & Travels web rate card: Etios sedan 8 Hours/80 KMs 'Book at 2600', outstation Etios Rs15/km, min 300 km/day (undated). Fare guide at tirumalatirupaticabs.in lists full-day 8h/80km standard taxi Rs2300-2600, outstation Rs13-15/km, half-day Rs1500-1800 (undated, no street address on either site). Point-to-point from the tirumalatirupaticabs.in fare guide; range midpoints used for Srikalahasti and Chandragiri.",
+        "sources": [
+          "https://tirupatibalajitourstravels.com/",
+          "https://www.tirumalatirupaticabs.in/taxi-fares-hire-tirupati-tirumala"
+        ],
+        "notes": "Neither operator page prints a street address or date; treat as medium-low."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 650,
+        "basis": "Zomato Tirupati listing, 'for one' costs: Hotel Bhimas Rs100, PS4 Pure Veg Rs100, Rama Lakshmi Vilaas Rs150, Old Town Restaurant Rs150, Kakinada Subbayya Gari Hotel Rs200, McDonald's Rs200. Budget = 3 meals at about Rs100-130; standard = 3 meals at about Rs150-250 (Minerva Coffee Shop tiffin Rs60-150 per tirupatiofficial.com).",
+        "sources": [
+          "https://www.zomato.com/tirupati/restaurants",
+          "https://tirupatiofficial.com/vegetarian-restaurants-in-tirupati/"
+        ],
+        "notes": "Zomato 'for one' is a delivery-listing meal cost; TTD Annaprasadam at Tirumala is free."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "No street-addressed taxi union rate card found; Savaari/MMT pages are JS-only or timed out",
+        "No Hostelworld dorm listing",
+        "Tripadvisor cost-for-two not fetched"
+      ]
+    },
+    "rajahmundry": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2805,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4596263?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561826?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-jetty-grand-713161?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/river-bay-resort-3955821?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4290896?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1199,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/5328443?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5066864?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5680014?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, cheapest room pre-tax, room only (2018, 2460, 2805, 2822, 3700). Budget: Cleartrip detail pages 18-19 Nov 2026 pre-tax (894, 1199, 1242); these are labelled 3-star on Cleartrip but are the cheapest OYO-type hotels, so used as the budget tier.",
+        "notes": "No homestay listing on Cleartrip's Rajahmundry homestay page (only hotels). Several other hotels were sold out for 13-14 Nov on the list page."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2400,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Rajahmundry Taxi (rajahmundrytaxi.in) lists Dzire 8 hours / 80 km at Rs2400, extra hour Rs150, extra km Rs14, outstation min 300 km/day, driver batta Rs400/day (as shown in a search-result snippet; undated). Zeo Taxi's Rajahmundry page confirms local packages 'starting from 1540' without a sedan figure.",
+        "sources": [
+          "https://www.rajahmundrytaxi.in/",
+          "https://www.zeotaxi.com/rajahmundry"
+        ],
+        "notes": "rajahmundrytaxi.in returned HTTP 402 to my page fetch, so the Rs2400 rests on the search snippet only. No union rate chart or Papikondalu/Dowleswaram fare found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "Zomato Rajahmundry listing 'for one' (search snippet): R.K. Restaurant Rs150, Ajantha Hotel Rs150, Srikanya Comfort Rs200, Sri Surya Restaurant Rs350, Salt and Eat'nPlay Rs400. Budget = 3 meals at about Rs150; standard = breakfast ~Rs150 + lunch ~Rs250 + dinner ~Rs350.",
+        "sources": [
+          "https://www.zomato.com/rajahmundry"
+        ],
+        "notes": "Figures come from a search-result snippet of the Zomato city page (my direct fetch timed out); the day totals are my arithmetic on those per-meal figures."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Taxi rate page returned 402; only snippet evidence",
+        "Food from snippet only, not re-opened",
+        "No homestay or dorm prices",
+        "No Papikondalu/Dowleswaram point-to-point fares"
+      ]
+    },
+    "srikalahasti": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1336,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-bluestone-4277890?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kgr-residency-5408019?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/jsn-grand-5063467?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-mgm-grand-710505?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 905,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4711803?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, cheapest room pre-tax, room only (Bluestone 1263, KGR Residency 1322, JSN Grand 1349, MGM Grand 3480 river-view). Budget: Cleartrip 18-19 Nov 2026 pre-tax, Hotel KSR Grand Executive Non-AC Rs905 (n=1). Two other Cleartrip 3-star listings (A1 Grand, Devansh Bhanu Residency) showed No rooms available on 18 Nov.",
+        "notes": "Small temple town: only 6 hotels on Cleartrip, one outlier (MGM Grand) lifts the average, hence median. No homestay or dorm listing found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Tirupati to Srikalahasti round trip (standard taxi, listed range 2300-2600)",
+            "inr": 2450
+          }
+        ],
+        "basis": "No Srikalahasti-based union or operator rate found. Tirupati-based fare guide (tirumalatirupaticabs.in, undated) lists Tirupati to Srikalahasti round trip Rs2300-2600 for a standard taxi; Tirupati Balaji Tours & Travels lists Etios outstation Rs15/km, min 300 km/day. Both sites print no street address.",
+        "sources": [
+          "https://www.tirumalatirupaticabs.in/taxi-fares-hire-tirupati-tirumala",
+          "https://tirupatibalajitourstravels.com/"
+        ],
+        "notes": "Srikalahasti is a one-temple stop usually done from Tirupati (about 40 km); no local 8h rate found so left null."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 600,
+        "basis": "Zomato Srikalahasti listing 'for one' (search snippet): GK Saravana Bhavan Rs100, Metro Bakers Rs100, Kanishka Multicuisine Rs150, PSR Family Dhaba Rs150, SK Food Court Rs200, Lakshmi Family Dhaba Rs200, Brindavanam Rs250. Budget = 3 meals at about Rs100-125; standard = 3 meals at about Rs200.",
+        "sources": [
+          "https://www.zomato.com/srikalahasti/restaurants?category=2"
+        ],
+        "notes": "Zomato page timed out on direct fetch; figures are from the search-result snippet of that page. Day totals are my arithmetic."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No local 8h taxi rate",
+        "Food from search snippet only",
+        "No homestay/dorm",
+        "Dedicated Srikalahasti taxi stand rate chart not found"
+      ]
+    },
+    "machilipatnam": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No price observed for 18-19 Nov 2026.",
+        "notes": "Cleartrip lists only two hotels for Machilipatnam (Super Hotel O Railway Station, Collection O Bus Terminal). Both detail pages for 18-19 Nov 2026 show 'No rooms available' (https://www.cleartrip.com/hotels/details/5066870?c=18112026|19112026&r=2,0 and https://www.cleartrip.com/hotels/details/5066872?c=18112026|19112026&r=2,0). Town has other lodges but no dated price page loaded."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Machilipatnam to Vijayawada one way (sedan)",
+            "inr": 2018
+          }
+        ],
+        "basis": "MakeMyTrip Machilipatnam-Vijayawada cab page, sedan one way Rs2018 (round trip Rs4036, extra km Rs17/km), as shown in a search-result snippet; my direct fetch of the page timed out. Undated.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/machilipatnam-vijayawada-cab-services.html"
+        ],
+        "notes": "Local 8h rates found only on template/lookalike cab sites (gvrcabs, cabbazar, zeotaxi), so left null."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 500,
+        "basis": "Zomato Machilipatnam listing 'cost for one' (search snippet): Lakshmi Canteen Rs40, Millet's House Rs40, Sri Annapurna Tea & Tiffins Rs100, Vani Restaurant Pure Veg Rs100, Hot n Spicy Rs100, Basha Bhai Biryani Point Rs150, RK Paradise Rs150, Vani Sweets Rs150, Vanaja Student Mess Rs250, Balaji Family Restaurant Rs250. Budget = 3 meals at about Rs100; standard = 3 meals at about Rs150-200.",
+        "sources": [
+          "https://www.zomato.com/machilipatnam/restaurants"
+        ],
+        "notes": "Direct fetch of the Zomato page timed out; figures are from search-result snippets of the Zomato Machilipatnam pages. Day totals are my arithmetic."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No stay price (both Cleartrip hotels sold out 18 Nov)",
+        "No local 8h taxi rate from a non-template source",
+        "Food from search snippet only"
+      ]
+    },
+    "srisailam": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1904,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://yatradham.org/srisailam-hotel-haritha.html"
+        ],
+        "budget_hotel_median_inr": 1100,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://yatradham.org/srisailam-hotel-haritha.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Tariff card, undated (not 18-19 Nov): Hotel Haritha (APTDC state tourism, listed 3-star) on Yatradham, an APTDC booking partner: 2 Bed AC Room Rs1,904 base + Rs95.20 tax (mid, n=1); 2 Bed Non AC Room Rs1,100 + Rs55 tax (budget, n=1). Other tariffs on the same page: AC Deluxe 2,128, Premium AC 2,200, AC Executive 2,688.",
+        "notes": "Srisailam is not on Cleartrip, and Booking/MakeMyTrip/Tripadvisor pages did not load, so no private 3-star hotel (e.g. Srisaila's Nest, Grand Akkamahadevi at Sundipenta) could be priced for 18-19 Nov. Devasthanam cottages and satrams are a separate trust tier and not priced. Karthika masam (Nov) is a peak pilgrim month, so private rates on 18-19 Nov may be above this card."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No union or operator rate with a real address found; only CabBazar aggregator snippets (sedan Rs1,500 for 8h/80km) which returned 403 to my fetch and could not be opened.",
+        "sources": [],
+        "notes": "Left null rather than cite a page I could not open."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": 750,
+        "basis": "Holidify lists Trishul Restaurant (Srisailam) at INR 500 for two, so Rs250 per person per meal; 3 meals = 750 (n=1 restaurant). No budget-tier source opened.",
+        "sources": [
+          "https://www.holidify.com/places/srisailam/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Single restaurant only; Justdial and Tripadvisor pages returned 403."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No dated 18-19 Nov price for any Srisailam hotel",
+        "No private 3-star hotel prices",
+        "No local taxi rate",
+        "Budget food tier",
+        "No homestay or dorm"
+      ]
+    },
+    "nagarjuna-sagar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2100,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.bestbus.in/hotels/category-details/telangana-tourism-haritha-hotels-and-resorts/haritha-vijay-vihar-hotel-nagarjuna-sagar"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Tariff card, undated (not 18-19 Nov): Telangana Tourism Haritha Vijay Vihar, Nagarjuna Sagar, as listed on BestBus (TSTDC booking agent): A/C Standard 2,100, A/C Deluxe 2,700, A/C Suite 4,200 per room, max 2 adults + 2 children; the page does not say whether tax is included. Mid = cheapest AC room, n=1.",
+        "notes": "Cleartrip has no Nagarjuna Sagar city page (404), Telangana Tourism's own dated hotel-list page failed a TLS certificate check (not bypassed), AP Tourism's Vijayapuri South Haritha page prints no rates, and Tripadvisor/Booking pages did not load. Tripadvisor reviewers say the Standard AC rooms are poorly maintained."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Hyderabad to Nagarjuna Sagar one way (sedan, about 148 km)",
+            "inr": 2323
+          }
+        ],
+        "basis": "MakeMyTrip Hyderabad-Nagarjuna Sagar page, sedan Rs2,323 one way, Rs4,646 round trip, extra Rs15.25/km (as shown in a search-result snippet; my fetch of the page timed out). Undated.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/hyderabad-nagarjuna_sagar-cab-services.html"
+        ],
+        "notes": "No local sightseeing or boat-point rate from a union or local operator found."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee prices found for Nagarjuna Sagar restaurants (Hotel Siddartha, Youth Hostel canteen, Haritha Vijay Vihar restaurant are named by MakeMyTrip food guide without prices).",
+        "sources": [],
+        "notes": "Left null; no own source."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No dated 18-19 Nov hotel price",
+        "No private hotels priced",
+        "No local taxi rate",
+        "No food prices",
+        "Haritha Vijay Vihar is on the Telangana side of the dam (Nandikonda)"
+      ]
+    },
+    "maredumilli": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2799,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.thrillophilia.com/resorts-in-maredumilli",
+          "https://aptourismresorts.in/maredumilli.html"
+        ],
+        "budget_hotel_median_inr": 1500,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.thrillophilia.com/resorts-in-maredumilli",
+          "https://aptourismresorts.in/maredumilli.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Undated reseller tariff cards, not 18-19 Nov 2026. Mid (n=5, per couple/AC room): Ratnagiri Resorts 2,500 'onwards per night per couple' and Aranya Eco Resorts 2,900 'begins from per night for a couple' (thrillophilia.com); Arka Resort AP Tourism AC Standard 2,799, The Kabin Resorts 2 members 2,700 (aptourismresorts.in); Green Island Resorts standard 2,999 'begins' (thrillophilia.com). Budget (n=3): Surya's Family Resort 1,500 per couple (thrillophilia.com), The Holiday Resort 3 members 1,500 (aptourismresorts.in), Vana Vihari 'INR 1250 - INR 3000 per night' range start 1,250 (thrillophilia.com).",
+        "notes": "Cleartrip lists only Srivanam Resorts (2-star) for Maredumilli and it shows 'No rooms available' for 18-19 Nov 2026 (https://www.cleartrip.com/hotels/details/4671476?c=18112026|19112026&r=2,0). Resellers print 'from' prices; some packages include food (Jungle Star Eco Camp INR 4000 for 2 incl. food, excluded). Forest-department (Vanavihari) official tariff not found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Rajahmundry to Maredumilli sedan, one way (60 km included, then Rs12/km)",
+            "inr": 2313
+          }
+        ],
+        "basis": "MakeMyTrip sedan page Rajahmundry to Maredumilli: Rs2,313 one way, Rs4,626 round trip, 60 km included, Rs12/km extra (as shown in a search-result title/snippet; direct fetch timed out). Undated.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/sedan-cabs-from-rajahmundry-to-maredumilli.html"
+        ],
+        "notes": "Maredumilli is a day trip from Rajahmundry (about 60-84 km each way); no local 8h rate from a union or local operator found."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or Zomato cost figure for a Maredumilli restaurant found; only Restaurant Guru price bands, which are not accepted.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No dated 18-19 Nov hotel price (Cleartrip's only listing sold out)",
+        "No official Vanavihari tariff",
+        "No local taxi rate",
+        "No food prices"
+      ]
+    },
+    "undavalli-caves": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Vijayawada (about 6 km; caves are a day trip, no hotels inside the village)",
+        "mid_median_inr": 2312,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-minerva-2870978?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535096?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/olive-tree-hotel-3914993?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4555964?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-eden-park-boutique-hotel-4252230?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/red-fox-hotel-vijayawada-2900290?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1416,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4694945?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535236?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, cheapest room pre-tax, for six 3-star hotels in Vijayawada (the nearest base): 1584, 2099, 2284, 2339, 2425, 3292 (Eden Park rate includes breakfast). Budget: Cleartrip 18-19 Nov 2026 pre-tax, Aditya Grand 1157 and KVR Capitol Suites 1675 (n=2).",
+        "notes": "Undavalli Caves is a village about 6 km from Vijayawada; search results show no hotel inside the village (most stays are in Vijayawada or Tadepalli, 4-6 km away), so figures are Vijayawada prices. Cleartrip has no Undavalli city page (404). Undavalli sits beside Vijayawada, so no_lodging was not called."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Only a CabBazar aggregator snippet (Vijayawada 8h/80km sedan Rs1,800) exists, and the page returned 403 so it could not be opened.",
+        "sources": [],
+        "notes": "Left null rather than cite an unopened page."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Undavalli-specific food source; Vijayawada figures are not reused for a different place.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Stay priced at the Vijayawada base, not in the village",
+        "No taxi rate",
+        "No food source",
+        "No homestay or dorm"
+      ]
+    },
+    "pulicat-lake": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Tada / Sri City and Sullurpeta (lake-side village has only one resort)",
+        "mid_median_inr": 3569,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/pulicat-lake-view-resort-5278690?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-srm-grandeurs-3990246?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4674189?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1562,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/5061973?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/swathi-residency-2877364?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4584050?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026 pre-tax: Pulicat Lake View Resort (Bheemulavaripalem, on the lake) 3,569 with breakfast; Hotel SRM Grandeurs (Sri City) 2,936 with breakfast; Monarch Express (Sri City) 3,943 room only. Budget: Cleartrip 18-19 Nov 2026 pre-tax: Collection O Tada Sri City 807, Swathi Residency (2-star, non-AC) 1,562, Hotel KVR Residency (2-star) 3,149.",
+        "notes": "Pulicat village has no hotel listings; the APTDC-style Pulicat Lake View Resort is the only lakeside stay (its second Cleartrip listing, id 5238490, shows No rooms available on 18 Nov, as do Rishi Gardens and others). Sri City hotels are business hotels about 20-30 km away. Flamingo season is Nov-Feb."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [],
+        "basis": "HJ Cabs (Guduvanchery, Chengalpattu district, Tamil Nadu) Pulicat taxi page: sedan Rs15/km one way, Rs14/km round trip, plus Rs500 driver allowance, one-time interstate permit Rs420 for sedan (Tamil Nadu to Pulicat). The page mentions an 8h/80km package but gives no price.",
+        "sources": [
+          "https://hjcabs.com/cities/pulicat-taxi"
+        ],
+        "notes": "No local 8h rate or Chennai/Sullurpeta fare found from a page I could open."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 480,
+        "basis": "Zomato Sullurpeta (nearest town) 'for one' per search snippet: RS Kitchen Rs40, Sri Komala Vilas Rs100, Green Tick Tiffins Rs100, Biriyani Brothers Rs100, Geetha Vilas Rs150, Padmavathi Restaurant Rs150, Friends Biryani Hub Rs150, AS Biryani Palace Rs200, Chandoos Rs250. Budget = 3 meals at about Rs100; standard = 3 meals at about Rs160.",
+        "sources": [
+          "https://www.zomato.com/sullurpeta/sullurpeta-locality-restaurants"
+        ],
+        "notes": "Taken from a search snippet of the Zomato page; I could not open it. The lake itself has no restaurants, so Sullurpeta figures are the nearest own-region source."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No local 8h taxi rate",
+        "Food from snippet only",
+        "Stay uses Tada/Sri City hotels beyond one lakeside resort",
+        "No homestay or dorm"
+      ]
+    }
+  }
+}

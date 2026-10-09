@@ -1,0 +1,504 @@
+{
+ "batch": "B15",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "hyderabad": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2645,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/taj-mahal-hotel-abids-40522?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4534176?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-manohar-hyderabad-40545?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4289866?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671905?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/treebo-tryst-metropolis-4061665?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 600,
+    "dorm_n": 10,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Hyderabad?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 1 room 2 adults, cheapest room (Room Only), pre-tax, 6 hotels tagged 3-star: Hotel Midtown Begumpet 1980, Treebo Premium Metropolis 2228, Casa Hotel Jubilee Hills 2402, Hotel Lokis Forest Inn 2888, The Manohar 3115, Taj Mahal Hotel Abids 3879; median (2402+2888)/2 = 2645. Dorm: Hostelworld 'Dorms From' INR per bed, undated (no stay dates on page), n=10 hostels 449 to 899, median 600.",
+    "notes": "Budget tier left null: Cleartrip budget-list hotel detail pages mostly 404 or showed 'No rooms available' on 18-19 Nov (Hotel Rajmata, Hotel Megacity, Hotel Tanisha, Rainbow International), so no dated budget median could be built. No homestay source tried successfully."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2350,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14,
+    "point_to_point": [
+     {
+      "route": "Hyderabad city to Hyderabad airport (RGIA), sedan, 40 km",
+      "inr": 1200
+     },
+     {
+      "route": "Hyderabad airport (RGIA) to city, sedan, 40 km",
+      "inr": 1250
+     }
+    ],
+    "basis": "Two Hyderabad operators with addresses, both pages carry only a 2024 copyright, no tariff date: TaxiGK (Plot No. 84, TNGO's Colony, Kattedan, Hyderabad 500077) sedan 8 hrs/80 km Rs 2,000, extra km 13, extra hour 120, SUV 2,800. Harish Cabs (10-2-287/7, AC Guards, Masab Tank, Hyderabad 500004) sedan 8 hrs/80 km Rs 2,700, SUV 3,400, extra km 15. Figure 2,350 = midpoint of the two (n=2). Airport fares and outstation per-km 14 are from the Harish Cabs page (sedan; toll, permit and parking extra).",
+    "sources": [
+     "https://www.taxigk.com/taxi-fare-in-hyderabad-information-for-taxigk",
+     "https://www.harishcabshyderabad.com/hyderabad-cabs-tariff"
+    ],
+    "notes": "Wide spread between operators (2,000 vs 2,700); other aggregator quotes of 1,600 to 2,500 were not used (template or undated)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 525,
+    "standard_inr": 1400,
+    "basis": "Budget: Bandi/mess/cafe cost for two as printed by LBB (ranges, midpoint/2 per meal): Lakshman Ki Bandi 200-300, Govind Ki Bandi 200-500, Krupa Mess and Tiffins 150-500, Niloufer Cafe 300-500, Pragathi Tiffin Centre 200-700 -> per-meal median about 175, x3 = 525. Standard: Zomato cost for two (search-result figures): Cafe Bahar 850, Taj Mahal Hotel Abids 850, Chutneys 950, Shah Ghouse Charminar 1,000, Paradise Biryani 1,000 -> per-meal median 475, x3 = 1,425, rounded to 1,400. Zomato excludes taxes.",
+    "sources": [
+     "https://lbb.in/hyderabad/best-breakfast-places/",
+     "https://www.zomato.com/hyderabad/cafe-bahar-basheer-bagh",
+     "https://www.zomato.com/hyderabad/taj-mahal-taj-mahal-hotel-abids/info",
+     "https://www.zomato.com/hyderabad/restaurants/chutneys-1?subzone=7001&category=2",
+     "https://www.zomato.com/hyderabad/shah-ghouse-hotel-restaurant-charminar",
+     "https://www.zomato.com/hyderabad/paradise-biryani-necklace-road"
+    ],
+    "notes": "Standard assumes sit-down meals at all three slots; real day may be lower if breakfast is a tiffin stop. LBB page is undated."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget hotel and homestay medians (no dated detail pages loaded)",
+    "Cab tariff dates (operator pages undated)"
+   ]
+  },
+  "warangal": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1797,
+    "mid_n": 12,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-grand-kakatiya-4686982?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4535317?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-shreya-2050264?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4562516?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671915?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-suprabha-3958148?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/fabhotel-lake-view-castle-5305649?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5679130?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/venkateshwara-mitra-residency-4278785?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4296055?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/collection-o-hanamkonda-near-nit-5259447?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5731152?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 864,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/vishnu-residency-1347012?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 1 room 2 adults, cheapest room (Room Only), pre-tax, 12 properties tagged 3-star: FabHotel Waah Homestay Luxury Rooms 1098, FabHotel Silver Cloud 1256, Venkateshwara Mitra Residency 1315, Collection O Hanamkonda Near NIT 1430, Aishwarya Inn 1758, FabHotel Arjun Residency 1793, FabHotel Lake View Castle 1800, Hotel Prime Inn 1831, Hotel Shreya 1904, Hotel Bhilva Inn 2019, Hotel Grand Kakatiya 2407, Hotel Suprabha 3960; median (1793+1800)/2 = 1797. Budget: Vishnu Residency (Double Non AC, 2-star) 864, Cleartrip 18-19 Nov 2026 pre-tax, n=1.",
+    "notes": "Sharanya Lodge detail page 404. No homestay or dorm source found. Haritha Kakatiya Hotel (Hanamkonda, govt) not used in medians."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Warangal tourist-places package: Ramappa, Laknavaram, Medaram, Bogata, Malluru, 1000 Pillar, Bhadrakali (vehicle not stated)",
+      "inr": 5500
+     },
+     {
+      "route": "Warangal to Hyderabad airport (RGIA)",
+      "inr": 4500
+     },
+     {
+      "route": "Warangal to Hyderabad drop",
+      "inr": 3500
+     }
+    ],
+    "basis": "Warangal Travels and Cabs, #16-3-676/1 Fort Road, Warangal (page footer 2007-2026, tariff undated): Swift Dzire Rs 1,200 for 10 hrs / 300 km then Rs 13/km; Innova Rs 2,000 / Rs 17 per km. Packages page prints the three point_to_point fares above with no vehicle named. No 8 hr / 80 km local rate is printed, so the local figure is null. outstation_per_km 13 = Dzire per-km on that tariff.",
+    "sources": [
+     "https://www.warangaltravelsandcabs.com/tariff",
+     "https://www.warangaltravelsandcabs.com/packages/"
+    ],
+    "notes": "Second operator warangaltravelcab.com (16-4-647/B, station road under bridge) prints Dzire Rs 12/km, Etios 13/km but no local package. The 5,500 package is a multi-sight excursion, not a local sedan day."
+   },
+   "food_per_person_day": {
+    "budget_inr": 600,
+    "standard_inr": 825,
+    "basis": "Approx cost for two per WanderOn Warangal food guide (undated; page returned HTTP 429 to me, figures read from search-result text): budget tiffin/meals Sri Geetha Bhavan 400, Chaat Chatore 300, Madhuram Tiffins and Meals 400, Hotel Amaravathi 400 -> per meal 150-200, median 200, x3 = 600. Standard: Hotel Vaishnavi Grand 600, New Shalimar Biryani 500 plus Green Bawarchi 500 and Arabian Knights 600 -> per meal 250-300, median 275, x3 = 825.",
+    "sources": [
+     "https://wanderon.in/blogs/places-to-eat-in-warangal"
+    ],
+    "notes": "Single undated blog source; Green Bawarchi and Arabian Knights figures came from a search summary, not a fetched page. Treat as low confidence."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Local 8hr/80km taxi rate (no Warangal operator prints one)",
+    "Homestay and dorm medians",
+    "Food figures from one undated blog; page not directly re-fetched"
+   ]
+  },
+  "laknavaram": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2800,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.bestbus.in/tourism/telangana-haritha-hotels/laknavaram-haritha-hotel-price-address-contact-number-amenities"
+    ],
+    "budget_hotel_median_inr": 1800,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.bestbus.in/tourism/telangana-haritha-hotels/laknavaram-haritha-hotel-price-address-contact-number-amenities"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Haritha Hotel Laknavaram (Telangana Tourism), AC Deluxe room Rs 2,800, tariff card as printed on the Bestbus Haritha page, undated, tax treatment not stated, n=1 property. Budget: same card, Non-AC Deluxe room Rs 1,800, undated, n=1. Not an 18-19 Nov price.",
+    "notes": "Only one property (govt Haritha island cottages); Bestbus page also shows a 'Starts From 3,000' card figure that does not match the room rates, and the official tgtdc.in / telanganatourism.gov.in pages could not be read from here. Pre-GST vs incl-GST unknown. Warangal (about 65-70 km) is the nearest city base with many hotels."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Laknavaram-based cab operator found; the lake is reached by cab from Warangal (see warangal entry for Warangal Travels and Cabs, Fort Road, per-km Rs 13 Dzire).",
+    "sources": [],
+    "notes": "Left null rather than copying another place's fare."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Laknavaram-specific price source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated Nov 2026 room price",
+    "Official tariff card (tgtdc.in unreadable)",
+    "Local taxi",
+    "Food"
+   ]
+  },
+  "ramappa-temple": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1400,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.bestbus.in/tourism/telangana-haritha-hotels/haritha-lake-view-resort-ramappa-hotel-price-address-contact-number-amenities"
+    ],
+    "budget_hotel_median_inr": 900,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.bestbus.in/tourism/telangana-haritha-hotels/haritha-lake-view-resort-ramappa-hotel-price-address-contact-number-amenities"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Haritha Lake View Resort Ramappa (Telangana Tourism) tariff card as printed on the Bestbus Haritha page, undated, tax treatment not stated, n=1 property: Non-AC Rs 900 (budget), AC Rs 1,300 and AC Deluxe Rs 1,500 (mid = midpoint 1,400). Not an 18-19 Nov price.",
+    "notes": "Single govt property. Page also shows a 'Starts From 2,500' listing figure that does not match the room rates; official telanganatourism.gov.in page could not be read from here. Warangal (about 65 km) is the larger base."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Ramappa-based operator found; visitors come by cab from Warangal (see warangal entry).",
+    "sources": [],
+    "notes": "Left null. Warangal Travels and Cabs prints a 5,500 package covering Ramappa, Laknavaram, Medaram and other sights, which is not a Ramappa-only fare."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Ramappa-specific price source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated Nov 2026 room price",
+    "Official tariff card",
+    "Local taxi",
+    "Food"
+   ]
+  },
+  "nagarjuna-konda": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Nagarjuna Sagar (Vijayapuri), Haritha Vijay Vihar and private lodges",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No lodging priced: island museum is a day trip.",
+    "notes": "telangana360 FAQ: no accommodation on the island, stay on the mainland and take the ferry; lodging is Haritha Hotel and private lodges in Nagarjuna Sagar township. Boat ticket Rs 180 adult / 120 child round trip (same page) is an entry cost, not a taxi or stay figure."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No operator rate found for Nagarjuna Sagar / Vijayapuri.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Island has only a basic canteen with no prices printed; no rupee source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Taxi",
+    "Food"
+   ]
+  },
+  "medak": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1500,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.telanganatourism.gov.in/partials/stay/medak/haritha-medak-fort-resort.html"
+    ],
+    "budget_hotel_median_inr": 1200,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.telanganatourism.gov.in/partials/stay/medak/haritha-medak-fort-resort.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Haritha Heritage Hotel / Medak Fort Resort (Telangana Tourism) official stay page, tariff card undated: A/C room Rs 1,500 (mid), Non-A/C Rs 1,200 (budget), n=1 property. Figures read from a search-result summary of that page; the page itself refused connection from this network. Not an 18-19 Nov price.",
+    "notes": "Cleartrip has no Medak inventory (/hotels/hotels-in-medak renders no properties). Booking.com for 18-19 Nov 2026 returned 1 property (Vihan farmhouse, whole 7-bed family room Rs 17,700), not a hotel median. Bestbus lists the same hotel higher (Non-AC 1,100, AC Deluxe 1,900, AC Executive 2,400): sources disagree. Hyderabad (about 95 km) is the large-hotel base."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14,
+    "point_to_point": [],
+    "basis": "No Medak-based operator found. Medak is a Hyderabad day trip (about 95 km each way); Harish Cabs (10-2-287/7, AC Guards, Masab Tank, Hyderabad 500004, page undated, 2024 copyright) prints sedan outstation Rs 14/km, toll/permit/parking extra.",
+    "sources": [
+     "https://www.harishcabshyderabad.com/hyderabad-cabs-tariff"
+    ],
+    "notes": "No fixed Hyderabad-Medak fare from a named operator loaded."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Medak-specific rupee source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated Nov 2026 hotel prices",
+    "Fixed Hyderabad-Medak fare",
+    "Food"
+   ]
+  },
+  "bhongir": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Hyderabad (large market); Yadagirigutta and Raigir have small lodges within about 10 km",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Not priced: no hotel inside Bhongir found with a dated price.",
+    "notes": "Booking.com search for Bhongir, 18-19 Nov 2026, 2 adults, returned 'No properties found' for Bhongir itself and listed only properties 7.8 to 25 km away (e.g. Sai Grands Lodge, Raigir, 8.5 km, Rs 1,890 incl. taxes), so none was copied as Bhongir's price. Cleartrip has no Bhongir page (404)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Bhongir-based operator found; it is a Hyderabad day trip (see hyderabad entry).",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Bhongir-specific price source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Own lodging (none found)",
+    "Taxi",
+    "Food"
+   ]
+  },
+  "kolanupaka": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Hyderabad or Warangal (per batch brief; no own lodging source found)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Not priced: no lodging of its own found.",
+    "notes": "Village temple site; no hotel listing found for it, so no figure borrowed from Hyderabad or Warangal."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No source.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Kolanupaka-specific price source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Lodging",
+    "Taxi",
+    "Food"
+   ]
+  },
+  "pillalamarri": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Mahabubnagar (no own lodging source found)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Not priced: no lodging of its own found.",
+    "notes": "Banyan-tree site; no hotel listing found for it, so no figure borrowed from Hyderabad or Mahabubnagar."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No source.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Pillalamarri-specific price source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Lodging",
+    "Taxi",
+    "Food"
+   ]
+  },
+  "pochampally": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1890,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://hotels.xploreall.com/room/pochampally-haritha-hotel/"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Haritha Hotel Pochampally (Telangana Tourism), A/C room Rs 1,890 (2 adults, 2 children) on a TSTDC booking mirror page, undated, GST treatment not stated, n=1 property. Not an 18-19 Nov price.",
+    "notes": "Same page lists a 4-bed Non-A/C dormitory at Rs 999, which is a whole 4-person room, so not used as a per-bed dorm figure. A search summary of Bestbus quoted A/C Rs 1,339 + GST and Non-A/C Deluxe Rs 999 + GST; that page returned 404 to me, so sources disagree and are unconfirmed. Hyderabad is the large-hotel base."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Pochampally-based operator found.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Pochampally-specific price source found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Dated Nov 2026 room price",
+    "Budget tier",
+    "Taxi",
+    "Food"
+   ]
+  }
+ }
+}

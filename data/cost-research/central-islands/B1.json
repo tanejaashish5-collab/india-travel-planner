@@ -1,0 +1,461 @@
+{
+  "batch": "B1",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "havelock-island": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4244,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/the-ocean-blue-resort-3975418?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4265122?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/blue-bird-resort-3908286?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sundaze-beach-resort-3974749?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/de-havelock-queen-4288695?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-kingdom-havelock-3938576?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 2183,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/shangrilas-beach-resort-2167728?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/pano-eco-resort-1355580?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-aroma-resort-4115286?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/pellicon-beach-resorts-3913845?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax discounted price of cheapest room-only rate: Ocean Blue 4050, Lemon Grass 5356, Blue Bird 4437, Sundaze 4446, De Havelock Queen 3534, The Kingdom 4006; median = (4050+4437)/2. Budget: same method, 18-19 Nov 2026, room only: Shangrilas 2184, Pano Eco 1980, Aroma 2181, Pellicon 2334; these four were in Cleartrip's 3-star list but are the cheapest cottages, used as the budget tier.",
+        "notes": "Dolphin Beach Resort showed 'No rooms available' for 18-19 Nov so was excluded. Placid Garden (4158) and Ile Bay (5267) cheapest rate includes breakfast so were not used. No dated homestay prices found. Dorm: Hostel Nemo (hostelnemo.com) prints Rs 2,500 per person for a dorm bed, single undated source, left out. Nov is start of peak season."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Radhanagar Beach taxi, round trip (from Havelock hotel area)",
+            "inr": 1200
+          },
+          {
+            "route": "Kalapathar Beach, round trip",
+            "inr": 1200
+          },
+          {
+            "route": "Havelock Jetty to hotel (pickup or drop)",
+            "inr": 350
+          }
+        ],
+        "basis": "Full-day (8 h) hire printed as Rs 2,500-3,500 (median 3,000) on eandamantourism.com taxi page (indicative 2025 rates, no rate card date, vehicle not specified beyond hatchback/sedan for 2-4). Circuit fares from Andaman Ocean's 2026 Havelock Cab Service price list (operator at Gurudwara Lane, Aberdeen Bazar, Port Blair; undated).",
+        "sources": [
+          "https://eandamantourism.com/taxi-services-in-havelock-island/",
+          "https://www.andamanocean.in/book-havelock-cab-service/"
+        ],
+        "notes": "Full-day figure is an indicative operator range, not a union card; Andaman Ocean states its cab is not reserved for full-day sightseeing."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 1950,
+        "basis": "Go2Andaman guide (updated 13 Mar 2026), cost for two: Go Fresh 200, Hashtag Dosa 400 (South Indian) => 100-200 per person per meal, avg 150 x 3 meals = 450. Standard: Cafe 4 900, Full Moon Cafe 1500, Something Different 1500, 5th Bistro 2000 for two => 450/750/750/1000 per person, median 750; day = cafe breakfast 450 + 2 meals x 750 = 1950.",
+        "sources": [
+          "https://go2andaman.com/best-restaurants-havelock-island/"
+        ],
+        "notes": "Budget tier rests on only 2 South Indian places; one source throughout; Bonova (3000 for two, pub) excluded."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "homestay prices",
+        "dorm price (single undated source only)",
+        "union/association cab rate card for Havelock",
+        "Zomato/Swiggy cost-for-two (none listed for Havelock)"
+      ]
+    },
+    "neil-island": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4706,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-exotica-squares-4287127?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/coconhuts-beach-resort-2044214?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/moon-shine-garden-resort-4275008?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4271295?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sandy-ridge-resort-4279067?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/cs-empire-3927300?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 2687,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-amullya-3974750?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-shreesh-neil-3980347?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/purnima-residency-3989565?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/seven-seas-dream-castle-neil-island-5257719?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax discounted price of cheapest available rate: Exotica Squares 4048 (room only), Coconhuts 4582 (room only), Moon Shine Garden 5185 (room only), Deep Sea 4830 (with breakfast), Sandy Ridge 4532 (with breakfast), CS Empire 5292 (with breakfast); median = (4582+4830)/2. Budget: same method, 18-19 Nov 2026: Amullya 2736 (breakfast), Shreesh Neil 2322 (breakfast), Purnima Residency 2890 (breakfast), Seven Seas Dream Castle 2638 (room only); median = (2638+2736)/2.",
+        "notes": "Three of six mid rates and three of four budget rates include breakfast (single-property rate plans, not tour packages); Neil properties mostly sell that way. Laxmi Continental showed 'No rooms available' for 18-19 Nov and was excluded; Tango Beach, Reef Valley and Neil Banjara were sold out on the 13-14 Nov list. Pearl Park (23,919 on 13-14 Nov list) is a luxury outlier and was excluded. No homestay or dorm prices found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Neil Jetty area to Bharatpur Beach (pickup or drop)",
+            "inr": 400
+          },
+          {
+            "route": "Laxmanpur Beach (pickup or drop)",
+            "inr": 400
+          },
+          {
+            "route": "Natural Rock Formation / Howrah Bridge (pickup or drop)",
+            "inr": 400
+          },
+          {
+            "route": "Sitapur Beach round trip",
+            "inr": 1000
+          },
+          {
+            "route": "Neil Jetty to hotel (pickup or drop)",
+            "inr": 400
+          }
+        ],
+        "basis": "Andaman Ocean Neil Island cab price list headed 2026 (operator at Gurudwara Lane, Aberdeen Bazar, Port Blair; no effective date). Page says multi-stop sightseeing and full-day hire are arranged separately and prints no full-day rate. A second operator (andamantourism.org, article dated 2025-04-14) prints 350 for Bharatpur/Laxmanpur, 400 Natural Bridge, 900 Sitapur round trip, so fares vary 350-400.",
+        "sources": [
+          "https://www.andamanocean.in/neil-island-cab-service-at-350/",
+          "https://www.andamantourism.org/cab-services-in-neil-island/"
+        ],
+        "notes": "No printed local full-day rate found, so local figure left null."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": null,
+        "basis": "Eternal Andamans (page updated 26 Jan 2026): Jetty Canteen 'general cost for a meal is INR 100 - INR 150'; Go2Andaman (updated 13 Apr 2026): simple fish thali at Neil Kendra market INR 100. Budget day = 3 meals x about 125 = 375.",
+        "sources": [
+          "https://www.eternalandamans.com/neil-island",
+          "https://go2andaman.com/neil-island/"
+        ],
+        "notes": "Standard left null: only wide per-person ranges (Blue Sea 500-1000, Garden View 600-1200, Dugong 800-1500) with no cost-for-two or menu figures."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "homestay and dorm prices",
+        "local full-day cab rate",
+        "standard food tier",
+        "Zomato/Swiggy figures (none for Neil)"
+      ]
+    },
+    "chidiya-tapu": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Port Blair",
+        "mid_median_inr": 4600,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4535195?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail page for Grand Oceanus Resort (3-star, Kodiyaghat, about 4.3 km from Chidiya Tapu per Trip.com), 18-19 Nov 2026, 1 room 2 adults, Standard Room Garden view with breakfast, 4,600 pre-tax (list 5,000, 8% off). n=1.",
+        "notes": "Chidiya Tapu has very few lodgings (Symphony Samudra 5-star beside the beach, Grand Oceanus at Kodiyaghat, Wild Grass Resort, Big Tree Cottages). Only one had a dated 18-19 Nov price; Symphony Samudra prints no tariff on its site and Trip.com shows only undated 'from' prices. Most visitors stay in Port Blair and day-trip (about 25-30 km)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Port Blair to Chidiya Tapu (sedan AC)",
+            "inr": 1100
+          },
+          {
+            "route": "Port Blair to Chidiya Tapu and back with 1-2 h wait for sunset (small car; printed range 2,200-2,800, midpoint)",
+            "inr": 2500
+          }
+        ],
+        "basis": "Andaman Tourism (andamantourism.org, operator head office Hotel Classic Regency, AIR Road, Delanipur, Port Blair; post dated 14 Apr 2025) prints Port Blair to Chidiya Tapu 1,100 Sedan AC. eandamantourism.com prints one way 1,200-1,800 and round trip with 1-2 h wait 2,200-2,800 (undated). Chidiya Tapu is a day trip from Port Blair, so no local 8-hour figure.",
+        "sources": [
+          "https://www.andamantourism.org/cab-services-in-port-blair/",
+          "https://eandamantourism.com/local-taxi-fares-in-port-blair/"
+        ],
+        "notes": "The two operators differ (1,100 vs 1,200-1,800 one way)."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu, thali or cost-for-two figure found for Chidiya Tapu; reviews describe two beach shacks and one resort restaurant (Big Tree Cottages) with no prices shown.",
+        "sources": [],
+        "notes": "Left null rather than borrow Port Blair figures."
+      },
+      "confidence": "low",
+      "unverified": [
+        "more than one dated lodging price",
+        "budget, homestay, dorm tiers",
+        "food prices",
+        "Symphony Samudra tariff"
+      ]
+    },
+    "baratang-island": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Port Blair (day trip); Rangat or Mayabunder for a night in the north",
+        "price_basis": "No priced lodging. Baratang (Nilambur jetty) has three government guest houses (Forest GH, APWD GH, Panchayat GH) listed with phone numbers and no tariff on the North & Middle Andaman district page, and one private resort (Dew Dale, NH-223) with only an undated 'from USD75' on Trip.com. Go2Andaman (updated 5 Mar 2026) says the guest houses are mainly for officials and locals, need booking months ahead from Port Blair, and that most visitors day-trip from Port Blair.",
+        "notes": "no_lodging means no publicly priced tourist lodging, not that no building exists. Dew Dale Resorts is the only private option found; no dated 18-19 Nov price available.",
+        "sources": [
+          "https://northmiddle.andaman.nic.in/accommodation/",
+          "https://www.go2andaman.com/baratang/hotels-resorts/",
+          "https://us.trip.com/hotels/north-and-middle-andaman-hotel-detail-9723386/dew-dale-resorts-baratang-island/"
+        ]
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Port Blair to Baratang round trip day tour (sedan AC, Andaman Tourism rate list)",
+            "inr": 3900
+          },
+          {
+            "route": "Port Blair to Baratang round trip (AC sedan or SUV, incl. permit and vehicle ferry, approx.)",
+            "inr": 4500
+          }
+        ],
+        "basis": "andamantourism.org Port Blair cab rate list (post dated 14 Apr 2025; operator head office Hotel Classic Regency, AIR Road, Delanipur, Port Blair) prints Port Blair to Baratang round trip 3,900 Sedan AC. Andaman Ocean (Gurudwara Lane, Aberdeen Bazar, Port Blair; page undated, 2026 footer) prints 4,500 approx, covering driver, fuel, ATR permit and vehicle ferry. Caves speedboat ticket is extra.",
+        "sources": [
+          "https://www.andamantourism.org/cab-services-in-port-blair/",
+          "https://www.andamanocean.in/port-blair-to-baratang-cab-service/"
+        ],
+        "notes": "Baratang is reached by a 100 km police-escorted convoy day trip from Port Blair; no local sightseeing rate exists on site."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Only a stale single figure (AMS Restaurant about 400 for two on an old guide) was found; no menu or thali price.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "any dated lodging price",
+        "local taxi rate",
+        "food prices"
+      ]
+    },
+    "barren-island": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Port Blair",
+        "price_basis": "Uninhabited active volcano: 'remains uninhabited by humans', landing prohibited, only day visits, no overnight stays; visit needs prior Forest Department permission in Port Blair. Outlook Traveller: 'Landing on Barren Island is prohibited' and private boats anchor offshore.",
+        "notes": "Trips are boat excursions from Port Blair (or live-aboard boats from Havelock); no taxi applies.",
+        "sources": [
+          "https://www.andamanislands.com/content/about-barren-island",
+          "https://www.outlooktraveller.com/experiences/nature/barren-island-of-andamans"
+        ]
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No road or land transport exists on an uninhabited volcanic island; access is by boat only, and boats are not taxis.",
+        "sources": [],
+        "notes": "Not applicable."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No food outlets on an uninhabited island.",
+        "sources": [],
+        "notes": "Not applicable."
+      },
+      "confidence": "high",
+      "unverified": [
+        "boat excursion price (not a taxi or stay cost, not collected)"
+      ]
+    },
+    "diglipur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4925,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/pristine-beach-resort-3913843?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4480975?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax, Pristine Beach Resort Kalipur listed twice on Cleartrip: 4,608 (STD AC, with breakfast) and 5,241 (Standard Double A, with breakfast); median of the two listings = 4,925. n=1 property.",
+        "notes": "Diglipur has one OTA-priced property (Pristine Beach Resort, Kalipur, two Cleartrip listings, both 3-star). The district page lists Turtle Nest Resort (Kalipur) and three APWD guest houses with phone numbers but no tariff, so no budget tier priced. Other sites quote Pristine from 2,500 to 8,930 undated."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Port Blair to Diglipur cab (page does not say days, vehicle or inclusions)",
+            "inr": 17000
+          }
+        ],
+        "basis": "Andaman Ocean (Gurudwara Lane, Aberdeen Bazar, Port Blair; undated, 2026 footer) prints 'Port Blair to Diglipur Cab: 17,000' without stating its scope. No printed local Diglipur cab rate found; Experience Andamans' Ramnagar/Kalipur turtle tour (1,750 per person, 3,500 for 2) is a package with entry tickets and guide, so it is not used as a taxi rate.",
+        "sources": [
+          "https://www.andamanocean.in/destinations/ross-and-smith-island-diglipur/"
+        ],
+        "notes": "Diglipur is about 300 km from Port Blair; local sights (Ross and Smith, Saddle Peak, Ramnagar, Kalipur) are 20-35 km apart."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu, thali or cost-for-two figure found for Diglipur or Kalipur.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "low",
+      "unverified": [
+        "more than one stay property price",
+        "budget/homestay/dorm tiers",
+        "Turtle Nest tariff",
+        "local cab rate",
+        "food prices"
+      ]
+    },
+    "little-andaman": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No priced lodging found. Cleartrip has no Little Andaman or Hut Bay page (404), Booking.com has no Hut Bay listings, Tripadvisor hotel list returned 403 (not bypassed).",
+        "notes": "Lodging exists (Hut Bay town: Sealand Tourist Home, Greenwood Island Resort, Hotel Sea Breeze, Hotel Sea Land per andamansguide.com; government APWD/Forest guest houses and an ANIFPDCL eco-resort at Butler Bay) but no page printing a rupee tariff was found. One blog (traveltourister.com) printed tariff ranges but labels them 'Sample - verify before traveling', so they were not used."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No union, state or operator rate card found; the only figures (full day 1,500-3,000, Hut Bay to Butler Bay 300-400) come from a blog flagged 'Sample - verify before traveling', not used.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No menu, thali or cost-for-two figure from a verifiable page.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "all lodging tariffs",
+        "taxi/auto rates",
+        "food prices"
+      ]
+    },
+    "long-island-andaman": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Rangat (mainland gateway via Yeratta Jetty)",
+        "price_basis": "No dated or reliably priced tourist lodging. Go2Andaman (updated 6 Mar 2026): 'Only four accommodation options are available, out of which three are government-run' (Surmai Reef, Tapovan Rest House, Vanashree Forest Rest House), generally reserved for government officials and booked in advance via the Divisional Forest Officer, Rangat. The one private option, Blue Planet (about 25 guests, basic rooms), prints only an undated range 'Prices range from 300/night to 1500/night' with no currency stated, which cannot be used as a median.",
+        "notes": "no_lodging here means no publicly priced mainstream lodging; a few basic rooms exist. Island has no restaurants beyond Blue Planet's kitchen and a snack stall near the jetty.",
+        "sources": [
+          "https://go2andaman.com/long-island/",
+          "https://www.andamanislands.com/content/about-long-island"
+        ]
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "andamanislands.com: 'Getting around the island is mostly on foot' (Blue Planet Beach 700 m jungle path); boats to Lalaji Bay arranged through accommodation (Go2Andaman: about 5k per boat of 8, currency unstated). No road taxi service.",
+        "sources": [
+          "https://www.andamanislands.com/content/about-long-island"
+        ],
+        "notes": "Not applicable; ferries and boats are not taxis."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee food prices printed; only 'idli, vada, bhaji' near the jetty and Blue Planet's kitchen.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "any lodging tariff with currency and date",
+        "food prices"
+      ]
+    },
+    "north-bay-island": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Port Blair",
+        "price_basis": "Go2Andaman (updated 5 Mar 2026) FAQ: 'there are no accommodations on the island' and you 'cannot stay on the island overnight'. Andaman Tourism (andamantourism.org, published 14 Jul 2026): 'The island is a protected forest reserve with no accommodation. It is a day trip only'; boats leave from the Rajiv Gandhi Water Sports Complex (Aberdeen Jetty), 10-20 minutes by road from city hotels.",
+        "notes": "Snorkelling islet reached by boat from Port Blair.",
+        "sources": [
+          "https://go2andaman.com/visit/north-bay-island/",
+          "https://www.andamantourism.org/north-bay-island-andaman/"
+        ]
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No roads on the islet; access is by boat from Aberdeen Jetty, Port Blair. No printed taxi fare to the jetty found.",
+        "sources": [],
+        "notes": "Not applicable; boats are not taxis."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Only basic beach snack stalls; pages print no food prices ('Do not come here for a meal').",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "high",
+      "unverified": [
+        "food stall prices",
+        "taxi to Aberdeen Jetty"
+      ]
+    }
+  }
+}

@@ -1,0 +1,535 @@
+{
+  "batch": "B10",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "chennai": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3583,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/maple-tree-hotels-166017?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/gokulam-park-385878?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-belstead-near-us-consulate-2043726?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ginger-chennai-vadapalani-788458?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/treebo-trend-nestlay-airport-alandur-1360950?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/klase-hotels-3946895?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1776,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/balaji-residency-725163?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/green-grande-inn-1360384?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/zingle-stay-airport-2177584?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/venture-park-2366172?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": 650,
+        "dorm_n": 14,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Chennai?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all listed 3-star: Klase Hotels (Guindy) 2327, Treebo Nestlay Airport Alandur 2445, Maple Tree Hotels 3480, Gokulam Park 3685, Ginger Vadapalani 4369, The Belstead 4641; median 3583. Budget: Cleartrip 18-19 Nov 2026 pre-tax, Balaji Residency (Purasaiwakkam) 1740, Green Grande Inn (Choolaimedu) 1771, Zingle Stay Airport (Nanganallur) 1781, Venture Park (Thoraipakkam, 2-star) 2861; median 1776. Dorm: Hostelworld Chennai 'from' dorm-bed rates, undated (14 hostels: 400 to 999, Meriton men's PG excluded), median 650.",
+        "notes": "Hotels outside the city core (Sriperumbudur) and 4-star The Savera (6999) were left out of the 3-star median. Cleartrip's homestay list for Chennai holds hotels and serviced apartments, not homestays, so homestay is null. Some other budget hotels showed 'No rooms available' for 18-19 Nov or 404 on the dated page and were skipped."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2300,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [],
+        "basis": "City Taxi Chennai (Palavanthangal, Chennai 600061) rate card: Chennai local sedan 8 hours / 80 km Rs 2,300; outstation sedan one-way drop Rs 14-15/km, round trip Rs 13/km. Tolls, parking extra. Page undated (copyright 2025). Other Chennai operators quote 1,940 to 2,300 for the same package but were not used as the figure.",
+        "sources": [
+          "https://www.citytaxi.co.in/taxi-tariff-car-rental-rate-card-chennai/"
+        ],
+        "notes": "Operator rate, not a union chart; no Chennai taxi association chart found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 900,
+        "basis": "Slurrp Anna Nagar article (updated 2 Jun 2025), cost for two as printed: Murugan Idli Shop 200, Bhavyam Veg 450, A2B 550, Hotel Saravana Bhavan 600, Chidambaram New Moorthy Cafe 700, Anjappar 700, Sree Akshayam 850. Per person per meal = half: 100 to 425, median 300 x 3 meals = 900 standard. Budget = breakfast at Murugan Idli Shop 100 + lunch at Bhavyam Veg 225 + dinner at A2B 275 = 600.",
+        "sources": [
+          "https://www.slurrp.com/article/south-indian-restaurants-in-chennais-anna-nagar-for-a-delicious-meal-1748862954296"
+        ],
+        "notes": "All seven restaurants are in Anna Nagar; one article, cost-for-two may include drinks and sides."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "homestay price",
+        "Chennai taxi association or union chart",
+        "point-to-point fares",
+        "food from a second source outside Anna Nagar"
+      ]
+    },
+    "coimbatore": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2576,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4535166?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ranis-grand-1329940?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-orbis-731633?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vijai-paradise-sai-baba-colony-711286?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-istay-4064834?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sps-grand-inn-2871448?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1458,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-chanma-international-2181450?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-nahar-manchester-inn-388184?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-spr-inn-711540?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": 594,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Coimbatore?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all listed 3-star: The Acacia Park (Saravanampatti) 2228, Ranis Grand (Gopalapuram, Deluxe Non AC) 2295, The Orbis (Hope College) 2400, Hotel Vijai Paradise 2752, Hotel Istay (Gopalapuram) 2754, TGI SPS Grand (Ram Nagar) 3312; median 2576. Budget: Cleartrip 18-19 Nov 2026 pre-tax, Hotel Chanma International (Ukkadam, 2-star, Non AC) 990, Nahar Manchester Inn (Selvapuram, 2-star) 1458, Hotel SPR Inn (Deluxe Non AC, no star shown) 1500; median 1458. Dorm: Hostelworld Decostel dorm bed 'from' rate, undated, single listing.",
+        "notes": "Excluded from mid: Metro Park Inn (page says both 3-star and 2-star), Hotel City Tower (3-star page prices a Non AC room at 10800, an outlier), Zip by Spree 4079 and 4-star CAG Pride / Zone Connect. Hotel ESS Paradise and Hotel Naveen showed No rooms for 18-19 Nov. No homestay source with a dated price. Dorm n=1: Hostelworld shows a single Coimbatore hostel and its text mentions a different brand, treat as thin."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2520,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Coimbatore Taxi (coimbatoretaxi.com) local duty tariff, Coimbatore city limit 8 hrs / 80 km: Swift Dzire AC or Etios AC fare Rs 2,400 + 5% GST Rs 120 = Rs 2,520; extra hour Rs 250, extra km Rs 12; parking and tolls extra. Tariff undated (site footer 2008-2025).",
+        "sources": [
+          "https://www.coimbatoretaxi.com/localduty-tariff-hour-basis"
+        ],
+        "notes": "Operator tariff page shows no street address. CabBazar's Coimbatore local sightseeing page quotes a lower Rs 2,000 for a Dzire (not used)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 475,
+        "standard_inr": 900,
+        "basis": "Treebo blog (12 Feb 2025) price for two as printed: Aachi Mess (Gandhipuram) 200, Tiffin House (Town Hall) 350, Shree Annapoorna (RS Puram) 400, Hari Bhavanam (Peelamedu) 600, Junior Kuppanna 600, Kites Cafe (Peelamedu) 650. Per person per meal = half. Budget day = Aachi Mess 100 + Tiffin House 175 + Annapoorna 200 = 475. Standard = median of the sit-down five (Tiffin House 175, Annapoorna 200, Hari Bhavanam 300, Junior Kuppanna 300, Kites Cafe 325) = 300 x 3 = 900.",
+        "sources": [
+          "https://www.treebo.com/blog/restaurants-in-coimbatore/"
+        ],
+        "notes": "Single blog source (a hotel-chain blog dated Feb 2025); all six places are in central Coimbatore."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "homestay price",
+        "dorm beyond one listing",
+        "Coimbatore taxi union chart",
+        "outstation per-km and point-to-point fares",
+        "second food source"
+      ]
+    },
+    "trichy": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3671,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/vignesh-residency-3989890?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4265592?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-oxina-lygon-2050800?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/jb-residency-4265221?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/plaza-hotel-trichy-723860?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ramyas-hotel-711183?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 2160,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-susee-park-384553?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/safa-residency-955926?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-apple-park-inn-2048648?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/jk-residency-1339984?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-mayas-743696?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all listed 3-star: Vignesh Residency (Srirangam side) 2373, Hotel Rockfort View by Park Elanza 3076, Hotel Oxina Lygon (Thillai Nagar) 3337, JB Residency 4005, Plaza Hotel (Cantonment) 4249, Ramyas Hotel (Cantonment) 4659; median 3671. Budget: Cleartrip 18-19 Nov 2026 pre-tax, Hotel Susee Park (2-star) 1347, Safa Residency 1925, Hotel Apple Park Inn (2-star) 2160, JK Residency (2-star) 2221, Hotel Mayas 3557; median 2160.",
+        "notes": "Shri Subham Residency (3618) was left out because its cheapest rate includes breakfast. Royal Sathyam, Hotel Temple Inn and others showed No rooms for 18-19 Nov. The Oxina Lygon page text names the property Hotel Le Temps Fort. No homestay or dorm source found (Hostelworld has no Trichy page)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [],
+        "basis": "Trichy Venkateshwara Travels (Alpha Nagar, Karumandapam, Tiruchirappalli 620001): sedan (Etios / Swift Dzire) outstation Rs 14/km AC. Its local package is 10 hrs / 100 km at Rs 3,000 (page labels ambiguous), not an 8 hr / 80 km package, so no local 8h figure is given. Page undated.",
+        "sources": [
+          "https://trichyvenkateshwaratravels.com/call-taxi-in-trichy/"
+        ],
+        "notes": "Other 8h/80km quotes (CabBazar 1,100 to 2,206 with internal conflict, unnamed 1,875 on a directory page) were not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 315,
+        "standard_inr": 825,
+        "basis": "Cost for two as printed: Trichy Vasanta Bhavan (NSB Road) 175 and Banana Leaf (Madurai Road) 300 on travel.india.com (21 Apr 2024); Zomato Trichy listing pages (seen in search-result snippets, page itself timed out when fetched): Sri Rangasbhavan 200, Sethuraman Mess 250, Hotel Temple In 300, Apple Millet Veg 550, Annalakshmi 600, Anjappar Thillai Nagar 600. Per person per meal = half. Budget day = Vasanta Bhavan 88 + Sethuraman Mess 125 + Sri Rangasbhavan 100 = 313, rounded 315. Standard = median of Temple In 150, Banana Leaf 150, Apple Millet 275, Anjappar 300, Annalakshmi 300 = 275 x 3 = 825.",
+        "sources": [
+          "https://travel.india.com/guide/destination/6-best-restaurants-to-eat-in-tiruchirappalli-trichy-6875519/",
+          "https://www.zomato.com/trichy/srirangam-restaurants?veg=1&category=9",
+          "https://www.zomato.com/trichy/thillai-nagar-order-online?delivery_subzone=15501&cft=0",
+          "https://www.zomato.com/trichy/anjappar-thillai-nagar"
+        ],
+        "notes": "The Zomato figures could not be re-opened by fetch; they come from search-result snippets of those pages. The 2024 travel.india.com figures are older."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "local 8h/80km taxi rate from a named Trichy operator or union",
+        "point-to-point fares",
+        "homestay and dorm",
+        "Zomato cost-for-two re-confirmed on page"
+      ]
+    },
+    "pondicherry": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2621,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4296705?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/raj-residency-782486?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ginger-pondicherry-798350?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4497778?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/lotus-bay-view-hotel-3941993?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1650,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-dinn-2043494?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ram-international-276477?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/pondicherry-executive-inn-42953?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ramana-residency-388353?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1764,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/la-courtyard-4285370?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/green-s-guest-house-4275524?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/19-villa-mira-3930331?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ecstasy-homestay-5251191?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 500,
+        "dorm_n": 13,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Pondicherry?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room-only rate pre-tax, all listed 3-star: Le Holiday Inn 1242, Raj Residency 1932, Ginger Pondicherry 2621, Hotel Abirami Residency 2743, Lotus Bay View Hotel 2884; median 2621. Budget: Cleartrip 18-19 Nov 2026 pre-tax, Hotel D'Inn 1063, Hotel Ram International 1400 (cheapest plan includes breakfast), Pondicherry Executive Inn 1900, Ramana Residency (1-star) 2016; median 1650. Homestay: Cleartrip 18-19 Nov 2026 pre-tax room-only, La Courtyard (Kottakuppam) 810, Green's Guest House 1258, 19 Villa Mira (White Town) 2270, Ecstasy Homestay (Ariyankuppam) 3354; median 1764. Dorm: Hostelworld Pondicherry 'dorms from' rates, undated, 13 hostels 300 to 1299, median 500.",
+        "notes": "Pondicherry and Puducherry are the same city market: one research pass, identical figures written to both ids. Left out of mid: 4-star Hotel Annamalai International, Anandha Inn and Shenbaga; and rates that include breakfast (White Pearl Residency 2959, Pondy Southern Residency 2139, Sea Gadabout 4010). Hotel Jayaram (2-star, breakfast plan only) and Alps Residency (no rooms) not used. L'Amby Bay Beach House (2421, breakfast included) left out of the homestay median. Many Pondicherry hotels carry a 3-star label on Cleartrip regardless of quality."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Pondicherry Car (Bird Travel, 12 Gingee Salai, Puducherry-1) local cab page: 8 hours / 80 km Swift Dzire Rs 2,500, Toyota Etios Rs 2,600. Extra km and hour charges not stated. Page undated (footer 2017-2026).",
+        "sources": [
+          "https://pondicherrycar.com/pondicherry-local-cab-taxi-booking.php"
+        ],
+        "notes": "Operator rate, not a union chart; no Pondicherry taxi association tariff found. Same figure written to both pondicherry and puducherry."
+      },
+      "food_per_person_day": {
+        "budget_inr": 550,
+        "standard_inr": 1275,
+        "basis": "FabHotels blog (published 21 Apr 2022, updated 4 Oct 2023) cost for two as printed: Domus 300, Surguru 400, Cafe des Arts 800, Maison Perumal 900, Satsanga 1000, Le Rendezvous 1200. Per person per meal = half: 150, 200, 400, 450, 500, 600; median 425 x 3 meals = 1275 standard. Budget day = Domus 150 + Surguru 200 + Surguru 200 = 550.",
+        "sources": [
+          "https://www.fabhotels.com/blog/restaurants-in-pondicherry/"
+        ],
+        "notes": "Single 2023 blog source; White Town cafes skew the standard figure upward. Same figure written to both pondicherry and puducherry."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Pondicherry taxi association chart",
+        "point-to-point fares",
+        "food from a second or more recent source"
+      ]
+    },
+    "puducherry": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2621,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4296705?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/raj-residency-782486?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ginger-pondicherry-798350?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4497778?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/lotus-bay-view-hotel-3941993?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1650,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-dinn-2043494?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ram-international-276477?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/pondicherry-executive-inn-42953?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ramana-residency-388353?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1764,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/la-courtyard-4285370?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/green-s-guest-house-4275524?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/19-villa-mira-3930331?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ecstasy-homestay-5251191?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 500,
+        "dorm_n": 13,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Pondicherry?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room-only rate pre-tax, all listed 3-star: Le Holiday Inn 1242, Raj Residency 1932, Ginger Pondicherry 2621, Hotel Abirami Residency 2743, Lotus Bay View Hotel 2884; median 2621. Budget: Cleartrip 18-19 Nov 2026 pre-tax, Hotel D'Inn 1063, Hotel Ram International 1400 (cheapest plan includes breakfast), Pondicherry Executive Inn 1900, Ramana Residency (1-star) 2016; median 1650. Homestay: Cleartrip 18-19 Nov 2026 pre-tax room-only, La Courtyard (Kottakuppam) 810, Green's Guest House 1258, 19 Villa Mira (White Town) 2270, Ecstasy Homestay (Ariyankuppam) 3354; median 1764. Dorm: Hostelworld Pondicherry 'dorms from' rates, undated, 13 hostels 300 to 1299, median 500.",
+        "notes": "Pondicherry and Puducherry are the same city market: same market as the pondicherry entry (two ids for one city), figures copied from it. Left out of mid: 4-star Hotel Annamalai International, Anandha Inn and Shenbaga; and rates that include breakfast (White Pearl Residency 2959, Pondy Southern Residency 2139, Sea Gadabout 4010). Hotel Jayaram (2-star, breakfast plan only) and Alps Residency (no rooms) not used. L'Amby Bay Beach House (2421, breakfast included) left out of the homestay median. Many Pondicherry hotels carry a 3-star label on Cleartrip regardless of quality."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Pondicherry Car (Bird Travel, 12 Gingee Salai, Puducherry-1) local cab page: 8 hours / 80 km Swift Dzire Rs 2,500, Toyota Etios Rs 2,600. Extra km and hour charges not stated. Page undated (footer 2017-2026).",
+        "sources": [
+          "https://pondicherrycar.com/pondicherry-local-cab-taxi-booking.php"
+        ],
+        "notes": "Operator rate, not a union chart; no Pondicherry taxi association tariff found. Same figure written to both pondicherry and puducherry."
+      },
+      "food_per_person_day": {
+        "budget_inr": 550,
+        "standard_inr": 1275,
+        "basis": "FabHotels blog (published 21 Apr 2022, updated 4 Oct 2023) cost for two as printed: Domus 300, Surguru 400, Cafe des Arts 800, Maison Perumal 900, Satsanga 1000, Le Rendezvous 1200. Per person per meal = half: 150, 200, 400, 450, 500, 600; median 425 x 3 meals = 1275 standard. Budget day = Domus 150 + Surguru 200 + Surguru 200 = 550.",
+        "sources": [
+          "https://www.fabhotels.com/blog/restaurants-in-pondicherry/"
+        ],
+        "notes": "Single 2023 blog source; White Town cafes skew the standard figure upward. Same figure written to both pondicherry and puducherry."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Pondicherry taxi association chart",
+        "point-to-point fares",
+        "food from a second or more recent source"
+      ]
+    },
+    "auroville": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2300,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://serendipity.auroville.org/accommodation/mid-season-rates/"
+        ],
+        "budget_hotel_median_inr": 1617,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/auro-gp-guest-house-next-to-matrimandir-2862770?c=18112026|19112026&r=2,0",
+          "https://serendipity.auroville.org/accommodation/mid-season-rates/"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": 400,
+        "dorm_n": 7,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Auroville?currency=INR"
+        ],
+        "price_basis": "Mid: Serendipity Guest House (Auroville) printed tariff card, 'AC Comfort Double/Twin, 2 guests' Rs 2,300 per night, GST and Auroville guest contribution included; card undated in practice (table header says Aug 24 to Nov 24, site menu says Aug 26 to Nov 26), not a dated 18-19 Nov price. n=1. Budget: median of Auro GP Guest House (Auroville, next to Matrimandir, 2-star) Cleartrip 18-19 Nov 2026 pre-tax room-only 1233, and Serendipity 'Comfort Double/Twin, 2 guests' printed tariff 2000 (non-AC, attached bath); n=2. Dorm: Hostelworld Auroville page 'dorm from' rates, undated: Travellers Crib 250, Freedom House 400, Aloha Farm 400, Auro Soul 400, Zomad 500, Iyashi artists abode 600, Flycatchers 750; median 400.",
+        "notes": "Official Auroville guest house pages (guesthouses.auroville.org: Creativity, Goodness, Samarpan, Atithi Griha, Aspiration, Discovery, Sincerity, International, Auromode, Centre, Afsanah) print no tariffs, only enquiry forms; Serendipity is the one official page with a rate card. Serendipity has 2 to 7 night minimum stays by booking lead time. Booking.com detail pages did not load. Dorm: two Hostelworld rows explicitly marked Pondicherry (Unearth, goSTOPS) were left out; the exact locations of the other rows were not checked."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [
+          {
+            "route": "Pondicherry Airport to Auroville resorts and hotels (sedan)",
+            "inr": 800
+          }
+        ],
+        "basis": "Pondicherry Call Taxi (No 5-B, Main Road 20th Cross, Krishna Nagar, Lawspet, Pondicherry 605009) local fare page: sedan Pondicherry Airport to Auroville Resorts and Hotels Rs 800, page undated. Pondicherry Car (Bird Travel, 12 Gingee Salai, Puducherry-1) sedan per km: Swift Dzire from Rs 13.5, Etios from Rs 14 (page undated, used as outstation per km, rounded).",
+        "sources": [
+          "https://pondicherrycalltaxi.com/pondicherry-local-taxi-fare/",
+          "https://pondicherrycar.com/puducherry-to-auroville-cab-taxi.php"
+        ],
+        "notes": "No Auroville-own local day rate found; Auroville is visited by cab from Pondicherry. Pondicherry's 8h/80km sedan package is on the pondicherry entry and is not copied here."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No page with a dated rupee menu or clear cost-for-two for several Auroville eateries. Holidify's list prints figures without saying per person or for two; the only clear figure is Rs 240 per Solar Kitchen guest lunch in a 2022 Google review (one meal, not a day).",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "3-star median (only one printed AC tariff)",
+        "dated 18-19 Nov price for Serendipity",
+        "homestay",
+        "local taxi day rate",
+        "food (no usable multi-restaurant rupee source)"
+      ]
+    },
+    "karaikal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2930,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/5066914?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5424320?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4652123?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4271339?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5420630?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 2109,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/kumaran-residency-867854?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room-only rate pre-tax, all listed 3-star: Hotel O Karaikal Beachview 918, Sai Kirshanth Residency 2415, Le Royale Palace 2930, RK Resort 2947, RR Residency (Dharmapuram) 6344; median 2930. Budget: Cleartrip 18-19 Nov 2026, Kumaran Residency (2-star) 2109, n=1.",
+        "notes": "Wide spread (918 to 6344) in a small market with few listings. AVS Imperiaa (3500) left out because its cheapest plan includes breakfast. Harsha's Residency page 404; RR Residency (budget listing) and three other 3-star hotels showed no rooms for 18-19 Nov. No homestay or dorm source."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Karaikal operator page with a printed 8 hr / 80 km sedan price found. Zeo Taxi's Karaikal page names the package but prints no sedan price; Clear Car Rental's page failed its TLS certificate check and was not used.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 490,
+        "basis": "Search-result snippets (the Zomato, Justdial and Tripadvisor pages themselves timed out or returned 403 to fetch): Zomato Karaikal per-person cost Karai Amutham 100, Arasan Veg 100, Amirtham 150; Justdial price for two Majamaja 350, Bombay Meals 500, Hotel Raman 750. Per person per meal: 100, 100, 150, 175, 250, 375; median 162.5 x 3 = 490 standard. Budget = 100 x 3 = 300.",
+        "sources": [
+          "https://www.zomato.com/ml/karaikal/restaurants?category=1",
+          "https://www.justdial.com/Karaikal/South-Indian-Pure-Veg-Restaurants/nct-12520843",
+          "https://www.justdial.com/Karaikal/Bombay-Meals-Karaikal-HO/9999P4368-4368-191231193403-R8M1_BZDET"
+        ],
+        "notes": "Figures could not be re-opened by fetch; treat as low confidence."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Karaikal taxi rate",
+        "homestay and dorm",
+        "budget hotel beyond one listing",
+        "food re-confirmed on page"
+      ]
+    },
+    "courtallam": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2349,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/saaral-resort-381651?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/zamin-resort-4483563?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4672893?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kuttalam-heritage-713573?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4533697?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1638,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/5768016?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-tamilnadu-ttdc-courtallam-2-3963610?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-tamilnadu-ttdc-courtallam-1-3963611?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all listed 3-star resorts: Saaral Resort 2272, Zamin Resort 2277, The Mount View Castle 2349, The Kuttalam Heritage 2869, Five Falls Resort Courtallam (room only) 2890; median 2349. Budget: Cleartrip 18-19 Nov 2026 pre-tax, Hotel O Courtallam Waterfalls (room only, 3-star label) 1006, Hotel Tamilnadu TTDC Courtallam II 1638, Hotel Tamilnadu TTDC Courtallam I 1659; median 1638.",
+        "notes": "The cheapest plan at Saaral, Mount View Castle, Kuttalam Heritage and both TTDC hotels includes breakfast (Zamin's breakfast and room-only prices are equal), so those rates are slightly above room-only. Courtallam's main falls season runs roughly June to September; mid-November is shoulder and falls may be low. Drizzle Residence (4-star), RS Honey Stay (1-star, 3344) and several sold-out resorts were not used. No homestay or dorm source."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Courtallam operator page with a printed local day rate or union chart found. Reke India's Courtallam page offers hourly local cabs but prints no price and no address; Yazhl Drop Taxi's Tenkasi to Courtallam fare (starts from 2100) comes from a drop-taxi template site with no address and was not used.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Courtallam restaurant page with a rupee menu or cost-for-two found; search returned only a Chennai restaurant named after Courtallam parotta.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "taxi day rate and union chart",
+        "food",
+        "homestay",
+        "dorm"
+      ]
+    },
+    "silent-valley": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Mukkali (park gateway; Kerala Forest Department guest house and dormitory, advance booking only, no current tariff found), Mannarkkad, or Agali Hills (about 20 km, private lodges)",
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "No lodging priced.",
+        "notes": "Wikivoyage (https://en.wikivoyage.org/wiki/Silent_Valley_National_Park): 'Tourists are not allowed to stay overnight at the valley; they have to return to Mukkali by evening'; the forest department has a guest house and dormitory at Mukkali, rooms booked in advance, and more lodges are at Agali Hills, 20 km; visitors can also stay at Mannarkkad and hire a jeep to reach Mukkali by 8 AM. The only printed forest guest house tariff found is Outlook Traveller, 16 Jul 2017 (https://site.outlookindia.com/traveller/ot-getaway-guides/silent-valley-national-park/): guest house 1,000 and dormitory 150 per person per day, too old and then under renovation to publish. Mannarkkad and Agali prices were not researched because they are other towns."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "jeep",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Silent Valley National Park safari jeep (vehicle charge per jeep, max 5 people)",
+            "inr": 1600
+          }
+        ],
+        "basis": "Kerala Tourism page for Silent Valley National Park: 'The vehicle charges are Rs. 1600 per jeep that takes a maximum of 5 people'; entry Rs 50 per person; guide INR 150. Page undated. Private vehicles are not allowed into the core area, so there is no local taxi day.",
+        "sources": [
+          "https://keralatourism.travel/silent-valley-national-park-palakkad"
+        ],
+        "notes": "This is the park's own jeep fee, not a Mannarkkad or Mukkali taxi fare. A third-party site quotes about 2,000 for a 5-seater jeep (Sept 2026); not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No restaurant page for Mukkali or Silent Valley found. Wikivoyage/Outlook say the forest guest house serves no food and visitors eat at nearby teashops.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "medium",
+      "unverified": [
+        "current forest guest house and dormitory tariff at Mukkali",
+        "Mannarkkad-to-Mukkali taxi fare",
+        "food"
+      ]
+    }
+  }
+}

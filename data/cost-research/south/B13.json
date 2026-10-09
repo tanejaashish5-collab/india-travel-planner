@@ -1,0 +1,496 @@
+{
+ "batch": "B13",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "thanjavur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2401,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/treebo-trend-naaz-royal-4061539?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sumi-palace-3922531?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5681203?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/pl-a-residency-thanjavur-4481903?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4358796?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/grand-ashok-3981270?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1064,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/5219726?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-tawfeeq-palace-4286726?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-tamilnadu-thanjavur-4264779?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest AC room, pre-tax: Treebo Naaz Royal 1902, Hotel Sumi Palace 1944, G Grand Inn 2133, PL.A Residency 2669, Hotel RAKS 3059, Grand Ashok 3715; median 2401. Budget: Cleartrip 18-19 Nov 2026 pre-tax: Super Collection O New Bus Terminal 1058 (AC), Hotel Tawfeeq Palace 1064 (non-AC), Hotel TamilNadu (TTDC) 1292 (non-AC mini double).",
+    "notes": "Only homestay-tagged Cleartrip listing is Brown Springs Luxury Homestays (single 'Home' villa, 4896 pre-tax 18-19 Nov), not a typical homestay and n=1, so homestay left null. No dorm source found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14,
+    "point_to_point": [],
+    "basis": "Thanjavur Taxi (Royal Travels, phone only, no street address printed, undated) local tariff: no 8 hr/80 km package is printed; closest is 6 hrs/100 km Swift Dzire AC sedan Rs 2,500 (+5% GST, extra hour 350, extra km 14); 12 hrs/200 km Rs 3,900; 4 hrs/40 km Rs 1,800. Outstation sedan Rs 14/km, min 350 km/day plus Rs 400 driver/day.",
+    "sources": [
+     "https://www.thanjavurtaxi.com/localduty-tariff-hour-basis",
+     "https://www.thanjavurtaxi.com/out-station-tariff-km"
+    ],
+    "notes": "2,500 is the 6 hr/100 km package standing in for a local day; pre-GST. Third-party sedan 8h/80km quotes (HJ Cabs from 2,400, JLT Cabz 2,700) are from non-Thanjavur operators and were not used."
+   },
+   "food_per_person_day": {
+    "budget_inr": 260,
+    "standard_inr": 515,
+    "basis": "Holidify Thanjavur restaurant page (undated) cost for two: Marutham 150-200, Sathars 300-350, Sri Venkata Lodge 300-350, Nandhis Homely 350-400. Budget = 3 meals at Marutham (175/2 per meal x3 = ~262). Standard = 3 meals at the avg of the other three (~342/2 per meal x3 = ~513). Restaurant Guru shows Sathars at 200-400 per person (higher), so Holidify figures may be dated.",
+    "sources": [
+     "https://www.holidify.com/places/thanjevur/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Sree Aariya Bhawan (100-120) excluded: its address on the page is Chennai."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "homestay tier (only a luxury villa listed)",
+    "dorm",
+    "true 8 hr/80 km taxi package",
+    "current Zomato/Swiggy cost-for-two (Zomato timed out; Holidify figures undated and likely low)"
+   ]
+  },
+  "srirangam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Tiruchirappalli (Trichy), 5 km",
+    "mid_median_inr": 2373,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/vignesh-residency-3989890?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Vignesh Residency, Executive Room (AC) Rs 2,373 pre-tax (+163 taxes), Cleartrip detail page 18-19 Nov 2026, 2 adults. n=1. Property description: within 1.4 km of Sri Ranganathaswamy Temple; a guest review places it at the outer gopuram entrance to Srirangam; page locality reads only 'Trichy 620006'.",
+    "notes": "Srirangam has its own hotels, but Cleartrip's Srirangam list page is just the Trichy list (no Srirangam-located property in it), so only one Srirangam-area hotel could be priced for 18-19 Nov. The Scarlet Srirangam and KVM Hotels (both Srirangam) showed 'No rooms available' on Cleartrip for 18-19 Nov 2026. Booking.com prices via browser mixed apartments and different room types and were not used. Homestay/apartment stays exist (Jyothi Suites, Srirangam Homestay, Kaya Service Apartment) but no clean double-room price."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Srirangam-specific or Trichy union rate found from a non-template source. Srirangam is covered by Trichy local sightseeing cabs; the only Trichy quote located (onedaytrip.in) is a template-style site and was not used.",
+    "sources": [],
+    "notes": "Leave null; Trichy city figures should come from the Trichy batch if any."
+   },
+   "food_per_person_day": {
+    "budget_inr": 280,
+    "standard_inr": 450,
+    "basis": "Zomato Srirangam cost for two (search-result snippets; Zomato pages timed out when fetched): Sri Ammami Mess 150, Sri Rangasbhavan 200, Sree Madappalli 200, Hotel Sri Hayagriva 200 (also shown on district.in and magicpin pages I fetched) = budget, avg 188 for two = ~94 per meal x 3 = ~280. Standard: Hotel Temple In (multi-cuisine sit-down) 300 for two = 150 per meal x 3 = 450. Meat And Eat (400) excluded as a grill specialist.",
+    "sources": [
+     "https://www.district.in/dining/trichy/hotel-sri-hayagriva-srirangam",
+     "https://www.zomato.com/trichy/sri-ammami-mess-srirangam",
+     "https://www.zomato.com/trichy/sri-rangasbhavan-srirangam",
+     "https://www.zomato.com/trichy/sree-madappalli-srirangam",
+     "https://www.zomato.com/trichy/hotel-temple-in-srirangam"
+    ],
+    "notes": "Standard rests on a single venue."
+   },
+   "confidence": "low",
+   "unverified": [
+    "budget tier",
+    "homestay tier",
+    "dorm",
+    "taxi day rate",
+    "food standard tier is one venue; Zomato pages unopened",
+    "only 1 Srirangam hotel priced for 18-19 Nov"
+   ]
+  },
+  "mudumalai": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 5850,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4293408?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-tiger-paw-resort-716461?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/nest-inn-3975208?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/jungle-paradise-farm-and-guest-house-3975449?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/bamboo-banks-farm-guest-house-327542?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2000,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/tamarind-tree-resorts-3962072?c=18112026|19112026&r=2,0",
+     "https://gotirupati.com/mudumalai-accommodation/"
+    ],
+    "homestay_median_inr": 6984,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/4563389?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": 185,
+    "dorm_n": 4,
+    "dorm_sources": [
+     "https://gotirupati.com/mudumalai-accommodation/"
+    ],
+    "price_basis": "Mid: Masinagudi/Mudumalai buffer-zone 3-star properties, Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room, pre-tax: Safari Land Resort Deluxe AC 2,415 (room only), The Tiger Paw Resort Triple Room 3,284 (breakfast incl.), Nest Inn Deluxe Double 5,850 (room only), Jungle Paradise Farm Basic Room 6,120 (room only), Bamboo Banks Farm & Guest House Deluxe Double 7,204 (breakfast incl.); median 5,850 (the three room-only rates alone also give 5,850). Budget: Aranyasun (listed as tamarind-tree-resorts) Double Room with Garden View 2,160 (Cleartrip 18-19 Nov 2026, room only, pre-tax); TN Forest Dept Abhayaranyam Rest House I 2,000 and Sylvan Lodge I 1,200 per 2-bed room (tariff card as copied by gotirupati.com, undated, page about 3+ years old, so likely stale); median 2,000. Homestay: Wild Tusker Homestay Masinagudi by LexStays Deluxe Double 6,984 pre-tax, breakfast incl., Cleartrip 18-19 Nov 2026, n=1. Dorm: forest dept dormitory room rate divided by beds (tariff card, undated): Theppakadu Dormitory I 1,880/8 = 235, Sylvan Dormitory 2,820/12 = 235, Peacock Dormitory I 1,350/10 = 135, Minivet Dormitory I 810/6 = 135; median 185 per bed.",
+    "notes": "Room-only rates used; the full-board jungle-lodge packages were not used. Two of five mid rates include breakfast. Forest-dept rooms need a separate entry fee/eco charge on top of the room rate and are first-come; official portal mudumalaitigerreserve.com/room-tariff showed no table when fetched. Other listings (Singaras Coffee Country 4-star 6,100 RwB, Midway Jungle Resort 4-person room 5,040) excluded as 4-star / not a double room. Several Cleartrip properties were sold out or 404 for 18 Nov."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Ooty to Mudumalai/Masinagudi sightseeing day package, sedan (Etios)",
+      "inr": 2800
+     }
+    ],
+    "basis": "MyOotyTours (Ooty operator, phone and email only, no street address, undated) Mudumalai package: Indigo sedan 2,400, Etios sedan 2,800, Innova 4,000; covers Carnhill Forest, Bison Valley, Masinagudi, Mudumalai Sanctuary, Stephen's Church. This is an Ooty-based day trip, not a local Mudumalai day, so the local figure is null. Safaris inside the park are forest-dept vehicles, not cabs.",
+    "sources": [
+     "https://www.myootytours.com/travels.php"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee cost-for-two or menu prices found for any Masinagudi/Theppakadu eatery; Tripadvisor shows only price bands, which the brief excludes.",
+    "sources": [],
+    "notes": "Most visitors eat at their lodge, whose meal plan is not a food basis."
+   },
+   "confidence": "low",
+   "unverified": [
+    "food",
+    "local taxi day rate",
+    "current forest dept tariff (only third-party copy found, undated)",
+    "official portal table",
+    "only 1 homestay priced"
+   ]
+  },
+  "anamalai": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Pollachi (about 50-65 km); Valparai is a separate destination",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No printed tariff found for Top Slip lodging.",
+    "notes": "Top Slip has only Tamil Nadu Forest Department rest houses and cottages (Wood House, Chital, Ambully Illam, Bison Lodge, Horn Bill Lodge, Bamboo Hut, Tree Top, Pillar Top, Dormitory per tnpds.org.in/topslip-pollachi, no rates printed there). The official ATR booking page atrpollachi.org/booking shows 'Booking Closed' and no rates. Tripadvisor reviews quote Tree Top 2,500-3,500 and Bamboo Hut 1,500 but those pages returned 403 and are undated, so not used. No private hotels were found inside Top Slip; private stays are in Valparai/Pollachi."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "jeep / sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Pollachi to Topslip one-way sedan (about 50 km)",
+      "inr": 1399
+     },
+     {
+      "route": "Pollachi Topslip day trip by open jeep, up to 5 persons, excl. tolls, entry, checkpost fees",
+      "inr": 3500
+     },
+     {
+      "route": "Pollachi Topslip evening ride after 3 pm by open jeep",
+      "inr": 3300
+     }
+    ],
+    "basis": "Red Taxi Pollachi page (phone only, no address, undated): Pollachi to Topslip 50 km sedan 1,399, mini 1,299; extra km 13/km. Pollachi Jeep Tourism (79/1 Chellamutu Nagar, Zamin Uthukuli, Pollachi 642004; undated tariff): Topslip/Parambikulam day trip 3,500, evening ride 3,300. No local 8 hr/80 km rate printed for the Top Slip area.",
+    "sources": [
+     "https://www.redtaxi.co.in/pollachi-cab-booking",
+     "https://www.pollachijeeptourism.com/tariff"
+    ],
+    "notes": "Inside the reserve, travel is by forest-dept safari vehicle, not by hired cab."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two data for Top Slip; forest rest-house canteens and the nearest Pollachi eateries were not priced.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "all stay tiers (forest tariff not printed anywhere fetchable)",
+    "local taxi day rate",
+    "food"
+   ]
+  },
+  "point-calimere": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Vedaranyam (about 9-15 km); Velankanni (about 40 km) for hotels",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No dated or printed room price found.",
+    "notes": "Overnight stay at the sanctuary is the Forest Rest House (Thamppuswamy Illam / Flamingo House) booked via the Wildlife Warden, Nagapattinam, tel 04365-253092; search results gave no tariff. Cleartrip has no Kodikkarai or Vedaranyam list page (both returned 404). The only commercial hotels are in Vedaranyam and Velankanni, not at the sanctuary, so no tier is priced for Point Calimere itself."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Only a 2013 blog quote (Vedaranyam taxi to the sanctuary, round trip Rs 600) was found: too old to use.",
+    "sources": [],
+    "notes": "Reviews say private cars are no longer allowed inside; a forest-dept van is used. Fares are unconfirmed."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No eateries with rupee prices found at Kodikkarai.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "all stay tiers",
+    "taxi",
+    "food",
+    "forest rest house tariff (phone-only)"
+   ]
+  },
+  "vedanthangal": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Chengalpattu / Madurantakam (day trip from Chennai, about 86 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No current room price found at Vedanthangal.",
+    "notes": "No commercial hotel or homestay in the village. The only on-site stay is the Forest Rest House (4 AC rooms, 1 km from the gate; booked via the Wildlife Warden, Chennai, or the Range Officer). Its only printed tariff is Rs 770 in an Outlook Traveller article dated 17 Jul 2017 (outlookindia.com/traveller/ot-getaway-guides/vedanthangal-bird-sanctuary): nine years old, so not used as a current price. Cleartrip has no Vedanthangal list page (404)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Chennai to Vedanthangal Bird Sanctuary day trip, private AC sedan, 12 hrs / 300 km, pickup and drop in Chennai",
+      "inr": 5280
+     }
+    ],
+    "basis": "Trodly activity page (marketplace, undated, no operator address): AC sedan (Dzire/Etios) Rs 5,280 per vehicle incl. driver, fuel, 300 km; extra Rs 13/km beyond 300 km; Rs 450 night charge. Local day rate not applicable: the sanctuary is a 2-3 hour visit.",
+    "sources": [
+     "https://www.trodly.com/activity-3875-vedanthangal-bird-sanctuary-day-tour-from-chennai"
+    ],
+    "notes": "A Clear Car Rental page (Chennai to Vedanthangal sedan 4,200, Aug 2025 per search snippet) could not be opened (TLS certificate error) and was not used."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only tea shops and food vendors at the gate; no rupee menu or cost-for-two found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "all stay tiers (only a 2017 forest rest house tariff exists)",
+    "local taxi",
+    "food"
+   ]
+  },
+  "palani": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3119,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4532000?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sr-palani-4485847?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4533767?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/velan-view-3943299?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5220410?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/ponnis-hotel-4280359?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-amoha-4274981?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1159,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/arunaachalaa-inn-739728?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/jayam-hotel-2432570?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/edenapark-1331700?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-amirtham-inn-1509654?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670734?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 3-star detail pages 18-19 Nov 2026, 2 adults, cheapest room, pre-tax: Hotel Amoha 1,375 (AC), Velan View 1,999, SR Palani 2,737 (breakfast incl.), Ponnis Hotel 3,119 (AC), Nakshathra 3,143, Regency Palani by GRT 3,145 (AC), Hotel Ganpat Grand 4,018 (AC); median 3,119. AC status not shown on every room. Budget: Cleartrip 18-19 Nov 2026 pre-tax: Arunaachalaa Inn 754 (non-AC), Jayam Hotel 1,120 (non-AC), EdenAPark 1,159 (fan room), Amirtham Inn 1,368 (AC), Sri Jawahar's Residency 1,620 (AC, breakfast incl.); median 1,159.",
+    "notes": "Pilgrim town. 18-19 Nov is a Wednesday and not a listed festival date, but Karthigai season and Sabarimala-season pilgrim traffic can lift rates. Kandhaguru Residency, Elite Residency, Dhivyam Residency, VPS Grand and the one homestay (Honeycomb) were sold out or unavailable for 18-19 Nov. Temple devasthanam dharamshala rooms were not priced."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Palani to Kodaikanal one-way sedan (about 65 km)",
+      "inr": 1802
+     }
+    ],
+    "basis": "Gozo Cabs Palani to Kodaikanal page (live-fare page, no fixed date): Dzire-type sedan Rs 1,802 before GST, about 65 km; reference rate from Rs 12.75/km. Palani is a temple town and tourists do not hire cabs by the day for local sightseeing; no local 8 hr rate from a non-template source was found.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/palani-kodaikanal"
+    ],
+    "notes": "EaseMyTrip shows sedan 2,140 for 66 km with Rs 19/km extra on the same route; not used."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 525,
+    "basis": "Zomato Palani listing (search-result snippet; page itself timed out when fetched) prices are 'for one' meal: Gowri Krishna 100, Shri Kandhas Annalaya 100 (budget); Shree Lakshmi Bhavan 150, S R Pure Veg 150, Hotel Sri Annavaasal 200, Thaqwa Family Restaurant 200 (standard). Budget = 3 meals x 100 = 300. Standard = 3 meals x avg 175 = 525. Dindigul Thalappakatti (400) excluded as non-typical.",
+    "sources": [
+     "https://www.zomato.com/palani/restaurants"
+    ],
+    "notes": "Single-source and unverified by direct fetch."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "homestay",
+    "dorm",
+    "local taxi day rate",
+    "food figures come from a Zomato snippet I could not open"
+   ]
+  },
+  "pazhamudircholai": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Madurai (about 28 km); Alagar Kovil Road resorts closer",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No lodging at the hill temple.",
+    "notes": "Pazhamudircholai is a hill temple in the Alagar Hills reserve forest. The temple page lists only Madurai hotels under 'Nearby Hotels' and gives the distance from Madurai as 28 km (visittemples.com). No lodging was found at the temple itself; stays are in Madurai or on Alagar Kovil Road."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "Madurai one-day sightseeing incl. Kallalagar Kovil (Alagar Kovil) and Pazhamudircholai, sedan 12 hrs / 100 km",
+      "inr": 3300
+     }
+    ],
+    "basis": "Abi Tourism (Madurai operator, phone/WhatsApp/email only, no street address, undated): sedan (Dzire/Etios) Rs 3,300 for 12 hrs / 100 km incl. fuel, driver allowance, toll, parking; extra Rs 12/km after 100 km, Rs 100/hr after 12 hrs. Itinerary lists Kallalagar Kovil and Pazhamudircholai. This is a Madurai-based day package, not a local rate.",
+    "sources": [
+     "https://abitourism.com/madurai-local-sightseeing-tour-package-1-day"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No eateries at the temple site priced; hill temple with canteen only.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "food",
+    "local taxi from a Pazhamudircholai-specific source"
+   ]
+  },
+  "swamimalai": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Kumbakonam (about 6 km)",
+    "mid_median_inr": 3360,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/indeco-hotels-swamimalai-3934071?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1185,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-namaskar-718402?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Indeco Hotels Swamimalai, cheapest room '1896 Heritage Village Suite' Rs 3,360 pre-tax (+1,760 taxes), breakfast incl., Cleartrip 18-19 Nov 2026, 2 adults; n=1; Cleartrip locality reads Baburajapuram, Kumbakonam 612302 (same pincode as Swamimalai). Budget: Hotel Namaskar (67 Thirumanjana St, at the temple entrance), Deluxe Room AC Rs 1,185 pre-tax (+135 taxes), Cleartrip 18-19 Nov 2026; n=1.",
+    "notes": "Swamimalai has a few own small lodges (Hotel Namaskar, Hotel Alagappa, Visvam Guest House per search snippets) but only Namaskar and Indeco could be priced for 18-19 Nov; none of the Kumbakonam hotels were used. Indeco is a heritage resort, so the mid figure is above a plain 3-star."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 1750,
+    "vehicle": "not stated (likely sedan)",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [],
+    "basis": "KJT Cabs, BSNL Office, No:10 Mothilal St, near Railway station, John Selvaraj Nagar, Kumbakonam 612001 (rates undated, footer 2025): local packages from Rs 1,350 (3 hrs/50 km), 1,750 (6 hrs/100 km), 2,950 (9 hrs/150 km), 3,500 (12 hrs/200 km); km measured from Kumbakonam station; cab bookings from Rs 12/km. No 8 hr/80 km package printed, so the 6 hr/100 km 'from' rate is the closest local-day figure.",
+    "sources": [
+     "https://kjtcabs.com/"
+    ],
+    "notes": "Swamimalai is a suburb of Kumbakonam; local cabs operate from Kumbakonam. Vehicle type is not stated and prices are 'from'."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Rupee data found only for Kumbakonam eateries (not Swamimalai), so left null per the no-reuse rule.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay",
+    "dorm",
+    "food",
+    "vehicle type of KJT packages",
+    "n=1 on both stay tiers"
+   ]
+  }
+ }
+}

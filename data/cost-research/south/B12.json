@@ -1,0 +1,517 @@
+{
+  "batch": "B12",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "madurai": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2717,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/madurai-residency-42595?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/mani-s-residency-2355338?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-grand-sabarees-4273856?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/cosmopolitan-hotel-2855410?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/heritage-residency-3924245?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-elements-inn-4672638?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1164,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-vijay-707370?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4270900?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-duke-744390?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sri-arulmuthu-residency-745320?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1702,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/5681294?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4491768?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4672495?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 550,
+        "dorm_n": 2,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Madurai?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, room only, all labelled 3-star: Madurai Residency 2730, Mani's Residency 2210, Grand Sabarees 2859, Cosmopolitan 2737, Heritage Residency 2703, Elements Inn 1769; median 2717. Budget: Cleartrip 18-19 Nov 2026 pre-tax: Hotel Vijay 1044 (non-AC, tagged 2-star), Hotel Tamilnadu TTDC Madurai II 1078 (non-AC double, tagged 3-star), Hotel Duke 1249 (non-AC, tagged 3-star), Sri Arul Muthu Residency 2075 (Deluxe, page calls it a budget hotel); median 1164. Homestay: Cleartrip 18-19 Nov 2026 pre-tax, properties typed 'Homestay' by Cleartrip: Aishwaryam 2394, The Alp Hotel 1702, Le Grace Anna Nagar 1055; median 1702. Dorm: Hostelworld 'dorms from' Kattil Rs550 and Thuyil Inn Koodal Rs549, undated.",
+        "notes": "Not used in mid median: Viswa Residency by Azalea 2020 (cheapest rate includes breakfast), CR Grande 3244, Gopuram Grand, Poppys (4-star), Heritage Madurai (5-star). Hotel Rajadhane, Arasan Sapthagiri, Templecity Dreamz Inn, Hotel Times and Hotel Boopathi showed no rooms for 18-19 Nov. Cleartrip's homestay category in Madurai is mostly small hotels and serviced apartments, not family homestays. Several budget rows are non-AC. Madurai is a pilgrim town with many lodges beyond OTAs; these are OTA-listed properties only."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2450,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [],
+        "basis": "Madurai City Cabs (2/8 Tamilsangam Road, Madurai 625001) tariff page: sedan (Etios/Dzire/Xcent) 8 hr/80 km Rs 2,400; outstation sedan Rs 14/km round trip, Rs 15/km one way, driver allowance Rs 400. maduraitaxi.com 'Madurai City Local' 8 hrs/80 km: Swift Dzire/Etios A/c Rs 2,500 base (Rs 2,625 with 5% GST), toll and parking extra. Figure is the midpoint of the two base rates (2,400 and 2,500). Both pages undated.",
+        "sources": [
+          "https://maduraicitycabs.in/tariff",
+          "https://www.maduraitaxi.com/localduty-tariff-hour-basis"
+        ],
+        "notes": "No taxi association chart found. No point-to-point fares printed on either page."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 600,
+        "basis": "Holidify Madurai food article, 'cost for two' as printed (undated, approx.): Murugan Idli Shop 250, Sri Nagalakshmi Annexe 200, Burma Idiyappam Kadai 200, kothu parotta push-carts 200 give about Rs 100 per person per meal, x3 = 300 budget. Konar Mess 400, Amma Mess 400, Chandra Mess 400 give about Rs 200 per person per meal, x3 = 600 standard.",
+        "sources": [
+          "https://www.holidify.com/pages/food-in-madurai-2049.html"
+        ],
+        "notes": "Single undated blog source with approximate figures; prices have likely risen since. Zomato timed out, Restaurant Guru pages show no menu prices."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Taxi association/union rate chart",
+        "Dated Zomato/Swiggy cost-for-two for Madurai restaurants",
+        "Madurai to Rameswaram/Kodaikanal point-to-point fares from a non-template source"
+      ]
+    },
+    "rameswaram": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2234,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-elite-4281227?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4263979?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-harish-palace-4283350?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4294166?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vinayaga-by-poppys-rameswaram-311061?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-rameswaram-grand-2050424?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1406,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-aalayam-rameshwaram-4264783?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-saraa-2649370?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-harish-712294?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-tamilnadu-rameswaram-4264774?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-hare-rama-hare-krishna-298137?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star and AC: Hotel Elite 2291, Sree Kumaran Residence 1850, Hotel Harish Palace 1638, Hotel Surya Empire 2375, Vinayaga by Poppys 3466 (room only), Hotel Rameswaram Grand 2177; median 2234. Budget: Cleartrip 18-19 Nov 2026 pre-tax: Hotel Aalayam 610 (non-AC, tagged 3-star), Hotel Saraa 1168 (AC, 2-star), Hotel Harish 1406 (AC, 2-star), Hotel Tamilnadu TTDC 1539 (Mini Double non-AC, tagged 3-star), Hotel Hare Rama Hare Krishna 1643 (2-star, AC not stated); median 1406.",
+        "notes": "Not used in mid median: JB Residency 4785 (AC not stated for the room), Hotel Arjunaa, Jiwan Hotels and Residency Towers (list prices far above the rest, not opened), Daiwik (4-star). No rooms for 18-19 Nov at NNP Grand, Temple Towers, Queen Palace and MCM Towers. The only Cleartrip homestay (Yatra's HomeStay Rameswaram 2) was sold out, so no homestay figure. Hostelworld Rameswaram page returned 404, so no dorm. Rameswaram is a pilgrim town with many unlisted lodges and dharamshalas; OTA rows cover only part of supply."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Rameswaram to Dhanushkodi, round trip, sedan",
+            "inr": 1600
+          }
+        ],
+        "basis": "Varahi Cabs (Sannathi Street, V.O.C Nagar, Rameswaram 623526) FAQ, undated: Rameswaram to Dhanushkodi round trip sedan Rs 1,600 (Tavera/Lodgy 1,900, Innova 2,300, Tempo 2,700).",
+        "sources": [
+          "https://varahicabs.in/"
+        ],
+        "notes": "Same page gives 'Cost of Rameswaram trip' sedan Rs 2,200 but does not say what it covers, so it is not used as a local day rate. No taxi association chart or TTDC car tariff found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 413,
+        "standard_inr": 600,
+        "basis": "Zomato 'cost for two' (pre-tax), per-meal figure = cost for two / 2, x3 meals. Budget: Hotel Ruchi 200, Jeya Sea Food 250, Sai Sabari Veg 300, Arudra Veg 300 = Rs 100-150 per person per meal, median 137.5, x3 = 413. Standard: Thaagam Restaurant 400, Pugazh Restaurant 400 (Justdial 450) = Rs 200 per person per meal, x3 = 600 (n=2).",
+        "sources": [
+          "https://www.zomato.com/rameswaram/hotel-ruchi-rameswaram-locality",
+          "https://www.zomato.com/rameswaram/jeya-sea-food-restaurant-rameswaram-locality",
+          "https://www.zomato.com/rameswaram/sai-sabari-veg-restaurant-rameswaram-locality",
+          "https://www.zomato.com/rameswaram/arudra-veg-restaurant-rameswaram-locality",
+          "https://www.zomato.com/rameswaram/thaagam-restaurant-2-rameswaram-locality",
+          "https://www.justdial.com/Rameswaram/Pugazh-Restaurant-Rameswaram-ho/9999P4573-4573-221013202359-Q6V8_BZDET"
+        ],
+        "notes": "Cost-for-two values were read from search-result snippets; the Zomato pages timed out when fetched directly. Standard tier rests on only two restaurants."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local sightseeing day rate for a sedan",
+        "Taxi association or TTDC car tariff",
+        "Homestay and dorm prices",
+        "Zomato values re-checked by direct page fetch"
+      ]
+    },
+    "mahabalipuram": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2189,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/mamalla-beach-resort-717169?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-mahabs-378287?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/nirvana-boutique-hotel-2628566?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561761?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/bay-inn-3928126?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ramakrishna-707437?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star: Mamalla Beach Resort 3680 (Deluxe AC, room only), Hotel Mahabs 1632 (AC), Nirvana Boutique Hotel 2158 (AC), Joe Beach Resort 3157 (AC, room only), Bay Inn 2220 (AC per property description), Hotel Ramakrishna 1764 (Compact Room AC); median 2189.",
+        "notes": "Left out of the mid median: Hotel Mamallaa Heritage 3240 (cheapest rate includes breakfast), Hotel Pallava Dynasty 1912 (cheapest room lists a fan, not AC), and resorts priced 6,000 and up on the list page (Blue Bay, Bodhiwoods, Madras Chronicle Bay, Landmark Pallavaa, Shelter, Golden Sun, Dreams) which were not opened. Budget tier left null: Vinodhara Guest House, Rajalakshmi Guest House and Daphne Hotel showed no rooms for 18-19 Nov, and other budget detail pages (Greenwoods, Sea Breeze Annexe, Lakshmi Cottage, Suradeep, Vilasam) returned 404, so no dated budget price was seen. Cleartrip's homestay page held only hotels and resorts. Hostelworld has no Mahabalipuram page."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Chennai to Mahabalipuram and ECR sights (Muttukadu, Crocodile Bank, Shore Temple, Pancha Rathas), full day 8 AM to 9 PM, sedan",
+            "inr": 4200
+          }
+        ],
+        "basis": "Rajamanickam Tours & Travels (No 5/3, 67th Street, 11th Avenue, Ashok Nagar, Chennai 600083) Mahabalipuram local sightseeing page, undated (copyright 2026): Swift Dzire/Etios AC half day Rs 3,800 and full day Rs 4,200, including fuel, driver bata, toll and parking. The itinerary starts and ends in Chennai, so it is a Chennai package, not a Mahabalipuram local rate.",
+        "sources": [
+          "https://www.tamilnadu-temple-tour-packages.in/mahabalipuram-local-sightseeing/"
+        ],
+        "notes": "No Mahabalipuram-based taxi union or operator rate for a local 8 hr day was found; the other results were Chennai transfer fares from template-style cab sites, which are not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 619,
+        "standard_inr": 938,
+        "basis": "Holidify Mahabalipuram restaurants page, 'cost for two' as printed (undated): budget Rose Garden 100, Mamalla Bhavan 400, Freshly 'n Hot 400-450 (425 used), Joe's Cafe 500 = Rs 50-250 per person per meal, median 206, x3 = 619. Standard: Nautilus 550, Moonrakers 600, Le Yogi 650, Gecko 700 = Rs 275-350 per person per meal, median 312.5, x3 = 938.",
+        "sources": [
+          "https://www.holidify.com/places/mahabalipuram/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Single undated source. Several Holidify entries print a bare number without 'INR' or 'for two'; read here as cost for two. Rose Garden (100 for two) pulls the budget median down; tourist-strip places cost more. Zomato and EazyDiner show higher values (Moonrakers 700-800, Motel Mamalla Veg 800 for two) so true budget cost may be higher."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay and dorm prices for 18-19 Nov",
+        "Mahabalipuram-based local taxi day rate",
+        "Dated or direct Zomato values for restaurants"
+      ]
+    },
+    "kanchipuram": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2638,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/sbk-park-inn-4484057?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-milestonnez-722842?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ssk-grand-kanchipuram-4281914?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-paradise-hotel-3989871?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535280?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5421172?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1851,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/sau-residency-3981253?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4294214?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/priyanka-residency-3980642?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sri-selvaas-inn-5254299?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star hotels with AC: SBK Park Inn 2070, Hotel Milestonnez 2852, Hotel SSK Grand 2424 (rate includes breakfast), The Paradise Hotel 4229, T.M. Inn Hotel 3225, Ragha Residency 1757; median 2638. Budget: Cleartrip 18-19 Nov 2026 pre-tax: SAU Residency 1714 (3-star guest house, AC), Priyanka Residency 1840 (2-star, AC), TCS Residency 1862 (2-star, AC), Sri Selvaas Inn 1911 (AC only in select rooms); median 1851.",
+        "notes": "Not used in mid: TM Inn 2709 (AC not confirmed for the room), Paradise Kingdom, Paradise Platinum, SSK Grand (list prices 3,400-4,700 not opened), Royal Stay villa 3770 (private villa), 4-star GRT Regency and MM Legacy. Kanchi Heritage Inn showed no rooms; Nalan Hotels, SSK Residency, AKG Lodge, M M Hotels, SSK Inn and Rajam Lodge detail pages returned 404. No homestay row: Cleartrip's homestay page holds only hotels and one villa. Hostelworld Kanchipuram page returned 404. Kanchipuram is a silk and temple day-trip town from Chennai, so supply is limited."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": null,
+        "sources": [],
+        "notes": "No usable rate. EaseMyTrip's Kanchipuram page showed sedan 8 hr/80 km fares of 2,639 / 2,890 / 3,246, but its Yercaud page showed the identical three fares, so the figures are a template and are not used. MakeMyTrip pages timed out. Kanchi Call Taxi (No 7, near Nagareshwarar Kovil, Kanchipuram 631501) prints no sightseeing fare."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": 525,
+        "basis": "Holidify Kanchipuram restaurants page, 'cost for two' as printed (undated): Adyar Ananda Bhavan INR 350, Hotel Saravana Bhavan 350 (no currency shown), Sarvana Bhawan INR 200 to 500 (350 midpoint) = about Rs 175 per person per meal, x3 = 525.",
+        "sources": [
+          "https://www.holidify.com/places/kanchipuram/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Only one budget row (Hotel Sakthi Ganpati INR 100 for two), too thin to set a budget figure, so left null. Single undated source. Zomato pages timed out."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Homestay and dorm prices",
+        "Any non-template taxi rate for Kanchipuram",
+        "Budget food figure",
+        "Direct Zomato values"
+      ]
+    },
+    "kumbakonam": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2361,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/ras-residency-4491659?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vinayaga-by-poppys-kumbakonam-353579?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-royal-retreat-5293450?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4700308?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5061936?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5681447?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, room only, all labelled 3-star with AC shown for the room: RAS Residency 2841, Vinayaga by Poppys 2292, The Royal Retreat 2550, PL.A Residency 2430, Hotel Lynx 1410, Raya raj Anugraha 1189 (AC double, original price 2121); median 2361.",
+        "notes": "Left out of mid because AC was not shown for the cheapest room: Lee Benz-Ark 3233, Kings Bury Inn 2485, Hotel Diamond 2314, Hotel Raya's Annexe 1 2754. Budget tier left null: Cleartrip 18-19 Nov showed only Hotel Chela 1185 (non-AC, 1-star); Sivamurugan, Le Garden Inn, Ananda Residency, Hotel Green Park, MP Temples Inn and Kumbakonam Home Stay had no rooms; Jeyam, Kasi International, Vekaay's, Hotel Metro, Venkadaramana Towers and PLA Residency (budget list) returned 404. Homestay tier left null: only Riverside Homestay 1140 (2-star) and Ponni Homestay 4319 (3-star) priced for 18-19 Nov, too far apart for a median of 2. Hostelworld not checked for dorm (no hostel found on Cleartrip lists)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Kumbakonam Navagraha temple circuit, full day, 4+1 AC sedan (Etios/Dzire)",
+            "inr": 4796
+          }
+        ],
+        "basis": "KJT Cabs (BSNL Office, No 10, Mothilal Street, near railway station, John Selvaraj Nagar, Kumbakonam 612001), footer 2025, undated: Navagraha package for 4+1 AC sedan from Rs 4,796 (Rs 1,199 per seat, includes fuel, driver allowance; toll, permit, parking extra); cab booking from Rs 12/km. Temple Travels (11 HM Complex, TSR Big St, Valayapettai Agraharam, Kumbakonam 612101), post dated 21 Jul 2025: sedan (Etios, Amaze) Rs 12 to 15 per km; per-km figure 13 is the midpoint of that range.",
+        "sources": [
+          "https://kjtcabs.com/",
+          "https://templetravels.in/blog/car-travels-in-kumbakonam/"
+        ],
+        "notes": "No local 8 hr/80 km sedan rate printed by a Kumbakonam operator. Kumbakonam Friends Track Call Taxi (No 1851 Main Road, Annai Anjugam Nagar) prints no fares. Other Navagraha package quotes (2,500 to 6,000) vary widely and are not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 675,
+        "basis": "GoKumbakonam veg-restaurants guide, rupee ranges as printed (the Mangalambiga row says per person; the table does not label the others): budget places Mangalambiga Coffee and Tiffin Centre 100-200, Mangalambika Vilas 100-200, Maami Mess 100-200, Venkatramanaa Hotel 120-250 = midpoints 150, 150, 150, 185, median 150 per meal, x3 = 450. Standard: Rayas Garden 200-400 (300), Navarasa Veg 150-300 (225), Venkatramanaa 120-250 (185), median 225, x3 = 675.",
+        "sources": [
+          "https://gokumbakonam.in/veg-restaurants-in-kumbakonam/"
+        ],
+        "notes": "Single local blog source, undated, vegetarian places only; per-meal reading of the ranges is an assumption."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay and dorm medians for 18-19 Nov",
+        "Local 8 hr sedan rate from a Kumbakonam operator",
+        "Zomato or menu-based food figures"
+      ]
+    },
+    "chidambaram": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2670,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/arudhra-residency-869838?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5681399?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5424808?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4363971?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535020?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star: Arudhra Residency 2002 (3-star guest house, Double Bed Room AC), Anbu Grand Inn 2492 (Deluxe, room AC not stated), Hotel Tamilnadu Chidambaram 2670 (Executive Room A/C), The Grand Park 2829 (Standard Double with breakfast, AC not listed; its AC Superior Room is 4140), Saradharam Heritage (Lakshmi Vilas) 3486 (Deluxe Heritage with breakfast, AC); median 2670.",
+        "notes": "Only 5 priced 3-star properties because Hotel Akshaya, Vandayar Hotel, MegaSri HomeStay, OYO Sakthi Guest House, Lakshmivilas Heritage Resort, Divine Homestay and Suloram illam were sold out on the list page (13-14 Nov) and were not priced. Budget tier left null: Hotel Saradharam and RK Residency detail pages returned 404, so no dated budget price was seen. Both Cleartrip homestays (Sai Homes, Pleasant Home Stay) were sold out. Hostelworld not found for Chidambaram. Chidambaram is a temple town with limited OTA supply."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": null,
+        "sources": [],
+        "notes": "No usable rate. Search results offered only template or aggregator sites (CabBazar, iDropTaxi) and a Madurai-based operator (Chandrambaa Global Trips) whose page prints no fares; EaseMyTrip's Chidambaram page prints no sedan fare; MakeMyTrip Chidambaram page timed out."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": null,
+        "basis": "Zomato Chidambaram listings (read from search-result snippets; page timed out on direct fetch), cost for one as printed: Star Biriyani 100, Kebabistaan 150, Trendy Cafe 150, New Moorthy Cafe 150, Mass Hotel 200 = median Rs 150 per meal, x3 = 450.",
+        "sources": [
+          "https://www.zomato.com/chidambaram"
+        ],
+        "notes": "Cost-for-one figures from snippets, not re-verified on the page, and they include snack and biryani counters; low confidence. Standard tier left null: only one comparable row (Paradise Multicuisine Restaurant, Rs 250 for one)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay and dorm prices",
+        "Any taxi rate for Chidambaram",
+        "Standard food tier",
+        "Direct page check of Zomato cost-for-one values"
+      ]
+    },
+    "yercaud": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2260,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-tamilnadu-yercaud-4264777?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-aradhana-inn-1358258?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4271010?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4265388?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/la-feliz-palacio-4064169?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-kc-yercaud-713605?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star; the first six 3-star hotels/resorts on the Cleartrip list that are priced under 4,000: Hotel TamilNadu Yercaud 1558 (Double Room with breakfast), Hotel Aradhana Inn 2926 (Deluxe with breakfast), Ihotels Yercaud 3320 (room only), SS Silver Oaks Resort 2099 (Executive with breakfast), La Feliz Palacio 2308 (Deluxe with breakfast), Hotel KC 2212 (Standard, room only, AC); median 2260.",
+        "notes": "Mixed meal plans: four of the six cheapest rates include breakfast. At 1,515 m most rooms are non-AC (AC not stated or absent on most pages). Same-list 3-star properties priced at 4,400-9,200 on the list page (TIO, Sarvakaya, Le Yercaud, Mango Hill, Meridian Hill Top, Cliff View, INDeco Lake Forest) were not opened, so the median leans to the lower and middle tier. Other dated prices seen: MM Resorts 1709, TNV Casita Inn 2497 (AC, breakfast), Hotel Dreams Paradise 2415 (non-AC, breakfast); including all nine opened 3-star rates gives a median of 2308. Budget tier left null: only Sri Silver Inn 1304 (2-star) priced for 18-19 Nov; Hotel Shoba and Madha Home Resorts showed no rooms; La Flora Paradise, Royal Resorts, Yercaud International and Blue Bell returned 404. Homestay tier left null: only Casazia Yercaud 3177 (Cozy King Room with breakfast) priced; the other Cleartrip homestays were sold out or priced at 6,000+. Hostelworld Yercaud page returned 404."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": null,
+        "sources": [],
+        "notes": "No usable rate. Dolphin Cabs Yercaud (No 386, Kommakadu, Yercaud 636602) prints no fares. EaseMyTrip's Yercaud page shows the same three sedan fares as its Kanchipuram page, so they are treated as a template and not used. GetMeCab prints no fare. No union chart found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 675,
+        "basis": "TravelTriangle Yercaud restaurants article (updated 25 Feb 2025), cost for two as printed: Brook's Bistro 200, Sri Saravana Bhavan Elite 200 = Rs 100 per person per meal, x3 = 300 (n=2). Standard: The Orange Restaurant 400, Dine-In Cliff 400, Green Park Restaurant 400, Silver Oak Restaurant 500 (TravelTriangle) and Dakshin Restaurant 500, The Pear Tree Cafe 500 (Holidify) = Rs 200-250 per person per meal, median 225, x3 = 675.",
+        "sources": [
+          "https://traveltriangle.com/blog/restaurants-in-yercaud/",
+          "https://www.holidify.com/places/yercaud/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Blog and guide sources, not Zomato or menus; budget tier rests on two restaurants."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Any taxi rate for Yercaud (union chart or local operator fare)",
+        "Budget, homestay and dorm prices for 18-19 Nov",
+        "Zomato or menu-based food figures"
+      ]
+    },
+    "hogenakkal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Dharmapuri (about 48 km); Pennagaram is the nearest town",
+        "mid_median_inr": 2500,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://yatradham.org/hogenakkal-hotel-tamil-nadu-ttdc.html"
+        ],
+        "budget_hotel_median_inr": 1700,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://yatradham.org/hogenakkal-hotel-tamil-nadu-ttdc.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Tariff card, undated (TTDC Hotel Tamilnadu Hogenakkal, as printed on the Yatradham TTDC booking page, 'starting at', 5% tax shown separately): 2 Bed AC Room Rs 2,500 (mid figure); 2 Bed Non AC Room Rs 1,700 (budget figure). Same property for both tiers, so n=1 each. Not a dated 18-19 Nov price.",
+        "notes": "Hogenakkal has very few lodgings. The TTDC hotel is the only property with a printed tariff found; Cleartrip has no Hogenakkal list, and MakeMyTrip's Hogenakkal page timed out. Other names that appeared in search results (CS Resort, CM Hotel, Sathyam Resorts, Hotel Sri Priya Lodge, Hotel MK Paradise) were not priced. The TTDC 10-bed dormitory hall is Rs 4,000 for the whole hall, not per bed, so no dorm bed price. Other Hotel Tamilnadu rows: 6 bed family AC 3,800, 6 bed family non-AC 2,800, AC suite 5,500."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": null,
+        "sources": [],
+        "notes": "No usable rate. Search results gave only aggregator and template cab sites for Dharmapuri, Salem and Bangalore to Hogenakkal; no Hogenakkal-based operator or coracle/taxi association chart was found."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": null,
+        "sources": [],
+        "notes": "Only anecdotal review quotes found (TTDC hotel breakfast about 130, lunch about 168; fish fry stall portions 100-250), no menu board, Zomato or Swiggy cost-for-two for Hogenakkal; left null rather than build a day figure from reviews."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dated 18-19 Nov room prices",
+        "Any other lodging with a printed rate",
+        "Taxi rate",
+        "Food cost from a menu or Zomato"
+      ]
+    },
+    "chettinad": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3121,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/jai-raja-s-tower-4480200?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-subhalakshmi-palace-2892446?c=18112026|19112026&r=2,0",
+          "https://www.chettinadmanor.com/"
+        ],
+        "budget_hotel_median_inr": 1981,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4482540?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Jai Raja's Tower (Kottaiyur, Karaikudi, 3-star) 2615 and Hotel Subhalakshmi Palace (Sekkalai, Kottaiyur, 3-star) 3121: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, room only; Chettinad Manor Heritage Hotel (Nemathanpatti, Kanadukathan) 3500: own-website tariff card, undated ('Rs. 3500/Night' for King Size Room, Small Suite and Luxury Room, taxes not mentioned). Median of the three 3121. Budget: Maria Homez (Karaikudi, 2-star, AC Deluxe Double) 1981, Cleartrip 18-19 Nov 2026 pre-tax; n=1.",
+        "notes": "Two of three mid figures are dated 18-19 Nov; the heritage figure is an undated tariff card. Chettinad is a region of villages; Karaikudi and Kottaiyur hotels serve it and are used here as the brief directs. Heritage mansion price seen for the stay date: Chettinadu Mansion (Karaikudi/Kottaiyur, listed 4-star resort) Deluxe Room with breakfast Rs 11,400 pre-tax on Cleartrip 18-19 Nov (page's tax and total figures do not reconcile); left out of the 3-star median as a 4-star heritage property, but shows the top heritage price. No rooms for 18-19 Nov at Chola Heritage, Nachi Grand Residency, Mehar Inn and Chettinad Heritage & Wellness Resorts (Pudukkottai); Hotel Udhayam returned 404; Chettinadu Court, The Bangala and Visalam have no Cleartrip detail page found. Guesthouse and homestay rows on homestays.co.in carry no clear stay date (links embed 2024 dates), so no homestay median."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": null,
+        "sources": [],
+        "notes": "No usable rate. Search results for Karaikudi and the Chettinad mansion loop were aggregator sites only (CabBazar, Gozocabs); no Karaikudi or Kanadukathan operator with a printed rate and a real address was found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": null,
+        "basis": "Zomato Karaikudi restaurants list (cost for two, pre-tax; read from the search-result snippet because the page timed out on fetch): Vaigai Biryani 150, Kamathenu Idly Shop 150, Ganga Mess 200, Hotel Ariya Bhavan 200, Chettinad Thalappakattu Biriyani 250 = Rs 75-125 per person per meal, median 100, x3 = 300.",
+        "sources": [
+          "https://www.zomato.com/karaikudi/restaurants?sort=nearme&order-online=1"
+        ],
+        "notes": "Karaikudi town prices, not the heritage-hotel dining of Kanadukathan, which costs far more. Not re-verified on the page itself. No standard-tier source found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dated prices for Chettinadu Court, The Bangala, Visalam and other heritage hotels",
+        "Homestay and guesthouse median",
+        "Taxi rate",
+        "Standard-tier food",
+        "Direct check of the Zomato cost-for-two values"
+      ]
+    }
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "batch": "B11",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "kanyakumari": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1984,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-samudra-307400?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-temple-citi-1343440?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/tri-sea-hotel-p-ltd-332275?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-rajeswari-international-4264806?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-seashore-hotel-kanyakumari-377332?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-gopinivas-grand-780490?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1247,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-jeyam-2881124?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-sri-devi-715783?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-sun-rock-1340884?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/new-cape-hotel-711246?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1626,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/itsy-by-treebo-umaiyyal-home-stay-3942148?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4294087?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star: Temple Citi 1557 (non-AC), Samudra 1771 (AC basement room), Rajeswari International 1814, Gopinivas Grand 2153, Tri Sea 2412, Seashore Hotel 3195 (AC basement room); median 1984. Budget: Cleartrip 18-19 Nov 2026 pre-tax: Jeyam 881, Sri Devi 1085 (non-AC), Sun Rock 1409 (AC), New Cape 1909; median 1247. Homestay: Cleartrip 18-19 Nov 2026 pre-tax: Umaiyyal Home Stay 1272, Ferdin Cottage 1980 (AC); median 1626.",
+        "notes": "Cleartrip tags every one of these 3-star, so the mid and budget tiers overlap; the budget tier is the cheapest of them. Cheapest rooms are sometimes non-AC or basement AC. Ocean Heritage, Bharani and Sivamurugan showed no rooms for 18-19 Nov; Hotel Tamilnadu (TTDC) 2392 left out as the page calls itself both 3-star and 2-star; Dee Cottage resort 4846 left out. Prices matched the 13-14 Nov list prices. Hostelworld Kanyakumari page returned 404, so no dorm."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Kanyakumari to Padmanabhapuram Palace, full day",
+            "inr": 1800
+          },
+          {
+            "route": "Kanyakumari to Courtallam Waterfalls, full day",
+            "inr": 3500
+          },
+          {
+            "route": "Kanyakumari to Thirparappu Falls, half day",
+            "inr": 1200
+          }
+        ],
+        "basis": "Jesus Cabs (2/19 B, East Car Street, Kanyakumari 629702) page: Etios/Glanza Rs 13/km; Padmanabhapuram Palace Rs 1,800 full day; Courtallam Falls Rs 3,500 full day; Thirparappu Falls Rs 1,200 half day; Vivekananda Rock Rs 200 round trip. Page undated. No 8h/80km local package is printed, so the local figure is null.",
+        "sources": [
+          "https://www.jesuscabs.com/"
+        ],
+        "notes": "No Kanyakumari taxi association chart found. Tripncare blog estimates one-way Suchindram 300-400, Padmanabhapuram 500-700 (no vehicle, undated), not used for figures."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 675,
+        "basis": "Frenzy Holidays 'Places to Eat in Kanyakumari' (16 Apr 2026), cost for two as printed (range, midpoint used): Hotel Sea View 400-700, Sangam 350-650, Archana 200-400, Hotel Saravana 150-300, Seashore Restaurant 400-700, Hotel Seaview Residency 300-600, Ananda Bhavan 100-250. Per person per meal = half the midpoint: 275, 250, 150, 112, 275, 225, 87; median 225 x 3 = 675 standard. Budget = breakfast Ananda Bhavan 87 + lunch Archana 150 + dinner Saravana 112 = ~350.",
+        "sources": [
+          "https://frenzyholidays.com/places-to-eat-in-kanyakumari"
+        ],
+        "notes": "Single blog, ranges not menus. Tripadvisor/Restaurant Guru show higher figures for Saravana and Sea View in reviews, so standard could run higher."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "local 8h sightseeing taxi rate",
+        "union rate chart",
+        "dorm bed",
+        "menu-level food prices"
+      ]
+    },
+    "coonoor": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2465,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/heavens-gate-holidays-4485282?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/orchid-square-boutique-hotel-718538?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-preethi-classic-tower-41234?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/queen-palace-4482793?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/adderley-bungalow-4681459?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1539,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-vivek-207340?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 3293,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/vijaya-deepa-guest-house-3926858?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star: Queen Palace 2093 (room only), Heavens Gate Holidays 2430 (villa), Preethi Classic Tower 2465 (with breakfast), Adderley Bungalow 2940 (villa, room only), Orchid Square 3015; median 2465. Budget: Hotel Vivek 1539 (Standard Double, with breakfast), Cleartrip 18-19 Nov 2026, n=1. Homestay: Vijaya Deepa Guest House by Lexstay 3293 (room only), Cleartrip 18-19 Nov 2026, n=1.",
+        "notes": "Budget and homestay are single properties, low reliability. Left out: Hotel Tamilnadu Coonoor 2905 and Devashola Homestay 2886 (both price shown includes lunch/dinner), Check Inn Today 5519 (2-star homestay, outlier), Hotel Blue Hills (dated page 404), YWCA Wyoming (no rooms). Most Coonoor homestays showed sold out. Nilgiris tourist season is off-peak in mid-Nov."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Travel2Ooty (EMA Complex, Manikoondu, Ooty 643001) page: 'Coonoor Tour' sedan from Rs 2,200 per cab (Ooty City Tour also from 2,200, 9 AM to 6 PM); weekend/holiday/peak tariffs may vary. Page undated. Royal Travels (Coonoor Taxi) lists 8 hrs / 50 km Swift Dzire Rs 2,300 + 5% GST for Ooty local, which is consistent.",
+        "sources": [
+          "https://www.travel2ooty.com/ooty-travels.aspx",
+          "https://www.coonoortaxi.com/localduty-tariff-hour-basis"
+        ],
+        "notes": "Operator rate from an Ooty-based firm, not a union chart; no Nilgiris union chart found. ootycabservice.com and ootycalltaxi.com (Coonoor 8h/50km sedan 2,200-2,300 in search snippets) could not be opened (expired TLS certificate), so not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Coonoor-specific restaurant page with a stated cost for two was reachable: Zomato timed out; Holidify lists INR 100 to 1000 per restaurant without saying per person or for two.",
+        "sources": [],
+        "notes": "Left null rather than reuse an Ooty or state figure."
+      },
+      "confidence": "low",
+      "unverified": [
+        "union taxi rate chart",
+        "Coonoor food prices",
+        "budget and homestay n>1",
+        "dorm bed"
+      ]
+    },
+    "kodaikanal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3802,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/poppys-pleasant-stay-4064188?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/cottages-by-the-creek-4264773?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561330?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/avadale-kodaikanal-4294874?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/lilly-s-valley-resort-3908155?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4597170?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/warmth-hill-crest-3974034?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/altius-nest-hotel-719135?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1540,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-seven-roads-grand-inn-744442?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-grand-palace-42814?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-tamilnadu-3951520?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-richwin-4281907?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/park-royale-2427408?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 2296,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/5491544?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kasa-luxury-inn-4483099?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4686897?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5635877?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 599,
+        "dorm_n": 8,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Kodaikanal?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star: Cottages by the Creek 2310 (with breakfast), Altius Nest 2590, Avadale 3220, The Kodai Haven 3450, Poppys Pleasant Stay 4154 (with breakfast), Lilly's Valley Resort 4292 (with breakfast), Hotel Raindrops 4385 (with breakfast), Warmth Hill Crest 4799; median 3802. Budget: Cleartrip 18-19 Nov 2026 pre-tax: 7 Roads Resorts 1080, Hotel Grand Palace 1473, Hotel Tamilnadu 1540 (with breakfast), Richwin 1680, Park Royale 1767 (with breakfast); median 1540. Homestay: Cleartrip 18-19 Nov 2026 pre-tax: Malabar Cottage 1488, Kasa Luxury Inn 2040, Cherry Blossom 2552, Kodai Elegance 2600; median 2296. Dorm: Hostelworld 'dorms from' per bed, undated, 8 hostels 450 to 699 (Sipas HideOut has no dorms).",
+        "notes": "Cleartrip tags the budget and mid sets alike as 3-star; the split is by price. Some rows include breakfast where no room-only rate was shown. Several homestays are rated 1-2 star on Cleartrip."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Kodaikanal Berijam Lake / Wild Forest Tour (permit extra)",
+            "inr": 3000
+          },
+          {
+            "route": "Kodaikanal Village Tour incl. Mannavanur Lake",
+            "inr": 3500
+          }
+        ],
+        "basis": "Kodai Jeep Safari (Kodaikanal) price list, Etios/Sedan: Valley Sightseeing 1,400, VIP Forest Tour 1,800, Picnic Tour 2,500 (starts 9:30 AM, 7 stops), Wild Forest Tour (Berijam) 3,000, Village Tour 3,500; page calls them full-day tours. Saraswathi Tours (Royal Complex, Kodaikanal) sedan: Valley tour 3 hrs 1,900 off-season / 2,800 season; Anjuveedu picnic 4 hrs 2,500 / 3,000. Both pages undated. Local day figure = Picnic Tour 2,500.",
+        "sources": [
+          "https://www.kodaijeepsafari.com/kodaikanal/packages/local-sightseeing",
+          "https://saraswathitours.com/kodaikanal-sightseeing-tours-rate/"
+        ],
+        "notes": "Operator tariffs, not a taxi union chart (none found). The 8h figure is the multi-stop Picnic Tour, not a metered 8h/80km package."
+      },
+      "food_per_person_day": {
+        "budget_inr": 425,
+        "standard_inr": 525,
+        "basis": "Tripatini 'Best Restaurants in Kodaikanal' (30 Sep 2022), cost for two as printed: Inn Astoria Veg 250, Tava 300, Sree Krishna Bhojanalaya 300, Woody's 350, Regal Tibet 300, Tibetan Siblings 350, Cloud Road 400, Muncheez 350, Inn Eden Heaven 350, Silver Oak 1500. Per person per meal = half: 125, 150, 150, 175, 150, 175, 200, 175, 175, 750; median 175 x 3 = 525 standard. Budget = cheapest three (125+150+150) = 425.",
+        "sources": [
+          "https://tripatini.com/profiles/blogs/best-restaurants-in-kodaikanal"
+        ],
+        "notes": "Source is 4 years old, so current prices are likely higher; treat as a floor. Single blog."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "union taxi rate chart",
+        "current-year restaurant prices",
+        "festival/season premium"
+      ]
+    },
+    "kotagiri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3383,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/nilgiris-inn-5276680?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/orchid-5251585?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/westers-inn-kotagiri-4281901?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4289404?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/memories-at-the-blue-mountains-5291991?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star: Nilgiris Inn 1432 (villa/B&B, room only), Orchid 2491 (room only), Westers Inn 3383 (room only), Coastal Grand 4940 (with breakfast), Memories at The Blue Mountains 11931 (with breakfast); median 3383.",
+        "notes": "Wide spread (1432 to 11931) so the median rests on 5 properties. Homestays not summarised: Chalet Mon Ami 3380 (room only) and Ibex Stays and Trails 7157 (with breakfast) priced, S Ella Residency 9216 is a 4-bed room, Valley Nest and GreenDale had no rooms 18-19 Nov. Cleartrip's Kotagiri budget list held one hotel (V Resorts, dated 11-12 Oct only), so budget is null. Ten of twelve listings were sold out on 13-14 Nov; availability is thin."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Ooty to Kotagiri sightseeing package (sedan, 8 hrs incl. tolls/parking)",
+            "inr": 2500
+          }
+        ],
+        "basis": "D Blue Hillian Ooty package list: Kotagiri sedan 2,500, SUV 4,000 (Ooty Local 1,900 to 2,100, Coonoor 2,100); standard package is 8 hours; price includes parking, tolls, driver allowance. Page undated, no street address shown. A Kotagiri-base local rate was not found.",
+        "sources": [
+          "https://dbluehillianooty.com/ooty-sightseeing-cab-packages/"
+        ],
+        "notes": "The ootymade.com guide quotes a full-day Kotagiri trip at Rs 1,500 to 2,200 sedan (undated, negotiate). No Kotagiri union chart found; cabbazar returned 403 and was not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Kotagiri source with a stated rupee cost per person or for two reached: Holidify shows INR 500 for two restaurants without saying per person or for two; magicpin shows only 500/800 buckets; Zomato timed out.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Kotagiri-base local taxi rate",
+        "union chart",
+        "budget, homestay and dorm tiers",
+        "food prices"
+      ]
+    },
+    "valparai": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5289,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4291557?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4289636?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4294140?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535699?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults, cheapest room pre-tax, all labelled 3-star: Wintel Wild 2228 (room only), Harris Holiday Inn 4875 (villa, with breakfast), Ibex Resorts Mistly 5702 (with breakfast), Ibex Resorts Tale Rock 6336 (with breakfast); median 5289.",
+        "notes": "Only 4 priceable properties, with a wide spread; treat as indicative. Villa Fair Winds (29721, bungalow with breakfast and dinner) left out; Glass House Retreat had no rooms. Cleartrip's budget list shows Hotel Holiday Break and Deepikas Resorts only for 11-12 Oct (dated pages 404), so budget is null. Ibex Mistly is tagged a homestay but priced like a resort, so homestay is null."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2850,
+        "vehicle": "Indica 4-seater",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pollachi to Valparai pickup",
+            "inr": 2700
+          },
+          {
+            "route": "Coimbatore to Valparai pickup",
+            "inr": 3800
+          },
+          {
+            "route": "Valparai to Athirapally Falls (Kerala), one day",
+            "inr": 3800
+          }
+        ],
+        "basis": "Valparai City Travels (opposite Bharathiyar University College, Athirampalli Main Road, Valparai) local sightseeing tariff, Indica 4-seater: full circuit (Balaji Temple, Velankanni shrine, Vellamalai Tunnel and Falls, Nirar Dam, Kolangal River, Birla Falls view, Sithivinayagar Temple, Nallamudi view point, Sholayar Dam) 2,850; shorter circuit Kolangal, Nirar Dam, Sithivinayagar, Nallamudi, Birla 2,100. Page undated.",
+        "sources": [
+          "https://valparaicitytravels.com/valparai-car-taxi-rentals.htm"
+        ],
+        "notes": "Local operator rate, not a union chart (none found). Valparaismtours.com lists a 4+1 one-day sightseeing at 2,800 (undated, no address) as a cross-check. Pollachi Jeep Tourism (Pollachi) quotes a jeep Valparai sightseeing day at 5,000 up to 5 people."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Valparai restaurant page with a stated rupee cost for two or menu found; search turned up only scattered review remarks (biryani 70 to 120 at Plaza Restaurant in an old review).",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "low",
+      "unverified": [
+        "union taxi chart",
+        "budget and homestay tiers",
+        "food prices",
+        "dorm"
+      ]
+    },
+    "dhanushkodi": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Rameswaram",
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "No lodging priced. Booking.com's Dhanushkodi page lists only Rameswaram properties (each labelled as in Rameswaram, measured from the Rameswaram temple); none sits in Dhanushkodi itself.",
+        "notes": "Stay in Rameswaram (Hotel Tamilnadu TTDC near Agni Theertham is about 9 km away per Tripadvisor's closest-hotels list in search results). Several travel guides say overnight stay at Dhanushkodi is not permitted and visitors leave by about 6 pm; no official order found, so treat as unverified."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Rameswaram to Dhanushkodi and back, sedan",
+            "inr": 1600
+          }
+        ],
+        "basis": "Varahi Cabs (Sannathi Street, V.O.C Nagar, Rameswaram 623526) FAQ: Rameswaram to Dhanushkodi round trip Sedan 1,600; Tavera/Lodgy 1,900; Innova 2,300; Tempo 2,700. Page undated (copyright 2026). Dhanushkodi has no taxi base of its own, so no local 8h figure.",
+        "sources": [
+          "https://varahicabs.in/"
+        ],
+        "notes": "Local jeep beyond the vehicle checkpoint near the ruins is extra (about 150 to 200 per person per a search summary, not verified on the page)."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Dhanushkodi restaurant menu or cost-for-two page found.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "official overnight-stay rule",
+        "Dhanushkodi food prices",
+        "local jeep fare"
+      ]
+    },
+    "meghamalai": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": null,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1000,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.thrillophilia.com/homestays-in-meghamalai"
+        ],
+        "homestay_median_inr": 5300,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.thrillophilia.com/homestays-in-meghamalai"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Undated, not 18-19 Nov. Thrillophilia 'Homestays in Meghamalai' prints 'starts from' per room per night: Sandriver Cottage 4700, Briar Meghamalai 5300, Cloud Mountain Bungalow 7000 (homestay median 5300, n=3); Panchayat Guesthouse 1000 (budget, n=1). Raja Andhuvan Estate has no price. Cleartrip, Booking and Yatra pages showed no Meghamalai listings or would not load a priced list.",
+        "notes": "Meghamalai (Highwavys, Manalar, Venniyar) has estate cottages and a panchayat guesthouse and almost no OTA coverage. 'Starts from' figures are floors and undated. Theera Ulaa blog (2021 rates) gives Panchayat lodge about 700 and cottages from 2000 to 2400 for 3 persons, which suggests the Thrillophilia numbers may be higher than basic cottages. No 3-star tier exists."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Theni to Meghamalai (Megamalai), hatchback/sedan, round trip or day hire (page unclear), range 3,500 to 4,500",
+            "inr": 4000
+          },
+          {
+            "route": "Theni to Meghamalai, SUV (Innova/Xylo), same basis, range 5,500 to 7,000",
+            "inr": 6250
+          }
+        ],
+        "basis": "megamalai.in guide dated 27 Jan 2026 (Rengha Travels, phone given, no street address): 'Approx. cost (round trip/day)' Hatchback/Sedan 3,500 to 4,500; SUV 5,500 to 7,000; Thar 6,000+; midpoints used. Page recommends a jeep or SUV for the last stretch. Megamalai.com lists forest jeep safari Rs 1,000 for 2 people, tea estate tour Rs 1,000 for 2 people.",
+        "sources": [
+          "https://megamalai.in/theni-to-megamalai-route-map-bus-timings-taxi-cost-the-ultimate-2026-travel-guide",
+          "https://megamalai.com/megamalai-highwavys.html"
+        ],
+        "notes": "No local 8h taxi rate and no union chart found; the base for cabs is Theni or Chinnamanur, so these are base-to-hill fares, not a local day."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Meghamalai restaurant prices found; estate stays sell meals as packages.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "low",
+      "unverified": [
+        "any dated 18-19 Nov price",
+        "3-star tier",
+        "local taxi",
+        "food",
+        "dorm"
+      ]
+    },
+    "tharangambadi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 7271,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/neemrana-coconut-alley-4063667?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": null,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": null,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": null,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail page 18-19 Nov 2026, 2 adults, pre-tax, Neemrana Coconut Alley (3-star heritage resort) 7271 with breakfast, n=1.",
+        "notes": "Cleartrip lists only three Tharangambadi properties. Neemrana Bungalow on the Beach (the other 3-star) and Royal House and Park (2-star guest house) showed no rooms on 18-19 Nov. The 7271 is a single heritage property, not a typical town rate; cheaper guest houses exist (search results mention Abirami Residency, Hotel Aishwariyam, TTDC Hotel Tamilnadu at Thirukadaiyur, a few km away) but no dated page was reachable, and a nearby town's hotel is not priced as the place's own."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No union chart, tourism tariff or local operator with an address found for Tharangambadi. The only fare pages seen were national aggregator or template sites (rekeindia.com judged templated), which the brief excludes.",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Tharangambadi restaurant page with a rupee cost found; the village has only a few eateries (Bungalow on the Beach, Hotel Tamil Nadu).",
+        "sources": [],
+        "notes": "Left null."
+      },
+      "confidence": "low",
+      "unverified": [
+        "budget and homestay tiers",
+        "local taxi",
+        "food",
+        "dorm"
+      ]
+    },
+    "ooty": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Ooty to Avalanche or Mudumalai sightseeing tour, sedan, from",
+            "inr": 3200
+          },
+          {
+            "route": "Ooty to Mettupalayam drop, sedan (Etios/Dzire)",
+            "inr": 2000
+          },
+          {
+            "route": "Ooty to Coimbatore drop, sedan",
+            "inr": 3000
+          }
+        ],
+        "basis": "Travel2Ooty (EMA Complex, Manikoondu, Ooty 643001) page: Ooty City Tour sedan from Rs 2,200 per cab, 9 AM to 6 PM; Pykara Tour from 2,200; Avalanche and Mudumalai Tours from 3,200; page undated, peak-season tariffs may vary. Cross-checks: Royal Travels (Coonoor Taxi) Ooty local 8 hrs / 50 km Swift Dzire/Etios Rs 2,300 + 5% GST, extra km Rs 13; D Blue Hillian Ooty list: Ooty local sedan 1,900 (one listing shows 2,100), flat drops Mettupalayam 2,000, Coimbatore 3,000 (sedan).",
+        "sources": [
+          "https://www.travel2ooty.com/ooty-travels.aspx",
+          "https://www.coonoortaxi.com/localduty-tariff-hour-basis",
+          "https://dbluehillianooty.com/ooty-sightseeing-cab-packages/"
+        ],
+        "notes": "Operator tariffs; no Ooty/Nilgiris taxi union chart could be opened (ootycabservice.com and ootytaxifare.com certificate errors, not bypassed). The Mettupalayam and Coimbatore drops are from D Blue Hillian, which shows no street address."
+      },
+      "food_per_person_day": {
+        "budget_inr": 750,
+        "standard_inr": 900,
+        "basis": "Ooty Tourism 'Restaurants in Ooty' (undated, copyright 2026), approximate cost for two as written: Earl's Secret 1300, Curry & Rice 1000, Shinkows 800, Angara 600, Ascot 1400 (excl. alcohol), Hyderabad Biryani House 600, Adyar Ananda Bhavan 600, Place to Bee 500, Cliff Top 1200, Jade Garden 600, Nahar's Sidewalk Cafe 600, Pankaj Bhojanalaya 400. Per person per meal = half: 650, 500, 400, 300, 700, 300, 300, 250, 600, 300, 300, 200; median 300 x 3 = 900 standard. Budget = three cheapest-class meals: Pankaj 200 + Place to Bee 250 + 300 (Adyar Ananda Bhavan) = 750.",
+        "sources": [
+          "https://ootytourism.co.in/restaurants-in-ooty"
+        ],
+        "notes": "Single listing site. Fab Hotels blog (updated Aug 2023) gives lower figures for several of the same places (Ooty Coffee House 300, Hyderabad Biryani House 400, Garden Restaurant 600), so these are a floor-to-mid estimate."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Nilgiris taxi union chart",
+        "menu-level food prices"
+      ]
+    }
+  }
+}

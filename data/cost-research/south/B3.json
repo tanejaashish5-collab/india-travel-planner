@@ -1,0 +1,547 @@
+{
+  "batch": "B3",
+  "researched_on": "2026-10-10",
+  "destinations": {
+    "vijayawada": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2312,
+        "mid_n": 10,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4694945?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535096?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-sree-kubera-grand-3958011?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-minerva-2870978?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/olive-tree-hotel-3914993?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/red-fox-hotel-vijayawada-2900290?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535236?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4555964?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-eden-park-boutique-hotel-4252230?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-swarna-palace-4482448?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 10 properties Cleartrip labels 3-star (Aditya Grand 1157, Minerva Grand One Town 1584, KVR Capitol Suites 1675, Capital Luxury Suites 2099, Olive Benz Circle 2284, Olive Tree 2339, Eden Park 2834, Red Fox 3292, Swarna Palace 3605, Sree Kubera Grand 3875); median of 10 = 2312.",
+        "notes": "Budget tier null: Cleartrip budget-list detail pages mostly failed to load a dated price (only Hotel Sree, 2-star, 897 priced, n=1). No homestays found (Cleartrip homestay list returns ordinary hotels). No dorm source."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2287,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "MakeMyTrip Vijayawada car rental page, 8 hr 80 kms package, Dzire/Etios sedan Rs 2287 (+Rs 58 other charges), 19/km after 80 km; SUV (Xylo/Ertiga) 2984. Page read 10 Oct 2026.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/rental-cabs-in-vijayawada.html"
+        ],
+        "notes": "The Tirupati MakeMyTrip rental page prints an identical rate card (Rs 2287, same ratings), so this looks like an Andhra regional card rather than a Vijayawada-only quote."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 1200,
+        "basis": "Zomato Vijayawada cost for two. Budget = 3 meals x half the median cost for two of 8 tiffin/mess places (Sarovar Mess 200, New Welcome Fast Food 250, Shankar Tiffin Centre 250, Idly 'N' Idly 300, Patamata Sai Hotel 300, Taaj Hotel 300, Babai Hotel 300, Kaka Hotel 450) = median 300 -> 150 per meal. Standard = cafe breakfast (Verandah 500, Cinema Cafe 400, Brewbakes 600, Cafe Kubera 800: median 550 -> 275) + 2 casual sit-down meals (Mandi Croods 500, Bezawada Dhaba 600, Thrayam 800, Vindhu Bhojanam 850, Besta 1000, Amoda 1000, Delhi Highway 1000, Telugu House 1200: median 925 -> 462 per meal) = 275 + 2x462 = about 1200.",
+        "sources": [
+          "https://www.zomato.com/vijayawada/restaurants/andhra",
+          "https://www.zomato.com/vijayawada/restaurants/south-indian",
+          "https://www.zomato.com/vijayawada/restaurants/cafes",
+          "https://www.zomato.com/vijayawada/restaurants",
+          "https://www.zomato.com/vijayawada/bezawada-dhaba-gurunanak-colony"
+        ],
+        "notes": "Zomato list pages load more restaurants on scroll; named places appear after scrolling."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Budget hotel, homestay and dorm tiers",
+        "Vijayawada-specific taxi quote (MMT card matches Tirupati's)",
+        "Union taxi rate chart"
+      ]
+    },
+    "visakhapatnam": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1964,
+        "mid_n": 15,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/sai-priya-beach-resort-3975375?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561361?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ambica-sea-green-386034?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4940784?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292985?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/bay-leaf-resort-166276?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4265761?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/treebo-trend-seaesta-rk-beach-3943141?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/abhayaa-hotel-3958054?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-winsar-park-386813?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/five-elements-1323496?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/northway-hotel-3967596?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/mantris-hotel-2441452?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4531293?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-lakshmi-residency-2050572?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1129,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-akshaya-211357?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/siri-varshini-inn-724243?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-vishnu-residency-709739?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-skml-grand-2048468?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 772,
+        "dorm_n": 2,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Visakhapatnam?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 15 properties Cleartrip labels 3-star (Lakshmi Residency 792, Northway 1229, Emerald 1400, Mantris 1563, Rio Beach 1620, Bay Leaf Resort 1702, Touchwood 1820, Treebo Seaesta 1964, Five Elements 2309, Abhayaa 2584, Winsar Park 2654, Vivana 3402, Sai Priya Beach Resort 4323, Ambica Sea Green 6163, The Hive 13837); median of 15 = 1964. Budget: same method, 4 properties labelled 2-star (Siri Varshini 627, Vishnu Residency 807, Akshaya 1451, SKML Grand 4601); median of 4 = 1129. Dorm: Hostelworld Visakhapatnam listing, undated, lowest dorm-bed price at 2 hostels with dorms (Deodar Commune 720, a second hostel 824); median 772, n=2.",
+        "notes": "Wide spread inside the 3-star label (792 to 13837); median used. Budget n=4 includes one outlier (SKML Grand). No homestay source checked."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2061,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "MakeMyTrip Visakhapatnam car rental page, Dzire/Etios sedan Rs 2061 (+Rs 58 other charges), 14.25/km extra; SUV (Xylo/Ertiga) 2986. Page opens on the 6 hr 60 km package at Rs 2061; with the 8 hr 80 km tab selected the same Rs 2061 and 14.25/km after 80 km were shown. Read 10 Oct 2026.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/rental-cabs-in-visakhapatnam.html"
+        ],
+        "notes": "The price did not change between the 6 hr/60 km and 8 hr/80 km tabs, so treat as an approximate day rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 975,
+        "basis": "Zomato Visakhapatnam cost for two. Budget = 3 meals x half the median for 8 tiffin/meals places (Ramaiah Vegetarian Meals 200, Nalabhimas Tiffins 250, Sri Sairam Tiffin & Meals 300, Sri Sai Durga Tiffins & Meals 300, Inti Bhojanam 300, Hotel Akshay 300, Venkatadri Vantillu 300, Siva Shanti Restaurant 350) = median 300 -> 150 per meal. Standard = cafe breakfast (United Farmers Creamery 450, Bean Board 500, Bean Board VIP 600, Bean Board Panorama 650, Gypsy Resto Cafe 700, The Granios Cafe 400: median 550 -> 275) + 2 casual meals (Spicy Venue 500, Rajugari Ruchulu 500, L J Dadi's Grand 600, Godavari 700, Mr Hello Vizag 700, Pulao Hub 700, Bunny's Family Restaurant 800, Raju Gari Paakasaala 800, Paradise Biryani 850: median 700 -> 350 per meal) = 275 + 700 = 975.",
+        "sources": [
+          "https://www.zomato.com/visakhapatnam/restaurants/andhra",
+          "https://www.zomato.com/visakhapatnam/restaurants/south-indian",
+          "https://www.zomato.com/visakhapatnam/restaurants/cafes",
+          "https://www.zomato.com/visakhapatnam/restaurants"
+        ],
+        "notes": "Zomato list pages load more restaurants on scroll."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm tiers",
+        "Union taxi rate chart or a second Vizag taxi source",
+        "Point-to-point fares (Araku, Borra Caves)"
+      ]
+    },
+    "borra-caves": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Araku Valley (hotel cluster 13 km and more from the caves); Visakhapatnam for day trips (about 90 km)",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No prices given.",
+        "notes": "The caves are a ticketed site with no lodging at the entrance. Tripadvisor's closest-hotels list for Borra Caves shows only a handful of small resorts in the surrounding villages (Mirror Hotels & Resorts, Ananthagiri 2.6 km; The Royal Resorts, Dekkapuram 5.8 km; Bansi Resorts, Ninnimamidi 6.4 km; Kings Court Resort 7.7 km) and the main hotel cluster in Araku Valley town 13 km or more away. Those village resorts have 0 to 1 reviews each, so no tier was priced."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Visakhapatnam to Araku Valley and Borra Caves, full-day sedan sightseeing package (8-10 hours)",
+            "inr": 5500
+          },
+          {
+            "route": "Visakhapatnam to Araku Valley, one-way sedan",
+            "inr": 3000
+          }
+        ],
+        "basis": "ArakuTrip.in Vizag to Araku cab fare guide (2026): full-day sedan packages Rs 4500 to 6500 (visiting Borra Caves, waterfalls, museum); one-way sedan Rs 2500 to 3500. Figures given are the midpoints of those printed ranges.",
+        "sources": [
+          "https://arakutrip.in/vizag-to-araku-cab-fare/"
+        ],
+        "notes": "The page describes 'typical market pricing from established operators', not a union or single-operator rate card. No local day rate exists at the caves; all hire is from Visakhapatnam or Araku."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No own source found for Borra Caves (ticketed site with stalls; no restaurant listings with prices).",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Food at Borra Caves (no own source)",
+        "Local taxi day rate",
+        "Operator or union rate card for Vizag-Araku-Borra",
+        "Any lodging tier"
+      ]
+    },
+    "tirumala": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Tirupati (about 22-25 km down the ghat road) for private 3-star hotels",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No prices given.",
+        "notes": "On the hill, rooms are mainly Tirumala Tirupati Devasthanams (TTD) accommodation booked on TTD's portal (ttdevasthanams.ap.gov.in); no official TTD page printing a tariff could be read, so none is quoted. No private 3-star on the hill was found: Booking.com's 'hotels near Tirumala' page for 18-19 Nov 2026 lists only properties in Tirupati (3-star-labelled there: DJ Grand 2624, Nanda Mohan Residency 3623, Manchu Signature Suites 3307, Sudha Brahma 3675, SKYLAR 3780, Treebo HR Grand 9392), which belong to Tirupati's own page, not Tirumala. Kayak shows one private hotel on the hill (Srinivasa Hotel, from 1160 for 17-18 Oct, review score 7.7, n=1), not enough for a median. Pilgrim crowding around Tirumala is year-round; 18-19 Nov is not a named TTD festival date."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 4000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Tirupati to Tirumala temple, 5-hour package (Dzire/Etios), Vishnu Travels",
+            "inr": 3000
+          },
+          {
+            "route": "Tirupati to Tirumala, one-way AC sedan starting fare, Savaari",
+            "inr": 878
+          },
+          {
+            "route": "Tirumala + Tirupati local temples full day 6am-10pm (Dzire/Etios), Vishnu Travels",
+            "inr": 6000
+          }
+        ],
+        "basis": "Vishnu Travels (Subhash Chandra Bose Rd, Kothapalli, Tirupati; +91 9063404081) Tirumala package list: 'Tirumala - Padmavati Temple (8 Hours Package)' Dzire/Etios 4-seater Rs 4000; 'Tirumala Temple - Tirumala Local Package Tour' Rs 4500; 5-hour Tirupati to Tirumala Rs 3000; full day 6am-10pm Rs 6000. Savaari Tirupati to Tirumala one-way sedan from Rs 878. Packages exclude GST, driver food, and add Rs 500 if AC is wanted on the ghat road.",
+        "sources": [
+          "https://vishnu-travels.com/tirumala-taxi-packages/",
+          "https://www.savaari.com/tirupati/tirupati-to-tirumala-cabs"
+        ],
+        "notes": "The 8-hour figure is a package that starts in Tirupati and covers Tirumala and the Padmavati temple; there is no taxi-union rate chart found online. Tirumala itself is a hill town where only TTD buses/ghat cabs run."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No own source found: Zomato's 'Tirumala restaurants' page lists delivery kitchens whose locations could not be confirmed on the hill; TTD Annaprasadam meals are free; one blog quotes a Srivari Naivedyam thali near Rs 349 (single data point).",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "TTD room tariff from an official page",
+        "Private 3-star on the hill (none found)",
+        "Food prices on the hill",
+        "Taxi union rate chart"
+      ]
+    },
+    "bengaluru": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1850,
+        "mid_n": 20,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/the-royal-comforts-3974701?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/fabhotel-plus-point-suite-3979891?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4532432?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4269688?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-euphoria-1357180?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4289468?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561518?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/jp-cordial-hotel-232056?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/grand-kalinga-hotel-4264654?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/liwa-the-transit-hotel-bengaluru-2861420?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-continentti-whitefield-3907658?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/s-m-royal-suites-3926629?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/western-keys-hotel-4277076?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vanusa-residency-4265226?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/octave-hotel-and-spa-marathahalli-745046?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-nandhana-comforts-708801?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/lords-eco-inn-jayanagar-1358002?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/niche-suites-354146?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/octave-hotel-and-spa-jp-nagar-1360346?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/octave-hotel-double-rd-2043878?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1040,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/sap-golden-grande-electronic-city-phase-2-bengaluru-2365934?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/lusia-inn-2355294?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 2383,
+        "homestay_n": 14,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/upar-hotels-indiranagar-4057193?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/guesture-stays-dwellington-4265409?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/iris-comforts-3990121?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/parkwood-suites-kundanahalli-3922281?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/casa-cottage-42855?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4674183?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4940985?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/omicron-hotel-1-bhk-studio-rooms-2405490?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sliceinn-sylva-wilson-garden-bangalore-4682276?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ashirwad-residency-inside-manyata-tech-park-5731885?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4674181?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4674647?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4533636?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ananta-by-stayvista-5260634?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 645,
+        "dorm_n": 27,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Bangalore?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 20 properties Cleartrip labels 3-star across the city (934 to 4414); median of 20 = 1850. Budget: same method, 2 properties labelled 2-star (SAP Golden Grande 1081, Lusia Inn 1000), median 1040, n=2 only. Homestay: same method, 14 properties Cleartrip labels Homestay (1502 to 22331 incl. two luxury villas), median 2383. Dorm: Hostelworld Bangalore listing, undated, lowest dorm-bed price per hostel (the page's 'Dorms From'), 27 hostels, excluding a capsule hotel (1500) and a hostel 215 km from the city; median 645.",
+        "notes": "Bengaluru is a large city and prices vary by area; Cleartrip's 3-star label includes budget-style hotels. Several Cleartrip homestays are hotel-operated serviced apartments."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1932,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "MakeMyTrip Bengaluru car rental page, 8 hr 80 kms package selected, Dzire/Etios sedan Rs 1932 (+Rs 58 other charges), 25.44/km after 80 km; SUV (Xylo/Ertiga) 3095. The page opens on the 1 hr/10 km package (Rs 415); the 8 hr 80 kms tab must be selected. Read 10 Oct 2026.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/rental-cabs-in-bengaluru.html"
+        ],
+        "notes": "Only one source; no union rate chart checked."
+      },
+      "food_per_person_day": {
+        "budget_inr": 340,
+        "standard_inr": 875,
+        "basis": "Zomato Bengaluru cost for two. Budget = 3 meals x half the median of 8 tiffin/dosa places (Taaza Thindi 100, Davangere Benne Dosa Corner 150, Dosa Bhavan 200, Gayatri Heavenly Harvest Kitchen 200, Ooru Tiffin Room 250, Cafe Amudham 300, Authentic Aroma Cafe 300, Arha Foods 450) = median 225 -> about 113 per meal. Standard = cafe breakfast (Original Burger Co. 500, Happen 500, Groundup Coffee 500, Lucid Dreams Coffee 550, Barista Coffee 700, Now Boarding Cafe 700, The Leankafe 700: median 550 -> 275) + 2 casual meals (Meals Of South 500, Shreemaatha Kitchens 500, Junglee 600, Indian Haveli 600, Mayura Cafe 600, Biryani Queen 1000, Kritunga 1000, Naati Curry Co. 1000, Rajdhani 1300: median 600 -> 300 per meal) = 275 + 600 = 875.",
+        "sources": [
+          "https://www.zomato.com/bangalore/restaurants/south-indian",
+          "https://www.zomato.com/bangalore/restaurants/cafes",
+          "https://www.zomato.com/bangalore/restaurants/north-indian"
+        ],
+        "notes": "Zomato city list pages load more restaurants on scroll; the city list is dominated by pubs, so places were picked by cuisine/price type and the casual set is a judgement."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union or association taxi chart",
+        "Area-by-area hotel price variation"
+      ]
+    },
+    "nandi-hills": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3120,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://kstdc.co/hotels/hotel-mayura-pine-top-nandi-hills/"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 3087,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.booking.com/searchresults.html?ss=Nandi+Hills%2C+Karnataka&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: KSTDC Mayura Pine Top Nandi Hills (the only hotel on the hilltop, 17 rooms) printed tariff card, undated, weekday basic rate, taxes extra: Deluxe Room (Nehru Nilaya) 2200, Gandhi Nilaya New Block 3120, KSTDC Deluxe Room 3190 (weekend 2400/3380/3740); median of the three standard room types = 3120. This is one government property, n=1, not a 3-star median. Homestay: Booking.com search results for Nandi Hills, 18-19 Nov 2026, 2 adults 1 room, 'starting from' price as shown (tax inclusion not stated), 4 guest houses/holiday homes: Nandi Holiday Homestay 2940, Nandi Villa and Homestays 2940, Nandi Skandagiri Heritage 3234, Stone Hills 6825; median 3087.",
+        "notes": "Booking.com showed the KSTDC property as unavailable on 18-19 Nov 2026 (sold out). Cleartrip's 'Nandi Hills' listing is a Kenyan town and was ignored. KSTDC says check-in before 6 PM. Seasonal hike applies to the KSTDC tariff."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {
+            "route": "Bangalore to Nandi Hills, one-way AC sedan (Etios/Swift Dzire) starting fare, 60-70 km",
+            "inr": 1597
+          }
+        ],
+        "basis": "Savaari Bangalore to Nandi Hills page: AC sedan (Toyota Etios, Swift Dzire) one-way starting fare Rs 1597, round-trip Rs 10/km; hatchback 1517, SUV (Ertiga/Xylo) 2171.",
+        "sources": [
+          "https://www.savaari.com/bangalore/bangalore-to-nandi-hills-cabs"
+        ],
+        "notes": "Nandi Hills is a day trip from Bengaluru; no local 8-hour rate applies on the hill (the entry road is short). Rs 10/km is Savaari's round-trip per-km rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No own source found: Zomato has no Nandi Hills page, and the Chikkaballapur Zomato page returned no priced listings.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Food prices on or near Nandi Hills",
+        "Local taxi day rate",
+        "3-star tier (no 3-star on the hill; foothill resorts not priced for the date)",
+        "Whether Booking.com 'starting from' includes tax"
+      ]
+    },
+    "dharmasthala": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4725,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.booking.com/searchresults.html?ss=Dharmasthala&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+        ],
+        "budget_hotel_median_inr": 1680,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.booking.com/searchresults.html?ss=Dharmasthala&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+        ],
+        "homestay_median_inr": 3402,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.booking.com/searchresults.html?ss=Dharmasthala&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "All figures: Booking.com search results for Dharmasthala, 18-19 Nov 2026, 2 adults 1 room, 'Starting from' price as shown (tax inclusion not stated; values look like a base rate plus 5%). Mid: 4 private hotels with Booking review score 7.4 or higher (Yathra Athithya 3780, Aananda Wellness and Resorts 4724, Hotel Parijatha Inn 4725, The Ocean Pearl 5775); Booking prints no star rating, so this is 'well-reviewed private hotel', median 4725. Budget: 3 lodges/small hotels (Vanasiri Cottage Tourist Home 1259, Supreme Lodge 1680, SJ Residency 1680), median 1680. Homestay: 2 homestays (Nadi Teera 2184, Nisarga Homestay 4620), median 3402, n=2 only.",
+        "notes": "Trust guesthouses (Sri Kshetra Dharmasthala, official pages, undated tariff cards, bookable only on shridharmasthala.org with a limited online quota): Nethravathi 61 AC rooms 1500; Rajathadri AC 1500, 2-bed non-AC 600, 4-bed non-AC 1000; Sahyadri 2-bed non-AC 600, 4-bed non-AC 1000, semi-deluxe AC 1500, deluxe AC 2000; Gayathri 300/500; Sharavathi 50 (no attached bath, no hot water). Sources: https://www.shridharmasthala.org/nethravathi/ , /rajathadri/ , /sahyadri/ , /gayathri/ , /sharavathi/. Trust rooms are not part of the medians."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Mangalore to Dharmasthala, one-way AC sedan starting fare",
+            "inr": 2348
+          }
+        ],
+        "basis": "Savaari Mangalore to Dharmasthala page: AC sedan one-way starting fare Rs 2348, round-trip Rs 12/km; hatchback 2230, SUV 3295.",
+        "sources": [
+          "https://www.savaari.com/mangalore/mangalore-to-dharmasthala-cabs"
+        ],
+        "notes": "Dharmasthala is a temple town reached from Mangalore; no local 8-hour rate found. SDM Cabs prints sedan Rs 11/km, SUV Rs 14/km at https://sdmcab.com/route/car-rental-dharmasthala-city-cabs but no address or package, so it is not used as a figure."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No own source found: Zomato has no Dharmasthala page (404). The Trust runs free Annadana meals at the temple.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Food prices",
+        "Local taxi day rate",
+        "Star ratings of private hotels (Booking prints none)",
+        "Whether Booking prices include tax"
+      ]
+    },
+    "gokarna": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2842,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Gokarna town to Om Beach, taxi or rickshaw after bargaining (Wikivoyage, updated Jan 2023; range 200-250)",
+            "inr": 225
+          },
+          {
+            "route": "Gokarna Road railway station to Gokarna town, taxi (Wikivoyage)",
+            "inr": 250
+          }
+        ],
+        "basis": "MakeMyTrip Gokarna car rental page, 8 hr 80 kms package, Dzire/Etios sedan Rs 2842 (+Rs 95 taxes and charges), 12/km after 80 km; SUV (Xylo/Ertiga) Rs 4324; a 6 hr 60 kms tab also exists. Read 10 Oct 2026.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/rental-cabs-in-gokarna.html",
+          "https://en.wikivoyage.org/wiki/Gokarna"
+        ],
+        "notes": "Only Gokarna and Om beaches are reachable by road; Kudle, Half Moon and Paradise need a walk or boat, so a cab day is not how most people see the beaches. No Gokarna taxi association chart was found online."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 900,
+        "basis": "Stories of Raku blog 'Price for two' ranges for Gokarna places (undated blog). Budget = 3 x half of the midpoint of Dattaprasad thali place (200-300 -> 250 -> 125 per meal), n=1. Standard = cafe breakfast (Sea Rock Cafe 400-600 -> 500 -> 250) + 2 cafe meals at the 500-800 band (Namaste Cafe, Bhagwan Cafe, a third cafe; midpoint 650 -> 325 per meal) = 250 + 650 = 900.",
+        "sources": [
+          "https://storiesofraku.com/best-cafes-and-restaurants-in-gokarna/"
+        ],
+        "notes": "Zomato has no priced Gokarna listings. Single undated blog source, ranges not point prices: low reliability."
+      },
+      "confidence": "low",
+      "unverified": [
+        "A dated taxi union rate chart",
+        "Budget-food basis is a single place",
+        "Zomato or menu-board prices for Gokarna"
+      ]
+    },
+    "karwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2445,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4491727?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4534013?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-west-end-732854?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 5122,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/5395568?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/mystique-copper-villa-homestay-karwar-5737796?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest room, 3 properties Cleartrip labels 3-star that had a bookable room that night (The Westend 2100, Hotel West end 2445, Hotel Eden 4662); median 2445, n=3. Four other 3-star-labelled Karwar properties showed no bookable room for the date. Homestay: same method, 2 properties (River Deck Homestay 4058, Mystique Copper Villa Homestay 6186, the latter labelled a 2-star villa); median 5122, n=2.",
+        "notes": "Thin supply: Karwar has few Cleartrip properties and several were sold out on 18 Nov. Sterling Karwar (4-star resort, 3384) was excluded from the 3-star median. Budget tier null: the only budget-list property had no bookable room."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Karwar to Gokarna (60-70 km), one-way AC sedan (Etios/Swift Dzire) starting fare, Savaari",
+            "inr": 2654
+          }
+        ],
+        "basis": "Savaari Karwar to Gokarna page: AC sedan one-way starting fare Rs 2654 (hatchback 2521, SUV 3727). Savaari's Karwar page says 8 hr/80 km local packages exist but prints no price; MakeMyTrip's Karwar rental page shows no package price.",
+        "sources": [
+          "https://www.savaari.com/karwar/karwar-to-gokarna-cabs"
+        ],
+        "notes": "No Karwar local day rate found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 500,
+        "basis": "Zomato Karwar delivery listings, 'cost for one' as printed (Rs 100 to 350). Budget = 3 meals x median of 9 tiffin/fast-food places (Udupi Abhiruchi 100, Aramane Veg and Non Veg 100, Hotel Shruthi Sagar 100, Muniya Fast Food 100, Biryani By Taj 100, Lassi N Cafe 100, Dream Hotel 150, Udupi Cafe 150, Taj Corner 150) = 100 per meal. Standard = breakfast at a cafe/tiffin place (median of Lassi N Cafe 100, Udupi Cafe 150, Udupi Abhiruchi 100 = 100) + 2 casual meals (Gourish Garden 150, SM Kitchen 150, Hotel Poornima 200, Parvathi Fish Land 200, Sea View Hotel 200, Shalimar Biryani Junction 200, Amrut Aura 200, Tulip-Hotel Eden 350: median 200) = 100 + 2x200 = 500.",
+        "sources": [
+          "https://www.zomato.com/karwar/restaurants"
+        ],
+        "notes": "The page is Zomato's delivery view (cost for one), not dine-in cost for two."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget hotel and dorm tiers",
+        "Local taxi day rate",
+        "Dine-in menu prices",
+        "Larger 3-star sample (several sold out that night)"
+      ]
+    }
+  }
+}
