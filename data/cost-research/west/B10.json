@@ -1,0 +1,565 @@
+{
+  "batch": "B10",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "mahabaleshwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4215,
+        "mid_n": 12,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-mahabaleshwar"],
+        "budget_hotel_median_inr": 1624,
+        "budget_n": 13,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/mahabaleshwar/budget-hotels"],
+        "homestay_median_inr": 5650,
+        "homestay_n": 3,
+        "homestay_sources": ["https://www.cleartrip.com/hotels/homestays-in-mahabaleshwar"],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted. 12 rows labelled 3-star and in Mahabaleshwar: Alokik Sharanam Zinc Journey by The Fern 8,840, Byke Retreat Sai Cottage 3,327, Picaddle Luxury Boutique Resort 4,140, LA Fortuna Resort 2,390, Harmony Palace 5,621, Cloud Green Resort 2,664, Rain Raga Resort 5,152, Treebo JP Cottage 4,269, Hotel Panorama 4,160, Hotel Apsara 3,685, Bliss County Resort 6,250, Hotel King Garden 6,044; range 2,390-8,840, median of 12 = (4,160+4,269)/2 = 4,215. Dropped 3 rows labelled 4-star (Valley View Beacon, Mountain Breeze, Chambers) and 2 rows named as Panchgani properties (Bellevue Resort Panchgani 3,023, Orient Beacon Panchgani 5,817; used in the panchgani entry). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 13 rows: Vighnaharta Palace 1,543, Mulberry Inn (Metgutad) 1,511, Hotel Wilson Executive 1,792, Treebo Trend Hillway Inn 1,636, Treebo Trip Rahi Plaza 1,636, Shanti's Hotel Surbhi 1,680, Hotel Sangam Executive 1,624, Hotel Sapna 1,098, Hotel Sunny Classic 1,979, Hotel Vyankatesh 1,344, Hotel Vishwanath Palace 1,200, Treebo Rahi Forest View 1,917, Hotel Sangam 750; median 1,624. Dropped Elysium Resort (Bhilar village, nearer Panchgani), OYO Meghna Food Studio (Panchgani Road, 870 tax line) and Hotel Prity Sangam (same name also appears on Cleartrip's Ganpatipule list, location unreliable). Homestay: Cleartrip homestay page, 13 Nov 2026, pre-tax: The Address Boulevard 4,342, Honeywood Holiday Homes (Avakali) 5,650, Gugal Residency (Metgutad) 6,040; dropped MANSHA'S High5 Resort (Bhilar, 6,692) and 2 sold-out rows. Different dates for budget (11 Oct) vs mid and homestay (13 Nov).",
+        "notes": "Date effect not controlled: budget is a Sunday-night October capture, mid and homestay a Friday in November. Cleartrip's 'homestay' rows are resort-like cottages at 4,342-6,040, not village homestays, so the homestay median is weak (n=3). Hostelworld has no Mahabaleshwar page (404). Cleartrip's Mahabaleshwar 3-star list mixes in Panchgani properties; only rows named for Mahabaleshwar or with Mahabaleshwar-side addresses (Metgutad, Avakali) were used. Whether Picaddle sits in Mahabaleshwar or Panchgani is not shown on the page; leaving it out gives a median of 4,160."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Mahabaleshwar sightseeing points package: 'Mahabaleshwar Darshan' (Old Mahabaleshwar, Panchganga, Arthur's Seat circuit, Kate's, Echo, Needle Hole; 3-4 h), fixed fare per 4-seater cab (taxi-service operator page with the union-style fixed card, non-AC, undated)",
+            "inr": 1200,
+            "range": "Waterfall and Sunset circuit (Wilson, Plato, King's Chair, Lodwik, Lingmala, Venna, Mumbai Point) 1,200; Full-day combo 9 h 3,000. Mahabaleshwar City Cab (Murray Peth address, 2026): Darshan 1 and 2 at 799 each (2.5 h), Darshan 3 at 849"
+          },
+          {
+            "route": "Pratapgad Fort darshan (3.5 h, per cab)",
+            "inr": 1600,
+            "range": "Mahabaleshwar City Cab 1,499 (3 h)"
+          },
+          {
+            "route": "Mahabaleshwar to Panchgani town, one way",
+            "inr": 800,
+            "range": "Panchgani darshan 3 h 1,200 on the same card; Satara Car Rentals Mahabaleshwar to Panchgani sightseeing (19 km) from 1,500"
+          },
+          {
+            "route": "Pune to Mahabaleshwar, one way (about 120 km)",
+            "inr": 2800,
+            "range": "Satara Car Rentals 'from' 2,800 (2026 guide, vehicle class not named); cabspune.in (Mundhwa, Pune, reviewed June 2026) 'from' 2,400; taxi-service operator page card lists Pune railway station drop 3,500"
+          }
+        ],
+        "basis": "Full-day local sedan quotes, median of four: oneday.tours sedan (Etios/Dzire/Indigo) 2,400, 9:00-17:30 with toll, parking and driver batta included, undated; oneday.travel sedan (Amaze/Etios/Dzire) 2,499, 7-8 h, page dated 18 Apr 2026, only sedans offered for local sightseeing, entry, parking and toll extra; Satara Car Rentals 'from 2,500 per day' (vehicle not named, 2026 guide, fares indicative); taxi-service operator card 'Full-Day Combo' 3,000 for 9 h. Median 2,500, range 2,400-3,000. Point-to-point rows are from the same pages.",
+        "sources": [
+          "https://oneday.tours/one-day-mahabaleshwar-local-sightseeing-trip-by-car/",
+          "https://oneday.travel/1-day-mahabaleshwar-local-sightseeing-tour-by-cab/",
+          "https://www.sataracarrentals.com/mahabaleshwar-sightseeing-itinerary-taxi/",
+          "https://sunildanawale.github.io/Mahabaleshwartaxi/",
+          "https://www.mahabaleshwarcitycab.com/",
+          "https://cabspune.in/routes/pune-to-satara-cab/"
+        ],
+        "notes": "No dated union rate card could be fetched. The union association's own site (mshwartaxi.com did not resolve) was only seen in a search summary, which quoted much lower and older fares (tours 660 each, Pratapgad 1,200, Panchgani 840); those are not used. The card on sunildanawale.github.io is an individual operator's page that presents fixed fares (no seasonal surge, non-AC, toll and parking extra, undated), so treat the 1,200 / 1,600 / 800 figures as indicative. Local fixed-fare tours cover only listed points; extra points cost extra and the town charges an entry fee per car and head."
+      },
+      "food_per_person_day": {
+        "budget_inr": 560,
+        "standard_inr": 825,
+        "basis": "Cost for two (cost / 2 = per person per meal) from FabHotels blog (published 28 Apr 2022, updated 18 Aug 2023): Aman Restaurant 300, Cafe Peter 450, Saayali 500, Mulberry Inn 500, Bagicha Corner 500, Grapevine 600, Meghdoot 600, Royal Garden 800, Farmhouse Bistro 800, Mapro Garden 800; Holidify: Hotel Rajmahal 150 for two, Aman 250-300. Dropped Sizzler Place 1,400, Keys Cafe 1,400, Olive Garden 1,200, Angaare 1,000 as premium. Per-person sorted (Rajmahal 75, Aman 150, Cafe Peter 225, then 250, 250, 250, 300, 300, 400, 400, 400): median 250-300 -> 275, standard = 3 x 275 = 825. Budget = 3 x 187 where 187 is the median of the cheapest four (75, 150, 225, 250) = 560.",
+        "sources": [
+          "https://www.fabhotels.com/blog/restaurants-in-mahabaleshwar/",
+          "https://www.holidify.com/places/mahabaleshwar/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.swaadyatra.in/city/mahabaleshwar"
+        ],
+        "notes": "FabHotels figures are from 2023, so likely a little low for 2026. SwaadYatra (updated 8 May 2026) shows snack stalls at 30-120 and cafes at 200-500 per person, which fits the range. Search summaries of Zomato put veg thalis at 300-350 (Hotel Vyankatesh 350), so a thali-only budget day would cost more than 560."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Dated taxi union rate card (association site did not load)",
+        "Dorm beds (Hostelworld page 404)",
+        "Zomato / Swiggy cost for two (not loaded)",
+        "Homestay median is resort-like Cleartrip rows, n=3",
+        "Budget is 11 Oct, mid and homestay 13 Nov"
+      ]
+    },
+    "panchgani": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5457,
+        "mid_n": 18,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-panchgani",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-mahabaleshwar"
+        ],
+        "budget_hotel_median_inr": 1500,
+        "budget_n": 5,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/panchgani/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 700,
+        "dorm_n": 2,
+        "dorm_sources": ["https://www.hostelworld.com/hostels/Panchgani?currency=INR"],
+        "price_basis": "Mid: Cleartrip Panchgani '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted, 16 rows: Rainforest Resort and Spa 8,899, Hotel Royal Orbit 4,968, Hotel Malas 6,156, Mount View Executive 3,872, Blue Country Resort 9,266, Onella Regency 5,963, Jumbo Serene 3,276, Glenvista Estate 3,004, Summer Plaza Resort 6,885, Hotel Mount View Heritage 8,803, The Dhanhills 4,309, Arabian Villas 5,260, River Palace 5,219, Raval Resort 3,044, Jaffer Bhai's Brickland 5,654, Rain Forest Villas 8,403; plus 2 Panchgani-named rows from the Mahabaleshwar 3-star page, same date: Bellevue Resort Panchgani 3,023, Orient Beacon Resort Panchgani 5,817. n=18, range 3,004-9,266, median (5,260+5,654)/2 = 5,457 (the 16 Panchgani-page rows alone give the same median). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 5 rows: Hotel Valley Nest 1,650, Hotel Silver Leef (Dandeghar) 1,163, Sherbaug Theme Park and Resort 1,500, Hotel Rahil Plaza 999, Hotel Sai Palace 1,680; median 1,500. Dorm: Hostelworld 'dorm bed from', no dates: Zostel Plus Panchgani 699, MonkeyCap Tourist Hostel 700.",
+        "notes": "Panchgani and Mahabaleshwar are 18 km apart with separate listings; the Panchgani 3-star median (5,457) is higher than Mahabaleshwar's (4,215) on the same Friday, partly because the list has several villa/resort rows at 8,400-9,300. Cleartrip's Panchgani homestay page lists only 3 apartments, all sold out on 13 Nov, so no homestay median. Budget (11 Oct) and mid (13 Nov) are different dates. Arc Valleys on Hostelworld (private room 2,000, no dorm) not used."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Panchgani darshan (Table Land, Parsi Point, museum, Bhilar waterfall in monsoon; 3 h), fixed fare per 4-seater cab from Mahabaleshwar (operator page with union-style card, undated)",
+            "inr": 1200,
+            "range": "Mahabaleshwar City Cab (Murray Peth, 2026) Panchgani darshan 1,499 (3 h, Table Land, Parsi Point, Mapro Garden, wax museum, aquarium)"
+          },
+          {
+            "route": "Mahabaleshwar to Panchgani town, one way",
+            "inr": 800,
+            "range": "Satara Car Rentals Mahabaleshwar to Panchgani sightseeing (19 km) from 1,500"
+          }
+        ],
+        "basis": "No Panchgani-based local day rate was found. Panchgani is sightseen as a 3-hour circuit, mostly sold from Mahabaleshwar; the two sources above are the only fares fetched. The Mahabaleshwar full-day figure (about 2,500) is not repeated here because Panchgani cabs are a separate stand.",
+        "sources": [
+          "https://sunildanawale.github.io/Mahabaleshwartaxi/",
+          "https://www.mahabaleshwarcitycab.com/",
+          "https://www.sataracarrentals.com/mahabaleshwar-sightseeing-itinerary-taxi/"
+        ],
+        "notes": "Entry fee on Table Land and Mapro Garden are extra. No Pune to Panchgani fare was fetched."
+      },
+      "food_per_person_day": {
+        "budget_inr": 525,
+        "standard_inr": 675,
+        "basis": "Holidify Panchgani cost for two: Lucky Restaurant bakery-cafe 300, Strawberry Inn 400, Akbarally Parantha House 400, Mantraa 500, Rasoi by Food Ville 500, Hotel Malas Dining 500. Per person per meal 150, 200, 200, 250, 250, 250; median 225 -> standard 3 x 225 = 675. Budget = 3 x 175 where 175 is the median of the cheapest two (150, 200) = 525. Hilltop Ice Cream Cafe (200, desserts) excluded.",
+        "sources": ["https://www.holidify.com/places/panchgani/restaurants-places-to-eat-local-cuisine.html"],
+        "notes": "Holidify page is undated and has only 6 usable rows, so the budget/standard gap is thin and the figures are indicative. Panchgani is a short Mahabaleshwar-style tourist strip; the Mahabaleshwar entry has a larger sample."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local 8 h taxi rate",
+        "Pune to Panchgani fare",
+        "Homestay prices (3 listings, all sold out on 13 Nov)",
+        "Food sample is 6 restaurants from one undated page"
+      ]
+    },
+    "satara": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2425,
+        "mid_n": 14,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-satara"],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted, 14 priced rows: Sunny Executive 1,803, Sai Samrat Resort 1,332, Treebo City Inn 5,171, Manasi Pride 2,415, Hotel Manasi INN 2,661, Hotel Manasi Royal 1,658, Hotel Rajtara 2,270, Hotel O Satara Bypass 909, Hotel Maharaja Regency 5,188, Itsy Hotels Sitara 4,911, Hotel Relax Inn 2,435, Treebo Pushpak 5,059, Townhouse Nagthane 1,017, Preeti Executive 3,000; The Fern Residency sold out. Range 909-5,188, median (2,415+2,435)/2 = 2,425.",
+        "notes": "Cleartrip labels every row 3-star, including lodging-grade rows at 909-1,332 (Hotel O Satara Bypass, Townhouse Nagthane, Sai Samrat), so the median is lower than a true 3-star median; without those three the median is 2,661. A separate Cleartrip budget page for Satara (Sun 11 Oct, pre-tax) had only 4 rows (Hotel Radhika Palace 2,463, Maharaja Regency 3,421, The Fern Residency 4,720, V Resorts Anandvan Wai 2,284, which is in Wai) and is not used as a budget median."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to Satara, one way (sedan, all-inclusive of driver, fuel and toll)",
+            "inr": 2350,
+            "range": "2,200-2,500 on cabspune.in (Mundhwa, Pune; reviewed June 2026)"
+          },
+          {
+            "route": "Satara to Mahabaleshwar, one way (about 55 km)",
+            "inr": 1600,
+            "range": "'from' 1,600, Satara Car Rentals 2026 guide, vehicle class not named"
+          },
+          {
+            "route": "Satara to Kaas Plateau round trip with waiting",
+            "inr": 2200,
+            "range": "2,200-3,500 for small cars, Satara Car Rentals Kaas page (copyright 2025)"
+          }
+        ],
+        "basis": "Indicative only, no Satara-based fixed local rate found. Astha Travels Line AC sedan 8 h / 80 km 2,200 (extra 15/km; multi-city operator with Surat and Mumbai offices, footer 2023); MakeMyTrip Satara city cabs Swift Dzire from 2,756 + 233 taxes (search-result snippet; page timed out); CabBazar sedan 1,500 (search-result snippet; page returned 403 earlier). Median of 1,500 / 2,200 / 2,756 = 2,200. cabspune.in says Satara local sightseeing has no fixed price and the driver plans the day around forts and viewpoints.",
+        "sources": [
+          "https://asthatravelsline.com/book-cab-in-satara/",
+          "https://www.makemytrip.com/car-rental/satara-city-cabs.html",
+          "https://cabbazar.com/city/satara",
+          "https://cabspune.in/routes/pune-to-satara-cab/",
+          "https://www.sataracarrentals.com/kaas-plateau-taxi-service/",
+          "https://www.sataracarrentals.com/mahabaleshwar-sightseeing-itinerary-taxi/"
+        ],
+        "notes": "Kaas, Ajinkyatara and Thoseghar are in different directions, so a combined day can exceed 80 km (extra 12-15/km). Kaas Plateau has its own entry and booking system in flower season."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "Per-person meal figures: Zomato listings via search-result summary (per person): Nation 11, Satara Club, Meraaj Palace about 400 each; Swad Chinese 200; Ruchi Snacks (Maharashtrian) 100; a Tripadvisor review of Hotel Pruthviraj Restaurant and Lawns: veg thali 200, non-veg thali 250. Sorted 100, 200, 200, 250, 400, 400, 400: median 250 -> standard 3 x 250 = 750. Budget = 3 x 150, 150 being the midpoint of the cheapest listed meal (100) and a veg thali (200).",
+        "sources": [
+          "https://www.zomato.com/satara",
+          "https://www.tripadvisor.com/Restaurants-g1162199-Satara_Satara_District_Maharashtra.html"
+        ],
+        "notes": "Search-summary level: neither page was fetched in full and Holidify's Satara page was empty. Budget uses a midpoint, so it is soft."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget hotel median",
+        "Homestay and dorm",
+        "Satara-based local cab rate (only a multi-city operator and search snippets)",
+        "Food figures are search-summary level"
+      ]
+    },
+    "kolhapur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2724,
+        "mid_n": 14,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-kolhapur"],
+        "budget_hotel_median_inr": 1540,
+        "budget_n": 19,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/kolhapur/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted, 14 rows labelled 3-star: Hotel 3 Leaves 2,200, The Qubice 3,375, Grand Indu 5,240, Madhuri Executive 2,149, Kohinoor Square 1,985, Vrindavan Deluxe 1,920, Maratha Regency 4,539, K tree Boutique 4,241, Ramee Panchshil 3,694, Hotel Opal 2,804, Rajpurush 2,024, Trushadham 2,644, Shree Sai 2,448, Radiant 5,103; range 1,920-5,240, median (2,644+2,804)/2 = 2,724. Dropped two rows labelled 4-star (Vrishali Executive 4,176, Sayaji 7,517). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 19 rows, range 755-1,960, e.g. Galaxy Inn 1,903, City Crown 1,859, Classic Mid Town 1,792, Rajat Executive 1,792, Sony Palace 1,238, Mangesh Plaza 755, Aashish Deluxe 1,170, Orient Crown 1,540; median 1,540.",
+        "notes": "Budget (11 Oct) and mid (13 Nov) are different dates; the same hotels appear in both lists (Hotel Madhuri Executive 1,309 on 11 Oct vs 2,149 on 13 Nov, Hotel Shree Sai 1,903 vs 2,448), so the date effect is large and the budget-to-mid gap is overstated. No homestays or hostels surfaced for Kolhapur."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Kolhapur to Amboli, one way (Swift Dzire; page bills 236 km at 15/km, likely return-leg billing, while its own text says 110-130 km)",
+            "inr": 4500,
+            "range": "Dazzlecab fare table 4,725 incl 225 taxes and fees; true one-way drop likely lower, other operators not fetched"
+          }
+        ],
+        "basis": "Kolhapur Darshan 8 h / 80 km sedan (4+1), AC: Jaihind Travels (Royal Plaza, Dabholkar Corner, Kolhapur; footer 2025) 2,200 AC, 2,000 non-AC, extra 12/km and 150/h; Kolhapur Car Rental (Shahu Market Yard, Kolhapur; footer 2020) 2,200 AC, 2,000 non-AC, extra 12/km and 100/h; OneWay.Cab 8 h / 80 km from 1,799 (indicative start price, extra 12/km and 130/h). Median of AC quotes 2,200, 2,200 and 1,799 = 2,200; range 1,799-2,200. Jaihind's longer Mahalaxmi, New Palace, Jotiba, Panhala, Bhavani Mandap, Rankala circuit is 2,500 non-AC / 2,800 AC.",
+        "sources": [
+          "https://www.jaihindtravels.in/kolhapur-darshan.php",
+          "https://www.kolhapurcabrental.com/kolhapur-darshan.html",
+          "https://oneway.cab/kolhapur",
+          "https://www.dazzlecab.com/kolhapur/kolhapur-to-amboli"
+        ],
+        "notes": "Tolls, parking and entry fees extra at the local operators. Jyotiba and Panhala may take a day over 80 km (ask for the 100 km package). The Kolhapur to Amboli figure disagrees across operators (search summaries quoted 2,250 and 4,240 for the same route) so treat it as a wide range. No union rate card found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 600,
+        "basis": "Search-summary level. Zomato Kolhapur listings (search result): most casual restaurants about 150-250 for one (KFC, Castle, Hotel Qaswa Hills 200 for one), veg thali places about 100 for one. Standard = 3 x 200, budget = 3 x 100. Cross-checks: Hotel Parakh Kolhapuri mutton thali 410 and Zomato 350 for one; Patlacha Wada mutton thali 520-590; Hotel Rajpurush unlimited veg thali 160 (old Tripadvisor review, reviewer said prices rose 25% since).",
+        "sources": [
+          "https://www.zomato.com/kolhapur/restaurants",
+          "https://www.zomato.com/kolhapur/delivery/dish-veg-thali",
+          "https://www.tripadvisor.com/Restaurants-g12399792-c24-Kolhapur_District_Maharashtra.html",
+          "https://www.holidify.com/places/kolhapur/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Holidify's Kolhapur page shows 300-500 per restaurant (Waman 300, Padma 400, Raj Mandir 400, Parakh 500, Rajpurush 500, Milano's 1,000) without saying for one or two, so it was not used for the figure. A non-veg Kolhapuri thali day would cost well above 600."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Kolhapur to Amboli fare is wide (2,250 to 4,725 depending on operator)",
+        "Food figures are search-summary level; Zomato pages did not load",
+        "Homestay and dorm",
+        "Union taxi rate card"
+      ]
+    },
+    "amboli": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1296,
+        "budget_n": 2,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/amboli/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: Cleartrip Amboli budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 2 rows on Sawantwadi Road: Silver Spring Resort 1,792, Hotel Shiv Malhar 800; median 1,296. n=2 only. Mid: none. Cleartrip's Amboli page for 13 Nov 2026 shows only Stone Wood Hotel (labelled 4-star, 5,095), villas on Jakatwadi (Shantidarshan 5,255 and 10,755), RainHills Holiday Home (labelled 1-star homestay, 6,627) and 4 rows sold out (Madhuban Hotel, K Hill House, two Shantidarshan listings).",
+        "notes": "MTDC Green Valley Resort (Belgaum Road, Amboli): 'MTDC Amboli Tariff 2026' on an authorised-agent page lists Room-1 at 990 and Room-5 at 2,800 (AC, non-AC, suites and a dormitory exist, other tariffs not shown; 'tariffs vary by season'); a second agent page says 'special online rates will be updated soon' and shows no tariff. Official MTDC booking pages did not load. Small hill station with few hotels; the 13 Nov villas and homestay (5,255-10,755) are whole-unit prices, not double rooms, so no homestay median."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Kolhapur to Amboli, one way (Swift Dzire; page bills 236 km at 15/km, likely return-leg billing, while its own text says 110-130 km)",
+            "inr": 4500,
+            "range": "Dazzlecab fare table 4,725 incl 225 taxes and fees; true one-way drop likely lower"
+          }
+        ],
+        "basis": "No local Amboli cab rate found (the village is small; visitors arrive by their own car or a Kolhapur / Sawantwadi / Goa cab). Only the Kolhapur to Amboli fare from one operator was fetched; Savaari and DDcab pages returned no fare.",
+        "sources": ["https://www.dazzlecab.com/kolhapur/kolhapur-to-amboli"],
+        "notes": "Search summaries of other operators quoted 2,250 (DDcab 'starts from') and 4,240 for the same route; the pages did not show those figures when fetched, so they are not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": null,
+        "basis": "Search-summary level: Tripadvisor review of Narvekar Khanawal (local mess in Amboli market): prawn thali 200, chicken thali 100, bangda thali 180, surmai thali 150 (review undated, older); MTDC Green Valley chicken curry with bhakri about 180. Budget = 3 x 150 (midpoint of the 100-200 thali range).",
+        "sources": ["https://www.tripadvisor.com/Attraction_Review-g297648-d598226-Reviews-or80-Amboli-Maharashtra.html"],
+        "notes": "Older review figures, likely a little low for 2026. Holidify lists Shivmalhaar Hotel at 500 without a for-one or for-two label, so no standard figure."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid and homestay tiers (n=0)",
+        "Official MTDC Amboli tariff page (booking portal did not load)",
+        "Local taxi rate",
+        "Standard food figure"
+      ]
+    },
+    "ganpatipule": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4306,
+        "mid_n": 11,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-ganpatipule"],
+        "budget_hotel_median_inr": 1478,
+        "budget_n": 5,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/ganpatipule/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted, 11 hotel / resort rows: The Grand Kokan Resort 5,381, Konkan Nest Resort 4,470, Kokanwadi Resort 2,285, Atithi Lodge 2,503, Shiv Sagar Palace 4,330, Deluxe Krishna Sea View 4,582, Hotel Durvankur 4,306, Hotel Deepak Executive 2,588, Dr Nimkar's Konkan Nest Resort 4,267, Kaular Atithis Grand Kokan Resort 6,651, Shri Atithi Executive 3,554; range 2,285-6,651, median 4,306. Dropped Redstone House (guest house 5,217), Center Point Residency (homestay 8,372), Sea View home stay-Hilltop (apartment 1,625), Beach Front Villas (sold out). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 5 rows: Center Point Residency 1,500, Chaitanya Resort 1,478, Darya Sarang Palace 1,440, Hotel Durvankur 999, Hotel Shreesagar 1,568; median 1,478. Dropped Hotel Prity Sangam 1,456 (same name also listed in Mahabaleshwar).",
+        "notes": "Ganpatipule only; Ratnagiri (25 km) medians not used. Konkan Nest Resort and Dr Nimkar's Konkan Nest Resort, and Grand Kokan Resort and Kaular Atithis Grand Kokan Resort, may be the same properties listed twice; removing both likely duplicates gives n=9 and a median of 4,306 as well. Budget (11 Oct) and mid (13 Nov) are different dates; Hotel Durvankur is 999 on 11 Oct and 4,306 on 13 Nov. Cleartrip's homestay page: 8 of 9 rows sold out on 13 Nov and the only priced one is Center Point Residency 8,372, so no homestay median. MTDC Beach Resort Ganpatipule 'Tariff-2026' on an authorised-agent page: Sea View Deluxe non-AC 2,200, Bamboo House sea view AC 3,300 and non-AC 2,500 (2 persons, no extra bed), Sea Villa with open deck 5,000; 'tariffs vary by season'."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13.5,
+        "point_to_point": [
+          {
+            "route": "Ratnagiri to Ganpatipule, one way (about 26 km, sedan Dzire or equivalent, before GST)",
+            "inr": 1587,
+            "range": "Gozocabs compact 1,533 before GST; per-km reference 13.50; MakeMyTrip Dzire 1,662 with 60 km included (search-result snippet, page timed out)"
+          }
+        ],
+        "basis": "Gozocabs Ratnagiri to Ganpatipule page, distance 26 km: sedan 1,587 before GST, compact 1,533, per-km from 13.50 (reference rate). Distance checked against the page (Gozocabs sometimes resolves small towns wrongly; this one matches). Page's inclusion wording is inconsistent on tolls and GST.",
+        "sources": ["https://www.gozocabs.com/book-taxi/ratnagiri-ganpatipule"],
+        "notes": "Ganpatipule is a small beach-temple town and no local 8 h rate was found. Kolhapur to Ganpatipule fare not found (a Kolhapur operator links to one without a price)."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No current rupee figures found. Holidify lists Mehendales Swaad Dining at 200 without a for-one or for-two label; Tripadvisor reviews give a veg thali of 110-115 in 2016-2017 (too old to use).",
+        "sources": ["https://www.holidify.com/places/ganapatipule/restaurants-places-to-eat-local-cuisine.html"],
+        "notes": "Left null rather than inflate dated reviews."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Current food prices",
+        "Local taxi day rate and Kolhapur to Ganpatipule fare",
+        "Homestay median (all but one listing sold out)",
+        "Official MTDC tariff (agent page only)"
+      ]
+    },
+    "ratnagiri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2592,
+        "mid_n": 10,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-ratnagiri"],
+        "budget_hotel_median_inr": 900,
+        "budget_n": 2,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/ratnagiri/budget-hotels"],
+        "homestay_median_inr": 1277,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-ratnagiri",
+          "https://www.cleartrip.com/hotels/india/ratnagiri/budget-hotels"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted, 10 hotel rows: Hotel Sangam Regency 3,643, Hotel Vihar Deluxe 2,554, Hotel Maratha Residency 2,630, Hotel Mathura Executive 2,915, Grand Marina by Westbay 2,736, Hotel Landmark 1,706, Hotel Sunstone Suites 2,722, Aasra Lodge 867, Shree Ramkrishna Anandvan 1,885, Hotel Chitara Residency 1,661; range 867-3,643, median (2,554+2,630)/2 = 2,592. Dropped Mango Valley Resorts Ganpatipule (12,985, in Ganpatipule), The Mango Villas (villa 3,724) and 3 rows sold out (O Nest Oceano Pearl, Dio Regaalo Theme Resort, Hotel Peace Park). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: Hotel Parvati Palace 800, Sabera Residency 1,000; median 900, n=2. Homestay: Shriramkrupa Homestay (Rajiwada) 1,209 on 13 Nov 2026 and Onest Home Stay 1,344 on 11 Oct; median 1,277, n=2.",
+        "notes": "Ratnagiri town only (Ganpatipule is 25 km away and has its own entry). Cleartrip labels Aasra Lodge (867) as 3-star though it is lodging-grade; without it the mid median is 2,630. Budget and homestay mix 11 Oct and 13 Nov dates. The Mango Villa (1,899, Oct 11, 5.0 rating) is a villa-style stay and was not counted. Homestay page has 3 other rows sold out on 13 Nov. Hostelworld has no Ratnagiri page (404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2504,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Ratnagiri to Ganpatipule, one way (about 26 km, sedan Dzire or equivalent, before GST)",
+            "inr": 1587,
+            "range": "Gozocabs compact 1,533 before GST; per-km reference 13.50; MakeMyTrip Dzire 1,662 with 60 km included (search-result snippet, page timed out)"
+          }
+        ],
+        "basis": "HireMeCar Ratnagiri page: Toyota Etios or similar (AC, 4+1) 8 h / 80 km, base fare 2,385 + 5% GST 119 = 2,504; extra 13/km and 130/h; night allowance 300 (10 PM to 5 AM); toll, parking, inter-state tax extra; page undated. Search-result snippet only: Clear Car Rental Tata Indigo 2,835 for the same package, 14.50/km and 130/h (page failed a certificate check). Ratnagiri to Ganpatipule uses Gozocabs (distance on page 26 km, matches).",
+        "sources": [
+          "https://hiremecar.com/taxi/cabs-in-ratnagiri",
+          "https://www.gozocabs.com/book-taxi/ratnagiri-ganpatipule"
+        ],
+        "notes": "A local day that includes Ganpatipule (about 30 km each way) can use most of the 80 km. Local operators (Shri Ganesh Tours and Travels, Gayatri Tours, carrentinratnagiri.com) were listed but their pages show no prices. No union card found. Single fetched source for the local rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 410,
+        "standard_inr": 450,
+        "basis": "Holidify Ratnagiri cost for two: Carnival Dive Inn 250-300 (mid 275), Hotel Yogi 300, Mithila Restaurant 300, Amantran 300 (Maharashtrian / seafood / Indian). Per person per meal 137.5, 150, 150, 150. Standard = 3 x 150 = 450; budget = 3 x 137.5 = 410.",
+        "sources": ["https://www.holidify.com/places/ratnagiri/restaurants-places-to-eat-local-cuisine.html"],
+        "notes": "Only four restaurants on one undated page, all in the same low price band, so there is almost no gap between budget and standard; sit-down seafood restaurants and resort dining will cost more. Treat as indicative."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dorm beds (Hostelworld 404)",
+        "Union / local-operator taxi rate card (operator pages show no prices)",
+        "Local taxi rate is a single fetched source",
+        "Food sample is 4 restaurants from one undated page",
+        "Budget n=2, homestay n=2"
+      ]
+    },
+    "malvan": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3073,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-malvan",
+          "https://www.cleartrip.com/hotels/hotels-in-malvan"
+        ],
+        "budget_hotel_median_inr": 2003,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/malvan/budget-hotels",
+          "https://www.cleartrip.com/hotels/hotels-in-malvan"
+        ],
+        "homestay_median_inr": 2641,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-malvan",
+          "https://www.cleartrip.com/hotels/india/tarkarli/budget-hotels"
+        ],
+        "dorm_median_inr": 909,
+        "dorm_n": 1,
+        "dorm_sources": ["https://www.hostelworld.com/hostels/Malvan?currency=INR"],
+        "price_basis": "Same figures written under malvan and tarkarli (Tarkarli beach is 6 km from Malvan town; one hotel market). Mid: Cleartrip 3-star page and the Malvan 'hotels' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted, 7 hotel / resort rows labelled 3-star: Athaang Beach Resort 1,334, Hotel Malvan Heritage 1,598, Chintamani Resort 2,225, Hotel Chivala Beach 3,073, Wairkars Sea Pearl Resort 4,320, Horizon Grande by Metric Homes 6,533, Sea Horizon Luxury Resort 7,114; median 3,073. Dropped homestay rows, 4-star rows (Rivercoast 14,352, Aqualina 4,582, Baywatch 6,863), Horizon Grande Apartments Tarkarli (7,884, apartments) and 8 rows sold out on that Friday (Hotel Ocean Bliss, Blue Sea Resort, Saagar Sangam, Wave Crest, Raapan Beach Resort, The Nachiketa Beach Resort and others). Budget (hotels only): Hotel Anantashram (Sindhudurg Fort) 1,568 from Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed); Malvans Aishwarya (1-star) 2,003 and Hotel Pearl Regency (2-star) 2,492, 13 Nov 2026; median 2,003, n=3, two different dates. Homestay: Rosary House Homestay 2,641 and Sai Homestay (Dhuriwada) 3,800 on 13 Nov 2026; Tarkarli Niwas Nyahari 1,680 on 11 Oct; median 2,641, n=3. Dorm: Hostelworld 'dorm bed from' Aapa's Backpackers Coastel 909 (private room from 1,100), 2.5 km from Malvan centre, n=1.",
+        "notes": "Homestays dominate Malvan / Tarkarli but most were sold out for Friday 13 Nov (13 of 15 homestay rows on Cleartrip), so the priced sample is thin and skews to the available ones; mid rows also lost 8 sold-out properties. Hotel medians exclude homestays, as asked. Cleartrip classes Tarkarli Niwas Nyahari as homestay on one page and budget hotel on another; counted once as homestay. Scuba and water-sports package prices were not found on a fetchable page; none given. MTDC Tarkarli Resort (Konkani House AC, sea-side) 'Tariff 2026' on an authorised-agent page: 3,200 for 2 people plus 1 extra, 'tariffs vary by season'. Written identically under tarkarli."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to Tarkarli / Malvan, one way (about 388 km, Dzire CNG, fuel and driver allowance included, toll and parking extra)",
+            "inr": 9360,
+            "range": "Premium sedan petrol/diesel 10,140; Ertiga CNG 11,700; Innova Crysta 15,600 (Pawar Travels, 2026 footer)"
+          },
+          {
+            "route": "Sindhudurg to Tarkarli, one way (about 150 km, hatchback start price; sedan 'a little higher')",
+            "inr": 1499,
+            "range": "OneWay.Cab fixed fare includes toll, GST and driver allowance; parking and waiting extra; sedan price not shown"
+          }
+        ],
+        "basis": "No Malvan / Tarkarli local day rate found on a fetchable page (Tarkarli cabs are hired by the hour or by trip; CabBazar's local hourly rental page showed no price). Point-to-point fares are from the two pages above. Written identically under tarkarli.",
+        "sources": [
+          "https://pawartravels.com/pune-to-tarkarli-cabs",
+          "https://oneway.cab/sindhudurg/sindhudurg-to-tarkarli-taxi.html"
+        ],
+        "notes": "Jetty car-park fees, tolls and boat rides to Sindhudurg Fort are paid separately."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 690,
+        "basis": "Holidify Malvan cost for two: Athithi Bamboo 300, Hotel Chaitanya 300, Only Fish 300 (150 per person per meal). Wanderlog Malvan page (review text): Hotel Konark vegetarian thalis 100-150, Naivedya Pure Veg home-cooked veg thali 100; Wanderlog reviewer: bangda (mackerel) thali at Athithi Bamboo 230 per person (search summary). Budget = 3 x 125 (veg thali 100-150). Standard = 3 x 230 (fish thali per person).",
+        "sources": [
+          "https://www.holidify.com/places/malvan/restaurants-places-to-eat-local-cuisine.html",
+          "https://wanderlog.com/list/geoCategory/198317/where-to-eat-best-restaurants-in-malvan",
+          "https://wanderlog.com/list/geoCategory/198317/where-to-eat-best-restaurants-in-malvan"
+        ],
+        "notes": "Small sample from undated pages and review text; Holidify's 150 per person (300 for two) sits below the 230 fish-thali figure. Tarkarli beach resorts with sea-view restaurants charge more (a search summary quoted surmai thali at 300 and 500 at two Devbag places; not fetched). Written identically under tarkarli."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local taxi day rate",
+        "Scuba / water-sports packages",
+        "Dorm beyond one hostel",
+        "Homestay sample thin (13 of 15 sold out)",
+        "Food sample is review-level"
+      ]
+    },
+    "tarkarli": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3073,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-malvan",
+          "https://www.cleartrip.com/hotels/hotels-in-malvan"
+        ],
+        "budget_hotel_median_inr": 2003,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/malvan/budget-hotels",
+          "https://www.cleartrip.com/hotels/hotels-in-malvan"
+        ],
+        "homestay_median_inr": 2641,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-malvan",
+          "https://www.cleartrip.com/hotels/india/tarkarli/budget-hotels"
+        ],
+        "dorm_median_inr": 909,
+        "dorm_n": 1,
+        "dorm_sources": ["https://www.hostelworld.com/hostels/Malvan?currency=INR"],
+        "price_basis": "Same figures as the malvan entry: Tarkarli is the beach 6 km from Malvan town and the two share one hotel market (Cleartrip's Malvan lists include Devbag / Tarkarli-side properties such as Sea Horizon, Wairkars Sea Pearl, Aqualina, Baywatch). Mid: Cleartrip, Fri 13 Nov 2026, pre-tax, 7 hotel / resort rows labelled 3-star (1,334; 1,598; 2,225; 3,073; 4,320; 6,533; 7,114), median 3,073. Budget n=3 (Hotel Anantashram 1,568 on 11 Oct; Malvans Aishwarya 2,003 and Hotel Pearl Regency 2,492 on 13 Nov), median 2,003. Homestay n=3 (Tarkarli Niwas Nyahari 1,680 on 11 Oct; Rosary House 2,641 and Sai Homestay 3,800 on 13 Nov), median 2,641. Dorm: Aapa's Backpackers Coastel 909 (Hostelworld, no dates). Row-by-row basis is in the malvan entry.",
+        "notes": "Not Tarkarli-only. Cleartrip's own Tarkarli pages list just two hotels (Horizon Grande Apartments 7,884 and The Nachiketa Beach Resort, sold out). Homestay and mid samples are thin because most properties were sold out for Friday 13 Nov. MTDC Tarkarli Resort Konkani House AC 3,200 for 2 (agent page, 2026). Scuba and water-sports prices not found; none given."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to Tarkarli / Malvan, one way (about 388 km, Dzire CNG, fuel and driver allowance included, toll and parking extra)",
+            "inr": 9360,
+            "range": "Premium sedan petrol/diesel 10,140; Ertiga CNG 11,700; Innova Crysta 15,600 (Pawar Travels, 2026 footer)"
+          },
+          {
+            "route": "Sindhudurg to Tarkarli, one way (about 150 km, hatchback start price; sedan 'a little higher')",
+            "inr": 1499,
+            "range": "OneWay.Cab fixed fare includes toll, GST and driver allowance; parking and waiting extra; sedan price not shown"
+          }
+        ],
+        "basis": "Same as malvan: no local day rate found for Malvan / Tarkarli; point-to-point fares from the pages above.",
+        "sources": [
+          "https://pawartravels.com/pune-to-tarkarli-cabs",
+          "https://oneway.cab/sindhudurg/sindhudurg-to-tarkarli-taxi.html"
+        ],
+        "notes": "Written identically under malvan."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 690,
+        "basis": "Same as malvan (Malvan town and Tarkarli share restaurants and prices): Holidify Malvan cost for two 300 at Athithi Bamboo, Hotel Chaitanya and Only Fish; Wanderlog review text: veg thalis 100-150, bangda thali 230 per person. Budget 3 x 125, standard 3 x 230.",
+        "sources": [
+          "https://www.holidify.com/places/malvan/restaurants-places-to-eat-local-cuisine.html",
+          "https://wanderlog.com/list/geoCategory/198317/where-to-eat-best-restaurants-in-malvan"
+        ],
+        "notes": "Not Tarkarli-specific. Beach-resort restaurants likely cost more."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Tarkarli-only hotel list (Cleartrip Tarkarli pages show 2 rows)",
+        "Local taxi day rate",
+        "Scuba / water-sports packages",
+        "Food figures are review-level and borrowed from Malvan"
+      ]
+    }
+  }
+}

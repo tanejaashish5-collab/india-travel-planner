@@ -84,3 +84,17 @@ summary: how many destinations, confidence mix, anything surprising, anything yo
 
 For destinations flagged `stay_observed: true` in `_scope.json`, OMIT the `stay` object: stay prices for them were
 already measured. Research only taxi and food for those.
+
+Lessons from the North India pass (apply to every later region)
+- `taxi_day.local_sightseeing_8h_inr` is a LOCAL day only. Never put a long return fare there (Leh to Pangong,
+  Jaipur to Ranthambore, Mumbai to Lonavala). Anything over about ₹7,000 is an outstation fare: put it in
+  `point_to_point` with the route named, and leave the local figure `null` if no local rate was found.
+- Do not cite national template cab sites (hurryupcabs, bookurtaxi, trivenicabs, solocabs and lookalikes): they
+  show one rate card for every town. A figure from one of them is dropped at audit. Use union rate cards, state
+  tourism tariffs, Savaari / MakeMyTrip city pages, local operators with a real address, or dated blog quotes.
+- Do not cite price-band aggregators (Restaurant Guru "₹₹", Tripadvisor "$$-$$$") as a food basis. Use rupee
+  figures: menus, thali boards, Zomato / Swiggy / Tripadvisor "cost for two" with the number shown.
+- Every figure is audited in a fresh context against its URL before it loads. A number the URL does not show
+  is dropped. If a page shows a range, give the range in `basis` and the median as the figure.
+- Searches may run out mid-batch; fall back to fetching the listing URLs directly (Cleartrip, Kayak, Booking,
+  Hostelworld, Savaari) rather than guessing.

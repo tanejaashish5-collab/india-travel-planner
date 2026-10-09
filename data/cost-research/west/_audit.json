@@ -1,0 +1,581 @@
+{
+ "_doc": "Fresh-context audit verdicts (data-fabrication-auditor, Sonnet, 2026-10-09) for West India. Taxi loads ONLY with KEEP/CORRECT. Food: every food figure with both tiers was audited, so unaudited food is skipped. A CORRECT food verdict with budget null keeps the standard figure and the old range ratio.",
+ "food_unaudited": "skip",
+ "taxi": {
+  "kutch": {
+   "verdict": "DROP",
+   "note": "ChikuCab and DDcab are rate-card templates (ChikuCab prints 1,700 for Surat, Kolkata and Bangalore). Only Bharat Taxi 2,200 is left. Gujarat Expert 3,500 is a tour."
+  },
+  "dwarka": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Shree Ganesh (Dwarka address) 2,500; Anjani 8h/80km 'from' 2,500; YatraDham 2,461 (season 3,210). OneDay.travel dropped; median stays 2,500."
+  },
+  "porbandar": {
+   "verdict": "DROP",
+   "note": "Only Anjani 1,545 (80 km fixed) is non-template. OneWay.Cab and DDcab are templates. Fewer than 2 inputs, no union card."
+  },
+  "somnath": {
+   "verdict": "DROP",
+   "note": "Gujarat Expert prints the same 3,500 as Bhuj (a tour). OneDay is a template. Somnath Yatra 3,199 stands alone, hours/km unstated. Somnath Travels 1,500 is 20 km."
+  },
+  "rajkot": {
+   "verdict": "DROP",
+   "note": "All three inputs (Payal Cab, DDcab, OneWay.Cab) are multi-city template sites. None left."
+  },
+  "junagadh": {
+   "verdict": "DROP",
+   "note": "HireMeCar, Payal Cab and OneDay.travel are all template sites. No non-template input remains."
+  },
+  "girnar": {
+   "verdict": "DROP",
+   "note": "HireMeCar, Payal Cab and OneDay.travel are all template sites. No non-template input remains. (same market as junagadh)"
+  },
+  "bhavnagar": {
+   "verdict": "DROP",
+   "note": "Both inputs (Payal Cab, HireMeCar) are template sites. The Gozocabs and DDcab pages are outstation fares."
+  },
+  "surat": {
+   "verdict": "DROP",
+   "note": "Both inputs (Payal Cab, HireMeCar) are template sites. No non-template input remains."
+  },
+  "saputara": {
+   "verdict": "DROP",
+   "note": "Yash Cab (Nashik/Mumbai) says only 'Just Rs 2000 for a Full Day', AC/non-AC cabs. No hours, km or vehicle; old, single source."
+  },
+  "mount-abu": {
+   "verdict": "DROP",
+   "note": "Only Maharana (Mount Abu page, sedan 'from 2500', 8h) stands; oneday.travel is a template. Other operators range 1,800-4,500. <2 usable inputs."
+  },
+  "chittorgarh": {
+   "verdict": "DROP",
+   "note": "oneway.cab is a template. RawatTaxi shows 2,100 incl GST for 100 km (fort + Sanwariya Seth). CabBazar 1,500 is a generic headline. Only 1 usable input."
+  },
+  "bundi": {
+   "verdict": "KEEP",
+   "value": 1600,
+   "note": "Rajputana page: 'Rs 1600 for local Bundi' (flat, 2021). MakeMyTrip snippet 8h/80km from 1,614 (+176 tax); Clear Car 2,200+GST. Chiku Cab rates excluded."
+  },
+  "gagron-fort": {
+   "verdict": "DROP",
+   "note": "Jhalawar town rate used as a proxy for the fort. Rajputana's Jhalawar page is its only fetched source."
+  },
+  "ranthambore": {
+   "verdict": "DROP",
+   "note": "Rajputana page (2022) shows 'Rs 1600-1800 for a day', no hours/km. Eagle Tours shows Indigo from 3,500. 24cabservice is an Agra template. Sources conflict."
+  },
+  "ahmedabad": {
+   "verdict": "DROP",
+   "note": "YourTaxi shows sedan 8h/80km 2,500 (and 2,799 day package). MTC 'starts 1,800' is identical on its Vadodara and Surat pages, so it is a template. Only 1 input."
+  },
+  "vadodara": {
+   "verdict": "DROP",
+   "note": "YourTaxi is an Ahmedabad operator printing the same 2,500 for Vadodara; MTC is a template. Rent & Go shows 2,000 Dzire 8hr/80Km, but it is the only usable input."
+  },
+  "jaipur": {
+   "verdict": "KEEP",
+   "value": 2000,
+   "note": "KD Cab 2,000 and SRG 2,000 (8h/80km sedan); India Tours Info 1,800-2,200 (Rajasthan Tour Driver is not an 80km rate). Median 2,000. Pages undated."
+  },
+  "ajmer": {
+   "verdict": "CORRECT",
+   "value": 1900,
+   "note": "maharanacab prints 1,600 for Ajmer, Jodhpur and Bikaner alike (template, dropped). Tours&Taxi 2,000, Zoncor 2,000, CabBazar 1,800, local op 1,500: median 1,900"
+  },
+  "jodhpur": {
+   "verdict": "KEEP",
+   "value": 1850,
+   "note": "Rajputana 1,999 (page 2026-10-02), JCS 1,699, Jaipur City Cab 1,800, MyIndiaCab 2,000-2,500; CabBazar 1,700, Maharaja 1,900 via search. Median 1,850"
+  },
+  "jaisalmer": {
+   "verdict": "CORRECT",
+   "value": 1600,
+   "note": "Jagnish 2026-27 chart lists Full Day 8h/80km sedan 1,500 (claim missed it). With JT Package 1,600, Rajputana 1,600 (2021), SRM 2,000, GoJaisalmer ~2,650: median 1,600"
+  },
+  "bikaner": {
+   "verdict": "KEEP",
+   "value": 1800,
+   "note": "Harivansh 1,800, GetCabIndia 1,800, Maharaja 1,800 (search), Tours&Taxi 2,500. CabBazar 1,500 (Rajasthan-wide) and Maharana 1,600 (template) dropped"
+  },
+  "udaipur": {
+   "verdict": "KEEP",
+   "value": 2000,
+   "note": "Rajputana 2,000 (page 2026-08-04), Sanwariya 1,800, Maharana 2,300, SRM 2,500, Atithi 1,800-2,500; CabBazar 1,600 via search. Median 2,000"
+  },
+  "kumbhalgarh": {
+   "verdict": "DROP",
+   "note": "Only Rajputana 1,600 (2021 page, same wording as Ranakpur) and Aagman 1,800 plus 300 batta (2018). CabBazar 1,500 is a Rajasthan-wide figure. No valid second source"
+  },
+  "ranakpur": {
+   "verdict": "DROP",
+   "note": "Single source: Rajputana 1,600, 2021 page, same card as Kumbhalgarh. No second local operator found; Gozocabs figures are one-way fares"
+  },
+  "mumbai": {
+   "verdict": "CORRECT",
+   "value": 2250,
+   "note": "Plan Cars and Wheels show the same 2,100 for Hyderabad/Bangalore (template). Median of CabBazar 1,900 (snippet), Pravasi 2,250, Vahaan 2,500 = 2,250."
+  },
+  "alibaug": {
+   "verdict": "DROP",
+   "note": "HireMeCar is a template. CabBazar shows no Alibaug local page or 1,500. GaadiCab page shows no price. Clear Car shows 3,465, not 3,300. No clean pair."
+  },
+  "lonavala": {
+   "verdict": "CORRECT",
+   "value": 2800,
+   "note": "Named-sedan prices on pages: Sai Prem 2,799, oneday.tours 2,800, Maharana 3,499, median 2,800. The 3,300 was only a midpoint of lonavalataxi's 2,800-3,800 range."
+  },
+  "khandala": {
+   "verdict": "CORRECT",
+   "value": 2800,
+   "note": "Named-sedan prices on pages: Sai Prem 2,799, oneday.tours 2,800, Maharana 3,499, median 2,800. The 3,300 was only a midpoint of lonavalataxi's 2,800-3,800 range. (same market as lonavala)"
+  },
+  "pune": {
+   "verdict": "CORRECT",
+   "value": 2275,
+   "note": "Chiku Cab 1,700 dropped (template). Pravasi 2,250 and CabsPune 2,300 are both sedan 8h/80km pages; median 2,275."
+  },
+  "aurangabad": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "Advika 2,000 (page), CabBazar 2,200 (search snippet), Sai Cabs 1-day local sedan 2,500 (page). Median 2,200."
+  },
+  "nagpur": {
+   "verdict": "CORRECT",
+   "value": 2020,
+   "note": "oneway.cab is a template, dropped. CabBazar 1,800 (snippet) and Tanushree Dzire table 2,240 (its FAQ says 2,500) give median 2,020. Only two inputs."
+  },
+  "nashik": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Tiger Travels (Nashik) page: full-day 8h/80km Rs 2,500, sedan block 2,200. Shree Tuljai (Nashik) sedan 2,800. Midpoint 2,500 holds."
+  },
+  "mahabaleshwar": {
+   "verdict": "CORRECT",
+   "value": 2750,
+   "note": "Dropped oneday.travel and oneday.tours (template). Left: Satara Car Rentals 'from Rs 2,500/day' and local operator 9h combo Rs 3,000. Median 2,750."
+  },
+  "satara": {
+   "verdict": "DROP",
+   "note": "Astha Rs 2,200 equals its Mumbai rate (template, no 8h stated). CabBazar 'from 1,500' and MMT 2,756+tax are snippets only and too far apart."
+  },
+  "kolhapur": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "Jaihind Travels and Kolhapur Car Rental (both in Kolhapur) list 8h/80km AC sedan at Rs 2,200; non-AC 2,000."
+  },
+  "ratnagiri": {
+   "verdict": "DROP",
+   "note": "Only source is HireMeCar, a multi-city template. Gozocabs page is a Ratnagiri-Ganpatipule one-way fare, not a local day. No second local source."
+  },
+  "panaji": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Cab Goa Panaji 8h/80km sedan 2,500 (May 2026); Pavan 2,200; Jagnish 2,600 (North/South Goa day). Median 2,500 holds. All three are Goa-specific, not templates."
+  },
+  "margao": {
+   "verdict": "KEEP",
+   "value": 2400,
+   "note": "Pavan 2,200 and Jagnish South Goa chart (names Margao/Colva) 2,600 average 2,400. Cab Goa 2,400 package itinerary is Old Goa/Panjim. Operator cards only."
+  },
+  "colva-benaulim": {
+   "verdict": "KEEP",
+   "value": 2400,
+   "note": "Pavan 2,200 and Jagnish South Goa chart (names Colva) 2,600 average 2,400. Cab Goa South package does not name Colva. Operator cards, no union rate."
+  },
+  "calangute-baga": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Cab Goa North pkg 2,200 (names Calangute/Baga/Anjuna/Vagator), Pavan 2,500, Jagnish 2,600, Umang 2,800: median 2,550. Still 2,500 if Umang is dropped."
+  },
+  "candolim": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Cab Goa North pkg 2,200 names Candolim; Pavan 2,500, Jagnish 2,600, Umang 2,800: median 2,550, rounded to 2,500. Same 2,500 without Umang."
+  },
+  "anjuna": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Cab Goa North pkg 2,200 names Anjuna; Pavan 2,500, Jagnish 2,600 (Anjuna chart), Umang 2,800: median 2,550, rounded to 2,500. Same without Umang."
+  },
+  "vagator": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Cab Goa North pkg 2,200 names Vagator; Pavan 2,500, Jagnish 2,600, Umang 2,800: median 2,550, rounded to 2,500. Same 2,500 without Umang."
+  },
+  "assagao": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Assagao is not a named stop. Cab Goa takes any pickup point and the North Goa package covers the Anjuna/Vagator belt next to it. Median 2,550 rounded to 2,500."
+  }
+ },
+ "food": {
+  "kutch": {
+   "verdict": "KEEP",
+   "budget": 350,
+   "standard": 800,
+   "note": "Zomato Jalaram 100 and Umiyaji 150 for one; Gujarat Orbit Jesal/Hill View 250-350, Viram 300-400. Sums hold; breakfast figures are assumed."
+  },
+  "mandvi": {
+   "verdict": "CORRECT",
+   "budget": 425,
+   "standard": 750,
+   "note": "Justdial for two: Irani 350, Aman 500, Osho 600; median 250 pp, so 750 holds. Budget thali 150 is below sourced 160-200; 75+175+175=425."
+  },
+  "dwarka": {
+   "verdict": "KEEP",
+   "budget": 320,
+   "standard": 650,
+   "note": "shreedwarkadhish.in thali 80-200, dabeli 15-25; Zomato Amritam 250; Slurrp for two: Govinda 500, Atithi 500, Chappan Bhog 600. Sums hold."
+  },
+  "porbandar": {
+   "verdict": "CORRECT",
+   "budget": 330,
+   "standard": 610,
+   "note": "Zomato for one 100/200/200/250; Justdial for two 410, 300. Budget 330 holds. Median of 200,205,250,200 is 202.5 not 215, so 3x202.5=610."
+  },
+  "somnath": {
+   "verdict": "CORRECT",
+   "budget": 220,
+   "standard": 650,
+   "note": "Wanderlog Maheshwari Dining Hall: breakfast 40, lunch 90, dinner 90 = 220, not 250. Standard 650 holds (Real Taste 250-300 pp, Mad Over Grills 400)."
+  },
+  "rajkot": {
+   "verdict": "CORRECT",
+   "budget": 330,
+   "standard": 750,
+   "note": "Zomato for one 100 (thali tier), Swati 300 for two: budget 330 holds. Median of the listed six is 300, not 325: standard 150+2x300=750."
+  },
+  "junagadh": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 645,
+   "note": "Gujarat Orbit (Jun 2025) ranges match. 9 mid-points median 215 x3=645; four cheapest median 150 x3=450. Blog ranges, not menus."
+  },
+  "girnar": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 645,
+   "note": "Gujarat Orbit (Jun 2025) ranges match. 9 mid-points median 215 x3=645; four cheapest median 150 x3=450. Blog ranges, not menus. (same market as junagadh)"
+  },
+  "bhavnagar": {
+   "verdict": "CORRECT",
+   "budget": null,
+   "standard": 1028,
+   "note": "Gujarat Orbit ranges match; 10 mid-points median 342.5 x3=1,028. Budget 600 is a sit-down floor with no thali/street prices: budget DROPPED."
+  },
+  "surat": {
+   "verdict": "KEEP",
+   "budget": 600,
+   "standard": 1125,
+   "note": "Gujarat Orbit (28 Jan 2025) ranges match. 8 casual mid-points median 375 x3=1,125; three cheapest median 200 x3=600. Blog ranges."
+  },
+  "mount-abu": {
+   "verdict": "KEEP",
+   "budget": 535,
+   "standard": 900,
+   "note": "Swaadyatra (8 May 2026): Ambika 90-180, Jodhpur Bhojnalaya 150-250; Sankalp and Honest 200-400 pp, Uttarayan 400-800 pp. Median 300, so 3x300. Arithmetic holds."
+  },
+  "chittorgarh": {
+   "verdict": "CORRECT",
+   "budget": 415,
+   "standard": 510,
+   "note": "Budget holds: Sadar Bazaar 50-100 pp, Aashirwad ~170 pp. Standard: Gangour and Barbarik prices absent, South Pole closed. Median of 150/170/180 = 170, so 3x170."
+  },
+  "bundi": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 600,
+   "note": "Re-run Zomato snippets confirm all 10 cost-for-one figures (100 to 400). Median 200 gives 600; cheapest four median 150 gives 450."
+  },
+  "gagron-fort": {
+   "verdict": "DROP",
+   "note": "Rests on Jhalawar town restaurants as a proxy; the fort has no food outlets."
+  },
+  "dungarpur": {
+   "verdict": "CORRECT",
+   "budget": 300,
+   "standard": 375,
+   "note": "Zomato snippets confirm 12 of 16 places (6x100, Max 150, 5x200). Four at 150 not found. Median of 12 = 125, so 3x125 = 375. Budget 3x100 holds."
+  },
+  "ranthambore": {
+   "verdict": "KEEP",
+   "budget": 490,
+   "standard": 600,
+   "note": "Justdial snippets confirm 7 of 8 for-two figures (210-750); Zomato 200 for Punjabi Junction and Flavor Express. Median per person 200 holds. Budget is 487.5 rounded."
+  },
+  "palitana": {
+   "verdict": "DROP",
+   "note": "Justdial: New Solanki and Royal Palace are in Bhavnagar, Mahadev Garden in Botad. Only Sukhsagar (750) and Jagruti (850) are in Palitana (for two). Budget rests on other towns."
+  },
+  "ahmedabad": {
+   "verdict": "KEEP",
+   "budget": 615,
+   "standard": 1050,
+   "note": "ashaval thali mid-points of 8 places give median 350, so 3x350. Swaadyatra: Iscon 80-150, pav bhaji 150-250; Toran 280-320 is from ashaval. Per-person basis unstated."
+  },
+  "gandhinagar": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 710,
+   "note": "Wanderlog reviewers: Bapa Sitaram lunch 100, Jay Matarani 70; Kansar 150-300 pp, R-Andhra 200-300 pp. Arithmetic holds. One review per figure, so low confidence."
+  },
+  "vadodara": {
+   "verdict": "KEEP",
+   "budget": 370,
+   "standard": 1050,
+   "note": "Holidify 13 'For Two' prices give median 700, so 3x350. Geeta Lodge 180 and Maharashtra 170 on cited page; Shree Shakti 20 is on a sibling Wanderlog list, not the cited URL."
+  },
+  "jaipur": {
+   "verdict": "KEEP",
+   "budget": 470,
+   "standard": 900,
+   "note": "Holidify for-two: Handi Fusion 1,600, Anokhi 750, Rawat 600, Ganesh 300-400, Mohan 300; median 600 gives 900. Kachori 30, LMB thali 180-250 support 470"
+  },
+  "pushkar": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 1050,
+   "note": "Tusk (Jul 2023), 16 cafes, median 700 for two = 1,050. Holidify cheapest tier 300 for two = 450. Cafe-based and 2023; sources disagree 2x"
+  },
+  "jodhpur": {
+   "verdict": "KEEP",
+   "budget": 400,
+   "standard": 1000,
+   "note": "Tripoto: Surya/Janta/Mishrilal 70-150 for two, Shandar 350, Gypsy 750-800, Odhani 1,000; Wanderlog 150 lunch. Budget sums to ~385. Standard breakfast 150 unsourced"
+  },
+  "jaisalmer": {
+   "verdict": "KEEP",
+   "budget": 400,
+   "standard": 750,
+   "note": "Re-run search shows Zomato for-one: Zeemo 100, Shri Bikaner 150, Tanotrai/Sanskari/Taste/Mud 200, Delight/Prince 250, Kissan 300, Satkar 350. Both hold"
+  },
+  "barmer": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 750,
+   "note": "Zomato for-one via search: three at 100, Small Cafe 150, Swastika 200, Garh 250, New Brahman 350. Kalinga/Brahman Resort unconfirmed; median still 250"
+  },
+  "bikaner": {
+   "verdict": "KEEP",
+   "budget": 325,
+   "standard": 900,
+   "note": "Zomato via search, for two: Chhotu Motu 150, Khandelwal 200, Raju 250, Tom&Jerry 250, Sky Bites 450, Ganga Mahal 750, Be Veg 1,000. Medians hold"
+  },
+  "udaipur": {
+   "verdict": "KEEP",
+   "budget": 500,
+   "standard": 1050,
+   "note": "Jag Niwas 350 for two, Natraj 700 for two, Edelweiss 400, Jheel's 700. Millets is 800 for two, not 1,500, median still 350. Budget 500 is low end of 500-575"
+  },
+  "kumbhalgarh": {
+   "verdict": "CORRECT",
+   "budget": 375,
+   "standard": 600,
+   "note": "Zomato for-one via search: Shreeji/Radhe 150, Swagat/KKR 200; Karni 750 for two. Holidify Chowka 500/Gazebo 800 unlabelled, dropped: median 200 = 600"
+  },
+  "ranakpur": {
+   "verdict": "CORRECT",
+   "budget": 310,
+   "standard": 825,
+   "note": "Std 825 ok (Holidify for-two). Budget: thali shows 60 not 90 (old reviews), canteen reportedly shuts 13:00, so dinner 200 (Maharani Bagh 400/2): 50+60+200"
+  },
+  "mumbai": {
+   "verdict": "KEEP",
+   "budget": 315,
+   "standard": 1000,
+   "note": "mumbaiitinerary and Holidify show every component; 55+100+125+35=315 and 225+350+425=1,000 hold. Pages undated."
+  },
+  "alibaug": {
+   "verdict": "KEEP",
+   "budget": 350,
+   "standard": 850,
+   "note": "Zomato snippets: Shalimar 400, Sanman 950, Eatfish 600 for two. LBB breakfast 'from 70', Wanderlog thali 80 (old). Standard sums to 845. Stale inputs."
+  },
+  "murud-janjira": {
+   "verdict": "CORRECT",
+   "budget": 375,
+   "standard": null,
+   "note": "Holidify shows New Sea Rock 200-300 for two, so 125/meal holds. Standard thali prices 300 and 350 appear on no source; Tripadvisor reviews show surmai 400-450 (2022-23)."
+  },
+  "harihareshwar": {
+   "verdict": "KEEP",
+   "budget": 370,
+   "standard": 800,
+   "note": "Resort-site snippet: Konkani veg 120, Malvani 150, Surmai 300, Special Konkani 350. Blog thali 100 (Jan 2021, stale). Both sums hold."
+  },
+  "matheran": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 700,
+   "note": "unpaqd Jan 2026: 50+150+100 (but its table says 600/day). goadventure 150 and 180-220. Gujarat Bhavan 350 is a 2015 review, stale."
+  },
+  "lonavala": {
+   "verdict": "KEEP",
+   "budget": 375,
+   "standard": 900,
+   "note": "Holidify and re-run Zomato snippets confirm all 10 for-two figures; median 300 pp, cheapest-four median 125. Mixes snack stalls into the median."
+  },
+  "khandala": {
+   "verdict": "KEEP",
+   "budget": 375,
+   "standard": 900,
+   "note": "Holidify and re-run Zomato snippets confirm all 10 for-two figures; median 300 pp, cheapest-four median 125. Mixes snack stalls into the median. (same market as lonavala)"
+  },
+  "pune": {
+   "verdict": "KEEP",
+   "budget": 355,
+   "standard": 900,
+   "note": "Swaadyatra (8 May 2026) shows all avg prices; 80+125+150=355 and 150+325+425=900. Only Sawai Veg is labelled per person."
+  },
+  "aurangabad": {
+   "verdict": "KEEP",
+   "budget": 675,
+   "standard": 1125,
+   "note": "Snippets: Naivedya Waluj 450, CIDCO 600, Wok-N-Handi 1,200 for two; thali 250/350 on magicpin. Sums hold. Budget is all thali-chain, so high."
+  },
+  "nagpur": {
+   "verdict": "KEEP",
+   "budget": 600,
+   "standard": 1050,
+   "note": "Snippets re-run: Mama Saoji 300, Amrut 400, Ghodpage 380-450, Haldiram's 400-450, Planet Food 550, Step Inn 1,100 for two. Sums hold."
+  },
+  "igatpuri": {
+   "verdict": "KEEP",
+   "budget": 525,
+   "standard": 900,
+   "note": "Search shows Justdial/Zomato for-two: 300-350 budget places, 600-1,050 mid. Shet Curry and Green Heritage not found, median still 600 for two."
+  },
+  "nashik": {
+   "verdict": "KEEP",
+   "budget": 333,
+   "standard": 640,
+   "note": "Misal median 82.5 (Urbanchats). Thali: Shagun 210/250, Rajbhog 270, Swadyog 310 confirmed. Godwa 250 for two is a Justdial snippet. Arithmetic holds."
+  },
+  "trimbakeshwar": {
+   "verdict": "KEEP",
+   "budget": 270,
+   "standard": 525,
+   "note": "40kmph (2023): Ambika thali 100, Pangat 80. Justdial for-two 350 at six places, median 350. Budget rests on 2023 prices, likely low now."
+  },
+  "shirdi": {
+   "verdict": "CORRECT",
+   "budget": 145,
+   "standard": 900,
+   "note": "Sansthan hall Rs 50/person holds. Abhibus says misal pav 'Cost For Two 80-100', so about 45 per person, not 90. Holidify median 600 for two gives 900."
+  },
+  "mahabaleshwar": {
+   "verdict": "CORRECT",
+   "budget": 560,
+   "standard": 750,
+   "note": "Median of the 11 kept per-person values is 250, not 275 (arithmetic slip), so standard is 3x250=750. Budget 3x187.5 holds."
+  },
+  "panchgani": {
+   "verdict": "KEEP",
+   "budget": 525,
+   "standard": 675,
+   "note": "Holidify: six places at 300-500 for two, median 225 per person gives 675. Budget is the mid of the cheapest two; thin sample, page undated."
+  },
+  "satara": {
+   "verdict": "UNVERIFIABLE",
+   "note": "Zomato per-person 100-400 seen only in a search summary (page times out). Pruthviraj thali 200/250 not found; without it the median is 400, not 250."
+  },
+  "kolhapur": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 600,
+   "note": "Search shows Zomato cost for one: KFC, Castle, Qaswa Hills 200; veg thali places 40-150, mostly 100. Snippet level; Zomato fetch timed out."
+  },
+  "ratnagiri": {
+   "verdict": "KEEP",
+   "budget": 410,
+   "standard": 450,
+   "note": "Holidify: Carnival 250-300, Yogi/Mithila/Amantran 300 for two; 450 and 412 hold. Only four places, so the two tiers are nearly identical."
+  },
+  "malvan": {
+   "verdict": "CORRECT",
+   "budget": 375,
+   "standard": 450,
+   "note": "Budget holds: Konark veg thali 100-150, Naivedya 100 (Wanderlog). Fish thali 230 not on cited page; Holidify shows 300 for two at all three, so 450."
+  },
+  "tarkarli": {
+   "verdict": "CORRECT",
+   "budget": 375,
+   "standard": 450,
+   "note": "Budget holds: Konark veg thali 100-150, Naivedya 100 (Wanderlog). Fish thali 230 not on cited page; Holidify shows 300 for two at all three, so 450. (same market as malvan)"
+  },
+  "panaji": {
+   "verdict": "KEEP",
+   "budget": 550,
+   "standard": 1160,
+   "note": "Zomato for two: Vihar 400, Bhonsle 300, Venite 1,200. Ritz fish thali 362 from Tripadvisor Sep 2026 via search. Sums 550 and 1,162 hold."
+  },
+  "margao": {
+   "verdict": "CORRECT",
+   "budget": 575,
+   "standard": null,
+   "note": "Budget holds: Ashirwad 400, Krishna 400-450, Balaji 150 per order. Standard dropped: Longuinhos is 500 on EazyDiner but 950 on Zomato/magicpin, and the build mixes both."
+  },
+  "colva-benaulim": {
+   "verdict": "KEEP",
+   "budget": 1000,
+   "standard": 1500,
+   "note": "Zomato for two: Your Story 600, Blue Corner 700, Manisha 700; Pinacolada 1,000, Antonio's 1,000, Cecilia 800, Happy Shack 1,000, Parola 1,200. Arithmetic holds."
+  },
+  "agonda": {
+   "verdict": "DROP",
+   "note": "Crowndevour (12 Jun 2026) gives no price unit. Zomato for-two figures differ (Kamaya 1,400, Agonda Corner 300, Taste of Tamil 500), so the for-two reading is unsupported."
+  },
+  "palolem": {
+   "verdict": "KEEP",
+   "budget": 875,
+   "standard": 1500,
+   "note": "Zomato for two: Beach House 350, Om Shanti 600, No 1 Rama 800 = 875. Cuba, Palolem Beach Resort and Dreams of Palolem are each 1,000 = 1,500 standard."
+  },
+  "calangute-baga": {
+   "verdict": "DROP",
+   "note": "Shining Star Baga is now 950 for two, not 500. Rudy's is 800 and closed on Zomato, not 1,000. Breakfast and thali slots are borrowed from Candolim. Both tiers fail."
+  },
+  "candolim": {
+   "verdict": "KEEP",
+   "budget": 950,
+   "standard": 1450,
+   "note": "Zomato for two: Astor 500, Fish Hut 700, Thali Junction 700, Cafe Candolim 700, Antonio's 900, Palms N Sands 1,300. Both day sums hold."
+  },
+  "anjuna": {
+   "verdict": "KEEP",
+   "budget": 1300,
+   "standard": 2025,
+   "note": "Justdial/Zomato: Village 550, Shiva Valley 1,000-1,050, Lush 950-1,000, Goan Spice 1,200-1,300, Maka Zai 1,700. Sums hold; bar prices may include alcohol."
+  },
+  "vagator": {
+   "verdict": "KEEP",
+   "budget": 1100,
+   "standard": 2025,
+   "note": "Justdial: Wom 500, Ratna Sagar 850, Piccola Roma 1,300, Mango Tree 1,900 (Zomato 1,800). Cited URL is the Anjuna list; checked via search. Bar prices may include alcohol."
+  },
+  "siolim": {
+   "verdict": "CORRECT",
+   "budget": 750,
+   "standard": null,
+   "note": "Budget holds: Cafe Siolim 300, Goan Cozinha 600 twice. Standard dropped: 350 breakfast rests on Anjuna cafes (Felix, Cotinga, Babka at 850-2,000 for two), not Siolim."
+  },
+  "morjim": {
+   "verdict": "KEEP",
+   "budget": 850,
+   "standard": 1625,
+   "note": "Zomato for two: Suvasa 500, Address 600, Food Court 600, Rice Mill 950, Boheme 1,000, Cafe Morjim 1,300. Both day sums hold."
+  },
+  "mandrem": {
+   "verdict": "CORRECT",
+   "budget": 925,
+   "standard": 1600,
+   "note": "Standard holds: Monarch 700, Food Planet 1,000, Ahista 1,000, Artjuna 1,200. Udupi Anand Sagar Mandrem is 300 for two (Justdial), not 250, so budget is 925."
+  },
+  "arambol": {
+   "verdict": "KEEP",
+   "budget": 625,
+   "standard": 1600,
+   "note": "Zomato: Hippocrats 250, Shimon's 500, Pure Veg 500 = 625. Tathastu 1,200 (cafes list; own page 1,000), Blue Sea View 1,500 Justdial (Zomato 1,400): 1,600 is upper end."
+  }
+ }
+}

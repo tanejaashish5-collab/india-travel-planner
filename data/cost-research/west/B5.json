@@ -1,0 +1,570 @@
+{
+  "batch": "B5",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "kutch": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3312,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-bhuj"
+        ],
+        "budget_hotel_median_inr": 1488,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/bhuj/budget-hotels",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-bhuj"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page for Bhuj, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. 16 listed, none sold out; kept 14 (range 1,241-7,312) after dropping Daze Off Studio House (a villa) and HOTEL GRAND 3D (44,797, an obvious outlier). Budget: Cleartrip Bhuj budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax, lists only 2 (Resort Farm Villa 999 excluded as a resort, Hotel Orion 1,210); filled with the 3 cheapest hotels on the 3-star page for 13 Nov (Hotel Rahi Inn 1,241, Hotel Viraj Residency 1,735, Hotel HV Palace 1,739) giving 1,210 / 1,241 / 1,735 / 1,739. Different dates per tier.",
+        "notes": "Bhuj town hotels (not the Rann). Cleartrip's homestays page for Bhuj lists only hotels and resorts (3 to 5 star), so no homestay median. Hostelworld has no Bhuj page (404), so no dorm figure. Budget n=4 is thin and mixes two dates; 13 Nov is just before Rann Utsav season so mid may read slightly high."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Bhuj to Mandvi (one way, sedan)",
+            "inr": 1800,
+            "range": "'starts at' 1,800 for a sedan, Rann of Kutch Taxi (page lists 45 km from Bhuj Railway Station)"
+          },
+          {
+            "route": "Bhuj to Dhordo / White Rann and back, same day (sedan)",
+            "inr": 3150,
+            "range": "2,800 to 3,500 including toll, fuel and driver (Sonal Shakti, Bhuj); 3,150 is the midpoint"
+          },
+          {
+            "route": "Bhuj to Dholavira (one way, about 130 km, sedan)",
+            "inr": 3600,
+            "range": "'starts from' 3,600 (Rann of Kutch Taxi); tolls, parking, state tax extra per the page"
+          }
+        ],
+        "basis": "Median of 3 sedan 8h/80 km Bhuj quotes: ChikuCab Swift Dzire 1,900 (Indica row 1,700), DDcab sedan 'starts from' 2,200 (per km 12), Bharat Taxi Swift Dzire 2,200 (outstation 12/km round trip, 11 one way). Range 1,900-2,200. Not a union card. DDcab and Bharat Taxi are national aggregators and show the same 2,200 on many city pages, so treat them as indicative. A fully inclusive packaged Bhuj city tour (Aina Mahal, Prag Mahal, Kutch Museum, Sharad Baug) is 3,500 per sedan including toll, fuel, parking and driver allowance (Gujarat Expert), which is a different product from a metered 80 km day.",
+        "sources": [
+          "https://chikucab.com/bhuj/taxi-service-in-bhuj.html",
+          "https://ddcab.com/cab-in-bhuj",
+          "https://www.bharattaxi.com/bhuj",
+          "https://www.gujaratexpert.com/full-day-bhuj-sightseeing-tour/",
+          "https://rannofkutchtaxi.com/bhuj-railway-station-to-mandvi-taxi",
+          "https://sonalshakti.com/",
+          "https://rannofkutchtaxi.com/bhuj-to-dholavira-taxi"
+        ],
+        "notes": "CabBazar (about 1,500 for a Bhuj full day) and TransRentals (from 2,470) were seen only as search snippets; the CabBazar page returned 403 and the TransRentals page showed no price, so neither is used. Bhuj to Dhordo one-way: Rann of Kutch Taxi lists 'starting from 3,800' while Gozocabs showed a lowest fare of 1,540 before GST (89 km), so one-way quotes range widely. Sonal Shakti describes Dholavira as about 210 km each way, other sites say about 130 km. Rann permit and entry fees are not in any taxi price."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 800,
+        "basis": "Zomato 'for one' prices seen in search results: Jalaram Bhojnalaya 100, Sai Dining Hall 100, Hotel Green Rock 100, Umiyaji Dining Hall 150, Viram Garden 200, Hotel Nilam 400; street: Jalaram Vadapav 40, Gopal Bhel Dabeliwala 100. Gujarat Orbit (posted 18 Oct 2025) per person: Annapurna 180-250 (budget thali), Jesal 250-350, Hill View 250-350, Hotel Prince Kutchi thali 350-500. Budget = breakfast ~60 + thali lunch ~125 + thali dinner ~150 = ~335, rounded to 350. Standard = cafe breakfast ~150 + lunch ~300 (Jesal/Hill View) + dinner ~350 (Prince/Viram) = ~800.",
+        "sources": [
+          "https://www.gujaratorbit.com/blog/top-10-restaurants-in-bhuj/",
+          "https://www.zomato.com/bhuj/delivery/dish-gujarati-thali",
+          "https://www.zomato.com/bhuj/restaurants"
+        ],
+        "notes": "Zomato Bhuj pages timed out when fetched, so the Zomato figures come from a search-result summary. Gujarat Orbit gives ranges per person and is a blog."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm prices (none on listing sites)",
+        "Union or tourism-department taxi tariff (operator quotes only, two of three from aggregators)",
+        "Zomato figures not fetched directly (timeouts)"
+      ]
+    },
+    "rann-of-kutch": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Bhuj",
+        "mid_median_inr": 6252,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.easemytrip.com/hotels/desert-inn-camp-kutch-1467922/",
+          "https://www.easemytrip.com/hotels/rann-heritage-resort-8271099/",
+          "https://www.greatrannresort.com/"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "RESORT TENT, double occupancy, per night, not a hotel room. Season is Nov to Feb (official Rann Utsav 2026-27 runs 1 Nov 2026 to 7 Mar 2027; the tent resorts at Dhordo mostly operate only then). One standard tent per private resort: Desert Inn Camp Comfort Tent 4,356 pre-tax with breakfast plus lunch or dinner (EaseMyTrip, no stay dates, 2 guests); Rann Heritage Resort, Dhordo 'Tent 2' 6,252 pre-tax with breakfast, lunch and dinner (EaseMyTrip, no stay dates; room only is 4,687); Great Rann Resort Non-AC tent 7,500 (own website; page does not say per room or per couple, nor what is included). Median of 4,356 / 6,252 / 7,500. Meal plans differ across the three.",
+        "notes": "Base is Bhuj (about 80 km, 1.5 to 2 hrs); many visitors day-trip from Bhuj hotels instead. Great Rann Resort also lists an AC tent at 8,500. For comparison the official Rann Utsav Dhordo Tent City charges PER PERSON on double occupancy, meals and programmes included, GST extra, Season 1 base rates: Non-AC Swiss Cottage 6,300, Deluxe AC Swiss Cottage 8,300, Premium Tent 9,300, Super Premium 10,300 (a couple pays double; Season 2 adds 2,000 and Season 3 adds 4,000 per person; peak surcharge from one day before full moon). That official tent city is government-run and NOT in the median. Both EaseMyTrip pages carried 'sold out' banners and no dates, so availability is unconfirmed; Cleartrip's Dhordo page showed Desert Inn Camp and Great Rann Resort sold out on 13 Nov 2026 with no price."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bhuj to Dhordo / White Rann and back, same day (sedan)",
+            "inr": 3150,
+            "range": "2,800 to 3,500 including toll, fuel and driver (Sonal Shakti, Bhuj); 3,150 is the midpoint"
+          },
+          {
+            "route": "Bhuj to Dhordo / Rann of Kutch (one way, sedan)",
+            "inr": 3800,
+            "range": "1,540 (Gozocabs lowest fare before GST, about 89 km) to 3,800 ('starting from', Rann of Kutch Taxi)"
+          }
+        ],
+        "basis": "The Rann is visited as a Bhuj day trip or from a Dhordo tent, not as a local sightseeing day, so no 8h local rate applies. Sonal Shakti is a Bhuj operator (address on page: Near Bus Station, Ghanshyam Nagar, Bhuj). The Rann of Kutch Taxi figure is a 'starting from' fare and its page contradicts itself on whether tolls are included.",
+        "sources": [
+          "https://sonalshakti.com/",
+          "https://rannofkutchtaxi.com/bhuj-to-rann-of-kutch-taxi",
+          "https://www.gozocabs.com/book-taxi/bhuj-dhordo"
+        ],
+        "notes": "White Rann permit (about 100 per person, booked online) and Rann Utsav entry are extra and were not verified on a fetched page. Rann Utsav season and full-moon nights run higher."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No a la carte rupee menu or thali board found for Dhordo. Resort tents are sold with meals bundled (EaseMyTrip Desert Inn Camp half board, Rann Heritage with breakfast, lunch and dinner) and the official Tent City packages include meals.",
+        "sources": [],
+        "notes": "Search found no stall or restaurant prices at Dhordo."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Per-night price on specific peak-season dates (EaseMyTrip pages had no dates and sold-out banners)",
+        "Great Rann Resort tariff basis (per room or per couple, meals, taxes)",
+        "Local taxi day rate",
+        "Any food price"
+      ]
+    },
+    "mandvi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5479,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-mandvi"
+        ],
+        "budget_hotel_median_inr": 1364,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-mandvi"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip all-hotels page for Mandvi, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. 8 of 15 properties available. Mid = the 4 priced 3-star properties: The Mango Bite Hotel 904, The Village Resort 3,588, Shree Jalaram Resort 7,369, Beach View Hotel and Restaurant 11,154 (median of 3,588 and 7,369). Excluded Serena Beach Resort (5-star, 7,700) and Palace Beach Camp (a camp, 8,973). Budget = the 2 priced 2-star hotels: Hotel Desert Inn 1,573 and Hotel Kalash Mandvi 1,154.",
+        "notes": "Mandvi is a beach resort town, so the mid tier is dominated by beach resorts; the four prices are very far apart (904 to 11,154) and the median is indicative only. Seven properties were sold out on 13 Nov. Cleartrip has no Mandvi 3-star or budget page that renders, so the all-hotels page was used. No homestay or dorm data."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bhuj to Mandvi (one way, sedan)",
+            "inr": 1800,
+            "range": "'starts at' 1,800 for a sedan, Rann of Kutch Taxi (page says about 45 km from Bhuj Railway Station)"
+          }
+        ],
+        "basis": "No local 8h Mandvi package found. Mandvi is normally reached from Bhuj; the one fare is a 'starting at' figure from one operator, and the page contradicts itself on whether tolls are included.",
+        "sources": [
+          "https://rannofkutchtaxi.com/bhuj-railway-station-to-mandvi-taxi"
+        ],
+        "notes": "Search snippets (not fetched) put Bhuj to Mandvi at 1,499 (CabBazar) and 1,666 hatchback (MakeMyTrip), and describe the distance as about 68 km."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 750,
+        "basis": "Justdial cost for two (from a search-result summary): Hotel Irani 350, Hotel Radha Krishna 450, Aman Restaurant 500, Osho Restaurant 600 (= 175, 225, 250, 300 per person). Unlimited Gujarati thali at Zoraba the Buddha (Osho) 130 in older Tripadvisor reviews and 200 in a more recent Wanderlog review. Budget = breakfast ~75 + thali lunch ~150 + dinner ~175 = 400. Standard = 3 meals at about 250 (median of 225, 250, 300) = 750.",
+        "sources": [
+          "https://www.justdial.com/Mandvi/Kathiyawadi-Restaurants/nct-10285188",
+          "https://www.tripadvisor.com/ShowUserReviews-g1102829-d3727791-r556305904-Zoraba_the_Buddha_OSHO-Mandvi_Kutch_District_Gujarat.html",
+          "https://wanderlog.com/place/details/2685595/osho-restaurant"
+        ],
+        "notes": "Figures come from search-result summaries of Justdial, not fetched pages. Zoraba the Buddha was shown at 1,600 for two on Justdial, which looks wrong against its thali price, so it is excluded."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local taxi day rate",
+        "Homestay and dorm prices",
+        "Fetched Justdial or Zomato cost-for-two pages"
+      ]
+    },
+    "dholavira": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Bhuj (about 130 km); Rapar as a closer, smaller base",
+        "mid_median_inr": 5500,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://dholaviratourismresort.com/index.php",
+          "https://www.rannutsavstays.com/resorts/ram-rann-resort-dholavira",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-dholavira"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "RESORT BHUNGA / TENT, double occupancy, per night. Dholavira Tourism Resort (own website, per couple, GST extra, includes breakfast and dinner): Premium AC Bhunga from 5,500 (Desert Non-AC Tent from 4,500, Rajwadi AC Bhunga 6,500). Ram Rann Resort (Rann Utsav Stays listing, after 10% discount, basis not stated): Bhunga 5,000 (Cottage 4,500, Deluxe Bhunga 5,500). Desert Castle Resort and Spa: Cleartrip 13 Nov 2026, 1 night, 2 guests, pre-tax 5,570. Median of 5,000 / 5,500 / 5,570.",
+        "notes": "Lodging is a handful of resorts and tent camps; there are no ordinary hotels. Season Nov to Feb. On Cleartrip 13 Nov 2026 four of six Dholavira properties were sold out (Praveg Resort, Ram Rann Resort, White Rann Tent City, Dholavira Tourism Resort) and the two available were Desert Castle Resort and Spa 5,570 and Evoke Dholavira (guest house) 17,578 pre-tax, which looks like a peak or package rate and is not in the median. 'From' prices on the resort's own site are starting rates, and the Ram Rann listing does not say whether its prices are per room or per couple or whether meals are included."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bhuj to Dholavira (one way, about 130 km, sedan)",
+            "inr": 3600,
+            "range": "'starts from' 3,600 (Rann of Kutch Taxi, tolls and state tax listed as extra); OneWay.Cab says fares start at 2,796 for an AC hatchback with sedan 'a little higher', all-inclusive"
+          }
+        ],
+        "basis": "Dholavira is reached from Bhuj; no local 8h rate found, and the site itself is walked or covered by the resort's vehicle.",
+        "sources": [
+          "https://rannofkutchtaxi.com/bhuj-to-dholavira-taxi",
+          "https://oneway.cab/bhuj/bhuj-to-dholavira-taxi"
+        ],
+        "notes": "Both are operator 'starting' prices. Another Bhuj operator (Sonal Shakti) describes the drive as about 210 km each way while these two say about 130 km."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No fetchable price source. Tripadvisor review pages returned 403 (not bypassed). A search-result summary of two undated Tripadvisor reviews of the Dholavira Tourism Resort restaurant mentioned thalis at 100 to 125 per plate, but the exact review for each figure could not be confirmed, so no figure is reported. Resort tents come with breakfast and dinner (dholaviratourismresort.com).",
+        "sources": [],
+        "notes": "No restaurant strip at Dholavira; most visitors eat at their resort."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Any food price (Tripadvisor pages blocked, review figures not confirmable)",
+        "Budget hotel, homestay, dorm (none exist on listing sites)",
+        "Local taxi rate",
+        "Whether the Ram Rann and Dholavira Tourism Resort prices are per room or per couple on peak dates"
+      ]
+    },
+    "dwarka": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5950,
+        "mid_n": 13,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-dwarka"
+        ],
+        "budget_hotel_median_inr": 1212,
+        "budget_n": 17,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/dwarka/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page for Dwarka, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price; the 13 properties on the page labelled 3-star hotel (range 4,080-12,430). Excluded Lemon Tree Premier (4-star), The Fern Sattva Resort (5-star) and Hotel The Grand Ladhukara (4-star). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax, all 17 listed (range 543-1,904). Different dates per tier.",
+        "notes": "The 3-star list is heavily discounted off 6,000-16,000 'original' rates and 13 Nov is a peak weekend, so mid is probably high against a normal weekday; the budget page is October. Dwarka is a pilgrim town: trust dharamshala meals cost 30-60 per person per meal and GTDC and temple-trust guesthouses exist, but no trust room tariff was fetched. Cleartrip's homestays page for Dwarka lists only hotels and resorts, so no homestay median. No dorm data."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {
+            "route": "Dwarka to Somnath (one way, sedan)",
+            "inr": 5000,
+            "range": "4,500 ('from', Somnath Travels / Somnath Yatra table) to 5,000 (Shree Ganesh fixed fare; Somnath Yatra FAQ)"
+          }
+        ],
+        "basis": "Median of 4 sedan full-day Dwarka sightseeing quotes (Nageshwar, Gopi Talav, Bet Dwarka, Rukmini Temple and more): Shree Ganesh Taxi Service (Dwarka address on page) 2,500; Anjani Cabs 'starts from' 2,500 for 8 hrs/80 km (company address is in Rajkot); YatraDham 2,461 normal and 3,210 in season, toll and driver included, 5% GST extra; OneDay.travel 2,999 (page dated 19 Apr 2026, 8 to 9 hrs). Range 2,461-2,999. Per km: Shree Ganesh sedan 10 (Anjani page says 10 and 12).",
+        "sources": [
+          "https://www.ganeshtaxiservice.in/",
+          "https://www.anjanicabs.in/dwarka-and-nageshwar-temple-local-sightseeing-taxi",
+          "https://travel.yatradham.org/dwarka-one-day-sightseeing-tour",
+          "https://oneday.travel/dwarka-sightseeing-trip/"
+        ],
+        "notes": "Not a union card. Bet Dwarka ferry tickets, entry and VIP darshan are extra. Season (Oct to Mar) runs about 30% above YatraDham's normal rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 320,
+        "standard_inr": 650,
+        "basis": "shreedwarkadhish.in food guide (page updated 18 Aug 2026): Shreenath Bhojanshala thali from 80, GTDC hotel fixed Gujarati thali 150-200, thalis generally 80-200, dabeli 15-25, kachori 10-20. Search-result snippets: Shreenath Dining Hall about 300 for two (thali 170 as of Oct 2025), Balram thali 120 unlimited, Govinda and Atithi about 500 for two, Chappan Bhog about 600 for two; Zomato for one: Dwarkesh Foods 150, Dwarkadhish Dhaba and Bhavan 200, Amritam 250. Budget = snack breakfast ~50 + thali lunch ~120 + thali dinner ~150 = 320. Standard = cafe breakfast ~100 + two meals at ~250-275 (Govinda, Atithi, Amritam) = ~650.",
+        "sources": [
+          "https://shreedwarkadhish.in/dwarka-food-guide.html",
+          "https://www.holidify.com/places/dwarka/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.slurrp.com/article/top-10-gujarati-restaurants-in-dwarka-1674115224972",
+          "https://www.zomato.com/gu/dwarka/delivery/dish-gujarati-thali"
+        ],
+        "notes": "Holidify shows Sharanam 50-250 and Chappan Bhog 50-300 without saying per person or for two. The Slurrp and Zomato figures were read in a search-result summary, not fetched."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Trust guesthouse (dharamshala) room tariffs",
+        "Homestay and dorm prices",
+        "Union or tourism-department taxi tariff",
+        "Zomato figures not fetched directly"
+      ]
+    },
+    "porbandar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2340,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-porbandar"
+        ],
+        "budget_hotel_median_inr": 1568,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/porbandar/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page for Porbandar, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price: Hotel Balaji Palace 2,011, Unique Resort and Restaurant 2,340, The Imperial Regency 4,005; Hotel President and a 4BHK bungalow were sold out. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax: Toran Hotel Porbandar 1,792 and Hotel Lila's 1,344. Different dates per tier.",
+        "notes": "Very thin supply: only 5 properties on the 3-star page and 2 on the budget page, so both medians are indicative only. No homestay or dorm data."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1799,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Porbandar to Somnath (one way, about 131 km, sedan)",
+            "inr": 2100,
+            "range": "2,000 to 2,200 (Dwarkesh Cab, tolls and parking extra); the page also lists 10/km"
+          }
+        ],
+        "basis": "Median of 3 sedan 8h/80 km quotes: Anjani Cabs Swift Dzire fixed fare 1,545 with 80 km included (extra 10/km; page also shows 13/km), OneWay.Cab 'onwards' 1,799 (extra 12/km, 130/hr; vehicle type not stated), DDcab sedan 'starts from' 2,200 (per km 12-13). Range 1,545-2,200. Not a union card: OneWay.Cab and DDcab are national aggregators that show the same figure on many city pages, and Anjani's address is in Rajkot.",
+        "sources": [
+          "https://www.anjanicabs.in/taxi-service-porbandar",
+          "https://oneway.cab/porbandar",
+          "https://ddcab.com/cab-in-porbandar",
+          "https://dwarkeshcab.in/porbandar/porbandar-to-somnath-taxi/"
+        ],
+        "notes": "Search snippets (not fetched) quoted MakeMyTrip 2,516 plus taxes and CabBazar 1,500 for the Porbandar 8h package. Dwarkesh Cab's address is in Jamnagar. Porbandar to Dwarka was not given a fare because the only fetched page contradicts itself (10/km or 12/km for about 103 km)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 330,
+        "standard_inr": 650,
+        "basis": "Zomato 'for one' prices seen in a search result: Om Catering Service 100, Aashapura Restaurant 200, Pndya Ji Restaurant 200, Saffron Restaurant the Multi Cuisine 250. Justdial cost for two: Saffron 410, The Grand Chamunda (pure veg) 300. Holidify (fetched) Swati Restaurant 20-110 and Swagat Restaurant 35-80, per-person status not stated. Budget = breakfast ~60 + lunch ~120 + dinner ~150 = 330. Standard = 3 meals at ~215 (median of 200, 205, 250, 200) = ~650.",
+        "sources": [
+          "https://www.zomato.com/porbandar/restaurants",
+          "https://www.justdial.com/Porbandar/Restaurants/nct-10408936",
+          "https://www.holidify.com/places/porbandar/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Zomato and Justdial figures were read in a search-result summary, not fetched. No thali board with a rupee price was found for Porbandar."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Homestay and dorm prices",
+        "Union taxi tariff; local figure rests on aggregator quotes",
+        "Zomato and Justdial pages not fetched directly",
+        "Thali price at a named Porbandar restaurant"
+      ]
+    },
+    "somnath": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4838,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-somnath"
+        ],
+        "budget_hotel_median_inr": 1562,
+        "budget_n": 10,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/somnath/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page for Somnath, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price; all 16 listed hotels, none sold out (range 2,646-12,240). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax, all 10 listed (range 896-1,904). Different dates per tier.",
+        "notes": "Somnath is a pilgrim town with trust guesthouses (Shree Somnath Trust and others); no trust room tariff was fetched, so none is stated. 13 Nov is a peak weekend and the 3-star list is heavily discounted off higher 'original' rates, so mid probably reads high against a normal weekday; the budget page is October. Cleartrip's budget list includes some resorts (Safari Resort 1,792, Bhalkeshwar Villa and Resort 1,904) at budget prices. No homestay or dorm data."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3199,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {
+            "route": "Somnath to Dwarka (one way, sedan)",
+            "inr": 5000,
+            "range": "4,500 ('from', Somnath Travels / Somnath Yatra table) to 5,000 (Somnath Yatra FAQ; Shree Ganesh Dwarka)"
+          },
+          {
+            "route": "Porbandar to Somnath (one way, about 131 km, sedan)",
+            "inr": 2100,
+            "range": "2,000 to 2,200 (Dwarkesh Cab, tolls and parking extra)"
+          }
+        ],
+        "basis": "Median of 3 full-day sedan Somnath sightseeing tours: Somnath Yatra (Prabhas Patan address on page) from 3,199; OneDay.travel 2,999 per vehicle (page dated 18 Apr 2026, 8 to 9 hrs, toll and parking included); Gujarat Expert 3,500 (toll, fuel, parking and driver included). Range 2,999-3,500. Per km: Shivshakti Tours and Travels (Veraval address on page) sedan from 10 (Dzire listed 12). Not a union card.",
+        "sources": [
+          "https://www.somnathyatra.com/",
+          "https://oneday.travel/somnath-sightseeing-trip/",
+          "https://www.gujaratexpert.com/somnath-sightseeing-tour/",
+          "https://shivshaktitourtravels.com/rajkot-taxi-service",
+          "https://www.somnathtravels.in/somnath-local-sight-seeeing.html",
+          "https://dwarkeshcab.in/porbandar/porbandar-to-somnath-taxi/"
+        ],
+        "notes": "These are packaged tours, not metered 80 km days. Somnath Travels (beside Hotel Somnath Atithigruh) sells a local sedan trip at 1,500 but with only 20 km included and 50/km extra, so it is not a full day; an auto rickshaw is 1,100 for 20 km. Naaz Tours (sedan 1,299 for 8 hrs) came only from a search snippet because its page returned 404. The shivshaktitourtravels.com page is titled as a Rajkot taxi page but carries a Veraval address and the 10/km sedan rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 250,
+        "standard_inr": 650,
+        "basis": "Wanderlog reviews (fetched): Maheshwari Dining Hall thali 90 per person (another reviewer 80), breakfast about 30-40; Real Taste AC Veg Restaurant, Veraval lunch thali 200 and 250-300 per person; Hotel Namaste cost for two about 400; Mad Over Grills buffet about 400 per adult. Holidify (fetched): New Bhabha Restaurant 150 for two, Babhia 100-120 for two. Budget = breakfast ~40 + thali lunch ~90 + thali dinner ~100 = ~230, rounded to 250. Standard = breakfast ~100 + lunch ~250 + dinner ~300 = 650.",
+        "sources": [
+          "https://wanderlog.com/list/geoCategory/206903/where-to-eat-the-best-restaurants-in-gir-somnath-district",
+          "https://www.holidify.com/places/somnath/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Reviewer-reported prices of unknown date; Zomato had no Somnath-town listing in search. Standard rests on Veraval restaurants a few km from the temple."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Trust guesthouse room tariffs",
+        "Homestay and dorm prices",
+        "Union taxi tariff; local figure is packaged tour prices",
+        "Zomato cost-for-two for Somnath town"
+      ]
+    },
+    "marine-national-park": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Jamnagar",
+        "no_lodging_sources": [
+          "https://www.tourmyindia.com/states/gujarat/pirotan-island-jamnagar.html",
+          "https://www.trawell.in/gujarat/jamnagar/pirotan-island",
+          "https://gujarattourism.com/saurashtra/jamnagar/marine-national-park.html"
+        ],
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No lodging inside the park. TourMyIndia: 'There is no place to stay, no food and no water at the island' (Pirotan). Trawell: the island has no place to stay and visitors bring their own food and water. Gujarat Tourism lists Jamnagar as the base and Narara as 56 km from Jamnagar, reached by hired car or boat from Jamnagar's jetty.",
+        "notes": "Base is Jamnagar; no Jamnagar hotel prices were collected and none are given as the park's. Park is closed mid-May to mid-October and Narara and Poshitra are open only at low tide (best season Nov to Mar). Trawell quotes a boat and permit package of 2,100 to 2,500 per person for Pirotan on an older page."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [],
+        "basis": "No published fare for Jamnagar to Narara or Bedi port found. Anjani Cabs' Jamnagar page lists a Swift Dzire at a fixed 2,472 with 80 km included and 10/km after, but names Narara and Pirotan only as places and gives no route fare; a Narara round trip from Jamnagar (56 km each way per Gujarat Tourism) would exceed 80 km. The company's address on the page is in Rajkot.",
+        "sources": [
+          "https://www.anjanicabs.in/cab-hire-jamnagar",
+          "https://gujarattourism.com/saurashtra/jamnagar/marine-national-park.html"
+        ],
+        "notes": "Local figure left null because the 80 km Jamnagar package is not a Narara trip. Lonely Planet's car-hire figure for Narara (2,200-2,500 return) came from a search snippet and the page did not show it when fetched."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No food on the islands (TourMyIndia, Trawell); visitors carry packed food and water. Eating is in Jamnagar and was not researched.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Taxi fare Jamnagar to Narara or Bedi port",
+        "Forest Department's own page on accommodation (timed out, official statement not read directly)",
+        "Jamnagar hotel and food prices (out of scope for the park)"
+      ]
+    },
+    "rajkot": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2820,
+        "mid_n": 13,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-rajkot"
+        ],
+        "budget_hotel_median_inr": 1176,
+        "budget_n": 9,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/rajkot/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page for Rajkot, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price; 16 listed, none sold out, kept the 13 typed 'Hotel' (range 655-6,375) and dropped two resorts (Green Leaf Club, The Royal Retreat) and one homestay (The Sky Imperial Aarivaa). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax; 10 listed, kept the 9 hotels (range 900-1,736) and dropped krishna Park Resort (1,904). Different dates per tier.",
+        "notes": "Rajkot is a business city, so the 3-star list includes several very cheap listings (Hotel Crown 655, Hotel Sunshine 932). No homestay or dorm data was gathered."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Rajkot to Dwarka (one way, sedan)",
+            "inr": 3199,
+            "range": "about 3,199 (Payal Cab, approximate fare table)"
+          },
+          {
+            "route": "Rajkot to Somnath (one way, sedan)",
+            "inr": 2999,
+            "range": "about 2,999 (Payal Cab, approximate fare table)"
+          },
+          {
+            "route": "Rajkot to Jamnagar (one way, sedan)",
+            "inr": 1661,
+            "range": "about 1,661 (Payal Cab, approximate fare table)"
+          }
+        ],
+        "basis": "Median of 3 sedan 8h/80 km Rajkot quotes: Payal Cab AC sedan 2,499 in its fare sheet (another section of the page says about 1,999; extra km 12), DDcab sedan 'starts from' 2,200 (per km 11), OneWay.Cab 'onwards' 1,799 (extra 12/km, vehicle type not stated). Range 1,799-2,499. Not a union card; DDcab and OneWay.Cab are aggregators that show the same figure on many city pages.",
+        "sources": [
+          "https://www.payalcab.in/cab-in-rajkot.php",
+          "https://ddcab.com/cab-in-rajkot",
+          "https://oneway.cab/rajkot"
+        ],
+        "notes": "Search snippets (not fetched) put CabBazar at 1,500, MakeMyTrip at 2,034 and 24Cabservice at 2,000. MakeMyTrip, 24Cabservice and CabBazar pages timed out or returned 403."
+      },
+      "food_per_person_day": {
+        "budget_inr": 330,
+        "standard_inr": 800,
+        "basis": "Zomato Rajkot, read in a search-result summary. 'For one': Maa Ni Rasoi 100, Rajdhani 100, Balaji 100, Patel Dining Hall 100, Amrut 200, The Grand Thakar 300, Adingo 300. 'For two': Swati Family Restaurant 300, Amrut 500, TGT The Grand Thakar 700, Parijaat 1,000, Mahek 1,000 (= 150, 250, 350, 500, 500 per person). Budget = breakfast ~80 + thali ~100 + dinner ~150 = 330. Standard = breakfast ~150 + two meals at ~325 (median of 200, 250, 300, 350, 500, 300) = ~800.",
+        "sources": [
+          "https://www.zomato.com/rajkot/delivery/dish-gujarati-thali",
+          "https://www.zomato.com/rajkot/restaurants/gujarati",
+          "https://www.zomato.com/rajkot/restaurants?category=1"
+        ],
+        "notes": "Zomato pages timed out when fetched; the figures are from the search-result summary of those listings. Zomato states these as average cost estimates, not thali prices."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm prices",
+        "Union taxi tariff; local figure rests on three operator quotes, two from aggregators",
+        "Zomato figures not fetched directly (timeouts)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,978 @@
+{
+ "measured_on": "2026-10-09",
+ "dates": {
+  "diwali": "2026-11-12",
+  "dec3": "2026-12-03",
+  "nov26": "2026-11-26"
+ },
+ "method": "Cleartrip hotel detail pages, 1 night, 1 room, 2 adults, Thursday check-ins (12 Nov, 3 Dec, 26 Nov 2026). Price = per-night rate BEFORE taxes and fees, after the discount shown, for the same room type and plan on all three dates (cheapest row where it existed on every date). Ratio = diwali_inr / comparison date.",
+ "cities": {
+  "Jaipur": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "Hotel Aarna Premier",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 4691,
+     "dec3_inr": 3900,
+     "nov26_inr": 3977,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-aarna-4051600?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-aarna-4051600?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-aarna-4051600?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Cosmos Raj Plaza Jaipur",
+     "room": "Deluxe Room City view, Room Only",
+     "diwali_inr": 2381,
+     "dec3_inr": 2310,
+     "nov26_inr": 2058,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/vanaam-hotel-raj-plaza-4063941?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/vanaam-hotel-raj-plaza-4063941?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/vanaam-hotel-raj-plaza-4063941?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Arco Palace",
+     "room": "Standard Room, Room Only",
+     "diwali_inr": 1955,
+     "dec3_inr": 1485,
+     "nov26_inr": 1485,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-arco-palace-377645?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-arco-palace-377645?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-arco-palace-377645?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Grand Anukampa Hotel",
+     "room": "Bedroom City view King, Room Only",
+     "diwali_inr": 2584,
+     "dec3_inr": 1615,
+     "nov26_inr": 1615,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-grand-anukampa-hotel-4271066?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-grand-anukampa-hotel-4271066?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-grand-anukampa-hotel-4271066?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Albana Haveli",
+     "room": "Deluxe Double, Room Only",
+     "diwali_inr": 1120,
+     "dec3_inr": 1120,
+     "nov26_inr": 1120,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/albana-haveli-4051046?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/albana-haveli-4051046?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/albana-haveli-4051046?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Fort Chandragupt",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 5336,
+     "dec3_inr": 5336,
+     "nov26_inr": 5336,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/fort-chandragupt-45098?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/fort-chandragupt-45098?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/fort-chandragupt-45098?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Savi Regency",
+     "room": "Super Deluxe Room, Room Only",
+     "diwali_inr": 1799,
+     "dec3_inr": 2602,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-savi-regency-387300?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-savi-regency-387300?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-savi-regency-387300?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Crims Hotel Pratap Nagar",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 861,
+     "dec3_inr": 861,
+     "nov26_inr": 861,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5061543?c=12112026|13112026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5061543?c=03122026|04122026&city=Jaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5061543?c=26112026|27112026&city=Jaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.015,
+   "median_ratio_nov26": 1.157,
+   "n": 8,
+   "notes": "Hotel Savi Regency 26 Nov sold out (nov26 null). 3 of 8 hotels show an identical price on all 3 dates (Albana, Fort Chandragupt, Crims). Savi is the only hotel where Dec 3 is dearer than Diwali week."
+  },
+  "Udaipur": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "Vijay Villa Resort",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 4610,
+     "dec3_inr": 4610,
+     "nov26_inr": 4610,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/vijay-villa-resort-3989616?c=12112026|13112026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/vijay-villa-resort-3989616?c=03122026|04122026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/vijay-villa-resort-3989616?c=26112026|27112026&city=Udaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Maya's Manor - A Lake View Hotel",
+     "room": "Manor Classic room, Room Only",
+     "diwali_inr": 4970,
+     "dec3_inr": 4970,
+     "nov26_inr": 4970,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5064834?c=12112026|13112026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5064834?c=03122026|04122026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5064834?c=26112026|27112026&city=Udaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Rupis Resort",
+     "room": "Standard Double Room, Room Only",
+     "diwali_inr": 1932,
+     "dec3_inr": null,
+     "nov26_inr": 1932,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/rupis-resort-52786?c=12112026|13112026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/rupis-resort-52786?c=03122026|04122026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/rupis-resort-52786?c=26112026|27112026&city=Udaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Revaas Lake View Boutique Hotel",
+     "room": "Heritage Twin, Room Only",
+     "diwali_inr": 4037,
+     "dec3_inr": 1794,
+     "nov26_inr": 1794,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4064248?c=12112026|13112026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4064248?c=03122026|04122026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4064248?c=26112026|27112026&city=Udaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "CLOVER INN - A Boutique Hotel",
+     "room": "Twin Deluxe, Room Only",
+     "diwali_inr": 3840,
+     "dec3_inr": 1776,
+     "nov26_inr": 1776,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/clover-inn-4275614?c=12112026|13112026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/clover-inn-4275614?c=03122026|04122026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/clover-inn-4275614?c=26112026|27112026&city=Udaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Darbargarh",
+     "room": "Deluxe Room with Lake View, Room Only",
+     "diwali_inr": 10311,
+     "dec3_inr": 6130,
+     "nov26_inr": 10311,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-darbargarh-3990299?c=12112026|13112026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-darbargarh-3990299?c=03122026|04122026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-darbargarh-3990299?c=26112026|27112026&city=Udaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Belmonte House by Noventa",
+     "room": "Noventa Comfort Room City view, Room Only",
+     "diwali_inr": 5757,
+     "dec3_inr": 2786,
+     "nov26_inr": 2600,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-belmonte-house-3973990?c=12112026|13112026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-belmonte-house-3973990?c=03122026|04122026&city=Udaipur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-belmonte-house-3973990?c=26112026|27112026&city=Udaipur&state=Rajasthan&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.874,
+   "median_ratio_nov26": 1.0,
+   "n": 7,
+   "notes": "Skipped Aashiya Haveli (Thu 12 Nov sold out). Rupis 3 Dec sold out (dec3 null). Darbargarh: on 12 Nov only the Lake View deluxe was offered, so that room type is used on all dates (its cheaper Standard room was 3140 on 3 Dec and 5638 on 26 Nov). Vijay Villa and Maya's Manor show identical prices on all dates (flat-rate listings)."
+  },
+  "Mount Abu": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "Hotel Castle Rock Mount Abu by SAH",
+     "room": "Standard Room, Room Only",
+     "diwali_inr": 5702,
+     "dec3_inr": 1555,
+     "nov26_inr": 3214,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-castle-rock-2427418?c=12112026|13112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-castle-rock-2427418?c=03122026|04122026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-castle-rock-2427418?c=26112026|27112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Mamta Palace",
+     "room": "Deluxe AC Room, Room Only",
+     "diwali_inr": 7020,
+     "dec3_inr": 1674,
+     "nov26_inr": 1674,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-mamta-palace-353761?c=12112026|13112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-mamta-palace-353761?c=03122026|04122026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-mamta-palace-353761?c=26112026|27112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Marigold Mount Abu by SAH",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 6792,
+     "dec3_inr": 5005,
+     "nov26_inr": 4170,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-marigold-mount-abu-3926315?c=12112026|13112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-marigold-mount-abu-3926315?c=03122026|04122026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-marigold-mount-abu-3926315?c=26112026|27112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Colonial Manek Manor by SAH",
+     "room": "Tent, Room Only",
+     "diwali_inr": 6269,
+     "dec3_inr": 1938,
+     "nov26_inr": 3661,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-colonial-manek-manor-388857?c=12112026|13112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-colonial-manek-manor-388857?c=03122026|04122026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-colonial-manek-manor-388857?c=26112026|27112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Shri Ganesh Hotel",
+     "room": "Deluxe Non AC Room, Room Only",
+     "diwali_inr": 3220,
+     "dec3_inr": 977,
+     "nov26_inr": 2714,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4264005?c=12112026|13112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4264005?c=03122026|04122026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4264005?c=26112026|27112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Crystal Inn @ Nakki Lake",
+     "room": "Luxury lake view room, Room Only",
+     "diwali_inr": 6394,
+     "dec3_inr": 6248,
+     "nov26_inr": 6248,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-crystal-inn-389409?c=12112026|13112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-crystal-inn-389409?c=03122026|04122026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-crystal-inn-389409?c=26112026|27112026&city=Mount%20Abu&state=Rajasthan&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 3.265,
+   "median_ratio_nov26": 1.671,
+   "n": 6,
+   "notes": "Largest and most volatile premium. 26 Nov is still well above 3 Dec at 4 of 6 hotels (early December is Mount Abu's trough). Mamta Palace: Non-AC deluxe (6435) existed only on 12 Nov, so Deluxe AC is used for all dates. Crystal Inn: its cheap Standard AC room (2901) was offered on 3 Dec and 26 Nov but NOT on 12 Nov, so the same-room comparison (1.02) understates the cheapest-room jump (about 2.2x)."
+  },
+  "Dwarka": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "Hotel Holiday Icon",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 6000,
+     "dec3_inr": 2100,
+     "nov26_inr": 2450,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4562524?c=12112026|13112026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4562524?c=03122026|04122026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4562524?c=26112026|27112026&city=Dwarka&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Swati Dwarka",
+     "room": "Comfort, Room Only",
+     "diwali_inr": 4599,
+     "dec3_inr": 1760,
+     "nov26_inr": 1760,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-swati-2881024?c=12112026|13112026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-swati-2881024?c=03122026|04122026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-swati-2881024?c=26112026|27112026&city=Dwarka&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Aaradhya Inn Dwarka",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 4380,
+     "dec3_inr": null,
+     "nov26_inr": 1904,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4595210?c=12112026|13112026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4595210?c=03122026|04122026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4595210?c=26112026|27112026&city=Dwarka&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Park Royal Nr. Dwarikadhish Temple",
+     "room": "Premier City view, Room Only",
+     "diwali_inr": 5147,
+     "dec3_inr": 2566,
+     "nov26_inr": 2566,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-park-royal-4482272?c=12112026|13112026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-park-royal-4482272?c=03122026|04122026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-park-royal-4482272?c=26112026|27112026&city=Dwarka&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Gopal",
+     "room": "Super Deluxe Room, Room Only",
+     "diwali_inr": 6440,
+     "dec3_inr": 1428,
+     "nov26_inr": 1428,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-gopal-720545?c=12112026|13112026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-gopal-720545?c=03122026|04122026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-gopal-720545?c=26112026|27112026&city=Dwarka&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "HOTEL THE BARSANA",
+     "room": "Super Deluxe, Room Only",
+     "diwali_inr": 5322,
+     "dec3_inr": null,
+     "nov26_inr": 5322,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-the-barsana-4266612?c=12112026|13112026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-the-barsana-4266612?c=03122026|04122026&city=Dwarka&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-the-barsana-4266612?c=26112026|27112026&city=Dwarka&state=Gujarat&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 2.735,
+   "median_ratio_nov26": 2.375,
+   "n": 6,
+   "notes": "Dwarka used (Somnath not run). Aaradhya and Barsana sold out on 3 Dec (dec3 null). Barsana price identical on 12 and 26 Nov (flat listing). Consistent 2.3x to 4.5x jump at the 4 dynamic-priced hotels."
+  },
+  "Saputara": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "Shilpi Hill Resort",
+     "room": "Super Deluxe A/c Garden view, Room with Breakfast & Lunch/Dinner (Room Only not offered 12 Nov)",
+     "diwali_inr": 11186,
+     "dec3_inr": 9274,
+     "nov26_inr": 9274,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/shilpi-hill-resort-381167?c=12112026|13112026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/shilpi-hill-resort-381167?c=03122026|04122026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/shilpi-hill-resort-381167?c=26112026|27112026&city=Saputara&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Lake View",
+     "room": "Deluxe Room Lake view, Room Only",
+     "diwali_inr": 6237,
+     "dec3_inr": 4144,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-lake-view-740755?c=12112026|13112026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-lake-view-740755?c=03122026|04122026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-lake-view-740755?c=26112026|27112026&city=Saputara&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Manas Cottage Saputara",
+     "room": "Basic Double Room, Room Only",
+     "diwali_inr": 4455,
+     "dec3_inr": 1451,
+     "nov26_inr": 1457,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/manas-cottage-saputara-2629814?c=12112026|13112026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/manas-cottage-saputara-2629814?c=03122026|04122026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/manas-cottage-saputara-2629814?c=26112026|27112026&city=Saputara&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Saputara valley View",
+     "room": "Deluxe Double Room, Room Only",
+     "diwali_inr": 2362,
+     "dec3_inr": 2352,
+     "nov26_inr": 2340,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/saputara-valley-view-5609833?c=12112026|13112026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/saputara-valley-view-5609833?c=03122026|04122026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/saputara-valley-view-5609833?c=26112026|27112026&city=Saputara&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Shreephal Luxurious Resort",
+     "room": "Luxury Cottage, Room Only",
+     "diwali_inr": 9915,
+     "dec3_inr": 6321,
+     "nov26_inr": 5270,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/shreephal-luxurious-resort-4289245?c=12112026|13112026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/shreephal-luxurious-resort-4289245?c=03122026|04122026&city=Saputara&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/shreephal-luxurious-resort-4289245?c=26112026|27112026&city=Saputara&state=Gujarat&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.505,
+   "median_ratio_nov26": 1.544,
+   "n": 5,
+   "notes": "Only 5 hotels usable: Thu 12 Nov is sold out at Hotel Kansar Palace, Hotel Sejal Inn, Uday Hill Resort and Hotel Savshanti Lake Resort (all skipped); the other 5 Cleartrip 3-star listings that were sold out on Fri 13 Nov were not re-checked on Thu. Hotel Lake View 26 Nov sold out (nov26 null). Shilpi's plan-matched ratio uses the meal plan because Room Only was not offered on 12 Nov. Valley View is flat."
+  },
+  "Ahmedabad": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "Treebo Premium Paradise",
+     "room": "Standard Double Room, Room Only",
+     "diwali_inr": 5549,
+     "dec3_inr": 5531,
+     "nov26_inr": 5531,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/treebo-trend-paradise-ellisbridge-2178452?c=12112026|13112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/treebo-trend-paradise-ellisbridge-2178452?c=03122026|04122026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/treebo-trend-paradise-ellisbridge-2178452?c=26112026|27112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Mivaante Ahmedabad",
+     "room": "Family Suite, Room Only",
+     "diwali_inr": 9900,
+     "dec3_inr": 7150,
+     "nov26_inr": 7150,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4291789?c=12112026|13112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4291789?c=03122026|04122026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4291789?c=26112026|27112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel The Grand Suites",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 4079,
+     "dec3_inr": 4079,
+     "nov26_inr": 5609,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-the-grand-suites-4532150?c=12112026|13112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-the-grand-suites-4532150?c=03122026|04122026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-the-grand-suites-4532150?c=26112026|27112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Tribecca Select",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 3073,
+     "dec3_inr": 3264,
+     "nov26_inr": 2603,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/tribecca-select-2427290?c=12112026|13112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/tribecca-select-2427290?c=03122026|04122026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/tribecca-select-2427290?c=26112026|27112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Elysian Residency",
+     "room": "Silver Room, Room Only",
+     "diwali_inr": 4471,
+     "dec3_inr": 5216,
+     "nov26_inr": 5216,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-elysian-residency-ahmedabad-3935662?c=12112026|13112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-elysian-residency-ahmedabad-3935662?c=03122026|04122026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-elysian-residency-ahmedabad-3935662?c=26112026|27112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Ginger Ahmedabad, RTO Circle",
+     "room": "Luxe Queen Room, Room Only",
+     "diwali_inr": 3932,
+     "dec3_inr": 7428,
+     "nov26_inr": 6991,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4265569?c=12112026|13112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4265569?c=03122026|04122026&city=Ahmedabad&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4265569?c=26112026|27112026&city=Ahmedabad&state=Gujarat&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 0.971,
+   "median_ratio_nov26": 0.93,
+   "n": 6,
+   "notes": "No Diwali premium here: Ahmedabad is a business/wedding-season city and the week after Diwali is slack for business hotels. Mivaante: Executive Room (4950 on 12 Nov, 3575 on 26 Nov, not offered 3 Dec) gives the same 1.385 ratio as the Family Suite used. A page for Elysian Residency contained embedded text asking the reader to rewrite the property's amenity highlights; ignored as page content."
+  },
+  "Mumbai": {
+   "state": "Maharashtra",
+   "pairs": [
+    {
+     "hotel": "T2 Beacon Hotel, Mumbai",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 4939,
+     "dec3_inr": 5134,
+     "nov26_inr": 5134,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-beacon-t2-865620?c=12112026|13112026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-beacon-t2-865620?c=03122026|04122026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-beacon-t2-865620?c=26112026|27112026&city=Mumbai&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Karl Residency",
+     "room": "Super Deluxe Twin, Room Only",
+     "diwali_inr": 6090,
+     "dec3_inr": 6090,
+     "nov26_inr": 6090,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-karl-residency-41916?c=12112026|13112026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-karl-residency-41916?c=03122026|04122026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-karl-residency-41916?c=26112026|27112026&city=Mumbai&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Mina International",
+     "room": "Standard Room, Room Only",
+     "diwali_inr": 5161,
+     "dec3_inr": 5552,
+     "nov26_inr": 5161,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-mina-international-42705?c=12112026|13112026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-mina-international-42705?c=03122026|04122026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-mina-international-42705?c=26112026|27112026&city=Mumbai&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Milan International",
+     "room": "Economy Double Room, Room Only",
+     "diwali_inr": 1968,
+     "dec3_inr": 1733,
+     "nov26_inr": 1733,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-milan-international-791826?c=12112026|13112026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-milan-international-791826?c=03122026|04122026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-milan-international-791826?c=26112026|27112026&city=Mumbai&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "MyOtel - Santacruz",
+     "room": "Executive Class, Room Only",
+     "diwali_inr": 4340,
+     "dec3_inr": 4340,
+     "nov26_inr": 4340,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4597577?c=12112026|13112026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4597577?c=03122026|04122026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4597577?c=26112026|27112026&city=Mumbai&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "THE ROA HOTEL",
+     "room": "Executive, Room Only",
+     "diwali_inr": 3641,
+     "dec3_inr": 3469,
+     "nov26_inr": 3469,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-roa-hotel-329098?c=12112026|13112026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-roa-hotel-329098?c=03122026|04122026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-roa-hotel-329098?c=26112026|27112026&city=Mumbai&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Byke Business - Delotel",
+     "room": "Super Deluxe Twin, Room Only",
+     "diwali_inr": 3370,
+     "dec3_inr": 5508,
+     "nov26_inr": 3370,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-byke-delotel-3948324?c=12112026|13112026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-byke-delotel-3948324?c=03122026|04122026&city=Mumbai&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-byke-delotel-3948324?c=26112026|27112026&city=Mumbai&state=Maharashtra&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.0,
+   "median_ratio_nov26": 1.0,
+   "n": 7,
+   "notes": "Skipped Tunga International (3 Dec and 26 Nov both sold out). Mumbai shows essentially no Diwali premium (business city, near-flat rates). Byke Delotel is dearer on 3 Dec than Diwali week."
+  },
+  "Lonavala": {
+   "state": "Maharashtra",
+   "pairs": [
+    {
+     "hotel": "Meritas Adore Resort",
+     "room": "Standard Room, Room with Breakfast",
+     "diwali_inr": 3356,
+     "dec3_inr": 3064,
+     "nov26_inr": 3064,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/meritas-adore-resort-3919067?c=12112026|13112026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/meritas-adore-resort-3919067?c=03122026|04122026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/meritas-adore-resort-3919067?c=26112026|27112026&city=Lonavala&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Taaffeite Hotels And Resorts",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 3960,
+     "dec3_inr": 3960,
+     "nov26_inr": 3960,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5527915?c=12112026|13112026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5527915?c=03122026|04122026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5527915?c=26112026|27112026&city=Lonavala&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Dinosaur Resort Lonavala",
+     "room": "Deluxe Cottages Garden view, Room with Breakfast",
+     "diwali_inr": 3632,
+     "dec3_inr": 3632,
+     "nov26_inr": 3632,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4533112?c=12112026|13112026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4533112?c=03122026|04122026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4533112?c=26112026|27112026&city=Lonavala&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Bob House Pool Resort",
+     "room": "Luxury Standard Room, Room Only",
+     "diwali_inr": 2960,
+     "dec3_inr": 2919,
+     "nov26_inr": 2960,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-bob-house-3920001?c=12112026|13112026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-bob-house-3920001?c=03122026|04122026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-bob-house-3920001?c=26112026|27112026&city=Lonavala&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Sereniity Resort",
+     "room": "Standard Room Courtyard, Room Only",
+     "diwali_inr": 5519,
+     "dec3_inr": 3219,
+     "nov26_inr": 3219,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/sereniity-resort-745776?c=12112026|13112026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/sereniity-resort-745776?c=03122026|04122026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/sereniity-resort-745776?c=26112026|27112026&city=Lonavala&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Meritas Aura Resort",
+     "room": "Superior Room with Balcony, Room Only",
+     "diwali_inr": 7919,
+     "dec3_inr": 3830,
+     "nov26_inr": 4103,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/meritas-aura-resort-4278756?c=12112026|13112026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/meritas-aura-resort-4278756?c=03122026|04122026&city=Lonavala&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/meritas-aura-resort-4278756?c=26112026|27112026&city=Lonavala&state=Maharashtra&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.055,
+   "median_ratio_nov26": 1.048,
+   "n": 6,
+   "notes": "Skipped Purohit Holiday Resort (3 Dec and 26 Nov both sold out). Taaffeite and Dinosaur are flat on all dates; Bob House near-flat. Meritas Adore, Dinosaur: only a breakfast plan is offered, so plan-matched."
+  },
+  "Mahabaleshwar": {
+   "state": "Maharashtra",
+   "pairs": [
+    {
+     "hotel": "The Byke Retreat - Sai Cottage",
+     "room": "Deluxe Room, Room Only",
+     "diwali_inr": 3326,
+     "dec3_inr": 2772,
+     "nov26_inr": 2772,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4265740?c=12112026|13112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4265740?c=03122026|04122026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4265740?c=26112026|27112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Picaddle The Luxury Boutique Resort",
+     "room": "Standard Room Twin, Room with Breakfast",
+     "diwali_inr": 4600,
+     "dec3_inr": 4150,
+     "nov26_inr": 4150,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/picaddle-the-luxury-boutique-resort-2428970?c=12112026|13112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/picaddle-the-luxury-boutique-resort-2428970?c=03122026|04122026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/picaddle-the-luxury-boutique-resort-2428970?c=26112026|27112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "LA Fortuna Resort & Spa",
+     "room": "Fortuna Deluxe AC Room, Room with Breakfast",
+     "diwali_inr": 2390,
+     "dec3_inr": 2390,
+     "nov26_inr": 2390,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/la-fortuna-resort-spa-2880152?c=12112026|13112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/la-fortuna-resort-spa-2880152?c=03122026|04122026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/la-fortuna-resort-spa-2880152?c=26112026|27112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Harmony Palace",
+     "room": "Premium Rooms with Valley View 1st Floor, Room Only",
+     "diwali_inr": 5620,
+     "dec3_inr": 5620,
+     "nov26_inr": 5620,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/harmony-palace-3925176?c=12112026|13112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/harmony-palace-3925176?c=03122026|04122026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/harmony-palace-3925176?c=26112026|27112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Cloud Green Resort and Spa",
+     "room": "Signature Family Room Forest view, Room Only",
+     "diwali_inr": 4810,
+     "dec3_inr": 4810,
+     "nov26_inr": 4070,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/cloud-green-resort-and-spa-80836?c=12112026|13112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/cloud-green-resort-and-spa-80836?c=03122026|04122026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/cloud-green-resort-and-spa-80836?c=26112026|27112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Rain Raga Resort",
+     "room": "Deluxe AC Room Ground Floor, Room Only",
+     "diwali_inr": 5152,
+     "dec3_inr": 1674,
+     "nov26_inr": 1674,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/rain-raga-resort-4488074?c=12112026|13112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/rain-raga-resort-4488074?c=03122026|04122026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/rain-raga-resort-4488074?c=26112026|27112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Treebo JP Cottage with Swimming Pool",
+     "room": "Standard Double Room, Room Only",
+     "diwali_inr": 4269,
+     "dec3_inr": 3945,
+     "nov26_inr": 4269,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/treebo-trend-jp-cottage-mahabaleshwar-2050842?c=12112026|13112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/treebo-trend-jp-cottage-mahabaleshwar-2050842?c=03122026|04122026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/treebo-trend-jp-cottage-mahabaleshwar-2050842?c=26112026|27112026&city=Mahabaleshwar&state=Maharashtra&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.082,
+   "median_ratio_nov26": 1.108,
+   "n": 7,
+   "notes": "Bimodal: 2 hotels flat on all dates (La Fortuna, Harmony Palace), Cloud Green flat vs 3 Dec, and one hotel (Rain Raga) with 3.1x. Cloud Green: cheaper Classic Double (2220 on 3 Dec) not offered 12 Nov, so Signature Family used. Bellevue/Orient Beacon in the listing are Panchgani and were not used."
+  },
+  "Calangute": {
+   "state": "Goa",
+   "pairs": [
+    {
+     "hotel": "SinQ Beach Resort",
+     "room": "Smart Room, Room Only",
+     "diwali_inr": 4503,
+     "dec3_inr": 3576,
+     "nov26_inr": 3576,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/sinq-beach-resort-311420?c=12112026|13112026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/sinq-beach-resort-311420?c=03122026|04122026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/sinq-beach-resort-311420?c=26112026|27112026&city=Calangute&state=Goa&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Olive Hotel Calangute Niwasa",
+     "room": "One-Bedroom Apartment, Room Only",
+     "diwali_inr": 2820,
+     "dec3_inr": 2845,
+     "nov26_inr": 2892,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/olive-calangute-niwasa-by-embassy-group-4008906?c=12112026|13112026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/olive-calangute-niwasa-by-embassy-group-4008906?c=03122026|04122026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/olive-calangute-niwasa-by-embassy-group-4008906?c=26112026|27112026&city=Calangute&state=Goa&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Ticlo Resorts",
+     "room": "Executive Room City view, Room Only",
+     "diwali_inr": 4317,
+     "dec3_inr": 2611,
+     "nov26_inr": 2684,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/ticlo-resorts-47826?c=12112026|13112026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/ticlo-resorts-47826?c=03122026|04122026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/ticlo-resorts-47826?c=26112026|27112026&city=Calangute&state=Goa&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Nitya Resort and Spa",
+     "room": "Standard Room without Balcony, Room Only",
+     "diwali_inr": 3680,
+     "dec3_inr": 3320,
+     "nov26_inr": 3320,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/nitya-resort-309863?c=12112026|13112026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/nitya-resort-309863?c=03122026|04122026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/nitya-resort-309863?c=26112026|27112026&city=Calangute&state=Goa&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Rahi Coral Beach Resort",
+     "room": "Deluxe A/c Room, Room Only",
+     "diwali_inr": 3969,
+     "dec3_inr": 2155,
+     "nov26_inr": 2155,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/rahi-coral-beach-resort-788504?c=12112026|13112026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/rahi-coral-beach-resort-788504?c=03122026|04122026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/rahi-coral-beach-resort-788504?c=26112026|27112026&city=Calangute&state=Goa&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Paradise Village Beach Resort",
+     "room": "Beach Cottage (2 Adults), Room with Breakfast",
+     "diwali_inr": 5643,
+     "dec3_inr": 5173,
+     "nov26_inr": 5173,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/paradise-village-beach-resort-795106?c=12112026|13112026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/paradise-village-beach-resort-795106?c=03122026|04122026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/paradise-village-beach-resort-795106?c=26112026|27112026&city=Calangute&state=Goa&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Calangute Beach Resort",
+     "room": "Deluxe Room Garden view, Room Only",
+     "diwali_inr": 3472,
+     "dec3_inr": 2704,
+     "nov26_inr": 2704,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/calangute-beach-resort-3974407?c=12112026|13112026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/calangute-beach-resort-3974407?c=03122026|04122026&city=Calangute&state=Goa&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/calangute-beach-resort-3974407?c=26112026|27112026&city=Calangute&state=Goa&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.259,
+   "median_ratio_nov26": 1.259,
+   "n": 7,
+   "notes": "No hotels skipped. 3 Dec and 26 Nov prices are almost identical (both inside Goa's pre-peak shoulder). Paradise Village: A/c Studio (4703 on 12 Nov, 4232 on 26 Nov) not offered 3 Dec, so Beach Cottage used."
+  }
+ },
+ "overall_median_ratio_dec3": 1.108,
+ "overall_median_ratio_nov26": 1.136,
+ "n_pairs": 65,
+ "extras": {
+  "n_ratio_dec3": 62,
+  "n_ratio_nov26": 63,
+  "flat_listings_ratio_about_1_on_every_date": [
+   "Jaipur: Albana Haveli",
+   "Jaipur: Fort Chandragupt",
+   "Jaipur: The Crims Hotel Pratap Nagar",
+   "Udaipur: Vijay Villa Resort",
+   "Udaipur: Maya's Manor - A Lake View Hotel",
+   "Udaipur: Rupis Resort",
+   "Dwarka: HOTEL THE BARSANA",
+   "Saputara: Saputara valley View",
+   "Ahmedabad: Treebo Premium Paradise",
+   "Mumbai: Hotel Karl Residency",
+   "Mumbai: MyOtel - Santacruz",
+   "Lonavala: Taaffeite Hotels And Resorts",
+   "Lonavala: Dinosaur Resort Lonavala",
+   "Lonavala: The Bob House Pool Resort",
+   "Mahabaleshwar: LA Fortuna Resort & Spa",
+   "Mahabaleshwar: Harmony Palace"
+  ],
+  "overall_median_ratio_dec3_excl_flat": 1.3,
+  "overall_median_ratio_nov26_excl_flat": 1.259,
+  "n_excl_flat_dec3": 48,
+  "n_excl_flat_nov26": 47,
+  "median_of_city_medians_dec3": 1.171,
+  "median_of_city_medians_nov26": 1.133,
+  "caveat": "Sample is Cleartrip-listed 3-star hotels, mostly 5-8 per city, picked from the first results, not random. Many small hotels show a flat rate on every date; those are included in the headline medians as real observations. Cleartrip rates are the platform's discounted sell rate, not rack rate."
+ }
+}

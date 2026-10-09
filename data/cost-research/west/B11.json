@@ -1,0 +1,465 @@
+{
+  "batch": "B11",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "aurangabad": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3292,
+        "mid_n": 12,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-aurangabad"
+        ],
+        "budget_hotel_median_inr": 1372,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/aurangabad/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 769,
+        "dorm_n": 3,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Aurangabad?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip 3-star page, 13-14 Nov 2026, 1 night, 2 guests, pre-tax discounted price; 15 listed, dropped 3 four-star (Fern Residency, Lemon Tree, Amarpreet), leaving 12 three-star (range 1,684-5,680). Budget: Cleartrip budget page, 11-12 Oct (year not printed), first 20 of 26 listed; 14 show tax separately (pre-tax), 6 give no tax line (999, 999, 623, 795, 800, 750); range 623-1,848. Dorm: Hostelworld 'from' prices per bed, no dates: Asia Lodge 300, Zostel 768.90, 6 CR Hotel Natraj 1,000 (median 769).",
+        "notes": "Mid is a Friday in November, budget a Sunday in October, different dates. No homestay median: Cleartrip's Aurangabad 'homestays' page lists only hotels and resorts. Hostelworld 'from' prices are not date-specific and only 3 of 7 properties list dorm beds."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Aurangabad to Ajanta Caves day trip, round trip, sedan",
+            "inr": 3000,
+            "range": "3,000 (aurangabadcarrental.com, page updated 28/03/25) to 3,600 (Advika Travel, 300 km package)"
+          },
+          {
+            "route": "Aurangabad to Ellora with Daulatabad and city sites, one-day sedan package",
+            "inr": 1800,
+            "range": "1,800 (aurangabadcarrental.com, 28/03/25) to 2,000 (Advika Travel)"
+          }
+        ],
+        "basis": "Median of 3 sedan 8h/80km local quotes for Aurangabad: Advika Travel Rs 2,000 (Etios/Dzire AC, tolls extra, fetched, extra hour 100, extra km 12), CabBazar Rs 2,200 (search-result summary, page not fetched), Sai Cabs Rs 2,500 (search-result summary). Range 2,000-2,500.",
+        "sources": [
+          "https://advikatravel.com/taxi-fares-outstation-aurangabad/",
+          "https://aurangabadcarrental.com/taxi-for-ajanta-ellora-caves-from-aurangabad/",
+          "https://cabbazar.com/taxi/cab/aurangabad-local-sightseeing",
+          "https://saicabsshirdi.in/sambhajinagar-sightseeing-taxi"
+        ],
+        "notes": "Advika per-km Rs 12, 300 km minimum per day on outstation, night halt 700, driver allowance 400. Tolls and parking extra. Savaari page would not load; EaseMyTrip Aurangabad-Ajanta showed Rs 6,153 for 309 km one-way (different product, not used)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 675,
+        "standard_inr": 1125,
+        "basis": "Derived from cost-for-two figures divided by 2: Naivedya Thali Waluj 450 for two (225 per person per meal) and CIDCO 600 for two (300), Zomato via search summary; Naivedya medium thali Rs 250, large Rs 350 (Magicpin menu). Budget = 3 meals at 225. Standard = breakfast 225 + lunch 300 + dinner 600 (Wok-N-Handi 1,200 for two, EazyDiner).",
+        "sources": [
+          "https://www.zomato.com/aurangabad/naivedya-thali-restaurant-cidco",
+          "https://www.zomato.com/aurangabad/naivedya-thali-restaurant-waluj",
+          "https://magicpin.in/Aurangabad/Cidco/Restaurant/Naivedya/store/328614/menu",
+          "https://www.eazydiner.com/restaurants?location=chhatrapati-sambhajinagar"
+        ],
+        "notes": "Zomato and EazyDiner figures taken from search-result summaries (pages not fetched); one Zomato page was cached long ago, so figures may be dated. Only one thali chain plus one hotel restaurant, so this is a constructed estimate."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Fetched (not snippet) CabBazar and Sai Cabs local rates",
+        "Savaari local rental fare",
+        "Breakfast prices",
+        "Homestay prices",
+        "Hostelworld dorm prices for dated stays"
+      ]
+    },
+    "ajanta-caves": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3360,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://yatradham.org/fardapur-ajanta-fardapur-resort-mtdc.html"
+        ],
+        "budget_hotel_median_inr": 2240,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://yatradham.org/fardapur-ajanta-fardapur-resort-mtdc.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "MTDC Ajanta Fardapur resort (Ajanta T-junction), Yatradham agent page, undated tariff: 2 Bed Deluxe AC with breakfast Rs 3,360 (Rs 3,584 in season, Fri-Sun); Deluxe Non-AC with breakfast Rs 2,240. Page does not say if taxes are included. n=1 property each (MTDC), so medians are single values.",
+        "notes": "MTDC site (mtdc.co) search snippet shows MTDC Ajanta T Point villas from Rs 2,000 excl. taxes with breakfast; the mtdc.co page itself returned 404 when fetched, so not used for a figure. Cleartrip Fardapur page listed only brand names with no prices. Private hotels near Fardapur not found with prices. Base for most visitors is Aurangabad (about 100 km)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Aurangabad to Ajanta Caves and back, same-day sedan",
+            "inr": 3000,
+            "range": "3,000 (aurangabadcarrental.com, 28/03/25) to 3,600 (Advika Travel)"
+          }
+        ],
+        "basis": "No local cab at Ajanta; the visit is a day trip from Aurangabad (about 100 km each way). Round-trip sedan quotes 3,000 (aurangabadcarrental.com, updated 28/03/25) and 3,600 for a 300 km package (Advika Travel). Savaari charges Rs 10/km round trip per search summary (not fetched).",
+        "sources": [
+          "https://aurangabadcarrental.com/taxi-for-ajanta-ellora-caves-from-aurangabad/",
+          "https://advikatravel.com/taxi-fares-outstation-aurangabad/"
+        ],
+        "notes": "Entry Rs 40 Indians, Rs 600 foreigners, children under 15 free; mandatory shuttle from T-point Rs 25 non-AC / 30 AC per trip (search summary of 2026 sites, ASI portal not fetched). Closed Mondays. Aurangabad price repeated here is not a median."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or thali price found for this place.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Private hotel prices at Fardapur",
+        "MTDC official tariff page",
+        "Any food price at Fardapur",
+        "Taxes on MTDC rates"
+      ]
+    },
+    "ellora-caves": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 2352,
+        "budget_n": 7,
+        "budget_sources": [
+          "https://www.easemytrip.com/hotels/hotels-near-ellora-caves-khuldabad/"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "EaseMyTrip 'hotels near Ellora Caves, Khuldabad' list, no dates shown, taxes shown separately. Took 7 listings within about 3 km of the caves with plausible prices, using the second (lower) figure where two are shown: Great Annapurna 932, Srivastava Residency 921, Moreshwar Pride 1,837, Mayur Residency 2,365, Ashoka Resort 2,352, Verulai Retreat 2,409, Sairam Residency 2,640. Range 921-2,640.",
+        "notes": "Low confidence: the page does not label which of the two prices is the sale rate and has no dates; many other rows on the same page show 7,000-16,000 for obvious lodges (looks like inflated or sold-out placeholder pricing) and were excluded. Cleartrip Khuldabad listed six hotels (Grand Khuldabad, Green Park, Great Annapurna, Madhuban) all SOLD OUT on 13-14 Nov so no price. No 3-star median. Base alternative: Aurangabad (30 km). Hotel Kailas, the best-known Ellora hotel, shows roughly US$27-34 on Tripadvisor/Trip.com search summaries (not converted). Entry Rs 40 Indians, Rs 600 foreigners (search summary of 2026 sites); closed Tuesdays."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Aurangabad to Ellora with Daulatabad and city sites, one-day sedan package",
+            "inr": 1800,
+            "range": "1,800 (aurangabadcarrental.com, 28/03/25) to 2,000 (Advika Travel); Clear Cabs 1,600 incl 120 km (search summary)"
+          }
+        ],
+        "basis": "No local cab at Ellora; visited from Aurangabad (about 30-37 km). Sedan Ellora package 1,800 (aurangabadcarrental.com, updated 28/03/25, includes Daulatabad and city sites) and 2,000 (Advika Travel, fetched).",
+        "sources": [
+          "https://aurangabadcarrental.com/taxi-for-ajanta-ellora-caves-from-aurangabad/",
+          "https://advikatravel.com/taxi-fares-outstation-aurangabad/"
+        ],
+        "notes": "Tolls and parking extra."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or thali price found for this place.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dated prices for Ellora/Khuldabad hotels",
+        "Hotel Kailas rupee rate",
+        "3-star median",
+        "Food prices"
+      ]
+    },
+    "daulatabad": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "aurangabad",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Daulatabad is a fort visited as a half-day trip from Aurangabad (about 13-15 km) or combined with Ellora. EaseMyTrip's Ellora list shows a couple of lodges tagged 'Daulatabad Fort' (Collection O, Rose Garden Resort) but with unreliable undated prices, so no median is claimed. Base: Aurangabad (see aurangabad entry); alternatively Ellora/Khuldabad lodges (see ellora-caves).",
+        "notes": "Fort entry Rs 20 per Indian in an older guide, Rs 10 on another, no reliable 2026 figure found; check ASI portal. Foreigners Rs 250 (older guide)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Aurangabad to Ellora incl. Daulatabad Fort and city sites, one-day sedan package",
+            "inr": 1800,
+            "range": "1,800 (aurangabadcarrental.com, 28/03/25) to 2,000 (Advika Travel)"
+          }
+        ],
+        "basis": "Daulatabad lies on the Aurangabad-Ellora road and is included in the one-day Ellora sedan package by aurangabadcarrental.com (no separate Daulatabad price given).",
+        "sources": [
+          "https://aurangabadcarrental.com/taxi-for-ajanta-ellora-caves-from-aurangabad/",
+          "https://advikatravel.com/taxi-fares-outstation-aurangabad/"
+        ],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or thali price found for this place.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Fort entry fee current",
+        "Lodging prices at Daulatabad",
+        "Food prices"
+      ]
+    },
+    "lonar-crater": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2352,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://yatradham.org/lonar-lake-resort-mtdc-lonar.html"
+        ],
+        "budget_hotel_median_inr": 2200,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://thegrandvishwanathhotel.com/"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: MTDC Lonar Lake Resort, Yatradham agent page, undated: 2 Bed Super Deluxe AC with breakfast Rs 2,352 (Rs 2,800 Fri-Sat season); taxes not shown. Budget: The Grand Vishwanath (Loni Road, Lonar) own website: Deluxe Room Rs 2,200 (Double Deluxe 3,000, Queen Deluxe 4,000); page does not say per night or whether taxes included. n=1 each.",
+        "notes": "Search summaries: Hotel Vikrant about Rs 2,930 (Tripadvisor/MMT), MTDC Rs 2,500 (an agent's 2026 tariff), MMT 3,150 most booked; not used as figures. The resort page says 'AC' but its text describes non-AC rooms: confirm. Resort is 2.5 km from the lake. Cleartrip Lonar page had no prices."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Aurangabad to Lonar, one-way sedan (142-151 km)",
+            "inr": 2846,
+            "range": "CabBazar 1,639 (9/km), DDcab from 2,514, Gozocabs 2,846, EaseMyTrip 3,044; round-trip day package DDcab from 3,624 (all search summaries)"
+          }
+        ],
+        "basis": "No local cab at Lonar. Aurangabad to Lonar one-way sedan fares from search-result summaries (pages not fetched): DDcab from 2,514, Gozocabs 2,846, EaseMyTrip 3,044; median 2,846. CabBazar 1,639 is a per-km figure with likely minimums.",
+        "sources": [
+          "https://ddcab.com/aurangabad-to-lonar-cabs",
+          "https://www.easemytrip.com/cabs/aurangabad-to-lonar-cab-booking/",
+          "https://www.gozocabs.com/book-taxi/aurangabad-lonar"
+        ],
+        "notes": "Indicative only: aggregator one-way fares, tolls extra."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or thali price found for this place.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Vikrant and other lodge prices on a fetched page",
+        "Dated MTDC tariff on mtdc.co",
+        "Food prices",
+        "Fetched cab pages"
+      ]
+    },
+    "nagpur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3745,
+        "mid_n": 13,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-nagpur"
+        ],
+        "budget_hotel_median_inr": 1568,
+        "budget_n": 13,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/nagpur/budget-hotels"
+        ],
+        "homestay_median_inr": 2327,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-nagpur"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Nagpur?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip 3-star page, 13-14 Nov 2026, 2 guests, pre-tax discounted; 15 listed, dropped Pride Premier (5-star) and Townhouse Oak (2-star), leaving 13 (range 2,186-7,428; includes airport-road Ginger/Treebo). Budget: Cleartrip budget page, 11-12 Oct (year not printed), 13 listed; 10 show tax separately, 3 (999, 900, 990) give no tax line. Homestay: only 1 of 5 listed was available (Paradise Homestay Civil Lines 2,327 pre-tax, 13 Nov), others sold out.",
+        "notes": "Mid and budget are on different dates. Homestay is one listing: indicative only. Hostelworld lists one property (Leaf & Sky) with private rooms only, no dorm beds."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Nagpur to Tadoba (Moharli gate region), one-way sedan, about 103 km as stated by operator",
+            "inr": 3249
+          }
+        ],
+        "basis": "Median of 3 Nagpur 8h/80km quotes: OneWay.cab 'from Rs 1,799' (fetched; car type not stated on page though the search summary says sedan; extra km 12, extra hour 130), CabBazar Rs 1,800 Dzire/Etios (search summary, page 403), Tanushree Cabs Dzire Rs 2,240 (fetched, undated; its FAQ says from 2,500). Range 1,799-2,240.",
+        "sources": [
+          "https://oneway.cab/nagpur",
+          "https://cabbazar.com/taxi/cab/nagpur-local-sightseeing",
+          "https://tanushreecabs.com/nagpur-taxi-rates/",
+          "https://oneway.cab/nagpur/tadoba/fare"
+        ],
+        "notes": "Orange City Cabs (post dated 23 Jul 2024) gives Dzire Rs 12/km. Tolls and parking extra. The 103 km shown on oneway.cab for Tadoba is below the 140-150 km from other sources, so that fare is indicative."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 1050,
+        "basis": "Per-person-per-meal from cost-for-two / 2 (Zomato and magicpin via search summary): Mama Saoji 300 for two (150), Amrut Saoji 400 (200), Ghodpade Saoji thali 380-450 for two (about 205), Haldiram's Sitabuldi 400 (200), Sadar 450 (225). Budget = 3 meals at about 200. Standard = breakfast 225 (Haldiram's Sadar) + lunch 275 (Haldiram's Planet Food 550 for two) + dinner 550 (Step Inn 1,100 for two).",
+        "sources": [
+          "https://www.zomato.com/nagpur/restaurants/saoji",
+          "https://magicpin.in/Nagpur/Sadar/Restaurant/HaldiramS-Restaurant/store/1542883/menu/",
+          "https://www.nagpurmail.in/2026/02/best-budget-restaurants-in-nagpur-under.html"
+        ],
+        "notes": "Figures from search-result summaries; none fetched. Constructed estimate."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Dorm beds",
+        "Homestay median (n=1)",
+        "Fetched CabBazar rate",
+        "Food pages were not fetched"
+      ]
+    },
+    "pench-maharashtra": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 6750,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-ramtek",
+          "https://www.penchnationalparkonline.in/hotel"
+        ],
+        "budget_hotel_median_inr": 2000,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://penchjungle.com/government-resorts.aspx"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Gate covered: SILLARI (Ramtek side) only; no Khursapar-gate listing with a price was found. Mid: Cleartrip Ramtek page 13-14 Nov 2026 pre-tax: Olive Resort Sillari Pench 5,421 and Sterling Orient Woods Pench 8,208 (4-star); penchnationalparkonline.in (undated) Olive Resort Sillari 7,500 and Go Flamingo Resort 6,000 with breakfast. Median of the 4 (5,421, 6,000, 7,500, 8,208) is 6,750. Dates differ: Cleartrip is Nov 2026, the other page is undated.",
+        "notes": "Budget: MTDC Sillari Deluxe Non-AC 1,800 and Deluxe AC 2,200 (penchjungle.com, undated, per night assumed); Maharashtra Eco Tourism Amaltas huts 1,450-1,850. Safari (not in medians), search summaries only: Maharashtra jeep about Rs 6,500-7,000 per jeep for Indians per operator sites (permit, jeep, guide); elephant safari Rs 1,000 per person; Sillari closed Wednesdays and 1 Jul-15 Oct. Verify on the Maharashtra Forest portal."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No local cab rate found. Nagpur to Pench: OneWay.cab page says 'Fare details not available for this route' (only an AC hatchback Rs 1,449 shown); CabBazar Rs 1,800 in a search title, page 403.",
+        "sources": [
+          "https://oneway.cab/nagpur/pench/fare"
+        ],
+        "notes": "Pench (Maharashtra) is roughly 60-70 km from Nagpur; distance not verified on a fetched page."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or thali price found for this place.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Khursapar-gate hotel prices",
+        "Dorm beds",
+        "Safari fee from official portal",
+        "Cab fare Nagpur-Sillari",
+        "Food prices"
+      ]
+    },
+    "tadoba": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 11456,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-tadoba-moharli"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Gate covered: MOHARLI. Cleartrip Tadoba Moharli page, 13-14 Nov 2026, 2 guests, pre-tax after discounts: Tathastu Tadoba 15,046 (4-star), Pugmark Jungle Lodge 7,866 (4-star), Avadale Tadoba 5,152, Dream Habitat Resort 15,895 (3-star); 3 more sold out. Median 11,456. Meals not stated on page; many Tadoba resorts bundle meals.",
+        "notes": "Wide spread (5,152-15,895); n=4 so indicative. Search summaries (not fetched) show a Moharli property at 2,112 + 360 tax and Avadale at 2,808, conflicting with Cleartrip's 5,152. Budget: FDCM Moharli Eco Complex A/C room Rs 1,800, A/C cottage 2,450, dorm Rs 500 per bed; FDCM Kolara huts about 1,500-2,000 per a reviewer (search summaries; fdcm.nic.in fetch failed, so no figure used in medians). Safari (notes only, search summary of official portal): core zone gypsy up to 6 people about Rs 5,800 weekday / 6,800 weekend booked 1-59 days ahead; buffer Rs 3,000; core closed Tuesdays, buffer Wednesdays; private sites charge 7,000-9,000. Verify on mytadoba.mahaforest.gov.in."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Nagpur to Tadoba Moharli, one-way sedan",
+            "inr": 3249,
+            "range": "OneWay.cab from 3,249 (fetched, page states about 103 km); CabBazar about 1,800 at 9/km and Central India Cabs about 3,000 (search summaries)"
+          }
+        ],
+        "basis": "No local cab at Tadoba (gypsy is part of the safari). Nagpur-Moharli is about 140-150 km; operator quotes vary 1,700-3,250.",
+        "sources": [
+          "https://oneway.cab/nagpur/tadoba/fare"
+        ],
+        "notes": "Indicative only."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or thali price found for this place.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget lodge median (no priced listing on a fetched page)",
+        "Kolara-gate prices",
+        "Official FDCM tariff (site refused connection)",
+        "Food prices",
+        "Official safari fee page"
+      ]
+    }
+  }
+}

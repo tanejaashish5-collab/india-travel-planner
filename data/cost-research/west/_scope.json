@@ -1,0 +1,1073 @@
+[
+ {
+  "id": "agonda",
+  "name": "Agonda",
+  "state": "goa",
+  "region": "South Goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "anjuna",
+  "name": "Anjuna",
+  "state": "goa",
+  "region": "North Goa",
+  "subregion": null,
+  "elev": 10,
+  "stay_observed": false
+ },
+ {
+  "id": "arambol",
+  "name": "Arambol",
+  "state": "goa",
+  "region": "North Goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "assagao",
+  "name": "Assagao",
+  "state": "goa",
+  "region": "north-goa",
+  "subregion": null,
+  "elev": 8,
+  "stay_observed": false
+ },
+ {
+  "id": "calangute-baga",
+  "name": "Calangute-Baga",
+  "state": "goa",
+  "region": "North Goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": true
+ },
+ {
+  "id": "candolim",
+  "name": "Candolim",
+  "state": "goa",
+  "region": "north-goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "chorao-divar",
+  "name": "Chorao & Divar Islands",
+  "state": "goa",
+  "region": "Old Goa & Panaji",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "colva-benaulim",
+  "name": "Colva & Benaulim",
+  "state": "goa",
+  "region": "South Goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "dudhsagar-falls",
+  "name": "Dudhsagar Falls",
+  "state": "goa",
+  "region": "Goan Hinterland",
+  "subregion": null,
+  "elev": 310,
+  "stay_observed": false
+ },
+ {
+  "id": "fort-aguada",
+  "name": "Fort Aguada & Candolim",
+  "state": "goa",
+  "region": "North Goa",
+  "subregion": null,
+  "elev": 40,
+  "stay_observed": false
+ },
+ {
+  "id": "mandrem",
+  "name": "Mandrem",
+  "state": "goa",
+  "region": "North Goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "margao",
+  "name": "Margao",
+  "state": "goa",
+  "region": "South Goa",
+  "subregion": null,
+  "elev": 10,
+  "stay_observed": false
+ },
+ {
+  "id": "mollem",
+  "name": "Mollem (Bhagwan Mahavir Sanctuary)",
+  "state": "goa",
+  "region": "Goan Hinterland",
+  "subregion": null,
+  "elev": 80,
+  "stay_observed": false
+ },
+ {
+  "id": "morjim",
+  "name": "Morjim",
+  "state": "goa",
+  "region": "North Goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "old-goa",
+  "name": "Old Goa",
+  "state": "goa",
+  "region": "Old Goa & Panaji",
+  "subregion": null,
+  "elev": 15,
+  "stay_observed": false
+ },
+ {
+  "id": "palolem",
+  "name": "Palolem",
+  "state": "goa",
+  "region": "South Goa",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": true
+ },
+ {
+  "id": "panaji",
+  "name": "Panaji",
+  "state": "goa",
+  "region": "Old Goa & Panaji",
+  "subregion": null,
+  "elev": 7,
+  "stay_observed": false
+ },
+ {
+  "id": "reis-magos",
+  "name": "Reis Magos Fort",
+  "state": "goa",
+  "region": "Old Goa & Panaji",
+  "subregion": null,
+  "elev": 25,
+  "stay_observed": false
+ },
+ {
+  "id": "siolim",
+  "name": "Siolim",
+  "state": "goa",
+  "region": "north-goa",
+  "subregion": null,
+  "elev": 8,
+  "stay_observed": false
+ },
+ {
+  "id": "ponda-spice",
+  "name": "Spice Plantations (Ponda)",
+  "state": "goa",
+  "region": "Goan Hinterland",
+  "subregion": null,
+  "elev": 60,
+  "stay_observed": false
+ },
+ {
+  "id": "vagator",
+  "name": "Vagator",
+  "state": "goa",
+  "region": "North Goa",
+  "subregion": null,
+  "elev": 15,
+  "stay_observed": false
+ },
+ {
+  "id": "ahmedabad",
+  "name": "Ahmedabad",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 53,
+  "stay_observed": false
+ },
+ {
+  "id": "ambaji",
+  "name": "Ambaji",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 480,
+  "stay_observed": false
+ },
+ {
+  "id": "bhavnagar",
+  "name": "Bhavnagar",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 8,
+  "stay_observed": false
+ },
+ {
+  "id": "champaner-pavagadh",
+  "name": "Champaner-Pavagadh",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 822,
+  "stay_observed": false
+ },
+ {
+  "id": "dakor",
+  "name": "Dakor",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 55,
+  "stay_observed": false
+ },
+ {
+  "id": "dholavira",
+  "name": "Dholavira",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 30,
+  "stay_observed": false
+ },
+ {
+  "id": "dwarka",
+  "name": "Dwarka",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "gandhinagar",
+  "name": "Gandhinagar",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 81,
+  "stay_observed": false
+ },
+ {
+  "id": "gir-national-park",
+  "name": "Gir National Park",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 160,
+  "stay_observed": false
+ },
+ {
+  "id": "junagadh",
+  "name": "Junagadh",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 120,
+  "stay_observed": false
+ },
+ {
+  "id": "kutch",
+  "name": "Kutch (Bhuj)",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 80,
+  "stay_observed": false
+ },
+ {
+  "id": "lothal",
+  "name": "Lothal",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 15,
+  "stay_observed": false
+ },
+ {
+  "id": "mandvi",
+  "name": "Mandvi",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "marine-national-park",
+  "name": "Marine National Park",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 0,
+  "stay_observed": false
+ },
+ {
+  "id": "modhera",
+  "name": "Modhera Sun Temple",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 90,
+  "stay_observed": false
+ },
+ {
+  "id": "girnar",
+  "name": "Mount Girnar",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 1117,
+  "stay_observed": false
+ },
+ {
+  "id": "nalsarovar",
+  "name": "Nalsarovar Bird Sanctuary",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 3,
+  "stay_observed": false
+ },
+ {
+  "id": "palitana",
+  "name": "Palitana",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 469,
+  "stay_observed": false
+ },
+ {
+  "id": "porbandar",
+  "name": "Porbandar",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "rajkot",
+  "name": "Rajkot",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 134,
+  "stay_observed": false
+ },
+ {
+  "id": "rani-ki-vav",
+  "name": "Rani ki Vav (Patan)",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 120,
+  "stay_observed": false
+ },
+ {
+  "id": "rann-of-kutch",
+  "name": "Rann of Kutch",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 15,
+  "stay_observed": false
+ },
+ {
+  "id": "saputara",
+  "name": "Saputara",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 1000,
+  "stay_observed": false
+ },
+ {
+  "id": "sasangir",
+  "name": "Sasan Gir",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 160,
+  "stay_observed": false
+ },
+ {
+  "id": "somnath",
+  "name": "Somnath",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 10,
+  "stay_observed": false
+ },
+ {
+  "id": "statue-of-unity",
+  "name": "Statue of Unity",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 55,
+  "stay_observed": false
+ },
+ {
+  "id": "surat",
+  "name": "Surat",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 13,
+  "stay_observed": false
+ },
+ {
+  "id": "vadodara",
+  "name": "Vadodara",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 39,
+  "stay_observed": false
+ },
+ {
+  "id": "velavadar",
+  "name": "Velavadar",
+  "state": "gujarat",
+  "region": null,
+  "subregion": null,
+  "elev": 8,
+  "stay_observed": false
+ },
+ {
+  "id": "ajanta-caves",
+  "name": "Ajanta Caves",
+  "state": "maharashtra",
+  "region": "Marathwada",
+  "subregion": null,
+  "elev": 450,
+  "stay_observed": false
+ },
+ {
+  "id": "alibaug",
+  "name": "Alibaug",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 6,
+  "stay_observed": false
+ },
+ {
+  "id": "amboli",
+  "name": "Amboli",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 690,
+  "stay_observed": false
+ },
+ {
+  "id": "astavinayak-circuit",
+  "name": "Astavinayak Circuit",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 600,
+  "stay_observed": false
+ },
+ {
+  "id": "aurangabad",
+  "name": "Aurangabad",
+  "state": "maharashtra",
+  "region": "Marathwada",
+  "subregion": null,
+  "elev": 513,
+  "stay_observed": false
+ },
+ {
+  "id": "bhandardara",
+  "name": "Bhandardara",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 750,
+  "stay_observed": false
+ },
+ {
+  "id": "bhimashankar",
+  "name": "Bhimashankar",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 940,
+  "stay_observed": false
+ },
+ {
+  "id": "daulatabad",
+  "name": "Daulatabad Fort",
+  "state": "maharashtra",
+  "region": "Marathwada",
+  "subregion": null,
+  "elev": 630,
+  "stay_observed": false
+ },
+ {
+  "id": "elephanta-caves",
+  "name": "Elephanta Caves",
+  "state": "maharashtra",
+  "region": "Mumbai Metropolitan",
+  "subregion": null,
+  "elev": 60,
+  "stay_observed": false
+ },
+ {
+  "id": "ellora-caves",
+  "name": "Ellora Caves",
+  "state": "maharashtra",
+  "region": "Marathwada",
+  "subregion": null,
+  "elev": 560,
+  "stay_observed": false
+ },
+ {
+  "id": "ganpatipule",
+  "name": "Ganpatipule",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "harihareshwar",
+  "name": "Harihareshwar",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "igatpuri",
+  "name": "Igatpuri",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 600,
+  "stay_observed": false
+ },
+ {
+  "id": "kanheri-caves",
+  "name": "Kanheri Caves",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 100,
+  "stay_observed": false
+ },
+ {
+  "id": "karla-bhaja-caves",
+  "name": "Karla & Bhaja Caves",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 600,
+  "stay_observed": false
+ },
+ {
+  "id": "kashid",
+  "name": "Kashid",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "khandala",
+  "name": "Khandala",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 625,
+  "stay_observed": false
+ },
+ {
+  "id": "kolad",
+  "name": "Kolad",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 40,
+  "stay_observed": false
+ },
+ {
+  "id": "kolhapur",
+  "name": "Kolhapur",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 569,
+  "stay_observed": false
+ },
+ {
+  "id": "lenyadri",
+  "name": "Lenyadri",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 670,
+  "stay_observed": false
+ },
+ {
+  "id": "lonar-crater",
+  "name": "Lonar Crater",
+  "state": "maharashtra",
+  "region": "Marathwada",
+  "subregion": null,
+  "elev": 475,
+  "stay_observed": false
+ },
+ {
+  "id": "lonavala",
+  "name": "Lonavala",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 625,
+  "stay_observed": false
+ },
+ {
+  "id": "mahabaleshwar",
+  "name": "Mahabaleshwar",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 1353,
+  "stay_observed": false
+ },
+ {
+  "id": "mahad-raigad",
+  "name": "Mahad (Raigad — Ashtavinayak)",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 100,
+  "stay_observed": false
+ },
+ {
+  "id": "malvan",
+  "name": "Malvan",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 10,
+  "stay_observed": false
+ },
+ {
+  "id": "matheran",
+  "name": "Matheran",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 803,
+  "stay_observed": false
+ },
+ {
+  "id": "morgaon",
+  "name": "Morgaon",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 570,
+  "stay_observed": false
+ },
+ {
+  "id": "mumbai",
+  "name": "Mumbai",
+  "state": "maharashtra",
+  "region": "Mumbai Metropolitan",
+  "subregion": null,
+  "elev": 14,
+  "stay_observed": false
+ },
+ {
+  "id": "murud-janjira",
+  "name": "Murud-Janjira",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "nagpur",
+  "name": "Nagpur",
+  "state": "maharashtra",
+  "region": "Vidarbha",
+  "subregion": null,
+  "elev": 310,
+  "stay_observed": false
+ },
+ {
+  "id": "nashik",
+  "name": "Nashik",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 565,
+  "stay_observed": false
+ },
+ {
+  "id": "ozar",
+  "name": "Ozar",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 670,
+  "stay_observed": false
+ },
+ {
+  "id": "pali-raigad",
+  "name": "Pali (Raigad)",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 100,
+  "stay_observed": false
+ },
+ {
+  "id": "panchgani",
+  "name": "Panchgani",
+  "state": "maharashtra",
+  "region": "Western Ghats / Sahyadri",
+  "subregion": null,
+  "elev": 1334,
+  "stay_observed": false
+ },
+ {
+  "id": "pench-maharashtra",
+  "name": "Pench National Park",
+  "state": "maharashtra",
+  "region": "Vidarbha",
+  "subregion": null,
+  "elev": 300,
+  "stay_observed": false
+ },
+ {
+  "id": "pune",
+  "name": "Pune",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 560,
+  "stay_observed": false
+ },
+ {
+  "id": "raigad-fort",
+  "name": "Raigad Fort",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 820,
+  "stay_observed": false
+ },
+ {
+  "id": "ranjangaon",
+  "name": "Ranjangaon",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 580,
+  "stay_observed": false
+ },
+ {
+  "id": "ratnagiri",
+  "name": "Ratnagiri",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 10,
+  "stay_observed": false
+ },
+ {
+  "id": "satara",
+  "name": "Satara",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 750,
+  "stay_observed": false
+ },
+ {
+  "id": "shirdi",
+  "name": "Shirdi",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 584,
+  "stay_observed": false
+ },
+ {
+  "id": "siddhatek",
+  "name": "Siddhatek",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 500,
+  "stay_observed": false
+ },
+ {
+  "id": "tadoba",
+  "name": "Tadoba-Andhari Tiger Reserve",
+  "state": "maharashtra",
+  "region": "Vidarbha",
+  "subregion": null,
+  "elev": 200,
+  "stay_observed": false
+ },
+ {
+  "id": "tarkarli",
+  "name": "Tarkarli",
+  "state": "maharashtra",
+  "region": "Konkan Coast",
+  "subregion": null,
+  "elev": 5,
+  "stay_observed": false
+ },
+ {
+  "id": "theur",
+  "name": "Theur",
+  "state": "maharashtra",
+  "region": null,
+  "subregion": null,
+  "elev": 570,
+  "stay_observed": false
+ },
+ {
+  "id": "trimbakeshwar",
+  "name": "Trimbakeshwar",
+  "state": "maharashtra",
+  "region": "Western Maharashtra",
+  "subregion": null,
+  "elev": 750,
+  "stay_observed": false
+ },
+ {
+  "id": "ajmer",
+  "name": "Ajmer",
+  "state": "rajasthan",
+  "region": "Central Rajasthan",
+  "subregion": null,
+  "elev": 486,
+  "stay_observed": true
+ },
+ {
+  "id": "alwar",
+  "name": "Alwar",
+  "state": "rajasthan",
+  "region": "Northeast Rajasthan",
+  "subregion": null,
+  "elev": 316,
+  "stay_observed": false
+ },
+ {
+  "id": "barmer",
+  "name": "Barmer",
+  "state": "rajasthan",
+  "region": "Western Rajasthan",
+  "subregion": null,
+  "elev": 227,
+  "stay_observed": false
+ },
+ {
+  "id": "bharatpur",
+  "name": "Bharatpur",
+  "state": "rajasthan",
+  "region": null,
+  "subregion": null,
+  "elev": 178,
+  "stay_observed": false
+ },
+ {
+  "id": "bikaner",
+  "name": "Bikaner",
+  "state": "rajasthan",
+  "region": "Northern Rajasthan",
+  "subregion": null,
+  "elev": 242,
+  "stay_observed": false
+ },
+ {
+  "id": "bundi",
+  "name": "Bundi",
+  "state": "rajasthan",
+  "region": "Hadoti Region",
+  "subregion": null,
+  "elev": 268,
+  "stay_observed": false
+ },
+ {
+  "id": "chittorgarh",
+  "name": "Chittorgarh",
+  "state": "rajasthan",
+  "region": null,
+  "subregion": null,
+  "elev": 350,
+  "stay_observed": false
+ },
+ {
+  "id": "deeg",
+  "name": "Deeg",
+  "state": "rajasthan",
+  "region": null,
+  "subregion": null,
+  "elev": 180,
+  "stay_observed": false
+ },
+ {
+  "id": "dungarpur",
+  "name": "Dungarpur",
+  "state": "rajasthan",
+  "region": "South Rajasthan",
+  "subregion": null,
+  "elev": 223,
+  "stay_observed": false
+ },
+ {
+  "id": "gagron-fort",
+  "name": "Gagron Fort",
+  "state": "rajasthan",
+  "region": "southern",
+  "subregion": null,
+  "elev": 280,
+  "stay_observed": false
+ },
+ {
+  "id": "jaipur",
+  "name": "Jaipur",
+  "state": "rajasthan",
+  "region": "Eastern Rajasthan",
+  "subregion": null,
+  "elev": 431,
+  "stay_observed": true
+ },
+ {
+  "id": "jaisalmer",
+  "name": "Jaisalmer",
+  "state": "rajasthan",
+  "region": "Western Rajasthan / Thar Desert",
+  "subregion": null,
+  "elev": 225,
+  "stay_observed": false
+ },
+ {
+  "id": "jodhpur",
+  "name": "Jodhpur",
+  "state": "rajasthan",
+  "region": "Central Rajasthan",
+  "subregion": null,
+  "elev": 231,
+  "stay_observed": false
+ },
+ {
+  "id": "kumbhalgarh",
+  "name": "Kumbhalgarh",
+  "state": "rajasthan",
+  "region": null,
+  "subregion": null,
+  "elev": 1100,
+  "stay_observed": false
+ },
+ {
+  "id": "mount-abu",
+  "name": "Mount Abu",
+  "state": "rajasthan",
+  "region": "Sirohi District",
+  "subregion": null,
+  "elev": 1220,
+  "stay_observed": false
+ },
+ {
+  "id": "neemrana",
+  "name": "Neemrana",
+  "state": "rajasthan",
+  "region": "Alwar District",
+  "subregion": null,
+  "elev": 305,
+  "stay_observed": false
+ },
+ {
+  "id": "osian",
+  "name": "Osian",
+  "state": "rajasthan",
+  "region": "Jodhpur District",
+  "subregion": null,
+  "elev": 232,
+  "stay_observed": false
+ },
+ {
+  "id": "pushkar",
+  "name": "Pushkar",
+  "state": "rajasthan",
+  "region": "Ajmer District",
+  "subregion": null,
+  "elev": 510,
+  "stay_observed": true
+ },
+ {
+  "id": "ranakpur",
+  "name": "Ranakpur Jain Temple",
+  "state": "rajasthan",
+  "region": "western",
+  "subregion": null,
+  "elev": 510,
+  "stay_observed": false
+ },
+ {
+  "id": "ranthambore",
+  "name": "Ranthambore",
+  "state": "rajasthan",
+  "region": "Sawai Madhopur",
+  "subregion": null,
+  "elev": 215,
+  "stay_observed": false
+ },
+ {
+  "id": "sariska",
+  "name": "Sariska Tiger Reserve",
+  "state": "rajasthan",
+  "region": "northern",
+  "subregion": null,
+  "elev": 350,
+  "stay_observed": false
+ },
+ {
+  "id": "shekhawati",
+  "name": "Shekhawati",
+  "state": "rajasthan",
+  "region": "Northern Rajasthan",
+  "subregion": null,
+  "elev": 330,
+  "stay_observed": false
+ },
+ {
+  "id": "udaipur",
+  "name": "Udaipur",
+  "state": "rajasthan",
+  "region": "Southern Rajasthan",
+  "subregion": null,
+  "elev": 598,
+  "stay_observed": true
+ }
+]

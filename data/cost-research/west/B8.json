@@ -1,0 +1,582 @@
+{
+  "batch": "B8",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "lonavala": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4830,
+        "mid_n": 10,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-lonavala"
+        ],
+        "budget_hotel_median_inr": 1589,
+        "budget_n": 6,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/lonavala/budget-hotels"
+        ],
+        "homestay_median_inr": 2417,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-lonavala"
+        ],
+        "dorm_median_inr": 799,
+        "dorm_n": 6,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Lonavala?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price; the 10 rows labelled 3-star: Meritas Adore 3,958, Taaffeite 3,564, Meritas Aura 6,775, Rumourss Sky Villa 10,881, Dinosaur Resort 3,632, Bob House Pool Resort (Pavana Lake) 2,750, Cloud 9 Hills 7,667, Zaras Resort Khandala 9,540, Purohit Holiday Resort 4,140, Sereniity Resort 5,519; range 2,750-10,881. Dropped 4-star and 5-star rows (Fern, Regenta SGS, Meritas Picaddle) and 3 hostel rows. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: Hotel Reveniir 1,904, Hotel Om Palace 1,940, Hotel Sai Niwas 680, Hotel Lalit Inn 1,679, Ferreira Resort 1,455, Adore Holiday Home 1,499. Homestay: Cleartrip homestay page, 13 Nov 2026, pre-tax, 3-star homestay rows in Lonavala: Flora Ecostay Resort and Spa 2,520, Swapnapurti Holiday Home 2,314. Dorm: Hostelworld 'dorm bed from' prices, no dates: Hosteller City Centre 799, Voyage Zo 666, Hosteller Bam Tiger Point 749, Gram's at Shivom Pawna 853.33, Zostel Plus 799, Moustache 999. Different dates per tier.",
+        "notes": "Date effect is large and not controlled: budget tier is a Sunday-night October capture, mid and homestay are a Friday in November, so budget-to-mid gap overstates quality difference. Rumourss Sky Villa (10,881) and Cloud 9 / Zaras (7,667 / 9,540) pull the mid median up; the lower half of the 3-star list is 2,750-4,140. Dropped from homestay: StayLeisurely Glass & Clay Retreat (Pawna Lake, 4,696), Don's Villa (10,939, villa), 4-star homestays and 5BHK villas (24,671-63,000); 2 sold out. Pawna Lake properties are about 20 km from town. Hostelworld private rooms 1,277-2,249 not used."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3300,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Lonavala 5-hour 'Full Sightseeing' cab package (whole cab, 4/7/17-seater selectable)",
+            "inr": 1999,
+            "range": "Half Sightseeing 3 h 1,399; Deluxe 6 h (incl Karla) 2,399; Lohgad package 5 h 2,299 (lonavalacab.com)"
+          }
+        ],
+        "basis": "Five Lonavala operator pages fetched, full-day sedan sightseeing: Sai Prem Holidays Indigo/Etios/Dzire 2,799 (5 or 8 h options, toll, parking, driver batta included, footer 2022); oneday.tours 2,800 (9:00-17:30, toll, parking, batta included; extra 12/km, 100/h; undated); lonavalataxi.in (address Khandala, Lonavala; page 2026) full-day 8-10 h sedan guideline 2,800-3,800 (mid 3,300); Maharana Cabs sedan 'starts at 3,499' (8-10 h, undated); lonavalacab.com Super Deluxe 3,599 for 9 h, whole cab, vehicle class not named (footer 2018). Median of 2,799 / 2,800 / 3,300 / 3,499 / 3,599 = 3,300; range 2,799-3,599. No taxi union rate card found.",
+        "sources": [
+          "https://saipremholidays.com/trip/lonavala-local-sightseeing-trip-by-cab-taxi-2499-3599/",
+          "https://oneday.tours/one-day-lonavala-local-sightseeing-trip-by-car/",
+          "https://lonavalataxi.in/lonavala-cab/",
+          "https://maharanacabs.in/lonavala-sightseeing-tour-taxi/",
+          "https://www.lonavalacab.com/"
+        ],
+        "notes": "Lowest quote seen was a search-result snippet only (CabBazar 1,900 for 8 h / 80 km, page returned 403), not used. The sightseeing package covers Lions Point, Bhushi Dam, Tiger's Leap, Karla and Bhaja caves, Lohagad. Packages differ on whether toll, parking and driver batta are included (Sai Prem and oneday.tours include them; Maharana excludes parking and toll). Peak weekends and monsoon likely dearer."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 900,
+        "basis": "Per-person meal figures (cost for two / 2) from 10 Lonavala places: Holidify cost for two (page fetched, undated): Hotel Gurukripa 200 (100 pp), Hotel Rama Krishna 300 (150 pp), Cafe 24 600-900 (375 pp mid), Yoko Sizzlers 1,100 (550 pp); Zomato cost for two from a search-result summary: Maggi Corner 200 (100 pp), Hotel Sadguru 450 (225), Nima Gujarati Thali 500 (250), Radha Krishna Pure-Veg 700 (350), Girivihar Dining Club 1,000 (500), Hotel Chandralok 1,300 (650). Sorted: 100,100,150,225,250,350,375,500,550,650; median 300 -> standard 3 x 300 = 900. Budget = 3 x 125, 125 being the median of the cheapest four (100,100,150,225).",
+        "sources": [
+          "https://www.holidify.com/places/lonavala/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.zomato.com/pune/lonavala-restaurants/gujarati",
+          "https://www.zomato.com/pune/nima-gujarati-thali-lonavala"
+        ],
+        "notes": "Zomato pages did not load for me (timeout); the six Zomato figures are from a search-result summary, undated. Thali reference points: Kunverbai's Kitchen Gujarati thali 350 unlimited, Panchvati Gaurav Rajasthani thali 449 (search summary of reviews). Justdial lists Chandralok at 1,400 for two vs Zomato 1,300, so tourist-strip prices vary by source."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Taxi union rate card (none found online)",
+        "Zomato / Savaari pages did not load; Zomato food figures are search-summary level",
+        "Budget tier is a different date (11 Oct) from mid and homestay (13 Nov)",
+        "Homestay n=2 only"
+      ]
+    },
+    "khandala": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4830,
+        "mid_n": 10,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-lonavala"
+        ],
+        "budget_hotel_median_inr": 1589,
+        "budget_n": 6,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/lonavala/budget-hotels"
+        ],
+        "homestay_median_inr": 2417,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-lonavala"
+        ],
+        "dorm_median_inr": 799,
+        "dorm_n": 6,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Lonavala?currency=INR"
+        ],
+        "price_basis": "Lonavala figures used for Khandala. Cleartrip's Khandala 3-star page (https://www.cleartrip.com/hotels/3-star-hotels-in-khandala) returned no priced listings (it names Zaras Resort and The Dukes Retreat but shows no prices, and its text includes unrelated Bekal and Luni hotels). Zaras Resort Khandala appears in the Lonavala 3-star list at 9,540. Same dates and rows as the lonavala entry: mid Fri 13 Nov 2026 pre-tax (10 three-star rows), budget Sun 11 Oct pre-tax (6 rows), homestay 13 Nov (2 rows), dorm Hostelworld from-prices (6 hostels).",
+        "notes": "Khandala and Lonavala are twin towns about 5 km apart and share one hotel market, so Lonavala lists serve both. These are NOT Khandala-only medians. See lonavala for the row-by-row basis and caveats (mixed dates, Rumourss and resort rows lift the mid median)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3300,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Lonavala sightseeing rates used for Khandala (twin town, Khandala is on the standard Lonavala sightseeing circuit and cabs are hired from Lonavala). lonavalataxi.in lists its office in Khandala. Five Lonavala operator pages fetched, full-day sedan sightseeing: Sai Prem Holidays Indigo/Etios/Dzire 2,799 (5 or 8 h options, toll, parking, driver batta included, footer 2022); oneday.tours 2,800 (9:00-17:30, toll, parking, batta included; extra 12/km, 100/h; undated); lonavalataxi.in (address Khandala, Lonavala; page 2026) full-day 8-10 h sedan guideline 2,800-3,800 (mid 3,300); Maharana Cabs sedan 'starts at 3,499' (8-10 h, undated); lonavalacab.com Super Deluxe 3,599 for 9 h, whole cab, vehicle class not named (footer 2018). Median of 2,799 / 2,800 / 3,300 / 3,499 / 3,599 = 3,300; range 2,799-3,599. No taxi union rate card found.",
+        "sources": [
+          "https://saipremholidays.com/trip/lonavala-local-sightseeing-trip-by-cab-taxi-2499-3599/",
+          "https://oneday.tours/one-day-lonavala-local-sightseeing-trip-by-car/",
+          "https://lonavalataxi.in/lonavala-cab/",
+          "https://maharanacabs.in/lonavala-sightseeing-tour-taxi/",
+          "https://www.lonavalacab.com/"
+        ],
+        "notes": "Lowest quote seen was a search-result snippet only (CabBazar 1,900 for 8 h / 80 km, page returned 403), not used. The sightseeing package covers Lions Point, Bhushi Dam, Tiger's Leap, Karla and Bhaja caves, Lohagad. Packages differ on whether toll, parking and driver batta are included (Sai Prem and oneday.tours include them; Maharana excludes parking and toll). Peak weekends and monsoon likely dearer."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 900,
+        "basis": "Lonavala figures used for Khandala (same tourist strip; no Khandala-only food page found). 10 Lonavala places, per-person median 300 per meal -> standard 900; budget 3 x 125 = 375. Row-by-row basis is in the lonavala entry.",
+        "sources": [
+          "https://www.holidify.com/places/lonavala/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.zomato.com/pune/lonavala-restaurants/gujarati",
+          "https://www.zomato.com/pune/nima-gujarati-thali-lonavala"
+        ],
+        "notes": "Not Khandala-specific. Zomato figures are search-summary level."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Khandala-only hotel list (Cleartrip Khandala page had no priced rows)",
+        "All figures are Lonavala figures reused",
+        "Taxi union rate card",
+        "Zomato figures are search-summary level"
+      ]
+    },
+    "karla-bhaja-caves": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Lonavala (about 11 km from Karla caves; Bhaja caves about 10-12 km from Lonavala)",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No lodging at the caves (archaeological sites; Lonavala is the base). Lonavala medians deliberately not repeated here; see the lonavala entry.",
+        "notes": "Lonavala's cab packages treat Karla Cave as part of a 6-hour 'Deluxe Sightseeing' (2,399) and add Bhaja in the Lohgad package (2,299, 5 h) and Super Deluxe (3,599, 9 h) at lonavalacab.com. Resorts near the caves exist (for example Rhythm Lonavala markets itself as a resort near Karla Caves) but no priced listing was read."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Lonavala Deluxe Sightseeing cab package incl Karla Cave (6 h, whole cab)",
+            "inr": 2399,
+            "range": "Lohgad package incl Bhaja Caves 5 h 2,299; Super Deluxe incl Bhaja 9 h 3,599; Half Sightseeing 3 h 1,399 (lonavalacab.com, page footer 2018)"
+          }
+        ],
+        "basis": "Karla and Bhaja are a half-day side trip from Lonavala, not a destination with its own local cab rate. Package prices are from lonavalacab.com (Bhangarwadi, Lonavala; single fetched page, footer 2018, vehicle class not specified). A fare estimator in a search result puts Lonavala station to Karla (11 km) at about 180 by auto in daytime, not fetched.",
+        "sources": [
+          "https://www.lonavalacab.com/",
+          "https://saipremholidays.com/trip/lonavala-local-sightseeing-trip-by-cab-taxi-2499-3599/"
+        ],
+        "notes": "Sai Prem Holidays' full-day Lonavala sedan package (2,799) also includes Bhaja and Karla. Cave entry fees are extra and not included in any package."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No food page for the caves themselves; eat in Lonavala.",
+        "sources": [],
+        "notes": "Use Lonavala food figures."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Karla/Bhaja-only cab or auto fare (only Lonavala packages found)",
+        "Nearby resort prices",
+        "Food at the cave sites",
+        "Lonavalacab.com page is old (2018 footer)"
+      ]
+    },
+    "pune": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2444,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-pune"
+        ],
+        "budget_hotel_median_inr": 1534,
+        "budget_n": 19,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/pune/budget-hotels"
+        ],
+        "homestay_median_inr": 1752,
+        "homestay_n": 7,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-pune"
+        ],
+        "dorm_median_inr": 679,
+        "dorm_n": 14,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Pune?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted; 14 rows labelled 3-star (1,312-4,715): Shantai 3,398, Abssolute Homtel 1,966, Ginger Wakad 4,632, Tattva Suites NIBM 4,715, Ivy Studios 2,607, Beacon NIBM 3,189, Itsy Crown Inn 1,312, StayBird Icon Bliss 1,408, Treebo Iris 1,971, Treebo Classic Grande 1,819, Kala Sagar 2,280, Hotel Lxia 3,633, Paradise Aundh 1,396, Dortn 4,356; dropped Lemon Tree x2 and Pride Premier (4-5 star). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 19 of 20 rows (range 973-1,996); dropped Hotel Rajyog (Ranjangaon, 996) as it is not in Pune. Homestay: Cleartrip homestay page, 13 Nov 2026, pre-tax, the 7 priced homestay rows (631, 674, 1,345, 1,752, 7,481, 7,481, 14,998). Dorm: Hostelworld 'dorm bed from' prices, no dates, 14 hostels with dorms (399-934).",
+        "notes": "Cleartrip's 'homestay' rows for Pune are mostly OYO-style Hotel O rooms (631-1,752) plus three Tathawade jacuzzi apartments (7,481-14,998), so the homestay median is weak. Budget and mid are different dates. Hostelworld includes co-living brands (Coliwo, Zen Colive). City-wide, so location (Viman Nagar, Hinjewadi, Camp) moves price a lot."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2250,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Three Pune operator pages fetched, 8 h / 80 km sedan (Dzire class): Chiku Cab 1,700; Pravasi Cab 2,250 (extra 12/km, 100/h); CabsPune (Mundhwa address) 2,300 (extra 12/km, 100/h). Median 2,250; range 1,700-2,300. Search-result snippets for other operators: Clear Cabs Rental 1,600, CabBazar from 1,800, Innova Crysta Car Hire 2,000, Clear Car Rental 2,153 or 2,900 plus 5% GST (not fetched). None of the pages is dated; footers 2022-2026. Not a union card.",
+        "sources": [
+          "https://chikucab.com/swift-dzire-car-hire-pune.html",
+          "https://pravasicab.com/full-day-cab-pune",
+          "https://cabspune.in/services/local-cab-service-in-pune/"
+        ],
+        "notes": "Tolls and parking extra at most operators. Chiku outstation table shows 9.50 and 16.25 per km (round trip vs one way, unit not labelled), so no per-km figure loaded. SUV 8 h / 80 km: CabsPune 3,400, Pravasi Ertiga 2,875 / Innova 3,375."
+      },
+      "food_per_person_day": {
+        "budget_inr": 355,
+        "standard_inr": 900,
+        "basis": "Swaadyatra Pune (page updated 8 May 2026) average prices: Darpan Misal 80, Vaidya Upahar 80-150, Appa 100-200, Vaishali 150-250, Cafe Goodluck 80-150, Satvik Misal unlimited 99-150, Hotel Shreyas Maharashtrian thali 250-400, Sawai Veg 350-500 per person. Budget = breakfast Darpan Misal 80 + lunch Satvik unlimited misal 125 (mid of 99-150) + dinner Appa 150 (mid of 100-200) = 355. Standard = breakfast Appa 150 + lunch Shreyas thali 325 + dinner Sawai Veg 425 = 900. Cross-check, Holidify cost for two (undated): Vaishali 500, Mayur 500, The Place 1,000, Le Plaisir 1,000, German Bakery 1,100, Kayani Bakery 150 (about 250-550 pp for sit-down places).",
+        "sources": [
+          "https://www.swaadyatra.in/city/pune",
+          "https://www.holidify.com/places/pune/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Swaadyatra does not say whether most prices are per person; only Sawai Veg is labelled per person. Premium spots (Flags 1,800 for two, Malaka Spice 2,000, Savya Rasa 2,100) excluded."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union or RTO taxi rate card",
+        "Zomato / Swiggy cost-for-two figures (not fetched)",
+        "Genuine homestay prices (Cleartrip 'homestay' rows are mostly OYO-style)",
+        "Budget tier is a different date (11 Oct) from mid (13 Nov)"
+      ]
+    },
+    "theur": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Pune (Kharadi / Magarpatta / Nagar Road hotel belt, roughly 20-30 km)",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "YatraDham's Theur page (https://yatradham.org/yatradham-destinations/maharashtra/theur.html) lists five lodgings, all pilgrim lodges: Shree Ganesh Bhakta Niwas (220 m from the temple), Shri Bhakt Niwas, Shri Chintamani Yatri Niwas (190 m), Durga Bhakt Niwas and Hotel Balaji Bhakta Lodge. No commercial hotel with a price was found in the village.",
+        "notes": "Only price read: Hotel Balaji Bhakta Lodge, 4-bed non-AC room 525, season-period rate 1,050 (YatraDham page; guest stays dated Nov 2024 and Jan 2026; operator not named, so not confirmed as trust-run). That is a 4-bed room, not a double-occupancy hotel room, so no median is loaded. The other four lodges show no per-property price on the page (the page's only figure is a generic 'starting room price Rs. 899'). A search-result summary quoted Durga Bhakt Niwas from 525, Shri Bhakt Niwas from 896, Shree Ganesh Bhakta Niwas from 1,050 and Chintamani Yatri Niwas from 1,344, but those pages were not fetched."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to all 8 Ashtavinayak temples incl Theur: 2 days / 1 night circuit by sedan, round trip from Pune (night halt at Ozar)",
+            "inr": 10500,
+            "range": "sedan 10,000-12,480: Jay Bhagvan Dzire 10,000 (600 km); Pawar Travels Dzire CNG 10,500 (fuel, toll, parking, driver and night allowance included); Sainath Cab sedan AC 10,500; Trodly AC sedan 12,480 (700 km, toll and parking extra). Ertiga: Pawar 14,500, Trodly 15,360. Median of the four sedan quotes = 10,500."
+          }
+        ],
+        "basis": "Pune-based Ashtavinayak circuit operators, 2-day / 1-night sedan package (4 pages fetched): Pawar Travels 10,500 (Dzire/Xcent CNG; page footer 2026); Sainath Cab 10,500 (page footer 2019); Trodly 12,480 (700 km limit, extra 12/km; toll and parking excluded); Jay Bhagvan Travels 10,000 (600 km, 12-13/km, undated). Median 10,500. The temple village is a stop on this circuit, not a standalone cab hire.",
+        "sources": [
+          "https://pawartravels.com/ashtavinayak-darshan-from-pune-by-car",
+          "https://sainathcab.com/ashtavinayak-tour-from-pune-by-car/",
+          "https://www.trodly.com/activity-3135-ashtavinayak-darshan-2-day-tour-from-pune",
+          "https://www.jaybhagvantravels.com/pune-to-ashtavinayak-cab.aspx"
+        ],
+        "notes": "No local 8 h rate exists for this village; cabs come from Pune. Pawar's 2-day route: Pune, Theur, Moregaon, Siddhatek, Ranjangaon, Ozar (night), then Lenyadri, Mahad, Pali, Pune. Sedan per-km on the Jay Bhagvan page is 13 (300 km/day basis) in one table and 12 in another."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No temple-town thali or restaurant price shown on a page I could read.",
+        "sources": [],
+        "notes": "Theur: YatraDham says Hotel Balaji Bhakta Lodge has no food facility."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Any hotel (non-pilgrim) lodging in Theur",
+        "Double-occupancy room prices for the bhakta niwas (only a 4-bed price was read)",
+        "Food prices",
+        "Temple trust (Chinchwad Devasthan) own tariff page"
+      ]
+    },
+    "ranjangaon": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1685,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-ranjangaon"
+        ],
+        "budget_hotel_median_inr": 1409,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-ranjangaon",
+          "https://www.cleartrip.com/hotels/india/pune/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Ranjangaon '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted, the 3 priced rows: Zip By Spree Hotels 3,463, Hotel Morya Garden By WB Inn 1,685, Treebo Maharaja Near Ranjangaon MIDC 1,268 (6 more 3-star rows sold out). Budget: Hotel Karna Residency (2-star) 1,822 on the same Cleartrip Ranjangaon page, 13 Nov 2026; Hotel Rajyog (Ranjangaon) 996 on Cleartrip's Pune budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax. Median of 1,822 and 996 = 1,409, two different dates.",
+        "notes": "Ranjangaon is an industrial (MIDC) town, so its hotels serve business travellers as well as pilgrims and prices are not temple-town prices. Cleartrip gives no street addresses, so which hotels are near the Mahaganapati temple is unconfirmed (one is named '2 km from Shree Mahaganapati Temple', sold out). Hotels in other destinations on the Pune budget page are not used. Treebo Maharaja 1,268 vs 4,392 list price, so the discount is large. No temple-trust guesthouse tariff was found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to all 8 Ashtavinayak temples incl Ranjangaon: 2 days / 1 night circuit by sedan, round trip from Pune (night halt at Ozar)",
+            "inr": 10500,
+            "range": "sedan 10,000-12,480: Jay Bhagvan Dzire 10,000 (600 km); Pawar Travels Dzire CNG 10,500 (fuel, toll, parking, driver and night allowance included); Sainath Cab sedan AC 10,500; Trodly AC sedan 12,480 (700 km, toll and parking extra). Ertiga: Pawar 14,500, Trodly 15,360. Median of the four sedan quotes = 10,500."
+          }
+        ],
+        "basis": "Pune-based Ashtavinayak circuit operators, 2-day / 1-night sedan package (4 pages fetched): Pawar Travels 10,500 (Dzire/Xcent CNG; page footer 2026); Sainath Cab 10,500 (page footer 2019); Trodly 12,480 (700 km limit, extra 12/km; toll and parking excluded); Jay Bhagvan Travels 10,000 (600 km, 12-13/km, undated). Median 10,500. The temple village is a stop on this circuit, not a standalone cab hire.",
+        "sources": [
+          "https://pawartravels.com/ashtavinayak-darshan-from-pune-by-car",
+          "https://sainathcab.com/ashtavinayak-tour-from-pune-by-car/",
+          "https://www.trodly.com/activity-3135-ashtavinayak-darshan-2-day-tour-from-pune",
+          "https://www.jaybhagvantravels.com/pune-to-ashtavinayak-cab.aspx"
+        ],
+        "notes": "No local 8 h rate exists for this village; cabs come from Pune. Pawar's 2-day route: Pune, Theur, Moregaon, Siddhatek, Ranjangaon, Ozar (night), then Lenyadri, Mahad, Pali, Pune. Sedan per-km on the Jay Bhagvan page is 13 (300 km/day basis) in one table and 12 in another."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No temple-town thali or restaurant price shown on a page I could read.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget tier is n=2 from two different dates",
+        "Homestay and dorm",
+        "Trust bhakta niwas tariff",
+        "Food prices"
+      ]
+    },
+    "morgaon": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 900,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://yatradham.org/morgaon-hotel-omkar.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: Hotel Omkar, Morgaon, 2-bed non-AC room 'starting at' 900 (2-bed AC 2,000 + 100 tax), YatraDham page, undated listing price, 500 m from the Mayureshwar temple. n=1.",
+        "notes": "Morgaon is a small village (Baramati taluka). YatraDham lists 10 lodgings, mostly bhakt niwas; commercial-looking ones are Hotel Omkar (above) and Piyush Lodge (page shows room types but no price). Pilgrim lodge starting prices, YatraDham pages, taxes extra: Shri Mayureshwar Ganpati Temple accommodation 2-bed non-AC 500, 2-bed AC 1,000 (52 m from Vitthal Rukmini temple; operator not named, page refers to 'Dharamshala management'); Shree Bhakt Nivas 2-bed non-AC 800, 2-bed AC 1,500, 4-bed non-AC 1,000. Better hotels are in Baramati (about 15 km) or Pune (about 65 km); no priced list read. A search summary mentions an OYO listing 'Omkar Lodge' at 444 on one date, not verified."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to all 8 Ashtavinayak temples incl Morgaon: 2 days / 1 night circuit by sedan, round trip from Pune (night halt at Ozar)",
+            "inr": 10500,
+            "range": "sedan 10,000-12,480: Jay Bhagvan Dzire 10,000 (600 km); Pawar Travels Dzire CNG 10,500 (fuel, toll, parking, driver and night allowance included); Sainath Cab sedan AC 10,500; Trodly AC sedan 12,480 (700 km, toll and parking extra). Ertiga: Pawar 14,500, Trodly 15,360. Median of the four sedan quotes = 10,500."
+          }
+        ],
+        "basis": "Pune-based Ashtavinayak circuit operators, 2-day / 1-night sedan package (4 pages fetched): Pawar Travels 10,500 (Dzire/Xcent CNG; page footer 2026); Sainath Cab 10,500 (page footer 2019); Trodly 12,480 (700 km limit, extra 12/km; toll and parking excluded); Jay Bhagvan Travels 10,000 (600 km, 12-13/km, undated). Median 10,500. The temple village is a stop on this circuit, not a standalone cab hire.",
+        "sources": [
+          "https://pawartravels.com/ashtavinayak-darshan-from-pune-by-car",
+          "https://sainathcab.com/ashtavinayak-tour-from-pune-by-car/",
+          "https://www.trodly.com/activity-3135-ashtavinayak-darshan-2-day-tour-from-pune",
+          "https://www.jaybhagvantravels.com/pune-to-ashtavinayak-cab.aspx"
+        ],
+        "notes": "No local 8 h rate exists for this village; cabs come from Pune. Pawar's 2-day route: Pune, Theur, Moregaon, Siddhatek, Ranjangaon, Ozar (night), then Lenyadri, Mahad, Pali, Pune. Sedan per-km on the Jay Bhagvan page is 13 (300 km/day basis) in one table and 12 in another."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No temple-town thali or restaurant price shown on a page I could read.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Only one priced hotel (n=1)",
+        "Piyush Lodge price",
+        "Baramati hotel prices",
+        "Food prices"
+      ]
+    },
+    "siddhatek": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Daund (hotels on Daund-Siddhatek Road, about 11-15 km from the temple) or Pune (about 100 km)",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "YatraDham lists only pilgrim lodges at Siddhatek: Shri Siddhivinayak Bhakt Niwas (110 m from the temple), Shri Ganesh Bhaktnivas (160 m), Ekdant Bhaktnivas (160 m). Tripadvisor has no Siddhatek hotel listing; its nearest hotels (Hotel Yograj, Hotel Kinara Lodging) are on the Daund-Siddhatek Road 11-15 km away (search-result snippet).",
+        "notes": "Tariffs on YatraDham pages (starting prices, taxes extra, undated; guest stays Aug 2026): Shri Siddhivinayak Bhakt Niwas 2-bed AC 1,500, 2-bed non-AC 1,300, community hall (20 persons) 3,000; Shri Ganesh Bhaktnivas 2-bed AC 1,500 + 75 tax, 2-bed non-AC 1,000 + 50 tax. The pages do not name the operator (not confirmed as trust-run). A search summary quotes slightly different figures for the first (1,575 / 1,365 / 3,150), so treat these as approximate. Most visitors do Siddhatek as a day trip from Pune."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to all 8 Ashtavinayak temples incl Siddhatek: 2 days / 1 night circuit by sedan, round trip from Pune (night halt at Ozar)",
+            "inr": 10500,
+            "range": "sedan 10,000-12,480: Jay Bhagvan Dzire 10,000 (600 km); Pawar Travels Dzire CNG 10,500 (fuel, toll, parking, driver and night allowance included); Sainath Cab sedan AC 10,500; Trodly AC sedan 12,480 (700 km, toll and parking extra). Ertiga: Pawar 14,500, Trodly 15,360. Median of the four sedan quotes = 10,500."
+          }
+        ],
+        "basis": "Pune-based Ashtavinayak circuit operators, 2-day / 1-night sedan package (4 pages fetched): Pawar Travels 10,500 (Dzire/Xcent CNG; page footer 2026); Sainath Cab 10,500 (page footer 2019); Trodly 12,480 (700 km limit, extra 12/km; toll and parking excluded); Jay Bhagvan Travels 10,000 (600 km, 12-13/km, undated). Median 10,500. The temple village is a stop on this circuit, not a standalone cab hire.",
+        "sources": [
+          "https://pawartravels.com/ashtavinayak-darshan-from-pune-by-car",
+          "https://sainathcab.com/ashtavinayak-tour-from-pune-by-car/",
+          "https://www.trodly.com/activity-3135-ashtavinayak-darshan-2-day-tour-from-pune",
+          "https://www.jaybhagvantravels.com/pune-to-ashtavinayak-cab.aspx"
+        ],
+        "notes": "No local 8 h rate exists for this village; cabs come from Pune. Pawar's 2-day route: Pune, Theur, Moregaon, Siddhatek, Ranjangaon, Ozar (night), then Lenyadri, Mahad, Pali, Pune. Sedan per-km on the Jay Bhagvan page is 13 (300 km/day basis) in one table and 12 in another."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No temple-town thali or restaurant price shown on a page I could read.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Official temple-trust tariff",
+        "Priced hotels in Daund",
+        "Ekdant Bhaktniwas price",
+        "Food prices"
+      ]
+    },
+    "ozar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1350,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://yatradham.org/hotel-aryaa-regency-ozar-pune.html",
+          "https://yatradham.org/ozar-pune-hotel-rudransh-regency.html",
+          "https://yatradham.org/morya-lodge-ozar-pune.html",
+          "https://yatradham.org/yash-lodge-ozar-pune.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: cheapest double-occupancy private room per property, YatraDham 'starting at' prices (undated; reviews Aug-Sep 2026), taxes about 5% extra: Hotel Aryaa Regency 2-bed non-AC 1,100; Yash Lodge 2-bed non-AC 1,000; Morya Lodge 2-bed non-AC 1,600; Hotel Rudransh Regency 2-bed deluxe AC 1,905. Median 1,350. AC-only comparison: Aryaa 1,850, Rudransh 1,905, Morya 2,200 (median 1,905).",
+        "notes": "Ozar has small private hotels and lodges within 130-400 m of the Vighnahar temple (also Hotel Neelayam Garden, no price read). Trust-run Shri Vighnahar Ganpati Devasthan Bhakt Bhavan tariff as printed on Pawar Travels' page (2026 footer, secondary source, temple site shows no tariff): Bhakt Bhavan-1 family room attached 6 persons 500; Bhakt Bhavan-2 family room non-attached 6 persons 350; Bhakt Bhavan-3 luxury 4 persons 800, VIP 4 persons 2,100; Bhakt Bhavan-4 deluxe 5 persons 5,000 (Indian) / 6,000 (Western); Pali's is separate. Private Shree Vighnahar Bhakta Niwas (500 m) 2-bed non-AC 1,500. Ozar lies in Junnar taluka; YatraDham and Tripadvisor file it under both Pune and Nashik districts. Pawar's 2-day circuit uses Ozar as the night halt."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to all 8 Ashtavinayak temples incl Ozar: 2 days / 1 night circuit by sedan, round trip from Pune (night halt at Ozar)",
+            "inr": 10500,
+            "range": "sedan 10,000-12,480: Jay Bhagvan Dzire 10,000 (600 km); Pawar Travels Dzire CNG 10,500 (fuel, toll, parking, driver and night allowance included); Sainath Cab sedan AC 10,500; Trodly AC sedan 12,480 (700 km, toll and parking extra). Ertiga: Pawar 14,500, Trodly 15,360. Median of the four sedan quotes = 10,500."
+          }
+        ],
+        "basis": "Pune-based Ashtavinayak circuit operators, 2-day / 1-night sedan package (4 pages fetched): Pawar Travels 10,500 (Dzire/Xcent CNG; page footer 2026); Sainath Cab 10,500 (page footer 2019); Trodly 12,480 (700 km limit, extra 12/km; toll and parking excluded); Jay Bhagvan Travels 10,000 (600 km, 12-13/km, undated). Median 10,500. The temple village is a stop on this circuit, not a standalone cab hire.",
+        "sources": [
+          "https://pawartravels.com/ashtavinayak-darshan-from-pune-by-car",
+          "https://sainathcab.com/ashtavinayak-tour-from-pune-by-car/",
+          "https://www.trodly.com/activity-3135-ashtavinayak-darshan-2-day-tour-from-pune",
+          "https://www.jaybhagvantravels.com/pune-to-ashtavinayak-cab.aspx"
+        ],
+        "notes": "No local 8 h rate exists for this village; cabs come from Pune. Pawar's 2-day route: Pune, Theur, Moregaon, Siddhatek, Ranjangaon, Ozar (night), then Lenyadri, Mahad, Pali, Pune. Sedan per-km on the Jay Bhagvan page is 13 (300 km/day basis) in one table and 12 in another."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No temple-town thali or restaurant price shown on a page I could read.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Hotel Neelayam Garden price",
+        "Mid (3-star) tier: none in the village",
+        "Trust tariff from the temple's own site (booking page not readable)",
+        "Food prices (Ozar trust mahaprasad price seen only in an unfetched search summary)"
+      ]
+    },
+    "lenyadri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1500,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://yatradham.org/lenyadri-hotel-girija.html",
+          "https://yatradham.org/lenyadri-hotel-lenyadri-international.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: cheapest double-occupancy private room per property, YatraDham 'starting at' prices (undated; reviews Nov-Dec 2024 and Apr 2026): Hotel Girija 2-bed AC 1,800 (suite AC 3,000; no non-AC listed), Hotel Lenyadri International 2-bed non-AC 1,200 (AC 1,600). Median of 1,800 and 1,200 = 1,500. Taxes about 5% extra.",
+        "notes": "Trust-run Shree Lenyadri Ganpati Devsthan Trust (Golegaon, Junnar; 450 m from the temple), YatraDham page: 2-bed AC 1,000 + 50 tax, 2-bed VIP AC (4 persons) 1,143 + 57, non-AC hall (Bhakta Nivas 2, 6 persons, mattresses only) 500. Hotels are 650 m and 1 km from the temple (Girija is about 5.4 km from Junnar bus stand). Only two priced hotels, so n=2. Aabancha Wada villa and Aamraa Resort (12.9 km) mentioned in a search summary, no price read."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to all 8 Ashtavinayak temples incl Lenyadri: 2 days / 1 night circuit by sedan, round trip from Pune (night halt at Ozar)",
+            "inr": 10500,
+            "range": "sedan 10,000-12,480: Jay Bhagvan Dzire 10,000 (600 km); Pawar Travels Dzire CNG 10,500 (fuel, toll, parking, driver and night allowance included); Sainath Cab sedan AC 10,500; Trodly AC sedan 12,480 (700 km, toll and parking extra). Ertiga: Pawar 14,500, Trodly 15,360. Median of the four sedan quotes = 10,500."
+          }
+        ],
+        "basis": "Pune-based Ashtavinayak circuit operators, 2-day / 1-night sedan package (4 pages fetched): Pawar Travels 10,500 (Dzire/Xcent CNG; page footer 2026); Sainath Cab 10,500 (page footer 2019); Trodly 12,480 (700 km limit, extra 12/km; toll and parking excluded); Jay Bhagvan Travels 10,000 (600 km, 12-13/km, undated). Median 10,500. The temple village is a stop on this circuit, not a standalone cab hire.",
+        "sources": [
+          "https://pawartravels.com/ashtavinayak-darshan-from-pune-by-car",
+          "https://sainathcab.com/ashtavinayak-tour-from-pune-by-car/",
+          "https://www.trodly.com/activity-3135-ashtavinayak-darshan-2-day-tour-from-pune",
+          "https://www.jaybhagvantravels.com/pune-to-ashtavinayak-cab.aspx"
+        ],
+        "notes": "No local 8 h rate exists for this village; cabs come from Pune. Pawar's 2-day route: Pune, Theur, Moregaon, Siddhatek, Ranjangaon, Ozar (night), then Lenyadri, Mahad, Pali, Pune. Sedan per-km on the Jay Bhagvan page is 13 (300 km/day basis) in one table and 12 in another."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No temple-town thali or restaurant price shown on a page I could read.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Only two priced hotels (n=2)",
+        "Mid, homestay and dorm tiers (Girija has a dormitory hall, price not shown)",
+        "Food prices"
+      ]
+    }
+  }
+}

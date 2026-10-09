@@ -1,0 +1,4 @@
+BEGIN;
+UPDATE articles SET content = replace(content, 'A full-day taxi runs ₹4,800. Off-peak (May-August), the same categories drop by roughly half.', 'A full-day taxi runs about ₹2,100 in any season. Off-peak (May-August), hotel prices drop by roughly half.'), updated_at = now() WHERE slug = 'is-mount-abu-in-november-worth-it' AND position('A full-day taxi runs ₹4,800. Off-peak (May-August), the same categories drop by roughly half.' in content) > 0;
+COMMIT;
+SELECT count(*) AS articles_still_containing_old_text FROM articles WHERE (slug = 'is-mount-abu-in-november-worth-it' AND position('A full-day taxi runs ₹4,800. Off-peak (May-August), the same categories drop by roughly half.' in content) > 0);

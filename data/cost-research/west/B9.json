@@ -1,0 +1,584 @@
+{
+  "batch": "B9",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "mahad-raigad": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1755,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-mahad"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page for Mahad, check-in 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price: P G Regency Resort 1,915, Kuber's Residency 1,058, Hotel Saitej 1,594, Motel Visava 2,030 (median 1,754.5 rounded to 1,755). Two more 3-star rows (Hotel Visava Riverside, Hotel Shreejay) were sold out.",
+        "notes": "Small market: only 4 priced hotels. Cleartrip's budget page for Mahad lists one hotel, Kuber's Kamath Residency at 1,680 pre-tax for 11-12 Oct (probably the same property as Kuber's Residency, which is 1,058 on the November date), so no separate budget median is given. Booking.com (no dates) shows Cozzet Mahad from USD 37.20 and Kuber's Residency from USD 17.05. No homestay or dorm page found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Mahad local day rate or Mahad-specific fare could be read on any fetchable page. Searches returned only Mahad-area cab pages that return 403 (CabBazar) and nothing for the Varadvinayak temple run (the temple is in Mahad town).",
+        "sources": [],
+        "notes": "Mahad is the practical base for Raigad Fort (about 25 km to Pachad). See raigad-fort for the Pune day-package and ropeway fare."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee-priced menu, thali board or cost-for-two list could be read for Mahad. A search snippet showed Mast Malvani at 500 for two (Justdial) but one place is not a basis.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay, dorm",
+        "Local taxi day rate and any point-to-point fare",
+        "Food per person (no usable rupee figures)",
+        "Mid tier is n=4 on a single Friday in November"
+      ]
+    },
+    "pali-raigad": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Khopoli / Kolad (15 to 30 km); Pune is the longer-haul base. Pali village itself has no hotel market on any listing page.",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Trip.com's hotel list near Shree Ballaleshwar Devasthan (no dates, 'from' prices per night) shows only one property under 3 km: Discover Resorts Pali, 2.91 km, from INR 4,895. Everything else is 7 to 14 km away (Zostel Kolad 13.62 km from INR 996, Nature Trails Kundalika Kolad 11.38 km from INR 3,812, Ellow Stay by Mohan Farm Khopoli 11.73 km from INR 4,115). Cleartrip 3-star page for Khopoli, 13 Nov 2026, pre-tax: Rishivan Resort 3,518, Sai River Resort 4,635, Bigfoot Stay 6,754; Discover Resorts - Pali and 10 other rows sold out.",
+        "notes": "Informational only, not loaded as medians. Tripadvisor reviewers say the temple trust has basic accommodation beside the temple; no tariff was found. Most pilgrims do Pali as part of the Pune Ashtavinayak circuit and halt at Ozar, not Pali."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Pali-specific fare could be read. Khopoli to Pali searches resolve to Pali in Rajasthan (778 km, fares from 16,189) and were ignored. Pali is covered in the Pune Ashtavinayak package, see astavinayak-circuit.",
+        "sources": [],
+        "notes": "Pali (Ballaleshwar) is about 28 km from Roha and about 110 km from Pune."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee-priced menu or cost-for-two list found for Pali village. Hotel Sukh Sagar at the temple entrance is a vegetarian restaurant (per a search snippet) with no price seen.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "All stay tiers (no hotel market in the village)",
+        "Temple trust accommodation tariff",
+        "Taxi fares",
+        "Food per person"
+      ]
+    },
+    "raigad-fort": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Pachad (fort base, ropeway) for a few lodges; Mahad (about 25 km) for a hotel market",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 2200,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.easemytrip.com/hotels/hotel-jijau-darbar-9711459/"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: one property only. Hotel Jijau Darbar (Raigad Fort Nature Reserve, Hirkanwadi), Deluxe Room, 2 guests, EaseMyTrip base price 2,200 per night plus 125 taxes (page shows a 28-30 Oct 2026 cancellation window and a 2,500 struck-through price; the page also says all rooms are occupied).",
+        "notes": "Trip.com (no dates, USD 'from', per night): Hotel Jijau Darbar 0.58 km from the fort from USD 21, Hotel Sai Krupa 0.65 km from USD 34; the next options are Mahad hotels about 15 km away (Hotel Landmark Inn from USD 11, Kuber's Residency from USD 15). MTDC Hotel Deshmukh (Raigad Road, Pachad) is listed on mtdchotels.com but the page shows no tariff. A 2016 travel blog (trekkerpedia.com, old) lists the resort on top of the fort at AC 1,600, non-AC 800, dorm 250 per person; not verified as current. Mahad mid-tier hotels are in the mahad-raigad entry."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune to Raigad Fort and back, one-day private sedan package (about 131 km each way, 12 to 15 h)",
+            "inr": 5299,
+            "range": "4,999 (marathadiary.com listing dated 7 Sep 2024, 6 am to 9 pm, parking and permits included, GST extra) to 5,599 (onedaytrip.in, 7 am to 7 pm, toll and parking included)"
+          }
+        ],
+        "basis": "No local day rate at the fort; visitors come as a day trip from Pune or Mumbai and walk or use the ropeway. The two Pune day packages above are the only fetched sedan quotes; median of two shown.",
+        "sources": [
+          "https://marathadiary.com/business/pune-to-raigad-fort-one-day-trip-by-cab/",
+          "https://onedaytrip.in/one-day-trip-to-raigad-fort-from-pune-by-private-cab/"
+        ],
+        "notes": "Ropeway (Hirkani, Pachad), adult return: about 350 per trekmaharashtra.com (article dated 11 Mar 2026, calls it approximate); onedaytrip.in says 300 per person return; an old 2016 blog says 310 incl. GST. A search snippet of visitraigad.com said 375 from 1 April 2026, but that page is now a parked domain, so 375 is not relied on. ASI fort entry about 50 per adult per a search snippet."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Pachad is a small road-end settlement. No rupee-priced menu could be read; a Holidify snippet listed Sarja Restaurant at 30-100 and Shree Datta Snacks at 200 but the page was not fetched and the unit is unclear.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid, homestay, dorm tiers (one budget property only)",
+        "MTDC Pachad tariff (listed but no price on page)",
+        "Local taxi day rate and Mahad to Pachad fare",
+        "Food per person",
+        "Ropeway fare differs by source (300-375)"
+      ]
+    },
+    "astavinayak-circuit": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Pune (circuit start and end); the usual night halt on the 2-day package is Ozar",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Route id, not a place. Eight temples spread over Pune, Raigad and Ahmednagar districts; stay prices belong to Pune, Ozar, Mahad and Pali entries.",
+        "notes": "Pawar Travels' 2-day itinerary overnights at Ozar."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Pune Ashtavinayak circuit, 2 days / 1 night: Pune, Theur, Moregaon, Siddhatek, Ranjangaon, Ozar (night halt), Lenyadri, Mahad, Pali, Pune (sedan, Dzire/Xcent AC)",
+            "inr": 10500,
+            "range": "10,500 on CNG, 11,500 on petrol (Pawar Travels, Pune); fuel, driver and night allowance, toll and parking included; food and stay not included"
+          }
+        ],
+        "basis": "Pawar Travels (Vishrantwadi, Pune) 2-day sedan package, page footer 2026, no publication date. A WellCabs search snippet also gave 10,500 for a sedan 2-day package, but its page did not show the price when fetched, so it is not relied on.",
+        "sources": [
+          "https://pawartravels.com/ashtavinayak-darshan-from-pune-by-car"
+        ],
+        "notes": "Single operator page. Other operators quoted in search snippets ranged from 7,500 to 12,500, with toll and parking sometimes excluded."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Route id, no single food market.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Second operator page for the 2-day package",
+        "Stay and food (route, not a place)"
+      ]
+    },
+    "bhimashankar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Ghodegaon / Manchar (Pune district) for resorts; Pune for a hotel market",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1400,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://yatradham.org/bhimashankar-mtdc-bhimashankar-maharashtra-tour.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: one property. MTDC Yatri Niwas Bhimashankar, '2 Bed Deluxe Non AC', starting price 1,400 plus 70 tax, double bed with breakfast, max 2 guests, 9.5 km from the temple (YatraDham page, no stay dates, booking not open for the dates selected).",
+        "notes": "YatraDham's Bhimashankar hotel list names 10 properties (Hotel Shiv Amrut, Ratwa Resort, Aranya Kulam Resort, Euphoria Wild Life Resort & Camping, Imperial Lodging & Resort, etc.) but shows no per-property price, only generic ranges: non-AC standard 500-1,000, AC 1,500-2,500. EaseMyTrip (search snippet) says hotels near the temple start from 2,714. No dated listing page (Cleartrip, Kayak, Booking) could be found for the village."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Pune to Bhimashankar (one way, about 118 to 125 km)",
+            "inr": 2799,
+            "range": "AC sedan, 118.6 km included, 15 per extra km (Payal Cab page); search snippets from other operators ranged 2,250-3,270"
+          }
+        ],
+        "basis": "No local rate; Bhimashankar is reached by a long drive from Pune and is a temple-and-trek stop. Payal Cab is the one fetched fare (page lists no address, only a phone number).",
+        "sources": [
+          "https://www.payalcab.in/pune-bhimashankar-taxi.php"
+        ],
+        "notes": "Payal Cab page is internally inconsistent (NH47/NH48, mentions '500+ km'), so treat as indicative."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Holidify lists Ratwa Resort at 150-200 and Blue Mormon Jungle Holiday Resort at 400 but does not say whether per person or for two, so no figure is derived.",
+        "sources": [],
+        "notes": "MTDC resort restaurant is veg, limited menu per a Google review snippet; no prices seen."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid, homestay, dorm tiers",
+        "Dated hotel prices (only an undated MTDC rate)",
+        "Local taxi rate",
+        "Food per person (unit unclear on the only page)"
+      ]
+    },
+    "igatpuri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4371,
+        "mid_n": 12,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-igatpuri"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page for Igatpuri, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. 15 rows; dropped one sold-out row (Natures Dreamland), the 3 BHK villa (ELIVAAS White House 16,206) and an apartment (Serenity 4,414) -> 12 hotels/resorts, range 2,923-10,627, median 4,370.5 rounded to 4,371. Rows: Breeze By Patron 6,574; Vintage Valley 3,881; Hotel Grand Parivar 3,404; Hotel Ashwin 3,876; Grand Gardens Resort 6,640; Vallonne Vineyards 5,030; Dewdrops Boutique 6,050; Vivaant Retreat 2,923; Pooja Villa Suites 2,977; KK Tree Retreat 3,279; Oxi Valley Resort 4,860; Astoria Lake Resort 10,627.",
+        "notes": "A Friday in the post-monsoon season; Igatpuri is a weekend market for Mumbai, so weekdays are cheaper. Many properties are resorts in the Nandgaonsado / Awal Khed belt, not in the town. Cleartrip budget page for Igatpuri lists one hotel, Hotel Comfort Inn (Talegaon) at 1,344 for 11-12 Oct, but Talegaon may be the Pune-side town, so it is not used. Cleartrip homestay page: KK Tree Retreat and Nature's Lap Homestay both sold out for 13 Nov."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Mumbai to Igatpuri (one way, about 121 km)",
+            "inr": 2284,
+            "range": "AC sedan 1,999 (OneWay.Cab, 'starts at', 121 km) to 2,569 (One Side Taxi); search snippets 1,771-2,782"
+          },
+          {
+            "route": "Igatpuri to Bhandardara (one way, Gozocabs lists about 55 km)",
+            "inr": 2381,
+            "range": "Dzire sedan before GST (Gozocabs); search snippets 2,000-2,940. Gozocabs' distance looks long; road distance is often quoted near 44 km"
+          }
+        ],
+        "basis": "No Igatpuri local day rate found on any page. Point-to-point fares from two fetched Mumbai-Igatpuri pages (median shown) and Gozocabs for Igatpuri-Bhandardara.",
+        "sources": [
+          "https://oneway.cab/mumbai/igatpuri/fare",
+          "https://www.onesidetaxi.com/Mumbai-To-Igatpuri-Taxi",
+          "https://www.gozocabs.com/book-taxi/igatpuri-bhandardara"
+        ],
+        "notes": "Operators differ on whether toll and driver allowance are in the fare; One Side Taxi says 'no hidden charges', OneWay.Cab does not say."
+      },
+      "food_per_person_day": {
+        "budget_inr": 525,
+        "standard_inr": 900,
+        "basis": "Cost for two from search-result snippets of Justdial and Zomato, 9 places: Hotel Hilltop 300-350, Sai Darbar Dhaba 300, Hotel Shivkrupa 350, Shet Curry 350, Hotel Anand Mangal 600, Dew Drops 750, Hotel Ashwin 800, Green Heritage Resort 1,000, Spice Della 1,050. Median for two 600 -> 300 per person per meal -> standard 3 x 300 = 900. Budget = 3 x 175 (median of the cheapest four, 350 for two).",
+        "sources": [
+          "https://www.justdial.com/Nashik/Restaurants-in-Igatpuri/nct-10408936",
+          "https://www.zomato.com/nashik/igatpuri-restaurants?sort=best",
+          "https://www.tripadvisor.com/Restaurant_Review-g1156428-d11871203-Reviews-or45-Greenland_Pure_Veg_Family_Restaurant-Igatpuri_Nashik_District_Maharashtra.html"
+        ],
+        "notes": "Justdial and Zomato were not fetched; figures are search-result snippets, undated. A Tripadvisor reviewer called a deluxe Punjabi thali at Greenland Pure Veg Family Restaurant worth 180 (undated review). Holidify lists Tulsi Restaurant 200 and Rajdhani 100 without saying per person or for two, so those were not used."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay, dorm tiers",
+        "Local taxi day rate",
+        "Food figures are search snippets",
+        "Mid tier is one Friday in November"
+      ]
+    },
+    "bhandardara": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4425,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/india/bhandardara/budget-hotels"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: two resorts from Cleartrip's Bhandardara 'budget' page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: The Yash Resort 2,950 and Wanderlust Resort 5,900 (median 4,425). The third row, Anandvan Resort 5,310, was dropped as it is a 4-star on Kayak.",
+        "notes": "Very thin: n=2, and Yash Resort's star class was not shown. Cleartrip homestay page for 13-14 Nov 2026 lists The Paradise Retreat (2-star) at 9,137 and Hilltop Bhandardara (2-star) at 10,680 pre-tax, with Anand Sarovar sold out, which shows how steep a November Friday is. Kayak (10-11 Oct, 'from' prices, tax basis not stated): The Hosteller Bhandardara 1,450, Surya Resort 3,577, Rutam Villa 3,673, Hotel Pravara 4,350, Santkrupa Home stay 4,447, Hotel Randha 4,930; and a separate 'per night' set: Hotel Randha 3,190, Wanderlust 5,317, Yash 3,963. MTDC Holiday Resort is on the lake (tariff not found on any page). No Hostelworld page (404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Igatpuri to Bhandardara (one way)",
+            "inr": 2381,
+            "range": "Dzire sedan before GST (Gozocabs, lists about 55 km); search snippets 2,000-2,940"
+          }
+        ],
+        "basis": "No Bhandardara local day rate found. Gozocabs resolves distances for small towns loosely, so the km is unconfirmed.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/igatpuri-bhandardara"
+        ],
+        "notes": "Igatpuri railway station is the usual arrival point. Single source."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": 1200,
+        "basis": "TripClap lists three places with price per person: Panch Sheel 550, Lake View Restaurant 400 (near MTDC), Coffee Dam Corner (cafe) 300. Standard = 3 x 400 (median of the three). No budget figure: the only cheaper place is a cafe.",
+        "sources": [
+          "https://www.tripclap.com/places/bhandardara/restaurants"
+        ],
+        "notes": "Holidify lists the same three places at the same numbers without saying per person or for two. Page undated; the figures look high against Igatpuri, so treat as an upper-end estimate. Resort rooms often bundle meals."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay, dorm tiers",
+        "MTDC Holiday Resort tariff",
+        "Local taxi rate",
+        "Food budget; standard rests on three places and one undated page",
+        "Mid tier n=2 from October capture"
+      ]
+    },
+    "nashik": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3714,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-nashik"
+        ],
+        "budget_hotel_median_inr": 1526,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/nashik/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 499,
+        "dorm_n": 3,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Nashik?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. 16 rows; dropped two 4-star (Treat Hotel Nashik City Center 7,417; Regenta Resort Soma Vine Village 6,836) -> 14, range 1,573-6,350, median 3,713.5 rounded to 3,714. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, all 20 listed, range 1,176-1,982, median 1,526. Dorm: Hostelworld 'dorm bed' from-prices, no dates: Tripvana Backpacker Hostel 450, Zostel Nashik 499, Aavaas Farm Hostel 985.",
+        "notes": "Mid and budget are different dates (a November Friday vs an October weeknight), so part of the gap is date effect. Cleartrip's homestay page for Nashik lists five properties, all sold out on 13-14 Nov, with no price. Hostelworld private rooms: Tripvana 750, Zostel 1,149.50, Aavaas Farm 1,499.50 (not used)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13.5,
+        "point_to_point": [
+          {
+            "route": "Nashik to Trimbakeshwar (one way, about 29 km)",
+            "inr": 1460,
+            "range": "sedan 1,499 incl. 30 km then 15/km (Astha Travels Line) and 1,421 plus 72 taxes incl. 33 km then 13.5/km (EaseMyTrip); median 1,460"
+          },
+          {
+            "route": "Nashik to Shirdi (one way, about 88 km)",
+            "inr": 1642,
+            "range": "Dzire sedan before GST (Gozocabs); search snippets of MakeMyTrip 1,146-1,513 plus 431-552 taxes"
+          },
+          {
+            "route": "Nashik to Sula Vineyards (one way, about 22 km, wine route)",
+            "inr": 1054,
+            "range": "Dzire sedan before GST (Gozocabs)"
+          },
+          {
+            "route": "Nashik Darshan plus Trimbakeshwar, 10 h / 120 km (Tiger Travels, vehicle not named)",
+            "inr": 3000,
+            "range": "toll and parking extra"
+          }
+        ],
+        "basis": "Nashik-based operators' 8 h / 80 km sedan 'Nashik Darshan' packages: Tiger Travels (Mumbai Naka, Nashik) 2,200 (toll and parking extra, page undated) and Shree Tuljai Travels (Pathardi Phata, Nashik) 2,800 (80 km, extra 13/km, page footer 2025). Midpoint 2,500. A CabBazar search snippet said about 2,000 (page 403, not relied on). Per-km 13.5 is Gozocabs' and EaseMyTrip's published extra-km rate.",
+        "sources": [
+          "https://tigercabs.in/nashik-darshan-cab/",
+          "https://shreetuljaitravels.com/nashik/nashik-darshan-cabs",
+          "https://asthatravelsline.com/nashik-trimbakeshwar-cab/",
+          "https://www.easemytrip.com/cabs/nashik-to-trimbakeshwar-cab-booking/",
+          "https://www.gozocabs.com/book-taxi/nashik-shirdi",
+          "https://www.gozocabs.com/book-taxi/nashik-sula_vineyard"
+        ],
+        "notes": "No dedicated wine-route taxi package with a price was found; the Sula one-way fare above is the wine-route reference. Sula entry (weekday 600, weekend 1,000 per person per a search snippet) is not in the cab fare. No union rate card found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 333,
+        "standard_inr": 640,
+        "basis": "Breakfast: 10 Nashik misal places on Urbanchats (updated 15 Jun 2025), price per plate 70-120, median 82.5 (Sadhana 100). Lunch/dinner: unlimited veg thali: Shagun Dining Hall 210 (250 with sweet; templecitynashik.com article 24 Sep 2025), Shree Rajbhog Thali 270 incl. sweets (Tripadvisor reviewer), Swadyog Thali 310 (templecitynashik.com snippet); median 270. Cheap thali: Godwa Thali 250 for two = 125 (Justdial snippet). Standard = 100 + 2 x 270 = 640. Budget = 83 + 2 x 125 = 333.",
+        "sources": [
+          "https://urbanchats.com/nashik-misal-discovering-the-best-misal-in-nashik/",
+          "https://templecitynashik.com/shagun-dining-hall-nashik-gujarati-thali-review/",
+          "https://www.tripadvisor.com/Restaurant_Review-g303883-d12279837-Reviews-Shree_Rajbhog_Thali-Nashik_Nashik_District_Maharashtra.html",
+          "https://www.justdial.com/Nashik/Pure-Veg-Thali-Restaurants-in-Gangapur/nct-10396872"
+        ],
+        "notes": "Swadyog, Godwa and Rajbhog figures are search-result snippets (Justdial 403 on fetch). Sadhana Misal is open only 8:00-14:30 and is crowded at weekends. Wine-country restaurants and Sula are far dearer and excluded."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay median (all listed homestays sold out)",
+        "Union taxi rate card",
+        "Wine-route taxi package price",
+        "Thali figures partly from snippets"
+      ]
+    },
+    "trimbakeshwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1747,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/trimbakeshwar/budget-hotels"
+        ],
+        "homestay_median_inr": 1355,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.kayak.co.in/Trimbak-Hotels.94748.hotel.ksp"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: Cleartrip Trimbakeshwar budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: Hotel Dhruv Palace 1,568, Hotel Sai Yatri 1,808, Hotel Sahyadri 1,747 (median 1,747). Homestay: Kayak India Trimbak page 'best value' per-night price for Bimal Farm Home Stay 1,355 (no dates, tax basis not stated); n=1.",
+        "notes": "Cleartrip has no 3-star page for Trimbakeshwar (404), so mid is null. Kayak 10-11 Oct 'from' prices (class not shown, tax basis not stated) are informational only: Shree Shivalay guest house 1,936, OYO 3776 Midtown Inn 2,129, Hotel Shiva's Inn 2,419, E and G Green Court 3,000, Hotel Radhika Inn 3,097, Green Paradise 3,581, Rajasthani Rajwadi 4,500, Hotel Three Leaves 5,710. Kayak shows Hotel Sai Yatri at 4,549 for 10-11 Oct but Cleartrip shows 1,808 for 11-12 Oct, so Kayak 'from' prices on this page run high and were not used for mid."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13.5,
+        "point_to_point": [
+          {
+            "route": "Nashik to Trimbakeshwar (one way, about 29 km)",
+            "inr": 1460,
+            "range": "sedan 1,499 incl. 30 km then 15/km (Astha Travels Line); 1,421 plus 72 taxes incl. 33 km then 13.5/km (EaseMyTrip)"
+          },
+          {
+            "route": "Nashik Darshan plus Trimbakeshwar, 10 h / 120 km from Nashik",
+            "inr": 3000,
+            "range": "Tiger Travels, vehicle not named, toll and parking extra"
+          }
+        ],
+        "basis": "Trimbakeshwar is 29 km from Nashik and cabs come from Nashik; no Trimbakeshwar local day rate or union card was found. Fares are the fetched Nashik operator pages.",
+        "sources": [
+          "https://asthatravelsline.com/nashik-trimbakeshwar-cab/",
+          "https://www.easemytrip.com/cabs/nashik-to-trimbakeshwar-cab-booking/",
+          "https://tigercabs.in/nashik-darshan-cab/"
+        ],
+        "notes": "The temple area is walkable; Brahmagiri and Anjaneri need a cab."
+      },
+      "food_per_person_day": {
+        "budget_inr": 270,
+        "standard_inr": 525,
+        "basis": "Budget: unlimited thalis at Ambika Bhojnalaya 100 (Gujarati) and Pangat Bhojanalaya 80 (Maharashtrian), 40kmph.com page dated 5 Jan 2023 (old); Swami Samarth Gurupeeth Maha Prasad coupon 30. Budget = 3 x 90. Standard: Justdial cost for two (search snippets), 350 at about seven pure-veg places (Sai Chaya, Sai Yatri Restaurant, Annapurna, Nutan Rajmal, Ambika, Omkar Palace, New Rajasthani), 450 Tiger Valley, 500 Shree Prasad and Om Gurudev, 750 Sukhsagar; median 350 for two -> 175 per meal -> 3 x 175 = 525.",
+        "sources": [
+          "https://www.40kmph.com/maharashtra/i-had-lunch-dinner-at-these-recommended-places-to-eat-in-trimbakeshwar/",
+          "https://www.justdial.com/Nashik/Inexpensive-Indian-Restaurants-Below-Rs-500-in-Trimbakeshwar/nct-11400141"
+        ],
+        "notes": "Thali prices are from 2023 and probably higher now. Justdial returned 403, so for-two numbers are snippets. A Tripadvisor reviewer called Vithal Kamats' rates abnormally high."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid tier (no star-class page)",
+        "Homestay n=1 undated",
+        "Dorm",
+        "Local day taxi rate",
+        "Food thali prices from 2023; for-two figures are snippets"
+      ]
+    },
+    "shirdi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2716,
+        "mid_n": 13,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-shirdi"
+        ],
+        "budget_hotel_median_inr": 1321,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/shirdi/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. 17 rows; dropped three 2-star (Kiara Eshosans Palace 813, Hotel Disha Palace 657, Hotel Sai Smaran 2,208) and one 4-star resort (Pushpak Resort 2,681) -> 13, range 1,394-8,117, median 2,716. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 20 priced rows of 46 listed, range 480-1,982, median 1,320.5 rounded to 1,321.",
+        "notes": "Different dates per tier (November Friday vs October weeknight). Sai Sansthan Bhakta Niwas tariff (per room per day, from the trust's accommodation table at sai.org.in/en/accomodations): Sai Bhakta Niwas non-AC 3-bed 200; Sai Ashram Bhaktniwas AC 3-bed 600, non-AC 250; Dwarawati AC 3-bed 900, non-AC 500; Sai Niwas AC 2-bed 800; Shanti Niketan non-AC 200-300; Sai Udyan non-AC 150-250. Rooms are for 24-48 h only and usually book out in peaks. Sai Ashram Dharmashala hall listed at 20, unit unclear, so no dorm figure. Cleartrip's 'homestay' page for Shirdi is just the hotel list, so no homestay median. No Hostelworld page (404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Nashik to Shirdi (one way, about 88 km)",
+            "inr": 1642,
+            "range": "Dzire sedan before GST (Gozocabs)"
+          },
+          {
+            "route": "Shirdi to Shani Shingnapur sightseeing, sedan, 80 km included (about 75 km each way, so a round trip runs over)",
+            "inr": 2130,
+            "range": "Mansi Cabs, discounted from 2,279, extra 15/km, 499 to reserve"
+          }
+        ],
+        "basis": "Shirdi is a walking and shared-auto town around the temple; no local 8 h rate was found. Fares are the fetched operator pages. Per-km 15 is Mansi Cabs' extra-km rate.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/nashik-shirdi",
+          "https://mansicab.com/cars/shirdi-darshan-taxi-service-shirdi-to-shani-shingnapur-sightseeing-cab-services"
+        ],
+        "notes": "Search snippets: Shirdi to Shani Shingnapur sedan 1,500 (CabBazar, 403) and 1,686 (EaseMyTrip). Mansi's page text was truncated, so its address and date were not read."
+      },
+      "food_per_person_day": {
+        "budget_inr": 190,
+        "standard_inr": 900,
+        "basis": "Budget: Shri Sai Prasadalaya paid halls 50 per person for a full meal (official Sansthan page) x 2 + a misal-pav breakfast about 90 (Abhibus blog, range 80-100, about 3 years old, search snippet) = 190. Standard: Holidify cost for two, 600 at Woodland, Rajdhani and Rajbhog and 1,000 at The Tulip; median 600 for two -> 300 per person per meal -> 3 x 300 = 900.",
+        "sources": [
+          "https://sai.org.in/en/content/shri-saibaba-prasadalaya",
+          "https://www.holidify.com/places/shirdi/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.abhibus.com/blog/must-try-foods-on-your-next-shirdi-trip/"
+        ],
+        "notes": "A free hall at the Prasadalaya also exists, which would cut the budget figure further. Holidify page is undated and lists only four places. Abhibus figure was not fetched."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm",
+        "Local day taxi rate",
+        "Breakfast price (old snippet)",
+        "Holidify standard food basis is four undated places"
+      ]
+    }
+  }
+}

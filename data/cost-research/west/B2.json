@@ -1,0 +1,419 @@
+{
+  "batch": "B2",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "jodhpur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3773,
+        "mid_n": 12,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-jodhpur"],
+        "budget_hotel_median_inr": 1588,
+        "budget_n": 20,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/jodhpur/budget-hotels"],
+        "homestay_median_inr": 5328,
+        "homestay_n": 3,
+        "homestay_sources": ["https://www.cleartrip.com/hotels/homestays-in-jodhpur"],
+        "dorm_median_inr": 399,
+        "dorm_n": 17,
+        "dorm_sources": ["https://www.hostelworld.com/hostels/Jodhpur?currency=INR"],
+        "price_basis": "Mid: Cleartrip 3-star page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. 16 listed; excluded 3 hostels and Bishnoi Village Camp (camp), leaving 12 hotels (range 1,297-15,000; one 15,000 outlier does not move the median). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax, first 20 of 36 listed (range 699-1,940). Homestay: Cleartrip homestays page, 13 Nov 2026 pre-tax; only 3 of 15 available (Raj Mandir 6,600, Juna Mahal 5,328, SRB Imperial 1,684), the other 12 sold out. Dorm: Hostelworld 'from' dorm-bed prices, no stay dates shown, 17 of 28 properties that list dorms (range 150-824). Different dates per tier.",
+        "notes": "Homestay median rests on 3 boutique/haveli-style properties and the three prices are far apart, treat as indicative. Cleartrip labels the mid-range page 'Fri 13 Nov', a post-Diwali weekend with many properties sold out, so mid is probably shoulder-high; the budget page was Oct. Hostelworld 'from' prices are not date-specific."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1850,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {"route": "Jodhpur to Jaisalmer (one way)", "inr": 3000, "range": "3,000 (Rajputana Cabs) to 3,500 (My India Cab Service)"},
+          {"route": "Jodhpur to Udaipur (one way)", "inr": 3000, "range": "3,000 (Rajputana Cabs) to 3,500 (My India Cab Service)"},
+          {"route": "Jodhpur to Osian and back, same day (65 km each way)", "inr": 2099, "range": "2,099 (JCS Cab, May 2025) to 2,500 (My India Cab Service)"}
+        ],
+        "basis": "Median of 6 sedan 8h/80 km local-package quotes: CabBazar 1,700 (search-result title, page returned 403 to me), JCS Cab 1,699 (post dated 3 May 2025), Jaipur City Cab 1,800 (search snippet), Maharaja Cab 1,900 (search snippet, site refused my connection), Rajputana Cabs 1,999 fixed (page stamped 2026-10-02), My India Cab Service 2,000-2,500 midpoint 2,250 (2026 price guide). Range 1,699-2,500. Not a union card: no published Jodhpur union list found. Rajputana per-km 11 (page also says 'as low as 11'); My India Cab Service says 10-12.",
+        "sources": [
+          "https://rajputanacabs.in/jodhpur/",
+          "https://jcscab.com/day-trips-from-jodhpur/",
+          "https://myindiacabservice.com/how-much-does-it-cost-to-take-a-taxi-in-jodhpur-2026-price-guide",
+          "https://cabbazar.com/taxi/cab/jodhpur-local-sightseeing",
+          "https://www.maharajacab.com/jodhpur-sightseeing-package.php",
+          "https://www.jaipurcitycab.in/jodhpur-sightseeing-taxi.php"
+        ],
+        "notes": "Toll, parking and GST usually extra. Extra hour about 150-200, extra km 12-15."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 1000,
+        "basis": "Budget build-up: breakfast kachori/mirchi bada/lassi at Surya Namkeen (cost for two 100), Janta Sweet Home (100-150) and Shri Mishrilal (70-100) = ~60 per person; lunch dal-bati with chaas ~150 (Wanderlog review at Bhawani Daal Bati: 'like 150 rs total'); dinner Shandar Sweet Home cost for two 350 = 175 per person; total ~385. Standard build-up: cafe breakfast ~150, lunch ~350, dinner ~500: Gypsy Dining Hall cost for two 750-800 (Tripoto) with Rajasthani thali 499 plus tax (Tripadvisor review Nov 2024 per search result; 2023 blog says 499; rajasthanplaces Jan 2026 says 500-650 pp), Odhani Restaurant cost for two 1,000, Hari Vedas buffet 529 (review).",
+        "sources": [
+          "https://www.tripoto.com/rajasthan/trips/best-places-to-eat-in-jodhpur-5ce52dc69d018",
+          "https://wanderlog.com/list/geoCategory/192465/i-migliori-pasti-economici-a-jodhpur-district",
+          "https://amlanthetramp.com/2023/09/17/jodhpur-for-foodies/",
+          "https://www.rajasthanplaces.com/restaurants/gypsy-restaurant-jodhpur/"
+        ],
+        "notes": "Tripoto article is undated and Zomato pages timed out for me, so cost-for-two figures could be old. Standard is weighted toward the well-known Gypsy thali; a plain sit-down eatery will be cheaper."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union / government taxi rate card (only operator quotes)",
+        "Current Zomato cost-for-two (Zomato pages timed out)",
+        "Hostelworld dorm prices for specific dates"
+      ]
+    },
+    "osian": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1603,
+        "mid_n": 2,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-osian"],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. Only 2 hotels had a price: The Byke Boutique - Amra Oasis 1,362 and The Sanatan International Hotel & Resort 1,844. Four other 3-star hotels/homestays and The Gateway Osian were sold out and showed no price.",
+        "notes": "Osian's mid-range choice is often a desert camp, not a hotel. The only priced 3-star camp on the same Cleartrip page is Safari Camp Osian at 3,566 pre-tax (https://www.cleartrip.com/hotels/homestays-in-osian also shows Reggie's Camel Camps 4-star at 14,600). Hotel median kept to the two hotels only. The Cleartrip budget page for Osian returned no listings and the homestay page showed both homestays sold out, so no budget or homestay figure."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {"route": "Jodhpur to Osian and back, same day (65 km each way)", "inr": 2099, "range": "2,099 (JCS Cab) to 2,500 (My India Cab Service + 300 driver allowance)"},
+          {"route": "Jodhpur to Osian one way", "inr": 2000, "range": "2,000 (CabBazar) to 2,200 (Arya Cab)"}
+        ],
+        "basis": "Osian is a small temple and dune village normally visited as a day trip from Jodhpur, so no local 8h package was found. Day-trip sedan 2,099 from JCS Cab (post dated 3 May 2025). Per km 10 from Rajputana Cabs (Dzire; same page also says 9 for 'Sedan AC Car'; page dated 2019).",
+        "sources": [
+          "https://jcscab.com/day-trips-from-jodhpur/",
+          "https://rajputanacabs.in/jodhpur/jodhpur-to-osian-taxi/"
+        ],
+        "notes": "One-way CabBazar 2,000 and Arya Cab 2,200 come from a web-search summary, not a fetched page. Local autos / jeeps at the dunes not researched."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or thali price found for any Osian restaurant (Tripadvisor lists 7 places with no prices). Desert camps sell dinner only inside packages.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget hotel, homestay and dorm prices (budget page empty, homestays sold out)",
+        "Local taxi / jeep day rate",
+        "Any food price (no menu or thali figure found)"
+      ]
+    },
+    "jaisalmer": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 6663,
+        "mid_n": 8,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-jaisalmer"],
+        "budget_hotel_median_inr": 1580,
+        "budget_n": 20,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/jaisalmer/budget-hotels"],
+        "homestay_median_inr": 2052,
+        "homestay_n": 2,
+        "homestay_sources": ["https://www.cleartrip.com/hotels/homestays-in-jaisalmer"],
+        "dorm_median_inr": 210,
+        "dorm_n": 26,
+        "dorm_sources": ["https://www.hostelworld.com/hostels/Jaisalmer?currency=INR"],
+        "price_basis": "Mid: Cleartrip 3-star page, check-in Fri 13 Nov 2026 (start of peak season), 1 night, 2 guests, pre-tax discounted price. Page lists 16 '3-star' properties; kept the 8 typed 'Hotel' (Prince 4,440, Royal Haveli 4,690, Jaigarh Palace 5,607, Moonlight 6,125, Helsinki House 7,200, Garh Villa 7,466, Tokyo Palace 9,180, Heritage House 11,850) and dropped 4 desert camps and 4 resorts at Sam/Kanoi. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax, first 20 of 36 (range 425-1,980). Homestay: Cleartrip homestays page, 13 Nov 2026 pre-tax; Hotel Hashim 2,305 and BhimKothi Boutique Homestay 1,799 (the other priced ones were Yatra Desert Camp 6,622 and The Burgia Farm 7,245, excluded as camp/farm); 11 others sold out. Dorm: Hostelworld 'from' dorm-bed prices, no stay dates shown, 26 properties that list dorms (range 30-2,000).",
+        "notes": "Mid (13 Nov, peak) and budget (11 Oct, shoulder) are on different dates, which inflates the gap; Jaisalmer prices climb sharply from November. Desert camps are NOT hotels: Cleartrip's 3-star camps at Kanoi/Sam ran 8,910 (Rajputana Desert Camp), 15,000 (Camp Jaisalmer Inn) and 18,000 (Sunrise Desert Resort) pre-tax, and the cheaper resorts Golden Fort Resort (Sam) 1,171 and Gujarat Resort (Kanoi) 1,621; none of these are in the hotel median. Hostelworld 'from' prices include some implausibly low entries (30-49) and are not date-specific. The 3-star hotel list is heavily discounted off 8,000-14,000 'original' rates, so the real base price is unclear."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {"route": "Jaisalmer to Sam Sand Dunes (one way)", "inr": 1500, "range": "1,500 (SRM Holidays); 1,999 Sam and back, 4 hrs (Jagnish Tours 2026-27); 2,000 desert tour Sam/Khuri (Jaisalmer Tour Package, 2023)"},
+          {"route": "Jaisalmer to Kuldhara (one way)", "inr": 1200, "range": "1,200 one way (SRM Holidays); 1,200 Kuldhara and back, 3 hrs (Jagnish Tours)"},
+          {"route": "Jaisalmer to Longewala and back (about 120 km each way)", "inr": 2800, "range": "2,500 (Rajputana Cabs, 2021) to 2,800 (Jagnish Tours 2026-27)"}
+        ],
+        "basis": "Median of 5 sedan full-day local quotes: Rajputana Cabs 8h city tour 1,600 (page dated Sept 2021, old), Jaisalmer Tour Package full day local 1,600 (page 2023-08-08), SRM Holidays local per-day 2,000 (page also says 2,500 in another section), Rajputana full-day city and desert tour 2,250 (2021), GoJaisalmer city sightseeing 2,500-2,800 for 8-10 hrs (midpoint 2,650; the page quotes conflicting figures). Range 1,600-2,800. Jagnish Tours 2026-27 chart has no full-day local rate (city 4h/40km 1,299; Sam and back 1,999; Kuldhara and back 1,200). Per km: Jagnish 10, Rajputana 10, Jaisalmer Tour Package 9, SRM 10-12, GoJaisalmer 15. Not a union card.",
+        "sources": [
+          "https://rajputanacabs.in/jaisalmer/sightseeing-tour/",
+          "https://jaisalmertourpackage.in/taxi-service-jaisalmer/",
+          "https://srmholidays.in/taxi-service-in-jaisalmer/",
+          "https://www.jagnishtours.com/taxi-fare-in-jaisalmer",
+          "https://www.gojaisalmer.com/book-taxi-cab.html"
+        ],
+        "notes": "Several of these pages are 2-5 years old; the only 2026-dated chart (Jagnish) gives short half-day packages. A city plus Sam plus Kuldhara combined day is likely 2,000-2,800. Toll, parking extra. Local guide about 500 (Rajputana)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 750,
+        "basis": "Zomato 'for one' prices from search results: Shri Bikaner Restaurant 150, Retro Kaka's Cafe 150, Zeemo Saa Chaat Bhandar 100, New Tanotrai Bhojnalaya 200, Sanskari Cafe N Dine 200, Taste Of Jaisalmer 200, Mud Escape Cafe 200, Delight 250, Hotel Prince and Restaurant 250, Kissan 300, Satkar 350, Pleasant Haveli Roof-Top 600. Budget = breakfast ~100 + lunch ~150 + dinner ~150 = 400. Standard = 3 x median 250 of sit-down places (200, 200, 250, 250, 300, 350). Natraj Restaurant meals Rs 75-160, bill for two 750 (review).",
+        "sources": [
+          "https://www.zomato.com/jaisalmer/restaurants/rajasthani",
+          "https://wanderlog.com/list/geoCategory/1547363/best-spots-for-rajasthani-thali-in-jaisalmer"
+        ],
+        "notes": "Zomato figures come from a search-result summary because Zomato pages timed out when fetched; Wanderlog page only confirms Natraj 75-160. Fort-area rooftops cost more (Pleasant Haveli 600)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Camp prices per tent are separate from hotel prices and were not medianed",
+        "Union / tourism-department taxi tariff (only operator quotes, several old)",
+        "Zomato cost-for-one figures not fetched directly"
+      ]
+    },
+    "barmer": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1937,
+        "mid_n": 2,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-barmer"],
+        "budget_hotel_median_inr": 1370,
+        "budget_n": 1,
+        "budget_sources": ["https://www.cleartrip.com/hotels/homestays-in-barmer"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax: The Haveli Resort 1,473 and Rishab Club and Resorts 2,401 (a third, The Haveli, was sold out). Budget: Cleartrip 'homestays in Barmer' page (same date, pre-tax) lists Kailash Sarowar Hotel (2-star) at 1,370; the page contains no true homestays. Hotel Kailash International (4-star) 4,145 was also available but is above 3-star and excluded.",
+        "notes": "Barmer has very few bookable hotels: of 13 properties on the Cleartrip page only 4 were available on 13 Nov. Cleartrip budget-hotels page for Barmer returned an empty page. Median of n=2 and n=1 is indicative only."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {"route": "Barmer to Jodhpur (one way, about 197 km)", "inr": 3499, "range": "3,100-3,500: CabBazar 3,100/3,200 (search titles), Payal Cab 3,499 with 197.2 km included"}
+        ],
+        "basis": "No published local 8h sedan rate for Barmer found. Payal Cab AC sedan Barmer to Jodhpur 3,499 incl. 197.2 km, extra km 15 (page undated, footer 2018). Rajputana Cabs lists a Jodhpur to Barmer taxi at Rs 9-10 per km (page old, per search result).",
+        "sources": [
+          "https://www.payalcab.in/barmer-jodhpur-taxi.php",
+          "https://rajputanacabs.in/jodhpur/jodhpur-to-barmer-taxi/",
+          "https://cabbazar.com/taxi/cab/jodhpur-to-barmer"
+        ],
+        "notes": "CabBazar lists local Barmer cabs 'starting at 1,400' but I could not fetch the page (403) and that is a starting price, so not used. Per-km 10 is the Rajputana figure (page says 9/10, unfetched). Hurryupcabs excluded as a template site."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 750,
+        "basis": "Zomato Barmer 'for one' prices from search results: Jai Bajrang Bhojnalaya 100, Ahaar Bhojnalya 100, Food Wallah 100, Small Cafe 150, Swastika Cafe 200, Hotel Kalinga Palace 250, Hotel Garh Barmer 250, New Brahman Lodge 350, Brahman Resort 400. Budget = 3 x 100. Standard = 3 x median 250 of sit-down places (200, 250, 250, 350, 400).",
+        "sources": ["https://www.zomato.com/barmer/barmer-city-restaurants"],
+        "notes": "Zomato page timed out on my fetch; figures taken from the search-result summary of Zomato listings. Zomato lists these as per-person prices."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Homestay and dorm prices (none exist on listing sites)",
+        "Local taxi day rate (no sourced figure)",
+        "Budget hotel median beyond one property"
+      ]
+    },
+    "bikaner": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2186,
+        "mid_n": 16,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-bikaner"],
+        "budget_hotel_median_inr": 1536,
+        "budget_n": 20,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/bikaner/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price, all 16 listed (range 1,039-7,567). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax, first 20 of 26 listed (range 770-1,882). Different dates per tier.",
+        "notes": "Cleartrip homestays page for Bikaner shows one property, sold out, so no homestay figure. Hostelworld has no Bikaner page (404), so no dorm figure."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {"route": "Bikaner to Deshnok / Karni Mata (about 31 km)", "inr": 1400, "range": "CabBazar Bikaner-Deshnok sedan about 1,400 (search result title)"},
+          {"route": "Jodhpur to Bikaner (one way, from Jodhpur side)", "inr": 3000, "range": "Rajputana Cabs Jodhpur page"}
+        ],
+        "basis": "Median of 3 sedan 8h/80 km quotes: CabBazar 1,500 (search snippet), Maharaja Cab 1,800 (search snippet; site refused my connection), Tours and Taxi 2,500 (fetched; page footer 2024, search says page is about 2 years old). Range 1,500-2,500. KD Cab lists 2,500 for 12 hours plus 120/km, not an 8h rate, so excluded. Per km 11 from Tours and Taxi (Dzire/Etios 11 extra km); KD Cab sedan outstation 10.5 per km (page also says 10).",
+        "sources": [
+          "https://www.toursandtaxi.com/bikaner-sightseeing-taxi/",
+          "https://www.maharajacab.com/bikaner-sightseeing-package.php",
+          "https://cabbazar.com/city/bikaner",
+          "https://kdcab.com/bikaner-taxi-rates/",
+          "https://cabbazar.com/taxi/cab/bikaner-to-deshnok",
+          "https://rajputanacabs.in/jodhpur/"
+        ],
+        "notes": "Two of the three quotes were not directly fetchable, so the 1,800 figure is medium-confidence. Toll and parking extra; extra hour 200."
+      },
+      "food_per_person_day": {
+        "budget_inr": 325,
+        "standard_inr": 900,
+        "basis": "Zomato 'cost for two' from search results: Chhotu Motu Joshi 150, Chhappan Bhog 150, Cafe Adda 100, Shri Khandelwal Mishthan Bhandar 200, Raju Dhaba 250, Tom And Jerry Cafe 250, Sky Bites 450, Maharaja Ganga Mahal 750, Be Veg 1,000, Laxmi Niwas Palace 1,200. Budget = breakfast ~75 (kachori; Tripadvisor review said 10 per piece) + lunch ~125 (Raju Dhaba / Khandelwal) + dinner ~125 = 325. Standard = 3 x median per person 300 of sit-down places (Tom and Jerry 125, Sky Bites 225, Maharaja Ganga Mahal 375, Be Veg 500).",
+        "sources": [
+          "https://www.zomato.com/bikaner/restaurants",
+          "https://www.zomato.com/bikaner/chhotu-motu-joshi-rani-bazaar",
+          "https://www.tripadvisor.com/ShowUserReviews-g297666-d1191195-r218369149-Chhotu_Motu_Joshi_Sweet_Shop-Bikaner_Bikaner_District_Rajasthan.html"
+        ],
+        "notes": "Zomato figures from a search-result summary (Zomato pages timed out on fetch). No thali price found for Bikaner, so standard is cost-for-two based."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm prices (none found)",
+        "Directly fetched Zomato cost-for-two (timed out)",
+        "Union taxi rate card"
+      ]
+    },
+    "udaipur": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {"route": "Udaipur to Jodhpur (one way)", "inr": 3500, "range": "Rajputana Cabs page dated 4 Aug 2026"},
+          {"route": "Udaipur to Nathdwara (one way)", "inr": 1500, "range": "'starts from' 1,500 (Rajputana Cabs, 4 Aug 2026)"},
+          {"route": "Udaipur to Jaisalmer (one way)", "inr": 6000, "range": "Rajputana Cabs, 4 Aug 2026"}
+        ],
+        "basis": "Median of 7 sedan 8h/80 km local-sightseeing quotes: CabBazar 1,600 (search title), Rajputana Cabs 2,000 (page dated 4 Aug 2026; the same operator's tour page shows 1,600 for a 1-day tour and 2,000 on its fare list), Sanwariya Cabs 1,800 (fetched, extra hour 200), Atithi Cabs 1,800 (search snippet, 8-12 hrs 1,800-2,500), Udaipur Sightseeing Taxi 1,999 (search snippet), Maharana Cabs 2,300 (search snippet), SRM Holidays full day 2,500 (search snippet). Range 1,600-2,500. Not a union card; no published Udaipur union list found.",
+        "sources": [
+          "https://rajputanacabs.in/udaipur/",
+          "https://rajputanacabs.in/udaipur-sightseeing-tour/",
+          "https://sanwariyacabs.com/udaipur-sightseeing-taxi/",
+          "https://cabbazar.com/taxi/cab/udaipur-local-sightseeing",
+          "https://atithicabs.com/udaipur-sightseeing-taxi/",
+          "https://maharanacabs.in/udaipur-sightseeing-tour-taxi/",
+          "https://srmholidays.in/udaipur-sightseeing-tour-packages/"
+        ],
+        "notes": "Rajputana Cabs' 2024 tour page shows a sedan Kumbhalgarh package at 4,500 and a Kumbhalgarh plus Ranakpur day trip at 3,000, which are inconsistent with each other, so neither is used as point-to-point. Entry fees, parking and extra hours (about 200) are extra. October to March is peak season and fares run higher."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1050,
+        "basis": "Cost for two (search results, mixed sources): Jag Niwas Rooftop 350 (Zomato), Cafe Edelweiss from 400, Natraj Dining Hall 700 (Zomato, old) with thali about 300 pp plus tax (blog) and 400-600 for two elsewhere, Jheel's Ginger Coffee Bar from 700, Millets of Mewar 1,500, Sun and Moon Cafe from 1,400. Budget = breakfast ~100 + lunch ~100 to 175 (Jag Niwas rooftop 175 pp, Edelweiss 200 pp) + thali dinner ~300 = ~500. Standard = 3 x median per person 350 (Jag Niwas 175, Edelweiss 200, Natraj 350, Jheel's 350, Millets 750).",
+        "sources": [
+          "https://www.zomato.com/udaipur/jag-niwas-rooftop-restaurant-chandpole",
+          "https://www.zomato.com/udaipur/natraj-dining-hall-restaurant-city-centre",
+          "https://udaipurdarpan.com/natraj-thali-udaipur/",
+          "https://alawyersvoyage.com/udaipur-places-to-eat-authentic-street-food-more/"
+        ],
+        "notes": "Only the Jag Niwas Rooftop figure was a Zomato listing seen in a search result; the other figures come from blogs and aggregators of varying age (Millets 1,500 comes from a jumbled Slurrp list and may be misattributed, so it is the least trusted point). Natraj figures disagree across sources (400 to 1,050 for two). No page fetched directly since Zomato timed out."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Directly fetched Zomato / menu prices (timeouts)",
+        "Taxi union or prepaid counter tariff",
+        "Millets of Mewar cost for two (jumbled source)"
+      ]
+    },
+    "kumbhalgarh": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3929,
+        "mid_n": 14,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-kumbhalgarh"],
+        "budget_hotel_median_inr": 1502,
+        "budget_n": 3,
+        "budget_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-kumbhalgarh", "https://www.cleartrip.com/hotels/india/kumbhalgarh/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price; 16 listed, dropped 2 jungle camps (Kumbhalgarh Safari Camp 14,000 and Sky Imperial Jungle Camp Resort 8,092), leaving 14 hotels/resorts (range 1,157-9,826). Budget: the 3 cheapest-priced hotels, The Dabs Tiger Tails 1,157 and Townhouse Oak 1,502 (Cleartrip 3-star page, 13 Nov 2026) and Hotel Kumbhal Palace 1,948 (Cleartrip budget page, 11-12 Oct, year not printed); different dates.",
+        "notes": "The Cleartrip budget page for Kumbhalgarh lists only one property. Cleartrip's 'homestays' page for Kumbhalgarh contains only hotels and resorts (3 to 5 star, 3,184-22,000), so no homestay median. Budget n=3 is thin, and one of the three is on a different date."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1600,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {"route": "Kumbhalgarh to Ranakpur (about 49 km)", "inr": 2286, "range": "Gozocabs: Dzire/Etios sedan 2,286 to 3,049, compact car from 2,199 (one way)"},
+          {"route": "Nathdwara to Kumbhalgarh", "inr": 1300, "range": "CabBazar sedan about 1,300 (search title)"},
+          {"route": "Sadri to Kumbhalgarh", "inr": 1347, "range": "Gozocabs 'from' 1,347 (search title)"}
+        ],
+        "basis": "Rajputana Cabs 'Local Kumbhalgarh' sedan 1,600, outstation 9-10 per km (page published 7 Apr 2021, old). CabBazar full-day sedan 1,500, 9 per km (search snippet, 403 on fetch). Two quotes only: 1,500 and 1,600.",
+        "sources": [
+          "https://rajputanacabs.in/taxi-service-in-kumbhalgarh/",
+          "https://cabbazar.com/city/kumbhalgarh",
+          "https://www.gozocabs.com/book-taxi/kumbhalgarh-ranakpur"
+        ],
+        "notes": "Gozocabs page fetched showed only the 'lowest fare 2,256 before GST' (distance 55 km), not the 2,286/3,049 sedan options, which come from the search summary. Rajputana page is 2021, so confirm."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 750,
+        "basis": "Zomato 'for one' (search result): Shreeji The Dhaba 150, Radhe Radhe Restaurant 150, Swagat Restaurant 200, KKR Restaurant 200. Holidify (fetched): Chowka Restaurant 500 and Gazebo 800 (not stated whether per person or for two; if for two that is 250 and 400 pp). Justdial (search result): Karni Restaurant 750 for two. Street food near the fort 50-100 pp (guide). Budget = breakfast ~75 + 2 x 150 = 375. Standard = 3 x median per meal 250 (Swagat 200, KKR 200, Chowka 250, Karni 375, Gazebo 400).",
+        "sources": [
+          "https://www.zomato.com/kumbhalgarh/casual-dining",
+          "https://www.holidify.com/places/kumbhalgarh/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.justdial.com/Rajsamand/Restaurants-in-Kumbhalgarh/nct-10408936"
+        ],
+        "notes": "Zomato figures come from a search-result summary; the Zomato page timed out on fetch. Holidify per-person vs for-two is ambiguous."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay price (none found on listing sites)",
+        "Dorm bed",
+        "Union taxi rate card",
+        "Current Zomato figures (fetch timed out)"
+      ]
+    },
+    "ranakpur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5264,
+        "mid_n": 5,
+        "mid_sources": ["https://www.cleartrip.com/hotels/homestays-in-ranakpur", "https://www.cleartrip.com/hotels/3-star-hotels-in-ranakpur"],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price. The 3-star page had only one priced property (Shivika Lake Hotel 2,048; 9 others sold out). The Cleartrip 'homestays in Ranakpur' page (which lists ordinary hotels and resorts) had 6 available; kept the five at 3 and 4 star: Shivika Lake 2,048, Lal Bagh Resort 4,643, Arawali Ananta Elite 5,264, King's Abode 6,675, Raj Leela Heritage Resort 8,302; dropped the 5-star Trishala Vilas 7,686.",
+        "notes": "Ranakpur is a resort cluster beside a temple, with almost no budget hotels. Cleartrip's budget page for Ranakpur lists 7 mostly heritage/resort properties at 3,539-9,138 (11 Oct), not true budget, so no budget median. Mid is a 3 to 4 star blend, so it overstates a plain 3-star; Shivika Lake at 2,048 is the cheapest priced hotel. Also, 10 of 15 properties were sold out on 13 Nov, so true prices on open dates may differ."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1600,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 10,
+        "point_to_point": [
+          {"route": "Kumbhalgarh to Ranakpur (about 49 km)", "inr": 2286, "range": "Gozocabs: Dzire/Etios sedan 2,286 to 3,049, compact car from 2,199 (one way)"}
+        ],
+        "basis": "Rajputana Cabs 'Local Ranakpur' sedan 1,600, outstation 9-10 per km (page published 19 Apr 2021, old); one-day sightseeing package 1,600 including Kumbhalgarh fort and Ranakpur dam (search snippet).",
+        "sources": [
+          "https://rajputanacabs.in/taxi-service-in-ranakpur/",
+          "https://www.gozocabs.com/book-taxi/kumbhalgarh-ranakpur"
+        ],
+        "notes": "Only one operator and the page is 5 years old. Gozocabs sedan options 2,286 and 3,049 come from the search summary; the fetched page showed 2,256 lowest (before GST) for 55 km."
+      },
+      "food_per_person_day": {
+        "budget_inr": 230,
+        "standard_inr": 825,
+        "basis": "Budget = breakfast ~50 (Holidify: temple-area Jain food about INR 50) + 2 thalis at the Ranakpur Tirth Bhojanshala at about 90 each (Wanderboat reviews quoted in search results: 60 and 90 per person, all you can eat) = ~230. Standard = 3 x median per-meal 275 from Holidify cost-for-two (fetched): Maharani Bagh 400, Casa Manolo 500, Ranakpur Hill Resort 500, Kings Abode 600, Harmony 600, Vari 800 (per person 200, 250, 250, 300, 300, 400).",
+        "sources": [
+          "https://www.holidify.com/places/ranakpur/restaurants-places-to-eat-local-cuisine.html",
+          "https://restaurant-guru.in/Ranakpur-Tirth-Bhojanshala-Ranakpur",
+          "https://wanderboat.ai/restaurants/india/rajasthan/ranakpur-tirth-bhojanshala/MGgWNEdzRq2uCsNuxpCEZQ"
+        ],
+        "notes": "Bhojanshala thali price is from two old-looking reviews seen in a search result (not fetched); Restaurant Guru shows only a 1-200 per person band. Resort restaurants dominate standard dining here."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget hotel and homestay prices (none found)",
+        "Dorm bed",
+        "Current bhojanshala thali price (reviews only)",
+        "Union taxi rate card; local taxi from a single 2021 page"
+      ]
+    }
+  }
+}

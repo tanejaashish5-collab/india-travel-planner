@@ -1,0 +1,1000 @@
+{
+ "measured_on": "2026-10-09",
+ "dates": {
+  "diwali": "2026-11-12",
+  "dec3": "2026-12-03",
+  "nov26": "2026-11-26"
+ },
+ "method": "Cleartrip hotel detail pages (WebFetch), Thursday check-ins (12 Nov, 3 Dec, 26 Nov 2026), 1 night, 1 room, 2 adults. Price = per-night rate BEFORE taxes and fees, after the discount shown, for the same room type and plan on all three dates (Room Only where offered, else cheapest plan, named per pair). Ratio = diwali_inr / comparison date. Pairs where the same room type was not offered on a date carry null for that date; hotels sold out on 12 Nov, or on both comparison dates, are listed under skipped in notes.",
+ "cities": {
+  "Somnath": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "Hotel Sun Plaza",
+     "room": "Plaza Royal, Valley view",
+     "plan": "Room Only",
+     "diwali_inr": 4057,
+     "dec3_inr": 926,
+     "nov26_inr": 926,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-sun-plaza-3928414?c=12112026|13112026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-sun-plaza-3928414?c=03122026|04122026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-sun-plaza-3928414?c=26112026|27112026&city=Somnath&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Dec 3 and Nov 26 both 926 (about -77%); extreme drop, recorded as shown."
+    },
+    {
+     "hotel": "The Square Somnath",
+     "room": "The Square Classic",
+     "plan": "Room Only",
+     "diwali_inr": 5174,
+     "dec3_inr": 4140,
+     "nov26_inr": 4140,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-square-somnath-3908664?c=12112026|13112026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-square-somnath-3908664?c=03122026|04122026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-square-somnath-3908664?c=26112026|27112026&city=Somnath&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Breakfast plan on 12 Nov showed an anomalous 24,840; Room Only used."
+    },
+    {
+     "hotel": "The Somnath Gateway Hotel",
+     "room": "Executive Twin Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 4913,
+     "dec3_inr": 4692,
+     "nov26_inr": 4692,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/vits-the-somnath-gateway-3974277?c=12112026|13112026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/vits-the-somnath-gateway-3974277?c=03122026|04122026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/vits-the-somnath-gateway-3974277?c=26112026|27112026&city=Somnath&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Bliss Hotel",
+     "room": "Deluxe AC Double Bed (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 4913,
+     "dec3_inr": null,
+     "nov26_inr": 2163,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-bliss-hotel-2880178?c=12112026|13112026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-bliss-hotel-2880178?c=03122026|04122026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-bliss-hotel-2880178?c=26112026|27112026&city=Somnath&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Dec 3 sold out."
+    },
+    {
+     "hotel": "Hotel Scintilla",
+     "room": "Comfort AC Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 6178,
+     "dec3_inr": 1639,
+     "nov26_inr": 2295,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-scintilla-4266615?c=12112026|13112026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-scintilla-4266615?c=03122026|04122026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-scintilla-4266615?c=26112026|27112026&city=Somnath&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Bansidhar",
+     "room": "Deluxe 2 Bed AC Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 5667,
+     "dec3_inr": 1250,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-bansidhar-somnath-3931167?c=12112026|13112026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-bansidhar-somnath-3931167?c=03122026|04122026&city=Somnath&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-bansidhar-somnath-3931167?c=26112026|27112026&city=Somnath&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Nov 26 sold out."
+    }
+   ],
+   "median_ratio_dec3": 3.77,
+   "median_ratio_nov26": 2.27,
+   "n": 6,
+   "n_dec3": 5,
+   "n_nov26": 5,
+   "notes": ""
+  },
+  "Sasan Gir": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "Pinewood Resort",
+     "room": "Club Room Garden View (Forest view)",
+     "plan": "Room with Breakfast (no Room Only plan)",
+     "diwali_inr": 4361,
+     "dec3_inr": null,
+     "nov26_inr": 4361,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/king-s-kraft-pinewood-resort-sasan-gir-4264142?c=12112026|13112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/king-s-kraft-pinewood-resort-sasan-gir-4264142?c=03122026|04122026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/king-s-kraft-pinewood-resort-sasan-gir-4264142?c=26112026|27112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Dec 3 sold out. Nov 26 identical to Diwali."
+    },
+    {
+     "hotel": "Hotel Gir Scintilla",
+     "room": "Deluxe A/C Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 4545,
+     "dec3_inr": 1505,
+     "nov26_inr": 1778,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-gir-scintilla-4286357?c=12112026|13112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-gir-scintilla-4286357?c=03122026|04122026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-gir-scintilla-4286357?c=26112026|27112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Aarambh Jungle Vista Resort - Gir",
+     "room": "Standard Room",
+     "plan": "Room Only",
+     "diwali_inr": 4350,
+     "dec3_inr": 2398,
+     "nov26_inr": 2678,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/aarambh-jungle-vista-resort-gir-5253682?c=12112026|13112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/aarambh-jungle-vista-resort-gir-5253682?c=03122026|04122026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/aarambh-jungle-vista-resort-gir-5253682?c=26112026|27112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Lionsburg Resort",
+     "room": "Forest Cottage (Garden view)",
+     "plan": "Room with Breakfast",
+     "diwali_inr": 3622,
+     "dec3_inr": null,
+     "nov26_inr": 3622,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4597472?c=12112026|13112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4597472?c=03122026|04122026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4597472?c=26112026|27112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Dec 3 sold out. Nov 26 identical to Diwali."
+    },
+    {
+     "hotel": "The Crystal Woods Resort",
+     "room": "Suite Room with Private Balcony",
+     "plan": "Room Only",
+     "diwali_inr": 3471,
+     "dec3_inr": 2176,
+     "nov26_inr": 3471,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5249608?c=12112026|13112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5249608?c=03122026|04122026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5249608?c=26112026|27112026&city=Sasan%20Gir&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Nov 26 identical to Diwali."
+    }
+   ],
+   "median_ratio_dec3": 1.81,
+   "median_ratio_nov26": 1.0,
+   "n": 5,
+   "n_dec3": 3,
+   "n_nov26": 5,
+   "notes": "Gir Lions Paw Resort: room mismatch, excluded from medians. 12 Nov page listed only 'Family Air Conditioning' with Breakfast 5,484; Dec 3 and Nov 26 listed only Super Deluxe/Terrace Cottage (Room with Breakfast 3,645, Room Only 3,360). Cheapest-to-cheapest = 1.50x with breakfast but the room differs. The 13 Nov list page showed Gir Lions Paw at 3,360, so the cheaper room was probably unavailable on 12 Nov. | Anil Farms Gir Jungle Resort: 12 Nov sold out."
+  },
+  "Bhuj": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "StayGuru Hari Om Residency",
+     "room": "Superior Deluxe Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 3742,
+     "dec3_inr": 2614,
+     "nov26_inr": 2614,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hari-om-residency-4265543?c=12112026|13112026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hari-om-residency-4265543?c=03122026|04122026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hari-om-residency-4265543?c=26112026|27112026&city=Bhuj&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "StayGuru Park View Residency",
+     "room": "AC Deluxe Double Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 4047,
+     "dec3_inr": 2050,
+     "nov26_inr": 2050,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/park-view-residency-4265551?c=12112026|13112026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/park-view-residency-4265551?c=03122026|04122026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/park-view-residency-4265551?c=26112026|27112026&city=Bhuj&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Mangalam, Bhuj",
+     "room": "Super Deluxe Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 3690,
+     "dec3_inr": 3690,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-mangalam-bhuj-4283994?c=12112026|13112026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-mangalam-bhuj-4283994?c=03122026|04122026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-mangalam-bhuj-4283994?c=26112026|27112026&city=Bhuj&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Nov 26 sold out. Cheaper Deluxe Room (2,870 on Dec 3) was not offered on 12 Nov."
+    },
+    {
+     "hotel": "Hotel Prince",
+     "room": "Standard Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 5675,
+     "dec3_inr": 4029,
+     "nov26_inr": 4029,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4292631?c=12112026|13112026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4292631?c=03122026|04122026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4292631?c=26112026|27112026&city=Bhuj&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Kutch Elegance",
+     "room": "AC Deluxe Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 3853,
+     "dec3_inr": 3042,
+     "nov26_inr": 3042,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4673459?c=12112026|13112026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4673459?c=03122026|04122026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4673459?c=26112026|27112026&city=Bhuj&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "V Club Bhuj",
+     "room": "Elegance Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 2944,
+     "dec3_inr": 3196,
+     "nov26_inr": 2454,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5220370?c=12112026|13112026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5220370?c=03122026|04122026&city=Bhuj&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5220370?c=26112026|27112026&city=Bhuj&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Dec 3 was higher than 12 Nov."
+    }
+   ],
+   "median_ratio_dec3": 1.34,
+   "median_ratio_nov26": 1.41,
+   "n": 6,
+   "n_dec3": 6,
+   "n_nov26": 5,
+   "notes": "Click Hotel Bhuj: 12 Nov sold out."
+  },
+  "Mandvi": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "Serena Beach Resort",
+     "room": "Deluxe AC Hut (King)",
+     "plan": "Room Only",
+     "diwali_inr": 7800,
+     "dec3_inr": 6750,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/serena-beach-resort-4265552?c=12112026|13112026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/serena-beach-resort-4265552?c=03122026|04122026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/serena-beach-resort-4265552?c=26112026|27112026&city=Mandvi&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Hut not offered Nov 26. Garden Villa with Breakfast gives 15,600 / 12,750 / 12,750 on all three dates (1.22x both)."
+    },
+    {
+     "hotel": "Shree Jalaram Resort",
+     "room": "Cozy Cottage (Pool view)",
+     "plan": "Room with Breakfast",
+     "diwali_inr": 7369,
+     "dec3_inr": 3685,
+     "nov26_inr": 3685,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4687834?c=12112026|13112026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4687834?c=03122026|04122026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4687834?c=26112026|27112026&city=Mandvi&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Village Resort Mandvi",
+     "room": "Premier Container Boutique Room (Garden view)",
+     "plan": "Room Only",
+     "diwali_inr": 3588,
+     "dec3_inr": 2668,
+     "nov26_inr": 2001,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4273308?c=12112026|13112026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4273308?c=03122026|04122026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4273308?c=26112026|27112026&city=Mandvi&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Kalash Mandvi",
+     "room": "Ac Deluxe",
+     "plan": "Room Only",
+     "diwali_inr": 1153,
+     "dec3_inr": 1153,
+     "nov26_inr": 1153,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-kalash-1351376?c=12112026|13112026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-kalash-1351376?c=03122026|04122026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-kalash-1351376?c=26112026|27112026&city=Mandvi&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    },
+    {
+     "hotel": "Hotel Desert Inn",
+     "room": "Non AC Non Attached Bath (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 1573,
+     "dec3_inr": 1573,
+     "nov26_inr": 1573,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4672207?c=12112026|13112026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4672207?c=03122026|04122026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4672207?c=26112026|27112026&city=Mandvi&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates (AC Deluxe 2,516 also flat)."
+    },
+    {
+     "hotel": "Beach View Hotel And Restaurant",
+     "room": "Deluxe (City view), King Bed",
+     "plan": "Room with Breakfast",
+     "diwali_inr": 11154,
+     "dec3_inr": null,
+     "nov26_inr": 11154,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5681752?c=12112026|13112026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5681752?c=03122026|04122026&city=Mandvi&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5681752?c=26112026|27112026&city=Mandvi&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Dec 3 sold out. Nov 26 identical to Diwali."
+    }
+   ],
+   "median_ratio_dec3": 1.16,
+   "median_ratio_nov26": 1.0,
+   "n": 6,
+   "n_dec3": 5,
+   "n_nov26": 5,
+   "notes": "On the 13 Nov list page 8 of 15 Mandvi properties showed sold out; 12 Nov detail pages were mostly available."
+  },
+  "Statue of Unity (Kevadia/Ekta Nagar)": {
+   "state": "Gujarat",
+   "pairs": [
+    {
+     "hotel": "Ramada Encore by Wyndham Statue of Unity",
+     "room": "Superior Garden View",
+     "plan": "Room Only",
+     "diwali_inr": 7140,
+     "dec3_inr": 3780,
+     "nov26_inr": 3780,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/ramada-encore-by-wyndham-statue-of-unity-2662250?c=12112026|13112026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/ramada-encore-by-wyndham-statue-of-unity-2662250?c=03122026|04122026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/ramada-encore-by-wyndham-statue-of-unity-2662250?c=26112026|27112026&city=Rajpipla&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Fortune Statue of Unity, Ekta Nagar",
+     "room": "Deluxe Room",
+     "plan": "Room with Breakfast (only plan)",
+     "diwali_inr": 7185,
+     "dec3_inr": 4658,
+     "nov26_inr": 4698,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/fortune-statue-of-unity-ekta-nagar-member-itc-s-hotel-group-4251904?c=12112026|13112026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/fortune-statue-of-unity-ekta-nagar-member-itc-s-hotel-group-4251904?c=03122026|04122026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/fortune-statue-of-unity-ekta-nagar-member-itc-s-hotel-group-4251904?c=26112026|27112026&city=Rajpipla&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Fern Sardar Sarovar Resort Ekta Nagar (Series by Marriott)",
+     "room": "Winter Green, Guest room, 1 King, City view",
+     "plan": "Room Only",
+     "diwali_inr": 7499,
+     "dec3_inr": 7500,
+     "nov26_inr": 7500,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-fern-sardar-sarovar-resort-ekta-nagar-series-by-marriott-3919327?c=12112026|13112026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-fern-sardar-sarovar-resort-ekta-nagar-series-by-marriott-3919327?c=03122026|04122026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-fern-sardar-sarovar-resort-ekta-nagar-series-by-marriott-3919327?c=26112026|27112026&city=Rajpipla&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Flat rate card; no discount shown."
+    },
+    {
+     "hotel": "Hotel Sai Inn, Statue of Unity",
+     "room": "Non AC Premium Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 4828,
+     "dec3_inr": 4828,
+     "nov26_inr": 4828,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-sai-inn-4251902?c=12112026|13112026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-sai-inn-4251902?c=03122026|04122026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-sai-inn-4251902?c=26112026|27112026&city=Rajpipla&state=Gujarat&country=694&r=2,0"
+     ],
+     "note": "Cheapest room is flat. AC rooms moved a lot: AC Premium 13,809 / 5,733 / 5,733 (2.41x); AC Suite 10,229 / 6,639 / n.a."
+    },
+    {
+     "hotel": "Hotel The Divine Inn - Statue of Unity",
+     "room": "Divine Deluxe Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 7420,
+     "dec3_inr": 2299,
+     "nov26_inr": 3083,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4533109?c=12112026|13112026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4533109?c=03122026|04122026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4533109?c=26112026|27112026&city=Rajpipla&state=Gujarat&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "The Scenic Unity",
+     "room": "Standard (Pool view)",
+     "plan": "Room Only",
+     "diwali_inr": 6109,
+     "dec3_inr": 2241,
+     "nov26_inr": 5229,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-scenic-unity-4485514?c=12112026|13112026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-scenic-unity-4485514?c=03122026|04122026&city=Rajpipla&state=Gujarat&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-scenic-unity-4485514?c=26112026|27112026&city=Rajpipla&state=Gujarat&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.72,
+   "median_ratio_nov26": 1.35,
+   "n": 6,
+   "n_dec3": 6,
+   "n_nov26": 6,
+   "notes": "Shree Kamdhenu Resort: no rooms on any of the three dates. | Omkara Resort: 12 Nov sold out."
+  },
+  "Jaisalmer": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "Hotel Fotiya Jaisalmer",
+     "room": "Budget Double Room",
+     "plan": "Room Only",
+     "diwali_inr": 3709,
+     "dec3_inr": 745,
+     "nov26_inr": 756,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-fotiya-jaisalmer-3928930?c=12112026|13112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-fotiya-jaisalmer-3928930?c=03122026|04122026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-fotiya-jaisalmer-3928930?c=26112026|27112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "About 5x; all four room types moved about 3 to 5x."
+    },
+    {
+     "hotel": "Hotel Prince (near Jaisalmer Fort)",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 4440,
+     "dec3_inr": 1388,
+     "nov26_inr": 1388,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-prince-near-jaisalmer-fort-374943?c=12112026|13112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-prince-near-jaisalmer-fort-374943?c=03122026|04122026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-prince-near-jaisalmer-fort-374943?c=26112026|27112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "WelcomHeritage Kalyan Bhawan Hotel",
+     "room": "Standard Non AC Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 2563,
+     "dec3_inr": 819,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/welcomheritage-kalyan-bhawan-hotel-3927602?c=12112026|13112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/welcomheritage-kalyan-bhawan-hotel-3927602?c=03122026|04122026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/welcomheritage-kalyan-bhawan-hotel-3927602?c=26112026|27112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Standard not offered Nov 26. Deluxe pair: 3,845 (12 Nov) vs 1,160 (Nov 26) = 3.31x."
+    },
+    {
+     "hotel": "Hotel Desert Moon",
+     "room": "Standard Double Room",
+     "plan": "Room Only",
+     "diwali_inr": 3645,
+     "dec3_inr": 951,
+     "nov26_inr": 972,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-desert-moon-3972940?c=12112026|13112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-desert-moon-3972940?c=03122026|04122026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-desert-moon-3972940?c=26112026|27112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Garh Villa",
+     "room": "Standard AC Room",
+     "plan": "Room Only",
+     "diwali_inr": 8177,
+     "dec3_inr": 2640,
+     "nov26_inr": 2640,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-garh-villa-4065640?c=12112026|13112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-garh-villa-4065640?c=03122026|04122026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-garh-villa-4065640?c=26112026|27112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Budget Non AC: 6,439 (12 Nov) vs 1,936 (Nov 26) = 3.33x; not offered Dec 3."
+    },
+    {
+     "hotel": "Hotel Helsinki House",
+     "room": "Deluxe Double Room",
+     "plan": "Room Only",
+     "diwali_inr": 7638,
+     "dec3_inr": 2763,
+     "nov26_inr": 2763,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-helsinki-house-784216?c=12112026|13112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-helsinki-house-784216?c=03122026|04122026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-helsinki-house-784216?c=26112026|27112026&city=Jaisalmer&state=Rajasthan&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 3.16,
+   "median_ratio_nov26": 3.2,
+   "n": 6,
+   "n_dec3": 6,
+   "n_nov26": 5,
+   "notes": ""
+  },
+  "Jodhpur": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "Chandra Imperial",
+     "room": "Deluxe Room with Work Desk (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 3938,
+     "dec3_inr": 3518,
+     "nov26_inr": 3891,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/chandra-imperial-747648?c=12112026|13112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/chandra-imperial-747648?c=03122026|04122026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/chandra-imperial-747648?c=26112026|27112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Deora Resort & Hotel",
+     "room": "Garden View Room",
+     "plan": "Room Only",
+     "diwali_inr": 2460,
+     "dec3_inr": null,
+     "nov26_inr": 2100,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4532302?c=12112026|13112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4532302?c=03122026|04122026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4532302?c=26112026|27112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Dec 3 sold out."
+    },
+    {
+     "hotel": "Chandra Inn",
+     "room": "Deluxe Double or Twin Room",
+     "plan": "Room Only",
+     "diwali_inr": 3767,
+     "dec3_inr": 3054,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/chandra-inn-160061?c=12112026|13112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/chandra-inn-160061?c=03122026|04122026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/chandra-inn-160061?c=26112026|27112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Deluxe not offered Nov 26 (only Suite 5,265). Suite: 4,485 / 3,686 / 5,265."
+    },
+    {
+     "hotel": "Hotel Om Heritage",
+     "room": "Deluxe Room",
+     "plan": "Room with Breakfast (only plan)",
+     "diwali_inr": 7558,
+     "dec3_inr": 4409,
+     "nov26_inr": 4409,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-om-heritage-3907876?c=12112026|13112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-om-heritage-3907876?c=03122026|04122026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-om-heritage-3907876?c=26112026|27112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Shanti Bhawan Heritage Hotel",
+     "room": "Budget Courtyard Facing",
+     "plan": "Room Only",
+     "diwali_inr": 3346,
+     "dec3_inr": 3346,
+     "nov26_inr": 3346,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/shanti-bhawan-heritage-hotel-717924?c=12112026|13112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/shanti-bhawan-heritage-hotel-717924?c=03122026|04122026&city=Jodhpur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/shanti-bhawan-heritage-hotel-717924?c=26112026|27112026&city=Jodhpur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    }
+   ],
+   "median_ratio_dec3": 1.18,
+   "median_ratio_nov26": 1.09,
+   "n": 5,
+   "n_dec3": 4,
+   "n_nov26": 4,
+   "notes": "Parkk Boutique by HST Hotels: 12 Nov sold out."
+  },
+  "Kumbhalgarh": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "The Byke - The Sanctuary Heritage",
+     "room": "Super Deluxe (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 3184,
+     "dec3_inr": 2205,
+     "nov26_inr": null,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5065067?c=12112026|13112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5065067?c=03122026|04122026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5065067?c=26112026|27112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Nov 26 sold out."
+    },
+    {
+     "hotel": "Namoka The Mount Valley Resort",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 5842,
+     "dec3_inr": 3213,
+     "nov26_inr": 3213,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/the-g-mount-valley-resort-spa-2048516?c=12112026|13112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-g-mount-valley-resort-spa-2048516?c=03122026|04122026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-g-mount-valley-resort-spa-2048516?c=26112026|27112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Garh Kumbha",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 3367,
+     "dec3_inr": 3367,
+     "nov26_inr": 3367,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-garh-kumbha-3913282?c=12112026|13112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-garh-kumbha-3913282?c=03122026|04122026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-garh-kumbha-3913282?c=26112026|27112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    },
+    {
+     "hotel": "Kumbhal Palace Hotel And Resort",
+     "room": "Swiss AC Tents (Garden view)",
+     "plan": "Room Only",
+     "diwali_inr": 5632,
+     "dec3_inr": 2283,
+     "nov26_inr": 2283,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/kumbhal-palace-hotel-and-resort-4063324?c=12112026|13112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/kumbhal-palace-hotel-and-resort-4063324?c=03122026|04122026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/kumbhal-palace-hotel-and-resort-4063324?c=26112026|27112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Jai Niwas Palace",
+     "room": "Super Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 3500,
+     "dec3_inr": 2450,
+     "nov26_inr": 3500,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/jai-niwas-palace-4067572?c=12112026|13112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/jai-niwas-palace-4067572?c=03122026|04122026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/jai-niwas-palace-4067572?c=26112026|27112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Townhouse Oak Kumbhalgarh Forest View",
+     "room": "Classic (Double Bed)",
+     "plan": "Room Only",
+     "diwali_inr": 1501,
+     "dec3_inr": 1743,
+     "nov26_inr": 1501,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/5425510?c=12112026|13112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5425510?c=03122026|04122026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/5425510?c=26112026|27112026&city=Kumbhalgarh&state=Rajasthan&country=694&r=2,0"
+     ]
+    }
+   ],
+   "median_ratio_dec3": 1.44,
+   "median_ratio_nov26": 1.0,
+   "n": 6,
+   "n_dec3": 6,
+   "n_nov26": 5,
+   "notes": "The Kumbha Mahal Resort: 12 Nov sold out. | Bodhi Boutique By Collective Select: Dec 3 and Nov 26 both sold out. | Dollar Villa Resort: Dec 3 and Nov 26 both sold out."
+  },
+  "Ranthambore (Sawai Madhopur)": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "Ranthambhore Nature Camp Resort",
+     "room": "AC Swiss Tent (Garden view)",
+     "plan": "Room with Breakfast (no Room Only plan)",
+     "diwali_inr": 4859,
+     "dec3_inr": 4049,
+     "nov26_inr": 3738,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/ranthambore-nature-camp-resort-3990321?c=12112026|13112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/ranthambore-nature-camp-resort-3990321?c=03122026|04122026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/ranthambore-nature-camp-resort-3990321?c=26112026|27112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Ananta Palace",
+     "room": "Deluxe Room (City view)",
+     "plan": "Room Only",
+     "diwali_inr": 3713,
+     "dec3_inr": 3506,
+     "nov26_inr": 3506,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-ananta-palace-3990308?c=12112026|13112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-ananta-palace-3990308?c=03122026|04122026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-ananta-palace-3990308?c=26112026|27112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Jungle View Resort",
+     "room": "AC Deluxe Cottage (Forest view)",
+     "plan": "Room Only",
+     "diwali_inr": 4112,
+     "dec3_inr": 4112,
+     "nov26_inr": 4112,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/jungle-view-resort-3990317?c=12112026|13112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/jungle-view-resort-3990317?c=03122026|04122026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/jungle-view-resort-3990317?c=26112026|27112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    },
+    {
+     "hotel": "Hotel Ranthambhore Resort",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 2811,
+     "dec3_inr": 2814,
+     "nov26_inr": 2811,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4491805?c=12112026|13112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4491805?c=03122026|04122026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4491805?c=26112026|27112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    },
+    {
+     "hotel": "The Sawai Heritage",
+     "room": "Economy Double Room",
+     "plan": "Room with Breakfast (no Room Only plan)",
+     "diwali_inr": 2699,
+     "dec3_inr": 2699,
+     "nov26_inr": 2699,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4695524?c=12112026|13112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4695524?c=03122026|04122026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4695524?c=26112026|27112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    },
+    {
+     "hotel": "Tiger Retreat",
+     "room": "Super Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 2272,
+     "dec3_inr": 2272,
+     "nov26_inr": 2272,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4695536?c=12112026|13112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4695536?c=03122026|04122026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4695536?c=26112026|27112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    },
+    {
+     "hotel": "Vidhus Lado Home Ranthambhore",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 2664,
+     "dec3_inr": 2664,
+     "nov26_inr": 2664,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4514838?c=12112026|13112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4514838?c=03122026|04122026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4514838?c=26112026|27112026&city=Sawai%20Madhopur&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    }
+   ],
+   "median_ratio_dec3": 1.0,
+   "median_ratio_nov26": 1.0,
+   "n": 7,
+   "n_dec3": 7,
+   "n_nov26": 7,
+   "notes": ""
+  },
+  "Bikaner": {
+   "state": "Rajasthan",
+   "pairs": [
+    {
+     "hotel": "Hotel Sagar Niwas",
+     "room": "Deluxe Room",
+     "plan": "Room with Breakfast (no Room Only plan)",
+     "diwali_inr": 4359,
+     "dec3_inr": null,
+     "nov26_inr": 4359,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-sagar-niwas-2877200?c=12112026|13112026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-sagar-niwas-2877200?c=03122026|04122026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-sagar-niwas-2877200?c=26112026|27112026&city=Bikaner&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Dec 3 sold out."
+    },
+    {
+     "hotel": "Hotel City Palace",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 2088,
+     "dec3_inr": 1202,
+     "nov26_inr": 1144,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-city-palace-3928400?c=12112026|13112026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-city-palace-3928400?c=03122026|04122026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-city-palace-3928400?c=26112026|27112026&city=Bikaner&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Royal Inn",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 2516,
+     "dec3_inr": 2516,
+     "nov26_inr": 2516,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4674122?c=12112026|13112026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4674122?c=03122026|04122026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4674122?c=26112026|27112026&city=Bikaner&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    },
+    {
+     "hotel": "Hotel Heeralal",
+     "room": "Super Room",
+     "plan": "Room with Breakfast (no Room Only plan)",
+     "diwali_inr": 2492,
+     "dec3_inr": 2128,
+     "nov26_inr": 2128,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-heeralal-723898?c=12112026|13112026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-heeralal-723898?c=03122026|04122026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-heeralal-723898?c=26112026|27112026&city=Bikaner&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Marudhar Palace",
+     "room": "Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 2176,
+     "dec3_inr": 1248,
+     "nov26_inr": 1248,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-marudhar-palace-719052?c=12112026|13112026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-marudhar-palace-719052?c=03122026|04122026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-marudhar-palace-719052?c=26112026|27112026&city=Bikaner&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Camp Rajputana",
+     "room": "Deluxe Room with 2 Single Beds",
+     "plan": "Room with Breakfast (only plan)",
+     "diwali_inr": 4980,
+     "dec3_inr": 5046,
+     "nov26_inr": 4980,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/camp-rajputana-4288478?c=12112026|13112026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/camp-rajputana-4288478?c=03122026|04122026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/camp-rajputana-4288478?c=26112026|27112026&city=Bikaner&state=Rajasthan&country=694&r=2,0"
+     ]
+    },
+    {
+     "hotel": "Hotel Manglam",
+     "room": "Super Deluxe Room",
+     "plan": "Room Only",
+     "diwali_inr": 1176,
+     "dec3_inr": 1176,
+     "nov26_inr": 1176,
+     "basis": "pre-tax",
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-manglam-719397?c=12112026|13112026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-manglam-719397?c=03122026|04122026&city=Bikaner&state=Rajasthan&country=694&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-manglam-719397?c=26112026|27112026&city=Bikaner&state=Rajasthan&country=694&r=2,0"
+     ],
+     "note": "Flat on all dates."
+    }
+   ],
+   "median_ratio_dec3": 1.09,
+   "median_ratio_nov26": 1.0,
+   "n": 7,
+   "n_dec3": 6,
+   "n_nov26": 7,
+   "notes": "Ganga Resort, Karni Bhawan Palace, Riddhi Siddhi Resorts: Dec 3 and Nov 26 both sold out. | Hotel Bhairon Vilas: no shared room type (12 Nov only Standard 2,328; Dec 3 and Nov 26 only Heritage Room 4,771), excluded. | Dec 3 sold out at many Bikaner properties, which may be wedding-season demand."
+  }
+ },
+ "overall_median_ratio_dec3": 1.38,
+ "overall_median_ratio_nov26": 1.19,
+ "n_pairs": 60,
+ "n_ratios_dec3": 54,
+ "n_ratios_nov26": 54,
+ "median_of_city_medians_dec3": 1.39,
+ "median_of_city_medians_nov26": 1.04,
+ "overall_notes": "Overall medians are pooled across all hotel pairs. Prices move mostly through discount depth: 12 Nov listed rates sit close to rack rate while Dec 3 and Nov 26 show deep (30 to 77 percent) discounts at many hotels, so ratios above 3x appear at several Jaisalmer, Somnath and Gujarat properties. Ranthambore and Bikaner were largely flat. Dec 3 sold out more often than Nov 26 (possible wedding-season demand). Thursday check-ins worked for every property; no Friday fallback was needed."
+}

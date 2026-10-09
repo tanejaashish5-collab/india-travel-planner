@@ -5,9 +5,17 @@
  *   node scripts/build-cost-research-sql.mjs north 081   # writes supabase/migrations/081_cost_research_north.sql
  *
  * Load rules (anything that fails a rule keeps its current modelled row):
- *   stay      hotel-mid needs n>=3, homestay/dorm n>=2, plus a source URL. Shoulder = median (x1.12 GST est. for
- *             rooms unless the basis says the price is tax-inclusive); peak = shoulder x1.35 (measured);
- *             low = shoulder x0.65 (model ratio, unmeasured). hotel-splurge is not researched and is untouched.
+ *   stay      hotel-mid needs n>=3, homestay/dorm n>=2, plus a source URL. Value = median (x1.12 GST est. for
+ *             rooms unless the basis says the price is tax-inclusive), ANCHORED TO THE SEASON OF ITS STAY DATE:
+ *             the tier's first dated month in price_basis ("13 Nov", "Oct 11") is looked up in that destination's
+ *             season months (read live from destination_costs). That season gets the observed value; the others
+ *             follow the model ratios peak = shoulder x1.35 (measured, Dec vs Oct-Nov), low = shoulder x0.65
+ *             (unmeasured). Undated -> anchored to October 2026, when the listing was viewed. A low-season
+ *             observation is HELD (not loaded):
+ *             scaling it up by 1/0.65 would publish an unmeasured peak; measure peak directly instead.
+ *             (Why: until 2026-10-09 every observation was loaded as shoulder, but Oct-Nov is PEAK for the plains,
+ *             coast and Goa, which overstated those places by 35% in every season.)
+ *             hotel-splurge is not researched and is untouched.
  *   no_lodging with a nearest_base -> stay rows (mid/splurge/homestay/dorm) are deleted.
  *   taxi      local day rate with a source URL and a basis that is not a proxy/default/template. Union and operator
  *             day rates do not vary by season, so all three seasons get the same value.
@@ -18,13 +26,16 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { loadDiwaliPremium } from "./_lib/diwali-premium.mjs";
 
-const [region, num] = process.argv.slice(2);
-if (!region || !num) { console.error("usage: build-cost-research-sql.mjs <region> <migration-number>"); process.exit(1); }
+const [region, num, label] = process.argv.slice(2);
+if (!region || !num) { console.error("usage: build-cost-research-sql.mjs <region> <migration-number> [label]"); process.exit(1); }
 const dir = path.join("data/cost-research", region);
 const files = fs.readdirSync(dir).filter((f) => /^B\d+\.json$/.test(f)).sort((a, b) => parseInt(a.slice(1)) - parseInt(b.slice(1)));
 const auditPath = path.join(dir, "_audit.json");
 const audit = fs.existsSync(auditPath) ? JSON.parse(fs.readFileSync(auditPath, "utf8")) : { taxi: {}, food: {}, food_unaudited: "load" };
+const excludePath = path.join(dir, "_exclude.json");
+const exclude = fs.existsSync(excludePath) ? JSON.parse(fs.readFileSync(excludePath, "utf8")) : { stay: {} };
 const scope = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(dir, "_scope.json"), "utf8")).map((d) => [d.id, d]));
 
 const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
@@ -37,9 +48,56 @@ const PROXY = /proxy|regional default|template|estimate|assumed|stand-in|same ba
 const STAY_PROXY = /[Cc]ity figures used|[Cc]ity medians|[Ff]igures are (the )?[A-Z]{4,}\b|used as the base|nearest town with data|stand-in for/;
 const round = (v, step) => Math.max(step, Math.round(v / step) * step);
 const SEASONS = ["shoulder", "peak", "low"];
+const RATIO = { peak: 1.35, shoulder: 1, low: 0.65 };
+const MONTH_NAMES = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// Season months per destination+category, read live (the months arrays are the site's own season definition).
+async function loadSeasonMonths() {
+  const token = process.env.SUPABASE_ACCESS_TOKEN, url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!token || !url) { console.error("Need SUPABASE_ACCESS_TOKEN + NEXT_PUBLIC_SUPABASE_URL (run with node --env-file=apps/web/.env.local) to read season months."); process.exit(1); }
+  const ref = new URL(url).hostname.split(".")[0];
+  const res = await fetch(`https://api.supabase.com/v1/projects/${ref}/database/query`, {
+    method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ query: "select destination_id d, category c, season s, months m from destination_costs where category in ('hotel-mid','homestay','hostel-dorm')" }),
+  });
+  if (!res.ok) { console.error(await res.text()); process.exit(1); }
+  const map = {};
+  for (const r of await res.json()) ((map[r.d] ??= {})[r.c] ??= {})[r.s] = r.m;
+  return map;
+}
+const seasonMonths = await loadSeasonMonths();
+const seasonOf = (dest, cat, mon) => Object.entries(seasonMonths[dest]?.[cat] ?? {}).find(([, ms]) => (ms ?? []).includes(mon))?.[0] ?? null;
+
+// First DATED month in a tier's own segment of price_basis ("Mid: Cleartrip ... 13 Nov 2026 ..."), else in the whole basis.
+// Needs a day number or year next to the month, so "Junagadh", "Marine" or the verb "may" never read as months.
+const MON = "(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)";
+const DATE = new RegExp(`\\b\\d{1,2}(?:\\s*[-–]\\s*\\d{1,2})?\\s+${MON}\\b|\\b${MON}\\s+\\d{1,2}\\b|\\b${MON}\\s+20\\d\\d\\b`, "i");
+const MN = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+const SEG = {
+  "hotel-mid": /\b(?:mid|3-star|three-star)[^:]{0,20}:([\s\S]*?)(?=\b(?:budget|homestay|dorm|hostel)[^:]{0,20}:|$)/i,
+  homestay: /\bhomestay[^:]{0,20}:([\s\S]*?)(?=\b(?:budget|mid|dorm|hostel)[^:]{0,20}:|$)/i,
+  "hostel-dorm": /\b(?:dorm|hostel)[^:]{0,20}:([\s\S]*?)(?=\b(?:budget|mid|homestay)[^:]{0,20}:|$)/i,
+};
+// Returns { mon, day } for the tier's first dated stay ("13 Nov", "13-14 Nov", "Nov 13"); day may be null ("Nov 2026").
+function obsDate(basis, cat) {
+  const b = basis ?? "";
+  const pick = (t) => {
+    const x = t.match(DATE); if (!x) return null;
+    const tok = x[1] || x[2] || x[3]; const day = x[0].match(/\d{1,2}/)?.[0];
+    return { mon: MN[tok.slice(0, 3).toLowerCase()], day: x[3] ? null : (day ? Number(day) : null) };
+  };
+  const seg = b.match(SEG[cat]);
+  return (seg && pick(seg[1])) || pick(b);
+}
+
+// Diwali 2026: Lakshmi Puja Sun 8 Nov, Gujarati New Year Tue 10 Nov (Drik Panchang). Stays priced for 7-15 Nov 2026
+// are holiday-week prices; deflate them by the measured same-hotel premium (rules in scripts/_lib/diwali-premium.mjs).
+// With no measurement file present, such stays are held instead of loaded.
+const diwali = loadDiwaliPremium();
+const diwaliRatio = (dest) => diwali.ratioFor(dest, scope[dest]?.state);
 
 const out = [];
-const stats = { stay: 0, nolodging: 0, taxi: 0, food: 0, skipped: [] };
+const stats = { stay: 0, nolodging: 0, taxi: 0, food: 0, anchors: {}, held: [], skipped: [] };
 
 function setRow(dest, cat, season, typical, step, note, rangeLowAbs = null) {
   const lowExpr = rangeLowAbs != null
@@ -79,13 +137,36 @@ for (const f of files) {
           ["hostel-dorm", s.dorm_median_inr, s.dorm_n, s.dorm_sources, 2, 1],
         ]) {
           if (v == null) continue;
+          if (exclude.stay?.[id]?.[cat]) { stats.skipped.push(`${id} ${cat} (excluded: ${exclude.stay[id][cat]})`); continue; }
           if ((n ?? 0) < minN || !hasUrl(src)) { stats.skipped.push(`${id} ${cat} (n=${n ?? 0})`); continue; }
           const step = cat === "hostel-dorm" ? 10 : 50;
-          const sh = round(v * mult, step);
-          const note = `${tag}. Median of ${n} listings${mult > 1 ? " x1.12 GST est." : ""}; peak x1.35 (measured), low x0.65 (model).`;
-          setRow(id, cat, "shoulder", sh, step, note);
-          setRow(id, cat, "peak", round(sh * 1.35, step), step, note);
-          setRow(id, cat, "low", round(sh * 0.65, step), step, note);
+          // No stay date on the listing: it was viewed in October 2026 and such pages default to near-term dates.
+          const od = obsDate(basis, cat) ?? { mon: 10, day: null, undated: true };
+          const mon = od?.mon ?? null;
+          const anchor = mon ? seasonOf(id, cat, mon) : null;
+          const inDiwali = od?.mon === 11 && od.day != null && od.day >= 7 && od.day <= 15;
+          if (inDiwali && !diwali) { stats.skipped.push(`${id} ${cat} (Diwali-week stay date; premium not measured yet)`); continue; }
+          const dInfo = inDiwali ? diwaliRatio(id) : null; const dRatio = dInfo?.ratio ?? 1;
+          if (anchor === "low") { stats.skipped.push(`${id} ${cat} (held: ${MONTH_NAMES[mon]} is low season here; peak unmeasured)`); stats.held.push(`${id}/${cat}`); continue; }
+          const forced = exclude.anchor?.[id]?.[cat];
+          const A = forced ?? anchor ?? "shoulder";
+          let observed = v * mult / dRatio;
+          // A measured ordinary-night median for the same tier and season is a second observation: combine (geometric mean).
+          const decIsPeak = (seasonMonths[id]?.[cat]?.peak ?? []).includes(12);
+          const nn = cat === "hotel-mid" && diwali ? diwali.normalNight(id, decIsPeak) : null;
+          const nnSeason = nn ? (decIsPeak ? "peak" : seasonOf(id, cat, 11)) : null;
+          // Different seasons are put on a shoulder-equivalent basis with the same model ratios before combining.
+          const pooled = !!(nn && nnSeason && RATIO[nnSeason]);
+          if (pooled) observed = Math.sqrt((observed / RATIO[A]) * (nn.inr * 1.12 / RATIO[nnSeason])) * RATIO[A];
+          const vals = Object.fromEntries(SEASONS.map((se) => [se, se === A ? round(observed, step) : round(observed / RATIO[A] * RATIO[se], step)]));
+          const dated = (od.undated ? `listing undated, viewed Oct 2026, a ${A} month here` : `stay ${od.day ? od.day + " " : ""}${MONTH_NAMES[mon]}, a ${A} month here`) + (inDiwali ? `; Diwali-week price / ${dRatio.toFixed(2)} (same-hotel premium: ${dInfo.basis})` : "");
+          const derived = SEASONS.filter((se) => se !== A).join(" and ");
+          const pooledNote = pooled ? ` Combined (geometric mean, shoulder-equivalent) with the ${nn.town} ordinary-night median of ${nn.n} hotels on ${nn.date} (a ${nnSeason} night), ${Math.round(nn.inr)} pre-tax.` : "";
+          const forcedNote = forced ? ` Anchored to ${forced}: ${exclude.anchorWhy?.[id] ?? "see _exclude.json"}.` : "";
+          const note = `${tag}. Median of ${n} listings${mult > 1 ? " x1.12 GST est." : ""} (${dated}).${pooledNote}${forcedNote} ${derived} by model ratio (peak = shoulder x1.35 measured, low = shoulder x0.65 unmeasured).`;
+          if (pooled) stats.pooled = (stats.pooled ?? 0) + 1;
+          for (const se of SEASONS) setRow(id, cat, se, vals[se], step, note);
+          stats.anchors[A] = (stats.anchors[A] ?? 0) + 1;
           stats.stay++;
         }
       }
@@ -106,14 +187,17 @@ for (const f of files) {
     const fd = d.food_per_person_day;
     const fa = audit.food?.[id];
     if (fa && !["KEEP", "CORRECT"].includes(fa.verdict)) stats.skipped.push(`${id} food (audit: ${fa.verdict})`);
+    // The typical value is the standard tier: if the audit could not verify it, nothing loads.
+    else if (fa?.verdict === "CORRECT" && "standard" in fa && fa.standard == null) stats.skipped.push(`${id} food (audit kept budget only)`);
     else if (!fa && audit.food_unaudited === "skip" && fd?.standard_inr != null) stats.skipped.push(`${id} food (not audited)`);
     // Audit sample: every food failure rested on price-band sites ($ glyphs, no rupees) or a borrowed range.
     else if (!fa && audit.food_unaudited === "load_unless_weak" && /restaurant guru|restaurant-guru|price band|\$\$|tripadvisor shows|numbeo .*proxy/i.test(`${fd?.basis ?? ""} ${(fd?.sources ?? []).join(" ")}`)) stats.skipped.push(`${id} food (price-band source)`);
-    else if (fd?.standard_inr != null && fd?.budget_inr != null) {
-      if (fa?.verdict === "CORRECT") { fd.budget_inr = fa.budget ?? fd.budget_inr; fd.standard_inr = fa.standard ?? fd.standard_inr; }
+    else if (fd?.standard_inr != null && (fd?.budget_inr != null || fa)) {
+      // An audit CORRECT may drop the budget tier (budget: null): keep the verified standard, range_low keeps its ratio.
+      if (fa?.verdict === "CORRECT") { if ("budget" in fa) fd.budget_inr = fa.budget; if (fa.standard != null) fd.standard_inr = fa.standard; }
       if (hasUrl(fd.sources) && fd.basis && !PROXY.test(fd.basis) && cd.food !== "proxy") {
         const note = `${tag}. Per person, 3 meals: budget ${fd.budget_inr}, standard ${fd.standard_inr}. ${String(fd.basis).slice(0, 140)}`;
-        for (const se of SEASONS) setRow(id, "food-per-day", se, round(fd.standard_inr, 10), 10, note, fd.budget_inr);
+        for (const se of SEASONS) setRow(id, "food-per-day", se, round(fd.standard_inr, 10), 10, note, fd.budget_inr ?? null);
         stats.food++;
       } else stats.skipped.push(`${id} food (${PROXY.test(fd.basis ?? "") ? "proxy" : "no source/basis"})`);
     } else if (fd) stats.skipped.push(`${id} food (incomplete)`);
@@ -122,11 +206,12 @@ for (const f of files) {
 
 const header = `-- ${num}: load observed cost research for ${region} (${files.join(", ")}).
 -- Generated by scripts/build-cost-research-sql.mjs on ${new Date().toISOString().slice(0, 10)}. Apply AFTER 080.
--- Stay categories written: ${stats.stay}; no-lodging deletes: ${stats.nolodging}; taxi destinations: ${stats.taxi}; food destinations: ${stats.food}.
+-- Stay categories written: ${stats.stay} (anchored to the season of the stay date: ${JSON.stringify(stats.anchors)}); held as low-season: ${stats.held.length}; no-lodging deletes: ${stats.nolodging}; taxi destinations: ${stats.taxi}; food destinations: ${stats.food}.
 -- Skipped (kept modelled): ${stats.skipped.length}.
 -- Backup: backups.destination_costs_20261009.
 BEGIN;`;
-const file = `supabase/migrations/${num}_cost_research_${region}.sql`;
+const file = `supabase/migrations/${num}_cost_research_${region}${label ? `_${label}` : ""}.sql`;
 fs.writeFileSync(file, `${header}\n${out.join("\n")}\n\nCOMMIT;\n`);
-console.log(file, JSON.stringify({ ...stats, skipped: stats.skipped.length }));
+console.log(file, JSON.stringify({ ...stats, held: stats.held.length, skipped: stats.skipped.length }));
+console.log("held (low-season observations):", stats.held.join(" "));
 console.log("skipped:", stats.skipped.join("; "));

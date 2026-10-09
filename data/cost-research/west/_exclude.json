@@ -1,0 +1,28 @@
+{
+ "_doc": "Stay figures that passed the n and source rules but are not like-for-like 3-star medians. Excluded from loading (the place keeps its season-corrected model value). Reviewed 2026-10-09 by the main session against each price_basis.",
+ "stay": {
+  "tadoba": {
+   "hotel-mid": "median mixes two 4-star resorts (Tathastu 15,046, Pugmark 7,866); only 2 non-4-star prices; meals often bundled"
+  },
+  "sariska": {
+   "hotel-mid": "median mixes 3 four-star properties; the 3-star-labelled ones run 3,104 to 18,135 (boutique estates), no stable mid tier"
+  },
+  "pench-maharashtra": {
+   "hotel-mid": "includes Sterling Orient Woods (4-star) and undated operator prices; mixed dates and tiers"
+  },
+  "champaner-pavagadh": {
+   "hotel-mid": "EaseMyTrip, no dates, mixes Club Mahindra and resorts within 13 km; not a like-for-like 3-star median"
+  },
+  "mandvi": {
+   "hotel-mid": "four 3-star prices from 904 to 11,154 on a Diwali-week Friday; bimodal, not a usable median"
+  }
+ },
+ "anchor": {
+  "rann-of-kutch": {
+   "hotel-mid": "peak"
+  }
+ },
+ "anchorWhy": {
+  "rann-of-kutch": "the Dhordo tent resorts operate only Nov-Feb, so their undated tariff is an in-season price"
+ }
+}

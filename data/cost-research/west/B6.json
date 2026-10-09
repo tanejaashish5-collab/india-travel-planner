@@ -1,0 +1,565 @@
+{
+  "batch": "B6",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "junagadh": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2848,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-junagadh"
+        ],
+        "budget_hotel_median_inr": 1243,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/junagadh/budget-hotels",
+          "https://www.cleartrip.com/hotels/homestays-in-junagadh"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Junagadh '3-star' page, check-in Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted nightly price; 8 of 15 rows priced (7 sold out): Raivat Inn 2,048, Byke Boutique Suraj Club 2,328, Leela Bizotel 2,842, Greenland 2,844, Grand Maruti 2,852, Sham Farm & Party Lawns 5,570, Click Hotel 6,720, Bellevue Sarovar Premiere 6,800; range 2,048-6,800. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: Hotel Somnath 935, Hotel Vishala 1,478, Hotel Harmony 1,652; plus Hotel Sapphire (2-star) 1,008 from the Cleartrip Junagadh 'homestays' page for 13 Nov 2026. Different dates per tier.",
+        "notes": "The mid median is pulled by two 6,700-6,800 rows (Click Hotel, Bellevue Sarovar); the six cheaper 3-stars sit at 2,048-2,852. Cleartrip's Junagadh 'homestays' page lists only hotels, so no homestay figure. No Hostelworld page for Junagadh (404), so no dorm figure. Luxuria Inn (5-star, 4,744), Enrise by Sayaji (4-star, 8,888) and the Fern Leo Resort (5-star, 8,839) shown on that page were left out of the 3-star mid."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1999,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Junagadh to Sasan Gir (about 52 km per the operator)",
+            "inr": 1395,
+            "range": "Dzire-class sedan one way before GST, Gozocabs; its page says fares include driver, tolls and taxes in one FAQ but says to check GST and tolls in another. HireMeCar lists Junagadh to Gir National Park (81.9 km) at 4,540 incl. GST on an outstation basis with waiting time, a different basis"
+          }
+        ],
+        "basis": "Median of three fetched local sedan quotes: HireMeCar Junagadh 8h/80km Dzire 1,884 base (1,978 with 5% GST; extra km 12, extra hour 150), Payal Cab Junagadh AC sedan 8h/80km 1,999 (extra km 12 on the card, 15 on its fare sheet), OneDay.travel Junagadh sightseeing sedan 2,999 (8-9 h; page dated 22 Apr 2026; includes parking, toll, driver allowance; stops Mahabat Maqbara, Uparkot, Damodar Kund, Girnar Hill base, Sakkarbaug Zoo). Not a union rate card; none found online.",
+        "sources": [
+          "https://hiremecar.com/taxi/cabs-in-junagadh",
+          "https://www.payalcab.in/cab-in-junagadh.php",
+          "https://oneday.travel/junagadh-sightseeing-trip/",
+          "https://www.gozocabs.com/book-taxi/junagadh-sasan_gir"
+        ],
+        "notes": "Payal Cab and HireMeCar are multi-city operators whose pages use the same layout across towns (Payal Cab shows 1,999 for both Junagadh and Bhavnagar), so treat the local figure as indicative. CabBazar's Junagadh local page (search-result title 1,500) returned 403 and is not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 645,
+        "basis": "Gujarat Orbit 'Top 10 restaurants in Junagadh' (posted 10 Jun 2025, updated 12 Jun 2025), cost per person ranges: Utsav 200-300, Jay Mataji Kathiyawadi Bhojanalay 100-180, Honest 200-300, The Urban Tandoor 300-500, Adarsh Dining Hall 120-200, Sugar & Spice 150-250, Gopal Locho & Farsan House 50-100, Jannat 250-400, Patel Restaurant 180-250 (range mid-points 250, 140, 250, 400, 160, 200, 75, 325, 215; Petals at the Fern Leo resort 400-700 excluded as a resort restaurant). Standard = 3 x 215 (median of the 9 mid-points) = 645. Budget = 3 x 150 (median of the four cheapest mid-points 75, 140, 160, 200) = 450.",
+        "sources": [
+          "https://www.gujaratorbit.com/blog/top-10-restaurants-in-junagadh/"
+        ],
+        "notes": "Single blog source with ranges, not menus; undated prices beyond the June 2025 post. Search snippets (not fetched, Zomato/Justdial not loadable) put dining-hall thalis at 100-180 (Patel unlimited thali about 180), consistent with the budget tier."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm",
+        "Taxi union / stand rate card",
+        "Zomato / Justdial cost-for-two (not loadable)",
+        "Budget and mid tiers are different dates (11 Oct vs 13 Nov)",
+        "Food rests on one blog's per-person ranges"
+      ]
+    },
+    "girnar": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Junagadh",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Girnar is the hill above Junagadh; visitors stay in Junagadh, so Junagadh's hotel medians are deliberately not repeated here.",
+        "notes": "No lodging page for Girnar itself was found on Cleartrip (no Girnar hotel listing); the no-lodging call follows the batch instruction (hill above Junagadh, lodging is Junagadh), and the nearest priced base is Junagadh (see junagadh). Dharamshala tariffs on the hill were not found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1999,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Junagadh to Sasan Gir (about 52 km per the operator)",
+            "inr": 1395,
+            "range": "Dzire-class sedan one way before GST, Gozocabs; its page says fares include driver, tolls and taxes in one FAQ but says to check GST and tolls in another. HireMeCar lists Junagadh to Gir National Park (81.9 km) at 4,540 incl. GST on an outstation basis with waiting time, a different basis"
+          }
+        ],
+        "basis": "Median of three fetched local sedan quotes: HireMeCar Junagadh 8h/80km Dzire 1,884 base (1,978 with 5% GST; extra km 12, extra hour 150), Payal Cab Junagadh AC sedan 8h/80km 1,999 (extra km 12 on the card, 15 on its fare sheet), OneDay.travel Junagadh sightseeing sedan 2,999 (8-9 h; page dated 22 Apr 2026; includes parking, toll, driver allowance; stops Mahabat Maqbara, Uparkot, Damodar Kund, Girnar Hill base, Sakkarbaug Zoo). Not a union rate card; none found online.",
+        "sources": [
+          "https://hiremecar.com/taxi/cabs-in-junagadh",
+          "https://www.payalcab.in/cab-in-junagadh.php",
+          "https://oneday.travel/junagadh-sightseeing-trip/",
+          "https://www.gozocabs.com/book-taxi/junagadh-sasan_gir"
+        ],
+        "notes": "Junagadh's local sightseeing day includes Girnar Hill (OneDay.travel itinerary), so these are the Junagadh figures re-used for a Girnar day. Payal Cab and HireMeCar are multi-city operators whose pages use the same layout across towns (Payal Cab shows 1,999 for both Junagadh and Bhavnagar), so treat the local figure as indicative. CabBazar's Junagadh local page (search-result title 1,500) returned 403 and is not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 645,
+        "basis": "Gujarat Orbit 'Top 10 restaurants in Junagadh' (posted 10 Jun 2025, updated 12 Jun 2025), cost per person ranges: Utsav 200-300, Jay Mataji Kathiyawadi Bhojanalay 100-180, Honest 200-300, The Urban Tandoor 300-500, Adarsh Dining Hall 120-200, Sugar & Spice 150-250, Gopal Locho & Farsan House 50-100, Jannat 250-400, Patel Restaurant 180-250 (range mid-points 250, 140, 250, 400, 160, 200, 75, 325, 215; Petals at the Fern Leo resort 400-700 excluded as a resort restaurant). Standard = 3 x 215 (median of the 9 mid-points) = 645. Budget = 3 x 150 (median of the four cheapest mid-points 75, 140, 160, 200) = 450.",
+        "sources": [
+          "https://www.gujaratorbit.com/blog/top-10-restaurants-in-junagadh/"
+        ],
+        "notes": "Junagadh figures re-used: day-trippers eat in Junagadh. Single blog source with ranges, not menus; undated prices beyond the June 2025 post. Search snippets (not fetched, Zomato/Justdial not loadable) put dining-hall thalis at 100-180 (Patel unlimited thali about 180), consistent with the budget tier."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Girnar-specific taxi fare (Gozocabs Junagadh-Girnar page shows only SUV/tempo fares and a placeholder distance)",
+        "Doli and ropeway fares",
+        "Dharamshala tariffs on the hill",
+        "Food and taxi are Junagadh figures, since the base is Junagadh"
+      ]
+    },
+    "gir-national-park": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5178,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-sasan-gir"
+        ],
+        "budget_hotel_median_inr": 2000,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/sasan-gir/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Sasan Gir '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted nightly price, all 16 listed (none sold out): Hotel Daksh 1,362, Patang Family Resort 2,305, Gir Lions Paw 3,360, Lionsburg 3,622, Bright View Cottages 3,861, Pinewood 4,361, Hotel Gir Scintilla 4,446, Amidhara 4,758, Aranya Villa 5,598, Anil Farms 6,476, Asiatic Lion Lodge 6,750, Lion Signature Family Resort 8,578, Gir Pride 10,488, The Bhagvati 11,551, The Premier Gir Resort 15,943, Vanbhoomi 17,438; range 1,362-17,438. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: the only listing is Shiv Farm House (Bhojde Road) 2,000.",
+        "notes": "Same area as sasangir (Sasan Gir village): researched once, identical figures written under both ids. Hotel medians are Sasan Gir hotels and resorts, not safari lodges at the luxury end. The same Cleartrip 'homestays' page for 11 Oct 2026 (it says no homestays are available and shows hotels instead) lists 19 hotels with a median of 4,602 (range 2,000-17,075, pre-tax), so a mid-October weekday-ish capture runs about 11% below the 13 Nov Friday figure. Hotel Daksh is 1,362 on 13 Nov but 4,326 on the 11 Oct page, so that row is volatile. Safari costs, notes only (official Gir booking site, girlion.gujarat.gov.in): Gir Jungle Safari permit for Indians 800 for up to 6 people Mon-Fri, 1,000 on Sat/Sun/festival days; gypsy (Category A) 2,500 for 4 seats, 3,500 for 6, 4,500 for 8; guide 400-700; permit excludes guide and vehicle; safari closed 16 June to 15 Oct each year. Budget n=1 and no homestay or dorm found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Junagadh to Sasan Gir (about 52 km per the operator)",
+            "inr": 1395,
+            "range": "Dzire-class sedan one way before GST, Gozocabs"
+          },
+          {
+            "route": "Sasan Gir to Diu (about 97 km)",
+            "inr": 2925,
+            "range": "sedan one way before GST, Gozocabs"
+          },
+          {
+            "route": "Somnath to Sasan Gir (about 41 km)",
+            "inr": 1368,
+            "range": "sedan one way before GST, Gozocabs"
+          }
+        ],
+        "basis": "No Sasan Gir local day rate was readable. Shiv Shakti Tour & Travels (Veraval address) says cab fare in Sasan Gir 'starts from Rs 12 per km' (its headline says Rs 13/km; Ertiga 15/km; no sedan rate, no day rate or minimum km). Point-to-point sedan fares are from three fetched Gozocabs route pages ('before GST'; the page is inconsistent on whether tolls are included).",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/junagadh-sasan_gir",
+          "https://www.gozocabs.com/book-taxi/sasan_gir-diu",
+          "https://www.gozocabs.com/book-taxi/somnath-sasan_gir",
+          "https://shivshaktitourtravels.com/taxi-service-in-sasan-gir"
+        ],
+        "notes": "Gozocabs fares for the same Junagadh route vary by capture (its search title read 1,732, the fetched page 1,395), so treat the figure as indicative. Gir National Park jungle safari is closed 16 June to 15 Oct (official booking page); Devalia Safari Park is a separate zone."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": null,
+        "basis": "Hotel Gir Kathiyawadi (Sasan Gir, Somnath highway): Google review dated 13 Jan 2025 quotes Gujarati thali '150rs per plate with 3 sabji, dal bhat, rotlo, rotli, gud, chhaas'. Budget = 3 x 150 = 450, an upper bound if all three meals are thalis (a tea and snack breakfast would be cheaper).",
+        "sources": [
+          "https://wanderlog.com/place/details/2815014/hotel-gir-kathiyawadi-sasan-gir"
+        ],
+        "notes": "One reviewer figure from one place. Standard not derived: no fetched page gave rupee menu prices for several Sasan Gir sit-down restaurants (Justdial / Zomato not loadable; Tripadvisor and Restaurant Guru show only price bands). Most resorts sell meal plans, which can be cheaper than eating out."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Homestay and dorm",
+        "Local day taxi rate",
+        "Standard food",
+        "Budget stay is a single listing (n=1)",
+        "Zomato / Justdial figures (not loadable)"
+      ]
+    },
+    "sasangir": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5178,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-sasan-gir"
+        ],
+        "budget_hotel_median_inr": 2000,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/sasan-gir/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Sasan Gir '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted nightly price, all 16 listed (none sold out): Hotel Daksh 1,362, Patang Family Resort 2,305, Gir Lions Paw 3,360, Lionsburg 3,622, Bright View Cottages 3,861, Pinewood 4,361, Hotel Gir Scintilla 4,446, Amidhara 4,758, Aranya Villa 5,598, Anil Farms 6,476, Asiatic Lion Lodge 6,750, Lion Signature Family Resort 8,578, Gir Pride 10,488, The Bhagvati 11,551, The Premier Gir Resort 15,943, Vanbhoomi 17,438; range 1,362-17,438. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: the only listing is Shiv Farm House (Bhojde Road) 2,000.",
+        "notes": "Same area as gir-national-park (Sasan Gir village): researched once, identical figures written under both ids. Hotel medians are Sasan Gir hotels and resorts, not safari lodges at the luxury end. The same Cleartrip 'homestays' page for 11 Oct 2026 (it says no homestays are available and shows hotels instead) lists 19 hotels with a median of 4,602 (range 2,000-17,075, pre-tax), so a mid-October weekday-ish capture runs about 11% below the 13 Nov Friday figure. Hotel Daksh is 1,362 on 13 Nov but 4,326 on the 11 Oct page, so that row is volatile. Safari costs, notes only (official Gir booking site, girlion.gujarat.gov.in): Gir Jungle Safari permit for Indians 800 for up to 6 people Mon-Fri, 1,000 on Sat/Sun/festival days; gypsy (Category A) 2,500 for 4 seats, 3,500 for 6, 4,500 for 8; guide 400-700; permit excludes guide and vehicle; safari closed 16 June to 15 Oct each year. Budget n=1 and no homestay or dorm found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Junagadh to Sasan Gir (about 52 km per the operator)",
+            "inr": 1395,
+            "range": "Dzire-class sedan one way before GST, Gozocabs"
+          },
+          {
+            "route": "Sasan Gir to Diu (about 97 km)",
+            "inr": 2925,
+            "range": "sedan one way before GST, Gozocabs"
+          },
+          {
+            "route": "Somnath to Sasan Gir (about 41 km)",
+            "inr": 1368,
+            "range": "sedan one way before GST, Gozocabs"
+          }
+        ],
+        "basis": "No Sasan Gir local day rate was readable. Shiv Shakti Tour & Travels (Veraval address) says cab fare in Sasan Gir 'starts from Rs 12 per km' (its headline says Rs 13/km; Ertiga 15/km; no sedan rate, no day rate or minimum km). Point-to-point sedan fares are from three fetched Gozocabs route pages ('before GST'; the page is inconsistent on whether tolls are included).",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/junagadh-sasan_gir",
+          "https://www.gozocabs.com/book-taxi/sasan_gir-diu",
+          "https://www.gozocabs.com/book-taxi/somnath-sasan_gir",
+          "https://shivshaktitourtravels.com/taxi-service-in-sasan-gir"
+        ],
+        "notes": "Gozocabs fares for the same Junagadh route vary by capture (its search title read 1,732, the fetched page 1,395), so treat the figure as indicative. Gir National Park jungle safari is closed 16 June to 15 Oct (official booking page); Devalia Safari Park is a separate zone."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": null,
+        "basis": "Hotel Gir Kathiyawadi (Sasan Gir, Somnath highway): Google review dated 13 Jan 2025 quotes Gujarati thali '150rs per plate with 3 sabji, dal bhat, rotlo, rotli, gud, chhaas'. Budget = 3 x 150 = 450, an upper bound if all three meals are thalis (a tea and snack breakfast would be cheaper).",
+        "sources": [
+          "https://wanderlog.com/place/details/2815014/hotel-gir-kathiyawadi-sasan-gir"
+        ],
+        "notes": "One reviewer figure from one place. Standard not derived: no fetched page gave rupee menu prices for several Sasan Gir sit-down restaurants (Justdial / Zomato not loadable; Tripadvisor and Restaurant Guru show only price bands). Most resorts sell meal plans, which can be cheaper than eating out."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Homestay and dorm",
+        "Local day taxi rate",
+        "Standard food",
+        "Budget stay is a single listing (n=1)",
+        "Zomato / Justdial figures (not loadable)"
+      ]
+    },
+    "bhavnagar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2202,
+        "mid_n": 9,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-bhavnagar"
+        ],
+        "budget_hotel_median_inr": 1465,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/bhavnagar/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Bhavnagar '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted nightly price; 9 of 15 rows priced (6 sold out): Hotel O Bhavnagar Bus Terminal 958, Bliss Hotel 974, Hotel G-1 Premium 1,119, Hotel Aura 1,509, Hotel City Pride 2,202, Su-Casa 2,852, Hotel The Sankalp Retreat 3,188, Hotel Meriton 3,257, Hotel Virgo Sumeru 5,438; range 958-5,438. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: Hotel Blue Hill 999, GenX Bhavnagar 1,931. Different dates per tier.",
+        "notes": "The page lists only two budget hotels; the 3-star page's lowest rows (958-1,119) are as cheap as the budget tier. No homestay found. Santu GSM Eco Resort is labelled 'Hostel' but was sold out for 13 Nov and showed no dorm price; no Hostelworld page was checked, so no dorm figure."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1992,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bhavnagar to Velavadar (about 48 km)",
+            "inr": 1423,
+            "range": "sedan one way before GST, Gozocabs; DDcab page (about 1,000 days old, internally inconsistent) says 2,250"
+          }
+        ],
+        "basis": "Two fetched local sedan quotes: Payal Cab Bhavnagar AC sedan 8h/80km 1,999 (extra km 12 on the card, 15 on the fare sheet; extra hour 150) and HireMeCar Bhavnagar Etios-class 8h/80km 1,985 base (2,084 with 5% GST; extra km 10, extra hour 150); mean 1,992. TransRentals Bhavnagar lists the Dzire 8h/80km as 'Free quote' (no price). Search-result snippets (not fetched) range from MakeMyTrip 1,268 to Clear Car Rental 2,200. Not a union card; none found.",
+        "sources": [
+          "https://www.payalcab.in/cab-in-bhavnagar.php",
+          "https://hiremecar.com/taxi/cabs-in-bhavnagar",
+          "https://www.gozocabs.com/book-taxi/bhavnagar-velavadar",
+          "https://ddcab.com/bhavnagar-to-velavadar-cabs"
+        ],
+        "notes": "Payal Cab and HireMeCar are multi-city operators (same layout and phone across towns), so the local figure is indicative. Palitana and Diu day trips are outstation fares, not local."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 1028,
+        "basis": "Gujarat Orbit 'Top 10 restaurants in Bhavnagar' (posted 5 Mar 2025, updated 7 Mar 2025), cost per person: R K Garden 300-500, Rangoli Resort unlimited Gujarati thali about 360, Rasoi Dining Hall 250-350, The Food Lounge 200-350, Sankalp 200-300, Desi Tadka Kathiyawadi Garden 250-400, Blue Coriander 350-500, Tulsi 200-300, Saffron 300-450, Mango World Cuisine 400-600 (mid-points 400, 360, 300, 275, 250, 325, 425, 250, 375, 500). Standard = 3 x 342.5 (median of the 10 mid-points) = 1,028. Budget = 3 x 200, the lowest range end among the ten, because the page lists no street-food or dhaba tier.",
+        "sources": [
+          "https://www.gujaratorbit.com/blog/top-10-restaurants-in-bhavnagar/",
+          "https://bhavnagar.city/listing/rasoi-dining-hall/",
+          "https://wanderlog.com/list/geoCategory/367341/best-restaurants-to-have-dinner-in-bhavnagar"
+        ],
+        "notes": "The budget figure is a floor taken from sit-down restaurants, not measured street-food prices (gathiya stalls cost far less). Cross-checks: bhavnagar.city (undated) puts the Rasoi Dining Hall unlimited thali at about 320 per person; Wanderlog reviewers quote Rasoi 360-395 per thali and Shriji's Garden about 250 per person. Gujarat Orbit tends to quote wide ranges, so standard may run high."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Homestay and dorm",
+        "Union taxi rate card; local fares from multi-city operator pages",
+        "Budget food (no street-food prices found)",
+        "Zomato / Justdial / Tripadvisor (not loadable)"
+      ]
+    },
+    "velavadar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Bhavnagar (about 48 km by Gozocabs, 65 km by TransRentals); park closed 16 Jun to 15 Oct",
+        "mid_median_inr": 10488,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-velavadar"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip Velavadar page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted: The Blackbuck Trails Velavadar (listed 4-star resort) 10,488 (list price 19,000, 45% off). The other listing, Blackbuck Safari Lodge (listed 3-star hotel, rated 4.8), was sold out for those dates. n=1 and not a 3-star, so treat as an upper-mid single data point.",
+        "notes": "Tripadvisor ranks Blackbuck Safari Lodge '#1 of 3 hotels in Velavadar' and shows an average standard-room range of 5,323-12,873 (tax-inclusive, partner averages, no dates). The Blackbuck Lodge (luxury) official rates for 1 Oct 2026 to 31 Mar 2027, CP plan per room: Villa 32,000, Plunge Pool Villa 40,000, Pool Villa 52,000, Blackbuck Suite 60,000, plus 18% tax; its safari 9,500 per guest for Indians plus 18% tax (jeep up to 5). Park entry (official Gujarat forest site, Indian visitors): personal car or jeep 400, 25% extra on weekends; gypsy hire is paid to the driver and no amount is shown. No budget, homestay or dorm found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Bhavnagar to Velavadar (about 48 km)",
+            "inr": 1423,
+            "range": "sedan one way before GST, Gozocabs; DDcab page says 2,250 one way and 3,300 for a 1-day package (page about 1,000 days old, inconsistent)"
+          }
+        ],
+        "basis": "No Velavadar local day rate: the park is one site reached from Bhavnagar. Single fetched current fare: Gozocabs Bhavnagar to Velavadar ~48 km sedan 1,423 before GST. DDcab (undated, old) shown as the high end.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/bhavnagar-velavadar",
+          "https://ddcab.com/bhavnagar-to-velavadar-cabs",
+          "https://girlion.gujarat.gov.in/AboutVelavadarNationalPark.aspx"
+        ],
+        "notes": "One-way fares exclude waiting during the safari; a round trip with waiting costs more. Park closed 16 June to 15 October; winter hours 6:30-11:30 and 14:00-19:00."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Velavadar has no town food market; visitors eat in Bhavnagar or at the lodge. See the bhavnagar entry for city prices.",
+        "sources": [],
+        "notes": "Not researched separately."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Any 3-star room price (Blackbuck Safari Lodge sold out for 13 Nov; no point price readable)",
+        "Budget, homestay, dorm",
+        "Local taxi day",
+        "Food",
+        "Safari gypsy hire price"
+      ]
+    },
+    "surat": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2059,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-surat"
+        ],
+        "budget_hotel_median_inr": 1679,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/surat/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Surat '3-star' page, Fri 13 Nov 2026, 1 night, 2 guests, pre-tax discounted nightly price; 15 rows listed, none sold out, dropped Regenta The World Surat (5-star, 5,050) -> 14: Hotel RB Residency 1,069, FabHotel La Victoria 1,479, Hotel Le Grand 1,567, Hotel Satkar 1,686, Hotel Royal Rituals 1,837, The Byke Business Embassy 1,863, Hotel El Magnifico 1,866, Hotel Crown Palace 2,252, The Park Infinity 2,807, Hotel Elements 3,003, Ginger Piplod 3,320, De Glance 5,130, Lords Plaza 5,760, Ginger City Centre 8,215; range 1,069-8,215. Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax: Hotel R B Residency 999, Hotel Swagat 1,679, Hotel Merit 1,848.",
+        "notes": "Hotel RB Residency appears in both tiers (1,069 on 13 Nov, 999 on 11 Oct), so budget and mid share one property. Surat is a business city; weekday vs weekend and trade-fair dates move prices. No homestay or dorm page found (Hostelworld Surat returned 404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2292,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Surat to Vadodara (about 154 km)",
+            "inr": 2642,
+            "range": "sedan base fare before 5% GST, HireMeCar (includes 154 km, tolls and state permits); Dwarkesh Cab lists Surat to Vadodara sedan from 2,250"
+          }
+        ],
+        "basis": "Two fetched local sedan quotes: Payal Cab Surat AC sedan 8h/80km 2,199 (extra km 12 on the card, 15 on the fare sheet; extra hour 150; driver allowance 100) and HireMeCar Surat Etios-class 8h/80km 2,385 base (2,504 with 5% GST; extra km 13, extra hour 150); mean 2,292. HireMeCar's Tata Indica Vista (hatchback class) is 2,298. Search-result snippets (not fetched) range from CabBazar 1,500 to XploreWorld360 2,700. Not a union card.",
+        "sources": [
+          "https://www.payalcab.in/cab-in-surat.php",
+          "https://hiremecar.com/taxi/cabs-in-surat",
+          "https://dwarkeshcab.in/surat/car-rental-surat/"
+        ],
+        "notes": "Payal Cab and HireMeCar are multi-city operators, so indicative. The Dwarkesh Cab Surat page lists a Jamnagar address and placeholder contact details; used only for the Vadodara comparison."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 1125,
+        "basis": "Gujarat Orbit 'Top 10 restaurants in Surat' (posted 28 Jan 2025), cost per person: Sasuma Gujarati Thali 300-400, Kansar Gujarati Thali 350-450, Sugar N Spice 400-500, Leonardo Italian Cafe 600-800, Jalaram Locho Khaman House 100-200, Sizzling Salsa 500-700, Khichdi Samrat 300-400, Madras Cafe 150-250 (mid-points 350, 400, 450, 700, 150, 600, 350, 200; The Grand Bhagwati 800-1,200 and Ziba by Spice Villa 600-900 excluded as fine dining). Standard = 3 x 375 (median of the 8 mid-points) = 1,125. Budget = 3 x 200 (median of the three cheapest mid-points 150, 200, 350).",
+        "sources": [
+          "https://www.gujaratorbit.com/blog/top-10-restaurants-in-surat/"
+        ],
+        "notes": "Single blog with ranges, dated Jan 2025. The thali places (about 350 each) are lunch-heavy, so a full day with a lighter breakfast and a casual dinner could be lower than 1,125. Search snippets (not fetched) put Purohit thali at 180 and locho plates at 20-30."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Homestay and dorm",
+        "Union taxi rate card",
+        "Food rests on one blog's per-person ranges",
+        "Zomato / Justdial (not loadable)"
+      ]
+    },
+    "statue-of-unity": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Kevadia / Ekta Nagar (2-5 km from the statue); Vadodara is the alternative base about 90 km away",
+        "mid_median_inr": 4157,
+        "mid_n": 9,
+        "mid_sources": [
+          "https://www.kayak.co.in/Kevadia-Hotels.120678.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1800,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.kayak.co.in/Kevadia-Hotels.120678.hotel.ksp"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Kayak India Kevadia page, 10-11 Oct (year not printed), 'from' prices, tax status not stated. Mid (n=9): Hotel Kailash Inn 2,223, Hotel Stature Inn 2,960, Hotel The Grand Unity 3,287, Ginger Ekta Nagar 3,697, The Sky Imperial Unity Inn 4,157, Nirvana Resort 4,688, Fortune Statue of Unity 4,737, Enrise by Sayaji 4,930, Ramada Encore by Wyndham 5,510; range 2,223-5,510. Budget (n=3, Kayak 'cheap' list): Sardar Hotel & Home Stay 1,643, Pop Townhouse Oak Garudeshwar 1,800, Hotel Pragati 1,933.",
+        "notes": "Left out of the mid median: Vivanta Ekta Nagar 6,863 (upscale), Statue of Unity Tent City 10,537 (listed per room), Sou Eco Camp 5,027 and Van Vagdo 5,800 (camps). Kayak also shows Hotel BRG Budget Stay at 967 without a date. Cleartrip's Kevadia and Ekta Nagar pages returned no hotels for 13 Nov 2026, so there is no second source. Kayak's own seasonal averages for Kevadia run from 2,654 a night in July to 9,897 in December, so a winter weekend can be far above these October prices. Tent City (separate from the hotels, priced per person with meals; third-party resellers, official Oct-Mar tariff not found): statueofunityonline.com lists Tent City-1 all-inclusive (stay, all meals, guided tour) per person on twin sharing for 1 Jul to 30 Sep 2026 at 7,000 (Premium, Sun-Mon) to 9,000 (Royal, Tue-Sat) for one night, plus 18% GST; its Continental plan (stay and breakfast) is 3,500-4,500 per person for 1 Apr to 30 Sep 2026. A separate Tent City Narmada package page (visitsou.com, undated) lists 9,200 per person for a group of 4 sharing, 1 night, including breakfast and dinner and a vehicle. No homestay or dorm priced."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Vadodara to Statue of Unity (about 90 km, one way)",
+            "inr": 1900,
+            "range": "sedan 1,800 (CabTripTravel, 90 km included, 11/km extra) to 2,000 (Amber Cabs Vadodara, 90 km included, 11/km extra)"
+          }
+        ],
+        "basis": "No local day rate: the Statue of Unity complex is a single destination reached from Vadodara or Kevadia. Median of two fetched Vadodara to Statue of Unity one-way sedan fares (Dzire-class CNG sedan, GST invoice).",
+        "sources": [
+          "https://www.ambercabs.com/vadodara-to-statue-of-unity-one-way-taxi-service",
+          "https://cabtriptravel.com/vadodara-to-statue-of-unity-taxi-hire"
+        ],
+        "notes": "One-way fares do not include waiting at Kevadia; a driver waiting through a 4-6 hour visit would raise the cost (a search result put a round trip at 2,500-3,000, not fetched). CabTripTravel's page lists a Rajkot address."
+      },
+      "food_per_person_day": {
+        "budget_inr": 660,
+        "standard_inr": null,
+        "basis": "Ekta Thali at Ekta Tribal Cafe (Ekta Nursery, Statue of Unity complex), listed at 220 for adult and child on theunitytourism.com. Budget = 3 x 220 = 660, an upper bound if all three meals are this thali.",
+        "sources": [
+          "https://theunitytourism.com/ticket/statue-of-unity-ekta-tribal-cafe-at-ekta-nursery-ekta-thali"
+        ],
+        "notes": "One item at one cafe inside the complex, where prices run higher than in town. No rupee menu data found for Kevadia town restaurants or the Ekta Food Court (Restaurant Guru's 890-2,200 range was not used). Standard not derived."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Second stay source",
+        "Homestay and dorm",
+        "Official Oct-Mar Tent City tariff",
+        "Local taxi / in-complex transport fares",
+        "Standard food"
+      ]
+    },
+    "saputara": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4543,
+        "mid_n": 11,
+        "mid_sources": [
+          "https://www.kayak.co.in/Saputara-Hotels.58541.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 2789,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/saputara/budget-hotels"
+        ],
+        "homestay_median_inr": 4276,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-saputara"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Kayak India Saputara page, 10-11 Oct (year not printed), 'from' prices, tax status not stated, 11 of 13 listed properties: Manas Cottage 1,837, Patang Residency 2,127, Treebones Resort 3,577, Savshanti Lake Resort 3,867, Strawberry Hills 4,157, Hotel Sejal by Nexottel 4,543, Hotel Lake View 4,574, Jalsa Villas 5,123, Daksh The Valley Resort 5,691, Shilpi Hill Resort 5,800, Aakar Lords Inn 7,443 (dropped Sunotel 14,790 and Salher Fort Camp Agrotourism 1,547). Budget: Cleartrip Saputara budget page, Sun 11 Oct to Mon 12 Oct, pre-tax: Toran Ambika Saputara 2,789 and Toran Hill Resort Saputara 2,789 (Gujarat Tourism properties, the two cheapest priced). Homestay: Cleartrip homestay page, 13 Nov 2026, pre-tax: Manas Cottage Saputara 4,276 (list 5,500).",
+        "notes": "Cross-check: Cleartrip '3-star' page for Fri 13 Nov 2026 priced only 3 of 14 (Manas Cottage 4,276, Hotel Lake View 5,994, Shilpi Hill Resort 9,606; the other 11 sold out), median 5,994, so a November Friday runs well above the Kayak October figures. Cleartrip's 11 Oct 'budget' page shows Hotel Lakeview 10,240, Aakar Lords 7,021, Patang Residency 5,900, Shilpi 7,080, Sejal Inn 3,920, Manas Cottage 4,719, which is 1.5-3x the Kayak 10-11 Oct figures for the same hotels (Manas 1,837, Patang 2,127), so Saputara prices are very source- and date-dependent and the mid figure is low-confidence. Season Oct to Jun as stated in the brief. Budget n=2 are both Gujarat Tourism Toran properties; homestay n=1 and Kayak shows the same Manas Cottage at 1,837. No dorm page found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Surat to Saputara (about 159 km, one way)",
+            "inr": 2499,
+            "range": "sedan 2,399 (OneSidedCabs, fixed fare, excl. toll, state tax and 5% GST) to 2,930 (Gozocabs, ~170 km, before GST); Payal Cab 2,499 for 159.3 km, extra km 15"
+          }
+        ],
+        "basis": "Local: Yash Cab Service page title 'Saputara Local Sightseeing Cab - 2000' (full-day sightseeing; the page body with hours, km and vehicle could not be read, and the page is old per a search note). Point-to-point: median of three fetched Surat to Saputara one-way sedan fares (2,399, 2,499, 2,930).",
+        "sources": [
+          "https://yashcabservice.com/saputara-local-sightseeing-cab-%E2%82%B92000/",
+          "https://www.payalcab.in/surat-saputara-taxi.php",
+          "https://www.onesidedcabs.com/cabs/surat-to-saputara-cab-service",
+          "https://www.gozocabs.com/book-taxi/surat-saputara"
+        ],
+        "notes": "TransRentals states local taxi is not yet live in Saputara. Gira Falls is about 52 km away per a travel guide (not fetched), so confirm whether a quote includes it."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": null,
+        "basis": "Wanderlog 'best spots for lunch in Saputara': reviewers quote Hotel Purohit Gujarati thali at 250 (Viswanathan N: 'Reasonably priced at 250/-'; Tejas D: '250 for adults, 150 for kids'); Pranav Restaurant's listing says prices 'typically ranging from 100 to 200 per person'. Budget = 3 x 200, the midpoint between the Pranav mid-point (150) and the Purohit thali (250).",
+        "sources": [
+          "https://wanderlog.com/list/geoCategory/311098/best-spots-for-lunch-in-saputara"
+        ],
+        "notes": "Two places only; Pranav's range has no currency symbol (rupees assumed). Go Tourister (15 Jul 2026) gives only tiers, budget 150-350 per person, mid 350-700, no per-restaurant prices. Standard not derived."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dorm",
+        "Standard food",
+        "Local taxi page body (hours / km / vehicle)",
+        "Budget stay is two Gujarat Tourism rows",
+        "Mid stay is Kayak 'from' prices with no star filter"
+      ]
+    }
+  }
+}

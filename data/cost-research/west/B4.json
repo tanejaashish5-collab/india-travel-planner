@@ -1,0 +1,450 @@
+{
+  "batch": "B4",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "ahmedabad": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3933,
+        "mid_n": 15,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-ahmedabad"],
+        "budget_hotel_median_inr": 1343,
+        "budget_n": 19,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/ahmedabad/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 350,
+        "dorm_n": 3,
+        "dorm_sources": ["https://www.hostelworld.com/hostels/Ahmedabad?currency=INR"],
+        "price_basis": "Mid: Cleartrip '3-star' page, 13-14 Nov 2026, 2 guests, pre-tax headline price (after Cleartrip coupon where shown); the 15 properties tagged 3-star with a price (range 669-6,242). Excluded Hotel Riverfront (tagged 1-star) and Clubhouse Nami Residency (4-star). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, 19 of the 20 shown (range 500-1,958); excluded 10blossoms service apartment. Different dates per tier. Dorm: Hostelworld 'From' bed prices with no date shown: Charyana Hotel & AC Dormitory 499, Night-halt Dormitory 350, Samsiddhi 325; a Hotel Millennium dorm listed at Rs 10 was excluded as implausible.",
+        "notes": "Mid list is bimodal: Hotel Park Villa 669, Tribecca Select 1,245 and Privilon 1,800 are budget-class even though tagged 3-star. Cleartrip's Ahmedabad homestay page shows only one available property, French Haveli (heritage, 4,561), the rest sold out, so no homestay median."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2150,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          { "route": "Ahmedabad to Modhera (~110 km)", "inr": 2120, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Ahmedabad to Patan / Rani ki Vav (~126 km)", "inr": 2135, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Ahmedabad to Nalsarovar (~66 km)", "inr": 1700, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Ahmedabad to Dakor (~89 km)", "inr": 1752, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Ahmedabad to Vadodara (~117 km)", "inr": 1384, "range": "sedan one-way before GST, Gozocabs" }
+        ],
+        "basis": "Median of 2 sedan 8h/80km Ahmedabad quotes: YourTaxi (B-1001 PNTC, Prahlad Nagar, Ahmedabad) 2,500 for 8 hours / 80 km, extra Rs 200/hr and Rs 11/km (day sightseeing package 2,799); MTC India Mobility 1,800 'starts at', fuel included, outstation Rs 11-12/km. Range 1,800-2,500. Neither page is dated (copyright 2026 only). Per km 11 = YourTaxi extra-km rate and the low end of MTC.",
+        "sources": [
+          "https://yourtaxi.in/places-to-visit-in-ahmedabad/",
+          "https://www.mtccarhire.com/car-rental/ahmedabad",
+          "https://www.gozocabs.com/book-taxi/ahmedabad-modhera",
+          "https://www.gozocabs.com/book-taxi/ahmedabad-patan",
+          "https://www.gozocabs.com/book-taxi/ahmedabad-nalsarovar",
+          "https://www.gozocabs.com/book-taxi/ahmedabad-dakor",
+          "https://www.gozocabs.com/book-taxi/ahmedabad-vadodara"
+        ],
+        "notes": "Anjani Cabs (Rajkot) lists Ahmedabad to Dakor at 1,514 fixed with 83 km included. Excluded: Maharana Cabs (Jaipur address) and SRM Holidays (Delhi address) Ahmedabad tour pages, OneWay.Cab 1,799 (national template), CabBazar 1,500 (403 on fetch). Gozo per-km 'from 13.50' is a round-trip reference rate, not used. No union rate card found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 615,
+        "standard_inr": 1050,
+        "basis": "Standard: ashaval.com (published 24 Jan 2026, prices 'verified February 2026') lists per-person unlimited thali prices; median of the mid-points of 8 everyday thali places (Toran 280-320, Pakwan 275-350, Rasna 200-275, Gopi 300-400, Thakar Thal 275-450, Iscon Thal 300-400, Gordhan 350-450, Grand Thakar 330-450) = 350, x3 meals = 1,050. Budget: Swaadyatra (updated 8 May 2026, 'Avg Price') Iscon Gathiya breakfast 80-150 (115) + Toran thali 300 + Mahalaxmi pav bhaji (Manek Chowk) 150-250 (200) = 615.",
+        "sources": [
+          "https://ashaval.com/gujarati-thali-ahmedabad/",
+          "https://www.swaadyatra.in/city/ahmedabad"
+        ],
+        "notes": "Thali is usually the big meal, so 3 x thali overstates a lighter day; Swaadyatra does not say whether its Avg Price is per person or per dish. Premium heritage thalis (Agashiye 1,375-1,945, Vishalla 700-800) excluded."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay median (only one available listing)",
+        "Union / government taxi rate card; local taxi rests on 2 quotes",
+        "Food is derived from thali and street prices, not a menu-by-menu cost for two"
+      ]
+    },
+    "gandhinagar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2285,
+        "mid_n": 16,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-gandhinagar"],
+        "budget_hotel_median_inr": 1300,
+        "budget_n": 2,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/gandhinagar/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, 13-14 Nov 2026, 2 guests, pre-tax headline price, all 16 listed (range 1,394-4,927; median is the mean of 2,112 and 2,457). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed): Hotel Vasundra 899 (taxes not shown) and Hotel Midway Residency 1,700 (+182 tax); n=2 only, median is the mean. Different dates per tier.",
+        "notes": "Most 3-star rooms sit in Kudasan, Vavol and Sector 26 clusters; the cheapest (Palette Siddharth Inn 1,394, FabHotel Siddharth 1,530) are budget-class. Many visitors do Gandhinagar as a day trip from Ahmedabad."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No usable Gandhinagar local card or Ahmedabad-Gandhinagar fare found. Gozocabs' Ahmedabad-Gandhinagar page resolved to a different Gandhinagar (900 km) and was not used; the one Rajputana Cabs page was dated 2020-11-19. See Ahmedabad for the 8h sedan range (1,800-2,500).",
+        "sources": [],
+        "notes": "Search snippets mention MakeMyTrip Ahmedabad to Gandhinagar sedan ~1,077 CNG / ~1,489 diesel, but the page timed out on fetch so it is not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 710,
+        "basis": "Wanderlog's Gandhinagar list quotes (reviewer/description text, undated): Bapa Sitaram Kathiyawadi Hotel Rs 100 per lunch thali, Jay Matarani Dhaba Rs 70 unlimited thali; budget = 3 x 100 = 300 (70 would give 210). Standard: Kansar Garden Restaurant Rs 150-300 per person (mid 225) and R-Andhra Cafe about Rs 200-300 per person (mid 250); mean 237.5 x3 = 710.",
+        "sources": ["https://wanderlog.com/list/geoCategory/1186427/best-indian-foods-and-restaurants-in-gandhinagar"],
+        "notes": "All figures are reviewers' words on one aggregator page and may be old; only 2 data points per tier. Terracotta 700-800 per person excluded (banquet)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local taxi rate and Ahmedabad-Gandhinagar fare (no current source)",
+        "Homestay and dorm",
+        "Budget stay rests on n=2",
+        "Food rests on reviewer quotes on one page"
+      ]
+    },
+    "lothal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Ahmedabad (about 80 km) or Bavla; Hazur Palace is the only property at the site",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No priced Lothal-town hotel list found. Hazur Palace (Gujarat Tourism heritage hotel, 14 rooms, 1.5 km from the site per Gujarat Tourism's description) shows no tariff in searches and its Gujarat Tourism page returned 403. Cleartrip has no Lothal page.",
+        "notes": "Lothal is a day trip from Ahmedabad. Use Ahmedabad's figures for planning. EaseMyTrip lists Bavla-area resorts 29-30 km from Lothal (Visamo Nalsarovar 4,690, Club Azzurro 4,946 as the lower of two unlabelled prices, https://www.easemytrip.com/hotels/hotels-near-lothal-dholka/) but they are not in Lothal, so no median was derived."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No usable Ahmedabad-Lothal fare found. Gozocabs and EaseMyTrip resolve 'Lothal' to a 1,400+ km route and were ignored; DDcab's fare page showed no rates. taxiautofare.com gives about 82 km from Ahmedabad railway station (a meter estimate, 548, not a day fare).",
+        "sources": [],
+        "notes": "Search snippets quote DDcab one-way from 1,860 and a 3,600 round trip, but the pages do not show these when fetched, so they are not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No priced Lothal eatery list found. Gujarat Tourism says Hazur Palace's dining hall is the only place to eat nearby.",
+        "sources": [],
+        "notes": "Left null on purpose."
+      },
+      "confidence": "low",
+      "unverified": [
+        "All stay tiers (Hazur Palace tariff not found)",
+        "Ahmedabad-Lothal fare",
+        "Both food figures"
+      ]
+    },
+    "nalsarovar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Bavla / Sanand / Ahmedabad for most hotels; Om Sanctuary Resort (4.4 km) and Pelican Perch Toran Birding Camp (3.6 km) are the closest properties",
+        "mid_median_inr": 4818,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.easemytrip.com/hotels/hotels-near-nalsarovar-bird-sanctuary-viramgam/"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "EaseMyTrip page, 2 persons in 1 room, no check-in date shown, per night excluding taxes (+296 and +285): the two 3-star resorts named for Nalsarovar, Visamo Nalsarovar Resort 4,690 and Club Azzurro Resort - Nalsarovar 4,946. Each shows two unlabelled prices (5,329 / 4,690 and 5,620 / 4,946); the lower was used. Median is the mean of the two. These resorts are in the Bavla area, 21-24 km from the sanctuary by the page's distances.",
+        "notes": "Tripadvisor lists closer properties (Pelican Perch Toran Birding Camp 3.6 km, Om Sanctuary Resort 4.4 km, Nal Safari 19.6 km) but with no prices shown. Gujarat Tourism's Toran camp tariff was not found. The resort tier here is 4,700-5,000 with no cheap tier verified."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          { "route": "Ahmedabad to Nalsarovar (~66 km)", "inr": 1700, "range": "sedan one-way before GST, Gozocabs" }
+        ],
+        "basis": "Day trip from Ahmedabad; no Nalsarovar-based taxi found. Return same-day trips are priced as outstation round trips, so the local figure is left null.",
+        "sources": ["https://www.gozocabs.com/book-taxi/ahmedabad-nalsarovar"],
+        "notes": "Boat/guide fees inside the sanctuary were not researched."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No priced Nalsarovar eatery list found. Visitors eat at resort restaurants or bring food.",
+        "sources": [],
+        "notes": "Left null on purpose."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget tier and prices of the properties closest to the sanctuary",
+        "Gujarat Tourism Toran camp tariff",
+        "Local taxi",
+        "Both food figures",
+        "Mid median rests on n=2, undated"
+      ]
+    },
+    "modhera": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Mehsana (about 25 km) for budget hotels",
+        "mid_median_inr": 3711,
+        "mid_n": 1,
+        "mid_sources": ["https://in.trip.com/hotels/mehsana-modhera-sun-temple/hotels-c649133m17653850/"],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Trip.com India page, no dates or guests shown: Modhera Sunrise Resort (0.25 km from the temple) 'From' 3,711. The same page's FAQ says 'from' 3,190, so the real range is about 3,200-3,700. n=1.",
+        "notes": "Tripadvisor lists three Modhera hotels (Modhera Sunrise Resort, The Sun Glorious Hotel & Restaurant Rooms, Hotel Krishna Palace) but shows no prices. Nearer budget stays are in Mehsana: Cleartrip shows Hotel Rajpath Inn 1,020 pre-tax for 13-14 Nov 2026 and Hotel Yogeshwar from 809 on Trip.com (25 km away), both too thin to treat as Modhera medians."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          { "route": "Ahmedabad to Modhera (~110 km)", "inr": 2120, "range": "sedan one-way before GST, Gozocabs" }
+        ],
+        "basis": "Modhera is visited as a day trip (often combined with Patan and Rani ki Vav); no Modhera-based local rate found.",
+        "sources": ["https://www.gozocabs.com/book-taxi/ahmedabad-modhera"],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No priced Modhera eatery list found.",
+        "sources": [],
+        "notes": "Left null on purpose."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid tier rests on one resort with conflicting prices on the page",
+        "Budget tier at Modhera",
+        "Local taxi",
+        "Both food figures"
+      ]
+    },
+    "rani-ki-vav": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1819,
+        "mid_n": 1,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-patan"],
+        "budget_hotel_median_inr": 1388,
+        "budget_n": 1,
+        "budget_sources": ["https://www.cleartrip.com/hotels/homestays-in-patan"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip, 13-14 Nov 2026, 2 guests, pre-tax price after the 30% CTHOTEL coupon: The Grand Raveta (3-star, Tirupati Township) 1,819 (listed 2,599); Apple Residency (2-star, Pragati Nagar Society) 1,388 (listed 1,950, coupon and property discount applied). OYO Royal Palace sold out. n=1 each.",
+        "notes": "Patan town (where Rani ki Vav stands) has real hotels: Tripadvisor lists about 30 within a few miles, e.g. Hotel The Grand Piano, Hotel Marvel Inn, Hotel Carrefour, Hotel Navjivan, but only the two above showed a dated price. Trip.com shows 'from' about US$20-23 for Grand Piano, Apple Residency and Grand Raveta, with no dates."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          { "route": "Ahmedabad to Patan / Rani ki Vav (~126 km)", "inr": 2135, "range": "sedan one-way before GST, Gozocabs" }
+        ],
+        "basis": "Rani ki Vav is a short stop; visitors come by taxi from Ahmedabad, often via Modhera. No Patan-based local rate found.",
+        "sources": ["https://www.gozocabs.com/book-taxi/ahmedabad-patan"],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": 410,
+        "basis": "Holidify Patan prints 'INR 250-300 for two' for Kalapi (the only labelled price); mid 275 for two = 137.5 per meal x3 = 410. n=1.",
+        "sources": ["https://www.holidify.com/places/patan/restaurants-places-to-eat-local-cuisine.html"],
+        "notes": "Holidify prints no date. Zomato Patan pages timed out. A Tripadvisor reviewer's Rs 65 thali at Kalapi is old and not used."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid and budget each rest on one hotel",
+        "Homestay and dorm",
+        "Local taxi",
+        "Budget food; standard food rests on one restaurant"
+      ]
+    },
+    "dakor": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Nadiad / Anand (about 28 km) for 3-star hotels; Dakor itself has dharamshalas, ashrams and a few guest houses",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1000,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://yatradham.org/chitrakoot-surat-dharamshala-dakor.html",
+          "https://yatradham.org/dakor-shri-dandi-swami-anand-das-math.html",
+          "https://yatradham.org/dakor-bharat-bhavan-ashram.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Yatradham 'starting' AC room rates, no stay date (pages say online booking is not open for some dates): Chitrakoot Surat Dharamshala 2-bed AC 700 (about 600 m from the temple), Shri Dandi Swami Anand Das Math 2-bed AC 1,232 (non-AC 560), Bharat Bhavan Ashram 3-bed AC 1,000 (+50 tax). Median 1,000. These are temple-trust dharamshala rooms, not hotels.",
+        "notes": "Yatradham lists 15+ dharamshalas; Shri Mewad Bhavan showed no price on its page. Nadiad (Cleartrip, 13-14 Nov 2026, pre-tax after coupon): Hotel Cypress 3,080 and Sangath Banquet Resort 2,024 were the only available 3-stars; shown here for context, not as a Dakor median. Prices rise on Purnima and festival dates."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          { "route": "Ahmedabad to Dakor (~89 km)", "inr": 1752, "range": "sedan one-way before GST, Gozocabs; Anjani Cabs 1,514 fixed with 83 km included" },
+          { "route": "Vadodara to Dakor (~67 km)", "inr": 1796, "range": "sedan one-way before GST, Gozocabs" }
+        ],
+        "basis": "Dakor is a temple town visited on foot; no local taxi rate. Fares are one-way transfers from the two big cities.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/ahmedabad-dakor",
+          "https://www.gozocabs.com/book-taxi/vadodara-dakor",
+          "https://www.anjanicabs.in/hire-one-way-cab-from-ahmedabad"
+        ],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No priced Dakor eatery or bhojanalaya list found.",
+        "sources": [],
+        "notes": "Left null on purpose."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid-tier hotel in Dakor town",
+        "Budget median is dharamshala 'starting' rates, undated",
+        "Both food figures"
+      ]
+    },
+    "vadodara": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2394,
+        "mid_n": 13,
+        "mid_sources": ["https://www.cleartrip.com/hotels/3-star-hotels-in-vadodara"],
+        "budget_hotel_median_inr": 1343,
+        "budget_n": 7,
+        "budget_sources": ["https://www.cleartrip.com/hotels/india/vadodara/budget-hotels"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, 13-14 Nov 2026, 2 guests, pre-tax, the 13 tagged 3-star (range 1,560-4,499; excluded Hotel Monville tagged 4-star). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed), pre-tax, all 7 listed (range 899-1,965). Different dates per tier; 7 Apple Hotel and Hotel Casa appear on both lists at different prices.",
+        "notes": "Homestay and dorm not researched for Vadodara."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2250,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          { "route": "Vadodara to Champaner (~55 km)", "inr": 1835, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Vadodara to Halol (~42 km)", "inr": 1642, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Vadodara to Dakor (~67 km)", "inr": 1796, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Vadodara to Ahmedabad (~117 km)", "inr": 1384, "range": "sedan one-way before GST, Gozocabs" }
+        ],
+        "basis": "Median of 2 sedan 8h/80km Vadodara quotes: Rent & Go Travels (GF-11 Veer Avenue, Manjalpur, Vadodara) 2,000 Swift Dzire; YourTaxi (Ahmedabad operator) 2,500, extra Rs 200/hr and Rs 11/km, day sightseeing package 2,799. Range 2,000-2,500. Neither page is dated (copyright 2026). Per km 11 = YourTaxi.",
+        "sources": [
+          "https://www.rentandgotravels.com/full-day-taxi-in-vadodara",
+          "https://yourtaxi.in/places-to-visit-in-vadodara/",
+          "https://www.gozocabs.com/book-taxi/vadodara-champaner",
+          "https://www.gozocabs.com/book-taxi/vadodara-halol",
+          "https://www.gozocabs.com/book-taxi/vadodara-dakor",
+          "https://www.gozocabs.com/book-taxi/ahmedabad-vadodara"
+        ],
+        "notes": "Search snippets put other Vadodara operators between 1,200 and 3,000 (Baroda Taxi Services, Anjani Cabs, Chikucab), but their pages did not show the fare when fetched. OneWay.Cab 1,799 and Anjani's 2,500 'One Way Taxi' row excluded. No union card found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 370,
+        "standard_inr": 1050,
+        "basis": "Standard: Holidify Vadodara prints 'For Two' for 13 restaurants (400-1,600); median 700 for two = 350 per meal x3 = 1,050. Budget (Wanderlog Vadodara thali list, reviewer/description text, undated): Shree Shakti poha usal Rs 20 + Geeta Lodge unlimited thali Rs 180 + Maharashtra Restaurant Kathiyawadi thali Rs 170 = 370.",
+        "sources": [
+          "https://www.holidify.com/places/vadodara/restaurants-places-to-eat-local-cuisine.html",
+          "https://wanderlog.com/list/geoCategory/1544362/best-spots-for-thali-in-vadodara"
+        ],
+        "notes": "Holidify prints no date. Tripadvisor answers for Mandap (over a year old) say 300-350 per head; Wanderlog reviews say 550-625 now, so premium thali places run double the budget thalis."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm",
+        "Union taxi rate card; local taxi rests on 2 quotes",
+        "Budget food rests on three reviewer-quoted prices"
+      ]
+    },
+    "champaner-pavagadh": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Halol (Pavagadh bypass road) and Vadodara (about 55 km)",
+        "mid_median_inr": 5775,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.easemytrip.com/hotels/hotels-near-pavagadh-hill-halol/",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-halol"
+        ],
+        "budget_hotel_median_inr": 1358,
+        "budget_n": 4,
+        "budget_sources": ["https://www.easemytrip.com/hotels/hotels-near-pavagadh-hill-halol/"],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "EaseMyTrip 'hotels near Pavagadh Hill', 2 persons in 1 room, no dates shown, per night excluding taxes; properties within 13 km of the hill; where two unlabelled prices appear the lower was used. Mid (4): Vikrama Heritage Resort 3,744 (4.19 km), Greenland Resort 5,451 (5.79 km), Devs Camp 6,099 (9.64 km), Club Mahindra Pavagadh 8,375 (9.14 km); median is the mean of 5,451 and 6,099. Budget (4): Hotel Radhe Halol 1,116, Hotel Panch 1,329, Hotel Radhe Kalol 1,386, Hotel Rajdhani and Guest House 1,464; median is the mean of 1,329 and 1,386. Tiers are by price (Hotel Panch and Radhe Kalol are tagged 3-star but priced as budget). Excluded Basalt Paradise (5-star 5,908) and Daksh retreats (4-star).",
+        "notes": "Cleartrip Halol, 13-14 Nov 2026, pre-tax after coupon, cross-checks Greenland Resort 5,902 and shows Hotel My Stay (Halol GIDC) 1,048. Champaner Heritage Resort, about 11 km from Champaner Fort, was seen only as 'from' US$68-83 or Rs 9,191-9,949 in search results and is not in these figures. Places to stay exist on the Pavagadh road; the cheap tier is near Halol town, not on the hill."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          { "route": "Vadodara to Champaner (~55 km)", "inr": 1835, "range": "sedan one-way before GST, Gozocabs" },
+          { "route": "Vadodara to Halol (~42 km)", "inr": 1642, "range": "sedan one-way before GST, Gozocabs" }
+        ],
+        "basis": "Visited as a day trip from Vadodara; no Pavagadh-based local rate found. Anjani Cabs' Vadodara page shows two conflicting Pavagadh fares (1,082 with 50 km and 1,406) so neither is used.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/vadodara-champaner",
+          "https://www.gozocabs.com/book-taxi/vadodara-halol"
+        ],
+        "notes": "Ropeway and shared-jeep fares on the hill were not researched."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Holidify Champaner-Pavagadh prints only Barbeque Nation 1600 and Goodies Cafeteria 120 with no price basis. Justdial pages returned 403.",
+        "sources": [],
+        "notes": "Left null on purpose."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dates for every stay figure (EaseMyTrip shows none)",
+        "Homestay and dorm",
+        "Local taxi",
+        "Both food figures"
+      ]
+    }
+  }
+}

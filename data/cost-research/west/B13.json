@@ -1,0 +1,692 @@
+{
+ "batch": "B13",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "calangute-baga": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Candolim (sedan)",
+      "inr": 550
+     },
+     {
+      "route": "Calangute to Anjuna (sedan)",
+      "inr": 650
+     },
+     {
+      "route": "Calangute to Vagator (sedan)",
+      "inr": 600
+     },
+     {
+      "route": "Calangute to Morjim (sedan)",
+      "inr": 1000
+     },
+     {
+      "route": "Calangute to Arambol (sedan)",
+      "inr": 1100
+     },
+     {
+      "route": "Dabolim airport to Calangute / Baga (sedan)",
+      "inr": 1300,
+      "range": "1,300 Umang; 1,600 Jagnish (2026-27 chart, Dabolim toll 50 extra)"
+     },
+     {
+      "route": "Mopa airport to Calangute / Baga (sedan)",
+      "inr": 1300,
+      "range": "1,000 Jagnish (toll 200 extra); 1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth; 1,800 Umang"
+     }
+    ],
+    "basis": "Median of four sedan North Goa 8 h packages (not belt-specific: operators sell one North Goa day covering Candolim, Sinquerim, Aguada, Anjuna, Vagator, Chapora): Cab Goa 2,200 (8 h / 80 km, fuel, tolls, parking included, no date on page), Pavan Cab 2,500 (FAQ: sedan 8 h / 80 km, extra km 20-30, extra hour 200-240, night 400 after 10 pm, page undated), Jagnish Tours 2,600 (North Goa full day 8 h / 80 km, 'Taxi Fare in Goa 2026-27', extra hour 200, night hold 400 after 8 pm), Umang Travels 2,800 ('North Goa Explorer', 8 h, no km limit stated, GST/tolls/parking included, extra hour 250, 4 h minimum). Range 2,200 to 2,800; median 2,550, rounded to 2,500. These are operator rate cards, not a union card: no dated Calangute or Anjuna taxi stand rate card and no GoaMiles quote could be loaded (GoaMiles prices only inside the app).",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "Airport fares and beach-to-beach runs are point-to-point, never local days. Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Peak-season (15 Dec to 5 Jan) prepaid-booth airport fares rise and a night surcharge applies (TaxiBazaar, 'Updated 2026'). Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 850,
+    "standard_inr": 1450,
+    "basis": "Search-result summaries of Zomato / Tripadvisor cost-for-two (pages themselves not fetched), cost for two / 2 = one meal. Beach shacks Baga/Calangute: Shining Star Baga 500, Rudy's Golden Mermaid 1,000, St. Anthony's Baga 1,200, Britto's Baga 1,400 for two; Vinayak Baga kingfish thali 450 (Tripadvisor review, Feb 2026). Zomato's Calangute-Baga shack pages were not summarised, so the adjacent Candolim belt fills the cafe and thali slots: Astor Baking Co 500, Thali Junction 700, Cafe Candolim 700 for two. Budget day = breakfast 250 (Astor) + lunch 250 (Shining Star) + dinner 350 (Thali Junction) = 850. Standard day = breakfast 350 (Cafe Candolim) + lunch 500 (Rudy's) + dinner 600 (St. Anthony's) = 1,450.",
+    "sources": [
+     "https://www.zomato.com/goa/candolim-restaurants",
+     "https://www.zomato.com/goa/thali-junction-candolim",
+     "https://www.zomato.com/goa/cafe-candolim-candolim",
+     "https://www.tripadvisor.com/Restaurants-g306995-Calangute_North_Goa_District_Goa.html",
+     "https://www.zomato.com/goa/dhananjay-fish-curry-baga"
+    ],
+    "notes": "Cost-for-two figures are undated and exclude taxes. Another source puts top Baga shacks at 800-1,500 for two. Alcohol not included."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Dated Calangute / Anjuna taxi stand rate card or GoaMiles quote",
+    "Zomato shack pages for Calangute and Baga directly (figures from search summaries)",
+    "Breakfast prices in Calangute-Baga itself"
+   ]
+  },
+  "candolim": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4003,
+    "mid_n": 13,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-candolim"
+    ],
+    "budget_hotel_median_inr": 1700,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-candolim"
+    ],
+    "homestay_median_inr": 2155,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-candolim"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip '3-star hotels in Candolim', Fri 13 Nov 2026 to Sat 14 Nov, 1 night, 2 guests, pre-tax discounted sale price (taxes shown separately). 16 listed; 13 typed 3-star Hotel/Resort priced at 2,957 or more were used for mid: De Falcon Beach Resort 2,957; Amigos Candolim Beach 3,476; Magnum Resorts 3,484; Trevon 3,698; Silver Sands Hideaway 3,910; Valentine's Retreat 3,948; Summerville Beach Resort 4,003; Sonikas 4,271; The Lazy Cabanas 5,481; Silver Sands Holiday Village 5,826; Holiday Beach Resort 5,865; Hotel Citrus Prime 6,659; Yu Hotel 6,929 (ratings 3.4 to 4.6). Median of 13 = Summerville 4,003. Budget = Casa Almeida by Legends 1,700 (3-star Hotel, 4.1), the only one under 2,500, n=1. Homestay = Hotel Candolim Aloft 2,155 (typed '3-star Homestay'), n=1. A second Cleartrip page (Sun 11 Oct to Mon 12 Oct, https://www.cleartrip.com/hotels/india/goa/locality/anjuna-vagator-goa/) shows the Candolim set a month earlier: Le Seasons Beach Resort 2,463; Silver Sands Serenity 3,540; Lemon Tree Amarante (4-star class) 6,190; so the 13 Nov mid set is not obviously above the October one at the cheap end.",
+    "notes": "The Hosteller Goa Candolim is listed at 1,145 on the same Cleartrip page (13 Nov) but the page calls it a hostel without a dorm-bed label, so no dorm figure. Mid n=13 spans 2,957 to 6,929, so treat the median as a band. Peak weeks (20 Dec to 5 Jan) will be well above these 13 Nov prices; Oct-to-Nov lift not measured for the same properties."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Candolim (sedan)",
+      "inr": 550
+     },
+     {
+      "route": "Dabolim airport to Candolim / Sinquerim (sedan)",
+      "inr": 1500,
+      "range": "Jagnish 2026-27 chart, Dabolim toll 50 extra"
+     },
+     {
+      "route": "Mopa airport to Candolim (sedan)",
+      "inr": 1150,
+      "range": "1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth"
+     }
+    ],
+    "basis": "Median of four sedan North Goa 8 h packages (not belt-specific: operators sell one North Goa day covering Candolim, Sinquerim, Aguada, Anjuna, Vagator, Chapora): Cab Goa 2,200 (8 h / 80 km, fuel, tolls, parking included, no date on page), Pavan Cab 2,500 (FAQ: sedan 8 h / 80 km, extra km 20-30, extra hour 200-240, night 400 after 10 pm, page undated), Jagnish Tours 2,600 (North Goa full day 8 h / 80 km, 'Taxi Fare in Goa 2026-27', extra hour 200, night hold 400 after 8 pm), Umang Travels 2,800 ('North Goa Explorer', 8 h, no km limit stated, GST/tolls/parking included, extra hour 250, 4 h minimum). Range 2,200 to 2,800; median 2,550, rounded to 2,500. These are operator rate cards, not a union card: no dated Calangute or Anjuna taxi stand rate card and no GoaMiles quote could be loaded (GoaMiles prices only inside the app).",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "Local day is the shared North Goa package; Candolim pickups cost the same as Calangute at these operators. Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 950,
+    "standard_inr": 1450,
+    "basis": "Search-result summary of Zomato Candolim listings, cost for two excl. taxes / 2: Astor Baking Co 500, Hungry Hornbill 500, Thali Junction 700, Fish Hut Shack 700, Cafe Candolim 700, Soi (Goan thali) 800, Spotty's Shack 800, Bobby's Shack 850, Antonio's 900, Bending Bamboos 950, Shamaai's 1,000, Azura 1,100, Palms N Sands 1,300, Tomato's Beachside 1,800. Budget day = breakfast 250 (Astor) + lunch 350 (Fish Hut) + dinner 350 (Thali Junction) = 950. Standard day = breakfast 350 (Cafe Candolim) + lunch 450 (Antonio's) + dinner 650 (Palms N Sands) = 1,450.",
+    "sources": [
+     "https://www.zomato.com/goa/candolim-restaurants",
+     "https://www.zomato.com/goa/thali-junction-candolim",
+     "https://www.zomato.com/goa/soi-candolim",
+     "https://www.zomato.com/goa/cafe-candolim-candolim"
+    ],
+    "notes": "Zomato pages did not load directly in this session; figures are from search summaries and are undated."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Candolim budget and homestay medians beyond n=1",
+    "Dorm bed price",
+    "Oct vs Nov price for the same properties",
+    "Dated union rate card or GoaMiles quote"
+   ]
+  },
+  "fort-aguada": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "candolim",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Fort Aguada is a 17th-century Portuguese fort at the Candolim-Sinquerim end; visitors stay in Candolim (see the candolim entry; medians not repeated here). The Goa-wide Cleartrip pages list resorts named Aguada/Sinquerim only as Candolim-area properties.",
+    "notes": "Entry: free for the upper fort and ramparts per a Goa forts guide dated 28 Jul 2026 (parking 20 two-wheeler, 50 car, 9:30 am to 6 pm; Aguada Jail Museum has a separate ticket). Goa Tourism's page (updated 21 Apr 2026) lists no fee. Some older reseller pages say 25 Indians / 300 foreigners; treat as outdated. Source: https://goadiaries.in/goa-forts-timings-entry-fees/ and https://goa-tourism.org.in/fort-aguada-goa"
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Candolim (sedan; Fort Aguada is a further few km along the same road)",
+      "inr": 550
+     }
+    ],
+    "basis": "No Fort Aguada-specific local day exists; the fort is a stop on the shared North Goa 8 h package (Cab Goa North Goa Coastal Discovery 2,200 sedan; Jagnish North Goa full day 2,600; Umang North Goa Explorer 2,800 covers Fort Aguada and Chapora Fort). Left null so the Calangute/Candolim belt figure is not duplicated.",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute"
+    ],
+    "notes": "No separate Fort Aguada local day; it sits inside the North Goa package (about 2,200 to 2,800 sedan, 8 h) shown in the calangute-baga entry. No fare to the fort itself was found. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No eateries priced at the fort; use Candolim figures.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Fort-specific taxi fare",
+    "Whether the Aguada Jail Museum ticket price is current"
+   ]
+  },
+  "anjuna": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3368,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.kayak.co.in/Anjuna-Hotels.61738.hotel.ksp"
+    ],
+    "budget_hotel_median_inr": 2310,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.kayak.co.in/Anjuna-Hotels.61738.hotel.ksp"
+    ],
+    "homestay_median_inr": 1355,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.kayak.co.in/Anjuna-Hotels.61738.hotel.ksp"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Kayak India town page, 10-11 Oct 2026 'from' prices (cheapest provider; tax basis not stated on the page), which is the Oct shoulder, not the Nov peak start. Mid (n=5, rated 6.8 to 8.6, 'from' prices): Anjuna Courtyard 3,097; La Oasis by Meraden 3,097; Granpa's Inn Hotel Bougainvillea 3,330; Amani by BluO 3,368; Hotel Regent Laguna 3,597; Grand Continent Anjuna (Sarovar Portico affiliate) 3,678 (3 of these 5 are labelled 'Anjuna' on other Kayak pages; the rest sit on the Anjuna page). Median 3,368. Budget (n=3): Evershine Guesthouse 595 (rated 6.2 from 6 reviews); Passions de Goa 2,310; The Banyan Soul 2,467; median 2,310 but the spread is huge, so low confidence. Homestay n=1: Castelinhos' Home Away from Home 1,355 (8.5, 51 reviews; homestay is inferred from the name, Kayak does not label it). A Cleartrip Goa listing (13 Nov 2026) does not carry any Anjuna-locality property, so no November figure for Anjuna.",
+    "notes": "Not included: Fairfield by Marriott 6,642, Westin 18,045, Yellow House (IHCL) 10,387, Laguna Anjuna and Minntcrest (4-5 star). Hostel prices on Kayak are not labelled as dorm beds, so no dorm figure. Hostels seen: Red Door 2,419, Anjoned 2,032, Madpackers 2,139, Jungle by Thehostelcrowd 1,355. Peak weeks well above."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Anjuna (sedan)",
+      "inr": 650
+     },
+     {
+      "route": "Calangute to Vagator (sedan)",
+      "inr": 600
+     },
+     {
+      "route": "Dabolim airport to Anjuna / Vagator (sedan)",
+      "inr": 1700,
+      "range": "Jagnish 2026-27 chart; Dabolim toll 50 extra"
+     },
+     {
+      "route": "Mopa airport to Anjuna / Vagator (sedan)",
+      "inr": 1150,
+      "range": "900 Jagnish (toll 200 extra); 1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth"
+     }
+    ],
+    "basis": "Median of four sedan North Goa 8 h packages (not belt-specific: operators sell one North Goa day covering Candolim, Sinquerim, Aguada, Anjuna, Vagator, Chapora): Cab Goa 2,200 (8 h / 80 km, fuel, tolls, parking included, no date on page), Pavan Cab 2,500 (FAQ: sedan 8 h / 80 km, extra km 20-30, extra hour 200-240, night 400 after 10 pm, page undated), Jagnish Tours 2,600 (North Goa full day 8 h / 80 km, 'Taxi Fare in Goa 2026-27', extra hour 200, night hold 400 after 8 pm), Umang Travels 2,800 ('North Goa Explorer', 8 h, no km limit stated, GST/tolls/parking included, extra hour 250, 4 h minimum). Range 2,200 to 2,800; median 2,550, rounded to 2,500. These are operator rate cards, not a union card: no dated Calangute or Anjuna taxi stand rate card and no GoaMiles quote could be loaded (GoaMiles prices only inside the app).",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "Anjuna-Vagator pickups use the same North Goa package; no separate Anjuna-Vagator belt day was published by any operator found. Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 1300,
+    "standard_inr": 2025,
+    "basis": "Search-result summary of Justdial 'price for two' (Anjuna) / 2 per meal: The Village Food and Tiffin 550; Lush By The Cliff 1,000; Shiva Valley Bar & Restaurant 1,050; Goan Spice 1,300; Square Sparrow 1,400; Cafe Lilliput 1,700; Curlies 1,800; Purple Martini 3,100. Zomato (search summary): La Cucina 1,500; Maka Zai 1,700; Bomra's 1,900. Budget day = breakfast 275 (Village) + lunch 525 (Shiva Valley) + dinner 500 (Lush) = 1,300. Standard day = breakfast 525 (Shiva Valley) + lunch 650 (Goan Spice) + dinner 850 (Maka Zai) = 2,025.",
+    "sources": [
+     "https://www.justdial.com/Goa/Restaurants-in-Anjuna/nct-10408936",
+     "https://www.justdial.com/Goa/Multicuisine-Restaurants-in-Anjuna/nct-10332161",
+     "https://www.zomato.com/goa/bomras-anjuna"
+    ],
+    "notes": "Justdial figures are undated, 'updated 2025'; Anjuna cafes run pricier than Candolim shacks. Figures may include alcohol for bar-restaurants. Justdial/Zomato pages did not load; summaries only."
+   },
+   "confidence": "low",
+   "unverified": [
+    "November price for Anjuna properties",
+    "Dorm bed price",
+    "True homestay median (n=1, inferred)",
+    "Anjuna taxi stand rate card or GoaMiles quote",
+    "Breakfast-specific prices"
+   ]
+  },
+  "vagator": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3782,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.kayak.co.in/Vagator-Hotels.69774.hotel.ksp",
+     "https://www.cleartrip.com/hotels/hotels-in-anjuna-goa"
+    ],
+    "budget_hotel_median_inr": 1841,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.kayak.co.in/Vagator-Hotels.69774.hotel.ksp",
+     "https://www.cleartrip.com/hotels/india/goa/locality/anjuna-vagator-goa/"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mixed dates: Kayak town page 10-11 Oct 'from' prices (tax basis not stated) plus one Cleartrip 13 Nov 2026 pre-tax price. Mid (n=5): The Grand Leoney Resort 2,997 (Kayak '3 stars' tier, per night, undated); The Byke Retreat Royal Pearl 3,222 (Cleartrip 13 Nov, 3-star Resort, 4.2); Alcove Resort 3,782 (Kayak 3-star tier); I Love Bell Bottoms 4,060 (Kayak, 7.8; Cleartrip 11-12 Oct shows 4,955 pre-tax); ibis Styles Goa Vagator 5,790 (Kayak, 10-11 Oct). Median 3,782. Budget (n=3, Vagator-labelled): Yellow House 1,555 (Kayak 10-11 Oct; a separate Kayak page shows 1,908); Living Room By Seasons Goa 1,841 (Cleartrip 11-12 Oct, pre-tax, Vagator Beach; Kayak also lists it); Celebrations Vagator 1,933 (Kayak, 8.0). Median 1,841.",
+    "notes": "Excluded 4-5 star and brand hotels: W Goa 35,784, Ramada 7,555, Lemon Tree 7,644, Avataara 12,600 (Cleartrip 13 Nov). Kayak 'best value' 3-star tier also shows New Zelosena 1,063 and Coco's Resort 1,160 without a locality, not used. No priced homestay found (Kiara BnB Home has no price). Peak weeks well above."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Anjuna (sedan)",
+      "inr": 650
+     },
+     {
+      "route": "Calangute to Vagator (sedan)",
+      "inr": 600
+     },
+     {
+      "route": "Dabolim airport to Anjuna / Vagator (sedan)",
+      "inr": 1700,
+      "range": "Jagnish 2026-27 chart; Dabolim toll 50 extra"
+     },
+     {
+      "route": "Mopa airport to Anjuna / Vagator (sedan)",
+      "inr": 1150,
+      "range": "900 Jagnish (toll 200 extra); 1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth"
+     }
+    ],
+    "basis": "Median of four sedan North Goa 8 h packages (not belt-specific: operators sell one North Goa day covering Candolim, Sinquerim, Aguada, Anjuna, Vagator, Chapora): Cab Goa 2,200 (8 h / 80 km, fuel, tolls, parking included, no date on page), Pavan Cab 2,500 (FAQ: sedan 8 h / 80 km, extra km 20-30, extra hour 200-240, night 400 after 10 pm, page undated), Jagnish Tours 2,600 (North Goa full day 8 h / 80 km, 'Taxi Fare in Goa 2026-27', extra hour 200, night hold 400 after 8 pm), Umang Travels 2,800 ('North Goa Explorer', 8 h, no km limit stated, GST/tolls/parking included, extra hour 250, 4 h minimum). Range 2,200 to 2,800; median 2,550, rounded to 2,500. These are operator rate cards, not a union card: no dated Calangute or Anjuna taxi stand rate card and no GoaMiles quote could be loaded (GoaMiles prices only inside the app).",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "Vagator shares the Anjuna-Vagator belt entries. Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 1100,
+    "standard_inr": 2025,
+    "basis": "Search-result summary of Justdial 'price for two' (Vagator) / 2: Wom Multicuisine 500; Ratna Sagar Family Restaurant 850; Piccola Roma Pizzeria 1,300; Mango Tree 1,900; Chronicle 2,100; Antares 2,600. Budget day = breakfast 250 (Wom) + lunch 425 (Ratna Sagar) + dinner 425 (Ratna Sagar) = 1,100. Standard day = breakfast 425 + lunch 650 (Piccola Roma) + dinner 950 (Mango Tree) = 2,025.",
+    "sources": [
+     "https://www.justdial.com/Goa/Restaurants-in-Anjuna/nct-10408936"
+    ],
+    "notes": "Only 6 Vagator places seen; budget end uses one place twice. Undated, may include alcohol at bars."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay and dorm prices",
+    "Cleartrip November prices for most Vagator hotels",
+    "Breakfast prices",
+    "Taxi stand rate card or GoaMiles"
+   ]
+  },
+  "assagao": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 5220,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.kayak.co.in/Assagao-Hotels.315788.hotel.ksp"
+    ],
+    "budget_hotel_median_inr": 2030,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.kayak.co.in/Assagao-Hotels.315788.hotel.ksp"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Kayak India town page, 10-11 Oct 2026 'from' prices (cheapest provider; tax basis not stated on the page), which is the Oct shoulder, not the Nov peak start. Assagao is inland boutique territory. Mid (n=7, Assagao-labelled): Vila Do Flor 3,091; Villa Ikebana 3,190; Hotel H F 3,385; Vagator Downtown 5,220; Botanique Goa 7,039; Unseen Boutique Hotel 7,207; The Passport Hotel 7,637. Median 5,220 (wide band 3,091 to 7,637). Budget (n=3): Hotel 7 Sea's 2,030; Sadafuli Guest House 1,867; Dia Bnb 2,144; median 2,030.",
+    "notes": "Luxury villas outside the median: Pruthvi Villa 98,116, Casa Amore La Verona 32,093, Maravilha boutique stay 189,518 ('from', 10-11 Oct). Villa Celest 4 BHK 6,863. No labelled homestay with a price. No Nov figure. Peak weeks higher."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Anjuna (sedan; Assagao lies on the Anjuna-Mapusa road between them)",
+      "inr": 650
+     },
+     {
+      "route": "Mopa airport to Anjuna / Vagator / Calangute (sedan)",
+      "inr": 1150,
+      "range": "1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth"
+     }
+    ],
+    "basis": "Median of four sedan North Goa 8 h packages (not belt-specific: operators sell one North Goa day covering Candolim, Sinquerim, Aguada, Anjuna, Vagator, Chapora): Cab Goa 2,200 (8 h / 80 km, fuel, tolls, parking included, no date on page), Pavan Cab 2,500 (FAQ: sedan 8 h / 80 km, extra km 20-30, extra hour 200-240, night 400 after 10 pm, page undated), Jagnish Tours 2,600 (North Goa full day 8 h / 80 km, 'Taxi Fare in Goa 2026-27', extra hour 200, night hold 400 after 8 pm), Umang Travels 2,800 ('North Goa Explorer', 8 h, no km limit stated, GST/tolls/parking included, extra hour 250, 4 h minimum). Range 2,200 to 2,800; median 2,550, rounded to 2,500. These are operator rate cards, not a union card: no dated Calangute or Anjuna taxi stand rate card and no GoaMiles quote could be loaded (GoaMiles prices only inside the app).",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "No Assagao-specific fare found; the North Goa package is the only local day. Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": 2650,
+    "basis": "Zomato cost for two (search summaries) / 2 per meal: Nova Sandwich Shop 800; Gunpowder 1,500 (beer pint about 110); Sake The Asian Lounge 2,000; Jugnu 2,500; Kesar Bagh 2,500; Bawri 2,800; The Assa House 3,000; Jamun 3,000. Budget day = breakfast 400 (Nova) + lunch 400 (Nova) + dinner 750 (Gunpowder) = 1,550. Standard day = breakfast 400 (Nova) + lunch 1,000 (Sake) + dinner 1,250 (Jugnu) = 2,650. Assagao runs about 1.5 to 2x the Candolim figures (budget 1,550 vs 950; standard 2,650 vs 1,450).",
+    "sources": [
+     "https://www.zomato.com/goa/gunpowder-assagao",
+     "https://www.zomato.com/goa/assagao-restaurants",
+     "https://www.zomato.com/goa/restaurace/thalassa?subzone=163351&category=3"
+    ],
+    "notes": "Undated cached Zomato figures, exclude taxes. No cheap thali place found in Assagao itself, so the budget day leans on Nova and Gunpowder."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay prices",
+    "November pricing",
+    "Dated taxi quote",
+    "Cheap local eateries in Assagao (budget day built from Nova and Gunpowder came to 1,550, above the 1,500 plausibility cap, so left null)"
+   ]
+  },
+  "siolim": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3480,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.kayak.co.in/Siolim-Hotels.306129.hotel.ksp",
+     "https://www.cleartrip.com/hotels/hotels-in-anjuna-goa"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2320,
+    "homestay_n": 7,
+    "homestay_sources": [
+     "https://www.kayak.co.in/Siolim-Hotels.306129.hotel.ksp"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Kayak India town page, 10-11 Oct 2026 'from' prices (cheapest provider; tax basis not stated on the page), which is the Oct shoulder, not the Nov peak start. Siolim lists both small hotels and many named villas/cottages/homes. Hotel-type (n=7): Treebo Vila de Goa 2,229; Treebo Trend La Casa Siolim 2,334; Fighouse 3,372; Ziva Suites 3,480; Oyo Hotel River Palace 4,253; Radha House Siolim 4,917 (Cleartrip 13 Nov 2026 pre-tax, 4-star Hotel, 5.0; Kayak 10-11 Oct 5,199); Siolim House 9,592. Median 3,480. Home/villa/cottage-type (n=7, types inferred from names only): 8fold by Larisa 1,222; Casajuliana 2,217; Villa De Orange 2,320; Goan Hideaway Uno 2,320; Red Soil Cozy Cottages 2,417; Lume Stayz 2,610; Whiteboard Homes 3,912. Median 2,320.",
+    "notes": "Kayak does not label any of these as homestay; the 'homestay' median is a name-based grouping of villas, cottages and homes, so low confidence. Love Story by Purple Door Villas 9,860 excluded. Peak weeks higher."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Mopa airport to Siolim / Mandrem (sedan)",
+      "inr": 1150,
+      "range": "1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth"
+     }
+    ],
+    "basis": "No Siolim local day found. The shared North Goa 8 h package (2,200 to 2,800 sedan, see calangute-baga) starts from the Calangute belt, and a Siolim pickup would add a transfer, so no figure is given.",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "No operator sells a Siolim-start local day; the North Goa package is priced from Calangute, so left null. Calangute to Anjuna 650 is the nearest belt fare. Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 750,
+    "standard_inr": 1550,
+    "basis": "Zomato cost for two (search summary) / 2 per meal: Cafe Siolim 300; BMH Resto Bar 500; Goan Cozinha 600; Navtara Veg 600; Siolim Deck Family Restaurant & Bar 1,200; Mimosu Cafesserie 1,200; Marbela (Morjim) 1,400; Thalassa 2,500 (Zomato locates it in Siolim); cafes such as Felix, Cafe Cotinga and Babka about 350 per person. Budget day = breakfast 150 (Cafe Siolim) + lunch 300 (Goan Cozinha) + dinner 300 (Navtara) = 750. Standard day = breakfast 350 (cafe) + lunch 600 (Siolim Deck) + dinner 600 (Mimosu) = 1,550.",
+    "sources": [
+     "https://www.zomato.com/goa/siolim-restaurants",
+     "https://www.zomato.com/goa/cafe-siolim-siolim",
+     "https://www.zomato.com/goa/siolim-deck-family-restaurant-bar-1-siolim"
+    ],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Real homestay median",
+    "Dated taxi quote",
+    "November prices"
+   ]
+  },
+  "morjim": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4359,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.kayak.co.in/Morjim-Hotels.66652.hotel.ksp"
+    ],
+    "budget_hotel_median_inr": 1739,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.kayak.co.in/Morjim-Hotels.66652.hotel.ksp"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Kayak India town page, 10-11 Oct 2026 'from' prices (cheapest provider; tax basis not stated on the page), which is the Oct shoulder, not the Nov peak start. Mid (n=4): Sibaya Beach Resort 3,387; Montego Bay Beach Village 3,871 (both Kayak tier list, per night, undated); Morjim/The Acacia 4,847; Living Room Beach Resort 7,643 (10-11 Oct). Median (3,871+4,847)/2 = 4,359. Turtle Beach Resort 18,775 excluded as outlier. Budget (n=5, Morjim-labelled): Hotel Nifa 1,065; Morjim Hermitage 1,161; The Social Stays Goa 1,739; Eutopia Beach Resort 1,936; Morjim Sunset Hotel 2,328 (its URL calls it a guesthouse; rated 9.2). Median 1,739.",
+    "notes": "Guesthouses: Vailankanni 677, Thomas Beach Guesthouse 1,065 (tier list). No priced homestay or dorm found. Cleartrip's Morjim-area pages carry no Morjim-locality property on 13 Nov. Peak weeks higher."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Morjim (sedan)",
+      "inr": 1000
+     },
+     {
+      "route": "Mopa airport to Arambol / Morjim (sedan)",
+      "inr": 1150,
+      "range": "1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth"
+     }
+    ],
+    "basis": "No Morjim-start local day found on a fetched page. Operators' 8 h North Goa packages (2,200 to 2,800) start from the Calangute belt.",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "North-end beaches are priced from Calangute, so no local day is given. A third-party summary quoted a North Goa package of 3,400 from Morjim/Arambol (not read on a page, not used). Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 850,
+    "standard_inr": 1625,
+    "basis": "Zomato cost for two (search summary) / 2 per meal: Suvasa Cafe 500; The Address Cafe & More 600; Morjim Food Court 600; The Rice Mill 950; Boheme 1,000; Cafe Morjim 1,300; Marbela 1,400; PAS Specialty Coffee 1,800; Brisa 2,000; Catch by Azora 2,200; Baba Au Rhum 3,500. Budget day = breakfast 250 (Suvasa) + lunch 300 (Address Cafe) + dinner 300 (Food Court) = 850. Standard day = breakfast 500 (Boheme) + lunch 475 (Rice Mill) + dinner 650 (Cafe Morjim) = 1,625.",
+    "sources": [
+     "https://www.zomato.com/goa/morjim-food-court-2-morjim",
+     "https://www.zomato.com/goa/cafe-morjim-morjim",
+     "https://www.zomato.com/goa/dinner-in-morjim?veg=1",
+     "https://www.zomato.com/goa/marbela-bar-restaurant-morjim"
+    ],
+    "notes": "Undated, exclude taxes; some pages years old."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay and dorm prices",
+    "November prices",
+    "Local taxi day",
+    "GoaMiles quote"
+   ]
+  },
+  "mandrem": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3565,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.kayak.co.in/Mandrem-Hotels.58439.hotel.ksp"
+    ],
+    "budget_hotel_median_inr": 1354,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.kayak.co.in/Mandrem-Hotels.58439.hotel.ksp"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Kayak India town page, 10-11 Oct 2026 'from' prices (cheapest provider; tax basis not stated on the page), which is the Oct shoulder, not the Nov peak start. Mid (n=4): Stone Wood Resort Mandrem 2,320 (tier list, undated); Wellness Inn 3,263 (Kayak India hotel page 'from', search result); Beach Street Eco Resort & Spa 3,867 (tier list; the hotel's own Kayak page shows 5,387 cheapest); Riva Beach Resort 5,317 (tier list; Cleartrip 11-12 Oct shows 2,873 pre-tax). Median (3,263+3,867)/2 = 3,565; sources disagree on two of the four by up to 2,400, so treat as a band. Budget (n=6, Mandrem tier lists, undated): Spaceland Mandrem 611; Casa Aqua 1,160; Avana 1,257; Jolene's 1,450; Shankar By The Sea 1,742; Aqua Bella 2,900. Median 1,354. Cleartrip 13 Nov: La Cabana Beach Resort (4-star) 11,550 pre-tax vs 4,720 on its 11-12 Oct page, a 2.4x November jump on the listing shown (rooms may differ).",
+    "notes": "Huts and cottages: DD cottages Mandrem 967 (tier list). The Hosteller Goa Mandrem 3,383 (hostel, not a dorm label). Many guesthouses/huts exist; medians here are walled rooms only where the page named a hotel/resort. No homestay or dorm price found. Peak weeks higher."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Morjim (sedan; Mandrem lies just north)",
+      "inr": 1000
+     },
+     {
+      "route": "Calangute to Arambol (sedan; Mandrem lies just south)",
+      "inr": 1100
+     },
+     {
+      "route": "Mopa airport to Mandrem / Siolim (sedan)",
+      "inr": 1150,
+      "range": "1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth"
+     }
+    ],
+    "basis": "No Mandrem-start local day found on a fetched page. Operators' 8 h North Goa packages (2,200 to 2,800) start from the Calangute belt.",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "Neighbouring-beach fares only; no Mandrem local day. Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 900,
+    "standard_inr": 1600,
+    "basis": "Zomato / Justdial cost for two (search summary) / 2 per meal: Udupi Anand Sagar and Mango Tree about 250; Monarch Restaurant 700; Cafe Food Planet 1,000 (Justdial 850); Ahista 1,000; Artjuna Mandrem 1,200. Budget day = breakfast 125 (Udupi Anand Sagar) + lunch 350 (Monarch) + dinner 425 (Cafe Food Planet, Justdial) = 900. Standard day = breakfast 500 (Ahista) + lunch 500 (Cafe Food Planet, Zomato) + dinner 600 (Artjuna) = 1,600.",
+    "sources": [
+     "https://www.zomato.com/goa/mandrem-restaurants/caf%C3%A9",
+     "https://www.zomato.com/goa/cafe-food-planet-mandrem",
+     "https://www.justdial.com/Goa/Restaurants-in-Arambol/nct-10408936"
+    ],
+    "notes": "Only 5 places seen; budget end relies on a 250-for-two listing."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay and dorm prices",
+    "Real hut/guesthouse median",
+    "November prices (only La Cabana)",
+    "Local taxi day"
+   ]
+  },
+  "arambol": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3694,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.kayak.co.in/Arambol-Hotels.305884.hotel.ksp"
+    ],
+    "budget_hotel_median_inr": 1208,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.kayak.co.in/Arambol-Hotels.305884.hotel.ksp"
+    ],
+    "homestay_median_inr": 773,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.kayak.co.in/Arambol-Hotels.305884.hotel.ksp"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Kayak India town page, 10-11 Oct 2026 'from' prices (cheapest provider; tax basis not stated on the page), which is the Oct shoulder, not the Nov peak start. Mid (n=5; page tiers mix 10-11 Oct 'from' and undated per-night): Casa Eternal Beach Resort & Spa 1,837; Amore Serenity Resort 2,223; Aaria Hills 3,694; Nanu Resort 3,770; Lotus Sutra 4,498 (the same page's tier list shows it at 2,707). Median 3,694. Budget (n=6, Arambol-labelled): Aym Yoga Resort 870; hotel ramdev 967; The Noname Guesthouse 1,063; Nazri The Verda 1,353; Luciano Guest House 1,353; Hotel Swati 1,843. Median 1,208. Homestay n=1: Beyond the Reef - Nestin'Goa Homestays 773 (type from the name; tier list). Cleartrip 13 Nov 2026: The Clouds Resort Arambol (4-star) 6,986 pre-tax.",
+    "notes": "Huts/cottages (not in medians): Adrista Divine Cottages 2,030; Sydney X Cafe And Huts 870. Fort Tiracol (heritage hotel at Querim) 10,907 excluded. Mitra Hostel 580 is a hostel without a dorm label. Peak weeks higher."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Calangute to Arambol (sedan)",
+      "inr": 1100
+     },
+     {
+      "route": "Mopa airport to Arambol / Morjim (sedan)",
+      "inr": 1150,
+      "range": "1,100-1,200 TaxiBazaar pre-booked; 1,300-1,400 prepaid booth; Arambol airport fare absent from Jagnish chart"
+     }
+    ],
+    "basis": "No Arambol-start local day found on a fetched page. Operators' 8 h North Goa packages (2,200 to 2,800) start from the Calangute belt, 1,100 away.",
+    "sources": [
+     "https://www.cabgoa.com/local-sightseeing.php",
+     "https://pavancab.com/goa/per-day-taxi-charges-in-goa.html",
+     "https://www.jagnishtours.com/taxi-fare-in-goa",
+     "https://umangtravels.org/news/taxi-service-calangute",
+     "https://www.taxibazaar.in/manohar-airport-taxi-guide.php"
+    ],
+    "notes": "No Arambol local day. A third-party summary quoted a North Goa package of 3,400 from Morjim/Arambol (not read on a page, not used). Umang Travels (https://umangtravels.org/news/taxi-service-calangute) gives sedan one-way fares from Calangute incl. GST, tolls, parking. Scooter hire: Honda Activa 6G 499 per day weekdays with 1,000 deposit in Candolim (gearzvehicle.com Candolim page, search summary), Activa 6G 410 and Fascino 125 400 (sukuto.com), Activa 6G 470 (gowheelo.com); Royal Enfield Classic 350 about 1,000. Peak Dec-Jan higher; none of these pages is dated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 625,
+    "standard_inr": 1600,
+    "basis": "Zomato / Justdial cost for two (search summary) / 2 per meal: Hippocrats 250; Shimon's Falafel 500 (Justdial 550); Pure Veg Cafe 500; TATHASTU 1,200; This Is It 1,200; Blue Sea View 1,500. Budget day = breakfast 125 (Hippocrats) + lunch 250 (Shimon's) + dinner 250 (Pure Veg Cafe) = 625. Standard day = breakfast 250 (Shimon's) + lunch 600 (Tathastu) + dinner 750 (Blue Sea View) = 1,600.",
+    "sources": [
+     "https://www.zomato.com/goa/best-arambol-cafe-restaurants",
+     "https://www.zomato.com/goa/arambol-restaurants?cft=0",
+     "https://www.justdial.com/Goa/Restaurants-in-Arambol/nct-10408936"
+    ],
+    "notes": "Undated; one Zomato list page is from Sept 2024."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay median beyond n=1",
+    "Dorm price",
+    "November prices",
+    "Local taxi day"
+   ]
+  }
+ }
+}
