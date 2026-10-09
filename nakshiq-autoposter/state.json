@@ -38,18 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-08",
     "PdMu0_evening": "2026-10-08",
-    "PdMu0_carousel": "2026-10-08"
+    "PdMu0_carousel": "2026-10-09"
   },
   "last_sync": "2026-10-08T20:05:32.941225+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "darjeeling",
-      "date": "2026-09-24"
-    },
-    {
-      "destination_id": "chopta",
-      "date": "2026-09-24"
-    },
     {
       "destination_id": "kiphire",
       "date": "2026-09-25"
@@ -157,6 +149,10 @@
     {
       "destination_id": "shimla",
       "date": "2026-10-08"
+    },
+    {
+      "destination_id": "hyderabad",
+      "date": "2026-10-09"
     }
   ],
   "posted_formats": {
@@ -10610,6 +10606,33 @@
       "format": "v2_score_card_pov",
       "has_media": true,
       "media_id": "shimla.mp4"
+    },
+    {
+      "timestamp": "2026-10-09T07:37:23.450602+00:00",
+      "date": "2026-10-09",
+      "platform": "instagram",
+      "post_id": "2wRMH",
+      "destination": "nainital",
+      "format": "scenario_guide",
+      "media_id": "OXVQT"
+    },
+    {
+      "timestamp": "2026-10-09T07:37:50.739518+00:00",
+      "date": "2026-10-09",
+      "platform": "youtube",
+      "post_id": "SsHCb",
+      "destination": "mussoorie",
+      "format": "scenario_guide",
+      "media_id": "iQFwm"
+    },
+    {
+      "timestamp": "2026-10-09T14:34:52.963489+00:00",
+      "date": "2026-10-09",
+      "platform": "facebook",
+      "post_id": "5aptp",
+      "destination": "hyderabad",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-10-09"
     }
   ],
   "theme_usage": {
@@ -10658,6 +10681,11 @@
         "2026-06-05",
         "2026-08-04",
         "2026-10-07"
+      ],
+      "shimla": [
+        "2026-05-24",
+        "2026-06-03",
+        "2026-10-08"
       ],
       "puri": [
         "2026-05-25",
@@ -10972,9 +11000,6 @@
       ],
       "kolhapur": [
         "2026-10-08"
-      ],
-      "shimla": [
-        "2026-10-08"
       ]
     },
     "morning_formats": {
@@ -11104,6 +11129,10 @@
         "2026-09-23",
         "2026-09-30"
       ],
+      "v2_score_card_pov": [
+        "2026-06-02",
+        "2026-10-08"
+      ],
       "v2_local_knows": [
         "2026-06-02",
         "2026-06-16",
@@ -11139,9 +11168,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v2_score_card_pov": [
-        "2026-10-08"
       ]
     },
     "reels": {
@@ -11155,6 +11181,11 @@
         "2026-06-05",
         "2026-08-04",
         "2026-10-07"
+      ],
+      "shimla": [
+        "2026-05-24",
+        "2026-06-03",
+        "2026-10-08"
       ],
       "mumbai": [
         "2026-05-26",
@@ -11326,9 +11357,6 @@
       ],
       "shantiniketan": [
         "2026-10-06"
-      ],
-      "shimla": [
-        "2026-10-08"
       ]
     },
     "audience_tags": {
