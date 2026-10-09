@@ -62,6 +62,109 @@
    "verdict": "KEEP",
    "value": 2450,
    "note": "maduraicitycabs.in sedan 8hr/80km 2400; maduraitaxi.com 2,500 base plus GST."
+  },
+  "mangalore": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "mangaloretaxis.com (Mangalore address) sedan 8 hours/80 km 2200."
+  },
+  "munnar": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "munnarsightseeingcabs.com Mattupatty day trip Etios 2500; single operator, undated."
+  },
+  "murudeshwar": {
+   "verdict": "KEEP",
+   "value": 2000,
+   "note": "murudeshwar.co.in local sedan 8 hours starts from 2,000; a floor price."
+  },
+  "mysore": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "taxiserviceinmysore.com Swift Dzire 8 Hrs / 80 Km 2,200."
+  },
+  "ooty": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "travel2ooty.com sedan from 2,200 for Ooty City Tour; coonoortaxi cross-check 2,300 + GST."
+  },
+  "pondicherry": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "pondicherrycar.com Swift Dzire 8 Hours/80 KM 2500."
+  },
+  "puducherry": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Same page and figure as pondicherry."
+  },
+  "rajahmundry": {
+   "verdict": "UNVERIFIABLE",
+   "note": "Site returned HTTP 402; snippet only."
+  },
+  "swamimalai": {
+   "verdict": "DROP",
+   "note": "Starting prices for 6h/100km package only; no 8h/80km rate."
+  },
+  "thanjavur": {
+   "verdict": "CORRECT",
+   "value": 3200,
+   "note": "thanjavurtaxi.com Dzire 6 hrs/100 km 2,500 + 2 extra hours at 350 = 3,200 for 8 hours (derived)."
+  },
+  "thekkady": {
+   "verdict": "DROP",
+   "note": "A 4-hour jeep safari programme, not a cab day."
+  },
+  "thrissur": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "taxicabthrissur.com (Thrissur address) sedan 8 hours/80 km Rs 2,200."
+  },
+  "tirumala": {
+   "verdict": "DROP",
+   "note": "Tirupati operator's temple package excluding GST, not a Tirumala local day."
+  },
+  "tirupati": {
+   "verdict": "KEEP",
+   "value": 2600,
+   "note": "tirupatibalajitourstravels.com Etios Local 8 Hours / 80 KMs 2600; tirumalatirupaticabs.in 2,300-2,600; undated."
+  },
+  "tiruvannamalai": {
+   "verdict": "KEEP",
+   "value": 2400,
+   "note": "rptvmtravels.com (Thiruvannamalai address) 8 hrs 80 km Rs 2400."
+  },
+  "trivandrum": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "trivandrumtaxi.in (Kowdiar address) sedan local 8 Hrs / 80 Km 2,200."
+  },
+  "vagamon": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "jeepsafarivagamon.co.in rate per day 2500, 100 km; card matches Wayanad Cabs, so medium confidence."
+  },
+  "valparai": {
+   "verdict": "KEEP",
+   "value": 2850,
+   "note": "valparaicitytravels.com full sightseeing circuit 4-seater 2850."
+  },
+  "varkala": {
+   "verdict": "DROP",
+   "note": "A four-sight package with no hours or km stated."
+  },
+  "vijayawada": {
+   "verdict": "DROP",
+   "note": "MakeMyTrip card identical to Tirupati's: template."
+  },
+  "visakhapatnam": {
+   "verdict": "UNVERIFIABLE",
+   "note": "MakeMyTrip timed out; same price on 6h and 8h tabs."
+  },
+  "wayanad": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "wayanadcabs.in (Vythiri address) sedan base 2500, max 100 km."
   }
  },
  "food": {
@@ -238,6 +341,180 @@
    "budget": 300,
    "standard": 600,
    "note": "holidify cost for two 200-400 approx; undated page."
+  },
+  "mahabalipuram": {
+   "verdict": "KEEP",
+   "budget": 619,
+   "standard": 938,
+   "note": "Holidify cost for two 100-700; single undated source."
+  },
+  "mangalore": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; snippets support budget only weakly."
+  },
+  "munnar": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; delivery-view estimate."
+  },
+  "murudeshwar": {
+   "verdict": "CORRECT",
+   "budget": null,
+   "standard": 750,
+   "note": "Magicpin two restaurants at 500 for two; budget null. The loader needs both tiers, so it skips this row."
+  },
+  "mysore": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; only two rows confirmed."
+  },
+  "ooty": {
+   "verdict": "KEEP",
+   "budget": 750,
+   "standard": 900,
+   "note": "ootytourism.co.in approximate costs for two 400-600; arithmetic holds."
+  },
+  "palani": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; standard unsupported."
+  },
+  "pondicherry": {
+   "verdict": "KEEP",
+   "budget": 550,
+   "standard": 1275,
+   "note": "FabHotels blog (2023) cost for two 300-1200; medians hold."
+  },
+  "puducherry": {
+   "verdict": "KEEP",
+   "budget": 550,
+   "standard": 1275,
+   "note": "Same source and figure as pondicherry."
+  },
+  "pulicat-lake": {
+   "verdict": "DROP",
+   "budget": null,
+   "standard": null,
+   "note": "Proxy from Sullurpeta town; the lake has no restaurants."
+  },
+  "rajahmundry": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; day totals are the researcher's own arithmetic."
+  },
+  "rameswaram": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato and Justdial timed out; one row confirmed."
+  },
+  "sakleshpur": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; weak snippets; day totals are constructed."
+  },
+  "srikalahasti": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; one row matched."
+  },
+  "srirangam": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "One row confirmed; standard rests on a single venue."
+  },
+  "srisailam": {
+   "verdict": "CORRECT",
+   "budget": null,
+   "standard": 750,
+   "note": "holidify Trishul Restaurant 500 for two; no budget tier. The loader needs both tiers, so it skips this row."
+  },
+  "thanjavur": {
+   "verdict": "CORRECT",
+   "budget": 260,
+   "standard": 525,
+   "note": "holidify Marutham 150-200 for two (budget), standard average 350 for two after excluding a Kumbakonam venue; thin and possibly dated."
+  },
+  "thrissur": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; standard is a constructed mix."
+  },
+  "tiruchendur": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; magicpin contradicts one row."
+  },
+  "tirupati": {
+   "verdict": "KEEP",
+   "budget": 350,
+   "standard": 650,
+   "note": "tirupatiofficial.com per-person prices 60-400; medium confidence."
+  },
+  "tiruttani": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out."
+  },
+  "tiruvannamalai": {
+   "verdict": "KEEP",
+   "budget": 330,
+   "standard": 650,
+   "note": "Wanderlog review text; medium-low confidence."
+  },
+  "trichy": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Only two rows confirmed."
+  },
+  "trivandrum": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; medians cannot be reproduced."
+  },
+  "udupi": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; snippets only."
+  },
+  "vijayawada": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out."
+  },
+  "visakhapatnam": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out."
+  },
+  "warangal": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Page returned HTTP 429; search summary only."
+  },
+  "yercaud": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 675,
+   "note": "TravelTriangle (Feb 2025) cost for two 200-500; Holidify 500; budget tier rests on two restaurants."
   }
  }
 }
