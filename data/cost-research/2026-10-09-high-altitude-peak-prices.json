@@ -1,0 +1,748 @@
+{
+  "measured_on": "2026-10-09",
+  "places": {
+    "leh": {
+      "peak_night": "2027-07-01",
+      "mid_median_inr": 5945,
+      "mid_n": 5,
+      "mid_basis": "pre-tax (taxes & fees shown separately by site), Cleartrip, 1-2 Jul 2027, 2 adults, lowest-priced private double per property; 3 room-only, 2 with breakfast (no room-only rate shown). 4 of 5 carry a 4-star label on Cleartrip",
+      "mid_properties": [
+        {
+          "name": "The Pal Hotel (3-star label)",
+          "inr": 8280,
+          "date": "2027-07-01",
+          "plan": "room only, Deluxe Single mountain view, pre-tax (+2,640 taxes & fees shown separately)",
+          "url": "https://www.cleartrip.com/hotels/details/the-pal-4285869?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0"
+        },
+        {
+          "name": "Hotel Rewa Ladakh (4-star label, 4.2)",
+          "inr": 8188,
+          "date": "2027-07-01",
+          "plan": "room only, Shing Nang Premier, pre-tax (+1,958)",
+          "url": "https://www.cleartrip.com/hotels/details/4289478?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0"
+        },
+        {
+          "name": "Hotel Grand Khasdan (4-star label)",
+          "inr": 5785,
+          "date": "2027-07-01",
+          "plan": "room only, Super Deluxe Double, pre-tax (+520)",
+          "url": "https://www.cleartrip.com/hotels/details/hotel-the-grand-khasdan-4065994?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0"
+        },
+        {
+          "name": "Hotel Gyalpo Residency (4-star label, 4.8)",
+          "inr": 5945,
+          "date": "2027-07-01",
+          "plan": "WITH BREAKFAST (no room-only rate shown), Luxury Room, pre-tax (+598)",
+          "url": "https://www.cleartrip.com/hotels/details/hotel-gyalpo-residency-a-mountain-view-luxury-hotel-in-leh-4066000?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0"
+        },
+        {
+          "name": "Hotel Dragon Leh, centrally heated (4-star label, 4.7)",
+          "inr": 4526,
+          "date": "2027-07-01",
+          "plan": "WITH BREAKFAST (no room-only rate shown), Deluxe Room valley view, pre-tax (+574). Same 4,526 shown for 15 Jun and 15 Aug 2027",
+          "url": "https://www.cleartrip.com/hotels/details/hotel-dragon-45232?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0"
+        }
+      ],
+      "homestay_median_inr": 2500,
+      "homestay_n": 4,
+      "homestay_properties": [
+        {
+          "name": "Mandarava Homestay",
+          "inr": 2700,
+          "date": "2026 listing, undated",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/"
+        },
+        {
+          "name": "Chunpa House",
+          "inr": 2300,
+          "date": "2026 listing, undated",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/"
+        },
+        {
+          "name": "Niri-la Ladakh Guest House",
+          "inr": 1900,
+          "date": "2026 listing, undated",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/"
+        },
+        {
+          "name": "New Royal Guest House",
+          "inr": 2900,
+          "date": "2026 listing, undated",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/"
+        }
+      ],
+      "same_property_peak_over_nov": [
+        {
+          "name": "The Pal Hotel, Deluxe Single room only",
+          "peak_inr": 8280,
+          "nov_inr": 6720,
+          "ratio": 1.232,
+          "url": "https://www.cleartrip.com/hotels/details/the-pal-4285869?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/the-pal-4285869?c=13112026|14112026&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "note": "Other rooms same pair: Deluxe Queen 8,625 vs 7,392 (1.17); Deluxe King 10,005 vs 9,408 (1.06); Family Suite 23,000 vs 17,472 (1.32). Nov shown at 16% off a struck rate of 8,000."
+        },
+        {
+          "name": "Hotel Rewa Ladakh, Shing Nang Premier room only",
+          "peak_inr": 8188,
+          "nov_inr": 6141,
+          "ratio": 1.333,
+          "url": "https://www.cleartrip.com/hotels/details/4289478?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/4289478?c=13112026|14112026&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "note": "Rabsal Luxury 9,826 vs 7,779 (1.26); Junior Suite 12,446 vs 10,399 (1.20). Both dates 18% off the struck rate, so the rack rate itself rises ~1.2-1.33x."
+        },
+        {
+          "name": "Hotel Grand Khasdan, Super Deluxe Double room only",
+          "peak_inr": 5785,
+          "nov_inr": 5785,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/hotel-the-grand-khasdan-4065994?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/hotel-the-grand-khasdan-4065994?c=13112026|14112026&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "note": "Identical on both dates."
+        },
+        {
+          "name": "Hotel Gyalpo Residency, Luxury Room with breakfast",
+          "peak_inr": 5945,
+          "nov_inr": 5992,
+          "ratio": 0.992,
+          "url": "https://www.cleartrip.com/hotels/details/hotel-gyalpo-residency-a-mountain-view-luxury-hotel-in-leh-4066000?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/hotel-gyalpo-residency-a-mountain-view-luxury-hotel-in-leh-4066000?c=13112026|14112026&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "note": "Both 18% off a struck rate (7,247 Jul vs 7,338 Nov)."
+        },
+        {
+          "name": "Hotel Dragon Leh, Deluxe Room with breakfast",
+          "peak_inr": 4526,
+          "nov_inr": 6026,
+          "ratio": 0.751,
+          "url": "https://www.cleartrip.com/hotels/details/hotel-dragon-45232?c=01072027|02072027&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/hotel-dragon-45232?c=13112026|14112026&city=Leh&state=Ladakh&country=IN&r=2,0",
+          "note": "July LOWER than Nov. The same 4,526 appears on 15 Jun, 1 Jul and 15 Aug 2027, so it is a flat loaded rate, not a demand price."
+        }
+      ],
+      "same_property_ratio_median": 1.0,
+      "same_property_ratio_range": [
+        0.751,
+        1.333
+      ],
+      "published_peak_tariffs_ep_double": [
+        {
+          "name": "Hotel Riwang Residency",
+          "ep_double_inr_ex_gst": 4000,
+          "valid": "'current room rates for summer year 2026', no dates",
+          "gst": "extra",
+          "url": "https://riwangresidency.com/tariff.htm"
+        },
+        {
+          "name": "Hotel Choskor",
+          "ep_double_inr_ex_gst": 3125,
+          "valid": "15 Apr to 30 Oct 2025",
+          "gst": "page shows 3,500 INCLUDING 12% GST; 3,500/1.12 = 3,125",
+          "url": "https://www.hotelchoskorleh.com/tariff-plan"
+        },
+        {
+          "name": "Hotel Caravan Centre",
+          "ep_double_inr_ex_gst": 4900,
+          "valid": "April to October 2025",
+          "gst": "12% extra",
+          "url": "https://www.hotelcaravancentre.com/room-tariff.htm"
+        },
+        {
+          "name": "Hotel Capital City",
+          "ep_double_inr_ex_gst": 4600,
+          "valid": "1 Apr to 31 Oct 2024",
+          "gst": "12% extra",
+          "url": "https://www.hotelcapitalcityladakh.in/tariff.php"
+        },
+        {
+          "name": "Hotel Lotus Ladakh",
+          "ep_double_inr_ex_gst": 4300,
+          "valid": "no year or dates on page",
+          "gst": "'+ Tax'",
+          "url": "https://www.hotellotusladakh.in/hotel-with-best-tariff-ladakh.php"
+        }
+      ],
+      "published_peak_tariff_median_inr_ex_gst": 4300,
+      "nov_2026_context": {
+        "cleartrip_3star_median_pretax_discounted": 2695,
+        "cleartrip_3star_median_struck_rack_rate": 4000,
+        "note": "Cleartrip 13-14 Nov 2026, 13 Leh 3-star hotels (hostel, Pangong property and a 37,500 outlier excluded): discounted median 2,695, struck-through 'original' median 4,000. Published 2024-26 peak tariffs median 4,300. So peak tariffs sit near the OTA rack rate; the Nov OTA price is the rack rate minus a 30-50% off-season discount. What a July guest actually pays after OTA discount is NOT observed (Cleartrip carries 2027 rates for only 5 of 34 Leh properties tested)."
+      },
+      "notes": "Of 34 Leh properties tested on Cleartrip for 1 Jul 2027 only 5 returned rates (the rest 'No rooms available', i.e. 2027 inventory not loaded). Those 5 are mostly 4-star-labelled hotels at OTA contracted rates; same-property July/Nov ratios run 0.75 to 1.33 (median 1.0), and Dragon shows an identical price on 15 Jun, 1 Jul and 15 Aug, so these look like flat loaded rates, not peak demand pricing. Better peak evidence is the hotels' own season tariffs (EP double, ex-GST, Apr-Oct): median 4,300 over 5 hotels (2024-26). Kayak/Booking/Trivago/Hotels.com did not return usable 2027 prices (JS-rendered, blocked or no dates). Tripadvisor and Trivago returned HTTP 403 and were not bypassed.",
+      "confidence": "low"
+    },
+    "nubra-valley": {
+      "peak_night": "2027-07-01",
+      "mid_median_inr": 4975,
+      "mid_n": 6,
+      "mid_basis": "MIXED and weak: 1 dated Cleartrip rate (1 Jul 2027, with breakfast, pre-tax), 1 official 2025 tariff (incl GST), 4 undated '2026' blogger/operator listings with no tax or plan stated",
+      "mid_properties": [
+        {
+          "name": "Hotel Nubra Delight and Camps, Hunder: Deluxe Room with breakfast",
+          "inr": 4950,
+          "date": "2027-07-01",
+          "plan": "with breakfast, pre-tax (+495); Deluxe Tent with breakfast 3,960",
+          "url": "https://www.cleartrip.com/hotels/details/nubra-delight-camp-3933994?c=01072027|02072027&city=Hunder&state=Ladakh&country=694&r=2,0"
+        },
+        {
+          "name": "Hotel Grand Nubra, Diskit: Deluxe Double, CP",
+          "inr": 5700,
+          "date": "2025 season tariff (page 'Tariff for 2025')",
+          "plan": "breakfast plan, INCLUDES GST (ex-GST at 12% = 5,089)",
+          "url": "https://hotelgrandnubra.com/room-tariff/"
+        },
+        {
+          "name": "Hotel Stendel, Diskit",
+          "inr": 5000,
+          "date": "2026 listing, undated",
+          "plan": "unspecified plan; go2ladakh shows 4,200, DwD says 3,000-5,000 'as of 2025-2026 season'",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/nubra-valley"
+        },
+        {
+          "name": "Hotel Karma Inn, Hunder",
+          "inr": 5000,
+          "date": "2026 listing, undated",
+          "plan": "unspecified plan and tax basis",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/nubra-valley"
+        },
+        {
+          "name": "Lotus Eco Resort, Hunder",
+          "inr": 4000,
+          "date": "2026 listing, undated",
+          "plan": "unspecified; go2ladakh 4,560; DwD 'starts around 3,300'",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/nubra-valley"
+        },
+        {
+          "name": "Sand Dunes View Resort, Hunder",
+          "inr": 3200,
+          "date": "2026 listing, undated",
+          "plan": "unspecified plan and tax basis",
+          "url": "https://www.lehladakhtaxis.com/best-hotels-leh-ladakh/nubra-valley"
+        }
+      ],
+      "homestay_median_inr": 2250,
+      "homestay_n": 4,
+      "homestay_properties": [
+        {
+          "name": "Snow Leopard Guest House, Hunder",
+          "inr": 2750,
+          "date": "range 2,000-3,500 (midpoint)",
+          "url": "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        },
+        {
+          "name": "Cedar Residency, Hunder",
+          "inr": 2500,
+          "date": "range 2,200-2,800 (midpoint), 'roughly'",
+          "url": "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        },
+        {
+          "name": "Galaxy Guest House, Hunder",
+          "inr": 2000,
+          "date": "range 1,500-2,500 (midpoint)",
+          "url": "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        },
+        {
+          "name": "Yourdum Guest House, Hunder",
+          "inr": 1500,
+          "date": "range 1,200-1,800 (midpoint)",
+          "url": "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        }
+      ],
+      "same_property_peak_over_nov": [
+        {
+          "name": "Hotel Nubra Delight and Camps (Standard Tent in Nov vs Deluxe Tent in Jul: ROOM CATEGORY DIFFERS)",
+          "peak_inr": 3960,
+          "nov_inr": 2976,
+          "ratio": 1.331,
+          "url": "https://www.cleartrip.com/hotels/details/nubra-delight-camp-3933994?c=01072027|02072027&city=Hunder&state=Ladakh&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/nubra-delight-camp-3933994?c=13112026|14112026&city=Hunder&state=Ladakh&country=694&r=2,0",
+          "note": "Both with breakfast. Nov was 32% off a struck 4,400; Jul Deluxe Tent is 10% off a struck 4,400. The struck (rack) rate is the same 4,400 on both dates, so only the discount differs. Not a clean like-for-like."
+        }
+      ],
+      "notes": "Only 1 of 13 Hunder/Diskit properties tested on Cleartrip (Nubra Delight) returned 1 Jul 2027 rates; the rest said 'No rooms available'. Nov 2026 Cleartrip shows 8 Hunder properties priced 1,778-4,005 (many camps shut). Dheeraj (DwD, updated 9 Oct 2026) says peak is Jul-Aug, glamping camps 5,000-15,000+, and that in June and September you can negotiate walk-in rates. Camps with meals (Hunder Sarai ~5,000-5,700, Nubra Sarai 5,000, Chamba Deluxe 2,400-3,900 per DwD/go2ladakh) are excluded from the median. Nubra Valley was not previously stay-observed, so no Nov baseline exists.",
+      "confidence": "low"
+    },
+    "kargil": {
+      "peak_night": "2027-07-01",
+      "mid_median_inr": 6000,
+      "mid_n": 2,
+      "mid_basis": "hotel own published EP double tariffs (not dated listing prices): 'Tariff 2026' for The Kargil (+GST), undated for Zojila Residency",
+      "mid_properties": [
+        {
+          "name": "Hotel The Kargil (4-star, 4.6)",
+          "inr": 7400,
+          "date": "'Tariff 2026' EP double, no season stated",
+          "plan": "room only, + GST (rate not stated)",
+          "url": "https://hotelthekargil.com/our-rooms"
+        },
+        {
+          "name": "Hotel Zojila Residency, Baroo: Deluxe Room",
+          "inr": 4600,
+          "date": "website tariff, no year or season",
+          "plan": "EP; GST/tax basis not stated",
+          "url": "https://www.zojilaresidency.com/tariff.php"
+        }
+      ],
+      "homestay_median_inr": null,
+      "homestay_n": 0,
+      "homestay_properties": [],
+      "same_property_peak_over_nov": [
+        {
+          "name": "Hotel The Kargil: published EP double vs Cleartrip Nov",
+          "peak_inr": 7400,
+          "nov_inr": 5917,
+          "ratio": 1.251,
+          "url": "https://hotelthekargil.com/our-rooms",
+          "nov_url": "https://www.cleartrip.com/hotels/details/hotel-the-kargil-4280712?c=13112026|14112026&city=Kargil&state=Ladakh&country=694&r=2,0",
+          "note": "Nov Cleartrip struck-through rate is 7,250 (18% off), i.e. the Nov OTA rack is within 2% of the published tariff. Ratio is tariff vs discounted Nov OTA price, not two dated prices."
+        },
+        {
+          "name": "Hotel Zojila Residency: published Deluxe EP vs Cleartrip Nov",
+          "peak_inr": 4600,
+          "nov_inr": 2792,
+          "ratio": 1.648,
+          "url": "https://www.zojilaresidency.com/tariff.php",
+          "nov_url": "https://www.cleartrip.com/hotels/details/5065594?c=13112026|14112026&city=Kargil&state=Ladakh&country=694&r=2,0",
+          "note": "Nov Cleartrip struck-through rate is 4,500 (38% off), within 2% of the published 4,600."
+        }
+      ],
+      "notes": "Cleartrip returned 'No rooms available' for 1 Jul 2027 at all 6 Kargil properties tested (The Haven, The Kargil, Zojila Residency, White Castle, Rangyul, Highland). No dated 2027 price exists in my data. The two published tariffs are within 2% of the struck-through rack rates Cleartrip shows for Nov 2026, so the hotels do not publish a separate winter tariff; the Nov price is simply deeply discounted (18-38%). Search-result snippets (not fetched, undated) put The Haven Deluxe room-only at 4,200 listed (EaseMyTrip) and Highland Deluxe at 4,800-4,900; the Highland's own tariff page is from 2017-18 and was ignored. Kargil is a highway halt; Google Hotels marks Jul-Aug peak per a search summary (unverified). Kargil was not previously stay-observed.",
+      "confidence": "low"
+    },
+    "hanle": {
+      "peak_night": "2027-07-01",
+      "mid_median_inr": 4000,
+      "mid_n": 5,
+      "mid_basis": "NOT dated 2027 prices. Small guesthouse/cottage double rates from an agent listing (Miyatra, undated 'from' prices incl. some meals) and one 2025 operator page. Hanle has no 3-star; these are the best private rooms",
+      "mid_properties": [
+        {
+          "name": "The HOR Hotel Hanle",
+          "inr": 3000,
+          "date": "page footer 2025, midpoint of 2,500-3,500",
+          "plan": "unspecified",
+          "url": "https://thehorhanle.com/places-to-stay-in-hanle-a-complete-guide-for-travelers-to-ladakhs-hidden-gem/"
+        },
+        {
+          "name": "AMA Cottage (Miyatra agent listing)",
+          "inr": 4000,
+          "date": "undated 'from' price, double sharing",
+          "plan": "breakfast + lunch listed",
+          "url": "https://www.miyatra.com/hotel/the-sky-abode-hanle"
+        },
+        {
+          "name": "Happiness Cottage (Miyatra agent listing)",
+          "inr": 4000,
+          "date": "undated 'from' price, double sharing",
+          "plan": "breakfast + lunch listed",
+          "url": "https://www.miyatra.com/hotel/the-sky-abode-hanle"
+        },
+        {
+          "name": "Umlingla Residency Hanle (Miyatra agent listing)",
+          "inr": 4500,
+          "date": "undated 'from' price, double sharing",
+          "plan": "breakfast + lunch listed",
+          "url": "https://www.miyatra.com/hotel/the-sky-abode-hanle"
+        },
+        {
+          "name": "Mankhar Residence (Miyatra agent listing)",
+          "inr": 5500,
+          "date": "undated 'from' price, double sharing",
+          "plan": "breakfast + lunch listed",
+          "url": "https://www.miyatra.com/hotel/the-sky-abode-hanle"
+        }
+      ],
+      "homestay_median_inr": 3500,
+      "homestay_n": 4,
+      "homestay_properties": [
+        {
+          "name": "Sonam Home Stay (own site, (c) 2026)",
+          "inr": 3500,
+          "date": "tariff page, no season",
+          "plan": "double bed room, breakfast included, all taxes included",
+          "url": "https://sonamhomestayhanle.in/tariffs/"
+        },
+        {
+          "name": "Padma Homestay (Miyatra)",
+          "inr": 3800,
+          "date": "undated 'from', double sharing",
+          "plan": "breakfast + lunch",
+          "url": "https://www.miyatra.com/hotel/the-sky-abode-hanle"
+        },
+        {
+          "name": "Milky Way Homestay (Miyatra)",
+          "inr": 3500,
+          "date": "undated 'from', double sharing",
+          "plan": "meals not listed",
+          "url": "https://www.miyatra.com/hotel/the-sky-abode-hanle"
+        },
+        {
+          "name": "Ruthpa Homestay (Miyatra)",
+          "inr": 3500,
+          "date": "undated 'from', double sharing",
+          "plan": "breakfast + lunch",
+          "url": "https://www.miyatra.com/hotel/the-sky-abode-hanle"
+        }
+      ],
+      "same_property_peak_over_nov": [],
+      "notes": "Cleartrip has no Hanle page (404) and no Hanle property appears on any Cleartrip city list, so no dated listing exists. Other own-site tariffs: Gua Home Stay Double 2,800 on American Plan (all meals) + 12% GST, 'peak season May-September' (https://guahomestayhanle.in/tariffs.html); Lhamo Home Stay Standard 1,500, Family 3,000, meals unstated (https://lhamohomestayhanle.in/). Sky Abode (premium, sunroof stargazing room) from 13,000 double sharing with breakfast+dinner, excluded as not mid. Camps with meals (DwD: Hanle-side guest house ~6,000 with meals; summer eco-camps) excluded. A 'peak vs Nov' ratio cannot be built: Hanle homestays shut in winter, there is no Nov price from the same properties.",
+      "confidence": "low"
+    },
+    "pangong-lake": {
+      "peak_night": "2027-07-01",
+      "mid_median_inr": 3366,
+      "mid_n": 3,
+      "mid_basis": "NOT dated peak prices. Two OTA room-only rates for an undated late-Oct-2026 stay plus one operator package. Best private rooms/cottages; meal-inclusive camps excluded",
+      "mid_properties": [
+        {
+          "name": "Pangong Holiday Cottage, Lukung: Deluxe Cottage, room only",
+          "inr": 3366,
+          "date": "EaseMyTrip page fetched 9 Oct 2026, stay date not shown (free-cancel deadline 5 Oct 2026, so an Oct 2026 stay, very end of season)",
+          "plan": "room only, pre-tax (+170); struck rack 4,000",
+          "url": "https://www.easemytrip.com/hotels/pangong-holiday-cottage-lukung-3539400/"
+        },
+        {
+          "name": "The Ladakh Cottage, Pangong: Deluxe Double, room only",
+          "inr": 3441,
+          "date": "EaseMyTrip page fetched 9 Oct 2026, stay date not shown (free-cancel deadline 20 Oct 2026)",
+          "plan": "room only, pre-tax (+174); struck rack 4,089",
+          "url": "https://www.easemytrip.com/hotels/the-ladakh-cottage-pangong-4964015/"
+        },
+        {
+          "name": "Mystic Mountains Cottage: Gold package",
+          "inr": 3000,
+          "date": "own site, no year or season",
+          "plan": "CP (breakfast), room for 2; Silver 2,500 CP, Diamond 3,700 MAP, Platinum 4,500 AP",
+          "url": "https://mysticmountainscottage.com/"
+        }
+      ],
+      "homestay_median_inr": null,
+      "homestay_n": 0,
+      "homestay_properties": [],
+      "same_property_peak_over_nov": [
+        {
+          "name": "Pangong Holiday Cottage (Cleartrip Nov 13 vs EaseMyTrip Oct-2026 page)",
+          "peak_inr": 3366,
+          "nov_inr": 1885,
+          "ratio": 1.786,
+          "url": "https://www.easemytrip.com/hotels/pangong-holiday-cottage-lukung-3539400/",
+          "nov_url": "https://www.cleartrip.com/hotels/details/pangong-holiday-cottages-2050712?c=13112026|14112026&city=Spangmik&state=Ladakh&country=694&r=2,0",
+          "note": "NOT a peak price and two different sites. Both sites show the same struck rack rate of 4,000 (Cleartrip 53% off in Nov, EaseMyTrip 16% off). Shown only to illustrate how much of the Nov gap is OTA discount."
+        }
+      ],
+      "notes": "Cleartrip returned 'No rooms available' for 1 Jul 2027 at all 8 Spangmik properties tested (Pangong Holiday Cottage, Wilderness Retreat, Gongma, Bliss Cottage, Grand Retreat, Ladakh Cottage, Pangong Retreat Camp, Crane Valley). Dheeraj (DwD, section dated 24 Aug 2026): mid-range camps with attached western toilet 3,500-6,000 per night for two, usually MAP; luxury/geodome camps 6,800-15,000+; budget homestays 2,000-2,700 PER PERSON with dinner and breakfast; 'fill up fast between June and September'. Pangong Retreat Camp official 2026 tariff (valid to 15 Oct 2026; premium, via search result, site has an invalid certificate and was not fetched): Premium Cottage EP 10,208, Luxury Cottage EP 9,187. Mystic Mountain Cottage on Cleartrip Nov shows 30,600 (listing outlier, ignored). The best peak range I can support for mid private rooms is DwD's 3,500-6,000 (MAP, so room-only is lower).",
+      "confidence": "low"
+    },
+    "kaza": {
+      "peak_night": "2027-07-01",
+      "mid_median_inr": 2700,
+      "mid_n": 5,
+      "mid_basis": "pre-tax, Cleartrip, 1-2 Jul 2027, 2 adults, room only, lowest-priced private double per property",
+      "mid_properties": [
+        {
+          "name": "Yellow Hotels & Cottages Kaza: Cabin valley view",
+          "inr": 5839,
+          "date": "2027-07-01",
+          "plan": "room only, pre-tax (+1,760)",
+          "url": "https://www.cleartrip.com/hotels/details/4292207?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0"
+        },
+        {
+          "name": "Hotel Spiti Heritage: Superior Room mountain view",
+          "inr": 3567,
+          "date": "2027-07-01",
+          "plan": "room only, pre-tax (+359)",
+          "url": "https://www.cleartrip.com/hotels/details/5220476?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0"
+        },
+        {
+          "name": "Hotel Deyzor (5.0, 400+ ratings): Double Room accessible",
+          "inr": 2700,
+          "date": "2027-07-01",
+          "plan": "room only, pre-tax (+270); Superior Room 4,590; Mountain View 5,310",
+          "url": "https://www.cleartrip.com/hotels/details/hotel-deyzor-712234?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0"
+        },
+        {
+          "name": "Buddha Home Stay Kaza: Family Triple",
+          "inr": 2521,
+          "date": "2027-07-01",
+          "plan": "room only, pre-tax (+240)",
+          "url": "https://www.cleartrip.com/hotels/details/buddha-home-stay-kaza-5606608?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0"
+        },
+        {
+          "name": "Story Homes: Deluxe Room with Balcony",
+          "inr": 1748,
+          "date": "2027-07-01",
+          "plan": "room only, pre-tax (+162), non-refundable rate; refundable 1,942",
+          "url": "https://www.cleartrip.com/hotels/details/story-homes-5289062?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0"
+        }
+      ],
+      "homestay_median_inr": null,
+      "homestay_n": 0,
+      "homestay_properties": [],
+      "same_property_peak_over_nov": [
+        {
+          "name": "Yellow Hotels & Cottages, Cabin room only",
+          "peak_inr": 5839,
+          "nov_inr": 5839,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/4292207?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/4292207?c=13112026|14112026&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "note": "Identical, 27% off the same struck rate."
+        },
+        {
+          "name": "Hotel Deyzor, Superior Room room only",
+          "peak_inr": 4590,
+          "nov_inr": 3796,
+          "ratio": 1.209,
+          "url": "https://www.cleartrip.com/hotels/details/hotel-deyzor-712234?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/hotel-deyzor-712234?c=13112026|14112026&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "note": "Accessible Double 2,700 vs 2,260 (1.19); Mountain View 5,310 vs 4,158 (1.28). Both dates 10% off the struck rate, so the rack itself rises ~1.2-1.3x."
+        },
+        {
+          "name": "Buddha Home Stay Kaza, Family Triple room only",
+          "peak_inr": 2521,
+          "nov_inr": 2521,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/buddha-home-stay-kaza-5606608?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/buddha-home-stay-kaza-5606608?c=13112026|14112026&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "note": "Identical on all three rooms."
+        },
+        {
+          "name": "Story Homes, Deluxe Room Balcony room only (charges-apply rate)",
+          "peak_inr": 1748,
+          "nov_inr": 1922,
+          "ratio": 0.909,
+          "url": "https://www.cleartrip.com/hotels/details/story-homes-5289062?c=01072027|02072027&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/story-homes-5289062?c=13112026|14112026&city=Kaza&state=Himachal%20Pradesh&country=694&r=2,0",
+          "note": "July slightly LOWER than Nov (refundable rate 1,942 vs 2,136)."
+        }
+      ],
+      "same_property_ratio_median": 1.0,
+      "same_property_ratio_range": [
+        0.909,
+        1.209
+      ],
+      "notes": "5 usable of 18 Kaza properties tested returned 1 Jul 2027 rates (11 said 'No rooms available'; Juniper Home Kaza showed a 22,737 breakfast+dinner package, excluded as an outlier). Same-property July vs Nov: 1.0, 1.0, 1.21 and 0.91, i.e. no consistent peak premium on Cleartrip's loaded 2027 rates. The Nov Cleartrip median of the 4 then-priced hotels was 4,230 (Mahamaya 3,516, SOL ECO 3,849, Norbu 4,611, Yellow 5,839); the July set median 2,700 is lower because different, cheaper properties are open/loaded in July, not because prices fell. On the 4 same-property pairs: Jul median 2,610 vs Nov median 2,390. Dheeraj (DwD, updated 2 Oct 2026): Kaza mid-range hotels 1,500-3,000, budget homestays 500-1,000 (basic rooms, meals 100-200 extra), 'most guesthouses shut down from November to May', higher prices 'especially in July-August'. A search-result summary of Tripadvisor.in (page itself returned 403, not fetched) gives Kaza average nightly price Mar-May 2,876, Jun-Aug 3,355, Sep-Nov 4,505, i.e. Jun-Aug not above autumn. HPTDC Hotel Spiti tariff page would not resolve (DNS) and no tariff was seen.",
+      "confidence": "medium"
+    },
+    "gulmarg": {
+      "peak_night": "2027-01-14",
+      "mid_median_inr": 3859,
+      "mid_n": 10,
+      "mid_basis": "pre-tax, Cleartrip, Thu 14-15 Jan 2027, 2 adults, room only, lowest-priced private double per property (10 properties priced; Sun And Snow II, Affarwat, Royal Park, Pine Palace Platinum 'No rooms available')",
+      "mid_properties": [
+        {
+          "name": "Hotel Gulmarg House (3-star, 4.5)",
+          "inr": 3630,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/4292575?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Gulmarg Ski Hill Resort (3-star, 3.8)",
+          "inr": 3174,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/gulmarg-ski-hill-resort-4065238?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Welcome Hotel Gulmarg, centrally heated (3-star, 3.6)",
+          "inr": 4875,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/welcome-hotel-385716?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Hotel Zahgeer Continental (3-star, 3.7)",
+          "inr": 4019,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/hotel-zahgeer-gulmarg-42903?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Alpine Ridge (3-star, 3.6)",
+          "inr": 6621,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/alpine-ridge-165868?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Pine View Resort (3-star)",
+          "inr": 8549,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/4711534?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Sarwa Cottage, Nagbal (3-star guest house, 2.6)",
+          "inr": 2532,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/sarwa-cottage-4284891?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Sarwa Cottage Gulmarg, Mohyen (3-star)",
+          "inr": 3699,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/5680097?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Pine View Tangmarg (3-star)",
+          "inr": 4392,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/4711535?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        },
+        {
+          "name": "Munshi's Hotel and Restaurant, Tangmarg (3-star guest house)",
+          "inr": 2932,
+          "date": "2027-01-14",
+          "plan": "room only, lowest-priced private double, pre-tax",
+          "url": "https://www.cleartrip.com/hotels/details/munshi-s-hotel-and-restaurant-tangmarg-4485114?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+        }
+      ],
+      "homestay_median_inr": null,
+      "homestay_n": 0,
+      "homestay_properties": [],
+      "same_property_peak_over_nov": [
+        {
+          "name": "Hotel Gulmarg House (3-star, 4.5)",
+          "peak_inr": 3630,
+          "nov_inr": 3630,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/4292575?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/4292575?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Gulmarg Ski Hill Resort (3-star, 3.8)",
+          "peak_inr": 3174,
+          "nov_inr": 3174,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/gulmarg-ski-hill-resort-4065238?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/gulmarg-ski-hill-resort-4065238?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Welcome Hotel Gulmarg, centrally heated (3-star, 3.6)",
+          "peak_inr": 4875,
+          "nov_inr": 4875,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/welcome-hotel-385716?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/welcome-hotel-385716?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Hotel Zahgeer Continental (3-star, 3.7)",
+          "peak_inr": 4019,
+          "nov_inr": 4019,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/hotel-zahgeer-gulmarg-42903?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/hotel-zahgeer-gulmarg-42903?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Alpine Ridge (3-star, 3.6)",
+          "peak_inr": 6621,
+          "nov_inr": 6621,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/alpine-ridge-165868?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/alpine-ridge-165868?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Pine View Resort (3-star)",
+          "peak_inr": 8549,
+          "nov_inr": 8549,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/4711534?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/4711534?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Sarwa Cottage, Nagbal (3-star guest house, 2.6)",
+          "peak_inr": 2532,
+          "nov_inr": 2531,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/sarwa-cottage-4284891?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/sarwa-cottage-4284891?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Sarwa Cottage Gulmarg, Mohyen (3-star)",
+          "peak_inr": 3699,
+          "nov_inr": 2183,
+          "ratio": 1.694,
+          "url": "https://www.cleartrip.com/hotels/details/5680097?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/5680097?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Pine View Tangmarg (3-star)",
+          "peak_inr": 4392,
+          "nov_inr": 2928,
+          "ratio": 1.5,
+          "url": "https://www.cleartrip.com/hotels/details/4711535?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/4711535?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        },
+        {
+          "name": "Munshi's Hotel and Restaurant, Tangmarg (3-star guest house)",
+          "peak_inr": 2932,
+          "nov_inr": 2932,
+          "ratio": 1.0,
+          "url": "https://www.cleartrip.com/hotels/details/munshi-s-hotel-and-restaurant-tangmarg-4485114?c=14012027|15012027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "nov_url": "https://www.cleartrip.com/hotels/details/munshi-s-hotel-and-restaurant-tangmarg-4485114?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+          "note": "same room type, room only, pre-tax, Thu 14 Jan 2027 vs Fri 13 Nov 2026"
+        }
+      ],
+      "same_property_ratio_median": 1.0,
+      "same_property_ratio_range": [
+        1.0,
+        1.694
+      ],
+      "second_peak_night": {
+        "peak_night": "2027-06-17",
+        "mid_median_inr": 8024,
+        "mid_n": 2,
+        "mid_basis": "pre-tax, Cleartrip, Thu 17-18 Jun 2027, room only. Only 2 of 14 properties tested returned usable rates",
+        "mid_properties": [
+          {
+            "name": "Welcome Hotel Gulmarg, Deluxe Mountain View",
+            "inr": 7500,
+            "date": "2027-06-17",
+            "plan": "room only, pre-tax (+2,200); breakfast plan 7,501",
+            "url": "https://www.cleartrip.com/hotels/details/welcome-hotel-385716?c=17062027|18062027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+          },
+          {
+            "name": "Pine View Resort, Deluxe Double",
+            "inr": 8549,
+            "date": "2027-06-17",
+            "plan": "room only, pre-tax (+2,090)",
+            "url": "https://www.cleartrip.com/hotels/details/4711534?c=17062027|18062027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+          }
+        ],
+        "same_property_peak_over_nov": [
+          {
+            "name": "Welcome Hotel Gulmarg, Deluxe Mountain View room only",
+            "peak_inr": 7500,
+            "nov_inr": 4875,
+            "ratio": 1.538,
+            "url": "https://www.cleartrip.com/hotels/details/welcome-hotel-385716?c=17062027|18062027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+            "nov_url": "https://www.cleartrip.com/hotels/details/welcome-hotel-385716?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+          },
+          {
+            "name": "Pine View Resort, Deluxe Double room only",
+            "peak_inr": 8549,
+            "nov_inr": 8549,
+            "ratio": 1.0,
+            "url": "https://www.cleartrip.com/hotels/details/4711534?c=17062027|18062027&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0",
+            "nov_url": "https://www.cleartrip.com/hotels/details/4711534?c=13112026|14112026&city=Gulmarg&state=Jammu%20and%20Kashmir&country=694&r=2,0"
+          }
+        ],
+        "excluded": "Sarwa Cottage Gulmarg shows 18,750 (+5,250) for EVERY room type and meal plan on 17 Jun 2027 (struck 25,000): a placeholder rate, ignored."
+      },
+      "notes": "Gulmarg 14 Jan 2027 is 97 days out and loads; 17 Jun 2027 mostly does not. Jan vs Nov same-property pairs: 8 of 10 are identical to the rupee (the OTA is selling one flat contracted rate), while Sarwa Cottage Gulmarg is 1.69x on all four of its room types and Pine View Tangmarg 1.50x (Premium Deluxe) and 1.25x (Family Suite). Median ratio 1.0, mean about 1.1. This is almost certainly an under-read of real Gulmarg winter pricing: published and search-result evidence says Jan-Mar is the top season (a Trivago page, fetched by search only, quotes typical Jan 2027 6,625 per night, range 3,158-12,998, Feb 8,110, Mar 10,978 across all Gulmarg hotels; the page itself returned 403 and was not fetched). Hotel Highlands Park (luxury) publishes one tariff, 26,000 double with breakfast + GST effective 1 Apr 2025, no seasons. JKTDC huts show 3,500-3,850 per room, central heating +7,500 (skiingingulmarg.in, 20 Aug 2026), tariff periods not stated. Treat the Jan figure as a floor.",
+      "confidence": "low"
+    }
+  },
+  "method_note": "Dated prices: Cleartrip hotel detail pages with ?c=DDMMYYYY|DDMMYYYY (server-rendered, honours the date; listing pages ignore it). Kayak, Booking.com, Trip.com, MakeMyTrip, Goibibo, Hotels.com returned empty/JS-only/timeouts for 2027 dates; Tripadvisor and Trivago returned 403 (not bypassed). Cleartrip 2027 inventory for Ladakh/Spiti is thin: most properties say 'No rooms available' (not loaded, or closed). Where Cleartrip shows a price for both dates it is often identical (flat contracted rate), so a same-property ratio of 1.0 means 'OTA rate card unchanged', not 'no peak premium'. Prices pre-tax as listed unless stated; Cleartrip lists taxes & fees separately. No price came from memory.",
+  "key_finding": "No place yields a clean dated peak-season median. Best-supported peak evidence: Leh hotels' own Apr-Oct season tariffs (EP double ex-GST median 4,300, n=5, 2024-26) vs Nov OTA discounted 3-star median 2,695 and Nov OTA struck rack median 4,000. Cleartrip same-property July-vs-Nov: Leh 0.75-1.33 (median 1.0, n=5), Kaza 0.91-1.21 (median 1.0, n=4), Gulmarg Jan 1.0-1.69 (median 1.0, n=10), Gulmarg June 1.0 and 1.54 (n=2)."
+}
